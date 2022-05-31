@@ -24,9 +24,8 @@ impl AdcChannel {
             (::windows_core::Interface::vtable(this).ReadRatio)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
@@ -100,30 +99,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Adc
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<AdcChannel> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<AdcChannel> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: AdcChannel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&AdcChannel> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&AdcChannel> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &AdcChannel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for AdcChannel {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for AdcChannel {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &AdcChannel {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &AdcChannel {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for AdcChannel {}
@@ -218,17 +213,16 @@ impl AdcController {
         }
     }
     #[cfg(all(feature = "Devices_Adc_Provider", feature = "Foundation_Collections"))]
-    pub fn GetControllersAsync<'a, Param0: ::windows_core::IntoParam<'a, Provider::IAdcProvider>>(provider: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<AdcController>>> {
+    pub fn GetControllersAsync<'a, Param0: ::windows_core::IntoParam<'a, Provider::IAdcProvider>>(provider: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AdcController>>> {
         Self::IAdcControllerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetControllersAsync)(::windows_core::Interface::as_raw(this), provider.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<AdcController>>>(result__)
+            (::windows_core::Interface::vtable(this).GetControllersAsync)(::windows_core::Interface::as_raw(this), provider.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AdcController>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDefaultAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AdcController>> {
+    pub fn GetDefaultAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AdcController>> {
         Self::IAdcControllerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDefaultAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AdcController>>(result__)
+            (::windows_core::Interface::vtable(this).GetDefaultAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AdcController>>(result__)
         })
     }
     pub fn IAdcControllerStatics<R, F: FnOnce(&IAdcControllerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -374,8 +368,5 @@ unsafe impl ::windows_core::Interface for IAdcControllerStatics2 {
 #[doc(hidden)]
 pub struct IAdcControllerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDefaultAsync: usize,
 }

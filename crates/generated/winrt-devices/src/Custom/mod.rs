@@ -2,35 +2,35 @@
 pub struct CustomDevice(::windows_core::IUnknown);
 impl CustomDevice {
     #[cfg(feature = "Storage_Streams")]
-    pub fn InputStream(&self) -> ::windows_core::Result<super::super::Storage::Streams::IInputStream> {
+    pub fn InputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IInputStream>(result__)
+            (::windows_core::Interface::vtable(this).InputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn OutputStream(&self) -> ::windows_core::Result<super::super::Storage::Streams::IOutputStream> {
+    pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OutputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IOutputStream>(result__)
+            (::windows_core::Interface::vtable(this).OutputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IOutputStream>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SendIOControlAsync<'a, Param0: ::windows_core::IntoParam<'a, IIOControlCode>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, iocontrolcode: Param0, inputbuffer: Param1, outputbuffer: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<u32>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SendIOControlAsync<'a, Param0: ::windows_core::IntoParam<'a, IIOControlCode>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, iocontrolcode: Param0, inputbuffer: Param1, outputbuffer: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendIOControlAsync)(::windows_core::Interface::as_raw(this), iocontrolcode.into_param().abi(), inputbuffer.into_param().abi(), outputbuffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<u32>>(result__)
+            (::windows_core::Interface::vtable(this).SendIOControlAsync)(::windows_core::Interface::as_raw(this), iocontrolcode.into_param().abi(), inputbuffer.into_param().abi(), outputbuffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<u32>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn TrySendIOControlAsync<'a, Param0: ::windows_core::IntoParam<'a, IIOControlCode>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, iocontrolcode: Param0, inputbuffer: Param1, outputbuffer: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn TrySendIOControlAsync<'a, Param0: ::windows_core::IntoParam<'a, IIOControlCode>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, iocontrolcode: Param0, inputbuffer: Param1, outputbuffer: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySendIOControlAsync)(::windows_core::Interface::as_raw(this), iocontrolcode.into_param().abi(), inputbuffer.into_param().abi(), outputbuffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySendIOControlAsync)(::windows_core::Interface::as_raw(this), iocontrolcode.into_param().abi(), inputbuffer.into_param().abi(), outputbuffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn GetDeviceSelector<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(classguid: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -39,11 +39,10 @@ impl CustomDevice {
             (::windows_core::Interface::vtable(this).GetDeviceSelector)(::windows_core::Interface::as_raw(this), classguid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0, desiredaccess: DeviceAccessMode, sharingmode: DeviceSharingMode) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<CustomDevice>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0, desiredaccess: DeviceAccessMode, sharingmode: DeviceSharingMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CustomDevice>> {
         Self::ICustomDeviceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), desiredaccess, sharingmode, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<CustomDevice>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), desiredaccess, sharingmode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CustomDevice>>(result__)
         })
     }
     pub fn ICustomDeviceStatics<R, F: FnOnce(&ICustomDeviceStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -209,13 +208,13 @@ pub struct ICustomDevice_Vtbl {
     pub OutputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     OutputStream: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SendIOControlAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iocontrolcode: ::windows_core::RawPtr, inputbuffer: ::windows_core::RawPtr, outputbuffer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SendIOControlAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub TrySendIOControlAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iocontrolcode: ::windows_core::RawPtr, inputbuffer: ::windows_core::RawPtr, outputbuffer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     TrySendIOControlAsync: usize,
 }
 #[doc(hidden)]
@@ -230,10 +229,7 @@ unsafe impl ::windows_core::Interface for ICustomDeviceStatics {
 pub struct ICustomDeviceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, classguid: ::windows_core::GUID, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, desiredaccess: DeviceAccessMode, sharingmode: DeviceSharingMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
 }
 #[repr(transparent)]
 pub struct IIOControlCode(::windows_core::IUnknown);

@@ -152,7 +152,6 @@ pub const WEBAUTHN_AUTHENTICATOR_ATTACHMENT_CROSS_PLATFORM: u32 = 2u32;
 pub const WEBAUTHN_AUTHENTICATOR_ATTACHMENT_CROSS_PLATFORM_U2F_V2: u32 = 3u32;
 pub const WEBAUTHN_AUTHENTICATOR_ATTACHMENT_PLATFORM: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
     pub dwVersion: u32,
     pub dwTimeoutMilliseconds: u32,
@@ -162,22 +161,19 @@ pub struct WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
     pub dwUserVerificationRequirement: u32,
     pub dwFlags: u32,
     pub pwszU2fAppId: ::windows_core::PCWSTR,
-    pub pbU2fAppId: *mut super::super::Foundation::BOOL,
+    pub pbU2fAppId: *mut ::win32_foundation::BOOL,
     pub pCancellationId: *mut ::windows_core::GUID,
     pub pAllowCredentialList: *mut WEBAUTHN_CREDENTIAL_LIST,
     pub dwCredLargeBlobOperation: u32,
     pub cbCredLargeBlob: u32,
     pub pbCredLargeBlob: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS")
@@ -198,19 +194,15 @@ impl ::core::fmt::Debug for WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -223,14 +215,13 @@ pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_3: u32 = 3u32;
 pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_4: u32 = 4u32;
 pub const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS_VERSION_5: u32 = 5u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
     pub dwVersion: u32,
     pub dwTimeoutMilliseconds: u32,
     pub CredentialList: WEBAUTHN_CREDENTIALS,
     pub Extensions: WEBAUTHN_EXTENSIONS,
     pub dwAuthenticatorAttachment: u32,
-    pub bRequireResidentKey: super::super::Foundation::BOOL,
+    pub bRequireResidentKey: ::win32_foundation::BOOL,
     pub dwUserVerificationRequirement: u32,
     pub dwAttestationConveyancePreference: u32,
     pub dwFlags: u32,
@@ -238,17 +229,14 @@ pub struct WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
     pub pExcludeCredentialList: *mut WEBAUTHN_CREDENTIAL_LIST,
     pub dwEnterpriseAttestation: u32,
     pub dwLargeBlobSupport: u32,
-    pub bPreferResidentKey: super::super::Foundation::BOOL,
+    pub bPreferResidentKey: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS")
@@ -269,19 +257,15 @@ impl ::core::fmt::Debug for WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -500,7 +484,6 @@ impl ::core::default::Default for WEBAUTHN_CREDENTIALS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WEBAUTHN_CREDENTIAL_ATTESTATION {
     pub dwVersion: u32,
     pub pwszFormatType: ::windows_core::PCWSTR,
@@ -516,19 +499,16 @@ pub struct WEBAUTHN_CREDENTIAL_ATTESTATION {
     pub pbCredentialId: *mut u8,
     pub Extensions: WEBAUTHN_EXTENSIONS,
     pub dwUsedTransport: u32,
-    pub bEpAtt: super::super::Foundation::BOOL,
-    pub bLargeBlobSupported: super::super::Foundation::BOOL,
-    pub bResidentKey: super::super::Foundation::BOOL,
+    pub bEpAtt: ::win32_foundation::BOOL,
+    pub bLargeBlobSupported: ::win32_foundation::BOOL,
+    pub bResidentKey: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WEBAUTHN_CREDENTIAL_ATTESTATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WEBAUTHN_CREDENTIAL_ATTESTATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WEBAUTHN_CREDENTIAL_ATTESTATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WEBAUTHN_CREDENTIAL_ATTESTATION")
@@ -552,19 +532,15 @@ impl ::core::fmt::Debug for WEBAUTHN_CREDENTIAL_ATTESTATION {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WEBAUTHN_CREDENTIAL_ATTESTATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WEBAUTHN_CREDENTIAL_ATTESTATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WEBAUTHN_CREDENTIAL_ATTESTATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WEBAUTHN_CREDENTIAL_ATTESTATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WEBAUTHN_CREDENTIAL_ATTESTATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -686,38 +662,30 @@ pub const WEBAUTHN_CRED_LARGE_BLOB_STATUS_NOT_SUPPORTED: u32 = 2u32;
 pub const WEBAUTHN_CRED_LARGE_BLOB_STATUS_PLATFORM_ERROR: u32 = 8u32;
 pub const WEBAUTHN_CRED_LARGE_BLOB_STATUS_SUCCESS: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WEBAUTHN_CRED_PROTECT_EXTENSION_IN {
     pub dwCredProtect: u32,
-    pub bRequireCredProtect: super::super::Foundation::BOOL,
+    pub bRequireCredProtect: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WEBAUTHN_CRED_PROTECT_EXTENSION_IN {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WEBAUTHN_CRED_PROTECT_EXTENSION_IN {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WEBAUTHN_CRED_PROTECT_EXTENSION_IN {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WEBAUTHN_CRED_PROTECT_EXTENSION_IN").field("dwCredProtect", &self.dwCredProtect).field("bRequireCredProtect", &self.bRequireCredProtect).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WEBAUTHN_CRED_PROTECT_EXTENSION_IN {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WEBAUTHN_CRED_PROTECT_EXTENSION_IN {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WEBAUTHN_CRED_PROTECT_EXTENSION_IN>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WEBAUTHN_CRED_PROTECT_EXTENSION_IN {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WEBAUTHN_CRED_PROTECT_EXTENSION_IN {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -940,77 +908,61 @@ impl ::core::fmt::Debug for WS_ADDRESSING_VERSION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ANY_ATTRIBUTE {
     pub localName: WS_XML_STRING,
     pub ns: WS_XML_STRING,
     pub value: *mut WS_XML_TEXT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ANY_ATTRIBUTE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ANY_ATTRIBUTE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ANY_ATTRIBUTE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ANY_ATTRIBUTE").field("localName", &self.localName).field("ns", &self.ns).field("value", &self.value).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ANY_ATTRIBUTE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ANY_ATTRIBUTE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ANY_ATTRIBUTE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ANY_ATTRIBUTE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ANY_ATTRIBUTE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ANY_ATTRIBUTES {
     pub attributes: *mut WS_ANY_ATTRIBUTE,
     pub attributeCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ANY_ATTRIBUTES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ANY_ATTRIBUTES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ANY_ATTRIBUTES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ANY_ATTRIBUTES").field("attributes", &self.attributes).field("attributeCount", &self.attributeCount).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ANY_ATTRIBUTES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ANY_ATTRIBUTES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ANY_ATTRIBUTES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ANY_ATTRIBUTES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ANY_ATTRIBUTES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1111,40 +1063,32 @@ impl ::core::default::Default for WS_ASYNC_STATE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ATTRIBUTE_DESCRIPTION {
     pub attributeLocalName: *mut WS_XML_STRING,
     pub attributeNs: *mut WS_XML_STRING,
     pub r#type: WS_TYPE,
     pub typeDescription: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ATTRIBUTE_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ATTRIBUTE_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ATTRIBUTE_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ATTRIBUTE_DESCRIPTION").field("attributeLocalName", &self.attributeLocalName).field("attributeNs", &self.attributeNs).field("type", &self.r#type).field("typeDescription", &self.typeDescription).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ATTRIBUTE_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ATTRIBUTE_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ATTRIBUTE_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ATTRIBUTE_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ATTRIBUTE_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1187,37 +1131,29 @@ impl ::core::fmt::Debug for WS_BINDING_TEMPLATE_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_BOOL_DESCRIPTION {
-    pub value: super::super::Foundation::BOOL,
+    pub value: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_BOOL_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_BOOL_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_BOOL_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_BOOL_DESCRIPTION").field("value", &self.value).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_BOOL_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_BOOL_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_BOOL_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_BOOL_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_BOOL_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1455,41 +1391,41 @@ impl ::core::default::Default for WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-pub type WS_CERTIFICATE_VALIDATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(certcontext: *const super::super::Security::Cryptography::CERT_CONTEXT, state: *const ::core::ffi::c_void) -> ::windows_core::HRESULT>;
+#[cfg(feature = "Win32_Security_Cryptography")]
+pub type WS_CERTIFICATE_VALIDATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(certcontext: *const ::win32_security::Cryptography::CERT_CONTEXT, state: *const ::core::ffi::c_void) -> ::windows_core::HRESULT>;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {
     pub callback: WS_CERTIFICATE_VALIDATION_CALLBACK,
     pub state: *mut ::core::ffi::c_void,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT").field("callback", &self.callback.map(|f| f as usize)).field("state", &self.state).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for WS_CERTIFICATE_VALIDATION_CALLBACK_CONTEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1585,7 +1521,7 @@ pub const WS_CERT_FAILURE_REVOCATION_OFFLINE: i32 = 16i32;
 pub const WS_CERT_FAILURE_UNTRUSTED_ROOT: i32 = 4i32;
 pub const WS_CERT_FAILURE_WRONG_USAGE: i32 = 8i32;
 #[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
-pub type WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(certissuerlistnotificationcallbackstate: *const ::core::ffi::c_void, issuerlist: *const super::super::Security::Authentication::Identity::SecPkgContext_IssuerListInfoEx, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
+pub type WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(certissuerlistnotificationcallbackstate: *const ::core::ffi::c_void, issuerlist: *const ::win32_security::Authentication::Identity::SecPkgContext_IssuerListInfoEx, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 #[repr(C)]
 pub struct WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     pub bindingConstraint: WS_SECURITY_BINDING_CONSTRAINT,
@@ -1617,42 +1553,42 @@ impl ::core::default::Default for WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct WS_CERT_SIGNED_SAML_AUTHENTICATOR {
     pub authenticator: WS_SAML_AUTHENTICATOR,
-    pub trustedIssuerCerts: *const *const super::super::Security::Cryptography::CERT_CONTEXT,
+    pub trustedIssuerCerts: *const *const ::win32_security::Cryptography::CERT_CONTEXT,
     pub trustedIssuerCertCount: u32,
-    pub decryptionCert: *const super::super::Security::Cryptography::CERT_CONTEXT,
+    pub decryptionCert: *const ::win32_security::Cryptography::CERT_CONTEXT,
     pub samlValidator: WS_VALIDATE_SAML_CALLBACK,
     pub samlValidatorCallbackState: *mut ::core::ffi::c_void,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for WS_CERT_SIGNED_SAML_AUTHENTICATOR {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for WS_CERT_SIGNED_SAML_AUTHENTICATOR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for WS_CERT_SIGNED_SAML_AUTHENTICATOR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_CERT_SIGNED_SAML_AUTHENTICATOR").field("authenticator", &self.authenticator).field("trustedIssuerCerts", &self.trustedIssuerCerts).field("trustedIssuerCertCount", &self.trustedIssuerCertCount).field("decryptionCert", &self.decryptionCert).field("samlValidator", &self.samlValidator.map(|f| f as usize)).field("samlValidatorCallbackState", &self.samlValidatorCallbackState).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for WS_CERT_SIGNED_SAML_AUTHENTICATOR {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for WS_CERT_SIGNED_SAML_AUTHENTICATOR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_CERT_SIGNED_SAML_AUTHENTICATOR>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for WS_CERT_SIGNED_SAML_AUTHENTICATOR {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for WS_CERT_SIGNED_SAML_AUTHENTICATOR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2086,38 +2022,30 @@ impl ::core::default::Default for WS_CHAR_ARRAY_DESCRIPTION {
 pub type WS_CLOSE_CHANNEL_CALLBACK = ::core::option::Option<unsafe extern "system" fn(channelinstance: *const ::core::ffi::c_void, asynccontext: *const WS_ASYNC_CONTEXT, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 pub type WS_CLOSE_LISTENER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(listenerinstance: *const ::core::ffi::c_void, asynccontext: *const WS_ASYNC_CONTEXT, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_CONTRACT_DESCRIPTION {
     pub operationCount: u32,
     pub operations: *mut *mut WS_OPERATION_DESCRIPTION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_CONTRACT_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_CONTRACT_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_CONTRACT_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_CONTRACT_DESCRIPTION").field("operationCount", &self.operationCount).field("operations", &self.operations).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_CONTRACT_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_CONTRACT_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_CONTRACT_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_CONTRACT_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_CONTRACT_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2153,7 +2081,7 @@ pub type WS_CREATE_DECODER_CALLBACK = ::core::option::Option<unsafe extern "syst
 pub type WS_CREATE_ENCODER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(createcontext: *const ::core::ffi::c_void, writecallback: WS_WRITE_CALLBACK, writecontext: *const ::core::ffi::c_void, encodercontext: *mut *mut ::core::ffi::c_void, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 pub type WS_CREATE_LISTENER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(channeltype: WS_CHANNEL_TYPE, listenerparameters: *const ::core::ffi::c_void, listenerparameterssize: u32, listenerinstance: *mut *mut ::core::ffi::c_void, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
 pub struct WS_CUSTOM_CERT_CREDENTIAL {
     pub credential: WS_CERT_CREDENTIAL,
     pub getCertCallback: WS_GET_CERT_CALLBACK,
@@ -2161,33 +2089,33 @@ pub struct WS_CUSTOM_CERT_CREDENTIAL {
     pub certIssuerListNotificationCallback: WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK,
     pub certIssuerListNotificationCallbackState: *mut ::core::ffi::c_void,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
 impl ::core::marker::Copy for WS_CUSTOM_CERT_CREDENTIAL {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
 impl ::core::clone::Clone for WS_CUSTOM_CERT_CREDENTIAL {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
 impl ::core::fmt::Debug for WS_CUSTOM_CERT_CREDENTIAL {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_CUSTOM_CERT_CREDENTIAL").field("credential", &self.credential).field("getCertCallback", &self.getCertCallback.map(|f| f as usize)).field("getCertCallbackState", &self.getCertCallbackState).field("certIssuerListNotificationCallback", &self.certIssuerListNotificationCallback.map(|f| f as usize)).field("certIssuerListNotificationCallbackState", &self.certIssuerListNotificationCallbackState).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
 unsafe impl ::windows_core::Abi for WS_CUSTOM_CERT_CREDENTIAL {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
 impl ::core::cmp::PartialEq for WS_CUSTOM_CERT_CREDENTIAL {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_CUSTOM_CERT_CREDENTIAL>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
 impl ::core::cmp::Eq for WS_CUSTOM_CERT_CREDENTIAL {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
 impl ::core::default::Default for WS_CUSTOM_CERT_CREDENTIAL {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2330,7 +2258,6 @@ impl ::core::default::Default for WS_CUSTOM_LISTENER_CALLBACKS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_CUSTOM_TYPE_DESCRIPTION {
     pub size: u32,
     pub alignment: u32,
@@ -2339,33 +2266,26 @@ pub struct WS_CUSTOM_TYPE_DESCRIPTION {
     pub descriptionData: *mut ::core::ffi::c_void,
     pub isDefaultValueCallback: WS_IS_DEFAULT_VALUE_CALLBACK,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_CUSTOM_TYPE_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_CUSTOM_TYPE_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_CUSTOM_TYPE_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_CUSTOM_TYPE_DESCRIPTION").field("size", &self.size).field("alignment", &self.alignment).field("readCallback", &self.readCallback.map(|f| f as usize)).field("writeCallback", &self.writeCallback.map(|f| f as usize)).field("descriptionData", &self.descriptionData).field("isDefaultValueCallback", &self.isDefaultValueCallback.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_CUSTOM_TYPE_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_CUSTOM_TYPE_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_CUSTOM_TYPE_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_CUSTOM_TYPE_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_CUSTOM_TYPE_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2457,32 +2377,25 @@ impl ::core::fmt::Debug for WS_DATETIME_FORMAT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_DECIMAL_DESCRIPTION {
-    pub minValue: super::super::Foundation::DECIMAL,
-    pub maxValue: super::super::Foundation::DECIMAL,
+    pub minValue: ::win32_foundation::DECIMAL,
+    pub maxValue: ::win32_foundation::DECIMAL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_DECIMAL_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_DECIMAL_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_DECIMAL_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_DECIMAL_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_DECIMAL_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_DECIMAL_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_DECIMAL_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2642,9 +2555,8 @@ impl ::core::default::Default for WS_DOUBLE_DESCRIPTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_DURATION {
-    pub negative: super::super::Foundation::BOOL,
+    pub negative: ::win32_foundation::BOOL,
     pub years: u32,
     pub months: u32,
     pub days: u32,
@@ -2654,116 +2566,91 @@ pub struct WS_DURATION {
     pub milliseconds: u32,
     pub ticks: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_DURATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_DURATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_DURATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_DURATION").field("negative", &self.negative).field("years", &self.years).field("months", &self.months).field("days", &self.days).field("hours", &self.hours).field("minutes", &self.minutes).field("seconds", &self.seconds).field("milliseconds", &self.milliseconds).field("ticks", &self.ticks).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_DURATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_DURATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_DURATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_DURATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_DURATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 pub type WS_DURATION_COMPARISON_CALLBACK = ::core::option::Option<unsafe extern "system" fn(duration1: *const WS_DURATION, duration2: *const WS_DURATION, result: *mut i32, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_DURATION_DESCRIPTION {
     pub minValue: WS_DURATION,
     pub maxValue: WS_DURATION,
     pub comparer: WS_DURATION_COMPARISON_CALLBACK,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_DURATION_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_DURATION_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_DURATION_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_DURATION_DESCRIPTION").field("minValue", &self.minValue).field("maxValue", &self.maxValue).field("comparer", &self.comparer.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_DURATION_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_DURATION_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_DURATION_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_DURATION_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_DURATION_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type WS_DYNAMIC_STRING_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackstate: *const ::core::ffi::c_void, string: *const WS_XML_STRING, found: *mut super::super::Foundation::BOOL, id: *mut u32, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
+pub type WS_DYNAMIC_STRING_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackstate: *const ::core::ffi::c_void, string: *const WS_XML_STRING, found: *mut ::win32_foundation::BOOL, id: *mut u32, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ELEMENT_DESCRIPTION {
     pub elementLocalName: *mut WS_XML_STRING,
     pub elementNs: *mut WS_XML_STRING,
     pub r#type: WS_TYPE,
     pub typeDescription: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ELEMENT_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ELEMENT_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ELEMENT_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ELEMENT_DESCRIPTION").field("elementLocalName", &self.elementLocalName).field("elementNs", &self.elementNs).field("type", &self.r#type).field("typeDescription", &self.typeDescription).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ELEMENT_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ELEMENT_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ELEMENT_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ELEMENT_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ELEMENT_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2946,155 +2833,123 @@ impl ::core::fmt::Debug for WS_ENDPOINT_IDENTITY_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ENDPOINT_POLICY_EXTENSION {
     pub policyExtension: WS_POLICY_EXTENSION,
     pub assertionName: *mut WS_XML_STRING,
     pub assertionNs: *mut WS_XML_STRING,
     pub out: WS_ENDPOINT_POLICY_EXTENSION_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ENDPOINT_POLICY_EXTENSION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ENDPOINT_POLICY_EXTENSION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ENDPOINT_POLICY_EXTENSION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ENDPOINT_POLICY_EXTENSION").field("policyExtension", &self.policyExtension).field("assertionName", &self.assertionName).field("assertionNs", &self.assertionNs).field("out", &self.out).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ENDPOINT_POLICY_EXTENSION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ENDPOINT_POLICY_EXTENSION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ENDPOINT_POLICY_EXTENSION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ENDPOINT_POLICY_EXTENSION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ENDPOINT_POLICY_EXTENSION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ENDPOINT_POLICY_EXTENSION_0 {
     pub assertionValue: *mut WS_XML_BUFFER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ENDPOINT_POLICY_EXTENSION_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ENDPOINT_POLICY_EXTENSION_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ENDPOINT_POLICY_EXTENSION_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ENDPOINT_POLICY_EXTENSION_0").field("assertionValue", &self.assertionValue).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ENDPOINT_POLICY_EXTENSION_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ENDPOINT_POLICY_EXTENSION_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ENDPOINT_POLICY_EXTENSION_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ENDPOINT_POLICY_EXTENSION_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ENDPOINT_POLICY_EXTENSION_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ENUM_DESCRIPTION {
     pub values: *mut WS_ENUM_VALUE,
     pub valueCount: u32,
     pub maxByteCount: u32,
     pub nameIndices: *mut u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ENUM_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ENUM_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ENUM_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ENUM_DESCRIPTION").field("values", &self.values).field("valueCount", &self.valueCount).field("maxByteCount", &self.maxByteCount).field("nameIndices", &self.nameIndices).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ENUM_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ENUM_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ENUM_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ENUM_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ENUM_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ENUM_VALUE {
     pub value: i32,
     pub name: *mut WS_XML_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ENUM_VALUE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ENUM_VALUE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ENUM_VALUE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ENUM_VALUE").field("value", &self.value).field("name", &self.name).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ENUM_VALUE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ENUM_VALUE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ENUM_VALUE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ENUM_VALUE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ENUM_VALUE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3257,7 +3112,6 @@ impl ::core::fmt::Debug for WS_EXTENDED_PROTECTION_SCENARIO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_FAULT {
     pub code: *mut WS_FAULT_CODE,
     pub reasons: *mut WS_FAULT_REASON,
@@ -3266,71 +3120,56 @@ pub struct WS_FAULT {
     pub node: WS_STRING,
     pub detail: *mut WS_XML_BUFFER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_FAULT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_FAULT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_FAULT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_FAULT").field("code", &self.code).field("reasons", &self.reasons).field("reasonCount", &self.reasonCount).field("actor", &self.actor).field("node", &self.node).field("detail", &self.detail).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_FAULT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_FAULT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_FAULT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_FAULT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_FAULT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_FAULT_CODE {
     pub value: WS_XML_QNAME,
     pub subCode: *mut WS_FAULT_CODE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_FAULT_CODE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_FAULT_CODE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_FAULT_CODE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_FAULT_CODE").field("value", &self.value).field("subCode", &self.subCode).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_FAULT_CODE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_FAULT_CODE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_FAULT_CODE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_FAULT_CODE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_FAULT_CODE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3366,38 +3205,30 @@ impl ::core::default::Default for WS_FAULT_DESCRIPTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_FAULT_DETAIL_DESCRIPTION {
     pub action: *mut WS_XML_STRING,
     pub detailElementDescription: *mut WS_ELEMENT_DESCRIPTION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_FAULT_DETAIL_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_FAULT_DETAIL_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_FAULT_DETAIL_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_FAULT_DETAIL_DESCRIPTION").field("action", &self.action).field("detailElementDescription", &self.detailElementDescription).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_FAULT_DETAIL_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_FAULT_DETAIL_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_FAULT_DETAIL_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_FAULT_DETAIL_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_FAULT_DETAIL_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3483,7 +3314,6 @@ impl ::core::default::Default for WS_FAULT_REASON {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_FIELD_DESCRIPTION {
     pub mapping: WS_FIELD_MAPPING,
     pub localName: *mut WS_XML_STRING,
@@ -3498,33 +3328,26 @@ pub struct WS_FIELD_DESCRIPTION {
     pub itemNs: *mut WS_XML_STRING,
     pub itemRange: *mut WS_ITEM_RANGE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_FIELD_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_FIELD_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_FIELD_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_FIELD_DESCRIPTION").field("mapping", &self.mapping).field("localName", &self.localName).field("ns", &self.ns).field("type", &self.r#type).field("typeDescription", &self.typeDescription).field("offset", &self.offset).field("options", &self.options).field("defaultValue", &self.defaultValue).field("countOffset", &self.countOffset).field("itemLocalName", &self.itemLocalName).field("itemNs", &self.itemNs).field("itemRange", &self.itemRange).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_FIELD_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_FIELD_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_FIELD_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_FIELD_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_FIELD_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3604,8 +3427,8 @@ pub type WS_FREE_CHANNEL_CALLBACK = ::core::option::Option<unsafe extern "system
 pub type WS_FREE_DECODER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(decodercontext: *const ::core::ffi::c_void)>;
 pub type WS_FREE_ENCODER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(encodercontext: *const ::core::ffi::c_void)>;
 pub type WS_FREE_LISTENER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(listenerinstance: *const ::core::ffi::c_void)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-pub type WS_GET_CERT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(getcertcallbackstate: *const ::core::ffi::c_void, targetaddress: *const WS_ENDPOINT_ADDRESS, viauri: *const WS_STRING, cert: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
+#[cfg(feature = "Win32_Security_Cryptography")]
+pub type WS_GET_CERT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(getcertcallbackstate: *const ::core::ffi::c_void, targetaddress: *const WS_ENDPOINT_ADDRESS, viauri: *const WS_STRING, cert: *mut *mut ::win32_security::Cryptography::CERT_CONTEXT, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 pub type WS_GET_CHANNEL_PROPERTY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(channelinstance: *const ::core::ffi::c_void, id: WS_CHANNEL_PROPERTY_ID, value: *mut ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 pub type WS_GET_LISTENER_PROPERTY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(listenerinstance: *const ::core::ffi::c_void, id: WS_LISTENER_PROPERTY_ID, value: *mut ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 #[repr(C)]
@@ -4060,38 +3883,30 @@ impl ::core::fmt::Debug for WS_HTTP_HEADER_AUTH_TARGET {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_HTTP_HEADER_MAPPING {
     pub headerName: WS_XML_STRING,
     pub headerMappingOptions: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_HTTP_HEADER_MAPPING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_HTTP_HEADER_MAPPING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_HTTP_HEADER_MAPPING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_HTTP_HEADER_MAPPING").field("headerName", &self.headerName).field("headerMappingOptions", &self.headerMappingOptions).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_HTTP_HEADER_MAPPING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_HTTP_HEADER_MAPPING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_HTTP_HEADER_MAPPING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_HTTP_HEADER_MAPPING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_HTTP_HEADER_MAPPING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4101,7 +3916,6 @@ pub const WS_HTTP_HEADER_MAPPING_COMMA_SEPARATOR: i32 = 1i32;
 pub const WS_HTTP_HEADER_MAPPING_QUOTED_VALUE: i32 = 4i32;
 pub const WS_HTTP_HEADER_MAPPING_SEMICOLON_SEPARATOR: i32 = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_HTTP_MESSAGE_MAPPING {
     pub requestMappingOptions: u32,
     pub responseMappingOptions: u32,
@@ -4110,33 +3924,26 @@ pub struct WS_HTTP_MESSAGE_MAPPING {
     pub responseHeaderMappings: *mut *mut WS_HTTP_HEADER_MAPPING,
     pub responseHeaderMappingCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_HTTP_MESSAGE_MAPPING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_HTTP_MESSAGE_MAPPING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_HTTP_MESSAGE_MAPPING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_HTTP_MESSAGE_MAPPING").field("requestMappingOptions", &self.requestMappingOptions).field("responseMappingOptions", &self.responseMappingOptions).field("requestHeaderMappings", &self.requestHeaderMappings).field("requestHeaderMappingCount", &self.requestHeaderMappingCount).field("responseHeaderMappings", &self.responseHeaderMappings).field("responseHeaderMappingCount", &self.responseHeaderMappingCount).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_HTTP_MESSAGE_MAPPING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_HTTP_MESSAGE_MAPPING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_HTTP_MESSAGE_MAPPING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_HTTP_MESSAGE_MAPPING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_HTTP_MESSAGE_MAPPING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4742,38 +4549,30 @@ impl ::core::default::Default for WS_INT64_DESCRIPTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_INT8_DESCRIPTION {
-    pub minValue: super::super::Foundation::CHAR,
-    pub maxValue: super::super::Foundation::CHAR,
+    pub minValue: ::win32_foundation::CHAR,
+    pub maxValue: ::win32_foundation::CHAR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_INT8_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_INT8_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_INT8_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_INT8_DESCRIPTION").field("minValue", &self.minValue).field("maxValue", &self.maxValue).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_INT8_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_INT8_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_INT8_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_INT8_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_INT8_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4805,7 +4604,6 @@ impl ::core::fmt::Debug for WS_IP_VERSION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     pub bindingConstraint: WS_SECURITY_BINDING_CONSTRAINT,
     pub bindingUsage: WS_MESSAGE_SECURITY_USAGE,
@@ -4815,15 +4613,12 @@ pub struct WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     pub requestSecurityTokenPropertyConstraintCount: u32,
     pub out: WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT")
@@ -4837,64 +4632,51 @@ impl ::core::fmt::Debug for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT 
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0 {
     pub issuerAddress: *mut WS_ENDPOINT_ADDRESS,
     pub requestSecurityTokenTemplate: *mut WS_XML_BUFFER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0").field("issuerAddress", &self.issuerAddress).field("requestSecurityTokenTemplate", &self.requestSecurityTokenTemplate).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type WS_IS_DEFAULT_VALUE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(descriptiondata: *const ::core::ffi::c_void, value: *const ::core::ffi::c_void, defaultvalue: *const ::core::ffi::c_void, valuesize: u32, isdefault: *mut super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
+pub type WS_IS_DEFAULT_VALUE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(descriptiondata: *const ::core::ffi::c_void, value: *const ::core::ffi::c_void, defaultvalue: *const ::core::ffi::c_void, valuesize: u32, isdefault: *mut ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 #[repr(C)]
 pub struct WS_ITEM_RANGE {
     pub minItemCount: u32,
@@ -5189,38 +4971,30 @@ pub const WS_MATCH_URL_THIS_HOST: i32 = 31i32;
 #[repr(C)]
 pub struct WS_MESSAGE(pub u8);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_MESSAGE_DESCRIPTION {
     pub action: *mut WS_XML_STRING,
     pub bodyElementDescription: *mut WS_ELEMENT_DESCRIPTION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_MESSAGE_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_MESSAGE_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_MESSAGE_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_MESSAGE_DESCRIPTION").field("action", &self.action).field("bodyElementDescription", &self.bodyElementDescription).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_MESSAGE_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_MESSAGE_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_MESSAGE_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_MESSAGE_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_MESSAGE_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5412,7 +5186,6 @@ impl ::core::fmt::Debug for WS_MESSAGE_STATE {
 #[repr(C)]
 pub struct WS_METADATA(pub u8);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_METADATA_ENDPOINT {
     pub endpointAddress: WS_ENDPOINT_ADDRESS,
     pub endpointPolicy: *mut WS_POLICY,
@@ -5424,71 +5197,56 @@ pub struct WS_METADATA_ENDPOINT {
     pub portTypeName: *mut WS_XML_STRING,
     pub portTypeNs: *mut WS_XML_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_METADATA_ENDPOINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_METADATA_ENDPOINT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_METADATA_ENDPOINT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_METADATA_ENDPOINT").field("endpointAddress", &self.endpointAddress).field("endpointPolicy", &self.endpointPolicy).field("portName", &self.portName).field("serviceName", &self.serviceName).field("serviceNs", &self.serviceNs).field("bindingName", &self.bindingName).field("bindingNs", &self.bindingNs).field("portTypeName", &self.portTypeName).field("portTypeNs", &self.portTypeNs).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_METADATA_ENDPOINT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_METADATA_ENDPOINT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_METADATA_ENDPOINT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_METADATA_ENDPOINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_METADATA_ENDPOINT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_METADATA_ENDPOINTS {
     pub endpoints: *mut WS_METADATA_ENDPOINT,
     pub endpointCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_METADATA_ENDPOINTS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_METADATA_ENDPOINTS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_METADATA_ENDPOINTS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_METADATA_ENDPOINTS").field("endpoints", &self.endpoints).field("endpointCount", &self.endpointCount).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_METADATA_ENDPOINTS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_METADATA_ENDPOINTS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_METADATA_ENDPOINTS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_METADATA_ENDPOINTS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_METADATA_ENDPOINTS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5673,7 +5431,7 @@ impl ::core::default::Default for WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING {
 #[cfg(feature = "Win32_Security_Cryptography")]
 pub struct WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE {
     pub keyHandle: WS_SECURITY_KEY_HANDLE,
-    pub asymmetricKey: super::super::Security::Cryptography::NCRYPT_KEY_HANDLE,
+    pub asymmetricKey: ::win32_security::Cryptography::NCRYPT_KEY_HANDLE,
 }
 #[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE {}
@@ -5844,7 +5602,6 @@ impl ::core::fmt::Debug for WS_OPERATION_CONTEXT_PROPERTY_ID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_OPERATION_DESCRIPTION {
     pub versionInfo: u32,
     pub inputMessageDescription: *mut WS_MESSAGE_DESCRIPTION,
@@ -5856,15 +5613,12 @@ pub struct WS_OPERATION_DESCRIPTION {
     pub stubCallback: WS_SERVICE_STUB_CALLBACK,
     pub style: WS_OPERATION_STYLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_OPERATION_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_OPERATION_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_OPERATION_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_OPERATION_DESCRIPTION")
@@ -5880,19 +5634,15 @@ impl ::core::fmt::Debug for WS_OPERATION_DESCRIPTION {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_OPERATION_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_OPERATION_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_OPERATION_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_OPERATION_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_OPERATION_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7950,46 +7700,37 @@ impl ::core::fmt::Debug for WS_SERVICE_CANCEL_REASON {
 }
 pub type WS_SERVICE_CLOSE_CHANNEL_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const WS_OPERATION_CONTEXT, asynccontext: *const WS_ASYNC_CONTEXT) -> ::windows_core::HRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_SERVICE_CONTRACT {
     pub contractDescription: *const WS_CONTRACT_DESCRIPTION,
     pub defaultMessageHandlerCallback: WS_SERVICE_MESSAGE_RECEIVE_CALLBACK,
     pub methodTable: *const ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_SERVICE_CONTRACT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_SERVICE_CONTRACT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_SERVICE_CONTRACT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_SERVICE_CONTRACT").field("contractDescription", &self.contractDescription).field("defaultMessageHandlerCallback", &self.defaultMessageHandlerCallback.map(|f| f as usize)).field("methodTable", &self.methodTable).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_SERVICE_CONTRACT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_SERVICE_CONTRACT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_SERVICE_CONTRACT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_SERVICE_CONTRACT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_SERVICE_CONTRACT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_SERVICE_ENDPOINT {
     pub address: WS_ENDPOINT_ADDRESS,
     pub channelBinding: WS_CHANNEL_BINDING,
@@ -8001,72 +7742,57 @@ pub struct WS_SERVICE_ENDPOINT {
     pub propertyCount: u32,
     pub channelProperties: WS_CHANNEL_PROPERTIES,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_SERVICE_ENDPOINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_SERVICE_ENDPOINT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_SERVICE_ENDPOINT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_SERVICE_ENDPOINT").field("address", &self.address).field("channelBinding", &self.channelBinding).field("channelType", &self.channelType).field("securityDescription", &self.securityDescription).field("contract", &self.contract).field("authorizationCallback", &self.authorizationCallback.map(|f| f as usize)).field("properties", &self.properties).field("propertyCount", &self.propertyCount).field("channelProperties", &self.channelProperties).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_SERVICE_ENDPOINT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_SERVICE_ENDPOINT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_SERVICE_ENDPOINT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_SERVICE_ENDPOINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_SERVICE_ENDPOINT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_SERVICE_ENDPOINT_METADATA {
     pub portName: *mut WS_XML_STRING,
     pub bindingName: *mut WS_XML_STRING,
     pub bindingNs: *mut WS_XML_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_SERVICE_ENDPOINT_METADATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_SERVICE_ENDPOINT_METADATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_SERVICE_ENDPOINT_METADATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_SERVICE_ENDPOINT_METADATA").field("portName", &self.portName).field("bindingName", &self.bindingName).field("bindingNs", &self.bindingNs).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_SERVICE_ENDPOINT_METADATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_SERVICE_ENDPOINT_METADATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_SERVICE_ENDPOINT_METADATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_SERVICE_ENDPOINT_METADATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_SERVICE_ENDPOINT_METADATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8172,78 +7898,62 @@ impl ::core::fmt::Debug for WS_SERVICE_HOST_STATE {
 }
 pub type WS_SERVICE_MESSAGE_RECEIVE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const WS_OPERATION_CONTEXT, asynccontext: *const WS_ASYNC_CONTEXT, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_SERVICE_METADATA {
     pub documentCount: u32,
     pub documents: *mut *mut WS_SERVICE_METADATA_DOCUMENT,
     pub serviceName: *mut WS_XML_STRING,
     pub serviceNs: *mut WS_XML_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_SERVICE_METADATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_SERVICE_METADATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_SERVICE_METADATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_SERVICE_METADATA").field("documentCount", &self.documentCount).field("documents", &self.documents).field("serviceName", &self.serviceName).field("serviceNs", &self.serviceNs).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_SERVICE_METADATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_SERVICE_METADATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_SERVICE_METADATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_SERVICE_METADATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_SERVICE_METADATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_SERVICE_METADATA_DOCUMENT {
     pub content: *mut WS_XML_STRING,
     pub name: *mut WS_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_SERVICE_METADATA_DOCUMENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_SERVICE_METADATA_DOCUMENT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_SERVICE_METADATA_DOCUMENT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_SERVICE_METADATA_DOCUMENT").field("content", &self.content).field("name", &self.name).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_SERVICE_METADATA_DOCUMENT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_SERVICE_METADATA_DOCUMENT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_SERVICE_METADATA_DOCUMENT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_SERVICE_METADATA_DOCUMENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_SERVICE_METADATA_DOCUMENT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8397,8 +8107,7 @@ impl ::core::fmt::Debug for WS_SERVICE_PROXY_STATE {
         f.debug_tuple("WS_SERVICE_PROXY_STATE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type WS_SERVICE_SECURITY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const WS_OPERATION_CONTEXT, authorized: *mut super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
+pub type WS_SERVICE_SECURITY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(context: *const WS_OPERATION_CONTEXT, authorized: *mut ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT>;
 #[repr(C)]
 pub struct WS_SERVICE_SECURITY_IDENTITIES {
     pub serviceIdentities: *mut WS_STRING,
@@ -8529,75 +8238,59 @@ impl ::core::default::Default for WS_SSL_TRANSPORT_SECURITY_BINDING {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT {
     pub bindingConstraint: WS_SECURITY_BINDING_CONSTRAINT,
     pub out: WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT").field("bindingConstraint", &self.bindingConstraint).field("out", &self.out).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0 {
-    pub clientCertCredentialRequired: super::super::Foundation::BOOL,
+    pub clientCertCredentialRequired: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0").field("clientCertCredentialRequired", &self.clientCertCredentialRequired).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8816,7 +8509,6 @@ impl ::core::default::Default for WS_STRING_WINDOWS_INTEGRATED_AUTH_CREDENTIAL {
 }
 pub const WS_STRUCT_ABSTRACT: i32 = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_STRUCT_DESCRIPTION {
     pub size: u32,
     pub alignment: u32,
@@ -8829,33 +8521,26 @@ pub struct WS_STRUCT_DESCRIPTION {
     pub subTypeCount: u32,
     pub structOptions: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_STRUCT_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_STRUCT_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_STRUCT_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_STRUCT_DESCRIPTION").field("size", &self.size).field("alignment", &self.alignment).field("fields", &self.fields).field("fieldCount", &self.fieldCount).field("typeLocalName", &self.typeLocalName).field("typeNs", &self.typeNs).field("parentType", &self.parentType).field("subTypes", &self.subTypes).field("subTypeCount", &self.subTypeCount).field("structOptions", &self.structOptions).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_STRUCT_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_STRUCT_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_STRUCT_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_STRUCT_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_STRUCT_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9927,7 +9612,6 @@ impl ::core::default::Default for WS_UINT8_DESCRIPTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_UNION_DESCRIPTION {
     pub size: u32,
     pub alignment: u32,
@@ -9937,71 +9621,56 @@ pub struct WS_UNION_DESCRIPTION {
     pub noneEnumValue: i32,
     pub valueIndices: *mut u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_UNION_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_UNION_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_UNION_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_UNION_DESCRIPTION").field("size", &self.size).field("alignment", &self.alignment).field("fields", &self.fields).field("fieldCount", &self.fieldCount).field("enumOffset", &self.enumOffset).field("noneEnumValue", &self.noneEnumValue).field("valueIndices", &self.valueIndices).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_UNION_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_UNION_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_UNION_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_UNION_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_UNION_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_UNION_FIELD_DESCRIPTION {
     pub value: i32,
     pub field: WS_FIELD_DESCRIPTION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_UNION_FIELD_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_UNION_FIELD_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_UNION_FIELD_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_UNION_FIELD_DESCRIPTION").field("value", &self.value).field("field", &self.field).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_UNION_FIELD_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_UNION_FIELD_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_UNION_FIELD_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_UNION_FIELD_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_UNION_FIELD_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10602,7 +10271,6 @@ impl ::core::default::Default for WS_WSZ_DESCRIPTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_ATTRIBUTE {
     pub singleQuote: u8,
     pub isXmlNs: u8,
@@ -10611,33 +10279,26 @@ pub struct WS_XML_ATTRIBUTE {
     pub ns: *mut WS_XML_STRING,
     pub value: *mut WS_XML_TEXT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_ATTRIBUTE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_ATTRIBUTE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_ATTRIBUTE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_ATTRIBUTE").field("singleQuote", &self.singleQuote).field("isXmlNs", &self.isXmlNs).field("prefix", &self.prefix).field("localName", &self.localName).field("ns", &self.ns).field("value", &self.value).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_ATTRIBUTE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_ATTRIBUTE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_ATTRIBUTE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_ATTRIBUTE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_ATTRIBUTE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10675,38 +10336,30 @@ impl ::core::default::Default for WS_XML_BASE64_TEXT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_BOOL_TEXT {
     pub text: WS_XML_TEXT,
-    pub value: super::super::Foundation::BOOL,
+    pub value: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_BOOL_TEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_BOOL_TEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_BOOL_TEXT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_BOOL_TEXT").field("text", &self.text).field("value", &self.value).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_BOOL_TEXT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_BOOL_TEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_BOOL_TEXT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_BOOL_TEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_BOOL_TEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10794,38 +10447,30 @@ impl ::core::fmt::Debug for WS_XML_CANONICALIZATION_ALGORITHM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES {
     pub prefixCount: u32,
     pub prefixes: *mut WS_XML_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES").field("prefixCount", &self.prefixCount).field("prefixes", &self.prefixes).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10889,38 +10534,30 @@ impl ::core::fmt::Debug for WS_XML_CANONICALIZATION_PROPERTY_ID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_COMMENT_NODE {
     pub node: WS_XML_NODE,
     pub value: WS_XML_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_COMMENT_NODE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_COMMENT_NODE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_COMMENT_NODE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_COMMENT_NODE").field("node", &self.node).field("value", &self.value).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_COMMENT_NODE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_COMMENT_NODE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_COMMENT_NODE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_COMMENT_NODE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_COMMENT_NODE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10957,72 +10594,57 @@ impl ::core::default::Default for WS_XML_DATETIME_TEXT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_DECIMAL_TEXT {
     pub text: WS_XML_TEXT,
-    pub value: super::super::Foundation::DECIMAL,
+    pub value: ::win32_foundation::DECIMAL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_DECIMAL_TEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_DECIMAL_TEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_DECIMAL_TEXT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_DECIMAL_TEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_DECIMAL_TEXT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_DECIMAL_TEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_DECIMAL_TEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_DICTIONARY {
     pub guid: ::windows_core::GUID,
     pub strings: *mut WS_XML_STRING,
     pub stringCount: u32,
-    pub isConst: super::super::Foundation::BOOL,
+    pub isConst: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_DICTIONARY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_DICTIONARY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_DICTIONARY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_DICTIONARY").field("guid", &self.guid).field("strings", &self.strings).field("stringCount", &self.stringCount).field("isConst", &self.isConst).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_DICTIONARY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_DICTIONARY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_DICTIONARY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_DICTIONARY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_DICTIONARY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11059,7 +10681,6 @@ impl ::core::default::Default for WS_XML_DOUBLE_TEXT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_ELEMENT_NODE {
     pub node: WS_XML_NODE,
     pub prefix: *mut WS_XML_STRING,
@@ -11067,35 +10688,28 @@ pub struct WS_XML_ELEMENT_NODE {
     pub ns: *mut WS_XML_STRING,
     pub attributeCount: u32,
     pub attributes: *mut *mut WS_XML_ATTRIBUTE,
-    pub isEmpty: super::super::Foundation::BOOL,
+    pub isEmpty: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_ELEMENT_NODE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_ELEMENT_NODE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_ELEMENT_NODE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_ELEMENT_NODE").field("node", &self.node).field("prefix", &self.prefix).field("localName", &self.localName).field("ns", &self.ns).field("attributeCount", &self.attributeCount).field("attributes", &self.attributes).field("isEmpty", &self.isEmpty).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_ELEMENT_NODE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_ELEMENT_NODE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_ELEMENT_NODE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_ELEMENT_NODE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_ELEMENT_NODE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11342,38 +10956,30 @@ impl ::core::fmt::Debug for WS_XML_NODE_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_QNAME {
     pub localName: WS_XML_STRING,
     pub ns: WS_XML_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_QNAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_QNAME {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_QNAME {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_QNAME").field("localName", &self.localName).field("ns", &self.ns).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_QNAME {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_QNAME {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_QNAME>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_QNAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_QNAME {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11412,40 +11018,32 @@ impl ::core::default::Default for WS_XML_QNAME_DESCRIPTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_QNAME_TEXT {
     pub text: WS_XML_TEXT,
     pub prefix: *mut WS_XML_STRING,
     pub localName: *mut WS_XML_STRING,
     pub ns: *mut WS_XML_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_QNAME_TEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_QNAME_TEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_QNAME_TEXT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_QNAME_TEXT").field("text", &self.text).field("prefix", &self.prefix).field("localName", &self.localName).field("ns", &self.ns).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_QNAME_TEXT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_QNAME_TEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_QNAME_TEXT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_QNAME_TEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_QNAME_TEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11454,39 +11052,31 @@ impl ::core::default::Default for WS_XML_QNAME_TEXT {
 #[repr(C)]
 pub struct WS_XML_READER(pub u8);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_READER_BINARY_ENCODING {
     pub encoding: WS_XML_READER_ENCODING,
     pub staticDictionary: *mut WS_XML_DICTIONARY,
     pub dynamicDictionary: *mut WS_XML_DICTIONARY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_READER_BINARY_ENCODING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_READER_BINARY_ENCODING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_READER_BINARY_ENCODING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_READER_BINARY_ENCODING").field("encoding", &self.encoding).field("staticDictionary", &self.staticDictionary).field("dynamicDictionary", &self.dynamicDictionary).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_READER_BINARY_ENCODING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_READER_BINARY_ENCODING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_READER_BINARY_ENCODING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_READER_BINARY_ENCODING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_READER_BINARY_ENCODING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11632,42 +11222,34 @@ impl ::core::fmt::Debug for WS_XML_READER_INPUT_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_READER_MTOM_ENCODING {
     pub encoding: WS_XML_READER_ENCODING,
     pub textEncoding: *mut WS_XML_READER_ENCODING,
-    pub readMimeHeader: super::super::Foundation::BOOL,
+    pub readMimeHeader: ::win32_foundation::BOOL,
     pub startInfo: WS_STRING,
     pub boundary: WS_STRING,
     pub startUri: WS_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_READER_MTOM_ENCODING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_READER_MTOM_ENCODING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_READER_MTOM_ENCODING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_READER_MTOM_ENCODING").field("encoding", &self.encoding).field("textEncoding", &self.textEncoding).field("readMimeHeader", &self.readMimeHeader).field("startInfo", &self.startInfo).field("boundary", &self.boundary).field("startUri", &self.startUri).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_READER_MTOM_ENCODING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_READER_MTOM_ENCODING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_READER_MTOM_ENCODING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_READER_MTOM_ENCODING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_READER_MTOM_ENCODING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11919,40 +11501,32 @@ impl ::core::fmt::Debug for WS_XML_SECURITY_TOKEN_PROPERTY_ID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_STRING {
     pub length: u32,
     pub bytes: *mut u8,
     pub dictionary: *mut WS_XML_DICTIONARY,
     pub id: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_STRING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_STRING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_STRING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_STRING").field("length", &self.length).field("bytes", &self.bytes).field("dictionary", &self.dictionary).field("id", &self.id).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_STRING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_STRING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_STRING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_STRING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_STRING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12238,38 +11812,30 @@ impl ::core::default::Default for WS_XML_UTF16_TEXT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_UTF8_TEXT {
     pub text: WS_XML_TEXT,
     pub value: WS_XML_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_UTF8_TEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_UTF8_TEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_UTF8_TEXT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_UTF8_TEXT").field("text", &self.text).field("value", &self.value).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_UTF8_TEXT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_UTF8_TEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_UTF8_TEXT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_UTF8_TEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_UTF8_TEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12278,40 +11844,32 @@ impl ::core::default::Default for WS_XML_UTF8_TEXT {
 #[repr(C)]
 pub struct WS_XML_WRITER(pub u8);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_WRITER_BINARY_ENCODING {
     pub encoding: WS_XML_WRITER_ENCODING,
     pub staticDictionary: *mut WS_XML_DICTIONARY,
     pub dynamicStringCallback: WS_DYNAMIC_STRING_CALLBACK,
     pub dynamicStringCallbackState: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_WRITER_BINARY_ENCODING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_WRITER_BINARY_ENCODING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_WRITER_BINARY_ENCODING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_WRITER_BINARY_ENCODING").field("encoding", &self.encoding).field("staticDictionary", &self.staticDictionary).field("dynamicStringCallback", &self.dynamicStringCallback.map(|f| f as usize)).field("dynamicStringCallbackState", &self.dynamicStringCallbackState).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_WRITER_BINARY_ENCODING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_WRITER_BINARY_ENCODING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_WRITER_BINARY_ENCODING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_WRITER_BINARY_ENCODING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_WRITER_BINARY_ENCODING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12402,43 +11960,35 @@ impl ::core::fmt::Debug for WS_XML_WRITER_ENCODING_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WS_XML_WRITER_MTOM_ENCODING {
     pub encoding: WS_XML_WRITER_ENCODING,
     pub textEncoding: *mut WS_XML_WRITER_ENCODING,
-    pub writeMimeHeader: super::super::Foundation::BOOL,
+    pub writeMimeHeader: ::win32_foundation::BOOL,
     pub boundary: WS_STRING,
     pub startInfo: WS_STRING,
     pub startUri: WS_STRING,
     pub maxInlineByteCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WS_XML_WRITER_MTOM_ENCODING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WS_XML_WRITER_MTOM_ENCODING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WS_XML_WRITER_MTOM_ENCODING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WS_XML_WRITER_MTOM_ENCODING").field("encoding", &self.encoding).field("textEncoding", &self.textEncoding).field("writeMimeHeader", &self.writeMimeHeader).field("boundary", &self.boundary).field("startInfo", &self.startInfo).field("startUri", &self.startUri).field("maxInlineByteCount", &self.maxInlineByteCount).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WS_XML_WRITER_MTOM_ENCODING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WS_XML_WRITER_MTOM_ENCODING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WS_XML_WRITER_MTOM_ENCODING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WS_XML_WRITER_MTOM_ENCODING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WS_XML_WRITER_MTOM_ENCODING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12689,14 +12239,13 @@ impl ::core::default::Default for WS_XML_WRITER_TEXT_ENCODING {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WebAuthNAuthenticatorGetAssertion<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, pwszrpid: Param1, pwebauthnclientdata: *const WEBAUTHN_CLIENT_DATA, pwebauthngetassertionoptions: *const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS) -> ::windows_core::Result<*mut WEBAUTHN_ASSERTION> {
+pub unsafe fn WebAuthNAuthenticatorGetAssertion<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, pwszrpid: Param1, pwebauthnclientdata: *const WEBAUTHN_CLIENT_DATA, pwebauthngetassertionoptions: *const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS) -> ::windows_core::Result<*mut WEBAUTHN_ASSERTION> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WebAuthNAuthenticatorGetAssertion(hwnd: super::super::Foundation::HWND, pwszrpid: ::windows_core::PCWSTR, pwebauthnclientdata: *const WEBAUTHN_CLIENT_DATA, pwebauthngetassertionoptions: *const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS, ppwebauthnassertion: *mut *mut WEBAUTHN_ASSERTION) -> ::windows_core::HRESULT;
+            fn WebAuthNAuthenticatorGetAssertion(hwnd: ::win32_foundation::HWND, pwszrpid: ::windows_core::PCWSTR, pwebauthnclientdata: *const WEBAUTHN_CLIENT_DATA, pwebauthngetassertionoptions: *const WEBAUTHN_AUTHENTICATOR_GET_ASSERTION_OPTIONS, ppwebauthnassertion: *mut *mut WEBAUTHN_ASSERTION) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut WEBAUTHN_ASSERTION>::zeroed();
         WebAuthNAuthenticatorGetAssertion(hwnd.into_param().abi(), pwszrpid.into_param().abi(), ::core::mem::transmute(pwebauthnclientdata), ::core::mem::transmute(pwebauthngetassertionoptions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut WEBAUTHN_ASSERTION>(result__)
@@ -12704,14 +12253,13 @@ pub unsafe fn WebAuthNAuthenticatorGetAssertion<'a, Param0: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WebAuthNAuthenticatorMakeCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, prpinformation: *const WEBAUTHN_RP_ENTITY_INFORMATION, puserinformation: *const WEBAUTHN_USER_ENTITY_INFORMATION, ppubkeycredparams: *const WEBAUTHN_COSE_CREDENTIAL_PARAMETERS, pwebauthnclientdata: *const WEBAUTHN_CLIENT_DATA, pwebauthnmakecredentialoptions: *const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS) -> ::windows_core::Result<*mut WEBAUTHN_CREDENTIAL_ATTESTATION> {
+pub unsafe fn WebAuthNAuthenticatorMakeCredential<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, prpinformation: *const WEBAUTHN_RP_ENTITY_INFORMATION, puserinformation: *const WEBAUTHN_USER_ENTITY_INFORMATION, ppubkeycredparams: *const WEBAUTHN_COSE_CREDENTIAL_PARAMETERS, pwebauthnclientdata: *const WEBAUTHN_CLIENT_DATA, pwebauthnmakecredentialoptions: *const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS) -> ::windows_core::Result<*mut WEBAUTHN_CREDENTIAL_ATTESTATION> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WebAuthNAuthenticatorMakeCredential(hwnd: super::super::Foundation::HWND, prpinformation: *const WEBAUTHN_RP_ENTITY_INFORMATION, puserinformation: *const WEBAUTHN_USER_ENTITY_INFORMATION, ppubkeycredparams: *const WEBAUTHN_COSE_CREDENTIAL_PARAMETERS, pwebauthnclientdata: *const WEBAUTHN_CLIENT_DATA, pwebauthnmakecredentialoptions: *const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS, ppwebauthncredentialattestation: *mut *mut WEBAUTHN_CREDENTIAL_ATTESTATION) -> ::windows_core::HRESULT;
+            fn WebAuthNAuthenticatorMakeCredential(hwnd: ::win32_foundation::HWND, prpinformation: *const WEBAUTHN_RP_ENTITY_INFORMATION, puserinformation: *const WEBAUTHN_USER_ENTITY_INFORMATION, ppubkeycredparams: *const WEBAUTHN_COSE_CREDENTIAL_PARAMETERS, pwebauthnclientdata: *const WEBAUTHN_CLIENT_DATA, pwebauthnmakecredentialoptions: *const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS, ppwebauthncredentialattestation: *mut *mut WEBAUTHN_CREDENTIAL_ATTESTATION) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<*mut WEBAUTHN_CREDENTIAL_ATTESTATION>::zeroed();
         WebAuthNAuthenticatorMakeCredential(hwnd.into_param().abi(), ::core::mem::transmute(prpinformation), ::core::mem::transmute(puserinformation), ::core::mem::transmute(ppubkeycredparams), ::core::mem::transmute(pwebauthnclientdata), ::core::mem::transmute(pwebauthnmakecredentialoptions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut WEBAUTHN_CREDENTIAL_ATTESTATION>(result__)
@@ -12745,7 +12293,6 @@ pub unsafe fn WebAuthNFreeAssertion(pwebauthnassertion: *const WEBAUTHN_ASSERTIO
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WebAuthNFreeCredentialAttestation(pwebauthncredentialattestation: *const WEBAUTHN_CREDENTIAL_ATTESTATION) {
     #[cfg(windows)]
@@ -12812,17 +12359,16 @@ pub unsafe fn WebAuthNGetW3CExceptionDOMError(hr: ::windows_core::HRESULT) -> ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WebAuthNIsUserVerifyingPlatformAuthenticatorAvailable() -> ::windows_core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn WebAuthNIsUserVerifyingPlatformAuthenticatorAvailable() -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WebAuthNIsUserVerifyingPlatformAuthenticatorAvailable(pbisuserverifyingplatformauthenticatoravailable: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn WebAuthNIsUserVerifyingPlatformAuthenticatorAvailable(pbisuserverifyingplatformauthenticatoravailable: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        WebAuthNIsUserVerifyingPlatformAuthenticatorAvailable(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        WebAuthNIsUserVerifyingPlatformAuthenticatorAvailable(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -12918,7 +12464,6 @@ pub unsafe fn WsAcceptChannel(listener: *const WS_LISTENER, channel: *const WS_C
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsAddCustomHeader(message: *const WS_MESSAGE, headerdescription: *const WS_ELEMENT_DESCRIPTION, writeoption: WS_WRITE_OPTION, value: *const ::core::ffi::c_void, valuesize: u32, headerattributes: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -12945,7 +12490,6 @@ pub unsafe fn WsAddErrorString(error: *const WS_ERROR, string: *const WS_STRING)
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsAddMappedHeader(message: *const WS_MESSAGE, headername: *const WS_XML_STRING, valuetype: WS_TYPE, writeoption: WS_WRITE_OPTION, value: *const ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -12998,7 +12542,6 @@ pub unsafe fn WsAsyncExecute(asyncstate: *const WS_ASYNC_STATE, operation: WS_AS
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsCall(serviceproxy: *const WS_SERVICE_PROXY, operation: *const WS_OPERATION_DESCRIPTION, arguments: *const *const ::core::ffi::c_void, heap: *const WS_HEAP, callproperties: &[WS_CALL_PROPERTY], asynccontext: *const WS_ASYNC_CONTEXT, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -13156,7 +12699,6 @@ pub unsafe fn WsCreateError(properties: &[WS_ERROR_PROPERTY]) -> ::windows_core:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsCreateFaultFromError(error: *const WS_ERROR, faulterrorcode: ::windows_core::HRESULT, faultdisclosure: WS_FAULT_DISCLOSURE, heap: *const WS_HEAP) -> ::windows_core::Result<WS_FAULT> {
     #[cfg(windows)]
@@ -13249,7 +12791,6 @@ pub unsafe fn WsCreateReader(properties: &[WS_XML_READER_PROPERTY], reader: *mut
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsCreateServiceEndpointFromTemplate(channeltype: WS_CHANNEL_TYPE, properties: &[WS_SERVICE_ENDPOINT_PROPERTY], addressurl: *const WS_STRING, contract: *const WS_SERVICE_CONTRACT, authorizationcallback: WS_SERVICE_SECURITY_CALLBACK, heap: *const WS_HEAP, templatetype: WS_BINDING_TEMPLATE_TYPE, templatevalue: *const ::core::ffi::c_void, templatesize: u32, templatedescription: *const ::core::ffi::c_void, templatedescriptionsize: u32, serviceendpoint: *mut *mut WS_SERVICE_ENDPOINT, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -13279,7 +12820,6 @@ pub unsafe fn WsCreateServiceEndpointFromTemplate(channeltype: WS_CHANNEL_TYPE, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsCreateServiceHost(endpoints: &[*const WS_SERVICE_ENDPOINT], serviceproperties: &[WS_SERVICE_PROPERTY], servicehost: *mut *mut WS_SERVICE_HOST, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -13358,14 +12898,13 @@ pub unsafe fn WsCreateXmlSecurityToken(tokenxml: *const WS_XML_BUFFER, tokenkey:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsDateTimeToFileTime(datetime: *const WS_DATETIME, filetime: *mut super::super::Foundation::FILETIME, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsDateTimeToFileTime(datetime: *const WS_DATETIME, filetime: *mut ::win32_foundation::FILETIME, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsDateTimeToFileTime(datetime: *const WS_DATETIME, filetime: *mut super::super::Foundation::FILETIME, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsDateTimeToFileTime(datetime: *const WS_DATETIME, filetime: *mut ::win32_foundation::FILETIME, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsDateTimeToFileTime(::core::mem::transmute(datetime), ::core::mem::transmute(filetime), ::core::mem::transmute(error)).ok()
     }
@@ -13424,14 +12963,13 @@ pub unsafe fn WsEndWriterCanonicalization(writer: *const WS_XML_WRITER, error: *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsFileTimeToDateTime(filetime: *const super::super::Foundation::FILETIME, datetime: *mut WS_DATETIME, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsFileTimeToDateTime(filetime: *const ::win32_foundation::FILETIME, datetime: *mut WS_DATETIME, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsFileTimeToDateTime(filetime: *const super::super::Foundation::FILETIME, datetime: *mut WS_DATETIME, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsFileTimeToDateTime(filetime: *const ::win32_foundation::FILETIME, datetime: *mut WS_DATETIME, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsFileTimeToDateTime(::core::mem::transmute(filetime), ::core::mem::transmute(datetime), ::core::mem::transmute(error)).ok()
     }
@@ -13464,14 +13002,13 @@ pub unsafe fn WsFillReader(reader: *const WS_XML_READER, minsize: u32, asynccont
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsFindAttribute<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, required: Param3, attributeindex: *mut u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsFindAttribute<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, required: Param3, attributeindex: *mut u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsFindAttribute(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, required: super::super::Foundation::BOOL, attributeindex: *mut u32, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsFindAttribute(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, required: ::win32_foundation::BOOL, attributeindex: *mut u32, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsFindAttribute(::core::mem::transmute(reader), ::core::mem::transmute(localname), ::core::mem::transmute(ns), required.into_param().abi(), ::core::mem::transmute(attributeindex), ::core::mem::transmute(error)).ok()
     }
@@ -13660,7 +13197,6 @@ pub unsafe fn WsGetChannelProperty(channel: *const WS_CHANNEL, id: WS_CHANNEL_PR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsGetCustomHeader(message: *const WS_MESSAGE, customheaderdescription: *const WS_ELEMENT_DESCRIPTION, repeatingoption: WS_REPEATING_HEADER_OPTION, headerindex: u32, readoption: WS_READ_OPTION, heap: *const WS_HEAP, value: *mut ::core::ffi::c_void, valuesize: u32, headerattributes: *mut u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -13674,7 +13210,6 @@ pub unsafe fn WsGetCustomHeader(message: *const WS_MESSAGE, customheaderdescript
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsGetDictionary(encoding: WS_ENCODING, dictionary: *mut *mut WS_XML_DICTIONARY, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -13715,7 +13250,6 @@ pub unsafe fn WsGetErrorString(error: *const WS_ERROR, index: u32) -> ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsGetFaultErrorDetail(error: *const WS_ERROR, faultdetaildescription: *const WS_FAULT_DETAIL_DESCRIPTION, readoption: WS_READ_OPTION, heap: *const WS_HEAP, value: *mut ::core::ffi::c_void, valuesize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -13794,7 +13328,6 @@ pub unsafe fn WsGetListenerProperty(listener: *const WS_LISTENER, id: WS_LISTENE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsGetMappedHeader(message: *const WS_MESSAGE, headername: *const WS_XML_STRING, repeatingoption: WS_REPEATING_HEADER_OPTION, headerindex: u32, valuetype: WS_TYPE, readoption: WS_READ_OPTION, heap: *const WS_HEAP, value: *mut ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -13821,7 +13354,6 @@ pub unsafe fn WsGetMessageProperty(message: *const WS_MESSAGE, id: WS_MESSAGE_PR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsGetMetadataEndpoints(metadata: *const WS_METADATA, endpoints: *mut WS_METADATA_ENDPOINTS, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -13861,14 +13393,13 @@ pub unsafe fn WsGetMissingMetadataDocumentAddress(metadata: *const WS_METADATA, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsGetNamespaceFromPrefix<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(reader: *const WS_XML_READER, prefix: *const WS_XML_STRING, required: Param2, ns: *mut *mut WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsGetNamespaceFromPrefix<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(reader: *const WS_XML_READER, prefix: *const WS_XML_STRING, required: Param2, ns: *mut *mut WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsGetNamespaceFromPrefix(reader: *const WS_XML_READER, prefix: *const WS_XML_STRING, required: super::super::Foundation::BOOL, ns: *mut *mut WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsGetNamespaceFromPrefix(reader: *const WS_XML_READER, prefix: *const WS_XML_STRING, required: ::win32_foundation::BOOL, ns: *mut *mut WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsGetNamespaceFromPrefix(::core::mem::transmute(reader), ::core::mem::transmute(prefix), required.into_param().abi(), ::core::mem::transmute(ns), ::core::mem::transmute(error)).ok()
     }
@@ -13914,14 +13445,13 @@ pub unsafe fn WsGetPolicyProperty(policy: *const WS_POLICY, id: WS_POLICY_PROPER
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsGetPrefixFromNamespace<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(writer: *const WS_XML_WRITER, ns: *const WS_XML_STRING, required: Param2, prefix: *mut *mut WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsGetPrefixFromNamespace<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(writer: *const WS_XML_WRITER, ns: *const WS_XML_STRING, required: Param2, prefix: *mut *mut WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsGetPrefixFromNamespace(writer: *const WS_XML_WRITER, ns: *const WS_XML_STRING, required: super::super::Foundation::BOOL, prefix: *mut *mut WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsGetPrefixFromNamespace(writer: *const WS_XML_WRITER, ns: *const WS_XML_STRING, required: ::win32_foundation::BOOL, prefix: *mut *mut WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsGetPrefixFromNamespace(::core::mem::transmute(writer), ::core::mem::transmute(ns), required.into_param().abi(), ::core::mem::transmute(prefix), ::core::mem::transmute(error)).ok()
     }
@@ -14045,7 +13575,6 @@ pub unsafe fn WsGetWriterProperty(writer: *const WS_XML_WRITER, id: WS_XML_WRITE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsGetXmlAttribute(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, heap: *const WS_HEAP, valuechars: *mut *mut u16, valuecharcount: *mut u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14085,42 +13614,39 @@ pub unsafe fn WsMarkHeaderAsUnderstood(message: *const WS_MESSAGE, headerpositio
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsMatchPolicyAlternative<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(policy: *const WS_POLICY, alternativeindex: u32, policyconstraints: *const WS_POLICY_CONSTRAINTS, matchrequired: Param3, heap: *const WS_HEAP, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsMatchPolicyAlternative<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(policy: *const WS_POLICY, alternativeindex: u32, policyconstraints: *const WS_POLICY_CONSTRAINTS, matchrequired: Param3, heap: *const WS_HEAP, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsMatchPolicyAlternative(policy: *const WS_POLICY, alternativeindex: u32, policyconstraints: *const WS_POLICY_CONSTRAINTS, matchrequired: super::super::Foundation::BOOL, heap: *const WS_HEAP, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsMatchPolicyAlternative(policy: *const WS_POLICY, alternativeindex: u32, policyconstraints: *const WS_POLICY_CONSTRAINTS, matchrequired: ::win32_foundation::BOOL, heap: *const WS_HEAP, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsMatchPolicyAlternative(::core::mem::transmute(policy), ::core::mem::transmute(alternativeindex), ::core::mem::transmute(policyconstraints), matchrequired.into_param().abi(), ::core::mem::transmute(heap), ::core::mem::transmute(error)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsMoveReader(reader: *const WS_XML_READER, moveto: WS_MOVE_TO, found: *mut super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsMoveReader(reader: *const WS_XML_READER, moveto: WS_MOVE_TO, found: *mut ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsMoveReader(reader: *const WS_XML_READER, moveto: WS_MOVE_TO, found: *mut super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsMoveReader(reader: *const WS_XML_READER, moveto: WS_MOVE_TO, found: *mut ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsMoveReader(::core::mem::transmute(reader), ::core::mem::transmute(moveto), ::core::mem::transmute(found), ::core::mem::transmute(error)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsMoveWriter(writer: *const WS_XML_WRITER, moveto: WS_MOVE_TO, found: *mut super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsMoveWriter(writer: *const WS_XML_WRITER, moveto: WS_MOVE_TO, found: *mut ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsMoveWriter(writer: *const WS_XML_WRITER, moveto: WS_MOVE_TO, found: *mut super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsMoveWriter(writer: *const WS_XML_WRITER, moveto: WS_MOVE_TO, found: *mut ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsMoveWriter(::core::mem::transmute(writer), ::core::mem::transmute(moveto), ::core::mem::transmute(found), ::core::mem::transmute(error)).ok()
     }
@@ -14205,7 +13731,6 @@ pub unsafe fn WsPushBytes(writer: *const WS_XML_WRITER, callback: WS_PUSH_BYTES_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsReadArray(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, valuetype: WS_VALUE_TYPE, array: *mut ::core::ffi::c_void, arraysize: u32, itemoffset: u32, itemcount: u32, actualitemcount: *mut u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14219,7 +13744,6 @@ pub unsafe fn WsReadArray(reader: *const WS_XML_READER, localname: *const WS_XML
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsReadAttribute(reader: *const WS_XML_READER, attributedescription: *const WS_ATTRIBUTE_DESCRIPTION, readoption: WS_READ_OPTION, heap: *const WS_HEAP, value: *mut ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14233,7 +13757,6 @@ pub unsafe fn WsReadAttribute(reader: *const WS_XML_READER, attributedescription
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsReadBody(message: *const WS_MESSAGE, bodydescription: *const WS_ELEMENT_DESCRIPTION, readoption: WS_READ_OPTION, heap: *const WS_HEAP, value: *mut ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14286,7 +13809,6 @@ pub unsafe fn WsReadCharsUtf8(reader: *const WS_XML_READER, bytes: &mut [u8], ac
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsReadElement(reader: *const WS_XML_READER, elementdescription: *const WS_ELEMENT_DESCRIPTION, readoption: WS_READ_OPTION, heap: *const WS_HEAP, value: *mut ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14417,7 +13939,6 @@ pub unsafe fn WsReadNode(reader: *const WS_XML_READER, error: *const WS_ERROR) -
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsReadQualifiedName(reader: *const WS_XML_READER, heap: *const WS_HEAP, prefix: *mut WS_XML_STRING, localname: *mut WS_XML_STRING, ns: *mut WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14457,14 +13978,13 @@ pub unsafe fn WsReadStartElement(reader: *const WS_XML_READER, error: *const WS_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsReadToStartElement(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, found: *mut super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsReadToStartElement(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, found: *mut ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsReadToStartElement(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, found: *mut super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsReadToStartElement(reader: *const WS_XML_READER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, found: *mut ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsReadToStartElement(::core::mem::transmute(reader), ::core::mem::transmute(localname), ::core::mem::transmute(ns), ::core::mem::transmute(found), ::core::mem::transmute(error)).ok()
     }
@@ -14523,7 +14043,6 @@ pub unsafe fn WsReadXmlBufferFromBytes(reader: *const WS_XML_READER, encoding: *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsReceiveMessage(channel: *const WS_CHANNEL, message: *const WS_MESSAGE, messagedescriptions: &[*const WS_MESSAGE_DESCRIPTION], receiveoption: WS_RECEIVE_OPTION, readbodyoption: WS_READ_OPTION, heap: *const WS_HEAP, value: *mut ::core::ffi::c_void, valuesize: u32, index: *mut u32, asynccontext: *const WS_ASYNC_CONTEXT, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14550,7 +14069,6 @@ pub unsafe fn WsRegisterOperationForCancel(context: *const WS_OPERATION_CONTEXT,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsRemoveCustomHeader(message: *const WS_MESSAGE, headername: *const WS_XML_STRING, headerns: *const WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14577,7 +14095,6 @@ pub unsafe fn WsRemoveHeader(message: *const WS_MESSAGE, headertype: WS_HEADER_T
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsRemoveMappedHeader(message: *const WS_MESSAGE, headername: *const WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14604,7 +14121,6 @@ pub unsafe fn WsRemoveNode(nodeposition: *const WS_XML_NODE_POSITION, error: *co
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsRequestReply(channel: *const WS_CHANNEL, requestmessage: *const WS_MESSAGE, requestmessagedescription: *const WS_MESSAGE_DESCRIPTION, writeoption: WS_WRITE_OPTION, requestbodyvalue: *const ::core::ffi::c_void, requestbodyvaluesize: u32, replymessage: *const WS_MESSAGE, replymessagedescription: *const WS_MESSAGE_DESCRIPTION, readoption: WS_READ_OPTION, heap: *const WS_HEAP, value: *mut ::core::ffi::c_void, valuesize: u32, asynccontext: *const WS_ASYNC_CONTEXT, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14777,7 +14293,6 @@ pub unsafe fn WsSendFaultMessageForError(channel: *const WS_CHANNEL, replymessag
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsSendMessage(channel: *const WS_CHANNEL, message: *const WS_MESSAGE, messagedescription: *const WS_MESSAGE_DESCRIPTION, writeoption: WS_WRITE_OPTION, bodyvalue: *const ::core::ffi::c_void, bodyvaluesize: u32, asynccontext: *const WS_ASYNC_CONTEXT, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14791,7 +14306,6 @@ pub unsafe fn WsSendMessage(channel: *const WS_CHANNEL, message: *const WS_MESSA
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsSendReplyMessage(channel: *const WS_CHANNEL, replymessage: *const WS_MESSAGE, replymessagedescription: *const WS_MESSAGE_DESCRIPTION, writeoption: WS_WRITE_OPTION, replybodyvalue: *const ::core::ffi::c_void, replybodyvaluesize: u32, requestmessage: *const WS_MESSAGE, asynccontext: *const WS_ASYNC_CONTEXT, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -14831,7 +14345,6 @@ pub unsafe fn WsSetErrorProperty(error: *const WS_ERROR, id: WS_ERROR_PROPERTY_I
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsSetFaultErrorDetail(error: *const WS_ERROR, faultdetaildescription: *const WS_FAULT_DETAIL_DESCRIPTION, writeoption: WS_WRITE_OPTION, value: *const ::core::ffi::c_void, valuesize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -15053,7 +14566,6 @@ pub unsafe fn WsVerifyXmlNCName(ncnamechars: &[u16], error: *const WS_ERROR) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsWriteArray(writer: *const WS_XML_WRITER, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, valuetype: WS_VALUE_TYPE, array: *const ::core::ffi::c_void, arraysize: u32, itemoffset: u32, itemcount: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -15067,7 +14579,6 @@ pub unsafe fn WsWriteArray(writer: *const WS_XML_WRITER, localname: *const WS_XM
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsWriteAttribute(writer: *const WS_XML_WRITER, attributedescription: *const WS_ATTRIBUTE_DESCRIPTION, writeoption: WS_WRITE_OPTION, value: *const ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -15081,7 +14592,6 @@ pub unsafe fn WsWriteAttribute(writer: *const WS_XML_WRITER, attributedescriptio
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsWriteBody(message: *const WS_MESSAGE, bodydescription: *const WS_ELEMENT_DESCRIPTION, writeoption: WS_WRITE_OPTION, value: *const ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -15134,7 +14644,6 @@ pub unsafe fn WsWriteCharsUtf8(writer: *const WS_XML_WRITER, bytes: &[u8], error
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsWriteElement(writer: *const WS_XML_WRITER, elementdescription: *const WS_ELEMENT_DESCRIPTION, writeoption: WS_WRITE_OPTION, value: *const ::core::ffi::c_void, valuesize: u32, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -15265,7 +14774,6 @@ pub unsafe fn WsWriteNode(writer: *const WS_XML_WRITER, node: *const WS_XML_NODE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsWriteQualifiedName(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -15279,14 +14787,13 @@ pub unsafe fn WsWriteQualifiedName(writer: *const WS_XML_WRITER, prefix: *const 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsWriteStartAttribute<'a, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, singlequote: Param4, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsWriteStartAttribute<'a, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, singlequote: Param4, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsWriteStartAttribute(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, singlequote: super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsWriteStartAttribute(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, singlequote: ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsWriteStartAttribute(::core::mem::transmute(writer), ::core::mem::transmute(prefix), ::core::mem::transmute(localname), ::core::mem::transmute(ns), singlequote.into_param().abi(), ::core::mem::transmute(error)).ok()
     }
@@ -15306,7 +14813,6 @@ pub unsafe fn WsWriteStartCData(writer: *const WS_XML_WRITER, error: *const WS_E
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsWriteStartElement(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, localname: *const WS_XML_STRING, ns: *const WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -15385,21 +14891,19 @@ pub unsafe fn WsWriteXmlBufferToBytes(writer: *const WS_XML_WRITER, xmlbuffer: *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WsWriteXmlnsAttribute<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, ns: *const WS_XML_STRING, singlequote: Param3, error: *const WS_ERROR) -> ::windows_core::Result<()> {
+pub unsafe fn WsWriteXmlnsAttribute<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, ns: *const WS_XML_STRING, singlequote: Param3, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WsWriteXmlnsAttribute(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, ns: *const WS_XML_STRING, singlequote: super::super::Foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
+            fn WsWriteXmlnsAttribute(writer: *const WS_XML_WRITER, prefix: *const WS_XML_STRING, ns: *const WS_XML_STRING, singlequote: ::win32_foundation::BOOL, error: *const WS_ERROR) -> ::windows_core::HRESULT;
         }
         WsWriteXmlnsAttribute(::core::mem::transmute(writer), ::core::mem::transmute(prefix), ::core::mem::transmute(ns), singlequote.into_param().abi(), ::core::mem::transmute(error)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WsXmlStringEquals(string1: *const WS_XML_STRING, string2: *const WS_XML_STRING, error: *const WS_ERROR) -> ::windows_core::Result<()> {
     #[cfg(windows)]

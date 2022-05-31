@@ -104,19 +104,17 @@ pub const DMO_E_NO_MORE_ITEMS: ::windows_core::HRESULT = ::windows_core::HRESULT
 pub const DMO_E_TYPE_NOT_ACCEPTED: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147220987i32);
 pub const DMO_E_TYPE_NOT_SET: ::windows_core::HRESULT = ::windows_core::HRESULT(-2147220989i32);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DMO_MEDIA_TYPE {
     pub majortype: ::windows_core::GUID,
     pub subtype: ::windows_core::GUID,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation::BOOL,
+    pub bTemporalCompression: ::win32_foundation::BOOL,
     pub lSampleSize: u32,
     pub formattype: ::windows_core::GUID,
     pub pUnk: ::core::option::Option<::windows_core::IUnknown>,
     pub cbFormat: u32,
     pub pbFormat: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DMO_MEDIA_TYPE {
     fn clone(&self) -> Self {
         Self {
@@ -132,25 +130,20 @@ impl ::core::clone::Clone for DMO_MEDIA_TYPE {
         }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DMO_MEDIA_TYPE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DMO_MEDIA_TYPE").field("majortype", &self.majortype).field("subtype", &self.subtype).field("bFixedSizeSamples", &self.bFixedSizeSamples).field("bTemporalCompression", &self.bTemporalCompression).field("lSampleSize", &self.lSampleSize).field("formattype", &self.formattype).field("pUnk", &self.pUnk).field("cbFormat", &self.cbFormat).field("pbFormat", &self.pbFormat).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DMO_MEDIA_TYPE {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DMO_MEDIA_TYPE {
     fn eq(&self, other: &Self) -> bool {
         self.majortype == other.majortype && self.subtype == other.subtype && self.bFixedSizeSamples == other.bFixedSizeSamples && self.bTemporalCompression == other.bTemporalCompression && self.lSampleSize == other.lSampleSize && self.formattype == other.formattype && self.pUnk == other.pUnk && self.cbFormat == other.cbFormat && self.pbFormat == other.pbFormat
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DMO_MEDIA_TYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DMO_MEDIA_TYPE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -512,30 +505,24 @@ impl IMediaObject {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetOutputStreamInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwoutputstreamindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetInputType(&self, dwinputstreamindex: u32, dwtypeindex: u32) -> ::windows_core::Result<DMO_MEDIA_TYPE> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<DMO_MEDIA_TYPE>>::zeroed();
         (::windows_core::Interface::vtable(self).GetInputType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwinputstreamindex), ::core::mem::transmute(dwtypeindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DMO_MEDIA_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetOutputType(&self, dwoutputstreamindex: u32, dwtypeindex: u32) -> ::windows_core::Result<DMO_MEDIA_TYPE> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<DMO_MEDIA_TYPE>>::zeroed();
         (::windows_core::Interface::vtable(self).GetOutputType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwoutputstreamindex), ::core::mem::transmute(dwtypeindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DMO_MEDIA_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetInputType(&self, dwinputstreamindex: u32, pmt: *const DMO_MEDIA_TYPE, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetInputType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwinputstreamindex), ::core::mem::transmute(pmt), ::core::mem::transmute(dwflags)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetOutputType(&self, dwoutputstreamindex: u32, pmt: *const DMO_MEDIA_TYPE, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetOutputType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwoutputstreamindex), ::core::mem::transmute(pmt), ::core::mem::transmute(dwflags)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetInputCurrentType(&self, dwinputstreamindex: u32) -> ::windows_core::Result<DMO_MEDIA_TYPE> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<DMO_MEDIA_TYPE>>::zeroed();
         (::windows_core::Interface::vtable(self).GetInputCurrentType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwinputstreamindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DMO_MEDIA_TYPE>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetOutputCurrentType(&self, dwoutputstreamindex: u32) -> ::windows_core::Result<DMO_MEDIA_TYPE> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<DMO_MEDIA_TYPE>>::zeroed();
         (::windows_core::Interface::vtable(self).GetOutputCurrentType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwoutputstreamindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DMO_MEDIA_TYPE>(result__)
@@ -626,30 +613,12 @@ pub struct IMediaObject_Vtbl {
     pub GetStreamCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcinputstreams: *mut u32, pcoutputstreams: *mut u32) -> ::windows_core::HRESULT,
     pub GetInputStreamInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwinputstreamindex: u32, pdwflags: *mut u32) -> ::windows_core::HRESULT,
     pub GetOutputStreamInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwoutputstreamindex: u32, pdwflags: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetInputType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwinputstreamindex: u32, dwtypeindex: u32, pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetInputType: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetOutputType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwoutputstreamindex: u32, dwtypeindex: u32, pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetOutputType: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub SetInputType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwinputstreamindex: u32, pmt: *const DMO_MEDIA_TYPE, dwflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetInputType: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub SetOutputType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwoutputstreamindex: u32, pmt: *const DMO_MEDIA_TYPE, dwflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetOutputType: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetInputCurrentType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwinputstreamindex: u32, pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetInputCurrentType: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetOutputCurrentType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwoutputstreamindex: u32, pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetOutputCurrentType: usize,
     pub GetInputSizeInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwinputstreamindex: u32, pcbsize: *mut u32, pcbmaxlookahead: *mut u32, pcbalignment: *mut u32) -> ::windows_core::HRESULT,
     pub GetOutputSizeInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwoutputstreamindex: u32, pcbsize: *mut u32, pcbalignment: *mut u32) -> ::windows_core::HRESULT,
     pub GetInputMaxLatency: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwinputstreamindex: u32, prtmaxlatency: *mut i64) -> ::windows_core::HRESULT,
@@ -726,7 +695,6 @@ pub struct IMediaObjectInPlace_Vtbl {
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppmediaobject: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetLatency: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, platencytime: *mut i64) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MoCopyMediaType(pmtdest: *mut DMO_MEDIA_TYPE, pmtsrc: *const DMO_MEDIA_TYPE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -740,7 +708,6 @@ pub unsafe fn MoCopyMediaType(pmtdest: *mut DMO_MEDIA_TYPE, pmtsrc: *const DMO_M
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MoCreateMediaType(ppmt: *mut *mut DMO_MEDIA_TYPE, cbformat: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -754,7 +721,6 @@ pub unsafe fn MoCreateMediaType(ppmt: *mut *mut DMO_MEDIA_TYPE, cbformat: u32) -
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MoDeleteMediaType(pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -768,7 +734,6 @@ pub unsafe fn MoDeleteMediaType(pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core::Res
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MoDuplicateMediaType(ppmtdest: *mut *mut DMO_MEDIA_TYPE, pmtsrc: *const DMO_MEDIA_TYPE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -782,7 +747,6 @@ pub unsafe fn MoDuplicateMediaType(ppmtdest: *mut *mut DMO_MEDIA_TYPE, pmtsrc: *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MoFreeMediaType(pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -796,7 +760,6 @@ pub unsafe fn MoFreeMediaType(pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core::Resul
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MoInitMediaType(pmt: *mut DMO_MEDIA_TYPE, cbformat: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]

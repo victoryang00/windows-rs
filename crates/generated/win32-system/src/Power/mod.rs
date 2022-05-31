@@ -138,38 +138,30 @@ impl ::core::default::Default for BATTERY_CHARGING_SOURCE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BATTERY_CHARGING_SOURCE_INFORMATION {
     pub Type: BATTERY_CHARGING_SOURCE_TYPE,
-    pub SourceOnline: super::super::Foundation::BOOLEAN,
+    pub SourceOnline: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BATTERY_CHARGING_SOURCE_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BATTERY_CHARGING_SOURCE_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for BATTERY_CHARGING_SOURCE_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("BATTERY_CHARGING_SOURCE_INFORMATION").field("Type", &self.Type).field("SourceOnline", &self.SourceOnline).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BATTERY_CHARGING_SOURCE_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BATTERY_CHARGING_SOURCE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BATTERY_CHARGING_SOURCE_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BATTERY_CHARGING_SOURCE_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BATTERY_CHARGING_SOURCE_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -603,14 +595,13 @@ pub unsafe fn CallNtPowerInformation(informationlevel: POWER_INFORMATION_LEVEL, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CanUserWritePwrScheme() -> super::super::Foundation::BOOLEAN {
+pub unsafe fn CanUserWritePwrScheme() -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CanUserWritePwrScheme() -> super::super::Foundation::BOOLEAN;
+            fn CanUserWritePwrScheme() -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(CanUserWritePwrScheme())
     }
@@ -684,56 +675,52 @@ impl ::core::fmt::Debug for DEVICE_POWER_STATE {
         f.debug_tuple("DEVICE_POWER_STATE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePwrScheme(uiid: u32) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn DeletePwrScheme(uiid: u32) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePwrScheme(uiid: u32) -> super::super::Foundation::BOOLEAN;
+            fn DeletePwrScheme(uiid: u32) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(DeletePwrScheme(::core::mem::transmute(uiid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DevicePowerClose() -> super::super::Foundation::BOOLEAN {
+pub unsafe fn DevicePowerClose() -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DevicePowerClose() -> super::super::Foundation::BOOLEAN;
+            fn DevicePowerClose() -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(DevicePowerClose())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DevicePowerEnumDevices(queryindex: u32, queryinterpretationflags: u32, queryflags: u32, preturnbuffer: *mut u8, pbuffersize: *mut u32) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn DevicePowerEnumDevices(queryindex: u32, queryinterpretationflags: u32, queryflags: u32, preturnbuffer: *mut u8, pbuffersize: *mut u32) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DevicePowerEnumDevices(queryindex: u32, queryinterpretationflags: u32, queryflags: u32, preturnbuffer: *mut u8, pbuffersize: *mut u32) -> super::super::Foundation::BOOLEAN;
+            fn DevicePowerEnumDevices(queryindex: u32, queryinterpretationflags: u32, queryflags: u32, preturnbuffer: *mut u8, pbuffersize: *mut u32) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(DevicePowerEnumDevices(::core::mem::transmute(queryindex), ::core::mem::transmute(queryinterpretationflags), ::core::mem::transmute(queryflags), ::core::mem::transmute(preturnbuffer), ::core::mem::transmute(pbuffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DevicePowerOpen(debugmask: u32) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn DevicePowerOpen(debugmask: u32) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DevicePowerOpen(debugmask: u32) -> super::super::Foundation::BOOLEAN;
+            fn DevicePowerOpen(debugmask: u32) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(DevicePowerOpen(::core::mem::transmute(debugmask)))
     }
@@ -1086,14 +1073,13 @@ pub const EnablePasswordLogon: u32 = 4u32;
 pub const EnableSysTrayBatteryMeter: u32 = 1u32;
 pub const EnableVideoDimDisplay: u32 = 16u32;
 pub const EnableWakeOnRing: u32 = 8u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPwrSchemes<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpfn: PWRSCHEMESENUMPROC, lparam: Param1) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn EnumPwrSchemes<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(lpfn: PWRSCHEMESENUMPROC, lparam: Param1) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPwrSchemes(lpfn: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOLEAN;
+            fn EnumPwrSchemes(lpfn: ::windows_core::RawPtr, lparam: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(EnumPwrSchemes(::core::mem::transmute(lpfn), lparam.into_param().abi()))
     }
@@ -1133,45 +1119,36 @@ impl ::core::default::Default for GLOBAL_MACHINE_POWER_POLICY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GLOBAL_POWER_POLICY {
     pub user: GLOBAL_USER_POWER_POLICY,
     pub mach: GLOBAL_MACHINE_POWER_POLICY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GLOBAL_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GLOBAL_POWER_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for GLOBAL_POWER_POLICY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GLOBAL_POWER_POLICY").field("user", &self.user).field("mach", &self.mach).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GLOBAL_POWER_POLICY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GLOBAL_POWER_POLICY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GLOBAL_POWER_POLICY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GLOBAL_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GLOBAL_POWER_POLICY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GLOBAL_USER_POWER_POLICY {
     pub Revision: u32,
     pub PowerButtonAc: POWER_ACTION_POLICY,
@@ -1183,33 +1160,26 @@ pub struct GLOBAL_USER_POWER_POLICY {
     pub DischargePolicy: [SYSTEM_POWER_LEVEL; 4],
     pub GlobalFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GLOBAL_USER_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GLOBAL_USER_POWER_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for GLOBAL_USER_POWER_POLICY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GLOBAL_USER_POWER_POLICY").field("Revision", &self.Revision).field("PowerButtonAc", &self.PowerButtonAc).field("PowerButtonDc", &self.PowerButtonDc).field("SleepButtonAc", &self.SleepButtonAc).field("SleepButtonDc", &self.SleepButtonDc).field("LidCloseAc", &self.LidCloseAc).field("LidCloseDc", &self.LidCloseDc).field("DischargePolicy", &self.DischargePolicy).field("GlobalFlags", &self.GlobalFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GLOBAL_USER_POWER_POLICY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GLOBAL_USER_POWER_POLICY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GLOBAL_USER_POWER_POLICY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GLOBAL_USER_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GLOBAL_USER_POWER_POLICY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1229,84 +1199,78 @@ pub const GUID_DEVICE_SYS_BUTTON: ::windows_core::GUID = ::windows_core::GUID::f
 pub const GUID_DEVICE_THERMAL_ZONE: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4afa3d51_74a7_11d0_be5e_00a0c9062857);
 pub const GUID_DEVINTERFACE_THERMAL_COOLING: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdbe4373d_3c81_40cb_ace4_e0e5d05f0c9f);
 pub const GUID_DEVINTERFACE_THERMAL_MANAGER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x927ec093_69a4_4bc0_bd02_711664714463);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetActivePwrScheme(puiid: *mut u32) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn GetActivePwrScheme(puiid: *mut u32) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetActivePwrScheme(puiid: *mut u32) -> super::super::Foundation::BOOLEAN;
+            fn GetActivePwrScheme(puiid: *mut u32) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(GetActivePwrScheme(::core::mem::transmute(puiid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCurrentPowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn GetCurrentPowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCurrentPowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn GetCurrentPowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(GetCurrentPowerPolicies(::core::mem::transmute(pglobalpowerpolicy), ::core::mem::transmute(ppowerpolicy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDevicePowerState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hdevice: Param0, pfon: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn GetDevicePowerState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hdevice: Param0, pfon: *mut ::win32_foundation::BOOL) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDevicePowerState(hdevice: super::super::Foundation::HANDLE, pfon: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn GetDevicePowerState(hdevice: ::win32_foundation::HANDLE, pfon: *mut ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetDevicePowerState(hdevice.into_param().abi(), ::core::mem::transmute(pfon)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPwrCapabilities(lpspc: *mut SYSTEM_POWER_CAPABILITIES) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn GetPwrCapabilities(lpspc: *mut SYSTEM_POWER_CAPABILITIES) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPwrCapabilities(lpspc: *mut SYSTEM_POWER_CAPABILITIES) -> super::super::Foundation::BOOLEAN;
+            fn GetPwrCapabilities(lpspc: *mut SYSTEM_POWER_CAPABILITIES) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(GetPwrCapabilities(::core::mem::transmute(lpspc)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPwrDiskSpindownRange(puimax: *mut u32, puimin: *mut u32) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn GetPwrDiskSpindownRange(puimax: *mut u32, puimin: *mut u32) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPwrDiskSpindownRange(puimax: *mut u32, puimin: *mut u32) -> super::super::Foundation::BOOLEAN;
+            fn GetPwrDiskSpindownRange(puimax: *mut u32, puimin: *mut u32) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(GetPwrDiskSpindownRange(::core::mem::transmute(puimax), ::core::mem::transmute(puimin)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetSystemPowerStatus(lpsystempowerstatus: *mut SYSTEM_POWER_STATUS) -> super::super::Foundation::BOOL {
+pub unsafe fn GetSystemPowerStatus(lpsystempowerstatus: *mut SYSTEM_POWER_STATUS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetSystemPowerStatus(lpsystempowerstatus: *mut SYSTEM_POWER_STATUS) -> super::super::Foundation::BOOL;
+            fn GetSystemPowerStatus(lpsystempowerstatus: *mut SYSTEM_POWER_STATUS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetSystemPowerStatus(::core::mem::transmute(lpsystempowerstatus)))
     }
@@ -1368,70 +1332,65 @@ pub const IOCTL_THERMAL_READ_POLICY: u32 = 2703508u32;
 pub const IOCTL_THERMAL_READ_TEMPERATURE: u32 = 2703504u32;
 pub const IOCTL_THERMAL_SET_COOLING_POLICY: u32 = 2719876u32;
 pub const IOCTL_THERMAL_SET_PASSIVE_LIMIT: u32 = 2719884u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsAdminOverrideActive(papp: *const ADMINISTRATOR_POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn IsAdminOverrideActive(papp: *const ADMINISTRATOR_POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsAdminOverrideActive(papp: *const ADMINISTRATOR_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn IsAdminOverrideActive(papp: *const ADMINISTRATOR_POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(IsAdminOverrideActive(::core::mem::transmute(papp)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsPwrHibernateAllowed() -> super::super::Foundation::BOOLEAN {
+pub unsafe fn IsPwrHibernateAllowed() -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsPwrHibernateAllowed() -> super::super::Foundation::BOOLEAN;
+            fn IsPwrHibernateAllowed() -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(IsPwrHibernateAllowed())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsPwrShutdownAllowed() -> super::super::Foundation::BOOLEAN {
+pub unsafe fn IsPwrShutdownAllowed() -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsPwrShutdownAllowed() -> super::super::Foundation::BOOLEAN;
+            fn IsPwrShutdownAllowed() -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(IsPwrShutdownAllowed())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsPwrSuspendAllowed() -> super::super::Foundation::BOOLEAN {
+pub unsafe fn IsPwrSuspendAllowed() -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsPwrSuspendAllowed() -> super::super::Foundation::BOOLEAN;
+            fn IsPwrSuspendAllowed() -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(IsPwrSuspendAllowed())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsSystemResumeAutomatic() -> super::super::Foundation::BOOL {
+pub unsafe fn IsSystemResumeAutomatic() -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsSystemResumeAutomatic() -> super::super::Foundation::BOOL;
+            fn IsSystemResumeAutomatic() -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsSystemResumeAutomatic())
     }
@@ -1942,38 +1901,30 @@ impl ::core::fmt::Debug for POWER_PLATFORM_ROLE_VERSION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POWER_POLICY {
     pub user: USER_POWER_POLICY,
     pub mach: MACHINE_POWER_POLICY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POWER_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for POWER_POLICY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POWER_POLICY").field("user", &self.user).field("mach", &self.mach).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for POWER_POLICY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POWER_POLICY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POWER_POLICY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for POWER_POLICY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2031,7 +1982,7 @@ impl ::core::fmt::Debug for POWER_SETTING_REGISTER_NOTIFICATION_FLAGS {
     }
 }
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const PROCESSOR_NUMBER_PKEY: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x5724c81d_d5af_4c1f_a103_a06e28f204c6), pid: 1u32 };
+pub const PROCESSOR_NUMBER_PKEY: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x5724c81d_d5af_4c1f_a103_a06e28f204c6), pid: 1u32 };
 #[repr(C)]
 pub struct PROCESSOR_OBJECT_INFO {
     pub PhysicalID: u32,
@@ -2164,10 +2115,8 @@ impl ::core::default::Default for PROCESSOR_POWER_POLICY_INFO {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type PWRSCHEMESENUMPROC = ::core::option::Option<unsafe extern "system" fn(index: u32, namesize: u32, name: ::windows_core::PCWSTR, descriptionsize: u32, description: ::windows_core::PCWSTR, policy: *const POWER_POLICY, context: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOLEAN>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PWRSCHEMESENUMPROC_V1 = ::core::option::Option<unsafe extern "system" fn(index: u32, namesize: u32, name: *const i8, descriptionsize: u32, description: *const i8, policy: *const POWER_POLICY, context: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOLEAN>;
+pub type PWRSCHEMESENUMPROC = ::core::option::Option<unsafe extern "system" fn(index: u32, namesize: u32, name: ::windows_core::PCWSTR, descriptionsize: u32, description: ::windows_core::PCWSTR, policy: *const POWER_POLICY, context: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOLEAN>;
+pub type PWRSCHEMESENUMPROC_V1 = ::core::option::Option<unsafe extern "system" fn(index: u32, namesize: u32, name: *const i8, descriptionsize: u32, description: *const i8, policy: *const POWER_POLICY, context: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOLEAN>;
 #[inline]
 pub unsafe fn PowerCanRestoreIndividualDefaultPowerScheme(schemeguid: *const ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
@@ -2181,14 +2130,13 @@ pub unsafe fn PowerCanRestoreIndividualDefaultPowerScheme(schemeguid: *const ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PowerClearRequest<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(powerrequest: Param0, requesttype: POWER_REQUEST_TYPE) -> super::super::Foundation::BOOL {
+pub unsafe fn PowerClearRequest<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(powerrequest: Param0, requesttype: POWER_REQUEST_TYPE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PowerClearRequest(powerrequest: super::super::Foundation::HANDLE, requesttype: POWER_REQUEST_TYPE) -> super::super::Foundation::BOOL;
+            fn PowerClearRequest(powerrequest: ::win32_foundation::HANDLE, requesttype: POWER_REQUEST_TYPE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PowerClearRequest(powerrequest.into_param().abi(), ::core::mem::transmute(requesttype)))
     }
@@ -2209,14 +2157,14 @@ pub unsafe fn PowerCreatePossibleSetting<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 #[inline]
-pub unsafe fn PowerCreateRequest(context: *const super::Threading::REASON_CONTEXT) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn PowerCreateRequest(context: *const super::Threading::REASON_CONTEXT) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PowerCreateRequest(context: *const super::Threading::REASON_CONTEXT) -> super::super::Foundation::HANDLE;
+            fn PowerCreateRequest(context: *const super::Threading::REASON_CONTEXT) -> ::win32_foundation::HANDLE;
         }
         let result__ = PowerCreateRequest(::core::mem::transmute(context));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -2334,42 +2282,41 @@ pub unsafe fn PowerImportPowerScheme<'a, Param0: ::windows_core::IntoParam<'a, s
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PowerIsSettingRangeDefined(subkeyguid: *const ::windows_core::GUID, settingguid: *const ::windows_core::GUID) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn PowerIsSettingRangeDefined(subkeyguid: *const ::windows_core::GUID, settingguid: *const ::windows_core::GUID) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PowerIsSettingRangeDefined(subkeyguid: *const ::windows_core::GUID, settingguid: *const ::windows_core::GUID) -> super::super::Foundation::BOOLEAN;
+            fn PowerIsSettingRangeDefined(subkeyguid: *const ::windows_core::GUID, settingguid: *const ::windows_core::GUID) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(PowerIsSettingRangeDefined(::core::mem::transmute(subkeyguid), ::core::mem::transmute(settingguid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn PowerOpenSystemPowerKey<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(phsystempowerkey: *mut super::Registry::HKEY, access: u32, openexisting: Param2) -> u32 {
+pub unsafe fn PowerOpenSystemPowerKey<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(phsystempowerkey: *mut super::Registry::HKEY, access: u32, openexisting: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PowerOpenSystemPowerKey(phsystempowerkey: *mut super::Registry::HKEY, access: u32, openexisting: super::super::Foundation::BOOL) -> u32;
+            fn PowerOpenSystemPowerKey(phsystempowerkey: *mut super::Registry::HKEY, access: u32, openexisting: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(PowerOpenSystemPowerKey(::core::mem::transmute(phsystempowerkey), ::core::mem::transmute(access), openexisting.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 #[inline]
-pub unsafe fn PowerOpenUserPowerKey<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(phuserpowerkey: *mut super::Registry::HKEY, access: u32, openexisting: Param2) -> u32 {
+pub unsafe fn PowerOpenUserPowerKey<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(phuserpowerkey: *mut super::Registry::HKEY, access: u32, openexisting: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PowerOpenUserPowerKey(phuserpowerkey: *mut super::Registry::HKEY, access: u32, openexisting: super::super::Foundation::BOOL) -> u32;
+            fn PowerOpenUserPowerKey(phuserpowerkey: *mut super::Registry::HKEY, access: u32, openexisting: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(PowerOpenUserPowerKey(::core::mem::transmute(phuserpowerkey), ::core::mem::transmute(access), openexisting.into_param().abi()))
     }
@@ -2626,14 +2573,13 @@ pub unsafe fn PowerRegisterForEffectivePowerModeNotifications(version: u32, call
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PowerRegisterSuspendResumeNotification<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(flags: u32, recipient: Param1, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn PowerRegisterSuspendResumeNotification<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(flags: u32, recipient: Param1, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PowerRegisterSuspendResumeNotification(flags: u32, recipient: super::super::Foundation::HANDLE, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32;
+            fn PowerRegisterSuspendResumeNotification(flags: u32, recipient: ::win32_foundation::HANDLE, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(PowerRegisterSuspendResumeNotification(::core::mem::transmute(flags), recipient.into_param().abi(), ::core::mem::transmute(registrationhandle)))
     }
@@ -2719,14 +2665,13 @@ pub unsafe fn PowerSetActiveScheme<'a, Param0: ::windows_core::IntoParam<'a, sup
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PowerSetRequest<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(powerrequest: Param0, requesttype: POWER_REQUEST_TYPE) -> super::super::Foundation::BOOL {
+pub unsafe fn PowerSetRequest<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(powerrequest: Param0, requesttype: POWER_REQUEST_TYPE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PowerSetRequest(powerrequest: super::super::Foundation::HANDLE, requesttype: POWER_REQUEST_TYPE) -> super::super::Foundation::BOOL;
+            fn PowerSetRequest(powerrequest: ::win32_foundation::HANDLE, requesttype: POWER_REQUEST_TYPE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PowerSetRequest(powerrequest.into_param().abi(), ::core::mem::transmute(requesttype)))
     }
@@ -2760,14 +2705,13 @@ pub unsafe fn PowerSettingAccessCheckEx(accessflags: POWER_DATA_ACCESSOR, powerg
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PowerSettingRegisterNotification<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(settingguid: *const ::windows_core::GUID, flags: POWER_SETTING_REGISTER_NOTIFICATION_FLAGS, recipient: Param2, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn PowerSettingRegisterNotification<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(settingguid: *const ::windows_core::GUID, flags: POWER_SETTING_REGISTER_NOTIFICATION_FLAGS, recipient: Param2, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PowerSettingRegisterNotification(settingguid: *const ::windows_core::GUID, flags: POWER_SETTING_REGISTER_NOTIFICATION_FLAGS, recipient: super::super::Foundation::HANDLE, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32;
+            fn PowerSettingRegisterNotification(settingguid: *const ::windows_core::GUID, flags: POWER_SETTING_REGISTER_NOTIFICATION_FLAGS, recipient: ::win32_foundation::HANDLE, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(PowerSettingRegisterNotification(::core::mem::transmute(settingguid), ::core::mem::transmute(flags), recipient.into_param().abi(), ::core::mem::transmute(registrationhandle)))
     }
@@ -3022,56 +2966,52 @@ pub unsafe fn PowerWriteValueUnitsSpecifier<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn ReadGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn ReadGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(ReadGlobalPwrPolicy(::core::mem::transmute(pglobalpowerpolicy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *mut MACHINE_PROCESSOR_POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn ReadProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *mut MACHINE_PROCESSOR_POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *mut MACHINE_PROCESSOR_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn ReadProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *mut MACHINE_PROCESSOR_POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(ReadProcessorPwrScheme(::core::mem::transmute(uiid), ::core::mem::transmute(pmachineprocessorpowerpolicy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadPwrScheme(uiid: u32, ppowerpolicy: *mut POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn ReadPwrScheme(uiid: u32, ppowerpolicy: *mut POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadPwrScheme(uiid: u32, ppowerpolicy: *mut POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn ReadPwrScheme(uiid: u32, ppowerpolicy: *mut POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(ReadPwrScheme(::core::mem::transmute(uiid), ::core::mem::transmute(ppowerpolicy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterPowerSettingNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrecipient: Param0, powersettingguid: *const ::windows_core::GUID, flags: u32) -> ::windows_core::Result<HPOWERNOTIFY> {
+pub unsafe fn RegisterPowerSettingNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrecipient: Param0, powersettingguid: *const ::windows_core::GUID, flags: u32) -> ::windows_core::Result<HPOWERNOTIFY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterPowerSettingNotification(hrecipient: super::super::Foundation::HANDLE, powersettingguid: *const ::windows_core::GUID, flags: u32) -> HPOWERNOTIFY;
+            fn RegisterPowerSettingNotification(hrecipient: ::win32_foundation::HANDLE, powersettingguid: *const ::windows_core::GUID, flags: u32) -> HPOWERNOTIFY;
         }
         let result__ = RegisterPowerSettingNotification(hrecipient.into_param().abi(), ::core::mem::transmute(powersettingguid), ::core::mem::transmute(flags));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -3079,14 +3019,13 @@ pub unsafe fn RegisterPowerSettingNotification<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterSuspendResumeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrecipient: Param0, flags: u32) -> ::windows_core::Result<HPOWERNOTIFY> {
+pub unsafe fn RegisterSuspendResumeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrecipient: Param0, flags: u32) -> ::windows_core::Result<HPOWERNOTIFY> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterSuspendResumeNotification(hrecipient: super::super::Foundation::HANDLE, flags: u32) -> HPOWERNOTIFY;
+            fn RegisterSuspendResumeNotification(hrecipient: ::win32_foundation::HANDLE, flags: u32) -> HPOWERNOTIFY;
         }
         let result__ = RegisterSuspendResumeNotification(hrecipient.into_param().abi(), ::core::mem::transmute(flags));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -3094,14 +3033,13 @@ pub unsafe fn RegisterSuspendResumeNotification<'a, Param0: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RequestWakeupLatency(latency: LATENCY_TIME) -> super::super::Foundation::BOOL {
+pub unsafe fn RequestWakeupLatency(latency: LATENCY_TIME) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RequestWakeupLatency(latency: LATENCY_TIME) -> super::super::Foundation::BOOL;
+            fn RequestWakeupLatency(latency: LATENCY_TIME) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RequestWakeupLatency(::core::mem::transmute(latency)))
     }
@@ -3142,13 +3080,12 @@ impl ::core::default::Default for SET_POWER_SETTING_VALUE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYSTEM_BATTERY_STATE {
-    pub AcOnLine: super::super::Foundation::BOOLEAN,
-    pub BatteryPresent: super::super::Foundation::BOOLEAN,
-    pub Charging: super::super::Foundation::BOOLEAN,
-    pub Discharging: super::super::Foundation::BOOLEAN,
-    pub Spare1: [super::super::Foundation::BOOLEAN; 3],
+    pub AcOnLine: ::win32_foundation::BOOLEAN,
+    pub BatteryPresent: ::win32_foundation::BOOLEAN,
+    pub Charging: ::win32_foundation::BOOLEAN,
+    pub Discharging: ::win32_foundation::BOOLEAN,
+    pub Spare1: [::win32_foundation::BOOLEAN; 3],
     pub Tag: u8,
     pub MaxCapacity: u32,
     pub RemainingCapacity: u32,
@@ -3157,15 +3094,12 @@ pub struct SYSTEM_BATTERY_STATE {
     pub DefaultAlert1: u32,
     pub DefaultAlert2: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYSTEM_BATTERY_STATE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYSTEM_BATTERY_STATE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SYSTEM_BATTERY_STATE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SYSTEM_BATTERY_STATE")
@@ -3184,54 +3118,49 @@ impl ::core::fmt::Debug for SYSTEM_BATTERY_STATE {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SYSTEM_BATTERY_STATE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SYSTEM_BATTERY_STATE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SYSTEM_BATTERY_STATE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SYSTEM_BATTERY_STATE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SYSTEM_BATTERY_STATE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYSTEM_POWER_CAPABILITIES {
-    pub PowerButtonPresent: super::super::Foundation::BOOLEAN,
-    pub SleepButtonPresent: super::super::Foundation::BOOLEAN,
-    pub LidPresent: super::super::Foundation::BOOLEAN,
-    pub SystemS1: super::super::Foundation::BOOLEAN,
-    pub SystemS2: super::super::Foundation::BOOLEAN,
-    pub SystemS3: super::super::Foundation::BOOLEAN,
-    pub SystemS4: super::super::Foundation::BOOLEAN,
-    pub SystemS5: super::super::Foundation::BOOLEAN,
-    pub HiberFilePresent: super::super::Foundation::BOOLEAN,
-    pub FullWake: super::super::Foundation::BOOLEAN,
-    pub VideoDimPresent: super::super::Foundation::BOOLEAN,
-    pub ApmPresent: super::super::Foundation::BOOLEAN,
-    pub UpsPresent: super::super::Foundation::BOOLEAN,
-    pub ThermalControl: super::super::Foundation::BOOLEAN,
-    pub ProcessorThrottle: super::super::Foundation::BOOLEAN,
+    pub PowerButtonPresent: ::win32_foundation::BOOLEAN,
+    pub SleepButtonPresent: ::win32_foundation::BOOLEAN,
+    pub LidPresent: ::win32_foundation::BOOLEAN,
+    pub SystemS1: ::win32_foundation::BOOLEAN,
+    pub SystemS2: ::win32_foundation::BOOLEAN,
+    pub SystemS3: ::win32_foundation::BOOLEAN,
+    pub SystemS4: ::win32_foundation::BOOLEAN,
+    pub SystemS5: ::win32_foundation::BOOLEAN,
+    pub HiberFilePresent: ::win32_foundation::BOOLEAN,
+    pub FullWake: ::win32_foundation::BOOLEAN,
+    pub VideoDimPresent: ::win32_foundation::BOOLEAN,
+    pub ApmPresent: ::win32_foundation::BOOLEAN,
+    pub UpsPresent: ::win32_foundation::BOOLEAN,
+    pub ThermalControl: ::win32_foundation::BOOLEAN,
+    pub ProcessorThrottle: ::win32_foundation::BOOLEAN,
     pub ProcessorMinThrottle: u8,
     pub ProcessorMaxThrottle: u8,
-    pub FastSystemS4: super::super::Foundation::BOOLEAN,
-    pub Hiberboot: super::super::Foundation::BOOLEAN,
-    pub WakeAlarmPresent: super::super::Foundation::BOOLEAN,
-    pub AoAc: super::super::Foundation::BOOLEAN,
-    pub DiskSpinDown: super::super::Foundation::BOOLEAN,
+    pub FastSystemS4: ::win32_foundation::BOOLEAN,
+    pub Hiberboot: ::win32_foundation::BOOLEAN,
+    pub WakeAlarmPresent: ::win32_foundation::BOOLEAN,
+    pub AoAc: ::win32_foundation::BOOLEAN,
+    pub DiskSpinDown: ::win32_foundation::BOOLEAN,
     pub HiberFileType: u8,
-    pub AoAcConnectivitySupported: super::super::Foundation::BOOLEAN,
+    pub AoAcConnectivitySupported: ::win32_foundation::BOOLEAN,
     pub spare3: [u8; 6],
-    pub SystemBatteriesPresent: super::super::Foundation::BOOLEAN,
-    pub BatteriesAreShortTerm: super::super::Foundation::BOOLEAN,
+    pub SystemBatteriesPresent: ::win32_foundation::BOOLEAN,
+    pub BatteriesAreShortTerm: ::win32_foundation::BOOLEAN,
     pub BatteryScale: [BATTERY_REPORTING_SCALE; 3],
     pub AcOnLineWake: SYSTEM_POWER_STATE,
     pub SoftLidWake: SYSTEM_POWER_STATE,
@@ -3239,15 +3168,12 @@ pub struct SYSTEM_POWER_CAPABILITIES {
     pub MinDeviceWakeState: SYSTEM_POWER_STATE,
     pub DefaultLowLatencyWake: SYSTEM_POWER_STATE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYSTEM_POWER_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYSTEM_POWER_CAPABILITIES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SYSTEM_POWER_CAPABILITIES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SYSTEM_POWER_CAPABILITIES")
@@ -3287,19 +3213,15 @@ impl ::core::fmt::Debug for SYSTEM_POWER_CAPABILITIES {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SYSTEM_POWER_CAPABILITIES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SYSTEM_POWER_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SYSTEM_POWER_CAPABILITIES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SYSTEM_POWER_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SYSTEM_POWER_CAPABILITIES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3332,48 +3254,39 @@ impl ::core::fmt::Debug for SYSTEM_POWER_CONDITION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYSTEM_POWER_LEVEL {
-    pub Enable: super::super::Foundation::BOOLEAN,
+    pub Enable: ::win32_foundation::BOOLEAN,
     pub Spare: [u8; 3],
     pub BatteryLevel: u32,
     pub PowerPolicy: POWER_ACTION_POLICY,
     pub MinSystemState: SYSTEM_POWER_STATE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYSTEM_POWER_LEVEL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYSTEM_POWER_LEVEL {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SYSTEM_POWER_LEVEL {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SYSTEM_POWER_LEVEL").field("Enable", &self.Enable).field("Spare", &self.Spare).field("BatteryLevel", &self.BatteryLevel).field("PowerPolicy", &self.PowerPolicy).field("MinSystemState", &self.MinSystemState).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SYSTEM_POWER_LEVEL {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SYSTEM_POWER_LEVEL {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SYSTEM_POWER_LEVEL>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SYSTEM_POWER_LEVEL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SYSTEM_POWER_LEVEL {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYSTEM_POWER_POLICY {
     pub Revision: u32,
     pub PowerButton: POWER_ACTION_POLICY,
@@ -3395,24 +3308,21 @@ pub struct SYSTEM_POWER_POLICY {
     pub BroadcastCapacityResolution: u32,
     pub DischargePolicy: [SYSTEM_POWER_LEVEL; 4],
     pub VideoTimeout: u32,
-    pub VideoDimDisplay: super::super::Foundation::BOOLEAN,
+    pub VideoDimDisplay: ::win32_foundation::BOOLEAN,
     pub VideoReserved: [u32; 3],
     pub SpindownTimeout: u32,
-    pub OptimizeForPower: super::super::Foundation::BOOLEAN,
+    pub OptimizeForPower: ::win32_foundation::BOOLEAN,
     pub FanThrottleTolerance: u8,
     pub ForcedThrottle: u8,
     pub MinThrottle: u8,
     pub OverThrottled: POWER_ACTION_POLICY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYSTEM_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYSTEM_POWER_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SYSTEM_POWER_POLICY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SYSTEM_POWER_POLICY")
@@ -3447,19 +3357,15 @@ impl ::core::fmt::Debug for SYSTEM_POWER_POLICY {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SYSTEM_POWER_POLICY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SYSTEM_POWER_POLICY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SYSTEM_POWER_POLICY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SYSTEM_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SYSTEM_POWER_POLICY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3538,42 +3444,39 @@ pub const SYS_BUTTON_LID_STATE_MASK: u32 = 196608u32;
 pub const SYS_BUTTON_POWER: u32 = 1u32;
 pub const SYS_BUTTON_SLEEP: u32 = 2u32;
 pub const SYS_BUTTON_WAKE: u32 = 2147483648u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetActivePwrScheme(uiid: u32, pglobalpowerpolicy: *const GLOBAL_POWER_POLICY, ppowerpolicy: *const POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn SetActivePwrScheme(uiid: u32, pglobalpowerpolicy: *const GLOBAL_POWER_POLICY, ppowerpolicy: *const POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetActivePwrScheme(uiid: u32, pglobalpowerpolicy: *const GLOBAL_POWER_POLICY, ppowerpolicy: *const POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn SetActivePwrScheme(uiid: u32, pglobalpowerpolicy: *const GLOBAL_POWER_POLICY, ppowerpolicy: *const POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(SetActivePwrScheme(::core::mem::transmute(uiid), ::core::mem::transmute(pglobalpowerpolicy), ::core::mem::transmute(ppowerpolicy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetSuspendState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(bhibernate: Param0, bforce: Param1, bwakeupeventsdisabled: Param2) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn SetSuspendState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(bhibernate: Param0, bforce: Param1, bwakeupeventsdisabled: Param2) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetSuspendState(bhibernate: super::super::Foundation::BOOLEAN, bforce: super::super::Foundation::BOOLEAN, bwakeupeventsdisabled: super::super::Foundation::BOOLEAN) -> super::super::Foundation::BOOLEAN;
+            fn SetSuspendState(bhibernate: ::win32_foundation::BOOLEAN, bforce: ::win32_foundation::BOOLEAN, bwakeupeventsdisabled: ::win32_foundation::BOOLEAN) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(SetSuspendState(bhibernate.into_param().abi(), bforce.into_param().abi(), bwakeupeventsdisabled.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetSystemPowerState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(fsuspend: Param0, fforce: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetSystemPowerState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(fsuspend: Param0, fforce: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetSystemPowerState(fsuspend: super::super::Foundation::BOOL, fforce: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn SetSystemPowerState(fsuspend: ::win32_foundation::BOOL, fforce: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetSystemPowerState(fsuspend.into_param().abi(), fforce.into_param().abi()))
     }
@@ -3680,45 +3583,37 @@ impl ::core::default::Default for THERMAL_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct THERMAL_POLICY {
     pub Version: u32,
-    pub WaitForUpdate: super::super::Foundation::BOOLEAN,
-    pub Hibernate: super::super::Foundation::BOOLEAN,
-    pub Critical: super::super::Foundation::BOOLEAN,
-    pub ThermalStandby: super::super::Foundation::BOOLEAN,
+    pub WaitForUpdate: ::win32_foundation::BOOLEAN,
+    pub Hibernate: ::win32_foundation::BOOLEAN,
+    pub Critical: ::win32_foundation::BOOLEAN,
+    pub ThermalStandby: ::win32_foundation::BOOLEAN,
     pub ActivationReasons: u32,
     pub PassiveLimit: u32,
     pub ActiveLevel: u32,
-    pub OverThrottled: super::super::Foundation::BOOLEAN,
+    pub OverThrottled: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for THERMAL_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for THERMAL_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for THERMAL_POLICY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("THERMAL_POLICY").field("Version", &self.Version).field("WaitForUpdate", &self.WaitForUpdate).field("Hibernate", &self.Hibernate).field("Critical", &self.Critical).field("ThermalStandby", &self.ThermalStandby).field("ActivationReasons", &self.ActivationReasons).field("PassiveLimit", &self.PassiveLimit).field("ActiveLevel", &self.ActiveLevel).field("OverThrottled", &self.OverThrottled).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for THERMAL_POLICY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for THERMAL_POLICY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<THERMAL_POLICY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for THERMAL_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for THERMAL_POLICY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3789,7 +3684,6 @@ impl ::core::fmt::Debug for USB_CHARGER_PORT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_POWER_POLICY {
     pub Revision: u32,
     pub IdleAc: POWER_ACTION_POLICY,
@@ -3807,22 +3701,19 @@ pub struct USER_POWER_POLICY {
     pub VideoTimeoutDc: u32,
     pub SpindownTimeoutAc: u32,
     pub SpindownTimeoutDc: u32,
-    pub OptimizeForPowerAc: super::super::Foundation::BOOLEAN,
-    pub OptimizeForPowerDc: super::super::Foundation::BOOLEAN,
+    pub OptimizeForPowerAc: ::win32_foundation::BOOLEAN,
+    pub OptimizeForPowerDc: ::win32_foundation::BOOLEAN,
     pub FanThrottleToleranceAc: u8,
     pub FanThrottleToleranceDc: u8,
     pub ForcedThrottleAc: u8,
     pub ForcedThrottleDc: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_POWER_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for USER_POWER_POLICY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USER_POWER_POLICY")
@@ -3851,60 +3742,53 @@ impl ::core::fmt::Debug for USER_POWER_POLICY {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USER_POWER_POLICY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USER_POWER_POLICY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_POWER_POLICY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USER_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USER_POWER_POLICY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnregisterPowerSettingNotification<'a, Param0: ::windows_core::IntoParam<'a, HPOWERNOTIFY>>(handle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn UnregisterPowerSettingNotification<'a, Param0: ::windows_core::IntoParam<'a, HPOWERNOTIFY>>(handle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnregisterPowerSettingNotification(handle: HPOWERNOTIFY) -> super::super::Foundation::BOOL;
+            fn UnregisterPowerSettingNotification(handle: HPOWERNOTIFY) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(UnregisterPowerSettingNotification(handle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnregisterSuspendResumeNotification<'a, Param0: ::windows_core::IntoParam<'a, HPOWERNOTIFY>>(handle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn UnregisterSuspendResumeNotification<'a, Param0: ::windows_core::IntoParam<'a, HPOWERNOTIFY>>(handle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnregisterSuspendResumeNotification(handle: HPOWERNOTIFY) -> super::super::Foundation::BOOL;
+            fn UnregisterSuspendResumeNotification(handle: HPOWERNOTIFY) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(UnregisterSuspendResumeNotification(handle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ValidatePowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn ValidatePowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ValidatePowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn ValidatePowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(ValidatePowerPolicies(::core::mem::transmute(pglobalpowerpolicy), ::core::mem::transmute(ppowerpolicy)))
     }
@@ -3941,42 +3825,39 @@ impl ::core::default::Default for WAKE_ALARM_INFORMATION {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn WriteGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn WriteGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(WriteGlobalPwrPolicy(::core::mem::transmute(pglobalpowerpolicy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *const MACHINE_PROCESSOR_POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn WriteProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *const MACHINE_PROCESSOR_POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *const MACHINE_PROCESSOR_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn WriteProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *const MACHINE_PROCESSOR_POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(WriteProcessorPwrScheme(::core::mem::transmute(uiid), ::core::mem::transmute(pmachineprocessorpowerpolicy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WritePwrScheme<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(puiid: *const u32, lpszschemename: Param1, lpszdescription: Param2, lpscheme: *const POWER_POLICY) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn WritePwrScheme<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(puiid: *const u32, lpszschemename: Param1, lpszdescription: Param2, lpscheme: *const POWER_POLICY) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WritePwrScheme(puiid: *const u32, lpszschemename: ::windows_core::PCWSTR, lpszdescription: ::windows_core::PCWSTR, lpscheme: *const POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+            fn WritePwrScheme(puiid: *const u32, lpszschemename: ::windows_core::PCWSTR, lpszdescription: ::windows_core::PCWSTR, lpscheme: *const POWER_POLICY) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(WritePwrScheme(::core::mem::transmute(puiid), lpszschemename.into_param().abi(), lpszdescription.into_param().abi(), ::core::mem::transmute(lpscheme)))
     }

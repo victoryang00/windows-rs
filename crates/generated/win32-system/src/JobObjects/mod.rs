@@ -1,25 +1,24 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AssignProcessToJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, hprocess: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn AssignProcessToJobObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hjob: Param0, hprocess: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AssignProcessToJobObject(hjob: super::super::Foundation::HANDLE, hprocess: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn AssignProcessToJobObject(hjob: ::win32_foundation::HANDLE, hprocess: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AssignProcessToJobObject(hjob.into_param().abi(), hprocess.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn CreateJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn CreateJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpjobattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateJobObjectA(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: ::windows_core::PCSTR) -> super::super::Foundation::HANDLE;
+            fn CreateJobObjectA(lpjobattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: ::windows_core::PCSTR) -> ::win32_foundation::HANDLE;
         }
         let result__ = CreateJobObjectA(::core::mem::transmute(lpjobattributes), lpname.into_param().abi());
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -27,14 +26,14 @@ pub unsafe fn CreateJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn CreateJobObjectW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn CreateJobObjectW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpjobattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: Param1) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateJobObjectW(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn CreateJobObjectW(lpjobattributes: *const ::win32_security::SECURITY_ATTRIBUTES, lpname: ::windows_core::PCWSTR) -> ::win32_foundation::HANDLE;
         }
         let result__ = CreateJobObjectW(::core::mem::transmute(lpjobattributes), lpname.into_param().abi());
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -42,14 +41,13 @@ pub unsafe fn CreateJobObjectW<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateJobSet(userjobset: &[JOB_SET_ARRAY], flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CreateJobSet(userjobset: &[JOB_SET_ARRAY], flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateJobSet(numjob: u32, userjobset: *const JOB_SET_ARRAY, flags: u32) -> super::super::Foundation::BOOL;
+            fn CreateJobSet(numjob: u32, userjobset: *const JOB_SET_ARRAY, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CreateJobSet(userjobset.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(userjobset)), ::core::mem::transmute(flags)))
     }
@@ -69,14 +67,13 @@ pub unsafe fn FreeMemoryJobObject(buffer: *const ::core::ffi::c_void) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsProcessInJob<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(processhandle: Param0, jobhandle: Param1, result: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL {
+pub unsafe fn IsProcessInJob<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(processhandle: Param0, jobhandle: Param1, result: *mut ::win32_foundation::BOOL) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsProcessInJob(processhandle: super::super::Foundation::HANDLE, jobhandle: super::super::Foundation::HANDLE, result: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn IsProcessInJob(processhandle: ::win32_foundation::HANDLE, jobhandle: ::win32_foundation::HANDLE, result: *mut ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsProcessInJob(processhandle.into_param().abi(), jobhandle.into_param().abi(), ::core::mem::transmute(result)))
     }
@@ -154,38 +151,30 @@ impl ::core::fmt::Debug for JOBOBJECTINFOCLASS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     pub CompletionKey: *mut ::core::ffi::c_void,
-    pub CompletionPort: super::super::Foundation::HANDLE,
+    pub CompletionPort: ::win32_foundation::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOBOBJECT_ASSOCIATE_COMPLETION_PORT").field("CompletionKey", &self.CompletionKey).field("CompletionPort", &self.CompletionPort).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_ASSOCIATE_COMPLETION_PORT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1236,41 +1225,41 @@ impl ::core::fmt::Debug for JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     pub SecurityLimitFlags: JOB_OBJECT_SECURITY,
-    pub JobToken: super::super::Foundation::HANDLE,
-    pub SidsToDisable: *mut super::super::Security::TOKEN_GROUPS,
-    pub PrivilegesToDelete: *mut super::super::Security::TOKEN_PRIVILEGES,
-    pub RestrictedSids: *mut super::super::Security::TOKEN_GROUPS,
+    pub JobToken: ::win32_foundation::HANDLE,
+    pub SidsToDisable: *mut ::win32_security::TOKEN_GROUPS,
+    pub PrivilegesToDelete: *mut ::win32_security::TOKEN_PRIVILEGES,
+    pub RestrictedSids: *mut ::win32_security::TOKEN_GROUPS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for JOBOBJECT_SECURITY_LIMIT_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOBOBJECT_SECURITY_LIMIT_INFORMATION").field("SecurityLimitFlags", &self.SecurityLimitFlags).field("JobToken", &self.JobToken).field("SidsToDisable", &self.SidsToDisable).field("PrivilegesToDelete", &self.PrivilegesToDelete).field("RestrictedSids", &self.RestrictedSids).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOBOBJECT_SECURITY_LIMIT_INFORMATION>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for JOBOBJECT_SECURITY_LIMIT_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1629,52 +1618,43 @@ impl ::core::ops::Not for JOB_OBJECT_UILIMIT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JOB_SET_ARRAY {
-    pub JobHandle: super::super::Foundation::HANDLE,
+    pub JobHandle: ::win32_foundation::HANDLE,
     pub MemberLevel: u32,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JOB_SET_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JOB_SET_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for JOB_SET_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOB_SET_ARRAY").field("JobHandle", &self.JobHandle).field("MemberLevel", &self.MemberLevel).field("Flags", &self.Flags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for JOB_SET_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for JOB_SET_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOB_SET_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for JOB_SET_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for JOB_SET_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwdesiredaccess: u32, binherithandle: Param1, lpname: Param2) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn OpenJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwdesiredaccess: u32, binherithandle: Param1, lpname: Param2) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenJobObjectA(dwdesiredaccess: u32, binherithandle: super::super::Foundation::BOOL, lpname: ::windows_core::PCSTR) -> super::super::Foundation::HANDLE;
+            fn OpenJobObjectA(dwdesiredaccess: u32, binherithandle: ::win32_foundation::BOOL, lpname: ::windows_core::PCSTR) -> ::win32_foundation::HANDLE;
         }
         let result__ = OpenJobObjectA(::core::mem::transmute(dwdesiredaccess), binherithandle.into_param().abi(), lpname.into_param().abi());
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -1682,14 +1662,13 @@ pub unsafe fn OpenJobObjectA<'a, Param1: ::windows_core::IntoParam<'a, super::su
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenJobObjectW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwdesiredaccess: u32, binherithandle: Param1, lpname: Param2) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn OpenJobObjectW<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwdesiredaccess: u32, binherithandle: Param1, lpname: Param2) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenJobObjectW(dwdesiredaccess: u32, binherithandle: super::super::Foundation::BOOL, lpname: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn OpenJobObjectW(dwdesiredaccess: u32, binherithandle: ::win32_foundation::BOOL, lpname: ::windows_core::PCWSTR) -> ::win32_foundation::HANDLE;
         }
         let result__ = OpenJobObjectW(::core::mem::transmute(dwdesiredaccess), binherithandle.into_param().abi(), lpname.into_param().abi());
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -1697,84 +1676,78 @@ pub unsafe fn OpenJobObjectW<'a, Param1: ::windows_core::IntoParam<'a, super::su
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *mut ::core::ffi::c_void, cbjobobjectinformationlength: u32, lpreturnlength: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hjob: Param0, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *mut ::core::ffi::c_void, cbjobobjectinformationlength: u32, lpreturnlength: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QueryInformationJobObject(hjob: super::super::Foundation::HANDLE, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *mut ::core::ffi::c_void, cbjobobjectinformationlength: u32, lpreturnlength: *mut u32) -> super::super::Foundation::BOOL;
+            fn QueryInformationJobObject(hjob: ::win32_foundation::HANDLE, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *mut ::core::ffi::c_void, cbjobobjectinformationlength: u32, lpreturnlength: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QueryInformationJobObject(hjob.into_param().abi(), ::core::mem::transmute(jobobjectinformationclass), ::core::mem::transmute(lpjobobjectinformation), ::core::mem::transmute(cbjobobjectinformationlength), ::core::mem::transmute(lpreturnlength)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryIoRateControlInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hjob: Param0, volumename: Param1, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32 {
+pub unsafe fn QueryIoRateControlInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hjob: Param0, volumename: Param1, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QueryIoRateControlInformationJobObject(hjob: super::super::Foundation::HANDLE, volumename: ::windows_core::PCWSTR, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32;
+            fn QueryIoRateControlInformationJobObject(hjob: ::win32_foundation::HANDLE, volumename: ::windows_core::PCWSTR, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32;
         }
         ::core::mem::transmute(QueryIoRateControlInformationJobObject(hjob.into_param().abi(), volumename.into_param().abi(), ::core::mem::transmute(infoblocks), ::core::mem::transmute(infoblockcount)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *const ::core::ffi::c_void, cbjobobjectinformationlength: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hjob: Param0, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *const ::core::ffi::c_void, cbjobobjectinformationlength: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetInformationJobObject(hjob: super::super::Foundation::HANDLE, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *const ::core::ffi::c_void, cbjobobjectinformationlength: u32) -> super::super::Foundation::BOOL;
+            fn SetInformationJobObject(hjob: ::win32_foundation::HANDLE, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *const ::core::ffi::c_void, cbjobobjectinformationlength: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetInformationJobObject(hjob.into_param().abi(), ::core::mem::transmute(jobobjectinformationclass), ::core::mem::transmute(lpjobobjectinformation), ::core::mem::transmute(cbjobobjectinformationlength)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetIoRateControlInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, ioratecontrolinfo: *const JOBOBJECT_IO_RATE_CONTROL_INFORMATION) -> u32 {
+pub unsafe fn SetIoRateControlInformationJobObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hjob: Param0, ioratecontrolinfo: *const JOBOBJECT_IO_RATE_CONTROL_INFORMATION) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetIoRateControlInformationJobObject(hjob: super::super::Foundation::HANDLE, ioratecontrolinfo: *const JOBOBJECT_IO_RATE_CONTROL_INFORMATION) -> u32;
+            fn SetIoRateControlInformationJobObject(hjob: ::win32_foundation::HANDLE, ioratecontrolinfo: *const JOBOBJECT_IO_RATE_CONTROL_INFORMATION) -> u32;
         }
         ::core::mem::transmute(SetIoRateControlInformationJobObject(hjob.into_param().abi(), ::core::mem::transmute(ioratecontrolinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TerminateJobObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hjob: Param0, uexitcode: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn TerminateJobObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hjob: Param0, uexitcode: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TerminateJobObject(hjob: super::super::Foundation::HANDLE, uexitcode: u32) -> super::super::Foundation::BOOL;
+            fn TerminateJobObject(hjob: ::win32_foundation::HANDLE, uexitcode: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(TerminateJobObject(hjob.into_param().abi(), ::core::mem::transmute(uexitcode)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UserHandleGrantAccess<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(huserhandle: Param0, hjob: Param1, bgrant: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn UserHandleGrantAccess<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(huserhandle: Param0, hjob: Param1, bgrant: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UserHandleGrantAccess(huserhandle: super::super::Foundation::HANDLE, hjob: super::super::Foundation::HANDLE, bgrant: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn UserHandleGrantAccess(huserhandle: ::win32_foundation::HANDLE, hjob: ::win32_foundation::HANDLE, bgrant: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(UserHandleGrantAccess(huserhandle.into_param().abi(), hjob.into_param().abi(), bgrant.into_param().abi()))
     }

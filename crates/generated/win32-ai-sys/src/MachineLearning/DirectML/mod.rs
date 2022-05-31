@@ -1,9 +1,9 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub fn DMLCreateDevice(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn DMLCreateDevice(d3d12device: ::win32_graphics_sys::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub fn DMLCreateDevice1(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn DMLCreateDevice1(d3d12device: ::win32_graphics_sys::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
 pub struct DML_ACTIVATION_CELU_OPERATOR_DESC {
@@ -305,7 +305,6 @@ impl ::core::clone::Clone for DML_ARGMIN_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     pub InputGradientTensor: *const DML_TENSOR_DESC,
     pub OutputGradientTensor: *const DML_TENSOR_DESC,
@@ -314,18 +313,15 @@ pub struct DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     pub WindowSize: *const u32,
     pub StartPadding: *const u32,
     pub EndPadding: *const u32,
-    pub IncludePadding: super::super::super::Foundation::BOOL,
+    pub IncludePadding: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_AVERAGE_POOLING_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
@@ -334,11 +330,9 @@ pub struct DML_AVERAGE_POOLING_OPERATOR_DESC {
     pub WindowSize: *const u32,
     pub StartPadding: *const u32,
     pub EndPadding: *const u32,
-    pub IncludePadding: super::super::super::Foundation::BOOL,
+    pub IncludePadding: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_AVERAGE_POOLING_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_AVERAGE_POOLING_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
@@ -366,7 +360,6 @@ impl ::core::clone::Clone for DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub MeanTensor: *const DML_TENSOR_DESC,
@@ -374,13 +367,11 @@ pub struct DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     pub ScaleTensor: *const DML_TENSOR_DESC,
     pub BiasTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
-    pub Spatial: super::super::super::Foundation::BOOL,
+    pub Spatial: ::win32_foundation_sys::BOOL,
     pub Epsilon: f32,
     pub FusedActivation: *const DML_OPERATOR_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_BATCH_NORMALIZATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
@@ -413,8 +404,8 @@ impl ::core::clone::Clone for DML_BINDING_PROPERTIES {
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct DML_BINDING_TABLE_DESC {
     pub Dispatchable: IDMLDispatchable,
-    pub CPUDescriptorHandle: super::super::super::Graphics::Direct3D12::D3D12_CPU_DESCRIPTOR_HANDLE,
-    pub GPUDescriptorHandle: super::super::super::Graphics::Direct3D12::D3D12_GPU_DESCRIPTOR_HANDLE,
+    pub CPUDescriptorHandle: ::win32_graphics_sys::Direct3D12::D3D12_CPU_DESCRIPTOR_HANDLE,
+    pub GPUDescriptorHandle: ::win32_graphics_sys::Direct3D12::D3D12_GPU_DESCRIPTOR_HANDLE,
     pub SizeInDescriptors: u32,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -446,7 +437,7 @@ impl ::core::clone::Clone for DML_BUFFER_ARRAY_BINDING {
 #[repr(C)]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct DML_BUFFER_BINDING {
-    pub Buffer: super::super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub Buffer: ::win32_graphics_sys::Direct3D12::ID3D12Resource,
     pub Offset: u64,
     pub SizeInBytes: u64,
 }
@@ -538,34 +529,28 @@ pub type DML_CREATE_DEVICE_FLAGS = u32;
 pub const DML_CREATE_DEVICE_FLAG_NONE: DML_CREATE_DEVICE_FLAGS = 0u32;
 pub const DML_CREATE_DEVICE_FLAG_DEBUG: DML_CREATE_DEVICE_FLAGS = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
     pub Axis: u32,
     pub AxisDirection: DML_AXIS_DIRECTION,
-    pub HasExclusiveProduct: super::super::super::Foundation::BOOL,
+    pub HasExclusiveProduct: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
     pub Axis: u32,
     pub AxisDirection: DML_AXIS_DIRECTION,
-    pub HasExclusiveSum: super::super::super::Foundation::BOOL,
+    pub HasExclusiveSum: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1399,13 +1384,10 @@ impl ::core::clone::Clone for DML_FEATURE_DATA_FEATURE_LEVELS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
-    pub IsSupported: super::super::super::Foundation::BOOL,
+    pub IsSupported: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
     fn clone(&self) -> Self {
         *self
@@ -1588,7 +1570,6 @@ pub type DML_GRAPH_NODE_TYPE = i32;
 pub const DML_GRAPH_NODE_TYPE_INVALID: DML_GRAPH_NODE_TYPE = 0i32;
 pub const DML_GRAPH_NODE_TYPE_OPERATOR: DML_GRAPH_NODE_TYPE = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_GRU_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub WeightTensor: *const DML_TENSOR_DESC,
@@ -1601,11 +1582,9 @@ pub struct DML_GRU_OPERATOR_DESC {
     pub ActivationDescCount: u32,
     pub ActivationDescs: *const DML_OPERATOR_DESC,
     pub Direction: DML_RECURRENT_NETWORK_DIRECTION,
-    pub LinearBeforeReset: super::super::super::Foundation::BOOL,
+    pub LinearBeforeReset: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_GRU_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_GRU_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1659,39 +1638,33 @@ impl ::core::clone::Clone for DML_JOIN_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub InputGradientTensor: *const DML_TENSOR_DESC,
     pub OutputGradientTensor: *const DML_TENSOR_DESC,
-    pub CrossChannel: super::super::super::Foundation::BOOL,
+    pub CrossChannel: ::win32_foundation_sys::BOOL,
     pub LocalSize: u32,
     pub Alpha: f32,
     pub Beta: f32,
     pub Bias: f32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
-    pub CrossChannel: super::super::super::Foundation::BOOL,
+    pub CrossChannel: ::win32_foundation_sys::BOOL,
     pub LocalSize: u32,
     pub Alpha: f32,
     pub Beta: f32,
     pub Bias: f32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1729,7 +1702,6 @@ impl ::core::clone::Clone for DML_LP_POOLING_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_LSTM_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub WeightTensor: *const DML_TENSOR_DESC,
@@ -1746,12 +1718,10 @@ pub struct DML_LSTM_OPERATOR_DESC {
     pub ActivationDescs: *const DML_OPERATOR_DESC,
     pub Direction: DML_RECURRENT_NETWORK_DIRECTION,
     pub ClipThreshold: f32,
-    pub UseClipThreshold: super::super::super::Foundation::BOOL,
-    pub CoupleInputForget: super::super::super::Foundation::BOOL,
+    pub UseClipThreshold: ::win32_foundation_sys::BOOL,
+    pub CoupleInputForget: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_LSTM_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_LSTM_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1856,7 +1826,6 @@ impl ::core::clone::Clone for DML_MAX_UNPOOLING_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub ScaleTensor: *const DML_TENSOR_DESC,
@@ -1864,33 +1833,28 @@ pub struct DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     pub OutputTensor: *const DML_TENSOR_DESC,
     pub AxisCount: u32,
     pub Axes: *const u32,
-    pub NormalizeVariance: super::super::super::Foundation::BOOL,
+    pub NormalizeVariance: ::win32_foundation_sys::BOOL,
     pub Epsilon: f32,
     pub FusedActivation: *const DML_OPERATOR_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub ScaleTensor: *const DML_TENSOR_DESC,
     pub BiasTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
-    pub CrossChannel: super::super::super::Foundation::BOOL,
-    pub NormalizeVariance: super::super::super::Foundation::BOOL,
+    pub CrossChannel: ::win32_foundation_sys::BOOL,
+    pub NormalizeVariance: ::win32_foundation_sys::BOOL,
     pub Epsilon: f32,
     pub FusedActivation: *const DML_OPERATOR_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
@@ -2300,7 +2264,6 @@ impl ::core::clone::Clone for DML_RNN_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_ROI_ALIGN1_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub ROITensor: *const DML_TENSOR_DESC,
@@ -2315,11 +2278,9 @@ pub struct DML_ROI_ALIGN1_OPERATOR_DESC {
     pub OutOfBoundsInputValue: f32,
     pub MinimumSamplesPerOutput: u32,
     pub MaximumSamplesPerOutput: u32,
-    pub AlignRegionsToCorners: super::super::super::Foundation::BOOL,
+    pub AlignRegionsToCorners: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_ROI_ALIGN1_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_ROI_ALIGN1_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self

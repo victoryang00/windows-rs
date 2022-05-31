@@ -385,16 +385,16 @@ impl FirstSignInSettings {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Lookup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
             (::windows_core::Interface::vtable(this).Lookup)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
@@ -402,7 +402,7 @@ impl FirstSignInSettings {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
@@ -410,15 +410,15 @@ impl FirstSignInSettings {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn HasKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).HasKey)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Split(&self, first: &mut ::core::option::Option<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>, second: &mut ::core::option::Option<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
+    pub fn Split(&self, first: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>, second: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Split)(::windows_core::Interface::as_raw(this), first as *mut _ as _, second as *mut _ as _).ok() }
     }
     pub fn IFirstSignInSettingsStatics<R, F: FnOnce(&IFirstSignInSettingsStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -458,16 +458,16 @@ impl ::windows_core::RuntimeName for FirstSignInSettings {
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for FirstSignInSettings {
-    type Item = super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &FirstSignInSettings {
-    type Item = super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -513,55 +513,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Fir
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<FirstSignInSettings> for super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+impl ::core::convert::TryFrom<FirstSignInSettings> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>> {
     type Error = ::windows_core::Error;
     fn try_from(value: FirstSignInSettings) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&FirstSignInSettings> for super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+impl ::core::convert::TryFrom<&FirstSignInSettings> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &FirstSignInSettings) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> for FirstSignInSettings {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> for FirstSignInSettings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> for &FirstSignInSettings {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> for &FirstSignInSettings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<FirstSignInSettings> for super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable> {
+impl ::core::convert::TryFrom<FirstSignInSettings> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: FirstSignInSettings) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&FirstSignInSettings> for super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable> {
+impl ::core::convert::TryFrom<&FirstSignInSettings> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: &FirstSignInSettings) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> for FirstSignInSettings {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> for FirstSignInSettings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> for &FirstSignInSettings {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> for &FirstSignInSettings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for FirstSignInSettings {}
@@ -569,31 +569,31 @@ unsafe impl ::core::marker::Sync for FirstSignInSettings {}
 pub struct GlobalizationPreferences;
 impl GlobalizationPreferences {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Calendars() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Calendars() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::IGlobalizationPreferencesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Calendars)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Calendars)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Clocks() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Clocks() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::IGlobalizationPreferencesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Clocks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Clocks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Currencies() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Currencies() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::IGlobalizationPreferencesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Currencies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Currencies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::IGlobalizationPreferencesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
     pub fn HomeGeographicRegion() -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -603,10 +603,10 @@ impl GlobalizationPreferences {
         })
     }
     #[cfg(feature = "Globalization")]
-    pub fn WeekStartsOn() -> ::windows_core::Result<super::super::Globalization::DayOfWeek> {
+    pub fn WeekStartsOn() -> ::windows_core::Result<::winrt_globalization::DayOfWeek> {
         Self::IGlobalizationPreferencesStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Globalization::DayOfWeek>::zeroed();
-            (::windows_core::Interface::vtable(this).WeekStartsOn)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Globalization::DayOfWeek>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_globalization::DayOfWeek>::zeroed();
+            (::windows_core::Interface::vtable(this).WeekStartsOn)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_globalization::DayOfWeek>(result__)
         })
     }
     pub fn TrySetHomeGeographicRegion<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(region: Param0) -> ::windows_core::Result<bool> {
@@ -616,7 +616,7 @@ impl GlobalizationPreferences {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TrySetLanguages<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(languagetags: Param0) -> ::windows_core::Result<bool> {
+    pub fn TrySetLanguages<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(languagetags: Param0) -> ::windows_core::Result<bool> {
         Self::IGlobalizationPreferencesStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).TrySetLanguages)(::windows_core::Interface::as_raw(this), languagetags.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
@@ -655,35 +655,35 @@ impl GlobalizationPreferencesForUser {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Calendars(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Calendars(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Calendars)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Calendars)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Clocks(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Clocks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Clocks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Clocks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Currencies(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Currencies(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Currencies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Currencies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn HomeGeographicRegion(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -694,11 +694,11 @@ impl GlobalizationPreferencesForUser {
         }
     }
     #[cfg(feature = "Globalization")]
-    pub fn WeekStartsOn(&self) -> ::windows_core::Result<super::super::Globalization::DayOfWeek> {
+    pub fn WeekStartsOn(&self) -> ::windows_core::Result<::winrt_globalization::DayOfWeek> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Globalization::DayOfWeek>::zeroed();
-            (::windows_core::Interface::vtable(this).WeekStartsOn)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Globalization::DayOfWeek>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_globalization::DayOfWeek>::zeroed();
+            (::windows_core::Interface::vtable(this).WeekStartsOn)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_globalization::DayOfWeek>(result__)
         }
     }
 }
@@ -926,7 +926,7 @@ pub struct IGlobalizationPreferencesForUser_Vtbl {
     Languages: usize,
     pub HomeGeographicRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Globalization")]
-    pub WeekStartsOn: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Globalization::DayOfWeek) -> ::windows_core::HRESULT,
+    pub WeekStartsOn: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_globalization::DayOfWeek) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Globalization"))]
     WeekStartsOn: usize,
 }
@@ -959,7 +959,7 @@ pub struct IGlobalizationPreferencesStatics_Vtbl {
     Languages: usize,
     pub HomeGeographicRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Globalization")]
-    pub WeekStartsOn: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Globalization::DayOfWeek) -> ::windows_core::HRESULT,
+    pub WeekStartsOn: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_globalization::DayOfWeek) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Globalization"))]
     WeekStartsOn: usize,
 }
@@ -1004,10 +1004,7 @@ unsafe impl ::windows_core::Interface for ILockScreenImageFeedStatics {
 #[doc(hidden)]
 pub struct ILockScreenImageFeedStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RequestSetImageFeedAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, syndicationfeeduri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestSetImageFeedAsync: usize,
     pub TryRemoveImageFeed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -1021,21 +1018,18 @@ unsafe impl ::windows_core::Interface for ILockScreenStatics {
 #[doc(hidden)]
 pub struct ILockScreenStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub OriginalImageFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OriginalImageFile: usize,
     #[cfg(feature = "Storage_Streams")]
     pub GetImageStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     GetImageStream: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub SetImageFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     SetImageFileAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SetImageStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SetImageStreamAsync: usize,
 }
 #[doc(hidden)]
@@ -1064,53 +1058,53 @@ pub struct IUserInformationStatics_Vtbl {
     pub GetAccountPicture: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, kind: AccountPictureKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
     GetAccountPicture: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage", feature = "deprecated"))]
     pub SetAccountPictureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, image: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
     SetAccountPictureAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage", feature = "deprecated"))]
     pub SetAccountPicturesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, smallimage: ::windows_core::RawPtr, largeimage: ::windows_core::RawPtr, video: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage", feature = "deprecated")))]
     SetAccountPicturesAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
     pub SetAccountPictureFromStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, image: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage_Streams", feature = "deprecated")))]
     SetAccountPictureFromStreamAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
     pub SetAccountPicturesFromStreamsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, smallimage: ::windows_core::RawPtr, largeimage: ::windows_core::RawPtr, video: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage_Streams", feature = "deprecated")))]
     SetAccountPicturesFromStreamsAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub AccountPictureChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changehandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub AccountPictureChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changehandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     AccountPictureChanged: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveAccountPictureChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveAccountPictureChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveAccountPictureChanged: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetDisplayNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetDisplayNameAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetFirstNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetFirstNameAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetLastNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetLastNameAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetPrincipalNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetPrincipalNameAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetSessionInitiationProtocolUriAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetSessionInitiationProtocolUriAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetDomainNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetDomainNameAsync: usize,
 }
 #[doc(hidden)]
@@ -1124,13 +1118,13 @@ unsafe impl ::windows_core::Interface for IUserProfilePersonalizationSettings {
 #[doc(hidden)]
 pub struct IUserProfilePersonalizationSettings_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub TrySetLockScreenImageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, imagefile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     TrySetLockScreenImageAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub TrySetWallpaperImageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, imagefile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     TrySetWallpaperImageAsync: usize,
 }
 #[doc(hidden)]
@@ -1149,11 +1143,10 @@ pub struct IUserProfilePersonalizationSettingsStatics_Vtbl {
 }
 pub struct LockScreen;
 impl LockScreen {
-    #[cfg(feature = "Foundation")]
-    pub fn RequestSetImageFeedAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(syndicationfeeduri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SetImageFeedResult>> {
+    pub fn RequestSetImageFeedAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(syndicationfeeduri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SetImageFeedResult>> {
         Self::ILockScreenImageFeedStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestSetImageFeedAsync)(::windows_core::Interface::as_raw(this), syndicationfeeduri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SetImageFeedResult>>(result__)
+            (::windows_core::Interface::vtable(this).RequestSetImageFeedAsync)(::windows_core::Interface::as_raw(this), syndicationfeeduri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SetImageFeedResult>>(result__)
         })
     }
     pub fn TryRemoveImageFeed() -> ::windows_core::Result<bool> {
@@ -1162,32 +1155,31 @@ impl LockScreen {
             (::windows_core::Interface::vtable(this).TryRemoveImageFeed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OriginalImageFile() -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn OriginalImageFile() -> ::windows_core::Result<::winrt_foundation::Uri> {
         Self::ILockScreenStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OriginalImageFile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).OriginalImageFile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetImageStream() -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStream> {
+    pub fn GetImageStream() -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStream> {
         Self::ILockScreenStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetImageStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStream>(result__)
+            (::windows_core::Interface::vtable(this).GetImageStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStream>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn SetImageFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(value: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Storage")]
+    pub fn SetImageFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ILockScreenStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetImageFileAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetImageFileAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SetImageStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(value: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SetImageStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ILockScreenStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetImageStreamAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetImageStreamAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn ILockScreenImageFeedStatics<R, F: FnOnce(&ILockScreenImageFeedStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1300,91 +1292,91 @@ impl UserInformation {
         })
     }
     #[cfg(all(feature = "Storage", feature = "deprecated"))]
-    pub fn GetAccountPicture(kind: AccountPictureKind) -> ::windows_core::Result<super::super::Storage::IStorageFile> {
+    pub fn GetAccountPicture(kind: AccountPictureKind) -> ::windows_core::Result<::winrt_storage::IStorageFile> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAccountPicture)(::windows_core::Interface::as_raw(this), kind, result__.as_mut_ptr()).from_abi::<super::super::Storage::IStorageFile>(result__)
+            (::windows_core::Interface::vtable(this).GetAccountPicture)(::windows_core::Interface::as_raw(this), kind, result__.as_mut_ptr()).from_abi::<::winrt_storage::IStorageFile>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage", feature = "deprecated"))]
-    pub fn SetAccountPictureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(image: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SetAccountPictureResult>> {
+    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    pub fn SetAccountPictureAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(image: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SetAccountPictureResult>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetAccountPictureAsync)(::windows_core::Interface::as_raw(this), image.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SetAccountPictureResult>>(result__)
+            (::windows_core::Interface::vtable(this).SetAccountPictureAsync)(::windows_core::Interface::as_raw(this), image.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SetAccountPictureResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage", feature = "deprecated"))]
-    pub fn SetAccountPicturesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(smallimage: Param0, largeimage: Param1, video: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SetAccountPictureResult>> {
+    #[cfg(all(feature = "Storage", feature = "deprecated"))]
+    pub fn SetAccountPicturesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(smallimage: Param0, largeimage: Param1, video: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SetAccountPictureResult>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetAccountPicturesAsync)(::windows_core::Interface::as_raw(this), smallimage.into_param().abi(), largeimage.into_param().abi(), video.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SetAccountPictureResult>>(result__)
+            (::windows_core::Interface::vtable(this).SetAccountPicturesAsync)(::windows_core::Interface::as_raw(this), smallimage.into_param().abi(), largeimage.into_param().abi(), video.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SetAccountPictureResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn SetAccountPictureFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(image: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SetAccountPictureResult>> {
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
+    pub fn SetAccountPictureFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(image: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SetAccountPictureResult>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetAccountPictureFromStreamAsync)(::windows_core::Interface::as_raw(this), image.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SetAccountPictureResult>>(result__)
+            (::windows_core::Interface::vtable(this).SetAccountPictureFromStreamAsync)(::windows_core::Interface::as_raw(this), image.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SetAccountPictureResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn SetAccountPicturesFromStreamsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>, Param2: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(smallimage: Param0, largeimage: Param1, video: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SetAccountPictureResult>> {
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
+    pub fn SetAccountPicturesFromStreamsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(smallimage: Param0, largeimage: Param1, video: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SetAccountPictureResult>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetAccountPicturesFromStreamsAsync)(::windows_core::Interface::as_raw(this), smallimage.into_param().abi(), largeimage.into_param().abi(), video.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SetAccountPictureResult>>(result__)
+            (::windows_core::Interface::vtable(this).SetAccountPicturesFromStreamsAsync)(::windows_core::Interface::as_raw(this), smallimage.into_param().abi(), largeimage.into_param().abi(), video.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SetAccountPictureResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn AccountPictureChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(changehandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn AccountPictureChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(changehandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IUserInformationStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AccountPictureChanged)(::windows_core::Interface::as_raw(this), changehandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AccountPictureChanged)(::windows_core::Interface::as_raw(this), changehandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveAccountPictureChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveAccountPictureChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IUserInformationStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveAccountPictureChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetDisplayNameAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetDisplayNameAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDisplayNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetDisplayNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetFirstNameAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetFirstNameAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFirstNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetFirstNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetLastNameAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetLastNameAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetLastNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetLastNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetPrincipalNameAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetPrincipalNameAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPrincipalNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetPrincipalNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetSessionInitiationProtocolUriAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Uri>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetSessionInitiationProtocolUriAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Uri>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSessionInitiationProtocolUriAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).GetSessionInitiationProtocolUriAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Uri>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetDomainNameAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetDomainNameAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IUserInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDomainNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetDomainNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
     #[cfg(feature = "deprecated")]
@@ -1400,20 +1392,20 @@ impl ::windows_core::RuntimeName for UserInformation {
 #[repr(transparent)]
 pub struct UserProfilePersonalizationSettings(::windows_core::IUnknown);
 impl UserProfilePersonalizationSettings {
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn TrySetLockScreenImageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::StorageFile>>(&self, imagefile: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Storage")]
+    pub fn TrySetLockScreenImageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(&self, imagefile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetLockScreenImageAsync)(::windows_core::Interface::as_raw(this), imagefile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetLockScreenImageAsync)(::windows_core::Interface::as_raw(this), imagefile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn TrySetWallpaperImageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::StorageFile>>(&self, imagefile: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Storage")]
+    pub fn TrySetWallpaperImageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(&self, imagefile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetWallpaperImageAsync)(::windows_core::Interface::as_raw(this), imagefile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetWallpaperImageAsync)(::windows_core::Interface::as_raw(this), imagefile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn Current() -> ::windows_core::Result<UserProfilePersonalizationSettings> {

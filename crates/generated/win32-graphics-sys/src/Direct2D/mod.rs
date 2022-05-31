@@ -3,7 +3,7 @@ pub mod Common;
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn D2D1ComputeMaximumScaleFactor(matrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> f32;
+    pub fn D2D1ComputeMaximumScaleFactor(matrix: *const ::winrt_foundation_sys::Numerics::Matrix3x2) -> f32;
     #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
     pub fn D2D1ConvertColorSpace(sourcecolorspace: D2D1_COLOR_SPACE, destinationcolorspace: D2D1_COLOR_SPACE, color: *const Common::D2D1_COLOR_F) -> Common::D2D1_COLOR_F;
     #[cfg(feature = "Win32_Graphics_Dxgi")]
@@ -13,14 +13,14 @@ extern "system" {
     pub fn D2D1CreateFactory(factorytype: D2D1_FACTORY_TYPE, riid: *const ::windows_core_sys::GUID, pfactoryoptions: *const D2D1_FACTORY_OPTIONS, ppifactory: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Direct2D_Common")]
     pub fn D2D1GetGradientMeshInteriorPointsFromCoonsPatch(ppoint0: *const Common::D2D_POINT_2F, ppoint1: *const Common::D2D_POINT_2F, ppoint2: *const Common::D2D_POINT_2F, ppoint3: *const Common::D2D_POINT_2F, ppoint4: *const Common::D2D_POINT_2F, ppoint5: *const Common::D2D_POINT_2F, ppoint6: *const Common::D2D_POINT_2F, ppoint7: *const Common::D2D_POINT_2F, ppoint8: *const Common::D2D_POINT_2F, ppoint9: *const Common::D2D_POINT_2F, ppoint10: *const Common::D2D_POINT_2F, ppoint11: *const Common::D2D_POINT_2F, ptensorpoint11: *mut Common::D2D_POINT_2F, ptensorpoint12: *mut Common::D2D_POINT_2F, ptensorpoint21: *mut Common::D2D_POINT_2F, ptensorpoint22: *mut Common::D2D_POINT_2F);
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Win32_Foundation"))]
-    pub fn D2D1InvertMatrix(matrix: *mut super::super::super::Foundation::Numerics::Matrix3x2) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Foundation_Numerics", feature = "Win32_Foundation"))]
-    pub fn D2D1IsMatrixInvertible(matrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Foundation_Numerics")]
+    pub fn D2D1InvertMatrix(matrix: *mut ::winrt_foundation_sys::Numerics::Matrix3x2) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Foundation_Numerics")]
+    pub fn D2D1IsMatrixInvertible(matrix: *const ::winrt_foundation_sys::Numerics::Matrix3x2) -> ::win32_foundation_sys::BOOL;
     #[cfg(all(feature = "Foundation_Numerics", feature = "Win32_Graphics_Direct2D_Common"))]
-    pub fn D2D1MakeRotateMatrix(angle: f32, center: Common::D2D_POINT_2F, matrix: *mut super::super::super::Foundation::Numerics::Matrix3x2);
+    pub fn D2D1MakeRotateMatrix(angle: f32, center: Common::D2D_POINT_2F, matrix: *mut ::winrt_foundation_sys::Numerics::Matrix3x2);
     #[cfg(all(feature = "Foundation_Numerics", feature = "Win32_Graphics_Direct2D_Common"))]
-    pub fn D2D1MakeSkewMatrix(anglex: f32, angley: f32, center: Common::D2D_POINT_2F, matrix: *mut super::super::super::Foundation::Numerics::Matrix3x2);
+    pub fn D2D1MakeSkewMatrix(anglex: f32, angley: f32, center: Common::D2D_POINT_2F, matrix: *mut ::winrt_foundation_sys::Numerics::Matrix3x2);
     pub fn D2D1SinCos(angle: f32, s: *mut f32, c: *mut f32);
     pub fn D2D1Tan(angle: f32) -> f32;
     pub fn D2D1Vec3Length(x: f32, y: f32, z: f32) -> f32;
@@ -313,7 +313,7 @@ pub const D2D1_BRIGHTNESS_PROP_FORCE_DWORD: D2D1_BRIGHTNESS_PROP = 4294967295u32
 #[cfg(feature = "Foundation_Numerics")]
 pub struct D2D1_BRUSH_PROPERTIES {
     pub opacity: f32,
-    pub transform: super::super::super::Foundation::Numerics::Matrix3x2,
+    pub transform: ::winrt_foundation_sys::Numerics::Matrix3x2,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for D2D1_BRUSH_PROPERTIES {}
@@ -585,7 +585,7 @@ pub struct D2D1_DRAWING_STATE_DESCRIPTION {
     pub textAntialiasMode: D2D1_TEXT_ANTIALIAS_MODE,
     pub tag1: u64,
     pub tag2: u64,
-    pub transform: super::super::super::Foundation::Numerics::Matrix3x2,
+    pub transform: ::winrt_foundation_sys::Numerics::Matrix3x2,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for D2D1_DRAWING_STATE_DESCRIPTION {}
@@ -602,7 +602,7 @@ pub struct D2D1_DRAWING_STATE_DESCRIPTION1 {
     pub textAntialiasMode: D2D1_TEXT_ANTIALIAS_MODE,
     pub tag1: u64,
     pub tag2: u64,
-    pub transform: super::super::super::Foundation::Numerics::Matrix3x2,
+    pub transform: ::winrt_foundation_sys::Numerics::Matrix3x2,
     pub primitiveBlend: D2D1_PRIMITIVE_BLEND,
     pub unitMode: D2D1_UNIT_MODE,
 }
@@ -693,26 +693,20 @@ pub const D2D1_FEATURE_DOUBLES: D2D1_FEATURE = 0u32;
 pub const D2D1_FEATURE_D3D10_X_HARDWARE_OPTIONS: D2D1_FEATURE = 1u32;
 pub const D2D1_FEATURE_FORCE_DWORD: D2D1_FEATURE = 4294967295u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS {
-    pub computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x: super::super::Foundation::BOOL,
+    pub computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D2D1_FEATURE_DATA_DOUBLES {
-    pub doublePrecisionFloatShaderOps: super::super::Foundation::BOOL,
+    pub doublePrecisionFloatShaderOps: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D2D1_FEATURE_DATA_DOUBLES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D2D1_FEATURE_DATA_DOUBLES {
     fn clone(&self) -> Self {
         *self
@@ -872,15 +866,15 @@ pub type D2D1_HUETORGB_PROP = u32;
 pub const D2D1_HUETORGB_PROP_INPUT_COLOR_SPACE: D2D1_HUETORGB_PROP = 0u32;
 pub const D2D1_HUETORGB_PROP_FORCE_DWORD: D2D1_HUETORGB_PROP = 4294967295u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common"))]
+#[cfg(feature = "Win32_Graphics_Direct2D_Common")]
 pub struct D2D1_HWND_RENDER_TARGET_PROPERTIES {
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub pixelSize: Common::D2D_SIZE_U,
     pub presentOptions: D2D1_PRESENT_OPTIONS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common"))]
+#[cfg(feature = "Win32_Graphics_Direct2D_Common")]
 impl ::core::marker::Copy for D2D1_HWND_RENDER_TARGET_PROPERTIES {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct2D_Common"))]
+#[cfg(feature = "Win32_Graphics_Direct2D_Common")]
 impl ::core::clone::Clone for D2D1_HWND_RENDER_TARGET_PROPERTIES {
     fn clone(&self) -> Self {
         *self
@@ -943,7 +937,7 @@ impl ::core::clone::Clone for D2D1_INK_POINT {
 #[cfg(feature = "Foundation_Numerics")]
 pub struct D2D1_INK_STYLE_PROPERTIES {
     pub nibShape: D2D1_INK_NIB_SHAPE,
-    pub nibTransform: super::super::super::Foundation::Numerics::Matrix3x2,
+    pub nibTransform: ::winrt_foundation_sys::Numerics::Matrix3x2,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for D2D1_INK_STYLE_PROPERTIES {}
@@ -1013,7 +1007,7 @@ pub struct D2D1_LAYER_PARAMETERS {
     pub contentBounds: Common::D2D_RECT_F,
     pub geometricMask: ID2D1Geometry,
     pub maskAntialiasMode: D2D1_ANTIALIAS_MODE,
-    pub maskTransform: super::super::super::Foundation::Numerics::Matrix3x2,
+    pub maskTransform: ::winrt_foundation_sys::Numerics::Matrix3x2,
     pub opacity: f32,
     pub opacityBrush: ID2D1Brush,
     pub layerOptions: D2D1_LAYER_OPTIONS,
@@ -1032,7 +1026,7 @@ pub struct D2D1_LAYER_PARAMETERS1 {
     pub contentBounds: Common::D2D_RECT_F,
     pub geometricMask: ID2D1Geometry,
     pub maskAntialiasMode: D2D1_ANTIALIAS_MODE,
-    pub maskTransform: super::super::super::Foundation::Numerics::Matrix3x2,
+    pub maskTransform: ::winrt_foundation_sys::Numerics::Matrix3x2,
     pub opacity: f32,
     pub opacityBrush: ID2D1Brush,
     pub layerOptions: D2D1_LAYER_OPTIONS1,
@@ -1638,15 +1632,12 @@ pub const D2D1_SVG_PATH_COMMAND_QUADRADIC_SMOOTH_ABSOLUTE: D2D1_SVG_PATH_COMMAND
 pub const D2D1_SVG_PATH_COMMAND_QUADRADIC_SMOOTH_RELATIVE: D2D1_SVG_PATH_COMMAND = 18u32;
 pub const D2D1_SVG_PATH_COMMAND_FORCE_DWORD: D2D1_SVG_PATH_COMMAND = 4294967295u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D2D1_SVG_PRESERVE_ASPECT_RATIO {
-    pub defer: super::super::Foundation::BOOL,
+    pub defer: ::win32_foundation_sys::BOOL,
     pub align: D2D1_SVG_ASPECT_ALIGN,
     pub meetOrSlice: D2D1_SVG_ASPECT_SCALING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D2D1_SVG_PRESERVE_ASPECT_RATIO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D2D1_SVG_PRESERVE_ASPECT_RATIO {
     fn clone(&self) -> Self {
         *self

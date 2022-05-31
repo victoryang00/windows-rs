@@ -1,7 +1,6 @@
 #[repr(transparent)]
 pub struct IWaaSAssessor(::windows_core::IUnknown);
 impl IWaaSAssessor {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetOSUpdateAssessment(&self) -> ::windows_core::Result<OSUpdateAssessment> {
         let mut result__ = ::core::mem::MaybeUninit::<OSUpdateAssessment>::zeroed();
         (::windows_core::Interface::vtable(self).GetOSUpdateAssessment)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<OSUpdateAssessment>(result__)
@@ -51,34 +50,27 @@ unsafe impl ::windows_core::Interface for IWaaSAssessor {
 #[doc(hidden)]
 pub struct IWaaSAssessor_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetOSUpdateAssessment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result: *mut OSUpdateAssessment) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetOSUpdateAssessment: usize,
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OSUpdateAssessment {
-    pub isEndOfSupport: super::super::Foundation::BOOL,
+    pub isEndOfSupport: ::win32_foundation::BOOL,
     pub assessmentForCurrent: UpdateAssessment,
     pub assessmentForUpToDate: UpdateAssessment,
     pub securityStatus: UpdateAssessmentStatus,
-    pub assessmentTime: super::super::Foundation::FILETIME,
-    pub releaseInfoTime: super::super::Foundation::FILETIME,
+    pub assessmentTime: ::win32_foundation::FILETIME,
+    pub releaseInfoTime: ::win32_foundation::FILETIME,
     pub currentOSBuild: ::windows_core::PWSTR,
-    pub currentOSReleaseTime: super::super::Foundation::FILETIME,
+    pub currentOSReleaseTime: ::win32_foundation::FILETIME,
     pub upToDateOSBuild: ::windows_core::PWSTR,
-    pub upToDateOSReleaseTime: super::super::Foundation::FILETIME,
+    pub upToDateOSReleaseTime: ::win32_foundation::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OSUpdateAssessment {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OSUpdateAssessment {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OSUpdateAssessment {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OSUpdateAssessment")
@@ -95,19 +87,15 @@ impl ::core::fmt::Debug for OSUpdateAssessment {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OSUpdateAssessment {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OSUpdateAssessment {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OSUpdateAssessment>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OSUpdateAssessment {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OSUpdateAssessment {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

@@ -145,14 +145,11 @@ impl ::core::clone::Clone for CoreProcessEventsOption {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct CoreProximityEvaluation {
     pub Score: i32,
-    pub AdjustedPoint: super::super::Foundation::Point,
+    pub AdjustedPoint: ::winrt_foundation_sys::Point,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for CoreProximityEvaluation {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for CoreProximityEvaluation {
     fn clone(&self) -> Self {
         *self

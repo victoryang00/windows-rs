@@ -9,14 +9,8 @@ unsafe impl ::windows_core::Interface for IPrint3DManager {
 #[doc(hidden)]
 pub struct IPrint3DManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub TaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TaskRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTaskRequested: usize,
+    pub TaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -30,10 +24,7 @@ unsafe impl ::windows_core::Interface for IPrint3DManagerStatics {
 pub struct IPrint3DManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ShowPrintUIAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShowPrintUIAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -47,30 +38,12 @@ unsafe impl ::windows_core::Interface for IPrint3DTask {
 pub struct IPrint3DTask_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Source: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Submitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Submitting: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveSubmitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveSubmitting: usize,
-    #[cfg(feature = "Foundation")]
-    pub Completed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Completed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub SourceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SourceChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveSourceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveSourceChanged: usize,
+    pub Submitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveSubmitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Completed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub SourceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveSourceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -149,9 +122,9 @@ unsafe impl ::windows_core::Interface for IPrinting3D3MFPackage {
 #[doc(hidden)]
 pub struct IPrinting3D3MFPackage_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SaveAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SaveAsync: usize,
     #[cfg(feature = "Storage_Streams")]
     pub PrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -175,14 +148,11 @@ pub struct IPrinting3D3MFPackage_Vtbl {
     pub Textures: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Textures: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub LoadModelFromPackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     LoadModelFromPackageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub SaveModelToPackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SaveModelToPackageAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -209,9 +179,9 @@ unsafe impl ::windows_core::Interface for IPrinting3D3MFPackageStatics {
 #[doc(hidden)]
 pub struct IPrinting3D3MFPackageStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub LoadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     LoadAsync: usize,
 }
 #[doc(hidden)]
@@ -300,11 +270,11 @@ unsafe impl ::windows_core::Interface for IPrinting3DColorMaterial2 {
 pub struct IPrinting3DColorMaterial2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "UI")]
-    pub Color: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::UI::Color) -> ::windows_core::HRESULT,
+    pub Color: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Color) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI"))]
     Color: usize,
     #[cfg(feature = "UI")]
-    pub SetColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::UI::Color) -> ::windows_core::HRESULT,
+    pub SetColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_ui::Color) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI"))]
     SetColor: usize,
 }
@@ -378,11 +348,11 @@ pub struct IPrinting3DComponentWithMatrix_Vtbl {
     pub Component: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetComponent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub Matrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
+    pub Matrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Matrix: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
+    pub SetMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Matrix4x4) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetMatrix: usize,
 }
@@ -551,10 +521,7 @@ pub struct IPrinting3DMesh_Vtbl {
     pub BufferSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     BufferSet: usize,
-    #[cfg(feature = "Foundation")]
     pub VerifyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: Printing3DMeshVerificationMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    VerifyAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -616,10 +583,7 @@ pub struct IPrinting3DModel_Vtbl {
     pub Metadata: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Metadata: usize,
-    #[cfg(feature = "Foundation")]
     pub RepairAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RepairAsync: usize,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -633,30 +597,12 @@ unsafe impl ::windows_core::Interface for IPrinting3DModel2 {
 #[doc(hidden)]
 pub struct IPrinting3DModel2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub TryPartialRepairAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryPartialRepairAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub TryPartialRepairWithTimeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxwaittime: super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryPartialRepairWithTimeAsync: usize,
-    #[cfg(feature = "Foundation")]
+    pub TryPartialRepairWithTimeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxwaittime: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub TryReduceFacesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryReduceFacesAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryReduceFacesWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, printing3dfacereductionoptions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryReduceFacesWithOptionsAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub TryReduceFacesWithOptionsAndTimeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, printing3dfacereductionoptions: ::windows_core::RawPtr, maxwait: super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryReduceFacesWithOptionsAndTimeAsync: usize,
-    #[cfg(feature = "Foundation")]
+    pub TryReduceFacesWithOptionsAndTimeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, printing3dfacereductionoptions: ::windows_core::RawPtr, maxwait: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RepairWithProgressAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RepairWithProgressAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -813,16 +759,14 @@ pub struct IPrinting3DTextureResource_Vtbl {
 #[repr(transparent)]
 pub struct Print3DManager(::windows_core::IUnknown);
 impl Print3DManager {
-    #[cfg(feature = "Foundation")]
-    pub fn TaskRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Print3DManager, Print3DTaskRequestedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn TaskRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<Print3DManager, Print3DTaskRequestedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TaskRequested)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TaskRequested)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTaskRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTaskRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTaskRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -832,11 +776,10 @@ impl Print3DManager {
             (::windows_core::Interface::vtable(this).GetForCurrentView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Print3DManager>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShowPrintUIAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn ShowPrintUIAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IPrint3DManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowPrintUIAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).ShowPrintUIAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
     pub fn IPrint3DManagerStatics<R, F: FnOnce(&IPrint3DManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -926,42 +869,36 @@ impl Print3DTask {
             (::windows_core::Interface::vtable(this).Source)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Printing3D3MFPackage>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Submitting<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Print3DTask, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Submitting<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<Print3DTask, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Submitting)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Submitting)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveSubmitting<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveSubmitting<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSubmitting)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Completed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Print3DTask, Print3DTaskCompletedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Completed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<Print3DTask, Print3DTaskCompletedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCompleted)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SourceChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Print3DTask, Print3DTaskSourceChangedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn SourceChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<Print3DTask, Print3DTaskSourceChangedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).SourceChanged)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).SourceChanged)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveSourceChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveSourceChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSourceChanged)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
@@ -1624,37 +1561,37 @@ impl Printing3D3MFPackage {
         static mut SHARED: ::windows_core::FactoryCache<Printing3D3MFPackage, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SaveAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IRandomAccessStream>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SaveAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStream>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IRandomAccessStream>>(result__)
+            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStream>>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn PrintTicket(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStream> {
+    pub fn PrintTicket(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PrintTicket)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStream>(result__)
+            (::windows_core::Interface::vtable(this).PrintTicket)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetPrintTicket<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPrintTicket<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPrintTicket)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ModelPart(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStream> {
+    pub fn ModelPart(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ModelPart)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStream>(result__)
+            (::windows_core::Interface::vtable(this).ModelPart)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetModelPart<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetModelPart<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetModelPart)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1670,27 +1607,26 @@ impl Printing3D3MFPackage {
         unsafe { (::windows_core::Interface::vtable(this).SetThumbnail)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Textures(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DTextureResource>> {
+    pub fn Textures(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DTextureResource>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Textures)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DTextureResource>>(result__)
+            (::windows_core::Interface::vtable(this).Textures)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DTextureResource>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn LoadModelFromPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, value: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Printing3DModel>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn LoadModelFromPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Printing3DModel>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadModelFromPackageAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Printing3DModel>>(result__)
+            (::windows_core::Interface::vtable(this).LoadModelFromPackageAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Printing3DModel>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SaveModelToPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, Printing3DModel>>(&self, value: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SaveModelToPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, Printing3DModel>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveModelToPackageAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SaveModelToPackageAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn Compression(&self) -> ::windows_core::Result<Printing3DPackageCompression> {
@@ -1704,11 +1640,11 @@ impl Printing3D3MFPackage {
         let this = &::windows_core::Interface::cast::<IPrinting3D3MFPackage2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCompression)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(value: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Printing3D3MFPackage>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Printing3D3MFPackage>> {
         Self::IPrinting3D3MFPackageStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Printing3D3MFPackage>>(result__)
+            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Printing3D3MFPackage>>(result__)
         })
     }
     pub fn IPrinting3D3MFPackageStatics<R, F: FnOnce(&IPrinting3D3MFPackageStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1913,11 +1849,11 @@ unsafe impl ::core::marker::Sync for Printing3DBaseMaterial {}
 pub struct Printing3DBaseMaterialGroup(::windows_core::IUnknown);
 impl Printing3DBaseMaterialGroup {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Bases(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DBaseMaterial>> {
+    pub fn Bases(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DBaseMaterial>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Bases)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DBaseMaterial>>(result__)
+            (::windows_core::Interface::vtable(this).Bases)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DBaseMaterial>>(result__)
         }
     }
     pub fn MaterialGroupId(&self) -> ::windows_core::Result<u32> {
@@ -2107,15 +2043,15 @@ impl Printing3DColorMaterial {
         unsafe { (::windows_core::Interface::vtable(this).SetValue)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "UI")]
-    pub fn Color(&self) -> ::windows_core::Result<super::super::UI::Color> {
+    pub fn Color(&self) -> ::windows_core::Result<::winrt_ui::Color> {
         let this = &::windows_core::Interface::cast::<IPrinting3DColorMaterial2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::UI::Color>::zeroed();
-            (::windows_core::Interface::vtable(this).Color)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Color>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::Color>::zeroed();
+            (::windows_core::Interface::vtable(this).Color)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Color>(result__)
         }
     }
     #[cfg(feature = "UI")]
-    pub fn SetColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Color>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IPrinting3DColorMaterial2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2196,11 +2132,11 @@ unsafe impl ::core::marker::Sync for Printing3DColorMaterial {}
 pub struct Printing3DColorMaterialGroup(::windows_core::IUnknown);
 impl Printing3DColorMaterialGroup {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Colors(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DColorMaterial>> {
+    pub fn Colors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DColorMaterial>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Colors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DColorMaterial>>(result__)
+            (::windows_core::Interface::vtable(this).Colors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DColorMaterial>>(result__)
         }
     }
     pub fn MaterialGroupId(&self) -> ::windows_core::Result<u32> {
@@ -2315,11 +2251,11 @@ impl Printing3DComponent {
         unsafe { (::windows_core::Interface::vtable(this).SetMesh)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Components(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DComponentWithMatrix>> {
+    pub fn Components(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DComponentWithMatrix>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Components)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DComponentWithMatrix>>(result__)
+            (::windows_core::Interface::vtable(this).Components)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DComponentWithMatrix>>(result__)
         }
     }
     pub fn Thumbnail(&self) -> ::windows_core::Result<Printing3DTextureResource> {
@@ -2461,15 +2397,15 @@ impl Printing3DComponentWithMatrix {
         unsafe { (::windows_core::Interface::vtable(this).SetComponent)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn Matrix(&self) -> ::windows_core::Result<super::super::Foundation::Numerics::Matrix4x4> {
+    pub fn Matrix(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix4x4> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Numerics::Matrix4x4>::zeroed();
-            (::windows_core::Interface::vtable(this).Matrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Numerics::Matrix4x4>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Matrix4x4>::zeroed();
+            (::windows_core::Interface::vtable(this).Matrix)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix4x4>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetMatrix<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Numerics::Matrix4x4>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetMatrix<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix4x4>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMatrix)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2557,11 +2493,11 @@ impl Printing3DCompositeMaterial {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Values(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<f64>> {
+    pub fn Values(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Values)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<f64>>(result__)
+            (::windows_core::Interface::vtable(this).Values)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<f64>>(result__)
         }
     }
 }
@@ -2641,11 +2577,11 @@ unsafe impl ::core::marker::Sync for Printing3DCompositeMaterial {}
 pub struct Printing3DCompositeMaterialGroup(::windows_core::IUnknown);
 impl Printing3DCompositeMaterialGroup {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Composites(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DCompositeMaterial>> {
+    pub fn Composites(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DCompositeMaterial>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Composites)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DCompositeMaterial>>(result__)
+            (::windows_core::Interface::vtable(this).Composites)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DCompositeMaterial>>(result__)
         }
     }
     pub fn MaterialGroupId(&self) -> ::windows_core::Result<u32> {
@@ -2656,11 +2592,11 @@ impl Printing3DCompositeMaterialGroup {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MaterialIndices(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<u32>> {
+    pub fn MaterialIndices(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MaterialIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<u32>>(result__)
+            (::windows_core::Interface::vtable(this).MaterialIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<u32>>(result__)
         }
     }
     pub fn BaseMaterialGroup(&self) -> ::windows_core::Result<Printing3DBaseMaterialGroup> {
@@ -2884,43 +2820,43 @@ impl Printing3DMaterial {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BaseGroups(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DBaseMaterialGroup>> {
+    pub fn BaseGroups(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DBaseMaterialGroup>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BaseGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DBaseMaterialGroup>>(result__)
+            (::windows_core::Interface::vtable(this).BaseGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DBaseMaterialGroup>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ColorGroups(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DColorMaterialGroup>> {
+    pub fn ColorGroups(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DColorMaterialGroup>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ColorGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DColorMaterialGroup>>(result__)
+            (::windows_core::Interface::vtable(this).ColorGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DColorMaterialGroup>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Texture2CoordGroups(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DTexture2CoordMaterialGroup>> {
+    pub fn Texture2CoordGroups(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DTexture2CoordMaterialGroup>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Texture2CoordGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DTexture2CoordMaterialGroup>>(result__)
+            (::windows_core::Interface::vtable(this).Texture2CoordGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DTexture2CoordMaterialGroup>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CompositeGroups(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DCompositeMaterialGroup>> {
+    pub fn CompositeGroups(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DCompositeMaterialGroup>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CompositeGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DCompositeMaterialGroup>>(result__)
+            (::windows_core::Interface::vtable(this).CompositeGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DCompositeMaterialGroup>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MultiplePropertyGroups(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DMultiplePropertyMaterialGroup>> {
+    pub fn MultiplePropertyGroups(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DMultiplePropertyMaterialGroup>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MultiplePropertyGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DMultiplePropertyMaterialGroup>>(result__)
+            (::windows_core::Interface::vtable(this).MultiplePropertyGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DMultiplePropertyMaterialGroup>>(result__)
         }
     }
 }
@@ -3073,11 +3009,11 @@ impl Printing3DMesh {
         unsafe { (::windows_core::Interface::vtable(this).SetTriangleMaterialIndicesDescription)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetVertexPositions(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn GetVertexPositions(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetVertexPositions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).GetVertexPositions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn CreateVertexPositions(&self, value: u32) -> ::windows_core::Result<()> {
@@ -3085,11 +3021,11 @@ impl Printing3DMesh {
         unsafe { (::windows_core::Interface::vtable(this).CreateVertexPositions)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetVertexNormals(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn GetVertexNormals(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetVertexNormals)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).GetVertexNormals)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn CreateVertexNormals(&self, value: u32) -> ::windows_core::Result<()> {
@@ -3097,11 +3033,11 @@ impl Printing3DMesh {
         unsafe { (::windows_core::Interface::vtable(this).CreateVertexNormals)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetTriangleIndices(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn GetTriangleIndices(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTriangleIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).GetTriangleIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn CreateTriangleIndices(&self, value: u32) -> ::windows_core::Result<()> {
@@ -3109,11 +3045,11 @@ impl Printing3DMesh {
         unsafe { (::windows_core::Interface::vtable(this).CreateTriangleIndices)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetTriangleMaterialIndices(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn GetTriangleMaterialIndices(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTriangleMaterialIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).GetTriangleMaterialIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn CreateTriangleMaterialIndices(&self, value: u32) -> ::windows_core::Result<()> {
@@ -3121,27 +3057,26 @@ impl Printing3DMesh {
         unsafe { (::windows_core::Interface::vtable(this).CreateTriangleMaterialIndices)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BufferDescriptionSet(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IPropertySet> {
+    pub fn BufferDescriptionSet(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BufferDescriptionSet)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IPropertySet>(result__)
+            (::windows_core::Interface::vtable(this).BufferDescriptionSet)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IPropertySet>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BufferSet(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IPropertySet> {
+    pub fn BufferSet(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BufferSet)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IPropertySet>(result__)
+            (::windows_core::Interface::vtable(this).BufferSet)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IPropertySet>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn VerifyAsync(&self, value: Printing3DMeshVerificationMode) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Printing3DMeshVerificationResult>> {
+    pub fn VerifyAsync(&self, value: Printing3DMeshVerificationMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Printing3DMeshVerificationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).VerifyAsync)(::windows_core::Interface::as_raw(this), value, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Printing3DMeshVerificationResult>>(result__)
+            (::windows_core::Interface::vtable(this).VerifyAsync)(::windows_core::Interface::as_raw(this), value, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Printing3DMeshVerificationResult>>(result__)
         }
     }
 }
@@ -3261,19 +3196,19 @@ impl Printing3DMeshVerificationResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn NonmanifoldTriangles(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn NonmanifoldTriangles(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NonmanifoldTriangles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).NonmanifoldTriangles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReversedNormalTriangles(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn ReversedNormalTriangles(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReversedNormalTriangles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReversedNormalTriangles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -3371,27 +3306,27 @@ impl Printing3DModel {
         unsafe { (::windows_core::Interface::vtable(this).SetUnit)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Textures(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DModelTexture>> {
+    pub fn Textures(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DModelTexture>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Textures)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DModelTexture>>(result__)
+            (::windows_core::Interface::vtable(this).Textures)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DModelTexture>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Meshes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DMesh>> {
+    pub fn Meshes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DMesh>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Meshes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DMesh>>(result__)
+            (::windows_core::Interface::vtable(this).Meshes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DMesh>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Components(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DComponent>> {
+    pub fn Components(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DComponent>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Components)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DComponent>>(result__)
+            (::windows_core::Interface::vtable(this).Components)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DComponent>>(result__)
         }
     }
     pub fn Material(&self) -> ::windows_core::Result<Printing3DMaterial> {
@@ -3428,27 +3363,26 @@ impl Printing3DModel {
         unsafe { (::windows_core::Interface::vtable(this).SetVersion)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RequiredExtensions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn RequiredExtensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequiredExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).RequiredExtensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Metadata(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+    pub fn Metadata(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Metadata)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Metadata)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RepairAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn RepairAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RepairAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).RepairAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn Clone(&self) -> ::windows_core::Result<Printing3DModel> {
@@ -3458,52 +3392,46 @@ impl Printing3DModel {
             (::windows_core::Interface::vtable(this).Clone)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Printing3DModel>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryPartialRepairAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryPartialRepairAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IPrinting3DModel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryPartialRepairAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryPartialRepairAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryPartialRepairWithTimeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, maxwaittime: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryPartialRepairWithTimeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, maxwaittime: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IPrinting3DModel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryPartialRepairWithTimeAsync)(::windows_core::Interface::as_raw(this), maxwaittime.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryPartialRepairWithTimeAsync)(::windows_core::Interface::as_raw(this), maxwaittime.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryReduceFacesAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<bool, f64>> {
+    pub fn TryReduceFacesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<bool, f64>> {
         let this = &::windows_core::Interface::cast::<IPrinting3DModel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryReduceFacesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<bool, f64>>(result__)
+            (::windows_core::Interface::vtable(this).TryReduceFacesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<bool, f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryReduceFacesWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, Printing3DFaceReductionOptions>>(&self, printing3dfacereductionoptions: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<bool, f64>> {
+    pub fn TryReduceFacesWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, Printing3DFaceReductionOptions>>(&self, printing3dfacereductionoptions: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<bool, f64>> {
         let this = &::windows_core::Interface::cast::<IPrinting3DModel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryReduceFacesWithOptionsAsync)(::windows_core::Interface::as_raw(this), printing3dfacereductionoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<bool, f64>>(result__)
+            (::windows_core::Interface::vtable(this).TryReduceFacesWithOptionsAsync)(::windows_core::Interface::as_raw(this), printing3dfacereductionoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<bool, f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryReduceFacesWithOptionsAndTimeAsync<'a, Param0: ::windows_core::IntoParam<'a, Printing3DFaceReductionOptions>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, printing3dfacereductionoptions: Param0, maxwait: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<bool, f64>> {
+    pub fn TryReduceFacesWithOptionsAndTimeAsync<'a, Param0: ::windows_core::IntoParam<'a, Printing3DFaceReductionOptions>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, printing3dfacereductionoptions: Param0, maxwait: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<bool, f64>> {
         let this = &::windows_core::Interface::cast::<IPrinting3DModel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryReduceFacesWithOptionsAndTimeAsync)(::windows_core::Interface::as_raw(this), printing3dfacereductionoptions.into_param().abi(), maxwait.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<bool, f64>>(result__)
+            (::windows_core::Interface::vtable(this).TryReduceFacesWithOptionsAndTimeAsync)(::windows_core::Interface::as_raw(this), printing3dfacereductionoptions.into_param().abi(), maxwait.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<bool, f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RepairWithProgressAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<bool, f64>> {
+    pub fn RepairWithProgressAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<bool, f64>> {
         let this = &::windows_core::Interface::cast::<IPrinting3DModel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RepairWithProgressAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<bool, f64>>(result__)
+            (::windows_core::Interface::vtable(this).RepairWithProgressAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<bool, f64>>(result__)
         }
     }
 }
@@ -3743,11 +3671,11 @@ impl Printing3DMultiplePropertyMaterial {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MaterialIndices(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<u32>> {
+    pub fn MaterialIndices(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MaterialIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<u32>>(result__)
+            (::windows_core::Interface::vtable(this).MaterialIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<u32>>(result__)
         }
     }
 }
@@ -3827,19 +3755,19 @@ unsafe impl ::core::marker::Sync for Printing3DMultiplePropertyMaterial {}
 pub struct Printing3DMultiplePropertyMaterialGroup(::windows_core::IUnknown);
 impl Printing3DMultiplePropertyMaterialGroup {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MultipleProperties(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DMultiplePropertyMaterial>> {
+    pub fn MultipleProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DMultiplePropertyMaterial>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MultipleProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DMultiplePropertyMaterial>>(result__)
+            (::windows_core::Interface::vtable(this).MultipleProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DMultiplePropertyMaterial>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MaterialGroupIndices(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<u32>> {
+    pub fn MaterialGroupIndices(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MaterialGroupIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<u32>>(result__)
+            (::windows_core::Interface::vtable(this).MaterialGroupIndices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<u32>>(result__)
         }
     }
     pub fn MaterialGroupId(&self) -> ::windows_core::Result<u32> {
@@ -4120,11 +4048,11 @@ unsafe impl ::core::marker::Sync for Printing3DTexture2CoordMaterial {}
 pub struct Printing3DTexture2CoordMaterialGroup(::windows_core::IUnknown);
 impl Printing3DTexture2CoordMaterialGroup {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Texture2Coords(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<Printing3DTexture2CoordMaterial>> {
+    pub fn Texture2Coords(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Printing3DTexture2CoordMaterial>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Texture2Coords)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<Printing3DTexture2CoordMaterial>>(result__)
+            (::windows_core::Interface::vtable(this).Texture2Coords)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Printing3DTexture2CoordMaterial>>(result__)
         }
     }
     pub fn MaterialGroupId(&self) -> ::windows_core::Result<u32> {
@@ -4274,15 +4202,15 @@ impl Printing3DTextureResource {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn TextureData(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStreamWithContentType> {
+    pub fn TextureData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamWithContentType> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TextureData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStreamWithContentType>(result__)
+            (::windows_core::Interface::vtable(this).TextureData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamWithContentType>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetTextureData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamWithContentType>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetTextureData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamWithContentType>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTextureData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }

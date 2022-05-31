@@ -1,11 +1,8 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OfflineFilesEnable(benable: super::super::Foundation::BOOL, pbrebootrequired: *mut super::super::Foundation::BOOL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OfflineFilesQueryStatus(pbactive: *mut super::super::Foundation::BOOL, pbenabled: *mut super::super::Foundation::BOOL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OfflineFilesQueryStatusEx(pbactive: *mut super::super::Foundation::BOOL, pbenabled: *mut super::super::Foundation::BOOL, pbavailable: *mut super::super::Foundation::BOOL) -> u32;
+    pub fn OfflineFilesEnable(benable: ::win32_foundation_sys::BOOL, pbrebootrequired: *mut ::win32_foundation_sys::BOOL) -> u32;
+    pub fn OfflineFilesQueryStatus(pbactive: *mut ::win32_foundation_sys::BOOL, pbenabled: *mut ::win32_foundation_sys::BOOL) -> u32;
+    pub fn OfflineFilesQueryStatusEx(pbactive: *mut ::win32_foundation_sys::BOOL, pbenabled: *mut ::win32_foundation_sys::BOOL, pbavailable: *mut ::win32_foundation_sys::BOOL) -> u32;
     pub fn OfflineFilesStart() -> u32;
 }
 pub type IEnumOfflineFilesItems = *mut ::core::ffi::c_void;

@@ -1,64 +1,36 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BuildCommDCBA(lpdef: ::windows_core_sys::PCSTR, lpdcb: *mut DCB) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BuildCommDCBAndTimeoutsA(lpdef: ::windows_core_sys::PCSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BuildCommDCBAndTimeoutsW(lpdef: ::windows_core_sys::PCWSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BuildCommDCBW(lpdef: ::windows_core_sys::PCWSTR, lpdcb: *mut DCB) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClearCommBreak(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClearCommError(hfile: super::super::Foundation::HANDLE, lperrors: *mut CLEAR_COMM_ERROR_FLAGS, lpstat: *mut COMSTAT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CommConfigDialogA(lpszname: ::windows_core_sys::PCSTR, hwnd: super::super::Foundation::HWND, lpcc: *mut COMMCONFIG) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CommConfigDialogW(lpszname: ::windows_core_sys::PCWSTR, hwnd: super::super::Foundation::HWND, lpcc: *mut COMMCONFIG) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EscapeCommFunction(hfile: super::super::Foundation::HANDLE, dwfunc: ESCAPE_COMM_FUNCTION) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCommConfig(hcommdev: super::super::Foundation::HANDLE, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCommMask(hfile: super::super::Foundation::HANDLE, lpevtmask: *mut COMM_EVENT_MASK) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCommModemStatus(hfile: super::super::Foundation::HANDLE, lpmodemstat: *mut MODEM_STATUS_FLAGS) -> super::super::Foundation::BOOL;
+    pub fn BuildCommDCBA(lpdef: ::windows_core_sys::PCSTR, lpdcb: *mut DCB) -> ::win32_foundation_sys::BOOL;
+    pub fn BuildCommDCBAndTimeoutsA(lpdef: ::windows_core_sys::PCSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> ::win32_foundation_sys::BOOL;
+    pub fn BuildCommDCBAndTimeoutsW(lpdef: ::windows_core_sys::PCWSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> ::win32_foundation_sys::BOOL;
+    pub fn BuildCommDCBW(lpdef: ::windows_core_sys::PCWSTR, lpdcb: *mut DCB) -> ::win32_foundation_sys::BOOL;
+    pub fn ClearCommBreak(hfile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn ClearCommError(hfile: ::win32_foundation_sys::HANDLE, lperrors: *mut CLEAR_COMM_ERROR_FLAGS, lpstat: *mut COMSTAT) -> ::win32_foundation_sys::BOOL;
+    pub fn CommConfigDialogA(lpszname: ::windows_core_sys::PCSTR, hwnd: ::win32_foundation_sys::HWND, lpcc: *mut COMMCONFIG) -> ::win32_foundation_sys::BOOL;
+    pub fn CommConfigDialogW(lpszname: ::windows_core_sys::PCWSTR, hwnd: ::win32_foundation_sys::HWND, lpcc: *mut COMMCONFIG) -> ::win32_foundation_sys::BOOL;
+    pub fn EscapeCommFunction(hfile: ::win32_foundation_sys::HANDLE, dwfunc: ESCAPE_COMM_FUNCTION) -> ::win32_foundation_sys::BOOL;
+    pub fn GetCommConfig(hcommdev: ::win32_foundation_sys::HANDLE, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetCommMask(hfile: ::win32_foundation_sys::HANDLE, lpevtmask: *mut COMM_EVENT_MASK) -> ::win32_foundation_sys::BOOL;
+    pub fn GetCommModemStatus(hfile: ::win32_foundation_sys::HANDLE, lpmodemstat: *mut MODEM_STATUS_FLAGS) -> ::win32_foundation_sys::BOOL;
     pub fn GetCommPorts(lpportnumbers: *mut u32, uportnumberscount: u32, puportnumbersfound: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCommProperties(hfile: super::super::Foundation::HANDLE, lpcommprop: *mut COMMPROP) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCommState(hfile: super::super::Foundation::HANDLE, lpdcb: *mut DCB) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCommTimeouts(hfile: super::super::Foundation::HANDLE, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDefaultCommConfigA(lpszname: ::windows_core_sys::PCSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDefaultCommConfigW(lpszname: ::windows_core_sys::PCWSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenCommPort(uportnumber: u32, dwdesiredaccess: u32, dwflagsandattributes: u32) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PurgeComm(hfile: super::super::Foundation::HANDLE, dwflags: PURGE_COMM_FLAGS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetCommBreak(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetCommConfig(hcommdev: super::super::Foundation::HANDLE, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetCommMask(hfile: super::super::Foundation::HANDLE, dwevtmask: COMM_EVENT_MASK) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetCommState(hfile: super::super::Foundation::HANDLE, lpdcb: *const DCB) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetCommTimeouts(hfile: super::super::Foundation::HANDLE, lpcommtimeouts: *const COMMTIMEOUTS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetDefaultCommConfigA(lpszname: ::windows_core_sys::PCSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetDefaultCommConfigW(lpszname: ::windows_core_sys::PCWSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupComm(hfile: super::super::Foundation::HANDLE, dwinqueue: u32, dwoutqueue: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TransmitCommChar(hfile: super::super::Foundation::HANDLE, cchar: super::super::Foundation::CHAR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn WaitCommEvent(hfile: super::super::Foundation::HANDLE, lpevtmask: *mut COMM_EVENT_MASK, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+    pub fn GetCommProperties(hfile: ::win32_foundation_sys::HANDLE, lpcommprop: *mut COMMPROP) -> ::win32_foundation_sys::BOOL;
+    pub fn GetCommState(hfile: ::win32_foundation_sys::HANDLE, lpdcb: *mut DCB) -> ::win32_foundation_sys::BOOL;
+    pub fn GetCommTimeouts(hfile: ::win32_foundation_sys::HANDLE, lpcommtimeouts: *mut COMMTIMEOUTS) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDefaultCommConfigA(lpszname: ::windows_core_sys::PCSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDefaultCommConfigW(lpszname: ::windows_core_sys::PCWSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn OpenCommPort(uportnumber: u32, dwdesiredaccess: u32, dwflagsandattributes: u32) -> ::win32_foundation_sys::HANDLE;
+    pub fn PurgeComm(hfile: ::win32_foundation_sys::HANDLE, dwflags: PURGE_COMM_FLAGS) -> ::win32_foundation_sys::BOOL;
+    pub fn SetCommBreak(hfile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn SetCommConfig(hcommdev: ::win32_foundation_sys::HANDLE, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetCommMask(hfile: ::win32_foundation_sys::HANDLE, dwevtmask: COMM_EVENT_MASK) -> ::win32_foundation_sys::BOOL;
+    pub fn SetCommState(hfile: ::win32_foundation_sys::HANDLE, lpdcb: *const DCB) -> ::win32_foundation_sys::BOOL;
+    pub fn SetCommTimeouts(hfile: ::win32_foundation_sys::HANDLE, lpcommtimeouts: *const COMMTIMEOUTS) -> ::win32_foundation_sys::BOOL;
+    pub fn SetDefaultCommConfigA(lpszname: ::windows_core_sys::PCSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetDefaultCommConfigW(lpszname: ::windows_core_sys::PCWSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupComm(hfile: ::win32_foundation_sys::HANDLE, dwinqueue: u32, dwoutqueue: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn TransmitCommChar(hfile: ::win32_foundation_sys::HANDLE, cchar: ::win32_foundation_sys::CHAR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn WaitCommEvent(hfile: ::win32_foundation_sys::HANDLE, lpevtmask: *mut COMM_EVENT_MASK, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
 }
 pub type CLEAR_COMM_ERROR_FLAGS = u32;
 pub const CE_BREAK: CLEAR_COMM_ERROR_FLAGS = 16u32;
@@ -67,7 +39,6 @@ pub const CE_OVERRUN: CLEAR_COMM_ERROR_FLAGS = 2u32;
 pub const CE_RXOVER: CLEAR_COMM_ERROR_FLAGS = 1u32;
 pub const CE_RXPARITY: CLEAR_COMM_ERROR_FLAGS = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COMMCONFIG {
     pub dwSize: u32,
     pub wVersion: u16,
@@ -78,9 +49,7 @@ pub struct COMMCONFIG {
     pub dwProviderSize: u32,
     pub wcProviderData: [u16; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COMMCONFIG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COMMCONFIG {
     fn clone(&self) -> Self {
         *self
@@ -163,7 +132,6 @@ impl ::core::clone::Clone for COMSTAT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DCB {
     pub DCBlength: u32,
     pub BaudRate: u32,
@@ -174,16 +142,14 @@ pub struct DCB {
     pub ByteSize: u8,
     pub Parity: DCB_PARITY,
     pub StopBits: DCB_STOP_BITS,
-    pub XonChar: super::super::Foundation::CHAR,
-    pub XoffChar: super::super::Foundation::CHAR,
-    pub ErrorChar: super::super::Foundation::CHAR,
-    pub EofChar: super::super::Foundation::CHAR,
-    pub EvtChar: super::super::Foundation::CHAR,
+    pub XonChar: ::win32_foundation_sys::CHAR,
+    pub XoffChar: ::win32_foundation_sys::CHAR,
+    pub ErrorChar: ::win32_foundation_sys::CHAR,
+    pub EofChar: ::win32_foundation_sys::CHAR,
+    pub EvtChar: ::win32_foundation_sys::CHAR,
     pub wReserved1: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DCB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DCB {
     fn clone(&self) -> Self {
         *self

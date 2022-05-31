@@ -2,19 +2,18 @@
 pub struct AnimationDescription(::windows_core::IUnknown);
 impl AnimationDescription {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Animations(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<IPropertyAnimation>> {
+    pub fn Animations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IPropertyAnimation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Animations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<IPropertyAnimation>>(result__)
+            (::windows_core::Interface::vtable(this).Animations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IPropertyAnimation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StaggerDelay(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn StaggerDelay(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).StaggerDelay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).StaggerDelay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn StaggerDelayFactor(&self) -> ::windows_core::Result<f32> {
@@ -24,12 +23,11 @@ impl AnimationDescription {
             (::windows_core::Interface::vtable(this).StaggerDelayFactor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DelayLimit(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn DelayLimit(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).DelayLimit)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).DelayLimit)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn ZOrder(&self) -> ::windows_core::Result<i32> {
@@ -255,15 +253,9 @@ pub struct IAnimationDescription_Vtbl {
     pub Animations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Animations: usize,
-    #[cfg(feature = "Foundation")]
-    pub StaggerDelay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StaggerDelay: usize,
+    pub StaggerDelay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub StaggerDelayFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub DelayLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DelayLimit: usize,
+    pub DelayLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub ZOrder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -290,10 +282,7 @@ unsafe impl ::windows_core::Interface for IOpacityAnimation {
 #[doc(hidden)]
 pub struct IOpacityAnimation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub InitialOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InitialOpacity: usize,
     pub FinalOpacity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -306,36 +295,32 @@ impl IPropertyAnimation {
             (::windows_core::Interface::vtable(this).Type)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PropertyAnimationType>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Delay(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Delay(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control1(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control1(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control2(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control2(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
 }
@@ -411,22 +396,10 @@ unsafe impl ::windows_core::Interface for IPropertyAnimation {
 pub struct IPropertyAnimation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PropertyAnimationType) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Delay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Delay: usize,
-    #[cfg(feature = "Foundation")]
-    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Duration: usize,
-    #[cfg(feature = "Foundation")]
-    pub Control1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Control1: usize,
-    #[cfg(feature = "Foundation")]
-    pub Control2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Control2: usize,
+    pub Delay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub Control1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub Control2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -439,30 +412,20 @@ unsafe impl ::windows_core::Interface for IScaleAnimation {
 #[doc(hidden)]
 pub struct IScaleAnimation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub InitialScaleX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InitialScaleX: usize,
-    #[cfg(feature = "Foundation")]
     pub InitialScaleY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InitialScaleY: usize,
     pub FinalScaleX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub FinalScaleY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub NormalizedOrigin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    NormalizedOrigin: usize,
+    pub NormalizedOrigin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct OpacityAnimation(::windows_core::IUnknown);
 impl OpacityAnimation {
-    #[cfg(feature = "Foundation")]
-    pub fn InitialOpacity(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<f32>> {
+    pub fn InitialOpacity(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InitialOpacity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<f32>>(result__)
+            (::windows_core::Interface::vtable(this).InitialOpacity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f32>>(result__)
         }
     }
     pub fn FinalOpacity(&self) -> ::windows_core::Result<f32> {
@@ -479,36 +442,32 @@ impl OpacityAnimation {
             (::windows_core::Interface::vtable(this).Type)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PropertyAnimationType>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Delay(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Delay(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = &::windows_core::Interface::cast::<IPropertyAnimation>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = &::windows_core::Interface::cast::<IPropertyAnimation>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control1(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control1(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = &::windows_core::Interface::cast::<IPropertyAnimation>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control2(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control2(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = &::windows_core::Interface::cast::<IPropertyAnimation>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
 }
@@ -616,36 +575,32 @@ impl PropertyAnimation {
             (::windows_core::Interface::vtable(this).Type)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PropertyAnimationType>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Delay(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Delay(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control1(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control1(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control2(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control2(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
 }
@@ -787,52 +742,46 @@ impl ScaleAnimation {
             (::windows_core::Interface::vtable(this).Type)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PropertyAnimationType>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Delay(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Delay(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = &::windows_core::Interface::cast::<IPropertyAnimation>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = &::windows_core::Interface::cast::<IPropertyAnimation>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control1(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control1(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = &::windows_core::Interface::cast::<IPropertyAnimation>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control2(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control2(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = &::windows_core::Interface::cast::<IPropertyAnimation>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InitialScaleX(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<f32>> {
+    pub fn InitialScaleX(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InitialScaleX)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<f32>>(result__)
+            (::windows_core::Interface::vtable(this).InitialScaleX)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InitialScaleY(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<f32>> {
+    pub fn InitialScaleY(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InitialScaleY)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<f32>>(result__)
+            (::windows_core::Interface::vtable(this).InitialScaleY)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f32>>(result__)
         }
     }
     pub fn FinalScaleX(&self) -> ::windows_core::Result<f32> {
@@ -849,12 +798,11 @@ impl ScaleAnimation {
             (::windows_core::Interface::vtable(this).FinalScaleY)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn NormalizedOrigin(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn NormalizedOrigin(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).NormalizedOrigin)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).NormalizedOrigin)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
 }
@@ -962,36 +910,32 @@ impl TranslationAnimation {
             (::windows_core::Interface::vtable(this).Type)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PropertyAnimationType>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Delay(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Delay(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Delay)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control1(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control1(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Control2(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Control2(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Control2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
 }

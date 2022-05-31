@@ -22,24 +22,24 @@ impl ApplicationLanguages {
         Self::IApplicationLanguagesStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPrimaryLanguageOverride)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages() -> ::windows_core::Result<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::IApplicationLanguagesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ManifestLanguages() -> ::windows_core::Result<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn ManifestLanguages() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::IApplicationLanguagesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ManifestLanguages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).ManifestLanguages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "System"))]
-    pub fn GetLanguagesForUser<'a, Param0: ::windows_core::IntoParam<'a, super::System::User>>(user: Param0) -> ::windows_core::Result<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn GetLanguagesForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::IApplicationLanguagesStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetLanguagesForUser)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetLanguagesForUser)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
     pub fn IApplicationLanguagesStatics<R, F: FnOnce(&IApplicationLanguagesStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -80,11 +80,11 @@ impl Calendar {
         unsafe { (::windows_core::Interface::vtable(this).SetToMax)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages(&self) -> ::windows_core::Result<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn NumeralSystem(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -120,16 +120,14 @@ impl Calendar {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ChangeClock)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDateTime(&self) -> ::windows_core::Result<super::Foundation::DateTime> {
+    pub fn GetDateTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDateTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDateTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetDateTime<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDateTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDateTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -605,8 +603,7 @@ impl Calendar {
             (::windows_core::Interface::vtable(this).Compare)(::windows_core::Interface::as_raw(this), other.into_param().abi(), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CompareDateTime<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::DateTime>>(&self, other: Param0) -> ::windows_core::Result<i32> {
+    pub fn CompareDateTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, other: Param0) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -674,21 +671,21 @@ impl Calendar {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateCalendarDefaultCalendarAndClock<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(languages: Param0) -> ::windows_core::Result<Calendar> {
+    pub fn CreateCalendarDefaultCalendarAndClock<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(languages: Param0) -> ::windows_core::Result<Calendar> {
         Self::ICalendarFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCalendarDefaultCalendarAndClock)(::windows_core::Interface::as_raw(this), languages.into_param().abi(), result__.as_mut_ptr()).from_abi::<Calendar>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateCalendar<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, calendar: Param1, clock: Param2) -> ::windows_core::Result<Calendar> {
+    pub fn CreateCalendar<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, calendar: Param1, clock: Param2) -> ::windows_core::Result<Calendar> {
         Self::ICalendarFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCalendar)(::windows_core::Interface::as_raw(this), languages.into_param().abi(), calendar.into_param().abi(), clock.into_param().abi(), result__.as_mut_ptr()).from_abi::<Calendar>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateCalendarWithTimeZone<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, calendar: Param1, clock: Param2, timezoneid: Param3) -> ::windows_core::Result<Calendar> {
+    pub fn CreateCalendarWithTimeZone<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, calendar: Param1, clock: Param2, timezoneid: Param3) -> ::windows_core::Result<Calendar> {
         Self::ICalendarFactory2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCalendarWithTimeZone)(::windows_core::Interface::as_raw(this), languages.into_param().abi(), calendar.into_param().abi(), clock.into_param().abi(), timezoneid.into_param().abi(), result__.as_mut_ptr()).from_abi::<Calendar>(result__)
@@ -2111,11 +2108,11 @@ impl GeographicRegion {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CurrenciesInUse(&self) -> ::windows_core::Result<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn CurrenciesInUse(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CurrenciesInUse)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).CurrenciesInUse)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn CreateGeographicRegion<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(geographicregioncode: Param0) -> ::windows_core::Result<GeographicRegion> {
@@ -2273,14 +2270,8 @@ pub struct ICalendar_Vtbl {
     pub ChangeCalendarSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetClock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ChangeClock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDateTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetDateTime: usize,
+    pub GetDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub SetDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub SetToNow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub FirstEra: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub LastEra: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -2357,10 +2348,7 @@ pub struct ICalendar_Vtbl {
     pub NanosecondAsString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub NanosecondAsPaddedString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mindigits: i32, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Compare: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, other: ::windows_core::RawPtr, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub CompareDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, other: super::Foundation::DateTime, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CompareDateTime: usize,
+    pub CompareDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, other: ::winrt_foundation::DateTime, result__: *mut i32) -> ::windows_core::HRESULT,
     pub CopyTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, other: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub FirstMinuteInThisHour: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub LastMinuteInThisHour: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -3080,17 +3068,17 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Jap
 pub struct JapanesePhoneticAnalyzer;
 impl JapanesePhoneticAnalyzer {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetWords<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(input: Param0) -> ::windows_core::Result<super::Foundation::Collections::IVectorView<JapanesePhoneme>> {
+    pub fn GetWords<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(input: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<JapanesePhoneme>> {
         Self::IJapanesePhoneticAnalyzerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetWords)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<JapanesePhoneme>>(result__)
+            (::windows_core::Interface::vtable(this).GetWords)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<JapanesePhoneme>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetWordsWithMonoRubyOption<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(input: Param0, monoruby: bool) -> ::windows_core::Result<super::Foundation::Collections::IVectorView<JapanesePhoneme>> {
+    pub fn GetWordsWithMonoRubyOption<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(input: Param0, monoruby: bool) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<JapanesePhoneme>> {
         Self::IJapanesePhoneticAnalyzerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetWordsWithMonoRubyOption)(::windows_core::Interface::as_raw(this), input.into_param().abi(), monoruby, result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<JapanesePhoneme>>(result__)
+            (::windows_core::Interface::vtable(this).GetWordsWithMonoRubyOption)(::windows_core::Interface::as_raw(this), input.into_param().abi(), monoruby, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<JapanesePhoneme>>(result__)
         })
     }
     pub fn IJapanesePhoneticAnalyzerStatics<R, F: FnOnce(&IJapanesePhoneticAnalyzerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -3147,11 +3135,11 @@ impl Language {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetExtensionSubtags<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, singleton: Param0) -> ::windows_core::Result<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn GetExtensionSubtags<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, singleton: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<ILanguageExtensionSubtags>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetExtensionSubtags)(::windows_core::Interface::as_raw(this), singleton.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetExtensionSubtags)(::windows_core::Interface::as_raw(this), singleton.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn CreateLanguage<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languagetag: Param0) -> ::windows_core::Result<Language> {
@@ -3179,10 +3167,10 @@ impl Language {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetMuiCompatibleLanguageListFromLanguageTags<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(languagetags: Param0) -> ::windows_core::Result<super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn GetMuiCompatibleLanguageListFromLanguageTags<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(languagetags: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         Self::ILanguageStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetMuiCompatibleLanguageListFromLanguageTags)(::windows_core::Interface::as_raw(this), languagetags.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetMuiCompatibleLanguageListFromLanguageTags)(::windows_core::Interface::as_raw(this), languagetags.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         })
     }
     pub fn ILanguageFactory<R, F: FnOnce(&ILanguageFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

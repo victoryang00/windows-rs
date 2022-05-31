@@ -21,10 +21,7 @@ pub struct IMessageDialog_Vtbl {
     pub SetCancelCommandIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ShowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShowAsync: usize,
     pub Options: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MessageDialogOptions) -> ::windows_core::HRESULT,
     pub SetOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MessageDialogOptions) -> ::windows_core::HRESULT,
 }
@@ -57,18 +54,9 @@ pub struct IPopupMenu_Vtbl {
     pub Commands: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Commands: usize,
-    #[cfg(feature = "Foundation")]
-    pub ShowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, invocationpoint: super::super::Foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShowAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub ShowAsyncWithRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selection: super::super::Foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShowAsyncWithRect: usize,
-    #[cfg(feature = "Foundation")]
-    pub ShowAsyncWithRectAndPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selection: super::super::Foundation::Rect, preferredplacement: Placement, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShowAsyncWithRectAndPlacement: usize,
+    pub ShowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, invocationpoint: ::winrt_foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub ShowAsyncWithRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selection: ::winrt_foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub ShowAsyncWithRectAndPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selection: ::winrt_foundation::Rect, preferredplacement: Placement, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IUICommand(::windows_core::IUnknown);
@@ -215,11 +203,11 @@ impl MessageDialog {
         unsafe { (::windows_core::Interface::vtable(this).SetTitle)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Commands(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<IUICommand>> {
+    pub fn Commands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<IUICommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Commands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<IUICommand>>(result__)
+            (::windows_core::Interface::vtable(this).Commands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<IUICommand>>(result__)
         }
     }
     pub fn DefaultCommandIndex(&self) -> ::windows_core::Result<u32> {
@@ -255,12 +243,11 @@ impl MessageDialog {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetContent)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShowAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IUICommand>> {
+    pub fn ShowAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IUICommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IUICommand>>(result__)
+            (::windows_core::Interface::vtable(this).ShowAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IUICommand>>(result__)
         }
     }
     pub fn Options(&self) -> ::windows_core::Result<MessageDialogOptions> {
@@ -469,35 +456,32 @@ impl PopupMenu {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Commands(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<IUICommand>> {
+    pub fn Commands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<IUICommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Commands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<IUICommand>>(result__)
+            (::windows_core::Interface::vtable(this).Commands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<IUICommand>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShowAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Point>>(&self, invocationpoint: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IUICommand>> {
+    pub fn ShowAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, invocationpoint: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IUICommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowAsync)(::windows_core::Interface::as_raw(this), invocationpoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IUICommand>>(result__)
+            (::windows_core::Interface::vtable(this).ShowAsync)(::windows_core::Interface::as_raw(this), invocationpoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IUICommand>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShowAsyncWithRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Rect>>(&self, selection: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IUICommand>> {
+    pub fn ShowAsyncWithRect<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, selection: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IUICommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowAsyncWithRect)(::windows_core::Interface::as_raw(this), selection.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IUICommand>>(result__)
+            (::windows_core::Interface::vtable(this).ShowAsyncWithRect)(::windows_core::Interface::as_raw(this), selection.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IUICommand>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShowAsyncWithRectAndPlacement<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Rect>>(&self, selection: Param0, preferredplacement: Placement) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IUICommand>> {
+    pub fn ShowAsyncWithRectAndPlacement<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, selection: Param0, preferredplacement: Placement) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IUICommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowAsyncWithRectAndPlacement)(::windows_core::Interface::as_raw(this), selection.into_param().abi(), preferredplacement, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IUICommand>>(result__)
+            (::windows_core::Interface::vtable(this).ShowAsyncWithRectAndPlacement)(::windows_core::Interface::as_raw(this), selection.into_param().abi(), preferredplacement, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IUICommand>>(result__)
         }
     }
 }

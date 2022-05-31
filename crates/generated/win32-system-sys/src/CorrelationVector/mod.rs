@@ -1,23 +1,16 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RtlExtendCorrelationVector(correlationvector: *mut CORRELATION_VECTOR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RtlIncrementCorrelationVector(correlationvector: *mut CORRELATION_VECTOR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RtlInitializeCorrelationVector(correlationvector: *mut CORRELATION_VECTOR, version: i32, guid: *const ::windows_core_sys::GUID) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RtlValidateCorrelationVector(vector: *const CORRELATION_VECTOR) -> u32;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CORRELATION_VECTOR {
-    pub Version: super::super::Foundation::CHAR,
-    pub Vector: [super::super::Foundation::CHAR; 129],
+    pub Version: ::win32_foundation_sys::CHAR,
+    pub Vector: [::win32_foundation_sys::CHAR; 129],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CORRELATION_VECTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CORRELATION_VECTOR {
     fn clone(&self) -> Self {
         *self

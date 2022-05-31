@@ -230,32 +230,26 @@ pub const MENUBUTTON: MMC_CONTROL_TYPE = 1i32;
 pub const COMBOBOXBAR: MMC_CONTROL_TYPE = 2i32;
 pub const MMC_DEFAULT_OPERATION_COPY: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MMC_EXPANDSYNC_STRUCT {
-    pub bHandled: super::super::Foundation::BOOL,
-    pub bExpanding: super::super::Foundation::BOOL,
+    pub bHandled: ::win32_foundation_sys::BOOL,
+    pub bExpanding: ::win32_foundation_sys::BOOL,
     pub hItem: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MMC_EXPANDSYNC_STRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MMC_EXPANDSYNC_STRUCT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MMC_EXT_VIEW_DATA {
     pub viewID: ::windows_core_sys::GUID,
     pub pszURL: ::windows_core_sys::PCWSTR,
     pub pszViewTitle: ::windows_core_sys::PCWSTR,
     pub pszTooltipText: ::windows_core_sys::PCWSTR,
-    pub bReplacesDefaultView: super::super::Foundation::BOOL,
+    pub bReplacesDefaultView: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MMC_EXT_VIEW_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MMC_EXT_VIEW_DATA {
     fn clone(&self) -> Self {
         *self
@@ -379,15 +373,15 @@ pub const MMC_SCOPE_ITEM_STATE_NORMAL: MMC_SCOPE_ITEM_STATE = 1i32;
 pub const MMC_SCOPE_ITEM_STATE_BOLD: MMC_SCOPE_ITEM_STATE = 2i32;
 pub const MMC_SCOPE_ITEM_STATE_EXPANDEDONCE: MMC_SCOPE_ITEM_STATE = 3i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct MMC_SNAPIN_PROPERTY {
     pub pszPropName: ::windows_core_sys::PCWSTR,
     pub varValue: super::Com::VARIANT,
     pub eAction: MMC_PROPERTY_ACTION,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for MMC_SNAPIN_PROPERTY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for MMC_SNAPIN_PROPERTY {
     fn clone(&self) -> Self {
         *self
@@ -527,33 +521,27 @@ pub type Properties = *mut ::core::ffi::c_void;
 pub type Property = *mut ::core::ffi::c_void;
 pub const RDCI_ScopeItem: u32 = 2147483648u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RDCOMPARE {
     pub cbSize: u32,
     pub dwFlags: u32,
     pub nColumn: i32,
-    pub lUserParam: super::super::Foundation::LPARAM,
+    pub lUserParam: ::win32_foundation_sys::LPARAM,
     pub prdch1: *mut RDITEMHDR,
     pub prdch2: *mut RDITEMHDR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RDCOMPARE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RDCOMPARE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RDITEMHDR {
     pub dwFlags: u32,
     pub cookie: isize,
-    pub lpReserved: super::super::Foundation::LPARAM,
+    pub lpReserved: ::win32_foundation_sys::LPARAM,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RDITEMHDR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RDITEMHDR {
     fn clone(&self) -> Self {
         *self
@@ -566,22 +554,19 @@ pub const RDI_PARAM: u32 = 16u32;
 pub const RDI_STATE: u32 = 8u32;
 pub const RDI_STR: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESULTDATAITEM {
     pub mask: u32,
-    pub bScopeItem: super::super::Foundation::BOOL,
+    pub bScopeItem: ::win32_foundation_sys::BOOL,
     pub itemID: isize,
     pub nIndex: i32,
     pub nCol: i32,
     pub str: ::windows_core_sys::PWSTR,
     pub nImage: i32,
     pub nState: u32,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub iIndent: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESULTDATAITEM {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESULTDATAITEM {
     fn clone(&self) -> Self {
         *self
@@ -665,7 +650,6 @@ pub const RVTI_OCX_OPTIONS_CACHE_OCX: u32 = 2u32;
 pub const RVTI_OCX_OPTIONS_NOLISTVIEW: u32 = 1u32;
 pub const RVTI_OCX_OPTIONS_NONE: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SCOPEDATAITEM {
     pub mask: u32,
     pub displayname: ::windows_core_sys::PWSTR,
@@ -673,13 +657,11 @@ pub struct SCOPEDATAITEM {
     pub nOpenImage: i32,
     pub nState: u32,
     pub cChildren: i32,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub relativeID: isize,
     pub ID: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SCOPEDATAITEM {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SCOPEDATAITEM {
     fn clone(&self) -> Self {
         *self

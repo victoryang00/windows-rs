@@ -35,7 +35,7 @@ impl CurrencyFormatter {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateCurrencyFormatterCodeContext<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(currencycode: Param0, languages: Param1, geographicregion: Param2) -> ::windows_core::Result<CurrencyFormatter> {
+    pub fn CreateCurrencyFormatterCodeContext<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(currencycode: Param0, languages: Param1, geographicregion: Param2) -> ::windows_core::Result<CurrencyFormatter> {
         Self::ICurrencyFormatterFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCurrencyFormatterCodeContext)(::windows_core::Interface::as_raw(this), currencycode.into_param().abi(), languages.into_param().abi(), geographicregion.into_param().abi(), result__.as_mut_ptr()).from_abi::<CurrencyFormatter>(result__)
@@ -84,11 +84,11 @@ impl CurrencyFormatter {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<INumberFormatterOptions>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn GeographicRegion(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -167,28 +167,25 @@ impl CurrencyFormatter {
             (::windows_core::Interface::vtable(this).ResolvedGeographicRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<i64>> {
+    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<i64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<i64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<u64>> {
+    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<u64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
     pub fn NumberRounder(&self) -> ::windows_core::Result<INumberRounder> {
@@ -499,7 +496,7 @@ impl DecimalFormatter {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateDecimalFormatter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, geographicregion: Param1) -> ::windows_core::Result<DecimalFormatter> {
+    pub fn CreateDecimalFormatter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, geographicregion: Param1) -> ::windows_core::Result<DecimalFormatter> {
         Self::IDecimalFormatterFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateDecimalFormatter)(::windows_core::Interface::as_raw(this), languages.into_param().abi(), geographicregion.into_param().abi(), result__.as_mut_ptr()).from_abi::<DecimalFormatter>(result__)
@@ -548,11 +545,11 @@ impl DecimalFormatter {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<INumberFormatterOptions>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn GeographicRegion(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -631,28 +628,25 @@ impl DecimalFormatter {
             (::windows_core::Interface::vtable(this).ResolvedGeographicRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<i64>> {
+    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<i64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<i64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<u64>> {
+    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<u64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
     pub fn NumberRounder(&self) -> ::windows_core::Result<INumberRounder> {
@@ -1204,11 +1198,11 @@ pub struct INumberFormatter2_Vtbl {
 pub struct INumberFormatterOptions(::windows_core::IUnknown);
 impl INumberFormatterOptions {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn GeographicRegion(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1380,28 +1374,25 @@ pub struct INumberFormatterOptions_Vtbl {
 #[repr(transparent)]
 pub struct INumberParser(::windows_core::IUnknown);
 impl INumberParser {
-    #[cfg(feature = "Foundation")]
-    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<i64>> {
+    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<i64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<i64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<u64>> {
+    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
 }
@@ -1476,18 +1467,9 @@ unsafe impl ::windows_core::Interface for INumberParser {
 #[doc(hidden)]
 pub struct INumberParser_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ParseInt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ParseInt: usize,
-    #[cfg(feature = "Foundation")]
     pub ParseUInt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ParseUInt: usize,
-    #[cfg(feature = "Foundation")]
     pub ParseDouble: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ParseDouble: usize,
 }
 #[repr(transparent)]
 pub struct INumberRounder(::windows_core::IUnknown);
@@ -2144,11 +2126,11 @@ impl NumeralSystemTranslator {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn ResolvedLanguage(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2177,7 +2159,7 @@ impl NumeralSystemTranslator {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(languages: Param0) -> ::windows_core::Result<NumeralSystemTranslator> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(languages: Param0) -> ::windows_core::Result<NumeralSystemTranslator> {
         Self::INumeralSystemTranslatorFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), languages.into_param().abi(), result__.as_mut_ptr()).from_abi::<NumeralSystemTranslator>(result__)
@@ -2313,11 +2295,11 @@ impl PercentFormatter {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<INumberFormatterOptions>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn GeographicRegion(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2396,28 +2378,25 @@ impl PercentFormatter {
             (::windows_core::Interface::vtable(this).ResolvedGeographicRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<i64>> {
+    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<i64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<i64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<u64>> {
+    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<u64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
     pub fn NumberRounder(&self) -> ::windows_core::Result<INumberRounder> {
@@ -2432,7 +2411,7 @@ impl PercentFormatter {
         unsafe { (::windows_core::Interface::vtable(this).SetNumberRounder)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreatePercentFormatter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, geographicregion: Param1) -> ::windows_core::Result<PercentFormatter> {
+    pub fn CreatePercentFormatter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, geographicregion: Param1) -> ::windows_core::Result<PercentFormatter> {
         Self::IPercentFormatterFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreatePercentFormatter)(::windows_core::Interface::as_raw(this), languages.into_param().abi(), geographicregion.into_param().abi(), result__.as_mut_ptr()).from_abi::<PercentFormatter>(result__)
@@ -2744,11 +2723,11 @@ impl PermilleFormatter {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<INumberFormatterOptions>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn GeographicRegion(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2827,28 +2806,25 @@ impl PermilleFormatter {
             (::windows_core::Interface::vtable(this).ResolvedGeographicRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<i64>> {
+    pub fn ParseInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<i64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<i64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<u64>> {
+    pub fn ParseUInt<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<u64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseUInt)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn ParseDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = &::windows_core::Interface::cast::<INumberParser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).ParseDouble)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
     pub fn NumberRounder(&self) -> ::windows_core::Result<INumberRounder> {
@@ -2863,7 +2839,7 @@ impl PermilleFormatter {
         unsafe { (::windows_core::Interface::vtable(this).SetNumberRounder)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreatePermilleFormatter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, geographicregion: Param1) -> ::windows_core::Result<PermilleFormatter> {
+    pub fn CreatePermilleFormatter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languages: Param0, geographicregion: Param1) -> ::windows_core::Result<PermilleFormatter> {
         Self::IPermilleFormatterFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreatePermilleFormatter)(::windows_core::Interface::as_raw(this), languages.into_param().abi(), geographicregion.into_param().abi(), result__.as_mut_ptr()).from_abi::<PermilleFormatter>(result__)

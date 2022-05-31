@@ -92,14 +92,8 @@ unsafe impl ::windows_core::Interface for IPrintManager {
 #[doc(hidden)]
 pub struct IPrintManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub PrintTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PrintTaskRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePrintTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePrintTaskRequested: usize,
+    pub PrintTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemovePrintTaskRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -113,10 +107,7 @@ unsafe impl ::windows_core::Interface for IPrintManagerStatic {
 pub struct IPrintManagerStatic_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetForCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ShowPrintUIAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShowPrintUIAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -144,14 +135,8 @@ pub struct IPrintPageInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SetMediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PrintMediaSize) -> ::windows_core::HRESULT,
     pub MediaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PrintMediaSize) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SetPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPageSize: usize,
-    #[cfg(feature = "Foundation")]
-    pub PageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PageSize: usize,
+    pub SetPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Size) -> ::windows_core::HRESULT,
+    pub PageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
     pub SetDpiX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
     pub DpiX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetDpiY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
@@ -222,38 +207,14 @@ pub struct IPrintTask_Vtbl {
     Properties: usize,
     pub Source: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Options: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Previewing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Previewing: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePreviewing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePreviewing: usize,
-    #[cfg(feature = "Foundation")]
-    pub Submitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Submitting: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveSubmitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveSubmitting: usize,
-    #[cfg(feature = "Foundation")]
-    pub Progressing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Progressing: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveProgressing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveProgressing: usize,
-    #[cfg(feature = "Foundation")]
-    pub Completed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Completed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCompleted: usize,
+    pub Previewing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemovePreviewing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Submitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveSubmitting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Progressing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveProgressing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Completed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -320,7 +281,6 @@ pub struct IPrintTaskOptions2_Vtbl {
 #[repr(transparent)]
 pub struct IPrintTaskOptionsCore(::windows_core::IUnknown);
 impl IPrintTaskOptionsCore {
-    #[cfg(feature = "Foundation")]
     pub fn GetPageDescription(&self, jobpagenumber: u32) -> ::windows_core::Result<PrintPageDescription> {
         let this = self;
         unsafe {
@@ -400,10 +360,7 @@ unsafe impl ::windows_core::Interface for IPrintTaskOptionsCore {
 #[doc(hidden)]
 pub struct IPrintTaskOptionsCore_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetPageDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, jobpagenumber: u32, result__: *mut PrintPageDescription) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPageDescription: usize,
 }
 #[repr(transparent)]
 pub struct IPrintTaskOptionsCoreProperties(::windows_core::IUnknown);
@@ -644,11 +601,11 @@ pub struct IPrintTaskOptionsCoreProperties_Vtbl {
 pub struct IPrintTaskOptionsCoreUIConfiguration(::windows_core::IUnknown);
 impl IPrintTaskOptionsCoreUIConfiguration {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DisplayedOptions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn DisplayedOptions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DisplayedOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).DisplayedOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
 }
@@ -752,10 +709,7 @@ unsafe impl ::windows_core::Interface for IPrintTaskRequest {
 #[doc(hidden)]
 pub struct IPrintTaskRequest_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Deadline: usize,
+    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub CreatePrintTask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, title: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, handler: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -796,10 +750,7 @@ unsafe impl ::windows_core::Interface for IPrintTaskSourceRequestedArgs {
 #[doc(hidden)]
 pub struct IPrintTaskSourceRequestedArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Deadline: usize,
+    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub SetSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1119,16 +1070,14 @@ unsafe impl ::windows_core::RuntimeType for PrintHolePunch {
 #[repr(transparent)]
 pub struct PrintManager(::windows_core::IUnknown);
 impl PrintManager {
-    #[cfg(feature = "Foundation")]
-    pub fn PrintTaskRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintManager, PrintTaskRequestedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn PrintTaskRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<PrintManager, PrintTaskRequestedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PrintTaskRequested)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PrintTaskRequested)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePrintTaskRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePrintTaskRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePrintTaskRequested)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
@@ -1138,11 +1087,10 @@ impl PrintManager {
             (::windows_core::Interface::vtable(this).GetForCurrentView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintManager>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShowPrintUIAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn ShowPrintUIAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IPrintManagerStatic(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowPrintUIAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).ShowPrintUIAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
     pub fn IsSupported() -> ::windows_core::Result<bool> {
@@ -1538,32 +1486,26 @@ unsafe impl ::windows_core::RuntimeType for PrintOrientation {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct PrintPageDescription {
-    pub PageSize: super::super::Foundation::Size,
-    pub ImageableRect: super::super::Foundation::Rect,
+    pub PageSize: ::winrt_foundation::Size,
+    pub ImageableRect: ::winrt_foundation::Rect,
     pub DpiX: u32,
     pub DpiY: u32,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for PrintPageDescription {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for PrintPageDescription {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::fmt::Debug for PrintPageDescription {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PrintPageDescription").field("PageSize", &self.PageSize).field("ImageableRect", &self.ImageableRect).field("DpiX", &self.DpiX).field("DpiY", &self.DpiY).finish()
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::Abi for PrintPageDescription {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::RuntimeType for PrintPageDescription {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Graphics.Printing.PrintPageDescription;struct(Windows.Foundation.Size;f4;f4);struct(Windows.Foundation.Rect;f4;f4;f4;f4);u4;u4)");
     type DefaultType = Self;
@@ -1571,15 +1513,12 @@ unsafe impl ::windows_core::RuntimeType for PrintPageDescription {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::PartialEq for PrintPageDescription {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PrintPageDescription>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::Eq for PrintPageDescription {}
-#[cfg(feature = "Foundation")]
 impl ::core::default::Default for PrintPageDescription {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1606,17 +1545,15 @@ impl PrintPageInfo {
             (::windows_core::Interface::vtable(this).MediaSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintMediaSize>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPageSize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Size>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPageSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPageSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PageSize(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn PageSize(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).PageSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).PageSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
     pub fn SetDpiX(&self, value: u32) -> ::windows_core::Result<()> {
@@ -2029,11 +1966,11 @@ unsafe impl ::windows_core::RuntimeType for PrintStaple {
 pub struct PrintTask(::windows_core::IUnknown);
 impl PrintTask {
     #[cfg(feature = "ApplicationModel_DataTransfer")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::ApplicationModel::DataTransfer::DataPackagePropertySet> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_applicationmodel::DataTransfer::DataPackagePropertySet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::DataTransfer::DataPackagePropertySet>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::DataTransfer::DataPackagePropertySet>(result__)
         }
     }
     pub fn Source(&self) -> ::windows_core::Result<IPrintDocumentSource> {
@@ -2050,55 +1987,47 @@ impl PrintTask {
             (::windows_core::Interface::vtable(this).Options)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintTaskOptions>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Previewing<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Previewing<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<PrintTask, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Previewing)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Previewing)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePreviewing<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePreviewing<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePreviewing)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Submitting<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Submitting<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<PrintTask, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Submitting)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Submitting)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveSubmitting<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveSubmitting<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSubmitting)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Progressing<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, PrintTaskProgressingEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Progressing<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<PrintTask, PrintTaskProgressingEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Progressing)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Progressing)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveProgressing<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveProgressing<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveProgressing)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Completed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<PrintTask, PrintTaskCompletedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Completed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<PrintTask, PrintTaskCompletedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCompleted)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
@@ -2341,11 +2270,11 @@ impl PrintTaskOptions {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetPagePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, PrintPageInfo>>(&self, printpageinfo: Param0) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStream> {
+    pub fn GetPagePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, PrintPageInfo>>(&self, printpageinfo: Param0) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStream> {
         let this = &::windows_core::Interface::cast::<IPrintTaskOptions>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPagePrintTicket)(::windows_core::Interface::as_raw(this), printpageinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStream>(result__)
+            (::windows_core::Interface::vtable(this).GetPagePrintTicket)(::windows_core::Interface::as_raw(this), printpageinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStream>(result__)
         }
     }
     pub fn PageRangeOptions(&self) -> ::windows_core::Result<PrintPageRangeOptions> {
@@ -2356,14 +2285,13 @@ impl PrintTaskOptions {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CustomPageRanges(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<PrintPageRange>> {
+    pub fn CustomPageRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<PrintPageRange>> {
         let this = &::windows_core::Interface::cast::<IPrintTaskOptions2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CustomPageRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<PrintPageRange>>(result__)
+            (::windows_core::Interface::vtable(this).CustomPageRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<PrintPageRange>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn GetPageDescription(&self, jobpagenumber: u32) -> ::windows_core::Result<PrintPageDescription> {
         let this = self;
         unsafe {
@@ -2507,11 +2435,11 @@ impl PrintTaskOptions {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DisplayedOptions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn DisplayedOptions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<IPrintTaskOptionsCoreUIConfiguration>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DisplayedOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).DisplayedOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
 }
@@ -2739,12 +2667,11 @@ unsafe impl ::core::marker::Sync for PrintTaskProgressingEventArgs {}
 #[repr(transparent)]
 pub struct PrintTaskRequest(::windows_core::IUnknown);
 impl PrintTaskRequest {
-    #[cfg(feature = "Foundation")]
-    pub fn Deadline(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn Deadline(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Deadline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Deadline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn CreatePrintTask<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, PrintTaskSourceRequestedHandler>>(&self, title: Param0, handler: Param1) -> ::windows_core::Result<PrintTask> {
@@ -3000,12 +2927,11 @@ unsafe impl ::core::marker::Sync for PrintTaskRequestedEventArgs {}
 #[repr(transparent)]
 pub struct PrintTaskSourceRequestedArgs(::windows_core::IUnknown);
 impl PrintTaskSourceRequestedArgs {
-    #[cfg(feature = "Foundation")]
-    pub fn Deadline(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn Deadline(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Deadline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Deadline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn SetSource<'a, Param0: ::windows_core::IntoParam<'a, IPrintDocumentSource>>(&self, source: Param0) -> ::windows_core::Result<()> {

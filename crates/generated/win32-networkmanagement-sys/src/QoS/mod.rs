@@ -1,63 +1,48 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn QOSAddSocketToFlow(qoshandle: super::super::Foundation::HANDLE, socket: super::super::Networking::WinSock::SOCKET, destaddr: *const super::super::Networking::WinSock::SOCKADDR, traffictype: QOS_TRAFFIC_TYPE, flags: u32, flowid: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn QOSCancel(qoshandle: super::super::Foundation::HANDLE, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QOSCloseHandle(qoshandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QOSCreateHandle(version: *const QOS_VERSION, qoshandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QOSEnumerateFlows(qoshandle: super::super::Foundation::HANDLE, size: *mut u32, buffer: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn QOSNotifyFlow(qoshandle: super::super::Foundation::HANDLE, flowid: u32, operation: QOS_NOTIFY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn QOSQueryFlow(qoshandle: super::super::Foundation::HANDLE, flowid: u32, operation: QOS_QUERY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn QOSRemoveSocketFromFlow(qoshandle: super::super::Foundation::HANDLE, socket: super::super::Networking::WinSock::SOCKET, flowid: u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn QOSSetFlow(qoshandle: super::super::Foundation::HANDLE, flowid: u32, operation: QOS_SET_FLOW, size: u32, buffer: *const ::core::ffi::c_void, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn QOSStartTrackingClient(qoshandle: super::super::Foundation::HANDLE, destaddr: *const super::super::Networking::WinSock::SOCKADDR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn QOSStopTrackingClient(qoshandle: super::super::Foundation::HANDLE, destaddr: *const super::super::Networking::WinSock::SOCKADDR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcAddFilter(flowhandle: super::super::Foundation::HANDLE, pgenericfilter: *const TC_GEN_FILTER, pfilterhandle: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn TcAddFlow(ifchandle: super::super::Foundation::HANDLE, clflowctx: super::super::Foundation::HANDLE, flags: u32, pgenericflow: *const TC_GEN_FLOW, pflowhandle: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcCloseInterface(ifchandle: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcDeleteFilter(filterhandle: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcDeleteFlow(flowhandle: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcDeregisterClient(clienthandle: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn TcEnumerateFlows(ifchandle: super::super::Foundation::HANDLE, penumhandle: *mut super::super::Foundation::HANDLE, pflowcount: *mut u32, pbufsize: *mut u32, buffer: *mut ENUMERATION_BUFFER) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
-    pub fn TcEnumerateInterfaces(clienthandle: super::super::Foundation::HANDLE, pbuffersize: *mut u32, interfacebuffer: *mut TC_IFC_DESCRIPTOR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcGetFlowNameA(flowhandle: super::super::Foundation::HANDLE, strsize: u32, pflowname: ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcGetFlowNameW(flowhandle: super::super::Foundation::HANDLE, strsize: u32, pflowname: ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn TcModifyFlow(flowhandle: super::super::Foundation::HANDLE, pgenericflow: *const TC_GEN_FLOW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcOpenInterfaceA(pinterfacename: ::windows_core_sys::PCSTR, clienthandle: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, pifchandle: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcOpenInterfaceW(pinterfacename: ::windows_core_sys::PCWSTR, clienthandle: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, pifchandle: *mut super::super::Foundation::HANDLE) -> u32;
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub fn QOSAddSocketToFlow(qoshandle: ::win32_foundation_sys::HANDLE, socket: ::win32_networking_sys::WinSock::SOCKET, destaddr: *const ::win32_networking_sys::WinSock::SOCKADDR, traffictype: QOS_TRAFFIC_TYPE, flags: u32, flowid: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn QOSCancel(qoshandle: ::win32_foundation_sys::HANDLE, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    pub fn QOSCloseHandle(qoshandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn QOSCreateHandle(version: *const QOS_VERSION, qoshandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn QOSEnumerateFlows(qoshandle: ::win32_foundation_sys::HANDLE, size: *mut u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn QOSNotifyFlow(qoshandle: ::win32_foundation_sys::HANDLE, flowid: u32, operation: QOS_NOTIFY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn QOSQueryFlow(qoshandle: ::win32_foundation_sys::HANDLE, flowid: u32, operation: QOS_QUERY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub fn QOSRemoveSocketFromFlow(qoshandle: ::win32_foundation_sys::HANDLE, socket: ::win32_networking_sys::WinSock::SOCKET, flowid: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn QOSSetFlow(qoshandle: ::win32_foundation_sys::HANDLE, flowid: u32, operation: QOS_SET_FLOW, size: u32, buffer: *const ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub fn QOSStartTrackingClient(qoshandle: ::win32_foundation_sys::HANDLE, destaddr: *const ::win32_networking_sys::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub fn QOSStopTrackingClient(qoshandle: ::win32_foundation_sys::HANDLE, destaddr: *const ::win32_networking_sys::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn TcAddFilter(flowhandle: ::win32_foundation_sys::HANDLE, pgenericfilter: *const TC_GEN_FILTER, pfilterhandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub fn TcAddFlow(ifchandle: ::win32_foundation_sys::HANDLE, clflowctx: ::win32_foundation_sys::HANDLE, flags: u32, pgenericflow: *const TC_GEN_FLOW, pflowhandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn TcCloseInterface(ifchandle: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn TcDeleteFilter(filterhandle: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn TcDeleteFlow(flowhandle: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn TcDeregisterClient(clienthandle: ::win32_foundation_sys::HANDLE) -> u32;
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub fn TcEnumerateFlows(ifchandle: ::win32_foundation_sys::HANDLE, penumhandle: *mut ::win32_foundation_sys::HANDLE, pflowcount: *mut u32, pbufsize: *mut u32, buffer: *mut ENUMERATION_BUFFER) -> u32;
+    #[cfg(feature = "Win32_NetworkManagement_Ndis")]
+    pub fn TcEnumerateInterfaces(clienthandle: ::win32_foundation_sys::HANDLE, pbuffersize: *mut u32, interfacebuffer: *mut TC_IFC_DESCRIPTOR) -> u32;
+    pub fn TcGetFlowNameA(flowhandle: ::win32_foundation_sys::HANDLE, strsize: u32, pflowname: ::windows_core_sys::PSTR) -> u32;
+    pub fn TcGetFlowNameW(flowhandle: ::win32_foundation_sys::HANDLE, strsize: u32, pflowname: ::windows_core_sys::PWSTR) -> u32;
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub fn TcModifyFlow(flowhandle: ::win32_foundation_sys::HANDLE, pgenericflow: *const TC_GEN_FLOW) -> u32;
+    pub fn TcOpenInterfaceA(pinterfacename: ::windows_core_sys::PCSTR, clienthandle: ::win32_foundation_sys::HANDLE, clifcctx: ::win32_foundation_sys::HANDLE, pifchandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn TcOpenInterfaceW(pinterfacename: ::windows_core_sys::PCWSTR, clienthandle: ::win32_foundation_sys::HANDLE, clifcctx: ::win32_foundation_sys::HANDLE, pifchandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn TcQueryFlowA(pflowname: ::windows_core_sys::PCSTR, pguidparam: *const ::windows_core_sys::GUID, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
     pub fn TcQueryFlowW(pflowname: ::windows_core_sys::PCWSTR, pguidparam: *const ::windows_core_sys::GUID, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcQueryInterface(ifchandle: super::super::Foundation::HANDLE, pguidparam: *const ::windows_core_sys::GUID, notifychange: super::super::Foundation::BOOLEAN, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcRegisterClient(tciversion: u32, clregctx: super::super::Foundation::HANDLE, clienthandlerlist: *const TCI_CLIENT_FUNC_LIST, pclienthandle: *mut super::super::Foundation::HANDLE) -> u32;
+    pub fn TcQueryInterface(ifchandle: ::win32_foundation_sys::HANDLE, pguidparam: *const ::windows_core_sys::GUID, notifychange: ::win32_foundation_sys::BOOLEAN, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
+    pub fn TcRegisterClient(tciversion: u32, clregctx: ::win32_foundation_sys::HANDLE, clienthandlerlist: *const TCI_CLIENT_FUNC_LIST, pclienthandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn TcSetFlowA(pflowname: ::windows_core_sys::PCSTR, pguidparam: *const ::windows_core_sys::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
     pub fn TcSetFlowW(pflowname: ::windows_core_sys::PCWSTR, pguidparam: *const ::windows_core_sys::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TcSetInterface(ifchandle: super::super::Foundation::HANDLE, pguidparam: *const ::windows_core_sys::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
+    pub fn TcSetInterface(ifchandle: ::win32_foundation_sys::HANDLE, pguidparam: *const ::windows_core_sys::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
 }
 pub const ABLE_TO_RECV_RSVP: u32 = 50002u32;
 #[repr(C)]
@@ -244,7 +229,7 @@ pub const EXPIRED_CREDENTIAL: u32 = 4u32;
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Error_Spec_IPv4 {
-    pub errs_errnode: super::super::Networking::WinSock::IN_ADDR,
+    pub errs_errnode: ::win32_networking_sys::WinSock::IN_ADDR,
     pub errs_flags: u8,
     pub errs_code: u8,
     pub errs_value: u16,
@@ -288,7 +273,7 @@ impl ::core::clone::Clone for FILTER_SPEC_0 {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct FLOWDESCRIPTOR {
-    pub FlowSpec: super::super::Networking::WinSock::FLOWSPEC,
+    pub FlowSpec: ::win32_networking_sys::WinSock::FLOWSPEC,
     pub NumFilters: u32,
     pub FilterList: *mut RSVP_FILTERSPEC,
 }
@@ -323,7 +308,7 @@ pub const FILTERSPEC_END: FilterType = 6i32;
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Filter_Spec_IPv4 {
-    pub filt_ipaddr: super::super::Networking::WinSock::IN_ADDR,
+    pub filt_ipaddr: ::win32_networking_sys::WinSock::IN_ADDR,
     pub filt_unused: u16,
     pub filt_port: u16,
 }
@@ -338,7 +323,7 @@ impl ::core::clone::Clone for Filter_Spec_IPv4 {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Filter_Spec_IPv4GPI {
-    pub filt_ipaddr: super::super::Networking::WinSock::IN_ADDR,
+    pub filt_ipaddr: ::win32_networking_sys::WinSock::IN_ADDR,
     pub filt_gpi: u32,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -882,15 +867,15 @@ pub const PREDICTIVE_SERV: u32 = 3u32;
 pub const QOSSPBASE: u32 = 50000u32;
 pub const QOSSP_ERR_BASE: u32 = 56000u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct QOS_DESTADDR {
     pub ObjectHdr: QOS_OBJECT_HDR,
-    pub SocketAddress: *const super::super::Networking::WinSock::SOCKADDR,
+    pub SocketAddress: *const ::win32_networking_sys::WinSock::SOCKADDR,
     pub SocketAddressLength: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for QOS_DESTADDR {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for QOS_DESTADDR {
     fn clone(&self) -> Self {
         *self
@@ -952,18 +937,15 @@ pub const QOSFlowRateCongestion: QOS_FLOWRATE_REASON = 2i32;
 pub const QOSFlowRateHigherContentEncoding: QOS_FLOWRATE_REASON = 3i32;
 pub const QOSFlowRateUserCaused: QOS_FLOWRATE_REASON = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct QOS_FLOW_FUNDAMENTALS {
-    pub BottleneckBandwidthSet: super::super::Foundation::BOOL,
+    pub BottleneckBandwidthSet: ::win32_foundation_sys::BOOL,
     pub BottleneckBandwidth: u64,
-    pub AvailableBandwidthSet: super::super::Foundation::BOOL,
+    pub AvailableBandwidthSet: ::win32_foundation_sys::BOOL,
     pub AvailableBandwidth: u64,
-    pub RTTSet: super::super::Foundation::BOOL,
+    pub RTTSet: ::win32_foundation_sys::BOOL,
     pub RTT: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for QOS_FLOW_FUNDAMENTALS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for QOS_FLOW_FUNDAMENTALS {
     fn clone(&self) -> Self {
         *self
@@ -1453,7 +1435,7 @@ impl ::core::clone::Clone for RsvpObjHdr {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Rsvp_Hop_IPv4 {
-    pub hop_ipaddr: super::super::Networking::WinSock::IN_ADDR,
+    pub hop_ipaddr: ::win32_networking_sys::WinSock::IN_ADDR,
     pub hop_LIH: u32,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -1658,7 +1640,7 @@ pub const STATE_TIMEOUT: u32 = 4u32;
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Scope_list_ipv4 {
-    pub scopl_ipaddr: [super::super::Networking::WinSock::IN_ADDR; 1],
+    pub scopl_ipaddr: [::win32_networking_sys::WinSock::IN_ADDR; 1],
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for Scope_list_ipv4 {}
@@ -1671,7 +1653,7 @@ impl ::core::clone::Clone for Scope_list_ipv4 {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Session_IPv4 {
-    pub sess_destaddr: super::super::Networking::WinSock::IN_ADDR,
+    pub sess_destaddr: ::win32_networking_sys::WinSock::IN_ADDR,
     pub sess_protid: u8,
     pub sess_flags: u8,
     pub sess_destport: u16,
@@ -1711,30 +1693,23 @@ impl ::core::clone::Clone for TCG_PCClientTaggedEventStruct {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type TCI_ADD_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: super::super::Foundation::HANDLE, status: u32)>;
+pub type TCI_ADD_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: ::win32_foundation_sys::HANDLE, status: u32)>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TCI_CLIENT_FUNC_LIST {
     pub ClNotifyHandler: TCI_NOTIFY_HANDLER,
     pub ClAddFlowCompleteHandler: TCI_ADD_FLOW_COMPLETE_HANDLER,
     pub ClModifyFlowCompleteHandler: TCI_MOD_FLOW_COMPLETE_HANDLER,
     pub ClDeleteFlowCompleteHandler: TCI_DEL_FLOW_COMPLETE_HANDLER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TCI_CLIENT_FUNC_LIST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TCI_CLIENT_FUNC_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type TCI_DEL_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: super::super::Foundation::HANDLE, status: u32)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type TCI_MOD_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: super::super::Foundation::HANDLE, status: u32)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type TCI_NOTIFY_HANDLER = ::core::option::Option<unsafe extern "system" fn(clregctx: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, event: u32, subcode: super::super::Foundation::HANDLE, bufsize: u32, buffer: *const ::core::ffi::c_void)>;
+pub type TCI_DEL_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: ::win32_foundation_sys::HANDLE, status: u32)>;
+pub type TCI_MOD_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: ::win32_foundation_sys::HANDLE, status: u32)>;
+pub type TCI_NOTIFY_HANDLER = ::core::option::Option<unsafe extern "system" fn(clregctx: ::win32_foundation_sys::HANDLE, clifcctx: ::win32_foundation_sys::HANDLE, event: u32, subcode: ::win32_foundation_sys::HANDLE, bufsize: u32, buffer: *const ::core::ffi::c_void)>;
 #[repr(C)]
 pub struct TC_GEN_FILTER {
     pub AddressType: u16,
@@ -1751,8 +1726,8 @@ impl ::core::clone::Clone for TC_GEN_FILTER {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct TC_GEN_FLOW {
-    pub SendingFlowspec: super::super::Networking::WinSock::FLOWSPEC,
-    pub ReceivingFlowspec: super::super::Networking::WinSock::FLOWSPEC,
+    pub SendingFlowspec: ::win32_networking_sys::WinSock::FLOWSPEC,
+    pub ReceivingFlowspec: ::win32_networking_sys::WinSock::FLOWSPEC,
     pub TcObjectsLength: u32,
     pub TcObjects: [QOS_OBJECT_HDR; 1],
 }
@@ -1942,8 +1917,8 @@ pub const ioctl_code: u32 = 1u32;
 pub struct lpmiptable {
     pub ulIfIndex: u32,
     pub MediaType: u32,
-    pub IfIpAddr: super::super::Networking::WinSock::IN_ADDR,
-    pub IfNetMask: super::super::Networking::WinSock::IN_ADDR,
+    pub IfIpAddr: ::win32_networking_sys::WinSock::IN_ADDR,
+    pub IfNetMask: ::win32_networking_sys::WinSock::IN_ADDR,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for lpmiptable {}

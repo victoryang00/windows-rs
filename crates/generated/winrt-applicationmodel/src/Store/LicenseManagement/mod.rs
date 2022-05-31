@@ -9,9 +9,9 @@ unsafe impl ::windows_core::Interface for ILicenseManagerStatics {
 #[doc(hidden)]
 pub struct ILicenseManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub AddLicenseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, license: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     AddLicenseAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetSatisfactionInfosAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, contentids: ::windows_core::RawPtr, keyids: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -29,10 +29,7 @@ unsafe impl ::windows_core::Interface for ILicenseManagerStatics2 {
 #[doc(hidden)]
 pub struct ILicenseManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RefreshLicensesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, refreshoption: LicenseRefreshOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RefreshLicensesAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -72,25 +69,24 @@ pub struct ILicenseSatisfactionResult_Vtbl {
 }
 pub struct LicenseManager;
 impl LicenseManager {
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn AddLicenseAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(license: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn AddLicenseAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(license: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ILicenseManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddLicenseAsync)(::windows_core::Interface::as_raw(this), license.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).AddLicenseAsync)(::windows_core::Interface::as_raw(this), license.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetSatisfactionInfosAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(contentids: Param0, keyids: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<LicenseSatisfactionResult>> {
+    pub fn GetSatisfactionInfosAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(contentids: Param0, keyids: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LicenseSatisfactionResult>> {
         Self::ILicenseManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSatisfactionInfosAsync)(::windows_core::Interface::as_raw(this), contentids.into_param().abi(), keyids.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<LicenseSatisfactionResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetSatisfactionInfosAsync)(::windows_core::Interface::as_raw(this), contentids.into_param().abi(), keyids.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LicenseSatisfactionResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RefreshLicensesAsync(refreshoption: LicenseRefreshOption) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn RefreshLicensesAsync(refreshoption: LicenseRefreshOption) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ILicenseManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RefreshLicensesAsync)(::windows_core::Interface::as_raw(this), refreshoption, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).RefreshLicensesAsync)(::windows_core::Interface::as_raw(this), refreshoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn ILicenseManagerStatics<R, F: FnOnce(&ILicenseManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -267,11 +263,11 @@ unsafe impl ::core::marker::Sync for LicenseSatisfactionInfo {}
 pub struct LicenseSatisfactionResult(::windows_core::IUnknown);
 impl LicenseSatisfactionResult {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LicenseSatisfactionInfos(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, LicenseSatisfactionInfo>> {
+    pub fn LicenseSatisfactionInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, LicenseSatisfactionInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LicenseSatisfactionInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, LicenseSatisfactionInfo>>(result__)
+            (::windows_core::Interface::vtable(this).LicenseSatisfactionInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, LicenseSatisfactionInfo>>(result__)
         }
     }
     pub fn ExtendedError(&self) -> ::windows_core::Result<::windows_core::HRESULT> {

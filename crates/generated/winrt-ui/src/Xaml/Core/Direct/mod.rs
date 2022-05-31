@@ -18,32 +18,14 @@ pub struct IXamlDirect_Vtbl {
     pub SetDoubleProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: f64) -> ::windows_core::HRESULT,
     pub SetInt32Property: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: i32) -> ::windows_core::HRESULT,
     pub SetStringProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SetDateTimeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetDateTimeProperty: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetPointProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPointProperty: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetRectProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetRectProperty: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetSizeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetSizeProperty: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetTimeSpanProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetTimeSpanProperty: usize,
+    pub SetDateTimeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub SetPointProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub SetRectProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    pub SetSizeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: ::winrt_foundation::Size) -> ::windows_core::HRESULT,
+    pub SetTimeSpanProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub SetColorProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::super::Color) -> ::windows_core::HRESULT,
     pub SetCornerRadiusProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::CornerRadius) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SetDurationProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::Duration) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetDurationProperty: usize,
     pub SetGridLengthProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::GridLength) -> ::windows_core::HRESULT,
     pub SetThicknessProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, value: super::super::Thickness) -> ::windows_core::HRESULT,
     #[cfg(feature = "UI_Xaml_Media")]
@@ -61,32 +43,14 @@ pub struct IXamlDirect_Vtbl {
     pub GetDoubleProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut f64) -> ::windows_core::HRESULT,
     pub GetInt32Property: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut i32) -> ::windows_core::HRESULT,
     pub GetStringProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetDateTimeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDateTimeProperty: usize,
-    #[cfg(feature = "Foundation")]
-    pub GetPointProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPointProperty: usize,
-    #[cfg(feature = "Foundation")]
-    pub GetRectProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetRectProperty: usize,
-    #[cfg(feature = "Foundation")]
-    pub GetSizeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetSizeProperty: usize,
-    #[cfg(feature = "Foundation")]
-    pub GetTimeSpanProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetTimeSpanProperty: usize,
+    pub GetDateTimeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub GetPointProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub GetRectProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    pub GetSizeProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
+    pub GetTimeSpanProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub GetColorProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::super::Color) -> ::windows_core::HRESULT,
     pub GetCornerRadiusProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::CornerRadius) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetDurationProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::Duration) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDurationProperty: usize,
     pub GetGridLengthProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::GridLength) -> ::windows_core::HRESULT,
     pub GetThicknessProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xamldirectobject: ::windows_core::RawPtr, propertyindex: XamlPropertyIndex, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
     #[cfg(feature = "UI_Xaml_Media")]
@@ -246,28 +210,23 @@ impl XamlDirect {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStringProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetDateTimeProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::DateTime>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetDateTimeProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDateTimeProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPointProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetPointProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPointProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetRectProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Rect>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetRectProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRectProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetSizeProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Size>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetSizeProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSizeProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetTimeSpanProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TimeSpan>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetTimeSpanProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTimeSpanProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
     }
@@ -279,7 +238,6 @@ impl XamlDirect {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCornerRadiusProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn SetDurationProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>, Param2: ::windows_core::IntoParam<'a, super::super::Duration>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex, value: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDurationProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, value.into_param().abi()).ok() }
@@ -348,44 +306,39 @@ impl XamlDirect {
             (::windows_core::Interface::vtable(this).GetStringProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDateTimeProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<super::super::super::super::Foundation::DateTime> {
+    pub fn GetDateTimeProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDateTimeProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).GetDateTimeProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetPointProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn GetPointProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPointProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).GetPointProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetRectProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn GetRectProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRectProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).GetRectProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetSizeProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<super::super::super::super::Foundation::Size> {
+    pub fn GetSizeProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSizeProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).GetSizeProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetTimeSpanProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<super::super::super::super::Foundation::TimeSpan> {
+    pub fn GetTimeSpanProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTimeSpanProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).GetTimeSpanProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn GetColorProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<super::super::super::Color> {
@@ -402,7 +355,6 @@ impl XamlDirect {
             (::windows_core::Interface::vtable(this).GetCornerRadiusProperty)(::windows_core::Interface::as_raw(this), xamldirectobject.into_param().abi(), propertyindex, result__.as_mut_ptr()).from_abi::<super::super::CornerRadius>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn GetDurationProperty<'a, Param0: ::windows_core::IntoParam<'a, IXamlDirectObject>>(&self, xamldirectobject: Param0, propertyindex: XamlPropertyIndex) -> ::windows_core::Result<super::super::Duration> {
         let this = self;
         unsafe {

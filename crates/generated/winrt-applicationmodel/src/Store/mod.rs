@@ -10,11 +10,10 @@ impl CurrentApp {
             (::windows_core::Interface::vtable(this).LicenseInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LicenseInformation>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LinkUri() -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn LinkUri() -> ::windows_core::Result<::winrt_foundation::Uri> {
         Self::ICurrentApp(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LinkUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).LinkUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         })
     }
     pub fn AppId() -> ::windows_core::Result<::windows_core::GUID> {
@@ -23,105 +22,95 @@ impl CurrentApp {
             (::windows_core::Interface::vtable(this).AppId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestAppPurchaseAsync(includereceipt: bool) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn RequestAppPurchaseAsync(includereceipt: bool) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentApp(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAppPurchaseAsync)(::windows_core::Interface::as_raw(this), includereceipt, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAppPurchaseAsync)(::windows_core::Interface::as_raw(this), includereceipt, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RequestProductPurchaseAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0, includereceipt: bool) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    #[cfg(feature = "deprecated")]
+    pub fn RequestProductPurchaseAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0, includereceipt: bool) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentApp(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestProductPurchaseAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), includereceipt, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).RequestProductPurchaseAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), includereceipt, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LoadListingInformationAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ListingInformation>> {
+    pub fn LoadListingInformationAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ListingInformation>> {
         Self::ICurrentApp(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadListingInformationAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ListingInformation>>(result__)
+            (::windows_core::Interface::vtable(this).LoadListingInformationAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ListingInformation>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAppReceiptAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetAppReceiptAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentApp(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAppReceiptAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetAppReceiptAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetProductReceiptAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetProductReceiptAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentApp(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetProductReceiptAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetProductReceiptAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCustomerPurchaseIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(serviceticket: Param0, publisheruserid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetCustomerPurchaseIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(serviceticket: Param0, publisheruserid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentApp2Statics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCustomerPurchaseIdAsync)(::windows_core::Interface::as_raw(this), serviceticket.into_param().abi(), publisheruserid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetCustomerPurchaseIdAsync)(::windows_core::Interface::as_raw(this), serviceticket.into_param().abi(), publisheruserid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCustomerCollectionsIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(serviceticket: Param0, publisheruserid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetCustomerCollectionsIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(serviceticket: Param0, publisheruserid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentApp2Statics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCustomerCollectionsIdAsync)(::windows_core::Interface::as_raw(this), serviceticket.into_param().abi(), publisheruserid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetCustomerCollectionsIdAsync)(::windows_core::Interface::as_raw(this), serviceticket.into_param().abi(), publisheruserid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LoadListingInformationByProductIdsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(productids: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ListingInformation>> {
+    pub fn LoadListingInformationByProductIdsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(productids: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ListingInformation>> {
         Self::ICurrentAppStaticsWithFiltering(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadListingInformationByProductIdsAsync)(::windows_core::Interface::as_raw(this), productids.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ListingInformation>>(result__)
+            (::windows_core::Interface::vtable(this).LoadListingInformationByProductIdsAsync)(::windows_core::Interface::as_raw(this), productids.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ListingInformation>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LoadListingInformationByKeywordsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(keywords: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ListingInformation>> {
+    pub fn LoadListingInformationByKeywordsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(keywords: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ListingInformation>> {
         Self::ICurrentAppStaticsWithFiltering(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadListingInformationByKeywordsAsync)(::windows_core::Interface::as_raw(this), keywords.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ListingInformation>>(result__)
+            (::windows_core::Interface::vtable(this).LoadListingInformationByKeywordsAsync)(::windows_core::Interface::as_raw(this), keywords.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ListingInformation>>(result__)
         })
     }
     pub fn ReportProductFulfillment<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0) -> ::windows_core::Result<()> {
         Self::ICurrentAppStaticsWithFiltering(|this| unsafe { (::windows_core::Interface::vtable(this).ReportProductFulfillment)(::windows_core::Interface::as_raw(this), productid.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAppPurchaseCampaignIdAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetAppPurchaseCampaignIdAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentAppWithCampaignId(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAppPurchaseCampaignIdAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetAppPurchaseCampaignIdAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReportConsumableFulfillmentAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(productid: Param0, transactionid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<FulfillmentResult>> {
+    pub fn ReportConsumableFulfillmentAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(productid: Param0, transactionid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FulfillmentResult>> {
         Self::ICurrentAppWithConsumables(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReportConsumableFulfillmentAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), transactionid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<FulfillmentResult>>(result__)
+            (::windows_core::Interface::vtable(this).ReportConsumableFulfillmentAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), transactionid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FulfillmentResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestProductPurchaseWithResultsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<PurchaseResults>> {
+    pub fn RequestProductPurchaseWithResultsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PurchaseResults>> {
         Self::ICurrentAppWithConsumables(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestProductPurchaseWithResultsAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<PurchaseResults>>(result__)
+            (::windows_core::Interface::vtable(this).RequestProductPurchaseWithResultsAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PurchaseResults>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestProductPurchaseWithDisplayPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ProductPurchaseDisplayProperties>>(productid: Param0, offerid: Param1, displayproperties: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<PurchaseResults>> {
+    pub fn RequestProductPurchaseWithDisplayPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ProductPurchaseDisplayProperties>>(productid: Param0, offerid: Param1, displayproperties: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PurchaseResults>> {
         Self::ICurrentAppWithConsumables(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestProductPurchaseWithDisplayPropertiesAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), offerid.into_param().abi(), displayproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<PurchaseResults>>(result__)
+            (::windows_core::Interface::vtable(this).RequestProductPurchaseWithDisplayPropertiesAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), offerid.into_param().abi(), displayproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PurchaseResults>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetUnfulfilledConsumablesAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UnfulfilledConsumable>>> {
+    pub fn GetUnfulfilledConsumablesAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UnfulfilledConsumable>>> {
         Self::ICurrentAppWithConsumables(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetUnfulfilledConsumablesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UnfulfilledConsumable>>>(result__)
+            (::windows_core::Interface::vtable(this).GetUnfulfilledConsumablesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UnfulfilledConsumable>>>(result__)
         })
     }
     pub fn ICurrentApp<R, F: FnOnce(&ICurrentApp) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -156,11 +145,10 @@ impl CurrentAppSimulator {
             (::windows_core::Interface::vtable(this).LicenseInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LicenseInformation>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LinkUri() -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn LinkUri() -> ::windows_core::Result<::winrt_foundation::Uri> {
         Self::ICurrentAppSimulator(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LinkUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).LinkUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         })
     }
     pub fn AppId() -> ::windows_core::Result<::windows_core::GUID> {
@@ -169,95 +157,87 @@ impl CurrentAppSimulator {
             (::windows_core::Interface::vtable(this).AppId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestAppPurchaseAsync(includereceipt: bool) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn RequestAppPurchaseAsync(includereceipt: bool) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentAppSimulator(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAppPurchaseAsync)(::windows_core::Interface::as_raw(this), includereceipt, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAppPurchaseAsync)(::windows_core::Interface::as_raw(this), includereceipt, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RequestProductPurchaseAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0, includereceipt: bool) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    #[cfg(feature = "deprecated")]
+    pub fn RequestProductPurchaseAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0, includereceipt: bool) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentAppSimulator(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestProductPurchaseAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), includereceipt, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).RequestProductPurchaseAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), includereceipt, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LoadListingInformationAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ListingInformation>> {
+    pub fn LoadListingInformationAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ListingInformation>> {
         Self::ICurrentAppSimulator(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadListingInformationAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ListingInformation>>(result__)
+            (::windows_core::Interface::vtable(this).LoadListingInformationAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ListingInformation>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAppReceiptAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetAppReceiptAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentAppSimulator(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAppReceiptAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetAppReceiptAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetProductReceiptAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetProductReceiptAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentAppSimulator(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetProductReceiptAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetProductReceiptAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn ReloadSimulatorAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::StorageFile>>(simulatorsettingsfile: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Storage")]
+    pub fn ReloadSimulatorAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(simulatorsettingsfile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ICurrentAppSimulator(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReloadSimulatorAsync)(::windows_core::Interface::as_raw(this), simulatorsettingsfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ReloadSimulatorAsync)(::windows_core::Interface::as_raw(this), simulatorsettingsfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LoadListingInformationByProductIdsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(productids: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ListingInformation>> {
+    pub fn LoadListingInformationByProductIdsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(productids: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ListingInformation>> {
         Self::ICurrentAppSimulatorStaticsWithFiltering(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadListingInformationByProductIdsAsync)(::windows_core::Interface::as_raw(this), productids.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ListingInformation>>(result__)
+            (::windows_core::Interface::vtable(this).LoadListingInformationByProductIdsAsync)(::windows_core::Interface::as_raw(this), productids.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ListingInformation>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LoadListingInformationByKeywordsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(keywords: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ListingInformation>> {
+    pub fn LoadListingInformationByKeywordsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(keywords: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ListingInformation>> {
         Self::ICurrentAppSimulatorStaticsWithFiltering(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadListingInformationByKeywordsAsync)(::windows_core::Interface::as_raw(this), keywords.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ListingInformation>>(result__)
+            (::windows_core::Interface::vtable(this).LoadListingInformationByKeywordsAsync)(::windows_core::Interface::as_raw(this), keywords.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ListingInformation>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAppPurchaseCampaignIdAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetAppPurchaseCampaignIdAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICurrentAppSimulatorWithCampaignId(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAppPurchaseCampaignIdAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetAppPurchaseCampaignIdAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReportConsumableFulfillmentAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(productid: Param0, transactionid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<FulfillmentResult>> {
+    pub fn ReportConsumableFulfillmentAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(productid: Param0, transactionid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FulfillmentResult>> {
         Self::ICurrentAppSimulatorWithConsumables(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReportConsumableFulfillmentAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), transactionid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<FulfillmentResult>>(result__)
+            (::windows_core::Interface::vtable(this).ReportConsumableFulfillmentAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), transactionid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FulfillmentResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestProductPurchaseWithResultsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<PurchaseResults>> {
+    pub fn RequestProductPurchaseWithResultsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(productid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PurchaseResults>> {
         Self::ICurrentAppSimulatorWithConsumables(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestProductPurchaseWithResultsAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<PurchaseResults>>(result__)
+            (::windows_core::Interface::vtable(this).RequestProductPurchaseWithResultsAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PurchaseResults>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestProductPurchaseWithDisplayPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ProductPurchaseDisplayProperties>>(productid: Param0, offerid: Param1, displayproperties: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<PurchaseResults>> {
+    pub fn RequestProductPurchaseWithDisplayPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ProductPurchaseDisplayProperties>>(productid: Param0, offerid: Param1, displayproperties: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PurchaseResults>> {
         Self::ICurrentAppSimulatorWithConsumables(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestProductPurchaseWithDisplayPropertiesAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), offerid.into_param().abi(), displayproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<PurchaseResults>>(result__)
+            (::windows_core::Interface::vtable(this).RequestProductPurchaseWithDisplayPropertiesAsync)(::windows_core::Interface::as_raw(this), productid.into_param().abi(), offerid.into_param().abi(), displayproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PurchaseResults>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetUnfulfilledConsumablesAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UnfulfilledConsumable>>> {
+    pub fn GetUnfulfilledConsumablesAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UnfulfilledConsumable>>> {
         Self::ICurrentAppSimulatorWithConsumables(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetUnfulfilledConsumablesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UnfulfilledConsumable>>>(result__)
+            (::windows_core::Interface::vtable(this).GetUnfulfilledConsumablesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UnfulfilledConsumable>>>(result__)
         })
     }
     pub fn ICurrentAppSimulator<R, F: FnOnce(&ICurrentAppSimulator) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -328,31 +308,16 @@ unsafe impl ::windows_core::Interface for ICurrentApp {
 pub struct ICurrentApp_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub LicenseInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub LinkUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LinkUri: usize,
     pub AppId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub RequestAppPurchaseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, includereceipt: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestAppPurchaseAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub RequestProductPurchaseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, includereceipt: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     RequestProductPurchaseAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LoadListingInformationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LoadListingInformationAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetAppReceiptAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAppReceiptAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetProductReceiptAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetProductReceiptAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -365,14 +330,8 @@ unsafe impl ::windows_core::Interface for ICurrentApp2Statics {
 #[doc(hidden)]
 pub struct ICurrentApp2Statics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetCustomerPurchaseIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceticket: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, publisheruserid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCustomerPurchaseIdAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetCustomerCollectionsIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceticket: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, publisheruserid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCustomerCollectionsIdAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -386,34 +345,19 @@ unsafe impl ::windows_core::Interface for ICurrentAppSimulator {
 pub struct ICurrentAppSimulator_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub LicenseInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub LinkUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LinkUri: usize,
     pub AppId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub RequestAppPurchaseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, includereceipt: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestAppPurchaseAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub RequestProductPurchaseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, includereceipt: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     RequestProductPurchaseAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LoadListingInformationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LoadListingInformationAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetAppReceiptAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAppReceiptAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetProductReceiptAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetProductReceiptAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub ReloadSimulatorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, simulatorsettingsfile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     ReloadSimulatorAsync: usize,
 }
 #[doc(hidden)]
@@ -447,10 +391,7 @@ unsafe impl ::windows_core::Interface for ICurrentAppSimulatorWithCampaignId {
 #[doc(hidden)]
 pub struct ICurrentAppSimulatorWithCampaignId_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetAppPurchaseCampaignIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAppPurchaseCampaignIdAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -463,18 +404,9 @@ unsafe impl ::windows_core::Interface for ICurrentAppSimulatorWithConsumables {
 #[doc(hidden)]
 pub struct ICurrentAppSimulatorWithConsumables_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ReportConsumableFulfillmentAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, transactionid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReportConsumableFulfillmentAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestProductPurchaseWithResultsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestProductPurchaseWithResultsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestProductPurchaseWithDisplayPropertiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, offerid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, displayproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestProductPurchaseWithDisplayPropertiesAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetUnfulfilledConsumablesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -512,10 +444,7 @@ unsafe impl ::windows_core::Interface for ICurrentAppWithCampaignId {
 #[doc(hidden)]
 pub struct ICurrentAppWithCampaignId_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetAppPurchaseCampaignIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAppPurchaseCampaignIdAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -528,18 +457,9 @@ unsafe impl ::windows_core::Interface for ICurrentAppWithConsumables {
 #[doc(hidden)]
 pub struct ICurrentAppWithConsumables_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ReportConsumableFulfillmentAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, transactionid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReportConsumableFulfillmentAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestProductPurchaseWithResultsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestProductPurchaseWithResultsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestProductPurchaseWithDisplayPropertiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, productid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, offerid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, displayproperties: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestProductPurchaseWithDisplayPropertiesAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetUnfulfilledConsumablesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -562,18 +482,9 @@ pub struct ILicenseInformation_Vtbl {
     ProductLicenses: usize,
     pub IsActive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsTrial: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ExpirationDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ExpirationDate: usize,
-    #[cfg(feature = "Foundation")]
-    pub LicenseChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LicenseChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveLicenseChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveLicenseChanged: usize,
+    pub ExpirationDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub LicenseChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveLicenseChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -608,10 +519,7 @@ unsafe impl ::windows_core::Interface for IListingInformation2 {
 pub struct IListingInformation2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FormattedBasePrice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SaleEndDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SaleEndDate: usize,
+    pub SaleEndDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub IsOnSale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub CurrencyCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -628,10 +536,7 @@ pub struct IProductLicense_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ProductId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub IsActive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ExpirationDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ExpirationDate: usize,
+    pub ExpirationDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -673,10 +578,7 @@ unsafe impl ::windows_core::Interface for IProductListing2 {
 pub struct IProductListing2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FormattedBasePrice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SaleEndDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SaleEndDate: usize,
+    pub SaleEndDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub IsOnSale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub CurrencyCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -711,10 +613,7 @@ pub struct IProductListingWithMetadata_Vtbl {
     Keywords: usize,
     pub ProductType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ProductType) -> ::windows_core::HRESULT,
     pub Tag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ImageUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ImageUri: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -731,14 +630,8 @@ pub struct IProductPurchaseDisplayProperties_Vtbl {
     pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub Image: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Image: usize,
-    #[cfg(feature = "Foundation")]
     pub SetImage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetImage: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -871,11 +764,11 @@ pub struct LicenseChangedEventHandler_Vtbl {
 pub struct LicenseInformation(::windows_core::IUnknown);
 impl LicenseInformation {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ProductLicenses(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ProductLicense>> {
+    pub fn ProductLicenses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ProductLicense>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProductLicenses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ProductLicense>>(result__)
+            (::windows_core::Interface::vtable(this).ProductLicenses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ProductLicense>>(result__)
         }
     }
     pub fn IsActive(&self) -> ::windows_core::Result<bool> {
@@ -892,24 +785,21 @@ impl LicenseInformation {
             (::windows_core::Interface::vtable(this).IsTrial)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ExpirationDate(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn ExpirationDate(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).ExpirationDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).ExpirationDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LicenseChanged<'a, Param0: ::windows_core::IntoParam<'a, LicenseChangedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn LicenseChanged<'a, Param0: ::windows_core::IntoParam<'a, LicenseChangedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).LicenseChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).LicenseChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveLicenseChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveLicenseChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveLicenseChanged)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
@@ -1004,11 +894,11 @@ impl ListingInformation {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ProductListings(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ProductListing>> {
+    pub fn ProductListings(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ProductListing>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProductListings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ProductListing>>(result__)
+            (::windows_core::Interface::vtable(this).ProductListings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ProductListing>>(result__)
         }
     }
     pub fn FormattedPrice(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1039,12 +929,11 @@ impl ListingInformation {
             (::windows_core::Interface::vtable(this).FormattedBasePrice)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SaleEndDate(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn SaleEndDate(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IListingInformation2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).SaleEndDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).SaleEndDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn IsOnSale(&self) -> ::windows_core::Result<bool> {
@@ -1151,12 +1040,11 @@ impl ProductLicense {
             (::windows_core::Interface::vtable(this).IsActive)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ExpirationDate(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn ExpirationDate(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).ExpirationDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).ExpirationDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn IsConsumable(&self) -> ::windows_core::Result<bool> {
@@ -1270,12 +1158,11 @@ impl ProductListing {
             (::windows_core::Interface::vtable(this).FormattedBasePrice)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SaleEndDate(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn SaleEndDate(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IProductListing2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).SaleEndDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).SaleEndDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn IsOnSale(&self) -> ::windows_core::Result<bool> {
@@ -1300,11 +1187,11 @@ impl ProductListing {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Keywords(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>> {
+    pub fn Keywords(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<IProductListingWithMetadata>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Keywords)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Keywords)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn ProductType(&self) -> ::windows_core::Result<ProductType> {
@@ -1321,12 +1208,11 @@ impl ProductListing {
             (::windows_core::Interface::vtable(this).Tag)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ImageUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn ImageUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = &::windows_core::Interface::cast::<IProductListingWithMetadata>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ImageUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ImageUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
 }
@@ -1434,16 +1320,14 @@ impl ProductPurchaseDisplayProperties {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDescription)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Image(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn Image(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetImage)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }

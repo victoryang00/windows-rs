@@ -137,26 +137,14 @@ pub struct ISerialDevice_Vtbl {
     pub Parity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SerialParity) -> ::windows_core::HRESULT,
     pub SetParity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: SerialParity) -> ::windows_core::HRESULT,
     pub PortName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ReadTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadTimeout: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetReadTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetReadTimeout: usize,
+    pub ReadTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub SetReadTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub StopBits: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SerialStopBitCount) -> ::windows_core::HRESULT,
     pub SetStopBits: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: SerialStopBitCount) -> ::windows_core::HRESULT,
     pub UsbVendorId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
     pub UsbProductId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub WriteTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WriteTimeout: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetWriteTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetWriteTimeout: usize,
+    pub WriteTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub SetWriteTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
     pub InputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
@@ -165,22 +153,10 @@ pub struct ISerialDevice_Vtbl {
     pub OutputStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     OutputStream: usize,
-    #[cfg(feature = "Foundation")]
-    pub ErrorReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reporthandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ErrorReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveErrorReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveErrorReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub PinChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reporthandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PinChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePinChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePinChanged: usize,
+    pub ErrorReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reporthandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveErrorReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub PinChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reporthandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemovePinChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -196,10 +172,7 @@ pub struct ISerialDeviceStatics_Vtbl {
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetDeviceSelectorFromPortName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, portname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetDeviceSelectorFromUsbVidPid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vendorid: u16, productid: u16, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
 }
 #[repr(transparent)]
 pub struct PinChangedEventArgs(::windows_core::IUnknown);
@@ -287,9 +260,8 @@ unsafe impl ::core::marker::Sync for PinChangedEventArgs {}
 #[repr(transparent)]
 pub struct SerialDevice(::windows_core::IUnknown);
 impl SerialDevice {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn BaudRate(&self) -> ::windows_core::Result<u32> {
@@ -404,16 +376,14 @@ impl SerialDevice {
             (::windows_core::Interface::vtable(this).PortName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadTimeout(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn ReadTimeout(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadTimeout)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).ReadTimeout)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetReadTimeout<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetReadTimeout<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetReadTimeout)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -442,58 +412,52 @@ impl SerialDevice {
             (::windows_core::Interface::vtable(this).UsbProductId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteTimeout(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn WriteTimeout(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteTimeout)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).WriteTimeout)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetWriteTimeout<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetWriteTimeout<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetWriteTimeout)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn InputStream(&self) -> ::windows_core::Result<super::super::Storage::Streams::IInputStream> {
+    pub fn InputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IInputStream>(result__)
+            (::windows_core::Interface::vtable(this).InputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn OutputStream(&self) -> ::windows_core::Result<super::super::Storage::Streams::IOutputStream> {
+    pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OutputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IOutputStream>(result__)
+            (::windows_core::Interface::vtable(this).OutputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IOutputStream>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ErrorReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<SerialDevice, ErrorReceivedEventArgs>>>(&self, reporthandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn ErrorReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<SerialDevice, ErrorReceivedEventArgs>>>(&self, reporthandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ErrorReceived)(::windows_core::Interface::as_raw(this), reporthandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ErrorReceived)(::windows_core::Interface::as_raw(this), reporthandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveErrorReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveErrorReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveErrorReceived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PinChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<SerialDevice, PinChangedEventArgs>>>(&self, reporthandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn PinChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<SerialDevice, PinChangedEventArgs>>>(&self, reporthandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PinChanged)(::windows_core::Interface::as_raw(this), reporthandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PinChanged)(::windows_core::Interface::as_raw(this), reporthandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePinChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePinChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePinChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -515,11 +479,10 @@ impl SerialDevice {
             (::windows_core::Interface::vtable(this).GetDeviceSelectorFromUsbVidPid)(::windows_core::Interface::as_raw(this), vendorid, productid, result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SerialDevice>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SerialDevice>> {
         Self::ISerialDeviceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SerialDevice>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SerialDevice>>(result__)
         })
     }
     pub fn ISerialDeviceStatics<R, F: FnOnce(&ISerialDeviceStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -597,30 +560,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ser
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<SerialDevice> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<SerialDevice> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: SerialDevice) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&SerialDevice> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&SerialDevice> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &SerialDevice) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for SerialDevice {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for SerialDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &SerialDevice {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &SerialDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for SerialDevice {}

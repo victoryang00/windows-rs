@@ -9,10 +9,7 @@ unsafe impl ::windows_core::Interface for IUserDataAvailabilityStateChangedEvent
 #[doc(hidden)]
 pub struct IUserDataAvailabilityStateChangedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -42,31 +39,25 @@ unsafe impl ::windows_core::Interface for IUserDataProtectionManager {
 #[doc(hidden)]
 pub struct IUserDataProtectionManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub ProtectStorageItemAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storageitem: ::windows_core::RawPtr, availability: UserDataAvailability, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     ProtectStorageItemAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub GetStorageItemProtectionInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storageitem: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     GetStorageItemProtectionInfoAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub ProtectBufferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, unprotectedbuffer: ::windows_core::RawPtr, availability: UserDataAvailability, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     ProtectBufferAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub UnprotectBufferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protectedbuffer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     UnprotectBufferAsync: usize,
     pub IsContinuedDataAvailabilityExpected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, availability: UserDataAvailability, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub DataAvailabilityStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DataAvailabilityStateChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveDataAvailabilityStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveDataAvailabilityStateChanged: usize,
+    pub DataAvailabilityStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveDataAvailabilityStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -135,12 +126,11 @@ unsafe impl ::windows_core::RuntimeType for UserDataAvailability {
 #[repr(transparent)]
 pub struct UserDataAvailabilityStateChangedEventArgs(::windows_core::IUnknown);
 impl UserDataAvailabilityStateChangedEventArgs {
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -227,11 +217,11 @@ impl UserDataBufferUnprotectResult {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn UnprotectedBuffer(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn UnprotectedBuffer(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UnprotectedBuffer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).UnprotectedBuffer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -343,36 +333,36 @@ unsafe impl ::windows_core::RuntimeType for UserDataBufferUnprotectStatus {
 #[repr(transparent)]
 pub struct UserDataProtectionManager(::windows_core::IUnknown);
 impl UserDataProtectionManager {
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn ProtectStorageItemAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageItem>>(&self, storageitem: Param0, availability: UserDataAvailability) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UserDataStorageItemProtectionStatus>> {
+    #[cfg(feature = "Storage")]
+    pub fn ProtectStorageItemAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(&self, storageitem: Param0, availability: UserDataAvailability) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UserDataStorageItemProtectionStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtectStorageItemAsync)(::windows_core::Interface::as_raw(this), storageitem.into_param().abi(), availability, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UserDataStorageItemProtectionStatus>>(result__)
+            (::windows_core::Interface::vtable(this).ProtectStorageItemAsync)(::windows_core::Interface::as_raw(this), storageitem.into_param().abi(), availability, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UserDataStorageItemProtectionStatus>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn GetStorageItemProtectionInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageItem>>(&self, storageitem: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UserDataStorageItemProtectionInfo>> {
+    #[cfg(feature = "Storage")]
+    pub fn GetStorageItemProtectionInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageItem>>(&self, storageitem: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UserDataStorageItemProtectionInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStorageItemProtectionInfoAsync)(::windows_core::Interface::as_raw(this), storageitem.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UserDataStorageItemProtectionInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetStorageItemProtectionInfoAsync)(::windows_core::Interface::as_raw(this), storageitem.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UserDataStorageItemProtectionInfo>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ProtectBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, unprotectedbuffer: Param0, availability: UserDataAvailability) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ProtectBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, unprotectedbuffer: Param0, availability: UserDataAvailability) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtectBufferAsync)(::windows_core::Interface::as_raw(this), unprotectedbuffer.into_param().abi(), availability, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).ProtectBufferAsync)(::windows_core::Interface::as_raw(this), unprotectedbuffer.into_param().abi(), availability, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn UnprotectBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, protectedbuffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UserDataBufferUnprotectResult>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn UnprotectBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, protectedbuffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UserDataBufferUnprotectResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UnprotectBufferAsync)(::windows_core::Interface::as_raw(this), protectedbuffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UserDataBufferUnprotectResult>>(result__)
+            (::windows_core::Interface::vtable(this).UnprotectBufferAsync)(::windows_core::Interface::as_raw(this), protectedbuffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UserDataBufferUnprotectResult>>(result__)
         }
     }
     pub fn IsContinuedDataAvailabilityExpected(&self, availability: UserDataAvailability) -> ::windows_core::Result<bool> {
@@ -382,16 +372,14 @@ impl UserDataProtectionManager {
             (::windows_core::Interface::vtable(this).IsContinuedDataAvailabilityExpected)(::windows_core::Interface::as_raw(this), availability, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DataAvailabilityStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<UserDataProtectionManager, UserDataAvailabilityStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn DataAvailabilityStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<UserDataProtectionManager, UserDataAvailabilityStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).DataAvailabilityStateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).DataAvailabilityStateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveDataAvailabilityStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveDataAvailabilityStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveDataAvailabilityStateChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -402,7 +390,7 @@ impl UserDataProtectionManager {
         })
     }
     #[cfg(feature = "System")]
-    pub fn TryGetForUser<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::User>>(user: Param0) -> ::windows_core::Result<UserDataProtectionManager> {
+    pub fn TryGetForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<UserDataProtectionManager> {
         Self::IUserDataProtectionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryGetForUser)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<UserDataProtectionManager>(result__)

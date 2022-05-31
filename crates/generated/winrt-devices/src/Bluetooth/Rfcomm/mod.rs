@@ -16,11 +16,11 @@ pub struct IRfcommDeviceService_Vtbl {
     pub ConnectionServiceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ServiceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Networking_Sockets")]
-    pub ProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Networking::Sockets::SocketProtectionLevel) -> ::windows_core::HRESULT,
+    pub ProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_networking::Sockets::SocketProtectionLevel) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Networking_Sockets"))]
     ProtectionLevel: usize,
     #[cfg(feature = "Networking_Sockets")]
-    pub MaxProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Networking::Sockets::SocketProtectionLevel) -> ::windows_core::HRESULT,
+    pub MaxProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_networking::Sockets::SocketProtectionLevel) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Networking_Sockets"))]
     MaxProtectionLevel: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
@@ -60,9 +60,9 @@ pub struct IRfcommDeviceService3_Vtbl {
     pub DeviceAccessInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Enumeration"))]
     DeviceAccessInformation: usize,
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Enumeration")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Enumeration", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Enumeration"))]
     RequestAccessAsync: usize,
 }
 #[doc(hidden)]
@@ -76,10 +76,7 @@ unsafe impl ::windows_core::Interface for IRfcommDeviceServiceStatics {
 #[doc(hidden)]
 pub struct IRfcommDeviceServiceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceid: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -199,25 +196,21 @@ unsafe impl ::windows_core::Interface for IRfcommServiceProviderStatics {
 #[doc(hidden)]
 pub struct IRfcommServiceProviderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CreateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceid: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateAsync: usize,
 }
 #[repr(transparent)]
 pub struct RfcommDeviceService(::windows_core::IUnknown);
 impl RfcommDeviceService {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Networking")]
-    pub fn ConnectionHostName(&self) -> ::windows_core::Result<super::super::super::Networking::HostName> {
+    pub fn ConnectionHostName(&self) -> ::windows_core::Result<::winrt_networking::HostName> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectionHostName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Networking::HostName>(result__)
+            (::windows_core::Interface::vtable(this).ConnectionHostName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::HostName>(result__)
         }
     }
     pub fn ConnectionServiceName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -235,35 +228,35 @@ impl RfcommDeviceService {
         }
     }
     #[cfg(feature = "Networking_Sockets")]
-    pub fn ProtectionLevel(&self) -> ::windows_core::Result<super::super::super::Networking::Sockets::SocketProtectionLevel> {
+    pub fn ProtectionLevel(&self) -> ::windows_core::Result<::winrt_networking::Sockets::SocketProtectionLevel> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Networking::Sockets::SocketProtectionLevel>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtectionLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Networking::Sockets::SocketProtectionLevel>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_networking::Sockets::SocketProtectionLevel>::zeroed();
+            (::windows_core::Interface::vtable(this).ProtectionLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::SocketProtectionLevel>(result__)
         }
     }
     #[cfg(feature = "Networking_Sockets")]
-    pub fn MaxProtectionLevel(&self) -> ::windows_core::Result<super::super::super::Networking::Sockets::SocketProtectionLevel> {
+    pub fn MaxProtectionLevel(&self) -> ::windows_core::Result<::winrt_networking::Sockets::SocketProtectionLevel> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Networking::Sockets::SocketProtectionLevel>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxProtectionLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Networking::Sockets::SocketProtectionLevel>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_networking::Sockets::SocketProtectionLevel>::zeroed();
+            (::windows_core::Interface::vtable(this).MaxProtectionLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::SocketProtectionLevel>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn GetSdpRawAttributesAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IMapView<u32, super::super::super::Storage::Streams::IBuffer>>> {
+    pub fn GetSdpRawAttributesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMapView<u32, ::winrt_storage::Streams::IBuffer>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSdpRawAttributesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IMapView<u32, super::super::super::Storage::Streams::IBuffer>>>(result__)
+            (::windows_core::Interface::vtable(this).GetSdpRawAttributesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMapView<u32, ::winrt_storage::Streams::IBuffer>>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn GetSdpRawAttributesWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IMapView<u32, super::super::super::Storage::Streams::IBuffer>>> {
+    pub fn GetSdpRawAttributesWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMapView<u32, ::winrt_storage::Streams::IBuffer>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSdpRawAttributesWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IMapView<u32, super::super::super::Storage::Streams::IBuffer>>>(result__)
+            (::windows_core::Interface::vtable(this).GetSdpRawAttributesWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMapView<u32, ::winrt_storage::Streams::IBuffer>>>(result__)
         }
     }
     pub fn Device(&self) -> ::windows_core::Result<super::BluetoothDevice> {
@@ -281,19 +274,18 @@ impl RfcommDeviceService {
             (::windows_core::Interface::vtable(this).DeviceAccessInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Enumeration::DeviceAccessInformation>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation"))]
-    pub fn RequestAccessAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::Enumeration::DeviceAccessStatus>> {
+    #[cfg(feature = "Devices_Enumeration")]
+    pub fn RequestAccessAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::Enumeration::DeviceAccessStatus>> {
         let this = &::windows_core::Interface::cast::<IRfcommDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::Enumeration::DeviceAccessStatus>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::Enumeration::DeviceAccessStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<RfcommDeviceService>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<RfcommDeviceService>> {
         Self::IRfcommDeviceServiceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<RfcommDeviceService>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<RfcommDeviceService>>(result__)
         })
     }
     pub fn GetDeviceSelector<'a, Param0: ::windows_core::IntoParam<'a, RfcommServiceId>>(serviceid: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -405,30 +397,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Rfc
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<RfcommDeviceService> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<RfcommDeviceService> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: RfcommDeviceService) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&RfcommDeviceService> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&RfcommDeviceService> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &RfcommDeviceService) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for RfcommDeviceService {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for RfcommDeviceService {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &RfcommDeviceService {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &RfcommDeviceService {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for RfcommDeviceService {}
@@ -444,11 +432,11 @@ impl RfcommDeviceServicesResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Services(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<RfcommDeviceService>> {
+    pub fn Services(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<RfcommDeviceService>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Services)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<RfcommDeviceService>>(result__)
+            (::windows_core::Interface::vtable(this).Services)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<RfcommDeviceService>>(result__)
         }
     }
 }
@@ -684,15 +672,15 @@ impl RfcommServiceProvider {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn SdpRawAttributes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMap<u32, super::super::super::Storage::Streams::IBuffer>> {
+    pub fn SdpRawAttributes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<u32, ::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SdpRawAttributes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMap<u32, super::super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).SdpRawAttributes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<u32, ::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
     #[cfg(feature = "Networking_Sockets")]
-    pub fn StartAdvertising<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Networking::Sockets::StreamSocketListener>>(&self, listener: Param0) -> ::windows_core::Result<()> {
+    pub fn StartAdvertising<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::Sockets::StreamSocketListener>>(&self, listener: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).StartAdvertising)(::windows_core::Interface::as_raw(this), listener.into_param().abi()).ok() }
     }
@@ -701,15 +689,14 @@ impl RfcommServiceProvider {
         unsafe { (::windows_core::Interface::vtable(this).StopAdvertising)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Networking_Sockets")]
-    pub fn StartAdvertisingWithRadioDiscoverability<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Networking::Sockets::StreamSocketListener>>(&self, listener: Param0, radiodiscoverable: bool) -> ::windows_core::Result<()> {
+    pub fn StartAdvertisingWithRadioDiscoverability<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::Sockets::StreamSocketListener>>(&self, listener: Param0, radiodiscoverable: bool) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IRfcommServiceProvider2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StartAdvertisingWithRadioDiscoverability)(::windows_core::Interface::as_raw(this), listener.into_param().abi(), radiodiscoverable).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateAsync<'a, Param0: ::windows_core::IntoParam<'a, RfcommServiceId>>(serviceid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<RfcommServiceProvider>> {
+    pub fn CreateAsync<'a, Param0: ::windows_core::IntoParam<'a, RfcommServiceId>>(serviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<RfcommServiceProvider>> {
         Self::IRfcommServiceProviderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateAsync)(::windows_core::Interface::as_raw(this), serviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<RfcommServiceProvider>>(result__)
+            (::windows_core::Interface::vtable(this).CreateAsync)(::windows_core::Interface::as_raw(this), serviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<RfcommServiceProvider>>(result__)
         })
     }
     pub fn IRfcommServiceProviderStatics<R, F: FnOnce(&IRfcommServiceProviderStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

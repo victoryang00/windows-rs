@@ -417,7 +417,6 @@ pub const XAUDIO2FX_REVERB_MIN_ROOM_FILTER_MAIN: f32 = -100f32;
 pub const XAUDIO2FX_REVERB_MIN_ROOM_SIZE: f32 = 0f32;
 pub const XAUDIO2FX_REVERB_MIN_WET_DRY_MIX: f32 = 0f32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct XAUDIO2FX_REVERB_PARAMETERS {
     pub WetDryMix: f32,
     pub ReflectionsDelay: u32,
@@ -442,11 +441,9 @@ pub struct XAUDIO2FX_REVERB_PARAMETERS {
     pub DecayTime: f32,
     pub Density: f32,
     pub RoomSize: f32,
-    pub DisableLateField: super::super::super::Foundation::BOOL,
+    pub DisableLateField: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for XAUDIO2FX_REVERB_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for XAUDIO2FX_REVERB_PARAMETERS {
     fn clone(&self) -> Self {
         *self
@@ -498,18 +495,15 @@ impl ::core::clone::Clone for XAUDIO2_BUFFER_WMA {
 pub const XAUDIO2_COMMIT_ALL: u32 = 0u32;
 pub const XAUDIO2_COMMIT_NOW: u32 = 0u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct XAUDIO2_DEBUG_CONFIGURATION {
     pub TraceMask: u32,
     pub BreakMask: u32,
-    pub LogThreadID: super::super::super::Foundation::BOOL,
-    pub LogFileline: super::super::super::Foundation::BOOL,
-    pub LogFunctionName: super::super::super::Foundation::BOOL,
-    pub LogTiming: super::super::super::Foundation::BOOL,
+    pub LogThreadID: ::win32_foundation_sys::BOOL,
+    pub LogFileline: ::win32_foundation_sys::BOOL,
+    pub LogFunctionName: ::win32_foundation_sys::BOOL,
+    pub LogTiming: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for XAUDIO2_DEBUG_CONFIGURATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for XAUDIO2_DEBUG_CONFIGURATION {
     fn clone(&self) -> Self {
         *self
@@ -526,29 +520,23 @@ pub const XAUDIO2_DLL: &str = "xaudio2_9.dll";
 pub const XAUDIO2_DLL_A: &str = "xaudio2_9.dll";
 pub const XAUDIO2_DLL_W: &str = "xaudio2_9.dll";
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct XAUDIO2_EFFECT_CHAIN {
     pub EffectCount: u32,
     pub pEffectDescriptors: *mut XAUDIO2_EFFECT_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for XAUDIO2_EFFECT_CHAIN {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for XAUDIO2_EFFECT_CHAIN {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct XAUDIO2_EFFECT_DESCRIPTOR {
     pub pEffect: ::windows_core_sys::IUnknown,
-    pub InitialState: super::super::super::Foundation::BOOL,
+    pub InitialState: ::win32_foundation_sys::BOOL,
     pub OutputChannels: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for XAUDIO2_EFFECT_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for XAUDIO2_EFFECT_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self

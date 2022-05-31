@@ -5,9 +5,8 @@ impl CompositionConditionalValue {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Condition(&self) -> ::windows_core::Result<super::ExpressionAnimation> {
@@ -99,11 +98,11 @@ impl CompositionConditionalValue {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -210,30 +209,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Composition
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<CompositionConditionalValue> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<CompositionConditionalValue> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionConditionalValue) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&CompositionConditionalValue> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&CompositionConditionalValue> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionConditionalValue) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for CompositionConditionalValue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for CompositionConditionalValue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &CompositionConditionalValue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &CompositionConditionalValue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<CompositionConditionalValue> for super::CompositionObject {
@@ -265,9 +260,8 @@ impl CompositionInteractionSourceCollection {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Count(&self) -> ::windows_core::Result<i32> {
@@ -350,11 +344,11 @@ impl CompositionInteractionSourceCollection {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -365,11 +359,11 @@ impl CompositionInteractionSourceCollection {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<ICompositionInteractionSource>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<ICompositionInteractionSource>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<ICompositionInteractionSource>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<ICompositionInteractionSource>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<ICompositionInteractionSource>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<ICompositionInteractionSource>>(result__)
         }
     }
 }
@@ -406,7 +400,7 @@ impl ::windows_core::RuntimeName for CompositionInteractionSourceCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for CompositionInteractionSourceCollection {
     type Item = ICompositionInteractionSource;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -414,7 +408,7 @@ impl ::core::iter::IntoIterator for CompositionInteractionSourceCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &CompositionInteractionSourceCollection {
     type Item = ICompositionInteractionSource;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -481,56 +475,52 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Composition
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<CompositionInteractionSourceCollection> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<CompositionInteractionSourceCollection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionInteractionSourceCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&CompositionInteractionSourceCollection> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&CompositionInteractionSourceCollection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionInteractionSourceCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for CompositionInteractionSourceCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for CompositionInteractionSourceCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &CompositionInteractionSourceCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &CompositionInteractionSourceCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<CompositionInteractionSourceCollection> for super::super::super::Foundation::Collections::IIterable<ICompositionInteractionSource> {
+impl ::core::convert::TryFrom<CompositionInteractionSourceCollection> for ::winrt_foundation::Collections::IIterable<ICompositionInteractionSource> {
     type Error = ::windows_core::Error;
     fn try_from(value: CompositionInteractionSourceCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&CompositionInteractionSourceCollection> for super::super::super::Foundation::Collections::IIterable<ICompositionInteractionSource> {
+impl ::core::convert::TryFrom<&CompositionInteractionSourceCollection> for ::winrt_foundation::Collections::IIterable<ICompositionInteractionSource> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CompositionInteractionSourceCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ICompositionInteractionSource>> for CompositionInteractionSourceCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<ICompositionInteractionSource>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ICompositionInteractionSource>> for CompositionInteractionSourceCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ICompositionInteractionSource>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ICompositionInteractionSource>> for &CompositionInteractionSourceCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<ICompositionInteractionSource>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<ICompositionInteractionSource>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ICompositionInteractionSource>> for &CompositionInteractionSourceCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ICompositionInteractionSource>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<ICompositionInteractionSource>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<CompositionInteractionSourceCollection> for super::CompositionObject {
@@ -707,33 +697,33 @@ pub struct IInteractionTracker_Vtbl {
     pub InteractionSources: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsPositionRoundingSuggested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub MaxPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub MaxPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     MaxPosition: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetMaxPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub SetMaxPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetMaxPosition: usize,
     pub MaxScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetMaxScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub MinPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub MinPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     MinPosition: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetMinPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub SetMinPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetMinPosition: usize,
     pub MinScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetMinScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub NaturalRestingPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub NaturalRestingPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     NaturalRestingPosition: usize,
     pub NaturalRestingScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub Owner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Position: usize,
     #[cfg(feature = "Foundation_Numerics")]
@@ -745,18 +735,12 @@ pub struct IInteractionTracker_Vtbl {
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetPositionInertiaDecayRate: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub PositionVelocityInPixelsPerSecond: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub PositionVelocityInPixelsPerSecond: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     PositionVelocityInPixelsPerSecond: usize,
     pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ScaleInertiaDecayRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ScaleInertiaDecayRate: usize,
-    #[cfg(feature = "Foundation")]
     pub SetScaleInertiaDecayRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetScaleInertiaDecayRate: usize,
     pub ScaleVelocityInPercentPerSecond: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub AdjustPositionXIfGreaterThanThreshold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adjustment: f32, positionthreshold: f32) -> ::windows_core::HRESULT,
     pub AdjustPositionYIfGreaterThanThreshold: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adjustment: f32, positionthreshold: f32) -> ::windows_core::HRESULT,
@@ -773,28 +757,28 @@ pub struct IInteractionTracker_Vtbl {
     #[cfg(not(feature = "Foundation_Collections"))]
     ConfigureScaleInertiaModifiers: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub TryUpdatePosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TryUpdatePosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryUpdatePosition: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub TryUpdatePositionBy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, amount: super::super::super::Foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TryUpdatePositionBy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, amount: ::winrt_foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryUpdatePositionBy: usize,
     pub TryUpdatePositionWithAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub TryUpdatePositionWithAdditionalVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, velocityinpixelspersecond: super::super::super::Foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TryUpdatePositionWithAdditionalVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, velocityinpixelspersecond: ::winrt_foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryUpdatePositionWithAdditionalVelocity: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub TryUpdateScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32, centerpoint: super::super::super::Foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TryUpdateScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32, centerpoint: ::winrt_foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryUpdateScale: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub TryUpdateScaleWithAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr, centerpoint: super::super::super::Foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TryUpdateScaleWithAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr, centerpoint: ::winrt_foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryUpdateScaleWithAnimation: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub TryUpdateScaleWithAdditionalVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, velocityinpercentpersecond: f32, centerpoint: super::super::super::Foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TryUpdateScaleWithAdditionalVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, velocityinpercentpersecond: f32, centerpoint: ::winrt_foundation::Numerics::Vector3, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryUpdateScaleWithAdditionalVelocity: usize,
 }
@@ -846,11 +830,11 @@ unsafe impl ::windows_core::Interface for IInteractionTracker4 {
 pub struct IInteractionTracker4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Numerics")]
-    pub TryUpdatePositionWithOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Numerics::Vector3, option: InteractionTrackerClampingOption, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TryUpdatePositionWithOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3, option: InteractionTrackerClampingOption, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryUpdatePositionWithOption: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub TryUpdatePositionByWithOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, amount: super::super::super::Foundation::Numerics::Vector3, option: InteractionTrackerClampingOption, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TryUpdatePositionByWithOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, amount: ::winrt_foundation::Numerics::Vector3, option: InteractionTrackerClampingOption, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryUpdatePositionByWithOption: usize,
     pub IsInertiaFromImpulse: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -867,7 +851,7 @@ unsafe impl ::windows_core::Interface for IInteractionTracker5 {
 pub struct IInteractionTracker5_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Numerics")]
-    pub TryUpdatePositionWithOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Numerics::Vector3, option: InteractionTrackerClampingOption, posupdateoption: InteractionTrackerPositionUpdateOption, result__: *mut i32) -> ::windows_core::HRESULT,
+    pub TryUpdatePositionWithOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3, option: InteractionTrackerClampingOption, posupdateoption: InteractionTrackerPositionUpdateOption, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     TryUpdatePositionWithOption: usize,
 }
@@ -1049,17 +1033,14 @@ pub struct IInteractionTrackerInertiaStateEnteredArgs_Vtbl {
     pub ModifiedRestingPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     ModifiedRestingPosition: usize,
-    #[cfg(feature = "Foundation")]
     pub ModifiedRestingScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ModifiedRestingScale: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub NaturalRestingPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub NaturalRestingPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     NaturalRestingPosition: usize,
     pub NaturalRestingScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub PositionVelocityInPixelsPerSecond: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub PositionVelocityInPixelsPerSecond: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     PositionVelocityInPixelsPerSecond: usize,
     pub RequestId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -1276,7 +1257,7 @@ unsafe impl ::windows_core::Interface for IInteractionTrackerValuesChangedArgs {
 pub struct IInteractionTrackerValuesChangedArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Numerics")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Position: usize,
     pub RequestId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -1382,16 +1363,16 @@ unsafe impl ::windows_core::Interface for IVisualInteractionSource2 {
 pub struct IVisualInteractionSource2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Numerics")]
-    pub DeltaPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub DeltaPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     DeltaPosition: usize,
     pub DeltaScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Position: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub PositionVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub PositionVelocity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     PositionVelocity: usize,
     pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
@@ -1572,9 +1553,8 @@ impl InteractionSourceConfiguration {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
@@ -1638,11 +1618,11 @@ impl InteractionSourceConfiguration {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -1778,30 +1758,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Interaction
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InteractionSourceConfiguration> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InteractionSourceConfiguration> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InteractionSourceConfiguration) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InteractionSourceConfiguration> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InteractionSourceConfiguration> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InteractionSourceConfiguration) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for InteractionSourceConfiguration {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InteractionSourceConfiguration {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &InteractionSourceConfiguration {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InteractionSourceConfiguration {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<InteractionSourceConfiguration> for super::CompositionObject {
@@ -1900,9 +1876,8 @@ impl InteractionTracker {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
@@ -1966,11 +1941,11 @@ impl InteractionTracker {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -1995,15 +1970,15 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn MaxPosition(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn MaxPosition(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).MaxPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetMaxPosition<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetMaxPosition<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMaxPosition)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2019,15 +1994,15 @@ impl InteractionTracker {
         unsafe { (::windows_core::Interface::vtable(this).SetMaxScale)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn MinPosition(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn MinPosition(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).MinPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).MinPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetMinPosition<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetMinPosition<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMinPosition)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2043,11 +2018,11 @@ impl InteractionTracker {
         unsafe { (::windows_core::Interface::vtable(this).SetMinScale)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn NaturalRestingPosition(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn NaturalRestingPosition(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).NaturalRestingPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).NaturalRestingPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     pub fn NaturalRestingScale(&self) -> ::windows_core::Result<f32> {
@@ -2065,32 +2040,32 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn PositionInertiaDecayRate(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<super::super::super::Foundation::Numerics::Vector3>> {
+    pub fn PositionInertiaDecayRate(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PositionInertiaDecayRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<super::super::super::Foundation::Numerics::Vector3>>(result__)
+            (::windows_core::Interface::vtable(this).PositionInertiaDecayRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetPositionInertiaDecayRate<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<super::super::super::Foundation::Numerics::Vector3>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPositionInertiaDecayRate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPositionInertiaDecayRate)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn PositionVelocityInPixelsPerSecond(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn PositionVelocityInPixelsPerSecond(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).PositionVelocityInPixelsPerSecond)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).PositionVelocityInPixelsPerSecond)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     pub fn Scale(&self) -> ::windows_core::Result<f32> {
@@ -2100,16 +2075,14 @@ impl InteractionTracker {
             (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ScaleInertiaDecayRate(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<f32>> {
+    pub fn ScaleInertiaDecayRate(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ScaleInertiaDecayRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<f32>>(result__)
+            (::windows_core::Interface::vtable(this).ScaleInertiaDecayRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetScaleInertiaDecayRate<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<f32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetScaleInertiaDecayRate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetScaleInertiaDecayRate)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2129,22 +2102,22 @@ impl InteractionTracker {
         unsafe { (::windows_core::Interface::vtable(this).AdjustPositionYIfGreaterThanThreshold)(::windows_core::Interface::as_raw(this), adjustment, positionthreshold).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigurePositionXInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<InteractionTrackerInertiaModifier>>>(&self, modifiers: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigurePositionXInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InteractionTrackerInertiaModifier>>>(&self, modifiers: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ConfigurePositionXInertiaModifiers)(::windows_core::Interface::as_raw(this), modifiers.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigurePositionYInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<InteractionTrackerInertiaModifier>>>(&self, modifiers: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigurePositionYInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InteractionTrackerInertiaModifier>>>(&self, modifiers: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ConfigurePositionYInertiaModifiers)(::windows_core::Interface::as_raw(this), modifiers.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigureScaleInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<InteractionTrackerInertiaModifier>>>(&self, modifiers: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigureScaleInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InteractionTrackerInertiaModifier>>>(&self, modifiers: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureScaleInertiaModifiers)(::windows_core::Interface::as_raw(this), modifiers.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn TryUpdatePosition<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<i32> {
+    pub fn TryUpdatePosition<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2152,7 +2125,7 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn TryUpdatePositionBy<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, amount: Param0) -> ::windows_core::Result<i32> {
+    pub fn TryUpdatePositionBy<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, amount: Param0) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2167,7 +2140,7 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn TryUpdatePositionWithAdditionalVelocity<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, velocityinpixelspersecond: Param0) -> ::windows_core::Result<i32> {
+    pub fn TryUpdatePositionWithAdditionalVelocity<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, velocityinpixelspersecond: Param0) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2175,7 +2148,7 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn TryUpdateScale<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, value: f32, centerpoint: Param1) -> ::windows_core::Result<i32> {
+    pub fn TryUpdateScale<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: f32, centerpoint: Param1) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2183,7 +2156,7 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn TryUpdateScaleWithAnimation<'a, Param0: ::windows_core::IntoParam<'a, super::CompositionAnimation>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, animation: Param0, centerpoint: Param1) -> ::windows_core::Result<i32> {
+    pub fn TryUpdateScaleWithAnimation<'a, Param0: ::windows_core::IntoParam<'a, super::CompositionAnimation>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, animation: Param0, centerpoint: Param1) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2191,7 +2164,7 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn TryUpdateScaleWithAdditionalVelocity<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, velocityinpercentpersecond: f32, centerpoint: Param1) -> ::windows_core::Result<i32> {
+    pub fn TryUpdateScaleWithAdditionalVelocity<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, velocityinpercentpersecond: f32, centerpoint: Param1) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2199,22 +2172,22 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigureCenterPointXInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigureCenterPointXInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInteractionTracker2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureCenterPointXInertiaModifiers)(::windows_core::Interface::as_raw(this), conditionalvalues.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigureCenterPointYInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigureCenterPointYInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInteractionTracker2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureCenterPointYInertiaModifiers)(::windows_core::Interface::as_raw(this), conditionalvalues.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigureVector2PositionInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<InteractionTrackerVector2InertiaModifier>>>(&self, modifiers: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigureVector2PositionInertiaModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InteractionTrackerVector2InertiaModifier>>>(&self, modifiers: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInteractionTracker3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureVector2PositionInertiaModifiers)(::windows_core::Interface::as_raw(this), modifiers.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn TryUpdatePositionWithOption<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, value: Param0, option: InteractionTrackerClampingOption) -> ::windows_core::Result<i32> {
+    pub fn TryUpdatePositionWithOption<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0, option: InteractionTrackerClampingOption) -> ::windows_core::Result<i32> {
         let this = &::windows_core::Interface::cast::<IInteractionTracker4>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2222,7 +2195,7 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn TryUpdatePositionByWithOption<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, amount: Param0, option: InteractionTrackerClampingOption) -> ::windows_core::Result<i32> {
+    pub fn TryUpdatePositionByWithOption<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, amount: Param0, option: InteractionTrackerClampingOption) -> ::windows_core::Result<i32> {
         let this = &::windows_core::Interface::cast::<IInteractionTracker4>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2237,7 +2210,7 @@ impl InteractionTracker {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn TryUpdatePositionWithOption2<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, value: Param0, option: InteractionTrackerClampingOption, posupdateoption: InteractionTrackerPositionUpdateOption) -> ::windows_core::Result<i32> {
+    pub fn TryUpdatePositionWithOption2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0, option: InteractionTrackerClampingOption, posupdateoption: InteractionTrackerPositionUpdateOption) -> ::windows_core::Result<i32> {
         let this = &::windows_core::Interface::cast::<IInteractionTracker5>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2366,30 +2339,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Interaction
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InteractionTracker> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InteractionTracker> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InteractionTracker) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InteractionTracker> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InteractionTracker> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InteractionTracker) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for InteractionTracker {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InteractionTracker {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &InteractionTracker {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InteractionTracker {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<InteractionTracker> for super::CompositionObject {
@@ -2634,9 +2603,8 @@ impl InteractionTrackerInertiaModifier {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
@@ -2700,11 +2668,11 @@ impl InteractionTrackerInertiaModifier {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -2807,30 +2775,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Interaction
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InteractionTrackerInertiaModifier> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InteractionTrackerInertiaModifier> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InteractionTrackerInertiaModifier) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InteractionTrackerInertiaModifier> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InteractionTrackerInertiaModifier> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InteractionTrackerInertiaModifier) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for InteractionTrackerInertiaModifier {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InteractionTrackerInertiaModifier {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &InteractionTrackerInertiaModifier {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InteractionTrackerInertiaModifier {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<InteractionTrackerInertiaModifier> for super::CompositionObject {
@@ -2862,9 +2826,8 @@ impl InteractionTrackerInertiaMotion {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
@@ -2928,11 +2891,11 @@ impl InteractionTrackerInertiaMotion {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -3067,30 +3030,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Interaction
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InteractionTrackerInertiaMotion> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InteractionTrackerInertiaMotion> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InteractionTrackerInertiaMotion) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InteractionTrackerInertiaMotion> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InteractionTrackerInertiaMotion> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InteractionTrackerInertiaMotion) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for InteractionTrackerInertiaMotion {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InteractionTrackerInertiaMotion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &InteractionTrackerInertiaMotion {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InteractionTrackerInertiaMotion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<InteractionTrackerInertiaMotion> for InteractionTrackerInertiaModifier {
@@ -3142,9 +3101,8 @@ impl InteractionTrackerInertiaNaturalMotion {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
@@ -3208,11 +3166,11 @@ impl InteractionTrackerInertiaNaturalMotion {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -3347,30 +3305,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Interaction
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InteractionTrackerInertiaNaturalMotion> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InteractionTrackerInertiaNaturalMotion> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InteractionTrackerInertiaNaturalMotion) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InteractionTrackerInertiaNaturalMotion> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InteractionTrackerInertiaNaturalMotion> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InteractionTrackerInertiaNaturalMotion) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for InteractionTrackerInertiaNaturalMotion {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InteractionTrackerInertiaNaturalMotion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &InteractionTrackerInertiaNaturalMotion {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InteractionTrackerInertiaNaturalMotion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<InteractionTrackerInertiaNaturalMotion> for InteractionTrackerInertiaModifier {
@@ -3422,9 +3376,8 @@ impl InteractionTrackerInertiaRestingValue {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
@@ -3488,11 +3441,11 @@ impl InteractionTrackerInertiaRestingValue {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -3627,30 +3580,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Interaction
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InteractionTrackerInertiaRestingValue> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InteractionTrackerInertiaRestingValue> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InteractionTrackerInertiaRestingValue) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InteractionTrackerInertiaRestingValue> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InteractionTrackerInertiaRestingValue> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InteractionTrackerInertiaRestingValue) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for InteractionTrackerInertiaRestingValue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InteractionTrackerInertiaRestingValue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &InteractionTrackerInertiaRestingValue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InteractionTrackerInertiaRestingValue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<InteractionTrackerInertiaRestingValue> for InteractionTrackerInertiaModifier {
@@ -3699,27 +3648,26 @@ unsafe impl ::core::marker::Sync for InteractionTrackerInertiaRestingValue {}
 pub struct InteractionTrackerInertiaStateEnteredArgs(::windows_core::IUnknown);
 impl InteractionTrackerInertiaStateEnteredArgs {
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn ModifiedRestingPosition(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<super::super::super::Foundation::Numerics::Vector3>> {
+    pub fn ModifiedRestingPosition(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ModifiedRestingPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<super::super::super::Foundation::Numerics::Vector3>>(result__)
+            (::windows_core::Interface::vtable(this).ModifiedRestingPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Numerics::Vector3>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ModifiedRestingScale(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<f32>> {
+    pub fn ModifiedRestingScale(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ModifiedRestingScale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<f32>>(result__)
+            (::windows_core::Interface::vtable(this).ModifiedRestingScale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f32>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn NaturalRestingPosition(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn NaturalRestingPosition(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).NaturalRestingPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).NaturalRestingPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     pub fn NaturalRestingScale(&self) -> ::windows_core::Result<f32> {
@@ -3730,11 +3678,11 @@ impl InteractionTrackerInertiaStateEnteredArgs {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn PositionVelocityInPixelsPerSecond(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn PositionVelocityInPixelsPerSecond(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).PositionVelocityInPixelsPerSecond)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).PositionVelocityInPixelsPerSecond)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     pub fn RequestId(&self) -> ::windows_core::Result<i32> {
@@ -4048,11 +3996,11 @@ unsafe impl ::core::marker::Sync for InteractionTrackerRequestIgnoredArgs {}
 pub struct InteractionTrackerValuesChangedArgs(::windows_core::IUnknown);
 impl InteractionTrackerValuesChangedArgs {
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     pub fn RequestId(&self) -> ::windows_core::Result<i32> {
@@ -4149,9 +4097,8 @@ impl InteractionTrackerVector2InertiaModifier {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
@@ -4215,11 +4162,11 @@ impl InteractionTrackerVector2InertiaModifier {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -4322,30 +4269,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Interaction
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InteractionTrackerVector2InertiaModifier> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InteractionTrackerVector2InertiaModifier> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InteractionTrackerVector2InertiaModifier) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InteractionTrackerVector2InertiaModifier> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InteractionTrackerVector2InertiaModifier> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InteractionTrackerVector2InertiaModifier) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for InteractionTrackerVector2InertiaModifier {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InteractionTrackerVector2InertiaModifier {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &InteractionTrackerVector2InertiaModifier {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InteractionTrackerVector2InertiaModifier {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<InteractionTrackerVector2InertiaModifier> for super::CompositionObject {
@@ -4377,9 +4320,8 @@ impl InteractionTrackerVector2InertiaNaturalMotion {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
@@ -4443,11 +4385,11 @@ impl InteractionTrackerVector2InertiaNaturalMotion {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -4582,30 +4524,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &Interaction
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InteractionTrackerVector2InertiaNaturalMotion> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InteractionTrackerVector2InertiaNaturalMotion> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InteractionTrackerVector2InertiaNaturalMotion) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InteractionTrackerVector2InertiaNaturalMotion> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InteractionTrackerVector2InertiaNaturalMotion> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InteractionTrackerVector2InertiaNaturalMotion) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for InteractionTrackerVector2InertiaNaturalMotion {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InteractionTrackerVector2InertiaNaturalMotion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &InteractionTrackerVector2InertiaNaturalMotion {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InteractionTrackerVector2InertiaNaturalMotion {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::From<InteractionTrackerVector2InertiaNaturalMotion> for InteractionTrackerVector2InertiaModifier {
@@ -4657,9 +4595,8 @@ impl VisualInteractionSource {
         let this = &::windows_core::Interface::cast::<super::IAnimationObject>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).PopulatePropertyInfo)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), propertyinfo.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
@@ -4723,11 +4660,11 @@ impl VisualInteractionSource {
         unsafe { (::windows_core::Interface::vtable(this).StopAnimationGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<super::ICompositionObject3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn TryGetAnimationController<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::AnimationController> {
@@ -4849,11 +4786,11 @@ impl VisualInteractionSource {
         unsafe { (::windows_core::Interface::vtable(this).TryRedirectForManipulation)(::windows_core::Interface::as_raw(this), pointerpoint.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn DeltaPosition(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn DeltaPosition(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisualInteractionSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).DeltaPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).DeltaPosition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     pub fn DeltaScale(&self) -> ::windows_core::Result<f32> {
@@ -4864,19 +4801,19 @@ impl VisualInteractionSource {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisualInteractionSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn PositionVelocity(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn PositionVelocity(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = &::windows_core::Interface::cast::<IVisualInteractionSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).PositionVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).PositionVelocity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     pub fn Scale(&self) -> ::windows_core::Result<f32> {
@@ -4894,27 +4831,27 @@ impl VisualInteractionSource {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigureCenterPointXModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigureCenterPointXModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisualInteractionSource2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureCenterPointXModifiers)(::windows_core::Interface::as_raw(this), conditionalvalues.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigureCenterPointYModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigureCenterPointYModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisualInteractionSource2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureCenterPointYModifiers)(::windows_core::Interface::as_raw(this), conditionalvalues.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigureDeltaPositionXModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigureDeltaPositionXModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisualInteractionSource2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureDeltaPositionXModifiers)(::windows_core::Interface::as_raw(this), conditionalvalues.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigureDeltaPositionYModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigureDeltaPositionYModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisualInteractionSource2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureDeltaPositionYModifiers)(::windows_core::Interface::as_raw(this), conditionalvalues.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ConfigureDeltaScaleModifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
+    pub fn ConfigureDeltaScaleModifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CompositionConditionalValue>>>(&self, conditionalvalues: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVisualInteractionSource2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ConfigureDeltaScaleModifiers)(::windows_core::Interface::as_raw(this), conditionalvalues.into_param().abi()).ok() }
     }
@@ -5038,30 +4975,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::IAnimationObject> for &VisualInter
         ::core::convert::TryInto::<super::IAnimationObject>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<VisualInteractionSource> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<VisualInteractionSource> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: VisualInteractionSource) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&VisualInteractionSource> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&VisualInteractionSource> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &VisualInteractionSource) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for VisualInteractionSource {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for VisualInteractionSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &VisualInteractionSource {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &VisualInteractionSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<VisualInteractionSource> for ICompositionInteractionSource {

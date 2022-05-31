@@ -18,11 +18,10 @@ extern "system" {
     pub fn CoInternetParseIUri(piuri: super::IUri, parseaction: PARSEACTION, dwflags: u32, pwzresult: ::windows_core_sys::PWSTR, cchresult: u32, pcchresult: *mut u32, dwreserved: usize) -> ::windows_core_sys::HRESULT;
     pub fn CoInternetParseUrl(pwzurl: ::windows_core_sys::PCWSTR, parseaction: PARSEACTION, dwflags: u32, pszresult: ::windows_core_sys::PWSTR, cchresult: u32, pcchresult: *mut u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn CoInternetQueryInfo(pwzurl: ::windows_core_sys::PCWSTR, queryoptions: QUERYOPTION, dwqueryflags: u32, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, pcbbuffer: *mut u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoInternetSetFeatureEnabled(featureentry: INTERNETFEATURELIST, dwflags: u32, fenable: super::super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetSetFeatureEnabled(featureentry: INTERNETFEATURELIST, dwflags: u32, fenable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn CompareSecurityIds(pbsecurityid1: *const u8, dwlen1: u32, pbsecurityid2: *const u8, dwlen2: u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn CompatFlagsFromClsid(pclsid: *const ::windows_core_sys::GUID, pdwcompatflags: *mut u32, pdwmiscstatusflags: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
     pub fn CopyBindInfo(pcbisrc: *const super::BINDINFO, pbidest: *mut super::BINDINFO) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
     pub fn CopyStgMedium(pcstgmedsrc: *const super::STGMEDIUM, pstgmeddest: *mut super::STGMEDIUM) -> ::windows_core_sys::HRESULT;
@@ -32,8 +31,7 @@ extern "system" {
     pub fn CreateURLMoniker(pmkctx: super::IMoniker, szurl: ::windows_core_sys::PCWSTR, ppmk: *mut super::IMoniker) -> ::windows_core_sys::HRESULT;
     pub fn CreateURLMonikerEx(pmkctx: super::IMoniker, szurl: ::windows_core_sys::PCWSTR, ppmk: *mut super::IMoniker, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn CreateURLMonikerEx2(pmkctx: super::IMoniker, puri: super::IUri, ppmk: *mut super::IMoniker, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaultInIEFeature(hwnd: super::super::super::Foundation::HWND, pclassspec: *const super::uCLSSPEC, pquery: *mut super::QUERYCONTEXT, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn FaultInIEFeature(hwnd: ::win32_foundation_sys::HWND, pclassspec: *const super::uCLSSPEC, pquery: *mut super::QUERYCONTEXT, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn FindMediaType(rgsztypes: ::windows_core_sys::PCSTR, rgcftypes: *mut u16) -> ::windows_core_sys::HRESULT;
     pub fn FindMediaTypeClass(pbc: super::IBindCtx, sztype: ::windows_core_sys::PCSTR, pclsid: *mut ::windows_core_sys::GUID, reserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn FindMimeFromData(pbc: super::IBindCtx, pwzurl: ::windows_core_sys::PCWSTR, pbuffer: *const ::core::ffi::c_void, cbsize: u32, pwzmimeproposed: ::windows_core_sys::PCWSTR, dwmimeflags: u32, ppwzmimeout: *mut ::windows_core_sys::PWSTR, dwreserved: u32) -> ::windows_core_sys::HRESULT;
@@ -50,10 +48,8 @@ extern "system" {
     pub fn IEGetUserPrivateNamespaceName() -> ::windows_core_sys::PWSTR;
     pub fn IEInstallScope(pdwscope: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn IsAsyncMoniker(pmk: super::IMoniker) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsLoggingEnabledA(pszurl: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsLoggingEnabledW(pwszurl: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL;
+    pub fn IsLoggingEnabledA(pszurl: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn IsLoggingEnabledW(pwszurl: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn IsValidURL(pbc: super::IBindCtx, szurl: ::windows_core_sys::PCWSTR, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn MkParseDisplayNameEx(pbc: super::IBindCtx, szdisplayname: ::windows_core_sys::PCWSTR, pcheaten: *mut u32, ppmk: *mut super::IMoniker) -> ::windows_core_sys::HRESULT;
     pub fn ObtainUserAgentString(dwoption: u32, pszuaout: ::windows_core_sys::PSTR, cbsize: *mut u32) -> ::windows_core_sys::HRESULT;
@@ -61,12 +57,11 @@ extern "system" {
     pub fn RegisterFormatEnumerator(pbc: super::IBindCtx, pefetc: super::IEnumFORMATETC, reserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn RegisterMediaTypeClass(pbc: super::IBindCtx, ctypes: u32, rgsztypes: *const ::windows_core_sys::PSTR, rgclsid: *const ::windows_core_sys::GUID, reserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn RegisterMediaTypes(ctypes: u32, rgsztypes: *const ::windows_core_sys::PSTR, rgcftypes: *mut u16) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
     pub fn ReleaseBindInfo(pbindinfo: *mut super::BINDINFO);
     pub fn RevokeBindStatusCallback(pbc: super::IBindCtx, pbscb: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
     pub fn RevokeFormatEnumerator(pbc: super::IBindCtx, pefetc: super::IEnumFORMATETC) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetAccessForIEAppContainer(hobject: super::super::super::Foundation::HANDLE, ieobjecttype: IEObjectType, dwaccessmask: u32) -> ::windows_core_sys::HRESULT;
+    pub fn SetAccessForIEAppContainer(hobject: ::win32_foundation_sys::HANDLE, ieobjecttype: IEObjectType, dwaccessmask: u32) -> ::windows_core_sys::HRESULT;
     pub fn SetSoftwareUpdateAdvertisementState(szdistunit: ::windows_core_sys::PCWSTR, dwadstate: u32, dwadvertisedversionms: u32, dwadvertisedversionls: u32) -> ::windows_core_sys::HRESULT;
     pub fn URLDownloadToCacheFileA(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PSTR, cchfilename: u32, param4: u32, param5: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
     pub fn URLDownloadToCacheFileW(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCWSTR, param2: ::windows_core_sys::PWSTR, cchfilename: u32, param4: u32, param5: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
@@ -80,8 +75,7 @@ extern "system" {
     pub fn URLOpenStreamW(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCWSTR, param2: u32, param3: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
     pub fn UrlMkGetSessionOption(dwoption: u32, pbuffer: *mut ::core::ffi::c_void, dwbufferlength: u32, pdwbufferlengthout: *mut u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn UrlMkSetSessionOption(dwoption: u32, pbuffer: *const ::core::ffi::c_void, dwbufferlength: u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WriteHitLogging(lplogginginfo: *const HIT_LOGGING_INFO) -> super::super::super::Foundation::BOOL;
+    pub fn WriteHitLogging(lplogginginfo: *const HIT_LOGGING_INFO) -> ::win32_foundation_sys::BOOL;
 }
 pub type AUTHENTICATEF = i32;
 pub const AUTHENTICATEF_PROXY: AUTHENTICATEF = 1i32;
@@ -368,17 +362,14 @@ pub const GET_FEATURE_FROM_THREAD_LOCALMACHINE: u32 = 8u32;
 pub const GET_FEATURE_FROM_THREAD_RESTRICTED: u32 = 128u32;
 pub const GET_FEATURE_FROM_THREAD_TRUSTED: u32 = 32u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HIT_LOGGING_INFO {
     pub dwStructSize: u32,
     pub lpszLoggedUrlName: ::windows_core_sys::PSTR,
-    pub StartTime: super::super::super::Foundation::SYSTEMTIME,
-    pub EndTime: super::super::super::Foundation::SYSTEMTIME,
+    pub StartTime: ::win32_foundation_sys::SYSTEMTIME,
+    pub EndTime: ::win32_foundation_sys::SYSTEMTIME,
     pub lpszExtendedInfo: ::windows_core_sys::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIT_LOGGING_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIT_LOGGING_INFO {
     fn clone(&self) -> Self {
         *self
@@ -666,22 +657,18 @@ pub const QUERY_IS_SAFE: QUERYOPTION = 14i32;
 pub const QUERY_USES_HISTORYFOLDER: QUERYOPTION = 15i32;
 pub const QUERY_IS_CACHED_AND_USABLE_OFFLINE: QUERYOPTION = 16i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct REMSECURITY_ATTRIBUTES {
     pub nLength: u32,
     pub lpSecurityDescriptor: u32,
-    pub bInheritHandle: super::super::super::Foundation::BOOL,
+    pub bInheritHandle: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for REMSECURITY_ATTRIBUTES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for REMSECURITY_ATTRIBUTES {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RemBINDINFO {
     pub cbSize: u32,
     pub szExtraInfo: ::windows_core_sys::PWSTR,
@@ -697,9 +684,7 @@ pub struct RemBINDINFO {
     pub pUnk: ::windows_core_sys::IUnknown,
     pub dwReserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RemBINDINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RemBINDINFO {
     fn clone(&self) -> Self {
         *self

@@ -3,18 +3,15 @@ pub const CEventPublisher: ::windows_core_sys::GUID = ::windows_core_sys::GUID {
 pub const CEventSubscription: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1967319392, data2: 31175, data3: 4561, data4: [136, 249, 0, 128, 199, 215, 113, 191] };
 pub const CEventSystem: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1309997986, data2: 11810, data3: 4561, data4: [153, 100, 0, 192, 79, 187, 179, 69] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COMEVENTSYSCHANGEINFO {
     pub cbSize: u32,
     pub changeType: EOC_ChangeType,
-    pub objectId: super::super::super::Foundation::BSTR,
-    pub partitionId: super::super::super::Foundation::BSTR,
-    pub applicationId: super::super::super::Foundation::BSTR,
+    pub objectId: ::win32_foundation_sys::BSTR,
+    pub partitionId: ::win32_foundation_sys::BSTR,
+    pub applicationId: ::win32_foundation_sys::BSTR,
     pub reserved: [::windows_core_sys::GUID; 10],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COMEVENTSYSCHANGEINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COMEVENTSYSCHANGEINFO {
     fn clone(&self) -> Self {
         *self

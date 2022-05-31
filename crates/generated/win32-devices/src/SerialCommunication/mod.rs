@@ -15,14 +15,13 @@ pub unsafe fn ComDBClaimNextFreePort<'a, Param0: ::windows_core::IntoParam<'a, H
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ComDBClaimPort<'a, Param0: ::windows_core::IntoParam<'a, HCOMDB>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hcomdb: Param0, comnumber: u32, forceclaim: Param2, forced: *mut super::super::Foundation::BOOL) -> i32 {
+pub unsafe fn ComDBClaimPort<'a, Param0: ::windows_core::IntoParam<'a, HCOMDB>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hcomdb: Param0, comnumber: u32, forceclaim: Param2, forced: *mut ::win32_foundation::BOOL) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ComDBClaimPort(hcomdb: HCOMDB, comnumber: u32, forceclaim: super::super::Foundation::BOOL, forced: *mut super::super::Foundation::BOOL) -> i32;
+            fn ComDBClaimPort(hcomdb: HCOMDB, comnumber: u32, forceclaim: ::win32_foundation::BOOL, forced: *mut ::win32_foundation::BOOL) -> i32;
         }
         ::core::mem::transmute(ComDBClaimPort(hcomdb.into_param().abi(), ::core::mem::transmute(comnumber), forceclaim.into_param().abi(), ::core::mem::transmute(forced)))
     }

@@ -14,8 +14,7 @@ impl AsyncIFtpAuthenticationProvider {
     pub unsafe fn Begin_AuthenticateUser<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszsessionid: Param0, pszsitename: Param1, pszusername: Param2, pszpassword: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Begin_AuthenticateUser)(::windows_core::Interface::as_raw(self), pszsessionid.into_param().abi(), pszsitename.into_param().abi(), pszusername.into_param().abi(), pszpassword.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Finish_AuthenticateUser(&self, ppszcanonicalusername: *mut ::windows_core::PWSTR, pfauthenticated: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn Finish_AuthenticateUser(&self, ppszcanonicalusername: *mut ::windows_core::PWSTR, pfauthenticated: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Finish_AuthenticateUser)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppszcanonicalusername), ::core::mem::transmute(pfauthenticated)).ok()
     }
 }
@@ -64,10 +63,7 @@ unsafe impl ::windows_core::Interface for AsyncIFtpAuthenticationProvider {
 pub struct AsyncIFtpAuthenticationProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Begin_AuthenticateUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszsessionid: ::windows_core::PCWSTR, pszsitename: ::windows_core::PCWSTR, pszusername: ::windows_core::PCWSTR, pszpassword: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Finish_AuthenticateUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszcanonicalusername: *mut ::windows_core::PWSTR, pfauthenticated: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Finish_AuthenticateUser: usize,
+    pub Finish_AuthenticateUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszcanonicalusername: *mut ::windows_core::PWSTR, pfauthenticated: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct AsyncIFtpAuthorizationProvider(::windows_core::IUnknown);
@@ -245,7 +241,6 @@ pub struct AsyncIFtpLogProvider_Vtbl {
 #[repr(transparent)]
 pub struct AsyncIFtpPostprocessProvider(::windows_core::IUnknown);
 impl AsyncIFtpPostprocessProvider {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn Begin_HandlePostprocess(&self, ppostprocessparameters: *const POST_PROCESS_PARAMETERS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Begin_HandlePostprocess)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppostprocessparameters)).ok()
     }
@@ -298,16 +293,12 @@ unsafe impl ::windows_core::Interface for AsyncIFtpPostprocessProvider {
 #[doc(hidden)]
 pub struct AsyncIFtpPostprocessProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub Begin_HandlePostprocess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppostprocessparameters: *const POST_PROCESS_PARAMETERS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Begin_HandlePostprocess: usize,
     pub Finish_HandlePostprocess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct AsyncIFtpPreprocessProvider(::windows_core::IUnknown);
 impl AsyncIFtpPreprocessProvider {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn Begin_HandlePreprocess(&self, ppreprocessparameters: *const PRE_PROCESS_PARAMETERS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Begin_HandlePreprocess)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppreprocessparameters)).ok()
     }
@@ -360,10 +351,7 @@ unsafe impl ::windows_core::Interface for AsyncIFtpPreprocessProvider {
 #[doc(hidden)]
 pub struct AsyncIFtpPreprocessProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub Begin_HandlePreprocess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppreprocessparameters: *const PRE_PROCESS_PARAMETERS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Begin_HandlePreprocess: usize,
     pub Finish_HandlePreprocess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -372,10 +360,9 @@ impl AsyncIFtpRoleProvider {
     pub unsafe fn Begin_IsUserInRole<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszsessionid: Param0, pszsitename: Param1, pszusername: Param2, pszrole: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Begin_IsUserInRole)(::windows_core::Interface::as_raw(self), pszsessionid.into_param().abi(), pszsitename.into_param().abi(), pszusername.into_param().abi(), pszrole.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Finish_IsUserInRole(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).Finish_IsUserInRole)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn Finish_IsUserInRole(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).Finish_IsUserInRole)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<AsyncIFtpRoleProvider> for ::windows_core::IUnknown {
@@ -423,10 +410,7 @@ unsafe impl ::windows_core::Interface for AsyncIFtpRoleProvider {
 pub struct AsyncIFtpRoleProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Begin_IsUserInRole: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszsessionid: ::windows_core::PCWSTR, pszsitename: ::windows_core::PCWSTR, pszusername: ::windows_core::PCWSTR, pszrole: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Finish_IsUserInRole: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfisinrole: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Finish_IsUserInRole: usize,
+    pub Finish_IsUserInRole: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfisinrole: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct AsyncIMSAdminBaseSinkW(::windows_core::IUnknown);
@@ -494,39 +478,39 @@ pub struct AsyncIMSAdminBaseSinkW_Vtbl {
     pub Finish_ShutdownNotify: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct CERT_CONTEXT_EX {
-    pub CertContext: super::super::Security::Cryptography::CERT_CONTEXT,
+    pub CertContext: ::win32_security::Cryptography::CERT_CONTEXT,
     pub cbAllocated: u32,
     pub dwCertificateFlags: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for CERT_CONTEXT_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for CERT_CONTEXT_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for CERT_CONTEXT_EX {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CERT_CONTEXT_EX").field("CertContext", &self.CertContext).field("cbAllocated", &self.cbAllocated).field("dwCertificateFlags", &self.dwCertificateFlags).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for CERT_CONTEXT_EX {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for CERT_CONTEXT_EX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CERT_CONTEXT_EX>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for CERT_CONTEXT_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for CERT_CONTEXT_EX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -542,36 +526,29 @@ pub const CLSID_Server: ::windows_core::GUID = ::windows_core::GUID::from_u128(0
 pub const CLSID_Session: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x509f8f20_25de_11d0_a55f_00a0c90c2091);
 pub const CLSID_WamAdmin: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x61738644_f196_11d0_9953_00c04fd919c1);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CONFIGURATION_ENTRY {
-    pub bstrKey: super::super::Foundation::BSTR,
-    pub bstrValue: super::super::Foundation::BSTR,
+    pub bstrKey: ::win32_foundation::BSTR,
+    pub bstrValue: ::win32_foundation::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CONFIGURATION_ENTRY {
     fn clone(&self) -> Self {
         Self { bstrKey: self.bstrKey.clone(), bstrValue: self.bstrValue.clone() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for CONFIGURATION_ENTRY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CONFIGURATION_ENTRY").field("bstrKey", &self.bstrKey).field("bstrValue", &self.bstrValue).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CONFIGURATION_ENTRY {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CONFIGURATION_ENTRY {
     fn eq(&self, other: &Self) -> bool {
         self.bstrKey == other.bstrKey && self.bstrValue == other.bstrValue
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CONFIGURATION_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CONFIGURATION_ENTRY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -602,13 +579,12 @@ pub const DWN_FORCEDITHER: u32 = 128u32;
 pub const DWN_MIRRORIMAGE: u32 = 512u32;
 pub const DWN_RAWIMAGE: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXTENSION_CONTROL_BLOCK {
     pub cbSize: u32,
     pub dwVersion: u32,
     pub ConnID: *mut ::core::ffi::c_void,
     pub dwHttpStatusCode: u32,
-    pub lpszLogData: [super::super::Foundation::CHAR; 80],
+    pub lpszLogData: [::win32_foundation::CHAR; 80],
     pub lpszMethod: ::windows_core::PSTR,
     pub lpszQueryString: ::windows_core::PSTR,
     pub lpszPathInfo: ::windows_core::PSTR,
@@ -622,15 +598,12 @@ pub struct EXTENSION_CONTROL_BLOCK {
     pub ReadClient: isize,
     pub ServerSupportFunction: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXTENSION_CONTROL_BLOCK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXTENSION_CONTROL_BLOCK {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for EXTENSION_CONTROL_BLOCK {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("EXTENSION_CONTROL_BLOCK")
@@ -654,19 +627,15 @@ impl ::core::fmt::Debug for EXTENSION_CONTROL_BLOCK {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for EXTENSION_CONTROL_BLOCK {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EXTENSION_CONTROL_BLOCK {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTENSION_CONTROL_BLOCK>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for EXTENSION_CONTROL_BLOCK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for EXTENSION_CONTROL_BLOCK {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -734,28 +703,26 @@ pub const GUID_IIS_ISAPI_TRACE_PROVIDER: ::windows_core::GUID = ::windows_core::
 pub const GUID_IIS_WWW_GLOBAL_TRACE_PROVIDER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd55d3bc9_cba9_44df_827e_132d3a4596c2);
 pub const GUID_IIS_WWW_SERVER_TRACE_PROVIDER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x3a2a4e84_4c21_4981_ae10_3fda0d9b0f83);
 pub const GUID_IIS_WWW_SERVER_V2_TRACE_PROVIDER: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xde4649c9_15e8_4fea_9d85_1cdda520c334);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetExtensionVersion(pver: *mut HSE_VERSION_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetExtensionVersion(pver: *mut HSE_VERSION_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetExtensionVersion(pver: *mut HSE_VERSION_INFO) -> super::super::Foundation::BOOL;
+            fn GetExtensionVersion(pver: *mut HSE_VERSION_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetExtensionVersion(::core::mem::transmute(pver)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetFilterVersion(pver: *mut HTTP_FILTER_VERSION) -> super::super::Foundation::BOOL {
+pub unsafe fn GetFilterVersion(pver: *mut HTTP_FILTER_VERSION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetFilterVersion(pver: *mut HTTP_FILTER_VERSION) -> super::super::Foundation::BOOL;
+            fn GetFilterVersion(pver: *mut HTTP_FILTER_VERSION) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetFilterVersion(::core::mem::transmute(pver)))
     }
@@ -767,46 +734,37 @@ pub const HSE_APP_FLAG_IN_PROCESS: u32 = 0u32;
 pub const HSE_APP_FLAG_ISOLATED_OOP: u32 = 1u32;
 pub const HSE_APP_FLAG_POOLED_OOP: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_CUSTOM_ERROR_INFO {
     pub pszStatus: ::windows_core::PSTR,
     pub uHttpSubError: u16,
-    pub fAsync: super::super::Foundation::BOOL,
+    pub fAsync: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_CUSTOM_ERROR_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_CUSTOM_ERROR_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_CUSTOM_ERROR_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_CUSTOM_ERROR_INFO").field("pszStatus", &self.pszStatus).field("uHttpSubError", &self.uHttpSubError).field("fAsync", &self.fAsync).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_CUSTOM_ERROR_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_CUSTOM_ERROR_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_CUSTOM_ERROR_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_CUSTOM_ERROR_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_CUSTOM_ERROR_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_EXEC_UNICODE_URL_INFO {
     pub pszUrl: ::windows_core::PWSTR,
     pub pszMethod: ::windows_core::PSTR,
@@ -815,72 +773,57 @@ pub struct HSE_EXEC_UNICODE_URL_INFO {
     pub pEntity: *mut HSE_EXEC_URL_ENTITY_INFO,
     pub dwExecUrlFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_EXEC_UNICODE_URL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_EXEC_UNICODE_URL_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_EXEC_UNICODE_URL_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_EXEC_UNICODE_URL_INFO").field("pszUrl", &self.pszUrl).field("pszMethod", &self.pszMethod).field("pszChildHeaders", &self.pszChildHeaders).field("pUserInfo", &self.pUserInfo).field("pEntity", &self.pEntity).field("dwExecUrlFlags", &self.dwExecUrlFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_EXEC_UNICODE_URL_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_EXEC_UNICODE_URL_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_EXEC_UNICODE_URL_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_EXEC_UNICODE_URL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_EXEC_UNICODE_URL_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_EXEC_UNICODE_URL_USER_INFO {
-    pub hImpersonationToken: super::super::Foundation::HANDLE,
+    pub hImpersonationToken: ::win32_foundation::HANDLE,
     pub pszCustomUserName: ::windows_core::PWSTR,
     pub pszCustomAuthType: ::windows_core::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_EXEC_UNICODE_URL_USER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_EXEC_UNICODE_URL_USER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_EXEC_UNICODE_URL_USER_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_EXEC_UNICODE_URL_USER_INFO").field("hImpersonationToken", &self.hImpersonationToken).field("pszCustomUserName", &self.pszCustomUserName).field("pszCustomAuthType", &self.pszCustomAuthType).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_EXEC_UNICODE_URL_USER_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_EXEC_UNICODE_URL_USER_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_EXEC_UNICODE_URL_USER_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_EXEC_UNICODE_URL_USER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_EXEC_UNICODE_URL_USER_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -921,7 +864,6 @@ pub const HSE_EXEC_URL_HTTP_CACHE_ELIGIBLE: u32 = 128u32;
 pub const HSE_EXEC_URL_IGNORE_CURRENT_INTERCEPTOR: u32 = 4u32;
 pub const HSE_EXEC_URL_IGNORE_VALIDATION_AND_RANGE: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_EXEC_URL_INFO {
     pub pszUrl: ::windows_core::PSTR,
     pub pszMethod: ::windows_core::PSTR,
@@ -930,33 +872,26 @@ pub struct HSE_EXEC_URL_INFO {
     pub pEntity: *mut HSE_EXEC_URL_ENTITY_INFO,
     pub dwExecUrlFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_EXEC_URL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_EXEC_URL_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_EXEC_URL_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_EXEC_URL_INFO").field("pszUrl", &self.pszUrl).field("pszMethod", &self.pszMethod).field("pszChildHeaders", &self.pszChildHeaders).field("pUserInfo", &self.pUserInfo).field("pEntity", &self.pEntity).field("dwExecUrlFlags", &self.dwExecUrlFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_EXEC_URL_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_EXEC_URL_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_EXEC_URL_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_EXEC_URL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_EXEC_URL_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -996,39 +931,31 @@ impl ::core::default::Default for HSE_EXEC_URL_STATUS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_EXEC_URL_USER_INFO {
-    pub hImpersonationToken: super::super::Foundation::HANDLE,
+    pub hImpersonationToken: ::win32_foundation::HANDLE,
     pub pszCustomUserName: ::windows_core::PSTR,
     pub pszCustomAuthType: ::windows_core::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_EXEC_URL_USER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_EXEC_URL_USER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_EXEC_URL_USER_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_EXEC_URL_USER_INFO").field("hImpersonationToken", &self.hImpersonationToken).field("pszCustomUserName", &self.pszCustomUserName).field("pszCustomAuthType", &self.pszCustomAuthType).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_EXEC_URL_USER_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_EXEC_URL_USER_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_EXEC_URL_USER_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_EXEC_URL_USER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_EXEC_URL_USER_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1120,41 +1047,33 @@ impl ::core::default::Default for HSE_RESPONSE_VECTOR {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_SEND_HEADER_EX_INFO {
     pub pszStatus: ::windows_core::PCSTR,
     pub pszHeader: ::windows_core::PCSTR,
     pub cchStatus: u32,
     pub cchHeader: u32,
-    pub fKeepConn: super::super::Foundation::BOOL,
+    pub fKeepConn: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_SEND_HEADER_EX_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_SEND_HEADER_EX_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_SEND_HEADER_EX_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_SEND_HEADER_EX_INFO").field("pszStatus", &self.pszStatus).field("pszHeader", &self.pszHeader).field("cchStatus", &self.cchStatus).field("cchHeader", &self.cchHeader).field("fKeepConn", &self.fKeepConn).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_SEND_HEADER_EX_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_SEND_HEADER_EX_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_SEND_HEADER_EX_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_SEND_HEADER_EX_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_SEND_HEADER_EX_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1167,11 +1086,10 @@ pub const HSE_STATUS_SUCCESS_AND_KEEP_CONN: u32 = 2u32;
 pub const HSE_TERM_ADVISORY_UNLOAD: u32 = 1u32;
 pub const HSE_TERM_MUST_UNLOAD: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_TF_INFO {
     pub pfnHseIO: PFN_HSE_IO_COMPLETION,
     pub pContext: *mut ::core::ffi::c_void,
-    pub hFile: super::super::Foundation::HANDLE,
+    pub hFile: ::win32_foundation::HANDLE,
     pub pszStatusCode: ::windows_core::PCSTR,
     pub BytesToWrite: u32,
     pub Offset: u32,
@@ -1181,73 +1099,58 @@ pub struct HSE_TF_INFO {
     pub TailLength: u32,
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_TF_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_TF_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_TF_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_TF_INFO").field("pfnHseIO", &self.pfnHseIO.map(|f| f as usize)).field("pContext", &self.pContext).field("hFile", &self.hFile).field("pszStatusCode", &self.pszStatusCode).field("BytesToWrite", &self.BytesToWrite).field("Offset", &self.Offset).field("pHead", &self.pHead).field("HeadLength", &self.HeadLength).field("pTail", &self.pTail).field("TailLength", &self.TailLength).field("dwFlags", &self.dwFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_TF_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_TF_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_TF_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_TF_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_TF_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_TRACE_INFO {
-    pub fTraceRequest: super::super::Foundation::BOOL,
+    pub fTraceRequest: ::win32_foundation::BOOL,
     pub TraceContextId: [u8; 16],
     pub dwReserved1: u32,
     pub dwReserved2: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_TRACE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_TRACE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_TRACE_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_TRACE_INFO").field("fTraceRequest", &self.fTraceRequest).field("TraceContextId", &self.TraceContextId).field("dwReserved1", &self.dwReserved1).field("dwReserved2", &self.dwReserved2).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_TRACE_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_TRACE_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_TRACE_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_TRACE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_TRACE_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1297,42 +1200,34 @@ pub const HSE_URL_FLAGS_SSL: u32 = 8u32;
 pub const HSE_URL_FLAGS_SSL128: u32 = 256u32;
 pub const HSE_URL_FLAGS_WRITE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_URL_MAPEX_INFO {
-    pub lpszPath: [super::super::Foundation::CHAR; 260],
+    pub lpszPath: [::win32_foundation::CHAR; 260],
     pub dwFlags: u32,
     pub cchMatchingPath: u32,
     pub cchMatchingURL: u32,
     pub dwReserved1: u32,
     pub dwReserved2: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_URL_MAPEX_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_URL_MAPEX_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_URL_MAPEX_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_URL_MAPEX_INFO").field("lpszPath", &self.lpszPath).field("dwFlags", &self.dwFlags).field("cchMatchingPath", &self.cchMatchingPath).field("cchMatchingURL", &self.cchMatchingURL).field("dwReserved1", &self.dwReserved1).field("dwReserved2", &self.dwReserved2).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_URL_MAPEX_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_URL_MAPEX_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_URL_MAPEX_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_URL_MAPEX_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_URL_MAPEX_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1373,38 +1268,30 @@ impl ::core::default::Default for HSE_VECTOR_ELEMENT {
 pub const HSE_VECTOR_ELEMENT_TYPE_FILE_HANDLE: u32 = 1u32;
 pub const HSE_VECTOR_ELEMENT_TYPE_MEMORY_BUFFER: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_VERSION_INFO {
     pub dwExtensionVersion: u32,
-    pub lpszExtensionDesc: [super::super::Foundation::CHAR; 256],
+    pub lpszExtensionDesc: [::win32_foundation::CHAR; 256],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_VERSION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_VERSION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HSE_VERSION_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HSE_VERSION_INFO").field("dwExtensionVersion", &self.dwExtensionVersion).field("lpszExtensionDesc", &self.lpszExtensionDesc).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HSE_VERSION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HSE_VERSION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HSE_VERSION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HSE_VERSION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HSE_VERSION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1476,56 +1363,47 @@ impl ::core::default::Default for HTTP_FILTER_AUTHENT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_FILTER_AUTH_COMPLETE_INFO {
     pub GetHeader: isize,
     pub SetHeader: isize,
     pub AddHeader: isize,
     pub GetUserToken: isize,
     pub HttpStatus: u32,
-    pub fResetAuth: super::super::Foundation::BOOL,
+    pub fResetAuth: ::win32_foundation::BOOL,
     pub dwReserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_FILTER_AUTH_COMPLETE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_FILTER_AUTH_COMPLETE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HTTP_FILTER_AUTH_COMPLETE_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HTTP_FILTER_AUTH_COMPLETE_INFO").field("GetHeader", &self.GetHeader).field("SetHeader", &self.SetHeader).field("AddHeader", &self.AddHeader).field("GetUserToken", &self.GetUserToken).field("HttpStatus", &self.HttpStatus).field("fResetAuth", &self.fResetAuth).field("dwReserved", &self.dwReserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HTTP_FILTER_AUTH_COMPLETE_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HTTP_FILTER_AUTH_COMPLETE_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HTTP_FILTER_AUTH_COMPLETE_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HTTP_FILTER_AUTH_COMPLETE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HTTP_FILTER_AUTH_COMPLETE_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_FILTER_CONTEXT {
     pub cbSize: u32,
     pub Revision: u32,
     pub ServerContext: *mut ::core::ffi::c_void,
     pub ulReserved: u32,
-    pub fIsSecurePort: super::super::Foundation::BOOL,
+    pub fIsSecurePort: ::win32_foundation::BOOL,
     pub pFilterContext: *mut ::core::ffi::c_void,
     pub GetServerVariable: isize,
     pub AddResponseHeaders: isize,
@@ -1533,15 +1411,12 @@ pub struct HTTP_FILTER_CONTEXT {
     pub AllocMem: isize,
     pub ServerSupportFunction: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_FILTER_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_FILTER_CONTEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HTTP_FILTER_CONTEXT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HTTP_FILTER_CONTEXT")
@@ -1559,19 +1434,15 @@ impl ::core::fmt::Debug for HTTP_FILTER_CONTEXT {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HTTP_FILTER_CONTEXT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HTTP_FILTER_CONTEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HTTP_FILTER_CONTEXT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HTTP_FILTER_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HTTP_FILTER_CONTEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1760,80 +1631,64 @@ impl ::core::default::Default for HTTP_FILTER_URL_MAP_EX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_FILTER_VERSION {
     pub dwServerFilterVersion: u32,
     pub dwFilterVersion: u32,
-    pub lpszFilterDesc: [super::super::Foundation::CHAR; 257],
+    pub lpszFilterDesc: [::win32_foundation::CHAR; 257],
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_FILTER_VERSION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_FILTER_VERSION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HTTP_FILTER_VERSION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HTTP_FILTER_VERSION").field("dwServerFilterVersion", &self.dwServerFilterVersion).field("dwFilterVersion", &self.dwFilterVersion).field("lpszFilterDesc", &self.lpszFilterDesc).field("dwFlags", &self.dwFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HTTP_FILTER_VERSION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HTTP_FILTER_VERSION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HTTP_FILTER_VERSION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HTTP_FILTER_VERSION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HTTP_FILTER_VERSION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_TRACE_CONFIGURATION {
     pub pProviderGuid: *const ::windows_core::GUID,
     pub dwAreas: u32,
     pub dwVerbosity: u32,
-    pub fProviderEnabled: super::super::Foundation::BOOL,
+    pub fProviderEnabled: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_TRACE_CONFIGURATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_TRACE_CONFIGURATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HTTP_TRACE_CONFIGURATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HTTP_TRACE_CONFIGURATION").field("pProviderGuid", &self.pProviderGuid).field("dwAreas", &self.dwAreas).field("dwVerbosity", &self.dwVerbosity).field("fProviderEnabled", &self.fProviderEnabled).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HTTP_TRACE_CONFIGURATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HTTP_TRACE_CONFIGURATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HTTP_TRACE_CONFIGURATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HTTP_TRACE_CONFIGURATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HTTP_TRACE_CONFIGURATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1964,7 +1819,6 @@ impl ::core::fmt::Debug for HTTP_TRACE_TYPE {
         f.debug_tuple("HTTP_TRACE_TYPE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn HttpExtensionProc(pecb: *const EXTENSION_CONTROL_BLOCK) -> u32 {
     #[cfg(windows)]
@@ -1978,7 +1832,6 @@ pub unsafe fn HttpExtensionProc(pecb: *const EXTENSION_CONTROL_BLOCK) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn HttpFilterProc(pfc: *mut HTTP_FILTER_CONTEXT, notificationtype: u32, pvnotification: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
@@ -2056,8 +1909,7 @@ pub struct IADMEXT_Vtbl {
 #[repr(transparent)]
 pub struct IFtpAuthenticationProvider(::windows_core::IUnknown);
 impl IFtpAuthenticationProvider {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AuthenticateUser<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszsessionid: Param0, pszsitename: Param1, pszusername: Param2, pszpassword: Param3, ppszcanonicalusername: *mut ::windows_core::PWSTR, pfauthenticated: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn AuthenticateUser<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszsessionid: Param0, pszsitename: Param1, pszusername: Param2, pszpassword: Param3, ppszcanonicalusername: *mut ::windows_core::PWSTR, pfauthenticated: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AuthenticateUser)(::windows_core::Interface::as_raw(self), pszsessionid.into_param().abi(), pszsitename.into_param().abi(), pszusername.into_param().abi(), pszpassword.into_param().abi(), ::core::mem::transmute(ppszcanonicalusername), ::core::mem::transmute(pfauthenticated)).ok()
     }
 }
@@ -2105,10 +1957,7 @@ unsafe impl ::windows_core::Interface for IFtpAuthenticationProvider {
 #[doc(hidden)]
 pub struct IFtpAuthenticationProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AuthenticateUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszsessionid: ::windows_core::PCWSTR, pszsitename: ::windows_core::PCWSTR, pszusername: ::windows_core::PCWSTR, pszpassword: ::windows_core::PCWSTR, ppszcanonicalusername: *mut ::windows_core::PWSTR, pfauthenticated: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AuthenticateUser: usize,
+    pub AuthenticateUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszsessionid: ::windows_core::PCWSTR, pszsitename: ::windows_core::PCWSTR, pszusername: ::windows_core::PCWSTR, pszpassword: ::windows_core::PCWSTR, ppszcanonicalusername: *mut ::windows_core::PWSTR, pfauthenticated: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IFtpAuthorizationProvider(::windows_core::IUnknown);
@@ -2274,7 +2123,6 @@ pub struct IFtpLogProvider_Vtbl {
 #[repr(transparent)]
 pub struct IFtpPostprocessProvider(::windows_core::IUnknown);
 impl IFtpPostprocessProvider {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn HandlePostprocess(&self, ppostprocessparameters: *const POST_PROCESS_PARAMETERS) -> ::windows_core::Result<FTP_PROCESS_STATUS> {
         let mut result__ = ::core::mem::MaybeUninit::<FTP_PROCESS_STATUS>::zeroed();
         (::windows_core::Interface::vtable(self).HandlePostprocess)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppostprocessparameters), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FTP_PROCESS_STATUS>(result__)
@@ -2324,15 +2172,11 @@ unsafe impl ::windows_core::Interface for IFtpPostprocessProvider {
 #[doc(hidden)]
 pub struct IFtpPostprocessProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub HandlePostprocess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppostprocessparameters: *const POST_PROCESS_PARAMETERS, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    HandlePostprocess: usize,
 }
 #[repr(transparent)]
 pub struct IFtpPreprocessProvider(::windows_core::IUnknown);
 impl IFtpPreprocessProvider {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn HandlePreprocess(&self, ppreprocessparameters: *const PRE_PROCESS_PARAMETERS) -> ::windows_core::Result<FTP_PROCESS_STATUS> {
         let mut result__ = ::core::mem::MaybeUninit::<FTP_PROCESS_STATUS>::zeroed();
         (::windows_core::Interface::vtable(self).HandlePreprocess)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppreprocessparameters), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FTP_PROCESS_STATUS>(result__)
@@ -2382,10 +2226,7 @@ unsafe impl ::windows_core::Interface for IFtpPreprocessProvider {
 #[doc(hidden)]
 pub struct IFtpPreprocessProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub HandlePreprocess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppreprocessparameters: *const PRE_PROCESS_PARAMETERS, pftpprocessstatus: *mut FTP_PROCESS_STATUS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    HandlePreprocess: usize,
 }
 #[repr(transparent)]
 pub struct IFtpProviderConstruct(::windows_core::IUnknown);
@@ -2447,10 +2288,9 @@ pub struct IFtpProviderConstruct_Vtbl {
 #[repr(transparent)]
 pub struct IFtpRoleProvider(::windows_core::IUnknown);
 impl IFtpRoleProvider {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsUserInRole<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszsessionid: Param0, pszsitename: Param1, pszusername: Param2, pszrole: Param3) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsUserInRole)(::windows_core::Interface::as_raw(self), pszsessionid.into_param().abi(), pszsitename.into_param().abi(), pszusername.into_param().abi(), pszrole.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsUserInRole<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszsessionid: Param0, pszsitename: Param1, pszusername: Param2, pszrole: Param3) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsUserInRole)(::windows_core::Interface::as_raw(self), pszsessionid.into_param().abi(), pszsitename.into_param().abi(), pszusername.into_param().abi(), pszrole.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IFtpRoleProvider> for ::windows_core::IUnknown {
@@ -2497,10 +2337,7 @@ unsafe impl ::windows_core::Interface for IFtpRoleProvider {
 #[doc(hidden)]
 pub struct IFtpRoleProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsUserInRole: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszsessionid: ::windows_core::PCWSTR, pszsitename: ::windows_core::PCWSTR, pszusername: ::windows_core::PCWSTR, pszrole: ::windows_core::PCWSTR, pfisinrole: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsUserInRole: usize,
+    pub IsUserInRole: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszsessionid: ::windows_core::PCWSTR, pszsitename: ::windows_core::PCWSTR, pszusername: ::windows_core::PCWSTR, pszrole: ::windows_core::PCWSTR, pfisinrole: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 pub const IISADMIN_EXTENSIONS_CLSID_MD_KEY: &str = "LM/IISADMIN/EXTENSIONS/DCOMCLSIDS";
 pub const IISADMIN_EXTENSIONS_CLSID_MD_KEYA: &str = "LM/IISADMIN/EXTENSIONS/DCOMCLSIDS";
@@ -2610,8 +2447,7 @@ impl IMSAdminBase2W {
     pub unsafe fn EnumKeys<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, pszmdname: &mut [u16; 256], dwmdenumobjectindex: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.EnumKeys)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszmdname)), ::core::mem::transmute(dwmdenumobjectindex)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, bmdoverwriteflag: Param4, bmdcopyflag: Param5) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, bmdoverwriteflag: Param4, bmdcopyflag: Param5) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CopyKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), pszmdsourcepath.into_param().abi(), ::core::mem::transmute(hmddesthandle), pszmddestpath.into_param().abi(), bmdoverwriteflag.into_param().abi(), bmdcopyflag.into_param().abi()).ok()
     }
     pub unsafe fn RenameKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, pszmdnewname: Param2) -> ::windows_core::Result<()> {
@@ -2635,8 +2471,7 @@ impl IMSAdminBase2W {
     pub unsafe fn DeleteAllData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, dwmdusertype: u32, dwmddatatype: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DeleteAllData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(dwmdusertype), ::core::mem::transmute(dwmddatatype)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: Param7) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: Param7) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CopyData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), pszmdsourcepath.into_param().abi(), ::core::mem::transmute(hmddesthandle), pszmddestpath.into_param().abi(), ::core::mem::transmute(dwmdattributes), ::core::mem::transmute(dwmdusertype), ::core::mem::transmute(dwmddatatype), bmdcopyflag.into_param().abi()).ok()
     }
     pub unsafe fn GetDataPaths<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, dwmdidentifier: u32, dwmddatatype: u32, pszbuffer: &mut [u16], pdwmdrequiredbuffersize: *mut u32) -> ::windows_core::Result<()> {
@@ -2667,12 +2502,10 @@ impl IMSAdminBase2W {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetDataSetNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *const ::win32_foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLastChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn GetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *mut ::win32_foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetLastChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into_param().abi()).ok()
     }
     pub unsafe fn KeyExchangePhase1(&self) -> ::windows_core::Result<()> {
@@ -2687,8 +2520,7 @@ impl IMSAdminBase2W {
     pub unsafe fn Restore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmdbackuplocation: Param0, dwmdversion: u32, dwmdflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Restore)(::windows_core::Interface::as_raw(self), pszmdbackuplocation.into_param().abi(), ::core::mem::transmute(dwmdversion), ::core::mem::transmute(dwmdflags)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EnumBackups(&self, pszmdbackuplocation: &mut [u16; 256], pdwmdversion: *mut u32, pftmdbackuptime: *mut super::super::Foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn EnumBackups(&self, pszmdbackuplocation: &mut [u16; 256], pdwmdversion: *mut u32, pftmdbackuptime: *mut ::win32_foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.EnumBackups)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszmdbackuplocation)), ::core::mem::transmute(pdwmdversion), ::core::mem::transmute(pftmdbackuptime), ::core::mem::transmute(dwmdenumindex)).ok()
     }
     pub unsafe fn DeleteBackup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmdbackuplocation: Param0, dwmdversion: u32) -> ::windows_core::Result<()> {
@@ -2716,8 +2548,7 @@ impl IMSAdminBase2W {
     pub unsafe fn RestoreHistory<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmdhistorylocation: Param0, dwmdmajorversion: u32, dwmdminorversion: u32, dwmdflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RestoreHistory)(::windows_core::Interface::as_raw(self), pszmdhistorylocation.into_param().abi(), ::core::mem::transmute(dwmdmajorversion), ::core::mem::transmute(dwmdminorversion), ::core::mem::transmute(dwmdflags)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EnumHistory(&self, pszmdhistorylocation: &mut [u16; 256], pdwmdmajorversion: *mut u32, pdwmdminorversion: *mut u32, pftmdhistorytime: *mut super::super::Foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn EnumHistory(&self, pszmdhistorylocation: &mut [u16; 256], pdwmdmajorversion: *mut u32, pdwmdminorversion: *mut u32, pftmdhistorytime: *mut ::win32_foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumHistory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszmdhistorylocation)), ::core::mem::transmute(pdwmdmajorversion), ::core::mem::transmute(pdwmdminorversion), ::core::mem::transmute(pftmdhistorytime), ::core::mem::transmute(dwmdenumindex)).ok()
     }
 }
@@ -2790,10 +2621,7 @@ pub struct IMSAdminBase2W_Vtbl {
     pub Export: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpasswd: ::windows_core::PCWSTR, pszfilename: ::windows_core::PCWSTR, pszsourcepath: ::windows_core::PCWSTR, dwmdflags: u32) -> ::windows_core::HRESULT,
     pub Import: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpasswd: ::windows_core::PCWSTR, pszfilename: ::windows_core::PCWSTR, pszsourcepath: ::windows_core::PCWSTR, pszdestpath: ::windows_core::PCWSTR, dwmdflags: u32) -> ::windows_core::HRESULT,
     pub RestoreHistory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmdhistorylocation: ::windows_core::PCWSTR, dwmdmajorversion: u32, dwmdminorversion: u32, dwmdflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub EnumHistory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmdhistorylocation: ::windows_core::PWSTR, pdwmdmajorversion: *mut u32, pdwmdminorversion: *mut u32, pftmdhistorytime: *mut super::super::Foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EnumHistory: usize,
+    pub EnumHistory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmdhistorylocation: ::windows_core::PWSTR, pdwmdmajorversion: *mut u32, pdwmdminorversion: *mut u32, pftmdhistorytime: *mut ::win32_foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IMSAdminBase3W(::windows_core::IUnknown);
@@ -2810,8 +2638,7 @@ impl IMSAdminBase3W {
     pub unsafe fn EnumKeys<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, pszmdname: &mut [u16; 256], dwmdenumobjectindex: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.EnumKeys)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszmdname)), ::core::mem::transmute(dwmdenumobjectindex)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, bmdoverwriteflag: Param4, bmdcopyflag: Param5) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, bmdoverwriteflag: Param4, bmdcopyflag: Param5) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.CopyKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), pszmdsourcepath.into_param().abi(), ::core::mem::transmute(hmddesthandle), pszmddestpath.into_param().abi(), bmdoverwriteflag.into_param().abi(), bmdcopyflag.into_param().abi()).ok()
     }
     pub unsafe fn RenameKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, pszmdnewname: Param2) -> ::windows_core::Result<()> {
@@ -2835,8 +2662,7 @@ impl IMSAdminBase3W {
     pub unsafe fn DeleteAllData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, dwmdusertype: u32, dwmddatatype: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.DeleteAllData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(dwmdusertype), ::core::mem::transmute(dwmddatatype)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: Param7) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: Param7) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.CopyData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), pszmdsourcepath.into_param().abi(), ::core::mem::transmute(hmddesthandle), pszmddestpath.into_param().abi(), ::core::mem::transmute(dwmdattributes), ::core::mem::transmute(dwmdusertype), ::core::mem::transmute(dwmddatatype), bmdcopyflag.into_param().abi()).ok()
     }
     pub unsafe fn GetDataPaths<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, dwmdidentifier: u32, dwmddatatype: u32, pszbuffer: &mut [u16], pdwmdrequiredbuffersize: *mut u32) -> ::windows_core::Result<()> {
@@ -2867,12 +2693,10 @@ impl IMSAdminBase3W {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetDataSetNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *const ::win32_foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetLastChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn GetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *mut ::win32_foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetLastChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into_param().abi()).ok()
     }
     pub unsafe fn KeyExchangePhase1(&self) -> ::windows_core::Result<()> {
@@ -2887,8 +2711,7 @@ impl IMSAdminBase3W {
     pub unsafe fn Restore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmdbackuplocation: Param0, dwmdversion: u32, dwmdflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.Restore)(::windows_core::Interface::as_raw(self), pszmdbackuplocation.into_param().abi(), ::core::mem::transmute(dwmdversion), ::core::mem::transmute(dwmdflags)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EnumBackups(&self, pszmdbackuplocation: &mut [u16; 256], pdwmdversion: *mut u32, pftmdbackuptime: *mut super::super::Foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn EnumBackups(&self, pszmdbackuplocation: &mut [u16; 256], pdwmdversion: *mut u32, pftmdbackuptime: *mut ::win32_foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.EnumBackups)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszmdbackuplocation)), ::core::mem::transmute(pdwmdversion), ::core::mem::transmute(pftmdbackuptime), ::core::mem::transmute(dwmdenumindex)).ok()
     }
     pub unsafe fn DeleteBackup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmdbackuplocation: Param0, dwmdversion: u32) -> ::windows_core::Result<()> {
@@ -2916,8 +2739,7 @@ impl IMSAdminBase3W {
     pub unsafe fn RestoreHistory<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmdhistorylocation: Param0, dwmdmajorversion: u32, dwmdminorversion: u32, dwmdflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.RestoreHistory)(::windows_core::Interface::as_raw(self), pszmdhistorylocation.into_param().abi(), ::core::mem::transmute(dwmdmajorversion), ::core::mem::transmute(dwmdminorversion), ::core::mem::transmute(dwmdflags)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EnumHistory(&self, pszmdhistorylocation: &mut [u16; 256], pdwmdmajorversion: *mut u32, pdwmdminorversion: *mut u32, pftmdhistorytime: *mut super::super::Foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn EnumHistory(&self, pszmdhistorylocation: &mut [u16; 256], pdwmdmajorversion: *mut u32, pdwmdminorversion: *mut u32, pftmdhistorytime: *mut ::win32_foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.EnumHistory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszmdhistorylocation)), ::core::mem::transmute(pdwmdmajorversion), ::core::mem::transmute(pdwmdminorversion), ::core::mem::transmute(pftmdhistorytime), ::core::mem::transmute(dwmdenumindex)).ok()
     }
     pub unsafe fn GetChildPaths<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, pszbuffer: &mut [u16], pcchmdrequiredbuffersize: *mut u32) -> ::windows_core::Result<()> {
@@ -3082,8 +2904,7 @@ impl IMSAdminBaseW {
     pub unsafe fn EnumKeys<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, pszmdname: &mut [u16; 256], dwmdenumobjectindex: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumKeys)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszmdname)), ::core::mem::transmute(dwmdenumobjectindex)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, bmdoverwriteflag: Param4, bmdcopyflag: Param5) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, bmdoverwriteflag: Param4, bmdcopyflag: Param5) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CopyKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), pszmdsourcepath.into_param().abi(), ::core::mem::transmute(hmddesthandle), pszmddestpath.into_param().abi(), bmdoverwriteflag.into_param().abi(), bmdcopyflag.into_param().abi()).ok()
     }
     pub unsafe fn RenameKey<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, pszmdnewname: Param2) -> ::windows_core::Result<()> {
@@ -3107,8 +2928,7 @@ impl IMSAdminBaseW {
     pub unsafe fn DeleteAllData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, dwmdusertype: u32, dwmddatatype: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DeleteAllData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(dwmdusertype), ::core::mem::transmute(dwmddatatype)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: Param7) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyData<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdsourcehandle: u32, pszmdsourcepath: Param1, hmddesthandle: u32, pszmddestpath: Param3, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: Param7) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CopyData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdsourcehandle), pszmdsourcepath.into_param().abi(), ::core::mem::transmute(hmddesthandle), pszmddestpath.into_param().abi(), ::core::mem::transmute(dwmdattributes), ::core::mem::transmute(dwmdusertype), ::core::mem::transmute(dwmddatatype), bmdcopyflag.into_param().abi()).ok()
     }
     pub unsafe fn GetDataPaths<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hmdhandle: u32, pszmdpath: Param1, dwmdidentifier: u32, dwmddatatype: u32, pszbuffer: &mut [u16], pdwmdrequiredbuffersize: *mut u32) -> ::windows_core::Result<()> {
@@ -3139,12 +2959,10 @@ impl IMSAdminBaseW {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetDataSetNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *const ::win32_foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLastChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn GetLastChangeTime<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hmdhandle: u32, pszmdpath: Param1, pftmdlastchangetime: *mut ::win32_foundation::FILETIME, blocaltime: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetLastChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hmdhandle), pszmdpath.into_param().abi(), ::core::mem::transmute(pftmdlastchangetime), blocaltime.into_param().abi()).ok()
     }
     pub unsafe fn KeyExchangePhase1(&self) -> ::windows_core::Result<()> {
@@ -3159,8 +2977,7 @@ impl IMSAdminBaseW {
     pub unsafe fn Restore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmdbackuplocation: Param0, dwmdversion: u32, dwmdflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Restore)(::windows_core::Interface::as_raw(self), pszmdbackuplocation.into_param().abi(), ::core::mem::transmute(dwmdversion), ::core::mem::transmute(dwmdflags)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EnumBackups(&self, pszmdbackuplocation: &mut [u16; 256], pdwmdversion: *mut u32, pftmdbackuptime: *mut super::super::Foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn EnumBackups(&self, pszmdbackuplocation: &mut [u16; 256], pdwmdversion: *mut u32, pftmdbackuptime: *mut ::win32_foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumBackups)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszmdbackuplocation)), ::core::mem::transmute(pdwmdversion), ::core::mem::transmute(pftmdbackuptime), ::core::mem::transmute(dwmdenumindex)).ok()
     }
     pub unsafe fn DeleteBackup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszmdbackuplocation: Param0, dwmdversion: u32) -> ::windows_core::Result<()> {
@@ -3222,10 +3039,7 @@ pub struct IMSAdminBaseW_Vtbl {
     pub DeleteKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub DeleteChildKeys: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub EnumKeys: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pszmdname: ::windows_core::PWSTR, dwmdenumobjectindex: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CopyKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdsourcehandle: u32, pszmdsourcepath: ::windows_core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows_core::PCWSTR, bmdoverwriteflag: super::super::Foundation::BOOL, bmdcopyflag: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CopyKey: usize,
+    pub CopyKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdsourcehandle: u32, pszmdsourcepath: ::windows_core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows_core::PCWSTR, bmdoverwriteflag: ::win32_foundation::BOOL, bmdcopyflag: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub RenameKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pszmdnewname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub SetData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pmdrmddata: *mut METADATA_RECORD) -> ::windows_core::HRESULT,
     pub GetData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pmdrmddata: *mut METADATA_RECORD, pdwmdrequireddatalen: *mut u32) -> ::windows_core::HRESULT,
@@ -3233,10 +3047,7 @@ pub struct IMSAdminBaseW_Vtbl {
     pub EnumData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pmdrmddata: *mut METADATA_RECORD, dwmdenumdataindex: u32, pdwmdrequireddatalen: *mut u32) -> ::windows_core::HRESULT,
     pub GetAllData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, pdwmdnumdataentries: *mut u32, pdwmddatasetnumber: *mut u32, dwmdbuffersize: u32, pbmdbuffer: *mut u8, pdwmdrequiredbuffersize: *mut u32) -> ::windows_core::HRESULT,
     pub DeleteAllData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, dwmdusertype: u32, dwmddatatype: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CopyData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdsourcehandle: u32, pszmdsourcepath: ::windows_core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows_core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CopyData: usize,
+    pub CopyData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdsourcehandle: u32, pszmdsourcepath: ::windows_core::PCWSTR, hmddesthandle: u32, pszmddestpath: ::windows_core::PCWSTR, dwmdattributes: u32, dwmdusertype: u32, dwmddatatype: u32, bmdcopyflag: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetDataPaths: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, dwmdidentifier: u32, dwmddatatype: u32, dwmdbuffersize: u32, pszbuffer: ::windows_core::PWSTR, pdwmdrequiredbuffersize: *mut u32) -> ::windows_core::HRESULT,
     pub OpenKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, dwmdaccessrequested: u32, dwmdtimeout: u32, phmdnewhandle: *mut u32) -> ::windows_core::HRESULT,
     pub CloseKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32) -> ::windows_core::HRESULT,
@@ -3245,22 +3056,13 @@ pub struct IMSAdminBaseW_Vtbl {
     pub GetHandleInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pmdhiinfo: *mut METADATA_HANDLE_INFO) -> ::windows_core::HRESULT,
     pub GetSystemChangeNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwsystemchangenumber: *mut u32) -> ::windows_core::HRESULT,
     pub GetDataSetNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pdwmddatasetnumber: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetLastChangeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pftmdlastchangetime: *const super::super::Foundation::FILETIME, blocaltime: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetLastChangeTime: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetLastChangeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pftmdlastchangetime: *mut super::super::Foundation::FILETIME, blocaltime: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetLastChangeTime: usize,
+    pub SetLastChangeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pftmdlastchangetime: *const ::win32_foundation::FILETIME, blocaltime: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetLastChangeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hmdhandle: u32, pszmdpath: ::windows_core::PCWSTR, pftmdlastchangetime: *mut ::win32_foundation::FILETIME, blocaltime: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub KeyExchangePhase1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub KeyExchangePhase2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Backup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmdbackuplocation: ::windows_core::PCWSTR, dwmdversion: u32, dwmdflags: u32) -> ::windows_core::HRESULT,
     pub Restore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmdbackuplocation: ::windows_core::PCWSTR, dwmdversion: u32, dwmdflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub EnumBackups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmdbackuplocation: ::windows_core::PWSTR, pdwmdversion: *mut u32, pftmdbackuptime: *mut super::super::Foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EnumBackups: usize,
+    pub EnumBackups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmdbackuplocation: ::windows_core::PWSTR, pdwmdversion: *mut u32, pftmdbackuptime: *mut ::win32_foundation::FILETIME, dwmdenumindex: u32) -> ::windows_core::HRESULT,
     pub DeleteBackup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszmdbackuplocation: ::windows_core::PCWSTR, dwmdversion: u32) -> ::windows_core::HRESULT,
     pub UnmarshalInterface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, piadmbwinterface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetServerGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -4258,23 +4060,18 @@ pub const MSCS_MD_ID_BEGIN_RESERVED: u32 = 53248u32;
 pub const MSCS_MD_ID_END_RESERVED: u32 = 57343u32;
 pub const NNTP_MD_ID_BEGIN_RESERVED: u32 = 45056u32;
 pub const NNTP_MD_ID_END_RESERVED: u32 = 49151u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_GETEXTENSIONVERSION = ::core::option::Option<unsafe extern "system" fn(pver: *mut HSE_VERSION_INFO) -> super::super::Foundation::BOOL>;
+pub type PFN_GETEXTENSIONVERSION = ::core::option::Option<unsafe extern "system" fn(pver: *mut HSE_VERSION_INFO) -> ::win32_foundation::BOOL>;
 pub type PFN_HSE_CACHE_INVALIDATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pszurl: ::windows_core::PCWSTR) -> ::windows_core::HRESULT>;
 pub type PFN_HSE_GET_PROTOCOL_MANAGER_CUSTOM_INTERFACE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pszprotocolmanagerdll: ::windows_core::PCWSTR, pszprotocolmanagerdllinitfunction: ::windows_core::PCWSTR, dwcustominterfaceid: u32, ppcustominterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFN_HSE_IO_COMPLETION = ::core::option::Option<unsafe extern "system" fn(pecb: *mut EXTENSION_CONTROL_BLOCK, pcontext: *mut ::core::ffi::c_void, cbio: u32, dwerror: u32)>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFN_HTTPEXTENSIONPROC = ::core::option::Option<unsafe extern "system" fn(pecb: *mut EXTENSION_CONTROL_BLOCK) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_TERMINATEEXTENSION = ::core::option::Option<unsafe extern "system" fn(dwflags: u32) -> super::super::Foundation::BOOL>;
+pub type PFN_TERMINATEEXTENSION = ::core::option::Option<unsafe extern "system" fn(dwflags: u32) -> ::win32_foundation::BOOL>;
 pub type PFN_WEB_CORE_ACTIVATE = ::core::option::Option<unsafe extern "system" fn(pszapphostconfigfile: ::windows_core::PCWSTR, pszrootwebconfigfile: ::windows_core::PCWSTR, pszinstancename: ::windows_core::PCWSTR) -> ::windows_core::HRESULT>;
 pub type PFN_WEB_CORE_SET_METADATA_DLL_ENTRY = ::core::option::Option<unsafe extern "system" fn(pszmetadatatype: ::windows_core::PCWSTR, pszvalue: ::windows_core::PCWSTR) -> ::windows_core::HRESULT>;
 pub type PFN_WEB_CORE_SHUTDOWN = ::core::option::Option<unsafe extern "system" fn(fimmediate: u32) -> ::windows_core::HRESULT>;
 pub const POP3_MD_ID_BEGIN_RESERVED: u32 = 40960u32;
 pub const POP3_MD_ID_END_RESERVED: u32 = 45055u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POST_PROCESS_PARAMETERS {
     pub pszSessionId: ::windows_core::PCWSTR,
     pub pszSiteName: ::windows_core::PCWSTR,
@@ -4293,19 +4090,16 @@ pub struct POST_PROCESS_PARAMETERS {
     pub FtpStatus: u32,
     pub FtpSubStatus: u32,
     pub hrStatus: ::windows_core::HRESULT,
-    pub SessionStartTime: super::super::Foundation::FILETIME,
+    pub SessionStartTime: ::win32_foundation::FILETIME,
     pub BytesSentPerSession: u64,
     pub BytesReceivedPerSession: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POST_PROCESS_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POST_PROCESS_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for POST_PROCESS_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POST_PROCESS_PARAMETERS")
@@ -4332,26 +4126,21 @@ impl ::core::fmt::Debug for POST_PROCESS_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for POST_PROCESS_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POST_PROCESS_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POST_PROCESS_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for POST_PROCESS_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for POST_PROCESS_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRE_PROCESS_PARAMETERS {
     pub pszSessionId: ::windows_core::PCWSTR,
     pub pszSiteName: ::windows_core::PCWSTR,
@@ -4363,19 +4152,16 @@ pub struct PRE_PROCESS_PARAMETERS {
     pub dwLocalIpPort: u32,
     pub pszCommand: ::windows_core::PCWSTR,
     pub pszCommandParameters: ::windows_core::PCWSTR,
-    pub SessionStartTime: super::super::Foundation::FILETIME,
+    pub SessionStartTime: ::win32_foundation::FILETIME,
     pub BytesSentPerSession: u64,
     pub BytesReceivedPerSession: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRE_PROCESS_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRE_PROCESS_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRE_PROCESS_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRE_PROCESS_PARAMETERS")
@@ -4395,19 +4181,15 @@ impl ::core::fmt::Debug for PRE_PROCESS_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRE_PROCESS_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRE_PROCESS_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRE_PROCESS_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRE_PROCESS_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRE_PROCESS_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

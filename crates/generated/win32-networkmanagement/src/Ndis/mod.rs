@@ -2144,15 +2144,14 @@ pub const NDIS_HD_SPLIT_PARAMETERS_REVISION_1: u32 = 1u32;
 pub const NDIS_HYPERVISOR_INFO_FLAG_HYPERVISOR_PRESENT: u32 = 1u32;
 pub const NDIS_HYPERVISOR_INFO_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NDIS_INTERFACE_INFORMATION {
     pub ifOperStatus: NET_IF_OPER_STATUS,
     pub ifOperStatusFlags: u32,
     pub MediaConnectState: NET_IF_MEDIA_CONNECT_STATE,
     pub MediaDuplexState: NET_IF_MEDIA_DUPLEX_STATE,
     pub ifMtu: u32,
-    pub ifPromiscuousMode: super::super::Foundation::BOOLEAN,
-    pub ifDeviceWakeUpEnable: super::super::Foundation::BOOLEAN,
+    pub ifPromiscuousMode: ::win32_foundation::BOOLEAN,
+    pub ifDeviceWakeUpEnable: ::win32_foundation::BOOLEAN,
     pub XmitLinkSpeed: u64,
     pub RcvLinkSpeed: u64,
     pub ifLastChange: u64,
@@ -2179,15 +2178,12 @@ pub struct NDIS_INTERFACE_INFORMATION {
     pub CompartmentId: u32,
     pub SupportedStatistics: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NDIS_INTERFACE_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NDIS_INTERFACE_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NDIS_INTERFACE_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NDIS_INTERFACE_INFORMATION")
@@ -2226,19 +2222,15 @@ impl ::core::fmt::Debug for NDIS_INTERFACE_INFORMATION {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NDIS_INTERFACE_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NDIS_INTERFACE_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDIS_INTERFACE_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NDIS_INTERFACE_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NDIS_INTERFACE_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4598,42 +4590,34 @@ impl ::core::default::Default for NDIS_TIMEOUT_DPC_REQUEST_CAPABILITIES {
 }
 pub const NDIS_TIMEOUT_DPC_REQUEST_CAPABILITIES_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NDIS_TIMESTAMP_CAPABILITIES {
     pub Header: NDIS_OBJECT_HEADER,
     pub HardwareClockFrequencyHz: u64,
-    pub CrossTimestamp: super::super::Foundation::BOOLEAN,
+    pub CrossTimestamp: ::win32_foundation::BOOLEAN,
     pub Reserved1: u64,
     pub Reserved2: u64,
     pub TimestampFlags: NDIS_TIMESTAMP_CAPABILITY_FLAGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NDIS_TIMESTAMP_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NDIS_TIMESTAMP_CAPABILITIES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NDIS_TIMESTAMP_CAPABILITIES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NDIS_TIMESTAMP_CAPABILITIES").field("Header", &self.Header).field("HardwareClockFrequencyHz", &self.HardwareClockFrequencyHz).field("CrossTimestamp", &self.CrossTimestamp).field("Reserved1", &self.Reserved1).field("Reserved2", &self.Reserved2).field("TimestampFlags", &self.TimestampFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NDIS_TIMESTAMP_CAPABILITIES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NDIS_TIMESTAMP_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDIS_TIMESTAMP_CAPABILITIES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NDIS_TIMESTAMP_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NDIS_TIMESTAMP_CAPABILITIES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4641,32 +4625,28 @@ impl ::core::default::Default for NDIS_TIMESTAMP_CAPABILITIES {
 }
 pub const NDIS_TIMESTAMP_CAPABILITIES_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NDIS_TIMESTAMP_CAPABILITY_FLAGS {
-    pub PtpV2OverUdpIPv4EventMsgReceiveHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv4AllMsgReceiveHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv4EventMsgTransmitHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv4AllMsgTransmitHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv6EventMsgReceiveHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv6AllMsgReceiveHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv6EventMsgTransmitHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv6AllMsgTransmitHw: super::super::Foundation::BOOLEAN,
-    pub AllReceiveHw: super::super::Foundation::BOOLEAN,
-    pub AllTransmitHw: super::super::Foundation::BOOLEAN,
-    pub TaggedTransmitHw: super::super::Foundation::BOOLEAN,
-    pub AllReceiveSw: super::super::Foundation::BOOLEAN,
-    pub AllTransmitSw: super::super::Foundation::BOOLEAN,
-    pub TaggedTransmitSw: super::super::Foundation::BOOLEAN,
+    pub PtpV2OverUdpIPv4EventMsgReceiveHw: ::win32_foundation::BOOLEAN,
+    pub PtpV2OverUdpIPv4AllMsgReceiveHw: ::win32_foundation::BOOLEAN,
+    pub PtpV2OverUdpIPv4EventMsgTransmitHw: ::win32_foundation::BOOLEAN,
+    pub PtpV2OverUdpIPv4AllMsgTransmitHw: ::win32_foundation::BOOLEAN,
+    pub PtpV2OverUdpIPv6EventMsgReceiveHw: ::win32_foundation::BOOLEAN,
+    pub PtpV2OverUdpIPv6AllMsgReceiveHw: ::win32_foundation::BOOLEAN,
+    pub PtpV2OverUdpIPv6EventMsgTransmitHw: ::win32_foundation::BOOLEAN,
+    pub PtpV2OverUdpIPv6AllMsgTransmitHw: ::win32_foundation::BOOLEAN,
+    pub AllReceiveHw: ::win32_foundation::BOOLEAN,
+    pub AllTransmitHw: ::win32_foundation::BOOLEAN,
+    pub TaggedTransmitHw: ::win32_foundation::BOOLEAN,
+    pub AllReceiveSw: ::win32_foundation::BOOLEAN,
+    pub AllTransmitSw: ::win32_foundation::BOOLEAN,
+    pub TaggedTransmitSw: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NDIS_TIMESTAMP_CAPABILITY_FLAGS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NDIS_TIMESTAMP_CAPABILITY_FLAGS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NDIS_TIMESTAMP_CAPABILITY_FLAGS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NDIS_TIMESTAMP_CAPABILITY_FLAGS")
@@ -4687,19 +4667,15 @@ impl ::core::fmt::Debug for NDIS_TIMESTAMP_CAPABILITY_FLAGS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NDIS_TIMESTAMP_CAPABILITY_FLAGS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NDIS_TIMESTAMP_CAPABILITY_FLAGS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDIS_TIMESTAMP_CAPABILITY_FLAGS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NDIS_TIMESTAMP_CAPABILITY_FLAGS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NDIS_TIMESTAMP_CAPABILITY_FLAGS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4955,35 +4931,28 @@ pub const NDIS_WLAN_WAKE_ON_NLO_DISCOVERY_ENABLED: u32 = 1u32;
 pub const NDIS_WLAN_WAKE_ON_NLO_DISCOVERY_SUPPORTED: u32 = 1u32;
 pub const NDIS_WMI_DEFAULT_METHOD_ID: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NDIS_WMI_ENUM_ADAPTER {
     pub Header: NDIS_OBJECT_HEADER,
     pub IfIndex: u32,
     pub NetLuid: NET_LUID_LH,
     pub DeviceNameLength: u16,
-    pub DeviceName: [super::super::Foundation::CHAR; 1],
+    pub DeviceName: [::win32_foundation::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NDIS_WMI_ENUM_ADAPTER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NDIS_WMI_ENUM_ADAPTER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NDIS_WMI_ENUM_ADAPTER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NDIS_WMI_ENUM_ADAPTER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NDIS_WMI_ENUM_ADAPTER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NDIS_WMI_ENUM_ADAPTER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NDIS_WMI_ENUM_ADAPTER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6418,7 +6387,6 @@ impl ::core::fmt::Debug for OFFLOAD_INTEGRITY_ALGO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OFFLOAD_IPSEC_ADD_SA {
     pub SrcAddr: u32,
     pub SrcMask: u32,
@@ -6432,19 +6400,16 @@ pub struct OFFLOAD_IPSEC_ADD_SA {
     pub Flags: u16,
     pub NumSAs: i16,
     pub SecAssoc: [OFFLOAD_SECURITY_ASSOCIATION; 3],
-    pub OffloadHandle: super::super::Foundation::HANDLE,
+    pub OffloadHandle: ::win32_foundation::HANDLE,
     pub KeyLen: u32,
     pub KeyMat: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OFFLOAD_IPSEC_ADD_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OFFLOAD_IPSEC_ADD_SA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OFFLOAD_IPSEC_ADD_SA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OFFLOAD_IPSEC_ADD_SA")
@@ -6466,26 +6431,21 @@ impl ::core::fmt::Debug for OFFLOAD_IPSEC_ADD_SA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OFFLOAD_IPSEC_ADD_SA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFFLOAD_IPSEC_ADD_SA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFFLOAD_IPSEC_ADD_SA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OFFLOAD_IPSEC_ADD_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OFFLOAD_IPSEC_ADD_SA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OFFLOAD_IPSEC_ADD_UDPESP_SA {
     pub SrcAddr: u32,
     pub SrcMask: u32,
@@ -6499,21 +6459,18 @@ pub struct OFFLOAD_IPSEC_ADD_UDPESP_SA {
     pub Flags: u16,
     pub NumSAs: i16,
     pub SecAssoc: [OFFLOAD_SECURITY_ASSOCIATION; 3],
-    pub OffloadHandle: super::super::Foundation::HANDLE,
+    pub OffloadHandle: ::win32_foundation::HANDLE,
     pub EncapTypeEntry: OFFLOAD_IPSEC_UDPESP_ENCAPTYPE_ENTRY,
-    pub EncapTypeEntryOffldHandle: super::super::Foundation::HANDLE,
+    pub EncapTypeEntryOffldHandle: ::win32_foundation::HANDLE,
     pub KeyLen: u32,
     pub KeyMat: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OFFLOAD_IPSEC_ADD_UDPESP_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OFFLOAD_IPSEC_ADD_UDPESP_SA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OFFLOAD_IPSEC_ADD_UDPESP_SA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OFFLOAD_IPSEC_ADD_UDPESP_SA")
@@ -6537,94 +6494,74 @@ impl ::core::fmt::Debug for OFFLOAD_IPSEC_ADD_UDPESP_SA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OFFLOAD_IPSEC_ADD_UDPESP_SA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFFLOAD_IPSEC_ADD_UDPESP_SA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFFLOAD_IPSEC_ADD_UDPESP_SA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OFFLOAD_IPSEC_ADD_UDPESP_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OFFLOAD_IPSEC_ADD_UDPESP_SA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OFFLOAD_IPSEC_DELETE_SA {
-    pub OffloadHandle: super::super::Foundation::HANDLE,
+    pub OffloadHandle: ::win32_foundation::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OFFLOAD_IPSEC_DELETE_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OFFLOAD_IPSEC_DELETE_SA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OFFLOAD_IPSEC_DELETE_SA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OFFLOAD_IPSEC_DELETE_SA").field("OffloadHandle", &self.OffloadHandle).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OFFLOAD_IPSEC_DELETE_SA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFFLOAD_IPSEC_DELETE_SA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFFLOAD_IPSEC_DELETE_SA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OFFLOAD_IPSEC_DELETE_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OFFLOAD_IPSEC_DELETE_SA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OFFLOAD_IPSEC_DELETE_UDPESP_SA {
-    pub OffloadHandle: super::super::Foundation::HANDLE,
-    pub EncapTypeEntryOffldHandle: super::super::Foundation::HANDLE,
+    pub OffloadHandle: ::win32_foundation::HANDLE,
+    pub EncapTypeEntryOffldHandle: ::win32_foundation::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OFFLOAD_IPSEC_DELETE_UDPESP_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OFFLOAD_IPSEC_DELETE_UDPESP_SA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OFFLOAD_IPSEC_DELETE_UDPESP_SA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OFFLOAD_IPSEC_DELETE_UDPESP_SA").field("OffloadHandle", &self.OffloadHandle).field("EncapTypeEntryOffldHandle", &self.EncapTypeEntryOffldHandle).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OFFLOAD_IPSEC_DELETE_UDPESP_SA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OFFLOAD_IPSEC_DELETE_UDPESP_SA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OFFLOAD_IPSEC_DELETE_UDPESP_SA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OFFLOAD_IPSEC_DELETE_UDPESP_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OFFLOAD_IPSEC_DELETE_UDPESP_SA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

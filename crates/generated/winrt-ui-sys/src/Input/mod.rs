@@ -144,16 +144,13 @@ impl ::core::clone::Clone for InputActivationState {
 pub type KeyboardDeliveryInterceptor = *mut ::core::ffi::c_void;
 pub type ManipulationCompletedEventArgs = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct ManipulationDelta {
-    pub Translation: super::super::Foundation::Point,
+    pub Translation: ::winrt_foundation_sys::Point,
     pub Scale: f32,
     pub Rotation: f32,
     pub Expansion: f32,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for ManipulationDelta {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for ManipulationDelta {
     fn clone(&self) -> Self {
         *self
@@ -163,15 +160,12 @@ pub type ManipulationInertiaStartingEventArgs = *mut ::core::ffi::c_void;
 pub type ManipulationStartedEventArgs = *mut ::core::ffi::c_void;
 pub type ManipulationUpdatedEventArgs = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct ManipulationVelocities {
-    pub Linear: super::super::Foundation::Point,
+    pub Linear: ::winrt_foundation_sys::Point,
     pub Angular: f32,
     pub Expansion: f32,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for ManipulationVelocities {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for ManipulationVelocities {
     fn clone(&self) -> Self {
         *self

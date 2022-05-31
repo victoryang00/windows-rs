@@ -27,12 +27,12 @@ pub struct HolographicKeyboardPlacementOverridePreview(::windows_core::IUnknown)
 #[cfg(feature = "deprecated")]
 impl HolographicKeyboardPlacementOverridePreview {
     #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial", feature = "deprecated"))]
-    pub fn SetPlacementOverride<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>>(&self, coordinatesystem: Param0, topcenterposition: Param1, normal: Param2) -> ::windows_core::Result<()> {
+    pub fn SetPlacementOverride<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, coordinatesystem: Param0, topcenterposition: Param1, normal: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPlacementOverride)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), topcenterposition.into_param().abi(), normal.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial", feature = "deprecated"))]
-    pub fn SetPlacementOverrideWithMaxSize<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>, Param3: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector2>>(&self, coordinatesystem: Param0, topcenterposition: Param1, normal: Param2, maxsize: Param3) -> ::windows_core::Result<()> {
+    pub fn SetPlacementOverrideWithMaxSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_perception::Spatial::SpatialCoordinateSystem>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector2>>(&self, coordinatesystem: Param0, topcenterposition: Param1, normal: Param2, maxsize: Param3) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPlacementOverrideWithMaxSize)(::windows_core::Interface::as_raw(this), coordinatesystem.into_param().abi(), topcenterposition.into_param().abi(), normal.into_param().abi(), maxsize.into_param().abi()).ok() }
     }
@@ -175,11 +175,11 @@ unsafe impl ::windows_core::Interface for IHolographicKeyboardPlacementOverrideP
 pub struct IHolographicKeyboardPlacementOverridePreview_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial", feature = "deprecated"))]
-    pub SetPlacementOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, topcenterposition: super::super::super::Foundation::Numerics::Vector3, normal: super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub SetPlacementOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, topcenterposition: ::winrt_foundation::Numerics::Vector3, normal: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial", feature = "deprecated")))]
     SetPlacementOverride: usize,
     #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial", feature = "deprecated"))]
-    pub SetPlacementOverrideWithMaxSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, topcenterposition: super::super::super::Foundation::Numerics::Vector3, normal: super::super::super::Foundation::Numerics::Vector3, maxsize: super::super::super::Foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
+    pub SetPlacementOverrideWithMaxSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coordinatesystem: ::windows_core::RawPtr, topcenterposition: ::winrt_foundation::Numerics::Vector3, normal: ::winrt_foundation::Numerics::Vector3, maxsize: ::winrt_foundation::Numerics::Vector2) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "Perception_Spatial", feature = "deprecated")))]
     SetPlacementOverrideWithMaxSize: usize,
     #[cfg(feature = "deprecated")]

@@ -255,379 +255,354 @@ impl ::core::default::Default for ATTRIBUTE_INFO_4 {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AbortPrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn AbortPrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AbortPrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn AbortPrinter(hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AbortPrinter(hprinter.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddFormA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pform: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn AddFormA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pform: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddFormA(hprinter: super::super::Foundation::HANDLE, level: u32, pform: *const u8) -> super::super::Foundation::BOOL;
+            fn AddFormA(hprinter: ::win32_foundation::HANDLE, level: u32, pform: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddFormA(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pform)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddFormW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pform: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn AddFormW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pform: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddFormW(hprinter: super::super::Foundation::HANDLE, level: u32, pform: *const u8) -> super::super::Foundation::BOOL;
+            fn AddFormW(hprinter: ::win32_foundation::HANDLE, level: u32, pform: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddFormW(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pform)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddJobA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AddJobA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddJobA(hprinter: super::super::Foundation::HANDLE, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn AddJobA(hprinter: ::win32_foundation::HANDLE, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddJobA(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdata), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddJobW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AddJobW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddJobW(hprinter: super::super::Foundation::HANDLE, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn AddJobW(hprinter: ::win32_foundation::HANDLE, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddJobW(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdata), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddMonitorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pmonitors: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn AddMonitorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pmonitors: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddMonitorA(pname: ::windows_core::PCSTR, level: u32, pmonitors: *const u8) -> super::super::Foundation::BOOL;
+            fn AddMonitorA(pname: ::windows_core::PCSTR, level: u32, pmonitors: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddMonitorA(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pmonitors)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddMonitorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pmonitors: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn AddMonitorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pmonitors: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddMonitorW(pname: ::windows_core::PCWSTR, level: u32, pmonitors: *const u8) -> super::super::Foundation::BOOL;
+            fn AddMonitorW(pname: ::windows_core::PCWSTR, level: u32, pmonitors: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddMonitorW(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pmonitors)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPortA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, hwnd: Param1, pmonitorname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPortA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, hwnd: Param1, pmonitorname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPortA(pname: ::windows_core::PCSTR, hwnd: super::super::Foundation::HWND, pmonitorname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn AddPortA(pname: ::windows_core::PCSTR, hwnd: ::win32_foundation::HWND, pmonitorname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPortA(pname.into_param().abi(), hwnd.into_param().abi(), pmonitorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPortW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, hwnd: Param1, pmonitorname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPortW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, hwnd: Param1, pmonitorname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPortW(pname: ::windows_core::PCWSTR, hwnd: super::super::Foundation::HWND, pmonitorname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn AddPortW(pname: ::windows_core::PCWSTR, hwnd: ::win32_foundation::HWND, pmonitorname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPortW(pname.into_param().abi(), hwnd.into_param().abi(), pmonitorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrintDeviceObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn AddPrintDeviceObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrintDeviceObject(hprinter: super::super::Foundation::HANDLE, phdeviceobject: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn AddPrintDeviceObject(hprinter: ::win32_foundation::HANDLE, phdeviceobject: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        AddPrintDeviceObject(hprinter.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        AddPrintDeviceObject(hprinter.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrintProcessorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, ppathname: Param2, pprintprocessorname: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrintProcessorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, ppathname: Param2, pprintprocessorname: Param3) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrintProcessorA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, ppathname: ::windows_core::PCSTR, pprintprocessorname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn AddPrintProcessorA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, ppathname: ::windows_core::PCSTR, pprintprocessorname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrintProcessorA(pname.into_param().abi(), penvironment.into_param().abi(), ppathname.into_param().abi(), pprintprocessorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrintProcessorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, ppathname: Param2, pprintprocessorname: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrintProcessorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, ppathname: Param2, pprintprocessorname: Param3) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrintProcessorW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, ppathname: ::windows_core::PCWSTR, pprintprocessorname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn AddPrintProcessorW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, ppathname: ::windows_core::PCWSTR, pprintprocessorname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrintProcessorW(pname.into_param().abi(), penvironment.into_param().abi(), ppathname.into_param().abi(), pprintprocessorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrintProvidorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pprovidorinfo: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrintProvidorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pprovidorinfo: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrintProvidorA(pname: ::windows_core::PCSTR, level: u32, pprovidorinfo: *const u8) -> super::super::Foundation::BOOL;
+            fn AddPrintProvidorA(pname: ::windows_core::PCSTR, level: u32, pprovidorinfo: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrintProvidorA(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprovidorinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrintProvidorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pprovidorinfo: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrintProvidorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pprovidorinfo: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrintProvidorW(pname: ::windows_core::PCWSTR, level: u32, pprovidorinfo: *const u8) -> super::super::Foundation::BOOL;
+            fn AddPrintProvidorW(pname: ::windows_core::PCWSTR, level: u32, pprovidorinfo: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrintProvidorW(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprovidorinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pprinter: *const u8) -> super::super::Foundation::HANDLE {
+pub unsafe fn AddPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pprinter: *const u8) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterA(pname: ::windows_core::PCSTR, level: u32, pprinter: *const u8) -> super::super::Foundation::HANDLE;
+            fn AddPrinterA(pname: ::windows_core::PCSTR, level: u32, pprinter: *const u8) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(AddPrinterA(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprinter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterConnection2A<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, pszname: Param1, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrinterConnection2A<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, pszname: Param1, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterConnection2A(hwnd: super::super::Foundation::HWND, pszname: ::windows_core::PCSTR, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn AddPrinterConnection2A(hwnd: ::win32_foundation::HWND, pszname: ::windows_core::PCSTR, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrinterConnection2A(hwnd.into_param().abi(), pszname.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pconnectioninfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterConnection2W<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, pszname: Param1, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrinterConnection2W<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, pszname: Param1, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterConnection2W(hwnd: super::super::Foundation::HWND, pszname: ::windows_core::PCWSTR, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn AddPrinterConnection2W(hwnd: ::win32_foundation::HWND, pszname: ::windows_core::PCWSTR, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrinterConnection2W(hwnd.into_param().abi(), pszname.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pconnectioninfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterConnectionA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrinterConnectionA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterConnectionA(pname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn AddPrinterConnectionA(pname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrinterConnectionA(pname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterConnectionW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrinterConnectionW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterConnectionW(pname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn AddPrinterConnectionW(pname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrinterConnectionW(pname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterDriverA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pdriverinfo: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrinterDriverA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pdriverinfo: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterDriverA(pname: ::windows_core::PCSTR, level: u32, pdriverinfo: *const u8) -> super::super::Foundation::BOOL;
+            fn AddPrinterDriverA(pname: ::windows_core::PCSTR, level: u32, pdriverinfo: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrinterDriverA(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterDriverExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrinterDriverExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterDriverExA(pname: ::windows_core::PCSTR, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> super::super::Foundation::BOOL;
+            fn AddPrinterDriverExA(pname: ::windows_core::PCSTR, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrinterDriverExA(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(lpbdriverinfo), ::core::mem::transmute(dwfilecopyflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterDriverExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrinterDriverExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterDriverExW(pname: ::windows_core::PCWSTR, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> super::super::Foundation::BOOL;
+            fn AddPrinterDriverExW(pname: ::windows_core::PCWSTR, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrinterDriverExW(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(lpbdriverinfo), ::core::mem::transmute(dwfilecopyflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterDriverW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pdriverinfo: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn AddPrinterDriverW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pdriverinfo: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterDriverW(pname: ::windows_core::PCWSTR, level: u32, pdriverinfo: *const u8) -> super::super::Foundation::BOOL;
+            fn AddPrinterDriverW(pname: ::windows_core::PCWSTR, level: u32, pdriverinfo: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddPrinterDriverW(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pprinter: *const u8) -> super::super::Foundation::HANDLE {
+pub unsafe fn AddPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pprinter: *const u8) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddPrinterW(pname: ::windows_core::PCWSTR, level: u32, pprinter: *const u8) -> super::super::Foundation::HANDLE;
+            fn AddPrinterW(pname: ::windows_core::PCWSTR, level: u32, pprinter: *const u8) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(AddPrinterW(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprinter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn AdvancedDocumentPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, hprinter: Param1, pdevicename: Param2, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA) -> i32 {
+pub unsafe fn AdvancedDocumentPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, hprinter: Param1, pdevicename: Param2, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AdvancedDocumentPropertiesA(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows_core::PCSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA) -> i32;
+            fn AdvancedDocumentPropertiesA(hwnd: ::win32_foundation::HWND, hprinter: ::win32_foundation::HANDLE, pdevicename: ::windows_core::PCSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA) -> i32;
         }
         ::core::mem::transmute(AdvancedDocumentPropertiesA(hwnd.into_param().abi(), hprinter.into_param().abi(), pdevicename.into_param().abi(), ::core::mem::transmute(pdevmodeoutput), ::core::mem::transmute(pdevmodeinput)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn AdvancedDocumentPropertiesW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, hprinter: Param1, pdevicename: Param2, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW) -> i32 {
+pub unsafe fn AdvancedDocumentPropertiesW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, hprinter: Param1, pdevicename: Param2, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AdvancedDocumentPropertiesW(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows_core::PCWSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW) -> i32;
+            fn AdvancedDocumentPropertiesW(hwnd: ::win32_foundation::HWND, hprinter: ::win32_foundation::HANDLE, pdevicename: ::windows_core::PCWSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW) -> i32;
         }
         ::core::mem::transmute(AdvancedDocumentPropertiesW(hwnd.into_param().abi(), hprinter.into_param().abi(), pdevicename.into_param().abi(), ::core::mem::transmute(pdevmodeoutput), ::core::mem::transmute(pdevmodeinput)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AppendPrinterNotifyInfoData(pinfodest: *const PRINTER_NOTIFY_INFO, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA, fdwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AppendPrinterNotifyInfoData(pinfodest: *const PRINTER_NOTIFY_INFO, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA, fdwflags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AppendPrinterNotifyInfoData(pinfodest: *const PRINTER_NOTIFY_INFO, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA, fdwflags: u32) -> super::super::Foundation::BOOL;
+            fn AppendPrinterNotifyInfoData(pinfodest: *const PRINTER_NOTIFY_INFO, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA, fdwflags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AppendPrinterNotifyInfoData(::core::mem::transmute(pinfodest), ::core::mem::transmute(pdatasrc), ::core::mem::transmute(fdwflags)))
     }
@@ -642,202 +617,160 @@ pub const BIDI_ACTION_GET_ALL: &str = "GetAll";
 pub const BIDI_ACTION_GET_WITH_ARGUMENT: &str = "GetWithArgument";
 pub const BIDI_ACTION_SET: &str = "Set";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BIDI_DATA {
     pub dwBidiType: u32,
     pub u: BIDI_DATA_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BIDI_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BIDI_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BIDI_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BIDI_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BIDI_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BIDI_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BIDI_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union BIDI_DATA_0 {
-    pub bData: super::super::Foundation::BOOL,
+    pub bData: ::win32_foundation::BOOL,
     pub iData: i32,
     pub sData: ::windows_core::PWSTR,
     pub fData: f32,
     pub biData: BINARY_CONTAINER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BIDI_DATA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BIDI_DATA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BIDI_DATA_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BIDI_DATA_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BIDI_DATA_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BIDI_DATA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BIDI_DATA_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BIDI_REQUEST_CONTAINER {
     pub Version: u32,
     pub Flags: u32,
     pub Count: u32,
     pub aData: [BIDI_REQUEST_DATA; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BIDI_REQUEST_CONTAINER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BIDI_REQUEST_CONTAINER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BIDI_REQUEST_CONTAINER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BIDI_REQUEST_CONTAINER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BIDI_REQUEST_CONTAINER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BIDI_REQUEST_CONTAINER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BIDI_REQUEST_CONTAINER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BIDI_REQUEST_DATA {
     pub dwReqNumber: u32,
     pub pSchema: ::windows_core::PWSTR,
     pub data: BIDI_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BIDI_REQUEST_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BIDI_REQUEST_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BIDI_REQUEST_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BIDI_REQUEST_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BIDI_REQUEST_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BIDI_REQUEST_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BIDI_REQUEST_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BIDI_RESPONSE_CONTAINER {
     pub Version: u32,
     pub Flags: u32,
     pub Count: u32,
     pub aData: [BIDI_RESPONSE_DATA; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BIDI_RESPONSE_CONTAINER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BIDI_RESPONSE_CONTAINER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BIDI_RESPONSE_CONTAINER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BIDI_RESPONSE_CONTAINER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BIDI_RESPONSE_CONTAINER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BIDI_RESPONSE_CONTAINER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BIDI_RESPONSE_CONTAINER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BIDI_RESPONSE_DATA {
     pub dwResult: u32,
     pub dwReqNumber: u32,
     pub pSchema: ::windows_core::PWSTR,
     pub data: BIDI_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BIDI_RESPONSE_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BIDI_RESPONSE_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BIDI_RESPONSE_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BIDI_RESPONSE_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BIDI_RESPONSE_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BIDI_RESPONSE_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BIDI_RESPONSE_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1205,11 +1138,11 @@ pub const CLSID_PTPROVIDER: ::windows_core::GUID = ::windows_core::GUID::from_u1
 pub const CLSID_XPSRASTERIZER_FACTORY: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x503e79bf_1d09_4764_9d72_1eb0c65967c6);
 pub const COLOR_OPTIMIZATION: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct COMPROPSHEETUI {
     pub cbSize: u16,
     pub Flags: u16,
-    pub hInstCaller: super::super::Foundation::HINSTANCE,
+    pub hInstCaller: ::win32_foundation::HINSTANCE,
     pub pCallerName: *mut i8,
     pub UserData: usize,
     pub pHelpFile: *mut i8,
@@ -1224,15 +1157,15 @@ pub struct COMPROPSHEETUI {
     pub OptItemVersion: u16,
     pub dwReserved: [usize; 4],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for COMPROPSHEETUI {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for COMPROPSHEETUI {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::fmt::Debug for COMPROPSHEETUI {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("COMPROPSHEETUI")
@@ -1255,19 +1188,19 @@ impl ::core::fmt::Debug for COMPROPSHEETUI {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for COMPROPSHEETUI {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for COMPROPSHEETUI {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMPROPSHEETUI>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for COMPROPSHEETUI {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for COMPROPSHEETUI {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1311,80 +1244,64 @@ pub const COPYFILE_EVENT_SET_PRINTER_DATAEX: u32 = 1u32;
 pub const COPYFILE_FLAG_CLIENT_SPOOLER: u32 = 1u32;
 pub const COPYFILE_FLAG_SERVER_SPOOLER: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CORE_PRINTER_DRIVERA {
     pub CoreDriverGUID: ::windows_core::GUID,
-    pub ftDriverDate: super::super::Foundation::FILETIME,
+    pub ftDriverDate: ::win32_foundation::FILETIME,
     pub dwlDriverVersion: u64,
-    pub szPackageID: [super::super::Foundation::CHAR; 260],
+    pub szPackageID: [::win32_foundation::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CORE_PRINTER_DRIVERA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CORE_PRINTER_DRIVERA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for CORE_PRINTER_DRIVERA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CORE_PRINTER_DRIVERA").field("CoreDriverGUID", &self.CoreDriverGUID).field("ftDriverDate", &self.ftDriverDate).field("dwlDriverVersion", &self.dwlDriverVersion).field("szPackageID", &self.szPackageID).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CORE_PRINTER_DRIVERA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CORE_PRINTER_DRIVERA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CORE_PRINTER_DRIVERA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CORE_PRINTER_DRIVERA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CORE_PRINTER_DRIVERA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CORE_PRINTER_DRIVERW {
     pub CoreDriverGUID: ::windows_core::GUID,
-    pub ftDriverDate: super::super::Foundation::FILETIME,
+    pub ftDriverDate: ::win32_foundation::FILETIME,
     pub dwlDriverVersion: u64,
     pub szPackageID: [u16; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CORE_PRINTER_DRIVERW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CORE_PRINTER_DRIVERW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for CORE_PRINTER_DRIVERW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CORE_PRINTER_DRIVERW").field("CoreDriverGUID", &self.CoreDriverGUID).field("ftDriverDate", &self.ftDriverDate).field("dwlDriverVersion", &self.dwlDriverVersion).field("szPackageID", &self.szPackageID).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CORE_PRINTER_DRIVERW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CORE_PRINTER_DRIVERW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CORE_PRINTER_DRIVERW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CORE_PRINTER_DRIVERW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CORE_PRINTER_DRIVERW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1424,11 +1341,11 @@ pub const CPSFUNC_SET_PSUIPAGE_TITLEA: u32 = 18u32;
 pub const CPSFUNC_SET_PSUIPAGE_TITLEW: u32 = 19u32;
 pub const CPSFUNC_SET_RESULT: u32 = 9u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct CPSUICBPARAM {
     pub cbSize: u16,
     pub Reason: u16,
-    pub hDlg: super::super::Foundation::HWND,
+    pub hDlg: ::win32_foundation::HWND,
     pub pOptItem: *mut OPTITEM,
     pub cOptItem: u16,
     pub Flags: u16,
@@ -1437,59 +1354,59 @@ pub struct CPSUICBPARAM {
     pub UserData: usize,
     pub Result: usize,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for CPSUICBPARAM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for CPSUICBPARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for CPSUICBPARAM {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for CPSUICBPARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CPSUICBPARAM>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for CPSUICBPARAM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for CPSUICBPARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union CPSUICBPARAM_0 {
     pub OldSel: i32,
     pub pOldSel: *mut i8,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for CPSUICBPARAM_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for CPSUICBPARAM_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for CPSUICBPARAM_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for CPSUICBPARAM_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CPSUICBPARAM_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for CPSUICBPARAM_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for CPSUICBPARAM_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1586,158 +1503,147 @@ impl ::core::default::Default for CUSTOMSIZEPARAM {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CallRouterFindFirstPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinterrpc: Param0, fdwfilterflags: u32, fdwoptions: u32, hnotify: Param3, pprinternotifyoptions: *const PRINTER_NOTIFY_OPTIONS) -> u32 {
+pub unsafe fn CallRouterFindFirstPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinterrpc: Param0, fdwfilterflags: u32, fdwoptions: u32, hnotify: Param3, pprinternotifyoptions: *const PRINTER_NOTIFY_OPTIONS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CallRouterFindFirstPrinterChangeNotification(hprinterrpc: super::super::Foundation::HANDLE, fdwfilterflags: u32, fdwoptions: u32, hnotify: super::super::Foundation::HANDLE, pprinternotifyoptions: *const PRINTER_NOTIFY_OPTIONS) -> u32;
+            fn CallRouterFindFirstPrinterChangeNotification(hprinterrpc: ::win32_foundation::HANDLE, fdwfilterflags: u32, fdwoptions: u32, hnotify: ::win32_foundation::HANDLE, pprinternotifyoptions: *const PRINTER_NOTIFY_OPTIONS) -> u32;
         }
         ::core::mem::transmute(CallRouterFindFirstPrinterChangeNotification(hprinterrpc.into_param().abi(), ::core::mem::transmute(fdwfilterflags), ::core::mem::transmute(fdwoptions), hnotify.into_param().abi(), ::core::mem::transmute(pprinternotifyoptions)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ClosePrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn ClosePrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ClosePrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn ClosePrinter(hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ClosePrinter(hprinter.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CloseSpoolFileHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, hspoolfile: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn CloseSpoolFileHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, hspoolfile: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CloseSpoolFileHandle(hprinter: super::super::Foundation::HANDLE, hspoolfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn CloseSpoolFileHandle(hprinter: ::win32_foundation::HANDLE, hspoolfile: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CloseSpoolFileHandle(hprinter.into_param().abi(), hspoolfile.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CommitSpoolData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, hspoolfile: Param1, cbcommit: u32) -> super::super::Foundation::HANDLE {
+pub unsafe fn CommitSpoolData<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, hspoolfile: Param1, cbcommit: u32) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CommitSpoolData(hprinter: super::super::Foundation::HANDLE, hspoolfile: super::super::Foundation::HANDLE, cbcommit: u32) -> super::super::Foundation::HANDLE;
+            fn CommitSpoolData(hprinter: ::win32_foundation::HANDLE, hspoolfile: ::win32_foundation::HANDLE, cbcommit: u32) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(CommitSpoolData(hprinter.into_param().abi(), hspoolfile.into_param().abi(), ::core::mem::transmute(cbcommit)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CommonPropertySheetUIA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwndowner: Param0, pfnpropsheetui: PFNPROPSHEETUI, lparam: Param2, presult: *mut u32) -> i32 {
+pub unsafe fn CommonPropertySheetUIA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(hwndowner: Param0, pfnpropsheetui: PFNPROPSHEETUI, lparam: Param2, presult: *mut u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CommonPropertySheetUIA(hwndowner: super::super::Foundation::HWND, pfnpropsheetui: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM, presult: *mut u32) -> i32;
+            fn CommonPropertySheetUIA(hwndowner: ::win32_foundation::HWND, pfnpropsheetui: ::windows_core::RawPtr, lparam: ::win32_foundation::LPARAM, presult: *mut u32) -> i32;
         }
         ::core::mem::transmute(CommonPropertySheetUIA(hwndowner.into_param().abi(), ::core::mem::transmute(pfnpropsheetui), lparam.into_param().abi(), ::core::mem::transmute(presult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CommonPropertySheetUIW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwndowner: Param0, pfnpropsheetui: PFNPROPSHEETUI, lparam: Param2, presult: *mut u32) -> i32 {
+pub unsafe fn CommonPropertySheetUIW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(hwndowner: Param0, pfnpropsheetui: PFNPROPSHEETUI, lparam: Param2, presult: *mut u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CommonPropertySheetUIW(hwndowner: super::super::Foundation::HWND, pfnpropsheetui: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM, presult: *mut u32) -> i32;
+            fn CommonPropertySheetUIW(hwndowner: ::win32_foundation::HWND, pfnpropsheetui: ::windows_core::RawPtr, lparam: ::win32_foundation::LPARAM, presult: *mut u32) -> i32;
         }
         ::core::mem::transmute(CommonPropertySheetUIW(hwndowner.into_param().abi(), ::core::mem::transmute(pfnpropsheetui), lparam.into_param().abi(), ::core::mem::transmute(presult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ConfigurePortA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, hwnd: Param1, pportname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn ConfigurePortA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, hwnd: Param1, pportname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConfigurePortA(pname: ::windows_core::PCSTR, hwnd: super::super::Foundation::HWND, pportname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn ConfigurePortA(pname: ::windows_core::PCSTR, hwnd: ::win32_foundation::HWND, pportname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ConfigurePortA(pname.into_param().abi(), hwnd.into_param().abi(), pportname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ConfigurePortW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, hwnd: Param1, pportname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn ConfigurePortW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, hwnd: Param1, pportname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConfigurePortW(pname: ::windows_core::PCWSTR, hwnd: super::super::Foundation::HWND, pportname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn ConfigurePortW(pname: ::windows_core::PCWSTR, hwnd: ::win32_foundation::HWND, pportname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ConfigurePortW(pname.into_param().abi(), hwnd.into_param().abi(), pportname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ConnectToPrinterDlg<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, flags: u32) -> super::super::Foundation::HANDLE {
+pub unsafe fn ConnectToPrinterDlg<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, flags: u32) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConnectToPrinterDlg(hwnd: super::super::Foundation::HWND, flags: u32) -> super::super::Foundation::HANDLE;
+            fn ConnectToPrinterDlg(hwnd: ::win32_foundation::HWND, flags: u32) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(ConnectToPrinterDlg(hwnd.into_param().abi(), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CorePrinterDriverInstalledA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::FILETIME>>(pszserver: Param0, pszenvironment: Param1, coredriverguid: Param2, ftdriverdate: Param3, dwldriverversion: u64) -> ::windows_core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn CorePrinterDriverInstalledA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::FILETIME>>(pszserver: Param0, pszenvironment: Param1, coredriverguid: Param2, ftdriverdate: Param3, dwldriverversion: u64) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CorePrinterDriverInstalledA(pszserver: ::windows_core::PCSTR, pszenvironment: ::windows_core::PCSTR, coredriverguid: ::windows_core::GUID, ftdriverdate: super::super::Foundation::FILETIME, dwldriverversion: u64, pbdriverinstalled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn CorePrinterDriverInstalledA(pszserver: ::windows_core::PCSTR, pszenvironment: ::windows_core::PCSTR, coredriverguid: ::windows_core::GUID, ftdriverdate: ::win32_foundation::FILETIME, dwldriverversion: u64, pbdriverinstalled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        CorePrinterDriverInstalledA(pszserver.into_param().abi(), pszenvironment.into_param().abi(), coredriverguid.into_param().abi(), ftdriverdate.into_param().abi(), ::core::mem::transmute(dwldriverversion), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        CorePrinterDriverInstalledA(pszserver.into_param().abi(), pszenvironment.into_param().abi(), coredriverguid.into_param().abi(), ftdriverdate.into_param().abi(), ::core::mem::transmute(dwldriverversion), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CorePrinterDriverInstalledW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::FILETIME>>(pszserver: Param0, pszenvironment: Param1, coredriverguid: Param2, ftdriverdate: Param3, dwldriverversion: u64) -> ::windows_core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn CorePrinterDriverInstalledW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::FILETIME>>(pszserver: Param0, pszenvironment: Param1, coredriverguid: Param2, ftdriverdate: Param3, dwldriverversion: u64) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CorePrinterDriverInstalledW(pszserver: ::windows_core::PCWSTR, pszenvironment: ::windows_core::PCWSTR, coredriverguid: ::windows_core::GUID, ftdriverdate: super::super::Foundation::FILETIME, dwldriverversion: u64, pbdriverinstalled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn CorePrinterDriverInstalledW(pszserver: ::windows_core::PCWSTR, pszenvironment: ::windows_core::PCWSTR, coredriverguid: ::windows_core::GUID, ftdriverdate: ::win32_foundation::FILETIME, dwldriverversion: u64, pbdriverinstalled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        CorePrinterDriverInstalledW(pszserver.into_param().abi(), pszenvironment.into_param().abi(), coredriverguid.into_param().abi(), ftdriverdate.into_param().abi(), ::core::mem::transmute(dwldriverversion), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        CorePrinterDriverInstalledW(pszserver.into_param().abi(), pszenvironment.into_param().abi(), coredriverguid.into_param().abi(), ftdriverdate.into_param().abi(), ::core::mem::transmute(dwldriverversion), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -1756,14 +1662,14 @@ pub unsafe fn CreatePrintAsyncNotifyChannel<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn CreatePrinterIC<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, pdevmode: *const super::Gdi::DEVMODEW) -> super::super::Foundation::HANDLE {
+pub unsafe fn CreatePrinterIC<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, pdevmode: *const super::Gdi::DEVMODEW) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreatePrinterIC(hprinter: super::super::Foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEW) -> super::super::Foundation::HANDLE;
+            fn CreatePrinterIC(hprinter: ::win32_foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEW) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(CreatePrinterIC(hprinter.into_param().abi(), ::core::mem::transmute(pdevmode)))
     }
@@ -1895,83 +1801,75 @@ impl ::core::default::Default for DELETE_PORT_DATA_1 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEVICEPROPERTYHEADER {
     pub cbSize: u16,
     pub Flags: u16,
-    pub hPrinter: super::super::Foundation::HANDLE,
+    pub hPrinter: ::win32_foundation::HANDLE,
     pub pszPrinterName: *mut i8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEVICEPROPERTYHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEVICEPROPERTYHEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DEVICEPROPERTYHEADER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DEVICEPROPERTYHEADER").field("cbSize", &self.cbSize).field("Flags", &self.Flags).field("hPrinter", &self.hPrinter).field("pszPrinterName", &self.pszPrinterName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DEVICEPROPERTYHEADER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEVICEPROPERTYHEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVICEPROPERTYHEADER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DEVICEPROPERTYHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DEVICEPROPERTYHEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct DEVQUERYPRINT_INFO {
     pub cbSize: u16,
     pub Level: u16,
-    pub hPrinter: super::super::Foundation::HANDLE,
+    pub hPrinter: ::win32_foundation::HANDLE,
     pub pDevMode: *mut super::Gdi::DEVMODEA,
     pub pszErrorStr: ::windows_core::PWSTR,
     pub cchErrorStr: u32,
     pub cchNeeded: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for DEVQUERYPRINT_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for DEVQUERYPRINT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for DEVQUERYPRINT_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DEVQUERYPRINT_INFO").field("cbSize", &self.cbSize).field("Level", &self.Level).field("hPrinter", &self.hPrinter).field("pDevMode", &self.pDevMode).field("pszErrorStr", &self.pszErrorStr).field("cchErrorStr", &self.cchErrorStr).field("cchNeeded", &self.cchNeeded).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for DEVQUERYPRINT_INFO {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for DEVQUERYPRINT_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEVQUERYPRINT_INFO>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for DEVQUERYPRINT_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for DEVQUERYPRINT_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2127,68 +2025,68 @@ pub const DI_CHANNEL: u32 = 1u32;
 pub const DI_MEMORYMAP_WRITE: u32 = 1u32;
 pub const DI_READ_SPOOL_JOB: u32 = 3u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct DLGPAGE {
     pub cbSize: u16,
     pub Flags: u16,
-    pub DlgProc: super::super::UI::WindowsAndMessaging::DLGPROC,
+    pub DlgProc: ::win32_ui::WindowsAndMessaging::DLGPROC,
     pub pTabName: *mut i8,
     pub IconID: usize,
     pub Anonymous: DLGPAGE_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for DLGPAGE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for DLGPAGE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for DLGPAGE {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for DLGPAGE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DLGPAGE>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for DLGPAGE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for DLGPAGE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union DLGPAGE_0 {
     pub DlgTemplateID: u16,
-    pub hDlgTemplate: super::super::Foundation::HANDLE,
+    pub hDlgTemplate: ::win32_foundation::HANDLE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for DLGPAGE_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for DLGPAGE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for DLGPAGE_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for DLGPAGE_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DLGPAGE_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for DLGPAGE_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for DLGPAGE_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2229,40 +2127,40 @@ pub const DM_PROMPT_NON_MODAL: u32 = 1073741824u32;
 pub const DM_RESERVED: u32 = 2147483648u32;
 pub const DM_USER_DEFAULT: u32 = 64u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct DOCEVENT_CREATEDCPRE {
     pub pszDriver: ::windows_core::PWSTR,
     pub pszDevice: ::windows_core::PWSTR,
     pub pdm: *mut super::Gdi::DEVMODEW,
-    pub bIC: super::super::Foundation::BOOL,
+    pub bIC: ::win32_foundation::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for DOCEVENT_CREATEDCPRE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for DOCEVENT_CREATEDCPRE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for DOCEVENT_CREATEDCPRE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOCEVENT_CREATEDCPRE").field("pszDriver", &self.pszDriver).field("pszDevice", &self.pszDevice).field("pdm", &self.pdm).field("bIC", &self.bIC).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for DOCEVENT_CREATEDCPRE {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for DOCEVENT_CREATEDCPRE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOCEVENT_CREATEDCPRE>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for DOCEVENT_CREATEDCPRE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for DOCEVENT_CREATEDCPRE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2368,44 +2266,44 @@ pub const DOCUMENTEVENT_XPS_ADDFIXEDPAGEPRINTTICKETPOST: u32 = 10u32;
 pub const DOCUMENTEVENT_XPS_ADDFIXEDPAGEPRINTTICKETPRE: u32 = 9u32;
 pub const DOCUMENTEVENT_XPS_CANCELJOB: u32 = 6u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct DOCUMENTPROPERTYHEADER {
     pub cbSize: u16,
     pub Reserved: u16,
-    pub hPrinter: super::super::Foundation::HANDLE,
+    pub hPrinter: ::win32_foundation::HANDLE,
     pub pszPrinterName: *mut i8,
     pub pdmIn: *mut super::Gdi::DEVMODEA,
     pub pdmOut: *mut super::Gdi::DEVMODEA,
     pub cbOut: u32,
     pub fMode: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for DOCUMENTPROPERTYHEADER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for DOCUMENTPROPERTYHEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for DOCUMENTPROPERTYHEADER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DOCUMENTPROPERTYHEADER").field("cbSize", &self.cbSize).field("Reserved", &self.Reserved).field("hPrinter", &self.hPrinter).field("pszPrinterName", &self.pszPrinterName).field("pdmIn", &self.pdmIn).field("pdmOut", &self.pdmOut).field("cbOut", &self.cbOut).field("fMode", &self.fMode).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for DOCUMENTPROPERTYHEADER {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for DOCUMENTPROPERTYHEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DOCUMENTPROPERTYHEADER>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for DOCUMENTPROPERTYHEADER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for DOCUMENTPROPERTYHEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2994,7 +2892,6 @@ impl ::core::default::Default for DRIVER_INFO_5W {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRIVER_INFO_6A {
     pub cVersion: u32,
     pub pName: ::windows_core::PSTR,
@@ -3007,22 +2904,19 @@ pub struct DRIVER_INFO_6A {
     pub pMonitorName: ::windows_core::PSTR,
     pub pDefaultDataType: ::windows_core::PSTR,
     pub pszzPreviousNames: ::windows_core::PSTR,
-    pub ftDriverDate: super::super::Foundation::FILETIME,
+    pub ftDriverDate: ::win32_foundation::FILETIME,
     pub dwlDriverVersion: u64,
     pub pszMfgName: ::windows_core::PSTR,
     pub pszOEMUrl: ::windows_core::PSTR,
     pub pszHardwareID: ::windows_core::PSTR,
     pub pszProvider: ::windows_core::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRIVER_INFO_6A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRIVER_INFO_6A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DRIVER_INFO_6A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DRIVER_INFO_6A")
@@ -3046,26 +2940,21 @@ impl ::core::fmt::Debug for DRIVER_INFO_6A {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DRIVER_INFO_6A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DRIVER_INFO_6A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DRIVER_INFO_6A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DRIVER_INFO_6A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DRIVER_INFO_6A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRIVER_INFO_6W {
     pub cVersion: u32,
     pub pName: ::windows_core::PWSTR,
@@ -3078,22 +2967,19 @@ pub struct DRIVER_INFO_6W {
     pub pMonitorName: ::windows_core::PWSTR,
     pub pDefaultDataType: ::windows_core::PWSTR,
     pub pszzPreviousNames: ::windows_core::PWSTR,
-    pub ftDriverDate: super::super::Foundation::FILETIME,
+    pub ftDriverDate: ::win32_foundation::FILETIME,
     pub dwlDriverVersion: u64,
     pub pszMfgName: ::windows_core::PWSTR,
     pub pszOEMUrl: ::windows_core::PWSTR,
     pub pszHardwareID: ::windows_core::PWSTR,
     pub pszProvider: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRIVER_INFO_6W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRIVER_INFO_6W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DRIVER_INFO_6W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DRIVER_INFO_6W")
@@ -3117,26 +3003,21 @@ impl ::core::fmt::Debug for DRIVER_INFO_6W {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DRIVER_INFO_6W {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DRIVER_INFO_6W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DRIVER_INFO_6W>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DRIVER_INFO_6W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DRIVER_INFO_6W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRIVER_INFO_8A {
     pub cVersion: u32,
     pub pName: ::windows_core::PSTR,
@@ -3149,7 +3030,7 @@ pub struct DRIVER_INFO_8A {
     pub pMonitorName: ::windows_core::PSTR,
     pub pDefaultDataType: ::windows_core::PSTR,
     pub pszzPreviousNames: ::windows_core::PSTR,
-    pub ftDriverDate: super::super::Foundation::FILETIME,
+    pub ftDriverDate: ::win32_foundation::FILETIME,
     pub dwlDriverVersion: u64,
     pub pszMfgName: ::windows_core::PSTR,
     pub pszOEMUrl: ::windows_core::PSTR,
@@ -3161,18 +3042,15 @@ pub struct DRIVER_INFO_8A {
     pub pszInfPath: ::windows_core::PSTR,
     pub dwPrinterDriverAttributes: u32,
     pub pszzCoreDriverDependencies: ::windows_core::PSTR,
-    pub ftMinInboxDriverVerDate: super::super::Foundation::FILETIME,
+    pub ftMinInboxDriverVerDate: ::win32_foundation::FILETIME,
     pub dwlMinInboxDriverVerVersion: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRIVER_INFO_8A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRIVER_INFO_8A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DRIVER_INFO_8A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DRIVER_INFO_8A")
@@ -3204,26 +3082,21 @@ impl ::core::fmt::Debug for DRIVER_INFO_8A {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DRIVER_INFO_8A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DRIVER_INFO_8A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DRIVER_INFO_8A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DRIVER_INFO_8A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DRIVER_INFO_8A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRIVER_INFO_8W {
     pub cVersion: u32,
     pub pName: ::windows_core::PWSTR,
@@ -3236,7 +3109,7 @@ pub struct DRIVER_INFO_8W {
     pub pMonitorName: ::windows_core::PWSTR,
     pub pDefaultDataType: ::windows_core::PWSTR,
     pub pszzPreviousNames: ::windows_core::PWSTR,
-    pub ftDriverDate: super::super::Foundation::FILETIME,
+    pub ftDriverDate: ::win32_foundation::FILETIME,
     pub dwlDriverVersion: u64,
     pub pszMfgName: ::windows_core::PWSTR,
     pub pszOEMUrl: ::windows_core::PWSTR,
@@ -3248,18 +3121,15 @@ pub struct DRIVER_INFO_8W {
     pub pszInfPath: ::windows_core::PWSTR,
     pub dwPrinterDriverAttributes: u32,
     pub pszzCoreDriverDependencies: ::windows_core::PWSTR,
-    pub ftMinInboxDriverVerDate: super::super::Foundation::FILETIME,
+    pub ftMinInboxDriverVerDate: ::win32_foundation::FILETIME,
     pub dwlMinInboxDriverVerVersion: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRIVER_INFO_8W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRIVER_INFO_8W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DRIVER_INFO_8W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DRIVER_INFO_8W")
@@ -3291,19 +3161,15 @@ impl ::core::fmt::Debug for DRIVER_INFO_8W {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DRIVER_INFO_8W {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DRIVER_INFO_8W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DRIVER_INFO_8W>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DRIVER_INFO_8W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DRIVER_INFO_8W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3401,294 +3267,273 @@ pub const DSPRINT_PUBLISH: u32 = 1u32;
 pub const DSPRINT_REPUBLISH: u32 = 8u32;
 pub const DSPRINT_UNPUBLISH: u32 = 4u32;
 pub const DSPRINT_UPDATE: u32 = 2u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteFormA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pformname: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteFormA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pformname: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeleteFormA(hprinter: super::super::Foundation::HANDLE, pformname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn DeleteFormA(hprinter: ::win32_foundation::HANDLE, pformname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeleteFormA(hprinter.into_param().abi(), pformname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteFormW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pformname: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteFormW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pformname: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeleteFormW(hprinter: super::super::Foundation::HANDLE, pformname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn DeleteFormW(hprinter: ::win32_foundation::HANDLE, pformname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeleteFormW(hprinter.into_param().abi(), pformname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteJobNamedProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, jobid: u32, pszname: Param2) -> u32 {
+pub unsafe fn DeleteJobNamedProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, jobid: u32, pszname: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeleteJobNamedProperty(hprinter: super::super::Foundation::HANDLE, jobid: u32, pszname: ::windows_core::PCWSTR) -> u32;
+            fn DeleteJobNamedProperty(hprinter: ::win32_foundation::HANDLE, jobid: u32, pszname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(DeleteJobNamedProperty(hprinter.into_param().abi(), ::core::mem::transmute(jobid), pszname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteMonitorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pmonitorname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteMonitorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pmonitorname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeleteMonitorA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pmonitorname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn DeleteMonitorA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pmonitorname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeleteMonitorA(pname.into_param().abi(), penvironment.into_param().abi(), pmonitorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteMonitorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pmonitorname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteMonitorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pmonitorname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeleteMonitorW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pmonitorname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn DeleteMonitorW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pmonitorname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeleteMonitorW(pname.into_param().abi(), penvironment.into_param().abi(), pmonitorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePortA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, hwnd: Param1, pportname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePortA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, hwnd: Param1, pportname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePortA(pname: ::windows_core::PCSTR, hwnd: super::super::Foundation::HWND, pportname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn DeletePortA(pname: ::windows_core::PCSTR, hwnd: ::win32_foundation::HWND, pportname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePortA(pname.into_param().abi(), hwnd.into_param().abi(), pportname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePortW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, hwnd: Param1, pportname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePortW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, hwnd: Param1, pportname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePortW(pname: ::windows_core::PCWSTR, hwnd: super::super::Foundation::HWND, pportname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn DeletePortW(pname: ::windows_core::PCWSTR, hwnd: ::win32_foundation::HWND, pportname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePortW(pname.into_param().abi(), hwnd.into_param().abi(), pportname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrintProcessorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pprintprocessorname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrintProcessorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pprintprocessorname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrintProcessorA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pprintprocessorname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn DeletePrintProcessorA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pprintprocessorname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrintProcessorA(pname.into_param().abi(), penvironment.into_param().abi(), pprintprocessorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrintProcessorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pprintprocessorname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrintProcessorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pprintprocessorname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrintProcessorW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pprintprocessorname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn DeletePrintProcessorW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pprintprocessorname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrintProcessorW(pname.into_param().abi(), penvironment.into_param().abi(), pprintprocessorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrintProvidorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pprintprovidorname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrintProvidorA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pprintprovidorname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrintProvidorA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pprintprovidorname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn DeletePrintProvidorA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pprintprovidorname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrintProvidorA(pname.into_param().abi(), penvironment.into_param().abi(), pprintprovidorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrintProvidorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pprintprovidorname: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrintProvidorW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pprintprovidorname: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrintProvidorW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pprintprovidorname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn DeletePrintProvidorW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pprintprovidorname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrintProvidorW(pname.into_param().abi(), penvironment.into_param().abi(), pprintprovidorname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn DeletePrinter(hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrinter(hprinter.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterConnectionA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrinterConnectionA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterConnectionA(pname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn DeletePrinterConnectionA(pname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrinterConnectionA(pname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterConnectionW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrinterConnectionW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterConnectionW(pname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn DeletePrinterConnectionW(pname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrinterConnectionW(pname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterDataA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pvaluename: Param1) -> u32 {
+pub unsafe fn DeletePrinterDataA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pvaluename: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterDataA(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows_core::PCSTR) -> u32;
+            fn DeletePrinterDataA(hprinter: ::win32_foundation::HANDLE, pvaluename: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(DeletePrinterDataA(hprinter.into_param().abi(), pvaluename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterDataExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2) -> u32 {
+pub unsafe fn DeletePrinterDataExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterDataExA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCSTR, pvaluename: ::windows_core::PCSTR) -> u32;
+            fn DeletePrinterDataExA(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCSTR, pvaluename: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(DeletePrinterDataExA(hprinter.into_param().abi(), pkeyname.into_param().abi(), pvaluename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterDataExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2) -> u32 {
+pub unsafe fn DeletePrinterDataExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterDataExW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, pvaluename: ::windows_core::PCWSTR) -> u32;
+            fn DeletePrinterDataExW(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, pvaluename: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(DeletePrinterDataExW(hprinter.into_param().abi(), pkeyname.into_param().abi(), pvaluename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterDataW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pvaluename: Param1) -> u32 {
+pub unsafe fn DeletePrinterDataW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pvaluename: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterDataW(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows_core::PCWSTR) -> u32;
+            fn DeletePrinterDataW(hprinter: ::win32_foundation::HANDLE, pvaluename: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(DeletePrinterDataW(hprinter.into_param().abi(), pvaluename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterDriverA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pdrivername: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrinterDriverA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pdrivername: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterDriverA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pdrivername: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn DeletePrinterDriverA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pdrivername: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrinterDriverA(pname.into_param().abi(), penvironment.into_param().abi(), pdrivername.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterDriverExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pdrivername: Param2, dwdeleteflag: u32, dwversionflag: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrinterDriverExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, pdrivername: Param2, dwdeleteflag: u32, dwversionflag: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterDriverExA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pdrivername: ::windows_core::PCSTR, dwdeleteflag: u32, dwversionflag: u32) -> super::super::Foundation::BOOL;
+            fn DeletePrinterDriverExA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, pdrivername: ::windows_core::PCSTR, dwdeleteflag: u32, dwversionflag: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrinterDriverExA(pname.into_param().abi(), penvironment.into_param().abi(), pdrivername.into_param().abi(), ::core::mem::transmute(dwdeleteflag), ::core::mem::transmute(dwversionflag)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterDriverExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pdrivername: Param2, dwdeleteflag: u32, dwversionflag: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrinterDriverExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pdrivername: Param2, dwdeleteflag: u32, dwversionflag: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterDriverExW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pdrivername: ::windows_core::PCWSTR, dwdeleteflag: u32, dwversionflag: u32) -> super::super::Foundation::BOOL;
+            fn DeletePrinterDriverExW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pdrivername: ::windows_core::PCWSTR, dwdeleteflag: u32, dwversionflag: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrinterDriverExW(pname.into_param().abi(), penvironment.into_param().abi(), pdrivername.into_param().abi(), ::core::mem::transmute(dwdeleteflag), ::core::mem::transmute(dwversionflag)))
     }
@@ -3721,112 +3566,108 @@ pub unsafe fn DeletePrinterDriverPackageW<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterDriverW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pdrivername: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrinterDriverW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, pdrivername: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterDriverW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pdrivername: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn DeletePrinterDriverW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, pdrivername: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrinterDriverW(pname.into_param().abi(), penvironment.into_param().abi(), pdrivername.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterIC<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinteric: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeletePrinterIC<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinteric: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterIC(hprinteric: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn DeletePrinterIC(hprinteric: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeletePrinterIC(hprinteric.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterKeyA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1) -> u32 {
+pub unsafe fn DeletePrinterKeyA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterKeyA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCSTR) -> u32;
+            fn DeletePrinterKeyA(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(DeletePrinterKeyA(hprinter.into_param().abi(), pkeyname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeletePrinterKeyW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1) -> u32 {
+pub unsafe fn DeletePrinterKeyW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeletePrinterKeyW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCWSTR) -> u32;
+            fn DeletePrinterKeyW(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(DeletePrinterKeyW(hprinter.into_param().abi(), pkeyname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn DevQueryPrint<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, pdevmode: *const super::Gdi::DEVMODEA, presid: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn DevQueryPrint<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, pdevmode: *const super::Gdi::DEVMODEA, presid: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DevQueryPrint(hprinter: super::super::Foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEA, presid: *mut u32) -> super::super::Foundation::BOOL;
+            fn DevQueryPrint(hprinter: ::win32_foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEA, presid: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DevQueryPrint(hprinter.into_param().abi(), ::core::mem::transmute(pdevmode), ::core::mem::transmute(presid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn DevQueryPrintEx(pdqpinfo: *mut DEVQUERYPRINT_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn DevQueryPrintEx(pdqpinfo: *mut DEVQUERYPRINT_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DevQueryPrintEx(pdqpinfo: *mut DEVQUERYPRINT_INFO) -> super::super::Foundation::BOOL;
+            fn DevQueryPrintEx(pdqpinfo: *mut DEVQUERYPRINT_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DevQueryPrintEx(::core::mem::transmute(pdqpinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn DocumentPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, hprinter: Param1, pdevicename: Param2, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA, fmode: u32) -> i32 {
+pub unsafe fn DocumentPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, hprinter: Param1, pdevicename: Param2, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA, fmode: u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DocumentPropertiesA(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows_core::PCSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA, fmode: u32) -> i32;
+            fn DocumentPropertiesA(hwnd: ::win32_foundation::HWND, hprinter: ::win32_foundation::HANDLE, pdevicename: ::windows_core::PCSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA, fmode: u32) -> i32;
         }
         ::core::mem::transmute(DocumentPropertiesA(hwnd.into_param().abi(), hprinter.into_param().abi(), pdevicename.into_param().abi(), ::core::mem::transmute(pdevmodeoutput), ::core::mem::transmute(pdevmodeinput), ::core::mem::transmute(fmode)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn DocumentPropertiesW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, hprinter: Param1, pdevicename: Param2, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW, fmode: u32) -> i32 {
+pub unsafe fn DocumentPropertiesW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, hprinter: Param1, pdevicename: Param2, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW, fmode: u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DocumentPropertiesW(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows_core::PCWSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW, fmode: u32) -> i32;
+            fn DocumentPropertiesW(hwnd: ::win32_foundation::HWND, hprinter: ::win32_foundation::HANDLE, pdevicename: ::windows_core::PCWSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW, fmode: u32) -> i32;
         }
         ::core::mem::transmute(DocumentPropertiesW(hwnd.into_param().abi(), hprinter.into_param().abi(), pdevicename.into_param().abi(), ::core::mem::transmute(pdevmodeoutput), ::core::mem::transmute(pdevmodeinput), ::core::mem::transmute(fmode)))
     }
@@ -3903,8 +3744,8 @@ pub const ECBF_OVERLAY_ECBICON_IF_CHECKED: u32 = 16u32;
 pub const ECBF_OVERLAY_NO_ICON: u32 = 64u32;
 pub const ECBF_OVERLAY_STOP_ICON: u32 = 32u32;
 pub const ECBF_OVERLAY_WARNING_ICON: u32 = 8u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type EMFPLAYPROC = ::core::option::Option<unsafe extern "system" fn(param0: super::Gdi::HDC, param1: i32, param2: super::super::Foundation::HANDLE) -> i32>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type EMFPLAYPROC = ::core::option::Option<unsafe extern "system" fn(param0: super::Gdi::HDC, param1: i32, param2: ::win32_foundation::HANDLE) -> i32>;
 pub const EMF_PP_COLOR_OPTIMIZATION: u32 = 1u32;
 pub const EPF_ICONID_AS_HICON: u32 = 8u32;
 pub const EPF_INCL_SETUP_TITLE: u32 = 2u32;
@@ -4105,7 +3946,7 @@ impl ::core::default::Default for EXTCHKBOX {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct EXTPUSH {
     pub cbSize: u16,
     pub Flags: u16,
@@ -4115,91 +3956,91 @@ pub struct EXTPUSH {
     pub Anonymous2: EXTPUSH_1,
     pub dwReserved: [usize; 3],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for EXTPUSH {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for EXTPUSH {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for EXTPUSH {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for EXTPUSH {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTPUSH>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for EXTPUSH {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for EXTPUSH {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union EXTPUSH_0 {
-    pub DlgProc: super::super::UI::WindowsAndMessaging::DLGPROC,
-    pub pfnCallBack: super::super::Foundation::FARPROC,
+    pub DlgProc: ::win32_ui::WindowsAndMessaging::DLGPROC,
+    pub pfnCallBack: ::win32_foundation::FARPROC,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for EXTPUSH_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for EXTPUSH_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for EXTPUSH_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for EXTPUSH_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTPUSH_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for EXTPUSH_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for EXTPUSH_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union EXTPUSH_1 {
     pub DlgTemplateID: u16,
-    pub hDlgTemplate: super::super::Foundation::HANDLE,
+    pub hDlgTemplate: ::win32_foundation::HANDLE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for EXTPUSH_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for EXTPUSH_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for EXTPUSH_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for EXTPUSH_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EXTPUSH_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for EXTPUSH_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for EXTPUSH_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4388,364 +4229,339 @@ impl ::core::fmt::Debug for EXpsJobConsumption {
     }
 }
 pub const E_VERSION_NOT_SUPPORTED: u32 = 2147745793u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EndDocPrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn EndDocPrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EndDocPrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn EndDocPrinter(hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EndDocPrinter(hprinter.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EndPagePrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn EndPagePrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EndPagePrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn EndPagePrinter(hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EndPagePrinter(hprinter.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumFormsA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumFormsA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumFormsA(hprinter: super::super::Foundation::HANDLE, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumFormsA(hprinter: ::win32_foundation::HANDLE, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumFormsA(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pform), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumFormsW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumFormsW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumFormsW(hprinter: super::super::Foundation::HANDLE, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumFormsW(hprinter: ::win32_foundation::HANDLE, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumFormsW(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pform), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumJobNamedProperties<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, jobid: u32, pcproperties: *mut u32, ppproperties: *mut *mut PrintNamedProperty) -> u32 {
+pub unsafe fn EnumJobNamedProperties<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, jobid: u32, pcproperties: *mut u32, ppproperties: *mut *mut PrintNamedProperty) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumJobNamedProperties(hprinter: super::super::Foundation::HANDLE, jobid: u32, pcproperties: *mut u32, ppproperties: *mut *mut PrintNamedProperty) -> u32;
+            fn EnumJobNamedProperties(hprinter: ::win32_foundation::HANDLE, jobid: u32, pcproperties: *mut u32, ppproperties: *mut *mut PrintNamedProperty) -> u32;
         }
         ::core::mem::transmute(EnumJobNamedProperties(hprinter.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(pcproperties), ::core::mem::transmute(ppproperties)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumJobsA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumJobsA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumJobsA(hprinter: super::super::Foundation::HANDLE, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumJobsA(hprinter: ::win32_foundation::HANDLE, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumJobsA(hprinter.into_param().abi(), ::core::mem::transmute(firstjob), ::core::mem::transmute(nojobs), ::core::mem::transmute(level), ::core::mem::transmute(pjob), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumJobsW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumJobsW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumJobsW(hprinter: super::super::Foundation::HANDLE, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumJobsW(hprinter: ::win32_foundation::HANDLE, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumJobsW(hprinter.into_param().abi(), ::core::mem::transmute(firstjob), ::core::mem::transmute(nojobs), ::core::mem::transmute(level), ::core::mem::transmute(pjob), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumMonitorsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumMonitorsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumMonitorsA(pname: ::windows_core::PCSTR, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumMonitorsA(pname: ::windows_core::PCSTR, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumMonitorsA(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pmonitor), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumMonitorsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumMonitorsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumMonitorsW(pname: ::windows_core::PCWSTR, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumMonitorsW(pname: ::windows_core::PCWSTR, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumMonitorsW(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pmonitor), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPortsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPortsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPortsA(pname: ::windows_core::PCSTR, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPortsA(pname: ::windows_core::PCSTR, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPortsA(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pport), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPortsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPortsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPortsW(pname: ::windows_core::PCWSTR, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPortsW(pname: ::windows_core::PCWSTR, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPortsW(pname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pport), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrintProcessorDatatypesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, pprintprocessorname: Param1, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPrintProcessorDatatypesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, pprintprocessorname: Param1, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrintProcessorDatatypesA(pname: ::windows_core::PCSTR, pprintprocessorname: ::windows_core::PCSTR, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPrintProcessorDatatypesA(pname: ::windows_core::PCSTR, pprintprocessorname: ::windows_core::PCSTR, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPrintProcessorDatatypesA(pname.into_param().abi(), pprintprocessorname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdatatypes), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrintProcessorDatatypesW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, pprintprocessorname: Param1, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPrintProcessorDatatypesW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, pprintprocessorname: Param1, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrintProcessorDatatypesW(pname: ::windows_core::PCWSTR, pprintprocessorname: ::windows_core::PCWSTR, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPrintProcessorDatatypesW(pname: ::windows_core::PCWSTR, pprintprocessorname: ::windows_core::PCWSTR, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPrintProcessorDatatypesW(pname.into_param().abi(), pprintprocessorname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdatatypes), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrintProcessorsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPrintProcessorsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrintProcessorsA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPrintProcessorsA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPrintProcessorsA(pname.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprintprocessorinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrintProcessorsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPrintProcessorsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrintProcessorsW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPrintProcessorsW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPrintProcessorsW(pname.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprintprocessorinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrinterDataA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, dwindex: u32, pvaluename: ::windows_core::PSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: &mut [u8], pcbdata: *mut u32) -> u32 {
+pub unsafe fn EnumPrinterDataA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, dwindex: u32, pvaluename: ::windows_core::PSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: &mut [u8], pcbdata: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrinterDataA(hprinter: super::super::Foundation::HANDLE, dwindex: u32, pvaluename: ::windows_core::PSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: *mut u8, cbdata: u32, pcbdata: *mut u32) -> u32;
+            fn EnumPrinterDataA(hprinter: ::win32_foundation::HANDLE, dwindex: u32, pvaluename: ::windows_core::PSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: *mut u8, cbdata: u32, pcbdata: *mut u32) -> u32;
         }
         ::core::mem::transmute(EnumPrinterDataA(hprinter.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(pvaluename), ::core::mem::transmute(cbvaluename), ::core::mem::transmute(pcbvaluename), ::core::mem::transmute(ptype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pdata)), pdata.len() as _, ::core::mem::transmute(pcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrinterDataExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32 {
+pub unsafe fn EnumPrinterDataExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrinterDataExA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCSTR, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32;
+            fn EnumPrinterDataExA(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCSTR, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32;
         }
         ::core::mem::transmute(EnumPrinterDataExA(hprinter.into_param().abi(), pkeyname.into_param().abi(), ::core::mem::transmute(penumvalues), ::core::mem::transmute(cbenumvalues), ::core::mem::transmute(pcbenumvalues), ::core::mem::transmute(pnenumvalues)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrinterDataExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32 {
+pub unsafe fn EnumPrinterDataExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrinterDataExW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32;
+            fn EnumPrinterDataExW(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32;
         }
         ::core::mem::transmute(EnumPrinterDataExW(hprinter.into_param().abi(), pkeyname.into_param().abi(), ::core::mem::transmute(penumvalues), ::core::mem::transmute(cbenumvalues), ::core::mem::transmute(pcbenumvalues), ::core::mem::transmute(pnenumvalues)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrinterDataW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, dwindex: u32, pvaluename: ::windows_core::PWSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: &mut [u8], pcbdata: *mut u32) -> u32 {
+pub unsafe fn EnumPrinterDataW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, dwindex: u32, pvaluename: ::windows_core::PWSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: &mut [u8], pcbdata: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrinterDataW(hprinter: super::super::Foundation::HANDLE, dwindex: u32, pvaluename: ::windows_core::PWSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: *mut u8, cbdata: u32, pcbdata: *mut u32) -> u32;
+            fn EnumPrinterDataW(hprinter: ::win32_foundation::HANDLE, dwindex: u32, pvaluename: ::windows_core::PWSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: *mut u8, cbdata: u32, pcbdata: *mut u32) -> u32;
         }
         ::core::mem::transmute(EnumPrinterDataW(hprinter.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(pvaluename), ::core::mem::transmute(cbvaluename), ::core::mem::transmute(pcbvaluename), ::core::mem::transmute(ptype), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pdata)), pdata.len() as _, ::core::mem::transmute(pcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrinterDriversA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPrinterDriversA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrinterDriversA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPrinterDriversA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPrinterDriversA(pname.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrinterDriversW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPrinterDriversW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrinterDriversW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPrinterDriversW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPrinterDriversW(pname.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrinterKeyA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, psubkey: ::windows_core::PSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32 {
+pub unsafe fn EnumPrinterKeyA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, psubkey: ::windows_core::PSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrinterKeyA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCSTR, psubkey: ::windows_core::PSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32;
+            fn EnumPrinterKeyA(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCSTR, psubkey: ::windows_core::PSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32;
         }
         ::core::mem::transmute(EnumPrinterKeyA(hprinter.into_param().abi(), pkeyname.into_param().abi(), ::core::mem::transmute(psubkey), ::core::mem::transmute(cbsubkey), ::core::mem::transmute(pcbsubkey)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrinterKeyW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, psubkey: ::windows_core::PWSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32 {
+pub unsafe fn EnumPrinterKeyW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, psubkey: ::windows_core::PWSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrinterKeyW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, psubkey: ::windows_core::PWSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32;
+            fn EnumPrinterKeyW(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, psubkey: ::windows_core::PWSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32;
         }
         ::core::mem::transmute(EnumPrinterKeyW(hprinter.into_param().abi(), pkeyname.into_param().abi(), ::core::mem::transmute(psubkey), ::core::mem::transmute(cbsubkey), ::core::mem::transmute(pcbsubkey)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrintersA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(flags: u32, name: Param1, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPrintersA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(flags: u32, name: Param1, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrintersA(flags: u32, name: ::windows_core::PCSTR, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPrintersA(flags: u32, name: ::windows_core::PCSTR, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPrintersA(::core::mem::transmute(flags), name.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprinterenum), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumPrintersW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(flags: u32, name: Param1, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumPrintersW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(flags: u32, name: Param1, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumPrintersW(flags: u32, name: ::windows_core::PCWSTR, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EnumPrintersW(flags: u32, name: ::windows_core::PCWSTR, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumPrintersW(::core::mem::transmute(flags), name.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprinterenum), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pcreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn ExtDeviceMode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, hinst: Param1, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevicename: Param3, pport: Param4, pdevmodeinput: *const super::Gdi::DEVMODEA, pprofile: Param6, fmode: u32) -> i32 {
+pub unsafe fn ExtDeviceMode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, hinst: Param1, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevicename: Param3, pport: Param4, pdevmodeinput: *const super::Gdi::DEVMODEA, pprofile: Param6, fmode: u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ExtDeviceMode(hwnd: super::super::Foundation::HWND, hinst: super::super::Foundation::HANDLE, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevicename: ::windows_core::PCSTR, pport: ::windows_core::PCSTR, pdevmodeinput: *const super::Gdi::DEVMODEA, pprofile: ::windows_core::PCSTR, fmode: u32) -> i32;
+            fn ExtDeviceMode(hwnd: ::win32_foundation::HWND, hinst: ::win32_foundation::HANDLE, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevicename: ::windows_core::PCSTR, pport: ::windows_core::PCSTR, pdevmodeinput: *const super::Gdi::DEVMODEA, pprofile: ::windows_core::PCSTR, fmode: u32) -> i32;
         }
         ::core::mem::transmute(ExtDeviceMode(hwnd.into_param().abi(), hinst.into_param().abi(), ::core::mem::transmute(pdevmodeoutput), pdevicename.into_param().abi(), pport.into_param().abi(), ::core::mem::transmute(pdevmodeinput), pprofile.into_param().abi(), ::core::mem::transmute(fmode)))
     }
@@ -4781,92 +4597,75 @@ pub const FONT_FL_SOFTFONT: u32 = 4u32;
 pub const FONT_FL_UFM: u32 = 1u32;
 pub const FORM_BUILTIN: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FORM_INFO_1A {
     pub Flags: u32,
     pub pName: ::windows_core::PSTR,
-    pub Size: super::super::Foundation::SIZE,
-    pub ImageableArea: super::super::Foundation::RECTL,
+    pub Size: ::win32_foundation::SIZE,
+    pub ImageableArea: ::win32_foundation::RECTL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FORM_INFO_1A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FORM_INFO_1A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FORM_INFO_1A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FORM_INFO_1A").field("Flags", &self.Flags).field("pName", &self.pName).field("Size", &self.Size).field("ImageableArea", &self.ImageableArea).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FORM_INFO_1A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FORM_INFO_1A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FORM_INFO_1A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FORM_INFO_1A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FORM_INFO_1A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FORM_INFO_1W {
     pub Flags: u32,
     pub pName: ::windows_core::PWSTR,
-    pub Size: super::super::Foundation::SIZE,
-    pub ImageableArea: super::super::Foundation::RECTL,
+    pub Size: ::win32_foundation::SIZE,
+    pub ImageableArea: ::win32_foundation::RECTL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FORM_INFO_1W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FORM_INFO_1W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FORM_INFO_1W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FORM_INFO_1W").field("Flags", &self.Flags).field("pName", &self.pName).field("Size", &self.Size).field("ImageableArea", &self.ImageableArea).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FORM_INFO_1W {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FORM_INFO_1W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FORM_INFO_1W>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FORM_INFO_1W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FORM_INFO_1W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FORM_INFO_2A {
     pub Flags: u32,
     pub pName: ::windows_core::PCSTR,
-    pub Size: super::super::Foundation::SIZE,
-    pub ImageableArea: super::super::Foundation::RECTL,
+    pub Size: ::win32_foundation::SIZE,
+    pub ImageableArea: ::win32_foundation::RECTL,
     pub pKeyword: ::windows_core::PCSTR,
     pub StringType: u32,
     pub pMuiDll: ::windows_core::PCSTR,
@@ -4874,45 +4673,37 @@ pub struct FORM_INFO_2A {
     pub pDisplayName: ::windows_core::PCSTR,
     pub wLangId: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FORM_INFO_2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FORM_INFO_2A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FORM_INFO_2A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FORM_INFO_2A").field("Flags", &self.Flags).field("pName", &self.pName).field("Size", &self.Size).field("ImageableArea", &self.ImageableArea).field("pKeyword", &self.pKeyword).field("StringType", &self.StringType).field("pMuiDll", &self.pMuiDll).field("dwResourceId", &self.dwResourceId).field("pDisplayName", &self.pDisplayName).field("wLangId", &self.wLangId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FORM_INFO_2A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FORM_INFO_2A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FORM_INFO_2A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FORM_INFO_2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FORM_INFO_2A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FORM_INFO_2W {
     pub Flags: u32,
     pub pName: ::windows_core::PCWSTR,
-    pub Size: super::super::Foundation::SIZE,
-    pub ImageableArea: super::super::Foundation::RECTL,
+    pub Size: ::win32_foundation::SIZE,
+    pub ImageableArea: ::win32_foundation::RECTL,
     pub pKeyword: ::windows_core::PCSTR,
     pub StringType: u32,
     pub pMuiDll: ::windows_core::PCWSTR,
@@ -4920,33 +4711,26 @@ pub struct FORM_INFO_2W {
     pub pDisplayName: ::windows_core::PCWSTR,
     pub wLangId: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FORM_INFO_2W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FORM_INFO_2W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FORM_INFO_2W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FORM_INFO_2W").field("Flags", &self.Flags).field("pName", &self.pName).field("Size", &self.Size).field("ImageableArea", &self.ImageableArea).field("pKeyword", &self.pKeyword).field("StringType", &self.StringType).field("pMuiDll", &self.pMuiDll).field("dwResourceId", &self.dwResourceId).field("pDisplayName", &self.pDisplayName).field("wLangId", &self.wLangId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FORM_INFO_2W {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FORM_INFO_2W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FORM_INFO_2W>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FORM_INFO_2W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FORM_INFO_2W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4954,56 +4738,52 @@ impl ::core::default::Default for FORM_INFO_2W {
 }
 pub const FORM_PRINTER: u32 = 2u32;
 pub const FORM_USER: u32 = 0u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindClosePrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hchange: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn FindClosePrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hchange: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FindClosePrinterChangeNotification(hchange: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn FindClosePrinterChangeNotification(hchange: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FindClosePrinterChangeNotification(hchange.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindFirstPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, fdwfilter: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void) -> super::super::Foundation::HANDLE {
+pub unsafe fn FindFirstPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, fdwfilter: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FindFirstPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, fdwfilter: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void) -> super::super::Foundation::HANDLE;
+            fn FindFirstPrinterChangeNotification(hprinter: ::win32_foundation::HANDLE, fdwfilter: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(FindFirstPrinterChangeNotification(hprinter.into_param().abi(), ::core::mem::transmute(fdwfilter), ::core::mem::transmute(fdwoptions), ::core::mem::transmute(pprinternotifyoptions)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FindNextPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hchange: Param0, pdwchange: *mut u32, pvreserved: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FindNextPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hchange: Param0, pdwchange: *mut u32, pvreserved: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FindNextPrinterChangeNotification(hchange: super::super::Foundation::HANDLE, pdwchange: *mut u32, pvreserved: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn FindNextPrinterChangeNotification(hchange: ::win32_foundation::HANDLE, pdwchange: *mut u32, pvreserved: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FindNextPrinterChangeNotification(hchange.into_param().abi(), ::core::mem::transmute(pdwchange), ::core::mem::transmute(pvreserved), ::core::mem::transmute(ppprinternotifyinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FlushPrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32, csleep: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FlushPrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32, csleep: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FlushPrinter(hprinter: super::super::Foundation::HANDLE, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32, csleep: u32) -> super::super::Foundation::BOOL;
+            fn FlushPrinter(hprinter: ::win32_foundation::HANDLE, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32, csleep: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FlushPrinter(hprinter.into_param().abi(), ::core::mem::transmute(pbuf), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcwritten), ::core::mem::transmute(csleep)))
     }
@@ -5036,14 +4816,13 @@ pub unsafe fn FreePrintPropertyValue(pvalue: *mut PrintPropertyValue) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FreePrinterNotifyInfo(pprinternotifyinfo: *const PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn FreePrinterNotifyInfo(pprinternotifyinfo: *const PRINTER_NOTIFY_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FreePrinterNotifyInfo(pprinternotifyinfo: *const PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL;
+            fn FreePrinterNotifyInfo(pprinternotifyinfo: *const PRINTER_NOTIFY_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FreePrinterNotifyInfo(::core::mem::transmute(pprinternotifyinfo)))
     }
@@ -5083,168 +4862,161 @@ impl ::core::default::Default for GLYPHRUN {
 pub const GPD_OEMCUSTOMDATA: u32 = 1u32;
 pub const GUID_DEVINTERFACE_IPPUSB_PRINT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf2f40381_f46d_4e51_bce7_62de6cf2d098);
 pub const GUID_DEVINTERFACE_USBPRINT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x28d78fad_5a12_11d1_ae5b_0000f803a8c2);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiDeleteSpoolFileHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiDeleteSpoolFileHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiDeleteSpoolFileHandle(spoolfilehandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn GdiDeleteSpoolFileHandle(spoolfilehandle: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GdiDeleteSpoolFileHandle(spoolfilehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiEndDocEMF<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiEndDocEMF<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiEndDocEMF(spoolfilehandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn GdiEndDocEMF(spoolfilehandle: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GdiEndDocEMF(spoolfilehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiEndPageEMF<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0, dwoptimization: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiEndPageEMF<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0, dwoptimization: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiEndPageEMF(spoolfilehandle: super::super::Foundation::HANDLE, dwoptimization: u32) -> super::super::Foundation::BOOL;
+            fn GdiEndPageEMF(spoolfilehandle: ::win32_foundation::HANDLE, dwoptimization: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GdiEndPageEMF(spoolfilehandle.into_param().abi(), ::core::mem::transmute(dwoptimization)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn GdiGetDC<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0) -> super::Gdi::HDC {
+pub unsafe fn GdiGetDC<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0) -> super::Gdi::HDC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiGetDC(spoolfilehandle: super::super::Foundation::HANDLE) -> super::Gdi::HDC;
+            fn GdiGetDC(spoolfilehandle: ::win32_foundation::HANDLE) -> super::Gdi::HDC;
         }
         ::core::mem::transmute(GdiGetDC(spoolfilehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn GdiGetDevmodeForPage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0, dwpagenumber: u32, pcurrdm: *mut *mut super::Gdi::DEVMODEW, plastdm: *mut *mut super::Gdi::DEVMODEW) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiGetDevmodeForPage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0, dwpagenumber: u32, pcurrdm: *mut *mut super::Gdi::DEVMODEW, plastdm: *mut *mut super::Gdi::DEVMODEW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiGetDevmodeForPage(spoolfilehandle: super::super::Foundation::HANDLE, dwpagenumber: u32, pcurrdm: *mut *mut super::Gdi::DEVMODEW, plastdm: *mut *mut super::Gdi::DEVMODEW) -> super::super::Foundation::BOOL;
+            fn GdiGetDevmodeForPage(spoolfilehandle: ::win32_foundation::HANDLE, dwpagenumber: u32, pcurrdm: *mut *mut super::Gdi::DEVMODEW, plastdm: *mut *mut super::Gdi::DEVMODEW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GdiGetDevmodeForPage(spoolfilehandle.into_param().abi(), ::core::mem::transmute(dwpagenumber), ::core::mem::transmute(pcurrdm), ::core::mem::transmute(plastdm)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiGetPageCount<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0) -> u32 {
+pub unsafe fn GdiGetPageCount<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiGetPageCount(spoolfilehandle: super::super::Foundation::HANDLE) -> u32;
+            fn GdiGetPageCount(spoolfilehandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(GdiGetPageCount(spoolfilehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiGetPageHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0, page: u32, pdwpagetype: *mut u32) -> super::super::Foundation::HANDLE {
+pub unsafe fn GdiGetPageHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0, page: u32, pdwpagetype: *mut u32) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiGetPageHandle(spoolfilehandle: super::super::Foundation::HANDLE, page: u32, pdwpagetype: *mut u32) -> super::super::Foundation::HANDLE;
+            fn GdiGetPageHandle(spoolfilehandle: ::win32_foundation::HANDLE, page: u32, pdwpagetype: *mut u32) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(GdiGetPageHandle(spoolfilehandle.into_param().abi(), ::core::mem::transmute(page), ::core::mem::transmute(pdwpagetype)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn GdiGetSpoolFileHandle<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszprintername: Param0, pdevmode: *mut super::Gdi::DEVMODEW, pwszdocname: Param2) -> super::super::Foundation::HANDLE {
+pub unsafe fn GdiGetSpoolFileHandle<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwszprintername: Param0, pdevmode: *mut super::Gdi::DEVMODEW, pwszdocname: Param2) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiGetSpoolFileHandle(pwszprintername: ::windows_core::PCWSTR, pdevmode: *mut super::Gdi::DEVMODEW, pwszdocname: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn GdiGetSpoolFileHandle(pwszprintername: ::windows_core::PCWSTR, pdevmode: *mut super::Gdi::DEVMODEW, pwszdocname: ::windows_core::PCWSTR) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(GdiGetSpoolFileHandle(pwszprintername.into_param().abi(), ::core::mem::transmute(pdevmode), pwszdocname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiPlayPageEMF<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0, hemf: Param1, prectdocument: *mut super::super::Foundation::RECT, prectborder: *mut super::super::Foundation::RECT, prectclip: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiPlayPageEMF<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0, hemf: Param1, prectdocument: *mut ::win32_foundation::RECT, prectborder: *mut ::win32_foundation::RECT, prectclip: *mut ::win32_foundation::RECT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiPlayPageEMF(spoolfilehandle: super::super::Foundation::HANDLE, hemf: super::super::Foundation::HANDLE, prectdocument: *mut super::super::Foundation::RECT, prectborder: *mut super::super::Foundation::RECT, prectclip: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
+            fn GdiPlayPageEMF(spoolfilehandle: ::win32_foundation::HANDLE, hemf: ::win32_foundation::HANDLE, prectdocument: *mut ::win32_foundation::RECT, prectborder: *mut ::win32_foundation::RECT, prectclip: *mut ::win32_foundation::RECT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GdiPlayPageEMF(spoolfilehandle.into_param().abi(), hemf.into_param().abi(), ::core::mem::transmute(prectdocument), ::core::mem::transmute(prectborder), ::core::mem::transmute(prectclip)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn GdiResetDCEMF<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0, pcurrdm: *mut super::Gdi::DEVMODEW) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiResetDCEMF<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0, pcurrdm: *mut super::Gdi::DEVMODEW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiResetDCEMF(spoolfilehandle: super::super::Foundation::HANDLE, pcurrdm: *mut super::Gdi::DEVMODEW) -> super::super::Foundation::BOOL;
+            fn GdiResetDCEMF(spoolfilehandle: ::win32_foundation::HANDLE, pcurrdm: *mut super::Gdi::DEVMODEW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GdiResetDCEMF(spoolfilehandle.into_param().abi(), ::core::mem::transmute(pcurrdm)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Xps"))]
+#[cfg(feature = "Win32_Storage_Xps")]
 #[inline]
-pub unsafe fn GdiStartDocEMF<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0, pdocinfo: *mut super::super::Storage::Xps::DOCINFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiStartDocEMF<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0, pdocinfo: *mut ::win32_storage::Xps::DOCINFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiStartDocEMF(spoolfilehandle: super::super::Foundation::HANDLE, pdocinfo: *mut super::super::Storage::Xps::DOCINFOW) -> super::super::Foundation::BOOL;
+            fn GdiStartDocEMF(spoolfilehandle: ::win32_foundation::HANDLE, pdocinfo: *mut ::win32_storage::Xps::DOCINFOW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GdiStartDocEMF(spoolfilehandle.into_param().abi(), ::core::mem::transmute(pdocinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GdiStartPageEMF<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(spoolfilehandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn GdiStartPageEMF<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(spoolfilehandle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GdiStartPageEMF(spoolfilehandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn GdiStartPageEMF(spoolfilehandle: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GdiStartPageEMF(spoolfilehandle.into_param().abi()))
     }
@@ -5264,21 +5036,19 @@ pub unsafe fn GenerateCopyFilePaths<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCPSUIUserData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0) -> usize {
+pub unsafe fn GetCPSUIUserData<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hdlg: Param0) -> usize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCPSUIUserData(hdlg: super::super::Foundation::HWND) -> usize;
+            fn GetCPSUIUserData(hdlg: ::win32_foundation::HWND) -> usize;
         }
         ::core::mem::transmute(GetCPSUIUserData(hdlg.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCorePrinterDriversA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszserver: Param0, pszenvironment: Param1, pszzcoredriverdependencies: Param2, pcoreprinterdrivers: &mut [CORE_PRINTER_DRIVERA]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5292,7 +5062,6 @@ pub unsafe fn GetCorePrinterDriversA<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCorePrinterDriversW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszserver: Param0, pszenvironment: Param1, pszzcoredriverdependencies: Param2, pcoreprinterdrivers: &mut [CORE_PRINTER_DRIVERW]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -5306,322 +5075,301 @@ pub unsafe fn GetCorePrinterDriversW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDefaultPrinterA(pszbuffer: ::windows_core::PSTR, pcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetDefaultPrinterA(pszbuffer: ::windows_core::PSTR, pcchbuffer: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDefaultPrinterA(pszbuffer: ::windows_core::PSTR, pcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetDefaultPrinterA(pszbuffer: ::windows_core::PSTR, pcchbuffer: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetDefaultPrinterA(::core::mem::transmute(pszbuffer), ::core::mem::transmute(pcchbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDefaultPrinterW(pszbuffer: ::windows_core::PWSTR, pcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetDefaultPrinterW(pszbuffer: ::windows_core::PWSTR, pcchbuffer: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDefaultPrinterW(pszbuffer: ::windows_core::PWSTR, pcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetDefaultPrinterW(pszbuffer: ::windows_core::PWSTR, pcchbuffer: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetDefaultPrinterW(::core::mem::transmute(pszbuffer), ::core::mem::transmute(pcchbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetFormA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pformname: Param1, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetFormA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pformname: Param1, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetFormA(hprinter: super::super::Foundation::HANDLE, pformname: ::windows_core::PCSTR, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetFormA(hprinter: ::win32_foundation::HANDLE, pformname: ::windows_core::PCSTR, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetFormA(hprinter.into_param().abi(), pformname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pform), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetFormW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pformname: Param1, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetFormW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pformname: Param1, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetFormW(hprinter: super::super::Foundation::HANDLE, pformname: ::windows_core::PCWSTR, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetFormW(hprinter: ::win32_foundation::HANDLE, pformname: ::windows_core::PCWSTR, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetFormW(hprinter.into_param().abi(), pformname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pform), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetJobA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetJobA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetJobA(hprinter: super::super::Foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetJobA(hprinter: ::win32_foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetJobA(hprinter.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(level), ::core::mem::transmute(pjob), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn GetJobAttributes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pprintername: Param0, pdevmode: *const super::Gdi::DEVMODEW, pattributeinfo: *mut ATTRIBUTE_INFO_3) -> super::super::Foundation::BOOL {
+pub unsafe fn GetJobAttributes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pprintername: Param0, pdevmode: *const super::Gdi::DEVMODEW, pattributeinfo: *mut ATTRIBUTE_INFO_3) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetJobAttributes(pprintername: ::windows_core::PCWSTR, pdevmode: *const super::Gdi::DEVMODEW, pattributeinfo: *mut ATTRIBUTE_INFO_3) -> super::super::Foundation::BOOL;
+            fn GetJobAttributes(pprintername: ::windows_core::PCWSTR, pdevmode: *const super::Gdi::DEVMODEW, pattributeinfo: *mut ATTRIBUTE_INFO_3) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetJobAttributes(pprintername.into_param().abi(), ::core::mem::transmute(pdevmode), ::core::mem::transmute(pattributeinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn GetJobAttributesEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pprintername: Param0, pdevmode: *const super::Gdi::DEVMODEW, dwlevel: u32, pattributeinfo: *mut u8, nsize: u32, dwflags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetJobAttributesEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pprintername: Param0, pdevmode: *const super::Gdi::DEVMODEW, dwlevel: u32, pattributeinfo: *mut u8, nsize: u32, dwflags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetJobAttributesEx(pprintername: ::windows_core::PCWSTR, pdevmode: *const super::Gdi::DEVMODEW, dwlevel: u32, pattributeinfo: *mut u8, nsize: u32, dwflags: u32) -> super::super::Foundation::BOOL;
+            fn GetJobAttributesEx(pprintername: ::windows_core::PCWSTR, pdevmode: *const super::Gdi::DEVMODEW, dwlevel: u32, pattributeinfo: *mut u8, nsize: u32, dwflags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetJobAttributesEx(pprintername.into_param().abi(), ::core::mem::transmute(pdevmode), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pattributeinfo), ::core::mem::transmute(nsize), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetJobNamedPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, jobid: u32, pszname: Param2, pvalue: *mut PrintPropertyValue) -> u32 {
+pub unsafe fn GetJobNamedPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, jobid: u32, pszname: Param2, pvalue: *mut PrintPropertyValue) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetJobNamedPropertyValue(hprinter: super::super::Foundation::HANDLE, jobid: u32, pszname: ::windows_core::PCWSTR, pvalue: *mut PrintPropertyValue) -> u32;
+            fn GetJobNamedPropertyValue(hprinter: ::win32_foundation::HANDLE, jobid: u32, pszname: ::windows_core::PCWSTR, pvalue: *mut PrintPropertyValue) -> u32;
         }
         ::core::mem::transmute(GetJobNamedPropertyValue(hprinter.into_param().abi(), ::core::mem::transmute(jobid), pszname.into_param().abi(), ::core::mem::transmute(pvalue)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetJobW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetJobW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetJobW(hprinter: super::super::Foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetJobW(hprinter: ::win32_foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetJobW(hprinter.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(level), ::core::mem::transmute(pjob), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrintExecutionData(pdata: *mut PRINT_EXECUTION_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrintExecutionData(pdata: *mut PRINT_EXECUTION_DATA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrintExecutionData(pdata: *mut PRINT_EXECUTION_DATA) -> super::super::Foundation::BOOL;
+            fn GetPrintExecutionData(pdata: *mut PRINT_EXECUTION_DATA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrintExecutionData(::core::mem::transmute(pdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrintOutputInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, pszprinter: Param1, phfile: *mut super::super::Foundation::HANDLE, ppszoutputfile: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
+pub unsafe fn GetPrintOutputInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, pszprinter: Param1, phfile: *mut ::win32_foundation::HANDLE, ppszoutputfile: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrintOutputInfo(hwnd: super::super::Foundation::HWND, pszprinter: ::windows_core::PCWSTR, phfile: *mut super::super::Foundation::HANDLE, ppszoutputfile: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT;
+            fn GetPrintOutputInfo(hwnd: ::win32_foundation::HWND, pszprinter: ::windows_core::PCWSTR, phfile: *mut ::win32_foundation::HANDLE, ppszoutputfile: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
         GetPrintOutputInfo(hwnd.into_param().abi(), pszprinter.into_param().abi(), ::core::mem::transmute(phfile), ::core::mem::transmute(ppszoutputfile)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrintProcessorDirectoryA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrintProcessorDirectoryA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrintProcessorDirectoryA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrintProcessorDirectoryA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrintProcessorDirectoryA(pname.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprintprocessorinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrintProcessorDirectoryW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrintProcessorDirectoryW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrintProcessorDirectoryW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrintProcessorDirectoryW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrintProcessorDirectoryW(pname.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprintprocessorinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterA(hprinter: super::super::Foundation::HANDLE, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrinterA(hprinter: ::win32_foundation::HANDLE, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrinterA(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprinter), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDataA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pvaluename: Param1, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32 {
+pub unsafe fn GetPrinterDataA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pvaluename: Param1, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDataA(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows_core::PCSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
+            fn GetPrinterDataA(hprinter: ::win32_foundation::HANDLE, pvaluename: ::windows_core::PCSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
         }
         ::core::mem::transmute(GetPrinterDataA(hprinter.into_param().abi(), pvaluename.into_param().abi(), ::core::mem::transmute(ptype), ::core::mem::transmute(pdata), ::core::mem::transmute(nsize), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDataExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32 {
+pub unsafe fn GetPrinterDataExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDataExA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCSTR, pvaluename: ::windows_core::PCSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
+            fn GetPrinterDataExA(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCSTR, pvaluename: ::windows_core::PCSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
         }
         ::core::mem::transmute(GetPrinterDataExA(hprinter.into_param().abi(), pkeyname.into_param().abi(), pvaluename.into_param().abi(), ::core::mem::transmute(ptype), ::core::mem::transmute(pdata), ::core::mem::transmute(nsize), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDataExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32 {
+pub unsafe fn GetPrinterDataExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDataExW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, pvaluename: ::windows_core::PCWSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
+            fn GetPrinterDataExW(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, pvaluename: ::windows_core::PCWSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
         }
         ::core::mem::transmute(GetPrinterDataExW(hprinter.into_param().abi(), pkeyname.into_param().abi(), pvaluename.into_param().abi(), ::core::mem::transmute(ptype), ::core::mem::transmute(pdata), ::core::mem::transmute(nsize), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDataW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pvaluename: Param1, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32 {
+pub unsafe fn GetPrinterDataW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pvaluename: Param1, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDataW(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows_core::PCWSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
+            fn GetPrinterDataW(hprinter: ::win32_foundation::HANDLE, pvaluename: ::windows_core::PCWSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
         }
         ::core::mem::transmute(GetPrinterDataW(hprinter.into_param().abi(), pvaluename.into_param().abi(), ::core::mem::transmute(ptype), ::core::mem::transmute(pdata), ::core::mem::transmute(nsize), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDriver2A<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, hprinter: Param1, penvironment: Param2, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrinterDriver2A<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwnd: Param0, hprinter: Param1, penvironment: Param2, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDriver2A(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, penvironment: ::windows_core::PCSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrinterDriver2A(hwnd: ::win32_foundation::HWND, hprinter: ::win32_foundation::HANDLE, penvironment: ::windows_core::PCSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrinterDriver2A(hwnd.into_param().abi(), hprinter.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDriver2W<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, hprinter: Param1, penvironment: Param2, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrinterDriver2W<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, hprinter: Param1, penvironment: Param2, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDriver2W(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, penvironment: ::windows_core::PCWSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrinterDriver2W(hwnd: ::win32_foundation::HWND, hprinter: ::win32_foundation::HANDLE, penvironment: ::windows_core::PCWSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrinterDriver2W(hwnd.into_param().abi(), hprinter.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDriverA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, penvironment: Param1, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrinterDriverA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, penvironment: Param1, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDriverA(hprinter: super::super::Foundation::HANDLE, penvironment: ::windows_core::PCSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrinterDriverA(hprinter: ::win32_foundation::HANDLE, penvironment: ::windows_core::PCSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrinterDriverA(hprinter.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDriverDirectoryA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrinterDriverDirectoryA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, penvironment: Param1, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDriverDirectoryA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrinterDriverDirectoryA(pname: ::windows_core::PCSTR, penvironment: ::windows_core::PCSTR, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrinterDriverDirectoryA(pname.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverdirectory), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDriverDirectoryW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrinterDriverDirectoryW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, penvironment: Param1, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDriverDirectoryW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrinterDriverDirectoryW(pname: ::windows_core::PCWSTR, penvironment: ::windows_core::PCWSTR, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrinterDriverDirectoryW(pname.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverdirectory), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
@@ -5654,42 +5402,39 @@ pub unsafe fn GetPrinterDriverPackagePathW<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterDriverW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, penvironment: Param1, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrinterDriverW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, penvironment: Param1, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterDriverW(hprinter: super::super::Foundation::HANDLE, penvironment: ::windows_core::PCWSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrinterDriverW(hprinter: ::win32_foundation::HANDLE, penvironment: ::windows_core::PCWSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrinterDriverW(hprinter.into_param().abi(), penvironment.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdriverinfo), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetPrinterW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetPrinterW(hprinter: super::super::Foundation::HANDLE, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetPrinterW(hprinter: ::win32_foundation::HANDLE, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetPrinterW(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprinter), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcbneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetSpoolFileHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> super::super::Foundation::HANDLE {
+pub unsafe fn GetSpoolFileHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetSpoolFileHandle(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
+            fn GetSpoolFileHandle(hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(GetSpoolFileHandle(hprinter.into_param().abi()))
     }
@@ -5705,8 +5450,7 @@ impl IAsyncGetSendNotificationCookie {
     pub unsafe fn CancelAsyncCall(&self, param0: ::windows_core::HRESULT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CancelAsyncCall)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(param0)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FinishAsyncCallWithData<'a, Param0: ::windows_core::IntoParam<'a, IPrintAsyncNotifyDataObject>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, param0: Param0, param1: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn FinishAsyncCallWithData<'a, Param0: ::windows_core::IntoParam<'a, IPrintAsyncNotifyDataObject>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, param0: Param0, param1: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).FinishAsyncCallWithData)(::windows_core::Interface::as_raw(self), param0.into_param().abi(), param1.into_param().abi()).ok()
     }
 }
@@ -5774,10 +5518,7 @@ unsafe impl ::windows_core::Interface for IAsyncGetSendNotificationCookie {
 #[doc(hidden)]
 pub struct IAsyncGetSendNotificationCookie_Vtbl {
     pub base__: IPrintAsyncCookie_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FinishAsyncCallWithData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: ::windows_core::RawPtr, param1: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FinishAsyncCallWithData: usize,
+    pub FinishAsyncCallWithData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: ::windows_core::RawPtr, param1: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IAsyncGetSrvReferralCookie(::windows_core::IUnknown);
@@ -6013,9 +5754,9 @@ impl IBidiRequestContainer {
         (::windows_core::Interface::vtable(self).AddRequest)(::windows_core::Interface::as_raw(self), prequest.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetEnumObject(&self) -> ::windows_core::Result<super::super::System::Com::IEnumUnknown> {
+    pub unsafe fn GetEnumObject(&self) -> ::windows_core::Result<::win32_system::Com::IEnumUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetEnumObject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IEnumUnknown>(result__)
+        (::windows_core::Interface::vtable(self).GetEnumObject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IEnumUnknown>(result__)
     }
     pub unsafe fn GetRequestCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -6147,15 +5888,14 @@ impl IBidiSpl2 {
     pub unsafe fn UnbindDevice(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnbindDevice)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SendRecvXMLString<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrrequest: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SendRecvXMLString)(::windows_core::Interface::as_raw(self), bstrrequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SendRecvXMLString<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrrequest: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SendRecvXMLString)(::windows_core::Interface::as_raw(self), bstrrequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn SendRecvXMLStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, psrequest: Param0) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn SendRecvXMLStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, psrequest: Param0) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).SendRecvXMLStream)(::windows_core::Interface::as_raw(self), psrequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).SendRecvXMLStream)(::windows_core::Interface::as_raw(self), psrequest.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
 }
 impl ::core::convert::From<IBidiSpl2> for ::windows_core::IUnknown {
@@ -6204,10 +5944,7 @@ pub struct IBidiSpl2_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub BindDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszdevicename: ::windows_core::PCWSTR, dwaccess: u32) -> ::windows_core::HRESULT,
     pub UnbindDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SendRecvXMLString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrrequest: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrresponse: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SendRecvXMLString: usize,
+    pub SendRecvXMLString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrrequest: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pbstrresponse: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub SendRecvXMLStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psrequest: ::windows_core::RawPtr, ppsresponse: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -6523,10 +6260,9 @@ pub const IDS_CPSUI_YES: u32 = 64729u32;
 #[repr(transparent)]
 pub struct IFixedDocument(::windows_core::IUnknown);
 impl IFixedDocument {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetPrintTicket(&self) -> ::windows_core::Result<IPartPrintTicket> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -6580,20 +6316,16 @@ unsafe impl ::windows_core::Interface for IFixedDocument {
 #[doc(hidden)]
 pub struct IFixedDocument_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUri: usize,
+    pub GetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetPrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppprintticket: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetPrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprintticket: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IFixedDocumentSequence(::windows_core::IUnknown);
 impl IFixedDocumentSequence {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetPrintTicket(&self) -> ::windows_core::Result<IPartPrintTicket> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -6647,20 +6379,16 @@ unsafe impl ::windows_core::Interface for IFixedDocumentSequence {
 #[doc(hidden)]
 pub struct IFixedDocumentSequence_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUri: usize,
+    pub GetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetPrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppprintticket: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetPrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprintticket: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IFixedPage(::windows_core::IUnknown);
 impl IFixedPage {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetStream(&self) -> ::windows_core::Result<IPrintReadStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -6796,7 +6524,6 @@ impl IImgCreateErrorInfo {
     pub unsafe fn SetHelpContext(&self, dwhelpcontext: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetHelpContext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwhelpcontext)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn AttachToErrorInfo(&self, perrorinfo: *mut __MIDL___MIDL_itf_imgerror_0000_0000_0001) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AttachToErrorInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(perrorinfo)).ok()
     }
@@ -6826,26 +6553,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IImgCre
     }
 }
 #[cfg(feature = "Win32_System_Ole")]
-impl ::core::convert::From<IImgCreateErrorInfo> for super::super::System::Ole::ICreateErrorInfo {
+impl ::core::convert::From<IImgCreateErrorInfo> for ::win32_system::Ole::ICreateErrorInfo {
     fn from(value: IImgCreateErrorInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Ole")]
-impl ::core::convert::From<&IImgCreateErrorInfo> for super::super::System::Ole::ICreateErrorInfo {
+impl ::core::convert::From<&IImgCreateErrorInfo> for ::win32_system::Ole::ICreateErrorInfo {
     fn from(value: &IImgCreateErrorInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Ole")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Ole::ICreateErrorInfo> for IImgCreateErrorInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Ole::ICreateErrorInfo> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Ole::ICreateErrorInfo> for IImgCreateErrorInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Ole::ICreateErrorInfo> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Ole")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Ole::ICreateErrorInfo> for &'a IImgCreateErrorInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Ole::ICreateErrorInfo> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Ole::ICreateErrorInfo> for &'a IImgCreateErrorInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Ole::ICreateErrorInfo> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -6878,11 +6605,8 @@ unsafe impl ::windows_core::Interface for IImgCreateErrorInfo {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IImgCreateErrorInfo_Vtbl {
-    pub base__: super::super::System::Ole::ICreateErrorInfo_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
+    pub base__: ::win32_system::Ole::ICreateErrorInfo_Vtbl,
     pub AttachToErrorInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, perrorinfo: *mut __MIDL___MIDL_itf_imgerror_0000_0000_0001) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AttachToErrorInfo: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -6894,30 +6618,29 @@ impl IImgErrorInfo {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetGUID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::GUID>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetSource(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetSource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetSource(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetSource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetDescription(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetDescription(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetHelpFile(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetHelpFile)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetHelpFile(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetHelpFile)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn GetHelpContext(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetHelpContext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetDeveloperDescription(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetDeveloperDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetDeveloperDescription(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetDeveloperDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetUserErrorId(&self) -> ::windows_core::Result<::windows_core::GUID> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
@@ -6927,21 +6650,18 @@ impl IImgErrorInfo {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetUserParameterCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUserParameter(&self, cparam: u32) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetUserParameter)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cparam), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUserParameter(&self, cparam: u32) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetUserParameter)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cparam), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUserFallback(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetUserFallback)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUserFallback(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetUserFallback)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetExceptionId(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetExceptionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn DetachErrorInfo(&self) -> ::windows_core::Result<__MIDL___MIDL_itf_imgerror_0000_0000_0001> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<__MIDL___MIDL_itf_imgerror_0000_0000_0001>>::zeroed();
         (::windows_core::Interface::vtable(self).DetachErrorInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<__MIDL___MIDL_itf_imgerror_0000_0000_0001>(result__)
@@ -6972,26 +6692,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IImgErr
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IImgErrorInfo> for super::super::System::Com::IErrorInfo {
+impl ::core::convert::From<IImgErrorInfo> for ::win32_system::Com::IErrorInfo {
     fn from(value: IImgErrorInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IImgErrorInfo> for super::super::System::Com::IErrorInfo {
+impl ::core::convert::From<&IImgErrorInfo> for ::win32_system::Com::IErrorInfo {
     fn from(value: &IImgErrorInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IErrorInfo> for IImgErrorInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IErrorInfo> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IErrorInfo> for IImgErrorInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IErrorInfo> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IErrorInfo> for &'a IImgErrorInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IErrorInfo> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IErrorInfo> for &'a IImgErrorInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IErrorInfo> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -7024,26 +6744,14 @@ unsafe impl ::windows_core::Interface for IImgErrorInfo {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IImgErrorInfo_Vtbl {
-    pub base__: super::super::System::Com::IErrorInfo_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetDeveloperDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdevdescription: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDeveloperDescription: usize,
+    pub base__: ::win32_system::Com::IErrorInfo_Vtbl,
+    pub GetDeveloperDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdevdescription: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetUserErrorId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, perrorid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetUserParameterCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcuserparams: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUserParameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cparam: u32, pbstrparam: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUserParameter: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUserFallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfallback: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUserFallback: usize,
+    pub GetUserParameter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cparam: u32, pbstrparam: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub GetUserFallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfallback: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetExceptionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pexceptionid: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub DetachErrorInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, perrorinfo: *mut __MIDL___MIDL_itf_imgerror_0000_0000_0001) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DetachErrorInfo: usize,
 }
 #[repr(transparent)]
 pub struct IInterFilterCommunicator(::windows_core::IUnknown);
@@ -7188,10 +6896,9 @@ pub const IPDFP_COPY_ALL_FILES: u32 = 1u32;
 #[repr(transparent)]
 pub struct IPartBase(::windows_core::IUnknown);
 impl IPartBase {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetStream(&self) -> ::windows_core::Result<IPrintReadStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7249,10 +6956,7 @@ unsafe impl ::windows_core::Interface for IPartBase {
 #[doc(hidden)]
 pub struct IPartBase_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUri: usize,
+    pub GetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetPartCompression: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcompression: *mut EXpsCompressionOptions) -> ::windows_core::HRESULT,
     pub SetPartCompression: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, compression: EXpsCompressionOptions) -> ::windows_core::HRESULT,
@@ -7260,10 +6964,9 @@ pub struct IPartBase_Vtbl {
 #[repr(transparent)]
 pub struct IPartColorProfile(::windows_core::IUnknown);
 impl IPartColorProfile {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetStream(&self) -> ::windows_core::Result<IPrintReadStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7345,8 +7048,7 @@ pub struct IPartColorProfile_Vtbl {
 #[repr(transparent)]
 pub struct IPartDiscardControl(::windows_core::IUnknown);
 impl IPartDiscardControl {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetDiscardProperties(&self, urisentinelpage: *mut super::super::Foundation::BSTR, uriparttodiscard: *mut super::super::Foundation::BSTR) -> ::windows_core::Result<()> {
+    pub unsafe fn GetDiscardProperties(&self, urisentinelpage: *mut ::win32_foundation::BSTR, uriparttodiscard: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetDiscardProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(urisentinelpage), ::core::mem::transmute(uriparttodiscard)).ok()
     }
 }
@@ -7394,18 +7096,14 @@ unsafe impl ::windows_core::Interface for IPartDiscardControl {
 #[doc(hidden)]
 pub struct IPartDiscardControl_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetDiscardProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, urisentinelpage: *mut super::super::Foundation::BSTR, uriparttodiscard: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDiscardProperties: usize,
+    pub GetDiscardProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, urisentinelpage: *mut ::win32_foundation::BSTR, uriparttodiscard: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPartFont(::windows_core::IUnknown);
 impl IPartFont {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetStream(&self) -> ::windows_core::Result<IPrintReadStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7418,8 +7116,7 @@ impl IPartFont {
     pub unsafe fn SetPartCompression(&self, compression: EXpsCompressionOptions) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetPartCompression)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(compression)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetFontProperties(&self, pcontenttype: *mut super::super::Foundation::BSTR, pfontoptions: *mut EXpsFontOptions) -> ::windows_core::Result<()> {
+    pub unsafe fn GetFontProperties(&self, pcontenttype: *mut ::win32_foundation::BSTR, pfontoptions: *mut EXpsFontOptions) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetFontProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcontenttype), ::core::mem::transmute(pfontoptions)).ok()
     }
     pub unsafe fn SetFontContent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pcontenttype: Param0) -> ::windows_core::Result<()> {
@@ -7493,20 +7190,16 @@ unsafe impl ::windows_core::Interface for IPartFont {
 #[doc(hidden)]
 pub struct IPartFont_Vtbl {
     pub base__: IPartBase_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetFontProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontenttype: *mut super::super::Foundation::BSTR, pfontoptions: *mut EXpsFontOptions) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetFontProperties: usize,
+    pub GetFontProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontenttype: *mut ::win32_foundation::BSTR, pfontoptions: *mut EXpsFontOptions) -> ::windows_core::HRESULT,
     pub SetFontContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontenttype: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub SetFontOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: EXpsFontOptions) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPartFont2(::windows_core::IUnknown);
 impl IPartFont2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetStream(&self) -> ::windows_core::Result<IPrintReadStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7519,8 +7212,7 @@ impl IPartFont2 {
     pub unsafe fn SetPartCompression(&self, compression: EXpsCompressionOptions) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetPartCompression)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(compression)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetFontProperties(&self, pcontenttype: *mut super::super::Foundation::BSTR, pfontoptions: *mut EXpsFontOptions) -> ::windows_core::Result<()> {
+    pub unsafe fn GetFontProperties(&self, pcontenttype: *mut ::win32_foundation::BSTR, pfontoptions: *mut EXpsFontOptions) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetFontProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcontenttype), ::core::mem::transmute(pfontoptions)).ok()
     }
     pub unsafe fn SetFontContent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pcontenttype: Param0) -> ::windows_core::Result<()> {
@@ -7623,10 +7315,9 @@ pub struct IPartFont2_Vtbl {
 #[repr(transparent)]
 pub struct IPartImage(::windows_core::IUnknown);
 impl IPartImage {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetStream(&self) -> ::windows_core::Result<IPrintReadStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7639,10 +7330,9 @@ impl IPartImage {
     pub unsafe fn SetPartCompression(&self, compression: EXpsCompressionOptions) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetPartCompression)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(compression)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetImageProperties(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetImageProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetImageProperties(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetImageProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn SetImageContent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pcontenttype: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetImageContent)(::windows_core::Interface::as_raw(self), pcontenttype.into_param().abi()).ok()
@@ -7712,19 +7402,15 @@ unsafe impl ::windows_core::Interface for IPartImage {
 #[doc(hidden)]
 pub struct IPartImage_Vtbl {
     pub base__: IPartBase_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetImageProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontenttype: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetImageProperties: usize,
+    pub GetImageProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontenttype: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetImageContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontenttype: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPartPrintTicket(::windows_core::IUnknown);
 impl IPartPrintTicket {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetStream(&self) -> ::windows_core::Result<IPrintReadStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7806,10 +7492,9 @@ pub struct IPartPrintTicket_Vtbl {
 #[repr(transparent)]
 pub struct IPartResourceDictionary(::windows_core::IUnknown);
 impl IPartResourceDictionary {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetStream(&self) -> ::windows_core::Result<IPrintReadStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7891,10 +7576,9 @@ pub struct IPartResourceDictionary_Vtbl {
 #[repr(transparent)]
 pub struct IPartThumbnail(::windows_core::IUnknown);
 impl IPartThumbnail {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetStream(&self) -> ::windows_core::Result<IPrintReadStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -7907,10 +7591,9 @@ impl IPartThumbnail {
     pub unsafe fn SetPartCompression(&self, compression: EXpsCompressionOptions) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetPartCompression)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(compression)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetThumbnailProperties(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetThumbnailProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetThumbnailProperties(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetThumbnailProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn SetThumbnailContent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pcontenttype: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetThumbnailContent)(::windows_core::Interface::as_raw(self), pcontenttype.into_param().abi()).ok()
@@ -7980,10 +7663,7 @@ unsafe impl ::windows_core::Interface for IPartThumbnail {
 #[doc(hidden)]
 pub struct IPartThumbnail_Vtbl {
     pub base__: IPartBase_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetThumbnailProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontenttype: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetThumbnailProperties: usize,
+    pub GetThumbnailProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontenttype: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetThumbnailContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcontenttype: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -8606,20 +8286,20 @@ pub struct IPrintClassObjectFactory_Vtbl {
 #[repr(transparent)]
 pub struct IPrintCoreHelper(::windows_core::IUnknown);
 impl IPrintCoreHelper {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn GetOption<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturerequested: Param2) -> ::windows_core::Result<::windows_core::PSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PSTR>::zeroed();
         (::windows_core::Interface::vtable(self).GetOption)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturerequested.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn SetOptions<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: Param2, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn SetOptions<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: Param2, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), bresolveconflicts.into_param().abi(), ::core::mem::transmute(pfopairs), ::core::mem::transmute(cpairs), ::core::mem::transmute(pcpairswritten), ::core::mem::transmute(pdwresult)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn EnumConstrainedOptions<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: Param2, pconstrainedoptionlist: *mut *mut *mut ::windows_core::PSTR, pdwnumoptions: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumConstrainedOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturekeyword.into_param().abi(), ::core::mem::transmute(pconstrainedoptionlist), ::core::mem::transmute(pdwnumoptions)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn WhyConstrained<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: Param2, pszoptionkeyword: Param3, ppfoconstraints: *mut *mut PRINT_FEATURE_OPTION, pdwnumoptions: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).WhyConstrained)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturekeyword.into_param().abi(), pszoptionkeyword.into_param().abi(), ::core::mem::transmute(ppfoconstraints), ::core::mem::transmute(pdwnumoptions)).ok()
     }
@@ -8683,21 +8363,21 @@ unsafe impl ::windows_core::Interface for IPrintCoreHelper {
 #[doc(hidden)]
 pub struct IPrintCoreHelper_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub GetOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturerequested: ::windows_core::PCSTR, ppszoption: *mut ::windows_core::PSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     GetOption: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub SetOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: super::super::Foundation::BOOL, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub SetOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: ::win32_foundation::BOOL, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     SetOptions: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub EnumConstrainedOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: ::windows_core::PCSTR, pconstrainedoptionlist: *mut *mut *mut ::windows_core::PSTR, pdwnumoptions: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     EnumConstrainedOptions: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub WhyConstrained: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: ::windows_core::PCSTR, pszoptionkeyword: ::windows_core::PCSTR, ppfoconstraints: *mut *mut PRINT_FEATURE_OPTION, pdwnumoptions: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     WhyConstrained: usize,
     pub EnumFeatures: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfeaturelist: *mut *mut *mut ::windows_core::PSTR, pdwnumfeatures: *mut u32) -> ::windows_core::HRESULT,
     pub EnumOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszfeaturekeyword: ::windows_core::PCSTR, poptionlist: *mut *mut *mut ::windows_core::PSTR, pdwnumoptions: *mut u32) -> ::windows_core::HRESULT,
@@ -8708,20 +8388,20 @@ pub struct IPrintCoreHelper_Vtbl {
 #[repr(transparent)]
 pub struct IPrintCoreHelperPS(::windows_core::IUnknown);
 impl IPrintCoreHelperPS {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn GetOption<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturerequested: Param2) -> ::windows_core::Result<::windows_core::PSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetOption)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturerequested.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn SetOptions<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: Param2, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn SetOptions<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: Param2, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), bresolveconflicts.into_param().abi(), ::core::mem::transmute(pfopairs), ::core::mem::transmute(cpairs), ::core::mem::transmute(pcpairswritten), ::core::mem::transmute(pdwresult)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn EnumConstrainedOptions<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: Param2, pconstrainedoptionlist: *mut *mut *mut ::windows_core::PSTR, pdwnumoptions: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.EnumConstrainedOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturekeyword.into_param().abi(), ::core::mem::transmute(pconstrainedoptionlist), ::core::mem::transmute(pdwnumoptions)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn WhyConstrained<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: Param2, pszoptionkeyword: Param3, ppfoconstraints: *mut *mut PRINT_FEATURE_OPTION, pdwnumoptions: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.WhyConstrained)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturekeyword.into_param().abi(), pszoptionkeyword.into_param().abi(), ::core::mem::transmute(ppfoconstraints), ::core::mem::transmute(pdwnumoptions)).ok()
     }
@@ -8821,20 +8501,20 @@ pub struct IPrintCoreHelperPS_Vtbl {
 #[repr(transparent)]
 pub struct IPrintCoreHelperUni(::windows_core::IUnknown);
 impl IPrintCoreHelperUni {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn GetOption<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturerequested: Param2) -> ::windows_core::Result<::windows_core::PSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetOption)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturerequested.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn SetOptions<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: Param2, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn SetOptions<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: Param2, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), bresolveconflicts.into_param().abi(), ::core::mem::transmute(pfopairs), ::core::mem::transmute(cpairs), ::core::mem::transmute(pcpairswritten), ::core::mem::transmute(pdwresult)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn EnumConstrainedOptions<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: Param2, pconstrainedoptionlist: *mut *mut *mut ::windows_core::PSTR, pdwnumoptions: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.EnumConstrainedOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturekeyword.into_param().abi(), ::core::mem::transmute(pconstrainedoptionlist), ::core::mem::transmute(pdwnumoptions)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn WhyConstrained<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: Param2, pszoptionkeyword: Param3, ppfoconstraints: *mut *mut PRINT_FEATURE_OPTION, pdwnumoptions: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.WhyConstrained)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturekeyword.into_param().abi(), pszoptionkeyword.into_param().abi(), ::core::mem::transmute(ppfoconstraints), ::core::mem::transmute(pdwnumoptions)).ok()
     }
@@ -8853,14 +8533,14 @@ impl IPrintCoreHelperUni {
     pub unsafe fn CreateInstanceOfMSXMLObject<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, rclsid: *const ::windows_core::GUID, punkouter: Param1, dwclscontext: u32, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CreateInstanceOfMSXMLObject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rclsid), punkouter.into_param().abi(), ::core::mem::transmute(dwclscontext), ::core::mem::transmute(riid), ::core::mem::transmute(ppv)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateGDLSnapshot(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, dwflags: u32, ppsnapshotstream: *mut ::core::option::Option<super::super::System::Com::IStream>) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub unsafe fn CreateGDLSnapshot(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, dwflags: u32, ppsnapshotstream: *mut ::core::option::Option<::win32_system::Com::IStream>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CreateGDLSnapshot)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppsnapshotstream)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateDefaultGDLSnapshot(&self, dwflags: u32) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn CreateDefaultGDLSnapshot(&self, dwflags: u32) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateDefaultGDLSnapshot)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).CreateDefaultGDLSnapshot)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
 }
 impl ::core::convert::From<IPrintCoreHelperUni> for ::windows_core::IUnknown {
@@ -8927,9 +8607,9 @@ unsafe impl ::windows_core::Interface for IPrintCoreHelperUni {
 #[doc(hidden)]
 pub struct IPrintCoreHelperUni_Vtbl {
     pub base__: IPrintCoreHelper_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
     pub CreateGDLSnapshot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, dwflags: u32, ppsnapshotstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
+    #[cfg(not(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
     CreateGDLSnapshot: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub CreateDefaultGDLSnapshot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, ppsnapshotstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -8939,20 +8619,20 @@ pub struct IPrintCoreHelperUni_Vtbl {
 #[repr(transparent)]
 pub struct IPrintCoreHelperUni2(::windows_core::IUnknown);
 impl IPrintCoreHelperUni2 {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn GetOption<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturerequested: Param2) -> ::windows_core::Result<::windows_core::PSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetOption)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturerequested.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn SetOptions<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: Param2, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn SetOptions<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, bresolveconflicts: Param2, pfopairs: *const PRINT_FEATURE_OPTION, cpairs: u32, pcpairswritten: *mut u32, pdwresult: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), bresolveconflicts.into_param().abi(), ::core::mem::transmute(pfopairs), ::core::mem::transmute(cpairs), ::core::mem::transmute(pcpairswritten), ::core::mem::transmute(pdwresult)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn EnumConstrainedOptions<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: Param2, pconstrainedoptionlist: *mut *mut *mut ::windows_core::PSTR, pdwnumoptions: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.EnumConstrainedOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturekeyword.into_param().abi(), ::core::mem::transmute(pconstrainedoptionlist), ::core::mem::transmute(pdwnumoptions)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn WhyConstrained<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszfeaturekeyword: Param2, pszoptionkeyword: Param3, ppfoconstraints: *mut *mut PRINT_FEATURE_OPTION, pdwnumoptions: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.WhyConstrained)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszfeaturekeyword.into_param().abi(), pszoptionkeyword.into_param().abi(), ::core::mem::transmute(ppfoconstraints), ::core::mem::transmute(pdwnumoptions)).ok()
     }
@@ -8971,16 +8651,16 @@ impl IPrintCoreHelperUni2 {
     pub unsafe fn CreateInstanceOfMSXMLObject<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, rclsid: *const ::windows_core::GUID, punkouter: Param1, dwclscontext: u32, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.CreateInstanceOfMSXMLObject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rclsid), punkouter.into_param().abi(), ::core::mem::transmute(dwclscontext), ::core::mem::transmute(riid), ::core::mem::transmute(ppv)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateGDLSnapshot(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, dwflags: u32, ppsnapshotstream: *mut ::core::option::Option<super::super::System::Com::IStream>) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub unsafe fn CreateGDLSnapshot(&self, pdevmode: *mut super::Gdi::DEVMODEA, cbsize: u32, dwflags: u32, ppsnapshotstream: *mut ::core::option::Option<::win32_system::Com::IStream>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CreateGDLSnapshot)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppsnapshotstream)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateDefaultGDLSnapshot(&self, dwflags: u32) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn CreateDefaultGDLSnapshot(&self, dwflags: u32) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CreateDefaultGDLSnapshot)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).base__.CreateDefaultGDLSnapshot)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn GetNamedCommand<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszcommandname: Param2, ppcommandbytes: *mut *mut u8, pcbcommandsize: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetNamedCommand)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cbsize), pszcommandname.into_param().abi(), ::core::mem::transmute(ppcommandbytes), ::core::mem::transmute(pcbcommandsize)).ok()
     }
@@ -9069,9 +8749,9 @@ unsafe impl ::windows_core::Interface for IPrintCoreHelperUni2 {
 #[doc(hidden)]
 pub struct IPrintCoreHelperUni2_Vtbl {
     pub base__: IPrintCoreHelperUni_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub GetNamedCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevmode: *const super::Gdi::DEVMODEA, cbsize: u32, pszcommandname: ::windows_core::PCWSTR, ppcommandbytes: *mut *mut u8, pcbcommandsize: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     GetNamedCommand: usize,
 }
 #[repr(transparent)]
@@ -9080,52 +8760,41 @@ impl IPrintCoreUI2 {
     pub unsafe fn DrvGetDriverSetting<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pci: *mut ::core::ffi::c_void, feature: Param1, poutput: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32, pdwoptionsreturned: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DrvGetDriverSetting)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pci), feature.into_param().abi(), ::core::mem::transmute(poutput), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pdwoptionsreturned)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DrvUpgradeRegistrySetting<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, hprinter: Param0, pfeature: Param1, poption: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn DrvUpgradeRegistrySetting<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, hprinter: Param0, pfeature: Param1, poption: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DrvUpgradeRegistrySetting)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), pfeature.into_param().abi(), poption.into_param().abi()).ok()
     }
     pub unsafe fn DrvUpdateUISetting(&self, pci: *mut ::core::ffi::c_void, poptitem: *mut ::core::ffi::c_void, dwpreviousselection: u32, dwmode: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DrvUpdateUISetting)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pci), ::core::mem::transmute(poptitem), ::core::mem::transmute(dwpreviousselection), ::core::mem::transmute(dwmode)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetOptions(&self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pmszfeaturesrequested: *const i8, cbin: u32, pmszfeatureoptionbuf: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(dwflags), ::core::mem::transmute(pmszfeaturesrequested), ::core::mem::transmute(cbin), ::core::mem::transmute(pmszfeatureoptionbuf), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetOptions(&self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pmszfeatureoptionbuf: *const i8, cbin: u32) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).SetOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(dwflags), ::core::mem::transmute(pmszfeatureoptionbuf), ::core::mem::transmute(cbin), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn EnumConstrainedOptions<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: Param2, pmszconstrainedoptionlist: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumConstrainedOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(dwflags), pszfeaturekeyword.into_param().abi(), ::core::mem::transmute(pmszconstrainedoptionlist), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn WhyConstrained<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: Param2, pszoptionkeyword: Param3, pmszreasonlist: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).WhyConstrained)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(dwflags), pszfeaturekeyword.into_param().abi(), pszoptionkeyword.into_param().abi(), ::core::mem::transmute(pmszreasonlist), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetGlobalAttribute<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszattribute: Param2, pdwdatatype: *mut u32, pbdata: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetGlobalAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(dwflags), pszattribute.into_param().abi(), ::core::mem::transmute(pdwdatatype), ::core::mem::transmute(pbdata), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetFeatureAttribute<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: Param2, pszattribute: Param3, pdwdatatype: *mut u32, pbdata: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetFeatureAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(dwflags), pszfeaturekeyword.into_param().abi(), pszattribute.into_param().abi(), ::core::mem::transmute(pdwdatatype), ::core::mem::transmute(pbdata), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetOptionAttribute<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: Param2, pszoptionkeyword: Param3, pszattribute: Param4, pdwdatatype: *mut u32, pbdata: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetOptionAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(dwflags), pszfeaturekeyword.into_param().abi(), pszoptionkeyword.into_param().abi(), pszattribute.into_param().abi(), ::core::mem::transmute(pdwdatatype), ::core::mem::transmute(pbdata), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn EnumFeatures(&self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pmszfeaturelist: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumFeatures)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(dwflags), ::core::mem::transmute(pmszfeaturelist), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn EnumOptions<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: Param2, pmszoptionlist: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(dwflags), pszfeaturekeyword.into_param().abi(), ::core::mem::transmute(pmszoptionlist), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QuerySimulationSupport<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, dwlevel: u32, pcaps: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
+    pub unsafe fn QuerySimulationSupport<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, dwlevel: u32, pcaps: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).QuerySimulationSupport)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pcaps), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
 }
@@ -9193,54 +8862,23 @@ unsafe impl ::windows_core::Interface for IPrintCoreUI2 {
 #[doc(hidden)]
 pub struct IPrintCoreUI2_Vtbl {
     pub base__: IPrintOemDriverUI_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, dwflags: u32, pmszfeaturesrequested: *const i8, cbin: u32, pmszfeatureoptionbuf: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetOptions: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub SetOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, dwflags: u32, pmszfeatureoptionbuf: *const i8, cbin: u32, pdwresult: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetOptions: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub EnumConstrainedOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_core::PCSTR, pmszconstrainedoptionlist: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EnumConstrainedOptions: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub WhyConstrained: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_core::PCSTR, pszoptionkeyword: ::windows_core::PCSTR, pmszreasonlist: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    WhyConstrained: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetGlobalAttribute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszattribute: ::windows_core::PCSTR, pdwdatatype: *mut u32, pbdata: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetGlobalAttribute: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetFeatureAttribute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_core::PCSTR, pszattribute: ::windows_core::PCSTR, pdwdatatype: *mut u32, pbdata: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetFeatureAttribute: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetOptionAttribute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_core::PCSTR, pszoptionkeyword: ::windows_core::PCSTR, pszattribute: ::windows_core::PCSTR, pdwdatatype: *mut u32, pbdata: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetOptionAttribute: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub EnumFeatures: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, dwflags: u32, pmszfeaturelist: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EnumFeatures: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub EnumOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, dwflags: u32, pszfeaturekeyword: ::windows_core::PCSTR, pmszoptionlist: ::windows_core::PSTR, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EnumOptions: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub QuerySimulationSupport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, dwlevel: u32, pcaps: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    QuerySimulationSupport: usize,
+    pub QuerySimulationSupport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, dwlevel: u32, pcaps: *mut u8, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPrintJob(::windows_core::IUnknown);
 impl IPrintJob {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Id(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -9310,10 +8948,7 @@ unsafe impl ::windows_core::Interface for IPrintJob {
 #[doc(hidden)]
 pub struct IPrintJob_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulid: *mut u32) -> ::windows_core::HRESULT,
     pub PrintedPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulpages: *mut u32) -> ::windows_core::HRESULT,
     pub TotalPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulpages: *mut u32) -> ::windows_core::HRESULT,
@@ -9364,26 +8999,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintJ
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintJobCollection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintJobCollection> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintJobCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintJobCollection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintJobCollection> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintJobCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintJobCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintJobCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintJobCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintJobCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -9416,7 +9051,7 @@ unsafe impl ::windows_core::Interface for IPrintJobCollection {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintJobCollection_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulcount: *mut u32) -> ::windows_core::HRESULT,
     pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulindex: u32, ppjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -9427,7 +9062,7 @@ impl IPrintOemCommon {
     pub unsafe fn GetInfo(&self, dwmode: u32, pbuffer: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwmode), ::core::mem::transmute(pbuffer), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn DevMode(&self, dwmode: u32, poemdmparam: *mut OEMDMPARAM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DevMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwmode), ::core::mem::transmute(poemdmparam)).ok()
     }
@@ -9477,9 +9112,9 @@ unsafe impl ::windows_core::Interface for IPrintOemCommon {
 pub struct IPrintOemCommon_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwmode: u32, pbuffer: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub DevMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwmode: u32, poemdmparam: *mut OEMDMPARAM) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     DevMode: usize,
 }
 #[repr(transparent)]
@@ -9488,8 +9123,7 @@ impl IPrintOemDriverUI {
     pub unsafe fn DrvGetDriverSetting<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, pci: *mut ::core::ffi::c_void, feature: Param1, poutput: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32, pdwoptionsreturned: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DrvGetDriverSetting)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pci), feature.into_param().abi(), ::core::mem::transmute(poutput), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded), ::core::mem::transmute(pdwoptionsreturned)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DrvUpgradeRegistrySetting<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, hprinter: Param0, pfeature: Param1, poption: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn DrvUpgradeRegistrySetting<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, hprinter: Param0, pfeature: Param1, poption: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DrvUpgradeRegistrySetting)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), pfeature.into_param().abi(), poption.into_param().abi()).ok()
     }
     pub unsafe fn DrvUpdateUISetting(&self, pci: *mut ::core::ffi::c_void, poptitem: *mut ::core::ffi::c_void, dwpreviousselection: u32, dwmode: u32) -> ::windows_core::Result<()> {
@@ -9541,10 +9175,7 @@ unsafe impl ::windows_core::Interface for IPrintOemDriverUI {
 pub struct IPrintOemDriverUI_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub DrvGetDriverSetting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pci: *mut ::core::ffi::c_void, feature: ::windows_core::PCSTR, poutput: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32, pdwoptionsreturned: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DrvUpgradeRegistrySetting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, pfeature: ::windows_core::PCSTR, poption: ::windows_core::PCSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DrvUpgradeRegistrySetting: usize,
+    pub DrvUpgradeRegistrySetting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, pfeature: ::windows_core::PCSTR, poption: ::windows_core::PCSTR) -> ::windows_core::HRESULT,
     pub DrvUpdateUISetting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pci: *mut ::core::ffi::c_void, poptitem: *mut ::core::ffi::c_void, dwpreviousselection: u32, dwmode: u32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -9553,54 +9184,48 @@ impl IPrintOemUI {
     pub unsafe fn GetInfo(&self, dwmode: u32, pbuffer: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwmode), ::core::mem::transmute(pbuffer), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn DevMode(&self, dwmode: u32, poemdmparam: *mut OEMDMPARAM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DevMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwmode), ::core::mem::transmute(poemdmparam)).ok()
     }
     pub unsafe fn PublishDriverInterface<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, piunknown: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PublishDriverInterface)(::windows_core::Interface::as_raw(self), piunknown.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
     pub unsafe fn CommonUIProp(&self, dwmode: u32, poemcuipparam: *const OEMCUIPPARAM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CommonUIProp)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwmode), ::core::mem::transmute(poemcuipparam)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DocumentPropertySheets<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, ppsuiinfo: *mut PROPSHEETUI_INFO, lparam: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn DocumentPropertySheets<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, ppsuiinfo: *mut PROPSHEETUI_INFO, lparam: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DocumentPropertySheets)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppsuiinfo), lparam.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DevicePropertySheets<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, ppsuiinfo: *const PROPSHEETUI_INFO, lparam: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn DevicePropertySheets<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, ppsuiinfo: *const PROPSHEETUI_INFO, lparam: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DevicePropertySheets)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppsuiinfo), lparam.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn DevQueryPrintEx(&self, poemuiobj: *const OEMUIOBJ, pdqpinfo: *const DEVQUERYPRINT_INFO, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DevQueryPrintEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(pdqpinfo), ::core::mem::transmute(ppublicdm), ::core::mem::transmute(poemdm)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn DeviceCapabilitiesA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, poemuiobj: *mut OEMUIOBJ, hprinter: Param1, pdevicename: Param2, wcapability: u16, poutput: *mut ::core::ffi::c_void, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, dwold: u32, dwresult: *mut u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn DeviceCapabilitiesA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, poemuiobj: *mut OEMUIOBJ, hprinter: Param1, pdevicename: Param2, wcapability: u16, poutput: *mut ::core::ffi::c_void, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, dwold: u32, dwresult: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DeviceCapabilitiesA)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), hprinter.into_param().abi(), pdevicename.into_param().abi(), ::core::mem::transmute(wcapability), ::core::mem::transmute(poutput), ::core::mem::transmute(ppublicdm), ::core::mem::transmute(poemdm), ::core::mem::transmute(dwold), ::core::mem::transmute(dwresult)).ok()
     }
     pub unsafe fn UpgradePrinter(&self, dwlevel: u32, pdriverupgradeinfo: *const u8) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UpgradePrinter)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pdriverupgradeinfo)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PrinterEvent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, pprintername: Param0, idriverevent: i32, dwflags: u32, lparam: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn PrinterEvent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, pprintername: Param0, idriverevent: i32, dwflags: u32, lparam: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PrinterEvent)(::windows_core::Interface::as_raw(self), pprintername.into_param().abi(), ::core::mem::transmute(idriverevent), ::core::mem::transmute(dwflags), lparam.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DriverEvent<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, dwdriverevent: u32, dwlevel: u32, pdriverinfo: *const u8, lparam: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn DriverEvent<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, dwdriverevent: u32, dwlevel: u32, pdriverinfo: *const u8, lparam: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DriverEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwdriverevent), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pdriverinfo), lparam.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn QueryColorProfile<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, poemuiobj: *const OEMUIOBJ, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, ulquerymode: u32, pvprofiledata: *mut ::core::ffi::c_void, pcbprofiledata: *mut u32, pflprofiledata: *mut u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn QueryColorProfile<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, poemuiobj: *const OEMUIOBJ, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, ulquerymode: u32, pvprofiledata: *mut ::core::ffi::c_void, pcbprofiledata: *mut u32, pflprofiledata: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).QueryColorProfile)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(ppublicdm), ::core::mem::transmute(poemdm), ::core::mem::transmute(ulquerymode), ::core::mem::transmute(pvprofiledata), ::core::mem::transmute(pcbprofiledata), ::core::mem::transmute(pflprofiledata)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FontInstallerDlgProc<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, hwnd: Param0, usmsg: u32, wparam: Param2, lparam: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn FontInstallerDlgProc<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, hwnd: Param0, usmsg: u32, wparam: Param2, lparam: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).FontInstallerDlgProc)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), ::core::mem::transmute(usmsg), wparam.into_param().abi(), lparam.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UpdateExternalFonts<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hprinter: Param0, hheap: Param1, pwstrcartridges: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn UpdateExternalFonts<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hprinter: Param0, hheap: Param1, pwstrcartridges: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UpdateExternalFonts)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), hheap.into_param().abi(), pwstrcartridges.into_param().abi()).ok()
     }
 }
@@ -9669,47 +9294,29 @@ unsafe impl ::windows_core::Interface for IPrintOemUI {
 pub struct IPrintOemUI_Vtbl {
     pub base__: IPrintOemCommon_Vtbl,
     pub PublishDriverInterface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, piunknown: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
     pub CommonUIProp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwmode: u32, poemcuipparam: *const OEMCUIPPARAM) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging")))]
+    #[cfg(not(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging")))]
     CommonUIProp: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DocumentPropertySheets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsuiinfo: *mut PROPSHEETUI_INFO, lparam: super::super::Foundation::LPARAM) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DocumentPropertySheets: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DevicePropertySheets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsuiinfo: *const PROPSHEETUI_INFO, lparam: super::super::Foundation::LPARAM) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DevicePropertySheets: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    pub DocumentPropertySheets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsuiinfo: *mut PROPSHEETUI_INFO, lparam: ::win32_foundation::LPARAM) -> ::windows_core::HRESULT,
+    pub DevicePropertySheets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsuiinfo: *const PROPSHEETUI_INFO, lparam: ::win32_foundation::LPARAM) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub DevQueryPrintEx: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *const OEMUIOBJ, pdqpinfo: *const DEVQUERYPRINT_INFO, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     DevQueryPrintEx: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub DeviceCapabilitiesA: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *mut OEMUIOBJ, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows_core::PCWSTR, wcapability: u16, poutput: *mut ::core::ffi::c_void, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, dwold: u32, dwresult: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub DeviceCapabilitiesA: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, poemuiobj: *mut OEMUIOBJ, hprinter: ::win32_foundation::HANDLE, pdevicename: ::windows_core::PCWSTR, wcapability: u16, poutput: *mut ::core::ffi::c_void, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, dwold: u32, dwresult: *mut u32) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     DeviceCapabilitiesA: usize,
     pub UpgradePrinter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwlevel: u32, pdriverupgradeinfo: *const u8) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PrinterEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprintername: ::windows_core::PCWSTR, idriverevent: i32, dwflags: u32, lparam: super::super::Foundation::LPARAM) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PrinterEvent: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DriverEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwdriverevent: u32, dwlevel: u32, pdriverinfo: *const u8, lparam: super::super::Foundation::LPARAM) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DriverEvent: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub QueryColorProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, poemuiobj: *const OEMUIOBJ, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, ulquerymode: u32, pvprofiledata: *mut ::core::ffi::c_void, pcbprofiledata: *mut u32, pflprofiledata: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    pub PrinterEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprintername: ::windows_core::PCWSTR, idriverevent: i32, dwflags: u32, lparam: ::win32_foundation::LPARAM) -> ::windows_core::HRESULT,
+    pub DriverEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwdriverevent: u32, dwlevel: u32, pdriverinfo: *const u8, lparam: ::win32_foundation::LPARAM) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub QueryColorProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, poemuiobj: *const OEMUIOBJ, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, ulquerymode: u32, pvprofiledata: *mut ::core::ffi::c_void, pcbprofiledata: *mut u32, pflprofiledata: *mut u32) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     QueryColorProfile: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FontInstallerDlgProc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, usmsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FontInstallerDlgProc: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub UpdateExternalFonts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, hheap: super::super::Foundation::HANDLE, pwstrcartridges: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    UpdateExternalFonts: usize,
+    pub FontInstallerDlgProc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, usmsg: u32, wparam: ::win32_foundation::WPARAM, lparam: ::win32_foundation::LPARAM) -> ::windows_core::HRESULT,
+    pub UpdateExternalFonts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, hheap: ::win32_foundation::HANDLE, pwstrcartridges: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPrintOemUI2(::windows_core::IUnknown);
@@ -9717,65 +9324,59 @@ impl IPrintOemUI2 {
     pub unsafe fn GetInfo(&self, dwmode: u32, pbuffer: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwmode), ::core::mem::transmute(pbuffer), ::core::mem::transmute(cbsize), ::core::mem::transmute(pcbneeded)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn DevMode(&self, dwmode: u32, poemdmparam: *mut OEMDMPARAM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.DevMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwmode), ::core::mem::transmute(poemdmparam)).ok()
     }
     pub unsafe fn PublishDriverInterface<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, piunknown: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.PublishDriverInterface)(::windows_core::Interface::as_raw(self), piunknown.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
     pub unsafe fn CommonUIProp(&self, dwmode: u32, poemcuipparam: *const OEMCUIPPARAM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CommonUIProp)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwmode), ::core::mem::transmute(poemcuipparam)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DocumentPropertySheets<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, ppsuiinfo: *mut PROPSHEETUI_INFO, lparam: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn DocumentPropertySheets<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, ppsuiinfo: *mut PROPSHEETUI_INFO, lparam: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DocumentPropertySheets)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppsuiinfo), lparam.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DevicePropertySheets<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, ppsuiinfo: *const PROPSHEETUI_INFO, lparam: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn DevicePropertySheets<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, ppsuiinfo: *const PROPSHEETUI_INFO, lparam: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DevicePropertySheets)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppsuiinfo), lparam.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub unsafe fn DevQueryPrintEx(&self, poemuiobj: *const OEMUIOBJ, pdqpinfo: *const DEVQUERYPRINT_INFO, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DevQueryPrintEx)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(pdqpinfo), ::core::mem::transmute(ppublicdm), ::core::mem::transmute(poemdm)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn DeviceCapabilitiesA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, poemuiobj: *mut OEMUIOBJ, hprinter: Param1, pdevicename: Param2, wcapability: u16, poutput: *mut ::core::ffi::c_void, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, dwold: u32, dwresult: *mut u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn DeviceCapabilitiesA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, poemuiobj: *mut OEMUIOBJ, hprinter: Param1, pdevicename: Param2, wcapability: u16, poutput: *mut ::core::ffi::c_void, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, dwold: u32, dwresult: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DeviceCapabilitiesA)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(poemuiobj), hprinter.into_param().abi(), pdevicename.into_param().abi(), ::core::mem::transmute(wcapability), ::core::mem::transmute(poutput), ::core::mem::transmute(ppublicdm), ::core::mem::transmute(poemdm), ::core::mem::transmute(dwold), ::core::mem::transmute(dwresult)).ok()
     }
     pub unsafe fn UpgradePrinter(&self, dwlevel: u32, pdriverupgradeinfo: *const u8) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.UpgradePrinter)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pdriverupgradeinfo)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PrinterEvent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, pprintername: Param0, idriverevent: i32, dwflags: u32, lparam: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn PrinterEvent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, pprintername: Param0, idriverevent: i32, dwflags: u32, lparam: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.PrinterEvent)(::windows_core::Interface::as_raw(self), pprintername.into_param().abi(), ::core::mem::transmute(idriverevent), ::core::mem::transmute(dwflags), lparam.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DriverEvent<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, dwdriverevent: u32, dwlevel: u32, pdriverinfo: *const u8, lparam: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn DriverEvent<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, dwdriverevent: u32, dwlevel: u32, pdriverinfo: *const u8, lparam: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DriverEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwdriverevent), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pdriverinfo), lparam.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn QueryColorProfile<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, poemuiobj: *const OEMUIOBJ, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, ulquerymode: u32, pvprofiledata: *mut ::core::ffi::c_void, pcbprofiledata: *mut u32, pflprofiledata: *mut u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn QueryColorProfile<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, poemuiobj: *const OEMUIOBJ, ppublicdm: *const super::Gdi::DEVMODEA, poemdm: *const ::core::ffi::c_void, ulquerymode: u32, pvprofiledata: *mut ::core::ffi::c_void, pcbprofiledata: *mut u32, pflprofiledata: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.QueryColorProfile)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(poemuiobj), ::core::mem::transmute(ppublicdm), ::core::mem::transmute(poemdm), ::core::mem::transmute(ulquerymode), ::core::mem::transmute(pvprofiledata), ::core::mem::transmute(pcbprofiledata), ::core::mem::transmute(pflprofiledata)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FontInstallerDlgProc<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(&self, hwnd: Param0, usmsg: u32, wparam: Param2, lparam: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn FontInstallerDlgProc<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::WPARAM>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(&self, hwnd: Param0, usmsg: u32, wparam: Param2, lparam: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.FontInstallerDlgProc)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), ::core::mem::transmute(usmsg), wparam.into_param().abi(), lparam.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UpdateExternalFonts<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hprinter: Param0, hheap: Param1, pwstrcartridges: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn UpdateExternalFonts<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hprinter: Param0, hheap: Param1, pwstrcartridges: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.UpdateExternalFonts)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), hheap.into_param().abi(), pwstrcartridges.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn QueryJobAttributes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, pdevmode: *const super::Gdi::DEVMODEA, dwlevel: u32, lpattributeinfo: *const u8) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn QueryJobAttributes<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, pdevmode: *const super::Gdi::DEVMODEA, dwlevel: u32, lpattributeinfo: *const u8) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).QueryJobAttributes)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(pdevmode), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lpattributeinfo)).ok()
     }
     pub unsafe fn HideStandardUI(&self, dwmode: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).HideStandardUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwmode)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn DocumentEvent<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(&self, hprinter: Param0, hdc: Param1, iesc: i32, cbin: u32, pvin: *mut ::core::ffi::c_void, cbout: u32, pvout: *mut ::core::ffi::c_void, piresult: *mut i32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn DocumentEvent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(&self, hprinter: Param0, hdc: Param1, iesc: i32, cbin: u32, pvin: *mut ::core::ffi::c_void, cbout: u32, pvout: *mut ::core::ffi::c_void, piresult: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DocumentEvent)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), hdc.into_param().abi(), ::core::mem::transmute(iesc), ::core::mem::transmute(cbin), ::core::mem::transmute(pvin), ::core::mem::transmute(cbout), ::core::mem::transmute(pvout), ::core::mem::transmute(piresult)).ok()
     }
 }
@@ -9863,29 +9464,29 @@ unsafe impl ::windows_core::Interface for IPrintOemUI2 {
 #[doc(hidden)]
 pub struct IPrintOemUI2_Vtbl {
     pub base__: IPrintOemUI_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub QueryJobAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEA, dwlevel: u32, lpattributeinfo: *const u8) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub QueryJobAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEA, dwlevel: u32, lpattributeinfo: *const u8) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     QueryJobAttributes: usize,
     pub HideStandardUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwmode: u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub DocumentEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, hdc: super::Gdi::HDC, iesc: i32, cbin: u32, pvin: *mut ::core::ffi::c_void, cbout: u32, pvout: *mut ::core::ffi::c_void, piresult: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub DocumentEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, hdc: super::Gdi::HDC, iesc: i32, cbin: u32, pvin: *mut ::core::ffi::c_void, cbout: u32, pvout: *mut ::core::ffi::c_void, piresult: *mut i32) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     DocumentEvent: usize,
 }
 #[repr(transparent)]
 pub struct IPrintOemUIMXDC(::windows_core::IUnknown);
 impl IPrintOemUIMXDC {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn AdjustImageableArea<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, prclimageablearea: *mut super::super::Foundation::RECTL) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn AdjustImageableArea<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, prclimageablearea: *mut ::win32_foundation::RECTL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AdjustImageableArea)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(cbdevmode), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cboemdm), ::core::mem::transmute(poemdm), ::core::mem::transmute(prclimageablearea)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn AdjustImageCompression<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pcompressionmode: *mut i32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn AdjustImageCompression<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pcompressionmode: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AdjustImageCompression)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(cbdevmode), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cboemdm), ::core::mem::transmute(poemdm), ::core::mem::transmute(pcompressionmode)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub unsafe fn AdjustDPI<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pdpi: *mut i32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub unsafe fn AdjustDPI<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pdpi: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AdjustDPI)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(cbdevmode), ::core::mem::transmute(pdevmode), ::core::mem::transmute(cboemdm), ::core::mem::transmute(poemdm), ::core::mem::transmute(pdpi)).ok()
     }
 }
@@ -9933,17 +9534,17 @@ unsafe impl ::windows_core::Interface for IPrintOemUIMXDC {
 #[doc(hidden)]
 pub struct IPrintOemUIMXDC_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub AdjustImageableArea: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, prclimageablearea: *mut super::super::Foundation::RECTL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub AdjustImageableArea: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, prclimageablearea: *mut ::win32_foundation::RECTL) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     AdjustImageableArea: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub AdjustImageCompression: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pcompressionmode: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub AdjustImageCompression: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pcompressionmode: *mut i32) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     AdjustImageCompression: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub AdjustDPI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pdpi: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi")))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub AdjustDPI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, cbdevmode: u32, pdevmode: *const super::Gdi::DEVMODEA, cboemdm: u32, poemdm: *const ::core::ffi::c_void, pdpi: *mut i32) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     AdjustDPI: usize,
 }
 #[repr(transparent)]
@@ -10124,17 +9725,16 @@ pub struct IPrintPipelineProgressReport_Vtbl {
 #[repr(transparent)]
 pub struct IPrintPipelinePropertyBag(::windows_core::IUnknown);
 impl IPrintPipelinePropertyBag {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn AddProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszname: Param0, pvar: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn AddProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszname: Param0, pvar: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddProperty)(::windows_core::Interface::as_raw(self), pszname.into_param().abi(), ::core::mem::transmute(pvar)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszname: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), pszname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn GetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszname: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), pszname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeleteProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszname: Param0) -> super::super::Foundation::BOOL {
+    pub unsafe fn DeleteProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszname: Param0) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).DeleteProperty)(::windows_core::Interface::as_raw(self), pszname.into_param().abi()))
     }
 }
@@ -10182,18 +9782,15 @@ unsafe impl ::windows_core::Interface for IPrintPipelinePropertyBag {
 #[doc(hidden)]
 pub struct IPrintPipelinePropertyBag_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub AddProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszname: ::windows_core::PCWSTR, pvar: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub AddProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszname: ::windows_core::PCWSTR, pvar: *const ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     AddProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszname: ::windows_core::PCWSTR, pvar: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszname: ::windows_core::PCWSTR, pvar: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetProperty: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DeleteProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DeleteProperty: usize,
+    pub DeleteProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL,
 }
 #[repr(transparent)]
 pub struct IPrintPreviewDxgiPackageTarget(::windows_core::IUnknown);
@@ -10267,8 +9864,7 @@ impl IPrintReadStream {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         (::windows_core::Interface::vtable(self).Seek)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dlibmove), ::core::mem::transmute(dworigin), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ReadBytes(&self, pvbuffer: *mut ::core::ffi::c_void, cbrequested: u32, pcbread: *mut u32, pbendoffile: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn ReadBytes(&self, pvbuffer: *mut ::core::ffi::c_void, cbrequested: u32, pcbread: *mut u32, pbendoffile: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ReadBytes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pvbuffer), ::core::mem::transmute(cbrequested), ::core::mem::transmute(pcbread), ::core::mem::transmute(pbendoffile)).ok()
     }
 }
@@ -10317,10 +9913,7 @@ unsafe impl ::windows_core::Interface for IPrintReadStream {
 pub struct IPrintReadStream_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Seek: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dlibmove: i64, dworigin: u32, plibnewposition: *mut u64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ReadBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvbuffer: *mut ::core::ffi::c_void, cbrequested: u32, pcbread: *mut u32, pbendoffile: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ReadBytes: usize,
+    pub ReadBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvbuffer: *mut ::core::ffi::c_void, cbrequested: u32, pcbread: *mut u32, pbendoffile: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPrintReadStreamFactory(::windows_core::IUnknown);
@@ -10413,26 +10006,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaAsyncOperation> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaAsyncOperation> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaAsyncOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaAsyncOperation> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaAsyncOperation> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaAsyncOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaAsyncOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaAsyncOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaAsyncOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaAsyncOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10465,7 +10058,7 @@ unsafe impl ::windows_core::Interface for IPrintSchemaAsyncOperation {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintSchemaAsyncOperation_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -10504,26 +10097,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaAsyncOperationEvent> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaAsyncOperationEvent> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaAsyncOperationEvent) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaAsyncOperationEvent> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaAsyncOperationEvent> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaAsyncOperationEvent) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaAsyncOperationEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaAsyncOperationEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaAsyncOperationEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaAsyncOperationEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10556,7 +10149,7 @@ unsafe impl ::windows_core::Interface for IPrintSchemaAsyncOperationEvent {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintSchemaAsyncOperationEvent_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub Completed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pticket: ::windows_core::RawPtr, hroperation: ::windows_core::HRESULT) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -10571,23 +10164,21 @@ impl IPrintSchemaCapabilities {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFeatureByKeyName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrkeyname: Param0) -> ::windows_core::Result<IPrintSchemaFeature> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFeatureByKeyName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrkeyname: Param0) -> ::windows_core::Result<IPrintSchemaFeature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetFeatureByKeyName)(::windows_core::Interface::as_raw(self), bstrkeyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaFeature>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFeature<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaFeature> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFeature<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaFeature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetFeature)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaFeature>(result__)
     }
@@ -10640,26 +10231,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaCapabilities> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaCapabilities> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaCapabilities) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaCapabilities> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaCapabilities> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaCapabilities) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaCapabilities {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaCapabilities {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaCapabilities {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaCapabilities {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10717,13 +10308,13 @@ unsafe impl ::windows_core::Interface for IPrintSchemaCapabilities {
 #[doc(hidden)]
 pub struct IPrintSchemaCapabilities_Vtbl {
     pub base__: IPrintSchemaElement_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetFeatureByKeyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrkeyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppfeature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFeatureByKeyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrkeyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppfeature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetFeatureByKeyName: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppfeature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppfeature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetFeature: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub PageImageableSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppageimageablesize: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -10749,23 +10340,21 @@ impl IPrintSchemaCapabilities2 {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFeatureByKeyName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrkeyname: Param0) -> ::windows_core::Result<IPrintSchemaFeature> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFeatureByKeyName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrkeyname: Param0) -> ::windows_core::Result<IPrintSchemaFeature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetFeatureByKeyName)(::windows_core::Interface::as_raw(self), bstrkeyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaFeature>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFeature<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaFeature> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFeature<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaFeature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetFeature)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaFeature>(result__)
     }
@@ -10792,8 +10381,8 @@ impl IPrintSchemaCapabilities2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetOptions)(::windows_core::Interface::as_raw(self), pfeature.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaOptionCollection>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetParameterDefinition<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaParameterDefinition> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetParameterDefinition<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaParameterDefinition> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetParameterDefinition)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaParameterDefinition>(result__)
     }
@@ -10823,26 +10412,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaCapabilities2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaCapabilities2> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaCapabilities2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaCapabilities2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaCapabilities2> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaCapabilities2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaCapabilities2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaCapabilities2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaCapabilities2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaCapabilities2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10924,9 +10513,9 @@ unsafe impl ::windows_core::Interface for IPrintSchemaCapabilities2 {
 #[doc(hidden)]
 pub struct IPrintSchemaCapabilities2_Vtbl {
     pub base__: IPrintSchemaCapabilities_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetParameterDefinition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppparameterdefinition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetParameterDefinition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppparameterdefinition: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetParameterDefinition: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10938,20 +10527,17 @@ impl IPrintSchemaDisplayableElement {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10979,26 +10565,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaDisplayableElement> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaDisplayableElement> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaDisplayableElement) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaDisplayableElement> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaDisplayableElement> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaDisplayableElement) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaDisplayableElement {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaDisplayableElement {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaDisplayableElement {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaDisplayableElement {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11056,10 +10642,7 @@ unsafe impl ::windows_core::Interface for IPrintSchemaDisplayableElement {
 #[doc(hidden)]
 pub struct IPrintSchemaDisplayableElement_Vtbl {
     pub base__: IPrintSchemaElement_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdisplayname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DisplayName: usize,
+    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdisplayname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -11070,15 +10653,13 @@ impl IPrintSchemaElement {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -11106,26 +10687,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaElement> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaElement> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaElement) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaElement> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaElement> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaElement) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaElement {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaElement {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaElement {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaElement {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11158,16 +10739,10 @@ unsafe impl ::windows_core::Interface for IPrintSchemaElement {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintSchemaElement_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub XmlNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppxmlnode: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub NamespaceUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrnamespaceuri: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    NamespaceUri: usize,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub NamespaceUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrnamespaceuri: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -11178,20 +10753,17 @@ impl IPrintSchemaFeature {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn SelectedOption(&self) -> ::windows_core::Result<IPrintSchemaOption> {
@@ -11206,15 +10778,14 @@ impl IPrintSchemaFeature {
         let mut result__ = ::core::mem::MaybeUninit::<PrintSchemaSelectionType>::zeroed();
         (::windows_core::Interface::vtable(self).SelectionType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PrintSchemaSelectionType>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetOption<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaOption> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetOption<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaOption> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetOption)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaOption>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayUI(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DisplayUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DisplayUI(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DisplayUI)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -11242,26 +10813,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaFeature> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaFeature> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaFeature) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaFeature> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaFeature> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaFeature) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaFeature {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaFeature {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaFeature {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaFeature {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11352,14 +10923,11 @@ pub struct IPrintSchemaFeature_Vtbl {
     #[cfg(not(feature = "Win32_System_Com"))]
     SetSelectedOption: usize,
     pub SelectionType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pselectiontype: *mut PrintSchemaSelectionType) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppoption: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppoption: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetOption: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DisplayUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbshow: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DisplayUI: usize,
+    pub DisplayUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbshow: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -11370,32 +10938,27 @@ impl IPrintSchemaNUpOption {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Selected(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Selected)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn Selected(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Selected)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn Constrained(&self) -> ::windows_core::Result<PrintSchemaConstrainedSetting> {
         let mut result__ = ::core::mem::MaybeUninit::<PrintSchemaConstrainedSetting>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Constrained)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PrintSchemaConstrainedSetting>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn GetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetPropertyValue)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
@@ -11429,26 +10992,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaNUpOption> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaNUpOption> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaNUpOption) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaNUpOption> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaNUpOption> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaNUpOption) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaNUpOption {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaNUpOption {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaNUpOption {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaNUpOption {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11565,32 +11128,27 @@ impl IPrintSchemaOption {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Selected(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).Selected)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn Selected(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).Selected)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn Constrained(&self) -> ::windows_core::Result<PrintSchemaConstrainedSetting> {
         let mut result__ = ::core::mem::MaybeUninit::<PrintSchemaConstrainedSetting>::zeroed();
         (::windows_core::Interface::vtable(self).Constrained)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PrintSchemaConstrainedSetting>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn GetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).GetPropertyValue)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
@@ -11620,26 +11178,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaOption> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaOption> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaOption) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaOption> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaOption> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaOption) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaOption {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaOption {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaOption {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaOption {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11721,15 +11279,9 @@ unsafe impl ::windows_core::Interface for IPrintSchemaOption {
 #[doc(hidden)]
 pub struct IPrintSchemaOption_Vtbl {
     pub base__: IPrintSchemaDisplayableElement_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Selected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbisselected: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Selected: usize,
+    pub Selected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbisselected: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub Constrained: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psetting: *mut PrintSchemaConstrainedSetting) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetPropertyValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppxmlvaluenode: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetPropertyValue: usize,
+    pub GetPropertyValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppxmlvaluenode: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -11775,26 +11327,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaOptionCollection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaOptionCollection> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaOptionCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaOptionCollection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaOptionCollection> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaOptionCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaOptionCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaOptionCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaOptionCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaOptionCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11827,7 +11379,7 @@ unsafe impl ::windows_core::Interface for IPrintSchemaOptionCollection {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintSchemaOptionCollection_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulcount: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulindex: u32, ppoption: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -11844,15 +11396,13 @@ impl IPrintSchemaPageImageableSize {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn ImageableSizeWidthInMicrons(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -11904,26 +11454,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaPageImageableSize> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaPageImageableSize> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaPageImageableSize) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaPageImageableSize> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaPageImageableSize> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaPageImageableSize) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaPageImageableSize {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaPageImageableSize {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaPageImageableSize {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaPageImageableSize {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11997,32 +11547,27 @@ impl IPrintSchemaPageMediaSizeOption {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Selected(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Selected)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn Selected(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Selected)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn Constrained(&self) -> ::windows_core::Result<PrintSchemaConstrainedSetting> {
         let mut result__ = ::core::mem::MaybeUninit::<PrintSchemaConstrainedSetting>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Constrained)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PrintSchemaConstrainedSetting>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn GetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetPropertyValue)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
@@ -12060,26 +11605,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaPageMediaSizeOption> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaPageMediaSizeOption> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaPageMediaSizeOption) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaPageMediaSizeOption> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaPageMediaSizeOption> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaPageMediaSizeOption) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaPageMediaSizeOption {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaPageMediaSizeOption {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaPageMediaSizeOption {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaPageMediaSizeOption {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -12197,30 +11742,25 @@ impl IPrintSchemaParameterDefinition {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UserInputRequired(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).UserInputRequired)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn UserInputRequired(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).UserInputRequired)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UnitType(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).UnitType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn UnitType(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).UnitType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn DataType(&self) -> ::windows_core::Result<PrintSchemaParameterDataType> {
         let mut result__ = ::core::mem::MaybeUninit::<PrintSchemaParameterDataType>::zeroed();
@@ -12260,26 +11800,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaParameterDefinition> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaParameterDefinition> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaParameterDefinition) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaParameterDefinition> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaParameterDefinition> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaParameterDefinition) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaParameterDefinition {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaParameterDefinition {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaParameterDefinition {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaParameterDefinition {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -12361,14 +11901,8 @@ unsafe impl ::windows_core::Interface for IPrintSchemaParameterDefinition {
 #[doc(hidden)]
 pub struct IPrintSchemaParameterDefinition_Vtbl {
     pub base__: IPrintSchemaDisplayableElement_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub UserInputRequired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbisrequired: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    UserInputRequired: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub UnitType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrunittype: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    UnitType: usize,
+    pub UserInputRequired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbisrequired: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub UnitType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrunittype: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub DataType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatatype: *mut PrintSchemaParameterDataType) -> ::windows_core::HRESULT,
     pub RangeMin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prangemin: *mut i32) -> ::windows_core::HRESULT,
     pub RangeMax: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prangemax: *mut i32) -> ::windows_core::HRESULT,
@@ -12382,23 +11916,21 @@ impl IPrintSchemaParameterInitializer {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Value(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).Value)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Value(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).Value)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetValue(&self, pvar: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn SetValue(&self, pvar: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pvar)).ok()
     }
 }
@@ -12427,26 +11959,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaParameterInitializer> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaParameterInitializer> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaParameterInitializer) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaParameterInitializer> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaParameterInitializer> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaParameterInitializer) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaParameterInitializer {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaParameterInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaParameterInitializer {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaParameterInitializer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -12504,13 +12036,13 @@ unsafe impl ::windows_core::Interface for IPrintSchemaParameterInitializer {
 #[doc(hidden)]
 pub struct IPrintSchemaParameterInitializer_Vtbl {
     pub base__: IPrintSchemaElement_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvar: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvar: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Value: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvar: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvar: *const ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetValue: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -12522,23 +12054,21 @@ impl IPrintSchemaTicket {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFeatureByKeyName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrkeyname: Param0) -> ::windows_core::Result<IPrintSchemaFeature> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFeatureByKeyName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrkeyname: Param0) -> ::windows_core::Result<IPrintSchemaFeature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetFeatureByKeyName)(::windows_core::Interface::as_raw(self), bstrkeyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaFeature>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFeature<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaFeature> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFeature<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaFeature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetFeature)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaFeature>(result__)
     }
@@ -12593,26 +12123,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaTicket> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaTicket> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaTicket) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaTicket> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaTicket> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaTicket) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaTicket {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaTicket {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaTicket {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaTicket {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -12670,13 +12200,13 @@ unsafe impl ::windows_core::Interface for IPrintSchemaTicket {
 #[doc(hidden)]
 pub struct IPrintSchemaTicket_Vtbl {
     pub base__: IPrintSchemaElement_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetFeatureByKeyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrkeyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppfeature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFeatureByKeyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrkeyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppfeature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetFeatureByKeyName: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppfeature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppfeature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetFeature: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub ValidateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppasyncoperation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -12703,23 +12233,21 @@ impl IPrintSchemaTicket2 {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.XmlNode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn NamespaceUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.NamespaceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFeatureByKeyName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrkeyname: Param0) -> ::windows_core::Result<IPrintSchemaFeature> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFeatureByKeyName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrkeyname: Param0) -> ::windows_core::Result<IPrintSchemaFeature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetFeatureByKeyName)(::windows_core::Interface::as_raw(self), bstrkeyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaFeature>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFeature<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaFeature> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFeature<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaFeature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetFeature)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaFeature>(result__)
     }
@@ -12748,8 +12276,8 @@ impl IPrintSchemaTicket2 {
     pub unsafe fn SetJobCopiesAllDocuments(&self, uljobcopiesalldocuments: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetJobCopiesAllDocuments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uljobcopiesalldocuments)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetParameterInitializer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaParameterInitializer> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetParameterInitializer<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrnamespaceuri: Param1) -> ::windows_core::Result<IPrintSchemaParameterInitializer> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetParameterInitializer)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrnamespaceuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintSchemaParameterInitializer>(result__)
     }
@@ -12779,26 +12307,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintS
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintSchemaTicket2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintSchemaTicket2> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintSchemaTicket2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintSchemaTicket2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintSchemaTicket2> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintSchemaTicket2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrintSchemaTicket2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintSchemaTicket2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrintSchemaTicket2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintSchemaTicket2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -12880,41 +12408,38 @@ unsafe impl ::windows_core::Interface for IPrintSchemaTicket2 {
 #[doc(hidden)]
 pub struct IPrintSchemaTicket2_Vtbl {
     pub base__: IPrintSchemaTicket_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetParameterInitializer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppparameterinitializer: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetParameterInitializer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrnamespaceuri: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppparameterinitializer: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetParameterInitializer: usize,
 }
 #[repr(transparent)]
 pub struct IPrintTicketProvider(::windows_core::IUnknown);
 impl IPrintTicketProvider {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetSupportedVersions<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, ppversions: *mut *mut i32, cversions: *mut i32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetSupportedVersions<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, ppversions: *mut *mut i32, cversions: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetSupportedVersions)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(ppversions), ::core::mem::transmute(cversions)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn BindPrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, version: i32, poptions: *mut SHIMOPTS, pdevmodeflags: *mut u32, cnamespaces: *mut i32, ppnamespaces: *mut *mut super::super::Foundation::BSTR) -> ::windows_core::Result<()> {
+    pub unsafe fn BindPrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, version: i32, poptions: *mut SHIMOPTS, pdevmodeflags: *mut u32, cnamespaces: *mut i32, ppnamespaces: *mut *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BindPrinter)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(version), ::core::mem::transmute(poptions), ::core::mem::transmute(pdevmodeflags), ::core::mem::transmute(cnamespaces), ::core::mem::transmute(ppnamespaces)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryDeviceNamespace(&self, pdefaultnamespace: *mut super::super::Foundation::BSTR) -> ::windows_core::Result<()> {
+    pub unsafe fn QueryDeviceNamespace(&self, pdefaultnamespace: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).QueryDeviceNamespace)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdefaultnamespace)).ok()
     }
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
-    pub unsafe fn ConvertPrintTicketToDevMode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0, cbdevmodein: u32, pdevmodein: *mut super::Gdi::DEVMODEA, pcbdevmodeout: *mut u32, ppdevmodeout: *mut *mut super::Gdi::DEVMODEA) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub unsafe fn ConvertPrintTicketToDevMode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0, cbdevmodein: u32, pdevmodein: *mut super::Gdi::DEVMODEA, pcbdevmodeout: *mut u32, ppdevmodeout: *mut *mut super::Gdi::DEVMODEA) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConvertPrintTicketToDevMode)(::windows_core::Interface::as_raw(self), pprintticket.into_param().abi(), ::core::mem::transmute(cbdevmodein), ::core::mem::transmute(pdevmodein), ::core::mem::transmute(pcbdevmodeout), ::core::mem::transmute(ppdevmodeout)).ok()
     }
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
-    pub unsafe fn ConvertDevModeToPrintTicket<'a, Param2: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, cbdevmode: u32, pdevmode: *mut super::Gdi::DEVMODEA, pprintticket: Param2) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub unsafe fn ConvertDevModeToPrintTicket<'a, Param2: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, cbdevmode: u32, pdevmode: *mut super::Gdi::DEVMODEA, pprintticket: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConvertDevModeToPrintTicket)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cbdevmode), ::core::mem::transmute(pdevmode), pprintticket.into_param().abi()).ok()
     }
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPrintCapabilities<'a, Param0: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0) -> ::windows_core::Result<super::super::Data::Xml::MsXml::IXMLDOMDocument2> {
+    pub unsafe fn GetPrintCapabilities<'a, Param0: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0) -> ::windows_core::Result<::win32_data::Xml::MsXml::IXMLDOMDocument2> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetPrintCapabilities)(::windows_core::Interface::as_raw(self), pprintticket.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Data::Xml::MsXml::IXMLDOMDocument2>(result__)
+        (::windows_core::Interface::vtable(self).GetPrintCapabilities)(::windows_core::Interface::as_raw(self), pprintticket.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_data::Xml::MsXml::IXMLDOMDocument2>(result__)
     }
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub unsafe fn ValidatePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, pbaseticket: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn ValidatePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, pbaseticket: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ValidatePrintTicket)(::windows_core::Interface::as_raw(self), pbaseticket.into_param().abi()).ok()
     }
 }
@@ -12962,25 +12487,16 @@ unsafe impl ::windows_core::Interface for IPrintTicketProvider {
 #[doc(hidden)]
 pub struct IPrintTicketProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetSupportedVersions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, ppversions: *mut *mut i32, cversions: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetSupportedVersions: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub BindPrinter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: super::super::Foundation::HANDLE, version: i32, poptions: *mut SHIMOPTS, pdevmodeflags: *mut u32, cnamespaces: *mut i32, ppnamespaces: *mut *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    BindPrinter: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub QueryDeviceNamespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdefaultnamespace: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    QueryDeviceNamespace: usize,
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub GetSupportedVersions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, ppversions: *mut *mut i32, cversions: *mut i32) -> ::windows_core::HRESULT,
+    pub BindPrinter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hprinter: ::win32_foundation::HANDLE, version: i32, poptions: *mut SHIMOPTS, pdevmodeflags: *mut u32, cnamespaces: *mut i32, ppnamespaces: *mut *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub QueryDeviceNamespace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdefaultnamespace: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
     pub ConvertPrintTicketToDevMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprintticket: ::windows_core::RawPtr, cbdevmodein: u32, pdevmodein: *mut super::Gdi::DEVMODEA, pcbdevmodeout: *mut u32, ppdevmodeout: *mut *mut super::Gdi::DEVMODEA) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
     ConvertPrintTicketToDevMode: usize,
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
     pub ConvertDevModeToPrintTicket: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cbdevmode: u32, pdevmode: *mut super::Gdi::DEVMODEA, pprintticket: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com")))]
     ConvertDevModeToPrintTicket: usize,
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
     pub GetPrintCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprintticket: ::windows_core::RawPtr, ppcapabilities: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -12994,44 +12510,41 @@ pub struct IPrintTicketProvider_Vtbl {
 #[repr(transparent)]
 pub struct IPrintTicketProvider2(::windows_core::IUnknown);
 impl IPrintTicketProvider2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetSupportedVersions<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, ppversions: *mut *mut i32, cversions: *mut i32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetSupportedVersions<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, ppversions: *mut *mut i32, cversions: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetSupportedVersions)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(ppversions), ::core::mem::transmute(cversions)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn BindPrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hprinter: Param0, version: i32, poptions: *mut SHIMOPTS, pdevmodeflags: *mut u32, cnamespaces: *mut i32, ppnamespaces: *mut *mut super::super::Foundation::BSTR) -> ::windows_core::Result<()> {
+    pub unsafe fn BindPrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hprinter: Param0, version: i32, poptions: *mut SHIMOPTS, pdevmodeflags: *mut u32, cnamespaces: *mut i32, ppnamespaces: *mut *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.BindPrinter)(::windows_core::Interface::as_raw(self), hprinter.into_param().abi(), ::core::mem::transmute(version), ::core::mem::transmute(poptions), ::core::mem::transmute(pdevmodeflags), ::core::mem::transmute(cnamespaces), ::core::mem::transmute(ppnamespaces)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryDeviceNamespace(&self, pdefaultnamespace: *mut super::super::Foundation::BSTR) -> ::windows_core::Result<()> {
+    pub unsafe fn QueryDeviceNamespace(&self, pdefaultnamespace: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.QueryDeviceNamespace)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdefaultnamespace)).ok()
     }
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
-    pub unsafe fn ConvertPrintTicketToDevMode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0, cbdevmodein: u32, pdevmodein: *mut super::Gdi::DEVMODEA, pcbdevmodeout: *mut u32, ppdevmodeout: *mut *mut super::Gdi::DEVMODEA) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub unsafe fn ConvertPrintTicketToDevMode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0, cbdevmodein: u32, pdevmodein: *mut super::Gdi::DEVMODEA, pcbdevmodeout: *mut u32, ppdevmodeout: *mut *mut super::Gdi::DEVMODEA) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ConvertPrintTicketToDevMode)(::windows_core::Interface::as_raw(self), pprintticket.into_param().abi(), ::core::mem::transmute(cbdevmodein), ::core::mem::transmute(pdevmodein), ::core::mem::transmute(pcbdevmodeout), ::core::mem::transmute(ppdevmodeout)).ok()
     }
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
-    pub unsafe fn ConvertDevModeToPrintTicket<'a, Param2: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, cbdevmode: u32, pdevmode: *mut super::Gdi::DEVMODEA, pprintticket: Param2) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
+    pub unsafe fn ConvertDevModeToPrintTicket<'a, Param2: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, cbdevmode: u32, pdevmode: *mut super::Gdi::DEVMODEA, pprintticket: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ConvertDevModeToPrintTicket)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cbdevmode), ::core::mem::transmute(pdevmode), pprintticket.into_param().abi()).ok()
     }
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPrintCapabilities<'a, Param0: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0) -> ::windows_core::Result<super::super::Data::Xml::MsXml::IXMLDOMDocument2> {
+    pub unsafe fn GetPrintCapabilities<'a, Param0: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0) -> ::windows_core::Result<::win32_data::Xml::MsXml::IXMLDOMDocument2> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetPrintCapabilities)(::windows_core::Interface::as_raw(self), pprintticket.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Data::Xml::MsXml::IXMLDOMDocument2>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetPrintCapabilities)(::windows_core::Interface::as_raw(self), pprintticket.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_data::Xml::MsXml::IXMLDOMDocument2>(result__)
     }
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub unsafe fn ValidatePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, pbaseticket: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn ValidatePrintTicket<'a, Param0: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, pbaseticket: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ValidatePrintTicket)(::windows_core::Interface::as_raw(self), pbaseticket.into_param().abi()).ok()
     }
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPrintDeviceCapabilities<'a, Param0: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0) -> ::windows_core::Result<super::super::Data::Xml::MsXml::IXMLDOMDocument2> {
+    pub unsafe fn GetPrintDeviceCapabilities<'a, Param0: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, pprintticket: Param0) -> ::windows_core::Result<::win32_data::Xml::MsXml::IXMLDOMDocument2> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetPrintDeviceCapabilities)(::windows_core::Interface::as_raw(self), pprintticket.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Data::Xml::MsXml::IXMLDOMDocument2>(result__)
+        (::windows_core::Interface::vtable(self).GetPrintDeviceCapabilities)(::windows_core::Interface::as_raw(self), pprintticket.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_data::Xml::MsXml::IXMLDOMDocument2>(result__)
     }
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPrintDeviceResources<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Data::Xml::MsXml::IXMLDOMDocument2>>(&self, pszlocalename: Param0, pprintticket: Param1) -> ::windows_core::Result<super::super::Data::Xml::MsXml::IXMLDOMDocument2> {
+    pub unsafe fn GetPrintDeviceResources<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_data::Xml::MsXml::IXMLDOMDocument2>>(&self, pszlocalename: Param0, pprintticket: Param1) -> ::windows_core::Result<::win32_data::Xml::MsXml::IXMLDOMDocument2> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetPrintDeviceResources)(::windows_core::Interface::as_raw(self), pszlocalename.into_param().abi(), pprintticket.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Data::Xml::MsXml::IXMLDOMDocument2>(result__)
+        (::windows_core::Interface::vtable(self).GetPrintDeviceResources)(::windows_core::Interface::as_raw(self), pszlocalename.into_param().abi(), pprintticket.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_data::Xml::MsXml::IXMLDOMDocument2>(result__)
     }
 }
 impl ::core::convert::From<IPrintTicketProvider2> for ::windows_core::IUnknown {
@@ -13300,8 +12813,7 @@ pub struct IPrintWriteStreamFlush_Vtbl {
 #[repr(transparent)]
 pub struct IPrinterBidiSetRequestCallback(::windows_core::IUnknown);
 impl IPrinterBidiSetRequestCallback {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Completed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrresponse: Param0, hrstatus: ::windows_core::HRESULT) -> ::windows_core::Result<()> {
+    pub unsafe fn Completed<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrresponse: Param0, hrstatus: ::windows_core::HRESULT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Completed)(::windows_core::Interface::as_raw(self), bstrresponse.into_param().abi(), ::core::mem::transmute(hrstatus)).ok()
     }
 }
@@ -13349,10 +12861,7 @@ unsafe impl ::windows_core::Interface for IPrinterBidiSetRequestCallback {
 #[doc(hidden)]
 pub struct IPrinterBidiSetRequestCallback_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Completed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrresponse: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, hrstatus: ::windows_core::HRESULT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Completed: usize,
+    pub Completed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrresponse: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, hrstatus: ::windows_core::HRESULT) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPrinterExtensionAsyncOperation(::windows_core::IUnknown);
@@ -13458,26 +12967,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterExtensionContext> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterExtensionContext> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterExtensionContext) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterExtensionContext> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterExtensionContext> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterExtensionContext) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterExtensionContext {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterExtensionContext {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterExtensionContext {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterExtensionContext {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -13510,7 +13019,7 @@ unsafe impl ::windows_core::Interface for IPrinterExtensionContext {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterExtensionContext_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub PrinterQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppqueue: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -13572,26 +13081,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterExtensionContextCollection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterExtensionContextCollection> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterExtensionContextCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterExtensionContextCollection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterExtensionContextCollection> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterExtensionContextCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterExtensionContextCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterExtensionContextCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterExtensionContextCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterExtensionContextCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -13624,7 +13133,7 @@ unsafe impl ::windows_core::Interface for IPrinterExtensionContextCollection {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterExtensionContextCollection_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulcount: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulindex: u32, ppcontext: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -13671,26 +13180,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterExtensionEvent> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterExtensionEvent> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterExtensionEvent) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterExtensionEvent> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterExtensionEvent> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterExtensionEvent) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterExtensionEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterExtensionEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterExtensionEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterExtensionEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -13723,7 +13232,7 @@ unsafe impl ::windows_core::Interface for IPrinterExtensionEvent {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterExtensionEvent_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub OnDriverEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, peventargs: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -13758,10 +13267,9 @@ impl IPrinterExtensionEventArgs {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.UserProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrinterPropertyBag>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn BidiNotification(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).BidiNotification)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn BidiNotification(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).BidiNotification)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn ReasonId(&self) -> ::windows_core::Result<::windows_core::GUID> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
@@ -13772,24 +13280,21 @@ impl IPrinterExtensionEventArgs {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Request)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrinterExtensionRequest>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SourceApplication(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SourceApplication)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SourceApplication(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SourceApplication)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn DetailedReasonId(&self) -> ::windows_core::Result<::windows_core::GUID> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::GUID>::zeroed();
         (::windows_core::Interface::vtable(self).DetailedReasonId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::GUID>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WindowModal(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).WindowModal)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn WindowModal(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).WindowModal)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WindowParent(&self) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        (::windows_core::Interface::vtable(self).WindowParent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+    pub unsafe fn WindowParent(&self) -> ::windows_core::Result<::win32_foundation::HANDLE> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        (::windows_core::Interface::vtable(self).WindowParent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -13817,26 +13322,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterExtensionEventArgs> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterExtensionEventArgs> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterExtensionEventArgs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterExtensionEventArgs> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterExtensionEventArgs> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterExtensionEventArgs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterExtensionEventArgs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterExtensionEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterExtensionEventArgs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterExtensionEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -13894,28 +13399,16 @@ unsafe impl ::windows_core::Interface for IPrinterExtensionEventArgs {
 #[doc(hidden)]
 pub struct IPrinterExtensionEventArgs_Vtbl {
     pub base__: IPrinterExtensionContext_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub BidiNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrbidinotification: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    BidiNotification: usize,
+    pub BidiNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrbidinotification: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub ReasonId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, preasonid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Request: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprequest: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Request: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SourceApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrapplication: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SourceApplication: usize,
+    pub SourceApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrapplication: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub DetailedReasonId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdetailedreasonid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub WindowModal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbmodal: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    WindowModal: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub WindowParent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phwndparent: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    WindowParent: usize,
+    pub WindowModal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbmodal: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub WindowParent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phwndparent: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPrinterExtensionManager(::windows_core::IUnknown);
@@ -13979,8 +13472,7 @@ pub struct IPrinterExtensionManager_Vtbl {
 pub struct IPrinterExtensionRequest(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IPrinterExtensionRequest {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Cancel<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, hrstatus: ::windows_core::HRESULT, bstrlogmessage: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn Cancel<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, hrstatus: ::windows_core::HRESULT, bstrlogmessage: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Cancel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hrstatus), bstrlogmessage.into_param().abi()).ok()
     }
     pub unsafe fn Complete(&self) -> ::windows_core::Result<()> {
@@ -14012,26 +13504,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterExtensionRequest> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterExtensionRequest> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterExtensionRequest) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterExtensionRequest> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterExtensionRequest> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterExtensionRequest) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterExtensionRequest {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterExtensionRequest {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterExtensionRequest {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterExtensionRequest {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -14064,11 +13556,8 @@ unsafe impl ::windows_core::Interface for IPrinterExtensionRequest {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterExtensionRequest_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hrstatus: ::windows_core::HRESULT, bstrlogmessage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Cancel: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hrstatus: ::windows_core::HRESULT, bstrlogmessage: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -14076,50 +13565,42 @@ pub struct IPrinterExtensionRequest_Vtbl {
 pub struct IPrinterPropertyBag(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IPrinterPropertyBag {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBool<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetBool)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetBool<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetBool)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBool<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bstrname: Param0, bvalue: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBool<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, bstrname: Param0, bvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBool)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bvalue.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetInt32<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<i32> {
+    pub unsafe fn GetInt32<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).GetInt32)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetInt32<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, nvalue: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn SetInt32<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, nvalue: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetInt32)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(nvalue)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetString<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetString)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetString<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetString)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetString<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrvalue: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetString<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetString)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrvalue.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBytes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, pcbvalue: *mut u32, ppvalue: *mut *mut u8) -> ::windows_core::Result<()> {
+    pub unsafe fn GetBytes<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, pcbvalue: *mut u32, ppvalue: *mut *mut u8) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetBytes)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(pcbvalue), ::core::mem::transmute(ppvalue)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBytes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, pvalue: &[u8]) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBytes<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, pvalue: &[u8]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBytes)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), pvalue.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pvalue))).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetReadStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetReadStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetReadStream)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetReadStream)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetWriteStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetWriteStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetWriteStream)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetWriteStream)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -14147,26 +13628,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterPropertyBag> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterPropertyBag> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterPropertyBag) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterPropertyBag> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterPropertyBag> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterPropertyBag) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterPropertyBag {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterPropertyBag {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterPropertyBag {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterPropertyBag {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -14199,46 +13680,22 @@ unsafe impl ::windows_core::Interface for IPrinterPropertyBag {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterPropertyBag_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbvalue: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBool: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bvalue: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBool: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pnvalue: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetInt32: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, nvalue: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetInt32: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetString: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetString: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pcbvalue: *mut u32, ppvalue: *mut *mut u8) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBytes: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, cbvalue: u32, pvalue: *const u8) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBytes: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetReadStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppvalue: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub GetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pbvalue: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bvalue: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pnvalue: *mut i32) -> ::windows_core::HRESULT,
+    pub SetInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, nvalue: i32) -> ::windows_core::HRESULT,
+    pub GetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pbstrvalue: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrvalue: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub GetBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pcbvalue: *mut u32, ppvalue: *mut *mut u8) -> ::windows_core::HRESULT,
+    pub SetBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, cbvalue: u32, pvalue: *const u8) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetReadStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppvalue: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetReadStream: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetWriteStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppvalue: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetWriteStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppvalue: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetWriteStream: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -14246,18 +13703,15 @@ pub struct IPrinterPropertyBag_Vtbl {
 pub struct IPrinterQueue(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IPrinterQueue {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Handle(&self) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        (::windows_core::Interface::vtable(self).Handle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+    pub unsafe fn Handle(&self) -> ::windows_core::Result<::win32_foundation::HANDLE> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        (::windows_core::Interface::vtable(self).Handle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SendBidiQuery<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrbidiquery: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SendBidiQuery<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrbidiquery: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SendBidiQuery)(::windows_core::Interface::as_raw(self), bstrbidiquery.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -14291,26 +13745,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterQueue> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterQueue) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterQueue> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterQueue) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -14343,19 +13797,10 @@ unsafe impl ::windows_core::Interface for IPrinterQueue {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterQueue_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Handle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phprinter: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Handle: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SendBidiQuery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrbidiquery: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SendBidiQuery: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub Handle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phprinter: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SendBidiQuery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrbidiquery: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub GetProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppropertybag: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -14366,18 +13811,15 @@ pub struct IPrinterQueue_Vtbl {
 pub struct IPrinterQueue2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IPrinterQueue2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Handle(&self) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Handle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+    pub unsafe fn Handle(&self) -> ::windows_core::Result<::win32_foundation::HANDLE> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Handle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SendBidiQuery<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrbidiquery: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SendBidiQuery<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrbidiquery: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SendBidiQuery)(::windows_core::Interface::as_raw(self), bstrbidiquery.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -14385,8 +13827,7 @@ impl IPrinterQueue2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrinterPropertyBag>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SendBidiSetRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, IPrinterBidiSetRequestCallback>>(&self, bstrbidirequest: Param0, pcallback: Param1) -> ::windows_core::Result<IPrinterExtensionAsyncOperation> {
+    pub unsafe fn SendBidiSetRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, IPrinterBidiSetRequestCallback>>(&self, bstrbidirequest: Param0, pcallback: Param1) -> ::windows_core::Result<IPrinterExtensionAsyncOperation> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).SendBidiSetRequestAsync)(::windows_core::Interface::as_raw(self), bstrbidirequest.into_param().abi(), pcallback.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrinterExtensionAsyncOperation>(result__)
     }
@@ -14421,26 +13862,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterQueue2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterQueue2> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterQueue2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterQueue2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterQueue2> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterQueue2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterQueue2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterQueue2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterQueue2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterQueue2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -14498,10 +13939,7 @@ unsafe impl ::windows_core::Interface for IPrinterQueue2 {
 #[doc(hidden)]
 pub struct IPrinterQueue2_Vtbl {
     pub base__: IPrinterQueue_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SendBidiSetRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrbidirequest: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pcallback: ::windows_core::RawPtr, ppasyncoperation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SendBidiSetRequestAsync: usize,
+    pub SendBidiSetRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrbidirequest: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pcallback: ::windows_core::RawPtr, ppasyncoperation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub GetPrinterQueueView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulviewoffset: u32, ulviewsize: u32, ppjobview: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -14512,8 +13950,7 @@ pub struct IPrinterQueue2_Vtbl {
 pub struct IPrinterQueueEvent(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IPrinterQueueEvent {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OnBidiResponseReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrresponse: Param0, hrstatus: ::windows_core::HRESULT) -> ::windows_core::Result<()> {
+    pub unsafe fn OnBidiResponseReceived<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrresponse: Param0, hrstatus: ::windows_core::HRESULT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnBidiResponseReceived)(::windows_core::Interface::as_raw(self), bstrresponse.into_param().abi(), ::core::mem::transmute(hrstatus)).ok()
     }
 }
@@ -14542,26 +13979,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterQueueEvent> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterQueueEvent> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterQueueEvent) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterQueueEvent> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterQueueEvent> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterQueueEvent) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterQueueEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterQueueEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterQueueEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterQueueEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -14594,11 +14031,8 @@ unsafe impl ::windows_core::Interface for IPrinterQueueEvent {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterQueueEvent_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OnBidiResponseReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrresponse: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, hrstatus: ::windows_core::HRESULT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OnBidiResponseReceived: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub OnBidiResponseReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrresponse: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, hrstatus: ::windows_core::HRESULT) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -14634,26 +14068,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterQueueView> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterQueueView> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterQueueView) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterQueueView> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterQueueView> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterQueueView) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterQueueView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterQueueView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterQueueView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterQueueView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -14686,7 +14120,7 @@ unsafe impl ::windows_core::Interface for IPrinterQueueView {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterQueueView_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub SetViewRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulviewoffset: u32, ulviewsize: u32) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -14724,26 +14158,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterQueueViewEvent> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterQueueViewEvent> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterQueueViewEvent) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterQueueViewEvent> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterQueueViewEvent> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterQueueViewEvent) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterQueueViewEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterQueueViewEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterQueueViewEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterQueueViewEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -14776,7 +14210,7 @@ unsafe impl ::windows_core::Interface for IPrinterQueueViewEvent {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterQueueViewEvent_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub OnChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcollection: ::windows_core::RawPtr, ulviewoffset: u32, ulviewsize: u32, ulcountjobsinprintqueue: u32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -14828,26 +14262,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterScriptContext> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterScriptContext> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterScriptContext) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterScriptContext> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterScriptContext> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterScriptContext) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterScriptContext {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterScriptContext {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterScriptContext {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterScriptContext {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -14880,7 +14314,7 @@ unsafe impl ::windows_core::Interface for IPrinterScriptContext {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterScriptContext_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub DriverProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppropertybag: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -14899,49 +14333,43 @@ pub struct IPrinterScriptContext_Vtbl {
 pub struct IPrinterScriptablePropertyBag(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IPrinterScriptablePropertyBag {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBool<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetBool)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetBool<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetBool)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBool<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bstrname: Param0, bvalue: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBool<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, bstrname: Param0, bvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBool)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bvalue.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetInt32<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<i32> {
+    pub unsafe fn GetInt32<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).GetInt32)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetInt32<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, nvalue: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn SetInt32<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, nvalue: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetInt32)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(nvalue)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetString<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetString)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetString<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetString)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetString<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrvalue: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetString<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetString)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrvalue.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetBytes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::System::Com::IDispatch> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetBytes<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetBytes)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IDispatch>(result__)
+        (::windows_core::Interface::vtable(self).GetBytes)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SetBytes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, bstrname: Param0, parray: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SetBytes<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, bstrname: Param0, parray: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBytes)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), parray.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetReadStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IPrinterScriptableStream> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetReadStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IPrinterScriptableStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetReadStream)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrinterScriptableStream>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetWriteStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IPrinterScriptableStream> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetWriteStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IPrinterScriptableStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetWriteStream)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrinterScriptableStream>(result__)
     }
@@ -14971,26 +14399,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterScriptablePropertyBag> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterScriptablePropertyBag> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterScriptablePropertyBag) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterScriptablePropertyBag> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterScriptablePropertyBag> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterScriptablePropertyBag) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterScriptablePropertyBag {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterScriptablePropertyBag {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterScriptablePropertyBag {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterScriptablePropertyBag {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -15023,46 +14451,28 @@ unsafe impl ::windows_core::Interface for IPrinterScriptablePropertyBag {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterScriptablePropertyBag_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbvalue: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBool: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bvalue: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBool: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pnvalue: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetInt32: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, nvalue: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetInt32: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetString: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrvalue: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetString: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pparray: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub GetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pbvalue: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bvalue: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pnvalue: *mut i32) -> ::windows_core::HRESULT,
+    pub SetInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, nvalue: i32) -> ::windows_core::HRESULT,
+    pub GetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pbstrvalue: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrvalue: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pparray: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetBytes: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub SetBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, parray: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, parray: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     SetBytes: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetReadStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetReadStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetReadStream: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetWriteStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetWriteStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetWriteStream: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -15070,54 +14480,47 @@ pub struct IPrinterScriptablePropertyBag_Vtbl {
 pub struct IPrinterScriptablePropertyBag2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IPrinterScriptablePropertyBag2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBool<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetBool)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetBool<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetBool)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBool<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bstrname: Param0, bvalue: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBool<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, bstrname: Param0, bvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetBool)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bvalue.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetInt32<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<i32> {
+    pub unsafe fn GetInt32<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetInt32)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetInt32<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, nvalue: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn SetInt32<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, nvalue: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetInt32)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(nvalue)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetString<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetString)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetString<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetString)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetString<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrvalue: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetString<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetString)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrvalue.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetBytes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<super::super::System::Com::IDispatch> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetBytes<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetBytes)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IDispatch>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetBytes)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SetBytes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, bstrname: Param0, parray: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SetBytes<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, bstrname: Param0, parray: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetBytes)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), parray.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetReadStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IPrinterScriptableStream> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetReadStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IPrinterScriptableStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetReadStream)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrinterScriptableStream>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetWriteStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IPrinterScriptableStream> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetWriteStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IPrinterScriptableStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetWriteStream)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrinterScriptableStream>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetReadStreamAsXML<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn GetReadStreamAsXML<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).GetReadStreamAsXML)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
@@ -15147,26 +14550,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterScriptablePropertyBag2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterScriptablePropertyBag2> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterScriptablePropertyBag2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterScriptablePropertyBag2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterScriptablePropertyBag2> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterScriptablePropertyBag2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterScriptablePropertyBag2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterScriptablePropertyBag2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterScriptablePropertyBag2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterScriptablePropertyBag2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -15224,10 +14627,7 @@ unsafe impl ::windows_core::Interface for IPrinterScriptablePropertyBag2 {
 #[doc(hidden)]
 pub struct IPrinterScriptablePropertyBag2_Vtbl {
     pub base__: IPrinterScriptablePropertyBag_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetReadStreamAsXML: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppxmlnode: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetReadStreamAsXML: usize,
+    pub GetReadStreamAsXML: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppxmlnode: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -15235,12 +14635,12 @@ pub struct IPrinterScriptableSequentialStream(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IPrinterScriptableSequentialStream {
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Read(&self, cbread: i32) -> ::windows_core::Result<super::super::System::Com::IDispatch> {
+    pub unsafe fn Read(&self, cbread: i32) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).Read)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cbread), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IDispatch>(result__)
+        (::windows_core::Interface::vtable(self).Read)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cbread), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Write<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, parray: Param0) -> ::windows_core::Result<i32> {
+    pub unsafe fn Write<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, parray: Param0) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Write)(::windows_core::Interface::as_raw(self), parray.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
@@ -15270,26 +14670,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterScriptableSequentialStream> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterScriptableSequentialStream> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterScriptableSequentialStream) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterScriptableSequentialStream> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterScriptableSequentialStream> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterScriptableSequentialStream) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterScriptableSequentialStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterScriptableSequentialStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterScriptableSequentialStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterScriptableSequentialStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -15322,7 +14722,7 @@ unsafe impl ::windows_core::Interface for IPrinterScriptableSequentialStream {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrinterScriptableSequentialStream_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub Read: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cbread: i32, pparray: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -15338,12 +14738,12 @@ pub struct IPrinterScriptableStream(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IPrinterScriptableStream {
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Read(&self, cbread: i32) -> ::windows_core::Result<super::super::System::Com::IDispatch> {
+    pub unsafe fn Read(&self, cbread: i32) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Read)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cbread), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IDispatch>(result__)
+        (::windows_core::Interface::vtable(self).base__.Read)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cbread), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Write<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, parray: Param0) -> ::windows_core::Result<i32> {
+    pub unsafe fn Write<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, parray: Param0) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Write)(::windows_core::Interface::as_raw(self), parray.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
@@ -15351,7 +14751,7 @@ impl IPrinterScriptableStream {
         (::windows_core::Interface::vtable(self).Commit)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Seek(&self, loffset: i32, streamseek: super::super::System::Com::STREAM_SEEK) -> ::windows_core::Result<i32> {
+    pub unsafe fn Seek(&self, loffset: i32, streamseek: ::win32_system::Com::STREAM_SEEK) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Seek)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(loffset), ::core::mem::transmute(streamseek), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
@@ -15384,26 +14784,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrinte
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrinterScriptableStream> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrinterScriptableStream> for ::win32_system::Com::IDispatch {
     fn from(value: IPrinterScriptableStream) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrinterScriptableStream> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrinterScriptableStream> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrinterScriptableStream) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IPrinterScriptableStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrinterScriptableStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IPrinterScriptableStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrinterScriptableStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -15463,7 +14863,7 @@ pub struct IPrinterScriptableStream_Vtbl {
     pub base__: IPrinterScriptableSequentialStream_Vtbl,
     pub Commit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
-    pub Seek: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, loffset: i32, streamseek: super::super::System::Com::STREAM_SEEK, plposition: *mut i32) -> ::windows_core::HRESULT,
+    pub Seek: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, loffset: i32, streamseek: ::win32_system::Com::STREAM_SEEK, plposition: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Seek: usize,
     pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lsize: i32) -> ::windows_core::HRESULT,
@@ -15663,12 +15063,10 @@ impl IXpsPartIterator {
     pub unsafe fn Reset(&self) {
         (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Current(&self, puri: *mut super::super::Foundation::BSTR, ppxpspart: *mut ::core::option::Option<::windows_core::IUnknown>) -> ::windows_core::Result<()> {
+    pub unsafe fn Current(&self, puri: *mut ::win32_foundation::BSTR, ppxpspart: *mut ::core::option::Option<::windows_core::IUnknown>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Current)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(puri), ::core::mem::transmute(ppxpspart)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsDone(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsDone(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsDone)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn Next(&self) {
@@ -15720,21 +15118,15 @@ unsafe impl ::windows_core::Interface for IXpsPartIterator {
 pub struct IXpsPartIterator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void),
-    #[cfg(feature = "Win32_Foundation")]
-    pub Current: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, puri: *mut super::super::Foundation::BSTR, ppxpspart: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Current: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsDone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsDone: usize,
+    pub Current: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, puri: *mut ::win32_foundation::BSTR, ppxpspart: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub IsDone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
     pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void),
 }
 #[repr(transparent)]
 pub struct IXpsRasterizationFactory(::windows_core::IUnknown);
 impl IXpsRasterizationFactory {
     #[cfg(feature = "Win32_Storage_Xps")]
-    pub unsafe fn CreateRasterizer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Xps::IXpsOMPage>>(&self, xpspage: Param0, dpi: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE) -> ::windows_core::Result<IXpsRasterizer> {
+    pub unsafe fn CreateRasterizer<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::IXpsOMPage>>(&self, xpspage: Param0, dpi: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE) -> ::windows_core::Result<IXpsRasterizer> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateRasterizer)(::windows_core::Interface::as_raw(self), xpspage.into_param().abi(), ::core::mem::transmute(dpi), ::core::mem::transmute(nontextrenderingmode), ::core::mem::transmute(textrenderingmode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsRasterizer>(result__)
     }
@@ -15792,7 +15184,7 @@ pub struct IXpsRasterizationFactory_Vtbl {
 pub struct IXpsRasterizationFactory1(::windows_core::IUnknown);
 impl IXpsRasterizationFactory1 {
     #[cfg(feature = "Win32_Storage_Xps")]
-    pub unsafe fn CreateRasterizer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Xps::IXpsOMPage>>(&self, xpspage: Param0, dpi: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE, pixelformat: XPSRAS_PIXEL_FORMAT) -> ::windows_core::Result<IXpsRasterizer> {
+    pub unsafe fn CreateRasterizer<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::IXpsOMPage>>(&self, xpspage: Param0, dpi: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE, pixelformat: XPSRAS_PIXEL_FORMAT) -> ::windows_core::Result<IXpsRasterizer> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateRasterizer)(::windows_core::Interface::as_raw(self), xpspage.into_param().abi(), ::core::mem::transmute(dpi), ::core::mem::transmute(nontextrenderingmode), ::core::mem::transmute(textrenderingmode), ::core::mem::transmute(pixelformat), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsRasterizer>(result__)
     }
@@ -15850,7 +15242,7 @@ pub struct IXpsRasterizationFactory1_Vtbl {
 pub struct IXpsRasterizationFactory2(::windows_core::IUnknown);
 impl IXpsRasterizationFactory2 {
     #[cfg(feature = "Win32_Storage_Xps")]
-    pub unsafe fn CreateRasterizer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Xps::IXpsOMPage>>(&self, xpspage: Param0, dpix: f32, dpiy: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE, pixelformat: XPSRAS_PIXEL_FORMAT, backgroundcolor: XPSRAS_BACKGROUND_COLOR) -> ::windows_core::Result<IXpsRasterizer> {
+    pub unsafe fn CreateRasterizer<'a, Param0: ::windows_core::IntoParam<'a, ::win32_storage::Xps::IXpsOMPage>>(&self, xpspage: Param0, dpix: f32, dpiy: f32, nontextrenderingmode: XPSRAS_RENDERING_MODE, textrenderingmode: XPSRAS_RENDERING_MODE, pixelformat: XPSRAS_PIXEL_FORMAT, backgroundcolor: XPSRAS_BACKGROUND_COLOR) -> ::windows_core::Result<IXpsRasterizer> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateRasterizer)(::windows_core::Interface::as_raw(self), xpspage.into_param().abi(), ::core::mem::transmute(dpix), ::core::mem::transmute(dpiy), ::core::mem::transmute(nontextrenderingmode), ::core::mem::transmute(textrenderingmode), ::core::mem::transmute(pixelformat), ::core::mem::transmute(backgroundcolor), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsRasterizer>(result__)
     }
@@ -16019,14 +15411,13 @@ pub struct IXpsRasterizerNotificationCallback_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Continue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ImpersonatePrinterClient<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(htoken: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn ImpersonatePrinterClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(htoken: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ImpersonatePrinterClient(htoken: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn ImpersonatePrinterClient(htoken: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ImpersonatePrinterClient(htoken.into_param().abi()))
     }
@@ -16059,28 +15450,28 @@ pub unsafe fn InstallPrinterDriverFromPackageW<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn IsValidDevmodeA(pdevmode: *const super::Gdi::DEVMODEA, devmodesize: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn IsValidDevmodeA(pdevmode: *const super::Gdi::DEVMODEA, devmodesize: usize) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsValidDevmodeA(pdevmode: *const super::Gdi::DEVMODEA, devmodesize: usize) -> super::super::Foundation::BOOL;
+            fn IsValidDevmodeA(pdevmode: *const super::Gdi::DEVMODEA, devmodesize: usize) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsValidDevmodeA(::core::mem::transmute(pdevmode), ::core::mem::transmute(devmodesize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn IsValidDevmodeW(pdevmode: *const super::Gdi::DEVMODEW, devmodesize: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn IsValidDevmodeW(pdevmode: *const super::Gdi::DEVMODEW, devmodesize: usize) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsValidDevmodeW(pdevmode: *const super::Gdi::DEVMODEW, devmodesize: usize) -> super::super::Foundation::BOOL;
+            fn IsValidDevmodeW(pdevmode: *const super::Gdi::DEVMODEW, devmodesize: usize) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsValidDevmodeW(::core::mem::transmute(pdevmode), ::core::mem::transmute(devmodesize)))
     }
@@ -16099,7 +15490,6 @@ pub const JOB_CONTROL_RESUME: u32 = 2u32;
 pub const JOB_CONTROL_RETAIN: u32 = 8u32;
 pub const JOB_CONTROL_SENT_TO_PRINTER: u32 = 6u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JOB_INFO_1A {
     pub JobId: u32,
     pub pPrinterName: ::windows_core::PSTR,
@@ -16113,17 +15503,14 @@ pub struct JOB_INFO_1A {
     pub Position: u32,
     pub TotalPages: u32,
     pub PagesPrinted: u32,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation::SYSTEMTIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JOB_INFO_1A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JOB_INFO_1A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for JOB_INFO_1A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOB_INFO_1A")
@@ -16143,26 +15530,21 @@ impl ::core::fmt::Debug for JOB_INFO_1A {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for JOB_INFO_1A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for JOB_INFO_1A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOB_INFO_1A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for JOB_INFO_1A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for JOB_INFO_1A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JOB_INFO_1W {
     pub JobId: u32,
     pub pPrinterName: ::windows_core::PWSTR,
@@ -16176,17 +15558,14 @@ pub struct JOB_INFO_1W {
     pub Position: u32,
     pub TotalPages: u32,
     pub PagesPrinted: u32,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation::SYSTEMTIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JOB_INFO_1W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JOB_INFO_1W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for JOB_INFO_1W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOB_INFO_1W")
@@ -16206,26 +15585,22 @@ impl ::core::fmt::Debug for JOB_INFO_1W {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for JOB_INFO_1W {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for JOB_INFO_1W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOB_INFO_1W>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for JOB_INFO_1W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for JOB_INFO_1W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 pub struct JOB_INFO_2A {
     pub JobId: u32,
     pub pPrinterName: ::windows_core::PSTR,
@@ -16239,7 +15614,7 @@ pub struct JOB_INFO_2A {
     pub pDriverName: ::windows_core::PSTR,
     pub pDevMode: *mut super::Gdi::DEVMODEA,
     pub pStatus: ::windows_core::PSTR,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
     pub Status: u32,
     pub Priority: u32,
     pub Position: u32,
@@ -16247,19 +15622,19 @@ pub struct JOB_INFO_2A {
     pub UntilTime: u32,
     pub TotalPages: u32,
     pub Size: u32,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation::SYSTEMTIME,
     pub Time: u32,
     pub PagesPrinted: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::marker::Copy for JOB_INFO_2A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::clone::Clone for JOB_INFO_2A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::fmt::Debug for JOB_INFO_2A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOB_INFO_2A")
@@ -16289,26 +15664,26 @@ impl ::core::fmt::Debug for JOB_INFO_2A {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 unsafe impl ::windows_core::Abi for JOB_INFO_2A {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::PartialEq for JOB_INFO_2A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOB_INFO_2A>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::Eq for JOB_INFO_2A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::default::Default for JOB_INFO_2A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 pub struct JOB_INFO_2W {
     pub JobId: u32,
     pub pPrinterName: ::windows_core::PWSTR,
@@ -16322,7 +15697,7 @@ pub struct JOB_INFO_2W {
     pub pDriverName: ::windows_core::PWSTR,
     pub pDevMode: *mut super::Gdi::DEVMODEW,
     pub pStatus: ::windows_core::PWSTR,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
     pub Status: u32,
     pub Priority: u32,
     pub Position: u32,
@@ -16330,19 +15705,19 @@ pub struct JOB_INFO_2W {
     pub UntilTime: u32,
     pub TotalPages: u32,
     pub Size: u32,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation::SYSTEMTIME,
     pub Time: u32,
     pub PagesPrinted: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::marker::Copy for JOB_INFO_2W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::clone::Clone for JOB_INFO_2W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::fmt::Debug for JOB_INFO_2W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOB_INFO_2W")
@@ -16372,19 +15747,19 @@ impl ::core::fmt::Debug for JOB_INFO_2W {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 unsafe impl ::windows_core::Abi for JOB_INFO_2W {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::PartialEq for JOB_INFO_2W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOB_INFO_2W>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::Eq for JOB_INFO_2W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::default::Default for JOB_INFO_2W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16422,7 +15797,7 @@ impl ::core::default::Default for JOB_INFO_3 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 pub struct JOB_INFO_4A {
     pub JobId: u32,
     pub pPrinterName: ::windows_core::PSTR,
@@ -16436,7 +15811,7 @@ pub struct JOB_INFO_4A {
     pub pDriverName: ::windows_core::PSTR,
     pub pDevMode: *mut super::Gdi::DEVMODEA,
     pub pStatus: ::windows_core::PSTR,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
     pub Status: u32,
     pub Priority: u32,
     pub Position: u32,
@@ -16444,20 +15819,20 @@ pub struct JOB_INFO_4A {
     pub UntilTime: u32,
     pub TotalPages: u32,
     pub Size: u32,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation::SYSTEMTIME,
     pub Time: u32,
     pub PagesPrinted: u32,
     pub SizeHigh: i32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::marker::Copy for JOB_INFO_4A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::clone::Clone for JOB_INFO_4A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::fmt::Debug for JOB_INFO_4A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOB_INFO_4A")
@@ -16488,26 +15863,26 @@ impl ::core::fmt::Debug for JOB_INFO_4A {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 unsafe impl ::windows_core::Abi for JOB_INFO_4A {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::PartialEq for JOB_INFO_4A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOB_INFO_4A>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::Eq for JOB_INFO_4A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::default::Default for JOB_INFO_4A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 pub struct JOB_INFO_4W {
     pub JobId: u32,
     pub pPrinterName: ::windows_core::PWSTR,
@@ -16521,7 +15896,7 @@ pub struct JOB_INFO_4W {
     pub pDriverName: ::windows_core::PWSTR,
     pub pDevMode: *mut super::Gdi::DEVMODEW,
     pub pStatus: ::windows_core::PWSTR,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
     pub Status: u32,
     pub Priority: u32,
     pub Position: u32,
@@ -16529,20 +15904,20 @@ pub struct JOB_INFO_4W {
     pub UntilTime: u32,
     pub TotalPages: u32,
     pub Size: u32,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation::SYSTEMTIME,
     pub Time: u32,
     pub PagesPrinted: u32,
     pub SizeHigh: i32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::marker::Copy for JOB_INFO_4W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::clone::Clone for JOB_INFO_4W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::fmt::Debug for JOB_INFO_4W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("JOB_INFO_4W")
@@ -16573,19 +15948,19 @@ impl ::core::fmt::Debug for JOB_INFO_4W {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 unsafe impl ::windows_core::Abi for JOB_INFO_4W {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::PartialEq for JOB_INFO_4W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<JOB_INFO_4W>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::Eq for JOB_INFO_4W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::default::Default for JOB_INFO_4W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16638,7 +16013,7 @@ pub const JOB_STATUS_USER_INTERVENTION: u32 = 1024u32;
 pub struct KERNDATA {
     pub dwSize: u32,
     pub dwKernPairNum: u32,
-    pub KernPair: [super::super::Devices::Display::FD_KERNINGPAIR; 1],
+    pub KernPair: [::win32_devices::Display::FD_KERNINGPAIR; 1],
 }
 #[cfg(feature = "Win32_Devices_Display")]
 impl ::core::marker::Copy for KERNDATA {}
@@ -16715,42 +16090,34 @@ pub const MAX_QUEUENAME_LEN: u32 = 33u32;
 pub const MAX_RES_STR_CHARS: u32 = 160u32;
 pub const MAX_SNMP_COMMUNITY_STR_LEN: u32 = 33u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MESSAGEBOX_PARAMS {
     pub cbSize: u32,
     pub pTitle: ::windows_core::PWSTR,
     pub pMessage: ::windows_core::PWSTR,
     pub Style: u32,
     pub dwTimeout: u32,
-    pub bWait: super::super::Foundation::BOOL,
+    pub bWait: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MESSAGEBOX_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MESSAGEBOX_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MESSAGEBOX_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MESSAGEBOX_PARAMS").field("cbSize", &self.cbSize).field("pTitle", &self.pTitle).field("pMessage", &self.pMessage).field("Style", &self.Style).field("dwTimeout", &self.dwTimeout).field("bWait", &self.bWait).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MESSAGEBOX_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MESSAGEBOX_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MESSAGEBOX_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MESSAGEBOX_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MESSAGEBOX_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16926,42 +16293,42 @@ impl ::core::default::Default for MONITOREX {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct MONITORINIT {
     pub cbSize: u32,
-    pub hSpooler: super::super::Foundation::HANDLE,
-    pub hckRegistryRoot: super::super::System::Registry::HKEY,
+    pub hSpooler: ::win32_foundation::HANDLE,
+    pub hckRegistryRoot: ::win32_system::Registry::HKEY,
     pub pMonitorReg: *mut MONITORREG,
-    pub bLocal: super::super::Foundation::BOOL,
+    pub bLocal: ::win32_foundation::BOOL,
     pub pszServerName: ::windows_core::PCWSTR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for MONITORINIT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for MONITORINIT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::fmt::Debug for MONITORINIT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MONITORINIT").field("cbSize", &self.cbSize).field("hSpooler", &self.hSpooler).field("hckRegistryRoot", &self.hckRegistryRoot).field("pMonitorReg", &self.pMonitorReg).field("bLocal", &self.bLocal).field("pszServerName", &self.pszServerName).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 unsafe impl ::windows_core::Abi for MONITORINIT {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::cmp::PartialEq for MONITORINIT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MONITORINIT>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::cmp::Eq for MONITORINIT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::default::Default for MONITORINIT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17498,40 +16865,32 @@ impl ::core::fmt::Debug for NOTIFICATION_CALLBACK_COMMANDS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NOTIFICATION_CONFIG_1 {
     pub cbSize: u32,
     pub fdwFlags: u32,
     pub pfnNotifyCallback: ROUTER_NOTIFY_CALLBACK,
     pub pContext: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NOTIFICATION_CONFIG_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NOTIFICATION_CONFIG_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NOTIFICATION_CONFIG_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NOTIFICATION_CONFIG_1").field("cbSize", &self.cbSize).field("fdwFlags", &self.fdwFlags).field("pfnNotifyCallback", &self.pfnNotifyCallback.map(|f| f as usize)).field("pContext", &self.pContext).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NOTIFICATION_CONFIG_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NOTIFICATION_CONFIG_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NOTIFICATION_CONFIG_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NOTIFICATION_CONFIG_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NOTIFICATION_CONFIG_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17567,17 +16926,17 @@ pub const NOTIFICATION_RELEASE: ::windows_core::GUID = ::windows_core::GUID::fro
 pub const NO_BORDER_PRINT: u32 = 1u32;
 pub const NO_COLOR_OPTIMIZATION: u32 = 0u32;
 pub const NO_PRIORITY: u32 = 0u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 pub type OEMCUIPCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: *mut CPSUICBPARAM, param1: *mut OEMCUIPPARAM) -> i32>;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 pub struct OEMCUIPPARAM {
     pub cbSize: u32,
     pub poemuiobj: *mut OEMUIOBJ,
-    pub hPrinter: super::super::Foundation::HANDLE,
+    pub hPrinter: ::win32_foundation::HANDLE,
     pub pPrinterName: ::windows_core::PWSTR,
-    pub hModule: super::super::Foundation::HANDLE,
-    pub hOEMHeap: super::super::Foundation::HANDLE,
+    pub hModule: ::win32_foundation::HANDLE,
+    pub hOEMHeap: ::win32_foundation::HANDLE,
     pub pPublicDM: *mut super::Gdi::DEVMODEA,
     pub pOEMDM: *mut ::core::ffi::c_void,
     pub dwFlags: u32,
@@ -17588,15 +16947,15 @@ pub struct OEMCUIPPARAM {
     pub pOEMUserData: *mut ::core::ffi::c_void,
     pub OEMCUIPCallback: OEMCUIPCALLBACK,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for OEMCUIPPARAM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for OEMCUIPPARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::fmt::Debug for OEMCUIPPARAM {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OEMCUIPPARAM")
@@ -17618,19 +16977,19 @@ impl ::core::fmt::Debug for OEMCUIPPARAM {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 unsafe impl ::windows_core::Abi for OEMCUIPPARAM {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::cmp::PartialEq for OEMCUIPPARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OEMCUIPPARAM>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::cmp::Eq for OEMCUIPPARAM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::default::Default for OEMCUIPPARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17639,45 +16998,45 @@ impl ::core::default::Default for OEMCUIPPARAM {
 pub const OEMCUIP_DOCPROP: u32 = 1u32;
 pub const OEMCUIP_PRNPROP: u32 = 2u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct OEMDMPARAM {
     pub cbSize: u32,
     pub pdriverobj: *mut ::core::ffi::c_void,
-    pub hPrinter: super::super::Foundation::HANDLE,
-    pub hModule: super::super::Foundation::HANDLE,
+    pub hPrinter: ::win32_foundation::HANDLE,
+    pub hModule: ::win32_foundation::HANDLE,
     pub pPublicDMIn: *mut super::Gdi::DEVMODEA,
     pub pPublicDMOut: *mut super::Gdi::DEVMODEA,
     pub pOEMDMIn: *mut ::core::ffi::c_void,
     pub pOEMDMOut: *mut ::core::ffi::c_void,
     pub cbBufSize: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for OEMDMPARAM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for OEMDMPARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for OEMDMPARAM {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OEMDMPARAM").field("cbSize", &self.cbSize).field("pdriverobj", &self.pdriverobj).field("hPrinter", &self.hPrinter).field("hModule", &self.hModule).field("pPublicDMIn", &self.pPublicDMIn).field("pPublicDMOut", &self.pPublicDMOut).field("pOEMDMIn", &self.pOEMDMIn).field("pOEMDMOut", &self.pOEMDMOut).field("cbBufSize", &self.cbBufSize).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for OEMDMPARAM {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for OEMDMPARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OEMDMPARAM>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for OEMDMPARAM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for OEMDMPARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17688,42 +17047,34 @@ pub const OEMDM_DEFAULT: u32 = 2u32;
 pub const OEMDM_MERGE: u32 = 4u32;
 pub const OEMDM_SIZE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OEMFONTINSTPARAM {
     pub cbSize: u32,
-    pub hPrinter: super::super::Foundation::HANDLE,
-    pub hModule: super::super::Foundation::HANDLE,
-    pub hHeap: super::super::Foundation::HANDLE,
+    pub hPrinter: ::win32_foundation::HANDLE,
+    pub hModule: ::win32_foundation::HANDLE,
+    pub hHeap: ::win32_foundation::HANDLE,
     pub dwFlags: u32,
     pub pFontInstallerName: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OEMFONTINSTPARAM {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OEMFONTINSTPARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OEMFONTINSTPARAM {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OEMFONTINSTPARAM").field("cbSize", &self.cbSize).field("hPrinter", &self.hPrinter).field("hModule", &self.hModule).field("hHeap", &self.hHeap).field("dwFlags", &self.dwFlags).field("pFontInstallerName", &self.pFontInstallerName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OEMFONTINSTPARAM {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OEMFONTINSTPARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OEMFONTINSTPARAM>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OEMFONTINSTPARAM {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OEMFONTINSTPARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17759,123 +17110,107 @@ pub const OEMTTY_INFO_MARGINS: u32 = 1u32;
 pub const OEMTTY_INFO_NUM_UFMS: u32 = 3u32;
 pub const OEMTTY_INFO_UFM_IDS: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OEMUIOBJ {
     pub cbSize: u32,
     pub pOemUIProcs: *mut OEMUIPROCS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OEMUIOBJ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OEMUIOBJ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OEMUIOBJ {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OEMUIOBJ").field("cbSize", &self.cbSize).field("pOemUIProcs", &self.pOemUIProcs).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OEMUIOBJ {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OEMUIOBJ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OEMUIOBJ>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OEMUIOBJ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OEMUIOBJ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OEMUIPROCS {
     pub DrvGetDriverSetting: PFN_DrvGetDriverSetting,
     pub DrvUpdateUISetting: PFN_DrvUpdateUISetting,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OEMUIPROCS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OEMUIPROCS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OEMUIPROCS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OEMUIPROCS").field("DrvGetDriverSetting", &self.DrvGetDriverSetting.map(|f| f as usize)).field("DrvUpdateUISetting", &self.DrvUpdateUISetting.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OEMUIPROCS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OEMUIPROCS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OEMUIPROCS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OEMUIPROCS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OEMUIPROCS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct OEMUIPSPARAM {
     pub cbSize: u32,
     pub poemuiobj: *mut OEMUIOBJ,
-    pub hPrinter: super::super::Foundation::HANDLE,
+    pub hPrinter: ::win32_foundation::HANDLE,
     pub pPrinterName: ::windows_core::PWSTR,
-    pub hModule: super::super::Foundation::HANDLE,
-    pub hOEMHeap: super::super::Foundation::HANDLE,
+    pub hModule: ::win32_foundation::HANDLE,
+    pub hOEMHeap: ::win32_foundation::HANDLE,
     pub pPublicDM: *mut super::Gdi::DEVMODEA,
     pub pOEMDM: *mut ::core::ffi::c_void,
     pub pOEMUserData: *mut ::core::ffi::c_void,
     pub dwFlags: u32,
     pub pOemEntry: *mut ::core::ffi::c_void,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for OEMUIPSPARAM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for OEMUIPSPARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for OEMUIPSPARAM {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OEMUIPSPARAM").field("cbSize", &self.cbSize).field("poemuiobj", &self.poemuiobj).field("hPrinter", &self.hPrinter).field("pPrinterName", &self.pPrinterName).field("hModule", &self.hModule).field("hOEMHeap", &self.hOEMHeap).field("pPublicDM", &self.pPublicDM).field("pOEMDM", &self.pOEMDM).field("pOEMUserData", &self.pOEMUserData).field("dwFlags", &self.dwFlags).field("pOemEntry", &self.pOemEntry).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for OEMUIPSPARAM {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for OEMUIPSPARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OEMUIPSPARAM>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for OEMUIPSPARAM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for OEMUIPSPARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17914,41 +17249,33 @@ impl ::core::default::Default for OEM_DMEXTRAHEADER {
 }
 pub const OEM_MODE_PUBLISHER: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OIEXT {
     pub cbSize: u16,
     pub Flags: u16,
-    pub hInstCaller: super::super::Foundation::HINSTANCE,
+    pub hInstCaller: ::win32_foundation::HINSTANCE,
     pub pHelpFile: *mut i8,
     pub dwReserved: [usize; 4],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OIEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OIEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OIEXT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OIEXT").field("cbSize", &self.cbSize).field("Flags", &self.Flags).field("hInstCaller", &self.hInstCaller).field("pHelpFile", &self.pHelpFile).field("dwReserved", &self.dwReserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OIEXT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OIEXT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OIEXT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OIEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OIEXT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17958,7 +17285,6 @@ pub const OIEXTF_ANSI_STRING: u32 = 1u32;
 pub const OPTCF_HIDE: u32 = 1u32;
 pub const OPTCF_MASK: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPTCOMBO {
     pub cbSize: u16,
     pub Flags: u8,
@@ -17967,33 +17293,26 @@ pub struct OPTCOMBO {
     pub Sel: i32,
     pub dwReserved: [u32; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPTCOMBO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPTCOMBO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OPTCOMBO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OPTCOMBO").field("cbSize", &self.cbSize).field("Flags", &self.Flags).field("cListItem", &self.cListItem).field("pListItem", &self.pListItem).field("Sel", &self.Sel).field("dwReserved", &self.dwReserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OPTCOMBO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPTCOMBO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPTCOMBO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OPTCOMBO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OPTCOMBO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -18018,7 +17337,7 @@ pub const OPTIF_OVERLAY_STOP_ICON: i32 = 8192i32;
 pub const OPTIF_OVERLAY_WARNING_ICON: i32 = 4096i32;
 pub const OPTIF_SEL_AS_HICON: i32 = 512i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct OPTITEM {
     pub cbSize: u16,
     pub Level: u8,
@@ -18036,134 +17355,126 @@ pub struct OPTITEM {
     pub pOIExt: *mut OIEXT,
     pub dwReserved: [usize; 3],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for OPTITEM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for OPTITEM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for OPTITEM {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for OPTITEM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPTITEM>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for OPTITEM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for OPTITEM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union OPTITEM_0 {
     pub Sel: i32,
     pub pSel: *mut i8,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for OPTITEM_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for OPTITEM_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for OPTITEM_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for OPTITEM_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPTITEM_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for OPTITEM_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for OPTITEM_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union OPTITEM_1 {
     pub pExtChkBox: *mut EXTCHKBOX,
     pub pExtPush: *mut EXTPUSH,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for OPTITEM_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for OPTITEM_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for OPTITEM_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for OPTITEM_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPTITEM_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for OPTITEM_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for OPTITEM_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPTPARAM {
     pub cbSize: u16,
     pub Flags: u8,
     pub Style: u8,
     pub pData: *mut i8,
     pub IconID: usize,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation::LPARAM,
     pub dwReserved: [usize; 2],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPTPARAM {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPTPARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OPTPARAM {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OPTPARAM").field("cbSize", &self.cbSize).field("Flags", &self.Flags).field("Style", &self.Style).field("pData", &self.pData).field("IconID", &self.IconID).field("lParam", &self.lParam).field("dwReserved", &self.dwReserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OPTPARAM {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPTPARAM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPTPARAM>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OPTPARAM {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OPTPARAM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -18181,7 +17492,6 @@ pub const OPTTF_MASK: u32 = 3u32;
 pub const OPTTF_NOSPACE_BEFORE_POSTFIX: u32 = 2u32;
 pub const OPTTF_TYPE_DISABLED: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPTTYPE {
     pub cbSize: u16,
     pub Type: u8,
@@ -18193,33 +17503,26 @@ pub struct OPTTYPE {
     pub wReserved: [u16; 3],
     pub dwReserved: [usize; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPTTYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPTTYPE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OPTTYPE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OPTTYPE").field("cbSize", &self.cbSize).field("Type", &self.Type).field("Flags", &self.Flags).field("Count", &self.Count).field("BegCtrlID", &self.BegCtrlID).field("pOptParam", &self.pOptParam).field("Style", &self.Style).field("wReserved", &self.wReserved).field("dwReserved", &self.dwReserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OPTTYPE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPTTYPE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPTTYPE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OPTTYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OPTTYPE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -18234,56 +17537,56 @@ pub const OTS_MASK: u32 = 255u32;
 pub const OTS_PUSH_ENABLE_ALWAYS: u32 = 128u32;
 pub const OTS_PUSH_INCL_SETUP_TITLE: u32 = 32u32;
 pub const OTS_PUSH_NO_DOT_DOT_DOT: u32 = 64u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn OpenPrinter2A<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pprintername: Param0, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA, poptions: *const PRINTER_OPTIONSA) -> super::super::Foundation::BOOL {
+pub unsafe fn OpenPrinter2A<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pprintername: Param0, phprinter: *mut ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA, poptions: *const PRINTER_OPTIONSA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenPrinter2A(pprintername: ::windows_core::PCSTR, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA, poptions: *const PRINTER_OPTIONSA) -> super::super::Foundation::BOOL;
+            fn OpenPrinter2A(pprintername: ::windows_core::PCSTR, phprinter: *mut ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA, poptions: *const PRINTER_OPTIONSA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(OpenPrinter2A(pprintername.into_param().abi(), ::core::mem::transmute(phprinter), ::core::mem::transmute(pdefault), ::core::mem::transmute(poptions)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn OpenPrinter2W<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pprintername: Param0, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW, poptions: *const PRINTER_OPTIONSW) -> super::super::Foundation::BOOL {
+pub unsafe fn OpenPrinter2W<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pprintername: Param0, phprinter: *mut ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW, poptions: *const PRINTER_OPTIONSW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenPrinter2W(pprintername: ::windows_core::PCWSTR, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW, poptions: *const PRINTER_OPTIONSW) -> super::super::Foundation::BOOL;
+            fn OpenPrinter2W(pprintername: ::windows_core::PCWSTR, phprinter: *mut ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW, poptions: *const PRINTER_OPTIONSW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(OpenPrinter2W(pprintername.into_param().abi(), ::core::mem::transmute(phprinter), ::core::mem::transmute(pdefault), ::core::mem::transmute(poptions)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn OpenPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pprintername: Param0, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> super::super::Foundation::BOOL {
+pub unsafe fn OpenPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pprintername: Param0, phprinter: *mut ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenPrinterA(pprintername: ::windows_core::PCSTR, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> super::super::Foundation::BOOL;
+            fn OpenPrinterA(pprintername: ::windows_core::PCSTR, phprinter: *mut ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(OpenPrinterA(pprintername.into_param().abi(), ::core::mem::transmute(phprinter), ::core::mem::transmute(pdefault)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn OpenPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pprintername: Param0, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> super::super::Foundation::BOOL {
+pub unsafe fn OpenPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pprintername: Param0, phprinter: *mut ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenPrinterW(pprintername: ::windows_core::PCWSTR, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> super::super::Foundation::BOOL;
+            fn OpenPrinterW(pprintername: ::windows_core::PCWSTR, phprinter: *mut ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(OpenPrinterW(pprintername.into_param().abi(), ::core::mem::transmute(phprinter), ::core::mem::transmute(pdefault)))
     }
@@ -18293,16 +17596,11 @@ pub unsafe fn OpenPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_c
 pub const PDEV_ADJUST_PAPER_MARGIN_TYPE: u32 = 1u32;
 pub const PDEV_HOSTFONT_ENABLED_TYPE: u32 = 2u32;
 pub const PDEV_USE_TRUE_COLOR_TYPE: u32 = 3u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNCOMPROPSHEET = ::core::option::Option<unsafe extern "system" fn(hcompropsheet: super::super::Foundation::HANDLE, function: u32, lparam1: super::super::Foundation::LPARAM, lparam2: super::super::Foundation::LPARAM) -> isize>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNPROPSHEETUI = ::core::option::Option<unsafe extern "system" fn(ppsuiinfo: *mut PROPSHEETUI_INFO, lparam: super::super::Foundation::LPARAM) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvGetDriverSetting = ::core::option::Option<unsafe extern "system" fn(pdriverobj: *mut ::core::ffi::c_void, feature: ::windows_core::PCSTR, poutput: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32, pdwoptionsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvUpdateUISetting = ::core::option::Option<unsafe extern "system" fn(pdriverobj: *mut ::core::ffi::c_void, poptitem: *mut ::core::ffi::c_void, dwpreviousselection: u32, dwmode: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvUpgradeRegistrySetting = ::core::option::Option<unsafe extern "system" fn(hprinter: super::super::Foundation::HANDLE, pfeature: ::windows_core::PCSTR, poption: ::windows_core::PCSTR) -> super::super::Foundation::BOOL>;
+pub type PFNCOMPROPSHEET = ::core::option::Option<unsafe extern "system" fn(hcompropsheet: ::win32_foundation::HANDLE, function: u32, lparam1: ::win32_foundation::LPARAM, lparam2: ::win32_foundation::LPARAM) -> isize>;
+pub type PFNPROPSHEETUI = ::core::option::Option<unsafe extern "system" fn(ppsuiinfo: *mut PROPSHEETUI_INFO, lparam: ::win32_foundation::LPARAM) -> i32>;
+pub type PFN_DrvGetDriverSetting = ::core::option::Option<unsafe extern "system" fn(pdriverobj: *mut ::core::ffi::c_void, feature: ::windows_core::PCSTR, poutput: *mut ::core::ffi::c_void, cbsize: u32, pcbneeded: *mut u32, pdwoptionsreturned: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFN_DrvUpdateUISetting = ::core::option::Option<unsafe extern "system" fn(pdriverobj: *mut ::core::ffi::c_void, poptitem: *mut ::core::ffi::c_void, dwpreviousselection: u32, dwmode: u32) -> ::win32_foundation::BOOL>;
+pub type PFN_DrvUpgradeRegistrySetting = ::core::option::Option<unsafe extern "system" fn(hprinter: ::win32_foundation::HANDLE, pfeature: ::windows_core::PCSTR, poption: ::windows_core::PCSTR) -> ::win32_foundation::BOOL>;
 #[repr(C)]
 pub struct PORT_DATA_1 {
     pub sztPortName: [u16; 64],
@@ -18848,78 +18146,78 @@ pub const PRINTER_CONTROL_PURGE: u32 = 3u32;
 pub const PRINTER_CONTROL_RESUME: u32 = 2u32;
 pub const PRINTER_CONTROL_SET_STATUS: u32 = 4u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct PRINTER_DEFAULTSA {
     pub pDatatype: ::windows_core::PSTR,
     pub pDevMode: *mut super::Gdi::DEVMODEA,
     pub DesiredAccess: PRINTER_ACCESS_RIGHTS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for PRINTER_DEFAULTSA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for PRINTER_DEFAULTSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for PRINTER_DEFAULTSA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTER_DEFAULTSA").field("pDatatype", &self.pDatatype).field("pDevMode", &self.pDevMode).field("DesiredAccess", &self.DesiredAccess).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for PRINTER_DEFAULTSA {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for PRINTER_DEFAULTSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTER_DEFAULTSA>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for PRINTER_DEFAULTSA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for PRINTER_DEFAULTSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct PRINTER_DEFAULTSW {
     pub pDatatype: ::windows_core::PWSTR,
     pub pDevMode: *mut super::Gdi::DEVMODEW,
     pub DesiredAccess: PRINTER_ACCESS_RIGHTS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for PRINTER_DEFAULTSW {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for PRINTER_DEFAULTSW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for PRINTER_DEFAULTSW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTER_DEFAULTSW").field("pDatatype", &self.pDatatype).field("pDevMode", &self.pDevMode).field("DesiredAccess", &self.DesiredAccess).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for PRINTER_DEFAULTSW {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for PRINTER_DEFAULTSW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTER_DEFAULTSW>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for PRINTER_DEFAULTSW {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for PRINTER_DEFAULTSW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -19144,7 +18442,7 @@ impl ::core::default::Default for PRINTER_INFO_1W {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 pub struct PRINTER_INFO_2A {
     pub pServerName: ::windows_core::PSTR,
     pub pPrinterName: ::windows_core::PSTR,
@@ -19158,7 +18456,7 @@ pub struct PRINTER_INFO_2A {
     pub pPrintProcessor: ::windows_core::PSTR,
     pub pDatatype: ::windows_core::PSTR,
     pub pParameters: ::windows_core::PSTR,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
     pub Attributes: u32,
     pub Priority: u32,
     pub DefaultPriority: u32,
@@ -19168,15 +18466,15 @@ pub struct PRINTER_INFO_2A {
     pub cJobs: u32,
     pub AveragePPM: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::marker::Copy for PRINTER_INFO_2A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::clone::Clone for PRINTER_INFO_2A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::fmt::Debug for PRINTER_INFO_2A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTER_INFO_2A")
@@ -19204,26 +18502,26 @@ impl ::core::fmt::Debug for PRINTER_INFO_2A {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 unsafe impl ::windows_core::Abi for PRINTER_INFO_2A {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::PartialEq for PRINTER_INFO_2A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTER_INFO_2A>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::Eq for PRINTER_INFO_2A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::default::Default for PRINTER_INFO_2A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 pub struct PRINTER_INFO_2W {
     pub pServerName: ::windows_core::PWSTR,
     pub pPrinterName: ::windows_core::PWSTR,
@@ -19237,7 +18535,7 @@ pub struct PRINTER_INFO_2W {
     pub pPrintProcessor: ::windows_core::PWSTR,
     pub pDatatype: ::windows_core::PWSTR,
     pub pParameters: ::windows_core::PWSTR,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
     pub Attributes: u32,
     pub Priority: u32,
     pub DefaultPriority: u32,
@@ -19247,15 +18545,15 @@ pub struct PRINTER_INFO_2W {
     pub cJobs: u32,
     pub AveragePPM: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::marker::Copy for PRINTER_INFO_2W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::clone::Clone for PRINTER_INFO_2W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::fmt::Debug for PRINTER_INFO_2W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTER_INFO_2W")
@@ -19283,19 +18581,19 @@ impl ::core::fmt::Debug for PRINTER_INFO_2W {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 unsafe impl ::windows_core::Abi for PRINTER_INFO_2W {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::PartialEq for PRINTER_INFO_2W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTER_INFO_2W>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::cmp::Eq for PRINTER_INFO_2W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 impl ::core::default::Default for PRINTER_INFO_2W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -19304,7 +18602,7 @@ impl ::core::default::Default for PRINTER_INFO_2W {
 #[repr(C)]
 #[cfg(feature = "Win32_Security")]
 pub struct PRINTER_INFO_3 {
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
 }
 #[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for PRINTER_INFO_3 {}
@@ -19556,148 +18854,148 @@ impl ::core::default::Default for PRINTER_INFO_7W {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct PRINTER_INFO_8A {
     pub pDevMode: *mut super::Gdi::DEVMODEA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for PRINTER_INFO_8A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for PRINTER_INFO_8A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for PRINTER_INFO_8A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTER_INFO_8A").field("pDevMode", &self.pDevMode).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for PRINTER_INFO_8A {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for PRINTER_INFO_8A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTER_INFO_8A>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for PRINTER_INFO_8A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for PRINTER_INFO_8A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct PRINTER_INFO_8W {
     pub pDevMode: *mut super::Gdi::DEVMODEW,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for PRINTER_INFO_8W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for PRINTER_INFO_8W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for PRINTER_INFO_8W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTER_INFO_8W").field("pDevMode", &self.pDevMode).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for PRINTER_INFO_8W {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for PRINTER_INFO_8W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTER_INFO_8W>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for PRINTER_INFO_8W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for PRINTER_INFO_8W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct PRINTER_INFO_9A {
     pub pDevMode: *mut super::Gdi::DEVMODEA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for PRINTER_INFO_9A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for PRINTER_INFO_9A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for PRINTER_INFO_9A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTER_INFO_9A").field("pDevMode", &self.pDevMode).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for PRINTER_INFO_9A {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for PRINTER_INFO_9A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTER_INFO_9A>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for PRINTER_INFO_9A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for PRINTER_INFO_9A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct PRINTER_INFO_9W {
     pub pDevMode: *mut super::Gdi::DEVMODEW,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for PRINTER_INFO_9W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for PRINTER_INFO_9W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for PRINTER_INFO_9W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTER_INFO_9W").field("pDevMode", &self.pDevMode).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for PRINTER_INFO_9W {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for PRINTER_INFO_9W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTER_INFO_9W>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for PRINTER_INFO_9W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for PRINTER_INFO_9W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -20063,7 +19361,7 @@ pub const PRINTER_STATUS_USER_INTERVENTION: u32 = 1048576u32;
 pub const PRINTER_STATUS_WAITING: u32 = 8192u32;
 pub const PRINTER_STATUS_WARMING_UP: u32 = 65536u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct PRINTIFI32 {
     pub cjThis: u32,
     pub cjIfiExtra: u32,
@@ -20116,24 +19414,24 @@ pub struct PRINTIFI32 {
     pub wcLastChar: u16,
     pub wcDefaultChar: u16,
     pub wcBreakChar: u16,
-    pub ptlBaseline: super::super::Foundation::POINTL,
-    pub ptlAspect: super::super::Foundation::POINTL,
-    pub ptlCaret: super::super::Foundation::POINTL,
-    pub rclFontBox: super::super::Foundation::RECTL,
+    pub ptlBaseline: ::win32_foundation::POINTL,
+    pub ptlAspect: ::win32_foundation::POINTL,
+    pub ptlCaret: ::win32_foundation::POINTL,
+    pub rclFontBox: ::win32_foundation::RECTL,
     pub achVendId: [u8; 4],
     pub cKerningPairs: u32,
     pub ulPanoseCulture: u32,
     pub panose: super::Gdi::PANOSE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for PRINTIFI32 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for PRINTIFI32 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for PRINTIFI32 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTIFI32")
@@ -20199,26 +19497,26 @@ impl ::core::fmt::Debug for PRINTIFI32 {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for PRINTIFI32 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for PRINTIFI32 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTIFI32>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for PRINTIFI32 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for PRINTIFI32 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct PRINTPROCESSOROPENDATA {
     pub pDevMode: *mut super::Gdi::DEVMODEA,
     pub pDatatype: ::windows_core::PWSTR,
@@ -20228,33 +19526,33 @@ pub struct PRINTPROCESSOROPENDATA {
     pub pOutputFile: ::windows_core::PWSTR,
     pub pPrinterName: ::windows_core::PWSTR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for PRINTPROCESSOROPENDATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for PRINTPROCESSOROPENDATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for PRINTPROCESSOROPENDATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRINTPROCESSOROPENDATA").field("pDevMode", &self.pDevMode).field("pDatatype", &self.pDatatype).field("pParameters", &self.pParameters).field("pDocumentName", &self.pDocumentName).field("JobId", &self.JobId).field("pOutputFile", &self.pOutputFile).field("pPrinterName", &self.pPrinterName).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for PRINTPROCESSOROPENDATA {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for PRINTPROCESSOROPENDATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRINTPROCESSOROPENDATA>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for PRINTPROCESSOROPENDATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for PRINTPROCESSOROPENDATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -20734,7 +20032,7 @@ pub struct PROPSHEETUI_GETICON_INFO {
     pub Flags: u16,
     pub cxIcon: u16,
     pub cyIcon: u16,
-    pub hIcon: super::super::UI::WindowsAndMessaging::HICON,
+    pub hIcon: ::win32_ui::WindowsAndMessaging::HICON,
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for PROPSHEETUI_GETICON_INFO {}
@@ -20769,113 +20067,105 @@ impl ::core::default::Default for PROPSHEETUI_GETICON_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROPSHEETUI_INFO {
     pub cbSize: u16,
     pub Version: u16,
     pub Flags: u16,
     pub Reason: u16,
-    pub hComPropSheet: super::super::Foundation::HANDLE,
+    pub hComPropSheet: ::win32_foundation::HANDLE,
     pub pfnComPropSheet: PFNCOMPROPSHEET,
-    pub lParamInit: super::super::Foundation::LPARAM,
+    pub lParamInit: ::win32_foundation::LPARAM,
     pub UserData: usize,
     pub Result: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROPSHEETUI_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROPSHEETUI_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PROPSHEETUI_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PROPSHEETUI_INFO").field("cbSize", &self.cbSize).field("Version", &self.Version).field("Flags", &self.Flags).field("Reason", &self.Reason).field("hComPropSheet", &self.hComPropSheet).field("pfnComPropSheet", &self.pfnComPropSheet.map(|f| f as usize)).field("lParamInit", &self.lParamInit).field("UserData", &self.UserData).field("Result", &self.Result).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PROPSHEETUI_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PROPSHEETUI_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROPSHEETUI_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PROPSHEETUI_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PROPSHEETUI_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct PROPSHEETUI_INFO_HEADER {
     pub cbSize: u16,
     pub Flags: u16,
     pub pTitle: *mut i8,
-    pub hWndParent: super::super::Foundation::HWND,
-    pub hInst: super::super::Foundation::HINSTANCE,
+    pub hWndParent: ::win32_foundation::HWND,
+    pub hInst: ::win32_foundation::HINSTANCE,
     pub Anonymous: PROPSHEETUI_INFO_HEADER_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for PROPSHEETUI_INFO_HEADER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for PROPSHEETUI_INFO_HEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for PROPSHEETUI_INFO_HEADER {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for PROPSHEETUI_INFO_HEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROPSHEETUI_INFO_HEADER>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for PROPSHEETUI_INFO_HEADER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for PROPSHEETUI_INFO_HEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union PROPSHEETUI_INFO_HEADER_0 {
-    pub hIcon: super::super::UI::WindowsAndMessaging::HICON,
+    pub hIcon: ::win32_ui::WindowsAndMessaging::HICON,
     pub IconID: usize,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for PROPSHEETUI_INFO_HEADER_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for PROPSHEETUI_INFO_HEADER_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for PROPSHEETUI_INFO_HEADER_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for PROPSHEETUI_INFO_HEADER_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROPSHEETUI_INFO_HEADER_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for PROPSHEETUI_INFO_HEADER_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for PROPSHEETUI_INFO_HEADER_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -21042,41 +20332,33 @@ impl ::core::default::Default for PSCRIPT5_PRIVATE_DEVMODE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PSPINFO {
     pub cbSize: u16,
     pub wReserved: u16,
-    pub hComPropSheet: super::super::Foundation::HANDLE,
-    pub hCPSUIPage: super::super::Foundation::HANDLE,
+    pub hComPropSheet: ::win32_foundation::HANDLE,
+    pub hCPSUIPage: ::win32_foundation::HANDLE,
     pub pfnComPropSheet: PFNCOMPROPSHEET,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PSPINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PSPINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PSPINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PSPINFO").field("cbSize", &self.cbSize).field("wReserved", &self.wReserved).field("hComPropSheet", &self.hComPropSheet).field("hCPSUIPage", &self.hCPSUIPage).field("pfnComPropSheet", &self.pfnComPropSheet.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PSPINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSPINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSPINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PSPINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PSPINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -21154,28 +20436,26 @@ impl ::core::fmt::Debug for PageCountType {
         f.debug_tuple("PageCountType").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PartialReplyPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA) -> super::super::Foundation::BOOL {
+pub unsafe fn PartialReplyPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PartialReplyPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA) -> super::super::Foundation::BOOL;
+            fn PartialReplyPrinterChangeNotification(hprinter: ::win32_foundation::HANDLE, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PartialReplyPrinterChangeNotification(hprinter.into_param().abi(), ::core::mem::transmute(pdatasrc)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PlayGdiScriptOnPrinterIC<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinteric: Param0, pin: *const u8, cin: u32, pout: *mut u8, cout: u32, ul: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn PlayGdiScriptOnPrinterIC<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinteric: Param0, pin: *const u8, cin: u32, pout: *mut u8, cout: u32, ul: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PlayGdiScriptOnPrinterIC(hprinteric: super::super::Foundation::HANDLE, pin: *const u8, cin: u32, pout: *mut u8, cout: u32, ul: u32) -> super::super::Foundation::BOOL;
+            fn PlayGdiScriptOnPrinterIC(hprinteric: ::win32_foundation::HANDLE, pin: *const u8, cin: u32, pout: *mut u8, cout: u32, ul: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PlayGdiScriptOnPrinterIC(hprinteric.into_param().abi(), ::core::mem::transmute(pin), ::core::mem::transmute(cin), ::core::mem::transmute(pout), ::core::mem::transmute(cout), ::core::mem::transmute(ul)))
     }
@@ -21527,42 +20807,39 @@ impl ::core::fmt::Debug for PrintSchemaSelectionType {
     }
 }
 pub const PrinterExtensionManager: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x331b60da_9e90_4dd0_9c84_eac4e659b61f);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PrinterMessageBoxA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, error: u32, hwnd: Param2, ptext: Param3, pcaption: Param4, dwtype: u32) -> u32 {
+pub unsafe fn PrinterMessageBoxA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, error: u32, hwnd: Param2, ptext: Param3, pcaption: Param4, dwtype: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrinterMessageBoxA(hprinter: super::super::Foundation::HANDLE, error: u32, hwnd: super::super::Foundation::HWND, ptext: ::windows_core::PCSTR, pcaption: ::windows_core::PCSTR, dwtype: u32) -> u32;
+            fn PrinterMessageBoxA(hprinter: ::win32_foundation::HANDLE, error: u32, hwnd: ::win32_foundation::HWND, ptext: ::windows_core::PCSTR, pcaption: ::windows_core::PCSTR, dwtype: u32) -> u32;
         }
         ::core::mem::transmute(PrinterMessageBoxA(hprinter.into_param().abi(), ::core::mem::transmute(error), hwnd.into_param().abi(), ptext.into_param().abi(), pcaption.into_param().abi(), ::core::mem::transmute(dwtype)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PrinterMessageBoxW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, error: u32, hwnd: Param2, ptext: Param3, pcaption: Param4, dwtype: u32) -> u32 {
+pub unsafe fn PrinterMessageBoxW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, error: u32, hwnd: Param2, ptext: Param3, pcaption: Param4, dwtype: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrinterMessageBoxW(hprinter: super::super::Foundation::HANDLE, error: u32, hwnd: super::super::Foundation::HWND, ptext: ::windows_core::PCWSTR, pcaption: ::windows_core::PCWSTR, dwtype: u32) -> u32;
+            fn PrinterMessageBoxW(hprinter: ::win32_foundation::HANDLE, error: u32, hwnd: ::win32_foundation::HWND, ptext: ::windows_core::PCWSTR, pcaption: ::windows_core::PCWSTR, dwtype: u32) -> u32;
         }
         ::core::mem::transmute(PrinterMessageBoxW(hprinter.into_param().abi(), ::core::mem::transmute(error), hwnd.into_param().abi(), ptext.into_param().abi(), pcaption.into_param().abi(), ::core::mem::transmute(dwtype)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PrinterProperties<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hwnd: Param0, hprinter: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn PrinterProperties<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hwnd: Param0, hprinter: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrinterProperties(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn PrinterProperties(hwnd: ::win32_foundation::HWND, hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PrinterProperties(hwnd.into_param().abi(), hprinter.into_param().abi()))
     }
@@ -21571,28 +20848,26 @@ pub unsafe fn PrinterProperties<'a, Param0: ::windows_core::IntoParam<'a, super:
 }
 pub const PrinterQueue: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xeb54c230_798c_4c9e_b461_29fad04039b1);
 pub const PrinterQueueView: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xeb54c231_798c_4c9e_b461_29fad04039b1);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ProvidorFindClosePrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn ProvidorFindClosePrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ProvidorFindClosePrinterChangeNotification(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn ProvidorFindClosePrinterChangeNotification(hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ProvidorFindClosePrinterChangeNotification(hprinter.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ProvidorFindFirstPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, fdwflags: u32, fdwoptions: u32, hnotify: Param3, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn ProvidorFindFirstPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, fdwflags: u32, fdwoptions: u32, hnotify: Param3, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved1: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ProvidorFindFirstPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, fdwflags: u32, fdwoptions: u32, hnotify: super::super::Foundation::HANDLE, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn ProvidorFindFirstPrinterChangeNotification(hprinter: ::win32_foundation::HANDLE, fdwflags: u32, fdwoptions: u32, hnotify: ::win32_foundation::HANDLE, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved1: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ProvidorFindFirstPrinterChangeNotification(hprinter.into_param().abi(), ::core::mem::transmute(fdwflags), ::core::mem::transmute(fdwoptions), hnotify.into_param().abi(), ::core::mem::transmute(pprinternotifyoptions), ::core::mem::transmute(pvreserved1)))
     }
@@ -21607,132 +20882,124 @@ pub const RAWTCP: u32 = 1u32;
 pub const REVERSE_PAGES_FOR_REVERSE_DUPLEX: u32 = 1u32;
 pub const REVERSE_PRINT: u32 = 1u32;
 pub const RIGHT_THEN_DOWN: u32 = 1u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type ROUTER_NOTIFY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwcommand: u32, pcontext: *const ::core::ffi::c_void, dwcolor: u32, pnofityinfo: *const PRINTER_NOTIFY_INFO, fdwflags: u32, pdwresult: *mut u32) -> super::super::Foundation::BOOL>;
+pub type ROUTER_NOTIFY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwcommand: u32, pcontext: *const ::core::ffi::c_void, dwcolor: u32, pnofityinfo: *const PRINTER_NOTIFY_INFO, fdwflags: u32, pdwresult: *mut u32) -> ::win32_foundation::BOOL>;
 pub const ROUTER_STOP_ROUTING: u32 = 2u32;
 pub const ROUTER_SUCCESS: u32 = 1u32;
 pub const ROUTER_UNKNOWN: u32 = 0u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadPrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, pbuf: *mut ::core::ffi::c_void, cbbuf: u32, pnobytesread: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadPrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, pbuf: *mut ::core::ffi::c_void, cbbuf: u32, pnobytesread: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadPrinter(hprinter: super::super::Foundation::HANDLE, pbuf: *mut ::core::ffi::c_void, cbbuf: u32, pnobytesread: *mut u32) -> super::super::Foundation::BOOL;
+            fn ReadPrinter(hprinter: ::win32_foundation::HANDLE, pbuf: *mut ::core::ffi::c_void, cbbuf: u32, pnobytesread: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadPrinter(hprinter.into_param().abi(), ::core::mem::transmute(pbuf), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pnobytesread)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterForPrintAsyncNotifications<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, IPrintAsyncNotifyCallback>>(pszname: Param0, pnotificationtype: *const ::windows_core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: Param4) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn RegisterForPrintAsyncNotifications<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, IPrintAsyncNotifyCallback>>(pszname: Param0, pnotificationtype: *const ::windows_core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: Param4) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterForPrintAsyncNotifications(pszname: ::windows_core::PCWSTR, pnotificationtype: *const ::windows_core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: ::windows_core::RawPtr, phnotify: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn RegisterForPrintAsyncNotifications(pszname: ::windows_core::PCWSTR, pnotificationtype: *const ::windows_core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: ::windows_core::RawPtr, phnotify: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        RegisterForPrintAsyncNotifications(pszname.into_param().abi(), ::core::mem::transmute(pnotificationtype), ::core::mem::transmute(euserfilter), ::core::mem::transmute(econversationstyle), pcallback.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        RegisterForPrintAsyncNotifications(pszname.into_param().abi(), ::core::mem::transmute(pnotificationtype), ::core::mem::transmute(euserfilter), ::core::mem::transmute(econversationstyle), pcallback.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RemovePrintDeviceObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hdeviceobject: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn RemovePrintDeviceObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hdeviceobject: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RemovePrintDeviceObject(hdeviceobject: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn RemovePrintDeviceObject(hdeviceobject: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         RemovePrintDeviceObject(hdeviceobject.into_param().abi()).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReplyPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, fdwchangeflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn ReplyPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, fdwchangeflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReplyPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, fdwchangeflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn ReplyPrinterChangeNotification(hprinter: ::win32_foundation::HANDLE, fdwchangeflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReplyPrinterChangeNotification(hprinter.into_param().abi(), ::core::mem::transmute(fdwchangeflags), ::core::mem::transmute(pdwresult), ::core::mem::transmute(pprinternotifyinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReplyPrinterChangeNotificationEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnotify: Param0, dwcolor: u32, fdwflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn ReplyPrinterChangeNotificationEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnotify: Param0, dwcolor: u32, fdwflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReplyPrinterChangeNotificationEx(hnotify: super::super::Foundation::HANDLE, dwcolor: u32, fdwflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn ReplyPrinterChangeNotificationEx(hnotify: ::win32_foundation::HANDLE, dwcolor: u32, fdwflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReplyPrinterChangeNotificationEx(hnotify.into_param().abi(), ::core::mem::transmute(dwcolor), ::core::mem::transmute(fdwflags), ::core::mem::transmute(pdwresult), ::core::mem::transmute(pprinternotifyinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReportJobProcessingProgress<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(printerhandle: Param0, jobid: u32, joboperation: EPrintXPSJobOperation, jobprogress: EPrintXPSJobProgress) -> ::windows_core::Result<()> {
+pub unsafe fn ReportJobProcessingProgress<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(printerhandle: Param0, jobid: u32, joboperation: EPrintXPSJobOperation, jobprogress: EPrintXPSJobProgress) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportJobProcessingProgress(printerhandle: super::super::Foundation::HANDLE, jobid: u32, joboperation: EPrintXPSJobOperation, jobprogress: EPrintXPSJobProgress) -> ::windows_core::HRESULT;
+            fn ReportJobProcessingProgress(printerhandle: ::win32_foundation::HANDLE, jobid: u32, joboperation: EPrintXPSJobOperation, jobprogress: EPrintXPSJobProgress) -> ::windows_core::HRESULT;
         }
         ReportJobProcessingProgress(printerhandle.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(joboperation), ::core::mem::transmute(jobprogress)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn ResetPrinterA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, pdefault: *const PRINTER_DEFAULTSA) -> super::super::Foundation::BOOL {
+pub unsafe fn ResetPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, pdefault: *const PRINTER_DEFAULTSA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ResetPrinterA(hprinter: super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> super::super::Foundation::BOOL;
+            fn ResetPrinterA(hprinter: ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ResetPrinterA(hprinter.into_param().abi(), ::core::mem::transmute(pdefault)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn ResetPrinterW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, pdefault: *const PRINTER_DEFAULTSW) -> super::super::Foundation::BOOL {
+pub unsafe fn ResetPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, pdefault: *const PRINTER_DEFAULTSW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ResetPrinterW(hprinter: super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> super::super::Foundation::BOOL;
+            fn ResetPrinterW(hprinter: ::win32_foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ResetPrinterW(hprinter.into_param().abi(), ::core::mem::transmute(pdefault)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RevertToPrinterSelf() -> super::super::Foundation::HANDLE {
+pub unsafe fn RevertToPrinterSelf() -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RevertToPrinterSelf() -> super::super::Foundation::HANDLE;
+            fn RevertToPrinterSelf() -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(RevertToPrinterSelf())
     }
@@ -21752,7 +21019,6 @@ pub unsafe fn RouterAllocBidiMem(numbytes: usize) -> *mut ::core::ffi::c_void {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RouterAllocBidiResponseContainer(count: u32) -> *mut BIDI_RESPONSE_CONTAINER {
     #[cfg(windows)]
@@ -21792,7 +21058,6 @@ pub unsafe fn RouterFreeBidiMem(pmempointer: *const ::core::ffi::c_void) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RouterFreeBidiResponseContainer(pdata: *const BIDI_RESPONSE_CONTAINER) -> u32 {
     #[cfg(windows)]
@@ -21806,14 +21071,13 @@ pub unsafe fn RouterFreeBidiResponseContainer(pdata: *const BIDI_RESPONSE_CONTAI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterFreePrinterNotifyInfo(pinfo: *const PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn RouterFreePrinterNotifyInfo(pinfo: *const PRINTER_NOTIFY_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterFreePrinterNotifyInfo(pinfo: *const PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL;
+            fn RouterFreePrinterNotifyInfo(pinfo: *const PRINTER_NOTIFY_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RouterFreePrinterNotifyInfo(::core::mem::transmute(pinfo)))
     }
@@ -21828,40 +21092,32 @@ pub const SETOPTIONS_RESULT_CONFLICT_REMAINED: u32 = 2u32;
 pub const SETOPTIONS_RESULT_CONFLICT_RESOLVED: u32 = 1u32;
 pub const SETOPTIONS_RESULT_NO_CONFLICT: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SETRESULT_INFO {
     pub cbSize: u16,
     pub wReserved: u16,
-    pub hSetResult: super::super::Foundation::HANDLE,
-    pub Result: super::super::Foundation::LRESULT,
+    pub hSetResult: ::win32_foundation::HANDLE,
+    pub Result: ::win32_foundation::LRESULT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SETRESULT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SETRESULT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SETRESULT_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SETRESULT_INFO").field("cbSize", &self.cbSize).field("wReserved", &self.wReserved).field("hSetResult", &self.hSetResult).field("Result", &self.Result).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SETRESULT_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SETRESULT_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SETRESULT_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SETRESULT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SETRESULT_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -21892,38 +21148,30 @@ impl ::core::fmt::Debug for SHIMOPTS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SHOWUIPARAMS {
     pub UIType: UI_TYPE,
     pub MessageBoxParams: MESSAGEBOX_PARAMS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SHOWUIPARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SHOWUIPARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SHOWUIPARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SHOWUIPARAMS").field("UIType", &self.UIType).field("MessageBoxParams", &self.MessageBoxParams).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SHOWUIPARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SHOWUIPARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SHOWUIPARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SHOWUIPARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SHOWUIPARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -22132,322 +21380,299 @@ pub const STRING_NONE: u32 = 1u32;
 pub const S_CONFLICT_RESOLVED: u32 = 262146u32;
 pub const S_DEVCAP_OUTPUT_FULL_REPLACEMENT: ::windows_core::HRESULT = ::windows_core::HRESULT(318465i32);
 pub const S_NO_CONFLICT: u32 = 262145u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ScheduleJob<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, jobid: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ScheduleJob<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, jobid: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ScheduleJob(hprinter: super::super::Foundation::HANDLE, jobid: u32) -> super::super::Foundation::BOOL;
+            fn ScheduleJob(hprinter: ::win32_foundation::HANDLE, jobid: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ScheduleJob(hprinter.into_param().abi(), ::core::mem::transmute(jobid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCPSUIUserData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, cpsuiuserdata: usize) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCPSUIUserData<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hdlg: Param0, cpsuiuserdata: usize) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCPSUIUserData(hdlg: super::super::Foundation::HWND, cpsuiuserdata: usize) -> super::super::Foundation::BOOL;
+            fn SetCPSUIUserData(hdlg: ::win32_foundation::HWND, cpsuiuserdata: usize) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetCPSUIUserData(hdlg.into_param().abi(), ::core::mem::transmute(cpsuiuserdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDefaultPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDefaultPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetDefaultPrinterA(pszprinter: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetDefaultPrinterA(pszprinter: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetDefaultPrinterA(pszprinter.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDefaultPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDefaultPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetDefaultPrinterW(pszprinter: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetDefaultPrinterW(pszprinter: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetDefaultPrinterW(pszprinter.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetFormA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pformname: Param1, level: u32, pform: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn SetFormA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pformname: Param1, level: u32, pform: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetFormA(hprinter: super::super::Foundation::HANDLE, pformname: ::windows_core::PCSTR, level: u32, pform: *const u8) -> super::super::Foundation::BOOL;
+            fn SetFormA(hprinter: ::win32_foundation::HANDLE, pformname: ::windows_core::PCSTR, level: u32, pform: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetFormA(hprinter.into_param().abi(), pformname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pform)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetFormW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pformname: Param1, level: u32, pform: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn SetFormW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pformname: Param1, level: u32, pform: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetFormW(hprinter: super::super::Foundation::HANDLE, pformname: ::windows_core::PCWSTR, level: u32, pform: *const u8) -> super::super::Foundation::BOOL;
+            fn SetFormW(hprinter: ::win32_foundation::HANDLE, pformname: ::windows_core::PCWSTR, level: u32, pform: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetFormW(hprinter.into_param().abi(), pformname.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pform)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetJobA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, jobid: u32, level: u32, pjob: *mut u8, command: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetJobA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, jobid: u32, level: u32, pjob: *mut u8, command: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetJobA(hprinter: super::super::Foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, command: u32) -> super::super::Foundation::BOOL;
+            fn SetJobA(hprinter: ::win32_foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, command: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetJobA(hprinter.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(level), ::core::mem::transmute(pjob), ::core::mem::transmute(command)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetJobNamedProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, jobid: u32, pproperty: *const PrintNamedProperty) -> u32 {
+pub unsafe fn SetJobNamedProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, jobid: u32, pproperty: *const PrintNamedProperty) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetJobNamedProperty(hprinter: super::super::Foundation::HANDLE, jobid: u32, pproperty: *const PrintNamedProperty) -> u32;
+            fn SetJobNamedProperty(hprinter: ::win32_foundation::HANDLE, jobid: u32, pproperty: *const PrintNamedProperty) -> u32;
         }
         ::core::mem::transmute(SetJobNamedProperty(hprinter.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(pproperty)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetJobW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, jobid: u32, level: u32, pjob: *mut u8, command: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetJobW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, jobid: u32, level: u32, pjob: *mut u8, command: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetJobW(hprinter: super::super::Foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, command: u32) -> super::super::Foundation::BOOL;
+            fn SetJobW(hprinter: ::win32_foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, command: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetJobW(hprinter.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(level), ::core::mem::transmute(pjob), ::core::mem::transmute(command)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPortA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, pportname: Param1, dwlevel: u32, pportinfo: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn SetPortA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pname: Param0, pportname: Param1, dwlevel: u32, pportinfo: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPortA(pname: ::windows_core::PCSTR, pportname: ::windows_core::PCSTR, dwlevel: u32, pportinfo: *const u8) -> super::super::Foundation::BOOL;
+            fn SetPortA(pname: ::windows_core::PCSTR, pportname: ::windows_core::PCSTR, dwlevel: u32, pportinfo: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetPortA(pname.into_param().abi(), pportname.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pportinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPortW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, pportname: Param1, dwlevel: u32, pportinfo: *const u8) -> super::super::Foundation::BOOL {
+pub unsafe fn SetPortW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pname: Param0, pportname: Param1, dwlevel: u32, pportinfo: *const u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPortW(pname: ::windows_core::PCWSTR, pportname: ::windows_core::PCWSTR, dwlevel: u32, pportinfo: *const u8) -> super::super::Foundation::BOOL;
+            fn SetPortW(pname: ::windows_core::PCWSTR, pportname: ::windows_core::PCWSTR, dwlevel: u32, pportinfo: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetPortW(pname.into_param().abi(), pportname.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(pportinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPrinterA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pprinter: *const u8, command: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pprinter: *const u8, command: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPrinterA(hprinter: super::super::Foundation::HANDLE, level: u32, pprinter: *const u8, command: u32) -> super::super::Foundation::BOOL;
+            fn SetPrinterA(hprinter: ::win32_foundation::HANDLE, level: u32, pprinter: *const u8, command: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetPrinterA(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprinter), ::core::mem::transmute(command)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPrinterDataA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pvaluename: Param1, r#type: u32, pdata: *const u8, cbdata: u32) -> u32 {
+pub unsafe fn SetPrinterDataA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pvaluename: Param1, r#type: u32, pdata: *const u8, cbdata: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPrinterDataA(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows_core::PCSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
+            fn SetPrinterDataA(hprinter: ::win32_foundation::HANDLE, pvaluename: ::windows_core::PCSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
         }
         ::core::mem::transmute(SetPrinterDataA(hprinter.into_param().abi(), pvaluename.into_param().abi(), ::core::mem::transmute(r#type), ::core::mem::transmute(pdata), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPrinterDataExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2, r#type: u32, pdata: *const u8, cbdata: u32) -> u32 {
+pub unsafe fn SetPrinterDataExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2, r#type: u32, pdata: *const u8, cbdata: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPrinterDataExA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCSTR, pvaluename: ::windows_core::PCSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
+            fn SetPrinterDataExA(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCSTR, pvaluename: ::windows_core::PCSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
         }
         ::core::mem::transmute(SetPrinterDataExA(hprinter.into_param().abi(), pkeyname.into_param().abi(), pvaluename.into_param().abi(), ::core::mem::transmute(r#type), ::core::mem::transmute(pdata), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPrinterDataExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2, r#type: u32, pdata: *const u8, cbdata: u32) -> u32 {
+pub unsafe fn SetPrinterDataExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pkeyname: Param1, pvaluename: Param2, r#type: u32, pdata: *const u8, cbdata: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPrinterDataExW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, pvaluename: ::windows_core::PCWSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
+            fn SetPrinterDataExW(hprinter: ::win32_foundation::HANDLE, pkeyname: ::windows_core::PCWSTR, pvaluename: ::windows_core::PCWSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
         }
         ::core::mem::transmute(SetPrinterDataExW(hprinter.into_param().abi(), pkeyname.into_param().abi(), pvaluename.into_param().abi(), ::core::mem::transmute(r#type), ::core::mem::transmute(pdata), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPrinterDataW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pvaluename: Param1, r#type: u32, pdata: *const u8, cbdata: u32) -> u32 {
+pub unsafe fn SetPrinterDataW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hprinter: Param0, pvaluename: Param1, r#type: u32, pdata: *const u8, cbdata: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPrinterDataW(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows_core::PCWSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
+            fn SetPrinterDataW(hprinter: ::win32_foundation::HANDLE, pvaluename: ::windows_core::PCWSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
         }
         ::core::mem::transmute(SetPrinterDataW(hprinter.into_param().abi(), pvaluename.into_param().abi(), ::core::mem::transmute(r#type), ::core::mem::transmute(pdata), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetPrinterW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pprinter: *const u8, command: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pprinter: *const u8, command: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPrinterW(hprinter: super::super::Foundation::HANDLE, level: u32, pprinter: *const u8, command: u32) -> super::super::Foundation::BOOL;
+            fn SetPrinterW(hprinter: ::win32_foundation::HANDLE, level: u32, pprinter: *const u8, command: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetPrinterW(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pprinter), ::core::mem::transmute(command)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SplIsSessionZero<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, jobid: u32, pissessionzero: *mut super::super::Foundation::BOOL) -> u32 {
+pub unsafe fn SplIsSessionZero<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, jobid: u32, pissessionzero: *mut ::win32_foundation::BOOL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SplIsSessionZero(hprinter: super::super::Foundation::HANDLE, jobid: u32, pissessionzero: *mut super::super::Foundation::BOOL) -> u32;
+            fn SplIsSessionZero(hprinter: ::win32_foundation::HANDLE, jobid: u32, pissessionzero: *mut ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(SplIsSessionZero(hprinter.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(pissessionzero)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SplPromptUIInUsersSession<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, jobid: u32, puiparams: *const SHOWUIPARAMS, presponse: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SplPromptUIInUsersSession<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, jobid: u32, puiparams: *const SHOWUIPARAMS, presponse: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SplPromptUIInUsersSession(hprinter: super::super::Foundation::HANDLE, jobid: u32, puiparams: *const SHOWUIPARAMS, presponse: *mut u32) -> super::super::Foundation::BOOL;
+            fn SplPromptUIInUsersSession(hprinter: ::win32_foundation::HANDLE, jobid: u32, puiparams: *const SHOWUIPARAMS, presponse: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SplPromptUIInUsersSession(hprinter.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(puiparams), ::core::mem::transmute(presponse)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SpoolerCopyFileEvent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprintername: Param0, pszkey: Param1, dwcopyfileevent: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SpoolerCopyFileEvent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszprintername: Param0, pszkey: Param1, dwcopyfileevent: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SpoolerCopyFileEvent(pszprintername: ::windows_core::PCWSTR, pszkey: ::windows_core::PCWSTR, dwcopyfileevent: u32) -> super::super::Foundation::BOOL;
+            fn SpoolerCopyFileEvent(pszprintername: ::windows_core::PCWSTR, pszkey: ::windows_core::PCWSTR, dwcopyfileevent: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SpoolerCopyFileEvent(pszprintername.into_param().abi(), pszkey.into_param().abi(), ::core::mem::transmute(dwcopyfileevent)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SpoolerFindClosePrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SpoolerFindClosePrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SpoolerFindClosePrinterChangeNotification(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn SpoolerFindClosePrinterChangeNotification(hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SpoolerFindClosePrinterChangeNotification(hprinter.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SpoolerFindFirstPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, fdwfilterflags: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved: *const ::core::ffi::c_void, pnotificationconfig: *const ::core::ffi::c_void, phnotify: *mut super::super::Foundation::HANDLE, phevent: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL {
+pub unsafe fn SpoolerFindFirstPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, fdwfilterflags: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved: *const ::core::ffi::c_void, pnotificationconfig: *const ::core::ffi::c_void, phnotify: *mut ::win32_foundation::HANDLE, phevent: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SpoolerFindFirstPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, fdwfilterflags: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved: *const ::core::ffi::c_void, pnotificationconfig: *const ::core::ffi::c_void, phnotify: *mut super::super::Foundation::HANDLE, phevent: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn SpoolerFindFirstPrinterChangeNotification(hprinter: ::win32_foundation::HANDLE, fdwfilterflags: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved: *const ::core::ffi::c_void, pnotificationconfig: *const ::core::ffi::c_void, phnotify: *mut ::win32_foundation::HANDLE, phevent: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SpoolerFindFirstPrinterChangeNotification(hprinter.into_param().abi(), ::core::mem::transmute(fdwfilterflags), ::core::mem::transmute(fdwoptions), ::core::mem::transmute(pprinternotifyoptions), ::core::mem::transmute(pvreserved), ::core::mem::transmute(pnotificationconfig), ::core::mem::transmute(phnotify), ::core::mem::transmute(phevent)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SpoolerFindNextPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, pfdwchange: *mut u32, pprinternotifyoptions: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn SpoolerFindNextPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, pfdwchange: *mut u32, pprinternotifyoptions: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SpoolerFindNextPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, pfdwchange: *mut u32, pprinternotifyoptions: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn SpoolerFindNextPrinterChangeNotification(hprinter: ::win32_foundation::HANDLE, pfdwchange: *mut u32, pprinternotifyoptions: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SpoolerFindNextPrinterChangeNotification(hprinter.into_param().abi(), ::core::mem::transmute(pfdwchange), ::core::mem::transmute(pprinternotifyoptions), ::core::mem::transmute(ppprinternotifyinfo)))
     }
@@ -22467,56 +21692,52 @@ pub unsafe fn SpoolerFreePrinterNotifyInfo(pinfo: *const PRINTER_NOTIFY_INFO) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SpoolerRefreshPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, dwcolor: u32, poptions: *const PRINTER_NOTIFY_OPTIONS, ppinfo: *mut *mut PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn SpoolerRefreshPrinterChangeNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, dwcolor: u32, poptions: *const PRINTER_NOTIFY_OPTIONS, ppinfo: *mut *mut PRINTER_NOTIFY_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SpoolerRefreshPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, dwcolor: u32, poptions: *const PRINTER_NOTIFY_OPTIONS, ppinfo: *mut *mut PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL;
+            fn SpoolerRefreshPrinterChangeNotification(hprinter: ::win32_foundation::HANDLE, dwcolor: u32, poptions: *const PRINTER_NOTIFY_OPTIONS, ppinfo: *mut *mut PRINTER_NOTIFY_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SpoolerRefreshPrinterChangeNotification(hprinter.into_param().abi(), ::core::mem::transmute(dwcolor), ::core::mem::transmute(poptions), ::core::mem::transmute(ppinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StartDocPrinterA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pdocinfo: *const DOC_INFO_1A) -> u32 {
+pub unsafe fn StartDocPrinterA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pdocinfo: *const DOC_INFO_1A) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartDocPrinterA(hprinter: super::super::Foundation::HANDLE, level: u32, pdocinfo: *const DOC_INFO_1A) -> u32;
+            fn StartDocPrinterA(hprinter: ::win32_foundation::HANDLE, level: u32, pdocinfo: *const DOC_INFO_1A) -> u32;
         }
         ::core::mem::transmute(StartDocPrinterA(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdocinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StartDocPrinterW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, level: u32, pdocinfo: *const DOC_INFO_1W) -> u32 {
+pub unsafe fn StartDocPrinterW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, level: u32, pdocinfo: *const DOC_INFO_1W) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartDocPrinterW(hprinter: super::super::Foundation::HANDLE, level: u32, pdocinfo: *const DOC_INFO_1W) -> u32;
+            fn StartDocPrinterW(hprinter: ::win32_foundation::HANDLE, level: u32, pdocinfo: *const DOC_INFO_1W) -> u32;
         }
         ::core::mem::transmute(StartDocPrinterW(hprinter.into_param().abi(), ::core::mem::transmute(level), ::core::mem::transmute(pdocinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StartPagePrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn StartPagePrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartPagePrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn StartPagePrinter(hprinter: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(StartPagePrinter(hprinter.into_param().abi()))
     }
@@ -22943,56 +22164,52 @@ impl ::core::default::Default for USERDATA {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnRegisterForPrintAsyncNotifications<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(param0: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn UnRegisterForPrintAsyncNotifications<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(param0: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnRegisterForPrintAsyncNotifications(param0: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn UnRegisterForPrintAsyncNotifications(param0: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         UnRegisterForPrintAsyncNotifications(param0.into_param().abi()).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UpdatePrintDeviceObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, hdeviceobject: Param1) -> ::windows_core::Result<()> {
+pub unsafe fn UpdatePrintDeviceObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, hdeviceobject: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UpdatePrintDeviceObject(hprinter: super::super::Foundation::HANDLE, hdeviceobject: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn UpdatePrintDeviceObject(hprinter: ::win32_foundation::HANDLE, hdeviceobject: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         UpdatePrintDeviceObject(hprinter.into_param().abi(), hdeviceobject.into_param().abi()).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UploadPrinterDriverPackageA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(pszserver: Param0, pszinfpath: Param1, pszenvironment: Param2, dwflags: u32, hwnd: Param4, pszdestinfpath: ::windows_core::PSTR, pcchdestinfpath: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn UploadPrinterDriverPackageA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(pszserver: Param0, pszinfpath: Param1, pszenvironment: Param2, dwflags: u32, hwnd: Param4, pszdestinfpath: ::windows_core::PSTR, pcchdestinfpath: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UploadPrinterDriverPackageA(pszserver: ::windows_core::PCSTR, pszinfpath: ::windows_core::PCSTR, pszenvironment: ::windows_core::PCSTR, dwflags: u32, hwnd: super::super::Foundation::HWND, pszdestinfpath: ::windows_core::PSTR, pcchdestinfpath: *mut u32) -> ::windows_core::HRESULT;
+            fn UploadPrinterDriverPackageA(pszserver: ::windows_core::PCSTR, pszinfpath: ::windows_core::PCSTR, pszenvironment: ::windows_core::PCSTR, dwflags: u32, hwnd: ::win32_foundation::HWND, pszdestinfpath: ::windows_core::PSTR, pcchdestinfpath: *mut u32) -> ::windows_core::HRESULT;
         }
         UploadPrinterDriverPackageA(pszserver.into_param().abi(), pszinfpath.into_param().abi(), pszenvironment.into_param().abi(), ::core::mem::transmute(dwflags), hwnd.into_param().abi(), ::core::mem::transmute(pszdestinfpath), ::core::mem::transmute(pcchdestinfpath)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UploadPrinterDriverPackageW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(pszserver: Param0, pszinfpath: Param1, pszenvironment: Param2, dwflags: u32, hwnd: Param4, pszdestinfpath: ::windows_core::PWSTR, pcchdestinfpath: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn UploadPrinterDriverPackageW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(pszserver: Param0, pszinfpath: Param1, pszenvironment: Param2, dwflags: u32, hwnd: Param4, pszdestinfpath: ::windows_core::PWSTR, pcchdestinfpath: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UploadPrinterDriverPackageW(pszserver: ::windows_core::PCWSTR, pszinfpath: ::windows_core::PCWSTR, pszenvironment: ::windows_core::PCWSTR, dwflags: u32, hwnd: super::super::Foundation::HWND, pszdestinfpath: ::windows_core::PWSTR, pcchdestinfpath: *mut u32) -> ::windows_core::HRESULT;
+            fn UploadPrinterDriverPackageW(pszserver: ::windows_core::PCWSTR, pszinfpath: ::windows_core::PCWSTR, pszenvironment: ::windows_core::PCWSTR, dwflags: u32, hwnd: ::win32_foundation::HWND, pszdestinfpath: ::windows_core::PWSTR, pcchdestinfpath: *mut u32) -> ::windows_core::HRESULT;
         }
         UploadPrinterDriverPackageW(pszserver.into_param().abi(), pszinfpath.into_param().abi(), pszenvironment.into_param().abi(), ::core::mem::transmute(dwflags), hwnd.into_param().abi(), ::core::mem::transmute(pszdestinfpath), ::core::mem::transmute(pcchdestinfpath)).ok()
     }
@@ -23062,28 +22279,26 @@ impl ::core::default::Default for WIDTHTABLE {
     }
 }
 pub const WM_FI_FILENAME: u32 = 900u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WaitForPrinterChange<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, flags: u32) -> u32 {
+pub unsafe fn WaitForPrinterChange<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, flags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WaitForPrinterChange(hprinter: super::super::Foundation::HANDLE, flags: u32) -> u32;
+            fn WaitForPrinterChange(hprinter: ::win32_foundation::HANDLE, flags: u32) -> u32;
         }
         ::core::mem::transmute(WaitForPrinterChange(hprinter.into_param().abi(), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WritePrinter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprinter: Param0, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn WritePrinter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprinter: Param0, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WritePrinter(hprinter: super::super::Foundation::HANDLE, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32) -> super::super::Foundation::BOOL;
+            fn WritePrinter(hprinter: ::win32_foundation::HANDLE, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WritePrinter(hprinter.into_param().abi(), ::core::mem::transmute(pbuf), ::core::mem::transmute(cbbuf), ::core::mem::transmute(pcwritten)))
     }
@@ -23180,21 +22395,20 @@ pub const XPS_FP_QUEUE_PROPERTY_BAG: &str = "QueuePropertyBag";
 pub const XPS_FP_RESOURCE_DLL_PATHS: &str = "ResourceDLLPaths";
 pub const XPS_FP_USER_PRINT_TICKET: &str = "PerUserPrintTicket";
 pub const XPS_FP_USER_TOKEN: &str = "UserSecurityToken";
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn XcvDataW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hxcv: Param0, pszdataname: Param1, pinputdata: *const u8, cbinputdata: u32, poutputdata: *mut u8, cboutputdata: u32, pcboutputneeded: *mut u32, pdwstatus: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn XcvDataW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hxcv: Param0, pszdataname: Param1, pinputdata: *const u8, cbinputdata: u32, poutputdata: *mut u8, cboutputdata: u32, pcboutputneeded: *mut u32, pdwstatus: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn XcvDataW(hxcv: super::super::Foundation::HANDLE, pszdataname: ::windows_core::PCWSTR, pinputdata: *const u8, cbinputdata: u32, poutputdata: *mut u8, cboutputdata: u32, pcboutputneeded: *mut u32, pdwstatus: *mut u32) -> super::super::Foundation::BOOL;
+            fn XcvDataW(hxcv: ::win32_foundation::HANDLE, pszdataname: ::windows_core::PCWSTR, pinputdata: *const u8, cbinputdata: u32, poutputdata: *mut u8, cboutputdata: u32, pcboutputneeded: *mut u32, pdwstatus: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(XcvDataW(hxcv.into_param().abi(), pszdataname.into_param().abi(), ::core::mem::transmute(pinputdata), ::core::mem::transmute(cbinputdata), ::core::mem::transmute(poutputdata), ::core::mem::transmute(cboutputdata), ::core::mem::transmute(pcboutputneeded), ::core::mem::transmute(pdwstatus)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub type _CPSUICALLBACK = ::core::option::Option<unsafe extern "system" fn(pcpsuicbparam: *mut CPSUICBPARAM) -> i32>;
 #[repr(C)]
 pub struct _SPLCLIENT_INFO_2_V1 {
@@ -23329,21 +22543,19 @@ impl ::core::default::Default for _SPLCLIENT_INFO_2_V3 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct __MIDL___MIDL_itf_imgerror_0000_0000_0001 {
-    pub description: super::super::Foundation::BSTR,
+    pub description: ::win32_foundation::BSTR,
     pub guid: ::windows_core::GUID,
     pub helpContext: u32,
-    pub helpFile: super::super::Foundation::BSTR,
-    pub source: super::super::Foundation::BSTR,
-    pub devDescription: super::super::Foundation::BSTR,
+    pub helpFile: ::win32_foundation::BSTR,
+    pub source: ::win32_foundation::BSTR,
+    pub devDescription: ::win32_foundation::BSTR,
     pub errorID: ::windows_core::GUID,
     pub cUserParameters: u32,
-    pub aUserParameters: *mut super::super::Foundation::BSTR,
-    pub userFallback: super::super::Foundation::BSTR,
+    pub aUserParameters: *mut ::win32_foundation::BSTR,
+    pub userFallback: ::win32_foundation::BSTR,
     pub exceptionID: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for __MIDL___MIDL_itf_imgerror_0000_0000_0001 {
     fn clone(&self) -> Self {
         Self {
@@ -23361,7 +22573,6 @@ impl ::core::clone::Clone for __MIDL___MIDL_itf_imgerror_0000_0000_0001 {
         }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for __MIDL___MIDL_itf_imgerror_0000_0000_0001 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("__MIDL___MIDL_itf_imgerror_0000_0000_0001")
@@ -23379,19 +22590,15 @@ impl ::core::fmt::Debug for __MIDL___MIDL_itf_imgerror_0000_0000_0001 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for __MIDL___MIDL_itf_imgerror_0000_0000_0001 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for __MIDL___MIDL_itf_imgerror_0000_0000_0001 {
     fn eq(&self, other: &Self) -> bool {
         self.description == other.description && self.guid == other.guid && self.helpContext == other.helpContext && self.helpFile == other.helpFile && self.source == other.source && self.devDescription == other.devDescription && self.errorID == other.errorID && self.cUserParameters == other.cUserParameters && self.aUserParameters == other.aUserParameters && self.userFallback == other.userFallback && self.exceptionID == other.exceptionID
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for __MIDL___MIDL_itf_imgerror_0000_0000_0001 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for __MIDL___MIDL_itf_imgerror_0000_0000_0001 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

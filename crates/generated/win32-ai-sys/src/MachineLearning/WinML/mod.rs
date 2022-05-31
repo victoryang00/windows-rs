@@ -411,7 +411,7 @@ pub struct WINML_RESOURCE_BINDING_DESC {
     pub ElementType: WINML_TENSOR_DATA_TYPE,
     pub NumDimensions: u32,
     pub pShape: *mut i64,
-    pub pResource: super::super::super::Graphics::Direct3D12::ID3D12Resource,
+    pub pResource: ::win32_graphics_sys::Direct3D12::ID3D12Resource,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 impl ::core::marker::Copy for WINML_RESOURCE_BINDING_DESC {}
@@ -503,33 +503,27 @@ impl ::core::clone::Clone for WINML_TENSOR_VARIABLE_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WINML_VARIABLE_DESC {
     pub Name: ::windows_core_sys::PWSTR,
     pub Description: ::windows_core_sys::PWSTR,
     pub FeatureType: WINML_FEATURE_TYPE,
-    pub Required: super::super::super::Foundation::BOOL,
+    pub Required: ::win32_foundation_sys::BOOL,
     pub Anonymous: WINML_VARIABLE_DESC_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WINML_VARIABLE_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WINML_VARIABLE_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WINML_VARIABLE_DESC_0 {
     pub Tensor: WINML_TENSOR_VARIABLE_DESC,
     pub Sequence: WINML_SEQUENCE_VARIABLE_DESC,
     pub Map: WINML_MAP_VARIABLE_DESC,
     pub Image: WINML_IMAGE_VARIABLE_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WINML_VARIABLE_DESC_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WINML_VARIABLE_DESC_0 {
     fn clone(&self) -> Self {
         *self

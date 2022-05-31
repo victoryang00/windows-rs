@@ -8,11 +8,11 @@ pub mod OfflineMaps;
 pub struct EnhancedWaypoint(::windows_core::IUnknown);
 impl EnhancedWaypoint {
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Point(&self) -> ::windows_core::Result<super::super::Devices::Geolocation::Geopoint> {
+    pub fn Point(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Point)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Point)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<WaypointKind> {
@@ -23,7 +23,7 @@ impl EnhancedWaypoint {
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(point: Param0, kind: WaypointKind) -> ::windows_core::Result<EnhancedWaypoint> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(point: Param0, kind: WaypointKind) -> ::windows_core::Result<EnhancedWaypoint> {
         Self::IEnhancedWaypointFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), point.into_param().abi(), kind, result__.as_mut_ptr()).from_abi::<EnhancedWaypoint>(result__)
@@ -240,17 +240,17 @@ unsafe impl ::windows_core::Interface for IMapLocationFinderStatics {
 #[doc(hidden)]
 pub struct IMapLocationFinderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub FindLocationsAtAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, querypoint: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     FindLocationsAtAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub FindLocationsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, searchtext: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, referencepoint: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     FindLocationsAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub FindLocationsWithMaxCountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, searchtext: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, referencepoint: ::windows_core::RawPtr, maxcount: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     FindLocationsWithMaxCountAsync: usize,
 }
 #[doc(hidden)]
@@ -264,9 +264,9 @@ unsafe impl ::windows_core::Interface for IMapLocationFinderStatics2 {
 #[doc(hidden)]
 pub struct IMapLocationFinderStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub FindLocationsAtWithAccuracyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, querypoint: ::windows_core::RawPtr, accuracy: MapLocationDesiredAccuracy, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     FindLocationsAtWithAccuracyAsync: usize,
 }
 #[doc(hidden)]
@@ -299,10 +299,7 @@ pub struct IMapRoute_Vtbl {
     #[cfg(not(feature = "Devices_Geolocation"))]
     BoundingBox: usize,
     pub LengthInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub EstimatedDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EstimatedDuration: usize,
+    pub EstimatedDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -338,10 +335,7 @@ unsafe impl ::windows_core::Interface for IMapRoute3 {
 #[doc(hidden)]
 pub struct IMapRoute3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub DurationWithoutTraffic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DurationWithoutTraffic: usize,
+    pub DurationWithoutTraffic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub TrafficCongestion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TrafficCongestion) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -370,14 +364,8 @@ pub struct IMapRouteDrivingOptions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MaxAlternateRouteCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetMaxAlternateRouteCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub InitialHeading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InitialHeading: usize,
-    #[cfg(feature = "Foundation")]
     pub SetInitialHeading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetInitialHeading: usize,
     pub RouteOptimization: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MapRouteOptimization) -> ::windows_core::HRESULT,
     pub SetRouteOptimization: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MapRouteOptimization) -> ::windows_core::HRESULT,
     pub RouteRestrictions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MapRouteRestrictions) -> ::windows_core::HRESULT,
@@ -394,14 +382,8 @@ unsafe impl ::windows_core::Interface for IMapRouteDrivingOptions2 {
 #[doc(hidden)]
 pub struct IMapRouteDrivingOptions2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub DepartureTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DepartureTime: usize,
-    #[cfg(feature = "Foundation")]
     pub SetDepartureTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetDepartureTime: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -444,21 +426,21 @@ unsafe impl ::windows_core::Interface for IMapRouteFinderStatics {
 #[doc(hidden)]
 pub struct IMapRouteFinderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub GetDrivingRouteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startpoint: ::windows_core::RawPtr, endpoint: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     GetDrivingRouteAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub GetDrivingRouteWithOptimizationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startpoint: ::windows_core::RawPtr, endpoint: ::windows_core::RawPtr, optimization: MapRouteOptimization, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     GetDrivingRouteWithOptimizationAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub GetDrivingRouteWithOptimizationAndRestrictionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startpoint: ::windows_core::RawPtr, endpoint: ::windows_core::RawPtr, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     GetDrivingRouteWithOptimizationAndRestrictionsAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startpoint: ::windows_core::RawPtr, endpoint: ::windows_core::RawPtr, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions, headingindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync: usize,
     #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
     pub GetDrivingRouteFromWaypointsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, waypoints: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -476,9 +458,9 @@ pub struct IMapRouteFinderStatics_Vtbl {
     pub GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, waypoints: ::windows_core::RawPtr, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions, headingindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation_Collections")))]
     GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub GetWalkingRouteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startpoint: ::windows_core::RawPtr, endpoint: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     GetWalkingRouteAsync: usize,
     #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
     pub GetWalkingRouteFromWaypointsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, waypoints: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -496,9 +478,9 @@ unsafe impl ::windows_core::Interface for IMapRouteFinderStatics2 {
 #[doc(hidden)]
 pub struct IMapRouteFinderStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub GetDrivingRouteWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startpoint: ::windows_core::RawPtr, endpoint: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     GetDrivingRouteWithOptionsAsync: usize,
 }
 #[doc(hidden)]
@@ -541,10 +523,7 @@ pub struct IMapRouteLeg_Vtbl {
     #[cfg(not(feature = "Devices_Geolocation"))]
     Path: usize,
     pub LengthInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub EstimatedDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EstimatedDuration: usize,
+    pub EstimatedDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub Maneuvers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -561,10 +540,7 @@ unsafe impl ::windows_core::Interface for IMapRouteLeg2 {
 #[doc(hidden)]
 pub struct IMapRouteLeg2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub DurationWithoutTraffic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DurationWithoutTraffic: usize,
+    pub DurationWithoutTraffic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub TrafficCongestion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut TrafficCongestion) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -684,13 +660,10 @@ unsafe impl ::windows_core::Interface for IPlaceInfo {
 #[doc(hidden)]
 pub struct IPlaceInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Show: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selection: super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Show: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Popups"))]
-    pub ShowWithPreferredPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selection: super::super::Foundation::Rect, preferredplacement: super::super::UI::Popups::Placement) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Popups")))]
+    pub Show: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selection: ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Popups")]
+    pub ShowWithPreferredPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selection: ::winrt_foundation::Rect, preferredplacement: ::winrt_ui::Popups::Placement) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Popups"))]
     ShowWithPreferredPlacement: usize,
     pub Identifier: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -1142,11 +1115,11 @@ unsafe impl ::core::marker::Sync for MapAddress {}
 pub struct MapLocation(::windows_core::IUnknown);
 impl MapLocation {
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Point(&self) -> ::windows_core::Result<super::super::Devices::Geolocation::Geopoint> {
+    pub fn Point(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Point)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Point)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     pub fn DisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1278,32 +1251,32 @@ unsafe impl ::windows_core::RuntimeType for MapLocationDesiredAccuracy {
 }
 pub struct MapLocationFinder;
 impl MapLocationFinder {
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn FindLocationsAtAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(querypoint: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapLocationFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn FindLocationsAtAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(querypoint: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapLocationFinderResult>> {
         Self::IMapLocationFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindLocationsAtAsync)(::windows_core::Interface::as_raw(this), querypoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapLocationFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).FindLocationsAtAsync)(::windows_core::Interface::as_raw(this), querypoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapLocationFinderResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn FindLocationsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(searchtext: Param0, referencepoint: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapLocationFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn FindLocationsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(searchtext: Param0, referencepoint: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapLocationFinderResult>> {
         Self::IMapLocationFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindLocationsAsync)(::windows_core::Interface::as_raw(this), searchtext.into_param().abi(), referencepoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapLocationFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).FindLocationsAsync)(::windows_core::Interface::as_raw(this), searchtext.into_param().abi(), referencepoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapLocationFinderResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn FindLocationsWithMaxCountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(searchtext: Param0, referencepoint: Param1, maxcount: u32) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapLocationFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn FindLocationsWithMaxCountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(searchtext: Param0, referencepoint: Param1, maxcount: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapLocationFinderResult>> {
         Self::IMapLocationFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindLocationsWithMaxCountAsync)(::windows_core::Interface::as_raw(this), searchtext.into_param().abi(), referencepoint.into_param().abi(), maxcount, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapLocationFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).FindLocationsWithMaxCountAsync)(::windows_core::Interface::as_raw(this), searchtext.into_param().abi(), referencepoint.into_param().abi(), maxcount, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapLocationFinderResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn FindLocationsAtWithAccuracyAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(querypoint: Param0, accuracy: MapLocationDesiredAccuracy) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapLocationFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn FindLocationsAtWithAccuracyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(querypoint: Param0, accuracy: MapLocationDesiredAccuracy) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapLocationFinderResult>> {
         Self::IMapLocationFinderStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindLocationsAtWithAccuracyAsync)(::windows_core::Interface::as_raw(this), querypoint.into_param().abi(), accuracy, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapLocationFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).FindLocationsAtWithAccuracyAsync)(::windows_core::Interface::as_raw(this), querypoint.into_param().abi(), accuracy, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapLocationFinderResult>>(result__)
         })
     }
     pub fn IMapLocationFinderStatics<R, F: FnOnce(&IMapLocationFinderStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1322,11 +1295,11 @@ impl ::windows_core::RuntimeName for MapLocationFinder {
 pub struct MapLocationFinderResult(::windows_core::IUnknown);
 impl MapLocationFinderResult {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Locations(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<MapLocation>> {
+    pub fn Locations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapLocation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Locations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<MapLocation>>(result__)
+            (::windows_core::Interface::vtable(this).Locations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapLocation>>(result__)
         }
     }
     pub fn Status(&self) -> ::windows_core::Result<MapLocationFinderStatus> {
@@ -1529,11 +1502,11 @@ unsafe impl ::windows_core::RuntimeType for MapManeuverNotices {
 pub struct MapRoute(::windows_core::IUnknown);
 impl MapRoute {
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn BoundingBox(&self) -> ::windows_core::Result<super::super::Devices::Geolocation::GeoboundingBox> {
+    pub fn BoundingBox(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::GeoboundingBox> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingBox)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Geolocation::GeoboundingBox>(result__)
+            (::windows_core::Interface::vtable(this).BoundingBox)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::GeoboundingBox>(result__)
         }
     }
     pub fn LengthInMeters(&self) -> ::windows_core::Result<f64> {
@@ -1543,28 +1516,27 @@ impl MapRoute {
             (::windows_core::Interface::vtable(this).LengthInMeters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn EstimatedDuration(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn EstimatedDuration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).EstimatedDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).EstimatedDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Path(&self) -> ::windows_core::Result<super::super::Devices::Geolocation::Geopath> {
+    pub fn Path(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Geolocation::Geopath>(result__)
+            (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopath>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Legs(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<MapRouteLeg>> {
+    pub fn Legs(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapRouteLeg>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Legs)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<MapRouteLeg>>(result__)
+            (::windows_core::Interface::vtable(this).Legs)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapRouteLeg>>(result__)
         }
     }
     pub fn IsTrafficBased(&self) -> ::windows_core::Result<bool> {
@@ -1588,12 +1560,11 @@ impl MapRoute {
             (::windows_core::Interface::vtable(this).HasBlockedRoads)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DurationWithoutTraffic(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn DurationWithoutTraffic(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = &::windows_core::Interface::cast::<IMapRoute3>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).DurationWithoutTraffic)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).DurationWithoutTraffic)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn TrafficCongestion(&self) -> ::windows_core::Result<TrafficCongestion> {
@@ -1704,16 +1675,14 @@ impl MapRouteDrivingOptions {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMaxAlternateRouteCount)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InitialHeading(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn InitialHeading(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InitialHeading)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).InitialHeading)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetInitialHeading<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<f64>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetInitialHeading<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInitialHeading)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1739,16 +1708,14 @@ impl MapRouteDrivingOptions {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRouteRestrictions)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DepartureTime(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    pub fn DepartureTime(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = &::windows_core::Interface::cast::<IMapRouteDrivingOptions2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DepartureTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).DepartureTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetDepartureTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::super::Foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDepartureTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapRouteDrivingOptions2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDepartureTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1827,95 +1794,95 @@ unsafe impl ::core::marker::Send for MapRouteDrivingOptions {}
 unsafe impl ::core::marker::Sync for MapRouteDrivingOptions {}
 pub struct MapRouteFinder;
 impl MapRouteFinder {
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn GetDrivingRouteAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn GetDrivingRouteAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn GetDrivingRouteWithOptimizationAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1, optimization: MapRouteOptimization) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn GetDrivingRouteWithOptimizationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1, optimization: MapRouteOptimization) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteWithOptimizationAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), optimization, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteWithOptimizationAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), optimization, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn GetDrivingRouteWithOptimizationAndRestrictionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn GetDrivingRouteWithOptimizationAndRestrictionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteWithOptimizationAndRestrictionsAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), optimization, restrictions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteWithOptimizationAndRestrictionsAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), optimization, restrictions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions, headingindegrees: f64) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions, headingindegrees: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), optimization, restrictions, headingindegrees, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
-        })
-    }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
-    pub fn GetDrivingRouteFromWaypointsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Devices::Geolocation::Geopoint>>>(waypoints: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
-        Self::IMapRouteFinderStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteFromWaypointsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), optimization, restrictions, headingindegrees, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
     #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
-    pub fn GetDrivingRouteFromWaypointsAndOptimizationAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Devices::Geolocation::Geopoint>>>(waypoints: Param0, optimization: MapRouteOptimization) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    pub fn GetDrivingRouteFromWaypointsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_devices::Geolocation::Geopoint>>>(waypoints: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteFromWaypointsAndOptimizationAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), optimization, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteFromWaypointsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
     #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
-    pub fn GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Devices::Geolocation::Geopoint>>>(waypoints: Param0, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    pub fn GetDrivingRouteFromWaypointsAndOptimizationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_devices::Geolocation::Geopoint>>>(waypoints: Param0, optimization: MapRouteOptimization) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), optimization, restrictions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteFromWaypointsAndOptimizationAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), optimization, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
     #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
-    pub fn GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Devices::Geolocation::Geopoint>>>(waypoints: Param0, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions, headingindegrees: f64) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    pub fn GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_devices::Geolocation::Geopoint>>>(waypoints: Param0, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), optimization, restrictions, headingindegrees, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
-        })
-    }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn GetWalkingRouteAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
-        Self::IMapRouteFinderStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetWalkingRouteAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), optimization, restrictions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
     #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
-    pub fn GetWalkingRouteFromWaypointsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Devices::Geolocation::Geopoint>>>(waypoints: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    pub fn GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_devices::Geolocation::Geopoint>>>(waypoints: Param0, optimization: MapRouteOptimization, restrictions: MapRouteRestrictions, headingindegrees: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetWalkingRouteFromWaypointsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), optimization, restrictions, headingindegrees, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn GetDrivingRouteWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>, Param2: ::windows_core::IntoParam<'a, MapRouteDrivingOptions>>(startpoint: Param0, endpoint: Param1, options: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn GetWalkingRouteAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(startpoint: Param0, endpoint: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
+        Self::IMapRouteFinderStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetWalkingRouteAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+        })
+    }
+    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
+    pub fn GetWalkingRouteFromWaypointsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_devices::Geolocation::Geopoint>>>(waypoints: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
+        Self::IMapRouteFinderStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).GetWalkingRouteFromWaypointsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+        })
+    }
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn GetDrivingRouteWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param2: ::windows_core::IntoParam<'a, MapRouteDrivingOptions>>(startpoint: Param0, endpoint: Param1, options: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteWithOptionsAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteWithOptionsAsync)(::windows_core::Interface::as_raw(this), startpoint.into_param().abi(), endpoint.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetDrivingRouteFromEnhancedWaypointsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<EnhancedWaypoint>>>(waypoints: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    pub fn GetDrivingRouteFromEnhancedWaypointsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<EnhancedWaypoint>>>(waypoints: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteFromEnhancedWaypointsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteFromEnhancedWaypointsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<EnhancedWaypoint>>, Param1: ::windows_core::IntoParam<'a, MapRouteDrivingOptions>>(waypoints: Param0, options: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>> {
+    pub fn GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<EnhancedWaypoint>>, Param1: ::windows_core::IntoParam<'a, MapRouteDrivingOptions>>(waypoints: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>> {
         Self::IMapRouteFinderStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync)(::windows_core::Interface::as_raw(this), waypoints.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapRouteFinderResult>>(result__)
         })
     }
     pub fn IMapRouteFinderStatics<R, F: FnOnce(&IMapRouteFinderStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1952,11 +1919,11 @@ impl MapRouteFinderResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AlternateRoutes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<MapRoute>> {
+    pub fn AlternateRoutes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapRoute>> {
         let this = &::windows_core::Interface::cast::<IMapRouteFinderResult2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AlternateRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<MapRoute>>(result__)
+            (::windows_core::Interface::vtable(this).AlternateRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapRoute>>(result__)
         }
     }
 }
@@ -2077,19 +2044,19 @@ unsafe impl ::windows_core::RuntimeType for MapRouteFinderStatus {
 pub struct MapRouteLeg(::windows_core::IUnknown);
 impl MapRouteLeg {
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn BoundingBox(&self) -> ::windows_core::Result<super::super::Devices::Geolocation::GeoboundingBox> {
+    pub fn BoundingBox(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::GeoboundingBox> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingBox)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Geolocation::GeoboundingBox>(result__)
+            (::windows_core::Interface::vtable(this).BoundingBox)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::GeoboundingBox>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Path(&self) -> ::windows_core::Result<super::super::Devices::Geolocation::Geopath> {
+    pub fn Path(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Geolocation::Geopath>(result__)
+            (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopath>(result__)
         }
     }
     pub fn LengthInMeters(&self) -> ::windows_core::Result<f64> {
@@ -2099,28 +2066,26 @@ impl MapRouteLeg {
             (::windows_core::Interface::vtable(this).LengthInMeters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn EstimatedDuration(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn EstimatedDuration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).EstimatedDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).EstimatedDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Maneuvers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<MapRouteManeuver>> {
+    pub fn Maneuvers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapRouteManeuver>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Maneuvers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<MapRouteManeuver>>(result__)
+            (::windows_core::Interface::vtable(this).Maneuvers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapRouteManeuver>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DurationWithoutTraffic(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn DurationWithoutTraffic(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = &::windows_core::Interface::cast::<IMapRouteLeg2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).DurationWithoutTraffic)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).DurationWithoutTraffic)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn TrafficCongestion(&self) -> ::windows_core::Result<TrafficCongestion> {
@@ -2207,11 +2172,11 @@ unsafe impl ::core::marker::Sync for MapRouteLeg {}
 pub struct MapRouteManeuver(::windows_core::IUnknown);
 impl MapRouteManeuver {
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn StartingPoint(&self) -> ::windows_core::Result<super::super::Devices::Geolocation::Geopoint> {
+    pub fn StartingPoint(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StartingPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).StartingPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     pub fn LengthInMeters(&self) -> ::windows_core::Result<f64> {
@@ -2271,11 +2236,11 @@ impl MapRouteManeuver {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Warnings(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<ManeuverWarning>> {
+    pub fn Warnings(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ManeuverWarning>> {
         let this = &::windows_core::Interface::cast::<IMapRouteManeuver3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Warnings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<ManeuverWarning>>(result__)
+            (::windows_core::Interface::vtable(this).Warnings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ManeuverWarning>>(result__)
         }
     }
 }
@@ -2596,13 +2561,12 @@ unsafe impl ::windows_core::RuntimeType for MapServiceDataUsagePreference {
 #[repr(transparent)]
 pub struct PlaceInfo(::windows_core::IUnknown);
 impl PlaceInfo {
-    #[cfg(feature = "Foundation")]
-    pub fn Show<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Rect>>(&self, selection: Param0) -> ::windows_core::Result<()> {
+    pub fn Show<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, selection: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Show)(::windows_core::Interface::as_raw(this), selection.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Popups"))]
-    pub fn ShowWithPreferredPlacement<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Rect>>(&self, selection: Param0, preferredplacement: super::super::UI::Popups::Placement) -> ::windows_core::Result<()> {
+    #[cfg(feature = "UI_Popups")]
+    pub fn ShowWithPreferredPlacement<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, selection: Param0, preferredplacement: ::winrt_ui::Popups::Placement) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ShowWithPreferredPlacement)(::windows_core::Interface::as_raw(this), selection.into_param().abi(), preferredplacement).ok() }
     }
@@ -2628,22 +2592,22 @@ impl PlaceInfo {
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Geoshape(&self) -> ::windows_core::Result<super::super::Devices::Geolocation::IGeoshape> {
+    pub fn Geoshape(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::IGeoshape> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Geoshape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Geolocation::IGeoshape>(result__)
+            (::windows_core::Interface::vtable(this).Geoshape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::IGeoshape>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>>(referencepoint: Param0) -> ::windows_core::Result<PlaceInfo> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(referencepoint: Param0) -> ::windows_core::Result<PlaceInfo> {
         Self::IPlaceInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), referencepoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<PlaceInfo>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateWithGeopointAndOptions<'a, Param0: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, PlaceInfoCreateOptions>>(referencepoint: Param0, options: Param1) -> ::windows_core::Result<PlaceInfo> {
+    pub fn CreateWithGeopointAndOptions<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, PlaceInfoCreateOptions>>(referencepoint: Param0, options: Param1) -> ::windows_core::Result<PlaceInfo> {
         Self::IPlaceInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithGeopointAndOptions)(::windows_core::Interface::as_raw(this), referencepoint.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<PlaceInfo>(result__)
@@ -2656,7 +2620,7 @@ impl PlaceInfo {
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateFromIdentifierWithOptions<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Devices::Geolocation::Geopoint>, Param2: ::windows_core::IntoParam<'a, PlaceInfoCreateOptions>>(identifier: Param0, defaultpoint: Param1, options: Param2) -> ::windows_core::Result<PlaceInfo> {
+    pub fn CreateFromIdentifierWithOptions<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param2: ::windows_core::IntoParam<'a, PlaceInfoCreateOptions>>(identifier: Param0, defaultpoint: Param1, options: Param2) -> ::windows_core::Result<PlaceInfo> {
         Self::IPlaceInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIdentifierWithOptions)(::windows_core::Interface::as_raw(this), identifier.into_param().abi(), defaultpoint.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<PlaceInfo>(result__)

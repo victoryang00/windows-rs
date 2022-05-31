@@ -1,55 +1,51 @@
 pub const ALTNUMPAD_BIT: u32 = 67108864u32;
 pub const ATTACH_PARENT_PROCESS: u32 = 4294967295u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddConsoleAliasA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(source: Param0, target: Param1, exename: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn AddConsoleAliasA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(source: Param0, target: Param1, exename: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddConsoleAliasA(source: ::windows_core::PCSTR, target: ::windows_core::PCSTR, exename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn AddConsoleAliasA(source: ::windows_core::PCSTR, target: ::windows_core::PCSTR, exename: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddConsoleAliasA(source.into_param().abi(), target.into_param().abi(), exename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddConsoleAliasW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(source: Param0, target: Param1, exename: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn AddConsoleAliasW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(source: Param0, target: Param1, exename: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddConsoleAliasW(source: ::windows_core::PCWSTR, target: ::windows_core::PCWSTR, exename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn AddConsoleAliasW(source: ::windows_core::PCWSTR, target: ::windows_core::PCWSTR, exename: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddConsoleAliasW(source.into_param().abi(), target.into_param().abi(), exename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AllocConsole() -> super::super::Foundation::BOOL {
+pub unsafe fn AllocConsole() -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AllocConsole() -> super::super::Foundation::BOOL;
+            fn AllocConsole() -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AllocConsole())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AttachConsole(dwprocessid: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AttachConsole(dwprocessid: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AttachConsole(dwprocessid: u32) -> super::super::Foundation::BOOL;
+            fn AttachConsole(dwprocessid: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AttachConsole(::core::mem::transmute(dwprocessid)))
     }
@@ -62,64 +58,50 @@ pub const BACKGROUND_INTENSITY: u32 = 128u32;
 pub const BACKGROUND_RED: u32 = 64u32;
 pub const CAPSLOCK_ON: u32 = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CHAR_INFO {
     pub Char: CHAR_INFO_0,
     pub Attributes: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CHAR_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CHAR_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CHAR_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CHAR_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHAR_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CHAR_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CHAR_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union CHAR_INFO_0 {
     pub UnicodeChar: u16,
-    pub AsciiChar: super::super::Foundation::CHAR,
+    pub AsciiChar: ::win32_foundation::CHAR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CHAR_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CHAR_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CHAR_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CHAR_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CHAR_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CHAR_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CHAR_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -134,38 +116,30 @@ pub const COMMON_LVB_SBCSDBCS: u32 = 768u32;
 pub const COMMON_LVB_TRAILING_BYTE: u32 = 512u32;
 pub const COMMON_LVB_UNDERSCORE: u32 = 32768u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CONSOLE_CURSOR_INFO {
     pub dwSize: u32,
-    pub bVisible: super::super::Foundation::BOOL,
+    pub bVisible: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CONSOLE_CURSOR_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CONSOLE_CURSOR_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for CONSOLE_CURSOR_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CONSOLE_CURSOR_INFO").field("dwSize", &self.dwSize).field("bVisible", &self.bVisible).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CONSOLE_CURSOR_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CONSOLE_CURSOR_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONSOLE_CURSOR_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CONSOLE_CURSOR_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CONSOLE_CURSOR_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -404,7 +378,6 @@ impl ::core::default::Default for CONSOLE_SCREEN_BUFFER_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CONSOLE_SCREEN_BUFFER_INFOEX {
     pub cbSize: u32,
     pub dwSize: COORD,
@@ -413,36 +386,29 @@ pub struct CONSOLE_SCREEN_BUFFER_INFOEX {
     pub srWindow: SMALL_RECT,
     pub dwMaximumWindowSize: COORD,
     pub wPopupAttributes: u16,
-    pub bFullscreenSupported: super::super::Foundation::BOOL,
+    pub bFullscreenSupported: ::win32_foundation::BOOL,
     pub ColorTable: [u32; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CONSOLE_SCREEN_BUFFER_INFOEX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CONSOLE_SCREEN_BUFFER_INFOEX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for CONSOLE_SCREEN_BUFFER_INFOEX {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CONSOLE_SCREEN_BUFFER_INFOEX").field("cbSize", &self.cbSize).field("dwSize", &self.dwSize).field("dwCursorPosition", &self.dwCursorPosition).field("wAttributes", &self.wAttributes).field("srWindow", &self.srWindow).field("dwMaximumWindowSize", &self.dwMaximumWindowSize).field("wPopupAttributes", &self.wPopupAttributes).field("bFullscreenSupported", &self.bFullscreenSupported).field("ColorTable", &self.ColorTable).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CONSOLE_SCREEN_BUFFER_INFOEX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CONSOLE_SCREEN_BUFFER_INFOEX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONSOLE_SCREEN_BUFFER_INFOEX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CONSOLE_SCREEN_BUFFER_INFOEX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CONSOLE_SCREEN_BUFFER_INFOEX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -531,14 +497,14 @@ pub unsafe fn ClosePseudoConsole<'a, Param0: ::windows_core::IntoParam<'a, HPCON
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn CreateConsoleScreenBuffer(dwdesiredaccess: u32, dwsharemode: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwflags: u32, lpscreenbufferdata: *mut ::core::ffi::c_void) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn CreateConsoleScreenBuffer(dwdesiredaccess: u32, dwsharemode: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, dwflags: u32, lpscreenbufferdata: *mut ::core::ffi::c_void) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateConsoleScreenBuffer(dwdesiredaccess: u32, dwsharemode: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwflags: u32, lpscreenbufferdata: *mut ::core::ffi::c_void) -> super::super::Foundation::HANDLE;
+            fn CreateConsoleScreenBuffer(dwdesiredaccess: u32, dwsharemode: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, dwflags: u32, lpscreenbufferdata: *mut ::core::ffi::c_void) -> ::win32_foundation::HANDLE;
         }
         let result__ = CreateConsoleScreenBuffer(::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(dwsharemode), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpscreenbufferdata));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -546,14 +512,13 @@ pub unsafe fn CreateConsoleScreenBuffer(dwdesiredaccess: u32, dwsharemode: u32, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreatePseudoConsole<'a, Param0: ::windows_core::IntoParam<'a, COORD>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(size: Param0, hinput: Param1, houtput: Param2, dwflags: u32) -> ::windows_core::Result<HPCON> {
+pub unsafe fn CreatePseudoConsole<'a, Param0: ::windows_core::IntoParam<'a, COORD>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(size: Param0, hinput: Param1, houtput: Param2, dwflags: u32) -> ::windows_core::Result<HPCON> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreatePseudoConsole(size: COORD, hinput: super::super::Foundation::HANDLE, houtput: super::super::Foundation::HANDLE, dwflags: u32, phpc: *mut HPCON) -> ::windows_core::HRESULT;
+            fn CreatePseudoConsole(size: COORD, hinput: ::win32_foundation::HANDLE, houtput: ::win32_foundation::HANDLE, dwflags: u32, phpc: *mut HPCON) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<HPCON>::zeroed();
         CreatePseudoConsole(size.into_param().abi(), hinput.into_param().abi(), houtput.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<HPCON>(result__)
@@ -591,37 +556,29 @@ pub unsafe fn ExpungeConsoleCommandHistoryW<'a, Param0: ::windows_core::IntoPara
 }
 pub const FOCUS_EVENT: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FOCUS_EVENT_RECORD {
-    pub bSetFocus: super::super::Foundation::BOOL,
+    pub bSetFocus: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FOCUS_EVENT_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FOCUS_EVENT_RECORD {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FOCUS_EVENT_RECORD {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FOCUS_EVENT_RECORD").field("bSetFocus", &self.bSetFocus).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FOCUS_EVENT_RECORD {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FOCUS_EVENT_RECORD {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FOCUS_EVENT_RECORD>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FOCUS_EVENT_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FOCUS_EVENT_RECORD {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -635,84 +592,78 @@ pub const FROM_LEFT_1ST_BUTTON_PRESSED: u32 = 1u32;
 pub const FROM_LEFT_2ND_BUTTON_PRESSED: u32 = 4u32;
 pub const FROM_LEFT_3RD_BUTTON_PRESSED: u32 = 8u32;
 pub const FROM_LEFT_4TH_BUTTON_PRESSED: u32 = 16u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FillConsoleOutputAttribute<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, wattribute: u16, nlength: u32, dwwritecoord: Param3, lpnumberofattrswritten: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FillConsoleOutputAttribute<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, wattribute: u16, nlength: u32, dwwritecoord: Param3, lpnumberofattrswritten: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FillConsoleOutputAttribute(hconsoleoutput: super::super::Foundation::HANDLE, wattribute: u16, nlength: u32, dwwritecoord: COORD, lpnumberofattrswritten: *mut u32) -> super::super::Foundation::BOOL;
+            fn FillConsoleOutputAttribute(hconsoleoutput: ::win32_foundation::HANDLE, wattribute: u16, nlength: u32, dwwritecoord: COORD, lpnumberofattrswritten: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FillConsoleOutputAttribute(hconsoleoutput.into_param().abi(), ::core::mem::transmute(wattribute), ::core::mem::transmute(nlength), dwwritecoord.into_param().abi(), ::core::mem::transmute(lpnumberofattrswritten)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FillConsoleOutputCharacterA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::CHAR>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, ccharacter: Param1, nlength: u32, dwwritecoord: Param3, lpnumberofcharswritten: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FillConsoleOutputCharacterA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::CHAR>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, ccharacter: Param1, nlength: u32, dwwritecoord: Param3, lpnumberofcharswritten: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FillConsoleOutputCharacterA(hconsoleoutput: super::super::Foundation::HANDLE, ccharacter: super::super::Foundation::CHAR, nlength: u32, dwwritecoord: COORD, lpnumberofcharswritten: *mut u32) -> super::super::Foundation::BOOL;
+            fn FillConsoleOutputCharacterA(hconsoleoutput: ::win32_foundation::HANDLE, ccharacter: ::win32_foundation::CHAR, nlength: u32, dwwritecoord: COORD, lpnumberofcharswritten: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FillConsoleOutputCharacterA(hconsoleoutput.into_param().abi(), ccharacter.into_param().abi(), ::core::mem::transmute(nlength), dwwritecoord.into_param().abi(), ::core::mem::transmute(lpnumberofcharswritten)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FillConsoleOutputCharacterW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, ccharacter: u16, nlength: u32, dwwritecoord: Param3, lpnumberofcharswritten: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FillConsoleOutputCharacterW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, ccharacter: u16, nlength: u32, dwwritecoord: Param3, lpnumberofcharswritten: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FillConsoleOutputCharacterW(hconsoleoutput: super::super::Foundation::HANDLE, ccharacter: u16, nlength: u32, dwwritecoord: COORD, lpnumberofcharswritten: *mut u32) -> super::super::Foundation::BOOL;
+            fn FillConsoleOutputCharacterW(hconsoleoutput: ::win32_foundation::HANDLE, ccharacter: u16, nlength: u32, dwwritecoord: COORD, lpnumberofcharswritten: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FillConsoleOutputCharacterW(hconsoleoutput.into_param().abi(), ::core::mem::transmute(ccharacter), ::core::mem::transmute(nlength), dwwritecoord.into_param().abi(), ::core::mem::transmute(lpnumberofcharswritten)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FlushConsoleInputBuffer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn FlushConsoleInputBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FlushConsoleInputBuffer(hconsoleinput: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn FlushConsoleInputBuffer(hconsoleinput: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FlushConsoleInputBuffer(hconsoleinput.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FreeConsole() -> super::super::Foundation::BOOL {
+pub unsafe fn FreeConsole() -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FreeConsole() -> super::super::Foundation::BOOL;
+            fn FreeConsole() -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FreeConsole())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GenerateConsoleCtrlEvent(dwctrlevent: u32, dwprocessgroupid: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GenerateConsoleCtrlEvent(dwctrlevent: u32, dwprocessgroupid: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GenerateConsoleCtrlEvent(dwctrlevent: u32, dwprocessgroupid: u32) -> super::super::Foundation::BOOL;
+            fn GenerateConsoleCtrlEvent(dwctrlevent: u32, dwprocessgroupid: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GenerateConsoleCtrlEvent(::core::mem::transmute(dwctrlevent), ::core::mem::transmute(dwprocessgroupid)))
     }
@@ -914,70 +865,65 @@ pub unsafe fn GetConsoleCommandHistoryW<'a, Param2: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetConsoleCursorInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolecursorinfo: *mut CONSOLE_CURSOR_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetConsoleCursorInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolecursorinfo: *mut CONSOLE_CURSOR_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetConsoleCursorInfo(hconsoleoutput: super::super::Foundation::HANDLE, lpconsolecursorinfo: *mut CONSOLE_CURSOR_INFO) -> super::super::Foundation::BOOL;
+            fn GetConsoleCursorInfo(hconsoleoutput: ::win32_foundation::HANDLE, lpconsolecursorinfo: *mut CONSOLE_CURSOR_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetConsoleCursorInfo(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpconsolecursorinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetConsoleDisplayMode(lpmodeflags: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetConsoleDisplayMode(lpmodeflags: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetConsoleDisplayMode(lpmodeflags: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetConsoleDisplayMode(lpmodeflags: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetConsoleDisplayMode(::core::mem::transmute(lpmodeflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetConsoleFontSize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, nfont: u32) -> COORD {
+pub unsafe fn GetConsoleFontSize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, nfont: u32) -> COORD {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetConsoleFontSize(hconsoleoutput: super::super::Foundation::HANDLE, nfont: u32) -> COORD;
+            fn GetConsoleFontSize(hconsoleoutput: ::win32_foundation::HANDLE, nfont: u32) -> COORD;
         }
         ::core::mem::transmute(GetConsoleFontSize(hconsoleoutput.into_param().abi(), ::core::mem::transmute(nfont)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetConsoleHistoryInfo(lpconsolehistoryinfo: *mut CONSOLE_HISTORY_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetConsoleHistoryInfo(lpconsolehistoryinfo: *mut CONSOLE_HISTORY_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetConsoleHistoryInfo(lpconsolehistoryinfo: *mut CONSOLE_HISTORY_INFO) -> super::super::Foundation::BOOL;
+            fn GetConsoleHistoryInfo(lpconsolehistoryinfo: *mut CONSOLE_HISTORY_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetConsoleHistoryInfo(::core::mem::transmute(lpconsolehistoryinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetConsoleMode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsolehandle: Param0, lpmode: *mut CONSOLE_MODE) -> super::super::Foundation::BOOL {
+pub unsafe fn GetConsoleMode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsolehandle: Param0, lpmode: *mut CONSOLE_MODE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetConsoleMode(hconsolehandle: super::super::Foundation::HANDLE, lpmode: *mut CONSOLE_MODE) -> super::super::Foundation::BOOL;
+            fn GetConsoleMode(hconsolehandle: ::win32_foundation::HANDLE, lpmode: *mut CONSOLE_MODE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetConsoleMode(hconsolehandle.into_param().abi(), ::core::mem::transmute(lpmode)))
     }
@@ -1036,42 +982,39 @@ pub unsafe fn GetConsoleProcessList(lpdwprocesslist: &mut [u32]) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetConsoleScreenBufferInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolescreenbufferinfo: *mut CONSOLE_SCREEN_BUFFER_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetConsoleScreenBufferInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolescreenbufferinfo: *mut CONSOLE_SCREEN_BUFFER_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetConsoleScreenBufferInfo(hconsoleoutput: super::super::Foundation::HANDLE, lpconsolescreenbufferinfo: *mut CONSOLE_SCREEN_BUFFER_INFO) -> super::super::Foundation::BOOL;
+            fn GetConsoleScreenBufferInfo(hconsoleoutput: ::win32_foundation::HANDLE, lpconsolescreenbufferinfo: *mut CONSOLE_SCREEN_BUFFER_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetConsoleScreenBufferInfo(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpconsolescreenbufferinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetConsoleScreenBufferInfoEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolescreenbufferinfoex: *mut CONSOLE_SCREEN_BUFFER_INFOEX) -> super::super::Foundation::BOOL {
+pub unsafe fn GetConsoleScreenBufferInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolescreenbufferinfoex: *mut CONSOLE_SCREEN_BUFFER_INFOEX) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetConsoleScreenBufferInfoEx(hconsoleoutput: super::super::Foundation::HANDLE, lpconsolescreenbufferinfoex: *mut CONSOLE_SCREEN_BUFFER_INFOEX) -> super::super::Foundation::BOOL;
+            fn GetConsoleScreenBufferInfoEx(hconsoleoutput: ::win32_foundation::HANDLE, lpconsolescreenbufferinfoex: *mut CONSOLE_SCREEN_BUFFER_INFOEX) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetConsoleScreenBufferInfoEx(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpconsolescreenbufferinfoex)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetConsoleSelectionInfo(lpconsoleselectioninfo: *mut CONSOLE_SELECTION_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetConsoleSelectionInfo(lpconsoleselectioninfo: *mut CONSOLE_SELECTION_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetConsoleSelectionInfo(lpconsoleselectioninfo: *mut CONSOLE_SELECTION_INFO) -> super::super::Foundation::BOOL;
+            fn GetConsoleSelectionInfo(lpconsoleselectioninfo: *mut CONSOLE_SELECTION_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetConsoleSelectionInfo(::core::mem::transmute(lpconsoleselectioninfo)))
     }
@@ -1104,98 +1047,91 @@ pub unsafe fn GetConsoleTitleW(lpconsoletitle: &mut [u16]) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetConsoleWindow() -> super::super::Foundation::HWND {
+pub unsafe fn GetConsoleWindow() -> ::win32_foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetConsoleWindow() -> super::super::Foundation::HWND;
+            fn GetConsoleWindow() -> ::win32_foundation::HWND;
         }
         ::core::mem::transmute(GetConsoleWindow())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCurrentConsoleFont<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hconsoleoutput: Param0, bmaximumwindow: Param1, lpconsolecurrentfont: *mut CONSOLE_FONT_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCurrentConsoleFont<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hconsoleoutput: Param0, bmaximumwindow: Param1, lpconsolecurrentfont: *mut CONSOLE_FONT_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCurrentConsoleFont(hconsoleoutput: super::super::Foundation::HANDLE, bmaximumwindow: super::super::Foundation::BOOL, lpconsolecurrentfont: *mut CONSOLE_FONT_INFO) -> super::super::Foundation::BOOL;
+            fn GetCurrentConsoleFont(hconsoleoutput: ::win32_foundation::HANDLE, bmaximumwindow: ::win32_foundation::BOOL, lpconsolecurrentfont: *mut CONSOLE_FONT_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetCurrentConsoleFont(hconsoleoutput.into_param().abi(), bmaximumwindow.into_param().abi(), ::core::mem::transmute(lpconsolecurrentfont)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCurrentConsoleFontEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hconsoleoutput: Param0, bmaximumwindow: Param1, lpconsolecurrentfontex: *mut CONSOLE_FONT_INFOEX) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCurrentConsoleFontEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hconsoleoutput: Param0, bmaximumwindow: Param1, lpconsolecurrentfontex: *mut CONSOLE_FONT_INFOEX) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCurrentConsoleFontEx(hconsoleoutput: super::super::Foundation::HANDLE, bmaximumwindow: super::super::Foundation::BOOL, lpconsolecurrentfontex: *mut CONSOLE_FONT_INFOEX) -> super::super::Foundation::BOOL;
+            fn GetCurrentConsoleFontEx(hconsoleoutput: ::win32_foundation::HANDLE, bmaximumwindow: ::win32_foundation::BOOL, lpconsolecurrentfontex: *mut CONSOLE_FONT_INFOEX) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetCurrentConsoleFontEx(hconsoleoutput.into_param().abi(), bmaximumwindow.into_param().abi(), ::core::mem::transmute(lpconsolecurrentfontex)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetLargestConsoleWindowSize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0) -> COORD {
+pub unsafe fn GetLargestConsoleWindowSize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0) -> COORD {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetLargestConsoleWindowSize(hconsoleoutput: super::super::Foundation::HANDLE) -> COORD;
+            fn GetLargestConsoleWindowSize(hconsoleoutput: ::win32_foundation::HANDLE) -> COORD;
         }
         ::core::mem::transmute(GetLargestConsoleWindowSize(hconsoleoutput.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNumberOfConsoleInputEvents<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0, lpnumberofevents: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNumberOfConsoleInputEvents<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0, lpnumberofevents: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNumberOfConsoleInputEvents(hconsoleinput: super::super::Foundation::HANDLE, lpnumberofevents: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetNumberOfConsoleInputEvents(hconsoleinput: ::win32_foundation::HANDLE, lpnumberofevents: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNumberOfConsoleInputEvents(hconsoleinput.into_param().abi(), ::core::mem::transmute(lpnumberofevents)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNumberOfConsoleMouseButtons(lpnumberofmousebuttons: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNumberOfConsoleMouseButtons(lpnumberofmousebuttons: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNumberOfConsoleMouseButtons(lpnumberofmousebuttons: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetNumberOfConsoleMouseButtons(lpnumberofmousebuttons: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNumberOfConsoleMouseButtons(::core::mem::transmute(lpnumberofmousebuttons)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetStdHandle(nstdhandle: STD_HANDLE) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn GetStdHandle(nstdhandle: STD_HANDLE) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetStdHandle(nstdhandle: STD_HANDLE) -> super::super::Foundation::HANDLE;
+            fn GetStdHandle(nstdhandle: STD_HANDLE) -> ::win32_foundation::HANDLE;
         }
         let result__ = GetStdHandle(::core::mem::transmute(nstdhandle));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -1232,39 +1168,31 @@ unsafe impl ::windows_core::Abi for HPCON {
     type Abi = Self;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct INPUT_RECORD {
     pub EventType: u16,
     pub Event: INPUT_RECORD_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for INPUT_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for INPUT_RECORD {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for INPUT_RECORD {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for INPUT_RECORD {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_RECORD>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for INPUT_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for INPUT_RECORD {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union INPUT_RECORD_0 {
     pub KeyEvent: KEY_EVENT_RECORD,
     pub MouseEvent: MOUSE_EVENT_RECORD,
@@ -1272,27 +1200,21 @@ pub union INPUT_RECORD_0 {
     pub MenuEvent: MENU_EVENT_RECORD,
     pub FocusEvent: FOCUS_EVENT_RECORD,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for INPUT_RECORD_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for INPUT_RECORD_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for INPUT_RECORD_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for INPUT_RECORD_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<INPUT_RECORD_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for INPUT_RECORD_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for INPUT_RECORD_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1300,68 +1222,54 @@ impl ::core::default::Default for INPUT_RECORD_0 {
 }
 pub const KEY_EVENT: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KEY_EVENT_RECORD {
-    pub bKeyDown: super::super::Foundation::BOOL,
+    pub bKeyDown: ::win32_foundation::BOOL,
     pub wRepeatCount: u16,
     pub wVirtualKeyCode: u16,
     pub wVirtualScanCode: u16,
     pub uChar: KEY_EVENT_RECORD_0,
     pub dwControlKeyState: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KEY_EVENT_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KEY_EVENT_RECORD {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KEY_EVENT_RECORD {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KEY_EVENT_RECORD {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KEY_EVENT_RECORD>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KEY_EVENT_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KEY_EVENT_RECORD {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KEY_EVENT_RECORD_0 {
     pub UnicodeChar: u16,
-    pub AsciiChar: super::super::Foundation::CHAR,
+    pub AsciiChar: ::win32_foundation::CHAR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KEY_EVENT_RECORD_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KEY_EVENT_RECORD_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KEY_EVENT_RECORD_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KEY_EVENT_RECORD_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KEY_EVENT_RECORD_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KEY_EVENT_RECORD_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KEY_EVENT_RECORD_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1443,31 +1351,28 @@ pub const NLS_IME_DISABLE: u32 = 536870912u32;
 pub const NLS_KATAKANA: u32 = 131072u32;
 pub const NLS_ROMAN: u32 = 4194304u32;
 pub const NUMLOCK_ON: u32 = 32u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PHANDLER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(ctrltype: u32) -> super::super::Foundation::BOOL>;
+pub type PHANDLER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(ctrltype: u32) -> ::win32_foundation::BOOL>;
 pub const PSEUDOCONSOLE_INHERIT_CURSOR: u32 = 1u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PeekConsoleInputA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &mut [INPUT_RECORD], lpnumberofeventsread: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn PeekConsoleInputA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &mut [INPUT_RECORD], lpnumberofeventsread: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PeekConsoleInputA(hconsoleinput: super::super::Foundation::HANDLE, lpbuffer: *mut INPUT_RECORD, nlength: u32, lpnumberofeventsread: *mut u32) -> super::super::Foundation::BOOL;
+            fn PeekConsoleInputA(hconsoleinput: ::win32_foundation::HANDLE, lpbuffer: *mut INPUT_RECORD, nlength: u32, lpnumberofeventsread: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PeekConsoleInputA(hconsoleinput.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpbuffer)), lpbuffer.len() as _, ::core::mem::transmute(lpnumberofeventsread)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PeekConsoleInputW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &mut [INPUT_RECORD], lpnumberofeventsread: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn PeekConsoleInputW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &mut [INPUT_RECORD], lpnumberofeventsread: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PeekConsoleInputW(hconsoleinput: super::super::Foundation::HANDLE, lpbuffer: *mut INPUT_RECORD, nlength: u32, lpnumberofeventsread: *mut u32) -> super::super::Foundation::BOOL;
+            fn PeekConsoleInputW(hconsoleinput: ::win32_foundation::HANDLE, lpbuffer: *mut INPUT_RECORD, nlength: u32, lpnumberofeventsread: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PeekConsoleInputW(hconsoleinput.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpbuffer)), lpbuffer.len() as _, ::core::mem::transmute(lpnumberofeventsread)))
     }
@@ -1477,126 +1382,117 @@ pub unsafe fn PeekConsoleInputW<'a, Param0: ::windows_core::IntoParam<'a, super:
 pub const RIGHTMOST_BUTTON_PRESSED: u32 = 2u32;
 pub const RIGHT_ALT_PRESSED: u32 = 1u32;
 pub const RIGHT_CTRL_PRESSED: u32 = 4u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadConsoleA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: *mut ::core::ffi::c_void, nnumberofcharstoread: u32, lpnumberofcharsread: *mut u32, pinputcontrol: *const CONSOLE_READCONSOLE_CONTROL) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadConsoleA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: *mut ::core::ffi::c_void, nnumberofcharstoread: u32, lpnumberofcharsread: *mut u32, pinputcontrol: *const CONSOLE_READCONSOLE_CONTROL) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadConsoleA(hconsoleinput: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofcharstoread: u32, lpnumberofcharsread: *mut u32, pinputcontrol: *const CONSOLE_READCONSOLE_CONTROL) -> super::super::Foundation::BOOL;
+            fn ReadConsoleA(hconsoleinput: ::win32_foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofcharstoread: u32, lpnumberofcharsread: *mut u32, pinputcontrol: *const CONSOLE_READCONSOLE_CONTROL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadConsoleA(hconsoleinput.into_param().abi(), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofcharstoread), ::core::mem::transmute(lpnumberofcharsread), ::core::mem::transmute(pinputcontrol)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadConsoleInputA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &mut [INPUT_RECORD], lpnumberofeventsread: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadConsoleInputA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &mut [INPUT_RECORD], lpnumberofeventsread: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadConsoleInputA(hconsoleinput: super::super::Foundation::HANDLE, lpbuffer: *mut INPUT_RECORD, nlength: u32, lpnumberofeventsread: *mut u32) -> super::super::Foundation::BOOL;
+            fn ReadConsoleInputA(hconsoleinput: ::win32_foundation::HANDLE, lpbuffer: *mut INPUT_RECORD, nlength: u32, lpnumberofeventsread: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadConsoleInputA(hconsoleinput.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpbuffer)), lpbuffer.len() as _, ::core::mem::transmute(lpnumberofeventsread)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadConsoleInputW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &mut [INPUT_RECORD], lpnumberofeventsread: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadConsoleInputW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &mut [INPUT_RECORD], lpnumberofeventsread: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadConsoleInputW(hconsoleinput: super::super::Foundation::HANDLE, lpbuffer: *mut INPUT_RECORD, nlength: u32, lpnumberofeventsread: *mut u32) -> super::super::Foundation::BOOL;
+            fn ReadConsoleInputW(hconsoleinput: ::win32_foundation::HANDLE, lpbuffer: *mut INPUT_RECORD, nlength: u32, lpnumberofeventsread: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadConsoleInputW(hconsoleinput.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpbuffer)), lpbuffer.len() as _, ::core::mem::transmute(lpnumberofeventsread)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadConsoleOutputA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, COORD>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpbuffer: *mut CHAR_INFO, dwbuffersize: Param2, dwbuffercoord: Param3, lpreadregion: *mut SMALL_RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadConsoleOutputA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, COORD>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpbuffer: *mut CHAR_INFO, dwbuffersize: Param2, dwbuffercoord: Param3, lpreadregion: *mut SMALL_RECT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadConsoleOutputA(hconsoleoutput: super::super::Foundation::HANDLE, lpbuffer: *mut CHAR_INFO, dwbuffersize: COORD, dwbuffercoord: COORD, lpreadregion: *mut SMALL_RECT) -> super::super::Foundation::BOOL;
+            fn ReadConsoleOutputA(hconsoleoutput: ::win32_foundation::HANDLE, lpbuffer: *mut CHAR_INFO, dwbuffersize: COORD, dwbuffercoord: COORD, lpreadregion: *mut SMALL_RECT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadConsoleOutputA(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpbuffer), dwbuffersize.into_param().abi(), dwbuffercoord.into_param().abi(), ::core::mem::transmute(lpreadregion)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadConsoleOutputAttribute<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpattribute: &mut [u16], dwreadcoord: Param3, lpnumberofattrsread: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadConsoleOutputAttribute<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpattribute: &mut [u16], dwreadcoord: Param3, lpnumberofattrsread: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadConsoleOutputAttribute(hconsoleoutput: super::super::Foundation::HANDLE, lpattribute: *mut u16, nlength: u32, dwreadcoord: COORD, lpnumberofattrsread: *mut u32) -> super::super::Foundation::BOOL;
+            fn ReadConsoleOutputAttribute(hconsoleoutput: ::win32_foundation::HANDLE, lpattribute: *mut u16, nlength: u32, dwreadcoord: COORD, lpnumberofattrsread: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadConsoleOutputAttribute(hconsoleoutput.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpattribute)), lpattribute.len() as _, dwreadcoord.into_param().abi(), ::core::mem::transmute(lpnumberofattrsread)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadConsoleOutputCharacterA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpcharacter: &mut [u8], dwreadcoord: Param3, lpnumberofcharsread: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadConsoleOutputCharacterA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpcharacter: &mut [u8], dwreadcoord: Param3, lpnumberofcharsread: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadConsoleOutputCharacterA(hconsoleoutput: super::super::Foundation::HANDLE, lpcharacter: ::windows_core::PSTR, nlength: u32, dwreadcoord: COORD, lpnumberofcharsread: *mut u32) -> super::super::Foundation::BOOL;
+            fn ReadConsoleOutputCharacterA(hconsoleoutput: ::win32_foundation::HANDLE, lpcharacter: ::windows_core::PSTR, nlength: u32, dwreadcoord: COORD, lpnumberofcharsread: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadConsoleOutputCharacterA(hconsoleoutput.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpcharacter)), lpcharacter.len() as _, dwreadcoord.into_param().abi(), ::core::mem::transmute(lpnumberofcharsread)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadConsoleOutputCharacterW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpcharacter: &mut [u16], dwreadcoord: Param3, lpnumberofcharsread: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadConsoleOutputCharacterW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpcharacter: &mut [u16], dwreadcoord: Param3, lpnumberofcharsread: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadConsoleOutputCharacterW(hconsoleoutput: super::super::Foundation::HANDLE, lpcharacter: ::windows_core::PWSTR, nlength: u32, dwreadcoord: COORD, lpnumberofcharsread: *mut u32) -> super::super::Foundation::BOOL;
+            fn ReadConsoleOutputCharacterW(hconsoleoutput: ::win32_foundation::HANDLE, lpcharacter: ::windows_core::PWSTR, nlength: u32, dwreadcoord: COORD, lpnumberofcharsread: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadConsoleOutputCharacterW(hconsoleoutput.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpcharacter)), lpcharacter.len() as _, dwreadcoord.into_param().abi(), ::core::mem::transmute(lpnumberofcharsread)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadConsoleOutputW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, COORD>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpbuffer: *mut CHAR_INFO, dwbuffersize: Param2, dwbuffercoord: Param3, lpreadregion: *mut SMALL_RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadConsoleOutputW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, COORD>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpbuffer: *mut CHAR_INFO, dwbuffersize: Param2, dwbuffercoord: Param3, lpreadregion: *mut SMALL_RECT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadConsoleOutputW(hconsoleoutput: super::super::Foundation::HANDLE, lpbuffer: *mut CHAR_INFO, dwbuffersize: COORD, dwbuffercoord: COORD, lpreadregion: *mut SMALL_RECT) -> super::super::Foundation::BOOL;
+            fn ReadConsoleOutputW(hconsoleoutput: ::win32_foundation::HANDLE, lpbuffer: *mut CHAR_INFO, dwbuffersize: COORD, dwbuffercoord: COORD, lpreadregion: *mut SMALL_RECT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadConsoleOutputW(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpbuffer), dwbuffersize.into_param().abi(), dwbuffercoord.into_param().abi(), ::core::mem::transmute(lpreadregion)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadConsoleW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: *mut ::core::ffi::c_void, nnumberofcharstoread: u32, lpnumberofcharsread: *mut u32, pinputcontrol: *const CONSOLE_READCONSOLE_CONTROL) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadConsoleW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: *mut ::core::ffi::c_void, nnumberofcharstoread: u32, lpnumberofcharsread: *mut u32, pinputcontrol: *const CONSOLE_READCONSOLE_CONTROL) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadConsoleW(hconsoleinput: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofcharstoread: u32, lpnumberofcharsread: *mut u32, pinputcontrol: *const CONSOLE_READCONSOLE_CONTROL) -> super::super::Foundation::BOOL;
+            fn ReadConsoleW(hconsoleinput: ::win32_foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofcharstoread: u32, lpnumberofcharsread: *mut u32, pinputcontrol: *const CONSOLE_READCONSOLE_CONTROL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadConsoleW(hconsoleinput.into_param().abi(), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofcharstoread), ::core::mem::transmute(lpnumberofcharsread), ::core::mem::transmute(pinputcontrol)))
     }
@@ -1675,308 +1571,286 @@ impl ::core::fmt::Debug for STD_HANDLE {
         f.debug_tuple("STD_HANDLE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ScrollConsoleScreenBufferA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpscrollrectangle: *const SMALL_RECT, lpcliprectangle: *const SMALL_RECT, dwdestinationorigin: Param3, lpfill: *const CHAR_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn ScrollConsoleScreenBufferA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpscrollrectangle: *const SMALL_RECT, lpcliprectangle: *const SMALL_RECT, dwdestinationorigin: Param3, lpfill: *const CHAR_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ScrollConsoleScreenBufferA(hconsoleoutput: super::super::Foundation::HANDLE, lpscrollrectangle: *const SMALL_RECT, lpcliprectangle: *const SMALL_RECT, dwdestinationorigin: COORD, lpfill: *const CHAR_INFO) -> super::super::Foundation::BOOL;
+            fn ScrollConsoleScreenBufferA(hconsoleoutput: ::win32_foundation::HANDLE, lpscrollrectangle: *const SMALL_RECT, lpcliprectangle: *const SMALL_RECT, dwdestinationorigin: COORD, lpfill: *const CHAR_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ScrollConsoleScreenBufferA(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpscrollrectangle), ::core::mem::transmute(lpcliprectangle), dwdestinationorigin.into_param().abi(), ::core::mem::transmute(lpfill)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ScrollConsoleScreenBufferW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpscrollrectangle: *const SMALL_RECT, lpcliprectangle: *const SMALL_RECT, dwdestinationorigin: Param3, lpfill: *const CHAR_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn ScrollConsoleScreenBufferW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpscrollrectangle: *const SMALL_RECT, lpcliprectangle: *const SMALL_RECT, dwdestinationorigin: Param3, lpfill: *const CHAR_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ScrollConsoleScreenBufferW(hconsoleoutput: super::super::Foundation::HANDLE, lpscrollrectangle: *const SMALL_RECT, lpcliprectangle: *const SMALL_RECT, dwdestinationorigin: COORD, lpfill: *const CHAR_INFO) -> super::super::Foundation::BOOL;
+            fn ScrollConsoleScreenBufferW(hconsoleoutput: ::win32_foundation::HANDLE, lpscrollrectangle: *const SMALL_RECT, lpcliprectangle: *const SMALL_RECT, dwdestinationorigin: COORD, lpfill: *const CHAR_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ScrollConsoleScreenBufferW(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpscrollrectangle), ::core::mem::transmute(lpcliprectangle), dwdestinationorigin.into_param().abi(), ::core::mem::transmute(lpfill)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleActiveScreenBuffer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleActiveScreenBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleActiveScreenBuffer(hconsoleoutput: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn SetConsoleActiveScreenBuffer(hconsoleoutput: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleActiveScreenBuffer(hconsoleoutput.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleCP(wcodepageid: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleCP(wcodepageid: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleCP(wcodepageid: u32) -> super::super::Foundation::BOOL;
+            fn SetConsoleCP(wcodepageid: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleCP(::core::mem::transmute(wcodepageid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleCtrlHandler<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(handlerroutine: PHANDLER_ROUTINE, add: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleCtrlHandler<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(handlerroutine: PHANDLER_ROUTINE, add: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleCtrlHandler(handlerroutine: ::windows_core::RawPtr, add: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn SetConsoleCtrlHandler(handlerroutine: ::windows_core::RawPtr, add: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleCtrlHandler(::core::mem::transmute(handlerroutine), add.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleCursorInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolecursorinfo: *const CONSOLE_CURSOR_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleCursorInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolecursorinfo: *const CONSOLE_CURSOR_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleCursorInfo(hconsoleoutput: super::super::Foundation::HANDLE, lpconsolecursorinfo: *const CONSOLE_CURSOR_INFO) -> super::super::Foundation::BOOL;
+            fn SetConsoleCursorInfo(hconsoleoutput: ::win32_foundation::HANDLE, lpconsolecursorinfo: *const CONSOLE_CURSOR_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleCursorInfo(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpconsolecursorinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleCursorPosition<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, dwcursorposition: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleCursorPosition<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, dwcursorposition: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleCursorPosition(hconsoleoutput: super::super::Foundation::HANDLE, dwcursorposition: COORD) -> super::super::Foundation::BOOL;
+            fn SetConsoleCursorPosition(hconsoleoutput: ::win32_foundation::HANDLE, dwcursorposition: COORD) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleCursorPosition(hconsoleoutput.into_param().abi(), dwcursorposition.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleDisplayMode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, dwflags: u32, lpnewscreenbufferdimensions: *mut COORD) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleDisplayMode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, dwflags: u32, lpnewscreenbufferdimensions: *mut COORD) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleDisplayMode(hconsoleoutput: super::super::Foundation::HANDLE, dwflags: u32, lpnewscreenbufferdimensions: *mut COORD) -> super::super::Foundation::BOOL;
+            fn SetConsoleDisplayMode(hconsoleoutput: ::win32_foundation::HANDLE, dwflags: u32, lpnewscreenbufferdimensions: *mut COORD) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleDisplayMode(hconsoleoutput.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpnewscreenbufferdimensions)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleHistoryInfo(lpconsolehistoryinfo: *const CONSOLE_HISTORY_INFO) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleHistoryInfo(lpconsolehistoryinfo: *const CONSOLE_HISTORY_INFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleHistoryInfo(lpconsolehistoryinfo: *const CONSOLE_HISTORY_INFO) -> super::super::Foundation::BOOL;
+            fn SetConsoleHistoryInfo(lpconsolehistoryinfo: *const CONSOLE_HISTORY_INFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleHistoryInfo(::core::mem::transmute(lpconsolehistoryinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleMode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsolehandle: Param0, dwmode: CONSOLE_MODE) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleMode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsolehandle: Param0, dwmode: CONSOLE_MODE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleMode(hconsolehandle: super::super::Foundation::HANDLE, dwmode: CONSOLE_MODE) -> super::super::Foundation::BOOL;
+            fn SetConsoleMode(hconsolehandle: ::win32_foundation::HANDLE, dwmode: CONSOLE_MODE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleMode(hconsolehandle.into_param().abi(), ::core::mem::transmute(dwmode)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleNumberOfCommandsA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(number: u32, exename: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleNumberOfCommandsA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(number: u32, exename: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleNumberOfCommandsA(number: u32, exename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetConsoleNumberOfCommandsA(number: u32, exename: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleNumberOfCommandsA(::core::mem::transmute(number), exename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleNumberOfCommandsW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(number: u32, exename: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleNumberOfCommandsW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(number: u32, exename: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleNumberOfCommandsW(number: u32, exename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetConsoleNumberOfCommandsW(number: u32, exename: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleNumberOfCommandsW(::core::mem::transmute(number), exename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleOutputCP(wcodepageid: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleOutputCP(wcodepageid: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleOutputCP(wcodepageid: u32) -> super::super::Foundation::BOOL;
+            fn SetConsoleOutputCP(wcodepageid: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleOutputCP(::core::mem::transmute(wcodepageid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleScreenBufferInfoEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolescreenbufferinfoex: *const CONSOLE_SCREEN_BUFFER_INFOEX) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleScreenBufferInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, lpconsolescreenbufferinfoex: *const CONSOLE_SCREEN_BUFFER_INFOEX) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleScreenBufferInfoEx(hconsoleoutput: super::super::Foundation::HANDLE, lpconsolescreenbufferinfoex: *const CONSOLE_SCREEN_BUFFER_INFOEX) -> super::super::Foundation::BOOL;
+            fn SetConsoleScreenBufferInfoEx(hconsoleoutput: ::win32_foundation::HANDLE, lpconsolescreenbufferinfoex: *const CONSOLE_SCREEN_BUFFER_INFOEX) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleScreenBufferInfoEx(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpconsolescreenbufferinfoex)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleScreenBufferSize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, dwsize: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleScreenBufferSize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, dwsize: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleScreenBufferSize(hconsoleoutput: super::super::Foundation::HANDLE, dwsize: COORD) -> super::super::Foundation::BOOL;
+            fn SetConsoleScreenBufferSize(hconsoleoutput: ::win32_foundation::HANDLE, dwsize: COORD) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleScreenBufferSize(hconsoleoutput.into_param().abi(), dwsize.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleTextAttribute<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, wattributes: u16) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleTextAttribute<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, wattributes: u16) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleTextAttribute(hconsoleoutput: super::super::Foundation::HANDLE, wattributes: u16) -> super::super::Foundation::BOOL;
+            fn SetConsoleTextAttribute(hconsoleoutput: ::win32_foundation::HANDLE, wattributes: u16) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleTextAttribute(hconsoleoutput.into_param().abi(), ::core::mem::transmute(wattributes)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleTitleA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpconsoletitle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleTitleA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpconsoletitle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleTitleA(lpconsoletitle: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetConsoleTitleA(lpconsoletitle: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleTitleA(lpconsoletitle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleTitleW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpconsoletitle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleTitleW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpconsoletitle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleTitleW(lpconsoletitle: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetConsoleTitleW(lpconsoletitle: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleTitleW(lpconsoletitle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetConsoleWindowInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hconsoleoutput: Param0, babsolute: Param1, lpconsolewindow: *const SMALL_RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn SetConsoleWindowInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hconsoleoutput: Param0, babsolute: Param1, lpconsolewindow: *const SMALL_RECT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetConsoleWindowInfo(hconsoleoutput: super::super::Foundation::HANDLE, babsolute: super::super::Foundation::BOOL, lpconsolewindow: *const SMALL_RECT) -> super::super::Foundation::BOOL;
+            fn SetConsoleWindowInfo(hconsoleoutput: ::win32_foundation::HANDLE, babsolute: ::win32_foundation::BOOL, lpconsolewindow: *const SMALL_RECT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetConsoleWindowInfo(hconsoleoutput.into_param().abi(), babsolute.into_param().abi(), ::core::mem::transmute(lpconsolewindow)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCurrentConsoleFontEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hconsoleoutput: Param0, bmaximumwindow: Param1, lpconsolecurrentfontex: *const CONSOLE_FONT_INFOEX) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCurrentConsoleFontEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hconsoleoutput: Param0, bmaximumwindow: Param1, lpconsolecurrentfontex: *const CONSOLE_FONT_INFOEX) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCurrentConsoleFontEx(hconsoleoutput: super::super::Foundation::HANDLE, bmaximumwindow: super::super::Foundation::BOOL, lpconsolecurrentfontex: *const CONSOLE_FONT_INFOEX) -> super::super::Foundation::BOOL;
+            fn SetCurrentConsoleFontEx(hconsoleoutput: ::win32_foundation::HANDLE, bmaximumwindow: ::win32_foundation::BOOL, lpconsolecurrentfontex: *const CONSOLE_FONT_INFOEX) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetCurrentConsoleFontEx(hconsoleoutput.into_param().abi(), bmaximumwindow.into_param().abi(), ::core::mem::transmute(lpconsolecurrentfontex)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetStdHandle<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(nstdhandle: STD_HANDLE, hhandle: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetStdHandle<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(nstdhandle: STD_HANDLE, hhandle: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetStdHandle(nstdhandle: STD_HANDLE, hhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn SetStdHandle(nstdhandle: STD_HANDLE, hhandle: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetStdHandle(::core::mem::transmute(nstdhandle), hhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetStdHandleEx<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(nstdhandle: STD_HANDLE, hhandle: Param1, phprevvalue: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL {
+pub unsafe fn SetStdHandleEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(nstdhandle: STD_HANDLE, hhandle: Param1, phprevvalue: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetStdHandleEx(nstdhandle: STD_HANDLE, hhandle: super::super::Foundation::HANDLE, phprevvalue: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn SetStdHandleEx(nstdhandle: STD_HANDLE, hhandle: ::win32_foundation::HANDLE, phprevvalue: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetStdHandleEx(::core::mem::transmute(nstdhandle), hhandle.into_param().abi(), ::core::mem::transmute(phprevvalue)))
     }
@@ -2013,126 +1887,117 @@ impl ::core::default::Default for WINDOW_BUFFER_SIZE_RECORD {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteConsoleA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, lpbuffer: &[u8], lpnumberofcharswritten: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WriteConsoleA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, lpbuffer: &[u8], lpnumberofcharswritten: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteConsoleA(hconsoleoutput: super::super::Foundation::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofcharstowrite: u32, lpnumberofcharswritten: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WriteConsoleA(hconsoleoutput: ::win32_foundation::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofcharstowrite: u32, lpnumberofcharswritten: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WriteConsoleA(hconsoleoutput.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpbuffer)), lpbuffer.len() as _, ::core::mem::transmute(lpnumberofcharswritten), ::core::mem::transmute(lpreserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteConsoleInputA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &[INPUT_RECORD], lpnumberofeventswritten: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn WriteConsoleInputA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &[INPUT_RECORD], lpnumberofeventswritten: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteConsoleInputA(hconsoleinput: super::super::Foundation::HANDLE, lpbuffer: *const INPUT_RECORD, nlength: u32, lpnumberofeventswritten: *mut u32) -> super::super::Foundation::BOOL;
+            fn WriteConsoleInputA(hconsoleinput: ::win32_foundation::HANDLE, lpbuffer: *const INPUT_RECORD, nlength: u32, lpnumberofeventswritten: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WriteConsoleInputA(hconsoleinput.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpbuffer)), lpbuffer.len() as _, ::core::mem::transmute(lpnumberofeventswritten)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteConsoleInputW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &[INPUT_RECORD], lpnumberofeventswritten: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn WriteConsoleInputW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleinput: Param0, lpbuffer: &[INPUT_RECORD], lpnumberofeventswritten: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteConsoleInputW(hconsoleinput: super::super::Foundation::HANDLE, lpbuffer: *const INPUT_RECORD, nlength: u32, lpnumberofeventswritten: *mut u32) -> super::super::Foundation::BOOL;
+            fn WriteConsoleInputW(hconsoleinput: ::win32_foundation::HANDLE, lpbuffer: *const INPUT_RECORD, nlength: u32, lpnumberofeventswritten: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WriteConsoleInputW(hconsoleinput.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpbuffer)), lpbuffer.len() as _, ::core::mem::transmute(lpnumberofeventswritten)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteConsoleOutputA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, COORD>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpbuffer: *const CHAR_INFO, dwbuffersize: Param2, dwbuffercoord: Param3, lpwriteregion: *mut SMALL_RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn WriteConsoleOutputA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, COORD>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpbuffer: *const CHAR_INFO, dwbuffersize: Param2, dwbuffercoord: Param3, lpwriteregion: *mut SMALL_RECT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteConsoleOutputA(hconsoleoutput: super::super::Foundation::HANDLE, lpbuffer: *const CHAR_INFO, dwbuffersize: COORD, dwbuffercoord: COORD, lpwriteregion: *mut SMALL_RECT) -> super::super::Foundation::BOOL;
+            fn WriteConsoleOutputA(hconsoleoutput: ::win32_foundation::HANDLE, lpbuffer: *const CHAR_INFO, dwbuffersize: COORD, dwbuffercoord: COORD, lpwriteregion: *mut SMALL_RECT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WriteConsoleOutputA(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpbuffer), dwbuffersize.into_param().abi(), dwbuffercoord.into_param().abi(), ::core::mem::transmute(lpwriteregion)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteConsoleOutputAttribute<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpattribute: &[u16], dwwritecoord: Param3, lpnumberofattrswritten: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn WriteConsoleOutputAttribute<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpattribute: &[u16], dwwritecoord: Param3, lpnumberofattrswritten: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteConsoleOutputAttribute(hconsoleoutput: super::super::Foundation::HANDLE, lpattribute: *const u16, nlength: u32, dwwritecoord: COORD, lpnumberofattrswritten: *mut u32) -> super::super::Foundation::BOOL;
+            fn WriteConsoleOutputAttribute(hconsoleoutput: ::win32_foundation::HANDLE, lpattribute: *const u16, nlength: u32, dwwritecoord: COORD, lpnumberofattrswritten: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WriteConsoleOutputAttribute(hconsoleoutput.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpattribute)), lpattribute.len() as _, dwwritecoord.into_param().abi(), ::core::mem::transmute(lpnumberofattrswritten)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteConsoleOutputCharacterA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpcharacter: &[u8], dwwritecoord: Param3, lpnumberofcharswritten: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn WriteConsoleOutputCharacterA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpcharacter: &[u8], dwwritecoord: Param3, lpnumberofcharswritten: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteConsoleOutputCharacterA(hconsoleoutput: super::super::Foundation::HANDLE, lpcharacter: ::windows_core::PCSTR, nlength: u32, dwwritecoord: COORD, lpnumberofcharswritten: *mut u32) -> super::super::Foundation::BOOL;
+            fn WriteConsoleOutputCharacterA(hconsoleoutput: ::win32_foundation::HANDLE, lpcharacter: ::windows_core::PCSTR, nlength: u32, dwwritecoord: COORD, lpnumberofcharswritten: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WriteConsoleOutputCharacterA(hconsoleoutput.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpcharacter)), lpcharacter.len() as _, dwwritecoord.into_param().abi(), ::core::mem::transmute(lpnumberofcharswritten)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteConsoleOutputCharacterW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpcharacter: &[u16], dwwritecoord: Param3, lpnumberofcharswritten: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn WriteConsoleOutputCharacterW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpcharacter: &[u16], dwwritecoord: Param3, lpnumberofcharswritten: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteConsoleOutputCharacterW(hconsoleoutput: super::super::Foundation::HANDLE, lpcharacter: ::windows_core::PCWSTR, nlength: u32, dwwritecoord: COORD, lpnumberofcharswritten: *mut u32) -> super::super::Foundation::BOOL;
+            fn WriteConsoleOutputCharacterW(hconsoleoutput: ::win32_foundation::HANDLE, lpcharacter: ::windows_core::PCWSTR, nlength: u32, dwwritecoord: COORD, lpnumberofcharswritten: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WriteConsoleOutputCharacterW(hconsoleoutput.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpcharacter)), lpcharacter.len() as _, dwwritecoord.into_param().abi(), ::core::mem::transmute(lpnumberofcharswritten)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteConsoleOutputW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, COORD>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpbuffer: *const CHAR_INFO, dwbuffersize: Param2, dwbuffercoord: Param3, lpwriteregion: *mut SMALL_RECT) -> super::super::Foundation::BOOL {
+pub unsafe fn WriteConsoleOutputW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, COORD>, Param3: ::windows_core::IntoParam<'a, COORD>>(hconsoleoutput: Param0, lpbuffer: *const CHAR_INFO, dwbuffersize: Param2, dwbuffercoord: Param3, lpwriteregion: *mut SMALL_RECT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteConsoleOutputW(hconsoleoutput: super::super::Foundation::HANDLE, lpbuffer: *const CHAR_INFO, dwbuffersize: COORD, dwbuffercoord: COORD, lpwriteregion: *mut SMALL_RECT) -> super::super::Foundation::BOOL;
+            fn WriteConsoleOutputW(hconsoleoutput: ::win32_foundation::HANDLE, lpbuffer: *const CHAR_INFO, dwbuffersize: COORD, dwbuffercoord: COORD, lpwriteregion: *mut SMALL_RECT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WriteConsoleOutputW(hconsoleoutput.into_param().abi(), ::core::mem::transmute(lpbuffer), dwbuffersize.into_param().abi(), dwbuffercoord.into_param().abi(), ::core::mem::transmute(lpwriteregion)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WriteConsoleW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hconsoleoutput: Param0, lpbuffer: &[u8], lpnumberofcharswritten: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WriteConsoleW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hconsoleoutput: Param0, lpbuffer: &[u8], lpnumberofcharswritten: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WriteConsoleW(hconsoleoutput: super::super::Foundation::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofcharstowrite: u32, lpnumberofcharswritten: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WriteConsoleW(hconsoleoutput: ::win32_foundation::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofcharstowrite: u32, lpnumberofcharswritten: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WriteConsoleW(hconsoleoutput.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpbuffer)), lpbuffer.len() as _, ::core::mem::transmute(lpnumberofcharswritten), ::core::mem::transmute(lpreserved)))
     }

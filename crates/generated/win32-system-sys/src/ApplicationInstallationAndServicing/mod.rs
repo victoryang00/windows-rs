@@ -1,111 +1,67 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ActivateActCtx(hactctx: super::super::Foundation::HANDLE, lpcookie: *mut usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AddRefActCtx(hactctx: super::super::Foundation::HANDLE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyDeltaA(applyflags: i64, lpsourcename: ::windows_core_sys::PCSTR, lpdeltaname: ::windows_core_sys::PCSTR, lptargetname: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyDeltaB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lptarget: *mut DELTA_OUTPUT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyDeltaGetReverseB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lpreversefiletime: *const super::super::Foundation::FILETIME, lptarget: *mut DELTA_OUTPUT, lptargetreverse: *mut DELTA_OUTPUT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyDeltaProvidedB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lptarget: *mut ::core::ffi::c_void, utargetsize: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyDeltaW(applyflags: i64, lpsourcename: ::windows_core_sys::PCWSTR, lpdeltaname: ::windows_core_sys::PCWSTR, lptargetname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyPatchToFileA(patchfilename: ::windows_core_sys::PCSTR, oldfilename: ::windows_core_sys::PCSTR, newfilename: ::windows_core_sys::PCSTR, applyoptionflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyPatchToFileByBuffers(patchfilemapped: *const u8, patchfilesize: u32, oldfilemapped: *const u8, oldfilesize: u32, newfilebuffer: *mut *mut u8, newfilebuffersize: u32, newfileactualsize: *mut u32, newfiletime: *mut super::super::Foundation::FILETIME, applyoptionflags: u32, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyPatchToFileByHandles(patchfilehandle: super::super::Foundation::HANDLE, oldfilehandle: super::super::Foundation::HANDLE, newfilehandle: super::super::Foundation::HANDLE, applyoptionflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyPatchToFileByHandlesEx(patchfilehandle: super::super::Foundation::HANDLE, oldfilehandle: super::super::Foundation::HANDLE, newfilehandle: super::super::Foundation::HANDLE, applyoptionflags: u32, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyPatchToFileExA(patchfilename: ::windows_core_sys::PCSTR, oldfilename: ::windows_core_sys::PCSTR, newfilename: ::windows_core_sys::PCSTR, applyoptionflags: u32, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyPatchToFileExW(patchfilename: ::windows_core_sys::PCWSTR, oldfilename: ::windows_core_sys::PCWSTR, newfilename: ::windows_core_sys::PCWSTR, applyoptionflags: u32, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplyPatchToFileW(patchfilename: ::windows_core_sys::PCWSTR, oldfilename: ::windows_core_sys::PCWSTR, newfilename: ::windows_core_sys::PCWSTR, applyoptionflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateActCtxA(pactctx: *const ACTCTXA) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateActCtxW(pactctx: *const ACTCTXW) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateDeltaA(filetypeset: i64, setflags: i64, resetflags: i64, lpsourcename: ::windows_core_sys::PCSTR, lptargetname: ::windows_core_sys::PCSTR, lpsourceoptionsname: ::windows_core_sys::PCSTR, lptargetoptionsname: ::windows_core_sys::PCSTR, globaloptions: DELTA_INPUT, lptargetfiletime: *const super::super::Foundation::FILETIME, hashalgid: u32, lpdeltaname: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateDeltaB(filetypeset: i64, setflags: i64, resetflags: i64, source: DELTA_INPUT, target: DELTA_INPUT, sourceoptions: DELTA_INPUT, targetoptions: DELTA_INPUT, globaloptions: DELTA_INPUT, lptargetfiletime: *const super::super::Foundation::FILETIME, hashalgid: u32, lpdelta: *mut DELTA_OUTPUT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateDeltaW(filetypeset: i64, setflags: i64, resetflags: i64, lpsourcename: ::windows_core_sys::PCWSTR, lptargetname: ::windows_core_sys::PCWSTR, lpsourceoptionsname: ::windows_core_sys::PCWSTR, lptargetoptionsname: ::windows_core_sys::PCWSTR, globaloptions: DELTA_INPUT, lptargetfiletime: *const super::super::Foundation::FILETIME, hashalgid: u32, lpdeltaname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreatePatchFileA(oldfilename: ::windows_core_sys::PCSTR, newfilename: ::windows_core_sys::PCSTR, patchfilename: ::windows_core_sys::PCSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreatePatchFileByHandles(oldfilehandle: super::super::Foundation::HANDLE, newfilehandle: super::super::Foundation::HANDLE, patchfilehandle: super::super::Foundation::HANDLE, optionflags: u32, optiondata: *const PATCH_OPTION_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreatePatchFileByHandlesEx(oldfilecount: u32, oldfileinfoarray: *const PATCH_OLD_FILE_INFO_H, newfilehandle: super::super::Foundation::HANDLE, patchfilehandle: super::super::Foundation::HANDLE, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreatePatchFileExA(oldfilecount: u32, oldfileinfoarray: *const PATCH_OLD_FILE_INFO_A, newfilename: ::windows_core_sys::PCSTR, patchfilename: ::windows_core_sys::PCSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreatePatchFileExW(oldfilecount: u32, oldfileinfoarray: *const PATCH_OLD_FILE_INFO_W, newfilename: ::windows_core_sys::PCWSTR, patchfilename: ::windows_core_sys::PCWSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreatePatchFileW(oldfilename: ::windows_core_sys::PCWSTR, newfilename: ::windows_core_sys::PCWSTR, patchfilename: ::windows_core_sys::PCWSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeactivateActCtx(dwflags: u32, ulcookie: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeltaFree(lpmemory: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeltaNormalizeProvidedB(filetypeset: i64, normalizeflags: i64, normalizeoptions: DELTA_INPUT, lpsource: *mut ::core::ffi::c_void, usourcesize: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ExtractPatchHeaderToFileA(patchfilename: ::windows_core_sys::PCSTR, patchheaderfilename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ExtractPatchHeaderToFileByHandles(patchfilehandle: super::super::Foundation::HANDLE, patchheaderfilehandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ExtractPatchHeaderToFileW(patchfilename: ::windows_core_sys::PCWSTR, patchheaderfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FindActCtxSectionGuid(dwflags: u32, lpextensionguid: *const ::windows_core_sys::GUID, ulsectionid: u32, lpguidtofind: *const ::windows_core_sys::GUID, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FindActCtxSectionStringA(dwflags: u32, lpextensionguid: *const ::windows_core_sys::GUID, ulsectionid: u32, lpstringtofind: ::windows_core_sys::PCSTR, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FindActCtxSectionStringW(dwflags: u32, lpextensionguid: *const ::windows_core_sys::GUID, ulsectionid: u32, lpstringtofind: ::windows_core_sys::PCWSTR, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentActCtx(lphactctx: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDeltaInfoA(lpdeltaname: ::windows_core_sys::PCSTR, lpheaderinfo: *mut DELTA_HEADER_INFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDeltaInfoB(delta: DELTA_INPUT, lpheaderinfo: *mut DELTA_HEADER_INFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDeltaInfoW(lpdeltaname: ::windows_core_sys::PCWSTR, lpheaderinfo: *mut DELTA_HEADER_INFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDeltaSignatureA(filetypeset: i64, hashalgid: u32, lpsourcename: ::windows_core_sys::PCSTR, lphash: *mut DELTA_HASH) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDeltaSignatureB(filetypeset: i64, hashalgid: u32, source: DELTA_INPUT, lphash: *mut DELTA_HASH) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDeltaSignatureW(filetypeset: i64, hashalgid: u32, lpsourcename: ::windows_core_sys::PCWSTR, lphash: *mut DELTA_HASH) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFilePatchSignatureA(filename: ::windows_core_sys::PCSTR, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFilePatchSignatureByBuffer(filebufferwritable: *mut u8, filesize: u32, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFilePatchSignatureByHandle(filehandle: super::super::Foundation::HANDLE, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFilePatchSignatureW(filename: ::windows_core_sys::PCWSTR, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
+    pub fn ActivateActCtx(hactctx: ::win32_foundation_sys::HANDLE, lpcookie: *mut usize) -> ::win32_foundation_sys::BOOL;
+    pub fn AddRefActCtx(hactctx: ::win32_foundation_sys::HANDLE);
+    pub fn ApplyDeltaA(applyflags: i64, lpsourcename: ::windows_core_sys::PCSTR, lpdeltaname: ::windows_core_sys::PCSTR, lptargetname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyDeltaB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lptarget: *mut DELTA_OUTPUT) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyDeltaGetReverseB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lpreversefiletime: *const ::win32_foundation_sys::FILETIME, lptarget: *mut DELTA_OUTPUT, lptargetreverse: *mut DELTA_OUTPUT) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyDeltaProvidedB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lptarget: *mut ::core::ffi::c_void, utargetsize: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyDeltaW(applyflags: i64, lpsourcename: ::windows_core_sys::PCWSTR, lpdeltaname: ::windows_core_sys::PCWSTR, lptargetname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyPatchToFileA(patchfilename: ::windows_core_sys::PCSTR, oldfilename: ::windows_core_sys::PCSTR, newfilename: ::windows_core_sys::PCSTR, applyoptionflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyPatchToFileByBuffers(patchfilemapped: *const u8, patchfilesize: u32, oldfilemapped: *const u8, oldfilesize: u32, newfilebuffer: *mut *mut u8, newfilebuffersize: u32, newfileactualsize: *mut u32, newfiletime: *mut ::win32_foundation_sys::FILETIME, applyoptionflags: u32, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyPatchToFileByHandles(patchfilehandle: ::win32_foundation_sys::HANDLE, oldfilehandle: ::win32_foundation_sys::HANDLE, newfilehandle: ::win32_foundation_sys::HANDLE, applyoptionflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyPatchToFileByHandlesEx(patchfilehandle: ::win32_foundation_sys::HANDLE, oldfilehandle: ::win32_foundation_sys::HANDLE, newfilehandle: ::win32_foundation_sys::HANDLE, applyoptionflags: u32, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyPatchToFileExA(patchfilename: ::windows_core_sys::PCSTR, oldfilename: ::windows_core_sys::PCSTR, newfilename: ::windows_core_sys::PCSTR, applyoptionflags: u32, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyPatchToFileExW(patchfilename: ::windows_core_sys::PCWSTR, oldfilename: ::windows_core_sys::PCWSTR, newfilename: ::windows_core_sys::PCWSTR, applyoptionflags: u32, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn ApplyPatchToFileW(patchfilename: ::windows_core_sys::PCWSTR, oldfilename: ::windows_core_sys::PCWSTR, newfilename: ::windows_core_sys::PCWSTR, applyoptionflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn CreateActCtxA(pactctx: *const ACTCTXA) -> ::win32_foundation_sys::HANDLE;
+    pub fn CreateActCtxW(pactctx: *const ACTCTXW) -> ::win32_foundation_sys::HANDLE;
+    pub fn CreateDeltaA(filetypeset: i64, setflags: i64, resetflags: i64, lpsourcename: ::windows_core_sys::PCSTR, lptargetname: ::windows_core_sys::PCSTR, lpsourceoptionsname: ::windows_core_sys::PCSTR, lptargetoptionsname: ::windows_core_sys::PCSTR, globaloptions: DELTA_INPUT, lptargetfiletime: *const ::win32_foundation_sys::FILETIME, hashalgid: u32, lpdeltaname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn CreateDeltaB(filetypeset: i64, setflags: i64, resetflags: i64, source: DELTA_INPUT, target: DELTA_INPUT, sourceoptions: DELTA_INPUT, targetoptions: DELTA_INPUT, globaloptions: DELTA_INPUT, lptargetfiletime: *const ::win32_foundation_sys::FILETIME, hashalgid: u32, lpdelta: *mut DELTA_OUTPUT) -> ::win32_foundation_sys::BOOL;
+    pub fn CreateDeltaW(filetypeset: i64, setflags: i64, resetflags: i64, lpsourcename: ::windows_core_sys::PCWSTR, lptargetname: ::windows_core_sys::PCWSTR, lpsourceoptionsname: ::windows_core_sys::PCWSTR, lptargetoptionsname: ::windows_core_sys::PCWSTR, globaloptions: DELTA_INPUT, lptargetfiletime: *const ::win32_foundation_sys::FILETIME, hashalgid: u32, lpdeltaname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn CreatePatchFileA(oldfilename: ::windows_core_sys::PCSTR, newfilename: ::windows_core_sys::PCSTR, patchfilename: ::windows_core_sys::PCSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn CreatePatchFileByHandles(oldfilehandle: ::win32_foundation_sys::HANDLE, newfilehandle: ::win32_foundation_sys::HANDLE, patchfilehandle: ::win32_foundation_sys::HANDLE, optionflags: u32, optiondata: *const PATCH_OPTION_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn CreatePatchFileByHandlesEx(oldfilecount: u32, oldfileinfoarray: *const PATCH_OLD_FILE_INFO_H, newfilehandle: ::win32_foundation_sys::HANDLE, patchfilehandle: ::win32_foundation_sys::HANDLE, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn CreatePatchFileExA(oldfilecount: u32, oldfileinfoarray: *const PATCH_OLD_FILE_INFO_A, newfilename: ::windows_core_sys::PCSTR, patchfilename: ::windows_core_sys::PCSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn CreatePatchFileExW(oldfilecount: u32, oldfileinfoarray: *const PATCH_OLD_FILE_INFO_W, newfilename: ::windows_core_sys::PCWSTR, patchfilename: ::windows_core_sys::PCWSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn CreatePatchFileW(oldfilename: ::windows_core_sys::PCWSTR, newfilename: ::windows_core_sys::PCWSTR, patchfilename: ::windows_core_sys::PCWSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn DeactivateActCtx(dwflags: u32, ulcookie: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn DeltaFree(lpmemory: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn DeltaNormalizeProvidedB(filetypeset: i64, normalizeflags: i64, normalizeoptions: DELTA_INPUT, lpsource: *mut ::core::ffi::c_void, usourcesize: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn ExtractPatchHeaderToFileA(patchfilename: ::windows_core_sys::PCSTR, patchheaderfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn ExtractPatchHeaderToFileByHandles(patchfilehandle: ::win32_foundation_sys::HANDLE, patchheaderfilehandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn ExtractPatchHeaderToFileW(patchfilename: ::windows_core_sys::PCWSTR, patchheaderfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    pub fn FindActCtxSectionGuid(dwflags: u32, lpextensionguid: *const ::windows_core_sys::GUID, ulsectionid: u32, lpguidtofind: *const ::windows_core_sys::GUID, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    pub fn FindActCtxSectionStringA(dwflags: u32, lpextensionguid: *const ::windows_core_sys::GUID, ulsectionid: u32, lpstringtofind: ::windows_core_sys::PCSTR, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    pub fn FindActCtxSectionStringW(dwflags: u32, lpextensionguid: *const ::windows_core_sys::GUID, ulsectionid: u32, lpstringtofind: ::windows_core_sys::PCWSTR, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn GetCurrentActCtx(lphactctx: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDeltaInfoA(lpdeltaname: ::windows_core_sys::PCSTR, lpheaderinfo: *mut DELTA_HEADER_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDeltaInfoB(delta: DELTA_INPUT, lpheaderinfo: *mut DELTA_HEADER_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDeltaInfoW(lpdeltaname: ::windows_core_sys::PCWSTR, lpheaderinfo: *mut DELTA_HEADER_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDeltaSignatureA(filetypeset: i64, hashalgid: u32, lpsourcename: ::windows_core_sys::PCSTR, lphash: *mut DELTA_HASH) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDeltaSignatureB(filetypeset: i64, hashalgid: u32, source: DELTA_INPUT, lphash: *mut DELTA_HASH) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDeltaSignatureW(filetypeset: i64, hashalgid: u32, lpsourcename: ::windows_core_sys::PCWSTR, lphash: *mut DELTA_HASH) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFilePatchSignatureA(filename: ::windows_core_sys::PCSTR, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFilePatchSignatureByBuffer(filebufferwritable: *mut u8, filesize: u32, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFilePatchSignatureByHandle(filehandle: ::win32_foundation_sys::HANDLE, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFilePatchSignatureW(filename: ::windows_core_sys::PCWSTR, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn MsiAdvertiseProductA(szpackagepath: ::windows_core_sys::PCSTR, szscriptfilepath: ::windows_core_sys::PCSTR, sztransforms: ::windows_core_sys::PCSTR, lgidlanguage: u16) -> u32;
     pub fn MsiAdvertiseProductExA(szpackagepath: ::windows_core_sys::PCSTR, szscriptfilepath: ::windows_core_sys::PCSTR, sztransforms: ::windows_core_sys::PCSTR, lgidlanguage: u16, dwplatform: u32, dwoptions: u32) -> u32;
     pub fn MsiAdvertiseProductExW(szpackagepath: ::windows_core_sys::PCWSTR, szscriptfilepath: ::windows_core_sys::PCWSTR, sztransforms: ::windows_core_sys::PCWSTR, lgidlanguage: u16, dwplatform: u32, dwoptions: u32) -> u32;
     pub fn MsiAdvertiseProductW(szpackagepath: ::windows_core_sys::PCWSTR, szscriptfilepath: ::windows_core_sys::PCWSTR, sztransforms: ::windows_core_sys::PCWSTR, lgidlanguage: u16) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn MsiAdvertiseScriptA(szscriptfile: ::windows_core_sys::PCSTR, dwflags: u32, phregdata: *const super::Registry::HKEY, fremoveitems: super::super::Foundation::BOOL) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn MsiAdvertiseScriptW(szscriptfile: ::windows_core_sys::PCWSTR, dwflags: u32, phregdata: *const super::Registry::HKEY, fremoveitems: super::super::Foundation::BOOL) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn MsiAdvertiseScriptA(szscriptfile: ::windows_core_sys::PCSTR, dwflags: u32, phregdata: *const super::Registry::HKEY, fremoveitems: ::win32_foundation_sys::BOOL) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn MsiAdvertiseScriptW(szscriptfile: ::windows_core_sys::PCWSTR, dwflags: u32, phregdata: *const super::Registry::HKEY, fremoveitems: ::win32_foundation_sys::BOOL) -> u32;
     pub fn MsiApplyMultiplePatchesA(szpatchpackages: ::windows_core_sys::PCSTR, szproductcode: ::windows_core_sys::PCSTR, szpropertieslist: ::windows_core_sys::PCSTR) -> u32;
     pub fn MsiApplyMultiplePatchesW(szpatchpackages: ::windows_core_sys::PCWSTR, szproductcode: ::windows_core_sys::PCWSTR, szpropertieslist: ::windows_core_sys::PCWSTR) -> u32;
     pub fn MsiApplyPatchA(szpatchpackage: ::windows_core_sys::PCSTR, szinstallpackage: ::windows_core_sys::PCSTR, einstalltype: INSTALLTYPE, szcommandline: ::windows_core_sys::PCSTR) -> u32;
     pub fn MsiApplyPatchW(szpatchpackage: ::windows_core_sys::PCWSTR, szinstallpackage: ::windows_core_sys::PCWSTR, einstalltype: INSTALLTYPE, szcommandline: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiBeginTransactionA(szname: ::windows_core_sys::PCSTR, dwtransactionattributes: u32, phtransactionhandle: *mut MSIHANDLE, phchangeofownerevent: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiBeginTransactionW(szname: ::windows_core_sys::PCWSTR, dwtransactionattributes: u32, phtransactionhandle: *mut MSIHANDLE, phchangeofownerevent: *mut super::super::Foundation::HANDLE) -> u32;
+    pub fn MsiBeginTransactionA(szname: ::windows_core_sys::PCSTR, dwtransactionattributes: u32, phtransactionhandle: *mut MSIHANDLE, phchangeofownerevent: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn MsiBeginTransactionW(szname: ::windows_core_sys::PCWSTR, dwtransactionattributes: u32, phtransactionhandle: *mut MSIHANDLE, phchangeofownerevent: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn MsiCloseAllHandles() -> u32;
     pub fn MsiCloseHandle(hany: MSIHANDLE) -> u32;
     pub fn MsiCollectUserInfoA(szproduct: ::windows_core_sys::PCSTR) -> u32;
@@ -196,16 +152,15 @@ extern "system" {
     pub fn MsiGetFeatureValidStatesW(hinstall: MSIHANDLE, szfeature: ::windows_core_sys::PCWSTR, lpinstallstates: *mut u32) -> u32;
     pub fn MsiGetFileHashA(szfilepath: ::windows_core_sys::PCSTR, dwoptions: u32, phash: *mut MSIFILEHASHINFO) -> u32;
     pub fn MsiGetFileHashW(szfilepath: ::windows_core_sys::PCWSTR, dwoptions: u32, phash: *mut MSIFILEHASHINFO) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub fn MsiGetFileSignatureInformationA(szsignedobjectpath: ::windows_core_sys::PCSTR, dwflags: u32, ppccertcontext: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT, pbhashdata: *mut u8, pcbhashdata: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub fn MsiGetFileSignatureInformationW(szsignedobjectpath: ::windows_core_sys::PCWSTR, dwflags: u32, ppccertcontext: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT, pbhashdata: *mut u8, pcbhashdata: *mut u32) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub fn MsiGetFileSignatureInformationA(szsignedobjectpath: ::windows_core_sys::PCSTR, dwflags: u32, ppccertcontext: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT, pbhashdata: *mut u8, pcbhashdata: *mut u32) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub fn MsiGetFileSignatureInformationW(szsignedobjectpath: ::windows_core_sys::PCWSTR, dwflags: u32, ppccertcontext: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT, pbhashdata: *mut u8, pcbhashdata: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn MsiGetFileVersionA(szfilepath: ::windows_core_sys::PCSTR, lpversionbuf: ::windows_core_sys::PSTR, pcchversionbuf: *mut u32, lplangbuf: ::windows_core_sys::PSTR, pcchlangbuf: *mut u32) -> u32;
     pub fn MsiGetFileVersionW(szfilepath: ::windows_core_sys::PCWSTR, lpversionbuf: ::windows_core_sys::PWSTR, pcchversionbuf: *mut u32, lplangbuf: ::windows_core_sys::PWSTR, pcchlangbuf: *mut u32) -> u32;
     pub fn MsiGetLanguage(hinstall: MSIHANDLE) -> u16;
     pub fn MsiGetLastErrorRecord() -> MSIHANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiGetMode(hinstall: MSIHANDLE, erunmode: MSIRUNMODE) -> super::super::Foundation::BOOL;
+    pub fn MsiGetMode(hinstall: MSIHANDLE, erunmode: MSIRUNMODE) -> ::win32_foundation_sys::BOOL;
     pub fn MsiGetPatchFileListA(szproductcode: ::windows_core_sys::PCSTR, szpatchpackages: ::windows_core_sys::PCSTR, pcfiles: *mut u32, pphfilerecords: *mut *mut MSIHANDLE) -> u32;
     pub fn MsiGetPatchFileListW(szproductcode: ::windows_core_sys::PCWSTR, szpatchpackages: ::windows_core_sys::PCWSTR, pcfiles: *mut u32, pphfilerecords: *mut *mut MSIHANDLE) -> u32;
     pub fn MsiGetPatchInfoA(szpatch: ::windows_core_sys::PCSTR, szattribute: ::windows_core_sys::PCSTR, lpvaluebuf: ::windows_core_sys::PSTR, pcchvaluebuf: *mut u32) -> u32;
@@ -240,12 +195,9 @@ extern "system" {
     pub fn MsiInstallMissingFileW(szproduct: ::windows_core_sys::PCWSTR, szfile: ::windows_core_sys::PCWSTR) -> u32;
     pub fn MsiInstallProductA(szpackagepath: ::windows_core_sys::PCSTR, szcommandline: ::windows_core_sys::PCSTR) -> u32;
     pub fn MsiInstallProductW(szpackagepath: ::windows_core_sys::PCWSTR, szcommandline: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiIsProductElevatedA(szproduct: ::windows_core_sys::PCSTR, pfelevated: *mut super::super::Foundation::BOOL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiIsProductElevatedW(szproduct: ::windows_core_sys::PCWSTR, pfelevated: *mut super::super::Foundation::BOOL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiJoinTransaction(htransactionhandle: MSIHANDLE, dwtransactionattributes: u32, phchangeofownerevent: *mut super::super::Foundation::HANDLE) -> u32;
+    pub fn MsiIsProductElevatedA(szproduct: ::windows_core_sys::PCSTR, pfelevated: *mut ::win32_foundation_sys::BOOL) -> u32;
+    pub fn MsiIsProductElevatedW(szproduct: ::windows_core_sys::PCWSTR, pfelevated: *mut ::win32_foundation_sys::BOOL) -> u32;
+    pub fn MsiJoinTransaction(htransactionhandle: MSIHANDLE, dwtransactionattributes: u32, phchangeofownerevent: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn MsiLocateComponentA(szcomponent: ::windows_core_sys::PCSTR, lppathbuf: ::windows_core_sys::PSTR, pcchbuf: *mut u32) -> INSTALLSTATE;
     pub fn MsiLocateComponentW(szcomponent: ::windows_core_sys::PCWSTR, lppathbuf: ::windows_core_sys::PWSTR, pcchbuf: *mut u32) -> INSTALLSTATE;
     pub fn MsiNotifySidChangeA(poldsid: ::windows_core_sys::PCSTR, pnewsid: ::windows_core_sys::PCSTR) -> u32;
@@ -262,10 +214,10 @@ extern "system" {
     pub fn MsiPreviewBillboardW(hpreview: MSIHANDLE, szcontrolname: ::windows_core_sys::PCWSTR, szbillboard: ::windows_core_sys::PCWSTR) -> u32;
     pub fn MsiPreviewDialogA(hpreview: MSIHANDLE, szdialogname: ::windows_core_sys::PCSTR) -> u32;
     pub fn MsiPreviewDialogW(hpreview: MSIHANDLE, szdialogname: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn MsiProcessAdvertiseScriptA(szscriptfile: ::windows_core_sys::PCSTR, sziconfolder: ::windows_core_sys::PCSTR, hregdata: super::Registry::HKEY, fshortcuts: super::super::Foundation::BOOL, fremoveitems: super::super::Foundation::BOOL) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn MsiProcessAdvertiseScriptW(szscriptfile: ::windows_core_sys::PCWSTR, sziconfolder: ::windows_core_sys::PCWSTR, hregdata: super::Registry::HKEY, fshortcuts: super::super::Foundation::BOOL, fremoveitems: super::super::Foundation::BOOL) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn MsiProcessAdvertiseScriptA(szscriptfile: ::windows_core_sys::PCSTR, sziconfolder: ::windows_core_sys::PCSTR, hregdata: super::Registry::HKEY, fshortcuts: ::win32_foundation_sys::BOOL, fremoveitems: ::win32_foundation_sys::BOOL) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn MsiProcessAdvertiseScriptW(szscriptfile: ::windows_core_sys::PCWSTR, sziconfolder: ::windows_core_sys::PCWSTR, hregdata: super::Registry::HKEY, fshortcuts: ::win32_foundation_sys::BOOL, fremoveitems: ::win32_foundation_sys::BOOL) -> u32;
     pub fn MsiProcessMessage(hinstall: MSIHANDLE, emessagetype: INSTALLMESSAGE, hrecord: MSIHANDLE) -> i32;
     pub fn MsiProvideAssemblyA(szassemblyname: ::windows_core_sys::PCSTR, szappcontext: ::windows_core_sys::PCSTR, dwinstallmode: INSTALLMODE, dwassemblyinfo: MSIASSEMBLYINFO, lppathbuf: ::windows_core_sys::PSTR, pcchpathbuf: *mut u32) -> u32;
     pub fn MsiProvideAssemblyW(szassemblyname: ::windows_core_sys::PCWSTR, szappcontext: ::windows_core_sys::PCWSTR, dwinstallmode: INSTALLMODE, dwassemblyinfo: MSIASSEMBLYINFO, lppathbuf: ::windows_core_sys::PWSTR, pcchpathbuf: *mut u32) -> u32;
@@ -289,8 +241,7 @@ extern "system" {
     pub fn MsiRecordGetInteger(hrecord: MSIHANDLE, ifield: u32) -> i32;
     pub fn MsiRecordGetStringA(hrecord: MSIHANDLE, ifield: u32, szvaluebuf: ::windows_core_sys::PSTR, pcchvaluebuf: *mut u32) -> u32;
     pub fn MsiRecordGetStringW(hrecord: MSIHANDLE, ifield: u32, szvaluebuf: ::windows_core_sys::PWSTR, pcchvaluebuf: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiRecordIsNull(hrecord: MSIHANDLE, ifield: u32) -> super::super::Foundation::BOOL;
+    pub fn MsiRecordIsNull(hrecord: MSIHANDLE, ifield: u32) -> ::win32_foundation_sys::BOOL;
     pub fn MsiRecordReadStream(hrecord: MSIHANDLE, ifield: u32, szdatabuf: ::windows_core_sys::PSTR, pcbdatabuf: *mut u32) -> u32;
     pub fn MsiRecordSetInteger(hrecord: MSIHANDLE, ifield: u32, ivalue: i32) -> u32;
     pub fn MsiRecordSetStreamA(hrecord: MSIHANDLE, ifield: u32, szfilepath: ::windows_core_sys::PCSTR) -> u32;
@@ -315,10 +266,8 @@ extern "system" {
     pub fn MsiSetFeatureStateA(hinstall: MSIHANDLE, szfeature: ::windows_core_sys::PCSTR, istate: INSTALLSTATE) -> u32;
     pub fn MsiSetFeatureStateW(hinstall: MSIHANDLE, szfeature: ::windows_core_sys::PCWSTR, istate: INSTALLSTATE) -> u32;
     pub fn MsiSetInstallLevel(hinstall: MSIHANDLE, iinstalllevel: i32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiSetInternalUI(dwuilevel: INSTALLUILEVEL, phwnd: *mut super::super::Foundation::HWND) -> INSTALLUILEVEL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiSetMode(hinstall: MSIHANDLE, erunmode: MSIRUNMODE, fstate: super::super::Foundation::BOOL) -> u32;
+    pub fn MsiSetInternalUI(dwuilevel: INSTALLUILEVEL, phwnd: *mut ::win32_foundation_sys::HWND) -> INSTALLUILEVEL;
+    pub fn MsiSetMode(hinstall: MSIHANDLE, erunmode: MSIRUNMODE, fstate: ::win32_foundation_sys::BOOL) -> u32;
     pub fn MsiSetPropertyA(hinstall: MSIHANDLE, szname: ::windows_core_sys::PCSTR, szvalue: ::windows_core_sys::PCSTR) -> u32;
     pub fn MsiSetPropertyW(hinstall: MSIHANDLE, szname: ::windows_core_sys::PCWSTR, szvalue: ::windows_core_sys::PCWSTR) -> u32;
     pub fn MsiSetTargetPathA(hinstall: MSIHANDLE, szfolder: ::windows_core_sys::PCSTR, szfolderpath: ::windows_core_sys::PCSTR) -> u32;
@@ -349,16 +298,12 @@ extern "system" {
     pub fn MsiSourceListGetInfoW(szproductcodeorpatchcode: ::windows_core_sys::PCWSTR, szusersid: ::windows_core_sys::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szproperty: ::windows_core_sys::PCWSTR, szvalue: ::windows_core_sys::PWSTR, pcchvalue: *mut u32) -> u32;
     pub fn MsiSourceListSetInfoA(szproductcodeorpatchcode: ::windows_core_sys::PCSTR, szusersid: ::windows_core_sys::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szproperty: ::windows_core_sys::PCSTR, szvalue: ::windows_core_sys::PCSTR) -> u32;
     pub fn MsiSourceListSetInfoW(szproductcodeorpatchcode: ::windows_core_sys::PCWSTR, szusersid: ::windows_core_sys::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szproperty: ::windows_core_sys::PCWSTR, szvalue: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiSummaryInfoGetPropertyA(hsummaryinfo: MSIHANDLE, uiproperty: u32, puidatatype: *mut u32, pivalue: *mut i32, pftvalue: *mut super::super::Foundation::FILETIME, szvaluebuf: ::windows_core_sys::PSTR, pcchvaluebuf: *mut u32) -> u32;
+    pub fn MsiSummaryInfoGetPropertyA(hsummaryinfo: MSIHANDLE, uiproperty: u32, puidatatype: *mut u32, pivalue: *mut i32, pftvalue: *mut ::win32_foundation_sys::FILETIME, szvaluebuf: ::windows_core_sys::PSTR, pcchvaluebuf: *mut u32) -> u32;
     pub fn MsiSummaryInfoGetPropertyCount(hsummaryinfo: MSIHANDLE, puipropertycount: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiSummaryInfoGetPropertyW(hsummaryinfo: MSIHANDLE, uiproperty: u32, puidatatype: *mut u32, pivalue: *mut i32, pftvalue: *mut super::super::Foundation::FILETIME, szvaluebuf: ::windows_core_sys::PWSTR, pcchvaluebuf: *mut u32) -> u32;
+    pub fn MsiSummaryInfoGetPropertyW(hsummaryinfo: MSIHANDLE, uiproperty: u32, puidatatype: *mut u32, pivalue: *mut i32, pftvalue: *mut ::win32_foundation_sys::FILETIME, szvaluebuf: ::windows_core_sys::PWSTR, pcchvaluebuf: *mut u32) -> u32;
     pub fn MsiSummaryInfoPersist(hsummaryinfo: MSIHANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiSummaryInfoSetPropertyA(hsummaryinfo: MSIHANDLE, uiproperty: u32, uidatatype: u32, ivalue: i32, pftvalue: *mut super::super::Foundation::FILETIME, szvalue: ::windows_core_sys::PCSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MsiSummaryInfoSetPropertyW(hsummaryinfo: MSIHANDLE, uiproperty: u32, uidatatype: u32, ivalue: i32, pftvalue: *mut super::super::Foundation::FILETIME, szvalue: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn MsiSummaryInfoSetPropertyA(hsummaryinfo: MSIHANDLE, uiproperty: u32, uidatatype: u32, ivalue: i32, pftvalue: *mut ::win32_foundation_sys::FILETIME, szvalue: ::windows_core_sys::PCSTR) -> u32;
+    pub fn MsiSummaryInfoSetPropertyW(hsummaryinfo: MSIHANDLE, uiproperty: u32, uidatatype: u32, ivalue: i32, pftvalue: *mut ::win32_foundation_sys::FILETIME, szvalue: ::windows_core_sys::PCWSTR) -> u32;
     pub fn MsiUseFeatureA(szproduct: ::windows_core_sys::PCSTR, szfeature: ::windows_core_sys::PCSTR) -> INSTALLSTATE;
     pub fn MsiUseFeatureExA(szproduct: ::windows_core_sys::PCSTR, szfeature: ::windows_core_sys::PCSTR, dwinstallmode: u32, dwreserved: u32) -> INSTALLSTATE;
     pub fn MsiUseFeatureExW(szproduct: ::windows_core_sys::PCWSTR, szfeature: ::windows_core_sys::PCWSTR, dwinstallmode: u32, dwreserved: u32) -> INSTALLSTATE;
@@ -373,35 +318,22 @@ extern "system" {
     pub fn MsiViewGetErrorA(hview: MSIHANDLE, szcolumnnamebuffer: ::windows_core_sys::PSTR, pcchbuf: *mut u32) -> MSIDBERROR;
     pub fn MsiViewGetErrorW(hview: MSIHANDLE, szcolumnnamebuffer: ::windows_core_sys::PWSTR, pcchbuf: *mut u32) -> MSIDBERROR;
     pub fn MsiViewModify(hview: MSIHANDLE, emodifymode: MSIMODIFY, hrecord: MSIHANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn NormalizeFileForPatchSignature(filebuffer: *mut ::core::ffi::c_void, filesize: u32, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, newfilecoffbase: u32, newfilecofftime: u32, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryActCtxSettingsW(dwflags: u32, hactctx: super::super::Foundation::HANDLE, settingsnamespace: ::windows_core_sys::PCWSTR, settingname: ::windows_core_sys::PCWSTR, pvbuffer: ::windows_core_sys::PWSTR, dwbuffer: usize, pdwwrittenorrequired: *mut usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryActCtxW(dwflags: u32, hactctx: super::super::Foundation::HANDLE, pvsubinstance: *const ::core::ffi::c_void, ulinfoclass: u32, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: usize, pcbwrittenorrequired: *mut usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReleaseActCtx(hactctx: super::super::Foundation::HANDLE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SfcGetNextProtectedFile(rpchandle: super::super::Foundation::HANDLE, protfiledata: *mut PROTECTED_FILE_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SfcIsFileProtected(rpchandle: super::super::Foundation::HANDLE, protfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SfcIsKeyProtected(keyhandle: super::Registry::HKEY, subkeyname: ::windows_core_sys::PCWSTR, keysam: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SfpVerifyFile(pszfilename: ::windows_core_sys::PCSTR, pszerror: ::windows_core_sys::PCSTR, dwerrsize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TestApplyPatchToFileA(patchfilename: ::windows_core_sys::PCSTR, oldfilename: ::windows_core_sys::PCSTR, applyoptionflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TestApplyPatchToFileByBuffers(patchfilebuffer: *const u8, patchfilesize: u32, oldfilebuffer: *const u8, oldfilesize: u32, newfilesize: *mut u32, applyoptionflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TestApplyPatchToFileByHandles(patchfilehandle: super::super::Foundation::HANDLE, oldfilehandle: super::super::Foundation::HANDLE, applyoptionflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TestApplyPatchToFileW(patchfilename: ::windows_core_sys::PCWSTR, oldfilename: ::windows_core_sys::PCWSTR, applyoptionflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ZombifyActCtx(hactctx: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+    pub fn QueryActCtxSettingsW(dwflags: u32, hactctx: ::win32_foundation_sys::HANDLE, settingsnamespace: ::windows_core_sys::PCWSTR, settingname: ::windows_core_sys::PCWSTR, pvbuffer: ::windows_core_sys::PWSTR, dwbuffer: usize, pdwwrittenorrequired: *mut usize) -> ::win32_foundation_sys::BOOL;
+    pub fn QueryActCtxW(dwflags: u32, hactctx: ::win32_foundation_sys::HANDLE, pvsubinstance: *const ::core::ffi::c_void, ulinfoclass: u32, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: usize, pcbwrittenorrequired: *mut usize) -> ::win32_foundation_sys::BOOL;
+    pub fn ReleaseActCtx(hactctx: ::win32_foundation_sys::HANDLE);
+    pub fn SfcGetNextProtectedFile(rpchandle: ::win32_foundation_sys::HANDLE, protfiledata: *mut PROTECTED_FILE_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SfcIsFileProtected(rpchandle: ::win32_foundation_sys::HANDLE, protfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SfcIsKeyProtected(keyhandle: super::Registry::HKEY, subkeyname: ::windows_core_sys::PCWSTR, keysam: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SfpVerifyFile(pszfilename: ::windows_core_sys::PCSTR, pszerror: ::windows_core_sys::PCSTR, dwerrsize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn TestApplyPatchToFileA(patchfilename: ::windows_core_sys::PCSTR, oldfilename: ::windows_core_sys::PCSTR, applyoptionflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn TestApplyPatchToFileByBuffers(patchfilebuffer: *const u8, patchfilesize: u32, oldfilebuffer: *const u8, oldfilesize: u32, newfilesize: *mut u32, applyoptionflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn TestApplyPatchToFileByHandles(patchfilehandle: ::win32_foundation_sys::HANDLE, oldfilehandle: ::win32_foundation_sys::HANDLE, applyoptionflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn TestApplyPatchToFileW(patchfilename: ::windows_core_sys::PCWSTR, oldfilename: ::windows_core_sys::PCWSTR, applyoptionflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn ZombifyActCtx(hactctx: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACTCTXA {
     pub cbSize: u32,
     pub dwFlags: u32,
@@ -411,18 +343,15 @@ pub struct ACTCTXA {
     pub lpAssemblyDirectory: ::windows_core_sys::PCSTR,
     pub lpResourceName: ::windows_core_sys::PCSTR,
     pub lpApplicationName: ::windows_core_sys::PCSTR,
-    pub hModule: super::super::Foundation::HINSTANCE,
+    pub hModule: ::win32_foundation_sys::HINSTANCE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACTCTXA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACTCTXA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACTCTXW {
     pub cbSize: u32,
     pub dwFlags: u32,
@@ -432,11 +361,9 @@ pub struct ACTCTXW {
     pub lpAssemblyDirectory: ::windows_core_sys::PCWSTR,
     pub lpResourceName: ::windows_core_sys::PCWSTR,
     pub lpApplicationName: ::windows_core_sys::PCWSTR,
-    pub hModule: super::super::Foundation::HINSTANCE,
+    pub hModule: ::win32_foundation_sys::HINSTANCE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACTCTXW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACTCTXW {
     fn clone(&self) -> Self {
         *self
@@ -454,7 +381,7 @@ pub const ACTCTX_RUN_LEVEL_HIGHEST_AVAILABLE: ACTCTX_REQUESTED_RUN_LEVEL = 2i32;
 pub const ACTCTX_RUN_LEVEL_REQUIRE_ADMIN: ACTCTX_REQUESTED_RUN_LEVEL = 3i32;
 pub const ACTCTX_RUN_LEVEL_NUMBERS: ACTCTX_REQUESTED_RUN_LEVEL = 4i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
+#[cfg(feature = "Win32_System_WindowsProgramming")]
 pub struct ACTCTX_SECTION_KEYED_DATA {
     pub cbSize: u32,
     pub ulDataFormatVersion: u32,
@@ -464,14 +391,14 @@ pub struct ACTCTX_SECTION_KEYED_DATA {
     pub ulSectionGlobalDataLength: u32,
     pub lpSectionBase: *mut ::core::ffi::c_void,
     pub ulSectionTotalLength: u32,
-    pub hActCtx: super::super::Foundation::HANDLE,
+    pub hActCtx: ::win32_foundation_sys::HANDLE,
     pub ulAssemblyRosterIndex: u32,
     pub ulFlags: u32,
     pub AssemblyMetadata: super::WindowsProgramming::ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
+#[cfg(feature = "Win32_System_WindowsProgramming")]
 impl ::core::marker::Copy for ACTCTX_SECTION_KEYED_DATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
+#[cfg(feature = "Win32_System_WindowsProgramming")]
 impl ::core::clone::Clone for ACTCTX_SECTION_KEYED_DATA {
     fn clone(&self) -> Self {
         *self
@@ -677,48 +604,39 @@ impl ::core::clone::Clone for DELTA_HASH {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DELTA_HEADER_INFO {
     pub FileTypeSet: i64,
     pub FileType: i64,
     pub Flags: i64,
     pub TargetSize: usize,
-    pub TargetFileTime: super::super::Foundation::FILETIME,
+    pub TargetFileTime: ::win32_foundation_sys::FILETIME,
     pub TargetHashAlgId: u32,
     pub TargetHash: DELTA_HASH,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DELTA_HEADER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DELTA_HEADER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DELTA_INPUT {
     pub Anonymous: DELTA_INPUT_0,
     pub uSize: usize,
-    pub Editable: super::super::Foundation::BOOL,
+    pub Editable: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DELTA_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DELTA_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DELTA_INPUT_0 {
     pub lpcStart: *const ::core::ffi::c_void,
     pub lpStart: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DELTA_INPUT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DELTA_INPUT_0 {
     fn clone(&self) -> Self {
         *self
@@ -1374,10 +1292,8 @@ pub const LOGTOKEN_SETUPAPI_DEVLOG: u32 = 3u32;
 pub const LOGTOKEN_TYPE_MASK: u32 = 3u32;
 pub const LOGTOKEN_UNSPECIFIED: u32 = 0u32;
 pub const LOGWARN: u32 = 2u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDISPLAYVAL = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, uitype: RESULTTYPES, szwval: ::windows_core_sys::PCWSTR, szwdescription: ::windows_core_sys::PCWSTR, szwlocation: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPEVALCOMCALLBACK = ::core::option::Option<unsafe extern "system" fn(istatus: STATUSTYPES, szdata: ::windows_core_sys::PCWSTR, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type LPDISPLAYVAL = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, uitype: RESULTTYPES, szwval: ::windows_core_sys::PCWSTR, szwdescription: ::windows_core_sys::PCWSTR, szwlocation: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+pub type LPEVALCOMCALLBACK = ::core::option::Option<unsafe extern "system" fn(istatus: STATUSTYPES, szdata: ::windows_core_sys::PCWSTR, pcontext: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 pub const MAX_FEATURE_CHARS: u32 = 38u32;
 pub const MAX_GUID_CHARS: u32 = 38u32;
 pub type MSIADVERTISEOPTIONFLAGS = i32;
@@ -1615,7 +1531,6 @@ impl ::core::clone::Clone for PATCH_INTERLEAVE_MAP_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PATCH_OLD_FILE_INFO {
     pub SizeOfThisStruct: u32,
     pub Anonymous: PATCH_OLD_FILE_INFO_0,
@@ -1624,24 +1539,19 @@ pub struct PATCH_OLD_FILE_INFO {
     pub RetainRangeCount: u32,
     pub RetainRangeArray: *mut PATCH_RETAIN_RANGE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PATCH_OLD_FILE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PATCH_OLD_FILE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PATCH_OLD_FILE_INFO_0 {
     pub OldFileNameA: ::windows_core_sys::PCSTR,
     pub OldFileNameW: ::windows_core_sys::PCWSTR,
-    pub OldFileHandle: super::super::Foundation::HANDLE,
+    pub OldFileHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PATCH_OLD_FILE_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PATCH_OLD_FILE_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -1663,18 +1573,15 @@ impl ::core::clone::Clone for PATCH_OLD_FILE_INFO_A {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PATCH_OLD_FILE_INFO_H {
     pub SizeOfThisStruct: u32,
-    pub OldFileHandle: super::super::Foundation::HANDLE,
+    pub OldFileHandle: ::win32_foundation_sys::HANDLE,
     pub IgnoreRangeCount: u32,
     pub IgnoreRangeArray: *mut PATCH_IGNORE_RANGE,
     pub RetainRangeCount: u32,
     pub RetainRangeArray: *mut PATCH_RETAIN_RANGE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PATCH_OLD_FILE_INFO_H {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PATCH_OLD_FILE_INFO_H {
     fn clone(&self) -> Self {
         *self
@@ -1696,7 +1603,6 @@ impl ::core::clone::Clone for PATCH_OLD_FILE_INFO_W {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PATCH_OPTION_DATA {
     pub SizeOfThisStruct: u32,
     pub SymbolOptionFlags: u32,
@@ -1708,9 +1614,7 @@ pub struct PATCH_OPTION_DATA {
     pub InterleaveMapArray: *mut *mut PATCH_INTERLEAVE_MAP,
     pub MaxLzxWindowSize: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PATCH_OPTION_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PATCH_OPTION_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1822,28 +1726,22 @@ pub const PM_APP_GENRE_GAMES: PM_APP_GENRE = 0i32;
 pub const PM_APP_GENRE_OTHER: PM_APP_GENRE = 1i32;
 pub const PM_APP_GENRE_INVALID: PM_APP_GENRE = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_BSATASKID {
     pub ProductID: ::windows_core_sys::GUID,
-    pub TaskID: super::super::Foundation::BSTR,
+    pub TaskID: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_BSATASKID {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_BSATASKID {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_BWTASKID {
     pub ProductID: ::windows_core_sys::GUID,
-    pub TaskID: super::super::Foundation::BSTR,
+    pub TaskID: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_BWTASKID {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_BWTASKID {
     fn clone(&self) -> Self {
         *self
@@ -1883,21 +1781,17 @@ pub const PM_ENUM_EXTENSION_FILTER_FILESAVEPICKER_ALL: PM_ENUM_EXTENSION_FILTER 
 pub const PM_ENUM_EXTENSION_FILTER_CACHEDFILEUPDATER_ALL: PM_ENUM_EXTENSION_FILTER = 25i32;
 pub const PM_ENUM_EXTENSION_FILTER_MAX: PM_ENUM_EXTENSION_FILTER = 26i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_ENUM_FILTER {
     pub FilterType: i32,
     pub FilterParameter: PM_ENUM_FILTER_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_ENUM_FILTER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_ENUM_FILTER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PM_ENUM_FILTER_0 {
     pub Dummy: i32,
     pub Genre: PM_APP_GENRE,
@@ -1911,15 +1805,13 @@ pub union PM_ENUM_FILTER_0 {
     pub BSATask: PM_BSATASKID,
     pub BSAProductID: ::windows_core_sys::GUID,
     pub BWTask: PM_BWTASKID,
-    pub ProtocolName: super::super::Foundation::BSTR,
-    pub FileType: super::super::Foundation::BSTR,
-    pub ContentType: super::super::Foundation::BSTR,
+    pub ProtocolName: ::win32_foundation_sys::BSTR,
+    pub FileType: ::win32_foundation_sys::BSTR,
+    pub ContentType: ::win32_foundation_sys::BSTR,
     pub AppSupportedFileExtPID: ::windows_core_sys::GUID,
-    pub ShareTargetFileType: super::super::Foundation::BSTR,
+    pub ShareTargetFileType: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_ENUM_FILTER_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_ENUM_FILTER_0 {
     fn clone(&self) -> Self {
         *self
@@ -1939,49 +1831,40 @@ pub const PM_TILE_FILTER_HUBTYPE: PM_ENUM_TILE_FILTER = 10i32;
 pub const PM_TILE_FILTER_APP_ALL: PM_ENUM_TILE_FILTER = 11i32;
 pub const PM_TILE_FILTER_MAX: PM_ENUM_TILE_FILTER = 12i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_EXTENSIONCONSUMER {
     pub ConsumerPID: ::windows_core_sys::GUID,
-    pub ExtensionID: super::super::Foundation::BSTR,
+    pub ExtensionID: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_EXTENSIONCONSUMER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_EXTENSIONCONSUMER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_INSTALLINFO {
     pub ProductID: ::windows_core_sys::GUID,
-    pub PackagePath: super::super::Foundation::BSTR,
+    pub PackagePath: ::win32_foundation_sys::BSTR,
     pub InstanceID: ::windows_core_sys::GUID,
     pub pbLicense: *mut u8,
     pub cbLicense: u32,
-    pub IsUninstallDisabled: super::super::Foundation::BOOL,
+    pub IsUninstallDisabled: ::win32_foundation_sys::BOOL,
     pub DeploymentOptions: u32,
     pub OfferID: ::windows_core_sys::GUID,
-    pub MarketplaceAppVersion: super::super::Foundation::BSTR,
+    pub MarketplaceAppVersion: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_INSTALLINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_INSTALLINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_INVOCATIONINFO {
-    pub URIBaseOrAUMID: super::super::Foundation::BSTR,
-    pub URIFragmentOrArgs: super::super::Foundation::BSTR,
+    pub URIBaseOrAUMID: ::win32_foundation_sys::BSTR,
+    pub URIFragmentOrArgs: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_INVOCATIONINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_INVOCATIONINFO {
     fn clone(&self) -> Self {
         *self
@@ -1998,48 +1881,42 @@ pub const PM_LOGO_SIZE_MEDIUM: PM_LOGO_SIZE = 1i32;
 pub const PM_LOGO_SIZE_LARGE: PM_LOGO_SIZE = 2i32;
 pub const PM_LOGO_SIZE_INVALID: PM_LOGO_SIZE = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_STARTAPPBLOB {
     pub cbSize: u32,
     pub ProductID: ::windows_core_sys::GUID,
-    pub AppTitle: super::super::Foundation::BSTR,
-    pub IconPath: super::super::Foundation::BSTR,
-    pub IsUninstallable: super::super::Foundation::BOOL,
+    pub AppTitle: ::win32_foundation_sys::BSTR,
+    pub IconPath: ::win32_foundation_sys::BSTR,
+    pub IsUninstallable: ::win32_foundation_sys::BOOL,
     pub AppInstallType: PM_APPLICATION_INSTALL_TYPE,
     pub InstanceID: ::windows_core_sys::GUID,
     pub State: PM_APPLICATION_STATE,
-    pub IsModern: super::super::Foundation::BOOL,
-    pub IsModernLightUp: super::super::Foundation::BOOL,
+    pub IsModern: ::win32_foundation_sys::BOOL,
+    pub IsModernLightUp: ::win32_foundation_sys::BOOL,
     pub LightUpSupportMask: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_STARTAPPBLOB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_STARTAPPBLOB {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_STARTTILEBLOB {
     pub cbSize: u32,
     pub ProductID: ::windows_core_sys::GUID,
-    pub TileID: super::super::Foundation::BSTR,
+    pub TileID: ::win32_foundation_sys::BSTR,
     pub TemplateType: TILE_TEMPLATE_TYPE,
     pub HubPosition: [u32; 32],
     pub HubVisibilityBitmask: u32,
-    pub IsDefault: super::super::Foundation::BOOL,
+    pub IsDefault: ::win32_foundation_sys::BOOL,
     pub TileType: PM_STARTTILE_TYPE,
     pub pbPropBlob: *mut u8,
     pub cbPropBlob: u32,
-    pub IsRestoring: super::super::Foundation::BOOL,
-    pub IsModern: super::super::Foundation::BOOL,
+    pub IsRestoring: ::win32_foundation_sys::BOOL,
+    pub IsModern: ::win32_foundation_sys::BOOL,
     pub InvocationInfo: PM_INVOCATIONINFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_STARTTILEBLOB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_STARTTILEBLOB {
     fn clone(&self) -> Self {
         *self
@@ -2085,46 +1962,38 @@ pub const PM_TILE_SIZE_SQUARE310X310: PM_TILE_SIZE = 3i32;
 pub const PM_TILE_SIZE_TALL150X310: PM_TILE_SIZE = 4i32;
 pub const PM_TILE_SIZE_INVALID: PM_TILE_SIZE = 5i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_UPDATEINFO {
     pub ProductID: ::windows_core_sys::GUID,
-    pub PackagePath: super::super::Foundation::BSTR,
+    pub PackagePath: ::win32_foundation_sys::BSTR,
     pub InstanceID: ::windows_core_sys::GUID,
     pub pbLicense: *mut u8,
     pub cbLicense: u32,
-    pub MarketplaceAppVersion: super::super::Foundation::BSTR,
+    pub MarketplaceAppVersion: ::win32_foundation_sys::BSTR,
     pub DeploymentOptions: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_UPDATEINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_UPDATEINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PM_UPDATEINFO_LEGACY {
     pub ProductID: ::windows_core_sys::GUID,
-    pub PackagePath: super::super::Foundation::BSTR,
+    pub PackagePath: ::win32_foundation_sys::BSTR,
     pub InstanceID: ::windows_core_sys::GUID,
     pub pbLicense: *mut u8,
     pub cbLicense: u32,
-    pub MarketplaceAppVersion: super::super::Foundation::BSTR,
+    pub MarketplaceAppVersion: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PM_UPDATEINFO_LEGACY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PM_UPDATEINFO_LEGACY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type PPATCH_PROGRESS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackcontext: *mut ::core::ffi::c_void, currentposition: u32, maximumposition: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PPATCH_SYMLOAD_CALLBACK = ::core::option::Option<unsafe extern "system" fn(whichfile: u32, symbolfilename: ::windows_core_sys::PCSTR, symtype: u32, symbolfilechecksum: u32, symbolfiletimedate: u32, imagefilechecksum: u32, imagefiletimedate: u32, callbackcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type PPATCH_PROGRESS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackcontext: *mut ::core::ffi::c_void, currentposition: u32, maximumposition: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PPATCH_SYMLOAD_CALLBACK = ::core::option::Option<unsafe extern "system" fn(whichfile: u32, symbolfilename: ::windows_core_sys::PCSTR, symtype: u32, symbolfilechecksum: u32, symbolfiletimedate: u32, imagefilechecksum: u32, imagefiletimedate: u32, callbackcontext: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 #[repr(C)]
 pub struct PROTECTED_FILE_DATA {
     pub FileName: [u16; 260],

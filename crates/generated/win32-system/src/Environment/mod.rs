@@ -1,67 +1,62 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CallEnclave<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lproutine: isize, lpparameter: *const ::core::ffi::c_void, fwaitforthread: Param2, lpreturnvalue: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn CallEnclave<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lproutine: isize, lpparameter: *const ::core::ffi::c_void, fwaitforthread: Param2, lpreturnvalue: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CallEnclave(lproutine: isize, lpparameter: *const ::core::ffi::c_void, fwaitforthread: super::super::Foundation::BOOL, lpreturnvalue: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn CallEnclave(lproutine: isize, lpparameter: *const ::core::ffi::c_void, fwaitforthread: ::win32_foundation::BOOL, lpreturnvalue: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CallEnclave(::core::mem::transmute(lproutine), ::core::mem::transmute(lpparameter), fwaitforthread.into_param().abi(), ::core::mem::transmute(lpreturnvalue)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateEnclave<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpaddress: *const ::core::ffi::c_void, dwsize: usize, dwinitialcommitment: usize, flenclavetype: u32, lpenclaveinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpenclaveerror: *mut u32) -> *mut ::core::ffi::c_void {
+pub unsafe fn CreateEnclave<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0, lpaddress: *const ::core::ffi::c_void, dwsize: usize, dwinitialcommitment: usize, flenclavetype: u32, lpenclaveinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpenclaveerror: *mut u32) -> *mut ::core::ffi::c_void {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateEnclave(hprocess: super::super::Foundation::HANDLE, lpaddress: *const ::core::ffi::c_void, dwsize: usize, dwinitialcommitment: usize, flenclavetype: u32, lpenclaveinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpenclaveerror: *mut u32) -> *mut ::core::ffi::c_void;
+            fn CreateEnclave(hprocess: ::win32_foundation::HANDLE, lpaddress: *const ::core::ffi::c_void, dwsize: usize, dwinitialcommitment: usize, flenclavetype: u32, lpenclaveinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpenclaveerror: *mut u32) -> *mut ::core::ffi::c_void;
         }
         ::core::mem::transmute(CreateEnclave(hprocess.into_param().abi(), ::core::mem::transmute(lpaddress), ::core::mem::transmute(dwsize), ::core::mem::transmute(dwinitialcommitment), ::core::mem::transmute(flenclavetype), ::core::mem::transmute(lpenclaveinformation), ::core::mem::transmute(dwinfolength), ::core::mem::transmute(lpenclaveerror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CreateEnvironmentBlock<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpenvironment: *mut *mut ::core::ffi::c_void, htoken: Param1, binherit: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn CreateEnvironmentBlock<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpenvironment: *mut *mut ::core::ffi::c_void, htoken: Param1, binherit: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateEnvironmentBlock(lpenvironment: *mut *mut ::core::ffi::c_void, htoken: super::super::Foundation::HANDLE, binherit: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn CreateEnvironmentBlock(lpenvironment: *mut *mut ::core::ffi::c_void, htoken: ::win32_foundation::HANDLE, binherit: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CreateEnvironmentBlock(::core::mem::transmute(lpenvironment), htoken.into_param().abi(), binherit.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteEnclave(lpaddress: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn DeleteEnclave(lpaddress: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeleteEnclave(lpaddress: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn DeleteEnclave(lpaddress: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeleteEnclave(::core::mem::transmute(lpaddress)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DestroyEnvironmentBlock(lpenvironment: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn DestroyEnvironmentBlock(lpenvironment: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DestroyEnvironmentBlock(lpenvironment: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn DestroyEnvironmentBlock(lpenvironment: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DestroyEnvironmentBlock(::core::mem::transmute(lpenvironment)))
     }
@@ -281,28 +276,26 @@ pub unsafe fn ExpandEnvironmentStringsA<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ExpandEnvironmentStringsForUserA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(htoken: Param0, lpsrc: Param1, lpdest: &mut [u8]) -> super::super::Foundation::BOOL {
+pub unsafe fn ExpandEnvironmentStringsForUserA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(htoken: Param0, lpsrc: Param1, lpdest: &mut [u8]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ExpandEnvironmentStringsForUserA(htoken: super::super::Foundation::HANDLE, lpsrc: ::windows_core::PCSTR, lpdest: ::windows_core::PSTR, dwsize: u32) -> super::super::Foundation::BOOL;
+            fn ExpandEnvironmentStringsForUserA(htoken: ::win32_foundation::HANDLE, lpsrc: ::windows_core::PCSTR, lpdest: ::windows_core::PSTR, dwsize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ExpandEnvironmentStringsForUserA(htoken.into_param().abi(), lpsrc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpdest)), lpdest.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ExpandEnvironmentStringsForUserW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(htoken: Param0, lpsrc: Param1, lpdest: &mut [u16]) -> super::super::Foundation::BOOL {
+pub unsafe fn ExpandEnvironmentStringsForUserW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(htoken: Param0, lpsrc: Param1, lpdest: &mut [u16]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ExpandEnvironmentStringsForUserW(htoken: super::super::Foundation::HANDLE, lpsrc: ::windows_core::PCWSTR, lpdest: ::windows_core::PWSTR, dwsize: u32) -> super::super::Foundation::BOOL;
+            fn ExpandEnvironmentStringsForUserW(htoken: ::win32_foundation::HANDLE, lpsrc: ::windows_core::PCWSTR, lpdest: ::windows_core::PWSTR, dwsize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ExpandEnvironmentStringsForUserW(htoken.into_param().abi(), lpsrc.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpdest)), lpdest.len() as _))
     }
@@ -322,28 +315,26 @@ pub unsafe fn ExpandEnvironmentStringsW<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FreeEnvironmentStringsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(penv: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn FreeEnvironmentStringsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(penv: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FreeEnvironmentStringsA(penv: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn FreeEnvironmentStringsA(penv: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FreeEnvironmentStringsA(penv.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FreeEnvironmentStringsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(penv: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn FreeEnvironmentStringsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(penv: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FreeEnvironmentStringsW(penv: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn FreeEnvironmentStringsW(penv: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FreeEnvironmentStringsW(penv.into_param().abi()))
     }
@@ -454,182 +445,169 @@ pub unsafe fn GetEnvironmentVariableW<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn InitializeEnclave<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpaddress: *const ::core::ffi::c_void, lpenclaveinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpenclaveerror: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn InitializeEnclave<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0, lpaddress: *const ::core::ffi::c_void, lpenclaveinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpenclaveerror: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn InitializeEnclave(hprocess: super::super::Foundation::HANDLE, lpaddress: *const ::core::ffi::c_void, lpenclaveinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpenclaveerror: *mut u32) -> super::super::Foundation::BOOL;
+            fn InitializeEnclave(hprocess: ::win32_foundation::HANDLE, lpaddress: *const ::core::ffi::c_void, lpenclaveinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpenclaveerror: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(InitializeEnclave(hprocess.into_param().abi(), ::core::mem::transmute(lpaddress), ::core::mem::transmute(lpenclaveinformation), ::core::mem::transmute(dwinfolength), ::core::mem::transmute(lpenclaveerror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsEnclaveTypeSupported(flenclavetype: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn IsEnclaveTypeSupported(flenclavetype: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsEnclaveTypeSupported(flenclavetype: u32) -> super::super::Foundation::BOOL;
+            fn IsEnclaveTypeSupported(flenclavetype: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsEnclaveTypeSupported(::core::mem::transmute(flenclavetype)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadEnclaveData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, lpaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, flprotect: u32, lppageinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpnumberofbyteswritten: *mut usize, lpenclaveerror: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn LoadEnclaveData<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0, lpaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, flprotect: u32, lppageinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpnumberofbyteswritten: *mut usize, lpenclaveerror: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadEnclaveData(hprocess: super::super::Foundation::HANDLE, lpaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, flprotect: u32, lppageinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpnumberofbyteswritten: *mut usize, lpenclaveerror: *mut u32) -> super::super::Foundation::BOOL;
+            fn LoadEnclaveData(hprocess: ::win32_foundation::HANDLE, lpaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, flprotect: u32, lppageinformation: *const ::core::ffi::c_void, dwinfolength: u32, lpnumberofbyteswritten: *mut usize, lpenclaveerror: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(LoadEnclaveData(hprocess.into_param().abi(), ::core::mem::transmute(lpaddress), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nsize), ::core::mem::transmute(flprotect), ::core::mem::transmute(lppageinformation), ::core::mem::transmute(dwinfolength), ::core::mem::transmute(lpnumberofbyteswritten), ::core::mem::transmute(lpenclaveerror)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadEnclaveImageA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn LoadEnclaveImageA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadEnclaveImageA(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn LoadEnclaveImageA(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(LoadEnclaveImageA(::core::mem::transmute(lpenclaveaddress), lpimagename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadEnclaveImageW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn LoadEnclaveImageW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadEnclaveImageW(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn LoadEnclaveImageW(lpenclaveaddress: *const ::core::ffi::c_void, lpimagename: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(LoadEnclaveImageW(::core::mem::transmute(lpenclaveaddress), lpimagename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NeedCurrentDirectoryForExePathA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(exename: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn NeedCurrentDirectoryForExePathA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(exename: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NeedCurrentDirectoryForExePathA(exename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn NeedCurrentDirectoryForExePathA(exename: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(NeedCurrentDirectoryForExePathA(exename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NeedCurrentDirectoryForExePathW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(exename: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn NeedCurrentDirectoryForExePathW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(exename: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NeedCurrentDirectoryForExePathW(exename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn NeedCurrentDirectoryForExePathW(exename: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(NeedCurrentDirectoryForExePathW(exename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCurrentDirectoryA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lppathname: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCurrentDirectoryA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lppathname: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCurrentDirectoryA(lppathname: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetCurrentDirectoryA(lppathname: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetCurrentDirectoryA(lppathname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCurrentDirectoryW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lppathname: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCurrentDirectoryW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lppathname: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCurrentDirectoryW(lppathname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetCurrentDirectoryW(lppathname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetCurrentDirectoryW(lppathname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetEnvironmentStringsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(newenvironment: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetEnvironmentStringsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(newenvironment: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetEnvironmentStringsW(newenvironment: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetEnvironmentStringsW(newenvironment: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetEnvironmentStringsW(newenvironment.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetEnvironmentVariableA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpname: Param0, lpvalue: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetEnvironmentVariableA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpname: Param0, lpvalue: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetEnvironmentVariableA(lpname: ::windows_core::PCSTR, lpvalue: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn SetEnvironmentVariableA(lpname: ::windows_core::PCSTR, lpvalue: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetEnvironmentVariableA(lpname.into_param().abi(), lpvalue.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetEnvironmentVariableW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpname: Param0, lpvalue: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn SetEnvironmentVariableW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpname: Param0, lpvalue: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetEnvironmentVariableW(lpname: ::windows_core::PCWSTR, lpvalue: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn SetEnvironmentVariableW(lpname: ::windows_core::PCWSTR, lpvalue: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetEnvironmentVariableW(lpname.into_param().abi(), lpvalue.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TerminateEnclave<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpaddress: *const ::core::ffi::c_void, fwait: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn TerminateEnclave<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpaddress: *const ::core::ffi::c_void, fwait: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TerminateEnclave(lpaddress: *const ::core::ffi::c_void, fwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn TerminateEnclave(lpaddress: *const ::core::ffi::c_void, fwait: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(TerminateEnclave(::core::mem::transmute(lpaddress), fwait.into_param().abi()))
     }

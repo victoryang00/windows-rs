@@ -1,33 +1,20 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcClose(object: isize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcDeleteSubscription(subscriptionname: ::windows_core_sys::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcEnumNextSubscription(subscriptionenum: isize, subscriptionnamebuffersize: u32, subscriptionnamebuffer: ::windows_core_sys::PWSTR, subscriptionnamebufferused: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcGetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcGetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcGetSubscriptionRunTimeStatus(subscriptionname: ::windows_core_sys::PCWSTR, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: ::windows_core_sys::PCWSTR, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcInsertObjectArrayElement(objectarray: isize, arrayindex: u32) -> super::super::Foundation::BOOL;
+    pub fn EcClose(object: isize) -> ::win32_foundation_sys::BOOL;
+    pub fn EcDeleteSubscription(subscriptionname: ::windows_core_sys::PCWSTR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EcEnumNextSubscription(subscriptionenum: isize, subscriptionnamebuffersize: u32, subscriptionnamebuffer: ::windows_core_sys::PWSTR, subscriptionnamebufferused: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EcGetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EcGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EcGetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EcGetSubscriptionRunTimeStatus(subscriptionname: ::windows_core_sys::PCWSTR, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: ::windows_core_sys::PCWSTR, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EcInsertObjectArrayElement(objectarray: isize, arrayindex: u32) -> ::win32_foundation_sys::BOOL;
     pub fn EcOpenSubscription(subscriptionname: ::windows_core_sys::PCWSTR, accessmask: u32, flags: u32) -> isize;
     pub fn EcOpenSubscriptionEnum(flags: u32) -> isize;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcRemoveObjectArrayElement(objectarray: isize, arrayindex: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcRetrySubscription(subscriptionname: ::windows_core_sys::PCWSTR, eventsourcename: ::windows_core_sys::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcSaveSubscription(subscription: isize, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcSetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvalue: *mut EC_VARIANT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EcSetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvalue: *mut EC_VARIANT) -> super::super::Foundation::BOOL;
+    pub fn EcRemoveObjectArrayElement(objectarray: isize, arrayindex: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EcRetrySubscription(subscriptionname: ::windows_core_sys::PCWSTR, eventsourcename: ::windows_core_sys::PCWSTR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EcSaveSubscription(subscription: isize, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EcSetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvalue: *mut EC_VARIANT) -> ::win32_foundation_sys::BOOL;
+    pub fn EcSetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvalue: *mut EC_VARIANT) -> ::win32_foundation_sys::BOOL;
 }
 pub const EC_CREATE_NEW: u32 = 1u32;
 pub const EC_OPEN_ALWAYS: u32 = 0u32;
@@ -102,36 +89,30 @@ pub type EC_SUBSCRIPTION_TYPE = i32;
 pub const EcSubscriptionTypeSourceInitiated: EC_SUBSCRIPTION_TYPE = 0i32;
 pub const EcSubscriptionTypeCollectorInitiated: EC_SUBSCRIPTION_TYPE = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EC_VARIANT {
     pub Anonymous: EC_VARIANT_0,
     pub Count: u32,
     pub Type: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EC_VARIANT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EC_VARIANT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union EC_VARIANT_0 {
-    pub BooleanVal: super::super::Foundation::BOOL,
+    pub BooleanVal: ::win32_foundation_sys::BOOL,
     pub UInt32Val: u32,
     pub DateTimeVal: u64,
     pub StringVal: ::windows_core_sys::PCWSTR,
     pub BinaryVal: *mut u8,
-    pub BooleanArr: *mut super::super::Foundation::BOOL,
+    pub BooleanArr: *mut ::win32_foundation_sys::BOOL,
     pub Int32Arr: *mut i32,
     pub StringArr: *mut ::windows_core_sys::PWSTR,
     pub PropertyHandleVal: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EC_VARIANT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EC_VARIANT_0 {
     fn clone(&self) -> Self {
         *self

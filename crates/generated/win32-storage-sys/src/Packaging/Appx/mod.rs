@@ -2,119 +2,67 @@
 extern "system" {
     pub fn ActivatePackageVirtualizationContext(context: *const PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__, cookie: *mut usize) -> ::windows_core_sys::HRESULT;
     pub fn AddPackageDependency(packagedependencyid: ::windows_core_sys::PCWSTR, rank: i32, options: AddPackageDependencyOptions, packagedependencycontext: *mut *mut PACKAGEDEPENDENCY_CONTEXT__, packagefullname: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AppPolicyGetClrCompat(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyClrCompat) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AppPolicyGetCreateFileAccess(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyCreateFileAccess) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AppPolicyGetLifecycleManagement(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyLifecycleManagement) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AppPolicyGetMediaFoundationCodecLoading(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyMediaFoundationCodecLoading) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AppPolicyGetProcessTerminationMethod(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyProcessTerminationMethod) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AppPolicyGetShowDeveloperDiagnostic(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyShowDeveloperDiagnostic) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AppPolicyGetThreadInitializationType(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyThreadInitializationType) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AppPolicyGetWindowingModel(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyWindowingModel) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CheckIsMSIXPackage(packagefullname: ::windows_core_sys::PCWSTR, ismsixpackage: *mut super::super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClosePackageInfo(packageinforeference: *const _PACKAGE_INFO_REFERENCE) -> super::super::super::Foundation::WIN32_ERROR;
+    pub fn AppPolicyGetClrCompat(processtoken: ::win32_foundation_sys::HANDLE, policy: *mut AppPolicyClrCompat) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn AppPolicyGetCreateFileAccess(processtoken: ::win32_foundation_sys::HANDLE, policy: *mut AppPolicyCreateFileAccess) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn AppPolicyGetLifecycleManagement(processtoken: ::win32_foundation_sys::HANDLE, policy: *mut AppPolicyLifecycleManagement) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn AppPolicyGetMediaFoundationCodecLoading(processtoken: ::win32_foundation_sys::HANDLE, policy: *mut AppPolicyMediaFoundationCodecLoading) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn AppPolicyGetProcessTerminationMethod(processtoken: ::win32_foundation_sys::HANDLE, policy: *mut AppPolicyProcessTerminationMethod) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn AppPolicyGetShowDeveloperDiagnostic(processtoken: ::win32_foundation_sys::HANDLE, policy: *mut AppPolicyShowDeveloperDiagnostic) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn AppPolicyGetThreadInitializationType(processtoken: ::win32_foundation_sys::HANDLE, policy: *mut AppPolicyThreadInitializationType) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn AppPolicyGetWindowingModel(processtoken: ::win32_foundation_sys::HANDLE, policy: *mut AppPolicyWindowingModel) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn CheckIsMSIXPackage(packagefullname: ::windows_core_sys::PCWSTR, ismsixpackage: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn ClosePackageInfo(packageinforeference: *const _PACKAGE_INFO_REFERENCE) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn CreatePackageVirtualizationContext(packagefamilyname: ::windows_core_sys::PCWSTR, context: *mut *mut PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__) -> ::windows_core_sys::HRESULT;
     pub fn DeactivatePackageVirtualizationContext(cookie: usize);
     pub fn DeletePackageDependency(packagedependencyid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn DuplicatePackageVirtualizationContext(sourcecontext: *const PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__, destcontext: *mut *mut PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindPackagesByPackageFamily(packagefamilyname: ::windows_core_sys::PCWSTR, packagefilters: u32, count: *mut u32, packagefullnames: *mut ::windows_core_sys::PWSTR, bufferlength: *mut u32, buffer: ::windows_core_sys::PWSTR, packageproperties: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FormatApplicationUserModelId(packagefamilyname: ::windows_core_sys::PCWSTR, packagerelativeapplicationid: ::windows_core_sys::PCWSTR, applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetApplicationUserModelId(hprocess: super::super::super::Foundation::HANDLE, applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetApplicationUserModelIdFromToken(token: super::super::super::Foundation::HANDLE, applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentApplicationUserModelId(applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentPackageFamilyName(packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentPackageFullName(packagefullnamelength: *mut u32, packagefullname: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentPackageId(bufferlength: *mut u32, buffer: *mut u8) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentPackageInfo(flags: u32, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentPackageInfo2(flags: u32, packagepathtype: PackagePathType, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentPackagePath(pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentPackagePath2(packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
+    pub fn FindPackagesByPackageFamily(packagefamilyname: ::windows_core_sys::PCWSTR, packagefilters: u32, count: *mut u32, packagefullnames: *mut ::windows_core_sys::PWSTR, bufferlength: *mut u32, buffer: ::windows_core_sys::PWSTR, packageproperties: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn FormatApplicationUserModelId(packagefamilyname: ::windows_core_sys::PCWSTR, packagerelativeapplicationid: ::windows_core_sys::PCWSTR, applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetApplicationUserModelId(hprocess: ::win32_foundation_sys::HANDLE, applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetApplicationUserModelIdFromToken(token: ::win32_foundation_sys::HANDLE, applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetCurrentApplicationUserModelId(applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetCurrentPackageFamilyName(packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetCurrentPackageFullName(packagefullnamelength: *mut u32, packagefullname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetCurrentPackageId(bufferlength: *mut u32, buffer: *mut u8) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetCurrentPackageInfo(flags: u32, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetCurrentPackageInfo2(flags: u32, packagepathtype: PackagePathType, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetCurrentPackagePath(pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetCurrentPackagePath2(packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn GetCurrentPackageVirtualizationContext() -> *mut PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__;
     pub fn GetIdForPackageDependencyContext(packagedependencycontext: *const PACKAGEDEPENDENCY_CONTEXT__, packagedependencyid: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackageApplicationIds(packageinforeference: *const _PACKAGE_INFO_REFERENCE, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackageFamilyName(hprocess: super::super::super::Foundation::HANDLE, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackageFamilyNameFromToken(token: super::super::super::Foundation::HANDLE, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackageFullName(hprocess: super::super::super::Foundation::HANDLE, packagefullnamelength: *mut u32, packagefullname: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackageFullNameFromToken(token: super::super::super::Foundation::HANDLE, packagefullnamelength: *mut u32, packagefullname: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackageId(hprocess: super::super::super::Foundation::HANDLE, bufferlength: *mut u32, buffer: *mut u8) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackageInfo(packageinforeference: *const _PACKAGE_INFO_REFERENCE, flags: u32, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackageInfo2(packageinforeference: *const _PACKAGE_INFO_REFERENCE, flags: u32, packagepathtype: PackagePathType, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackagePath(packageid: *const PACKAGE_ID, reserved: u32, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackagePathByFullName(packagefullname: ::windows_core_sys::PCWSTR, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackagePathByFullName2(packagefullname: ::windows_core_sys::PCWSTR, packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPackagesByPackageFamily(packagefamilyname: ::windows_core_sys::PCWSTR, count: *mut u32, packagefullnames: *mut ::windows_core_sys::PWSTR, bufferlength: *mut u32, buffer: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetProcessesInVirtualizationContext(packagefamilyname: ::windows_core_sys::PCWSTR, count: *mut u32, processes: *mut *mut super::super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn GetPackageApplicationIds(packageinforeference: *const _PACKAGE_INFO_REFERENCE, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackageFamilyName(hprocess: ::win32_foundation_sys::HANDLE, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackageFamilyNameFromToken(token: ::win32_foundation_sys::HANDLE, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackageFullName(hprocess: ::win32_foundation_sys::HANDLE, packagefullnamelength: *mut u32, packagefullname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackageFullNameFromToken(token: ::win32_foundation_sys::HANDLE, packagefullnamelength: *mut u32, packagefullname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackageId(hprocess: ::win32_foundation_sys::HANDLE, bufferlength: *mut u32, buffer: *mut u8) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackageInfo(packageinforeference: *const _PACKAGE_INFO_REFERENCE, flags: u32, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackageInfo2(packageinforeference: *const _PACKAGE_INFO_REFERENCE, flags: u32, packagepathtype: PackagePathType, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackagePath(packageid: *const PACKAGE_ID, reserved: u32, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackagePathByFullName(packagefullname: ::windows_core_sys::PCWSTR, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackagePathByFullName2(packagefullname: ::windows_core_sys::PCWSTR, packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetPackagesByPackageFamily(packagefamilyname: ::windows_core_sys::PCWSTR, count: *mut u32, packagefullnames: *mut ::windows_core_sys::PWSTR, bufferlength: *mut u32, buffer: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetProcessesInVirtualizationContext(packagefamilyname: ::windows_core_sys::PCWSTR, count: *mut u32, processes: *mut *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn GetResolvedPackageFullNameForPackageDependency(packagedependencyid: ::windows_core_sys::PCWSTR, packagefullname: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetStagedPackageOrigin(packagefullname: ::windows_core_sys::PCWSTR, origin: *mut PackageOrigin) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetStagedPackagePathByFullName(packagefullname: ::windows_core_sys::PCWSTR, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetStagedPackagePathByFullName2(packagefullname: ::windows_core_sys::PCWSTR, packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenPackageInfoByFullName(packagefullname: ::windows_core_sys::PCWSTR, reserved: u32, packageinforeference: *mut *mut _PACKAGE_INFO_REFERENCE) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenPackageInfoByFullNameForUser(usersid: super::super::super::Foundation::PSID, packagefullname: ::windows_core_sys::PCWSTR, reserved: u32, packageinforeference: *mut *mut _PACKAGE_INFO_REFERENCE) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PackageFamilyNameFromFullName(packagefullname: ::windows_core_sys::PCWSTR, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PackageFamilyNameFromId(packageid: *const PACKAGE_ID, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PackageFullNameFromId(packageid: *const PACKAGE_ID, packagefullnamelength: *mut u32, packagefullname: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PackageIdFromFullName(packagefullname: ::windows_core_sys::PCWSTR, flags: u32, bufferlength: *mut u32, buffer: *mut u8) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PackageNameAndPublisherIdFromFamilyName(packagefamilyname: ::windows_core_sys::PCWSTR, packagenamelength: *mut u32, packagename: ::windows_core_sys::PWSTR, packagepublisheridlength: *mut u32, packagepublisherid: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ParseApplicationUserModelId(applicationusermodelid: ::windows_core_sys::PCWSTR, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR, packagerelativeapplicationidlength: *mut u32, packagerelativeapplicationid: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
+    pub fn GetStagedPackageOrigin(packagefullname: ::windows_core_sys::PCWSTR, origin: *mut PackageOrigin) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetStagedPackagePathByFullName(packagefullname: ::windows_core_sys::PCWSTR, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn GetStagedPackagePathByFullName2(packagefullname: ::windows_core_sys::PCWSTR, packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn OpenPackageInfoByFullName(packagefullname: ::windows_core_sys::PCWSTR, reserved: u32, packageinforeference: *mut *mut _PACKAGE_INFO_REFERENCE) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn OpenPackageInfoByFullNameForUser(usersid: ::win32_foundation_sys::PSID, packagefullname: ::windows_core_sys::PCWSTR, reserved: u32, packageinforeference: *mut *mut _PACKAGE_INFO_REFERENCE) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn PackageFamilyNameFromFullName(packagefullname: ::windows_core_sys::PCWSTR, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn PackageFamilyNameFromId(packageid: *const PACKAGE_ID, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn PackageFullNameFromId(packageid: *const PACKAGE_ID, packagefullnamelength: *mut u32, packagefullname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn PackageIdFromFullName(packagefullname: ::windows_core_sys::PCWSTR, flags: u32, bufferlength: *mut u32, buffer: *mut u8) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn PackageNameAndPublisherIdFromFamilyName(packagefamilyname: ::windows_core_sys::PCWSTR, packagenamelength: *mut u32, packagename: ::windows_core_sys::PWSTR, packagepublisheridlength: *mut u32, packagepublisherid: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn ParseApplicationUserModelId(applicationusermodelid: ::windows_core_sys::PCWSTR, packagefamilynamelength: *mut u32, packagefamilyname: ::windows_core_sys::PWSTR, packagerelativeapplicationidlength: *mut u32, packagerelativeapplicationid: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn ReleasePackageVirtualizationContext(context: *const PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__);
     pub fn RemovePackageDependency(packagedependencycontext: *const PACKAGEDEPENDENCY_CONTEXT__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TryCreatePackageDependency(user: super::super::super::Foundation::PSID, packagefamilyname: ::windows_core_sys::PCWSTR, minversion: PACKAGE_VERSION, packagedependencyprocessorarchitectures: PackageDependencyProcessorArchitectures, lifetimekind: PackageDependencyLifetimeKind, lifetimeartifact: ::windows_core_sys::PCWSTR, options: CreatePackageDependencyOptions, packagedependencyid: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn VerifyApplicationUserModelId(applicationusermodelid: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn VerifyPackageFamilyName(packagefamilyname: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn VerifyPackageFullName(packagefullname: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn VerifyPackageId(packageid: *const PACKAGE_ID) -> super::super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn VerifyPackageRelativeApplicationId(packagerelativeapplicationid: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::WIN32_ERROR;
+    pub fn TryCreatePackageDependency(user: ::win32_foundation_sys::PSID, packagefamilyname: ::windows_core_sys::PCWSTR, minversion: PACKAGE_VERSION, packagedependencyprocessorarchitectures: PackageDependencyProcessorArchitectures, lifetimekind: PackageDependencyLifetimeKind, lifetimeartifact: ::windows_core_sys::PCWSTR, options: CreatePackageDependencyOptions, packagedependencyid: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn VerifyApplicationUserModelId(applicationusermodelid: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn VerifyPackageFamilyName(packagefamilyname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn VerifyPackageFullName(packagefullname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn VerifyPackageId(packageid: *const PACKAGE_ID) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn VerifyPackageRelativeApplicationId(packagerelativeapplicationid: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
 }
 pub type APPX_BUNDLE_FOOTPRINT_FILE_TYPE = i32;
 pub const APPX_BUNDLE_FOOTPRINT_FILE_TYPE_FIRST: APPX_BUNDLE_FOOTPRINT_FILE_TYPE = 0i32;
@@ -167,16 +115,16 @@ pub const APPX_ENCRYPTED_PACKAGE_OPTION_NONE: APPX_ENCRYPTED_PACKAGE_OPTIONS = 0
 pub const APPX_ENCRYPTED_PACKAGE_OPTION_DIFFUSION: APPX_ENCRYPTED_PACKAGE_OPTIONS = 1u32;
 pub const APPX_ENCRYPTED_PACKAGE_OPTION_PAGE_HASHING: APPX_ENCRYPTED_PACKAGE_OPTIONS = 2u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 pub struct APPX_ENCRYPTED_PACKAGE_SETTINGS {
     pub keyLength: u32,
     pub encryptionAlgorithm: ::windows_core_sys::PCWSTR,
-    pub useDiffusion: super::super::super::Foundation::BOOL,
-    pub blockMapHashAlgorithm: super::super::super::System::Com::IUri,
+    pub useDiffusion: ::win32_foundation_sys::BOOL,
+    pub blockMapHashAlgorithm: ::win32_system_sys::Com::IUri,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 impl ::core::marker::Copy for APPX_ENCRYPTED_PACKAGE_SETTINGS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 impl ::core::clone::Clone for APPX_ENCRYPTED_PACKAGE_SETTINGS {
     fn clone(&self) -> Self {
         *self
@@ -187,7 +135,7 @@ impl ::core::clone::Clone for APPX_ENCRYPTED_PACKAGE_SETTINGS {
 pub struct APPX_ENCRYPTED_PACKAGE_SETTINGS2 {
     pub keyLength: u32,
     pub encryptionAlgorithm: ::windows_core_sys::PCWSTR,
-    pub blockMapHashAlgorithm: super::super::super::System::Com::IUri,
+    pub blockMapHashAlgorithm: ::win32_system_sys::Com::IUri,
     pub options: u32,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -238,14 +186,14 @@ pub const APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTION_LOCALIZED: APPX_PAC
 pub type APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION = i32;
 pub const APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA: APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION = 0i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 pub struct APPX_PACKAGE_SETTINGS {
-    pub forceZip32: super::super::super::Foundation::BOOL,
-    pub hashMethod: super::super::super::System::Com::IUri,
+    pub forceZip32: ::win32_foundation_sys::BOOL,
+    pub hashMethod: ::win32_system_sys::Com::IUri,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 impl ::core::marker::Copy for APPX_PACKAGE_SETTINGS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 impl ::core::clone::Clone for APPX_PACKAGE_SETTINGS {
     fn clone(&self) -> Self {
         *self
@@ -254,7 +202,7 @@ impl ::core::clone::Clone for APPX_PACKAGE_SETTINGS {
 #[repr(C)]
 #[cfg(feature = "Win32_System_Com")]
 pub struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM {
-    pub inputStream: super::super::super::System::Com::IStream,
+    pub inputStream: ::win32_system_sys::Com::IStream,
     pub fileName: ::windows_core_sys::PCWSTR,
     pub contentType: ::windows_core_sys::PCWSTR,
     pub compressionOption: APPX_COMPRESSION_OPTION,

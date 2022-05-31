@@ -11,7 +11,7 @@ pub unsafe fn AddPointerInteractionContext<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn BufferPointerPacketsInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerinfo: &[super::Input::Pointer::POINTER_INFO]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -248,7 +248,7 @@ pub unsafe fn GetPropertyInteractionContext<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn GetStateInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows_core::Result<INTERACTION_STATE> {
     #[cfg(windows)]
@@ -1000,7 +1000,7 @@ pub unsafe fn ProcessInertiaInteractionContext<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn ProcessPointerFramesInteractionContext<'a, Param0: ::windows_core::IntoParam<'a, HINTERACTIONCONTEXT>>(interactioncontext: Param0, entriescount: u32, pointercount: u32, pointerinfo: *const super::Input::Pointer::POINTER_INFO) -> ::windows_core::Result<()> {
     #[cfg(windows)]

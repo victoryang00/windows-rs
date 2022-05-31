@@ -228,16 +228,13 @@ impl ::core::clone::Clone for VDS_DISK_NOTIFICATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VDS_DRIVE_EXTENT {
     pub id: ::windows_core_sys::GUID,
     pub LunId: ::windows_core_sys::GUID,
     pub ullSize: u64,
-    pub bUsed: super::super::Foundation::BOOL,
+    pub bUsed: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VDS_DRIVE_EXTENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VDS_DRIVE_EXTENT {
     fn clone(&self) -> Self {
         *self
@@ -748,7 +745,6 @@ pub const VDS_H_REPLACED: VDS_HEALTH = 9i32;
 pub const VDS_H_PENDING_FAILURE: VDS_HEALTH = 10i32;
 pub const VDS_H_DEGRADED: VDS_HEALTH = 11i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VDS_HINTS {
     pub ullHintMask: u64,
     pub ullExpectedMaximumSize: u64,
@@ -758,27 +754,24 @@ pub struct VDS_HINTS {
     pub ulOptimalWriteAlignment: u32,
     pub ulMaximumDriveCount: u32,
     pub ulStripeSize: u32,
-    pub bFastCrashRecoveryRequired: super::super::Foundation::BOOL,
-    pub bMostlyReads: super::super::Foundation::BOOL,
-    pub bOptimizeForSequentialReads: super::super::Foundation::BOOL,
-    pub bOptimizeForSequentialWrites: super::super::Foundation::BOOL,
-    pub bRemapEnabled: super::super::Foundation::BOOL,
-    pub bReadBackVerifyEnabled: super::super::Foundation::BOOL,
-    pub bWriteThroughCachingEnabled: super::super::Foundation::BOOL,
-    pub bHardwareChecksumEnabled: super::super::Foundation::BOOL,
-    pub bIsYankable: super::super::Foundation::BOOL,
+    pub bFastCrashRecoveryRequired: ::win32_foundation_sys::BOOL,
+    pub bMostlyReads: ::win32_foundation_sys::BOOL,
+    pub bOptimizeForSequentialReads: ::win32_foundation_sys::BOOL,
+    pub bOptimizeForSequentialWrites: ::win32_foundation_sys::BOOL,
+    pub bRemapEnabled: ::win32_foundation_sys::BOOL,
+    pub bReadBackVerifyEnabled: ::win32_foundation_sys::BOOL,
+    pub bWriteThroughCachingEnabled: ::win32_foundation_sys::BOOL,
+    pub bHardwareChecksumEnabled: ::win32_foundation_sys::BOOL,
+    pub bIsYankable: ::win32_foundation_sys::BOOL,
     pub sRebuildPriority: i16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VDS_HINTS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VDS_HINTS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VDS_HINTS2 {
     pub ullHintMask: u64,
     pub ullExpectedMaximumSize: u64,
@@ -791,30 +784,28 @@ pub struct VDS_HINTS2 {
     pub ulReserved1: u32,
     pub ulReserved2: u32,
     pub ulReserved3: u32,
-    pub bFastCrashRecoveryRequired: super::super::Foundation::BOOL,
-    pub bMostlyReads: super::super::Foundation::BOOL,
-    pub bOptimizeForSequentialReads: super::super::Foundation::BOOL,
-    pub bOptimizeForSequentialWrites: super::super::Foundation::BOOL,
-    pub bRemapEnabled: super::super::Foundation::BOOL,
-    pub bReadBackVerifyEnabled: super::super::Foundation::BOOL,
-    pub bWriteThroughCachingEnabled: super::super::Foundation::BOOL,
-    pub bHardwareChecksumEnabled: super::super::Foundation::BOOL,
-    pub bIsYankable: super::super::Foundation::BOOL,
-    pub bAllocateHotSpare: super::super::Foundation::BOOL,
-    pub bUseMirroredCache: super::super::Foundation::BOOL,
-    pub bReadCachingEnabled: super::super::Foundation::BOOL,
-    pub bWriteCachingEnabled: super::super::Foundation::BOOL,
-    pub bMediaScanEnabled: super::super::Foundation::BOOL,
-    pub bConsistencyCheckEnabled: super::super::Foundation::BOOL,
+    pub bFastCrashRecoveryRequired: ::win32_foundation_sys::BOOL,
+    pub bMostlyReads: ::win32_foundation_sys::BOOL,
+    pub bOptimizeForSequentialReads: ::win32_foundation_sys::BOOL,
+    pub bOptimizeForSequentialWrites: ::win32_foundation_sys::BOOL,
+    pub bRemapEnabled: ::win32_foundation_sys::BOOL,
+    pub bReadBackVerifyEnabled: ::win32_foundation_sys::BOOL,
+    pub bWriteThroughCachingEnabled: ::win32_foundation_sys::BOOL,
+    pub bHardwareChecksumEnabled: ::win32_foundation_sys::BOOL,
+    pub bIsYankable: ::win32_foundation_sys::BOOL,
+    pub bAllocateHotSpare: ::win32_foundation_sys::BOOL,
+    pub bUseMirroredCache: ::win32_foundation_sys::BOOL,
+    pub bReadCachingEnabled: ::win32_foundation_sys::BOOL,
+    pub bWriteCachingEnabled: ::win32_foundation_sys::BOOL,
+    pub bMediaScanEnabled: ::win32_foundation_sys::BOOL,
+    pub bConsistencyCheckEnabled: ::win32_foundation_sys::BOOL,
     pub BusType: VDS_STORAGE_BUS_TYPE,
-    pub bReserved1: super::super::Foundation::BOOL,
-    pub bReserved2: super::super::Foundation::BOOL,
-    pub bReserved3: super::super::Foundation::BOOL,
+    pub bReserved1: ::win32_foundation_sys::BOOL,
+    pub bReserved2: ::win32_foundation_sys::BOOL,
+    pub bReserved3: ::win32_foundation_sys::BOOL,
     pub sRebuildPriority: i16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VDS_HINTS2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VDS_HINTS2 {
     fn clone(&self) -> Self {
         *self
@@ -984,16 +975,13 @@ impl ::core::clone::Clone for VDS_ISCSI_SHARED_SECRET {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VDS_ISCSI_TARGET_PROP {
     pub id: ::windows_core_sys::GUID,
     pub pwszIscsiName: ::windows_core_sys::PWSTR,
     pub pwszFriendlyName: ::windows_core_sys::PWSTR,
-    pub bChapEnabled: super::super::Foundation::BOOL,
+    pub bChapEnabled: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VDS_ISCSI_TARGET_PROP {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VDS_ISCSI_TARGET_PROP {
     fn clone(&self) -> Self {
         *self
@@ -1019,12 +1007,11 @@ pub const VDS_LF_MEDIA_SCAN_ENABLED: VDS_LUN_FLAG = 64i32;
 pub const VDS_LF_CONSISTENCY_CHECK_ENABLED: VDS_LUN_FLAG = 128i32;
 pub const VDS_LF_SNAPSHOT: VDS_LUN_FLAG = 256i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VDS_LUN_INFORMATION {
     pub m_version: u32,
     pub m_DeviceType: u8,
     pub m_DeviceTypeModifier: u8,
-    pub m_bCommandQueueing: super::super::Foundation::BOOL,
+    pub m_bCommandQueueing: ::win32_foundation_sys::BOOL,
     pub m_BusType: VDS_STORAGE_BUS_TYPE,
     pub m_szVendorId: *mut u8,
     pub m_szProductId: *mut u8,
@@ -1035,9 +1022,7 @@ pub struct VDS_LUN_INFORMATION {
     pub m_cInterconnects: u32,
     pub m_rgInterconnects: *mut VDS_INTERCONNECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VDS_LUN_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VDS_LUN_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -1383,15 +1368,12 @@ impl ::core::clone::Clone for VDS_PATH_INFO_2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VDS_PATH_POLICY {
     pub pathId: VDS_PATH_ID,
-    pub bPrimaryPath: super::super::Foundation::BOOL,
+    pub bPrimaryPath: ::win32_foundation_sys::BOOL,
     pub ulWeight: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VDS_PATH_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VDS_PATH_POLICY {
     fn clone(&self) -> Self {
         *self
@@ -1403,16 +1385,15 @@ pub const VDS_MPS_ONLINE: VDS_PATH_STATUS = 1i32;
 pub const VDS_MPS_FAILED: VDS_PATH_STATUS = 5i32;
 pub const VDS_MPS_STANDBY: VDS_PATH_STATUS = 7i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VDS_POOL_ATTRIBUTES {
     pub ullAttributeMask: u64,
     pub raidType: VDS_RAID_TYPE,
     pub busType: VDS_STORAGE_BUS_TYPE,
     pub pwszIntendedUsage: ::windows_core_sys::PWSTR,
-    pub bSpinDown: super::super::Foundation::BOOL,
-    pub bIsThinProvisioned: super::super::Foundation::BOOL,
+    pub bSpinDown: ::win32_foundation_sys::BOOL,
+    pub bIsThinProvisioned: ::win32_foundation_sys::BOOL,
     pub ullProvisionedSpace: u64,
-    pub bNoSinglePointOfFailure: super::super::Foundation::BOOL,
+    pub bNoSinglePointOfFailure: ::win32_foundation_sys::BOOL,
     pub ulDataRedundancyMax: u32,
     pub ulDataRedundancyMin: u32,
     pub ulDataRedundancyDefault: u32,
@@ -1437,16 +1418,14 @@ pub struct VDS_POOL_ATTRIBUTES {
     pub ulStorageEfficiencyHint: u32,
     pub ulNumOfCustomAttributes: u32,
     pub pPoolCustomAttributes: *mut VDS_POOL_CUSTOM_ATTRIBUTES,
-    pub bReserved1: super::super::Foundation::BOOL,
-    pub bReserved2: super::super::Foundation::BOOL,
+    pub bReserved1: ::win32_foundation_sys::BOOL,
+    pub bReserved2: ::win32_foundation_sys::BOOL,
     pub ulReserved1: u32,
     pub ulReserved2: u32,
     pub ullReserved1: u64,
     pub ullReserved2: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VDS_POOL_ATTRIBUTES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VDS_POOL_ATTRIBUTES {
     fn clone(&self) -> Self {
         *self
@@ -1687,15 +1666,12 @@ pub const VDSStorageIdTypeLogicalUnitGroup: VDS_STORAGE_IDENTIFIER_TYPE = 6i32;
 pub const VDSStorageIdTypeMD5LogicalUnitIdentifier: VDS_STORAGE_IDENTIFIER_TYPE = 7i32;
 pub const VDSStorageIdTypeScsiNameString: VDS_STORAGE_IDENTIFIER_TYPE = 8i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VDS_STORAGE_POOL_DRIVE_EXTENT {
     pub id: ::windows_core_sys::GUID,
     pub ullSize: u64,
-    pub bUsed: super::super::Foundation::BOOL,
+    pub bUsed: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VDS_STORAGE_POOL_DRIVE_EXTENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VDS_STORAGE_POOL_DRIVE_EXTENT {
     fn clone(&self) -> Self {
         *self

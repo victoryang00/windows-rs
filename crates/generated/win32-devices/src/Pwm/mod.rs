@@ -198,37 +198,29 @@ impl ::core::default::Default for PWM_PIN_GET_POLARITY_OUTPUT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PWM_PIN_IS_STARTED_OUTPUT {
-    pub IsStarted: super::super::Foundation::BOOLEAN,
+    pub IsStarted: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PWM_PIN_IS_STARTED_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PWM_PIN_IS_STARTED_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PWM_PIN_IS_STARTED_OUTPUT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PWM_PIN_IS_STARTED_OUTPUT").field("IsStarted", &self.IsStarted).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PWM_PIN_IS_STARTED_OUTPUT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PWM_PIN_IS_STARTED_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PWM_PIN_IS_STARTED_OUTPUT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PWM_PIN_IS_STARTED_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PWM_PIN_IS_STARTED_OUTPUT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

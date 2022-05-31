@@ -9,10 +9,7 @@ unsafe impl ::windows_core::Interface for IWebAccountClientView {
 #[doc(hidden)]
 pub struct IWebAccountClientView_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ApplicationCallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ApplicationCallbackUri: usize,
     pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut WebAccountClientViewType) -> ::windows_core::HRESULT,
     pub AccountPairwiseId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -27,14 +24,8 @@ unsafe impl ::windows_core::Interface for IWebAccountClientViewFactory {
 #[doc(hidden)]
 pub struct IWebAccountClientViewFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, viewtype: WebAccountClientViewType, applicationcallbackuri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Create: usize,
-    #[cfg(feature = "Foundation")]
     pub CreateWithPairwiseId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, viewtype: WebAccountClientViewType, applicationcallbackuri: ::windows_core::RawPtr, accountpairwiseid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateWithPairwiseId: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -55,9 +46,9 @@ pub struct IWebAccountManagerStatics_Vtbl {
     pub AddWebAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, props: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
     AddWebAccountAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub DeleteWebAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     DeleteWebAccountAsync: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
     pub FindAllProviderWebAccountsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -67,25 +58,25 @@ pub struct IWebAccountManagerStatics_Vtbl {
     pub PushCookiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, cookies: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Web_Http")))]
     PushCookiesAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub SetViewAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, view: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     SetViewAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub ClearViewAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, applicationcallbackuri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     ClearViewAsync: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
     pub GetViewsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
     GetViewsAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials", feature = "Storage_Streams"))]
+    #[cfg(all(feature = "Security_Credentials", feature = "Storage_Streams"))]
     pub SetWebAccountPictureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, webaccountpicture: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials", feature = "Storage_Streams")))]
+    #[cfg(not(all(feature = "Security_Credentials", feature = "Storage_Streams")))]
     SetWebAccountPictureAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub ClearWebAccountPictureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     ClearWebAccountPictureAsync: usize,
 }
 #[doc(hidden)]
@@ -99,10 +90,7 @@ unsafe impl ::windows_core::Interface for IWebAccountManagerStatics2 {
 #[doc(hidden)]
 pub struct IWebAccountManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub PullCookiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uristring: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, callerpfn: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PullCookiesAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -143,13 +131,10 @@ unsafe impl ::windows_core::Interface for IWebAccountManagerStatics4 {
 #[doc(hidden)]
 pub struct IWebAccountManagerStatics4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub InvalidateAppCacheForAllAccountsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InvalidateAppCacheForAllAccountsAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub InvalidateAppCacheForAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     InvalidateAppCacheForAccountAsync: usize,
 }
 #[doc(hidden)]
@@ -167,17 +152,17 @@ pub struct IWebAccountMapManagerStatics_Vtbl {
     pub AddWebAccountWithScopeAndMapAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, props: ::windows_core::RawPtr, scope: WebAccountScope, peruserwebaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
     AddWebAccountWithScopeAndMapAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub SetPerAppToPerUserAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, perappaccount: ::windows_core::RawPtr, peruserwebaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     SetPerAppToPerUserAccountAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub GetPerUserFromPerAppAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, perappaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     GetPerUserFromPerAppAccountAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub ClearPerUserFromPerAppAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, perappaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     ClearPerUserFromPerAppAccountAsync: usize,
 }
 #[doc(hidden)]
@@ -411,26 +396,14 @@ unsafe impl ::windows_core::Interface for IWebAccountProviderRetrieveCookiesOper
 #[doc(hidden)]
 pub struct IWebAccountProviderRetrieveCookiesOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub Context: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Context: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "Web_Http"))]
     pub Cookies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Web_Http")))]
     Cookies: usize,
-    #[cfg(feature = "Foundation")]
     pub SetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetUri: usize,
-    #[cfg(feature = "Foundation")]
     pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Uri: usize,
-    #[cfg(feature = "Foundation")]
     pub ApplicationCallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ApplicationCallbackUri: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -447,10 +420,7 @@ pub struct IWebAccountProviderSignOutAccountOperation_Vtbl {
     pub WebAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Security_Credentials"))]
     WebAccount: usize,
-    #[cfg(feature = "Foundation")]
     pub ApplicationCallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ApplicationCallbackUri: usize,
     pub ClientId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -662,11 +632,11 @@ pub struct IWebAccountProviderTokenObjects_Vtbl {
 pub struct IWebAccountProviderTokenObjects2(::windows_core::IUnknown);
 impl IWebAccountProviderTokenObjects2 {
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn Operation(&self) -> ::windows_core::Result<IWebAccountProviderOperation> {
@@ -786,24 +756,22 @@ impl IWebAccountProviderTokenOperation {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ProviderResponses(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<WebProviderTokenResponse>> {
+    pub fn ProviderResponses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebProviderTokenResponse>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProviderResponses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<WebProviderTokenResponse>>(result__)
+            (::windows_core::Interface::vtable(this).ProviderResponses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<WebProviderTokenResponse>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetCacheExpirationTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCacheExpirationTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCacheExpirationTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CacheExpirationTime(&self) -> ::windows_core::Result<super::super::super::super::Foundation::DateTime> {
+    pub fn CacheExpirationTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).CacheExpirationTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).CacheExpirationTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<WebAccountProviderOperationKind> {
@@ -912,14 +880,8 @@ pub struct IWebAccountProviderTokenOperation_Vtbl {
     pub ProviderResponses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ProviderResponses: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetCacheExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetCacheExpirationTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub CacheExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CacheExpirationTime: usize,
+    pub SetCacheExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub CacheExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWebAccountProviderUIReportOperation(::windows_core::IUnknown);
@@ -1048,9 +1010,9 @@ pub struct IWebAccountScopeManagerStatics_Vtbl {
     pub AddWebAccountWithScopeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, webaccountusername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, props: ::windows_core::RawPtr, scope: WebAccountScope, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
     AddWebAccountWithScopeAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub SetScopeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, scope: WebAccountScope, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     SetScopeAsync: usize,
     #[cfg(feature = "Security_Credentials")]
     pub GetScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut WebAccountScope) -> ::windows_core::HRESULT,
@@ -1077,13 +1039,10 @@ pub struct IWebProviderTokenRequest_Vtbl {
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Security_Credentials")))]
     WebAccounts: usize,
     pub WebAccountSelectionOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut WebAccountSelectionOptions) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ApplicationCallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ApplicationCallbackUri: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Cryptography_Core"))]
+    #[cfg(feature = "Security_Cryptography_Core")]
     pub GetApplicationTokenBindingKeyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, keytype: super::TokenBindingKeyType, target: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Cryptography_Core")))]
+    #[cfg(not(feature = "Security_Cryptography_Core"))]
     GetApplicationTokenBindingKeyAsync: usize,
 }
 #[doc(hidden)]
@@ -1097,9 +1056,9 @@ unsafe impl ::windows_core::Interface for IWebProviderTokenRequest2 {
 #[doc(hidden)]
 pub struct IWebProviderTokenRequest2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub GetApplicationTokenBindingKeyIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, keytype: super::TokenBindingKeyType, target: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     GetApplicationTokenBindingKeyIdAsync: usize,
 }
 #[doc(hidden)]
@@ -1115,10 +1074,7 @@ pub struct IWebProviderTokenRequest3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ApplicationPackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ApplicationProcessName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub CheckApplicationForCapabilityAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, capabilityname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CheckApplicationForCapabilityAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1155,12 +1111,11 @@ pub struct IWebProviderTokenResponseFactory_Vtbl {
 #[repr(transparent)]
 pub struct WebAccountClientView(::windows_core::IUnknown);
 impl WebAccountClientView {
-    #[cfg(feature = "Foundation")]
-    pub fn ApplicationCallbackUri(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Uri> {
+    pub fn ApplicationCallbackUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn Type(&self) -> ::windows_core::Result<WebAccountClientViewType> {
@@ -1177,15 +1132,13 @@ impl WebAccountClientView {
             (::windows_core::Interface::vtable(this).AccountPairwiseId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Create<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Uri>>(viewtype: WebAccountClientViewType, applicationcallbackuri: Param1) -> ::windows_core::Result<WebAccountClientView> {
+    pub fn Create<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(viewtype: WebAccountClientViewType, applicationcallbackuri: Param1) -> ::windows_core::Result<WebAccountClientView> {
         Self::IWebAccountClientViewFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), viewtype, applicationcallbackuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<WebAccountClientView>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateWithPairwiseId<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(viewtype: WebAccountClientViewType, applicationcallbackuri: Param1, accountpairwiseid: Param2) -> ::windows_core::Result<WebAccountClientView> {
+    pub fn CreateWithPairwiseId<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(viewtype: WebAccountClientViewType, applicationcallbackuri: Param1, accountpairwiseid: Param2) -> ::windows_core::Result<WebAccountClientView> {
         Self::IWebAccountClientViewFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithPairwiseId)(::windows_core::Interface::as_raw(this), viewtype, applicationcallbackuri.into_param().abi(), accountpairwiseid.into_param().abi(), result__.as_mut_ptr()).from_abi::<WebAccountClientView>(result__)
@@ -1304,164 +1257,162 @@ unsafe impl ::windows_core::RuntimeType for WebAccountClientViewType {
 pub struct WebAccountManager;
 impl WebAccountManager {
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
-    pub fn UpdateWebAccountPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(webaccount: Param0, webaccountusername: Param1, additionalproperties: Param2) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    pub fn UpdateWebAccountPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(webaccount: Param0, webaccountusername: Param1, additionalproperties: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdateWebAccountPropertiesAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), webaccountusername.into_param().abi(), additionalproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).UpdateWebAccountPropertiesAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), webaccountusername.into_param().abi(), additionalproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
-    pub fn AddWebAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(webaccountid: Param0, webaccountusername: Param1, props: Param2) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
+    pub fn AddWebAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(webaccountid: Param0, webaccountusername: Param1, props: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddWebAccountAsync)(::windows_core::Interface::as_raw(this), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
+            (::windows_core::Interface::vtable(this).AddWebAccountAsync)(::windows_core::Interface::as_raw(this), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn DeleteWebAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn DeleteWebAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteWebAccountAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).DeleteWebAccountAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
-    pub fn FindAllProviderWebAccountsAsync() -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>> {
+    pub fn FindAllProviderWebAccountsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllProviderWebAccountsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllProviderWebAccountsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Web_Http"))]
-    pub fn PushCookiesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Web::Http::HttpCookie>>>(uri: Param0, cookies: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    pub fn PushCookiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::winrt_web::Http::HttpCookie>>>(uri: Param0, cookies: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PushCookiesAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), cookies.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).PushCookiesAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), cookies.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn SetViewAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, WebAccountClientView>>(webaccount: Param0, view: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn SetViewAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, WebAccountClientView>>(webaccount: Param0, view: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetViewAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), view.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetViewAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), view.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn ClearViewAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Uri>>(webaccount: Param0, applicationcallbackuri: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn ClearViewAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(webaccount: Param0, applicationcallbackuri: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ClearViewAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), applicationcallbackuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ClearViewAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), applicationcallbackuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
-    pub fn GetViewsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Foundation::Collections::IVectorView<WebAccountClientView>>> {
+    pub fn GetViewsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<WebAccountClientView>>> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetViewsAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Foundation::Collections::IVectorView<WebAccountClientView>>>(result__)
+            (::windows_core::Interface::vtable(this).GetViewsAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<WebAccountClientView>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials", feature = "Storage_Streams"))]
-    pub fn SetWebAccountPictureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IRandomAccessStream>>(webaccount: Param0, webaccountpicture: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(all(feature = "Security_Credentials", feature = "Storage_Streams"))]
+    pub fn SetWebAccountPictureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(webaccount: Param0, webaccountpicture: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetWebAccountPictureAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), webaccountpicture.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetWebAccountPictureAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), webaccountpicture.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn ClearWebAccountPictureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn ClearWebAccountPictureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ClearWebAccountPictureAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ClearWebAccountPictureAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PullCookiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(uristring: Param0, callerpfn: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    pub fn PullCookiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(uristring: Param0, callerpfn: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PullCookiesAsync)(::windows_core::Interface::as_raw(this), uristring.into_param().abi(), callerpfn.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).PullCookiesAsync)(::windows_core::Interface::as_raw(this), uristring.into_param().abi(), callerpfn.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
-    pub fn FindAllProviderWebAccountsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::System::User>>(user: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>> {
+    pub fn FindAllProviderWebAccountsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>> {
         Self::IWebAccountManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllProviderWebAccountsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllProviderWebAccountsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
-    pub fn AddWebAccountForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::System::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(user: Param0, webaccountid: Param1, webaccountusername: Param2, props: Param3) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
+    pub fn AddWebAccountForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(user: Param0, webaccountid: Param1, webaccountusername: Param2, props: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddWebAccountForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
+            (::windows_core::Interface::vtable(this).AddWebAccountForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
-    pub fn AddWebAccountWithScopeForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::System::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(user: Param0, webaccountid: Param1, webaccountusername: Param2, props: Param3, scope: WebAccountScope) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
+    pub fn AddWebAccountWithScopeForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(user: Param0, webaccountid: Param1, webaccountusername: Param2, props: Param3, scope: WebAccountScope) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddWebAccountWithScopeForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
+            (::windows_core::Interface::vtable(this).AddWebAccountWithScopeForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials", feature = "System"))]
-    pub fn AddWebAccountWithScopeAndMapForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::System::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, webaccountid: Param1, webaccountusername: Param2, props: Param3, scope: WebAccountScope, peruserwebaccountid: Param5) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
+    pub fn AddWebAccountWithScopeAndMapForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, webaccountid: Param1, webaccountusername: Param2, props: Param3, scope: WebAccountScope, peruserwebaccountid: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddWebAccountWithScopeAndMapForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, peruserwebaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
+            (::windows_core::Interface::vtable(this).AddWebAccountWithScopeAndMapForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, peruserwebaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InvalidateAppCacheForAllAccountsAsync() -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    pub fn InvalidateAppCacheForAllAccountsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InvalidateAppCacheForAllAccountsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).InvalidateAppCacheForAllAccountsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn InvalidateAppCacheForAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn InvalidateAppCacheForAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountManagerStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InvalidateAppCacheForAccountAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).InvalidateAppCacheForAccountAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
-    pub fn AddWebAccountWithScopeAndMapAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(webaccountid: Param0, webaccountusername: Param1, props: Param2, scope: WebAccountScope, peruserwebaccountid: Param4) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
+    pub fn AddWebAccountWithScopeAndMapAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(webaccountid: Param0, webaccountusername: Param1, props: Param2, scope: WebAccountScope, peruserwebaccountid: Param4) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountMapManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddWebAccountWithScopeAndMapAsync)(::windows_core::Interface::as_raw(this), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, peruserwebaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
+            (::windows_core::Interface::vtable(this).AddWebAccountWithScopeAndMapAsync)(::windows_core::Interface::as_raw(this), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, peruserwebaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn SetPerAppToPerUserAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(perappaccount: Param0, peruserwebaccountid: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn SetPerAppToPerUserAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(perappaccount: Param0, peruserwebaccountid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountMapManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetPerAppToPerUserAccountAsync)(::windows_core::Interface::as_raw(this), perappaccount.into_param().abi(), peruserwebaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetPerAppToPerUserAccountAsync)(::windows_core::Interface::as_raw(this), perappaccount.into_param().abi(), peruserwebaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn GetPerUserFromPerAppAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(perappaccount: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn GetPerUserFromPerAppAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(perappaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountMapManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPerUserFromPerAppAccountAsync)(::windows_core::Interface::as_raw(this), perappaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
+            (::windows_core::Interface::vtable(this).GetPerUserFromPerAppAccountAsync)(::windows_core::Interface::as_raw(this), perappaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn ClearPerUserFromPerAppAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(perappaccount: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn ClearPerUserFromPerAppAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(perappaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountMapManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ClearPerUserFromPerAppAccountAsync)(::windows_core::Interface::as_raw(this), perappaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ClearPerUserFromPerAppAccountAsync)(::windows_core::Interface::as_raw(this), perappaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
-    pub fn AddWebAccountWithScopeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(webaccountid: Param0, webaccountusername: Param1, props: Param2, scope: WebAccountScope) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
+    pub fn AddWebAccountWithScopeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(webaccountid: Param0, webaccountusername: Param1, props: Param2, scope: WebAccountScope) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>> {
         Self::IWebAccountScopeManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddWebAccountWithScopeAsync)(::windows_core::Interface::as_raw(this), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
+            (::windows_core::Interface::vtable(this).AddWebAccountWithScopeAsync)(::windows_core::Interface::as_raw(this), webaccountid.into_param().abi(), webaccountusername.into_param().abi(), props.into_param().abi(), scope, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Credentials::WebAccount>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn SetScopeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0, scope: WebAccountScope) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn SetScopeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Credentials::WebAccount>>(webaccount: Param0, scope: WebAccountScope) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IWebAccountScopeManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetScopeAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), scope, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetScopeAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), scope, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(feature = "Security_Credentials")]
@@ -1788,24 +1739,22 @@ impl WebAccountProviderGetTokenSilentOperation {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ProviderResponses(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<WebProviderTokenResponse>> {
+    pub fn ProviderResponses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebProviderTokenResponse>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProviderResponses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<WebProviderTokenResponse>>(result__)
+            (::windows_core::Interface::vtable(this).ProviderResponses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<WebProviderTokenResponse>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetCacheExpirationTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCacheExpirationTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCacheExpirationTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CacheExpirationTime(&self) -> ::windows_core::Result<super::super::super::super::Foundation::DateTime> {
+    pub fn CacheExpirationTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).CacheExpirationTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).CacheExpirationTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
 }
@@ -2151,24 +2100,22 @@ impl WebAccountProviderRequestTokenOperation {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ProviderResponses(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<WebProviderTokenResponse>> {
+    pub fn ProviderResponses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebProviderTokenResponse>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProviderResponses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<WebProviderTokenResponse>>(result__)
+            (::windows_core::Interface::vtable(this).ProviderResponses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<WebProviderTokenResponse>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetCacheExpirationTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCacheExpirationTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCacheExpirationTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CacheExpirationTime(&self) -> ::windows_core::Result<super::super::super::super::Foundation::DateTime> {
+    pub fn CacheExpirationTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).CacheExpirationTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).CacheExpirationTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn ReportUserCanceled(&self) -> ::windows_core::Result<()> {
@@ -2355,41 +2302,37 @@ impl WebAccountProviderRetrieveCookiesOperation {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WebAccountProviderOperationKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Context(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Uri> {
+    pub fn Context(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Context)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).Context)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Web_Http"))]
-    pub fn Cookies(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<super::super::super::super::Web::Http::HttpCookie>> {
+    pub fn Cookies(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_web::Http::HttpCookie>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Cookies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<super::super::super::super::Web::Http::HttpCookie>>(result__)
+            (::windows_core::Interface::vtable(this).Cookies)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_web::Http::HttpCookie>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<()> {
+    pub fn SetUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetUri)(::windows_core::Interface::as_raw(this), uri.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Uri(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Uri> {
+    pub fn Uri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ApplicationCallbackUri(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Uri> {
+    pub fn ApplicationCallbackUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
 }
@@ -2536,12 +2479,11 @@ impl WebAccountProviderSignOutAccountOperation {
             (::windows_core::Interface::vtable(this).WebAccount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Credentials::WebAccount>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ApplicationCallbackUri(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Uri> {
+    pub fn ApplicationCallbackUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn ClientId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2679,11 +2621,11 @@ impl WebAccountProviderTriggerDetails {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IWebAccountProviderTokenObjects2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
 }
@@ -2909,11 +2851,11 @@ impl WebProviderTokenRequest {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Credentials"))]
-    pub fn WebAccounts(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>> {
+    pub fn WebAccounts(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebAccounts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>(result__)
+            (::windows_core::Interface::vtable(this).WebAccounts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::super::super::Credentials::WebAccount>>(result__)
         }
     }
     pub fn WebAccountSelectionOptions(&self) -> ::windows_core::Result<WebAccountSelectionOptions> {
@@ -2923,28 +2865,27 @@ impl WebProviderTokenRequest {
             (::windows_core::Interface::vtable(this).WebAccountSelectionOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WebAccountSelectionOptions>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ApplicationCallbackUri(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Uri> {
+    pub fn ApplicationCallbackUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Cryptography_Core"))]
-    pub fn GetApplicationTokenBindingKeyAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Uri>>(&self, keytype: super::TokenBindingKeyType, target: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Cryptography::Core::CryptographicKey>> {
+    #[cfg(feature = "Security_Cryptography_Core")]
+    pub fn GetApplicationTokenBindingKeyAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, keytype: super::TokenBindingKeyType, target: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::super::Cryptography::Core::CryptographicKey>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetApplicationTokenBindingKeyAsync)(::windows_core::Interface::as_raw(this), keytype, target.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::Cryptography::Core::CryptographicKey>>(result__)
+            (::windows_core::Interface::vtable(this).GetApplicationTokenBindingKeyAsync)(::windows_core::Interface::as_raw(this), keytype, target.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::super::Cryptography::Core::CryptographicKey>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn GetApplicationTokenBindingKeyIdAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Uri>>(&self, keytype: super::TokenBindingKeyType, target: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Storage::Streams::IBuffer>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn GetApplicationTokenBindingKeyIdAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, keytype: super::TokenBindingKeyType, target: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         let this = &::windows_core::Interface::cast::<IWebProviderTokenRequest2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetApplicationTokenBindingKeyIdAsync)(::windows_core::Interface::as_raw(this), keytype, target.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).GetApplicationTokenBindingKeyIdAsync)(::windows_core::Interface::as_raw(this), keytype, target.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
     pub fn ApplicationPackageFamilyName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2961,12 +2902,11 @@ impl WebProviderTokenRequest {
             (::windows_core::Interface::vtable(this).ApplicationProcessName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CheckApplicationForCapabilityAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, capabilityname: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn CheckApplicationForCapabilityAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, capabilityname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IWebProviderTokenRequest3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CheckApplicationForCapabilityAsync)(::windows_core::Interface::as_raw(this), capabilityname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).CheckApplicationForCapabilityAsync)(::windows_core::Interface::as_raw(this), capabilityname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
 }

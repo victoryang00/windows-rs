@@ -3,32 +3,32 @@ pub mod Printing;
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn AbortDoc(hdc: super::super::Graphics::Gdi::HDC) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DeviceCapabilitiesA(pdevice: ::windows_core_sys::PCSTR, pport: ::windows_core_sys::PCSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core_sys::PSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEA) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DeviceCapabilitiesW(pdevice: ::windows_core_sys::PCWSTR, pport: ::windows_core_sys::PCWSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core_sys::PWSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEW) -> i32;
+    pub fn AbortDoc(hdc: ::win32_graphics_sys::Gdi::HDC) -> i32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn EndDoc(hdc: super::super::Graphics::Gdi::HDC) -> i32;
+    pub fn DeviceCapabilitiesA(pdevice: ::windows_core_sys::PCSTR, pport: ::windows_core_sys::PCSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core_sys::PSTR, pdevmode: *const ::win32_graphics_sys::Gdi::DEVMODEA) -> i32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn EndPage(hdc: super::super::Graphics::Gdi::HDC) -> i32;
+    pub fn DeviceCapabilitiesW(pdevice: ::windows_core_sys::PCWSTR, pport: ::windows_core_sys::PCWSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core_sys::PWSTR, pdevmode: *const ::win32_graphics_sys::Gdi::DEVMODEW) -> i32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn Escape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjin: i32, pvin: ::windows_core_sys::PCSTR, pvout: *mut ::core::ffi::c_void) -> i32;
+    pub fn EndDoc(hdc: ::win32_graphics_sys::Gdi::HDC) -> i32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn ExtEscape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjinput: i32, lpindata: ::windows_core_sys::PCSTR, cjoutput: i32, lpoutdata: ::windows_core_sys::PSTR) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn PrintWindow(hwnd: super::super::Foundation::HWND, hdcblt: super::super::Graphics::Gdi::HDC, nflags: PRINT_WINDOW_FLAGS) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn SetAbortProc(hdc: super::super::Graphics::Gdi::HDC, proc: ABORTPROC) -> i32;
+    pub fn EndPage(hdc: ::win32_graphics_sys::Gdi::HDC) -> i32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn StartDocA(hdc: super::super::Graphics::Gdi::HDC, lpdi: *const DOCINFOA) -> i32;
+    pub fn Escape(hdc: ::win32_graphics_sys::Gdi::HDC, iescape: i32, cjin: i32, pvin: ::windows_core_sys::PCSTR, pvout: *mut ::core::ffi::c_void) -> i32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn StartDocW(hdc: super::super::Graphics::Gdi::HDC, lpdi: *const DOCINFOW) -> i32;
+    pub fn ExtEscape(hdc: ::win32_graphics_sys::Gdi::HDC, iescape: i32, cjinput: i32, lpindata: ::windows_core_sys::PCSTR, cjoutput: i32, lpoutdata: ::windows_core_sys::PSTR) -> i32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn StartPage(hdc: super::super::Graphics::Gdi::HDC) -> i32;
+    pub fn PrintWindow(hwnd: ::win32_foundation_sys::HWND, hdcblt: ::win32_graphics_sys::Gdi::HDC, nflags: PRINT_WINDOW_FLAGS) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn SetAbortProc(hdc: ::win32_graphics_sys::Gdi::HDC, proc: ABORTPROC) -> i32;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn StartDocA(hdc: ::win32_graphics_sys::Gdi::HDC, lpdi: *const DOCINFOA) -> i32;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn StartDocW(hdc: ::win32_graphics_sys::Gdi::HDC, lpdi: *const DOCINFOW) -> i32;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn StartPage(hdc: ::win32_graphics_sys::Gdi::HDC) -> i32;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type ABORTPROC = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Graphics::Gdi::HDC, param1: i32) -> super::super::Foundation::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type ABORTPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_graphics_sys::Gdi::HDC, param1: i32) -> ::win32_foundation_sys::BOOL>;
 pub type DEVICE_CAPABILITIES = u32;
 pub const DC_BINNAMES: DEVICE_CAPABILITIES = 12u32;
 pub const DC_BINS: DEVICE_CAPABILITIES = 6u32;
@@ -89,16 +89,13 @@ impl ::core::clone::Clone for DOCINFOW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRAWPATRECT {
-    pub ptPosition: super::super::Foundation::POINT,
-    pub ptSize: super::super::Foundation::POINT,
+    pub ptPosition: ::win32_foundation_sys::POINT,
+    pub ptSize: ::win32_foundation_sys::POINT,
     pub wStyle: u16,
     pub wPattern: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRAWPATRECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRAWPATRECT {
     fn clone(&self) -> Self {
         *self
@@ -190,14 +187,11 @@ impl ::core::clone::Clone for PSFEATURE_CUSTPAPER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PSFEATURE_OUTPUT {
-    pub bPageIndependent: super::super::Foundation::BOOL,
-    pub bSetPageDevice: super::super::Foundation::BOOL,
+    pub bPageIndependent: ::win32_foundation_sys::BOOL,
+    pub bSetPageDevice: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PSFEATURE_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PSFEATURE_OUTPUT {
     fn clone(&self) -> Self {
         *self

@@ -1,12 +1,8 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetExtensionVersion(pver: *mut HSE_VERSION_INFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFilterVersion(pver: *mut HTTP_FILTER_VERSION) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn GetExtensionVersion(pver: *mut HSE_VERSION_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFilterVersion(pver: *mut HTTP_FILTER_VERSION) -> ::win32_foundation_sys::BOOL;
     pub fn HttpExtensionProc(pecb: *const EXTENSION_CONTROL_BLOCK) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn HttpFilterProc(pfc: *mut HTTP_FILTER_CONTEXT, notificationtype: u32, pvnotification: *mut ::core::ffi::c_void) -> u32;
 }
 pub const ADMINDATA_MAX_NAME_LEN: u32 = 256u32;
@@ -28,15 +24,15 @@ pub type AsyncIFtpPreprocessProvider = *mut ::core::ffi::c_void;
 pub type AsyncIFtpRoleProvider = *mut ::core::ffi::c_void;
 pub type AsyncIMSAdminBaseSinkW = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct CERT_CONTEXT_EX {
-    pub CertContext: super::super::Security::Cryptography::CERT_CONTEXT,
+    pub CertContext: ::win32_security_sys::Cryptography::CERT_CONTEXT,
     pub cbAllocated: u32,
     pub dwCertificateFlags: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for CERT_CONTEXT_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for CERT_CONTEXT_EX {
     fn clone(&self) -> Self {
         *self
@@ -52,14 +48,11 @@ pub const CLSID_Server: ::windows_core_sys::GUID = ::windows_core_sys::GUID { da
 pub const CLSID_Session: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1352634144, data2: 9694, data3: 4560, data4: [165, 95, 0, 160, 201, 12, 32, 145] };
 pub const CLSID_WamAdmin: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1634960964, data2: 61846, data3: 4560, data4: [153, 83, 0, 192, 79, 217, 25, 193] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CONFIGURATION_ENTRY {
-    pub bstrKey: super::super::Foundation::BSTR,
-    pub bstrValue: super::super::Foundation::BSTR,
+    pub bstrKey: ::win32_foundation_sys::BSTR,
+    pub bstrValue: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CONFIGURATION_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CONFIGURATION_ENTRY {
     fn clone(&self) -> Self {
         *self
@@ -90,13 +83,12 @@ pub const DWN_FORCEDITHER: u32 = 128u32;
 pub const DWN_MIRRORIMAGE: u32 = 512u32;
 pub const DWN_RAWIMAGE: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXTENSION_CONTROL_BLOCK {
     pub cbSize: u32,
     pub dwVersion: u32,
     pub ConnID: *mut ::core::ffi::c_void,
     pub dwHttpStatusCode: u32,
-    pub lpszLogData: [super::super::Foundation::CHAR; 80],
+    pub lpszLogData: [::win32_foundation_sys::CHAR; 80],
     pub lpszMethod: ::windows_core_sys::PSTR,
     pub lpszQueryString: ::windows_core_sys::PSTR,
     pub lpszPathInfo: ::windows_core_sys::PSTR,
@@ -110,9 +102,7 @@ pub struct EXTENSION_CONTROL_BLOCK {
     pub ReadClient: isize,
     pub ServerSupportFunction: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXTENSION_CONTROL_BLOCK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXTENSION_CONTROL_BLOCK {
     fn clone(&self) -> Self {
         *self
@@ -143,22 +133,18 @@ pub const HSE_APP_FLAG_IN_PROCESS: u32 = 0u32;
 pub const HSE_APP_FLAG_ISOLATED_OOP: u32 = 1u32;
 pub const HSE_APP_FLAG_POOLED_OOP: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_CUSTOM_ERROR_INFO {
     pub pszStatus: ::windows_core_sys::PSTR,
     pub uHttpSubError: u16,
-    pub fAsync: super::super::Foundation::BOOL,
+    pub fAsync: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_CUSTOM_ERROR_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_CUSTOM_ERROR_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_EXEC_UNICODE_URL_INFO {
     pub pszUrl: ::windows_core_sys::PWSTR,
     pub pszMethod: ::windows_core_sys::PSTR,
@@ -167,24 +153,19 @@ pub struct HSE_EXEC_UNICODE_URL_INFO {
     pub pEntity: *mut HSE_EXEC_URL_ENTITY_INFO,
     pub dwExecUrlFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_EXEC_UNICODE_URL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_EXEC_UNICODE_URL_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_EXEC_UNICODE_URL_USER_INFO {
-    pub hImpersonationToken: super::super::Foundation::HANDLE,
+    pub hImpersonationToken: ::win32_foundation_sys::HANDLE,
     pub pszCustomUserName: ::windows_core_sys::PWSTR,
     pub pszCustomAuthType: ::windows_core_sys::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_EXEC_UNICODE_URL_USER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_EXEC_UNICODE_URL_USER_INFO {
     fn clone(&self) -> Self {
         *self
@@ -206,7 +187,6 @@ pub const HSE_EXEC_URL_HTTP_CACHE_ELIGIBLE: u32 = 128u32;
 pub const HSE_EXEC_URL_IGNORE_CURRENT_INTERCEPTOR: u32 = 4u32;
 pub const HSE_EXEC_URL_IGNORE_VALIDATION_AND_RANGE: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_EXEC_URL_INFO {
     pub pszUrl: ::windows_core_sys::PSTR,
     pub pszMethod: ::windows_core_sys::PSTR,
@@ -215,9 +195,7 @@ pub struct HSE_EXEC_URL_INFO {
     pub pEntity: *mut HSE_EXEC_URL_ENTITY_INFO,
     pub dwExecUrlFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_EXEC_URL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_EXEC_URL_INFO {
     fn clone(&self) -> Self {
         *self
@@ -238,15 +216,12 @@ impl ::core::clone::Clone for HSE_EXEC_URL_STATUS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_EXEC_URL_USER_INFO {
-    pub hImpersonationToken: super::super::Foundation::HANDLE,
+    pub hImpersonationToken: ::win32_foundation_sys::HANDLE,
     pub pszCustomUserName: ::windows_core_sys::PSTR,
     pub pszCustomAuthType: ::windows_core_sys::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_EXEC_URL_USER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_EXEC_URL_USER_INFO {
     fn clone(&self) -> Self {
         *self
@@ -319,17 +294,14 @@ impl ::core::clone::Clone for HSE_RESPONSE_VECTOR {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_SEND_HEADER_EX_INFO {
     pub pszStatus: ::windows_core_sys::PCSTR,
     pub pszHeader: ::windows_core_sys::PCSTR,
     pub cchStatus: u32,
     pub cchHeader: u32,
-    pub fKeepConn: super::super::Foundation::BOOL,
+    pub fKeepConn: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_SEND_HEADER_EX_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_SEND_HEADER_EX_INFO {
     fn clone(&self) -> Self {
         *self
@@ -342,11 +314,10 @@ pub const HSE_STATUS_SUCCESS_AND_KEEP_CONN: u32 = 2u32;
 pub const HSE_TERM_ADVISORY_UNLOAD: u32 = 1u32;
 pub const HSE_TERM_MUST_UNLOAD: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_TF_INFO {
     pub pfnHseIO: PFN_HSE_IO_COMPLETION,
     pub pContext: *mut ::core::ffi::c_void,
-    pub hFile: super::super::Foundation::HANDLE,
+    pub hFile: ::win32_foundation_sys::HANDLE,
     pub pszStatusCode: ::windows_core_sys::PCSTR,
     pub BytesToWrite: u32,
     pub Offset: u32,
@@ -356,25 +327,20 @@ pub struct HSE_TF_INFO {
     pub TailLength: u32,
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_TF_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_TF_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_TRACE_INFO {
-    pub fTraceRequest: super::super::Foundation::BOOL,
+    pub fTraceRequest: ::win32_foundation_sys::BOOL,
     pub TraceContextId: [u8; 16],
     pub dwReserved1: u32,
     pub dwReserved2: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_TRACE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_TRACE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -405,18 +371,15 @@ pub const HSE_URL_FLAGS_SSL: u32 = 8u32;
 pub const HSE_URL_FLAGS_SSL128: u32 = 256u32;
 pub const HSE_URL_FLAGS_WRITE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_URL_MAPEX_INFO {
-    pub lpszPath: [super::super::Foundation::CHAR; 260],
+    pub lpszPath: [::win32_foundation_sys::CHAR; 260],
     pub dwFlags: u32,
     pub cchMatchingPath: u32,
     pub cchMatchingURL: u32,
     pub dwReserved1: u32,
     pub dwReserved2: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_URL_MAPEX_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_URL_MAPEX_INFO {
     fn clone(&self) -> Self {
         *self
@@ -438,14 +401,11 @@ impl ::core::clone::Clone for HSE_VECTOR_ELEMENT {
 pub const HSE_VECTOR_ELEMENT_TYPE_FILE_HANDLE: u32 = 1u32;
 pub const HSE_VECTOR_ELEMENT_TYPE_MEMORY_BUFFER: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HSE_VERSION_INFO {
     pub dwExtensionVersion: u32,
-    pub lpszExtensionDesc: [super::super::Foundation::CHAR; 256],
+    pub lpszExtensionDesc: [::win32_foundation_sys::CHAR; 256],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HSE_VERSION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HSE_VERSION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -479,32 +439,28 @@ impl ::core::clone::Clone for HTTP_FILTER_AUTHENT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_FILTER_AUTH_COMPLETE_INFO {
     pub GetHeader: isize,
     pub SetHeader: isize,
     pub AddHeader: isize,
     pub GetUserToken: isize,
     pub HttpStatus: u32,
-    pub fResetAuth: super::super::Foundation::BOOL,
+    pub fResetAuth: ::win32_foundation_sys::BOOL,
     pub dwReserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_FILTER_AUTH_COMPLETE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_FILTER_AUTH_COMPLETE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_FILTER_CONTEXT {
     pub cbSize: u32,
     pub Revision: u32,
     pub ServerContext: *mut ::core::ffi::c_void,
     pub ulReserved: u32,
-    pub fIsSecurePort: super::super::Foundation::BOOL,
+    pub fIsSecurePort: ::win32_foundation_sys::BOOL,
     pub pFilterContext: *mut ::core::ffi::c_void,
     pub GetServerVariable: isize,
     pub AddResponseHeaders: isize,
@@ -512,9 +468,7 @@ pub struct HTTP_FILTER_CONTEXT {
     pub AllocMem: isize,
     pub ServerSupportFunction: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_FILTER_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_FILTER_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -596,32 +550,26 @@ impl ::core::clone::Clone for HTTP_FILTER_URL_MAP_EX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_FILTER_VERSION {
     pub dwServerFilterVersion: u32,
     pub dwFilterVersion: u32,
-    pub lpszFilterDesc: [super::super::Foundation::CHAR; 257],
+    pub lpszFilterDesc: [::win32_foundation_sys::CHAR; 257],
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_FILTER_VERSION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_FILTER_VERSION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_TRACE_CONFIGURATION {
     pub pProviderGuid: *const ::windows_core_sys::GUID,
     pub dwAreas: u32,
     pub dwVerbosity: u32,
-    pub fProviderEnabled: super::super::Foundation::BOOL,
+    pub fProviderEnabled: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_TRACE_CONFIGURATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_TRACE_CONFIGURATION {
     fn clone(&self) -> Self {
         *self
@@ -1563,23 +1511,18 @@ pub const MSCS_MD_ID_BEGIN_RESERVED: u32 = 53248u32;
 pub const MSCS_MD_ID_END_RESERVED: u32 = 57343u32;
 pub const NNTP_MD_ID_BEGIN_RESERVED: u32 = 45056u32;
 pub const NNTP_MD_ID_END_RESERVED: u32 = 49151u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_GETEXTENSIONVERSION = ::core::option::Option<unsafe extern "system" fn(pver: *mut HSE_VERSION_INFO) -> super::super::Foundation::BOOL>;
+pub type PFN_GETEXTENSIONVERSION = ::core::option::Option<unsafe extern "system" fn(pver: *mut HSE_VERSION_INFO) -> ::win32_foundation_sys::BOOL>;
 pub type PFN_HSE_CACHE_INVALIDATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pszurl: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT>;
 pub type PFN_HSE_GET_PROTOCOL_MANAGER_CUSTOM_INTERFACE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pszprotocolmanagerdll: ::windows_core_sys::PCWSTR, pszprotocolmanagerdllinitfunction: ::windows_core_sys::PCWSTR, dwcustominterfaceid: u32, ppcustominterface: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFN_HSE_IO_COMPLETION = ::core::option::Option<unsafe extern "system" fn(pecb: *mut EXTENSION_CONTROL_BLOCK, pcontext: *mut ::core::ffi::c_void, cbio: u32, dwerror: u32)>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFN_HTTPEXTENSIONPROC = ::core::option::Option<unsafe extern "system" fn(pecb: *mut EXTENSION_CONTROL_BLOCK) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_TERMINATEEXTENSION = ::core::option::Option<unsafe extern "system" fn(dwflags: u32) -> super::super::Foundation::BOOL>;
+pub type PFN_TERMINATEEXTENSION = ::core::option::Option<unsafe extern "system" fn(dwflags: u32) -> ::win32_foundation_sys::BOOL>;
 pub type PFN_WEB_CORE_ACTIVATE = ::core::option::Option<unsafe extern "system" fn(pszapphostconfigfile: ::windows_core_sys::PCWSTR, pszrootwebconfigfile: ::windows_core_sys::PCWSTR, pszinstancename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT>;
 pub type PFN_WEB_CORE_SET_METADATA_DLL_ENTRY = ::core::option::Option<unsafe extern "system" fn(pszmetadatatype: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT>;
 pub type PFN_WEB_CORE_SHUTDOWN = ::core::option::Option<unsafe extern "system" fn(fimmediate: u32) -> ::windows_core_sys::HRESULT>;
 pub const POP3_MD_ID_BEGIN_RESERVED: u32 = 40960u32;
 pub const POP3_MD_ID_END_RESERVED: u32 = 45055u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POST_PROCESS_PARAMETERS {
     pub pszSessionId: ::windows_core_sys::PCWSTR,
     pub pszSiteName: ::windows_core_sys::PCWSTR,
@@ -1598,20 +1541,17 @@ pub struct POST_PROCESS_PARAMETERS {
     pub FtpStatus: u32,
     pub FtpSubStatus: u32,
     pub hrStatus: ::windows_core_sys::HRESULT,
-    pub SessionStartTime: super::super::Foundation::FILETIME,
+    pub SessionStartTime: ::win32_foundation_sys::FILETIME,
     pub BytesSentPerSession: u64,
     pub BytesReceivedPerSession: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POST_PROCESS_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POST_PROCESS_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRE_PROCESS_PARAMETERS {
     pub pszSessionId: ::windows_core_sys::PCWSTR,
     pub pszSiteName: ::windows_core_sys::PCWSTR,
@@ -1623,13 +1563,11 @@ pub struct PRE_PROCESS_PARAMETERS {
     pub dwLocalIpPort: u32,
     pub pszCommand: ::windows_core_sys::PCWSTR,
     pub pszCommandParameters: ::windows_core_sys::PCWSTR,
-    pub SessionStartTime: super::super::Foundation::FILETIME,
+    pub SessionStartTime: ::win32_foundation_sys::FILETIME,
     pub BytesSentPerSession: u64,
     pub BytesReceivedPerSession: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRE_PROCESS_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRE_PROCESS_PARAMETERS {
     fn clone(&self) -> Self {
         *self

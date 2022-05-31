@@ -1,77 +1,73 @@
 #[repr(transparent)]
 pub struct DevicePortalConnection(::windows_core::IUnknown);
 impl DevicePortalConnection {
-    #[cfg(feature = "Foundation")]
-    pub fn Closed<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DevicePortalConnection, DevicePortalConnectionClosedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Closed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DevicePortalConnection, DevicePortalConnectionClosedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Closed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Closed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveClosed<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveClosed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveClosed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DevicePortalConnection, DevicePortalConnectionRequestReceivedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn RequestReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DevicePortalConnection, DevicePortalConnectionRequestReceivedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestReceived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).RequestReceived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveRequestReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveRequestReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRequestReceived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[cfg(feature = "ApplicationModel_AppService")]
-    pub fn GetForAppServiceConnection<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::ApplicationModel::AppService::AppServiceConnection>>(appserviceconnection: Param0) -> ::windows_core::Result<DevicePortalConnection> {
+    pub fn GetForAppServiceConnection<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::AppService::AppServiceConnection>>(appserviceconnection: Param0) -> ::windows_core::Result<DevicePortalConnection> {
         Self::IDevicePortalConnectionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetForAppServiceConnection)(::windows_core::Interface::as_raw(this), appserviceconnection.into_param().abi(), result__.as_mut_ptr()).from_abi::<DevicePortalConnection>(result__)
         })
     }
     #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
-    pub fn GetServerMessageWebSocketForRequest<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Web::Http::HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<super::super::super::Networking::Sockets::ServerMessageWebSocket> {
+    pub fn GetServerMessageWebSocketForRequest<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<::winrt_networking::Sockets::ServerMessageWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetServerMessageWebSocketForRequest)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Networking::Sockets::ServerMessageWebSocket>(result__)
+            (::windows_core::Interface::vtable(this).GetServerMessageWebSocketForRequest)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::ServerMessageWebSocket>(result__)
         }
     }
     #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
-    pub fn GetServerMessageWebSocketForRequest2<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Web::Http::HttpRequestMessage>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, request: Param0, messagetype: super::super::super::Networking::Sockets::SocketMessageType, protocol: Param2) -> ::windows_core::Result<super::super::super::Networking::Sockets::ServerMessageWebSocket> {
+    pub fn GetServerMessageWebSocketForRequest2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, request: Param0, messagetype: ::winrt_networking::Sockets::SocketMessageType, protocol: Param2) -> ::windows_core::Result<::winrt_networking::Sockets::ServerMessageWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetServerMessageWebSocketForRequest2)(::windows_core::Interface::as_raw(this), request.into_param().abi(), messagetype, protocol.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Networking::Sockets::ServerMessageWebSocket>(result__)
+            (::windows_core::Interface::vtable(this).GetServerMessageWebSocketForRequest2)(::windows_core::Interface::as_raw(this), request.into_param().abi(), messagetype, protocol.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::ServerMessageWebSocket>(result__)
         }
     }
     #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
-    pub fn GetServerMessageWebSocketForRequest3<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Web::Http::HttpRequestMessage>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, request: Param0, messagetype: super::super::super::Networking::Sockets::SocketMessageType, protocol: Param2, outboundbuffersizeinbytes: u32, maxmessagesize: u32, receivemode: super::super::super::Networking::Sockets::MessageWebSocketReceiveMode) -> ::windows_core::Result<super::super::super::Networking::Sockets::ServerMessageWebSocket> {
+    pub fn GetServerMessageWebSocketForRequest3<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, request: Param0, messagetype: ::winrt_networking::Sockets::SocketMessageType, protocol: Param2, outboundbuffersizeinbytes: u32, maxmessagesize: u32, receivemode: ::winrt_networking::Sockets::MessageWebSocketReceiveMode) -> ::windows_core::Result<::winrt_networking::Sockets::ServerMessageWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetServerMessageWebSocketForRequest3)(::windows_core::Interface::as_raw(this), request.into_param().abi(), messagetype, protocol.into_param().abi(), outboundbuffersizeinbytes, maxmessagesize, receivemode, result__.as_mut_ptr()).from_abi::<super::super::super::Networking::Sockets::ServerMessageWebSocket>(result__)
+            (::windows_core::Interface::vtable(this).GetServerMessageWebSocketForRequest3)(::windows_core::Interface::as_raw(this), request.into_param().abi(), messagetype, protocol.into_param().abi(), outboundbuffersizeinbytes, maxmessagesize, receivemode, result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::ServerMessageWebSocket>(result__)
         }
     }
     #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
-    pub fn GetServerStreamWebSocketForRequest<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Web::Http::HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<super::super::super::Networking::Sockets::ServerStreamWebSocket> {
+    pub fn GetServerStreamWebSocketForRequest<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<::winrt_networking::Sockets::ServerStreamWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetServerStreamWebSocketForRequest)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Networking::Sockets::ServerStreamWebSocket>(result__)
+            (::windows_core::Interface::vtable(this).GetServerStreamWebSocketForRequest)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::ServerStreamWebSocket>(result__)
         }
     }
     #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
-    pub fn GetServerStreamWebSocketForRequest2<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Web::Http::HttpRequestMessage>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, request: Param0, protocol: Param1, outboundbuffersizeinbytes: u32, nodelay: bool) -> ::windows_core::Result<super::super::super::Networking::Sockets::ServerStreamWebSocket> {
+    pub fn GetServerStreamWebSocketForRequest2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, request: Param0, protocol: Param1, outboundbuffersizeinbytes: u32, nodelay: bool) -> ::windows_core::Result<::winrt_networking::Sockets::ServerStreamWebSocket> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnection>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetServerStreamWebSocketForRequest2)(::windows_core::Interface::as_raw(this), request.into_param().abi(), protocol.into_param().abi(), outboundbuffersizeinbytes, nodelay, result__.as_mut_ptr()).from_abi::<super::super::super::Networking::Sockets::ServerStreamWebSocket>(result__)
+            (::windows_core::Interface::vtable(this).GetServerStreamWebSocketForRequest2)(::windows_core::Interface::as_raw(this), request.into_param().abi(), protocol.into_param().abi(), outboundbuffersizeinbytes, nodelay, result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::ServerStreamWebSocket>(result__)
         }
     }
     pub fn IDevicePortalConnectionStatics<R, F: FnOnce(&IDevicePortalConnectionStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -275,19 +271,19 @@ unsafe impl ::windows_core::RuntimeType for DevicePortalConnectionClosedReason {
 pub struct DevicePortalConnectionRequestReceivedEventArgs(::windows_core::IUnknown);
 impl DevicePortalConnectionRequestReceivedEventArgs {
     #[cfg(feature = "Web_Http")]
-    pub fn RequestMessage(&self) -> ::windows_core::Result<super::super::super::Web::Http::HttpRequestMessage> {
+    pub fn RequestMessage(&self) -> ::windows_core::Result<::winrt_web::Http::HttpRequestMessage> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestMessage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Web::Http::HttpRequestMessage>(result__)
+            (::windows_core::Interface::vtable(this).RequestMessage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_web::Http::HttpRequestMessage>(result__)
         }
     }
     #[cfg(feature = "Web_Http")]
-    pub fn ResponseMessage(&self) -> ::windows_core::Result<super::super::super::Web::Http::HttpResponseMessage> {
+    pub fn ResponseMessage(&self) -> ::windows_core::Result<::winrt_web::Http::HttpResponseMessage> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ResponseMessage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Web::Http::HttpResponseMessage>(result__)
+            (::windows_core::Interface::vtable(this).ResponseMessage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_web::Http::HttpResponseMessage>(result__)
         }
     }
     pub fn IsWebSocketUpgradeRequest(&self) -> ::windows_core::Result<bool> {
@@ -298,19 +294,18 @@ impl DevicePortalConnectionRequestReceivedEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn WebSocketProtocolsRequested(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn WebSocketProtocolsRequested(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnectionRequestReceivedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebSocketProtocolsRequested)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).WebSocketProtocolsRequested)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = &::windows_core::Interface::cast::<IDevicePortalWebSocketConnectionRequestReceivedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -397,22 +392,10 @@ unsafe impl ::windows_core::Interface for IDevicePortalConnection {
 #[doc(hidden)]
 pub struct IDevicePortalConnection_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Closed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Closed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveClosed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveRequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveRequestReceived: usize,
+    pub Closed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveRequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -479,11 +462,11 @@ pub struct IDevicePortalWebSocketConnection_Vtbl {
     #[cfg(not(all(feature = "Networking_Sockets", feature = "Web_Http")))]
     GetServerMessageWebSocketForRequest: usize,
     #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
-    pub GetServerMessageWebSocketForRequest2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, messagetype: super::super::super::Networking::Sockets::SocketMessageType, protocol: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetServerMessageWebSocketForRequest2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, messagetype: ::winrt_networking::Sockets::SocketMessageType, protocol: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Networking_Sockets", feature = "Web_Http")))]
     GetServerMessageWebSocketForRequest2: usize,
     #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
-    pub GetServerMessageWebSocketForRequest3: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, messagetype: super::super::super::Networking::Sockets::SocketMessageType, protocol: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, outboundbuffersizeinbytes: u32, maxmessagesize: u32, receivemode: super::super::super::Networking::Sockets::MessageWebSocketReceiveMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetServerMessageWebSocketForRequest3: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, messagetype: ::winrt_networking::Sockets::SocketMessageType, protocol: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, outboundbuffersizeinbytes: u32, maxmessagesize: u32, receivemode: ::winrt_networking::Sockets::MessageWebSocketReceiveMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Networking_Sockets", feature = "Web_Http")))]
     GetServerMessageWebSocketForRequest3: usize,
     #[cfg(all(feature = "Networking_Sockets", feature = "Web_Http"))]
@@ -511,8 +494,5 @@ pub struct IDevicePortalWebSocketConnectionRequestReceivedEventArgs_Vtbl {
     pub WebSocketProtocolsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     WebSocketProtocolsRequested: usize,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }

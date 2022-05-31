@@ -506,30 +506,25 @@ impl IWICBitmapCodecInfo {
     pub unsafe fn GetFileExtensions(&self, wzfileextensions: &mut [u16], pcchactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetFileExtensions)(::windows_core::Interface::as_raw(self), wzfileextensions.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wzfileextensions)), ::core::mem::transmute(pcchactual)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportAnimation(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DoesSupportAnimation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportAnimation(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DoesSupportAnimation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportChromakey(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DoesSupportChromakey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportChromakey(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DoesSupportChromakey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportLossless(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DoesSupportLossless)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportLossless(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DoesSupportLossless)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportMultiframe(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DoesSupportMultiframe)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportMultiframe(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DoesSupportMultiframe)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MatchesMimeType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzmimetype: Param0) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MatchesMimeType)(::windows_core::Interface::as_raw(self), wzmimetype.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MatchesMimeType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzmimetype: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MatchesMimeType)(::windows_core::Interface::as_raw(self), wzmimetype.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IWICBitmapCodecInfo> for ::windows_core::IUnknown {
@@ -603,26 +598,11 @@ pub struct IWICBitmapCodecInfo_Vtbl {
     pub GetDeviceModels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cchdevicemodels: u32, wzdevicemodels: ::windows_core::PWSTR, pcchactual: *mut u32) -> ::windows_core::HRESULT,
     pub GetMimeTypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cchmimetypes: u32, wzmimetypes: ::windows_core::PWSTR, pcchactual: *mut u32) -> ::windows_core::HRESULT,
     pub GetFileExtensions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cchfileextensions: u32, wzfileextensions: ::windows_core::PWSTR, pcchactual: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesSupportAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportanimation: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesSupportAnimation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesSupportChromakey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportchromakey: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesSupportChromakey: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesSupportLossless: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportlossless: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesSupportLossless: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesSupportMultiframe: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportmultiframe: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesSupportMultiframe: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MatchesMimeType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wzmimetype: ::windows_core::PCWSTR, pfmatches: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MatchesMimeType: usize,
+    pub DoesSupportAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportanimation: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub DoesSupportChromakey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportchromakey: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub DoesSupportLossless: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportlossless: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub DoesSupportMultiframe: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportmultiframe: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MatchesMimeType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wzmimetype: ::windows_core::PCWSTR, pfmatches: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWICBitmapCodecProgressNotification(::windows_core::IUnknown);
@@ -681,12 +661,12 @@ pub struct IWICBitmapCodecProgressNotification_Vtbl {
 pub struct IWICBitmapDecoder(::windows_core::IUnknown);
 impl IWICBitmapDecoder {
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn QueryCapability<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pistream: Param0) -> ::windows_core::Result<u32> {
+    pub unsafe fn QueryCapability<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).QueryCapability)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pistream: Param0, cacheoptions: WICDecodeOptions) -> ::windows_core::Result<()> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0, cacheoptions: WICDecodeOptions) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(cacheoptions)).ok()
     }
     pub unsafe fn GetContainerFormat(&self) -> ::windows_core::Result<::windows_core::GUID> {
@@ -839,39 +819,33 @@ impl IWICBitmapDecoderInfo {
     pub unsafe fn GetFileExtensions(&self, wzfileextensions: &mut [u16], pcchactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetFileExtensions)(::windows_core::Interface::as_raw(self), wzfileextensions.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wzfileextensions)), ::core::mem::transmute(pcchactual)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportAnimation(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportAnimation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportAnimation(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportAnimation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportChromakey(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportChromakey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportChromakey(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportChromakey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportLossless(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportLossless)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportLossless(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportLossless)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportMultiframe(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportMultiframe)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportMultiframe(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportMultiframe)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MatchesMimeType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzmimetype: Param0) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.MatchesMimeType)(::windows_core::Interface::as_raw(self), wzmimetype.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MatchesMimeType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzmimetype: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.MatchesMimeType)(::windows_core::Interface::as_raw(self), wzmimetype.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetPatterns(&self, cbsizepatterns: u32, ppatterns: *mut WICBitmapPattern, pcpatterns: *mut u32, pcbpatternsactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetPatterns)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cbsizepatterns), ::core::mem::transmute(ppatterns), ::core::mem::transmute(pcpatterns), ::core::mem::transmute(pcbpatternsactual)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn MatchesPattern<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pistream: Param0) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MatchesPattern)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn MatchesPattern<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MatchesPattern)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn CreateInstance(&self) -> ::windows_core::Result<IWICBitmapDecoder> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -962,13 +936,10 @@ unsafe impl ::windows_core::Interface for IWICBitmapDecoderInfo {
 #[doc(hidden)]
 pub struct IWICBitmapDecoderInfo_Vtbl {
     pub base__: IWICBitmapCodecInfo_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetPatterns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cbsizepatterns: u32, ppatterns: *mut WICBitmapPattern, pcpatterns: *mut u32, pcbpatternsactual: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetPatterns: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub MatchesPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pistream: ::windows_core::RawPtr, pfmatches: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub MatchesPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pistream: ::windows_core::RawPtr, pfmatches: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     MatchesPattern: usize,
     pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppibitmapdecoder: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -976,7 +947,7 @@ pub struct IWICBitmapDecoderInfo_Vtbl {
 pub struct IWICBitmapEncoder(::windows_core::IUnknown);
 impl IWICBitmapEncoder {
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pistream: Param0, cacheoption: WICBitmapEncoderCacheOption) -> ::windows_core::Result<()> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0, cacheoption: WICBitmapEncoderCacheOption) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(cacheoption)).ok()
     }
     pub unsafe fn GetContainerFormat(&self) -> ::windows_core::Result<::windows_core::GUID> {
@@ -1000,7 +971,7 @@ impl IWICBitmapEncoder {
         (::windows_core::Interface::vtable(self).SetPreview)(::windows_core::Interface::as_raw(self), pipreview.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub unsafe fn CreateNewFrame(&self, ppiframeencode: *mut ::core::option::Option<IWICBitmapFrameEncode>, ppiencoderoptions: *mut ::core::option::Option<super::super::System::Com::StructuredStorage::IPropertyBag2>) -> ::windows_core::Result<()> {
+    pub unsafe fn CreateNewFrame(&self, ppiframeencode: *mut ::core::option::Option<IWICBitmapFrameEncode>, ppiencoderoptions: *mut ::core::option::Option<::win32_system::Com::StructuredStorage::IPropertyBag2>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CreateNewFrame)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppiframeencode), ::core::mem::transmute(ppiencoderoptions)).ok()
     }
     pub unsafe fn Commit(&self) -> ::windows_core::Result<()> {
@@ -1125,30 +1096,25 @@ impl IWICBitmapEncoderInfo {
     pub unsafe fn GetFileExtensions(&self, wzfileextensions: &mut [u16], pcchactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetFileExtensions)(::windows_core::Interface::as_raw(self), wzfileextensions.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wzfileextensions)), ::core::mem::transmute(pcchactual)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportAnimation(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportAnimation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportAnimation(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportAnimation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportChromakey(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportChromakey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportChromakey(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportChromakey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportLossless(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportLossless)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportLossless(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportLossless)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportMultiframe(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportMultiframe)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportMultiframe(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportMultiframe)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MatchesMimeType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzmimetype: Param0) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.MatchesMimeType)(::windows_core::Interface::as_raw(self), wzmimetype.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MatchesMimeType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzmimetype: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.MatchesMimeType)(::windows_core::Interface::as_raw(self), wzmimetype.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn CreateInstance(&self) -> ::windows_core::Result<IWICBitmapEncoder> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1433,7 +1399,7 @@ pub struct IWICBitmapFrameDecode_Vtbl {
 pub struct IWICBitmapFrameEncode(::windows_core::IUnknown);
 impl IWICBitmapFrameEncode {
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::StructuredStorage::IPropertyBag2>>(&self, piencoderoptions: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IPropertyBag2>>(&self, piencoderoptions: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), piencoderoptions.into_param().abi()).ok()
     }
     pub unsafe fn SetSize(&self, uiwidth: u32, uiheight: u32) -> ::windows_core::Result<()> {
@@ -1765,10 +1731,9 @@ impl IWICBitmapSourceTransform {
     pub unsafe fn GetClosestPixelFormat(&self, pguiddstformat: *mut ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetClosestPixelFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguiddstformat)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportTransform(&self, dsttransform: WICBitmapTransformOptions) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DoesSupportTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dsttransform), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportTransform(&self, dsttransform: WICBitmapTransformOptions) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DoesSupportTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dsttransform), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IWICBitmapSourceTransform> for ::windows_core::IUnknown {
@@ -1818,10 +1783,7 @@ pub struct IWICBitmapSourceTransform_Vtbl {
     pub CopyPixels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prc: *const WICRect, uiwidth: u32, uiheight: u32, pguiddstformat: *const ::windows_core::GUID, dsttransform: WICBitmapTransformOptions, nstride: u32, cbbuffersize: u32, pbbuffer: *mut u8) -> ::windows_core::HRESULT,
     pub GetClosestSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, puiwidth: *mut u32, puiheight: *mut u32) -> ::windows_core::HRESULT,
     pub GetClosestPixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguiddstformat: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesSupportTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dsttransform: WICBitmapTransformOptions, pfissupported: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesSupportTransform: usize,
+    pub DoesSupportTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dsttransform: WICBitmapTransformOptions, pfissupported: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWICColorContext(::windows_core::IUnknown);
@@ -1995,7 +1957,7 @@ impl IWICComponentFactory {
         (::windows_core::Interface::vtable(self).base__.CreateDecoderFromFilename)(::windows_core::Interface::as_raw(self), wzfilename.into_param().abi(), ::core::mem::transmute(pguidvendor), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(metadataoptions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmapDecoder>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateDecoderFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pistream: Param0, pguidvendor: *const ::windows_core::GUID, metadataoptions: WICDecodeOptions) -> ::windows_core::Result<IWICBitmapDecoder> {
+    pub unsafe fn CreateDecoderFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0, pguidvendor: *const ::windows_core::GUID, metadataoptions: WICDecodeOptions) -> ::windows_core::Result<IWICBitmapDecoder> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateDecoderFromStream)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(pguidvendor), ::core::mem::transmute(metadataoptions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmapDecoder>(result__)
     }
@@ -2070,14 +2032,14 @@ impl IWICComponentFactory {
         (::windows_core::Interface::vtable(self).base__.CreateBitmapFromHBITMAP)(::windows_core::Interface::as_raw(self), hbitmap.into_param().abi(), hpalette.into_param().abi(), ::core::mem::transmute(options), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmap>(result__)
     }
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-    pub unsafe fn CreateBitmapFromHICON<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::WindowsAndMessaging::HICON>>(&self, hicon: Param0) -> ::windows_core::Result<IWICBitmap> {
+    pub unsafe fn CreateBitmapFromHICON<'a, Param0: ::windows_core::IntoParam<'a, ::win32_ui::WindowsAndMessaging::HICON>>(&self, hicon: Param0) -> ::windows_core::Result<IWICBitmap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateBitmapFromHICON)(::windows_core::Interface::as_raw(self), hicon.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmap>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateComponentEnumerator(&self, componenttypes: u32, options: u32) -> ::windows_core::Result<super::super::System::Com::IEnumUnknown> {
+    pub unsafe fn CreateComponentEnumerator(&self, componenttypes: u32, options: u32) -> ::windows_core::Result<::win32_system::Com::IEnumUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CreateComponentEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(componenttypes), ::core::mem::transmute(options), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IEnumUnknown>(result__)
+        (::windows_core::Interface::vtable(self).base__.CreateComponentEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(componenttypes), ::core::mem::transmute(options), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IEnumUnknown>(result__)
     }
     pub unsafe fn CreateFastMetadataEncoderFromDecoder<'a, Param0: ::windows_core::IntoParam<'a, IWICBitmapDecoder>>(&self, pidecoder: Param0) -> ::windows_core::Result<IWICFastMetadataEncoder> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2096,12 +2058,12 @@ impl IWICComponentFactory {
         (::windows_core::Interface::vtable(self).base__.CreateQueryWriterFromReader)(::windows_core::Interface::as_raw(self), piqueryreader.into_param().abi(), ::core::mem::transmute(pguidvendor), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICMetadataQueryWriter>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateMetadataReader<'a, Param3: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, guidmetadataformat: *const ::windows_core::GUID, pguidvendor: *const ::windows_core::GUID, dwoptions: u32, pistream: Param3) -> ::windows_core::Result<IWICMetadataReader> {
+    pub unsafe fn CreateMetadataReader<'a, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, guidmetadataformat: *const ::windows_core::GUID, pguidvendor: *const ::windows_core::GUID, dwoptions: u32, pistream: Param3) -> ::windows_core::Result<IWICMetadataReader> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateMetadataReader)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guidmetadataformat), ::core::mem::transmute(pguidvendor), ::core::mem::transmute(dwoptions), pistream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICMetadataReader>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateMetadataReaderFromContainer<'a, Param3: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, guidcontainerformat: *const ::windows_core::GUID, pguidvendor: *const ::windows_core::GUID, dwoptions: u32, pistream: Param3) -> ::windows_core::Result<IWICMetadataReader> {
+    pub unsafe fn CreateMetadataReaderFromContainer<'a, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, guidcontainerformat: *const ::windows_core::GUID, pguidvendor: *const ::windows_core::GUID, dwoptions: u32, pistream: Param3) -> ::windows_core::Result<IWICMetadataReader> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateMetadataReaderFromContainer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guidcontainerformat), ::core::mem::transmute(pguidvendor), ::core::mem::transmute(dwoptions), pistream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICMetadataReader>(result__)
     }
@@ -2122,9 +2084,9 @@ impl IWICComponentFactory {
         (::windows_core::Interface::vtable(self).CreateQueryWriterFromBlockWriter)(::windows_core::Interface::as_raw(self), piblockwriter.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICMetadataQueryWriter>(result__)
     }
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub unsafe fn CreateEncoderPropertyBag(&self, ppropoptions: &[super::super::System::Com::StructuredStorage::PROPBAG2]) -> ::windows_core::Result<super::super::System::Com::StructuredStorage::IPropertyBag2> {
+    pub unsafe fn CreateEncoderPropertyBag(&self, ppropoptions: &[::win32_system::Com::StructuredStorage::PROPBAG2]) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::IPropertyBag2> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateEncoderPropertyBag)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(ppropoptions)), ppropoptions.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::StructuredStorage::IPropertyBag2>(result__)
+        (::windows_core::Interface::vtable(self).CreateEncoderPropertyBag)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(ppropoptions)), ppropoptions.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::IPropertyBag2>(result__)
     }
 }
 impl ::core::convert::From<IWICComponentFactory> for ::windows_core::IUnknown {
@@ -2204,7 +2166,7 @@ pub struct IWICComponentFactory_Vtbl {
     pub CreateQueryReaderFromBlockReader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, piblockreader: ::windows_core::RawPtr, ppiqueryreader: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateQueryWriterFromBlockWriter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, piblockwriter: ::windows_core::RawPtr, ppiquerywriter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub CreateEncoderPropertyBag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppropoptions: *const super::super::System::Com::StructuredStorage::PROPBAG2, ccount: u32, ppipropertybag: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateEncoderPropertyBag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppropoptions: *const ::win32_system::Com::StructuredStorage::PROPBAG2, ccount: u32, ppipropertybag: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     CreateEncoderPropertyBag: usize,
 }
@@ -2529,9 +2491,9 @@ impl IWICDevelopRaw {
         (::windows_core::Interface::vtable(self).LoadParameterSet)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(parameterset)).ok()
     }
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub unsafe fn GetCurrentParameterSet(&self) -> ::windows_core::Result<super::super::System::Com::StructuredStorage::IPropertyBag2> {
+    pub unsafe fn GetCurrentParameterSet(&self) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::IPropertyBag2> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetCurrentParameterSet)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::StructuredStorage::IPropertyBag2>(result__)
+        (::windows_core::Interface::vtable(self).GetCurrentParameterSet)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::IPropertyBag2>(result__)
     }
     pub unsafe fn SetExposureCompensation(&self, ev: f64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetExposureCompensation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ev)).ok()
@@ -2808,8 +2770,8 @@ pub struct IWICDevelopRawNotificationCallback_Vtbl {
 #[repr(transparent)]
 pub struct IWICEnumMetadataItem(::windows_core::IUnknown);
 impl IWICEnumMetadataItem {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn Next(&self, celt: u32, rgeltschema: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, rgeltid: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, rgeltvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pceltfetched: *mut u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn Next(&self, celt: u32, rgeltschema: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, rgeltid: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, rgeltvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pceltfetched: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Next)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(celt), ::core::mem::transmute(rgeltschema), ::core::mem::transmute(rgeltid), ::core::mem::transmute(rgeltvalue), ::core::mem::transmute(pceltfetched)).ok()
     }
     pub unsafe fn Skip(&self, celt: u32) -> ::windows_core::Result<()> {
@@ -2867,9 +2829,9 @@ unsafe impl ::windows_core::Interface for IWICEnumMetadataItem {
 #[doc(hidden)]
 pub struct IWICEnumMetadataItem_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, rgeltschema: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, rgeltid: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, rgeltvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pceltfetched: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub Next: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32, rgeltschema: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, rgeltid: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, rgeltvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pceltfetched: *mut u32) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     Next: usize,
     pub Skip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, celt: u32) -> ::windows_core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -2955,10 +2917,9 @@ impl IWICFormatConverter {
     pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, IWICBitmapSource>, Param3: ::windows_core::IntoParam<'a, IWICPalette>>(&self, pisource: Param0, dstformat: *const ::windows_core::GUID, dither: WICBitmapDitherType, pipalette: Param3, alphathresholdpercent: f64, palettetranslate: WICBitmapPaletteType) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), pisource.into_param().abi(), ::core::mem::transmute(dstformat), ::core::mem::transmute(dither), pipalette.into_param().abi(), ::core::mem::transmute(alphathresholdpercent), ::core::mem::transmute(palettetranslate)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CanConvert(&self, srcpixelformat: *const ::windows_core::GUID, dstpixelformat: *const ::windows_core::GUID) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).CanConvert)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(srcpixelformat), ::core::mem::transmute(dstpixelformat), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn CanConvert(&self, srcpixelformat: *const ::windows_core::GUID, dstpixelformat: *const ::windows_core::GUID) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).CanConvert)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(srcpixelformat), ::core::mem::transmute(dstpixelformat), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IWICFormatConverter> for ::windows_core::IUnknown {
@@ -3026,10 +2987,7 @@ unsafe impl ::windows_core::Interface for IWICFormatConverter {
 pub struct IWICFormatConverter_Vtbl {
     pub base__: IWICBitmapSource_Vtbl,
     pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pisource: ::windows_core::RawPtr, dstformat: *const ::windows_core::GUID, dither: WICBitmapDitherType, pipalette: ::windows_core::RawPtr, alphathresholdpercent: f64, palettetranslate: WICBitmapPaletteType) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CanConvert: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, srcpixelformat: *const ::windows_core::GUID, dstpixelformat: *const ::windows_core::GUID, pfcanconvert: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CanConvert: usize,
+    pub CanConvert: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, srcpixelformat: *const ::windows_core::GUID, dstpixelformat: *const ::windows_core::GUID, pfcanconvert: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWICFormatConverterInfo(::windows_core::IUnknown);
@@ -3145,7 +3103,7 @@ impl IWICImagingFactory {
         (::windows_core::Interface::vtable(self).CreateDecoderFromFilename)(::windows_core::Interface::as_raw(self), wzfilename.into_param().abi(), ::core::mem::transmute(pguidvendor), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(metadataoptions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmapDecoder>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateDecoderFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pistream: Param0, pguidvendor: *const ::windows_core::GUID, metadataoptions: WICDecodeOptions) -> ::windows_core::Result<IWICBitmapDecoder> {
+    pub unsafe fn CreateDecoderFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0, pguidvendor: *const ::windows_core::GUID, metadataoptions: WICDecodeOptions) -> ::windows_core::Result<IWICBitmapDecoder> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateDecoderFromStream)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(pguidvendor), ::core::mem::transmute(metadataoptions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmapDecoder>(result__)
     }
@@ -3220,14 +3178,14 @@ impl IWICImagingFactory {
         (::windows_core::Interface::vtable(self).CreateBitmapFromHBITMAP)(::windows_core::Interface::as_raw(self), hbitmap.into_param().abi(), hpalette.into_param().abi(), ::core::mem::transmute(options), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmap>(result__)
     }
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-    pub unsafe fn CreateBitmapFromHICON<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::WindowsAndMessaging::HICON>>(&self, hicon: Param0) -> ::windows_core::Result<IWICBitmap> {
+    pub unsafe fn CreateBitmapFromHICON<'a, Param0: ::windows_core::IntoParam<'a, ::win32_ui::WindowsAndMessaging::HICON>>(&self, hicon: Param0) -> ::windows_core::Result<IWICBitmap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateBitmapFromHICON)(::windows_core::Interface::as_raw(self), hicon.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmap>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateComponentEnumerator(&self, componenttypes: u32, options: u32) -> ::windows_core::Result<super::super::System::Com::IEnumUnknown> {
+    pub unsafe fn CreateComponentEnumerator(&self, componenttypes: u32, options: u32) -> ::windows_core::Result<::win32_system::Com::IEnumUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateComponentEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(componenttypes), ::core::mem::transmute(options), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IEnumUnknown>(result__)
+        (::windows_core::Interface::vtable(self).CreateComponentEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(componenttypes), ::core::mem::transmute(options), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IEnumUnknown>(result__)
     }
     pub unsafe fn CreateFastMetadataEncoderFromDecoder<'a, Param0: ::windows_core::IntoParam<'a, IWICBitmapDecoder>>(&self, pidecoder: Param0) -> ::windows_core::Result<IWICFastMetadataEncoder> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3319,7 +3277,7 @@ pub struct IWICImagingFactory_Vtbl {
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     CreateBitmapFromHBITMAP: usize,
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-    pub CreateBitmapFromHICON: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hicon: super::super::UI::WindowsAndMessaging::HICON, ppibitmap: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateBitmapFromHICON: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hicon: ::win32_ui::WindowsAndMessaging::HICON, ppibitmap: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
     CreateBitmapFromHICON: usize,
     #[cfg(feature = "Win32_System_Com")]
@@ -3334,10 +3292,9 @@ pub struct IWICImagingFactory_Vtbl {
 #[repr(transparent)]
 pub struct IWICJpegFrameDecode(::windows_core::IUnknown);
 impl IWICJpegFrameDecode {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportIndexing(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DoesSupportIndexing)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportIndexing(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DoesSupportIndexing)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn SetIndexing(&self, options: WICJpegIndexingOptions, horizontalintervalsize: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetIndexing)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(options), ::core::mem::transmute(horizontalintervalsize)).ok()
@@ -3419,10 +3376,7 @@ unsafe impl ::windows_core::Interface for IWICJpegFrameDecode {
 #[doc(hidden)]
 pub struct IWICJpegFrameDecode_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesSupportIndexing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfindexingsupported: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesSupportIndexing: usize,
+    pub DoesSupportIndexing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfindexingsupported: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetIndexing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: WICJpegIndexingOptions, horizontalintervalsize: u32) -> ::windows_core::HRESULT,
     pub ClearIndexing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
@@ -3538,9 +3492,9 @@ impl IWICMetadataBlockReader {
         (::windows_core::Interface::vtable(self).GetReaderByIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(nindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICMetadataReader>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<super::super::System::Com::IEnumUnknown> {
+    pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<::win32_system::Com::IEnumUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IEnumUnknown>(result__)
+        (::windows_core::Interface::vtable(self).GetEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IEnumUnknown>(result__)
     }
 }
 impl ::core::convert::From<IWICMetadataBlockReader> for ::windows_core::IUnknown {
@@ -3611,9 +3565,9 @@ impl IWICMetadataBlockWriter {
         (::windows_core::Interface::vtable(self).base__.GetReaderByIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(nindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICMetadataReader>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<super::super::System::Com::IEnumUnknown> {
+    pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<::win32_system::Com::IEnumUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IEnumUnknown>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IEnumUnknown>(result__)
     }
     pub unsafe fn InitializeFromBlockReader<'a, Param0: ::windows_core::IntoParam<'a, IWICMetadataBlockReader>>(&self, pimdblockreader: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).InitializeFromBlockReader)(::windows_core::Interface::as_raw(self), pimdblockreader.into_param().abi()).ok()
@@ -3746,20 +3700,17 @@ impl IWICMetadataHandlerInfo {
     pub unsafe fn GetDeviceModels(&self, wzdevicemodels: &mut [u16], pcchactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetDeviceModels)(::windows_core::Interface::as_raw(self), wzdevicemodels.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wzdevicemodels)), ::core::mem::transmute(pcchactual)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesRequireFullStream(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DoesRequireFullStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesRequireFullStream(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DoesRequireFullStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportPadding(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DoesSupportPadding)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportPadding(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DoesSupportPadding)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesRequireFixedSize(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DoesRequireFixedSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesRequireFixedSize(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DoesRequireFixedSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IWICMetadataHandlerInfo> for ::windows_core::IUnknown {
@@ -3830,18 +3781,9 @@ pub struct IWICMetadataHandlerInfo_Vtbl {
     pub GetContainerFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ccontainerformats: u32, pguidcontainerformats: *mut ::windows_core::GUID, pcchactual: *mut u32) -> ::windows_core::HRESULT,
     pub GetDeviceManufacturer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cchdevicemanufacturer: u32, wzdevicemanufacturer: ::windows_core::PWSTR, pcchactual: *mut u32) -> ::windows_core::HRESULT,
     pub GetDeviceModels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cchdevicemodels: u32, wzdevicemodels: ::windows_core::PWSTR, pcchactual: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesRequireFullStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfrequiresfullstream: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesRequireFullStream: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesSupportPadding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportspadding: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesSupportPadding: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesRequireFixedSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pffixedsize: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesRequireFixedSize: usize,
+    pub DoesRequireFullStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfrequiresfullstream: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub DoesSupportPadding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportspadding: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub DoesRequireFixedSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pffixedsize: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWICMetadataQueryReader(::windows_core::IUnknown);
@@ -3853,14 +3795,14 @@ impl IWICMetadataQueryReader {
     pub unsafe fn GetLocation(&self, wznamespace: &mut [u16], pcchactuallength: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetLocation)(::windows_core::Interface::as_raw(self), wznamespace.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wznamespace)), ::core::mem::transmute(pcchactuallength)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn GetMetadataByName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzname: Param0, pvarvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn GetMetadataByName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzname: Param0, pvarvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetMetadataByName)(::windows_core::Interface::as_raw(self), wzname.into_param().abi(), ::core::mem::transmute(pvarvalue)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<super::super::System::Com::IEnumString> {
+    pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<::win32_system::Com::IEnumString> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IEnumString>(result__)
+        (::windows_core::Interface::vtable(self).GetEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IEnumString>(result__)
     }
 }
 impl ::core::convert::From<IWICMetadataQueryReader> for ::windows_core::IUnknown {
@@ -3909,9 +3851,9 @@ pub struct IWICMetadataQueryReader_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetContainerFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidcontainerformat: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cchmaxlength: u32, wznamespace: ::windows_core::PWSTR, pcchactuallength: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub GetMetadataByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wzname: ::windows_core::PCWSTR, pvarvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetMetadataByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wzname: ::windows_core::PCWSTR, pvarvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetMetadataByName: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub GetEnumerator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppienumstring: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3928,17 +3870,17 @@ impl IWICMetadataQueryWriter {
     pub unsafe fn GetLocation(&self, wznamespace: &mut [u16], pcchactuallength: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetLocation)(::windows_core::Interface::as_raw(self), wznamespace.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wznamespace)), ::core::mem::transmute(pcchactuallength)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn GetMetadataByName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzname: Param0, pvarvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn GetMetadataByName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzname: Param0, pvarvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetMetadataByName)(::windows_core::Interface::as_raw(self), wzname.into_param().abi(), ::core::mem::transmute(pvarvalue)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<super::super::System::Com::IEnumString> {
+    pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<::win32_system::Com::IEnumString> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IEnumString>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IEnumString>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn SetMetadataByName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzname: Param0, pvarvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn SetMetadataByName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzname: Param0, pvarvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMetadataByName)(::windows_core::Interface::as_raw(self), wzname.into_param().abi(), ::core::mem::transmute(pvarvalue)).ok()
     }
     pub unsafe fn RemoveMetadataByName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzname: Param0) -> ::windows_core::Result<()> {
@@ -4009,9 +3951,9 @@ unsafe impl ::windows_core::Interface for IWICMetadataQueryWriter {
 #[doc(hidden)]
 pub struct IWICMetadataQueryWriter_Vtbl {
     pub base__: IWICMetadataQueryReader_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub SetMetadataByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wzname: ::windows_core::PCWSTR, pvarvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SetMetadataByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wzname: ::windows_core::PCWSTR, pvarvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     SetMetadataByName: usize,
     pub RemoveMetadataByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wzname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
@@ -4030,12 +3972,12 @@ impl IWICMetadataReader {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn GetValueByIndex(&self, nindex: u32, pvarschema: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn GetValueByIndex(&self, nindex: u32, pvarschema: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetValueByIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(nindex), ::core::mem::transmute(pvarschema), ::core::mem::transmute(pvarid), ::core::mem::transmute(pvarvalue)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn GetValue(&self, pvarschema: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn GetValue(&self, pvarschema: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pvarschema), ::core::mem::transmute(pvarid), ::core::mem::transmute(pvarvalue)).ok()
     }
     pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<IWICEnumMetadataItem> {
@@ -4090,13 +4032,13 @@ pub struct IWICMetadataReader_Vtbl {
     pub GetMetadataFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidmetadataformat: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetMetadataHandlerInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppihandler: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pccount: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub GetValueByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nindex: u32, pvarschema: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetValueByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nindex: u32, pvarschema: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetValueByIndex: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarschema: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarschema: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetValue: usize,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppienummetadata: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -4144,28 +4086,25 @@ impl IWICMetadataReaderInfo {
     pub unsafe fn GetDeviceModels(&self, wzdevicemodels: &mut [u16], pcchactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetDeviceModels)(::windows_core::Interface::as_raw(self), wzdevicemodels.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wzdevicemodels)), ::core::mem::transmute(pcchactual)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesRequireFullStream(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesRequireFullStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesRequireFullStream(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesRequireFullStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportPadding(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportPadding)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportPadding(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportPadding)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesRequireFixedSize(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesRequireFixedSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesRequireFixedSize(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesRequireFixedSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetPatterns(&self, guidcontainerformat: *const ::windows_core::GUID, cbsize: u32, ppattern: *mut WICMetadataPattern, pccount: *mut u32, pcbactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetPatterns)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guidcontainerformat), ::core::mem::transmute(cbsize), ::core::mem::transmute(ppattern), ::core::mem::transmute(pccount), ::core::mem::transmute(pcbactual)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn MatchesPattern<'a, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, guidcontainerformat: *const ::windows_core::GUID, pistream: Param1) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MatchesPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guidcontainerformat), pistream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn MatchesPattern<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, guidcontainerformat: *const ::windows_core::GUID, pistream: Param1) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MatchesPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guidcontainerformat), pistream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn CreateInstance(&self) -> ::windows_core::Result<IWICMetadataReader> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4257,9 +4196,9 @@ unsafe impl ::windows_core::Interface for IWICMetadataReaderInfo {
 pub struct IWICMetadataReaderInfo_Vtbl {
     pub base__: IWICMetadataHandlerInfo_Vtbl,
     pub GetPatterns: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guidcontainerformat: *const ::windows_core::GUID, cbsize: u32, ppattern: *mut WICMetadataPattern, pccount: *mut u32, pcbactual: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub MatchesPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guidcontainerformat: *const ::windows_core::GUID, pistream: ::windows_core::RawPtr, pfmatches: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub MatchesPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guidcontainerformat: *const ::windows_core::GUID, pistream: ::windows_core::RawPtr, pfmatches: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     MatchesPattern: usize,
     pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppireader: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -4278,28 +4217,28 @@ impl IWICMetadataWriter {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn GetValueByIndex(&self, nindex: u32, pvarschema: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *mut super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn GetValueByIndex(&self, nindex: u32, pvarschema: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetValueByIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(nindex), ::core::mem::transmute(pvarschema), ::core::mem::transmute(pvarid), ::core::mem::transmute(pvarvalue)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn GetValue(&self, pvarschema: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn GetValue(&self, pvarschema: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pvarschema), ::core::mem::transmute(pvarid), ::core::mem::transmute(pvarvalue)).ok()
     }
     pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<IWICEnumMetadataItem> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICEnumMetadataItem>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn SetValue(&self, pvarschema: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn SetValue(&self, pvarschema: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pvarschema), ::core::mem::transmute(pvarid), ::core::mem::transmute(pvarvalue)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn SetValueByIndex(&self, nindex: u32, pvarschema: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn SetValueByIndex(&self, nindex: u32, pvarschema: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValueByIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(nindex), ::core::mem::transmute(pvarschema), ::core::mem::transmute(pvarid), ::core::mem::transmute(pvarvalue)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn RemoveValue(&self, pvarschema: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn RemoveValue(&self, pvarschema: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RemoveValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pvarschema), ::core::mem::transmute(pvarid)).ok()
     }
     pub unsafe fn RemoveValueByIndex(&self, nindex: u32) -> ::windows_core::Result<()> {
@@ -4370,17 +4309,17 @@ unsafe impl ::windows_core::Interface for IWICMetadataWriter {
 #[doc(hidden)]
 pub struct IWICMetadataWriter_Vtbl {
     pub base__: IWICMetadataReader_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarschema: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarschema: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     SetValue: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub SetValueByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nindex: u32, pvarschema: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SetValueByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nindex: u32, pvarschema: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     SetValueByIndex: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub RemoveValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarschema: *const super::super::System::Com::StructuredStorage::PROPVARIANT, pvarid: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub RemoveValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvarschema: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, pvarid: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     RemoveValue: usize,
     pub RemoveValueByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nindex: u32) -> ::windows_core::HRESULT,
 }
@@ -4428,20 +4367,17 @@ impl IWICMetadataWriterInfo {
     pub unsafe fn GetDeviceModels(&self, wzdevicemodels: &mut [u16], pcchactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetDeviceModels)(::windows_core::Interface::as_raw(self), wzdevicemodels.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(wzdevicemodels)), ::core::mem::transmute(pcchactual)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesRequireFullStream(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesRequireFullStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesRequireFullStream(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesRequireFullStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportPadding(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesSupportPadding)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesSupportPadding(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesSupportPadding)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesRequireFixedSize(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DoesRequireFixedSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DoesRequireFixedSize(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DoesRequireFixedSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetHeader(&self, guidcontainerformat: *const ::windows_core::GUID, cbsize: u32, pheader: *mut WICMetadataHeader, pcbactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetHeader)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guidcontainerformat), ::core::mem::transmute(cbsize), ::core::mem::transmute(pheader), ::core::mem::transmute(pcbactual)).ok()
@@ -4541,15 +4477,13 @@ pub struct IWICMetadataWriterInfo_Vtbl {
 #[repr(transparent)]
 pub struct IWICPalette(::windows_core::IUnknown);
 impl IWICPalette {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn InitializePredefined<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, epalettetype: WICBitmapPaletteType, faddtransparentcolor: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn InitializePredefined<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, epalettetype: WICBitmapPaletteType, faddtransparentcolor: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).InitializePredefined)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(epalettetype), faddtransparentcolor.into_param().abi()).ok()
     }
     pub unsafe fn InitializeCustom(&self, pcolors: &[u32]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).InitializeCustom)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pcolors)), pcolors.len() as _).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn InitializeFromBitmap<'a, Param0: ::windows_core::IntoParam<'a, IWICBitmapSource>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pisurface: Param0, ccount: u32, faddtransparentcolor: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn InitializeFromBitmap<'a, Param0: ::windows_core::IntoParam<'a, IWICBitmapSource>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pisurface: Param0, ccount: u32, faddtransparentcolor: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).InitializeFromBitmap)(::windows_core::Interface::as_raw(self), pisurface.into_param().abi(), ::core::mem::transmute(ccount), faddtransparentcolor.into_param().abi()).ok()
     }
     pub unsafe fn InitializeFromPalette<'a, Param0: ::windows_core::IntoParam<'a, IWICPalette>>(&self, pipalette: Param0) -> ::windows_core::Result<()> {
@@ -4566,20 +4500,17 @@ impl IWICPalette {
     pub unsafe fn GetColors(&self, pcolors: &mut [u32], pcactualcolors: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetColors)(::windows_core::Interface::as_raw(self), pcolors.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pcolors)), ::core::mem::transmute(pcactualcolors)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsBlackWhite(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsBlackWhite)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsBlackWhite(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsBlackWhite)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsGrayscale(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsGrayscale)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsGrayscale(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsGrayscale)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HasAlpha(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).HasAlpha)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn HasAlpha(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).HasAlpha)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IWICPalette> for ::windows_core::IUnknown {
@@ -4626,31 +4557,16 @@ unsafe impl ::windows_core::Interface for IWICPalette {
 #[doc(hidden)]
 pub struct IWICPalette_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub InitializePredefined: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, epalettetype: WICBitmapPaletteType, faddtransparentcolor: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    InitializePredefined: usize,
+    pub InitializePredefined: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, epalettetype: WICBitmapPaletteType, faddtransparentcolor: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub InitializeCustom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcolors: *const u32, ccount: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub InitializeFromBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pisurface: ::windows_core::RawPtr, ccount: u32, faddtransparentcolor: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    InitializeFromBitmap: usize,
+    pub InitializeFromBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pisurface: ::windows_core::RawPtr, ccount: u32, faddtransparentcolor: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub InitializeFromPalette: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pipalette: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pepalettetype: *mut WICBitmapPaletteType) -> ::windows_core::HRESULT,
     pub GetColorCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pccount: *mut u32) -> ::windows_core::HRESULT,
     pub GetColors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ccount: u32, pcolors: *mut u32, pcactualcolors: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsBlackWhite: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfisblackwhite: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsBlackWhite: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsGrayscale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfisgrayscale: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsGrayscale: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub HasAlpha: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfhasalpha: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    HasAlpha: usize,
+    pub IsBlackWhite: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfisblackwhite: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub IsGrayscale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfisgrayscale: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub HasAlpha: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfhasalpha: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -4667,11 +4583,11 @@ impl IWICPersistStream {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsDirty)(::windows_core::Interface::as_raw(self)))
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Load<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pstm: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Load<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pstm: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Load)(::windows_core::Interface::as_raw(self), pstm.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Save<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pstm: Param0, fcleardirty: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Save<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pstm: Param0, fcleardirty: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Save)(::windows_core::Interface::as_raw(self), pstm.into_param().abi(), fcleardirty.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -4680,11 +4596,11 @@ impl IWICPersistStream {
         (::windows_core::Interface::vtable(self).base__.GetSizeMax)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn LoadEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pistream: Param0, pguidpreferredvendor: *const ::windows_core::GUID, dwpersistoptions: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn LoadEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0, pguidpreferredvendor: *const ::windows_core::GUID, dwpersistoptions: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).LoadEx)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(pguidpreferredvendor), ::core::mem::transmute(dwpersistoptions)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SaveEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pistream: Param0, dwpersistoptions: u32, fcleardirty: Param2) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SaveEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pistream: Param0, dwpersistoptions: u32, fcleardirty: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SaveEx)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(dwpersistoptions), fcleardirty.into_param().abi()).ok()
     }
 }
@@ -4713,50 +4629,50 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWICPer
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IWICPersistStream> for super::super::System::Com::IPersist {
+impl ::core::convert::From<IWICPersistStream> for ::win32_system::Com::IPersist {
     fn from(value: IWICPersistStream) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IWICPersistStream> for super::super::System::Com::IPersist {
+impl ::core::convert::From<&IWICPersistStream> for ::win32_system::Com::IPersist {
     fn from(value: &IWICPersistStream) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IPersist> for IWICPersistStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IPersist> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersist> for IWICPersistStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersist> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IPersist> for &'a IWICPersistStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IPersist> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersist> for &'a IWICPersistStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersist> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IWICPersistStream> for super::super::System::Com::IPersistStream {
+impl ::core::convert::From<IWICPersistStream> for ::win32_system::Com::IPersistStream {
     fn from(value: IWICPersistStream) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IWICPersistStream> for super::super::System::Com::IPersistStream {
+impl ::core::convert::From<&IWICPersistStream> for ::win32_system::Com::IPersistStream {
     fn from(value: &IWICPersistStream) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IPersistStream> for IWICPersistStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IPersistStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersistStream> for IWICPersistStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersistStream> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IPersistStream> for &'a IWICPersistStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IPersistStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersistStream> for &'a IWICPersistStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersistStream> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -4789,14 +4705,14 @@ unsafe impl ::windows_core::Interface for IWICPersistStream {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWICPersistStream_Vtbl {
-    pub base__: super::super::System::Com::IPersistStream_Vtbl,
+    pub base__: ::win32_system::Com::IPersistStream_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub LoadEx: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pistream: ::windows_core::RawPtr, pguidpreferredvendor: *const ::windows_core::GUID, dwpersistoptions: u32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     LoadEx: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub SaveEx: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pistream: ::windows_core::RawPtr, dwpersistoptions: u32, fcleardirty: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub SaveEx: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pistream: ::windows_core::RawPtr, dwpersistoptions: u32, fcleardirty: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     SaveEx: usize,
 }
 #[repr(transparent)]
@@ -4970,10 +4886,9 @@ impl IWICPixelFormatInfo2 {
     pub unsafe fn GetChannelMask(&self, uichannelindex: u32, pbmaskbuffer: &mut [u8], pcbactual: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetChannelMask)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uichannelindex), pbmaskbuffer.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pbmaskbuffer)), ::core::mem::transmute(pcbactual)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SupportsTransparency(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).SupportsTransparency)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn SupportsTransparency(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).SupportsTransparency)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetNumericRepresentation(&self) -> ::windows_core::Result<WICPixelFormatNumericRepresentation> {
         let mut result__ = ::core::mem::MaybeUninit::<WICPixelFormatNumericRepresentation>::zeroed();
@@ -5064,10 +4979,7 @@ unsafe impl ::windows_core::Interface for IWICPixelFormatInfo2 {
 #[doc(hidden)]
 pub struct IWICPixelFormatInfo2_Vtbl {
     pub base__: IWICPixelFormatInfo_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SupportsTransparency: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportstransparency: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SupportsTransparency: usize,
+    pub SupportsTransparency: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfsupportstransparency: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetNumericRepresentation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnumericrepresentation: *mut WICPixelFormatNumericRepresentation) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -5130,8 +5042,7 @@ pub struct IWICPlanarBitmapFrameEncode_Vtbl {
 #[repr(transparent)]
 pub struct IWICPlanarBitmapSourceTransform(::windows_core::IUnknown);
 impl IWICPlanarBitmapSourceTransform {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DoesSupportTransform(&self, puiwidth: *mut u32, puiheight: *mut u32, dsttransform: WICBitmapTransformOptions, dstplanaroptions: WICPlanarOptions, pguiddstformats: *const ::windows_core::GUID, pplanedescriptions: *mut WICBitmapPlaneDescription, cplanes: u32, pfissupported: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn DoesSupportTransform(&self, puiwidth: *mut u32, puiheight: *mut u32, dsttransform: WICBitmapTransformOptions, dstplanaroptions: WICPlanarOptions, pguiddstformats: *const ::windows_core::GUID, pplanedescriptions: *mut WICBitmapPlaneDescription, cplanes: u32, pfissupported: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DoesSupportTransform)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(puiwidth), ::core::mem::transmute(puiheight), ::core::mem::transmute(dsttransform), ::core::mem::transmute(dstplanaroptions), ::core::mem::transmute(pguiddstformats), ::core::mem::transmute(pplanedescriptions), ::core::mem::transmute(cplanes), ::core::mem::transmute(pfissupported)).ok()
     }
     pub unsafe fn CopyPixels(&self, prcsource: *const WICRect, uiwidth: u32, uiheight: u32, dsttransform: WICBitmapTransformOptions, dstplanaroptions: WICPlanarOptions, pdstplanes: &[WICBitmapPlane]) -> ::windows_core::Result<()> {
@@ -5182,10 +5093,7 @@ unsafe impl ::windows_core::Interface for IWICPlanarBitmapSourceTransform {
 #[doc(hidden)]
 pub struct IWICPlanarBitmapSourceTransform_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DoesSupportTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, puiwidth: *mut u32, puiheight: *mut u32, dsttransform: WICBitmapTransformOptions, dstplanaroptions: WICPlanarOptions, pguiddstformats: *const ::windows_core::GUID, pplanedescriptions: *mut WICBitmapPlaneDescription, cplanes: u32, pfissupported: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DoesSupportTransform: usize,
+    pub DoesSupportTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, puiwidth: *mut u32, puiheight: *mut u32, dsttransform: WICBitmapTransformOptions, dstplanaroptions: WICPlanarOptions, pguiddstformats: *const ::windows_core::GUID, pplanedescriptions: *mut WICBitmapPlaneDescription, cplanes: u32, pfissupported: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub CopyPixels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prcsource: *const WICRect, uiwidth: u32, uiheight: u32, dsttransform: WICBitmapTransformOptions, dstplanaroptions: WICPlanarOptions, pdstplanes: *const WICBitmapPlane, cplanes: u32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -5210,10 +5118,9 @@ impl IWICPlanarFormatConverter {
     pub unsafe fn Initialize<'a, Param4: ::windows_core::IntoParam<'a, IWICPalette>>(&self, ppplanes: &[::core::option::Option<IWICBitmapSource>], dstformat: *const ::windows_core::GUID, dither: WICBitmapDitherType, pipalette: Param4, alphathresholdpercent: f64, palettetranslate: WICBitmapPaletteType) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(ppplanes)), ppplanes.len() as _, ::core::mem::transmute(dstformat), ::core::mem::transmute(dither), pipalette.into_param().abi(), ::core::mem::transmute(alphathresholdpercent), ::core::mem::transmute(palettetranslate)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CanConvert(&self, psrcpixelformats: &[::windows_core::GUID], dstpixelformat: *const ::windows_core::GUID) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).CanConvert)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(psrcpixelformats)), psrcpixelformats.len() as _, ::core::mem::transmute(dstpixelformat), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn CanConvert(&self, psrcpixelformats: &[::windows_core::GUID], dstpixelformat: *const ::windows_core::GUID) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).CanConvert)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(psrcpixelformats)), psrcpixelformats.len() as _, ::core::mem::transmute(dstpixelformat), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IWICPlanarFormatConverter> for ::windows_core::IUnknown {
@@ -5281,10 +5188,7 @@ unsafe impl ::windows_core::Interface for IWICPlanarFormatConverter {
 pub struct IWICPlanarFormatConverter_Vtbl {
     pub base__: IWICBitmapSource_Vtbl,
     pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppplanes: *const ::windows_core::RawPtr, cplanes: u32, dstformat: *const ::windows_core::GUID, dither: WICBitmapDitherType, pipalette: ::windows_core::RawPtr, alphathresholdpercent: f64, palettetranslate: WICBitmapPaletteType) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CanConvert: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psrcpixelformats: *const ::windows_core::GUID, csrcplanes: u32, dstpixelformat: *const ::windows_core::GUID, pfcanconvert: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CanConvert: usize,
+    pub CanConvert: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psrcpixelformats: *const ::windows_core::GUID, csrcplanes: u32, dstpixelformat: *const ::windows_core::GUID, pfcanconvert: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWICProgressCallback(::windows_core::IUnknown);
@@ -5416,7 +5320,7 @@ impl IWICStream {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.base__.Write)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pv), ::core::mem::transmute(cb), ::core::mem::transmute(pcbwritten)))
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Seek(&self, dlibmove: i64, dworigin: super::super::System::Com::STREAM_SEEK) -> ::windows_core::Result<u64> {
+    pub unsafe fn Seek(&self, dlibmove: i64, dworigin: ::win32_system::Com::STREAM_SEEK) -> ::windows_core::Result<u64> {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Seek)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dlibmove), ::core::mem::transmute(dworigin), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
@@ -5425,11 +5329,11 @@ impl IWICStream {
         (::windows_core::Interface::vtable(self).base__.SetSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(libnewsize)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CopyTo<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pstm: Param0, cb: u64, pcbread: *mut u64, pcbwritten: *mut u64) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyTo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pstm: Param0, cb: u64, pcbread: *mut u64, pcbwritten: *mut u64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CopyTo)(::windows_core::Interface::as_raw(self), pstm.into_param().abi(), ::core::mem::transmute(cb), ::core::mem::transmute(pcbread), ::core::mem::transmute(pcbwritten)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Commit(&self, grfcommitflags: super::super::System::Com::STGC) -> ::windows_core::Result<()> {
+    pub unsafe fn Commit(&self, grfcommitflags: ::win32_system::Com::STGC) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Commit)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(grfcommitflags)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -5444,17 +5348,17 @@ impl IWICStream {
     pub unsafe fn UnlockRegion(&self, liboffset: u64, cb: u64, dwlocktype: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.UnlockRegion)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(liboffset), ::core::mem::transmute(cb), ::core::mem::transmute(dwlocktype)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Stat(&self, pstatstg: *mut super::super::System::Com::STATSTG, grfstatflag: u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Stat(&self, pstatstg: *mut ::win32_system::Com::STATSTG, grfstatflag: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Stat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pstatstg), ::core::mem::transmute(grfstatflag)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Clone(&self) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn Clone(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Clone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).base__.Clone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn InitializeFromIStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pistream: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn InitializeFromIStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).InitializeFromIStream)(::windows_core::Interface::as_raw(self), pistream.into_param().abi()).ok()
     }
     pub unsafe fn InitializeFromFilename<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wzfilename: Param0, dwdesiredaccess: u32) -> ::windows_core::Result<()> {
@@ -5464,7 +5368,7 @@ impl IWICStream {
         (::windows_core::Interface::vtable(self).InitializeFromMemory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pbbuffer)), pbbuffer.len() as _).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn InitializeFromIStreamRegion<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pistream: Param0, uloffset: u64, ulmaxsize: u64) -> ::windows_core::Result<()> {
+    pub unsafe fn InitializeFromIStreamRegion<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0, uloffset: u64, ulmaxsize: u64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).InitializeFromIStreamRegion)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(uloffset), ::core::mem::transmute(ulmaxsize)).ok()
     }
 }
@@ -5493,50 +5397,50 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IWICStr
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IWICStream> for super::super::System::Com::ISequentialStream {
+impl ::core::convert::From<IWICStream> for ::win32_system::Com::ISequentialStream {
     fn from(value: IWICStream) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IWICStream> for super::super::System::Com::ISequentialStream {
+impl ::core::convert::From<&IWICStream> for ::win32_system::Com::ISequentialStream {
     fn from(value: &IWICStream) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream> for IWICStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::ISequentialStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream> for IWICStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::ISequentialStream> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream> for &'a IWICStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::ISequentialStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream> for &'a IWICStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::ISequentialStream> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IWICStream> for super::super::System::Com::IStream {
+impl ::core::convert::From<IWICStream> for ::win32_system::Com::IStream {
     fn from(value: IWICStream) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IWICStream> for super::super::System::Com::IStream {
+impl ::core::convert::From<&IWICStream> for ::win32_system::Com::IStream {
     fn from(value: &IWICStream) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IStream> for IWICStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IStream> for IWICStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IStream> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IStream> for &'a IWICStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IStream> for &'a IWICStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IStream> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -5569,7 +5473,7 @@ unsafe impl ::windows_core::Interface for IWICStream {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWICStream_Vtbl {
-    pub base__: super::super::System::Com::IStream_Vtbl,
+    pub base__: ::win32_system::Com::IStream_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub InitializeFromIStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pistream: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -5585,9 +5489,9 @@ pub struct IWICStream_Vtbl {
 pub struct IWICStreamProvider(::windows_core::IUnknown);
 impl IWICStreamProvider {
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetStream(&self) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn GetStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     pub unsafe fn GetPersistOptions(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -5964,41 +5868,33 @@ impl ::core::fmt::Debug for WICBitmapPaletteType {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WICBitmapPattern {
     pub Position: u64,
     pub Length: u32,
     pub Pattern: *mut u8,
     pub Mask: *mut u8,
-    pub EndOfStream: super::super::Foundation::BOOL,
+    pub EndOfStream: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WICBitmapPattern {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WICBitmapPattern {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WICBitmapPattern {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WICBitmapPattern").field("Position", &self.Position).field("Length", &self.Length).field("Pattern", &self.Pattern).field("Mask", &self.Mask).field("EndOfStream", &self.EndOfStream).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WICBitmapPattern {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WICBitmapPattern {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WICBitmapPattern>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WICBitmapPattern {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WICBitmapPattern {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6220,14 +6116,13 @@ pub unsafe fn WICConvertBitmapSource<'a, Param1: ::windows_core::IntoParam<'a, I
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WICCreateBitmapFromSection<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(width: u32, height: u32, pixelformat: *const ::windows_core::GUID, hsection: Param3, stride: u32, offset: u32) -> ::windows_core::Result<IWICBitmap> {
+pub unsafe fn WICCreateBitmapFromSection<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(width: u32, height: u32, pixelformat: *const ::windows_core::GUID, hsection: Param3, stride: u32, offset: u32) -> ::windows_core::Result<IWICBitmap> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WICCreateBitmapFromSection(width: u32, height: u32, pixelformat: *const ::windows_core::GUID, hsection: super::super::Foundation::HANDLE, stride: u32, offset: u32, ppibitmap: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn WICCreateBitmapFromSection(width: u32, height: u32, pixelformat: *const ::windows_core::GUID, hsection: ::win32_foundation::HANDLE, stride: u32, offset: u32, ppibitmap: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         WICCreateBitmapFromSection(::core::mem::transmute(width), ::core::mem::transmute(height), ::core::mem::transmute(pixelformat), hsection.into_param().abi(), ::core::mem::transmute(stride), ::core::mem::transmute(offset), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmap>(result__)
@@ -6235,14 +6130,13 @@ pub unsafe fn WICCreateBitmapFromSection<'a, Param3: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WICCreateBitmapFromSectionEx<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(width: u32, height: u32, pixelformat: *const ::windows_core::GUID, hsection: Param3, stride: u32, offset: u32, desiredaccesslevel: WICSectionAccessLevel) -> ::windows_core::Result<IWICBitmap> {
+pub unsafe fn WICCreateBitmapFromSectionEx<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(width: u32, height: u32, pixelformat: *const ::windows_core::GUID, hsection: Param3, stride: u32, offset: u32, desiredaccesslevel: WICSectionAccessLevel) -> ::windows_core::Result<IWICBitmap> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WICCreateBitmapFromSectionEx(width: u32, height: u32, pixelformat: *const ::windows_core::GUID, hsection: super::super::Foundation::HANDLE, stride: u32, offset: u32, desiredaccesslevel: WICSectionAccessLevel, ppibitmap: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn WICCreateBitmapFromSectionEx(width: u32, height: u32, pixelformat: *const ::windows_core::GUID, hsection: ::win32_foundation::HANDLE, stride: u32, offset: u32, desiredaccesslevel: WICSectionAccessLevel, ppibitmap: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         WICCreateBitmapFromSectionEx(::core::mem::transmute(width), ::core::mem::transmute(height), ::core::mem::transmute(pixelformat), hsection.into_param().abi(), ::core::mem::transmute(stride), ::core::mem::transmute(offset), ::core::mem::transmute(desiredaccesslevel), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWICBitmap>(result__)
@@ -6962,7 +6856,7 @@ pub unsafe fn WICMapShortNameToGuid<'a, Param0: ::windows_core::IntoParam<'a, ::
 }
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn WICMatchMetadataContent<'a, Param2: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(guidcontainerformat: *const ::windows_core::GUID, pguidvendor: *const ::windows_core::GUID, pistream: Param2) -> ::windows_core::Result<::windows_core::GUID> {
+pub unsafe fn WICMatchMetadataContent<'a, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(guidcontainerformat: *const ::windows_core::GUID, pguidvendor: *const ::windows_core::GUID, pistream: Param2) -> ::windows_core::Result<::windows_core::GUID> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -7778,7 +7672,7 @@ impl ::core::fmt::Debug for WICSectionAccessLevel {
 }
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn WICSerializeMetadataContent<'a, Param1: ::windows_core::IntoParam<'a, IWICMetadataWriter>, Param3: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(guidcontainerformat: *const ::windows_core::GUID, piwriter: Param1, dwpersistoptions: u32, pistream: Param3) -> ::windows_core::Result<()> {
+pub unsafe fn WICSerializeMetadataContent<'a, Param1: ::windows_core::IntoParam<'a, IWICMetadataWriter>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(guidcontainerformat: *const ::windows_core::GUID, piwriter: Param1, dwpersistoptions: u32, pistream: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]

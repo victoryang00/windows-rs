@@ -1,10 +1,10 @@
 pub struct AppServiceCatalog;
 impl AppServiceCatalog {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindAppServiceProvidersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appservicename: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<super::AppInfo>>> {
+    pub fn FindAppServiceProvidersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appservicename: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::AppInfo>>> {
         Self::IAppServiceCatalogStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAppServiceProvidersAsync)(::windows_core::Interface::as_raw(this), appservicename.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<super::AppInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAppServiceProvidersAsync)(::windows_core::Interface::as_raw(this), appservicename.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<super::AppInfo>>>(result__)
         })
     }
     pub fn IAppServiceCatalogStatics<R, F: FnOnce(&IAppServiceCatalogStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -165,79 +165,73 @@ impl AppServiceConnection {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPackageFamilyName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OpenAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AppServiceConnectionStatus>> {
+    pub fn OpenAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppServiceConnectionStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AppServiceConnectionStatus>>(result__)
+            (::windows_core::Interface::vtable(this).OpenAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppServiceConnectionStatus>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SendMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::ValueSet>>(&self, message: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AppServiceResponse>> {
+    pub fn SendMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, message: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppServiceResponse>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendMessageAsync)(::windows_core::Interface::as_raw(this), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AppServiceResponse>>(result__)
+            (::windows_core::Interface::vtable(this).SendMessageAsync)(::windows_core::Interface::as_raw(this), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppServiceResponse>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AppServiceConnection, AppServiceRequestReceivedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn RequestReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppServiceConnection, AppServiceRequestReceivedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestReceived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).RequestReceived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveRequestReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveRequestReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRequestReceived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ServiceClosed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AppServiceConnection, AppServiceClosedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn ServiceClosed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppServiceConnection, AppServiceClosedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ServiceClosed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ServiceClosed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveServiceClosed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveServiceClosed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveServiceClosed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "System_RemoteSystems"))]
-    pub fn OpenRemoteAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::RemoteSystems::RemoteSystemConnectionRequest>>(&self, remotesystemconnectionrequest: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AppServiceConnectionStatus>> {
+    #[cfg(feature = "System_RemoteSystems")]
+    pub fn OpenRemoteAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::RemoteSystems::RemoteSystemConnectionRequest>>(&self, remotesystemconnectionrequest: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppServiceConnectionStatus>> {
         let this = &::windows_core::Interface::cast::<IAppServiceConnection2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenRemoteAsync)(::windows_core::Interface::as_raw(this), remotesystemconnectionrequest.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AppServiceConnectionStatus>>(result__)
+            (::windows_core::Interface::vtable(this).OpenRemoteAsync)(::windows_core::Interface::as_raw(this), remotesystemconnectionrequest.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppServiceConnectionStatus>>(result__)
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IAppServiceConnection2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "System")]
-    pub fn SetUser<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::User>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAppServiceConnection2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetUser)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "System_RemoteSystems"))]
-    pub fn SendStatelessMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, AppServiceConnection>, Param1: ::windows_core::IntoParam<'a, super::super::System::RemoteSystems::RemoteSystemConnectionRequest>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::ValueSet>>(connection: Param0, connectionrequest: Param1, message: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<StatelessAppServiceResponse>> {
+    pub fn SendStatelessMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, AppServiceConnection>, Param1: ::windows_core::IntoParam<'a, ::winrt_system::RemoteSystems::RemoteSystemConnectionRequest>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(connection: Param0, connectionrequest: Param1, message: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<StatelessAppServiceResponse>> {
         Self::IAppServiceConnectionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendStatelessMessageAsync)(::windows_core::Interface::as_raw(this), connection.into_param().abi(), connectionrequest.into_param().abi(), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<StatelessAppServiceResponse>>(result__)
+            (::windows_core::Interface::vtable(this).SendStatelessMessageAsync)(::windows_core::Interface::as_raw(this), connection.into_param().abi(), connectionrequest.into_param().abi(), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<StatelessAppServiceResponse>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn IAppServiceConnectionStatics<R, F: FnOnce(&IAppServiceConnectionStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -315,30 +309,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a App
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<AppServiceConnection> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<AppServiceConnection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: AppServiceConnection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&AppServiceConnection> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&AppServiceConnection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &AppServiceConnection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for AppServiceConnection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for AppServiceConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &AppServiceConnection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &AppServiceConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for AppServiceConnection {}
@@ -470,19 +460,19 @@ unsafe impl ::core::marker::Sync for AppServiceDeferral {}
 pub struct AppServiceRequest(::windows_core::IUnknown);
 impl AppServiceRequest {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Message(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn Message(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Message)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Message)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SendResponseAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::ValueSet>>(&self, message: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AppServiceResponseStatus>> {
+    pub fn SendResponseAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, message: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppServiceResponseStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendResponseAsync)(::windows_core::Interface::as_raw(this), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AppServiceResponseStatus>>(result__)
+            (::windows_core::Interface::vtable(this).SendResponseAsync)(::windows_core::Interface::as_raw(this), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppServiceResponseStatus>>(result__)
         }
     }
 }
@@ -652,11 +642,11 @@ unsafe impl ::core::marker::Sync for AppServiceRequestReceivedEventArgs {}
 pub struct AppServiceResponse(::windows_core::IUnknown);
 impl AppServiceResponse {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Message(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn Message(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Message)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Message)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     pub fn Status(&self) -> ::windows_core::Result<AppServiceResponseStatus> {
@@ -812,12 +802,11 @@ impl AppServiceTriggerDetails {
             (::windows_core::Interface::vtable(this).IsRemoteSystemConnection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CheckCallerForCapabilityAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, capabilityname: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn CheckCallerForCapabilityAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, capabilityname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IAppServiceTriggerDetails3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CheckCallerForCapabilityAsync)(::windows_core::Interface::as_raw(this), capabilityname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).CheckCallerForCapabilityAsync)(::windows_core::Interface::as_raw(this), capabilityname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn CallerRemoteConnectionToken(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -944,30 +933,15 @@ pub struct IAppServiceConnection_Vtbl {
     pub SetAppServiceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub PackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetPackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub OpenAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OpenAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub SendMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SendMessageAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub RequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveRequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveRequestReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub ServiceClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ServiceClosed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveServiceClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveServiceClosed: usize,
+    pub RequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveRequestReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub ServiceClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveServiceClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -980,9 +954,9 @@ unsafe impl ::windows_core::Interface for IAppServiceConnection2 {
 #[doc(hidden)]
 pub struct IAppServiceConnection2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "System_RemoteSystems"))]
+    #[cfg(feature = "System_RemoteSystems")]
     pub OpenRemoteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotesystemconnectionrequest: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System_RemoteSystems")))]
+    #[cfg(not(feature = "System_RemoteSystems"))]
     OpenRemoteAsync: usize,
     #[cfg(feature = "System")]
     pub User: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1112,10 +1086,7 @@ unsafe impl ::windows_core::Interface for IAppServiceTriggerDetails3 {
 #[doc(hidden)]
 pub struct IAppServiceTriggerDetails3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CheckCallerForCapabilityAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, capabilityname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CheckCallerForCapabilityAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1151,11 +1122,11 @@ pub struct IStatelessAppServiceResponse_Vtbl {
 pub struct StatelessAppServiceResponse(::windows_core::IUnknown);
 impl StatelessAppServiceResponse {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Message(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn Message(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Message)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Message)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     pub fn Status(&self) -> ::windows_core::Result<StatelessAppServiceResponseStatus> {

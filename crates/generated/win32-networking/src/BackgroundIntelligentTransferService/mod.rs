@@ -429,39 +429,31 @@ impl ::core::default::Default for BG_FILE_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BG_FILE_PROGRESS {
     pub BytesTotal: u64,
     pub BytesTransferred: u64,
-    pub Completed: super::super::Foundation::BOOL,
+    pub Completed: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BG_FILE_PROGRESS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BG_FILE_PROGRESS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for BG_FILE_PROGRESS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("BG_FILE_PROGRESS").field("BytesTotal", &self.BytesTotal).field("BytesTransferred", &self.BytesTransferred).field("Completed", &self.Completed).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BG_FILE_PROGRESS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BG_FILE_PROGRESS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BG_FILE_PROGRESS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BG_FILE_PROGRESS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BG_FILE_PROGRESS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -652,39 +644,31 @@ impl ::core::fmt::Debug for BG_JOB_STATE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BG_JOB_TIMES {
-    pub CreationTime: super::super::Foundation::FILETIME,
-    pub ModificationTime: super::super::Foundation::FILETIME,
-    pub TransferCompletionTime: super::super::Foundation::FILETIME,
+    pub CreationTime: ::win32_foundation::FILETIME,
+    pub ModificationTime: ::win32_foundation::FILETIME,
+    pub TransferCompletionTime: ::win32_foundation::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BG_JOB_TIMES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BG_JOB_TIMES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for BG_JOB_TIMES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("BG_JOB_TIMES").field("CreationTime", &self.CreationTime).field("ModificationTime", &self.ModificationTime).field("TransferCompletionTime", &self.TransferCompletionTime).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BG_JOB_TIMES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BG_JOB_TIMES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BG_JOB_TIMES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BG_JOB_TIMES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BG_JOB_TIMES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -844,35 +828,28 @@ impl ::core::fmt::Debug for BITS_JOB_PROPERTY_ID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union BITS_JOB_PROPERTY_VALUE {
     pub Dword: u32,
     pub ClsID: ::windows_core::GUID,
-    pub Enable: super::super::Foundation::BOOL,
+    pub Enable: ::win32_foundation::BOOL,
     pub Uint64: u64,
     pub Target: BG_AUTH_TARGET,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BITS_JOB_PROPERTY_VALUE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BITS_JOB_PROPERTY_VALUE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BITS_JOB_PROPERTY_VALUE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BITS_JOB_PROPERTY_VALUE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BITS_JOB_PROPERTY_VALUE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BITS_JOB_PROPERTY_VALUE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BITS_JOB_PROPERTY_VALUE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -929,37 +906,30 @@ pub const BackgroundCopyManager4_0: ::windows_core::GUID = ::windows_core::GUID:
 pub const BackgroundCopyManager5_0: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1ecca34c_e88a_44e3_8d6a_8921bde9e452);
 pub const BackgroundCopyQMgr: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x69ad4aee_51be_439b_a92c_86ae490e8b30);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILESETINFO {
-    pub bstrRemoteFile: super::super::Foundation::BSTR,
-    pub bstrLocalFile: super::super::Foundation::BSTR,
+    pub bstrRemoteFile: ::win32_foundation::BSTR,
+    pub bstrLocalFile: ::win32_foundation::BSTR,
     pub dwSizeHint: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILESETINFO {
     fn clone(&self) -> Self {
         Self { bstrRemoteFile: self.bstrRemoteFile.clone(), bstrLocalFile: self.bstrLocalFile.clone(), dwSizeHint: self.dwSizeHint }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FILESETINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FILESETINFO").field("bstrRemoteFile", &self.bstrRemoteFile).field("bstrLocalFile", &self.bstrLocalFile).field("dwSizeHint", &self.dwSizeHint).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FILESETINFO {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FILESETINFO {
     fn eq(&self, other: &Self) -> bool {
         self.bstrRemoteFile == other.bstrRemoteFile && self.bstrLocalFile == other.bstrLocalFile && self.dwSizeHint == other.dwSizeHint
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FILESETINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FILESETINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1011,10 +981,9 @@ impl IBITSExtensionSetup {
     pub unsafe fn DisableBITSUploads(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DisableBITSUploads)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetCleanupTaskName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetCleanupTaskName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetCleanupTaskName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetCleanupTaskName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetCleanupTask(&self, riid: *const ::windows_core::GUID) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
@@ -1046,26 +1015,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IBITSEx
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IBITSExtensionSetup> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IBITSExtensionSetup> for ::win32_system::Com::IDispatch {
     fn from(value: IBITSExtensionSetup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IBITSExtensionSetup> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IBITSExtensionSetup> for ::win32_system::Com::IDispatch {
     fn from(value: &IBITSExtensionSetup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IBITSExtensionSetup {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IBITSExtensionSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IBITSExtensionSetup {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IBITSExtensionSetup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1098,13 +1067,10 @@ unsafe impl ::windows_core::Interface for IBITSExtensionSetup {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IBITSExtensionSetup_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub EnableBITSUploads: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub DisableBITSUploads: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetCleanupTaskName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptaskname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetCleanupTaskName: usize,
+    pub GetCleanupTaskName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptaskname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetCleanupTask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -1112,8 +1078,8 @@ pub struct IBITSExtensionSetup_Vtbl {
 pub struct IBITSExtensionSetupFactory(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IBITSExtensionSetupFactory {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetObject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<IBITSExtensionSetup> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetObject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<IBITSExtensionSetup> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetObject)(::windows_core::Interface::as_raw(self), path.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IBITSExtensionSetup>(result__)
     }
@@ -1143,26 +1109,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IBITSEx
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IBITSExtensionSetupFactory> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IBITSExtensionSetupFactory> for ::win32_system::Com::IDispatch {
     fn from(value: IBITSExtensionSetupFactory) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IBITSExtensionSetupFactory> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IBITSExtensionSetupFactory> for ::win32_system::Com::IDispatch {
     fn from(value: &IBITSExtensionSetupFactory) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IBITSExtensionSetupFactory {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IBITSExtensionSetupFactory {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IBITSExtensionSetupFactory {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IBITSExtensionSetupFactory {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1195,10 +1161,10 @@ unsafe impl ::windows_core::Interface for IBITSExtensionSetupFactory {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IBITSExtensionSetupFactory_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppextensionsetup: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppextensionsetup: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetObject: usize,
 }
 #[repr(transparent)]
@@ -1594,7 +1560,6 @@ impl IBackgroundCopyFile {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).GetLocalName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetProgress(&self) -> ::windows_core::Result<BG_FILE_PROGRESS> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_FILE_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_FILE_PROGRESS>(result__)
@@ -1646,10 +1611,7 @@ pub struct IBackgroundCopyFile_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetRemoteName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetLocalName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetProgress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut BG_FILE_PROGRESS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetProgress: usize,
 }
 #[repr(transparent)]
 pub struct IBackgroundCopyFile2(::windows_core::IUnknown);
@@ -1662,7 +1624,6 @@ impl IBackgroundCopyFile2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetLocalName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetProgress(&self) -> ::windows_core::Result<BG_FILE_PROGRESS> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_FILE_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_FILE_PROGRESS>(result__)
@@ -1752,7 +1713,6 @@ impl IBackgroundCopyFile3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetLocalName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetProgress(&self) -> ::windows_core::Result<BG_FILE_PROGRESS> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_FILE_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_FILE_PROGRESS>(result__)
@@ -1767,19 +1727,16 @@ impl IBackgroundCopyFile3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).GetTemporaryName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetValidationState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, state: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetValidationState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, state: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValidationState)(::windows_core::Interface::as_raw(self), state.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetValidationState(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetValidationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetValidationState(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetValidationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsDownloadedFromPeer(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsDownloadedFromPeer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsDownloadedFromPeer(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsDownloadedFromPeer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IBackgroundCopyFile3> for ::windows_core::IUnknown {
@@ -1867,18 +1824,9 @@ unsafe impl ::windows_core::Interface for IBackgroundCopyFile3 {
 pub struct IBackgroundCopyFile3_Vtbl {
     pub base__: IBackgroundCopyFile2_Vtbl,
     pub GetTemporaryName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfilename: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetValidationState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, state: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetValidationState: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetValidationState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstate: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetValidationState: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsDownloadedFromPeer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsDownloadedFromPeer: usize,
+    pub SetValidationState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, state: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetValidationState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstate: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub IsDownloadedFromPeer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IBackgroundCopyFile4(::windows_core::IUnknown);
@@ -1891,7 +1839,6 @@ impl IBackgroundCopyFile4 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetLocalName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetProgress(&self) -> ::windows_core::Result<BG_FILE_PROGRESS> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_FILE_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_FILE_PROGRESS>(result__)
@@ -1906,19 +1853,16 @@ impl IBackgroundCopyFile4 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetTemporaryName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetValidationState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, state: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetValidationState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, state: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetValidationState)(::windows_core::Interface::as_raw(self), state.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetValidationState(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetValidationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetValidationState(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetValidationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsDownloadedFromPeer(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsDownloadedFromPeer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsDownloadedFromPeer(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsDownloadedFromPeer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetPeerDownloadStats(&self, pfromorigin: *mut u64, pfrompeers: *mut u64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetPeerDownloadStats)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pfromorigin), ::core::mem::transmute(pfrompeers)).ok()
@@ -2041,7 +1985,6 @@ impl IBackgroundCopyFile5 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetLocalName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetProgress(&self) -> ::windows_core::Result<BG_FILE_PROGRESS> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_FILE_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_FILE_PROGRESS>(result__)
@@ -2056,19 +1999,16 @@ impl IBackgroundCopyFile5 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetTemporaryName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetValidationState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, state: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetValidationState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, state: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetValidationState)(::windows_core::Interface::as_raw(self), state.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetValidationState(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetValidationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetValidationState(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetValidationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsDownloadedFromPeer(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.IsDownloadedFromPeer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsDownloadedFromPeer(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.IsDownloadedFromPeer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetPeerDownloadStats(&self, pfromorigin: *mut u64, pfrompeers: *mut u64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetPeerDownloadStats)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pfromorigin), ::core::mem::transmute(pfrompeers)).ok()
@@ -2219,7 +2159,6 @@ impl IBackgroundCopyFile6 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.GetLocalName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetProgress(&self) -> ::windows_core::Result<BG_FILE_PROGRESS> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_FILE_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.base__.GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_FILE_PROGRESS>(result__)
@@ -2234,19 +2173,16 @@ impl IBackgroundCopyFile6 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetTemporaryName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetValidationState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, state: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetValidationState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, state: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SetValidationState)(::windows_core::Interface::as_raw(self), state.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetValidationState(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.base__.GetValidationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetValidationState(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.base__.GetValidationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsDownloadedFromPeer(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.base__.IsDownloadedFromPeer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsDownloadedFromPeer(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.base__.IsDownloadedFromPeer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetPeerDownloadStats(&self, pfromorigin: *mut u64, pfrompeers: *mut u64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetPeerDownloadStats)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pfromorigin), ::core::mem::transmute(pfrompeers)).ok()
@@ -2419,13 +2355,13 @@ pub struct IBackgroundCopyFile6_Vtbl {
 #[repr(transparent)]
 pub struct IBackgroundCopyGroup(::windows_core::IUnknown);
 impl IBackgroundCopyGroup {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetProp(&self, propid: GROUPPROP) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetProp)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn GetProp(&self, propid: GROUPPROP) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetProp)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetProp(&self, propid: GROUPPROP, pvarval: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn SetProp(&self, propid: GROUPPROP, pvarval: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetProp)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propid), ::core::mem::transmute(pvarval)).ok()
     }
     pub unsafe fn GetProgress(&self, dwflags: u32) -> ::windows_core::Result<u32> {
@@ -2519,13 +2455,13 @@ unsafe impl ::windows_core::Interface for IBackgroundCopyGroup {
 #[doc(hidden)]
 pub struct IBackgroundCopyGroup_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetProp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: GROUPPROP, pvarval: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: GROUPPROP, pvarval: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetProp: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetProp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: GROUPPROP, pvarval: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetProp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: GROUPPROP, pvarval: *const ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetProp: usize,
     pub GetProgress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, pdwprogress: *mut u32) -> ::windows_core::HRESULT,
     pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwstatus: *mut u32, pdwjobindex: *mut u32) -> ::windows_core::HRESULT,
@@ -2578,7 +2514,6 @@ impl IBackgroundCopyJob {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_PROGRESS>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetTimes(&self) -> ::windows_core::Result<BG_JOB_TIMES> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_TIMES>::zeroed();
         (::windows_core::Interface::vtable(self).GetTimes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_TIMES>(result__)
@@ -2712,10 +2647,7 @@ pub struct IBackgroundCopyJob_Vtbl {
     pub GetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut BG_JOB_TYPE) -> ::windows_core::HRESULT,
     pub GetProgress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut BG_JOB_PROGRESS) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetTimes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut BG_JOB_TIMES) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetTimes: usize,
     pub GetState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut BG_JOB_STATE) -> ::windows_core::HRESULT,
     pub GetError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pperror: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
@@ -2751,11 +2683,9 @@ impl IBackgroundCopyJob1 {
     pub unsafe fn GetStatus(&self, pdwstatus: *mut u32, pdwwin32result: *mut u32, pdwtransportresult: *mut u32, pdwnumofretries: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwstatus), ::core::mem::transmute(pdwwin32result), ::core::mem::transmute(pdwtransportresult), ::core::mem::transmute(pdwnumofretries)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn AddFiles(&self, ppfileset: &[*const FILESETINFO]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddFiles)(::windows_core::Interface::as_raw(self), ppfileset.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppfileset))).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetFile(&self, cfileindex: u32) -> ::windows_core::Result<FILESETINFO> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<FILESETINFO>>::zeroed();
         (::windows_core::Interface::vtable(self).GetFile)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(cfileindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FILESETINFO>(result__)
@@ -2819,14 +2749,8 @@ pub struct IBackgroundCopyJob1_Vtbl {
     pub CancelJob: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetProgress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, pdwprogress: *mut u32) -> ::windows_core::HRESULT,
     pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwstatus: *mut u32, pdwwin32result: *mut u32, pdwtransportresult: *mut u32, pdwnumofretries: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub AddFiles: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cfilecount: u32, ppfileset: *const *const FILESETINFO) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AddFiles: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cfileindex: u32, pfileinfo: *mut FILESETINFO) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetFile: usize,
     pub GetFileCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwfilecount: *mut u32) -> ::windows_core::HRESULT,
     pub SwitchToForeground: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub JobID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidjobid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
@@ -2868,7 +2792,6 @@ impl IBackgroundCopyJob2 {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_PROGRESS>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetTimes(&self) -> ::windows_core::Result<BG_JOB_TIMES> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_TIMES>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetTimes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_TIMES>(result__)
@@ -3083,7 +3006,6 @@ impl IBackgroundCopyJob3 {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_PROGRESS>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetTimes(&self) -> ::windows_core::Result<BG_JOB_TIMES> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_TIMES>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetTimes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_TIMES>(result__)
@@ -3327,7 +3249,6 @@ impl IBackgroundCopyJob4 {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_PROGRESS>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetTimes(&self) -> ::windows_core::Result<BG_JOB_TIMES> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_TIMES>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.GetTimes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_TIMES>(result__)
@@ -3455,10 +3376,9 @@ impl IBackgroundCopyJob4 {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetOwnerIntegrityLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetOwnerElevationState(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetOwnerElevationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetOwnerElevationState(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetOwnerElevationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn SetMaximumDownloadTime(&self, timeout: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMaximumDownloadTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
@@ -3575,10 +3495,7 @@ pub struct IBackgroundCopyJob4_Vtbl {
     pub SetPeerCachingFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: u32) -> ::windows_core::HRESULT,
     pub GetPeerCachingFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pflags: *mut u32) -> ::windows_core::HRESULT,
     pub GetOwnerIntegrityLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plevel: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetOwnerElevationState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pelevated: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetOwnerElevationState: usize,
+    pub GetOwnerElevationState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pelevated: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetMaximumDownloadTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timeout: u32) -> ::windows_core::HRESULT,
     pub GetMaximumDownloadTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptimeout: *mut u32) -> ::windows_core::HRESULT,
 }
@@ -3619,7 +3536,6 @@ impl IBackgroundCopyJob5 {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_PROGRESS>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_PROGRESS>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetTimes(&self) -> ::windows_core::Result<BG_JOB_TIMES> {
         let mut result__ = ::core::mem::MaybeUninit::<BG_JOB_TIMES>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.base__.base__.GetTimes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BG_JOB_TIMES>(result__)
@@ -3747,10 +3663,9 @@ impl IBackgroundCopyJob5 {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetOwnerIntegrityLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetOwnerElevationState(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetOwnerElevationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetOwnerElevationState(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetOwnerElevationState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn SetMaximumDownloadTime(&self, timeout: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetMaximumDownloadTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(timeout)).ok()
@@ -3759,11 +3674,9 @@ impl IBackgroundCopyJob5 {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetMaximumDownloadTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetProperty<'a, Param1: ::windows_core::IntoParam<'a, BITS_JOB_PROPERTY_VALUE>>(&self, propertyid: BITS_JOB_PROPERTY_ID, propertyvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), propertyvalue.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetProperty(&self, propertyid: BITS_JOB_PROPERTY_ID) -> ::windows_core::Result<BITS_JOB_PROPERTY_VALUE> {
         let mut result__ = ::core::mem::MaybeUninit::<BITS_JOB_PROPERTY_VALUE>::zeroed();
         (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<BITS_JOB_PROPERTY_VALUE>(result__)
@@ -3893,14 +3806,8 @@ unsafe impl ::windows_core::Interface for IBackgroundCopyJob5 {
 #[doc(hidden)]
 pub struct IBackgroundCopyJob5_Vtbl {
     pub base__: IBackgroundCopyJob4_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub SetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: BITS_JOB_PROPERTY_ID, propertyvalue: BITS_JOB_PROPERTY_VALUE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetProperty: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyid: BITS_JOB_PROPERTY_ID, propertyvalue: *mut BITS_JOB_PROPERTY_VALUE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetProperty: usize,
 }
 #[repr(transparent)]
 pub struct IBackgroundCopyJobHttpOptions(::windows_core::IUnknown);
@@ -4411,15 +4318,13 @@ impl IBitsPeer {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).GetPeerName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsAuthenticated(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsAuthenticated)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsAuthenticated(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsAuthenticated)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsAvailable(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsAvailable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsAvailable(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsAvailable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IBitsPeer> for ::windows_core::IUnknown {
@@ -4467,14 +4372,8 @@ unsafe impl ::windows_core::Interface for IBitsPeer {
 pub struct IBitsPeer_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetPeerName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pname: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsAuthenticated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pauth: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsAuthenticated: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsAvailable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ponline: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsAvailable: usize,
+    pub IsAuthenticated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pauth: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub IsAvailable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ponline: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IBitsPeerCacheAdministration(::windows_core::IUnknown);
@@ -4602,15 +4501,13 @@ impl IBitsPeerCacheRecord {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
         (::windows_core::Interface::vtable(self).GetFileSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetFileModificationTime(&self) -> ::windows_core::Result<super::super::Foundation::FILETIME> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::FILETIME>::zeroed();
-        (::windows_core::Interface::vtable(self).GetFileModificationTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::FILETIME>(result__)
+    pub unsafe fn GetFileModificationTime(&self) -> ::windows_core::Result<::win32_foundation::FILETIME> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::FILETIME>::zeroed();
+        (::windows_core::Interface::vtable(self).GetFileModificationTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::FILETIME>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastAccessTime(&self) -> ::windows_core::Result<super::super::Foundation::FILETIME> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::FILETIME>::zeroed();
-        (::windows_core::Interface::vtable(self).GetLastAccessTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::FILETIME>(result__)
+    pub unsafe fn GetLastAccessTime(&self) -> ::windows_core::Result<::win32_foundation::FILETIME> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::FILETIME>::zeroed();
+        (::windows_core::Interface::vtable(self).GetLastAccessTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::FILETIME>(result__)
     }
     pub unsafe fn IsFileValidated(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IsFileValidated)(::windows_core::Interface::as_raw(self)).ok()
@@ -4666,14 +4563,8 @@ pub struct IBitsPeerCacheRecord_Vtbl {
     pub GetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetOriginUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetFileSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut u64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetFileModificationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::FILETIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetFileModificationTime: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetLastAccessTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::FILETIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetLastAccessTime: usize,
+    pub GetFileModificationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::win32_foundation::FILETIME) -> ::windows_core::HRESULT,
+    pub GetLastAccessTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::win32_foundation::FILETIME) -> ::windows_core::HRESULT,
     pub IsFileValidated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetFileRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prangecount: *mut u32, ppranges: *mut *mut BG_FILE_RANGE) -> ::windows_core::HRESULT,
 }

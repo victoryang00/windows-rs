@@ -5,17 +5,11 @@ extern "system" {
     pub fn DMOGetTypes(clsiddmo: *const ::windows_core_sys::GUID, ulinputtypesrequested: u32, pulinputtypessupplied: *mut u32, pinputtypes: *mut DMO_PARTIAL_MEDIATYPE, uloutputtypesrequested: u32, puloutputtypessupplied: *mut u32, poutputtypes: *mut DMO_PARTIAL_MEDIATYPE) -> ::windows_core_sys::HRESULT;
     pub fn DMORegister(szname: ::windows_core_sys::PCWSTR, clsiddmo: *const ::windows_core_sys::GUID, guidcategory: *const ::windows_core_sys::GUID, dwflags: u32, cintypes: u32, pintypes: *const DMO_PARTIAL_MEDIATYPE, couttypes: u32, pouttypes: *const DMO_PARTIAL_MEDIATYPE) -> ::windows_core_sys::HRESULT;
     pub fn DMOUnregister(clsiddmo: *const ::windows_core_sys::GUID, guidcategory: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn MoCopyMediaType(pmtdest: *mut DMO_MEDIA_TYPE, pmtsrc: *const DMO_MEDIA_TYPE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn MoCreateMediaType(ppmt: *mut *mut DMO_MEDIA_TYPE, cbformat: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn MoDeleteMediaType(pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn MoDuplicateMediaType(ppmtdest: *mut *mut DMO_MEDIA_TYPE, pmtsrc: *const DMO_MEDIA_TYPE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn MoFreeMediaType(pmt: *mut DMO_MEDIA_TYPE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn MoInitMediaType(pmt: *mut DMO_MEDIA_TYPE, cbformat: u32) -> ::windows_core_sys::HRESULT;
 }
 pub const DMOCATEGORY_ACOUSTIC_ECHO_CANCEL: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3214294400, data2: 50521, data3: 4560, data4: [138, 43, 0, 160, 201, 37, 90, 193] };
@@ -37,21 +31,18 @@ pub const DMO_E_NO_MORE_ITEMS: ::windows_core_sys::HRESULT = -2147220986i32;
 pub const DMO_E_TYPE_NOT_ACCEPTED: ::windows_core_sys::HRESULT = -2147220987i32;
 pub const DMO_E_TYPE_NOT_SET: ::windows_core_sys::HRESULT = -2147220989i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DMO_MEDIA_TYPE {
     pub majortype: ::windows_core_sys::GUID,
     pub subtype: ::windows_core_sys::GUID,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation_sys::BOOL,
+    pub bTemporalCompression: ::win32_foundation_sys::BOOL,
     pub lSampleSize: u32,
     pub formattype: ::windows_core_sys::GUID,
     pub pUnk: ::windows_core_sys::IUnknown,
     pub cbFormat: u32,
     pub pbFormat: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DMO_MEDIA_TYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DMO_MEDIA_TYPE {
     fn clone(&self) -> Self {
         *self

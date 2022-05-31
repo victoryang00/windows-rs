@@ -1,48 +1,30 @@
 #[link(name = "windows")]
 extern "system" {
     pub fn CallNtPowerInformation(informationlevel: POWER_INFORMATION_LEVEL, inputbuffer: *const ::core::ffi::c_void, inputbufferlength: u32, outputbuffer: *mut ::core::ffi::c_void, outputbufferlength: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CanUserWritePwrScheme() -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeletePwrScheme(uiid: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DevicePowerClose() -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DevicePowerEnumDevices(queryindex: u32, queryinterpretationflags: u32, queryflags: u32, preturnbuffer: *mut u8, pbuffersize: *mut u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DevicePowerOpen(debugmask: u32) -> super::super::Foundation::BOOLEAN;
+    pub fn CanUserWritePwrScheme() -> ::win32_foundation_sys::BOOLEAN;
+    pub fn DeletePwrScheme(uiid: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn DevicePowerClose() -> ::win32_foundation_sys::BOOLEAN;
+    pub fn DevicePowerEnumDevices(queryindex: u32, queryinterpretationflags: u32, queryflags: u32, preturnbuffer: *mut u8, pbuffersize: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn DevicePowerOpen(debugmask: u32) -> ::win32_foundation_sys::BOOLEAN;
     pub fn DevicePowerSetDeviceState(devicedescription: ::windows_core_sys::PCWSTR, setflags: u32, setdata: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumPwrSchemes(lpfn: PWRSCHEMESENUMPROC, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetActivePwrScheme(puiid: *mut u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentPowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDevicePowerState(hdevice: super::super::Foundation::HANDLE, pfon: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPwrCapabilities(lpspc: *mut SYSTEM_POWER_CAPABILITIES) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetPwrDiskSpindownRange(puimax: *mut u32, puimin: *mut u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetSystemPowerStatus(lpsystempowerstatus: *mut SYSTEM_POWER_STATUS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsAdminOverrideActive(papp: *const ADMINISTRATOR_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsPwrHibernateAllowed() -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsPwrShutdownAllowed() -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsPwrSuspendAllowed() -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsSystemResumeAutomatic() -> super::super::Foundation::BOOL;
+    pub fn EnumPwrSchemes(lpfn: PWRSCHEMESENUMPROC, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn GetActivePwrScheme(puiid: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn GetCurrentPowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn GetDevicePowerState(hdevice: ::win32_foundation_sys::HANDLE, pfon: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn GetPwrCapabilities(lpspc: *mut SYSTEM_POWER_CAPABILITIES) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn GetPwrDiskSpindownRange(puimax: *mut u32, puimin: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn GetSystemPowerStatus(lpsystempowerstatus: *mut SYSTEM_POWER_STATUS) -> ::win32_foundation_sys::BOOL;
+    pub fn IsAdminOverrideActive(papp: *const ADMINISTRATOR_POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn IsPwrHibernateAllowed() -> ::win32_foundation_sys::BOOLEAN;
+    pub fn IsPwrShutdownAllowed() -> ::win32_foundation_sys::BOOLEAN;
+    pub fn IsPwrSuspendAllowed() -> ::win32_foundation_sys::BOOLEAN;
+    pub fn IsSystemResumeAutomatic() -> ::win32_foundation_sys::BOOL;
     pub fn PowerCanRestoreIndividualDefaultPowerScheme(schemeguid: *const ::windows_core_sys::GUID) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PowerClearRequest(powerrequest: super::super::Foundation::HANDLE, requesttype: POWER_REQUEST_TYPE) -> super::super::Foundation::BOOL;
+    pub fn PowerClearRequest(powerrequest: ::win32_foundation_sys::HANDLE, requesttype: POWER_REQUEST_TYPE) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Registry")]
     pub fn PowerCreatePossibleSetting(rootsystempowerkey: super::Registry::HKEY, subgroupofpowersettingsguid: *const ::windows_core_sys::GUID, powersettingguid: *const ::windows_core_sys::GUID, possiblesettingindex: u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
-    pub fn PowerCreateRequest(context: *const super::Threading::REASON_CONTEXT) -> super::super::Foundation::HANDLE;
+    #[cfg(feature = "Win32_System_Threading")]
+    pub fn PowerCreateRequest(context: *const super::Threading::REASON_CONTEXT) -> ::win32_foundation_sys::HANDLE;
     #[cfg(feature = "Win32_System_Registry")]
     pub fn PowerCreateSetting(rootsystempowerkey: super::Registry::HKEY, subgroupofpowersettingsguid: *const ::windows_core_sys::GUID, powersettingguid: *const ::windows_core_sys::GUID) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
@@ -57,12 +39,11 @@ extern "system" {
     pub fn PowerGetActiveScheme(userrootpowerkey: super::Registry::HKEY, activepolicyguid: *mut *mut ::windows_core_sys::GUID) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
     pub fn PowerImportPowerScheme(rootpowerkey: super::Registry::HKEY, importfilenamepath: ::windows_core_sys::PCWSTR, destinationschemeguid: *mut *mut ::windows_core_sys::GUID) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PowerIsSettingRangeDefined(subkeyguid: *const ::windows_core_sys::GUID, settingguid: *const ::windows_core_sys::GUID) -> super::super::Foundation::BOOLEAN;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn PowerOpenSystemPowerKey(phsystempowerkey: *mut super::Registry::HKEY, access: u32, openexisting: super::super::Foundation::BOOL) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn PowerOpenUserPowerKey(phuserpowerkey: *mut super::Registry::HKEY, access: u32, openexisting: super::super::Foundation::BOOL) -> u32;
+    pub fn PowerIsSettingRangeDefined(subkeyguid: *const ::windows_core_sys::GUID, settingguid: *const ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOLEAN;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn PowerOpenSystemPowerKey(phsystempowerkey: *mut super::Registry::HKEY, access: u32, openexisting: ::win32_foundation_sys::BOOL) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn PowerOpenUserPowerKey(phuserpowerkey: *mut super::Registry::HKEY, access: u32, openexisting: ::win32_foundation_sys::BOOL) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
     pub fn PowerReadACDefaultIndex(rootpowerkey: super::Registry::HKEY, schemepersonalityguid: *const ::windows_core_sys::GUID, subgroupofpowersettingsguid: *const ::windows_core_sys::GUID, powersettingguid: *const ::windows_core_sys::GUID, acdefaultindex: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
@@ -97,8 +78,7 @@ extern "system" {
     #[cfg(feature = "Win32_System_Registry")]
     pub fn PowerReadValueUnitsSpecifier(rootpowerkey: super::Registry::HKEY, subgroupofpowersettingsguid: *const ::windows_core_sys::GUID, powersettingguid: *const ::windows_core_sys::GUID, buffer: *mut u8, buffersize: *mut u32) -> u32;
     pub fn PowerRegisterForEffectivePowerModeNotifications(version: u32, callback: EFFECTIVE_POWER_MODE_CALLBACK, context: *const ::core::ffi::c_void, registrationhandle: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PowerRegisterSuspendResumeNotification(flags: u32, recipient: super::super::Foundation::HANDLE, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32;
+    pub fn PowerRegisterSuspendResumeNotification(flags: u32, recipient: ::win32_foundation_sys::HANDLE, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn PowerRemovePowerSetting(powersettingsubkeyguid: *const ::windows_core_sys::GUID, powersettingguid: *const ::windows_core_sys::GUID) -> u32;
     pub fn PowerReplaceDefaultPowerSchemes() -> u32;
     pub fn PowerReportThermalEvent(event: *const THERMAL_EVENT) -> u32;
@@ -106,13 +86,11 @@ extern "system" {
     pub fn PowerRestoreIndividualDefaultPowerScheme(schemeguid: *const ::windows_core_sys::GUID) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
     pub fn PowerSetActiveScheme(userrootpowerkey: super::Registry::HKEY, schemeguid: *const ::windows_core_sys::GUID) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PowerSetRequest(powerrequest: super::super::Foundation::HANDLE, requesttype: POWER_REQUEST_TYPE) -> super::super::Foundation::BOOL;
+    pub fn PowerSetRequest(powerrequest: ::win32_foundation_sys::HANDLE, requesttype: POWER_REQUEST_TYPE) -> ::win32_foundation_sys::BOOL;
     pub fn PowerSettingAccessCheck(accessflags: POWER_DATA_ACCESSOR, powerguid: *const ::windows_core_sys::GUID) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
     pub fn PowerSettingAccessCheckEx(accessflags: POWER_DATA_ACCESSOR, powerguid: *const ::windows_core_sys::GUID, accesstype: super::Registry::REG_SAM_FLAGS) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PowerSettingRegisterNotification(settingguid: *const ::windows_core_sys::GUID, flags: POWER_SETTING_REGISTER_NOTIFICATION_FLAGS, recipient: super::super::Foundation::HANDLE, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32;
+    pub fn PowerSettingRegisterNotification(settingguid: *const ::windows_core_sys::GUID, flags: POWER_SETTING_REGISTER_NOTIFICATION_FLAGS, recipient: ::win32_foundation_sys::HANDLE, registrationhandle: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn PowerSettingUnregisterNotification(registrationhandle: HPOWERNOTIFY) -> u32;
     pub fn PowerUnregisterFromEffectivePowerModeNotifications(registrationhandle: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PowerUnregisterSuspendResumeNotification(registrationhandle: HPOWERNOTIFY) -> u32;
@@ -145,37 +123,22 @@ extern "system" {
     pub fn PowerWriteValueMin(rootpowerkey: super::Registry::HKEY, subgroupofpowersettingsguid: *const ::windows_core_sys::GUID, powersettingguid: *const ::windows_core_sys::GUID, valueminimum: u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
     pub fn PowerWriteValueUnitsSpecifier(rootpowerkey: super::Registry::HKEY, subgroupofpowersettingsguid: *const ::windows_core_sys::GUID, powersettingguid: *const ::windows_core_sys::GUID, buffer: *const u8, buffersize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReadGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReadProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *mut MACHINE_PROCESSOR_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReadPwrScheme(uiid: u32, ppowerpolicy: *mut POWER_POLICY) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterPowerSettingNotification(hrecipient: super::super::Foundation::HANDLE, powersettingguid: *const ::windows_core_sys::GUID, flags: u32) -> HPOWERNOTIFY;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterSuspendResumeNotification(hrecipient: super::super::Foundation::HANDLE, flags: u32) -> HPOWERNOTIFY;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RequestWakeupLatency(latency: LATENCY_TIME) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetActivePwrScheme(uiid: u32, pglobalpowerpolicy: *const GLOBAL_POWER_POLICY, ppowerpolicy: *const POWER_POLICY) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetSuspendState(bhibernate: super::super::Foundation::BOOLEAN, bforce: super::super::Foundation::BOOLEAN, bwakeupeventsdisabled: super::super::Foundation::BOOLEAN) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetSystemPowerState(fsuspend: super::super::Foundation::BOOL, fforce: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn ReadGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn ReadProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *mut MACHINE_PROCESSOR_POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn ReadPwrScheme(uiid: u32, ppowerpolicy: *mut POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn RegisterPowerSettingNotification(hrecipient: ::win32_foundation_sys::HANDLE, powersettingguid: *const ::windows_core_sys::GUID, flags: u32) -> HPOWERNOTIFY;
+    pub fn RegisterSuspendResumeNotification(hrecipient: ::win32_foundation_sys::HANDLE, flags: u32) -> HPOWERNOTIFY;
+    pub fn RequestWakeupLatency(latency: LATENCY_TIME) -> ::win32_foundation_sys::BOOL;
+    pub fn SetActivePwrScheme(uiid: u32, pglobalpowerpolicy: *const GLOBAL_POWER_POLICY, ppowerpolicy: *const POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn SetSuspendState(bhibernate: ::win32_foundation_sys::BOOLEAN, bforce: ::win32_foundation_sys::BOOLEAN, bwakeupeventsdisabled: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn SetSystemPowerState(fsuspend: ::win32_foundation_sys::BOOL, fforce: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadExecutionState(esflags: EXECUTION_STATE) -> EXECUTION_STATE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UnregisterPowerSettingNotification(handle: HPOWERNOTIFY) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UnregisterSuspendResumeNotification(handle: HPOWERNOTIFY) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ValidatePowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WriteGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WriteProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *const MACHINE_PROCESSOR_POWER_POLICY) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WritePwrScheme(puiid: *const u32, lpszschemename: ::windows_core_sys::PCWSTR, lpszdescription: ::windows_core_sys::PCWSTR, lpscheme: *const POWER_POLICY) -> super::super::Foundation::BOOLEAN;
+    pub fn UnregisterPowerSettingNotification(handle: HPOWERNOTIFY) -> ::win32_foundation_sys::BOOL;
+    pub fn UnregisterSuspendResumeNotification(handle: HPOWERNOTIFY) -> ::win32_foundation_sys::BOOL;
+    pub fn ValidatePowerPolicies(pglobalpowerpolicy: *mut GLOBAL_POWER_POLICY, ppowerpolicy: *mut POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn WriteGlobalPwrPolicy(pglobalpowerpolicy: *const GLOBAL_POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn WriteProcessorPwrScheme(uiid: u32, pmachineprocessorpowerpolicy: *const MACHINE_PROCESSOR_POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn WritePwrScheme(puiid: *const u32, lpszschemename: ::windows_core_sys::PCWSTR, lpszdescription: ::windows_core_sys::PCWSTR, lpscheme: *const POWER_POLICY) -> ::win32_foundation_sys::BOOLEAN;
 }
 #[repr(C)]
 pub struct ACPI_REAL_TIME {
@@ -241,14 +204,11 @@ impl ::core::clone::Clone for BATTERY_CHARGING_SOURCE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BATTERY_CHARGING_SOURCE_INFORMATION {
     pub Type: BATTERY_CHARGING_SOURCE_TYPE,
-    pub SourceOnline: super::super::Foundation::BOOLEAN,
+    pub SourceOnline: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BATTERY_CHARGING_SOURCE_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BATTERY_CHARGING_SOURCE_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -585,21 +545,17 @@ impl ::core::clone::Clone for GLOBAL_MACHINE_POWER_POLICY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GLOBAL_POWER_POLICY {
     pub user: GLOBAL_USER_POWER_POLICY,
     pub mach: GLOBAL_MACHINE_POWER_POLICY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GLOBAL_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GLOBAL_POWER_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GLOBAL_USER_POWER_POLICY {
     pub Revision: u32,
     pub PowerButtonAc: POWER_ACTION_POLICY,
@@ -611,9 +567,7 @@ pub struct GLOBAL_USER_POWER_POLICY {
     pub DischargePolicy: [SYSTEM_POWER_LEVEL; 4],
     pub GlobalFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GLOBAL_USER_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GLOBAL_USER_POWER_POLICY {
     fn clone(&self) -> Self {
         *self
@@ -900,14 +854,11 @@ pub type POWER_PLATFORM_ROLE_VERSION = u32;
 pub const POWER_PLATFORM_ROLE_V1: POWER_PLATFORM_ROLE_VERSION = 1u32;
 pub const POWER_PLATFORM_ROLE_V2: POWER_PLATFORM_ROLE_VERSION = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POWER_POLICY {
     pub user: USER_POWER_POLICY,
     pub mach: MACHINE_POWER_POLICY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POWER_POLICY {
     fn clone(&self) -> Self {
         *self
@@ -923,7 +874,7 @@ pub const DEVICE_NOTIFY_SERVICE_HANDLE: POWER_SETTING_REGISTER_NOTIFICATION_FLAG
 pub const DEVICE_NOTIFY_CALLBACK: POWER_SETTING_REGISTER_NOTIFICATION_FLAGS = 2u32;
 pub const DEVICE_NOTIFY_WINDOW_HANDLE: POWER_SETTING_REGISTER_NOTIFICATION_FLAGS = 0u32;
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const PROCESSOR_NUMBER_PKEY: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1462028317, data2: 54703, data3: 19487, data4: [161, 3, 160, 110, 40, 242, 4, 198] }, pid: 1u32 };
+pub const PROCESSOR_NUMBER_PKEY: ::win32_devices_sys::Properties::DEVPROPKEY = ::win32_devices_sys::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1462028317, data2: 54703, data3: 19487, data4: [161, 3, 160, 110, 40, 242, 4, 198] }, pid: 1u32 };
 #[repr(C)]
 pub struct PROCESSOR_OBJECT_INFO {
     pub PhysicalID: u32,
@@ -980,10 +931,8 @@ impl ::core::clone::Clone for PROCESSOR_POWER_POLICY_INFO {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type PWRSCHEMESENUMPROC = ::core::option::Option<unsafe extern "system" fn(index: u32, namesize: u32, name: ::windows_core_sys::PCWSTR, descriptionsize: u32, description: ::windows_core_sys::PCWSTR, policy: *const POWER_POLICY, context: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOLEAN>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PWRSCHEMESENUMPROC_V1 = ::core::option::Option<unsafe extern "system" fn(index: u32, namesize: u32, name: *const i8, descriptionsize: u32, description: *const i8, policy: *const POWER_POLICY, context: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOLEAN>;
+pub type PWRSCHEMESENUMPROC = ::core::option::Option<unsafe extern "system" fn(index: u32, namesize: u32, name: ::windows_core_sys::PCWSTR, descriptionsize: u32, description: ::windows_core_sys::PCWSTR, policy: *const POWER_POLICY, context: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOLEAN>;
+pub type PWRSCHEMESENUMPROC_V1 = ::core::option::Option<unsafe extern "system" fn(index: u32, namesize: u32, name: *const i8, descriptionsize: u32, description: *const i8, policy: *const POWER_POLICY, context: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOLEAN>;
 #[repr(C)]
 pub struct SET_POWER_SETTING_VALUE {
     pub Version: u32,
@@ -999,13 +948,12 @@ impl ::core::clone::Clone for SET_POWER_SETTING_VALUE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYSTEM_BATTERY_STATE {
-    pub AcOnLine: super::super::Foundation::BOOLEAN,
-    pub BatteryPresent: super::super::Foundation::BOOLEAN,
-    pub Charging: super::super::Foundation::BOOLEAN,
-    pub Discharging: super::super::Foundation::BOOLEAN,
-    pub Spare1: [super::super::Foundation::BOOLEAN; 3],
+    pub AcOnLine: ::win32_foundation_sys::BOOLEAN,
+    pub BatteryPresent: ::win32_foundation_sys::BOOLEAN,
+    pub Charging: ::win32_foundation_sys::BOOLEAN,
+    pub Discharging: ::win32_foundation_sys::BOOLEAN,
+    pub Spare1: [::win32_foundation_sys::BOOLEAN; 3],
     pub Tag: u8,
     pub MaxCapacity: u32,
     pub RemainingCapacity: u32,
@@ -1014,44 +962,41 @@ pub struct SYSTEM_BATTERY_STATE {
     pub DefaultAlert1: u32,
     pub DefaultAlert2: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYSTEM_BATTERY_STATE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYSTEM_BATTERY_STATE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYSTEM_POWER_CAPABILITIES {
-    pub PowerButtonPresent: super::super::Foundation::BOOLEAN,
-    pub SleepButtonPresent: super::super::Foundation::BOOLEAN,
-    pub LidPresent: super::super::Foundation::BOOLEAN,
-    pub SystemS1: super::super::Foundation::BOOLEAN,
-    pub SystemS2: super::super::Foundation::BOOLEAN,
-    pub SystemS3: super::super::Foundation::BOOLEAN,
-    pub SystemS4: super::super::Foundation::BOOLEAN,
-    pub SystemS5: super::super::Foundation::BOOLEAN,
-    pub HiberFilePresent: super::super::Foundation::BOOLEAN,
-    pub FullWake: super::super::Foundation::BOOLEAN,
-    pub VideoDimPresent: super::super::Foundation::BOOLEAN,
-    pub ApmPresent: super::super::Foundation::BOOLEAN,
-    pub UpsPresent: super::super::Foundation::BOOLEAN,
-    pub ThermalControl: super::super::Foundation::BOOLEAN,
-    pub ProcessorThrottle: super::super::Foundation::BOOLEAN,
+    pub PowerButtonPresent: ::win32_foundation_sys::BOOLEAN,
+    pub SleepButtonPresent: ::win32_foundation_sys::BOOLEAN,
+    pub LidPresent: ::win32_foundation_sys::BOOLEAN,
+    pub SystemS1: ::win32_foundation_sys::BOOLEAN,
+    pub SystemS2: ::win32_foundation_sys::BOOLEAN,
+    pub SystemS3: ::win32_foundation_sys::BOOLEAN,
+    pub SystemS4: ::win32_foundation_sys::BOOLEAN,
+    pub SystemS5: ::win32_foundation_sys::BOOLEAN,
+    pub HiberFilePresent: ::win32_foundation_sys::BOOLEAN,
+    pub FullWake: ::win32_foundation_sys::BOOLEAN,
+    pub VideoDimPresent: ::win32_foundation_sys::BOOLEAN,
+    pub ApmPresent: ::win32_foundation_sys::BOOLEAN,
+    pub UpsPresent: ::win32_foundation_sys::BOOLEAN,
+    pub ThermalControl: ::win32_foundation_sys::BOOLEAN,
+    pub ProcessorThrottle: ::win32_foundation_sys::BOOLEAN,
     pub ProcessorMinThrottle: u8,
     pub ProcessorMaxThrottle: u8,
-    pub FastSystemS4: super::super::Foundation::BOOLEAN,
-    pub Hiberboot: super::super::Foundation::BOOLEAN,
-    pub WakeAlarmPresent: super::super::Foundation::BOOLEAN,
-    pub AoAc: super::super::Foundation::BOOLEAN,
-    pub DiskSpinDown: super::super::Foundation::BOOLEAN,
+    pub FastSystemS4: ::win32_foundation_sys::BOOLEAN,
+    pub Hiberboot: ::win32_foundation_sys::BOOLEAN,
+    pub WakeAlarmPresent: ::win32_foundation_sys::BOOLEAN,
+    pub AoAc: ::win32_foundation_sys::BOOLEAN,
+    pub DiskSpinDown: ::win32_foundation_sys::BOOLEAN,
     pub HiberFileType: u8,
-    pub AoAcConnectivitySupported: super::super::Foundation::BOOLEAN,
+    pub AoAcConnectivitySupported: ::win32_foundation_sys::BOOLEAN,
     pub spare3: [u8; 6],
-    pub SystemBatteriesPresent: super::super::Foundation::BOOLEAN,
-    pub BatteriesAreShortTerm: super::super::Foundation::BOOLEAN,
+    pub SystemBatteriesPresent: ::win32_foundation_sys::BOOLEAN,
+    pub BatteriesAreShortTerm: ::win32_foundation_sys::BOOLEAN,
     pub BatteryScale: [BATTERY_REPORTING_SCALE; 3],
     pub AcOnLineWake: SYSTEM_POWER_STATE,
     pub SoftLidWake: SYSTEM_POWER_STATE,
@@ -1059,9 +1004,7 @@ pub struct SYSTEM_POWER_CAPABILITIES {
     pub MinDeviceWakeState: SYSTEM_POWER_STATE,
     pub DefaultLowLatencyWake: SYSTEM_POWER_STATE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYSTEM_POWER_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYSTEM_POWER_CAPABILITIES {
     fn clone(&self) -> Self {
         *self
@@ -1073,24 +1016,20 @@ pub const PoDc: SYSTEM_POWER_CONDITION = 1i32;
 pub const PoHot: SYSTEM_POWER_CONDITION = 2i32;
 pub const PoConditionMaximum: SYSTEM_POWER_CONDITION = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYSTEM_POWER_LEVEL {
-    pub Enable: super::super::Foundation::BOOLEAN,
+    pub Enable: ::win32_foundation_sys::BOOLEAN,
     pub Spare: [u8; 3],
     pub BatteryLevel: u32,
     pub PowerPolicy: POWER_ACTION_POLICY,
     pub MinSystemState: SYSTEM_POWER_STATE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYSTEM_POWER_LEVEL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYSTEM_POWER_LEVEL {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYSTEM_POWER_POLICY {
     pub Revision: u32,
     pub PowerButton: POWER_ACTION_POLICY,
@@ -1112,18 +1051,16 @@ pub struct SYSTEM_POWER_POLICY {
     pub BroadcastCapacityResolution: u32,
     pub DischargePolicy: [SYSTEM_POWER_LEVEL; 4],
     pub VideoTimeout: u32,
-    pub VideoDimDisplay: super::super::Foundation::BOOLEAN,
+    pub VideoDimDisplay: ::win32_foundation_sys::BOOLEAN,
     pub VideoReserved: [u32; 3],
     pub SpindownTimeout: u32,
-    pub OptimizeForPower: super::super::Foundation::BOOLEAN,
+    pub OptimizeForPower: ::win32_foundation_sys::BOOLEAN,
     pub FanThrottleTolerance: u8,
     pub ForcedThrottle: u8,
     pub MinThrottle: u8,
     pub OverThrottled: POWER_ACTION_POLICY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYSTEM_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYSTEM_POWER_POLICY {
     fn clone(&self) -> Self {
         *self
@@ -1200,21 +1137,18 @@ impl ::core::clone::Clone for THERMAL_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct THERMAL_POLICY {
     pub Version: u32,
-    pub WaitForUpdate: super::super::Foundation::BOOLEAN,
-    pub Hibernate: super::super::Foundation::BOOLEAN,
-    pub Critical: super::super::Foundation::BOOLEAN,
-    pub ThermalStandby: super::super::Foundation::BOOLEAN,
+    pub WaitForUpdate: ::win32_foundation_sys::BOOLEAN,
+    pub Hibernate: ::win32_foundation_sys::BOOLEAN,
+    pub Critical: ::win32_foundation_sys::BOOLEAN,
+    pub ThermalStandby: ::win32_foundation_sys::BOOLEAN,
     pub ActivationReasons: u32,
     pub PassiveLimit: u32,
     pub ActiveLevel: u32,
-    pub OverThrottled: super::super::Foundation::BOOLEAN,
+    pub OverThrottled: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for THERMAL_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for THERMAL_POLICY {
     fn clone(&self) -> Self {
         *self
@@ -1245,7 +1179,6 @@ pub const UsbChargerPort_Legacy: USB_CHARGER_PORT = 0i32;
 pub const UsbChargerPort_TypeC: USB_CHARGER_PORT = 1i32;
 pub const UsbChargerPort_Max: USB_CHARGER_PORT = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_POWER_POLICY {
     pub Revision: u32,
     pub IdleAc: POWER_ACTION_POLICY,
@@ -1263,16 +1196,14 @@ pub struct USER_POWER_POLICY {
     pub VideoTimeoutDc: u32,
     pub SpindownTimeoutAc: u32,
     pub SpindownTimeoutDc: u32,
-    pub OptimizeForPowerAc: super::super::Foundation::BOOLEAN,
-    pub OptimizeForPowerDc: super::super::Foundation::BOOLEAN,
+    pub OptimizeForPowerAc: ::win32_foundation_sys::BOOLEAN,
+    pub OptimizeForPowerDc: ::win32_foundation_sys::BOOLEAN,
     pub FanThrottleToleranceAc: u8,
     pub FanThrottleToleranceDc: u8,
     pub ForcedThrottleAc: u8,
     pub ForcedThrottleDc: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_POWER_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_POWER_POLICY {
     fn clone(&self) -> Self {
         *self

@@ -1,6 +1,6 @@
 #[cfg(feature = "Win32_Graphics_Dxgi")]
 #[inline]
-pub unsafe fn CreateDirect3D11DeviceFromDXGIDevice<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Dxgi::IDXGIDevice>>(dxgidevice: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
+pub unsafe fn CreateDirect3D11DeviceFromDXGIDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGIDevice>>(dxgidevice: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -15,7 +15,7 @@ pub unsafe fn CreateDirect3D11DeviceFromDXGIDevice<'a, Param0: ::windows_core::I
 }
 #[cfg(feature = "Win32_Graphics_Dxgi")]
 #[inline]
-pub unsafe fn CreateDirect3D11SurfaceFromDXGISurface<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Dxgi::IDXGISurface>>(dgxisurface: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
+pub unsafe fn CreateDirect3D11SurfaceFromDXGISurface<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGISurface>>(dgxisurface: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]

@@ -52,14 +52,8 @@ pub struct IVpnChannel_Vtbl {
     pub LogDiagnosticMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub Configuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ActivityChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ActivityChange: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveActivityChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveActivityChange: usize,
+    pub ActivityChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveActivityChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub SetPlugInContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub PlugInContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SystemHealth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -89,32 +83,20 @@ pub struct IVpnChannel2_Vtbl {
     pub StartExistingTransports: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, assignedclientipv4list: ::windows_core::RawPtr, assignedclientipv6list: ::windows_core::RawPtr, vpninterfaceid: ::windows_core::RawPtr, assignedroutes: ::windows_core::RawPtr, assigneddomainname: ::windows_core::RawPtr, mtusize: u32, maxframesize: u32, reserved: bool) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     StartExistingTransports: usize,
-    #[cfg(feature = "Foundation")]
-    pub ActivityStateChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ActivityStateChange: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveActivityStateChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveActivityStateChange: usize,
+    pub ActivityStateChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveActivityStateChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub GetVpnSendPacketBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetVpnReceivePacketBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub RequestCustomPromptAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, custompromptelement: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     RequestCustomPromptAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(feature = "Security_Cryptography_Certificates")]
     pub RequestCredentialsWithCertificateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, credtype: VpnCredentialType, credoptions: u32, certificate: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
     RequestCredentialsWithCertificateAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestCredentialsWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, credtype: VpnCredentialType, credoptions: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestCredentialsWithOptionsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestCredentialsSimpleAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, credtype: VpnCredentialType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestCredentialsSimpleAsync: usize,
     pub TerminateConnection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub StartWithTrafficFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, assignedclientipv4list: ::windows_core::RawPtr, assignedclientipv6list: ::windows_core::RawPtr, vpninterfaceid: ::windows_core::RawPtr, assignedroutes: ::windows_core::RawPtr, assignednamespace: ::windows_core::RawPtr, mtusize: u32, maxframesize: u32, reserved: bool, mainoutertunneltransport: *mut ::core::ffi::c_void, optionaloutertunneltransport: *mut ::core::ffi::c_void, assignedtrafficfilters: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -322,19 +304,19 @@ pub struct IVpnChannelStatics_Vtbl {
 pub struct IVpnCredential(::windows_core::IUnknown);
 impl IVpnCredential {
     #[cfg(feature = "Security_Credentials")]
-    pub fn PasskeyCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn PasskeyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PasskeyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).PasskeyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Cryptography_Certificates")]
-    pub fn CertificateCredential(&self) -> ::windows_core::Result<super::super::Security::Cryptography::Certificates::Certificate> {
+    pub fn CertificateCredential(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CertificateCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Cryptography::Certificates::Certificate>(result__)
+            (::windows_core::Interface::vtable(this).CertificateCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
     pub fn AdditionalPin(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -345,11 +327,11 @@ impl IVpnCredential {
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn OldPasswordCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn OldPasswordCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OldPasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).OldPasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
 }
@@ -825,14 +807,8 @@ pub struct IVpnDomainNameAssignment_Vtbl {
     pub DomainNameList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     DomainNameList: usize,
-    #[cfg(feature = "Foundation")]
     pub SetProxyAutoConfigurationUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetProxyAutoConfigurationUri: usize,
-    #[cfg(feature = "Foundation")]
     pub ProxyAutoConfigurationUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProxyAutoConfigurationUri: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -878,7 +854,7 @@ pub struct IVpnDomainNameInfo2_Vtbl {
 pub struct IVpnDomainNameInfoFactory(::windows_core::IUnknown);
 impl IVpnDomainNameInfoFactory {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateVpnDomainNameInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::HostName>>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::HostName>>>(&self, name: Param0, nametype: VpnDomainNameType, dnsserverlist: Param2, proxyserverlist: Param3) -> ::windows_core::Result<VpnDomainNameInfo> {
+    pub fn CreateVpnDomainNameInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::HostName>>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::HostName>>>(&self, name: Param0, nametype: VpnDomainNameType, dnsserverlist: Param2, proxyserverlist: Param3) -> ::windows_core::Result<VpnDomainNameInfo> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1104,42 +1080,21 @@ unsafe impl ::windows_core::Interface for IVpnManagementAgent {
 #[doc(hidden)]
 pub struct IVpnManagementAgent_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub AddProfileFromXmlAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AddProfileFromXmlAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub AddProfileFromObjectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AddProfileFromObjectAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub UpdateProfileFromXmlAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UpdateProfileFromXmlAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub UpdateProfileFromObjectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UpdateProfileFromObjectAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetProfilesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetProfilesAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub DeleteProfileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeleteProfileAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ConnectProfileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ConnectProfileAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub ConnectProfileWithPasswordCredentialAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profile: ::windows_core::RawPtr, passwordcredential: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     ConnectProfileWithPasswordCredentialAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub DisconnectProfileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DisconnectProfileAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1160,14 +1115,8 @@ pub struct IVpnNamespaceAssignment_Vtbl {
     pub NamespaceList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     NamespaceList: usize,
-    #[cfg(feature = "Foundation")]
     pub SetProxyAutoConfigUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetProxyAutoConfigUri: usize,
-    #[cfg(feature = "Foundation")]
     pub ProxyAutoConfigUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProxyAutoConfigUri: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1203,7 +1152,7 @@ pub struct IVpnNamespaceInfo_Vtbl {
 pub struct IVpnNamespaceInfoFactory(::windows_core::IUnknown);
 impl IVpnNamespaceInfoFactory {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateVpnNamespaceInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<super::HostName>>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<super::HostName>>>(&self, name: Param0, dnsserverlist: Param1, proxyserverlist: Param2) -> ::windows_core::Result<VpnNamespaceInfo> {
+    pub fn CreateVpnNamespaceInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<super::HostName>>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<super::HostName>>>(&self, name: Param0, dnsserverlist: Param1, proxyserverlist: Param2) -> ::windows_core::Result<VpnNamespaceInfo> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1667,35 +1616,35 @@ impl IVpnProfile {
         unsafe { (::windows_core::Interface::vtable(this).SetProfileName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AppTriggers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnAppId>> {
+    pub fn AppTriggers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnAppId>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppTriggers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnAppId>>(result__)
+            (::windows_core::Interface::vtable(this).AppTriggers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnAppId>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Routes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnRoute>> {
+    pub fn Routes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnRoute>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Routes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnRoute>>(result__)
+            (::windows_core::Interface::vtable(this).Routes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnRoute>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DomainNameInfoList(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnDomainNameInfo>> {
+    pub fn DomainNameInfoList(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnDomainNameInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DomainNameInfoList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnDomainNameInfo>>(result__)
+            (::windows_core::Interface::vtable(this).DomainNameInfoList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnDomainNameInfo>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TrafficFilters(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnTrafficFilter>> {
+    pub fn TrafficFilters(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnTrafficFilter>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrafficFilters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnTrafficFilter>>(result__)
+            (::windows_core::Interface::vtable(this).TrafficFilters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnTrafficFilter>>(result__)
         }
     }
     pub fn RememberCredentials(&self) -> ::windows_core::Result<bool> {
@@ -2233,7 +2182,7 @@ impl VpnChannel {
         unsafe { (::windows_core::Interface::vtable(this).AssociateTransport)(::windows_core::Interface::as_raw(this), mainoutertunneltransport.into_param().abi(), optionaloutertunneltransport.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Start<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<super::HostName>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnNamespaceAssignment>, Param8: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param9: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(
+    pub fn Start<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<super::HostName>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnNamespaceAssignment>, Param8: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param9: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(
         &self,
         assignedclientipv4list: Param0,
         assignedclientipv6list: Param1,
@@ -2254,7 +2203,7 @@ impl VpnChannel {
         unsafe { (::windows_core::Interface::vtable(this).Stop)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Security_Cryptography_Certificates")]
-    pub fn RequestCredentials<'a, Param3: ::windows_core::IntoParam<'a, super::super::Security::Cryptography::Certificates::Certificate>>(&self, credtype: VpnCredentialType, isretry: bool, issinglesignoncredential: bool, certificate: Param3) -> ::windows_core::Result<VpnPickedCredential> {
+    pub fn RequestCredentials<'a, Param3: ::windows_core::IntoParam<'a, ::winrt_security::Cryptography::Certificates::Certificate>>(&self, credtype: VpnCredentialType, isretry: bool, issinglesignoncredential: bool, certificate: Param3) -> ::windows_core::Result<VpnPickedCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2283,16 +2232,14 @@ impl VpnChannel {
             (::windows_core::Interface::vtable(this).Configuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VpnChannelConfiguration>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ActivityChange<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<VpnChannel, VpnChannelActivityEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn ActivityChange<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<VpnChannel, VpnChannelActivityEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ActivityChange)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ActivityChange)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveActivityChange<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveActivityChange<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveActivityChange)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2315,7 +2262,7 @@ impl VpnChannel {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RequestCustomPrompt<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<IVpnCustomPrompt>>>(&self, customprompt: Param0) -> ::windows_core::Result<()> {
+    pub fn RequestCustomPrompt<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<IVpnCustomPrompt>>>(&self, customprompt: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RequestCustomPrompt)(::windows_core::Interface::as_raw(this), customprompt.into_param().abi()).ok() }
     }
@@ -2328,25 +2275,23 @@ impl VpnChannel {
         unsafe { (::windows_core::Interface::vtable(this).SetAllowedSslTlsVersions)(::windows_core::Interface::as_raw(this), tunneltransport.into_param().abi(), usetls12).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn StartWithMainTransport<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<super::HostName>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnDomainNameAssignment>, Param8: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, assignedclientipv4list: Param0, assignedclientipv6list: Param1, vpninterfaceid: Param2, assignedroutes: Param3, assigneddomainname: Param4, mtusize: u32, maxframesize: u32, reserved: bool, mainoutertunneltransport: Param8) -> ::windows_core::Result<()> {
+    pub fn StartWithMainTransport<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<super::HostName>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnDomainNameAssignment>, Param8: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, assignedclientipv4list: Param0, assignedclientipv6list: Param1, vpninterfaceid: Param2, assignedroutes: Param3, assigneddomainname: Param4, mtusize: u32, maxframesize: u32, reserved: bool, mainoutertunneltransport: Param8) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVpnChannel2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StartWithMainTransport)(::windows_core::Interface::as_raw(this), assignedclientipv4list.into_param().abi(), assignedclientipv6list.into_param().abi(), vpninterfaceid.into_param().abi(), assignedroutes.into_param().abi(), assigneddomainname.into_param().abi(), mtusize, maxframesize, reserved, mainoutertunneltransport.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn StartExistingTransports<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<super::HostName>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnDomainNameAssignment>>(&self, assignedclientipv4list: Param0, assignedclientipv6list: Param1, vpninterfaceid: Param2, assignedroutes: Param3, assigneddomainname: Param4, mtusize: u32, maxframesize: u32, reserved: bool) -> ::windows_core::Result<()> {
+    pub fn StartExistingTransports<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<super::HostName>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnDomainNameAssignment>>(&self, assignedclientipv4list: Param0, assignedclientipv6list: Param1, vpninterfaceid: Param2, assignedroutes: Param3, assigneddomainname: Param4, mtusize: u32, maxframesize: u32, reserved: bool) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVpnChannel2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StartExistingTransports)(::windows_core::Interface::as_raw(this), assignedclientipv4list.into_param().abi(), assignedclientipv6list.into_param().abi(), vpninterfaceid.into_param().abi(), assignedroutes.into_param().abi(), assigneddomainname.into_param().abi(), mtusize, maxframesize, reserved).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ActivityStateChange<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<VpnChannel, VpnChannelActivityStateChangedArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn ActivityStateChange<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<VpnChannel, VpnChannelActivityStateChangedArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IVpnChannel2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ActivityStateChange)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ActivityStateChange)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveActivityStateChange<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveActivityStateChange<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IVpnChannel2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveActivityStateChange)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2365,35 +2310,33 @@ impl VpnChannel {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RequestCustomPromptAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<IVpnCustomPromptElement>>>(&self, custompromptelement: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn RequestCustomPromptAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<IVpnCustomPromptElement>>>(&self, custompromptelement: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IVpnChannel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestCustomPromptAsync)(::windows_core::Interface::as_raw(this), custompromptelement.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).RequestCustomPromptAsync)(::windows_core::Interface::as_raw(this), custompromptelement.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Cryptography_Certificates"))]
-    pub fn RequestCredentialsWithCertificateAsync<'a, Param2: ::windows_core::IntoParam<'a, super::super::Security::Cryptography::Certificates::Certificate>>(&self, credtype: VpnCredentialType, credoptions: u32, certificate: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnCredential>> {
+    #[cfg(feature = "Security_Cryptography_Certificates")]
+    pub fn RequestCredentialsWithCertificateAsync<'a, Param2: ::windows_core::IntoParam<'a, ::winrt_security::Cryptography::Certificates::Certificate>>(&self, credtype: VpnCredentialType, credoptions: u32, certificate: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnCredential>> {
         let this = &::windows_core::Interface::cast::<IVpnChannel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestCredentialsWithCertificateAsync)(::windows_core::Interface::as_raw(this), credtype, credoptions, certificate.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnCredential>>(result__)
+            (::windows_core::Interface::vtable(this).RequestCredentialsWithCertificateAsync)(::windows_core::Interface::as_raw(this), credtype, credoptions, certificate.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnCredential>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestCredentialsWithOptionsAsync(&self, credtype: VpnCredentialType, credoptions: u32) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnCredential>> {
+    pub fn RequestCredentialsWithOptionsAsync(&self, credtype: VpnCredentialType, credoptions: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnCredential>> {
         let this = &::windows_core::Interface::cast::<IVpnChannel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestCredentialsWithOptionsAsync)(::windows_core::Interface::as_raw(this), credtype, credoptions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnCredential>>(result__)
+            (::windows_core::Interface::vtable(this).RequestCredentialsWithOptionsAsync)(::windows_core::Interface::as_raw(this), credtype, credoptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnCredential>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestCredentialsSimpleAsync(&self, credtype: VpnCredentialType) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnCredential>> {
+    pub fn RequestCredentialsSimpleAsync(&self, credtype: VpnCredentialType) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnCredential>> {
         let this = &::windows_core::Interface::cast::<IVpnChannel2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestCredentialsSimpleAsync)(::windows_core::Interface::as_raw(this), credtype, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnCredential>>(result__)
+            (::windows_core::Interface::vtable(this).RequestCredentialsSimpleAsync)(::windows_core::Interface::as_raw(this), credtype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnCredential>>(result__)
         }
     }
     pub fn TerminateConnection<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, message: Param0) -> ::windows_core::Result<()> {
@@ -2401,7 +2344,7 @@ impl VpnChannel {
         unsafe { (::windows_core::Interface::vtable(this).TerminateConnection)(::windows_core::Interface::as_raw(this), message.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn StartWithTrafficFilter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<super::HostName>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnDomainNameAssignment>, Param8: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param9: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param10: ::windows_core::IntoParam<'a, VpnTrafficFilterAssignment>>(
+    pub fn StartWithTrafficFilter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<super::HostName>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnDomainNameAssignment>, Param8: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param9: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param10: ::windows_core::IntoParam<'a, VpnTrafficFilterAssignment>>(
         &self,
         assignedclientipv4list: Param0,
         assignedclientipv6list: Param1,
@@ -2423,7 +2366,7 @@ impl VpnChannel {
         unsafe { (::windows_core::Interface::vtable(this).AddAndAssociateTransport)(::windows_core::Interface::as_raw(this), transport.into_param().abi(), context.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn StartWithMultipleTransports<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::HostName>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnDomainNameAssignment>, Param8: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::IInspectable>>, Param9: ::windows_core::IntoParam<'a, VpnTrafficFilterAssignment>>(
+    pub fn StartWithMultipleTransports<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::HostName>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::HostName>>, Param2: ::windows_core::IntoParam<'a, VpnInterfaceId>, Param3: ::windows_core::IntoParam<'a, VpnRouteAssignment>, Param4: ::windows_core::IntoParam<'a, VpnDomainNameAssignment>, Param8: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::IInspectable>>, Param9: ::windows_core::IntoParam<'a, VpnTrafficFilterAssignment>>(
         &self,
         assignedclientipv4addresses: Param0,
         assignedclientipv6addresses: Param1,
@@ -2479,11 +2422,11 @@ impl VpnChannel {
         unsafe { (::windows_core::Interface::vtable(this).FlushVpnSendPacketBuffers)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ActivateForeground<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::ValueSet>>(&self, packagerelativeappid: Param0, sharedcontext: Param1) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ActivateForeground<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, packagerelativeappid: Param0, sharedcontext: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IVpnChannel6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ActivateForeground)(::windows_core::Interface::as_raw(this), packagerelativeappid.into_param().abi(), sharedcontext.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ActivateForeground)(::windows_core::Interface::as_raw(this), packagerelativeappid.into_param().abi(), sharedcontext.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     pub fn ProcessEventAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(thirdpartyplugin: Param0, event: Param1) -> ::windows_core::Result<()> {
@@ -2776,11 +2719,11 @@ impl VpnChannelConfiguration {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ServerHostNameList(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::HostName>> {
+    pub fn ServerHostNameList(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::HostName>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerHostNameList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::HostName>>(result__)
+            (::windows_core::Interface::vtable(this).ServerHostNameList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::HostName>>(result__)
         }
     }
     pub fn CustomField(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2791,11 +2734,11 @@ impl VpnChannelConfiguration {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ServerUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Foundation::Uri>> {
+    pub fn ServerUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>> {
         let this = &::windows_core::Interface::cast::<IVpnChannelConfiguration2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).ServerUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>>(result__)
         }
     }
 }
@@ -2937,19 +2880,19 @@ unsafe impl ::windows_core::RuntimeType for VpnChannelRequestCredentialsOptions 
 pub struct VpnCredential(::windows_core::IUnknown);
 impl VpnCredential {
     #[cfg(feature = "Security_Credentials")]
-    pub fn PasskeyCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn PasskeyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PasskeyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).PasskeyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Cryptography_Certificates")]
-    pub fn CertificateCredential(&self) -> ::windows_core::Result<super::super::Security::Cryptography::Certificates::Certificate> {
+    pub fn CertificateCredential(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CertificateCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Cryptography::Certificates::Certificate>(result__)
+            (::windows_core::Interface::vtable(this).CertificateCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
     pub fn AdditionalPin(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2960,11 +2903,11 @@ impl VpnCredential {
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn OldPasswordCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn OldPasswordCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OldPasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).OldPasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
 }
@@ -3267,16 +3210,16 @@ impl VpnCustomComboBox {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetOptionsText<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetOptionsText<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetOptionsText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OptionsText(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn OptionsText(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OptionsText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).OptionsText)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn Selected(&self) -> ::windows_core::Result<u32> {
@@ -3919,11 +3862,11 @@ impl VpnCustomPromptOptionSelector {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Options(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn Options(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Options)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Options)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn SelectedIndex(&self) -> ::windows_core::Result<u32> {
@@ -4537,24 +4480,22 @@ impl VpnDomainNameAssignment {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DomainNameList(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnDomainNameInfo>> {
+    pub fn DomainNameList(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnDomainNameInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DomainNameList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnDomainNameInfo>>(result__)
+            (::windows_core::Interface::vtable(this).DomainNameList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnDomainNameInfo>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetProxyAutoConfigurationUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetProxyAutoConfigurationUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyAutoConfigurationUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProxyAutoConfigurationUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn ProxyAutoConfigurationUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProxyAutoConfigurationUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ProxyAutoConfigurationUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
 }
@@ -4656,31 +4597,31 @@ impl VpnDomainNameInfo {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DnsServers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::HostName>> {
+    pub fn DnsServers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::HostName>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DnsServers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::HostName>>(result__)
+            (::windows_core::Interface::vtable(this).DnsServers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::HostName>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn WebProxyServers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::HostName>> {
+    pub fn WebProxyServers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::HostName>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebProxyServers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::HostName>>(result__)
+            (::windows_core::Interface::vtable(this).WebProxyServers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::HostName>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn WebProxyUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn WebProxyUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = &::windows_core::Interface::cast::<IVpnDomainNameInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebProxyUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).WebProxyUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateVpnDomainNameInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::HostName>>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::HostName>>>(name: Param0, nametype: VpnDomainNameType, dnsserverlist: Param2, proxyserverlist: Param3) -> ::windows_core::Result<VpnDomainNameInfo> {
+    pub fn CreateVpnDomainNameInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::HostName>>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::HostName>>>(name: Param0, nametype: VpnDomainNameType, dnsserverlist: Param2, proxyserverlist: Param3) -> ::windows_core::Result<VpnDomainNameInfo> {
         Self::IVpnDomainNameInfoFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateVpnDomainNameInfo)(::windows_core::Interface::as_raw(this), name.into_param().abi(), nametype, dnsserverlist.into_param().abi(), proxyserverlist.into_param().abi(), result__.as_mut_ptr()).from_abi::<VpnDomainNameInfo>(result__)
@@ -4801,35 +4742,35 @@ unsafe impl ::windows_core::RuntimeType for VpnDomainNameType {
 pub struct VpnForegroundActivatedEventArgs(::windows_core::IUnknown);
 impl VpnForegroundActivatedEventArgs {
     #[cfg(feature = "ApplicationModel_Activation")]
-    pub fn Kind(&self) -> ::windows_core::Result<super::super::ApplicationModel::Activation::ActivationKind> {
-        let this = &::windows_core::Interface::cast::<super::super::ApplicationModel::Activation::IActivatedEventArgs>(self)?;
+    pub fn Kind(&self) -> ::windows_core::Result<::winrt_applicationmodel::Activation::ActivationKind> {
+        let this = &::windows_core::Interface::cast::<::winrt_applicationmodel::Activation::IActivatedEventArgs>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::ApplicationModel::Activation::ActivationKind>::zeroed();
-            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::Activation::ActivationKind>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_applicationmodel::Activation::ActivationKind>::zeroed();
+            (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Activation::ActivationKind>(result__)
         }
     }
     #[cfg(feature = "ApplicationModel_Activation")]
-    pub fn PreviousExecutionState(&self) -> ::windows_core::Result<super::super::ApplicationModel::Activation::ApplicationExecutionState> {
-        let this = &::windows_core::Interface::cast::<super::super::ApplicationModel::Activation::IActivatedEventArgs>(self)?;
+    pub fn PreviousExecutionState(&self) -> ::windows_core::Result<::winrt_applicationmodel::Activation::ApplicationExecutionState> {
+        let this = &::windows_core::Interface::cast::<::winrt_applicationmodel::Activation::IActivatedEventArgs>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::ApplicationModel::Activation::ApplicationExecutionState>::zeroed();
-            (::windows_core::Interface::vtable(this).PreviousExecutionState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::Activation::ApplicationExecutionState>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_applicationmodel::Activation::ApplicationExecutionState>::zeroed();
+            (::windows_core::Interface::vtable(this).PreviousExecutionState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Activation::ApplicationExecutionState>(result__)
         }
     }
     #[cfg(feature = "ApplicationModel_Activation")]
-    pub fn SplashScreen(&self) -> ::windows_core::Result<super::super::ApplicationModel::Activation::SplashScreen> {
-        let this = &::windows_core::Interface::cast::<super::super::ApplicationModel::Activation::IActivatedEventArgs>(self)?;
+    pub fn SplashScreen(&self) -> ::windows_core::Result<::winrt_applicationmodel::Activation::SplashScreen> {
+        let this = &::windows_core::Interface::cast::<::winrt_applicationmodel::Activation::IActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::Activation::SplashScreen>(result__)
+            (::windows_core::Interface::vtable(this).SplashScreen)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Activation::SplashScreen>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel_Activation", feature = "System"))]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
-        let this = &::windows_core::Interface::cast::<super::super::ApplicationModel::Activation::IActivatedEventArgsWithUser>(self)?;
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
+        let this = &::windows_core::Interface::cast::<::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn ProfileName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -4840,11 +4781,11 @@ impl VpnForegroundActivatedEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SharedContext(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn SharedContext(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SharedContext)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).SharedContext)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     pub fn ActivationOperation(&self) -> ::windows_core::Result<VpnForegroundActivationOperation> {
@@ -4926,55 +4867,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Vpn
     }
 }
 #[cfg(feature = "ApplicationModel_Activation")]
-impl ::core::convert::TryFrom<VpnForegroundActivatedEventArgs> for super::super::ApplicationModel::Activation::IActivatedEventArgs {
+impl ::core::convert::TryFrom<VpnForegroundActivatedEventArgs> for ::winrt_applicationmodel::Activation::IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: VpnForegroundActivatedEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "ApplicationModel_Activation")]
-impl ::core::convert::TryFrom<&VpnForegroundActivatedEventArgs> for super::super::ApplicationModel::Activation::IActivatedEventArgs {
+impl ::core::convert::TryFrom<&VpnForegroundActivatedEventArgs> for ::winrt_applicationmodel::Activation::IActivatedEventArgs {
     type Error = ::windows_core::Error;
     fn try_from(value: &VpnForegroundActivatedEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "ApplicationModel_Activation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::ApplicationModel::Activation::IActivatedEventArgs> for VpnForegroundActivatedEventArgs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::ApplicationModel::Activation::IActivatedEventArgs> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgs> for VpnForegroundActivatedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgs> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "ApplicationModel_Activation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::ApplicationModel::Activation::IActivatedEventArgs> for &VpnForegroundActivatedEventArgs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::ApplicationModel::Activation::IActivatedEventArgs> {
-        ::core::convert::TryInto::<super::super::ApplicationModel::Activation::IActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgs> for &VpnForegroundActivatedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgs> {
+        ::core::convert::TryInto::<::winrt_applicationmodel::Activation::IActivatedEventArgs>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "ApplicationModel_Activation")]
-impl ::core::convert::TryFrom<VpnForegroundActivatedEventArgs> for super::super::ApplicationModel::Activation::IActivatedEventArgsWithUser {
+impl ::core::convert::TryFrom<VpnForegroundActivatedEventArgs> for ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: VpnForegroundActivatedEventArgs) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "ApplicationModel_Activation")]
-impl ::core::convert::TryFrom<&VpnForegroundActivatedEventArgs> for super::super::ApplicationModel::Activation::IActivatedEventArgsWithUser {
+impl ::core::convert::TryFrom<&VpnForegroundActivatedEventArgs> for ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser {
     type Error = ::windows_core::Error;
     fn try_from(value: &VpnForegroundActivatedEventArgs) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "ApplicationModel_Activation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::ApplicationModel::Activation::IActivatedEventArgsWithUser> for VpnForegroundActivatedEventArgs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::ApplicationModel::Activation::IActivatedEventArgsWithUser> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser> for VpnForegroundActivatedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "ApplicationModel_Activation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::ApplicationModel::Activation::IActivatedEventArgsWithUser> for &VpnForegroundActivatedEventArgs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::ApplicationModel::Activation::IActivatedEventArgsWithUser> {
-        ::core::convert::TryInto::<super::super::ApplicationModel::Activation::IActivatedEventArgsWithUser>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser> for &VpnForegroundActivatedEventArgs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser> {
+        ::core::convert::TryInto::<::winrt_applicationmodel::Activation::IActivatedEventArgsWithUser>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for VpnForegroundActivatedEventArgs {}
@@ -4983,7 +4924,7 @@ unsafe impl ::core::marker::Sync for VpnForegroundActivatedEventArgs {}
 pub struct VpnForegroundActivationOperation(::windows_core::IUnknown);
 impl VpnForegroundActivationOperation {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Complete<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::ValueSet>>(&self, result: Param0) -> ::windows_core::Result<()> {
+    pub fn Complete<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, result: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Complete)(::windows_core::Interface::as_raw(this), result.into_param().abi()).ok() }
     }
@@ -5198,76 +5139,69 @@ impl VpnManagementAgent {
         static mut SHARED: ::windows_core::FactoryCache<VpnManagementAgent, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AddProfileFromXmlAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, xml: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>> {
+    pub fn AddProfileFromXmlAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, xml: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddProfileFromXmlAsync)(::windows_core::Interface::as_raw(this), xml.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).AddProfileFromXmlAsync)(::windows_core::Interface::as_raw(this), xml.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AddProfileFromObjectAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>> {
+    pub fn AddProfileFromObjectAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddProfileFromObjectAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).AddProfileFromObjectAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UpdateProfileFromXmlAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, xml: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>> {
+    pub fn UpdateProfileFromXmlAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, xml: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdateProfileFromXmlAsync)(::windows_core::Interface::as_raw(this), xml.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).UpdateProfileFromXmlAsync)(::windows_core::Interface::as_raw(this), xml.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UpdateProfileFromObjectAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>> {
+    pub fn UpdateProfileFromObjectAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdateProfileFromObjectAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).UpdateProfileFromObjectAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetProfilesAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<IVpnProfile>>> {
+    pub fn GetProfilesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IVpnProfile>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetProfilesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<IVpnProfile>>>(result__)
+            (::windows_core::Interface::vtable(this).GetProfilesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IVpnProfile>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>> {
+    pub fn DeleteProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteProfileAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).DeleteProfileAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ConnectProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>> {
+    pub fn ConnectProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectProfileAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).ConnectProfileAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn ConnectProfileWithPasswordCredentialAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>, Param1: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>>(&self, profile: Param0, passwordcredential: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn ConnectProfileWithPasswordCredentialAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>, Param1: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, profile: Param0, passwordcredential: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectProfileWithPasswordCredentialAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), passwordcredential.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).ConnectProfileWithPasswordCredentialAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), passwordcredential.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DisconnectProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>> {
+    pub fn DisconnectProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, IVpnProfile>>(&self, profile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DisconnectProfileAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).DisconnectProfileAsync)(::windows_core::Interface::as_raw(this), profile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VpnManagementErrorStatus>>(result__)
         }
     }
 }
@@ -5439,29 +5373,27 @@ impl VpnNamespaceAssignment {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetNamespaceList<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<VpnNamespaceInfo>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetNamespaceList<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<VpnNamespaceInfo>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetNamespaceList)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn NamespaceList(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnNamespaceInfo>> {
+    pub fn NamespaceList(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnNamespaceInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NamespaceList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnNamespaceInfo>>(result__)
+            (::windows_core::Interface::vtable(this).NamespaceList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnNamespaceInfo>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetProxyAutoConfigUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetProxyAutoConfigUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyAutoConfigUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProxyAutoConfigUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn ProxyAutoConfigUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProxyAutoConfigUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ProxyAutoConfigUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
 }
@@ -5552,33 +5484,33 @@ impl VpnNamespaceInfo {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetDnsServers<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<super::HostName>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDnsServers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<super::HostName>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDnsServers)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DnsServers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::HostName>> {
+    pub fn DnsServers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::HostName>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DnsServers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::HostName>>(result__)
+            (::windows_core::Interface::vtable(this).DnsServers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::HostName>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetWebProxyServers<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<super::HostName>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetWebProxyServers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<super::HostName>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetWebProxyServers)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn WebProxyServers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::HostName>> {
+    pub fn WebProxyServers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::HostName>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebProxyServers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::HostName>>(result__)
+            (::windows_core::Interface::vtable(this).WebProxyServers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::HostName>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateVpnNamespaceInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<super::HostName>>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<super::HostName>>>(name: Param0, dnsserverlist: Param1, proxyserverlist: Param2) -> ::windows_core::Result<VpnNamespaceInfo> {
+    pub fn CreateVpnNamespaceInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<super::HostName>>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<super::HostName>>>(name: Param0, dnsserverlist: Param1, proxyserverlist: Param2) -> ::windows_core::Result<VpnNamespaceInfo> {
         Self::IVpnNamespaceInfoFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateVpnNamespaceInfo)(::windows_core::Interface::as_raw(this), name.into_param().abi(), dnsserverlist.into_param().abi(), proxyserverlist.into_param().abi(), result__.as_mut_ptr()).from_abi::<VpnNamespaceInfo>(result__)
@@ -5672,11 +5604,11 @@ impl VpnNativeProfile {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Servers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn Servers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Servers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Servers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn RoutingPolicyType(&self) -> ::windows_core::Result<VpnRoutingPolicyType> {
@@ -5764,35 +5696,35 @@ impl VpnNativeProfile {
         unsafe { (::windows_core::Interface::vtable(this).SetProfileName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AppTriggers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnAppId>> {
+    pub fn AppTriggers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnAppId>> {
         let this = &::windows_core::Interface::cast::<IVpnProfile>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppTriggers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnAppId>>(result__)
+            (::windows_core::Interface::vtable(this).AppTriggers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnAppId>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Routes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnRoute>> {
+    pub fn Routes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnRoute>> {
         let this = &::windows_core::Interface::cast::<IVpnProfile>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Routes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnRoute>>(result__)
+            (::windows_core::Interface::vtable(this).Routes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnRoute>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DomainNameInfoList(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnDomainNameInfo>> {
+    pub fn DomainNameInfoList(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnDomainNameInfo>> {
         let this = &::windows_core::Interface::cast::<IVpnProfile>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DomainNameInfoList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnDomainNameInfo>>(result__)
+            (::windows_core::Interface::vtable(this).DomainNameInfoList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnDomainNameInfo>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TrafficFilters(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnTrafficFilter>> {
+    pub fn TrafficFilters(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnTrafficFilter>> {
         let this = &::windows_core::Interface::cast::<IVpnProfile>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrafficFilters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnTrafficFilter>>(result__)
+            (::windows_core::Interface::vtable(this).TrafficFilters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnTrafficFilter>>(result__)
         }
     }
     pub fn RememberCredentials(&self) -> ::windows_core::Result<bool> {
@@ -5950,11 +5882,11 @@ unsafe impl ::windows_core::RuntimeType for VpnNativeProtocolType {
 pub struct VpnPacketBuffer(::windows_core::IUnknown);
 impl VpnPacketBuffer {
     #[cfg(feature = "Storage_Streams")]
-    pub fn Buffer(&self) -> ::windows_core::Result<super::super::Storage::Streams::Buffer> {
+    pub fn Buffer(&self) -> ::windows_core::Result<::winrt_storage::Streams::Buffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Buffer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::Buffer>(result__)
+            (::windows_core::Interface::vtable(this).Buffer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::Buffer>(result__)
         }
     }
     pub fn SetStatus(&self, value: VpnPacketBufferStatus) -> ::windows_core::Result<()> {
@@ -6084,11 +6016,11 @@ unsafe impl ::core::marker::Sync for VpnPacketBuffer {}
 pub struct VpnPacketBufferList(::windows_core::IUnknown);
 impl VpnPacketBufferList {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<VpnPacketBuffer>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<VpnPacketBuffer>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<VpnPacketBuffer>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<VpnPacketBuffer>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<VpnPacketBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<VpnPacketBuffer>>(result__)
         }
     }
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, VpnPacketBuffer>>(&self, nextvpnpacketbuffer: Param0) -> ::windows_core::Result<()> {
@@ -6169,7 +6101,7 @@ impl ::windows_core::RuntimeName for VpnPacketBufferList {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for VpnPacketBufferList {
     type Item = VpnPacketBuffer;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -6177,7 +6109,7 @@ impl ::core::iter::IntoIterator for VpnPacketBufferList {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &VpnPacketBufferList {
     type Item = VpnPacketBuffer;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -6223,29 +6155,29 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Vpn
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<VpnPacketBufferList> for super::super::Foundation::Collections::IIterable<VpnPacketBuffer> {
+impl ::core::convert::TryFrom<VpnPacketBufferList> for ::winrt_foundation::Collections::IIterable<VpnPacketBuffer> {
     type Error = ::windows_core::Error;
     fn try_from(value: VpnPacketBufferList) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&VpnPacketBufferList> for super::super::Foundation::Collections::IIterable<VpnPacketBuffer> {
+impl ::core::convert::TryFrom<&VpnPacketBufferList> for ::winrt_foundation::Collections::IIterable<VpnPacketBuffer> {
     type Error = ::windows_core::Error;
     fn try_from(value: &VpnPacketBufferList) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<VpnPacketBuffer>> for VpnPacketBufferList {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<VpnPacketBuffer>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<VpnPacketBuffer>> for VpnPacketBufferList {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<VpnPacketBuffer>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<VpnPacketBuffer>> for &VpnPacketBufferList {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<VpnPacketBuffer>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<VpnPacketBuffer>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<VpnPacketBuffer>> for &VpnPacketBufferList {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<VpnPacketBuffer>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<VpnPacketBuffer>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for VpnPacketBufferList {}
@@ -6287,11 +6219,11 @@ unsafe impl ::windows_core::RuntimeType for VpnPacketBufferStatus {
 pub struct VpnPickedCredential(::windows_core::IUnknown);
 impl VpnPickedCredential {
     #[cfg(feature = "Security_Credentials")]
-    pub fn PasskeyCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn PasskeyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PasskeyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).PasskeyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     pub fn AdditionalPin(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -6302,11 +6234,11 @@ impl VpnPickedCredential {
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn OldPasswordCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn OldPasswordCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OldPasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).OldPasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
 }
@@ -6393,11 +6325,11 @@ impl VpnPlugInProfile {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ServerUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn ServerUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).ServerUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     pub fn CustomConfiguration(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -6452,35 +6384,35 @@ impl VpnPlugInProfile {
         unsafe { (::windows_core::Interface::vtable(this).SetProfileName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AppTriggers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnAppId>> {
+    pub fn AppTriggers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnAppId>> {
         let this = &::windows_core::Interface::cast::<IVpnProfile>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppTriggers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnAppId>>(result__)
+            (::windows_core::Interface::vtable(this).AppTriggers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnAppId>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Routes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnRoute>> {
+    pub fn Routes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnRoute>> {
         let this = &::windows_core::Interface::cast::<IVpnProfile>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Routes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnRoute>>(result__)
+            (::windows_core::Interface::vtable(this).Routes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnRoute>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DomainNameInfoList(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnDomainNameInfo>> {
+    pub fn DomainNameInfoList(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnDomainNameInfo>> {
         let this = &::windows_core::Interface::cast::<IVpnProfile>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DomainNameInfoList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnDomainNameInfo>>(result__)
+            (::windows_core::Interface::vtable(this).DomainNameInfoList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnDomainNameInfo>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TrafficFilters(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnTrafficFilter>> {
+    pub fn TrafficFilters(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnTrafficFilter>> {
         let this = &::windows_core::Interface::cast::<IVpnProfile>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrafficFilters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnTrafficFilter>>(result__)
+            (::windows_core::Interface::vtable(this).TrafficFilters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnTrafficFilter>>(result__)
         }
     }
     pub fn RememberCredentials(&self) -> ::windows_core::Result<bool> {
@@ -6719,55 +6651,55 @@ impl VpnRouteAssignment {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetIpv4InclusionRoutes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<VpnRoute>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIpv4InclusionRoutes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<VpnRoute>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIpv4InclusionRoutes)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetIpv6InclusionRoutes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<VpnRoute>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIpv6InclusionRoutes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<VpnRoute>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIpv6InclusionRoutes)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Ipv4InclusionRoutes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnRoute>> {
+    pub fn Ipv4InclusionRoutes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnRoute>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Ipv4InclusionRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnRoute>>(result__)
+            (::windows_core::Interface::vtable(this).Ipv4InclusionRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnRoute>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Ipv6InclusionRoutes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnRoute>> {
+    pub fn Ipv6InclusionRoutes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnRoute>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Ipv6InclusionRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnRoute>>(result__)
+            (::windows_core::Interface::vtable(this).Ipv6InclusionRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnRoute>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetIpv4ExclusionRoutes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<VpnRoute>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIpv4ExclusionRoutes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<VpnRoute>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIpv4ExclusionRoutes)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetIpv6ExclusionRoutes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<VpnRoute>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIpv6ExclusionRoutes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<VpnRoute>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIpv6ExclusionRoutes)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Ipv4ExclusionRoutes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnRoute>> {
+    pub fn Ipv4ExclusionRoutes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnRoute>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Ipv4ExclusionRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnRoute>>(result__)
+            (::windows_core::Interface::vtable(this).Ipv4ExclusionRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnRoute>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Ipv6ExclusionRoutes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnRoute>> {
+    pub fn Ipv6ExclusionRoutes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnRoute>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Ipv6ExclusionRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnRoute>>(result__)
+            (::windows_core::Interface::vtable(this).Ipv6ExclusionRoutes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnRoute>>(result__)
         }
     }
     pub fn SetExcludeLocalSubnets(&self, value: bool) -> ::windows_core::Result<()> {
@@ -6891,11 +6823,11 @@ unsafe impl ::windows_core::RuntimeType for VpnRoutingPolicyType {
 pub struct VpnSystemHealth(::windows_core::IUnknown);
 impl VpnSystemHealth {
     #[cfg(feature = "Storage_Streams")]
-    pub fn StatementOfHealth(&self) -> ::windows_core::Result<super::super::Storage::Streams::Buffer> {
+    pub fn StatementOfHealth(&self) -> ::windows_core::Result<::winrt_storage::Streams::Buffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StatementOfHealth)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::Buffer>(result__)
+            (::windows_core::Interface::vtable(this).StatementOfHealth)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::Buffer>(result__)
         }
     }
 }
@@ -6986,11 +6918,11 @@ impl VpnTrafficFilter {
         unsafe { (::windows_core::Interface::vtable(this).SetAppId)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AppClaims(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn AppClaims(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppClaims)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).AppClaims)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn Protocol(&self) -> ::windows_core::Result<VpnIPProtocol> {
@@ -7005,35 +6937,35 @@ impl VpnTrafficFilter {
         unsafe { (::windows_core::Interface::vtable(this).SetProtocol)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LocalPortRanges(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn LocalPortRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LocalPortRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).LocalPortRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RemotePortRanges(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn RemotePortRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RemotePortRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).RemotePortRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LocalAddressRanges(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn LocalAddressRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LocalAddressRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).LocalAddressRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RemoteAddressRanges(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn RemoteAddressRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RemoteAddressRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).RemoteAddressRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn RoutingPolicyType(&self) -> ::windows_core::Result<VpnRoutingPolicyType> {
@@ -7141,11 +7073,11 @@ impl VpnTrafficFilterAssignment {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TrafficFilterList(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VpnTrafficFilter>> {
+    pub fn TrafficFilterList(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VpnTrafficFilter>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrafficFilterList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VpnTrafficFilter>>(result__)
+            (::windows_core::Interface::vtable(this).TrafficFilterList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VpnTrafficFilter>>(result__)
         }
     }
     pub fn AllowOutbound(&self) -> ::windows_core::Result<bool> {

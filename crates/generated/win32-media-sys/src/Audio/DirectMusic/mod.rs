@@ -430,7 +430,6 @@ impl ::core::clone::Clone for DMUS_PORTCAPS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DMUS_PORTPARAMS8 {
     pub dwSize: u32,
     pub dwValidParams: u32,
@@ -439,12 +438,10 @@ pub struct DMUS_PORTPARAMS8 {
     pub dwAudioChannels: u32,
     pub dwSampleRate: u32,
     pub dwEffectFlags: u32,
-    pub fShare: super::super::super::Foundation::BOOL,
+    pub fShare: ::win32_foundation_sys::BOOL,
     pub dwFeatures: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DMUS_PORTPARAMS8 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DMUS_PORTPARAMS8 {
     fn clone(&self) -> Self {
         *self
@@ -539,14 +536,11 @@ impl ::core::clone::Clone for DMUS_VEGPARAMS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DMUS_VOICE_STATE {
-    pub bExists: super::super::super::Foundation::BOOL,
+    pub bExists: ::win32_foundation_sys::BOOL,
     pub spPosition: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DMUS_VOICE_STATE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DMUS_VOICE_STATE {
     fn clone(&self) -> Self {
         *self
@@ -651,21 +645,18 @@ pub const DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_W: DSPROPERTY_DIRECTSOUNDDEVI
 pub const DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_A: DSPROPERTY_DIRECTSOUNDDEVICE = 7i32;
 pub const DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_W: DSPROPERTY_DIRECTSOUNDDEVICE = 8i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_1_DATA {
     pub DeviceId: ::windows_core_sys::GUID,
-    pub DescriptionA: [super::super::super::Foundation::CHAR; 256],
+    pub DescriptionA: [::win32_foundation_sys::CHAR; 256],
     pub DescriptionW: [u16; 256],
-    pub ModuleA: [super::super::super::Foundation::CHAR; 260],
+    pub ModuleA: [::win32_foundation_sys::CHAR; 260],
     pub ModuleW: [u16; 260],
     pub Type: DIRECTSOUNDDEVICE_TYPE,
     pub DataFlow: DIRECTSOUNDDEVICE_DATAFLOW,
     pub WaveDeviceId: u32,
     pub Devnode: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_1_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_1_DATA {
     fn clone(&self) -> Self {
         *self
@@ -704,42 +695,33 @@ impl ::core::clone::Clone for DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_W_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_1_DATA {
     pub Callback: LPFNDIRECTSOUNDDEVICEENUMERATECALLBACK1,
     pub Context: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_1_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_1_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_A_DATA {
     pub Callback: LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKA,
     pub Context: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_A_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_A_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_W_DATA {
     pub Callback: LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKW,
     pub Context: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_W_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DSPROPERTY_DIRECTSOUNDDEVICE_ENUMERATE_W_DATA {
     fn clone(&self) -> Self {
         *self
@@ -836,12 +818,9 @@ impl ::core::clone::Clone for INSTHEADER {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type LPFNDIRECTSOUNDDEVICEENUMERATECALLBACK1 = ::core::option::Option<unsafe extern "system" fn(param0: *mut DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_1_DATA, param1: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_A_DATA, param1: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_W_DATA, param1: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
+pub type LPFNDIRECTSOUNDDEVICEENUMERATECALLBACK1 = ::core::option::Option<unsafe extern "system" fn(param0: *mut DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_1_DATA, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_A_DATA, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPFNDIRECTSOUNDDEVICEENUMERATECALLBACKW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DSPROPERTY_DIRECTSOUNDDEVICE_DESCRIPTION_W_DATA, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 #[repr(C, packed(1))]
 pub struct MDEVICECAPSEX {
     pub cbSize: u32,
@@ -965,7 +944,6 @@ pub const WAVELINK_CHANNEL_RIGHT: i32 = 2i32;
 pub const WLOOP_TYPE_FORWARD: u32 = 0u32;
 pub const WLOOP_TYPE_RELEASE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct _DMUS_PORTPARAMS {
     pub dwSize: u32,
     pub dwValidParams: u32,
@@ -974,11 +952,9 @@ pub struct _DMUS_PORTPARAMS {
     pub dwAudioChannels: u32,
     pub dwSampleRate: u32,
     pub dwEffectFlags: u32,
-    pub fShare: super::super::super::Foundation::BOOL,
+    pub fShare: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for _DMUS_PORTPARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for _DMUS_PORTPARAMS {
     fn clone(&self) -> Self {
         *self

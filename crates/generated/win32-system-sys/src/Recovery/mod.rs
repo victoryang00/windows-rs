@@ -1,13 +1,10 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplicationRecoveryFinished(bsuccess: super::super::Foundation::BOOL);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ApplicationRecoveryInProgress(pbcancelled: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn GetApplicationRecoveryCallback(hprocess: super::super::Foundation::HANDLE, precoverycallback: *mut super::WindowsProgramming::APPLICATION_RECOVERY_CALLBACK, ppvparameter: *mut *mut ::core::ffi::c_void, pdwpinginterval: *mut u32, pdwflags: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetApplicationRestartSettings(hprocess: super::super::Foundation::HANDLE, pwzcommandline: ::windows_core_sys::PWSTR, pcchsize: *mut u32, pdwflags: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn ApplicationRecoveryFinished(bsuccess: ::win32_foundation_sys::BOOL);
+    pub fn ApplicationRecoveryInProgress(pbcancelled: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    pub fn GetApplicationRecoveryCallback(hprocess: ::win32_foundation_sys::HANDLE, precoverycallback: *mut super::WindowsProgramming::APPLICATION_RECOVERY_CALLBACK, ppvparameter: *mut *mut ::core::ffi::c_void, pdwpinginterval: *mut u32, pdwflags: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn GetApplicationRestartSettings(hprocess: ::win32_foundation_sys::HANDLE, pwzcommandline: ::windows_core_sys::PWSTR, pcchsize: *mut u32, pdwflags: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_WindowsProgramming")]
     pub fn RegisterApplicationRecoveryCallback(precoveycallback: super::WindowsProgramming::APPLICATION_RECOVERY_CALLBACK, pvparameter: *const ::core::ffi::c_void, dwpinginterval: u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn RegisterApplicationRestart(pwzcommandline: ::windows_core_sys::PCWSTR, dwflags: REGISTER_APPLICATION_RESTART_FLAGS) -> ::windows_core_sys::HRESULT;

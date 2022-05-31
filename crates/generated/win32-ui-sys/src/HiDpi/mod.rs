@@ -1,54 +1,36 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn AdjustWindowRectExForDpi(lprect: *mut super::super::Foundation::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: super::super::Foundation::BOOL, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AreDpiAwarenessContextsEqual(dpicontexta: DPI_AWARENESS_CONTEXT, dpicontextb: DPI_AWARENESS_CONTEXT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnableNonClientDpiScaling(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn AdjustWindowRectExForDpi(lprect: *mut ::win32_foundation_sys::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: ::win32_foundation_sys::BOOL, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn AreDpiAwarenessContextsEqual(dpicontexta: DPI_AWARENESS_CONTEXT, dpicontextb: DPI_AWARENESS_CONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn EnableNonClientDpiScaling(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
     pub fn GetAwarenessFromDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> DPI_AWARENESS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDialogControlDpiChangeBehavior(hwnd: super::super::Foundation::HWND) -> DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDialogDpiChangeBehavior(hdlg: super::super::Foundation::HWND) -> DIALOG_DPI_CHANGE_BEHAVIORS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDpiAwarenessContextForProcess(hprocess: super::super::Foundation::HANDLE) -> DPI_AWARENESS_CONTEXT;
+    pub fn GetDialogControlDpiChangeBehavior(hwnd: ::win32_foundation_sys::HWND) -> DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS;
+    pub fn GetDialogDpiChangeBehavior(hdlg: ::win32_foundation_sys::HWND) -> DIALOG_DPI_CHANGE_BEHAVIORS;
+    pub fn GetDpiAwarenessContextForProcess(hprocess: ::win32_foundation_sys::HANDLE) -> DPI_AWARENESS_CONTEXT;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn GetDpiForMonitor(hmonitor: super::super::Graphics::Gdi::HMONITOR, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn GetDpiForMonitor(hmonitor: ::win32_graphics_sys::Gdi::HMONITOR, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn GetDpiForSystem() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDpiForWindow(hwnd: super::super::Foundation::HWND) -> u32;
+    pub fn GetDpiForWindow(hwnd: ::win32_foundation_sys::HWND) -> u32;
     pub fn GetDpiFromDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetProcessDpiAwareness(hprocess: super::super::Foundation::HANDLE, value: *mut PROCESS_DPI_AWARENESS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetSystemDpiForProcess(hprocess: super::super::Foundation::HANDLE) -> u32;
+    pub fn GetProcessDpiAwareness(hprocess: ::win32_foundation_sys::HANDLE, value: *mut PROCESS_DPI_AWARENESS) -> ::windows_core_sys::HRESULT;
+    pub fn GetSystemDpiForProcess(hprocess: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn GetSystemMetricsForDpi(nindex: i32, dpi: u32) -> i32;
     pub fn GetThreadDpiAwarenessContext() -> DPI_AWARENESS_CONTEXT;
     pub fn GetThreadDpiHostingBehavior() -> DPI_HOSTING_BEHAVIOR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetWindowDpiAwarenessContext(hwnd: super::super::Foundation::HWND) -> DPI_AWARENESS_CONTEXT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetWindowDpiHostingBehavior(hwnd: super::super::Foundation::HWND) -> DPI_HOSTING_BEHAVIOR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsValidDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LogicalToPhysicalPointForPerMonitorDPI(hwnd: super::super::Foundation::HWND, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenThemeDataForDpi(hwnd: super::super::Foundation::HWND, pszclasslist: ::windows_core_sys::PCWSTR, dpi: u32) -> isize;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PhysicalToLogicalPointForPerMonitorDPI(hwnd: super::super::Foundation::HWND, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetDialogControlDpiChangeBehavior(hwnd: super::super::Foundation::HWND, mask: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS, values: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetDialogDpiChangeBehavior(hdlg: super::super::Foundation::HWND, mask: DIALOG_DPI_CHANGE_BEHAVIORS, values: DIALOG_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL;
+    pub fn GetWindowDpiAwarenessContext(hwnd: ::win32_foundation_sys::HWND) -> DPI_AWARENESS_CONTEXT;
+    pub fn GetWindowDpiHostingBehavior(hwnd: ::win32_foundation_sys::HWND) -> DPI_HOSTING_BEHAVIOR;
+    pub fn IsValidDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn LogicalToPhysicalPointForPerMonitorDPI(hwnd: ::win32_foundation_sys::HWND, lppoint: *mut ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
+    pub fn OpenThemeDataForDpi(hwnd: ::win32_foundation_sys::HWND, pszclasslist: ::windows_core_sys::PCWSTR, dpi: u32) -> isize;
+    pub fn PhysicalToLogicalPointForPerMonitorDPI(hwnd: ::win32_foundation_sys::HWND, lppoint: *mut ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
+    pub fn SetDialogControlDpiChangeBehavior(hwnd: ::win32_foundation_sys::HWND, mask: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS, values: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS) -> ::win32_foundation_sys::BOOL;
+    pub fn SetDialogDpiChangeBehavior(hdlg: ::win32_foundation_sys::HWND, mask: DIALOG_DPI_CHANGE_BEHAVIORS, values: DIALOG_DPI_CHANGE_BEHAVIORS) -> ::win32_foundation_sys::BOOL;
     pub fn SetProcessDpiAwareness(value: PROCESS_DPI_AWARENESS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetProcessDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> super::super::Foundation::BOOL;
+    pub fn SetProcessDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> ::win32_foundation_sys::BOOL;
     pub fn SetThreadDpiAwarenessContext(dpicontext: DPI_AWARENESS_CONTEXT) -> DPI_AWARENESS_CONTEXT;
     pub fn SetThreadDpiHostingBehavior(value: DPI_HOSTING_BEHAVIOR) -> DPI_HOSTING_BEHAVIOR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SystemParametersInfoForDpi(uiaction: u32, uiparam: u32, pvparam: *mut ::core::ffi::c_void, fwinini: u32, dpi: u32) -> super::super::Foundation::BOOL;
+    pub fn SystemParametersInfoForDpi(uiaction: u32, uiparam: u32, pvparam: *mut ::core::ffi::c_void, fwinini: u32, dpi: u32) -> ::win32_foundation_sys::BOOL;
 }
 pub type DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS = u32;
 pub const DCDC_DEFAULT: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS = 0u32;

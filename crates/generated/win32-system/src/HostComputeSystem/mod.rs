@@ -22,42 +22,42 @@ impl ::core::fmt::Debug for HCS_CREATE_OPTIONS {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct HCS_CREATE_OPTIONS_1 {
     pub Version: HCS_CREATE_OPTIONS,
-    pub UserToken: super::super::Foundation::HANDLE,
-    pub SecurityDescriptor: *mut super::super::Security::SECURITY_DESCRIPTOR,
+    pub UserToken: ::win32_foundation::HANDLE,
+    pub SecurityDescriptor: *mut ::win32_security::SECURITY_DESCRIPTOR,
     pub CallbackOptions: HCS_EVENT_OPTIONS,
     pub CallbackContext: *mut ::core::ffi::c_void,
     pub Callback: HCS_EVENT_CALLBACK,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for HCS_CREATE_OPTIONS_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for HCS_CREATE_OPTIONS_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for HCS_CREATE_OPTIONS_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HCS_CREATE_OPTIONS_1").field("Version", &self.Version).field("UserToken", &self.UserToken).field("SecurityDescriptor", &self.SecurityDescriptor).field("CallbackOptions", &self.CallbackOptions).field("CallbackContext", &self.CallbackContext).field("Callback", &self.Callback.map(|f| f as usize)).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for HCS_CREATE_OPTIONS_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for HCS_CREATE_OPTIONS_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HCS_CREATE_OPTIONS_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for HCS_CREATE_OPTIONS_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for HCS_CREATE_OPTIONS_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -342,41 +342,33 @@ unsafe impl ::windows_core::Abi for HCS_PROCESS {
     type Abi = Self;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HCS_PROCESS_INFORMATION {
     pub ProcessId: u32,
     pub Reserved: u32,
-    pub StdInput: super::super::Foundation::HANDLE,
-    pub StdOutput: super::super::Foundation::HANDLE,
-    pub StdError: super::super::Foundation::HANDLE,
+    pub StdInput: ::win32_foundation::HANDLE,
+    pub StdOutput: ::win32_foundation::HANDLE,
+    pub StdError: ::win32_foundation::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HCS_PROCESS_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HCS_PROCESS_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HCS_PROCESS_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HCS_PROCESS_INFORMATION").field("ProcessId", &self.ProcessId).field("Reserved", &self.Reserved).field("StdInput", &self.StdInput).field("StdOutput", &self.StdOutput).field("StdError", &self.StdError).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HCS_PROCESS_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HCS_PROCESS_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HCS_PROCESS_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HCS_PROCESS_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HCS_PROCESS_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -487,14 +479,14 @@ pub unsafe fn HcsCrashComputeSystem<'a, Param0: ::windows_core::IntoParam<'a, HC
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn HcsCreateComputeSystem<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HCS_OPERATION>>(id: Param0, configuration: Param1, operation: Param2, securitydescriptor: *const super::super::Security::SECURITY_DESCRIPTOR) -> ::windows_core::Result<HCS_SYSTEM> {
+pub unsafe fn HcsCreateComputeSystem<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HCS_OPERATION>>(id: Param0, configuration: Param1, operation: Param2, securitydescriptor: *const ::win32_security::SECURITY_DESCRIPTOR) -> ::windows_core::Result<HCS_SYSTEM> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HcsCreateComputeSystem(id: ::windows_core::PCWSTR, configuration: ::windows_core::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const super::super::Security::SECURITY_DESCRIPTOR, computesystem: *mut HCS_SYSTEM) -> ::windows_core::HRESULT;
+            fn HcsCreateComputeSystem(id: ::windows_core::PCWSTR, configuration: ::windows_core::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const ::win32_security::SECURITY_DESCRIPTOR, computesystem: *mut HCS_SYSTEM) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<HCS_SYSTEM>::zeroed();
         HcsCreateComputeSystem(id.into_param().abi(), configuration.into_param().abi(), operation.into_param().abi(), ::core::mem::transmute(securitydescriptor), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<HCS_SYSTEM>(result__)
@@ -555,14 +547,14 @@ pub unsafe fn HcsCreateOperation(context: *const ::core::ffi::c_void, callback: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn HcsCreateProcess<'a, Param0: ::windows_core::IntoParam<'a, HCS_SYSTEM>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HCS_OPERATION>>(computesystem: Param0, processparameters: Param1, operation: Param2, securitydescriptor: *const super::super::Security::SECURITY_DESCRIPTOR) -> ::windows_core::Result<HCS_PROCESS> {
+pub unsafe fn HcsCreateProcess<'a, Param0: ::windows_core::IntoParam<'a, HCS_SYSTEM>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HCS_OPERATION>>(computesystem: Param0, processparameters: Param1, operation: Param2, securitydescriptor: *const ::win32_security::SECURITY_DESCRIPTOR) -> ::windows_core::Result<HCS_PROCESS> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HcsCreateProcess(computesystem: HCS_SYSTEM, processparameters: ::windows_core::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const super::super::Security::SECURITY_DESCRIPTOR, process: *mut HCS_PROCESS) -> ::windows_core::HRESULT;
+            fn HcsCreateProcess(computesystem: HCS_SYSTEM, processparameters: ::windows_core::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const ::win32_security::SECURITY_DESCRIPTOR, process: *mut HCS_PROCESS) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<HCS_PROCESS>::zeroed();
         HcsCreateProcess(computesystem.into_param().abi(), processparameters.into_param().abi(), operation.into_param().abi(), ::core::mem::transmute(securitydescriptor), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<HCS_PROCESS>(result__)
@@ -648,14 +640,13 @@ pub unsafe fn HcsExportLegacyWritableLayer<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HcsFormatWritableLayerVhd<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(vhdhandle: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn HcsFormatWritableLayerVhd<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(vhdhandle: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HcsFormatWritableLayerVhd(vhdhandle: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn HcsFormatWritableLayerVhd(vhdhandle: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         HcsFormatWritableLayerVhd(vhdhandle.into_param().abi()).ok()
     }
@@ -688,14 +679,13 @@ pub unsafe fn HcsGetComputeSystemProperties<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HcsGetLayerVhdMountPath<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(vhdhandle: Param0) -> ::windows_core::Result<::windows_core::PWSTR> {
+pub unsafe fn HcsGetLayerVhdMountPath<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(vhdhandle: Param0) -> ::windows_core::Result<::windows_core::PWSTR> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HcsGetLayerVhdMountPath(vhdhandle: super::super::Foundation::HANDLE, mountpath: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT;
+            fn HcsGetLayerVhdMountPath(vhdhandle: ::win32_foundation::HANDLE, mountpath: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         HcsGetLayerVhdMountPath(vhdhandle.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
@@ -743,7 +733,6 @@ pub unsafe fn HcsGetOperationResult<'a, Param0: ::windows_core::IntoParam<'a, HC
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn HcsGetOperationResultAndProcessInfo<'a, Param0: ::windows_core::IntoParam<'a, HCS_OPERATION>>(operation: Param0, processinformation: *mut HCS_PROCESS_INFORMATION, resultdocument: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -902,14 +891,13 @@ pub unsafe fn HcsInitializeWritableLayer<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HcsModifyComputeSystem<'a, Param0: ::windows_core::IntoParam<'a, HCS_SYSTEM>, Param1: ::windows_core::IntoParam<'a, HCS_OPERATION>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(computesystem: Param0, operation: Param1, configuration: Param2, identity: Param3) -> ::windows_core::Result<()> {
+pub unsafe fn HcsModifyComputeSystem<'a, Param0: ::windows_core::IntoParam<'a, HCS_SYSTEM>, Param1: ::windows_core::IntoParam<'a, HCS_OPERATION>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(computesystem: Param0, operation: Param1, configuration: Param2, identity: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HcsModifyComputeSystem(computesystem: HCS_SYSTEM, operation: HCS_OPERATION, configuration: ::windows_core::PCWSTR, identity: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn HcsModifyComputeSystem(computesystem: HCS_SYSTEM, operation: HCS_OPERATION, configuration: ::windows_core::PCWSTR, identity: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         HcsModifyComputeSystem(computesystem.into_param().abi(), operation.into_param().abi(), configuration.into_param().abi(), identity.into_param().abi()).ok()
     }
@@ -1102,14 +1090,13 @@ pub unsafe fn HcsSetProcessCallback<'a, Param0: ::windows_core::IntoParam<'a, HC
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HcsSetupBaseOSLayer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(layerpath: Param0, vhdhandle: Param1, options: Param2) -> ::windows_core::Result<()> {
+pub unsafe fn HcsSetupBaseOSLayer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(layerpath: Param0, vhdhandle: Param1, options: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HcsSetupBaseOSLayer(layerpath: ::windows_core::PCWSTR, vhdhandle: super::super::Foundation::HANDLE, options: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
+            fn HcsSetupBaseOSLayer(layerpath: ::windows_core::PCWSTR, vhdhandle: ::win32_foundation::HANDLE, options: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         HcsSetupBaseOSLayer(layerpath.into_param().abi(), vhdhandle.into_param().abi(), options.into_param().abi()).ok()
     }
@@ -1235,7 +1222,6 @@ pub unsafe fn HcsWaitForOperationResult<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn HcsWaitForOperationResultAndProcessInfo<'a, Param0: ::windows_core::IntoParam<'a, HCS_OPERATION>>(operation: Param0, timeoutms: u32, processinformation: *mut HCS_PROCESS_INFORMATION, resultdocument: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
     #[cfg(windows)]

@@ -1,16 +1,14 @@
 #[repr(transparent)]
 pub struct AccountsSettingsPane(::windows_core::IUnknown);
 impl AccountsSettingsPane {
-    #[cfg(feature = "Foundation")]
-    pub fn AccountCommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AccountsSettingsPane, AccountsSettingsPaneCommandsRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn AccountCommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AccountsSettingsPane, AccountsSettingsPaneCommandsRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AccountCommandsRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AccountCommandsRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAccountCommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAccountCommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAccountCommandsRequested)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
@@ -23,32 +21,30 @@ impl AccountsSettingsPane {
     pub fn Show() -> ::windows_core::Result<()> {
         Self::IAccountsSettingsPaneStatics(|this| unsafe { (::windows_core::Interface::vtable(this).Show)(::windows_core::Interface::as_raw(this)).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShowManageAccountsAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ShowManageAccountsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IAccountsSettingsPaneStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowManageAccountsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ShowManageAccountsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShowAddAccountAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ShowAddAccountAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IAccountsSettingsPaneStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowAddAccountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ShowAddAccountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "System"))]
-    pub fn ShowManageAccountsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::User>>(user: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "System")]
+    pub fn ShowManageAccountsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IAccountsSettingsPaneStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowManageAccountsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ShowManageAccountsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "System"))]
-    pub fn ShowAddAccountForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::User>>(user: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "System")]
+    pub fn ShowAddAccountForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IAccountsSettingsPaneStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowAddAccountForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ShowAddAccountForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn IAccountsSettingsPaneStatics<R, F: FnOnce(&IAccountsSettingsPaneStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -138,35 +134,35 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Acc
 pub struct AccountsSettingsPaneCommandsRequestedEventArgs(::windows_core::IUnknown);
 impl AccountsSettingsPaneCommandsRequestedEventArgs {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn WebAccountProviderCommands(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<WebAccountProviderCommand>> {
+    pub fn WebAccountProviderCommands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebAccountProviderCommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebAccountProviderCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<WebAccountProviderCommand>>(result__)
+            (::windows_core::Interface::vtable(this).WebAccountProviderCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<WebAccountProviderCommand>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn WebAccountCommands(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<WebAccountCommand>> {
+    pub fn WebAccountCommands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WebAccountCommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebAccountCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<WebAccountCommand>>(result__)
+            (::windows_core::Interface::vtable(this).WebAccountCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<WebAccountCommand>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CredentialCommands(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<CredentialCommand>> {
+    pub fn CredentialCommands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<CredentialCommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CredentialCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<CredentialCommand>>(result__)
+            (::windows_core::Interface::vtable(this).CredentialCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<CredentialCommand>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "UI_Popups"))]
-    pub fn Commands(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<SettingsCommand>> {
+    pub fn Commands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SettingsCommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Commands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<SettingsCommand>>(result__)
+            (::windows_core::Interface::vtable(this).Commands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SettingsCommand>>(result__)
         }
     }
     pub fn HeaderText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -188,11 +184,11 @@ impl AccountsSettingsPaneCommandsRequestedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IAccountsSettingsPaneCommandsRequestedEventArgs2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
 }
@@ -348,11 +344,11 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Acc
 pub struct CredentialCommand(::windows_core::IUnknown);
 impl CredentialCommand {
     #[cfg(feature = "Security_Credentials")]
-    pub fn PasswordCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn PasswordCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).PasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     pub fn CredentialDeleted(&self) -> ::windows_core::Result<CredentialCommandCredentialDeletedHandler> {
@@ -363,14 +359,14 @@ impl CredentialCommand {
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn CreateCredentialCommand<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>>(passwordcredential: Param0) -> ::windows_core::Result<CredentialCommand> {
+    pub fn CreateCredentialCommand<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(passwordcredential: Param0) -> ::windows_core::Result<CredentialCommand> {
         Self::ICredentialCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCredentialCommand)(::windows_core::Interface::as_raw(this), passwordcredential.into_param().abi(), result__.as_mut_ptr()).from_abi::<CredentialCommand>(result__)
         })
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn CreateCredentialCommandWithHandler<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>, Param1: ::windows_core::IntoParam<'a, CredentialCommandCredentialDeletedHandler>>(passwordcredential: Param0, deleted: Param1) -> ::windows_core::Result<CredentialCommand> {
+    pub fn CreateCredentialCommandWithHandler<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>, Param1: ::windows_core::IntoParam<'a, CredentialCommandCredentialDeletedHandler>>(passwordcredential: Param0, deleted: Param1) -> ::windows_core::Result<CredentialCommand> {
         Self::ICredentialCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCredentialCommandWithHandler)(::windows_core::Interface::as_raw(this), passwordcredential.into_param().abi(), deleted.into_param().abi(), result__.as_mut_ptr()).from_abi::<CredentialCommand>(result__)
@@ -545,14 +541,8 @@ unsafe impl ::windows_core::Interface for IAccountsSettingsPane {
 #[doc(hidden)]
 pub struct IAccountsSettingsPane_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub AccountCommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AccountCommandsRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAccountCommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAccountCommandsRequested: usize,
+    pub AccountCommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAccountCommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -639,14 +629,8 @@ unsafe impl ::windows_core::Interface for IAccountsSettingsPaneStatics2 {
 #[doc(hidden)]
 pub struct IAccountsSettingsPaneStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ShowManageAccountsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShowManageAccountsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ShowAddAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShowAddAccountAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -659,13 +643,13 @@ unsafe impl ::windows_core::Interface for IAccountsSettingsPaneStatics3 {
 #[doc(hidden)]
 pub struct IAccountsSettingsPaneStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "System"))]
+    #[cfg(feature = "System")]
     pub ShowManageAccountsForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    #[cfg(not(feature = "System"))]
     ShowManageAccountsForUserAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "System"))]
+    #[cfg(feature = "System")]
     pub ShowAddAccountForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    #[cfg(not(feature = "System"))]
     ShowAddAccountForUserAsync: usize,
 }
 #[doc(hidden)]
@@ -751,13 +735,13 @@ unsafe impl ::windows_core::Interface for ISettingsPane {
 #[doc(hidden)]
 pub struct ISettingsPane_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub CommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub CommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     CommandsRequested: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveCommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveCommandsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveCommandsRequested: usize,
 }
 #[doc(hidden)]
@@ -1129,16 +1113,16 @@ unsafe impl ::windows_core::RuntimeType for SettingsEdgeLocation {
 pub struct SettingsPane(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl SettingsPane {
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn CommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<SettingsPane, SettingsPaneCommandsRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn CommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<SettingsPane, SettingsPaneCommandsRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CommandsRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CommandsRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveCommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveCommandsRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCommandsRequested)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
@@ -1257,11 +1241,11 @@ pub struct SettingsPaneCommandsRequest(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl SettingsPaneCommandsRequest {
     #[cfg(all(feature = "Foundation_Collections", feature = "UI_Popups", feature = "deprecated"))]
-    pub fn ApplicationCommands(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<SettingsCommand>> {
+    pub fn ApplicationCommands(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SettingsCommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ApplicationCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<SettingsCommand>>(result__)
+            (::windows_core::Interface::vtable(this).ApplicationCommands)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SettingsCommand>>(result__)
         }
     }
 }
@@ -1554,11 +1538,11 @@ unsafe impl ::windows_core::RuntimeType for WebAccountAction {
 pub struct WebAccountCommand(::windows_core::IUnknown);
 impl WebAccountCommand {
     #[cfg(feature = "Security_Credentials")]
-    pub fn WebAccount(&self) -> ::windows_core::Result<super::super::Security::Credentials::WebAccount> {
+    pub fn WebAccount(&self) -> ::windows_core::Result<::winrt_security::Credentials::WebAccount> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebAccount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::WebAccount>(result__)
+            (::windows_core::Interface::vtable(this).WebAccount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::WebAccount>(result__)
         }
     }
     pub fn Invoked(&self) -> ::windows_core::Result<WebAccountCommandInvokedHandler> {
@@ -1576,7 +1560,7 @@ impl WebAccountCommand {
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn CreateWebAccountCommand<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, WebAccountCommandInvokedHandler>>(webaccount: Param0, invoked: Param1, actions: SupportedWebAccountActions) -> ::windows_core::Result<WebAccountCommand> {
+    pub fn CreateWebAccountCommand<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::WebAccount>, Param1: ::windows_core::IntoParam<'a, WebAccountCommandInvokedHandler>>(webaccount: Param0, invoked: Param1, actions: SupportedWebAccountActions) -> ::windows_core::Result<WebAccountCommand> {
         Self::IWebAccountCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWebAccountCommand)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), invoked.into_param().abi(), actions, result__.as_mut_ptr()).from_abi::<WebAccountCommand>(result__)
@@ -1825,11 +1809,11 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Web
 pub struct WebAccountProviderCommand(::windows_core::IUnknown);
 impl WebAccountProviderCommand {
     #[cfg(feature = "Security_Credentials")]
-    pub fn WebAccountProvider(&self) -> ::windows_core::Result<super::super::Security::Credentials::WebAccountProvider> {
+    pub fn WebAccountProvider(&self) -> ::windows_core::Result<::winrt_security::Credentials::WebAccountProvider> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebAccountProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::WebAccountProvider>(result__)
+            (::windows_core::Interface::vtable(this).WebAccountProvider)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::WebAccountProvider>(result__)
         }
     }
     pub fn Invoked(&self) -> ::windows_core::Result<WebAccountProviderCommandInvokedHandler> {
@@ -1840,7 +1824,7 @@ impl WebAccountProviderCommand {
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn CreateWebAccountProviderCommand<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::WebAccountProvider>, Param1: ::windows_core::IntoParam<'a, WebAccountProviderCommandInvokedHandler>>(webaccountprovider: Param0, invoked: Param1) -> ::windows_core::Result<WebAccountProviderCommand> {
+    pub fn CreateWebAccountProviderCommand<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::WebAccountProvider>, Param1: ::windows_core::IntoParam<'a, WebAccountProviderCommandInvokedHandler>>(webaccountprovider: Param0, invoked: Param1) -> ::windows_core::Result<WebAccountProviderCommand> {
         Self::IWebAccountProviderCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWebAccountProviderCommand)(::windows_core::Interface::as_raw(this), webaccountprovider.into_param().abi(), invoked.into_param().abi(), result__.as_mut_ptr()).from_abi::<WebAccountProviderCommand>(result__)

@@ -34,7 +34,7 @@ extern "system" {
     pub fn CreateControlInput(riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CreateControlInputEx(pcorewindow: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "System")]
-    pub fn CreateDispatcherQueueController(options: DispatcherQueueOptions, dispatcherqueuecontroller: *mut super::super::super::System::DispatcherQueueController) -> ::windows_core_sys::HRESULT;
+    pub fn CreateDispatcherQueueController(options: DispatcherQueueOptions, dispatcherqueuecontroller: *mut ::winrt_system_sys::DispatcherQueueController) -> ::windows_core_sys::HRESULT;
     pub fn CreateRandomAccessStreamOnFile(filepath: ::windows_core_sys::PCWSTR, accessmode: u32, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
     pub fn CreateRandomAccessStreamOverStream(stream: super::Com::IStream, options: BSOS_OPTIONS, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
@@ -48,8 +48,7 @@ extern "system" {
     pub fn HSTRING_UserSize64(param0: *const u32, param1: u32, param2: *const ::windows_core_sys::HSTRING) -> u32;
     pub fn HSTRING_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::windows_core_sys::HSTRING) -> *mut u8;
     pub fn HSTRING_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::windows_core_sys::HSTRING) -> *mut u8;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsErrorPropagationEnabled() -> super::super::Foundation::BOOL;
+    pub fn IsErrorPropagationEnabled() -> ::win32_foundation_sys::BOOL;
     pub fn MetaDataGetDispenser(rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn RoActivateInstance(activatableclassid: ::windows_core_sys::HSTRING, instance: *mut ::windows_core_sys::IInspectable) -> ::windows_core_sys::HRESULT;
     pub fn RoCaptureErrorContext(hr: ::windows_core_sys::HRESULT) -> ::windows_core_sys::HRESULT;
@@ -68,12 +67,9 @@ extern "system" {
     pub fn RoInitialize(inittype: RO_INIT_TYPE) -> ::windows_core_sys::HRESULT;
     pub fn RoInspectCapturedStackBackTrace(targeterrorinfoaddress: usize, machine: u16, readmemorycallback: PINSPECT_MEMORY_CALLBACK, context: *const ::core::ffi::c_void, framecount: *mut u32, targetbacktraceaddress: *mut usize) -> ::windows_core_sys::HRESULT;
     pub fn RoInspectThreadErrorInfo(targettebaddress: usize, machine: u16, readmemorycallback: PINSPECT_MEMORY_CALLBACK, context: *const ::core::ffi::c_void, targeterrorinfoaddress: *mut usize) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RoOriginateError(error: ::windows_core_sys::HRESULT, message: ::windows_core_sys::HSTRING) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RoOriginateErrorW(error: ::windows_core_sys::HRESULT, cchmax: u32, message: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RoOriginateLanguageException(error: ::windows_core_sys::HRESULT, message: ::windows_core_sys::HSTRING, languageexception: ::windows_core_sys::IUnknown) -> super::super::Foundation::BOOL;
+    pub fn RoOriginateError(error: ::windows_core_sys::HRESULT, message: ::windows_core_sys::HSTRING) -> ::win32_foundation_sys::BOOL;
+    pub fn RoOriginateErrorW(error: ::windows_core_sys::HRESULT, cchmax: u32, message: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn RoOriginateLanguageException(error: ::windows_core_sys::HRESULT, message: ::windows_core_sys::HSTRING, languageexception: ::windows_core_sys::IUnknown) -> ::win32_foundation_sys::BOOL;
     pub fn RoParameterizedTypeExtraGetTypeSignature(extra: ROPARAMIIDHANDLE) -> ::windows_core_sys::PSTR;
     pub fn RoRegisterActivationFactories(activatableclassids: *const ::windows_core_sys::HSTRING, activationfactorycallbacks: *const isize, count: u32, cookie: *mut isize) -> ::windows_core_sys::HRESULT;
     pub fn RoRegisterForApartmentShutdown(callbackobject: IApartmentShutdown, apartmentidentifier: *mut u64, regcookie: *mut APARTMENT_SHUTDOWN_REGISTRATION_COOKIE) -> ::windows_core_sys::HRESULT;
@@ -82,10 +78,8 @@ extern "system" {
     pub fn RoResolveRestrictedErrorInfoReference(reference: ::windows_core_sys::PCWSTR, pprestrictederrorinfo: *mut IRestrictedErrorInfo) -> ::windows_core_sys::HRESULT;
     pub fn RoRevokeActivationFactories(cookie: isize);
     pub fn RoSetErrorReportingFlags(flags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RoTransformError(olderror: ::windows_core_sys::HRESULT, newerror: ::windows_core_sys::HRESULT, message: ::windows_core_sys::HSTRING) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RoTransformErrorW(olderror: ::windows_core_sys::HRESULT, newerror: ::windows_core_sys::HRESULT, cchmax: u32, message: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn RoTransformError(olderror: ::windows_core_sys::HRESULT, newerror: ::windows_core_sys::HRESULT, message: ::windows_core_sys::HSTRING) -> ::win32_foundation_sys::BOOL;
+    pub fn RoTransformErrorW(olderror: ::windows_core_sys::HRESULT, newerror: ::windows_core_sys::HRESULT, cchmax: u32, message: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn RoUninitialize();
     pub fn RoUnregisterForApartmentShutdown(regcookie: APARTMENT_SHUTDOWN_REGISTRATION_COOKIE) -> ::windows_core_sys::HRESULT;
     pub fn SetRestrictedErrorInfo(prestrictederrorinfo: IRestrictedErrorInfo) -> ::windows_core_sys::HRESULT;
@@ -100,13 +94,11 @@ extern "system" {
     pub fn WindowsGetStringRawBuffer(string: ::windows_core_sys::HSTRING, length: *mut u32) -> ::windows_core_sys::PWSTR;
     pub fn WindowsInspectString(targethstring: usize, machine: u16, callback: PINSPECT_HSTRING_CALLBACK, context: *const ::core::ffi::c_void, length: *mut u32, targetstringaddress: *mut usize) -> ::windows_core_sys::HRESULT;
     pub fn WindowsInspectString2(targethstring: u64, machine: u16, callback: PINSPECT_HSTRING_CALLBACK2, context: *const ::core::ffi::c_void, length: *mut u32, targetstringaddress: *mut u64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WindowsIsStringEmpty(string: ::windows_core_sys::HSTRING) -> super::super::Foundation::BOOL;
+    pub fn WindowsIsStringEmpty(string: ::windows_core_sys::HSTRING) -> ::win32_foundation_sys::BOOL;
     pub fn WindowsPreallocateStringBuffer(length: u32, charbuffer: *mut *mut u16, bufferhandle: *mut HSTRING_BUFFER) -> ::windows_core_sys::HRESULT;
     pub fn WindowsPromoteStringBuffer(bufferhandle: HSTRING_BUFFER, string: *mut ::windows_core_sys::HSTRING) -> ::windows_core_sys::HRESULT;
     pub fn WindowsReplaceString(string: ::windows_core_sys::HSTRING, stringreplaced: ::windows_core_sys::HSTRING, stringreplacewith: ::windows_core_sys::HSTRING, newstring: *mut ::windows_core_sys::HSTRING) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WindowsStringHasEmbeddedNull(string: ::windows_core_sys::HSTRING, hasembednull: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn WindowsStringHasEmbeddedNull(string: ::windows_core_sys::HSTRING, hasembednull: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn WindowsSubstring(string: ::windows_core_sys::HSTRING, startindex: u32, newstring: *mut ::windows_core_sys::HSTRING) -> ::windows_core_sys::HRESULT;
     pub fn WindowsSubstringWithSpecifiedLength(string: ::windows_core_sys::HSTRING, startindex: u32, length: u32, newstring: *mut ::windows_core_sys::HSTRING) -> ::windows_core_sys::HRESULT;
     pub fn WindowsTrimStringEnd(string: ::windows_core_sys::HSTRING, trimstring: ::windows_core_sys::HSTRING, newstring: *mut ::windows_core_sys::HSTRING) -> ::windows_core_sys::HRESULT;

@@ -15,8 +15,7 @@ extern "system" {
     pub fn NetAccessGetUserPerms(servername: ::windows_core_sys::PCWSTR, ugname: ::windows_core_sys::PCWSTR, resource: ::windows_core_sys::PCWSTR, perms: *mut u32) -> u32;
     pub fn NetAccessSetInfo(servername: ::windows_core_sys::PCWSTR, resource: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
     pub fn NetAddAlternateComputerName(server: ::windows_core_sys::PCWSTR, alternatename: ::windows_core_sys::PCWSTR, domainaccount: ::windows_core_sys::PCWSTR, domainaccountpassword: ::windows_core_sys::PCWSTR, reserved: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn NetAddServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, password: ::windows_core_sys::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn NetAddServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, password: ::windows_core_sys::PCWSTR, flags: u32) -> ::win32_foundation_sys::NTSTATUS;
     pub fn NetAlertRaise(alerttype: ::windows_core_sys::PCWSTR, buffer: *const ::core::ffi::c_void, buffersize: u32) -> u32;
     pub fn NetAlertRaiseEx(alerttype: ::windows_core_sys::PCWSTR, variableinfo: *const ::core::ffi::c_void, variableinfosize: u32, servicename: ::windows_core_sys::PCWSTR) -> u32;
     pub fn NetApiBufferAllocate(bytecount: u32, buffer: *mut *mut ::core::ffi::c_void) -> u32;
@@ -31,14 +30,13 @@ extern "system" {
     pub fn NetConfigSet(server: ::windows_core_sys::PCWSTR, reserved1: ::windows_core_sys::PCWSTR, component: ::windows_core_sys::PCWSTR, level: u32, reserved2: u32, buf: *mut u8, reserved3: u32) -> u32;
     pub fn NetCreateProvisioningPackage(pprovisioningparams: *const NETSETUP_PROVISIONING_PARAMS, pppackagebindata: *mut *mut u8, pdwpackagebindatasize: *mut u32, pppackagetextdata: *mut ::windows_core_sys::PWSTR) -> u32;
     pub fn NetEnumerateComputerNames(server: ::windows_core_sys::PCWSTR, nametype: NET_COMPUTER_NAME_TYPE, reserved: u32, entrycount: *mut u32, computernames: *mut *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn NetEnumerateServiceAccounts(servername: ::windows_core_sys::PCWSTR, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> super::super::Foundation::NTSTATUS;
+    pub fn NetEnumerateServiceAccounts(servername: ::windows_core_sys::PCWSTR, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> ::win32_foundation_sys::NTSTATUS;
     pub fn NetErrorLogClear(uncservername: ::windows_core_sys::PCWSTR, backupfile: ::windows_core_sys::PCWSTR, reserved: *const u8) -> u32;
     pub fn NetErrorLogRead(uncservername: ::windows_core_sys::PCWSTR, reserved1: ::windows_core_sys::PCWSTR, errorloghandle: *const HLOG, offset: u32, reserved2: *const u32, reserved3: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxsize: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
     pub fn NetErrorLogWrite(reserved1: *const u8, code: u32, component: ::windows_core_sys::PCWSTR, buffer: *const u8, numbytes: u32, msgbuf: *const u8, strcount: u32, reserved2: *const u8) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
     pub fn NetFreeAadJoinInformation(pjoininfo: *const DSREG_JOIN_INFO);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
     pub fn NetGetAadJoinInformation(pcsztenantid: ::windows_core_sys::PCWSTR, ppjoininfo: *mut *mut DSREG_JOIN_INFO) -> ::windows_core_sys::HRESULT;
     pub fn NetGetAnyDCName(servername: ::windows_core_sys::PCWSTR, domainname: ::windows_core_sys::PCWSTR, buffer: *mut *mut u8) -> u32;
     pub fn NetGetDCName(servername: ::windows_core_sys::PCWSTR, domainname: ::windows_core_sys::PCWSTR, buffer: *mut *mut u8) -> u32;
@@ -54,16 +52,13 @@ extern "system" {
     pub fn NetGroupGetUsers(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
     pub fn NetGroupSetInfo(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
     pub fn NetGroupSetUsers(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn NetIsServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, isservice: *mut super::super::Foundation::BOOL) -> super::super::Foundation::NTSTATUS;
+    pub fn NetIsServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, isservice: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::NTSTATUS;
     pub fn NetJoinDomain(lpserver: ::windows_core_sys::PCWSTR, lpdomain: ::windows_core_sys::PCWSTR, lpmachineaccountou: ::windows_core_sys::PCWSTR, lpaccount: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, fjoinoptions: NET_JOIN_DOMAIN_JOIN_OPTIONS) -> u32;
     pub fn NetLocalGroupAdd(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn NetLocalGroupAddMember(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
+    pub fn NetLocalGroupAddMember(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, membersid: ::win32_foundation_sys::PSID) -> u32;
     pub fn NetLocalGroupAddMembers(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
     pub fn NetLocalGroupDel(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn NetLocalGroupDelMember(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
+    pub fn NetLocalGroupDelMember(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, membersid: ::win32_foundation_sys::PSID) -> u32;
     pub fn NetLocalGroupDelMembers(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
     pub fn NetLocalGroupEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
     pub fn NetLocalGroupGetInfo(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
@@ -77,13 +72,11 @@ extern "system" {
     pub fn NetMessageNameGetInfo(servername: ::windows_core_sys::PCWSTR, msgname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *const *const u8) -> u32;
     pub fn NetProvisionComputerAccount(lpdomain: ::windows_core_sys::PCWSTR, lpmachinename: ::windows_core_sys::PCWSTR, lpmachineaccountou: ::windows_core_sys::PCWSTR, lpdcname: ::windows_core_sys::PCWSTR, dwoptions: NETSETUP_PROVISION, pprovisionbindata: *mut *mut u8, pdwprovisionbindatasize: *mut u32, pprovisiontextdata: *mut ::windows_core_sys::PWSTR) -> u32;
     pub fn NetQueryDisplayInformation(servername: ::windows_core_sys::PCWSTR, level: u32, index: u32, entriesrequested: u32, preferredmaximumlength: u32, returnedentrycount: *mut u32, sortedbuffer: *mut *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn NetQueryServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, infolevel: u32, buffer: *mut *mut u8) -> super::super::Foundation::NTSTATUS;
+    pub fn NetQueryServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, infolevel: u32, buffer: *mut *mut u8) -> ::win32_foundation_sys::NTSTATUS;
     pub fn NetRemoteComputerSupports(uncservername: ::windows_core_sys::PCWSTR, optionswanted: NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS, optionssupported: *mut u32) -> u32;
     pub fn NetRemoteTOD(uncservername: ::windows_core_sys::PCWSTR, bufferptr: *mut *mut u8) -> u32;
     pub fn NetRemoveAlternateComputerName(server: ::windows_core_sys::PCWSTR, alternatename: ::windows_core_sys::PCWSTR, domainaccount: ::windows_core_sys::PCWSTR, domainaccountpassword: ::windows_core_sys::PCWSTR, reserved: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn NetRemoveServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn NetRemoveServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, flags: u32) -> ::win32_foundation_sys::NTSTATUS;
     pub fn NetRenameMachineInDomain(lpserver: ::windows_core_sys::PCWSTR, lpnewmachinename: ::windows_core_sys::PCWSTR, lpaccount: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, frenameoptions: u32) -> u32;
     pub fn NetReplExportDirAdd(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
     pub fn NetReplExportDirDel(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR) -> u32;
@@ -151,47 +144,29 @@ extern "system" {
     pub fn RouterAssert(pszfailedassertion: ::windows_core_sys::PCSTR, pszfilename: ::windows_core_sys::PCSTR, dwlinenumber: u32, pszmessage: ::windows_core_sys::PCSTR);
     pub fn RouterGetErrorStringA(dwerrorcode: u32, lplpszerrorstring: *mut ::windows_core_sys::PSTR) -> u32;
     pub fn RouterGetErrorStringW(dwerrorcode: u32, lplpwszerrorstring: *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogDeregisterA(hloghandle: super::super::Foundation::HANDLE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogDeregisterW(hloghandle: super::super::Foundation::HANDLE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PSTR, dwerrorcode: u32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventDataA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventDataW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PWSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCSTR);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCWSTR);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventStringA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PSTR, dwerrorcode: u32, dwerrorindex: u32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventStringW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PWSTR, dwerrorcode: u32, dwerrorindex: u32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventValistExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCSTR, arglist: *mut i8);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventValistExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCWSTR, arglist: *mut i8);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PWSTR, dwerrorcode: u32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogRegisterA(lpszsource: ::windows_core_sys::PCSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogRegisterW(lpszsource: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
+    pub fn RouterLogDeregisterA(hloghandle: ::win32_foundation_sys::HANDLE);
+    pub fn RouterLogDeregisterW(hloghandle: ::win32_foundation_sys::HANDLE);
+    pub fn RouterLogEventA(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PSTR, dwerrorcode: u32);
+    pub fn RouterLogEventDataA(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
+    pub fn RouterLogEventDataW(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PWSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
+    pub fn RouterLogEventExA(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCSTR);
+    pub fn RouterLogEventExW(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCWSTR);
+    pub fn RouterLogEventStringA(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PSTR, dwerrorcode: u32, dwerrorindex: u32);
+    pub fn RouterLogEventStringW(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PWSTR, dwerrorcode: u32, dwerrorindex: u32);
+    pub fn RouterLogEventValistExA(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCSTR, arglist: *mut i8);
+    pub fn RouterLogEventValistExW(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCWSTR, arglist: *mut i8);
+    pub fn RouterLogEventW(hloghandle: ::win32_foundation_sys::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PWSTR, dwerrorcode: u32);
+    pub fn RouterLogRegisterA(lpszsource: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn RouterLogRegisterW(lpszsource: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn SetNetScheduleAccountInformation(pwszservername: ::windows_core_sys::PCWSTR, pwszaccount: ::windows_core_sys::PCWSTR, pwszpassword: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn TraceDeregisterA(dwtraceid: u32) -> u32;
     pub fn TraceDeregisterExA(dwtraceid: u32, dwflags: u32) -> u32;
     pub fn TraceDeregisterExW(dwtraceid: u32, dwflags: u32) -> u32;
     pub fn TraceDeregisterW(dwtraceid: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TraceDumpExA(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_core_sys::PCSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TraceDumpExW(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TraceGetConsoleA(dwtraceid: u32, lphconsole: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TraceGetConsoleW(dwtraceid: u32, lphconsole: *mut super::super::Foundation::HANDLE) -> u32;
+    pub fn TraceDumpExA(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: ::win32_foundation_sys::BOOL, lpszprefix: ::windows_core_sys::PCSTR) -> u32;
+    pub fn TraceDumpExW(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: ::win32_foundation_sys::BOOL, lpszprefix: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn TraceGetConsoleA(dwtraceid: u32, lphconsole: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn TraceGetConsoleW(dwtraceid: u32, lphconsole: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn TracePrintfA(dwtraceid: u32, lpszformat: ::windows_core_sys::PCSTR) -> u32;
     pub fn TracePrintfExA(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core_sys::PCSTR) -> u32;
     pub fn TracePrintfExW(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core_sys::PCWSTR) -> u32;
@@ -772,10 +747,10 @@ pub const DFS_WARN_METADATA_LINK_INFO_INVALID: i32 = -2147469106i32;
 pub const DFS_WARN_METADATA_LINK_TYPE_INCORRECT: i32 = -2147469107i32;
 pub const DNLEN: u32 = 15u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct DSREG_JOIN_INFO {
     pub joinType: DSREG_JOIN_TYPE,
-    pub pJoinCertificate: *const super::super::Security::Cryptography::CERT_CONTEXT,
+    pub pJoinCertificate: *const ::win32_security_sys::Cryptography::CERT_CONTEXT,
     pub pszDeviceId: ::windows_core_sys::PWSTR,
     pub pszIdpDomain: ::windows_core_sys::PWSTR,
     pub pszTenantId: ::windows_core_sys::PWSTR,
@@ -787,9 +762,9 @@ pub struct DSREG_JOIN_INFO {
     pub pszUserSettingSyncUrl: ::windows_core_sys::PWSTR,
     pub pUserInfo: *mut DSREG_USER_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for DSREG_JOIN_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for DSREG_JOIN_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1340,15 +1315,12 @@ pub const EXTRA_VOLUME: i32 = -1073727521i32;
 pub const EXTRA_VOLUME_DELETED: i32 = -1073727514i32;
 pub const EXTRA_VOLUME_NOT_DELETED: i32 = -1073727513i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FLAT_STRING {
     pub MaximumLength: i16,
     pub Length: i16,
-    pub Buffer: [super::super::Foundation::CHAR; 1],
+    pub Buffer: [::win32_foundation_sys::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FLAT_STRING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FLAT_STRING {
     fn clone(&self) -> Self {
         *self
@@ -1418,16 +1390,13 @@ impl ::core::clone::Clone for GROUP_INFO_2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GROUP_INFO_3 {
     pub grpi3_name: ::windows_core_sys::PWSTR,
     pub grpi3_comment: ::windows_core_sys::PWSTR,
-    pub grpi3_group_sid: super::super::Foundation::PSID,
+    pub grpi3_group_sid: ::win32_foundation_sys::PSID,
     pub grpi3_attributes: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GROUP_INFO_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GROUP_INFO_3 {
     fn clone(&self) -> Self {
         *self
@@ -1573,43 +1542,40 @@ impl ::core::clone::Clone for LOCALGROUP_INFO_1002 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LOCALGROUP_MEMBERS_INFO_0 {
-    pub lgrmi0_sid: super::super::Foundation::PSID,
+    pub lgrmi0_sid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct LOCALGROUP_MEMBERS_INFO_1 {
-    pub lgrmi1_sid: super::super::Foundation::PSID,
-    pub lgrmi1_sidusage: super::super::Security::SID_NAME_USE,
+    pub lgrmi1_sid: ::win32_foundation_sys::PSID,
+    pub lgrmi1_sidusage: ::win32_security_sys::SID_NAME_USE,
     pub lgrmi1_name: ::windows_core_sys::PWSTR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct LOCALGROUP_MEMBERS_INFO_2 {
-    pub lgrmi2_sid: super::super::Foundation::PSID,
-    pub lgrmi2_sidusage: super::super::Security::SID_NAME_USE,
+    pub lgrmi2_sid: ::win32_foundation_sys::PSID,
+    pub lgrmi2_sidusage: ::win32_security_sys::SID_NAME_USE,
     pub lgrmi2_domainandname: ::windows_core_sys::PWSTR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_2 {
     fn clone(&self) -> Self {
         *self
@@ -2491,13 +2457,10 @@ pub type NETWORK_INSTALL_TIME = i32;
 pub const NSF_PRIMARYINSTALL: NETWORK_INSTALL_TIME = 1i32;
 pub const NSF_POSTSYSINSTALL: NETWORK_INSTALL_TIME = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NETWORK_NAME {
     pub Name: FLAT_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NETWORK_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NETWORK_NAME {
     fn clone(&self) -> Self {
         *self
@@ -2628,14 +2591,11 @@ pub const FILTER_INTERDOMAIN_TRUST_ACCOUNT: NET_USER_ENUM_FILTER_FLAGS = 8u32;
 pub const FILTER_WORKSTATION_TRUST_ACCOUNT: NET_USER_ENUM_FILTER_FLAGS = 16u32;
 pub const FILTER_SERVER_TRUST_ACCOUNT: NET_USER_ENUM_FILTER_FLAGS = 32u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
-    pub PasswordMatched: super::super::Foundation::BOOLEAN,
+    pub PasswordMatched: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     fn clone(&self) -> Self {
         *self
@@ -2645,31 +2605,25 @@ pub const NET_VALIDATE_BAD_PASSWORD_COUNT: u32 = 8u32;
 pub const NET_VALIDATE_BAD_PASSWORD_TIME: u32 = 2u32;
 pub const NET_VALIDATE_LOCKOUT_TIME: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_OUTPUT_ARG {
     pub ChangedPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
     pub ValidationStatus: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_OUTPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_OUTPUT_ARG {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
     pub ClearPassword: ::windows_core_sys::PWSTR,
     pub UserAccountName: ::windows_core_sys::PWSTR,
     pub HashedPassword: NET_VALIDATE_PASSWORD_HASH,
-    pub PasswordMatch: super::super::Foundation::BOOLEAN,
+    pub PasswordMatch: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     fn clone(&self) -> Self {
         *self
@@ -2690,18 +2644,15 @@ pub const NET_VALIDATE_PASSWORD_HISTORY: u32 = 32u32;
 pub const NET_VALIDATE_PASSWORD_HISTORY_LENGTH: u32 = 16u32;
 pub const NET_VALIDATE_PASSWORD_LAST_SET: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
     pub ClearPassword: ::windows_core_sys::PWSTR,
     pub UserAccountName: ::windows_core_sys::PWSTR,
     pub HashedPassword: NET_VALIDATE_PASSWORD_HASH,
-    pub PasswordMustChangeAtNextLogon: super::super::Foundation::BOOLEAN,
-    pub ClearLockout: super::super::Foundation::BOOLEAN,
+    pub PasswordMustChangeAtNextLogon: ::win32_foundation_sys::BOOLEAN,
+    pub ClearLockout: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     fn clone(&self) -> Self {
         *self
@@ -2712,19 +2663,16 @@ pub const NetValidateAuthentication: NET_VALIDATE_PASSWORD_TYPE = 1i32;
 pub const NetValidatePasswordChange: NET_VALIDATE_PASSWORD_TYPE = 2i32;
 pub const NetValidatePasswordReset: NET_VALIDATE_PASSWORD_TYPE = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PERSISTED_FIELDS {
     pub PresentFields: u32,
-    pub PasswordLastSet: super::super::Foundation::FILETIME,
-    pub BadPasswordTime: super::super::Foundation::FILETIME,
-    pub LockoutTime: super::super::Foundation::FILETIME,
+    pub PasswordLastSet: ::win32_foundation_sys::FILETIME,
+    pub BadPasswordTime: ::win32_foundation_sys::FILETIME,
+    pub LockoutTime: ::win32_foundation_sys::FILETIME,
     pub BadPasswordCount: u32,
     pub PasswordHistoryLength: u32,
     pub PasswordHistory: *mut NET_VALIDATE_PASSWORD_HASH,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_PERSISTED_FIELDS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_PERSISTED_FIELDS {
     fn clone(&self) -> Self {
         *self
@@ -2783,18 +2731,15 @@ pub const NWSAP_EVENT_WANSOCKET_FAILED: i32 = -1073733297i32;
 pub const NWSAP_EVENT_WSASTARTUP_FAILED: i32 = -1073733323i32;
 pub const NetProvisioning: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 715306494, data2: 47174, data3: 19719, data4: [129, 12, 178, 30, 228, 83, 32, 227] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OBO_TOKEN {
     pub Type: OBO_TOKEN_TYPE,
     pub pncc: INetCfgComponent,
     pub pszwManufacturer: ::windows_core_sys::PCWSTR,
     pub pszwProduct: ::windows_core_sys::PCWSTR,
     pub pszwDisplayName: ::windows_core_sys::PCWSTR,
-    pub fRegistered: super::super::Foundation::BOOL,
+    pub fRegistered: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OBO_TOKEN {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OBO_TOKEN {
     fn clone(&self) -> Self {
         *self
@@ -2871,10 +2816,9 @@ pub const PROTO_VENDOR_MS2: u32 = 16383u32;
 pub const PWLEN: u32 = 256u32;
 pub const QNLEN: u32 = 80u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASCON_IPUI {
     pub guidConnection: ::windows_core_sys::GUID,
-    pub fIPv6Cfg: super::super::Foundation::BOOL,
+    pub fIPv6Cfg: ::win32_foundation_sys::BOOL,
     pub dwFlags: u32,
     pub pszwIpAddr: [u16; 16],
     pub pszwDnsAddr: [u16; 16],
@@ -2889,9 +2833,7 @@ pub struct RASCON_IPUI {
     pub dwIPv4InfMetric: u32,
     pub dwIPv6InfMetric: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASCON_IPUI {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASCON_IPUI {
     fn clone(&self) -> Self {
         *self
@@ -3199,7 +3141,6 @@ impl ::core::clone::Clone for SERVER_INFO_102 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_103 {
     pub sv103_platform_id: u32,
     pub sv103_name: ::windows_core_sys::PWSTR,
@@ -3209,16 +3150,14 @@ pub struct SERVER_INFO_103 {
     pub sv103_comment: ::windows_core_sys::PWSTR,
     pub sv103_users: u32,
     pub sv103_disc: i32,
-    pub sv103_hidden: super::super::Foundation::BOOL,
+    pub sv103_hidden: ::win32_foundation_sys::BOOL,
     pub sv103_announce: u32,
     pub sv103_anndelta: u32,
     pub sv103_licenses: u32,
     pub sv103_userpath: ::windows_core_sys::PWSTR,
     pub sv103_capabilities: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_103 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_103 {
     fn clone(&self) -> Self {
         *self
@@ -3325,52 +3264,40 @@ impl ::core::clone::Clone for SERVER_INFO_1513 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1514 {
-    pub sv1514_enablesoftcompat: super::super::Foundation::BOOL,
+    pub sv1514_enablesoftcompat: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1514 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1514 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1515 {
-    pub sv1515_enableforcedlogoff: super::super::Foundation::BOOL,
+    pub sv1515_enableforcedlogoff: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1515 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1515 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1516 {
-    pub sv1516_timesource: super::super::Foundation::BOOL,
+    pub sv1516_timesource: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1516 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1516 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1518 {
-    pub sv1518_lmannounce: super::super::Foundation::BOOL,
+    pub sv1518_lmannounce: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1518 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1518 {
     fn clone(&self) -> Self {
         *self
@@ -3497,91 +3424,70 @@ impl ::core::clone::Clone for SERVER_INFO_1535 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1536 {
-    pub sv1536_enableoplocks: super::super::Foundation::BOOL,
+    pub sv1536_enableoplocks: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1536 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1536 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1537 {
-    pub sv1537_enableoplockforceclose: super::super::Foundation::BOOL,
+    pub sv1537_enableoplockforceclose: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1537 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1537 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1538 {
-    pub sv1538_enablefcbopens: super::super::Foundation::BOOL,
+    pub sv1538_enablefcbopens: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1538 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1538 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1539 {
-    pub sv1539_enableraw: super::super::Foundation::BOOL,
+    pub sv1539_enableraw: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1539 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1539 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1540 {
-    pub sv1540_enablesharednetdrives: super::super::Foundation::BOOL,
+    pub sv1540_enablesharednetdrives: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1540 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1540 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1541 {
-    pub sv1541_minfreeconnections: super::super::Foundation::BOOL,
+    pub sv1541_minfreeconnections: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1541 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1541 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1542 {
-    pub sv1542_maxfreeconnections: super::super::Foundation::BOOL,
+    pub sv1542_maxfreeconnections: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1542 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1542 {
     fn clone(&self) -> Self {
         *self
@@ -3788,13 +3694,10 @@ impl ::core::clone::Clone for SERVER_INFO_1565 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1566 {
-    pub sv1566_removeduplicatesearches: super::super::Foundation::BOOL,
+    pub sv1566_removeduplicatesearches: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1566 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1566 {
     fn clone(&self) -> Self {
         *self
@@ -3981,13 +3884,10 @@ impl ::core::clone::Clone for SERVER_INFO_1584 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1585 {
-    pub sv1585_sendsfrompreferredprocessor: super::super::Foundation::BOOL,
+    pub sv1585_sendsfrompreferredprocessor: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1585 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1585 {
     fn clone(&self) -> Self {
         *self
@@ -4114,26 +4014,20 @@ impl ::core::clone::Clone for SERVER_INFO_1598 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1599 {
-    pub sv1598_enforcekerberosreauthentication: super::super::Foundation::BOOLEAN,
+    pub sv1598_enforcekerberosreauthentication: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1599 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1599 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1600 {
-    pub sv1598_disabledos: super::super::Foundation::BOOLEAN,
+    pub sv1598_disabledos: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1600 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1600 {
     fn clone(&self) -> Self {
         *self
@@ -4150,13 +4044,10 @@ impl ::core::clone::Clone for SERVER_INFO_1601 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1602 {
-    pub sv_1598_disablestrictnamechecking: super::super::Foundation::BOOL,
+    pub sv_1598_disablestrictnamechecking: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1602 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1602 {
     fn clone(&self) -> Self {
         *self
@@ -4246,7 +4137,6 @@ impl ::core::clone::Clone for SERVER_INFO_403 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_502 {
     pub sv502_sessopens: u32,
     pub sv502_sessvcs: u32,
@@ -4261,22 +4151,19 @@ pub struct SERVER_INFO_502 {
     pub sv502_sessconns: u32,
     pub sv502_maxpagedmemoryusage: u32,
     pub sv502_maxnonpagedmemoryusage: u32,
-    pub sv502_enablesoftcompat: super::super::Foundation::BOOL,
-    pub sv502_enableforcedlogoff: super::super::Foundation::BOOL,
-    pub sv502_timesource: super::super::Foundation::BOOL,
-    pub sv502_acceptdownlevelapis: super::super::Foundation::BOOL,
-    pub sv502_lmannounce: super::super::Foundation::BOOL,
+    pub sv502_enablesoftcompat: ::win32_foundation_sys::BOOL,
+    pub sv502_enableforcedlogoff: ::win32_foundation_sys::BOOL,
+    pub sv502_timesource: ::win32_foundation_sys::BOOL,
+    pub sv502_acceptdownlevelapis: ::win32_foundation_sys::BOOL,
+    pub sv502_lmannounce: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_502 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_502 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_503 {
     pub sv503_sessopens: u32,
     pub sv503_sessvcs: u32,
@@ -4291,11 +4178,11 @@ pub struct SERVER_INFO_503 {
     pub sv503_sessconns: u32,
     pub sv503_maxpagedmemoryusage: u32,
     pub sv503_maxnonpagedmemoryusage: u32,
-    pub sv503_enablesoftcompat: super::super::Foundation::BOOL,
-    pub sv503_enableforcedlogoff: super::super::Foundation::BOOL,
-    pub sv503_timesource: super::super::Foundation::BOOL,
-    pub sv503_acceptdownlevelapis: super::super::Foundation::BOOL,
-    pub sv503_lmannounce: super::super::Foundation::BOOL,
+    pub sv503_enablesoftcompat: ::win32_foundation_sys::BOOL,
+    pub sv503_enableforcedlogoff: ::win32_foundation_sys::BOOL,
+    pub sv503_timesource: ::win32_foundation_sys::BOOL,
+    pub sv503_acceptdownlevelapis: ::win32_foundation_sys::BOOL,
+    pub sv503_lmannounce: ::win32_foundation_sys::BOOL,
     pub sv503_domain: ::windows_core_sys::PWSTR,
     pub sv503_maxcopyreadlen: u32,
     pub sv503_maxcopywritelen: u32,
@@ -4313,24 +4200,21 @@ pub struct SERVER_INFO_503 {
     pub sv503_maxmpxct: u32,
     pub sv503_oplockbreakwait: u32,
     pub sv503_oplockbreakresponsewait: u32,
-    pub sv503_enableoplocks: super::super::Foundation::BOOL,
-    pub sv503_enableoplockforceclose: super::super::Foundation::BOOL,
-    pub sv503_enablefcbopens: super::super::Foundation::BOOL,
-    pub sv503_enableraw: super::super::Foundation::BOOL,
-    pub sv503_enablesharednetdrives: super::super::Foundation::BOOL,
+    pub sv503_enableoplocks: ::win32_foundation_sys::BOOL,
+    pub sv503_enableoplockforceclose: ::win32_foundation_sys::BOOL,
+    pub sv503_enablefcbopens: ::win32_foundation_sys::BOOL,
+    pub sv503_enableraw: ::win32_foundation_sys::BOOL,
+    pub sv503_enablesharednetdrives: ::win32_foundation_sys::BOOL,
     pub sv503_minfreeconnections: u32,
     pub sv503_maxfreeconnections: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_503 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_503 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_598 {
     pub sv598_maxrawworkitems: u32,
     pub sv598_maxthreadsperqueue: u32,
@@ -4346,8 +4230,8 @@ pub struct SERVER_INFO_598 {
     pub sv598_mdlreadswitchover: u32,
     pub sv598_cachedopenlimit: u32,
     pub sv598_otherqueueaffinity: u32,
-    pub sv598_restrictnullsessaccess: super::super::Foundation::BOOL,
-    pub sv598_enablewfw311directipx: super::super::Foundation::BOOL,
+    pub sv598_restrictnullsessaccess: ::win32_foundation_sys::BOOL,
+    pub sv598_enablewfw311directipx: ::win32_foundation_sys::BOOL,
     pub sv598_queuesamplesecs: u32,
     pub sv598_balancecount: u32,
     pub sv598_preferredaffinity: u32,
@@ -4357,35 +4241,32 @@ pub struct SERVER_INFO_598 {
     pub sv598_maxfreepagedpoolchunks: u32,
     pub sv598_minpagedpoolchunksize: u32,
     pub sv598_maxpagedpoolchunksize: u32,
-    pub sv598_sendsfrompreferredprocessor: super::super::Foundation::BOOL,
+    pub sv598_sendsfrompreferredprocessor: ::win32_foundation_sys::BOOL,
     pub sv598_cacheddirectorylimit: u32,
     pub sv598_maxcopylength: u32,
-    pub sv598_enablecompression: super::super::Foundation::BOOL,
-    pub sv598_autosharewks: super::super::Foundation::BOOL,
-    pub sv598_autoshareserver: super::super::Foundation::BOOL,
-    pub sv598_enablesecuritysignature: super::super::Foundation::BOOL,
-    pub sv598_requiresecuritysignature: super::super::Foundation::BOOL,
+    pub sv598_enablecompression: ::win32_foundation_sys::BOOL,
+    pub sv598_autosharewks: ::win32_foundation_sys::BOOL,
+    pub sv598_autoshareserver: ::win32_foundation_sys::BOOL,
+    pub sv598_enablesecuritysignature: ::win32_foundation_sys::BOOL,
+    pub sv598_requiresecuritysignature: ::win32_foundation_sys::BOOL,
     pub sv598_minclientbuffersize: u32,
     pub sv598_serverguid: ::windows_core_sys::GUID,
     pub sv598_ConnectionNoSessionsTimeout: u32,
     pub sv598_IdleThreadTimeOut: u32,
-    pub sv598_enableW9xsecuritysignature: super::super::Foundation::BOOL,
-    pub sv598_enforcekerberosreauthentication: super::super::Foundation::BOOL,
-    pub sv598_disabledos: super::super::Foundation::BOOL,
+    pub sv598_enableW9xsecuritysignature: ::win32_foundation_sys::BOOL,
+    pub sv598_enforcekerberosreauthentication: ::win32_foundation_sys::BOOL,
+    pub sv598_disabledos: ::win32_foundation_sys::BOOL,
     pub sv598_lowdiskspaceminimum: u32,
-    pub sv598_disablestrictnamechecking: super::super::Foundation::BOOL,
-    pub sv598_enableauthenticateusersharing: super::super::Foundation::BOOL,
+    pub sv598_disablestrictnamechecking: ::win32_foundation_sys::BOOL,
+    pub sv598_enableauthenticateusersharing: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_598 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_598 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_599 {
     pub sv599_sessopens: u32,
     pub sv599_sessvcs: u32,
@@ -4400,11 +4281,11 @@ pub struct SERVER_INFO_599 {
     pub sv599_sessconns: u32,
     pub sv599_maxpagedmemoryusage: u32,
     pub sv599_maxnonpagedmemoryusage: u32,
-    pub sv599_enablesoftcompat: super::super::Foundation::BOOL,
-    pub sv599_enableforcedlogoff: super::super::Foundation::BOOL,
-    pub sv599_timesource: super::super::Foundation::BOOL,
-    pub sv599_acceptdownlevelapis: super::super::Foundation::BOOL,
-    pub sv599_lmannounce: super::super::Foundation::BOOL,
+    pub sv599_enablesoftcompat: ::win32_foundation_sys::BOOL,
+    pub sv599_enableforcedlogoff: ::win32_foundation_sys::BOOL,
+    pub sv599_timesource: ::win32_foundation_sys::BOOL,
+    pub sv599_acceptdownlevelapis: ::win32_foundation_sys::BOOL,
+    pub sv599_lmannounce: ::win32_foundation_sys::BOOL,
     pub sv599_domain: ::windows_core_sys::PWSTR,
     pub sv599_maxcopyreadlen: u32,
     pub sv599_maxcopywritelen: u32,
@@ -4422,11 +4303,11 @@ pub struct SERVER_INFO_599 {
     pub sv599_maxmpxct: u32,
     pub sv599_oplockbreakwait: u32,
     pub sv599_oplockbreakresponsewait: u32,
-    pub sv599_enableoplocks: super::super::Foundation::BOOL,
-    pub sv599_enableoplockforceclose: super::super::Foundation::BOOL,
-    pub sv599_enablefcbopens: super::super::Foundation::BOOL,
-    pub sv599_enableraw: super::super::Foundation::BOOL,
-    pub sv599_enablesharednetdrives: super::super::Foundation::BOOL,
+    pub sv599_enableoplocks: ::win32_foundation_sys::BOOL,
+    pub sv599_enableoplockforceclose: ::win32_foundation_sys::BOOL,
+    pub sv599_enablefcbopens: ::win32_foundation_sys::BOOL,
+    pub sv599_enableraw: ::win32_foundation_sys::BOOL,
+    pub sv599_enablesharednetdrives: ::win32_foundation_sys::BOOL,
     pub sv599_minfreeconnections: u32,
     pub sv599_maxfreeconnections: u32,
     pub sv599_initsesstable: u32,
@@ -4444,9 +4325,7 @@ pub struct SERVER_INFO_599 {
     pub sv599_scavqosinfoupdatetime: u32,
     pub sv599_maxworkitemidletime: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_599 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_599 {
     fn clone(&self) -> Self {
         *self
@@ -4722,16 +4601,13 @@ pub const SESSION_CRYPT_KLEN: u32 = 21u32;
 pub const SESSION_PWLEN: u32 = 24u32;
 pub const SHPWLEN: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SMB_COMPRESSION_INFO {
-    pub Switch: super::super::Foundation::BOOLEAN,
+    pub Switch: ::win32_foundation_sys::BOOLEAN,
     pub Reserved1: u8,
     pub Reserved2: u16,
     pub Reserved3: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SMB_COMPRESSION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SMB_COMPRESSION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -4980,14 +4856,11 @@ pub const TRACE_USE_FILE: u32 = 1u32;
 pub const TRACE_USE_MASK: u32 = 2u32;
 pub const TRACE_USE_MSEC: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRANSPORT_INFO {
     pub Type: TRANSPORT_TYPE,
-    pub SkipCertificateCheck: super::super::Foundation::BOOLEAN,
+    pub SkipCertificateCheck: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRANSPORT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRANSPORT_INFO {
     fn clone(&self) -> Self {
         *self
@@ -5399,34 +5272,28 @@ impl ::core::clone::Clone for USER_INFO_22 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_23 {
     pub usri23_name: ::windows_core_sys::PWSTR,
     pub usri23_full_name: ::windows_core_sys::PWSTR,
     pub usri23_comment: ::windows_core_sys::PWSTR,
     pub usri23_flags: USER_ACCOUNT_FLAGS,
-    pub usri23_user_sid: super::super::Foundation::PSID,
+    pub usri23_user_sid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_INFO_23 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_INFO_23 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_24 {
-    pub usri24_internet_identity: super::super::Foundation::BOOL,
+    pub usri24_internet_identity: ::win32_foundation_sys::BOOL,
     pub usri24_flags: u32,
     pub usri24_internet_provider_name: ::windows_core_sys::PWSTR,
     pub usri24_internet_principal_name: ::windows_core_sys::PWSTR,
-    pub usri24_user_sid: super::super::Foundation::PSID,
+    pub usri24_user_sid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_INFO_24 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_INFO_24 {
     fn clone(&self) -> Self {
         *self
@@ -5471,7 +5338,6 @@ impl ::core::clone::Clone for USER_INFO_3 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_4 {
     pub usri4_name: ::windows_core_sys::PWSTR,
     pub usri4_password: ::windows_core_sys::PWSTR,
@@ -5497,15 +5363,13 @@ pub struct USER_INFO_4 {
     pub usri4_logon_server: ::windows_core_sys::PWSTR,
     pub usri4_country_code: u32,
     pub usri4_code_page: u32,
-    pub usri4_user_sid: super::super::Foundation::PSID,
+    pub usri4_user_sid: ::win32_foundation_sys::PSID,
     pub usri4_primary_group_id: u32,
     pub usri4_profile: ::windows_core_sys::PWSTR,
     pub usri4_home_dir_drive: ::windows_core_sys::PWSTR,
     pub usri4_password_expired: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_INFO_4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_INFO_4 {
     fn clone(&self) -> Self {
         *self
@@ -5612,14 +5476,11 @@ impl ::core::clone::Clone for USER_MODALS_INFO_1007 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_MODALS_INFO_2 {
     pub usrmod2_domain_name: ::windows_core_sys::PWSTR,
-    pub usrmod2_domain_id: super::super::Foundation::PSID,
+    pub usrmod2_domain_id: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_MODALS_INFO_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_MODALS_INFO_2 {
     fn clone(&self) -> Self {
         *self
@@ -6059,182 +5920,140 @@ impl ::core::clone::Clone for WKSTA_INFO_1047 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1048 {
-    pub wki1048_use_opportunistic_locking: super::super::Foundation::BOOL,
+    pub wki1048_use_opportunistic_locking: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1048 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1048 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1049 {
-    pub wki1049_use_unlock_behind: super::super::Foundation::BOOL,
+    pub wki1049_use_unlock_behind: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1049 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1049 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1050 {
-    pub wki1050_use_close_behind: super::super::Foundation::BOOL,
+    pub wki1050_use_close_behind: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1050 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1050 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1051 {
-    pub wki1051_buf_named_pipes: super::super::Foundation::BOOL,
+    pub wki1051_buf_named_pipes: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1051 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1051 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1052 {
-    pub wki1052_use_lock_read_unlock: super::super::Foundation::BOOL,
+    pub wki1052_use_lock_read_unlock: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1052 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1052 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1053 {
-    pub wki1053_utilize_nt_caching: super::super::Foundation::BOOL,
+    pub wki1053_utilize_nt_caching: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1053 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1053 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1054 {
-    pub wki1054_use_raw_read: super::super::Foundation::BOOL,
+    pub wki1054_use_raw_read: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1054 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1054 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1055 {
-    pub wki1055_use_raw_write: super::super::Foundation::BOOL,
+    pub wki1055_use_raw_write: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1055 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1055 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1056 {
-    pub wki1056_use_write_raw_data: super::super::Foundation::BOOL,
+    pub wki1056_use_write_raw_data: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1056 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1056 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1057 {
-    pub wki1057_use_encryption: super::super::Foundation::BOOL,
+    pub wki1057_use_encryption: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1057 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1057 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1058 {
-    pub wki1058_buf_files_deny_write: super::super::Foundation::BOOL,
+    pub wki1058_buf_files_deny_write: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1058 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1058 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1059 {
-    pub wki1059_buf_read_only_files: super::super::Foundation::BOOL,
+    pub wki1059_buf_read_only_files: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1059 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1059 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1060 {
-    pub wki1060_force_core_create_mode: super::super::Foundation::BOOL,
+    pub wki1060_force_core_create_mode: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1060 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1060 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1061 {
-    pub wki1061_use_512_byte_max_transfer: super::super::Foundation::BOOL,
+    pub wki1061_use_512_byte_max_transfer: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1061 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1061 {
     fn clone(&self) -> Self {
         *self
@@ -6310,7 +6129,6 @@ impl ::core::clone::Clone for WKSTA_INFO_402 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_502 {
     pub wki502_char_wait: u32,
     pub wki502_collection_time: u32,
@@ -6332,25 +6150,23 @@ pub struct WKSTA_INFO_502 {
     pub wki502_num_srv_announce_buffers: u32,
     pub wki502_max_illegal_datagram_events: u32,
     pub wki502_illegal_datagram_event_reset_frequency: u32,
-    pub wki502_log_election_packets: super::super::Foundation::BOOL,
-    pub wki502_use_opportunistic_locking: super::super::Foundation::BOOL,
-    pub wki502_use_unlock_behind: super::super::Foundation::BOOL,
-    pub wki502_use_close_behind: super::super::Foundation::BOOL,
-    pub wki502_buf_named_pipes: super::super::Foundation::BOOL,
-    pub wki502_use_lock_read_unlock: super::super::Foundation::BOOL,
-    pub wki502_utilize_nt_caching: super::super::Foundation::BOOL,
-    pub wki502_use_raw_read: super::super::Foundation::BOOL,
-    pub wki502_use_raw_write: super::super::Foundation::BOOL,
-    pub wki502_use_write_raw_data: super::super::Foundation::BOOL,
-    pub wki502_use_encryption: super::super::Foundation::BOOL,
-    pub wki502_buf_files_deny_write: super::super::Foundation::BOOL,
-    pub wki502_buf_read_only_files: super::super::Foundation::BOOL,
-    pub wki502_force_core_create_mode: super::super::Foundation::BOOL,
-    pub wki502_use_512_byte_max_transfer: super::super::Foundation::BOOL,
+    pub wki502_log_election_packets: ::win32_foundation_sys::BOOL,
+    pub wki502_use_opportunistic_locking: ::win32_foundation_sys::BOOL,
+    pub wki502_use_unlock_behind: ::win32_foundation_sys::BOOL,
+    pub wki502_use_close_behind: ::win32_foundation_sys::BOOL,
+    pub wki502_buf_named_pipes: ::win32_foundation_sys::BOOL,
+    pub wki502_use_lock_read_unlock: ::win32_foundation_sys::BOOL,
+    pub wki502_utilize_nt_caching: ::win32_foundation_sys::BOOL,
+    pub wki502_use_raw_read: ::win32_foundation_sys::BOOL,
+    pub wki502_use_raw_write: ::win32_foundation_sys::BOOL,
+    pub wki502_use_write_raw_data: ::win32_foundation_sys::BOOL,
+    pub wki502_use_encryption: ::win32_foundation_sys::BOOL,
+    pub wki502_buf_files_deny_write: ::win32_foundation_sys::BOOL,
+    pub wki502_buf_read_only_files: ::win32_foundation_sys::BOOL,
+    pub wki502_force_core_create_mode: ::win32_foundation_sys::BOOL,
+    pub wki502_use_512_byte_max_transfer: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_502 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_502 {
     fn clone(&self) -> Self {
         *self
@@ -6386,17 +6202,14 @@ pub const WKSTA_SIZCHARBUF_PARMNUM: u32 = 23u32;
 pub const WKSTA_SIZERROR_PARMNUM: u32 = 19u32;
 pub const WKSTA_SIZWORKBUF_PARMNUM: u32 = 29u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_TRANSPORT_INFO_0 {
     pub wkti0_quality_of_service: u32,
     pub wkti0_number_of_vcs: u32,
     pub wkti0_transport_name: ::windows_core_sys::PWSTR,
     pub wkti0_transport_address: ::windows_core_sys::PWSTR,
-    pub wkti0_wan_ish: super::super::Foundation::BOOL,
+    pub wkti0_wan_ish: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_TRANSPORT_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_TRANSPORT_INFO_0 {
     fn clone(&self) -> Self {
         *self

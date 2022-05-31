@@ -13,18 +13,9 @@ unsafe impl ::windows_core::Interface for IWebAuthenticationBrokerStatics {
 #[doc(hidden)]
 pub struct IWebAuthenticationBrokerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub AuthenticateWithCallbackUriAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: WebAuthenticationOptions, requesturi: ::windows_core::RawPtr, callbackuri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AuthenticateWithCallbackUriAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub AuthenticateWithoutCallbackUriAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: WebAuthenticationOptions, requesturi: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AuthenticateWithoutCallbackUriAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetCurrentApplicationCallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCurrentApplicationCallbackUri: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -37,26 +28,14 @@ unsafe impl ::windows_core::Interface for IWebAuthenticationBrokerStatics2 {
 #[doc(hidden)]
 pub struct IWebAuthenticationBrokerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub AuthenticateAndContinue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, requesturi: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AuthenticateAndContinue: usize,
-    #[cfg(feature = "Foundation")]
     pub AuthenticateWithCallbackUriAndContinue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, requesturi: ::windows_core::RawPtr, callbackuri: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AuthenticateWithCallbackUriAndContinue: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, requesturi: ::windows_core::RawPtr, callbackuri: ::windows_core::RawPtr, continuationdata: ::windows_core::RawPtr, options: WebAuthenticationOptions) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue: usize,
-    #[cfg(feature = "Foundation")]
     pub AuthenticateSilentlyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, requesturi: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AuthenticateSilentlyAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub AuthenticateSilentlyWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, requesturi: ::windows_core::RawPtr, options: WebAuthenticationOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AuthenticateSilentlyWithOptionsAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -109,51 +88,44 @@ unsafe impl ::windows_core::RuntimeType for TokenBindingKeyType {
 }
 pub struct WebAuthenticationBroker;
 impl WebAuthenticationBroker {
-    #[cfg(feature = "Foundation")]
-    pub fn AuthenticateWithCallbackUriAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(options: WebAuthenticationOptions, requesturi: Param1, callbackuri: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WebAuthenticationResult>> {
+    pub fn AuthenticateWithCallbackUriAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(options: WebAuthenticationOptions, requesturi: Param1, callbackuri: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WebAuthenticationResult>> {
         Self::IWebAuthenticationBrokerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticateWithCallbackUriAsync)(::windows_core::Interface::as_raw(this), options, requesturi.into_param().abi(), callbackuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WebAuthenticationResult>>(result__)
+            (::windows_core::Interface::vtable(this).AuthenticateWithCallbackUriAsync)(::windows_core::Interface::as_raw(this), options, requesturi.into_param().abi(), callbackuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WebAuthenticationResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AuthenticateWithoutCallbackUriAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(options: WebAuthenticationOptions, requesturi: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WebAuthenticationResult>> {
+    pub fn AuthenticateWithoutCallbackUriAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(options: WebAuthenticationOptions, requesturi: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WebAuthenticationResult>> {
         Self::IWebAuthenticationBrokerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticateWithoutCallbackUriAsync)(::windows_core::Interface::as_raw(this), options, requesturi.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WebAuthenticationResult>>(result__)
+            (::windows_core::Interface::vtable(this).AuthenticateWithoutCallbackUriAsync)(::windows_core::Interface::as_raw(this), options, requesturi.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WebAuthenticationResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCurrentApplicationCallbackUri() -> ::windows_core::Result<super::super::super::Foundation::Uri> {
+    pub fn GetCurrentApplicationCallbackUri() -> ::windows_core::Result<::winrt_foundation::Uri> {
         Self::IWebAuthenticationBrokerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentApplicationCallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AuthenticateAndContinue<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(requesturi: Param0) -> ::windows_core::Result<()> {
+    pub fn AuthenticateAndContinue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(requesturi: Param0) -> ::windows_core::Result<()> {
         Self::IWebAuthenticationBrokerStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).AuthenticateAndContinue)(::windows_core::Interface::as_raw(this), requesturi.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AuthenticateWithCallbackUriAndContinue<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(requesturi: Param0, callbackuri: Param1) -> ::windows_core::Result<()> {
+    pub fn AuthenticateWithCallbackUriAndContinue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(requesturi: Param0, callbackuri: Param1) -> ::windows_core::Result<()> {
         Self::IWebAuthenticationBrokerStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).AuthenticateWithCallbackUriAndContinue)(::windows_core::Interface::as_raw(this), requesturi.into_param().abi(), callbackuri.into_param().abi()).ok() })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::ValueSet>>(requesturi: Param0, callbackuri: Param1, continuationdata: Param2, options: WebAuthenticationOptions) -> ::windows_core::Result<()> {
+    pub fn AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(requesturi: Param0, callbackuri: Param1, continuationdata: Param2, options: WebAuthenticationOptions) -> ::windows_core::Result<()> {
         Self::IWebAuthenticationBrokerStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue)(::windows_core::Interface::as_raw(this), requesturi.into_param().abi(), callbackuri.into_param().abi(), continuationdata.into_param().abi(), options).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AuthenticateSilentlyAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(requesturi: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WebAuthenticationResult>> {
+    pub fn AuthenticateSilentlyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(requesturi: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WebAuthenticationResult>> {
         Self::IWebAuthenticationBrokerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticateSilentlyAsync)(::windows_core::Interface::as_raw(this), requesturi.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WebAuthenticationResult>>(result__)
+            (::windows_core::Interface::vtable(this).AuthenticateSilentlyAsync)(::windows_core::Interface::as_raw(this), requesturi.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WebAuthenticationResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AuthenticateSilentlyWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(requesturi: Param0, options: WebAuthenticationOptions) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WebAuthenticationResult>> {
+    pub fn AuthenticateSilentlyWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(requesturi: Param0, options: WebAuthenticationOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WebAuthenticationResult>> {
         Self::IWebAuthenticationBrokerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticateSilentlyWithOptionsAsync)(::windows_core::Interface::as_raw(this), requesturi.into_param().abi(), options, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WebAuthenticationResult>>(result__)
+            (::windows_core::Interface::vtable(this).AuthenticateSilentlyWithOptionsAsync)(::windows_core::Interface::as_raw(this), requesturi.into_param().abi(), options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WebAuthenticationResult>>(result__)
         })
     }
     pub fn IWebAuthenticationBrokerStatics<R, F: FnOnce(&IWebAuthenticationBrokerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

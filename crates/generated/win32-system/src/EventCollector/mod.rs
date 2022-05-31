@@ -239,72 +239,58 @@ impl ::core::fmt::Debug for EC_SUBSCRIPTION_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EC_VARIANT {
     pub Anonymous: EC_VARIANT_0,
     pub Count: u32,
     pub Type: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EC_VARIANT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EC_VARIANT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for EC_VARIANT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EC_VARIANT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EC_VARIANT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for EC_VARIANT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for EC_VARIANT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union EC_VARIANT_0 {
-    pub BooleanVal: super::super::Foundation::BOOL,
+    pub BooleanVal: ::win32_foundation::BOOL,
     pub UInt32Val: u32,
     pub DateTimeVal: u64,
     pub StringVal: ::windows_core::PCWSTR,
     pub BinaryVal: *mut u8,
-    pub BooleanArr: *mut super::super::Foundation::BOOL,
+    pub BooleanArr: *mut ::win32_foundation::BOOL,
     pub Int32Arr: *mut i32,
     pub StringArr: *mut ::windows_core::PWSTR,
     pub PropertyHandleVal: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EC_VARIANT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EC_VARIANT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for EC_VARIANT_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EC_VARIANT_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EC_VARIANT_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for EC_VARIANT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for EC_VARIANT_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -341,112 +327,104 @@ impl ::core::fmt::Debug for EC_VARIANT_TYPE {
 pub const EC_VARIANT_TYPE_ARRAY: u32 = 128u32;
 pub const EC_VARIANT_TYPE_MASK: u32 = 127u32;
 pub const EC_WRITE_ACCESS: u32 = 2u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcClose(object: isize) -> super::super::Foundation::BOOL {
+pub unsafe fn EcClose(object: isize) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcClose(object: isize) -> super::super::Foundation::BOOL;
+            fn EcClose(object: isize) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcClose(::core::mem::transmute(object)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcDeleteSubscription<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcDeleteSubscription<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcDeleteSubscription(subscriptionname: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn EcDeleteSubscription(subscriptionname: ::windows_core::PCWSTR, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcDeleteSubscription(subscriptionname.into_param().abi(), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcEnumNextSubscription(subscriptionenum: isize, subscriptionnamebuffer: &mut [u16], subscriptionnamebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcEnumNextSubscription(subscriptionenum: isize, subscriptionnamebuffer: &mut [u16], subscriptionnamebufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcEnumNextSubscription(subscriptionenum: isize, subscriptionnamebuffersize: u32, subscriptionnamebuffer: ::windows_core::PWSTR, subscriptionnamebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EcEnumNextSubscription(subscriptionenum: isize, subscriptionnamebuffersize: u32, subscriptionnamebuffer: ::windows_core::PWSTR, subscriptionnamebufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcEnumNextSubscription(::core::mem::transmute(subscriptionenum), subscriptionnamebuffer.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(subscriptionnamebuffer)), ::core::mem::transmute(subscriptionnamebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcGetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcGetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcGetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EcGetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcGetObjectArrayProperty(::core::mem::transmute(objectarray), ::core::mem::transmute(propertyid), ::core::mem::transmute(arrayindex), ::core::mem::transmute(flags), ::core::mem::transmute(propertyvaluebuffersize), ::core::mem::transmute(propertyvaluebuffer), ::core::mem::transmute(propertyvaluebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> super::super::Foundation::BOOL;
+            fn EcGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcGetObjectArraySize(::core::mem::transmute(objectarray), ::core::mem::transmute(objectarraysize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcGetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcGetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcGetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EcGetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EC_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcGetSubscriptionProperty(::core::mem::transmute(subscription), ::core::mem::transmute(propertyid), ::core::mem::transmute(flags), ::core::mem::transmute(propertyvaluebuffersize), ::core::mem::transmute(propertyvaluebuffer), ::core::mem::transmute(propertyvaluebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcGetSubscriptionRunTimeStatus<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: Param2, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcGetSubscriptionRunTimeStatus<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: Param2, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcGetSubscriptionRunTimeStatus(subscriptionname: ::windows_core::PCWSTR, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: ::windows_core::PCWSTR, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EcGetSubscriptionRunTimeStatus(subscriptionname: ::windows_core::PCWSTR, statusinfoid: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID, eventsourcename: ::windows_core::PCWSTR, flags: u32, statusvaluebuffersize: u32, statusvaluebuffer: *mut EC_VARIANT, statusvaluebufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcGetSubscriptionRunTimeStatus(subscriptionname.into_param().abi(), ::core::mem::transmute(statusinfoid), eventsourcename.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(statusvaluebuffersize), ::core::mem::transmute(statusvaluebuffer), ::core::mem::transmute(statusvaluebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcInsertObjectArrayElement(objectarray: isize, arrayindex: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcInsertObjectArrayElement(objectarray: isize, arrayindex: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcInsertObjectArrayElement(objectarray: isize, arrayindex: u32) -> super::super::Foundation::BOOL;
+            fn EcInsertObjectArrayElement(objectarray: isize, arrayindex: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcInsertObjectArrayElement(::core::mem::transmute(objectarray), ::core::mem::transmute(arrayindex)))
     }
@@ -479,70 +457,65 @@ pub unsafe fn EcOpenSubscriptionEnum(flags: u32) -> isize {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcRemoveObjectArrayElement(objectarray: isize, arrayindex: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcRemoveObjectArrayElement(objectarray: isize, arrayindex: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcRemoveObjectArrayElement(objectarray: isize, arrayindex: u32) -> super::super::Foundation::BOOL;
+            fn EcRemoveObjectArrayElement(objectarray: isize, arrayindex: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcRemoveObjectArrayElement(::core::mem::transmute(objectarray), ::core::mem::transmute(arrayindex)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcRetrySubscription<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, eventsourcename: Param1, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcRetrySubscription<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(subscriptionname: Param0, eventsourcename: Param1, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcRetrySubscription(subscriptionname: ::windows_core::PCWSTR, eventsourcename: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn EcRetrySubscription(subscriptionname: ::windows_core::PCWSTR, eventsourcename: ::windows_core::PCWSTR, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcRetrySubscription(subscriptionname.into_param().abi(), eventsourcename.into_param().abi(), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcSaveSubscription(subscription: isize, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EcSaveSubscription(subscription: isize, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcSaveSubscription(subscription: isize, flags: u32) -> super::super::Foundation::BOOL;
+            fn EcSaveSubscription(subscription: isize, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcSaveSubscription(::core::mem::transmute(subscription), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcSetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvalue: *mut EC_VARIANT) -> super::super::Foundation::BOOL {
+pub unsafe fn EcSetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvalue: *mut EC_VARIANT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcSetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvalue: *mut EC_VARIANT) -> super::super::Foundation::BOOL;
+            fn EcSetObjectArrayProperty(objectarray: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, arrayindex: u32, flags: u32, propertyvalue: *mut EC_VARIANT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcSetObjectArrayProperty(::core::mem::transmute(objectarray), ::core::mem::transmute(propertyid), ::core::mem::transmute(arrayindex), ::core::mem::transmute(flags), ::core::mem::transmute(propertyvalue)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EcSetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvalue: *mut EC_VARIANT) -> super::super::Foundation::BOOL {
+pub unsafe fn EcSetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvalue: *mut EC_VARIANT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EcSetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvalue: *mut EC_VARIANT) -> super::super::Foundation::BOOL;
+            fn EcSetSubscriptionProperty(subscription: isize, propertyid: EC_SUBSCRIPTION_PROPERTY_ID, flags: u32, propertyvalue: *mut EC_VARIANT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EcSetSubscriptionProperty(::core::mem::transmute(subscription), ::core::mem::transmute(propertyid), ::core::mem::transmute(flags), ::core::mem::transmute(propertyvalue)))
     }

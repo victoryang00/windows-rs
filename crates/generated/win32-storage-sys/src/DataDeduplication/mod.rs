@@ -101,16 +101,13 @@ pub type DedupHashingAlgorithm = i32;
 pub const DedupHashingAlgorithm_Unknonwn: DedupHashingAlgorithm = 0i32;
 pub const DedupHashingAlgorithm_V1: DedupHashingAlgorithm = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DedupStream {
-    pub Path: super::super::Foundation::BSTR,
+    pub Path: ::win32_foundation_sys::BSTR,
     pub Offset: u64,
     pub Length: u64,
     pub ChunkCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DedupStream {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DedupStream {
     fn clone(&self) -> Self {
         *self

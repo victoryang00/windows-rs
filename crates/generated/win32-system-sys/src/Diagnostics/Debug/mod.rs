@@ -2,137 +2,100 @@
 pub mod WebApp;
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn AddVectoredContinueHandler(first: u32, handler: PVECTORED_EXCEPTION_HANDLER) -> *mut ::core::ffi::c_void;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn AddVectoredExceptionHandler(first: u32, handler: PVECTORED_EXCEPTION_HANDLER) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Beep(dwfreq: u32, dwduration: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BindImage(imagename: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BindImageEx(flags: u32, imagename: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, statusroutine: PIMAGEHLP_STATUS_ROUTINE) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CheckRemoteDebuggerPresent(hprocess: super::super::super::Foundation::HANDLE, pbdebuggerpresent: *mut super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
+    pub fn Beep(dwfreq: u32, dwduration: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn BindImage(imagename: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn BindImageEx(flags: u32, imagename: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, statusroutine: PIMAGEHLP_STATUS_ROUTINE) -> ::win32_foundation_sys::BOOL;
+    pub fn CheckRemoteDebuggerPresent(hprocess: ::win32_foundation_sys::HANDLE, pbdebuggerpresent: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
     pub fn CheckSumMappedFile(baseaddress: *const ::core::ffi::c_void, filelength: u32, headersum: *mut u32, checksum: *mut u32) -> *mut IMAGE_NT_HEADERS64;
     #[cfg(target_arch = "x86")]
     pub fn CheckSumMappedFile(baseaddress: *const ::core::ffi::c_void, filelength: u32, headersum: *mut u32, checksum: *mut u32) -> *mut IMAGE_NT_HEADERS32;
     pub fn CloseThreadWaitChainSession(wcthandle: *const ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ContinueDebugEvent(dwprocessid: u32, dwthreadid: u32, dwcontinuestatus: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn CopyContext(destination: *mut CONTEXT, contextflags: u32, source: *const CONTEXT) -> super::super::super::Foundation::BOOL;
+    pub fn ContinueDebugEvent(dwprocessid: u32, dwthreadid: u32, dwcontinuestatus: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn CopyContext(destination: *mut CONTEXT, contextflags: u32, source: *const CONTEXT) -> ::win32_foundation_sys::BOOL;
     pub fn CreateDataModelManager(debughost: IDebugHost, manager: *mut IDataModelManager) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DbgHelpCreateUserDump(filename: ::windows_core_sys::PCSTR, callback: PDBGHELP_CREATE_USER_DUMP_CALLBACK, userdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DbgHelpCreateUserDumpW(filename: ::windows_core_sys::PCWSTR, callback: PDBGHELP_CREATE_USER_DUMP_CALLBACK, userdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DebugActiveProcess(dwprocessid: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DebugActiveProcessStop(dwprocessid: u32) -> super::super::super::Foundation::BOOL;
+    pub fn DbgHelpCreateUserDump(filename: ::windows_core_sys::PCSTR, callback: PDBGHELP_CREATE_USER_DUMP_CALLBACK, userdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn DbgHelpCreateUserDumpW(filename: ::windows_core_sys::PCWSTR, callback: PDBGHELP_CREATE_USER_DUMP_CALLBACK, userdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn DebugActiveProcess(dwprocessid: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn DebugActiveProcessStop(dwprocessid: u32) -> ::win32_foundation_sys::BOOL;
     pub fn DebugBreak();
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DebugBreakProcess(process: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::BOOL;
+    pub fn DebugBreakProcess(process: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn DebugConnect(remoteoptions: ::windows_core_sys::PCSTR, interfaceid: *const ::windows_core_sys::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DebugConnectWide(remoteoptions: ::windows_core_sys::PCWSTR, interfaceid: *const ::windows_core_sys::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DebugCreate(interfaceid: *const ::windows_core_sys::GUID, interface: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DebugCreateEx(interfaceid: *const ::windows_core_sys::GUID, dbgengoptions: u32, interface: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DebugSetProcessKillOnExit(killonexit: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
+    pub fn DebugSetProcessKillOnExit(killonexit: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn DecodePointer(ptr: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DecodeRemotePointer(processhandle: super::super::super::Foundation::HANDLE, ptr: *const ::core::ffi::c_void, decodedptr: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn DecodeRemotePointer(processhandle: ::win32_foundation_sys::HANDLE, ptr: *const ::core::ffi::c_void, decodedptr: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DecodeSystemPointer(ptr: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
     pub fn EncodePointer(ptr: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EncodeRemotePointer(processhandle: super::super::super::Foundation::HANDLE, ptr: *const ::core::ffi::c_void, encodedptr: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn EncodeRemotePointer(processhandle: ::win32_foundation_sys::HANDLE, ptr: *const ::core::ffi::c_void, encodedptr: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn EncodeSystemPointer(ptr: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumDirTree(hprocess: super::super::super::Foundation::HANDLE, rootpath: ::windows_core_sys::PCSTR, inputpathname: ::windows_core_sys::PCSTR, outputpathbuffer: ::windows_core_sys::PSTR, cb: PENUMDIRTREE_CALLBACK, data: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumDirTreeW(hprocess: super::super::super::Foundation::HANDLE, rootpath: ::windows_core_sys::PCWSTR, inputpathname: ::windows_core_sys::PCWSTR, outputpathbuffer: ::windows_core_sys::PWSTR, cb: PENUMDIRTREE_CALLBACKW, data: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
+    pub fn EnumDirTree(hprocess: ::win32_foundation_sys::HANDLE, rootpath: ::windows_core_sys::PCSTR, inputpathname: ::windows_core_sys::PCSTR, outputpathbuffer: ::windows_core_sys::PSTR, cb: PENUMDIRTREE_CALLBACK, data: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn EnumDirTreeW(hprocess: ::win32_foundation_sys::HANDLE, rootpath: ::windows_core_sys::PCWSTR, inputpathname: ::windows_core_sys::PCWSTR, outputpathbuffer: ::windows_core_sys::PWSTR, cb: PENUMDIRTREE_CALLBACKW, data: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumerateLoadedModules(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumerateLoadedModules64(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumerateLoadedModulesEx(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumerateLoadedModulesExW(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumerateLoadedModulesW64(hprocess: super::super::super::Foundation::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
+    pub fn EnumerateLoadedModules(hprocess: ::win32_foundation_sys::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn EnumerateLoadedModules64(hprocess: ::win32_foundation_sys::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn EnumerateLoadedModulesEx(hprocess: ::win32_foundation_sys::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn EnumerateLoadedModulesExW(hprocess: ::win32_foundation_sys::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn EnumerateLoadedModulesW64(hprocess: ::win32_foundation_sys::HANDLE, enumloadedmodulescallback: PENUMLOADED_MODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn FatalAppExitA(uaction: u32, lpmessagetext: ::windows_core_sys::PCSTR);
     pub fn FatalAppExitW(uaction: u32, lpmessagetext: ::windows_core_sys::PCWSTR);
     pub fn FatalExit(exitcode: i32) -> !;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindDebugInfoFile(filename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindDebugInfoFileEx(filename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, callback: PFIND_DEBUG_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindDebugInfoFileExW(filename: ::windows_core_sys::PCWSTR, symbolpath: ::windows_core_sys::PCWSTR, debugfilepath: ::windows_core_sys::PWSTR, callback: PFIND_DEBUG_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindExecutableImage(filename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, imagefilepath: ::windows_core_sys::PSTR) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindExecutableImageEx(filename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, imagefilepath: ::windows_core_sys::PSTR, callback: PFIND_EXE_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindExecutableImageExW(filename: ::windows_core_sys::PCWSTR, symbolpath: ::windows_core_sys::PCWSTR, imagefilepath: ::windows_core_sys::PWSTR, callback: PFIND_EXE_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindFileInPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: u32, filepath: ::windows_core_sys::PSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindFileInSearchPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, one: u32, two: u32, three: u32, filepath: ::windows_core_sys::PSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FlushInstructionCache(hprocess: super::super::super::Foundation::HANDLE, lpbaseaddress: *const ::core::ffi::c_void, dwsize: usize) -> super::super::super::Foundation::BOOL;
+    pub fn FindDebugInfoFile(filename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn FindDebugInfoFileEx(filename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, callback: PFIND_DEBUG_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    pub fn FindDebugInfoFileExW(filename: ::windows_core_sys::PCWSTR, symbolpath: ::windows_core_sys::PCWSTR, debugfilepath: ::windows_core_sys::PWSTR, callback: PFIND_DEBUG_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    pub fn FindExecutableImage(filename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, imagefilepath: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn FindExecutableImageEx(filename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, imagefilepath: ::windows_core_sys::PSTR, callback: PFIND_EXE_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    pub fn FindExecutableImageExW(filename: ::windows_core_sys::PCWSTR, symbolpath: ::windows_core_sys::PCWSTR, imagefilepath: ::windows_core_sys::PWSTR, callback: PFIND_EXE_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    pub fn FindFileInPath(hprocess: ::win32_foundation_sys::HANDLE, searchpatha: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: u32, filepath: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn FindFileInSearchPath(hprocess: ::win32_foundation_sys::HANDLE, searchpatha: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, one: u32, two: u32, three: u32, filepath: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn FlushInstructionCache(hprocess: ::win32_foundation_sys::HANDLE, lpbaseaddress: *const ::core::ffi::c_void, dwsize: usize) -> ::win32_foundation_sys::BOOL;
     pub fn FormatMessageA(dwflags: FORMAT_MESSAGE_OPTIONS, lpsource: *const ::core::ffi::c_void, dwmessageid: u32, dwlanguageid: u32, lpbuffer: ::windows_core_sys::PSTR, nsize: u32, arguments: *const *const i8) -> u32;
     pub fn FormatMessageW(dwflags: FORMAT_MESSAGE_OPTIONS, lpsource: *const ::core::ffi::c_void, dwmessageid: u32, dwlanguageid: u32, lpbuffer: ::windows_core_sys::PWSTR, nsize: u32, arguments: *const *const i8) -> u32;
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
     pub fn GetEnabledXStateFeatures() -> u64;
     pub fn GetErrorMode() -> u32;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn GetImageConfigInformation(loadedimage: *const LOADED_IMAGE, imageconfiginformation: *mut IMAGE_LOAD_CONFIG_DIRECTORY64) -> super::super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn GetImageConfigInformation(loadedimage: *const LOADED_IMAGE, imageconfiginformation: *mut IMAGE_LOAD_CONFIG_DIRECTORY64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn GetImageConfigInformation(loadedimage: *const LOADED_IMAGE, imageconfiginformation: *mut IMAGE_LOAD_CONFIG_DIRECTORY32) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn GetImageConfigInformation(loadedimage: *const LOADED_IMAGE, imageconfiginformation: *mut IMAGE_LOAD_CONFIG_DIRECTORY32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn GetImageUnusedHeaderBytes(loadedimage: *const LOADED_IMAGE, sizeunusedheaderbytes: *mut u32) -> u32;
     pub fn GetSymLoadError() -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn GetThreadContext(hthread: super::super::super::Foundation::HANDLE, lpcontext: *mut CONTEXT) -> super::super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn GetThreadContext(hthread: ::win32_foundation_sys::HANDLE, lpcontext: *mut CONTEXT) -> ::win32_foundation_sys::BOOL;
     pub fn GetThreadErrorMode() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetThreadSelectorEntry(hthread: super::super::super::Foundation::HANDLE, dwselector: u32, lpselectorentry: *mut LDT_ENTRY) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetThreadWaitChain(wcthandle: *const ::core::ffi::c_void, context: usize, flags: WAIT_CHAIN_THREAD_OPTIONS, threadid: u32, nodecount: *mut u32, nodeinfoarray: *mut WAITCHAIN_NODE_INFO, iscycle: *mut i32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetTimestampForLoadedLibrary(module: super::super::super::Foundation::HINSTANCE) -> u32;
+    pub fn GetThreadSelectorEntry(hthread: ::win32_foundation_sys::HANDLE, dwselector: u32, lpselectorentry: *mut LDT_ENTRY) -> ::win32_foundation_sys::BOOL;
+    pub fn GetThreadWaitChain(wcthandle: *const ::core::ffi::c_void, context: usize, flags: WAIT_CHAIN_THREAD_OPTIONS, threadid: u32, nodecount: *mut u32, nodeinfoarray: *mut WAITCHAIN_NODE_INFO, iscycle: *mut i32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetTimestampForLoadedLibrary(module: ::win32_foundation_sys::HINSTANCE) -> u32;
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn GetXStateFeaturesMask(context: *const CONTEXT, featuremask: *mut u64) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_WinTrust"))]
-    pub fn ImageAddCertificate(filehandle: super::super::super::Foundation::HANDLE, certificate: *const super::super::super::Security::WinTrust::WIN_CERTIFICATE, index: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ImageDirectoryEntryToData(base: *const ::core::ffi::c_void, mappedasimage: super::super::super::Foundation::BOOLEAN, directoryentry: IMAGE_DIRECTORY_ENTRY, size: *mut u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ImageDirectoryEntryToDataEx(base: *const ::core::ffi::c_void, mappedasimage: super::super::super::Foundation::BOOLEAN, directoryentry: IMAGE_DIRECTORY_ENTRY, size: *mut u32, foundheader: *mut *mut IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ImageEnumerateCertificates(filehandle: super::super::super::Foundation::HANDLE, typefilter: u16, certificatecount: *mut u32, indices: *mut u32, indexcount: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_WinTrust"))]
-    pub fn ImageGetCertificateData(filehandle: super::super::super::Foundation::HANDLE, certificateindex: u32, certificate: *mut super::super::super::Security::WinTrust::WIN_CERTIFICATE, requiredlength: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_WinTrust"))]
-    pub fn ImageGetCertificateHeader(filehandle: super::super::super::Foundation::HANDLE, certificateindex: u32, certificateheader: *mut super::super::super::Security::WinTrust::WIN_CERTIFICATE) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ImageGetDigestStream(filehandle: super::super::super::Foundation::HANDLE, digestlevel: u32, digestfunction: DIGEST_FUNCTION, digesthandle: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn GetXStateFeaturesMask(context: *const CONTEXT, featuremask: *mut u64) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security_WinTrust")]
+    pub fn ImageAddCertificate(filehandle: ::win32_foundation_sys::HANDLE, certificate: *const ::win32_security_sys::WinTrust::WIN_CERTIFICATE, index: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn ImageDirectoryEntryToData(base: *const ::core::ffi::c_void, mappedasimage: ::win32_foundation_sys::BOOLEAN, directoryentry: IMAGE_DIRECTORY_ENTRY, size: *mut u32) -> *mut ::core::ffi::c_void;
+    pub fn ImageDirectoryEntryToDataEx(base: *const ::core::ffi::c_void, mappedasimage: ::win32_foundation_sys::BOOLEAN, directoryentry: IMAGE_DIRECTORY_ENTRY, size: *mut u32, foundheader: *mut *mut IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void;
+    pub fn ImageEnumerateCertificates(filehandle: ::win32_foundation_sys::HANDLE, typefilter: u16, certificatecount: *mut u32, indices: *mut u32, indexcount: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security_WinTrust")]
+    pub fn ImageGetCertificateData(filehandle: ::win32_foundation_sys::HANDLE, certificateindex: u32, certificate: *mut ::win32_security_sys::WinTrust::WIN_CERTIFICATE, requiredlength: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security_WinTrust")]
+    pub fn ImageGetCertificateHeader(filehandle: ::win32_foundation_sys::HANDLE, certificateindex: u32, certificateheader: *mut ::win32_security_sys::WinTrust::WIN_CERTIFICATE) -> ::win32_foundation_sys::BOOL;
+    pub fn ImageGetDigestStream(filehandle: ::win32_foundation_sys::HANDLE, digestlevel: u32, digestfunction: DIGEST_FUNCTION, digesthandle: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn ImageLoad(dllname: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR) -> *mut LOADED_IMAGE;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
     pub fn ImageNtHeader(base: *const ::core::ffi::c_void) -> *mut IMAGE_NT_HEADERS64;
     #[cfg(target_arch = "x86")]
     pub fn ImageNtHeader(base: *const ::core::ffi::c_void) -> *mut IMAGE_NT_HEADERS32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ImageRemoveCertificate(filehandle: super::super::super::Foundation::HANDLE, index: u32) -> super::super::super::Foundation::BOOL;
+    pub fn ImageRemoveCertificate(filehandle: ::win32_foundation_sys::HANDLE, index: u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
     pub fn ImageRvaToSection(ntheaders: *const IMAGE_NT_HEADERS64, base: *const ::core::ffi::c_void, rva: u32) -> *mut IMAGE_SECTION_HEADER;
     #[cfg(target_arch = "x86")]
@@ -141,67 +104,51 @@ extern "system" {
     pub fn ImageRvaToVa(ntheaders: *const IMAGE_NT_HEADERS64, base: *const ::core::ffi::c_void, rva: u32, lastrvasection: *const *const IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void;
     #[cfg(target_arch = "x86")]
     pub fn ImageRvaToVa(ntheaders: *const IMAGE_NT_HEADERS32, base: *const ::core::ffi::c_void, rva: u32, lastrvasection: *const *const IMAGE_SECTION_HEADER) -> *mut ::core::ffi::c_void;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn ImageUnload(loadedimage: *mut LOADED_IMAGE) -> super::super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn ImageUnload(loadedimage: *mut LOADED_IMAGE) -> ::win32_foundation_sys::BOOL;
     pub fn ImagehlpApiVersion() -> *mut API_VERSION;
     pub fn ImagehlpApiVersionEx(appversion: *const API_VERSION) -> *mut API_VERSION;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn InitializeContext(buffer: *mut ::core::ffi::c_void, contextflags: u32, context: *mut *mut CONTEXT, contextlength: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn InitializeContext2(buffer: *mut ::core::ffi::c_void, contextflags: u32, context: *mut *mut CONTEXT, contextlength: *mut u32, xstatecompactionmask: u64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsDebuggerPresent() -> super::super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn InitializeContext(buffer: *mut ::core::ffi::c_void, contextflags: u32, context: *mut *mut CONTEXT, contextlength: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn InitializeContext2(buffer: *mut ::core::ffi::c_void, contextflags: u32, context: *mut *mut CONTEXT, contextlength: *mut u32, xstatecompactionmask: u64) -> ::win32_foundation_sys::BOOL;
+    pub fn IsDebuggerPresent() -> ::win32_foundation_sys::BOOL;
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
     #[cfg(feature = "Win32_System_Kernel")]
     pub fn LocateXStateFeature(context: *const CONTEXT, featureid: u32, length: *mut u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MakeSureDirectoryPathExists(dirpath: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn MapAndLoad(imagename: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR, loadedimage: *mut LOADED_IMAGE, dotdll: super::super::super::Foundation::BOOL, readonly: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
+    pub fn MakeSureDirectoryPathExists(dirpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn MapAndLoad(imagename: ::windows_core_sys::PCSTR, dllpath: ::windows_core_sys::PCSTR, loadedimage: *mut LOADED_IMAGE, dotdll: ::win32_foundation_sys::BOOL, readonly: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn MapFileAndCheckSumA(filename: ::windows_core_sys::PCSTR, headersum: *mut u32, checksum: *mut u32) -> u32;
     pub fn MapFileAndCheckSumW(filename: ::windows_core_sys::PCWSTR, headersum: *mut u32, checksum: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MessageBeep(utype: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MiniDumpReadDumpStream(baseofdump: *const ::core::ffi::c_void, streamnumber: u32, dir: *mut *mut MINIDUMP_DIRECTORY, streampointer: *mut *mut ::core::ffi::c_void, streamsize: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
-    pub fn MiniDumpWriteDump(hprocess: super::super::super::Foundation::HANDLE, processid: u32, hfile: super::super::super::Foundation::HANDLE, dumptype: MINIDUMP_TYPE, exceptionparam: *const MINIDUMP_EXCEPTION_INFORMATION, userstreamparam: *const MINIDUMP_USER_STREAM_INFORMATION, callbackparam: *const MINIDUMP_CALLBACK_INFORMATION) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn MessageBeep(utype: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn MiniDumpReadDumpStream(baseofdump: *const ::core::ffi::c_void, streamnumber: u32, dir: *mut *mut MINIDUMP_DIRECTORY, streampointer: *mut *mut ::core::ffi::c_void, streamsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+    pub fn MiniDumpWriteDump(hprocess: ::win32_foundation_sys::HANDLE, processid: u32, hfile: ::win32_foundation_sys::HANDLE, dumptype: MINIDUMP_TYPE, exceptionparam: *const MINIDUMP_EXCEPTION_INFORMATION, userstreamparam: *const MINIDUMP_USER_STREAM_INFORMATION, callbackparam: *const MINIDUMP_CALLBACK_INFORMATION) -> ::win32_foundation_sys::BOOL;
     pub fn OpenThreadWaitChainSession(flags: OPEN_THREAD_WAIT_CHAIN_SESSION_FLAGS, callback: PWAITCHAINCALLBACK) -> *mut ::core::ffi::c_void;
     pub fn OutputDebugStringA(lpoutputstring: ::windows_core_sys::PCSTR);
     pub fn OutputDebugStringW(lpoutputstring: ::windows_core_sys::PCWSTR);
     pub fn RaiseException(dwexceptioncode: u32, dwexceptionflags: u32, nnumberofarguments: u32, lparguments: *const usize);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn RaiseFailFastException(pexceptionrecord: *const EXCEPTION_RECORD, pcontextrecord: *const CONTEXT, dwflags: u32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RangeMapAddPeImageSections(rmaphandle: *const ::core::ffi::c_void, imagename: ::windows_core_sys::PCWSTR, mappedimage: *const ::core::ffi::c_void, mappingbytes: u32, imagebase: u64, usertag: u64, mappingflags: u32) -> super::super::super::Foundation::BOOL;
+    pub fn RangeMapAddPeImageSections(rmaphandle: *const ::core::ffi::c_void, imagename: ::windows_core_sys::PCWSTR, mappedimage: *const ::core::ffi::c_void, mappingbytes: u32, imagebase: u64, usertag: u64, mappingflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn RangeMapCreate() -> *mut ::core::ffi::c_void;
     pub fn RangeMapFree(rmaphandle: *const ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RangeMapRead(rmaphandle: *const ::core::ffi::c_void, offset: u64, buffer: *mut ::core::ffi::c_void, requestbytes: u32, flags: u32, donebytes: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RangeMapRemove(rmaphandle: *const ::core::ffi::c_void, usertag: u64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RangeMapWrite(rmaphandle: *const ::core::ffi::c_void, offset: u64, buffer: *const ::core::ffi::c_void, requestbytes: u32, flags: u32, donebytes: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReBaseImage(currentimagename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, frebase: super::super::super::Foundation::BOOL, frebasesysfileok: super::super::super::Foundation::BOOL, fgoingdown: super::super::super::Foundation::BOOL, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut usize, newimagesize: *mut u32, newimagebase: *mut usize, timestamp: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReBaseImage64(currentimagename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, frebase: super::super::super::Foundation::BOOL, frebasesysfileok: super::super::super::Foundation::BOOL, fgoingdown: super::super::super::Foundation::BOOL, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut u64, newimagesize: *mut u32, newimagebase: *mut u64, timestamp: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReadProcessMemory(hprocess: super::super::super::Foundation::HANDLE, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, nsize: usize, lpnumberofbytesread: *mut usize) -> super::super::super::Foundation::BOOL;
+    pub fn RangeMapRead(rmaphandle: *const ::core::ffi::c_void, offset: u64, buffer: *mut ::core::ffi::c_void, requestbytes: u32, flags: u32, donebytes: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn RangeMapRemove(rmaphandle: *const ::core::ffi::c_void, usertag: u64) -> ::win32_foundation_sys::BOOL;
+    pub fn RangeMapWrite(rmaphandle: *const ::core::ffi::c_void, offset: u64, buffer: *const ::core::ffi::c_void, requestbytes: u32, flags: u32, donebytes: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn ReBaseImage(currentimagename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, frebase: ::win32_foundation_sys::BOOL, frebasesysfileok: ::win32_foundation_sys::BOOL, fgoingdown: ::win32_foundation_sys::BOOL, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut usize, newimagesize: *mut u32, newimagebase: *mut usize, timestamp: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn ReBaseImage64(currentimagename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, frebase: ::win32_foundation_sys::BOOL, frebasesysfileok: ::win32_foundation_sys::BOOL, fgoingdown: ::win32_foundation_sys::BOOL, checkimagesize: u32, oldimagesize: *mut u32, oldimagebase: *mut u64, newimagesize: *mut u32, newimagebase: *mut u64, timestamp: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn ReadProcessMemory(hprocess: ::win32_foundation_sys::HANDLE, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, nsize: usize, lpnumberofbytesread: *mut usize) -> ::win32_foundation_sys::BOOL;
     pub fn RegisterWaitChainCOMCallback(callstatecallback: PCOGETCALLSTATE, activationstatecallback: PCOGETACTIVATIONSTATE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveInvalidModuleList(hprocess: super::super::super::Foundation::HANDLE);
+    pub fn RemoveInvalidModuleList(hprocess: ::win32_foundation_sys::HANDLE);
     pub fn RemoveVectoredContinueHandler(handle: *const ::core::ffi::c_void) -> u32;
     pub fn RemoveVectoredExceptionHandler(handle: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReportSymbolLoadSummary(hprocess: super::super::super::Foundation::HANDLE, ploadmodule: ::windows_core_sys::PCWSTR, psymboldata: *const DBGHELP_DATA_REPORT_STRUCT) -> super::super::super::Foundation::BOOL;
+    pub fn ReportSymbolLoadSummary(hprocess: ::win32_foundation_sys::HANDLE, ploadmodule: ::windows_core_sys::PCWSTR, psymboldata: *const DBGHELP_DATA_REPORT_STRUCT) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "aarch64")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RtlAddFunctionTable(functiontable: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, entrycount: u32, baseaddress: usize) -> super::super::super::Foundation::BOOLEAN;
+    pub fn RtlAddFunctionTable(functiontable: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, entrycount: u32, baseaddress: usize) -> ::win32_foundation_sys::BOOLEAN;
     #[cfg(target_arch = "x86_64")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RtlAddFunctionTable(functiontable: *const IMAGE_RUNTIME_FUNCTION_ENTRY, entrycount: u32, baseaddress: u64) -> super::super::super::Foundation::BOOLEAN;
+    pub fn RtlAddFunctionTable(functiontable: *const IMAGE_RUNTIME_FUNCTION_ENTRY, entrycount: u32, baseaddress: u64) -> ::win32_foundation_sys::BOOLEAN;
     #[cfg(target_arch = "aarch64")]
     pub fn RtlAddGrowableFunctionTable(dynamictable: *mut *mut ::core::ffi::c_void, functiontable: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, entrycount: u32, maximumentrycount: u32, rangebase: usize, rangeend: usize) -> u32;
     #[cfg(target_arch = "x86_64")]
@@ -213,446 +160,263 @@ extern "system" {
     pub fn RtlCaptureContext2(contextrecord: *mut CONTEXT);
     pub fn RtlCaptureStackBackTrace(framestoskip: u32, framestocapture: u32, backtrace: *mut *mut ::core::ffi::c_void, backtracehash: *mut u32) -> u16;
     #[cfg(target_arch = "aarch64")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RtlDeleteFunctionTable(functiontable: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY) -> super::super::super::Foundation::BOOLEAN;
+    pub fn RtlDeleteFunctionTable(functiontable: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY) -> ::win32_foundation_sys::BOOLEAN;
     #[cfg(target_arch = "x86_64")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RtlDeleteFunctionTable(functiontable: *const IMAGE_RUNTIME_FUNCTION_ENTRY) -> super::super::super::Foundation::BOOLEAN;
+    pub fn RtlDeleteFunctionTable(functiontable: *const IMAGE_RUNTIME_FUNCTION_ENTRY) -> ::win32_foundation_sys::BOOLEAN;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
     pub fn RtlDeleteGrowableFunctionTable(dynamictable: *const ::core::ffi::c_void);
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
     pub fn RtlGrowFunctionTable(dynamictable: *mut ::core::ffi::c_void, newentrycount: u32);
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RtlInstallFunctionTableCallback(tableidentifier: u64, baseaddress: u64, length: u32, callback: PGET_RUNTIME_FUNCTION_CALLBACK, context: *const ::core::ffi::c_void, outofprocesscallbackdll: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOLEAN;
+    pub fn RtlInstallFunctionTableCallback(tableidentifier: u64, baseaddress: u64, length: u32, callback: PGET_RUNTIME_FUNCTION_CALLBACK, context: *const ::core::ffi::c_void, outofprocesscallbackdll: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOLEAN;
     #[cfg(target_arch = "aarch64")]
     pub fn RtlLookupFunctionEntry(controlpc: usize, imagebase: *mut usize, historytable: *mut UNWIND_HISTORY_TABLE) -> *mut IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY;
     #[cfg(target_arch = "x86_64")]
     pub fn RtlLookupFunctionEntry(controlpc: u64, imagebase: *mut u64, historytable: *mut UNWIND_HISTORY_TABLE) -> *mut IMAGE_RUNTIME_FUNCTION_ENTRY;
     pub fn RtlPcToFileHeader(pcvalue: *const ::core::ffi::c_void, baseofimage: *mut *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RtlRaiseException(exceptionrecord: *const EXCEPTION_RECORD);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn RtlRestoreContext(contextrecord: *const CONTEXT, exceptionrecord: *const EXCEPTION_RECORD);
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RtlUnwind(targetframe: *const ::core::ffi::c_void, targetip: *const ::core::ffi::c_void, exceptionrecord: *const EXCEPTION_RECORD, returnvalue: *const ::core::ffi::c_void);
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn RtlUnwindEx(targetframe: *const ::core::ffi::c_void, targetip: *const ::core::ffi::c_void, exceptionrecord: *const EXCEPTION_RECORD, returnvalue: *const ::core::ffi::c_void, contextrecord: *const CONTEXT, historytable: *const UNWIND_HISTORY_TABLE);
     #[cfg(target_arch = "aarch64")]
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn RtlVirtualUnwind(handlertype: RTL_VIRTUAL_UNWIND_HANDLER_TYPE, imagebase: usize, controlpc: usize, functionentry: *const IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut usize, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS_ARM64) -> super::super::Kernel::EXCEPTION_ROUTINE;
     #[cfg(target_arch = "x86_64")]
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn RtlVirtualUnwind(handlertype: RTL_VIRTUAL_UNWIND_HANDLER_TYPE, imagebase: u64, controlpc: u64, functionentry: *const IMAGE_RUNTIME_FUNCTION_ENTRY, contextrecord: *mut CONTEXT, handlerdata: *mut *mut ::core::ffi::c_void, establisherframe: *mut u64, contextpointers: *mut KNONVOLATILE_CONTEXT_POINTERS) -> super::super::Kernel::EXCEPTION_ROUTINE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SearchTreeForFile(rootpath: ::windows_core_sys::PCSTR, inputpathname: ::windows_core_sys::PCSTR, outputpathbuffer: ::windows_core_sys::PSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SearchTreeForFileW(rootpath: ::windows_core_sys::PCWSTR, inputpathname: ::windows_core_sys::PCWSTR, outputpathbuffer: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::BOOL;
+    pub fn SearchTreeForFile(rootpath: ::windows_core_sys::PCSTR, inputpathname: ::windows_core_sys::PCSTR, outputpathbuffer: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SearchTreeForFileW(rootpath: ::windows_core_sys::PCWSTR, inputpathname: ::windows_core_sys::PCWSTR, outputpathbuffer: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn SetCheckUserInterruptShared(lpstartaddress: LPCALL_BACK_USER_INTERRUPT_ROUTINE);
     pub fn SetErrorMode(umode: THREAD_ERROR_MODE) -> u32;
     #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn SetImageConfigInformation(loadedimage: *mut LOADED_IMAGE, imageconfiginformation: *const IMAGE_LOAD_CONFIG_DIRECTORY64) -> super::super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn SetImageConfigInformation(loadedimage: *mut LOADED_IMAGE, imageconfiginformation: *const IMAGE_LOAD_CONFIG_DIRECTORY64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn SetImageConfigInformation(loadedimage: *mut LOADED_IMAGE, imageconfiginformation: *const IMAGE_LOAD_CONFIG_DIRECTORY32) -> super::super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn SetImageConfigInformation(loadedimage: *mut LOADED_IMAGE, imageconfiginformation: *const IMAGE_LOAD_CONFIG_DIRECTORY32) -> ::win32_foundation_sys::BOOL;
     pub fn SetSymLoadError(error: u32);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn SetThreadContext(hthread: super::super::super::Foundation::HANDLE, lpcontext: *const CONTEXT) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetThreadErrorMode(dwnewmode: THREAD_ERROR_MODE, lpoldmode: *const THREAD_ERROR_MODE) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn SetThreadContext(hthread: ::win32_foundation_sys::HANDLE, lpcontext: *const CONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn SetThreadErrorMode(dwnewmode: THREAD_ERROR_MODE, lpoldmode: *const THREAD_ERROR_MODE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn SetUnhandledExceptionFilter(lptoplevelexceptionfilter: LPTOP_LEVEL_EXCEPTION_FILTER) -> LPTOP_LEVEL_EXCEPTION_FILTER;
     #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn SetXStateFeaturesMask(context: *mut CONTEXT, featuremask: u64) -> super::super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn SetXStateFeaturesMask(context: *mut CONTEXT, featuremask: u64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StackWalk(machinetype: u32, hprocess: super::super::super::Foundation::HANDLE, hthread: super::super::super::Foundation::HANDLE, stackframe: *mut STACKFRAME, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE, translateaddress: PTRANSLATE_ADDRESS_ROUTINE) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StackWalk64(machinetype: u32, hprocess: super::super::super::Foundation::HANDLE, hthread: super::super::super::Foundation::HANDLE, stackframe: *mut STACKFRAME64, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64, translateaddress: PTRANSLATE_ADDRESS_ROUTINE64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StackWalkEx(machinetype: u32, hprocess: super::super::super::Foundation::HANDLE, hthread: super::super::super::Foundation::HANDLE, stackframe: *mut STACKFRAME_EX, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64, translateaddress: PTRANSLATE_ADDRESS_ROUTINE64, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymAddSourceStream(hprocess: super::super::super::Foundation::HANDLE, base: u64, streamfile: ::windows_core_sys::PCSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymAddSourceStreamA(hprocess: super::super::super::Foundation::HANDLE, base: u64, streamfile: ::windows_core_sys::PCSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymAddSourceStreamW(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows_core_sys::PCWSTR, buffer: *const u8, size: usize) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymAddSymbol(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCSTR, address: u64, size: u32, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymAddSymbolW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCWSTR, address: u64, size: u32, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymAddrIncludeInlineTrace(hprocess: super::super::super::Foundation::HANDLE, address: u64) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymCleanup(hprocess: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymCompareInlineTrace(hprocess: super::super::super::Foundation::HANDLE, address1: u64, inlinecontext1: u32, retaddress1: u64, address2: u64, retaddress2: u64) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymDeleteSymbol(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCSTR, address: u64, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymDeleteSymbolW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCWSTR, address: u64, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumLines(hprocess: super::super::super::Foundation::HANDLE, base: u64, obj: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, enumlinescallback: PSYM_ENUMLINES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumLinesW(hprocess: super::super::super::Foundation::HANDLE, base: u64, obj: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, enumlinescallback: PSYM_ENUMLINES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumProcesses(enumprocessescallback: PSYM_ENUMPROCESSES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSourceFileTokens(hprocess: super::super::super::Foundation::HANDLE, base: u64, callback: PENUMSOURCEFILETOKENSCALLBACK) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSourceFiles(hprocess: super::super::super::Foundation::HANDLE, modbase: u64, mask: ::windows_core_sys::PCSTR, cbsrcfiles: PSYM_ENUMSOURCEFILES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSourceFilesW(hprocess: super::super::super::Foundation::HANDLE, modbase: u64, mask: ::windows_core_sys::PCWSTR, cbsrcfiles: PSYM_ENUMSOURCEFILES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSourceLines(hprocess: super::super::super::Foundation::HANDLE, base: u64, obj: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, line: u32, flags: u32, enumlinescallback: PSYM_ENUMLINES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSourceLinesW(hprocess: super::super::super::Foundation::HANDLE, base: u64, obj: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, line: u32, flags: u32, enumlinescallback: PSYM_ENUMLINES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSym(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSymbols(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSymbolsEx(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSymbolsExW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSymbolsForAddr(hprocess: super::super::super::Foundation::HANDLE, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSymbolsForAddrW(hprocess: super::super::super::Foundation::HANDLE, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumSymbolsW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumTypes(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumTypesByName(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumTypesByNameW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumTypesW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
+    pub fn StackWalk(machinetype: u32, hprocess: ::win32_foundation_sys::HANDLE, hthread: ::win32_foundation_sys::HANDLE, stackframe: *mut STACKFRAME, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE, translateaddress: PTRANSLATE_ADDRESS_ROUTINE) -> ::win32_foundation_sys::BOOL;
+    pub fn StackWalk64(machinetype: u32, hprocess: ::win32_foundation_sys::HANDLE, hthread: ::win32_foundation_sys::HANDLE, stackframe: *mut STACKFRAME64, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64, translateaddress: PTRANSLATE_ADDRESS_ROUTINE64) -> ::win32_foundation_sys::BOOL;
+    pub fn StackWalkEx(machinetype: u32, hprocess: ::win32_foundation_sys::HANDLE, hthread: ::win32_foundation_sys::HANDLE, stackframe: *mut STACKFRAME_EX, contextrecord: *mut ::core::ffi::c_void, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, functiontableaccessroutine: PFUNCTION_TABLE_ACCESS_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64, translateaddress: PTRANSLATE_ADDRESS_ROUTINE64, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymAddSourceStream(hprocess: ::win32_foundation_sys::HANDLE, base: u64, streamfile: ::windows_core_sys::PCSTR, buffer: *const u8, size: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn SymAddSourceStreamA(hprocess: ::win32_foundation_sys::HANDLE, base: u64, streamfile: ::windows_core_sys::PCSTR, buffer: *const u8, size: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn SymAddSourceStreamW(hprocess: ::win32_foundation_sys::HANDLE, base: u64, filespec: ::windows_core_sys::PCWSTR, buffer: *const u8, size: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn SymAddSymbol(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCSTR, address: u64, size: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymAddSymbolW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCWSTR, address: u64, size: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymAddrIncludeInlineTrace(hprocess: ::win32_foundation_sys::HANDLE, address: u64) -> u32;
+    pub fn SymCleanup(hprocess: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn SymCompareInlineTrace(hprocess: ::win32_foundation_sys::HANDLE, address1: u64, inlinecontext1: u32, retaddress1: u64, address2: u64, retaddress2: u64) -> u32;
+    pub fn SymDeleteSymbol(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCSTR, address: u64, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymDeleteSymbolW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCWSTR, address: u64, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumLines(hprocess: ::win32_foundation_sys::HANDLE, base: u64, obj: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, enumlinescallback: PSYM_ENUMLINES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumLinesW(hprocess: ::win32_foundation_sys::HANDLE, base: u64, obj: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, enumlinescallback: PSYM_ENUMLINES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumProcesses(enumprocessescallback: PSYM_ENUMPROCESSES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSourceFileTokens(hprocess: ::win32_foundation_sys::HANDLE, base: u64, callback: PENUMSOURCEFILETOKENSCALLBACK) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSourceFiles(hprocess: ::win32_foundation_sys::HANDLE, modbase: u64, mask: ::windows_core_sys::PCSTR, cbsrcfiles: PSYM_ENUMSOURCEFILES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSourceFilesW(hprocess: ::win32_foundation_sys::HANDLE, modbase: u64, mask: ::windows_core_sys::PCWSTR, cbsrcfiles: PSYM_ENUMSOURCEFILES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSourceLines(hprocess: ::win32_foundation_sys::HANDLE, base: u64, obj: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, line: u32, flags: u32, enumlinescallback: PSYM_ENUMLINES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSourceLinesW(hprocess: ::win32_foundation_sys::HANDLE, base: u64, obj: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, line: u32, flags: u32, enumlinescallback: PSYM_ENUMLINES_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSym(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSymbols(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSymbolsEx(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void, options: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSymbolsExW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void, options: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSymbolsForAddr(hprocess: ::win32_foundation_sys::HANDLE, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSymbolsForAddrW(hprocess: ::win32_foundation_sys::HANDLE, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumSymbolsW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumTypes(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumTypesByName(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumTypesByNameW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, mask: ::windows_core_sys::PCWSTR, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumTypesW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumerateModules(hprocess: super::super::super::Foundation::HANDLE, enummodulescallback: PSYM_ENUMMODULES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumerateModules64(hprocess: super::super::super::Foundation::HANDLE, enummodulescallback: PSYM_ENUMMODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumerateModulesW64(hprocess: super::super::super::Foundation::HANDLE, enummodulescallback: PSYM_ENUMMODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
+    pub fn SymEnumerateModules(hprocess: ::win32_foundation_sys::HANDLE, enummodulescallback: PSYM_ENUMMODULES_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumerateModules64(hprocess: ::win32_foundation_sys::HANDLE, enummodulescallback: PSYM_ENUMMODULES_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumerateModulesW64(hprocess: ::win32_foundation_sys::HANDLE, enummodulescallback: PSYM_ENUMMODULES_CALLBACKW64, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumerateSymbols(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u32, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumerateSymbols64(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
+    pub fn SymEnumerateSymbols(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u32, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumerateSymbols64(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK64, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumerateSymbolsW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u32, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymEnumerateSymbolsW64(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK64W, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFindDebugInfoFile(hprocess: super::super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, callback: PFIND_DEBUG_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFindDebugInfoFileW(hprocess: super::super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCWSTR, debugfilepath: ::windows_core_sys::PWSTR, callback: PFIND_DEBUG_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFindExecutableImage(hprocess: super::super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCSTR, imagefilepath: ::windows_core_sys::PSTR, callback: PFIND_EXE_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFindExecutableImageW(hprocess: super::super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCWSTR, imagefilepath: ::windows_core_sys::PWSTR, callback: PFIND_EXE_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFindFileInPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: SYM_FIND_ID_OPTION, foundfile: ::windows_core_sys::PSTR, callback: PFINDFILEINPATHCALLBACK, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFindFileInPathW(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows_core_sys::PCWSTR, filename: ::windows_core_sys::PCWSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: SYM_FIND_ID_OPTION, foundfile: ::windows_core_sys::PWSTR, callback: PFINDFILEINPATHCALLBACKW, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromAddr(hprocess: super::super::super::Foundation::HANDLE, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromAddrW(hprocess: super::super::super::Foundation::HANDLE, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromIndex(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromIndexW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromInlineContext(hprocess: super::super::super::Foundation::HANDLE, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromInlineContextW(hprocess: super::super::super::Foundation::HANDLE, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromName(hprocess: super::super::super::Foundation::HANDLE, name: ::windows_core_sys::PCSTR, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromNameW(hprocess: super::super::super::Foundation::HANDLE, name: ::windows_core_sys::PCWSTR, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromToken(hprocess: super::super::super::Foundation::HANDLE, base: u64, token: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFromTokenW(hprocess: super::super::super::Foundation::HANDLE, base: u64, token: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
+    pub fn SymEnumerateSymbolsW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u32, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymEnumerateSymbolsW64(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, enumsymbolscallback: PSYM_ENUMSYMBOLS_CALLBACK64W, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFindDebugInfoFile(hprocess: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, callback: PFIND_DEBUG_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    pub fn SymFindDebugInfoFileW(hprocess: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCWSTR, debugfilepath: ::windows_core_sys::PWSTR, callback: PFIND_DEBUG_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    pub fn SymFindExecutableImage(hprocess: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCSTR, imagefilepath: ::windows_core_sys::PSTR, callback: PFIND_EXE_FILE_CALLBACK, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    pub fn SymFindExecutableImageW(hprocess: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCWSTR, imagefilepath: ::windows_core_sys::PWSTR, callback: PFIND_EXE_FILE_CALLBACKW, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    pub fn SymFindFileInPath(hprocess: ::win32_foundation_sys::HANDLE, searchpatha: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: SYM_FIND_ID_OPTION, foundfile: ::windows_core_sys::PSTR, callback: PFINDFILEINPATHCALLBACK, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFindFileInPathW(hprocess: ::win32_foundation_sys::HANDLE, searchpatha: ::windows_core_sys::PCWSTR, filename: ::windows_core_sys::PCWSTR, id: *const ::core::ffi::c_void, two: u32, three: u32, flags: SYM_FIND_ID_OPTION, foundfile: ::windows_core_sys::PWSTR, callback: PFINDFILEINPATHCALLBACKW, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromAddr(hprocess: ::win32_foundation_sys::HANDLE, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromAddrW(hprocess: ::win32_foundation_sys::HANDLE, address: u64, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromIndex(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromIndexW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromInlineContext(hprocess: ::win32_foundation_sys::HANDLE, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromInlineContextW(hprocess: ::win32_foundation_sys::HANDLE, address: u64, inlinecontext: u32, displacement: *mut u64, symbol: *mut SYMBOL_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromName(hprocess: ::win32_foundation_sys::HANDLE, name: ::windows_core_sys::PCSTR, symbol: *mut SYMBOL_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromNameW(hprocess: ::win32_foundation_sys::HANDLE, name: ::windows_core_sys::PCWSTR, symbol: *mut SYMBOL_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromToken(hprocess: ::win32_foundation_sys::HANDLE, base: u64, token: u32, symbol: *mut SYMBOL_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SymFromTokenW(hprocess: ::win32_foundation_sys::HANDLE, base: u64, token: u32, symbol: *mut SYMBOL_INFOW) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFunctionTableAccess(hprocess: super::super::super::Foundation::HANDLE, addrbase: u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFunctionTableAccess64(hprocess: super::super::super::Foundation::HANDLE, addrbase: u64) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymFunctionTableAccess64AccessRoutines(hprocess: super::super::super::Foundation::HANDLE, addrbase: u64, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetExtendedOption(option: IMAGEHLP_EXTENDED_OPTIONS) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetFileLineOffsets64(hprocess: super::super::super::Foundation::HANDLE, modulename: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, buffer: *mut u64, bufferlines: u32) -> u32;
+    pub fn SymFunctionTableAccess(hprocess: ::win32_foundation_sys::HANDLE, addrbase: u32) -> *mut ::core::ffi::c_void;
+    pub fn SymFunctionTableAccess64(hprocess: ::win32_foundation_sys::HANDLE, addrbase: u64) -> *mut ::core::ffi::c_void;
+    pub fn SymFunctionTableAccess64AccessRoutines(hprocess: ::win32_foundation_sys::HANDLE, addrbase: u64, readmemoryroutine: PREAD_PROCESS_MEMORY_ROUTINE64, getmodulebaseroutine: PGET_MODULE_BASE_ROUTINE64) -> *mut ::core::ffi::c_void;
+    pub fn SymGetExtendedOption(option: IMAGEHLP_EXTENDED_OPTIONS) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetFileLineOffsets64(hprocess: ::win32_foundation_sys::HANDLE, modulename: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, buffer: *mut u64, bufferlines: u32) -> u32;
     pub fn SymGetHomeDirectory(r#type: IMAGEHLP_HD_TYPE, dir: ::windows_core_sys::PSTR, size: usize) -> ::windows_core_sys::PSTR;
     pub fn SymGetHomeDirectoryW(r#type: IMAGEHLP_HD_TYPE, dir: ::windows_core_sys::PWSTR, size: usize) -> ::windows_core_sys::PWSTR;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineFromAddr(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineFromAddr64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineFromAddrW64(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineFromInlineContext(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineFromInlineContextW(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetLineFromAddr(hprocess: ::win32_foundation_sys::HANDLE, dwaddr: u32, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINE) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLineFromAddr64(hprocess: ::win32_foundation_sys::HANDLE, qwaddr: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLineFromAddrW64(hprocess: ::win32_foundation_sys::HANDLE, dwaddr: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLineFromInlineContext(hprocess: ::win32_foundation_sys::HANDLE, qwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line64: *mut IMAGEHLP_LINE64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLineFromInlineContextW(hprocess: ::win32_foundation_sys::HANDLE, dwaddr: u64, inlinecontext: u32, qwmodulebaseaddress: u64, pdwdisplacement: *mut u32, line: *mut IMAGEHLP_LINEW64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineFromName(hprocess: super::super::super::Foundation::HANDLE, modulename: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineFromName64(hprocess: super::super::super::Foundation::HANDLE, modulename: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineFromNameW64(hprocess: super::super::super::Foundation::HANDLE, modulename: ::windows_core_sys::PCWSTR, filename: ::windows_core_sys::PCWSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetLineFromName(hprocess: ::win32_foundation_sys::HANDLE, modulename: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLineFromName64(hprocess: ::win32_foundation_sys::HANDLE, modulename: ::windows_core_sys::PCSTR, filename: ::windows_core_sys::PCSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINE64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLineFromNameW64(hprocess: ::win32_foundation_sys::HANDLE, modulename: ::windows_core_sys::PCWSTR, filename: ::windows_core_sys::PCWSTR, dwlinenumber: u32, pldisplacement: *mut i32, line: *mut IMAGEHLP_LINEW64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineNext(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineNext64(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLineNextW64(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetLineNext(hprocess: ::win32_foundation_sys::HANDLE, line: *mut IMAGEHLP_LINE) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLineNext64(hprocess: ::win32_foundation_sys::HANDLE, line: *mut IMAGEHLP_LINE64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLineNextW64(hprocess: ::win32_foundation_sys::HANDLE, line: *mut IMAGEHLP_LINEW64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLinePrev(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINE) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLinePrev64(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINE64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetLinePrevW64(hprocess: super::super::super::Foundation::HANDLE, line: *mut IMAGEHLP_LINEW64) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetLinePrev(hprocess: ::win32_foundation_sys::HANDLE, line: *mut IMAGEHLP_LINE) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLinePrev64(hprocess: ::win32_foundation_sys::HANDLE, line: *mut IMAGEHLP_LINE64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetLinePrevW64(hprocess: ::win32_foundation_sys::HANDLE, line: *mut IMAGEHLP_LINEW64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetModuleBase(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetModuleBase64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64) -> u64;
+    pub fn SymGetModuleBase(hprocess: ::win32_foundation_sys::HANDLE, dwaddr: u32) -> u32;
+    pub fn SymGetModuleBase64(hprocess: ::win32_foundation_sys::HANDLE, qwaddr: u64) -> u64;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetModuleInfo(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULE) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetModuleInfo64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULE64) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetModuleInfo(hprocess: ::win32_foundation_sys::HANDLE, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULE) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetModuleInfo64(hprocess: ::win32_foundation_sys::HANDLE, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULE64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetModuleInfoW(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULEW) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetModuleInfoW64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULEW64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetOmaps(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, omapto: *mut *mut OMAP, comapto: *mut u64, omapfrom: *mut *mut OMAP, comapfrom: *mut u64) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetModuleInfoW(hprocess: ::win32_foundation_sys::HANDLE, dwaddr: u32, moduleinfo: *mut IMAGEHLP_MODULEW) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetModuleInfoW64(hprocess: ::win32_foundation_sys::HANDLE, qwaddr: u64, moduleinfo: *mut IMAGEHLP_MODULEW64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetOmaps(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, omapto: *mut *mut OMAP, comapto: *mut u64, omapfrom: *mut *mut OMAP, comapfrom: *mut u64) -> ::win32_foundation_sys::BOOL;
     pub fn SymGetOptions() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetScope(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetScopeW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSearchPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows_core_sys::PSTR, searchpathlength: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSearchPathW(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows_core_sys::PWSTR, searchpathlength: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFile(hprocess: super::super::super::Foundation::HANDLE, base: u64, params: ::windows_core_sys::PCSTR, filespec: ::windows_core_sys::PCSTR, filepath: ::windows_core_sys::PSTR, size: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileChecksum(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows_core_sys::PCSTR, pchecksumtype: *mut u32, pchecksum: *mut u8, checksumsize: u32, pactualbyteswritten: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileChecksumW(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows_core_sys::PCWSTR, pchecksumtype: *mut u32, pchecksum: *mut u8, checksumsize: u32, pactualbyteswritten: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileFromToken(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, params: ::windows_core_sys::PCSTR, filepath: ::windows_core_sys::PSTR, size: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileFromTokenByTokenName(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, tokenname: ::windows_core_sys::PCSTR, params: ::windows_core_sys::PCSTR, filepath: ::windows_core_sys::PSTR, size: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileFromTokenByTokenNameW(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, tokenname: ::windows_core_sys::PCWSTR, params: ::windows_core_sys::PCWSTR, filepath: ::windows_core_sys::PWSTR, size: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileFromTokenW(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, params: ::windows_core_sys::PCWSTR, filepath: ::windows_core_sys::PWSTR, size: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileToken(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows_core_sys::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileTokenByTokenName(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows_core_sys::PCSTR, tokenname: ::windows_core_sys::PCSTR, tokenparameters: ::windows_core_sys::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileTokenByTokenNameW(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows_core_sys::PCWSTR, tokenname: ::windows_core_sys::PCWSTR, tokenparameters: ::windows_core_sys::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileTokenW(hprocess: super::super::super::Foundation::HANDLE, base: u64, filespec: ::windows_core_sys::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceFileW(hprocess: super::super::super::Foundation::HANDLE, base: u64, params: ::windows_core_sys::PCWSTR, filespec: ::windows_core_sys::PCWSTR, filepath: ::windows_core_sys::PWSTR, size: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceVarFromToken(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, params: ::windows_core_sys::PCSTR, varname: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PSTR, size: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSourceVarFromTokenW(hprocess: super::super::super::Foundation::HANDLE, token: *const ::core::ffi::c_void, params: ::windows_core_sys::PCWSTR, varname: ::windows_core_sys::PCWSTR, value: ::windows_core_sys::PWSTR, size: u32) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetScope(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetScopeW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, index: u32, symbol: *mut SYMBOL_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSearchPath(hprocess: ::win32_foundation_sys::HANDLE, searchpatha: ::windows_core_sys::PSTR, searchpathlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSearchPathW(hprocess: ::win32_foundation_sys::HANDLE, searchpatha: ::windows_core_sys::PWSTR, searchpathlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFile(hprocess: ::win32_foundation_sys::HANDLE, base: u64, params: ::windows_core_sys::PCSTR, filespec: ::windows_core_sys::PCSTR, filepath: ::windows_core_sys::PSTR, size: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileChecksum(hprocess: ::win32_foundation_sys::HANDLE, base: u64, filespec: ::windows_core_sys::PCSTR, pchecksumtype: *mut u32, pchecksum: *mut u8, checksumsize: u32, pactualbyteswritten: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileChecksumW(hprocess: ::win32_foundation_sys::HANDLE, base: u64, filespec: ::windows_core_sys::PCWSTR, pchecksumtype: *mut u32, pchecksum: *mut u8, checksumsize: u32, pactualbyteswritten: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileFromToken(hprocess: ::win32_foundation_sys::HANDLE, token: *const ::core::ffi::c_void, params: ::windows_core_sys::PCSTR, filepath: ::windows_core_sys::PSTR, size: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileFromTokenByTokenName(hprocess: ::win32_foundation_sys::HANDLE, token: *const ::core::ffi::c_void, tokenname: ::windows_core_sys::PCSTR, params: ::windows_core_sys::PCSTR, filepath: ::windows_core_sys::PSTR, size: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileFromTokenByTokenNameW(hprocess: ::win32_foundation_sys::HANDLE, token: *const ::core::ffi::c_void, tokenname: ::windows_core_sys::PCWSTR, params: ::windows_core_sys::PCWSTR, filepath: ::windows_core_sys::PWSTR, size: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileFromTokenW(hprocess: ::win32_foundation_sys::HANDLE, token: *const ::core::ffi::c_void, params: ::windows_core_sys::PCWSTR, filepath: ::windows_core_sys::PWSTR, size: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileToken(hprocess: ::win32_foundation_sys::HANDLE, base: u64, filespec: ::windows_core_sys::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileTokenByTokenName(hprocess: ::win32_foundation_sys::HANDLE, base: u64, filespec: ::windows_core_sys::PCSTR, tokenname: ::windows_core_sys::PCSTR, tokenparameters: ::windows_core_sys::PCSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileTokenByTokenNameW(hprocess: ::win32_foundation_sys::HANDLE, base: u64, filespec: ::windows_core_sys::PCWSTR, tokenname: ::windows_core_sys::PCWSTR, tokenparameters: ::windows_core_sys::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileTokenW(hprocess: ::win32_foundation_sys::HANDLE, base: u64, filespec: ::windows_core_sys::PCWSTR, token: *mut *mut ::core::ffi::c_void, size: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceFileW(hprocess: ::win32_foundation_sys::HANDLE, base: u64, params: ::windows_core_sys::PCWSTR, filespec: ::windows_core_sys::PCWSTR, filepath: ::windows_core_sys::PWSTR, size: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceVarFromToken(hprocess: ::win32_foundation_sys::HANDLE, token: *const ::core::ffi::c_void, params: ::windows_core_sys::PCSTR, varname: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PSTR, size: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSourceVarFromTokenW(hprocess: ::win32_foundation_sys::HANDLE, token: *const ::core::ffi::c_void, params: ::windows_core_sys::PCWSTR, varname: ::windows_core_sys::PCWSTR, value: ::windows_core_sys::PWSTR, size: u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymFromAddr(hprocess: super::super::super::Foundation::HANDLE, dwaddr: u32, pdwdisplacement: *mut u32, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymFromAddr64(hprocess: super::super::super::Foundation::HANDLE, qwaddr: u64, pdwdisplacement: *mut u64, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetSymFromAddr(hprocess: ::win32_foundation_sys::HANDLE, dwaddr: u32, pdwdisplacement: *mut u32, symbol: *mut IMAGEHLP_SYMBOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSymFromAddr64(hprocess: ::win32_foundation_sys::HANDLE, qwaddr: u64, pdwdisplacement: *mut u64, symbol: *mut IMAGEHLP_SYMBOL64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymFromName(hprocess: super::super::super::Foundation::HANDLE, name: ::windows_core_sys::PCSTR, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymFromName64(hprocess: super::super::super::Foundation::HANDLE, name: ::windows_core_sys::PCSTR, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetSymFromName(hprocess: ::win32_foundation_sys::HANDLE, name: ::windows_core_sys::PCSTR, symbol: *mut IMAGEHLP_SYMBOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSymFromName64(hprocess: ::win32_foundation_sys::HANDLE, name: ::windows_core_sys::PCSTR, symbol: *mut IMAGEHLP_SYMBOL64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymNext(hprocess: super::super::super::Foundation::HANDLE, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymNext64(hprocess: super::super::super::Foundation::HANDLE, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetSymNext(hprocess: ::win32_foundation_sys::HANDLE, symbol: *mut IMAGEHLP_SYMBOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSymNext64(hprocess: ::win32_foundation_sys::HANDLE, symbol: *mut IMAGEHLP_SYMBOL64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymPrev(hprocess: super::super::super::Foundation::HANDLE, symbol: *mut IMAGEHLP_SYMBOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymPrev64(hprocess: super::super::super::Foundation::HANDLE, symbol: *mut IMAGEHLP_SYMBOL64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymbolFile(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows_core_sys::PCSTR, imagefile: ::windows_core_sys::PCSTR, r#type: IMAGEHLP_SF_TYPE, symbolfile: ::windows_core_sys::PSTR, csymbolfile: usize, dbgfile: ::windows_core_sys::PSTR, cdbgfile: usize) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetSymbolFileW(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows_core_sys::PCWSTR, imagefile: ::windows_core_sys::PCWSTR, r#type: IMAGEHLP_SF_TYPE, symbolfile: ::windows_core_sys::PWSTR, csymbolfile: usize, dbgfile: ::windows_core_sys::PWSTR, cdbgfile: usize) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetTypeFromName(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCSTR, symbol: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetTypeFromNameW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCWSTR, symbol: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetTypeInfo(hprocess: super::super::super::Foundation::HANDLE, modbase: u64, typeid: u32, gettype: IMAGEHLP_SYMBOL_TYPE_INFO, pinfo: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetTypeInfoEx(hprocess: super::super::super::Foundation::HANDLE, modbase: u64, params: *mut IMAGEHLP_GET_TYPE_INFO_PARAMS) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymGetUnwindInfo(hprocess: super::super::super::Foundation::HANDLE, address: u64, buffer: *mut ::core::ffi::c_void, size: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymInitialize(hprocess: super::super::super::Foundation::HANDLE, usersearchpath: ::windows_core_sys::PCSTR, finvadeprocess: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymInitializeW(hprocess: super::super::super::Foundation::HANDLE, usersearchpath: ::windows_core_sys::PCWSTR, finvadeprocess: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
+    pub fn SymGetSymPrev(hprocess: ::win32_foundation_sys::HANDLE, symbol: *mut IMAGEHLP_SYMBOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSymPrev64(hprocess: ::win32_foundation_sys::HANDLE, symbol: *mut IMAGEHLP_SYMBOL64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSymbolFile(hprocess: ::win32_foundation_sys::HANDLE, sympath: ::windows_core_sys::PCSTR, imagefile: ::windows_core_sys::PCSTR, r#type: IMAGEHLP_SF_TYPE, symbolfile: ::windows_core_sys::PSTR, csymbolfile: usize, dbgfile: ::windows_core_sys::PSTR, cdbgfile: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetSymbolFileW(hprocess: ::win32_foundation_sys::HANDLE, sympath: ::windows_core_sys::PCWSTR, imagefile: ::windows_core_sys::PCWSTR, r#type: IMAGEHLP_SF_TYPE, symbolfile: ::windows_core_sys::PWSTR, csymbolfile: usize, dbgfile: ::windows_core_sys::PWSTR, cdbgfile: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetTypeFromName(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCSTR, symbol: *mut SYMBOL_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetTypeFromNameW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, name: ::windows_core_sys::PCWSTR, symbol: *mut SYMBOL_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetTypeInfo(hprocess: ::win32_foundation_sys::HANDLE, modbase: u64, typeid: u32, gettype: IMAGEHLP_SYMBOL_TYPE_INFO, pinfo: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetTypeInfoEx(hprocess: ::win32_foundation_sys::HANDLE, modbase: u64, params: *mut IMAGEHLP_GET_TYPE_INFO_PARAMS) -> ::win32_foundation_sys::BOOL;
+    pub fn SymGetUnwindInfo(hprocess: ::win32_foundation_sys::HANDLE, address: u64, buffer: *mut ::core::ffi::c_void, size: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymInitialize(hprocess: ::win32_foundation_sys::HANDLE, usersearchpath: ::windows_core_sys::PCSTR, finvadeprocess: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SymInitializeW(hprocess: ::win32_foundation_sys::HANDLE, usersearchpath: ::windows_core_sys::PCWSTR, finvadeprocess: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymLoadModule(hprocess: super::super::super::Foundation::HANDLE, hfile: super::super::super::Foundation::HANDLE, imagename: ::windows_core_sys::PCSTR, modulename: ::windows_core_sys::PCSTR, baseofdll: u32, sizeofdll: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymLoadModule64(hprocess: super::super::super::Foundation::HANDLE, hfile: super::super::super::Foundation::HANDLE, imagename: ::windows_core_sys::PCSTR, modulename: ::windows_core_sys::PCSTR, baseofdll: u64, sizeofdll: u32) -> u64;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymLoadModuleEx(hprocess: super::super::super::Foundation::HANDLE, hfile: super::super::super::Foundation::HANDLE, imagename: ::windows_core_sys::PCSTR, modulename: ::windows_core_sys::PCSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: SYM_LOAD_FLAGS) -> u64;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymLoadModuleExW(hprocess: super::super::super::Foundation::HANDLE, hfile: super::super::super::Foundation::HANDLE, imagename: ::windows_core_sys::PCWSTR, modulename: ::windows_core_sys::PCWSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: SYM_LOAD_FLAGS) -> u64;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymMatchFileName(filename: ::windows_core_sys::PCSTR, r#match: ::windows_core_sys::PCSTR, filenamestop: *mut ::windows_core_sys::PSTR, matchstop: *mut ::windows_core_sys::PSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymMatchFileNameW(filename: ::windows_core_sys::PCWSTR, r#match: ::windows_core_sys::PCWSTR, filenamestop: *mut ::windows_core_sys::PWSTR, matchstop: *mut ::windows_core_sys::PWSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymMatchString(string: ::windows_core_sys::PCSTR, expression: ::windows_core_sys::PCSTR, fcase: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymMatchStringA(string: ::windows_core_sys::PCSTR, expression: ::windows_core_sys::PCSTR, fcase: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymMatchStringW(string: ::windows_core_sys::PCWSTR, expression: ::windows_core_sys::PCWSTR, fcase: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymNext(hprocess: super::super::super::Foundation::HANDLE, si: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymNextW(hprocess: super::super::super::Foundation::HANDLE, siw: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymPrev(hprocess: super::super::super::Foundation::HANDLE, si: *mut SYMBOL_INFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymPrevW(hprocess: super::super::super::Foundation::HANDLE, siw: *mut SYMBOL_INFOW) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymQueryInlineTrace(hprocess: super::super::super::Foundation::HANDLE, startaddress: u64, startcontext: u32, startretaddress: u64, curaddress: u64, curcontext: *mut u32, curframeindex: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymRefreshModuleList(hprocess: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::BOOL;
+    pub fn SymLoadModule(hprocess: ::win32_foundation_sys::HANDLE, hfile: ::win32_foundation_sys::HANDLE, imagename: ::windows_core_sys::PCSTR, modulename: ::windows_core_sys::PCSTR, baseofdll: u32, sizeofdll: u32) -> u32;
+    pub fn SymLoadModule64(hprocess: ::win32_foundation_sys::HANDLE, hfile: ::win32_foundation_sys::HANDLE, imagename: ::windows_core_sys::PCSTR, modulename: ::windows_core_sys::PCSTR, baseofdll: u64, sizeofdll: u32) -> u64;
+    pub fn SymLoadModuleEx(hprocess: ::win32_foundation_sys::HANDLE, hfile: ::win32_foundation_sys::HANDLE, imagename: ::windows_core_sys::PCSTR, modulename: ::windows_core_sys::PCSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: SYM_LOAD_FLAGS) -> u64;
+    pub fn SymLoadModuleExW(hprocess: ::win32_foundation_sys::HANDLE, hfile: ::win32_foundation_sys::HANDLE, imagename: ::windows_core_sys::PCWSTR, modulename: ::windows_core_sys::PCWSTR, baseofdll: u64, dllsize: u32, data: *const MODLOAD_DATA, flags: SYM_LOAD_FLAGS) -> u64;
+    pub fn SymMatchFileName(filename: ::windows_core_sys::PCSTR, r#match: ::windows_core_sys::PCSTR, filenamestop: *mut ::windows_core_sys::PSTR, matchstop: *mut ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SymMatchFileNameW(filename: ::windows_core_sys::PCWSTR, r#match: ::windows_core_sys::PCWSTR, filenamestop: *mut ::windows_core_sys::PWSTR, matchstop: *mut ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SymMatchString(string: ::windows_core_sys::PCSTR, expression: ::windows_core_sys::PCSTR, fcase: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SymMatchStringA(string: ::windows_core_sys::PCSTR, expression: ::windows_core_sys::PCSTR, fcase: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SymMatchStringW(string: ::windows_core_sys::PCWSTR, expression: ::windows_core_sys::PCWSTR, fcase: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SymNext(hprocess: ::win32_foundation_sys::HANDLE, si: *mut SYMBOL_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SymNextW(hprocess: ::win32_foundation_sys::HANDLE, siw: *mut SYMBOL_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn SymPrev(hprocess: ::win32_foundation_sys::HANDLE, si: *mut SYMBOL_INFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SymPrevW(hprocess: ::win32_foundation_sys::HANDLE, siw: *mut SYMBOL_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn SymQueryInlineTrace(hprocess: ::win32_foundation_sys::HANDLE, startaddress: u64, startcontext: u32, startretaddress: u64, curaddress: u64, curcontext: *mut u32, curframeindex: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymRefreshModuleList(hprocess: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymRegisterCallback(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: PSYMBOL_REGISTERED_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymRegisterCallback64(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: PSYMBOL_REGISTERED_CALLBACK64, usercontext: u64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymRegisterCallbackW64(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: PSYMBOL_REGISTERED_CALLBACK64, usercontext: u64) -> super::super::super::Foundation::BOOL;
+    pub fn SymRegisterCallback(hprocess: ::win32_foundation_sys::HANDLE, callbackfunction: PSYMBOL_REGISTERED_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymRegisterCallback64(hprocess: ::win32_foundation_sys::HANDLE, callbackfunction: PSYMBOL_REGISTERED_CALLBACK64, usercontext: u64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymRegisterCallbackW64(hprocess: ::win32_foundation_sys::HANDLE, callbackfunction: PSYMBOL_REGISTERED_CALLBACK64, usercontext: u64) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymRegisterFunctionEntryCallback(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: PSYMBOL_FUNCENTRY_CALLBACK, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymRegisterFunctionEntryCallback64(hprocess: super::super::super::Foundation::HANDLE, callbackfunction: PSYMBOL_FUNCENTRY_CALLBACK64, usercontext: u64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSearch(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symtag: u32, mask: ::windows_core_sys::PCSTR, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSearchW(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32, symtag: u32, mask: ::windows_core_sys::PCWSTR, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void, options: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetContext(hprocess: super::super::super::Foundation::HANDLE, stackframe: *const IMAGEHLP_STACK_FRAME, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetExtendedOption(option: IMAGEHLP_EXTENDED_OPTIONS, value: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetHomeDirectory(hprocess: super::super::super::Foundation::HANDLE, dir: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetHomeDirectoryW(hprocess: super::super::super::Foundation::HANDLE, dir: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
+    pub fn SymRegisterFunctionEntryCallback(hprocess: ::win32_foundation_sys::HANDLE, callbackfunction: PSYMBOL_FUNCENTRY_CALLBACK, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymRegisterFunctionEntryCallback64(hprocess: ::win32_foundation_sys::HANDLE, callbackfunction: PSYMBOL_FUNCENTRY_CALLBACK64, usercontext: u64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSearch(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, index: u32, symtag: u32, mask: ::windows_core_sys::PCSTR, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACK, usercontext: *const ::core::ffi::c_void, options: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSearchW(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, index: u32, symtag: u32, mask: ::windows_core_sys::PCWSTR, address: u64, enumsymbolscallback: PSYM_ENUMERATESYMBOLS_CALLBACKW, usercontext: *const ::core::ffi::c_void, options: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSetContext(hprocess: ::win32_foundation_sys::HANDLE, stackframe: *const IMAGEHLP_STACK_FRAME, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSetExtendedOption(option: IMAGEHLP_EXTENDED_OPTIONS, value: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSetHomeDirectory(hprocess: ::win32_foundation_sys::HANDLE, dir: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
+    pub fn SymSetHomeDirectoryW(hprocess: ::win32_foundation_sys::HANDLE, dir: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
     pub fn SymSetOptions(symoptions: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetParentWindow(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetScopeFromAddr(hprocess: super::super::super::Foundation::HANDLE, address: u64) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetScopeFromIndex(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64, index: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetScopeFromInlineContext(hprocess: super::super::super::Foundation::HANDLE, address: u64, inlinecontext: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetSearchPath(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSetSearchPathW(hprocess: super::super::super::Foundation::HANDLE, searchpatha: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvDeltaName(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows_core_sys::PCSTR, r#type: ::windows_core_sys::PCSTR, file1: ::windows_core_sys::PCSTR, file2: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvDeltaNameW(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows_core_sys::PCWSTR, r#type: ::windows_core_sys::PCWSTR, file1: ::windows_core_sys::PCWSTR, file2: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvGetFileIndexInfo(file: ::windows_core_sys::PCSTR, info: *mut SYMSRV_INDEX_INFO, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvGetFileIndexInfoW(file: ::windows_core_sys::PCWSTR, info: *mut SYMSRV_INDEX_INFOW, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvGetFileIndexString(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, index: ::windows_core_sys::PSTR, size: usize, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvGetFileIndexStringW(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, index: ::windows_core_sys::PWSTR, size: usize, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvGetFileIndexes(file: ::windows_core_sys::PCSTR, id: *mut ::windows_core_sys::GUID, val1: *mut u32, val2: *mut u32, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvGetFileIndexesW(file: ::windows_core_sys::PCWSTR, id: *mut ::windows_core_sys::GUID, val1: *mut u32, val2: *mut u32, flags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvGetSupplement(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows_core_sys::PCSTR, node: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvGetSupplementW(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows_core_sys::PCWSTR, node: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvIsStore(hprocess: super::super::super::Foundation::HANDLE, path: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvIsStoreW(hprocess: super::super::super::Foundation::HANDLE, path: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvStoreFile(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, flags: SYM_SRV_STORE_FILE_FLAGS) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvStoreFileW(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, flags: SYM_SRV_STORE_FILE_FLAGS) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvStoreSupplement(hprocess: super::super::super::Foundation::HANDLE, srvpath: ::windows_core_sys::PCSTR, node: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, flags: u32) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymSrvStoreSupplementW(hprocess: super::super::super::Foundation::HANDLE, sympath: ::windows_core_sys::PCWSTR, node: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, flags: u32) -> ::windows_core_sys::PWSTR;
+    pub fn SymSetParentWindow(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSetScopeFromAddr(hprocess: ::win32_foundation_sys::HANDLE, address: u64) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSetScopeFromIndex(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64, index: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSetScopeFromInlineContext(hprocess: ::win32_foundation_sys::HANDLE, address: u64, inlinecontext: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSetSearchPath(hprocess: ::win32_foundation_sys::HANDLE, searchpatha: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSetSearchPathW(hprocess: ::win32_foundation_sys::HANDLE, searchpatha: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSrvDeltaName(hprocess: ::win32_foundation_sys::HANDLE, sympath: ::windows_core_sys::PCSTR, r#type: ::windows_core_sys::PCSTR, file1: ::windows_core_sys::PCSTR, file2: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
+    pub fn SymSrvDeltaNameW(hprocess: ::win32_foundation_sys::HANDLE, sympath: ::windows_core_sys::PCWSTR, r#type: ::windows_core_sys::PCWSTR, file1: ::windows_core_sys::PCWSTR, file2: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
+    pub fn SymSrvGetFileIndexInfo(file: ::windows_core_sys::PCSTR, info: *mut SYMSRV_INDEX_INFO, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSrvGetFileIndexInfoW(file: ::windows_core_sys::PCWSTR, info: *mut SYMSRV_INDEX_INFOW, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSrvGetFileIndexString(hprocess: ::win32_foundation_sys::HANDLE, srvpath: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, index: ::windows_core_sys::PSTR, size: usize, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSrvGetFileIndexStringW(hprocess: ::win32_foundation_sys::HANDLE, srvpath: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, index: ::windows_core_sys::PWSTR, size: usize, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSrvGetFileIndexes(file: ::windows_core_sys::PCSTR, id: *mut ::windows_core_sys::GUID, val1: *mut u32, val2: *mut u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSrvGetFileIndexesW(file: ::windows_core_sys::PCWSTR, id: *mut ::windows_core_sys::GUID, val1: *mut u32, val2: *mut u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSrvGetSupplement(hprocess: ::win32_foundation_sys::HANDLE, sympath: ::windows_core_sys::PCSTR, node: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
+    pub fn SymSrvGetSupplementW(hprocess: ::win32_foundation_sys::HANDLE, sympath: ::windows_core_sys::PCWSTR, node: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
+    pub fn SymSrvIsStore(hprocess: ::win32_foundation_sys::HANDLE, path: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSrvIsStoreW(hprocess: ::win32_foundation_sys::HANDLE, path: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SymSrvStoreFile(hprocess: ::win32_foundation_sys::HANDLE, srvpath: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, flags: SYM_SRV_STORE_FILE_FLAGS) -> ::windows_core_sys::PSTR;
+    pub fn SymSrvStoreFileW(hprocess: ::win32_foundation_sys::HANDLE, srvpath: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, flags: SYM_SRV_STORE_FILE_FLAGS) -> ::windows_core_sys::PWSTR;
+    pub fn SymSrvStoreSupplement(hprocess: ::win32_foundation_sys::HANDLE, srvpath: ::windows_core_sys::PCSTR, node: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, flags: u32) -> ::windows_core_sys::PSTR;
+    pub fn SymSrvStoreSupplementW(hprocess: ::win32_foundation_sys::HANDLE, sympath: ::windows_core_sys::PCWSTR, node: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, flags: u32) -> ::windows_core_sys::PWSTR;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymUnDName(sym: *const IMAGEHLP_SYMBOL, undecname: ::windows_core_sys::PSTR, undecnamelength: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymUnDName64(sym: *const IMAGEHLP_SYMBOL64, undecname: ::windows_core_sys::PSTR, undecnamelength: u32) -> super::super::super::Foundation::BOOL;
+    pub fn SymUnDName(sym: *const IMAGEHLP_SYMBOL, undecname: ::windows_core_sys::PSTR, undecnamelength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymUnDName64(sym: *const IMAGEHLP_SYMBOL64, undecname: ::windows_core_sys::PSTR, undecnamelength: u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(target_arch = "x86")]
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymUnloadModule(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SymUnloadModule64(hprocess: super::super::super::Foundation::HANDLE, baseofdll: u64) -> super::super::super::Foundation::BOOL;
+    pub fn SymUnloadModule(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SymUnloadModule64(hprocess: ::win32_foundation_sys::HANDLE, baseofdll: u64) -> ::win32_foundation_sys::BOOL;
     pub fn TerminateProcessOnMemoryExhaustion(failedallocationsize: usize);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TouchFileTimes(filehandle: super::super::super::Foundation::HANDLE, psystemtime: *const super::super::super::Foundation::SYSTEMTIME) -> super::super::super::Foundation::BOOL;
+    pub fn TouchFileTimes(filehandle: ::win32_foundation_sys::HANDLE, psystemtime: *const ::win32_foundation_sys::SYSTEMTIME) -> ::win32_foundation_sys::BOOL;
     pub fn UnDecorateSymbolName(name: ::windows_core_sys::PCSTR, outputstring: ::windows_core_sys::PSTR, maxstringlength: u32, flags: u32) -> u32;
     pub fn UnDecorateSymbolNameW(name: ::windows_core_sys::PCWSTR, outputstring: ::windows_core_sys::PWSTR, maxstringlength: u32, flags: u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn UnMapAndLoad(loadedimage: *mut LOADED_IMAGE) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn UnMapAndLoad(loadedimage: *mut LOADED_IMAGE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Kernel")]
     pub fn UnhandledExceptionFilter(exceptioninfo: *const EXCEPTION_POINTERS) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UpdateDebugInfoFile(imagefilename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, ntheaders: *const IMAGE_NT_HEADERS32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UpdateDebugInfoFileEx(imagefilename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, ntheaders: *const IMAGE_NT_HEADERS32, oldchecksum: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
-    pub fn WaitForDebugEvent(lpdebugevent: *mut DEBUG_EVENT, dwmilliseconds: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
-    pub fn WaitForDebugEventEx(lpdebugevent: *mut DEBUG_EVENT, dwmilliseconds: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Wow64GetThreadContext(hthread: super::super::super::Foundation::HANDLE, lpcontext: *mut WOW64_CONTEXT) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Wow64GetThreadSelectorEntry(hthread: super::super::super::Foundation::HANDLE, dwselector: u32, lpselectorentry: *mut WOW64_LDT_ENTRY) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Wow64SetThreadContext(hthread: super::super::super::Foundation::HANDLE, lpcontext: *const WOW64_CONTEXT) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WriteProcessMemory(hprocess: super::super::super::Foundation::HANDLE, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, lpnumberofbyteswritten: *mut usize) -> super::super::super::Foundation::BOOL;
+    pub fn UpdateDebugInfoFile(imagefilename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, ntheaders: *const IMAGE_NT_HEADERS32) -> ::win32_foundation_sys::BOOL;
+    pub fn UpdateDebugInfoFileEx(imagefilename: ::windows_core_sys::PCSTR, symbolpath: ::windows_core_sys::PCSTR, debugfilepath: ::windows_core_sys::PSTR, ntheaders: *const IMAGE_NT_HEADERS32, oldchecksum: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Threading")]
+    pub fn WaitForDebugEvent(lpdebugevent: *mut DEBUG_EVENT, dwmilliseconds: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Threading")]
+    pub fn WaitForDebugEventEx(lpdebugevent: *mut DEBUG_EVENT, dwmilliseconds: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn Wow64GetThreadContext(hthread: ::win32_foundation_sys::HANDLE, lpcontext: *mut WOW64_CONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn Wow64GetThreadSelectorEntry(hthread: ::win32_foundation_sys::HANDLE, dwselector: u32, lpselectorentry: *mut WOW64_LDT_ENTRY) -> ::win32_foundation_sys::BOOL;
+    pub fn Wow64SetThreadContext(hthread: ::win32_foundation_sys::HANDLE, lpcontext: *const WOW64_CONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn WriteProcessMemory(hprocess: ::win32_foundation_sys::HANDLE, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nsize: usize, lpnumberofbyteswritten: *mut usize) -> ::win32_foundation_sys::BOOL;
 }
 pub const ACTIVPROF_E_PROFILER_ABSENT: ::windows_core_sys::HRESULT = -2147220991i32;
 pub const ACTIVPROF_E_PROFILER_PRESENT: ::windows_core_sys::HRESULT = -2147220992i32;
@@ -1755,11 +1519,11 @@ impl ::core::clone::Clone for CPU_INFORMATION_1 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 pub struct CREATE_PROCESS_DEBUG_INFO {
-    pub hFile: super::super::super::Foundation::HANDLE,
-    pub hProcess: super::super::super::Foundation::HANDLE,
-    pub hThread: super::super::super::Foundation::HANDLE,
+    pub hFile: ::win32_foundation_sys::HANDLE,
+    pub hProcess: ::win32_foundation_sys::HANDLE,
+    pub hThread: ::win32_foundation_sys::HANDLE,
     pub lpBaseOfImage: *mut ::core::ffi::c_void,
     pub dwDebugInfoFileOffset: u32,
     pub nDebugInfoSize: u32,
@@ -1768,24 +1532,24 @@ pub struct CREATE_PROCESS_DEBUG_INFO {
     pub lpImageName: *mut ::core::ffi::c_void,
     pub fUnicode: u16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 impl ::core::marker::Copy for CREATE_PROCESS_DEBUG_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 impl ::core::clone::Clone for CREATE_PROCESS_DEBUG_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 pub struct CREATE_THREAD_DEBUG_INFO {
-    pub hThread: super::super::super::Foundation::HANDLE,
+    pub hThread: ::win32_foundation_sys::HANDLE,
     pub lpThreadLocalBase: *mut ::core::ffi::c_void,
     pub lpStartAddress: super::super::Threading::LPTHREAD_START_ROUTINE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 impl ::core::marker::Copy for CREATE_THREAD_DEBUG_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 impl ::core::clone::Clone for CREATE_THREAD_DEBUG_INFO {
     fn clone(&self) -> Self {
         *self
@@ -2324,23 +2088,23 @@ pub const DEBUG_ENGOPT_PREFER_DML: u32 = 262144u32;
 pub const DEBUG_ENGOPT_PREFER_TRACE_FILES: u32 = 8388608u32;
 pub const DEBUG_ENGOPT_SYNCHRONIZE_BREAKPOINTS: u32 = 2048u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 pub struct DEBUG_EVENT {
     pub dwDebugEventCode: DEBUG_EVENT_CODE,
     pub dwProcessId: u32,
     pub dwThreadId: u32,
     pub u: DEBUG_EVENT_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 impl ::core::marker::Copy for DEBUG_EVENT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 impl ::core::clone::Clone for DEBUG_EVENT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 pub union DEBUG_EVENT_0 {
     pub Exception: EXCEPTION_DEBUG_INFO,
     pub CreateThread: CREATE_THREAD_DEBUG_INFO,
@@ -2352,9 +2116,9 @@ pub union DEBUG_EVENT_0 {
     pub DebugString: OUTPUT_DEBUG_STRING_INFO,
     pub RipInfo: RIP_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 impl ::core::marker::Copy for DEBUG_EVENT_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
+#[cfg(feature = "Win32_System_Threading")]
 impl ::core::clone::Clone for DEBUG_EVENT_0 {
     fn clone(&self) -> Self {
         *self
@@ -2602,14 +2366,11 @@ impl ::core::clone::Clone for DEBUG_LAST_EVENT_INFO_BREAKPOINT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_LAST_EVENT_INFO_EXCEPTION {
     pub ExceptionRecord: EXCEPTION_RECORD64,
     pub FirstChance: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_LAST_EVENT_INFO_EXCEPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_LAST_EVENT_INFO_EXCEPTION {
     fn clone(&self) -> Self {
         *self
@@ -2824,7 +2585,6 @@ pub const DEBUG_PHYSICAL_DEFAULT: u32 = 0u32;
 pub const DEBUG_PHYSICAL_UNCACHED: u32 = 2u32;
 pub const DEBUG_PHYSICAL_WRITE_COMBINED: u32 = 3u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DEBUG_PROCESSOR_IDENTIFICATION_ALL {
     pub Alpha: DEBUG_PROCESSOR_IDENTIFICATION_ALPHA,
     pub Amd64: DEBUG_PROCESSOR_IDENTIFICATION_AMD64,
@@ -2833,9 +2593,7 @@ pub union DEBUG_PROCESSOR_IDENTIFICATION_ALL {
     pub Arm: DEBUG_PROCESSOR_IDENTIFICATION_ARM,
     pub Arm64: DEBUG_PROCESSOR_IDENTIFICATION_ARM64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_PROCESSOR_IDENTIFICATION_ALL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_PROCESSOR_IDENTIFICATION_ALL {
     fn clone(&self) -> Self {
         *self
@@ -2853,79 +2611,64 @@ impl ::core::clone::Clone for DEBUG_PROCESSOR_IDENTIFICATION_ALPHA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_PROCESSOR_IDENTIFICATION_AMD64 {
     pub Family: u32,
     pub Model: u32,
     pub Stepping: u32,
-    pub VendorString: [super::super::super::Foundation::CHAR; 16],
+    pub VendorString: [::win32_foundation_sys::CHAR; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_PROCESSOR_IDENTIFICATION_AMD64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_PROCESSOR_IDENTIFICATION_AMD64 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_PROCESSOR_IDENTIFICATION_ARM {
     pub Model: u32,
     pub Revision: u32,
-    pub VendorString: [super::super::super::Foundation::CHAR; 16],
+    pub VendorString: [::win32_foundation_sys::CHAR; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_PROCESSOR_IDENTIFICATION_ARM {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_PROCESSOR_IDENTIFICATION_ARM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_PROCESSOR_IDENTIFICATION_ARM64 {
     pub Model: u32,
     pub Revision: u32,
-    pub VendorString: [super::super::super::Foundation::CHAR; 16],
+    pub VendorString: [::win32_foundation_sys::CHAR; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_PROCESSOR_IDENTIFICATION_ARM64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_PROCESSOR_IDENTIFICATION_ARM64 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_PROCESSOR_IDENTIFICATION_IA64 {
     pub Model: u32,
     pub Revision: u32,
     pub Family: u32,
     pub ArchRev: u32,
-    pub VendorString: [super::super::super::Foundation::CHAR; 16],
+    pub VendorString: [::win32_foundation_sys::CHAR; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_PROCESSOR_IDENTIFICATION_IA64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_PROCESSOR_IDENTIFICATION_IA64 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_PROCESSOR_IDENTIFICATION_X86 {
     pub Family: u32,
     pub Model: u32,
     pub Stepping: u32,
-    pub VendorString: [super::super::super::Foundation::CHAR; 16],
+    pub VendorString: [::win32_foundation_sys::CHAR; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_PROCESSOR_IDENTIFICATION_X86 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_PROCESSOR_IDENTIFICATION_X86 {
     fn clone(&self) -> Self {
         *self
@@ -3060,7 +2803,6 @@ pub const DEBUG_STACK_ARGUMENTS: u32 = 1u32;
 pub const DEBUG_STACK_COLUMN_NAMES: u32 = 16u32;
 pub const DEBUG_STACK_DML: u32 = 2048u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_STACK_FRAME {
     pub InstructionOffset: u64,
     pub ReturnOffset: u64,
@@ -3069,12 +2811,10 @@ pub struct DEBUG_STACK_FRAME {
     pub FuncTableEntry: u64,
     pub Params: [u64; 4],
     pub Reserved: [u64; 6],
-    pub Virtual: super::super::super::Foundation::BOOL,
+    pub Virtual: ::win32_foundation_sys::BOOL,
     pub FrameNumber: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_STACK_FRAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_STACK_FRAME {
     fn clone(&self) -> Self {
         *self
@@ -3084,7 +2824,6 @@ pub const DEBUG_STACK_FRAME_ADDRESSES: u32 = 8u32;
 pub const DEBUG_STACK_FRAME_ADDRESSES_RA_ONLY: u32 = 256u32;
 pub const DEBUG_STACK_FRAME_ARCH: u32 = 16384u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_STACK_FRAME_EX {
     pub InstructionOffset: u64,
     pub ReturnOffset: u64,
@@ -3093,14 +2832,12 @@ pub struct DEBUG_STACK_FRAME_EX {
     pub FuncTableEntry: u64,
     pub Params: [u64; 4],
     pub Reserved: [u64; 6],
-    pub Virtual: super::super::super::Foundation::BOOL,
+    pub Virtual: ::win32_foundation_sys::BOOL,
     pub FrameNumber: u32,
     pub InlineFrameContext: u32,
     pub Reserved1: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_STACK_FRAME_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_STACK_FRAME_EX {
     fn clone(&self) -> Self {
         *self
@@ -3294,22 +3031,18 @@ pub const DEBUG_USER_WINDOWS_PROCESS_SERVER: u32 = 1u32;
 pub const DEBUG_USER_WINDOWS_REPT: u32 = 3u32;
 pub const DEBUG_USER_WINDOWS_SMALL_DUMP: u32 = 1024u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_VALUE {
     pub Anonymous: DEBUG_VALUE_0,
     pub TailOfRawBytes: u32,
     pub Type: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_VALUE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_VALUE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DEBUG_VALUE_0 {
     pub I8: u8,
     pub I16: u16,
@@ -3330,51 +3063,40 @@ pub union DEBUG_VALUE_0 {
     pub F128Parts64: DEBUG_VALUE_0_1,
     pub RawBytes: [u8; 24],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_VALUE_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_VALUE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_VALUE_0_0 {
     pub I64: u64,
-    pub Nat: super::super::super::Foundation::BOOL,
+    pub Nat: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_VALUE_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_VALUE_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_VALUE_0_1 {
     pub LowPart: u64,
     pub HighPart: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_VALUE_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_VALUE_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEBUG_VALUE_0_2 {
     pub LowPart: u32,
     pub HighPart: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEBUG_VALUE_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEBUG_VALUE_0_2 {
     fn clone(&self) -> Self {
         *self
@@ -3400,11 +3122,10 @@ pub const DEBUG_VSOURCE_DUMP_WITHOUT_MEMINFO: u32 = 3u32;
 pub const DEBUG_VSOURCE_INVALID: u32 = 0u32;
 pub const DEBUG_VSOURCE_MAPPED_IMAGE: u32 = 2u32;
 pub const DEBUG_WAIT_DEFAULT: u32 = 0u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type DIGEST_FUNCTION = ::core::option::Option<unsafe extern "system" fn(refdata: *mut ::core::ffi::c_void, pdata: *mut u8, dwlength: u32) -> super::super::super::Foundation::BOOL>;
+pub type DIGEST_FUNCTION = ::core::option::Option<unsafe extern "system" fn(refdata: *mut ::core::ffi::c_void, pdata: *mut u8, dwlength: u32) -> ::win32_foundation_sys::BOOL>;
 #[repr(C)]
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct DISPATCHER_CONTEXT {
     pub ControlPc: usize,
     pub ImageBase: usize,
@@ -3416,14 +3137,14 @@ pub struct DISPATCHER_CONTEXT {
     pub HandlerData: *mut ::core::ffi::c_void,
     pub HistoryTable: *mut UNWIND_HISTORY_TABLE,
     pub ScopeIndex: u32,
-    pub ControlPcIsUnwound: super::super::super::Foundation::BOOLEAN,
+    pub ControlPcIsUnwound: ::win32_foundation_sys::BOOLEAN,
     pub NonVolatileRegisters: *mut u8,
 }
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for DISPATCHER_CONTEXT {}
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for DISPATCHER_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -3431,7 +3152,7 @@ impl ::core::clone::Clone for DISPATCHER_CONTEXT {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct DISPATCHER_CONTEXT {
     pub ControlPc: u64,
     pub ImageBase: u64,
@@ -3446,10 +3167,10 @@ pub struct DISPATCHER_CONTEXT {
     pub Fill0: u32,
 }
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for DISPATCHER_CONTEXT {}
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for DISPATCHER_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -3495,7 +3216,6 @@ impl ::core::clone::Clone for DUMP_FILE_ATTRIBUTES_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DUMP_HEADER32 {
     pub Signature: u32,
     pub ValidDump: u32,
@@ -3512,7 +3232,7 @@ pub struct DUMP_HEADER32 {
     pub BugCheckParameter2: u32,
     pub BugCheckParameter3: u32,
     pub BugCheckParameter4: u32,
-    pub VersionUser: [super::super::super::Foundation::CHAR; 32],
+    pub VersionUser: [::win32_foundation_sys::CHAR; 32],
     pub PaeEnabled: u8,
     pub KdSecondaryVersion: u8,
     pub Spare3: [u8; 2],
@@ -3520,7 +3240,7 @@ pub struct DUMP_HEADER32 {
     pub Anonymous: DUMP_HEADER32_0,
     pub ContextRecord: [u8; 1200],
     pub Exception: EXCEPTION_RECORD32,
-    pub Comment: [super::super::super::Foundation::CHAR; 128],
+    pub Comment: [::win32_foundation_sys::CHAR; 128],
     pub Attributes: DUMP_FILE_ATTRIBUTES,
     pub BootId: u32,
     pub _reserved0: [u8; 1760],
@@ -3536,30 +3256,24 @@ pub struct DUMP_HEADER32 {
     pub SystemTime: i64,
     pub _reserved3: [u8; 56],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DUMP_HEADER32 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DUMP_HEADER32 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DUMP_HEADER32_0 {
     pub PhysicalMemoryBlock: PHYSICAL_MEMORY_DESCRIPTOR32,
     pub PhysicalMemoryBlockBuffer: [u8; 700],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DUMP_HEADER32_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DUMP_HEADER32_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DUMP_HEADER64 {
     pub Signature: u32,
     pub ValidDump: u32,
@@ -3576,7 +3290,7 @@ pub struct DUMP_HEADER64 {
     pub BugCheckParameter2: u64,
     pub BugCheckParameter3: u64,
     pub BugCheckParameter4: u64,
-    pub VersionUser: [super::super::super::Foundation::CHAR; 32],
+    pub VersionUser: [::win32_foundation_sys::CHAR; 32],
     pub KdDebuggerDataBlock: u64,
     pub Anonymous: DUMP_HEADER64_0,
     pub ContextRecord: [u8; 3000],
@@ -3584,7 +3298,7 @@ pub struct DUMP_HEADER64 {
     pub DumpType: u32,
     pub RequiredDumpSpace: i64,
     pub SystemTime: i64,
-    pub Comment: [super::super::super::Foundation::CHAR; 128],
+    pub Comment: [::win32_foundation_sys::CHAR; 128],
     pub SystemUpTime: i64,
     pub MiniDumpFields: u32,
     pub SecondaryDataState: u32,
@@ -3598,23 +3312,18 @@ pub struct DUMP_HEADER64 {
     pub BootId: u32,
     pub _reserved0: [u8; 4008],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DUMP_HEADER64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DUMP_HEADER64 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DUMP_HEADER64_0 {
     pub PhysicalMemoryBlock: PHYSICAL_MEMORY_DESCRIPTOR64,
     pub PhysicalMemoryBlockBuffer: [u8; 700],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DUMP_HEADER64_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DUMP_HEADER64_0 {
     fn clone(&self) -> Self {
         *self
@@ -3626,53 +3335,44 @@ pub type DebugBaseEventCallbacks = *mut ::core::ffi::c_void;
 pub type DebugBaseEventCallbacksWide = *mut ::core::ffi::c_void;
 pub const DebugHelper: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 201113696, data2: 35869, data3: 4560, data4: [172, 205, 0, 170, 0, 96, 39, 92] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DebugPropertyInfo {
     pub m_dwValidFields: u32,
-    pub m_bstrName: super::super::super::Foundation::BSTR,
-    pub m_bstrType: super::super::super::Foundation::BSTR,
-    pub m_bstrValue: super::super::super::Foundation::BSTR,
-    pub m_bstrFullName: super::super::super::Foundation::BSTR,
+    pub m_bstrName: ::win32_foundation_sys::BSTR,
+    pub m_bstrType: ::win32_foundation_sys::BSTR,
+    pub m_bstrValue: ::win32_foundation_sys::BSTR,
+    pub m_bstrFullName: ::win32_foundation_sys::BSTR,
     pub m_dwAttrib: u32,
     pub m_pDebugProp: IDebugProperty,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DebugPropertyInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DebugPropertyInfo {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DebugStackFrameDescriptor {
     pub pdsf: IDebugStackFrame,
     pub dwMin: u32,
     pub dwLim: u32,
-    pub fFinal: super::super::super::Foundation::BOOL,
+    pub fFinal: ::win32_foundation_sys::BOOL,
     pub punkFinal: ::windows_core_sys::IUnknown,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DebugStackFrameDescriptor {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DebugStackFrameDescriptor {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DebugStackFrameDescriptor64 {
     pub pdsf: IDebugStackFrame,
     pub dwMin: u64,
     pub dwLim: u64,
-    pub fFinal: super::super::super::Foundation::BOOL,
+    pub fFinal: ::win32_foundation_sys::BOOL,
     pub punkFinal: ::windows_core_sys::IUnknown,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DebugStackFrameDescriptor64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DebugStackFrameDescriptor64 {
     fn clone(&self) -> Self {
         *self
@@ -3697,73 +3397,63 @@ pub const EVENT_SRCSPEW: u32 = 100u32;
 pub const EVENT_SRCSPEW_END: u32 = 199u32;
 pub const EVENT_SRCSPEW_START: u32 = 100u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXCEPTION_DEBUG_INFO {
     pub ExceptionRecord: EXCEPTION_RECORD,
     pub dwFirstChance: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXCEPTION_DEBUG_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXCEPTION_DEBUG_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct EXCEPTION_POINTERS {
     pub ExceptionRecord: *mut EXCEPTION_RECORD,
     pub ContextRecord: *mut CONTEXT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for EXCEPTION_POINTERS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for EXCEPTION_POINTERS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXCEPTION_RECORD {
-    pub ExceptionCode: super::super::super::Foundation::NTSTATUS,
+    pub ExceptionCode: ::win32_foundation_sys::NTSTATUS,
     pub ExceptionFlags: u32,
     pub ExceptionRecord: *mut EXCEPTION_RECORD,
     pub ExceptionAddress: *mut ::core::ffi::c_void,
     pub NumberParameters: u32,
     pub ExceptionInformation: [usize; 15],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXCEPTION_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXCEPTION_RECORD {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXCEPTION_RECORD32 {
-    pub ExceptionCode: super::super::super::Foundation::NTSTATUS,
+    pub ExceptionCode: ::win32_foundation_sys::NTSTATUS,
     pub ExceptionFlags: u32,
     pub ExceptionRecord: u32,
     pub ExceptionAddress: u32,
     pub NumberParameters: u32,
     pub ExceptionInformation: [u32; 15],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXCEPTION_RECORD32 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXCEPTION_RECORD32 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXCEPTION_RECORD64 {
-    pub ExceptionCode: super::super::super::Foundation::NTSTATUS,
+    pub ExceptionCode: ::win32_foundation_sys::NTSTATUS,
     pub ExceptionFlags: u32,
     pub ExceptionRecord: u64,
     pub ExceptionAddress: u64,
@@ -3771,9 +3461,7 @@ pub struct EXCEPTION_RECORD64 {
     pub __unusedAlignment: u32,
     pub ExceptionInformation: [u64; 15],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXCEPTION_RECORD64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXCEPTION_RECORD64 {
     fn clone(&self) -> Self {
         *self
@@ -3856,7 +3544,6 @@ pub const EXT_API_VERSION_NUMBER: u32 = 5u32;
 pub const EXT_API_VERSION_NUMBER32: u32 = 5u32;
 pub const EXT_API_VERSION_NUMBER64: u32 = 6u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXT_FIND_FILE {
     pub FileName: ::windows_core_sys::PCWSTR,
     pub IndexedSize: u64,
@@ -3867,13 +3554,11 @@ pub struct EXT_FIND_FILE {
     pub Flags: u32,
     pub FileMapping: *mut ::core::ffi::c_void,
     pub FileMappingSize: u64,
-    pub FileHandle: super::super::super::Foundation::HANDLE,
+    pub FileHandle: ::win32_foundation_sys::HANDLE,
     pub FoundFileName: ::windows_core_sys::PWSTR,
     pub FoundFileNameChars: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXT_FIND_FILE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXT_FIND_FILE {
     fn clone(&self) -> Self {
         *self
@@ -3961,7 +3646,7 @@ pub type ErrorClass = i32;
 pub const ErrorClassWarning: ErrorClass = 0i32;
 pub const ErrorClassError: ErrorClass = 1i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
 pub struct ExtendedDebugPropertyInfo {
     pub dwValidFields: u32,
     pub pszName: ::windows_core_sys::PWSTR,
@@ -3976,9 +3661,9 @@ pub struct ExtendedDebugPropertyInfo {
     pub plbValue: super::super::Com::StructuredStorage::ILockBytes,
     pub pDebugExtProp: IDebugExtendedProperty,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for ExtendedDebugPropertyInfo {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for ExtendedDebugPropertyInfo {
     fn clone(&self) -> Self {
         *self
@@ -4616,61 +4301,52 @@ impl ::core::clone::Clone for IMAGEHLP_CBA_READ_MEMORY {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_DEFERRED_SYMBOL_LOAD {
     pub SizeOfStruct: u32,
     pub BaseOfImage: u32,
     pub CheckSum: u32,
     pub TimeDateStamp: u32,
-    pub FileName: [super::super::super::Foundation::CHAR; 260],
-    pub Reparse: super::super::super::Foundation::BOOLEAN,
-    pub hFile: super::super::super::Foundation::HANDLE,
+    pub FileName: [::win32_foundation_sys::CHAR; 260],
+    pub Reparse: ::win32_foundation_sys::BOOLEAN,
+    pub hFile: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_DEFERRED_SYMBOL_LOAD {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_DEFERRED_SYMBOL_LOAD {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_DEFERRED_SYMBOL_LOAD64 {
     pub SizeOfStruct: u32,
     pub BaseOfImage: u64,
     pub CheckSum: u32,
     pub TimeDateStamp: u32,
-    pub FileName: [super::super::super::Foundation::CHAR; 260],
-    pub Reparse: super::super::super::Foundation::BOOLEAN,
-    pub hFile: super::super::super::Foundation::HANDLE,
+    pub FileName: [::win32_foundation_sys::CHAR; 260],
+    pub Reparse: ::win32_foundation_sys::BOOLEAN,
+    pub hFile: ::win32_foundation_sys::HANDLE,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_DEFERRED_SYMBOL_LOAD64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_DEFERRED_SYMBOL_LOAD64 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_DEFERRED_SYMBOL_LOADW64 {
     pub SizeOfStruct: u32,
     pub BaseOfImage: u64,
     pub CheckSum: u32,
     pub TimeDateStamp: u32,
     pub FileName: [u16; 261],
-    pub Reparse: super::super::super::Foundation::BOOLEAN,
-    pub hFile: super::super::super::Foundation::HANDLE,
+    pub Reparse: ::win32_foundation_sys::BOOLEAN,
+    pub hFile: ::win32_foundation_sys::HANDLE,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_DEFERRED_SYMBOL_LOADW64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_DEFERRED_SYMBOL_LOADW64 {
     fn clone(&self) -> Self {
         *self
@@ -4678,7 +4354,6 @@ impl ::core::clone::Clone for IMAGEHLP_DEFERRED_SYMBOL_LOADW64 {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_DUPLICATE_SYMBOL {
     pub SizeOfStruct: u32,
     pub NumberOfDups: u32,
@@ -4686,26 +4361,21 @@ pub struct IMAGEHLP_DUPLICATE_SYMBOL {
     pub SelectedSymbol: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_DUPLICATE_SYMBOL {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_DUPLICATE_SYMBOL {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_DUPLICATE_SYMBOL64 {
     pub SizeOfStruct: u32,
     pub NumberOfDups: u32,
     pub Symbol: *mut IMAGEHLP_SYMBOL64,
     pub SelectedSymbol: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_DUPLICATE_SYMBOL64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_DUPLICATE_SYMBOL64 {
     fn clone(&self) -> Self {
         *self
@@ -4816,7 +4486,6 @@ impl ::core::clone::Clone for IMAGEHLP_LINEW64 {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_MODULE {
     pub SizeOfStruct: u32,
     pub BaseOfImage: u32,
@@ -4825,22 +4494,19 @@ pub struct IMAGEHLP_MODULE {
     pub CheckSum: u32,
     pub NumSyms: u32,
     pub SymType: SYM_TYPE,
-    pub ModuleName: [super::super::super::Foundation::CHAR; 32],
-    pub ImageName: [super::super::super::Foundation::CHAR; 256],
-    pub LoadedImageName: [super::super::super::Foundation::CHAR; 256],
+    pub ModuleName: [::win32_foundation_sys::CHAR; 32],
+    pub ImageName: [::win32_foundation_sys::CHAR; 256],
+    pub LoadedImageName: [::win32_foundation_sys::CHAR; 256],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_MODULE {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_MODULE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_MODULE64 {
     pub SizeOfStruct: u32,
     pub BaseOfImage: u64,
@@ -4849,42 +4515,37 @@ pub struct IMAGEHLP_MODULE64 {
     pub CheckSum: u32,
     pub NumSyms: u32,
     pub SymType: SYM_TYPE,
-    pub ModuleName: [super::super::super::Foundation::CHAR; 32],
-    pub ImageName: [super::super::super::Foundation::CHAR; 256],
-    pub LoadedImageName: [super::super::super::Foundation::CHAR; 256],
-    pub LoadedPdbName: [super::super::super::Foundation::CHAR; 256],
+    pub ModuleName: [::win32_foundation_sys::CHAR; 32],
+    pub ImageName: [::win32_foundation_sys::CHAR; 256],
+    pub LoadedImageName: [::win32_foundation_sys::CHAR; 256],
+    pub LoadedPdbName: [::win32_foundation_sys::CHAR; 256],
     pub CVSig: u32,
-    pub CVData: [super::super::super::Foundation::CHAR; 780],
+    pub CVData: [::win32_foundation_sys::CHAR; 780],
     pub PdbSig: u32,
     pub PdbSig70: ::windows_core_sys::GUID,
     pub PdbAge: u32,
-    pub PdbUnmatched: super::super::super::Foundation::BOOL,
-    pub DbgUnmatched: super::super::super::Foundation::BOOL,
-    pub LineNumbers: super::super::super::Foundation::BOOL,
-    pub GlobalSymbols: super::super::super::Foundation::BOOL,
-    pub TypeInfo: super::super::super::Foundation::BOOL,
-    pub SourceIndexed: super::super::super::Foundation::BOOL,
-    pub Publics: super::super::super::Foundation::BOOL,
+    pub PdbUnmatched: ::win32_foundation_sys::BOOL,
+    pub DbgUnmatched: ::win32_foundation_sys::BOOL,
+    pub LineNumbers: ::win32_foundation_sys::BOOL,
+    pub GlobalSymbols: ::win32_foundation_sys::BOOL,
+    pub TypeInfo: ::win32_foundation_sys::BOOL,
+    pub SourceIndexed: ::win32_foundation_sys::BOOL,
+    pub Publics: ::win32_foundation_sys::BOOL,
     pub MachineType: u32,
     pub Reserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_MODULE64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_MODULE64 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_MODULE64_EX {
     pub Module: IMAGEHLP_MODULE64,
     pub RegionFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_MODULE64_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_MODULE64_EX {
     fn clone(&self) -> Self {
         *self
@@ -4913,7 +4574,6 @@ impl ::core::clone::Clone for IMAGEHLP_MODULEW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_MODULEW64 {
     pub SizeOfStruct: u32,
     pub BaseOfImage: u64,
@@ -4931,33 +4591,28 @@ pub struct IMAGEHLP_MODULEW64 {
     pub PdbSig: u32,
     pub PdbSig70: ::windows_core_sys::GUID,
     pub PdbAge: u32,
-    pub PdbUnmatched: super::super::super::Foundation::BOOL,
-    pub DbgUnmatched: super::super::super::Foundation::BOOL,
-    pub LineNumbers: super::super::super::Foundation::BOOL,
-    pub GlobalSymbols: super::super::super::Foundation::BOOL,
-    pub TypeInfo: super::super::super::Foundation::BOOL,
-    pub SourceIndexed: super::super::super::Foundation::BOOL,
-    pub Publics: super::super::super::Foundation::BOOL,
+    pub PdbUnmatched: ::win32_foundation_sys::BOOL,
+    pub DbgUnmatched: ::win32_foundation_sys::BOOL,
+    pub LineNumbers: ::win32_foundation_sys::BOOL,
+    pub GlobalSymbols: ::win32_foundation_sys::BOOL,
+    pub TypeInfo: ::win32_foundation_sys::BOOL,
+    pub SourceIndexed: ::win32_foundation_sys::BOOL,
+    pub Publics: ::win32_foundation_sys::BOOL,
     pub MachineType: u32,
     pub Reserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_MODULEW64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_MODULEW64 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_MODULEW64_EX {
     pub Module: IMAGEHLP_MODULEW64,
     pub RegionFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_MODULEW64_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_MODULEW64_EX {
     fn clone(&self) -> Self {
         *self
@@ -4982,7 +4637,6 @@ pub const sfPdb: IMAGEHLP_SF_TYPE = 2i32;
 pub const sfMpd: IMAGEHLP_SF_TYPE = 3i32;
 pub const sfMax: IMAGEHLP_SF_TYPE = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_STACK_FRAME {
     pub InstructionOffset: u64,
     pub ReturnOffset: u64,
@@ -4992,12 +4646,10 @@ pub struct IMAGEHLP_STACK_FRAME {
     pub FuncTableEntry: u64,
     pub Params: [u64; 4],
     pub Reserved: [u64; 5],
-    pub Virtual: super::super::super::Foundation::BOOL,
+    pub Virtual: ::win32_foundation_sys::BOOL,
     pub Reserved2: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_STACK_FRAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_STACK_FRAME {
     fn clone(&self) -> Self {
         *self
@@ -5026,52 +4678,43 @@ pub const BindForwarderNOT32: IMAGEHLP_STATUS_REASON = 18i32;
 pub const BindForwarderNOT64: IMAGEHLP_STATUS_REASON = 19i32;
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_SYMBOL {
     pub SizeOfStruct: u32,
     pub Address: u32,
     pub Size: u32,
     pub Flags: u32,
     pub MaxNameLength: u32,
-    pub Name: [super::super::super::Foundation::CHAR; 1],
+    pub Name: [::win32_foundation_sys::CHAR; 1],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_SYMBOL {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_SYMBOL {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_SYMBOL64 {
     pub SizeOfStruct: u32,
     pub Address: u64,
     pub Size: u32,
     pub Flags: u32,
     pub MaxNameLength: u32,
-    pub Name: [super::super::super::Foundation::CHAR; 1],
+    pub Name: [::win32_foundation_sys::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_SYMBOL64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_SYMBOL64 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_SYMBOL64_PACKAGE {
     pub sym: IMAGEHLP_SYMBOL64,
-    pub name: [super::super::super::Foundation::CHAR; 2001],
+    pub name: [::win32_foundation_sys::CHAR; 2001],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_SYMBOL64_PACKAGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_SYMBOL64_PACKAGE {
     fn clone(&self) -> Self {
         *self
@@ -5146,31 +4789,25 @@ pub const IMAGEHLP_SYMBOL_INFO_TLSRELATIVE: u32 = 16384u32;
 pub const IMAGEHLP_SYMBOL_INFO_VALUEPRESENT: u32 = 1u32;
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_SYMBOL_PACKAGE {
     pub sym: IMAGEHLP_SYMBOL,
-    pub name: [super::super::super::Foundation::CHAR; 2001],
+    pub name: [::win32_foundation_sys::CHAR; 2001],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_SYMBOL_PACKAGE {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_SYMBOL_PACKAGE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGEHLP_SYMBOL_SRC {
     pub sizeofstruct: u32,
     pub r#type: u32,
-    pub file: [super::super::super::Foundation::CHAR; 260],
+    pub file: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGEHLP_SYMBOL_SRC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGEHLP_SYMBOL_SRC {
     fn clone(&self) -> Self {
         *self
@@ -5326,7 +4963,7 @@ impl ::core::clone::Clone for IMAGE_DEBUG_DIRECTORY {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct IMAGE_DEBUG_INFORMATION {
     pub List: super::super::Kernel::LIST_ENTRY,
     pub ReservedSize: u32,
@@ -5354,17 +4991,17 @@ pub struct IMAGE_DEBUG_INFORMATION {
     pub ImageFileName: ::windows_core_sys::PSTR,
     pub ReservedDebugFilePath: ::windows_core_sys::PSTR,
     pub ReservedTimeDateStamp: u32,
-    pub ReservedRomImage: super::super::super::Foundation::BOOL,
+    pub ReservedRomImage: ::win32_foundation_sys::BOOL,
     pub ReservedDebugDirectory: *mut IMAGE_DEBUG_DIRECTORY,
     pub ReservedNumberOfDebugDirectories: u32,
     pub ReservedOriginalFunctionTableBaseAddress: u32,
     pub Reserved: [u32; 2],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for IMAGE_DEBUG_INFORMATION {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for IMAGE_DEBUG_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -6108,17 +5745,14 @@ pub type JS_PROPERTY_MEMBERS = i32;
 pub const JS_PROPERTY_MEMBERS_ALL: JS_PROPERTY_MEMBERS = 0i32;
 pub const JS_PROPERTY_MEMBERS_ARGUMENTS: JS_PROPERTY_MEMBERS = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JsDebugPropertyInfo {
-    pub name: super::super::super::Foundation::BSTR,
-    pub r#type: super::super::super::Foundation::BSTR,
-    pub value: super::super::super::Foundation::BSTR,
-    pub fullName: super::super::super::Foundation::BSTR,
+    pub name: ::win32_foundation_sys::BSTR,
+    pub r#type: ::win32_foundation_sys::BSTR,
+    pub value: ::win32_foundation_sys::BSTR,
+    pub fullName: ::win32_foundation_sys::BSTR,
     pub attr: JS_PROPERTY_ATTRIBUTES,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JsDebugPropertyInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JsDebugPropertyInfo {
     fn clone(&self) -> Self {
         *self
@@ -6629,28 +6263,28 @@ impl ::core::clone::Clone for LDT_ENTRY_0_1 {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct LOADED_IMAGE {
     pub ModuleName: ::windows_core_sys::PSTR,
-    pub hFile: super::super::super::Foundation::HANDLE,
+    pub hFile: ::win32_foundation_sys::HANDLE,
     pub MappedAddress: *mut u8,
     pub FileHeader: *mut IMAGE_NT_HEADERS64,
     pub LastRvaSection: *mut IMAGE_SECTION_HEADER,
     pub NumberOfSections: u32,
     pub Sections: *mut IMAGE_SECTION_HEADER,
     pub Characteristics: IMAGE_FILE_CHARACTERISTICS2,
-    pub fSystemImage: super::super::super::Foundation::BOOLEAN,
-    pub fDOSImage: super::super::super::Foundation::BOOLEAN,
-    pub fReadOnly: super::super::super::Foundation::BOOLEAN,
+    pub fSystemImage: ::win32_foundation_sys::BOOLEAN,
+    pub fDOSImage: ::win32_foundation_sys::BOOLEAN,
+    pub fReadOnly: ::win32_foundation_sys::BOOLEAN,
     pub Version: u8,
     pub Links: super::super::Kernel::LIST_ENTRY,
     pub SizeOfImage: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for LOADED_IMAGE {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for LOADED_IMAGE {
     fn clone(&self) -> Self {
         *self
@@ -6658,53 +6292,50 @@ impl ::core::clone::Clone for LOADED_IMAGE {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct LOADED_IMAGE {
     pub ModuleName: ::windows_core_sys::PSTR,
-    pub hFile: super::super::super::Foundation::HANDLE,
+    pub hFile: ::win32_foundation_sys::HANDLE,
     pub MappedAddress: *mut u8,
     pub FileHeader: *mut IMAGE_NT_HEADERS32,
     pub LastRvaSection: *mut IMAGE_SECTION_HEADER,
     pub NumberOfSections: u32,
     pub Sections: *mut IMAGE_SECTION_HEADER,
     pub Characteristics: IMAGE_FILE_CHARACTERISTICS2,
-    pub fSystemImage: super::super::super::Foundation::BOOLEAN,
-    pub fDOSImage: super::super::super::Foundation::BOOLEAN,
-    pub fReadOnly: super::super::super::Foundation::BOOLEAN,
+    pub fSystemImage: ::win32_foundation_sys::BOOLEAN,
+    pub fDOSImage: ::win32_foundation_sys::BOOLEAN,
+    pub fReadOnly: ::win32_foundation_sys::BOOLEAN,
     pub Version: u8,
     pub Links: super::super::Kernel::LIST_ENTRY,
     pub SizeOfImage: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for LOADED_IMAGE {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for LOADED_IMAGE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LOAD_DLL_DEBUG_INFO {
-    pub hFile: super::super::super::Foundation::HANDLE,
+    pub hFile: ::win32_foundation_sys::HANDLE,
     pub lpBaseOfDll: *mut ::core::ffi::c_void,
     pub dwDebugInfoFileOffset: u32,
     pub nDebugInfoSize: u32,
     pub lpImageName: *mut ::core::ffi::c_void,
     pub fUnicode: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LOAD_DLL_DEBUG_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LOAD_DLL_DEBUG_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 pub type LPCALL_BACK_USER_INTERRUPT_ROUTINE = ::core::option::Option<unsafe extern "system" fn() -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub type LPTOP_LEVEL_EXCEPTION_FILTER = ::core::option::Option<unsafe extern "system" fn(exceptioninfo: *const EXCEPTION_POINTERS) -> i32>;
 pub type LanguageKind = i32;
 pub const LanguageUnknown: LanguageKind = 0i32;
@@ -6741,37 +6372,37 @@ impl ::core::clone::Clone for M128A {
 pub const MAX_SYM_NAME: u32 = 2000u32;
 pub const MEMORY_READ_ERROR: u32 = 1u32;
 #[repr(C, packed(4))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
 pub struct MINIDUMP_CALLBACK_INFORMATION {
     pub CallbackRoutine: MINIDUMP_CALLBACK_ROUTINE,
     pub CallbackParam: *mut ::core::ffi::c_void,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
 pub struct MINIDUMP_CALLBACK_INPUT {
     pub ProcessId: u32,
-    pub ProcessHandle: super::super::super::Foundation::HANDLE,
+    pub ProcessHandle: ::win32_foundation_sys::HANDLE,
     pub CallbackType: u32,
     pub Anonymous: MINIDUMP_CALLBACK_INPUT_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_INPUT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
 pub union MINIDUMP_CALLBACK_INPUT_0 {
     pub Status: ::windows_core_sys::HRESULT,
     pub Thread: MINIDUMP_THREAD_CALLBACK,
@@ -6786,121 +6417,121 @@ pub union MINIDUMP_CALLBACK_INPUT_0 {
     pub VmPreRead: MINIDUMP_VM_PRE_READ_CALLBACK,
     pub VmPostRead: MINIDUMP_VM_POST_READ_CALLBACK,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_INPUT_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel"))]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_INPUT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 pub struct MINIDUMP_CALLBACK_OUTPUT {
     pub Anonymous: MINIDUMP_CALLBACK_OUTPUT_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(4))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 pub union MINIDUMP_CALLBACK_OUTPUT_0 {
     pub ModuleWriteFlags: u32,
     pub ThreadWriteFlags: u32,
     pub SecondaryFlags: u32,
     pub Anonymous1: MINIDUMP_CALLBACK_OUTPUT_0_0,
     pub Anonymous2: MINIDUMP_CALLBACK_OUTPUT_0_1,
-    pub Handle: super::super::super::Foundation::HANDLE,
+    pub Handle: ::win32_foundation_sys::HANDLE,
     pub Anonymous3: MINIDUMP_CALLBACK_OUTPUT_0_2,
     pub Anonymous4: MINIDUMP_CALLBACK_OUTPUT_0_3,
     pub Anonymous5: MINIDUMP_CALLBACK_OUTPUT_0_4,
     pub Status: ::windows_core_sys::HRESULT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(4))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_0 {
     pub MemoryBase: u64,
     pub MemorySize: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_1 {
-    pub CheckCancel: super::super::super::Foundation::BOOL,
-    pub Cancel: super::super::super::Foundation::BOOL,
+    pub CheckCancel: ::win32_foundation_sys::BOOL,
+    pub Cancel: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_2 {
     pub VmRegion: MINIDUMP_MEMORY_INFO,
-    pub Continue: super::super::super::Foundation::BOOL,
+    pub Continue: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_3 {
     pub VmQueryStatus: ::windows_core_sys::HRESULT,
     pub VmQueryResult: MINIDUMP_MEMORY_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 pub struct MINIDUMP_CALLBACK_OUTPUT_0_4 {
     pub VmReadStatus: ::windows_core_sys::HRESULT,
     pub VmReadBytesCompleted: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::marker::Copy for MINIDUMP_CALLBACK_OUTPUT_0_4 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Memory"))]
+#[cfg(feature = "Win32_System_Memory")]
 impl ::core::clone::Clone for MINIDUMP_CALLBACK_OUTPUT_0_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
-pub type MINIDUMP_CALLBACK_ROUTINE = ::core::option::Option<unsafe extern "system" fn(callbackparam: *mut ::core::ffi::c_void, callbackinput: *const MINIDUMP_CALLBACK_INPUT, callbackoutput: *mut MINIDUMP_CALLBACK_OUTPUT) -> super::super::super::Foundation::BOOL>;
+#[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_Kernel", feature = "Win32_System_Memory"))]
+pub type MINIDUMP_CALLBACK_ROUTINE = ::core::option::Option<unsafe extern "system" fn(callbackparam: *mut ::core::ffi::c_void, callbackinput: *const MINIDUMP_CALLBACK_INPUT, callbackoutput: *mut MINIDUMP_CALLBACK_OUTPUT) -> ::win32_foundation_sys::BOOL>;
 pub type MINIDUMP_CALLBACK_TYPE = i32;
 pub const ModuleCallback: MINIDUMP_CALLBACK_TYPE = 0i32;
 pub const ThreadCallback: MINIDUMP_CALLBACK_TYPE = 1i32;
@@ -6951,31 +6582,28 @@ impl ::core::clone::Clone for MINIDUMP_EXCEPTION {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct MINIDUMP_EXCEPTION_INFORMATION {
     pub ThreadId: u32,
     pub ExceptionPointers: *mut EXCEPTION_POINTERS,
-    pub ClientPointers: super::super::super::Foundation::BOOL,
+    pub ClientPointers: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for MINIDUMP_EXCEPTION_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for MINIDUMP_EXCEPTION_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MINIDUMP_EXCEPTION_INFORMATION64 {
     pub ThreadId: u32,
     pub ExceptionRecord: u64,
     pub ContextRecord: u64,
-    pub ClientPointers: super::super::super::Foundation::BOOL,
+    pub ClientPointers: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MINIDUMP_EXCEPTION_INFORMATION64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MINIDUMP_EXCEPTION_INFORMATION64 {
     fn clone(&self) -> Self {
         *self
@@ -7154,16 +6782,13 @@ impl ::core::clone::Clone for MINIDUMP_INCLUDE_THREAD_CALLBACK {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MINIDUMP_IO_CALLBACK {
-    pub Handle: super::super::super::Foundation::HANDLE,
+    pub Handle: ::win32_foundation_sys::HANDLE,
     pub Offset: u64,
     pub Buffer: *mut ::core::ffi::c_void,
     pub BufferBytes: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MINIDUMP_IO_CALLBACK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MINIDUMP_IO_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7312,7 +6937,7 @@ impl ::core::clone::Clone for MINIDUMP_MISC_INFO_2 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
+#[cfg(feature = "Win32_System_Time")]
 pub struct MINIDUMP_MISC_INFO_3 {
     pub SizeOfInfo: u32,
     pub Flags1: u32,
@@ -7331,16 +6956,16 @@ pub struct MINIDUMP_MISC_INFO_3 {
     pub TimeZoneId: u32,
     pub TimeZone: super::super::Time::TIME_ZONE_INFORMATION,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
+#[cfg(feature = "Win32_System_Time")]
 impl ::core::marker::Copy for MINIDUMP_MISC_INFO_3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
+#[cfg(feature = "Win32_System_Time")]
 impl ::core::clone::Clone for MINIDUMP_MISC_INFO_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
+#[cfg(feature = "Win32_System_Time")]
 pub struct MINIDUMP_MISC_INFO_4 {
     pub SizeOfInfo: u32,
     pub Flags1: u32,
@@ -7361,16 +6986,16 @@ pub struct MINIDUMP_MISC_INFO_4 {
     pub BuildString: [u16; 260],
     pub DbgBldStr: [u16; 40],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
+#[cfg(feature = "Win32_System_Time")]
 impl ::core::marker::Copy for MINIDUMP_MISC_INFO_4 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
+#[cfg(feature = "Win32_System_Time")]
 impl ::core::clone::Clone for MINIDUMP_MISC_INFO_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
+#[cfg(feature = "Win32_System_Time")]
 pub struct MINIDUMP_MISC_INFO_5 {
     pub SizeOfInfo: u32,
     pub Flags1: u32,
@@ -7393,9 +7018,9 @@ pub struct MINIDUMP_MISC_INFO_5 {
     pub XStateData: XSTATE_CONFIG_FEATURE_MSC_INFO,
     pub ProcessCookie: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
+#[cfg(feature = "Win32_System_Time")]
 impl ::core::marker::Copy for MINIDUMP_MISC_INFO_5 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
+#[cfg(feature = "Win32_System_Time")]
 impl ::core::clone::Clone for MINIDUMP_MISC_INFO_5 {
     fn clone(&self) -> Self {
         *self
@@ -7412,7 +7037,7 @@ pub struct MINIDUMP_MODULE {
     pub CheckSum: u32,
     pub TimeDateStamp: u32,
     pub ModuleNameRva: u32,
-    pub VersionInfo: super::super::super::Storage::FileSystem::VS_FIXEDFILEINFO,
+    pub VersionInfo: ::win32_storage_sys::FileSystem::VS_FIXEDFILEINFO,
     pub CvRecord: MINIDUMP_LOCATION_DESCRIPTOR,
     pub MiscRecord: MINIDUMP_LOCATION_DESCRIPTOR,
     pub Reserved0: u64,
@@ -7434,7 +7059,7 @@ pub struct MINIDUMP_MODULE_CALLBACK {
     pub SizeOfImage: u32,
     pub CheckSum: u32,
     pub TimeDateStamp: u32,
-    pub VersionInfo: super::super::super::Storage::FileSystem::VS_FIXEDFILEINFO,
+    pub VersionInfo: ::win32_storage_sys::FileSystem::VS_FIXEDFILEINFO,
     pub CvRecord: *mut ::core::ffi::c_void,
     pub SizeOfCvRecord: u32,
     pub MiscRecord: *mut ::core::ffi::c_void,
@@ -7821,10 +7446,10 @@ impl ::core::clone::Clone for MINIDUMP_THREAD {
 }
 #[repr(C)]
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct MINIDUMP_THREAD_CALLBACK {
     pub ThreadId: u32,
-    pub ThreadHandle: super::super::super::Foundation::HANDLE,
+    pub ThreadHandle: ::win32_foundation_sys::HANDLE,
     pub Pad: u32,
     pub Context: CONTEXT,
     pub SizeOfContext: u32,
@@ -7832,10 +7457,10 @@ pub struct MINIDUMP_THREAD_CALLBACK {
     pub StackEnd: u64,
 }
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_CALLBACK {}
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7843,20 +7468,20 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct MINIDUMP_THREAD_CALLBACK {
     pub ThreadId: u32,
-    pub ThreadHandle: super::super::super::Foundation::HANDLE,
+    pub ThreadHandle: ::win32_foundation_sys::HANDLE,
     pub Context: CONTEXT,
     pub SizeOfContext: u32,
     pub StackBase: u64,
     pub StackEnd: u64,
 }
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_CALLBACK {}
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7864,20 +7489,20 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
 }
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct MINIDUMP_THREAD_CALLBACK {
     pub ThreadId: u32,
-    pub ThreadHandle: super::super::super::Foundation::HANDLE,
+    pub ThreadHandle: ::win32_foundation_sys::HANDLE,
     pub Context: CONTEXT,
     pub SizeOfContext: u32,
     pub StackBase: u64,
     pub StackEnd: u64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_CALLBACK {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7902,10 +7527,10 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_EX {
 }
 #[repr(C)]
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub ThreadId: u32,
-    pub ThreadHandle: super::super::super::Foundation::HANDLE,
+    pub ThreadHandle: ::win32_foundation_sys::HANDLE,
     pub Pad: u32,
     pub Context: CONTEXT,
     pub SizeOfContext: u32,
@@ -7915,10 +7540,10 @@ pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub BackingStoreEnd: u64,
 }
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_EX_CALLBACK {}
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7926,10 +7551,10 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub ThreadId: u32,
-    pub ThreadHandle: super::super::super::Foundation::HANDLE,
+    pub ThreadHandle: ::win32_foundation_sys::HANDLE,
     pub Context: CONTEXT,
     pub SizeOfContext: u32,
     pub StackBase: u64,
@@ -7938,10 +7563,10 @@ pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub BackingStoreEnd: u64,
 }
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_EX_CALLBACK {}
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -7949,10 +7574,10 @@ impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
 }
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub ThreadId: u32,
-    pub ThreadHandle: super::super::super::Foundation::HANDLE,
+    pub ThreadHandle: ::win32_foundation_sys::HANDLE,
     pub Context: CONTEXT,
     pub SizeOfContext: u32,
     pub StackBase: u64,
@@ -7961,10 +7586,10 @@ pub struct MINIDUMP_THREAD_EX_CALLBACK {
     pub BackingStoreEnd: u64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for MINIDUMP_THREAD_EX_CALLBACK {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for MINIDUMP_THREAD_EX_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -8350,8 +7975,7 @@ impl ::core::clone::Clone for OUTPUT_DEBUG_STRING_INFO {
 }
 pub type PCOGETACTIVATIONSTATE = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::GUID, param1: u32, param2: *mut u32) -> ::windows_core_sys::HRESULT>;
 pub type PCOGETCALLSTATE = ::core::option::Option<unsafe extern "system" fn(param0: i32, param1: *mut u32) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PDBGHELP_CREATE_USER_DUMP_CALLBACK = ::core::option::Option<unsafe extern "system" fn(datatype: u32, data: *const *const ::core::ffi::c_void, datalength: *mut u32, userdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
+pub type PDBGHELP_CREATE_USER_DUMP_CALLBACK = ::core::option::Option<unsafe extern "system" fn(datatype: u32, data: *const *const ::core::ffi::c_void, datalength: *mut u32, userdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 pub type PDEBUG_EXTENSION_CALL = ::core::option::Option<unsafe extern "system" fn(client: IDebugClient, args: ::windows_core_sys::PCSTR) -> ::windows_core_sys::HRESULT>;
 pub type PDEBUG_EXTENSION_CANUNLOAD = ::core::option::Option<unsafe extern "system" fn() -> ::windows_core_sys::HRESULT>;
 pub type PDEBUG_EXTENSION_INITIALIZE = ::core::option::Option<unsafe extern "system" fn(version: *mut u32, flags: *mut u32) -> ::windows_core_sys::HRESULT>;
@@ -8364,45 +7988,27 @@ pub type PDEBUG_EXTENSION_UNINITIALIZE = ::core::option::Option<unsafe extern "s
 pub type PDEBUG_EXTENSION_UNLOAD = ::core::option::Option<unsafe extern "system" fn()>;
 pub type PDEBUG_STACK_PROVIDER_BEGINTHREADSTACKRECONSTRUCTION = ::core::option::Option<unsafe extern "system" fn(streamtype: u32, minidumpstreambuffer: *const ::core::ffi::c_void, buffersize: u32) -> ::windows_core_sys::HRESULT>;
 pub type PDEBUG_STACK_PROVIDER_ENDTHREADSTACKRECONSTRUCTION = ::core::option::Option<unsafe extern "system" fn() -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PDEBUG_STACK_PROVIDER_FREESTACKSYMFRAMES = ::core::option::Option<unsafe extern "system" fn(stacksymframes: *const STACK_SYM_FRAME_INFO) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PDEBUG_STACK_PROVIDER_RECONSTRUCTSTACK = ::core::option::Option<unsafe extern "system" fn(systemthreadid: u32, nativeframes: *const DEBUG_STACK_FRAME_EX, countnativeframes: u32, stacksymframes: *mut *mut STACK_SYM_FRAME_INFO, stacksymframesfilled: *mut u32) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PENUMDIRTREE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(filepath: ::windows_core_sys::PCSTR, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PENUMDIRTREE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(filepath: ::windows_core_sys::PCWSTR, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
+pub type PENUMDIRTREE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(filepath: ::windows_core_sys::PCSTR, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PENUMDIRTREE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(filepath: ::windows_core_sys::PCWSTR, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PENUMLOADED_MODULES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCSTR, modulebase: u32, modulesize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PENUMLOADED_MODULES_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCSTR, modulebase: u64, modulesize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PENUMLOADED_MODULES_CALLBACKW64 = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCWSTR, modulebase: u64, modulesize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PENUMSOURCEFILETOKENSCALLBACK = ::core::option::Option<unsafe extern "system" fn(token: *const ::core::ffi::c_void, size: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFINDFILEINPATHCALLBACK = ::core::option::Option<unsafe extern "system" fn(filename: ::windows_core_sys::PCSTR, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFINDFILEINPATHCALLBACKW = ::core::option::Option<unsafe extern "system" fn(filename: ::windows_core_sys::PCWSTR, context: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFIND_DEBUG_FILE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(filehandle: super::super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCSTR, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFIND_DEBUG_FILE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(filehandle: super::super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCWSTR, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFIND_EXE_FILE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(filehandle: super::super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCSTR, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFIND_EXE_FILE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(filehandle: super::super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCWSTR, callerdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
+pub type PENUMLOADED_MODULES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCSTR, modulebase: u32, modulesize: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PENUMLOADED_MODULES_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCSTR, modulebase: u64, modulesize: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PENUMLOADED_MODULES_CALLBACKW64 = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCWSTR, modulebase: u64, modulesize: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PENUMSOURCEFILETOKENSCALLBACK = ::core::option::Option<unsafe extern "system" fn(token: *const ::core::ffi::c_void, size: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PFINDFILEINPATHCALLBACK = ::core::option::Option<unsafe extern "system" fn(filename: ::windows_core_sys::PCSTR, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFINDFILEINPATHCALLBACKW = ::core::option::Option<unsafe extern "system" fn(filename: ::windows_core_sys::PCWSTR, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFIND_DEBUG_FILE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(filehandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCSTR, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFIND_DEBUG_FILE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(filehandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCWSTR, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFIND_EXE_FILE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(filehandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCSTR, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFIND_EXE_FILE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(filehandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCWSTR, callerdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PFUNCTION_TABLE_ACCESS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, addrbase: u32) -> *mut ::core::ffi::c_void>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFUNCTION_TABLE_ACCESS_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(ahprocess: super::super::super::Foundation::HANDLE, addrbase: u64) -> *mut ::core::ffi::c_void>;
+pub type PFUNCTION_TABLE_ACCESS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, addrbase: u32) -> *mut ::core::ffi::c_void>;
+pub type PFUNCTION_TABLE_ACCESS_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(ahprocess: ::win32_foundation_sys::HANDLE, addrbase: u64) -> *mut ::core::ffi::c_void>;
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PGET_MODULE_BASE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, address: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PGET_MODULE_BASE_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, address: u64) -> u64>;
+pub type PGET_MODULE_BASE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, address: u32) -> u32>;
+pub type PGET_MODULE_BASE_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, address: u64) -> u64>;
 #[cfg(target_arch = "aarch64")]
 pub type PGET_RUNTIME_FUNCTION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(controlpc: u64, context: *const ::core::ffi::c_void) -> *mut IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY>;
 #[cfg(target_arch = "x86_64")]
@@ -8494,12 +8100,9 @@ pub const PHYS_FLAG_CACHED: u32 = 1u32;
 pub const PHYS_FLAG_DEFAULT: u32 = 0u32;
 pub const PHYS_FLAG_UNCACHED: u32 = 2u32;
 pub const PHYS_FLAG_WRITE_COMBINED: u32 = 3u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PIMAGEHLP_STATUS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(reason: IMAGEHLP_STATUS_REASON, imagename: ::windows_core_sys::PCSTR, dllname: ::windows_core_sys::PCSTR, va: usize, parameter: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PIMAGEHLP_STATUS_ROUTINE32 = ::core::option::Option<unsafe extern "system" fn(reason: IMAGEHLP_STATUS_REASON, imagename: ::windows_core_sys::PCSTR, dllname: ::windows_core_sys::PCSTR, va: u32, parameter: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PIMAGEHLP_STATUS_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(reason: IMAGEHLP_STATUS_REASON, imagename: ::windows_core_sys::PCSTR, dllname: ::windows_core_sys::PCSTR, va: u64, parameter: usize) -> super::super::super::Foundation::BOOL>;
+pub type PIMAGEHLP_STATUS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(reason: IMAGEHLP_STATUS_REASON, imagename: ::windows_core_sys::PCSTR, dllname: ::windows_core_sys::PCSTR, va: usize, parameter: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PIMAGEHLP_STATUS_ROUTINE32 = ::core::option::Option<unsafe extern "system" fn(reason: IMAGEHLP_STATUS_REASON, imagename: ::windows_core_sys::PCSTR, dllname: ::windows_core_sys::PCSTR, va: u32, parameter: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PIMAGEHLP_STATUS_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(reason: IMAGEHLP_STATUS_REASON, imagename: ::windows_core_sys::PCSTR, dllname: ::windows_core_sys::PCSTR, va: u64, parameter: usize) -> ::win32_foundation_sys::BOOL>;
 #[repr(C)]
 pub struct POINTER_SEARCH_PHYSICAL {
     pub Offset: u64,
@@ -8518,10 +8121,8 @@ impl ::core::clone::Clone for POINTER_SEARCH_PHYSICAL {
     }
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PREAD_PROCESS_MEMORY_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, lpbaseaddress: u32, lpbuffer: *mut ::core::ffi::c_void, nsize: u32, lpnumberofbytesread: *mut u32) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PREAD_PROCESS_MEMORY_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, qwbaseaddress: u64, lpbuffer: *mut ::core::ffi::c_void, nsize: u32, lpnumberofbytesread: *mut u32) -> super::super::super::Foundation::BOOL>;
+pub type PREAD_PROCESS_MEMORY_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, lpbaseaddress: u32, lpbuffer: *mut ::core::ffi::c_void, nsize: u32, lpnumberofbytesread: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PREAD_PROCESS_MEMORY_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, qwbaseaddress: u64, lpbuffer: *mut ::core::ffi::c_void, nsize: u32, lpnumberofbytesread: *mut u32) -> ::win32_foundation_sys::BOOL>;
 #[repr(C)]
 pub struct PROCESSORINFO {
     pub Processor: u16,
@@ -8605,21 +8206,17 @@ pub const PROFILER_HEAP_OBJECT_FLAGS_WINRT_DELEGATE: PROFILER_HEAP_OBJECT_FLAGS 
 pub const PROFILER_HEAP_OBJECT_FLAGS_WINRT_NAMESPACE: PROFILER_HEAP_OBJECT_FLAGS = 4096u32;
 pub const PROFILER_HEAP_OBJECT_NAME_ID_UNAVAILABLE: u32 = 4294967295u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROFILER_HEAP_OBJECT_OPTIONAL_INFO {
     pub infoType: PROFILER_HEAP_OBJECT_OPTIONAL_INFO_TYPE,
     pub Anonymous: PROFILER_HEAP_OBJECT_OPTIONAL_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROFILER_HEAP_OBJECT_OPTIONAL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROFILER_HEAP_OBJECT_OPTIONAL_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PROFILER_HEAP_OBJECT_OPTIONAL_INFO_0 {
     pub prototype: usize,
     pub functionName: ::windows_core_sys::PCWSTR,
@@ -8635,9 +8232,7 @@ pub union PROFILER_HEAP_OBJECT_OPTIONAL_INFO_0 {
     pub mapCollectionList: *mut PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST,
     pub setCollectionList: *mut PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROFILER_HEAP_OBJECT_OPTIONAL_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROFILER_HEAP_OBJECT_OPTIONAL_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -8659,33 +8254,27 @@ pub const PROFILER_HEAP_OBJECT_OPTIONAL_INFO_MAP_COLLECTION_LIST: PROFILER_HEAP_
 pub const PROFILER_HEAP_OBJECT_OPTIONAL_INFO_SET_COLLECTION_LIST: PROFILER_HEAP_OBJECT_OPTIONAL_INFO_TYPE = 13i32;
 pub const PROFILER_HEAP_OBJECT_OPTIONAL_INFO_MAX_VALUE: PROFILER_HEAP_OBJECT_OPTIONAL_INFO_TYPE = 13i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROFILER_HEAP_OBJECT_RELATIONSHIP {
     pub relationshipId: u32,
     pub relationshipInfo: PROFILER_RELATIONSHIP_INFO,
     pub Anonymous: PROFILER_HEAP_OBJECT_RELATIONSHIP_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROFILER_HEAP_OBJECT_RELATIONSHIP {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROFILER_HEAP_OBJECT_RELATIONSHIP {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PROFILER_HEAP_OBJECT_RELATIONSHIP_0 {
     pub numberValue: f64,
     pub stringValue: ::windows_core_sys::PCWSTR,
-    pub bstrValue: super::super::super::Foundation::BSTR,
+    pub bstrValue: ::win32_foundation_sys::BSTR,
     pub objectId: usize,
     pub externalObjectAddress: *mut ::core::ffi::c_void,
     pub subString: *mut PROFILER_PROPERTY_TYPE_SUBSTRING_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROFILER_HEAP_OBJECT_RELATIONSHIP_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROFILER_HEAP_OBJECT_RELATIONSHIP_0 {
     fn clone(&self) -> Self {
         *self
@@ -8698,14 +8287,11 @@ pub const PROFILER_HEAP_OBJECT_RELATIONSHIP_FLAGS_IS_SET_ACCESSOR: PROFILER_HEAP
 pub const PROFILER_HEAP_OBJECT_RELATIONSHIP_FLAGS_LET_VARIABLE: PROFILER_HEAP_OBJECT_RELATIONSHIP_FLAGS = 262144u32;
 pub const PROFILER_HEAP_OBJECT_RELATIONSHIP_FLAGS_CONST_VARIABLE: PROFILER_HEAP_OBJECT_RELATIONSHIP_FLAGS = 524288u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST {
     pub count: u32,
     pub elements: [PROFILER_HEAP_OBJECT_RELATIONSHIP; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROFILER_HEAP_OBJECT_RELATIONSHIP_LIST {
     fn clone(&self) -> Self {
         *self
@@ -8766,126 +8352,73 @@ pub const PROP_INFO_FULLNAME: PROP_INFO_FLAGS = 32i32;
 pub const PROP_INFO_ATTRIBUTES: PROP_INFO_FLAGS = 8i32;
 pub const PROP_INFO_DEBUGPROP: PROP_INFO_FLAGS = 16i32;
 pub const PROP_INFO_AUTOEXPAND: PROP_INFO_FLAGS = 134217728i32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERBYINDEXPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PCSTR, param3: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERBYINDEXPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PCSTR, param3: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERBYINDEXPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: ::windows_core_sys::PCWSTR, param3: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERCALLBACKPROC = ::core::option::Option<unsafe extern "system" fn(action: usize, data: u64, context: u64) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERCLOSEPROC = ::core::option::Option<unsafe extern "system" fn() -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERDELTANAME = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: *mut ::core::ffi::c_void, param2: u32, param3: u32, param4: *mut ::core::ffi::c_void, param5: u32, param6: u32, param7: ::windows_core_sys::PCSTR, param8: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERDELTANAMEW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: *mut ::core::ffi::c_void, param2: u32, param3: u32, param4: *mut ::core::ffi::c_void, param5: u32, param6: u32, param7: ::windows_core_sys::PCWSTR, param8: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERGETINDEXSTRING = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::core::ffi::c_void, param1: u32, param2: u32, param3: ::windows_core_sys::PCSTR, param4: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERGETINDEXSTRINGW = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::core::ffi::c_void, param1: u32, param2: u32, param3: ::windows_core_sys::PCWSTR, param4: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERGETOPTIONDATAPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: *mut u64) -> super::super::super::Foundation::BOOL>;
+pub type PSYMBOLSERVERBYINDEXPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PCSTR, param3: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERBYINDEXPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PCSTR, param3: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERBYINDEXPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: ::windows_core_sys::PCWSTR, param3: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERCALLBACKPROC = ::core::option::Option<unsafe extern "system" fn(action: usize, data: u64, context: u64) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERCLOSEPROC = ::core::option::Option<unsafe extern "system" fn() -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERDELTANAME = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: *mut ::core::ffi::c_void, param2: u32, param3: u32, param4: *mut ::core::ffi::c_void, param5: u32, param6: u32, param7: ::windows_core_sys::PCSTR, param8: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERDELTANAMEW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: *mut ::core::ffi::c_void, param2: u32, param3: u32, param4: *mut ::core::ffi::c_void, param5: u32, param6: u32, param7: ::windows_core_sys::PCWSTR, param8: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERGETINDEXSTRING = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::core::ffi::c_void, param1: u32, param2: u32, param3: ::windows_core_sys::PCSTR, param4: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERGETINDEXSTRINGW = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::core::ffi::c_void, param1: u32, param2: u32, param3: ::windows_core_sys::PCWSTR, param4: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERGETOPTIONDATAPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: *mut u64) -> ::win32_foundation_sys::BOOL>;
 pub type PSYMBOLSERVERGETOPTIONSPROC = ::core::option::Option<unsafe extern "system" fn() -> usize>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERGETSUPPLEMENT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PCSTR, param3: ::windows_core_sys::PCSTR, param4: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERGETSUPPLEMENTW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: ::windows_core_sys::PCWSTR, param3: ::windows_core_sys::PCWSTR, param4: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERGETVERSION = ::core::option::Option<unsafe extern "system" fn(param0: *mut API_VERSION) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERISSTORE = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERISSTOREW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERMESSAGEPROC = ::core::option::Option<unsafe extern "system" fn(action: usize, data: u64, context: u64) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVEROPENPROC = ::core::option::Option<unsafe extern "system" fn() -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERPINGPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERPINGPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERPINGPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERPINGPROCWEX = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERSETHTTPAUTHHEADER = ::core::option::Option<unsafe extern "system" fn(pszauthheader: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERSETOPTIONSPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: u64) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERSETOPTIONSWPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: u64) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERSTOREFILE = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCSTR, param6: usize, param7: u32) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERSTOREFILEW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCWSTR, param6: usize, param7: u32) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERSTORESUPPLEMENT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PCSTR, param3: ::windows_core_sys::PCSTR, param4: usize, param5: u32) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERSTORESUPPLEMENTW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: ::windows_core_sys::PCWSTR, param3: ::windows_core_sys::PCWSTR, param4: usize, param5: u32) -> super::super::super::Foundation::BOOL>;
+pub type PSYMBOLSERVERGETSUPPLEMENT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PCSTR, param3: ::windows_core_sys::PCSTR, param4: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERGETSUPPLEMENTW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: ::windows_core_sys::PCWSTR, param3: ::windows_core_sys::PCWSTR, param4: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERGETVERSION = ::core::option::Option<unsafe extern "system" fn(param0: *mut API_VERSION) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERISSTORE = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERISSTOREW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERMESSAGEPROC = ::core::option::Option<unsafe extern "system" fn(action: usize, data: u64, context: u64) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVEROPENPROC = ::core::option::Option<unsafe extern "system" fn() -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERPINGPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERPINGPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERPINGPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERPINGPROCWEX = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERSETHTTPAUTHHEADER = ::core::option::Option<unsafe extern "system" fn(pszauthheader: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERSETOPTIONSPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: u64) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERSETOPTIONSWPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: u64) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERSTOREFILE = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCSTR, param6: usize, param7: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERSTOREFILEW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCWSTR, param6: usize, param7: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERSTORESUPPLEMENT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PCSTR, param3: ::windows_core_sys::PCSTR, param4: usize, param5: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOLSERVERSTORESUPPLEMENTW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: ::windows_core_sys::PCWSTR, param3: ::windows_core_sys::PCWSTR, param4: usize, param5: u32) -> ::win32_foundation_sys::BOOL>;
 pub type PSYMBOLSERVERVERSION = ::core::option::Option<unsafe extern "system" fn() -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOLSERVERWEXPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCWSTR, param6: *mut SYMSRV_EXTENDED_OUTPUT_DATA) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOL_FUNCENTRY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, addrbase: u32, usercontext: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOL_FUNCENTRY_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, addrbase: u64, usercontext: u64) -> *mut ::core::ffi::c_void>;
+pub type PSYMBOLSERVERWEXPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::windows_core_sys::PCWSTR, param2: *mut ::core::ffi::c_void, param3: u32, param4: u32, param5: ::windows_core_sys::PCWSTR, param6: *mut SYMSRV_EXTENDED_OUTPUT_DATA) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOL_FUNCENTRY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, addrbase: u32, usercontext: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void>;
+pub type PSYMBOL_FUNCENTRY_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, addrbase: u64, usercontext: u64) -> *mut ::core::ffi::c_void>;
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOL_REGISTERED_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, actioncode: u32, callbackdata: *const ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYMBOL_REGISTERED_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, actioncode: u32, callbackdata: u64, usercontext: u64) -> super::super::super::Foundation::BOOL>;
+pub type PSYMBOL_REGISTERED_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, actioncode: u32, callbackdata: *const ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYMBOL_REGISTERED_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, actioncode: u32, callbackdata: u64, usercontext: u64) -> ::win32_foundation_sys::BOOL>;
 pub type PSYM_DUMP_FIELD_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pfield: *mut FIELD_INFO, usercontext: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMERATESYMBOLS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(psyminfo: *const SYMBOL_INFO, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMERATESYMBOLS_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(psyminfo: *const SYMBOL_INFOW, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMLINES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(lineinfo: *const SRCCODEINFO, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMLINES_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(lineinfo: *const SRCCODEINFOW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
+pub type PSYM_ENUMERATESYMBOLS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(psyminfo: *const SYMBOL_INFO, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMERATESYMBOLS_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(psyminfo: *const SYMBOL_INFOW, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMLINES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(lineinfo: *const SRCCODEINFO, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMLINES_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(lineinfo: *const SRCCODEINFOW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMMODULES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCSTR, baseofdll: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMMODULES_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCSTR, baseofdll: u64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMMODULES_CALLBACKW64 = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCWSTR, baseofdll: u64, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMPROCESSES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMSOURCEFILES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(psourcefile: *const SOURCEFILE, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMSOURCEFILES_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(psourcefile: *const SOURCEFILEW, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
+pub type PSYM_ENUMMODULES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCSTR, baseofdll: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMMODULES_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCSTR, baseofdll: u64, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMMODULES_CALLBACKW64 = ::core::option::Option<unsafe extern "system" fn(modulename: ::windows_core_sys::PCWSTR, baseofdll: u64, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMPROCESSES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMSOURCEFILES_CALLBACK = ::core::option::Option<unsafe extern "system" fn(psourcefile: *const SOURCEFILE, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMSOURCEFILES_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(psourcefile: *const SOURCEFILEW, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMSYMBOLS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_core_sys::PCSTR, symboladdress: u32, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMSYMBOLS_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_core_sys::PCSTR, symboladdress: u64, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMSYMBOLS_CALLBACK64W = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_core_sys::PCWSTR, symboladdress: u64, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
+pub type PSYM_ENUMSYMBOLS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_core_sys::PCSTR, symboladdress: u32, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMSYMBOLS_CALLBACK64 = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_core_sys::PCSTR, symboladdress: u64, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PSYM_ENUMSYMBOLS_CALLBACK64W = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_core_sys::PCWSTR, symboladdress: u64, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PSYM_ENUMSYMBOLS_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_core_sys::PCWSTR, symboladdress: u32, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
+pub type PSYM_ENUMSYMBOLS_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(symbolname: ::windows_core_sys::PCWSTR, symboladdress: u32, symbolsize: u32, usercontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PTRANSLATE_ADDRESS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, hthread: super::super::super::Foundation::HANDLE, lpaddr: *mut ADDRESS) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PTRANSLATE_ADDRESS_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(hprocess: super::super::super::Foundation::HANDLE, hthread: super::super::super::Foundation::HANDLE, lpaddr: *const ADDRESS64) -> u64>;
+pub type PTRANSLATE_ADDRESS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, hthread: ::win32_foundation_sys::HANDLE, lpaddr: *mut ADDRESS) -> u32>;
+pub type PTRANSLATE_ADDRESS_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(hprocess: ::win32_foundation_sys::HANDLE, hthread: ::win32_foundation_sys::HANDLE, lpaddr: *const ADDRESS64) -> u64>;
 pub const PTR_SEARCH_NO_SYMBOL_CHECK: u32 = 2147483648u32;
 pub const PTR_SEARCH_PHYS_ALL_HITS: u32 = 1u32;
 pub const PTR_SEARCH_PHYS_PTE: u32 = 2u32;
 pub const PTR_SEARCH_PHYS_RANGE_CHECK_ONLY: u32 = 4u32;
 pub const PTR_SEARCH_PHYS_SIZE_SHIFT: u32 = 3u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub type PVECTORED_EXCEPTION_HANDLER = ::core::option::Option<unsafe extern "system" fn(exceptioninfo: *mut EXCEPTION_POINTERS) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PWAITCHAINCALLBACK = ::core::option::Option<unsafe extern "system" fn(wcthandle: *mut ::core::ffi::c_void, context: usize, callbackstatus: u32, nodecount: *mut u32, nodeinfoarray: *mut WAITCHAIN_NODE_INFO, iscycle: *mut i32)>;
 pub type PWINDBG_CHECK_CONTROL_C = ::core::option::Option<unsafe extern "system" fn() -> u32>;
 pub type PWINDBG_CHECK_VERSION = ::core::option::Option<unsafe extern "system" fn() -> u32>;
@@ -8899,12 +8432,9 @@ pub type PWINDBG_EXTENSION_DLL_INIT = ::core::option::Option<unsafe extern "syst
 pub type PWINDBG_EXTENSION_DLL_INIT32 = ::core::option::Option<unsafe extern "system" fn(lpextensionapis: *mut WINDBG_EXTENSION_APIS32, majorversion: u16, minorversion: u16)>;
 #[cfg(feature = "Win32_System_Kernel")]
 pub type PWINDBG_EXTENSION_DLL_INIT64 = ::core::option::Option<unsafe extern "system" fn(lpextensionapis: *mut WINDBG_EXTENSION_APIS64, majorversion: u16, minorversion: u16)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PWINDBG_EXTENSION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hcurrentprocess: super::super::super::Foundation::HANDLE, hcurrentthread: super::super::super::Foundation::HANDLE, dwcurrentpc: u32, dwprocessor: u32, lpargumentstring: ::windows_core_sys::PCSTR)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PWINDBG_EXTENSION_ROUTINE32 = ::core::option::Option<unsafe extern "system" fn(hcurrentprocess: super::super::super::Foundation::HANDLE, hcurrentthread: super::super::super::Foundation::HANDLE, dwcurrentpc: u32, dwprocessor: u32, lpargumentstring: ::windows_core_sys::PCSTR)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PWINDBG_EXTENSION_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(hcurrentprocess: super::super::super::Foundation::HANDLE, hcurrentthread: super::super::super::Foundation::HANDLE, dwcurrentpc: u64, dwprocessor: u32, lpargumentstring: ::windows_core_sys::PCSTR)>;
+pub type PWINDBG_EXTENSION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(hcurrentprocess: ::win32_foundation_sys::HANDLE, hcurrentthread: ::win32_foundation_sys::HANDLE, dwcurrentpc: u32, dwprocessor: u32, lpargumentstring: ::windows_core_sys::PCSTR)>;
+pub type PWINDBG_EXTENSION_ROUTINE32 = ::core::option::Option<unsafe extern "system" fn(hcurrentprocess: ::win32_foundation_sys::HANDLE, hcurrentthread: ::win32_foundation_sys::HANDLE, dwcurrentpc: u32, dwprocessor: u32, lpargumentstring: ::windows_core_sys::PCSTR)>;
+pub type PWINDBG_EXTENSION_ROUTINE64 = ::core::option::Option<unsafe extern "system" fn(hcurrentprocess: ::win32_foundation_sys::HANDLE, hcurrentthread: ::win32_foundation_sys::HANDLE, dwcurrentpc: u64, dwprocessor: u32, lpargumentstring: ::windows_core_sys::PCSTR)>;
 pub type PWINDBG_GET_EXPRESSION = ::core::option::Option<unsafe extern "system" fn(lpexpression: ::windows_core_sys::PCSTR) -> usize>;
 pub type PWINDBG_GET_EXPRESSION32 = ::core::option::Option<unsafe extern "system" fn(lpexpression: ::windows_core_sys::PCSTR) -> u32>;
 pub type PWINDBG_GET_EXPRESSION64 = ::core::option::Option<unsafe extern "system" fn(lpexpression: ::windows_core_sys::PCSTR) -> u64>;
@@ -9198,19 +8728,16 @@ pub const SPLITSYM_EXTRACT_ALL: u32 = 2u32;
 pub const SPLITSYM_REMOVE_PRIVATE: u32 = 1u32;
 pub const SPLITSYM_SYMBOLPATH_IS_SRC: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SRCCODEINFO {
     pub SizeOfStruct: u32,
     pub Key: *mut ::core::ffi::c_void,
     pub ModBase: u64,
-    pub Obj: [super::super::super::Foundation::CHAR; 261],
-    pub FileName: [super::super::super::Foundation::CHAR; 261],
+    pub Obj: [::win32_foundation_sys::CHAR; 261],
+    pub FileName: [::win32_foundation_sys::CHAR; 261],
     pub LineNumber: u32,
     pub Address: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SRCCODEINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SRCCODEINFO {
     fn clone(&self) -> Self {
         *self
@@ -9285,7 +8812,6 @@ pub const SSRVURI_UNC_MASK: u32 = 240u32;
 pub const SSRVURI_UNC_NORMAL: u32 = 16u32;
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STACKFRAME {
     pub AddrPC: ADDRESS,
     pub AddrReturn: ADDRESS,
@@ -9293,24 +8819,21 @@ pub struct STACKFRAME {
     pub AddrStack: ADDRESS,
     pub FuncTableEntry: *mut ::core::ffi::c_void,
     pub Params: [u32; 4],
-    pub Far: super::super::super::Foundation::BOOL,
-    pub Virtual: super::super::super::Foundation::BOOL,
+    pub Far: ::win32_foundation_sys::BOOL,
+    pub Virtual: ::win32_foundation_sys::BOOL,
     pub Reserved: [u32; 3],
     pub KdHelp: KDHELP,
     pub AddrBStore: ADDRESS,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STACKFRAME {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STACKFRAME {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STACKFRAME64 {
     pub AddrPC: ADDRESS64,
     pub AddrReturn: ADDRESS64,
@@ -9319,21 +8842,18 @@ pub struct STACKFRAME64 {
     pub AddrBStore: ADDRESS64,
     pub FuncTableEntry: *mut ::core::ffi::c_void,
     pub Params: [u64; 4],
-    pub Far: super::super::super::Foundation::BOOL,
-    pub Virtual: super::super::super::Foundation::BOOL,
+    pub Far: ::win32_foundation_sys::BOOL,
+    pub Virtual: ::win32_foundation_sys::BOOL,
     pub Reserved: [u64; 3],
     pub KdHelp: KDHELP64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STACKFRAME64 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STACKFRAME64 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STACKFRAME_EX {
     pub AddrPC: ADDRESS64,
     pub AddrReturn: ADDRESS64,
@@ -9342,16 +8862,14 @@ pub struct STACKFRAME_EX {
     pub AddrBStore: ADDRESS64,
     pub FuncTableEntry: *mut ::core::ffi::c_void,
     pub Params: [u64; 4],
-    pub Far: super::super::super::Foundation::BOOL,
-    pub Virtual: super::super::super::Foundation::BOOL,
+    pub Far: ::win32_foundation_sys::BOOL,
+    pub Virtual: ::win32_foundation_sys::BOOL,
     pub Reserved: [u64; 3],
     pub KdHelp: KDHELP64,
     pub StackFrameSize: u32,
     pub InlineFrameContext: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STACKFRAME_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STACKFRAME_EX {
     fn clone(&self) -> Self {
         *self
@@ -9378,25 +8896,19 @@ impl ::core::clone::Clone for STACK_SRC_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STACK_SYM_FRAME_INFO {
     pub StackFrameEx: DEBUG_STACK_FRAME_EX,
     pub SrcInfo: STACK_SRC_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STACK_SYM_FRAME_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STACK_SYM_FRAME_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type SYMADDSOURCESTREAM = ::core::option::Option<unsafe extern "system" fn(param0: super::super::super::Foundation::HANDLE, param1: u64, param2: ::windows_core_sys::PCSTR, param3: *mut u8, param4: usize) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SYMADDSOURCESTREAMA = ::core::option::Option<unsafe extern "system" fn(param0: super::super::super::Foundation::HANDLE, param1: u64, param2: ::windows_core_sys::PCSTR, param3: *mut u8, param4: usize) -> super::super::super::Foundation::BOOL>;
+pub type SYMADDSOURCESTREAM = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE, param1: u64, param2: ::windows_core_sys::PCSTR, param3: *mut u8, param4: usize) -> ::win32_foundation_sys::BOOL>;
+pub type SYMADDSOURCESTREAMA = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE, param1: u64, param2: ::windows_core_sys::PCSTR, param3: *mut u8, param4: usize) -> ::win32_foundation_sys::BOOL>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYMBOL_INFO {
     pub SizeOfStruct: u32,
     pub TypeIndex: u32,
@@ -9412,11 +8924,9 @@ pub struct SYMBOL_INFO {
     pub Tag: u32,
     pub NameLen: u32,
     pub MaxNameLen: u32,
-    pub Name: [super::super::super::Foundation::CHAR; 1],
+    pub Name: [::win32_foundation_sys::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYMBOL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYMBOL_INFO {
     fn clone(&self) -> Self {
         *self
@@ -9480,14 +8990,11 @@ pub const SYMFLAG_TLSREL: SYMBOL_INFO_FLAGS = 16384u32;
 pub const SYMFLAG_VALUEPRESENT: SYMBOL_INFO_FLAGS = 1u32;
 pub const SYMFLAG_VIRTUAL: SYMBOL_INFO_FLAGS = 4096u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYMBOL_INFO_PACKAGE {
     pub si: SYMBOL_INFO,
-    pub name: [super::super::super::Foundation::CHAR; 2001],
+    pub name: [::win32_foundation_sys::CHAR; 2001],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYMBOL_INFO_PACKAGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYMBOL_INFO_PACKAGE {
     fn clone(&self) -> Self {
         *self
@@ -9579,33 +9086,29 @@ impl ::core::clone::Clone for SYMSRV_EXTENDED_OUTPUT_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYMSRV_INDEX_INFO {
     pub sizeofstruct: u32,
-    pub file: [super::super::super::Foundation::CHAR; 261],
-    pub stripped: super::super::super::Foundation::BOOL,
+    pub file: [::win32_foundation_sys::CHAR; 261],
+    pub stripped: ::win32_foundation_sys::BOOL,
     pub timestamp: u32,
     pub size: u32,
-    pub dbgfile: [super::super::super::Foundation::CHAR; 261],
-    pub pdbfile: [super::super::super::Foundation::CHAR; 261],
+    pub dbgfile: [::win32_foundation_sys::CHAR; 261],
+    pub pdbfile: [::win32_foundation_sys::CHAR; 261],
     pub guid: ::windows_core_sys::GUID,
     pub sig: u32,
     pub age: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYMSRV_INDEX_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYMSRV_INDEX_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYMSRV_INDEX_INFOW {
     pub sizeofstruct: u32,
     pub file: [u16; 261],
-    pub stripped: super::super::super::Foundation::BOOL,
+    pub stripped: ::win32_foundation_sys::BOOL,
     pub timestamp: u32,
     pub size: u32,
     pub dbgfile: [u16; 261],
@@ -9614,9 +9117,7 @@ pub struct SYMSRV_INDEX_INFOW {
     pub sig: u32,
     pub age: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYMSRV_INDEX_INFOW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYMSRV_INDEX_INFOW {
     fn clone(&self) -> Self {
         *self
@@ -9955,60 +9456,48 @@ pub type VarArgsKind = i32;
 pub const VarArgsNone: VarArgsKind = 0i32;
 pub const VarArgsCStyle: VarArgsKind = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WAITCHAIN_NODE_INFO {
     pub ObjectType: WCT_OBJECT_TYPE,
     pub ObjectStatus: WCT_OBJECT_STATUS,
     pub Anonymous: WAITCHAIN_NODE_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WAITCHAIN_NODE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WAITCHAIN_NODE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WAITCHAIN_NODE_INFO_0 {
     pub LockObject: WAITCHAIN_NODE_INFO_0_0,
     pub ThreadObject: WAITCHAIN_NODE_INFO_0_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WAITCHAIN_NODE_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WAITCHAIN_NODE_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WAITCHAIN_NODE_INFO_0_0 {
     pub ObjectName: [u16; 128],
     pub Timeout: i64,
-    pub Alertable: super::super::super::Foundation::BOOL,
+    pub Alertable: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WAITCHAIN_NODE_INFO_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WAITCHAIN_NODE_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WAITCHAIN_NODE_INFO_0_1 {
     pub ProcessId: u32,
     pub ThreadId: u32,
     pub WaitTime: u32,
     pub ContextSwitches: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WAITCHAIN_NODE_INFO_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WAITCHAIN_NODE_INFO_0_1 {
     fn clone(&self) -> Self {
         *self
@@ -10124,10 +9613,9 @@ impl ::core::clone::Clone for WDBGEXTS_THREAD_OS_INFO {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_AER_BRIDGE_DESCRIPTOR {
     pub Type: u16,
-    pub Enabled: super::super::super::Foundation::BOOLEAN,
+    pub Enabled: ::win32_foundation_sys::BOOLEAN,
     pub Reserved: u8,
     pub BusNumber: u32,
     pub Slot: WHEA_PCI_SLOT_NUMBER,
@@ -10141,19 +9629,16 @@ pub struct WHEA_AER_BRIDGE_DESCRIPTOR {
     pub SecondaryUncorrectableErrorSev: u32,
     pub SecondaryCapsAndControl: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_AER_BRIDGE_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_AER_BRIDGE_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_AER_ENDPOINT_DESCRIPTOR {
     pub Type: u16,
-    pub Enabled: super::super::super::Foundation::BOOLEAN,
+    pub Enabled: ::win32_foundation_sys::BOOLEAN,
     pub Reserved: u8,
     pub BusNumber: u32,
     pub Slot: WHEA_PCI_SLOT_NUMBER,
@@ -10164,19 +9649,16 @@ pub struct WHEA_AER_ENDPOINT_DESCRIPTOR {
     pub CorrectableErrorMask: u32,
     pub AdvancedCapsAndControl: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_AER_ENDPOINT_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_AER_ENDPOINT_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_AER_ROOTPORT_DESCRIPTOR {
     pub Type: u16,
-    pub Enabled: super::super::super::Foundation::BOOLEAN,
+    pub Enabled: ::win32_foundation_sys::BOOLEAN,
     pub Reserved: u8,
     pub BusNumber: u32,
     pub Slot: WHEA_PCI_SLOT_NUMBER,
@@ -10188,9 +9670,7 @@ pub struct WHEA_AER_ROOTPORT_DESCRIPTOR {
     pub AdvancedCapsAndControl: u32,
     pub RootErrorCommand: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_AER_ROOTPORT_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_AER_ROOTPORT_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
@@ -10209,10 +9689,9 @@ pub const WHEA_DEVICE_DRIVER_CONFIG_MIN: u32 = 1u32;
 pub const WHEA_DEVICE_DRIVER_CONFIG_V1: u32 = 1u32;
 pub const WHEA_DEVICE_DRIVER_CONFIG_V2: u32 = 2u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_DEVICE_DRIVER_DESCRIPTOR {
     pub Type: u16,
-    pub Enabled: super::super::super::Foundation::BOOLEAN,
+    pub Enabled: ::win32_foundation_sys::BOOLEAN,
     pub Reserved: u8,
     pub SourceGuid: ::windows_core_sys::GUID,
     pub LogTag: u16,
@@ -10228,9 +9707,7 @@ pub struct WHEA_DEVICE_DRIVER_DESCRIPTOR {
     pub PacketStateBuffer: *mut u8,
     pub OpenHandles: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_DEVICE_DRIVER_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_DEVICE_DRIVER_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
@@ -10254,22 +9731,18 @@ impl ::core::clone::Clone for WHEA_DRIVER_BUFFER_SET {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_ERROR_SOURCE_CONFIGURATION_DD {
     pub Initialize: WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER,
     pub Uninitialize: WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER,
     pub Correct: WHEA_ERROR_SOURCE_CORRECT_DEVICE_DRIVER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_ERROR_SOURCE_CONFIGURATION_DD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_ERROR_SOURCE_CONFIGURATION_DD {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER {
     pub Version: u32,
     pub SourceGuid: ::windows_core_sys::GUID,
@@ -10282,16 +9755,13 @@ pub struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER {
     pub CreatorId: ::windows_core_sys::GUID,
     pub PartitionId: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER_V1 {
     pub Version: u32,
     pub SourceGuid: ::windows_core_sys::GUID,
@@ -10300,18 +9770,14 @@ pub struct WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER_V1 {
     pub Initialize: WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER,
     pub Uninitialize: WHEA_ERROR_SOURCE_UNINITIALIZE_DEVICE_DRIVER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER_V1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_ERROR_SOURCE_CONFIGURATION_DEVICE_DRIVER_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type WHEA_ERROR_SOURCE_CORRECT_DEVICE_DRIVER = ::core::option::Option<unsafe extern "system" fn(errorsourcedesc: *mut ::core::ffi::c_void, maximumsectionlength: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
+pub type WHEA_ERROR_SOURCE_CORRECT_DEVICE_DRIVER = ::core::option::Option<unsafe extern "system" fn(errorsourcedesc: *mut ::core::ffi::c_void, maximumsectionlength: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_ERROR_SOURCE_DESCRIPTOR {
     pub Length: u32,
     pub Version: u32,
@@ -10325,16 +9791,13 @@ pub struct WHEA_ERROR_SOURCE_DESCRIPTOR {
     pub Flags: u32,
     pub Info: WHEA_ERROR_SOURCE_DESCRIPTOR_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_ERROR_SOURCE_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_ERROR_SOURCE_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WHEA_ERROR_SOURCE_DESCRIPTOR_0 {
     pub XpfMceDescriptor: WHEA_XPF_MCE_DESCRIPTOR,
     pub XpfCmcDescriptor: WHEA_XPF_CMC_DESCRIPTOR,
@@ -10349,9 +9812,7 @@ pub union WHEA_ERROR_SOURCE_DESCRIPTOR_0 {
     pub GenErrDescriptorV2: WHEA_GENERIC_ERROR_DESCRIPTOR_V2,
     pub DeviceDriverDescriptor: WHEA_DEVICE_DRIVER_DESCRIPTOR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_ERROR_SOURCE_DESCRIPTOR_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_ERROR_SOURCE_DESCRIPTOR_0 {
     fn clone(&self) -> Self {
         *self
@@ -10374,8 +9835,7 @@ pub const WHEA_ERROR_SOURCE_FLAG_DEFAULTSOURCE: u32 = 2147483648u32;
 pub const WHEA_ERROR_SOURCE_FLAG_FIRMWAREFIRST: u32 = 1u32;
 pub const WHEA_ERROR_SOURCE_FLAG_GHES_ASSIST: u32 = 4u32;
 pub const WHEA_ERROR_SOURCE_FLAG_GLOBAL: u32 = 2u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, errorsourceid: u32) -> super::super::super::Foundation::NTSTATUS>;
+pub type WHEA_ERROR_SOURCE_INITIALIZE_DEVICE_DRIVER = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, errorsourceid: u32) -> ::win32_foundation_sys::NTSTATUS>;
 pub const WHEA_ERROR_SOURCE_INVALID_RELATED_SOURCE: u32 = 65535u32;
 pub type WHEA_ERROR_SOURCE_STATE = i32;
 pub const WheaErrSrcStateStopped: WHEA_ERROR_SOURCE_STATE = 1i32;
@@ -10706,25 +10166,21 @@ pub const WHEA_RESTORE_CMCI_ATTEMPTS: u32 = 8u32;
 pub const WHEA_RESTORE_CMCI_ENABLED: u32 = 7u32;
 pub const WHEA_RESTORE_CMCI_ERR_LIMIT: u32 = 9u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_XPF_CMC_DESCRIPTOR {
     pub Type: u16,
-    pub Enabled: super::super::super::Foundation::BOOLEAN,
+    pub Enabled: ::win32_foundation_sys::BOOLEAN,
     pub NumberOfBanks: u8,
     pub Reserved: u32,
     pub Notify: WHEA_NOTIFICATION_DESCRIPTOR,
     pub Banks: [WHEA_XPF_MC_BANK_DESCRIPTOR; 32],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_XPF_CMC_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_XPF_CMC_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_XPF_MCE_DESCRIPTOR {
     pub Type: u16,
     pub Enabled: u8,
@@ -10734,19 +10190,16 @@ pub struct WHEA_XPF_MCE_DESCRIPTOR {
     pub MCG_GlobalControl: u64,
     pub Banks: [WHEA_XPF_MC_BANK_DESCRIPTOR; 32],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_XPF_MCE_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_XPF_MCE_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_XPF_MC_BANK_DESCRIPTOR {
     pub BankNumber: u8,
-    pub ClearOnInitialization: super::super::super::Foundation::BOOLEAN,
+    pub ClearOnInitialization: ::win32_foundation_sys::BOOLEAN,
     pub StatusDataFormat: u8,
     pub Flags: XPF_MC_BANK_FLAGS,
     pub ControlMsr: u32,
@@ -10755,9 +10208,7 @@ pub struct WHEA_XPF_MC_BANK_DESCRIPTOR {
     pub MiscMsr: u32,
     pub ControlData: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_XPF_MC_BANK_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_XPF_MC_BANK_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self
@@ -10767,14 +10218,11 @@ pub const WHEA_XPF_MC_BANK_STATUSFORMAT_AMD64MCA: u32 = 2u32;
 pub const WHEA_XPF_MC_BANK_STATUSFORMAT_IA32MCA: u32 = 0u32;
 pub const WHEA_XPF_MC_BANK_STATUSFORMAT_Intel64MCA: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WHEA_XPF_NMI_DESCRIPTOR {
     pub Type: u16,
-    pub Enabled: super::super::super::Foundation::BOOLEAN,
+    pub Enabled: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WHEA_XPF_NMI_DESCRIPTOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WHEA_XPF_NMI_DESCRIPTOR {
     fn clone(&self) -> Self {
         *self

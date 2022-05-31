@@ -26,10 +26,7 @@ unsafe impl ::windows_core::Interface for IInstalledVoicesStatic2 {
 #[doc(hidden)]
 pub struct IInstalledVoicesStatic2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub TrySetDefaultVoiceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, voice: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TrySetDefaultVoiceAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -58,14 +55,8 @@ unsafe impl ::windows_core::Interface for ISpeechSynthesizer {
 #[doc(hidden)]
 pub struct ISpeechSynthesizer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub SynthesizeTextToStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, text: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SynthesizeTextToStreamAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub SynthesizeSsmlToStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ssml: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SynthesizeSsmlToStreamAsync: usize,
     pub SetVoice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Voice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -218,46 +209,45 @@ unsafe impl ::windows_core::RuntimeType for SpeechPunctuationSilence {
 #[repr(transparent)]
 pub struct SpeechSynthesisStream(::windows_core::IUnknown);
 impl SpeechSynthesisStream {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
     pub fn ContentType(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IContentTypeProvider>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IContentTypeProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ContentType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, buffer: Param0, count: u32, options: super::super::Storage::Streams::InputStreamOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u32>> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IInputStream>(self)?;
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, buffer: Param0, count: u32, options: ::winrt_storage::Streams::InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u32>> {
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IInputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u32>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IOutputStream>(self)?;
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IOutputStream>(self)?;
+    #[cfg(feature = "Storage_Streams")]
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
     pub fn Size(&self) -> ::windows_core::Result<u64> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IRandomAccessStream>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u64>(result__)
@@ -265,28 +255,28 @@ impl SpeechSynthesisStream {
     }
     #[cfg(feature = "Storage_Streams")]
     pub fn SetSize(&self, value: u64) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IRandomAccessStream>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStream>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetInputStreamAt(&self, position: u64) -> ::windows_core::Result<super::super::Storage::Streams::IInputStream> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IRandomAccessStream>(self)?;
+    pub fn GetInputStreamAt(&self, position: u64) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetInputStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IInputStream>(result__)
+            (::windows_core::Interface::vtable(this).GetInputStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetOutputStreamAt(&self, position: u64) -> ::windows_core::Result<super::super::Storage::Streams::IOutputStream> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IRandomAccessStream>(self)?;
+    pub fn GetOutputStreamAt(&self, position: u64) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetOutputStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IOutputStream>(result__)
+            (::windows_core::Interface::vtable(this).GetOutputStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IOutputStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
     pub fn Position(&self) -> ::windows_core::Result<u64> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IRandomAccessStream>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
             (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u64>(result__)
@@ -294,20 +284,20 @@ impl SpeechSynthesisStream {
     }
     #[cfg(feature = "Storage_Streams")]
     pub fn Seek(&self, position: u64) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IRandomAccessStream>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStream>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Seek)(::windows_core::Interface::as_raw(this), position).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CloneStream(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStream> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IRandomAccessStream>(self)?;
+    pub fn CloneStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStream> {
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CloneStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStream>(result__)
+            (::windows_core::Interface::vtable(this).CloneStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
     pub fn CanRead(&self) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IRandomAccessStream>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).CanRead)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
@@ -315,26 +305,26 @@ impl SpeechSynthesisStream {
     }
     #[cfg(feature = "Storage_Streams")]
     pub fn CanWrite(&self) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::Storage::Streams::IRandomAccessStream>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_storage::Streams::IRandomAccessStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).CanWrite)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Markers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::IMediaMarker>> {
+    pub fn Markers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::IMediaMarker>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Markers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::IMediaMarker>>(result__)
+            (::windows_core::Interface::vtable(this).Markers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::IMediaMarker>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Media_Core"))]
-    pub fn TimedMetadataTracks(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::Core::TimedMetadataTrack>> {
+    pub fn TimedMetadataTracks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::Core::TimedMetadataTrack>> {
         let this = &::windows_core::Interface::cast::<super::Core::ITimedMetadataTrackProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TimedMetadataTracks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::Core::TimedMetadataTrack>>(result__)
+            (::windows_core::Interface::vtable(this).TimedMetadataTracks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::Core::TimedMetadataTrack>>(result__)
         }
     }
 }
@@ -408,160 +398,156 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Spe
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<SpeechSynthesisStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<SpeechSynthesisStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&SpeechSynthesisStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&SpeechSynthesisStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<SpeechSynthesisStream> for super::super::Storage::Streams::IContentTypeProvider {
-    type Error = ::windows_core::Error;
-    fn try_from(value: SpeechSynthesisStream) -> ::windows_core::Result<Self> {
-        ::core::convert::TryFrom::try_from(&value)
-    }
-}
-#[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<&SpeechSynthesisStream> for super::super::Storage::Streams::IContentTypeProvider {
-    type Error = ::windows_core::Error;
-    fn try_from(value: &SpeechSynthesisStream) -> ::windows_core::Result<Self> {
-        ::windows_core::Interface::cast(value)
-    }
-}
-#[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IContentTypeProvider> for SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IContentTypeProvider> {
-        ::windows_core::IntoParam::into_param(&self)
-    }
-}
-#[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IContentTypeProvider> for &SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IContentTypeProvider> {
-        ::core::convert::TryInto::<super::super::Storage::Streams::IContentTypeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
-    }
-}
-#[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<SpeechSynthesisStream> for super::super::Storage::Streams::IInputStream {
+impl ::core::convert::TryFrom<SpeechSynthesisStream> for ::winrt_storage::Streams::IContentTypeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<&SpeechSynthesisStream> for super::super::Storage::Streams::IInputStream {
+impl ::core::convert::TryFrom<&SpeechSynthesisStream> for ::winrt_storage::Streams::IContentTypeProvider {
     type Error = ::windows_core::Error;
     fn try_from(value: &SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IInputStream> for SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IInputStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IContentTypeProvider> for SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IContentTypeProvider> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IInputStream> for &SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IInputStream> {
-        ::core::convert::TryInto::<super::super::Storage::Streams::IInputStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IContentTypeProvider> for &SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IContentTypeProvider> {
+        ::core::convert::TryInto::<::winrt_storage::Streams::IContentTypeProvider>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<SpeechSynthesisStream> for super::super::Storage::Streams::IOutputStream {
+impl ::core::convert::TryFrom<SpeechSynthesisStream> for ::winrt_storage::Streams::IInputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<&SpeechSynthesisStream> for super::super::Storage::Streams::IOutputStream {
+impl ::core::convert::TryFrom<&SpeechSynthesisStream> for ::winrt_storage::Streams::IInputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: &SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IOutputStream> for SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IOutputStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream> for SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IInputStream> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IOutputStream> for &SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IOutputStream> {
-        ::core::convert::TryInto::<super::super::Storage::Streams::IOutputStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream> for &SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IInputStream> {
+        ::core::convert::TryInto::<::winrt_storage::Streams::IInputStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<SpeechSynthesisStream> for super::super::Storage::Streams::IRandomAccessStream {
+impl ::core::convert::TryFrom<SpeechSynthesisStream> for ::winrt_storage::Streams::IOutputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<&SpeechSynthesisStream> for super::super::Storage::Streams::IRandomAccessStream {
+impl ::core::convert::TryFrom<&SpeechSynthesisStream> for ::winrt_storage::Streams::IOutputStream {
     type Error = ::windows_core::Error;
     fn try_from(value: &SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream> for SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IRandomAccessStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream> for SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IOutputStream> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream> for &SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IRandomAccessStream> {
-        ::core::convert::TryInto::<super::super::Storage::Streams::IRandomAccessStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream> for &SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IOutputStream> {
+        ::core::convert::TryInto::<::winrt_storage::Streams::IOutputStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<SpeechSynthesisStream> for super::super::Storage::Streams::IRandomAccessStreamWithContentType {
+impl ::core::convert::TryFrom<SpeechSynthesisStream> for ::winrt_storage::Streams::IRandomAccessStream {
     type Error = ::windows_core::Error;
     fn try_from(value: SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl ::core::convert::TryFrom<&SpeechSynthesisStream> for super::super::Storage::Streams::IRandomAccessStreamWithContentType {
+impl ::core::convert::TryFrom<&SpeechSynthesisStream> for ::winrt_storage::Streams::IRandomAccessStream {
     type Error = ::windows_core::Error;
     fn try_from(value: &SpeechSynthesisStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamWithContentType> for SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IRandomAccessStreamWithContentType> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream> for SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IRandomAccessStream> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Storage_Streams")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamWithContentType> for &SpeechSynthesisStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Storage::Streams::IRandomAccessStreamWithContentType> {
-        ::core::convert::TryInto::<super::super::Storage::Streams::IRandomAccessStreamWithContentType>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream> for &SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IRandomAccessStream> {
+        ::core::convert::TryInto::<::winrt_storage::Streams::IRandomAccessStream>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+    }
+}
+#[cfg(feature = "Storage_Streams")]
+impl ::core::convert::TryFrom<SpeechSynthesisStream> for ::winrt_storage::Streams::IRandomAccessStreamWithContentType {
+    type Error = ::windows_core::Error;
+    fn try_from(value: SpeechSynthesisStream) -> ::windows_core::Result<Self> {
+        ::core::convert::TryFrom::try_from(&value)
+    }
+}
+#[cfg(feature = "Storage_Streams")]
+impl ::core::convert::TryFrom<&SpeechSynthesisStream> for ::winrt_storage::Streams::IRandomAccessStreamWithContentType {
+    type Error = ::windows_core::Error;
+    fn try_from(value: &SpeechSynthesisStream) -> ::windows_core::Result<Self> {
+        ::windows_core::Interface::cast(value)
+    }
+}
+#[cfg(feature = "Storage_Streams")]
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamWithContentType> for SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IRandomAccessStreamWithContentType> {
+        ::windows_core::IntoParam::into_param(&self)
+    }
+}
+#[cfg(feature = "Storage_Streams")]
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamWithContentType> for &SpeechSynthesisStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_storage::Streams::IRandomAccessStreamWithContentType> {
+        ::core::convert::TryInto::<::winrt_storage::Streams::IRandomAccessStreamWithContentType>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Media_Core")]
@@ -602,16 +588,15 @@ impl SpeechSynthesizer {
         static mut SHARED: ::windows_core::FactoryCache<SpeechSynthesizer, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AllVoices() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<VoiceInformation>> {
+    pub fn AllVoices() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<VoiceInformation>> {
         Self::IInstalledVoicesStatic(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AllVoices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<VoiceInformation>>(result__)
+            (::windows_core::Interface::vtable(this).AllVoices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<VoiceInformation>>(result__)
         })
     }
     pub fn DefaultVoice() -> ::windows_core::Result<VoiceInformation> {
@@ -620,27 +605,24 @@ impl SpeechSynthesizer {
             (::windows_core::Interface::vtable(this).DefaultVoice)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VoiceInformation>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TrySetDefaultVoiceAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceInformation>>(voice: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TrySetDefaultVoiceAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceInformation>>(voice: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IInstalledVoicesStatic2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetDefaultVoiceAsync)(::windows_core::Interface::as_raw(this), voice.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetDefaultVoiceAsync)(::windows_core::Interface::as_raw(this), voice.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SynthesizeTextToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SpeechSynthesisStream>> {
+    pub fn SynthesizeTextToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SpeechSynthesisStream>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SynthesizeTextToStreamAsync)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SpeechSynthesisStream>>(result__)
+            (::windows_core::Interface::vtable(this).SynthesizeTextToStreamAsync)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SpeechSynthesisStream>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SynthesizeSsmlToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, ssml: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SpeechSynthesisStream>> {
+    pub fn SynthesizeSsmlToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, ssml: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SpeechSynthesisStream>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SynthesizeSsmlToStreamAsync)(::windows_core::Interface::as_raw(this), ssml.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SpeechSynthesisStream>>(result__)
+            (::windows_core::Interface::vtable(this).SynthesizeSsmlToStreamAsync)(::windows_core::Interface::as_raw(this), ssml.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SpeechSynthesisStream>>(result__)
         }
     }
     pub fn SetVoice<'a, Param0: ::windows_core::IntoParam<'a, VoiceInformation>>(&self, value: Param0) -> ::windows_core::Result<()> {
@@ -740,30 +722,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Spe
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<SpeechSynthesizer> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<SpeechSynthesizer> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: SpeechSynthesizer) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&SpeechSynthesizer> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&SpeechSynthesizer> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &SpeechSynthesizer) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for SpeechSynthesizer {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for SpeechSynthesizer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &SpeechSynthesizer {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &SpeechSynthesizer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for SpeechSynthesizer {}

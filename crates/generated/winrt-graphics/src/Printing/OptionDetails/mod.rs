@@ -381,11 +381,11 @@ pub struct IPrintHolePunchOptionDetails_Vtbl {
 pub struct IPrintItemListOptionDetails(::windows_core::IUnknown);
 impl IPrintItemListOptionDetails {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -961,22 +961,10 @@ pub struct IPrintTaskOptionDetails_Vtbl {
     Options: usize,
     pub CreateItemListOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, optionid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, displayname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTextOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, optionid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, displayname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub OptionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OptionChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveOptionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveOptionChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub BeginValidation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BeginValidation: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveBeginValidation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveBeginValidation: usize,
+    pub OptionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveOptionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub BeginValidation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveBeginValidation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1186,11 +1174,11 @@ impl PrintBindingOptionDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1386,11 +1374,11 @@ impl PrintBorderingOptionDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1586,11 +1574,11 @@ impl PrintCollationOptionDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1786,11 +1774,11 @@ impl PrintColorModeOptionDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2268,7 +2256,7 @@ impl PrintCustomItemListOptionDetails {
         unsafe { (::windows_core::Interface::vtable(this).AddItem)(::windows_core::Interface::as_raw(this), itemid.into_param().abi(), displayname.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn AddItem2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IRandomAccessStreamWithContentType>>(&self, itemid: Param0, displayname: Param1, description: Param2, icon: Param3) -> ::windows_core::Result<()> {
+    pub fn AddItem2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamWithContentType>>(&self, itemid: Param0, displayname: Param1, description: Param2, icon: Param3) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IPrintCustomItemListOptionDetails2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AddItem)(::windows_core::Interface::as_raw(this), itemid.into_param().abi(), displayname.into_param().abi(), description.into_param().abi(), icon.into_param().abi()).ok() }
     }
@@ -2306,11 +2294,11 @@ impl PrintCustomItemListOptionDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2945,11 +2933,11 @@ impl PrintDuplexOptionDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -3145,11 +3133,11 @@ impl PrintHolePunchOptionDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -3323,11 +3311,11 @@ unsafe impl ::core::marker::Sync for PrintHolePunchOptionDetails {}
 pub struct PrintMediaSizeOptionDetails(::windows_core::IUnknown);
 impl PrintMediaSizeOptionDetails {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn SetWarningText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
@@ -3523,11 +3511,11 @@ unsafe impl ::core::marker::Sync for PrintMediaSizeOptionDetails {}
 pub struct PrintMediaTypeOptionDetails(::windows_core::IUnknown);
 impl PrintMediaTypeOptionDetails {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn SetWarningText<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
@@ -3821,11 +3809,11 @@ unsafe impl ::windows_core::RuntimeType for PrintOptionType {
 pub struct PrintOrientationOptionDetails(::windows_core::IUnknown);
 impl PrintOrientationOptionDetails {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -4191,11 +4179,11 @@ unsafe impl ::core::marker::Sync for PrintPageRangeOptionDetails {}
 pub struct PrintQualityOptionDetails(::windows_core::IUnknown);
 impl PrintQualityOptionDetails {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -4391,11 +4379,11 @@ unsafe impl ::core::marker::Sync for PrintQualityOptionDetails {}
 pub struct PrintStapleOptionDetails(::windows_core::IUnknown);
 impl PrintStapleOptionDetails {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>> {
         let this = &::windows_core::Interface::cast::<IPrintItemListOptionDetails>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::IInspectable>>(result__)
         }
     }
     pub fn OptionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -4674,11 +4662,11 @@ unsafe impl ::core::marker::Sync for PrintTaskOptionChangedEventArgs {}
 pub struct PrintTaskOptionDetails(::windows_core::IUnknown);
 impl PrintTaskOptionDetails {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Options(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, IPrintOptionDetails>> {
+    pub fn Options(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, IPrintOptionDetails>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Options)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, IPrintOptionDetails>>(result__)
+            (::windows_core::Interface::vtable(this).Options)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, IPrintOptionDetails>>(result__)
         }
     }
     pub fn CreateItemListOption<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, optionid: Param0, displayname: Param1) -> ::windows_core::Result<PrintCustomItemListOptionDetails> {
@@ -4695,29 +4683,25 @@ impl PrintTaskOptionDetails {
             (::windows_core::Interface::vtable(this).CreateTextOption)(::windows_core::Interface::as_raw(this), optionid.into_param().abi(), displayname.into_param().abi(), result__.as_mut_ptr()).from_abi::<PrintCustomTextOptionDetails>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OptionChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<PrintTaskOptionDetails, PrintTaskOptionChangedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn OptionChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<PrintTaskOptionDetails, PrintTaskOptionChangedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).OptionChanged)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).OptionChanged)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveOptionChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveOptionChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveOptionChanged)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BeginValidation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<PrintTaskOptionDetails, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn BeginValidation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<PrintTaskOptionDetails, ::windows_core::IInspectable>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).BeginValidation)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).BeginValidation)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveBeginValidation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveBeginValidation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveBeginValidation)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
@@ -4734,7 +4718,6 @@ impl PrintTaskOptionDetails {
             (::windows_core::Interface::vtable(this).GetFromPrintTaskOptions)(::windows_core::Interface::as_raw(this), printtaskoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<PrintTaskOptionDetails>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn GetPageDescription(&self, jobpagenumber: u32) -> ::windows_core::Result<super::PrintPageDescription> {
         let this = &::windows_core::Interface::cast::<super::IPrintTaskOptionsCore>(self)?;
         unsafe {
@@ -4743,11 +4726,11 @@ impl PrintTaskOptionDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DisplayedOptions(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn DisplayedOptions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<super::IPrintTaskOptionsCoreUIConfiguration>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DisplayedOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).DisplayedOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn IPrintTaskOptionDetailsStatic<R, F: FnOnce(&IPrintTaskOptionDetailsStatic) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

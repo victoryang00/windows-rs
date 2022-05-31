@@ -1,9 +1,8 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WnvOpen() -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn WnvRequestNotification(wnvhandle: super::super::Foundation::HANDLE, notificationparam: *mut WNV_NOTIFICATION_PARAM, overlapped: *mut super::super::System::IO::OVERLAPPED, bytestransferred: *mut u32) -> u32;
+    pub fn WnvOpen() -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn WnvRequestNotification(wnvhandle: ::win32_foundation_sys::HANDLE, notificationparam: *mut WNV_NOTIFICATION_PARAM, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED, bytestransferred: *mut u32) -> u32;
 }
 pub const WNV_API_MAJOR_VERSION_1: u32 = 1u32;
 pub const WNV_API_MINOR_VERSION_0: u32 = 0u32;
@@ -15,7 +14,7 @@ pub const WnvCustomerAddressMax: WNV_CA_NOTIFICATION_TYPE = 3i32;
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {
-    pub MACAddress: super::super::Networking::WinSock::DL_EUI48,
+    pub MACAddress: ::win32_networking_sys::WinSock::DL_EUI48,
     pub CAFamily: u16,
     pub CA: WNV_IP_ADDRESS,
     pub VirtualSubnetId: u32,
@@ -47,8 +46,8 @@ impl ::core::clone::Clone for WNV_IP_ADDRESS {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub union WNV_IP_ADDRESS_0 {
-    pub v4: super::super::Networking::WinSock::IN_ADDR,
-    pub v6: super::super::Networking::WinSock::IN6_ADDR,
+    pub v4: ::win32_networking_sys::WinSock::IN_ADDR,
+    pub v6: ::win32_networking_sys::WinSock::IN6_ADDR,
     pub Addr: [u8; 16],
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -143,7 +142,7 @@ impl ::core::clone::Clone for WNV_POLICY_MISMATCH_PARAM {
 pub struct WNV_PROVIDER_ADDRESS_CHANGE_PARAM {
     pub PAFamily: u16,
     pub PA: WNV_IP_ADDRESS,
-    pub AddressState: super::super::Networking::WinSock::NL_DAD_STATE,
+    pub AddressState: ::win32_networking_sys::WinSock::NL_DAD_STATE,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for WNV_PROVIDER_ADDRESS_CHANGE_PARAM {}

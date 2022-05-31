@@ -797,13 +797,13 @@ impl ISdo {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).GetPropertyInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetProperty(&self, id: i32) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn GetProperty(&self, id: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn PutProperty(&self, id: i32, pvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn PutProperty(&self, id: i32, pvalue: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PutProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(pvalue)).ok()
     }
     pub unsafe fn ResetProperty(&self, id: i32) -> ::windows_core::Result<()> {
@@ -845,26 +845,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISdo {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ISdo> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<ISdo> for ::win32_system::Com::IDispatch {
     fn from(value: ISdo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ISdo> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&ISdo> for ::win32_system::Com::IDispatch {
     fn from(value: &ISdo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ISdo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for ISdo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ISdo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a ISdo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -897,15 +897,15 @@ unsafe impl ::windows_core::Interface for ISdo {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISdo_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub GetPropertyInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: i32, pppropertyinfo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: i32, pvalue: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: i32, pvalue: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub PutProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: i32, pvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub PutProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: i32, pvalue: *const ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     PutProperty: usize,
     pub ResetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: i32) -> ::windows_core::HRESULT,
     pub Apply: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -921,12 +921,12 @@ impl ISdoCollection {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, ppitem: *mut ::core::option::Option<super::super::System::Com::IDispatch>) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, ppitem: *mut ::core::option::Option<::win32_system::Com::IDispatch>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(ppitem)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, pitem: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, pitem: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), pitem.into_param().abi()).ok()
     }
     pub unsafe fn RemoveAll(&self) -> ::windows_core::Result<()> {
@@ -935,15 +935,14 @@ impl ISdoCollection {
     pub unsafe fn Reload(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Reload)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsNameUnique<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<i16> {
+    pub unsafe fn IsNameUnique<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).IsNameUnique)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Item(&self, name: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<super::super::System::Com::IDispatch> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Item(&self, name: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).Item)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IDispatch>(result__)
+        (::windows_core::Interface::vtable(self).Item)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(name), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
     }
     pub unsafe fn _NewEnum(&self) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
@@ -975,26 +974,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISdoCol
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ISdoCollection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<ISdoCollection> for ::win32_system::Com::IDispatch {
     fn from(value: ISdoCollection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ISdoCollection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&ISdoCollection> for ::win32_system::Com::IDispatch {
     fn from(value: &ISdoCollection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ISdoCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for ISdoCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ISdoCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a ISdoCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1027,11 +1026,11 @@ unsafe impl ::windows_core::Interface for ISdoCollection {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISdoCollection_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcount: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pitem: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1039,13 +1038,10 @@ pub struct ISdoCollection_Vtbl {
     Remove: usize,
     pub RemoveAll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Reload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsNameUnique: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbool: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsNameUnique: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *const super::super::System::Com::VARIANT, pitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    pub IsNameUnique: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pbool: *mut i16) -> ::windows_core::HRESULT,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *const ::win32_system::Com::VARIANT, pitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenumvariant: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -1054,26 +1050,25 @@ pub struct ISdoCollection_Vtbl {
 pub struct ISdoDictionaryOld(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ISdoDictionaryOld {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn EnumAttributes(&self, id: *mut super::super::System::Com::VARIANT, pvalues: *mut super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn EnumAttributes(&self, id: *mut ::win32_system::Com::VARIANT, pvalues: *mut ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumAttributes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(pvalues)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetAttributeInfo(&self, id: ATTRIBUTEID, pinfoids: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetAttributeInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(pinfoids), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn GetAttributeInfo(&self, id: ATTRIBUTEID, pinfoids: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetAttributeInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(pinfoids), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn EnumAttributeValues(&self, id: ATTRIBUTEID, pvalueids: *mut super::super::System::Com::VARIANT, pvaluesdesc: *mut super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn EnumAttributeValues(&self, id: ATTRIBUTEID, pvalueids: *mut ::win32_system::Com::VARIANT, pvaluesdesc: *mut ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumAttributeValues)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(pvalueids), ::core::mem::transmute(pvaluesdesc)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateAttribute(&self, id: ATTRIBUTEID) -> ::windows_core::Result<super::super::System::Com::IDispatch> {
+    pub unsafe fn CreateAttribute(&self, id: ATTRIBUTEID) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IDispatch>(result__)
+        (::windows_core::Interface::vtable(self).CreateAttribute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetAttributeID<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrattributename: Param0) -> ::windows_core::Result<ATTRIBUTEID> {
+    pub unsafe fn GetAttributeID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrattributename: Param0) -> ::windows_core::Result<ATTRIBUTEID> {
         let mut result__ = ::core::mem::MaybeUninit::<ATTRIBUTEID>::zeroed();
         (::windows_core::Interface::vtable(self).GetAttributeID)(::windows_core::Interface::as_raw(self), bstrattributename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ATTRIBUTEID>(result__)
     }
@@ -1103,26 +1098,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISdoDic
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ISdoDictionaryOld> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<ISdoDictionaryOld> for ::win32_system::Com::IDispatch {
     fn from(value: ISdoDictionaryOld) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ISdoDictionaryOld> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&ISdoDictionaryOld> for ::win32_system::Com::IDispatch {
     fn from(value: &ISdoDictionaryOld) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ISdoDictionaryOld {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for ISdoDictionaryOld {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ISdoDictionaryOld {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a ISdoDictionaryOld {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1155,48 +1150,42 @@ unsafe impl ::windows_core::Interface for ISdoDictionaryOld {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISdoDictionaryOld_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub EnumAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: *mut super::super::System::Com::VARIANT, pvalues: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EnumAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: *mut ::win32_system::Com::VARIANT, pvalues: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     EnumAttributes: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetAttributeInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ATTRIBUTEID, pinfoids: *const super::super::System::Com::VARIANT, pinfovalues: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetAttributeInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ATTRIBUTEID, pinfoids: *const ::win32_system::Com::VARIANT, pinfovalues: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetAttributeInfo: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub EnumAttributeValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ATTRIBUTEID, pvalueids: *mut super::super::System::Com::VARIANT, pvaluesdesc: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub EnumAttributeValues: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ATTRIBUTEID, pvalueids: *mut ::win32_system::Com::VARIANT, pvaluesdesc: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     EnumAttributeValues: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub CreateAttribute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ATTRIBUTEID, ppattributeobject: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateAttribute: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetAttributeID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrattributename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pid: *mut ATTRIBUTEID) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetAttributeID: usize,
+    pub GetAttributeID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrattributename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pid: *mut ATTRIBUTEID) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
 pub struct ISdoMachine(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ISdoMachine {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Attach<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcomputername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Attach<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcomputername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Attach)(::windows_core::Interface::as_raw(self), bstrcomputername.into_param().abi()).ok()
     }
     pub unsafe fn GetDictionarySDO(&self) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).GetDictionarySDO)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetServiceSDO<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, edatastore: IASDATASTORE, bstrservicename: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn GetServiceSDO<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, edatastore: IASDATASTORE, bstrservicename: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).GetServiceSDO)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(edatastore), bstrservicename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUserSDO<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, edatastore: IASDATASTORE, bstrusername: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn GetUserSDO<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, edatastore: IASDATASTORE, bstrusername: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).GetUserSDO)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(edatastore), bstrusername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
@@ -1212,10 +1201,9 @@ impl ISdoMachine {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).IsDirectoryAvailable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetAttachedComputer(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetAttachedComputer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetAttachedComputer(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetAttachedComputer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetSDOSchema(&self) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
@@ -1247,26 +1235,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISdoMac
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ISdoMachine> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<ISdoMachine> for ::win32_system::Com::IDispatch {
     fn from(value: ISdoMachine) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ISdoMachine> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&ISdoMachine> for ::win32_system::Com::IDispatch {
     fn from(value: &ISdoMachine) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ISdoMachine {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for ISdoMachine {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ISdoMachine {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a ISdoMachine {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1299,27 +1287,15 @@ unsafe impl ::windows_core::Interface for ISdoMachine {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISdoMachine_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Attach: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcomputername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Attach: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub Attach: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcomputername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub GetDictionarySDO: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppdictionarysdo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetServiceSDO: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, edatastore: IASDATASTORE, bstrservicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppservicesdo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetServiceSDO: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUserSDO: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, edatastore: IASDATASTORE, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppusersdo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUserSDO: usize,
+    pub GetServiceSDO: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, edatastore: IASDATASTORE, bstrservicename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppservicesdo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub GetUserSDO: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, edatastore: IASDATASTORE, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppusersdo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetOSType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eostype: *mut IASOSTYPE) -> ::windows_core::HRESULT,
     pub GetDomainType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, edomaintype: *mut IASDOMAINTYPE) -> ::windows_core::HRESULT,
     pub IsDirectoryAvailable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, booldirectoryavailable: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetAttachedComputer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcomputername: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetAttachedComputer: usize,
+    pub GetAttachedComputer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcomputername: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetSDOSchema: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsdoschema: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -1327,21 +1303,18 @@ pub struct ISdoMachine_Vtbl {
 pub struct ISdoMachine2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ISdoMachine2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Attach<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcomputername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Attach<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcomputername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Attach)(::windows_core::Interface::as_raw(self), bstrcomputername.into_param().abi()).ok()
     }
     pub unsafe fn GetDictionarySDO(&self) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetDictionarySDO)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetServiceSDO<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, edatastore: IASDATASTORE, bstrservicename: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn GetServiceSDO<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, edatastore: IASDATASTORE, bstrservicename: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetServiceSDO)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(edatastore), bstrservicename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUserSDO<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, edatastore: IASDATASTORE, bstrusername: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn GetUserSDO<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, edatastore: IASDATASTORE, bstrusername: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetUserSDO)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(edatastore), bstrusername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
@@ -1357,29 +1330,25 @@ impl ISdoMachine2 {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).base__.IsDirectoryAvailable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetAttachedComputer(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetAttachedComputer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetAttachedComputer(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetAttachedComputer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetSDOSchema(&self) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetSDOSchema)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetTemplatesSDO<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrservicename: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn GetTemplatesSDO<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrservicename: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).GetTemplatesSDO)(::windows_core::Interface::as_raw(self), bstrservicename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
     pub unsafe fn EnableTemplates(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnableTemplates)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SyncConfigAgainstTemplates<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrservicename: Param0, ppconfigroot: *mut ::core::option::Option<::windows_core::IUnknown>, pptemplatesroot: *mut ::core::option::Option<::windows_core::IUnknown>, bforcedsync: i16) -> ::windows_core::Result<()> {
+    pub unsafe fn SyncConfigAgainstTemplates<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrservicename: Param0, ppconfigroot: *mut ::core::option::Option<::windows_core::IUnknown>, pptemplatesroot: *mut ::core::option::Option<::windows_core::IUnknown>, bforcedsync: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SyncConfigAgainstTemplates)(::windows_core::Interface::as_raw(self), bstrservicename.into_param().abi(), ::core::mem::transmute(ppconfigroot), ::core::mem::transmute(pptemplatesroot), ::core::mem::transmute(bforcedsync)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ImportRemoteTemplates<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, plocaltemplatesroot: Param0, bstrremotemachinename: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn ImportRemoteTemplates<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, plocaltemplatesroot: Param0, bstrremotemachinename: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ImportRemoteTemplates)(::windows_core::Interface::as_raw(self), plocaltemplatesroot.into_param().abi(), bstrremotemachinename.into_param().abi()).ok()
     }
     pub unsafe fn Reload(&self) -> ::windows_core::Result<()> {
@@ -1411,26 +1380,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISdoMac
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ISdoMachine2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<ISdoMachine2> for ::win32_system::Com::IDispatch {
     fn from(value: ISdoMachine2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ISdoMachine2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&ISdoMachine2> for ::win32_system::Com::IDispatch {
     fn from(value: &ISdoMachine2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ISdoMachine2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for ISdoMachine2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ISdoMachine2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a ISdoMachine2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1488,19 +1457,10 @@ unsafe impl ::windows_core::Interface for ISdoMachine2 {
 #[doc(hidden)]
 pub struct ISdoMachine2_Vtbl {
     pub base__: ISdoMachine_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetTemplatesSDO: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrservicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pptemplatessdo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetTemplatesSDO: usize,
+    pub GetTemplatesSDO: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrservicename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pptemplatessdo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub EnableTemplates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SyncConfigAgainstTemplates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrservicename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppconfigroot: *mut *mut ::core::ffi::c_void, pptemplatesroot: *mut *mut ::core::ffi::c_void, bforcedsync: i16) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SyncConfigAgainstTemplates: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ImportRemoteTemplates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plocaltemplatesroot: *mut ::core::ffi::c_void, bstrremotemachinename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ImportRemoteTemplates: usize,
+    pub SyncConfigAgainstTemplates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrservicename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppconfigroot: *mut *mut ::core::ffi::c_void, pptemplatesroot: *mut *mut ::core::ffi::c_void, bforcedsync: i16) -> ::windows_core::HRESULT,
+    pub ImportRemoteTemplates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plocaltemplatesroot: *mut ::core::ffi::c_void, bstrremotemachinename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Reload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -1547,26 +1507,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISdoSer
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ISdoServiceControl> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<ISdoServiceControl> for ::win32_system::Com::IDispatch {
     fn from(value: ISdoServiceControl) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ISdoServiceControl> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&ISdoServiceControl> for ::win32_system::Com::IDispatch {
     fn from(value: &ISdoServiceControl) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ISdoServiceControl {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for ISdoServiceControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ISdoServiceControl {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a ISdoServiceControl {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1599,7 +1559,7 @@ unsafe impl ::windows_core::Interface for ISdoServiceControl {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISdoServiceControl_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub StartService: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub StopService: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetServiceStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: *mut i32) -> ::windows_core::HRESULT,
@@ -1614,13 +1574,13 @@ impl ITemplateSdo {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetPropertyInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetProperty(&self, id: i32) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn GetProperty(&self, id: i32) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn PutProperty(&self, id: i32, pvalue: *const super::super::System::Com::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn PutProperty(&self, id: i32, pvalue: *const ::win32_system::Com::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.PutProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), ::core::mem::transmute(pvalue)).ok()
     }
     pub unsafe fn ResetProperty(&self, id: i32) -> ::windows_core::Result<()> {
@@ -1636,16 +1596,16 @@ impl ITemplateSdo {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).base__._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn AddToCollection<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, bstrname: Param0, pcollection: Param1, ppitem: *mut ::core::option::Option<super::super::System::Com::IDispatch>) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn AddToCollection<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, bstrname: Param0, pcollection: Param1, ppitem: *mut ::core::option::Option<::win32_system::Com::IDispatch>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddToCollection)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), pcollection.into_param().abi(), ::core::mem::transmute(ppitem)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn AddToSdo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, bstrname: Param0, psdotarget: Param1, ppitem: *mut ::core::option::Option<super::super::System::Com::IDispatch>) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn AddToSdo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, bstrname: Param0, psdotarget: Param1, ppitem: *mut ::core::option::Option<::win32_system::Com::IDispatch>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddToSdo)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), psdotarget.into_param().abi(), ::core::mem::transmute(ppitem)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn AddToSdoAsProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, psdotarget: Param0, id: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn AddToSdoAsProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, psdotarget: Param0, id: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddToSdoAsProperty)(::windows_core::Interface::as_raw(self), psdotarget.into_param().abi(), ::core::mem::transmute(id)).ok()
     }
 }
@@ -1674,26 +1634,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ITempla
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<ITemplateSdo> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<ITemplateSdo> for ::win32_system::Com::IDispatch {
     fn from(value: ITemplateSdo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&ITemplateSdo> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&ITemplateSdo> for ::win32_system::Com::IDispatch {
     fn from(value: &ITemplateSdo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for ITemplateSdo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for ITemplateSdo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a ITemplateSdo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a ITemplateSdo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1751,13 +1711,13 @@ unsafe impl ::windows_core::Interface for ITemplateSdo {
 #[doc(hidden)]
 pub struct ITemplateSdo_Vtbl {
     pub base__: ISdo_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub AddToCollection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pcollection: ::windows_core::RawPtr, ppitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddToCollection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pcollection: ::windows_core::RawPtr, ppitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     AddToCollection: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub AddToSdo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, psdotarget: ::windows_core::RawPtr, ppitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddToSdo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, psdotarget: ::windows_core::RawPtr, ppitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     AddToSdo: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub AddToSdoAsProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psdotarget: ::windows_core::RawPtr, id: i32) -> ::windows_core::HRESULT,

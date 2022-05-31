@@ -9,11 +9,11 @@ impl AddPagesEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Graphics_Printing")]
-    pub fn PrintTaskOptions(&self) -> ::windows_core::Result<super::super::super::Graphics::Printing::PrintTaskOptions> {
+    pub fn PrintTaskOptions(&self) -> ::windows_core::Result<::winrt_graphics::Printing::PrintTaskOptions> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PrintTaskOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::Printing::PrintTaskOptions>(result__)
+            (::windows_core::Interface::vtable(this).PrintTaskOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Printing::PrintTaskOptions>(result__)
         }
     }
 }
@@ -406,30 +406,12 @@ pub struct IPrintDocument_Vtbl {
     pub DocumentSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Printing"))]
     DocumentSource: usize,
-    #[cfg(feature = "Foundation")]
-    pub Paginate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Paginate: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePaginate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePaginate: usize,
-    #[cfg(feature = "Foundation")]
-    pub GetPreviewPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPreviewPage: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveGetPreviewPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveGetPreviewPage: usize,
-    #[cfg(feature = "Foundation")]
-    pub AddPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AddPages: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAddPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAddPages: usize,
+    pub Paginate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemovePaginate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub GetPreviewPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveGetPreviewPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub AddPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAddPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub AddPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagevisual: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AddPagesComplete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetPreviewPageCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: i32, r#type: PreviewPageCountType) -> ::windows_core::HRESULT,
@@ -473,11 +455,11 @@ impl PaginateEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Graphics_Printing")]
-    pub fn PrintTaskOptions(&self) -> ::windows_core::Result<super::super::super::Graphics::Printing::PrintTaskOptions> {
+    pub fn PrintTaskOptions(&self) -> ::windows_core::Result<::winrt_graphics::Printing::PrintTaskOptions> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PrintTaskOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::Printing::PrintTaskOptions>(result__)
+            (::windows_core::Interface::vtable(this).PrintTaskOptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Printing::PrintTaskOptions>(result__)
         }
     }
     pub fn CurrentPreviewPageNumber(&self) -> ::windows_core::Result<i32> {
@@ -680,49 +662,43 @@ unsafe impl ::windows_core::RuntimeType for PreviewPageCountType {
 pub struct PrintDocument(::windows_core::IUnknown);
 impl PrintDocument {
     #[cfg(feature = "Graphics_Printing")]
-    pub fn DocumentSource(&self) -> ::windows_core::Result<super::super::super::Graphics::Printing::IPrintDocumentSource> {
+    pub fn DocumentSource(&self) -> ::windows_core::Result<::winrt_graphics::Printing::IPrintDocumentSource> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DocumentSource)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::Printing::IPrintDocumentSource>(result__)
+            (::windows_core::Interface::vtable(this).DocumentSource)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Printing::IPrintDocumentSource>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Paginate<'a, Param0: ::windows_core::IntoParam<'a, PaginateEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Paginate<'a, Param0: ::windows_core::IntoParam<'a, PaginateEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Paginate)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Paginate)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePaginate<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePaginate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePaginate)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetPreviewPage<'a, Param0: ::windows_core::IntoParam<'a, GetPreviewPageEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn GetPreviewPage<'a, Param0: ::windows_core::IntoParam<'a, GetPreviewPageEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPreviewPage)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).GetPreviewPage)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveGetPreviewPage<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveGetPreviewPage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveGetPreviewPage)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AddPages<'a, Param0: ::windows_core::IntoParam<'a, AddPagesEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn AddPages<'a, Param0: ::windows_core::IntoParam<'a, AddPagesEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AddPages)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AddPages)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAddPages<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAddPages<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAddPages)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }

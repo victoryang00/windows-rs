@@ -408,14 +408,13 @@ pub unsafe fn D3DStripShader(pshaderbytecode: *const ::core::ffi::c_void, byteco
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn D3DWriteBlobToFile<'a, Param0: ::windows_core::IntoParam<'a, super::ID3DBlob>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(pblob: Param0, pfilename: Param1, boverwrite: Param2) -> ::windows_core::Result<()> {
+pub unsafe fn D3DWriteBlobToFile<'a, Param0: ::windows_core::IntoParam<'a, super::ID3DBlob>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(pblob: Param0, pfilename: Param1, boverwrite: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn D3DWriteBlobToFile(pblob: ::windows_core::RawPtr, pfilename: ::windows_core::PCWSTR, boverwrite: super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn D3DWriteBlobToFile(pblob: ::windows_core::RawPtr, pfilename: ::windows_core::PCWSTR, boverwrite: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         D3DWriteBlobToFile(pblob.into_param().abi(), pfilename.into_param().abi(), boverwrite.into_param().abi()).ok()
     }

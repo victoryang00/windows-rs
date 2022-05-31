@@ -9,9 +9,9 @@ unsafe impl ::windows_core::Interface for IOcrEngine {
 #[doc(hidden)]
 pub struct IOcrEngine_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Graphics_Imaging"))]
+    #[cfg(feature = "Graphics_Imaging")]
     pub RecognizeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bitmap: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics_Imaging")))]
+    #[cfg(not(feature = "Graphics_Imaging"))]
     RecognizeAsync: usize,
     #[cfg(feature = "Globalization")]
     pub RecognizerLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -76,10 +76,7 @@ pub struct IOcrResult_Vtbl {
     pub Lines: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Lines: usize,
-    #[cfg(feature = "Foundation")]
     pub TextAngle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TextAngle: usize,
     pub Text: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -93,29 +90,26 @@ unsafe impl ::windows_core::Interface for IOcrWord {
 #[doc(hidden)]
 pub struct IOcrWord_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BoundingRect: usize,
+    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub Text: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct OcrEngine(::windows_core::IUnknown);
 impl OcrEngine {
-    #[cfg(all(feature = "Foundation", feature = "Graphics_Imaging"))]
-    pub fn RecognizeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Imaging::SoftwareBitmap>>(&self, bitmap: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<OcrResult>> {
+    #[cfg(feature = "Graphics_Imaging")]
+    pub fn RecognizeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Imaging::SoftwareBitmap>>(&self, bitmap: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<OcrResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecognizeAsync)(::windows_core::Interface::as_raw(this), bitmap.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<OcrResult>>(result__)
+            (::windows_core::Interface::vtable(this).RecognizeAsync)(::windows_core::Interface::as_raw(this), bitmap.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<OcrResult>>(result__)
         }
     }
     #[cfg(feature = "Globalization")]
-    pub fn RecognizerLanguage(&self) -> ::windows_core::Result<super::super::Globalization::Language> {
+    pub fn RecognizerLanguage(&self) -> ::windows_core::Result<::winrt_globalization::Language> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecognizerLanguage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Globalization::Language>(result__)
+            (::windows_core::Interface::vtable(this).RecognizerLanguage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_globalization::Language>(result__)
         }
     }
     pub fn MaxImageDimension() -> ::windows_core::Result<u32> {
@@ -125,21 +119,21 @@ impl OcrEngine {
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Globalization"))]
-    pub fn AvailableRecognizerLanguages() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Globalization::Language>> {
+    pub fn AvailableRecognizerLanguages() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>> {
         Self::IOcrEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AvailableRecognizerLanguages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Globalization::Language>>(result__)
+            (::windows_core::Interface::vtable(this).AvailableRecognizerLanguages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>>(result__)
         })
     }
     #[cfg(feature = "Globalization")]
-    pub fn IsLanguageSupported<'a, Param0: ::windows_core::IntoParam<'a, super::super::Globalization::Language>>(language: Param0) -> ::windows_core::Result<bool> {
+    pub fn IsLanguageSupported<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_globalization::Language>>(language: Param0) -> ::windows_core::Result<bool> {
         Self::IOcrEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).IsLanguageSupported)(::windows_core::Interface::as_raw(this), language.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
     #[cfg(feature = "Globalization")]
-    pub fn TryCreateFromLanguage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Globalization::Language>>(language: Param0) -> ::windows_core::Result<OcrEngine> {
+    pub fn TryCreateFromLanguage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_globalization::Language>>(language: Param0) -> ::windows_core::Result<OcrEngine> {
         Self::IOcrEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryCreateFromLanguage)(::windows_core::Interface::as_raw(this), language.into_param().abi(), result__.as_mut_ptr()).from_abi::<OcrEngine>(result__)
@@ -232,11 +226,11 @@ unsafe impl ::core::marker::Sync for OcrEngine {}
 pub struct OcrLine(::windows_core::IUnknown);
 impl OcrLine {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Words(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<OcrWord>> {
+    pub fn Words(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<OcrWord>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Words)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<OcrWord>>(result__)
+            (::windows_core::Interface::vtable(this).Words)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<OcrWord>>(result__)
         }
     }
     pub fn Text(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -323,19 +317,18 @@ unsafe impl ::core::marker::Sync for OcrLine {}
 pub struct OcrResult(::windows_core::IUnknown);
 impl OcrResult {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Lines(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<OcrLine>> {
+    pub fn Lines(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<OcrLine>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Lines)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<OcrLine>>(result__)
+            (::windows_core::Interface::vtable(this).Lines)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<OcrLine>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TextAngle(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn TextAngle(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TextAngle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).TextAngle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
     pub fn Text(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -421,12 +414,11 @@ unsafe impl ::core::marker::Sync for OcrResult {}
 #[repr(transparent)]
 pub struct OcrWord(::windows_core::IUnknown);
 impl OcrWord {
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn Text(&self) -> ::windows_core::Result<::windows_core::HSTRING> {

@@ -1,8 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
     pub fn ComDBClaimNextFreePort(hcomdb: HCOMDB, comnumber: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ComDBClaimPort(hcomdb: HCOMDB, comnumber: u32, forceclaim: super::super::Foundation::BOOL, forced: *mut super::super::Foundation::BOOL) -> i32;
+    pub fn ComDBClaimPort(hcomdb: HCOMDB, comnumber: u32, forceclaim: ::win32_foundation_sys::BOOL, forced: *mut ::win32_foundation_sys::BOOL) -> i32;
     pub fn ComDBClose(hcomdb: HCOMDB) -> i32;
     pub fn ComDBGetCurrentPortUsage(hcomdb: HCOMDB, buffer: *mut u8, buffersize: u32, reporttype: u32, maxportsreported: *mut u32) -> i32;
     pub fn ComDBOpen(phcomdb: *mut isize) -> i32;

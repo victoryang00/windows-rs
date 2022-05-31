@@ -371,7 +371,7 @@ pub const EXPIRED_CREDENTIAL: u32 = 4u32;
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Error_Spec_IPv4 {
-    pub errs_errnode: super::super::Networking::WinSock::IN_ADDR,
+    pub errs_errnode: ::win32_networking::WinSock::IN_ADDR,
     pub errs_flags: u8,
     pub errs_code: u8,
     pub errs_value: u16,
@@ -469,7 +469,7 @@ impl ::core::default::Default for FILTER_SPEC_0 {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct FLOWDESCRIPTOR {
-    pub FlowSpec: super::super::Networking::WinSock::FLOWSPEC,
+    pub FlowSpec: ::win32_networking::WinSock::FLOWSPEC,
     pub NumFilters: u32,
     pub FilterList: *mut RSVP_FILTERSPEC,
 }
@@ -549,7 +549,7 @@ impl ::core::fmt::Debug for FilterType {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Filter_Spec_IPv4 {
-    pub filt_ipaddr: super::super::Networking::WinSock::IN_ADDR,
+    pub filt_ipaddr: ::win32_networking::WinSock::IN_ADDR,
     pub filt_unused: u16,
     pub filt_port: u16,
 }
@@ -582,7 +582,7 @@ impl ::core::default::Default for Filter_Spec_IPv4 {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Filter_Spec_IPv4GPI {
-    pub filt_ipaddr: super::super::Networking::WinSock::IN_ADDR,
+    pub filt_ipaddr: ::win32_networking::WinSock::IN_ADDR,
     pub filt_gpi: u32,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -1688,112 +1688,109 @@ pub const POLICY_LOCATOR_SUB_TYPE_UNICODE_DN: u32 = 2u32;
 pub const POLICY_LOCATOR_SUB_TYPE_UNICODE_DN_ENC: u32 = 4u32;
 pub const POSITIVE_INFINITY_RATE: u32 = 4294967294u32;
 pub const PREDICTIVE_SERV: u32 = 3u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
-pub unsafe fn QOSAddSocketToFlow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Networking::WinSock::SOCKET>>(qoshandle: Param0, socket: Param1, destaddr: *const super::super::Networking::WinSock::SOCKADDR, traffictype: QOS_TRAFFIC_TYPE, flags: u32, flowid: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSAddSocketToFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_networking::WinSock::SOCKET>>(qoshandle: Param0, socket: Param1, destaddr: *const ::win32_networking::WinSock::SOCKADDR, traffictype: QOS_TRAFFIC_TYPE, flags: u32, flowid: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSAddSocketToFlow(qoshandle: super::super::Foundation::HANDLE, socket: super::super::Networking::WinSock::SOCKET, destaddr: *const super::super::Networking::WinSock::SOCKADDR, traffictype: QOS_TRAFFIC_TYPE, flags: u32, flowid: *mut u32) -> super::super::Foundation::BOOL;
+            fn QOSAddSocketToFlow(qoshandle: ::win32_foundation::HANDLE, socket: ::win32_networking::WinSock::SOCKET, destaddr: *const ::win32_networking::WinSock::SOCKADDR, traffictype: QOS_TRAFFIC_TYPE, flags: u32, flowid: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSAddSocketToFlow(qoshandle.into_param().abi(), socket.into_param().abi(), ::core::mem::transmute(destaddr), ::core::mem::transmute(traffictype), ::core::mem::transmute(flags), ::core::mem::transmute(flowid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn QOSCancel<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(qoshandle: Param0, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSCancel<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSCancel(qoshandle: super::super::Foundation::HANDLE, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn QOSCancel(qoshandle: ::win32_foundation::HANDLE, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSCancel(qoshandle.into_param().abi(), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QOSCloseHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(qoshandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSCloseHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSCloseHandle(qoshandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn QOSCloseHandle(qoshandle: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSCloseHandle(qoshandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QOSCreateHandle(version: *const QOS_VERSION, qoshandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSCreateHandle(version: *const QOS_VERSION, qoshandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSCreateHandle(version: *const QOS_VERSION, qoshandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn QOSCreateHandle(version: *const QOS_VERSION, qoshandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSCreateHandle(::core::mem::transmute(version), ::core::mem::transmute(qoshandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QOSEnumerateFlows<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(qoshandle: Param0, size: *mut u32, buffer: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSEnumerateFlows<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, size: *mut u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSEnumerateFlows(qoshandle: super::super::Foundation::HANDLE, size: *mut u32, buffer: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn QOSEnumerateFlows(qoshandle: ::win32_foundation::HANDLE, size: *mut u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSEnumerateFlows(qoshandle.into_param().abi(), ::core::mem::transmute(size), ::core::mem::transmute(buffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn QOSNotifyFlow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(qoshandle: Param0, flowid: u32, operation: QOS_NOTIFY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSNotifyFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, flowid: u32, operation: QOS_NOTIFY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSNotifyFlow(qoshandle: super::super::Foundation::HANDLE, flowid: u32, operation: QOS_NOTIFY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn QOSNotifyFlow(qoshandle: ::win32_foundation::HANDLE, flowid: u32, operation: QOS_NOTIFY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSNotifyFlow(qoshandle.into_param().abi(), ::core::mem::transmute(flowid), ::core::mem::transmute(operation), ::core::mem::transmute(size), ::core::mem::transmute(buffer), ::core::mem::transmute(flags), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn QOSQueryFlow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(qoshandle: Param0, flowid: u32, operation: QOS_QUERY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSQueryFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, flowid: u32, operation: QOS_QUERY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSQueryFlow(qoshandle: super::super::Foundation::HANDLE, flowid: u32, operation: QOS_QUERY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn QOSQueryFlow(qoshandle: ::win32_foundation::HANDLE, flowid: u32, operation: QOS_QUERY_FLOW, size: *mut u32, buffer: *mut ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSQueryFlow(qoshandle.into_param().abi(), ::core::mem::transmute(flowid), ::core::mem::transmute(operation), ::core::mem::transmute(size), ::core::mem::transmute(buffer), ::core::mem::transmute(flags), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
-pub unsafe fn QOSRemoveSocketFromFlow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Networking::WinSock::SOCKET>>(qoshandle: Param0, socket: Param1, flowid: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSRemoveSocketFromFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_networking::WinSock::SOCKET>>(qoshandle: Param0, socket: Param1, flowid: u32, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSRemoveSocketFromFlow(qoshandle: super::super::Foundation::HANDLE, socket: super::super::Networking::WinSock::SOCKET, flowid: u32, flags: u32) -> super::super::Foundation::BOOL;
+            fn QOSRemoveSocketFromFlow(qoshandle: ::win32_foundation::HANDLE, socket: ::win32_networking::WinSock::SOCKET, flowid: u32, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSRemoveSocketFromFlow(qoshandle.into_param().abi(), socket.into_param().abi(), ::core::mem::transmute(flowid), ::core::mem::transmute(flags)))
     }
@@ -1802,42 +1799,42 @@ pub unsafe fn QOSRemoveSocketFromFlow<'a, Param0: ::windows_core::IntoParam<'a, 
 }
 pub const QOSSPBASE: u32 = 50000u32;
 pub const QOSSP_ERR_BASE: u32 = 56000u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn QOSSetFlow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(qoshandle: Param0, flowid: u32, operation: QOS_SET_FLOW, size: u32, buffer: *const ::core::ffi::c_void, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSSetFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, flowid: u32, operation: QOS_SET_FLOW, size: u32, buffer: *const ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSSetFlow(qoshandle: super::super::Foundation::HANDLE, flowid: u32, operation: QOS_SET_FLOW, size: u32, buffer: *const ::core::ffi::c_void, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn QOSSetFlow(qoshandle: ::win32_foundation::HANDLE, flowid: u32, operation: QOS_SET_FLOW, size: u32, buffer: *const ::core::ffi::c_void, flags: u32, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSSetFlow(qoshandle.into_param().abi(), ::core::mem::transmute(flowid), ::core::mem::transmute(operation), ::core::mem::transmute(size), ::core::mem::transmute(buffer), ::core::mem::transmute(flags), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
-pub unsafe fn QOSStartTrackingClient<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(qoshandle: Param0, destaddr: *const super::super::Networking::WinSock::SOCKADDR, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSStartTrackingClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, destaddr: *const ::win32_networking::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSStartTrackingClient(qoshandle: super::super::Foundation::HANDLE, destaddr: *const super::super::Networking::WinSock::SOCKADDR, flags: u32) -> super::super::Foundation::BOOL;
+            fn QOSStartTrackingClient(qoshandle: ::win32_foundation::HANDLE, destaddr: *const ::win32_networking::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSStartTrackingClient(qoshandle.into_param().abi(), ::core::mem::transmute(destaddr), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
-pub unsafe fn QOSStopTrackingClient<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(qoshandle: Param0, destaddr: *const super::super::Networking::WinSock::SOCKADDR, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn QOSStopTrackingClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(qoshandle: Param0, destaddr: *const ::win32_networking::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QOSStopTrackingClient(qoshandle: super::super::Foundation::HANDLE, destaddr: *const super::super::Networking::WinSock::SOCKADDR, flags: u32) -> super::super::Foundation::BOOL;
+            fn QOSStopTrackingClient(qoshandle: ::win32_foundation::HANDLE, destaddr: *const ::win32_networking::WinSock::SOCKADDR, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QOSStopTrackingClient(qoshandle.into_param().abi(), ::core::mem::transmute(destaddr), ::core::mem::transmute(flags)))
     }
@@ -1845,39 +1842,39 @@ pub unsafe fn QOSStopTrackingClient<'a, Param0: ::windows_core::IntoParam<'a, su
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct QOS_DESTADDR {
     pub ObjectHdr: QOS_OBJECT_HDR,
-    pub SocketAddress: *const super::super::Networking::WinSock::SOCKADDR,
+    pub SocketAddress: *const ::win32_networking::WinSock::SOCKADDR,
     pub SocketAddressLength: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for QOS_DESTADDR {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for QOS_DESTADDR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::fmt::Debug for QOS_DESTADDR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("QOS_DESTADDR").field("ObjectHdr", &self.ObjectHdr).field("SocketAddress", &self.SocketAddress).field("SocketAddressLength", &self.SocketAddressLength).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 unsafe impl ::windows_core::Abi for QOS_DESTADDR {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for QOS_DESTADDR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QOS_DESTADDR>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::Eq for QOS_DESTADDR {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::default::Default for QOS_DESTADDR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2036,42 +2033,34 @@ impl ::core::fmt::Debug for QOS_FLOWRATE_REASON {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct QOS_FLOW_FUNDAMENTALS {
-    pub BottleneckBandwidthSet: super::super::Foundation::BOOL,
+    pub BottleneckBandwidthSet: ::win32_foundation::BOOL,
     pub BottleneckBandwidth: u64,
-    pub AvailableBandwidthSet: super::super::Foundation::BOOL,
+    pub AvailableBandwidthSet: ::win32_foundation::BOOL,
     pub AvailableBandwidth: u64,
-    pub RTTSet: super::super::Foundation::BOOL,
+    pub RTTSet: ::win32_foundation::BOOL,
     pub RTT: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for QOS_FLOW_FUNDAMENTALS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for QOS_FLOW_FUNDAMENTALS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for QOS_FLOW_FUNDAMENTALS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("QOS_FLOW_FUNDAMENTALS").field("BottleneckBandwidthSet", &self.BottleneckBandwidthSet).field("BottleneckBandwidth", &self.BottleneckBandwidth).field("AvailableBandwidthSet", &self.AvailableBandwidthSet).field("AvailableBandwidth", &self.AvailableBandwidth).field("RTTSet", &self.RTTSet).field("RTT", &self.RTT).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for QOS_FLOW_FUNDAMENTALS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for QOS_FLOW_FUNDAMENTALS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<QOS_FLOW_FUNDAMENTALS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for QOS_FLOW_FUNDAMENTALS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for QOS_FLOW_FUNDAMENTALS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3292,7 +3281,7 @@ impl ::core::default::Default for RsvpObjHdr {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Rsvp_Hop_IPv4 {
-    pub hop_ipaddr: super::super::Networking::WinSock::IN_ADDR,
+    pub hop_ipaddr: ::win32_networking::WinSock::IN_ADDR,
     pub hop_LIH: u32,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -3529,7 +3518,7 @@ pub const STATE_TIMEOUT: u32 = 4u32;
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Scope_list_ipv4 {
-    pub scopl_ipaddr: [super::super::Networking::WinSock::IN_ADDR; 1],
+    pub scopl_ipaddr: [::win32_networking::WinSock::IN_ADDR; 1],
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for Scope_list_ipv4 {}
@@ -3560,7 +3549,7 @@ impl ::core::default::Default for Scope_list_ipv4 {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct Session_IPv4 {
-    pub sess_destaddr: super::super::Networking::WinSock::IN_ADDR,
+    pub sess_destaddr: ::win32_networking::WinSock::IN_ADDR,
     pub sess_protid: u8,
     pub sess_flags: u8,
     pub sess_destport: u16,
@@ -3646,54 +3635,42 @@ impl ::core::default::Default for TCG_PCClientTaggedEventStruct {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type TCI_ADD_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: super::super::Foundation::HANDLE, status: u32)>;
+pub type TCI_ADD_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: ::win32_foundation::HANDLE, status: u32)>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TCI_CLIENT_FUNC_LIST {
     pub ClNotifyHandler: TCI_NOTIFY_HANDLER,
     pub ClAddFlowCompleteHandler: TCI_ADD_FLOW_COMPLETE_HANDLER,
     pub ClModifyFlowCompleteHandler: TCI_MOD_FLOW_COMPLETE_HANDLER,
     pub ClDeleteFlowCompleteHandler: TCI_DEL_FLOW_COMPLETE_HANDLER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TCI_CLIENT_FUNC_LIST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TCI_CLIENT_FUNC_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TCI_CLIENT_FUNC_LIST {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TCI_CLIENT_FUNC_LIST").field("ClNotifyHandler", &self.ClNotifyHandler.map(|f| f as usize)).field("ClAddFlowCompleteHandler", &self.ClAddFlowCompleteHandler.map(|f| f as usize)).field("ClModifyFlowCompleteHandler", &self.ClModifyFlowCompleteHandler.map(|f| f as usize)).field("ClDeleteFlowCompleteHandler", &self.ClDeleteFlowCompleteHandler.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TCI_CLIENT_FUNC_LIST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TCI_CLIENT_FUNC_LIST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TCI_CLIENT_FUNC_LIST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TCI_CLIENT_FUNC_LIST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TCI_CLIENT_FUNC_LIST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type TCI_DEL_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: super::super::Foundation::HANDLE, status: u32)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type TCI_MOD_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: super::super::Foundation::HANDLE, status: u32)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type TCI_NOTIFY_HANDLER = ::core::option::Option<unsafe extern "system" fn(clregctx: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, event: u32, subcode: super::super::Foundation::HANDLE, bufsize: u32, buffer: *const ::core::ffi::c_void)>;
+pub type TCI_DEL_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: ::win32_foundation::HANDLE, status: u32)>;
+pub type TCI_MOD_FLOW_COMPLETE_HANDLER = ::core::option::Option<unsafe extern "system" fn(clflowctx: ::win32_foundation::HANDLE, status: u32)>;
+pub type TCI_NOTIFY_HANDLER = ::core::option::Option<unsafe extern "system" fn(clregctx: ::win32_foundation::HANDLE, clifcctx: ::win32_foundation::HANDLE, event: u32, subcode: ::win32_foundation::HANDLE, bufsize: u32, buffer: *const ::core::ffi::c_void)>;
 #[repr(C)]
 pub struct TC_GEN_FILTER {
     pub AddressType: u16,
@@ -3729,8 +3706,8 @@ impl ::core::default::Default for TC_GEN_FILTER {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct TC_GEN_FLOW {
-    pub SendingFlowspec: super::super::Networking::WinSock::FLOWSPEC,
-    pub ReceivingFlowspec: super::super::Networking::WinSock::FLOWSPEC,
+    pub SendingFlowspec: ::win32_networking::WinSock::FLOWSPEC,
+    pub ReceivingFlowspec: ::win32_networking::WinSock::FLOWSPEC,
     pub TcObjectsLength: u32,
     pub TcObjects: [QOS_OBJECT_HDR; 1],
 }
@@ -3855,182 +3832,173 @@ impl ::core::default::Default for TC_SUPPORTED_INFO_BUFFER {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcAddFilter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(flowhandle: Param0, pgenericfilter: *const TC_GEN_FILTER, pfilterhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn TcAddFilter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(flowhandle: Param0, pgenericfilter: *const TC_GEN_FILTER, pfilterhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcAddFilter(flowhandle: super::super::Foundation::HANDLE, pgenericfilter: *const TC_GEN_FILTER, pfilterhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn TcAddFilter(flowhandle: ::win32_foundation::HANDLE, pgenericfilter: *const TC_GEN_FILTER, pfilterhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TcAddFilter(flowhandle.into_param().abi(), ::core::mem::transmute(pgenericfilter), ::core::mem::transmute(pfilterhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
-pub unsafe fn TcAddFlow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(ifchandle: Param0, clflowctx: Param1, flags: u32, pgenericflow: *const TC_GEN_FLOW, pflowhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn TcAddFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(ifchandle: Param0, clflowctx: Param1, flags: u32, pgenericflow: *const TC_GEN_FLOW, pflowhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcAddFlow(ifchandle: super::super::Foundation::HANDLE, clflowctx: super::super::Foundation::HANDLE, flags: u32, pgenericflow: *const TC_GEN_FLOW, pflowhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn TcAddFlow(ifchandle: ::win32_foundation::HANDLE, clflowctx: ::win32_foundation::HANDLE, flags: u32, pgenericflow: *const TC_GEN_FLOW, pflowhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TcAddFlow(ifchandle.into_param().abi(), clflowctx.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(pgenericflow), ::core::mem::transmute(pflowhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcCloseInterface<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(ifchandle: Param0) -> u32 {
+pub unsafe fn TcCloseInterface<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(ifchandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcCloseInterface(ifchandle: super::super::Foundation::HANDLE) -> u32;
+            fn TcCloseInterface(ifchandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TcCloseInterface(ifchandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcDeleteFilter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filterhandle: Param0) -> u32 {
+pub unsafe fn TcDeleteFilter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filterhandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcDeleteFilter(filterhandle: super::super::Foundation::HANDLE) -> u32;
+            fn TcDeleteFilter(filterhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TcDeleteFilter(filterhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcDeleteFlow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(flowhandle: Param0) -> u32 {
+pub unsafe fn TcDeleteFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(flowhandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcDeleteFlow(flowhandle: super::super::Foundation::HANDLE) -> u32;
+            fn TcDeleteFlow(flowhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TcDeleteFlow(flowhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcDeregisterClient<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(clienthandle: Param0) -> u32 {
+pub unsafe fn TcDeregisterClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(clienthandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcDeregisterClient(clienthandle: super::super::Foundation::HANDLE) -> u32;
+            fn TcDeregisterClient(clienthandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TcDeregisterClient(clienthandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
-pub unsafe fn TcEnumerateFlows<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(ifchandle: Param0, penumhandle: *mut super::super::Foundation::HANDLE, pflowcount: *mut u32, pbufsize: *mut u32, buffer: *mut ENUMERATION_BUFFER) -> u32 {
+pub unsafe fn TcEnumerateFlows<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(ifchandle: Param0, penumhandle: *mut ::win32_foundation::HANDLE, pflowcount: *mut u32, pbufsize: *mut u32, buffer: *mut ENUMERATION_BUFFER) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcEnumerateFlows(ifchandle: super::super::Foundation::HANDLE, penumhandle: *mut super::super::Foundation::HANDLE, pflowcount: *mut u32, pbufsize: *mut u32, buffer: *mut ENUMERATION_BUFFER) -> u32;
+            fn TcEnumerateFlows(ifchandle: ::win32_foundation::HANDLE, penumhandle: *mut ::win32_foundation::HANDLE, pflowcount: *mut u32, pbufsize: *mut u32, buffer: *mut ENUMERATION_BUFFER) -> u32;
         }
         ::core::mem::transmute(TcEnumerateFlows(ifchandle.into_param().abi(), ::core::mem::transmute(penumhandle), ::core::mem::transmute(pflowcount), ::core::mem::transmute(pbufsize), ::core::mem::transmute(buffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
+#[cfg(feature = "Win32_NetworkManagement_Ndis")]
 #[inline]
-pub unsafe fn TcEnumerateInterfaces<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(clienthandle: Param0, pbuffersize: *mut u32, interfacebuffer: *mut TC_IFC_DESCRIPTOR) -> u32 {
+pub unsafe fn TcEnumerateInterfaces<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(clienthandle: Param0, pbuffersize: *mut u32, interfacebuffer: *mut TC_IFC_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcEnumerateInterfaces(clienthandle: super::super::Foundation::HANDLE, pbuffersize: *mut u32, interfacebuffer: *mut TC_IFC_DESCRIPTOR) -> u32;
+            fn TcEnumerateInterfaces(clienthandle: ::win32_foundation::HANDLE, pbuffersize: *mut u32, interfacebuffer: *mut TC_IFC_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(TcEnumerateInterfaces(clienthandle.into_param().abi(), ::core::mem::transmute(pbuffersize), ::core::mem::transmute(interfacebuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcGetFlowNameA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(flowhandle: Param0, pflowname: &mut [u8]) -> u32 {
+pub unsafe fn TcGetFlowNameA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(flowhandle: Param0, pflowname: &mut [u8]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcGetFlowNameA(flowhandle: super::super::Foundation::HANDLE, strsize: u32, pflowname: ::windows_core::PSTR) -> u32;
+            fn TcGetFlowNameA(flowhandle: ::win32_foundation::HANDLE, strsize: u32, pflowname: ::windows_core::PSTR) -> u32;
         }
         ::core::mem::transmute(TcGetFlowNameA(flowhandle.into_param().abi(), pflowname.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pflowname))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcGetFlowNameW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(flowhandle: Param0, pflowname: &mut [u16]) -> u32 {
+pub unsafe fn TcGetFlowNameW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(flowhandle: Param0, pflowname: &mut [u16]) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcGetFlowNameW(flowhandle: super::super::Foundation::HANDLE, strsize: u32, pflowname: ::windows_core::PWSTR) -> u32;
+            fn TcGetFlowNameW(flowhandle: ::win32_foundation::HANDLE, strsize: u32, pflowname: ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(TcGetFlowNameW(flowhandle.into_param().abi(), pflowname.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pflowname))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
-pub unsafe fn TcModifyFlow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(flowhandle: Param0, pgenericflow: *const TC_GEN_FLOW) -> u32 {
+pub unsafe fn TcModifyFlow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(flowhandle: Param0, pgenericflow: *const TC_GEN_FLOW) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcModifyFlow(flowhandle: super::super::Foundation::HANDLE, pgenericflow: *const TC_GEN_FLOW) -> u32;
+            fn TcModifyFlow(flowhandle: ::win32_foundation::HANDLE, pgenericflow: *const TC_GEN_FLOW) -> u32;
         }
         ::core::mem::transmute(TcModifyFlow(flowhandle.into_param().abi(), ::core::mem::transmute(pgenericflow)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcOpenInterfaceA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(pinterfacename: Param0, clienthandle: Param1, clifcctx: Param2, pifchandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn TcOpenInterfaceA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(pinterfacename: Param0, clienthandle: Param1, clifcctx: Param2, pifchandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcOpenInterfaceA(pinterfacename: ::windows_core::PCSTR, clienthandle: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, pifchandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn TcOpenInterfaceA(pinterfacename: ::windows_core::PCSTR, clienthandle: ::win32_foundation::HANDLE, clifcctx: ::win32_foundation::HANDLE, pifchandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TcOpenInterfaceA(pinterfacename.into_param().abi(), clienthandle.into_param().abi(), clifcctx.into_param().abi(), ::core::mem::transmute(pifchandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcOpenInterfaceW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(pinterfacename: Param0, clienthandle: Param1, clifcctx: Param2, pifchandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn TcOpenInterfaceW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(pinterfacename: Param0, clienthandle: Param1, clifcctx: Param2, pifchandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcOpenInterfaceW(pinterfacename: ::windows_core::PCWSTR, clienthandle: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, pifchandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn TcOpenInterfaceW(pinterfacename: ::windows_core::PCWSTR, clienthandle: ::win32_foundation::HANDLE, clifcctx: ::win32_foundation::HANDLE, pifchandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TcOpenInterfaceW(pinterfacename.into_param().abi(), clienthandle.into_param().abi(), clifcctx.into_param().abi(), ::core::mem::transmute(pifchandle)))
     }
@@ -4063,28 +4031,26 @@ pub unsafe fn TcQueryFlowW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcQueryInterface<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(ifchandle: Param0, pguidparam: *const ::windows_core::GUID, notifychange: Param2, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn TcQueryInterface<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(ifchandle: Param0, pguidparam: *const ::windows_core::GUID, notifychange: Param2, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcQueryInterface(ifchandle: super::super::Foundation::HANDLE, pguidparam: *const ::windows_core::GUID, notifychange: super::super::Foundation::BOOLEAN, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
+            fn TcQueryInterface(ifchandle: ::win32_foundation::HANDLE, pguidparam: *const ::windows_core::GUID, notifychange: ::win32_foundation::BOOLEAN, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(TcQueryInterface(ifchandle.into_param().abi(), ::core::mem::transmute(pguidparam), notifychange.into_param().abi(), ::core::mem::transmute(pbuffersize), ::core::mem::transmute(buffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcRegisterClient<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(tciversion: u32, clregctx: Param1, clienthandlerlist: *const TCI_CLIENT_FUNC_LIST, pclienthandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn TcRegisterClient<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(tciversion: u32, clregctx: Param1, clienthandlerlist: *const TCI_CLIENT_FUNC_LIST, pclienthandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcRegisterClient(tciversion: u32, clregctx: super::super::Foundation::HANDLE, clienthandlerlist: *const TCI_CLIENT_FUNC_LIST, pclienthandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn TcRegisterClient(tciversion: u32, clregctx: ::win32_foundation::HANDLE, clienthandlerlist: *const TCI_CLIENT_FUNC_LIST, pclienthandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TcRegisterClient(::core::mem::transmute(tciversion), clregctx.into_param().abi(), ::core::mem::transmute(clienthandlerlist), ::core::mem::transmute(pclienthandle)))
     }
@@ -4117,14 +4083,13 @@ pub unsafe fn TcSetFlowW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_cor
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TcSetInterface<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(ifchandle: Param0, pguidparam: *const ::windows_core::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32 {
+pub unsafe fn TcSetInterface<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(ifchandle: Param0, pguidparam: *const ::windows_core::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TcSetInterface(ifchandle: super::super::Foundation::HANDLE, pguidparam: *const ::windows_core::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
+            fn TcSetInterface(ifchandle: ::win32_foundation::HANDLE, pguidparam: *const ::windows_core::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(TcSetInterface(ifchandle.into_param().abi(), ::core::mem::transmute(pguidparam), ::core::mem::transmute(buffersize), ::core::mem::transmute(buffer)))
     }
@@ -4371,8 +4336,8 @@ pub const ioctl_code: u32 = 1u32;
 pub struct lpmiptable {
     pub ulIfIndex: u32,
     pub MediaType: u32,
-    pub IfIpAddr: super::super::Networking::WinSock::IN_ADDR,
-    pub IfNetMask: super::super::Networking::WinSock::IN_ADDR,
+    pub IfIpAddr: ::win32_networking::WinSock::IN_ADDR,
+    pub IfNetMask: ::win32_networking::WinSock::IN_ADDR,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for lpmiptable {}

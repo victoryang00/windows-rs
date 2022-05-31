@@ -10,8 +10,7 @@ extern "system" {
     pub fn CertSrvBackupPrepareW(pwszservername: ::windows_core_sys::PCWSTR, grbitjet: u32, dwbackupflags: CSBACKUP_TYPE, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CertSrvBackupRead(hbc: *mut ::core::ffi::c_void, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, pcbread: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn CertSrvBackupTruncateLogs(hbc: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CertSrvIsServerOnlineW(pwszservername: ::windows_core_sys::PCWSTR, pfserveronline: *mut super::super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn CertSrvIsServerOnlineW(pwszservername: ::windows_core_sys::PCWSTR, pfserveronline: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn CertSrvRestoreEnd(hbc: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CertSrvRestoreGetDatabaseLocationsW(hbc: *const ::core::ffi::c_void, ppwszzdatabaselocationlist: *mut ::windows_core_sys::PWSTR, pcbsize: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn CertSrvRestorePrepareW(pwszservername: ::windows_core_sys::PCWSTR, dwrestoreflags: u32, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
@@ -19,22 +18,18 @@ extern "system" {
     pub fn CertSrvRestoreRegisterThroughFile(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_core_sys::PCWSTR, pwszlogpath: ::windows_core_sys::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_core_sys::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_core_sys::HRESULT;
     pub fn CertSrvRestoreRegisterW(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_core_sys::PCWSTR, pwszlogpath: ::windows_core_sys::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_core_sys::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_core_sys::HRESULT;
     pub fn CertSrvServerControlW(pwszservername: ::windows_core_sys::PCWSTR, dwcontrolflags: u32, pcbout: *mut u32, ppbout: *mut *mut u8) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PstAcquirePrivateKey(pcert: *const super::CERT_CONTEXT) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity"))]
-    pub fn PstGetCertificateChain(pcert: *const super::CERT_CONTEXT, ptrustedissuers: *const super::super::Authentication::Identity::SecPkgContext_IssuerListInfoEx, ppcertchaincontext: *mut *mut super::CERT_CHAIN_CONTEXT) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PstGetCertificates(ptargetname: *const super::super::super::Foundation::UNICODE_STRING, ccriteria: u32, rgpcriteria: *const super::CERT_SELECT_CRITERIA, bisclient: super::super::super::Foundation::BOOL, pdwcertchaincontextcount: *mut u32, ppcertchaincontexts: *mut *mut *mut super::CERT_CHAIN_CONTEXT) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity"))]
-    pub fn PstGetTrustAnchors(ptargetname: *const super::super::super::Foundation::UNICODE_STRING, ccriteria: u32, rgpcriteria: *const super::CERT_SELECT_CRITERIA, pptrustedissuers: *mut *mut super::super::Authentication::Identity::SecPkgContext_IssuerListInfoEx) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity"))]
-    pub fn PstGetTrustAnchorsEx(ptargetname: *const super::super::super::Foundation::UNICODE_STRING, ccriteria: u32, rgpcriteria: *const super::CERT_SELECT_CRITERIA, pcertcontext: *const super::CERT_CONTEXT, pptrustedissuers: *mut *mut super::super::Authentication::Identity::SecPkgContext_IssuerListInfoEx) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PstGetUserNameForCertificate(pcertcontext: *const super::CERT_CONTEXT, username: *mut super::super::super::Foundation::UNICODE_STRING) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity"))]
-    pub fn PstMapCertificate(pcert: *const super::CERT_CONTEXT, ptokeninformationtype: *mut super::super::Authentication::Identity::LSA_TOKEN_INFORMATION_TYPE, pptokeninformation: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PstValidate(ptargetname: *const super::super::super::Foundation::UNICODE_STRING, bisclient: super::super::super::Foundation::BOOL, prequestedissuancepolicy: *const super::CERT_USAGE_MATCH, phadditionalcertstore: *const super::HCERTSTORE, pcert: *const super::CERT_CONTEXT, pprovguid: *mut ::windows_core_sys::GUID) -> super::super::super::Foundation::NTSTATUS;
+    pub fn PstAcquirePrivateKey(pcert: *const super::CERT_CONTEXT) -> ::win32_foundation_sys::NTSTATUS;
+    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    pub fn PstGetCertificateChain(pcert: *const super::CERT_CONTEXT, ptrustedissuers: *const super::super::Authentication::Identity::SecPkgContext_IssuerListInfoEx, ppcertchaincontext: *mut *mut super::CERT_CHAIN_CONTEXT) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn PstGetCertificates(ptargetname: *const ::win32_foundation_sys::UNICODE_STRING, ccriteria: u32, rgpcriteria: *const super::CERT_SELECT_CRITERIA, bisclient: ::win32_foundation_sys::BOOL, pdwcertchaincontextcount: *mut u32, ppcertchaincontexts: *mut *mut *mut super::CERT_CHAIN_CONTEXT) -> ::win32_foundation_sys::NTSTATUS;
+    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    pub fn PstGetTrustAnchors(ptargetname: *const ::win32_foundation_sys::UNICODE_STRING, ccriteria: u32, rgpcriteria: *const super::CERT_SELECT_CRITERIA, pptrustedissuers: *mut *mut super::super::Authentication::Identity::SecPkgContext_IssuerListInfoEx) -> ::win32_foundation_sys::NTSTATUS;
+    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    pub fn PstGetTrustAnchorsEx(ptargetname: *const ::win32_foundation_sys::UNICODE_STRING, ccriteria: u32, rgpcriteria: *const super::CERT_SELECT_CRITERIA, pcertcontext: *const super::CERT_CONTEXT, pptrustedissuers: *mut *mut super::super::Authentication::Identity::SecPkgContext_IssuerListInfoEx) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn PstGetUserNameForCertificate(pcertcontext: *const super::CERT_CONTEXT, username: *mut ::win32_foundation_sys::UNICODE_STRING) -> ::win32_foundation_sys::NTSTATUS;
+    #[cfg(feature = "Win32_Security_Authentication_Identity")]
+    pub fn PstMapCertificate(pcert: *const super::CERT_CONTEXT, ptokeninformationtype: *mut super::super::Authentication::Identity::LSA_TOKEN_INFORMATION_TYPE, pptokeninformation: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn PstValidate(ptargetname: *const ::win32_foundation_sys::UNICODE_STRING, bisclient: ::win32_foundation_sys::BOOL, prequestedissuancepolicy: *const super::CERT_USAGE_MATCH, phadditionalcertstore: *const super::HCERTSTORE, pcert: *const super::CERT_CONTEXT, pprovguid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::NTSTATUS;
 }
 pub type ADDED_CERT_TYPE = u32;
 pub const XECT_EXTENSION_V1: ADDED_CERT_TYPE = 1u32;
@@ -1279,17 +1274,14 @@ pub type FNCERTSRVBACKUPOPENFILEW = ::core::option::Option<unsafe extern "system
 pub type FNCERTSRVBACKUPPREPAREW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_core_sys::PCWSTR, grbitjet: u32, dwbackupflags: u32, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 pub type FNCERTSRVBACKUPREAD = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, pcbread: *mut u32) -> ::windows_core_sys::HRESULT>;
 pub type FNCERTSRVBACKUPTRUNCATELOGS = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type FNCERTSRVISSERVERONLINEW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_core_sys::PCWSTR, pfserveronline: *mut super::super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT>;
+pub type FNCERTSRVISSERVERONLINEW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_core_sys::PCWSTR, pfserveronline: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT>;
 pub type FNCERTSRVRESTOREEND = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 pub type FNCERTSRVRESTOREGETDATABASELOCATIONSW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, ppwszzdatabaselocationlist: *mut *mut u16, pcbsize: *mut u32) -> ::windows_core_sys::HRESULT>;
 pub type FNCERTSRVRESTOREPREPAREW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_core_sys::PCWSTR, dwrestoreflags: u32, phbc: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 pub type FNCERTSRVRESTOREREGISTERCOMPLETE = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, hrrestorestate: ::windows_core_sys::HRESULT) -> ::windows_core_sys::HRESULT>;
 pub type FNCERTSRVRESTOREREGISTERW = ::core::option::Option<unsafe extern "system" fn(hbc: *mut ::core::ffi::c_void, pwszcheckpointfilepath: ::windows_core_sys::PCWSTR, pwszlogpath: ::windows_core_sys::PCWSTR, rgrstmap: *mut CSEDB_RSTMAPW, crstmap: i32, pwszbackuplogpath: ::windows_core_sys::PCWSTR, genlow: u32, genhigh: u32) -> ::windows_core_sys::HRESULT>;
 pub type FNCERTSRVSERVERCONTROLW = ::core::option::Option<unsafe extern "system" fn(pwszservername: ::windows_core_sys::PCWSTR, dwcontrolflags: u32, pcbout: *mut u32, ppbout: *mut *mut u8) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type FNIMPORTPFXTOPROVIDER = ::core::option::Option<unsafe extern "system" fn(hwndparent: super::super::super::Foundation::HWND, pbpfx: *const u8, cbpfx: u32, importflags: ImportPFXFlags, pwszpassword: ::windows_core_sys::PCWSTR, pwszprovidername: ::windows_core_sys::PCWSTR, pwszreadername: ::windows_core_sys::PCWSTR, pwszcontainernameprefix: ::windows_core_sys::PCWSTR, pwszpin: ::windows_core_sys::PCWSTR, pwszfriendlyname: ::windows_core_sys::PCWSTR, pccertout: *mut u32, prgpcertout: *mut *mut *mut super::CERT_CONTEXT) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
+pub type FNIMPORTPFXTOPROVIDER = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pbpfx: *const u8, cbpfx: u32, importflags: ImportPFXFlags, pwszpassword: ::windows_core_sys::PCWSTR, pwszprovidername: ::windows_core_sys::PCWSTR, pwszreadername: ::windows_core_sys::PCWSTR, pwszcontainernameprefix: ::windows_core_sys::PCWSTR, pwszpin: ::windows_core_sys::PCWSTR, pwszfriendlyname: ::windows_core_sys::PCWSTR, pccertout: *mut u32, prgpcertout: *mut *mut *mut super::CERT_CONTEXT) -> ::windows_core_sys::HRESULT>;
 pub type FNIMPORTPFXTOPROVIDERFREEDATA = ::core::option::Option<unsafe extern "system" fn(ccert: u32, rgpcert: *const *const super::CERT_CONTEXT)>;
 pub const FR_PROP_CLAIMCHALLENGE: u32 = 22u32;
 pub type FULL_RESPONSE_PROPERTY_ID = u32;

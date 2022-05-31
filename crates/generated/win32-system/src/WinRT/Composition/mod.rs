@@ -1,10 +1,10 @@
 #[repr(transparent)]
 pub struct ICompositionCapabilitiesInteropFactory(::windows_core::IUnknown);
 impl ICompositionCapabilitiesInteropFactory {
-    #[cfg(all(feature = "UI_Composition", feature = "Win32_Foundation"))]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(&self, hwnd: Param0) -> ::windows_core::Result<super::super::super::super::UI::Composition::CompositionCapabilities> {
+    #[cfg(feature = "UI_Composition")]
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, hwnd: Param0) -> ::windows_core::Result<::winrt_ui::Composition::CompositionCapabilities> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::super::UI::Composition::CompositionCapabilities>(result__)
+        (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_ui::Composition::CompositionCapabilities>(result__)
     }
 }
 impl ::core::convert::From<ICompositionCapabilitiesInteropFactory> for ::windows_core::IUnknown {
@@ -71,27 +71,24 @@ unsafe impl ::windows_core::Interface for ICompositionCapabilitiesInteropFactory
 #[doc(hidden)]
 pub struct ICompositionCapabilitiesInteropFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "UI_Composition", feature = "Win32_Foundation"))]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::super::Foundation::HWND, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "UI_Composition", feature = "Win32_Foundation")))]
+    #[cfg(feature = "UI_Composition")]
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Composition"))]
     GetForWindow: usize,
 }
 #[repr(transparent)]
 pub struct ICompositionDrawingSurfaceInterop(::windows_core::IUnknown);
 impl ICompositionDrawingSurfaceInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn BeginDraw(&self, updaterect: *const super::super::super::Foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut super::super::super::Foundation::POINT) -> ::windows_core::Result<()> {
+    pub unsafe fn BeginDraw(&self, updaterect: *const ::win32_foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut ::win32_foundation::POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BeginDraw)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(updaterect), ::core::mem::transmute(iid), ::core::mem::transmute(updateobject), ::core::mem::transmute(updateoffset)).ok()
     }
     pub unsafe fn EndDraw(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EndDraw)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Resize<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::SIZE>>(&self, sizepixels: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Resize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::SIZE>>(&self, sizepixels: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Resize)(::windows_core::Interface::as_raw(self), sizepixels.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Scroll(&self, scrollrect: *const super::super::super::Foundation::RECT, cliprect: *const super::super::super::Foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn Scroll(&self, scrollrect: *const ::win32_foundation::RECT, cliprect: *const ::win32_foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Scroll)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(scrollrect), ::core::mem::transmute(cliprect), ::core::mem::transmute(offsetx), ::core::mem::transmute(offsety)).ok()
     }
     pub unsafe fn ResumeDraw(&self) -> ::windows_core::Result<()> {
@@ -145,38 +142,26 @@ unsafe impl ::windows_core::Interface for ICompositionDrawingSurfaceInterop {
 #[doc(hidden)]
 pub struct ICompositionDrawingSurfaceInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub BeginDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: *const super::super::super::Foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut super::super::super::Foundation::POINT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    BeginDraw: usize,
+    pub BeginDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: *const ::win32_foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut ::win32_foundation::POINT) -> ::windows_core::HRESULT,
     pub EndDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Resize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sizepixels: super::super::super::Foundation::SIZE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Resize: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Scroll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scrollrect: *const super::super::super::Foundation::RECT, cliprect: *const super::super::super::Foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Scroll: usize,
+    pub Resize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sizepixels: ::win32_foundation::SIZE) -> ::windows_core::HRESULT,
+    pub Scroll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scrollrect: *const ::win32_foundation::RECT, cliprect: *const ::win32_foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::HRESULT,
     pub ResumeDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SuspendDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ICompositionDrawingSurfaceInterop2(::windows_core::IUnknown);
 impl ICompositionDrawingSurfaceInterop2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn BeginDraw(&self, updaterect: *const super::super::super::Foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut super::super::super::Foundation::POINT) -> ::windows_core::Result<()> {
+    pub unsafe fn BeginDraw(&self, updaterect: *const ::win32_foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut ::win32_foundation::POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.BeginDraw)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(updaterect), ::core::mem::transmute(iid), ::core::mem::transmute(updateobject), ::core::mem::transmute(updateoffset)).ok()
     }
     pub unsafe fn EndDraw(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.EndDraw)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Resize<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::SIZE>>(&self, sizepixels: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Resize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::SIZE>>(&self, sizepixels: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Resize)(::windows_core::Interface::as_raw(self), sizepixels.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Scroll(&self, scrollrect: *const super::super::super::Foundation::RECT, cliprect: *const super::super::super::Foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn Scroll(&self, scrollrect: *const ::win32_foundation::RECT, cliprect: *const ::win32_foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Scroll)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(scrollrect), ::core::mem::transmute(cliprect), ::core::mem::transmute(offsetx), ::core::mem::transmute(offsety)).ok()
     }
     pub unsafe fn ResumeDraw(&self) -> ::windows_core::Result<()> {
@@ -185,8 +170,7 @@ impl ICompositionDrawingSurfaceInterop2 {
     pub unsafe fn SuspendDraw(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SuspendDraw)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopySurface<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, destinationresource: Param0, destinationoffsetx: i32, destinationoffsety: i32, sourcerectangle: *const super::super::super::Foundation::RECT) -> ::windows_core::Result<()> {
+    pub unsafe fn CopySurface<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, destinationresource: Param0, destinationoffsetx: i32, destinationoffsety: i32, sourcerectangle: *const ::win32_foundation::RECT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CopySurface)(::windows_core::Interface::as_raw(self), destinationresource.into_param().abi(), ::core::mem::transmute(destinationoffsetx), ::core::mem::transmute(destinationoffsety), ::core::mem::transmute(sourcerectangle)).ok()
     }
 }
@@ -254,10 +238,7 @@ unsafe impl ::windows_core::Interface for ICompositionDrawingSurfaceInterop2 {
 #[doc(hidden)]
 pub struct ICompositionDrawingSurfaceInterop2_Vtbl {
     pub base__: ICompositionDrawingSurfaceInterop_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CopySurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, destinationresource: *mut ::core::ffi::c_void, destinationoffsetx: i32, destinationoffsety: i32, sourcerectangle: *const super::super::super::Foundation::RECT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CopySurface: usize,
+    pub CopySurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, destinationresource: *mut ::core::ffi::c_void, destinationoffsetx: i32, destinationoffsety: i32, sourcerectangle: *const ::win32_foundation::RECT) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ICompositionGraphicsDeviceInterop(::windows_core::IUnknown);
@@ -320,10 +301,10 @@ pub struct ICompositionGraphicsDeviceInterop_Vtbl {
 #[repr(transparent)]
 pub struct ICompositorDesktopInterop(::windows_core::IUnknown);
 impl ICompositorDesktopInterop {
-    #[cfg(all(feature = "UI_Composition_Desktop", feature = "Win32_Foundation"))]
-    pub unsafe fn CreateDesktopWindowTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, hwndtarget: Param0, istopmost: Param1) -> ::windows_core::Result<super::super::super::super::UI::Composition::Desktop::DesktopWindowTarget> {
+    #[cfg(feature = "UI_Composition_Desktop")]
+    pub unsafe fn CreateDesktopWindowTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hwndtarget: Param0, istopmost: Param1) -> ::windows_core::Result<::winrt_ui::Composition::Desktop::DesktopWindowTarget> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateDesktopWindowTarget)(::windows_core::Interface::as_raw(self), hwndtarget.into_param().abi(), istopmost.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::super::UI::Composition::Desktop::DesktopWindowTarget>(result__)
+        (::windows_core::Interface::vtable(self).CreateDesktopWindowTarget)(::windows_core::Interface::as_raw(self), hwndtarget.into_param().abi(), istopmost.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_ui::Composition::Desktop::DesktopWindowTarget>(result__)
     }
     pub unsafe fn EnsureOnThread(&self, threadid: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnsureOnThread)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(threadid)).ok()
@@ -373,29 +354,29 @@ unsafe impl ::windows_core::Interface for ICompositorDesktopInterop {
 #[doc(hidden)]
 pub struct ICompositorDesktopInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "UI_Composition_Desktop", feature = "Win32_Foundation"))]
-    pub CreateDesktopWindowTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndtarget: super::super::super::Foundation::HWND, istopmost: super::super::super::Foundation::BOOL, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "UI_Composition_Desktop", feature = "Win32_Foundation")))]
+    #[cfg(feature = "UI_Composition_Desktop")]
+    pub CreateDesktopWindowTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndtarget: ::win32_foundation::HWND, istopmost: ::win32_foundation::BOOL, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Composition_Desktop"))]
     CreateDesktopWindowTarget: usize,
     pub EnsureOnThread: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, threadid: u32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ICompositorInterop(::windows_core::IUnknown);
 impl ICompositorInterop {
-    #[cfg(all(feature = "UI_Composition", feature = "Win32_Foundation"))]
-    pub unsafe fn CreateCompositionSurfaceForHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(&self, swapchain: Param0) -> ::windows_core::Result<super::super::super::super::UI::Composition::ICompositionSurface> {
+    #[cfg(feature = "UI_Composition")]
+    pub unsafe fn CreateCompositionSurfaceForHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, swapchain: Param0) -> ::windows_core::Result<::winrt_ui::Composition::ICompositionSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateCompositionSurfaceForHandle)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::super::UI::Composition::ICompositionSurface>(result__)
+        (::windows_core::Interface::vtable(self).CreateCompositionSurfaceForHandle)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_ui::Composition::ICompositionSurface>(result__)
     }
     #[cfg(feature = "UI_Composition")]
-    pub unsafe fn CreateCompositionSurfaceForSwapChain<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, swapchain: Param0) -> ::windows_core::Result<super::super::super::super::UI::Composition::ICompositionSurface> {
+    pub unsafe fn CreateCompositionSurfaceForSwapChain<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, swapchain: Param0) -> ::windows_core::Result<::winrt_ui::Composition::ICompositionSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateCompositionSurfaceForSwapChain)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::super::UI::Composition::ICompositionSurface>(result__)
+        (::windows_core::Interface::vtable(self).CreateCompositionSurfaceForSwapChain)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_ui::Composition::ICompositionSurface>(result__)
     }
     #[cfg(feature = "UI_Composition")]
-    pub unsafe fn CreateGraphicsDevice<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, renderingdevice: Param0) -> ::windows_core::Result<super::super::super::super::UI::Composition::CompositionGraphicsDevice> {
+    pub unsafe fn CreateGraphicsDevice<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, renderingdevice: Param0) -> ::windows_core::Result<::winrt_ui::Composition::CompositionGraphicsDevice> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateGraphicsDevice)(::windows_core::Interface::as_raw(self), renderingdevice.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::super::UI::Composition::CompositionGraphicsDevice>(result__)
+        (::windows_core::Interface::vtable(self).CreateGraphicsDevice)(::windows_core::Interface::as_raw(self), renderingdevice.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_ui::Composition::CompositionGraphicsDevice>(result__)
     }
 }
 impl ::core::convert::From<ICompositorInterop> for ::windows_core::IUnknown {
@@ -442,9 +423,9 @@ unsafe impl ::windows_core::Interface for ICompositorInterop {
 #[doc(hidden)]
 pub struct ICompositorInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "UI_Composition", feature = "Win32_Foundation"))]
-    pub CreateCompositionSurfaceForHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, swapchain: super::super::super::Foundation::HANDLE, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "UI_Composition", feature = "Win32_Foundation")))]
+    #[cfg(feature = "UI_Composition")]
+    pub CreateCompositionSurfaceForHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, swapchain: ::win32_foundation::HANDLE, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Composition"))]
     CreateCompositionSurfaceForHandle: usize,
     #[cfg(feature = "UI_Composition")]
     pub CreateCompositionSurfaceForSwapChain: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, swapchain: *mut ::core::ffi::c_void, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -458,10 +439,9 @@ pub struct ICompositorInterop_Vtbl {
 #[repr(transparent)]
 pub struct IDesktopWindowTargetInterop(::windows_core::IUnknown);
 impl IDesktopWindowTargetInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Hwnd(&self) -> ::windows_core::Result<super::super::super::Foundation::HWND> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::HWND>::zeroed();
-        (::windows_core::Interface::vtable(self).Hwnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::HWND>(result__)
+    pub unsafe fn Hwnd(&self) -> ::windows_core::Result<::win32_foundation::HWND> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HWND>::zeroed();
+        (::windows_core::Interface::vtable(self).Hwnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HWND>(result__)
     }
 }
 impl ::core::convert::From<IDesktopWindowTargetInterop> for ::windows_core::IUnknown {
@@ -508,10 +488,7 @@ unsafe impl ::windows_core::Interface for IDesktopWindowTargetInterop {
 #[doc(hidden)]
 pub struct IDesktopWindowTargetInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Hwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut super::super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Hwnd: usize,
+    pub Hwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::win32_foundation::HWND) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISwapChainInterop(::windows_core::IUnknown);
@@ -569,8 +546,8 @@ pub struct ISwapChainInterop_Vtbl {
 #[repr(transparent)]
 pub struct IVisualInteractionSourceInterop(::windows_core::IUnknown);
 impl IVisualInteractionSourceInterop {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub unsafe fn TryRedirectForManipulation(&self, pointerinfo: *const super::super::super::UI::Input::Pointer::POINTER_INFO) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub unsafe fn TryRedirectForManipulation(&self, pointerinfo: *const ::win32_ui::Input::Pointer::POINTER_INFO) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).TryRedirectForManipulation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pointerinfo)).ok()
     }
 }
@@ -618,8 +595,8 @@ unsafe impl ::windows_core::Interface for IVisualInteractionSourceInterop {
 #[doc(hidden)]
 pub struct IVisualInteractionSourceInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub TryRedirectForManipulation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerinfo: *const super::super::super::UI::Input::Pointer::POINTER_INFO) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging")))]
+    #[cfg(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub TryRedirectForManipulation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerinfo: *const ::win32_ui::Input::Pointer::POINTER_INFO) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_UI_Input_Pointer", feature = "Win32_UI_WindowsAndMessaging")))]
     TryRedirectForManipulation: usize,
 }

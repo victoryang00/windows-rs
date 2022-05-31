@@ -143,34 +143,27 @@ impl ::core::default::Default for MCAST_SCOPE_CTX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCAST_SCOPE_ENTRY {
     pub ScopeCtx: MCAST_SCOPE_CTX,
     pub LastAddr: IPNG_ADDRESS,
     pub TTL: u32,
-    pub ScopeDesc: super::super::Foundation::UNICODE_STRING,
+    pub ScopeDesc: ::win32_foundation::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCAST_SCOPE_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCAST_SCOPE_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MCAST_SCOPE_ENTRY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MCAST_SCOPE_ENTRY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MCAST_SCOPE_ENTRY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MCAST_SCOPE_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MCAST_SCOPE_ENTRY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -202,14 +195,13 @@ pub unsafe fn McastApiStartup(version: *mut u32) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn McastEnumerateScopes<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(addrfamily: u16, requery: Param1, pscopelist: *mut MCAST_SCOPE_ENTRY, pscopelen: *mut u32, pscopecount: *mut u32) -> u32 {
+pub unsafe fn McastEnumerateScopes<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(addrfamily: u16, requery: Param1, pscopelist: *mut MCAST_SCOPE_ENTRY, pscopelen: *mut u32, pscopecount: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn McastEnumerateScopes(addrfamily: u16, requery: super::super::Foundation::BOOL, pscopelist: *mut MCAST_SCOPE_ENTRY, pscopelen: *mut u32, pscopecount: *mut u32) -> u32;
+            fn McastEnumerateScopes(addrfamily: u16, requery: ::win32_foundation::BOOL, pscopelist: *mut MCAST_SCOPE_ENTRY, pscopelen: *mut u32, pscopecount: *mut u32) -> u32;
         }
         ::core::mem::transmute(McastEnumerateScopes(::core::mem::transmute(addrfamily), requery.into_param().abi(), ::core::mem::transmute(pscopelist), ::core::mem::transmute(pscopelen), ::core::mem::transmute(pscopecount)))
     }

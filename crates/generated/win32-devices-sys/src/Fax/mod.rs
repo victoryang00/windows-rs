@@ -1,121 +1,68 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CanSendToFaxRecipient() -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxAbort(faxhandle: super::super::Foundation::HANDLE, jobid: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxAccessCheck(faxhandle: super::super::Foundation::HANDLE, accessmask: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxClose(faxhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxCompleteJobParamsA(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxCompleteJobParamsW(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxConnectFaxServerA(machinename: ::windows_core_sys::PCSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxConnectFaxServerW(machinename: ::windows_core_sys::PCWSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnableRoutingMethodA(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnableRoutingMethodW(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCWSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnumGlobalRoutingInfoA(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnumGlobalRoutingInfoW(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnumJobsA(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnumJobsW(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnumPortsA(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnumPortsW(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnumRoutingMethodsA(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxEnumRoutingMethodsW(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn CanSendToFaxRecipient() -> ::win32_foundation_sys::BOOL;
+    pub fn FaxAbort(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxAccessCheck(faxhandle: ::win32_foundation_sys::HANDLE, accessmask: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxClose(faxhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxCompleteJobParamsA(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxCompleteJobParamsW(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxConnectFaxServerA(machinename: ::windows_core_sys::PCSTR, faxhandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxConnectFaxServerW(machinename: ::windows_core_sys::PCWSTR, faxhandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnableRoutingMethodA(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCSTR, enabled: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnableRoutingMethodW(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCWSTR, enabled: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnumGlobalRoutingInfoA(faxhandle: ::win32_foundation_sys::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnumGlobalRoutingInfoW(faxhandle: ::win32_foundation_sys::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnumJobsA(faxhandle: ::win32_foundation_sys::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnumJobsW(faxhandle: ::win32_foundation_sys::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnumPortsA(faxhandle: ::win32_foundation_sys::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnumPortsW(faxhandle: ::win32_foundation_sys::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnumRoutingMethodsA(faxporthandle: ::win32_foundation_sys::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxEnumRoutingMethodsW(faxporthandle: ::win32_foundation_sys::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn FaxFreeBuffer(buffer: *mut ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetConfigurationA(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetConfigurationW(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetDeviceStatusA(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetDeviceStatusW(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetJobA(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetJobW(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetLoggingCategoriesA(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetLoggingCategoriesW(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetPageData(faxhandle: super::super::Foundation::HANDLE, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetPortA(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetPortW(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetRoutingInfoA(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxGetRoutingInfoW(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCWSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxInitializeEventQueue(faxhandle: super::super::Foundation::HANDLE, completionport: super::super::Foundation::HANDLE, completionkey: usize, hwnd: super::super::Foundation::HWND, messagestart: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxOpenPort(faxhandle: super::super::Foundation::HANDLE, deviceid: u32, flags: u32, faxporthandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn FaxPrintCoverPageA(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn FaxPrintCoverPageW(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxRegisterRoutingExtensionW(faxhandle: super::super::Foundation::HANDLE, extensionname: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, imagename: ::windows_core_sys::PCWSTR, callback: PFAX_ROUTING_INSTALLATION_CALLBACKW, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxRegisterServiceProviderW(deviceprovider: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, imagename: ::windows_core_sys::PCWSTR, tspname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSendDocumentA(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCSTR, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSendDocumentForBroadcastA(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKA, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSendDocumentForBroadcastW(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCWSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKW, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSendDocumentW(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCWSTR, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetConfigurationA(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetConfigurationW(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetGlobalRoutingInfoA(faxhandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetGlobalRoutingInfoW(faxhandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetJobA(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetJobW(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetLoggingCategoriesA(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetLoggingCategoriesW(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetPortA(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetPortW(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetRoutingInfoA(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxSetRoutingInfoW(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCWSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn FaxStartPrintJobA(printername: ::windows_core_sys::PCSTR, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn FaxStartPrintJobW(printername: ::windows_core_sys::PCWSTR, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FaxUnregisterServiceProviderW(deviceprovider: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn FaxGetConfigurationA(faxhandle: ::win32_foundation_sys::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetConfigurationW(faxhandle: ::win32_foundation_sys::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetDeviceStatusA(faxporthandle: ::win32_foundation_sys::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetDeviceStatusW(faxporthandle: ::win32_foundation_sys::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetJobA(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetJobW(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetLoggingCategoriesA(faxhandle: ::win32_foundation_sys::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetLoggingCategoriesW(faxhandle: ::win32_foundation_sys::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetPageData(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetPortA(faxporthandle: ::win32_foundation_sys::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetPortW(faxporthandle: ::win32_foundation_sys::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetRoutingInfoA(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxGetRoutingInfoW(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCWSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxInitializeEventQueue(faxhandle: ::win32_foundation_sys::HANDLE, completionport: ::win32_foundation_sys::HANDLE, completionkey: usize, hwnd: ::win32_foundation_sys::HWND, messagestart: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxOpenPort(faxhandle: ::win32_foundation_sys::HANDLE, deviceid: u32, flags: u32, faxporthandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn FaxPrintCoverPageA(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn FaxPrintCoverPageW(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxRegisterRoutingExtensionW(faxhandle: ::win32_foundation_sys::HANDLE, extensionname: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, imagename: ::windows_core_sys::PCWSTR, callback: PFAX_ROUTING_INSTALLATION_CALLBACKW, context: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxRegisterServiceProviderW(deviceprovider: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, imagename: ::windows_core_sys::PCWSTR, tspname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSendDocumentA(faxhandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCSTR, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSendDocumentForBroadcastA(faxhandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKA, context: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSendDocumentForBroadcastW(faxhandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCWSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKW, context: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSendDocumentW(faxhandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCWSTR, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetConfigurationA(faxhandle: ::win32_foundation_sys::HANDLE, faxconfig: *const FAX_CONFIGURATIONA) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetConfigurationW(faxhandle: ::win32_foundation_sys::HANDLE, faxconfig: *const FAX_CONFIGURATIONW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetGlobalRoutingInfoA(faxhandle: ::win32_foundation_sys::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetGlobalRoutingInfoW(faxhandle: ::win32_foundation_sys::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetJobA(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetJobW(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetLoggingCategoriesA(faxhandle: ::win32_foundation_sys::HANDLE, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetLoggingCategoriesW(faxhandle: ::win32_foundation_sys::HANDLE, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetPortA(faxporthandle: ::win32_foundation_sys::HANDLE, portinfo: *const FAX_PORT_INFOA) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetPortW(faxporthandle: ::win32_foundation_sys::HANDLE, portinfo: *const FAX_PORT_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetRoutingInfoA(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxSetRoutingInfoW(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCWSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn FaxStartPrintJobA(printername: ::windows_core_sys::PCSTR, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn FaxStartPrintJobW(printername: ::windows_core_sys::PCWSTR, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn FaxUnregisterServiceProviderW(deviceprovider: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn SendToFaxRecipient(sndmode: SendToMode, lpfilename: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StiCreateInstanceW(hinst: super::super::Foundation::HINSTANCE, dwver: u32, ppsti: *mut IStillImageW, punkouter: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
+    pub fn StiCreateInstanceW(hinst: ::win32_foundation_sys::HINSTANCE, dwver: u32, ppsti: *mut IStillImageW, punkouter: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
 }
 pub const CF_MSFAXSRV_DEVICE_ID: &str = "FAXSRV_DeviceID";
 pub const CF_MSFAXSRV_FSP_GUID: &str = "FAXSRV_FSPGuid";
@@ -164,50 +111,44 @@ pub const faetIN_ARCHIVE: FAX_ACCOUNT_EVENTS_TYPE_ENUM = 4i32;
 pub const faetOUT_ARCHIVE: FAX_ACCOUNT_EVENTS_TYPE_ENUM = 8i32;
 pub const faetFXSSVC_ENDED: FAX_ACCOUNT_EVENTS_TYPE_ENUM = 16i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_CONFIGURATIONA {
     pub SizeOfStruct: u32,
     pub Retries: u32,
     pub RetryDelay: u32,
     pub DirtyDays: u32,
-    pub Branding: super::super::Foundation::BOOL,
-    pub UseDeviceTsid: super::super::Foundation::BOOL,
-    pub ServerCp: super::super::Foundation::BOOL,
-    pub PauseServerQueue: super::super::Foundation::BOOL,
+    pub Branding: ::win32_foundation_sys::BOOL,
+    pub UseDeviceTsid: ::win32_foundation_sys::BOOL,
+    pub ServerCp: ::win32_foundation_sys::BOOL,
+    pub PauseServerQueue: ::win32_foundation_sys::BOOL,
     pub StartCheapTime: FAX_TIME,
     pub StopCheapTime: FAX_TIME,
-    pub ArchiveOutgoingFaxes: super::super::Foundation::BOOL,
+    pub ArchiveOutgoingFaxes: ::win32_foundation_sys::BOOL,
     pub ArchiveDirectory: ::windows_core_sys::PCSTR,
     pub Reserved: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_CONFIGURATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_CONFIGURATIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_CONFIGURATIONW {
     pub SizeOfStruct: u32,
     pub Retries: u32,
     pub RetryDelay: u32,
     pub DirtyDays: u32,
-    pub Branding: super::super::Foundation::BOOL,
-    pub UseDeviceTsid: super::super::Foundation::BOOL,
-    pub ServerCp: super::super::Foundation::BOOL,
-    pub PauseServerQueue: super::super::Foundation::BOOL,
+    pub Branding: ::win32_foundation_sys::BOOL,
+    pub UseDeviceTsid: ::win32_foundation_sys::BOOL,
+    pub ServerCp: ::win32_foundation_sys::BOOL,
+    pub PauseServerQueue: ::win32_foundation_sys::BOOL,
     pub StartCheapTime: FAX_TIME,
     pub StopCheapTime: FAX_TIME,
-    pub ArchiveOutgoingFaxes: super::super::Foundation::BOOL,
+    pub ArchiveOutgoingFaxes: ::win32_foundation_sys::BOOL,
     pub ArchiveDirectory: ::windows_core_sys::PCWSTR,
     pub Reserved: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_CONFIGURATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_CONFIGURATIONW {
     fn clone(&self) -> Self {
         *self
@@ -216,15 +157,15 @@ impl ::core::clone::Clone for FAX_CONFIGURATIONW {
 pub const FAX_CONFIG_QUERY: u32 = 4u32;
 pub const FAX_CONFIG_SET: u32 = 8u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct FAX_CONTEXT_INFOA {
     pub SizeOfStruct: u32,
-    pub hDC: super::super::Graphics::Gdi::HDC,
-    pub ServerName: [super::super::Foundation::CHAR; 16],
+    pub hDC: ::win32_graphics_sys::Gdi::HDC,
+    pub ServerName: [::win32_foundation_sys::CHAR; 16],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for FAX_CONTEXT_INFOA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for FAX_CONTEXT_INFOA {
     fn clone(&self) -> Self {
         *self
@@ -234,7 +175,7 @@ impl ::core::clone::Clone for FAX_CONTEXT_INFOA {
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct FAX_CONTEXT_INFOW {
     pub SizeOfStruct: u32,
-    pub hDC: super::super::Graphics::Gdi::HDC,
+    pub hDC: ::win32_graphics_sys::Gdi::HDC,
     pub ServerName: [u16; 16],
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -246,11 +187,10 @@ impl ::core::clone::Clone for FAX_CONTEXT_INFOW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_COVERPAGE_INFOA {
     pub SizeOfStruct: u32,
     pub CoverPageName: ::windows_core_sys::PCSTR,
-    pub UseServerCoverPage: super::super::Foundation::BOOL,
+    pub UseServerCoverPage: ::win32_foundation_sys::BOOL,
     pub RecName: ::windows_core_sys::PCSTR,
     pub RecFaxNumber: ::windows_core_sys::PCSTR,
     pub RecCompany: ::windows_core_sys::PCSTR,
@@ -275,23 +215,20 @@ pub struct FAX_COVERPAGE_INFOA {
     pub SdrOfficePhone: ::windows_core_sys::PCSTR,
     pub Note: ::windows_core_sys::PCSTR,
     pub Subject: ::windows_core_sys::PCSTR,
-    pub TimeSent: super::super::Foundation::SYSTEMTIME,
+    pub TimeSent: ::win32_foundation_sys::SYSTEMTIME,
     pub PageCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_COVERPAGE_INFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_COVERPAGE_INFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_COVERPAGE_INFOW {
     pub SizeOfStruct: u32,
     pub CoverPageName: ::windows_core_sys::PCWSTR,
-    pub UseServerCoverPage: super::super::Foundation::BOOL,
+    pub UseServerCoverPage: ::win32_foundation_sys::BOOL,
     pub RecName: ::windows_core_sys::PCWSTR,
     pub RecFaxNumber: ::windows_core_sys::PCWSTR,
     pub RecCompany: ::windows_core_sys::PCWSTR,
@@ -316,12 +253,10 @@ pub struct FAX_COVERPAGE_INFOW {
     pub SdrOfficePhone: ::windows_core_sys::PCWSTR,
     pub Note: ::windows_core_sys::PCWSTR,
     pub Subject: ::windows_core_sys::PCWSTR,
-    pub TimeSent: super::super::Foundation::SYSTEMTIME,
+    pub TimeSent: ::win32_foundation_sys::SYSTEMTIME,
     pub PageCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_COVERPAGE_INFOW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_COVERPAGE_INFOW {
     fn clone(&self) -> Self {
         *self
@@ -336,7 +271,6 @@ pub const fdrmNO_ANSWER: FAX_DEVICE_RECEIVE_MODE_ENUM = 0i32;
 pub const fdrmAUTO_ANSWER: FAX_DEVICE_RECEIVE_MODE_ENUM = 1i32;
 pub const fdrmMANUAL_ANSWER: FAX_DEVICE_RECEIVE_MODE_ENUM = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_DEVICE_STATUSA {
     pub SizeOfStruct: u32,
     pub CallerId: ::windows_core_sys::PCSTR,
@@ -351,24 +285,21 @@ pub struct FAX_DEVICE_STATUSA {
     pub SenderName: ::windows_core_sys::PCSTR,
     pub RecipientName: ::windows_core_sys::PCSTR,
     pub Size: u32,
-    pub StartTime: super::super::Foundation::FILETIME,
+    pub StartTime: ::win32_foundation_sys::FILETIME,
     pub Status: u32,
     pub StatusString: ::windows_core_sys::PCSTR,
-    pub SubmittedTime: super::super::Foundation::FILETIME,
+    pub SubmittedTime: ::win32_foundation_sys::FILETIME,
     pub TotalPages: u32,
     pub Tsid: ::windows_core_sys::PCSTR,
     pub UserName: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_DEVICE_STATUSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_DEVICE_STATUSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_DEVICE_STATUSW {
     pub SizeOfStruct: u32,
     pub CallerId: ::windows_core_sys::PCWSTR,
@@ -383,17 +314,15 @@ pub struct FAX_DEVICE_STATUSW {
     pub SenderName: ::windows_core_sys::PCWSTR,
     pub RecipientName: ::windows_core_sys::PCWSTR,
     pub Size: u32,
-    pub StartTime: super::super::Foundation::FILETIME,
+    pub StartTime: ::win32_foundation_sys::FILETIME,
     pub Status: u32,
     pub StatusString: ::windows_core_sys::PCWSTR,
-    pub SubmittedTime: super::super::Foundation::FILETIME,
+    pub SubmittedTime: ::win32_foundation_sys::FILETIME,
     pub TotalPages: u32,
     pub Tsid: ::windows_core_sys::PCWSTR,
     pub UserName: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_DEVICE_STATUSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_DEVICE_STATUSW {
     fn clone(&self) -> Self {
         *self
@@ -462,34 +391,28 @@ pub const FAX_ERR_SRV_OUTOFMEMORY: i32 = 7001i32;
 pub const FAX_ERR_START: i32 = 7001i32;
 pub const FAX_ERR_VERSION_MISMATCH: i32 = 7012i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_EVENTA {
     pub SizeOfStruct: u32,
-    pub TimeStamp: super::super::Foundation::FILETIME,
+    pub TimeStamp: ::win32_foundation_sys::FILETIME,
     pub DeviceId: u32,
     pub EventId: u32,
     pub JobId: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_EVENTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_EVENTA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_EVENTW {
     pub SizeOfStruct: u32,
-    pub TimeStamp: super::super::Foundation::FILETIME,
+    pub TimeStamp: ::win32_foundation_sys::FILETIME,
     pub DeviceId: u32,
     pub EventId: u32,
     pub JobId: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_EVENTW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_EVENTW {
     fn clone(&self) -> Self {
         *self
@@ -546,7 +469,6 @@ pub const fgsEMPTY: FAX_GROUP_STATUS_ENUM = 1i32;
 pub const fgsALL_DEV_NOT_VALID: FAX_GROUP_STATUS_ENUM = 2i32;
 pub const fgsSOME_DEV_NOT_VALID: FAX_GROUP_STATUS_ENUM = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_JOB_ENTRYA {
     pub SizeOfStruct: u32,
     pub JobId: u32,
@@ -564,21 +486,18 @@ pub struct FAX_JOB_ENTRYA {
     pub SenderDept: ::windows_core_sys::PCSTR,
     pub BillingCode: ::windows_core_sys::PCSTR,
     pub ScheduleAction: u32,
-    pub ScheduleTime: super::super::Foundation::SYSTEMTIME,
+    pub ScheduleTime: ::win32_foundation_sys::SYSTEMTIME,
     pub DeliveryReportType: u32,
     pub DeliveryReportAddress: ::windows_core_sys::PCSTR,
     pub DocumentName: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_JOB_ENTRYA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_JOB_ENTRYA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_JOB_ENTRYW {
     pub SizeOfStruct: u32,
     pub JobId: u32,
@@ -596,14 +515,12 @@ pub struct FAX_JOB_ENTRYW {
     pub SenderDept: ::windows_core_sys::PCWSTR,
     pub BillingCode: ::windows_core_sys::PCWSTR,
     pub ScheduleAction: u32,
-    pub ScheduleTime: super::super::Foundation::SYSTEMTIME,
+    pub ScheduleTime: ::win32_foundation_sys::SYSTEMTIME,
     pub DeliveryReportType: u32,
     pub DeliveryReportAddress: ::windows_core_sys::PCWSTR,
     pub DocumentName: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_JOB_ENTRYW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_JOB_ENTRYW {
     fn clone(&self) -> Self {
         *self
@@ -641,7 +558,6 @@ pub const fjoDELETE: FAX_JOB_OPERATIONS_ENUM = 16i32;
 pub const fjoRECIPIENT_INFO: FAX_JOB_OPERATIONS_ENUM = 32i32;
 pub const fjoSENDER_INFO: FAX_JOB_OPERATIONS_ENUM = 64i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_JOB_PARAMA {
     pub SizeOfStruct: u32,
     pub RecipientNumber: ::windows_core_sys::PCSTR,
@@ -652,23 +568,20 @@ pub struct FAX_JOB_PARAMA {
     pub SenderDept: ::windows_core_sys::PCSTR,
     pub BillingCode: ::windows_core_sys::PCSTR,
     pub ScheduleAction: u32,
-    pub ScheduleTime: super::super::Foundation::SYSTEMTIME,
+    pub ScheduleTime: ::win32_foundation_sys::SYSTEMTIME,
     pub DeliveryReportType: u32,
     pub DeliveryReportAddress: ::windows_core_sys::PCSTR,
     pub DocumentName: ::windows_core_sys::PCSTR,
     pub CallHandle: u32,
     pub Reserved: [usize; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_JOB_PARAMA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_JOB_PARAMA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_JOB_PARAMW {
     pub SizeOfStruct: u32,
     pub RecipientNumber: ::windows_core_sys::PCWSTR,
@@ -679,16 +592,14 @@ pub struct FAX_JOB_PARAMW {
     pub SenderDept: ::windows_core_sys::PCWSTR,
     pub BillingCode: ::windows_core_sys::PCWSTR,
     pub ScheduleAction: u32,
-    pub ScheduleTime: super::super::Foundation::SYSTEMTIME,
+    pub ScheduleTime: ::win32_foundation_sys::SYSTEMTIME,
     pub DeliveryReportType: u32,
     pub DeliveryReportAddress: ::windows_core_sys::PCWSTR,
     pub DocumentName: ::windows_core_sys::PCWSTR,
     pub CallHandle: u32,
     pub Reserved: [usize; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_JOB_PARAMW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_JOB_PARAMW {
     fn clone(&self) -> Self {
         *self
@@ -874,7 +785,6 @@ impl ::core::clone::Clone for FAX_ROUTE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_ROUTE_CALLBACKROUTINES {
     pub SizeOfStruct: u32,
     pub FaxRouteAddFile: PFAXROUTEADDFILE,
@@ -883,20 +793,17 @@ pub struct FAX_ROUTE_CALLBACKROUTINES {
     pub FaxRouteEnumFiles: PFAXROUTEENUMFILES,
     pub FaxRouteModifyRoutingData: PFAXROUTEMODIFYROUTINGDATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_ROUTE_CALLBACKROUTINES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_ROUTE_CALLBACKROUTINES {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_ROUTING_METHODA {
     pub SizeOfStruct: u32,
     pub DeviceId: u32,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation_sys::BOOL,
     pub DeviceName: ::windows_core_sys::PCSTR,
     pub Guid: ::windows_core_sys::PCSTR,
     pub FriendlyName: ::windows_core_sys::PCSTR,
@@ -904,20 +811,17 @@ pub struct FAX_ROUTING_METHODA {
     pub ExtensionImageName: ::windows_core_sys::PCSTR,
     pub ExtensionFriendlyName: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_ROUTING_METHODA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_ROUTING_METHODA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_ROUTING_METHODW {
     pub SizeOfStruct: u32,
     pub DeviceId: u32,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation_sys::BOOL,
     pub DeviceName: ::windows_core_sys::PCWSTR,
     pub Guid: ::windows_core_sys::PCWSTR,
     pub FriendlyName: ::windows_core_sys::PCWSTR,
@@ -925,9 +829,7 @@ pub struct FAX_ROUTING_METHODW {
     pub ExtensionImageName: ::windows_core_sys::PCWSTR,
     pub ExtensionFriendlyName: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_ROUTING_METHODW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_ROUTING_METHODW {
     fn clone(&self) -> Self {
         *self
@@ -946,7 +848,6 @@ pub const fstNOW: FAX_SCHEDULE_TYPE_ENUM = 0i32;
 pub const fstSPECIFIC_TIME: FAX_SCHEDULE_TYPE_ENUM = 1i32;
 pub const fstDISCOUNT_PERIOD: FAX_SCHEDULE_TYPE_ENUM = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_SEND {
     pub SizeOfStruct: u32,
     pub FileName: ::windows_core_sys::PWSTR,
@@ -954,13 +855,11 @@ pub struct FAX_SEND {
     pub CallerNumber: ::windows_core_sys::PWSTR,
     pub ReceiverName: ::windows_core_sys::PWSTR,
     pub ReceiverNumber: ::windows_core_sys::PWSTR,
-    pub Branding: super::super::Foundation::BOOL,
+    pub Branding: ::win32_foundation_sys::BOOL,
     pub CallHandle: u32,
     pub Reserved: [u32; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_SEND {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_SEND {
     fn clone(&self) -> Self {
         *self
@@ -1209,181 +1108,102 @@ pub const MAX_NOTIFICATION_DATA: u32 = 64u32;
 pub const MS_FAXROUTE_EMAIL_GUID: &str = "{6bbf7bfe-9af2-11d0-abf7-00c04fd91a4e}";
 pub const MS_FAXROUTE_FOLDER_GUID: &str = "{92041a90-9af2-11d0-abf7-00c04fd91a4e}";
 pub const MS_FAXROUTE_PRINTING_GUID: &str = "{aec1b37c-9af2-11d0-abf7-00c04fd91a4e}";
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXABORT = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXACCESSCHECK = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, accessmask: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCLOSE = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCOMPLETEJOBPARAMSA = ::core::option::Option<unsafe extern "system" fn(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCOMPLETEJOBPARAMSW = ::core::option::Option<unsafe extern "system" fn(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCONNECTFAXSERVERA = ::core::option::Option<unsafe extern "system" fn(machinename: ::windows_core_sys::PCSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCONNECTFAXSERVERW = ::core::option::Option<unsafe extern "system" fn(machinename: ::windows_core_sys::PCWSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVABORTOPERATION = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-pub type PFAXDEVCONFIGURE = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::UI::Controls::HPROPSHEETPAGE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVENDJOB = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVINITIALIZE = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: super::super::Foundation::HANDLE, param2: *mut PFAX_LINECALLBACK, param3: PFAX_SERVICE_CALLBACK) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVRECEIVE = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE, param1: u32, param2: *mut FAX_RECEIVE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVREPORTSTATUS = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE, param1: *mut FAX_DEV_STATUS, param2: u32, param3: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVSEND = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE, param1: *mut FAX_SEND, param2: PFAX_SEND_CALLBACK) -> super::super::Foundation::BOOL>;
+pub type PFAXABORT = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXACCESSCHECK = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, accessmask: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXCLOSE = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXCOMPLETEJOBPARAMSA = ::core::option::Option<unsafe extern "system" fn(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXCOMPLETEJOBPARAMSW = ::core::option::Option<unsafe extern "system" fn(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXCONNECTFAXSERVERA = ::core::option::Option<unsafe extern "system" fn(machinename: ::windows_core_sys::PCSTR, faxhandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXCONNECTFAXSERVERW = ::core::option::Option<unsafe extern "system" fn(machinename: ::windows_core_sys::PCWSTR, faxhandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXDEVABORTOPERATION = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_UI_Controls")]
+pub type PFAXDEVCONFIGURE = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::win32_ui_sys::Controls::HPROPSHEETPAGE) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXDEVENDJOB = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXDEVINITIALIZE = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: ::win32_foundation_sys::HANDLE, param2: *mut PFAX_LINECALLBACK, param3: PFAX_SERVICE_CALLBACK) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXDEVRECEIVE = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE, param1: u32, param2: *mut FAX_RECEIVE) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXDEVREPORTSTATUS = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE, param1: *mut FAX_DEV_STATUS, param2: u32, param3: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXDEVSEND = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE, param1: *mut FAX_SEND, param2: PFAX_SEND_CALLBACK) -> ::win32_foundation_sys::BOOL>;
 pub type PFAXDEVSHUTDOWN = ::core::option::Option<unsafe extern "system" fn() -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVSTARTJOB = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: *mut super::super::Foundation::HANDLE, param3: super::super::Foundation::HANDLE, param4: usize) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVVIRTUALDEVICECREATION = ::core::option::Option<unsafe extern "system" fn(devicecount: *mut u32, devicenameprefix: ::windows_core_sys::PWSTR, deviceidprefix: *mut u32, completionport: super::super::Foundation::HANDLE, completionkey: usize) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENABLEROUTINGMETHODA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENABLEROUTINGMETHODW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCWSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMGLOBALROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMGLOBALROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMJOBSA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMJOBSW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMPORTSA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMPORTSW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMROUTINGMETHODSA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMROUTINGMETHODSW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL>;
+pub type PFAXDEVSTARTJOB = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: *mut ::win32_foundation_sys::HANDLE, param3: ::win32_foundation_sys::HANDLE, param4: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXDEVVIRTUALDEVICECREATION = ::core::option::Option<unsafe extern "system" fn(devicecount: *mut u32, devicenameprefix: ::windows_core_sys::PWSTR, deviceidprefix: *mut u32, completionport: ::win32_foundation_sys::HANDLE, completionkey: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENABLEROUTINGMETHODA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCSTR, enabled: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENABLEROUTINGMETHODW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCWSTR, enabled: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENUMGLOBALROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENUMGLOBALROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENUMJOBSA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENUMJOBSW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENUMPORTSA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENUMPORTSW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENUMROUTINGMETHODSA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXENUMROUTINGMETHODSW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> ::win32_foundation_sys::BOOL>;
 pub type PFAXFREEBUFFER = ::core::option::Option<unsafe extern "system" fn(buffer: *mut ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETCONFIGURATIONA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETCONFIGURATIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETDEVICESTATUSA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETDEVICESTATUSW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETJOBA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETJOBW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETLOGGINGCATEGORIESA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETLOGGINGCATEGORIESW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETPAGEDATA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETPORTA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETPORTW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCWSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXINITIALIZEEVENTQUEUE = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, completionport: super::super::Foundation::HANDLE, completionkey: usize, hwnd: super::super::Foundation::HWND, messagestart: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXOPENPORT = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, deviceid: u32, flags: u32, faxporthandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFAXPRINTCOVERPAGEA = ::core::option::Option<unsafe extern "system" fn(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFAXPRINTCOVERPAGEW = ::core::option::Option<unsafe extern "system" fn(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXREGISTERROUTINGEXTENSIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, extensionname: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, imagename: ::windows_core_sys::PCWSTR, callback: PFAX_ROUTING_INSTALLATION_CALLBACKW, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXREGISTERSERVICEPROVIDERW = ::core::option::Option<unsafe extern "system" fn(deviceprovider: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, imagename: ::windows_core_sys::PCWSTR, tspname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL>;
+pub type PFAXGETCONFIGURATIONA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETCONFIGURATIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETDEVICESTATUSA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETDEVICESTATUSW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETJOBA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETJOBW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETLOGGINGCATEGORIESA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETLOGGINGCATEGORIESW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETPAGEDATA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETPORTA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETPORTW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXGETROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCWSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXINITIALIZEEVENTQUEUE = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, completionport: ::win32_foundation_sys::HANDLE, completionkey: usize, hwnd: ::win32_foundation_sys::HWND, messagestart: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXOPENPORT = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, deviceid: u32, flags: u32, faxporthandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFAXPRINTCOVERPAGEA = ::core::option::Option<unsafe extern "system" fn(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFAXPRINTCOVERPAGEW = ::core::option::Option<unsafe extern "system" fn(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXREGISTERROUTINGEXTENSIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, extensionname: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, imagename: ::windows_core_sys::PCWSTR, callback: PFAX_ROUTING_INSTALLATION_CALLBACKW, context: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXREGISTERSERVICEPROVIDERW = ::core::option::Option<unsafe extern "system" fn(deviceprovider: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, imagename: ::windows_core_sys::PCWSTR, tspname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
 pub type PFAXROUTEADDFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, filename: ::windows_core_sys::PCWSTR, guid: *mut ::windows_core_sys::GUID) -> i32>;
 pub type PFAXROUTEDELETEFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, filename: ::windows_core_sys::PCWSTR) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEDEVICECHANGENOTIFICATION = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEDEVICEENABLE = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: u32, param2: i32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEENUMFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, guidowner: *mut ::windows_core_sys::GUID, guidcaller: *mut ::windows_core_sys::GUID, filename: ::windows_core_sys::PCWSTR, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEENUMFILES = ::core::option::Option<unsafe extern "system" fn(jobid: u32, guid: *mut ::windows_core_sys::GUID, fileenumerator: PFAXROUTEENUMFILE, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEGETFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, index: u32, filenamebuffer: ::windows_core_sys::PWSTR, requiredsize: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEGETROUTINGINFO = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: u32, param2: *mut u8, param3: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEINITIALIZE = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE, param1: *mut FAX_ROUTE_CALLBACKROUTINES) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEMETHOD = ::core::option::Option<unsafe extern "system" fn(param0: *const FAX_ROUTE, param1: *mut *mut ::core::ffi::c_void, param2: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEMODIFYROUTINGDATA = ::core::option::Option<unsafe extern "system" fn(jobid: u32, routingguid: ::windows_core_sys::PCWSTR, routingdata: *mut u8, routingdatasize: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTESETROUTINGINFO = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: u32, param2: *const u8, param3: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSENDDOCUMENTA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCSTR, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSENDDOCUMENTFORBROADCASTA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKA, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSENDDOCUMENTFORBROADCASTW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCWSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKW, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSENDDOCUMENTW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core_sys::PCWSTR, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETCONFIGURATIONA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETCONFIGURATIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETGLOBALROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETGLOBALROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETJOBA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETJOBW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETLOGGINGCATEGORIESA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETLOGGINGCATEGORIESW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETPORTA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETPORTW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core_sys::PCWSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFAXSTARTPRINTJOBA = ::core::option::Option<unsafe extern "system" fn(printername: ::windows_core_sys::PCSTR, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFAXSTARTPRINTJOBW = ::core::option::Option<unsafe extern "system" fn(printername: ::windows_core_sys::PCWSTR, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXUNREGISTERSERVICEPROVIDERW = ::core::option::Option<unsafe extern "system" fn(deviceprovider: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL>;
+pub type PFAXROUTEDEVICECHANGENOTIFICATION = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXROUTEDEVICEENABLE = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: u32, param2: i32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXROUTEENUMFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, guidowner: *mut ::windows_core_sys::GUID, guidcaller: *mut ::windows_core_sys::GUID, filename: ::windows_core_sys::PCWSTR, context: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXROUTEENUMFILES = ::core::option::Option<unsafe extern "system" fn(jobid: u32, guid: *mut ::windows_core_sys::GUID, fileenumerator: PFAXROUTEENUMFILE, context: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXROUTEGETFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, index: u32, filenamebuffer: ::windows_core_sys::PWSTR, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXROUTEGETROUTINGINFO = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: u32, param2: *mut u8, param3: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXROUTEINITIALIZE = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE, param1: *mut FAX_ROUTE_CALLBACKROUTINES) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXROUTEMETHOD = ::core::option::Option<unsafe extern "system" fn(param0: *const FAX_ROUTE, param1: *mut *mut ::core::ffi::c_void, param2: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXROUTEMODIFYROUTINGDATA = ::core::option::Option<unsafe extern "system" fn(jobid: u32, routingguid: ::windows_core_sys::PCWSTR, routingdata: *mut u8, routingdatasize: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXROUTESETROUTINGINFO = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: u32, param2: *const u8, param3: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSENDDOCUMENTA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCSTR, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSENDDOCUMENTFORBROADCASTA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKA, context: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSENDDOCUMENTFORBROADCASTW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCWSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKW, context: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSENDDOCUMENTW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, filename: ::windows_core_sys::PCWSTR, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETCONFIGURATIONA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, faxconfig: *const FAX_CONFIGURATIONA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETCONFIGURATIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, faxconfig: *const FAX_CONFIGURATIONW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETGLOBALROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETGLOBALROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETJOBA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETJOBW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETLOGGINGCATEGORIESA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETLOGGINGCATEGORIESW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETPORTA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, portinfo: *const FAX_PORT_INFOA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETPORTW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, portinfo: *const FAX_PORT_INFOW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXSETROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation_sys::HANDLE, routingguid: ::windows_core_sys::PCWSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFAXSTARTPRINTJOBA = ::core::option::Option<unsafe extern "system" fn(printername: ::windows_core_sys::PCSTR, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFAXSTARTPRINTJOBW = ::core::option::Option<unsafe extern "system" fn(printername: ::windows_core_sys::PCWSTR, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAXUNREGISTERSERVICEPROVIDERW = ::core::option::Option<unsafe extern "system" fn(deviceprovider: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
 pub type PFAX_EXT_CONFIG_CHANGE = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: ::windows_core_sys::PCWSTR, param2: *mut u8, param3: u32) -> ::windows_core_sys::HRESULT>;
 pub type PFAX_EXT_FREE_BUFFER = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::core::ffi::c_void)>;
 pub type PFAX_EXT_GET_DATA = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: FAX_ENUM_DEVICE_ID_SOURCE, param2: ::windows_core_sys::PCWSTR, param3: *mut *mut u8, param4: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFAX_EXT_INITIALIZE_CONFIG = ::core::option::Option<unsafe extern "system" fn(param0: PFAX_EXT_GET_DATA, param1: PFAX_EXT_SET_DATA, param2: PFAX_EXT_REGISTER_FOR_EVENTS, param3: PFAX_EXT_UNREGISTER_FOR_EVENTS, param4: PFAX_EXT_FREE_BUFFER) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_EXT_REGISTER_FOR_EVENTS = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HINSTANCE, param1: u32, param2: FAX_ENUM_DEVICE_ID_SOURCE, param3: ::windows_core_sys::PCWSTR, param4: PFAX_EXT_CONFIG_CHANGE) -> super::super::Foundation::HANDLE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_EXT_SET_DATA = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HINSTANCE, param1: u32, param2: FAX_ENUM_DEVICE_ID_SOURCE, param3: ::windows_core_sys::PCWSTR, param4: *mut u8, param5: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_EXT_UNREGISTER_FOR_EVENTS = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_LINECALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, hdevice: u32, dwmessage: u32, dwinstance: usize, dwparam1: usize, dwparam2: usize, dwparam3: usize)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_RECIPIENT_CALLBACKA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, recipientnumber: u32, context: *mut ::core::ffi::c_void, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *mut FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_RECIPIENT_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, recipientnumber: u32, context: *mut ::core::ffi::c_void, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *mut FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_ROUTING_INSTALLATION_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, context: *mut ::core::ffi::c_void, methodname: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, functionname: ::windows_core_sys::PCWSTR, guid: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_SEND_CALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, callhandle: u32, reserved1: u32, reserved2: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_SERVICE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, deviceid: u32, param1: usize, param2: usize, param3: usize) -> super::super::Foundation::BOOL>;
+pub type PFAX_EXT_REGISTER_FOR_EVENTS = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HINSTANCE, param1: u32, param2: FAX_ENUM_DEVICE_ID_SOURCE, param3: ::windows_core_sys::PCWSTR, param4: PFAX_EXT_CONFIG_CHANGE) -> ::win32_foundation_sys::HANDLE>;
+pub type PFAX_EXT_SET_DATA = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HINSTANCE, param1: u32, param2: FAX_ENUM_DEVICE_ID_SOURCE, param3: ::windows_core_sys::PCWSTR, param4: *mut u8, param5: u32) -> u32>;
+pub type PFAX_EXT_UNREGISTER_FOR_EVENTS = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE) -> u32>;
+pub type PFAX_LINECALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, hdevice: u32, dwmessage: u32, dwinstance: usize, dwparam1: usize, dwparam2: usize, dwparam3: usize)>;
+pub type PFAX_RECIPIENT_CALLBACKA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, recipientnumber: u32, context: *mut ::core::ffi::c_void, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *mut FAX_COVERPAGE_INFOA) -> ::win32_foundation_sys::BOOL>;
+pub type PFAX_RECIPIENT_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, recipientnumber: u32, context: *mut ::core::ffi::c_void, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *mut FAX_COVERPAGE_INFOW) -> ::win32_foundation_sys::BOOL>;
+pub type PFAX_ROUTING_INSTALLATION_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, context: *mut ::core::ffi::c_void, methodname: ::windows_core_sys::PCWSTR, friendlyname: ::windows_core_sys::PCWSTR, functionname: ::windows_core_sys::PCWSTR, guid: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PFAX_SEND_CALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, callhandle: u32, reserved1: u32, reserved2: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFAX_SERVICE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation_sys::HANDLE, deviceid: u32, param1: usize, param2: usize, param3: usize) -> ::win32_foundation_sys::BOOL>;
 pub const REGSTR_VAL_BAUDRATE: &str = "BaudRate";
 pub const REGSTR_VAL_BAUDRATE_A: &str = "BaudRate";
 pub const REGSTR_VAL_DATA_W: &str = "DeviceData";
@@ -1443,18 +1263,15 @@ impl ::core::clone::Clone for STINOTIFY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STISUBSCRIBE {
     pub dwSize: u32,
     pub dwFlags: u32,
     pub dwFilter: u32,
-    pub hWndNotify: super::super::Foundation::HWND,
-    pub hEvent: super::super::Foundation::HANDLE,
+    pub hWndNotify: ::win32_foundation_sys::HWND,
+    pub hEvent: ::win32_foundation_sys::HANDLE,
     pub uiNotificationMessage: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STISUBSCRIBE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STISUBSCRIBE {
     fn clone(&self) -> Self {
         *self

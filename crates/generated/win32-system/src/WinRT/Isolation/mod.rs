@@ -1,10 +1,9 @@
 #[repr(transparent)]
 pub struct IIsolatedEnvironmentInterop(::windows_core::IUnknown);
 impl IIsolatedEnvironmentInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetHostHwndInterop<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(&self, containerhwnd: Param0) -> ::windows_core::Result<super::super::super::Foundation::HWND> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::HWND>::zeroed();
-        (::windows_core::Interface::vtable(self).GetHostHwndInterop)(::windows_core::Interface::as_raw(self), containerhwnd.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::HWND>(result__)
+    pub unsafe fn GetHostHwndInterop<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, containerhwnd: Param0) -> ::windows_core::Result<::win32_foundation::HWND> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HWND>::zeroed();
+        (::windows_core::Interface::vtable(self).GetHostHwndInterop)(::windows_core::Interface::as_raw(self), containerhwnd.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HWND>(result__)
     }
 }
 impl ::core::convert::From<IIsolatedEnvironmentInterop> for ::windows_core::IUnknown {
@@ -51,8 +50,5 @@ unsafe impl ::windows_core::Interface for IIsolatedEnvironmentInterop {
 #[doc(hidden)]
 pub struct IIsolatedEnvironmentInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetHostHwndInterop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, containerhwnd: super::super::super::Foundation::HWND, hosthwnd: *mut super::super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetHostHwndInterop: usize,
+    pub GetHostHwndInterop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, containerhwnd: ::win32_foundation::HWND, hosthwnd: *mut ::win32_foundation::HWND) -> ::windows_core::HRESULT,
 }

@@ -256,41 +256,33 @@ impl ::core::default::Default for DXGI_GAMMA_CONTROL {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DXGI_GAMMA_CONTROL_CAPABILITIES {
-    pub ScaleAndOffsetSupported: super::super::super::Foundation::BOOL,
+    pub ScaleAndOffsetSupported: ::win32_foundation::BOOL,
     pub MaxConvertedValue: f32,
     pub MinConvertedValue: f32,
     pub NumGammaControlPoints: u32,
     pub ControlPointPositions: [f32; 1025],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DXGI_GAMMA_CONTROL_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DXGI_GAMMA_CONTROL_CAPABILITIES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DXGI_GAMMA_CONTROL_CAPABILITIES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DXGI_GAMMA_CONTROL_CAPABILITIES").field("ScaleAndOffsetSupported", &self.ScaleAndOffsetSupported).field("MaxConvertedValue", &self.MaxConvertedValue).field("MinConvertedValue", &self.MinConvertedValue).field("NumGammaControlPoints", &self.NumGammaControlPoints).field("ControlPointPositions", &self.ControlPointPositions).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DXGI_GAMMA_CONTROL_CAPABILITIES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DXGI_GAMMA_CONTROL_CAPABILITIES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DXGI_GAMMA_CONTROL_CAPABILITIES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DXGI_GAMMA_CONTROL_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DXGI_GAMMA_CONTROL_CAPABILITIES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

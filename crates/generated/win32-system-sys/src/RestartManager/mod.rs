@@ -1,16 +1,12 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RmAddFilter(dwsessionhandle: u32, strmodulename: ::windows_core_sys::PCWSTR, pprocess: *const RM_UNIQUE_PROCESS, strserviceshortname: ::windows_core_sys::PCWSTR, filteraction: RM_FILTER_ACTION) -> u32;
     pub fn RmCancelCurrentTask(dwsessionhandle: u32) -> u32;
     pub fn RmEndSession(dwsessionhandle: u32) -> u32;
     pub fn RmGetFilterList(dwsessionhandle: u32, pbfilterbuf: *mut u8, cbfilterbuf: u32, cbfilterbufneeded: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RmGetList(dwsessionhandle: u32, pnprocinfoneeded: *mut u32, pnprocinfo: *mut u32, rgaffectedapps: *mut RM_PROCESS_INFO, lpdwrebootreasons: *mut u32) -> u32;
     pub fn RmJoinSession(psessionhandle: *mut u32, strsessionkey: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RmRegisterResources(dwsessionhandle: u32, nfiles: u32, rgsfilenames: *const ::windows_core_sys::PWSTR, napplications: u32, rgapplications: *const RM_UNIQUE_PROCESS, nservices: u32, rgsservicenames: *const ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RmRemoveFilter(dwsessionhandle: u32, strmodulename: ::windows_core_sys::PCWSTR, pprocess: *const RM_UNIQUE_PROCESS, strserviceshortname: ::windows_core_sys::PCWSTR) -> u32;
     pub fn RmRestart(dwsessionhandle: u32, dwrestartflags: u32, fnstatus: RM_WRITE_STATUS_CALLBACK) -> u32;
     pub fn RmShutdown(dwsessionhandle: u32, lactionflags: u32, fnstatus: RM_WRITE_STATUS_CALLBACK) -> u32;
@@ -42,31 +38,25 @@ pub const RmInvalidFilterAction: RM_FILTER_ACTION = 0i32;
 pub const RmNoRestart: RM_FILTER_ACTION = 1i32;
 pub const RmNoShutdown: RM_FILTER_ACTION = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RM_FILTER_INFO {
     pub FilterAction: RM_FILTER_ACTION,
     pub FilterTrigger: RM_FILTER_TRIGGER,
     pub cbNextOffset: u32,
     pub Anonymous: RM_FILTER_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RM_FILTER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RM_FILTER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union RM_FILTER_INFO_0 {
     pub strFilename: ::windows_core_sys::PWSTR,
     pub Process: RM_UNIQUE_PROCESS,
     pub strServiceShortName: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RM_FILTER_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RM_FILTER_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -80,7 +70,6 @@ pub const RmFilterTriggerService: RM_FILTER_TRIGGER = 3i32;
 pub const RM_INVALID_PROCESS: i32 = -1i32;
 pub const RM_INVALID_TS_SESSION: i32 = -1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RM_PROCESS_INFO {
     pub Process: RM_UNIQUE_PROCESS,
     pub strAppName: [u16; 256],
@@ -88,11 +77,9 @@ pub struct RM_PROCESS_INFO {
     pub ApplicationType: RM_APP_TYPE,
     pub AppStatus: u32,
     pub TSSessionId: u32,
-    pub bRestartable: super::super::Foundation::BOOL,
+    pub bRestartable: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RM_PROCESS_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RM_PROCESS_INFO {
     fn clone(&self) -> Self {
         *self
@@ -109,14 +96,11 @@ pub type RM_SHUTDOWN_TYPE = i32;
 pub const RmForceShutdown: RM_SHUTDOWN_TYPE = 1i32;
 pub const RmShutdownOnlyRegistered: RM_SHUTDOWN_TYPE = 16i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RM_UNIQUE_PROCESS {
     pub dwProcessId: u32,
-    pub ProcessStartTime: super::super::Foundation::FILETIME,
+    pub ProcessStartTime: ::win32_foundation_sys::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RM_UNIQUE_PROCESS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RM_UNIQUE_PROCESS {
     fn clone(&self) -> Self {
         *self

@@ -112,16 +112,16 @@ impl CharacterGroupings {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<CharacterGrouping>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<CharacterGrouping>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<CharacterGrouping>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<CharacterGrouping>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<CharacterGrouping>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<CharacterGrouping>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<CharacterGrouping> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVectorView<CharacterGrouping>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<CharacterGrouping>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<CharacterGrouping>(result__)
@@ -129,7 +129,7 @@ impl CharacterGroupings {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVectorView<CharacterGrouping>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<CharacterGrouping>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
@@ -137,7 +137,7 @@ impl CharacterGroupings {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, CharacterGrouping>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVectorView<CharacterGrouping>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<CharacterGrouping>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
@@ -145,7 +145,7 @@ impl CharacterGroupings {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<CharacterGrouping>]) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVectorView<CharacterGrouping>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVectorView<CharacterGrouping>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
@@ -189,7 +189,7 @@ impl ::windows_core::RuntimeName for CharacterGroupings {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for CharacterGroupings {
     type Item = CharacterGrouping;
-    type IntoIter = super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -197,9 +197,9 @@ impl ::core::iter::IntoIterator for CharacterGroupings {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &CharacterGroupings {
     type Item = CharacterGrouping;
-    type IntoIter = super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::Foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 impl ::core::convert::From<CharacterGroupings> for ::windows_core::IUnknown {
@@ -243,55 +243,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Cha
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<CharacterGroupings> for super::super::Foundation::Collections::IIterable<CharacterGrouping> {
+impl ::core::convert::TryFrom<CharacterGroupings> for ::winrt_foundation::Collections::IIterable<CharacterGrouping> {
     type Error = ::windows_core::Error;
     fn try_from(value: CharacterGroupings) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&CharacterGroupings> for super::super::Foundation::Collections::IIterable<CharacterGrouping> {
+impl ::core::convert::TryFrom<&CharacterGroupings> for ::winrt_foundation::Collections::IIterable<CharacterGrouping> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CharacterGroupings) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<CharacterGrouping>> for CharacterGroupings {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<CharacterGrouping>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CharacterGrouping>> for CharacterGroupings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CharacterGrouping>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<CharacterGrouping>> for &CharacterGroupings {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<CharacterGrouping>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<CharacterGrouping>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CharacterGrouping>> for &CharacterGroupings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<CharacterGrouping>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<CharacterGrouping>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<CharacterGroupings> for super::super::Foundation::Collections::IVectorView<CharacterGrouping> {
+impl ::core::convert::TryFrom<CharacterGroupings> for ::winrt_foundation::Collections::IVectorView<CharacterGrouping> {
     type Error = ::windows_core::Error;
     fn try_from(value: CharacterGroupings) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&CharacterGroupings> for super::super::Foundation::Collections::IVectorView<CharacterGrouping> {
+impl ::core::convert::TryFrom<&CharacterGroupings> for ::winrt_foundation::Collections::IVectorView<CharacterGrouping> {
     type Error = ::windows_core::Error;
     fn try_from(value: &CharacterGroupings) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<CharacterGrouping>> for CharacterGroupings {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IVectorView<CharacterGrouping>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<CharacterGrouping>> for CharacterGroupings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<CharacterGrouping>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<CharacterGrouping>> for &CharacterGroupings {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IVectorView<CharacterGrouping>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IVectorView<CharacterGrouping>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<CharacterGrouping>> for &CharacterGroupings {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<CharacterGrouping>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<CharacterGrouping>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for CharacterGroupings {}

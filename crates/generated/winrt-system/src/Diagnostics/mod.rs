@@ -15,11 +15,11 @@ impl DiagnosticActionResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Results(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn Results(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Results)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Results)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
 }
@@ -136,20 +136,19 @@ unsafe impl ::windows_core::RuntimeType for DiagnosticActionState {
 #[repr(transparent)]
 pub struct DiagnosticInvoker(::windows_core::IUnknown);
 impl DiagnosticInvoker {
-    #[cfg(all(feature = "Data_Json", feature = "Foundation"))]
-    pub fn RunDiagnosticActionAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Data::Json::JsonObject>>(&self, context: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DiagnosticActionResult, DiagnosticActionState>> {
+    #[cfg(feature = "Data_Json")]
+    pub fn RunDiagnosticActionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_data::Json::JsonObject>>(&self, context: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DiagnosticActionResult, DiagnosticActionState>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RunDiagnosticActionAsync)(::windows_core::Interface::as_raw(this), context.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DiagnosticActionResult, DiagnosticActionState>>(result__)
+            (::windows_core::Interface::vtable(this).RunDiagnosticActionAsync)(::windows_core::Interface::as_raw(this), context.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DiagnosticActionResult, DiagnosticActionState>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RunDiagnosticActionFromStringAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, context: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DiagnosticActionResult, DiagnosticActionState>> {
+    pub fn RunDiagnosticActionFromStringAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, context: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DiagnosticActionResult, DiagnosticActionState>> {
         let this = &::windows_core::Interface::cast::<IDiagnosticInvoker2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RunDiagnosticActionFromStringAsync)(::windows_core::Interface::as_raw(this), context.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DiagnosticActionResult, DiagnosticActionState>>(result__)
+            (::windows_core::Interface::vtable(this).RunDiagnosticActionFromStringAsync)(::windows_core::Interface::as_raw(this), context.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DiagnosticActionResult, DiagnosticActionState>>(result__)
         }
     }
     pub fn GetDefault() -> ::windows_core::Result<DiagnosticInvoker> {
@@ -275,9 +274,9 @@ unsafe impl ::windows_core::Interface for IDiagnosticInvoker {
 #[doc(hidden)]
 pub struct IDiagnosticInvoker_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Data_Json", feature = "Foundation"))]
+    #[cfg(feature = "Data_Json")]
     pub RunDiagnosticActionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, context: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Data_Json", feature = "Foundation")))]
+    #[cfg(not(feature = "Data_Json"))]
     RunDiagnosticActionAsync: usize,
 }
 #[doc(hidden)]
@@ -291,10 +290,7 @@ unsafe impl ::windows_core::Interface for IDiagnosticInvoker2 {
 #[doc(hidden)]
 pub struct IDiagnosticInvoker2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RunDiagnosticActionFromStringAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, context: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RunDiagnosticActionFromStringAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -335,14 +331,8 @@ unsafe impl ::windows_core::Interface for IProcessCpuUsageReport {
 #[doc(hidden)]
 pub struct IProcessCpuUsageReport_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub KernelTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    KernelTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub UserTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UserTime: usize,
+    pub KernelTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub UserTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -358,10 +348,7 @@ pub struct IProcessDiagnosticInfo_Vtbl {
     pub ProcessId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub ExecutableFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Parent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ProcessStartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProcessStartTime: usize,
+    pub ProcessStartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub DiskUsage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub MemoryUsage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CpuUsage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -505,18 +492,9 @@ unsafe impl ::windows_core::Interface for ISystemCpuUsageReport {
 #[doc(hidden)]
 pub struct ISystemCpuUsageReport_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub KernelTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    KernelTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub UserTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UserTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub IdleTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    IdleTime: usize,
+    pub KernelTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub UserTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub IdleTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -673,20 +651,18 @@ unsafe impl ::core::marker::Sync for ProcessCpuUsage {}
 #[repr(transparent)]
 pub struct ProcessCpuUsageReport(::windows_core::IUnknown);
 impl ProcessCpuUsageReport {
-    #[cfg(feature = "Foundation")]
-    pub fn KernelTime(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn KernelTime(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).KernelTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).KernelTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UserTime(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn UserTime(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).UserTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).UserTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
 }
@@ -786,12 +762,11 @@ impl ProcessDiagnosticInfo {
             (::windows_core::Interface::vtable(this).Parent)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ProcessDiagnosticInfo>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProcessStartTime(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn ProcessStartTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).ProcessStartTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).ProcessStartTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn DiskUsage(&self) -> ::windows_core::Result<ProcessDiskUsage> {
@@ -816,11 +791,11 @@ impl ProcessDiagnosticInfo {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAppDiagnosticInfos(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::AppDiagnosticInfo>> {
+    pub fn GetAppDiagnosticInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::AppDiagnosticInfo>> {
         let this = &::windows_core::Interface::cast::<IProcessDiagnosticInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAppDiagnosticInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::AppDiagnosticInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetAppDiagnosticInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::AppDiagnosticInfo>>(result__)
         }
     }
     pub fn IsPackaged(&self) -> ::windows_core::Result<bool> {
@@ -831,10 +806,10 @@ impl ProcessDiagnosticInfo {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetForProcesses() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<ProcessDiagnosticInfo>> {
+    pub fn GetForProcesses() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ProcessDiagnosticInfo>> {
         Self::IProcessDiagnosticInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetForProcesses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<ProcessDiagnosticInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetForProcesses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ProcessDiagnosticInfo>>(result__)
         })
     }
     pub fn GetForCurrentProcess() -> ::windows_core::Result<ProcessDiagnosticInfo> {
@@ -1460,28 +1435,25 @@ unsafe impl ::core::marker::Sync for SystemCpuUsage {}
 #[repr(transparent)]
 pub struct SystemCpuUsageReport(::windows_core::IUnknown);
 impl SystemCpuUsageReport {
-    #[cfg(feature = "Foundation")]
-    pub fn KernelTime(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn KernelTime(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).KernelTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).KernelTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UserTime(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn UserTime(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).UserTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).UserTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn IdleTime(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn IdleTime(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).IdleTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).IdleTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
 }

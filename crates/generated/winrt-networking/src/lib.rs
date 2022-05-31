@@ -239,9 +239,8 @@ impl HostName {
             (::windows_core::Interface::vtable(this).Compare)(::windows_core::Interface::as_raw(this), value1.into_param().abi(), value2.into_param().abi(), result__.as_mut_ptr()).from_abi::<i32>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -326,30 +325,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Hos
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HostName> for super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HostName> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HostName) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HostName> for super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HostName> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HostName) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::Foundation::IStringable> for HostName {
-    fn into_param(self) -> ::windows_core::Param<'a, super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HostName {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::Foundation::IStringable> for &HostName {
-    fn into_param(self) -> ::windows_core::Param<'a, super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HostName {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HostName {}

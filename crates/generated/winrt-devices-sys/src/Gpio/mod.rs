@@ -1,14 +1,11 @@
 #[cfg(feature = "Provider")]
 pub mod Provider;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct GpioChangeCount {
     pub Count: u64,
-    pub RelativeTime: super::super::Foundation::TimeSpan,
+    pub RelativeTime: ::winrt_foundation_sys::TimeSpan,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for GpioChangeCount {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for GpioChangeCount {
     fn clone(&self) -> Self {
         *self
@@ -30,14 +27,11 @@ impl ::core::clone::Clone for GpioChangePolarity {
 }
 pub type GpioChangeReader = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct GpioChangeRecord {
-    pub RelativeTime: super::super::Foundation::TimeSpan,
+    pub RelativeTime: ::winrt_foundation_sys::TimeSpan,
     pub Edge: GpioPinEdge,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for GpioChangeRecord {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for GpioChangeRecord {
     fn clone(&self) -> Self {
         *self

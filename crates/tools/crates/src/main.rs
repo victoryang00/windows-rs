@@ -108,7 +108,7 @@ deprecated = []
 
     path.pop();
     path.push("src");
-    build_tree(reader, "", tree, &path, sys, true);
+    build_tree(reader, "", tree, &path, sys, tree.namespace);
 
     //path.pop();
     // loop {
@@ -129,15 +129,16 @@ deprecated = []
     // }
 }
 
-fn build_tree(reader: &Reader, name: &str, tree: &Tree, path: &std::path::Path, sys: bool, root: bool) {
+fn build_tree(reader: &Reader, name: &str, tree: &Tree, path: &std::path::Path, sys: bool, root: &str) {
     let mut gen = bindgen::Gen::new(reader);
     gen.namespace = tree.namespace;
+    gen.root = root;
     gen.min_xaml = true;
     gen.cfg = true;
     gen.sys = sys;
 
     let mut path = std::path::PathBuf::from(path);
-    if root {
+    if root == tree.namespace {
         let mut lib = r#"
         #![allow(non_snake_case, non_upper_case_globals, non_camel_case_types)]
             "#
@@ -152,6 +153,6 @@ fn build_tree(reader: &Reader, name: &str, tree: &Tree, path: &std::path::Path, 
         imp::write_fmt(&path.join("mod.rs"), bindgen::namespace(&gen, tree))
     }
     for (name, tree) in &tree.nested {
-        build_tree(reader, name, tree, &path, sys, false);
+        build_tree(reader, name, tree, &path, sys, root);
     }
 }

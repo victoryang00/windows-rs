@@ -320,11 +320,11 @@ pub struct ITextPredictionGenerator2_Vtbl {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetNextWordCandidatesAsync: usize,
     #[cfg(feature = "UI_Text_Core")]
-    pub InputScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::UI::Text::Core::CoreTextInputScope) -> ::windows_core::HRESULT,
+    pub InputScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Text::Core::CoreTextInputScope) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_Text_Core"))]
     InputScope: usize,
     #[cfg(feature = "UI_Text_Core")]
-    pub SetInputScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::UI::Text::Core::CoreTextInputScope) -> ::windows_core::HRESULT,
+    pub SetInputScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_ui::Text::Core::CoreTextInputScope) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_Text_Core"))]
     SetInputScope: usize,
 }
@@ -354,10 +354,7 @@ pub struct ITextReverseConversionGenerator_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ResolvedLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub LanguageAvailableButNotInstalled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ConvertBackAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, input: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ConvertBackAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -565,25 +562,25 @@ unsafe impl ::core::marker::Sync for SelectableWordSegment {}
 pub struct SelectableWordSegmentsTokenizingHandler(pub ::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl SelectableWordSegmentsTokenizingHandler {
-    pub fn new<F: FnMut(&::core::option::Option<super::super::Foundation::Collections::IIterable<SelectableWordSegment>>, &::core::option::Option<super::super::Foundation::Collections::IIterable<SelectableWordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static>(invoke: F) -> Self {
+    pub fn new<F: FnMut(&::core::option::Option<::winrt_foundation::Collections::IIterable<SelectableWordSegment>>, &::core::option::Option<::winrt_foundation::Collections::IIterable<SelectableWordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static>(invoke: F) -> Self {
         let com = SelectableWordSegmentsTokenizingHandlerBox::<F> { vtable: &SelectableWordSegmentsTokenizingHandlerBox::<F>::VTABLE, count: ::windows_core::RefCount::new(1), invoke };
         unsafe { ::core::mem::transmute(::windows_core::alloc::boxed::Box::new(com)) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Invoke<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<SelectableWordSegment>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<SelectableWordSegment>>>(&self, precedingwords: Param0, words: Param1) -> ::windows_core::Result<()> {
+    pub fn Invoke<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<SelectableWordSegment>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<SelectableWordSegment>>>(&self, precedingwords: Param0, words: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this), precedingwords.into_param().abi(), words.into_param().abi()).ok() }
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 #[repr(C)]
-struct SelectableWordSegmentsTokenizingHandlerBox<F: FnMut(&::core::option::Option<super::super::Foundation::Collections::IIterable<SelectableWordSegment>>, &::core::option::Option<super::super::Foundation::Collections::IIterable<SelectableWordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> {
+struct SelectableWordSegmentsTokenizingHandlerBox<F: FnMut(&::core::option::Option<::winrt_foundation::Collections::IIterable<SelectableWordSegment>>, &::core::option::Option<::winrt_foundation::Collections::IIterable<SelectableWordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> {
     vtable: *const SelectableWordSegmentsTokenizingHandler_Vtbl,
     invoke: F,
     count: ::windows_core::RefCount,
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<F: FnMut(&::core::option::Option<super::super::Foundation::Collections::IIterable<SelectableWordSegment>>, &::core::option::Option<super::super::Foundation::Collections::IIterable<SelectableWordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> SelectableWordSegmentsTokenizingHandlerBox<F> {
+impl<F: FnMut(&::core::option::Option<::winrt_foundation::Collections::IIterable<SelectableWordSegment>>, &::core::option::Option<::winrt_foundation::Collections::IIterable<SelectableWordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> SelectableWordSegmentsTokenizingHandlerBox<F> {
     const VTABLE: SelectableWordSegmentsTokenizingHandler_Vtbl = SelectableWordSegmentsTokenizingHandler_Vtbl {
         base__: ::windows_core::IUnknownVtbl { QueryInterface: Self::QueryInterface, AddRef: Self::AddRef, Release: Self::Release },
         Invoke: Self::Invoke,
@@ -676,11 +673,11 @@ impl SelectableWordsSegmenter {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetTokens<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SelectableWordSegment>> {
+    pub fn GetTokens<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SelectableWordSegment>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTokens)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SelectableWordSegment>>(result__)
+            (::windows_core::Interface::vtable(this).GetTokens)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SelectableWordSegment>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -775,19 +772,19 @@ unsafe impl ::core::marker::Sync for SelectableWordsSegmenter {}
 pub struct SemanticTextQuery(::windows_core::IUnknown);
 impl SemanticTextQuery {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Find<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, content: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<TextSegment>> {
+    pub fn Find<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, content: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TextSegment>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Find)(::windows_core::Interface::as_raw(this), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<TextSegment>>(result__)
+            (::windows_core::Interface::vtable(this).Find)(::windows_core::Interface::as_raw(this), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<TextSegment>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindInProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertycontent: Param0, propertyname: Param1) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<TextSegment>> {
+    pub fn FindInProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertycontent: Param0, propertyname: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TextSegment>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindInProperty)(::windows_core::Interface::as_raw(this), propertycontent.into_param().abi(), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<TextSegment>>(result__)
+            (::windows_core::Interface::vtable(this).FindInProperty)(::windows_core::Interface::as_raw(this), propertycontent.into_param().abi(), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<TextSegment>>(result__)
         }
     }
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(aqsfilter: Param0) -> ::windows_core::Result<SemanticTextQuery> {
@@ -897,19 +894,19 @@ impl TextConversionGenerator {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCandidatesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
+    pub fn GetCandidatesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCandidatesAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCandidatesAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCandidatesWithMaxCountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0, maxcandidates: u32) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
+    pub fn GetCandidatesWithMaxCountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0, maxcandidates: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCandidatesWithMaxCountAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), maxcandidates, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCandidatesWithMaxCountAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), maxcandidates, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
         }
     }
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languagetag: Param0) -> ::windows_core::Result<TextConversionGenerator> {
@@ -1103,47 +1100,47 @@ impl TextPredictionGenerator {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCandidatesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
+    pub fn GetCandidatesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCandidatesAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCandidatesAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCandidatesWithMaxCountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0, maxcandidates: u32) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
+    pub fn GetCandidatesWithMaxCountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0, maxcandidates: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCandidatesWithMaxCountAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), maxcandidates, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCandidatesWithMaxCountAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), maxcandidates, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCandidatesWithParametersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, input: Param0, maxcandidates: u32, predictionoptions: TextPredictionOptions, previousstrings: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
+    pub fn GetCandidatesWithParametersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, input: Param0, maxcandidates: u32, predictionoptions: TextPredictionOptions, previousstrings: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
         let this = &::windows_core::Interface::cast::<ITextPredictionGenerator2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCandidatesWithParametersAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), maxcandidates, predictionoptions, previousstrings.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCandidatesWithParametersAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), maxcandidates, predictionoptions, previousstrings.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetNextWordCandidatesAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, maxcandidates: u32, previousstrings: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
+    pub fn GetNextWordCandidatesAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, maxcandidates: u32, previousstrings: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
         let this = &::windows_core::Interface::cast::<ITextPredictionGenerator2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetNextWordCandidatesAsync)(::windows_core::Interface::as_raw(this), maxcandidates, previousstrings.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).GetNextWordCandidatesAsync)(::windows_core::Interface::as_raw(this), maxcandidates, previousstrings.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
         }
     }
     #[cfg(feature = "UI_Text_Core")]
-    pub fn InputScope(&self) -> ::windows_core::Result<super::super::UI::Text::Core::CoreTextInputScope> {
+    pub fn InputScope(&self) -> ::windows_core::Result<::winrt_ui::Text::Core::CoreTextInputScope> {
         let this = &::windows_core::Interface::cast::<ITextPredictionGenerator2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::UI::Text::Core::CoreTextInputScope>::zeroed();
-            (::windows_core::Interface::vtable(this).InputScope)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Text::Core::CoreTextInputScope>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::Text::Core::CoreTextInputScope>::zeroed();
+            (::windows_core::Interface::vtable(this).InputScope)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Text::Core::CoreTextInputScope>(result__)
         }
     }
     #[cfg(feature = "UI_Text_Core")]
-    pub fn SetInputScope(&self, value: super::super::UI::Text::Core::CoreTextInputScope) -> ::windows_core::Result<()> {
+    pub fn SetInputScope(&self, value: ::winrt_ui::Text::Core::CoreTextInputScope) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextPredictionGenerator2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInputScope)(::windows_core::Interface::as_raw(this), value).ok() }
     }
@@ -1309,20 +1306,19 @@ impl TextReverseConversionGenerator {
             (::windows_core::Interface::vtable(this).LanguageAvailableButNotInstalled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ConvertBackAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn ConvertBackAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ConvertBackAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).ConvertBackAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetPhonemesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<TextPhoneme>>> {
+    pub fn GetPhonemesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, input: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<TextPhoneme>>> {
         let this = &::windows_core::Interface::cast::<ITextReverseConversionGenerator2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPhonemesAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<TextPhoneme>>>(result__)
+            (::windows_core::Interface::vtable(this).GetPhonemesAsync)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<TextPhoneme>>>(result__)
         }
     }
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(languagetag: Param0) -> ::windows_core::Result<TextReverseConversionGenerator> {
@@ -1668,11 +1664,11 @@ impl WordSegment {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AlternateForms(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<AlternateWordForm>> {
+    pub fn AlternateForms(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AlternateWordForm>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AlternateForms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<AlternateWordForm>>(result__)
+            (::windows_core::Interface::vtable(this).AlternateForms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<AlternateWordForm>>(result__)
         }
     }
 }
@@ -1753,25 +1749,25 @@ unsafe impl ::core::marker::Sync for WordSegment {}
 pub struct WordSegmentsTokenizingHandler(pub ::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl WordSegmentsTokenizingHandler {
-    pub fn new<F: FnMut(&::core::option::Option<super::super::Foundation::Collections::IIterable<WordSegment>>, &::core::option::Option<super::super::Foundation::Collections::IIterable<WordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static>(invoke: F) -> Self {
+    pub fn new<F: FnMut(&::core::option::Option<::winrt_foundation::Collections::IIterable<WordSegment>>, &::core::option::Option<::winrt_foundation::Collections::IIterable<WordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static>(invoke: F) -> Self {
         let com = WordSegmentsTokenizingHandlerBox::<F> { vtable: &WordSegmentsTokenizingHandlerBox::<F>::VTABLE, count: ::windows_core::RefCount::new(1), invoke };
         unsafe { ::core::mem::transmute(::windows_core::alloc::boxed::Box::new(com)) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Invoke<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<WordSegment>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<WordSegment>>>(&self, precedingwords: Param0, words: Param1) -> ::windows_core::Result<()> {
+    pub fn Invoke<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<WordSegment>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<WordSegment>>>(&self, precedingwords: Param0, words: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Invoke)(::windows_core::Interface::as_raw(this), precedingwords.into_param().abi(), words.into_param().abi()).ok() }
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 #[repr(C)]
-struct WordSegmentsTokenizingHandlerBox<F: FnMut(&::core::option::Option<super::super::Foundation::Collections::IIterable<WordSegment>>, &::core::option::Option<super::super::Foundation::Collections::IIterable<WordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> {
+struct WordSegmentsTokenizingHandlerBox<F: FnMut(&::core::option::Option<::winrt_foundation::Collections::IIterable<WordSegment>>, &::core::option::Option<::winrt_foundation::Collections::IIterable<WordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> {
     vtable: *const WordSegmentsTokenizingHandler_Vtbl,
     invoke: F,
     count: ::windows_core::RefCount,
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<F: FnMut(&::core::option::Option<super::super::Foundation::Collections::IIterable<WordSegment>>, &::core::option::Option<super::super::Foundation::Collections::IIterable<WordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> WordSegmentsTokenizingHandlerBox<F> {
+impl<F: FnMut(&::core::option::Option<::winrt_foundation::Collections::IIterable<WordSegment>>, &::core::option::Option<::winrt_foundation::Collections::IIterable<WordSegment>>) -> ::windows_core::Result<()> + ::core::marker::Send + 'static> WordSegmentsTokenizingHandlerBox<F> {
     const VTABLE: WordSegmentsTokenizingHandler_Vtbl = WordSegmentsTokenizingHandler_Vtbl {
         base__: ::windows_core::IUnknownVtbl { QueryInterface: Self::QueryInterface, AddRef: Self::AddRef, Release: Self::Release },
         Invoke: Self::Invoke,
@@ -1864,11 +1860,11 @@ impl WordsSegmenter {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetTokens<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<WordSegment>> {
+    pub fn GetTokens<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, text: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<WordSegment>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTokens)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<WordSegment>>(result__)
+            (::windows_core::Interface::vtable(this).GetTokens)(::windows_core::Interface::as_raw(this), text.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<WordSegment>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]

@@ -9,14 +9,8 @@ unsafe impl ::windows_core::Interface for IOemSupportInfo {
 #[doc(hidden)]
 pub struct IOemSupportInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub SupportLink: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SupportLink: usize,
-    #[cfg(feature = "Foundation")]
     pub SupportAppLink: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SupportAppLink: usize,
     pub SupportProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -81,20 +75,18 @@ pub struct ISystemSupportInfoStatics2_Vtbl {
 #[repr(transparent)]
 pub struct OemSupportInfo(::windows_core::IUnknown);
 impl OemSupportInfo {
-    #[cfg(feature = "Foundation")]
-    pub fn SupportLink(&self) -> ::windows_core::Result<super::super::super::Foundation::Uri> {
+    pub fn SupportLink(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportLink)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).SupportLink)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SupportAppLink(&self) -> ::windows_core::Result<super::super::super::Foundation::Uri> {
+    pub fn SupportAppLink(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportAppLink)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).SupportAppLink)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn SupportProvider(&self) -> ::windows_core::Result<::windows_core::HSTRING> {

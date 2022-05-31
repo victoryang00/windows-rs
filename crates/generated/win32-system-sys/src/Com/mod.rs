@@ -33,16 +33,12 @@ extern "system" {
     pub fn CoDisableCallCancellation(preserved: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoDisconnectContext(dwtimeout: u32) -> ::windows_core_sys::HRESULT;
     pub fn CoDisconnectObject(punk: ::windows_core_sys::IUnknown, dwreserved: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoDosDateTimeToFileTime(ndosdate: u16, ndostime: u16, lpfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
+    pub fn CoDosDateTimeToFileTime(ndosdate: u16, ndostime: u16, lpfiletime: *mut ::win32_foundation_sys::FILETIME) -> ::win32_foundation_sys::BOOL;
     pub fn CoEnableCallCancellation(preserved: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoFileTimeNow(lpfiletime: *mut super::super::Foundation::FILETIME) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoFileTimeToDosDateTime(lpfiletime: *const super::super::Foundation::FILETIME, lpdosdate: *mut u16, lpdostime: *mut u16) -> super::super::Foundation::BOOL;
+    pub fn CoFileTimeNow(lpfiletime: *mut ::win32_foundation_sys::FILETIME) -> ::windows_core_sys::HRESULT;
+    pub fn CoFileTimeToDosDateTime(lpfiletime: *const ::win32_foundation_sys::FILETIME, lpdosdate: *mut u16, lpdostime: *mut u16) -> ::win32_foundation_sys::BOOL;
     pub fn CoFreeAllLibraries();
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoFreeLibrary(hinst: super::super::Foundation::HINSTANCE);
+    pub fn CoFreeLibrary(hinst: ::win32_foundation_sys::HINSTANCE);
     pub fn CoFreeUnusedLibraries();
     pub fn CoFreeUnusedLibrariesEx(dwunloaddelay: u32, dwreserved: u32);
     pub fn CoGetApartmentType(papttype: *mut APTTYPE, paptqualifier: *mut APTTYPEQUALIFIER) -> ::windows_core_sys::HRESULT;
@@ -58,24 +54,20 @@ extern "system" {
     pub fn CoGetObjectContext(riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoGetPSClsid(riid: *const ::windows_core_sys::GUID, pclsid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security")]
-    pub fn CoGetSystemSecurityPermissions(comsdtype: COMSD, ppsd: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> ::windows_core_sys::HRESULT;
+    pub fn CoGetSystemSecurityPermissions(comsdtype: COMSD, ppsd: *mut ::win32_security_sys::PSECURITY_DESCRIPTOR) -> ::windows_core_sys::HRESULT;
     pub fn CoGetTreatAsClass(clsidold: *const ::windows_core_sys::GUID, pclsidnew: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn CoImpersonateClient() -> ::windows_core_sys::HRESULT;
     pub fn CoIncrementMTAUsage(pcookie: *mut CO_MTA_USAGE_COOKIE) -> ::windows_core_sys::HRESULT;
     pub fn CoInitialize(pvreserved: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoInitializeEx(pvreserved: *const ::core::ffi::c_void, dwcoinit: COINIT) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security")]
-    pub fn CoInitializeSecurity(psecdesc: super::super::Security::PSECURITY_DESCRIPTOR, cauthsvc: i32, asauthsvc: *const SOLE_AUTHENTICATION_SERVICE, preserved1: *const ::core::ffi::c_void, dwauthnlevel: RPC_C_AUTHN_LEVEL, dwimplevel: RPC_C_IMP_LEVEL, pauthlist: *const ::core::ffi::c_void, dwcapabilities: EOLE_AUTHENTICATION_CAPABILITIES, preserved3: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn CoInitializeSecurity(psecdesc: ::win32_security_sys::PSECURITY_DESCRIPTOR, cauthsvc: i32, asauthsvc: *const SOLE_AUTHENTICATION_SERVICE, preserved1: *const ::core::ffi::c_void, dwauthnlevel: RPC_C_AUTHN_LEVEL, dwimplevel: RPC_C_IMP_LEVEL, pauthlist: *const ::core::ffi::c_void, dwcapabilities: EOLE_AUTHENTICATION_CAPABILITIES, preserved3: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CoInstall(pbc: IBindCtx, dwflags: u32, pclassspec: *const uCLSSPEC, pquery: *const QUERYCONTEXT, pszcodebase: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn CoInvalidateRemoteMachineBindings(pszmachinename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoIsHandlerConnected(punk: ::windows_core_sys::IUnknown) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoIsOle1Class(rclsid: *const ::windows_core_sys::GUID) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoLoadLibrary(lpszlibname: ::windows_core_sys::PCWSTR, bautofree: super::super::Foundation::BOOL) -> super::super::Foundation::HINSTANCE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoLockObjectExternal(punk: ::windows_core_sys::IUnknown, flock: super::super::Foundation::BOOL, flastunlockreleases: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn CoIsHandlerConnected(punk: ::windows_core_sys::IUnknown) -> ::win32_foundation_sys::BOOL;
+    pub fn CoIsOle1Class(rclsid: *const ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
+    pub fn CoLoadLibrary(lpszlibname: ::windows_core_sys::PCWSTR, bautofree: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::HINSTANCE;
+    pub fn CoLockObjectExternal(punk: ::windows_core_sys::IUnknown, flock: ::win32_foundation_sys::BOOL, flastunlockreleases: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn CoQueryAuthenticationServices(pcauthsvc: *mut u32, asauthsvc: *mut *mut SOLE_AUTHENTICATION_SERVICE) -> ::windows_core_sys::HRESULT;
     pub fn CoQueryClientBlanket(pauthnsvc: *mut u32, pauthzsvc: *mut u32, pserverprincname: *mut ::windows_core_sys::PWSTR, pauthnlevel: *mut u32, pimplevel: *mut u32, pprivs: *mut *mut ::core::ffi::c_void, pcapabilities: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn CoQueryProxyBlanket(pproxy: ::windows_core_sys::IUnknown, pwauthnsvc: *mut u32, pauthzsvc: *mut u32, pserverprincname: *mut ::windows_core_sys::PWSTR, pauthnlevel: *mut u32, pimplevel: *mut u32, pauthinfo: *mut *mut ::core::ffi::c_void, pcapabilites: *mut u32) -> ::windows_core_sys::HRESULT;
@@ -104,10 +96,8 @@ extern "system" {
     pub fn CoTestCancel() -> ::windows_core_sys::HRESULT;
     pub fn CoTreatAsClass(clsidold: *const ::windows_core_sys::GUID, clsidnew: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn CoUninitialize();
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoWaitForMultipleHandles(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const super::super::Foundation::HANDLE, lpdwindex: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CoWaitForMultipleObjects(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const super::super::Foundation::HANDLE, lpdwindex: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoWaitForMultipleHandles(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const ::win32_foundation_sys::HANDLE, lpdwindex: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoWaitForMultipleObjects(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const ::win32_foundation_sys::HANDLE, lpdwindex: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn CreateAntiMoniker(ppmk: *mut IMoniker) -> ::windows_core_sys::HRESULT;
     pub fn CreateBindCtx(reserved: u32, ppbc: *mut IBindCtx) -> ::windows_core_sys::HRESULT;
     pub fn CreateClassMoniker(rclsid: *const ::windows_core_sys::GUID, ppmk: *mut IMoniker) -> ::windows_core_sys::HRESULT;
@@ -119,8 +109,7 @@ extern "system" {
     pub fn CreateItemMoniker(lpszdelim: ::windows_core_sys::PCWSTR, lpszitem: ::windows_core_sys::PCWSTR, ppmk: *mut IMoniker) -> ::windows_core_sys::HRESULT;
     pub fn CreateObjrefMoniker(punk: ::windows_core_sys::IUnknown, ppmk: *mut IMoniker) -> ::windows_core_sys::HRESULT;
     pub fn CreatePointerMoniker(punk: ::windows_core_sys::IUnknown, ppmk: *mut IMoniker) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateStdProgressIndicator(hwndparent: super::super::Foundation::HWND, psztitle: ::windows_core_sys::PCWSTR, pibsccaller: IBindStatusCallback, ppibsc: *mut IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn CreateStdProgressIndicator(hwndparent: ::win32_foundation_sys::HWND, psztitle: ::windows_core_sys::PCWSTR, pibsccaller: IBindStatusCallback, ppibsc: *mut IBindStatusCallback) -> ::windows_core_sys::HRESULT;
     pub fn CreateUri(pwzuri: ::windows_core_sys::PCWSTR, dwflags: URI_CREATE_FLAGS, dwreserved: usize, ppuri: *mut IUri) -> ::windows_core_sys::HRESULT;
     pub fn CreateUriFromMultiByteString(pszansiinputuri: ::windows_core_sys::PCSTR, dwencodingflags: u32, dwcodepage: u32, dwcreateflags: u32, dwreserved: usize, ppuri: *mut IUri) -> ::windows_core_sys::HRESULT;
     pub fn CreateUriWithFragment(pwzuri: ::windows_core_sys::PCWSTR, pwzfragment: ::windows_core_sys::PCWSTR, dwflags: u32, dwreserved: usize, ppuri: *mut IUri) -> ::windows_core_sys::HRESULT;
@@ -131,8 +120,7 @@ extern "system" {
     pub fn IIDFromString(lpsz: ::windows_core_sys::PCWSTR, lpiid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn MkParseDisplayName(pbc: IBindCtx, szusername: ::windows_core_sys::PCWSTR, pcheaten: *mut u32, ppmk: *mut IMoniker) -> ::windows_core_sys::HRESULT;
     pub fn MonikerCommonPrefixWith(pmkthis: IMoniker, pmkother: IMoniker, ppmkcommon: *mut IMoniker) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MonikerRelativePathTo(pmksrc: IMoniker, pmkdest: IMoniker, ppmkrelpath: *mut IMoniker, dwreserved: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn MonikerRelativePathTo(pmksrc: IMoniker, pmkdest: IMoniker, ppmkrelpath: *mut IMoniker, dwreserved: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn ProgIDFromCLSID(clsid: *const ::windows_core_sys::GUID, lplpszprogid: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn SetErrorInfo(dwreserved: u32, perrinfo: IErrorInfo) -> ::windows_core_sys::HRESULT;
     pub fn StringFromCLSID(rclsid: *const ::windows_core_sys::GUID, lplpsz: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
@@ -201,7 +189,7 @@ pub type AsyncIPipeDouble = *mut ::core::ffi::c_void;
 pub type AsyncIPipeLong = *mut ::core::ffi::c_void;
 pub type AsyncIUnknown = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
 pub struct BINDINFO {
     pub cbSize: u32,
     pub szExtraInfo: ::windows_core_sys::PWSTR,
@@ -213,14 +201,14 @@ pub struct BINDINFO {
     pub dwOptions: u32,
     pub dwOptionsFlags: u32,
     pub dwCodePage: u32,
-    pub securityAttributes: super::super::Security::SECURITY_ATTRIBUTES,
+    pub securityAttributes: ::win32_security_sys::SECURITY_ATTRIBUTES,
     pub iid: ::windows_core_sys::GUID,
     pub pUnk: ::windows_core_sys::IUnknown,
     pub dwReserved: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
 impl ::core::marker::Copy for BINDINFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
 impl ::core::clone::Clone for BINDINFO {
     fn clone(&self) -> Self {
         *self
@@ -230,15 +218,15 @@ pub type BINDINFOF = i32;
 pub const BINDINFOF_URLENCODESTGMEDDATA: BINDINFOF = 1i32;
 pub const BINDINFOF_URLENCODEDEXTRAINFO: BINDINFOF = 2i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub union BINDPTR {
     pub lpfuncdesc: *mut FUNCDESC,
     pub lpvardesc: *mut VARDESC,
     pub lptcomp: ITypeComp,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for BINDPTR {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for BINDPTR {
     fn clone(&self) -> Self {
         *self
@@ -275,14 +263,11 @@ impl ::core::clone::Clone for BIND_OPTS2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BIND_OPTS3 {
     pub __AnonymousBase_objidl_L9041_C36: BIND_OPTS2,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BIND_OPTS3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BIND_OPTS3 {
     fn clone(&self) -> Self {
         *self
@@ -499,28 +484,28 @@ impl ::core::clone::Clone for CSPLATFORM {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct CUSTDATA {
     pub cCustData: u32,
     pub prgCustData: *mut CUSTDATAITEM,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for CUSTDATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for CUSTDATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct CUSTDATAITEM {
     pub guid: ::windows_core_sys::GUID,
     pub varValue: VARIANT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for CUSTDATAITEM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for CUSTDATAITEM {
     fn clone(&self) -> Self {
         *self
@@ -586,16 +571,16 @@ pub const DESCKIND_TYPECOMP: DESCKIND = 3i32;
 pub const DESCKIND_IMPLICITAPPOBJ: DESCKIND = 4i32;
 pub const DESCKIND_MAX: DESCKIND = 5i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct DISPPARAMS {
     pub rgvarg: *mut VARIANT,
     pub rgdispidNamedArgs: *mut i32,
     pub cArgs: u32,
     pub cNamedArgs: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for DISPPARAMS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for DISPPARAMS {
     fn clone(&self) -> Self {
         *self
@@ -634,28 +619,28 @@ impl ::core::clone::Clone for DWORD_BLOB {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct ELEMDESC {
     pub tdesc: TYPEDESC,
     pub Anonymous: ELEMDESC_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for ELEMDESC {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for ELEMDESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub union ELEMDESC_0 {
     pub idldesc: IDLDESC,
     pub paramdesc: super::Ole::PARAMDESC,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for ELEMDESC_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for ELEMDESC_0 {
     fn clone(&self) -> Self {
         *self
@@ -679,21 +664,18 @@ pub const EOAC_DISABLE_AAA: EOLE_AUTHENTICATION_CAPABILITIES = 4096i32;
 pub const EOAC_NO_CUSTOM_MARSHAL: EOLE_AUTHENTICATION_CAPABILITIES = 8192i32;
 pub const EOAC_RESERVED1: EOLE_AUTHENTICATION_CAPABILITIES = 16384i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXCEPINFO {
     pub wCode: u16,
     pub wReserved: u16,
-    pub bstrSource: super::super::Foundation::BSTR,
-    pub bstrDescription: super::super::Foundation::BSTR,
-    pub bstrHelpFile: super::super::Foundation::BSTR,
+    pub bstrSource: ::win32_foundation_sys::BSTR,
+    pub bstrDescription: ::win32_foundation_sys::BSTR,
+    pub bstrHelpFile: ::win32_foundation_sys::BSTR,
     pub dwHelpContext: u32,
     pub pvReserved: *mut ::core::ffi::c_void,
     pub pfnDeferredFillIn: LPEXCEPFINO_DEFERRED_FILLIN,
     pub scode: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXCEPINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXCEPINFO {
     fn clone(&self) -> Self {
         *self
@@ -757,7 +739,7 @@ impl ::core::clone::Clone for FORMATETC {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct FUNCDESC {
     pub memid: i32,
     pub lprgscode: *mut i32,
@@ -772,9 +754,9 @@ pub struct FUNCDESC {
     pub elemdescFunc: ELEMDESC,
     pub wFuncFlags: u16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for FUNCDESC {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for FUNCDESC {
     fn clone(&self) -> Self {
         *self
@@ -1007,7 +989,6 @@ impl ::core::clone::Clone for LONG_SIZEDARR {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 pub type LPEXCEPFINO_DEFERRED_FILLIN = ::core::option::Option<unsafe extern "system" fn(pexcepinfo: *mut EXCEPINFO) -> ::windows_core_sys::HRESULT>;
 pub type LPFNCANUNLOADNOW = ::core::option::Option<unsafe extern "system" fn() -> ::windows_core_sys::HRESULT>;
 pub type LPFNGETCLASSOBJECT = ::core::option::Option<unsafe extern "system" fn(param0: *const ::windows_core_sys::GUID, param1: *const ::windows_core_sys::GUID, param2: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
@@ -1265,23 +1246,20 @@ impl ::core::clone::Clone for STATDATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STATSTG {
     pub pwcsName: ::windows_core_sys::PWSTR,
     pub r#type: u32,
     pub cbSize: u64,
-    pub mtime: super::super::Foundation::FILETIME,
-    pub ctime: super::super::Foundation::FILETIME,
-    pub atime: super::super::Foundation::FILETIME,
+    pub mtime: ::win32_foundation_sys::FILETIME,
+    pub ctime: ::win32_foundation_sys::FILETIME,
+    pub atime: ::win32_foundation_sys::FILETIME,
     pub grfMode: u32,
     pub grfLocksSupported: u32,
     pub clsid: ::windows_core_sys::GUID,
     pub grfStateBits: u32,
     pub reserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STATSTG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STATSTG {
     fn clone(&self) -> Self {
         *self
@@ -1311,9 +1289,9 @@ impl ::core::clone::Clone for STGMEDIUM {
 #[repr(C)]
 #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
 pub union STGMEDIUM_0 {
-    pub hBitmap: super::super::Graphics::Gdi::HBITMAP,
+    pub hBitmap: ::win32_graphics_sys::Gdi::HBITMAP,
     pub hMetaFilePict: *mut ::core::ffi::c_void,
-    pub hEnhMetaFile: super::super::Graphics::Gdi::HENHMETAFILE,
+    pub hEnhMetaFile: ::win32_graphics_sys::Gdi::HENHMETAFILE,
     pub hGlobal: isize,
     pub lpszFileName: ::windows_core_sys::PWSTR,
     pub pstm: IStream,
@@ -1509,7 +1487,7 @@ pub const Uri_PROPERTY_SCHEME: Uri_PROPERTY = 17i32;
 pub const Uri_PROPERTY_ZONE: Uri_PROPERTY = 18i32;
 pub const Uri_PROPERTY_DWORD_LAST: Uri_PROPERTY = 18i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct VARDESC {
     pub memid: i32,
     pub lpstrSchema: ::windows_core_sys::PWSTR,
@@ -1518,57 +1496,57 @@ pub struct VARDESC {
     pub wVarFlags: u16,
     pub varkind: VARKIND,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for VARDESC {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for VARDESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub union VARDESC_0 {
     pub oInst: u32,
     pub lpvarValue: *mut VARIANT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for VARDESC_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for VARDESC_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct VARIANT {
     pub Anonymous: VARIANT_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for VARIANT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for VARIANT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub union VARIANT_0 {
     pub Anonymous: VARIANT_0_0,
-    pub decVal: super::super::Foundation::DECIMAL,
+    pub decVal: ::win32_foundation_sys::DECIMAL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for VARIANT_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for VARIANT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct VARIANT_0_0 {
     pub vt: u16,
     pub wReserved1: u16,
@@ -1576,16 +1554,16 @@ pub struct VARIANT_0_0 {
     pub wReserved3: u16,
     pub Anonymous: VARIANT_0_0_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for VARIANT_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for VARIANT_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub union VARIANT_0_0_0 {
     pub llVal: i64,
     pub lVal: i32,
@@ -1598,7 +1576,7 @@ pub union VARIANT_0_0_0 {
     pub scode: i32,
     pub cyVal: CY,
     pub date: f64,
-    pub bstrVal: super::super::Foundation::BSTR,
+    pub bstrVal: ::win32_foundation_sys::BSTR,
     pub punkVal: ::windows_core_sys::IUnknown,
     pub pdispVal: IDispatch,
     pub parray: *mut SAFEARRAY,
@@ -1613,19 +1591,19 @@ pub union VARIANT_0_0_0 {
     pub pscode: *mut i32,
     pub pcyVal: *mut CY,
     pub pdate: *mut f64,
-    pub pbstrVal: *mut super::super::Foundation::BSTR,
+    pub pbstrVal: *mut ::win32_foundation_sys::BSTR,
     pub ppunkVal: *mut ::windows_core_sys::IUnknown,
     pub ppdispVal: *mut IDispatch,
     pub pparray: *mut *mut SAFEARRAY,
     pub pvarVal: *mut VARIANT,
     pub byref: *mut ::core::ffi::c_void,
-    pub cVal: super::super::Foundation::CHAR,
+    pub cVal: ::win32_foundation_sys::CHAR,
     pub uiVal: u16,
     pub ulVal: u32,
     pub ullVal: u64,
     pub intVal: i32,
     pub uintVal: u32,
-    pub pdecVal: *mut super::super::Foundation::DECIMAL,
+    pub pdecVal: *mut ::win32_foundation_sys::DECIMAL,
     pub pcVal: ::windows_core_sys::PSTR,
     pub puiVal: *mut u16,
     pub pulVal: *mut u32,
@@ -1634,23 +1612,23 @@ pub union VARIANT_0_0_0 {
     pub puintVal: *mut u32,
     pub Anonymous: VARIANT_0_0_0_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for VARIANT_0_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for VARIANT_0_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct VARIANT_0_0_0_0 {
     pub pvRecord: *mut ::core::ffi::c_void,
     pub pRecInfo: super::Ole::IRecordInfo,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for VARIANT_0_0_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for VARIANT_0_0_0_0 {
     fn clone(&self) -> Self {
         *self

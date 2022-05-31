@@ -454,14 +454,14 @@ pub const WMDM_FORMATCODE_3GPA: WMDM_FORMATCODE = 860311617i32;
 pub const WMDM_FORMATCODE_3G2A: WMDM_FORMATCODE = 860303937i32;
 pub const WMDM_FORMATCODE_SECTION: WMDM_FORMATCODE = 48770i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_FORMAT_CAPABILITY {
     pub nPropConfig: u32,
     pub pConfigs: *mut WMDM_PROP_CONFIG,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for WMDM_FORMAT_CAPABILITY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_FORMAT_CAPABILITY {
     fn clone(&self) -> Self {
         *self
@@ -488,73 +488,73 @@ pub const WMDM_POWER_IS_BATTERY: u32 = 4u32;
 pub const WMDM_POWER_IS_EXTERNAL: u32 = 8u32;
 pub const WMDM_POWER_PERCENT_AVAILABLE: u32 = 16u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_PROP_CONFIG {
     pub nPreference: u32,
     pub nPropDesc: u32,
     pub pPropDesc: *mut WMDM_PROP_DESC,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for WMDM_PROP_CONFIG {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_CONFIG {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_PROP_DESC {
     pub pwszPropName: ::windows_core_sys::PWSTR,
     pub ValidValuesForm: WMDM_ENUM_PROP_VALID_VALUES_FORM,
     pub ValidValues: WMDM_PROP_DESC_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for WMDM_PROP_DESC {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub union WMDM_PROP_DESC_0 {
     pub ValidValuesRange: WMDM_PROP_VALUES_RANGE,
     pub EnumeratedValidValues: WMDM_PROP_VALUES_ENUM,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for WMDM_PROP_DESC_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_DESC_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_PROP_VALUES_ENUM {
     pub cEnumValues: u32,
-    pub pValues: *mut super::super::System::Com::StructuredStorage::PROPVARIANT,
+    pub pValues: *mut ::win32_system_sys::Com::StructuredStorage::PROPVARIANT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for WMDM_PROP_VALUES_ENUM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_VALUES_ENUM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_PROP_VALUES_RANGE {
-    pub rangeMin: super::super::System::Com::StructuredStorage::PROPVARIANT,
-    pub rangeMax: super::super::System::Com::StructuredStorage::PROPVARIANT,
-    pub rangeStep: super::super::System::Com::StructuredStorage::PROPVARIANT,
+    pub rangeMin: ::win32_system_sys::Com::StructuredStorage::PROPVARIANT,
+    pub rangeMax: ::win32_system_sys::Com::StructuredStorage::PROPVARIANT,
+    pub rangeStep: ::win32_system_sys::Com::StructuredStorage::PROPVARIANT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for WMDM_PROP_VALUES_RANGE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_VALUES_RANGE {
     fn clone(&self) -> Self {
         *self
@@ -680,18 +680,15 @@ impl ::core::clone::Clone for _BITMAPINFOHEADER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct _VIDEOINFOHEADER {
-    pub rcSource: super::super::Foundation::RECT,
-    pub rcTarget: super::super::Foundation::RECT,
+    pub rcSource: ::win32_foundation_sys::RECT,
+    pub rcTarget: ::win32_foundation_sys::RECT,
     pub dwBitRate: u32,
     pub dwBitErrorRate: u32,
     pub AvgTimePerFrame: i64,
     pub bmiHeader: _BITMAPINFOHEADER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for _VIDEOINFOHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for _VIDEOINFOHEADER {
     fn clone(&self) -> Self {
         *self
@@ -714,14 +711,11 @@ impl ::core::clone::Clone for _WAVEFORMATEX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct __MACINFO {
-    pub fUsed: super::super::Foundation::BOOL,
+    pub fUsed: ::win32_foundation_sys::BOOL,
     pub abMacState: [u8; 36],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for __MACINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for __MACINFO {
     fn clone(&self) -> Self {
         *self

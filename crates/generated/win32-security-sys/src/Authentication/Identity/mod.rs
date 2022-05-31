@@ -16,59 +16,36 @@ extern "system" {
     pub fn AddSecurityPackageW(pszpackagename: ::windows_core_sys::PCWSTR, poptions: *const SECURITY_PACKAGE_OPTIONS) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn ApplyControlToken(phcontext: *const super::super::Credentials::SecHandle, pinput: *const SecBufferDesc) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditComputeEffectivePolicyBySid(psid: super::super::super::Foundation::PSID, psubcategoryguids: *const ::windows_core_sys::GUID, dwpolicycount: u32, ppauditpolicy: *mut *mut AUDIT_POLICY_INFORMATION) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditComputeEffectivePolicyByToken(htokenhandle: super::super::super::Foundation::HANDLE, psubcategoryguids: *const ::windows_core_sys::GUID, dwpolicycount: u32, ppauditpolicy: *mut *mut AUDIT_POLICY_INFORMATION) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditEnumerateCategories(ppauditcategoriesarray: *mut *mut ::windows_core_sys::GUID, pdwcountreturned: *mut u32) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditEnumeratePerUserPolicy(ppauditsidarray: *mut *mut POLICY_AUDIT_SID_ARRAY) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditEnumerateSubCategories(pauditcategoryguid: *const ::windows_core_sys::GUID, bretrieveallsubcategories: super::super::super::Foundation::BOOLEAN, ppauditsubcategoriesarray: *mut *mut ::windows_core_sys::GUID, pdwcountreturned: *mut u32) -> super::super::super::Foundation::BOOLEAN;
+    pub fn AuditComputeEffectivePolicyBySid(psid: ::win32_foundation_sys::PSID, psubcategoryguids: *const ::windows_core_sys::GUID, dwpolicycount: u32, ppauditpolicy: *mut *mut AUDIT_POLICY_INFORMATION) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditComputeEffectivePolicyByToken(htokenhandle: ::win32_foundation_sys::HANDLE, psubcategoryguids: *const ::windows_core_sys::GUID, dwpolicycount: u32, ppauditpolicy: *mut *mut AUDIT_POLICY_INFORMATION) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditEnumerateCategories(ppauditcategoriesarray: *mut *mut ::windows_core_sys::GUID, pdwcountreturned: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditEnumeratePerUserPolicy(ppauditsidarray: *mut *mut POLICY_AUDIT_SID_ARRAY) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditEnumerateSubCategories(pauditcategoryguid: *const ::windows_core_sys::GUID, bretrieveallsubcategories: ::win32_foundation_sys::BOOLEAN, ppauditsubcategoriesarray: *mut *mut ::windows_core_sys::GUID, pdwcountreturned: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
     pub fn AuditFree(buffer: *const ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditLookupCategoryGuidFromCategoryId(auditcategoryid: POLICY_AUDIT_EVENT_TYPE, pauditcategoryguid: *mut ::windows_core_sys::GUID) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditLookupCategoryIdFromCategoryGuid(pauditcategoryguid: *const ::windows_core_sys::GUID, pauditcategoryid: *mut POLICY_AUDIT_EVENT_TYPE) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditLookupCategoryNameA(pauditcategoryguid: *const ::windows_core_sys::GUID, ppszcategoryname: *mut ::windows_core_sys::PSTR) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditLookupCategoryNameW(pauditcategoryguid: *const ::windows_core_sys::GUID, ppszcategoryname: *mut ::windows_core_sys::PWSTR) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditLookupSubCategoryNameA(pauditsubcategoryguid: *const ::windows_core_sys::GUID, ppszsubcategoryname: *mut ::windows_core_sys::PSTR) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditLookupSubCategoryNameW(pauditsubcategoryguid: *const ::windows_core_sys::GUID, ppszsubcategoryname: *mut ::windows_core_sys::PWSTR) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditQueryGlobalSaclA(objecttypename: ::windows_core_sys::PCSTR, acl: *mut *mut super::super::ACL) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditQueryGlobalSaclW(objecttypename: ::windows_core_sys::PCWSTR, acl: *mut *mut super::super::ACL) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditQueryPerUserPolicy(psid: super::super::super::Foundation::PSID, psubcategoryguids: *const ::windows_core_sys::GUID, dwpolicycount: u32, ppauditpolicy: *mut *mut AUDIT_POLICY_INFORMATION) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditQuerySecurity(securityinformation: u32, ppsecuritydescriptor: *mut super::super::PSECURITY_DESCRIPTOR) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditQuerySystemPolicy(psubcategoryguids: *const ::windows_core_sys::GUID, dwpolicycount: u32, ppauditpolicy: *mut *mut AUDIT_POLICY_INFORMATION) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditSetGlobalSaclA(objecttypename: ::windows_core_sys::PCSTR, acl: *const super::super::ACL) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditSetGlobalSaclW(objecttypename: ::windows_core_sys::PCWSTR, acl: *const super::super::ACL) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditSetPerUserPolicy(psid: super::super::super::Foundation::PSID, pauditpolicy: *const AUDIT_POLICY_INFORMATION, dwpolicycount: u32) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditSetSecurity(securityinformation: u32, psecuritydescriptor: super::super::PSECURITY_DESCRIPTOR) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AuditSetSystemPolicy(pauditpolicy: *const AUDIT_POLICY_INFORMATION, dwpolicycount: u32) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ChangeAccountPasswordA(pszpackagename: *const i8, pszdomainname: *const i8, pszaccountname: *const i8, pszoldpassword: *const i8, psznewpassword: *const i8, bimpersonating: super::super::super::Foundation::BOOLEAN, dwreserved: u32, poutput: *mut SecBufferDesc) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ChangeAccountPasswordW(pszpackagename: *const u16, pszdomainname: *const u16, pszaccountname: *const u16, pszoldpassword: *const u16, psznewpassword: *const u16, bimpersonating: super::super::super::Foundation::BOOLEAN, dwreserved: u32, poutput: *mut SecBufferDesc) -> ::windows_core_sys::HRESULT;
+    pub fn AuditLookupCategoryGuidFromCategoryId(auditcategoryid: POLICY_AUDIT_EVENT_TYPE, pauditcategoryguid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditLookupCategoryIdFromCategoryGuid(pauditcategoryguid: *const ::windows_core_sys::GUID, pauditcategoryid: *mut POLICY_AUDIT_EVENT_TYPE) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditLookupCategoryNameA(pauditcategoryguid: *const ::windows_core_sys::GUID, ppszcategoryname: *mut ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditLookupCategoryNameW(pauditcategoryguid: *const ::windows_core_sys::GUID, ppszcategoryname: *mut ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditLookupSubCategoryNameA(pauditsubcategoryguid: *const ::windows_core_sys::GUID, ppszsubcategoryname: *mut ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditLookupSubCategoryNameW(pauditsubcategoryguid: *const ::windows_core_sys::GUID, ppszsubcategoryname: *mut ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditQueryGlobalSaclA(objecttypename: ::windows_core_sys::PCSTR, acl: *mut *mut super::super::ACL) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditQueryGlobalSaclW(objecttypename: ::windows_core_sys::PCWSTR, acl: *mut *mut super::super::ACL) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditQueryPerUserPolicy(psid: ::win32_foundation_sys::PSID, psubcategoryguids: *const ::windows_core_sys::GUID, dwpolicycount: u32, ppauditpolicy: *mut *mut AUDIT_POLICY_INFORMATION) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditQuerySecurity(securityinformation: u32, ppsecuritydescriptor: *mut super::super::PSECURITY_DESCRIPTOR) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditQuerySystemPolicy(psubcategoryguids: *const ::windows_core_sys::GUID, dwpolicycount: u32, ppauditpolicy: *mut *mut AUDIT_POLICY_INFORMATION) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditSetGlobalSaclA(objecttypename: ::windows_core_sys::PCSTR, acl: *const super::super::ACL) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditSetGlobalSaclW(objecttypename: ::windows_core_sys::PCWSTR, acl: *const super::super::ACL) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditSetPerUserPolicy(psid: ::win32_foundation_sys::PSID, pauditpolicy: *const AUDIT_POLICY_INFORMATION, dwpolicycount: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditSetSecurity(securityinformation: u32, psecuritydescriptor: super::super::PSECURITY_DESCRIPTOR) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn AuditSetSystemPolicy(pauditpolicy: *const AUDIT_POLICY_INFORMATION, dwpolicycount: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn ChangeAccountPasswordA(pszpackagename: *const i8, pszdomainname: *const i8, pszaccountname: *const i8, pszoldpassword: *const i8, psznewpassword: *const i8, bimpersonating: ::win32_foundation_sys::BOOLEAN, dwreserved: u32, poutput: *mut SecBufferDesc) -> ::windows_core_sys::HRESULT;
+    pub fn ChangeAccountPasswordW(pszpackagename: *const u16, pszdomainname: *const u16, pszaccountname: *const u16, pszoldpassword: *const u16, psznewpassword: *const u16, bimpersonating: ::win32_foundation_sys::BOOLEAN, dwreserved: u32, poutput: *mut SecBufferDesc) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn CompleteAuthToken(phcontext: *const super::super::Credentials::SecHandle, ptoken: *const SecBufferDesc) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
-    pub fn CredMarshalTargetInfo(intargetinfo: *const super::super::Credentials::CREDENTIAL_TARGET_INFORMATIONW, buffer: *mut *mut u16, buffersize: *mut u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
-    pub fn CredUnmarshalTargetInfo(buffer: *const u16, buffersize: u32, rettargetinfo: *mut *mut super::super::Credentials::CREDENTIAL_TARGET_INFORMATIONW, retactualsize: *mut u32) -> super::super::super::Foundation::NTSTATUS;
+    #[cfg(feature = "Win32_Security_Credentials")]
+    pub fn CredMarshalTargetInfo(intargetinfo: *const super::super::Credentials::CREDENTIAL_TARGET_INFORMATIONW, buffer: *mut *mut u16, buffersize: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    #[cfg(feature = "Win32_Security_Credentials")]
+    pub fn CredUnmarshalTargetInfo(buffer: *const u16, buffersize: u32, rettargetinfo: *mut *mut super::super::Credentials::CREDENTIAL_TARGET_INFORMATIONW, retactualsize: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn DecryptMessage(phcontext: *const super::super::Credentials::SecHandle, pmessage: *const SecBufferDesc, messageseqno: u32, pfqop: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
@@ -84,114 +61,71 @@ extern "system" {
     pub fn FreeContextBuffer(pvcontextbuffer: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn FreeCredentialsHandle(phcredential: *const super::super::Credentials::SecHandle) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetComputerObjectNameA(nameformat: EXTENDED_NAME_FORMAT, lpnamebuffer: ::windows_core_sys::PSTR, nsize: *mut u32) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetComputerObjectNameW(nameformat: EXTENDED_NAME_FORMAT, lpnamebuffer: ::windows_core_sys::PWSTR, nsize: *mut u32) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetUserNameExA(nameformat: EXTENDED_NAME_FORMAT, lpnamebuffer: ::windows_core_sys::PSTR, nsize: *mut u32) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetUserNameExW(nameformat: EXTENDED_NAME_FORMAT, lpnamebuffer: ::windows_core_sys::PWSTR, nsize: *mut u32) -> super::super::super::Foundation::BOOLEAN;
+    pub fn GetComputerObjectNameA(nameformat: EXTENDED_NAME_FORMAT, lpnamebuffer: ::windows_core_sys::PSTR, nsize: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn GetComputerObjectNameW(nameformat: EXTENDED_NAME_FORMAT, lpnamebuffer: ::windows_core_sys::PWSTR, nsize: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn GetUserNameExA(nameformat: EXTENDED_NAME_FORMAT, lpnamebuffer: ::windows_core_sys::PSTR, nsize: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn GetUserNameExW(nameformat: EXTENDED_NAME_FORMAT, lpnamebuffer: ::windows_core_sys::PWSTR, nsize: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn ImpersonateSecurityContext(phcontext: *const super::super::Credentials::SecHandle) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn ImportSecurityContextA(pszpackage: ::windows_core_sys::PCSTR, ppackedcontext: *const SecBuffer, token: *const ::core::ffi::c_void, phcontext: *mut super::super::Credentials::SecHandle) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn ImportSecurityContextW(pszpackage: ::windows_core_sys::PCWSTR, ppackedcontext: *const SecBuffer, token: *const ::core::ffi::c_void, phcontext: *mut super::super::Credentials::SecHandle) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+    #[cfg(feature = "Win32_Security_Credentials")]
     pub fn InitSecurityInterfaceA() -> *mut SecurityFunctionTableA;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+    #[cfg(feature = "Win32_Security_Credentials")]
     pub fn InitSecurityInterfaceW() -> *mut SecurityFunctionTableW;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn InitializeSecurityContextA(phcredential: *const super::super::Credentials::SecHandle, phcontext: *const super::super::Credentials::SecHandle, psztargetname: *const i8, fcontextreq: u32, reserved1: u32, targetdatarep: u32, pinput: *const SecBufferDesc, reserved2: u32, phnewcontext: *mut super::super::Credentials::SecHandle, poutput: *mut SecBufferDesc, pfcontextattr: *mut u32, ptsexpiry: *mut i64) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn InitializeSecurityContextW(phcredential: *const super::super::Credentials::SecHandle, phcontext: *const super::super::Credentials::SecHandle, psztargetname: *const u16, fcontextreq: u32, reserved1: u32, targetdatarep: u32, pinput: *const SecBufferDesc, reserved2: u32, phnewcontext: *mut super::super::Credentials::SecHandle, poutput: *mut SecBufferDesc, pfcontextattr: *mut u32, ptsexpiry: *mut i64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaAddAccountRights(policyhandle: *const ::core::ffi::c_void, accountsid: super::super::super::Foundation::PSID, userrights: *const super::super::super::Foundation::UNICODE_STRING, countofrights: u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaCallAuthenticationPackage(lsahandle: super::super::super::Foundation::HANDLE, authenticationpackage: u32, protocolsubmitbuffer: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaClose(objecthandle: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaConnectUntrusted(lsahandle: *mut super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaCreateTrustedDomainEx(policyhandle: *const ::core::ffi::c_void, trusteddomaininformation: *const TRUSTED_DOMAIN_INFORMATION_EX, authenticationinformation: *const TRUSTED_DOMAIN_AUTH_INFORMATION, desiredaccess: u32, trusteddomainhandle: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaDeleteTrustedDomain(policyhandle: *const ::core::ffi::c_void, trusteddomainsid: super::super::super::Foundation::PSID) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaDeregisterLogonProcess(lsahandle: LsaHandle) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaEnumerateAccountRights(policyhandle: *const ::core::ffi::c_void, accountsid: super::super::super::Foundation::PSID, userrights: *mut *mut super::super::super::Foundation::UNICODE_STRING, countofrights: *mut u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaEnumerateAccountsWithUserRight(policyhandle: *const ::core::ffi::c_void, userright: *const super::super::super::Foundation::UNICODE_STRING, buffer: *mut *mut ::core::ffi::c_void, countreturned: *mut u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaEnumerateLogonSessions(logonsessioncount: *mut u32, logonsessionlist: *mut *mut super::super::super::Foundation::LUID) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaEnumerateTrustedDomains(policyhandle: *const ::core::ffi::c_void, enumerationcontext: *mut u32, buffer: *mut *mut ::core::ffi::c_void, preferedmaximumlength: u32, countreturned: *mut u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaEnumerateTrustedDomainsEx(policyhandle: *const ::core::ffi::c_void, enumerationcontext: *mut u32, buffer: *mut *mut ::core::ffi::c_void, preferedmaximumlength: u32, countreturned: *mut u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaFreeMemory(buffer: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaFreeReturnBuffer(buffer: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaGetAppliedCAPIDs(systemname: *const super::super::super::Foundation::UNICODE_STRING, capids: *mut *mut super::super::super::Foundation::PSID, capidcount: *mut u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaGetLogonSessionData(logonid: *const super::super::super::Foundation::LUID, pplogonsessiondata: *mut *mut SECURITY_LOGON_SESSION_DATA) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn LsaLogonUser(lsahandle: super::super::super::Foundation::HANDLE, originname: *const super::super::super::System::Kernel::STRING, logontype: SECURITY_LOGON_TYPE, authenticationpackage: u32, authenticationinformation: *const ::core::ffi::c_void, authenticationinformationlength: u32, localgroups: *const super::super::TOKEN_GROUPS, sourcecontext: *const super::super::TOKEN_SOURCE, profilebuffer: *mut *mut ::core::ffi::c_void, profilebufferlength: *mut u32, logonid: *mut super::super::super::Foundation::LUID, token: *mut super::super::super::Foundation::HANDLE, quotas: *mut super::super::QUOTA_LIMITS, substatus: *mut i32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn LsaLookupAuthenticationPackage(lsahandle: super::super::super::Foundation::HANDLE, packagename: *const super::super::super::System::Kernel::STRING, authenticationpackage: *mut u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaLookupNames(policyhandle: *const ::core::ffi::c_void, count: u32, names: *const super::super::super::Foundation::UNICODE_STRING, referenceddomains: *mut *mut LSA_REFERENCED_DOMAIN_LIST, sids: *mut *mut LSA_TRANSLATED_SID) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaLookupNames2(policyhandle: *const ::core::ffi::c_void, flags: u32, count: u32, names: *const super::super::super::Foundation::UNICODE_STRING, referenceddomains: *mut *mut LSA_REFERENCED_DOMAIN_LIST, sids: *mut *mut LSA_TRANSLATED_SID2) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaLookupSids(policyhandle: *const ::core::ffi::c_void, count: u32, sids: *const super::super::super::Foundation::PSID, referenceddomains: *mut *mut LSA_REFERENCED_DOMAIN_LIST, names: *mut *mut LSA_TRANSLATED_NAME) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaLookupSids2(policyhandle: *const ::core::ffi::c_void, lookupoptions: u32, count: u32, sids: *const super::super::super::Foundation::PSID, referenceddomains: *mut *mut LSA_REFERENCED_DOMAIN_LIST, names: *mut *mut LSA_TRANSLATED_NAME) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaNtStatusToWinError(status: super::super::super::Foundation::NTSTATUS) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn LsaOpenPolicy(systemname: *const super::super::super::Foundation::UNICODE_STRING, objectattributes: *const super::super::super::System::WindowsProgramming::OBJECT_ATTRIBUTES, desiredaccess: u32, policyhandle: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaOpenTrustedDomainByName(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const super::super::super::Foundation::UNICODE_STRING, desiredaccess: u32, trusteddomainhandle: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaQueryCAPs(capids: *const super::super::super::Foundation::PSID, capidcount: u32, caps: *mut *mut CENTRAL_ACCESS_POLICY, capcount: *mut u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaQueryDomainInformationPolicy(policyhandle: *const ::core::ffi::c_void, informationclass: POLICY_DOMAIN_INFORMATION_CLASS, buffer: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaQueryForestTrustInformation(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const super::super::super::Foundation::UNICODE_STRING, foresttrustinfo: *mut *mut LSA_FOREST_TRUST_INFORMATION) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaQueryInformationPolicy(policyhandle: *const ::core::ffi::c_void, informationclass: POLICY_INFORMATION_CLASS, buffer: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaQueryTrustedDomainInfo(policyhandle: *const ::core::ffi::c_void, trusteddomainsid: super::super::super::Foundation::PSID, informationclass: TRUSTED_INFORMATION_CLASS, buffer: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaQueryTrustedDomainInfoByName(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const super::super::super::Foundation::UNICODE_STRING, informationclass: TRUSTED_INFORMATION_CLASS, buffer: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-    pub fn LsaRegisterLogonProcess(logonprocessname: *const super::super::super::System::Kernel::STRING, lsahandle: *mut LsaHandle, securitymode: *mut u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaRegisterPolicyChangeNotification(informationclass: POLICY_NOTIFICATION_INFORMATION_CLASS, notificationeventhandle: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaRemoveAccountRights(policyhandle: *const ::core::ffi::c_void, accountsid: super::super::super::Foundation::PSID, allrights: super::super::super::Foundation::BOOLEAN, userrights: *const super::super::super::Foundation::UNICODE_STRING, countofrights: u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaRetrievePrivateData(policyhandle: *const ::core::ffi::c_void, keyname: *const super::super::super::Foundation::UNICODE_STRING, privatedata: *mut *mut super::super::super::Foundation::UNICODE_STRING) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaSetCAPs(capdns: *const super::super::super::Foundation::UNICODE_STRING, capdncount: u32, flags: u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaSetDomainInformationPolicy(policyhandle: *const ::core::ffi::c_void, informationclass: POLICY_DOMAIN_INFORMATION_CLASS, buffer: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaSetForestTrustInformation(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const super::super::super::Foundation::UNICODE_STRING, foresttrustinfo: *const LSA_FOREST_TRUST_INFORMATION, checkonly: super::super::super::Foundation::BOOLEAN, collisioninfo: *mut *mut LSA_FOREST_TRUST_COLLISION_INFORMATION) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaSetInformationPolicy(policyhandle: *const ::core::ffi::c_void, informationclass: POLICY_INFORMATION_CLASS, buffer: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaSetTrustedDomainInfoByName(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const super::super::super::Foundation::UNICODE_STRING, informationclass: TRUSTED_INFORMATION_CLASS, buffer: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaSetTrustedDomainInformation(policyhandle: *const ::core::ffi::c_void, trusteddomainsid: super::super::super::Foundation::PSID, informationclass: TRUSTED_INFORMATION_CLASS, buffer: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaStorePrivateData(policyhandle: *const ::core::ffi::c_void, keyname: *const super::super::super::Foundation::UNICODE_STRING, privatedata: *const super::super::super::Foundation::UNICODE_STRING) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsaUnregisterPolicyChangeNotification(informationclass: POLICY_NOTIFICATION_INFORMATION_CLASS, notificationeventhandle: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::NTSTATUS;
+    pub fn LsaAddAccountRights(policyhandle: *const ::core::ffi::c_void, accountsid: ::win32_foundation_sys::PSID, userrights: *const ::win32_foundation_sys::UNICODE_STRING, countofrights: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaCallAuthenticationPackage(lsahandle: ::win32_foundation_sys::HANDLE, authenticationpackage: u32, protocolsubmitbuffer: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaClose(objecthandle: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaConnectUntrusted(lsahandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaCreateTrustedDomainEx(policyhandle: *const ::core::ffi::c_void, trusteddomaininformation: *const TRUSTED_DOMAIN_INFORMATION_EX, authenticationinformation: *const TRUSTED_DOMAIN_AUTH_INFORMATION, desiredaccess: u32, trusteddomainhandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaDeleteTrustedDomain(policyhandle: *const ::core::ffi::c_void, trusteddomainsid: ::win32_foundation_sys::PSID) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaDeregisterLogonProcess(lsahandle: LsaHandle) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaEnumerateAccountRights(policyhandle: *const ::core::ffi::c_void, accountsid: ::win32_foundation_sys::PSID, userrights: *mut *mut ::win32_foundation_sys::UNICODE_STRING, countofrights: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaEnumerateAccountsWithUserRight(policyhandle: *const ::core::ffi::c_void, userright: *const ::win32_foundation_sys::UNICODE_STRING, buffer: *mut *mut ::core::ffi::c_void, countreturned: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaEnumerateLogonSessions(logonsessioncount: *mut u32, logonsessionlist: *mut *mut ::win32_foundation_sys::LUID) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaEnumerateTrustedDomains(policyhandle: *const ::core::ffi::c_void, enumerationcontext: *mut u32, buffer: *mut *mut ::core::ffi::c_void, preferedmaximumlength: u32, countreturned: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaEnumerateTrustedDomainsEx(policyhandle: *const ::core::ffi::c_void, enumerationcontext: *mut u32, buffer: *mut *mut ::core::ffi::c_void, preferedmaximumlength: u32, countreturned: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaFreeMemory(buffer: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaFreeReturnBuffer(buffer: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaGetAppliedCAPIDs(systemname: *const ::win32_foundation_sys::UNICODE_STRING, capids: *mut *mut ::win32_foundation_sys::PSID, capidcount: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaGetLogonSessionData(logonid: *const ::win32_foundation_sys::LUID, pplogonsessiondata: *mut *mut SECURITY_LOGON_SESSION_DATA) -> ::win32_foundation_sys::NTSTATUS;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn LsaLogonUser(lsahandle: ::win32_foundation_sys::HANDLE, originname: *const ::win32_system_sys::Kernel::STRING, logontype: SECURITY_LOGON_TYPE, authenticationpackage: u32, authenticationinformation: *const ::core::ffi::c_void, authenticationinformationlength: u32, localgroups: *const super::super::TOKEN_GROUPS, sourcecontext: *const super::super::TOKEN_SOURCE, profilebuffer: *mut *mut ::core::ffi::c_void, profilebufferlength: *mut u32, logonid: *mut ::win32_foundation_sys::LUID, token: *mut ::win32_foundation_sys::HANDLE, quotas: *mut super::super::QUOTA_LIMITS, substatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn LsaLookupAuthenticationPackage(lsahandle: ::win32_foundation_sys::HANDLE, packagename: *const ::win32_system_sys::Kernel::STRING, authenticationpackage: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaLookupNames(policyhandle: *const ::core::ffi::c_void, count: u32, names: *const ::win32_foundation_sys::UNICODE_STRING, referenceddomains: *mut *mut LSA_REFERENCED_DOMAIN_LIST, sids: *mut *mut LSA_TRANSLATED_SID) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaLookupNames2(policyhandle: *const ::core::ffi::c_void, flags: u32, count: u32, names: *const ::win32_foundation_sys::UNICODE_STRING, referenceddomains: *mut *mut LSA_REFERENCED_DOMAIN_LIST, sids: *mut *mut LSA_TRANSLATED_SID2) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaLookupSids(policyhandle: *const ::core::ffi::c_void, count: u32, sids: *const ::win32_foundation_sys::PSID, referenceddomains: *mut *mut LSA_REFERENCED_DOMAIN_LIST, names: *mut *mut LSA_TRANSLATED_NAME) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaLookupSids2(policyhandle: *const ::core::ffi::c_void, lookupoptions: u32, count: u32, sids: *const ::win32_foundation_sys::PSID, referenceddomains: *mut *mut LSA_REFERENCED_DOMAIN_LIST, names: *mut *mut LSA_TRANSLATED_NAME) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaNtStatusToWinError(status: ::win32_foundation_sys::NTSTATUS) -> u32;
+    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    pub fn LsaOpenPolicy(systemname: *const ::win32_foundation_sys::UNICODE_STRING, objectattributes: *const ::win32_system_sys::WindowsProgramming::OBJECT_ATTRIBUTES, desiredaccess: u32, policyhandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaOpenTrustedDomainByName(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const ::win32_foundation_sys::UNICODE_STRING, desiredaccess: u32, trusteddomainhandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaQueryCAPs(capids: *const ::win32_foundation_sys::PSID, capidcount: u32, caps: *mut *mut CENTRAL_ACCESS_POLICY, capcount: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaQueryDomainInformationPolicy(policyhandle: *const ::core::ffi::c_void, informationclass: POLICY_DOMAIN_INFORMATION_CLASS, buffer: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaQueryForestTrustInformation(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const ::win32_foundation_sys::UNICODE_STRING, foresttrustinfo: *mut *mut LSA_FOREST_TRUST_INFORMATION) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaQueryInformationPolicy(policyhandle: *const ::core::ffi::c_void, informationclass: POLICY_INFORMATION_CLASS, buffer: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaQueryTrustedDomainInfo(policyhandle: *const ::core::ffi::c_void, trusteddomainsid: ::win32_foundation_sys::PSID, informationclass: TRUSTED_INFORMATION_CLASS, buffer: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaQueryTrustedDomainInfoByName(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const ::win32_foundation_sys::UNICODE_STRING, informationclass: TRUSTED_INFORMATION_CLASS, buffer: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    #[cfg(feature = "Win32_System_Kernel")]
+    pub fn LsaRegisterLogonProcess(logonprocessname: *const ::win32_system_sys::Kernel::STRING, lsahandle: *mut LsaHandle, securitymode: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaRegisterPolicyChangeNotification(informationclass: POLICY_NOTIFICATION_INFORMATION_CLASS, notificationeventhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaRemoveAccountRights(policyhandle: *const ::core::ffi::c_void, accountsid: ::win32_foundation_sys::PSID, allrights: ::win32_foundation_sys::BOOLEAN, userrights: *const ::win32_foundation_sys::UNICODE_STRING, countofrights: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaRetrievePrivateData(policyhandle: *const ::core::ffi::c_void, keyname: *const ::win32_foundation_sys::UNICODE_STRING, privatedata: *mut *mut ::win32_foundation_sys::UNICODE_STRING) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaSetCAPs(capdns: *const ::win32_foundation_sys::UNICODE_STRING, capdncount: u32, flags: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaSetDomainInformationPolicy(policyhandle: *const ::core::ffi::c_void, informationclass: POLICY_DOMAIN_INFORMATION_CLASS, buffer: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaSetForestTrustInformation(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const ::win32_foundation_sys::UNICODE_STRING, foresttrustinfo: *const LSA_FOREST_TRUST_INFORMATION, checkonly: ::win32_foundation_sys::BOOLEAN, collisioninfo: *mut *mut LSA_FOREST_TRUST_COLLISION_INFORMATION) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaSetInformationPolicy(policyhandle: *const ::core::ffi::c_void, informationclass: POLICY_INFORMATION_CLASS, buffer: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaSetTrustedDomainInfoByName(policyhandle: *const ::core::ffi::c_void, trusteddomainname: *const ::win32_foundation_sys::UNICODE_STRING, informationclass: TRUSTED_INFORMATION_CLASS, buffer: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaSetTrustedDomainInformation(policyhandle: *const ::core::ffi::c_void, trusteddomainsid: ::win32_foundation_sys::PSID, informationclass: TRUSTED_INFORMATION_CLASS, buffer: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaStorePrivateData(policyhandle: *const ::core::ffi::c_void, keyname: *const ::win32_foundation_sys::UNICODE_STRING, privatedata: *const ::win32_foundation_sys::UNICODE_STRING) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn LsaUnregisterPolicyChangeNotification(informationclass: POLICY_NOTIFICATION_INFORMATION_CLASS, notificationeventhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::NTSTATUS;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn MakeSignature(phcontext: *const super::super::Credentials::SecHandle, fqop: u32, pmessage: *const SecBufferDesc, messageseqno: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
@@ -248,14 +182,12 @@ extern "system" {
     pub fn SLIsGenuineLocal(pappid: *const ::windows_core_sys::GUID, pgenuinestate: *mut SL_GENUINE_STATE, puioptions: *mut SL_NONGENUINE_UI_OPTIONS) -> ::windows_core_sys::HRESULT;
     pub fn SLOpen(phslc: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SLQueryLicenseValueFromApp(valuename: ::windows_core_sys::PCWSTR, valuetype: *mut u32, databuffer: *mut ::core::ffi::c_void, datasize: u32, resultdatasize: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SLRegisterEvent(hslc: *const ::core::ffi::c_void, pwszeventid: ::windows_core_sys::PCWSTR, papplicationid: *const ::windows_core_sys::GUID, hevent: super::super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn SLRegisterEvent(hslc: *const ::core::ffi::c_void, pwszeventid: ::windows_core_sys::PCWSTR, papplicationid: *const ::windows_core_sys::GUID, hevent: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn SLSetCurrentProductKey(hslc: *const ::core::ffi::c_void, pproductskuid: *const ::windows_core_sys::GUID, pproductkeyid: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn SLSetGenuineInformation(pqueryid: *const ::windows_core_sys::GUID, pwszvaluename: ::windows_core_sys::PCWSTR, edatatype: SLDATATYPE, cbvalue: u32, pbvalue: *const u8) -> ::windows_core_sys::HRESULT;
     pub fn SLUninstallLicense(hslc: *const ::core::ffi::c_void, plicensefileid: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn SLUninstallProofOfPurchase(hslc: *const ::core::ffi::c_void, ppkeyid: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SLUnregisterEvent(hslc: *const ::core::ffi::c_void, pwszeventid: ::windows_core_sys::PCWSTR, papplicationid: *const ::windows_core_sys::GUID, hevent: super::super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn SLUnregisterEvent(hslc: *const ::core::ffi::c_void, pwszeventid: ::windows_core_sys::PCWSTR, papplicationid: *const ::windows_core_sys::GUID, hevent: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn SaslAcceptSecurityContext(phcredential: *const super::super::Credentials::SecHandle, phcontext: *const super::super::Credentials::SecHandle, pinput: *const SecBufferDesc, fcontextreq: u32, targetdatarep: u32, phnewcontext: *mut super::super::Credentials::SecHandle, poutput: *mut SecBufferDesc, pfcontextattr: *mut u32, ptsexpiry: *mut i64) -> ::windows_core_sys::HRESULT;
     pub fn SaslEnumerateProfilesA(profilelist: *mut ::windows_core_sys::PSTR, profilecount: *mut u32) -> ::windows_core_sys::HRESULT;
@@ -280,20 +212,15 @@ extern "system" {
     pub fn SetCredentialsAttributesA(phcredential: *const super::super::Credentials::SecHandle, ulattribute: u32, pbuffer: *const ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn SetCredentialsAttributesW(phcredential: *const super::super::Credentials::SecHandle, ulattribute: u32, pbuffer: *const ::core::ffi::c_void, cbbuffer: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SslCrackCertificate(pbcertificate: *mut u8, cbcertificate: u32, dwflags: u32, ppcertificate: *mut *mut X509Certificate) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SslEmptyCacheA(psztargetname: ::windows_core_sys::PCSTR, dwflags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SslEmptyCacheW(psztargetname: ::windows_core_sys::PCWSTR, dwflags: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn SslCrackCertificate(pbcertificate: *mut u8, cbcertificate: u32, dwflags: u32, ppcertificate: *mut *mut X509Certificate) -> ::win32_foundation_sys::BOOL;
+    pub fn SslEmptyCacheA(psztargetname: ::windows_core_sys::PCSTR, dwflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SslEmptyCacheW(psztargetname: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SslFreeCertificate(pcertificate: *mut X509Certificate);
     pub fn SslGenerateRandomBits(prandomdata: *mut u8, crandomdata: i32);
     pub fn SslGetExtensions(clienthello: *const u8, clienthellobytesize: u32, genericextensions: *mut SCH_EXTENSION_DATA, genericextensionscount: u8, bytestoread: *mut u32, flags: SchGetExtensionsOptions) -> ::windows_core_sys::HRESULT;
     pub fn SslGetMaximumKeySize(reserved: u32) -> u32;
     pub fn SslGetServerIdentity(clienthello: *const u8, clienthellosize: u32, serveridentity: *mut *mut u8, serveridentitysize: *mut u32, flags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SspiCompareAuthIdentities(authidentity1: *const ::core::ffi::c_void, authidentity2: *const ::core::ffi::c_void, samesupplieduser: *mut super::super::super::Foundation::BOOLEAN, samesuppliedidentity: *mut super::super::super::Foundation::BOOLEAN) -> ::windows_core_sys::HRESULT;
+    pub fn SspiCompareAuthIdentities(authidentity1: *const ::core::ffi::c_void, authidentity2: *const ::core::ffi::c_void, samesupplieduser: *mut ::win32_foundation_sys::BOOLEAN, samesuppliedidentity: *mut ::win32_foundation_sys::BOOLEAN) -> ::windows_core_sys::HRESULT;
     pub fn SspiCopyAuthIdentity(authdata: *const ::core::ffi::c_void, authdatacopy: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SspiDecryptAuthIdentity(encryptedauthdata: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SspiDecryptAuthIdentityEx(options: u32, encryptedauthdata: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
@@ -304,10 +231,8 @@ extern "system" {
     pub fn SspiExcludePackage(authidentity: *const ::core::ffi::c_void, pszpackagename: ::windows_core_sys::PCWSTR, ppnewauthidentity: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SspiFreeAuthIdentity(authdata: *const ::core::ffi::c_void);
     pub fn SspiGetTargetHostName(psztargetname: ::windows_core_sys::PCWSTR, pszhostname: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SspiIsAuthIdentityEncrypted(encryptedauthdata: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SspiIsPromptingNeeded(errororntstatus: u32) -> super::super::super::Foundation::BOOLEAN;
+    pub fn SspiIsAuthIdentityEncrypted(encryptedauthdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn SspiIsPromptingNeeded(errororntstatus: u32) -> ::win32_foundation_sys::BOOLEAN;
     pub fn SspiLocalFree(databuffer: *const ::core::ffi::c_void);
     pub fn SspiMarshalAuthIdentity(authidentity: *const ::core::ffi::c_void, authidentitylength: *mut u32, authidentitybytearray: *mut *mut i8) -> ::windows_core_sys::HRESULT;
     pub fn SspiPrepareForCredRead(authidentity: *const ::core::ffi::c_void, psztargetname: ::windows_core_sys::PCWSTR, pcredmancredentialtype: *mut u32, ppszcredmantargetname: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
@@ -317,12 +242,9 @@ extern "system" {
     pub fn SspiUnmarshalAuthIdentity(authidentitylength: u32, authidentitybytearray: ::windows_core_sys::PCSTR, ppauthidentity: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SspiValidateAuthIdentity(authdata: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SspiZeroAuthIdentity(authdata: *const ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SystemFunction036(randombuffer: *mut ::core::ffi::c_void, randombufferlength: u32) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SystemFunction040(memory: *mut ::core::ffi::c_void, memorysize: u32, optionflags: u32) -> super::super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SystemFunction041(memory: *mut ::core::ffi::c_void, memorysize: u32, optionflags: u32) -> super::super::super::Foundation::NTSTATUS;
+    pub fn SystemFunction036(randombuffer: *mut ::core::ffi::c_void, randombufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn SystemFunction040(memory: *mut ::core::ffi::c_void, memorysize: u32, optionflags: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn SystemFunction041(memory: *mut ::core::ffi::c_void, memorysize: u32, optionflags: u32) -> ::win32_foundation_sys::NTSTATUS;
     pub fn TokenBindingDeleteAllBindings() -> ::windows_core_sys::HRESULT;
     pub fn TokenBindingDeleteBinding(targeturl: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn TokenBindingGenerateBinding(keytype: TOKENBINDING_KEY_PARAMETERS_TYPE, targeturl: ::windows_core_sys::PCWSTR, bindingtype: TOKENBINDING_TYPE, tlsekm: *const ::core::ffi::c_void, tlsekmsize: u32, extensionformat: TOKENBINDING_EXTENSION_FORMAT, extensiondata: *const ::core::ffi::c_void, tokenbinding: *mut *mut ::core::ffi::c_void, tokenbindingsize: *mut u32, resultdata: *mut *mut TOKENBINDING_RESULT_DATA) -> ::windows_core_sys::HRESULT;
@@ -333,10 +255,8 @@ extern "system" {
     pub fn TokenBindingGetKeyTypesClient(keytypes: *mut *mut TOKENBINDING_KEY_TYPES) -> ::windows_core_sys::HRESULT;
     pub fn TokenBindingGetKeyTypesServer(keytypes: *mut *mut TOKENBINDING_KEY_TYPES) -> ::windows_core_sys::HRESULT;
     pub fn TokenBindingVerifyMessage(tokenbindingmessage: *const ::core::ffi::c_void, tokenbindingmessagesize: u32, keytype: TOKENBINDING_KEY_PARAMETERS_TYPE, tlsekm: *const ::core::ffi::c_void, tlsekmsize: u32, resultlist: *mut *mut TOKENBINDING_RESULT_LIST) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TranslateNameA(lpaccountname: ::windows_core_sys::PCSTR, accountnameformat: EXTENDED_NAME_FORMAT, desirednameformat: EXTENDED_NAME_FORMAT, lptranslatedname: ::windows_core_sys::PSTR, nsize: *mut u32) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TranslateNameW(lpaccountname: ::windows_core_sys::PCWSTR, accountnameformat: EXTENDED_NAME_FORMAT, desirednameformat: EXTENDED_NAME_FORMAT, lptranslatedname: ::windows_core_sys::PWSTR, nsize: *mut u32) -> super::super::super::Foundation::BOOLEAN;
+    pub fn TranslateNameA(lpaccountname: ::windows_core_sys::PCSTR, accountnameformat: EXTENDED_NAME_FORMAT, desirednameformat: EXTENDED_NAME_FORMAT, lptranslatedname: ::windows_core_sys::PSTR, nsize: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn TranslateNameW(lpaccountname: ::windows_core_sys::PCWSTR, accountnameformat: EXTENDED_NAME_FORMAT, desirednameformat: EXTENDED_NAME_FORMAT, lptranslatedname: ::windows_core_sys::PWSTR, nsize: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
     #[cfg(feature = "Win32_Security_Credentials")]
     pub fn VerifySignature(phcontext: *const super::super::Credentials::SecHandle, pmessage: *const SecBufferDesc, messageseqno: u32, pfqop: *mut u32) -> ::windows_core_sys::HRESULT;
 }
@@ -508,30 +428,26 @@ pub const Audit_System_Others: ::windows_core_sys::GUID = ::windows_core_sys::GU
 pub const Audit_System_SecurityStateChange: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 214864400, data2: 27054, data3: 4569, data4: [190, 211, 80, 80, 84, 80, 48, 48] };
 pub const Audit_System_SecuritySubsystemExtension: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 214864401, data2: 27054, data3: 4569, data4: [190, 211, 80, 80, 84, 80, 48, 48] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CENTRAL_ACCESS_POLICY {
-    pub CAPID: super::super::super::Foundation::PSID,
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
-    pub Description: super::super::super::Foundation::UNICODE_STRING,
-    pub ChangeId: super::super::super::Foundation::UNICODE_STRING,
+    pub CAPID: ::win32_foundation_sys::PSID,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
+    pub Description: ::win32_foundation_sys::UNICODE_STRING,
+    pub ChangeId: ::win32_foundation_sys::UNICODE_STRING,
     pub Flags: u32,
     pub CAPECount: u32,
     pub CAPEs: *mut *mut CENTRAL_ACCESS_POLICY_ENTRY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CENTRAL_ACCESS_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CENTRAL_ACCESS_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CENTRAL_ACCESS_POLICY_ENTRY {
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
-    pub Description: super::super::super::Foundation::UNICODE_STRING,
-    pub ChangeId: super::super::super::Foundation::UNICODE_STRING,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
+    pub Description: ::win32_foundation_sys::UNICODE_STRING,
+    pub ChangeId: ::win32_foundation_sys::UNICODE_STRING,
     pub LengthAppliesTo: u32,
     pub AppliesTo: *mut u8,
     pub LengthSD: u32,
@@ -540,9 +456,7 @@ pub struct CENTRAL_ACCESS_POLICY_ENTRY {
     pub StagedSD: super::super::PSECURITY_DESCRIPTOR,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CENTRAL_ACCESS_POLICY_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CENTRAL_ACCESS_POLICY_ENTRY {
     fn clone(&self) -> Self {
         *self
@@ -551,18 +465,13 @@ impl ::core::clone::Clone for CENTRAL_ACCESS_POLICY_ENTRY {
 pub const CENTRAL_ACCESS_POLICY_OWNER_RIGHTS_PRESENT_FLAG: u32 = 1u32;
 pub const CENTRAL_ACCESS_POLICY_STAGED_FLAG: u32 = 65536u32;
 pub const CENTRAL_ACCESS_POLICY_STAGED_OWNER_RIGHTS_PRESENT_FLAG: u32 = 256u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type CHANGE_PASSWORD_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut i8, param1: *mut i8, param2: *mut i8, param3: *mut i8, param4: *mut i8, param5: super::super::super::Foundation::BOOLEAN, param6: u32, param7: *mut SecBufferDesc) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type CHANGE_PASSWORD_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut u16, param1: *mut u16, param2: *mut u16, param3: *mut u16, param4: *mut u16, param5: super::super::super::Foundation::BOOLEAN, param6: u32, param7: *mut SecBufferDesc) -> ::windows_core_sys::HRESULT>;
+pub type CHANGE_PASSWORD_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut i8, param1: *mut i8, param2: *mut i8, param3: *mut i8, param4: *mut i8, param5: ::win32_foundation_sys::BOOLEAN, param6: u32, param7: *mut SecBufferDesc) -> ::windows_core_sys::HRESULT>;
+pub type CHANGE_PASSWORD_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut u16, param1: *mut u16, param2: *mut u16, param3: *mut u16, param4: *mut u16, param5: ::win32_foundation_sys::BOOLEAN, param6: u32, param7: *mut SecBufferDesc) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLEAR_BLOCK {
-    pub data: [super::super::super::Foundation::CHAR; 8],
+    pub data: [::win32_foundation_sys::CHAR; 8],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLEAR_BLOCK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLEAR_BLOCK {
     fn clone(&self) -> Self {
         *self
@@ -587,16 +496,15 @@ pub const CredFetchForced: CRED_FETCH = 2i32;
 pub const CRED_MARSHALED_TI_SIZE_SIZE: u32 = 12u32;
 pub const CYPHER_BLOCK_LENGTH: u32 = 8u32;
 pub const ClOUDAP_NAME_A: &str = "CloudAP";
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 pub type CredFreeCredentialsFn = ::core::option::Option<unsafe extern "system" fn(count: u32, credentials: *mut *mut ENCRYPTED_CREDENTIALW)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
-pub type CredReadDomainCredentialsFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, credflags: u32, targetinfo: *const super::super::Credentials::CREDENTIAL_TARGET_INFORMATIONW, flags: u32, count: *mut u32, credential: *mut *mut *mut ENCRYPTED_CREDENTIALW) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
-pub type CredReadFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, credflags: u32, targetname: ::windows_core_sys::PCWSTR, r#type: u32, flags: u32, credential: *mut *mut ENCRYPTED_CREDENTIALW) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
-pub type CredWriteFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, credflags: u32, credential: *const ENCRYPTED_CREDENTIALW, flags: u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type CrediUnmarshalandDecodeStringFn = ::core::option::Option<unsafe extern "system" fn(marshaledstring: ::windows_core_sys::PCWSTR, blob: *mut *mut u8, blobsize: *mut u32, isfailurefatal: *mut u8) -> super::super::super::Foundation::NTSTATUS>;
+#[cfg(feature = "Win32_Security_Credentials")]
+pub type CredReadDomainCredentialsFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, credflags: u32, targetinfo: *const super::super::Credentials::CREDENTIAL_TARGET_INFORMATIONW, flags: u32, count: *mut u32, credential: *mut *mut *mut ENCRYPTED_CREDENTIALW) -> ::win32_foundation_sys::NTSTATUS>;
+#[cfg(feature = "Win32_Security_Credentials")]
+pub type CredReadFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, credflags: u32, targetname: ::windows_core_sys::PCWSTR, r#type: u32, flags: u32, credential: *mut *mut ENCRYPTED_CREDENTIALW) -> ::win32_foundation_sys::NTSTATUS>;
+#[cfg(feature = "Win32_Security_Credentials")]
+pub type CredWriteFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, credflags: u32, credential: *const ENCRYPTED_CREDENTIALW, flags: u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type CrediUnmarshalandDecodeStringFn = ::core::option::Option<unsafe extern "system" fn(marshaledstring: ::windows_core_sys::PCWSTR, blob: *mut *mut u8, blobsize: *mut u32, isfailurefatal: *mut u8) -> ::win32_foundation_sys::NTSTATUS>;
 #[cfg(feature = "Win32_Security_Credentials")]
 pub type DECRYPT_MESSAGE_FN = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut SecBufferDesc, param2: u32, param3: *mut u32) -> ::windows_core_sys::HRESULT>;
 pub const DEFAULT_TLS_SSP_NAME: &str = "Default TLS SSP";
@@ -629,14 +537,14 @@ pub const DOMAIN_REFUSE_PASSWORD_CHANGE: DOMAIN_PASSWORD_PROPERTIES = 32u32;
 pub const DS_UNKNOWN_ADDRESS_TYPE: u32 = 0u32;
 pub const ENABLE_TLS_CLIENT_EARLY_START: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 pub struct ENCRYPTED_CREDENTIALW {
     pub Cred: super::super::Credentials::CREDENTIALW,
     pub ClearCredentialBlobSize: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::marker::Copy for ENCRYPTED_CREDENTIALW {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::clone::Clone for ENCRYPTED_CREDENTIALW {
     fn clone(&self) -> Self {
         *self
@@ -682,9 +590,9 @@ pub type IMPORT_SECURITY_CONTEXT_FN_W = ::core::option::Option<unsafe extern "sy
 pub type INITIALIZE_SECURITY_CONTEXT_FN_A = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut super::super::Credentials::SecHandle, param2: *mut i8, param3: u32, param4: u32, param5: u32, param6: *mut SecBufferDesc, param7: u32, param8: *mut super::super::Credentials::SecHandle, param9: *mut SecBufferDesc, param10: *mut u32, param11: *mut i64) -> ::windows_core_sys::HRESULT>;
 #[cfg(feature = "Win32_Security_Credentials")]
 pub type INITIALIZE_SECURITY_CONTEXT_FN_W = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Credentials::SecHandle, param1: *mut super::super::Credentials::SecHandle, param2: *mut u16, param3: u32, param4: u32, param5: u32, param6: *mut SecBufferDesc, param7: u32, param8: *mut super::super::Credentials::SecHandle, param9: *mut SecBufferDesc, param10: *mut u32, param11: *mut i64) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 pub type INIT_SECURITY_INTERFACE_A = ::core::option::Option<unsafe extern "system" fn() -> *mut SecurityFunctionTableA>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 pub type INIT_SECURITY_INTERFACE_W = ::core::option::Option<unsafe extern "system" fn() -> *mut SecurityFunctionTableW>;
 pub const ISC_REQ_ALLOCATE_MEMORY: u32 = 256u32;
 pub const ISC_REQ_CALL_LEVEL: u32 = 4096u32;
@@ -747,21 +655,18 @@ pub const ISC_RET_USE_SESSION_KEY: u32 = 32u32;
 pub const ISSP_LEVEL: u32 = 32u32;
 pub const ISSP_MODE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KDC_PROXY_CACHE_ENTRY_DATA {
     pub SinceLastUsed: u64,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub ProxyServerName: super::super::super::Foundation::UNICODE_STRING,
-    pub ProxyServerVdir: super::super::super::Foundation::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ProxyServerName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ProxyServerVdir: ::win32_foundation_sys::UNICODE_STRING,
     pub ProxyServerPort: u16,
-    pub LogonId: super::super::super::Foundation::LUID,
-    pub CredUserName: super::super::super::Foundation::UNICODE_STRING,
-    pub CredDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub GlobalCache: super::super::super::Foundation::BOOLEAN,
+    pub LogonId: ::win32_foundation_sys::LUID,
+    pub CredUserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub CredDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub GlobalCache: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KDC_PROXY_CACHE_ENTRY_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KDC_PROXY_CACHE_ENTRY_DATA {
     fn clone(&self) -> Self {
         *self
@@ -775,66 +680,54 @@ pub type KERB_ADDRESS_TYPE = u32;
 pub const DS_INET_ADDRESS: KERB_ADDRESS_TYPE = 1u32;
 pub const DS_NETBIOS_ADDRESS: KERB_ADDRESS_TYPE = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub RealmName: super::super::super::Foundation::UNICODE_STRING,
-    pub KdcAddress: super::super::super::Foundation::UNICODE_STRING,
+    pub RealmName: ::win32_foundation_sys::UNICODE_STRING,
+    pub KdcAddress: ::win32_foundation_sys::UNICODE_STRING,
     pub AddressType: KERB_ADDRESS_TYPE,
     pub DcFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_ADD_BINDING_CACHE_ENTRY_EX_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_ADD_BINDING_CACHE_ENTRY_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub RealmName: super::super::super::Foundation::UNICODE_STRING,
-    pub KdcAddress: super::super::super::Foundation::UNICODE_STRING,
+    pub RealmName: ::win32_foundation_sys::UNICODE_STRING,
+    pub KdcAddress: ::win32_foundation_sys::UNICODE_STRING,
     pub AddressType: KERB_ADDRESS_TYPE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_ADD_BINDING_CACHE_ENTRY_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_ADD_BINDING_CACHE_ENTRY_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_ADD_CREDENTIALS_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub Password: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Password: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonId: ::win32_foundation_sys::LUID,
     pub Flags: KERB_REQUEST_FLAGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_ADD_CREDENTIALS_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_ADD_CREDENTIALS_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_ADD_CREDENTIALS_REQUEST_EX {
     pub Credentials: KERB_ADD_CREDENTIALS_REQUEST,
     pub PrincipalNameCount: u32,
-    pub PrincipalNames: [super::super::super::Foundation::UNICODE_STRING; 1],
+    pub PrincipalNames: [::win32_foundation_sys::UNICODE_STRING; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_ADD_CREDENTIALS_REQUEST_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_ADD_CREDENTIALS_REQUEST_EX {
     fn clone(&self) -> Self {
         *self
@@ -853,20 +746,17 @@ impl ::core::clone::Clone for KERB_AUTH_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_BINDING_CACHE_ENTRY_DATA {
     pub DiscoveryTime: u64,
-    pub RealmName: super::super::super::Foundation::UNICODE_STRING,
-    pub KdcAddress: super::super::super::Foundation::UNICODE_STRING,
+    pub RealmName: ::win32_foundation_sys::UNICODE_STRING,
+    pub KdcAddress: ::win32_foundation_sys::UNICODE_STRING,
     pub AddressType: KERB_ADDRESS_TYPE,
     pub Flags: u32,
     pub DcFlags: u32,
     pub CacheFlags: u32,
-    pub KdcName: super::super::super::Foundation::UNICODE_STRING,
+    pub KdcName: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_BINDING_CACHE_ENTRY_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_BINDING_CACHE_ENTRY_DATA {
     fn clone(&self) -> Self {
         *self
@@ -897,19 +787,16 @@ impl ::core::clone::Clone for KERB_CERTIFICATE_INFO {
 pub type KERB_CERTIFICATE_INFO_TYPE = i32;
 pub const CertHashInfo: KERB_CERTIFICATE_INFO_TYPE = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_CERTIFICATE_LOGON {
     pub MessageType: KERB_LOGON_SUBMIT_TYPE,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub Pin: super::super::super::Foundation::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Pin: ::win32_foundation_sys::UNICODE_STRING,
     pub Flags: u32,
     pub CspDataLength: u32,
     pub CspData: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_CERTIFICATE_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_CERTIFICATE_LOGON {
     fn clone(&self) -> Self {
         *self
@@ -918,18 +805,15 @@ impl ::core::clone::Clone for KERB_CERTIFICATE_LOGON {
 pub const KERB_CERTIFICATE_LOGON_FLAG_CHECK_DUPLICATES: u32 = 1u32;
 pub const KERB_CERTIFICATE_LOGON_FLAG_USE_CERTIFICATE_INFO: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_CERTIFICATE_S4U_LOGON {
     pub MessageType: KERB_LOGON_SUBMIT_TYPE,
     pub Flags: u32,
-    pub UserPrincipalName: super::super::super::Foundation::UNICODE_STRING,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub UserPrincipalName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
     pub CertificateLength: u32,
     pub Certificate: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_CERTIFICATE_S4U_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_CERTIFICATE_S4U_LOGON {
     fn clone(&self) -> Self {
         *self
@@ -940,32 +824,26 @@ pub const KERB_CERTIFICATE_S4U_LOGON_FLAG_CHECK_LOGONHOURS: u32 = 2u32;
 pub const KERB_CERTIFICATE_S4U_LOGON_FLAG_FAIL_IF_NT_AUTH_POLICY_REQUIRED: u32 = 4u32;
 pub const KERB_CERTIFICATE_S4U_LOGON_FLAG_IDENTIFY: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_CERTIFICATE_UNLOCK_LOGON {
     pub Logon: KERB_CERTIFICATE_LOGON,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_CERTIFICATE_UNLOCK_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_CERTIFICATE_UNLOCK_LOGON {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_CHANGEPASSWORD_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub AccountName: super::super::super::Foundation::UNICODE_STRING,
-    pub OldPassword: super::super::super::Foundation::UNICODE_STRING,
-    pub NewPassword: super::super::super::Foundation::UNICODE_STRING,
-    pub Impersonating: super::super::super::Foundation::BOOLEAN,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub AccountName: ::win32_foundation_sys::UNICODE_STRING,
+    pub OldPassword: ::win32_foundation_sys::UNICODE_STRING,
+    pub NewPassword: ::win32_foundation_sys::UNICODE_STRING,
+    pub Impersonating: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_CHANGEPASSWORD_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_CHANGEPASSWORD_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -993,14 +871,11 @@ pub const KERB_CHECKSUM_REAL_CRC32: i32 = -132i32;
 pub const KERB_CHECKSUM_SHA1: i32 = -131i32;
 pub const KERB_CHECKSUM_SHA1_NEW: u32 = 14u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_CLEANUP_MACHINE_PKINIT_CREDS_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -1018,14 +893,11 @@ impl ::core::clone::Clone for KERB_CLOUD_KERBEROS_DEBUG_DATA_V0 {
 }
 pub const KERB_CLOUD_KERBEROS_DEBUG_DATA_VERSION: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_CLOUD_KERBEROS_DEBUG_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_CLOUD_KERBEROS_DEBUG_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_CLOUD_KERBEROS_DEBUG_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -1077,10 +949,9 @@ pub const KERB_ETYPE_RC4_HMAC_NT: KERB_CRYPTO_KEY_TYPE = 23i32;
 pub const KERB_ETYPE_RC4_MD4: KERB_CRYPTO_KEY_TYPE = -128i32;
 pub const KERB_DECRYPT_FLAG_DEFAULT_KEY: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_DECRYPT_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
     pub Flags: u32,
     pub CryptoType: i32,
     pub KeyUsage: i32,
@@ -1090,9 +961,7 @@ pub struct KERB_DECRYPT_REQUEST {
     pub InitialVector: *mut u8,
     pub EncryptedData: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_DECRYPT_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_DECRYPT_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -1142,29 +1011,25 @@ pub const KERB_ETYPE_RSA_PUB_MD5: u32 = 11u32;
 pub const KERB_ETYPE_RSA_PUB_SHA1: u32 = 12u32;
 pub const KERB_ETYPE_RSA_SHA1_CMS: u32 = 11u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_EXTERNAL_NAME {
     pub NameType: i16,
     pub NameCount: u16,
-    pub Names: [super::super::super::Foundation::UNICODE_STRING; 1],
+    pub Names: [::win32_foundation_sys::UNICODE_STRING; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_EXTERNAL_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_EXTERNAL_NAME {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_EXTERNAL_TICKET {
     pub ServiceName: *mut KERB_EXTERNAL_NAME,
     pub TargetName: *mut KERB_EXTERNAL_NAME,
     pub ClientName: *mut KERB_EXTERNAL_NAME,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub TargetDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub AltTargetDomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub TargetDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub AltTargetDomainName: ::win32_foundation_sys::UNICODE_STRING,
     pub SessionKey: KERB_CRYPTO_KEY,
     pub TicketFlags: KERB_TICKET_FLAGS,
     pub Flags: u32,
@@ -1176,32 +1041,26 @@ pub struct KERB_EXTERNAL_TICKET {
     pub EncodedTicketSize: u32,
     pub EncodedTicket: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_EXTERNAL_TICKET {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_EXTERNAL_TICKET {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_INTERACTIVE_LOGON {
     pub MessageType: KERB_LOGON_SUBMIT_TYPE,
-    pub LogonDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub Password: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Password: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_INTERACTIVE_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_INTERACTIVE_LOGON {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_INTERACTIVE_PROFILE {
     pub MessageType: KERB_PROFILE_BUFFER_TYPE,
     pub LogonCount: u16,
@@ -1212,31 +1071,26 @@ pub struct KERB_INTERACTIVE_PROFILE {
     pub PasswordLastSet: i64,
     pub PasswordCanChange: i64,
     pub PasswordMustChange: i64,
-    pub LogonScript: super::super::super::Foundation::UNICODE_STRING,
-    pub HomeDirectory: super::super::super::Foundation::UNICODE_STRING,
-    pub FullName: super::super::super::Foundation::UNICODE_STRING,
-    pub ProfilePath: super::super::super::Foundation::UNICODE_STRING,
-    pub HomeDirectoryDrive: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonServer: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonScript: ::win32_foundation_sys::UNICODE_STRING,
+    pub HomeDirectory: ::win32_foundation_sys::UNICODE_STRING,
+    pub FullName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ProfilePath: ::win32_foundation_sys::UNICODE_STRING,
+    pub HomeDirectoryDrive: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonServer: ::win32_foundation_sys::UNICODE_STRING,
     pub UserFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_INTERACTIVE_PROFILE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_INTERACTIVE_PROFILE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_INTERACTIVE_UNLOCK_LOGON {
     pub Logon: KERB_INTERACTIVE_LOGON,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_INTERACTIVE_UNLOCK_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_INTERACTIVE_UNLOCK_LOGON {
     fn clone(&self) -> Self {
         *self
@@ -1335,15 +1189,12 @@ impl ::core::clone::Clone for KERB_PURGE_BINDING_CACHE_REQUEST {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_PURGE_KDC_PROXY_CACHE_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub Flags: u32,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_PURGE_KDC_PROXY_CACHE_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_PURGE_KDC_PROXY_CACHE_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -1361,32 +1212,26 @@ impl ::core::clone::Clone for KERB_PURGE_KDC_PROXY_CACHE_RESPONSE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_PURGE_TKT_CACHE_EX_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
     pub Flags: u32,
     pub TicketTemplate: KERB_TICKET_CACHE_INFO_EX,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_PURGE_TKT_CACHE_EX_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_PURGE_TKT_CACHE_EX_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_PURGE_TKT_CACHE_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
-    pub ServerName: super::super::super::Foundation::UNICODE_STRING,
-    pub RealmName: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonId: ::win32_foundation_sys::LUID,
+    pub ServerName: ::win32_foundation_sys::UNICODE_STRING,
+    pub RealmName: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_PURGE_TKT_CACHE_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_PURGE_TKT_CACHE_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -1403,30 +1248,24 @@ impl ::core::clone::Clone for KERB_QUERY_BINDING_CACHE_REQUEST {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_BINDING_CACHE_RESPONSE {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub CountOfEntries: u32,
     pub Entries: *mut KERB_BINDING_CACHE_ENTRY_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_BINDING_CACHE_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_BINDING_CACHE_RESPONSE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub Flags: u32,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_DOMAIN_EXTENDED_POLICIES_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -1447,134 +1286,107 @@ impl ::core::clone::Clone for KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE {
 }
 pub const KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE_FLAG_DAC_DISABLED: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_KDC_PROXY_CACHE_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub Flags: u32,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_KDC_PROXY_CACHE_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_KDC_PROXY_CACHE_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_KDC_PROXY_CACHE_RESPONSE {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub CountOfEntries: u32,
     pub Entries: *mut KDC_PROXY_CACHE_ENTRY_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_KDC_PROXY_CACHE_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_KDC_PROXY_CACHE_RESPONSE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_S4U2PROXY_CACHE_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub Flags: u32,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_S4U2PROXY_CACHE_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_S4U2PROXY_CACHE_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_S4U2PROXY_CACHE_RESPONSE {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub CountOfCreds: u32,
     pub Creds: *mut KERB_S4U2PROXY_CRED,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_S4U2PROXY_CACHE_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_S4U2PROXY_CACHE_RESPONSE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_TKT_CACHE_EX2_RESPONSE {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub CountOfTickets: u32,
     pub Tickets: [KERB_TICKET_CACHE_INFO_EX2; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_TKT_CACHE_EX2_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_TKT_CACHE_EX2_RESPONSE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_TKT_CACHE_EX3_RESPONSE {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub CountOfTickets: u32,
     pub Tickets: [KERB_TICKET_CACHE_INFO_EX3; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_TKT_CACHE_EX3_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_TKT_CACHE_EX3_RESPONSE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_TKT_CACHE_EX_RESPONSE {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub CountOfTickets: u32,
     pub Tickets: [KERB_TICKET_CACHE_INFO_EX; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_TKT_CACHE_EX_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_TKT_CACHE_EX_RESPONSE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_TKT_CACHE_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_TKT_CACHE_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_TKT_CACHE_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_QUERY_TKT_CACHE_RESPONSE {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub CountOfTickets: u32,
     pub Tickets: [KERB_TICKET_CACHE_INFO; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_QUERY_TKT_CACHE_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_QUERY_TKT_CACHE_RESPONSE {
     fn clone(&self) -> Self {
         *self
@@ -1607,16 +1419,13 @@ impl ::core::clone::Clone for KERB_REFRESH_POLICY_RESPONSE {
 pub const KERB_REFRESH_SCCRED_GETTGT: u32 = 1u32;
 pub const KERB_REFRESH_SCCRED_RELEASE: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_REFRESH_SCCRED_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub CredentialBlob: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub CredentialBlob: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonId: ::win32_foundation_sys::LUID,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_REFRESH_SCCRED_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_REFRESH_SCCRED_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -1627,17 +1436,14 @@ pub const KERB_REQUEST_ADD_CREDENTIAL: KERB_REQUEST_FLAGS = 1u32;
 pub const KERB_REQUEST_REPLACE_CREDENTIAL: KERB_REQUEST_FLAGS = 2u32;
 pub const KERB_REQUEST_REMOVE_CREDENTIAL: KERB_REQUEST_FLAGS = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_RETRIEVE_KEY_TAB_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
     pub Flags: u32,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub Password: super::super::super::Foundation::UNICODE_STRING,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Password: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_RETRIEVE_KEY_TAB_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_RETRIEVE_KEY_TAB_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -1664,48 +1470,42 @@ pub const KERB_RETRIEVE_TICKET_USE_CACHE_ONLY: u32 = 2u32;
 pub const KERB_RETRIEVE_TICKET_USE_CREDHANDLE: u32 = 4u32;
 pub const KERB_RETRIEVE_TICKET_WITH_SEC_CRED: u32 = 16u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 pub struct KERB_RETRIEVE_TKT_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
-    pub TargetName: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonId: ::win32_foundation_sys::LUID,
+    pub TargetName: ::win32_foundation_sys::UNICODE_STRING,
     pub TicketFlags: u32,
     pub CacheOptions: u32,
     pub EncryptionType: KERB_CRYPTO_KEY_TYPE,
     pub CredentialsHandle: super::super::Credentials::SecHandle,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::marker::Copy for KERB_RETRIEVE_TKT_REQUEST {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::clone::Clone for KERB_RETRIEVE_TKT_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_RETRIEVE_TKT_RESPONSE {
     pub Ticket: KERB_EXTERNAL_TICKET,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_RETRIEVE_TKT_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_RETRIEVE_TKT_RESPONSE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_S4U2PROXY_CACHE_ENTRY_INFO {
-    pub ServerName: super::super::super::Foundation::UNICODE_STRING,
+    pub ServerName: ::win32_foundation_sys::UNICODE_STRING,
     pub Flags: u32,
-    pub LastStatus: super::super::super::Foundation::NTSTATUS,
+    pub LastStatus: ::win32_foundation_sys::NTSTATUS,
     pub Expiry: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_S4U2PROXY_CACHE_ENTRY_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_S4U2PROXY_CACHE_ENTRY_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1713,19 +1513,16 @@ impl ::core::clone::Clone for KERB_S4U2PROXY_CACHE_ENTRY_INFO {
 }
 pub const KERB_S4U2PROXY_CACHE_ENTRY_INFO_FLAG_NEGATIVE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_S4U2PROXY_CRED {
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
     pub Flags: u32,
-    pub LastStatus: super::super::super::Foundation::NTSTATUS,
+    pub LastStatus: ::win32_foundation_sys::NTSTATUS,
     pub Expiry: i64,
     pub CountOfEntries: u32,
     pub Entries: *mut KERB_S4U2PROXY_CACHE_ENTRY_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_S4U2PROXY_CRED {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_S4U2PROXY_CRED {
     fn clone(&self) -> Self {
         *self
@@ -1733,16 +1530,13 @@ impl ::core::clone::Clone for KERB_S4U2PROXY_CRED {
 }
 pub const KERB_S4U2PROXY_CRED_FLAG_NEGATIVE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_S4U_LOGON {
     pub MessageType: KERB_LOGON_SUBMIT_TYPE,
     pub Flags: u32,
-    pub ClientUpn: super::super::super::Foundation::UNICODE_STRING,
-    pub ClientRealm: super::super::super::Foundation::UNICODE_STRING,
+    pub ClientUpn: ::win32_foundation_sys::UNICODE_STRING,
+    pub ClientRealm: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_S4U_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_S4U_LOGON {
     fn clone(&self) -> Self {
         *self
@@ -1751,43 +1545,43 @@ impl ::core::clone::Clone for KERB_S4U_LOGON {
 pub const KERB_S4U_LOGON_FLAG_CHECK_LOGONHOURS: u32 = 2u32;
 pub const KERB_S4U_LOGON_FLAG_IDENTIFY: u32 = 8u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 pub struct KERB_SETPASSWORD_EX_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
     pub CredentialsHandle: super::super::Credentials::SecHandle,
     pub Flags: u32,
-    pub AccountRealm: super::super::super::Foundation::UNICODE_STRING,
-    pub AccountName: super::super::super::Foundation::UNICODE_STRING,
-    pub Password: super::super::super::Foundation::UNICODE_STRING,
-    pub ClientRealm: super::super::super::Foundation::UNICODE_STRING,
-    pub ClientName: super::super::super::Foundation::UNICODE_STRING,
-    pub Impersonating: super::super::super::Foundation::BOOLEAN,
-    pub KdcAddress: super::super::super::Foundation::UNICODE_STRING,
+    pub AccountRealm: ::win32_foundation_sys::UNICODE_STRING,
+    pub AccountName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Password: ::win32_foundation_sys::UNICODE_STRING,
+    pub ClientRealm: ::win32_foundation_sys::UNICODE_STRING,
+    pub ClientName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Impersonating: ::win32_foundation_sys::BOOLEAN,
+    pub KdcAddress: ::win32_foundation_sys::UNICODE_STRING,
     pub KdcAddressType: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::marker::Copy for KERB_SETPASSWORD_EX_REQUEST {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::clone::Clone for KERB_SETPASSWORD_EX_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 pub struct KERB_SETPASSWORD_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
     pub CredentialsHandle: super::super::Credentials::SecHandle,
     pub Flags: u32,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub AccountName: super::super::super::Foundation::UNICODE_STRING,
-    pub Password: super::super::super::Foundation::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub AccountName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Password: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::marker::Copy for KERB_SETPASSWORD_REQUEST {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::clone::Clone for KERB_SETPASSWORD_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -1796,115 +1590,96 @@ impl ::core::clone::Clone for KERB_SETPASSWORD_REQUEST {
 pub const KERB_SETPASS_USE_CREDHANDLE: u32 = 2u32;
 pub const KERB_SETPASS_USE_LOGONID: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_SMART_CARD_LOGON {
     pub MessageType: KERB_LOGON_SUBMIT_TYPE,
-    pub Pin: super::super::super::Foundation::UNICODE_STRING,
+    pub Pin: ::win32_foundation_sys::UNICODE_STRING,
     pub CspDataLength: u32,
     pub CspData: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_SMART_CARD_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_SMART_CARD_LOGON {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_SMART_CARD_PROFILE {
     pub Profile: KERB_INTERACTIVE_PROFILE,
     pub CertificateSize: u32,
     pub CertificateData: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_SMART_CARD_PROFILE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_SMART_CARD_PROFILE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_SMART_CARD_UNLOCK_LOGON {
     pub Logon: KERB_SMART_CARD_LOGON,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_SMART_CARD_UNLOCK_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_SMART_CARD_UNLOCK_LOGON {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_SUBMIT_TKT_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
     pub Flags: u32,
     pub Key: KERB_CRYPTO_KEY32,
     pub KerbCredSize: u32,
     pub KerbCredOffset: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_SUBMIT_TKT_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_SUBMIT_TKT_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_TICKET_CACHE_INFO {
-    pub ServerName: super::super::super::Foundation::UNICODE_STRING,
-    pub RealmName: super::super::super::Foundation::UNICODE_STRING,
+    pub ServerName: ::win32_foundation_sys::UNICODE_STRING,
+    pub RealmName: ::win32_foundation_sys::UNICODE_STRING,
     pub StartTime: i64,
     pub EndTime: i64,
     pub RenewTime: i64,
     pub EncryptionType: i32,
     pub TicketFlags: KERB_TICKET_FLAGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_TICKET_CACHE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_TICKET_CACHE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_TICKET_CACHE_INFO_EX {
-    pub ClientName: super::super::super::Foundation::UNICODE_STRING,
-    pub ClientRealm: super::super::super::Foundation::UNICODE_STRING,
-    pub ServerName: super::super::super::Foundation::UNICODE_STRING,
-    pub ServerRealm: super::super::super::Foundation::UNICODE_STRING,
+    pub ClientName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ClientRealm: ::win32_foundation_sys::UNICODE_STRING,
+    pub ServerName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ServerRealm: ::win32_foundation_sys::UNICODE_STRING,
     pub StartTime: i64,
     pub EndTime: i64,
     pub RenewTime: i64,
     pub EncryptionType: i32,
     pub TicketFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_TICKET_CACHE_INFO_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_TICKET_CACHE_INFO_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_TICKET_CACHE_INFO_EX2 {
-    pub ClientName: super::super::super::Foundation::UNICODE_STRING,
-    pub ClientRealm: super::super::super::Foundation::UNICODE_STRING,
-    pub ServerName: super::super::super::Foundation::UNICODE_STRING,
-    pub ServerRealm: super::super::super::Foundation::UNICODE_STRING,
+    pub ClientName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ClientRealm: ::win32_foundation_sys::UNICODE_STRING,
+    pub ServerName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ServerRealm: ::win32_foundation_sys::UNICODE_STRING,
     pub StartTime: i64,
     pub EndTime: i64,
     pub RenewTime: i64,
@@ -1913,21 +1688,18 @@ pub struct KERB_TICKET_CACHE_INFO_EX2 {
     pub SessionKeyType: u32,
     pub BranchId: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_TICKET_CACHE_INFO_EX2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_TICKET_CACHE_INFO_EX2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_TICKET_CACHE_INFO_EX3 {
-    pub ClientName: super::super::super::Foundation::UNICODE_STRING,
-    pub ClientRealm: super::super::super::Foundation::UNICODE_STRING,
-    pub ServerName: super::super::super::Foundation::UNICODE_STRING,
-    pub ServerRealm: super::super::super::Foundation::UNICODE_STRING,
+    pub ClientName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ClientRealm: ::win32_foundation_sys::UNICODE_STRING,
+    pub ServerName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ServerRealm: ::win32_foundation_sys::UNICODE_STRING,
     pub StartTime: i64,
     pub EndTime: i64,
     pub RenewTime: i64,
@@ -1936,11 +1708,9 @@ pub struct KERB_TICKET_CACHE_INFO_EX3 {
     pub SessionKeyType: u32,
     pub BranchId: u32,
     pub CacheFlags: u32,
-    pub KdcCalled: super::super::super::Foundation::UNICODE_STRING,
+    pub KdcCalled: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_TICKET_CACHE_INFO_EX3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_TICKET_CACHE_INFO_EX3 {
     fn clone(&self) -> Self {
         *self
@@ -1980,28 +1750,22 @@ impl ::core::clone::Clone for KERB_TICKET_LOGON {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_TICKET_PROFILE {
     pub Profile: KERB_INTERACTIVE_PROFILE,
     pub SessionKey: KERB_CRYPTO_KEY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_TICKET_PROFILE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_TICKET_PROFILE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_TICKET_UNLOCK_LOGON {
     pub Logon: KERB_TICKET_LOGON,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_TICKET_UNLOCK_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_TICKET_UNLOCK_LOGON {
     fn clone(&self) -> Self {
         *self
@@ -2009,16 +1773,13 @@ impl ::core::clone::Clone for KERB_TICKET_UNLOCK_LOGON {
 }
 pub const KERB_TRANSFER_CRED_CLEANUP_CREDENTIALS: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KERB_TRANSFER_CRED_REQUEST {
     pub MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
-    pub OriginLogonId: super::super::super::Foundation::LUID,
-    pub DestinationLogonId: super::super::super::Foundation::LUID,
+    pub OriginLogonId: ::win32_foundation_sys::LUID,
+    pub DestinationLogonId: ::win32_foundation_sys::LUID,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KERB_TRANSFER_CRED_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KERB_TRANSFER_CRED_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -2051,7 +1812,7 @@ pub const KSecNonPaged: KSEC_CONTEXT_TYPE = 1i32;
 #[repr(C)]
 #[cfg(feature = "Win32_System_Kernel")]
 pub struct KSEC_LIST_ENTRY {
-    pub List: super::super::super::System::Kernel::LIST_ENTRY,
+    pub List: ::win32_system_sys::Kernel::LIST_ENTRY,
     pub RefCount: i32,
     pub Signature: u32,
     pub OwningList: *mut ::core::ffi::c_void,
@@ -2065,32 +1826,20 @@ impl ::core::clone::Clone for KSEC_LIST_ENTRY {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type KspCompleteTokenFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, token: *const SecBufferDesc) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspDeleteContextFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, lsacontextid: *mut usize) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspGetTokenFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, impersonationtoken: *mut super::super::super::Foundation::HANDLE, rawtoken: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspInitContextFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, contextdata: *const SecBuffer, newcontextid: *mut usize) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-pub type KspInitPackageFn = ::core::option::Option<unsafe extern "system" fn(functiontable: *const SECPKG_KERNEL_FUNCTIONS) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspMakeSignatureFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, fqop: u32, message: *const SecBufferDesc, messageseqno: u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspMapHandleFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, lsacontextid: *mut usize) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspQueryAttributesFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, attribute: u32, buffer: *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspSealMessageFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, fqop: u32, message: *const SecBufferDesc, messageseqno: u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspSerializeAuthDataFn = ::core::option::Option<unsafe extern "system" fn(pvauthdata: *const ::core::ffi::c_void, size: *mut u32, serializeddata: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspSetPagingModeFn = ::core::option::Option<unsafe extern "system" fn(pagingmode: super::super::super::Foundation::BOOLEAN) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspUnsealMessageFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, message: *const SecBufferDesc, messageseqno: u32, pfqop: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type KspVerifySignatureFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, message: *const SecBufferDesc, messageseqno: u32, pfqop: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
+pub type KspCompleteTokenFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, token: *const SecBufferDesc) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspDeleteContextFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, lsacontextid: *mut usize) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspGetTokenFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, impersonationtoken: *mut ::win32_foundation_sys::HANDLE, rawtoken: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspInitContextFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, contextdata: *const SecBuffer, newcontextid: *mut usize) -> ::win32_foundation_sys::NTSTATUS>;
+#[cfg(feature = "Win32_System_Kernel")]
+pub type KspInitPackageFn = ::core::option::Option<unsafe extern "system" fn(functiontable: *const SECPKG_KERNEL_FUNCTIONS) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspMakeSignatureFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, fqop: u32, message: *const SecBufferDesc, messageseqno: u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspMapHandleFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, lsacontextid: *mut usize) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspQueryAttributesFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, attribute: u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspSealMessageFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, fqop: u32, message: *const SecBufferDesc, messageseqno: u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspSerializeAuthDataFn = ::core::option::Option<unsafe extern "system" fn(pvauthdata: *const ::core::ffi::c_void, size: *mut u32, serializeddata: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspSetPagingModeFn = ::core::option::Option<unsafe extern "system" fn(pagingmode: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspUnsealMessageFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, message: *const SecBufferDesc, messageseqno: u32, pfqop: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type KspVerifySignatureFn = ::core::option::Option<unsafe extern "system" fn(contextid: usize, message: *const SecBufferDesc, messageseqno: u32, pfqop: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
 pub const LCRED_CRED_EXISTS: u32 = 1u32;
 pub const LCRED_STATUS_NOCRED: u32 = 0u32;
 pub const LCRED_STATUS_UNKNOWN_ISSUER: u32 = 2u32;
@@ -2130,8 +1879,7 @@ pub const LSA_AP_NAME_LOGON_TERMINATED: &str = "LsaApLogonTerminated\u{0}";
 pub const LSA_AP_NAME_LOGON_USER: &str = "LsaApLogonUser\u{0}";
 pub const LSA_AP_NAME_LOGON_USER_EX: &str = "LsaApLogonUserEx\u{0}";
 pub const LSA_AP_NAME_LOGON_USER_EX2: &str = "LsaApLogonUserEx2\u{0}";
-#[cfg(feature = "Win32_Foundation")]
-pub type LSA_AP_POST_LOGON_USER = ::core::option::Option<unsafe extern "system" fn(postlogonuserinfo: *const SECPKG_POST_LOGON_USER_INFO) -> super::super::super::Foundation::NTSTATUS>;
+pub type LSA_AP_POST_LOGON_USER = ::core::option::Option<unsafe extern "system" fn(postlogonuserinfo: *const SECPKG_POST_LOGON_USER_INFO) -> ::win32_foundation_sys::NTSTATUS>;
 #[repr(C)]
 pub struct LSA_AUTH_INFORMATION {
     pub LastUpdateTime: i64,
@@ -2152,7 +1900,7 @@ pub const TRUST_AUTH_TYPE_CLEAR: LSA_AUTH_INFORMATION_AUTH_TYPE = 2u32;
 pub const TRUST_AUTH_TYPE_VERSION: LSA_AUTH_INFORMATION_AUTH_TYPE = 3u32;
 pub const LSA_CALL_LICENSE_SERVER: u32 = 2147483648u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct LSA_DISPATCH_TABLE {
     pub CreateLogonSession: PLSA_CREATE_LOGON_SESSION,
     pub DeleteLogonSession: PLSA_DELETE_LOGON_SESSION,
@@ -2166,22 +1914,19 @@ pub struct LSA_DISPATCH_TABLE {
     pub CopyToClientBuffer: PLSA_COPY_TO_CLIENT_BUFFER,
     pub CopyFromClientBuffer: PLSA_COPY_FROM_CLIENT_BUFFER,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for LSA_DISPATCH_TABLE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for LSA_DISPATCH_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_ENUMERATION_INFORMATION {
-    pub Sid: super::super::super::Foundation::PSID,
+    pub Sid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_ENUMERATION_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_ENUMERATION_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -2199,30 +1944,24 @@ impl ::core::clone::Clone for LSA_FOREST_TRUST_BINARY_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_FOREST_TRUST_COLLISION_INFORMATION {
     pub RecordCount: u32,
     pub Entries: *mut *mut LSA_FOREST_TRUST_COLLISION_RECORD,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_FOREST_TRUST_COLLISION_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_FOREST_TRUST_COLLISION_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_FOREST_TRUST_COLLISION_RECORD {
     pub Index: u32,
     pub Type: LSA_FOREST_TRUST_COLLISION_RECORD_TYPE,
     pub Flags: u32,
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_FOREST_TRUST_COLLISION_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_FOREST_TRUST_COLLISION_RECORD {
     fn clone(&self) -> Self {
         *self
@@ -2233,60 +1972,48 @@ pub const CollisionTdo: LSA_FOREST_TRUST_COLLISION_RECORD_TYPE = 0i32;
 pub const CollisionXref: LSA_FOREST_TRUST_COLLISION_RECORD_TYPE = 1i32;
 pub const CollisionOther: LSA_FOREST_TRUST_COLLISION_RECORD_TYPE = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_FOREST_TRUST_DOMAIN_INFO {
-    pub Sid: super::super::super::Foundation::PSID,
-    pub DnsName: super::super::super::Foundation::UNICODE_STRING,
-    pub NetbiosName: super::super::super::Foundation::UNICODE_STRING,
+    pub Sid: ::win32_foundation_sys::PSID,
+    pub DnsName: ::win32_foundation_sys::UNICODE_STRING,
+    pub NetbiosName: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_FOREST_TRUST_DOMAIN_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_FOREST_TRUST_DOMAIN_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_FOREST_TRUST_INFORMATION {
     pub RecordCount: u32,
     pub Entries: *mut *mut LSA_FOREST_TRUST_RECORD,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_FOREST_TRUST_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_FOREST_TRUST_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_FOREST_TRUST_RECORD {
     pub Flags: u32,
     pub ForestTrustType: LSA_FOREST_TRUST_RECORD_TYPE,
     pub Time: i64,
     pub ForestTrustData: LSA_FOREST_TRUST_RECORD_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_FOREST_TRUST_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_FOREST_TRUST_RECORD {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union LSA_FOREST_TRUST_RECORD_0 {
-    pub TopLevelName: super::super::super::Foundation::UNICODE_STRING,
+    pub TopLevelName: ::win32_foundation_sys::UNICODE_STRING,
     pub DomainInfo: LSA_FOREST_TRUST_DOMAIN_INFO,
     pub Data: LSA_FOREST_TRUST_BINARY_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_FOREST_TRUST_RECORD_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_FOREST_TRUST_RECORD_0 {
     fn clone(&self) -> Self {
         *self
@@ -2332,21 +2059,18 @@ pub const LSA_NB_DISABLED_ADMIN: i32 = 4i32;
 pub const LSA_NB_DISABLED_CONFLICT: i32 = 8i32;
 pub const LSA_QUERY_CLIENT_PRELOGON_SESSION_ID: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_REFERENCED_DOMAIN_LIST {
     pub Entries: u32,
     pub Domains: *mut LSA_TRUST_INFORMATION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_REFERENCED_DOMAIN_LIST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_REFERENCED_DOMAIN_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
 pub struct LSA_SECPKG_FUNCTION_TABLE {
     pub CreateLogonSession: PLSA_CREATE_LOGON_SESSION,
     pub DeleteLogonSession: PLSA_DELETE_LOGON_SESSION,
@@ -2412,9 +2136,9 @@ pub struct LSA_SECPKG_FUNCTION_TABLE {
     pub GetAppModeInfo: PLSA_GET_APP_MODE_INFO,
     pub SetAppModeInfo: PLSA_SET_APP_MODE_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
 impl ::core::marker::Copy for LSA_SECPKG_FUNCTION_TABLE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
 impl ::core::clone::Clone for LSA_SECPKG_FUNCTION_TABLE {
     fn clone(&self) -> Self {
         *self
@@ -2428,14 +2152,11 @@ pub const LSA_TLN_DISABLED_ADMIN: i32 = 2i32;
 pub const LSA_TLN_DISABLED_CONFLICT: i32 = 4i32;
 pub const LSA_TLN_DISABLED_NEW: i32 = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_TOKEN_INFORMATION_NULL {
     pub ExpirationTime: i64,
     pub Groups: *mut super::super::TOKEN_GROUPS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_TOKEN_INFORMATION_NULL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_TOKEN_INFORMATION_NULL {
     fn clone(&self) -> Self {
         *self
@@ -2447,7 +2168,6 @@ pub const LsaTokenInformationV1: LSA_TOKEN_INFORMATION_TYPE = 1i32;
 pub const LsaTokenInformationV2: LSA_TOKEN_INFORMATION_TYPE = 2i32;
 pub const LsaTokenInformationV3: LSA_TOKEN_INFORMATION_TYPE = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_TOKEN_INFORMATION_V1 {
     pub ExpirationTime: i64,
     pub User: super::super::TOKEN_USER,
@@ -2457,16 +2177,13 @@ pub struct LSA_TOKEN_INFORMATION_V1 {
     pub Owner: super::super::TOKEN_OWNER,
     pub DefaultDacl: super::super::TOKEN_DEFAULT_DACL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_TOKEN_INFORMATION_V1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_TOKEN_INFORMATION_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_TOKEN_INFORMATION_V3 {
     pub ExpirationTime: i64,
     pub User: super::super::TOKEN_USER,
@@ -2479,24 +2196,19 @@ pub struct LSA_TOKEN_INFORMATION_V3 {
     pub DeviceClaims: super::super::TOKEN_DEVICE_CLAIMS,
     pub DeviceGroups: *mut super::super::TOKEN_GROUPS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_TOKEN_INFORMATION_V3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_TOKEN_INFORMATION_V3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_TRANSLATED_NAME {
     pub Use: super::super::SID_NAME_USE,
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
     pub DomainIndex: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_TRANSLATED_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_TRANSLATED_NAME {
     fn clone(&self) -> Self {
         *self
@@ -2515,30 +2227,24 @@ impl ::core::clone::Clone for LSA_TRANSLATED_SID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_TRANSLATED_SID2 {
     pub Use: super::super::SID_NAME_USE,
-    pub Sid: super::super::super::Foundation::PSID,
+    pub Sid: ::win32_foundation_sys::PSID,
     pub DomainIndex: i32,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_TRANSLATED_SID2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_TRANSLATED_SID2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LSA_TRUST_INFORMATION {
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
-    pub Sid: super::super::super::Foundation::PSID,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
+    pub Sid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LSA_TRUST_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LSA_TRUST_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -2588,33 +2294,27 @@ impl ::core::clone::Clone for MSV1_0_AV_PAIR {
 }
 pub const MSV1_0_CHALLENGE_LENGTH: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MSV1_0_CHANGEPASSWORD_REQUEST {
     pub MessageType: MSV1_0_PROTOCOL_MESSAGE_TYPE,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub AccountName: super::super::super::Foundation::UNICODE_STRING,
-    pub OldPassword: super::super::super::Foundation::UNICODE_STRING,
-    pub NewPassword: super::super::super::Foundation::UNICODE_STRING,
-    pub Impersonating: super::super::super::Foundation::BOOLEAN,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub AccountName: ::win32_foundation_sys::UNICODE_STRING,
+    pub OldPassword: ::win32_foundation_sys::UNICODE_STRING,
+    pub NewPassword: ::win32_foundation_sys::UNICODE_STRING,
+    pub Impersonating: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MSV1_0_CHANGEPASSWORD_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MSV1_0_CHANGEPASSWORD_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MSV1_0_CHANGEPASSWORD_RESPONSE {
     pub MessageType: MSV1_0_PROTOCOL_MESSAGE_TYPE,
-    pub PasswordInfoValid: super::super::super::Foundation::BOOLEAN,
+    pub PasswordInfoValid: ::win32_foundation_sys::BOOLEAN,
     pub DomainPasswordInfo: DOMAIN_PASSWORD_INFORMATION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MSV1_0_CHANGEPASSWORD_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MSV1_0_CHANGEPASSWORD_RESPONSE {
     fn clone(&self) -> Self {
         *self
@@ -2651,23 +2351,19 @@ pub const MSV1_0_CRED_VERSION_V2: u32 = 2u32;
 pub const MSV1_0_CRED_VERSION_V3: u32 = 4u32;
 pub const MSV1_0_DISABLE_PERSONAL_FALLBACK: u32 = 4096u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MSV1_0_INTERACTIVE_LOGON {
     pub MessageType: MSV1_0_LOGON_SUBMIT_TYPE,
-    pub LogonDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub Password: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Password: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MSV1_0_INTERACTIVE_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MSV1_0_INTERACTIVE_LOGON {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MSV1_0_INTERACTIVE_PROFILE {
     pub MessageType: MSV1_0_PROFILE_BUFFER_TYPE,
     pub LogonCount: u16,
@@ -2678,17 +2374,15 @@ pub struct MSV1_0_INTERACTIVE_PROFILE {
     pub PasswordLastSet: i64,
     pub PasswordCanChange: i64,
     pub PasswordMustChange: i64,
-    pub LogonScript: super::super::super::Foundation::UNICODE_STRING,
-    pub HomeDirectory: super::super::super::Foundation::UNICODE_STRING,
-    pub FullName: super::super::super::Foundation::UNICODE_STRING,
-    pub ProfilePath: super::super::super::Foundation::UNICODE_STRING,
-    pub HomeDirectoryDrive: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonServer: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonScript: ::win32_foundation_sys::UNICODE_STRING,
+    pub HomeDirectory: ::win32_foundation_sys::UNICODE_STRING,
+    pub FullName: ::win32_foundation_sys::UNICODE_STRING,
+    pub ProfilePath: ::win32_foundation_sys::UNICODE_STRING,
+    pub HomeDirectoryDrive: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonServer: ::win32_foundation_sys::UNICODE_STRING,
     pub UserFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MSV1_0_INTERACTIVE_PROFILE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MSV1_0_INTERACTIVE_PROFILE {
     fn clone(&self) -> Self {
         *self
@@ -2709,41 +2403,38 @@ impl ::core::clone::Clone for MSV1_0_IUM_SUPPLEMENTAL_CREDENTIAL {
 }
 pub const MSV1_0_LANMAN_SESSION_KEY_LENGTH: u32 = 8u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct MSV1_0_LM20_LOGON {
     pub MessageType: MSV1_0_LOGON_SUBMIT_TYPE,
-    pub LogonDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub Workstation: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Workstation: ::win32_foundation_sys::UNICODE_STRING,
     pub ChallengeToClient: [u8; 8],
-    pub CaseSensitiveChallengeResponse: super::super::super::System::Kernel::STRING,
-    pub CaseInsensitiveChallengeResponse: super::super::super::System::Kernel::STRING,
+    pub CaseSensitiveChallengeResponse: ::win32_system_sys::Kernel::STRING,
+    pub CaseInsensitiveChallengeResponse: ::win32_system_sys::Kernel::STRING,
     pub ParameterControl: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for MSV1_0_LM20_LOGON {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for MSV1_0_LM20_LOGON {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MSV1_0_LM20_LOGON_PROFILE {
     pub MessageType: MSV1_0_PROFILE_BUFFER_TYPE,
     pub KickOffTime: i64,
     pub LogoffTime: i64,
     pub UserFlags: MSV_SUB_AUTHENTICATION_FILTER,
     pub UserSessionKey: [u8; 16],
-    pub LogonDomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonDomainName: ::win32_foundation_sys::UNICODE_STRING,
     pub LanmanSessionKey: [u8; 8],
-    pub LogonServer: super::super::super::Foundation::UNICODE_STRING,
-    pub UserParameters: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonServer: ::win32_foundation_sys::UNICODE_STRING,
+    pub UserParameters: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MSV1_0_LM20_LOGON_PROFILE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MSV1_0_LM20_LOGON_PROFILE {
     fn clone(&self) -> Self {
         *self
@@ -2786,18 +2477,15 @@ pub const MSV1_0_OWF_PASSWORD_LENGTH: u32 = 16u32;
 pub const MSV1_0_PACKAGE_NAME: &str = "MICROSOFT_AUTHENTICATION_PACKAGE_V1_0";
 pub const MSV1_0_PACKAGE_NAMEW: &str = "MICROSOFT_AUTHENTICATION_PACKAGE_V1_0";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MSV1_0_PASSTHROUGH_REQUEST {
     pub MessageType: MSV1_0_PROTOCOL_MESSAGE_TYPE,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub PackageName: super::super::super::Foundation::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub PackageName: ::win32_foundation_sys::UNICODE_STRING,
     pub DataLength: u32,
     pub LogonData: *mut u8,
     pub Pad: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MSV1_0_PASSTHROUGH_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MSV1_0_PASSTHROUGH_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -2863,16 +2551,13 @@ impl ::core::clone::Clone for MSV1_0_REMOTE_SUPPLEMENTAL_CREDENTIAL {
 }
 pub const MSV1_0_S4U2SELF: u32 = 131072u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MSV1_0_S4U_LOGON {
     pub MessageType: MSV1_0_LOGON_SUBMIT_TYPE,
     pub Flags: u32,
-    pub UserPrincipalName: super::super::super::Foundation::UNICODE_STRING,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub UserPrincipalName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MSV1_0_S4U_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MSV1_0_S4U_LOGON {
     fn clone(&self) -> Self {
         *self
@@ -2893,21 +2578,21 @@ pub const MSV1_0_SUBAUTH_ACCOUNT_EXPIRY: u32 = 16u32;
 pub const MSV1_0_SUBAUTH_ACCOUNT_TYPE: u32 = 64u32;
 pub const MSV1_0_SUBAUTH_LOCKOUT: u32 = 128u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct MSV1_0_SUBAUTH_LOGON {
     pub MessageType: MSV1_0_LOGON_SUBMIT_TYPE,
-    pub LogonDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub Workstation: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Workstation: ::win32_foundation_sys::UNICODE_STRING,
     pub ChallengeToClient: [u8; 8],
-    pub AuthenticationInfo1: super::super::super::System::Kernel::STRING,
-    pub AuthenticationInfo2: super::super::super::System::Kernel::STRING,
+    pub AuthenticationInfo1: ::win32_system_sys::Kernel::STRING,
+    pub AuthenticationInfo2: ::win32_system_sys::Kernel::STRING,
     pub ParameterControl: MSV_SUBAUTH_LOGON_PARAMETER_CONTROL,
     pub SubAuthPackageId: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for MSV1_0_SUBAUTH_LOGON {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for MSV1_0_SUBAUTH_LOGON {
     fn clone(&self) -> Self {
         *self
@@ -2987,21 +2672,21 @@ pub const MSV1_0_USER_SESSION_KEY_LENGTH: u32 = 16u32;
 pub const MSV1_0_USE_CLIENT_CHALLENGE: u32 = 128u32;
 pub const MSV1_0_USE_DOMAIN_FOR_ROUTING_ONLY: u32 = 32768u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 pub struct MSV1_0_VALIDATION_INFO {
     pub LogoffTime: i64,
     pub KickoffTime: i64,
-    pub LogonServer: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonDomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonServer: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonDomainName: ::win32_foundation_sys::UNICODE_STRING,
     pub SessionKey: USER_SESSION_KEY,
-    pub Authoritative: super::super::super::Foundation::BOOLEAN,
+    pub Authoritative: ::win32_foundation_sys::BOOLEAN,
     pub UserFlags: u32,
     pub WhichFields: u32,
     pub UserId: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 impl ::core::marker::Copy for MSV1_0_VALIDATION_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 impl ::core::clone::Clone for MSV1_0_VALIDATION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3044,14 +2729,11 @@ pub const NEGOSSP_NAME_A: &str = "Negotiate";
 pub const NEGOSSP_NAME_W: &str = "Negotiate";
 pub const NEGOTIATE_ALLOW_NTLM: u32 = 268435456u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NEGOTIATE_CALLER_NAME_REQUEST {
     pub MessageType: u32,
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NEGOTIATE_CALLER_NAME_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NEGOTIATE_CALLER_NAME_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -3104,48 +2786,42 @@ impl ::core::clone::Clone for NEGOTIATE_PACKAGE_PREFIXES {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NETLOGON_GENERIC_INFO {
     pub Identity: NETLOGON_LOGON_IDENTITY_INFO,
-    pub PackageName: super::super::super::Foundation::UNICODE_STRING,
+    pub PackageName: ::win32_foundation_sys::UNICODE_STRING,
     pub DataLength: u32,
     pub LogonData: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NETLOGON_GENERIC_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NETLOGON_GENERIC_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 pub struct NETLOGON_INTERACTIVE_INFO {
     pub Identity: NETLOGON_LOGON_IDENTITY_INFO,
-    pub LmOwfPassword: super::super::super::System::PasswordManagement::LM_OWF_PASSWORD,
-    pub NtOwfPassword: super::super::super::System::PasswordManagement::LM_OWF_PASSWORD,
+    pub LmOwfPassword: ::win32_system_sys::PasswordManagement::LM_OWF_PASSWORD,
+    pub NtOwfPassword: ::win32_system_sys::PasswordManagement::LM_OWF_PASSWORD,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 impl ::core::marker::Copy for NETLOGON_INTERACTIVE_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 impl ::core::clone::Clone for NETLOGON_INTERACTIVE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NETLOGON_LOGON_IDENTITY_INFO {
-    pub LogonDomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonDomainName: ::win32_foundation_sys::UNICODE_STRING,
     pub ParameterControl: u32,
     pub LogonId: i64,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub Workstation: super::super::super::Foundation::UNICODE_STRING,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Workstation: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NETLOGON_LOGON_IDENTITY_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NETLOGON_LOGON_IDENTITY_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3160,31 +2836,31 @@ pub const NetlogonInteractiveTransitiveInformation: NETLOGON_LOGON_INFO_CLASS = 
 pub const NetlogonNetworkTransitiveInformation: NETLOGON_LOGON_INFO_CLASS = 6i32;
 pub const NetlogonServiceTransitiveInformation: NETLOGON_LOGON_INFO_CLASS = 7i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct NETLOGON_NETWORK_INFO {
     pub Identity: NETLOGON_LOGON_IDENTITY_INFO,
     pub LmChallenge: CLEAR_BLOCK,
-    pub NtChallengeResponse: super::super::super::System::Kernel::STRING,
-    pub LmChallengeResponse: super::super::super::System::Kernel::STRING,
+    pub NtChallengeResponse: ::win32_system_sys::Kernel::STRING,
+    pub LmChallengeResponse: ::win32_system_sys::Kernel::STRING,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for NETLOGON_NETWORK_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for NETLOGON_NETWORK_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 pub struct NETLOGON_SERVICE_INFO {
     pub Identity: NETLOGON_LOGON_IDENTITY_INFO,
-    pub LmOwfPassword: super::super::super::System::PasswordManagement::LM_OWF_PASSWORD,
-    pub NtOwfPassword: super::super::super::System::PasswordManagement::LM_OWF_PASSWORD,
+    pub LmOwfPassword: ::win32_system_sys::PasswordManagement::LM_OWF_PASSWORD,
+    pub NtOwfPassword: ::win32_system_sys::PasswordManagement::LM_OWF_PASSWORD,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 impl ::core::marker::Copy for NETLOGON_SERVICE_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 impl ::core::clone::Clone for NETLOGON_SERVICE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3224,25 +2900,20 @@ pub type PKSEC_DEREFERENCE_LIST_ENTRY = ::core::option::Option<unsafe extern "sy
 #[cfg(feature = "Win32_System_Kernel")]
 pub type PKSEC_INSERT_LIST_ENTRY = ::core::option::Option<unsafe extern "system" fn(list: *const ::core::ffi::c_void, entry: *const KSEC_LIST_ENTRY)>;
 pub type PKSEC_LOCATE_PKG_BY_ID = ::core::option::Option<unsafe extern "system" fn(packageid: u32) -> *mut ::core::ffi::c_void>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-pub type PKSEC_REFERENCE_LIST_ENTRY = ::core::option::Option<unsafe extern "system" fn(entry: *const KSEC_LIST_ENTRY, signature: u32, removenoref: super::super::super::Foundation::BOOLEAN) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PKSEC_SERIALIZE_SCHANNEL_AUTH_DATA = ::core::option::Option<unsafe extern "system" fn(pvauthdata: *const ::core::ffi::c_void, size: *mut u32, serializeddata: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PKSEC_SERIALIZE_WINNT_AUTH_DATA = ::core::option::Option<unsafe extern "system" fn(pvauthdata: *const ::core::ffi::c_void, size: *mut u32, serializeddata: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
+#[cfg(feature = "Win32_System_Kernel")]
+pub type PKSEC_REFERENCE_LIST_ENTRY = ::core::option::Option<unsafe extern "system" fn(entry: *const KSEC_LIST_ENTRY, signature: u32, removenoref: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PKSEC_SERIALIZE_SCHANNEL_AUTH_DATA = ::core::option::Option<unsafe extern "system" fn(pvauthdata: *const ::core::ffi::c_void, size: *mut u32, serializeddata: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PKSEC_SERIALIZE_WINNT_AUTH_DATA = ::core::option::Option<unsafe extern "system" fn(pvauthdata: *const ::core::ffi::c_void, size: *mut u32, serializeddata: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PKU2U_CERTIFICATE_S4U_LOGON {
     pub MessageType: PKU2U_LOGON_SUBMIT_TYPE,
     pub Flags: u32,
-    pub UserPrincipalName: super::super::super::Foundation::UNICODE_STRING,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub UserPrincipalName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
     pub CertificateLength: u32,
     pub Certificate: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PKU2U_CERTIFICATE_S4U_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PKU2U_CERTIFICATE_S4U_LOGON {
     fn clone(&self) -> Self {
         *self
@@ -3278,28 +2949,19 @@ pub const Pku2uCertificateS4ULogon: PKU2U_LOGON_SUBMIT_TYPE = 14i32;
 pub const PKU2U_PACKAGE_NAME: &str = "pku2u";
 pub const PKU2U_PACKAGE_NAME_A: &str = "pku2u";
 pub const PKU2U_PACKAGE_NAME_W: &str = "pku2u";
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-pub type PLSA_ADD_CREDENTIAL = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, authenticationpackage: u32, primarykeyvalue: *const super::super::super::System::Kernel::STRING, credentials: *const super::super::super::System::Kernel::STRING) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_ALLOCATE_CLIENT_BUFFER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, lengthrequired: u32, clientbaseaddress: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
+#[cfg(feature = "Win32_System_Kernel")]
+pub type PLSA_ADD_CREDENTIAL = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, authenticationpackage: u32, primarykeyvalue: *const ::win32_system_sys::Kernel::STRING, credentials: *const ::win32_system_sys::Kernel::STRING) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_ALLOCATE_CLIENT_BUFFER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, lengthrequired: u32, clientbaseaddress: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
 pub type PLSA_ALLOCATE_LSA_HEAP = ::core::option::Option<unsafe extern "system" fn(length: u32) -> *mut ::core::ffi::c_void>;
 pub type PLSA_ALLOCATE_PRIVATE_HEAP = ::core::option::Option<unsafe extern "system" fn(length: usize) -> *mut ::core::ffi::c_void>;
 pub type PLSA_ALLOCATE_SHARED_MEMORY = ::core::option::Option<unsafe extern "system" fn(sharedmem: *const ::core::ffi::c_void, size: u32) -> *mut ::core::ffi::c_void>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_AP_CALL_PACKAGE = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_AP_CALL_PACKAGE_PASSTHROUGH = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-pub type PLSA_AP_INITIALIZE_PACKAGE = ::core::option::Option<unsafe extern "system" fn(authenticationpackageid: u32, lsadispatchtable: *const LSA_DISPATCH_TABLE, database: *const super::super::super::System::Kernel::STRING, confidentiality: *const super::super::super::System::Kernel::STRING, authenticationpackagename: *mut *mut super::super::super::System::Kernel::STRING) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_AP_LOGON_TERMINATED = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_AP_LOGON_USER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, logontype: SECURITY_LOGON_TYPE, authenticationinformation: *const ::core::ffi::c_void, clientauthenticationbase: *const ::core::ffi::c_void, authenticationinformationlength: u32, profilebuffer: *mut *mut ::core::ffi::c_void, profilebufferlength: *mut u32, logonid: *mut super::super::super::Foundation::LUID, substatus: *mut i32, tokeninformationtype: *mut LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *mut *mut ::core::ffi::c_void, accountname: *mut *mut super::super::super::Foundation::UNICODE_STRING, authenticatingauthority: *mut *mut super::super::super::Foundation::UNICODE_STRING) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_AP_LOGON_USER_EX = ::core::option::Option<
-    unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, logontype: SECURITY_LOGON_TYPE, authenticationinformation: *const ::core::ffi::c_void, clientauthenticationbase: *const ::core::ffi::c_void, authenticationinformationlength: u32, profilebuffer: *mut *mut ::core::ffi::c_void, profilebufferlength: *mut u32, logonid: *mut super::super::super::Foundation::LUID, substatus: *mut i32, tokeninformationtype: *mut LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *mut *mut ::core::ffi::c_void, accountname: *mut *mut super::super::super::Foundation::UNICODE_STRING, authenticatingauthority: *mut *mut super::super::super::Foundation::UNICODE_STRING, machinename: *mut *mut super::super::super::Foundation::UNICODE_STRING) -> super::super::super::Foundation::NTSTATUS,
->;
-#[cfg(feature = "Win32_Foundation")]
+pub type PLSA_AP_CALL_PACKAGE = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_AP_CALL_PACKAGE_PASSTHROUGH = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS>;
+#[cfg(feature = "Win32_System_Kernel")]
+pub type PLSA_AP_INITIALIZE_PACKAGE = ::core::option::Option<unsafe extern "system" fn(authenticationpackageid: u32, lsadispatchtable: *const LSA_DISPATCH_TABLE, database: *const ::win32_system_sys::Kernel::STRING, confidentiality: *const ::win32_system_sys::Kernel::STRING, authenticationpackagename: *mut *mut ::win32_system_sys::Kernel::STRING) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_AP_LOGON_TERMINATED = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID)>;
+pub type PLSA_AP_LOGON_USER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, logontype: SECURITY_LOGON_TYPE, authenticationinformation: *const ::core::ffi::c_void, clientauthenticationbase: *const ::core::ffi::c_void, authenticationinformationlength: u32, profilebuffer: *mut *mut ::core::ffi::c_void, profilebufferlength: *mut u32, logonid: *mut ::win32_foundation_sys::LUID, substatus: *mut i32, tokeninformationtype: *mut LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *mut *mut ::core::ffi::c_void, accountname: *mut *mut ::win32_foundation_sys::UNICODE_STRING, authenticatingauthority: *mut *mut ::win32_foundation_sys::UNICODE_STRING) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_AP_LOGON_USER_EX = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, logontype: SECURITY_LOGON_TYPE, authenticationinformation: *const ::core::ffi::c_void, clientauthenticationbase: *const ::core::ffi::c_void, authenticationinformationlength: u32, profilebuffer: *mut *mut ::core::ffi::c_void, profilebufferlength: *mut u32, logonid: *mut ::win32_foundation_sys::LUID, substatus: *mut i32, tokeninformationtype: *mut LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *mut *mut ::core::ffi::c_void, accountname: *mut *mut ::win32_foundation_sys::UNICODE_STRING, authenticatingauthority: *mut *mut ::win32_foundation_sys::UNICODE_STRING, machinename: *mut *mut ::win32_foundation_sys::UNICODE_STRING) -> ::win32_foundation_sys::NTSTATUS>;
 pub type PLSA_AP_LOGON_USER_EX2 = ::core::option::Option<
     unsafe extern "system" fn(
         clientrequest: *const *const ::core::ffi::c_void,
@@ -3309,18 +2971,17 @@ pub type PLSA_AP_LOGON_USER_EX2 = ::core::option::Option<
         submitbuffersize: u32,
         profilebuffer: *mut *mut ::core::ffi::c_void,
         profilebuffersize: *mut u32,
-        logonid: *mut super::super::super::Foundation::LUID,
+        logonid: *mut ::win32_foundation_sys::LUID,
         substatus: *mut i32,
         tokeninformationtype: *mut LSA_TOKEN_INFORMATION_TYPE,
         tokeninformation: *mut *mut ::core::ffi::c_void,
-        accountname: *mut *mut super::super::super::Foundation::UNICODE_STRING,
-        authenticatingauthority: *mut *mut super::super::super::Foundation::UNICODE_STRING,
-        machinename: *mut *mut super::super::super::Foundation::UNICODE_STRING,
+        accountname: *mut *mut ::win32_foundation_sys::UNICODE_STRING,
+        authenticatingauthority: *mut *mut ::win32_foundation_sys::UNICODE_STRING,
+        machinename: *mut *mut ::win32_foundation_sys::UNICODE_STRING,
         primarycredentials: *mut SECPKG_PRIMARY_CRED,
         supplementalcredentials: *mut *mut SECPKG_SUPPLEMENTAL_CRED_ARRAY,
-    ) -> super::super::super::Foundation::NTSTATUS,
+    ) -> ::win32_foundation_sys::NTSTATUS,
 >;
-#[cfg(feature = "Win32_Foundation")]
 pub type PLSA_AP_LOGON_USER_EX3 = ::core::option::Option<
     unsafe extern "system" fn(
         clientrequest: *const *const ::core::ffi::c_void,
@@ -3331,18 +2992,17 @@ pub type PLSA_AP_LOGON_USER_EX3 = ::core::option::Option<
         surrogatelogon: *mut SECPKG_SURROGATE_LOGON,
         profilebuffer: *mut *mut ::core::ffi::c_void,
         profilebuffersize: *mut u32,
-        logonid: *mut super::super::super::Foundation::LUID,
+        logonid: *mut ::win32_foundation_sys::LUID,
         substatus: *mut i32,
         tokeninformationtype: *mut LSA_TOKEN_INFORMATION_TYPE,
         tokeninformation: *mut *mut ::core::ffi::c_void,
-        accountname: *mut *mut super::super::super::Foundation::UNICODE_STRING,
-        authenticatingauthority: *mut *mut super::super::super::Foundation::UNICODE_STRING,
-        machinename: *mut *mut super::super::super::Foundation::UNICODE_STRING,
+        accountname: *mut *mut ::win32_foundation_sys::UNICODE_STRING,
+        authenticatingauthority: *mut *mut ::win32_foundation_sys::UNICODE_STRING,
+        machinename: *mut *mut ::win32_foundation_sys::UNICODE_STRING,
         primarycredentials: *mut SECPKG_PRIMARY_CRED,
         supplementalcredentials: *mut *mut SECPKG_SUPPLEMENTAL_CRED_ARRAY,
-    ) -> super::super::super::Foundation::NTSTATUS,
+    ) -> ::win32_foundation_sys::NTSTATUS,
 >;
-#[cfg(feature = "Win32_Foundation")]
 pub type PLSA_AP_POST_LOGON_USER_SURROGATE = ::core::option::Option<
     unsafe extern "system" fn(
         clientrequest: *const *const ::core::ffi::c_void,
@@ -3353,136 +3013,85 @@ pub type PLSA_AP_POST_LOGON_USER_SURROGATE = ::core::option::Option<
         surrogatelogon: *const SECPKG_SURROGATE_LOGON,
         profilebuffer: *const ::core::ffi::c_void,
         profilebuffersize: u32,
-        logonid: *const super::super::super::Foundation::LUID,
-        status: super::super::super::Foundation::NTSTATUS,
-        substatus: super::super::super::Foundation::NTSTATUS,
+        logonid: *const ::win32_foundation_sys::LUID,
+        status: ::win32_foundation_sys::NTSTATUS,
+        substatus: ::win32_foundation_sys::NTSTATUS,
         tokeninformationtype: LSA_TOKEN_INFORMATION_TYPE,
         tokeninformation: *const ::core::ffi::c_void,
-        accountname: *const super::super::super::Foundation::UNICODE_STRING,
-        authenticatingauthority: *const super::super::super::Foundation::UNICODE_STRING,
-        machinename: *const super::super::super::Foundation::UNICODE_STRING,
+        accountname: *const ::win32_foundation_sys::UNICODE_STRING,
+        authenticatingauthority: *const ::win32_foundation_sys::UNICODE_STRING,
+        machinename: *const ::win32_foundation_sys::UNICODE_STRING,
         primarycredentials: *const SECPKG_PRIMARY_CRED,
         supplementalcredentials: *const SECPKG_SUPPLEMENTAL_CRED_ARRAY,
-    ) -> super::super::super::Foundation::NTSTATUS,
+    ) -> ::win32_foundation_sys::NTSTATUS,
 >;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_AP_PRE_LOGON_USER_SURROGATE = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, logontype: SECURITY_LOGON_TYPE, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbuffersize: u32, surrogatelogon: *mut SECPKG_SURROGATE_LOGON, substatus: *mut i32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_AUDIT_ACCOUNT_LOGON = ::core::option::Option<unsafe extern "system" fn(auditid: u32, success: super::super::super::Foundation::BOOLEAN, source: *const super::super::super::Foundation::UNICODE_STRING, clientname: *const super::super::super::Foundation::UNICODE_STRING, mappedname: *const super::super::super::Foundation::UNICODE_STRING, status: super::super::super::Foundation::NTSTATUS) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_AUDIT_LOGON = ::core::option::Option<unsafe extern "system" fn(status: super::super::super::Foundation::NTSTATUS, substatus: super::super::super::Foundation::NTSTATUS, accountname: *const super::super::super::Foundation::UNICODE_STRING, authenticatingauthority: *const super::super::super::Foundation::UNICODE_STRING, workstationname: *const super::super::super::Foundation::UNICODE_STRING, usersid: super::super::super::Foundation::PSID, logontype: SECURITY_LOGON_TYPE, tokensource: *const super::super::TOKEN_SOURCE, logonid: *const super::super::super::Foundation::LUID)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_AUDIT_LOGON_EX = ::core::option::Option<unsafe extern "system" fn(status: super::super::super::Foundation::NTSTATUS, substatus: super::super::super::Foundation::NTSTATUS, accountname: *const super::super::super::Foundation::UNICODE_STRING, authenticatingauthority: *const super::super::super::Foundation::UNICODE_STRING, workstationname: *const super::super::super::Foundation::UNICODE_STRING, usersid: super::super::super::Foundation::PSID, logontype: SECURITY_LOGON_TYPE, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokensource: *const super::super::TOKEN_SOURCE, logonid: *const super::super::super::Foundation::LUID)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CALLBACK_FUNCTION = ::core::option::Option<unsafe extern "system" fn(argument1: usize, argument2: usize, inputbuffer: *mut SecBuffer, outputbuffer: *mut SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CALL_PACKAGE = ::core::option::Option<unsafe extern "system" fn(authenticationpackage: *const super::super::super::Foundation::UNICODE_STRING, protocolsubmitbuffer: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CALL_PACKAGEEX = ::core::option::Option<unsafe extern "system" fn(authenticationpackage: *const super::super::super::Foundation::UNICODE_STRING, clientbufferbase: *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CALL_PACKAGE_PASSTHROUGH = ::core::option::Option<unsafe extern "system" fn(authenticationpackage: *const super::super::super::Foundation::UNICODE_STRING, clientbufferbase: *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CANCEL_NOTIFICATION = ::core::option::Option<unsafe extern "system" fn(notifyhandle: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CHECK_PROTECTED_USER_BY_TOKEN = ::core::option::Option<unsafe extern "system" fn(usertoken: super::super::super::Foundation::HANDLE, protecteduser: *mut super::super::super::Foundation::BOOLEAN) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CLIENT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callback: ::windows_core_sys::PCSTR, argument1: usize, argument2: usize, input: *const SecBuffer, output: *mut SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CLOSE_SAM_USER = ::core::option::Option<unsafe extern "system" fn(userhandle: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CONVERT_AUTH_DATA_TO_TOKEN = ::core::option::Option<unsafe extern "system" fn(userauthdata: *const ::core::ffi::c_void, userauthdatasize: u32, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokensource: *const super::super::TOKEN_SOURCE, logontype: SECURITY_LOGON_TYPE, authorityname: *const super::super::super::Foundation::UNICODE_STRING, token: *mut super::super::super::Foundation::HANDLE, logonid: *mut super::super::super::Foundation::LUID, accountname: *mut super::super::super::Foundation::UNICODE_STRING, substatus: *mut i32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_COPY_FROM_CLIENT_BUFFER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, length: u32, buffertocopy: *mut ::core::ffi::c_void, clientbaseaddress: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_COPY_TO_CLIENT_BUFFER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, length: u32, clientbaseaddress: *mut ::core::ffi::c_void, buffertocopy: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CRACK_SINGLE_NAME = ::core::option::Option<unsafe extern "system" fn(formatoffered: u32, performatgc: super::super::super::Foundation::BOOLEAN, nameinput: *const super::super::super::Foundation::UNICODE_STRING, prefix: *const super::super::super::Foundation::UNICODE_STRING, requestedformat: u32, crackedname: *mut super::super::super::Foundation::UNICODE_STRING, dnsdomainname: *mut super::super::super::Foundation::UNICODE_STRING, substatus: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CREATE_LOGON_SESSION = ::core::option::Option<unsafe extern "system" fn(logonid: *mut super::super::super::Foundation::LUID) -> super::super::super::Foundation::NTSTATUS>;
+pub type PLSA_AP_PRE_LOGON_USER_SURROGATE = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, logontype: SECURITY_LOGON_TYPE, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbuffersize: u32, surrogatelogon: *mut SECPKG_SURROGATE_LOGON, substatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_AUDIT_ACCOUNT_LOGON = ::core::option::Option<unsafe extern "system" fn(auditid: u32, success: ::win32_foundation_sys::BOOLEAN, source: *const ::win32_foundation_sys::UNICODE_STRING, clientname: *const ::win32_foundation_sys::UNICODE_STRING, mappedname: *const ::win32_foundation_sys::UNICODE_STRING, status: ::win32_foundation_sys::NTSTATUS) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_AUDIT_LOGON = ::core::option::Option<unsafe extern "system" fn(status: ::win32_foundation_sys::NTSTATUS, substatus: ::win32_foundation_sys::NTSTATUS, accountname: *const ::win32_foundation_sys::UNICODE_STRING, authenticatingauthority: *const ::win32_foundation_sys::UNICODE_STRING, workstationname: *const ::win32_foundation_sys::UNICODE_STRING, usersid: ::win32_foundation_sys::PSID, logontype: SECURITY_LOGON_TYPE, tokensource: *const super::super::TOKEN_SOURCE, logonid: *const ::win32_foundation_sys::LUID)>;
+pub type PLSA_AUDIT_LOGON_EX = ::core::option::Option<unsafe extern "system" fn(status: ::win32_foundation_sys::NTSTATUS, substatus: ::win32_foundation_sys::NTSTATUS, accountname: *const ::win32_foundation_sys::UNICODE_STRING, authenticatingauthority: *const ::win32_foundation_sys::UNICODE_STRING, workstationname: *const ::win32_foundation_sys::UNICODE_STRING, usersid: ::win32_foundation_sys::PSID, logontype: SECURITY_LOGON_TYPE, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokensource: *const super::super::TOKEN_SOURCE, logonid: *const ::win32_foundation_sys::LUID)>;
+pub type PLSA_CALLBACK_FUNCTION = ::core::option::Option<unsafe extern "system" fn(argument1: usize, argument2: usize, inputbuffer: *mut SecBuffer, outputbuffer: *mut SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CALL_PACKAGE = ::core::option::Option<unsafe extern "system" fn(authenticationpackage: *const ::win32_foundation_sys::UNICODE_STRING, protocolsubmitbuffer: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CALL_PACKAGEEX = ::core::option::Option<unsafe extern "system" fn(authenticationpackage: *const ::win32_foundation_sys::UNICODE_STRING, clientbufferbase: *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CALL_PACKAGE_PASSTHROUGH = ::core::option::Option<unsafe extern "system" fn(authenticationpackage: *const ::win32_foundation_sys::UNICODE_STRING, clientbufferbase: *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, submitbufferlength: u32, protocolreturnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32, protocolstatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CANCEL_NOTIFICATION = ::core::option::Option<unsafe extern "system" fn(notifyhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CHECK_PROTECTED_USER_BY_TOKEN = ::core::option::Option<unsafe extern "system" fn(usertoken: ::win32_foundation_sys::HANDLE, protecteduser: *mut ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CLIENT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callback: ::windows_core_sys::PCSTR, argument1: usize, argument2: usize, input: *const SecBuffer, output: *mut SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CLOSE_SAM_USER = ::core::option::Option<unsafe extern "system" fn(userhandle: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CONVERT_AUTH_DATA_TO_TOKEN = ::core::option::Option<unsafe extern "system" fn(userauthdata: *const ::core::ffi::c_void, userauthdatasize: u32, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokensource: *const super::super::TOKEN_SOURCE, logontype: SECURITY_LOGON_TYPE, authorityname: *const ::win32_foundation_sys::UNICODE_STRING, token: *mut ::win32_foundation_sys::HANDLE, logonid: *mut ::win32_foundation_sys::LUID, accountname: *mut ::win32_foundation_sys::UNICODE_STRING, substatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_COPY_FROM_CLIENT_BUFFER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, length: u32, buffertocopy: *mut ::core::ffi::c_void, clientbaseaddress: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_COPY_TO_CLIENT_BUFFER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, length: u32, clientbaseaddress: *mut ::core::ffi::c_void, buffertocopy: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CRACK_SINGLE_NAME = ::core::option::Option<unsafe extern "system" fn(formatoffered: u32, performatgc: ::win32_foundation_sys::BOOLEAN, nameinput: *const ::win32_foundation_sys::UNICODE_STRING, prefix: *const ::win32_foundation_sys::UNICODE_STRING, requestedformat: u32, crackedname: *mut ::win32_foundation_sys::UNICODE_STRING, dnsdomainname: *mut ::win32_foundation_sys::UNICODE_STRING, substatus: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CREATE_LOGON_SESSION = ::core::option::Option<unsafe extern "system" fn(logonid: *mut ::win32_foundation_sys::LUID) -> ::win32_foundation_sys::NTSTATUS>;
 pub type PLSA_CREATE_SHARED_MEMORY = ::core::option::Option<unsafe extern "system" fn(maxsize: u32, initialsize: u32) -> *mut ::core::ffi::c_void>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
-pub type PLSA_CREATE_THREAD = ::core::option::Option<unsafe extern "system" fn(securityattributes: *const super::super::SECURITY_ATTRIBUTES, stacksize: u32, startfunction: super::super::super::System::Threading::LPTHREAD_START_ROUTINE, threadparameter: *const ::core::ffi::c_void, creationflags: u32, threadid: *mut u32) -> super::super::super::Foundation::HANDLE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CREATE_TOKEN =
-    ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, tokensource: *const super::super::TOKEN_SOURCE, logontype: SECURITY_LOGON_TYPE, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokeninformationtype: LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *const ::core::ffi::c_void, tokengroups: *const super::super::TOKEN_GROUPS, accountname: *const super::super::super::Foundation::UNICODE_STRING, authorityname: *const super::super::super::Foundation::UNICODE_STRING, workstation: *const super::super::super::Foundation::UNICODE_STRING, profilepath: *const super::super::super::Foundation::UNICODE_STRING, token: *mut super::super::super::Foundation::HANDLE, substatus: *mut i32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_CREATE_TOKEN_EX = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, tokensource: *const super::super::TOKEN_SOURCE, logontype: SECURITY_LOGON_TYPE, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokeninformationtype: LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *const ::core::ffi::c_void, tokengroups: *const super::super::TOKEN_GROUPS, workstation: *const super::super::super::Foundation::UNICODE_STRING, profilepath: *const super::super::super::Foundation::UNICODE_STRING, sessioninformation: *const ::core::ffi::c_void, sessioninformationtype: SECPKG_SESSIONINFO_TYPE, token: *mut super::super::super::Foundation::HANDLE, substatus: *mut i32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-pub type PLSA_DELETE_CREDENTIAL = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, authenticationpackage: u32, primarykeyvalue: *const super::super::super::System::Kernel::STRING) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_DELETE_LOGON_SESSION = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_DELETE_SHARED_MEMORY = ::core::option::Option<unsafe extern "system" fn(sharedmem: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOLEAN>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_DUPLICATE_HANDLE = ::core::option::Option<unsafe extern "system" fn(sourcehandle: super::super::super::Foundation::HANDLE, destionationhandle: *mut super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_EXPAND_AUTH_DATA_FOR_DOMAIN = ::core::option::Option<unsafe extern "system" fn(userauthdata: *const u8, userauthdatasize: u32, reserved: *const ::core::ffi::c_void, expandedauthdata: *mut *mut u8, expandedauthdatasize: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_FREE_CLIENT_BUFFER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, clientbaseaddress: *const ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
+#[cfg(feature = "Win32_System_Threading")]
+pub type PLSA_CREATE_THREAD = ::core::option::Option<unsafe extern "system" fn(securityattributes: *const super::super::SECURITY_ATTRIBUTES, stacksize: u32, startfunction: ::win32_system_sys::Threading::LPTHREAD_START_ROUTINE, threadparameter: *const ::core::ffi::c_void, creationflags: u32, threadid: *mut u32) -> ::win32_foundation_sys::HANDLE>;
+pub type PLSA_CREATE_TOKEN = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, tokensource: *const super::super::TOKEN_SOURCE, logontype: SECURITY_LOGON_TYPE, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokeninformationtype: LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *const ::core::ffi::c_void, tokengroups: *const super::super::TOKEN_GROUPS, accountname: *const ::win32_foundation_sys::UNICODE_STRING, authorityname: *const ::win32_foundation_sys::UNICODE_STRING, workstation: *const ::win32_foundation_sys::UNICODE_STRING, profilepath: *const ::win32_foundation_sys::UNICODE_STRING, token: *mut ::win32_foundation_sys::HANDLE, substatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_CREATE_TOKEN_EX = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, tokensource: *const super::super::TOKEN_SOURCE, logontype: SECURITY_LOGON_TYPE, impersonationlevel: super::super::SECURITY_IMPERSONATION_LEVEL, tokeninformationtype: LSA_TOKEN_INFORMATION_TYPE, tokeninformation: *const ::core::ffi::c_void, tokengroups: *const super::super::TOKEN_GROUPS, workstation: *const ::win32_foundation_sys::UNICODE_STRING, profilepath: *const ::win32_foundation_sys::UNICODE_STRING, sessioninformation: *const ::core::ffi::c_void, sessioninformationtype: SECPKG_SESSIONINFO_TYPE, token: *mut ::win32_foundation_sys::HANDLE, substatus: *mut i32) -> ::win32_foundation_sys::NTSTATUS>;
+#[cfg(feature = "Win32_System_Kernel")]
+pub type PLSA_DELETE_CREDENTIAL = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, authenticationpackage: u32, primarykeyvalue: *const ::win32_system_sys::Kernel::STRING) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_DELETE_LOGON_SESSION = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_DELETE_SHARED_MEMORY = ::core::option::Option<unsafe extern "system" fn(sharedmem: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOLEAN>;
+pub type PLSA_DUPLICATE_HANDLE = ::core::option::Option<unsafe extern "system" fn(sourcehandle: ::win32_foundation_sys::HANDLE, destionationhandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_EXPAND_AUTH_DATA_FOR_DOMAIN = ::core::option::Option<unsafe extern "system" fn(userauthdata: *const u8, userauthdatasize: u32, reserved: *const ::core::ffi::c_void, expandedauthdata: *mut *mut u8, expandedauthdatasize: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_FREE_CLIENT_BUFFER = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, clientbaseaddress: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
 pub type PLSA_FREE_LSA_HEAP = ::core::option::Option<unsafe extern "system" fn(base: *const ::core::ffi::c_void)>;
 pub type PLSA_FREE_PRIVATE_HEAP = ::core::option::Option<unsafe extern "system" fn(base: *const ::core::ffi::c_void)>;
 pub type PLSA_FREE_SHARED_MEMORY = ::core::option::Option<unsafe extern "system" fn(sharedmem: *const ::core::ffi::c_void, memory: *mut ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_GET_APP_MODE_INFO = ::core::option::Option<unsafe extern "system" fn(userfunction: *mut u32, argument1: *mut usize, argument2: *mut usize, userdata: *mut SecBuffer, returntolsa: *mut super::super::super::Foundation::BOOLEAN) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_GET_AUTH_DATA_FOR_USER = ::core::option::Option<unsafe extern "system" fn(name: *const super::super::super::Foundation::UNICODE_STRING, nametype: SECPKG_NAME_TYPE, prefix: *const super::super::super::Foundation::UNICODE_STRING, userauthdata: *mut *mut u8, userauthdatasize: *mut u32, userflatname: *mut super::super::super::Foundation::UNICODE_STRING) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_GET_CALL_INFO = ::core::option::Option<unsafe extern "system" fn(info: *mut SECPKG_CALL_INFO) -> super::super::super::Foundation::BOOLEAN>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_GET_CLIENT_INFO = ::core::option::Option<unsafe extern "system" fn(clientinfo: *mut SECPKG_CLIENT_INFO) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
-pub type PLSA_GET_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, authenticationpackage: u32, querycontext: *mut u32, retrieveallcredentials: super::super::super::Foundation::BOOLEAN, primarykeyvalue: *const super::super::super::System::Kernel::STRING, primarykeylength: *mut u32, credentials: *const super::super::super::System::Kernel::STRING) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_GET_EXTENDED_CALL_FLAGS = ::core::option::Option<unsafe extern "system" fn(flags: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_GET_SERVICE_ACCOUNT_PASSWORD = ::core::option::Option<unsafe extern "system" fn(accountname: *const super::super::super::Foundation::UNICODE_STRING, domainname: *const super::super::super::Foundation::UNICODE_STRING, credfetch: CRED_FETCH, filetimeexpiry: *mut super::super::super::Foundation::FILETIME, currentpassword: *mut super::super::super::Foundation::UNICODE_STRING, previouspassword: *mut super::super::super::Foundation::UNICODE_STRING, filetimecurrpwdvalidforoutbound: *mut super::super::super::Foundation::FILETIME) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_GET_USER_AUTH_DATA = ::core::option::Option<unsafe extern "system" fn(userhandle: *const ::core::ffi::c_void, userauthdata: *mut *mut u8, userauthdatasize: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_GET_USER_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(userhandle: *const ::core::ffi::c_void, primarycreds: *mut *mut ::core::ffi::c_void, primarycredssize: *mut u32, supplementalcreds: *mut *mut ::core::ffi::c_void, supplementalcredssize: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_IMPERSONATE_CLIENT = ::core::option::Option<unsafe extern "system" fn() -> super::super::super::Foundation::NTSTATUS>;
+pub type PLSA_GET_APP_MODE_INFO = ::core::option::Option<unsafe extern "system" fn(userfunction: *mut u32, argument1: *mut usize, argument2: *mut usize, userdata: *mut SecBuffer, returntolsa: *mut ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_GET_AUTH_DATA_FOR_USER = ::core::option::Option<unsafe extern "system" fn(name: *const ::win32_foundation_sys::UNICODE_STRING, nametype: SECPKG_NAME_TYPE, prefix: *const ::win32_foundation_sys::UNICODE_STRING, userauthdata: *mut *mut u8, userauthdatasize: *mut u32, userflatname: *mut ::win32_foundation_sys::UNICODE_STRING) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_GET_CALL_INFO = ::core::option::Option<unsafe extern "system" fn(info: *mut SECPKG_CALL_INFO) -> ::win32_foundation_sys::BOOLEAN>;
+pub type PLSA_GET_CLIENT_INFO = ::core::option::Option<unsafe extern "system" fn(clientinfo: *mut SECPKG_CLIENT_INFO) -> ::win32_foundation_sys::NTSTATUS>;
+#[cfg(feature = "Win32_System_Kernel")]
+pub type PLSA_GET_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, authenticationpackage: u32, querycontext: *mut u32, retrieveallcredentials: ::win32_foundation_sys::BOOLEAN, primarykeyvalue: *const ::win32_system_sys::Kernel::STRING, primarykeylength: *mut u32, credentials: *const ::win32_system_sys::Kernel::STRING) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_GET_EXTENDED_CALL_FLAGS = ::core::option::Option<unsafe extern "system" fn(flags: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_GET_SERVICE_ACCOUNT_PASSWORD = ::core::option::Option<unsafe extern "system" fn(accountname: *const ::win32_foundation_sys::UNICODE_STRING, domainname: *const ::win32_foundation_sys::UNICODE_STRING, credfetch: CRED_FETCH, filetimeexpiry: *mut ::win32_foundation_sys::FILETIME, currentpassword: *mut ::win32_foundation_sys::UNICODE_STRING, previouspassword: *mut ::win32_foundation_sys::UNICODE_STRING, filetimecurrpwdvalidforoutbound: *mut ::win32_foundation_sys::FILETIME) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_GET_USER_AUTH_DATA = ::core::option::Option<unsafe extern "system" fn(userhandle: *const ::core::ffi::c_void, userauthdata: *mut *mut u8, userauthdatasize: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_GET_USER_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(userhandle: *const ::core::ffi::c_void, primarycreds: *mut *mut ::core::ffi::c_void, primarycredssize: *mut u32, supplementalcreds: *mut *mut ::core::ffi::c_void, supplementalcredssize: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_IMPERSONATE_CLIENT = ::core::option::Option<unsafe extern "system" fn() -> ::win32_foundation_sys::NTSTATUS>;
 pub type PLSA_LOCATE_PKG_BY_ID = ::core::option::Option<unsafe extern "system" fn(packgeid: u32) -> *mut ::core::ffi::c_void>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_MAP_BUFFER = ::core::option::Option<unsafe extern "system" fn(inputbuffer: *const SecBuffer, outputbuffer: *mut SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_OPEN_SAM_USER = ::core::option::Option<unsafe extern "system" fn(name: *const super::super::super::Foundation::UNICODE_STRING, nametype: SECPKG_NAME_TYPE, prefix: *const super::super::super::Foundation::UNICODE_STRING, allowguest: super::super::super::Foundation::BOOLEAN, reserved: u32, userhandle: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_OPEN_TOKEN_BY_LOGON_ID = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, rettokenhandle: *mut super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::NTSTATUS>;
+pub type PLSA_MAP_BUFFER = ::core::option::Option<unsafe extern "system" fn(inputbuffer: *const SecBuffer, outputbuffer: *mut SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_OPEN_SAM_USER = ::core::option::Option<unsafe extern "system" fn(name: *const ::win32_foundation_sys::UNICODE_STRING, nametype: SECPKG_NAME_TYPE, prefix: *const ::win32_foundation_sys::UNICODE_STRING, allowguest: ::win32_foundation_sys::BOOLEAN, reserved: u32, userhandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_OPEN_TOKEN_BY_LOGON_ID = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, rettokenhandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::NTSTATUS>;
 pub type PLSA_PROTECT_MEMORY = ::core::option::Option<unsafe extern "system" fn(buffer: *mut ::core::ffi::c_void, buffersize: u32)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_QUERY_CLIENT_REQUEST = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, querytype: u32, replybuffer: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_REDIRECTED_LOGON_CALLBACK = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: super::super::super::Foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32, returnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_REDIRECTED_LOGON_CLEANUP_CALLBACK = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: super::super::super::Foundation::HANDLE)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_REDIRECTED_LOGON_GET_LOGON_CREDS = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: super::super::super::Foundation::HANDLE, logonbuffer: *mut *mut u8, logonbufferlength: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_REDIRECTED_LOGON_GET_SUPP_CREDS = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: super::super::super::Foundation::HANDLE, supplementalcredentials: *mut *mut SECPKG_SUPPLEMENTAL_CRED_ARRAY) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_REDIRECTED_LOGON_INIT = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: super::super::super::Foundation::HANDLE, packagename: *const super::super::super::Foundation::UNICODE_STRING, sessionid: u32, logonid: *const super::super::super::Foundation::LUID) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_REGISTER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackid: u32, callback: PLSA_CALLBACK_FUNCTION) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
-pub type PLSA_REGISTER_NOTIFICATION = ::core::option::Option<unsafe extern "system" fn(startfunction: super::super::super::System::Threading::LPTHREAD_START_ROUTINE, parameter: *const ::core::ffi::c_void, notificationtype: u32, notificationclass: u32, notificationflags: u32, intervalminutes: u32, waitevent: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::HANDLE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_SAVE_SUPPLEMENTAL_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, supplementalcredsize: u32, supplementalcreds: *const ::core::ffi::c_void, synchronous: super::super::super::Foundation::BOOLEAN) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_SET_APP_MODE_INFO = ::core::option::Option<unsafe extern "system" fn(userfunction: u32, argument1: usize, argument2: usize, userdata: *const SecBuffer, returntolsa: super::super::super::Foundation::BOOLEAN) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_UNLOAD_PACKAGE = ::core::option::Option<unsafe extern "system" fn() -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLSA_UPDATE_PRIMARY_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(primarycredentials: *const SECPKG_PRIMARY_CRED, credentials: *const SECPKG_SUPPLEMENTAL_CRED_ARRAY) -> super::super::super::Foundation::NTSTATUS>;
+pub type PLSA_QUERY_CLIENT_REQUEST = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, querytype: u32, replybuffer: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_REDIRECTED_LOGON_CALLBACK = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: ::win32_foundation_sys::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32, returnbuffer: *mut *mut ::core::ffi::c_void, returnbufferlength: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_REDIRECTED_LOGON_CLEANUP_CALLBACK = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: ::win32_foundation_sys::HANDLE)>;
+pub type PLSA_REDIRECTED_LOGON_GET_LOGON_CREDS = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: ::win32_foundation_sys::HANDLE, logonbuffer: *mut *mut u8, logonbufferlength: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_REDIRECTED_LOGON_GET_SUPP_CREDS = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: ::win32_foundation_sys::HANDLE, supplementalcredentials: *mut *mut SECPKG_SUPPLEMENTAL_CRED_ARRAY) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_REDIRECTED_LOGON_INIT = ::core::option::Option<unsafe extern "system" fn(redirectedlogonhandle: ::win32_foundation_sys::HANDLE, packagename: *const ::win32_foundation_sys::UNICODE_STRING, sessionid: u32, logonid: *const ::win32_foundation_sys::LUID) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_REGISTER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackid: u32, callback: PLSA_CALLBACK_FUNCTION) -> ::win32_foundation_sys::NTSTATUS>;
+#[cfg(feature = "Win32_System_Threading")]
+pub type PLSA_REGISTER_NOTIFICATION = ::core::option::Option<unsafe extern "system" fn(startfunction: ::win32_system_sys::Threading::LPTHREAD_START_ROUTINE, parameter: *const ::core::ffi::c_void, notificationtype: u32, notificationclass: u32, notificationflags: u32, intervalminutes: u32, waitevent: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE>;
+pub type PLSA_SAVE_SUPPLEMENTAL_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, supplementalcredsize: u32, supplementalcreds: *const ::core::ffi::c_void, synchronous: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_SET_APP_MODE_INFO = ::core::option::Option<unsafe extern "system" fn(userfunction: u32, argument1: usize, argument2: usize, userdata: *const SecBuffer, returntolsa: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_UNLOAD_PACKAGE = ::core::option::Option<unsafe extern "system" fn() -> ::win32_foundation_sys::NTSTATUS>;
+pub type PLSA_UPDATE_PRIMARY_CREDENTIALS = ::core::option::Option<unsafe extern "system" fn(primarycredentials: *const SECPKG_PRIMARY_CRED, credentials: *const SECPKG_SUPPLEMENTAL_CRED_ARRAY) -> ::win32_foundation_sys::NTSTATUS>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_ACCOUNT_DOMAIN_INFO {
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub DomainSid: super::super::super::Foundation::PSID,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DomainSid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_ACCOUNT_DOMAIN_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_ACCOUNT_DOMAIN_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3500,15 +3109,12 @@ impl ::core::clone::Clone for POLICY_AUDIT_CATEGORIES_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_AUDIT_EVENTS_INFO {
-    pub AuditingMode: super::super::super::Foundation::BOOLEAN,
+    pub AuditingMode: ::win32_foundation_sys::BOOLEAN,
     pub EventAuditingOptions: *mut u32,
     pub MaximumAuditEventCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_AUDIT_EVENTS_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_AUDIT_EVENTS_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3529,27 +3135,21 @@ pub const AuditCategoryDirectoryServiceAccess: POLICY_AUDIT_EVENT_TYPE = 7i32;
 pub const AuditCategoryAccountLogon: POLICY_AUDIT_EVENT_TYPE = 8i32;
 pub const POLICY_AUDIT_EVENT_UNCHANGED: i32 = 0i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_AUDIT_FULL_QUERY_INFO {
-    pub ShutDownOnFull: super::super::super::Foundation::BOOLEAN,
-    pub LogIsFull: super::super::super::Foundation::BOOLEAN,
+    pub ShutDownOnFull: ::win32_foundation_sys::BOOLEAN,
+    pub LogIsFull: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_AUDIT_FULL_QUERY_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_AUDIT_FULL_QUERY_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_AUDIT_FULL_SET_INFO {
-    pub ShutDownOnFull: super::super::super::Foundation::BOOLEAN,
+    pub ShutDownOnFull: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_AUDIT_FULL_SET_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_AUDIT_FULL_SET_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3557,32 +3157,26 @@ impl ::core::clone::Clone for POLICY_AUDIT_FULL_SET_INFO {
 }
 pub const POLICY_AUDIT_LOG_ADMIN: i32 = 512i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_AUDIT_LOG_INFO {
     pub AuditLogPercentFull: u32,
     pub MaximumLogSize: u32,
     pub AuditRetentionPeriod: i64,
-    pub AuditLogFullShutdownInProgress: super::super::super::Foundation::BOOLEAN,
+    pub AuditLogFullShutdownInProgress: ::win32_foundation_sys::BOOLEAN,
     pub TimeToShutdown: i64,
     pub NextAuditRecordId: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_AUDIT_LOG_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_AUDIT_LOG_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_AUDIT_SID_ARRAY {
     pub UsersCount: u32,
-    pub UserSidArray: *mut super::super::super::Foundation::PSID,
+    pub UserSidArray: *mut ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_AUDIT_SID_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_AUDIT_SID_ARRAY {
     fn clone(&self) -> Self {
         *self
@@ -3613,17 +3207,14 @@ impl ::core::clone::Clone for POLICY_DEFAULT_QUOTA_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_DNS_DOMAIN_INFO {
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
-    pub DnsDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub DnsForestName: super::super::super::Foundation::UNICODE_STRING,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
+    pub DnsDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DnsForestName: ::win32_foundation_sys::UNICODE_STRING,
     pub DomainGuid: ::windows_core_sys::GUID,
-    pub Sid: super::super::super::Foundation::PSID,
+    pub Sid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_DNS_DOMAIN_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_DNS_DOMAIN_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3692,14 +3283,11 @@ impl ::core::clone::Clone for POLICY_LSA_SERVER_ROLE_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_MACHINE_ACCT_INFO {
     pub Rid: u32,
-    pub Sid: super::super::super::Foundation::PSID,
+    pub Sid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_MACHINE_ACCT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_MACHINE_ACCT_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3728,27 +3316,21 @@ pub const PolicyNotifyMachineAccountPasswordInformation: POLICY_NOTIFICATION_INF
 pub const PolicyNotifyGlobalSaclInformation: POLICY_NOTIFICATION_INFORMATION_CLASS = 8i32;
 pub const PolicyNotifyMax: POLICY_NOTIFICATION_INFORMATION_CLASS = 9i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_PD_ACCOUNT_INFO {
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_PD_ACCOUNT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_PD_ACCOUNT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_PRIMARY_DOMAIN_INFO {
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
-    pub Sid: super::super::super::Foundation::PSID,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
+    pub Sid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_PRIMARY_DOMAIN_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_PRIMARY_DOMAIN_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3763,14 +3345,11 @@ pub const POLICY_QOS_OUTBOUND_INTEGRITY: u32 = 2u32;
 pub const POLICY_QOS_RAS_SERVER_ALLOWED: u32 = 64u32;
 pub const POLICY_QOS_SCHANNEL_REQUIRED: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICY_REPLICA_SOURCE_INFO {
-    pub ReplicaSource: super::super::super::Foundation::UNICODE_STRING,
-    pub ReplicaAccountName: super::super::super::Foundation::UNICODE_STRING,
+    pub ReplicaSource: ::win32_foundation_sys::UNICODE_STRING,
+    pub ReplicaAccountName: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICY_REPLICA_SOURCE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICY_REPLICA_SOURCE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3808,18 +3387,12 @@ pub const PRIMARY_CRED_SUPPLEMENTAL: u32 = 4194304u32;
 pub const PRIMARY_CRED_TRANSFER: u32 = 8192u32;
 pub const PRIMARY_CRED_UPDATE: u32 = 4u32;
 pub type PSAM_CREDENTIAL_UPDATE_FREE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(p: *const ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSAM_CREDENTIAL_UPDATE_NOTIFY_ROUTINE = ::core::option::Option<unsafe extern "system" fn(clearpassword: *const super::super::super::Foundation::UNICODE_STRING, oldcredentials: *const ::core::ffi::c_void, oldcredentialsize: u32, useraccountcontrol: u32, upn: *const super::super::super::Foundation::UNICODE_STRING, username: *const super::super::super::Foundation::UNICODE_STRING, netbiosdomainname: *const super::super::super::Foundation::UNICODE_STRING, dnsdomainname: *const super::super::super::Foundation::UNICODE_STRING, newcredentials: *mut *mut ::core::ffi::c_void, newcredentialsize: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSAM_CREDENTIAL_UPDATE_REGISTER_MAPPED_ENTRYPOINTS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(table: *mut SAM_REGISTER_MAPPING_TABLE) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSAM_CREDENTIAL_UPDATE_REGISTER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(credentialname: *mut super::super::super::Foundation::UNICODE_STRING) -> super::super::super::Foundation::BOOLEAN>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSAM_INIT_NOTIFICATION_ROUTINE = ::core::option::Option<unsafe extern "system" fn() -> super::super::super::Foundation::BOOLEAN>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSAM_PASSWORD_FILTER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(accountname: *const super::super::super::Foundation::UNICODE_STRING, fullname: *const super::super::super::Foundation::UNICODE_STRING, password: *const super::super::super::Foundation::UNICODE_STRING, setoperation: super::super::super::Foundation::BOOLEAN) -> super::super::super::Foundation::BOOLEAN>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSAM_PASSWORD_NOTIFICATION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(username: *mut super::super::super::Foundation::UNICODE_STRING, relativeid: u32, newpassword: *mut super::super::super::Foundation::UNICODE_STRING) -> super::super::super::Foundation::NTSTATUS>;
+pub type PSAM_CREDENTIAL_UPDATE_NOTIFY_ROUTINE = ::core::option::Option<unsafe extern "system" fn(clearpassword: *const ::win32_foundation_sys::UNICODE_STRING, oldcredentials: *const ::core::ffi::c_void, oldcredentialsize: u32, useraccountcontrol: u32, upn: *const ::win32_foundation_sys::UNICODE_STRING, username: *const ::win32_foundation_sys::UNICODE_STRING, netbiosdomainname: *const ::win32_foundation_sys::UNICODE_STRING, dnsdomainname: *const ::win32_foundation_sys::UNICODE_STRING, newcredentials: *mut *mut ::core::ffi::c_void, newcredentialsize: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PSAM_CREDENTIAL_UPDATE_REGISTER_MAPPED_ENTRYPOINTS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(table: *mut SAM_REGISTER_MAPPING_TABLE) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PSAM_CREDENTIAL_UPDATE_REGISTER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(credentialname: *mut ::win32_foundation_sys::UNICODE_STRING) -> ::win32_foundation_sys::BOOLEAN>;
+pub type PSAM_INIT_NOTIFICATION_ROUTINE = ::core::option::Option<unsafe extern "system" fn() -> ::win32_foundation_sys::BOOLEAN>;
+pub type PSAM_PASSWORD_FILTER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(accountname: *const ::win32_foundation_sys::UNICODE_STRING, fullname: *const ::win32_foundation_sys::UNICODE_STRING, password: *const ::win32_foundation_sys::UNICODE_STRING, setoperation: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::BOOLEAN>;
+pub type PSAM_PASSWORD_NOTIFICATION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(username: *mut ::win32_foundation_sys::UNICODE_STRING, relativeid: u32, newpassword: *mut ::win32_foundation_sys::UNICODE_STRING) -> ::win32_foundation_sys::NTSTATUS>;
 #[repr(C)]
 pub struct PctPublicKey {
     pub Type: u32,
@@ -3870,43 +3443,34 @@ pub const SAM_INIT_NOTIFICATION_ROUTINE: &str = "InitializeChangeNotify";
 pub const SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE: &str = "PasswordChangeNotify";
 pub const SAM_PASSWORD_FILTER_ROUTINE: &str = "PasswordFilter";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAM_REGISTER_MAPPING_ELEMENT {
     pub Original: ::windows_core_sys::PSTR,
     pub Mapped: ::windows_core_sys::PSTR,
-    pub Continuable: super::super::super::Foundation::BOOLEAN,
+    pub Continuable: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAM_REGISTER_MAPPING_ELEMENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAM_REGISTER_MAPPING_ELEMENT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAM_REGISTER_MAPPING_LIST {
     pub Count: u32,
     pub Elements: *mut SAM_REGISTER_MAPPING_ELEMENT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAM_REGISTER_MAPPING_LIST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAM_REGISTER_MAPPING_LIST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAM_REGISTER_MAPPING_TABLE {
     pub Count: u32,
     pub Lists: *mut SAM_REGISTER_MAPPING_LIST,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAM_REGISTER_MAPPING_TABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAM_REGISTER_MAPPING_TABLE {
     fn clone(&self) -> Self {
         *self
@@ -3977,7 +3541,7 @@ impl ::core::clone::Clone for SCHANNEL_CLIENT_SIGNATURE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct SCHANNEL_CRED {
     pub dwVersion: u32,
     pub cCreds: u32,
@@ -3994,9 +3558,9 @@ pub struct SCHANNEL_CRED {
     pub dwFlags: SCHANNEL_CRED_FLAGS,
     pub dwCredFormat: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for SCHANNEL_CRED {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for SCHANNEL_CRED {
     fn clone(&self) -> Self {
         *self
@@ -4176,17 +3740,14 @@ pub const SECPKGCONTEXT_CIPHERINFO_V1: u32 = 1u32;
 pub const SECPKGCONTEXT_CONNECTION_INFO_EX_V1: u32 = 1u32;
 pub const SECPKG_ANSI_ATTRIBUTE: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_APP_MODE_INFO {
     pub UserFunction: u32,
     pub Argument1: usize,
     pub Argument2: usize,
     pub UserData: SecBuffer,
-    pub ReturnToLsa: super::super::super::Foundation::BOOLEAN,
+    pub ReturnToLsa: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_APP_MODE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_APP_MODE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -4327,33 +3888,27 @@ pub const SecPkgCallPackageUnpinAllDcsMessage: SECPKG_CALL_PACKAGE_MESSAGE_TYPE 
 pub const SecPkgCallPackageTransferCredMessage: SECPKG_CALL_PACKAGE_MESSAGE_TYPE = 1026i32;
 pub const SecPkgCallPackageMaxMessage: SECPKG_CALL_PACKAGE_MESSAGE_TYPE = 1026i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_CALL_PACKAGE_PIN_DC_REQUEST {
     pub MessageType: u32,
     pub Flags: u32,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub DcName: super::super::super::Foundation::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DcName: ::win32_foundation_sys::UNICODE_STRING,
     pub DcFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_CALL_PACKAGE_PIN_DC_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_CALL_PACKAGE_PIN_DC_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_CALL_PACKAGE_TRANSFER_CRED_REQUEST {
     pub MessageType: u32,
-    pub OriginLogonId: super::super::super::Foundation::LUID,
-    pub DestinationLogonId: super::super::super::Foundation::LUID,
+    pub OriginLogonId: ::win32_foundation_sys::LUID,
+    pub DestinationLogonId: ::win32_foundation_sys::LUID,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_CALL_PACKAGE_TRANSFER_CRED_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_CALL_PACKAGE_TRANSFER_CRED_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -4384,21 +3939,18 @@ pub const SECPKG_CALL_WOWA32: u32 = 262144u32;
 pub const SECPKG_CALL_WOWCLIENT: u32 = 64u32;
 pub const SECPKG_CALL_WOWX86: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_CLIENT_INFO {
-    pub LogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
     pub ProcessID: u32,
     pub ThreadID: u32,
-    pub HasTcbPrivilege: super::super::super::Foundation::BOOLEAN,
-    pub Impersonating: super::super::super::Foundation::BOOLEAN,
-    pub Restricted: super::super::super::Foundation::BOOLEAN,
+    pub HasTcbPrivilege: ::win32_foundation_sys::BOOLEAN,
+    pub Impersonating: ::win32_foundation_sys::BOOLEAN,
+    pub Restricted: ::win32_foundation_sys::BOOLEAN,
     pub ClientFlags: u8,
     pub ImpersonationLevel: super::super::SECURITY_IMPERSONATION_LEVEL,
-    pub ClientToken: super::super::super::Foundation::HANDLE,
+    pub ClientToken: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_CLIENT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_CLIENT_INFO {
     fn clone(&self) -> Self {
         *self
@@ -4421,26 +3973,23 @@ pub type SECPKG_CRED = u32;
 pub const SECPKG_CRED_INBOUND: SECPKG_CRED = 1u32;
 pub const SECPKG_CRED_OUTBOUND: SECPKG_CRED = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_CREDENTIAL {
     pub Version: u64,
     pub cbHeaderLength: u16,
     pub cbStructureLength: u32,
     pub ClientProcess: u32,
     pub ClientThread: u32,
-    pub LogonId: super::super::super::Foundation::LUID,
-    pub ClientToken: super::super::super::Foundation::HANDLE,
+    pub LogonId: ::win32_foundation_sys::LUID,
+    pub ClientToken: ::win32_foundation_sys::HANDLE,
     pub SessionId: u32,
-    pub ModifiedId: super::super::super::Foundation::LUID,
+    pub ModifiedId: ::win32_foundation_sys::LUID,
     pub fCredentials: u32,
     pub Flags: u32,
     pub PrincipalName: SECPKG_BYTE_VECTOR,
     pub PackageList: SECPKG_BYTE_VECTOR,
     pub MarshaledSuppliedCreds: SECPKG_BYTE_VECTOR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_CREDENTIAL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_CREDENTIAL {
     fn clone(&self) -> Self {
         *self
@@ -4467,16 +4016,13 @@ pub const SECPKG_CRED_DEFAULT: u32 = 4u32;
 pub const SECPKG_CRED_PROCESS_POLICY_ONLY: u32 = 32u32;
 pub const SECPKG_CRED_RESERVED: u32 = 4026531840u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_DLL_FUNCTIONS {
     pub AllocateHeap: PLSA_ALLOCATE_LSA_HEAP,
     pub FreeHeap: PLSA_FREE_LSA_HEAP,
     pub RegisterCallback: PLSA_REGISTER_CALLBACK,
     pub LocatePackageById: PLSA_LOCATE_PKG_BY_ID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_DLL_FUNCTIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_DLL_FUNCTIONS {
     fn clone(&self) -> Self {
         *self
@@ -4497,15 +4043,12 @@ impl ::core::clone::Clone for SECPKG_EVENT_NOTIFY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_EVENT_PACKAGE_CHANGE {
     pub ChangeType: SECPKG_PACKAGE_CHANGE_TYPE,
     pub PackageId: usize,
-    pub PackageName: super::super::super::Foundation::UNICODE_STRING,
+    pub PackageName: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_EVENT_PACKAGE_CHANGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_EVENT_PACKAGE_CHANGE {
     fn clone(&self) -> Self {
         *self
@@ -4523,21 +4066,17 @@ impl ::core::clone::Clone for SECPKG_EVENT_ROLE_CHANGE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_EXTENDED_INFORMATION {
     pub Class: SECPKG_EXTENDED_INFORMATION_CLASS,
     pub Info: SECPKG_EXTENDED_INFORMATION_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_EXTENDED_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_EXTENDED_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union SECPKG_EXTENDED_INFORMATION_0 {
     pub GssInfo: SECPKG_GSS_INFO,
     pub ContextThunks: SECPKG_CONTEXT_THUNKS,
@@ -4546,9 +4085,7 @@ pub union SECPKG_EXTENDED_INFORMATION_0 {
     pub ExtraOids: SECPKG_EXTRA_OIDS,
     pub Nego2Info: SECPKG_NEGO2_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_EXTENDED_INFORMATION_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_EXTENDED_INFORMATION_0 {
     fn clone(&self) -> Self {
         *self
@@ -4600,7 +4137,7 @@ pub const SECPKG_FLAG_RESTRICTED_TOKENS: u32 = 524288u32;
 pub const SECPKG_FLAG_STREAM: u32 = 1024u32;
 pub const SECPKG_FLAG_TOKEN_ONLY: u32 = 4u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
 pub struct SECPKG_FUNCTION_TABLE {
     pub InitializePackage: PLSA_AP_INITIALIZE_PACKAGE,
     pub LogonUserA: PLSA_AP_LOGON_USER,
@@ -4645,9 +4182,9 @@ pub struct SECPKG_FUNCTION_TABLE {
     pub PreLogonUserSurrogate: PLSA_AP_PRE_LOGON_USER_SURROGATE,
     pub PostLogonUserSurrogate: PLSA_AP_POST_LOGON_USER_SURROGATE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
 impl ::core::marker::Copy for SECPKG_FUNCTION_TABLE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
 impl ::core::clone::Clone for SECPKG_FUNCTION_TABLE {
     fn clone(&self) -> Self {
         *self
@@ -4676,7 +4213,7 @@ pub const SECPKG_INTERFACE_VERSION_7: u32 = 4194304u32;
 pub const SECPKG_INTERFACE_VERSION_8: u32 = 8388608u32;
 pub const SECPKG_INTERFACE_VERSION_9: u32 = 16777216u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct SECPKG_KERNEL_FUNCTIONS {
     pub AllocateHeap: PLSA_ALLOCATE_LSA_HEAP,
     pub FreeHeap: PLSA_FREE_LSA_HEAP,
@@ -4688,16 +4225,16 @@ pub struct SECPKG_KERNEL_FUNCTIONS {
     pub SerializeSchannelAuthData: PKSEC_SERIALIZE_SCHANNEL_AUTH_DATA,
     pub LocatePackageById: PKSEC_LOCATE_PKG_BY_ID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for SECPKG_KERNEL_FUNCTIONS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for SECPKG_KERNEL_FUNCTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 pub struct SECPKG_KERNEL_FUNCTION_TABLE {
     pub Initialize: KspInitPackageFn,
     pub DeleteContext: KspDeleteContextFn,
@@ -4715,9 +4252,9 @@ pub struct SECPKG_KERNEL_FUNCTION_TABLE {
     pub SetPackagePagingMode: KspSetPagingModeFn,
     pub SerializeAuthData: KspSerializeAuthDataFn,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::marker::Copy for SECPKG_KERNEL_FUNCTION_TABLE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
+#[cfg(feature = "Win32_System_Kernel")]
 impl ::core::clone::Clone for SECPKG_KERNEL_FUNCTION_TABLE {
     fn clone(&self) -> Self {
         *self
@@ -4763,89 +4300,77 @@ pub const SECPKG_PACKAGE_CHANGE_LOAD: SECPKG_PACKAGE_CHANGE_TYPE = 0u32;
 pub const SECPKG_PACKAGE_CHANGE_UNLOAD: SECPKG_PACKAGE_CHANGE_TYPE = 1u32;
 pub const SECPKG_PACKAGE_CHANGE_SELECT: SECPKG_PACKAGE_CHANGE_TYPE = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_PARAMETERS {
     pub Version: u32,
     pub MachineState: u32,
     pub SetupMode: u32,
-    pub DomainSid: super::super::super::Foundation::PSID,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub DnsDomainName: super::super::super::Foundation::UNICODE_STRING,
+    pub DomainSid: ::win32_foundation_sys::PSID,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DnsDomainName: ::win32_foundation_sys::UNICODE_STRING,
     pub DomainGuid: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_POST_LOGON_USER_INFO {
     pub Flags: u32,
-    pub LogonId: super::super::super::Foundation::LUID,
-    pub LinkedLogonId: super::super::super::Foundation::LUID,
+    pub LogonId: ::win32_foundation_sys::LUID,
+    pub LinkedLogonId: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_POST_LOGON_USER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_POST_LOGON_USER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_PRIMARY_CRED {
-    pub LogonId: super::super::super::Foundation::LUID,
-    pub DownlevelName: super::super::super::Foundation::UNICODE_STRING,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub Password: super::super::super::Foundation::UNICODE_STRING,
-    pub OldPassword: super::super::super::Foundation::UNICODE_STRING,
-    pub UserSid: super::super::super::Foundation::PSID,
+    pub LogonId: ::win32_foundation_sys::LUID,
+    pub DownlevelName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Password: ::win32_foundation_sys::UNICODE_STRING,
+    pub OldPassword: ::win32_foundation_sys::UNICODE_STRING,
+    pub UserSid: ::win32_foundation_sys::PSID,
     pub Flags: u32,
-    pub DnsDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub Upn: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonServer: super::super::super::Foundation::UNICODE_STRING,
-    pub Spare1: super::super::super::Foundation::UNICODE_STRING,
-    pub Spare2: super::super::super::Foundation::UNICODE_STRING,
-    pub Spare3: super::super::super::Foundation::UNICODE_STRING,
-    pub Spare4: super::super::super::Foundation::UNICODE_STRING,
+    pub DnsDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Upn: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonServer: ::win32_foundation_sys::UNICODE_STRING,
+    pub Spare1: ::win32_foundation_sys::UNICODE_STRING,
+    pub Spare2: ::win32_foundation_sys::UNICODE_STRING,
+    pub Spare3: ::win32_foundation_sys::UNICODE_STRING,
+    pub Spare4: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_PRIMARY_CRED {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_PRIMARY_CRED {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_PRIMARY_CRED_EX {
-    pub LogonId: super::super::super::Foundation::LUID,
-    pub DownlevelName: super::super::super::Foundation::UNICODE_STRING,
-    pub DomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub Password: super::super::super::Foundation::UNICODE_STRING,
-    pub OldPassword: super::super::super::Foundation::UNICODE_STRING,
-    pub UserSid: super::super::super::Foundation::PSID,
+    pub LogonId: ::win32_foundation_sys::LUID,
+    pub DownlevelName: ::win32_foundation_sys::UNICODE_STRING,
+    pub DomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Password: ::win32_foundation_sys::UNICODE_STRING,
+    pub OldPassword: ::win32_foundation_sys::UNICODE_STRING,
+    pub UserSid: ::win32_foundation_sys::PSID,
     pub Flags: u32,
-    pub DnsDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub Upn: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonServer: super::super::super::Foundation::UNICODE_STRING,
-    pub Spare1: super::super::super::Foundation::UNICODE_STRING,
-    pub Spare2: super::super::super::Foundation::UNICODE_STRING,
-    pub Spare3: super::super::super::Foundation::UNICODE_STRING,
-    pub Spare4: super::super::super::Foundation::UNICODE_STRING,
+    pub DnsDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Upn: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonServer: ::win32_foundation_sys::UNICODE_STRING,
+    pub Spare1: ::win32_foundation_sys::UNICODE_STRING,
+    pub Spare2: ::win32_foundation_sys::UNICODE_STRING,
+    pub Spare3: ::win32_foundation_sys::UNICODE_STRING,
+    pub Spare4: ::win32_foundation_sys::UNICODE_STRING,
     pub PackageId: usize,
-    pub PrevLogonId: super::super::super::Foundation::LUID,
+    pub PrevLogonId: ::win32_foundation_sys::LUID,
     pub FlagsEx: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_PRIMARY_CRED_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_PRIMARY_CRED_EX {
     fn clone(&self) -> Self {
         *self
@@ -4853,19 +4378,16 @@ impl ::core::clone::Clone for SECPKG_PRIMARY_CRED_EX {
 }
 pub const SECPKG_PRIMARY_CRED_EX_FLAGS_EX_DELEGATION_TOKEN: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_REDIRECTED_LOGON_BUFFER {
     pub RedirectedLogonGuid: ::windows_core_sys::GUID,
-    pub RedirectedLogonHandle: super::super::super::Foundation::HANDLE,
+    pub RedirectedLogonHandle: ::win32_foundation_sys::HANDLE,
     pub Init: PLSA_REDIRECTED_LOGON_INIT,
     pub Callback: PLSA_REDIRECTED_LOGON_CALLBACK,
     pub CleanupCallback: PLSA_REDIRECTED_LOGON_CLEANUP_CALLBACK,
     pub GetLogonCreds: PLSA_REDIRECTED_LOGON_GET_LOGON_CREDS,
     pub GetSupplementalCreds: PLSA_REDIRECTED_LOGON_GET_SUPP_CREDS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_REDIRECTED_LOGON_BUFFER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_REDIRECTED_LOGON_BUFFER {
     fn clone(&self) -> Self {
         *self
@@ -4904,29 +4426,23 @@ pub const SECPKG_STATE_STANDALONE: u32 = 16u32;
 pub const SECPKG_STATE_STRONG_ENCRYPTION_PERMITTED: u32 = 2u32;
 pub const SECPKG_STATE_WORKSTATION: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_SUPPLEMENTAL_CRED {
-    pub PackageName: super::super::super::Foundation::UNICODE_STRING,
+    pub PackageName: ::win32_foundation_sys::UNICODE_STRING,
     pub CredentialSize: u32,
     pub Credentials: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_SUPPLEMENTAL_CRED {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_SUPPLEMENTAL_CRED {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_SUPPLEMENTAL_CRED_ARRAY {
     pub CredentialCount: u32,
     pub Credentials: [SECPKG_SUPPLEMENTAL_CRED; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_SUPPLEMENTAL_CRED_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_SUPPLEMENTAL_CRED_ARRAY {
     fn clone(&self) -> Self {
         *self
@@ -4948,16 +4464,13 @@ impl ::core::clone::Clone for SECPKG_SUPPLIED_CREDENTIAL {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_SURROGATE_LOGON {
     pub Version: u32,
-    pub SurrogateLogonID: super::super::super::Foundation::LUID,
+    pub SurrogateLogonID: ::win32_foundation_sys::LUID,
     pub EntryCount: u32,
     pub Entries: *mut SECPKG_SURROGATE_LOGON_ENTRY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_SURROGATE_LOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_SURROGATE_LOGON {
     fn clone(&self) -> Self {
         *self
@@ -4976,14 +4489,11 @@ impl ::core::clone::Clone for SECPKG_SURROGATE_LOGON_ENTRY {
 }
 pub const SECPKG_SURROGATE_LOGON_VERSION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_TARGETINFO {
-    pub DomainSid: super::super::super::Foundation::PSID,
+    pub DomainSid: ::win32_foundation_sys::PSID,
     pub ComputerName: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_TARGETINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_TARGETINFO {
     fn clone(&self) -> Self {
         *self
@@ -4992,7 +4502,6 @@ impl ::core::clone::Clone for SECPKG_TARGETINFO {
 pub const SECPKG_UNICODE_ATTRIBUTE: u32 = 2147483648u32;
 pub const SECPKG_USERMODEINIT_NAME: &str = "SpUserModeInitialize";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_USER_FUNCTION_TABLE {
     pub InstanceInit: SpInstanceInitFn,
     pub InitUserModeContext: SpInitUserModeContextFn,
@@ -5010,22 +4519,17 @@ pub struct SECPKG_USER_FUNCTION_TABLE {
     pub ImportContext: SpImportSecurityContextFn,
     pub MarshalAttributeData: SpMarshalAttributeDataFn,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_USER_FUNCTION_TABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_USER_FUNCTION_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECPKG_WOW_CLIENT_DLL {
-    pub WowClientDllPath: super::super::super::Foundation::UNICODE_STRING,
+    pub WowClientDllPath: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECPKG_WOW_CLIENT_DLL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECPKG_WOW_CLIENT_DLL {
     fn clone(&self) -> Self {
         *self
@@ -5041,35 +4545,32 @@ pub const SECURITY_ENTRYPOINT_ANSI: &str = "InitSecurityInterfaceW";
 pub const SECURITY_ENTRYPOINT_ANSIA: &str = "InitSecurityInterfaceA";
 pub const SECURITY_ENTRYPOINT_ANSIW: &str = "InitSecurityInterfaceW";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECURITY_LOGON_SESSION_DATA {
     pub Size: u32,
-    pub LogonId: super::super::super::Foundation::LUID,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonDomain: super::super::super::Foundation::UNICODE_STRING,
-    pub AuthenticationPackage: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonId: ::win32_foundation_sys::LUID,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonDomain: ::win32_foundation_sys::UNICODE_STRING,
+    pub AuthenticationPackage: ::win32_foundation_sys::UNICODE_STRING,
     pub LogonType: u32,
     pub Session: u32,
-    pub Sid: super::super::super::Foundation::PSID,
+    pub Sid: ::win32_foundation_sys::PSID,
     pub LogonTime: i64,
-    pub LogonServer: super::super::super::Foundation::UNICODE_STRING,
-    pub DnsDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub Upn: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonServer: ::win32_foundation_sys::UNICODE_STRING,
+    pub DnsDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Upn: ::win32_foundation_sys::UNICODE_STRING,
     pub UserFlags: u32,
     pub LastLogonInfo: LSA_LAST_INTER_LOGON_INFO,
-    pub LogonScript: super::super::super::Foundation::UNICODE_STRING,
-    pub ProfilePath: super::super::super::Foundation::UNICODE_STRING,
-    pub HomeDirectory: super::super::super::Foundation::UNICODE_STRING,
-    pub HomeDirectoryDrive: super::super::super::Foundation::UNICODE_STRING,
+    pub LogonScript: ::win32_foundation_sys::UNICODE_STRING,
+    pub ProfilePath: ::win32_foundation_sys::UNICODE_STRING,
+    pub HomeDirectory: ::win32_foundation_sys::UNICODE_STRING,
+    pub HomeDirectoryDrive: ::win32_foundation_sys::UNICODE_STRING,
     pub LogoffTime: i64,
     pub KickOffTime: i64,
     pub PasswordLastSet: i64,
     pub PasswordCanChange: i64,
     pub PasswordMustChange: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECURITY_LOGON_SESSION_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECURITY_LOGON_SESSION_DATA {
     fn clone(&self) -> Self {
         *self
@@ -5124,16 +4625,13 @@ pub const SECURITY_SUPPORT_PROVIDER_INTERFACE_VERSION_3: u32 = 3u32;
 pub const SECURITY_SUPPORT_PROVIDER_INTERFACE_VERSION_4: u32 = 4u32;
 pub const SECURITY_SUPPORT_PROVIDER_INTERFACE_VERSION_5: u32 = 5u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECURITY_USER_DATA {
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonDomainName: super::super::super::Foundation::UNICODE_STRING,
-    pub LogonServer: super::super::super::Foundation::UNICODE_STRING,
-    pub pSid: super::super::super::Foundation::PSID,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonDomainName: ::win32_foundation_sys::UNICODE_STRING,
+    pub LogonServer: ::win32_foundation_sys::UNICODE_STRING,
+    pub pSid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECURITY_USER_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECURITY_USER_DATA {
     fn clone(&self) -> Self {
         *self
@@ -5420,8 +4918,8 @@ pub const SEC_WINNT_AUTH_IDENTITY_FLAGS_USER_PROTECTED: u32 = 64u32;
 pub union SEC_WINNT_AUTH_IDENTITY_INFO {
     pub AuthIdExw: SEC_WINNT_AUTH_IDENTITY_EXW,
     pub AuthIdExa: SEC_WINNT_AUTH_IDENTITY_EXA,
-    pub AuthId_a: super::super::super::System::Rpc::SEC_WINNT_AUTH_IDENTITY_A,
-    pub AuthId_w: super::super::super::System::Rpc::SEC_WINNT_AUTH_IDENTITY_W,
+    pub AuthId_a: ::win32_system_sys::Rpc::SEC_WINNT_AUTH_IDENTITY_A,
+    pub AuthId_w: ::win32_system_sys::Rpc::SEC_WINNT_AUTH_IDENTITY_W,
     pub AuthIdEx2: SEC_WINNT_AUTH_IDENTITY_EX2,
 }
 #[cfg(feature = "Win32_System_Rpc")]
@@ -6218,8 +5716,7 @@ pub const SSL2SP_NAME_W: &str = "Microsoft SSL 2.0";
 pub const SSL3SP_NAME: &str = "Microsoft SSL 3.0";
 pub const SSL3SP_NAME_A: &str = "Microsoft SSL 3.0";
 pub const SSL3SP_NAME_W: &str = "Microsoft SSL 3.0";
-#[cfg(feature = "Win32_Foundation")]
-pub type SSL_CRACK_CERTIFICATE_FN = ::core::option::Option<unsafe extern "system" fn(pbcertificate: *mut u8, cbcertificate: u32, verifysignature: super::super::super::Foundation::BOOL, ppcertificate: *mut *mut X509Certificate) -> super::super::super::Foundation::BOOL>;
+pub type SSL_CRACK_CERTIFICATE_FN = ::core::option::Option<unsafe extern "system" fn(pbcertificate: *mut u8, cbcertificate: u32, verifysignature: ::win32_foundation_sys::BOOL, ppcertificate: *mut *mut X509Certificate) -> ::win32_foundation_sys::BOOL>;
 pub const SSL_CRACK_CERTIFICATE_NAME: &str = "SslCrackCertificate";
 #[repr(C)]
 pub struct SSL_CREDENTIAL_CERTIFICATE {
@@ -6235,11 +5732,8 @@ impl ::core::clone::Clone for SSL_CREDENTIAL_CERTIFICATE {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type SSL_EMPTY_CACHE_FN_A = ::core::option::Option<unsafe extern "system" fn(psztargetname: ::windows_core_sys::PCSTR, dwflags: u32) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SSL_EMPTY_CACHE_FN_W = ::core::option::Option<unsafe extern "system" fn(psztargetname: ::windows_core_sys::PCWSTR, dwflags: u32) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
+pub type SSL_EMPTY_CACHE_FN_A = ::core::option::Option<unsafe extern "system" fn(psztargetname: ::windows_core_sys::PCSTR, dwflags: u32) -> ::win32_foundation_sys::BOOL>;
+pub type SSL_EMPTY_CACHE_FN_W = ::core::option::Option<unsafe extern "system" fn(psztargetname: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::win32_foundation_sys::BOOL>;
 pub type SSL_FREE_CERTIFICATE_FN = ::core::option::Option<unsafe extern "system" fn(pcertificate: *mut X509Certificate)>;
 pub const SSL_FREE_CERTIFICATE_NAME: &str = "SslFreeCertificate";
 pub const SSL_SESSION_RECONNECT: u32 = 1u32;
@@ -7019,13 +6513,10 @@ impl ::core::clone::Clone for SecPkgContext_TokenBinding {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SecPkgContext_UiInfo {
-    pub hParentWindow: super::super::super::Foundation::HWND,
+    pub hParentWindow: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SecPkgContext_UiInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SecPkgContext_UiInfo {
     fn clone(&self) -> Self {
         *self
@@ -7053,21 +6544,18 @@ impl ::core::clone::Clone for SecPkgCred_CipherStrengths {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SecPkgCred_ClientCertPolicy {
     pub dwFlags: u32,
     pub guidPolicyId: ::windows_core_sys::GUID,
     pub dwCertFlags: u32,
     pub dwUrlRetrievalTimeout: u32,
-    pub fCheckRevocationFreshnessTime: super::super::super::Foundation::BOOL,
+    pub fCheckRevocationFreshnessTime: ::win32_foundation_sys::BOOL,
     pub dwRevocationFreshnessTime: u32,
-    pub fOmitUsageCheck: super::super::super::Foundation::BOOL,
+    pub fOmitUsageCheck: ::win32_foundation_sys::BOOL,
     pub pwszSslCtlStoreName: ::windows_core_sys::PWSTR,
     pub pwszSslCtlIdentifier: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SecPkgCred_ClientCertPolicy {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SecPkgCred_ClientCertPolicy {
     fn clone(&self) -> Self {
         *self
@@ -7219,7 +6707,7 @@ impl ::core::clone::Clone for SecPkgInfoW {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 pub struct SecurityFunctionTableA {
     pub dwVersion: u32,
     pub EnumerateSecurityPackagesA: ENUMERATE_SECURITY_PACKAGES_FN_A,
@@ -7254,16 +6742,16 @@ pub struct SecurityFunctionTableA {
     pub QueryContextAttributesExA: QUERY_CONTEXT_ATTRIBUTES_EX_FN_A,
     pub QueryCredentialsAttributesExA: QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_A,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::marker::Copy for SecurityFunctionTableA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::clone::Clone for SecurityFunctionTableA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 pub struct SecurityFunctionTableW {
     pub dwVersion: u32,
     pub EnumerateSecurityPackagesW: ENUMERATE_SECURITY_PACKAGES_FN_W,
@@ -7298,104 +6786,61 @@ pub struct SecurityFunctionTableW {
     pub QueryContextAttributesExW: QUERY_CONTEXT_ATTRIBUTES_EX_FN_W,
     pub QueryCredentialsAttributesExW: QUERY_CREDENTIALS_ATTRIBUTES_EX_FN_W,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::marker::Copy for SecurityFunctionTableW {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials"))]
+#[cfg(feature = "Win32_Security_Credentials")]
 impl ::core::clone::Clone for SecurityFunctionTableW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type SpAcceptCredentialsFn = ::core::option::Option<unsafe extern "system" fn(logontype: SECURITY_LOGON_TYPE, accountname: *const super::super::super::Foundation::UNICODE_STRING, primarycredentials: *const SECPKG_PRIMARY_CRED, supplementalcredentials: *const SECPKG_SUPPLEMENTAL_CRED) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpAcceptLsaModeContextFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, contexthandle: usize, inputbuffer: *const SecBufferDesc, contextrequirements: u32, targetdatarep: u32, newcontexthandle: *mut usize, outputbuffer: *mut SecBufferDesc, contextattributes: *mut u32, expirationtime: *mut i64, mappedcontext: *mut super::super::super::Foundation::BOOLEAN, contextdata: *mut SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpAcquireCredentialsHandleFn = ::core::option::Option<unsafe extern "system" fn(principalname: *const super::super::super::Foundation::UNICODE_STRING, credentialuseflags: u32, logonid: *const super::super::super::Foundation::LUID, authorizationdata: *const ::core::ffi::c_void, getkeyfunciton: *const ::core::ffi::c_void, getkeyargument: *const ::core::ffi::c_void, credentialhandle: *mut usize, expirationtime: *mut i64) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpAddCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, principalname: *const super::super::super::Foundation::UNICODE_STRING, package: *const super::super::super::Foundation::UNICODE_STRING, credentialuseflags: u32, authorizationdata: *const ::core::ffi::c_void, getkeyfunciton: *const ::core::ffi::c_void, getkeyargument: *const ::core::ffi::c_void, expirationtime: *mut i64) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpApplyControlTokenFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, controltoken: *const SecBufferDesc) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpChangeAccountPasswordFn = ::core::option::Option<unsafe extern "system" fn(pdomainname: *const super::super::super::Foundation::UNICODE_STRING, paccountname: *const super::super::super::Foundation::UNICODE_STRING, poldpassword: *const super::super::super::Foundation::UNICODE_STRING, pnewpassword: *const super::super::super::Foundation::UNICODE_STRING, impersonating: super::super::super::Foundation::BOOLEAN, poutput: *mut SecBufferDesc) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpCompleteAuthTokenFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, inputbuffer: *const SecBufferDesc) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpDeleteContextFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpDeleteCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, key: *const SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpExchangeMetaDataFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, targetname: *const super::super::super::Foundation::UNICODE_STRING, contextrequirements: u32, metadatalength: u32, metadata: *const u8, contexthandle: *mut usize) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpExportSecurityContextFn = ::core::option::Option<unsafe extern "system" fn(phcontext: usize, fflags: u32, ppackedcontext: *mut SecBuffer, ptoken: *mut super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpFormatCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentials: *const SecBuffer, formattedcredentials: *mut SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpFreeCredentialsHandleFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpGetContextTokenFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, impersonationtoken: *mut super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpGetCredUIContextFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, credtype: *const ::windows_core_sys::GUID, flatcreduicontextlength: *mut u32, flatcreduicontext: *mut *mut u8) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpGetCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, credentials: *mut SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpGetExtendedInformationFn = ::core::option::Option<unsafe extern "system" fn(class: SECPKG_EXTENDED_INFORMATION_CLASS, ppinformation: *mut *mut SECPKG_EXTENDED_INFORMATION) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpGetInfoFn = ::core::option::Option<unsafe extern "system" fn(packageinfo: *mut SecPkgInfoA) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpGetRemoteCredGuardLogonBufferFn = ::core::option::Option<unsafe extern "system" fn(credhandle: usize, contexthandle: usize, targetname: *const super::super::super::Foundation::UNICODE_STRING, redirectedlogonhandle: *mut super::super::super::Foundation::HANDLE, callback: *mut PLSA_REDIRECTED_LOGON_CALLBACK, cleanupcallback: *mut PLSA_REDIRECTED_LOGON_CLEANUP_CALLBACK, logonbuffersize: *mut u32, logonbuffer: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpGetRemoteCredGuardSupplementalCredsFn = ::core::option::Option<unsafe extern "system" fn(credhandle: usize, targetname: *const super::super::super::Foundation::UNICODE_STRING, redirectedlogonhandle: *mut super::super::super::Foundation::HANDLE, callback: *mut PLSA_REDIRECTED_LOGON_CALLBACK, cleanupcallback: *mut PLSA_REDIRECTED_LOGON_CLEANUP_CALLBACK, supplementalcredssize: *mut u32, supplementalcreds: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpGetTbalSupplementalCredsFn = ::core::option::Option<unsafe extern "system" fn(logonid: super::super::super::Foundation::LUID, supplementalcredssize: *mut u32, supplementalcreds: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpGetUserInfoFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const super::super::super::Foundation::LUID, flags: u32, userdata: *mut *mut SECURITY_USER_DATA) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpImportSecurityContextFn = ::core::option::Option<unsafe extern "system" fn(ppackedcontext: *const SecBuffer, token: super::super::super::Foundation::HANDLE, phcontext: *mut usize) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpInitLsaModeContextFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, contexthandle: usize, targetname: *const super::super::super::Foundation::UNICODE_STRING, contextrequirements: u32, targetdatarep: u32, inputbuffers: *const SecBufferDesc, newcontexthandle: *mut usize, outputbuffers: *mut SecBufferDesc, contextattributes: *mut u32, expirationtime: *mut i64, mappedcontext: *mut super::super::super::Foundation::BOOLEAN, contextdata: *mut SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpInitUserModeContextFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, packedcontext: *const SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
-pub type SpInitializeFn = ::core::option::Option<unsafe extern "system" fn(packageid: usize, parameters: *const SECPKG_PARAMETERS, functiontable: *const LSA_SECPKG_FUNCTION_TABLE) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpInstanceInitFn = ::core::option::Option<unsafe extern "system" fn(version: u32, functiontable: *const SECPKG_DLL_FUNCTIONS, userfunctions: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
-pub type SpLsaModeInitializeFn = ::core::option::Option<unsafe extern "system" fn(lsaversion: u32, packageversion: *mut u32, pptables: *mut *mut SECPKG_FUNCTION_TABLE, pctables: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpMakeSignatureFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, qualityofprotection: u32, messagebuffers: *const SecBufferDesc, messagesequencenumber: u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpMarshalAttributeDataFn = ::core::option::Option<unsafe extern "system" fn(attributeinfo: u32, attribute: u32, attributedatasize: u32, attributedata: *const u8, marshaledattributedatasize: *mut u32, marshaledattributedata: *mut *mut u8) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpMarshallSupplementalCredsFn = ::core::option::Option<unsafe extern "system" fn(credentialsize: u32, credentials: *const u8, marshalledcredsize: *mut u32, marshalledcreds: *mut *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpQueryContextAttributesFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, contextattribute: u32, buffer: *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpQueryCredentialsAttributesFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, credentialattribute: u32, buffer: *mut ::core::ffi::c_void) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpQueryMetaDataFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, targetname: *const super::super::super::Foundation::UNICODE_STRING, contextrequirements: u32, metadatalength: *mut u32, metadata: *mut *mut u8, contexthandle: *mut usize) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpSaveCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, credentials: *const SecBuffer) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpSealMessageFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, qualityofprotection: u32, messagebuffers: *const SecBufferDesc, messagesequencenumber: u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpSetContextAttributesFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, contextattribute: u32, buffer: *const ::core::ffi::c_void, buffersize: u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpSetCredentialsAttributesFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, credentialattribute: u32, buffer: *const ::core::ffi::c_void, buffersize: u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpSetExtendedInformationFn = ::core::option::Option<unsafe extern "system" fn(class: SECPKG_EXTENDED_INFORMATION_CLASS, info: *const SECPKG_EXTENDED_INFORMATION) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpShutdownFn = ::core::option::Option<unsafe extern "system" fn() -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpUnsealMessageFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, messagebuffers: *const SecBufferDesc, messagesequencenumber: u32, qualityofprotection: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpUpdateCredentialsFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, credtype: *const ::windows_core_sys::GUID, flatcreduicontextlength: u32, flatcreduicontext: *const u8) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpUserModeInitializeFn = ::core::option::Option<unsafe extern "system" fn(lsaversion: u32, packageversion: *mut u32, pptables: *mut *mut SECPKG_USER_FUNCTION_TABLE, pctables: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpValidateTargetInfoFn = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbufferlength: u32, targetinfo: *const SECPKG_TARGETINFO) -> super::super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type SpVerifySignatureFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, messagebuffers: *const SecBufferDesc, messagesequencenumber: u32, qualityofprotection: *mut u32) -> super::super::super::Foundation::NTSTATUS>;
+pub type SpAcceptCredentialsFn = ::core::option::Option<unsafe extern "system" fn(logontype: SECURITY_LOGON_TYPE, accountname: *const ::win32_foundation_sys::UNICODE_STRING, primarycredentials: *const SECPKG_PRIMARY_CRED, supplementalcredentials: *const SECPKG_SUPPLEMENTAL_CRED) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpAcceptLsaModeContextFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, contexthandle: usize, inputbuffer: *const SecBufferDesc, contextrequirements: u32, targetdatarep: u32, newcontexthandle: *mut usize, outputbuffer: *mut SecBufferDesc, contextattributes: *mut u32, expirationtime: *mut i64, mappedcontext: *mut ::win32_foundation_sys::BOOLEAN, contextdata: *mut SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpAcquireCredentialsHandleFn = ::core::option::Option<unsafe extern "system" fn(principalname: *const ::win32_foundation_sys::UNICODE_STRING, credentialuseflags: u32, logonid: *const ::win32_foundation_sys::LUID, authorizationdata: *const ::core::ffi::c_void, getkeyfunciton: *const ::core::ffi::c_void, getkeyargument: *const ::core::ffi::c_void, credentialhandle: *mut usize, expirationtime: *mut i64) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpAddCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, principalname: *const ::win32_foundation_sys::UNICODE_STRING, package: *const ::win32_foundation_sys::UNICODE_STRING, credentialuseflags: u32, authorizationdata: *const ::core::ffi::c_void, getkeyfunciton: *const ::core::ffi::c_void, getkeyargument: *const ::core::ffi::c_void, expirationtime: *mut i64) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpApplyControlTokenFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, controltoken: *const SecBufferDesc) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpChangeAccountPasswordFn = ::core::option::Option<unsafe extern "system" fn(pdomainname: *const ::win32_foundation_sys::UNICODE_STRING, paccountname: *const ::win32_foundation_sys::UNICODE_STRING, poldpassword: *const ::win32_foundation_sys::UNICODE_STRING, pnewpassword: *const ::win32_foundation_sys::UNICODE_STRING, impersonating: ::win32_foundation_sys::BOOLEAN, poutput: *mut SecBufferDesc) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpCompleteAuthTokenFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, inputbuffer: *const SecBufferDesc) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpDeleteContextFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpDeleteCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, key: *const SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpExchangeMetaDataFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, targetname: *const ::win32_foundation_sys::UNICODE_STRING, contextrequirements: u32, metadatalength: u32, metadata: *const u8, contexthandle: *mut usize) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpExportSecurityContextFn = ::core::option::Option<unsafe extern "system" fn(phcontext: usize, fflags: u32, ppackedcontext: *mut SecBuffer, ptoken: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpFormatCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentials: *const SecBuffer, formattedcredentials: *mut SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpFreeCredentialsHandleFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpGetContextTokenFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, impersonationtoken: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpGetCredUIContextFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, credtype: *const ::windows_core_sys::GUID, flatcreduicontextlength: *mut u32, flatcreduicontext: *mut *mut u8) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpGetCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, credentials: *mut SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpGetExtendedInformationFn = ::core::option::Option<unsafe extern "system" fn(class: SECPKG_EXTENDED_INFORMATION_CLASS, ppinformation: *mut *mut SECPKG_EXTENDED_INFORMATION) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpGetInfoFn = ::core::option::Option<unsafe extern "system" fn(packageinfo: *mut SecPkgInfoA) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpGetRemoteCredGuardLogonBufferFn = ::core::option::Option<unsafe extern "system" fn(credhandle: usize, contexthandle: usize, targetname: *const ::win32_foundation_sys::UNICODE_STRING, redirectedlogonhandle: *mut ::win32_foundation_sys::HANDLE, callback: *mut PLSA_REDIRECTED_LOGON_CALLBACK, cleanupcallback: *mut PLSA_REDIRECTED_LOGON_CLEANUP_CALLBACK, logonbuffersize: *mut u32, logonbuffer: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpGetRemoteCredGuardSupplementalCredsFn = ::core::option::Option<unsafe extern "system" fn(credhandle: usize, targetname: *const ::win32_foundation_sys::UNICODE_STRING, redirectedlogonhandle: *mut ::win32_foundation_sys::HANDLE, callback: *mut PLSA_REDIRECTED_LOGON_CALLBACK, cleanupcallback: *mut PLSA_REDIRECTED_LOGON_CLEANUP_CALLBACK, supplementalcredssize: *mut u32, supplementalcreds: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpGetTbalSupplementalCredsFn = ::core::option::Option<unsafe extern "system" fn(logonid: ::win32_foundation_sys::LUID, supplementalcredssize: *mut u32, supplementalcreds: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpGetUserInfoFn = ::core::option::Option<unsafe extern "system" fn(logonid: *const ::win32_foundation_sys::LUID, flags: u32, userdata: *mut *mut SECURITY_USER_DATA) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpImportSecurityContextFn = ::core::option::Option<unsafe extern "system" fn(ppackedcontext: *const SecBuffer, token: ::win32_foundation_sys::HANDLE, phcontext: *mut usize) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpInitLsaModeContextFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, contexthandle: usize, targetname: *const ::win32_foundation_sys::UNICODE_STRING, contextrequirements: u32, targetdatarep: u32, inputbuffers: *const SecBufferDesc, newcontexthandle: *mut usize, outputbuffers: *mut SecBufferDesc, contextattributes: *mut u32, expirationtime: *mut i64, mappedcontext: *mut ::win32_foundation_sys::BOOLEAN, contextdata: *mut SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpInitUserModeContextFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, packedcontext: *const SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+pub type SpInitializeFn = ::core::option::Option<unsafe extern "system" fn(packageid: usize, parameters: *const SECPKG_PARAMETERS, functiontable: *const LSA_SECPKG_FUNCTION_TABLE) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpInstanceInitFn = ::core::option::Option<unsafe extern "system" fn(version: u32, functiontable: *const SECPKG_DLL_FUNCTIONS, userfunctions: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+#[cfg(all(feature = "Win32_Security_Credentials", feature = "Win32_System_Kernel", feature = "Win32_System_Threading"))]
+pub type SpLsaModeInitializeFn = ::core::option::Option<unsafe extern "system" fn(lsaversion: u32, packageversion: *mut u32, pptables: *mut *mut SECPKG_FUNCTION_TABLE, pctables: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpMakeSignatureFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, qualityofprotection: u32, messagebuffers: *const SecBufferDesc, messagesequencenumber: u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpMarshalAttributeDataFn = ::core::option::Option<unsafe extern "system" fn(attributeinfo: u32, attribute: u32, attributedatasize: u32, attributedata: *const u8, marshaledattributedatasize: *mut u32, marshaledattributedata: *mut *mut u8) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpMarshallSupplementalCredsFn = ::core::option::Option<unsafe extern "system" fn(credentialsize: u32, credentials: *const u8, marshalledcredsize: *mut u32, marshalledcreds: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpQueryContextAttributesFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, contextattribute: u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpQueryCredentialsAttributesFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, credentialattribute: u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpQueryMetaDataFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, targetname: *const ::win32_foundation_sys::UNICODE_STRING, contextrequirements: u32, metadatalength: *mut u32, metadata: *mut *mut u8, contexthandle: *mut usize) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpSaveCredentialsFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, credentials: *const SecBuffer) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpSealMessageFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, qualityofprotection: u32, messagebuffers: *const SecBufferDesc, messagesequencenumber: u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpSetContextAttributesFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, contextattribute: u32, buffer: *const ::core::ffi::c_void, buffersize: u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpSetCredentialsAttributesFn = ::core::option::Option<unsafe extern "system" fn(credentialhandle: usize, credentialattribute: u32, buffer: *const ::core::ffi::c_void, buffersize: u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpSetExtendedInformationFn = ::core::option::Option<unsafe extern "system" fn(class: SECPKG_EXTENDED_INFORMATION_CLASS, info: *const SECPKG_EXTENDED_INFORMATION) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpShutdownFn = ::core::option::Option<unsafe extern "system" fn() -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpUnsealMessageFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, messagebuffers: *const SecBufferDesc, messagesequencenumber: u32, qualityofprotection: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpUpdateCredentialsFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, credtype: *const ::windows_core_sys::GUID, flatcreduicontextlength: u32, flatcreduicontext: *const u8) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpUserModeInitializeFn = ::core::option::Option<unsafe extern "system" fn(lsaversion: u32, packageversion: *mut u32, pptables: *mut *mut SECPKG_USER_FUNCTION_TABLE, pctables: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpValidateTargetInfoFn = ::core::option::Option<unsafe extern "system" fn(clientrequest: *const *const ::core::ffi::c_void, protocolsubmitbuffer: *const ::core::ffi::c_void, clientbufferbase: *const ::core::ffi::c_void, submitbufferlength: u32, targetinfo: *const SECPKG_TARGETINFO) -> ::win32_foundation_sys::NTSTATUS>;
+pub type SpVerifySignatureFn = ::core::option::Option<unsafe extern "system" fn(contexthandle: usize, messagebuffers: *const SecBufferDesc, messagesequencenumber: u32, qualityofprotection: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
 pub type SslGetExtensionsFn = ::core::option::Option<unsafe extern "system" fn(clienthello: *const u8, clienthellobytesize: u32, genericextensions: *mut SCH_EXTENSION_DATA, genericextensionscount: u8, bytestoread: *mut u32, flags: SchGetExtensionsOptions) -> ::windows_core_sys::HRESULT>;
 pub type SslGetServerIdentityFn = ::core::option::Option<unsafe extern "system" fn(clienthello: *const u8, clienthellosize: u32, serveridentity: *mut *mut u8, serveridentitysize: *mut u32, flags: u32) -> ::windows_core_sys::HRESULT>;
 pub const TLS1SP_NAME: &str = "Microsoft TLS 1.0";
@@ -7497,14 +6942,11 @@ pub type TOKENBINDING_TYPE = i32;
 pub const TOKENBINDING_TYPE_PROVIDED: TOKENBINDING_TYPE = 0i32;
 pub const TOKENBINDING_TYPE_REFERRED: TOKENBINDING_TYPE = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRUSTED_CONTROLLERS_INFO {
     pub Entries: u32,
-    pub Names: *mut super::super::super::Foundation::UNICODE_STRING,
+    pub Names: *mut ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRUSTED_CONTROLLERS_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRUSTED_CONTROLLERS_INFO {
     fn clone(&self) -> Self {
         *self
@@ -7526,81 +6968,66 @@ impl ::core::clone::Clone for TRUSTED_DOMAIN_AUTH_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRUSTED_DOMAIN_FULL_INFORMATION {
     pub Information: TRUSTED_DOMAIN_INFORMATION_EX,
     pub PosixOffset: TRUSTED_POSIX_OFFSET_INFO,
     pub AuthInformation: TRUSTED_DOMAIN_AUTH_INFORMATION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRUSTED_DOMAIN_FULL_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRUSTED_DOMAIN_FULL_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRUSTED_DOMAIN_FULL_INFORMATION2 {
     pub Information: TRUSTED_DOMAIN_INFORMATION_EX2,
     pub PosixOffset: TRUSTED_POSIX_OFFSET_INFO,
     pub AuthInformation: TRUSTED_DOMAIN_AUTH_INFORMATION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRUSTED_DOMAIN_FULL_INFORMATION2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRUSTED_DOMAIN_FULL_INFORMATION2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRUSTED_DOMAIN_INFORMATION_EX {
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
-    pub FlatName: super::super::super::Foundation::UNICODE_STRING,
-    pub Sid: super::super::super::Foundation::PSID,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
+    pub FlatName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Sid: ::win32_foundation_sys::PSID,
     pub TrustDirection: TRUSTED_DOMAIN_TRUST_DIRECTION,
     pub TrustType: TRUSTED_DOMAIN_TRUST_TYPE,
     pub TrustAttributes: TRUSTED_DOMAIN_TRUST_ATTRIBUTES,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRUSTED_DOMAIN_INFORMATION_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRUSTED_DOMAIN_INFORMATION_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRUSTED_DOMAIN_INFORMATION_EX2 {
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
-    pub FlatName: super::super::super::Foundation::UNICODE_STRING,
-    pub Sid: super::super::super::Foundation::PSID,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
+    pub FlatName: ::win32_foundation_sys::UNICODE_STRING,
+    pub Sid: ::win32_foundation_sys::PSID,
     pub TrustDirection: u32,
     pub TrustType: u32,
     pub TrustAttributes: u32,
     pub ForestTrustLength: u32,
     pub ForestTrustInfo: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRUSTED_DOMAIN_INFORMATION_EX2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRUSTED_DOMAIN_INFORMATION_EX2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRUSTED_DOMAIN_NAME_INFO {
-    pub Name: super::super::super::Foundation::UNICODE_STRING,
+    pub Name: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRUSTED_DOMAIN_NAME_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRUSTED_DOMAIN_NAME_INFO {
     fn clone(&self) -> Self {
         *self
@@ -7649,14 +7076,11 @@ pub const TrustedDomainInformationEx2Internal: TRUSTED_INFORMATION_CLASS = 11i32
 pub const TrustedDomainFullInformation2Internal: TRUSTED_INFORMATION_CLASS = 12i32;
 pub const TrustedDomainSupportedEncryptionTypes: TRUSTED_INFORMATION_CLASS = 13i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRUSTED_PASSWORD_INFO {
-    pub Password: super::super::super::Foundation::UNICODE_STRING,
-    pub OldPassword: super::super::super::Foundation::UNICODE_STRING,
+    pub Password: ::win32_foundation_sys::UNICODE_STRING,
+    pub OldPassword: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRUSTED_PASSWORD_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRUSTED_PASSWORD_INFO {
     fn clone(&self) -> Self {
         *self
@@ -7697,7 +7121,6 @@ pub const UNISP_RPC_ID: u32 = 14u32;
 pub const USER_ACCOUNT_AUTO_LOCKED: u32 = 1024u32;
 pub const USER_ACCOUNT_DISABLED: u32 = 1u32;
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_ALL_INFORMATION {
     pub LastLogon: i64,
     pub LastLogoff: i64,
@@ -7705,19 +7128,19 @@ pub struct USER_ALL_INFORMATION {
     pub AccountExpires: i64,
     pub PasswordCanChange: i64,
     pub PasswordMustChange: i64,
-    pub UserName: super::super::super::Foundation::UNICODE_STRING,
-    pub FullName: super::super::super::Foundation::UNICODE_STRING,
-    pub HomeDirectory: super::super::super::Foundation::UNICODE_STRING,
-    pub HomeDirectoryDrive: super::super::super::Foundation::UNICODE_STRING,
-    pub ScriptPath: super::super::super::Foundation::UNICODE_STRING,
-    pub ProfilePath: super::super::super::Foundation::UNICODE_STRING,
-    pub AdminComment: super::super::super::Foundation::UNICODE_STRING,
-    pub WorkStations: super::super::super::Foundation::UNICODE_STRING,
-    pub UserComment: super::super::super::Foundation::UNICODE_STRING,
-    pub Parameters: super::super::super::Foundation::UNICODE_STRING,
-    pub LmPassword: super::super::super::Foundation::UNICODE_STRING,
-    pub NtPassword: super::super::super::Foundation::UNICODE_STRING,
-    pub PrivateData: super::super::super::Foundation::UNICODE_STRING,
+    pub UserName: ::win32_foundation_sys::UNICODE_STRING,
+    pub FullName: ::win32_foundation_sys::UNICODE_STRING,
+    pub HomeDirectory: ::win32_foundation_sys::UNICODE_STRING,
+    pub HomeDirectoryDrive: ::win32_foundation_sys::UNICODE_STRING,
+    pub ScriptPath: ::win32_foundation_sys::UNICODE_STRING,
+    pub ProfilePath: ::win32_foundation_sys::UNICODE_STRING,
+    pub AdminComment: ::win32_foundation_sys::UNICODE_STRING,
+    pub WorkStations: ::win32_foundation_sys::UNICODE_STRING,
+    pub UserComment: ::win32_foundation_sys::UNICODE_STRING,
+    pub Parameters: ::win32_foundation_sys::UNICODE_STRING,
+    pub LmPassword: ::win32_foundation_sys::UNICODE_STRING,
+    pub NtPassword: ::win32_foundation_sys::UNICODE_STRING,
+    pub PrivateData: ::win32_foundation_sys::UNICODE_STRING,
     pub SecurityDescriptor: SR_SECURITY_DESCRIPTOR,
     pub UserId: u32,
     pub PrimaryGroupId: u32,
@@ -7728,14 +7151,12 @@ pub struct USER_ALL_INFORMATION {
     pub LogonCount: u16,
     pub CountryCode: u16,
     pub CodePage: u16,
-    pub LmPasswordPresent: super::super::super::Foundation::BOOLEAN,
-    pub NtPasswordPresent: super::super::super::Foundation::BOOLEAN,
-    pub PasswordExpired: super::super::super::Foundation::BOOLEAN,
-    pub PrivateDataSensitive: super::super::super::Foundation::BOOLEAN,
+    pub LmPasswordPresent: ::win32_foundation_sys::BOOLEAN,
+    pub NtPasswordPresent: ::win32_foundation_sys::BOOLEAN,
+    pub PasswordExpired: ::win32_foundation_sys::BOOLEAN,
+    pub PrivateDataSensitive: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_ALL_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_ALL_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -7756,13 +7177,13 @@ pub const USER_PASSWORD_EXPIRED: u32 = 131072u32;
 pub const USER_PASSWORD_NOT_REQUIRED: u32 = 4u32;
 pub const USER_SERVER_TRUST_ACCOUNT: u32 = 256u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 pub struct USER_SESSION_KEY {
-    pub data: [super::super::super::System::PasswordManagement::CYPHER_BLOCK; 2],
+    pub data: [::win32_system_sys::PasswordManagement::CYPHER_BLOCK; 2],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 impl ::core::marker::Copy for USER_SESSION_KEY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_PasswordManagement"))]
+#[cfg(feature = "Win32_System_PasswordManagement")]
 impl ::core::clone::Clone for USER_SESSION_KEY {
     fn clone(&self) -> Self {
         *self
@@ -7782,20 +7203,17 @@ pub const WDIGEST_SP_NAME_A: &str = "WDigest";
 pub const WDIGEST_SP_NAME_W: &str = "WDigest";
 pub const WINDOWS_SLID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1439246132, data2: 54914, data3: 19825, data4: [152, 62, 214, 236, 63, 22, 5, 159] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct X509Certificate {
     pub Version: u32,
     pub SerialNumber: [u32; 4],
     pub SignatureAlgorithm: u32,
-    pub ValidFrom: super::super::super::Foundation::FILETIME,
-    pub ValidUntil: super::super::super::Foundation::FILETIME,
+    pub ValidFrom: ::win32_foundation_sys::FILETIME,
+    pub ValidUntil: ::win32_foundation_sys::FILETIME,
     pub pszIssuer: ::windows_core_sys::PSTR,
     pub pszSubject: ::windows_core_sys::PSTR,
     pub pPublicKey: *mut PctPublicKey,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for X509Certificate {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for X509Certificate {
     fn clone(&self) -> Self {
         *self

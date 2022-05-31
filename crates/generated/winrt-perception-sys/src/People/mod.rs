@@ -39,8 +39,8 @@ pub type HandMeshObserver = *mut ::core::ffi::c_void;
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct HandMeshVertex {
-    pub Position: super::super::Foundation::Numerics::Vector3,
-    pub Normal: super::super::Foundation::Numerics::Vector3,
+    pub Position: ::winrt_foundation_sys::Numerics::Vector3,
+    pub Normal: ::winrt_foundation_sys::Numerics::Vector3,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for HandMeshVertex {}
@@ -56,8 +56,8 @@ pub type HeadPose = *mut ::core::ffi::c_void;
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct JointPose {
-    pub Orientation: super::super::Foundation::Numerics::Quaternion,
-    pub Position: super::super::Foundation::Numerics::Vector3,
+    pub Orientation: ::winrt_foundation_sys::Numerics::Quaternion,
+    pub Position: ::winrt_foundation_sys::Numerics::Vector3,
     pub Radius: f32,
     pub Accuracy: JointPoseAccuracy,
 }

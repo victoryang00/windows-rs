@@ -1,13 +1,12 @@
 #[repr(transparent)]
 pub struct IGraphicsCaptureItemInterop(::windows_core::IUnknown);
 impl IGraphicsCaptureItemInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn CreateForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).CreateForWindow)(::windows_core::Interface::as_raw(self), window.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub unsafe fn CreateForMonitor<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Graphics::Gdi::HMONITOR>, T: ::windows_core::Interface>(&self, monitor: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn CreateForMonitor<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HMONITOR>, T: ::windows_core::Interface>(&self, monitor: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).CreateForMonitor)(::windows_core::Interface::as_raw(self), monitor.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -56,12 +55,9 @@ unsafe impl ::windows_core::Interface for IGraphicsCaptureItemInterop {
 #[doc(hidden)]
 pub struct IGraphicsCaptureItemInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: super::super::super::super::Foundation::HWND, riid: *const ::windows_core::GUID, result: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateForWindow: usize,
+    pub CreateForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, result: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub CreateForMonitor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, monitor: super::super::super::super::Graphics::Gdi::HMONITOR, riid: *const ::windows_core::GUID, result: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub CreateForMonitor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, monitor: ::win32_graphics::Gdi::HMONITOR, riid: *const ::windows_core::GUID, result: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     CreateForMonitor: usize,
 }

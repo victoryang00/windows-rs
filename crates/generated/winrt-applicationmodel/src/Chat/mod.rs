@@ -111,32 +111,28 @@ unsafe impl ::core::marker::Send for ChatCapabilities {}
 unsafe impl ::core::marker::Sync for ChatCapabilities {}
 pub struct ChatCapabilitiesManager;
 impl ChatCapabilitiesManager {
-    #[cfg(feature = "Foundation")]
-    pub fn GetCachedCapabilitiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(address: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatCapabilities>> {
+    pub fn GetCachedCapabilitiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(address: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatCapabilities>> {
         Self::IChatCapabilitiesManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCachedCapabilitiesAsync)(::windows_core::Interface::as_raw(this), address.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatCapabilities>>(result__)
+            (::windows_core::Interface::vtable(this).GetCachedCapabilitiesAsync)(::windows_core::Interface::as_raw(this), address.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatCapabilities>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCapabilitiesFromNetworkAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(address: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatCapabilities>> {
+    pub fn GetCapabilitiesFromNetworkAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(address: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatCapabilities>> {
         Self::IChatCapabilitiesManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCapabilitiesFromNetworkAsync)(::windows_core::Interface::as_raw(this), address.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatCapabilities>>(result__)
+            (::windows_core::Interface::vtable(this).GetCapabilitiesFromNetworkAsync)(::windows_core::Interface::as_raw(this), address.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatCapabilities>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCachedCapabilitiesForTransportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(address: Param0, transportid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatCapabilities>> {
+    pub fn GetCachedCapabilitiesForTransportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(address: Param0, transportid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatCapabilities>> {
         Self::IChatCapabilitiesManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCachedCapabilitiesForTransportAsync)(::windows_core::Interface::as_raw(this), address.into_param().abi(), transportid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatCapabilities>>(result__)
+            (::windows_core::Interface::vtable(this).GetCachedCapabilitiesForTransportAsync)(::windows_core::Interface::as_raw(this), address.into_param().abi(), transportid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatCapabilities>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCapabilitiesFromNetworkForTransportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(address: Param0, transportid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatCapabilities>> {
+    pub fn GetCapabilitiesFromNetworkForTransportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(address: Param0, transportid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatCapabilities>> {
         Self::IChatCapabilitiesManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCapabilitiesFromNetworkForTransportAsync)(::windows_core::Interface::as_raw(this), address.into_param().abi(), transportid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatCapabilities>>(result__)
+            (::windows_core::Interface::vtable(this).GetCapabilitiesFromNetworkForTransportAsync)(::windows_core::Interface::as_raw(this), address.into_param().abi(), transportid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatCapabilities>>(result__)
         })
     }
     pub fn IChatCapabilitiesManagerStatics<R, F: FnOnce(&IChatCapabilitiesManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -198,11 +194,11 @@ impl ChatConversation {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Participants(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn Participants(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Participants)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Participants)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn ThreadingInfo(&self) -> ::windows_core::Result<ChatConversationThreadingInfo> {
@@ -212,12 +208,11 @@ impl ChatConversation {
             (::windows_core::Interface::vtable(this).ThreadingInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ChatConversationThreadingInfo>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn DeleteAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).DeleteAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn GetMessageReader(&self) -> ::windows_core::Result<ChatMessageReader> {
@@ -227,28 +222,25 @@ impl ChatConversation {
             (::windows_core::Interface::vtable(this).GetMessageReader)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ChatMessageReader>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MarkAllMessagesAsReadAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn MarkAllMessagesAsReadAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MarkAllMessagesAsReadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).MarkAllMessagesAsReadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MarkMessagesAsReadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn MarkMessagesAsReadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MarkMessagesAsReadAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).MarkMessagesAsReadAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SaveAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SaveAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn NotifyLocalParticipantComposing<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, transportid: Param0, participantaddress: Param1, iscomposing: bool) -> ::windows_core::Result<()> {
@@ -259,16 +251,14 @@ impl ChatConversation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).NotifyRemoteParticipantComposing)(::windows_core::Interface::as_raw(this), transportid.into_param().abi(), participantaddress.into_param().abi(), iscomposing).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoteParticipantComposingChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<ChatConversation, RemoteParticipantComposingChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn RemoteParticipantComposingChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<ChatConversation, RemoteParticipantComposingChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).RemoteParticipantComposingChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).RemoteParticipantComposingChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveRemoteParticipantComposingChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveRemoteParticipantComposingChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRemoteParticipantComposingChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -389,19 +379,19 @@ unsafe impl ::core::marker::Sync for ChatConversation {}
 pub struct ChatConversationReader(::windows_core::IUnknown);
 impl ChatConversationReader {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReadBatchAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatConversation>>> {
+    pub fn ReadBatchAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatConversation>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadBatchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatConversation>>>(result__)
+            (::windows_core::Interface::vtable(this).ReadBatchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatConversation>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReadBatchWithCountAsync(&self, count: i32) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatConversation>>> {
+    pub fn ReadBatchWithCountAsync(&self, count: i32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatConversation>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadBatchWithCountAsync)(::windows_core::Interface::as_raw(this), count, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatConversation>>>(result__)
+            (::windows_core::Interface::vtable(this).ReadBatchWithCountAsync)(::windows_core::Interface::as_raw(this), count, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatConversation>>>(result__)
         }
     }
 }
@@ -521,11 +511,11 @@ impl ChatConversationThreadingInfo {
         unsafe { (::windows_core::Interface::vtable(this).SetConversationId)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Participants(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn Participants(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Participants)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Participants)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ChatConversationThreadingKind> {
@@ -698,11 +688,11 @@ impl ChatMessage {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Attachments(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<ChatMessageAttachment>> {
+    pub fn Attachments(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ChatMessageAttachment>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Attachments)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<ChatMessageAttachment>>(result__)
+            (::windows_core::Interface::vtable(this).Attachments)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ChatMessageAttachment>>(result__)
         }
     }
     pub fn Body(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -751,36 +741,34 @@ impl ChatMessage {
             (::windows_core::Interface::vtable(this).IsRead)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LocalTimestamp(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn LocalTimestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).LocalTimestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).LocalTimestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn NetworkTimestamp(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn NetworkTimestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).NetworkTimestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
-        }
-    }
-    #[cfg(feature = "Foundation_Collections")]
-    pub fn Recipients(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Recipients)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).NetworkTimestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RecipientSendStatuses(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ChatMessageStatus>> {
+    pub fn Recipients(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecipientSendStatuses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ChatMessageStatus>>(result__)
+            (::windows_core::Interface::vtable(this).Recipients)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+        }
+    }
+    #[cfg(feature = "Foundation_Collections")]
+    pub fn RecipientSendStatuses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ChatMessageStatus>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).RecipientSendStatuses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ChatMessageStatus>>(result__)
         }
     }
     pub fn Status(&self) -> ::windows_core::Result<ChatMessageStatus> {
@@ -878,8 +866,7 @@ impl ChatMessage {
             (::windows_core::Interface::vtable(this).IsSimMessage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetLocalTimestamp<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetLocalTimestamp<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IChatMessage2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetLocalTimestamp)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -905,8 +892,7 @@ impl ChatMessage {
         let this = &::windows_core::Interface::cast::<IChatMessage2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetMessageOperatorKind)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetNetworkTimestamp<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetNetworkTimestamp<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IChatMessage2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetNetworkTimestamp)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -956,11 +942,11 @@ impl ChatMessage {
         unsafe { (::windows_core::Interface::vtable(this).SetThreadingInfo)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RecipientsDeliveryInfos(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<ChatRecipientDeliveryInfo>> {
+    pub fn RecipientsDeliveryInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<ChatRecipientDeliveryInfo>> {
         let this = &::windows_core::Interface::cast::<IChatMessage2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecipientsDeliveryInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<ChatRecipientDeliveryInfo>>(result__)
+            (::windows_core::Interface::vtable(this).RecipientsDeliveryInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<ChatRecipientDeliveryInfo>>(result__)
         }
     }
     pub fn RemoteId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1080,15 +1066,15 @@ unsafe impl ::core::marker::Sync for ChatMessage {}
 pub struct ChatMessageAttachment(::windows_core::IUnknown);
 impl ChatMessageAttachment {
     #[cfg(feature = "Storage_Streams")]
-    pub fn DataStreamReference(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn DataStreamReference(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DataStreamReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).DataStreamReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetDataStreamReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDataStreamReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDataStreamReference)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1126,15 +1112,15 @@ impl ChatMessageAttachment {
         unsafe { (::windows_core::Interface::vtable(this).SetText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Thumbnail(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn Thumbnail(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = &::windows_core::Interface::cast::<IChatMessageAttachment2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Thumbnail)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).Thumbnail)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetThumbnail<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetThumbnail<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IChatMessageAttachment2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetThumbnail)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1161,7 +1147,7 @@ impl ChatMessageAttachment {
         unsafe { (::windows_core::Interface::vtable(this).SetOriginalFileName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateChatMessageAttachment<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamReference>>(mimetype: Param0, datastreamreference: Param1) -> ::windows_core::Result<ChatMessageAttachment> {
+    pub fn CreateChatMessageAttachment<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(mimetype: Param0, datastreamreference: Param1) -> ::windows_core::Result<ChatMessageAttachment> {
         Self::IChatMessageAttachmentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateChatMessageAttachment)(::windows_core::Interface::as_raw(this), mimetype.into_param().abi(), datastreamreference.into_param().abi(), result__.as_mut_ptr()).from_abi::<ChatMessageAttachment>(result__)
@@ -1246,11 +1232,10 @@ unsafe impl ::core::marker::Send for ChatMessageAttachment {}
 unsafe impl ::core::marker::Sync for ChatMessageAttachment {}
 pub struct ChatMessageBlocking;
 impl ChatMessageBlocking {
-    #[cfg(feature = "Foundation")]
-    pub fn MarkMessageAsBlockedAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(localchatmessageid: Param0, blocked: bool) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn MarkMessageAsBlockedAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(localchatmessageid: Param0, blocked: bool) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IChatMessageBlockingStatic(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MarkMessageAsBlockedAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), blocked, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).MarkMessageAsBlockedAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), blocked, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn IChatMessageBlockingStatic<R, F: FnOnce(&IChatMessageBlockingStatic) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1363,11 +1348,11 @@ impl ChatMessageChangeReader {
         unsafe { (::windows_core::Interface::vtable(this).AcceptChangesThrough)(::windows_core::Interface::as_raw(this), lastchangetoacknowledge.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReadBatchAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatMessageChange>>> {
+    pub fn ReadBatchAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatMessageChange>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadBatchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatMessageChange>>>(result__)
+            (::windows_core::Interface::vtable(this).ReadBatchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatMessageChange>>>(result__)
         }
     }
 }
@@ -1772,49 +1757,44 @@ unsafe impl ::windows_core::RuntimeType for ChatMessageKind {
 }
 pub struct ChatMessageManager;
 impl ChatMessageManager {
-    #[cfg(feature = "Foundation")]
-    pub fn RegisterTransportAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn RegisterTransportAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IChatMessageManager2Statics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterTransportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterTransportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetTransportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(transportid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatMessageTransport>> {
+    pub fn GetTransportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(transportid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatMessageTransport>> {
         Self::IChatMessageManager2Statics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTransportAsync)(::windows_core::Interface::as_raw(this), transportid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatMessageTransport>>(result__)
+            (::windows_core::Interface::vtable(this).GetTransportAsync)(::windows_core::Interface::as_raw(this), transportid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatMessageTransport>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetTransportsAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatMessageTransport>>> {
+    pub fn GetTransportsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatMessageTransport>>> {
         Self::IChatMessageManagerStatic(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTransportsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatMessageTransport>>>(result__)
+            (::windows_core::Interface::vtable(this).GetTransportsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatMessageTransport>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestStoreAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatMessageStore>> {
+    pub fn RequestStoreAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatMessageStore>> {
         Self::IChatMessageManagerStatic(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestStoreAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatMessageStore>>(result__)
+            (::windows_core::Interface::vtable(this).RequestStoreAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatMessageStore>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShowComposeSmsMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatMessage>>(message: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ShowComposeSmsMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatMessage>>(message: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IChatMessageManagerStatic(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowComposeSmsMessageAsync)(::windows_core::Interface::as_raw(this), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ShowComposeSmsMessageAsync)(::windows_core::Interface::as_raw(this), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn ShowSmsSettings() -> ::windows_core::Result<()> {
         Self::IChatMessageManagerStatic(|this| unsafe { (::windows_core::Interface::vtable(this).ShowSmsSettings)(::windows_core::Interface::as_raw(this)).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestSyncManagerAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatSyncManager>> {
+    pub fn RequestSyncManagerAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatSyncManager>> {
         Self::IChatMessageManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestSyncManagerAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatSyncManager>>(result__)
+            (::windows_core::Interface::vtable(this).RequestSyncManagerAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatSyncManager>>(result__)
         })
     }
     pub fn IChatMessageManager2Statics<R, F: FnOnce(&IChatMessageManager2Statics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1983,19 +1963,19 @@ unsafe impl ::windows_core::RuntimeType for ChatMessageOperatorKind {
 pub struct ChatMessageReader(::windows_core::IUnknown);
 impl ChatMessageReader {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReadBatchAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatMessage>>> {
+    pub fn ReadBatchAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatMessage>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadBatchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatMessage>>>(result__)
+            (::windows_core::Interface::vtable(this).ReadBatchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatMessage>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReadBatchWithCountAsync(&self, count: i32) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatMessage>>> {
+    pub fn ReadBatchWithCountAsync(&self, count: i32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatMessage>>> {
         let this = &::windows_core::Interface::cast::<IChatMessageReader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadBatchWithCountAsync)(::windows_core::Interface::as_raw(this), count, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ChatMessage>>>(result__)
+            (::windows_core::Interface::vtable(this).ReadBatchWithCountAsync)(::windows_core::Interface::as_raw(this), count, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ChatMessage>>>(result__)
         }
     }
 }
@@ -2126,28 +2106,25 @@ impl ChatMessageStore {
             (::windows_core::Interface::vtable(this).ChangeTracker)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ChatMessageChangeTracker>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localmessageid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn DeleteMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localmessageid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteMessageAsync)(::windows_core::Interface::as_raw(this), localmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).DeleteMessageAsync)(::windows_core::Interface::as_raw(this), localmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DownloadMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn DownloadMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DownloadMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).DownloadMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatMessage>> {
+    pub fn GetMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatMessage>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatMessage>>(result__)
+            (::windows_core::Interface::vtable(this).GetMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatMessage>>(result__)
         }
     }
     pub fn GetMessageReader1(&self) -> ::windows_core::Result<ChatMessageReader> {
@@ -2157,36 +2134,32 @@ impl ChatMessageStore {
             (::windows_core::Interface::vtable(this).GetMessageReader1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ChatMessageReader>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetMessageReader2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, recenttimelimit: Param0) -> ::windows_core::Result<ChatMessageReader> {
+    pub fn GetMessageReader2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, recenttimelimit: Param0) -> ::windows_core::Result<ChatMessageReader> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetMessageReader2)(::windows_core::Interface::as_raw(this), recenttimelimit.into_param().abi(), result__.as_mut_ptr()).from_abi::<ChatMessageReader>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MarkMessageReadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn MarkMessageReadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MarkMessageReadAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).MarkMessageReadAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RetrySendMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn RetrySendMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RetrySendMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).RetrySendMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SendMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatMessage>>(&self, chatmessage: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SendMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatMessage>>(&self, chatmessage: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendMessageAsync)(::windows_core::Interface::as_raw(this), chatmessage.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SendMessageAsync)(::windows_core::Interface::as_raw(this), chatmessage.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn ValidateMessage<'a, Param0: ::windows_core::IntoParam<'a, ChatMessage>>(&self, chatmessage: Param0) -> ::windows_core::Result<ChatMessageValidationResult> {
@@ -2196,49 +2169,45 @@ impl ChatMessageStore {
             (::windows_core::Interface::vtable(this).ValidateMessage)(::windows_core::Interface::as_raw(this), chatmessage.into_param().abi(), result__.as_mut_ptr()).from_abi::<ChatMessageValidationResult>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MessageChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<ChatMessageStore, ChatMessageChangedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn MessageChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<ChatMessageStore, ChatMessageChangedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MessageChanged)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MessageChanged)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMessageChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMessageChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMessageChanged)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ForwardMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, localchatmessageid: Param0, addresses: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatMessage>> {
+    pub fn ForwardMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, localchatmessageid: Param0, addresses: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatMessage>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ForwardMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), addresses.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatMessage>>(result__)
+            (::windows_core::Interface::vtable(this).ForwardMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), addresses.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatMessage>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetConversationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, conversationid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatConversation>> {
+    pub fn GetConversationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, conversationid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatConversation>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetConversationAsync)(::windows_core::Interface::as_raw(this), conversationid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatConversation>>(result__)
+            (::windows_core::Interface::vtable(this).GetConversationAsync)(::windows_core::Interface::as_raw(this), conversationid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatConversation>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetConversationForTransportsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, conversationid: Param0, transportids: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatConversation>> {
+    pub fn GetConversationForTransportsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, conversationid: Param0, transportids: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatConversation>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetConversationForTransportsAsync)(::windows_core::Interface::as_raw(this), conversationid.into_param().abi(), transportids.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatConversation>>(result__)
+            (::windows_core::Interface::vtable(this).GetConversationForTransportsAsync)(::windows_core::Interface::as_raw(this), conversationid.into_param().abi(), transportids.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatConversation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetConversationFromThreadingInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatConversationThreadingInfo>>(&self, threadinginfo: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatConversation>> {
+    pub fn GetConversationFromThreadingInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatConversationThreadingInfo>>(&self, threadinginfo: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatConversation>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetConversationFromThreadingInfoAsync)(::windows_core::Interface::as_raw(this), threadinginfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatConversation>>(result__)
+            (::windows_core::Interface::vtable(this).GetConversationFromThreadingInfoAsync)(::windows_core::Interface::as_raw(this), threadinginfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatConversation>>(result__)
         }
     }
     pub fn GetConversationReader(&self) -> ::windows_core::Result<ChatConversationReader> {
@@ -2249,51 +2218,48 @@ impl ChatMessageStore {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetConversationForTransportsReader<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, transportids: Param0) -> ::windows_core::Result<ChatConversationReader> {
+    pub fn GetConversationForTransportsReader<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, transportids: Param0) -> ::windows_core::Result<ChatConversationReader> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetConversationForTransportsReader)(::windows_core::Interface::as_raw(this), transportids.into_param().abi(), result__.as_mut_ptr()).from_abi::<ChatConversationReader>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetMessageByRemoteIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, transportid: Param0, remoteid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatMessage>> {
+    pub fn GetMessageByRemoteIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, transportid: Param0, remoteid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatMessage>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetMessageByRemoteIdAsync)(::windows_core::Interface::as_raw(this), transportid.into_param().abi(), remoteid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatMessage>>(result__)
+            (::windows_core::Interface::vtable(this).GetMessageByRemoteIdAsync)(::windows_core::Interface::as_raw(this), transportid.into_param().abi(), remoteid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatMessage>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetUnseenCountAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<i32>> {
+    pub fn GetUnseenCountAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<i32>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetUnseenCountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<i32>>(result__)
-        }
-    }
-    #[cfg(feature = "Foundation_Collections")]
-    pub fn GetUnseenCountForTransportsReaderAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, transportids: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<i32>> {
-        let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetUnseenCountForTransportsReaderAsync)(::windows_core::Interface::as_raw(this), transportids.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<i32>>(result__)
-        }
-    }
-    #[cfg(feature = "Foundation")]
-    pub fn MarkAsSeenAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
-        let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MarkAsSeenAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).GetUnseenCountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<i32>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MarkAsSeenForTransportsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, transportids: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn GetUnseenCountForTransportsReaderAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, transportids: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<i32>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MarkAsSeenForTransportsAsync)(::windows_core::Interface::as_raw(this), transportids.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).GetUnseenCountForTransportsReaderAsync)(::windows_core::Interface::as_raw(this), transportids.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<i32>>(result__)
+        }
+    }
+    pub fn MarkAsSeenAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
+        let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).MarkAsSeenAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
+        }
+    }
+    #[cfg(feature = "Foundation_Collections")]
+    pub fn MarkAsSeenForTransportsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, transportids: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
+        let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).MarkAsSeenForTransportsAsync)(::windows_core::Interface::as_raw(this), transportids.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn GetSearchReader<'a, Param0: ::windows_core::IntoParam<'a, ChatQueryOptions>>(&self, value: Param0) -> ::windows_core::Result<ChatSearchReader> {
@@ -2303,49 +2269,43 @@ impl ChatMessageStore {
             (::windows_core::Interface::vtable(this).GetSearchReader)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<ChatSearchReader>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SaveMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatMessage>>(&self, chatmessage: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SaveMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatMessage>>(&self, chatmessage: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveMessageAsync)(::windows_core::Interface::as_raw(this), chatmessage.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SaveMessageAsync)(::windows_core::Interface::as_raw(this), chatmessage.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryCancelDownloadMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryCancelDownloadMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryCancelDownloadMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryCancelDownloadMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryCancelSendMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryCancelSendMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, localchatmessageid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryCancelSendMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryCancelSendMessageAsync)(::windows_core::Interface::as_raw(this), localchatmessageid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StoreChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<ChatMessageStore, ChatMessageStoreChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn StoreChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<ChatMessageStore, ChatMessageStoreChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StoreChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StoreChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStoreChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStoreChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStoreChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetMessageBySyncIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, syncid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ChatMessage>> {
+    pub fn GetMessageBySyncIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, syncid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ChatMessage>> {
         let this = &::windows_core::Interface::cast::<IChatMessageStore3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetMessageBySyncIdAsync)(::windows_core::Interface::as_raw(this), syncid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ChatMessage>>(result__)
+            (::windows_core::Interface::vtable(this).GetMessageBySyncIdAsync)(::windows_core::Interface::as_raw(this), syncid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ChatMessage>>(result__)
         }
     }
 }
@@ -2542,12 +2502,11 @@ impl ChatMessageTransport {
             (::windows_core::Interface::vtable(this).TransportId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestSetAsNotificationProviderAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn RequestSetAsNotificationProviderAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestSetAsNotificationProviderAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).RequestSetAsNotificationProviderAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn Configuration(&self) -> ::windows_core::Result<ChatMessageTransportConfiguration> {
@@ -2662,19 +2621,19 @@ impl ChatMessageTransportConfiguration {
         }
     }
     #[cfg(feature = "Media_MediaProperties")]
-    pub fn SupportedVideoFormat(&self) -> ::windows_core::Result<super::super::Media::MediaProperties::MediaEncodingProfile> {
+    pub fn SupportedVideoFormat(&self) -> ::windows_core::Result<::winrt_media::MediaProperties::MediaEncodingProfile> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedVideoFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::MediaProperties::MediaEncodingProfile>(result__)
+            (::windows_core::Interface::vtable(this).SupportedVideoFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_media::MediaProperties::MediaEncodingProfile>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ExtendedProperties(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn ExtendedProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExtendedProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).ExtendedProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         }
     }
 }
@@ -2788,28 +2747,25 @@ unsafe impl ::windows_core::RuntimeType for ChatMessageTransportKind {
 #[repr(transparent)]
 pub struct ChatMessageValidationResult(::windows_core::IUnknown);
 impl ChatMessageValidationResult {
-    #[cfg(feature = "Foundation")]
-    pub fn MaxPartCount(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn MaxPartCount(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxPartCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).MaxPartCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PartCount(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn PartCount(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PartCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).PartCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemainingCharacterCountInPart(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn RemainingCharacterCountInPart(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RemainingCharacterCountInPart)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).RemainingCharacterCountInPart)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
     pub fn Status(&self) -> ::windows_core::Result<ChatMessageValidationStatus> {
@@ -3052,29 +3008,25 @@ impl ChatRecipientDeliveryInfo {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTransportAddress)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeliveryTime(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    pub fn DeliveryTime(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeliveryTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).DeliveryTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetDeliveryTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::super::Foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDeliveryTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDeliveryTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadTime(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    pub fn ReadTime(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).ReadTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetReadTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::super::Foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetReadTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetReadTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -3224,19 +3176,19 @@ unsafe impl ::windows_core::RuntimeType for ChatRestoreHistorySpan {
 pub struct ChatSearchReader(::windows_core::IUnknown);
 impl ChatSearchReader {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReadBatchAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<IChatItem>>> {
+    pub fn ReadBatchAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IChatItem>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadBatchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<IChatItem>>>(result__)
+            (::windows_core::Interface::vtable(this).ReadBatchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IChatItem>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReadBatchWithCountAsync(&self, count: i32) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<IChatItem>>> {
+    pub fn ReadBatchWithCountAsync(&self, count: i32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IChatItem>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadBatchWithCountAsync)(::windows_core::Interface::as_raw(this), count, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<IChatItem>>>(result__)
+            (::windows_core::Interface::vtable(this).ReadBatchWithCountAsync)(::windows_core::Interface::as_raw(this), count, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<IChatItem>>>(result__)
         }
     }
 }
@@ -3459,24 +3411,23 @@ impl ChatSyncManager {
             (::windows_core::Interface::vtable(this).Configuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<ChatSyncConfiguration>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
-    pub fn AssociateAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::WebAccount>>(&self, webaccount: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Security_Credentials")]
+    pub fn AssociateAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::WebAccount>>(&self, webaccount: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AssociateAccountAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).AssociateAccountAsync)(::windows_core::Interface::as_raw(this), webaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UnassociateAccountAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn UnassociateAccountAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UnassociateAccountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).UnassociateAccountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn IsAccountAssociated<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::WebAccount>>(&self, webaccount: Param0) -> ::windows_core::Result<bool> {
+    pub fn IsAccountAssociated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::WebAccount>>(&self, webaccount: Param0) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
@@ -3487,12 +3438,11 @@ impl ChatSyncManager {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).StartSync)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetConfigurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatSyncConfiguration>>(&self, configuration: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SetConfigurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatSyncConfiguration>>(&self, configuration: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetConfigurationAsync)(::windows_core::Interface::as_raw(this), configuration.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetConfigurationAsync)(::windows_core::Interface::as_raw(this), configuration.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
 }
@@ -3668,14 +3618,8 @@ unsafe impl ::windows_core::Interface for IChatCapabilitiesManagerStatics {
 #[doc(hidden)]
 pub struct IChatCapabilitiesManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetCachedCapabilitiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, address: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCachedCapabilitiesAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetCapabilitiesFromNetworkAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, address: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCapabilitiesFromNetworkAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3688,14 +3632,8 @@ unsafe impl ::windows_core::Interface for IChatCapabilitiesManagerStatics2 {
 #[doc(hidden)]
 pub struct IChatCapabilitiesManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetCachedCapabilitiesForTransportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, address: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, transportid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCachedCapabilitiesForTransportAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetCapabilitiesFromNetworkForTransportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, address: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, transportid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCapabilitiesFromNetworkForTransportAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3720,33 +3658,15 @@ pub struct IChatConversation_Vtbl {
     #[cfg(not(feature = "Foundation_Collections"))]
     Participants: usize,
     pub ThreadingInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub DeleteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeleteAsync: usize,
     pub GetMessageReader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub MarkAllMessagesAsReadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MarkAllMessagesAsReadAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub MarkMessagesAsReadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MarkMessagesAsReadAsync: usize,
-    #[cfg(feature = "Foundation")]
+    pub MarkMessagesAsReadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SaveAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SaveAsync: usize,
     pub NotifyLocalParticipantComposing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transportid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, participantaddress: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, iscomposing: bool) -> ::windows_core::HRESULT,
     pub NotifyRemoteParticipantComposing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transportid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, participantaddress: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, iscomposing: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub RemoteParticipantComposingChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoteParticipantComposingChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveRemoteParticipantComposingChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveRemoteParticipantComposingChanged: usize,
+    pub RemoteParticipantComposingChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveRemoteParticipantComposingChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3912,14 +3832,8 @@ pub struct IChatMessage_Vtbl {
     pub IsForwardingDisabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsIncoming: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsRead: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub LocalTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LocalTimestamp: usize,
-    #[cfg(feature = "Foundation")]
-    pub NetworkTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    NetworkTimestamp: usize,
+    pub LocalTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub NetworkTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub Recipients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -3957,18 +3871,12 @@ pub struct IChatMessage2_Vtbl {
     pub IsSeen: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsSeen: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub IsSimMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SetLocalTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetLocalTimestamp: usize,
+    pub SetLocalTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub MessageKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ChatMessageKind) -> ::windows_core::HRESULT,
     pub SetMessageKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ChatMessageKind) -> ::windows_core::HRESULT,
     pub MessageOperatorKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ChatMessageOperatorKind) -> ::windows_core::HRESULT,
     pub SetMessageOperatorKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ChatMessageOperatorKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SetNetworkTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetNetworkTimestamp: usize,
+    pub SetNetworkTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub IsReceivedDuringQuietHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsReceivedDuringQuietHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub SetRemoteId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -4087,10 +3995,7 @@ unsafe impl ::windows_core::Interface for IChatMessageBlockingStatic {
 #[doc(hidden)]
 pub struct IChatMessageBlockingStatic_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub MarkMessageAsBlockedAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localchatmessageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, blocked: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MarkMessageAsBlockedAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4176,14 +4081,8 @@ unsafe impl ::windows_core::Interface for IChatMessageManager2Statics {
 #[doc(hidden)]
 pub struct IChatMessageManager2Statics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RegisterTransportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RegisterTransportAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetTransportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transportid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetTransportAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4200,14 +4099,8 @@ pub struct IChatMessageManagerStatic_Vtbl {
     pub GetTransportsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetTransportsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestStoreAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestStoreAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ShowComposeSmsMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShowComposeSmsMessageAsync: usize,
     pub ShowSmsSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -4221,10 +4114,7 @@ unsafe impl ::windows_core::Interface for IChatMessageManagerStatics3 {
 #[doc(hidden)]
 pub struct IChatMessageManagerStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RequestSyncManagerAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestSyncManagerAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4299,44 +4189,17 @@ unsafe impl ::windows_core::Interface for IChatMessageStore {
 pub struct IChatMessageStore_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ChangeTracker: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub DeleteMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localmessageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeleteMessageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub DownloadMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localchatmessageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DownloadMessageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localchatmessageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetMessageAsync: usize,
     pub GetMessageReader1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetMessageReader2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, recenttimelimit: super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetMessageReader2: usize,
-    #[cfg(feature = "Foundation")]
+    pub GetMessageReader2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, recenttimelimit: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub MarkMessageReadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localchatmessageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MarkMessageReadAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RetrySendMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localchatmessageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RetrySendMessageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub SendMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, chatmessage: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SendMessageAsync: usize,
     pub ValidateMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, chatmessage: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub MessageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MessageChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMessageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMessageChanged: usize,
+    pub MessageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMessageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4353,64 +4216,34 @@ pub struct IChatMessageStore2_Vtbl {
     pub ForwardMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localchatmessageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, addresses: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ForwardMessageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetConversationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, conversationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetConversationAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetConversationForTransportsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, conversationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, transportids: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetConversationForTransportsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetConversationFromThreadingInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, threadinginfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetConversationFromThreadingInfoAsync: usize,
     pub GetConversationReader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub GetConversationForTransportsReader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transportids: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetConversationForTransportsReader: usize,
-    #[cfg(feature = "Foundation")]
     pub GetMessageByRemoteIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transportid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, remoteid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetMessageByRemoteIdAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetUnseenCountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetUnseenCountAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetUnseenCountForTransportsReaderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transportids: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetUnseenCountForTransportsReaderAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub MarkAsSeenAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MarkAsSeenAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub MarkAsSeenForTransportsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transportids: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     MarkAsSeenForTransportsAsync: usize,
     pub GetSearchReader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SaveMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, chatmessage: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SaveMessageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryCancelDownloadMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localchatmessageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryCancelDownloadMessageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryCancelSendMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localchatmessageid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryCancelSendMessageAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub StoreChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StoreChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStoreChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStoreChanged: usize,
+    pub StoreChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStoreChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4423,10 +4256,7 @@ unsafe impl ::windows_core::Interface for IChatMessageStore3 {
 #[doc(hidden)]
 pub struct IChatMessageStore3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetMessageBySyncIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, syncid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetMessageBySyncIdAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4457,10 +4287,7 @@ pub struct IChatMessageTransport_Vtbl {
     pub IsActive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub TransportFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub TransportId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub RequestSetAsNotificationProviderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestSetAsNotificationProviderAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4510,18 +4337,9 @@ unsafe impl ::windows_core::Interface for IChatMessageValidationResult {
 #[doc(hidden)]
 pub struct IChatMessageValidationResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub MaxPartCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MaxPartCount: usize,
-    #[cfg(feature = "Foundation")]
     pub PartCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PartCount: usize,
-    #[cfg(feature = "Foundation")]
     pub RemainingCharacterCountInPart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemainingCharacterCountInPart: usize,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ChatMessageValidationStatus) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -4551,22 +4369,10 @@ pub struct IChatRecipientDeliveryInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub TransportAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetTransportAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub DeliveryTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeliveryTime: usize,
-    #[cfg(feature = "Foundation")]
     pub SetDeliveryTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetDeliveryTime: usize,
-    #[cfg(feature = "Foundation")]
     pub ReadTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadTime: usize,
-    #[cfg(feature = "Foundation")]
     pub SetReadTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetReadTime: usize,
     pub TransportErrorCodeCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ChatTransportErrorCodeCategory) -> ::windows_core::HRESULT,
     pub TransportInterpretedErrorCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ChatTransportInterpretedErrorCode) -> ::windows_core::HRESULT,
     pub TransportErrorCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
@@ -4621,23 +4427,17 @@ unsafe impl ::windows_core::Interface for IChatSyncManager {
 pub struct IChatSyncManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Configuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Security_Credentials"))]
+    #[cfg(feature = "Security_Credentials")]
     pub AssociateAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Credentials")))]
+    #[cfg(not(feature = "Security_Credentials"))]
     AssociateAccountAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub UnassociateAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UnassociateAccountAsync: usize,
     #[cfg(feature = "Security_Credentials")]
     pub IsAccountAssociated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, webaccount: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Security_Credentials"))]
     IsAccountAssociated: usize,
     pub StartSync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SetConfigurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, configuration: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetConfigurationAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4658,14 +4458,8 @@ pub struct IRcsEndUserMessage_Vtbl {
     pub Actions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Actions: usize,
-    #[cfg(feature = "Foundation")]
     pub SendResponseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, action: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SendResponseAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub SendResponseWithPinAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, action: ::windows_core::RawPtr, pin: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SendResponseWithPinAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4719,14 +4513,8 @@ unsafe impl ::windows_core::Interface for IRcsEndUserMessageManager {
 #[doc(hidden)]
 pub struct IRcsEndUserMessageManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub MessageAvailableChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MessageAvailableChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMessageAvailableChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMessageAvailableChanged: usize,
+    pub MessageAvailableChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMessageAvailableChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4744,14 +4532,8 @@ pub struct IRcsManagerStatics_Vtbl {
     pub GetTransportsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetTransportsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetTransportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transportid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetTransportAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LeaveConversationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, conversation: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LeaveConversationAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4764,14 +4546,8 @@ unsafe impl ::windows_core::Interface for IRcsManagerStatics2 {
 #[doc(hidden)]
 pub struct IRcsManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub TransportListChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TransportListChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTransportListChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTransportListChanged: usize,
+    pub TransportListChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTransportListChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4807,14 +4583,8 @@ pub struct IRcsTransport_Vtbl {
     pub Configuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsStoreAndForwardEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, servicekind: RcsServiceKind, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsServiceKindSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, servicekind: RcsServiceKind, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ServiceKindSupportedChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ServiceKindSupportedChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveServiceKindSupportedChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveServiceKindSupportedChanged: usize,
+    pub ServiceKindSupportedChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveServiceKindSupportedChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4881,27 +4651,25 @@ impl RcsEndUserMessage {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Actions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<RcsEndUserMessageAction>> {
+    pub fn Actions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<RcsEndUserMessageAction>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Actions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<RcsEndUserMessageAction>>(result__)
+            (::windows_core::Interface::vtable(this).Actions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<RcsEndUserMessageAction>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SendResponseAsync<'a, Param0: ::windows_core::IntoParam<'a, RcsEndUserMessageAction>>(&self, action: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SendResponseAsync<'a, Param0: ::windows_core::IntoParam<'a, RcsEndUserMessageAction>>(&self, action: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendResponseAsync)(::windows_core::Interface::as_raw(this), action.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SendResponseAsync)(::windows_core::Interface::as_raw(this), action.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SendResponseWithPinAsync<'a, Param0: ::windows_core::IntoParam<'a, RcsEndUserMessageAction>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, action: Param0, pin: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SendResponseWithPinAsync<'a, Param0: ::windows_core::IntoParam<'a, RcsEndUserMessageAction>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, action: Param0, pin: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendResponseWithPinAsync)(::windows_core::Interface::as_raw(this), action.into_param().abi(), pin.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SendResponseWithPinAsync)(::windows_core::Interface::as_raw(this), action.into_param().abi(), pin.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
 }
@@ -5243,16 +5011,14 @@ unsafe impl ::core::marker::Sync for RcsEndUserMessageAvailableTriggerDetails {}
 #[repr(transparent)]
 pub struct RcsEndUserMessageManager(::windows_core::IUnknown);
 impl RcsEndUserMessageManager {
-    #[cfg(feature = "Foundation")]
-    pub fn MessageAvailableChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<RcsEndUserMessageManager, RcsEndUserMessageAvailableEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn MessageAvailableChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<RcsEndUserMessageManager, RcsEndUserMessageAvailableEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MessageAvailableChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MessageAvailableChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMessageAvailableChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMessageAvailableChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMessageAvailableChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -5338,35 +5104,31 @@ impl RcsManager {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetTransportsAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<RcsTransport>>> {
+    pub fn GetTransportsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<RcsTransport>>> {
         Self::IRcsManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTransportsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<RcsTransport>>>(result__)
+            (::windows_core::Interface::vtable(this).GetTransportsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<RcsTransport>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetTransportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(transportid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<RcsTransport>> {
+    pub fn GetTransportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(transportid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<RcsTransport>> {
         Self::IRcsManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTransportAsync)(::windows_core::Interface::as_raw(this), transportid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<RcsTransport>>(result__)
+            (::windows_core::Interface::vtable(this).GetTransportAsync)(::windows_core::Interface::as_raw(this), transportid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<RcsTransport>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LeaveConversationAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatConversation>>(conversation: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn LeaveConversationAsync<'a, Param0: ::windows_core::IntoParam<'a, ChatConversation>>(conversation: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IRcsManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LeaveConversationAsync)(::windows_core::Interface::as_raw(this), conversation.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).LeaveConversationAsync)(::windows_core::Interface::as_raw(this), conversation.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TransportListChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn TransportListChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IRcsManagerStatics2(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TransportListChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TransportListChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTransportListChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTransportListChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IRcsManagerStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveTransportListChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn IRcsManagerStatics<R, F: FnOnce(&IRcsManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -5503,11 +5265,11 @@ unsafe impl ::core::marker::Sync for RcsServiceKindSupportedChangedEventArgs {}
 pub struct RcsTransport(::windows_core::IUnknown);
 impl RcsTransport {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ExtendedProperties(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn ExtendedProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExtendedProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).ExtendedProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         }
     }
     pub fn IsActive(&self) -> ::windows_core::Result<bool> {
@@ -5552,16 +5314,14 @@ impl RcsTransport {
             (::windows_core::Interface::vtable(this).IsServiceKindSupported)(::windows_core::Interface::as_raw(this), servicekind, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ServiceKindSupportedChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<RcsTransport, RcsServiceKindSupportedChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn ServiceKindSupportedChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<RcsTransport, RcsServiceKindSupportedChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ServiceKindSupportedChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ServiceKindSupportedChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveServiceKindSupportedChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveServiceKindSupportedChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveServiceKindSupportedChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }

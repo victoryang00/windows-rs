@@ -46,14 +46,13 @@ pub unsafe fn ActivateKeyboardLayout<'a, Param0: ::windows_core::IntoParam<'a, s
     unimplemented!("Unsupported target OS");
 }
 pub const BREVE: u32 = 774u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BlockInput<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(fblockit: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn BlockInput<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(fblockit: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BlockInput(fblockit: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
+            fn BlockInput(fblockit: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(BlockInput(fblockit.into_param().abi()))
     }
@@ -103,14 +102,13 @@ pub const DKF_DEAD: u32 = 1u32;
 pub const DONTCARE_BIT: u32 = 33554432u32;
 pub const DOT_ABOVE: u32 = 775u32;
 pub const DOUBLE_ACUTE: u32 = 779u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DragDetect<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::POINT>>(hwnd: Param0, pt: Param1) -> super::super::super::Foundation::BOOL {
+pub unsafe fn DragDetect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::POINT>>(hwnd: Param0, pt: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DragDetect(hwnd: super::super::super::Foundation::HWND, pt: super::super::super::Foundation::POINT) -> super::super::super::Foundation::BOOL;
+            fn DragDetect(hwnd: ::win32_foundation::HWND, pt: ::win32_foundation::POINT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DragDetect(hwnd.into_param().abi(), pt.into_param().abi()))
     }
@@ -118,14 +116,13 @@ pub unsafe fn DragDetect<'a, Param0: ::windows_core::IntoParam<'a, super::super:
     unimplemented!("Unsupported target OS");
 }
 pub const EXTENDED_BIT: u32 = 16777216u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnableWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(hwnd: Param0, benable: Param1) -> super::super::super::Foundation::BOOL {
+pub unsafe fn EnableWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hwnd: Param0, benable: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnableWindow(hwnd: super::super::super::Foundation::HWND, benable: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
+            fn EnableWindow(hwnd: ::win32_foundation::HWND, benable: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnableWindow(hwnd.into_param().abi(), benable.into_param().abi()))
     }
@@ -162,14 +159,13 @@ impl ::core::fmt::Debug for GET_MOUSE_MOVE_POINTS_EX_RESOLUTION {
 }
 pub const GRAVE: u32 = 768u32;
 pub const GRPSELTAP: u32 = 128u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetActiveWindow() -> super::super::super::Foundation::HWND {
+pub unsafe fn GetActiveWindow() -> ::win32_foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetActiveWindow() -> super::super::super::Foundation::HWND;
+            fn GetActiveWindow() -> ::win32_foundation::HWND;
         }
         ::core::mem::transmute(GetActiveWindow())
     }
@@ -189,14 +185,13 @@ pub unsafe fn GetAsyncKeyState(vkey: i32) -> i16 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCapture() -> super::super::super::Foundation::HWND {
+pub unsafe fn GetCapture() -> ::win32_foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCapture() -> super::super::super::Foundation::HWND;
+            fn GetCapture() -> ::win32_foundation::HWND;
         }
         ::core::mem::transmute(GetCapture())
     }
@@ -216,14 +211,13 @@ pub unsafe fn GetDoubleClickTime() -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetFocus() -> super::super::super::Foundation::HWND {
+pub unsafe fn GetFocus() -> ::win32_foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetFocus() -> super::super::super::Foundation::HWND;
+            fn GetFocus() -> ::win32_foundation::HWND;
         }
         ::core::mem::transmute(GetFocus())
     }
@@ -310,42 +304,39 @@ pub unsafe fn GetKeyboardLayoutList(lplist: &mut [super::super::TextServices::HK
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetKeyboardLayoutNameA(pwszklid: &mut [u8; 9]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetKeyboardLayoutNameA(pwszklid: &mut [u8; 9]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetKeyboardLayoutNameA(pwszklid: ::windows_core::PSTR) -> super::super::super::Foundation::BOOL;
+            fn GetKeyboardLayoutNameA(pwszklid: ::windows_core::PSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetKeyboardLayoutNameA(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pwszklid))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetKeyboardLayoutNameW(pwszklid: &mut [u16; 9]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetKeyboardLayoutNameW(pwszklid: &mut [u16; 9]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetKeyboardLayoutNameW(pwszklid: ::windows_core::PWSTR) -> super::super::super::Foundation::BOOL;
+            fn GetKeyboardLayoutNameW(pwszklid: ::windows_core::PWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetKeyboardLayoutNameW(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pwszklid))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetKeyboardState(lpkeystate: &mut [u8; 256]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetKeyboardState(lpkeystate: &mut [u8; 256]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetKeyboardState(lpkeystate: *mut u8) -> super::super::super::Foundation::BOOL;
+            fn GetKeyboardState(lpkeystate: *mut u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetKeyboardState(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpkeystate))))
     }
@@ -365,14 +356,13 @@ pub unsafe fn GetKeyboardType(ntypeflag: i32) -> i32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetLastInputInfo(plii: *mut LASTINPUTINFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetLastInputInfo(plii: *mut LASTINPUTINFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetLastInputInfo(plii: *mut LASTINPUTINFO) -> super::super::super::Foundation::BOOL;
+            fn GetLastInputInfo(plii: *mut LASTINPUTINFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetLastInputInfo(::core::mem::transmute(plii)))
     }
@@ -556,14 +546,13 @@ impl ::core::fmt::Debug for INPUT_TYPE {
         f.debug_tuple("INPUT_TYPE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsWindowEnabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn IsWindowEnabled<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsWindowEnabled(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::BOOL;
+            fn IsWindowEnabled(hwnd: ::win32_foundation::HWND) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsWindowEnabled(hwnd.into_param().abi()))
     }
@@ -1265,28 +1254,26 @@ pub unsafe fn OemKeyScan(woemchar: u16) -> u32 {
     unimplemented!("Unsupported target OS");
 }
 pub const RING: u32 = 778u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterHotKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, id: i32, fsmodifiers: HOT_KEY_MODIFIERS, vk: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn RegisterHotKey<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, id: i32, fsmodifiers: HOT_KEY_MODIFIERS, vk: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterHotKey(hwnd: super::super::super::Foundation::HWND, id: i32, fsmodifiers: HOT_KEY_MODIFIERS, vk: u32) -> super::super::super::Foundation::BOOL;
+            fn RegisterHotKey(hwnd: ::win32_foundation::HWND, id: i32, fsmodifiers: HOT_KEY_MODIFIERS, vk: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RegisterHotKey(hwnd.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(fsmodifiers), ::core::mem::transmute(vk)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReleaseCapture() -> super::super::super::Foundation::BOOL {
+pub unsafe fn ReleaseCapture() -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReleaseCapture() -> super::super::super::Foundation::BOOL;
+            fn ReleaseCapture() -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReleaseCapture())
     }
@@ -1317,84 +1304,78 @@ pub unsafe fn SendInput(pinputs: &[INPUT], cbsize: i32) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetActiveWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::HWND {
+pub unsafe fn SetActiveWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> ::win32_foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetActiveWindow(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::HWND;
+            fn SetActiveWindow(hwnd: ::win32_foundation::HWND) -> ::win32_foundation::HWND;
         }
         ::core::mem::transmute(SetActiveWindow(hwnd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCapture<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::HWND {
+pub unsafe fn SetCapture<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> ::win32_foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCapture(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::HWND;
+            fn SetCapture(hwnd: ::win32_foundation::HWND) -> ::win32_foundation::HWND;
         }
         ::core::mem::transmute(SetCapture(hwnd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDoubleClickTime(param0: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SetDoubleClickTime(param0: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetDoubleClickTime(param0: u32) -> super::super::super::Foundation::BOOL;
+            fn SetDoubleClickTime(param0: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetDoubleClickTime(::core::mem::transmute(param0)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::HWND {
+pub unsafe fn SetFocus<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> ::win32_foundation::HWND {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetFocus(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::HWND;
+            fn SetFocus(hwnd: ::win32_foundation::HWND) -> ::win32_foundation::HWND;
         }
         ::core::mem::transmute(SetFocus(hwnd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetKeyboardState(lpkeystate: &[u8; 256]) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SetKeyboardState(lpkeystate: &[u8; 256]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetKeyboardState(lpkeystate: *const u8) -> super::super::super::Foundation::BOOL;
+            fn SetKeyboardState(lpkeystate: *const u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetKeyboardState(::core::mem::transmute(::windows_core::as_ptr_or_null(lpkeystate))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SwapMouseButton<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(fswap: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SwapMouseButton<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(fswap: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SwapMouseButton(fswap: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
+            fn SwapMouseButton(fswap: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SwapMouseButton(fswap.into_param().abi()))
     }
@@ -1406,40 +1387,32 @@ pub const TONOS: u32 = 900u32;
 pub const TOSHIBA_KBD_DESKTOP_TYPE: u32 = 13u32;
 pub const TOSHIBA_KBD_LAPTOP_TYPE: u32 = 15u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRACKMOUSEEVENT {
     pub cbSize: u32,
     pub dwFlags: TRACKMOUSEEVENT_FLAGS,
-    pub hwndTrack: super::super::super::Foundation::HWND,
+    pub hwndTrack: ::win32_foundation::HWND,
     pub dwHoverTime: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRACKMOUSEEVENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRACKMOUSEEVENT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TRACKMOUSEEVENT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TRACKMOUSEEVENT").field("cbSize", &self.cbSize).field("dwFlags", &self.dwFlags).field("hwndTrack", &self.hwndTrack).field("dwHoverTime", &self.dwHoverTime).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TRACKMOUSEEVENT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TRACKMOUSEEVENT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRACKMOUSEEVENT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TRACKMOUSEEVENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TRACKMOUSEEVENT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1554,14 +1527,13 @@ pub unsafe fn ToUnicodeEx<'a, Param6: ::windows_core::IntoParam<'a, super::super
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> super::super::super::Foundation::BOOL {
+pub unsafe fn TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> super::super::super::Foundation::BOOL;
+            fn TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(TrackMouseEvent(::core::mem::transmute(lpeventtrack)))
     }
@@ -1569,28 +1541,27 @@ pub unsafe fn TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> super::supe
     unimplemented!("Unsupported target OS");
 }
 pub const UMLAUT: u32 = 776u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
+#[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn UnloadKeyboardLayout<'a, Param0: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(hkl: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn UnloadKeyboardLayout<'a, Param0: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(hkl: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnloadKeyboardLayout(hkl: super::super::TextServices::HKL) -> super::super::super::Foundation::BOOL;
+            fn UnloadKeyboardLayout(hkl: super::super::TextServices::HKL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(UnloadKeyboardLayout(hkl.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnregisterHotKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, id: i32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn UnregisterHotKey<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, id: i32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnregisterHotKey(hwnd: super::super::super::Foundation::HWND, id: i32) -> super::super::super::Foundation::BOOL;
+            fn UnregisterHotKey(hwnd: ::win32_foundation::HWND, id: i32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(UnregisterHotKey(hwnd.into_param().abi(), ::core::mem::transmute(id)))
     }
@@ -2327,28 +2298,27 @@ impl ::core::default::Default for VSC_VK {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn VkKeyScanA<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::CHAR>>(ch: Param0) -> i16 {
+pub unsafe fn VkKeyScanA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::CHAR>>(ch: Param0) -> i16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn VkKeyScanA(ch: super::super::super::Foundation::CHAR) -> i16;
+            fn VkKeyScanA(ch: ::win32_foundation::CHAR) -> i16;
         }
         ::core::mem::transmute(VkKeyScanA(ch.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
+#[cfg(feature = "Win32_UI_TextServices")]
 #[inline]
-pub unsafe fn VkKeyScanExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::CHAR>, Param1: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ch: Param0, dwhkl: Param1) -> i16 {
+pub unsafe fn VkKeyScanExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::CHAR>, Param1: ::windows_core::IntoParam<'a, super::super::TextServices::HKL>>(ch: Param0, dwhkl: Param1) -> i16 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn VkKeyScanExA(ch: super::super::super::Foundation::CHAR, dwhkl: super::super::TextServices::HKL) -> i16;
+            fn VkKeyScanExA(ch: ::win32_foundation::CHAR, dwhkl: super::super::TextServices::HKL) -> i16;
         }
         ::core::mem::transmute(VkKeyScanExA(ch.into_param().abi(), dwhkl.into_param().abi()))
     }
@@ -2385,14 +2355,13 @@ pub unsafe fn VkKeyScanW(ch: u16) -> i16 {
 pub const WCH_DEAD: u32 = 61441u32;
 pub const WCH_LGTR: u32 = 61442u32;
 pub const WCH_NONE: u32 = 61440u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn _TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> super::super::super::Foundation::BOOL {
+pub unsafe fn _TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn _TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> super::super::super::Foundation::BOOL;
+            fn _TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(_TrackMouseEvent(::core::mem::transmute(lpeventtrack)))
     }

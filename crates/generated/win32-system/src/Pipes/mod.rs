@@ -1,53 +1,51 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CallNamedPipeA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpnamedpipename: Param0, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CallNamedPipeA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpnamedpipename: Param0, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CallNamedPipeA(lpnamedpipename: ::windows_core::PCSTR, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> super::super::Foundation::BOOL;
+            fn CallNamedPipeA(lpnamedpipename: ::windows_core::PCSTR, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CallNamedPipeA(lpnamedpipename.into_param().abi(), ::core::mem::transmute(lpinbuffer), ::core::mem::transmute(ninbuffersize), ::core::mem::transmute(lpoutbuffer), ::core::mem::transmute(noutbuffersize), ::core::mem::transmute(lpbytesread), ::core::mem::transmute(ntimeout)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CallNamedPipeW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpnamedpipename: Param0, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CallNamedPipeW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpnamedpipename: Param0, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CallNamedPipeW(lpnamedpipename: ::windows_core::PCWSTR, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> super::super::Foundation::BOOL;
+            fn CallNamedPipeW(lpnamedpipename: ::windows_core::PCWSTR, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, ntimeout: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CallNamedPipeW(lpnamedpipename.into_param().abi(), ::core::mem::transmute(lpinbuffer), ::core::mem::transmute(ninbuffersize), ::core::mem::transmute(lpoutbuffer), ::core::mem::transmute(noutbuffersize), ::core::mem::transmute(lpbytesread), ::core::mem::transmute(ntimeout)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn ConnectNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnamedpipe: Param0, lpoverlapped: *mut super::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn ConnectNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0, lpoverlapped: *mut super::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ConnectNamedPipe(hnamedpipe: super::super::Foundation::HANDLE, lpoverlapped: *mut super::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn ConnectNamedPipe(hnamedpipe: ::win32_foundation::HANDLE, lpoverlapped: *mut super::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ConnectNamedPipe(hnamedpipe.into_param().abi(), ::core::mem::transmute(lpoverlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_FileSystem"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_FileSystem"))]
 #[inline]
-pub unsafe fn CreateNamedPipeA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpname: Param0, dwopenmode: super::super::Storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn CreateNamedPipeA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpname: Param0, dwopenmode: ::win32_storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateNamedPipeA(lpname: ::windows_core::PCSTR, dwopenmode: super::super::Storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::HANDLE;
+            fn CreateNamedPipeA(lpname: ::windows_core::PCSTR, dwopenmode: ::win32_storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::HANDLE;
         }
         let result__ = CreateNamedPipeA(lpname.into_param().abi(), ::core::mem::transmute(dwopenmode), ::core::mem::transmute(dwpipemode), ::core::mem::transmute(nmaxinstances), ::core::mem::transmute(noutbuffersize), ::core::mem::transmute(ninbuffersize), ::core::mem::transmute(ndefaulttimeout), ::core::mem::transmute(lpsecurityattributes));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -55,182 +53,171 @@ pub unsafe fn CreateNamedPipeA<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_FileSystem"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_FileSystem"))]
 #[inline]
-pub unsafe fn CreateNamedPipeW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpname: Param0, dwopenmode: super::super::Storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::HANDLE {
+pub unsafe fn CreateNamedPipeW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpname: Param0, dwopenmode: ::win32_storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateNamedPipeW(lpname: ::windows_core::PCWSTR, dwopenmode: super::super::Storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::HANDLE;
+            fn CreateNamedPipeW(lpname: ::windows_core::PCWSTR, dwopenmode: ::win32_storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, dwpipemode: NAMED_PIPE_MODE, nmaxinstances: u32, noutbuffersize: u32, ninbuffersize: u32, ndefaulttimeout: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(CreateNamedPipeW(lpname.into_param().abi(), ::core::mem::transmute(dwopenmode), ::core::mem::transmute(dwpipemode), ::core::mem::transmute(nmaxinstances), ::core::mem::transmute(noutbuffersize), ::core::mem::transmute(ninbuffersize), ::core::mem::transmute(ndefaulttimeout), ::core::mem::transmute(lpsecurityattributes)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn CreatePipe(hreadpipe: *mut super::super::Foundation::HANDLE, hwritepipe: *mut super::super::Foundation::HANDLE, lppipeattributes: *const super::super::Security::SECURITY_ATTRIBUTES, nsize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn CreatePipe(hreadpipe: *mut ::win32_foundation::HANDLE, hwritepipe: *mut ::win32_foundation::HANDLE, lppipeattributes: *const ::win32_security::SECURITY_ATTRIBUTES, nsize: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreatePipe(hreadpipe: *mut super::super::Foundation::HANDLE, hwritepipe: *mut super::super::Foundation::HANDLE, lppipeattributes: *const super::super::Security::SECURITY_ATTRIBUTES, nsize: u32) -> super::super::Foundation::BOOL;
+            fn CreatePipe(hreadpipe: *mut ::win32_foundation::HANDLE, hwritepipe: *mut ::win32_foundation::HANDLE, lppipeattributes: *const ::win32_security::SECURITY_ATTRIBUTES, nsize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CreatePipe(::core::mem::transmute(hreadpipe), ::core::mem::transmute(hwritepipe), ::core::mem::transmute(lppipeattributes), ::core::mem::transmute(nsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DisconnectNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnamedpipe: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DisconnectNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DisconnectNamedPipe(hnamedpipe: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn DisconnectNamedPipe(hnamedpipe: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DisconnectNamedPipe(hnamedpipe.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNamedPipeClientComputerNameA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(pipe: Param0, clientcomputername: ::windows_core::PSTR, clientcomputernamelength: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNamedPipeClientComputerNameA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(pipe: Param0, clientcomputername: ::windows_core::PSTR, clientcomputernamelength: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNamedPipeClientComputerNameA(pipe: super::super::Foundation::HANDLE, clientcomputername: ::windows_core::PSTR, clientcomputernamelength: u32) -> super::super::Foundation::BOOL;
+            fn GetNamedPipeClientComputerNameA(pipe: ::win32_foundation::HANDLE, clientcomputername: ::windows_core::PSTR, clientcomputernamelength: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNamedPipeClientComputerNameA(pipe.into_param().abi(), ::core::mem::transmute(clientcomputername), ::core::mem::transmute(clientcomputernamelength)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNamedPipeClientComputerNameW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(pipe: Param0, clientcomputername: ::windows_core::PWSTR, clientcomputernamelength: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNamedPipeClientComputerNameW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(pipe: Param0, clientcomputername: ::windows_core::PWSTR, clientcomputernamelength: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNamedPipeClientComputerNameW(pipe: super::super::Foundation::HANDLE, clientcomputername: ::windows_core::PWSTR, clientcomputernamelength: u32) -> super::super::Foundation::BOOL;
+            fn GetNamedPipeClientComputerNameW(pipe: ::win32_foundation::HANDLE, clientcomputername: ::windows_core::PWSTR, clientcomputernamelength: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNamedPipeClientComputerNameW(pipe.into_param().abi(), ::core::mem::transmute(clientcomputername), ::core::mem::transmute(clientcomputernamelength)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNamedPipeClientProcessId<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(pipe: Param0, clientprocessid: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNamedPipeClientProcessId<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(pipe: Param0, clientprocessid: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNamedPipeClientProcessId(pipe: super::super::Foundation::HANDLE, clientprocessid: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetNamedPipeClientProcessId(pipe: ::win32_foundation::HANDLE, clientprocessid: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNamedPipeClientProcessId(pipe.into_param().abi(), ::core::mem::transmute(clientprocessid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNamedPipeClientSessionId<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(pipe: Param0, clientsessionid: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNamedPipeClientSessionId<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(pipe: Param0, clientsessionid: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNamedPipeClientSessionId(pipe: super::super::Foundation::HANDLE, clientsessionid: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetNamedPipeClientSessionId(pipe: ::win32_foundation::HANDLE, clientsessionid: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNamedPipeClientSessionId(pipe.into_param().abi(), ::core::mem::transmute(clientsessionid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNamedPipeHandleStateA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnamedpipe: Param0, lpstate: *mut NAMED_PIPE_MODE, lpcurinstances: *mut u32, lpmaxcollectioncount: *mut u32, lpcollectdatatimeout: *mut u32, lpusername: &mut [u8]) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNamedPipeHandleStateA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0, lpstate: *mut NAMED_PIPE_MODE, lpcurinstances: *mut u32, lpmaxcollectioncount: *mut u32, lpcollectdatatimeout: *mut u32, lpusername: &mut [u8]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNamedPipeHandleStateA(hnamedpipe: super::super::Foundation::HANDLE, lpstate: *mut NAMED_PIPE_MODE, lpcurinstances: *mut u32, lpmaxcollectioncount: *mut u32, lpcollectdatatimeout: *mut u32, lpusername: ::windows_core::PSTR, nmaxusernamesize: u32) -> super::super::Foundation::BOOL;
+            fn GetNamedPipeHandleStateA(hnamedpipe: ::win32_foundation::HANDLE, lpstate: *mut NAMED_PIPE_MODE, lpcurinstances: *mut u32, lpmaxcollectioncount: *mut u32, lpcollectdatatimeout: *mut u32, lpusername: ::windows_core::PSTR, nmaxusernamesize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNamedPipeHandleStateA(hnamedpipe.into_param().abi(), ::core::mem::transmute(lpstate), ::core::mem::transmute(lpcurinstances), ::core::mem::transmute(lpmaxcollectioncount), ::core::mem::transmute(lpcollectdatatimeout), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpusername)), lpusername.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNamedPipeHandleStateW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnamedpipe: Param0, lpstate: *mut NAMED_PIPE_MODE, lpcurinstances: *mut u32, lpmaxcollectioncount: *mut u32, lpcollectdatatimeout: *mut u32, lpusername: &mut [u16]) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNamedPipeHandleStateW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0, lpstate: *mut NAMED_PIPE_MODE, lpcurinstances: *mut u32, lpmaxcollectioncount: *mut u32, lpcollectdatatimeout: *mut u32, lpusername: &mut [u16]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNamedPipeHandleStateW(hnamedpipe: super::super::Foundation::HANDLE, lpstate: *mut NAMED_PIPE_MODE, lpcurinstances: *mut u32, lpmaxcollectioncount: *mut u32, lpcollectdatatimeout: *mut u32, lpusername: ::windows_core::PWSTR, nmaxusernamesize: u32) -> super::super::Foundation::BOOL;
+            fn GetNamedPipeHandleStateW(hnamedpipe: ::win32_foundation::HANDLE, lpstate: *mut NAMED_PIPE_MODE, lpcurinstances: *mut u32, lpmaxcollectioncount: *mut u32, lpcollectdatatimeout: *mut u32, lpusername: ::windows_core::PWSTR, nmaxusernamesize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNamedPipeHandleStateW(hnamedpipe.into_param().abi(), ::core::mem::transmute(lpstate), ::core::mem::transmute(lpcurinstances), ::core::mem::transmute(lpmaxcollectioncount), ::core::mem::transmute(lpcollectdatatimeout), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpusername)), lpusername.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNamedPipeInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnamedpipe: Param0, lpflags: *mut NAMED_PIPE_MODE, lpoutbuffersize: *mut u32, lpinbuffersize: *mut u32, lpmaxinstances: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNamedPipeInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0, lpflags: *mut NAMED_PIPE_MODE, lpoutbuffersize: *mut u32, lpinbuffersize: *mut u32, lpmaxinstances: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNamedPipeInfo(hnamedpipe: super::super::Foundation::HANDLE, lpflags: *mut NAMED_PIPE_MODE, lpoutbuffersize: *mut u32, lpinbuffersize: *mut u32, lpmaxinstances: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetNamedPipeInfo(hnamedpipe: ::win32_foundation::HANDLE, lpflags: *mut NAMED_PIPE_MODE, lpoutbuffersize: *mut u32, lpinbuffersize: *mut u32, lpmaxinstances: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNamedPipeInfo(hnamedpipe.into_param().abi(), ::core::mem::transmute(lpflags), ::core::mem::transmute(lpoutbuffersize), ::core::mem::transmute(lpinbuffersize), ::core::mem::transmute(lpmaxinstances)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNamedPipeServerProcessId<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(pipe: Param0, serverprocessid: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNamedPipeServerProcessId<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(pipe: Param0, serverprocessid: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNamedPipeServerProcessId(pipe: super::super::Foundation::HANDLE, serverprocessid: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetNamedPipeServerProcessId(pipe: ::win32_foundation::HANDLE, serverprocessid: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNamedPipeServerProcessId(pipe.into_param().abi(), ::core::mem::transmute(serverprocessid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNamedPipeServerSessionId<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(pipe: Param0, serversessionid: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNamedPipeServerSessionId<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(pipe: Param0, serversessionid: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNamedPipeServerSessionId(pipe: super::super::Foundation::HANDLE, serversessionid: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetNamedPipeServerSessionId(pipe: ::win32_foundation::HANDLE, serversessionid: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNamedPipeServerSessionId(pipe.into_param().abi(), ::core::mem::transmute(serversessionid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ImpersonateNamedPipeClient<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnamedpipe: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn ImpersonateNamedPipeClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ImpersonateNamedPipeClient(hnamedpipe: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn ImpersonateNamedPipeClient(hnamedpipe: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ImpersonateNamedPipeClient(hnamedpipe.into_param().abi()))
     }
@@ -301,70 +288,66 @@ pub const NMPWAIT_NOWAIT: u32 = 1u32;
 pub const NMPWAIT_USE_DEFAULT_WAIT: u32 = 0u32;
 pub const NMPWAIT_WAIT_FOREVER: u32 = 4294967295u32;
 pub const PIPE_UNLIMITED_INSTANCES: u32 = 255u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PeekNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnamedpipe: Param0, lpbuffer: *mut ::core::ffi::c_void, nbuffersize: u32, lpbytesread: *mut u32, lptotalbytesavail: *mut u32, lpbytesleftthismessage: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn PeekNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0, lpbuffer: *mut ::core::ffi::c_void, nbuffersize: u32, lpbytesread: *mut u32, lptotalbytesavail: *mut u32, lpbytesleftthismessage: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PeekNamedPipe(hnamedpipe: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbuffersize: u32, lpbytesread: *mut u32, lptotalbytesavail: *mut u32, lpbytesleftthismessage: *mut u32) -> super::super::Foundation::BOOL;
+            fn PeekNamedPipe(hnamedpipe: ::win32_foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbuffersize: u32, lpbytesread: *mut u32, lptotalbytesavail: *mut u32, lpbytesleftthismessage: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PeekNamedPipe(hnamedpipe.into_param().abi(), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nbuffersize), ::core::mem::transmute(lpbytesread), ::core::mem::transmute(lptotalbytesavail), ::core::mem::transmute(lpbytesleftthismessage)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetNamedPipeHandleState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnamedpipe: Param0, lpmode: *const NAMED_PIPE_MODE, lpmaxcollectioncount: *const u32, lpcollectdatatimeout: *const u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetNamedPipeHandleState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0, lpmode: *const NAMED_PIPE_MODE, lpmaxcollectioncount: *const u32, lpcollectdatatimeout: *const u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetNamedPipeHandleState(hnamedpipe: super::super::Foundation::HANDLE, lpmode: *const NAMED_PIPE_MODE, lpmaxcollectioncount: *const u32, lpcollectdatatimeout: *const u32) -> super::super::Foundation::BOOL;
+            fn SetNamedPipeHandleState(hnamedpipe: ::win32_foundation::HANDLE, lpmode: *const NAMED_PIPE_MODE, lpmaxcollectioncount: *const u32, lpcollectdatatimeout: *const u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetNamedPipeHandleState(hnamedpipe.into_param().abi(), ::core::mem::transmute(lpmode), ::core::mem::transmute(lpmaxcollectioncount), ::core::mem::transmute(lpcollectdatatimeout)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn TransactNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hnamedpipe: Param0, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, lpoverlapped: *mut super::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn TransactNamedPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hnamedpipe: Param0, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, lpoverlapped: *mut super::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TransactNamedPipe(hnamedpipe: super::super::Foundation::HANDLE, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, lpoverlapped: *mut super::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn TransactNamedPipe(hnamedpipe: ::win32_foundation::HANDLE, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesread: *mut u32, lpoverlapped: *mut super::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(TransactNamedPipe(hnamedpipe.into_param().abi(), ::core::mem::transmute(lpinbuffer), ::core::mem::transmute(ninbuffersize), ::core::mem::transmute(lpoutbuffer), ::core::mem::transmute(noutbuffersize), ::core::mem::transmute(lpbytesread), ::core::mem::transmute(lpoverlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WaitNamedPipeA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpnamedpipename: Param0, ntimeout: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn WaitNamedPipeA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpnamedpipename: Param0, ntimeout: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WaitNamedPipeA(lpnamedpipename: ::windows_core::PCSTR, ntimeout: u32) -> super::super::Foundation::BOOL;
+            fn WaitNamedPipeA(lpnamedpipename: ::windows_core::PCSTR, ntimeout: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WaitNamedPipeA(lpnamedpipename.into_param().abi(), ::core::mem::transmute(ntimeout)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WaitNamedPipeW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpnamedpipename: Param0, ntimeout: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn WaitNamedPipeW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpnamedpipename: Param0, ntimeout: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WaitNamedPipeW(lpnamedpipename: ::windows_core::PCWSTR, ntimeout: u32) -> super::super::Foundation::BOOL;
+            fn WaitNamedPipeW(lpnamedpipename: ::windows_core::PCWSTR, ntimeout: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WaitNamedPipeW(lpnamedpipename.into_param().abi(), ::core::mem::transmute(ntimeout)))
     }

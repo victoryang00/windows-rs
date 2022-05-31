@@ -1,109 +1,101 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BSTR_UserFree(param0: *const u32, param1: *const super::super::super::Foundation::BSTR) {
+pub unsafe fn BSTR_UserFree(param0: *const u32, param1: *const ::win32_foundation::BSTR) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BSTR_UserFree(param0: *const u32, param1: *const super::super::super::Foundation::BSTR);
+            fn BSTR_UserFree(param0: *const u32, param1: *const ::win32_foundation::BSTR);
         }
         BSTR_UserFree(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BSTR_UserFree64(param0: *const u32, param1: *const super::super::super::Foundation::BSTR) {
+pub unsafe fn BSTR_UserFree64(param0: *const u32, param1: *const ::win32_foundation::BSTR) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BSTR_UserFree64(param0: *const u32, param1: *const super::super::super::Foundation::BSTR);
+            fn BSTR_UserFree64(param0: *const u32, param1: *const ::win32_foundation::BSTR);
         }
         BSTR_UserFree64(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BSTR_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Foundation::BSTR) -> *mut u8 {
+pub unsafe fn BSTR_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_foundation::BSTR) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BSTR_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Foundation::BSTR) -> *mut u8;
+            fn BSTR_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_foundation::BSTR) -> *mut u8;
         }
         ::core::mem::transmute(BSTR_UserMarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BSTR_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Foundation::BSTR) -> *mut u8 {
+pub unsafe fn BSTR_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_foundation::BSTR) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BSTR_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Foundation::BSTR) -> *mut u8;
+            fn BSTR_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_foundation::BSTR) -> *mut u8;
         }
         ::core::mem::transmute(BSTR_UserMarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BSTR_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Foundation::BSTR) -> u32 {
+pub unsafe fn BSTR_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_foundation::BSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BSTR_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Foundation::BSTR) -> u32;
+            fn BSTR_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_foundation::BSTR) -> u32;
         }
         ::core::mem::transmute(BSTR_UserSize(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BSTR_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Foundation::BSTR) -> u32 {
+pub unsafe fn BSTR_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_foundation::BSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BSTR_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Foundation::BSTR) -> u32;
+            fn BSTR_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_foundation::BSTR) -> u32;
         }
         ::core::mem::transmute(BSTR_UserSize64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BSTR_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Foundation::BSTR) -> *mut u8 {
+pub unsafe fn BSTR_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_foundation::BSTR) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BSTR_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Foundation::BSTR) -> *mut u8;
+            fn BSTR_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_foundation::BSTR) -> *mut u8;
         }
         ::core::mem::transmute(BSTR_UserUnmarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BSTR_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Foundation::BSTR) -> *mut u8 {
+pub unsafe fn BSTR_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_foundation::BSTR) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BSTR_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Foundation::BSTR) -> *mut u8;
+            fn BSTR_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_foundation::BSTR) -> *mut u8;
         }
         ::core::mem::transmute(BSTR_UserUnmarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -338,12 +330,12 @@ pub unsafe fn CoUnmarshalInterface<'a, Param0: ::windows_core::IntoParam<'a, sup
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HACCEL_UserFree(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HACCEL) {
+pub unsafe fn HACCEL_UserFree(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HACCEL) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HACCEL_UserFree(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HACCEL);
+            fn HACCEL_UserFree(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HACCEL);
         }
         HACCEL_UserFree(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -352,12 +344,12 @@ pub unsafe fn HACCEL_UserFree(param0: *const u32, param1: *const super::super::s
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HACCEL_UserFree64(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HACCEL) {
+pub unsafe fn HACCEL_UserFree64(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HACCEL) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HACCEL_UserFree64(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HACCEL);
+            fn HACCEL_UserFree64(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HACCEL);
         }
         HACCEL_UserFree64(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -366,12 +358,12 @@ pub unsafe fn HACCEL_UserFree64(param0: *const u32, param1: *const super::super:
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HACCEL_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HACCEL) -> *mut u8 {
+pub unsafe fn HACCEL_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HACCEL) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HACCEL_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HACCEL) -> *mut u8;
+            fn HACCEL_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HACCEL) -> *mut u8;
         }
         ::core::mem::transmute(HACCEL_UserMarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -380,12 +372,12 @@ pub unsafe fn HACCEL_UserMarshal(param0: *const u32, param1: *mut u8, param2: *c
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HACCEL_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HACCEL) -> *mut u8 {
+pub unsafe fn HACCEL_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HACCEL) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HACCEL_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HACCEL) -> *mut u8;
+            fn HACCEL_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HACCEL) -> *mut u8;
         }
         ::core::mem::transmute(HACCEL_UserMarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -394,12 +386,12 @@ pub unsafe fn HACCEL_UserMarshal64(param0: *const u32, param1: *mut u8, param2: 
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HACCEL_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HACCEL) -> u32 {
+pub unsafe fn HACCEL_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HACCEL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HACCEL_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HACCEL) -> u32;
+            fn HACCEL_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HACCEL) -> u32;
         }
         ::core::mem::transmute(HACCEL_UserSize(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -408,12 +400,12 @@ pub unsafe fn HACCEL_UserSize(param0: *const u32, param1: u32, param2: *const su
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HACCEL_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HACCEL) -> u32 {
+pub unsafe fn HACCEL_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HACCEL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HACCEL_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HACCEL) -> u32;
+            fn HACCEL_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HACCEL) -> u32;
         }
         ::core::mem::transmute(HACCEL_UserSize64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -422,12 +414,12 @@ pub unsafe fn HACCEL_UserSize64(param0: *const u32, param1: u32, param2: *const 
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HACCEL_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HACCEL) -> *mut u8 {
+pub unsafe fn HACCEL_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HACCEL) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HACCEL_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HACCEL) -> *mut u8;
+            fn HACCEL_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HACCEL) -> *mut u8;
         }
         ::core::mem::transmute(HACCEL_UserUnmarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -436,12 +428,12 @@ pub unsafe fn HACCEL_UserUnmarshal(param0: *const u32, param1: *const u8, param2
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HACCEL_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HACCEL) -> *mut u8 {
+pub unsafe fn HACCEL_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HACCEL) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HACCEL_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HACCEL) -> *mut u8;
+            fn HACCEL_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HACCEL) -> *mut u8;
         }
         ::core::mem::transmute(HACCEL_UserUnmarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -450,12 +442,12 @@ pub unsafe fn HACCEL_UserUnmarshal64(param0: *const u32, param1: *const u8, para
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HBITMAP_UserFree(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HBITMAP) {
+pub unsafe fn HBITMAP_UserFree(param0: *const u32, param1: *const ::win32_graphics::Gdi::HBITMAP) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HBITMAP_UserFree(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HBITMAP);
+            fn HBITMAP_UserFree(param0: *const u32, param1: *const ::win32_graphics::Gdi::HBITMAP);
         }
         HBITMAP_UserFree(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -464,12 +456,12 @@ pub unsafe fn HBITMAP_UserFree(param0: *const u32, param1: *const super::super::
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HBITMAP_UserFree64(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HBITMAP) {
+pub unsafe fn HBITMAP_UserFree64(param0: *const u32, param1: *const ::win32_graphics::Gdi::HBITMAP) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HBITMAP_UserFree64(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HBITMAP);
+            fn HBITMAP_UserFree64(param0: *const u32, param1: *const ::win32_graphics::Gdi::HBITMAP);
         }
         HBITMAP_UserFree64(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -478,12 +470,12 @@ pub unsafe fn HBITMAP_UserFree64(param0: *const u32, param1: *const super::super
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HBITMAP_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HBITMAP) -> *mut u8 {
+pub unsafe fn HBITMAP_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HBITMAP) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HBITMAP_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HBITMAP) -> *mut u8;
+            fn HBITMAP_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HBITMAP) -> *mut u8;
         }
         ::core::mem::transmute(HBITMAP_UserMarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -492,12 +484,12 @@ pub unsafe fn HBITMAP_UserMarshal(param0: *const u32, param1: *mut u8, param2: *
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HBITMAP_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HBITMAP) -> *mut u8 {
+pub unsafe fn HBITMAP_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HBITMAP) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HBITMAP_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HBITMAP) -> *mut u8;
+            fn HBITMAP_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HBITMAP) -> *mut u8;
         }
         ::core::mem::transmute(HBITMAP_UserMarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -506,12 +498,12 @@ pub unsafe fn HBITMAP_UserMarshal64(param0: *const u32, param1: *mut u8, param2:
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HBITMAP_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HBITMAP) -> u32 {
+pub unsafe fn HBITMAP_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HBITMAP) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HBITMAP_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HBITMAP) -> u32;
+            fn HBITMAP_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HBITMAP) -> u32;
         }
         ::core::mem::transmute(HBITMAP_UserSize(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -520,12 +512,12 @@ pub unsafe fn HBITMAP_UserSize(param0: *const u32, param1: u32, param2: *const s
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HBITMAP_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HBITMAP) -> u32 {
+pub unsafe fn HBITMAP_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HBITMAP) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HBITMAP_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HBITMAP) -> u32;
+            fn HBITMAP_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HBITMAP) -> u32;
         }
         ::core::mem::transmute(HBITMAP_UserSize64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -534,12 +526,12 @@ pub unsafe fn HBITMAP_UserSize64(param0: *const u32, param1: u32, param2: *const
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HBITMAP_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HBITMAP) -> *mut u8 {
+pub unsafe fn HBITMAP_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HBITMAP) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HBITMAP_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HBITMAP) -> *mut u8;
+            fn HBITMAP_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HBITMAP) -> *mut u8;
         }
         ::core::mem::transmute(HBITMAP_UserUnmarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -548,12 +540,12 @@ pub unsafe fn HBITMAP_UserUnmarshal(param0: *const u32, param1: *const u8, param
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HBITMAP_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HBITMAP) -> *mut u8 {
+pub unsafe fn HBITMAP_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HBITMAP) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HBITMAP_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HBITMAP) -> *mut u8;
+            fn HBITMAP_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HBITMAP) -> *mut u8;
         }
         ::core::mem::transmute(HBITMAP_UserUnmarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -562,12 +554,12 @@ pub unsafe fn HBITMAP_UserUnmarshal64(param0: *const u32, param1: *const u8, par
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HDC_UserFree(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HDC) {
+pub unsafe fn HDC_UserFree(param0: *const u32, param1: *const ::win32_graphics::Gdi::HDC) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HDC_UserFree(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HDC);
+            fn HDC_UserFree(param0: *const u32, param1: *const ::win32_graphics::Gdi::HDC);
         }
         HDC_UserFree(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -576,12 +568,12 @@ pub unsafe fn HDC_UserFree(param0: *const u32, param1: *const super::super::supe
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HDC_UserFree64(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HDC) {
+pub unsafe fn HDC_UserFree64(param0: *const u32, param1: *const ::win32_graphics::Gdi::HDC) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HDC_UserFree64(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HDC);
+            fn HDC_UserFree64(param0: *const u32, param1: *const ::win32_graphics::Gdi::HDC);
         }
         HDC_UserFree64(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -590,12 +582,12 @@ pub unsafe fn HDC_UserFree64(param0: *const u32, param1: *const super::super::su
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HDC_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HDC) -> *mut u8 {
+pub unsafe fn HDC_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HDC) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HDC_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HDC) -> *mut u8;
+            fn HDC_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HDC) -> *mut u8;
         }
         ::core::mem::transmute(HDC_UserMarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -604,12 +596,12 @@ pub unsafe fn HDC_UserMarshal(param0: *const u32, param1: *mut u8, param2: *cons
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HDC_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HDC) -> *mut u8 {
+pub unsafe fn HDC_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HDC) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HDC_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HDC) -> *mut u8;
+            fn HDC_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HDC) -> *mut u8;
         }
         ::core::mem::transmute(HDC_UserMarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -618,12 +610,12 @@ pub unsafe fn HDC_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *co
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HDC_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HDC) -> u32 {
+pub unsafe fn HDC_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HDC) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HDC_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HDC) -> u32;
+            fn HDC_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HDC) -> u32;
         }
         ::core::mem::transmute(HDC_UserSize(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -632,12 +624,12 @@ pub unsafe fn HDC_UserSize(param0: *const u32, param1: u32, param2: *const super
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HDC_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HDC) -> u32 {
+pub unsafe fn HDC_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HDC) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HDC_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HDC) -> u32;
+            fn HDC_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HDC) -> u32;
         }
         ::core::mem::transmute(HDC_UserSize64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -646,12 +638,12 @@ pub unsafe fn HDC_UserSize64(param0: *const u32, param1: u32, param2: *const sup
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HDC_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HDC) -> *mut u8 {
+pub unsafe fn HDC_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HDC) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HDC_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HDC) -> *mut u8;
+            fn HDC_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HDC) -> *mut u8;
         }
         ::core::mem::transmute(HDC_UserUnmarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -660,12 +652,12 @@ pub unsafe fn HDC_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HDC_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HDC) -> *mut u8 {
+pub unsafe fn HDC_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HDC) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HDC_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HDC) -> *mut u8;
+            fn HDC_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HDC) -> *mut u8;
         }
         ::core::mem::transmute(HDC_UserUnmarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -778,12 +770,12 @@ pub unsafe fn HGLOBAL_UserUnmarshal64(param0: *const u32, param1: *const u8, par
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HICON_UserFree(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HICON) {
+pub unsafe fn HICON_UserFree(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HICON) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HICON_UserFree(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HICON);
+            fn HICON_UserFree(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HICON);
         }
         HICON_UserFree(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -792,12 +784,12 @@ pub unsafe fn HICON_UserFree(param0: *const u32, param1: *const super::super::su
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HICON_UserFree64(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HICON) {
+pub unsafe fn HICON_UserFree64(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HICON) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HICON_UserFree64(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HICON);
+            fn HICON_UserFree64(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HICON);
         }
         HICON_UserFree64(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -806,12 +798,12 @@ pub unsafe fn HICON_UserFree64(param0: *const u32, param1: *const super::super::
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HICON_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HICON) -> *mut u8 {
+pub unsafe fn HICON_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HICON) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HICON_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HICON) -> *mut u8;
+            fn HICON_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HICON) -> *mut u8;
         }
         ::core::mem::transmute(HICON_UserMarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -820,12 +812,12 @@ pub unsafe fn HICON_UserMarshal(param0: *const u32, param1: *mut u8, param2: *co
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HICON_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HICON) -> *mut u8 {
+pub unsafe fn HICON_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HICON) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HICON_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HICON) -> *mut u8;
+            fn HICON_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HICON) -> *mut u8;
         }
         ::core::mem::transmute(HICON_UserMarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -834,12 +826,12 @@ pub unsafe fn HICON_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HICON_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HICON) -> u32 {
+pub unsafe fn HICON_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HICON) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HICON_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HICON) -> u32;
+            fn HICON_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HICON) -> u32;
         }
         ::core::mem::transmute(HICON_UserSize(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -848,12 +840,12 @@ pub unsafe fn HICON_UserSize(param0: *const u32, param1: u32, param2: *const sup
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HICON_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HICON) -> u32 {
+pub unsafe fn HICON_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HICON) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HICON_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HICON) -> u32;
+            fn HICON_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HICON) -> u32;
         }
         ::core::mem::transmute(HICON_UserSize64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -862,12 +854,12 @@ pub unsafe fn HICON_UserSize64(param0: *const u32, param1: u32, param2: *const s
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HICON_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HICON) -> *mut u8 {
+pub unsafe fn HICON_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HICON) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HICON_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HICON) -> *mut u8;
+            fn HICON_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HICON) -> *mut u8;
         }
         ::core::mem::transmute(HICON_UserUnmarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -876,12 +868,12 @@ pub unsafe fn HICON_UserUnmarshal(param0: *const u32, param1: *const u8, param2:
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HICON_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HICON) -> *mut u8 {
+pub unsafe fn HICON_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HICON) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HICON_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HICON) -> *mut u8;
+            fn HICON_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HICON) -> *mut u8;
         }
         ::core::mem::transmute(HICON_UserUnmarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -890,12 +882,12 @@ pub unsafe fn HICON_UserUnmarshal64(param0: *const u32, param1: *const u8, param
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HMENU_UserFree(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HMENU) {
+pub unsafe fn HMENU_UserFree(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HMENU) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HMENU_UserFree(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HMENU);
+            fn HMENU_UserFree(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HMENU);
         }
         HMENU_UserFree(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -904,12 +896,12 @@ pub unsafe fn HMENU_UserFree(param0: *const u32, param1: *const super::super::su
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HMENU_UserFree64(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HMENU) {
+pub unsafe fn HMENU_UserFree64(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HMENU) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HMENU_UserFree64(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HMENU);
+            fn HMENU_UserFree64(param0: *const u32, param1: *const ::win32_ui::WindowsAndMessaging::HMENU);
         }
         HMENU_UserFree64(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -918,12 +910,12 @@ pub unsafe fn HMENU_UserFree64(param0: *const u32, param1: *const super::super::
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HMENU_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HMENU) -> *mut u8 {
+pub unsafe fn HMENU_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HMENU) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HMENU_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HMENU) -> *mut u8;
+            fn HMENU_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HMENU) -> *mut u8;
         }
         ::core::mem::transmute(HMENU_UserMarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -932,12 +924,12 @@ pub unsafe fn HMENU_UserMarshal(param0: *const u32, param1: *mut u8, param2: *co
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HMENU_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HMENU) -> *mut u8 {
+pub unsafe fn HMENU_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HMENU) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HMENU_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::UI::WindowsAndMessaging::HMENU) -> *mut u8;
+            fn HMENU_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_ui::WindowsAndMessaging::HMENU) -> *mut u8;
         }
         ::core::mem::transmute(HMENU_UserMarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -946,12 +938,12 @@ pub unsafe fn HMENU_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HMENU_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HMENU) -> u32 {
+pub unsafe fn HMENU_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HMENU) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HMENU_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HMENU) -> u32;
+            fn HMENU_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HMENU) -> u32;
         }
         ::core::mem::transmute(HMENU_UserSize(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -960,12 +952,12 @@ pub unsafe fn HMENU_UserSize(param0: *const u32, param1: u32, param2: *const sup
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HMENU_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HMENU) -> u32 {
+pub unsafe fn HMENU_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HMENU) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HMENU_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::UI::WindowsAndMessaging::HMENU) -> u32;
+            fn HMENU_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_ui::WindowsAndMessaging::HMENU) -> u32;
         }
         ::core::mem::transmute(HMENU_UserSize64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -974,12 +966,12 @@ pub unsafe fn HMENU_UserSize64(param0: *const u32, param1: u32, param2: *const s
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HMENU_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HMENU) -> *mut u8 {
+pub unsafe fn HMENU_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HMENU) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HMENU_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HMENU) -> *mut u8;
+            fn HMENU_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HMENU) -> *mut u8;
         }
         ::core::mem::transmute(HMENU_UserUnmarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -988,12 +980,12 @@ pub unsafe fn HMENU_UserUnmarshal(param0: *const u32, param1: *const u8, param2:
 }
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn HMENU_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HMENU) -> *mut u8 {
+pub unsafe fn HMENU_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HMENU) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HMENU_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::UI::WindowsAndMessaging::HMENU) -> *mut u8;
+            fn HMENU_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_ui::WindowsAndMessaging::HMENU) -> *mut u8;
         }
         ::core::mem::transmute(HMENU_UserUnmarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -1002,12 +994,12 @@ pub unsafe fn HMENU_UserUnmarshal64(param0: *const u32, param1: *const u8, param
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HPALETTE_UserFree(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HPALETTE) {
+pub unsafe fn HPALETTE_UserFree(param0: *const u32, param1: *const ::win32_graphics::Gdi::HPALETTE) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HPALETTE_UserFree(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HPALETTE);
+            fn HPALETTE_UserFree(param0: *const u32, param1: *const ::win32_graphics::Gdi::HPALETTE);
         }
         HPALETTE_UserFree(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -1016,12 +1008,12 @@ pub unsafe fn HPALETTE_UserFree(param0: *const u32, param1: *const super::super:
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HPALETTE_UserFree64(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HPALETTE) {
+pub unsafe fn HPALETTE_UserFree64(param0: *const u32, param1: *const ::win32_graphics::Gdi::HPALETTE) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HPALETTE_UserFree64(param0: *const u32, param1: *const super::super::super::Graphics::Gdi::HPALETTE);
+            fn HPALETTE_UserFree64(param0: *const u32, param1: *const ::win32_graphics::Gdi::HPALETTE);
         }
         HPALETTE_UserFree64(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
@@ -1030,12 +1022,12 @@ pub unsafe fn HPALETTE_UserFree64(param0: *const u32, param1: *const super::supe
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HPALETTE_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HPALETTE) -> *mut u8 {
+pub unsafe fn HPALETTE_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HPALETTE) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HPALETTE_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HPALETTE) -> *mut u8;
+            fn HPALETTE_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HPALETTE) -> *mut u8;
         }
         ::core::mem::transmute(HPALETTE_UserMarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -1044,12 +1036,12 @@ pub unsafe fn HPALETTE_UserMarshal(param0: *const u32, param1: *mut u8, param2: 
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HPALETTE_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HPALETTE) -> *mut u8 {
+pub unsafe fn HPALETTE_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HPALETTE) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HPALETTE_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Graphics::Gdi::HPALETTE) -> *mut u8;
+            fn HPALETTE_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics::Gdi::HPALETTE) -> *mut u8;
         }
         ::core::mem::transmute(HPALETTE_UserMarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -1058,12 +1050,12 @@ pub unsafe fn HPALETTE_UserMarshal64(param0: *const u32, param1: *mut u8, param2
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HPALETTE_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HPALETTE) -> u32 {
+pub unsafe fn HPALETTE_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HPALETTE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HPALETTE_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HPALETTE) -> u32;
+            fn HPALETTE_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HPALETTE) -> u32;
         }
         ::core::mem::transmute(HPALETTE_UserSize(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -1072,12 +1064,12 @@ pub unsafe fn HPALETTE_UserSize(param0: *const u32, param1: u32, param2: *const 
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HPALETTE_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HPALETTE) -> u32 {
+pub unsafe fn HPALETTE_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HPALETTE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HPALETTE_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Graphics::Gdi::HPALETTE) -> u32;
+            fn HPALETTE_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_graphics::Gdi::HPALETTE) -> u32;
         }
         ::core::mem::transmute(HPALETTE_UserSize64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -1086,12 +1078,12 @@ pub unsafe fn HPALETTE_UserSize64(param0: *const u32, param1: u32, param2: *cons
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HPALETTE_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HPALETTE) -> *mut u8 {
+pub unsafe fn HPALETTE_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HPALETTE) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HPALETTE_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HPALETTE) -> *mut u8;
+            fn HPALETTE_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HPALETTE) -> *mut u8;
         }
         ::core::mem::transmute(HPALETTE_UserUnmarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -1100,124 +1092,116 @@ pub unsafe fn HPALETTE_UserUnmarshal(param0: *const u32, param1: *const u8, para
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn HPALETTE_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HPALETTE) -> *mut u8 {
+pub unsafe fn HPALETTE_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HPALETTE) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HPALETTE_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Graphics::Gdi::HPALETTE) -> *mut u8;
+            fn HPALETTE_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics::Gdi::HPALETTE) -> *mut u8;
         }
         ::core::mem::transmute(HPALETTE_UserUnmarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HWND_UserFree(param0: *const u32, param1: *const super::super::super::Foundation::HWND) {
+pub unsafe fn HWND_UserFree(param0: *const u32, param1: *const ::win32_foundation::HWND) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HWND_UserFree(param0: *const u32, param1: *const super::super::super::Foundation::HWND);
+            fn HWND_UserFree(param0: *const u32, param1: *const ::win32_foundation::HWND);
         }
         HWND_UserFree(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HWND_UserFree64(param0: *const u32, param1: *const super::super::super::Foundation::HWND) {
+pub unsafe fn HWND_UserFree64(param0: *const u32, param1: *const ::win32_foundation::HWND) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HWND_UserFree64(param0: *const u32, param1: *const super::super::super::Foundation::HWND);
+            fn HWND_UserFree64(param0: *const u32, param1: *const ::win32_foundation::HWND);
         }
         HWND_UserFree64(::core::mem::transmute(param0), ::core::mem::transmute(param1))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HWND_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Foundation::HWND) -> *mut u8 {
+pub unsafe fn HWND_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_foundation::HWND) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HWND_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Foundation::HWND) -> *mut u8;
+            fn HWND_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_foundation::HWND) -> *mut u8;
         }
         ::core::mem::transmute(HWND_UserMarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HWND_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Foundation::HWND) -> *mut u8 {
+pub unsafe fn HWND_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_foundation::HWND) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HWND_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::super::Foundation::HWND) -> *mut u8;
+            fn HWND_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_foundation::HWND) -> *mut u8;
         }
         ::core::mem::transmute(HWND_UserMarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HWND_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Foundation::HWND) -> u32 {
+pub unsafe fn HWND_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_foundation::HWND) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HWND_UserSize(param0: *const u32, param1: u32, param2: *const super::super::super::Foundation::HWND) -> u32;
+            fn HWND_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_foundation::HWND) -> u32;
         }
         ::core::mem::transmute(HWND_UserSize(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HWND_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Foundation::HWND) -> u32 {
+pub unsafe fn HWND_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_foundation::HWND) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HWND_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::super::Foundation::HWND) -> u32;
+            fn HWND_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_foundation::HWND) -> u32;
         }
         ::core::mem::transmute(HWND_UserSize64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HWND_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Foundation::HWND) -> *mut u8 {
+pub unsafe fn HWND_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_foundation::HWND) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HWND_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Foundation::HWND) -> *mut u8;
+            fn HWND_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_foundation::HWND) -> *mut u8;
         }
         ::core::mem::transmute(HWND_UserUnmarshal(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HWND_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Foundation::HWND) -> *mut u8 {
+pub unsafe fn HWND_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_foundation::HWND) -> *mut u8 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HWND_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::super::Foundation::HWND) -> *mut u8;
+            fn HWND_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_foundation::HWND) -> *mut u8;
         }
         ::core::mem::transmute(HWND_UserUnmarshal64(::core::mem::transmute(param0), ::core::mem::transmute(param1), ::core::mem::transmute(param2)))
     }
@@ -1415,7 +1399,6 @@ impl IMarshalingStream {
     pub unsafe fn UnlockRegion(&self, liboffset: u64, cb: u64, dwlocktype: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.UnlockRegion)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(liboffset), ::core::mem::transmute(cb), ::core::mem::transmute(dwlocktype)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn Stat(&self, pstatstg: *mut super::STATSTG, grfstatflag: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Stat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pstatstg), ::core::mem::transmute(grfstatflag)).ok()
     }
@@ -1858,7 +1841,7 @@ pub unsafe fn STGMEDIUM_UserUnmarshal64(param0: *const u32, param1: *const u8, p
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 #[inline]
 pub unsafe fn VARIANT_UserFree(param0: *const u32, param1: *const super::VARIANT) {
     #[cfg(windows)]
@@ -1872,7 +1855,7 @@ pub unsafe fn VARIANT_UserFree(param0: *const u32, param1: *const super::VARIANT
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 #[inline]
 pub unsafe fn VARIANT_UserFree64(param0: *const u32, param1: *const super::VARIANT) {
     #[cfg(windows)]
@@ -1886,7 +1869,7 @@ pub unsafe fn VARIANT_UserFree64(param0: *const u32, param1: *const super::VARIA
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 #[inline]
 pub unsafe fn VARIANT_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::VARIANT) -> *mut u8 {
     #[cfg(windows)]
@@ -1900,7 +1883,7 @@ pub unsafe fn VARIANT_UserMarshal(param0: *const u32, param1: *mut u8, param2: *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 #[inline]
 pub unsafe fn VARIANT_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::VARIANT) -> *mut u8 {
     #[cfg(windows)]
@@ -1914,7 +1897,7 @@ pub unsafe fn VARIANT_UserMarshal64(param0: *const u32, param1: *mut u8, param2:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 #[inline]
 pub unsafe fn VARIANT_UserSize(param0: *const u32, param1: u32, param2: *const super::VARIANT) -> u32 {
     #[cfg(windows)]
@@ -1928,7 +1911,7 @@ pub unsafe fn VARIANT_UserSize(param0: *const u32, param1: u32, param2: *const s
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 #[inline]
 pub unsafe fn VARIANT_UserSize64(param0: *const u32, param1: u32, param2: *const super::VARIANT) -> u32 {
     #[cfg(windows)]
@@ -1942,7 +1925,7 @@ pub unsafe fn VARIANT_UserSize64(param0: *const u32, param1: u32, param2: *const
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 #[inline]
 pub unsafe fn VARIANT_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::VARIANT) -> *mut u8 {
     #[cfg(windows)]
@@ -1956,7 +1939,7 @@ pub unsafe fn VARIANT_UserUnmarshal(param0: *const u32, param1: *const u8, param
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 #[inline]
 pub unsafe fn VARIANT_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::VARIANT) -> *mut u8 {
     #[cfg(windows)]

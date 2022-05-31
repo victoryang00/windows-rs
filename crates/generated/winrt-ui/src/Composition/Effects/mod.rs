@@ -52,7 +52,7 @@ impl SceneLightingEffect {
     }
     #[cfg(feature = "Graphics_Effects")]
     pub fn Name(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Graphics::Effects::IGraphicsEffect>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_graphics::Effects::IGraphicsEffect>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).Name)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -60,7 +60,7 @@ impl SceneLightingEffect {
     }
     #[cfg(feature = "Graphics_Effects")]
     pub fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Graphics::Effects::IGraphicsEffect>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_graphics::Effects::IGraphicsEffect>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetName)(::windows_core::Interface::as_raw(this), name.into_param().abi()).ok() }
     }
     pub fn AmbientAmount(&self) -> ::windows_core::Result<f32> {
@@ -86,15 +86,15 @@ impl SceneLightingEffect {
         unsafe { (::windows_core::Interface::vtable(this).SetDiffuseAmount)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Graphics_Effects")]
-    pub fn NormalMapSource(&self) -> ::windows_core::Result<super::super::super::Graphics::Effects::IGraphicsEffectSource> {
+    pub fn NormalMapSource(&self) -> ::windows_core::Result<::winrt_graphics::Effects::IGraphicsEffectSource> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NormalMapSource)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::Effects::IGraphicsEffectSource>(result__)
+            (::windows_core::Interface::vtable(this).NormalMapSource)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Effects::IGraphicsEffectSource>(result__)
         }
     }
     #[cfg(feature = "Graphics_Effects")]
-    pub fn SetNormalMapSource<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Effects::IGraphicsEffectSource>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetNormalMapSource<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Effects::IGraphicsEffectSource>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetNormalMapSource)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -203,55 +203,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sce
     }
 }
 #[cfg(feature = "Graphics_Effects")]
-impl ::core::convert::TryFrom<SceneLightingEffect> for super::super::super::Graphics::Effects::IGraphicsEffect {
+impl ::core::convert::TryFrom<SceneLightingEffect> for ::winrt_graphics::Effects::IGraphicsEffect {
     type Error = ::windows_core::Error;
     fn try_from(value: SceneLightingEffect) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Graphics_Effects")]
-impl ::core::convert::TryFrom<&SceneLightingEffect> for super::super::super::Graphics::Effects::IGraphicsEffect {
+impl ::core::convert::TryFrom<&SceneLightingEffect> for ::winrt_graphics::Effects::IGraphicsEffect {
     type Error = ::windows_core::Error;
     fn try_from(value: &SceneLightingEffect) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Graphics_Effects")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Graphics::Effects::IGraphicsEffect> for SceneLightingEffect {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Graphics::Effects::IGraphicsEffect> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_graphics::Effects::IGraphicsEffect> for SceneLightingEffect {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_graphics::Effects::IGraphicsEffect> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Graphics_Effects")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Graphics::Effects::IGraphicsEffect> for &SceneLightingEffect {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Graphics::Effects::IGraphicsEffect> {
-        ::core::convert::TryInto::<super::super::super::Graphics::Effects::IGraphicsEffect>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_graphics::Effects::IGraphicsEffect> for &SceneLightingEffect {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_graphics::Effects::IGraphicsEffect> {
+        ::core::convert::TryInto::<::winrt_graphics::Effects::IGraphicsEffect>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Graphics_Effects")]
-impl ::core::convert::TryFrom<SceneLightingEffect> for super::super::super::Graphics::Effects::IGraphicsEffectSource {
+impl ::core::convert::TryFrom<SceneLightingEffect> for ::winrt_graphics::Effects::IGraphicsEffectSource {
     type Error = ::windows_core::Error;
     fn try_from(value: SceneLightingEffect) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Graphics_Effects")]
-impl ::core::convert::TryFrom<&SceneLightingEffect> for super::super::super::Graphics::Effects::IGraphicsEffectSource {
+impl ::core::convert::TryFrom<&SceneLightingEffect> for ::winrt_graphics::Effects::IGraphicsEffectSource {
     type Error = ::windows_core::Error;
     fn try_from(value: &SceneLightingEffect) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Graphics_Effects")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Graphics::Effects::IGraphicsEffectSource> for SceneLightingEffect {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Graphics::Effects::IGraphicsEffectSource> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_graphics::Effects::IGraphicsEffectSource> for SceneLightingEffect {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_graphics::Effects::IGraphicsEffectSource> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Graphics_Effects")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Graphics::Effects::IGraphicsEffectSource> for &SceneLightingEffect {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Graphics::Effects::IGraphicsEffectSource> {
-        ::core::convert::TryInto::<super::super::super::Graphics::Effects::IGraphicsEffectSource>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_graphics::Effects::IGraphicsEffectSource> for &SceneLightingEffect {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_graphics::Effects::IGraphicsEffectSource> {
+        ::core::convert::TryInto::<::winrt_graphics::Effects::IGraphicsEffectSource>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for SceneLightingEffect {}

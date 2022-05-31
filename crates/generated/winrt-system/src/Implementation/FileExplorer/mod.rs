@@ -27,16 +27,14 @@ pub struct ISysStorageProviderEventReceivedEventArgsFactory_Vtbl {
 #[repr(transparent)]
 pub struct ISysStorageProviderEventSource(::windows_core::IUnknown);
 impl ISysStorageProviderEventSource {
-    #[cfg(feature = "Foundation")]
-    pub fn EventReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<ISysStorageProviderEventSource, SysStorageProviderEventReceivedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn EventReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<ISysStorageProviderEventSource, SysStorageProviderEventReceivedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).EventReceived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).EventReceived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveEventReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveEventReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveEventReceived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -112,14 +110,8 @@ unsafe impl ::windows_core::Interface for ISysStorageProviderEventSource {
 #[doc(hidden)]
 pub struct ISysStorageProviderEventSource_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub EventReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EventReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveEventReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveEventReceived: usize,
+    pub EventReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveEventReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISysStorageProviderHandlerFactory(::windows_core::IUnknown);
@@ -216,12 +208,12 @@ pub struct ISysStorageProviderHandlerFactory_Vtbl {
 #[repr(transparent)]
 pub struct ISysStorageProviderHttpRequestProvider(::windows_core::IUnknown);
 impl ISysStorageProviderHttpRequestProvider {
-    #[cfg(all(feature = "Foundation", feature = "Web_Http"))]
-    pub fn SendRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Web::Http::HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Web::Http::HttpResponseMessage>> {
+    #[cfg(feature = "Web_Http")]
+    pub fn SendRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_web::Http::HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_web::Http::HttpResponseMessage>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Web::Http::HttpResponseMessage>>(result__)
+            (::windows_core::Interface::vtable(this).SendRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_web::Http::HttpResponseMessage>>(result__)
         }
     }
 }
@@ -296,9 +288,9 @@ unsafe impl ::windows_core::Interface for ISysStorageProviderHttpRequestProvider
 #[doc(hidden)]
 pub struct ISysStorageProviderHttpRequestProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Web_Http"))]
+    #[cfg(feature = "Web_Http")]
     pub SendRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Web_Http")))]
+    #[cfg(not(feature = "Web_Http"))]
     SendRequestAsync: usize,
 }
 #[repr(transparent)]

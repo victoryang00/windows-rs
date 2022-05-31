@@ -266,11 +266,11 @@ impl JsonArray {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<IJsonValue>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<IJsonValue>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<IJsonValue>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<IJsonValue>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<IJsonValue>>(result__)
         }
     }
     pub fn GetObjectAt(&self, index: u32) -> ::windows_core::Result<JsonObject> {
@@ -369,9 +369,8 @@ impl JsonArray {
             (::windows_core::Interface::vtable(this).GetObject)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<JsonObject>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -379,7 +378,7 @@ impl JsonArray {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<IJsonValue> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<IJsonValue>(result__)
@@ -387,23 +386,23 @@ impl JsonArray {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<IJsonValue>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+    pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IJsonValue>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<IJsonValue>>(result__)
+            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IJsonValue>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, IJsonValue>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
@@ -411,37 +410,37 @@ impl JsonArray {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, IJsonValue>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, IJsonValue>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, IJsonValue>>(&self, value: Param0) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<IJsonValue>]) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
@@ -449,7 +448,7 @@ impl JsonArray {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<IJsonValue>]) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IVector<IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<IJsonValue>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
     pub fn IJsonArrayStatics<R, F: FnOnce(&IJsonArrayStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -490,7 +489,7 @@ impl ::windows_core::RuntimeName for JsonArray {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for JsonArray {
     type Item = IJsonValue;
-    type IntoIter = super::super::Foundation::Collections::VectorIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -498,9 +497,9 @@ impl ::core::iter::IntoIterator for JsonArray {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &JsonArray {
     type Item = IJsonValue;
-    type IntoIter = super::super::Foundation::Collections::VectorIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::Foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 impl ::core::convert::From<JsonArray> for ::windows_core::IUnknown {
@@ -544,29 +543,29 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Jso
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<JsonArray> for super::super::Foundation::Collections::IIterable<IJsonValue> {
+impl ::core::convert::TryFrom<JsonArray> for ::winrt_foundation::Collections::IIterable<IJsonValue> {
     type Error = ::windows_core::Error;
     fn try_from(value: JsonArray) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&JsonArray> for super::super::Foundation::Collections::IIterable<IJsonValue> {
+impl ::core::convert::TryFrom<&JsonArray> for ::winrt_foundation::Collections::IIterable<IJsonValue> {
     type Error = ::windows_core::Error;
     fn try_from(value: &JsonArray) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IJsonValue>> for JsonArray {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<IJsonValue>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IJsonValue>> for JsonArray {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IJsonValue>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IJsonValue>> for &JsonArray {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<IJsonValue>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<IJsonValue>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IJsonValue>> for &JsonArray {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IJsonValue>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<IJsonValue>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<JsonArray> for IJsonValue {
@@ -591,56 +590,52 @@ impl<'a> ::windows_core::IntoParam<'a, IJsonValue> for &JsonArray {
         ::core::convert::TryInto::<IJsonValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<JsonArray> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<JsonArray> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: JsonArray) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&JsonArray> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&JsonArray> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &JsonArray) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for JsonArray {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for JsonArray {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &JsonArray {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &JsonArray {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<JsonArray> for super::super::Foundation::Collections::IVector<IJsonValue> {
+impl ::core::convert::TryFrom<JsonArray> for ::winrt_foundation::Collections::IVector<IJsonValue> {
     type Error = ::windows_core::Error;
     fn try_from(value: JsonArray) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&JsonArray> for super::super::Foundation::Collections::IVector<IJsonValue> {
+impl ::core::convert::TryFrom<&JsonArray> for ::winrt_foundation::Collections::IVector<IJsonValue> {
     type Error = ::windows_core::Error;
     fn try_from(value: &JsonArray) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<IJsonValue>> for JsonArray {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IVector<IJsonValue>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<IJsonValue>> for JsonArray {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<IJsonValue>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<IJsonValue>> for &JsonArray {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IVector<IJsonValue>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IVector<IJsonValue>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<IJsonValue>> for &JsonArray {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<IJsonValue>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<IJsonValue>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for JsonArray {}
@@ -708,11 +703,11 @@ impl JsonObject {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>>(result__)
         }
     }
     pub fn GetNamedValue<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0) -> ::windows_core::Result<JsonValue> {
@@ -866,7 +861,7 @@ impl JsonObject {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Lookup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<IJsonValue> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Lookup)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<IJsonValue>(result__)
@@ -874,7 +869,7 @@ impl JsonObject {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
@@ -882,23 +877,23 @@ impl JsonObject {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn HasKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).HasKey)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, IJsonValue>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
+    pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, IJsonValue>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, IJsonValue>>(result__)
+            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, IJsonValue>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Insert<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, IJsonValue>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).Insert)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
@@ -906,17 +901,16 @@ impl JsonObject {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Remove<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Remove)(::windows_core::Interface::as_raw(this), key.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -959,16 +953,16 @@ impl ::windows_core::RuntimeName for JsonObject {
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for JsonObject {
-    type Item = super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &JsonObject {
-    type Item = super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -1014,29 +1008,29 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Jso
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<JsonObject> for super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>> {
+impl ::core::convert::TryFrom<JsonObject> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>> {
     type Error = ::windows_core::Error;
     fn try_from(value: JsonObject) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&JsonObject> for super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>> {
+impl ::core::convert::TryFrom<&JsonObject> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &JsonObject) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> for JsonObject {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> for JsonObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> for &JsonObject {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> for &JsonObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IJsonValue>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<JsonObject> for IJsonValue {
@@ -1062,55 +1056,51 @@ impl<'a> ::windows_core::IntoParam<'a, IJsonValue> for &JsonObject {
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<JsonObject> for super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue> {
+impl ::core::convert::TryFrom<JsonObject> for ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue> {
     type Error = ::windows_core::Error;
     fn try_from(value: JsonObject) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&JsonObject> for super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue> {
+impl ::core::convert::TryFrom<&JsonObject> for ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue> {
     type Error = ::windows_core::Error;
     fn try_from(value: &JsonObject) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>> for JsonObject {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>> for JsonObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>> for &JsonObject {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>> for &JsonObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IJsonValue>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<JsonObject> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<JsonObject> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: JsonObject) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&JsonObject> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&JsonObject> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &JsonObject) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for JsonObject {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for JsonObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &JsonObject {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &JsonObject {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for JsonObject {}
@@ -1203,9 +1193,8 @@ impl JsonValue {
             (::windows_core::Interface::vtable(this).CreateNullValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<JsonValue>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -1312,30 +1301,26 @@ impl<'a> ::windows_core::IntoParam<'a, IJsonValue> for &JsonValue {
         ::core::convert::TryInto::<IJsonValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<JsonValue> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<JsonValue> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: JsonValue) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&JsonValue> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&JsonValue> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &JsonValue) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for JsonValue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for JsonValue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &JsonValue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &JsonValue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for JsonValue {}

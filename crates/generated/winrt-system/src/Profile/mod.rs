@@ -15,10 +15,10 @@ impl AnalyticsInfo {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetSystemPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(attributenames: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
+    pub fn GetSystemPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(attributenames: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
         Self::IAnalyticsInfoStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSystemPropertiesAsync)(::windows_core::Interface::as_raw(this), attributenames.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).GetSystemPropertiesAsync)(::windows_core::Interface::as_raw(this), attributenames.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(result__)
         })
     }
     pub fn IAnalyticsInfoStatics<R, F: FnOnce(&IAnalyticsInfoStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -133,10 +133,10 @@ unsafe impl ::core::marker::Sync for AnalyticsVersionInfo {}
 pub struct AppApplicability;
 impl AppApplicability {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetUnsupportedAppRequirements<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(capabilities: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UnsupportedAppRequirement>> {
+    pub fn GetUnsupportedAppRequirements<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(capabilities: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UnsupportedAppRequirement>> {
         Self::IAppApplicabilityStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetUnsupportedAppRequirements)(::windows_core::Interface::as_raw(this), capabilities.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UnsupportedAppRequirement>>(result__)
+            (::windows_core::Interface::vtable(this).GetUnsupportedAppRequirements)(::windows_core::Interface::as_raw(this), capabilities.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UnsupportedAppRequirement>>(result__)
         })
     }
     pub fn IAppApplicabilityStatics<R, F: FnOnce(&IAppApplicabilityStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -166,7 +166,7 @@ impl ::windows_core::RuntimeName for EducationSettings {
 pub struct HardwareIdentification;
 impl HardwareIdentification {
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetPackageSpecificToken<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(nonce: Param0) -> ::windows_core::Result<HardwareToken> {
+    pub fn GetPackageSpecificToken<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(nonce: Param0) -> ::windows_core::Result<HardwareToken> {
         Self::IHardwareIdentificationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetPackageSpecificToken)(::windows_core::Interface::as_raw(this), nonce.into_param().abi(), result__.as_mut_ptr()).from_abi::<HardwareToken>(result__)
@@ -184,27 +184,27 @@ impl ::windows_core::RuntimeName for HardwareIdentification {
 pub struct HardwareToken(::windows_core::IUnknown);
 impl HardwareToken {
     #[cfg(feature = "Storage_Streams")]
-    pub fn Id(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Id(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Signature(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Signature(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Signature)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Signature)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Certificate(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Certificate(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Certificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Certificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -452,14 +452,8 @@ unsafe impl ::windows_core::Interface for IPlatformDiagnosticsAndUsageDataSettin
 pub struct IPlatformDiagnosticsAndUsageDataSettingsStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CollectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PlatformDataCollectionLevel) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub CollectionLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CollectionLevelChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCollectionLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCollectionLevelChanged: usize,
+    pub CollectionLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCollectionLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub CanCollectDiagnostics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, level: PlatformDataCollectionLevel, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -548,14 +542,8 @@ unsafe impl ::windows_core::Interface for ISystemSetupInfoStatics {
 pub struct ISystemSetupInfoStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub OutOfBoxExperienceState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SystemOutOfBoxExperienceState) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub OutOfBoxExperienceStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OutOfBoxExperienceStateChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveOutOfBoxExperienceStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveOutOfBoxExperienceStateChanged: usize,
+    pub OutOfBoxExperienceStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveOutOfBoxExperienceStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -586,14 +574,8 @@ pub struct IWindowsIntegrityPolicyStatics_Vtbl {
     pub IsEnabledForTrial: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub CanDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsDisableSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub PolicyChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PolicyChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePolicyChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePolicyChanged: usize,
+    pub PolicyChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemovePolicyChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 pub struct KnownRetailInfoProperties;
 impl KnownRetailInfoProperties {
@@ -780,15 +762,13 @@ impl PlatformDiagnosticsAndUsageDataSettings {
             (::windows_core::Interface::vtable(this).CollectionLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PlatformDataCollectionLevel>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CollectionLevelChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn CollectionLevelChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IPlatformDiagnosticsAndUsageDataSettingsStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CollectionLevelChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CollectionLevelChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCollectionLevelChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCollectionLevelChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IPlatformDiagnosticsAndUsageDataSettingsStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveCollectionLevelChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn CanCollectDiagnostics(level: PlatformDataCollectionLevel) -> ::windows_core::Result<bool> {
@@ -814,10 +794,10 @@ impl RetailInfo {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties() -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn Properties() -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         Self::IRetailInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         })
     }
     pub fn IRetailInfoStatics<R, F: FnOnce(&IRetailInfoStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -880,11 +860,11 @@ impl ::windows_core::RuntimeName for SystemIdentification {
 pub struct SystemIdentificationInfo(::windows_core::IUnknown);
 impl SystemIdentificationInfo {
     #[cfg(feature = "Storage_Streams")]
-    pub fn Id(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Id(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn Source(&self) -> ::windows_core::Result<SystemIdentificationSource> {
@@ -1044,15 +1024,13 @@ impl SystemSetupInfo {
             (::windows_core::Interface::vtable(this).OutOfBoxExperienceState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SystemOutOfBoxExperienceState>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OutOfBoxExperienceStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn OutOfBoxExperienceStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::ISystemSetupInfoStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).OutOfBoxExperienceStateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).OutOfBoxExperienceStateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveOutOfBoxExperienceStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveOutOfBoxExperienceStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::ISystemSetupInfoStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveOutOfBoxExperienceStateChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn ISystemSetupInfoStatics<R, F: FnOnce(&ISystemSetupInfoStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1240,15 +1218,13 @@ impl WindowsIntegrityPolicy {
             (::windows_core::Interface::vtable(this).IsDisableSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PolicyChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn PolicyChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IWindowsIntegrityPolicyStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PolicyChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PolicyChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePolicyChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePolicyChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IWindowsIntegrityPolicyStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemovePolicyChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn IWindowsIntegrityPolicyStatics<R, F: FnOnce(&IWindowsIntegrityPolicyStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

@@ -17,14 +17,8 @@ unsafe impl ::windows_core::Interface for IPerceptionTimestamp {
 #[doc(hidden)]
 pub struct IPerceptionTimestamp_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub TargetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TargetTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub PredictionAmount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PredictionAmount: usize,
+    pub TargetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub PredictionAmount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -37,10 +31,7 @@ unsafe impl ::windows_core::Interface for IPerceptionTimestamp2 {
 #[doc(hidden)]
 pub struct IPerceptionTimestamp2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub SystemRelativeTargetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SystemRelativeTargetTime: usize,
+    pub SystemRelativeTargetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -53,10 +44,7 @@ unsafe impl ::windows_core::Interface for IPerceptionTimestampHelperStatics {
 #[doc(hidden)]
 pub struct IPerceptionTimestampHelperStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub FromHistoricalTargetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targettime: super::Foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromHistoricalTargetTime: usize,
+    pub FromHistoricalTargetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targettime: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -69,36 +57,30 @@ unsafe impl ::windows_core::Interface for IPerceptionTimestampHelperStatics2 {
 #[doc(hidden)]
 pub struct IPerceptionTimestampHelperStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub FromSystemRelativeTargetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targettime: super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromSystemRelativeTargetTime: usize,
+    pub FromSystemRelativeTargetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targettime: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct PerceptionTimestamp(::windows_core::IUnknown);
 impl PerceptionTimestamp {
-    #[cfg(feature = "Foundation")]
-    pub fn TargetTime(&self) -> ::windows_core::Result<super::Foundation::DateTime> {
+    pub fn TargetTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TargetTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TargetTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PredictionAmount(&self) -> ::windows_core::Result<super::Foundation::TimeSpan> {
+    pub fn PredictionAmount(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).PredictionAmount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).PredictionAmount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SystemRelativeTargetTime(&self) -> ::windows_core::Result<super::Foundation::TimeSpan> {
+    pub fn SystemRelativeTargetTime(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = &::windows_core::Interface::cast::<IPerceptionTimestamp2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).SystemRelativeTargetTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).SystemRelativeTargetTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
 }
@@ -176,15 +158,13 @@ unsafe impl ::core::marker::Send for PerceptionTimestamp {}
 unsafe impl ::core::marker::Sync for PerceptionTimestamp {}
 pub struct PerceptionTimestampHelper;
 impl PerceptionTimestampHelper {
-    #[cfg(feature = "Foundation")]
-    pub fn FromHistoricalTargetTime<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::DateTime>>(targettime: Param0) -> ::windows_core::Result<PerceptionTimestamp> {
+    pub fn FromHistoricalTargetTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(targettime: Param0) -> ::windows_core::Result<PerceptionTimestamp> {
         Self::IPerceptionTimestampHelperStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FromHistoricalTargetTime)(::windows_core::Interface::as_raw(this), targettime.into_param().abi(), result__.as_mut_ptr()).from_abi::<PerceptionTimestamp>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromSystemRelativeTargetTime<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TimeSpan>>(targettime: Param0) -> ::windows_core::Result<PerceptionTimestamp> {
+    pub fn FromSystemRelativeTargetTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(targettime: Param0) -> ::windows_core::Result<PerceptionTimestamp> {
         Self::IPerceptionTimestampHelperStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FromSystemRelativeTargetTime)(::windows_core::Interface::as_raw(this), targettime.into_param().abi(), result__.as_mut_ptr()).from_abi::<PerceptionTimestamp>(result__)

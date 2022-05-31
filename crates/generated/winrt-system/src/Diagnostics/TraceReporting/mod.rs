@@ -102,7 +102,7 @@ impl PlatformDiagnosticActions {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryEscalateScenario<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(scenarioid: Param0, escalationtype: PlatformDiagnosticEscalationType, outputdirectory: Param2, timestampoutputdirectory: bool, forceescalationupload: bool, triggers: Param5) -> ::windows_core::Result<bool> {
+    pub fn TryEscalateScenario<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>>(scenarioid: Param0, escalationtype: PlatformDiagnosticEscalationType, outputdirectory: Param2, timestampoutputdirectory: bool, forceescalationupload: bool, triggers: Param5) -> ::windows_core::Result<bool> {
         Self::IPlatformDiagnosticActionsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).TryEscalateScenario)(::windows_core::Interface::as_raw(this), scenarioid.into_param().abi(), escalationtype, outputdirectory.into_param().abi(), timestampoutputdirectory, forceescalationupload, triggers.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
@@ -115,10 +115,10 @@ impl PlatformDiagnosticActions {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetActiveScenarioList() -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::GUID>> {
+    pub fn GetActiveScenarioList() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::GUID>> {
         Self::IPlatformDiagnosticActionsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetActiveScenarioList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::GUID>>(result__)
+            (::windows_core::Interface::vtable(this).GetActiveScenarioList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::GUID>>(result__)
         })
     }
     pub fn ForceUpload(latency: PlatformDiagnosticEventBufferLatencies, uploadovercostednetwork: bool, uploadoverbattery: bool) -> ::windows_core::Result<PlatformDiagnosticActionState> {
@@ -140,10 +140,10 @@ impl PlatformDiagnosticActions {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetKnownTraceList(slottype: PlatformDiagnosticTraceSlotType) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<PlatformDiagnosticTraceInfo>> {
+    pub fn GetKnownTraceList(slottype: PlatformDiagnosticTraceSlotType) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<PlatformDiagnosticTraceInfo>> {
         Self::IPlatformDiagnosticActionsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetKnownTraceList)(::windows_core::Interface::as_raw(this), slottype, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<PlatformDiagnosticTraceInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetKnownTraceList)(::windows_core::Interface::as_raw(this), slottype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<PlatformDiagnosticTraceInfo>>(result__)
         })
     }
     pub fn IPlatformDiagnosticActionsStatics<R, F: FnOnce(&IPlatformDiagnosticActionsStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

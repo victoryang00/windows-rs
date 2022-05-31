@@ -1,9 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OperationEnd(operationendparams: *const OPERATION_END_PARAMETERS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OperationStart(operationstartparams: *const OPERATION_START_PARAMETERS) -> super::super::Foundation::BOOL;
+    pub fn OperationEnd(operationendparams: *const OPERATION_END_PARAMETERS) -> ::win32_foundation_sys::BOOL;
+    pub fn OperationStart(operationstartparams: *const OPERATION_START_PARAMETERS) -> ::win32_foundation_sys::BOOL;
 }
 #[repr(C)]
 pub struct OPERATION_END_PARAMETERS {

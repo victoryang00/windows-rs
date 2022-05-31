@@ -1198,28 +1198,28 @@ impl ::core::default::Default for POINTFLOAT {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn SetPixelFormat<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(hdc: Param0, format: i32, ppfd: *const PIXELFORMATDESCRIPTOR) -> super::super::Foundation::BOOL {
+pub unsafe fn SetPixelFormat<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(hdc: Param0, format: i32, ppfd: *const PIXELFORMATDESCRIPTOR) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetPixelFormat(hdc: super::Gdi::HDC, format: i32, ppfd: *const PIXELFORMATDESCRIPTOR) -> super::super::Foundation::BOOL;
+            fn SetPixelFormat(hdc: super::Gdi::HDC, format: i32, ppfd: *const PIXELFORMATDESCRIPTOR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetPixelFormat(hdc.into_param().abi(), ::core::mem::transmute(format), ::core::mem::transmute(ppfd)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn SwapBuffers<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SwapBuffers<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SwapBuffers(param0: super::Gdi::HDC) -> super::super::Foundation::BOOL;
+            fn SwapBuffers(param0: super::Gdi::HDC) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SwapBuffers(param0.into_param().abi()))
     }
@@ -6270,14 +6270,13 @@ pub unsafe fn gluUnProject(winx: f64, winy: f64, winz: f64, modelmatrix: *const 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn wglCopyContext<'a, Param0: ::windows_core::IntoParam<'a, HGLRC>, Param1: ::windows_core::IntoParam<'a, HGLRC>>(param0: Param0, param1: Param1, param2: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn wglCopyContext<'a, Param0: ::windows_core::IntoParam<'a, HGLRC>, Param1: ::windows_core::IntoParam<'a, HGLRC>>(param0: Param0, param1: Param1, param2: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglCopyContext(param0: HGLRC, param1: HGLRC, param2: u32) -> super::super::Foundation::BOOL;
+            fn wglCopyContext(param0: HGLRC, param1: HGLRC, param2: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglCopyContext(param0.into_param().abi(), param1.into_param().abi(), ::core::mem::transmute(param2)))
     }
@@ -6314,28 +6313,27 @@ pub unsafe fn wglCreateLayerContext<'a, Param0: ::windows_core::IntoParam<'a, su
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn wglDeleteContext<'a, Param0: ::windows_core::IntoParam<'a, HGLRC>>(param0: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn wglDeleteContext<'a, Param0: ::windows_core::IntoParam<'a, HGLRC>>(param0: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglDeleteContext(param0: HGLRC) -> super::super::Foundation::BOOL;
+            fn wglDeleteContext(param0: HGLRC) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglDeleteContext(param0.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn wglDescribeLayerPlane<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: i32, param2: i32, param3: u32, param4: *mut LAYERPLANEDESCRIPTOR) -> super::super::Foundation::BOOL {
+pub unsafe fn wglDescribeLayerPlane<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: i32, param2: i32, param3: u32, param4: *mut LAYERPLANEDESCRIPTOR) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglDescribeLayerPlane(param0: super::Gdi::HDC, param1: i32, param2: i32, param3: u32, param4: *mut LAYERPLANEDESCRIPTOR) -> super::super::Foundation::BOOL;
+            fn wglDescribeLayerPlane(param0: super::Gdi::HDC, param1: i32, param2: i32, param3: u32, param4: *mut LAYERPLANEDESCRIPTOR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglDescribeLayerPlane(param0.into_param().abi(), ::core::mem::transmute(param1), ::core::mem::transmute(param2), ::core::mem::transmute(param3), ::core::mem::transmute(param4)))
     }
@@ -6383,42 +6381,41 @@ pub unsafe fn wglGetLayerPaletteEntries<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn wglGetProcAddress<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0) -> super::super::Foundation::PROC {
+pub unsafe fn wglGetProcAddress<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0) -> ::win32_foundation::PROC {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglGetProcAddress(param0: ::windows_core::PCSTR) -> super::super::Foundation::PROC;
+            fn wglGetProcAddress(param0: ::windows_core::PCSTR) -> ::win32_foundation::PROC;
         }
         ::core::mem::transmute(wglGetProcAddress(param0.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn wglMakeCurrent<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>, Param1: ::windows_core::IntoParam<'a, HGLRC>>(param0: Param0, param1: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn wglMakeCurrent<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>, Param1: ::windows_core::IntoParam<'a, HGLRC>>(param0: Param0, param1: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglMakeCurrent(param0: super::Gdi::HDC, param1: HGLRC) -> super::super::Foundation::BOOL;
+            fn wglMakeCurrent(param0: super::Gdi::HDC, param1: HGLRC) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglMakeCurrent(param0.into_param().abi(), param1.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn wglRealizeLayerPalette<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(param0: Param0, param1: i32, param2: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn wglRealizeLayerPalette<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(param0: Param0, param1: i32, param2: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglRealizeLayerPalette(param0: super::Gdi::HDC, param1: i32, param2: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn wglRealizeLayerPalette(param0: super::Gdi::HDC, param1: i32, param2: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglRealizeLayerPalette(param0.into_param().abi(), ::core::mem::transmute(param1), param2.into_param().abi()))
     }
@@ -6439,84 +6436,83 @@ pub unsafe fn wglSetLayerPaletteEntries<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn wglShareLists<'a, Param0: ::windows_core::IntoParam<'a, HGLRC>, Param1: ::windows_core::IntoParam<'a, HGLRC>>(param0: Param0, param1: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn wglShareLists<'a, Param0: ::windows_core::IntoParam<'a, HGLRC>, Param1: ::windows_core::IntoParam<'a, HGLRC>>(param0: Param0, param1: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglShareLists(param0: HGLRC, param1: HGLRC) -> super::super::Foundation::BOOL;
+            fn wglShareLists(param0: HGLRC, param1: HGLRC) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglShareLists(param0.into_param().abi(), param1.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn wglSwapLayerBuffers<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn wglSwapLayerBuffers<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglSwapLayerBuffers(param0: super::Gdi::HDC, param1: u32) -> super::super::Foundation::BOOL;
+            fn wglSwapLayerBuffers(param0: super::Gdi::HDC, param1: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglSwapLayerBuffers(param0.into_param().abi(), ::core::mem::transmute(param1)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn wglUseFontBitmapsA<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32, param2: u32, param3: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn wglUseFontBitmapsA<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32, param2: u32, param3: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglUseFontBitmapsA(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32) -> super::super::Foundation::BOOL;
+            fn wglUseFontBitmapsA(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglUseFontBitmapsA(param0.into_param().abi(), ::core::mem::transmute(param1), ::core::mem::transmute(param2), ::core::mem::transmute(param3)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn wglUseFontBitmapsW<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32, param2: u32, param3: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn wglUseFontBitmapsW<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32, param2: u32, param3: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglUseFontBitmapsW(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32) -> super::super::Foundation::BOOL;
+            fn wglUseFontBitmapsW(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglUseFontBitmapsW(param0.into_param().abi(), ::core::mem::transmute(param1), ::core::mem::transmute(param2), ::core::mem::transmute(param3)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn wglUseFontOutlinesA<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> super::super::Foundation::BOOL {
+pub unsafe fn wglUseFontOutlinesA<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglUseFontOutlinesA(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> super::super::Foundation::BOOL;
+            fn wglUseFontOutlinesA(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglUseFontOutlinesA(param0.into_param().abi(), ::core::mem::transmute(param1), ::core::mem::transmute(param2), ::core::mem::transmute(param3), ::core::mem::transmute(param4), ::core::mem::transmute(param5), ::core::mem::transmute(param6), ::core::mem::transmute(param7)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn wglUseFontOutlinesW<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> super::super::Foundation::BOOL {
+pub unsafe fn wglUseFontOutlinesW<'a, Param0: ::windows_core::IntoParam<'a, super::Gdi::HDC>>(param0: Param0, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn wglUseFontOutlinesW(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> super::super::Foundation::BOOL;
+            fn wglUseFontOutlinesW(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(wglUseFontOutlinesW(param0.into_param().abi(), ::core::mem::transmute(param1), ::core::mem::transmute(param2), ::core::mem::transmute(param3), ::core::mem::transmute(param4), ::core::mem::transmute(param5), ::core::mem::transmute(param6), ::core::mem::transmute(param7)))
     }

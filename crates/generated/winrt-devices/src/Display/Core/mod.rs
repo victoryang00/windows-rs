@@ -2,11 +2,11 @@
 pub struct DisplayAdapter(::windows_core::IUnknown);
 impl DisplayAdapter {
     #[cfg(feature = "Graphics")]
-    pub fn Id(&self) -> ::windows_core::Result<super::super::super::Graphics::DisplayAdapterId> {
+    pub fn Id(&self) -> ::windows_core::Result<::winrt_graphics::DisplayAdapterId> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Graphics::DisplayAdapterId>::zeroed();
-            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::DisplayAdapterId>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::DisplayAdapterId>::zeroed();
+            (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DisplayAdapterId>(result__)
         }
     }
     pub fn DeviceInterfacePath(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -52,15 +52,15 @@ impl DisplayAdapter {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     #[cfg(feature = "Graphics")]
-    pub fn FromId<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::DisplayAdapterId>>(id: Param0) -> ::windows_core::Result<DisplayAdapter> {
+    pub fn FromId<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::DisplayAdapterId>>(id: Param0) -> ::windows_core::Result<DisplayAdapter> {
         Self::IDisplayAdapterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FromId)(::windows_core::Interface::as_raw(this), id.into_param().abi(), result__.as_mut_ptr()).from_abi::<DisplayAdapter>(result__)
@@ -233,8 +233,7 @@ impl DisplayDevice {
             (::windows_core::Interface::vtable(this).CreateTaskPool)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DisplayTaskPool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreatePeriodicFence<'a, Param0: ::windows_core::IntoParam<'a, DisplayTarget>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::TimeSpan>>(&self, target: Param0, offsetfromvblank: Param1) -> ::windows_core::Result<DisplayFence> {
+    pub fn CreatePeriodicFence<'a, Param0: ::windows_core::IntoParam<'a, DisplayTarget>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, target: Param0, offsetfromvblank: Param1) -> ::windows_core::Result<DisplayFence> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -260,7 +259,7 @@ impl DisplayDevice {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Graphics"))]
-    pub fn CreateSimpleScanoutWithDirtyRectsAndOptions<'a, Param0: ::windows_core::IntoParam<'a, DisplaySource>, Param1: ::windows_core::IntoParam<'a, DisplaySurface>, Param4: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Graphics::RectInt32>>>(&self, source: Param0, surface: Param1, subresourceindex: u32, syncinterval: u32, dirtyrects: Param4, options: DisplayScanoutOptions) -> ::windows_core::Result<DisplayScanout> {
+    pub fn CreateSimpleScanoutWithDirtyRectsAndOptions<'a, Param0: ::windows_core::IntoParam<'a, DisplaySource>, Param1: ::windows_core::IntoParam<'a, DisplaySurface>, Param4: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_graphics::RectInt32>>>(&self, source: Param0, surface: Param1, subresourceindex: u32, syncinterval: u32, dirtyrects: Param4, options: DisplayScanoutOptions) -> ::windows_core::Result<DisplayScanout> {
         let this = &::windows_core::Interface::cast::<IDisplayDevice2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -450,25 +449,24 @@ unsafe impl ::core::marker::Sync for DisplayFence {}
 #[repr(transparent)]
 pub struct DisplayManager(::windows_core::IUnknown);
 impl DisplayManager {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCurrentTargets(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<DisplayTarget>> {
+    pub fn GetCurrentTargets(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DisplayTarget>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentTargets)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<DisplayTarget>>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentTargets)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DisplayTarget>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCurrentAdapters(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<DisplayAdapter>> {
+    pub fn GetCurrentAdapters(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DisplayAdapter>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentAdapters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<DisplayAdapter>>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentAdapters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DisplayAdapter>>(result__)
         }
     }
     pub fn TryAcquireTarget<'a, Param0: ::windows_core::IntoParam<'a, DisplayTarget>>(&self, target: Param0) -> ::windows_core::Result<DisplayManagerResult> {
@@ -490,7 +488,7 @@ impl DisplayManager {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryAcquireTargetsAndReadCurrentState<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<DisplayTarget>>>(&self, targets: Param0) -> ::windows_core::Result<DisplayManagerResultWithState> {
+    pub fn TryAcquireTargetsAndReadCurrentState<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DisplayTarget>>>(&self, targets: Param0) -> ::windows_core::Result<DisplayManagerResultWithState> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -498,7 +496,7 @@ impl DisplayManager {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryAcquireTargetsAndCreateEmptyState<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<DisplayTarget>>>(&self, targets: Param0) -> ::windows_core::Result<DisplayManagerResultWithState> {
+    pub fn TryAcquireTargetsAndCreateEmptyState<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DisplayTarget>>>(&self, targets: Param0) -> ::windows_core::Result<DisplayManagerResultWithState> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -506,7 +504,7 @@ impl DisplayManager {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryAcquireTargetsAndCreateSubstate<'a, Param0: ::windows_core::IntoParam<'a, DisplayState>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<DisplayTarget>>>(&self, existingstate: Param0, targets: Param1) -> ::windows_core::Result<DisplayManagerResultWithState> {
+    pub fn TryAcquireTargetsAndCreateSubstate<'a, Param0: ::windows_core::IntoParam<'a, DisplayState>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DisplayTarget>>>(&self, existingstate: Param0, targets: Param1) -> ::windows_core::Result<DisplayManagerResultWithState> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -520,55 +518,47 @@ impl DisplayManager {
             (::windows_core::Interface::vtable(this).CreateDisplayDevice)(::windows_core::Interface::as_raw(this), adapter.into_param().abi(), result__.as_mut_ptr()).from_abi::<DisplayDevice>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Enabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DisplayManager, DisplayManagerEnabledEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Enabled<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DisplayManager, DisplayManagerEnabledEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Enabled)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Enabled)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveEnabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveEnabled<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveEnabled)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Disabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DisplayManager, DisplayManagerDisabledEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Disabled<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DisplayManager, DisplayManagerDisabledEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Disabled)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Disabled)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveDisabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveDisabled<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveDisabled)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DisplayManager, DisplayManagerChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DisplayManager, DisplayManagerChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PathsFailedOrInvalidated<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DisplayManager, DisplayManagerPathsFailedOrInvalidatedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn PathsFailedOrInvalidated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DisplayManager, DisplayManagerPathsFailedOrInvalidatedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PathsFailedOrInvalidated)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PathsFailedOrInvalidated)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePathsFailedOrInvalidated<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePathsFailedOrInvalidated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePathsFailedOrInvalidated)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -661,30 +651,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Dis
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DisplayManager> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<DisplayManager> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: DisplayManager) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DisplayManager> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&DisplayManager> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &DisplayManager) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for DisplayManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for DisplayManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &DisplayManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &DisplayManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for DisplayManager {}
@@ -703,12 +689,11 @@ impl DisplayManagerChangedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -798,12 +783,11 @@ impl DisplayManagerDisabledEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -893,12 +877,11 @@ impl DisplayManagerEnabledEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -1050,12 +1033,11 @@ impl DisplayManagerPathsFailedOrInvalidatedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -1268,11 +1250,11 @@ unsafe impl ::core::marker::Sync for DisplayManagerResultWithState {}
 pub struct DisplayModeInfo(::windows_core::IUnknown);
 impl DisplayModeInfo {
     #[cfg(feature = "Graphics")]
-    pub fn SourceResolution(&self) -> ::windows_core::Result<super::super::super::Graphics::SizeInt32> {
+    pub fn SourceResolution(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Graphics::SizeInt32>::zeroed();
-            (::windows_core::Interface::vtable(this).SourceResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::SizeInt32>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::SizeInt32>::zeroed();
+            (::windows_core::Interface::vtable(this).SourceResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::SizeInt32>(result__)
         }
     }
     pub fn IsStereo(&self) -> ::windows_core::Result<bool> {
@@ -1283,19 +1265,19 @@ impl DisplayModeInfo {
         }
     }
     #[cfg(feature = "Graphics_DirectX")]
-    pub fn SourcePixelFormat(&self) -> ::windows_core::Result<super::super::super::Graphics::DirectX::DirectXPixelFormat> {
+    pub fn SourcePixelFormat(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Graphics::DirectX::DirectXPixelFormat>::zeroed();
-            (::windows_core::Interface::vtable(this).SourcePixelFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::DirectX::DirectXPixelFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::DirectX::DirectXPixelFormat>::zeroed();
+            (::windows_core::Interface::vtable(this).SourcePixelFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXPixelFormat>(result__)
         }
     }
     #[cfg(feature = "Graphics")]
-    pub fn TargetResolution(&self) -> ::windows_core::Result<super::super::super::Graphics::SizeInt32> {
+    pub fn TargetResolution(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Graphics::SizeInt32>::zeroed();
-            (::windows_core::Interface::vtable(this).TargetResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::SizeInt32>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::SizeInt32>::zeroed();
+            (::windows_core::Interface::vtable(this).TargetResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::SizeInt32>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
@@ -1328,11 +1310,11 @@ impl DisplayModeInfo {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
@@ -1501,29 +1483,29 @@ impl DisplayPath {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DisplayPathStatus>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
-    pub fn SourceResolution(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<super::super::super::Graphics::SizeInt32>> {
+    #[cfg(feature = "Graphics")]
+    pub fn SourceResolution(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_graphics::SizeInt32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SourceResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<super::super::super::Graphics::SizeInt32>>(result__)
+            (::windows_core::Interface::vtable(this).SourceResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_graphics::SizeInt32>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
-    pub fn SetSourceResolution<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<super::super::super::Graphics::SizeInt32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Graphics")]
+    pub fn SetSourceResolution<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_graphics::SizeInt32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSourceResolution)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Graphics_DirectX")]
-    pub fn SourcePixelFormat(&self) -> ::windows_core::Result<super::super::super::Graphics::DirectX::DirectXPixelFormat> {
+    pub fn SourcePixelFormat(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Graphics::DirectX::DirectXPixelFormat>::zeroed();
-            (::windows_core::Interface::vtable(this).SourcePixelFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::DirectX::DirectXPixelFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::DirectX::DirectXPixelFormat>::zeroed();
+            (::windows_core::Interface::vtable(this).SourcePixelFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXPixelFormat>(result__)
         }
     }
     #[cfg(feature = "Graphics_DirectX")]
-    pub fn SetSourcePixelFormat(&self, value: super::super::super::Graphics::DirectX::DirectXPixelFormat) -> ::windows_core::Result<()> {
+    pub fn SetSourcePixelFormat(&self, value: ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSourcePixelFormat)(::windows_core::Interface::as_raw(this), value).ok() }
     }
@@ -1538,42 +1520,40 @@ impl DisplayPath {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIsStereo)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
-    pub fn TargetResolution(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<super::super::super::Graphics::SizeInt32>> {
+    #[cfg(feature = "Graphics")]
+    pub fn TargetResolution(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_graphics::SizeInt32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TargetResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<super::super::super::Graphics::SizeInt32>>(result__)
+            (::windows_core::Interface::vtable(this).TargetResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_graphics::SizeInt32>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
-    pub fn SetTargetResolution<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<super::super::super::Graphics::SizeInt32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Graphics")]
+    pub fn SetTargetResolution<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_graphics::SizeInt32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTargetResolution)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn PresentationRate(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<DisplayPresentationRate>> {
+    pub fn PresentationRate(&self) -> ::windows_core::Result<::winrt_foundation::IReference<DisplayPresentationRate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PresentationRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<DisplayPresentationRate>>(result__)
+            (::windows_core::Interface::vtable(this).PresentationRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<DisplayPresentationRate>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetPresentationRate<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<DisplayPresentationRate>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPresentationRate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<DisplayPresentationRate>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPresentationRate)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn IsInterlaced(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<bool>> {
+    pub fn IsInterlaced(&self) -> ::windows_core::Result<::winrt_foundation::IReference<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).IsInterlaced)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<bool>>(result__)
+            (::windows_core::Interface::vtable(this).IsInterlaced)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetIsInterlaced<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<bool>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIsInterlaced<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<bool>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIsInterlaced)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1611,11 +1591,11 @@ impl DisplayPath {
         unsafe { (::windows_core::Interface::vtable(this).SetScaling)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindModes(&self, flags: DisplayModeQueryOptions) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<DisplayModeInfo>> {
+    pub fn FindModes(&self, flags: DisplayModeQueryOptions) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DisplayModeInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindModes)(::windows_core::Interface::as_raw(this), flags, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<DisplayModeInfo>>(result__)
+            (::windows_core::Interface::vtable(this).FindModes)(::windows_core::Interface::as_raw(this), flags, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DisplayModeInfo>>(result__)
         }
     }
     pub fn ApplyPropertiesFromMode<'a, Param0: ::windows_core::IntoParam<'a, DisplayModeInfo>>(&self, moderesult: Param0) -> ::windows_core::Result<()> {
@@ -1623,23 +1603,23 @@ impl DisplayPath {
         unsafe { (::windows_core::Interface::vtable(this).ApplyPropertiesFromMode)(::windows_core::Interface::as_raw(this), moderesult.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn PhysicalPresentationRate(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<DisplayPresentationRate>> {
+    pub fn PhysicalPresentationRate(&self) -> ::windows_core::Result<::winrt_foundation::IReference<DisplayPresentationRate>> {
         let this = &::windows_core::Interface::cast::<IDisplayPath2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PhysicalPresentationRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<DisplayPresentationRate>>(result__)
+            (::windows_core::Interface::vtable(this).PhysicalPresentationRate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<DisplayPresentationRate>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetPhysicalPresentationRate<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<DisplayPresentationRate>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPhysicalPresentationRate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<DisplayPresentationRate>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IDisplayPath2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPhysicalPresentationRate)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1830,7 +1810,7 @@ unsafe impl ::windows_core::RuntimeType for DisplayPresentStatus {
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct DisplayPresentationRate {
-    pub VerticalSyncRate: super::super::super::Foundation::Numerics::Rational,
+    pub VerticalSyncRate: ::winrt_foundation::Numerics::Rational,
     pub VerticalSyncsPerPresentation: i32,
 }
 #[cfg(feature = "Foundation_Numerics")]
@@ -1891,19 +1871,19 @@ impl DisplayPrimaryDescription {
         }
     }
     #[cfg(feature = "Graphics_DirectX")]
-    pub fn Format(&self) -> ::windows_core::Result<super::super::super::Graphics::DirectX::DirectXPixelFormat> {
+    pub fn Format(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXPixelFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Graphics::DirectX::DirectXPixelFormat>::zeroed();
-            (::windows_core::Interface::vtable(this).Format)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::DirectX::DirectXPixelFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::DirectX::DirectXPixelFormat>::zeroed();
+            (::windows_core::Interface::vtable(this).Format)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXPixelFormat>(result__)
         }
     }
     #[cfg(feature = "Graphics_DirectX")]
-    pub fn ColorSpace(&self) -> ::windows_core::Result<super::super::super::Graphics::DirectX::DirectXColorSpace> {
+    pub fn ColorSpace(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::DirectXColorSpace> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Graphics::DirectX::DirectXColorSpace>::zeroed();
-            (::windows_core::Interface::vtable(this).ColorSpace)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::DirectX::DirectXColorSpace>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::DirectX::DirectXColorSpace>::zeroed();
+            (::windows_core::Interface::vtable(this).ColorSpace)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::DirectXColorSpace>(result__)
         }
     }
     pub fn IsStereo(&self) -> ::windows_core::Result<bool> {
@@ -1914,30 +1894,30 @@ impl DisplayPrimaryDescription {
         }
     }
     #[cfg(feature = "Graphics_DirectX_Direct3D11")]
-    pub fn MultisampleDescription(&self) -> ::windows_core::Result<super::super::super::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription> {
+    pub fn MultisampleDescription(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::Direct3D11::Direct3DMultisampleDescription> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription>::zeroed();
-            (::windows_core::Interface::vtable(this).MultisampleDescription)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::DirectX::Direct3D11::Direct3DMultisampleDescription>::zeroed();
+            (::windows_core::Interface::vtable(this).MultisampleDescription)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::Direct3D11::Direct3DMultisampleDescription>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     #[cfg(feature = "Graphics_DirectX_Direct3D11")]
-    pub fn CreateInstance<'a, Param5: ::windows_core::IntoParam<'a, super::super::super::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription>>(width: u32, height: u32, pixelformat: super::super::super::Graphics::DirectX::DirectXPixelFormat, colorspace: super::super::super::Graphics::DirectX::DirectXColorSpace, isstereo: bool, multisampledescription: Param5) -> ::windows_core::Result<DisplayPrimaryDescription> {
+    pub fn CreateInstance<'a, Param5: ::windows_core::IntoParam<'a, ::winrt_graphics::DirectX::Direct3D11::Direct3DMultisampleDescription>>(width: u32, height: u32, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, colorspace: ::winrt_graphics::DirectX::DirectXColorSpace, isstereo: bool, multisampledescription: Param5) -> ::windows_core::Result<DisplayPrimaryDescription> {
         Self::IDisplayPrimaryDescriptionFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstance)(::windows_core::Interface::as_raw(this), width, height, pixelformat, colorspace, isstereo, multisampledescription.into_param().abi(), result__.as_mut_ptr()).from_abi::<DisplayPrimaryDescription>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX_Direct3D11"))]
-    pub fn CreateWithProperties<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>, Param6: ::windows_core::IntoParam<'a, super::super::super::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription>>(extraproperties: Param0, width: u32, height: u32, pixelformat: super::super::super::Graphics::DirectX::DirectXPixelFormat, colorspace: super::super::super::Graphics::DirectX::DirectXColorSpace, isstereo: bool, multisampledescription: Param6) -> ::windows_core::Result<DisplayPrimaryDescription> {
+    pub fn CreateWithProperties<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>, Param6: ::windows_core::IntoParam<'a, ::winrt_graphics::DirectX::Direct3D11::Direct3DMultisampleDescription>>(extraproperties: Param0, width: u32, height: u32, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, colorspace: ::winrt_graphics::DirectX::DirectXColorSpace, isstereo: bool, multisampledescription: Param6) -> ::windows_core::Result<DisplayPrimaryDescription> {
         Self::IDisplayPrimaryDescriptionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithProperties)(::windows_core::Interface::as_raw(this), extraproperties.into_param().abi(), width, height, pixelformat, colorspace, isstereo, multisampledescription.into_param().abi(), result__.as_mut_ptr()).from_abi::<DisplayPrimaryDescription>(result__)
@@ -2199,11 +2179,11 @@ unsafe impl ::windows_core::RuntimeType for DisplayScanoutOptions {
 pub struct DisplaySource(::windows_core::IUnknown);
 impl DisplaySource {
     #[cfg(feature = "Graphics")]
-    pub fn AdapterId(&self) -> ::windows_core::Result<super::super::super::Graphics::DisplayAdapterId> {
+    pub fn AdapterId(&self) -> ::windows_core::Result<::winrt_graphics::DisplayAdapterId> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Graphics::DisplayAdapterId>::zeroed();
-            (::windows_core::Interface::vtable(this).AdapterId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Graphics::DisplayAdapterId>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::DisplayAdapterId>::zeroed();
+            (::windows_core::Interface::vtable(this).AdapterId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DisplayAdapterId>(result__)
         }
     }
     pub fn SourceId(&self) -> ::windows_core::Result<u32> {
@@ -2214,11 +2194,11 @@ impl DisplaySource {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetMetadata<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, key: Param0) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn GetMetadata<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, key: Param0) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetMetadata)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).GetMetadata)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn Status(&self) -> ::windows_core::Result<DisplaySourceStatus> {
@@ -2228,16 +2208,14 @@ impl DisplaySource {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DisplaySourceStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DisplaySource, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn StatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DisplaySource, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IDisplaySource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IDisplaySource2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2368,27 +2346,27 @@ impl DisplayState {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Targets(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<DisplayTarget>> {
+    pub fn Targets(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DisplayTarget>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Targets)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<DisplayTarget>>(result__)
+            (::windows_core::Interface::vtable(this).Targets)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DisplayTarget>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Views(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<DisplayView>> {
+    pub fn Views(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DisplayView>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Views)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<DisplayView>>(result__)
+            (::windows_core::Interface::vtable(this).Views)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DisplayView>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     pub fn ConnectTarget<'a, Param0: ::windows_core::IntoParam<'a, DisplayTarget>>(&self, target: Param0) -> ::windows_core::Result<DisplayPath> {
@@ -2927,11 +2905,11 @@ impl DisplayTarget {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     pub fn IsStale(&self) -> ::windows_core::Result<bool> {
@@ -3380,23 +3358,23 @@ unsafe impl ::windows_core::RuntimeType for DisplayTaskSignalKind {
 pub struct DisplayView(::windows_core::IUnknown);
 impl DisplayView {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Paths(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<DisplayPath>> {
+    pub fn Paths(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DisplayPath>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Paths)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<DisplayPath>>(result__)
+            (::windows_core::Interface::vtable(this).Paths)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DisplayPath>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
-    pub fn ContentResolution(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<super::super::super::Graphics::SizeInt32>> {
+    #[cfg(feature = "Graphics")]
+    pub fn ContentResolution(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_graphics::SizeInt32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContentResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<super::super::super::Graphics::SizeInt32>>(result__)
+            (::windows_core::Interface::vtable(this).ContentResolution)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_graphics::SizeInt32>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
-    pub fn SetContentResolution<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<super::super::super::Graphics::SizeInt32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Graphics")]
+    pub fn SetContentResolution<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_graphics::SizeInt32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetContentResolution)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -3405,11 +3383,11 @@ impl DisplayView {
         unsafe { (::windows_core::Interface::vtable(this).SetPrimaryPath)(::windows_core::Interface::as_raw(this), path.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
 }
@@ -3524,11 +3502,11 @@ impl DisplayWireFormat {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     pub fn CreateInstance(pixelencoding: DisplayWireFormatPixelEncoding, bitsperchannel: i32, colorspace: DisplayWireFormatColorSpace, eotf: DisplayWireFormatEotf, hdrmetadata: DisplayWireFormatHdrMetadata) -> ::windows_core::Result<DisplayWireFormat> {
@@ -3538,7 +3516,7 @@ impl DisplayWireFormat {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateWithProperties<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>>(extraproperties: Param0, pixelencoding: DisplayWireFormatPixelEncoding, bitsperchannel: i32, colorspace: DisplayWireFormatColorSpace, eotf: DisplayWireFormatEotf, hdrmetadata: DisplayWireFormatHdrMetadata) -> ::windows_core::Result<DisplayWireFormat> {
+    pub fn CreateWithProperties<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>>(extraproperties: Param0, pixelencoding: DisplayWireFormatPixelEncoding, bitsperchannel: i32, colorspace: DisplayWireFormatColorSpace, eotf: DisplayWireFormatEotf, hdrmetadata: DisplayWireFormatHdrMetadata) -> ::windows_core::Result<DisplayWireFormat> {
         Self::IDisplayWireFormatStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithProperties)(::windows_core::Interface::as_raw(this), extraproperties.into_param().abi(), pixelencoding, bitsperchannel, colorspace, eotf, hdrmetadata, result__.as_mut_ptr()).from_abi::<DisplayWireFormat>(result__)
@@ -3775,7 +3753,7 @@ unsafe impl ::windows_core::Interface for IDisplayAdapter {
 pub struct IDisplayAdapter_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Graphics")]
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Graphics::DisplayAdapterId) -> ::windows_core::HRESULT,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DisplayAdapterId) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics"))]
     Id: usize,
     pub DeviceInterfacePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -3801,7 +3779,7 @@ unsafe impl ::windows_core::Interface for IDisplayAdapterStatics {
 pub struct IDisplayAdapterStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Graphics")]
-    pub FromId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: super::super::super::Graphics::DisplayAdapterId, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub FromId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::winrt_graphics::DisplayAdapterId, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics"))]
     FromId: usize,
 }
@@ -3819,10 +3797,7 @@ pub struct IDisplayDevice_Vtbl {
     pub CreateScanoutSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreatePrimary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr, desc: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateTaskPool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub CreatePeriodicFence: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr, offsetfromvblank: super::super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreatePeriodicFence: usize,
+    pub CreatePeriodicFence: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, target: ::windows_core::RawPtr, offsetfromvblank: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub WaitForVBlank: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateSimpleScanout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psource: ::windows_core::RawPtr, psurface: ::windows_core::RawPtr, subresourceindex: u32, syncinterval: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsCapabilitySupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, capability: DisplayDeviceCapability, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -3890,38 +3865,14 @@ pub struct IDisplayManager_Vtbl {
     #[cfg(not(feature = "Foundation_Collections"))]
     TryAcquireTargetsAndCreateSubstate: usize,
     pub CreateDisplayDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adapter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Enabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Enabled: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveEnabled: usize,
-    #[cfg(feature = "Foundation")]
-    pub Disabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Disabled: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveDisabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveDisabled: usize,
-    #[cfg(feature = "Foundation")]
-    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Changed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub PathsFailedOrInvalidated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PathsFailedOrInvalidated: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePathsFailedOrInvalidated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePathsFailedOrInvalidated: usize,
+    pub Enabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Disabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveDisabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub PathsFailedOrInvalidated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemovePathsFailedOrInvalidated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -3938,10 +3889,7 @@ pub struct IDisplayManagerChangedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3956,10 +3904,7 @@ pub struct IDisplayManagerDisabledEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3974,10 +3919,7 @@ pub struct IDisplayManagerEnabledEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3992,10 +3934,7 @@ pub struct IDisplayManagerPathsFailedOrInvalidatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4037,16 +3976,16 @@ unsafe impl ::windows_core::Interface for IDisplayModeInfo {
 pub struct IDisplayModeInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Graphics")]
-    pub SourceResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Graphics::SizeInt32) -> ::windows_core::HRESULT,
+    pub SourceResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics"))]
     SourceResolution: usize,
     pub IsStereo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Graphics_DirectX")]
-    pub SourcePixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
+    pub SourcePixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX"))]
     SourcePixelFormat: usize,
     #[cfg(feature = "Graphics")]
-    pub TargetResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Graphics::SizeInt32) -> ::windows_core::HRESULT,
+    pub TargetResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics"))]
     TargetResolution: usize,
     #[cfg(feature = "Foundation_Numerics")]
@@ -4091,31 +4030,31 @@ pub struct IDisplayPath_Vtbl {
     pub View: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Target: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DisplayPathStatus) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
+    #[cfg(feature = "Graphics")]
     pub SourceResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics")))]
+    #[cfg(not(feature = "Graphics"))]
     SourceResolution: usize,
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
+    #[cfg(feature = "Graphics")]
     pub SetSourceResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics")))]
+    #[cfg(not(feature = "Graphics"))]
     SetSourceResolution: usize,
     #[cfg(feature = "Graphics_DirectX")]
-    pub SourcePixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
+    pub SourcePixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX"))]
     SourcePixelFormat: usize,
     #[cfg(feature = "Graphics_DirectX")]
-    pub SetSourcePixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
+    pub SetSourcePixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX"))]
     SetSourcePixelFormat: usize,
     pub IsStereo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsStereo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
+    #[cfg(feature = "Graphics")]
     pub TargetResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics")))]
+    #[cfg(not(feature = "Graphics"))]
     TargetResolution: usize,
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
+    #[cfg(feature = "Graphics")]
     pub SetTargetResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics")))]
+    #[cfg(not(feature = "Graphics"))]
     SetTargetResolution: usize,
     #[cfg(feature = "Foundation_Numerics")]
     pub PresentationRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4125,14 +4064,8 @@ pub struct IDisplayPath_Vtbl {
     pub SetPresentationRate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetPresentationRate: usize,
-    #[cfg(feature = "Foundation")]
     pub IsInterlaced: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    IsInterlaced: usize,
-    #[cfg(feature = "Foundation")]
     pub SetIsInterlaced: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetIsInterlaced: usize,
     pub WireFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetWireFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Rotation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DisplayRotation) -> ::windows_core::HRESULT,
@@ -4183,16 +4116,16 @@ pub struct IDisplayPrimaryDescription_Vtbl {
     pub Width: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub Height: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Graphics_DirectX")]
-    pub Format: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
+    pub Format: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXPixelFormat) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX"))]
     Format: usize,
     #[cfg(feature = "Graphics_DirectX")]
-    pub ColorSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Graphics::DirectX::DirectXColorSpace) -> ::windows_core::HRESULT,
+    pub ColorSpace: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::DirectXColorSpace) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX"))]
     ColorSpace: usize,
     pub IsStereo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Graphics_DirectX_Direct3D11")]
-    pub MultisampleDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription) -> ::windows_core::HRESULT,
+    pub MultisampleDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DirectX::Direct3D11::Direct3DMultisampleDescription) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
     MultisampleDescription: usize,
     #[cfg(feature = "Foundation_Collections")]
@@ -4212,7 +4145,7 @@ unsafe impl ::windows_core::Interface for IDisplayPrimaryDescriptionFactory {
 pub struct IDisplayPrimaryDescriptionFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Graphics_DirectX_Direct3D11")]
-    pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: u32, height: u32, pixelformat: super::super::super::Graphics::DirectX::DirectXPixelFormat, colorspace: super::super::super::Graphics::DirectX::DirectXColorSpace, isstereo: bool, multisampledescription: super::super::super::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: u32, height: u32, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, colorspace: ::winrt_graphics::DirectX::DirectXColorSpace, isstereo: bool, multisampledescription: ::winrt_graphics::DirectX::Direct3D11::Direct3DMultisampleDescription, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_DirectX_Direct3D11"))]
     CreateInstance: usize,
 }
@@ -4228,7 +4161,7 @@ unsafe impl ::windows_core::Interface for IDisplayPrimaryDescriptionStatics {
 pub struct IDisplayPrimaryDescriptionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Foundation_Collections", feature = "Graphics_DirectX_Direct3D11"))]
-    pub CreateWithProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, extraproperties: ::windows_core::RawPtr, width: u32, height: u32, pixelformat: super::super::super::Graphics::DirectX::DirectXPixelFormat, colorspace: super::super::super::Graphics::DirectX::DirectXColorSpace, isstereo: bool, multisampledescription: super::super::super::Graphics::DirectX::Direct3D11::Direct3DMultisampleDescription, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateWithProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, extraproperties: ::windows_core::RawPtr, width: u32, height: u32, pixelformat: ::winrt_graphics::DirectX::DirectXPixelFormat, colorspace: ::winrt_graphics::DirectX::DirectXColorSpace, isstereo: bool, multisampledescription: ::winrt_graphics::DirectX::Direct3D11::Direct3DMultisampleDescription, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Graphics_DirectX_Direct3D11")))]
     CreateWithProperties: usize,
 }
@@ -4256,7 +4189,7 @@ unsafe impl ::windows_core::Interface for IDisplaySource {
 pub struct IDisplaySource_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Graphics")]
-    pub AdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Graphics::DisplayAdapterId) -> ::windows_core::HRESULT,
+    pub AdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DisplayAdapterId) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics"))]
     AdapterId: usize,
     pub SourceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
@@ -4277,14 +4210,8 @@ unsafe impl ::windows_core::Interface for IDisplaySource2 {
 pub struct IDisplaySource2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DisplaySourceStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub StatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStatusChanged: usize,
+    pub StatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4463,13 +4390,13 @@ pub struct IDisplayView_Vtbl {
     pub Paths: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Paths: usize,
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
+    #[cfg(feature = "Graphics")]
     pub ContentResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics")))]
+    #[cfg(not(feature = "Graphics"))]
     ContentResolution: usize,
-    #[cfg(all(feature = "Foundation", feature = "Graphics"))]
+    #[cfg(feature = "Graphics")]
     pub SetContentResolution: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics")))]
+    #[cfg(not(feature = "Graphics"))]
     SetContentResolution: usize,
     pub SetPrimaryPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]

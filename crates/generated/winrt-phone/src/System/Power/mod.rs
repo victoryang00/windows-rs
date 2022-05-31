@@ -10,14 +10,8 @@ unsafe impl ::windows_core::Interface for IPowerManagerStatics {
 pub struct IPowerManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PowerSavingMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PowerSavingMode) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub PowerSavingModeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changehandler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PowerSavingModeChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePowerSavingModeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePowerSavingModeChanged: usize,
+    pub PowerSavingModeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changehandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemovePowerSavingModeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -40,15 +34,13 @@ impl PowerManager {
             (::windows_core::Interface::vtable(this).PowerSavingMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PowerSavingMode>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PowerSavingModeChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(changehandler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn PowerSavingModeChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(changehandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IPowerManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PowerSavingModeChanged)(::windows_core::Interface::as_raw(this), changehandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PowerSavingModeChanged)(::windows_core::Interface::as_raw(this), changehandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePowerSavingModeChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePowerSavingModeChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IPowerManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemovePowerSavingModeChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn PowerSavingModeEnabled() -> ::windows_core::Result<bool> {

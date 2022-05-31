@@ -1,55 +1,32 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32EmptyWorkingSet(hprocess: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32EnumDeviceDrivers(lpimagebase: *mut *mut ::core::ffi::c_void, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32EnumPageFilesA(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKA, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32EnumPageFilesW(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKW, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32EnumProcessModules(hprocess: super::super::Foundation::HANDLE, lphmodule: *mut super::super::Foundation::HINSTANCE, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32EnumProcessModulesEx(hprocess: super::super::Foundation::HANDLE, lphmodule: *mut super::super::Foundation::HINSTANCE, cb: u32, lpcbneeded: *mut u32, dwfilterflag: ENUM_PROCESS_MODULES_EX_FLAGS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32EnumProcesses(lpidprocess: *mut u32, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn K32EmptyWorkingSet(hprocess: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn K32EnumDeviceDrivers(lpimagebase: *mut *mut ::core::ffi::c_void, cb: u32, lpcbneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn K32EnumPageFilesA(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKA, pcontext: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn K32EnumPageFilesW(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKW, pcontext: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn K32EnumProcessModules(hprocess: ::win32_foundation_sys::HANDLE, lphmodule: *mut ::win32_foundation_sys::HINSTANCE, cb: u32, lpcbneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn K32EnumProcessModulesEx(hprocess: ::win32_foundation_sys::HANDLE, lphmodule: *mut ::win32_foundation_sys::HINSTANCE, cb: u32, lpcbneeded: *mut u32, dwfilterflag: ENUM_PROCESS_MODULES_EX_FLAGS) -> ::win32_foundation_sys::BOOL;
+    pub fn K32EnumProcesses(lpidprocess: *mut u32, cb: u32, lpcbneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn K32GetDeviceDriverBaseNameA(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
     pub fn K32GetDeviceDriverBaseNameW(imagebase: *const ::core::ffi::c_void, lpbasename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
     pub fn K32GetDeviceDriverFileNameA(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
     pub fn K32GetDeviceDriverFileNameW(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetMappedFileNameA(hprocess: super::super::Foundation::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetMappedFileNameW(hprocess: super::super::Foundation::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetModuleBaseNameA(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpbasename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetModuleBaseNameW(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpbasename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetModuleFileNameExA(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetModuleFileNameExW(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetModuleInformation(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpmodinfo: *mut MODULEINFO, cb: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetPerformanceInfo(pperformanceinformation: *mut PERFORMANCE_INFORMATION, cb: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetProcessImageFileNameA(hprocess: super::super::Foundation::HANDLE, lpimagefilename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetProcessImageFileNameW(hprocess: super::super::Foundation::HANDLE, lpimagefilename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetProcessMemoryInfo(process: super::super::Foundation::HANDLE, ppsmemcounters: *mut PROCESS_MEMORY_COUNTERS, cb: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetWsChanges(hprocess: super::super::Foundation::HANDLE, lpwatchinfo: *mut PSAPI_WS_WATCH_INFORMATION, cb: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32GetWsChangesEx(hprocess: super::super::Foundation::HANDLE, lpwatchinfoex: *mut PSAPI_WS_WATCH_INFORMATION_EX, cb: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32InitializeProcessForWsWatch(hprocess: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32QueryWorkingSet(hprocess: super::super::Foundation::HANDLE, pv: *mut ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn K32QueryWorkingSetEx(hprocess: super::super::Foundation::HANDLE, pv: *mut ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL;
+    pub fn K32GetMappedFileNameA(hprocess: ::win32_foundation_sys::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
+    pub fn K32GetMappedFileNameW(hprocess: ::win32_foundation_sys::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
+    pub fn K32GetModuleBaseNameA(hprocess: ::win32_foundation_sys::HANDLE, hmodule: ::win32_foundation_sys::HINSTANCE, lpbasename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
+    pub fn K32GetModuleBaseNameW(hprocess: ::win32_foundation_sys::HANDLE, hmodule: ::win32_foundation_sys::HINSTANCE, lpbasename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
+    pub fn K32GetModuleFileNameExA(hprocess: ::win32_foundation_sys::HANDLE, hmodule: ::win32_foundation_sys::HINSTANCE, lpfilename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
+    pub fn K32GetModuleFileNameExW(hprocess: ::win32_foundation_sys::HANDLE, hmodule: ::win32_foundation_sys::HINSTANCE, lpfilename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
+    pub fn K32GetModuleInformation(hprocess: ::win32_foundation_sys::HANDLE, hmodule: ::win32_foundation_sys::HINSTANCE, lpmodinfo: *mut MODULEINFO, cb: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn K32GetPerformanceInfo(pperformanceinformation: *mut PERFORMANCE_INFORMATION, cb: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn K32GetProcessImageFileNameA(hprocess: ::win32_foundation_sys::HANDLE, lpimagefilename: ::windows_core_sys::PSTR, nsize: u32) -> u32;
+    pub fn K32GetProcessImageFileNameW(hprocess: ::win32_foundation_sys::HANDLE, lpimagefilename: ::windows_core_sys::PWSTR, nsize: u32) -> u32;
+    pub fn K32GetProcessMemoryInfo(process: ::win32_foundation_sys::HANDLE, ppsmemcounters: *mut PROCESS_MEMORY_COUNTERS, cb: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn K32GetWsChanges(hprocess: ::win32_foundation_sys::HANDLE, lpwatchinfo: *mut PSAPI_WS_WATCH_INFORMATION, cb: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn K32GetWsChangesEx(hprocess: ::win32_foundation_sys::HANDLE, lpwatchinfoex: *mut PSAPI_WS_WATCH_INFORMATION_EX, cb: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn K32InitializeProcessForWsWatch(hprocess: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn K32QueryWorkingSet(hprocess: ::win32_foundation_sys::HANDLE, pv: *mut ::core::ffi::c_void, cb: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn K32QueryWorkingSetEx(hprocess: ::win32_foundation_sys::HANDLE, pv: *mut ::core::ffi::c_void, cb: u32) -> ::win32_foundation_sys::BOOL;
 }
 #[repr(C)]
 pub struct ENUM_PAGE_FILE_INFORMATION {
@@ -82,10 +59,8 @@ impl ::core::clone::Clone for MODULEINFO {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type PENUM_PAGE_FILE_CALLBACKA = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, ppagefileinfo: *mut ENUM_PAGE_FILE_INFORMATION, lpfilename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PENUM_PAGE_FILE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, ppagefileinfo: *mut ENUM_PAGE_FILE_INFORMATION, lpfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL>;
+pub type PENUM_PAGE_FILE_CALLBACKA = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, ppagefileinfo: *mut ENUM_PAGE_FILE_INFORMATION, lpfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PENUM_PAGE_FILE_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut ::core::ffi::c_void, ppagefileinfo: *mut ENUM_PAGE_FILE_INFORMATION, lpfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
 #[repr(C)]
 pub struct PERFORMANCE_INFORMATION {
     pub cb: u32,

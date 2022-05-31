@@ -1,11 +1,10 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CeipIsOptedIn() -> super::super::super::Foundation::BOOL {
+pub unsafe fn CeipIsOptedIn() -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CeipIsOptedIn() -> super::super::super::Foundation::BOOL;
+            fn CeipIsOptedIn() -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CeipIsOptedIn())
     }

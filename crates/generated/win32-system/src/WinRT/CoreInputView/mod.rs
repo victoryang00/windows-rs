@@ -1,8 +1,7 @@
 #[repr(transparent)]
 pub struct ICoreFrameworkInputViewInterop(::windows_core::IUnknown);
 impl ICoreFrameworkInputViewInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -71,8 +70,5 @@ unsafe impl ::windows_core::Interface for ICoreFrameworkInputViewInterop {
 #[doc(hidden)]
 pub struct ICoreFrameworkInputViewInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::super::Foundation::HWND, riid: *const ::windows_core::GUID, coreframeworkinputview: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, coreframeworkinputview: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }

@@ -742,13 +742,11 @@ impl IAlertDataCollector {
         let mut result__ = ::core::mem::MaybeUninit::<DataCollectorType>::zeroed();
         (::windows_core::Interface::vtable(self).base__.DataCollectorType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataCollectorType>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     pub unsafe fn FileNameFormat(&self) -> ::windows_core::Result<AutoPathFormat> {
@@ -758,22 +756,18 @@ impl IAlertDataCollector {
     pub unsafe fn SetFileNameFormat(&self, format: AutoPathFormat) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(format)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormatPattern)(::windows_core::Interface::as_raw(self), pattern.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLatestOutputLocation)(::windows_core::Interface::as_raw(self), path.into_param().abi()).ok()
     }
     pub unsafe fn LogAppend(&self) -> ::windows_core::Result<i16> {
@@ -797,19 +791,16 @@ impl IAlertDataCollector {
     pub unsafe fn SetLogOverwrite(&self, overwrite: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLogOverwrite)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(overwrite)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Index(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -818,20 +809,18 @@ impl IAlertDataCollector {
     pub unsafe fn SetIndex(&self, index: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Xml(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Xml(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.SetXml)(::windows_core::Interface::as_raw(self), xml.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMap>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn AlertThresholds(&self) -> ::windows_core::Result<*mut super::Com::SAFEARRAY> {
@@ -856,13 +845,11 @@ impl IAlertDataCollector {
     pub unsafe fn SetSampleInterval(&self, interval: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSampleInterval)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(interval)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Task(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Task)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Task(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Task)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTask<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTask<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTask)(::windows_core::Interface::as_raw(self), task.into_param().abi()).ok()
     }
     pub unsafe fn TaskRunAsSelf(&self) -> ::windows_core::Result<i16> {
@@ -872,31 +859,25 @@ impl IAlertDataCollector {
     pub unsafe fn SetTaskRunAsSelf(&self, runasself: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTaskRunAsSelf)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(runasself)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TaskArguments(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TaskArguments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TaskArguments(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TaskArguments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTaskArguments<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTaskArguments<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTaskArguments)(::windows_core::Interface::as_raw(self), task.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TaskUserTextArguments(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TaskUserTextArguments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TaskUserTextArguments(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TaskUserTextArguments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTaskUserTextArguments<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTaskUserTextArguments<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTaskUserTextArguments)(::windows_core::Interface::as_raw(self), task.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TriggerDataCollectorSet(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TriggerDataCollectorSet)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TriggerDataCollectorSet(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TriggerDataCollectorSet)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTriggerDataCollectorSet<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTriggerDataCollectorSet<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTriggerDataCollectorSet)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
 }
@@ -1014,40 +995,16 @@ pub struct IAlertDataCollector_Vtbl {
     pub SetEventLog: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, log: i16) -> ::windows_core::HRESULT,
     pub SampleInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, interval: *mut u32) -> ::windows_core::HRESULT,
     pub SetSampleInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, interval: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Task: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Task: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTask: usize,
+    pub Task: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub TaskRunAsSelf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, runasself: *mut i16) -> ::windows_core::HRESULT,
     pub SetTaskRunAsSelf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, runasself: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TaskArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TaskArguments: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTaskArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTaskArguments: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TaskUserTextArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TaskUserTextArguments: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTaskUserTextArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTaskUserTextArguments: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TriggerDataCollectorSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TriggerDataCollectorSet: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTriggerDataCollectorSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTriggerDataCollectorSet: usize,
+    pub TaskArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTaskArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub TaskUserTextArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTaskUserTextArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub TriggerDataCollectorSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTriggerDataCollectorSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -1067,13 +1024,11 @@ impl IApiTracingDataCollector {
         let mut result__ = ::core::mem::MaybeUninit::<DataCollectorType>::zeroed();
         (::windows_core::Interface::vtable(self).base__.DataCollectorType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataCollectorType>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     pub unsafe fn FileNameFormat(&self) -> ::windows_core::Result<AutoPathFormat> {
@@ -1083,22 +1038,18 @@ impl IApiTracingDataCollector {
     pub unsafe fn SetFileNameFormat(&self, format: AutoPathFormat) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(format)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormatPattern)(::windows_core::Interface::as_raw(self), pattern.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLatestOutputLocation)(::windows_core::Interface::as_raw(self), path.into_param().abi()).ok()
     }
     pub unsafe fn LogAppend(&self) -> ::windows_core::Result<i16> {
@@ -1122,19 +1073,16 @@ impl IApiTracingDataCollector {
     pub unsafe fn SetLogOverwrite(&self, overwrite: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLogOverwrite)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(overwrite)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Index(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -1143,20 +1091,18 @@ impl IApiTracingDataCollector {
     pub unsafe fn SetIndex(&self, index: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Xml(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Xml(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.SetXml)(::windows_core::Interface::as_raw(self), xml.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMap>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn LogApiNamesOnly(&self) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
@@ -1172,22 +1118,18 @@ impl IApiTracingDataCollector {
     pub unsafe fn SetLogApisRecursively(&self, logrecursively: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLogApisRecursively)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(logrecursively)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExePath(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ExePath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ExePath(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ExePath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetExePath<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, exepath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetExePath<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, exepath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetExePath)(::windows_core::Interface::as_raw(self), exepath.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LogFilePath(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).LogFilePath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LogFilePath(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).LogFilePath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLogFilePath<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, logfilepath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLogFilePath<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, logfilepath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLogFilePath)(::windows_core::Interface::as_raw(self), logfilepath.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -1324,22 +1266,10 @@ pub struct IApiTracingDataCollector_Vtbl {
     pub SetLogApiNamesOnly: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logapinames: i16) -> ::windows_core::HRESULT,
     pub LogApisRecursively: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logrecursively: *mut i16) -> ::windows_core::HRESULT,
     pub SetLogApisRecursively: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logrecursively: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ExePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, exepath: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ExePath: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetExePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, exepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetExePath: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub LogFilePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logfilepath: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    LogFilePath: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetLogFilePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logfilepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetLogFilePath: usize,
+    pub ExePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, exepath: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetExePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, exepath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub LogFilePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logfilepath: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetLogFilePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, logfilepath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub IncludeModules: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, includemodules: *mut *mut super::Com::SAFEARRAY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -1383,13 +1313,11 @@ impl IConfigurationDataCollector {
         let mut result__ = ::core::mem::MaybeUninit::<DataCollectorType>::zeroed();
         (::windows_core::Interface::vtable(self).base__.DataCollectorType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataCollectorType>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     pub unsafe fn FileNameFormat(&self) -> ::windows_core::Result<AutoPathFormat> {
@@ -1399,22 +1327,18 @@ impl IConfigurationDataCollector {
     pub unsafe fn SetFileNameFormat(&self, format: AutoPathFormat) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(format)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormatPattern)(::windows_core::Interface::as_raw(self), pattern.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLatestOutputLocation)(::windows_core::Interface::as_raw(self), path.into_param().abi()).ok()
     }
     pub unsafe fn LogAppend(&self) -> ::windows_core::Result<i16> {
@@ -1438,19 +1362,16 @@ impl IConfigurationDataCollector {
     pub unsafe fn SetLogOverwrite(&self, overwrite: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLogOverwrite)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(overwrite)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Index(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -1459,20 +1380,18 @@ impl IConfigurationDataCollector {
     pub unsafe fn SetIndex(&self, index: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Xml(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Xml(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.SetXml)(::windows_core::Interface::as_raw(self), xml.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMap>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn FileMaxCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -1536,13 +1455,11 @@ impl IConfigurationDataCollector {
     pub unsafe fn SetRegistryMaxRecursiveDepth(&self, depth: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRegistryMaxRecursiveDepth)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(depth)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SystemStateFile(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SystemStateFile)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SystemStateFile(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SystemStateFile)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSystemStateFile<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, filename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSystemStateFile<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, filename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSystemStateFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi()).ok()
     }
 }
@@ -1682,14 +1599,8 @@ pub struct IConfigurationDataCollector_Vtbl {
     SetRegistryKeys: usize,
     pub RegistryMaxRecursiveDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, depth: *mut u32) -> ::windows_core::HRESULT,
     pub SetRegistryMaxRecursiveDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, depth: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SystemStateFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SystemStateFile: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSystemStateFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSystemStateFile: usize,
+    pub SystemStateFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSystemStateFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ICounterItem(::windows_core::IUnknown);
@@ -1726,10 +1637,9 @@ impl ICounterItem {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).ScaleFactor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Path(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Path)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Path(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Path)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetValue(&self, value: *mut f64, status: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(value), ::core::mem::transmute(status)).ok()
@@ -1791,10 +1701,7 @@ pub struct ICounterItem_Vtbl {
     pub LineStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pivalue: *mut i32) -> ::windows_core::HRESULT,
     pub SetScaleFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iscale: i32) -> ::windows_core::HRESULT,
     pub ScaleFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pivalue: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Path: usize,
+    pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstrvalue: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut f64, status: *mut i32) -> ::windows_core::HRESULT,
     pub GetStatistics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, max: *mut f64, min: *mut f64, avg: *mut f64, status: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -1833,10 +1740,9 @@ impl ICounterItem2 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.ScaleFactor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Path(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Path)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Path(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Path)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetValue(&self, value: *mut f64, status: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(value), ::core::mem::transmute(status)).ok()
@@ -1858,7 +1764,7 @@ impl ICounterItem2 {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).Visible)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn GetDataAt(&self, iindex: i32, iwhich: SysmonDataType) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetDataAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iindex), ::core::mem::transmute(iwhich), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
@@ -1932,9 +1838,9 @@ pub struct ICounterItem2_Vtbl {
     pub Selected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstate: *mut i16) -> ::windows_core::HRESULT,
     pub SetVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstate: i16) -> ::windows_core::HRESULT,
     pub Visible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstate: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub GetDataAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iindex: i32, iwhich: SysmonDataType, pvariant: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetDataAt: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -1950,17 +1856,17 @@ impl ICounters {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<DICounterItem> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), index.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DICounterItem>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pathname: Param0) -> ::windows_core::Result<DICounterItem> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pathname: Param0) -> ::windows_core::Result<DICounterItem> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), pathname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DICounterItem>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), index.into_param().abi()).ok()
     }
@@ -2045,17 +1951,17 @@ pub struct ICounters_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plong: *mut i32) -> ::windows_core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>, ppi: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pathname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppi: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pathname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppi: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -2076,13 +1982,11 @@ impl IDataCollector {
         let mut result__ = ::core::mem::MaybeUninit::<DataCollectorType>::zeroed();
         (::windows_core::Interface::vtable(self).DataCollectorType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataCollectorType>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFileName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     pub unsafe fn FileNameFormat(&self) -> ::windows_core::Result<AutoPathFormat> {
@@ -2092,22 +1996,18 @@ impl IDataCollector {
     pub unsafe fn SetFileNameFormat(&self, format: AutoPathFormat) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFileNameFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(format)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFileNameFormatPattern)(::windows_core::Interface::as_raw(self), pattern.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLatestOutputLocation)(::windows_core::Interface::as_raw(self), path.into_param().abi()).ok()
     }
     pub unsafe fn LogAppend(&self) -> ::windows_core::Result<i16> {
@@ -2131,19 +2031,16 @@ impl IDataCollector {
     pub unsafe fn SetLogOverwrite(&self, overwrite: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLogOverwrite)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(overwrite)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Index(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2152,20 +2049,18 @@ impl IDataCollector {
     pub unsafe fn SetIndex(&self, index: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Xml(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Xml(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).SetXml)(::windows_core::Interface::as_raw(self), xml.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMap>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -2255,64 +2150,31 @@ pub struct IDataCollector_Vtbl {
     #[cfg(not(feature = "Win32_System_Com"))]
     SetDataCollectorSet: usize,
     pub DataCollectorType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: *mut DataCollectorType) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FileName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetFileName: usize,
+    pub FileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub FileNameFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: *mut AutoPathFormat) -> ::windows_core::HRESULT,
     pub SetFileNameFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: AutoPathFormat) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FileNameFormatPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pattern: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FileNameFormatPattern: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetFileNameFormatPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pattern: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetFileNameFormatPattern: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub LatestOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    LatestOutputLocation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetLatestOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetLatestOutputLocation: usize,
+    pub FileNameFormatPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pattern: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetFileNameFormatPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pattern: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub LatestOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetLatestOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub LogAppend: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, append: *mut i16) -> ::windows_core::HRESULT,
     pub SetLogAppend: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, append: i16) -> ::windows_core::HRESULT,
     pub LogCircular: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, circular: *mut i16) -> ::windows_core::HRESULT,
     pub SetLogCircular: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, circular: i16) -> ::windows_core::HRESULT,
     pub LogOverwrite: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, overwrite: *mut i16) -> ::windows_core::HRESULT,
     pub SetLogOverwrite: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, overwrite: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OutputLocation: usize,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub OutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Index: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: *mut i32) -> ::windows_core::HRESULT,
     pub SetIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Xml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Xml: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub SetXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, validation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    pub Xml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, validation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     SetXml: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, latest: i16, location: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateOutputLocation: usize,
+    pub CreateOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, latest: i16, location: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -2323,7 +2185,7 @@ impl IDataCollectorCollection {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<IDataCollector> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), index.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDataCollector>(result__)
@@ -2336,7 +2198,7 @@ impl IDataCollectorCollection {
     pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, IDataCollector>>(&self, collector: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), collector.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, collector: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), collector.into_param().abi()).ok()
     }
@@ -2347,8 +2209,8 @@ impl IDataCollectorCollection {
     pub unsafe fn AddRange<'a, Param0: ::windows_core::IntoParam<'a, IDataCollectorCollection>>(&self, collectors: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddRange)(::windows_core::Interface::as_raw(self), collectors.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateDataCollectorFromXml<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrxml: Param0, pvalidation: *mut ::core::option::Option<IValueMap>, pcollector: *mut ::core::option::Option<IDataCollector>) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn CreateDataCollectorFromXml<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrxml: Param0, pvalidation: *mut ::core::option::Option<IValueMap>, pcollector: *mut ::core::option::Option<IDataCollector>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CreateDataCollectorFromXml)(::windows_core::Interface::as_raw(self), bstrxml.into_param().abi(), ::core::mem::transmute(pvalidation), ::core::mem::transmute(pcollector)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -2436,27 +2298,27 @@ unsafe impl ::windows_core::Interface for IDataCollectorCollection {
 pub struct IDataCollectorCollection_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>, collector: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, collector: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, collector: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub AddRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, collectors: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     AddRange: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub CreateDataCollectorFromXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrxml: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvalidation: *mut ::windows_core::RawPtr, pcollector: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateDataCollectorFromXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrxml: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pvalidation: *mut ::windows_core::RawPtr, pcollector: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     CreateDataCollectorFromXml: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub CreateDataCollector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: DataCollectorType, collector: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2480,33 +2342,27 @@ impl IDataCollectorSet {
     pub unsafe fn SetDuration(&self, seconds: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDuration)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(seconds)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Description(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Description(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, description: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, description: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescription)(::windows_core::Interface::as_raw(self), description.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DescriptionUnresolved(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DescriptionUnresolved)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DescriptionUnresolved(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DescriptionUnresolved)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDisplayName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, displayname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDisplayName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, displayname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDisplayName)(::windows_core::Interface::as_raw(self), displayname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayNameUnresolved(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DisplayNameUnresolved)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisplayNameUnresolved(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DisplayNameUnresolved)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn Keywords(&self) -> ::windows_core::Result<*mut super::Com::SAFEARRAY> {
@@ -2517,32 +2373,26 @@ impl IDataCollectorSet {
     pub unsafe fn SetKeywords(&self, keywords: *const super::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetKeywords)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(keywords)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLatestOutputLocation)(::windows_core::Interface::as_raw(self), path.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RootPath(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).RootPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn RootPath(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).RootPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetRootPath<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, folder: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetRootPath<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, folder: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRootPath)(::windows_core::Interface::as_raw(self), folder.into_param().abi()).ok()
     }
     pub unsafe fn Segment(&self) -> ::windows_core::Result<i16> {
@@ -2573,22 +2423,19 @@ impl IDataCollectorSet {
     pub unsafe fn SetSerialNumber(&self, index: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSerialNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Server(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Server)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Server(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Server)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Status(&self) -> ::windows_core::Result<DataCollectorSetStatus> {
         let mut result__ = ::core::mem::MaybeUninit::<DataCollectorSetStatus>::zeroed();
         (::windows_core::Interface::vtable(self).Status)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataCollectorSetStatus>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Subdirectory(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Subdirectory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Subdirectory(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Subdirectory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSubdirectory<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, folder: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSubdirectory<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, folder: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSubdirectory)(::windows_core::Interface::as_raw(self), folder.into_param().abi()).ok()
     }
     pub unsafe fn SubdirectoryFormat(&self) -> ::windows_core::Result<AutoPathFormat> {
@@ -2598,22 +2445,18 @@ impl IDataCollectorSet {
     pub unsafe fn SetSubdirectoryFormat(&self, format: AutoPathFormat) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSubdirectoryFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(format)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SubdirectoryFormatPattern(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SubdirectoryFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SubdirectoryFormatPattern(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SubdirectoryFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSubdirectoryFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSubdirectoryFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSubdirectoryFormatPattern)(::windows_core::Interface::as_raw(self), pattern.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Task(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Task)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Task(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Task)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTask<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTask<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTask)(::windows_core::Interface::as_raw(self), task.into_param().abi()).ok()
     }
     pub unsafe fn TaskRunAsSelf(&self) -> ::windows_core::Result<i16> {
@@ -2623,22 +2466,18 @@ impl IDataCollectorSet {
     pub unsafe fn SetTaskRunAsSelf(&self, runasself: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTaskRunAsSelf)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(runasself)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TaskArguments(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TaskArguments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TaskArguments(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TaskArguments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTaskArguments<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTaskArguments<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, task: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTaskArguments)(::windows_core::Interface::as_raw(self), task.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TaskUserTextArguments(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TaskUserTextArguments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TaskUserTextArguments(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TaskUserTextArguments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTaskUserTextArguments<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, usertext: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTaskUserTextArguments<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, usertext: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTaskUserTextArguments)(::windows_core::Interface::as_raw(self), usertext.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -2653,23 +2492,19 @@ impl IDataCollectorSet {
     pub unsafe fn SetSchedulesEnabled(&self, enabled: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSchedulesEnabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(enabled)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UserAccount(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).UserAccount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn UserAccount(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).UserAccount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Xml(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Xml(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Security(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Security)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Security(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Security)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSecurity<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsecurity: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsecurity: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSecurity)(::windows_core::Interface::as_raw(self), bstrsecurity.into_param().abi()).ok()
     }
     pub unsafe fn StopOnCompletion(&self) -> ::windows_core::Result<i16> {
@@ -2684,16 +2519,14 @@ impl IDataCollectorSet {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).DataManager)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDataManager>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCredentials<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, user: Param0, password: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCredentials<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, user: Param0, password: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCredentials)(::windows_core::Interface::as_raw(self), user.into_param().abi(), password.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0, server: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0, server: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Query)(::windows_core::Interface::as_raw(self), name.into_param().abi(), server.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Commit<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0, server: Param1, mode: CommitMode) -> ::windows_core::Result<IValueMap> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Commit<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0, server: Param1, mode: CommitMode) -> ::windows_core::Result<IValueMap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Commit)(::windows_core::Interface::as_raw(self), name.into_param().abi(), server.into_param().abi(), ::core::mem::transmute(mode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMap>(result__)
     }
@@ -2706,19 +2539,17 @@ impl IDataCollectorSet {
     pub unsafe fn Stop(&self, synchronous: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Stop)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(synchronous)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).SetXml)(::windows_core::Interface::as_raw(self), xml.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMap>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValue)(::windows_core::Interface::as_raw(self), key.into_param().abi(), value.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, key: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetValue)(::windows_core::Interface::as_raw(self), key.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, key: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetValue)(::windows_core::Interface::as_raw(self), key.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -2805,30 +2636,12 @@ pub struct IDataCollectorSet_Vtbl {
     DataCollectors: usize,
     pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, seconds: *mut u32) -> ::windows_core::HRESULT,
     pub SetDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, seconds: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Description: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDescription: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DescriptionUnresolved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, descr: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DescriptionUnresolved: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DisplayName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDisplayName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DisplayNameUnresolved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DisplayNameUnresolved: usize,
+    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub DescriptionUnresolved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, descr: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub DisplayNameUnresolved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Keywords: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, keywords: *mut *mut super::Com::SAFEARRAY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -2837,30 +2650,12 @@ pub struct IDataCollectorSet_Vtbl {
     pub SetKeywords: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, keywords: *const super::Com::SAFEARRAY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SetKeywords: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub LatestOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    LatestOutputLocation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetLatestOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetLatestOutputLocation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OutputLocation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RootPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RootPath: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetRootPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetRootPath: usize,
+    pub LatestOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetLatestOutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub OutputLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub RootPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetRootPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Segment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segment: *mut i16) -> ::windows_core::HRESULT,
     pub SetSegment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segment: i16) -> ::windows_core::HRESULT,
     pub SegmentMaxDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, seconds: *mut u32) -> ::windows_core::HRESULT,
@@ -2869,110 +2664,53 @@ pub struct IDataCollectorSet_Vtbl {
     pub SetSegmentMaxSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, size: u32) -> ::windows_core::HRESULT,
     pub SerialNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: *mut u32) -> ::windows_core::HRESULT,
     pub SetSerialNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Server: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, server: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Server: usize,
+    pub Server: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, server: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: *mut DataCollectorSetStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Subdirectory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Subdirectory: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSubdirectory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSubdirectory: usize,
+    pub Subdirectory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSubdirectory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SubdirectoryFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: *mut AutoPathFormat) -> ::windows_core::HRESULT,
     pub SetSubdirectoryFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: AutoPathFormat) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SubdirectoryFormatPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pattern: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SubdirectoryFormatPattern: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSubdirectoryFormatPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pattern: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSubdirectoryFormatPattern: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Task: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Task: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTask: usize,
+    pub SubdirectoryFormatPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pattern: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSubdirectoryFormatPattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pattern: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Task: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTask: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub TaskRunAsSelf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, runasself: *mut i16) -> ::windows_core::HRESULT,
     pub SetTaskRunAsSelf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, runasself: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TaskArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TaskArguments: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTaskArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTaskArguments: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TaskUserTextArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usertext: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TaskUserTextArguments: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTaskUserTextArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usertext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTaskUserTextArguments: usize,
+    pub TaskArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTaskArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, task: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub TaskUserTextArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usertext: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTaskUserTextArguments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usertext: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Schedules: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppschedules: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Schedules: usize,
     pub SchedulesEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, enabled: *mut i16) -> ::windows_core::HRESULT,
     pub SetSchedulesEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, enabled: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub UserAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    UserAccount: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Xml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Xml: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Security: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsecurity: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Security: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsecurity: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSecurity: usize,
+    pub UserAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub Xml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub Security: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsecurity: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsecurity: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub StopOnCompletion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stop: *mut i16) -> ::windows_core::HRESULT,
     pub SetStopOnCompletion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stop: i16) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub DataManager: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, datamanager: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     DataManager: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetCredentials: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, password: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetCredentials: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Query: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, server: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Query: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Commit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, server: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, mode: CommitMode, validation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    pub SetCredentials: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, password: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Query: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, server: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Commit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, server: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, mode: CommitMode, validation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Commit: usize,
     pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, synchronous: i16) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, synchronous: i16) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub SetXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, validation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub SetXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xml: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, validation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     SetXml: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetValue: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, value: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetValue: usize,
+    pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, value: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, value: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -2983,7 +2721,7 @@ impl IDataCollectorSetCollection {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<IDataCollectorSet> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), index.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDataCollectorSet>(result__)
@@ -2996,7 +2734,7 @@ impl IDataCollectorSetCollection {
     pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, IDataCollectorSet>>(&self, set: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), set.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, set: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), set.into_param().abi()).ok()
     }
@@ -3007,8 +2745,7 @@ impl IDataCollectorSetCollection {
     pub unsafe fn AddRange<'a, Param0: ::windows_core::IntoParam<'a, IDataCollectorSetCollection>>(&self, sets: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddRange)(::windows_core::Interface::as_raw(self), sets.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetDataCollectorSets<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, server: Param0, filter: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn GetDataCollectorSets<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, server: Param0, filter: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetDataCollectorSets)(::windows_core::Interface::as_raw(self), server.into_param().abi(), filter.into_param().abi()).ok()
     }
 }
@@ -3091,28 +2828,25 @@ unsafe impl ::windows_core::Interface for IDataCollectorSetCollection {
 pub struct IDataCollectorSetCollection_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>, set: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, set: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, set: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub AddRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sets: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     AddRange: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetDataCollectorSets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, server: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, filter: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDataCollectorSets: usize,
+    pub GetDataCollectorSets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, server: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, filter: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -3166,58 +2900,47 @@ impl IDataManager {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).FolderActions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFolderActionCollection>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ReportSchema(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ReportSchema)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ReportSchema(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ReportSchema)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetReportSchema<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, reportschema: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetReportSchema<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, reportschema: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetReportSchema)(::windows_core::Interface::as_raw(self), reportschema.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ReportFileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ReportFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ReportFileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ReportFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetReportFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pbstrfilename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetReportFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pbstrfilename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetReportFileName)(::windows_core::Interface::as_raw(self), pbstrfilename.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RuleTargetFileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).RuleTargetFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn RuleTargetFileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).RuleTargetFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetRuleTargetFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, filename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetRuleTargetFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, filename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRuleTargetFileName)(::windows_core::Interface::as_raw(self), filename.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EventsFileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).EventsFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn EventsFileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).EventsFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEventsFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pbstrfilename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEventsFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pbstrfilename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEventsFileName)(::windows_core::Interface::as_raw(self), pbstrfilename.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Rules(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Rules)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Rules(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Rules)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetRules<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrxml: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetRules<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrxml: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRules)(::windows_core::Interface::as_raw(self), bstrxml.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Run<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, steps: DataManagerSteps, bstrfolder: Param1) -> ::windows_core::Result<IValueMap> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Run<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, steps: DataManagerSteps, bstrfolder: Param1) -> ::windows_core::Result<IValueMap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Run)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(steps), bstrfolder.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMap>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Extract<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, cabfilename: Param0, destinationpath: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn Extract<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, cabfilename: Param0, destinationpath: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Extract)(::windows_core::Interface::as_raw(self), cabfilename.into_param().abi(), destinationpath.into_param().abi()).ok()
     }
 }
@@ -3315,54 +3038,21 @@ pub struct IDataManager_Vtbl {
     pub FolderActions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, actions: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     FolderActions: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ReportSchema: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reportschema: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ReportSchema: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetReportSchema: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reportschema: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetReportSchema: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ReportFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfilename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ReportFileName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetReportFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetReportFileName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RuleTargetFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RuleTargetFileName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetRuleTargetFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetRuleTargetFileName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub EventsFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfilename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EventsFileName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetEventsFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetEventsFileName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Rules: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrxml: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Rules: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetRules: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrxml: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetRules: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Run: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, steps: DataManagerSteps, bstrfolder: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, errors: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    pub ReportSchema: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reportschema: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetReportSchema: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reportschema: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub ReportFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfilename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetReportFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub RuleTargetFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetRuleTargetFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub EventsFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfilename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetEventsFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Rules: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrxml: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetRules: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrxml: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub Run: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, steps: DataManagerSteps, bstrfolder: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, errors: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Run: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Extract: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cabfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, destinationpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Extract: usize,
+    pub Extract: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cabfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, destinationpath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -3390,13 +3080,11 @@ impl IFolderAction {
     pub unsafe fn SetActions(&self, steps: FolderActionSteps) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetActions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(steps)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SendCabTo(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SendCabTo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SendCabTo(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SendCabTo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSendCabTo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdestination: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSendCabTo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdestination: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSendCabTo)(::windows_core::Interface::as_raw(self), bstrdestination.into_param().abi()).ok()
     }
 }
@@ -3484,14 +3172,8 @@ pub struct IFolderAction_Vtbl {
     pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulage: u32) -> ::windows_core::HRESULT,
     pub Actions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, steps: *mut FolderActionSteps) -> ::windows_core::HRESULT,
     pub SetActions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, steps: FolderActionSteps) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SendCabTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdestination: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SendCabTo: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSendCabTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdestination: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSendCabTo: usize,
+    pub SendCabTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdestination: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSendCabTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdestination: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -3502,7 +3184,7 @@ impl IFolderActionCollection {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<IFolderAction> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), index.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFolderAction>(result__)
@@ -3515,7 +3197,7 @@ impl IFolderActionCollection {
     pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, IFolderAction>>(&self, action: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), action.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), index.into_param().abi()).ok()
     }
@@ -3611,18 +3293,18 @@ unsafe impl ::windows_core::Interface for IFolderActionCollection {
 pub struct IFolderActionCollection_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>, action: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#enum: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, action: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -3637,10 +3319,9 @@ pub struct IFolderActionCollection_Vtbl {
 #[repr(transparent)]
 pub struct ILogFileItem(::windows_core::IUnknown);
 impl ILogFileItem {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Path(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Path)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Path(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Path)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 impl ::core::convert::From<ILogFileItem> for ::windows_core::IUnknown {
@@ -3687,10 +3368,7 @@ unsafe impl ::windows_core::Interface for ILogFileItem {
 #[doc(hidden)]
 pub struct ILogFileItem_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Path: usize,
+    pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstrvalue: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -3705,17 +3383,17 @@ impl ILogFiles {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<DILogFileItem> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), index.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DILogFileItem>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pathname: Param0) -> ::windows_core::Result<DILogFileItem> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pathname: Param0) -> ::windows_core::Result<DILogFileItem> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), pathname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DILogFileItem>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), index.into_param().abi()).ok()
     }
@@ -3800,17 +3478,17 @@ pub struct ILogFiles_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plong: *mut i32) -> ::windows_core::HRESULT,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>, ppi: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pathname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppi: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pathname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppi: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -3831,13 +3509,11 @@ impl IPerformanceCounterDataCollector {
         let mut result__ = ::core::mem::MaybeUninit::<DataCollectorType>::zeroed();
         (::windows_core::Interface::vtable(self).base__.DataCollectorType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataCollectorType>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     pub unsafe fn FileNameFormat(&self) -> ::windows_core::Result<AutoPathFormat> {
@@ -3847,22 +3523,18 @@ impl IPerformanceCounterDataCollector {
     pub unsafe fn SetFileNameFormat(&self, format: AutoPathFormat) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(format)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormatPattern)(::windows_core::Interface::as_raw(self), pattern.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLatestOutputLocation)(::windows_core::Interface::as_raw(self), path.into_param().abi()).ok()
     }
     pub unsafe fn LogAppend(&self) -> ::windows_core::Result<i16> {
@@ -3886,19 +3558,16 @@ impl IPerformanceCounterDataCollector {
     pub unsafe fn SetLogOverwrite(&self, overwrite: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLogOverwrite)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(overwrite)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Index(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -3907,28 +3576,24 @@ impl IPerformanceCounterDataCollector {
     pub unsafe fn SetIndex(&self, index: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Xml(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Xml(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.SetXml)(::windows_core::Interface::as_raw(self), xml.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMap>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DataSourceName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DataSourceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DataSourceName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DataSourceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDataSourceName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, dsn: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDataSourceName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, dsn: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDataSourceName)(::windows_core::Interface::as_raw(self), dsn.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -4064,14 +3729,8 @@ unsafe impl ::windows_core::Interface for IPerformanceCounterDataCollector {
 #[doc(hidden)]
 pub struct IPerformanceCounterDataCollector_Vtbl {
     pub base__: IDataCollector_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DataSourceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dsn: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DataSourceName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDataSourceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dsn: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDataSourceName: usize,
+    pub DataSourceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dsn: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDataSourceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dsn: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub PerformanceCounters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, counters: *mut *mut super::Com::SAFEARRAY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -4092,30 +3751,30 @@ pub struct IPerformanceCounterDataCollector_Vtbl {
 pub struct ISchedule(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ISchedule {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn StartDate(&self) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).StartDate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn SetStartDate<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, start: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetStartDate)(::windows_core::Interface::as_raw(self), start.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn EndDate(&self) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).EndDate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn SetEndDate<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, end: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEndDate)(::windows_core::Interface::as_raw(self), end.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn StartTime(&self) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).StartTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn SetStartTime<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, start: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetStartTime)(::windows_core::Interface::as_raw(self), start.into_param().abi()).ok()
     }
@@ -4205,29 +3864,29 @@ unsafe impl ::windows_core::Interface for ISchedule {
 #[doc(hidden)]
 pub struct ISchedule_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub StartDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, start: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     StartDate: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub SetStartDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, start: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetStartDate: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub EndDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, end: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     EndDate: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub SetEndDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, end: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetEndDate: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub StartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, start: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     StartTime: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub SetStartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, start: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetStartTime: usize,
     pub Days: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, days: *mut WeekDays) -> ::windows_core::HRESULT,
     pub SetDays: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, days: WeekDays) -> ::windows_core::HRESULT,
@@ -4241,7 +3900,7 @@ impl IScheduleCollection {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<ISchedule> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), index.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISchedule>(result__)
@@ -4254,7 +3913,7 @@ impl IScheduleCollection {
     pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ISchedule>>(&self, pschedule: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), pschedule.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, vschedule: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), vschedule.into_param().abi()).ok()
     }
@@ -4350,18 +4009,18 @@ unsafe impl ::windows_core::Interface for IScheduleCollection {
 pub struct IScheduleCollection_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>, ppschedule: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ienum: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pschedule: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vschedule: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -4488,23 +4147,19 @@ impl ISystemMonitor {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).ManualUpdate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetGraphTitle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetGraphTitle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetGraphTitle)(::windows_core::Interface::as_raw(self), bstitle.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GraphTitle(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GraphTitle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GraphTitle(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GraphTitle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetYAxisLabel<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetYAxisLabel<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetYAxisLabel)(::windows_core::Interface::as_raw(self), bstitle.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn YAxisLabel(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).YAxisLabel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn YAxisLabel(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).YAxisLabel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn CollectSample(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CollectSample)(::windows_core::Interface::as_raw(self)).ok()
@@ -4522,8 +4177,7 @@ impl ISystemMonitor {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Counter)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICounterItem>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddCounter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bspath: Param0) -> ::windows_core::Result<ICounterItem> {
+    pub unsafe fn AddCounter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bspath: Param0) -> ::windows_core::Result<ICounterItem> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).AddCounter)(::windows_core::Interface::as_raw(self), bspath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICounterItem>(result__)
     }
@@ -4537,14 +4191,12 @@ impl ISystemMonitor {
     pub unsafe fn SetBackColorCtl(&self, color: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBackColorCtl)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(color)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLogFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bsfilename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLogFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bsfilename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLogFileName)(::windows_core::Interface::as_raw(self), bsfilename.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LogFileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).LogFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LogFileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).LogFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn SetLogViewStart(&self, starttime: f64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLogViewStart)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(starttime)).ok()
@@ -4637,23 +4289,19 @@ impl ISystemMonitor {
         let mut result__ = ::core::mem::MaybeUninit::<DataSourceTypeConstants>::zeroed();
         (::windows_core::Interface::vtable(self).DataSourceType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataSourceTypeConstants>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSqlDsnName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bssqldsnname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSqlDsnName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bssqldsnname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSqlDsnName)(::windows_core::Interface::as_raw(self), bssqldsnname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SqlDsnName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SqlDsnName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SqlDsnName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SqlDsnName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSqlLogSetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bssqllogsetname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSqlLogSetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bssqllogsetname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSqlLogSetName)(::windows_core::Interface::as_raw(self), bssqllogsetname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SqlLogSetName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SqlLogSetName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SqlLogSetName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SqlLogSetName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 impl ::core::convert::From<ISystemMonitor> for ::windows_core::IUnknown {
@@ -4740,42 +4388,21 @@ pub struct ISystemMonitor_Vtbl {
     pub DisplayType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pedisplaytype: *mut DisplayTypeConstants) -> ::windows_core::HRESULT,
     pub SetManualUpdate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstate: i16) -> ::windows_core::HRESULT,
     pub ManualUpdate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstate: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetGraphTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstitle: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetGraphTitle: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GraphTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstitle: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GraphTitle: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetYAxisLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstitle: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetYAxisLabel: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub YAxisLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstitle: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    YAxisLabel: usize,
+    pub SetGraphTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstitle: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub GraphTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstitle: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetYAxisLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstitle: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub YAxisLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstitle: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub CollectSample: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub UpdateGraph: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub BrowseCounters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub DisplayProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Counter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iindex: i32, ppicounter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AddCounter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bspath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppicounter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AddCounter: usize,
+    pub AddCounter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bspath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppicounter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DeleteCounter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pctr: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub BackColorCtl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcolor: *mut u32) -> ::windows_core::HRESULT,
     pub SetBackColorCtl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, color: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetLogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetLogFileName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub LogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsfilename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    LogFileName: usize,
+    pub SetLogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub LogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsfilename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetLogViewStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: f64) -> ::windows_core::HRESULT,
     pub LogViewStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: *mut f64) -> ::windows_core::HRESULT,
     pub SetLogViewStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stoptime: f64) -> ::windows_core::HRESULT,
@@ -4805,22 +4432,10 @@ pub struct ISystemMonitor_Vtbl {
     LogFiles: usize,
     pub SetDataSourceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, edatasourcetype: DataSourceTypeConstants) -> ::windows_core::HRESULT,
     pub DataSourceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pedatasourcetype: *mut DataSourceTypeConstants) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSqlDsnName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqldsnname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSqlDsnName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SqlDsnName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqldsnname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SqlDsnName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSqlLogSetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqllogsetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSqlLogSetName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SqlLogSetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqllogsetname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SqlLogSetName: usize,
+    pub SetSqlDsnName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqldsnname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub SqlDsnName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqldsnname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSqlLogSetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqllogsetname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub SqlLogSetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqllogsetname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISystemMonitor2(::windows_core::IUnknown);
@@ -4937,23 +4552,19 @@ impl ISystemMonitor2 {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).base__.ManualUpdate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetGraphTitle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetGraphTitle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetGraphTitle)(::windows_core::Interface::as_raw(self), bstitle.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GraphTitle(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GraphTitle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GraphTitle(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GraphTitle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetYAxisLabel<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetYAxisLabel<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetYAxisLabel)(::windows_core::Interface::as_raw(self), bstitle.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn YAxisLabel(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.YAxisLabel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn YAxisLabel(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.YAxisLabel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn CollectSample(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CollectSample)(::windows_core::Interface::as_raw(self)).ok()
@@ -4971,8 +4582,7 @@ impl ISystemMonitor2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Counter)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICounterItem>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddCounter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bspath: Param0) -> ::windows_core::Result<ICounterItem> {
+    pub unsafe fn AddCounter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bspath: Param0) -> ::windows_core::Result<ICounterItem> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.AddCounter)(::windows_core::Interface::as_raw(self), bspath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICounterItem>(result__)
     }
@@ -4986,14 +4596,12 @@ impl ISystemMonitor2 {
     pub unsafe fn SetBackColorCtl(&self, color: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetBackColorCtl)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(color)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLogFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bsfilename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLogFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bsfilename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLogFileName)(::windows_core::Interface::as_raw(self), bsfilename.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LogFileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.LogFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LogFileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.LogFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn SetLogViewStart(&self, starttime: f64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLogViewStart)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(starttime)).ok()
@@ -5086,23 +4694,19 @@ impl ISystemMonitor2 {
         let mut result__ = ::core::mem::MaybeUninit::<DataSourceTypeConstants>::zeroed();
         (::windows_core::Interface::vtable(self).base__.DataSourceType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataSourceTypeConstants>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSqlDsnName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bssqldsnname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSqlDsnName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bssqldsnname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetSqlDsnName)(::windows_core::Interface::as_raw(self), bssqldsnname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SqlDsnName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.SqlDsnName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SqlDsnName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.SqlDsnName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSqlLogSetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bssqllogsetname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSqlLogSetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bssqllogsetname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetSqlLogSetName)(::windows_core::Interface::as_raw(self), bssqllogsetname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SqlLogSetName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.SqlLogSetName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SqlLogSetName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.SqlLogSetName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn SetEnableDigitGrouping(&self, bstate: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEnableDigitGrouping)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bstate)).ok()
@@ -5142,12 +4746,10 @@ impl ISystemMonitor2 {
     pub unsafe fn ScaleToFit(&self, bselectedcountersonly: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ScaleToFit)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bselectedcountersonly)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SaveAs<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfilename: Param0, esysmonfiletype: SysmonFileType) -> ::windows_core::Result<()> {
+    pub unsafe fn SaveAs<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfilename: Param0, esysmonfiletype: SysmonFileType) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SaveAs)(::windows_core::Interface::as_raw(self), bstrfilename.into_param().abi(), ::core::mem::transmute(esysmonfiletype)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Relog<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfilename: Param0, esysmonfiletype: SysmonFileType, ifilter: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn Relog<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfilename: Param0, esysmonfiletype: SysmonFileType, ifilter: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Relog)(::windows_core::Interface::as_raw(self), bstrfilename.into_param().abi(), ::core::mem::transmute(esysmonfiletype), ::core::mem::transmute(ifilter)).ok()
     }
     pub unsafe fn ClearData(&self) -> ::windows_core::Result<()> {
@@ -5170,8 +4772,7 @@ impl ISystemMonitor2 {
     pub unsafe fn BatchingLock(&self, flock: i16, ebatchreason: SysmonBatchReason) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BatchingLock)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(flock), ::core::mem::transmute(ebatchreason)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LoadSettings<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsettingfilename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn LoadSettings<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsettingfilename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).LoadSettings)(::windows_core::Interface::as_raw(self), bstrsettingfilename.into_param().abi()).ok()
     }
 }
@@ -5250,24 +4851,15 @@ pub struct ISystemMonitor2_Vtbl {
     pub SetDataPointCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inewcount: i32) -> ::windows_core::HRESULT,
     pub DataPointCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidatapointcount: *mut i32) -> ::windows_core::HRESULT,
     pub ScaleToFit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bselectedcountersonly: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SaveAs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, esysmonfiletype: SysmonFileType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SaveAs: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Relog: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, esysmonfiletype: SysmonFileType, ifilter: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Relog: usize,
+    pub SaveAs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, esysmonfiletype: SysmonFileType) -> ::windows_core::HRESULT,
+    pub Relog: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, esysmonfiletype: SysmonFileType, ifilter: i32) -> ::windows_core::HRESULT,
     pub ClearData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub LogSourceStartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdate: *mut f64) -> ::windows_core::HRESULT,
     pub LogSourceStopTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdate: *mut f64) -> ::windows_core::HRESULT,
     pub SetLogViewRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: f64, stoptime: f64) -> ::windows_core::HRESULT,
     pub GetLogViewRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: *mut f64, stoptime: *mut f64) -> ::windows_core::HRESULT,
     pub BatchingLock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flock: i16, ebatchreason: SysmonBatchReason) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub LoadSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsettingfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    LoadSettings: usize,
+    pub LoadSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsettingfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISystemMonitorEvents(::windows_core::IUnknown);
@@ -5356,13 +4948,11 @@ impl ITraceDataCollector {
         let mut result__ = ::core::mem::MaybeUninit::<DataCollectorType>::zeroed();
         (::windows_core::Interface::vtable(self).base__.DataCollectorType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataCollectorType>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     pub unsafe fn FileNameFormat(&self) -> ::windows_core::Result<AutoPathFormat> {
@@ -5372,22 +4962,18 @@ impl ITraceDataCollector {
     pub unsafe fn SetFileNameFormat(&self, format: AutoPathFormat) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormat)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(format)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FileNameFormatPattern(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FileNameFormatPattern)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFileNameFormatPattern<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pattern: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFileNameFormatPattern)(::windows_core::Interface::as_raw(self), pattern.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LatestOutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.LatestOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLatestOutputLocation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, path: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLatestOutputLocation)(::windows_core::Interface::as_raw(self), path.into_param().abi()).ok()
     }
     pub unsafe fn LogAppend(&self) -> ::windows_core::Result<i16> {
@@ -5411,19 +4997,16 @@ impl ITraceDataCollector {
     pub unsafe fn SetLogOverwrite(&self, overwrite: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetLogOverwrite)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(overwrite)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OutputLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.OutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Index(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -5432,20 +5015,18 @@ impl ITraceDataCollector {
     pub unsafe fn SetIndex(&self, index: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetIndex)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Xml(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Xml(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Xml)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn SetXml<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, xml: Param0) -> ::windows_core::Result<IValueMap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.SetXml)(::windows_core::Interface::as_raw(self), xml.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMap>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CreateOutputLocation(&self, latest: i16) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CreateOutputLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(latest), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn BufferSize(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -5563,13 +5144,11 @@ impl ITraceDataCollector {
     pub unsafe fn SetSessionId(&self, id: u64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSessionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SessionName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SessionName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SessionName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SessionName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSessionName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSessionName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSessionName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     pub unsafe fn SessionThreadId(&self) -> ::windows_core::Result<u32> {
@@ -5727,14 +5306,8 @@ pub struct ITraceDataCollector_Vtbl {
     pub SetRealTimeBuffersLost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffers: u32) -> ::windows_core::HRESULT,
     pub SessionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: *mut u64) -> ::windows_core::HRESULT,
     pub SetSessionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: u64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SessionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SessionName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSessionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSessionName: usize,
+    pub SessionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSessionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SessionThreadId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tid: *mut u32) -> ::windows_core::HRESULT,
     pub SetSessionThreadId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tid: u32) -> ::windows_core::HRESULT,
     pub StreamMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: *mut StreamMode) -> ::windows_core::HRESULT,
@@ -5749,13 +5322,11 @@ pub struct ITraceDataCollector_Vtbl {
 pub struct ITraceDataProvider(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ITraceDataProvider {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisplayName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DisplayName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDisplayName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDisplayName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDisplayName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
     pub unsafe fn Guid(&self) -> ::windows_core::Result<::windows_core::GUID> {
@@ -5808,22 +5379,19 @@ impl ITraceDataProvider {
     pub unsafe fn SetFilterData(&self, pdata: *const super::Com::SAFEARRAY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFilterData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0, bstrserver: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0, bstrserver: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Query)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), bstrserver.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn Resolve<'a, Param0: ::windows_core::IntoParam<'a, super::Com::IDispatch>>(&self, pfrom: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Resolve)(::windows_core::Interface::as_raw(self), pfrom.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSecurity<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, sddl: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, sddl: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSecurity)(::windows_core::Interface::as_raw(self), sddl.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetSecurity(&self, securityinfo: u32) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetSecurity)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(securityinfo), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetSecurity(&self, securityinfo: u32) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetSecurity)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(securityinfo), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn GetRegisteredProcesses(&self) -> ::windows_core::Result<IValueMap> {
@@ -5909,14 +5477,8 @@ unsafe impl ::windows_core::Interface for ITraceDataProvider {
 #[doc(hidden)]
 pub struct ITraceDataProvider_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DisplayName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDisplayName: usize,
+    pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Guid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub SetGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guid: ::windows_core::GUID) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -5947,22 +5509,13 @@ pub struct ITraceDataProvider_Vtbl {
     pub SetFilterData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *const super::Com::SAFEARRAY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SetFilterData: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Query: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrserver: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Query: usize,
+    pub Query: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrserver: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Resolve: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfrom: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Resolve: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sddl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSecurity: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, securityinfo: u32, sddl: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetSecurity: usize,
+    pub SetSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sddl: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub GetSecurity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, securityinfo: u32, sddl: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub GetRegisteredProcesses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, processes: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -5977,7 +5530,7 @@ impl ITraceDataProviderCollection {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<ITraceDataProvider> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), index.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITraceDataProvider>(result__)
@@ -5990,7 +5543,7 @@ impl ITraceDataProviderCollection {
     pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ITraceDataProvider>>(&self, pprovider: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), pprovider.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, vprovider: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), vprovider.into_param().abi()).ok()
     }
@@ -6006,12 +5559,10 @@ impl ITraceDataProviderCollection {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateTraceDataProvider)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ITraceDataProvider>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetTraceDataProviders<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, server: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn GetTraceDataProviders<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, server: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetTraceDataProviders)(::windows_core::Interface::as_raw(self), server.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetTraceDataProvidersByProcess<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, server: Param0, pid: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetTraceDataProvidersByProcess<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, server: Param0, pid: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetTraceDataProvidersByProcess)(::windows_core::Interface::as_raw(self), server.into_param().abi(), ::core::mem::transmute(pid)).ok()
     }
 }
@@ -6094,18 +5645,18 @@ unsafe impl ::windows_core::Interface for ITraceDataProviderCollection {
 pub struct ITraceDataProviderCollection_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>, ppprovider: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprovider: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vprovider: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -6116,14 +5667,8 @@ pub struct ITraceDataProviderCollection_Vtbl {
     pub CreateTraceDataProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, provider: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateTraceDataProvider: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetTraceDataProviders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, server: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetTraceDataProviders: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetTraceDataProvidersByProcess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, server: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pid: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetTraceDataProvidersByProcess: usize,
+    pub GetTraceDataProviders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, server: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub GetTraceDataProvidersByProcess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, server: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pid: u32) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -6134,7 +5679,7 @@ impl IValueMap {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, index: Param0) -> ::windows_core::Result<IValueMapItem> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), index.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IValueMapItem>(result__)
@@ -6143,21 +5688,19 @@ impl IValueMap {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Description(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Description(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, description: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, description: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescription)(::windows_core::Interface::as_raw(self), description.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Value(&self) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).Value)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn SetValue<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValue)(::windows_core::Interface::as_raw(self), value.into_param().abi()).ok()
     }
@@ -6168,11 +5711,11 @@ impl IValueMap {
     pub unsafe fn SetValueMapType(&self, r#type: ValueMapType) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValueMapType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(r#type)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), value.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), value.into_param().abi()).ok()
     }
@@ -6268,36 +5811,30 @@ unsafe impl ::windows_core::Interface for IValueMap {
 pub struct IValueMap_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: ::core::mem::ManuallyDrop<super::Com::VARIANT>, value: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Description: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDescription: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Value: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetValue: usize,
     pub ValueMapType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: *mut ValueMapType) -> ::windows_core::HRESULT,
     pub SetValueMapType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: ValueMapType) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -6314,13 +5851,11 @@ pub struct IValueMap_Vtbl {
 pub struct IValueMapItem(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IValueMapItem {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Description(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Description(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, description: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, description: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescription)(::windows_core::Interface::as_raw(self), description.into_param().abi()).ok()
     }
     pub unsafe fn Enabled(&self) -> ::windows_core::Result<i16> {
@@ -6330,21 +5865,19 @@ impl IValueMapItem {
     pub unsafe fn SetEnabled(&self, enabled: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEnabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(enabled)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Key(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Key)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Key(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Key)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, key: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetKey<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, key: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetKey)(::windows_core::Interface::as_raw(self), key.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn Value(&self) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).Value)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn SetValue<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, value: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValue)(::windows_core::Interface::as_raw(self), value.into_param().abi()).ok()
     }
@@ -6434,31 +5967,19 @@ unsafe impl ::windows_core::Interface for IValueMapItem {
 #[doc(hidden)]
 pub struct IValueMapItem_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Description: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDescription: usize,
+    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Enabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, enabled: *mut i16) -> ::windows_core::HRESULT,
     pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, enabled: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Key: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetKey: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Value: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetValue: usize,
     pub ValueMapType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: *mut ValueMapType) -> ::windows_core::HRESULT,
     pub SetValueMapType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: ValueMapType) -> ::windows_core::HRESULT,
@@ -6494,28 +6015,26 @@ pub const LegacyDataCollectorSet: ::windows_core::GUID = ::windows_core::GUID::f
 pub const LegacyDataCollectorSetCollection: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x03837527_098b_11d8_9414_505054503030);
 pub const LegacyTraceSession: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x03837528_098b_11d8_9414_505054503030);
 pub const LegacyTraceSessionCollection: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x03837529_098b_11d8_9414_505054503030);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadPerfCounterTextStringsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpcommandline: Param0, bquietmodearg: Param1) -> u32 {
+pub unsafe fn LoadPerfCounterTextStringsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpcommandline: Param0, bquietmodearg: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadPerfCounterTextStringsA(lpcommandline: ::windows_core::PCSTR, bquietmodearg: super::super::Foundation::BOOL) -> u32;
+            fn LoadPerfCounterTextStringsA(lpcommandline: ::windows_core::PCSTR, bquietmodearg: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(LoadPerfCounterTextStringsA(lpcommandline.into_param().abi(), bquietmodearg.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LoadPerfCounterTextStringsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpcommandline: Param0, bquietmodearg: Param1) -> u32 {
+pub unsafe fn LoadPerfCounterTextStringsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpcommandline: Param0, bquietmodearg: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LoadPerfCounterTextStringsW(lpcommandline: ::windows_core::PCWSTR, bquietmodearg: super::super::Foundation::BOOL) -> u32;
+            fn LoadPerfCounterTextStringsW(lpcommandline: ::windows_core::PCWSTR, bquietmodearg: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(LoadPerfCounterTextStringsW(lpcommandline.into_param().abi(), bquietmodearg.into_param().abi()))
     }
@@ -6530,10 +6049,9 @@ pub const PDH_ACCESS_DENIED: i32 = -1073738789i32;
 pub const PDH_ASYNC_QUERY_TIMEOUT: i32 = -2147481637i32;
 pub const PDH_BINARY_LOG_CORRUPT: i32 = -1073738761i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_BROWSE_DLG_CONFIG_A {
     pub _bitfield: u32,
-    pub hWndOwner: super::super::Foundation::HWND,
+    pub hWndOwner: ::win32_foundation::HWND,
     pub szDataSource: ::windows_core::PSTR,
     pub szReturnPathBuffer: ::windows_core::PSTR,
     pub cchReturnPathLength: u32,
@@ -6543,15 +6061,12 @@ pub struct PDH_BROWSE_DLG_CONFIG_A {
     pub dwDefaultDetailLevel: PERF_DETAIL,
     pub szDialogBoxCaption: ::windows_core::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_BROWSE_DLG_CONFIG_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_BROWSE_DLG_CONFIG_A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_BROWSE_DLG_CONFIG_A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_BROWSE_DLG_CONFIG_A")
@@ -6568,29 +6083,24 @@ impl ::core::fmt::Debug for PDH_BROWSE_DLG_CONFIG_A {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_BROWSE_DLG_CONFIG_A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_BROWSE_DLG_CONFIG_A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_BROWSE_DLG_CONFIG_A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_BROWSE_DLG_CONFIG_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_BROWSE_DLG_CONFIG_A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_BROWSE_DLG_CONFIG_HA {
     pub _bitfield: u32,
-    pub hWndOwner: super::super::Foundation::HWND,
+    pub hWndOwner: ::win32_foundation::HWND,
     pub hDataSource: isize,
     pub szReturnPathBuffer: ::windows_core::PSTR,
     pub cchReturnPathLength: u32,
@@ -6600,15 +6110,12 @@ pub struct PDH_BROWSE_DLG_CONFIG_HA {
     pub dwDefaultDetailLevel: PERF_DETAIL,
     pub szDialogBoxCaption: ::windows_core::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_BROWSE_DLG_CONFIG_HA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_BROWSE_DLG_CONFIG_HA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_BROWSE_DLG_CONFIG_HA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_BROWSE_DLG_CONFIG_HA")
@@ -6625,29 +6132,24 @@ impl ::core::fmt::Debug for PDH_BROWSE_DLG_CONFIG_HA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_BROWSE_DLG_CONFIG_HA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_BROWSE_DLG_CONFIG_HA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_BROWSE_DLG_CONFIG_HA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_BROWSE_DLG_CONFIG_HA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_BROWSE_DLG_CONFIG_HA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_BROWSE_DLG_CONFIG_HW {
     pub _bitfield: u32,
-    pub hWndOwner: super::super::Foundation::HWND,
+    pub hWndOwner: ::win32_foundation::HWND,
     pub hDataSource: isize,
     pub szReturnPathBuffer: ::windows_core::PWSTR,
     pub cchReturnPathLength: u32,
@@ -6657,15 +6159,12 @@ pub struct PDH_BROWSE_DLG_CONFIG_HW {
     pub dwDefaultDetailLevel: PERF_DETAIL,
     pub szDialogBoxCaption: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_BROWSE_DLG_CONFIG_HW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_BROWSE_DLG_CONFIG_HW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_BROWSE_DLG_CONFIG_HW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_BROWSE_DLG_CONFIG_HW")
@@ -6682,29 +6181,24 @@ impl ::core::fmt::Debug for PDH_BROWSE_DLG_CONFIG_HW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_BROWSE_DLG_CONFIG_HW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_BROWSE_DLG_CONFIG_HW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_BROWSE_DLG_CONFIG_HW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_BROWSE_DLG_CONFIG_HW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_BROWSE_DLG_CONFIG_HW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_BROWSE_DLG_CONFIG_W {
     pub _bitfield: u32,
-    pub hWndOwner: super::super::Foundation::HWND,
+    pub hWndOwner: ::win32_foundation::HWND,
     pub szDataSource: ::windows_core::PWSTR,
     pub szReturnPathBuffer: ::windows_core::PWSTR,
     pub cchReturnPathLength: u32,
@@ -6714,15 +6208,12 @@ pub struct PDH_BROWSE_DLG_CONFIG_W {
     pub dwDefaultDetailLevel: PERF_DETAIL,
     pub szDialogBoxCaption: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_BROWSE_DLG_CONFIG_W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_BROWSE_DLG_CONFIG_W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_BROWSE_DLG_CONFIG_W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_BROWSE_DLG_CONFIG_W")
@@ -6739,19 +6230,15 @@ impl ::core::fmt::Debug for PDH_BROWSE_DLG_CONFIG_W {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_BROWSE_DLG_CONFIG_W {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_BROWSE_DLG_CONFIG_W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_BROWSE_DLG_CONFIG_W>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_BROWSE_DLG_CONFIG_W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_BROWSE_DLG_CONFIG_W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7300,7 +6787,6 @@ pub const PDH_LOG_FILE_OPEN_ERROR: i32 = -1073738806i32;
 pub const PDH_LOG_FILE_TOO_SMALL: i32 = -1073738788i32;
 pub const PDH_LOG_SAMPLE_TOO_SMALL: i32 = -1073738760i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_LOG_SERVICE_QUERY_INFO_A {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -7312,66 +6798,52 @@ pub struct PDH_LOG_SERVICE_QUERY_INFO_A {
     pub dwReserved: u32,
     pub Anonymous: PDH_LOG_SERVICE_QUERY_INFO_A_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_LOG_SERVICE_QUERY_INFO_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_LOG_SERVICE_QUERY_INFO_A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_LOG_SERVICE_QUERY_INFO_A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_LOG_SERVICE_QUERY_INFO_A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_LOG_SERVICE_QUERY_INFO_A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_LOG_SERVICE_QUERY_INFO_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_LOG_SERVICE_QUERY_INFO_A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PDH_LOG_SERVICE_QUERY_INFO_A_0 {
     pub Anonymous1: PDH_LOG_SERVICE_QUERY_INFO_A_0_0,
     pub Anonymous2: PDH_LOG_SERVICE_QUERY_INFO_A_0_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_LOG_SERVICE_QUERY_INFO_A_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_LOG_SERVICE_QUERY_INFO_A_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_LOG_SERVICE_QUERY_INFO_A_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_LOG_SERVICE_QUERY_INFO_A_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_LOG_SERVICE_QUERY_INFO_A_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_LOG_SERVICE_QUERY_INFO_A_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_LOG_SERVICE_QUERY_INFO_A_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_LOG_SERVICE_QUERY_INFO_A_0_0 {
     pub PdlAutoNameInterval: u32,
     pub PdlAutoNameUnits: u32,
@@ -7379,43 +6851,35 @@ pub struct PDH_LOG_SERVICE_QUERY_INFO_A_0_0 {
     pub PdlCounterList: ::windows_core::PSTR,
     pub PdlAutoNameFormat: u32,
     pub PdlSampleInterval: u32,
-    pub PdlLogStartTime: super::super::Foundation::FILETIME,
-    pub PdlLogEndTime: super::super::Foundation::FILETIME,
+    pub PdlLogStartTime: ::win32_foundation::FILETIME,
+    pub PdlLogEndTime: ::win32_foundation::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_LOG_SERVICE_QUERY_INFO_A_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_LOG_SERVICE_QUERY_INFO_A_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_LOG_SERVICE_QUERY_INFO_A_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_LOG_SERVICE_QUERY_INFO_A_0_0").field("PdlAutoNameInterval", &self.PdlAutoNameInterval).field("PdlAutoNameUnits", &self.PdlAutoNameUnits).field("PdlCommandFilename", &self.PdlCommandFilename).field("PdlCounterList", &self.PdlCounterList).field("PdlAutoNameFormat", &self.PdlAutoNameFormat).field("PdlSampleInterval", &self.PdlSampleInterval).field("PdlLogStartTime", &self.PdlLogStartTime).field("PdlLogEndTime", &self.PdlLogEndTime).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_LOG_SERVICE_QUERY_INFO_A_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_LOG_SERVICE_QUERY_INFO_A_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_LOG_SERVICE_QUERY_INFO_A_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_LOG_SERVICE_QUERY_INFO_A_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_LOG_SERVICE_QUERY_INFO_A_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {
     pub TlNumberOfBuffers: u32,
     pub TlMinimumBuffers: u32,
@@ -7428,15 +6892,12 @@ pub struct PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {
     pub TlLogHandle: u32,
     pub TlLogFileName: ::windows_core::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_LOG_SERVICE_QUERY_INFO_A_0_1")
@@ -7453,26 +6914,21 @@ impl ::core::fmt::Debug for PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_LOG_SERVICE_QUERY_INFO_A_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_LOG_SERVICE_QUERY_INFO_A_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_LOG_SERVICE_QUERY_INFO_W {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -7484,66 +6940,52 @@ pub struct PDH_LOG_SERVICE_QUERY_INFO_W {
     pub dwReserved: u32,
     pub Anonymous: PDH_LOG_SERVICE_QUERY_INFO_W_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_LOG_SERVICE_QUERY_INFO_W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_LOG_SERVICE_QUERY_INFO_W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_LOG_SERVICE_QUERY_INFO_W {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_LOG_SERVICE_QUERY_INFO_W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_LOG_SERVICE_QUERY_INFO_W>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_LOG_SERVICE_QUERY_INFO_W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_LOG_SERVICE_QUERY_INFO_W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PDH_LOG_SERVICE_QUERY_INFO_W_0 {
     pub Anonymous1: PDH_LOG_SERVICE_QUERY_INFO_W_0_0,
     pub Anonymous2: PDH_LOG_SERVICE_QUERY_INFO_W_0_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_LOG_SERVICE_QUERY_INFO_W_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_LOG_SERVICE_QUERY_INFO_W_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_LOG_SERVICE_QUERY_INFO_W_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_LOG_SERVICE_QUERY_INFO_W_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_LOG_SERVICE_QUERY_INFO_W_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_LOG_SERVICE_QUERY_INFO_W_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_LOG_SERVICE_QUERY_INFO_W_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_LOG_SERVICE_QUERY_INFO_W_0_0 {
     pub PdlAutoNameInterval: u32,
     pub PdlAutoNameUnits: u32,
@@ -7551,43 +6993,35 @@ pub struct PDH_LOG_SERVICE_QUERY_INFO_W_0_0 {
     pub PdlCounterList: ::windows_core::PWSTR,
     pub PdlAutoNameFormat: u32,
     pub PdlSampleInterval: u32,
-    pub PdlLogStartTime: super::super::Foundation::FILETIME,
-    pub PdlLogEndTime: super::super::Foundation::FILETIME,
+    pub PdlLogStartTime: ::win32_foundation::FILETIME,
+    pub PdlLogEndTime: ::win32_foundation::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_LOG_SERVICE_QUERY_INFO_W_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_LOG_SERVICE_QUERY_INFO_W_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_LOG_SERVICE_QUERY_INFO_W_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_LOG_SERVICE_QUERY_INFO_W_0_0").field("PdlAutoNameInterval", &self.PdlAutoNameInterval).field("PdlAutoNameUnits", &self.PdlAutoNameUnits).field("PdlCommandFilename", &self.PdlCommandFilename).field("PdlCounterList", &self.PdlCounterList).field("PdlAutoNameFormat", &self.PdlAutoNameFormat).field("PdlSampleInterval", &self.PdlSampleInterval).field("PdlLogStartTime", &self.PdlLogStartTime).field("PdlLogEndTime", &self.PdlLogEndTime).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_LOG_SERVICE_QUERY_INFO_W_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_LOG_SERVICE_QUERY_INFO_W_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_LOG_SERVICE_QUERY_INFO_W_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_LOG_SERVICE_QUERY_INFO_W_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_LOG_SERVICE_QUERY_INFO_W_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {
     pub TlNumberOfBuffers: u32,
     pub TlMinimumBuffers: u32,
@@ -7600,15 +7034,12 @@ pub struct PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {
     pub TlLogHandle: u32,
     pub TlLogFileName: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_LOG_SERVICE_QUERY_INFO_W_0_1")
@@ -7625,19 +7056,15 @@ impl ::core::fmt::Debug for PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_LOG_SERVICE_QUERY_INFO_W_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_LOG_SERVICE_QUERY_INFO_W_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7731,117 +7158,93 @@ pub const PDH_PLA_VALIDATION_ERROR: i32 = -1073738766i32;
 pub const PDH_PLA_VALIDATION_WARNING: i32 = -2147480589i32;
 pub const PDH_QUERY_PERF_DATA_TIMEOUT: i32 = -1073738754i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_RAW_COUNTER {
     pub CStatus: u32,
-    pub TimeStamp: super::super::Foundation::FILETIME,
+    pub TimeStamp: ::win32_foundation::FILETIME,
     pub FirstValue: i64,
     pub SecondValue: i64,
     pub MultiCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_RAW_COUNTER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_RAW_COUNTER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_RAW_COUNTER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_RAW_COUNTER").field("CStatus", &self.CStatus).field("TimeStamp", &self.TimeStamp).field("FirstValue", &self.FirstValue).field("SecondValue", &self.SecondValue).field("MultiCount", &self.MultiCount).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_RAW_COUNTER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_RAW_COUNTER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_RAW_COUNTER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_RAW_COUNTER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_RAW_COUNTER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_RAW_COUNTER_ITEM_A {
     pub szName: ::windows_core::PSTR,
     pub RawValue: PDH_RAW_COUNTER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_RAW_COUNTER_ITEM_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_RAW_COUNTER_ITEM_A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_RAW_COUNTER_ITEM_A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_RAW_COUNTER_ITEM_A").field("szName", &self.szName).field("RawValue", &self.RawValue).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_RAW_COUNTER_ITEM_A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_RAW_COUNTER_ITEM_A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_RAW_COUNTER_ITEM_A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_RAW_COUNTER_ITEM_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_RAW_COUNTER_ITEM_A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PDH_RAW_COUNTER_ITEM_W {
     pub szName: ::windows_core::PWSTR,
     pub RawValue: PDH_RAW_COUNTER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PDH_RAW_COUNTER_ITEM_W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PDH_RAW_COUNTER_ITEM_W {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PDH_RAW_COUNTER_ITEM_W {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PDH_RAW_COUNTER_ITEM_W").field("szName", &self.szName).field("RawValue", &self.RawValue).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PDH_RAW_COUNTER_ITEM_W {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PDH_RAW_COUNTER_ITEM_W {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PDH_RAW_COUNTER_ITEM_W>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PDH_RAW_COUNTER_ITEM_W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PDH_RAW_COUNTER_ITEM_W {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8481,7 +7884,6 @@ impl ::core::default::Default for PERF_COUNTER_REG_INFO {
 }
 pub const PERF_COUNTER_VALUE: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PERF_DATA_BLOCK {
     pub Signature: [u16; 4],
     pub LittleEndian: u32,
@@ -8491,22 +7893,19 @@ pub struct PERF_DATA_BLOCK {
     pub HeaderLength: u32,
     pub NumObjectTypes: u32,
     pub DefaultObject: i32,
-    pub SystemTime: super::super::Foundation::SYSTEMTIME,
+    pub SystemTime: ::win32_foundation::SYSTEMTIME,
     pub PerfTime: i64,
     pub PerfFreq: i64,
     pub PerfTime100nSec: i64,
     pub SystemNameLength: u32,
     pub SystemNameOffset: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PERF_DATA_BLOCK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PERF_DATA_BLOCK {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PERF_DATA_BLOCK {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PERF_DATA_BLOCK")
@@ -8527,61 +7926,49 @@ impl ::core::fmt::Debug for PERF_DATA_BLOCK {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PERF_DATA_BLOCK {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PERF_DATA_BLOCK {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERF_DATA_BLOCK>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PERF_DATA_BLOCK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PERF_DATA_BLOCK {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PERF_DATA_HEADER {
     pub dwTotalSize: u32,
     pub dwNumCounters: u32,
     pub PerfTimeStamp: i64,
     pub PerfTime100NSec: i64,
     pub PerfFreq: i64,
-    pub SystemTime: super::super::Foundation::SYSTEMTIME,
+    pub SystemTime: ::win32_foundation::SYSTEMTIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PERF_DATA_HEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PERF_DATA_HEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PERF_DATA_HEADER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PERF_DATA_HEADER").field("dwTotalSize", &self.dwTotalSize).field("dwNumCounters", &self.dwNumCounters).field("PerfTimeStamp", &self.PerfTimeStamp).field("PerfTime100NSec", &self.PerfTime100NSec).field("PerfFreq", &self.PerfFreq).field("SystemTime", &self.SystemTime).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PERF_DATA_HEADER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PERF_DATA_HEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PERF_DATA_HEADER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PERF_DATA_HEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PERF_DATA_HEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9092,7 +8479,6 @@ pub unsafe fn PdhBindInputDataSourceW<'a, Param1: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhBrowseCountersA(pbrowsedlgdata: *const PDH_BROWSE_DLG_CONFIG_A) -> i32 {
     #[cfg(windows)]
@@ -9106,7 +8492,6 @@ pub unsafe fn PdhBrowseCountersA(pbrowsedlgdata: *const PDH_BROWSE_DLG_CONFIG_A)
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhBrowseCountersHA(pbrowsedlgdata: *const PDH_BROWSE_DLG_CONFIG_HA) -> i32 {
     #[cfg(windows)]
@@ -9120,7 +8505,6 @@ pub unsafe fn PdhBrowseCountersHA(pbrowsedlgdata: *const PDH_BROWSE_DLG_CONFIG_H
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhBrowseCountersHW(pbrowsedlgdata: *const PDH_BROWSE_DLG_CONFIG_HW) -> i32 {
     #[cfg(windows)]
@@ -9134,7 +8518,6 @@ pub unsafe fn PdhBrowseCountersHW(pbrowsedlgdata: *const PDH_BROWSE_DLG_CONFIG_H
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhBrowseCountersW(pbrowsedlgdata: *const PDH_BROWSE_DLG_CONFIG_W) -> i32 {
     #[cfg(windows)]
@@ -9148,7 +8531,6 @@ pub unsafe fn PdhBrowseCountersW(pbrowsedlgdata: *const PDH_BROWSE_DLG_CONFIG_W)
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhCalculateCounterFromRawValue(hcounter: isize, dwformat: PDH_FMT, rawvalue1: *const PDH_RAW_COUNTER, rawvalue2: *const PDH_RAW_COUNTER, fmtvalue: *mut PDH_FMT_COUNTERVALUE) -> i32 {
     #[cfg(windows)]
@@ -9201,14 +8583,13 @@ pub unsafe fn PdhCollectQueryData(hquery: isize) -> i32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhCollectQueryDataEx<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hquery: isize, dwintervaltime: u32, hnewdataevent: Param2) -> i32 {
+pub unsafe fn PdhCollectQueryDataEx<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hquery: isize, dwintervaltime: u32, hnewdataevent: Param2) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhCollectQueryDataEx(hquery: isize, dwintervaltime: u32, hnewdataevent: super::super::Foundation::HANDLE) -> i32;
+            fn PdhCollectQueryDataEx(hquery: isize, dwintervaltime: u32, hnewdataevent: ::win32_foundation::HANDLE) -> i32;
         }
         ::core::mem::transmute(PdhCollectQueryDataEx(::core::mem::transmute(hquery), ::core::mem::transmute(dwintervaltime), hnewdataevent.into_param().abi()))
     }
@@ -9228,7 +8609,6 @@ pub unsafe fn PdhCollectQueryDataWithTime(hquery: isize, plltimestamp: *mut i64)
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhComputeCounterStatistics(hcounter: isize, dwformat: PDH_FMT, dwfirstentry: u32, dwnumentries: u32, lprawvaluearray: *const PDH_RAW_COUNTER, data: *mut PDH_STATISTICS) -> i32 {
     #[cfg(windows)]
@@ -9424,56 +8804,52 @@ pub unsafe fn PdhEnumObjectItemsW<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhEnumObjectsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(szdatasource: Param0, szmachinename: Param1, mszobjectlist: ::windows_core::PSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: Param5) -> i32 {
+pub unsafe fn PdhEnumObjectsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(szdatasource: Param0, szmachinename: Param1, mszobjectlist: ::windows_core::PSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: Param5) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhEnumObjectsA(szdatasource: ::windows_core::PCSTR, szmachinename: ::windows_core::PCSTR, mszobjectlist: ::windows_core::PSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: super::super::Foundation::BOOL) -> i32;
+            fn PdhEnumObjectsA(szdatasource: ::windows_core::PCSTR, szmachinename: ::windows_core::PCSTR, mszobjectlist: ::windows_core::PSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: ::win32_foundation::BOOL) -> i32;
         }
         ::core::mem::transmute(PdhEnumObjectsA(szdatasource.into_param().abi(), szmachinename.into_param().abi(), ::core::mem::transmute(mszobjectlist), ::core::mem::transmute(pcchbuffersize), ::core::mem::transmute(dwdetaillevel), brefresh.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhEnumObjectsHA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hdatasource: isize, szmachinename: Param1, mszobjectlist: ::windows_core::PSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: Param5) -> i32 {
+pub unsafe fn PdhEnumObjectsHA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hdatasource: isize, szmachinename: Param1, mszobjectlist: ::windows_core::PSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: Param5) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhEnumObjectsHA(hdatasource: isize, szmachinename: ::windows_core::PCSTR, mszobjectlist: ::windows_core::PSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: super::super::Foundation::BOOL) -> i32;
+            fn PdhEnumObjectsHA(hdatasource: isize, szmachinename: ::windows_core::PCSTR, mszobjectlist: ::windows_core::PSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: ::win32_foundation::BOOL) -> i32;
         }
         ::core::mem::transmute(PdhEnumObjectsHA(::core::mem::transmute(hdatasource), szmachinename.into_param().abi(), ::core::mem::transmute(mszobjectlist), ::core::mem::transmute(pcchbuffersize), ::core::mem::transmute(dwdetaillevel), brefresh.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhEnumObjectsHW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hdatasource: isize, szmachinename: Param1, mszobjectlist: ::windows_core::PWSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: Param5) -> i32 {
+pub unsafe fn PdhEnumObjectsHW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hdatasource: isize, szmachinename: Param1, mszobjectlist: ::windows_core::PWSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: Param5) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhEnumObjectsHW(hdatasource: isize, szmachinename: ::windows_core::PCWSTR, mszobjectlist: ::windows_core::PWSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: super::super::Foundation::BOOL) -> i32;
+            fn PdhEnumObjectsHW(hdatasource: isize, szmachinename: ::windows_core::PCWSTR, mszobjectlist: ::windows_core::PWSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: ::win32_foundation::BOOL) -> i32;
         }
         ::core::mem::transmute(PdhEnumObjectsHW(::core::mem::transmute(hdatasource), szmachinename.into_param().abi(), ::core::mem::transmute(mszobjectlist), ::core::mem::transmute(pcchbuffersize), ::core::mem::transmute(dwdetaillevel), brefresh.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhEnumObjectsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(szdatasource: Param0, szmachinename: Param1, mszobjectlist: ::windows_core::PWSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: Param5) -> i32 {
+pub unsafe fn PdhEnumObjectsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(szdatasource: Param0, szmachinename: Param1, mszobjectlist: ::windows_core::PWSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: Param5) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhEnumObjectsW(szdatasource: ::windows_core::PCWSTR, szmachinename: ::windows_core::PCWSTR, mszobjectlist: ::windows_core::PWSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: super::super::Foundation::BOOL) -> i32;
+            fn PdhEnumObjectsW(szdatasource: ::windows_core::PCWSTR, szmachinename: ::windows_core::PCWSTR, mszobjectlist: ::windows_core::PWSTR, pcchbuffersize: *mut u32, dwdetaillevel: PERF_DETAIL, brefresh: ::win32_foundation::BOOL) -> i32;
         }
         ::core::mem::transmute(PdhEnumObjectsW(szdatasource.into_param().abi(), szmachinename.into_param().abi(), ::core::mem::transmute(mszobjectlist), ::core::mem::transmute(pcchbuffersize), ::core::mem::transmute(dwdetaillevel), brefresh.into_param().abi()))
     }
@@ -9558,7 +8934,6 @@ pub unsafe fn PdhExpandWildCardPathW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhFormatFromRawValue(dwcountertype: u32, dwformat: PDH_FMT, ptimebase: *const i64, prawvalue1: *const PDH_RAW_COUNTER, prawvalue2: *const PDH_RAW_COUNTER, pfmtvalue: *mut PDH_FMT_COUNTERVALUE) -> i32 {
     #[cfg(windows)]
@@ -9572,28 +8947,26 @@ pub unsafe fn PdhFormatFromRawValue(dwcountertype: u32, dwformat: PDH_FMT, ptime
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhGetCounterInfoA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(hcounter: isize, bretrieveexplaintext: Param1, pdwbuffersize: *mut u32, lpbuffer: *mut PDH_COUNTER_INFO_A) -> i32 {
+pub unsafe fn PdhGetCounterInfoA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(hcounter: isize, bretrieveexplaintext: Param1, pdwbuffersize: *mut u32, lpbuffer: *mut PDH_COUNTER_INFO_A) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhGetCounterInfoA(hcounter: isize, bretrieveexplaintext: super::super::Foundation::BOOLEAN, pdwbuffersize: *mut u32, lpbuffer: *mut PDH_COUNTER_INFO_A) -> i32;
+            fn PdhGetCounterInfoA(hcounter: isize, bretrieveexplaintext: ::win32_foundation::BOOLEAN, pdwbuffersize: *mut u32, lpbuffer: *mut PDH_COUNTER_INFO_A) -> i32;
         }
         ::core::mem::transmute(PdhGetCounterInfoA(::core::mem::transmute(hcounter), bretrieveexplaintext.into_param().abi(), ::core::mem::transmute(pdwbuffersize), ::core::mem::transmute(lpbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhGetCounterInfoW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(hcounter: isize, bretrieveexplaintext: Param1, pdwbuffersize: *mut u32, lpbuffer: *mut PDH_COUNTER_INFO_W) -> i32 {
+pub unsafe fn PdhGetCounterInfoW<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(hcounter: isize, bretrieveexplaintext: Param1, pdwbuffersize: *mut u32, lpbuffer: *mut PDH_COUNTER_INFO_W) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhGetCounterInfoW(hcounter: isize, bretrieveexplaintext: super::super::Foundation::BOOLEAN, pdwbuffersize: *mut u32, lpbuffer: *mut PDH_COUNTER_INFO_W) -> i32;
+            fn PdhGetCounterInfoW(hcounter: isize, bretrieveexplaintext: ::win32_foundation::BOOLEAN, pdwbuffersize: *mut u32, lpbuffer: *mut PDH_COUNTER_INFO_W) -> i32;
         }
         ::core::mem::transmute(PdhGetCounterInfoW(::core::mem::transmute(hcounter), bretrieveexplaintext.into_param().abi(), ::core::mem::transmute(pdwbuffersize), ::core::mem::transmute(lpbuffer)))
     }
@@ -9834,7 +9207,6 @@ pub unsafe fn PdhGetLogSetGUID(hlog: isize, pguid: *mut ::windows_core::GUID, pr
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhGetRawCounterArrayA(hcounter: isize, lpdwbuffersize: *mut u32, lpdwitemcount: *mut u32, itembuffer: *mut PDH_RAW_COUNTER_ITEM_A) -> i32 {
     #[cfg(windows)]
@@ -9848,7 +9220,6 @@ pub unsafe fn PdhGetRawCounterArrayA(hcounter: isize, lpdwbuffersize: *mut u32, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhGetRawCounterArrayW(hcounter: isize, lpdwbuffersize: *mut u32, lpdwitemcount: *mut u32, itembuffer: *mut PDH_RAW_COUNTER_ITEM_W) -> i32 {
     #[cfg(windows)]
@@ -9862,7 +9233,6 @@ pub unsafe fn PdhGetRawCounterArrayW(hcounter: isize, lpdwbuffersize: *mut u32, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PdhGetRawCounterValue(hcounter: isize, lpdwtype: *mut u32, pvalue: *mut PDH_RAW_COUNTER) -> i32 {
     #[cfg(windows)]
@@ -9876,14 +9246,13 @@ pub unsafe fn PdhGetRawCounterValue(hcounter: isize, lpdwtype: *mut u32, pvalue:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhIsRealTimeQuery(hquery: isize) -> super::super::Foundation::BOOL {
+pub unsafe fn PdhIsRealTimeQuery(hquery: isize) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhIsRealTimeQuery(hquery: isize) -> super::super::Foundation::BOOL;
+            fn PdhIsRealTimeQuery(hquery: isize) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PdhIsRealTimeQuery(::core::mem::transmute(hquery)))
     }
@@ -10085,14 +9454,13 @@ pub unsafe fn PdhParseInstanceNameW<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhReadRawLogRecord<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::FILETIME>>(hlog: isize, ftrecord: Param1, prawlogrecord: *mut PDH_RAW_LOG_RECORD, pdwbufferlength: *mut u32) -> i32 {
+pub unsafe fn PdhReadRawLogRecord<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::FILETIME>>(hlog: isize, ftrecord: Param1, prawlogrecord: *mut PDH_RAW_LOG_RECORD, pdwbufferlength: *mut u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhReadRawLogRecord(hlog: isize, ftrecord: super::super::Foundation::FILETIME, prawlogrecord: *mut PDH_RAW_LOG_RECORD, pdwbufferlength: *mut u32) -> i32;
+            fn PdhReadRawLogRecord(hlog: isize, ftrecord: ::win32_foundation::FILETIME, prawlogrecord: *mut PDH_RAW_LOG_RECORD, pdwbufferlength: *mut u32) -> i32;
         }
         ::core::mem::transmute(PdhReadRawLogRecord(::core::mem::transmute(hlog), ftrecord.into_param().abi(), ::core::mem::transmute(prawlogrecord), ::core::mem::transmute(pdwbufferlength)))
     }
@@ -10112,28 +9480,26 @@ pub unsafe fn PdhRemoveCounter(hcounter: isize) -> i32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhSelectDataSourceA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndowner: Param0, dwflags: PDH_SELECT_DATA_SOURCE_FLAGS, szdatasource: ::windows_core::PSTR, pcchbufferlength: *mut u32) -> i32 {
+pub unsafe fn PdhSelectDataSourceA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwndowner: Param0, dwflags: PDH_SELECT_DATA_SOURCE_FLAGS, szdatasource: ::windows_core::PSTR, pcchbufferlength: *mut u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhSelectDataSourceA(hwndowner: super::super::Foundation::HWND, dwflags: PDH_SELECT_DATA_SOURCE_FLAGS, szdatasource: ::windows_core::PSTR, pcchbufferlength: *mut u32) -> i32;
+            fn PdhSelectDataSourceA(hwndowner: ::win32_foundation::HWND, dwflags: PDH_SELECT_DATA_SOURCE_FLAGS, szdatasource: ::windows_core::PSTR, pcchbufferlength: *mut u32) -> i32;
         }
         ::core::mem::transmute(PdhSelectDataSourceA(hwndowner.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(szdatasource), ::core::mem::transmute(pcchbufferlength)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PdhSelectDataSourceW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndowner: Param0, dwflags: PDH_SELECT_DATA_SOURCE_FLAGS, szdatasource: ::windows_core::PWSTR, pcchbufferlength: *mut u32) -> i32 {
+pub unsafe fn PdhSelectDataSourceW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwndowner: Param0, dwflags: PDH_SELECT_DATA_SOURCE_FLAGS, szdatasource: ::windows_core::PWSTR, pcchbufferlength: *mut u32) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PdhSelectDataSourceW(hwndowner: super::super::Foundation::HWND, dwflags: PDH_SELECT_DATA_SOURCE_FLAGS, szdatasource: ::windows_core::PWSTR, pcchbufferlength: *mut u32) -> i32;
+            fn PdhSelectDataSourceW(hwndowner: ::win32_foundation::HWND, dwflags: PDH_SELECT_DATA_SOURCE_FLAGS, szdatasource: ::windows_core::PWSTR, pcchbufferlength: *mut u32) -> i32;
         }
         ::core::mem::transmute(PdhSelectDataSourceW(hwndowner.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(szdatasource), ::core::mem::transmute(pcchbufferlength)))
     }
@@ -10322,14 +9688,13 @@ pub unsafe fn PerfAddCounters<'a, Param0: ::windows_core::IntoParam<'a, PerfQuer
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfCloseQueryHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hquery: Param0) -> u32 {
+pub unsafe fn PerfCloseQueryHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hquery: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfCloseQueryHandle(hquery: super::super::Foundation::HANDLE) -> u32;
+            fn PerfCloseQueryHandle(hquery: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(PerfCloseQueryHandle(hquery.into_param().abi()))
     }
@@ -10376,28 +9741,26 @@ pub unsafe fn PerfCreateInstance<'a, Param0: ::windows_core::IntoParam<'a, PerfP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfDecrementULongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32 {
+pub unsafe fn PerfDecrementULongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfDecrementULongCounterValue(provider: super::super::Foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32;
+            fn PerfDecrementULongCounterValue(provider: ::win32_foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32;
         }
         ::core::mem::transmute(PerfDecrementULongCounterValue(provider.into_param().abi(), ::core::mem::transmute(instance), ::core::mem::transmute(counterid), ::core::mem::transmute(value)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfDecrementULongLongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32 {
+pub unsafe fn PerfDecrementULongLongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfDecrementULongLongCounterValue(provider: super::super::Foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32;
+            fn PerfDecrementULongLongCounterValue(provider: ::win32_foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32;
         }
         ::core::mem::transmute(PerfDecrementULongLongCounterValue(provider.into_param().abi(), ::core::mem::transmute(instance), ::core::mem::transmute(counterid), ::core::mem::transmute(value)))
     }
@@ -10456,28 +9819,26 @@ pub unsafe fn PerfEnumerateCounterSetInstances<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfIncrementULongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32 {
+pub unsafe fn PerfIncrementULongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfIncrementULongCounterValue(provider: super::super::Foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32;
+            fn PerfIncrementULongCounterValue(provider: ::win32_foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32;
         }
         ::core::mem::transmute(PerfIncrementULongCounterValue(provider.into_param().abi(), ::core::mem::transmute(instance), ::core::mem::transmute(counterid), ::core::mem::transmute(value)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfIncrementULongLongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32 {
+pub unsafe fn PerfIncrementULongLongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfIncrementULongLongCounterValue(provider: super::super::Foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32;
+            fn PerfIncrementULongLongCounterValue(provider: ::win32_foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32;
         }
         ::core::mem::transmute(PerfIncrementULongLongCounterValue(provider.into_param().abi(), ::core::mem::transmute(instance), ::core::mem::transmute(counterid), ::core::mem::transmute(value)))
     }
@@ -10524,7 +9885,6 @@ impl ::core::fmt::Debug for PerfProviderHandle {
 unsafe impl ::windows_core::Abi for PerfProviderHandle {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PerfQueryCounterData<'a, Param0: ::windows_core::IntoParam<'a, PerfQueryHandle>>(hquery: Param0, pcounterblock: *mut PERF_DATA_HEADER, cbcounterblock: u32, pcbcounterblockactual: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -10591,14 +9951,13 @@ impl ::core::fmt::Debug for PerfQueryHandle {
 unsafe impl ::windows_core::Abi for PerfQueryHandle {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfQueryInstance<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(providerhandle: Param0, countersetguid: *const ::windows_core::GUID, name: Param2, id: u32) -> *mut PERF_COUNTERSET_INSTANCE {
+pub unsafe fn PerfQueryInstance<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(providerhandle: Param0, countersetguid: *const ::windows_core::GUID, name: Param2, id: u32) -> *mut PERF_COUNTERSET_INSTANCE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfQueryInstance(providerhandle: super::super::Foundation::HANDLE, countersetguid: *const ::windows_core::GUID, name: ::windows_core::PCWSTR, id: u32) -> *mut PERF_COUNTERSET_INSTANCE;
+            fn PerfQueryInstance(providerhandle: ::win32_foundation::HANDLE, countersetguid: *const ::windows_core::GUID, name: ::windows_core::PCWSTR, id: u32) -> *mut PERF_COUNTERSET_INSTANCE;
         }
         ::core::mem::transmute(PerfQueryInstance(providerhandle.into_param().abi(), ::core::mem::transmute(countersetguid), name.into_param().abi(), ::core::mem::transmute(id)))
     }
@@ -10637,56 +9996,52 @@ impl ::core::fmt::Debug for PerfRegInfoType {
         f.debug_tuple("PerfRegInfoType").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfSetCounterRefValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, address: *const ::core::ffi::c_void) -> u32 {
+pub unsafe fn PerfSetCounterRefValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, address: *const ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfSetCounterRefValue(provider: super::super::Foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, address: *const ::core::ffi::c_void) -> u32;
+            fn PerfSetCounterRefValue(provider: ::win32_foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, address: *const ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(PerfSetCounterRefValue(provider.into_param().abi(), ::core::mem::transmute(instance), ::core::mem::transmute(counterid), ::core::mem::transmute(address)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfSetCounterSetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(providerhandle: Param0, template: *mut PERF_COUNTERSET_INFO, templatesize: u32) -> u32 {
+pub unsafe fn PerfSetCounterSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(providerhandle: Param0, template: *mut PERF_COUNTERSET_INFO, templatesize: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfSetCounterSetInfo(providerhandle: super::super::Foundation::HANDLE, template: *mut PERF_COUNTERSET_INFO, templatesize: u32) -> u32;
+            fn PerfSetCounterSetInfo(providerhandle: ::win32_foundation::HANDLE, template: *mut PERF_COUNTERSET_INFO, templatesize: u32) -> u32;
         }
         ::core::mem::transmute(PerfSetCounterSetInfo(providerhandle.into_param().abi(), ::core::mem::transmute(template), ::core::mem::transmute(templatesize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfSetULongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32 {
+pub unsafe fn PerfSetULongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfSetULongCounterValue(provider: super::super::Foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32;
+            fn PerfSetULongCounterValue(provider: ::win32_foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u32) -> u32;
         }
         ::core::mem::transmute(PerfSetULongCounterValue(provider.into_param().abi(), ::core::mem::transmute(instance), ::core::mem::transmute(counterid), ::core::mem::transmute(value)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PerfSetULongLongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32 {
+pub unsafe fn PerfSetULongLongCounterValue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(provider: Param0, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PerfSetULongLongCounterValue(provider: super::super::Foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32;
+            fn PerfSetULongLongCounterValue(provider: ::win32_foundation::HANDLE, instance: *mut PERF_COUNTERSET_INSTANCE, counterid: u32, value: u64) -> u32;
         }
         ::core::mem::transmute(PerfSetULongLongCounterValue(provider.into_param().abi(), ::core::mem::transmute(instance), ::core::mem::transmute(counterid), ::core::mem::transmute(value)))
     }
@@ -10732,28 +10087,26 @@ pub unsafe fn PerfStopProvider<'a, Param0: ::windows_core::IntoParam<'a, PerfPro
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryPerformanceCounter(lpperformancecount: *mut i64) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryPerformanceCounter(lpperformancecount: *mut i64) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QueryPerformanceCounter(lpperformancecount: *mut i64) -> super::super::Foundation::BOOL;
+            fn QueryPerformanceCounter(lpperformancecount: *mut i64) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QueryPerformanceCounter(::core::mem::transmute(lpperformancecount)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryPerformanceFrequency(lpfrequency: *mut i64) -> super::super::Foundation::BOOL {
+pub unsafe fn QueryPerformanceFrequency(lpfrequency: *mut i64) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QueryPerformanceFrequency(lpfrequency: *mut i64) -> super::super::Foundation::BOOL;
+            fn QueryPerformanceFrequency(lpfrequency: *mut i64) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(QueryPerformanceFrequency(::core::mem::transmute(lpfrequency)))
     }
@@ -10994,28 +10347,26 @@ pub const TraceDataProvider: ::windows_core::GUID = ::windows_core::GUID::from_u
 pub const TraceDataProviderCollection: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x03837511_098b_11d8_9414_505054503030);
 pub const TraceSession: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0383751c_098b_11d8_9414_505054503030);
 pub const TraceSessionCollection: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x03837530_098b_11d8_9414_505054503030);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnloadPerfCounterTextStringsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpcommandline: Param0, bquietmodearg: Param1) -> u32 {
+pub unsafe fn UnloadPerfCounterTextStringsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpcommandline: Param0, bquietmodearg: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnloadPerfCounterTextStringsA(lpcommandline: ::windows_core::PCSTR, bquietmodearg: super::super::Foundation::BOOL) -> u32;
+            fn UnloadPerfCounterTextStringsA(lpcommandline: ::windows_core::PCSTR, bquietmodearg: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(UnloadPerfCounterTextStringsA(lpcommandline.into_param().abi(), bquietmodearg.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnloadPerfCounterTextStringsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpcommandline: Param0, bquietmodearg: Param1) -> u32 {
+pub unsafe fn UnloadPerfCounterTextStringsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpcommandline: Param0, bquietmodearg: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnloadPerfCounterTextStringsW(lpcommandline: ::windows_core::PCWSTR, bquietmodearg: super::super::Foundation::BOOL) -> u32;
+            fn UnloadPerfCounterTextStringsW(lpcommandline: ::windows_core::PCWSTR, bquietmodearg: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(UnloadPerfCounterTextStringsW(lpcommandline.into_param().abi(), bquietmodearg.into_param().abi()))
     }
@@ -11144,10 +10495,9 @@ impl _ICounterItemUnion {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).ScaleFactor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Path(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Path)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Path(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Path)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetValue(&self, value: *mut f64, status: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(value), ::core::mem::transmute(status)).ok()
@@ -11169,7 +10519,7 @@ impl _ICounterItemUnion {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).Visible)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn GetDataAt(&self, iindex: i32, iwhich: SysmonDataType) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetDataAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iindex), ::core::mem::transmute(iwhich), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
@@ -11228,19 +10578,16 @@ pub struct _ICounterItemUnion_Vtbl {
     pub LineStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pivalue: *mut i32) -> ::windows_core::HRESULT,
     pub SetScaleFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iscale: i32) -> ::windows_core::HRESULT,
     pub ScaleFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pivalue: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstrvalue: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Path: usize,
+    pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstrvalue: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut f64, status: *mut i32) -> ::windows_core::HRESULT,
     pub GetStatistics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, max: *mut f64, min: *mut f64, avg: *mut f64, status: *mut i32) -> ::windows_core::HRESULT,
     pub SetSelected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstate: i16) -> ::windows_core::HRESULT,
     pub Selected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstate: *mut i16) -> ::windows_core::HRESULT,
     pub SetVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstate: i16) -> ::windows_core::HRESULT,
     pub Visible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstate: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub GetDataAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iindex: i32, iwhich: SysmonDataType, pvariant: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetDataAt: usize,
 }
 #[repr(transparent)]
@@ -11358,23 +10705,19 @@ impl _ISystemMonitorUnion {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).ManualUpdate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetGraphTitle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetGraphTitle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetGraphTitle)(::windows_core::Interface::as_raw(self), bstitle.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GraphTitle(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GraphTitle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GraphTitle(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GraphTitle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetYAxisLabel<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetYAxisLabel<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstitle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetYAxisLabel)(::windows_core::Interface::as_raw(self), bstitle.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn YAxisLabel(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).YAxisLabel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn YAxisLabel(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).YAxisLabel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn CollectSample(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CollectSample)(::windows_core::Interface::as_raw(self)).ok()
@@ -11392,8 +10735,7 @@ impl _ISystemMonitorUnion {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Counter)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICounterItem>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddCounter<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bspath: Param0) -> ::windows_core::Result<ICounterItem> {
+    pub unsafe fn AddCounter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bspath: Param0) -> ::windows_core::Result<ICounterItem> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).AddCounter)(::windows_core::Interface::as_raw(self), bspath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICounterItem>(result__)
     }
@@ -11407,14 +10749,12 @@ impl _ISystemMonitorUnion {
     pub unsafe fn SetBackColorCtl(&self, color: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBackColorCtl)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(color)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLogFileName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bsfilename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLogFileName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bsfilename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLogFileName)(::windows_core::Interface::as_raw(self), bsfilename.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LogFileName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).LogFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LogFileName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).LogFileName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn SetLogViewStart(&self, starttime: f64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLogViewStart)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(starttime)).ok()
@@ -11507,23 +10847,19 @@ impl _ISystemMonitorUnion {
         let mut result__ = ::core::mem::MaybeUninit::<DataSourceTypeConstants>::zeroed();
         (::windows_core::Interface::vtable(self).DataSourceType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DataSourceTypeConstants>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSqlDsnName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bssqldsnname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSqlDsnName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bssqldsnname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSqlDsnName)(::windows_core::Interface::as_raw(self), bssqldsnname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SqlDsnName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SqlDsnName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SqlDsnName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SqlDsnName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSqlLogSetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bssqllogsetname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSqlLogSetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bssqllogsetname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSqlLogSetName)(::windows_core::Interface::as_raw(self), bssqllogsetname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SqlLogSetName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SqlLogSetName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SqlLogSetName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SqlLogSetName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn SetEnableDigitGrouping(&self, bstate: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEnableDigitGrouping)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bstate)).ok()
@@ -11563,12 +10899,10 @@ impl _ISystemMonitorUnion {
     pub unsafe fn ScaleToFit(&self, bselectedcountersonly: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ScaleToFit)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bselectedcountersonly)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SaveAs<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfilename: Param0, esysmonfiletype: SysmonFileType) -> ::windows_core::Result<()> {
+    pub unsafe fn SaveAs<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfilename: Param0, esysmonfiletype: SysmonFileType) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SaveAs)(::windows_core::Interface::as_raw(self), bstrfilename.into_param().abi(), ::core::mem::transmute(esysmonfiletype)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Relog<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfilename: Param0, esysmonfiletype: SysmonFileType, ifilter: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn Relog<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfilename: Param0, esysmonfiletype: SysmonFileType, ifilter: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Relog)(::windows_core::Interface::as_raw(self), bstrfilename.into_param().abi(), ::core::mem::transmute(esysmonfiletype), ::core::mem::transmute(ifilter)).ok()
     }
     pub unsafe fn ClearData(&self) -> ::windows_core::Result<()> {
@@ -11591,8 +10925,7 @@ impl _ISystemMonitorUnion {
     pub unsafe fn BatchingLock(&self, flock: i16, ebatchreason: SysmonBatchReason) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BatchingLock)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(flock), ::core::mem::transmute(ebatchreason)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LoadSettings<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsettingfilename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn LoadSettings<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsettingfilename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).LoadSettings)(::windows_core::Interface::as_raw(self), bstrsettingfilename.into_param().abi()).ok()
     }
 }
@@ -11680,42 +11013,21 @@ pub struct _ISystemMonitorUnion_Vtbl {
     pub DisplayType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pedisplaytype: *mut DisplayTypeConstants) -> ::windows_core::HRESULT,
     pub SetManualUpdate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstate: i16) -> ::windows_core::HRESULT,
     pub ManualUpdate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstate: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetGraphTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstitle: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetGraphTitle: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GraphTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstitle: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GraphTitle: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetYAxisLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstitle: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetYAxisLabel: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub YAxisLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstitle: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    YAxisLabel: usize,
+    pub SetGraphTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstitle: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub GraphTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstitle: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetYAxisLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstitle: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub YAxisLabel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstitle: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub CollectSample: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub UpdateGraph: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub BrowseCounters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub DisplayProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Counter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iindex: i32, ppicounter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AddCounter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bspath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppicounter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AddCounter: usize,
+    pub AddCounter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bspath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppicounter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DeleteCounter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pctr: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub BackColorCtl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcolor: *mut u32) -> ::windows_core::HRESULT,
     pub SetBackColorCtl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, color: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetLogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetLogFileName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub LogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsfilename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    LogFileName: usize,
+    pub SetLogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub LogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsfilename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetLogViewStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: f64) -> ::windows_core::HRESULT,
     pub LogViewStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: *mut f64) -> ::windows_core::HRESULT,
     pub SetLogViewStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stoptime: f64) -> ::windows_core::HRESULT,
@@ -11745,22 +11057,10 @@ pub struct _ISystemMonitorUnion_Vtbl {
     LogFiles: usize,
     pub SetDataSourceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, edatasourcetype: DataSourceTypeConstants) -> ::windows_core::HRESULT,
     pub DataSourceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pedatasourcetype: *mut DataSourceTypeConstants) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSqlDsnName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqldsnname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSqlDsnName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SqlDsnName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqldsnname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SqlDsnName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSqlLogSetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqllogsetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSqlLogSetName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SqlLogSetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqllogsetname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SqlLogSetName: usize,
+    pub SetSqlDsnName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqldsnname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub SqlDsnName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqldsnname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSqlLogSetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqllogsetname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub SqlLogSetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bssqllogsetname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub SetEnableDigitGrouping: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstate: i16) -> ::windows_core::HRESULT,
     pub EnableDigitGrouping: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstate: *mut i16) -> ::windows_core::HRESULT,
     pub SetEnableToolTips: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstate: i16) -> ::windows_core::HRESULT,
@@ -11772,22 +11072,13 @@ pub struct _ISystemMonitorUnion_Vtbl {
     pub SetDataPointCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inewcount: i32) -> ::windows_core::HRESULT,
     pub DataPointCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidatapointcount: *mut i32) -> ::windows_core::HRESULT,
     pub ScaleToFit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bselectedcountersonly: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SaveAs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, esysmonfiletype: SysmonFileType) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SaveAs: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Relog: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, esysmonfiletype: SysmonFileType, ifilter: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Relog: usize,
+    pub SaveAs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, esysmonfiletype: SysmonFileType) -> ::windows_core::HRESULT,
+    pub Relog: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, esysmonfiletype: SysmonFileType, ifilter: i32) -> ::windows_core::HRESULT,
     pub ClearData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub LogSourceStartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdate: *mut f64) -> ::windows_core::HRESULT,
     pub LogSourceStopTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdate: *mut f64) -> ::windows_core::HRESULT,
     pub SetLogViewRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: f64, stoptime: f64) -> ::windows_core::HRESULT,
     pub GetLogViewRange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: *mut f64, stoptime: *mut f64) -> ::windows_core::HRESULT,
     pub BatchingLock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flock: i16, ebatchreason: SysmonBatchReason) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub LoadSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsettingfilename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    LoadSettings: usize,
+    pub LoadSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsettingfilename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }

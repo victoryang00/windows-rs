@@ -11,11 +11,11 @@ impl AppWindow {
         }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     pub fn Frame(&self) -> ::windows_core::Result<AppWindowFrame> {
@@ -82,12 +82,11 @@ impl AppWindow {
             (::windows_core::Interface::vtable(this).WindowingEnvironment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WindowingEnvironment>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CloseAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn CloseAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CloseAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).CloseAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn GetPlacement(&self) -> ::windows_core::Result<AppWindowPlacement> {
@@ -98,11 +97,11 @@ impl AppWindow {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetDisplayRegions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<DisplayRegion>> {
+    pub fn GetDisplayRegions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DisplayRegion>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDisplayRegions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<DisplayRegion>>(result__)
+            (::windows_core::Interface::vtable(this).GetDisplayRegions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DisplayRegion>>(result__)
         }
     }
     pub fn RequestMoveToDisplayRegion<'a, Param0: ::windows_core::IntoParam<'a, DisplayRegion>>(&self, displayregion: Param0) -> ::windows_core::Result<()> {
@@ -117,78 +116,66 @@ impl AppWindow {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RequestMoveAdjacentToWindow)(::windows_core::Interface::as_raw(this), anchorwindow.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestMoveRelativeToWindowContent<'a, Param0: ::windows_core::IntoParam<'a, AppWindow>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Point>>(&self, anchorwindow: Param0, contentoffset: Param1) -> ::windows_core::Result<()> {
+    pub fn RequestMoveRelativeToWindowContent<'a, Param0: ::windows_core::IntoParam<'a, AppWindow>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, anchorwindow: Param0, contentoffset: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RequestMoveRelativeToWindowContent)(::windows_core::Interface::as_raw(this), anchorwindow.into_param().abi(), contentoffset.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestMoveRelativeToCurrentViewContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Point>>(&self, contentoffset: Param0) -> ::windows_core::Result<()> {
+    pub fn RequestMoveRelativeToCurrentViewContent<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, contentoffset: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RequestMoveRelativeToCurrentViewContent)(::windows_core::Interface::as_raw(this), contentoffset.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestMoveRelativeToDisplayRegion<'a, Param0: ::windows_core::IntoParam<'a, DisplayRegion>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Point>>(&self, displayregion: Param0, displayregionoffset: Param1) -> ::windows_core::Result<()> {
+    pub fn RequestMoveRelativeToDisplayRegion<'a, Param0: ::windows_core::IntoParam<'a, DisplayRegion>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, displayregion: Param0, displayregionoffset: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RequestMoveRelativeToDisplayRegion)(::windows_core::Interface::as_raw(this), displayregion.into_param().abi(), displayregionoffset.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestSize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Size>>(&self, framesize: Param0) -> ::windows_core::Result<()> {
+    pub fn RequestSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(&self, framesize: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RequestSize)(::windows_core::Interface::as_raw(this), framesize.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryShowAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryShowAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryShowAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryShowAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AppWindow, AppWindowChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppWindow, AppWindowChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Closed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AppWindow, AppWindowClosedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Closed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppWindow, AppWindowClosedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Closed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Closed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveClosed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveClosed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveClosed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CloseRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AppWindow, AppWindowCloseRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn CloseRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppWindow, AppWindowCloseRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CloseRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CloseRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCloseRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCloseRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCloseRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryCreateAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AppWindow>> {
+    pub fn TryCreateAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppWindow>> {
         Self::IAppWindowStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryCreateAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AppWindow>>(result__)
+            (::windows_core::Interface::vtable(this).TryCreateAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppWindow>>(result__)
         })
     }
     pub fn ClearAllPersistedState() -> ::windows_core::Result<()> {
@@ -420,12 +407,11 @@ impl AppWindowCloseRequestedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCancel)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -622,11 +608,11 @@ unsafe impl ::windows_core::RuntimeType for AppWindowClosedReason {
 pub struct AppWindowFrame(::windows_core::IUnknown);
 impl AppWindowFrame {
     #[cfg(all(feature = "Foundation_Collections", feature = "UI_Composition"))]
-    pub fn DragRegionVisuals(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::Composition::IVisualElement>> {
+    pub fn DragRegionVisuals(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Composition::IVisualElement>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DragRegionVisuals)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::Composition::IVisualElement>>(result__)
+            (::windows_core::Interface::vtable(this).DragRegionVisuals)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::Composition::IVisualElement>>(result__)
         }
     }
     pub fn GetFrameStyle(&self) -> ::windows_core::Result<AppWindowFrameStyle> {
@@ -756,20 +742,18 @@ impl AppWindowPlacement {
             (::windows_core::Interface::vtable(this).DisplayRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DisplayRegion>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Offset(&self) -> ::windows_core::Result<super::super::Foundation::Point> {
+    pub fn Offset(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Size(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
 }
@@ -1069,120 +1053,102 @@ unsafe impl ::core::marker::Sync for AppWindowPresenter {}
 #[repr(transparent)]
 pub struct AppWindowTitleBar(::windows_core::IUnknown);
 impl AppWindowTitleBar {
-    #[cfg(feature = "Foundation")]
-    pub fn BackgroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn BackgroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).BackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBackgroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ButtonBackgroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn ButtonBackgroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ButtonBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).ButtonBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetButtonBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetButtonBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetButtonBackgroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ButtonForegroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn ButtonForegroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ButtonForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).ButtonForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetButtonForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetButtonForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetButtonForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ButtonHoverBackgroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn ButtonHoverBackgroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ButtonHoverBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).ButtonHoverBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetButtonHoverBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetButtonHoverBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetButtonHoverBackgroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ButtonHoverForegroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn ButtonHoverForegroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ButtonHoverForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).ButtonHoverForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetButtonHoverForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetButtonHoverForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetButtonHoverForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ButtonInactiveBackgroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn ButtonInactiveBackgroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ButtonInactiveBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).ButtonInactiveBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetButtonInactiveBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetButtonInactiveBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetButtonInactiveBackgroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ButtonInactiveForegroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn ButtonInactiveForegroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ButtonInactiveForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).ButtonInactiveForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetButtonInactiveForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetButtonInactiveForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetButtonInactiveForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ButtonPressedBackgroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn ButtonPressedBackgroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ButtonPressedBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).ButtonPressedBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetButtonPressedBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetButtonPressedBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetButtonPressedBackgroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ButtonPressedForegroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn ButtonPressedForegroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ButtonPressedForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).ButtonPressedForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetButtonPressedForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetButtonPressedForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetButtonPressedForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1197,42 +1163,36 @@ impl AppWindowTitleBar {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetExtendsContentIntoTitleBar)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ForegroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn ForegroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).ForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InactiveBackgroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn InactiveBackgroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InactiveBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).InactiveBackgroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetInactiveBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetInactiveBackgroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInactiveBackgroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InactiveForegroundColor(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Color>> {
+    pub fn InactiveForegroundColor(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Color>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InactiveForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Color>>(result__)
+            (::windows_core::Interface::vtable(this).InactiveForegroundColor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Color>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetInactiveForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetInactiveForegroundColor<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::Color>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInactiveForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1244,11 +1204,11 @@ impl AppWindowTitleBar {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetTitleBarOcclusions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<AppWindowTitleBarOcclusion>> {
+    pub fn GetTitleBarOcclusions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AppWindowTitleBarOcclusion>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTitleBarOcclusions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<AppWindowTitleBarOcclusion>>(result__)
+            (::windows_core::Interface::vtable(this).GetTitleBarOcclusions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<AppWindowTitleBarOcclusion>>(result__)
         }
     }
     pub fn GetPreferredVisibility(&self) -> ::windows_core::Result<AppWindowTitleBarVisibility> {
@@ -1338,12 +1298,11 @@ unsafe impl ::core::marker::Sync for AppWindowTitleBar {}
 #[repr(transparent)]
 pub struct AppWindowTitleBarOcclusion(::windows_core::IUnknown);
 impl AppWindowTitleBarOcclusion {
-    #[cfg(feature = "Foundation")]
-    pub fn OccludingRect(&self) -> ::windows_core::Result<super::super::Foundation::Rect> {
+    pub fn OccludingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).OccludingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).OccludingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
 }
@@ -1689,20 +1648,18 @@ impl DisplayRegion {
             (::windows_core::Interface::vtable(this).IsVisible)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WorkAreaOffset(&self) -> ::windows_core::Result<super::super::Foundation::Point> {
+    pub fn WorkAreaOffset(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).WorkAreaOffset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).WorkAreaOffset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WorkAreaSize(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn WorkAreaSize(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).WorkAreaSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).WorkAreaSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
     pub fn WindowingEnvironment(&self) -> ::windows_core::Result<WindowingEnvironment> {
@@ -1712,16 +1669,14 @@ impl DisplayRegion {
             (::windows_core::Interface::vtable(this).WindowingEnvironment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WindowingEnvironment>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<DisplayRegion, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DisplayRegion, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -1945,10 +1900,7 @@ pub struct IAppWindow_Vtbl {
     pub TitleBar: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub UIContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub WindowingEnvironment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub CloseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CloseAsync: usize,
     pub GetPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub GetDisplayRegions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1957,50 +1909,17 @@ pub struct IAppWindow_Vtbl {
     pub RequestMoveToDisplayRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayregion: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RequestMoveAdjacentToCurrentView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub RequestMoveAdjacentToWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, anchorwindow: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub RequestMoveRelativeToWindowContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, anchorwindow: ::windows_core::RawPtr, contentoffset: super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestMoveRelativeToWindowContent: usize,
-    #[cfg(feature = "Foundation")]
-    pub RequestMoveRelativeToCurrentViewContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, contentoffset: super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestMoveRelativeToCurrentViewContent: usize,
-    #[cfg(feature = "Foundation")]
-    pub RequestMoveRelativeToDisplayRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayregion: ::windows_core::RawPtr, displayregionoffset: super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestMoveRelativeToDisplayRegion: usize,
-    #[cfg(feature = "Foundation")]
-    pub RequestSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, framesize: super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestSize: usize,
-    #[cfg(feature = "Foundation")]
+    pub RequestMoveRelativeToWindowContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, anchorwindow: ::windows_core::RawPtr, contentoffset: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub RequestMoveRelativeToCurrentViewContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, contentoffset: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub RequestMoveRelativeToDisplayRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayregion: ::windows_core::RawPtr, displayregionoffset: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub RequestSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, framesize: ::winrt_foundation::Size) -> ::windows_core::HRESULT,
     pub TryShowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryShowAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Changed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub Closed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Closed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveClosed: usize,
-    #[cfg(feature = "Foundation")]
-    pub CloseRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CloseRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCloseRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCloseRequested: usize,
+    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Closed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub CloseRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCloseRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2035,10 +1954,7 @@ pub struct IAppWindowCloseRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetCancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2095,14 +2011,8 @@ unsafe impl ::windows_core::Interface for IAppWindowPlacement {
 pub struct IAppWindowPlacement_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DisplayRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Offset: usize,
-    #[cfg(feature = "Foundation")]
-    pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Size: usize,
+    pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2156,10 +2066,7 @@ unsafe impl ::windows_core::Interface for IAppWindowStatics {
 #[doc(hidden)]
 pub struct IAppWindowStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub TryCreateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryCreateAsync: usize,
     pub ClearAllPersistedState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ClearPersistedState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -2174,104 +2081,32 @@ unsafe impl ::windows_core::Interface for IAppWindowTitleBar {
 #[doc(hidden)]
 pub struct IAppWindowTitleBar_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub BackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub ButtonBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ButtonBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetButtonBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetButtonBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub ButtonForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ButtonForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetButtonForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetButtonForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub ButtonHoverBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ButtonHoverBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetButtonHoverBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetButtonHoverBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub ButtonHoverForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ButtonHoverForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetButtonHoverForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetButtonHoverForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub ButtonInactiveBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ButtonInactiveBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetButtonInactiveBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetButtonInactiveBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub ButtonInactiveForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ButtonInactiveForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetButtonInactiveForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetButtonInactiveForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub ButtonPressedBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ButtonPressedBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetButtonPressedBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetButtonPressedBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub ButtonPressedForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ButtonPressedForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetButtonPressedForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetButtonPressedForegroundColor: usize,
     pub ExtendsContentIntoTitleBar: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetExtendsContentIntoTitleBar: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub InactiveBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InactiveBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetInactiveBackgroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetInactiveBackgroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub InactiveForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InactiveForegroundColor: usize,
-    #[cfg(feature = "Foundation")]
     pub SetInactiveForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetInactiveForegroundColor: usize,
     pub IsVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub GetTitleBarOcclusions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2289,10 +2124,7 @@ unsafe impl ::windows_core::Interface for IAppWindowTitleBarOcclusion {
 #[doc(hidden)]
 pub struct IAppWindowTitleBarOcclusion_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub OccludingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OccludingRect: usize,
+    pub OccludingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2345,23 +2177,11 @@ pub struct IDisplayRegion_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DisplayMonitorDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub IsVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub WorkAreaOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WorkAreaOffset: usize,
-    #[cfg(feature = "Foundation")]
-    pub WorkAreaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WorkAreaSize: usize,
+    pub WorkAreaOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub WorkAreaSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
     pub WindowingEnvironment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Changed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveChanged: usize,
+    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2410,14 +2230,8 @@ pub struct IWindowingEnvironment_Vtbl {
     pub GetDisplayRegions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetDisplayRegions: usize,
-    #[cfg(feature = "Foundation")]
-    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Changed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveChanged: usize,
+    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2480,10 +2294,10 @@ pub struct IWindowingEnvironmentStatics_Vtbl {
 pub struct WindowServices;
 impl WindowServices {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindAllTopLevelWindowIds() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::WindowId>> {
+    pub fn FindAllTopLevelWindowIds() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::WindowId>> {
         Self::IWindowServicesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllTopLevelWindowIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::WindowId>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllTopLevelWindowIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::WindowId>>(result__)
         })
     }
     pub fn IWindowServicesStatics<R, F: FnOnce(&IWindowServicesStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -2512,38 +2326,36 @@ impl WindowingEnvironment {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetDisplayRegions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<DisplayRegion>> {
+    pub fn GetDisplayRegions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DisplayRegion>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDisplayRegions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<DisplayRegion>>(result__)
+            (::windows_core::Interface::vtable(this).GetDisplayRegions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DisplayRegion>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<WindowingEnvironment, WindowingEnvironmentChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<WindowingEnvironment, WindowingEnvironmentChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindAll() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<WindowingEnvironment>> {
+    pub fn FindAll() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<WindowingEnvironment>> {
         Self::IWindowingEnvironmentStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAll)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<WindowingEnvironment>>(result__)
+            (::windows_core::Interface::vtable(this).FindAll)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<WindowingEnvironment>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindAllWithKind(kind: WindowingEnvironmentKind) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<WindowingEnvironment>> {
+    pub fn FindAllWithKind(kind: WindowingEnvironmentKind) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<WindowingEnvironment>> {
         Self::IWindowingEnvironmentStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllWithKind)(::windows_core::Interface::as_raw(this), kind, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<WindowingEnvironment>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllWithKind)(::windows_core::Interface::as_raw(this), kind, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<WindowingEnvironment>>(result__)
         })
     }
     pub fn IWindowingEnvironmentStatics<R, F: FnOnce(&IWindowingEnvironmentStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

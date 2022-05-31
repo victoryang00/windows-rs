@@ -3,6 +3,7 @@ use super::*;
 pub struct Gen<'a> {
     pub reader: &'a Reader<'a>,
     pub namespace: &'a str,
+    pub root: &'a str,
     pub sys: bool,
     pub flatten: bool,
     pub cfg: bool,
@@ -12,7 +13,6 @@ pub struct Gen<'a> {
     pub min_xaml: bool,
     pub windows_extern: bool,
     pub component: bool,
-    pub monolithic: bool,
 }
 
 impl<'a> Gen<'a> {
@@ -20,6 +20,7 @@ impl<'a> Gen<'a> {
         Self {
             reader,
             namespace: "",
+            root: "",
             sys: false,
             flatten: false,
             cfg: false,
@@ -29,7 +30,6 @@ impl<'a> Gen<'a> {
             min_xaml: false,
             windows_extern: false,
             component: false,
-            monolithic: false,
         }
     }
 
@@ -305,7 +305,7 @@ impl<'a> Gen<'a> {
         } else {
             let mut tokens = format!(r#"`\"{}\"`"#, to_feature(self.namespace));
 
-            let mut features = cfg_features(cfg, self.namespace);
+            let mut features = self.compute_features(cfg);
             if self.windows_extern {
                 features = features.into_iter().filter(|f| !f.starts_with("Windows.")).collect();
             }
@@ -332,7 +332,7 @@ impl<'a> Gen<'a> {
                 }
             };
 
-            let mut features = cfg_features(cfg, self.namespace);
+            let mut features = self.compute_features(cfg);
             if self.windows_extern {
                 features = features.into_iter().filter(|f| !f.starts_with("Windows.")).collect();
             }
@@ -354,7 +354,7 @@ impl<'a> Gen<'a> {
     }
 
     fn cfg_not_features(&self, cfg: &Cfg) -> TokenStream {
-        let mut features = cfg_features(cfg, self.namespace);
+        let mut features = self.compute_features(cfg);
         if !self.cfg || features.is_empty() {
             quote! {}
         } else {
@@ -375,6 +375,25 @@ impl<'a> Gen<'a> {
         }
     }
 
+    fn compute_features(&self, cfg: &'a Cfg) -> Vec<&'a str> {
+        let mut compact = Vec::<&'static str>::new();
+        for feature in cfg.types.keys() {
+            if !self.root.is_empty() && (feature == "Windows.Foundation" || feature == "Windows.Win32.Foundation") {
+                continue;
+            }
+            if !feature.is_empty() && !starts_with(self.namespace, feature) {
+                for pos in 0..compact.len() {
+                    if starts_with(feature, unsafe { compact.get_unchecked(pos) }) {
+                        compact.remove(pos);
+                        break;
+                    }
+                }
+                compact.push(feature);
+            }
+        }
+        compact
+    }
+
     //
     // Other helpers
     //
@@ -382,7 +401,7 @@ impl<'a> Gen<'a> {
     pub(crate) fn namespace(&self, namespace: &str) -> TokenStream {
         if self.flatten || namespace == self.namespace {
             quote! {}
-        } else {
+        } else if self.root.is_empty() || starts_with(namespace, self.root) {
             let is_external = namespace.starts_with("Windows.") && !self.namespace.starts_with("Windows");
             let mut relative = self.namespace.split('.').peekable();
             let mut namespace = namespace.split('.').peekable();
@@ -411,6 +430,28 @@ impl<'a> Gen<'a> {
                 tokens.push_str("::");
             }
 
+            tokens
+        } else {
+            let mut tokens = TokenStream::new();
+            let mut namespace = namespace.split('.').peekable();
+            namespace.next(); // Windows
+            if namespace.peek() == Some(&"Win32") {
+                namespace.next();
+                tokens.push_str("::win32_");
+            } else {
+                tokens.push_str("::winrt_");
+            }
+            if let Some(namespace) = namespace.next() {
+                tokens.push_str(&namespace.to_lowercase());
+                if self.sys {
+                    tokens.push_str("_sys");
+                }
+                tokens.push_str("::");
+            }
+            for namespace in namespace {
+                tokens.push_str(namespace);
+                tokens.push_str("::");
+            }
             tokens
         }
     }
@@ -1062,22 +1103,6 @@ fn to_feature(name: &str) -> String {
     }
 
     feature
-}
-
-pub fn cfg_features<'a>(cfg: &'a Cfg, namespace: &'a str) -> Vec<&'a str> {
-    let mut compact = Vec::<&'static str>::new();
-    for feature in cfg.types.keys() {
-        if !feature.is_empty() && !starts_with(namespace, feature) {
-            for pos in 0..compact.len() {
-                if starts_with(feature, unsafe { compact.get_unchecked(pos) }) {
-                    compact.remove(pos);
-                    break;
-                }
-            }
-            compact.push(feature);
-        }
-    }
-    compact
 }
 
 fn starts_with(namespace: &str, feature: &str) -> bool {

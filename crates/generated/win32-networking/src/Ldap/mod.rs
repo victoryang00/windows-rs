@@ -70,7 +70,6 @@ impl ::core::default::Default for LDAPAPIFeatureInfoW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LDAPMessage {
     pub lm_msgid: u32,
     pub lm_msgtype: u32,
@@ -82,19 +81,16 @@ pub struct LDAPMessage {
     pub Request: *mut ::core::ffi::c_void,
     pub lm_returncode: u32,
     pub lm_referral: u16,
-    pub lm_chased: super::super::Foundation::BOOLEAN,
-    pub lm_eom: super::super::Foundation::BOOLEAN,
-    pub ConnectionReferenced: super::super::Foundation::BOOLEAN,
+    pub lm_chased: ::win32_foundation::BOOLEAN,
+    pub lm_eom: ::win32_foundation::BOOLEAN,
+    pub ConnectionReferenced: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LDAPMessage {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LDAPMessage {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for LDAPMessage {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("LDAPMessage")
@@ -114,19 +110,15 @@ impl ::core::fmt::Debug for LDAPMessage {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for LDAPMessage {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for LDAPMessage {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LDAPMessage>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for LDAPMessage {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for LDAPMessage {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -354,40 +346,32 @@ pub const LDAP_PAGED_RESULT_OID_STRING_W: &str = "1.2.840.113556.1.4.319";
 pub const LDAP_POLICYHINT_APPLY_FULLPWDPOLICY: u32 = 1u32;
 pub const LDAP_PORT: u32 = 389u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LDAP_REFERRAL_CALLBACK {
     pub SizeOfCallbacks: u32,
     pub QueryForConnection: QUERYFORCONNECTION,
     pub NotifyRoutine: NOTIFYOFNEWCONNECTION,
     pub DereferenceRoutine: DEREFERENCECONNECTION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LDAP_REFERRAL_CALLBACK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LDAP_REFERRAL_CALLBACK {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for LDAP_REFERRAL_CALLBACK {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("LDAP_REFERRAL_CALLBACK").field("SizeOfCallbacks", &self.SizeOfCallbacks).field("QueryForConnection", &self.QueryForConnection.map(|f| f as usize)).field("NotifyRoutine", &self.NotifyRoutine.map(|f| f as usize)).field("DereferenceRoutine", &self.DereferenceRoutine.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for LDAP_REFERRAL_CALLBACK {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for LDAP_REFERRAL_CALLBACK {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LDAP_REFERRAL_CALLBACK>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for LDAP_REFERRAL_CALLBACK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for LDAP_REFERRAL_CALLBACK {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -682,15 +666,14 @@ pub unsafe fn LdapUnicodeToUTF8(lpsrcstr: &[u16], lpdeststr: &mut [u8]) -> i32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type NOTIFYOFNEWCONNECTION = ::core::option::Option<unsafe extern "system" fn(primaryconnection: *mut ldap, referralfromconnection: *mut ldap, newdn: ::windows_core::PCWSTR, hostname: ::windows_core::PCSTR, newconnection: *mut ldap, portnumber: u32, secauthidentity: *mut ::core::ffi::c_void, currentuser: *mut ::core::ffi::c_void, errorcodefrombind: u32) -> super::super::Foundation::BOOLEAN>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
-pub type QUERYCLIENTCERT = ::core::option::Option<unsafe extern "system" fn(connection: *mut ldap, trusted_cas: *mut super::super::Security::Authentication::Identity::SecPkgContext_IssuerListInfoEx, ppcertificate: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT) -> super::super::Foundation::BOOLEAN>;
+pub type NOTIFYOFNEWCONNECTION = ::core::option::Option<unsafe extern "system" fn(primaryconnection: *mut ldap, referralfromconnection: *mut ldap, newdn: ::windows_core::PCWSTR, hostname: ::windows_core::PCSTR, newconnection: *mut ldap, portnumber: u32, secauthidentity: *mut ::core::ffi::c_void, currentuser: *mut ::core::ffi::c_void, errorcodefrombind: u32) -> ::win32_foundation::BOOLEAN>;
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+pub type QUERYCLIENTCERT = ::core::option::Option<unsafe extern "system" fn(connection: *mut ldap, trusted_cas: *mut ::win32_security::Authentication::Identity::SecPkgContext_IssuerListInfoEx, ppcertificate: *mut *mut ::win32_security::Cryptography::CERT_CONTEXT) -> ::win32_foundation::BOOLEAN>;
 pub type QUERYFORCONNECTION = ::core::option::Option<unsafe extern "system" fn(primaryconnection: *mut ldap, referralfromconnection: *mut ldap, newdn: ::windows_core::PCWSTR, hostname: ::windows_core::PCSTR, portnumber: u32, secauthidentity: *mut ::core::ffi::c_void, currentusertoken: *mut ::core::ffi::c_void, connectiontouse: *mut *mut ldap) -> u32>;
 pub const SERVER_SEARCH_FLAG_DOMAIN_SCOPE: u32 = 1u32;
 pub const SERVER_SEARCH_FLAG_PHANTOM_ROOT: u32 = 2u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-pub type VERIFYSERVERCERT = ::core::option::Option<unsafe extern "system" fn(connection: *mut ldap, pservercert: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT) -> super::super::Foundation::BOOLEAN>;
+#[cfg(feature = "Win32_Security_Cryptography")]
+pub type VERIFYSERVERCERT = ::core::option::Option<unsafe extern "system" fn(connection: *mut ldap, pservercert: *mut *mut ::win32_security::Cryptography::CERT_CONTEXT) -> ::win32_foundation::BOOLEAN>;
 #[inline]
 pub unsafe fn ber_alloc_t(options: i32) -> *mut berelement {
     #[cfg(windows)]
@@ -743,14 +726,13 @@ pub unsafe fn ber_bvfree(bv: *mut LDAP_BERVAL) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ber_first_element(pberelement: *mut berelement, plen: *mut u32, ppopaque: *mut *mut super::super::Foundation::CHAR) -> u32 {
+pub unsafe fn ber_first_element(pberelement: *mut berelement, plen: *mut u32, ppopaque: *mut *mut ::win32_foundation::CHAR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ber_first_element(pberelement: *mut berelement, plen: *mut u32, ppopaque: *mut *mut super::super::Foundation::CHAR) -> u32;
+            fn ber_first_element(pberelement: *mut berelement, plen: *mut u32, ppopaque: *mut *mut ::win32_foundation::CHAR) -> u32;
         }
         ::core::mem::transmute(ber_first_element(::core::mem::transmute(pberelement), ::core::mem::transmute(plen), ::core::mem::transmute(ppopaque)))
     }
@@ -1074,7 +1056,6 @@ pub unsafe fn ldap_addW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_add_ext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, attrs: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -1088,7 +1069,6 @@ pub unsafe fn ldap_add_ext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_add_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, attrs: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -1102,7 +1082,6 @@ pub unsafe fn ldap_add_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_add_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, attrs: *mut *mut ldapmodW, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -1116,7 +1095,6 @@ pub unsafe fn ldap_add_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_add_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, attrs: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1130,7 +1108,6 @@ pub unsafe fn ldap_add_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_add_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, attrs: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1144,7 +1121,6 @@ pub unsafe fn ldap_add_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_add_ext_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, attrs: *mut *mut ldapmodW, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -1301,14 +1277,13 @@ pub unsafe fn ldap_check_filterW<'a, Param1: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_cleanup<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hinstance: Param0) -> u32 {
+pub unsafe fn ldap_cleanup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hinstance: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_cleanup(hinstance: super::super::Foundation::HANDLE) -> u32;
+            fn ldap_cleanup(hinstance: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(ldap_cleanup(hinstance.into_param().abi()))
     }
@@ -1367,7 +1342,6 @@ pub unsafe fn ldap_compareW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_compare_ext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, attr: Param2, value: Param3, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -1381,7 +1355,6 @@ pub unsafe fn ldap_compare_ext<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_compare_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, attr: Param2, value: Param3, data: *const LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -1395,7 +1368,6 @@ pub unsafe fn ldap_compare_extA<'a, Param1: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_compare_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, attr: Param2, value: Param3, data: *const LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -1409,7 +1381,6 @@ pub unsafe fn ldap_compare_extW<'a, Param1: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_compare_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, attr: Param2, value: Param3, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1423,7 +1394,6 @@ pub unsafe fn ldap_compare_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_compare_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, attr: Param2, value: Param3, data: *const LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1437,7 +1407,6 @@ pub unsafe fn ldap_compare_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_compare_ext_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, attr: Param2, value: Param3, data: *const LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -1490,7 +1459,6 @@ pub unsafe fn ldap_compare_sW<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_conn_from_msg(primaryconn: *mut ldap, res: *mut LDAPMessage) -> *mut ldap {
     #[cfg(windows)]
@@ -1517,7 +1485,6 @@ pub unsafe fn ldap_connect(ld: *mut ldap, timeout: *mut LDAP_TIMEVAL) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_control_free(control: *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1531,7 +1498,6 @@ pub unsafe fn ldap_control_free(control: *mut ldapcontrolA) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_control_freeA(controls: *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1545,7 +1511,6 @@ pub unsafe fn ldap_control_freeA(controls: *mut ldapcontrolA) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_control_freeW(control: *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -1559,7 +1524,6 @@ pub unsafe fn ldap_control_freeW(control: *mut ldapcontrolW) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_controls_free(controls: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1573,7 +1537,6 @@ pub unsafe fn ldap_controls_free(controls: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_controls_freeA(controls: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1587,7 +1550,6 @@ pub unsafe fn ldap_controls_freeA(controls: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_controls_freeW(control: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -1601,7 +1563,6 @@ pub unsafe fn ldap_controls_freeW(control: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_count_entries(ld: *mut ldap, res: *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -1615,7 +1576,6 @@ pub unsafe fn ldap_count_entries(ld: *mut ldap, res: *mut LDAPMessage) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_count_references(ld: *mut ldap, res: *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -1681,7 +1641,6 @@ pub unsafe fn ldap_count_values_len(vals: *mut *mut LDAP_BERVAL) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_create_page_control(externalhandle: *mut ldap, pagesize: u32, cookie: *mut LDAP_BERVAL, iscritical: u8, control: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1695,7 +1654,6 @@ pub unsafe fn ldap_create_page_control(externalhandle: *mut ldap, pagesize: u32,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_create_page_controlA(externalhandle: *mut ldap, pagesize: u32, cookie: *mut LDAP_BERVAL, iscritical: u8, control: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1709,7 +1667,6 @@ pub unsafe fn ldap_create_page_controlA(externalhandle: *mut ldap, pagesize: u32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_create_page_controlW(externalhandle: *mut ldap, pagesize: u32, cookie: *mut LDAP_BERVAL, iscritical: u8, control: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -1723,7 +1680,6 @@ pub unsafe fn ldap_create_page_controlW(externalhandle: *mut ldap, pagesize: u32
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_create_sort_control(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, iscritical: u8, control: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1737,7 +1693,6 @@ pub unsafe fn ldap_create_sort_control(externalhandle: *mut ldap, sortkeys: *mut
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_create_sort_controlA(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, iscritical: u8, control: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1751,7 +1706,6 @@ pub unsafe fn ldap_create_sort_controlA(externalhandle: *mut ldap, sortkeys: *mu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_create_sort_controlW(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, iscritical: u8, control: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -1765,7 +1719,6 @@ pub unsafe fn ldap_create_sort_controlW(externalhandle: *mut ldap, sortkeys: *mu
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_create_vlv_controlA(externalhandle: *mut ldap, vlvinfo: *mut ldapvlvinfo, iscritical: u8, control: *mut *mut ldapcontrolA) -> i32 {
     #[cfg(windows)]
@@ -1779,7 +1732,6 @@ pub unsafe fn ldap_create_vlv_controlA(externalhandle: *mut ldap, vlvinfo: *mut 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_create_vlv_controlW(externalhandle: *mut ldap, vlvinfo: *mut ldapvlvinfo, iscritical: u8, control: *mut *mut ldapcontrolW) -> i32 {
     #[cfg(windows)]
@@ -1832,7 +1784,6 @@ pub unsafe fn ldap_deleteW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_delete_ext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -1846,7 +1797,6 @@ pub unsafe fn ldap_delete_ext<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_delete_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -1860,7 +1810,6 @@ pub unsafe fn ldap_delete_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_delete_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -1874,7 +1823,6 @@ pub unsafe fn ldap_delete_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_delete_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1888,7 +1836,6 @@ pub unsafe fn ldap_delete_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_delete_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -1902,7 +1849,6 @@ pub unsafe fn ldap_delete_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_delete_ext_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -1994,28 +1940,26 @@ pub unsafe fn ldap_dn2ufnW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_encode_sort_controlA<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, control: *mut ldapcontrolA, criticality: Param3) -> u32 {
+pub unsafe fn ldap_encode_sort_controlA<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, control: *mut ldapcontrolA, criticality: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_encode_sort_controlA(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, control: *mut ldapcontrolA, criticality: super::super::Foundation::BOOLEAN) -> u32;
+            fn ldap_encode_sort_controlA(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, control: *mut ldapcontrolA, criticality: ::win32_foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(ldap_encode_sort_controlA(::core::mem::transmute(externalhandle), ::core::mem::transmute(sortkeys), ::core::mem::transmute(control), criticality.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_encode_sort_controlW<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, control: *mut ldapcontrolW, criticality: Param3) -> u32 {
+pub unsafe fn ldap_encode_sort_controlW<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, control: *mut ldapcontrolW, criticality: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_encode_sort_controlW(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, control: *mut ldapcontrolW, criticality: super::super::Foundation::BOOLEAN) -> u32;
+            fn ldap_encode_sort_controlW(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, control: *mut ldapcontrolW, criticality: ::win32_foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(ldap_encode_sort_controlW(::core::mem::transmute(externalhandle), ::core::mem::transmute(sortkeys), ::core::mem::transmute(control), criticality.into_param().abi()))
     }
@@ -2139,7 +2083,6 @@ pub unsafe fn ldap_explode_dnW<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_extended_operation<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, oid: Param1, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -2153,7 +2096,6 @@ pub unsafe fn ldap_extended_operation<'a, Param1: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_extended_operationA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, oid: Param1, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -2167,7 +2109,6 @@ pub unsafe fn ldap_extended_operationA<'a, Param1: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_extended_operationW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, oid: Param1, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -2181,7 +2122,6 @@ pub unsafe fn ldap_extended_operationW<'a, Param1: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_extended_operation_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(externalhandle: *mut ldap, oid: Param1, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, returnedoid: *mut ::windows_core::PSTR, returneddata: *mut *mut LDAP_BERVAL) -> u32 {
     #[cfg(windows)]
@@ -2195,7 +2135,6 @@ pub unsafe fn ldap_extended_operation_sA<'a, Param1: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_extended_operation_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(externalhandle: *mut ldap, oid: Param1, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, returnedoid: *mut ::windows_core::PWSTR, returneddata: *mut *mut LDAP_BERVAL) -> u32 {
     #[cfg(windows)]
@@ -2209,7 +2148,6 @@ pub unsafe fn ldap_extended_operation_sW<'a, Param1: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_first_attribute(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut *mut berelement) -> ::windows_core::PSTR {
     #[cfg(windows)]
@@ -2223,7 +2161,6 @@ pub unsafe fn ldap_first_attribute(ld: *mut ldap, entry: *mut LDAPMessage, ptr: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_first_attributeA(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut *mut berelement) -> ::windows_core::PSTR {
     #[cfg(windows)]
@@ -2237,7 +2174,6 @@ pub unsafe fn ldap_first_attributeA(ld: *mut ldap, entry: *mut LDAPMessage, ptr:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_first_attributeW(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut *mut berelement) -> ::windows_core::PWSTR {
     #[cfg(windows)]
@@ -2251,7 +2187,6 @@ pub unsafe fn ldap_first_attributeW(ld: *mut ldap, entry: *mut LDAPMessage, ptr:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_first_entry(ld: *mut ldap, res: *mut LDAPMessage) -> *mut LDAPMessage {
     #[cfg(windows)]
@@ -2265,7 +2200,6 @@ pub unsafe fn ldap_first_entry(ld: *mut ldap, res: *mut LDAPMessage) -> *mut LDA
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_first_reference(ld: *mut ldap, res: *mut LDAPMessage) -> *mut LDAPMessage {
     #[cfg(windows)]
@@ -2279,7 +2213,6 @@ pub unsafe fn ldap_first_reference(ld: *mut ldap, res: *mut LDAPMessage) -> *mut
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_free_controls(controls: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -2293,7 +2226,6 @@ pub unsafe fn ldap_free_controls(controls: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_free_controlsA(controls: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -2307,7 +2239,6 @@ pub unsafe fn ldap_free_controlsA(controls: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_free_controlsW(controls: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -2321,7 +2252,6 @@ pub unsafe fn ldap_free_controlsW(controls: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_dn(ld: *mut ldap, entry: *mut LDAPMessage) -> ::windows_core::PSTR {
     #[cfg(windows)]
@@ -2335,7 +2265,6 @@ pub unsafe fn ldap_get_dn(ld: *mut ldap, entry: *mut LDAPMessage) -> ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_dnA(ld: *mut ldap, entry: *mut LDAPMessage) -> ::windows_core::PSTR {
     #[cfg(windows)]
@@ -2349,7 +2278,6 @@ pub unsafe fn ldap_get_dnA(ld: *mut ldap, entry: *mut LDAPMessage) -> ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_dnW(ld: *mut ldap, entry: *mut LDAPMessage) -> ::windows_core::PWSTR {
     #[cfg(windows)]
@@ -2376,7 +2304,6 @@ pub unsafe fn ldap_get_next_page(externalhandle: *mut ldap, searchhandle: *mut l
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_next_page_s(externalhandle: *mut ldap, searchhandle: *mut ldapsearch, timeout: *mut LDAP_TIMEVAL, pagesize: u32, totalcount: *mut u32, results: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -2416,7 +2343,6 @@ pub unsafe fn ldap_get_optionW(ld: *mut ldap, option: i32, outvalue: *mut ::core
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_paged_count(externalhandle: *mut ldap, searchblock: *mut ldapsearch, totalcount: *mut u32, results: *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -2430,7 +2356,6 @@ pub unsafe fn ldap_get_paged_count(externalhandle: *mut ldap, searchblock: *mut 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_values<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, entry: *mut LDAPMessage, attr: Param2) -> *mut ::windows_core::PSTR {
     #[cfg(windows)]
@@ -2444,7 +2369,6 @@ pub unsafe fn ldap_get_values<'a, Param2: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_valuesA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, entry: *mut LDAPMessage, attr: Param2) -> *mut ::windows_core::PSTR {
     #[cfg(windows)]
@@ -2458,7 +2382,6 @@ pub unsafe fn ldap_get_valuesA<'a, Param2: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_valuesW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, entry: *mut LDAPMessage, attr: Param2) -> *mut ::windows_core::PWSTR {
     #[cfg(windows)]
@@ -2472,7 +2395,6 @@ pub unsafe fn ldap_get_valuesW<'a, Param2: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_values_len<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(externalhandle: *mut ldap, message: *mut LDAPMessage, attr: Param2) -> *mut *mut LDAP_BERVAL {
     #[cfg(windows)]
@@ -2486,7 +2408,6 @@ pub unsafe fn ldap_get_values_len<'a, Param2: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_values_lenA<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(externalhandle: *mut ldap, message: *mut LDAPMessage, attr: Param2) -> *mut *mut LDAP_BERVAL {
     #[cfg(windows)]
@@ -2500,7 +2421,6 @@ pub unsafe fn ldap_get_values_lenA<'a, Param2: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_get_values_lenW<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(externalhandle: *mut ldap, message: *mut LDAPMessage, attr: Param2) -> *mut *mut LDAP_BERVAL {
     #[cfg(windows)]
@@ -2631,7 +2551,6 @@ pub unsafe fn ldap_modifyW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_modify_ext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, mods: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -2645,7 +2564,6 @@ pub unsafe fn ldap_modify_ext<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_modify_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, mods: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -2659,7 +2577,6 @@ pub unsafe fn ldap_modify_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_modify_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, mods: *mut *mut ldapmodW, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -2673,7 +2590,6 @@ pub unsafe fn ldap_modify_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_modify_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, mods: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -2687,7 +2603,6 @@ pub unsafe fn ldap_modify_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_modify_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, mods: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -2701,7 +2616,6 @@ pub unsafe fn ldap_modify_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_modify_ext_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, mods: *mut *mut ldapmodW, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -2910,7 +2824,6 @@ pub unsafe fn ldap_modrdn_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_msgfree(res: *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -2924,7 +2837,6 @@ pub unsafe fn ldap_msgfree(res: *mut LDAPMessage) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_next_attribute(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut berelement) -> ::windows_core::PSTR {
     #[cfg(windows)]
@@ -2938,7 +2850,6 @@ pub unsafe fn ldap_next_attribute(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_next_attributeA(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut berelement) -> ::windows_core::PSTR {
     #[cfg(windows)]
@@ -2952,7 +2863,6 @@ pub unsafe fn ldap_next_attributeA(ld: *mut ldap, entry: *mut LDAPMessage, ptr: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_next_attributeW(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut berelement) -> ::windows_core::PWSTR {
     #[cfg(windows)]
@@ -2966,7 +2876,6 @@ pub unsafe fn ldap_next_attributeW(ld: *mut ldap, entry: *mut LDAPMessage, ptr: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_next_entry(ld: *mut ldap, entry: *mut LDAPMessage) -> *mut LDAPMessage {
     #[cfg(windows)]
@@ -2980,7 +2889,6 @@ pub unsafe fn ldap_next_entry(ld: *mut ldap, entry: *mut LDAPMessage) -> *mut LD
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_next_reference(ld: *mut ldap, entry: *mut LDAPMessage) -> *mut LDAPMessage {
     #[cfg(windows)]
@@ -3033,35 +2941,32 @@ pub unsafe fn ldap_openW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_cor
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_extended_resultA<'a, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core::PSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: Param4) -> u32 {
+pub unsafe fn ldap_parse_extended_resultA<'a, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core::PSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: Param4) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_parse_extended_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core::PSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: super::super::Foundation::BOOLEAN) -> u32;
+            fn ldap_parse_extended_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core::PSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: ::win32_foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(ldap_parse_extended_resultA(::core::mem::transmute(connection), ::core::mem::transmute(resultmessage), ::core::mem::transmute(resultoid), ::core::mem::transmute(resultdata), freeit.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_extended_resultW<'a, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core::PWSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: Param4) -> u32 {
+pub unsafe fn ldap_parse_extended_resultW<'a, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core::PWSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: Param4) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_parse_extended_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core::PWSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: super::super::Foundation::BOOLEAN) -> u32;
+            fn ldap_parse_extended_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core::PWSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: ::win32_foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(ldap_parse_extended_resultW(::core::mem::transmute(connection), ::core::mem::transmute(resultmessage), ::core::mem::transmute(resultoid), ::core::mem::transmute(resultdata), freeit.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_page_control(externalhandle: *mut ldap, servercontrols: *mut *mut ldapcontrolA, totalcount: *mut u32, cookie: *mut *mut LDAP_BERVAL) -> u32 {
     #[cfg(windows)]
@@ -3075,7 +2980,6 @@ pub unsafe fn ldap_parse_page_control(externalhandle: *mut ldap, servercontrols:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_page_controlA(externalhandle: *mut ldap, servercontrols: *mut *mut ldapcontrolA, totalcount: *mut u32, cookie: *mut *mut LDAP_BERVAL) -> u32 {
     #[cfg(windows)]
@@ -3089,7 +2993,6 @@ pub unsafe fn ldap_parse_page_controlA(externalhandle: *mut ldap, servercontrols
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_page_controlW(externalhandle: *mut ldap, servercontrols: *mut *mut ldapcontrolW, totalcount: *mut u32, cookie: *mut *mut LDAP_BERVAL) -> u32 {
     #[cfg(windows)]
@@ -3103,7 +3006,6 @@ pub unsafe fn ldap_parse_page_controlW(externalhandle: *mut ldap, servercontrols
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_reference(connection: *mut ldap, resultmessage: *mut LDAPMessage, referrals: *mut *mut ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
@@ -3117,7 +3019,6 @@ pub unsafe fn ldap_parse_reference(connection: *mut ldap, resultmessage: *mut LD
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_referenceA(connection: *mut ldap, resultmessage: *mut LDAPMessage, referrals: *mut *mut ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
@@ -3131,7 +3032,6 @@ pub unsafe fn ldap_parse_referenceA(connection: *mut ldap, resultmessage: *mut L
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_referenceW(connection: *mut ldap, resultmessage: *mut LDAPMessage, referrals: *mut *mut ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
@@ -3145,49 +3045,45 @@ pub unsafe fn ldap_parse_referenceW(connection: *mut ldap, resultmessage: *mut L
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_result<'a, Param7: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PSTR, errormessage: *mut ::windows_core::PSTR, referrals: *mut *mut ::windows_core::PSTR, servercontrols: *mut *mut *mut ldapcontrolA, freeit: Param7) -> u32 {
+pub unsafe fn ldap_parse_result<'a, Param7: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PSTR, errormessage: *mut ::windows_core::PSTR, referrals: *mut *mut ::windows_core::PSTR, servercontrols: *mut *mut *mut ldapcontrolA, freeit: Param7) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_parse_result(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PSTR, errormessage: *mut ::windows_core::PSTR, referrals: *mut *mut ::windows_core::PSTR, servercontrols: *mut *mut *mut ldapcontrolA, freeit: super::super::Foundation::BOOLEAN) -> u32;
+            fn ldap_parse_result(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PSTR, errormessage: *mut ::windows_core::PSTR, referrals: *mut *mut ::windows_core::PSTR, servercontrols: *mut *mut *mut ldapcontrolA, freeit: ::win32_foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(ldap_parse_result(::core::mem::transmute(connection), ::core::mem::transmute(resultmessage), ::core::mem::transmute(returncode), ::core::mem::transmute(matcheddns), ::core::mem::transmute(errormessage), ::core::mem::transmute(referrals), ::core::mem::transmute(servercontrols), freeit.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_resultA<'a, Param7: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PSTR, errormessage: *mut ::windows_core::PSTR, referrals: *mut *mut *mut i8, servercontrols: *mut *mut *mut ldapcontrolA, freeit: Param7) -> u32 {
+pub unsafe fn ldap_parse_resultA<'a, Param7: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PSTR, errormessage: *mut ::windows_core::PSTR, referrals: *mut *mut *mut i8, servercontrols: *mut *mut *mut ldapcontrolA, freeit: Param7) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_parse_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PSTR, errormessage: *mut ::windows_core::PSTR, referrals: *mut *mut *mut i8, servercontrols: *mut *mut *mut ldapcontrolA, freeit: super::super::Foundation::BOOLEAN) -> u32;
+            fn ldap_parse_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PSTR, errormessage: *mut ::windows_core::PSTR, referrals: *mut *mut *mut i8, servercontrols: *mut *mut *mut ldapcontrolA, freeit: ::win32_foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(ldap_parse_resultA(::core::mem::transmute(connection), ::core::mem::transmute(resultmessage), ::core::mem::transmute(returncode), ::core::mem::transmute(matcheddns), ::core::mem::transmute(errormessage), ::core::mem::transmute(referrals), ::core::mem::transmute(servercontrols), freeit.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_parse_resultW<'a, Param7: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PWSTR, errormessage: *mut ::windows_core::PWSTR, referrals: *mut *mut *mut u16, servercontrols: *mut *mut *mut ldapcontrolW, freeit: Param7) -> u32 {
+pub unsafe fn ldap_parse_resultW<'a, Param7: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PWSTR, errormessage: *mut ::windows_core::PWSTR, referrals: *mut *mut *mut u16, servercontrols: *mut *mut *mut ldapcontrolW, freeit: Param7) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_parse_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PWSTR, errormessage: *mut ::windows_core::PWSTR, referrals: *mut *mut *mut u16, servercontrols: *mut *mut *mut ldapcontrolW, freeit: super::super::Foundation::BOOLEAN) -> u32;
+            fn ldap_parse_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core::PWSTR, errormessage: *mut ::windows_core::PWSTR, referrals: *mut *mut *mut u16, servercontrols: *mut *mut *mut ldapcontrolW, freeit: ::win32_foundation::BOOLEAN) -> u32;
         }
         ::core::mem::transmute(ldap_parse_resultW(::core::mem::transmute(connection), ::core::mem::transmute(resultmessage), ::core::mem::transmute(returncode), ::core::mem::transmute(matcheddns), ::core::mem::transmute(errormessage), ::core::mem::transmute(referrals), ::core::mem::transmute(servercontrols), freeit.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_sort_control(externalhandle: *mut ldap, control: *mut *mut ldapcontrolA, result: *mut u32, attribute: *mut ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
@@ -3201,7 +3097,6 @@ pub unsafe fn ldap_parse_sort_control(externalhandle: *mut ldap, control: *mut *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_sort_controlA(externalhandle: *mut ldap, control: *mut *mut ldapcontrolA, result: *mut u32, attribute: *mut ::windows_core::PSTR) -> u32 {
     #[cfg(windows)]
@@ -3215,7 +3110,6 @@ pub unsafe fn ldap_parse_sort_controlA(externalhandle: *mut ldap, control: *mut 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_sort_controlW(externalhandle: *mut ldap, control: *mut *mut ldapcontrolW, result: *mut u32, attribute: *mut ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
@@ -3229,7 +3123,6 @@ pub unsafe fn ldap_parse_sort_controlW(externalhandle: *mut ldap, control: *mut 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_vlv_controlA(externalhandle: *mut ldap, control: *mut *mut ldapcontrolA, targetpos: *mut u32, listcount: *mut u32, context: *mut *mut LDAP_BERVAL, errcode: *mut i32) -> i32 {
     #[cfg(windows)]
@@ -3243,7 +3136,6 @@ pub unsafe fn ldap_parse_vlv_controlA(externalhandle: *mut ldap, control: *mut *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_parse_vlv_controlW(externalhandle: *mut ldap, control: *mut *mut ldapcontrolW, targetpos: *mut u32, listcount: *mut u32, context: *mut *mut LDAP_BERVAL, errcode: *mut i32) -> i32 {
     #[cfg(windows)]
@@ -3270,7 +3162,6 @@ pub unsafe fn ldap_perror<'a, Param1: ::windows_core::IntoParam<'a, ::windows_co
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_rename_ext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, newrdn: Param2, newparent: Param3, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -3284,7 +3175,6 @@ pub unsafe fn ldap_rename_ext<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_rename_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, newrdn: Param2, newparent: Param3, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -3298,7 +3188,6 @@ pub unsafe fn ldap_rename_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_rename_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, newrdn: Param2, newparent: Param3, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -3312,7 +3201,6 @@ pub unsafe fn ldap_rename_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_rename_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, newrdn: Param2, newparent: Param3, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -3326,7 +3214,6 @@ pub unsafe fn ldap_rename_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_rename_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, dn: Param1, newrdn: Param2, newparent: Param3, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -3340,7 +3227,6 @@ pub unsafe fn ldap_rename_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_rename_ext_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, dn: Param1, newrdn: Param2, newparent: Param3, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -3354,7 +3240,6 @@ pub unsafe fn ldap_rename_ext_sW<'a, Param1: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_result(ld: *mut ldap, msgid: u32, all: u32, timeout: *const LDAP_TIMEVAL, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3368,7 +3253,6 @@ pub unsafe fn ldap_result(ld: *mut ldap, msgid: u32, all: u32, timeout: *const L
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_result2error(ld: *mut ldap, res: *mut LDAPMessage, freeit: u32) -> u32 {
     #[cfg(windows)]
@@ -3382,7 +3266,6 @@ pub unsafe fn ldap_result2error(ld: *mut ldap, res: *mut LDAPMessage, freeit: u3
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_sasl_bindA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(externalhandle: *mut ldap, distname: Param1, authmechanism: Param2, cred: *const LDAP_BERVAL, serverctrls: *mut *mut ldapcontrolA, clientctrls: *mut *mut ldapcontrolA, messagenumber: *mut i32) -> i32 {
     #[cfg(windows)]
@@ -3396,7 +3279,6 @@ pub unsafe fn ldap_sasl_bindA<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_sasl_bindW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(externalhandle: *mut ldap, distname: Param1, authmechanism: Param2, cred: *const LDAP_BERVAL, serverctrls: *mut *mut ldapcontrolW, clientctrls: *mut *mut ldapcontrolW, messagenumber: *mut i32) -> i32 {
     #[cfg(windows)]
@@ -3410,7 +3292,6 @@ pub unsafe fn ldap_sasl_bindW<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_sasl_bind_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(externalhandle: *mut ldap, distname: Param1, authmechanism: Param2, cred: *const LDAP_BERVAL, serverctrls: *mut *mut ldapcontrolA, clientctrls: *mut *mut ldapcontrolA, serverdata: *mut *mut LDAP_BERVAL) -> i32 {
     #[cfg(windows)]
@@ -3424,7 +3305,6 @@ pub unsafe fn ldap_sasl_bind_sA<'a, Param1: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_sasl_bind_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(externalhandle: *mut ldap, distname: Param1, authmechanism: Param2, cred: *const LDAP_BERVAL, serverctrls: *mut *mut ldapcontrolW, clientctrls: *mut *mut ldapcontrolW, serverdata: *mut *mut LDAP_BERVAL) -> i32 {
     #[cfg(windows)]
@@ -3490,7 +3370,6 @@ pub unsafe fn ldap_search_abandon_page(externalhandle: *mut ldap, searchblock: *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_ext<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const i8, attrsonly: u32, servercontrols: *const *const ldapcontrolA, clientcontrols: *const *const ldapcontrolA, timelimit: u32, sizelimit: u32, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -3504,7 +3383,6 @@ pub unsafe fn ldap_search_ext<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const i8, attrsonly: u32, servercontrols: *const *const ldapcontrolA, clientcontrols: *const *const ldapcontrolA, timelimit: u32, sizelimit: u32, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -3518,7 +3396,6 @@ pub unsafe fn ldap_search_extA<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const u16, attrsonly: u32, servercontrols: *const *const ldapcontrolW, clientcontrols: *const *const ldapcontrolW, timelimit: u32, sizelimit: u32, messagenumber: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -3532,7 +3409,6 @@ pub unsafe fn ldap_search_extW<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const i8, attrsonly: u32, servercontrols: *const *const ldapcontrolA, clientcontrols: *const *const ldapcontrolA, timeout: *mut LDAP_TIMEVAL, sizelimit: u32, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3546,7 +3422,6 @@ pub unsafe fn ldap_search_ext_s<'a, Param1: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const i8, attrsonly: u32, servercontrols: *const *const ldapcontrolA, clientcontrols: *const *const ldapcontrolA, timeout: *mut LDAP_TIMEVAL, sizelimit: u32, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3560,7 +3435,6 @@ pub unsafe fn ldap_search_ext_sA<'a, Param1: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_ext_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const u16, attrsonly: u32, servercontrols: *const *const ldapcontrolW, clientcontrols: *const *const ldapcontrolW, timeout: *mut LDAP_TIMEVAL, sizelimit: u32, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3574,7 +3448,6 @@ pub unsafe fn ldap_search_ext_sW<'a, Param1: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_init_page<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(externalhandle: *mut ldap, distinguishedname: Param1, scopeofsearch: u32, searchfilter: Param3, attributelist: *mut *mut i8, attributesonly: u32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, pagetimelimit: u32, totalsizelimit: u32, sortkeys: *mut *mut ldapsortkeyA) -> *mut ldapsearch {
     #[cfg(windows)]
@@ -3588,7 +3461,6 @@ pub unsafe fn ldap_search_init_page<'a, Param1: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_init_pageA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(externalhandle: *mut ldap, distinguishedname: Param1, scopeofsearch: u32, searchfilter: Param3, attributelist: *const *const i8, attributesonly: u32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, pagetimelimit: u32, totalsizelimit: u32, sortkeys: *mut *mut ldapsortkeyA) -> *mut ldapsearch {
     #[cfg(windows)]
@@ -3602,7 +3474,6 @@ pub unsafe fn ldap_search_init_pageA<'a, Param1: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_init_pageW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(externalhandle: *mut ldap, distinguishedname: Param1, scopeofsearch: u32, searchfilter: Param3, attributelist: *const *const u16, attributesonly: u32, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, pagetimelimit: u32, totalsizelimit: u32, sortkeys: *mut *mut ldapsortkeyW) -> *mut ldapsearch {
     #[cfg(windows)]
@@ -3616,7 +3487,6 @@ pub unsafe fn ldap_search_init_pageW<'a, Param1: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_s<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const i8, attrsonly: u32, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3630,7 +3500,6 @@ pub unsafe fn ldap_search_s<'a, Param1: ::windows_core::IntoParam<'a, ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const i8, attrsonly: u32, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3644,7 +3513,6 @@ pub unsafe fn ldap_search_sA<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const u16, attrsonly: u32, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3658,7 +3526,6 @@ pub unsafe fn ldap_search_sW<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_st<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const i8, attrsonly: u32, timeout: *mut LDAP_TIMEVAL, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3672,7 +3539,6 @@ pub unsafe fn ldap_search_st<'a, Param1: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_stA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const i8, attrsonly: u32, timeout: *mut LDAP_TIMEVAL, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3686,7 +3552,6 @@ pub unsafe fn ldap_search_stA<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_search_stW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(ld: *mut ldap, base: Param1, scope: u32, filter: Param3, attrs: *const *const u16, attrsonly: u32, timeout: *mut LDAP_TIMEVAL, res: *mut *mut LDAPMessage) -> u32 {
     #[cfg(windows)]
@@ -3869,7 +3734,6 @@ pub unsafe fn ldap_sslinitW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_start_tls_sA(externalhandle: *mut ldap, serverreturnvalue: *mut u32, result: *mut *mut LDAPMessage, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32 {
     #[cfg(windows)]
@@ -3883,7 +3747,6 @@ pub unsafe fn ldap_start_tls_sA(externalhandle: *mut ldap, serverreturnvalue: *m
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ldap_start_tls_sW(externalhandle: *mut ldap, serverreturnvalue: *mut u32, result: *mut *mut LDAPMessage, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32 {
     #[cfg(windows)]
@@ -3897,28 +3760,26 @@ pub unsafe fn ldap_start_tls_sW(externalhandle: *mut ldap, serverreturnvalue: *m
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_startup(version: *mut ldap_version_info, instance: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn ldap_startup(version: *mut ldap_version_info, instance: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_startup(version: *mut ldap_version_info, instance: *mut super::super::Foundation::HANDLE) -> u32;
+            fn ldap_startup(version: *mut ldap_version_info, instance: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(ldap_startup(::core::mem::transmute(version), ::core::mem::transmute(instance)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ldap_stop_tls_s(externalhandle: *mut ldap) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn ldap_stop_tls_s(externalhandle: *mut ldap) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ldap_stop_tls_s(externalhandle: *mut ldap) -> super::super::Foundation::BOOLEAN;
+            fn ldap_stop_tls_s(externalhandle: *mut ldap) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(ldap_stop_tls_s(::core::mem::transmute(externalhandle)))
     }
@@ -4142,78 +4003,62 @@ impl ::core::default::Default for ldapapiinfoW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ldapcontrolA {
     pub ldctl_oid: ::windows_core::PSTR,
     pub ldctl_value: LDAP_BERVAL,
-    pub ldctl_iscritical: super::super::Foundation::BOOLEAN,
+    pub ldctl_iscritical: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ldapcontrolA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ldapcontrolA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for ldapcontrolA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ldapcontrolA").field("ldctl_oid", &self.ldctl_oid).field("ldctl_value", &self.ldctl_value).field("ldctl_iscritical", &self.ldctl_iscritical).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ldapcontrolA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ldapcontrolA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ldapcontrolA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ldapcontrolA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ldapcontrolA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ldapcontrolW {
     pub ldctl_oid: ::windows_core::PWSTR,
     pub ldctl_value: LDAP_BERVAL,
-    pub ldctl_iscritical: super::super::Foundation::BOOLEAN,
+    pub ldctl_iscritical: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ldapcontrolW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ldapcontrolW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for ldapcontrolW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ldapcontrolW").field("ldctl_oid", &self.ldctl_oid).field("ldctl_value", &self.ldctl_value).field("ldctl_iscritical", &self.ldctl_iscritical).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ldapcontrolW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ldapcontrolW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ldapcontrolW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ldapcontrolW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ldapcontrolW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4324,78 +4169,62 @@ impl ::core::default::Default for ldapmodW_0 {
 #[repr(C)]
 pub struct ldapsearch(pub u8);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ldapsortkeyA {
     pub sk_attrtype: ::windows_core::PSTR,
     pub sk_matchruleoid: ::windows_core::PSTR,
-    pub sk_reverseorder: super::super::Foundation::BOOLEAN,
+    pub sk_reverseorder: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ldapsortkeyA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ldapsortkeyA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for ldapsortkeyA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ldapsortkeyA").field("sk_attrtype", &self.sk_attrtype).field("sk_matchruleoid", &self.sk_matchruleoid).field("sk_reverseorder", &self.sk_reverseorder).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ldapsortkeyA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ldapsortkeyA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ldapsortkeyA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ldapsortkeyA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ldapsortkeyA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ldapsortkeyW {
     pub sk_attrtype: ::windows_core::PWSTR,
     pub sk_matchruleoid: ::windows_core::PWSTR,
-    pub sk_reverseorder: super::super::Foundation::BOOLEAN,
+    pub sk_reverseorder: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ldapsortkeyW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ldapsortkeyW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for ldapsortkeyW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ldapsortkeyW").field("sk_attrtype", &self.sk_attrtype).field("sk_matchruleoid", &self.sk_matchruleoid).field("sk_reverseorder", &self.sk_reverseorder).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ldapsortkeyW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ldapsortkeyW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ldapsortkeyW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ldapsortkeyW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ldapsortkeyW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

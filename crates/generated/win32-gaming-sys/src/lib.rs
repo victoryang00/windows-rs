@@ -3,18 +3,14 @@
 #![no_std]
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CheckGamingPrivilegeSilently(privilegeid: u32, scope: ::windows_core_sys::HSTRING, policy: ::windows_core_sys::HSTRING, hasprivilege: *mut super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CheckGamingPrivilegeSilentlyForUser(user: ::windows_core_sys::IInspectable, privilegeid: u32, scope: ::windows_core_sys::HSTRING, policy: ::windows_core_sys::HSTRING, hasprivilege: *mut super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn CheckGamingPrivilegeSilently(privilegeid: u32, scope: ::windows_core_sys::HSTRING, policy: ::windows_core_sys::HSTRING, hasprivilege: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn CheckGamingPrivilegeSilentlyForUser(user: ::windows_core_sys::IInspectable, privilegeid: u32, scope: ::windows_core_sys::HSTRING, policy: ::windows_core_sys::HSTRING, hasprivilege: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn CheckGamingPrivilegeWithUI(privilegeid: u32, scope: ::windows_core_sys::HSTRING, policy: ::windows_core_sys::HSTRING, friendlymessage: ::windows_core_sys::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn CheckGamingPrivilegeWithUIForUser(user: ::windows_core_sys::IInspectable, privilegeid: u32, scope: ::windows_core_sys::HSTRING, policy: ::windows_core_sys::HSTRING, friendlymessage: ::windows_core_sys::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn GetExpandedResourceExclusiveCpuCount(exclusivecpucount: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn GetGamingDeviceModelInformation(information: *mut GAMING_DEVICE_MODEL_INFORMATION) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HasExpandedResources(hasexpandedresources: *mut super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ProcessPendingGameUI(waitforcompletion: super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn HasExpandedResources(hasexpandedresources: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn ProcessPendingGameUI(waitforcompletion: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn ReleaseExclusiveCpuSets() -> ::windows_core_sys::HRESULT;
     pub fn ShowChangeFriendRelationshipUI(targetuserxuid: ::windows_core_sys::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn ShowChangeFriendRelationshipUIForUser(user: ::windows_core_sys::IInspectable, targetuserxuid: ::windows_core_sys::HSTRING, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
@@ -36,8 +32,7 @@ extern "system" {
     pub fn ShowTitleAchievementsUIForUser(user: ::windows_core_sys::IInspectable, titleid: u32, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn ShowUserSettingsUI(completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn ShowUserSettingsUIForUser(user: ::windows_core_sys::IInspectable, completionroutine: GameUICompletionRoutine, context: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TryCancelPendingGameUI() -> super::Foundation::BOOL;
+    pub fn TryCancelPendingGameUI() -> ::win32_foundation_sys::BOOL;
 }
 pub type GAMESTATS_OPEN_RESULT = i32;
 pub const GAMESTATS_OPEN_CREATED: GAMESTATS_OPEN_RESULT = 0i32;

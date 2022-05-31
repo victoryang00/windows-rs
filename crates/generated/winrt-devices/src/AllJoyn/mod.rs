@@ -30,23 +30,23 @@ impl AllJoynAboutData {
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultAppName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn AppNames(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+    pub fn AppNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).AppNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn DateOfManufacture(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    #[cfg(feature = "deprecated")]
+    pub fn DateOfManufacture(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DateOfManufacture)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).DateOfManufacture)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn SetDateOfManufacture<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::super::Foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn SetDateOfManufacture<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDateOfManufacture)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -64,11 +64,11 @@ impl AllJoynAboutData {
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultDescription)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn Descriptions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+    pub fn Descriptions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Descriptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Descriptions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -85,11 +85,11 @@ impl AllJoynAboutData {
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultManufacturer)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn Manufacturers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+    pub fn Manufacturers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Manufacturers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Manufacturers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -118,16 +118,16 @@ impl AllJoynAboutData {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSoftwareVersion)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn SupportUrl(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    #[cfg(feature = "deprecated")]
+    pub fn SupportUrl(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).SupportUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn SetSupportUrl<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn SetSupportUrl<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSupportUrl)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -248,11 +248,11 @@ impl AllJoynAboutDataView {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -271,20 +271,20 @@ impl AllJoynAboutDataView {
             (::windows_core::Interface::vtable(this).AppId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn DateOfManufacture(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    #[cfg(feature = "deprecated")]
+    pub fn DateOfManufacture(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DateOfManufacture)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).DateOfManufacture)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
     #[cfg(all(feature = "Globalization", feature = "deprecated"))]
-    pub fn DefaultLanguage(&self) -> ::windows_core::Result<super::super::Globalization::Language> {
+    pub fn DefaultLanguage(&self) -> ::windows_core::Result<::winrt_globalization::Language> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DefaultLanguage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Globalization::Language>(result__)
+            (::windows_core::Interface::vtable(this).DefaultLanguage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_globalization::Language>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -320,19 +320,19 @@ impl AllJoynAboutDataView {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Globalization", feature = "deprecated"))]
-    pub fn SupportedLanguages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Globalization::Language>> {
+    pub fn SupportedLanguages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedLanguages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Globalization::Language>>(result__)
+            (::windows_core::Interface::vtable(this).SupportedLanguages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_globalization::Language>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn SupportUrl(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    #[cfg(feature = "deprecated")]
+    pub fn SupportUrl(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).SupportUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -367,18 +367,18 @@ impl AllJoynAboutDataView {
             (::windows_core::Interface::vtable(this).Manufacturer)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetDataBySessionPortAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, AllJoynBusAttachment>>(uniquename: Param0, busattachment: Param1, sessionport: u16) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AllJoynAboutDataView>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetDataBySessionPortAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, AllJoynBusAttachment>>(uniquename: Param0, busattachment: Param1, sessionport: u16) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AllJoynAboutDataView>> {
         Self::IAllJoynAboutDataViewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDataBySessionPortAsync)(::windows_core::Interface::as_raw(this), uniquename.into_param().abi(), busattachment.into_param().abi(), sessionport, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AllJoynAboutDataView>>(result__)
+            (::windows_core::Interface::vtable(this).GetDataBySessionPortAsync)(::windows_core::Interface::as_raw(this), uniquename.into_param().abi(), busattachment.into_param().abi(), sessionport, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AllJoynAboutDataView>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Globalization", feature = "deprecated"))]
-    pub fn GetDataBySessionPortWithLanguageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, AllJoynBusAttachment>, Param3: ::windows_core::IntoParam<'a, super::super::Globalization::Language>>(uniquename: Param0, busattachment: Param1, sessionport: u16, language: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AllJoynAboutDataView>> {
+    #[cfg(all(feature = "Globalization", feature = "deprecated"))]
+    pub fn GetDataBySessionPortWithLanguageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, AllJoynBusAttachment>, Param3: ::windows_core::IntoParam<'a, ::winrt_globalization::Language>>(uniquename: Param0, busattachment: Param1, sessionport: u16, language: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AllJoynAboutDataView>> {
         Self::IAllJoynAboutDataViewStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDataBySessionPortWithLanguageAsync)(::windows_core::Interface::as_raw(this), uniquename.into_param().abi(), busattachment.into_param().abi(), sessionport, language.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AllJoynAboutDataView>>(result__)
+            (::windows_core::Interface::vtable(this).GetDataBySessionPortWithLanguageAsync)(::windows_core::Interface::as_raw(this), uniquename.into_param().abi(), busattachment.into_param().abi(), sessionport, language.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AllJoynAboutDataView>>(result__)
         })
     }
     #[cfg(feature = "deprecated")]
@@ -837,12 +837,12 @@ impl AllJoynBusAttachment {
             (::windows_core::Interface::vtable(this).UniqueName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn PingAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uniquename: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<i32>> {
+    #[cfg(feature = "deprecated")]
+    pub fn PingAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uniquename: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PingAsync)(::windows_core::Interface::as_raw(this), uniquename.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<i32>>(result__)
+            (::windows_core::Interface::vtable(this).PingAsync)(::windows_core::Interface::as_raw(this), uniquename.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<i32>>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -855,105 +855,105 @@ impl AllJoynBusAttachment {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Disconnect)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn StateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynBusAttachmentStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn StateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynBusAttachmentStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStateChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn AuthenticationMechanisms(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<AllJoynAuthenticationMechanism>> {
+    pub fn AuthenticationMechanisms(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AllJoynAuthenticationMechanism>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticationMechanisms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<AllJoynAuthenticationMechanism>>(result__)
+            (::windows_core::Interface::vtable(this).AuthenticationMechanisms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<AllJoynAuthenticationMechanism>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn CredentialsRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynCredentialsRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn CredentialsRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynCredentialsRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CredentialsRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CredentialsRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveCredentialsRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveCredentialsRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCredentialsRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn CredentialsVerificationRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynCredentialsVerificationRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn CredentialsVerificationRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynCredentialsVerificationRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CredentialsVerificationRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CredentialsVerificationRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveCredentialsVerificationRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveCredentialsVerificationRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCredentialsVerificationRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn AuthenticationComplete<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynAuthenticationCompleteEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn AuthenticationComplete<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynAuthenticationCompleteEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticationComplete)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AuthenticationComplete)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveAuthenticationComplete<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveAuthenticationComplete<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAuthenticationComplete)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetAboutDataAsync<'a, Param0: ::windows_core::IntoParam<'a, AllJoynServiceInfo>>(&self, serviceinfo: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AllJoynAboutDataView>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetAboutDataAsync<'a, Param0: ::windows_core::IntoParam<'a, AllJoynServiceInfo>>(&self, serviceinfo: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AllJoynAboutDataView>> {
         let this = &::windows_core::Interface::cast::<IAllJoynBusAttachment2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAboutDataAsync)(::windows_core::Interface::as_raw(this), serviceinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AllJoynAboutDataView>>(result__)
+            (::windows_core::Interface::vtable(this).GetAboutDataAsync)(::windows_core::Interface::as_raw(this), serviceinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AllJoynAboutDataView>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Globalization", feature = "deprecated"))]
-    pub fn GetAboutDataWithLanguageAsync<'a, Param0: ::windows_core::IntoParam<'a, AllJoynServiceInfo>, Param1: ::windows_core::IntoParam<'a, super::super::Globalization::Language>>(&self, serviceinfo: Param0, language: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AllJoynAboutDataView>> {
+    #[cfg(all(feature = "Globalization", feature = "deprecated"))]
+    pub fn GetAboutDataWithLanguageAsync<'a, Param0: ::windows_core::IntoParam<'a, AllJoynServiceInfo>, Param1: ::windows_core::IntoParam<'a, ::winrt_globalization::Language>>(&self, serviceinfo: Param0, language: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AllJoynAboutDataView>> {
         let this = &::windows_core::Interface::cast::<IAllJoynBusAttachment2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAboutDataWithLanguageAsync)(::windows_core::Interface::as_raw(this), serviceinfo.into_param().abi(), language.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AllJoynAboutDataView>>(result__)
+            (::windows_core::Interface::vtable(this).GetAboutDataWithLanguageAsync)(::windows_core::Interface::as_raw(this), serviceinfo.into_param().abi(), language.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AllJoynAboutDataView>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn AcceptSessionJoinerRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynAcceptSessionJoinerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn AcceptSessionJoinerRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynAcceptSessionJoinerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IAllJoynBusAttachment2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AcceptSessionJoinerRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AcceptSessionJoinerRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveAcceptSessionJoinerRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveAcceptSessionJoinerRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAllJoynBusAttachment2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAcceptSessionJoinerRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn SessionJoined<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynSessionJoinedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn SessionJoined<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynBusAttachment, AllJoynSessionJoinedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IAllJoynBusAttachment2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).SessionJoined)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).SessionJoined)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveSessionJoined<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveSessionJoined<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAllJoynBusAttachment2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSessionJoined)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -972,7 +972,7 @@ impl AllJoynBusAttachment {
         })
     }
     #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn GetWatcher<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(requiredinterfaces: Param0) -> ::windows_core::Result<super::Enumeration::DeviceWatcher> {
+    pub fn GetWatcher<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(requiredinterfaces: Param0) -> ::windows_core::Result<super::Enumeration::DeviceWatcher> {
         Self::IAllJoynBusAttachmentStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetWatcher)(::windows_core::Interface::as_raw(this), requiredinterfaces.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Enumeration::DeviceWatcher>(result__)
@@ -1275,16 +1275,16 @@ impl AllJoynBusObject {
             (::windows_core::Interface::vtable(this).Session)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AllJoynSession>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynBusObject, AllJoynBusObjectStoppedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynBusObject, AllJoynBusObjectStoppedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStopped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -1526,41 +1526,41 @@ impl AllJoynCredentials {
         }
     }
     #[cfg(all(feature = "Security_Cryptography_Certificates", feature = "deprecated"))]
-    pub fn Certificate(&self) -> ::windows_core::Result<super::super::Security::Cryptography::Certificates::Certificate> {
+    pub fn Certificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Certificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Cryptography::Certificates::Certificate>(result__)
+            (::windows_core::Interface::vtable(this).Certificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
     #[cfg(all(feature = "Security_Cryptography_Certificates", feature = "deprecated"))]
-    pub fn SetCertificate<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Cryptography::Certificates::Certificate>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCertificate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Cryptography::Certificates::Certificate>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCertificate)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Security_Credentials", feature = "deprecated"))]
-    pub fn PasswordCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn PasswordCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).PasswordCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(all(feature = "Security_Credentials", feature = "deprecated"))]
-    pub fn SetPasswordCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPasswordCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPasswordCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn Timeout(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    #[cfg(feature = "deprecated")]
+    pub fn Timeout(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Timeout)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Timeout)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn SetTimeout<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn SetTimeout<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTimeout)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1691,12 +1691,12 @@ impl AllJoynCredentialsRequestedEventArgs {
             (::windows_core::Interface::vtable(this).RequestedUserName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::Foundation::Deferral> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -1811,35 +1811,35 @@ impl AllJoynCredentialsVerificationRequestedEventArgs {
         }
     }
     #[cfg(all(feature = "Security_Cryptography_Certificates", feature = "deprecated"))]
-    pub fn PeerCertificate(&self) -> ::windows_core::Result<super::super::Security::Cryptography::Certificates::Certificate> {
+    pub fn PeerCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PeerCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Cryptography::Certificates::Certificate>(result__)
+            (::windows_core::Interface::vtable(this).PeerCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
     #[cfg(all(feature = "Networking_Sockets", feature = "deprecated"))]
-    pub fn PeerCertificateErrorSeverity(&self) -> ::windows_core::Result<super::super::Networking::Sockets::SocketSslErrorSeverity> {
+    pub fn PeerCertificateErrorSeverity(&self) -> ::windows_core::Result<::winrt_networking::Sockets::SocketSslErrorSeverity> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Networking::Sockets::SocketSslErrorSeverity>::zeroed();
-            (::windows_core::Interface::vtable(this).PeerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Networking::Sockets::SocketSslErrorSeverity>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_networking::Sockets::SocketSslErrorSeverity>::zeroed();
+            (::windows_core::Interface::vtable(this).PeerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::SocketSslErrorSeverity>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates", feature = "deprecated"))]
-    pub fn PeerCertificateErrors(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Security::Cryptography::Certificates::ChainValidationResult>> {
+    pub fn PeerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PeerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Security::Cryptography::Certificates::ChainValidationResult>>(result__)
+            (::windows_core::Interface::vtable(this).PeerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates", feature = "deprecated"))]
-    pub fn PeerIntermediateCertificates(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Security::Cryptography::Certificates::Certificate>> {
+    pub fn PeerIntermediateCertificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PeerIntermediateCertificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Security::Cryptography::Certificates::Certificate>>(result__)
+            (::windows_core::Interface::vtable(this).PeerIntermediateCertificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -1847,12 +1847,12 @@ impl AllJoynCredentialsVerificationRequestedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Accept)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::Foundation::Deferral> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -2211,11 +2211,11 @@ impl AllJoynServiceInfo {
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), uniquename.into_param().abi(), objectpath.into_param().abi(), sessionport, result__.as_mut_ptr()).from_abi::<AllJoynServiceInfo>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AllJoynServiceInfo>> {
+    #[cfg(feature = "deprecated")]
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AllJoynServiceInfo>> {
         Self::IAllJoynServiceInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AllJoynServiceInfo>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AllJoynServiceInfo>>(result__)
         })
     }
     #[cfg(feature = "deprecated")]
@@ -2454,65 +2454,65 @@ impl AllJoynSession {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveMemberAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uniquename: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<i32>> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveMemberAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uniquename: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RemoveMemberAsync)(::windows_core::Interface::as_raw(this), uniquename.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<i32>>(result__)
+            (::windows_core::Interface::vtable(this).RemoveMemberAsync)(::windows_core::Interface::as_raw(this), uniquename.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<i32>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn MemberAdded<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynSession, AllJoynSessionMemberAddedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn MemberAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynSession, AllJoynSessionMemberAddedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MemberAdded)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MemberAdded)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveMemberAdded<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveMemberAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMemberAdded)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn MemberRemoved<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynSession, AllJoynSessionMemberRemovedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn MemberRemoved<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynSession, AllJoynSessionMemberRemovedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MemberRemoved)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MemberRemoved)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveMemberRemoved<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveMemberRemoved<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMemberRemoved)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn Lost<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<AllJoynSession, AllJoynSessionLostEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn Lost<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AllJoynSession, AllJoynSessionLostEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Lost)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Lost)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveLost<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveLost<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveLost)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetFromServiceInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, AllJoynServiceInfo>>(serviceinfo: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AllJoynSession>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetFromServiceInfoAsync<'a, Param0: ::windows_core::IntoParam<'a, AllJoynServiceInfo>>(serviceinfo: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AllJoynSession>> {
         Self::IAllJoynSessionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFromServiceInfoAsync)(::windows_core::Interface::as_raw(this), serviceinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AllJoynSession>>(result__)
+            (::windows_core::Interface::vtable(this).GetFromServiceInfoAsync)(::windows_core::Interface::as_raw(this), serviceinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AllJoynSession>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetFromServiceInfoAndBusAttachmentAsync<'a, Param0: ::windows_core::IntoParam<'a, AllJoynServiceInfo>, Param1: ::windows_core::IntoParam<'a, AllJoynBusAttachment>>(serviceinfo: Param0, busattachment: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AllJoynSession>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetFromServiceInfoAndBusAttachmentAsync<'a, Param0: ::windows_core::IntoParam<'a, AllJoynServiceInfo>, Param1: ::windows_core::IntoParam<'a, AllJoynBusAttachment>>(serviceinfo: Param0, busattachment: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AllJoynSession>> {
         Self::IAllJoynSessionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFromServiceInfoAndBusAttachmentAsync)(::windows_core::Interface::as_raw(this), serviceinfo.into_param().abi(), busattachment.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AllJoynSession>>(result__)
+            (::windows_core::Interface::vtable(this).GetFromServiceInfoAndBusAttachmentAsync)(::windows_core::Interface::as_raw(this), serviceinfo.into_param().abi(), busattachment.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AllJoynSession>>(result__)
         })
     }
     #[cfg(feature = "deprecated")]
@@ -3447,13 +3447,13 @@ pub struct IAllJoynAboutData_Vtbl {
     pub AppNames: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
     AppNames: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub DateOfManufacture: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     DateOfManufacture: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub SetDateOfManufacture: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     SetDateOfManufacture: usize,
     #[cfg(feature = "deprecated")]
     pub DefaultDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -3495,13 +3495,13 @@ pub struct IAllJoynAboutData_Vtbl {
     pub SetSoftwareVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     SetSoftwareVersion: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub SupportUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     SupportUrl: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub SetSupportUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     SetSupportUrl: usize,
     #[cfg(feature = "deprecated")]
     pub AppId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
@@ -3542,9 +3542,9 @@ pub struct IAllJoynAboutDataView_Vtbl {
     pub AppId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     AppId: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub DateOfManufacture: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     DateOfManufacture: usize,
     #[cfg(all(feature = "Globalization", feature = "deprecated"))]
     pub DefaultLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3570,9 +3570,9 @@ pub struct IAllJoynAboutDataView_Vtbl {
     pub SupportedLanguages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Globalization", feature = "deprecated")))]
     SupportedLanguages: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub SupportUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     SupportUrl: usize,
     #[cfg(feature = "deprecated")]
     pub AppName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -3605,13 +3605,13 @@ unsafe impl ::windows_core::Interface for IAllJoynAboutDataViewStatics {
 #[doc(hidden)]
 pub struct IAllJoynAboutDataViewStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetDataBySessionPortAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uniquename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, busattachment: ::windows_core::RawPtr, sessionport: u16, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetDataBySessionPortAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Globalization", feature = "deprecated"))]
+    #[cfg(all(feature = "Globalization", feature = "deprecated"))]
     pub GetDataBySessionPortWithLanguageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uniquename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, busattachment: ::windows_core::RawPtr, sessionport: u16, language: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Globalization", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Globalization", feature = "deprecated")))]
     GetDataBySessionPortWithLanguageAsync: usize,
 }
 #[cfg(feature = "deprecated")]
@@ -3831,9 +3831,9 @@ pub struct IAllJoynBusAttachment_Vtbl {
     pub UniqueName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     UniqueName: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub PingAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uniquename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     PingAsync: usize,
     #[cfg(feature = "deprecated")]
     pub Connect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -3843,41 +3843,41 @@ pub struct IAllJoynBusAttachment_Vtbl {
     pub Disconnect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Disconnect: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub StateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub StateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     StateChanged: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveStateChanged: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
     pub AuthenticationMechanisms: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
     AuthenticationMechanisms: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub CredentialsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub CredentialsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     CredentialsRequested: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveCredentialsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveCredentialsRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveCredentialsRequested: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub CredentialsVerificationRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub CredentialsVerificationRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     CredentialsVerificationRequested: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveCredentialsVerificationRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveCredentialsVerificationRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveCredentialsVerificationRequested: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub AuthenticationComplete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub AuthenticationComplete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     AuthenticationComplete: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveAuthenticationComplete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveAuthenticationComplete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveAuthenticationComplete: usize,
 }
 #[doc(hidden)]
@@ -3894,29 +3894,29 @@ unsafe impl ::windows_core::Interface for IAllJoynBusAttachment2 {
 #[doc(hidden)]
 pub struct IAllJoynBusAttachment2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetAboutDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceinfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetAboutDataAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Globalization", feature = "deprecated"))]
+    #[cfg(all(feature = "Globalization", feature = "deprecated"))]
     pub GetAboutDataWithLanguageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceinfo: ::windows_core::RawPtr, language: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Globalization", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Globalization", feature = "deprecated")))]
     GetAboutDataWithLanguageAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub AcceptSessionJoinerRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub AcceptSessionJoinerRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     AcceptSessionJoinerRequested: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveAcceptSessionJoinerRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveAcceptSessionJoinerRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveAcceptSessionJoinerRequested: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub SessionJoined: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub SessionJoined: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     SessionJoined: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveSessionJoined: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveSessionJoined: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveSessionJoined: usize,
 }
 #[doc(hidden)]
@@ -4018,13 +4018,13 @@ pub struct IAllJoynBusObject_Vtbl {
     pub Session: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Session: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     Stopped: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveStopped: usize,
 }
 #[doc(hidden)]
@@ -4122,13 +4122,13 @@ pub struct IAllJoynCredentials_Vtbl {
     pub SetPasswordCredential: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Security_Credentials", feature = "deprecated")))]
     SetPasswordCredential: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub Timeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub Timeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     Timeout: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub SetTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub SetTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     SetTimeout: usize,
 }
 #[doc(hidden)]
@@ -4161,9 +4161,9 @@ pub struct IAllJoynCredentialsRequestedEventArgs_Vtbl {
     pub RequestedUserName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     RequestedUserName: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetDeferral: usize,
 }
 #[doc(hidden)]
@@ -4193,7 +4193,7 @@ pub struct IAllJoynCredentialsVerificationRequestedEventArgs_Vtbl {
     #[cfg(not(all(feature = "Security_Cryptography_Certificates", feature = "deprecated")))]
     PeerCertificate: usize,
     #[cfg(all(feature = "Networking_Sockets", feature = "deprecated"))]
-    pub PeerCertificateErrorSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Networking::Sockets::SocketSslErrorSeverity) -> ::windows_core::HRESULT,
+    pub PeerCertificateErrorSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_networking::Sockets::SocketSslErrorSeverity) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Networking_Sockets", feature = "deprecated")))]
     PeerCertificateErrorSeverity: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates", feature = "deprecated"))]
@@ -4208,9 +4208,9 @@ pub struct IAllJoynCredentialsVerificationRequestedEventArgs_Vtbl {
     pub Accept: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Accept: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetDeferral: usize,
 }
 #[doc(hidden)]
@@ -4489,9 +4489,9 @@ unsafe impl ::windows_core::Interface for IAllJoynServiceInfoStatics {
 #[doc(hidden)]
 pub struct IAllJoynServiceInfoStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     FromIdAsync: usize,
 }
 #[doc(hidden)]
@@ -4516,33 +4516,33 @@ pub struct IAllJoynSession_Vtbl {
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Status: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub RemoveMemberAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uniquename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     RemoveMemberAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub MemberAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub MemberAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     MemberAdded: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveMemberAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveMemberAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveMemberAdded: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub MemberRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub MemberRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     MemberRemoved: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveMemberRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveMemberRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveMemberRemoved: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub Lost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub Lost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     Lost: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveLost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveLost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveLost: usize,
 }
 #[doc(hidden)]
@@ -4711,13 +4711,13 @@ unsafe impl ::windows_core::Interface for IAllJoynSessionStatics {
 #[doc(hidden)]
 pub struct IAllJoynSessionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetFromServiceInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceinfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetFromServiceInfoAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetFromServiceInfoAndBusAttachmentAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceinfo: ::windows_core::RawPtr, busattachment: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetFromServiceInfoAndBusAttachmentAsync: usize,
 }
 #[doc(hidden)]

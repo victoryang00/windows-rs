@@ -16,10 +16,10 @@ impl AccessoryManager {
         Self::IAccessoryManager(|this| unsafe { (::windows_core::Interface::vtable(this).ProcessTriggerDetails)(::windows_core::Interface::as_raw(this), pdetails.into_param().abi()).ok() })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PhoneLineDetails() -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<PhoneLineDetails>> {
+    pub fn PhoneLineDetails() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<PhoneLineDetails>> {
         Self::IAccessoryManager(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PhoneLineDetails)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<PhoneLineDetails>>(result__)
+            (::windows_core::Interface::vtable(this).PhoneLineDetails)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<PhoneLineDetails>>(result__)
         })
     }
     pub fn GetPhoneLineDetails<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(phoneline: Param0) -> ::windows_core::Result<PhoneLineDetails> {
@@ -88,8 +88,7 @@ impl AccessoryManager {
     pub fn SnoozeAlarm<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(alarmid: Param0) -> ::windows_core::Result<()> {
         Self::IAccessoryManager(|this| unsafe { (::windows_core::Interface::vtable(this).SnoozeAlarm)(::windows_core::Interface::as_raw(this), alarmid.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SnoozeAlarmForSpecifiedTime<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::TimeSpan>>(alarmid: Param0, timespan: Param1) -> ::windows_core::Result<()> {
+    pub fn SnoozeAlarmForSpecifiedTime<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(alarmid: Param0, timespan: Param1) -> ::windows_core::Result<()> {
         Self::IAccessoryManager(|this| unsafe { (::windows_core::Interface::vtable(this).SnoozeAlarmForSpecifiedTime)(::windows_core::Interface::as_raw(this), alarmid.into_param().abi(), timespan.into_param().abi()).ok() })
     }
     pub fn DismissAlarm<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(alarmid: Param0) -> ::windows_core::Result<()> {
@@ -98,8 +97,7 @@ impl AccessoryManager {
     pub fn SnoozeReminder<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(reminderid: Param0) -> ::windows_core::Result<()> {
         Self::IAccessoryManager(|this| unsafe { (::windows_core::Interface::vtable(this).SnoozeReminder)(::windows_core::Interface::as_raw(this), reminderid.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SnoozeReminderForSpecifiedTime<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::TimeSpan>>(reminderid: Param0, timespan: Param1) -> ::windows_core::Result<()> {
+    pub fn SnoozeReminderForSpecifiedTime<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(reminderid: Param0, timespan: Param1) -> ::windows_core::Result<()> {
         Self::IAccessoryManager(|this| unsafe { (::windows_core::Interface::vtable(this).SnoozeReminderForSpecifiedTime)(::windows_core::Interface::as_raw(this), reminderid.into_param().abi(), timespan.into_param().abi()).ok() })
     }
     pub fn DismissReminder<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(reminderid: Param0) -> ::windows_core::Result<()> {
@@ -145,10 +143,10 @@ impl AccessoryManager {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetApps() -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, AppNotificationInfo>> {
+    pub fn GetApps() -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, AppNotificationInfo>> {
         Self::IAccessoryManager(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetApps)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, AppNotificationInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetApps)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, AppNotificationInfo>>(result__)
         })
     }
     pub fn EnableNotificationsForApplication<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appid: Param0) -> ::windows_core::Result<()> {
@@ -182,20 +180,20 @@ impl AccessoryManager {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetAppIcon<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appid: Param0) -> ::windows_core::Result<super::super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn GetAppIcon<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appid: Param0) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         Self::IAccessoryManager(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAppIcon)(::windows_core::Interface::as_raw(this), appid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).GetAppIcon)(::windows_core::Interface::as_raw(this), appid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         })
     }
     pub fn RingDevice() -> ::windows_core::Result<()> {
         Self::IAccessoryManager2(|this| unsafe { (::windows_core::Interface::vtable(this).RingDevice)(::windows_core::Interface::as_raw(this)).ok() })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SpeedDialList() -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<SpeedDialEntry>> {
+    pub fn SpeedDialList() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SpeedDialEntry>> {
         Self::IAccessoryManager2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SpeedDialList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<SpeedDialEntry>>(result__)
+            (::windows_core::Interface::vtable(this).SpeedDialList)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SpeedDialEntry>>(result__)
         })
     }
     pub fn ClearToast<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(instanceid: Param0) -> ::windows_core::Result<()> {
@@ -226,17 +224,17 @@ impl AccessoryManager {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAllEmailAccounts() -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<EmailAccountInfo>> {
+    pub fn GetAllEmailAccounts() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<EmailAccountInfo>> {
         Self::IAccessoryManager2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllEmailAccounts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<EmailAccountInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllEmailAccounts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<EmailAccountInfo>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetFolders<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(emailaccount: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<EmailFolderInfo>> {
+    pub fn GetFolders<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(emailaccount: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<EmailFolderInfo>> {
         Self::IAccessoryManager2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFolders)(::windows_core::Interface::as_raw(this), emailaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<EmailFolderInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetFolders)(::windows_core::Interface::as_raw(this), emailaccount.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<EmailFolderInfo>>(result__)
         })
     }
     pub fn EnableEmailNotificationEmailAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(emailaccount: Param0) -> ::windows_core::Result<()> {
@@ -246,7 +244,7 @@ impl AccessoryManager {
         Self::IAccessoryManager2(|this| unsafe { (::windows_core::Interface::vtable(this).DisableEmailNotificationEmailAccount)(::windows_core::Interface::as_raw(this), emailaccount.into_param().abi()).ok() })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn EnableEmailNotificationFolderFilter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(emailaccount: Param0, folders: Param1) -> ::windows_core::Result<()> {
+    pub fn EnableEmailNotificationFolderFilter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(emailaccount: Param0, folders: Param1) -> ::windows_core::Result<()> {
         Self::IAccessoryManager2(|this| unsafe { (::windows_core::Interface::vtable(this).EnableEmailNotificationFolderFilter)(::windows_core::Interface::as_raw(this), emailaccount.into_param().abi(), folders.into_param().abi()).ok() })
     }
     pub fn UpdateEmailReadStatus<'a, Param0: ::windows_core::IntoParam<'a, BinaryId>>(messageentryid: Param0, isread: bool) -> ::windows_core::Result<()> {
@@ -358,12 +356,11 @@ unsafe impl ::windows_core::RuntimeType for AccessoryNotificationType {
 #[repr(transparent)]
 pub struct AlarmNotificationTriggerDetails(::windows_core::IUnknown);
 impl AlarmNotificationTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IAccessoryNotificationTriggerDetails>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -412,12 +409,11 @@ impl AlarmNotificationTriggerDetails {
             (::windows_core::Interface::vtable(this).Title)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn ReminderState(&self) -> ::windows_core::Result<ReminderState> {
@@ -744,12 +740,11 @@ unsafe impl ::windows_core::RuntimeType for CalendarChangedEvent {
 #[repr(transparent)]
 pub struct CalendarChangedNotificationTriggerDetails(::windows_core::IUnknown);
 impl CalendarChangedNotificationTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IAccessoryNotificationTriggerDetails>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -894,12 +889,11 @@ impl<'a> ::windows_core::IntoParam<'a, IAccessoryNotificationTriggerDetails> for
 #[repr(transparent)]
 pub struct CortanaTileNotificationTriggerDetails(::windows_core::IUnknown);
 impl CortanaTileNotificationTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IAccessoryNotificationTriggerDetails>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1276,12 +1270,11 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ema
 #[repr(transparent)]
 pub struct EmailNotificationTriggerDetails(::windows_core::IUnknown);
 impl EmailNotificationTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IAccessoryNotificationTriggerDetails>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1345,19 +1338,18 @@ impl EmailNotificationTriggerDetails {
         }
     }
     #[cfg(feature = "ApplicationModel_Email")]
-    pub fn EmailMessage(&self) -> ::windows_core::Result<super::super::super::ApplicationModel::Email::EmailMessage> {
+    pub fn EmailMessage(&self) -> ::windows_core::Result<::winrt_applicationmodel::Email::EmailMessage> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EmailMessage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::ApplicationModel::Email::EmailMessage>(result__)
+            (::windows_core::Interface::vtable(this).EmailMessage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Email::EmailMessage>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn MessageEntryId(&self) -> ::windows_core::Result<BinaryId> {
@@ -1463,12 +1455,11 @@ impl<'a> ::windows_core::IntoParam<'a, IAccessoryNotificationTriggerDetails> for
 #[repr(transparent)]
 pub struct EmailReadNotificationTriggerDetails(::windows_core::IUnknown);
 impl EmailReadNotificationTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IAccessoryNotificationTriggerDetails>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1661,16 +1652,10 @@ pub struct IAccessoryManager_Vtbl {
     pub SetPhoneCallAudioEndpoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PhoneCallAudioEndpoint) -> ::windows_core::HRESULT,
     pub PhoneCallAudioEndpoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PhoneCallAudioEndpoint) -> ::windows_core::HRESULT,
     pub SnoozeAlarm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alarmid: ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SnoozeAlarmForSpecifiedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alarmid: ::windows_core::GUID, timespan: super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SnoozeAlarmForSpecifiedTime: usize,
+    pub SnoozeAlarmForSpecifiedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alarmid: ::windows_core::GUID, timespan: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub DismissAlarm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alarmid: ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub SnoozeReminder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reminderid: ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SnoozeReminderForSpecifiedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reminderid: ::windows_core::GUID, timespan: super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SnoozeReminderForSpecifiedTime: usize,
+    pub SnoozeReminderForSpecifiedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reminderid: ::windows_core::GUID, timespan: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub DismissReminder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reminderid: ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetMediaMetadata: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub MediaPlaybackCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PlaybackCapability) -> ::windows_core::HRESULT,
@@ -1753,12 +1738,11 @@ pub struct IAccessoryManager3_Vtbl {
 #[repr(transparent)]
 pub struct IAccessoryNotificationTriggerDetails(::windows_core::IUnknown);
 impl IAccessoryNotificationTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1865,10 +1849,7 @@ unsafe impl ::windows_core::Interface for IAccessoryNotificationTriggerDetails {
 #[doc(hidden)]
 pub struct IAccessoryNotificationTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub TimeCreated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TimeCreated: usize,
+    pub TimeCreated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub AppDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub AppId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub AccessoryNotificationType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AccessoryNotificationType) -> ::windows_core::HRESULT,
@@ -1888,10 +1869,7 @@ pub struct IAlarmNotificationTriggerDetails_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AlarmId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Timestamp: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub ReminderState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ReminderState) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -2018,10 +1996,7 @@ pub struct IEmailNotificationTriggerDetails_Vtbl {
     pub EmailMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "ApplicationModel_Email"))]
     EmailMessage: usize,
-    #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Timestamp: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2082,10 +2057,7 @@ pub struct IMediaMetadata_Vtbl {
     pub Artist: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Album: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Track: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Duration: usize,
+    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
     pub Thumbnail: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
@@ -2109,14 +2081,8 @@ pub struct IPhoneCallDetails_Vtbl {
     pub CallDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PhoneCallDirection) -> ::windows_core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PhoneCallState) -> ::windows_core::HRESULT,
     pub ConferenceCallId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub StartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StartTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub EndTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EndTime: usize,
+    pub StartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub EndTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub PhoneNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ContactName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
@@ -2185,10 +2151,7 @@ pub struct IReminderNotificationTriggerDetails_Vtbl {
     pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Details: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Timestamp: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     #[cfg(feature = "ApplicationModel_Appointments")]
     pub Appointment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "ApplicationModel_Appointments"))]
@@ -2287,12 +2250,11 @@ pub struct IVolumeInfo_Vtbl {
 #[repr(transparent)]
 pub struct MediaControlsTriggerDetails(::windows_core::IUnknown);
 impl MediaControlsTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IAccessoryNotificationTriggerDetails>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2472,20 +2434,19 @@ impl MediaMetadata {
             (::windows_core::Interface::vtable(this).Track)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Thumbnail(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn Thumbnail(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Thumbnail)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).Thumbnail)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
 }
@@ -2645,20 +2606,18 @@ impl PhoneCallDetails {
             (::windows_core::Interface::vtable(this).ConferenceCallId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StartTime(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn StartTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).StartTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).StartTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn EndTime(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn EndTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).EndTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).EndTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn PhoneNumber(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2676,11 +2635,11 @@ impl PhoneCallDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PresetTextResponses(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<TextResponse>> {
+    pub fn PresetTextResponses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<TextResponse>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PresetTextResponses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<TextResponse>>(result__)
+            (::windows_core::Interface::vtable(this).PresetTextResponses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<TextResponse>>(result__)
         }
     }
 }
@@ -3049,12 +3008,11 @@ unsafe impl ::windows_core::RuntimeType for PhoneMediaType {
 #[repr(transparent)]
 pub struct PhoneNotificationTriggerDetails(::windows_core::IUnknown);
 impl PhoneNotificationTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IAccessoryNotificationTriggerDetails>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -3389,12 +3347,11 @@ unsafe impl ::windows_core::RuntimeType for PlaybackStatus {
 #[repr(transparent)]
 pub struct ReminderNotificationTriggerDetails(::windows_core::IUnknown);
 impl ReminderNotificationTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IAccessoryNotificationTriggerDetails>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -3457,20 +3414,19 @@ impl ReminderNotificationTriggerDetails {
             (::windows_core::Interface::vtable(this).Details)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     #[cfg(feature = "ApplicationModel_Appointments")]
-    pub fn Appointment(&self) -> ::windows_core::Result<super::super::super::ApplicationModel::Appointments::Appointment> {
+    pub fn Appointment(&self) -> ::windows_core::Result<::winrt_applicationmodel::Appointments::Appointment> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Appointment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::ApplicationModel::Appointments::Appointment>(result__)
+            (::windows_core::Interface::vtable(this).Appointment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Appointments::Appointment>(result__)
         }
     }
     pub fn ReminderState(&self) -> ::windows_core::Result<ReminderState> {
@@ -3800,12 +3756,11 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Tex
 #[repr(transparent)]
 pub struct ToastNotificationTriggerDetails(::windows_core::IUnknown);
 impl ToastNotificationTriggerDetails {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeCreated(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn TimeCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = &::windows_core::Interface::cast::<IAccessoryNotificationTriggerDetails>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn AppDisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {

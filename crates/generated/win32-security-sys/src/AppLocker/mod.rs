@@ -1,74 +1,58 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferCloseLevel(hlevelhandle: super::SAFER_LEVEL_HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferComputeTokenFromLevel(levelhandle: super::SAFER_LEVEL_HANDLE, inaccesstoken: super::super::Foundation::HANDLE, outaccesstoken: *mut super::super::Foundation::HANDLE, dwflags: SAFER_COMPUTE_TOKEN_FROM_LEVEL_FLAGS, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferCreateLevel(dwscopeid: u32, dwlevelid: u32, openflags: u32, plevelhandle: *mut super::SAFER_LEVEL_HANDLE, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferGetLevelInformation(levelhandle: super::SAFER_LEVEL_HANDLE, dwinfotype: SAFER_OBJECT_INFO_CLASS, lpquerybuffer: *mut ::core::ffi::c_void, dwinbuffersize: u32, lpdwoutbuffersize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferGetPolicyInformation(dwscopeid: u32, saferpolicyinfoclass: SAFER_POLICY_INFO_CLASS, infobuffersize: u32, infobuffer: *mut ::core::ffi::c_void, infobufferretsize: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferIdentifyLevel(dwnumproperties: u32, pcodeproperties: *const SAFER_CODE_PROPERTIES_V2, plevelhandle: *mut super::SAFER_LEVEL_HANDLE, lpreserved: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferRecordEventLogEntry(hlevel: super::SAFER_LEVEL_HANDLE, sztargetpath: ::windows_core_sys::PCWSTR, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferSetLevelInformation(levelhandle: super::SAFER_LEVEL_HANDLE, dwinfotype: SAFER_OBJECT_INFO_CLASS, lpquerybuffer: *const ::core::ffi::c_void, dwinbuffersize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferSetPolicyInformation(dwscopeid: u32, saferpolicyinfoclass: SAFER_POLICY_INFO_CLASS, infobuffersize: u32, infobuffer: *const ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaferiIsExecutableFileType(szfullpathname: ::windows_core_sys::PCWSTR, bfromshellexecute: super::super::Foundation::BOOLEAN) -> super::super::Foundation::BOOL;
+    pub fn SaferCloseLevel(hlevelhandle: super::SAFER_LEVEL_HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn SaferComputeTokenFromLevel(levelhandle: super::SAFER_LEVEL_HANDLE, inaccesstoken: ::win32_foundation_sys::HANDLE, outaccesstoken: *mut ::win32_foundation_sys::HANDLE, dwflags: SAFER_COMPUTE_TOKEN_FROM_LEVEL_FLAGS, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SaferCreateLevel(dwscopeid: u32, dwlevelid: u32, openflags: u32, plevelhandle: *mut super::SAFER_LEVEL_HANDLE, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SaferGetLevelInformation(levelhandle: super::SAFER_LEVEL_HANDLE, dwinfotype: SAFER_OBJECT_INFO_CLASS, lpquerybuffer: *mut ::core::ffi::c_void, dwinbuffersize: u32, lpdwoutbuffersize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SaferGetPolicyInformation(dwscopeid: u32, saferpolicyinfoclass: SAFER_POLICY_INFO_CLASS, infobuffersize: u32, infobuffer: *mut ::core::ffi::c_void, infobufferretsize: *mut u32, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SaferIdentifyLevel(dwnumproperties: u32, pcodeproperties: *const SAFER_CODE_PROPERTIES_V2, plevelhandle: *mut super::SAFER_LEVEL_HANDLE, lpreserved: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SaferRecordEventLogEntry(hlevel: super::SAFER_LEVEL_HANDLE, sztargetpath: ::windows_core_sys::PCWSTR, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SaferSetLevelInformation(levelhandle: super::SAFER_LEVEL_HANDLE, dwinfotype: SAFER_OBJECT_INFO_CLASS, lpquerybuffer: *const ::core::ffi::c_void, dwinbuffersize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SaferSetPolicyInformation(dwscopeid: u32, saferpolicyinfoclass: SAFER_POLICY_INFO_CLASS, infobuffersize: u32, infobuffer: *const ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SaferiIsExecutableFileType(szfullpathname: ::windows_core_sys::PCWSTR, bfromshellexecute: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::BOOL;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAFER_CODE_PROPERTIES_V1 {
     pub cbSize: u32,
     pub dwCheckFlags: u32,
     pub ImagePath: ::windows_core_sys::PCWSTR,
-    pub hImageFileHandle: super::super::Foundation::HANDLE,
+    pub hImageFileHandle: ::win32_foundation_sys::HANDLE,
     pub UrlZoneId: u32,
     pub ImageHash: [u8; 64],
     pub dwImageHashSize: u32,
     pub ImageSize: i64,
     pub HashAlgorithm: u32,
     pub pByteBlock: *mut u8,
-    pub hWndParent: super::super::Foundation::HWND,
+    pub hWndParent: ::win32_foundation_sys::HWND,
     pub dwWVTUIChoice: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAFER_CODE_PROPERTIES_V1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAFER_CODE_PROPERTIES_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAFER_CODE_PROPERTIES_V2 {
     pub cbSize: u32,
     pub dwCheckFlags: u32,
     pub ImagePath: ::windows_core_sys::PCWSTR,
-    pub hImageFileHandle: super::super::Foundation::HANDLE,
+    pub hImageFileHandle: ::win32_foundation_sys::HANDLE,
     pub UrlZoneId: u32,
     pub ImageHash: [u8; 64],
     pub dwImageHashSize: u32,
     pub ImageSize: i64,
     pub HashAlgorithm: u32,
     pub pByteBlock: *mut u8,
-    pub hWndParent: super::super::Foundation::HWND,
+    pub hWndParent: ::win32_foundation_sys::HWND,
     pub dwWVTUIChoice: u32,
     pub PackageMoniker: ::windows_core_sys::PCWSTR,
     pub PackagePublisher: ::windows_core_sys::PCWSTR,
     pub PackageName: ::windows_core_sys::PCWSTR,
     pub PackageVersion: u64,
-    pub PackageIsFramework: super::super::Foundation::BOOL,
+    pub PackageIsFramework: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAFER_CODE_PROPERTIES_V2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAFER_CODE_PROPERTIES_V2 {
     fn clone(&self) -> Self {
         *self
@@ -87,7 +71,6 @@ pub const SAFER_CRITERIA_IMAGEPATH_NT: u32 = 4096u32;
 pub const SAFER_CRITERIA_NOSIGNEDHASH: u32 = 2u32;
 pub const SAFER_CRITERIA_URLZONE: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAFER_HASH_IDENTIFICATION {
     pub header: SAFER_IDENTIFICATION_HEADER,
     pub Description: [u16; 256],
@@ -98,41 +81,33 @@ pub struct SAFER_HASH_IDENTIFICATION {
     pub ImageSize: i64,
     pub dwSaferFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAFER_HASH_IDENTIFICATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAFER_HASH_IDENTIFICATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAFER_HASH_IDENTIFICATION2 {
     pub hashIdentification: SAFER_HASH_IDENTIFICATION,
     pub HashSize: u32,
     pub ImageHash: [u8; 64],
     pub HashAlgorithm: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAFER_HASH_IDENTIFICATION2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAFER_HASH_IDENTIFICATION2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAFER_IDENTIFICATION_HEADER {
     pub dwIdentificationType: SAFER_IDENTIFICATION_TYPES,
     pub cbStructSize: u32,
     pub IdentificationGuid: ::windows_core_sys::GUID,
-    pub lastModified: super::super::Foundation::FILETIME,
+    pub lastModified: ::win32_foundation_sys::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAFER_IDENTIFICATION_HEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAFER_IDENTIFICATION_HEADER {
     fn clone(&self) -> Self {
         *self
@@ -171,16 +146,13 @@ pub const SaferObjectAllIdentificationGuids: SAFER_OBJECT_INFO_CLASS = 14i32;
 pub const SaferObjectSingleIdentification: SAFER_OBJECT_INFO_CLASS = 15i32;
 pub const SaferObjectExtendedError: SAFER_OBJECT_INFO_CLASS = 16i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAFER_PATHNAME_IDENTIFICATION {
     pub header: SAFER_IDENTIFICATION_HEADER,
     pub Description: [u16; 256],
     pub ImageName: ::windows_core_sys::PWSTR,
     pub dwSaferFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAFER_PATHNAME_IDENTIFICATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAFER_PATHNAME_IDENTIFICATION {
     fn clone(&self) -> Self {
         *self
@@ -209,15 +181,12 @@ pub const SAFER_POLICY_UIFLAGS_OPTION_PROMPT: u32 = 2u32;
 pub const SAFER_SCOPEID_MACHINE: u32 = 1u32;
 pub const SAFER_SCOPEID_USER: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SAFER_URLZONE_IDENTIFICATION {
     pub header: SAFER_IDENTIFICATION_HEADER,
     pub UrlZoneId: u32,
     pub dwSaferFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SAFER_URLZONE_IDENTIFICATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SAFER_URLZONE_IDENTIFICATION {
     fn clone(&self) -> Self {
         *self

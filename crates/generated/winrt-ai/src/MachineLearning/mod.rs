@@ -12,11 +12,11 @@ unsafe impl ::windows_core::Interface for IImageFeatureDescriptor {
 pub struct IImageFeatureDescriptor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Graphics_Imaging")]
-    pub BitmapPixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Graphics::Imaging::BitmapPixelFormat) -> ::windows_core::HRESULT,
+    pub BitmapPixelFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Imaging::BitmapPixelFormat) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Imaging"))]
     BitmapPixelFormat: usize,
     #[cfg(feature = "Graphics_Imaging")]
-    pub BitmapAlphaMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Graphics::Imaging::BitmapAlphaMode) -> ::windows_core::HRESULT,
+    pub BitmapAlphaMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Imaging::BitmapAlphaMode) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Imaging"))]
     BitmapAlphaMode: usize,
     pub Width: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
@@ -139,7 +139,7 @@ unsafe impl ::windows_core::Interface for ILearningModelDevice {
 pub struct ILearningModelDevice_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Graphics")]
-    pub AdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Graphics::DisplayAdapterId) -> ::windows_core::HRESULT,
+    pub AdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DisplayAdapterId) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics"))]
     AdapterId: usize,
     #[cfg(feature = "Graphics_DirectX_Direct3D11")]
@@ -479,10 +479,7 @@ pub struct ILearningModelSession_Vtbl {
     pub EvaluationProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     EvaluationProperties: usize,
-    #[cfg(feature = "Foundation")]
     pub EvaluateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bindings: ::windows_core::RawPtr, correlationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EvaluateAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub EvaluateFeaturesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, features: ::windows_core::RawPtr, correlationid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -572,26 +569,26 @@ unsafe impl ::windows_core::Interface for ILearningModelStatics {
 #[doc(hidden)]
 pub struct ILearningModelStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub LoadFromStorageFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, modelfile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     LoadFromStorageFileAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub LoadFromStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, modelstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     LoadFromStreamAsync: usize,
     pub LoadFromFilePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
     pub LoadFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, modelstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     LoadFromStream: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub LoadFromStorageFileWithOperatorProviderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, modelfile: ::windows_core::RawPtr, operatorprovider: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     LoadFromStorageFileWithOperatorProviderAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub LoadFromStreamWithOperatorProviderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, modelstream: ::windows_core::RawPtr, operatorprovider: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     LoadFromStreamWithOperatorProviderAsync: usize,
     pub LoadFromFilePathWithOperatorProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, operatorprovider: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
@@ -637,11 +634,11 @@ impl ITensor {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -1522,19 +1519,19 @@ pub struct ITensorUInt8BitStatics2_Vtbl {
 pub struct ImageFeatureDescriptor(::windows_core::IUnknown);
 impl ImageFeatureDescriptor {
     #[cfg(feature = "Graphics_Imaging")]
-    pub fn BitmapPixelFormat(&self) -> ::windows_core::Result<super::super::Graphics::Imaging::BitmapPixelFormat> {
+    pub fn BitmapPixelFormat(&self) -> ::windows_core::Result<::winrt_graphics::Imaging::BitmapPixelFormat> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Graphics::Imaging::BitmapPixelFormat>::zeroed();
-            (::windows_core::Interface::vtable(this).BitmapPixelFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Graphics::Imaging::BitmapPixelFormat>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::Imaging::BitmapPixelFormat>::zeroed();
+            (::windows_core::Interface::vtable(this).BitmapPixelFormat)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Imaging::BitmapPixelFormat>(result__)
         }
     }
     #[cfg(feature = "Graphics_Imaging")]
-    pub fn BitmapAlphaMode(&self) -> ::windows_core::Result<super::super::Graphics::Imaging::BitmapAlphaMode> {
+    pub fn BitmapAlphaMode(&self) -> ::windows_core::Result<::winrt_graphics::Imaging::BitmapAlphaMode> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Graphics::Imaging::BitmapAlphaMode>::zeroed();
-            (::windows_core::Interface::vtable(this).BitmapAlphaMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Graphics::Imaging::BitmapAlphaMode>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::Imaging::BitmapAlphaMode>::zeroed();
+            (::windows_core::Interface::vtable(this).BitmapAlphaMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Imaging::BitmapAlphaMode>(result__)
         }
     }
     pub fn Width(&self) -> ::windows_core::Result<u32> {
@@ -1685,15 +1682,15 @@ unsafe impl ::core::marker::Sync for ImageFeatureDescriptor {}
 pub struct ImageFeatureValue(::windows_core::IUnknown);
 impl ImageFeatureValue {
     #[cfg(feature = "Media")]
-    pub fn VideoFrame(&self) -> ::windows_core::Result<super::super::Media::VideoFrame> {
+    pub fn VideoFrame(&self) -> ::windows_core::Result<::winrt_media::VideoFrame> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).VideoFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::VideoFrame>(result__)
+            (::windows_core::Interface::vtable(this).VideoFrame)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_media::VideoFrame>(result__)
         }
     }
     #[cfg(feature = "Media")]
-    pub fn CreateFromVideoFrame<'a, Param0: ::windows_core::IntoParam<'a, super::super::Media::VideoFrame>>(image: Param0) -> ::windows_core::Result<ImageFeatureValue> {
+    pub fn CreateFromVideoFrame<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_media::VideoFrame>>(image: Param0) -> ::windows_core::Result<ImageFeatureValue> {
         Self::IImageFeatureValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromVideoFrame)(::windows_core::Interface::as_raw(this), image.into_param().abi(), result__.as_mut_ptr()).from_abi::<ImageFeatureValue>(result__)
@@ -1808,9 +1805,8 @@ unsafe impl ::core::marker::Sync for ImageFeatureValue {}
 #[repr(transparent)]
 pub struct LearningModel(::windows_core::IUnknown);
 impl LearningModel {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Author(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1849,41 +1845,41 @@ impl LearningModel {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Metadata(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+    pub fn Metadata(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Metadata)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Metadata)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn InputFeatures(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<ILearningModelFeatureDescriptor>> {
+    pub fn InputFeatures(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ILearningModelFeatureDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InputFeatures)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<ILearningModelFeatureDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).InputFeatures)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ILearningModelFeatureDescriptor>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OutputFeatures(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<ILearningModelFeatureDescriptor>> {
+    pub fn OutputFeatures(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ILearningModelFeatureDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OutputFeatures)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<ILearningModelFeatureDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).OutputFeatures)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ILearningModelFeatureDescriptor>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn LoadFromStorageFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(modelfile: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<LearningModel>> {
+    #[cfg(feature = "Storage")]
+    pub fn LoadFromStorageFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(modelfile: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LearningModel>> {
         Self::ILearningModelStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadFromStorageFileAsync)(::windows_core::Interface::as_raw(this), modelfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<LearningModel>>(result__)
+            (::windows_core::Interface::vtable(this).LoadFromStorageFileAsync)(::windows_core::Interface::as_raw(this), modelfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LearningModel>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn LoadFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamReference>>(modelstream: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<LearningModel>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn LoadFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(modelstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LearningModel>> {
         Self::ILearningModelStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadFromStreamAsync)(::windows_core::Interface::as_raw(this), modelstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<LearningModel>>(result__)
+            (::windows_core::Interface::vtable(this).LoadFromStreamAsync)(::windows_core::Interface::as_raw(this), modelstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LearningModel>>(result__)
         })
     }
     pub fn LoadFromFilePath<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filepath: Param0) -> ::windows_core::Result<LearningModel> {
@@ -1893,24 +1889,24 @@ impl LearningModel {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn LoadFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamReference>>(modelstream: Param0) -> ::windows_core::Result<LearningModel> {
+    pub fn LoadFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(modelstream: Param0) -> ::windows_core::Result<LearningModel> {
         Self::ILearningModelStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).LoadFromStream)(::windows_core::Interface::as_raw(this), modelstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<LearningModel>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn LoadFromStorageFileWithOperatorProviderAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ILearningModelOperatorProvider>>(modelfile: Param0, operatorprovider: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<LearningModel>> {
+    #[cfg(feature = "Storage")]
+    pub fn LoadFromStorageFileWithOperatorProviderAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, ILearningModelOperatorProvider>>(modelfile: Param0, operatorprovider: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LearningModel>> {
         Self::ILearningModelStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadFromStorageFileWithOperatorProviderAsync)(::windows_core::Interface::as_raw(this), modelfile.into_param().abi(), operatorprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<LearningModel>>(result__)
+            (::windows_core::Interface::vtable(this).LoadFromStorageFileWithOperatorProviderAsync)(::windows_core::Interface::as_raw(this), modelfile.into_param().abi(), operatorprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LearningModel>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn LoadFromStreamWithOperatorProviderAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamReference>, Param1: ::windows_core::IntoParam<'a, ILearningModelOperatorProvider>>(modelstream: Param0, operatorprovider: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<LearningModel>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn LoadFromStreamWithOperatorProviderAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>, Param1: ::windows_core::IntoParam<'a, ILearningModelOperatorProvider>>(modelstream: Param0, operatorprovider: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LearningModel>> {
         Self::ILearningModelStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadFromStreamWithOperatorProviderAsync)(::windows_core::Interface::as_raw(this), modelstream.into_param().abi(), operatorprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<LearningModel>>(result__)
+            (::windows_core::Interface::vtable(this).LoadFromStreamWithOperatorProviderAsync)(::windows_core::Interface::as_raw(this), modelstream.into_param().abi(), operatorprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LearningModel>>(result__)
         })
     }
     pub fn LoadFromFilePathWithOperatorProvider<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ILearningModelOperatorProvider>>(filepath: Param0, operatorprovider: Param1) -> ::windows_core::Result<LearningModel> {
@@ -1920,7 +1916,7 @@ impl LearningModel {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn LoadFromStreamWithOperatorProvider<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamReference>, Param1: ::windows_core::IntoParam<'a, ILearningModelOperatorProvider>>(modelstream: Param0, operatorprovider: Param1) -> ::windows_core::Result<LearningModel> {
+    pub fn LoadFromStreamWithOperatorProvider<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>, Param1: ::windows_core::IntoParam<'a, ILearningModelOperatorProvider>>(modelstream: Param0, operatorprovider: Param1) -> ::windows_core::Result<LearningModel> {
         Self::ILearningModelStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).LoadFromStreamWithOperatorProvider)(::windows_core::Interface::as_raw(this), modelstream.into_param().abi(), operatorprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<LearningModel>(result__)
@@ -2001,30 +1997,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lea
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<LearningModel> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<LearningModel> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: LearningModel) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&LearningModel> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&LearningModel> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &LearningModel) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for LearningModel {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for LearningModel {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &LearningModel {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &LearningModel {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for LearningModel {}
@@ -2033,11 +2025,11 @@ unsafe impl ::core::marker::Sync for LearningModel {}
 pub struct LearningModelBinding(::windows_core::IUnknown);
 impl LearningModelBinding {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>(result__)
         }
     }
     pub fn Bind<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(&self, name: Param0, value: Param1) -> ::windows_core::Result<()> {
@@ -2045,7 +2037,7 @@ impl LearningModelBinding {
         unsafe { (::windows_core::Interface::vtable(this).Bind)(::windows_core::Interface::as_raw(this), name.into_param().abi(), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BindWithProperties<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IPropertySet>>(&self, name: Param0, value: Param1, props: Param2) -> ::windows_core::Result<()> {
+    pub fn BindWithProperties<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>>(&self, name: Param0, value: Param1, props: Param2) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).BindWithProperties)(::windows_core::Interface::as_raw(this), name.into_param().abi(), value.into_param().abi(), props.into_param().abi()).ok() }
     }
@@ -2061,7 +2053,7 @@ impl LearningModelBinding {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Lookup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
             (::windows_core::Interface::vtable(this).Lookup)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
@@ -2069,7 +2061,7 @@ impl LearningModelBinding {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
@@ -2077,15 +2069,15 @@ impl LearningModelBinding {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn HasKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).HasKey)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Split(&self, first: &mut ::core::option::Option<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>, second: &mut ::core::option::Option<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
+    pub fn Split(&self, first: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>, second: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Split)(::windows_core::Interface::as_raw(this), first as *mut _ as _, second as *mut _ as _).ok() }
     }
     pub fn ILearningModelBindingFactory<R, F: FnOnce(&ILearningModelBindingFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -2125,16 +2117,16 @@ impl ::windows_core::RuntimeName for LearningModelBinding {
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for LearningModelBinding {
-    type Item = super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &LearningModelBinding {
-    type Item = super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -2180,55 +2172,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lea
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<LearningModelBinding> for super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+impl ::core::convert::TryFrom<LearningModelBinding> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>> {
     type Error = ::windows_core::Error;
     fn try_from(value: LearningModelBinding) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&LearningModelBinding> for super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+impl ::core::convert::TryFrom<&LearningModelBinding> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &LearningModelBinding) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> for LearningModelBinding {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> for LearningModelBinding {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> for &LearningModelBinding {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> for &LearningModelBinding {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::IInspectable>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<LearningModelBinding> for super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable> {
+impl ::core::convert::TryFrom<LearningModelBinding> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: LearningModelBinding) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&LearningModelBinding> for super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable> {
+impl ::core::convert::TryFrom<&LearningModelBinding> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: &LearningModelBinding) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> for LearningModelBinding {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> for LearningModelBinding {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> for &LearningModelBinding {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> for &LearningModelBinding {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for LearningModelBinding {}
@@ -2237,19 +2229,19 @@ unsafe impl ::core::marker::Sync for LearningModelBinding {}
 pub struct LearningModelDevice(::windows_core::IUnknown);
 impl LearningModelDevice {
     #[cfg(feature = "Graphics")]
-    pub fn AdapterId(&self) -> ::windows_core::Result<super::super::Graphics::DisplayAdapterId> {
+    pub fn AdapterId(&self) -> ::windows_core::Result<::winrt_graphics::DisplayAdapterId> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Graphics::DisplayAdapterId>::zeroed();
-            (::windows_core::Interface::vtable(this).AdapterId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Graphics::DisplayAdapterId>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::DisplayAdapterId>::zeroed();
+            (::windows_core::Interface::vtable(this).AdapterId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DisplayAdapterId>(result__)
         }
     }
     #[cfg(feature = "Graphics_DirectX_Direct3D11")]
-    pub fn Direct3D11Device(&self) -> ::windows_core::Result<super::super::Graphics::DirectX::Direct3D11::IDirect3DDevice> {
+    pub fn Direct3D11Device(&self) -> ::windows_core::Result<::winrt_graphics::DirectX::Direct3D11::IDirect3DDevice> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Direct3D11Device)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Graphics::DirectX::Direct3D11::IDirect3DDevice>(result__)
+            (::windows_core::Interface::vtable(this).Direct3D11Device)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DirectX::Direct3D11::IDirect3DDevice>(result__)
         }
     }
     pub fn Create(devicekind: LearningModelDeviceKind) -> ::windows_core::Result<LearningModelDevice> {
@@ -2259,7 +2251,7 @@ impl LearningModelDevice {
         })
     }
     #[cfg(feature = "Graphics_DirectX_Direct3D11")]
-    pub fn CreateFromDirect3D11Device<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::DirectX::Direct3D11::IDirect3DDevice>>(device: Param0) -> ::windows_core::Result<LearningModelDevice> {
+    pub fn CreateFromDirect3D11Device<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::DirectX::Direct3D11::IDirect3DDevice>>(device: Param0) -> ::windows_core::Result<LearningModelDevice> {
         Self::ILearningModelDeviceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromDirect3D11Device)(::windows_core::Interface::as_raw(this), device.into_param().abi(), result__.as_mut_ptr()).from_abi::<LearningModelDevice>(result__)
@@ -2407,11 +2399,11 @@ impl LearningModelEvaluationResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Outputs(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn Outputs(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Outputs)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Outputs)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         }
     }
 }
@@ -2559,9 +2551,8 @@ unsafe impl ::windows_core::RuntimeType for LearningModelPixelRange {
 #[repr(transparent)]
 pub struct LearningModelSession(::windows_core::IUnknown);
 impl LearningModelSession {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Model(&self) -> ::windows_core::Result<LearningModel> {
@@ -2579,27 +2570,26 @@ impl LearningModelSession {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn EvaluationProperties(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IPropertySet> {
+    pub fn EvaluationProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EvaluationProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IPropertySet>(result__)
+            (::windows_core::Interface::vtable(this).EvaluationProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IPropertySet>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn EvaluateAsync<'a, Param0: ::windows_core::IntoParam<'a, LearningModelBinding>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, bindings: Param0, correlationid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<LearningModelEvaluationResult>> {
+    pub fn EvaluateAsync<'a, Param0: ::windows_core::IntoParam<'a, LearningModelBinding>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, bindings: Param0, correlationid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LearningModelEvaluationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EvaluateAsync)(::windows_core::Interface::as_raw(this), bindings.into_param().abi(), correlationid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<LearningModelEvaluationResult>>(result__)
+            (::windows_core::Interface::vtable(this).EvaluateAsync)(::windows_core::Interface::as_raw(this), bindings.into_param().abi(), correlationid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LearningModelEvaluationResult>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn EvaluateFeaturesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, features: Param0, correlationid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<LearningModelEvaluationResult>> {
+    pub fn EvaluateFeaturesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, features: Param0, correlationid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LearningModelEvaluationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EvaluateFeaturesAsync)(::windows_core::Interface::as_raw(this), features.into_param().abi(), correlationid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<LearningModelEvaluationResult>>(result__)
+            (::windows_core::Interface::vtable(this).EvaluateFeaturesAsync)(::windows_core::Interface::as_raw(this), features.into_param().abi(), correlationid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LearningModelEvaluationResult>>(result__)
         }
     }
     pub fn Evaluate<'a, Param0: ::windows_core::IntoParam<'a, LearningModelBinding>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, bindings: Param0, correlationid: Param1) -> ::windows_core::Result<LearningModelEvaluationResult> {
@@ -2610,7 +2600,7 @@ impl LearningModelSession {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn EvaluateFeatures<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, features: Param0, correlationid: Param1) -> ::windows_core::Result<LearningModelEvaluationResult> {
+    pub fn EvaluateFeatures<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, features: Param0, correlationid: Param1) -> ::windows_core::Result<LearningModelEvaluationResult> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2714,30 +2704,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Lea
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<LearningModelSession> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<LearningModelSession> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: LearningModelSession) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&LearningModelSession> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&LearningModelSession> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &LearningModelSession) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for LearningModelSession {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for LearningModelSession {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &LearningModelSession {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &LearningModelSession {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for LearningModelSession {}
@@ -3127,9 +3113,8 @@ unsafe impl ::core::marker::Sync for SequenceFeatureDescriptor {}
 #[repr(transparent)]
 pub struct TensorBoolean(::windows_core::IUnknown);
 impl TensorBoolean {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -3139,12 +3124,11 @@ impl TensorBoolean {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -3155,19 +3139,19 @@ impl TensorBoolean {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<bool>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<bool>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<bool>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorBoolean> {
@@ -3177,21 +3161,21 @@ impl TensorBoolean {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorBoolean> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorBoolean> {
         Self::ITensorBooleanStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorBoolean>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[bool]) -> ::windows_core::Result<TensorBoolean> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[bool]) -> ::windows_core::Result<TensorBoolean> {
         Self::ITensorBooleanStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorBoolean>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<bool>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorBoolean> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<bool>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorBoolean> {
         Self::ITensorBooleanStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorBoolean>(result__)
@@ -3204,7 +3188,7 @@ impl TensorBoolean {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorBoolean> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorBoolean> {
         Self::ITensorBooleanStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorBoolean>(result__)
@@ -3289,30 +3273,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorBoolean> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorBoolean> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorBoolean) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorBoolean> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorBoolean> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorBoolean) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorBoolean {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorBoolean {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorBoolean {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorBoolean {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorBoolean> for ILearningModelFeatureValue {
@@ -3337,30 +3317,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorBo
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorBoolean> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorBoolean> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorBoolean) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorBoolean> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorBoolean> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorBoolean) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorBoolean {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorBoolean {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorBoolean {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorBoolean {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorBoolean> for ITensor {
@@ -3390,9 +3366,8 @@ unsafe impl ::core::marker::Sync for TensorBoolean {}
 #[repr(transparent)]
 pub struct TensorDouble(::windows_core::IUnknown);
 impl TensorDouble {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -3402,12 +3377,11 @@ impl TensorDouble {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -3418,19 +3392,19 @@ impl TensorDouble {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<f64>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<f64>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<f64>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorDouble> {
@@ -3440,21 +3414,21 @@ impl TensorDouble {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorDouble> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorDouble> {
         Self::ITensorDoubleStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorDouble>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[f64]) -> ::windows_core::Result<TensorDouble> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[f64]) -> ::windows_core::Result<TensorDouble> {
         Self::ITensorDoubleStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorDouble>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<f64>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorDouble> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<f64>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorDouble> {
         Self::ITensorDoubleStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorDouble>(result__)
@@ -3467,7 +3441,7 @@ impl TensorDouble {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorDouble> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorDouble> {
         Self::ITensorDoubleStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorDouble>(result__)
@@ -3552,30 +3526,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorDouble> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorDouble> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorDouble) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorDouble> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorDouble> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorDouble) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorDouble {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorDouble {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorDouble {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorDouble {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorDouble> for ILearningModelFeatureValue {
@@ -3600,30 +3570,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorDo
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorDouble> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorDouble> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorDouble) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorDouble> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorDouble> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorDouble) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorDouble {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorDouble {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorDouble {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorDouble {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorDouble> for ITensor {
@@ -3689,11 +3655,11 @@ impl TensorFeatureDescriptor {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
 }
@@ -3794,9 +3760,8 @@ unsafe impl ::core::marker::Sync for TensorFeatureDescriptor {}
 #[repr(transparent)]
 pub struct TensorFloat(::windows_core::IUnknown);
 impl TensorFloat {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -3806,12 +3771,11 @@ impl TensorFloat {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -3822,19 +3786,19 @@ impl TensorFloat {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<f32>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<f32>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<f32>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorFloat> {
@@ -3844,21 +3808,21 @@ impl TensorFloat {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorFloat> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorFloat> {
         Self::ITensorFloatStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorFloat>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[f32]) -> ::windows_core::Result<TensorFloat> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[f32]) -> ::windows_core::Result<TensorFloat> {
         Self::ITensorFloatStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorFloat>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<f32>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorFloat> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<f32>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorFloat> {
         Self::ITensorFloatStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorFloat>(result__)
@@ -3871,7 +3835,7 @@ impl TensorFloat {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorFloat> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorFloat> {
         Self::ITensorFloatStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorFloat>(result__)
@@ -3956,30 +3920,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorFloat> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorFloat> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorFloat) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorFloat> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorFloat> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorFloat) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorFloat {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorFloat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorFloat {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorFloat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorFloat> for ILearningModelFeatureValue {
@@ -4004,30 +3964,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorFl
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorFloat> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorFloat> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorFloat) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorFloat> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorFloat> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorFloat) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorFloat {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorFloat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorFloat {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorFloat {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorFloat> for ITensor {
@@ -4057,9 +4013,8 @@ unsafe impl ::core::marker::Sync for TensorFloat {}
 #[repr(transparent)]
 pub struct TensorFloat16Bit(::windows_core::IUnknown);
 impl TensorFloat16Bit {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -4069,12 +4024,11 @@ impl TensorFloat16Bit {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -4085,19 +4039,19 @@ impl TensorFloat16Bit {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<f32>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<f32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<f32>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<f32>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorFloat16Bit> {
@@ -4107,21 +4061,21 @@ impl TensorFloat16Bit {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorFloat16Bit> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorFloat16Bit> {
         Self::ITensorFloat16BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorFloat16Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[f32]) -> ::windows_core::Result<TensorFloat16Bit> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[f32]) -> ::windows_core::Result<TensorFloat16Bit> {
         Self::ITensorFloat16BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorFloat16Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<f32>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorFloat16Bit> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<f32>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorFloat16Bit> {
         Self::ITensorFloat16BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorFloat16Bit>(result__)
@@ -4134,7 +4088,7 @@ impl TensorFloat16Bit {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorFloat16Bit> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorFloat16Bit> {
         Self::ITensorFloat16BitStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorFloat16Bit>(result__)
@@ -4219,30 +4173,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorFloat16Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorFloat16Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorFloat16Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorFloat16Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorFloat16Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorFloat16Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorFloat16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorFloat16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorFloat16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorFloat16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorFloat16Bit> for ILearningModelFeatureValue {
@@ -4267,30 +4217,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorFl
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorFloat16Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorFloat16Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorFloat16Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorFloat16Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorFloat16Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorFloat16Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorFloat16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorFloat16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorFloat16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorFloat16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorFloat16Bit> for ITensor {
@@ -4320,9 +4266,8 @@ unsafe impl ::core::marker::Sync for TensorFloat16Bit {}
 #[repr(transparent)]
 pub struct TensorInt16Bit(::windows_core::IUnknown);
 impl TensorInt16Bit {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -4332,12 +4277,11 @@ impl TensorInt16Bit {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -4348,19 +4292,19 @@ impl TensorInt16Bit {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i16>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i16>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i16>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i16>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorInt16Bit> {
@@ -4370,21 +4314,21 @@ impl TensorInt16Bit {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorInt16Bit> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorInt16Bit> {
         Self::ITensorInt16BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt16Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[i16]) -> ::windows_core::Result<TensorInt16Bit> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[i16]) -> ::windows_core::Result<TensorInt16Bit> {
         Self::ITensorInt16BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorInt16Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i16>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorInt16Bit> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i16>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorInt16Bit> {
         Self::ITensorInt16BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt16Bit>(result__)
@@ -4397,7 +4341,7 @@ impl TensorInt16Bit {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorInt16Bit> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorInt16Bit> {
         Self::ITensorInt16BitStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt16Bit>(result__)
@@ -4482,30 +4426,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorInt16Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorInt16Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorInt16Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorInt16Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorInt16Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorInt16Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorInt16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorInt16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorInt16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorInt16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorInt16Bit> for ILearningModelFeatureValue {
@@ -4530,30 +4470,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorIn
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorInt16Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorInt16Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorInt16Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorInt16Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorInt16Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorInt16Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorInt16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorInt16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorInt16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorInt16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorInt16Bit> for ITensor {
@@ -4583,9 +4519,8 @@ unsafe impl ::core::marker::Sync for TensorInt16Bit {}
 #[repr(transparent)]
 pub struct TensorInt32Bit(::windows_core::IUnknown);
 impl TensorInt32Bit {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -4595,12 +4530,11 @@ impl TensorInt32Bit {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -4611,19 +4545,19 @@ impl TensorInt32Bit {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i32>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i32>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i32>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorInt32Bit> {
@@ -4633,21 +4567,21 @@ impl TensorInt32Bit {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorInt32Bit> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorInt32Bit> {
         Self::ITensorInt32BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt32Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[i32]) -> ::windows_core::Result<TensorInt32Bit> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[i32]) -> ::windows_core::Result<TensorInt32Bit> {
         Self::ITensorInt32BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorInt32Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i32>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorInt32Bit> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i32>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorInt32Bit> {
         Self::ITensorInt32BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt32Bit>(result__)
@@ -4660,7 +4594,7 @@ impl TensorInt32Bit {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorInt32Bit> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorInt32Bit> {
         Self::ITensorInt32BitStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt32Bit>(result__)
@@ -4745,30 +4679,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorInt32Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorInt32Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorInt32Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorInt32Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorInt32Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorInt32Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorInt32Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorInt32Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorInt32Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorInt32Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorInt32Bit> for ILearningModelFeatureValue {
@@ -4793,30 +4723,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorIn
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorInt32Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorInt32Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorInt32Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorInt32Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorInt32Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorInt32Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorInt32Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorInt32Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorInt32Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorInt32Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorInt32Bit> for ITensor {
@@ -4846,9 +4772,8 @@ unsafe impl ::core::marker::Sync for TensorInt32Bit {}
 #[repr(transparent)]
 pub struct TensorInt64Bit(::windows_core::IUnknown);
 impl TensorInt64Bit {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -4858,12 +4783,11 @@ impl TensorInt64Bit {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -4874,19 +4798,19 @@ impl TensorInt64Bit {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorInt64Bit> {
@@ -4896,21 +4820,21 @@ impl TensorInt64Bit {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorInt64Bit> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorInt64Bit> {
         Self::ITensorInt64BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt64Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[i64]) -> ::windows_core::Result<TensorInt64Bit> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[i64]) -> ::windows_core::Result<TensorInt64Bit> {
         Self::ITensorInt64BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorInt64Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorInt64Bit> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorInt64Bit> {
         Self::ITensorInt64BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt64Bit>(result__)
@@ -4923,7 +4847,7 @@ impl TensorInt64Bit {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorInt64Bit> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorInt64Bit> {
         Self::ITensorInt64BitStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt64Bit>(result__)
@@ -5008,30 +4932,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorInt64Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorInt64Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorInt64Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorInt64Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorInt64Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorInt64Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorInt64Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorInt64Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorInt64Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorInt64Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorInt64Bit> for ILearningModelFeatureValue {
@@ -5056,30 +4976,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorIn
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorInt64Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorInt64Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorInt64Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorInt64Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorInt64Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorInt64Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorInt64Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorInt64Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorInt64Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorInt64Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorInt64Bit> for ITensor {
@@ -5109,9 +5025,8 @@ unsafe impl ::core::marker::Sync for TensorInt64Bit {}
 #[repr(transparent)]
 pub struct TensorInt8Bit(::windows_core::IUnknown);
 impl TensorInt8Bit {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -5121,12 +5036,11 @@ impl TensorInt8Bit {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -5137,19 +5051,19 @@ impl TensorInt8Bit {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<u8>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<u8>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u8>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorInt8Bit> {
@@ -5159,21 +5073,21 @@ impl TensorInt8Bit {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorInt8Bit> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorInt8Bit> {
         Self::ITensorInt8BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt8Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u8]) -> ::windows_core::Result<TensorInt8Bit> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u8]) -> ::windows_core::Result<TensorInt8Bit> {
         Self::ITensorInt8BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorInt8Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<u8>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorInt8Bit> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<u8>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorInt8Bit> {
         Self::ITensorInt8BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt8Bit>(result__)
@@ -5186,7 +5100,7 @@ impl TensorInt8Bit {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorInt8Bit> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorInt8Bit> {
         Self::ITensorInt8BitStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorInt8Bit>(result__)
@@ -5271,30 +5185,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorInt8Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorInt8Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorInt8Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorInt8Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorInt8Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorInt8Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorInt8Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorInt8Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorInt8Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorInt8Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorInt8Bit> for ILearningModelFeatureValue {
@@ -5319,30 +5229,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorIn
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorInt8Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorInt8Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorInt8Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorInt8Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorInt8Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorInt8Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorInt8Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorInt8Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorInt8Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorInt8Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorInt8Bit> for ITensor {
@@ -5419,9 +5325,8 @@ unsafe impl ::windows_core::RuntimeType for TensorKind {
 #[repr(transparent)]
 pub struct TensorString(::windows_core::IUnknown);
 impl TensorString {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -5431,12 +5336,11 @@ impl TensorString {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -5447,19 +5351,19 @@ impl TensorString {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorString> {
@@ -5469,21 +5373,21 @@ impl TensorString {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorString> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorString> {
         Self::ITensorStringStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorString>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[::windows_core::HSTRING]) -> ::windows_core::Result<TensorString> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[::windows_core::HSTRING]) -> ::windows_core::Result<TensorString> {
         Self::ITensorStringStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorString>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorString> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorString> {
         Self::ITensorStringStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorString>(result__)
@@ -5574,30 +5478,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorString> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorString> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorString) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorString> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorString> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorString) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorString {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorString {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorString {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorString {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorString> for ILearningModelFeatureValue {
@@ -5622,30 +5522,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorSt
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorString> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorString> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorString) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorString> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorString> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorString) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorString {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorString {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorString {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorString {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorString> for ITensor {
@@ -5675,9 +5571,8 @@ unsafe impl ::core::marker::Sync for TensorString {}
 #[repr(transparent)]
 pub struct TensorUInt16Bit(::windows_core::IUnknown);
 impl TensorUInt16Bit {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -5687,12 +5582,11 @@ impl TensorUInt16Bit {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -5703,19 +5597,19 @@ impl TensorUInt16Bit {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<u16>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u16>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<u16>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u16>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorUInt16Bit> {
@@ -5725,21 +5619,21 @@ impl TensorUInt16Bit {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorUInt16Bit> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorUInt16Bit> {
         Self::ITensorUInt16BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt16Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u16]) -> ::windows_core::Result<TensorUInt16Bit> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u16]) -> ::windows_core::Result<TensorUInt16Bit> {
         Self::ITensorUInt16BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorUInt16Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<u16>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorUInt16Bit> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<u16>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorUInt16Bit> {
         Self::ITensorUInt16BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt16Bit>(result__)
@@ -5752,7 +5646,7 @@ impl TensorUInt16Bit {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorUInt16Bit> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorUInt16Bit> {
         Self::ITensorUInt16BitStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt16Bit>(result__)
@@ -5837,30 +5731,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorUInt16Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorUInt16Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorUInt16Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorUInt16Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorUInt16Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorUInt16Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorUInt16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorUInt16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorUInt16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorUInt16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorUInt16Bit> for ILearningModelFeatureValue {
@@ -5885,30 +5775,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorUI
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorUInt16Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorUInt16Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorUInt16Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorUInt16Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorUInt16Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorUInt16Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorUInt16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorUInt16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorUInt16Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorUInt16Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorUInt16Bit> for ITensor {
@@ -5938,9 +5824,8 @@ unsafe impl ::core::marker::Sync for TensorUInt16Bit {}
 #[repr(transparent)]
 pub struct TensorUInt32Bit(::windows_core::IUnknown);
 impl TensorUInt32Bit {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -5950,12 +5835,11 @@ impl TensorUInt32Bit {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -5966,19 +5850,19 @@ impl TensorUInt32Bit {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorUInt32Bit> {
@@ -5988,21 +5872,21 @@ impl TensorUInt32Bit {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorUInt32Bit> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorUInt32Bit> {
         Self::ITensorUInt32BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt32Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u32]) -> ::windows_core::Result<TensorUInt32Bit> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u32]) -> ::windows_core::Result<TensorUInt32Bit> {
         Self::ITensorUInt32BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorUInt32Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<u32>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorUInt32Bit> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<u32>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorUInt32Bit> {
         Self::ITensorUInt32BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt32Bit>(result__)
@@ -6015,7 +5899,7 @@ impl TensorUInt32Bit {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorUInt32Bit> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorUInt32Bit> {
         Self::ITensorUInt32BitStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt32Bit>(result__)
@@ -6100,30 +5984,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorUInt32Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorUInt32Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorUInt32Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorUInt32Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorUInt32Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorUInt32Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorUInt32Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorUInt32Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorUInt32Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorUInt32Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorUInt32Bit> for ILearningModelFeatureValue {
@@ -6148,30 +6028,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorUI
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorUInt32Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorUInt32Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorUInt32Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorUInt32Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorUInt32Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorUInt32Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorUInt32Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorUInt32Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorUInt32Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorUInt32Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorUInt32Bit> for ITensor {
@@ -6201,9 +6077,8 @@ unsafe impl ::core::marker::Sync for TensorUInt32Bit {}
 #[repr(transparent)]
 pub struct TensorUInt64Bit(::windows_core::IUnknown);
 impl TensorUInt64Bit {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -6213,12 +6088,11 @@ impl TensorUInt64Bit {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -6229,19 +6103,19 @@ impl TensorUInt64Bit {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<u64>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<u64>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u64>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorUInt64Bit> {
@@ -6251,21 +6125,21 @@ impl TensorUInt64Bit {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorUInt64Bit> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorUInt64Bit> {
         Self::ITensorUInt64BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt64Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u64]) -> ::windows_core::Result<TensorUInt64Bit> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u64]) -> ::windows_core::Result<TensorUInt64Bit> {
         Self::ITensorUInt64BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorUInt64Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<u64>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorUInt64Bit> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<u64>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorUInt64Bit> {
         Self::ITensorUInt64BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt64Bit>(result__)
@@ -6278,7 +6152,7 @@ impl TensorUInt64Bit {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorUInt64Bit> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorUInt64Bit> {
         Self::ITensorUInt64BitStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt64Bit>(result__)
@@ -6363,30 +6237,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorUInt64Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorUInt64Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorUInt64Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorUInt64Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorUInt64Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorUInt64Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorUInt64Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorUInt64Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorUInt64Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorUInt64Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorUInt64Bit> for ILearningModelFeatureValue {
@@ -6411,30 +6281,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorUI
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorUInt64Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorUInt64Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorUInt64Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorUInt64Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorUInt64Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorUInt64Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorUInt64Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorUInt64Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorUInt64Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorUInt64Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorUInt64Bit> for ITensor {
@@ -6464,9 +6330,8 @@ unsafe impl ::core::marker::Sync for TensorUInt64Bit {}
 #[repr(transparent)]
 pub struct TensorUInt8Bit(::windows_core::IUnknown);
 impl TensorUInt8Bit {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Kind(&self) -> ::windows_core::Result<LearningModelFeatureKind> {
@@ -6476,12 +6341,11 @@ impl TensorUInt8Bit {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<LearningModelFeatureKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateReference(&self) -> ::windows_core::Result<super::super::Foundation::IMemoryBufferReference> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IMemoryBuffer>(self)?;
+    pub fn CreateReference(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBufferReference> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IMemoryBuffer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IMemoryBufferReference>(result__)
+            (::windows_core::Interface::vtable(this).CreateReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBufferReference>(result__)
         }
     }
     pub fn TensorKind(&self) -> ::windows_core::Result<TensorKind> {
@@ -6492,19 +6356,19 @@ impl TensorUInt8Bit {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Shape(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<i64>> {
+    pub fn Shape(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<i64>> {
         let this = &::windows_core::Interface::cast::<ITensor>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<i64>>(result__)
+            (::windows_core::Interface::vtable(this).Shape)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsVectorView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<u8>> {
+    pub fn GetAsVectorView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<u8>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsVectorView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u8>>(result__)
         }
     }
     pub fn Create() -> ::windows_core::Result<TensorUInt8Bit> {
@@ -6514,21 +6378,21 @@ impl TensorUInt8Bit {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorUInt8Bit> {
+    pub fn Create2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0) -> ::windows_core::Result<TensorUInt8Bit> {
         Self::ITensorUInt8BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create2)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt8Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u8]) -> ::windows_core::Result<TensorUInt8Bit> {
+    pub fn CreateFromArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>>(shape: Param0, data: &[u8]) -> ::windows_core::Result<TensorUInt8Bit> {
         Self::ITensorUInt8BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromArray)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.len() as u32, ::core::mem::transmute(data.as_ptr()), result__.as_mut_ptr()).from_abi::<TensorUInt8Bit>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<u8>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorUInt8Bit> {
+    pub fn CreateFromIterable<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i64>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<u8>>>(shape: Param0, data: Param1) -> ::windows_core::Result<TensorUInt8Bit> {
         Self::ITensorUInt8BitStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromIterable)(::windows_core::Interface::as_raw(this), shape.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt8Bit>(result__)
@@ -6541,7 +6405,7 @@ impl TensorUInt8Bit {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorUInt8Bit> {
+    pub fn CreateFromBuffer<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(shape: &[i64], buffer: Param1) -> ::windows_core::Result<TensorUInt8Bit> {
         Self::ITensorUInt8BitStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), shape.len() as u32, ::core::mem::transmute(shape.as_ptr()), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<TensorUInt8Bit>(result__)
@@ -6626,30 +6490,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ten
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorUInt8Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<TensorUInt8Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorUInt8Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorUInt8Bit> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&TensorUInt8Bit> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorUInt8Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for TensorUInt8Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for TensorUInt8Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &TensorUInt8Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &TensorUInt8Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorUInt8Bit> for ILearningModelFeatureValue {
@@ -6674,30 +6534,26 @@ impl<'a> ::windows_core::IntoParam<'a, ILearningModelFeatureValue> for &TensorUI
         ::core::convert::TryInto::<ILearningModelFeatureValue>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<TensorUInt8Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<TensorUInt8Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: TensorUInt8Bit) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&TensorUInt8Bit> for super::super::Foundation::IMemoryBuffer {
+impl ::core::convert::TryFrom<&TensorUInt8Bit> for ::winrt_foundation::IMemoryBuffer {
     type Error = ::windows_core::Error;
     fn try_from(value: &TensorUInt8Bit) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for TensorUInt8Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for TensorUInt8Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer> for &TensorUInt8Bit {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IMemoryBuffer> {
-        ::core::convert::TryInto::<super::super::Foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer> for &TensorUInt8Bit {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IMemoryBuffer> {
+        ::core::convert::TryInto::<::winrt_foundation::IMemoryBuffer>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<TensorUInt8Bit> for ITensor {

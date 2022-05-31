@@ -43,18 +43,12 @@ unsafe impl ::windows_core::Interface for IOnlineIdAuthenticator {
 #[doc(hidden)]
 pub struct IOnlineIdAuthenticator_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub AuthenticateUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AuthenticateUserAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub AuthenticateUserAsyncAdvanced: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, requests: ::windows_core::RawPtr, credentialprompttype: CredentialPromptType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     AuthenticateUserAsyncAdvanced: usize,
-    #[cfg(feature = "Foundation")]
     pub SignOutUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SignOutUserAsync: usize,
     pub SetApplicationId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub ApplicationId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub CanSignOut: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -114,10 +108,7 @@ unsafe impl ::windows_core::Interface for IOnlineIdSystemAuthenticatorForUser {
 #[doc(hidden)]
 pub struct IOnlineIdSystemAuthenticatorForUser_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetTicketAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetTicketAsync: usize,
     pub SetApplicationId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub ApplicationId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     #[cfg(feature = "System")]
@@ -204,7 +195,6 @@ impl OnlineIdAuthenticator {
         static mut SHARED: ::windows_core::FactoryCache<OnlineIdAuthenticator, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
     pub fn AuthenticateUserAsync<'a, Param0: ::windows_core::IntoParam<'a, OnlineIdServiceTicketRequest>>(&self, request: Param0) -> ::windows_core::Result<UserAuthenticationOperation> {
         let this = self;
         unsafe {
@@ -213,14 +203,13 @@ impl OnlineIdAuthenticator {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AuthenticateUserAsyncAdvanced<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<OnlineIdServiceTicketRequest>>>(&self, requests: Param0, credentialprompttype: CredentialPromptType) -> ::windows_core::Result<UserAuthenticationOperation> {
+    pub fn AuthenticateUserAsyncAdvanced<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<OnlineIdServiceTicketRequest>>>(&self, requests: Param0, credentialprompttype: CredentialPromptType) -> ::windows_core::Result<UserAuthenticationOperation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AuthenticateUserAsyncAdvanced)(::windows_core::Interface::as_raw(this), requests.into_param().abi(), credentialprompttype, result__.as_mut_ptr()).from_abi::<UserAuthenticationOperation>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn SignOutUserAsync(&self) -> ::windows_core::Result<SignOutUserOperation> {
         let this = self;
         unsafe {
@@ -538,7 +527,7 @@ impl OnlineIdSystemAuthenticator {
         })
     }
     #[cfg(feature = "System")]
-    pub fn GetForUser<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::User>>(user: Param0) -> ::windows_core::Result<OnlineIdSystemAuthenticatorForUser> {
+    pub fn GetForUser<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>>(user: Param0) -> ::windows_core::Result<OnlineIdSystemAuthenticatorForUser> {
         Self::IOnlineIdSystemAuthenticatorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetForUser)(::windows_core::Interface::as_raw(this), user.into_param().abi(), result__.as_mut_ptr()).from_abi::<OnlineIdSystemAuthenticatorForUser>(result__)
@@ -555,12 +544,11 @@ impl ::windows_core::RuntimeName for OnlineIdSystemAuthenticator {
 #[repr(transparent)]
 pub struct OnlineIdSystemAuthenticatorForUser(::windows_core::IUnknown);
 impl OnlineIdSystemAuthenticatorForUser {
-    #[cfg(feature = "Foundation")]
-    pub fn GetTicketAsync<'a, Param0: ::windows_core::IntoParam<'a, OnlineIdServiceTicketRequest>>(&self, request: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<OnlineIdSystemTicketResult>> {
+    pub fn GetTicketAsync<'a, Param0: ::windows_core::IntoParam<'a, OnlineIdServiceTicketRequest>>(&self, request: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<OnlineIdSystemTicketResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTicketAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<OnlineIdSystemTicketResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetTicketAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<OnlineIdSystemTicketResult>>(result__)
         }
     }
     pub fn SetApplicationId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, value: Param0) -> ::windows_core::Result<()> {
@@ -575,11 +563,11 @@ impl OnlineIdSystemAuthenticatorForUser {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
 }
@@ -876,85 +864,70 @@ unsafe impl ::windows_core::RuntimeType for OnlineIdSystemTicketStatus {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation")]
 #[repr(transparent)]
 pub struct SignOutUserOperation(::windows_core::IUnknown);
-#[cfg(feature = "Foundation")]
 impl SignOutUserOperation {
-    #[cfg(feature = "Foundation")]
-    pub fn SetCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::AsyncActionCompletedHandler>>(&self, handler: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::AsyncActionCompletedHandler>>(&self, handler: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Completed(&self) -> ::windows_core::Result<super::super::super::Foundation::AsyncActionCompletedHandler> {
+    pub fn Completed(&self) -> ::windows_core::Result<::winrt_foundation::AsyncActionCompletedHandler> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::AsyncActionCompletedHandler>(result__)
+            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::AsyncActionCompletedHandler>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn GetResults(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetResults)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Id(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Status(&self) -> ::windows_core::Result<super::super::super::Foundation::AsyncStatus> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+    pub fn Status(&self) -> ::windows_core::Result<::winrt_foundation::AsyncStatus> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::AsyncStatus>::zeroed();
-            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::AsyncStatus>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::AsyncStatus>::zeroed();
+            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::AsyncStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ErrorCode(&self) -> ::windows_core::Result<::windows_core::HRESULT> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::HRESULT>::zeroed();
             (::windows_core::Interface::vtable(this).ErrorCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HRESULT>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Cancel(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Cancel)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for SignOutUserOperation {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::PartialEq for SignOutUserOperation {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::Eq for SignOutUserOperation {}
-#[cfg(feature = "Foundation")]
 impl ::core::fmt::Debug for SignOutUserOperation {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("SignOutUserOperation").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::RuntimeType for SignOutUserOperation {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Security.Authentication.OnlineId.SignOutUserOperation;{5a648006-843a-4da9-865b-9d26e5dfad7b})");
     type DefaultType = ::core::option::Option<Self>;
@@ -962,21 +935,18 @@ unsafe impl ::windows_core::RuntimeType for SignOutUserOperation {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::Interface for SignOutUserOperation {
-    type Vtable = super::super::super::Foundation::IAsyncAction_Vtbl;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::IAsyncAction as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::IAsyncAction_Vtbl;
+    const IID: ::windows_core::GUID = <::winrt_foundation::IAsyncAction as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation")]
 impl ::windows_core::RuntimeName for SignOutUserOperation {
     const NAME: &'static str = "Windows.Security.Authentication.OnlineId.SignOutUserOperation";
 }
-#[cfg(feature = "Foundation")]
 impl SignOutUserOperation {
     pub fn get(&self) -> ::windows_core::Result<()> {
-        if self.Status()? == super::super::super::Foundation::AsyncStatus::Started {
+        if self.Status()? == ::winrt_foundation::AsyncStatus::Started {
             let (_waiter, signaler) = ::windows_core::Waiter::new()?;
-            self.SetCompleted(super::super::super::Foundation::AsyncActionCompletedHandler::new(move |_sender, _args| {
+            self.SetCompleted(::winrt_foundation::AsyncActionCompletedHandler::new(move |_sender, _args| {
                 unsafe {
                     signaler.signal();
                 }
@@ -986,13 +956,12 @@ impl SignOutUserOperation {
         self.GetResults()
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::std::future::Future for SignOutUserOperation {
     type Output = ::windows_core::Result<()>;
     fn poll(self: ::std::pin::Pin<&mut Self>, context: &mut ::std::task::Context) -> ::std::task::Poll<Self::Output> {
-        if self.Status()? == super::super::super::Foundation::AsyncStatus::Started {
+        if self.Status()? == ::winrt_foundation::AsyncStatus::Started {
             let waker = context.waker().clone();
-            let _ = self.SetCompleted(super::super::super::Foundation::AsyncActionCompletedHandler::new(move |_sender, _args| {
+            let _ = self.SetCompleted(::winrt_foundation::AsyncActionCompletedHandler::new(move |_sender, _args| {
                 waker.wake_by_ref();
                 Ok(())
             }));
@@ -1002,163 +971,135 @@ impl ::std::future::Future for SignOutUserOperation {
         }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<SignOutUserOperation> for ::windows_core::IUnknown {
     fn from(value: SignOutUserOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<&SignOutUserOperation> for ::windows_core::IUnknown {
     fn from(value: &SignOutUserOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for SignOutUserOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a SignOutUserOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<SignOutUserOperation> for ::windows_core::IInspectable {
     fn from(value: SignOutUserOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<&SignOutUserOperation> for ::windows_core::IInspectable {
     fn from(value: &SignOutUserOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for SignOutUserOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a SignOutUserOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<SignOutUserOperation> for super::super::super::Foundation::IAsyncAction {
+impl ::core::convert::TryFrom<SignOutUserOperation> for ::winrt_foundation::IAsyncAction {
     type Error = ::windows_core::Error;
     fn try_from(value: SignOutUserOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&SignOutUserOperation> for super::super::super::Foundation::IAsyncAction {
+impl ::core::convert::TryFrom<&SignOutUserOperation> for ::winrt_foundation::IAsyncAction {
     type Error = ::windows_core::Error;
     fn try_from(value: &SignOutUserOperation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IAsyncAction> for SignOutUserOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IAsyncAction> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncAction> for SignOutUserOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncAction> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IAsyncAction> for &SignOutUserOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IAsyncAction> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IAsyncAction>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncAction> for &SignOutUserOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncAction> {
+        ::core::convert::TryInto::<::winrt_foundation::IAsyncAction>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<SignOutUserOperation> for super::super::super::Foundation::IAsyncInfo {
+impl ::core::convert::TryFrom<SignOutUserOperation> for ::winrt_foundation::IAsyncInfo {
     type Error = ::windows_core::Error;
     fn try_from(value: SignOutUserOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&SignOutUserOperation> for super::super::super::Foundation::IAsyncInfo {
+impl ::core::convert::TryFrom<&SignOutUserOperation> for ::winrt_foundation::IAsyncInfo {
     type Error = ::windows_core::Error;
     fn try_from(value: &SignOutUserOperation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IAsyncInfo> for SignOutUserOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IAsyncInfo> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncInfo> for SignOutUserOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncInfo> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IAsyncInfo> for &SignOutUserOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IAsyncInfo> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IAsyncInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncInfo> for &SignOutUserOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncInfo> {
+        ::core::convert::TryInto::<::winrt_foundation::IAsyncInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::core::marker::Send for SignOutUserOperation {}
-#[cfg(feature = "Foundation")]
 unsafe impl ::core::marker::Sync for SignOutUserOperation {}
-#[cfg(feature = "Foundation")]
 #[repr(transparent)]
 pub struct UserAuthenticationOperation(::windows_core::IUnknown);
-#[cfg(feature = "Foundation")]
 impl UserAuthenticationOperation {
-    #[cfg(feature = "Foundation")]
     pub fn Id(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Status(&self) -> ::windows_core::Result<super::super::super::Foundation::AsyncStatus> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+    pub fn Status(&self) -> ::windows_core::Result<::winrt_foundation::AsyncStatus> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::AsyncStatus>::zeroed();
-            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::AsyncStatus>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::AsyncStatus>::zeroed();
+            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::AsyncStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ErrorCode(&self) -> ::windows_core::Result<::windows_core::HRESULT> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::HRESULT>::zeroed();
             (::windows_core::Interface::vtable(this).ErrorCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HRESULT>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Cancel(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Cancel)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::AsyncOperationCompletedHandler<UserIdentity>>>(&self, handler: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::AsyncOperationCompletedHandler<UserIdentity>>>(&self, handler: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Completed(&self) -> ::windows_core::Result<super::super::super::Foundation::AsyncOperationCompletedHandler<UserIdentity>> {
+    pub fn Completed(&self) -> ::windows_core::Result<::winrt_foundation::AsyncOperationCompletedHandler<UserIdentity>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::AsyncOperationCompletedHandler<UserIdentity>>(result__)
+            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::AsyncOperationCompletedHandler<UserIdentity>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn GetResults(&self) -> ::windows_core::Result<UserIdentity> {
         let this = self;
         unsafe {
@@ -1167,27 +1108,22 @@ impl UserAuthenticationOperation {
         }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for UserAuthenticationOperation {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::PartialEq for UserAuthenticationOperation {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::Eq for UserAuthenticationOperation {}
-#[cfg(feature = "Foundation")]
 impl ::core::fmt::Debug for UserAuthenticationOperation {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("UserAuthenticationOperation").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::RuntimeType for UserAuthenticationOperation {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Security.Authentication.OnlineId.UserAuthenticationOperation;pinterface({9fc2b0bb-e446-44e2-aa61-9cab8f636af2};rc(Windows.Security.Authentication.OnlineId.UserIdentity;{2146d9cd-0742-4be3-8a1c-7c7ae679aa88})))");
     type DefaultType = ::core::option::Option<Self>;
@@ -1195,21 +1131,18 @@ unsafe impl ::windows_core::RuntimeType for UserAuthenticationOperation {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::Interface for UserAuthenticationOperation {
-    type Vtable = super::super::super::Foundation::IAsyncOperation_Vtbl<UserIdentity>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::IAsyncOperation<UserIdentity> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::IAsyncOperation_Vtbl<UserIdentity>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::IAsyncOperation<UserIdentity> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation")]
 impl ::windows_core::RuntimeName for UserAuthenticationOperation {
     const NAME: &'static str = "Windows.Security.Authentication.OnlineId.UserAuthenticationOperation";
 }
-#[cfg(feature = "Foundation")]
 impl UserAuthenticationOperation {
     pub fn get(&self) -> ::windows_core::Result<UserIdentity> {
-        if self.Status()? == super::super::super::Foundation::AsyncStatus::Started {
+        if self.Status()? == ::winrt_foundation::AsyncStatus::Started {
             let (_waiter, signaler) = ::windows_core::Waiter::new()?;
-            self.SetCompleted(super::super::super::Foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
+            self.SetCompleted(::winrt_foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
                 unsafe {
                     signaler.signal();
                 }
@@ -1219,13 +1152,12 @@ impl UserAuthenticationOperation {
         self.GetResults()
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::std::future::Future for UserAuthenticationOperation {
     type Output = ::windows_core::Result<UserIdentity>;
     fn poll(self: ::std::pin::Pin<&mut Self>, context: &mut ::std::task::Context) -> ::std::task::Poll<Self::Output> {
-        if self.Status()? == super::super::super::Foundation::AsyncStatus::Started {
+        if self.Status()? == ::winrt_foundation::AsyncStatus::Started {
             let waker = context.waker().clone();
-            let _ = self.SetCompleted(super::super::super::Foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
+            let _ = self.SetCompleted(::winrt_foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
                 waker.wake_by_ref();
                 Ok(())
             }));
@@ -1235,119 +1167,101 @@ impl ::std::future::Future for UserAuthenticationOperation {
         }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<UserAuthenticationOperation> for ::windows_core::IUnknown {
     fn from(value: UserAuthenticationOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<&UserAuthenticationOperation> for ::windows_core::IUnknown {
     fn from(value: &UserAuthenticationOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for UserAuthenticationOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a UserAuthenticationOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<UserAuthenticationOperation> for ::windows_core::IInspectable {
     fn from(value: UserAuthenticationOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<&UserAuthenticationOperation> for ::windows_core::IInspectable {
     fn from(value: &UserAuthenticationOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for UserAuthenticationOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a UserAuthenticationOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<UserAuthenticationOperation> for super::super::super::Foundation::IAsyncInfo {
+impl ::core::convert::TryFrom<UserAuthenticationOperation> for ::winrt_foundation::IAsyncInfo {
     type Error = ::windows_core::Error;
     fn try_from(value: UserAuthenticationOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&UserAuthenticationOperation> for super::super::super::Foundation::IAsyncInfo {
+impl ::core::convert::TryFrom<&UserAuthenticationOperation> for ::winrt_foundation::IAsyncInfo {
     type Error = ::windows_core::Error;
     fn try_from(value: &UserAuthenticationOperation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IAsyncInfo> for UserAuthenticationOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IAsyncInfo> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncInfo> for UserAuthenticationOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncInfo> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IAsyncInfo> for &UserAuthenticationOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IAsyncInfo> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IAsyncInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncInfo> for &UserAuthenticationOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncInfo> {
+        ::core::convert::TryInto::<::winrt_foundation::IAsyncInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<UserAuthenticationOperation> for super::super::super::Foundation::IAsyncOperation<UserIdentity> {
+impl ::core::convert::TryFrom<UserAuthenticationOperation> for ::winrt_foundation::IAsyncOperation<UserIdentity> {
     type Error = ::windows_core::Error;
     fn try_from(value: UserAuthenticationOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&UserAuthenticationOperation> for super::super::super::Foundation::IAsyncOperation<UserIdentity> {
+impl ::core::convert::TryFrom<&UserAuthenticationOperation> for ::winrt_foundation::IAsyncOperation<UserIdentity> {
     type Error = ::windows_core::Error;
     fn try_from(value: &UserAuthenticationOperation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IAsyncOperation<UserIdentity>> for UserAuthenticationOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IAsyncOperation<UserIdentity>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncOperation<UserIdentity>> for UserAuthenticationOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncOperation<UserIdentity>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IAsyncOperation<UserIdentity>> for &UserAuthenticationOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IAsyncOperation<UserIdentity>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IAsyncOperation<UserIdentity>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncOperation<UserIdentity>> for &UserAuthenticationOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncOperation<UserIdentity>> {
+        ::core::convert::TryInto::<::winrt_foundation::IAsyncOperation<UserIdentity>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::core::marker::Send for UserAuthenticationOperation {}
-#[cfg(feature = "Foundation")]
 unsafe impl ::core::marker::Sync for UserAuthenticationOperation {}
 #[repr(transparent)]
 pub struct UserIdentity(::windows_core::IUnknown);
 impl UserIdentity {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Tickets(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<OnlineIdServiceTicket>> {
+    pub fn Tickets(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<OnlineIdServiceTicket>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Tickets)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<OnlineIdServiceTicket>>(result__)
+            (::windows_core::Interface::vtable(this).Tickets)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<OnlineIdServiceTicket>>(result__)
         }
     }
     pub fn Id(&self) -> ::windows_core::Result<::windows_core::HSTRING> {

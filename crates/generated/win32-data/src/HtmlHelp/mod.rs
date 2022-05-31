@@ -43,68 +43,54 @@ impl ::core::default::Default for COLUMNSTATUS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CProperty {
     pub dwPropID: u32,
     pub cbData: u32,
     pub dwType: u32,
     pub Anonymous: CProperty_0,
-    pub fPersist: super::super::Foundation::BOOL,
+    pub fPersist: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CProperty {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CProperty {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CProperty {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CProperty {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CProperty>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CProperty {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CProperty {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union CProperty_0 {
     pub lpszwData: ::windows_core::PWSTR,
     pub lpvData: *mut ::core::ffi::c_void,
     pub dwValue: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CProperty_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CProperty_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CProperty_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CProperty_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CProperty_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CProperty_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CProperty_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -197,78 +183,78 @@ pub const HHACT_TOC_NEXT: i32 = 20i32;
 pub const HHACT_TOC_PREV: i32 = 21i32;
 pub const HHACT_ZOOM: i32 = 19i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 pub struct HHNTRACK {
-    pub hdr: super::super::UI::Controls::NMHDR,
+    pub hdr: ::win32_ui::Controls::NMHDR,
     pub pszCurUrl: ::windows_core::PCSTR,
     pub idAction: i32,
     pub phhWinType: *mut HH_WINTYPE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::marker::Copy for HHNTRACK {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::clone::Clone for HHNTRACK {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::fmt::Debug for HHNTRACK {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HHNTRACK").field("hdr", &self.hdr).field("pszCurUrl", &self.pszCurUrl).field("idAction", &self.idAction).field("phhWinType", &self.phhWinType).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 unsafe impl ::windows_core::Abi for HHNTRACK {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::cmp::PartialEq for HHNTRACK {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HHNTRACK>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::cmp::Eq for HHNTRACK {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::default::Default for HHNTRACK {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 pub struct HHN_NOTIFY {
-    pub hdr: super::super::UI::Controls::NMHDR,
+    pub hdr: ::win32_ui::Controls::NMHDR,
     pub pszUrl: ::windows_core::PCSTR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::marker::Copy for HHN_NOTIFY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::clone::Clone for HHN_NOTIFY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::fmt::Debug for HHN_NOTIFY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HHN_NOTIFY").field("hdr", &self.hdr).field("pszUrl", &self.pszUrl).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 unsafe impl ::windows_core::Abi for HHN_NOTIFY {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::cmp::PartialEq for HHN_NOTIFY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HHN_NOTIFY>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::cmp::Eq for HHN_NOTIFY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::default::Default for HHN_NOTIFY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -349,44 +335,36 @@ pub const HHWIN_PROP_TRI_PANE: u32 = 32u32;
 pub const HHWIN_PROP_USER_POS: u32 = 262144u32;
 pub const HHWIN_TB_MARGIN: u32 = 268435456u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HH_AKLINK {
     pub cbStruct: i32,
-    pub fReserved: super::super::Foundation::BOOL,
+    pub fReserved: ::win32_foundation::BOOL,
     pub pszKeywords: *mut i8,
     pub pszUrl: *mut i8,
     pub pszMsgText: *mut i8,
     pub pszMsgTitle: *mut i8,
     pub pszWindow: *mut i8,
-    pub fIndexOnFail: super::super::Foundation::BOOL,
+    pub fIndexOnFail: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HH_AKLINK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HH_AKLINK {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HH_AKLINK {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HH_AKLINK").field("cbStruct", &self.cbStruct).field("fReserved", &self.fReserved).field("pszKeywords", &self.pszKeywords).field("pszUrl", &self.pszUrl).field("pszMsgText", &self.pszMsgText).field("pszMsgTitle", &self.pszMsgTitle).field("pszWindow", &self.pszWindow).field("fIndexOnFail", &self.fIndexOnFail).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HH_AKLINK {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HH_AKLINK {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HH_AKLINK>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HH_AKLINK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HH_AKLINK {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -468,44 +446,36 @@ impl ::core::default::Default for HH_ENUM_IT {
 }
 pub const HH_FTS_DEFAULT_PROXIMITY: i32 = -1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HH_FTS_QUERY {
     pub cbStruct: i32,
-    pub fUniCodeStrings: super::super::Foundation::BOOL,
+    pub fUniCodeStrings: ::win32_foundation::BOOL,
     pub pszSearchQuery: *mut i8,
     pub iProximity: i32,
-    pub fStemmedSearch: super::super::Foundation::BOOL,
-    pub fTitleOnly: super::super::Foundation::BOOL,
-    pub fExecute: super::super::Foundation::BOOL,
+    pub fStemmedSearch: ::win32_foundation::BOOL,
+    pub fTitleOnly: ::win32_foundation::BOOL,
+    pub fExecute: ::win32_foundation::BOOL,
     pub pszWindow: *mut i8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HH_FTS_QUERY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HH_FTS_QUERY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HH_FTS_QUERY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HH_FTS_QUERY").field("cbStruct", &self.cbStruct).field("fUniCodeStrings", &self.fUniCodeStrings).field("pszSearchQuery", &self.pszSearchQuery).field("iProximity", &self.iProximity).field("fStemmedSearch", &self.fStemmedSearch).field("fTitleOnly", &self.fTitleOnly).field("fExecute", &self.fExecute).field("pszWindow", &self.pszWindow).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HH_FTS_QUERY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HH_FTS_QUERY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HH_FTS_QUERY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HH_FTS_QUERY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HH_FTS_QUERY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -515,30 +485,30 @@ pub const HH_GET_LAST_ERROR: u32 = 20u32;
 pub const HH_GET_WIN_HANDLE: u32 = 6u32;
 pub const HH_GET_WIN_TYPE: u32 = 5u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct HH_GLOBAL_PROPERTY {
     pub id: HH_GPROPID,
-    pub var: super::super::System::Com::VARIANT,
+    pub var: ::win32_system::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for HH_GLOBAL_PROPERTY {
     fn clone(&self) -> Self {
         Self { id: self.id, var: self.var.clone() }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 unsafe impl ::windows_core::Abi for HH_GLOBAL_PROPERTY {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::cmp::PartialEq for HH_GLOBAL_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
         self.id == other.id && self.var == other.var
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::cmp::Eq for HH_GLOBAL_PROPERTY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::default::Default for HH_GLOBAL_PROPERTY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -577,45 +547,37 @@ pub const HH_INITIALIZE: u32 = 28u32;
 pub const HH_KEYWORD_LOOKUP: u32 = 13u32;
 pub const HH_MAX_TABS: u32 = 19u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HH_POPUP {
     pub cbStruct: i32,
-    pub hinst: super::super::Foundation::HINSTANCE,
+    pub hinst: ::win32_foundation::HINSTANCE,
     pub idString: u32,
     pub pszText: *mut i8,
-    pub pt: super::super::Foundation::POINT,
+    pub pt: ::win32_foundation::POINT,
     pub clrForeground: u32,
     pub clrBackground: u32,
-    pub rcMargins: super::super::Foundation::RECT,
+    pub rcMargins: ::win32_foundation::RECT,
     pub pszFont: *mut i8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HH_POPUP {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HH_POPUP {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HH_POPUP {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HH_POPUP").field("cbStruct", &self.cbStruct).field("hinst", &self.hinst).field("idString", &self.idString).field("pszText", &self.pszText).field("pt", &self.pt).field("clrForeground", &self.clrForeground).field("clrBackground", &self.clrBackground).field("rcMargins", &self.rcMargins).field("pszFont", &self.pszFont).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HH_POPUP {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HH_POPUP {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HH_POPUP>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HH_POPUP {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HH_POPUP {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -677,32 +639,31 @@ pub const HH_TP_HELP_CONTEXTMENU: u32 = 16u32;
 pub const HH_TP_HELP_WM_HELP: u32 = 17u32;
 pub const HH_UNINITIALIZE: u32 = 29u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HH_WINTYPE {
     pub cbStruct: i32,
-    pub fUniCodeStrings: super::super::Foundation::BOOL,
+    pub fUniCodeStrings: ::win32_foundation::BOOL,
     pub pszType: *mut i8,
     pub fsValidMembers: u32,
     pub fsWinProperties: u32,
     pub pszCaption: *mut i8,
     pub dwStyles: u32,
     pub dwExStyles: u32,
-    pub rcWindowPos: super::super::Foundation::RECT,
+    pub rcWindowPos: ::win32_foundation::RECT,
     pub nShowState: i32,
-    pub hwndHelp: super::super::Foundation::HWND,
-    pub hwndCaller: super::super::Foundation::HWND,
+    pub hwndHelp: ::win32_foundation::HWND,
+    pub hwndCaller: ::win32_foundation::HWND,
     pub paInfoTypes: *mut u32,
-    pub hwndToolBar: super::super::Foundation::HWND,
-    pub hwndNavigation: super::super::Foundation::HWND,
-    pub hwndHTML: super::super::Foundation::HWND,
+    pub hwndToolBar: ::win32_foundation::HWND,
+    pub hwndNavigation: ::win32_foundation::HWND,
+    pub hwndHTML: ::win32_foundation::HWND,
     pub iNavWidth: i32,
-    pub rcHTML: super::super::Foundation::RECT,
+    pub rcHTML: ::win32_foundation::RECT,
     pub pszToc: *mut i8,
     pub pszIndex: *mut i8,
     pub pszFile: *mut i8,
     pub pszHome: *mut i8,
     pub fsToolBarFlags: u32,
-    pub fNotExpanded: super::super::Foundation::BOOL,
+    pub fNotExpanded: ::win32_foundation::BOOL,
     pub curNavType: i32,
     pub tabpos: i32,
     pub idNotify: i32,
@@ -712,19 +673,16 @@ pub struct HH_WINTYPE {
     pub pszJump2: *mut i8,
     pub pszUrlJump1: *mut i8,
     pub pszUrlJump2: *mut i8,
-    pub rcMinSize: super::super::Foundation::RECT,
+    pub rcMinSize: ::win32_foundation::RECT,
     pub cbInfoTypes: i32,
     pub pszCustomTabs: *mut i8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HH_WINTYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HH_WINTYPE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HH_WINTYPE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HH_WINTYPE")
@@ -767,19 +725,15 @@ impl ::core::fmt::Debug for HH_WINTYPE {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HH_WINTYPE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HH_WINTYPE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HH_WINTYPE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HH_WINTYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HH_WINTYPE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -824,8 +778,7 @@ impl IITDatabase {
     pub unsafe fn GetObject(&self, dwobjinstance: u32, riid: *const ::windows_core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetObject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwobjinstance), ::core::mem::transmute(riid), ::core::mem::transmute(ppvobj)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetObjectPersistence<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, lpwszobject: Param0, dwobjinstance: u32, ppvpersistence: *mut *mut ::core::ffi::c_void, fstream: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn GetObjectPersistence<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, lpwszobject: Param0, dwobjinstance: u32, ppvpersistence: *mut *mut ::core::ffi::c_void, fstream: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetObjectPersistence)(::windows_core::Interface::as_raw(self), lpwszobject.into_param().abi(), ::core::mem::transmute(dwobjinstance), ::core::mem::transmute(ppvpersistence), fstream.into_param().abi()).ok()
     }
 }
@@ -877,10 +830,7 @@ pub struct IITDatabase_Vtbl {
     pub Close: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CreateObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rclsid: *const ::windows_core::GUID, pdwobjinstance: *mut u32) -> ::windows_core::HRESULT,
     pub GetObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwobjinstance: u32, riid: *const ::windows_core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetObjectPersistence: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpwszobject: ::windows_core::PCWSTR, dwobjinstance: u32, ppvpersistence: *mut *mut ::core::ffi::c_void, fstream: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetObjectPersistence: usize,
+    pub GetObjectPersistence: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpwszobject: ::windows_core::PCWSTR, dwobjinstance: u32, ppvpersistence: *mut *mut ::core::ffi::c_void, fstream: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(C)]
 pub struct IITGroup(pub u8);
@@ -899,11 +849,11 @@ impl IITPropList {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsDirty)(::windows_core::Interface::as_raw(self)))
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Load<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pstm: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Load<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pstm: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Load)(::windows_core::Interface::as_raw(self), pstm.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Save<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pstm: Param0, fcleardirty: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Save<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pstm: Param0, fcleardirty: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Save)(::windows_core::Interface::as_raw(self), pstm.into_param().abi(), fcleardirty.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -924,30 +874,24 @@ impl IITPropList {
     pub unsafe fn Set3(&self, propid: u32, dwdata: u32, dwoperation: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Set3)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propid), ::core::mem::transmute(dwdata), ::core::mem::transmute(dwoperation)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn Add(&self, prop: *mut CProperty) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(prop)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn Get(&self, propid: u32, property: *mut CProperty) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Get)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propid), ::core::mem::transmute(property)).ok()
     }
     pub unsafe fn Clear(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Clear)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPersist<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fpersist: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetPersist<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fpersist: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPersist)(::windows_core::Interface::as_raw(self), fpersist.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPersist2<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, propid: u32, fpersist: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetPersist2<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, propid: u32, fpersist: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPersist2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propid), fpersist.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetFirst(&self, property: *mut CProperty) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetFirst)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(property)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetNext(&self, property: *mut CProperty) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(property)).ok()
     }
@@ -967,7 +911,7 @@ impl IITPropList {
         (::windows_core::Interface::vtable(self).GetDataSize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpvheader), ::core::mem::transmute(dwhdrsize), ::core::mem::transmute(dwdatasize)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn SaveDataToStream<'a, Param2: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, lpvheader: *mut ::core::ffi::c_void, dwhdrsize: u32, pstream: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn SaveDataToStream<'a, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, lpvheader: *mut ::core::ffi::c_void, dwhdrsize: u32, pstream: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SaveDataToStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpvheader), ::core::mem::transmute(dwhdrsize), pstream.into_param().abi()).ok()
     }
     pub unsafe fn LoadFromMem(&self, lpvdata: *mut ::core::ffi::c_void, dwbufsize: u32) -> ::windows_core::Result<()> {
@@ -1002,50 +946,50 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IITProp
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IITPropList> for super::super::System::Com::IPersist {
+impl ::core::convert::From<IITPropList> for ::win32_system::Com::IPersist {
     fn from(value: IITPropList) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IITPropList> for super::super::System::Com::IPersist {
+impl ::core::convert::From<&IITPropList> for ::win32_system::Com::IPersist {
     fn from(value: &IITPropList) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IPersist> for IITPropList {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IPersist> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersist> for IITPropList {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersist> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IPersist> for &'a IITPropList {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IPersist> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersist> for &'a IITPropList {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersist> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IITPropList> for super::super::System::Com::IPersistStreamInit {
+impl ::core::convert::From<IITPropList> for ::win32_system::Com::IPersistStreamInit {
     fn from(value: IITPropList) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IITPropList> for super::super::System::Com::IPersistStreamInit {
+impl ::core::convert::From<&IITPropList> for ::win32_system::Com::IPersistStreamInit {
     fn from(value: &IITPropList) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IPersistStreamInit> for IITPropList {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IPersistStreamInit> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersistStreamInit> for IITPropList {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersistStreamInit> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IPersistStreamInit> for &'a IITPropList {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IPersistStreamInit> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IPersistStreamInit> for &'a IITPropList {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IPersistStreamInit> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1078,35 +1022,17 @@ unsafe impl ::windows_core::Interface for IITPropList {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IITPropList_Vtbl {
-    pub base__: super::super::System::Com::IPersistStreamInit_Vtbl,
+    pub base__: ::win32_system::Com::IPersistStreamInit_Vtbl,
     pub Set: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: u32, lpszwstring: ::windows_core::PCWSTR, dwoperation: u32) -> ::windows_core::HRESULT,
     pub Set2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: u32, lpvdata: *mut ::core::ffi::c_void, cbdata: u32, dwoperation: u32) -> ::windows_core::HRESULT,
     pub Set3: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: u32, dwdata: u32, dwoperation: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prop: *mut CProperty) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Add: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub Get: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: u32, property: *mut CProperty) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Get: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPersist: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fpersist: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPersist: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPersist2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: u32, fpersist: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPersist2: usize,
-    #[cfg(feature = "Win32_Foundation")]
+    pub SetPersist: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fpersist: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetPersist2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propid: u32, fpersist: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetFirst: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, property: *mut CProperty) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetFirst: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, property: *mut CProperty) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetNext: usize,
     pub GetPropCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cprop: *mut i32) -> ::windows_core::HRESULT,
     pub SaveHeader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpvdata: *mut ::core::ffi::c_void, dwhdrsize: u32) -> ::windows_core::HRESULT,
     pub SaveData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpvheader: *mut ::core::ffi::c_void, dwhdrsize: u32, lpvdata: *mut ::core::ffi::c_void, dwbufsize: u32) -> ::windows_core::HRESULT,
@@ -1166,7 +1092,6 @@ impl IITResultSet {
     pub unsafe fn AppendRows<'a, Param0: ::windows_core::IntoParam<'a, IITResultSet>>(&self, pressrc: Param0, lrowsrcfirst: i32, csrcrows: i32, lrowfirstdest: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AppendRows)(::windows_core::Interface::as_raw(self), pressrc.into_param().abi(), ::core::mem::transmute(lrowsrcfirst), ::core::mem::transmute(csrcrows), ::core::mem::transmute(lrowfirstdest)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn Get(&self, lrowindex: i32, lcolumnindex: i32, prop: *mut CProperty) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Get)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lrowindex), ::core::mem::transmute(lcolumnindex), ::core::mem::transmute(prop)).ok()
     }
@@ -1206,8 +1131,7 @@ impl IITResultSet {
     pub unsafe fn Cancel(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Cancel)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Pause<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fpause: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Pause<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fpause: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Pause)(::windows_core::Interface::as_raw(self), fpause.into_param().abi()).ok()
     }
     pub unsafe fn GetRowStatus(&self, lrowfirst: i32, crows: i32, lprowstatus: *mut ROWSTATUS) -> ::windows_core::Result<()> {
@@ -1275,10 +1199,7 @@ pub struct IITResultSet_Vtbl {
     pub Set4: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lrowindex: i32, lpvhdr: *mut ::core::ffi::c_void, lpvdata: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Copy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prscopy: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AppendRows: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pressrc: ::windows_core::RawPtr, lrowsrcfirst: i32, csrcrows: i32, lrowfirstdest: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub Get: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lrowindex: i32, lcolumnindex: i32, prop: *mut CProperty) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Get: usize,
     pub GetKeyProp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, keypropid: *mut u32) -> ::windows_core::HRESULT,
     pub GetColumnPriority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lcolumnindex: i32, columnpriority: *mut PRIORITY) -> ::windows_core::HRESULT,
     pub GetRowCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lnumberofrows: *mut i32) -> ::windows_core::HRESULT,
@@ -1291,10 +1212,7 @@ pub struct IITResultSet_Vtbl {
     pub Free: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub IsCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Pause: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fpause: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Pause: usize,
+    pub Pause: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fpause: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetRowStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lrowfirst: i32, crows: i32, lprowstatus: *mut ROWSTATUS) -> ::windows_core::HRESULT,
     pub GetColumnStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpcolstatus: *mut COLUMNSTATUS) -> ::windows_core::HRESULT,
 }
@@ -1320,8 +1238,7 @@ impl IITWordWheel {
     pub unsafe fn Count(&self, pcentries: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcentries)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Lookup<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, lpcvprefix: *const ::core::ffi::c_void, fexactmatch: Param1, plentry: *mut i32) -> ::windows_core::Result<()> {
+    pub unsafe fn Lookup<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, lpcvprefix: *const ::core::ffi::c_void, fexactmatch: Param1, plentry: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Lookup)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpcvprefix), fexactmatch.into_param().abi(), ::core::mem::transmute(plentry)).ok()
     }
     pub unsafe fn Lookup2<'a, Param1: ::windows_core::IntoParam<'a, IITResultSet>>(&self, lentry: i32, lpitresult: Param1, centries: i32) -> ::windows_core::Result<()> {
@@ -1395,10 +1312,7 @@ pub struct IITWordWheel_Vtbl {
     pub GetLocaleInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwcodepageid: *mut u32, plcid: *mut u32) -> ::windows_core::HRESULT,
     pub GetSorterInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwobjinstance: *mut u32) -> ::windows_core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcentries: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Lookup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpcvprefix: *const ::core::ffi::c_void, fexactmatch: super::super::Foundation::BOOL, plentry: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Lookup: usize,
+    pub Lookup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpcvprefix: *const ::core::ffi::c_void, fexactmatch: ::win32_foundation::BOOL, plentry: *mut i32) -> ::windows_core::HRESULT,
     pub Lookup2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lentry: i32, lpitresult: ::windows_core::RawPtr, centries: i32) -> ::windows_core::HRESULT,
     pub Lookup3: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lentry: i32, lpvkeybuf: *mut ::core::ffi::c_void, cbkeybuf: u32) -> ::windows_core::HRESULT,
     pub SetGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, piitgroup: *mut IITGroup) -> ::windows_core::HRESULT,
@@ -1480,7 +1394,7 @@ impl IStemmerConfig {
         (::windows_core::Interface::vtable(self).GetControlInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pgrfstemflags), ::core::mem::transmute(pdwreserved)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn LoadExternalStemmerData<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pstream: Param0, dwextdatatype: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn LoadExternalStemmerData<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pstream: Param0, dwextdatatype: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).LoadExternalStemmerData)(::windows_core::Interface::as_raw(self), pstream.into_param().abi(), ::core::mem::transmute(dwextdatatype)).ok()
     }
 }
@@ -1564,17 +1478,17 @@ impl IWordBreakerConfig {
         (::windows_core::Interface::vtable(self).GetControlInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pgrfbreakflags), ::core::mem::transmute(pdwreserved)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn LoadExternalBreakerData<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, pstream: Param0, dwextdatatype: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn LoadExternalBreakerData<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pstream: Param0, dwextdatatype: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).LoadExternalBreakerData)(::windows_core::Interface::as_raw(self), pstream.into_param().abi(), ::core::mem::transmute(dwextdatatype)).ok()
     }
     #[cfg(feature = "Win32_System_Search")]
-    pub unsafe fn SetWordStemmer<'a, Param1: ::windows_core::IntoParam<'a, super::super::System::Search::IStemmer>>(&self, rclsid: *const ::windows_core::GUID, pstemmer: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetWordStemmer<'a, Param1: ::windows_core::IntoParam<'a, ::win32_system::Search::IStemmer>>(&self, rclsid: *const ::windows_core::GUID, pstemmer: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetWordStemmer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(rclsid), pstemmer.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Search")]
-    pub unsafe fn GetWordStemmer(&self) -> ::windows_core::Result<super::super::System::Search::IStemmer> {
+    pub unsafe fn GetWordStemmer(&self) -> ::windows_core::Result<::win32_system::Search::IStemmer> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetWordStemmer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Search::IStemmer>(result__)
+        (::windows_core::Interface::vtable(self).GetWordStemmer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Search::IStemmer>(result__)
     }
 }
 impl ::core::convert::From<IWordBreakerConfig> for ::windows_core::IUnknown {

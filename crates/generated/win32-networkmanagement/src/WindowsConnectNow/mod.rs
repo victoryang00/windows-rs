@@ -150,13 +150,13 @@ pub struct IWCNDevice_Vtbl {
     pub SetNFCPasswordParams: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: WCN_PASSWORD_TYPE, dwoobpasswordid: u32, dwpasswordlength: u32, pbpassword: *const u8, dwremotepublickeyhashlength: u32, pbremotepublickeyhash: *const u8, dwdhkeybloblength: u32, pbdhkeyblob: *const u8) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_WCN_DeviceType_Category: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x88190b8b_4684_11da_a26a_0002b3988e81), pid: 16u32 };
+pub const PKEY_WCN_DeviceType_Category: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x88190b8b_4684_11da_a26a_0002b3988e81), pid: 16u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_WCN_DeviceType_SubCategory: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x88190b8b_4684_11da_a26a_0002b3988e81), pid: 18u32 };
+pub const PKEY_WCN_DeviceType_SubCategory: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x88190b8b_4684_11da_a26a_0002b3988e81), pid: 18u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_WCN_DeviceType_SubCategoryOUI: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x88190b8b_4684_11da_a26a_0002b3988e81), pid: 17u32 };
+pub const PKEY_WCN_DeviceType_SubCategoryOUI: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x88190b8b_4684_11da_a26a_0002b3988e81), pid: 17u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_WCN_SSID: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x88190b8b_4684_11da_a26a_0002b3988e81), pid: 32u32 };
+pub const PKEY_WCN_SSID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x88190b8b_4684_11da_a26a_0002b3988e81), pid: 32u32 };
 pub const SID_WcnProvider: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc100beca_d33a_4a4b_bf23_bbef4663d017);
 pub const WCNDeviceObject: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xc100bea7_d33a_4a4b_bf23_bbef4663d017);
 pub const WCN_API_MAX_BUFFER_SIZE: u32 = 2096u32;

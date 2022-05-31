@@ -53,14 +53,8 @@ pub struct IInkDrawingAttributes_Vtbl {
     pub SetColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Color) -> ::windows_core::HRESULT,
     pub PenTip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PenTipShape) -> ::windows_core::HRESULT,
     pub SetPenTip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: PenTipShape) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Size: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetSize: usize,
+    pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
+    pub SetSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Size) -> ::windows_core::HRESULT,
     pub IgnorePressure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIgnorePressure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub FitToCurve: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -78,11 +72,11 @@ unsafe impl ::windows_core::Interface for IInkDrawingAttributes2 {
 pub struct IInkDrawingAttributes2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Numerics")]
-    pub PenTipTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
+    pub PenTipTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     PenTipTransform: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetPenTipTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
+    pub SetPenTipTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetPenTipTransform: usize,
     pub DrawAsHighlighter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -217,10 +211,7 @@ pub struct IInkManager_Vtbl {
     pub SetMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: InkManipulationMode) -> ::windows_core::HRESULT,
     pub ProcessPointerDown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerpoint: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ProcessPointerUpdate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerpoint: ::windows_core::RawPtr, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ProcessPointerUp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerpoint: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProcessPointerUp: usize,
+    pub ProcessPointerUp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointerpoint: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub SetDefaultDrawingAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, drawingattributes: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub RecognizeAsync2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, recognitiontarget: InkRecognitionTarget, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -238,14 +229,8 @@ unsafe impl ::windows_core::Interface for IInkModelerAttributes {
 #[doc(hidden)]
 pub struct IInkModelerAttributes_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub PredictionTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PredictionTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetPredictionTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPredictionTime: usize,
+    pub PredictionTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub SetPredictionTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub ScalingFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub SetScalingFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
 }
@@ -274,10 +259,7 @@ unsafe impl ::windows_core::Interface for IInkPoint {
 #[doc(hidden)]
 pub struct IInkPoint_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub Pressure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -298,8 +280,7 @@ pub struct IInkPoint2_Vtbl {
 #[repr(transparent)]
 pub struct IInkPointFactory(::windows_core::IUnknown);
 impl IInkPointFactory {
-    #[cfg(feature = "Foundation")]
-    pub fn CreateInkPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, position: Param0, pressure: f32) -> ::windows_core::Result<InkPoint> {
+    pub fn CreateInkPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, position: Param0, pressure: f32) -> ::windows_core::Result<InkPoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -378,10 +359,7 @@ unsafe impl ::windows_core::Interface for IInkPointFactory {
 #[doc(hidden)]
 pub struct IInkPointFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub CreateInkPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: super::super::super::Foundation::Point, pressure: f32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateInkPoint: usize,
+    pub CreateInkPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: ::winrt_foundation::Point, pressure: f32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -394,10 +372,7 @@ unsafe impl ::windows_core::Interface for IInkPointFactory2 {
 #[doc(hidden)]
 pub struct IInkPointFactory2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub CreateInkPointWithTiltAndTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: super::super::super::Foundation::Point, pressure: f32, tiltx: f32, tilty: f32, timestamp: u64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateInkPointWithTiltAndTimestamp: usize,
+    pub CreateInkPointWithTiltAndTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: ::winrt_foundation::Point, pressure: f32, tiltx: f32, tilty: f32, timestamp: u64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -429,22 +404,10 @@ pub struct IInkPresenter_Vtbl {
     pub UpdateDefaultDrawingAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ActivateCustomDrying: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetPredefinedConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: InkPresenterPredefinedConfiguration) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub StrokesCollected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StrokesCollected: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStrokesCollected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStrokesCollected: usize,
-    #[cfg(feature = "Foundation")]
-    pub StrokesErased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StrokesErased: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStrokesErased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStrokesErased: usize,
+    pub StrokesCollected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStrokesCollected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub StrokesErased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStrokesErased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -672,15 +635,15 @@ impl IInkPresenterStencil {
         unsafe { (::windows_core::Interface::vtable(this).SetForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn Transform(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Matrix3x2> {
+    pub fn Transform(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Matrix3x2>::zeroed();
-            (::windows_core::Interface::vtable(this).Transform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Matrix3x2>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Matrix3x2>::zeroed();
+            (::windows_core::Interface::vtable(this).Transform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -764,11 +727,11 @@ pub struct IInkPresenterStencil_Vtbl {
     pub ForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Color) -> ::windows_core::HRESULT,
     pub SetForegroundColor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Color) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub Transform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
+    pub Transform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Transform: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
+    pub SetTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetTransform: usize,
 }
@@ -783,10 +746,7 @@ unsafe impl ::windows_core::Interface for IInkRecognitionResult {
 #[doc(hidden)]
 pub struct IInkRecognitionResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BoundingRect: usize,
+    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub GetTextCandidates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -817,19 +777,19 @@ impl IInkRecognizerContainer {
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultRecognizer)(::windows_core::Interface::as_raw(this), recognizer.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RecognizeAsync<'a, Param0: ::windows_core::IntoParam<'a, InkStrokeContainer>>(&self, strokecollection: Param0, recognitiontarget: InkRecognitionTarget) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>> {
+    pub fn RecognizeAsync<'a, Param0: ::windows_core::IntoParam<'a, InkStrokeContainer>>(&self, strokecollection: Param0, recognitiontarget: InkRecognitionTarget) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecognizeAsync)(::windows_core::Interface::as_raw(this), strokecollection.into_param().abi(), recognitiontarget, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>>(result__)
+            (::windows_core::Interface::vtable(this).RecognizeAsync)(::windows_core::Interface::as_raw(this), strokecollection.into_param().abi(), recognitiontarget, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetRecognizers(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkRecognizer>> {
+    pub fn GetRecognizers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkRecognizer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRecognizers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkRecognizer>>(result__)
+            (::windows_core::Interface::vtable(this).GetRecognizers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkRecognizer>>(result__)
         }
     }
 }
@@ -927,10 +887,7 @@ pub struct IInkStroke_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DrawingAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetDrawingAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BoundingRect: usize,
+    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub Selected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetSelected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub Recognized: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -952,11 +909,11 @@ unsafe impl ::windows_core::Interface for IInkStroke2 {
 pub struct IInkStroke2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Numerics")]
-    pub PointTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
+    pub PointTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     PointTransform: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetPointTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
+    pub SetPointTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetPointTransform: usize,
     #[cfg(feature = "Foundation_Collections")]
@@ -976,22 +933,10 @@ unsafe impl ::windows_core::Interface for IInkStroke3 {
 pub struct IInkStroke3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub StrokeStartedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StrokeStartedTime: usize,
-    #[cfg(feature = "Foundation")]
     pub SetStrokeStartedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetStrokeStartedTime: usize,
-    #[cfg(feature = "Foundation")]
     pub StrokeDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StrokeDuration: usize,
-    #[cfg(feature = "Foundation")]
     pub SetStrokeDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetStrokeDuration: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1038,7 +983,7 @@ unsafe impl ::windows_core::Interface for IInkStrokeBuilder2 {
 pub struct IInkStrokeBuilder2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Foundation_Collections", feature = "Foundation_Numerics"))]
-    pub CreateStrokeFromInkPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inkpoints: ::windows_core::RawPtr, transform: super::super::super::Foundation::Numerics::Matrix3x2, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateStrokeFromInkPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inkpoints: ::windows_core::RawPtr, transform: ::winrt_foundation::Numerics::Matrix3x2, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Foundation_Numerics")))]
     CreateStrokeFromInkPoints: usize,
 }
@@ -1054,67 +999,62 @@ unsafe impl ::windows_core::Interface for IInkStrokeBuilder3 {
 pub struct IInkStrokeBuilder3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Foundation_Collections", feature = "Foundation_Numerics"))]
-    pub CreateStrokeFromInkPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inkpoints: ::windows_core::RawPtr, transform: super::super::super::Foundation::Numerics::Matrix3x2, strokestartedtime: ::windows_core::RawPtr, strokeduration: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateStrokeFromInkPoints: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inkpoints: ::windows_core::RawPtr, transform: ::winrt_foundation::Numerics::Matrix3x2, strokestartedtime: ::windows_core::RawPtr, strokeduration: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Foundation_Numerics")))]
     CreateStrokeFromInkPoints: usize,
 }
 #[repr(transparent)]
 pub struct IInkStrokeContainer(::windows_core::IUnknown);
 impl IInkStrokeContainer {
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn AddStroke<'a, Param0: ::windows_core::IntoParam<'a, InkStroke>>(&self, stroke: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AddStroke)(::windows_core::Interface::as_raw(this), stroke.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteSelected(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn DeleteSelected(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).DeleteSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MoveSelected<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, translation: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn MoveSelected<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, translation: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).MoveSelected)(::windows_core::Interface::as_raw(this), translation.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).MoveSelected)(::windows_core::Interface::as_raw(this), translation.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SelectWithPolyLine<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Point>>>(&self, polyline: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn SelectWithPolyLine<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Point>>>(&self, polyline: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectWithPolyLine)(::windows_core::Interface::as_raw(this), polyline.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).SelectWithPolyLine)(::windows_core::Interface::as_raw(this), polyline.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SelectWithLine<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, from: Param0, to: Param1) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn SelectWithLine<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, from: Param0, to: Param1) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectWithLine)(::windows_core::Interface::as_raw(this), from.into_param().abi(), to.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).SelectWithLine)(::windows_core::Interface::as_raw(this), from.into_param().abi(), to.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn CopySelectedToClipboard(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).CopySelectedToClipboard)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PasteFromClipboard<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, position: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn PasteFromClipboard<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, position: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).PasteFromClipboard)(::windows_core::Interface::as_raw(this), position.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).PasteFromClipboard)(::windows_core::Interface::as_raw(this), position.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn CanPasteFromClipboard(&self) -> ::windows_core::Result<bool> {
@@ -1124,41 +1064,41 @@ impl IInkStrokeContainer {
             (::windows_core::Interface::vtable(this).CanPasteFromClipboard)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IInputStream>>(&self, inputstream: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncActionWithProgress<u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, inputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncActionWithProgress<u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), inputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncActionWithProgress<u64>>(result__)
+            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), inputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncActionWithProgress<u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SaveAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SaveAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn UpdateRecognitionResults<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>>(&self, recognitionresults: Param0) -> ::windows_core::Result<()> {
+    pub fn UpdateRecognitionResults<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>>(&self, recognitionresults: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdateRecognitionResults)(::windows_core::Interface::as_raw(this), recognitionresults.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkStroke>> {
+    pub fn GetStrokes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkStroke>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkStroke>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkStroke>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetRecognitionResults(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>> {
+    pub fn GetRecognitionResults(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRecognitionResults)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetRecognitionResults)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>(result__)
         }
     }
 }
@@ -1233,40 +1173,25 @@ unsafe impl ::windows_core::Interface for IInkStrokeContainer {
 #[doc(hidden)]
 pub struct IInkStrokeContainer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BoundingRect: usize,
+    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub AddStroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stroke: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub DeleteSelected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeleteSelected: usize,
-    #[cfg(feature = "Foundation")]
-    pub MoveSelected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, translation: super::super::super::Foundation::Point, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MoveSelected: usize,
+    pub DeleteSelected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    pub MoveSelected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, translation: ::winrt_foundation::Point, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub SelectWithPolyLine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, polyline: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
+    pub SelectWithPolyLine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, polyline: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SelectWithPolyLine: usize,
-    #[cfg(feature = "Foundation")]
-    pub SelectWithLine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, from: super::super::super::Foundation::Point, to: super::super::super::Foundation::Point, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SelectWithLine: usize,
+    pub SelectWithLine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, from: ::winrt_foundation::Point, to: ::winrt_foundation::Point, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub CopySelectedToClipboard: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub PasteFromClipboard: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: super::super::super::Foundation::Point, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PasteFromClipboard: usize,
+    pub PasteFromClipboard: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, position: ::winrt_foundation::Point, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub CanPasteFromClipboard: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub LoadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, inputstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     LoadAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SaveAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SaveAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub UpdateRecognitionResults: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, recognitionresults: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1309,9 +1234,9 @@ unsafe impl ::windows_core::Interface for IInkStrokeContainer3 {
 #[doc(hidden)]
 pub struct IInkStrokeContainer3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SaveWithFormatAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, inkpersistenceformat: InkPersistenceFormat, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SaveWithFormatAsync: usize,
     pub GetStrokeById: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1326,38 +1251,26 @@ unsafe impl ::windows_core::Interface for IInkStrokeInput {
 #[doc(hidden)]
 pub struct IInkStrokeInput_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub StrokeStarted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    #[cfg(feature = "UI_Core")]
+    pub StrokeStarted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     StrokeStarted: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStrokeStarted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStrokeStarted: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub StrokeContinued: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    pub RemoveStrokeStarted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub StrokeContinued: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     StrokeContinued: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStrokeContinued: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStrokeContinued: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub StrokeEnded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    pub RemoveStrokeContinued: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub StrokeEnded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     StrokeEnded: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStrokeEnded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStrokeEnded: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub StrokeCanceled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    pub RemoveStrokeEnded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub StrokeCanceled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     StrokeCanceled: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStrokeCanceled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStrokeCanceled: usize,
+    pub RemoveStrokeCanceled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub InkPresenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -1371,18 +1284,9 @@ unsafe impl ::windows_core::Interface for IInkStrokeRenderingSegment {
 #[doc(hidden)]
 pub struct IInkStrokeRenderingSegment_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
-    #[cfg(feature = "Foundation")]
-    pub BezierControlPoint1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BezierControlPoint1: usize,
-    #[cfg(feature = "Foundation")]
-    pub BezierControlPoint2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BezierControlPoint2: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub BezierControlPoint1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub BezierControlPoint2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub Pressure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub TiltX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub TiltY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
@@ -1448,62 +1352,41 @@ unsafe impl ::windows_core::Interface for IInkUnprocessedInput {
 #[doc(hidden)]
 pub struct IInkUnprocessedInput_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub PointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    #[cfg(feature = "UI_Core")]
+    pub PointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     PointerEntered: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePointerEntered: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub PointerHovered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    pub RemovePointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub PointerHovered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     PointerHovered: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePointerHovered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePointerHovered: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub PointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    pub RemovePointerHovered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub PointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     PointerExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePointerExited: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub PointerPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    pub RemovePointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub PointerPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     PointerPressed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePointerPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePointerPressed: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub PointerMoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    pub RemovePointerPressed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub PointerMoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     PointerMoved: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePointerMoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePointerMoved: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub PointerReleased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    pub RemovePointerMoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub PointerReleased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     PointerReleased: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePointerReleased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePointerReleased: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub PointerLost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Core")))]
+    pub RemovePointerReleased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Core")]
+    pub PointerLost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Core"))]
     PointerLost: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePointerLost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePointerLost: usize,
+    pub RemovePointerLost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub InkPresenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -1582,16 +1465,14 @@ impl InkDrawingAttributes {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPenTip)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Size(&self) -> ::windows_core::Result<super::super::super::Foundation::Size> {
+    pub fn Size(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Size>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSize)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1618,15 +1499,15 @@ impl InkDrawingAttributes {
         unsafe { (::windows_core::Interface::vtable(this).SetFitToCurve)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn PenTipTransform(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Matrix3x2> {
+    pub fn PenTipTransform(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<IInkDrawingAttributes2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Matrix3x2>::zeroed();
-            (::windows_core::Interface::vtable(this).PenTipTransform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Matrix3x2>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Matrix3x2>::zeroed();
+            (::windows_core::Interface::vtable(this).PenTipTransform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetPenTipTransform<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPenTipTransform<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkDrawingAttributes2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPenTipTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2216,12 +2097,11 @@ impl InkManager {
             (::windows_core::Interface::vtable(this).ProcessPointerUpdate)(::windows_core::Interface::as_raw(this), pointerpoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProcessPointerUp<'a, Param0: ::windows_core::IntoParam<'a, super::PointerPoint>>(&self, pointerpoint: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn ProcessPointerUp<'a, Param0: ::windows_core::IntoParam<'a, super::PointerPoint>>(&self, pointerpoint: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).ProcessPointerUp)(::windows_core::Interface::as_raw(this), pointerpoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).ProcessPointerUp)(::windows_core::Interface::as_raw(this), pointerpoint.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn SetDefaultDrawingAttributes<'a, Param0: ::windows_core::IntoParam<'a, InkDrawingAttributes>>(&self, drawingattributes: Param0) -> ::windows_core::Result<()> {
@@ -2229,11 +2109,11 @@ impl InkManager {
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultDrawingAttributes)(::windows_core::Interface::as_raw(this), drawingattributes.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RecognizeAsync2(&self, recognitiontarget: InkRecognitionTarget) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>> {
+    pub fn RecognizeAsync2(&self, recognitiontarget: InkRecognitionTarget) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecognizeAsync2)(::windows_core::Interface::as_raw(this), recognitiontarget, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>>(result__)
+            (::windows_core::Interface::vtable(this).RecognizeAsync2)(::windows_core::Interface::as_raw(this), recognitiontarget, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>>(result__)
         }
     }
     pub fn SetDefaultRecognizer<'a, Param0: ::windows_core::IntoParam<'a, InkRecognizer>>(&self, recognizer: Param0) -> ::windows_core::Result<()> {
@@ -2241,75 +2121,70 @@ impl InkManager {
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultRecognizer)(::windows_core::Interface::as_raw(this), recognizer.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RecognizeAsync<'a, Param0: ::windows_core::IntoParam<'a, InkStrokeContainer>>(&self, strokecollection: Param0, recognitiontarget: InkRecognitionTarget) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>> {
+    pub fn RecognizeAsync<'a, Param0: ::windows_core::IntoParam<'a, InkStrokeContainer>>(&self, strokecollection: Param0, recognitiontarget: InkRecognitionTarget) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>> {
         let this = &::windows_core::Interface::cast::<IInkRecognizerContainer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecognizeAsync)(::windows_core::Interface::as_raw(this), strokecollection.into_param().abi(), recognitiontarget, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>>(result__)
+            (::windows_core::Interface::vtable(this).RecognizeAsync)(::windows_core::Interface::as_raw(this), strokecollection.into_param().abi(), recognitiontarget, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetRecognizers(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkRecognizer>> {
+    pub fn GetRecognizers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkRecognizer>> {
         let this = &::windows_core::Interface::cast::<IInkRecognizerContainer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRecognizers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkRecognizer>>(result__)
+            (::windows_core::Interface::vtable(this).GetRecognizers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkRecognizer>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn AddStroke<'a, Param0: ::windows_core::IntoParam<'a, InkStroke>>(&self, stroke: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AddStroke)(::windows_core::Interface::as_raw(this), stroke.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteSelected(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn DeleteSelected(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).DeleteSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MoveSelected<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, translation: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn MoveSelected<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, translation: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).MoveSelected)(::windows_core::Interface::as_raw(this), translation.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).MoveSelected)(::windows_core::Interface::as_raw(this), translation.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SelectWithPolyLine<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Point>>>(&self, polyline: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn SelectWithPolyLine<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Point>>>(&self, polyline: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectWithPolyLine)(::windows_core::Interface::as_raw(this), polyline.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).SelectWithPolyLine)(::windows_core::Interface::as_raw(this), polyline.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SelectWithLine<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, from: Param0, to: Param1) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn SelectWithLine<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, from: Param0, to: Param1) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectWithLine)(::windows_core::Interface::as_raw(this), from.into_param().abi(), to.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).SelectWithLine)(::windows_core::Interface::as_raw(this), from.into_param().abi(), to.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn CopySelectedToClipboard(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).CopySelectedToClipboard)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PasteFromClipboard<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, position: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn PasteFromClipboard<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, position: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).PasteFromClipboard)(::windows_core::Interface::as_raw(this), position.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).PasteFromClipboard)(::windows_core::Interface::as_raw(this), position.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn CanPasteFromClipboard(&self) -> ::windows_core::Result<bool> {
@@ -2319,41 +2194,41 @@ impl InkManager {
             (::windows_core::Interface::vtable(this).CanPasteFromClipboard)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IInputStream>>(&self, inputstream: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncActionWithProgress<u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, inputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncActionWithProgress<u64>> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), inputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncActionWithProgress<u64>>(result__)
+            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), inputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncActionWithProgress<u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SaveAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SaveAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn UpdateRecognitionResults<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>>(&self, recognitionresults: Param0) -> ::windows_core::Result<()> {
+    pub fn UpdateRecognitionResults<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>>(&self, recognitionresults: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).UpdateRecognitionResults)(::windows_core::Interface::as_raw(this), recognitionresults.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkStroke>> {
+    pub fn GetStrokes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkStroke>> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkStroke>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkStroke>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetRecognitionResults(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>> {
+    pub fn GetRecognitionResults(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRecognitionResults)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetRecognitionResults)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>(result__)
         }
     }
 }
@@ -2508,16 +2383,14 @@ unsafe impl ::windows_core::RuntimeType for InkManipulationMode {
 #[repr(transparent)]
 pub struct InkModelerAttributes(::windows_core::IUnknown);
 impl InkModelerAttributes {
-    #[cfg(feature = "Foundation")]
-    pub fn PredictionTime(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn PredictionTime(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).PredictionTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).PredictionTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPredictionTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPredictionTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPredictionTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2652,12 +2525,11 @@ unsafe impl ::windows_core::RuntimeType for InkPersistenceFormat {
 #[repr(transparent)]
 pub struct InkPoint(::windows_core::IUnknown);
 impl InkPoint {
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     pub fn Pressure(&self) -> ::windows_core::Result<f32> {
@@ -2688,15 +2560,13 @@ impl InkPoint {
             (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u64>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateInkPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(position: Param0, pressure: f32) -> ::windows_core::Result<InkPoint> {
+    pub fn CreateInkPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(position: Param0, pressure: f32) -> ::windows_core::Result<InkPoint> {
         Self::IInkPointFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInkPoint)(::windows_core::Interface::as_raw(this), position.into_param().abi(), pressure, result__.as_mut_ptr()).from_abi::<InkPoint>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateInkPointWithTiltAndTimestamp<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(position: Param0, pressure: f32, tiltx: f32, tilty: f32, timestamp: u64) -> ::windows_core::Result<InkPoint> {
+    pub fn CreateInkPointWithTiltAndTimestamp<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(position: Param0, pressure: f32, tiltx: f32, tilty: f32, timestamp: u64) -> ::windows_core::Result<InkPoint> {
         Self::IInkPointFactory2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInkPointWithTiltAndTimestamp)(::windows_core::Interface::as_raw(this), position.into_param().abi(), pressure, tiltx, tilty, timestamp, result__.as_mut_ptr()).from_abi::<InkPoint>(result__)
@@ -2864,29 +2734,25 @@ impl InkPresenter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPredefinedConfiguration)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StrokesCollected<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkPresenter, InkStrokesCollectedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn StrokesCollected<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkPresenter, InkStrokesCollectedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StrokesCollected)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StrokesCollected)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStrokesCollected<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStrokesCollected<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStrokesCollected)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StrokesErased<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkPresenter, InkStrokesErasedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn StrokesErased<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkPresenter, InkStrokesErasedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StrokesErased)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StrokesErased)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStrokesErased<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStrokesErased<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStrokesErased)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
@@ -3141,15 +3007,15 @@ impl InkPresenterProtractor {
         unsafe { (::windows_core::Interface::vtable(this).SetForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn Transform(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Matrix3x2> {
+    pub fn Transform(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<IInkPresenterStencil>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Matrix3x2>::zeroed();
-            (::windows_core::Interface::vtable(this).Transform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Matrix3x2>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Matrix3x2>::zeroed();
+            (::windows_core::Interface::vtable(this).Transform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkPresenterStencil>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -3346,15 +3212,15 @@ impl InkPresenterRuler {
         unsafe { (::windows_core::Interface::vtable(this).SetForegroundColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn Transform(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Matrix3x2> {
+    pub fn Transform(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<IInkPresenterStencil>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Matrix3x2>::zeroed();
-            (::windows_core::Interface::vtable(this).Transform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Matrix3x2>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Matrix3x2>::zeroed();
+            (::windows_core::Interface::vtable(this).Transform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetTransform<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkPresenterStencil>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -3494,28 +3360,27 @@ unsafe impl ::windows_core::RuntimeType for InkPresenterStencilKind {
 #[repr(transparent)]
 pub struct InkRecognitionResult(::windows_core::IUnknown);
 impl InkRecognitionResult {
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetTextCandidates(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn GetTextCandidates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTextCandidates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetTextCandidates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkStroke>> {
+    pub fn GetStrokes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkStroke>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkStroke>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkStroke>>(result__)
         }
     }
 }
@@ -3721,19 +3586,19 @@ impl InkRecognizerContainer {
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultRecognizer)(::windows_core::Interface::as_raw(this), recognizer.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RecognizeAsync<'a, Param0: ::windows_core::IntoParam<'a, InkStrokeContainer>>(&self, strokecollection: Param0, recognitiontarget: InkRecognitionTarget) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>> {
+    pub fn RecognizeAsync<'a, Param0: ::windows_core::IntoParam<'a, InkStrokeContainer>>(&self, strokecollection: Param0, recognitiontarget: InkRecognitionTarget) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecognizeAsync)(::windows_core::Interface::as_raw(this), strokecollection.into_param().abi(), recognitiontarget, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>>(result__)
+            (::windows_core::Interface::vtable(this).RecognizeAsync)(::windows_core::Interface::as_raw(this), strokecollection.into_param().abi(), recognitiontarget, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetRecognizers(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkRecognizer>> {
+    pub fn GetRecognizers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkRecognizer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRecognizers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkRecognizer>>(result__)
+            (::windows_core::Interface::vtable(this).GetRecognizers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkRecognizer>>(result__)
         }
     }
 }
@@ -3843,12 +3708,11 @@ impl InkStroke {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDrawingAttributes)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn Selected(&self) -> ::windows_core::Result<bool> {
@@ -3870,11 +3734,11 @@ impl InkStroke {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetRenderingSegments(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkStrokeRenderingSegment>> {
+    pub fn GetRenderingSegments(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkStrokeRenderingSegment>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRenderingSegments)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkStrokeRenderingSegment>>(result__)
+            (::windows_core::Interface::vtable(this).GetRenderingSegments)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkStrokeRenderingSegment>>(result__)
         }
     }
     pub fn Clone(&self) -> ::windows_core::Result<InkStroke> {
@@ -3885,24 +3749,24 @@ impl InkStroke {
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn PointTransform(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Matrix3x2> {
+    pub fn PointTransform(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Matrix3x2> {
         let this = &::windows_core::Interface::cast::<IInkStroke2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Matrix3x2>::zeroed();
-            (::windows_core::Interface::vtable(this).PointTransform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Matrix3x2>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Matrix3x2>::zeroed();
+            (::windows_core::Interface::vtable(this).PointTransform)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Matrix3x2>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetPointTransform<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPointTransform<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkStroke2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPointTransform)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetInkPoints(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkPoint>> {
+    pub fn GetInkPoints(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkPoint>> {
         let this = &::windows_core::Interface::cast::<IInkStroke2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetInkPoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkPoint>>(result__)
+            (::windows_core::Interface::vtable(this).GetInkPoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkPoint>>(result__)
         }
     }
     pub fn Id(&self) -> ::windows_core::Result<u32> {
@@ -3912,29 +3776,25 @@ impl InkStroke {
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StrokeStartedTime(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<super::super::super::Foundation::DateTime>> {
+    pub fn StrokeStartedTime(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = &::windows_core::Interface::cast::<IInkStroke3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StrokeStartedTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<super::super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).StrokeStartedTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetStrokeStartedTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<super::super::super::Foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetStrokeStartedTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkStroke3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeStartedTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StrokeDuration(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<super::super::super::Foundation::TimeSpan>> {
+    pub fn StrokeDuration(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>> {
         let this = &::windows_core::Interface::cast::<IInkStroke3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StrokeDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<super::super::super::Foundation::TimeSpan>>(result__)
+            (::windows_core::Interface::vtable(this).StrokeDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetStrokeDuration<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<super::super::super::Foundation::TimeSpan>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetStrokeDuration<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkStroke3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeDuration)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -4047,7 +3907,7 @@ impl InkStrokeBuilder {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateStroke<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Point>>>(&self, points: Param0) -> ::windows_core::Result<InkStroke> {
+    pub fn CreateStroke<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Point>>>(&self, points: Param0) -> ::windows_core::Result<InkStroke> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4059,7 +3919,7 @@ impl InkStrokeBuilder {
         unsafe { (::windows_core::Interface::vtable(this).SetDefaultDrawingAttributes)(::windows_core::Interface::as_raw(this), drawingattributes.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Foundation_Numerics"))]
-    pub fn CreateStrokeFromInkPoints<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<InkPoint>>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Matrix3x2>>(&self, inkpoints: Param0, transform: Param1) -> ::windows_core::Result<InkStroke> {
+    pub fn CreateStrokeFromInkPoints<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InkPoint>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>>(&self, inkpoints: Param0, transform: Param1) -> ::windows_core::Result<InkStroke> {
         let this = &::windows_core::Interface::cast::<IInkStrokeBuilder2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4067,7 +3927,7 @@ impl InkStrokeBuilder {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Foundation_Numerics"))]
-    pub fn CreateStrokeFromInkPoints2<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<InkPoint>>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Matrix3x2>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<super::super::super::Foundation::DateTime>>, Param3: ::windows_core::IntoParam<'a, super::super::super::Foundation::IReference<super::super::super::Foundation::TimeSpan>>>(&self, inkpoints: Param0, transform: Param1, strokestartedtime: Param2, strokeduration: Param3) -> ::windows_core::Result<InkStroke> {
+    pub fn CreateStrokeFromInkPoints2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InkPoint>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Matrix3x2>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::DateTime>>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::TimeSpan>>>(&self, inkpoints: Param0, transform: Param1, strokestartedtime: Param2, strokeduration: Param3) -> ::windows_core::Result<InkStroke> {
         let this = &::windows_core::Interface::cast::<IInkStrokeBuilder3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -4155,60 +4015,55 @@ impl InkStrokeContainer {
         static mut SHARED: ::windows_core::FactoryCache<InkStrokeContainer, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn AddStroke<'a, Param0: ::windows_core::IntoParam<'a, InkStroke>>(&self, stroke: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AddStroke)(::windows_core::Interface::as_raw(this), stroke.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteSelected(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn DeleteSelected(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).DeleteSelected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MoveSelected<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, translation: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn MoveSelected<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, translation: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).MoveSelected)(::windows_core::Interface::as_raw(this), translation.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).MoveSelected)(::windows_core::Interface::as_raw(this), translation.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SelectWithPolyLine<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Point>>>(&self, polyline: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn SelectWithPolyLine<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Point>>>(&self, polyline: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectWithPolyLine)(::windows_core::Interface::as_raw(this), polyline.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).SelectWithPolyLine)(::windows_core::Interface::as_raw(this), polyline.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SelectWithLine<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, from: Param0, to: Param1) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn SelectWithLine<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, from: Param0, to: Param1) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectWithLine)(::windows_core::Interface::as_raw(this), from.into_param().abi(), to.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).SelectWithLine)(::windows_core::Interface::as_raw(this), from.into_param().abi(), to.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn CopySelectedToClipboard(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).CopySelectedToClipboard)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PasteFromClipboard<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, position: Param0) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn PasteFromClipboard<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, position: Param0) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).PasteFromClipboard)(::windows_core::Interface::as_raw(this), position.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).PasteFromClipboard)(::windows_core::Interface::as_raw(this), position.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn CanPasteFromClipboard(&self) -> ::windows_core::Result<bool> {
@@ -4218,45 +4073,45 @@ impl InkStrokeContainer {
             (::windows_core::Interface::vtable(this).CanPasteFromClipboard)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IInputStream>>(&self, inputstream: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncActionWithProgress<u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, inputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncActionWithProgress<u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), inputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncActionWithProgress<u64>>(result__)
+            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), inputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncActionWithProgress<u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SaveAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SaveAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn UpdateRecognitionResults<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>>(&self, recognitionresults: Param0) -> ::windows_core::Result<()> {
+    pub fn UpdateRecognitionResults<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>>(&self, recognitionresults: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UpdateRecognitionResults)(::windows_core::Interface::as_raw(this), recognitionresults.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkStroke>> {
+    pub fn GetStrokes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkStroke>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkStroke>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkStroke>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetRecognitionResults(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>> {
+    pub fn GetRecognitionResults(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRecognitionResults)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkRecognitionResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetRecognitionResults)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkRecognitionResult>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AddStrokes<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<InkStroke>>>(&self, strokes: Param0) -> ::windows_core::Result<()> {
+    pub fn AddStrokes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<InkStroke>>>(&self, strokes: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AddStrokes)(::windows_core::Interface::as_raw(this), strokes.into_param().abi()).ok() }
     }
@@ -4264,12 +4119,12 @@ impl InkStrokeContainer {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SaveWithFormatAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0, inkpersistenceformat: InkPersistenceFormat) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SaveWithFormatAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0, inkpersistenceformat: InkPersistenceFormat) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<IInkStrokeContainer3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveWithFormatAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), inkpersistenceformat, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).SaveWithFormatAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), inkpersistenceformat, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
     pub fn GetStrokeById(&self, id: u32) -> ::windows_core::Result<InkStroke> {
@@ -4375,55 +4230,51 @@ impl<'a> ::windows_core::IntoParam<'a, IInkStrokeContainer> for &InkStrokeContai
 #[repr(transparent)]
 pub struct InkStrokeInput(::windows_core::IUnknown);
 impl InkStrokeInput {
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn StrokeStarted<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkStrokeInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn StrokeStarted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkStrokeInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StrokeStarted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StrokeStarted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStrokeStarted<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStrokeStarted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStrokeStarted)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn StrokeContinued<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkStrokeInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn StrokeContinued<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkStrokeInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StrokeContinued)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StrokeContinued)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStrokeContinued<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStrokeContinued<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStrokeContinued)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn StrokeEnded<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkStrokeInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn StrokeEnded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkStrokeInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StrokeEnded)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StrokeEnded)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStrokeEnded<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStrokeEnded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStrokeEnded)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn StrokeCanceled<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkStrokeInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn StrokeCanceled<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkStrokeInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StrokeCanceled)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StrokeCanceled)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStrokeCanceled<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStrokeCanceled<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStrokeCanceled)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
@@ -4510,28 +4361,25 @@ unsafe impl ::core::marker::Sync for InkStrokeInput {}
 #[repr(transparent)]
 pub struct InkStrokeRenderingSegment(::windows_core::IUnknown);
 impl InkStrokeRenderingSegment {
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BezierControlPoint1(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn BezierControlPoint1(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).BezierControlPoint1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).BezierControlPoint1)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BezierControlPoint2(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn BezierControlPoint2(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).BezierControlPoint2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).BezierControlPoint2)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     pub fn Pressure(&self) -> ::windows_core::Result<f32> {
@@ -4639,11 +4487,11 @@ unsafe impl ::core::marker::Sync for InkStrokeRenderingSegment {}
 pub struct InkStrokesCollectedEventArgs(::windows_core::IUnknown);
 impl InkStrokesCollectedEventArgs {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Strokes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkStroke>> {
+    pub fn Strokes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkStroke>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Strokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkStroke>>(result__)
+            (::windows_core::Interface::vtable(this).Strokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkStroke>>(result__)
         }
     }
 }
@@ -4721,11 +4569,11 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ink
 pub struct InkStrokesErasedEventArgs(::windows_core::IUnknown);
 impl InkStrokesErasedEventArgs {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Strokes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkStroke>> {
+    pub fn Strokes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkStroke>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Strokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkStroke>>(result__)
+            (::windows_core::Interface::vtable(this).Strokes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkStroke>>(result__)
         }
     }
 }
@@ -4803,11 +4651,11 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ink
 pub struct InkSynchronizer(::windows_core::IUnknown);
 impl InkSynchronizer {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BeginDry(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<InkStroke>> {
+    pub fn BeginDry(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<InkStroke>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BeginDry)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<InkStroke>>(result__)
+            (::windows_core::Interface::vtable(this).BeginDry)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<InkStroke>>(result__)
         }
     }
     pub fn EndDry(&self) -> ::windows_core::Result<()> {
@@ -4888,94 +4736,87 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ink
 #[repr(transparent)]
 pub struct InkUnprocessedInput(::windows_core::IUnknown);
 impl InkUnprocessedInput {
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn PointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn PointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerEntered)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerEntered)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePointerEntered)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn PointerHovered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn PointerHovered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerHovered)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerHovered)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePointerHovered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePointerHovered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePointerHovered)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn PointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn PointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerExited)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerExited)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePointerExited)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn PointerPressed<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn PointerPressed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerPressed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerPressed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePointerPressed<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePointerPressed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePointerPressed)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn PointerMoved<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn PointerMoved<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerMoved)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerMoved)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePointerMoved<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePointerMoved<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePointerMoved)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn PointerReleased<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn PointerReleased<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerReleased)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerReleased)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePointerReleased<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePointerReleased<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePointerReleased)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Core"))]
-    pub fn PointerLost<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Core")]
+    pub fn PointerLost<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<InkUnprocessedInput, super::super::Core::PointerEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerLost)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerLost)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePointerLost<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePointerLost<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePointerLost)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }

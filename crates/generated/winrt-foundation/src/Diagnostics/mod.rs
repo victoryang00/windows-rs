@@ -368,11 +368,11 @@ impl FileLoggingSession {
         unsafe { (::windows_core::Interface::vtable(this).RemoveLoggingChannel)(::windows_core::Interface::as_raw(this), loggingchannel.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage")]
-    pub fn CloseAndSaveToFileAsync(&self) -> ::windows_core::Result<super::IAsyncOperation<super::super::Storage::StorageFile>> {
+    pub fn CloseAndSaveToFileAsync(&self) -> ::windows_core::Result<super::IAsyncOperation<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CloseAndSaveToFileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::IAsyncOperation<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).CloseAndSaveToFileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::IAsyncOperation<::winrt_storage::StorageFile>>(result__)
         }
     }
     pub fn LogFileGenerated<'a, Param0: ::windows_core::IntoParam<'a, super::TypedEventHandler<IFileLoggingSession, LogFileGeneratedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::EventRegistrationToken> {
@@ -672,11 +672,11 @@ impl IFileLoggingSession {
         unsafe { (::windows_core::Interface::vtable(this).RemoveLoggingChannel)(::windows_core::Interface::as_raw(this), loggingchannel.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage")]
-    pub fn CloseAndSaveToFileAsync(&self) -> ::windows_core::Result<super::IAsyncOperation<super::super::Storage::StorageFile>> {
+    pub fn CloseAndSaveToFileAsync(&self) -> ::windows_core::Result<super::IAsyncOperation<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CloseAndSaveToFileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::IAsyncOperation<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).CloseAndSaveToFileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::IAsyncOperation<::winrt_storage::StorageFile>>(result__)
         }
     }
     pub fn LogFileGenerated<'a, Param0: ::windows_core::IntoParam<'a, super::TypedEventHandler<IFileLoggingSession, LogFileGeneratedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::EventRegistrationToken> {
@@ -1276,11 +1276,11 @@ impl ILoggingSession {
         }
     }
     #[cfg(feature = "Storage")]
-    pub fn SaveToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, folder: Param0, filename: Param1) -> ::windows_core::Result<super::IAsyncOperation<super::super::Storage::StorageFile>> {
+    pub fn SaveToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, folder: Param0, filename: Param1) -> ::windows_core::Result<super::IAsyncOperation<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveToFileAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), filename.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::IAsyncOperation<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).SaveToFileAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), filename.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::IAsyncOperation<::winrt_storage::StorageFile>>(result__)
         }
     }
     pub fn AddLoggingChannel<'a, Param0: ::windows_core::IntoParam<'a, ILoggingChannel>>(&self, loggingchannel: Param0) -> ::windows_core::Result<()> {
@@ -1585,11 +1585,11 @@ pub struct ITracingStatusChangedEventArgs_Vtbl {
 pub struct LogFileGeneratedEventArgs(::windows_core::IUnknown);
 impl LogFileGeneratedEventArgs {
     #[cfg(feature = "Storage")]
-    pub fn File(&self) -> ::windows_core::Result<super::super::Storage::StorageFile> {
+    pub fn File(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::StorageFile>(result__)
+            (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFile>(result__)
         }
     }
 }
@@ -3141,11 +3141,11 @@ impl LoggingSession {
         }
     }
     #[cfg(feature = "Storage")]
-    pub fn SaveToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, folder: Param0, filename: Param1) -> ::windows_core::Result<super::IAsyncOperation<super::super::Storage::StorageFile>> {
+    pub fn SaveToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, folder: Param0, filename: Param1) -> ::windows_core::Result<super::IAsyncOperation<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveToFileAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), filename.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::IAsyncOperation<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).SaveToFileAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), filename.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::IAsyncOperation<::winrt_storage::StorageFile>>(result__)
         }
     }
     pub fn AddLoggingChannel<'a, Param0: ::windows_core::IntoParam<'a, ILoggingChannel>>(&self, loggingchannel: Param0) -> ::windows_core::Result<()> {

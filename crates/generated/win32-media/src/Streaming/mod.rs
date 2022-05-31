@@ -152,38 +152,30 @@ impl ::core::default::Default for FaceCharacterizationBlobHeader {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FaceRectInfo {
-    pub Region: super::super::Foundation::RECT,
+    pub Region: ::win32_foundation::RECT,
     pub confidenceLevel: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FaceRectInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FaceRectInfo {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FaceRectInfo {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FaceRectInfo").field("Region", &self.Region).field("confidenceLevel", &self.confidenceLevel).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FaceRectInfo {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FaceRectInfo {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FaceRectInfo>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FaceRectInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FaceRectInfo {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -281,46 +273,37 @@ impl ::core::default::Default for HistogramDataHeader {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HistogramGrid {
     pub Width: u32,
     pub Height: u32,
-    pub Region: super::super::Foundation::RECT,
+    pub Region: ::win32_foundation::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HistogramGrid {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HistogramGrid {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HistogramGrid {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HistogramGrid").field("Width", &self.Width).field("Height", &self.Height).field("Region", &self.Region).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HistogramGrid {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HistogramGrid {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramGrid>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HistogramGrid {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HistogramGrid {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HistogramHeader {
     pub Size: u32,
     pub Bins: u32,
@@ -328,33 +311,26 @@ pub struct HistogramHeader {
     pub ChannelMasks: u32,
     pub Grid: HistogramGrid,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HistogramHeader {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HistogramHeader {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for HistogramHeader {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HistogramHeader").field("Size", &self.Size).field("Bins", &self.Bins).field("FourCC", &self.FourCC).field("ChannelMasks", &self.ChannelMasks).field("Grid", &self.Grid).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for HistogramHeader {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for HistogramHeader {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<HistogramHeader>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for HistogramHeader {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for HistogramHeader {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

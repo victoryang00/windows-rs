@@ -480,14 +480,11 @@ impl ::core::clone::Clone for ProfileMediaType {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct ProfileUsage {
     pub UsageInMegabytes: u32,
-    pub LastSyncTime: super::super::Foundation::DateTime,
+    pub LastSyncTime: ::winrt_foundation_sys::DateTime,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for ProfileUsage {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for ProfileUsage {
     fn clone(&self) -> Self {
         *self

@@ -1,112 +1,105 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn ChangeServiceConfig2A(hservice: super::super::Security::SC_HANDLE, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn ChangeServiceConfig2W(hservice: super::super::Security::SC_HANDLE, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn ChangeServiceConfigA(hservice: super::super::Security::SC_HANDLE, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core_sys::PCSTR, lploadordergroup: ::windows_core_sys::PCSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core_sys::PCSTR, lpservicestartname: ::windows_core_sys::PCSTR, lppassword: ::windows_core_sys::PCSTR, lpdisplayname: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn ChangeServiceConfigW(hservice: super::super::Security::SC_HANDLE, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core_sys::PCWSTR, lploadordergroup: ::windows_core_sys::PCWSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core_sys::PCWSTR, lpservicestartname: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, lpdisplayname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CloseServiceHandle(hscobject: super::super::Security::SC_HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn ControlService(hservice: super::super::Security::SC_HANDLE, dwcontrol: u32, lpservicestatus: *mut SERVICE_STATUS) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn ControlServiceExA(hservice: super::super::Security::SC_HANDLE, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn ControlServiceExW(hservice: super::super::Security::SC_HANDLE, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Security")]
-    pub fn CreateServiceA(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core_sys::PCSTR, lpdisplayname: ::windows_core_sys::PCSTR, dwdesiredaccess: u32, dwservicetype: ENUM_SERVICE_TYPE, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core_sys::PCSTR, lploadordergroup: ::windows_core_sys::PCSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core_sys::PCSTR, lpservicestartname: ::windows_core_sys::PCSTR, lppassword: ::windows_core_sys::PCSTR) -> super::super::Security::SC_HANDLE;
+    pub fn ChangeServiceConfig2A(hservice: ::win32_security_sys::SC_HANDLE, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Security")]
-    pub fn CreateServiceW(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core_sys::PCWSTR, lpdisplayname: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwservicetype: ENUM_SERVICE_TYPE, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core_sys::PCWSTR, lploadordergroup: ::windows_core_sys::PCWSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core_sys::PCWSTR, lpservicestartname: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR) -> super::super::Security::SC_HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn DeleteService(hservice: super::super::Security::SC_HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn EnumDependentServicesA(hservice: super::super::Security::SC_HANDLE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn EnumDependentServicesW(hservice: super::super::Security::SC_HANDLE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn EnumServicesStatusA(hscmanager: super::super::Security::SC_HANDLE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn EnumServicesStatusExA(hscmanager: super::super::Security::SC_HANDLE, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn EnumServicesStatusExW(hscmanager: super::super::Security::SC_HANDLE, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn EnumServicesStatusW(hscmanager: super::super::Security::SC_HANDLE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn ChangeServiceConfig2W(hservice: ::win32_security_sys::SC_HANDLE, dwinfolevel: SERVICE_CONFIG, lpinfo: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn ChangeServiceConfigA(hservice: ::win32_security_sys::SC_HANDLE, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core_sys::PCSTR, lploadordergroup: ::windows_core_sys::PCSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core_sys::PCSTR, lpservicestartname: ::windows_core_sys::PCSTR, lppassword: ::windows_core_sys::PCSTR, lpdisplayname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn ChangeServiceConfigW(hservice: ::win32_security_sys::SC_HANDLE, dwservicetype: u32, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core_sys::PCWSTR, lploadordergroup: ::windows_core_sys::PCWSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core_sys::PCWSTR, lpservicestartname: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, lpdisplayname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CloseServiceHandle(hscobject: ::win32_security_sys::SC_HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn ControlService(hservice: ::win32_security_sys::SC_HANDLE, dwcontrol: u32, lpservicestatus: *mut SERVICE_STATUS) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn ControlServiceExA(hservice: ::win32_security_sys::SC_HANDLE, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn ControlServiceExW(hservice: ::win32_security_sys::SC_HANDLE, dwcontrol: u32, dwinfolevel: u32, pcontrolparams: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateServiceA(hscmanager: ::win32_security_sys::SC_HANDLE, lpservicename: ::windows_core_sys::PCSTR, lpdisplayname: ::windows_core_sys::PCSTR, dwdesiredaccess: u32, dwservicetype: ENUM_SERVICE_TYPE, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core_sys::PCSTR, lploadordergroup: ::windows_core_sys::PCSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core_sys::PCSTR, lpservicestartname: ::windows_core_sys::PCSTR, lppassword: ::windows_core_sys::PCSTR) -> ::win32_security_sys::SC_HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateServiceW(hscmanager: ::win32_security_sys::SC_HANDLE, lpservicename: ::windows_core_sys::PCWSTR, lpdisplayname: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwservicetype: ENUM_SERVICE_TYPE, dwstarttype: SERVICE_START_TYPE, dwerrorcontrol: SERVICE_ERROR, lpbinarypathname: ::windows_core_sys::PCWSTR, lploadordergroup: ::windows_core_sys::PCWSTR, lpdwtagid: *mut u32, lpdependencies: ::windows_core_sys::PCWSTR, lpservicestartname: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR) -> ::win32_security_sys::SC_HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn DeleteService(hservice: ::win32_security_sys::SC_HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn EnumDependentServicesA(hservice: ::win32_security_sys::SC_HANDLE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn EnumDependentServicesW(hservice: ::win32_security_sys::SC_HANDLE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn EnumServicesStatusA(hscmanager: ::win32_security_sys::SC_HANDLE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn EnumServicesStatusExA(hscmanager: ::win32_security_sys::SC_HANDLE, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn EnumServicesStatusExW(hscmanager: ::win32_security_sys::SC_HANDLE, infolevel: SC_ENUM_TYPE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32, pszgroupname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn EnumServicesStatusW(hscmanager: ::win32_security_sys::SC_HANDLE, dwservicetype: ENUM_SERVICE_TYPE, dwservicestate: ENUM_SERVICE_STATE, lpservices: *mut ENUM_SERVICE_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32, lpservicesreturned: *mut u32, lpresumehandle: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetServiceDirectory(hservicestatus: SERVICE_STATUS_HANDLE, edirectorytype: SERVICE_DIRECTORY_TYPE, lppathbuffer: ::windows_core_sys::PWSTR, cchpathbufferlength: u32, lpcchrequiredbufferlength: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn GetServiceDisplayNameA(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core_sys::PCSTR, lpdisplayname: ::windows_core_sys::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn GetServiceDisplayNameW(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core_sys::PCWSTR, lpdisplayname: ::windows_core_sys::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn GetServiceKeyNameA(hscmanager: super::super::Security::SC_HANDLE, lpdisplayname: ::windows_core_sys::PCSTR, lpservicename: ::windows_core_sys::PSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn GetServiceKeyNameW(hscmanager: super::super::Security::SC_HANDLE, lpdisplayname: ::windows_core_sys::PCWSTR, lpservicename: ::windows_core_sys::PWSTR, lpcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn GetServiceDisplayNameA(hscmanager: ::win32_security_sys::SC_HANDLE, lpservicename: ::windows_core_sys::PCSTR, lpdisplayname: ::windows_core_sys::PSTR, lpcchbuffer: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn GetServiceDisplayNameW(hscmanager: ::win32_security_sys::SC_HANDLE, lpservicename: ::windows_core_sys::PCWSTR, lpdisplayname: ::windows_core_sys::PWSTR, lpcchbuffer: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn GetServiceKeyNameA(hscmanager: ::win32_security_sys::SC_HANDLE, lpdisplayname: ::windows_core_sys::PCSTR, lpservicename: ::windows_core_sys::PSTR, lpcchbuffer: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn GetServiceKeyNameW(hscmanager: ::win32_security_sys::SC_HANDLE, lpdisplayname: ::windows_core_sys::PCWSTR, lpservicename: ::windows_core_sys::PWSTR, lpcchbuffer: *mut u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Registry")]
     pub fn GetServiceRegistryStateKey(servicestatushandle: SERVICE_STATUS_HANDLE, statetype: SERVICE_REGISTRY_STATE_TYPE, accessmask: u32, servicestatekey: *mut super::Registry::HKEY) -> u32;
     #[cfg(feature = "Win32_Security")]
-    pub fn GetSharedServiceDirectory(servicehandle: super::super::Security::SC_HANDLE, directorytype: SERVICE_SHARED_DIRECTORY_TYPE, pathbuffer: ::windows_core_sys::PWSTR, pathbufferlength: u32, requiredbufferlength: *mut u32) -> u32;
+    pub fn GetSharedServiceDirectory(servicehandle: ::win32_security_sys::SC_HANDLE, directorytype: SERVICE_SHARED_DIRECTORY_TYPE, pathbuffer: ::windows_core_sys::PWSTR, pathbufferlength: u32, requiredbufferlength: *mut u32) -> u32;
     #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Registry"))]
-    pub fn GetSharedServiceRegistryStateKey(servicehandle: super::super::Security::SC_HANDLE, statetype: SERVICE_SHARED_REGISTRY_STATE_TYPE, accessmask: u32, servicestatekey: *mut super::Registry::HKEY) -> u32;
+    pub fn GetSharedServiceRegistryStateKey(servicehandle: ::win32_security_sys::SC_HANDLE, statetype: SERVICE_SHARED_REGISTRY_STATE_TYPE, accessmask: u32, servicestatekey: *mut super::Registry::HKEY) -> u32;
     #[cfg(feature = "Win32_Security")]
-    pub fn LockServiceDatabase(hscmanager: super::super::Security::SC_HANDLE) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn NotifyBootConfigStatus(bootacceptable: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn LockServiceDatabase(hscmanager: ::win32_security_sys::SC_HANDLE) -> *mut ::core::ffi::c_void;
+    pub fn NotifyBootConfigStatus(bootacceptable: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Security")]
-    pub fn NotifyServiceStatusChangeA(hservice: super::super::Security::SC_HANDLE, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2A) -> u32;
+    pub fn NotifyServiceStatusChangeA(hservice: ::win32_security_sys::SC_HANDLE, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2A) -> u32;
     #[cfg(feature = "Win32_Security")]
-    pub fn NotifyServiceStatusChangeW(hservice: super::super::Security::SC_HANDLE, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2W) -> u32;
+    pub fn NotifyServiceStatusChangeW(hservice: ::win32_security_sys::SC_HANDLE, dwnotifymask: SERVICE_NOTIFY, pnotifybuffer: *const SERVICE_NOTIFY_2W) -> u32;
     #[cfg(feature = "Win32_Security")]
-    pub fn OpenSCManagerA(lpmachinename: ::windows_core_sys::PCSTR, lpdatabasename: ::windows_core_sys::PCSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
+    pub fn OpenSCManagerA(lpmachinename: ::windows_core_sys::PCSTR, lpdatabasename: ::windows_core_sys::PCSTR, dwdesiredaccess: u32) -> ::win32_security_sys::SC_HANDLE;
     #[cfg(feature = "Win32_Security")]
-    pub fn OpenSCManagerW(lpmachinename: ::windows_core_sys::PCWSTR, lpdatabasename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
+    pub fn OpenSCManagerW(lpmachinename: ::windows_core_sys::PCWSTR, lpdatabasename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> ::win32_security_sys::SC_HANDLE;
     #[cfg(feature = "Win32_Security")]
-    pub fn OpenServiceA(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core_sys::PCSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
+    pub fn OpenServiceA(hscmanager: ::win32_security_sys::SC_HANDLE, lpservicename: ::windows_core_sys::PCSTR, dwdesiredaccess: u32) -> ::win32_security_sys::SC_HANDLE;
     #[cfg(feature = "Win32_Security")]
-    pub fn OpenServiceW(hscmanager: super::super::Security::SC_HANDLE, lpservicename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> super::super::Security::SC_HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn QueryServiceConfig2A(hservice: super::super::Security::SC_HANDLE, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn QueryServiceConfig2W(hservice: super::super::Security::SC_HANDLE, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn QueryServiceConfigA(hservice: super::super::Security::SC_HANDLE, lpserviceconfig: *mut QUERY_SERVICE_CONFIGA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn QueryServiceConfigW(hservice: super::super::Security::SC_HANDLE, lpserviceconfig: *mut QUERY_SERVICE_CONFIGW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryServiceDynamicInformation(hservicestatus: SERVICE_STATUS_HANDLE, dwinfolevel: u32, ppdynamicinfo: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn QueryServiceLockStatusA(hscmanager: super::super::Security::SC_HANDLE, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn QueryServiceLockStatusW(hscmanager: super::super::Security::SC_HANDLE, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn QueryServiceObjectSecurity(hservice: super::super::Security::SC_HANDLE, dwsecurityinformation: u32, lpsecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn QueryServiceStatus(hservice: super::super::Security::SC_HANDLE, lpservicestatus: *mut SERVICE_STATUS) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn QueryServiceStatusEx(hservice: super::super::Security::SC_HANDLE, infolevel: SC_STATUS_TYPE, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn OpenServiceW(hscmanager: ::win32_security_sys::SC_HANDLE, lpservicename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> ::win32_security_sys::SC_HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn QueryServiceConfig2A(hservice: ::win32_security_sys::SC_HANDLE, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn QueryServiceConfig2W(hservice: ::win32_security_sys::SC_HANDLE, dwinfolevel: SERVICE_CONFIG, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn QueryServiceConfigA(hservice: ::win32_security_sys::SC_HANDLE, lpserviceconfig: *mut QUERY_SERVICE_CONFIGA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn QueryServiceConfigW(hservice: ::win32_security_sys::SC_HANDLE, lpserviceconfig: *mut QUERY_SERVICE_CONFIGW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn QueryServiceDynamicInformation(hservicestatus: SERVICE_STATUS_HANDLE, dwinfolevel: u32, ppdynamicinfo: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn QueryServiceLockStatusA(hscmanager: ::win32_security_sys::SC_HANDLE, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSA, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn QueryServiceLockStatusW(hscmanager: ::win32_security_sys::SC_HANDLE, lplockstatus: *mut QUERY_SERVICE_LOCK_STATUSW, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn QueryServiceObjectSecurity(hservice: ::win32_security_sys::SC_HANDLE, dwsecurityinformation: u32, lpsecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn QueryServiceStatus(hservice: ::win32_security_sys::SC_HANDLE, lpservicestatus: *mut SERVICE_STATUS) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn QueryServiceStatusEx(hservice: ::win32_security_sys::SC_HANDLE, infolevel: SC_STATUS_TYPE, lpbuffer: *mut u8, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn RegisterServiceCtrlHandlerA(lpservicename: ::windows_core_sys::PCSTR, lphandlerproc: LPHANDLER_FUNCTION) -> SERVICE_STATUS_HANDLE;
     pub fn RegisterServiceCtrlHandlerExA(lpservicename: ::windows_core_sys::PCSTR, lphandlerproc: LPHANDLER_FUNCTION_EX, lpcontext: *const ::core::ffi::c_void) -> SERVICE_STATUS_HANDLE;
     pub fn RegisterServiceCtrlHandlerExW(lpservicename: ::windows_core_sys::PCWSTR, lphandlerproc: LPHANDLER_FUNCTION_EX, lpcontext: *const ::core::ffi::c_void) -> SERVICE_STATUS_HANDLE;
     pub fn RegisterServiceCtrlHandlerW(lpservicename: ::windows_core_sys::PCWSTR, lphandlerproc: LPHANDLER_FUNCTION) -> SERVICE_STATUS_HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetServiceBits(hservicestatus: SERVICE_STATUS_HANDLE, dwservicebits: u32, bsetbitson: super::super::Foundation::BOOL, bupdateimmediately: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn SetServiceObjectSecurity(hservice: super::super::Security::SC_HANDLE, dwsecurityinformation: super::super::Security::OBJECT_SECURITY_INFORMATION, lpsecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetServiceStatus(hservicestatus: SERVICE_STATUS_HANDLE, lpservicestatus: *const SERVICE_STATUS) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn StartServiceA(hservice: super::super::Security::SC_HANDLE, dwnumserviceargs: u32, lpserviceargvectors: *const ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StartServiceCtrlDispatcherA(lpservicestarttable: *const SERVICE_TABLE_ENTRYA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StartServiceCtrlDispatcherW(lpservicestarttable: *const SERVICE_TABLE_ENTRYW) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn StartServiceW(hservice: super::super::Security::SC_HANDLE, dwnumserviceargs: u32, lpserviceargvectors: *const ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UnlockServiceDatabase(sclock: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn WaitServiceState(hservice: super::super::Security::SC_HANDLE, dwnotify: u32, dwtimeout: u32, hcancelevent: super::super::Foundation::HANDLE) -> u32;
+    pub fn SetServiceBits(hservicestatus: SERVICE_STATUS_HANDLE, dwservicebits: u32, bsetbitson: ::win32_foundation_sys::BOOL, bupdateimmediately: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn SetServiceObjectSecurity(hservice: ::win32_security_sys::SC_HANDLE, dwsecurityinformation: ::win32_security_sys::OBJECT_SECURITY_INFORMATION, lpsecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetServiceStatus(hservicestatus: SERVICE_STATUS_HANDLE, lpservicestatus: *const SERVICE_STATUS) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn StartServiceA(hservice: ::win32_security_sys::SC_HANDLE, dwnumserviceargs: u32, lpserviceargvectors: *const ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn StartServiceCtrlDispatcherA(lpservicestarttable: *const SERVICE_TABLE_ENTRYA) -> ::win32_foundation_sys::BOOL;
+    pub fn StartServiceCtrlDispatcherW(lpservicestarttable: *const SERVICE_TABLE_ENTRYW) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn StartServiceW(hservice: ::win32_security_sys::SC_HANDLE, dwnumserviceargs: u32, lpserviceargvectors: *const ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn UnlockServiceDatabase(sclock: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn WaitServiceState(hservice: ::win32_security_sys::SC_HANDLE, dwnotify: u32, dwtimeout: u32, hcancelevent: ::win32_foundation_sys::HANDLE) -> u32;
 }
 pub const CUSTOM_SYSTEM_STATE_CHANGE_EVENT_GUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 762980374, data2: 3166, data3: 17916, data4: [156, 231, 87, 14, 94, 205, 233, 201] };
 pub const DOMAIN_JOIN_GUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 484575930, data2: 38993, data3: 17441, data4: [148, 48, 29, 222, 183, 102, 232, 9] };
@@ -392,13 +385,10 @@ impl ::core::clone::Clone for SERVICE_CUSTOM_SYSTEM_STATE_CHANGE_DATA_ITEM_0_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVICE_DELAYED_AUTO_START_INFO {
-    pub fDelayedAutostart: super::super::Foundation::BOOL,
+    pub fDelayedAutostart: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVICE_DELAYED_AUTO_START_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVICE_DELAYED_AUTO_START_INFO {
     fn clone(&self) -> Self {
         *self
@@ -463,13 +453,10 @@ impl ::core::clone::Clone for SERVICE_FAILURE_ACTIONSW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVICE_FAILURE_ACTIONS_FLAG {
-    pub fFailureActionsOnNonCrashFailures: super::super::Foundation::BOOL,
+    pub fFailureActionsOnNonCrashFailures: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVICE_FAILURE_ACTIONS_FLAG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVICE_FAILURE_ACTIONS_FLAG {
     fn clone(&self) -> Self {
         *self
@@ -555,14 +542,11 @@ pub const SERVICE_NOTIFY_STATUS_CHANGE_2: u32 = 2u32;
 pub const SERVICE_NO_CHANGE: u32 = 4294967295u32;
 pub const SERVICE_PAUSE_CONTINUE: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVICE_PREFERRED_NODE_INFO {
     pub usPreferredNode: u16,
-    pub fDelete: super::super::Foundation::BOOLEAN,
+    pub fDelete: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVICE_PREFERRED_NODE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVICE_PREFERRED_NODE_INFO {
     fn clone(&self) -> Self {
         *self

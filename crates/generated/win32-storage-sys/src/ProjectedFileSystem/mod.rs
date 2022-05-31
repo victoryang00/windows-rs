@@ -4,32 +4,23 @@ extern "system" {
     pub fn PrjClearNegativePathCache(namespacevirtualizationcontext: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT, totalentrynumber: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn PrjCompleteCommand(namespacevirtualizationcontext: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT, commandid: i32, completionresult: ::windows_core_sys::HRESULT, extendedparameters: *const PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS) -> ::windows_core_sys::HRESULT;
     pub fn PrjDeleteFile(namespacevirtualizationcontext: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT, destinationfilename: ::windows_core_sys::PCWSTR, updateflags: PRJ_UPDATE_TYPES, failurereason: *mut PRJ_UPDATE_FAILURE_CAUSES) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PrjDoesNameContainWildCards(filename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOLEAN;
+    pub fn PrjDoesNameContainWildCards(filename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOLEAN;
     pub fn PrjFileNameCompare(filename1: ::windows_core_sys::PCWSTR, filename2: ::windows_core_sys::PCWSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PrjFileNameMatch(filenametocheck: ::windows_core_sys::PCWSTR, pattern: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn PrjFileNameMatch(filenametocheck: ::windows_core_sys::PCWSTR, pattern: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOLEAN;
     pub fn PrjFillDirEntryBuffer(filename: ::windows_core_sys::PCWSTR, filebasicinfo: *const PRJ_FILE_BASIC_INFO, direntrybufferhandle: PRJ_DIR_ENTRY_BUFFER_HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PrjFillDirEntryBuffer2(direntrybufferhandle: PRJ_DIR_ENTRY_BUFFER_HANDLE, filename: ::windows_core_sys::PCWSTR, filebasicinfo: *const PRJ_FILE_BASIC_INFO, extendedinfo: *const PRJ_EXTENDED_INFO) -> ::windows_core_sys::HRESULT;
     pub fn PrjFreeAlignedBuffer(buffer: *const ::core::ffi::c_void);
     pub fn PrjGetOnDiskFileState(destinationfilename: ::windows_core_sys::PCWSTR, filestate: *mut PRJ_FILE_STATE) -> ::windows_core_sys::HRESULT;
     pub fn PrjGetVirtualizationInstanceInfo(namespacevirtualizationcontext: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT, virtualizationinstanceinfo: *mut PRJ_VIRTUALIZATION_INSTANCE_INFO) -> ::windows_core_sys::HRESULT;
     pub fn PrjMarkDirectoryAsPlaceholder(rootpathname: ::windows_core_sys::PCWSTR, targetpathname: ::windows_core_sys::PCWSTR, versioninfo: *const PRJ_PLACEHOLDER_VERSION_INFO, virtualizationinstanceid: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PrjStartVirtualizing(virtualizationrootpath: ::windows_core_sys::PCWSTR, callbacks: *const PRJ_CALLBACKS, instancecontext: *const ::core::ffi::c_void, options: *const PRJ_STARTVIRTUALIZING_OPTIONS, namespacevirtualizationcontext: *mut PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT) -> ::windows_core_sys::HRESULT;
     pub fn PrjStopVirtualizing(namespacevirtualizationcontext: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT);
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PrjUpdateFileIfNeeded(namespacevirtualizationcontext: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT, destinationfilename: ::windows_core_sys::PCWSTR, placeholderinfo: *const PRJ_PLACEHOLDER_INFO, placeholderinfosize: u32, updateflags: PRJ_UPDATE_TYPES, failurereason: *mut PRJ_UPDATE_FAILURE_CAUSES) -> ::windows_core_sys::HRESULT;
     pub fn PrjWriteFileData(namespacevirtualizationcontext: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT, datastreamid: *const ::windows_core_sys::GUID, buffer: *const ::core::ffi::c_void, byteoffset: u64, length: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PrjWritePlaceholderInfo(namespacevirtualizationcontext: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT, destinationfilename: ::windows_core_sys::PCWSTR, placeholderinfo: *const PRJ_PLACEHOLDER_INFO, placeholderinfosize: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PrjWritePlaceholderInfo2(namespacevirtualizationcontext: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT, destinationfilename: ::windows_core_sys::PCWSTR, placeholderinfo: *const PRJ_PLACEHOLDER_INFO, placeholderinfosize: u32, extendedinfo: *const PRJ_EXTENDED_INFO) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_CALLBACKS {
     pub StartDirectoryEnumerationCallback: PRJ_START_DIRECTORY_ENUMERATION_CB,
     pub EndDirectoryEnumerationCallback: PRJ_END_DIRECTORY_ENUMERATION_CB,
@@ -40,9 +31,7 @@ pub struct PRJ_CALLBACKS {
     pub NotificationCallback: PRJ_NOTIFICATION_CB,
     pub CancelCommandCallback: PRJ_CANCEL_COMMAND_CB,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_CALLBACKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_CALLBACKS {
     fn clone(&self) -> Self {
         *self
@@ -154,9 +143,8 @@ impl ::core::clone::Clone for PRJ_EXTENDED_INFO_0_0 {
 pub type PRJ_EXT_INFO_TYPE = i32;
 pub const PRJ_EXT_INFO_TYPE_SYMLINK: PRJ_EXT_INFO_TYPE = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_FILE_BASIC_INFO {
-    pub IsDirectory: super::super::Foundation::BOOLEAN,
+    pub IsDirectory: ::win32_foundation_sys::BOOLEAN,
     pub FileSize: i64,
     pub CreationTime: i64,
     pub LastAccessTime: i64,
@@ -164,9 +152,7 @@ pub struct PRJ_FILE_BASIC_INFO {
     pub ChangeTime: i64,
     pub FileAttributes: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_FILE_BASIC_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_FILE_BASIC_INFO {
     fn clone(&self) -> Self {
         *self
@@ -195,8 +181,7 @@ pub const PRJ_NOTIFICATION_FILE_HANDLE_CLOSED_NO_MODIFICATION: PRJ_NOTIFICATION 
 pub const PRJ_NOTIFICATION_FILE_HANDLE_CLOSED_FILE_MODIFIED: PRJ_NOTIFICATION = 1024i32;
 pub const PRJ_NOTIFICATION_FILE_HANDLE_CLOSED_FILE_DELETED: PRJ_NOTIFICATION = 2048i32;
 pub const PRJ_NOTIFICATION_FILE_PRE_CONVERT_TO_FULL: PRJ_NOTIFICATION = 4096i32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRJ_NOTIFICATION_CB = ::core::option::Option<unsafe extern "system" fn(callbackdata: *const PRJ_CALLBACK_DATA, isdirectory: super::super::Foundation::BOOLEAN, notification: PRJ_NOTIFICATION, destinationfilename: ::windows_core_sys::PCWSTR, operationparameters: *mut PRJ_NOTIFICATION_PARAMETERS) -> ::windows_core_sys::HRESULT>;
+pub type PRJ_NOTIFICATION_CB = ::core::option::Option<unsafe extern "system" fn(callbackdata: *const PRJ_CALLBACK_DATA, isdirectory: ::win32_foundation_sys::BOOLEAN, notification: PRJ_NOTIFICATION, destinationfilename: ::windows_core_sys::PCWSTR, operationparameters: *mut PRJ_NOTIFICATION_PARAMETERS) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
 pub struct PRJ_NOTIFICATION_MAPPING {
     pub NotificationBitMask: PRJ_NOTIFY_TYPES,
@@ -209,54 +194,42 @@ impl ::core::clone::Clone for PRJ_NOTIFICATION_MAPPING {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PRJ_NOTIFICATION_PARAMETERS {
     pub PostCreate: PRJ_NOTIFICATION_PARAMETERS_2,
     pub FileRenamed: PRJ_NOTIFICATION_PARAMETERS_1,
     pub FileDeletedOnHandleClose: PRJ_NOTIFICATION_PARAMETERS_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_NOTIFICATION_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_NOTIFICATION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_NOTIFICATION_PARAMETERS_0 {
-    pub IsFileModified: super::super::Foundation::BOOLEAN,
+    pub IsFileModified: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_NOTIFICATION_PARAMETERS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_NOTIFICATION_PARAMETERS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_NOTIFICATION_PARAMETERS_1 {
     pub NotificationMask: PRJ_NOTIFY_TYPES,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_NOTIFICATION_PARAMETERS_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_NOTIFICATION_PARAMETERS_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_NOTIFICATION_PARAMETERS_2 {
     pub NotificationMask: PRJ_NOTIFY_TYPES,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_NOTIFICATION_PARAMETERS_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_NOTIFICATION_PARAMETERS_2 {
     fn clone(&self) -> Self {
         *self
@@ -281,7 +254,6 @@ pub const PRJ_NOTIFY_USE_EXISTING_MASK: PRJ_NOTIFY_TYPES = 4294967295u32;
 pub type PRJ_PLACEHOLDER_ID = i32;
 pub const PRJ_PLACEHOLDER_ID_LENGTH: PRJ_PLACEHOLDER_ID = 128i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_PLACEHOLDER_INFO {
     pub FileBasicInfo: PRJ_FILE_BASIC_INFO,
     pub EaInformation: PRJ_PLACEHOLDER_INFO_0,
@@ -290,51 +262,40 @@ pub struct PRJ_PLACEHOLDER_INFO {
     pub VersionInfo: PRJ_PLACEHOLDER_VERSION_INFO,
     pub VariableData: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_PLACEHOLDER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_PLACEHOLDER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_PLACEHOLDER_INFO_0 {
     pub EaBufferSize: u32,
     pub OffsetToFirstEa: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_PLACEHOLDER_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_PLACEHOLDER_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_PLACEHOLDER_INFO_1 {
     pub SecurityBufferSize: u32,
     pub OffsetToSecurityDescriptor: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_PLACEHOLDER_INFO_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_PLACEHOLDER_INFO_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_PLACEHOLDER_INFO_2 {
     pub StreamsInfoBufferSize: u32,
     pub OffsetToFirstStreamInfo: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_PLACEHOLDER_INFO_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_PLACEHOLDER_INFO_2 {
     fn clone(&self) -> Self {
         *self

@@ -9,10 +9,7 @@ unsafe impl ::windows_core::Interface for INamedResource {
 #[doc(hidden)]
 pub struct INamedResource_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Uri: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub Candidates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -47,9 +44,9 @@ pub struct IResourceCandidate_Vtbl {
     pub IsMatchAsDefault: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsDefault: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub ValueAsString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub GetValueAsFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     GetValueAsFileAsync: usize,
     pub GetQualifierValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, qualifiername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -64,9 +61,9 @@ unsafe impl ::windows_core::Interface for IResourceCandidate2 {
 #[doc(hidden)]
 pub struct IResourceCandidate2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub GetValueAsStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     GetValueAsStreamAsync: usize,
 }
 #[doc(hidden)]
@@ -252,10 +249,7 @@ unsafe impl ::windows_core::Interface for IResourceMap {
 #[doc(hidden)]
 pub struct IResourceMap_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Uri: usize,
     pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resource: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetValueForContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resource: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, context: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetSubtree: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reference: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -280,20 +274,19 @@ pub struct IResourceQualifier_Vtbl {
 #[repr(transparent)]
 pub struct NamedResource(::windows_core::IUnknown);
 impl NamedResource {
-    #[cfg(feature = "Foundation")]
-    pub fn Uri(&self) -> ::windows_core::Result<super::super::super::Foundation::Uri> {
+    pub fn Uri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Candidates(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>> {
+    pub fn Candidates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ResourceCandidate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Candidates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>>(result__)
+            (::windows_core::Interface::vtable(this).Candidates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ResourceCandidate>>(result__)
         }
     }
     pub fn Resolve(&self) -> ::windows_core::Result<ResourceCandidate> {
@@ -311,19 +304,19 @@ impl NamedResource {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ResolveAll(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>> {
+    pub fn ResolveAll(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ResourceCandidate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ResolveAll)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>>(result__)
+            (::windows_core::Interface::vtable(this).ResolveAll)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ResourceCandidate>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ResolveAllForContext<'a, Param0: ::windows_core::IntoParam<'a, ResourceContext>>(&self, resourcecontext: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>> {
+    pub fn ResolveAllForContext<'a, Param0: ::windows_core::IntoParam<'a, ResourceContext>>(&self, resourcecontext: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ResourceCandidate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ResolveAllForContext)(::windows_core::Interface::as_raw(this), resourcecontext.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>>(result__)
+            (::windows_core::Interface::vtable(this).ResolveAllForContext)(::windows_core::Interface::as_raw(this), resourcecontext.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ResourceCandidate>>(result__)
         }
     }
 }
@@ -403,11 +396,11 @@ unsafe impl ::core::marker::Sync for NamedResource {}
 pub struct ResourceCandidate(::windows_core::IUnknown);
 impl ResourceCandidate {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Qualifiers(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<ResourceQualifier>> {
+    pub fn Qualifiers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ResourceQualifier>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Qualifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<ResourceQualifier>>(result__)
+            (::windows_core::Interface::vtable(this).Qualifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ResourceQualifier>>(result__)
         }
     }
     pub fn IsMatch(&self) -> ::windows_core::Result<bool> {
@@ -438,12 +431,12 @@ impl ResourceCandidate {
             (::windows_core::Interface::vtable(this).ValueAsString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn GetValueAsFileAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::StorageFile>> {
+    #[cfg(feature = "Storage")]
+    pub fn GetValueAsFileAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetValueAsFileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).GetValueAsFileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::StorageFile>>(result__)
         }
     }
     pub fn GetQualifierValue<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, qualifiername: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -453,12 +446,12 @@ impl ResourceCandidate {
             (::windows_core::Interface::vtable(this).GetQualifierValue)(::windows_core::Interface::as_raw(this), qualifiername.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn GetValueAsStreamAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IRandomAccessStream>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn GetValueAsStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStream>> {
         let this = &::windows_core::Interface::cast::<IResourceCandidate2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetValueAsStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IRandomAccessStream>>(result__)
+            (::windows_core::Interface::vtable(this).GetValueAsStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStream>>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ResourceCandidateKind> {
@@ -581,11 +574,11 @@ pub struct ResourceCandidateVectorView(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl ResourceCandidateVectorView {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<ResourceCandidate>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<ResourceCandidate>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<ResourceCandidate>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<ResourceCandidate>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<ResourceCandidate>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<ResourceCandidate>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -651,8 +644,8 @@ unsafe impl ::windows_core::RuntimeType for ResourceCandidateVectorView {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for ResourceCandidateVectorView {
-    type Vtable = super::super::super::Foundation::Collections::IVectorView_Vtbl<ResourceCandidate>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IVectorView<ResourceCandidate> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IVectorView_Vtbl<ResourceCandidate>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVectorView<ResourceCandidate> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for ResourceCandidateVectorView {
@@ -661,7 +654,7 @@ impl ::windows_core::RuntimeName for ResourceCandidateVectorView {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for ResourceCandidateVectorView {
     type Item = ResourceCandidate;
-    type IntoIter = super::super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -669,9 +662,9 @@ impl ::core::iter::IntoIterator for ResourceCandidateVectorView {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &ResourceCandidateVectorView {
     type Item = ResourceCandidate;
-    type IntoIter = super::super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::super::Foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -723,55 +716,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceCandidateVectorView> for super::super::super::Foundation::Collections::IIterable<ResourceCandidate> {
+impl ::core::convert::TryFrom<ResourceCandidateVectorView> for ::winrt_foundation::Collections::IIterable<ResourceCandidate> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceCandidateVectorView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceCandidateVectorView> for super::super::super::Foundation::Collections::IIterable<ResourceCandidate> {
+impl ::core::convert::TryFrom<&ResourceCandidateVectorView> for ::winrt_foundation::Collections::IIterable<ResourceCandidate> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceCandidateVectorView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ResourceCandidate>> for ResourceCandidateVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<ResourceCandidate>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ResourceCandidate>> for ResourceCandidateVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ResourceCandidate>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ResourceCandidate>> for &ResourceCandidateVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<ResourceCandidate>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<ResourceCandidate>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ResourceCandidate>> for &ResourceCandidateVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ResourceCandidate>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<ResourceCandidate>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceCandidateVectorView> for super::super::super::Foundation::Collections::IVectorView<ResourceCandidate> {
+impl ::core::convert::TryFrom<ResourceCandidateVectorView> for ::winrt_foundation::Collections::IVectorView<ResourceCandidate> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceCandidateVectorView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceCandidateVectorView> for super::super::super::Foundation::Collections::IVectorView<ResourceCandidate> {
+impl ::core::convert::TryFrom<&ResourceCandidateVectorView> for ::winrt_foundation::Collections::IVectorView<ResourceCandidate> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceCandidateVectorView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>> for ResourceCandidateVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<ResourceCandidate>> for ResourceCandidateVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<ResourceCandidate>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>> for &ResourceCandidateVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IVectorView<ResourceCandidate>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<ResourceCandidate>> for &ResourceCandidateVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<ResourceCandidate>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<ResourceCandidate>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -789,11 +782,11 @@ impl ResourceContext {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn QualifierValues(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+    pub fn QualifierValues(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).QualifierValues)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).QualifierValues)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
     pub fn Reset(&self) -> ::windows_core::Result<()> {
@@ -801,12 +794,12 @@ impl ResourceContext {
         unsafe { (::windows_core::Interface::vtable(this).Reset)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ResetQualifierValues<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, qualifiernames: Param0) -> ::windows_core::Result<()> {
+    pub fn ResetQualifierValues<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, qualifiernames: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ResetQualifierValues)(::windows_core::Interface::as_raw(this), qualifiernames.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OverrideToMatch<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ResourceQualifier>>>(&self, result: Param0) -> ::windows_core::Result<()> {
+    pub fn OverrideToMatch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ResourceQualifier>>>(&self, result: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).OverrideToMatch)(::windows_core::Interface::as_raw(this), result.into_param().abi()).ok() }
     }
@@ -818,20 +811,20 @@ impl ResourceContext {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Languages(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Languages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Languages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetLanguages<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(&self, languages: Param0) -> ::windows_core::Result<()> {
+    pub fn SetLanguages<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(&self, languages: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLanguages)(::windows_core::Interface::as_raw(this), languages.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateMatchingContext<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ResourceQualifier>>>(result: Param0) -> ::windows_core::Result<ResourceContext> {
+    pub fn CreateMatchingContext<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ResourceQualifier>>>(result: Param0) -> ::windows_core::Result<ResourceContext> {
         Self::IResourceContextStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateMatchingContext)(::windows_core::Interface::as_raw(this), result.into_param().abi(), result__.as_mut_ptr()).from_abi::<ResourceContext>(result__)
@@ -850,7 +843,7 @@ impl ResourceContext {
         Self::IResourceContextStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).ResetGlobalQualifierValues)(::windows_core::Interface::as_raw(this)).ok() })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ResetGlobalQualifierValuesForSpecifiedQualifiers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(qualifiernames: Param0) -> ::windows_core::Result<()> {
+    pub fn ResetGlobalQualifierValuesForSpecifiedQualifiers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(qualifiernames: Param0) -> ::windows_core::Result<()> {
         Self::IResourceContextStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).ResetGlobalQualifierValuesForSpecifiedQualifiers)(::windows_core::Interface::as_raw(this), qualifiernames.into_param().abi()).ok() })
     }
     pub fn GetForViewIndependentUse() -> ::windows_core::Result<ResourceContext> {
@@ -863,7 +856,7 @@ impl ResourceContext {
         Self::IResourceContextStatics3(|this| unsafe { (::windows_core::Interface::vtable(this).SetGlobalQualifierValueWithPersistence)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi(), persistence).ok() })
     }
     #[cfg(feature = "UI")]
-    pub fn GetForUIContext<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::UI::UIContext>>(context: Param0) -> ::windows_core::Result<ResourceContext> {
+    pub fn GetForUIContext<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::UIContext>>(context: Param0) -> ::windows_core::Result<ResourceContext> {
         Self::IResourceContextStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetForUIContext)(::windows_core::Interface::as_raw(this), context.into_param().abi(), result__.as_mut_ptr()).from_abi::<ResourceContext>(result__)
@@ -964,11 +957,11 @@ pub struct ResourceContextLanguagesVectorView(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl ResourceContextLanguagesVectorView {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<::windows_core::HSTRING>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::windows_core::HSTRING>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -1034,8 +1027,8 @@ unsafe impl ::windows_core::RuntimeType for ResourceContextLanguagesVectorView {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for ResourceContextLanguagesVectorView {
-    type Vtable = super::super::super::Foundation::Collections::IVectorView_Vtbl<::windows_core::HSTRING>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IVectorView_Vtbl<::windows_core::HSTRING>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for ResourceContextLanguagesVectorView {
@@ -1044,7 +1037,7 @@ impl ::windows_core::RuntimeName for ResourceContextLanguagesVectorView {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for ResourceContextLanguagesVectorView {
     type Item = ::windows_core::HSTRING;
-    type IntoIter = super::super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -1052,9 +1045,9 @@ impl ::core::iter::IntoIterator for ResourceContextLanguagesVectorView {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &ResourceContextLanguagesVectorView {
     type Item = ::windows_core::HSTRING;
-    type IntoIter = super::super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::super::Foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -1106,55 +1099,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceContextLanguagesVectorView> for super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<ResourceContextLanguagesVectorView> for ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceContextLanguagesVectorView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceContextLanguagesVectorView> for super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<&ResourceContextLanguagesVectorView> for ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceContextLanguagesVectorView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>> for ResourceContextLanguagesVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>> for ResourceContextLanguagesVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>> for &ResourceContextLanguagesVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>> for &ResourceContextLanguagesVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceContextLanguagesVectorView> for super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<ResourceContextLanguagesVectorView> for ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceContextLanguagesVectorView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceContextLanguagesVectorView> for super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<&ResourceContextLanguagesVectorView> for ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceContextLanguagesVectorView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> for ResourceContextLanguagesVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> for ResourceContextLanguagesVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> for &ResourceContextLanguagesVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> for &ResourceContextLanguagesVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -1212,11 +1205,11 @@ impl ResourceManager {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AllResourceMaps(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> {
+    pub fn AllResourceMaps(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AllResourceMaps)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>>(result__)
+            (::windows_core::Interface::vtable(this).AllResourceMaps)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>>(result__)
         }
     }
     pub fn DefaultContext(&self) -> ::windows_core::Result<ResourceContext> {
@@ -1227,29 +1220,29 @@ impl ResourceManager {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
-    pub fn LoadPriFiles<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Storage::IStorageFile>>>(&self, files: Param0) -> ::windows_core::Result<()> {
+    pub fn LoadPriFiles<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_storage::IStorageFile>>>(&self, files: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).LoadPriFiles)(::windows_core::Interface::as_raw(this), files.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
-    pub fn UnloadPriFiles<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Storage::IStorageFile>>>(&self, files: Param0) -> ::windows_core::Result<()> {
+    pub fn UnloadPriFiles<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_storage::IStorageFile>>>(&self, files: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).UnloadPriFiles)(::windows_core::Interface::as_raw(this), files.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAllNamedResourcesForPackage<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ResourceLayoutInfo>>(&self, packagename: Param0, resourcelayoutinfo: Param1) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<NamedResource>> {
+    pub fn GetAllNamedResourcesForPackage<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ResourceLayoutInfo>>(&self, packagename: Param0, resourcelayoutinfo: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<NamedResource>> {
         let this = &::windows_core::Interface::cast::<IResourceManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllNamedResourcesForPackage)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), resourcelayoutinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<NamedResource>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllNamedResourcesForPackage)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), resourcelayoutinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<NamedResource>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAllSubtreesForPackage<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ResourceLayoutInfo>>(&self, packagename: Param0, resourcelayoutinfo: Param1) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<ResourceMap>> {
+    pub fn GetAllSubtreesForPackage<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ResourceLayoutInfo>>(&self, packagename: Param0, resourcelayoutinfo: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ResourceMap>> {
         let this = &::windows_core::Interface::cast::<IResourceManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllSubtreesForPackage)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), resourcelayoutinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<ResourceMap>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllSubtreesForPackage)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), resourcelayoutinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ResourceMap>>(result__)
         }
     }
     pub fn Current() -> ::windows_core::Result<ResourceManager> {
@@ -1345,16 +1338,16 @@ unsafe impl ::core::marker::Sync for ResourceManager {}
 pub struct ResourceMap(::windows_core::IUnknown);
 impl ResourceMap {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Lookup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<NamedResource> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Lookup)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<NamedResource>(result__)
@@ -1362,7 +1355,7 @@ impl ResourceMap {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
@@ -1370,23 +1363,22 @@ impl ResourceMap {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn HasKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).HasKey)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Split(&self, first: &mut ::core::option::Option<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>, second: &mut ::core::option::Option<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>(self)?;
+    pub fn Split(&self, first: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>, second: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>) -> ::windows_core::Result<()> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Split)(::windows_core::Interface::as_raw(this), first as *mut _ as _, second as *mut _ as _).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Uri(&self) -> ::windows_core::Result<super::super::super::Foundation::Uri> {
+    pub fn Uri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn GetValue<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, resource: Param0) -> ::windows_core::Result<ResourceCandidate> {
@@ -1443,16 +1435,16 @@ impl ::windows_core::RuntimeName for ResourceMap {
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for ResourceMap {
-    type Item = super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &ResourceMap {
-    type Item = super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -1498,55 +1490,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceMap> for super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
+impl ::core::convert::TryFrom<ResourceMap> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceMap) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceMap> for super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
+impl ::core::convert::TryFrom<&ResourceMap> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceMap) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> for ResourceMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> for ResourceMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> for &ResourceMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> for &ResourceMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceMap> for super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource> {
+impl ::core::convert::TryFrom<ResourceMap> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceMap) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceMap> for super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource> {
+impl ::core::convert::TryFrom<&ResourceMap> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceMap) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>> for ResourceMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>> for ResourceMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>> for &ResourceMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>> for &ResourceMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, NamedResource>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for ResourceMap {}
@@ -1557,11 +1549,11 @@ pub struct ResourceMapIterator(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl ResourceMapIterator {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Current(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
+    pub fn Current(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Current)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>(result__)
+            (::windows_core::Interface::vtable(this).Current)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -1581,7 +1573,7 @@ impl ResourceMapIterator {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetMany(&self, items: &mut [::core::option::Option<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>]) -> ::windows_core::Result<u32> {
+    pub fn GetMany(&self, items: &mut [::core::option::Option<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -1619,8 +1611,8 @@ unsafe impl ::windows_core::RuntimeType for ResourceMapIterator {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for ResourceMapIterator {
-    type Vtable = super::super::super::Foundation::Collections::IIterator_Vtbl<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IIterator_Vtbl<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for ResourceMapIterator {
@@ -1675,29 +1667,29 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceMapIterator> for super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
+impl ::core::convert::TryFrom<ResourceMapIterator> for ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceMapIterator) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceMapIterator> for super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
+impl ::core::convert::TryFrom<&ResourceMapIterator> for ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceMapIterator) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> for ResourceMapIterator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> for ResourceMapIterator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> for &ResourceMapIterator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> for &ResourceMapIterator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, NamedResource>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -1710,11 +1702,11 @@ pub struct ResourceMapMapView(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl ResourceMapMapView {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -1742,7 +1734,7 @@ impl ResourceMapMapView {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Split(&self, first: &mut ::core::option::Option<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>>, second: &mut ::core::option::Option<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>>) -> ::windows_core::Result<()> {
+    pub fn Split(&self, first: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>>, second: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>>) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Split)(::windows_core::Interface::as_raw(this), first as *mut _ as _, second as *mut _ as _).ok() }
     }
@@ -1777,8 +1769,8 @@ unsafe impl ::windows_core::RuntimeType for ResourceMapMapView {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for ResourceMapMapView {
-    type Vtable = super::super::super::Foundation::Collections::IMapView_Vtbl<::windows_core::HSTRING, ResourceMap>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IMapView_Vtbl<::windows_core::HSTRING, ResourceMap>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for ResourceMapMapView {
@@ -1786,16 +1778,16 @@ impl ::windows_core::RuntimeName for ResourceMapMapView {
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for ResourceMapMapView {
-    type Item = super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &ResourceMapMapView {
-    type Item = super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -1849,55 +1841,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceMapMapView> for super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
+impl ::core::convert::TryFrom<ResourceMapMapView> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceMapMapView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceMapMapView> for super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
+impl ::core::convert::TryFrom<&ResourceMapMapView> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceMapMapView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> for ResourceMapMapView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> for ResourceMapMapView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> for &ResourceMapMapView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> for &ResourceMapMapView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceMapMapView> for super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap> {
+impl ::core::convert::TryFrom<ResourceMapMapView> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceMapMapView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceMapMapView> for super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap> {
+impl ::core::convert::TryFrom<&ResourceMapMapView> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceMapMapView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> for ResourceMapMapView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> for ResourceMapMapView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> for &ResourceMapMapView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> for &ResourceMapMapView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ResourceMap>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -1910,11 +1902,11 @@ pub struct ResourceMapMapViewIterator(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl ResourceMapMapViewIterator {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Current(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
+    pub fn Current(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Current)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>(result__)
+            (::windows_core::Interface::vtable(this).Current)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -1934,7 +1926,7 @@ impl ResourceMapMapViewIterator {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetMany(&self, items: &mut [::core::option::Option<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>]) -> ::windows_core::Result<u32> {
+    pub fn GetMany(&self, items: &mut [::core::option::Option<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>]) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -1972,8 +1964,8 @@ unsafe impl ::windows_core::RuntimeType for ResourceMapMapViewIterator {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for ResourceMapMapViewIterator {
-    type Vtable = super::super::super::Foundation::Collections::IIterator_Vtbl<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IIterator_Vtbl<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for ResourceMapMapViewIterator {
@@ -2028,29 +2020,29 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceMapMapViewIterator> for super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
+impl ::core::convert::TryFrom<ResourceMapMapViewIterator> for ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceMapMapViewIterator) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceMapMapViewIterator> for super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
+impl ::core::convert::TryFrom<&ResourceMapMapViewIterator> for ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceMapMapViewIterator) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> for ResourceMapMapViewIterator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> for ResourceMapMapViewIterator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> for &ResourceMapMapViewIterator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> for &ResourceMapMapViewIterator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ResourceMap>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -2174,11 +2166,11 @@ pub struct ResourceQualifierMapView(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl ResourceQualifierMapView {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -2206,7 +2198,7 @@ impl ResourceQualifierMapView {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Split(&self, first: &mut ::core::option::Option<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>, second: &mut ::core::option::Option<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>) -> ::windows_core::Result<()> {
+    pub fn Split(&self, first: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>, second: &mut ::core::option::Option<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Split)(::windows_core::Interface::as_raw(this), first as *mut _ as _, second as *mut _ as _).ok() }
     }
@@ -2241,8 +2233,8 @@ unsafe impl ::windows_core::RuntimeType for ResourceQualifierMapView {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for ResourceQualifierMapView {
-    type Vtable = super::super::super::Foundation::Collections::IMapView_Vtbl<::windows_core::HSTRING, ::windows_core::HSTRING>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IMapView_Vtbl<::windows_core::HSTRING, ::windows_core::HSTRING>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for ResourceQualifierMapView {
@@ -2250,16 +2242,16 @@ impl ::windows_core::RuntimeName for ResourceQualifierMapView {
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for ResourceQualifierMapView {
-    type Item = super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &ResourceQualifierMapView {
-    type Item = super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -2313,55 +2305,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceQualifierMapView> for super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+impl ::core::convert::TryFrom<ResourceQualifierMapView> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceQualifierMapView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceQualifierMapView> for super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+impl ::core::convert::TryFrom<&ResourceQualifierMapView> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceQualifierMapView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for ResourceQualifierMapView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for ResourceQualifierMapView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for &ResourceQualifierMapView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for &ResourceQualifierMapView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceQualifierMapView> for super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<ResourceQualifierMapView> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceQualifierMapView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceQualifierMapView> for super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<&ResourceQualifierMapView> for ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceQualifierMapView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> for ResourceQualifierMapView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> for ResourceQualifierMapView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> for &ResourceQualifierMapView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> for &ResourceQualifierMapView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -2374,16 +2366,16 @@ pub struct ResourceQualifierObservableMap(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl ResourceQualifierObservableMap {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Lookup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).Lookup)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -2391,7 +2383,7 @@ impl ResourceQualifierObservableMap {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
@@ -2399,23 +2391,23 @@ impl ResourceQualifierObservableMap {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn HasKey<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).HasKey)(::windows_core::Interface::as_raw(this), key.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetView(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
+    pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Insert<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0, value: Param1) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).Insert)(::windows_core::Interface::as_raw(this), key.into_param().abi(), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
@@ -2423,24 +2415,24 @@ impl ResourceQualifierObservableMap {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Remove<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, key: Param0) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Remove)(::windows_core::Interface::as_raw(this), key.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MapChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::MapChangedEventHandler<::windows_core::HSTRING, ::windows_core::HSTRING>>>(&self, vhnd: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::MapChangedEventHandler<::windows_core::HSTRING, ::windows_core::HSTRING>>>(&self, vhnd: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapChanged)(::windows_core::Interface::as_raw(this), vhnd.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapChanged)(::windows_core::Interface::as_raw(this), vhnd.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RemoveMapChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2475,8 +2467,8 @@ unsafe impl ::windows_core::RuntimeType for ResourceQualifierObservableMap {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for ResourceQualifierObservableMap {
-    type Vtable = super::super::super::Foundation::Collections::IObservableMap_Vtbl<::windows_core::HSTRING, ::windows_core::HSTRING>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IObservableMap_Vtbl<::windows_core::HSTRING, ::windows_core::HSTRING>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for ResourceQualifierObservableMap {
@@ -2484,16 +2476,16 @@ impl ::windows_core::RuntimeName for ResourceQualifierObservableMap {
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for ResourceQualifierObservableMap {
-    type Item = super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &ResourceQualifierObservableMap {
-    type Item = super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
-    type IntoIter = super::super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -2547,81 +2539,81 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceQualifierObservableMap> for super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+impl ::core::convert::TryFrom<ResourceQualifierObservableMap> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceQualifierObservableMap) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceQualifierObservableMap> for super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+impl ::core::convert::TryFrom<&ResourceQualifierObservableMap> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceQualifierObservableMap) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for ResourceQualifierObservableMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for ResourceQualifierObservableMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for &ResourceQualifierObservableMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<super::super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> for &ResourceQualifierObservableMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceQualifierObservableMap> for super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<ResourceQualifierObservableMap> for ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceQualifierObservableMap) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceQualifierObservableMap> for super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<&ResourceQualifierObservableMap> for ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceQualifierObservableMap) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for ResourceQualifierObservableMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for ResourceQualifierObservableMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for &ResourceQualifierObservableMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for &ResourceQualifierObservableMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceQualifierObservableMap> for super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<ResourceQualifierObservableMap> for ::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceQualifierObservableMap) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceQualifierObservableMap> for super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
+impl ::core::convert::TryFrom<&ResourceQualifierObservableMap> for ::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceQualifierObservableMap) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for ResourceQualifierObservableMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for ResourceQualifierObservableMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for &ResourceQualifierObservableMap {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> for &ResourceQualifierObservableMap {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IObservableMap<::windows_core::HSTRING, ::windows_core::HSTRING>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -2667,11 +2659,11 @@ pub struct ResourceQualifierVectorView(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl ResourceQualifierVectorView {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<ResourceQualifier>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<ResourceQualifier>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<ResourceQualifier>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<ResourceQualifier>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<ResourceQualifier>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<ResourceQualifier>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -2737,8 +2729,8 @@ unsafe impl ::windows_core::RuntimeType for ResourceQualifierVectorView {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for ResourceQualifierVectorView {
-    type Vtable = super::super::super::Foundation::Collections::IVectorView_Vtbl<ResourceQualifier>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IVectorView<ResourceQualifier> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IVectorView_Vtbl<ResourceQualifier>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVectorView<ResourceQualifier> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for ResourceQualifierVectorView {
@@ -2747,7 +2739,7 @@ impl ::windows_core::RuntimeName for ResourceQualifierVectorView {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for ResourceQualifierVectorView {
     type Item = ResourceQualifier;
-    type IntoIter = super::super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -2755,9 +2747,9 @@ impl ::core::iter::IntoIterator for ResourceQualifierVectorView {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &ResourceQualifierVectorView {
     type Item = ResourceQualifier;
-    type IntoIter = super::super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::super::Foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -2809,55 +2801,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Res
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceQualifierVectorView> for super::super::super::Foundation::Collections::IIterable<ResourceQualifier> {
+impl ::core::convert::TryFrom<ResourceQualifierVectorView> for ::winrt_foundation::Collections::IIterable<ResourceQualifier> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceQualifierVectorView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceQualifierVectorView> for super::super::super::Foundation::Collections::IIterable<ResourceQualifier> {
+impl ::core::convert::TryFrom<&ResourceQualifierVectorView> for ::winrt_foundation::Collections::IIterable<ResourceQualifier> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceQualifierVectorView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ResourceQualifier>> for ResourceQualifierVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<ResourceQualifier>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ResourceQualifier>> for ResourceQualifierVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ResourceQualifier>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ResourceQualifier>> for &ResourceQualifierVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<ResourceQualifier>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<ResourceQualifier>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ResourceQualifier>> for &ResourceQualifierVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ResourceQualifier>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<ResourceQualifier>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ResourceQualifierVectorView> for super::super::super::Foundation::Collections::IVectorView<ResourceQualifier> {
+impl ::core::convert::TryFrom<ResourceQualifierVectorView> for ::winrt_foundation::Collections::IVectorView<ResourceQualifier> {
     type Error = ::windows_core::Error;
     fn try_from(value: ResourceQualifierVectorView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ResourceQualifierVectorView> for super::super::super::Foundation::Collections::IVectorView<ResourceQualifier> {
+impl ::core::convert::TryFrom<&ResourceQualifierVectorView> for ::winrt_foundation::Collections::IVectorView<ResourceQualifier> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ResourceQualifierVectorView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<ResourceQualifier>> for ResourceQualifierVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVectorView<ResourceQualifier>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<ResourceQualifier>> for ResourceQualifierVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<ResourceQualifier>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<ResourceQualifier>> for &ResourceQualifierVectorView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVectorView<ResourceQualifier>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IVectorView<ResourceQualifier>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<ResourceQualifier>> for &ResourceQualifierVectorView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<ResourceQualifier>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<ResourceQualifier>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]

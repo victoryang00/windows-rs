@@ -1,55 +1,40 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn ComputeInvCMAP(prgbcolors: *const super::super::Graphics::Gdi::RGBQUAD, ncolors: u32, pinvtable: *mut u8, cbtable: u32) -> ::windows_core_sys::HRESULT;
+    pub fn ComputeInvCMAP(prgbcolors: *const ::win32_graphics_sys::Gdi::RGBQUAD, ncolors: u32, pinvtable: *mut u8, cbtable: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
-    pub fn CreateDDrawSurfaceOnDIB(hbmdib: super::super::Graphics::Gdi::HBITMAP, ppsurface: *mut super::super::Graphics::DirectDraw::IDirectDrawSurface) -> ::windows_core_sys::HRESULT;
+    pub fn CreateDDrawSurfaceOnDIB(hbmdib: ::win32_graphics_sys::Gdi::HBITMAP, ppsurface: *mut ::win32_graphics_sys::DirectDraw::IDirectDrawSurface) -> ::windows_core_sys::HRESULT;
     pub fn CreateMIMEMap(ppmap: *mut IMapMIMEToCLSID) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn DecodeImage(pstream: super::super::System::Com::IStream, pmap: IMapMIMEToCLSID, peventsink: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
+    pub fn DecodeImage(pstream: ::win32_system_sys::Com::IStream, pmap: IMapMIMEToCLSID, peventsink: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn DecodeImageEx(pstream: super::super::System::Com::IStream, pmap: IMapMIMEToCLSID, peventsink: ::windows_core_sys::IUnknown, pszmimetypeparam: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn DecodeImageEx(pstream: ::win32_system_sys::Com::IStream, pmap: IMapMIMEToCLSID, peventsink: ::windows_core_sys::IUnknown, pszmimetypeparam: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn DitherTo8(pdestbits: *mut u8, ndestpitch: i32, psrcbits: *mut u8, nsrcpitch: i32, bfidsrc: *const ::windows_core_sys::GUID, prgbdestcolors: *mut super::super::Graphics::Gdi::RGBQUAD, prgbsrccolors: *mut super::super::Graphics::Gdi::RGBQUAD, pbdestinvmap: *mut u8, x: i32, y: i32, cx: i32, cy: i32, ldesttrans: i32, lsrctrans: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DoPrivacyDlg(hwndowner: super::super::Foundation::HWND, pszurl: ::windows_core_sys::PCWSTR, pprivacyenum: IEnumPrivacyRecords, freportallsites: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn DitherTo8(pdestbits: *mut u8, ndestpitch: i32, psrcbits: *mut u8, nsrcpitch: i32, bfidsrc: *const ::windows_core_sys::GUID, prgbdestcolors: *mut ::win32_graphics_sys::Gdi::RGBQUAD, prgbsrccolors: *mut ::win32_graphics_sys::Gdi::RGBQUAD, pbdestinvmap: *mut u8, x: i32, y: i32, cx: i32, cy: i32, ldesttrans: i32, lsrctrans: i32) -> ::windows_core_sys::HRESULT;
+    pub fn DoPrivacyDlg(hwndowner: ::win32_foundation_sys::HWND, pszurl: ::windows_core_sys::PCWSTR, pprivacyenum: IEnumPrivacyRecords, freportallsites: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn GetMaxMIMEIDBytes(pnmaxbytes: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn IdentifyMIMEType(pbbytes: *const u8, nbytes: u32, pnformat: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingAccessDeniedDialog(hdlg: super::super::Foundation::HWND, pszusername: ::windows_core_sys::PCSTR, pszcontentdescription: ::windows_core_sys::PCSTR, pratingdetails: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingAccessDeniedDialog2(hdlg: super::super::Foundation::HWND, pszusername: ::windows_core_sys::PCSTR, pratingdetails: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingAccessDeniedDialog2W(hdlg: super::super::Foundation::HWND, pszusername: ::windows_core_sys::PCWSTR, pratingdetails: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingAccessDeniedDialogW(hdlg: super::super::Foundation::HWND, pszusername: ::windows_core_sys::PCWSTR, pszcontentdescription: ::windows_core_sys::PCWSTR, pratingdetails: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingAddToApprovedSites(hdlg: super::super::Foundation::HWND, cbpasswordblob: u32, pbpasswordblob: *mut u8, lpszurl: ::windows_core_sys::PCWSTR, falwaysnever: super::super::Foundation::BOOL, fsitepage: super::super::Foundation::BOOL, fapprovedsitesenforced: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn RatingAccessDeniedDialog(hdlg: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCSTR, pszcontentdescription: ::windows_core_sys::PCSTR, pratingdetails: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn RatingAccessDeniedDialog2(hdlg: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCSTR, pratingdetails: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn RatingAccessDeniedDialog2W(hdlg: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCWSTR, pratingdetails: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn RatingAccessDeniedDialogW(hdlg: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCWSTR, pszcontentdescription: ::windows_core_sys::PCWSTR, pratingdetails: *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn RatingAddToApprovedSites(hdlg: ::win32_foundation_sys::HWND, cbpasswordblob: u32, pbpasswordblob: *mut u8, lpszurl: ::windows_core_sys::PCWSTR, falwaysnever: ::win32_foundation_sys::BOOL, fsitepage: ::win32_foundation_sys::BOOL, fapprovedsitesenforced: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn RatingCheckUserAccess(pszusername: ::windows_core_sys::PCSTR, pszurl: ::windows_core_sys::PCSTR, pszratinginfo: ::windows_core_sys::PCSTR, pdata: *const u8, cbdata: u32, ppratingdetails: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn RatingCheckUserAccessW(pszusername: ::windows_core_sys::PCWSTR, pszurl: ::windows_core_sys::PCWSTR, pszratinginfo: ::windows_core_sys::PCWSTR, pdata: *const u8, cbdata: u32, ppratingdetails: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingClickedOnPRFInternal(hwndowner: super::super::Foundation::HWND, param1: super::super::Foundation::HINSTANCE, lpszfilename: ::windows_core_sys::PCSTR, nshow: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingClickedOnRATInternal(hwndowner: super::super::Foundation::HWND, param1: super::super::Foundation::HINSTANCE, lpszfilename: ::windows_core_sys::PCSTR, nshow: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingEnable(hwndparent: super::super::Foundation::HWND, pszusername: ::windows_core_sys::PCSTR, fenable: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingEnableW(hwndparent: super::super::Foundation::HWND, pszusername: ::windows_core_sys::PCWSTR, fenable: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn RatingClickedOnPRFInternal(hwndowner: ::win32_foundation_sys::HWND, param1: ::win32_foundation_sys::HINSTANCE, lpszfilename: ::windows_core_sys::PCSTR, nshow: i32) -> ::windows_core_sys::HRESULT;
+    pub fn RatingClickedOnRATInternal(hwndowner: ::win32_foundation_sys::HWND, param1: ::win32_foundation_sys::HINSTANCE, lpszfilename: ::windows_core_sys::PCSTR, nshow: i32) -> ::windows_core_sys::HRESULT;
+    pub fn RatingEnable(hwndparent: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCSTR, fenable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn RatingEnableW(hwndparent: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCWSTR, fenable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn RatingEnabledQuery() -> ::windows_core_sys::HRESULT;
     pub fn RatingFreeDetails(pratingdetails: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn RatingInit() -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingObtainCancel(hratingobtainquery: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingObtainQuery(psztargeturl: ::windows_core_sys::PCSTR, dwuserdata: u32, fcallback: isize, phratingobtainquery: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingObtainQueryW(psztargeturl: ::windows_core_sys::PCWSTR, dwuserdata: u32, fcallback: isize, phratingobtainquery: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingSetupUI(hdlg: super::super::Foundation::HWND, pszusername: ::windows_core_sys::PCSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RatingSetupUIW(hdlg: super::super::Foundation::HWND, pszusername: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn RatingObtainCancel(hratingobtainquery: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn RatingObtainQuery(psztargeturl: ::windows_core_sys::PCSTR, dwuserdata: u32, fcallback: isize, phratingobtainquery: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn RatingObtainQueryW(psztargeturl: ::windows_core_sys::PCWSTR, dwuserdata: u32, fcallback: isize, phratingobtainquery: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn RatingSetupUI(hdlg: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCSTR) -> ::windows_core_sys::HRESULT;
+    pub fn RatingSetupUIW(hdlg: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SniffStream(pinstream: super::super::System::Com::IStream, pnformat: *mut u32, ppoutstream: *mut super::super::System::Com::IStream) -> ::windows_core_sys::HRESULT;
+    pub fn SniffStream(pinstream: ::win32_system_sys::Com::IStream, pnformat: *mut u32, ppoutstream: *mut ::win32_system_sys::Com::IStream) -> ::windows_core_sys::HRESULT;
 }
 pub const ADDRESSBAND: u32 = 2u32;
 pub type ADDURL_FLAG = i32;
@@ -7117,16 +7102,13 @@ pub const HTMLPAINTER_EXPAND: HTML_PAINTER = 65536i32;
 pub const HTMLPAINTER_NOSCROLLBITS: HTML_PAINTER = 131072i32;
 pub const HTML_PAINTER_Max: HTML_PAINTER = 2147483647i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTML_PAINTER_INFO {
     pub lFlags: i32,
     pub lZOrder: i32,
     pub iidDrawObject: ::windows_core_sys::GUID,
-    pub rcExpand: super::super::Foundation::RECT,
+    pub rcExpand: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTML_PAINTER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTML_PAINTER_INFO {
     fn clone(&self) -> Self {
         *self
@@ -7137,15 +7119,15 @@ pub const HTMLPAINT_DRAW_UPDATEREGION: HTML_PAINT_DRAW_FLAGS = 1i32;
 pub const HTMLPAINT_DRAW_USE_XFORM: HTML_PAINT_DRAW_FLAGS = 2i32;
 pub const HTML_PAINT_DRAW_FLAGS_Max: HTML_PAINT_DRAW_FLAGS = 2147483647i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct HTML_PAINT_DRAW_INFO {
-    pub rcViewport: super::super::Foundation::RECT,
-    pub hrgnUpdate: super::super::Graphics::Gdi::HRGN,
+    pub rcViewport: ::win32_foundation_sys::RECT,
+    pub hrgnUpdate: ::win32_graphics_sys::Gdi::HRGN,
     pub xform: HTML_PAINT_XFORM,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for HTML_PAINT_DRAW_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for HTML_PAINT_DRAW_INFO {
     fn clone(&self) -> Self {
         *self
@@ -7785,8 +7767,7 @@ impl ::core::clone::Clone for IELAUNCHURLINFO {
     }
 }
 pub const IEPROCESS_MODULE_NAME: &str = "IERtUtil.dll";
-#[cfg(feature = "Win32_Foundation")]
-pub type IEREGISTERXMLNSFN = ::core::option::Option<unsafe extern "system" fn(lpszuri: ::windows_core_sys::PCWSTR, clsid: ::windows_core_sys::GUID, fmachine: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT>;
+pub type IEREGISTERXMLNSFN = ::core::option::Option<unsafe extern "system" fn(lpszuri: ::windows_core_sys::PCWSTR, clsid: ::windows_core_sys::GUID, fmachine: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT>;
 pub const IEWebDriverManager: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2419149554, data2: 21072, data3: 18355, data4: [137, 216, 98, 149, 252, 35, 188, 34] };
 pub const IE_USE_OE_MAIL_HKEY: i32 = -2147483647i32;
 pub const IE_USE_OE_MAIL_KEY: &str = "Software\\Microsoft\\Internet Explorer\\Mail";
@@ -8657,29 +8638,26 @@ pub const SELECTION_TYPE_Caret: SELECTION_TYPE = 1i32;
 pub const SELECTION_TYPE_Text: SELECTION_TYPE = 2i32;
 pub const SELECTION_TYPE_Control: SELECTION_TYPE = 3i32;
 pub const SELECTION_TYPE_Max: SELECTION_TYPE = 2147483647i32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-pub type SHOWHTMLDIALOGEXFN = ::core::option::Option<unsafe extern "system" fn(hwndparent: super::super::Foundation::HWND, pmk: super::super::System::Com::IMoniker, dwdialogflags: u32, pvarargin: *mut super::super::System::Com::VARIANT, pchoptions: ::windows_core_sys::PCWSTR, pvargout: *mut super::super::System::Com::VARIANT) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-pub type SHOWHTMLDIALOGFN = ::core::option::Option<unsafe extern "system" fn(hwndparent: super::super::Foundation::HWND, pmk: super::super::System::Com::IMoniker, pvarargin: *mut super::super::System::Com::VARIANT, pchoptions: ::windows_core_sys::PCWSTR, pvargout: *mut super::super::System::Com::VARIANT) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-pub type SHOWMODELESSHTMLDIALOGFN = ::core::option::Option<unsafe extern "system" fn(hwndparent: super::super::Foundation::HWND, pmk: super::super::System::Com::IMoniker, pvarargin: *mut super::super::System::Com::VARIANT, pvaroptions: *mut super::super::System::Com::VARIANT, ppwindow: *mut IHTMLWindow2) -> ::windows_core_sys::HRESULT>;
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+pub type SHOWHTMLDIALOGEXFN = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pmk: ::win32_system_sys::Com::IMoniker, dwdialogflags: u32, pvarargin: *mut ::win32_system_sys::Com::VARIANT, pchoptions: ::windows_core_sys::PCWSTR, pvargout: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT>;
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+pub type SHOWHTMLDIALOGFN = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pmk: ::win32_system_sys::Com::IMoniker, pvarargin: *mut ::win32_system_sys::Com::VARIANT, pchoptions: ::windows_core_sys::PCWSTR, pvargout: *mut ::win32_system_sys::Com::VARIANT) -> ::windows_core_sys::HRESULT>;
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+pub type SHOWMODELESSHTMLDIALOGFN = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pmk: ::win32_system_sys::Com::IMoniker, pvarargin: *mut ::win32_system_sys::Com::VARIANT, pvaroptions: *mut ::win32_system_sys::Com::VARIANT, ppwindow: *mut IHTMLWindow2) -> ::windows_core_sys::HRESULT>;
 pub const SID_SEditCommandTarget: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 810611893, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const SID_SHTMLEditHost: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 810612384, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 pub const SID_SHTMLEditServices: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 810612729, data2: 39093, data3: 4559, data4: [187, 130, 0, 170, 0, 189, 206, 11] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STATURL {
     pub cbSize: u32,
     pub pwcsUrl: ::windows_core_sys::PWSTR,
     pub pwcsTitle: ::windows_core_sys::PWSTR,
-    pub ftLastVisited: super::super::Foundation::FILETIME,
-    pub ftLastUpdated: super::super::Foundation::FILETIME,
-    pub ftExpires: super::super::Foundation::FILETIME,
+    pub ftLastVisited: ::win32_foundation_sys::FILETIME,
+    pub ftLastUpdated: ::win32_foundation_sys::FILETIME,
+    pub ftExpires: ::win32_foundation_sys::FILETIME,
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STATURL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STATURL {
     fn clone(&self) -> Self {
         *self

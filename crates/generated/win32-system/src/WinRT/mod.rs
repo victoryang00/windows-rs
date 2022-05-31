@@ -234,7 +234,7 @@ pub unsafe fn CreateControlInputEx<'a, Param0: ::windows_core::IntoParam<'a, ::w
 }
 #[cfg(feature = "System")]
 #[inline]
-pub unsafe fn CreateDispatcherQueueController<'a, Param0: ::windows_core::IntoParam<'a, DispatcherQueueOptions>>(options: Param0) -> ::windows_core::Result<super::super::super::System::DispatcherQueueController> {
+pub unsafe fn CreateDispatcherQueueController<'a, Param0: ::windows_core::IntoParam<'a, DispatcherQueueOptions>>(options: Param0) -> ::windows_core::Result<::winrt_system::DispatcherQueueController> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -242,7 +242,7 @@ pub unsafe fn CreateDispatcherQueueController<'a, Param0: ::windows_core::IntoPa
             fn CreateDispatcherQueueController(options: DispatcherQueueOptions, dispatcherqueuecontroller: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        CreateDispatcherQueueController(options.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::System::DispatcherQueueController>(result__)
+        CreateDispatcherQueueController(options.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_system::DispatcherQueueController>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -580,18 +580,15 @@ pub unsafe fn HSTRING_UserUnmarshal64(param0: *const u32, param1: *const u8, par
 #[repr(transparent)]
 pub struct IAccountsSettingsPaneInterop(::windows_core::IUnknown);
 impl IAccountsSettingsPaneInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ShowManageAccountsForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn ShowManageAccountsForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).ShowManageAccountsForWindowAsync)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ShowAddAccountForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn ShowAddAccountForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).ShowAddAccountForWindowAsync)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -660,18 +657,9 @@ unsafe impl ::windows_core::Interface for IAccountsSettingsPaneInterop {
 #[doc(hidden)]
 pub struct IAccountsSettingsPaneInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, accountssettingspane: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ShowManageAccountsForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, asyncaction: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ShowManageAccountsForWindowAsync: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ShowAddAccountForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, asyncaction: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ShowAddAccountForWindowAsync: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, accountssettingspane: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub ShowManageAccountsForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, asyncaction: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub ShowAddAccountForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, asyncaction: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IActivationFactory(::windows_core::IUnknown);
@@ -1097,9 +1085,9 @@ impl ICastingSourceInfo {
         (::windows_core::Interface::vtable(self).GetController)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ICastingController>(result__)
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<super::super::UI::Shell::PropertiesSystem::INamedPropertyStore> {
+    pub unsafe fn GetProperties(&self) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::INamedPropertyStore> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::UI::Shell::PropertiesSystem::INamedPropertyStore>(result__)
+        (::windows_core::Interface::vtable(self).GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::INamedPropertyStore>(result__)
     }
 }
 impl ::core::convert::From<ICastingSourceInfo> for ::windows_core::IUnknown {
@@ -1320,8 +1308,7 @@ pub struct ICoreWindowAdapterInterop_Vtbl {
 #[repr(transparent)]
 pub struct ICoreWindowComponentInterop(::windows_core::IUnknown);
 impl ICoreWindowComponentInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ConfigureComponentInput<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, hostviewinstanceid: u32, hwndhost: Param1, inputsourcevisual: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn ConfigureComponentInput<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, hostviewinstanceid: u32, hwndhost: Param1, inputsourcevisual: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConfigureComponentInput)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hostviewinstanceid), hwndhost.into_param().abi(), inputsourcevisual.into_param().abi()).ok()
     }
     pub unsafe fn GetViewInstanceId(&self) -> ::windows_core::Result<u32> {
@@ -1373,19 +1360,15 @@ unsafe impl ::windows_core::Interface for ICoreWindowComponentInterop {
 #[doc(hidden)]
 pub struct ICoreWindowComponentInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ConfigureComponentInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hostviewinstanceid: u32, hwndhost: super::super::Foundation::HWND, inputsourcevisual: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ConfigureComponentInput: usize,
+    pub ConfigureComponentInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hostviewinstanceid: u32, hwndhost: ::win32_foundation::HWND, inputsourcevisual: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetViewInstanceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, componentviewinstanceid: *mut u32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ICoreWindowInterop(::windows_core::IUnknown);
 impl ICoreWindowInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WindowHandle(&self) -> ::windows_core::Result<super::super::Foundation::HWND> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HWND>::zeroed();
-        (::windows_core::Interface::vtable(self).WindowHandle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HWND>(result__)
+    pub unsafe fn WindowHandle(&self) -> ::windows_core::Result<::win32_foundation::HWND> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HWND>::zeroed();
+        (::windows_core::Interface::vtable(self).WindowHandle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HWND>(result__)
     }
     pub unsafe fn SetMessageHandled(&self, value: u8) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMessageHandled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(value)).ok()
@@ -1435,10 +1418,7 @@ unsafe impl ::windows_core::Interface for ICoreWindowInterop {
 #[doc(hidden)]
 pub struct ICoreWindowInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub WindowHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: *mut super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    WindowHandle: usize,
+    pub WindowHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: *mut ::win32_foundation::HWND) -> ::windows_core::HRESULT,
     pub SetMessageHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u8) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -1581,8 +1561,7 @@ pub struct ICorrelationVectorSource_Vtbl {
 #[repr(transparent)]
 pub struct IDragDropManagerInterop(::windows_core::IUnknown);
 impl IDragDropManagerInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, hwnd: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, hwnd: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -1651,16 +1630,12 @@ unsafe impl ::windows_core::Interface for IDragDropManagerInterop {
 #[doc(hidden)]
 pub struct IDragDropManagerInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IHolographicSpaceInterop(::windows_core::IUnknown);
 impl IHolographicSpaceInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn CreateForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).CreateForWindow)(::windows_core::Interface::as_raw(self), window.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -1729,16 +1704,12 @@ unsafe impl ::windows_core::Interface for IHolographicSpaceInterop {
 #[doc(hidden)]
 pub struct IHolographicSpaceInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, holographicspace: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateForWindow: usize,
+    pub CreateForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, holographicspace: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IInputPaneInterop(::windows_core::IUnknown);
 impl IInputPaneInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -1807,10 +1778,7 @@ unsafe impl ::windows_core::Interface for IInputPaneInterop {
 #[doc(hidden)]
 pub struct IInputPaneInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, inputpane: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, inputpane: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ILanguageExceptionErrorInfo(::windows_core::IUnknown);
@@ -2189,13 +2157,11 @@ pub struct IMessageDispatcher_Vtbl {
 #[repr(transparent)]
 pub struct IPlayToManagerInterop(::windows_core::IUnknown);
 impl IPlayToManagerInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ShowPlayToUIForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, appwindow: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn ShowPlayToUIForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, appwindow: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ShowPlayToUIForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi()).ok()
     }
 }
@@ -2263,26 +2229,18 @@ unsafe impl ::windows_core::Interface for IPlayToManagerInterop {
 #[doc(hidden)]
 pub struct IPlayToManagerInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, playtomanager: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ShowPlayToUIForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ShowPlayToUIForWindow: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, playtomanager: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub ShowPlayToUIForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IRestrictedErrorInfo(::windows_core::IUnknown);
 impl IRestrictedErrorInfo {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetErrorDetails(&self, description: *mut super::super::Foundation::BSTR, error: *mut ::windows_core::HRESULT, restricteddescription: *mut super::super::Foundation::BSTR, capabilitysid: *mut super::super::Foundation::BSTR) -> ::windows_core::Result<()> {
+    pub unsafe fn GetErrorDetails(&self, description: *mut ::win32_foundation::BSTR, error: *mut ::windows_core::HRESULT, restricteddescription: *mut ::win32_foundation::BSTR, capabilitysid: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetErrorDetails)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(description), ::core::mem::transmute(error), ::core::mem::transmute(restricteddescription), ::core::mem::transmute(capabilitysid)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetReference(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetReference)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetReference(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetReference)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 impl ::core::convert::From<IRestrictedErrorInfo> for ::windows_core::IUnknown {
@@ -2331,14 +2289,8 @@ unsafe impl ::windows_core::Interface for IRestrictedErrorInfo {
 #[doc(hidden)]
 pub struct IRestrictedErrorInfo_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetErrorDetails: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut super::super::Foundation::BSTR, error: *mut ::windows_core::HRESULT, restricteddescription: *mut super::super::Foundation::BSTR, capabilitysid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetErrorDetails: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reference: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetReference: usize,
+    pub GetErrorDetails: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut ::win32_foundation::BSTR, error: *mut ::windows_core::HRESULT, restricteddescription: *mut ::win32_foundation::BSTR, capabilitysid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub GetReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reference: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IRoMetaDataLocator(::windows_core::IUnknown);
@@ -2443,10 +2395,9 @@ pub struct IRoSimpleMetaDataBuilder_Vtbl {
 #[repr(transparent)]
 pub struct IShareWindowCommandEventArgsInterop(::windows_core::IUnknown);
 impl IShareWindowCommandEventArgsInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetWindow(&self) -> ::windows_core::Result<super::super::Foundation::HWND> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HWND>::zeroed();
-        (::windows_core::Interface::vtable(self).GetWindow)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HWND>(result__)
+    pub unsafe fn GetWindow(&self) -> ::windows_core::Result<::win32_foundation::HWND> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HWND>::zeroed();
+        (::windows_core::Interface::vtable(self).GetWindow)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HWND>(result__)
     }
 }
 impl ::core::convert::From<IShareWindowCommandEventArgsInterop> for ::windows_core::IUnknown {
@@ -2493,16 +2444,12 @@ unsafe impl ::windows_core::Interface for IShareWindowCommandEventArgsInterop {
 #[doc(hidden)]
 pub struct IShareWindowCommandEventArgsInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetWindow: usize,
+    pub GetWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: *mut ::win32_foundation::HWND) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IShareWindowCommandSourceInterop(::windows_core::IUnknown);
 impl IShareWindowCommandSourceInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -2551,16 +2498,12 @@ unsafe impl ::windows_core::Interface for IShareWindowCommandSourceInterop {
 #[doc(hidden)]
 pub struct IShareWindowCommandSourceInterop_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, sharewindowcommandsource: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, sharewindowcommandsource: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISpatialInteractionManagerInterop(::windows_core::IUnknown);
 impl ISpatialInteractionManagerInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), window.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -2629,16 +2572,12 @@ unsafe impl ::windows_core::Interface for ISpatialInteractionManagerInterop {
 #[doc(hidden)]
 pub struct ISpatialInteractionManagerInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, spatialinteractionmanager: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, spatialinteractionmanager: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISystemMediaTransportControlsInterop(::windows_core::IUnknown);
 impl ISystemMediaTransportControlsInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -2707,16 +2646,12 @@ unsafe impl ::windows_core::Interface for ISystemMediaTransportControlsInterop {
 #[doc(hidden)]
 pub struct ISystemMediaTransportControlsInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, mediatransportcontrol: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, mediatransportcontrol: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IUIViewSettingsInterop(::windows_core::IUnknown);
 impl IUIViewSettingsInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, hwnd: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, hwnd: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -2785,16 +2720,12 @@ unsafe impl ::windows_core::Interface for IUIViewSettingsInterop {
 #[doc(hidden)]
 pub struct IUIViewSettingsInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IUserActivityInterop(::windows_core::IUnknown);
 impl IUserActivityInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateSessionForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn CreateSessionForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).CreateSessionForWindow)(::windows_core::Interface::as_raw(self), window.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -2863,16 +2794,12 @@ unsafe impl ::windows_core::Interface for IUserActivityInterop {
 #[doc(hidden)]
 pub struct IUserActivityInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateSessionForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: super::super::Foundation::HWND, iid: *const ::windows_core::GUID, value: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateSessionForWindow: usize,
+    pub CreateSessionForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::win32_foundation::HWND, iid: *const ::windows_core::GUID, value: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IUserActivityRequestManagerInterop(::windows_core::IUnknown);
 impl IUserActivityRequestManagerInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, window: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), window.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -2941,10 +2868,7 @@ unsafe impl ::windows_core::Interface for IUserActivityRequestManagerInterop {
 #[doc(hidden)]
 pub struct IUserActivityRequestManagerInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: super::super::Foundation::HWND, iid: *const ::windows_core::GUID, value: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::win32_foundation::HWND, iid: *const ::windows_core::GUID, value: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IUserActivitySourceHostInterop(::windows_core::IUnknown);
@@ -3022,8 +2946,7 @@ pub struct IUserActivitySourceHostInterop_Vtbl {
 #[repr(transparent)]
 pub struct IUserConsentVerifierInterop(::windows_core::IUnknown);
 impl IUserConsentVerifierInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RequestVerificationForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, T: ::windows_core::Interface>(&self, appwindow: Param0, message: Param1) -> ::windows_core::Result<T> {
+    pub unsafe fn RequestVerificationForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, T: ::windows_core::Interface>(&self, appwindow: Param0, message: Param1) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).RequestVerificationForWindowAsync)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), message.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -3092,10 +3015,7 @@ unsafe impl ::windows_core::Interface for IUserConsentVerifierInterop {
 #[doc(hidden)]
 pub struct IUserConsentVerifierInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RequestVerificationForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, riid: *const ::windows_core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RequestVerificationForWindowAsync: usize,
+    pub RequestVerificationForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, riid: *const ::windows_core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWeakReference(::windows_core::IUnknown);
@@ -3208,13 +3128,11 @@ pub struct IWeakReferenceSource_Vtbl {
 #[repr(transparent)]
 pub struct IWebAuthenticationCoreManagerInterop(::windows_core::IUnknown);
 impl IWebAuthenticationCoreManagerInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RequestTokenForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, T: ::windows_core::Interface>(&self, appwindow: Param0, request: Param1) -> ::windows_core::Result<T> {
+    pub unsafe fn RequestTokenForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, T: ::windows_core::Interface>(&self, appwindow: Param0, request: Param1) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).RequestTokenForWindowAsync)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), request.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RequestTokenWithWebAccountForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, T: ::windows_core::Interface>(&self, appwindow: Param0, request: Param1, webaccount: Param2) -> ::windows_core::Result<T> {
+    pub unsafe fn RequestTokenWithWebAccountForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, T: ::windows_core::Interface>(&self, appwindow: Param0, request: Param1, webaccount: Param2) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).RequestTokenWithWebAccountForWindowAsync)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), request.into_param().abi(), webaccount.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -3283,23 +3201,16 @@ unsafe impl ::windows_core::Interface for IWebAuthenticationCoreManagerInterop {
 #[doc(hidden)]
 pub struct IWebAuthenticationCoreManagerInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RequestTokenForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, request: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, asyncinfo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RequestTokenForWindowAsync: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RequestTokenWithWebAccountForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::Foundation::HWND, request: *mut ::core::ffi::c_void, webaccount: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, asyncinfo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RequestTokenWithWebAccountForWindowAsync: usize,
+    pub RequestTokenForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, request: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, asyncinfo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub RequestTokenWithWebAccountForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, request: *mut ::core::ffi::c_void, webaccount: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, asyncinfo: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsErrorPropagationEnabled() -> super::super::Foundation::BOOL {
+pub unsafe fn IsErrorPropagationEnabled() -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsErrorPropagationEnabled() -> super::super::Foundation::BOOL;
+            fn IsErrorPropagationEnabled() -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsErrorPropagationEnabled())
     }
@@ -3646,42 +3557,39 @@ pub unsafe fn RoInspectThreadErrorInfo(targettebaddress: usize, machine: u16, re
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RoOriginateError<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(error: ::windows_core::HRESULT, message: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn RoOriginateError<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(error: ::windows_core::HRESULT, message: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RoOriginateError(error: ::windows_core::HRESULT, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> super::super::Foundation::BOOL;
+            fn RoOriginateError(error: ::windows_core::HRESULT, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RoOriginateError(::core::mem::transmute(error), message.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RoOriginateErrorW(error: ::windows_core::HRESULT, cchmax: u32, message: &[u16; 512]) -> super::super::Foundation::BOOL {
+pub unsafe fn RoOriginateErrorW(error: ::windows_core::HRESULT, cchmax: u32, message: &[u16; 512]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RoOriginateErrorW(error: ::windows_core::HRESULT, cchmax: u32, message: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn RoOriginateErrorW(error: ::windows_core::HRESULT, cchmax: u32, message: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RoOriginateErrorW(::core::mem::transmute(error), ::core::mem::transmute(cchmax), ::core::mem::transmute(::windows_core::as_ptr_or_null(message))))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RoOriginateLanguageException<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(error: ::windows_core::HRESULT, message: Param1, languageexception: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn RoOriginateLanguageException<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(error: ::windows_core::HRESULT, message: Param1, languageexception: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RoOriginateLanguageException(error: ::windows_core::HRESULT, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, languageexception: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn RoOriginateLanguageException(error: ::windows_core::HRESULT, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, languageexception: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RoOriginateLanguageException(::core::mem::transmute(error), message.into_param().abi(), languageexception.into_param().abi()))
     }
@@ -3794,28 +3702,26 @@ pub unsafe fn RoSetErrorReportingFlags(flags: u32) -> ::windows_core::Result<()>
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RoTransformError<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(olderror: ::windows_core::HRESULT, newerror: ::windows_core::HRESULT, message: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn RoTransformError<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(olderror: ::windows_core::HRESULT, newerror: ::windows_core::HRESULT, message: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RoTransformError(olderror: ::windows_core::HRESULT, newerror: ::windows_core::HRESULT, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> super::super::Foundation::BOOL;
+            fn RoTransformError(olderror: ::windows_core::HRESULT, newerror: ::windows_core::HRESULT, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RoTransformError(::core::mem::transmute(olderror), ::core::mem::transmute(newerror), message.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RoTransformErrorW(olderror: ::windows_core::HRESULT, newerror: ::windows_core::HRESULT, cchmax: u32, message: &[u16; 512]) -> super::super::Foundation::BOOL {
+pub unsafe fn RoTransformErrorW(olderror: ::windows_core::HRESULT, newerror: ::windows_core::HRESULT, cchmax: u32, message: &[u16; 512]) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RoTransformErrorW(olderror: ::windows_core::HRESULT, newerror: ::windows_core::HRESULT, cchmax: u32, message: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn RoTransformErrorW(olderror: ::windows_core::HRESULT, newerror: ::windows_core::HRESULT, cchmax: u32, message: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RoTransformErrorW(::core::mem::transmute(olderror), ::core::mem::transmute(newerror), ::core::mem::transmute(cchmax), ::core::mem::transmute(::windows_core::as_ptr_or_null(message))))
     }
@@ -4064,14 +3970,13 @@ pub unsafe fn WindowsInspectString2(targethstring: u64, machine: u16, callback: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WindowsIsStringEmpty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(string: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn WindowsIsStringEmpty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(string: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WindowsIsStringEmpty(string: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> super::super::Foundation::BOOL;
+            fn WindowsIsStringEmpty(string: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WindowsIsStringEmpty(string.into_param().abi()))
     }
@@ -4119,17 +4024,16 @@ pub unsafe fn WindowsReplaceString<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WindowsStringHasEmbeddedNull<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(string: Param0) -> ::windows_core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn WindowsStringHasEmbeddedNull<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(string: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WindowsStringHasEmbeddedNull(string: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, hasembednull: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn WindowsStringHasEmbeddedNull(string: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, hasembednull: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        WindowsStringHasEmbeddedNull(string.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        WindowsStringHasEmbeddedNull(string.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");

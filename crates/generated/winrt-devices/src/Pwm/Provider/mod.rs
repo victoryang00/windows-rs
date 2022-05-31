@@ -143,11 +143,11 @@ pub struct IPwmControllerProvider_Vtbl {
 pub struct IPwmProvider(::windows_core::IUnknown);
 impl IPwmProvider {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetControllers(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<IPwmControllerProvider>> {
+    pub fn GetControllers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IPwmControllerProvider>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetControllers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<IPwmControllerProvider>>(result__)
+            (::windows_core::Interface::vtable(this).GetControllers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IPwmControllerProvider>>(result__)
         }
     }
 }

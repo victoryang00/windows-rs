@@ -43,20 +43,18 @@ impl ContentRestrictionsBrowsePolicy {
             (::windows_core::Interface::vtable(this).GeographicRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MaxBrowsableAgeRating(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn MaxBrowsableAgeRating(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxBrowsableAgeRating)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).MaxBrowsableAgeRating)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PreferredAgeRating(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn PreferredAgeRating(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PreferredAgeRating)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).PreferredAgeRating)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
 }
@@ -144,14 +142,8 @@ unsafe impl ::windows_core::Interface for IContentRestrictionsBrowsePolicy {
 pub struct IContentRestrictionsBrowsePolicy_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GeographicRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub MaxBrowsableAgeRating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MaxBrowsableAgeRating: usize,
-    #[cfg(feature = "Foundation")]
     pub PreferredAgeRating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PreferredAgeRating: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -211,26 +203,11 @@ unsafe impl ::windows_core::Interface for IRatedContentRestrictions {
 #[doc(hidden)]
 pub struct IRatedContentRestrictions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetBrowsePolicyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetBrowsePolicyAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetRestrictionLevelAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ratedcontentdescription: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetRestrictionLevelAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestContentAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ratedcontentdescription: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestContentAccessAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub RestrictionsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RestrictionsChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveRestrictionsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveRestrictionsChanged: usize,
+    pub RestrictionsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveRestrictionsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -308,15 +285,15 @@ impl RatedContentDescription {
         unsafe { (::windows_core::Interface::vtable(this).SetTitle)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Image(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn Image(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetImage)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -332,15 +309,15 @@ impl RatedContentDescription {
         unsafe { (::windows_core::Interface::vtable(this).SetCategory)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Ratings(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn Ratings(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Ratings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Ratings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetRatings<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetRatings<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRatings)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -437,40 +414,35 @@ impl RatedContentRestrictions {
         static mut SHARED: ::windows_core::FactoryCache<RatedContentRestrictions, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetBrowsePolicyAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ContentRestrictionsBrowsePolicy>> {
+    pub fn GetBrowsePolicyAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ContentRestrictionsBrowsePolicy>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetBrowsePolicyAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ContentRestrictionsBrowsePolicy>>(result__)
+            (::windows_core::Interface::vtable(this).GetBrowsePolicyAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ContentRestrictionsBrowsePolicy>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetRestrictionLevelAsync<'a, Param0: ::windows_core::IntoParam<'a, RatedContentDescription>>(&self, ratedcontentdescription: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ContentAccessRestrictionLevel>> {
+    pub fn GetRestrictionLevelAsync<'a, Param0: ::windows_core::IntoParam<'a, RatedContentDescription>>(&self, ratedcontentdescription: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ContentAccessRestrictionLevel>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRestrictionLevelAsync)(::windows_core::Interface::as_raw(this), ratedcontentdescription.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ContentAccessRestrictionLevel>>(result__)
+            (::windows_core::Interface::vtable(this).GetRestrictionLevelAsync)(::windows_core::Interface::as_raw(this), ratedcontentdescription.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ContentAccessRestrictionLevel>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestContentAccessAsync<'a, Param0: ::windows_core::IntoParam<'a, RatedContentDescription>>(&self, ratedcontentdescription: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestContentAccessAsync<'a, Param0: ::windows_core::IntoParam<'a, RatedContentDescription>>(&self, ratedcontentdescription: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestContentAccessAsync)(::windows_core::Interface::as_raw(this), ratedcontentdescription.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestContentAccessAsync)(::windows_core::Interface::as_raw(this), ratedcontentdescription.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RestrictionsChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn RestrictionsChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).RestrictionsChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).RestrictionsChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveRestrictionsChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveRestrictionsChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRestrictionsChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }

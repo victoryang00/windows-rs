@@ -107,38 +107,30 @@ impl ::core::fmt::Debug for AUDIOPOSTURE_ORIENTATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
-    pub ResourceGroupAcquired: super::super::Foundation::BOOL,
+    pub ResourceGroupAcquired: ::win32_foundation::BOOL,
     pub ResourceGroupName: [u16; 256],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("AUDIORESOURCEMANAGEMENT_RESOURCEGROUP").field("ResourceGroupAcquired", &self.ResourceGroupAcquired).field("ResourceGroupName", &self.ResourceGroupName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIORESOURCEMANAGEMENT_RESOURCEGROUP>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for AUDIORESOURCEMANAGEMENT_RESOURCEGROUP {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -403,11 +395,11 @@ impl ::core::default::Default for DEVCAPS {
     }
 }
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_KsAudio_Controller_DeviceInterface_Path: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x13e004d6_b066_43bd_913b_a415cd13da87), pid: 3u32 };
+pub const DEVPKEY_KsAudio_Controller_DeviceInterface_Path: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x13e004d6_b066_43bd_913b_a415cd13da87), pid: 3u32 };
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_KsAudio_PacketSize_Constraints: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x13e004d6_b066_43bd_913b_a415cd13da87), pid: 2u32 };
+pub const DEVPKEY_KsAudio_PacketSize_Constraints: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x13e004d6_b066_43bd_913b_a415cd13da87), pid: 2u32 };
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_KsAudio_PacketSize_Constraints2: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x9404f781_7191_409b_8b0b_80bf6ec229ae), pid: 2u32 };
+pub const DEVPKEY_KsAudio_PacketSize_Constraints2: ::win32_devices::Properties::DEVPROPKEY = ::win32_devices::Properties::DEVPROPKEY { fmtid: ::windows_core::GUID::from_u128(0x9404f781_7191_409b_8b0b_80bf6ec229ae), pid: 2u32 };
 #[repr(C)]
 pub struct DS3DVECTOR {
     pub Anonymous1: DS3DVECTOR_0,
@@ -819,8 +811,7 @@ pub struct IKsControl_Vtbl {
 #[repr(transparent)]
 pub struct IKsFormatSupport(::windows_core::IUnknown);
 impl IKsFormatSupport {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsFormatSupported(&self, pksformat: *mut KSDATAFORMAT, cbformat: u32, pbsupported: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn IsFormatSupported(&self, pksformat: *mut KSDATAFORMAT, cbformat: u32, pbsupported: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IsFormatSupported)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pksformat), ::core::mem::transmute(cbformat), ::core::mem::transmute(pbsupported)).ok()
     }
     pub unsafe fn GetDevicePreferredFormat(&self) -> ::windows_core::Result<*mut KSDATAFORMAT> {
@@ -872,10 +863,7 @@ unsafe impl ::windows_core::Interface for IKsFormatSupport {
 #[doc(hidden)]
 pub struct IKsFormatSupport_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsFormatSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pksformat: *mut KSDATAFORMAT, cbformat: u32, pbsupported: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsFormatSupported: usize,
+    pub IsFormatSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pksformat: *mut KSDATAFORMAT, cbformat: u32, pbsupported: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetDevicePreferredFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppksformat: *mut *mut KSDATAFORMAT) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -939,7 +927,6 @@ impl IKsJackDescription {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetJackCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetJackDescription(&self, njack: u32) -> ::windows_core::Result<KSJACK_DESCRIPTION> {
         let mut result__ = ::core::mem::MaybeUninit::<KSJACK_DESCRIPTION>::zeroed();
         (::windows_core::Interface::vtable(self).GetJackDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(njack), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<KSJACK_DESCRIPTION>(result__)
@@ -990,10 +977,7 @@ unsafe impl ::windows_core::Interface for IKsJackDescription {
 pub struct IKsJackDescription_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetJackCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcjacks: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetJackDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, njack: u32, pdescription: *mut KSJACK_DESCRIPTION) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetJackDescription: usize,
 }
 #[repr(transparent)]
 pub struct IKsJackDescription2(::windows_core::IUnknown);
@@ -1057,7 +1041,6 @@ pub struct IKsJackDescription2_Vtbl {
 #[repr(transparent)]
 pub struct IKsJackSinkInformation(::windows_core::IUnknown);
 impl IKsJackSinkInformation {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetJackSinkInformation(&self) -> ::windows_core::Result<KSJACK_SINK_INFORMATION> {
         let mut result__ = ::core::mem::MaybeUninit::<KSJACK_SINK_INFORMATION>::zeroed();
         (::windows_core::Interface::vtable(self).GetJackSinkInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<KSJACK_SINK_INFORMATION>(result__)
@@ -1107,10 +1090,7 @@ unsafe impl ::windows_core::Interface for IKsJackSinkInformation {
 #[doc(hidden)]
 pub struct IKsJackSinkInformation_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetJackSinkInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pjacksinkinformation: *mut KSJACK_SINK_INFORMATION) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetJackSinkInformation: usize,
 }
 #[repr(C)]
 pub struct IKsPin(pub u8);
@@ -1275,38 +1255,30 @@ pub const IOCTL_KS_WRITE_STREAM: u32 = 3112979u32;
 pub const JACKDESC2_DYNAMIC_FORMAT_CHANGE_CAPABILITY: u32 = 2u32;
 pub const JACKDESC2_PRESENCE_DETECT_CAPABILITY: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSAC3_ALTERNATE_AUDIO {
-    pub fStereo: super::super::Foundation::BOOL,
+    pub fStereo: ::win32_foundation::BOOL,
     pub DualMode: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSAC3_ALTERNATE_AUDIO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSAC3_ALTERNATE_AUDIO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSAC3_ALTERNATE_AUDIO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSAC3_ALTERNATE_AUDIO").field("fStereo", &self.fStereo).field("DualMode", &self.DualMode).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSAC3_ALTERNATE_AUDIO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAC3_ALTERNATE_AUDIO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_ALTERNATE_AUDIO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSAC3_ALTERNATE_AUDIO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSAC3_ALTERNATE_AUDIO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1374,113 +1346,89 @@ impl ::core::default::Default for KSAC3_DIALOGUE_LEVEL {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSAC3_DOWNMIX {
-    pub fDownMix: super::super::Foundation::BOOL,
-    pub fDolbySurround: super::super::Foundation::BOOL,
+    pub fDownMix: ::win32_foundation::BOOL,
+    pub fDolbySurround: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSAC3_DOWNMIX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSAC3_DOWNMIX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSAC3_DOWNMIX {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSAC3_DOWNMIX").field("fDownMix", &self.fDownMix).field("fDolbySurround", &self.fDolbySurround).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSAC3_DOWNMIX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAC3_DOWNMIX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_DOWNMIX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSAC3_DOWNMIX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSAC3_DOWNMIX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSAC3_ERROR_CONCEALMENT {
-    pub fRepeatPreviousBlock: super::super::Foundation::BOOL,
-    pub fErrorInCurrentBlock: super::super::Foundation::BOOL,
+    pub fRepeatPreviousBlock: ::win32_foundation::BOOL,
+    pub fErrorInCurrentBlock: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSAC3_ERROR_CONCEALMENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSAC3_ERROR_CONCEALMENT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSAC3_ERROR_CONCEALMENT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSAC3_ERROR_CONCEALMENT").field("fRepeatPreviousBlock", &self.fRepeatPreviousBlock).field("fErrorInCurrentBlock", &self.fErrorInCurrentBlock).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSAC3_ERROR_CONCEALMENT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAC3_ERROR_CONCEALMENT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_ERROR_CONCEALMENT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSAC3_ERROR_CONCEALMENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSAC3_ERROR_CONCEALMENT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSAC3_ROOM_TYPE {
-    pub fLargeRoom: super::super::Foundation::BOOL,
+    pub fLargeRoom: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSAC3_ROOM_TYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSAC3_ROOM_TYPE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSAC3_ROOM_TYPE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSAC3_ROOM_TYPE").field("fLargeRoom", &self.fLargeRoom).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSAC3_ROOM_TYPE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAC3_ROOM_TYPE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAC3_ROOM_TYPE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSAC3_ROOM_TYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSAC3_ROOM_TYPE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2029,38 +1977,30 @@ impl ::core::default::Default for KSAUDIO_CHANNEL_CONFIG {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSAUDIO_COPY_PROTECTION {
-    pub fCopyrighted: super::super::Foundation::BOOL,
-    pub fOriginal: super::super::Foundation::BOOL,
+    pub fCopyrighted: ::win32_foundation::BOOL,
+    pub fOriginal: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSAUDIO_COPY_PROTECTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSAUDIO_COPY_PROTECTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSAUDIO_COPY_PROTECTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSAUDIO_COPY_PROTECTION").field("fCopyrighted", &self.fCopyrighted).field("fOriginal", &self.fOriginal).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSAUDIO_COPY_PROTECTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_COPY_PROTECTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_COPY_PROTECTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSAUDIO_COPY_PROTECTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSAUDIO_COPY_PROTECTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2182,137 +2122,108 @@ impl ::core::default::Default for KSAUDIO_MIC_ARRAY_GEOMETRY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSAUDIO_MIXCAP_TABLE {
     pub InputChannels: u32,
     pub OutputChannels: u32,
     pub Capabilities: [KSAUDIO_MIX_CAPS; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSAUDIO_MIXCAP_TABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSAUDIO_MIXCAP_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSAUDIO_MIXCAP_TABLE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_MIXCAP_TABLE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIXCAP_TABLE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSAUDIO_MIXCAP_TABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSAUDIO_MIXCAP_TABLE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSAUDIO_MIXLEVEL {
-    pub Mute: super::super::Foundation::BOOL,
+    pub Mute: ::win32_foundation::BOOL,
     pub Level: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSAUDIO_MIXLEVEL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSAUDIO_MIXLEVEL {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSAUDIO_MIXLEVEL {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSAUDIO_MIXLEVEL").field("Mute", &self.Mute).field("Level", &self.Level).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSAUDIO_MIXLEVEL {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_MIXLEVEL {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIXLEVEL>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSAUDIO_MIXLEVEL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSAUDIO_MIXLEVEL {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSAUDIO_MIX_CAPS {
-    pub Mute: super::super::Foundation::BOOL,
+    pub Mute: ::win32_foundation::BOOL,
     pub Minimum: i32,
     pub Maximum: i32,
     pub Anonymous: KSAUDIO_MIX_CAPS_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSAUDIO_MIX_CAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSAUDIO_MIX_CAPS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSAUDIO_MIX_CAPS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_MIX_CAPS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIX_CAPS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSAUDIO_MIX_CAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSAUDIO_MIX_CAPS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KSAUDIO_MIX_CAPS_0 {
     pub Reset: i32,
     pub Resolution: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSAUDIO_MIX_CAPS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSAUDIO_MIX_CAPS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSAUDIO_MIX_CAPS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSAUDIO_MIX_CAPS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSAUDIO_MIX_CAPS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSAUDIO_MIX_CAPS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSAUDIO_MIX_CAPS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2520,78 +2431,62 @@ pub const KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_OFF: u64 = 0u64;
 pub const KSCAMERA_EXTENDEDPROP_ADVANCEDPHOTO_ULTRALOWLIGHT: u64 = 8u64;
 pub const KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_BLUR: u64 = 1u64;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
-    pub Resolution: super::super::Foundation::SIZE,
+    pub Resolution: ::win32_foundation::SIZE,
     pub MaxFrameRate: KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0,
-    pub MaskResolution: super::super::Foundation::SIZE,
+    pub MaskResolution: ::win32_foundation::SIZE,
     pub SubType: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS").field("Resolution", &self.Resolution).field("MaxFrameRate", &self.MaxFrameRate).field("MaskResolution", &self.MaskResolution).field("SubType", &self.SubType).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {
     pub Numerator: i32,
     pub Denominator: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0").field("Numerator", &self.Numerator).field("Denominator", &self.Denominator).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_BACKGROUNDSEGMENTATION_CONFIGCAPS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3176,116 +3071,92 @@ impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_ROI_CONFIGCAPSHEADER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
     pub ROIInfo: KSCAMERA_EXTENDEDPROP_ROI_INFO,
     pub Reserved: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE").field("ROIInfo", &self.ROIInfo).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_ROI_EXPOSURE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
     pub ROIInfo: KSCAMERA_EXTENDEDPROP_ROI_INFO,
     pub Reserved: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_ROI_FOCUS").field("ROIInfo", &self.ROIInfo).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_FOCUS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_ROI_FOCUS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSCAMERA_EXTENDEDPROP_ROI_INFO {
-    pub Region: super::super::Foundation::RECT,
+    pub Region: ::win32_foundation::RECT,
     pub Flags: u64,
     pub Weight: i32,
     pub RegionOfInterestType: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSCAMERA_EXTENDEDPROP_ROI_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSCAMERA_EXTENDEDPROP_ROI_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_ROI_INFO").field("Region", &self.Region).field("Flags", &self.Flags).field("Weight", &self.Weight).field("RegionOfInterestType", &self.RegionOfInterestType).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_ROI_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_ROI_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3355,38 +3226,30 @@ impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_ROI_ISPCONTROLHEADER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
     pub ROIInfo: KSCAMERA_EXTENDEDPROP_ROI_INFO,
     pub Reserved: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE").field("ROIInfo", &self.ROIInfo).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSCAMERA_EXTENDEDPROP_ROI_WHITEBALANCE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3598,41 +3461,33 @@ impl ::core::default::Default for KSCAMERA_MAXVIDEOFPS_FORPHOTORES {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
     pub Header: KSCAMERA_METADATA_ITEMHEADER,
-    pub MaskCoverageBoundingBox: super::super::Foundation::RECT,
-    pub MaskResolution: super::super::Foundation::SIZE,
-    pub ForegroundBoundingBox: super::super::Foundation::RECT,
+    pub MaskCoverageBoundingBox: ::win32_foundation::RECT,
+    pub MaskResolution: ::win32_foundation::SIZE,
+    pub ForegroundBoundingBox: ::win32_foundation::RECT,
     pub MaskData: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK").field("Header", &self.Header).field("MaskCoverageBoundingBox", &self.MaskCoverageBoundingBox).field("MaskResolution", &self.MaskResolution).field("ForegroundBoundingBox", &self.ForegroundBoundingBox).field("MaskData", &self.MaskData).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSCAMERA_METADATA_BACKGROUNDSEGMENTATIONMASK {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5103,42 +4958,34 @@ impl ::core::default::Default for KSDS3D_HRTF_INIT_MSG {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSDS3D_HRTF_PARAMS_MSG {
     pub Size: u32,
     pub Enabled: u32,
-    pub SwapChannels: super::super::Foundation::BOOL,
-    pub ZeroAzimuth: super::super::Foundation::BOOL,
-    pub CrossFadeOutput: super::super::Foundation::BOOL,
+    pub SwapChannels: ::win32_foundation::BOOL,
+    pub ZeroAzimuth: ::win32_foundation::BOOL,
+    pub CrossFadeOutput: ::win32_foundation::BOOL,
     pub FilterSize: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSDS3D_HRTF_PARAMS_MSG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSDS3D_HRTF_PARAMS_MSG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSDS3D_HRTF_PARAMS_MSG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSDS3D_HRTF_PARAMS_MSG").field("Size", &self.Size).field("Enabled", &self.Enabled).field("SwapChannels", &self.SwapChannels).field("ZeroAzimuth", &self.ZeroAzimuth).field("CrossFadeOutput", &self.CrossFadeOutput).field("FilterSize", &self.FilterSize).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSDS3D_HRTF_PARAMS_MSG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSDS3D_HRTF_PARAMS_MSG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSDS3D_HRTF_PARAMS_MSG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSDS3D_HRTF_PARAMS_MSG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSDS3D_HRTF_PARAMS_MSG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5309,180 +5156,142 @@ impl ::core::default::Default for KSERROR {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSEVENTDATA {
     pub NotificationType: u32,
     pub Anonymous: KSEVENTDATA_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSEVENTDATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSEVENTDATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSEVENTDATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSEVENTDATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSEVENTDATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KSEVENTDATA_0 {
     pub EventHandle: KSEVENTDATA_0_1,
     pub SemaphoreHandle: KSEVENTDATA_0_2,
     pub Alignment: KSEVENTDATA_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSEVENTDATA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSEVENTDATA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSEVENTDATA_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSEVENTDATA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSEVENTDATA_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSEVENTDATA_0_0 {
     pub Unused: *mut ::core::ffi::c_void,
     pub Alignment: [isize; 2],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSEVENTDATA_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSEVENTDATA_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSEVENTDATA_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSEVENTDATA_0_0").field("Unused", &self.Unused).field("Alignment", &self.Alignment).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSEVENTDATA_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSEVENTDATA_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSEVENTDATA_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSEVENTDATA_0_1 {
-    pub Event: super::super::Foundation::HANDLE,
+    pub Event: ::win32_foundation::HANDLE,
     pub Reserved: [usize; 2],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSEVENTDATA_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSEVENTDATA_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSEVENTDATA_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSEVENTDATA_0_1").field("Event", &self.Event).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSEVENTDATA_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSEVENTDATA_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSEVENTDATA_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSEVENTDATA_0_2 {
-    pub Semaphore: super::super::Foundation::HANDLE,
+    pub Semaphore: ::win32_foundation::HANDLE,
     pub Reserved: u32,
     pub Adjustment: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSEVENTDATA_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSEVENTDATA_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSEVENTDATA_0_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSEVENTDATA_0_2").field("Semaphore", &self.Semaphore).field("Reserved", &self.Reserved).field("Adjustment", &self.Adjustment).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSEVENTDATA_0_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENTDATA_0_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENTDATA_0_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSEVENTDATA_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSEVENTDATA_0_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5858,65 +5667,51 @@ impl ::core::fmt::Debug for KSEVENT_TELEPHONY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSEVENT_TIME_INTERVAL {
     pub EventData: KSEVENTDATA,
     pub TimeBase: i64,
     pub Interval: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSEVENT_TIME_INTERVAL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSEVENT_TIME_INTERVAL {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSEVENT_TIME_INTERVAL {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENT_TIME_INTERVAL {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENT_TIME_INTERVAL>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSEVENT_TIME_INTERVAL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSEVENT_TIME_INTERVAL {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSEVENT_TIME_MARK {
     pub EventData: KSEVENTDATA,
     pub MarkTime: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSEVENT_TIME_MARK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSEVENT_TIME_MARK {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSEVENT_TIME_MARK {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENT_TIME_MARK {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENT_TIME_MARK>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSEVENT_TIME_MARK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSEVENT_TIME_MARK {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5947,33 +5742,26 @@ impl ::core::fmt::Debug for KSEVENT_TUNER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSEVENT_TUNER_INITIATE_SCAN_S {
     pub EventData: KSEVENTDATA,
     pub StartFrequency: u32,
     pub EndFrequency: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSEVENT_TUNER_INITIATE_SCAN_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSEVENT_TUNER_INITIATE_SCAN_S {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSEVENT_TUNER_INITIATE_SCAN_S {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSEVENT_TUNER_INITIATE_SCAN_S {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSEVENT_TUNER_INITIATE_SCAN_S>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSEVENT_TUNER_INITIATE_SCAN_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSEVENT_TUNER_INITIATE_SCAN_S {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6217,40 +6005,32 @@ impl ::core::default::Default for KSFRAMETIME {
 }
 pub const KSFRAMETIME_VARIABLESIZE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSGOP_USERDATA {
     pub sc: u32,
     pub reserved1: u32,
     pub cFields: u8,
-    pub l21Data: [super::super::Foundation::CHAR; 3],
+    pub l21Data: [::win32_foundation::CHAR; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSGOP_USERDATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSGOP_USERDATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSGOP_USERDATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSGOP_USERDATA").field("sc", &self.sc).field("reserved1", &self.reserved1).field("cFields", &self.cFields).field("l21Data", &self.l21Data).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSGOP_USERDATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSGOP_USERDATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSGOP_USERDATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSGOP_USERDATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSGOP_USERDATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6443,7 +6223,6 @@ impl ::core::default::Default for KSINTERVAL {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSJACK_DESCRIPTION {
     pub ChannelMapping: u32,
     pub Color: u32,
@@ -6451,35 +6230,28 @@ pub struct KSJACK_DESCRIPTION {
     pub GeoLocation: EPcxGeoLocation,
     pub GenLocation: EPcxGenLocation,
     pub PortConnection: EPxcPortConnection,
-    pub IsConnected: super::super::Foundation::BOOL,
+    pub IsConnected: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSJACK_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSJACK_DESCRIPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSJACK_DESCRIPTION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSJACK_DESCRIPTION").field("ChannelMapping", &self.ChannelMapping).field("Color", &self.Color).field("ConnectionType", &self.ConnectionType).field("GeoLocation", &self.GeoLocation).field("GenLocation", &self.GenLocation).field("PortConnection", &self.PortConnection).field("IsConnected", &self.IsConnected).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSJACK_DESCRIPTION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSJACK_DESCRIPTION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSJACK_DESCRIPTION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSJACK_DESCRIPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSJACK_DESCRIPTION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6540,45 +6312,37 @@ impl ::core::fmt::Debug for KSJACK_SINK_CONNECTIONTYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSJACK_SINK_INFORMATION {
     pub ConnType: KSJACK_SINK_CONNECTIONTYPE,
     pub ManufacturerId: u16,
     pub ProductId: u16,
     pub AudioLatency: u16,
-    pub HDCPCapable: super::super::Foundation::BOOL,
-    pub AICapable: super::super::Foundation::BOOL,
+    pub HDCPCapable: ::win32_foundation::BOOL,
+    pub AICapable: ::win32_foundation::BOOL,
     pub SinkDescriptionLength: u8,
     pub SinkDescription: [u16; 32],
-    pub PortId: super::super::Foundation::LUID,
+    pub PortId: ::win32_foundation::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSJACK_SINK_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSJACK_SINK_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSJACK_SINK_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSJACK_SINK_INFORMATION").field("ConnType", &self.ConnType).field("ManufacturerId", &self.ManufacturerId).field("ProductId", &self.ProductId).field("AudioLatency", &self.AudioLatency).field("HDCPCapable", &self.HDCPCapable).field("AICapable", &self.AICapable).field("SinkDescriptionLength", &self.SinkDescriptionLength).field("SinkDescription", &self.SinkDescription).field("PortId", &self.PortId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSJACK_SINK_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSJACK_SINK_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSJACK_SINK_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSJACK_SINK_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSJACK_SINK_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7311,35 +7075,28 @@ impl ::core::fmt::Debug for KSPIN_COMMUNICATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPIN_CONNECT {
     pub Interface: KSIDENTIFIER,
     pub Medium: KSIDENTIFIER,
     pub PinId: u32,
-    pub PinToHandle: super::super::Foundation::HANDLE,
+    pub PinToHandle: ::win32_foundation::HANDLE,
     pub Priority: KSPRIORITY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPIN_CONNECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPIN_CONNECT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPIN_CONNECT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPIN_CONNECT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPIN_CONNECT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPIN_CONNECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPIN_CONNECT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8551,67 +8308,53 @@ pub const KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_FLAGS_ASYNC: i32 = -214748
 pub const KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_FLAGS_AUTO: i32 = 1i32;
 pub const KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_FLAGS_MANUAL: i32 = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {
-    pub FocusRect: super::super::Foundation::RECT,
-    pub AutoFocusLock: super::super::Foundation::BOOL,
-    pub AutoExposureLock: super::super::Foundation::BOOL,
-    pub AutoWhitebalanceLock: super::super::Foundation::BOOL,
+    pub FocusRect: ::win32_foundation::RECT,
+    pub AutoFocusLock: ::win32_foundation::BOOL,
+    pub AutoExposureLock: ::win32_foundation::BOOL,
+    pub AutoWhitebalanceLock: ::win32_foundation::BOOL,
     pub Anonymous: KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {
     pub Capabilities: u32,
     pub Configuration: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_REGION_OF_INTEREST_S_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8673,35 +8416,28 @@ impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_S2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_CAMERACONTROL_S_EX {
     pub Property: KSIDENTIFIER,
     pub Value: i32,
     pub Flags: u32,
     pub Capabilities: u32,
-    pub FocusRect: super::super::Foundation::RECT,
+    pub FocusRect: ::win32_foundation::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_CAMERACONTROL_S_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_CAMERACONTROL_S_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_CAMERACONTROL_S_EX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_CAMERACONTROL_S_EX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_CAMERACONTROL_S_EX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_CAMERACONTROL_S_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_CAMERACONTROL_S_EX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9314,39 +9050,31 @@ impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_EXTXPORT_NODE_S {
     pub NodeProperty: KSP_NODE,
     pub u: KSPROPERTY_EXTXPORT_NODE_S_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_EXTXPORT_NODE_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_NODE_S {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_NODE_S {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_NODE_S {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_EXTXPORT_NODE_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_EXTXPORT_NODE_S {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KSPROPERTY_EXTXPORT_NODE_S_0 {
     pub Capabilities: u32,
     pub SignalMode: u32,
@@ -9358,144 +9086,114 @@ pub union KSPROPERTY_EXTXPORT_NODE_S_0 {
     pub dwAbsTrackNumber: u32,
     pub RawAVC: KSPROPERTY_EXTXPORT_NODE_S_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_EXTXPORT_NODE_S_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_NODE_S_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_NODE_S_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_NODE_S_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_EXTXPORT_NODE_S_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_EXTXPORT_NODE_S_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_EXTXPORT_NODE_S_0_0 {
     pub PayloadSize: u32,
     pub Payload: [u8; 512],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_EXTXPORT_NODE_S_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_NODE_S_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT_NODE_S_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSPROPERTY_EXTXPORT_NODE_S_0_0").field("PayloadSize", &self.PayloadSize).field("Payload", &self.Payload).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_NODE_S_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_NODE_S_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_EXTXPORT_NODE_S_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_EXTXPORT_NODE_S_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_EXTXPORT_NODE_S_0_1 {
     pub frame: u8,
     pub second: u8,
     pub minute: u8,
     pub hour: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_EXTXPORT_NODE_S_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_NODE_S_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT_NODE_S_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSPROPERTY_EXTXPORT_NODE_S_0_1").field("frame", &self.frame).field("second", &self.second).field("minute", &self.minute).field("hour", &self.hour).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_NODE_S_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_NODE_S_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_NODE_S_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_EXTXPORT_NODE_S_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_EXTXPORT_NODE_S_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_EXTXPORT_S {
     pub Property: KSIDENTIFIER,
     pub u: KSPROPERTY_EXTXPORT_S_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_EXTXPORT_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_S {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_S {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_S {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_EXTXPORT_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_EXTXPORT_S {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KSPROPERTY_EXTXPORT_S_0 {
     pub Capabilities: u32,
     pub SignalMode: u32,
@@ -9507,105 +9205,83 @@ pub union KSPROPERTY_EXTXPORT_S_0 {
     pub dwAbsTrackNumber: u32,
     pub RawAVC: KSPROPERTY_EXTXPORT_S_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_EXTXPORT_S_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_S_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_S_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_S_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_EXTXPORT_S_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_EXTXPORT_S_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_EXTXPORT_S_0_0 {
     pub PayloadSize: u32,
     pub Payload: [u8; 512],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_EXTXPORT_S_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_S_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT_S_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSPROPERTY_EXTXPORT_S_0_0").field("PayloadSize", &self.PayloadSize).field("Payload", &self.Payload).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_S_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_S_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_EXTXPORT_S_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_EXTXPORT_S_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_EXTXPORT_S_0_1 {
     pub frame: u8,
     pub second: u8,
     pub minute: u8,
     pub hour: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_EXTXPORT_S_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_EXTXPORT_S_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSPROPERTY_EXTXPORT_S_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSPROPERTY_EXTXPORT_S_0_1").field("frame", &self.frame).field("second", &self.second).field("minute", &self.minute).field("hour", &self.hour).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_EXTXPORT_S_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_EXTXPORT_S_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_EXTXPORT_S_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_EXTXPORT_S_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_EXTXPORT_S_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9961,42 +9637,34 @@ impl ::core::default::Default for KSPROPERTY_NETWORKCAMERACONTROL_EVENT_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
     pub MetadataItems: u32,
     pub Size: u32,
-    pub PTZStatus: super::super::Foundation::BOOL,
-    pub Events: super::super::Foundation::BOOL,
-    pub Analytics: super::super::Foundation::BOOL,
-    pub Reserved: super::super::Foundation::BOOL,
+    pub PTZStatus: ::win32_foundation::BOOL,
+    pub Events: ::win32_foundation::BOOL,
+    pub Analytics: ::win32_foundation::BOOL,
+    pub Reserved: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO").field("MetadataItems", &self.MetadataItems).field("Size", &self.Size).field("PTZStatus", &self.PTZStatus).field("Events", &self.Events).field("Analytics", &self.Analytics).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_NETWORKCAMERACONTROL_METADATA_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11006,35 +10674,28 @@ impl ::core::default::Default for KSPROPERTY_TUNER_NETWORKTYPE_SCAN_CAPS_S {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_TUNER_SCAN_CAPS_S {
     pub Property: KSIDENTIFIER,
-    pub fSupportsHardwareAssistedScanning: super::super::Foundation::BOOL,
+    pub fSupportsHardwareAssistedScanning: ::win32_foundation::BOOL,
     pub SupportedBroadcastStandards: u32,
     pub GUIDBucket: *mut ::core::ffi::c_void,
     pub lengthofBucket: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_TUNER_SCAN_CAPS_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_TUNER_SCAN_CAPS_S {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_SCAN_CAPS_S {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_SCAN_CAPS_S {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_SCAN_CAPS_S>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_SCAN_CAPS_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_TUNER_SCAN_CAPS_S {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11067,32 +10728,25 @@ impl ::core::default::Default for KSPROPERTY_TUNER_SCAN_STATUS_S {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_TUNER_STANDARD_MODE_S {
     pub Property: KSIDENTIFIER,
-    pub AutoDetect: super::super::Foundation::BOOL,
+    pub AutoDetect: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_TUNER_STANDARD_MODE_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_TUNER_STANDARD_MODE_S {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_TUNER_STANDARD_MODE_S {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_TUNER_STANDARD_MODE_S {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_TUNER_STANDARD_MODE_S>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_TUNER_STANDARD_MODE_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_TUNER_STANDARD_MODE_S {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11864,36 +11518,29 @@ impl ::core::default::Default for KSPROPERTY_VIDEOCOMPRESSION_S1 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {
     pub Property: KSIDENTIFIER,
     pub StreamIndex: u32,
     pub RangeIndex: u32,
-    pub Dimensions: super::super::Foundation::SIZE,
+    pub Dimensions: ::win32_foundation::SIZE,
     pub CurrentActualFrameRate: i64,
     pub CurrentMaxAvailableFrameRate: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_VIDEOCONTROL_ACTUAL_FRAME_RATE_S {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11926,34 +11573,27 @@ impl ::core::default::Default for KSPROPERTY_VIDEOCONTROL_CAPS_S {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {
     pub Property: KSIDENTIFIER,
     pub StreamIndex: u32,
     pub RangeIndex: u32,
-    pub Dimensions: super::super::Foundation::SIZE,
+    pub Dimensions: ::win32_foundation::SIZE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSPROPERTY_VIDEOCONTROL_FRAME_RATES_S {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12512,71 +12152,56 @@ impl ::core::default::Default for KSQUALITY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSQUALITY_MANAGER {
-    pub QualityManager: super::super::Foundation::HANDLE,
+    pub QualityManager: ::win32_foundation::HANDLE,
     pub Context: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSQUALITY_MANAGER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSQUALITY_MANAGER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSQUALITY_MANAGER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSQUALITY_MANAGER").field("QualityManager", &self.QualityManager).field("Context", &self.Context).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSQUALITY_MANAGER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSQUALITY_MANAGER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSQUALITY_MANAGER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSQUALITY_MANAGER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSQUALITY_MANAGER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSQUERYBUFFER {
     pub Event: KSIDENTIFIER,
     pub EventData: *mut KSEVENTDATA,
     pub Reserved: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSQUERYBUFFER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSQUERYBUFFER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSQUERYBUFFER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSQUERYBUFFER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSQUERYBUFFER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSQUERYBUFFER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSQUERYBUFFER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12638,7 +12263,6 @@ impl ::core::default::Default for KSRATE_CAPABILITY {
 pub const KSRATE_NOPRESENTATIONDURATION: u32 = 2u32;
 pub const KSRATE_NOPRESENTATIONSTART: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSRELATIVEEVENT {
     pub Size: u32,
     pub Flags: u32,
@@ -12647,59 +12271,46 @@ pub struct KSRELATIVEEVENT {
     pub Event: KSIDENTIFIER,
     pub EventData: KSEVENTDATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSRELATIVEEVENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSRELATIVEEVENT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSRELATIVEEVENT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRELATIVEEVENT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRELATIVEEVENT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSRELATIVEEVENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSRELATIVEEVENT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KSRELATIVEEVENT_0 {
-    pub ObjectHandle: super::super::Foundation::HANDLE,
+    pub ObjectHandle: ::win32_foundation::HANDLE,
     pub ObjectPointer: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSRELATIVEEVENT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSRELATIVEEVENT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSRELATIVEEVENT_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRELATIVEEVENT_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRELATIVEEVENT_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSRELATIVEEVENT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSRELATIVEEVENT_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12762,78 +12373,62 @@ impl ::core::default::Default for KSRESOLUTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSRTAUDIO_BUFFER {
     pub BufferAddress: *mut ::core::ffi::c_void,
     pub ActualBufferSize: u32,
-    pub CallMemoryBarrier: super::super::Foundation::BOOL,
+    pub CallMemoryBarrier: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSRTAUDIO_BUFFER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSRTAUDIO_BUFFER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSRTAUDIO_BUFFER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSRTAUDIO_BUFFER").field("BufferAddress", &self.BufferAddress).field("ActualBufferSize", &self.ActualBufferSize).field("CallMemoryBarrier", &self.CallMemoryBarrier).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSRTAUDIO_BUFFER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRTAUDIO_BUFFER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSRTAUDIO_BUFFER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSRTAUDIO_BUFFER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSRTAUDIO_BUFFER32 {
     pub BufferAddress: u32,
     pub ActualBufferSize: u32,
-    pub CallMemoryBarrier: super::super::Foundation::BOOL,
+    pub CallMemoryBarrier: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSRTAUDIO_BUFFER32 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSRTAUDIO_BUFFER32 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSRTAUDIO_BUFFER32 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSRTAUDIO_BUFFER32").field("BufferAddress", &self.BufferAddress).field("ActualBufferSize", &self.ActualBufferSize).field("CallMemoryBarrier", &self.CallMemoryBarrier).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSRTAUDIO_BUFFER32 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRTAUDIO_BUFFER32 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_BUFFER32>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSRTAUDIO_BUFFER32 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSRTAUDIO_BUFFER32 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12946,40 +12541,32 @@ impl ::core::default::Default for KSRTAUDIO_BUFFER_PROPERTY_WITH_NOTIFICATION32 
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSRTAUDIO_GETREADPACKET_INFO {
     pub PacketNumber: u32,
     pub Flags: u32,
     pub PerformanceCounterValue: u64,
-    pub MoreData: super::super::Foundation::BOOL,
+    pub MoreData: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSRTAUDIO_GETREADPACKET_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSRTAUDIO_GETREADPACKET_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KSRTAUDIO_GETREADPACKET_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KSRTAUDIO_GETREADPACKET_INFO").field("PacketNumber", &self.PacketNumber).field("Flags", &self.Flags).field("PerformanceCounterValue", &self.PerformanceCounterValue).field("MoreData", &self.MoreData).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSRTAUDIO_GETREADPACKET_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRTAUDIO_GETREADPACKET_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_GETREADPACKET_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSRTAUDIO_GETREADPACKET_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSRTAUDIO_GETREADPACKET_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -13133,32 +12720,25 @@ impl ::core::default::Default for KSRTAUDIO_HWREGISTER_PROPERTY32 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {
     pub Property: KSIDENTIFIER,
-    pub NotificationEvent: super::super::Foundation::HANDLE,
+    pub NotificationEvent: ::win32_foundation::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSRTAUDIO_NOTIFICATION_EVENT_PROPERTY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -13983,36 +13563,29 @@ impl ::core::default::Default for KSVPSURFACEPARAMS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KSWAVETABLE_WAVE_DESC {
     pub Identifier: KSIDENTIFIER,
     pub Size: u32,
-    pub Looped: super::super::Foundation::BOOL,
+    pub Looped: ::win32_foundation::BOOL,
     pub LoopPoint: u32,
-    pub InROM: super::super::Foundation::BOOL,
+    pub InROM: ::win32_foundation::BOOL,
     pub Format: KSDATAFORMAT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KSWAVETABLE_WAVE_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KSWAVETABLE_WAVE_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KSWAVETABLE_WAVE_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KSWAVETABLE_WAVE_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KSWAVETABLE_WAVE_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KSWAVETABLE_WAVE_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KSWAVETABLE_WAVE_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -14247,31 +13820,27 @@ impl ::core::fmt::Debug for KS_AMPixAspectRatio {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_AMVPDATAINFO {
     pub dwSize: u32,
     pub dwMicrosecondsPerField: u32,
     pub amvpDimInfo: KS_AMVPDIMINFO,
     pub dwPictAspectRatioX: u32,
     pub dwPictAspectRatioY: u32,
-    pub bEnableDoubleClock: super::super::Foundation::BOOL,
-    pub bEnableVACT: super::super::Foundation::BOOL,
-    pub bDataIsInterlaced: super::super::Foundation::BOOL,
+    pub bEnableDoubleClock: ::win32_foundation::BOOL,
+    pub bEnableVACT: ::win32_foundation::BOOL,
+    pub bDataIsInterlaced: ::win32_foundation::BOOL,
     pub lHalfLinesOdd: i32,
-    pub bFieldPolarityInverted: super::super::Foundation::BOOL,
+    pub bFieldPolarityInverted: ::win32_foundation::BOOL,
     pub dwNumLinesInVREF: u32,
     pub lHalfLinesEven: i32,
     pub dwReserved1: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_AMVPDATAINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_AMVPDATAINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KS_AMVPDATAINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KS_AMVPDATAINFO")
@@ -14291,60 +13860,48 @@ impl ::core::fmt::Debug for KS_AMVPDATAINFO {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_AMVPDATAINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_AMVPDATAINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AMVPDATAINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_AMVPDATAINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_AMVPDATAINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_AMVPDIMINFO {
     pub dwFieldWidth: u32,
     pub dwFieldHeight: u32,
     pub dwVBIWidth: u32,
     pub dwVBIHeight: u32,
-    pub rcValidRegion: super::super::Foundation::RECT,
+    pub rcValidRegion: ::win32_foundation::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_AMVPDIMINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_AMVPDIMINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KS_AMVPDIMINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KS_AMVPDIMINFO").field("dwFieldWidth", &self.dwFieldWidth).field("dwFieldHeight", &self.dwFieldHeight).field("dwVBIWidth", &self.dwVBIWidth).field("dwVBIHeight", &self.dwVBIHeight).field("rcValidRegion", &self.rcValidRegion).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_AMVPDIMINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_AMVPDIMINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AMVPDIMINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_AMVPDIMINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_AMVPDIMINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -14520,41 +14077,33 @@ impl ::core::default::Default for KS_AM_SimpleRateChange {
 }
 pub const KS_AM_UseNewCSSKey: i32 = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_AnalogVideoInfo {
-    pub rcSource: super::super::Foundation::RECT,
-    pub rcTarget: super::super::Foundation::RECT,
+    pub rcSource: ::win32_foundation::RECT,
+    pub rcTarget: ::win32_foundation::RECT,
     pub dwActiveWidth: u32,
     pub dwActiveHeight: u32,
     pub AvgTimePerFrame: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_AnalogVideoInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_AnalogVideoInfo {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KS_AnalogVideoInfo {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KS_AnalogVideoInfo").field("rcSource", &self.rcSource).field("rcTarget", &self.rcTarget).field("dwActiveWidth", &self.dwActiveWidth).field("dwActiveHeight", &self.dwActiveHeight).field("AvgTimePerFrame", &self.AvgTimePerFrame).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_AnalogVideoInfo {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_AnalogVideoInfo {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_AnalogVideoInfo>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_AnalogVideoInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_AnalogVideoInfo {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -14885,32 +14434,25 @@ impl ::core::default::Default for KS_DATAFORMAT_IMAGEINFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATAFORMAT_MPEGVIDEOINFO2 {
     pub DataFormat: KSDATAFORMAT,
     pub MpegVideoInfoHeader2: KS_MPEGVIDEOINFO2,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATAFORMAT_MPEGVIDEOINFO2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATAFORMAT_MPEGVIDEOINFO2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATAFORMAT_MPEGVIDEOINFO2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_MPEGVIDEOINFO2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_MPEGVIDEOINFO2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATAFORMAT_MPEGVIDEOINFO2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATAFORMAT_MPEGVIDEOINFO2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -14942,420 +14484,336 @@ impl ::core::default::Default for KS_DATAFORMAT_VBIINFOHEADER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATAFORMAT_VIDEOINFOHEADER {
     pub DataFormat: KSDATAFORMAT,
     pub VideoInfoHeader: KS_VIDEOINFOHEADER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATAFORMAT_VIDEOINFOHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATAFORMAT_VIDEOINFOHEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATAFORMAT_VIDEOINFOHEADER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_VIDEOINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VIDEOINFOHEADER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATAFORMAT_VIDEOINFOHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATAFORMAT_VIDEOINFOHEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATAFORMAT_VIDEOINFOHEADER2 {
     pub DataFormat: KSDATAFORMAT,
     pub VideoInfoHeader2: KS_VIDEOINFOHEADER2,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATAFORMAT_VIDEOINFOHEADER2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATAFORMAT_VIDEOINFOHEADER2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATAFORMAT_VIDEOINFOHEADER2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_VIDEOINFOHEADER2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VIDEOINFOHEADER2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATAFORMAT_VIDEOINFOHEADER2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATAFORMAT_VIDEOINFOHEADER2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATAFORMAT_VIDEOINFO_PALETTE {
     pub DataFormat: KSDATAFORMAT,
     pub VideoInfo: KS_VIDEOINFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATAFORMAT_VIDEOINFO_PALETTE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATAFORMAT_VIDEOINFO_PALETTE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATAFORMAT_VIDEOINFO_PALETTE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATAFORMAT_VIDEOINFO_PALETTE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATAFORMAT_VIDEOINFO_PALETTE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATAFORMAT_VIDEOINFO_PALETTE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATAFORMAT_VIDEOINFO_PALETTE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATARANGE_ANALOGVIDEO {
     pub DataRange: KSDATAFORMAT,
     pub AnalogVideoInfo: KS_AnalogVideoInfo,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATARANGE_ANALOGVIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATARANGE_ANALOGVIDEO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATARANGE_ANALOGVIDEO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_ANALOGVIDEO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_ANALOGVIDEO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATARANGE_ANALOGVIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATARANGE_ANALOGVIDEO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATARANGE_H264_VIDEO {
     pub DataRange: KSDATAFORMAT,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation::BOOL,
+    pub bTemporalCompression: ::win32_foundation::BOOL,
     pub StreamDescriptionFlags: u32,
     pub MemoryAllocationFlags: u32,
     pub ConfigCaps: KS_VIDEO_STREAM_CONFIG_CAPS,
     pub VideoInfoHeader: KS_H264VIDEOINFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATARANGE_H264_VIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATARANGE_H264_VIDEO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATARANGE_H264_VIDEO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_H264_VIDEO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_H264_VIDEO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATARANGE_H264_VIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATARANGE_H264_VIDEO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATARANGE_IMAGE {
     pub DataRange: KSDATAFORMAT,
     pub ConfigCaps: KS_VIDEO_STREAM_CONFIG_CAPS,
     pub ImageInfoHeader: KS_BITMAPINFOHEADER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATARANGE_IMAGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATARANGE_IMAGE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATARANGE_IMAGE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_IMAGE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_IMAGE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATARANGE_IMAGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATARANGE_IMAGE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATARANGE_MPEG1_VIDEO {
     pub DataRange: KSDATAFORMAT,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation::BOOL,
+    pub bTemporalCompression: ::win32_foundation::BOOL,
     pub StreamDescriptionFlags: u32,
     pub MemoryAllocationFlags: u32,
     pub ConfigCaps: KS_VIDEO_STREAM_CONFIG_CAPS,
     pub VideoInfoHeader: KS_MPEG1VIDEOINFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATARANGE_MPEG1_VIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATARANGE_MPEG1_VIDEO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATARANGE_MPEG1_VIDEO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_MPEG1_VIDEO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_MPEG1_VIDEO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATARANGE_MPEG1_VIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATARANGE_MPEG1_VIDEO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATARANGE_MPEG2_VIDEO {
     pub DataRange: KSDATAFORMAT,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation::BOOL,
+    pub bTemporalCompression: ::win32_foundation::BOOL,
     pub StreamDescriptionFlags: u32,
     pub MemoryAllocationFlags: u32,
     pub ConfigCaps: KS_VIDEO_STREAM_CONFIG_CAPS,
     pub VideoInfoHeader: KS_MPEGVIDEOINFO2,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATARANGE_MPEG2_VIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATARANGE_MPEG2_VIDEO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATARANGE_MPEG2_VIDEO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_MPEG2_VIDEO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_MPEG2_VIDEO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATARANGE_MPEG2_VIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATARANGE_MPEG2_VIDEO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATARANGE_VIDEO {
     pub DataRange: KSDATAFORMAT,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation::BOOL,
+    pub bTemporalCompression: ::win32_foundation::BOOL,
     pub StreamDescriptionFlags: u32,
     pub MemoryAllocationFlags: u32,
     pub ConfigCaps: KS_VIDEO_STREAM_CONFIG_CAPS,
     pub VideoInfoHeader: KS_VIDEOINFOHEADER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATARANGE_VIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATARANGE_VIDEO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATARANGE_VIDEO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_VIDEO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATARANGE_VIDEO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATARANGE_VIDEO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATARANGE_VIDEO2 {
     pub DataRange: KSDATAFORMAT,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation::BOOL,
+    pub bTemporalCompression: ::win32_foundation::BOOL,
     pub StreamDescriptionFlags: u32,
     pub MemoryAllocationFlags: u32,
     pub ConfigCaps: KS_VIDEO_STREAM_CONFIG_CAPS,
     pub VideoInfoHeader: KS_VIDEOINFOHEADER2,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATARANGE_VIDEO2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATARANGE_VIDEO2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATARANGE_VIDEO2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_VIDEO2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATARANGE_VIDEO2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATARANGE_VIDEO2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATARANGE_VIDEO_PALETTE {
     pub DataRange: KSDATAFORMAT,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation::BOOL,
+    pub bTemporalCompression: ::win32_foundation::BOOL,
     pub StreamDescriptionFlags: u32,
     pub MemoryAllocationFlags: u32,
     pub ConfigCaps: KS_VIDEO_STREAM_CONFIG_CAPS,
     pub VideoInfo: KS_VIDEOINFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATARANGE_VIDEO_PALETTE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATARANGE_VIDEO_PALETTE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATARANGE_VIDEO_PALETTE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_VIDEO_PALETTE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO_PALETTE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATARANGE_VIDEO_PALETTE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATARANGE_VIDEO_PALETTE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_DATARANGE_VIDEO_VBI {
     pub DataRange: KSDATAFORMAT,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation::BOOL,
+    pub bTemporalCompression: ::win32_foundation::BOOL,
     pub StreamDescriptionFlags: u32,
     pub MemoryAllocationFlags: u32,
     pub ConfigCaps: KS_VIDEO_STREAM_CONFIG_CAPS,
     pub VBIInfoHeader: KS_VBIINFOHEADER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_DATARANGE_VIDEO_VBI {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_DATARANGE_VIDEO_VBI {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_DATARANGE_VIDEO_VBI {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_DATARANGE_VIDEO_VBI {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_DATARANGE_VIDEO_VBI>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_DATARANGE_VIDEO_VBI {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_DATARANGE_VIDEO_VBI {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -15645,142 +15103,113 @@ impl ::core::default::Default for KS_DVD_YUV {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_FRAME_INFO {
     pub ExtendedHeaderSize: u32,
     pub dwFrameFlags: u32,
     pub PictureNumber: i64,
     pub DropCount: i64,
-    pub hDirectDraw: super::super::Foundation::HANDLE,
-    pub hSurfaceHandle: super::super::Foundation::HANDLE,
-    pub DirectDrawRect: super::super::Foundation::RECT,
+    pub hDirectDraw: ::win32_foundation::HANDLE,
+    pub hSurfaceHandle: ::win32_foundation::HANDLE,
+    pub DirectDrawRect: ::win32_foundation::RECT,
     pub Anonymous1: KS_FRAME_INFO_0,
     pub Reserved2: u32,
     pub Anonymous2: KS_FRAME_INFO_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_FRAME_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_FRAME_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_FRAME_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_FRAME_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_FRAME_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_FRAME_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KS_FRAME_INFO_0 {
     pub lSurfacePitch: i32,
     pub Reserved1: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_FRAME_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_FRAME_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_FRAME_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_FRAME_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_FRAME_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_FRAME_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KS_FRAME_INFO_1 {
     pub Anonymous: KS_FRAME_INFO_1_0,
     pub FrameCompletionNumber: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_FRAME_INFO_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_FRAME_INFO_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_FRAME_INFO_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_FRAME_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_FRAME_INFO_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_FRAME_INFO_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_FRAME_INFO_1_0 {
     pub Reserved3: u32,
     pub Reserved4: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_FRAME_INFO_1_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_FRAME_INFO_1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KS_FRAME_INFO_1_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KS_FRAME_INFO_1_0").field("Reserved3", &self.Reserved3).field("Reserved4", &self.Reserved4).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_FRAME_INFO_1_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_FRAME_INFO_1_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_FRAME_INFO_1_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_FRAME_INFO_1_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_FRAME_INFO_1_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16087,40 +15516,32 @@ impl ::core::default::Default for KS_MPEAUDIOINFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_MPEG1VIDEOINFO {
     pub hdr: KS_VIDEOINFOHEADER,
     pub dwStartTimeCode: u32,
     pub cbSequenceHeader: u32,
     pub bSequenceHeader: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_MPEG1VIDEOINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_MPEG1VIDEOINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KS_MPEG1VIDEOINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KS_MPEG1VIDEOINFO").field("hdr", &self.hdr).field("dwStartTimeCode", &self.dwStartTimeCode).field("cbSequenceHeader", &self.cbSequenceHeader).field("bSequenceHeader", &self.bSequenceHeader).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_MPEG1VIDEOINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_MPEG1VIDEOINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_MPEG1VIDEOINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_MPEG1VIDEOINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_MPEG1VIDEOINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16191,7 +15612,6 @@ pub const KS_MPEG2_SourceIsLetterboxed: u32 = 8u32;
 pub const KS_MPEG2_WidescreenAnalogOut: u32 = 512u32;
 pub const KS_MPEGAUDIOINFO_27MhzTimebase: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_MPEGVIDEOINFO2 {
     pub hdr: KS_VIDEOINFOHEADER2,
     pub dwStartTimeCode: u32,
@@ -16201,27 +15621,21 @@ pub struct KS_MPEGVIDEOINFO2 {
     pub dwFlags: u32,
     pub bSequenceHeader: [u32; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_MPEGVIDEOINFO2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_MPEGVIDEOINFO2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_MPEGVIDEOINFO2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_MPEGVIDEOINFO2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_MPEGVIDEOINFO2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_MPEGVIDEOINFO2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_MPEGVIDEOINFO2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16625,122 +16039,99 @@ impl ::core::fmt::Debug for KS_VIDEODECODER_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_VIDEOINFO {
-    pub rcSource: super::super::Foundation::RECT,
-    pub rcTarget: super::super::Foundation::RECT,
+    pub rcSource: ::win32_foundation::RECT,
+    pub rcTarget: ::win32_foundation::RECT,
     pub dwBitRate: u32,
     pub dwBitErrorRate: u32,
     pub AvgTimePerFrame: i64,
     pub bmiHeader: KS_BITMAPINFOHEADER,
     pub Anonymous: KS_VIDEOINFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_VIDEOINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_VIDEOINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_VIDEOINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_VIDEOINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_VIDEOINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KS_VIDEOINFO_0 {
     pub bmiColors: [KS_RGBQUAD; 256],
     pub dwBitMasks: [u32; 3],
     pub TrueColorInfo: KS_TRUECOLORINFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_VIDEOINFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_VIDEOINFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_VIDEOINFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_VIDEOINFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_VIDEOINFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_VIDEOINFOHEADER {
-    pub rcSource: super::super::Foundation::RECT,
-    pub rcTarget: super::super::Foundation::RECT,
+    pub rcSource: ::win32_foundation::RECT,
+    pub rcTarget: ::win32_foundation::RECT,
     pub dwBitRate: u32,
     pub dwBitErrorRate: u32,
     pub AvgTimePerFrame: i64,
     pub bmiHeader: KS_BITMAPINFOHEADER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_VIDEOINFOHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_VIDEOINFOHEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KS_VIDEOINFOHEADER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KS_VIDEOINFOHEADER").field("rcSource", &self.rcSource).field("rcTarget", &self.rcTarget).field("dwBitRate", &self.dwBitRate).field("dwBitErrorRate", &self.dwBitErrorRate).field("AvgTimePerFrame", &self.AvgTimePerFrame).field("bmiHeader", &self.bmiHeader).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_VIDEOINFOHEADER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFOHEADER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_VIDEOINFOHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_VIDEOINFOHEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_VIDEOINFOHEADER2 {
-    pub rcSource: super::super::Foundation::RECT,
-    pub rcTarget: super::super::Foundation::RECT,
+    pub rcSource: ::win32_foundation::RECT,
+    pub rcTarget: ::win32_foundation::RECT,
     pub dwBitRate: u32,
     pub dwBitErrorRate: u32,
     pub AvgTimePerFrame: i64,
@@ -16752,59 +16143,46 @@ pub struct KS_VIDEOINFOHEADER2 {
     pub dwReserved2: u32,
     pub bmiHeader: KS_BITMAPINFOHEADER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_VIDEOINFOHEADER2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_VIDEOINFOHEADER2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_VIDEOINFOHEADER2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFOHEADER2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFOHEADER2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_VIDEOINFOHEADER2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_VIDEOINFOHEADER2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union KS_VIDEOINFOHEADER2_0 {
     pub dwControlFlags: u32,
     pub dwReserved1: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_VIDEOINFOHEADER2_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_VIDEOINFOHEADER2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_VIDEOINFOHEADER2_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEOINFOHEADER2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEOINFOHEADER2_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_VIDEOINFOHEADER2_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_VIDEOINFOHEADER2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16834,19 +16212,18 @@ pub const KS_VIDEO_FLAG_P_FRAME: i32 = 16i32;
 pub const KS_VIDEO_FLAG_REPEAT_FIELD: i32 = 64i32;
 pub const KS_VIDEO_FLAG_WEAVE: i32 = 8i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct KS_VIDEO_STREAM_CONFIG_CAPS {
     pub guid: ::windows_core::GUID,
     pub VideoStandard: u32,
-    pub InputSize: super::super::Foundation::SIZE,
-    pub MinCroppingSize: super::super::Foundation::SIZE,
-    pub MaxCroppingSize: super::super::Foundation::SIZE,
+    pub InputSize: ::win32_foundation::SIZE,
+    pub MinCroppingSize: ::win32_foundation::SIZE,
+    pub MaxCroppingSize: ::win32_foundation::SIZE,
     pub CropGranularityX: i32,
     pub CropGranularityY: i32,
     pub CropAlignX: i32,
     pub CropAlignY: i32,
-    pub MinOutputSize: super::super::Foundation::SIZE,
-    pub MaxOutputSize: super::super::Foundation::SIZE,
+    pub MinOutputSize: ::win32_foundation::SIZE,
+    pub MaxOutputSize: ::win32_foundation::SIZE,
     pub OutputGranularityX: i32,
     pub OutputGranularityY: i32,
     pub StretchTapsX: i32,
@@ -16858,15 +16235,12 @@ pub struct KS_VIDEO_STREAM_CONFIG_CAPS {
     pub MinBitsPerSecond: i32,
     pub MaxBitsPerSecond: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for KS_VIDEO_STREAM_CONFIG_CAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for KS_VIDEO_STREAM_CONFIG_CAPS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for KS_VIDEO_STREAM_CONFIG_CAPS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("KS_VIDEO_STREAM_CONFIG_CAPS")
@@ -16894,19 +16268,15 @@ impl ::core::fmt::Debug for KS_VIDEO_STREAM_CONFIG_CAPS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for KS_VIDEO_STREAM_CONFIG_CAPS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for KS_VIDEO_STREAM_CONFIG_CAPS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<KS_VIDEO_STREAM_CONFIG_CAPS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for KS_VIDEO_STREAM_CONFIG_CAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for KS_VIDEO_STREAM_CONFIG_CAPS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16980,149 +16350,134 @@ pub const KS_iPALETTE: u32 = 8u32;
 pub const KS_iPALETTE_COLORS: u32 = 256u32;
 pub const KS_iRED: u32 = 0u32;
 pub const KS_iTRUECOLOR: u32 = 16u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateAllocator<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn KsCreateAllocator<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(connectionhandle: Param0, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreateAllocator(connectionhandle: super::super::Foundation::HANDLE, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn KsCreateAllocator(connectionhandle: ::win32_foundation::HANDLE, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(KsCreateAllocator(connectionhandle.into_param().abi(), ::core::mem::transmute(allocatorframing), ::core::mem::transmute(allocatorhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateAllocator2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, allocatorframing: *const KSALLOCATOR_FRAMING) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn KsCreateAllocator2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(connectionhandle: Param0, allocatorframing: *const KSALLOCATOR_FRAMING) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreateAllocator2(connectionhandle: super::super::Foundation::HANDLE, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn KsCreateAllocator2(connectionhandle: ::win32_foundation::HANDLE, allocatorframing: *const KSALLOCATOR_FRAMING, allocatorhandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        KsCreateAllocator2(connectionhandle.into_param().abi(), ::core::mem::transmute(allocatorframing), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        KsCreateAllocator2(connectionhandle.into_param().abi(), ::core::mem::transmute(allocatorframing), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateClock<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn KsCreateClock<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(connectionhandle: Param0, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreateClock(connectionhandle: super::super::Foundation::HANDLE, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn KsCreateClock(connectionhandle: ::win32_foundation::HANDLE, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(KsCreateClock(connectionhandle.into_param().abi(), ::core::mem::transmute(clockcreate), ::core::mem::transmute(clockhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateClock2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectionhandle: Param0, clockcreate: *const KSCLOCK_CREATE) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn KsCreateClock2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(connectionhandle: Param0, clockcreate: *const KSCLOCK_CREATE) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreateClock2(connectionhandle: super::super::Foundation::HANDLE, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn KsCreateClock2(connectionhandle: ::win32_foundation::HANDLE, clockcreate: *const KSCLOCK_CREATE, clockhandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        KsCreateClock2(connectionhandle.into_param().abi(), ::core::mem::transmute(clockcreate), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        KsCreateClock2(connectionhandle.into_param().abi(), ::core::mem::transmute(clockcreate), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreatePin<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filterhandle: Param0, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn KsCreatePin<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filterhandle: Param0, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreatePin(filterhandle: super::super::Foundation::HANDLE, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn KsCreatePin(filterhandle: ::win32_foundation::HANDLE, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(KsCreatePin(filterhandle.into_param().abi(), ::core::mem::transmute(connect), ::core::mem::transmute(desiredaccess), ::core::mem::transmute(connectionhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreatePin2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(filterhandle: Param0, connect: *const KSPIN_CONNECT, desiredaccess: u32) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn KsCreatePin2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(filterhandle: Param0, connect: *const KSPIN_CONNECT, desiredaccess: u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreatePin2(filterhandle: super::super::Foundation::HANDLE, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn KsCreatePin2(filterhandle: ::win32_foundation::HANDLE, connect: *const KSPIN_CONNECT, desiredaccess: u32, connectionhandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        KsCreatePin2(filterhandle.into_param().abi(), ::core::mem::transmute(connect), ::core::mem::transmute(desiredaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        KsCreatePin2(filterhandle.into_param().abi(), ::core::mem::transmute(connect), ::core::mem::transmute(desiredaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateTopologyNode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(parenthandle: Param0, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn KsCreateTopologyNode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(parenthandle: Param0, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreateTopologyNode(parenthandle: super::super::Foundation::HANDLE, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn KsCreateTopologyNode(parenthandle: ::win32_foundation::HANDLE, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(KsCreateTopologyNode(parenthandle.into_param().abi(), ::core::mem::transmute(nodecreate), ::core::mem::transmute(desiredaccess), ::core::mem::transmute(nodehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn KsCreateTopologyNode2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(parenthandle: Param0, nodecreate: *const KSNODE_CREATE, desiredaccess: u32) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn KsCreateTopologyNode2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(parenthandle: Param0, nodecreate: *const KSNODE_CREATE, desiredaccess: u32) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn KsCreateTopologyNode2(parenthandle: super::super::Foundation::HANDLE, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn KsCreateTopologyNode2(parenthandle: ::win32_foundation::HANDLE, nodecreate: *const KSNODE_CREATE, desiredaccess: u32, nodehandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        KsCreateTopologyNode2(parenthandle.into_param().abi(), ::core::mem::transmute(nodecreate), ::core::mem::transmute(desiredaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        KsCreateTopologyNode2(parenthandle.into_param().abi(), ::core::mem::transmute(nodecreate), ::core::mem::transmute(desiredaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LOOPEDSTREAMING_POSITION_EVENT_DATA {
     pub KsEventData: KSEVENTDATA,
     pub Position: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LOOPEDSTREAMING_POSITION_EVENT_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LOOPEDSTREAMING_POSITION_EVENT_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for LOOPEDSTREAMING_POSITION_EVENT_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for LOOPEDSTREAMING_POSITION_EVENT_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOOPEDSTREAMING_POSITION_EVENT_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for LOOPEDSTREAMING_POSITION_EVENT_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for LOOPEDSTREAMING_POSITION_EVENT_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17133,39 +16488,31 @@ pub const MAX_RESOURCEGROUPID_LENGTH: u32 = 256u32;
 pub const MAX_SINK_DESCRIPTION_NAME_LENGTH: u32 = 32u32;
 pub const MAX_WST_VBI_LINES_PER_FIELD: u32 = 17u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MEDIUM_INFO {
-    pub MediaPresent: super::super::Foundation::BOOL,
+    pub MediaPresent: ::win32_foundation::BOOL,
     pub MediaType: u32,
-    pub RecordInhibit: super::super::Foundation::BOOL,
+    pub RecordInhibit: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MEDIUM_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MEDIUM_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MEDIUM_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MEDIUM_INFO").field("MediaPresent", &self.MediaPresent).field("MediaType", &self.MediaType).field("RecordInhibit", &self.RecordInhibit).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MEDIUM_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MEDIUM_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MEDIUM_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MEDIUM_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MEDIUM_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

@@ -213,11 +213,11 @@ pub struct BlockCollection(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl BlockCollection {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<Block>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<Block>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<Block>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<Block>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<Block>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<Block>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -237,11 +237,11 @@ impl BlockCollection {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetView(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<Block>> {
+    pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Block>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<Block>>(result__)
+            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Block>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -326,8 +326,8 @@ unsafe impl ::windows_core::RuntimeType for BlockCollection {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for BlockCollection {
-    type Vtable = super::super::super::Foundation::Collections::IVector_Vtbl<Block>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IVector<Block> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<Block>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<Block> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for BlockCollection {
@@ -336,7 +336,7 @@ impl ::windows_core::RuntimeName for BlockCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for BlockCollection {
     type Item = Block;
-    type IntoIter = super::super::super::Foundation::Collections::VectorIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -344,9 +344,9 @@ impl ::core::iter::IntoIterator for BlockCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &BlockCollection {
     type Item = Block;
-    type IntoIter = super::super::super::Foundation::Collections::VectorIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::super::Foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -398,55 +398,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Blo
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<BlockCollection> for super::super::super::Foundation::Collections::IIterable<Block> {
+impl ::core::convert::TryFrom<BlockCollection> for ::winrt_foundation::Collections::IIterable<Block> {
     type Error = ::windows_core::Error;
     fn try_from(value: BlockCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&BlockCollection> for super::super::super::Foundation::Collections::IIterable<Block> {
+impl ::core::convert::TryFrom<&BlockCollection> for ::winrt_foundation::Collections::IIterable<Block> {
     type Error = ::windows_core::Error;
     fn try_from(value: &BlockCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<Block>> for BlockCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<Block>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Block>> for BlockCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Block>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<Block>> for &BlockCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<Block>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<Block>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Block>> for &BlockCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Block>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<Block>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<BlockCollection> for super::super::super::Foundation::Collections::IVector<Block> {
+impl ::core::convert::TryFrom<BlockCollection> for ::winrt_foundation::Collections::IVector<Block> {
     type Error = ::windows_core::Error;
     fn try_from(value: BlockCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&BlockCollection> for super::super::super::Foundation::Collections::IVector<Block> {
+impl ::core::convert::TryFrom<&BlockCollection> for ::winrt_foundation::Collections::IVector<Block> {
     type Error = ::windows_core::Error;
     fn try_from(value: &BlockCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVector<Block>> for BlockCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVector<Block>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Block>> for BlockCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Block>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVector<Block>> for &BlockCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVector<Block>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IVector<Block>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Block>> for &BlockCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Block>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<Block>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -924,42 +924,36 @@ impl ContentLink {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTabIndex)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Invoked<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<ContentLink, ContentLinkInvokedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Invoked<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<ContentLink, ContentLinkInvokedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Invoked)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Invoked)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveInvoked<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveInvoked<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveInvoked)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::RoutedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn GotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::RoutedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).GotFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).GotFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveGotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveGotFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveGotFocus)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LostFocus<'a, Param0: ::windows_core::IntoParam<'a, super::RoutedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn LostFocus<'a, Param0: ::windows_core::IntoParam<'a, super::RoutedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).LostFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).LostFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveLostFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveLostFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveLostFocus)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -1392,16 +1386,16 @@ impl ContentLinkProviderCollection {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<ContentLinkProvider>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<ContentLinkProvider>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<ContentLinkProvider>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<ContentLinkProvider>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<ContentLinkProvider>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<ContentLinkProvider>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<ContentLinkProvider> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetAt)(::windows_core::Interface::as_raw(this), index, result__.as_mut_ptr()).from_abi::<ContentLinkProvider>(result__)
@@ -1409,23 +1403,23 @@ impl ContentLinkProviderCollection {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Size(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Size)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetView(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<ContentLinkProvider>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+    pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ContentLinkProvider>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<ContentLinkProvider>>(result__)
+            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ContentLinkProvider>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn IndexOf<'a, Param0: ::windows_core::IntoParam<'a, ContentLinkProvider>>(&self, value: Param0, index: &mut u32) -> ::windows_core::Result<bool> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).IndexOf)(::windows_core::Interface::as_raw(this), value.into_param().abi(), index, result__.as_mut_ptr()).from_abi::<bool>(result__)
@@ -1433,37 +1427,37 @@ impl ContentLinkProviderCollection {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn SetAt<'a, Param1: ::windows_core::IntoParam<'a, ContentLinkProvider>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn InsertAt<'a, Param1: ::windows_core::IntoParam<'a, ContentLinkProvider>>(&self, index: u32, value: Param1) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).InsertAt)(::windows_core::Interface::as_raw(this), index, value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn RemoveAt(&self, index: u32) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAt)(::windows_core::Interface::as_raw(this), index).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, ContentLinkProvider>>(&self, value: Param0) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn RemoveAtEnd(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAtEnd)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn Clear(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn GetMany(&self, startindex: u32, items: &mut [::core::option::Option<ContentLinkProvider>]) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).GetMany)(::windows_core::Interface::as_raw(this), startindex, items.len() as u32, ::core::mem::transmute_copy(&items), result__.as_mut_ptr()).from_abi::<u32>(result__)
@@ -1471,7 +1465,7 @@ impl ContentLinkProviderCollection {
     }
     #[cfg(feature = "Foundation_Collections")]
     pub fn ReplaceAll(&self, items: &[::core::option::Option<ContentLinkProvider>]) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).ReplaceAll)(::windows_core::Interface::as_raw(this), items.len() as u32, ::core::mem::transmute(items.as_ptr())).ok() }
     }
 }
@@ -1508,7 +1502,7 @@ impl ::windows_core::RuntimeName for ContentLinkProviderCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for ContentLinkProviderCollection {
     type Item = ContentLinkProvider;
-    type IntoIter = super::super::super::Foundation::Collections::VectorIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -1516,9 +1510,9 @@ impl ::core::iter::IntoIterator for ContentLinkProviderCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &ContentLinkProviderCollection {
     type Item = ContentLinkProvider;
-    type IntoIter = super::super::super::Foundation::Collections::VectorIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::super::Foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 impl ::core::convert::From<ContentLinkProviderCollection> for ::windows_core::IUnknown {
@@ -1562,55 +1556,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Con
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ContentLinkProviderCollection> for super::super::super::Foundation::Collections::IIterable<ContentLinkProvider> {
+impl ::core::convert::TryFrom<ContentLinkProviderCollection> for ::winrt_foundation::Collections::IIterable<ContentLinkProvider> {
     type Error = ::windows_core::Error;
     fn try_from(value: ContentLinkProviderCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ContentLinkProviderCollection> for super::super::super::Foundation::Collections::IIterable<ContentLinkProvider> {
+impl ::core::convert::TryFrom<&ContentLinkProviderCollection> for ::winrt_foundation::Collections::IIterable<ContentLinkProvider> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ContentLinkProviderCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ContentLinkProvider>> for ContentLinkProviderCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<ContentLinkProvider>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ContentLinkProvider>> for ContentLinkProviderCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ContentLinkProvider>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<ContentLinkProvider>> for &ContentLinkProviderCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<ContentLinkProvider>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<ContentLinkProvider>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<ContentLinkProvider>> for &ContentLinkProviderCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<ContentLinkProvider>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<ContentLinkProvider>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<ContentLinkProviderCollection> for super::super::super::Foundation::Collections::IVector<ContentLinkProvider> {
+impl ::core::convert::TryFrom<ContentLinkProviderCollection> for ::winrt_foundation::Collections::IVector<ContentLinkProvider> {
     type Error = ::windows_core::Error;
     fn try_from(value: ContentLinkProviderCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&ContentLinkProviderCollection> for super::super::super::Foundation::Collections::IVector<ContentLinkProvider> {
+impl ::core::convert::TryFrom<&ContentLinkProviderCollection> for ::winrt_foundation::Collections::IVector<ContentLinkProvider> {
     type Error = ::windows_core::Error;
     fn try_from(value: &ContentLinkProviderCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVector<ContentLinkProvider>> for ContentLinkProviderCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVector<ContentLinkProvider>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<ContentLinkProvider>> for ContentLinkProviderCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<ContentLinkProvider>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVector<ContentLinkProvider>> for &ContentLinkProviderCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVector<ContentLinkProvider>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IVector<ContentLinkProvider>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<ContentLinkProvider>> for &ContentLinkProviderCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<ContentLinkProvider>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<ContentLinkProvider>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for ContentLinkProviderCollection {}
@@ -1647,16 +1641,14 @@ impl Glyphs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetIndices)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FontUri(&self) -> ::windows_core::Result<super::super::super::Foundation::Uri> {
+    pub fn FontUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FontUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).FontUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetFontUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetFontUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFontUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2004,29 +1996,25 @@ impl Hyperlink {
         static mut SHARED: ::windows_core::FactoryCache<Hyperlink, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn NavigateUri(&self) -> ::windows_core::Result<super::super::super::Foundation::Uri> {
+    pub fn NavigateUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NavigateUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).NavigateUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetNavigateUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Click<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<Hyperlink, HyperlinkClickEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Click<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<Hyperlink, HyperlinkClickEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Click)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Click)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveClick<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveClick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveClick)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2155,29 +2143,25 @@ impl Hyperlink {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetXYFocusRightNavigationStrategy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::RoutedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn GotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::RoutedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).GotFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).GotFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveGotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveGotFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveGotFocus)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LostFocus<'a, Param0: ::windows_core::IntoParam<'a, super::RoutedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn LostFocus<'a, Param0: ::windows_core::IntoParam<'a, super::RoutedEventHandler>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).LostFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).LostFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveLostFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveLostFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IHyperlink4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveLostFocus)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2744,30 +2728,12 @@ pub struct IContentLink_Vtbl {
     pub SetIsTabStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub TabIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SetTabIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Invoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Invoked: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveInvoked: usize,
-    #[cfg(feature = "Foundation")]
-    pub GotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GotFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveGotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveGotFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub LostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LostFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveLostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveLostFocus: usize,
+    pub Invoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub GotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveGotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub LostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveLostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub Focus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::FocusState, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -2866,14 +2832,8 @@ pub struct IGlyphs_Vtbl {
     pub SetUnicodeString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Indices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetIndices: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub FontUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FontUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetFontUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetFontUri: usize,
     #[cfg(feature = "UI_Xaml_Media")]
     pub StyleSimulations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Media::StyleSimulations) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_Xaml_Media"))]
@@ -2958,22 +2918,10 @@ unsafe impl ::windows_core::Interface for IHyperlink {
 #[doc(hidden)]
 pub struct IHyperlink_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub NavigateUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    NavigateUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetNavigateUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetNavigateUri: usize,
-    #[cfg(feature = "Foundation")]
-    pub Click: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Click: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveClick: usize,
+    pub Click: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3055,22 +3003,10 @@ pub struct IHyperlink4_Vtbl {
     pub SetXYFocusRightNavigationStrategy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Input::XYFocusNavigationStrategy) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_Xaml_Input"))]
     SetXYFocusRightNavigationStrategy: usize,
-    #[cfg(feature = "Foundation")]
-    pub GotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GotFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveGotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveGotFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub LostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LostFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveLostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveLostFocus: usize,
+    pub GotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveGotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub LostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveLostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub Focus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::FocusState, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -3474,30 +3410,21 @@ pub struct ITextElement4_Vtbl {
     pub SetKeyTipHorizontalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     pub KeyTipVerticalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetKeyTipVerticalOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Input"))]
-    pub AccessKeyDisplayRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Xaml_Input")))]
+    #[cfg(feature = "UI_Xaml_Input")]
+    pub AccessKeyDisplayRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Input"))]
     AccessKeyDisplayRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAccessKeyDisplayRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAccessKeyDisplayRequested: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Input"))]
-    pub AccessKeyDisplayDismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Xaml_Input")))]
+    pub RemoveAccessKeyDisplayRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Xaml_Input")]
+    pub AccessKeyDisplayDismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Input"))]
     AccessKeyDisplayDismissed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAccessKeyDisplayDismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAccessKeyDisplayDismissed: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Input"))]
-    pub AccessKeyInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Xaml_Input")))]
+    pub RemoveAccessKeyDisplayDismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "UI_Xaml_Input")]
+    pub AccessKeyInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Input"))]
     AccessKeyInvoked: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAccessKeyInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAccessKeyInvoked: usize,
+    pub RemoveAccessKeyInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3702,10 +3629,7 @@ pub struct ITextPointer_Vtbl {
     pub VisualParent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub LogicalDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut LogicalDirection) -> ::windows_core::HRESULT,
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetCharacterRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, direction: LogicalDirection, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCharacterRect: usize,
+    pub GetCharacterRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, direction: LogicalDirection, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub GetPositionAtOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: i32, direction: LogicalDirection, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -3994,11 +3918,11 @@ pub struct InlineCollection(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl InlineCollection {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<Inline>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<Inline>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<Inline>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<Inline>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<Inline>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<Inline>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -4018,11 +3942,11 @@ impl InlineCollection {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetView(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<Inline>> {
+    pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Inline>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<Inline>>(result__)
+            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Inline>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -4107,8 +4031,8 @@ unsafe impl ::windows_core::RuntimeType for InlineCollection {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for InlineCollection {
-    type Vtable = super::super::super::Foundation::Collections::IVector_Vtbl<Inline>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IVector<Inline> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IVector_Vtbl<Inline>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVector<Inline> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for InlineCollection {
@@ -4117,7 +4041,7 @@ impl ::windows_core::RuntimeName for InlineCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for InlineCollection {
     type Item = Inline;
-    type IntoIter = super::super::super::Foundation::Collections::VectorIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -4125,9 +4049,9 @@ impl ::core::iter::IntoIterator for InlineCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &InlineCollection {
     type Item = Inline;
-    type IntoIter = super::super::super::Foundation::Collections::VectorIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::super::Foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -4179,55 +4103,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Inl
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<InlineCollection> for super::super::super::Foundation::Collections::IIterable<Inline> {
+impl ::core::convert::TryFrom<InlineCollection> for ::winrt_foundation::Collections::IIterable<Inline> {
     type Error = ::windows_core::Error;
     fn try_from(value: InlineCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&InlineCollection> for super::super::super::Foundation::Collections::IIterable<Inline> {
+impl ::core::convert::TryFrom<&InlineCollection> for ::winrt_foundation::Collections::IIterable<Inline> {
     type Error = ::windows_core::Error;
     fn try_from(value: &InlineCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<Inline>> for InlineCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<Inline>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Inline>> for InlineCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Inline>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<Inline>> for &InlineCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<Inline>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<Inline>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Inline>> for &InlineCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<Inline>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<Inline>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<InlineCollection> for super::super::super::Foundation::Collections::IVector<Inline> {
+impl ::core::convert::TryFrom<InlineCollection> for ::winrt_foundation::Collections::IVector<Inline> {
     type Error = ::windows_core::Error;
     fn try_from(value: InlineCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&InlineCollection> for super::super::super::Foundation::Collections::IVector<Inline> {
+impl ::core::convert::TryFrom<&InlineCollection> for ::winrt_foundation::Collections::IVector<Inline> {
     type Error = ::windows_core::Error;
     fn try_from(value: &InlineCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVector<Inline>> for InlineCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVector<Inline>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Inline>> for InlineCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Inline>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVector<Inline>> for &InlineCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVector<Inline>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IVector<Inline>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<Inline>> for &InlineCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVector<Inline>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVector<Inline>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -5620,42 +5544,39 @@ impl TextElement {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetKeyTipVerticalOffset)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Input"))]
-    pub fn AccessKeyDisplayRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<TextElement, super::Input::AccessKeyDisplayRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Xaml_Input")]
+    pub fn AccessKeyDisplayRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<TextElement, super::Input::AccessKeyDisplayRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AccessKeyDisplayRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AccessKeyDisplayRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAccessKeyDisplayRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAccessKeyDisplayRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAccessKeyDisplayRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Input"))]
-    pub fn AccessKeyDisplayDismissed<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<TextElement, super::Input::AccessKeyDisplayDismissedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Xaml_Input")]
+    pub fn AccessKeyDisplayDismissed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<TextElement, super::Input::AccessKeyDisplayDismissedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AccessKeyDisplayDismissed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AccessKeyDisplayDismissed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAccessKeyDisplayDismissed<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAccessKeyDisplayDismissed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAccessKeyDisplayDismissed)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Input"))]
-    pub fn AccessKeyInvoked<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<TextElement, super::Input::AccessKeyInvokedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "UI_Xaml_Input")]
+    pub fn AccessKeyInvoked<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<TextElement, super::Input::AccessKeyInvokedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AccessKeyInvoked)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AccessKeyInvoked)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAccessKeyInvoked<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAccessKeyInvoked<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ITextElement4>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAccessKeyInvoked)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -5891,11 +5812,11 @@ unsafe impl ::core::marker::Sync for TextElement {}
 pub struct TextHighlighter(::windows_core::IUnknown);
 impl TextHighlighter {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Ranges(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<TextRange>> {
+    pub fn Ranges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<TextRange>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Ranges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<TextRange>>(result__)
+            (::windows_core::Interface::vtable(this).Ranges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<TextRange>>(result__)
         }
     }
     #[cfg(feature = "UI_Xaml_Media")]
@@ -6156,12 +6077,11 @@ impl TextPointer {
             (::windows_core::Interface::vtable(this).Offset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCharacterRect(&self, direction: LogicalDirection) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn GetCharacterRect(&self, direction: LogicalDirection) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCharacterRect)(::windows_core::Interface::as_raw(this), direction, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).GetCharacterRect)(::windows_core::Interface::as_raw(this), direction, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn GetPositionAtOffset(&self, offset: i32, direction: LogicalDirection) -> ::windows_core::Result<TextPointer> {

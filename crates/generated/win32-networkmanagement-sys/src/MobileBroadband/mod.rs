@@ -83,19 +83,16 @@ pub type MBN_CONNECTION_MODE = i32;
 pub const MBN_CONNECTION_MODE_PROFILE: MBN_CONNECTION_MODE = 0i32;
 pub const MBN_CONNECTION_MODE_TMP_PROFILE: MBN_CONNECTION_MODE = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MBN_CONTEXT {
     pub contextID: u32,
     pub contextType: MBN_CONTEXT_TYPE,
-    pub accessString: super::super::Foundation::BSTR,
-    pub userName: super::super::Foundation::BSTR,
-    pub password: super::super::Foundation::BSTR,
+    pub accessString: ::win32_foundation_sys::BSTR,
+    pub userName: ::win32_foundation_sys::BSTR,
+    pub password: ::win32_foundation_sys::BSTR,
     pub compression: MBN_COMPRESSION,
     pub authType: MBN_AUTH_PROTOCOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MBN_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MBN_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -143,15 +140,12 @@ pub const MBN_DATA_CLASS_1XEVDO_REVB: MBN_DATA_CLASS = 2097152i32;
 pub const MBN_DATA_CLASS_UMB: MBN_DATA_CLASS = 4194304i32;
 pub const MBN_DATA_CLASS_CUSTOM: MBN_DATA_CLASS = -2147483648i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MBN_DEVICE_SERVICE {
-    pub deviceServiceID: super::super::Foundation::BSTR,
+    pub deviceServiceID: ::win32_foundation_sys::BSTR,
     pub dataWriteSupported: i16,
     pub dataReadSupported: i16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MBN_DEVICE_SERVICE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MBN_DEVICE_SERVICE {
     fn clone(&self) -> Self {
         *self
@@ -163,25 +157,22 @@ pub const MBN_DEVICE_SERVICES_CAPABLE_INTERFACE_REMOVAL: MBN_DEVICE_SERVICES_INT
 pub type MBN_DEVICE_SERVICE_SESSIONS_STATE = i32;
 pub const MBN_DEVICE_SERVICE_SESSIONS_RESTORED: MBN_DEVICE_SERVICE_SESSIONS_STATE = 0i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MBN_INTERFACE_CAPS {
     pub cellularClass: MBN_CELLULAR_CLASS,
     pub voiceClass: MBN_VOICE_CLASS,
     pub dataClass: u32,
-    pub customDataClass: super::super::Foundation::BSTR,
+    pub customDataClass: ::win32_foundation_sys::BSTR,
     pub gsmBandClass: u32,
     pub cdmaBandClass: u32,
-    pub customBandClass: super::super::Foundation::BSTR,
+    pub customBandClass: ::win32_foundation_sys::BSTR,
     pub smsCaps: u32,
     pub controlCaps: u32,
-    pub deviceID: super::super::Foundation::BSTR,
-    pub manufacturer: super::super::Foundation::BSTR,
-    pub model: super::super::Foundation::BSTR,
-    pub firmwareInfo: super::super::Foundation::BSTR,
+    pub deviceID: ::win32_foundation_sys::BSTR,
+    pub manufacturer: ::win32_foundation_sys::BSTR,
+    pub model: ::win32_foundation_sys::BSTR,
+    pub firmwareInfo: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MBN_INTERFACE_CAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MBN_INTERFACE_CAPS {
     fn clone(&self) -> Self {
         *self
@@ -236,32 +227,26 @@ pub const MBN_PIN_TYPE_SVC_PROVIDER_PIN: MBN_PIN_TYPE = 8i32;
 pub const MBN_PIN_TYPE_CORPORATE_PIN: MBN_PIN_TYPE = 9i32;
 pub const MBN_PIN_TYPE_SUBSIDY_LOCK: MBN_PIN_TYPE = 10i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MBN_PROVIDER {
-    pub providerID: super::super::Foundation::BSTR,
+    pub providerID: ::win32_foundation_sys::BSTR,
     pub providerState: u32,
-    pub providerName: super::super::Foundation::BSTR,
+    pub providerName: ::win32_foundation_sys::BSTR,
     pub dataClass: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MBN_PROVIDER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MBN_PROVIDER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MBN_PROVIDER2 {
     pub provider: MBN_PROVIDER,
     pub cellularClass: MBN_CELLULAR_CLASS,
     pub signalStrength: u32,
     pub signalError: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MBN_PROVIDER2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MBN_PROVIDER2 {
     fn clone(&self) -> Self {
         *self

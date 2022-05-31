@@ -1,77 +1,66 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpAddFragmentToCache(requestqueuehandle: super::super::Foundation::HANDLE, urlprefix: ::windows_core_sys::PCWSTR, datachunk: *mut HTTP_DATA_CHUNK, cachepolicy: *mut HTTP_CACHE_POLICY, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpAddUrl(requestqueuehandle: super::super::Foundation::HANDLE, fullyqualifiedurl: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpAddFragmentToCache(requestqueuehandle: ::win32_foundation_sys::HANDLE, urlprefix: ::windows_core_sys::PCWSTR, datachunk: *mut HTTP_DATA_CHUNK, cachepolicy: *mut HTTP_CACHE_POLICY, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    pub fn HttpAddUrl(requestqueuehandle: ::win32_foundation_sys::HANDLE, fullyqualifiedurl: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> u32;
     pub fn HttpAddUrlToUrlGroup(urlgroupid: u64, pfullyqualifiedurl: ::windows_core_sys::PCWSTR, urlcontext: u64, reserved: u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpCancelHttpRequest(requestqueuehandle: super::super::Foundation::HANDLE, requestid: u64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpCloseRequestQueue(requestqueuehandle: super::super::Foundation::HANDLE) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpCancelHttpRequest(requestqueuehandle: ::win32_foundation_sys::HANDLE, requestid: u64, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    pub fn HttpCloseRequestQueue(requestqueuehandle: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn HttpCloseServerSession(serversessionid: u64) -> u32;
     pub fn HttpCloseUrlGroup(urlgroupid: u64) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpCreateHttpHandle(requestqueuehandle: *mut super::super::Foundation::HANDLE, reserved: u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn HttpCreateRequestQueue(version: HTTPAPI_VERSION, name: ::windows_core_sys::PCWSTR, securityattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, flags: u32, requestqueuehandle: *mut super::super::Foundation::HANDLE) -> u32;
+    pub fn HttpCreateHttpHandle(requestqueuehandle: *mut ::win32_foundation_sys::HANDLE, reserved: u32) -> u32;
+    #[cfg(feature = "Win32_Security")]
+    pub fn HttpCreateRequestQueue(version: HTTPAPI_VERSION, name: ::windows_core_sys::PCWSTR, securityattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, flags: u32, requestqueuehandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn HttpCreateServerSession(version: HTTPAPI_VERSION, serversessionid: *mut u64, reserved: u32) -> u32;
     pub fn HttpCreateUrlGroup(serversessionid: u64, purlgroupid: *mut u64, reserved: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpDeclarePush(requestqueuehandle: super::super::Foundation::HANDLE, requestid: u64, verb: HTTP_VERB, path: ::windows_core_sys::PCWSTR, query: ::windows_core_sys::PCSTR, headers: *const HTTP_REQUEST_HEADERS) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpDelegateRequestEx(requestqueuehandle: super::super::Foundation::HANDLE, delegatequeuehandle: super::super::Foundation::HANDLE, requestid: u64, delegateurlgroupid: u64, propertyinfosetsize: u32, propertyinfoset: *const HTTP_DELEGATE_REQUEST_PROPERTY_INFO) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpDeleteServiceConfiguration(servicehandle: super::super::Foundation::HANDLE, configid: HTTP_SERVICE_CONFIG_ID, pconfiginformation: *const ::core::ffi::c_void, configinformationlength: u32, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpFindUrlGroupId(fullyqualifiedurl: ::windows_core_sys::PCWSTR, requestqueuehandle: super::super::Foundation::HANDLE, urlgroupid: *mut u64) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpFlushResponseCache(requestqueuehandle: super::super::Foundation::HANDLE, urlprefix: ::windows_core_sys::PCWSTR, flags: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
+    pub fn HttpDeclarePush(requestqueuehandle: ::win32_foundation_sys::HANDLE, requestid: u64, verb: HTTP_VERB, path: ::windows_core_sys::PCWSTR, query: ::windows_core_sys::PCSTR, headers: *const HTTP_REQUEST_HEADERS) -> u32;
+    pub fn HttpDelegateRequestEx(requestqueuehandle: ::win32_foundation_sys::HANDLE, delegatequeuehandle: ::win32_foundation_sys::HANDLE, requestid: u64, delegateurlgroupid: u64, propertyinfosetsize: u32, propertyinfoset: *const HTTP_DELEGATE_REQUEST_PROPERTY_INFO) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpDeleteServiceConfiguration(servicehandle: ::win32_foundation_sys::HANDLE, configid: HTTP_SERVICE_CONFIG_ID, pconfiginformation: *const ::core::ffi::c_void, configinformationlength: u32, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    pub fn HttpFindUrlGroupId(fullyqualifiedurl: ::windows_core_sys::PCWSTR, requestqueuehandle: ::win32_foundation_sys::HANDLE, urlgroupid: *mut u64) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpFlushResponseCache(requestqueuehandle: ::win32_foundation_sys::HANDLE, urlprefix: ::windows_core_sys::PCWSTR, flags: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
     pub fn HttpGetExtension(version: HTTPAPI_VERSION, extension: u32, buffer: *mut ::core::ffi::c_void, buffersize: u32) -> u32;
     pub fn HttpInitialize(version: HTTPAPI_VERSION, flags: HTTP_INITIALIZE, preserved: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpIsFeatureSupported(featureid: HTTP_FEATURE_ID) -> super::super::Foundation::BOOL;
+    pub fn HttpIsFeatureSupported(featureid: HTTP_FEATURE_ID) -> ::win32_foundation_sys::BOOL;
     pub fn HttpPrepareUrl(reserved: *mut ::core::ffi::c_void, flags: u32, url: ::windows_core_sys::PCWSTR, preparedurl: *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpQueryRequestQueueProperty(requestqueuehandle: super::super::Foundation::HANDLE, property: HTTP_SERVER_PROPERTY, propertyinformation: *mut ::core::ffi::c_void, propertyinformationlength: u32, reserved1: u32, returnlength: *mut u32, reserved2: *mut ::core::ffi::c_void) -> u32;
+    pub fn HttpQueryRequestQueueProperty(requestqueuehandle: ::win32_foundation_sys::HANDLE, property: HTTP_SERVER_PROPERTY, propertyinformation: *mut ::core::ffi::c_void, propertyinformationlength: u32, reserved1: u32, returnlength: *mut u32, reserved2: *mut ::core::ffi::c_void) -> u32;
     pub fn HttpQueryServerSessionProperty(serversessionid: u64, property: HTTP_SERVER_PROPERTY, propertyinformation: *mut ::core::ffi::c_void, propertyinformationlength: u32, returnlength: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpQueryServiceConfiguration(servicehandle: super::super::Foundation::HANDLE, configid: HTTP_SERVICE_CONFIG_ID, pinput: *const ::core::ffi::c_void, inputlength: u32, poutput: *mut ::core::ffi::c_void, outputlength: u32, preturnlength: *mut u32, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpQueryServiceConfiguration(servicehandle: ::win32_foundation_sys::HANDLE, configid: HTTP_SERVICE_CONFIG_ID, pinput: *const ::core::ffi::c_void, inputlength: u32, poutput: *mut ::core::ffi::c_void, outputlength: u32, preturnlength: *mut u32, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
     pub fn HttpQueryUrlGroupProperty(urlgroupid: u64, property: HTTP_SERVER_PROPERTY, propertyinformation: *mut ::core::ffi::c_void, propertyinformationlength: u32, returnlength: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpReadFragmentFromCache(requestqueuehandle: super::super::Foundation::HANDLE, urlprefix: ::windows_core_sys::PCWSTR, byterange: *mut HTTP_BYTE_RANGE, buffer: *mut ::core::ffi::c_void, bufferlength: u32, bytesread: *mut u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpReceiveClientCertificate(requestqueuehandle: super::super::Foundation::HANDLE, connectionid: u64, flags: u32, sslclientcertinfo: *mut HTTP_SSL_CLIENT_CERT_INFO, sslclientcertinfosize: u32, bytesreceived: *mut u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_System_IO"))]
-    pub fn HttpReceiveHttpRequest(requestqueuehandle: super::super::Foundation::HANDLE, requestid: u64, flags: HTTP_RECEIVE_HTTP_REQUEST_FLAGS, requestbuffer: *mut HTTP_REQUEST_V2, requestbufferlength: u32, bytesreturned: *mut u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpReceiveRequestEntityBody(requestqueuehandle: super::super::Foundation::HANDLE, requestid: u64, flags: u32, entitybuffer: *mut ::core::ffi::c_void, entitybufferlength: u32, bytesreturned: *mut u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpRemoveUrl(requestqueuehandle: super::super::Foundation::HANDLE, fullyqualifiedurl: ::windows_core_sys::PCWSTR) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpReadFragmentFromCache(requestqueuehandle: ::win32_foundation_sys::HANDLE, urlprefix: ::windows_core_sys::PCWSTR, byterange: *mut HTTP_BYTE_RANGE, buffer: *mut ::core::ffi::c_void, bufferlength: u32, bytesread: *mut u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpReceiveClientCertificate(requestqueuehandle: ::win32_foundation_sys::HANDLE, connectionid: u64, flags: u32, sslclientcertinfo: *mut HTTP_SSL_CLIENT_CERT_INFO, sslclientcertinfosize: u32, bytesreceived: *mut u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_System_IO"))]
+    pub fn HttpReceiveHttpRequest(requestqueuehandle: ::win32_foundation_sys::HANDLE, requestid: u64, flags: HTTP_RECEIVE_HTTP_REQUEST_FLAGS, requestbuffer: *mut HTTP_REQUEST_V2, requestbufferlength: u32, bytesreturned: *mut u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpReceiveRequestEntityBody(requestqueuehandle: ::win32_foundation_sys::HANDLE, requestid: u64, flags: u32, entitybuffer: *mut ::core::ffi::c_void, entitybufferlength: u32, bytesreturned: *mut u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    pub fn HttpRemoveUrl(requestqueuehandle: ::win32_foundation_sys::HANDLE, fullyqualifiedurl: ::windows_core_sys::PCWSTR) -> u32;
     pub fn HttpRemoveUrlFromUrlGroup(urlgroupid: u64, pfullyqualifiedurl: ::windows_core_sys::PCWSTR, flags: u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpSendHttpResponse(requestqueuehandle: super::super::Foundation::HANDLE, requestid: u64, flags: u32, httpresponse: *mut HTTP_RESPONSE_V2, cachepolicy: *mut HTTP_CACHE_POLICY, bytessent: *mut u32, reserved1: *mut ::core::ffi::c_void, reserved2: u32, overlapped: *mut super::super::System::IO::OVERLAPPED, logdata: *mut HTTP_LOG_DATA) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpSendResponseEntityBody(requestqueuehandle: super::super::Foundation::HANDLE, requestid: u64, flags: u32, entitychunkcount: u16, entitychunks: *const HTTP_DATA_CHUNK, bytessent: *mut u32, reserved1: *mut ::core::ffi::c_void, reserved2: u32, overlapped: *mut super::super::System::IO::OVERLAPPED, logdata: *mut HTTP_LOG_DATA) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpSetRequestProperty(requestqueuehandle: super::super::Foundation::HANDLE, id: u64, propertyid: HTTP_REQUEST_PROPERTY, input: *const ::core::ffi::c_void, inputpropertysize: u32, overlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpSetRequestQueueProperty(requestqueuehandle: super::super::Foundation::HANDLE, property: HTTP_SERVER_PROPERTY, propertyinformation: *const ::core::ffi::c_void, propertyinformationlength: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpSendHttpResponse(requestqueuehandle: ::win32_foundation_sys::HANDLE, requestid: u64, flags: u32, httpresponse: *mut HTTP_RESPONSE_V2, cachepolicy: *mut HTTP_CACHE_POLICY, bytessent: *mut u32, reserved1: *mut ::core::ffi::c_void, reserved2: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED, logdata: *mut HTTP_LOG_DATA) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpSendResponseEntityBody(requestqueuehandle: ::win32_foundation_sys::HANDLE, requestid: u64, flags: u32, entitychunkcount: u16, entitychunks: *const HTTP_DATA_CHUNK, bytessent: *mut u32, reserved1: *mut ::core::ffi::c_void, reserved2: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED, logdata: *mut HTTP_LOG_DATA) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpSetRequestProperty(requestqueuehandle: ::win32_foundation_sys::HANDLE, id: u64, propertyid: HTTP_REQUEST_PROPERTY, input: *const ::core::ffi::c_void, inputpropertysize: u32, overlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    pub fn HttpSetRequestQueueProperty(requestqueuehandle: ::win32_foundation_sys::HANDLE, property: HTTP_SERVER_PROPERTY, propertyinformation: *const ::core::ffi::c_void, propertyinformationlength: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> u32;
     pub fn HttpSetServerSessionProperty(serversessionid: u64, property: HTTP_SERVER_PROPERTY, propertyinformation: *const ::core::ffi::c_void, propertyinformationlength: u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpSetServiceConfiguration(servicehandle: super::super::Foundation::HANDLE, configid: HTTP_SERVICE_CONFIG_ID, pconfiginformation: *const ::core::ffi::c_void, configinformationlength: u32, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpSetServiceConfiguration(servicehandle: ::win32_foundation_sys::HANDLE, configid: HTTP_SERVICE_CONFIG_ID, pconfiginformation: *const ::core::ffi::c_void, configinformationlength: u32, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
     pub fn HttpSetUrlGroupProperty(urlgroupid: u64, property: HTTP_SERVER_PROPERTY, propertyinformation: *const ::core::ffi::c_void, propertyinformationlength: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HttpShutdownRequestQueue(requestqueuehandle: super::super::Foundation::HANDLE) -> u32;
+    pub fn HttpShutdownRequestQueue(requestqueuehandle: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn HttpTerminate(flags: HTTP_INITIALIZE, preserved: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpUpdateServiceConfiguration(handle: super::super::Foundation::HANDLE, configid: HTTP_SERVICE_CONFIG_ID, configinfo: *const ::core::ffi::c_void, configinfolength: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpWaitForDemandStart(requestqueuehandle: super::super::Foundation::HANDLE, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpWaitForDisconnect(requestqueuehandle: super::super::Foundation::HANDLE, connectionid: u64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn HttpWaitForDisconnectEx(requestqueuehandle: super::super::Foundation::HANDLE, connectionid: u64, reserved: u32, overlapped: *mut super::super::System::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpUpdateServiceConfiguration(handle: ::win32_foundation_sys::HANDLE, configid: HTTP_SERVICE_CONFIG_ID, configinfo: *const ::core::ffi::c_void, configinfolength: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpWaitForDemandStart(requestqueuehandle: ::win32_foundation_sys::HANDLE, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpWaitForDisconnect(requestqueuehandle: ::win32_foundation_sys::HANDLE, connectionid: u64, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn HttpWaitForDisconnectEx(requestqueuehandle: ::win32_foundation_sys::HANDLE, connectionid: u64, reserved: u32, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> u32;
 }
 #[repr(C)]
 pub struct HTTP2_SETTINGS_LIMITS_PARAM {
@@ -136,14 +125,11 @@ impl ::core::clone::Clone for HTTP_BANDWIDTH_LIMIT_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_BINDING_INFO {
     pub Flags: HTTP_PROPERTY_FLAGS,
-    pub RequestQueueHandle: super::super::Foundation::HANDLE,
+    pub RequestQueueHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_BINDING_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_BINDING_INFO {
     fn clone(&self) -> Self {
         *self
@@ -242,21 +228,17 @@ impl ::core::clone::Clone for HTTP_CREATE_REQUEST_QUEUE_PROPERTY_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_DATA_CHUNK {
     pub DataChunkType: HTTP_DATA_CHUNK_TYPE,
     pub Anonymous: HTTP_DATA_CHUNK_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_DATA_CHUNK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_DATA_CHUNK {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union HTTP_DATA_CHUNK_0 {
     pub FromMemory: HTTP_DATA_CHUNK_0_3,
     pub FromFileHandle: HTTP_DATA_CHUNK_0_0,
@@ -264,79 +246,62 @@ pub union HTTP_DATA_CHUNK_0 {
     pub FromFragmentCacheEx: HTTP_DATA_CHUNK_0_1,
     pub Trailers: HTTP_DATA_CHUNK_0_4,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_DATA_CHUNK_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_DATA_CHUNK_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_DATA_CHUNK_0_0 {
     pub ByteRange: HTTP_BYTE_RANGE,
-    pub FileHandle: super::super::Foundation::HANDLE,
+    pub FileHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_DATA_CHUNK_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_DATA_CHUNK_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_DATA_CHUNK_0_1 {
     pub ByteRange: HTTP_BYTE_RANGE,
     pub pFragmentName: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_DATA_CHUNK_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_DATA_CHUNK_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_DATA_CHUNK_0_2 {
     pub FragmentNameLength: u16,
     pub pFragmentName: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_DATA_CHUNK_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_DATA_CHUNK_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_DATA_CHUNK_0_3 {
     pub pBuffer: *mut ::core::ffi::c_void,
     pub BufferLength: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_DATA_CHUNK_0_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_DATA_CHUNK_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_DATA_CHUNK_0_4 {
     pub TrailerCount: u16,
     pub pTrailers: *mut HTTP_UNKNOWN_HEADER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_DATA_CHUNK_0_4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_DATA_CHUNK_0_4 {
     fn clone(&self) -> Self {
         *self
@@ -471,14 +436,11 @@ impl ::core::clone::Clone for HTTP_KNOWN_HEADER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_LISTEN_ENDPOINT_INFO {
     pub Flags: HTTP_PROPERTY_FLAGS,
-    pub EnableSharing: super::super::Foundation::BOOLEAN,
+    pub EnableSharing: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_LISTEN_ENDPOINT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_LISTEN_ENDPOINT_INFO {
     fn clone(&self) -> Self {
         *self
@@ -504,7 +466,7 @@ pub struct HTTP_LOGGING_INFO {
     pub MaxRecordSize: u16,
     pub RolloverType: HTTP_LOGGING_ROLLOVER_TYPE,
     pub RolloverSize: u32,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
 #[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for HTTP_LOGGING_INFO {}
@@ -770,13 +732,12 @@ pub const HTTP_RECEIVE_REQUEST_ENTITY_BODY_FLAG_FILL_BUFFER: u32 = 1u32;
 pub const HTTP_RECEIVE_SECURE_CHANNEL_TOKEN: u32 = 1u32;
 pub const HTTP_REQUEST_AUTH_FLAG_TOKEN_FOR_CACHED_CRED: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_REQUEST_AUTH_INFO {
     pub AuthStatus: HTTP_AUTH_STATUS,
     pub SecStatus: ::windows_core_sys::HRESULT,
     pub Flags: u32,
     pub AuthType: HTTP_REQUEST_AUTH_TYPE,
-    pub AccessToken: super::super::Foundation::HANDLE,
+    pub AccessToken: ::win32_foundation_sys::HANDLE,
     pub ContextAttributes: u32,
     pub PackedContextLength: u32,
     pub PackedContextType: u32,
@@ -786,9 +747,7 @@ pub struct HTTP_REQUEST_AUTH_INFO {
     pub PackageNameLength: u16,
     pub pPackageName: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_REQUEST_AUTH_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_REQUEST_AUTH_INFO {
     fn clone(&self) -> Self {
         *self
@@ -970,7 +929,7 @@ impl ::core::clone::Clone for HTTP_REQUEST_TOKEN_BINDING_INFO {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_REQUEST_V1 {
     pub Flags: u32,
     pub ConnectionId: u64,
@@ -991,24 +950,24 @@ pub struct HTTP_REQUEST_V1 {
     pub RawConnectionId: u64,
     pub pSslInfo: *mut HTTP_SSL_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_REQUEST_V1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_REQUEST_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_REQUEST_V2 {
     pub __AnonymousBase_http_L1861_C35: HTTP_REQUEST_V1,
     pub RequestInfoCount: u16,
     pub pRequestInfo: *mut HTTP_REQUEST_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_REQUEST_V2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_REQUEST_V2 {
     fn clone(&self) -> Self {
         *self
@@ -1049,7 +1008,6 @@ pub const HttpResponseInfoTypeAuthenticationProperty: HTTP_RESPONSE_INFO_TYPE = 
 pub const HttpResponseInfoTypeQoSProperty: HTTP_RESPONSE_INFO_TYPE = 2i32;
 pub const HttpResponseInfoTypeChannelBind: HTTP_RESPONSE_INFO_TYPE = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_RESPONSE_V1 {
     pub Flags: u32,
     pub Version: HTTP_VERSION,
@@ -1060,24 +1018,19 @@ pub struct HTTP_RESPONSE_V1 {
     pub EntityChunkCount: u16,
     pub pEntityChunks: *mut HTTP_DATA_CHUNK,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_RESPONSE_V1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_RESPONSE_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_RESPONSE_V2 {
     pub __AnonymousBase_http_L2050_C36: HTTP_RESPONSE_V1,
     pub ResponseInfoCount: u16,
     pub pResponseInfo: *mut HTTP_RESPONSE_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_RESPONSE_V2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_RESPONSE_V2 {
     fn clone(&self) -> Self {
         *self
@@ -1119,20 +1072,17 @@ impl ::core::clone::Clone for HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_SERVER_AUTHENTICATION_INFO {
     pub Flags: HTTP_PROPERTY_FLAGS,
     pub AuthSchemes: u32,
-    pub ReceiveMutualAuth: super::super::Foundation::BOOLEAN,
-    pub ReceiveContextHandle: super::super::Foundation::BOOLEAN,
-    pub DisableNTLMCredentialCaching: super::super::Foundation::BOOLEAN,
+    pub ReceiveMutualAuth: ::win32_foundation_sys::BOOLEAN,
+    pub ReceiveContextHandle: ::win32_foundation_sys::BOOLEAN,
+    pub DisableNTLMCredentialCaching: ::win32_foundation_sys::BOOLEAN,
     pub ExFlags: u8,
     pub DigestParams: HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS,
     pub BasicParams: HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_SERVER_AUTHENTICATION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_SERVER_AUTHENTICATION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1220,28 +1170,28 @@ pub const HttpServiceConfigSslScopedCcsCertInfo: HTTP_SERVICE_CONFIG_ID = 11i32;
 pub const HttpServiceConfigSslScopedCcsCertInfoEx: HTTP_SERVICE_CONFIG_ID = 12i32;
 pub const HttpServiceConfigMax: HTTP_SERVICE_CONFIG_ID = 13i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM {
     pub AddrLength: u16,
     pub pAddress: *mut super::WinSock::SOCKADDR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_IP_LISTEN_QUERY {
     pub AddrCount: u32,
     pub AddrList: [super::WinSock::SOCKADDR_STORAGE; 1],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_IP_LISTEN_QUERY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_IP_LISTEN_QUERY {
     fn clone(&self) -> Self {
         *self
@@ -1266,72 +1216,72 @@ impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SETTING_SET {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_CCS_KEY {
     pub LocalAddress: super::WinSock::SOCKADDR_STORAGE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_CCS_KEY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_CCS_KEY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_CCS_QUERY {
     pub QueryDesc: HTTP_SERVICE_CONFIG_QUERY_TYPE,
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_CCS_KEY,
     pub dwToken: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_CCS_QUERY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_CCS_QUERY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_CCS_QUERY_EX {
     pub QueryDesc: HTTP_SERVICE_CONFIG_QUERY_TYPE,
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_CCS_KEY,
     pub dwToken: u32,
     pub ParamType: HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_CCS_QUERY_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_CCS_QUERY_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_CCS_SET {
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_CCS_KEY,
     pub ParamDesc: HTTP_SERVICE_CONFIG_SSL_PARAM,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_CCS_SET {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_CCS_SET {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_CCS_SET_EX {
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_CCS_KEY,
     pub ParamDesc: HTTP_SERVICE_CONFIG_SSL_PARAM_EX,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_CCS_SET_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_CCS_SET_EX {
     fn clone(&self) -> Self {
         *self
@@ -1352,26 +1302,26 @@ pub const HTTP_SERVICE_CONFIG_SSL_FLAG_NO_RAW_FILTER: u32 = 4u32;
 pub const HTTP_SERVICE_CONFIG_SSL_FLAG_REJECT: u32 = 8u32;
 pub const HTTP_SERVICE_CONFIG_SSL_FLAG_USE_DS_MAPPER: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_KEY {
     pub pIpPort: *mut super::WinSock::SOCKADDR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_KEY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_KEY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_KEY_EX {
     pub IpPort: super::WinSock::SOCKADDR_STORAGE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_KEY_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_KEY_EX {
     fn clone(&self) -> Self {
         *self
@@ -1424,132 +1374,132 @@ impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_PARAM_EX_0 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_QUERY {
     pub QueryDesc: HTTP_SERVICE_CONFIG_QUERY_TYPE,
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_KEY,
     pub dwToken: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_QUERY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_QUERY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_QUERY_EX {
     pub QueryDesc: HTTP_SERVICE_CONFIG_QUERY_TYPE,
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_KEY_EX,
     pub dwToken: u32,
     pub ParamType: HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_QUERY_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_QUERY_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_SET {
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_KEY,
     pub ParamDesc: HTTP_SERVICE_CONFIG_SSL_PARAM,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_SET {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_SET {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_SET_EX {
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_KEY_EX,
     pub ParamDesc: HTTP_SERVICE_CONFIG_SSL_PARAM_EX,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_SET_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_SET_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_SNI_KEY {
     pub IpPort: super::WinSock::SOCKADDR_STORAGE,
     pub Host: ::windows_core_sys::PWSTR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_SNI_KEY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_SNI_KEY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_SNI_QUERY {
     pub QueryDesc: HTTP_SERVICE_CONFIG_QUERY_TYPE,
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_SNI_KEY,
     pub dwToken: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_SNI_QUERY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_SNI_QUERY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_SNI_QUERY_EX {
     pub QueryDesc: HTTP_SERVICE_CONFIG_QUERY_TYPE,
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_SNI_KEY,
     pub dwToken: u32,
     pub ParamType: HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_SNI_QUERY_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_SNI_QUERY_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_SNI_SET {
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_SNI_KEY,
     pub ParamDesc: HTTP_SERVICE_CONFIG_SSL_PARAM,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_SNI_SET {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_SNI_SET {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_SERVICE_CONFIG_SSL_SNI_SET_EX {
     pub KeyDesc: HTTP_SERVICE_CONFIG_SSL_SNI_KEY,
     pub ParamDesc: HTTP_SERVICE_CONFIG_SSL_PARAM_EX,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_SERVICE_CONFIG_SSL_SNI_SET_EX {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_SSL_SNI_SET_EX {
     fn clone(&self) -> Self {
         *self
@@ -1613,24 +1563,20 @@ impl ::core::clone::Clone for HTTP_SERVICE_CONFIG_URLACL_SET {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_SSL_CLIENT_CERT_INFO {
     pub CertFlags: u32,
     pub CertEncodedSize: u32,
     pub pCertEncoded: *mut u8,
-    pub Token: super::super::Foundation::HANDLE,
-    pub CertDeniedByMapper: super::super::Foundation::BOOLEAN,
+    pub Token: ::win32_foundation_sys::HANDLE,
+    pub CertDeniedByMapper: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_SSL_CLIENT_CERT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_SSL_CLIENT_CERT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTTP_SSL_INFO {
     pub ServerCertKeySize: u16,
     pub ConnectionKeySize: u16,
@@ -1641,9 +1587,7 @@ pub struct HTTP_SSL_INFO {
     pub pClientCertInfo: *mut HTTP_SSL_CLIENT_CERT_INFO,
     pub SslClientCertNegotiated: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTTP_SSL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTTP_SSL_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1723,14 +1667,14 @@ impl ::core::clone::Clone for HTTP_TLS_SESSION_TICKET_KEYS_PARAM {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct HTTP_TRANSPORT_ADDRESS {
     pub pRemoteAddress: *mut super::WinSock::SOCKADDR,
     pub pLocalAddress: *mut super::WinSock::SOCKADDR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for HTTP_TRANSPORT_ADDRESS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for HTTP_TRANSPORT_ADDRESS {
     fn clone(&self) -> Self {
         *self

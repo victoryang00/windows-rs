@@ -295,14 +295,13 @@ impl ::core::fmt::Debug for XINPUT_VIRTUAL_KEY {
         f.debug_tuple("XINPUT_VIRTUAL_KEY").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn XInputEnable<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(enable: Param0) {
+pub unsafe fn XInputEnable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(enable: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn XInputEnable(enable: super::super::super::Foundation::BOOL);
+            fn XInputEnable(enable: ::win32_foundation::BOOL);
         }
         XInputEnable(enable.into_param().abi())
     }

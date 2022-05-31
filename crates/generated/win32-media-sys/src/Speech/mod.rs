@@ -651,17 +651,14 @@ pub const SPESF_NONE: SPENDSRSTREAMFLAGS = 0i32;
 pub const SPESF_STREAM_RELEASED: SPENDSRSTREAMFLAGS = 1i32;
 pub const SPESF_EMULATED: SPENDSRSTREAMFLAGS = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SPEVENT {
     pub _bitfield: i32,
     pub ulStreamNum: u32,
     pub ullAudioStreamOffset: u64,
-    pub wParam: super::super::Foundation::WPARAM,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub wParam: ::win32_foundation_sys::WPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SPEVENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SPEVENT {
     fn clone(&self) -> Self {
         *self
@@ -709,18 +706,15 @@ pub const SPEI_RESERVED1: SPEVENTENUM = 30i32;
 pub const SPEI_RESERVED2: SPEVENTENUM = 33i32;
 pub const SPEI_RESERVED3: SPEVENTENUM = 63i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SPEVENTEX {
     pub _bitfield: i32,
     pub ulStreamNum: u32,
     pub ullAudioStreamOffset: u64,
-    pub wParam: super::super::Foundation::WPARAM,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub wParam: ::win32_foundation_sys::WPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub ullAudioTimeOffset: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SPEVENTEX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SPEVENTEX {
     fn clone(&self) -> Self {
         *self
@@ -840,8 +834,7 @@ impl ::core::clone::Clone for SPNORMALIZATIONLIST {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type SPNOTIFYCALLBACK = ::core::option::Option<unsafe extern "system" fn(wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM)>;
+pub type SPNOTIFYCALLBACK = ::core::option::Option<unsafe extern "system" fn(wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM)>;
 pub type SPPARTOFSPEECH = i32;
 pub const SPPS_NotOverriden: SPPARTOFSPEECH = -1i32;
 pub const SPPS_Unknown: SPPARTOFSPEECH = 0i32;
@@ -854,15 +847,15 @@ pub const SPPS_Noncontent: SPPARTOFSPEECH = 24576i32;
 pub const SPPS_LMA: SPPARTOFSPEECH = 28672i32;
 pub const SPPS_SuppressWord: SPPARTOFSPEECH = 61440i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct SPPHRASE {
     pub __AnonymousBase_sapi53_L5821_C34: SPPHRASE_50,
     pub pSML: ::windows_core_sys::PWSTR,
     pub pSemanticErrorInfo: *mut SPSEMANTICERRORINFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for SPPHRASE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for SPPHRASE {
     fn clone(&self) -> Self {
         *self
@@ -892,12 +885,12 @@ impl ::core::clone::Clone for SPPHRASEELEMENT {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct SPPHRASEPROPERTY {
     pub pszName: ::windows_core_sys::PCWSTR,
     pub Anonymous: SPPHRASEPROPERTY_0,
     pub pszValue: ::windows_core_sys::PCWSTR,
-    pub vValue: super::super::System::Com::VARIANT,
+    pub vValue: ::win32_system_sys::Com::VARIANT,
     pub ulFirstElement: u32,
     pub ulCountOfElements: u32,
     pub pNextSibling: *const SPPHRASEPROPERTY,
@@ -905,38 +898,38 @@ pub struct SPPHRASEPROPERTY {
     pub SREngineConfidence: f32,
     pub Confidence: i8,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for SPPHRASEPROPERTY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for SPPHRASEPROPERTY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub union SPPHRASEPROPERTY_0 {
     pub ulId: u32,
     pub Anonymous: SPPHRASEPROPERTY_0_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for SPPHRASEPROPERTY_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for SPPHRASEPROPERTY_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct SPPHRASEPROPERTY_0_0 {
     pub bType: u8,
     pub bReserved: u8,
     pub usArrayIndex: u16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for SPPHRASEPROPERTY_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for SPPHRASEPROPERTY_0_0 {
     fn clone(&self) -> Self {
         *self
@@ -978,7 +971,7 @@ impl ::core::clone::Clone for SPPHRASERULE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct SPPHRASE_50 {
     pub cbSize: u32,
     pub LangID: u16,
@@ -998,9 +991,9 @@ pub struct SPPHRASE_50 {
     pub ulSREnginePrivateDataSize: u32,
     pub pSREnginePrivateData: *const u8,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for SPPHRASE_50 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for SPPHRASE_50 {
     fn clone(&self) -> Self {
         *self
@@ -1009,16 +1002,16 @@ impl ::core::clone::Clone for SPPHRASE_50 {
 pub type SPPRONUNCIATIONFLAGS = i32;
 pub const ePRONFLAG_USED: SPPRONUNCIATIONFLAGS = 1i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct SPPROPERTYINFO {
     pub pszName: ::windows_core_sys::PCWSTR,
     pub ulId: u32,
     pub pszValue: ::windows_core_sys::PCWSTR,
-    pub vValue: super::super::System::Com::VARIANT,
+    pub vValue: ::win32_system_sys::Com::VARIANT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for SPPROPERTYINFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for SPPROPERTYINFO {
     fn clone(&self) -> Self {
         *self
@@ -1074,16 +1067,13 @@ impl ::core::clone::Clone for SPRECOGNIZERSTATUS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SPRECORESULTTIMES {
-    pub ftStreamTime: super::super::Foundation::FILETIME,
+    pub ftStreamTime: ::win32_foundation_sys::FILETIME,
     pub ullLength: u64,
     pub dwTickCount: u32,
     pub ullStart: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SPRECORESULTTIMES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SPRECORESULTTIMES {
     fn clone(&self) -> Self {
         *self

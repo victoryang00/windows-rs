@@ -11,15 +11,15 @@ pub struct ILanguageFont_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FontFamily: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "UI_Text")]
-    pub FontWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::UI::Text::FontWeight) -> ::windows_core::HRESULT,
+    pub FontWeight: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Text::FontWeight) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_Text"))]
     FontWeight: usize,
     #[cfg(feature = "UI_Text")]
-    pub FontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::UI::Text::FontStretch) -> ::windows_core::HRESULT,
+    pub FontStretch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Text::FontStretch) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_Text"))]
     FontStretch: usize,
     #[cfg(feature = "UI_Text")]
-    pub FontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::UI::Text::FontStyle) -> ::windows_core::HRESULT,
+    pub FontStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Text::FontStyle) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_Text"))]
     FontStyle: usize,
     pub ScaleFactor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
@@ -71,27 +71,27 @@ impl LanguageFont {
         }
     }
     #[cfg(feature = "UI_Text")]
-    pub fn FontWeight(&self) -> ::windows_core::Result<super::super::UI::Text::FontWeight> {
+    pub fn FontWeight(&self) -> ::windows_core::Result<::winrt_ui::Text::FontWeight> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::UI::Text::FontWeight>::zeroed();
-            (::windows_core::Interface::vtable(this).FontWeight)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Text::FontWeight>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::Text::FontWeight>::zeroed();
+            (::windows_core::Interface::vtable(this).FontWeight)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Text::FontWeight>(result__)
         }
     }
     #[cfg(feature = "UI_Text")]
-    pub fn FontStretch(&self) -> ::windows_core::Result<super::super::UI::Text::FontStretch> {
+    pub fn FontStretch(&self) -> ::windows_core::Result<::winrt_ui::Text::FontStretch> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::UI::Text::FontStretch>::zeroed();
-            (::windows_core::Interface::vtable(this).FontStretch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Text::FontStretch>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::Text::FontStretch>::zeroed();
+            (::windows_core::Interface::vtable(this).FontStretch)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Text::FontStretch>(result__)
         }
     }
     #[cfg(feature = "UI_Text")]
-    pub fn FontStyle(&self) -> ::windows_core::Result<super::super::UI::Text::FontStyle> {
+    pub fn FontStyle(&self) -> ::windows_core::Result<::winrt_ui::Text::FontStyle> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::UI::Text::FontStyle>::zeroed();
-            (::windows_core::Interface::vtable(this).FontStyle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Text::FontStyle>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::Text::FontStyle>::zeroed();
+            (::windows_core::Interface::vtable(this).FontStyle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Text::FontStyle>(result__)
         }
     }
     pub fn ScaleFactor(&self) -> ::windows_core::Result<f64> {

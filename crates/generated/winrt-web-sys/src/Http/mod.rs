@@ -29,18 +29,15 @@ pub type HttpMethod = *mut ::core::ffi::c_void;
 pub type HttpMultipartContent = *mut ::core::ffi::c_void;
 pub type HttpMultipartFormDataContent = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct HttpProgress {
     pub Stage: HttpProgressStage,
     pub BytesSent: u64,
-    pub TotalBytesToSend: super::super::Foundation::IReference,
+    pub TotalBytesToSend: ::winrt_foundation_sys::IReference,
     pub BytesReceived: u64,
-    pub TotalBytesToReceive: super::super::Foundation::IReference,
+    pub TotalBytesToReceive: ::winrt_foundation_sys::IReference,
     pub Retries: u32,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for HttpProgress {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for HttpProgress {
     fn clone(&self) -> Self {
         *self

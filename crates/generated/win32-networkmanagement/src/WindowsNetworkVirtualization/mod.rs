@@ -29,7 +29,7 @@ impl ::core::fmt::Debug for WNV_CA_NOTIFICATION_TYPE {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct WNV_CUSTOMER_ADDRESS_CHANGE_PARAM {
-    pub MACAddress: super::super::Networking::WinSock::DL_EUI48,
+    pub MACAddress: ::win32_networking::WinSock::DL_EUI48,
     pub CAFamily: u16,
     pub CA: WNV_IP_ADDRESS,
     pub VirtualSubnetId: u32,
@@ -97,8 +97,8 @@ impl ::core::default::Default for WNV_IP_ADDRESS {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub union WNV_IP_ADDRESS_0 {
-    pub v4: super::super::Networking::WinSock::IN_ADDR,
-    pub v6: super::super::Networking::WinSock::IN6_ADDR,
+    pub v4: ::win32_networking::WinSock::IN_ADDR,
+    pub v6: ::win32_networking::WinSock::IN6_ADDR,
     pub Addr: [u8; 16],
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
@@ -345,7 +345,7 @@ impl ::core::default::Default for WNV_POLICY_MISMATCH_PARAM {
 pub struct WNV_PROVIDER_ADDRESS_CHANGE_PARAM {
     pub PAFamily: u16,
     pub PA: WNV_IP_ADDRESS,
-    pub AddressState: super::super::Networking::WinSock::NL_DAD_STATE,
+    pub AddressState: ::win32_networking::WinSock::NL_DAD_STATE,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for WNV_PROVIDER_ADDRESS_CHANGE_PARAM {}
@@ -410,28 +410,27 @@ impl ::core::default::Default for WNV_REDIRECT_PARAM {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WnvOpen() -> super::super::Foundation::HANDLE {
+pub unsafe fn WnvOpen() -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WnvOpen() -> super::super::Foundation::HANDLE;
+            fn WnvOpen() -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(WnvOpen())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WnvRequestNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(wnvhandle: Param0, notificationparam: *mut WNV_NOTIFICATION_PARAM, overlapped: *mut super::super::System::IO::OVERLAPPED, bytestransferred: *mut u32) -> u32 {
+pub unsafe fn WnvRequestNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(wnvhandle: Param0, notificationparam: *mut WNV_NOTIFICATION_PARAM, overlapped: *mut ::win32_system::IO::OVERLAPPED, bytestransferred: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WnvRequestNotification(wnvhandle: super::super::Foundation::HANDLE, notificationparam: *mut WNV_NOTIFICATION_PARAM, overlapped: *mut super::super::System::IO::OVERLAPPED, bytestransferred: *mut u32) -> u32;
+            fn WnvRequestNotification(wnvhandle: ::win32_foundation::HANDLE, notificationparam: *mut WNV_NOTIFICATION_PARAM, overlapped: *mut ::win32_system::IO::OVERLAPPED, bytestransferred: *mut u32) -> u32;
         }
         ::core::mem::transmute(WnvRequestNotification(wnvhandle.into_param().abi(), ::core::mem::transmute(notificationparam), ::core::mem::transmute(overlapped), ::core::mem::transmute(bytestransferred)))
     }

@@ -28,8 +28,7 @@ extern "system" {
     pub fn D3DReflectLibrary(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, riid: *const ::windows_core_sys::GUID, ppreflector: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn D3DSetBlobPart(psrcdata: *const ::core::ffi::c_void, srcdatasize: usize, part: D3D_BLOB_PART, flags: u32, ppart: *const ::core::ffi::c_void, partsize: usize, ppnewshader: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3DStripShader(pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, ustripflags: u32, ppstrippedblob: *mut super::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn D3DWriteBlobToFile(pblob: super::ID3DBlob, pfilename: ::windows_core_sys::PCWSTR, boverwrite: super::super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn D3DWriteBlobToFile(pblob: super::ID3DBlob, pfilename: ::windows_core_sys::PCWSTR, boverwrite: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
 }
 pub const D3DCOMPILER_DLL_A: &str = "d3dcompiler_47.dll";
 pub const D3DCOMPILER_DLL_W: &str = "d3dcompiler_47.dll";

@@ -1,14 +1,11 @@
 pub const ComponentTypeEnforcementClientRp: u32 = 2u32;
 pub const ComponentTypeEnforcementClientSoH: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CorrelationId {
     pub connId: ::windows_core_sys::GUID,
-    pub timeStamp: super::super::Foundation::FILETIME,
+    pub timeStamp: ::win32_foundation_sys::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CorrelationId {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CorrelationId {
     fn clone(&self) -> Self {
         *self
@@ -38,13 +35,10 @@ pub const failureCategoryClientCommunication: FailureCategory = 3i32;
 pub const failureCategoryServerComponent: FailureCategory = 4i32;
 pub const failureCategoryServerCommunication: FailureCategory = 5i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FailureCategoryMapping {
-    pub mappingCompliance: [super::super::Foundation::BOOL; 5],
+    pub mappingCompliance: [::win32_foundation_sys::BOOL; 5],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FailureCategoryMapping {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FailureCategoryMapping {
     fn clone(&self) -> Self {
         *self
@@ -88,31 +82,25 @@ impl ::core::clone::Clone for Ipv6Address {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IsolationInfo {
     pub isolationState: IsolationState,
-    pub probEndTime: super::super::Foundation::FILETIME,
+    pub probEndTime: ::win32_foundation_sys::FILETIME,
     pub failureUrl: CountedString,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IsolationInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IsolationInfo {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IsolationInfoEx {
     pub isolationState: IsolationState,
     pub extendedIsolationState: ExtendedIsolationState,
-    pub probEndTime: super::super::Foundation::FILETIME,
+    pub probEndTime: ::win32_foundation_sys::FILETIME,
     pub failureUrl: CountedString,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IsolationInfoEx {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IsolationInfoEx {
     fn clone(&self) -> Self {
         *self
@@ -123,7 +111,6 @@ pub const isolationStateNotRestricted: IsolationState = 1i32;
 pub const isolationStateInProbation: IsolationState = 2i32;
 pub const isolationStateRestrictedAccess: IsolationState = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NapComponentRegistrationInfo {
     pub id: u32,
     pub friendlyName: CountedString,
@@ -132,12 +119,10 @@ pub struct NapComponentRegistrationInfo {
     pub vendorName: CountedString,
     pub infoClsid: ::windows_core_sys::GUID,
     pub configClsid: ::windows_core_sys::GUID,
-    pub registrationDate: super::super::Foundation::FILETIME,
+    pub registrationDate: ::win32_foundation_sys::FILETIME,
     pub componentType: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NapComponentRegistrationInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NapComponentRegistrationInfo {
     fn clone(&self) -> Self {
         *self

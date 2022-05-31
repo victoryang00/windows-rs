@@ -779,13 +779,13 @@ pub struct IMediaEncodingProfileStatics_Vtbl {
     pub CreateWma: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, quality: AudioEncodingQuality, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateMp4: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, quality: VideoEncodingQuality, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateWmv: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, quality: VideoEncodingQuality, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub CreateFromFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     CreateFromFileAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub CreateFromStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     CreateFromStreamAsync: usize,
 }
 #[doc(hidden)]
@@ -1469,42 +1469,42 @@ impl MediaEncodingProfile {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Media_Core"))]
-    pub fn SetAudioTracks<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::Core::AudioStreamDescriptor>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetAudioTracks<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::Core::AudioStreamDescriptor>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMediaEncodingProfile2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetAudioTracks)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Media_Core"))]
-    pub fn GetAudioTracks(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::Core::AudioStreamDescriptor>> {
+    pub fn GetAudioTracks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Core::AudioStreamDescriptor>> {
         let this = &::windows_core::Interface::cast::<IMediaEncodingProfile2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAudioTracks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::Core::AudioStreamDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).GetAudioTracks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::Core::AudioStreamDescriptor>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Media_Core"))]
-    pub fn SetVideoTracks<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::Core::VideoStreamDescriptor>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetVideoTracks<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::Core::VideoStreamDescriptor>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMediaEncodingProfile2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetVideoTracks)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Media_Core"))]
-    pub fn GetVideoTracks(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::Core::VideoStreamDescriptor>> {
+    pub fn GetVideoTracks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Core::VideoStreamDescriptor>> {
         let this = &::windows_core::Interface::cast::<IMediaEncodingProfile2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetVideoTracks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::Core::VideoStreamDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).GetVideoTracks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::Core::VideoStreamDescriptor>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Media_Core"))]
-    pub fn SetTimedMetadataTracks<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::Core::TimedMetadataStreamDescriptor>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetTimedMetadataTracks<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::Core::TimedMetadataStreamDescriptor>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMediaEncodingProfile3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetTimedMetadataTracks)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Media_Core"))]
-    pub fn GetTimedMetadataTracks(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::Core::TimedMetadataStreamDescriptor>> {
+    pub fn GetTimedMetadataTracks(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::Core::TimedMetadataStreamDescriptor>> {
         let this = &::windows_core::Interface::cast::<IMediaEncodingProfile3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTimedMetadataTracks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::Core::TimedMetadataStreamDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).GetTimedMetadataTracks)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::Core::TimedMetadataStreamDescriptor>>(result__)
         }
     }
     pub fn CreateM4a(quality: AudioEncodingQuality) -> ::windows_core::Result<MediaEncodingProfile> {
@@ -1537,18 +1537,18 @@ impl MediaEncodingProfile {
             (::windows_core::Interface::vtable(this).CreateWmv)(::windows_core::Interface::as_raw(this), quality, result__.as_mut_ptr()).from_abi::<MediaEncodingProfile>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn CreateFromFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MediaEncodingProfile>> {
+    #[cfg(feature = "Storage")]
+    pub fn CreateFromFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MediaEncodingProfile>> {
         Self::IMediaEncodingProfileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateFromFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MediaEncodingProfile>>(result__)
+            (::windows_core::Interface::vtable(this).CreateFromFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MediaEncodingProfile>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn CreateFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(stream: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<MediaEncodingProfile>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn CreateFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(stream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MediaEncodingProfile>> {
         Self::IMediaEncodingProfileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateFromStreamAsync)(::windows_core::Interface::as_raw(this), stream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<MediaEncodingProfile>>(result__)
+            (::windows_core::Interface::vtable(this).CreateFromStreamAsync)(::windows_core::Interface::as_raw(this), stream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MediaEncodingProfile>>(result__)
         })
     }
     pub fn CreateWav(quality: AudioEncodingQuality) -> ::windows_core::Result<MediaEncodingProfile> {
@@ -2117,11 +2117,11 @@ impl MediaPropertySet {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -2149,11 +2149,11 @@ impl MediaPropertySet {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetView(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
+    pub fn GetView(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).GetView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::GUID, ::windows_core::IInspectable>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -2205,8 +2205,8 @@ unsafe impl ::windows_core::RuntimeType for MediaPropertySet {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for MediaPropertySet {
-    type Vtable = super::super::Foundation::Collections::IMap_Vtbl<::windows_core::GUID, ::windows_core::IInspectable>;
-    const IID: ::windows_core::GUID = <super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IMap_Vtbl<::windows_core::GUID, ::windows_core::IInspectable>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for MediaPropertySet {
@@ -2214,16 +2214,16 @@ impl ::windows_core::RuntimeName for MediaPropertySet {
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for MediaPropertySet {
-    type Item = super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &MediaPropertySet {
-    type Item = super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type Item = ::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -2277,55 +2277,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Med
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<MediaPropertySet> for super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>> {
+impl ::core::convert::TryFrom<MediaPropertySet> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>> {
     type Error = ::windows_core::Error;
     fn try_from(value: MediaPropertySet) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&MediaPropertySet> for super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>> {
+impl ::core::convert::TryFrom<&MediaPropertySet> for ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>> {
     type Error = ::windows_core::Error;
     fn try_from(value: &MediaPropertySet) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> for MediaPropertySet {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> for MediaPropertySet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> for &MediaPropertySet {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> for &MediaPropertySet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::GUID, ::windows_core::IInspectable>>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<MediaPropertySet> for super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable> {
+impl ::core::convert::TryFrom<MediaPropertySet> for ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: MediaPropertySet) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&MediaPropertySet> for super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable> {
+impl ::core::convert::TryFrom<&MediaPropertySet> for ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable> {
     type Error = ::windows_core::Error;
     fn try_from(value: &MediaPropertySet) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> for MediaPropertySet {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> for MediaPropertySet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> for &MediaPropertySet {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> for &MediaPropertySet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IMap<::windows_core::GUID, ::windows_core::IInspectable>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]

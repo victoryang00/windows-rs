@@ -1,169 +1,100 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeAsyncRecvDone(hclientrequest: super::super::Foundation::HANDLE, action: u32) -> u32;
+    pub fn PxeAsyncRecvDone(hclientrequest: ::win32_foundation_sys::HANDLE, action: u32) -> u32;
     pub fn PxeDhcpAppendOption(preplypacket: *mut ::core::ffi::c_void, umaxreplypacketlen: u32, pureplypacketlen: *mut u32, boption: u8, boptionlen: u8, pvalue: *const ::core::ffi::c_void) -> u32;
     pub fn PxeDhcpAppendOptionRaw(preplypacket: *mut ::core::ffi::c_void, umaxreplypacketlen: u32, pureplypacketlen: *mut u32, ubufferlen: u16, pbuffer: *const ::core::ffi::c_void) -> u32;
     pub fn PxeDhcpGetOptionValue(ppacket: *const ::core::ffi::c_void, upacketlen: u32, uinstance: u32, boption: u8, pboptionlen: *mut u8, ppoptionvalue: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn PxeDhcpGetVendorOptionValue(ppacket: *const ::core::ffi::c_void, upacketlen: u32, boption: u8, uinstance: u32, pboptionlen: *mut u8, ppoptionvalue: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn PxeDhcpInitialize(precvpacket: *const ::core::ffi::c_void, urecvpacketlen: u32, preplypacket: *mut ::core::ffi::c_void, umaxreplypacketlen: u32, pureplypacketlen: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeDhcpIsValid(ppacket: *const ::core::ffi::c_void, upacketlen: u32, brequestpacket: super::super::Foundation::BOOL, pbpxeoptionpresent: *mut super::super::Foundation::BOOL) -> u32;
+    pub fn PxeDhcpIsValid(ppacket: *const ::core::ffi::c_void, upacketlen: u32, brequestpacket: ::win32_foundation_sys::BOOL, pbpxeoptionpresent: *mut ::win32_foundation_sys::BOOL) -> u32;
     pub fn PxeDhcpv6AppendOption(preply: *mut ::core::ffi::c_void, cbreply: u32, pcbreplyused: *mut u32, woptiontype: u16, cboption: u16, poption: *const ::core::ffi::c_void) -> u32;
     pub fn PxeDhcpv6AppendOptionRaw(preply: *mut ::core::ffi::c_void, cbreply: u32, pcbreplyused: *mut u32, cbbuffer: u16, pbuffer: *const ::core::ffi::c_void) -> u32;
     pub fn PxeDhcpv6CreateRelayRepl(prelaymessages: *const PXE_DHCPV6_NESTED_RELAY_MESSAGE, nrelaymessages: u32, pinnerpacket: *const u8, cbinnerpacket: u32, preplybuffer: *mut ::core::ffi::c_void, cbreplybuffer: u32, pcbreplybuffer: *mut u32) -> u32;
     pub fn PxeDhcpv6GetOptionValue(ppacket: *const ::core::ffi::c_void, upacketlen: u32, uinstance: u32, woption: u16, pwoptionlen: *mut u16, ppoptionvalue: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn PxeDhcpv6GetVendorOptionValue(ppacket: *const ::core::ffi::c_void, upacketlen: u32, dwenterprisenumber: u32, woption: u16, uinstance: u32, pwoptionlen: *mut u16, ppoptionvalue: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn PxeDhcpv6Initialize(prequest: *const ::core::ffi::c_void, cbrequest: u32, preply: *mut ::core::ffi::c_void, cbreply: u32, pcbreplyused: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeDhcpv6IsValid(ppacket: *const ::core::ffi::c_void, upacketlen: u32, brequestpacket: super::super::Foundation::BOOL, pbpxeoptionpresent: *mut super::super::Foundation::BOOL) -> u32;
+    pub fn PxeDhcpv6IsValid(ppacket: *const ::core::ffi::c_void, upacketlen: u32, brequestpacket: ::win32_foundation_sys::BOOL, pbpxeoptionpresent: *mut ::win32_foundation_sys::BOOL) -> u32;
     pub fn PxeDhcpv6ParseRelayForw(prelayforwpacket: *const ::core::ffi::c_void, urelayforwpacketlen: u32, prelaymessages: *mut PXE_DHCPV6_NESTED_RELAY_MESSAGE, nrelaymessages: u32, pnrelaymessages: *mut u32, ppinnerpacket: *mut *mut u8, pcbinnerpacket: *mut u32) -> u32;
     pub fn PxeGetServerInfo(uinfotype: u32, pbuffer: *mut ::core::ffi::c_void, ubufferlen: u32) -> u32;
     pub fn PxeGetServerInfoEx(uinfotype: u32, pbuffer: *mut ::core::ffi::c_void, ubufferlen: u32, pubufferused: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxePacketAllocate(hprovider: super::super::Foundation::HANDLE, hclientrequest: super::super::Foundation::HANDLE, usize: u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxePacketFree(hprovider: super::super::Foundation::HANDLE, hclientrequest: super::super::Foundation::HANDLE, ppacket: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeProviderEnumClose(henum: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeProviderEnumFirst(phenum: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeProviderEnumNext(henum: super::super::Foundation::HANDLE, ppprovider: *mut *mut PXE_PROVIDER) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn PxePacketAllocate(hprovider: ::win32_foundation_sys::HANDLE, hclientrequest: ::win32_foundation_sys::HANDLE, usize: u32) -> *mut ::core::ffi::c_void;
+    pub fn PxePacketFree(hprovider: ::win32_foundation_sys::HANDLE, hclientrequest: ::win32_foundation_sys::HANDLE, ppacket: *const ::core::ffi::c_void) -> u32;
+    pub fn PxeProviderEnumClose(henum: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn PxeProviderEnumFirst(phenum: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn PxeProviderEnumNext(henum: ::win32_foundation_sys::HANDLE, ppprovider: *mut *mut PXE_PROVIDER) -> u32;
     pub fn PxeProviderFreeInfo(pprovider: *const PXE_PROVIDER) -> u32;
     pub fn PxeProviderQueryIndex(pszprovidername: ::windows_core_sys::PCWSTR, puindex: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn PxeProviderRegister(pszprovidername: ::windows_core_sys::PCWSTR, pszmodulepath: ::windows_core_sys::PCWSTR, index: u32, biscritical: super::super::Foundation::BOOL, phproviderkey: *mut super::Registry::HKEY) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeProviderSetAttribute(hprovider: super::super::Foundation::HANDLE, attribute: u32, pparameterbuffer: *const ::core::ffi::c_void, uparamlen: u32) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn PxeProviderRegister(pszprovidername: ::windows_core_sys::PCWSTR, pszmodulepath: ::windows_core_sys::PCWSTR, index: u32, biscritical: ::win32_foundation_sys::BOOL, phproviderkey: *mut super::Registry::HKEY) -> u32;
+    pub fn PxeProviderSetAttribute(hprovider: ::win32_foundation_sys::HANDLE, attribute: u32, pparameterbuffer: *const ::core::ffi::c_void, uparamlen: u32) -> u32;
     pub fn PxeProviderUnRegister(pszprovidername: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeRegisterCallback(hprovider: super::super::Foundation::HANDLE, callbacktype: u32, pcallbackfunction: *const ::core::ffi::c_void, pcontext: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeSendReply(hclientrequest: super::super::Foundation::HANDLE, ppacket: *const ::core::ffi::c_void, upacketlen: u32, paddress: *const PXE_ADDRESS) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeTrace(hprovider: super::super::Foundation::HANDLE, severity: u32, pszformat: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeTraceV(hprovider: super::super::Foundation::HANDLE, severity: u32, pszformat: ::windows_core_sys::PCWSTR, params: *const i8) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsBpAddOption(hhandle: super::super::Foundation::HANDLE, uoption: u32, uvaluelen: u32, pvalue: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsBpCloseHandle(hhandle: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsBpGetOptionBuffer(hhandle: super::super::Foundation::HANDLE, ubufferlen: u32, pbuffer: *mut ::core::ffi::c_void, pubytes: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsBpInitialize(bpackettype: u8, phhandle: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsBpParseInitialize(ppacket: *const ::core::ffi::c_void, upacketlen: u32, pbpackettype: *mut u8, phhandle: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsBpParseInitializev6(ppacket: *const ::core::ffi::c_void, upacketlen: u32, pbpackettype: *mut u8, phhandle: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsBpQueryOption(hhandle: super::super::Foundation::HANDLE, uoption: u32, uvaluelen: u32, pvalue: *mut ::core::ffi::c_void, pubytes: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliAuthorizeSession(hsession: super::super::Foundation::HANDLE, pcred: *const WDS_CLI_CRED) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliCancelTransfer(htransfer: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliClose(handle: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliCreateSession(pwszserver: ::windows_core_sys::PCWSTR, pcred: *const WDS_CLI_CRED, phsession: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliFindFirstImage(hsession: super::super::Foundation::HANDLE, phfindhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliFindNextImage(handle: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn PxeRegisterCallback(hprovider: ::win32_foundation_sys::HANDLE, callbacktype: u32, pcallbackfunction: *const ::core::ffi::c_void, pcontext: *const ::core::ffi::c_void) -> u32;
+    pub fn PxeSendReply(hclientrequest: ::win32_foundation_sys::HANDLE, ppacket: *const ::core::ffi::c_void, upacketlen: u32, paddress: *const PXE_ADDRESS) -> u32;
+    pub fn PxeTrace(hprovider: ::win32_foundation_sys::HANDLE, severity: u32, pszformat: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn PxeTraceV(hprovider: ::win32_foundation_sys::HANDLE, severity: u32, pszformat: ::windows_core_sys::PCWSTR, params: *const i8) -> u32;
+    pub fn WdsBpAddOption(hhandle: ::win32_foundation_sys::HANDLE, uoption: u32, uvaluelen: u32, pvalue: *const ::core::ffi::c_void) -> u32;
+    pub fn WdsBpCloseHandle(hhandle: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn WdsBpGetOptionBuffer(hhandle: ::win32_foundation_sys::HANDLE, ubufferlen: u32, pbuffer: *mut ::core::ffi::c_void, pubytes: *mut u32) -> u32;
+    pub fn WdsBpInitialize(bpackettype: u8, phhandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn WdsBpParseInitialize(ppacket: *const ::core::ffi::c_void, upacketlen: u32, pbpackettype: *mut u8, phhandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn WdsBpParseInitializev6(ppacket: *const ::core::ffi::c_void, upacketlen: u32, pbpackettype: *mut u8, phhandle: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn WdsBpQueryOption(hhandle: ::win32_foundation_sys::HANDLE, uoption: u32, uvaluelen: u32, pvalue: *mut ::core::ffi::c_void, pubytes: *mut u32) -> u32;
+    pub fn WdsCliAuthorizeSession(hsession: ::win32_foundation_sys::HANDLE, pcred: *const WDS_CLI_CRED) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliCancelTransfer(htransfer: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliClose(handle: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliCreateSession(pwszserver: ::windows_core_sys::PCWSTR, pcred: *const WDS_CLI_CRED, phsession: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliFindFirstImage(hsession: ::win32_foundation_sys::HANDLE, phfindhandle: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliFindNextImage(handle: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn WdsCliFreeStringArray(ppwszarray: *mut ::windows_core_sys::PWSTR, ulcount: u32) -> ::windows_core_sys::HRESULT;
     pub fn WdsCliGetDriverQueryXml(pwszwindirpath: ::windows_core_sys::PCWSTR, ppwszdriverquery: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetEnumerationFlags(handle: super::super::Foundation::HANDLE, pdwflags: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageArchitecture(hifh: super::super::Foundation::HANDLE, pdwvalue: *mut CPU_ARCHITECTURE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageDescription(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageFiles(hifh: super::super::Foundation::HANDLE, pppwszfiles: *mut *mut ::windows_core_sys::PWSTR, pdwcount: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageGroup(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageHalName(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageHandleFromFindHandle(findhandle: super::super::Foundation::HANDLE, phimagehandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageHandleFromTransferHandle(htransfer: super::super::Foundation::HANDLE, phimagehandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageIndex(hifh: super::super::Foundation::HANDLE, pdwvalue: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageLanguage(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageLanguages(hifh: super::super::Foundation::HANDLE, pppszvalues: *mut *mut *mut i8, pdwnumvalues: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageLastModifiedTime(hifh: super::super::Foundation::HANDLE, ppsystimevalue: *mut *mut super::super::Foundation::SYSTEMTIME) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageName(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageNamespace(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageParameter(hifh: super::super::Foundation::HANDLE, paramtype: WDS_CLI_IMAGE_PARAM_TYPE, presponse: *mut ::core::ffi::c_void, uresponselen: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImagePath(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageSize(hifh: super::super::Foundation::HANDLE, pullvalue: *mut u64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageType(hifh: super::super::Foundation::HANDLE, pimagetype: *mut WDS_CLI_IMAGE_TYPE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageVersion(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetTransferSize(hifh: super::super::Foundation::HANDLE, pullvalue: *mut u64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliInitializeLog(hsession: super::super::Foundation::HANDLE, ulclientarchitecture: CPU_ARCHITECTURE, pwszclientid: ::windows_core_sys::PCWSTR, pwszclientaddress: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliLog(hsession: super::super::Foundation::HANDLE, ulloglevel: u32, ulmessagecode: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliObtainDriverPackages(himage: super::super::Foundation::HANDLE, ppwszservername: *mut ::windows_core_sys::PWSTR, pppwszdriverpackages: *mut *mut ::windows_core_sys::PWSTR, pulcount: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliObtainDriverPackagesEx(hsession: super::super::Foundation::HANDLE, pwszmachineinfo: ::windows_core_sys::PCWSTR, ppwszservername: *mut ::windows_core_sys::PWSTR, pppwszdriverpackages: *mut *mut ::windows_core_sys::PWSTR, pulcount: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetEnumerationFlags(handle: ::win32_foundation_sys::HANDLE, pdwflags: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageArchitecture(hifh: ::win32_foundation_sys::HANDLE, pdwvalue: *mut CPU_ARCHITECTURE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageDescription(hifh: ::win32_foundation_sys::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageFiles(hifh: ::win32_foundation_sys::HANDLE, pppwszfiles: *mut *mut ::windows_core_sys::PWSTR, pdwcount: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageGroup(hifh: ::win32_foundation_sys::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageHalName(hifh: ::win32_foundation_sys::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageHandleFromFindHandle(findhandle: ::win32_foundation_sys::HANDLE, phimagehandle: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageHandleFromTransferHandle(htransfer: ::win32_foundation_sys::HANDLE, phimagehandle: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageIndex(hifh: ::win32_foundation_sys::HANDLE, pdwvalue: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageLanguage(hifh: ::win32_foundation_sys::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageLanguages(hifh: ::win32_foundation_sys::HANDLE, pppszvalues: *mut *mut *mut i8, pdwnumvalues: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageLastModifiedTime(hifh: ::win32_foundation_sys::HANDLE, ppsystimevalue: *mut *mut ::win32_foundation_sys::SYSTEMTIME) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageName(hifh: ::win32_foundation_sys::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageNamespace(hifh: ::win32_foundation_sys::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageParameter(hifh: ::win32_foundation_sys::HANDLE, paramtype: WDS_CLI_IMAGE_PARAM_TYPE, presponse: *mut ::core::ffi::c_void, uresponselen: u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImagePath(hifh: ::win32_foundation_sys::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageSize(hifh: ::win32_foundation_sys::HANDLE, pullvalue: *mut u64) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageType(hifh: ::win32_foundation_sys::HANDLE, pimagetype: *mut WDS_CLI_IMAGE_TYPE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetImageVersion(hifh: ::win32_foundation_sys::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetTransferSize(hifh: ::win32_foundation_sys::HANDLE, pullvalue: *mut u64) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliInitializeLog(hsession: ::win32_foundation_sys::HANDLE, ulclientarchitecture: CPU_ARCHITECTURE, pwszclientid: ::windows_core_sys::PCWSTR, pwszclientaddress: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliLog(hsession: ::win32_foundation_sys::HANDLE, ulloglevel: u32, ulmessagecode: u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliObtainDriverPackages(himage: ::win32_foundation_sys::HANDLE, ppwszservername: *mut ::windows_core_sys::PWSTR, pppwszdriverpackages: *mut *mut ::windows_core_sys::PWSTR, pulcount: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliObtainDriverPackagesEx(hsession: ::win32_foundation_sys::HANDLE, pwszmachineinfo: ::windows_core_sys::PCWSTR, ppwszservername: *mut ::windows_core_sys::PWSTR, pppwszdriverpackages: *mut *mut ::windows_core_sys::PWSTR, pulcount: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn WdsCliRegisterTrace(pfn: PFN_WdsCliTraceFunction) -> ::windows_core_sys::HRESULT;
     pub fn WdsCliSetTransferBufferSize(ulsizeinbytes: u32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliTransferFile(pwszserver: ::windows_core_sys::PCWSTR, pwsznamespace: ::windows_core_sys::PCWSTR, pwszremotefilepath: ::windows_core_sys::PCWSTR, pwszlocalfilepath: ::windows_core_sys::PCWSTR, dwflags: u32, dwreserved: u32, pfnwdsclicallback: PFN_WdsCliCallback, pvuserdata: *const ::core::ffi::c_void, phtransfer: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliTransferImage(himage: super::super::Foundation::HANDLE, pwszlocalpath: ::windows_core_sys::PCWSTR, dwflags: u32, dwreserved: u32, pfnwdsclicallback: PFN_WdsCliCallback, pvuserdata: *const ::core::ffi::c_void, phtransfer: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliWaitForTransfer(htransfer: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliTransferFile(pwszserver: ::windows_core_sys::PCWSTR, pwsznamespace: ::windows_core_sys::PCWSTR, pwszremotefilepath: ::windows_core_sys::PCWSTR, pwszlocalfilepath: ::windows_core_sys::PCWSTR, dwflags: u32, dwreserved: u32, pfnwdsclicallback: PFN_WdsCliCallback, pvuserdata: *const ::core::ffi::c_void, phtransfer: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliTransferImage(himage: ::win32_foundation_sys::HANDLE, pwszlocalpath: ::windows_core_sys::PCWSTR, dwflags: u32, dwreserved: u32, pfnwdsclicallback: PFN_WdsCliCallback, pvuserdata: *const ::core::ffi::c_void, phtransfer: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliWaitForTransfer(htransfer: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn WdsTransportClientAddRefBuffer(pvbuffer: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportClientCancelSession(hsessionkey: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportClientCancelSessionEx(hsessionkey: super::super::Foundation::HANDLE, dwerrorcode: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportClientCloseSession(hsessionkey: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportClientCompleteReceive(hsessionkey: super::super::Foundation::HANDLE, ulsize: u32, pulloffset: *const u64) -> u32;
+    pub fn WdsTransportClientCancelSession(hsessionkey: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn WdsTransportClientCancelSessionEx(hsessionkey: ::win32_foundation_sys::HANDLE, dwerrorcode: u32) -> u32;
+    pub fn WdsTransportClientCloseSession(hsessionkey: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn WdsTransportClientCompleteReceive(hsessionkey: ::win32_foundation_sys::HANDLE, ulsize: u32, pulloffset: *const u64) -> u32;
     pub fn WdsTransportClientInitialize() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportClientInitializeSession(psessionrequest: *const WDS_TRANSPORTCLIENT_REQUEST, pcallerdata: *const ::core::ffi::c_void, hsessionkey: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportClientQueryStatus(hsessionkey: super::super::Foundation::HANDLE, pustatus: *mut u32, puerrorcode: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportClientRegisterCallback(hsessionkey: super::super::Foundation::HANDLE, callbackid: TRANSPORTCLIENT_CALLBACK_ID, pfncallback: *const ::core::ffi::c_void) -> u32;
+    pub fn WdsTransportClientInitializeSession(psessionrequest: *const WDS_TRANSPORTCLIENT_REQUEST, pcallerdata: *const ::core::ffi::c_void, hsessionkey: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn WdsTransportClientQueryStatus(hsessionkey: ::win32_foundation_sys::HANDLE, pustatus: *mut u32, puerrorcode: *mut u32) -> u32;
+    pub fn WdsTransportClientRegisterCallback(hsessionkey: ::win32_foundation_sys::HANDLE, callbackid: TRANSPORTCLIENT_CALLBACK_ID, pfncallback: *const ::core::ffi::c_void) -> u32;
     pub fn WdsTransportClientReleaseBuffer(pvbuffer: *const ::core::ffi::c_void) -> u32;
     pub fn WdsTransportClientShutdown() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportClientStartSession(hsessionkey: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportClientWaitForCompletion(hsessionkey: super::super::Foundation::HANDLE, utimeout: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerAllocateBuffer(hprovider: super::super::Foundation::HANDLE, ulbuffersize: u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerCompleteRead(hprovider: super::super::Foundation::HANDLE, ulbytesread: u32, pvuserdata: *const ::core::ffi::c_void, hreadresult: ::windows_core_sys::HRESULT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerFreeBuffer(hprovider: super::super::Foundation::HANDLE, pvbuffer: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerRegisterCallback(hprovider: super::super::Foundation::HANDLE, callbackid: TRANSPORTPROVIDER_CALLBACK_ID, pfncallback: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerTrace(hprovider: super::super::Foundation::HANDLE, severity: u32, pwszformat: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerTraceV(hprovider: super::super::Foundation::HANDLE, severity: u32, pwszformat: ::windows_core_sys::PCWSTR, params: *const i8) -> ::windows_core_sys::HRESULT;
+    pub fn WdsTransportClientStartSession(hsessionkey: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn WdsTransportClientWaitForCompletion(hsessionkey: ::win32_foundation_sys::HANDLE, utimeout: u32) -> u32;
+    pub fn WdsTransportServerAllocateBuffer(hprovider: ::win32_foundation_sys::HANDLE, ulbuffersize: u32) -> *mut ::core::ffi::c_void;
+    pub fn WdsTransportServerCompleteRead(hprovider: ::win32_foundation_sys::HANDLE, ulbytesread: u32, pvuserdata: *const ::core::ffi::c_void, hreadresult: ::windows_core_sys::HRESULT) -> ::windows_core_sys::HRESULT;
+    pub fn WdsTransportServerFreeBuffer(hprovider: ::win32_foundation_sys::HANDLE, pvbuffer: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn WdsTransportServerRegisterCallback(hprovider: ::win32_foundation_sys::HANDLE, callbackid: TRANSPORTPROVIDER_CALLBACK_ID, pfncallback: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn WdsTransportServerTrace(hprovider: ::win32_foundation_sys::HANDLE, severity: u32, pwszformat: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WdsTransportServerTraceV(hprovider: ::win32_foundation_sys::HANDLE, severity: u32, pwszformat: ::windows_core_sys::PCWSTR, params: *const i8) -> ::windows_core_sys::HRESULT;
 }
 pub type CPU_ARCHITECTURE = u32;
 pub const CPU_ARCHITECTURE_AMD64: CPU_ARCHITECTURE = 9u32;
@@ -223,21 +154,14 @@ pub const WDS_CLI_MSG_START: PFN_WDS_CLI_CALLBACK_MESSAGE_ID = 0u32;
 pub const WDS_CLI_MSG_COMPLETE: PFN_WDS_CLI_CALLBACK_MESSAGE_ID = 1u32;
 pub const WDS_CLI_MSG_PROGRESS: PFN_WDS_CLI_CALLBACK_MESSAGE_ID = 2u32;
 pub const WDS_CLI_MSG_TEXT: PFN_WDS_CLI_CALLBACK_MESSAGE_ID = 3u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_WdsCliCallback = ::core::option::Option<unsafe extern "system" fn(dwmessageid: PFN_WDS_CLI_CALLBACK_MESSAGE_ID, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pvuserdata: *const ::core::ffi::c_void)>;
+pub type PFN_WdsCliCallback = ::core::option::Option<unsafe extern "system" fn(dwmessageid: PFN_WDS_CLI_CALLBACK_MESSAGE_ID, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM, pvuserdata: *const ::core::ffi::c_void)>;
 pub type PFN_WdsCliTraceFunction = ::core::option::Option<unsafe extern "system" fn(pwszformat: ::windows_core_sys::PCWSTR, params: *const i8)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_WdsTransportClientReceiveContents = ::core::option::Option<unsafe extern "system" fn(hsessionkey: super::super::Foundation::HANDLE, pcallerdata: *const ::core::ffi::c_void, pcontents: *const ::core::ffi::c_void, ulsize: u32, pullcontentoffset: *const u64)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_WdsTransportClientReceiveMetadata = ::core::option::Option<unsafe extern "system" fn(hsessionkey: super::super::Foundation::HANDLE, pcallerdata: *const ::core::ffi::c_void, pmetadata: *const ::core::ffi::c_void, ulsize: u32)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_WdsTransportClientSessionComplete = ::core::option::Option<unsafe extern "system" fn(hsessionkey: super::super::Foundation::HANDLE, pcallerdata: *const ::core::ffi::c_void, dwerror: u32)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_WdsTransportClientSessionNegotiate = ::core::option::Option<unsafe extern "system" fn(hsessionkey: super::super::Foundation::HANDLE, pcallerdata: *const ::core::ffi::c_void, pinfo: *const TRANSPORTCLIENT_SESSION_INFO, hnegotiatekey: super::super::Foundation::HANDLE)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_WdsTransportClientSessionStart = ::core::option::Option<unsafe extern "system" fn(hsessionkey: super::super::Foundation::HANDLE, pcallerdata: *const ::core::ffi::c_void, ullfilesize: *const u64)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_WdsTransportClientSessionStartEx = ::core::option::Option<unsafe extern "system" fn(hsessionkey: super::super::Foundation::HANDLE, pcallerdata: *const ::core::ffi::c_void, info: *const TRANSPORTCLIENT_SESSION_INFO)>;
+pub type PFN_WdsTransportClientReceiveContents = ::core::option::Option<unsafe extern "system" fn(hsessionkey: ::win32_foundation_sys::HANDLE, pcallerdata: *const ::core::ffi::c_void, pcontents: *const ::core::ffi::c_void, ulsize: u32, pullcontentoffset: *const u64)>;
+pub type PFN_WdsTransportClientReceiveMetadata = ::core::option::Option<unsafe extern "system" fn(hsessionkey: ::win32_foundation_sys::HANDLE, pcallerdata: *const ::core::ffi::c_void, pmetadata: *const ::core::ffi::c_void, ulsize: u32)>;
+pub type PFN_WdsTransportClientSessionComplete = ::core::option::Option<unsafe extern "system" fn(hsessionkey: ::win32_foundation_sys::HANDLE, pcallerdata: *const ::core::ffi::c_void, dwerror: u32)>;
+pub type PFN_WdsTransportClientSessionNegotiate = ::core::option::Option<unsafe extern "system" fn(hsessionkey: ::win32_foundation_sys::HANDLE, pcallerdata: *const ::core::ffi::c_void, pinfo: *const TRANSPORTCLIENT_SESSION_INFO, hnegotiatekey: ::win32_foundation_sys::HANDLE)>;
+pub type PFN_WdsTransportClientSessionStart = ::core::option::Option<unsafe extern "system" fn(hsessionkey: ::win32_foundation_sys::HANDLE, pcallerdata: *const ::core::ffi::c_void, ullfilesize: *const u64)>;
+pub type PFN_WdsTransportClientSessionStartEx = ::core::option::Option<unsafe extern "system" fn(hsessionkey: ::win32_foundation_sys::HANDLE, pcallerdata: *const ::core::ffi::c_void, info: *const TRANSPORTCLIENT_SESSION_INFO)>;
 #[repr(C)]
 pub struct PXE_ADDRESS {
     pub uFlags: u32,
@@ -399,17 +323,14 @@ pub const PXE_GSI_SERVER_DUID: u32 = 2u32;
 pub const PXE_GSI_TRACE_ENABLED: u32 = 1u32;
 pub const PXE_MAX_ADDRESS: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PXE_PROVIDER {
     pub uSizeOfStruct: u32,
     pub pwszName: ::windows_core_sys::PWSTR,
     pub pwszFilePath: ::windows_core_sys::PWSTR,
-    pub bIsCritical: super::super::Foundation::BOOL,
+    pub bIsCritical: ::win32_foundation_sys::BOOL,
     pub uIndex: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PXE_PROVIDER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PXE_PROVIDER {
     fn clone(&self) -> Self {
         *self
@@ -665,7 +586,6 @@ pub const WDS_MC_TRACE_INFO: u32 = 131072u32;
 pub const WDS_MC_TRACE_VERBOSE: u32 = 65536u32;
 pub const WDS_MC_TRACE_WARNING: u32 = 262144u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WDS_TRANSPORTCLIENT_CALLBACKS {
     pub SessionStart: PFN_WdsTransportClientSessionStart,
     pub SessionStartEx: PFN_WdsTransportClientSessionStartEx,
@@ -674,9 +594,7 @@ pub struct WDS_TRANSPORTCLIENT_CALLBACKS {
     pub SessionComplete: PFN_WdsTransportClientSessionComplete,
     pub SessionNegotiate: PFN_WdsTransportClientSessionNegotiate,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WDS_TRANSPORTCLIENT_CALLBACKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WDS_TRANSPORTCLIENT_CALLBACKS {
     fn clone(&self) -> Self {
         *self
@@ -711,16 +629,16 @@ pub const WDS_TRANSPORTCLIENT_STATUS_FAILURE: u32 = 3u32;
 pub const WDS_TRANSPORTCLIENT_STATUS_IN_PROGRESS: u32 = 1u32;
 pub const WDS_TRANSPORTCLIENT_STATUS_SUCCESS: u32 = 2u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct WDS_TRANSPORTPROVIDER_INIT_PARAMS {
     pub ulLength: u32,
     pub ulMcServerVersion: u32,
     pub hRegistryKey: super::Registry::HKEY,
-    pub hProvider: super::super::Foundation::HANDLE,
+    pub hProvider: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for WDS_TRANSPORTPROVIDER_INIT_PARAMS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for WDS_TRANSPORTPROVIDER_INIT_PARAMS {
     fn clone(&self) -> Self {
         *self

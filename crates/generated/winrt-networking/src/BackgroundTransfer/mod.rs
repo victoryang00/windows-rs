@@ -48,28 +48,28 @@ impl BackgroundDownloader {
         static mut SHARED: ::windows_core::FactoryCache<BackgroundDownloader, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn CreateDownload<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(&self, uri: Param0, resultfile: Param1) -> ::windows_core::Result<DownloadOperation> {
+    #[cfg(feature = "Storage")]
+    pub fn CreateDownload<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, uri: Param0, resultfile: Param1) -> ::windows_core::Result<DownloadOperation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateDownload)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), resultfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<DownloadOperation>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn CreateDownloadFromFile<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(&self, uri: Param0, resultfile: Param1, requestbodyfile: Param2) -> ::windows_core::Result<DownloadOperation> {
+    #[cfg(feature = "Storage")]
+    pub fn CreateDownloadFromFile<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, uri: Param0, resultfile: Param1, requestbodyfile: Param2) -> ::windows_core::Result<DownloadOperation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateDownloadFromFile)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), resultfile.into_param().abi(), requestbodyfile.into_param().abi(), result__.as_mut_ptr()).from_abi::<DownloadOperation>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn CreateDownloadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IInputStream>>(&self, uri: Param0, resultfile: Param1, requestbodystream: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<DownloadOperation>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn CreateDownloadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, uri: Param0, resultfile: Param1, requestbodystream: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DownloadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateDownloadAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), resultfile.into_param().abi(), requestbodystream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<DownloadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).CreateDownloadAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), resultfile.into_param().abi(), requestbodystream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DownloadOperation>>(result__)
         }
     }
     pub fn TransferGroup(&self) -> ::windows_core::Result<BackgroundTransferGroup> {
@@ -84,54 +84,54 @@ impl BackgroundDownloader {
         unsafe { (::windows_core::Interface::vtable(this).SetTransferGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SuccessToastNotification(&self) -> ::windows_core::Result<super::super::UI::Notifications::ToastNotification> {
+    pub fn SuccessToastNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SuccessToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Notifications::ToastNotification>(result__)
+            (::windows_core::Interface::vtable(this).SuccessToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::ToastNotification>(result__)
         }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SetSuccessToastNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSuccessToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSuccessToastNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn FailureToastNotification(&self) -> ::windows_core::Result<super::super::UI::Notifications::ToastNotification> {
+    pub fn FailureToastNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FailureToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Notifications::ToastNotification>(result__)
+            (::windows_core::Interface::vtable(this).FailureToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::ToastNotification>(result__)
         }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SetFailureToastNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetFailureToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFailureToastNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SuccessTileNotification(&self) -> ::windows_core::Result<super::super::UI::Notifications::TileNotification> {
+    pub fn SuccessTileNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::TileNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SuccessTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Notifications::TileNotification>(result__)
+            (::windows_core::Interface::vtable(this).SuccessTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileNotification>(result__)
         }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SetSuccessTileNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSuccessTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSuccessTileNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn FailureTileNotification(&self) -> ::windows_core::Result<super::super::UI::Notifications::TileNotification> {
+    pub fn FailureTileNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::TileNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FailureTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Notifications::TileNotification>(result__)
+            (::windows_core::Interface::vtable(this).FailureTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileNotification>(result__)
         }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SetFailureTileNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetFailureTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundDownloader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFailureTileNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -149,31 +149,31 @@ impl BackgroundDownloader {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCurrentDownloadsAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<DownloadOperation>>> {
+    pub fn GetCurrentDownloadsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>> {
         Self::IBackgroundDownloaderStaticMethods(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentDownloadsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<DownloadOperation>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentDownloadsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn GetCurrentDownloadsForGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(group: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<DownloadOperation>>> {
+    pub fn GetCurrentDownloadsForGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(group: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>> {
         Self::IBackgroundDownloaderStaticMethods(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentDownloadsForGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<DownloadOperation>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentDownloadsForGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCurrentDownloadsForTransferGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, BackgroundTransferGroup>>(group: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<DownloadOperation>>> {
+    pub fn GetCurrentDownloadsForTransferGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, BackgroundTransferGroup>>(group: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>> {
         Self::IBackgroundDownloaderStaticMethods2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentDownloadsForTransferGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<DownloadOperation>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentDownloadsForTransferGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<DownloadOperation>>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn RequestUnconstrainedDownloadsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<DownloadOperation>>>(operations: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UnconstrainedTransferRequestResult>> {
+    pub fn RequestUnconstrainedDownloadsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DownloadOperation>>>(operations: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UnconstrainedTransferRequestResult>> {
         Self::IBackgroundDownloaderUserConsent(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestUnconstrainedDownloadsAsync)(::windows_core::Interface::as_raw(this), operations.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UnconstrainedTransferRequestResult>>(result__)
+            (::windows_core::Interface::vtable(this).RequestUnconstrainedDownloadsAsync)(::windows_core::Interface::as_raw(this), operations.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UnconstrainedTransferRequestResult>>(result__)
         })
     }
     pub fn SetRequestHeader<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, headername: Param0, headervalue: Param1) -> ::windows_core::Result<()> {
@@ -181,28 +181,28 @@ impl BackgroundDownloader {
         unsafe { (::windows_core::Interface::vtable(this).SetRequestHeader)(::windows_core::Interface::as_raw(this), headername.into_param().abi(), headervalue.into_param().abi()).ok() }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn ServerCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
+    pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn ProxyCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
+    pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
     }
@@ -397,11 +397,11 @@ impl BackgroundTransferCompletionGroup {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "ApplicationModel_Background")]
-    pub fn Trigger(&self) -> ::windows_core::Result<super::super::ApplicationModel::Background::IBackgroundTrigger> {
+    pub fn Trigger(&self) -> ::windows_core::Result<::winrt_applicationmodel::Background::IBackgroundTrigger> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Trigger)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::Background::IBackgroundTrigger>(result__)
+            (::windows_core::Interface::vtable(this).Trigger)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Background::IBackgroundTrigger>(result__)
         }
     }
     pub fn IsEnabled(&self) -> ::windows_core::Result<bool> {
@@ -492,19 +492,19 @@ unsafe impl ::core::marker::Sync for BackgroundTransferCompletionGroup {}
 pub struct BackgroundTransferCompletionGroupTriggerDetails(::windows_core::IUnknown);
 impl BackgroundTransferCompletionGroupTriggerDetails {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Downloads(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<DownloadOperation>> {
+    pub fn Downloads(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<DownloadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Downloads)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<DownloadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).Downloads)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<DownloadOperation>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Uploads(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UploadOperation>> {
+    pub fn Uploads(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UploadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Uploads)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UploadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).Uploads)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UploadOperation>>(result__)
         }
     }
 }
@@ -599,7 +599,7 @@ impl BackgroundTransferContentPart {
         unsafe { (::windows_core::Interface::vtable(this).SetText)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage")]
-    pub fn SetFile<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetFile<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFile)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -729,10 +729,10 @@ unsafe impl ::windows_core::RuntimeType for BackgroundTransferCostPolicy {
 pub struct BackgroundTransferError;
 impl BackgroundTransferError {
     #[cfg(feature = "Web")]
-    pub fn GetStatus(hresult: i32) -> ::windows_core::Result<super::super::Web::WebErrorStatus> {
+    pub fn GetStatus(hresult: i32) -> ::windows_core::Result<::winrt_web::WebErrorStatus> {
         Self::IBackgroundTransferErrorStaticMethods(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Web::WebErrorStatus>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStatus)(::windows_core::Interface::as_raw(this), hresult, result__.as_mut_ptr()).from_abi::<super::super::Web::WebErrorStatus>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_web::WebErrorStatus>::zeroed();
+            (::windows_core::Interface::vtable(this).GetStatus)(::windows_core::Interface::as_raw(this), hresult, result__.as_mut_ptr()).from_abi::<::winrt_web::WebErrorStatus>(result__)
         })
     }
     pub fn IBackgroundTransferErrorStaticMethods<R, F: FnOnce(&IBackgroundTransferErrorStaticMethods) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -929,19 +929,18 @@ impl BackgroundTransferRangesDownloadedEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AddedRanges(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<BackgroundTransferFileRange>> {
+    pub fn AddedRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<BackgroundTransferFileRange>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddedRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<BackgroundTransferFileRange>>(result__)
+            (::windows_core::Interface::vtable(this).AddedRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<BackgroundTransferFileRange>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -1115,28 +1114,28 @@ impl BackgroundUploader {
         unsafe { (::windows_core::Interface::vtable(this).SetRequestHeader)(::windows_core::Interface::as_raw(this), headername.into_param().abi(), headervalue.into_param().abi()).ok() }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn ServerCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
+    pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn ProxyCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
+    pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
     }
@@ -1175,44 +1174,44 @@ impl BackgroundUploader {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferBase>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCostPolicy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn CreateUpload<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(&self, uri: Param0, sourcefile: Param1) -> ::windows_core::Result<UploadOperation> {
+    #[cfg(feature = "Storage")]
+    pub fn CreateUpload<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, uri: Param0, sourcefile: Param1) -> ::windows_core::Result<UploadOperation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateUpload)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), sourcefile.into_param().abi(), result__.as_mut_ptr()).from_abi::<UploadOperation>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn CreateUploadFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IInputStream>>(&self, uri: Param0, sourcestream: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UploadOperation>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn CreateUploadFromStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, uri: Param0, sourcestream: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UploadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateUploadFromStreamAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), sourcestream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UploadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).CreateUploadFromStreamAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), sourcestream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UploadOperation>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateUploadWithFormDataAndAutoBoundaryAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BackgroundTransferContentPart>>>(&self, uri: Param0, parts: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UploadOperation>> {
+    pub fn CreateUploadWithFormDataAndAutoBoundaryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BackgroundTransferContentPart>>>(&self, uri: Param0, parts: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UploadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateUploadWithFormDataAndAutoBoundaryAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), parts.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UploadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).CreateUploadWithFormDataAndAutoBoundaryAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), parts.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UploadOperation>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateUploadWithSubTypeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BackgroundTransferContentPart>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uri: Param0, parts: Param1, subtype: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UploadOperation>> {
+    pub fn CreateUploadWithSubTypeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BackgroundTransferContentPart>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uri: Param0, parts: Param1, subtype: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UploadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateUploadWithSubTypeAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), parts.into_param().abi(), subtype.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UploadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).CreateUploadWithSubTypeAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), parts.into_param().abi(), subtype.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UploadOperation>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateUploadWithSubTypeAndBoundaryAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BackgroundTransferContentPart>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uri: Param0, parts: Param1, subtype: Param2, boundary: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UploadOperation>> {
+    pub fn CreateUploadWithSubTypeAndBoundaryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BackgroundTransferContentPart>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, uri: Param0, parts: Param1, subtype: Param2, boundary: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UploadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateUploadWithSubTypeAndBoundaryAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), parts.into_param().abi(), subtype.into_param().abi(), boundary.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UploadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).CreateUploadWithSubTypeAndBoundaryAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), parts.into_param().abi(), subtype.into_param().abi(), boundary.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UploadOperation>>(result__)
         }
     }
     pub fn TransferGroup(&self) -> ::windows_core::Result<BackgroundTransferGroup> {
@@ -1227,54 +1226,54 @@ impl BackgroundUploader {
         unsafe { (::windows_core::Interface::vtable(this).SetTransferGroup)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SuccessToastNotification(&self) -> ::windows_core::Result<super::super::UI::Notifications::ToastNotification> {
+    pub fn SuccessToastNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SuccessToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Notifications::ToastNotification>(result__)
+            (::windows_core::Interface::vtable(this).SuccessToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::ToastNotification>(result__)
         }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SetSuccessToastNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSuccessToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSuccessToastNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn FailureToastNotification(&self) -> ::windows_core::Result<super::super::UI::Notifications::ToastNotification> {
+    pub fn FailureToastNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::ToastNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FailureToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Notifications::ToastNotification>(result__)
+            (::windows_core::Interface::vtable(this).FailureToastNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::ToastNotification>(result__)
         }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SetFailureToastNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetFailureToastNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::ToastNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFailureToastNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SuccessTileNotification(&self) -> ::windows_core::Result<super::super::UI::Notifications::TileNotification> {
+    pub fn SuccessTileNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::TileNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SuccessTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Notifications::TileNotification>(result__)
+            (::windows_core::Interface::vtable(this).SuccessTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileNotification>(result__)
         }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SetSuccessTileNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSuccessTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSuccessTileNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn FailureTileNotification(&self) -> ::windows_core::Result<super::super::UI::Notifications::TileNotification> {
+    pub fn FailureTileNotification(&self) -> ::windows_core::Result<::winrt_ui::Notifications::TileNotification> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FailureTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Notifications::TileNotification>(result__)
+            (::windows_core::Interface::vtable(this).FailureTileNotification)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Notifications::TileNotification>(result__)
         }
     }
     #[cfg(feature = "UI_Notifications")]
-    pub fn SetFailureTileNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetFailureTileNotification<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::Notifications::TileNotification>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IBackgroundUploader2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFailureTileNotification)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1292,31 +1291,31 @@ impl BackgroundUploader {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCurrentUploadsAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UploadOperation>>> {
+    pub fn GetCurrentUploadsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>> {
         Self::IBackgroundUploaderStaticMethods(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentUploadsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UploadOperation>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentUploadsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn GetCurrentUploadsForGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(group: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UploadOperation>>> {
+    pub fn GetCurrentUploadsForGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(group: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>> {
         Self::IBackgroundUploaderStaticMethods(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentUploadsForGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UploadOperation>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentUploadsForGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCurrentUploadsForTransferGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, BackgroundTransferGroup>>(group: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UploadOperation>>> {
+    pub fn GetCurrentUploadsForTransferGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, BackgroundTransferGroup>>(group: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>> {
         Self::IBackgroundUploaderStaticMethods2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentUploadsForTransferGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<UploadOperation>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentUploadsForTransferGroupAsync)(::windows_core::Interface::as_raw(this), group.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<UploadOperation>>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn RequestUnconstrainedUploadsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<UploadOperation>>>(operations: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UnconstrainedTransferRequestResult>> {
+    pub fn RequestUnconstrainedUploadsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<UploadOperation>>>(operations: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UnconstrainedTransferRequestResult>> {
         Self::IBackgroundUploaderUserConsent(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestUnconstrainedUploadsAsync)(::windows_core::Interface::as_raw(this), operations.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UnconstrainedTransferRequestResult>>(result__)
+            (::windows_core::Interface::vtable(this).RequestUnconstrainedUploadsAsync)(::windows_core::Interface::as_raw(this), operations.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UnconstrainedTransferRequestResult>>(result__)
         })
     }
     pub fn IBackgroundUploaderFactory<R, F: FnOnce(&IBackgroundUploaderFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1434,28 +1433,25 @@ unsafe impl ::core::marker::Sync for BackgroundUploader {}
 pub struct ContentPrefetcher;
 impl ContentPrefetcher {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContentUris() -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn ContentUris() -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         Self::IContentPrefetcher(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContentUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).ContentUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetIndirectContentUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIndirectContentUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(value: Param0) -> ::windows_core::Result<()> {
         Self::IContentPrefetcher(|this| unsafe { (::windows_core::Interface::vtable(this).SetIndirectContentUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn IndirectContentUri() -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn IndirectContentUri() -> ::windows_core::Result<::winrt_foundation::Uri> {
         Self::IContentPrefetcher(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).IndirectContentUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).IndirectContentUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LastSuccessfulPrefetchTime() -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    pub fn LastSuccessfulPrefetchTime() -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         Self::IContentPrefetcherTime(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LastSuccessfulPrefetchTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).LastSuccessfulPrefetchTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         })
     }
     pub fn IContentPrefetcher<R, F: FnOnce(&IContentPrefetcher) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1480,12 +1476,11 @@ impl DownloadOperation {
             (::windows_core::Interface::vtable(this).Guid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestedUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn RequestedUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestedUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).RequestedUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn Method(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1515,11 +1510,11 @@ impl DownloadOperation {
         unsafe { (::windows_core::Interface::vtable(this).SetCostPolicy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetResultStreamAt(&self, position: u64) -> ::windows_core::Result<super::super::Storage::Streams::IInputStream> {
+    pub fn GetResultStreamAt(&self, position: u64) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetResultStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IInputStream>(result__)
+            (::windows_core::Interface::vtable(this).GetResultStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
     pub fn GetResponseInformation(&self) -> ::windows_core::Result<ResponseInformation> {
@@ -1541,11 +1536,11 @@ impl DownloadOperation {
         unsafe { (::windows_core::Interface::vtable(this).SetPriority)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage")]
-    pub fn ResultFile(&self) -> ::windows_core::Result<super::super::Storage::IStorageFile> {
+    pub fn ResultFile(&self) -> ::windows_core::Result<::winrt_storage::IStorageFile> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ResultFile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::IStorageFile>(result__)
+            (::windows_core::Interface::vtable(this).ResultFile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::IStorageFile>(result__)
         }
     }
     pub fn Progress(&self) -> ::windows_core::Result<BackgroundDownloadProgress> {
@@ -1555,20 +1550,18 @@ impl DownloadOperation {
             (::windows_core::Interface::vtable(this).Progress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BackgroundDownloadProgress>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StartAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DownloadOperation, DownloadOperation>> {
+    pub fn StartAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DownloadOperation, DownloadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StartAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DownloadOperation, DownloadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).StartAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DownloadOperation, DownloadOperation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AttachAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DownloadOperation, DownloadOperation>> {
+    pub fn AttachAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DownloadOperation, DownloadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AttachAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DownloadOperation, DownloadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).AttachAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DownloadOperation, DownloadOperation>>(result__)
         }
     }
     pub fn Pause(&self) -> ::windows_core::Result<()> {
@@ -1598,53 +1591,50 @@ impl DownloadOperation {
         unsafe { (::windows_core::Interface::vtable(this).SetIsRandomAccessRequired)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetResultRandomAccessStreamReference(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn GetResultRandomAccessStreamReference(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetResultRandomAccessStreamReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).GetResultRandomAccessStreamReference)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetDownloadedRanges(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<BackgroundTransferFileRange>> {
+    pub fn GetDownloadedRanges(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<BackgroundTransferFileRange>> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDownloadedRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<BackgroundTransferFileRange>>(result__)
+            (::windows_core::Interface::vtable(this).GetDownloadedRanges)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<BackgroundTransferFileRange>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RangesDownloaded<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<DownloadOperation, BackgroundTransferRangesDownloadedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn RangesDownloaded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DownloadOperation, BackgroundTransferRangesDownloadedEventArgs>>>(&self, eventhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).RangesDownloaded)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).RangesDownloaded)(::windows_core::Interface::as_raw(this), eventhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveRangesDownloaded<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveRangesDownloaded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, eventcookie: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRangesDownloaded)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetRequestedUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetRequestedUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetRequestedUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Web"))]
-    pub fn RecoverableWebErrorStatuses(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Web::WebErrorStatus>> {
+    pub fn RecoverableWebErrorStatuses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_web::WebErrorStatus>> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecoverableWebErrorStatuses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Web::WebErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).RecoverableWebErrorStatuses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_web::WebErrorStatus>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Web"))]
-    pub fn CurrentWebErrorStatus(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Web::WebErrorStatus>> {
+    #[cfg(feature = "Web")]
+    pub fn CurrentWebErrorStatus(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_web::WebErrorStatus>> {
         let this = &::windows_core::Interface::cast::<IDownloadOperation3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CurrentWebErrorStatus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Web::WebErrorStatus>>(result__)
+            (::windows_core::Interface::vtable(this).CurrentWebErrorStatus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_web::WebErrorStatus>>(result__)
         }
     }
     pub fn MakeCurrentInTransferGroup(&self) -> ::windows_core::Result<()> {
@@ -1787,17 +1777,17 @@ unsafe impl ::windows_core::Interface for IBackgroundDownloader {
 #[doc(hidden)]
 pub struct IBackgroundDownloader_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub CreateDownload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, resultfile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     CreateDownload: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub CreateDownloadFromFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, resultfile: ::windows_core::RawPtr, requestbodyfile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     CreateDownloadFromFile: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub CreateDownloadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, resultfile: ::windows_core::RawPtr, requestbodystream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     CreateDownloadAsync: usize,
 }
 #[doc(hidden)]
@@ -1935,28 +1925,28 @@ impl IBackgroundTransferBase {
         unsafe { (::windows_core::Interface::vtable(this).SetRequestHeader)(::windows_core::Interface::as_raw(this), headername.into_param().abi(), headervalue.into_param().abi()).ok() }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn ServerCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn ServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).ServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
+    pub fn SetServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetServerCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn ProxyCredential(&self) -> ::windows_core::Result<super::super::Security::Credentials::PasswordCredential> {
+    pub fn ProxyCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).ProxyCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::Security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
+    pub fn SetProxyCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, credential: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProxyCredential)(::windows_core::Interface::as_raw(this), credential.into_param().abi()).ok() }
     }
@@ -2257,7 +2247,7 @@ unsafe impl ::windows_core::Interface for IBackgroundTransferErrorStaticMethods 
 pub struct IBackgroundTransferErrorStaticMethods_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Web")]
-    pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hresult: i32, result__: *mut super::super::Web::WebErrorStatus) -> ::windows_core::HRESULT,
+    pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hresult: i32, result__: *mut ::winrt_web::WebErrorStatus) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Web"))]
     GetStatus: usize,
 }
@@ -2299,12 +2289,11 @@ impl IBackgroundTransferOperation {
             (::windows_core::Interface::vtable(this).Guid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestedUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn RequestedUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestedUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).RequestedUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn Method(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2334,11 +2323,11 @@ impl IBackgroundTransferOperation {
         unsafe { (::windows_core::Interface::vtable(this).SetCostPolicy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetResultStreamAt(&self, position: u64) -> ::windows_core::Result<super::super::Storage::Streams::IInputStream> {
+    pub fn GetResultStreamAt(&self, position: u64) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetResultStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IInputStream>(result__)
+            (::windows_core::Interface::vtable(this).GetResultStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
     pub fn GetResponseInformation(&self) -> ::windows_core::Result<ResponseInformation> {
@@ -2421,10 +2410,7 @@ unsafe impl ::windows_core::Interface for IBackgroundTransferOperation {
 pub struct IBackgroundTransferOperation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Guid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub RequestedUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestedUri: usize,
     pub Method: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "deprecated")]
     pub Group: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -2543,10 +2529,7 @@ pub struct IBackgroundTransferRangesDownloadedEventArgs_Vtbl {
     pub AddedRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     AddedRanges: usize,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2559,13 +2542,13 @@ unsafe impl ::windows_core::Interface for IBackgroundUploader {
 #[doc(hidden)]
 pub struct IBackgroundUploader_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub CreateUpload: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, sourcefile: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     CreateUpload: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub CreateUploadFromStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, sourcestream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     CreateUploadFromStreamAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub CreateUploadWithFormDataAndAutoBoundaryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, parts: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2722,14 +2705,8 @@ pub struct IContentPrefetcher_Vtbl {
     pub ContentUris: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     ContentUris: usize,
-    #[cfg(feature = "Foundation")]
     pub SetIndirectContentUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetIndirectContentUri: usize,
-    #[cfg(feature = "Foundation")]
     pub IndirectContentUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    IndirectContentUri: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2742,10 +2719,7 @@ unsafe impl ::windows_core::Interface for IContentPrefetcherTime {
 #[doc(hidden)]
 pub struct IContentPrefetcherTime_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub LastSuccessfulPrefetchTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LastSuccessfulPrefetchTime: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2763,14 +2737,8 @@ pub struct IDownloadOperation_Vtbl {
     #[cfg(not(feature = "Storage"))]
     ResultFile: usize,
     pub Progress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BackgroundDownloadProgress) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub StartAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StartAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub AttachAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AttachAsync: usize,
     pub Pause: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -2808,25 +2776,16 @@ pub struct IDownloadOperation3_Vtbl {
     pub GetDownloadedRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetDownloadedRanges: usize,
-    #[cfg(feature = "Foundation")]
-    pub RangesDownloaded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RangesDownloaded: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveRangesDownloaded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveRangesDownloaded: usize,
-    #[cfg(feature = "Foundation")]
+    pub RangesDownloaded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveRangesDownloaded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub SetRequestedUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetRequestedUri: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "Web"))]
     pub RecoverableWebErrorStatuses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Web")))]
     RecoverableWebErrorStatuses: usize,
-    #[cfg(all(feature = "Foundation", feature = "Web"))]
+    #[cfg(feature = "Web")]
     pub CurrentWebErrorStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Web")))]
+    #[cfg(not(feature = "Web"))]
     CurrentWebErrorStatus: usize,
 }
 #[doc(hidden)]
@@ -2868,10 +2827,7 @@ unsafe impl ::windows_core::Interface for IResponseInformation {
 pub struct IResponseInformation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsResumable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ActualUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ActualUri: usize,
     pub StatusCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub Headers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2913,14 +2869,8 @@ pub struct IUploadOperation_Vtbl {
     #[cfg(not(feature = "Storage"))]
     SourceFile: usize,
     pub Progress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut BackgroundUploadProgress) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub StartAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StartAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub AttachAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AttachAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2972,12 +2922,11 @@ impl ResponseInformation {
             (::windows_core::Interface::vtable(this).IsResumable)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ActualUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn ActualUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ActualUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ActualUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn StatusCode(&self) -> ::windows_core::Result<u32> {
@@ -2988,11 +2937,11 @@ impl ResponseInformation {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Headers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+    pub fn Headers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Headers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Headers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
 }
@@ -3181,12 +3130,11 @@ impl UploadOperation {
             (::windows_core::Interface::vtable(this).Guid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestedUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn RequestedUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestedUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).RequestedUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn Method(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -3216,11 +3164,11 @@ impl UploadOperation {
         unsafe { (::windows_core::Interface::vtable(this).SetCostPolicy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetResultStreamAt(&self, position: u64) -> ::windows_core::Result<super::super::Storage::Streams::IInputStream> {
+    pub fn GetResultStreamAt(&self, position: u64) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = &::windows_core::Interface::cast::<IBackgroundTransferOperation>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetResultStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IInputStream>(result__)
+            (::windows_core::Interface::vtable(this).GetResultStreamAt)(::windows_core::Interface::as_raw(this), position, result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
     pub fn GetResponseInformation(&self) -> ::windows_core::Result<ResponseInformation> {
@@ -3242,11 +3190,11 @@ impl UploadOperation {
         unsafe { (::windows_core::Interface::vtable(this).SetPriority)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage")]
-    pub fn SourceFile(&self) -> ::windows_core::Result<super::super::Storage::IStorageFile> {
+    pub fn SourceFile(&self) -> ::windows_core::Result<::winrt_storage::IStorageFile> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SourceFile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::IStorageFile>(result__)
+            (::windows_core::Interface::vtable(this).SourceFile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::IStorageFile>(result__)
         }
     }
     pub fn Progress(&self) -> ::windows_core::Result<BackgroundUploadProgress> {
@@ -3256,20 +3204,18 @@ impl UploadOperation {
             (::windows_core::Interface::vtable(this).Progress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BackgroundUploadProgress>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StartAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<UploadOperation, UploadOperation>> {
+    pub fn StartAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<UploadOperation, UploadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StartAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<UploadOperation, UploadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).StartAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<UploadOperation, UploadOperation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AttachAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<UploadOperation, UploadOperation>> {
+    pub fn AttachAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<UploadOperation, UploadOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AttachAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<UploadOperation, UploadOperation>>(result__)
+            (::windows_core::Interface::vtable(this).AttachAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<UploadOperation, UploadOperation>>(result__)
         }
     }
     pub fn TransferGroup(&self) -> ::windows_core::Result<BackgroundTransferGroup> {

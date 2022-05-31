@@ -27,10 +27,7 @@ pub struct IPaymentAppManager_Vtbl {
     pub RegisterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, supportedpaymentmethodids: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     RegisterAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub UnregisterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UnregisterAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -63,18 +60,9 @@ pub struct IPaymentTransaction_Vtbl {
     pub SetPayerName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub PayerPhoneNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetPayerPhoneNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub UpdateShippingAddressAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shippingaddress: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UpdateShippingAddressAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub UpdateSelectedShippingOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selectedshippingoption: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UpdateSelectedShippingOptionAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub AcceptAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, paymenttoken: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AcceptAsync: usize,
     pub Reject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -101,10 +89,7 @@ unsafe impl ::windows_core::Interface for IPaymentTransactionStatics {
 #[doc(hidden)]
 pub struct IPaymentTransactionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
 }
 #[repr(transparent)]
 pub struct PaymentAppCanMakePaymentTriggerDetails(::windows_core::IUnknown);
@@ -197,19 +182,18 @@ unsafe impl ::core::marker::Sync for PaymentAppCanMakePaymentTriggerDetails {}
 pub struct PaymentAppManager(::windows_core::IUnknown);
 impl PaymentAppManager {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RegisterAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, supportedpaymentmethodids: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn RegisterAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, supportedpaymentmethodids: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterAsync)(::windows_core::Interface::as_raw(this), supportedpaymentmethodids.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).RegisterAsync)(::windows_core::Interface::as_raw(this), supportedpaymentmethodids.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UnregisterAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn UnregisterAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UnregisterAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).UnregisterAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn Current() -> ::windows_core::Result<PaymentAppManager> {
@@ -338,39 +322,35 @@ impl PaymentTransaction {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPayerPhoneNumber)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UpdateShippingAddressAsync<'a, Param0: ::windows_core::IntoParam<'a, super::PaymentAddress>>(&self, shippingaddress: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::PaymentRequestChangedResult>> {
+    pub fn UpdateShippingAddressAsync<'a, Param0: ::windows_core::IntoParam<'a, super::PaymentAddress>>(&self, shippingaddress: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::PaymentRequestChangedResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdateShippingAddressAsync)(::windows_core::Interface::as_raw(this), shippingaddress.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::PaymentRequestChangedResult>>(result__)
+            (::windows_core::Interface::vtable(this).UpdateShippingAddressAsync)(::windows_core::Interface::as_raw(this), shippingaddress.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::PaymentRequestChangedResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UpdateSelectedShippingOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, super::PaymentShippingOption>>(&self, selectedshippingoption: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::PaymentRequestChangedResult>> {
+    pub fn UpdateSelectedShippingOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, super::PaymentShippingOption>>(&self, selectedshippingoption: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::PaymentRequestChangedResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdateSelectedShippingOptionAsync)(::windows_core::Interface::as_raw(this), selectedshippingoption.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::PaymentRequestChangedResult>>(result__)
+            (::windows_core::Interface::vtable(this).UpdateSelectedShippingOptionAsync)(::windows_core::Interface::as_raw(this), selectedshippingoption.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::PaymentRequestChangedResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AcceptAsync<'a, Param0: ::windows_core::IntoParam<'a, super::PaymentToken>>(&self, paymenttoken: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<PaymentTransactionAcceptResult>> {
+    pub fn AcceptAsync<'a, Param0: ::windows_core::IntoParam<'a, super::PaymentToken>>(&self, paymenttoken: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PaymentTransactionAcceptResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AcceptAsync)(::windows_core::Interface::as_raw(this), paymenttoken.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<PaymentTransactionAcceptResult>>(result__)
+            (::windows_core::Interface::vtable(this).AcceptAsync)(::windows_core::Interface::as_raw(this), paymenttoken.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PaymentTransactionAcceptResult>>(result__)
         }
     }
     pub fn Reject(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Reject)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(id: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<PaymentTransaction>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(id: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PaymentTransaction>> {
         Self::IPaymentTransactionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), id.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<PaymentTransaction>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), id.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PaymentTransaction>>(result__)
         })
     }
     pub fn IPaymentTransactionStatics<R, F: FnOnce(&IPaymentTransactionStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

@@ -201,12 +201,11 @@ impl IMDSPDevice2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IMDSPStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetFormatSupport2(&self, dwflags: u32, ppaudioformatex: *mut *mut _WAVEFORMATEX, pnaudioformatcount: *mut u32, ppvideoformatex: *mut *mut _VIDEOINFOHEADER, pnvideoformatcount: *mut u32, ppfiletype: *mut *mut WMFILECAPABILITIES, pnfiletypecount: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetFormatSupport2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppaudioformatex), ::core::mem::transmute(pnaudioformatcount), ::core::mem::transmute(ppvideoformatex), ::core::mem::transmute(pnvideoformatcount), ::core::mem::transmute(ppfiletype), ::core::mem::transmute(pnfiletypecount)).ok()
     }
     #[cfg(feature = "Win32_System_Ole")]
-    pub unsafe fn GetSpecifyPropertyPages(&self, ppspecifyproppages: *mut ::core::option::Option<super::super::System::Ole::ISpecifyPropertyPages>, pppunknowns: *mut *mut ::core::option::Option<::windows_core::IUnknown>, pcunks: *mut u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetSpecifyPropertyPages(&self, ppspecifyproppages: *mut ::core::option::Option<::win32_system::Ole::ISpecifyPropertyPages>, pppunknowns: *mut *mut ::core::option::Option<::windows_core::IUnknown>, pcunks: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetSpecifyPropertyPages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppspecifyproppages), ::core::mem::transmute(pppunknowns), ::core::mem::transmute(pcunks)).ok()
     }
     pub unsafe fn GetCanonicalName(&self, pwszpnpname: &mut [u16]) -> ::windows_core::Result<()> {
@@ -278,10 +277,7 @@ unsafe impl ::windows_core::Interface for IMDSPDevice2 {
 pub struct IMDSPDevice2_Vtbl {
     pub base__: IMDSPDevice_Vtbl,
     pub GetStorage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszstoragename: ::windows_core::PCWSTR, ppstorage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetFormatSupport2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, ppaudioformatex: *mut *mut _WAVEFORMATEX, pnaudioformatcount: *mut u32, ppvideoformatex: *mut *mut _VIDEOINFOHEADER, pnvideoformatcount: *mut u32, ppfiletype: *mut *mut WMFILECAPABILITIES, pnfiletypecount: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetFormatSupport2: usize,
     #[cfg(feature = "Win32_System_Ole")]
     pub GetSpecifyPropertyPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppspecifyproppages: *mut ::windows_core::RawPtr, pppunknowns: *mut *mut *mut ::core::ffi::c_void, pcunks: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
@@ -333,27 +329,26 @@ impl IMDSPDevice3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IMDSPStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetFormatSupport2(&self, dwflags: u32, ppaudioformatex: *mut *mut _WAVEFORMATEX, pnaudioformatcount: *mut u32, ppvideoformatex: *mut *mut _VIDEOINFOHEADER, pnvideoformatcount: *mut u32, ppfiletype: *mut *mut WMFILECAPABILITIES, pnfiletypecount: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetFormatSupport2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppaudioformatex), ::core::mem::transmute(pnaudioformatcount), ::core::mem::transmute(ppvideoformatex), ::core::mem::transmute(pnvideoformatcount), ::core::mem::transmute(ppfiletype), ::core::mem::transmute(pnfiletypecount)).ok()
     }
     #[cfg(feature = "Win32_System_Ole")]
-    pub unsafe fn GetSpecifyPropertyPages(&self, ppspecifyproppages: *mut ::core::option::Option<super::super::System::Ole::ISpecifyPropertyPages>, pppunknowns: *mut *mut ::core::option::Option<::windows_core::IUnknown>, pcunks: *mut u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetSpecifyPropertyPages(&self, ppspecifyproppages: *mut ::core::option::Option<::win32_system::Ole::ISpecifyPropertyPages>, pppunknowns: *mut *mut ::core::option::Option<::windows_core::IUnknown>, pcunks: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetSpecifyPropertyPages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppspecifyproppages), ::core::mem::transmute(pppunknowns), ::core::mem::transmute(pcunks)).ok()
     }
     pub unsafe fn GetCanonicalName(&self, pwszpnpname: &mut [u16]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetCanonicalName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pwszpnpname)), pwszpnpname.len() as _).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn GetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszpropname: Param0) -> ::windows_core::Result<super::super::System::Com::StructuredStorage::PROPVARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::StructuredStorage::PROPVARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), pwszpropname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::StructuredStorage::PROPVARIANT>(result__)
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn GetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszpropname: Param0) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), pwszpropname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn SetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszpropname: Param0, pvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn SetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszpropname: Param0, pvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetProperty)(::windows_core::Interface::as_raw(self), pwszpropname.into_param().abi(), ::core::mem::transmute(pvalue)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
     pub unsafe fn GetFormatCapability(&self, format: WMDM_FORMATCODE) -> ::windows_core::Result<WMDM_FORMAT_CAPABILITY> {
         let mut result__ = ::core::mem::MaybeUninit::<WMDM_FORMAT_CAPABILITY>::zeroed();
         (::windows_core::Interface::vtable(self).GetFormatCapability)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(format), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WMDM_FORMAT_CAPABILITY>(result__)
@@ -450,17 +445,17 @@ unsafe impl ::windows_core::Interface for IMDSPDevice3 {
 #[doc(hidden)]
 pub struct IMDSPDevice3_Vtbl {
     pub base__: IMDSPDevice2_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszpropname: ::windows_core::PCWSTR, pvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszpropname: ::windows_core::PCWSTR, pvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub SetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszpropname: ::windows_core::PCWSTR, pvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszpropname: ::windows_core::PCWSTR, pvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     SetProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
     pub GetFormatCapability: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: WMDM_FORMATCODE, pformatsupport: *mut WMDM_FORMAT_CAPABILITY) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetFormatCapability: usize,
     pub DeviceIoControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwiocontrolcode: u32, lpinbuffer: *const u8, ninbuffersize: u32, lpoutbuffer: *mut u8, pnoutbuffersize: *mut u32) -> ::windows_core::HRESULT,
     pub FindStorage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, findscope: WMDM_FIND_SCOPE, pwszuniqueid: ::windows_core::PCWSTR, ppstorage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1187,16 +1182,13 @@ impl IMDSPStorage2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IMDSPStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateStorage2<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, dwattributes: u32, dwattributesex: u32, paudioformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER, pwszname: Param4, qwfilesize: u64) -> ::windows_core::Result<IMDSPStorage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateStorage2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat), pwszname.into_param().abi(), ::core::mem::transmute(qwfilesize), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IMDSPStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetAttributes2(&self, dwattributes: u32, dwattributesex: u32, paudioformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetAttributes2(&self, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwattributes), ::core::mem::transmute(pdwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
@@ -1266,18 +1258,9 @@ unsafe impl ::windows_core::Interface for IMDSPStorage2 {
 pub struct IMDSPStorage2_Vtbl {
     pub base__: IMDSPStorage_Vtbl,
     pub GetStorage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszstoragename: ::windows_core::PCWSTR, ppstorage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub CreateStorage2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwattributes: u32, dwattributesex: u32, paudioformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER, pwszname: ::windows_core::PCWSTR, qwfilesize: u64, ppnewstorage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateStorage2: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub SetAttributes2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwattributes: u32, dwattributesex: u32, paudioformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetAttributes2: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetAttributes2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetAttributes2: usize,
 }
 #[repr(transparent)]
 pub struct IMDSPStorage3(::windows_core::IUnknown);
@@ -1320,16 +1303,13 @@ impl IMDSPStorage3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IMDSPStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateStorage2<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, dwattributes: u32, dwattributesex: u32, paudioformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER, pwszname: Param4, qwfilesize: u64) -> ::windows_core::Result<IMDSPStorage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateStorage2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat), pwszname.into_param().abi(), ::core::mem::transmute(qwfilesize), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IMDSPStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetAttributes2(&self, dwattributes: u32, dwattributesex: u32, paudioformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetAttributes2(&self, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwattributes), ::core::mem::transmute(pdwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
@@ -1468,16 +1448,13 @@ impl IMDSPStorage4 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IMDSPStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateStorage2<'a, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, dwattributes: u32, dwattributesex: u32, paudioformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER, pwszname: Param4, qwfilesize: u64) -> ::windows_core::Result<IMDSPStorage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.CreateStorage2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat), pwszname.into_param().abi(), ::core::mem::transmute(qwfilesize), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IMDSPStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetAttributes2(&self, dwattributes: u32, dwattributesex: u32, paudioformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetAttributes2(&self, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwattributes), ::core::mem::transmute(pdwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
@@ -2873,12 +2850,11 @@ impl IWMDMDevice2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWMDMStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetFormatSupport2(&self, dwflags: u32, ppaudioformatex: *mut *mut _WAVEFORMATEX, pnaudioformatcount: *mut u32, ppvideoformatex: *mut *mut _VIDEOINFOHEADER, pnvideoformatcount: *mut u32, ppfiletype: *mut *mut WMFILECAPABILITIES, pnfiletypecount: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetFormatSupport2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppaudioformatex), ::core::mem::transmute(pnaudioformatcount), ::core::mem::transmute(ppvideoformatex), ::core::mem::transmute(pnvideoformatcount), ::core::mem::transmute(ppfiletype), ::core::mem::transmute(pnfiletypecount)).ok()
     }
     #[cfg(feature = "Win32_System_Ole")]
-    pub unsafe fn GetSpecifyPropertyPages(&self, ppspecifyproppages: *mut ::core::option::Option<super::super::System::Ole::ISpecifyPropertyPages>, pppunknowns: *mut *mut ::core::option::Option<::windows_core::IUnknown>, pcunks: *mut u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetSpecifyPropertyPages(&self, ppspecifyproppages: *mut ::core::option::Option<::win32_system::Ole::ISpecifyPropertyPages>, pppunknowns: *mut *mut ::core::option::Option<::windows_core::IUnknown>, pcunks: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetSpecifyPropertyPages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppspecifyproppages), ::core::mem::transmute(pppunknowns), ::core::mem::transmute(pcunks)).ok()
     }
     pub unsafe fn GetCanonicalName(&self, pwszpnpname: &mut [u16]) -> ::windows_core::Result<()> {
@@ -2950,10 +2926,7 @@ unsafe impl ::windows_core::Interface for IWMDMDevice2 {
 pub struct IWMDMDevice2_Vtbl {
     pub base__: IWMDMDevice_Vtbl,
     pub GetStorage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszstoragename: ::windows_core::PCWSTR, ppstorage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetFormatSupport2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, ppaudioformatex: *mut *mut _WAVEFORMATEX, pnaudioformatcount: *mut u32, ppvideoformatex: *mut *mut _VIDEOINFOHEADER, pnvideoformatcount: *mut u32, ppfiletype: *mut *mut WMFILECAPABILITIES, pnfiletypecount: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetFormatSupport2: usize,
     #[cfg(feature = "Win32_System_Ole")]
     pub GetSpecifyPropertyPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppspecifyproppages: *mut ::windows_core::RawPtr, pppunknowns: *mut *mut *mut ::core::ffi::c_void, pcunks: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
@@ -3005,27 +2978,26 @@ impl IWMDMDevice3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWMDMStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetFormatSupport2(&self, dwflags: u32, ppaudioformatex: *mut *mut _WAVEFORMATEX, pnaudioformatcount: *mut u32, ppvideoformatex: *mut *mut _VIDEOINFOHEADER, pnvideoformatcount: *mut u32, ppfiletype: *mut *mut WMFILECAPABILITIES, pnfiletypecount: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetFormatSupport2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwflags), ::core::mem::transmute(ppaudioformatex), ::core::mem::transmute(pnaudioformatcount), ::core::mem::transmute(ppvideoformatex), ::core::mem::transmute(pnvideoformatcount), ::core::mem::transmute(ppfiletype), ::core::mem::transmute(pnfiletypecount)).ok()
     }
     #[cfg(feature = "Win32_System_Ole")]
-    pub unsafe fn GetSpecifyPropertyPages(&self, ppspecifyproppages: *mut ::core::option::Option<super::super::System::Ole::ISpecifyPropertyPages>, pppunknowns: *mut *mut ::core::option::Option<::windows_core::IUnknown>, pcunks: *mut u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetSpecifyPropertyPages(&self, ppspecifyproppages: *mut ::core::option::Option<::win32_system::Ole::ISpecifyPropertyPages>, pppunknowns: *mut *mut ::core::option::Option<::windows_core::IUnknown>, pcunks: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetSpecifyPropertyPages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ppspecifyproppages), ::core::mem::transmute(pppunknowns), ::core::mem::transmute(pcunks)).ok()
     }
     pub unsafe fn GetCanonicalName(&self, pwszpnpname: &mut [u16]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetCanonicalName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pwszpnpname)), pwszpnpname.len() as _).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn GetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszpropname: Param0) -> ::windows_core::Result<super::super::System::Com::StructuredStorage::PROPVARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::StructuredStorage::PROPVARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), pwszpropname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::StructuredStorage::PROPVARIANT>(result__)
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn GetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszpropname: Param0) -> ::windows_core::Result<::win32_system::Com::StructuredStorage::PROPVARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::StructuredStorage::PROPVARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), pwszpropname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn SetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszpropname: Param0, pvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn SetProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszpropname: Param0, pvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetProperty)(::windows_core::Interface::as_raw(self), pwszpropname.into_param().abi(), ::core::mem::transmute(pvalue)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
     pub unsafe fn GetFormatCapability(&self, format: WMDM_FORMATCODE) -> ::windows_core::Result<WMDM_FORMAT_CAPABILITY> {
         let mut result__ = ::core::mem::MaybeUninit::<WMDM_FORMAT_CAPABILITY>::zeroed();
         (::windows_core::Interface::vtable(self).GetFormatCapability)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(format), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WMDM_FORMAT_CAPABILITY>(result__)
@@ -3122,17 +3094,17 @@ unsafe impl ::windows_core::Interface for IWMDMDevice3 {
 #[doc(hidden)]
 pub struct IWMDMDevice3_Vtbl {
     pub base__: IWMDMDevice2_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszpropname: ::windows_core::PCWSTR, pvalue: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszpropname: ::windows_core::PCWSTR, pvalue: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub SetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszpropname: ::windows_core::PCWSTR, pvalue: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub SetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszpropname: ::windows_core::PCWSTR, pvalue: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     SetProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
     pub GetFormatCapability: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: WMDM_FORMATCODE, pformatsupport: *mut WMDM_FORMAT_CAPABILITY) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetFormatCapability: usize,
     pub DeviceIoControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwiocontrolcode: u32, lpinbuffer: *const u8, ninbuffersize: u32, lpoutbuffer: *mut u8, pnoutbuffersize: *mut u32) -> ::windows_core::HRESULT,
     pub FindStorage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, findscope: WMDM_FIND_SCOPE, pwszuniqueid: ::windows_core::PCWSTR, ppstorage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3414,13 +3386,11 @@ pub struct IWMDMEnumStorage_Vtbl {
 #[repr(transparent)]
 pub struct IWMDMLogger(::windows_core::IUnknown);
 impl IWMDMLogger {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsEnabled(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsEnabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsEnabled(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsEnabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Enable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fenable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Enable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fenable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Enable)(::windows_core::Interface::as_raw(self), fenable.into_param().abi()).ok()
     }
     pub unsafe fn GetLogFileName(&self, pszfilename: ::windows_core::PSTR, nmaxchars: u32) -> ::windows_core::Result<()> {
@@ -3489,14 +3459,8 @@ unsafe impl ::windows_core::Interface for IWMDMLogger {
 #[doc(hidden)]
 pub struct IWMDMLogger_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfenabled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsEnabled: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Enable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Enable: usize,
+    pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfenabled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub Enable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetLogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszfilename: ::windows_core::PSTR, nmaxchars: u32) -> ::windows_core::HRESULT,
     pub SetLogFileName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszfilename: ::windows_core::PCSTR) -> ::windows_core::HRESULT,
     pub LogString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwflags: u32, pszsrcname: ::windows_core::PCSTR, pszlog: ::windows_core::PCSTR) -> ::windows_core::HRESULT,
@@ -3828,11 +3792,9 @@ impl IWMDMOperation2 {
     pub unsafe fn End<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, phcompletioncode: *const ::windows_core::HRESULT, pnewobject: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.End)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(phcompletioncode), pnewobject.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetObjectAttributes2(&self, dwattributes: u32, dwattributesex: u32, pformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetObjectAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(pformat), ::core::mem::transmute(pvideoformat)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetObjectAttributes2(&self, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetObjectAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwattributes), ::core::mem::transmute(pdwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
@@ -3901,14 +3863,8 @@ unsafe impl ::windows_core::Interface for IWMDMOperation2 {
 #[doc(hidden)]
 pub struct IWMDMOperation2_Vtbl {
     pub base__: IWMDMOperation_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub SetObjectAttributes2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwattributes: u32, dwattributesex: u32, pformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetObjectAttributes2: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetObjectAttributes2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetObjectAttributes2: usize,
 }
 #[repr(transparent)]
 pub struct IWMDMOperation3(::windows_core::IUnknown);
@@ -4447,11 +4403,9 @@ impl IWMDMStorage2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWMDMStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetAttributes2(&self, dwattributes: u32, dwattributesex: u32, pformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(pformat), ::core::mem::transmute(pvideoformat)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetAttributes2(&self, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwattributes), ::core::mem::transmute(pdwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
@@ -4521,14 +4475,8 @@ unsafe impl ::windows_core::Interface for IWMDMStorage2 {
 pub struct IWMDMStorage2_Vtbl {
     pub base__: IWMDMStorage_Vtbl,
     pub GetStorage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszstoragename: ::windows_core::PCWSTR, ppstorage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub SetAttributes2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwattributes: u32, dwattributesex: u32, pformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetAttributes2: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetAttributes2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetAttributes2: usize,
 }
 #[repr(transparent)]
 pub struct IWMDMStorage3(::windows_core::IUnknown);
@@ -4567,11 +4515,9 @@ impl IWMDMStorage3 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWMDMStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetAttributes2(&self, dwattributes: u32, dwattributesex: u32, pformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(pformat), ::core::mem::transmute(pvideoformat)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetAttributes2(&self, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwattributes), ::core::mem::transmute(pdwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
@@ -4716,11 +4662,9 @@ impl IWMDMStorage4 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetStorage)(::windows_core::Interface::as_raw(self), pszstoragename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWMDMStorage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetAttributes2(&self, dwattributes: u32, dwattributesex: u32, pformat: *const _WAVEFORMATEX, pvideoformat: *const _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwattributes), ::core::mem::transmute(dwattributesex), ::core::mem::transmute(pformat), ::core::mem::transmute(pvideoformat)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetAttributes2(&self, pdwattributes: *mut u32, pdwattributesex: *mut u32, paudioformat: *mut _WAVEFORMATEX, pvideoformat: *mut _VIDEOINFOHEADER) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetAttributes2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwattributes), ::core::mem::transmute(pdwattributesex), ::core::mem::transmute(paudioformat), ::core::mem::transmute(pvideoformat)).ok()
     }
@@ -6111,38 +6055,38 @@ impl ::core::fmt::Debug for WMDM_FORMATCODE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_FORMAT_CAPABILITY {
     pub nPropConfig: u32,
     pub pConfigs: *mut WMDM_PROP_CONFIG,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for WMDM_FORMAT_CAPABILITY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_FORMAT_CAPABILITY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::fmt::Debug for WMDM_FORMAT_CAPABILITY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WMDM_FORMAT_CAPABILITY").field("nPropConfig", &self.nPropConfig).field("pConfigs", &self.pConfigs).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 unsafe impl ::windows_core::Abi for WMDM_FORMAT_CAPABILITY {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::PartialEq for WMDM_FORMAT_CAPABILITY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMDM_FORMAT_CAPABILITY>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::Eq for WMDM_FORMAT_CAPABILITY {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::default::Default for WMDM_FORMAT_CAPABILITY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6169,169 +6113,169 @@ pub const WMDM_POWER_IS_BATTERY: u32 = 4u32;
 pub const WMDM_POWER_IS_EXTERNAL: u32 = 8u32;
 pub const WMDM_POWER_PERCENT_AVAILABLE: u32 = 16u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_PROP_CONFIG {
     pub nPreference: u32,
     pub nPropDesc: u32,
     pub pPropDesc: *mut WMDM_PROP_DESC,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for WMDM_PROP_CONFIG {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_CONFIG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::fmt::Debug for WMDM_PROP_CONFIG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WMDM_PROP_CONFIG").field("nPreference", &self.nPreference).field("nPropDesc", &self.nPropDesc).field("pPropDesc", &self.pPropDesc).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 unsafe impl ::windows_core::Abi for WMDM_PROP_CONFIG {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::PartialEq for WMDM_PROP_CONFIG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMDM_PROP_CONFIG>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::Eq for WMDM_PROP_CONFIG {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::default::Default for WMDM_PROP_CONFIG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_PROP_DESC {
     pub pwszPropName: ::windows_core::PWSTR,
     pub ValidValuesForm: WMDM_ENUM_PROP_VALID_VALUES_FORM,
     pub ValidValues: WMDM_PROP_DESC_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_DESC {
     fn clone(&self) -> Self {
         Self { pwszPropName: self.pwszPropName, ValidValuesForm: self.ValidValuesForm, ValidValues: self.ValidValues.clone() }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 unsafe impl ::windows_core::Abi for WMDM_PROP_DESC {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::PartialEq for WMDM_PROP_DESC {
     fn eq(&self, other: &Self) -> bool {
         self.pwszPropName == other.pwszPropName && self.ValidValuesForm == other.ValidValuesForm && self.ValidValues == other.ValidValues
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::Eq for WMDM_PROP_DESC {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::default::Default for WMDM_PROP_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub union WMDM_PROP_DESC_0 {
     pub ValidValuesRange: ::core::mem::ManuallyDrop<WMDM_PROP_VALUES_RANGE>,
     pub EnumeratedValidValues: WMDM_PROP_VALUES_ENUM,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_DESC_0 {
     fn clone(&self) -> Self {
         unsafe { ::core::mem::transmute_copy(self) }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 unsafe impl ::windows_core::Abi for WMDM_PROP_DESC_0 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::PartialEq for WMDM_PROP_DESC_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMDM_PROP_DESC_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::Eq for WMDM_PROP_DESC_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::default::Default for WMDM_PROP_DESC_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_PROP_VALUES_ENUM {
     pub cEnumValues: u32,
-    pub pValues: *mut super::super::System::Com::StructuredStorage::PROPVARIANT,
+    pub pValues: *mut ::win32_system::Com::StructuredStorage::PROPVARIANT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for WMDM_PROP_VALUES_ENUM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_VALUES_ENUM {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::fmt::Debug for WMDM_PROP_VALUES_ENUM {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WMDM_PROP_VALUES_ENUM").field("cEnumValues", &self.cEnumValues).field("pValues", &self.pValues).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 unsafe impl ::windows_core::Abi for WMDM_PROP_VALUES_ENUM {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::PartialEq for WMDM_PROP_VALUES_ENUM {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WMDM_PROP_VALUES_ENUM>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::Eq for WMDM_PROP_VALUES_ENUM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::default::Default for WMDM_PROP_VALUES_ENUM {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct WMDM_PROP_VALUES_RANGE {
-    pub rangeMin: super::super::System::Com::StructuredStorage::PROPVARIANT,
-    pub rangeMax: super::super::System::Com::StructuredStorage::PROPVARIANT,
-    pub rangeStep: super::super::System::Com::StructuredStorage::PROPVARIANT,
+    pub rangeMin: ::win32_system::Com::StructuredStorage::PROPVARIANT,
+    pub rangeMax: ::win32_system::Com::StructuredStorage::PROPVARIANT,
+    pub rangeStep: ::win32_system::Com::StructuredStorage::PROPVARIANT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::clone::Clone for WMDM_PROP_VALUES_RANGE {
     fn clone(&self) -> Self {
         Self { rangeMin: self.rangeMin.clone(), rangeMax: self.rangeMax.clone(), rangeStep: self.rangeStep.clone() }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 unsafe impl ::windows_core::Abi for WMDM_PROP_VALUES_RANGE {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::PartialEq for WMDM_PROP_VALUES_RANGE {
     fn eq(&self, other: &Self) -> bool {
         self.rangeMin == other.rangeMin && self.rangeMax == other.rangeMax && self.rangeStep == other.rangeStep
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::Eq for WMDM_PROP_VALUES_RANGE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::default::Default for WMDM_PROP_VALUES_RANGE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6558,42 +6502,34 @@ impl ::core::default::Default for _BITMAPINFOHEADER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct _VIDEOINFOHEADER {
-    pub rcSource: super::super::Foundation::RECT,
-    pub rcTarget: super::super::Foundation::RECT,
+    pub rcSource: ::win32_foundation::RECT,
+    pub rcTarget: ::win32_foundation::RECT,
     pub dwBitRate: u32,
     pub dwBitErrorRate: u32,
     pub AvgTimePerFrame: i64,
     pub bmiHeader: _BITMAPINFOHEADER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for _VIDEOINFOHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for _VIDEOINFOHEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for _VIDEOINFOHEADER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("_VIDEOINFOHEADER").field("rcSource", &self.rcSource).field("rcTarget", &self.rcTarget).field("dwBitRate", &self.dwBitRate).field("dwBitErrorRate", &self.dwBitErrorRate).field("AvgTimePerFrame", &self.AvgTimePerFrame).field("bmiHeader", &self.bmiHeader).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for _VIDEOINFOHEADER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for _VIDEOINFOHEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_VIDEOINFOHEADER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for _VIDEOINFOHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for _VIDEOINFOHEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6635,38 +6571,30 @@ impl ::core::default::Default for _WAVEFORMATEX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct __MACINFO {
-    pub fUsed: super::super::Foundation::BOOL,
+    pub fUsed: ::win32_foundation::BOOL,
     pub abMacState: [u8; 36],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for __MACINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for __MACINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for __MACINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("__MACINFO").field("fUsed", &self.fUsed).field("abMacState", &self.abMacState).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for __MACINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for __MACINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<__MACINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for __MACINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for __MACINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

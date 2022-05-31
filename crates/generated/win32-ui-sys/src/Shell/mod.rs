@@ -7,187 +7,158 @@ extern "system" {
     pub fn AssocCreate(clsid: ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Registry")]
     pub fn AssocCreateForClasses(rgclasses: *const ASSOCIATIONELEMENT, cclasses: u32, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub fn AssocGetDetailsOfPropKey(psf: IShellFolder, pidl: *const Common::ITEMIDLIST, pkey: *const PropertiesSystem::PROPERTYKEY, pv: *mut super::super::System::Com::VARIANT, pffoundpropkey: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub fn AssocGetDetailsOfPropKey(psf: IShellFolder, pidl: *const Common::ITEMIDLIST, pkey: *const PropertiesSystem::PROPERTYKEY, pv: *mut ::win32_system_sys::Com::VARIANT, pffoundpropkey: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn AssocGetPerceivedType(pszext: ::windows_core_sys::PCWSTR, ptype: *mut Common::PERCEIVED, pflag: *mut u32, ppsztype: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AssocIsDangerous(pszassoc: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn AssocIsDangerous(pszassoc: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn AssocQueryKeyA(flags: u32, key: ASSOCKEY, pszassoc: ::windows_core_sys::PCSTR, pszextra: ::windows_core_sys::PCSTR, phkeyout: *mut super::super::System::Registry::HKEY) -> ::windows_core_sys::HRESULT;
+    pub fn AssocQueryKeyA(flags: u32, key: ASSOCKEY, pszassoc: ::windows_core_sys::PCSTR, pszextra: ::windows_core_sys::PCSTR, phkeyout: *mut ::win32_system_sys::Registry::HKEY) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn AssocQueryKeyW(flags: u32, key: ASSOCKEY, pszassoc: ::windows_core_sys::PCWSTR, pszextra: ::windows_core_sys::PCWSTR, phkeyout: *mut super::super::System::Registry::HKEY) -> ::windows_core_sys::HRESULT;
+    pub fn AssocQueryKeyW(flags: u32, key: ASSOCKEY, pszassoc: ::windows_core_sys::PCWSTR, pszextra: ::windows_core_sys::PCWSTR, phkeyout: *mut ::win32_system_sys::Registry::HKEY) -> ::windows_core_sys::HRESULT;
     pub fn AssocQueryStringA(flags: u32, str: ASSOCSTR, pszassoc: ::windows_core_sys::PCSTR, pszextra: ::windows_core_sys::PCSTR, pszout: ::windows_core_sys::PSTR, pcchout: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn AssocQueryStringByKeyA(flags: u32, str: ASSOCSTR, hkassoc: super::super::System::Registry::HKEY, pszextra: ::windows_core_sys::PCSTR, pszout: ::windows_core_sys::PSTR, pcchout: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn AssocQueryStringByKeyA(flags: u32, str: ASSOCSTR, hkassoc: ::win32_system_sys::Registry::HKEY, pszextra: ::windows_core_sys::PCSTR, pszout: ::windows_core_sys::PSTR, pcchout: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn AssocQueryStringByKeyW(flags: u32, str: ASSOCSTR, hkassoc: super::super::System::Registry::HKEY, pszextra: ::windows_core_sys::PCWSTR, pszout: ::windows_core_sys::PWSTR, pcchout: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn AssocQueryStringByKeyW(flags: u32, str: ASSOCSTR, hkassoc: ::win32_system_sys::Registry::HKEY, pszextra: ::windows_core_sys::PCWSTR, pszout: ::windows_core_sys::PWSTR, pcchout: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn AssocQueryStringW(flags: u32, str: ASSOCSTR, pszassoc: ::windows_core_sys::PCWSTR, pszextra: ::windows_core_sys::PCWSTR, pszout: ::windows_core_sys::PWSTR, pcchout: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
-    pub fn CDefFolderMenu_Create2(pidlfolder: *const Common::ITEMIDLIST, hwnd: super::super::Foundation::HWND, cidl: u32, apidl: *const *const Common::ITEMIDLIST, psf: IShellFolder, pfn: LPFNDFMCALLBACK, nkeys: u32, ahkeys: *const super::super::System::Registry::HKEY, ppcm: *mut IContextMenu) -> ::windows_core_sys::HRESULT;
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
+    pub fn CDefFolderMenu_Create2(pidlfolder: *const Common::ITEMIDLIST, hwnd: ::win32_foundation_sys::HWND, cidl: u32, apidl: *const *const Common::ITEMIDLIST, psf: IShellFolder, pfn: LPFNDFMCALLBACK, nkeys: u32, ahkeys: *const ::win32_system_sys::Registry::HKEY, ppcm: *mut IContextMenu) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
-    pub fn CIDLData_CreateFromIDArray(pidlfolder: *const Common::ITEMIDLIST, cidl: u32, apidl: *const *const Common::ITEMIDLIST, ppdtobj: *mut super::super::System::Com::IDataObject) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ChrCmpIA(w1: u16, w2: u16) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ChrCmpIW(w1: u16, w2: u16) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ColorAdjustLuma(clrrgb: u32, n: i32, fscale: super::super::Foundation::BOOL) -> u32;
+    pub fn CIDLData_CreateFromIDArray(pidlfolder: *const Common::ITEMIDLIST, cidl: u32, apidl: *const *const Common::ITEMIDLIST, ppdtobj: *mut ::win32_system_sys::Com::IDataObject) -> ::windows_core_sys::HRESULT;
+    pub fn ChrCmpIA(w1: u16, w2: u16) -> ::win32_foundation_sys::BOOL;
+    pub fn ChrCmpIW(w1: u16, w2: u16) -> ::win32_foundation_sys::BOOL;
+    pub fn ColorAdjustLuma(clrrgb: u32, n: i32, fscale: ::win32_foundation_sys::BOOL) -> u32;
     pub fn ColorHLSToRGB(whue: u16, wluminance: u16, wsaturation: u16) -> u32;
     pub fn ColorRGBToHLS(clrrgb: u32, pwhue: *mut u16, pwluminance: *mut u16, pwsaturation: *mut u16);
     pub fn CommandLineToArgvW(lpcmdline: ::windows_core_sys::PCWSTR, pnumargs: *mut i32) -> *mut ::windows_core_sys::PWSTR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn ConnectToConnectionPoint(punk: ::windows_core_sys::IUnknown, riidevent: *const ::windows_core_sys::GUID, fconnect: super::super::Foundation::BOOL, punktarget: ::windows_core_sys::IUnknown, pdwcookie: *mut u32, ppcpout: *mut super::super::System::Com::IConnectionPoint) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_Com")]
+    pub fn ConnectToConnectionPoint(punk: ::windows_core_sys::IUnknown, riidevent: *const ::windows_core_sys::GUID, fconnect: ::win32_foundation_sys::BOOL, punktarget: ::windows_core_sys::IUnknown, pdwcookie: *mut u32, ppcpout: *mut ::win32_system_sys::Com::IConnectionPoint) -> ::windows_core_sys::HRESULT;
     pub fn CreateProfile(pszusersid: ::windows_core_sys::PCWSTR, pszusername: ::windows_core_sys::PCWSTR, pszprofilepath: ::windows_core_sys::PWSTR, cchprofilepath: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DAD_AutoScroll(hwnd: super::super::Foundation::HWND, pad: *mut AUTO_SCROLL_DATA, pptnow: *const super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DAD_DragEnterEx(hwndtarget: super::super::Foundation::HWND, ptstart: super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn DAD_DragEnterEx2(hwndtarget: super::super::Foundation::HWND, ptstart: super::super::Foundation::POINT, pdtobject: super::super::System::Com::IDataObject) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DAD_DragLeave() -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DAD_DragMove(pt: super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn DAD_SetDragImage(him: super::Controls::HIMAGELIST, pptoffset: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DAD_ShowDragImage(fshow: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DefSubclassProc(hwnd: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteProfileA(lpsidstring: ::windows_core_sys::PCSTR, lpprofilepath: ::windows_core_sys::PCSTR, lpcomputername: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteProfileW(lpsidstring: ::windows_core_sys::PCWSTR, lpprofilepath: ::windows_core_sys::PCWSTR, lpcomputername: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn DAD_AutoScroll(hwnd: ::win32_foundation_sys::HWND, pad: *mut AUTO_SCROLL_DATA, pptnow: *const ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
+    pub fn DAD_DragEnterEx(hwndtarget: ::win32_foundation_sys::HWND, ptstart: ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Com")]
+    pub fn DAD_DragEnterEx2(hwndtarget: ::win32_foundation_sys::HWND, ptstart: ::win32_foundation_sys::POINT, pdtobject: ::win32_system_sys::Com::IDataObject) -> ::win32_foundation_sys::BOOL;
+    pub fn DAD_DragLeave() -> ::win32_foundation_sys::BOOL;
+    pub fn DAD_DragMove(pt: ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn DAD_SetDragImage(him: super::Controls::HIMAGELIST, pptoffset: *mut ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
+    pub fn DAD_ShowDragImage(fshow: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn DefSubclassProc(hwnd: ::win32_foundation_sys::HWND, umsg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
+    pub fn DeleteProfileA(lpsidstring: ::windows_core_sys::PCSTR, lpprofilepath: ::windows_core_sys::PCSTR, lpcomputername: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteProfileW(lpsidstring: ::windows_core_sys::PCWSTR, lpprofilepath: ::windows_core_sys::PCWSTR, lpcomputername: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn DoEnvironmentSubstA(pszsrc: ::windows_core_sys::PSTR, cchsrc: u32) -> u32;
     pub fn DoEnvironmentSubstW(pszsrc: ::windows_core_sys::PWSTR, cchsrc: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DragAcceptFiles(hwnd: super::super::Foundation::HWND, faccept: super::super::Foundation::BOOL);
+    pub fn DragAcceptFiles(hwnd: ::win32_foundation_sys::HWND, faccept: ::win32_foundation_sys::BOOL);
     pub fn DragFinish(hdrop: HDROP);
     pub fn DragQueryFileA(hdrop: HDROP, ifile: u32, lpszfile: ::windows_core_sys::PSTR, cch: u32) -> u32;
     pub fn DragQueryFileW(hdrop: HDROP, ifile: u32, lpszfile: ::windows_core_sys::PWSTR, cch: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DragQueryPoint(hdrop: HDROP, ppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
+    pub fn DragQueryPoint(hdrop: HDROP, ppt: *mut ::win32_foundation_sys::POINT) -> ::win32_foundation_sys::BOOL;
     pub fn DriveType(idrive: i32) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn DuplicateIcon(hinst: super::super::Foundation::HINSTANCE, hicon: super::WindowsAndMessaging::HICON) -> super::WindowsAndMessaging::HICON;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn ExtractAssociatedIconA(hinst: super::super::Foundation::HINSTANCE, psziconpath: ::windows_core_sys::PSTR, piicon: *mut u16) -> super::WindowsAndMessaging::HICON;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn ExtractAssociatedIconExA(hinst: super::super::Foundation::HINSTANCE, psziconpath: ::windows_core_sys::PSTR, piiconindex: *mut u16, piiconid: *mut u16) -> super::WindowsAndMessaging::HICON;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn ExtractAssociatedIconExW(hinst: super::super::Foundation::HINSTANCE, psziconpath: ::windows_core_sys::PWSTR, piiconindex: *mut u16, piiconid: *mut u16) -> super::WindowsAndMessaging::HICON;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn ExtractAssociatedIconW(hinst: super::super::Foundation::HINSTANCE, psziconpath: ::windows_core_sys::PWSTR, piicon: *mut u16) -> super::WindowsAndMessaging::HICON;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn ExtractIconA(hinst: super::super::Foundation::HINSTANCE, pszexefilename: ::windows_core_sys::PCSTR, niconindex: u32) -> super::WindowsAndMessaging::HICON;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn DuplicateIcon(hinst: ::win32_foundation_sys::HINSTANCE, hicon: super::WindowsAndMessaging::HICON) -> super::WindowsAndMessaging::HICON;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn ExtractAssociatedIconA(hinst: ::win32_foundation_sys::HINSTANCE, psziconpath: ::windows_core_sys::PSTR, piicon: *mut u16) -> super::WindowsAndMessaging::HICON;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn ExtractAssociatedIconExA(hinst: ::win32_foundation_sys::HINSTANCE, psziconpath: ::windows_core_sys::PSTR, piiconindex: *mut u16, piiconid: *mut u16) -> super::WindowsAndMessaging::HICON;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn ExtractAssociatedIconExW(hinst: ::win32_foundation_sys::HINSTANCE, psziconpath: ::windows_core_sys::PWSTR, piiconindex: *mut u16, piiconid: *mut u16) -> super::WindowsAndMessaging::HICON;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn ExtractAssociatedIconW(hinst: ::win32_foundation_sys::HINSTANCE, psziconpath: ::windows_core_sys::PWSTR, piicon: *mut u16) -> super::WindowsAndMessaging::HICON;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn ExtractIconA(hinst: ::win32_foundation_sys::HINSTANCE, pszexefilename: ::windows_core_sys::PCSTR, niconindex: u32) -> super::WindowsAndMessaging::HICON;
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn ExtractIconExA(lpszfile: ::windows_core_sys::PCSTR, niconindex: i32, phiconlarge: *mut super::WindowsAndMessaging::HICON, phiconsmall: *mut super::WindowsAndMessaging::HICON, nicons: u32) -> u32;
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn ExtractIconExW(lpszfile: ::windows_core_sys::PCWSTR, niconindex: i32, phiconlarge: *mut super::WindowsAndMessaging::HICON, phiconsmall: *mut super::WindowsAndMessaging::HICON, nicons: u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn ExtractIconW(hinst: super::super::Foundation::HINSTANCE, pszexefilename: ::windows_core_sys::PCWSTR, niconindex: u32) -> super::WindowsAndMessaging::HICON;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindExecutableA(lpfile: ::windows_core_sys::PCSTR, lpdirectory: ::windows_core_sys::PCSTR, lpresult: ::windows_core_sys::PSTR) -> super::super::Foundation::HINSTANCE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindExecutableW(lpfile: ::windows_core_sys::PCWSTR, lpdirectory: ::windows_core_sys::PCWSTR, lpresult: ::windows_core_sys::PWSTR) -> super::super::Foundation::HINSTANCE;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn ExtractIconW(hinst: ::win32_foundation_sys::HINSTANCE, pszexefilename: ::windows_core_sys::PCWSTR, niconindex: u32) -> super::WindowsAndMessaging::HICON;
+    pub fn FindExecutableA(lpfile: ::windows_core_sys::PCSTR, lpdirectory: ::windows_core_sys::PCSTR, lpresult: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::HINSTANCE;
+    pub fn FindExecutableW(lpfile: ::windows_core_sys::PCWSTR, lpdirectory: ::windows_core_sys::PCWSTR, lpresult: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::HINSTANCE;
     pub fn GetAcceptLanguagesA(pszlanguages: ::windows_core_sys::PSTR, pcchlanguages: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn GetAcceptLanguagesW(pszlanguages: ::windows_core_sys::PWSTR, pcchlanguages: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetAllUsersProfileDirectoryA(lpprofiledir: ::windows_core_sys::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetAllUsersProfileDirectoryW(lpprofiledir: ::windows_core_sys::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn GetAllUsersProfileDirectoryA(lpprofiledir: ::windows_core_sys::PSTR, lpcchsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetAllUsersProfileDirectoryW(lpprofiledir: ::windows_core_sys::PWSTR, lpcchsize: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetCurrentProcessExplicitAppUserModelID(appid: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDefaultUserProfileDirectoryA(lpprofiledir: ::windows_core_sys::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDefaultUserProfileDirectoryW(lpprofiledir: ::windows_core_sys::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn GetDefaultUserProfileDirectoryA(lpprofiledir: ::windows_core_sys::PSTR, lpcchsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDefaultUserProfileDirectoryW(lpprofiledir: ::windows_core_sys::PWSTR, lpcchsize: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetDpiForShellUIComponent(param0: SHELL_UI_COMPONENT) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileNameFromBrowse(hwnd: super::super::Foundation::HWND, pszfilepath: ::windows_core_sys::PWSTR, cchfilepath: u32, pszworkingdir: ::windows_core_sys::PCWSTR, pszdefext: ::windows_core_sys::PCWSTR, pszfilters: ::windows_core_sys::PCWSTR, psztitle: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn GetFileNameFromBrowse(hwnd: ::win32_foundation_sys::HWND, pszfilepath: ::windows_core_sys::PWSTR, cchfilepath: u32, pszworkingdir: ::windows_core_sys::PCWSTR, pszdefext: ::windows_core_sys::PCWSTR, pszfilters: ::windows_core_sys::PCWSTR, psztitle: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn GetMenuContextHelpId(param0: super::WindowsAndMessaging::HMENU) -> u32;
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn GetMenuPosFromID(hmenu: super::WindowsAndMessaging::HMENU, id: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetProfileType(dwflags: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetProfilesDirectoryA(lpprofiledir: ::windows_core_sys::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetProfilesDirectoryW(lpprofiledir: ::windows_core_sys::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn GetProfileType(dwflags: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetProfilesDirectoryA(lpprofiledir: ::windows_core_sys::PSTR, lpcchsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetProfilesDirectoryW(lpprofiledir: ::windows_core_sys::PWSTR, lpcchsize: *mut u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn GetScaleFactorForDevice(devicetype: DISPLAY_DEVICE_TYPE) -> Common::DEVICE_SCALE_FACTOR;
     #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Shell_Common"))]
-    pub fn GetScaleFactorForMonitor(hmon: super::super::Graphics::Gdi::HMONITOR, pscale: *mut Common::DEVICE_SCALE_FACTOR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetUserProfileDirectoryA(htoken: super::super::Foundation::HANDLE, lpprofiledir: ::windows_core_sys::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetUserProfileDirectoryW(htoken: super::super::Foundation::HANDLE, lpprofiledir: ::windows_core_sys::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetWindowContextHelpId(param0: super::super::Foundation::HWND) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetWindowSubclass(hwnd: super::super::Foundation::HWND, pfnsubclass: SUBCLASSPROC, uidsubclass: usize, pdwrefdata: *mut usize) -> super::super::Foundation::BOOL;
+    pub fn GetScaleFactorForMonitor(hmon: ::win32_graphics_sys::Gdi::HMONITOR, pscale: *mut Common::DEVICE_SCALE_FACTOR) -> ::windows_core_sys::HRESULT;
+    pub fn GetUserProfileDirectoryA(htoken: ::win32_foundation_sys::HANDLE, lpprofiledir: ::windows_core_sys::PSTR, lpcchsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetUserProfileDirectoryW(htoken: ::win32_foundation_sys::HANDLE, lpprofiledir: ::windows_core_sys::PWSTR, lpcchsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetWindowContextHelpId(param0: ::win32_foundation_sys::HWND) -> u32;
+    pub fn GetWindowSubclass(hwnd: ::win32_foundation_sys::HWND, pfnsubclass: SUBCLASSPROC, uidsubclass: usize, pdwrefdata: *mut usize) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn HMONITOR_UserFree(param0: *const u32, param1: *const super::super::Graphics::Gdi::HMONITOR);
+    pub fn HMONITOR_UserFree(param0: *const u32, param1: *const ::win32_graphics_sys::Gdi::HMONITOR);
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn HMONITOR_UserFree64(param0: *const u32, param1: *const super::super::Graphics::Gdi::HMONITOR);
+    pub fn HMONITOR_UserFree64(param0: *const u32, param1: *const ::win32_graphics_sys::Gdi::HMONITOR);
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn HMONITOR_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::Graphics::Gdi::HMONITOR) -> *mut u8;
+    pub fn HMONITOR_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics_sys::Gdi::HMONITOR) -> *mut u8;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn HMONITOR_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::Graphics::Gdi::HMONITOR) -> *mut u8;
+    pub fn HMONITOR_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const ::win32_graphics_sys::Gdi::HMONITOR) -> *mut u8;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn HMONITOR_UserSize(param0: *const u32, param1: u32, param2: *const super::super::Graphics::Gdi::HMONITOR) -> u32;
+    pub fn HMONITOR_UserSize(param0: *const u32, param1: u32, param2: *const ::win32_graphics_sys::Gdi::HMONITOR) -> u32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn HMONITOR_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::Graphics::Gdi::HMONITOR) -> u32;
+    pub fn HMONITOR_UserSize64(param0: *const u32, param1: u32, param2: *const ::win32_graphics_sys::Gdi::HMONITOR) -> u32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn HMONITOR_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::Graphics::Gdi::HMONITOR) -> *mut u8;
+    pub fn HMONITOR_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics_sys::Gdi::HMONITOR) -> *mut u8;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn HMONITOR_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::Graphics::Gdi::HMONITOR) -> *mut u8;
+    pub fn HMONITOR_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut ::win32_graphics_sys::Gdi::HMONITOR) -> *mut u8;
     pub fn HashData(pbdata: *const u8, cbdata: u32, pbhash: *mut u8, cbhash: u32) -> ::windows_core_sys::HRESULT;
     pub fn HlinkClone(pihl: IHlink, riid: *const ::windows_core_sys::GUID, pihlsiteforclone: IHlinkSite, dwsitedata: u32, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn HlinkCreateBrowseContext(piunkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HlinkCreateExtensionServices(pwzadditionalheaders: ::windows_core_sys::PCWSTR, phwnd: super::super::Foundation::HWND, pszusername: ::windows_core_sys::PCWSTR, pszpassword: ::windows_core_sys::PCWSTR, piunkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkCreateExtensionServices(pwzadditionalheaders: ::windows_core_sys::PCWSTR, phwnd: ::win32_foundation_sys::HWND, pszusername: ::windows_core_sys::PCWSTR, pszpassword: ::windows_core_sys::PCWSTR, piunkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkCreateFromData(pidataobj: super::super::System::Com::IDataObject, pihlsite: IHlinkSite, dwsitedata: u32, piunkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkCreateFromData(pidataobj: ::win32_system_sys::Com::IDataObject, pihlsite: IHlinkSite, dwsitedata: u32, piunkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkCreateFromMoniker(pimktrgt: super::super::System::Com::IMoniker, pwzlocation: ::windows_core_sys::PCWSTR, pwzfriendlyname: ::windows_core_sys::PCWSTR, pihlsite: IHlinkSite, dwsitedata: u32, piunkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkCreateFromMoniker(pimktrgt: ::win32_system_sys::Com::IMoniker, pwzlocation: ::windows_core_sys::PCWSTR, pwzfriendlyname: ::windows_core_sys::PCWSTR, pihlsite: IHlinkSite, dwsitedata: u32, piunkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn HlinkCreateFromString(pwztarget: ::windows_core_sys::PCWSTR, pwzlocation: ::windows_core_sys::PCWSTR, pwzfriendlyname: ::windows_core_sys::PCWSTR, pihlsite: IHlinkSite, dwsitedata: u32, piunkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn HlinkCreateShortcut(grfhlshortcutf: u32, pihl: IHlink, pwzdir: ::windows_core_sys::PCWSTR, pwzfilename: ::windows_core_sys::PCWSTR, ppwzshortcutfile: *mut ::windows_core_sys::PWSTR, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkCreateShortcutFromMoniker(grfhlshortcutf: u32, pimktarget: super::super::System::Com::IMoniker, pwzlocation: ::windows_core_sys::PCWSTR, pwzdir: ::windows_core_sys::PCWSTR, pwzfilename: ::windows_core_sys::PCWSTR, ppwzshortcutfile: *mut ::windows_core_sys::PWSTR, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkCreateShortcutFromMoniker(grfhlshortcutf: u32, pimktarget: ::win32_system_sys::Com::IMoniker, pwzlocation: ::windows_core_sys::PCWSTR, pwzdir: ::windows_core_sys::PCWSTR, pwzfilename: ::windows_core_sys::PCWSTR, ppwzshortcutfile: *mut ::windows_core_sys::PWSTR, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn HlinkCreateShortcutFromString(grfhlshortcutf: u32, pwztarget: ::windows_core_sys::PCWSTR, pwzlocation: ::windows_core_sys::PCWSTR, pwzdir: ::windows_core_sys::PCWSTR, pwzfilename: ::windows_core_sys::PCWSTR, ppwzshortcutfile: *mut ::windows_core_sys::PWSTR, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     pub fn HlinkGetSpecialReference(ureference: u32, ppwzreference: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HlinkGetValueFromParams(pwzparams: ::windows_core_sys::PCWSTR, pwzname: ::windows_core_sys::PCWSTR, ppwzvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HlinkIsShortcut(pwzfilename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkNavigate(pihl: IHlink, pihlframe: IHlinkFrame, grfhlnf: u32, pbc: super::super::System::Com::IBindCtx, pibsc: super::super::System::Com::IBindStatusCallback, pihlbc: IHlinkBrowseContext) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkNavigate(pihl: IHlink, pihlframe: IHlinkFrame, grfhlnf: u32, pbc: ::win32_system_sys::Com::IBindCtx, pibsc: ::win32_system_sys::Com::IBindStatusCallback, pihlbc: IHlinkBrowseContext) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkNavigateToStringReference(pwztarget: ::windows_core_sys::PCWSTR, pwzlocation: ::windows_core_sys::PCWSTR, pihlsite: IHlinkSite, dwsitedata: u32, pihlframe: IHlinkFrame, grfhlnf: u32, pibc: super::super::System::Com::IBindCtx, pibsc: super::super::System::Com::IBindStatusCallback, pihlbc: IHlinkBrowseContext) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkNavigateToStringReference(pwztarget: ::windows_core_sys::PCWSTR, pwzlocation: ::windows_core_sys::PCWSTR, pihlsite: IHlinkSite, dwsitedata: u32, pihlframe: IHlinkFrame, grfhlnf: u32, pibc: ::win32_system_sys::Com::IBindCtx, pibsc: ::win32_system_sys::Com::IBindStatusCallback, pihlbc: IHlinkBrowseContext) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkOnNavigate(pihlframe: IHlinkFrame, pihlbc: IHlinkBrowseContext, grfhlnf: u32, pimktarget: super::super::System::Com::IMoniker, pwzlocation: ::windows_core_sys::PCWSTR, pwzfriendlyname: ::windows_core_sys::PCWSTR, puhlid: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkOnNavigate(pihlframe: IHlinkFrame, pihlbc: IHlinkBrowseContext, grfhlnf: u32, pimktarget: ::win32_system_sys::Com::IMoniker, pwzlocation: ::windows_core_sys::PCWSTR, pwzfriendlyname: ::windows_core_sys::PCWSTR, puhlid: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkOnRenameDocument(dwreserved: u32, pihlbc: IHlinkBrowseContext, pimkold: super::super::System::Com::IMoniker, pimknew: super::super::System::Com::IMoniker) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn HlinkParseDisplayName(pibc: super::super::System::Com::IBindCtx, pwzdisplayname: ::windows_core_sys::PCWSTR, fnoforceabs: super::super::Foundation::BOOL, pccheaten: *mut u32, ppimk: *mut super::super::System::Com::IMoniker) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkOnRenameDocument(dwreserved: u32, pihlbc: IHlinkBrowseContext, pimkold: ::win32_system_sys::Com::IMoniker, pimknew: ::win32_system_sys::Com::IMoniker) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkPreprocessMoniker(pibc: super::super::System::Com::IBindCtx, pimkin: super::super::System::Com::IMoniker, ppimkout: *mut super::super::System::Com::IMoniker) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkParseDisplayName(pibc: ::win32_system_sys::Com::IBindCtx, pwzdisplayname: ::windows_core_sys::PCWSTR, fnoforceabs: ::win32_foundation_sys::BOOL, pccheaten: *mut u32, ppimk: *mut ::win32_system_sys::Com::IMoniker) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkQueryCreateFromData(pidataobj: super::super::System::Com::IDataObject) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkPreprocessMoniker(pibc: ::win32_system_sys::Com::IBindCtx, pimkin: ::win32_system_sys::Com::IMoniker, ppimkout: *mut ::win32_system_sys::Com::IMoniker) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkResolveMonikerForData(pimkreference: super::super::System::Com::IMoniker, reserved: u32, pibc: super::super::System::Com::IBindCtx, cfmtetc: u32, rgfmtetc: *mut super::super::System::Com::FORMATETC, pibsc: super::super::System::Com::IBindStatusCallback, pimkbase: super::super::System::Com::IMoniker) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkQueryCreateFromData(pidataobj: ::win32_system_sys::Com::IDataObject) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_Com")]
+    pub fn HlinkResolveMonikerForData(pimkreference: ::win32_system_sys::Com::IMoniker, reserved: u32, pibc: ::win32_system_sys::Com::IBindCtx, cfmtetc: u32, rgfmtetc: *mut ::win32_system_sys::Com::FORMATETC, pibsc: ::win32_system_sys::Com::IBindStatusCallback, pimkbase: ::win32_system_sys::Com::IMoniker) -> ::windows_core_sys::HRESULT;
     pub fn HlinkResolveShortcut(pwzshortcutfilename: ::windows_core_sys::PCWSTR, pihlsite: IHlinkSite, dwsitedata: u32, piunkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkResolveShortcutToMoniker(pwzshortcutfilename: ::windows_core_sys::PCWSTR, ppimktarget: *mut super::super::System::Com::IMoniker, ppwzlocation: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkResolveShortcutToMoniker(pwzshortcutfilename: ::windows_core_sys::PCWSTR, ppimktarget: *mut ::win32_system_sys::Com::IMoniker, ppwzlocation: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HlinkResolveShortcutToString(pwzshortcutfilename: ::windows_core_sys::PCWSTR, ppwztarget: *mut ::windows_core_sys::PWSTR, ppwzlocation: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkResolveStringForData(pwzreference: ::windows_core_sys::PCWSTR, reserved: u32, pibc: super::super::System::Com::IBindCtx, cfmtetc: u32, rgfmtetc: *mut super::super::System::Com::FORMATETC, pibsc: super::super::System::Com::IBindStatusCallback, pimkbase: super::super::System::Com::IMoniker) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkResolveStringForData(pwzreference: ::windows_core_sys::PCWSTR, reserved: u32, pibc: ::win32_system_sys::Com::IBindCtx, cfmtetc: u32, rgfmtetc: *mut ::win32_system_sys::Com::FORMATETC, pibsc: ::win32_system_sys::Com::IBindStatusCallback, pimkbase: ::win32_system_sys::Com::IMoniker) -> ::windows_core_sys::HRESULT;
     pub fn HlinkSetSpecialReference(ureference: u32, pwzreference: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HlinkTranslateURL(pwzurl: ::windows_core_sys::PCWSTR, grfflags: u32, ppwztranslatedurl: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn HlinkUpdateStackItem(pihlframe: IHlinkFrame, pihlbc: IHlinkBrowseContext, uhlid: u32, pimktrgt: super::super::System::Com::IMoniker, pwzlocation: ::windows_core_sys::PCWSTR, pwzfriendlyname: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn ILAppendID(pidl: *const Common::ITEMIDLIST, pmkid: *const Common::SHITEMID, fappend: super::super::Foundation::BOOL) -> *mut Common::ITEMIDLIST;
+    pub fn HlinkUpdateStackItem(pihlframe: IHlinkFrame, pihlbc: IHlinkBrowseContext, uhlid: u32, pimktrgt: ::win32_system_sys::Com::IMoniker, pwzlocation: ::windows_core_sys::PCWSTR, pwzfriendlyname: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn ILAppendID(pidl: *const Common::ITEMIDLIST, pmkid: *const Common::SHITEMID, fappend: ::win32_foundation_sys::BOOL) -> *mut Common::ITEMIDLIST;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn ILClone(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST;
     #[cfg(feature = "Win32_UI_Shell_Common")]
@@ -208,92 +179,72 @@ extern "system" {
     pub fn ILGetNext(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn ILGetSize(pidl: *const Common::ITEMIDLIST) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn ILIsEqual(pidl1: *const Common::ITEMIDLIST, pidl2: *const Common::ITEMIDLIST) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn ILIsParent(pidl1: *const Common::ITEMIDLIST, pidl2: *const Common::ITEMIDLIST, fimmediate: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn ILIsEqual(pidl1: *const Common::ITEMIDLIST, pidl2: *const Common::ITEMIDLIST) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn ILIsParent(pidl1: *const Common::ITEMIDLIST, pidl2: *const Common::ITEMIDLIST, fimmediate: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
-    pub fn ILLoadFromStreamEx(pstm: super::super::System::Com::IStream, pidl: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn ILRemoveLastID(pidl: *mut Common::ITEMIDLIST) -> super::super::Foundation::BOOL;
+    pub fn ILLoadFromStreamEx(pstm: ::win32_system_sys::Com::IStream, pidl: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn ILRemoveLastID(pidl: *mut Common::ITEMIDLIST) -> ::win32_foundation_sys::BOOL;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
-    pub fn ILSaveToStream(pstm: super::super::System::Com::IStream, pidl: *const Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
+    pub fn ILSaveToStream(pstm: ::win32_system_sys::Com::IStream, pidl: *const Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn IStream_Copy(pstmfrom: super::super::System::Com::IStream, pstmto: super::super::System::Com::IStream, cb: u32) -> ::windows_core_sys::HRESULT;
+    pub fn IStream_Copy(pstmfrom: ::win32_system_sys::Com::IStream, pstmto: ::win32_system_sys::Com::IStream, cb: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn IStream_Read(pstm: super::super::System::Com::IStream, pv: *mut ::core::ffi::c_void, cb: u32) -> ::windows_core_sys::HRESULT;
+    pub fn IStream_Read(pstm: ::win32_system_sys::Com::IStream, pv: *mut ::core::ffi::c_void, cb: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
-    pub fn IStream_ReadPidl(pstm: super::super::System::Com::IStream, ppidlout: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
+    pub fn IStream_ReadPidl(pstm: ::win32_system_sys::Com::IStream, ppidlout: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn IStream_ReadStr(pstm: super::super::System::Com::IStream, ppsz: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn IStream_ReadStr(pstm: ::win32_system_sys::Com::IStream, ppsz: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn IStream_Reset(pstm: super::super::System::Com::IStream) -> ::windows_core_sys::HRESULT;
+    pub fn IStream_Reset(pstm: ::win32_system_sys::Com::IStream) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn IStream_Size(pstm: super::super::System::Com::IStream, pui: *mut u64) -> ::windows_core_sys::HRESULT;
+    pub fn IStream_Size(pstm: ::win32_system_sys::Com::IStream, pui: *mut u64) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn IStream_Write(pstm: super::super::System::Com::IStream, pv: *const ::core::ffi::c_void, cb: u32) -> ::windows_core_sys::HRESULT;
+    pub fn IStream_Write(pstm: ::win32_system_sys::Com::IStream, pv: *const ::core::ffi::c_void, cb: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
-    pub fn IStream_WritePidl(pstm: super::super::System::Com::IStream, pidlwrite: *const Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
+    pub fn IStream_WritePidl(pstm: ::win32_system_sys::Com::IStream, pidlwrite: *const Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn IStream_WriteStr(pstm: super::super::System::Com::IStream, psz: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn IStream_WriteStr(pstm: ::win32_system_sys::Com::IStream, psz: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn IUnknown_AtomicRelease(ppunk: *mut *mut ::core::ffi::c_void);
     pub fn IUnknown_GetSite(punk: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IUnknown_GetWindow(punk: ::windows_core_sys::IUnknown, phwnd: *mut super::super::Foundation::HWND) -> ::windows_core_sys::HRESULT;
+    pub fn IUnknown_GetWindow(punk: ::windows_core_sys::IUnknown, phwnd: *mut ::win32_foundation_sys::HWND) -> ::windows_core_sys::HRESULT;
     pub fn IUnknown_QueryService(punk: ::windows_core_sys::IUnknown, guidservice: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppvout: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn IUnknown_Set(ppunk: *mut ::windows_core_sys::IUnknown, punk: ::windows_core_sys::IUnknown);
     pub fn IUnknown_SetSite(punk: ::windows_core_sys::IUnknown, punksite: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ImportPrivacySettings(pszfilename: ::windows_core_sys::PCWSTR, pfparseprivacypreferences: *mut super::super::Foundation::BOOL, pfparsepersiterules: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn InitNetworkAddressControl() -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IntlStrEqWorkerA(fcasesens: super::super::Foundation::BOOL, lpstring1: ::windows_core_sys::PCSTR, lpstring2: ::windows_core_sys::PCSTR, nchar: i32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IntlStrEqWorkerW(fcasesens: super::super::Foundation::BOOL, lpstring1: ::windows_core_sys::PCWSTR, lpstring2: ::windows_core_sys::PCWSTR, nchar: i32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsCharSpaceA(wch: super::super::Foundation::CHAR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsCharSpaceW(wch: u16) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsInternetESCEnabled() -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsLFNDriveA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsLFNDriveW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn ImportPrivacySettings(pszfilename: ::windows_core_sys::PCWSTR, pfparseprivacypreferences: *mut ::win32_foundation_sys::BOOL, pfparsepersiterules: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn InitNetworkAddressControl() -> ::win32_foundation_sys::BOOL;
+    pub fn IntlStrEqWorkerA(fcasesens: ::win32_foundation_sys::BOOL, lpstring1: ::windows_core_sys::PCSTR, lpstring2: ::windows_core_sys::PCSTR, nchar: i32) -> ::win32_foundation_sys::BOOL;
+    pub fn IntlStrEqWorkerW(fcasesens: ::win32_foundation_sys::BOOL, lpstring1: ::windows_core_sys::PCWSTR, lpstring2: ::windows_core_sys::PCWSTR, nchar: i32) -> ::win32_foundation_sys::BOOL;
+    pub fn IsCharSpaceA(wch: ::win32_foundation_sys::CHAR) -> ::win32_foundation_sys::BOOL;
+    pub fn IsCharSpaceW(wch: u16) -> ::win32_foundation_sys::BOOL;
+    pub fn IsInternetESCEnabled() -> ::win32_foundation_sys::BOOL;
+    pub fn IsLFNDriveA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn IsLFNDriveW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn IsNetDrive(idrive: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsOS(dwos: OS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsUserAnAdmin() -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LoadUserProfileA(htoken: super::super::Foundation::HANDLE, lpprofileinfo: *mut PROFILEINFOA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LoadUserProfileW(htoken: super::super::Foundation::HANDLE, lpprofileinfo: *mut PROFILEINFOW) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn OleSaveToStreamEx(piunk: ::windows_core_sys::IUnknown, pistm: super::super::System::Com::IStream, fcleardirty: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn IsOS(dwos: OS) -> ::win32_foundation_sys::BOOL;
+    pub fn IsUserAnAdmin() -> ::win32_foundation_sys::BOOL;
+    pub fn LoadUserProfileA(htoken: ::win32_foundation_sys::HANDLE, lpprofileinfo: *mut PROFILEINFOA) -> ::win32_foundation_sys::BOOL;
+    pub fn LoadUserProfileW(htoken: ::win32_foundation_sys::HANDLE, lpprofileinfo: *mut PROFILEINFOW) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Com")]
+    pub fn OleSaveToStreamEx(piunk: ::windows_core_sys::IUnknown, pistm: ::win32_system_sys::Com::IStream, fcleardirty: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Registry"))]
-    pub fn OpenRegStream(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, grfmode: u32) -> super::super::System::Com::IStream;
+    pub fn OpenRegStream(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, grfmode: u32) -> ::win32_system_sys::Com::IStream;
     pub fn ParseURLA(pcszurl: ::windows_core_sys::PCSTR, ppu: *mut PARSEDURLA) -> ::windows_core_sys::HRESULT;
     pub fn ParseURLW(pcszurl: ::windows_core_sys::PCWSTR, ppu: *mut PARSEDURLW) -> ::windows_core_sys::HRESULT;
     pub fn PathAddBackslashA(pszpath: ::windows_core_sys::PSTR) -> ::windows_core_sys::PSTR;
     pub fn PathAddBackslashW(pszpath: ::windows_core_sys::PWSTR) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathAddExtensionA(pszpath: ::windows_core_sys::PSTR, pszext: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathAddExtensionW(pszpath: ::windows_core_sys::PWSTR, pszext: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn PathAddExtensionA(pszpath: ::windows_core_sys::PSTR, pszext: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathAddExtensionW(pszpath: ::windows_core_sys::PWSTR, pszext: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn PathAllocCanonicalize(pszpathin: ::windows_core_sys::PCWSTR, dwflags: u32, ppszpathout: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PathAllocCombine(pszpathin: ::windows_core_sys::PCWSTR, pszmore: ::windows_core_sys::PCWSTR, dwflags: u32, ppszpathout: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathAppendA(pszpath: ::windows_core_sys::PSTR, pszmore: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathAppendW(pszpath: ::windows_core_sys::PWSTR, pszmore: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn PathAppendA(pszpath: ::windows_core_sys::PSTR, pszmore: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathAppendW(pszpath: ::windows_core_sys::PWSTR, pszmore: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn PathBuildRootA(pszroot: ::windows_core_sys::PSTR, idrive: i32) -> ::windows_core_sys::PSTR;
     pub fn PathBuildRootW(pszroot: ::windows_core_sys::PWSTR, idrive: i32) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathCanonicalizeA(pszbuf: ::windows_core_sys::PSTR, pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathCanonicalizeW(pszbuf: ::windows_core_sys::PWSTR, pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn PathCanonicalizeA(pszbuf: ::windows_core_sys::PSTR, pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathCanonicalizeW(pszbuf: ::windows_core_sys::PWSTR, pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn PathCchAddBackslash(pszpath: ::windows_core_sys::PWSTR, cchpath: usize) -> ::windows_core_sys::HRESULT;
     pub fn PathCchAddBackslashEx(pszpath: ::windows_core_sys::PWSTR, cchpath: usize, ppszend: *mut ::windows_core_sys::PWSTR, pcchremaining: *mut usize) -> ::windows_core_sys::HRESULT;
     pub fn PathCchAddExtension(pszpath: ::windows_core_sys::PWSTR, cchpath: usize, pszext: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
@@ -304,8 +255,7 @@ extern "system" {
     pub fn PathCchCombine(pszpathout: ::windows_core_sys::PWSTR, cchpathout: usize, pszpathin: ::windows_core_sys::PCWSTR, pszmore: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PathCchCombineEx(pszpathout: ::windows_core_sys::PWSTR, cchpathout: usize, pszpathin: ::windows_core_sys::PCWSTR, pszmore: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn PathCchFindExtension(pszpath: ::windows_core_sys::PCWSTR, cchpath: usize, ppszext: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathCchIsRoot(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn PathCchIsRoot(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn PathCchRemoveBackslash(pszpath: ::windows_core_sys::PWSTR, cchpath: usize) -> ::windows_core_sys::HRESULT;
     pub fn PathCchRemoveBackslashEx(pszpath: ::windows_core_sys::PWSTR, cchpath: usize, ppszend: *mut ::windows_core_sys::PWSTR, pcchremaining: *mut usize) -> ::windows_core_sys::HRESULT;
     pub fn PathCchRemoveExtension(pszpath: ::windows_core_sys::PWSTR, cchpath: usize) -> ::windows_core_sys::HRESULT;
@@ -319,31 +269,25 @@ extern "system" {
     pub fn PathCombineW(pszdest: ::windows_core_sys::PWSTR, pszdir: ::windows_core_sys::PCWSTR, pszfile: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
     pub fn PathCommonPrefixA(pszfile1: ::windows_core_sys::PCSTR, pszfile2: ::windows_core_sys::PCSTR, achpath: ::windows_core_sys::PSTR) -> i32;
     pub fn PathCommonPrefixW(pszfile1: ::windows_core_sys::PCWSTR, pszfile2: ::windows_core_sys::PCWSTR, achpath: ::windows_core_sys::PWSTR) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn PathCompactPathA(hdc: super::super::Graphics::Gdi::HDC, pszpath: ::windows_core_sys::PSTR, dx: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathCompactPathExA(pszout: ::windows_core_sys::PSTR, pszsrc: ::windows_core_sys::PCSTR, cchmax: u32, dwflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathCompactPathExW(pszout: ::windows_core_sys::PWSTR, pszsrc: ::windows_core_sys::PCWSTR, cchmax: u32, dwflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn PathCompactPathW(hdc: super::super::Graphics::Gdi::HDC, pszpath: ::windows_core_sys::PWSTR, dx: u32) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn PathCompactPathA(hdc: ::win32_graphics_sys::Gdi::HDC, pszpath: ::windows_core_sys::PSTR, dx: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathCompactPathExA(pszout: ::windows_core_sys::PSTR, pszsrc: ::windows_core_sys::PCSTR, cchmax: u32, dwflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathCompactPathExW(pszout: ::windows_core_sys::PWSTR, pszsrc: ::windows_core_sys::PCWSTR, cchmax: u32, dwflags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn PathCompactPathW(hdc: ::win32_graphics_sys::Gdi::HDC, pszpath: ::windows_core_sys::PWSTR, dx: u32) -> ::win32_foundation_sys::BOOL;
     pub fn PathCreateFromUrlA(pszurl: ::windows_core_sys::PCSTR, pszpath: ::windows_core_sys::PSTR, pcchpath: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn PathCreateFromUrlAlloc(pszin: ::windows_core_sys::PCWSTR, ppszout: *mut ::windows_core_sys::PWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn PathCreateFromUrlW(pszurl: ::windows_core_sys::PCWSTR, pszpath: ::windows_core_sys::PWSTR, pcchpath: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathFileExistsA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathFileExistsW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn PathFileExistsA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathFileExistsW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn PathFindExtensionA(pszpath: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
     pub fn PathFindExtensionW(pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
     pub fn PathFindFileNameA(pszpath: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
     pub fn PathFindFileNameW(pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
     pub fn PathFindNextComponentA(pszpath: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
     pub fn PathFindNextComponentW(pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathFindOnPathA(pszpath: ::windows_core_sys::PSTR, ppszotherdirs: *const *const i8) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathFindOnPathW(pszpath: ::windows_core_sys::PWSTR, ppszotherdirs: *const *const u16) -> super::super::Foundation::BOOL;
+    pub fn PathFindOnPathA(pszpath: ::windows_core_sys::PSTR, ppszotherdirs: *const *const i8) -> ::win32_foundation_sys::BOOL;
+    pub fn PathFindOnPathW(pszpath: ::windows_core_sys::PWSTR, ppszotherdirs: *const *const u16) -> ::win32_foundation_sys::BOOL;
     pub fn PathFindSuffixArrayA(pszpath: ::windows_core_sys::PCSTR, apszsuffix: *const ::windows_core_sys::PSTR, iarraysize: i32) -> ::windows_core_sys::PSTR;
     pub fn PathFindSuffixArrayW(pszpath: ::windows_core_sys::PCWSTR, apszsuffix: *const ::windows_core_sys::PWSTR, iarraysize: i32) -> ::windows_core_sys::PWSTR;
     pub fn PathGetArgsA(pszpath: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
@@ -353,101 +297,56 @@ extern "system" {
     pub fn PathGetDriveNumberA(pszpath: ::windows_core_sys::PCSTR) -> i32;
     pub fn PathGetDriveNumberW(pszpath: ::windows_core_sys::PCWSTR) -> i32;
     pub fn PathGetShortPath(pszlongpath: ::windows_core_sys::PWSTR);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsContentTypeA(pszpath: ::windows_core_sys::PCSTR, pszcontenttype: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsContentTypeW(pszpath: ::windows_core_sys::PCWSTR, pszcontenttype: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsDirectoryA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsDirectoryEmptyA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsDirectoryEmptyW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsDirectoryW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsExe(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsFileSpecA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsFileSpecW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsLFNFileSpecA(pszname: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsLFNFileSpecW(pszname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsNetworkPathA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsNetworkPathW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsPrefixA(pszprefix: ::windows_core_sys::PCSTR, pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsPrefixW(pszprefix: ::windows_core_sys::PCWSTR, pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsRelativeA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsRelativeW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsRootA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsRootW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsSameRootA(pszpath1: ::windows_core_sys::PCSTR, pszpath2: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsSameRootW(pszpath1: ::windows_core_sys::PCWSTR, pszpath2: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsSlowA(pszfile: ::windows_core_sys::PCSTR, dwattr: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsSlowW(pszfile: ::windows_core_sys::PCWSTR, dwattr: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsSystemFolderA(pszpath: ::windows_core_sys::PCSTR, dwattrb: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsSystemFolderW(pszpath: ::windows_core_sys::PCWSTR, dwattrb: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsUNCA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsUNCEx(pszpath: ::windows_core_sys::PCWSTR, ppszserver: *mut ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsUNCServerA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsUNCServerShareA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsUNCServerShareW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsUNCServerW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsUNCW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsURLA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathIsURLW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathMakePrettyA(pszpath: ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathMakePrettyW(pszpath: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathMakeSystemFolderA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathMakeSystemFolderW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathMakeUniqueName(pszuniquename: ::windows_core_sys::PWSTR, cchmax: u32, psztemplate: ::windows_core_sys::PCWSTR, pszlongplate: ::windows_core_sys::PCWSTR, pszdir: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathMatchSpecA(pszfile: ::windows_core_sys::PCSTR, pszspec: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn PathIsContentTypeA(pszpath: ::windows_core_sys::PCSTR, pszcontenttype: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsContentTypeW(pszpath: ::windows_core_sys::PCWSTR, pszcontenttype: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsDirectoryA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsDirectoryEmptyA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsDirectoryEmptyW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsDirectoryW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsExe(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsFileSpecA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsFileSpecW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsLFNFileSpecA(pszname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsLFNFileSpecW(pszname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsNetworkPathA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsNetworkPathW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsPrefixA(pszprefix: ::windows_core_sys::PCSTR, pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsPrefixW(pszprefix: ::windows_core_sys::PCWSTR, pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsRelativeA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsRelativeW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsRootA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsRootW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsSameRootA(pszpath1: ::windows_core_sys::PCSTR, pszpath2: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsSameRootW(pszpath1: ::windows_core_sys::PCWSTR, pszpath2: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsSlowA(pszfile: ::windows_core_sys::PCSTR, dwattr: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsSlowW(pszfile: ::windows_core_sys::PCWSTR, dwattr: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsSystemFolderA(pszpath: ::windows_core_sys::PCSTR, dwattrb: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsSystemFolderW(pszpath: ::windows_core_sys::PCWSTR, dwattrb: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsUNCA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsUNCEx(pszpath: ::windows_core_sys::PCWSTR, ppszserver: *mut ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsUNCServerA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsUNCServerShareA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsUNCServerShareW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsUNCServerW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsUNCW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsURLA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathIsURLW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathMakePrettyA(pszpath: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathMakePrettyW(pszpath: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathMakeSystemFolderA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathMakeSystemFolderW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathMakeUniqueName(pszuniquename: ::windows_core_sys::PWSTR, cchmax: u32, psztemplate: ::windows_core_sys::PCWSTR, pszlongplate: ::windows_core_sys::PCWSTR, pszdir: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathMatchSpecA(pszfile: ::windows_core_sys::PCSTR, pszspec: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
     pub fn PathMatchSpecExA(pszfile: ::windows_core_sys::PCSTR, pszspec: ::windows_core_sys::PCSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn PathMatchSpecExW(pszfile: ::windows_core_sys::PCWSTR, pszspec: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathMatchSpecW(pszfile: ::windows_core_sys::PCWSTR, pszspec: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn PathMatchSpecW(pszfile: ::windows_core_sys::PCWSTR, pszspec: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn PathParseIconLocationA(psziconfile: ::windows_core_sys::PSTR) -> i32;
     pub fn PathParseIconLocationW(psziconfile: ::windows_core_sys::PWSTR) -> i32;
     pub fn PathQualify(psz: ::windows_core_sys::PWSTR);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathQuoteSpacesA(lpsz: ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathQuoteSpacesW(lpsz: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathRelativePathToA(pszpath: ::windows_core_sys::PSTR, pszfrom: ::windows_core_sys::PCSTR, dwattrfrom: u32, pszto: ::windows_core_sys::PCSTR, dwattrto: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathRelativePathToW(pszpath: ::windows_core_sys::PWSTR, pszfrom: ::windows_core_sys::PCWSTR, dwattrfrom: u32, pszto: ::windows_core_sys::PCWSTR, dwattrto: u32) -> super::super::Foundation::BOOL;
+    pub fn PathQuoteSpacesA(lpsz: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathQuoteSpacesW(lpsz: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathRelativePathToA(pszpath: ::windows_core_sys::PSTR, pszfrom: ::windows_core_sys::PCSTR, dwattrfrom: u32, pszto: ::windows_core_sys::PCSTR, dwattrto: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathRelativePathToW(pszpath: ::windows_core_sys::PWSTR, pszfrom: ::windows_core_sys::PCWSTR, dwattrfrom: u32, pszto: ::windows_core_sys::PCWSTR, dwattrto: u32) -> ::win32_foundation_sys::BOOL;
     pub fn PathRemoveArgsA(pszpath: ::windows_core_sys::PSTR);
     pub fn PathRemoveArgsW(pszpath: ::windows_core_sys::PWSTR);
     pub fn PathRemoveBackslashA(pszpath: ::windows_core_sys::PSTR) -> ::windows_core_sys::PSTR;
@@ -456,252 +355,204 @@ extern "system" {
     pub fn PathRemoveBlanksW(pszpath: ::windows_core_sys::PWSTR);
     pub fn PathRemoveExtensionA(pszpath: ::windows_core_sys::PSTR);
     pub fn PathRemoveExtensionW(pszpath: ::windows_core_sys::PWSTR);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathRemoveFileSpecA(pszpath: ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathRemoveFileSpecW(pszpath: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathRenameExtensionA(pszpath: ::windows_core_sys::PSTR, pszext: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathRenameExtensionW(pszpath: ::windows_core_sys::PWSTR, pszext: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn PathRemoveFileSpecA(pszpath: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathRemoveFileSpecW(pszpath: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathRenameExtensionA(pszpath: ::windows_core_sys::PSTR, pszext: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathRenameExtensionW(pszpath: ::windows_core_sys::PWSTR, pszext: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn PathResolve(pszpath: ::windows_core_sys::PWSTR, dirs: *const *const u16, fflags: PRF_FLAGS) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathSearchAndQualifyA(pszpath: ::windows_core_sys::PCSTR, pszbuf: ::windows_core_sys::PSTR, cchbuf: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathSearchAndQualifyW(pszpath: ::windows_core_sys::PCWSTR, pszbuf: ::windows_core_sys::PWSTR, cchbuf: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathSetDlgItemPathA(hdlg: super::super::Foundation::HWND, id: i32, pszpath: ::windows_core_sys::PCSTR);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathSetDlgItemPathW(hdlg: super::super::Foundation::HWND, id: i32, pszpath: ::windows_core_sys::PCWSTR);
+    pub fn PathSearchAndQualifyA(pszpath: ::windows_core_sys::PCSTR, pszbuf: ::windows_core_sys::PSTR, cchbuf: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathSearchAndQualifyW(pszpath: ::windows_core_sys::PCWSTR, pszbuf: ::windows_core_sys::PWSTR, cchbuf: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathSetDlgItemPathA(hdlg: ::win32_foundation_sys::HWND, id: i32, pszpath: ::windows_core_sys::PCSTR);
+    pub fn PathSetDlgItemPathW(hdlg: ::win32_foundation_sys::HWND, id: i32, pszpath: ::windows_core_sys::PCWSTR);
     pub fn PathSkipRootA(pszpath: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
     pub fn PathSkipRootW(pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
     pub fn PathStripPathA(pszpath: ::windows_core_sys::PSTR);
     pub fn PathStripPathW(pszpath: ::windows_core_sys::PWSTR);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathStripToRootA(pszpath: ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathStripToRootW(pszpath: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathUnExpandEnvStringsA(pszpath: ::windows_core_sys::PCSTR, pszbuf: ::windows_core_sys::PSTR, cchbuf: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathUnExpandEnvStringsW(pszpath: ::windows_core_sys::PCWSTR, pszbuf: ::windows_core_sys::PWSTR, cchbuf: u32) -> super::super::Foundation::BOOL;
+    pub fn PathStripToRootA(pszpath: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathStripToRootW(pszpath: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathUnExpandEnvStringsA(pszpath: ::windows_core_sys::PCSTR, pszbuf: ::windows_core_sys::PSTR, cchbuf: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn PathUnExpandEnvStringsW(pszpath: ::windows_core_sys::PCWSTR, pszbuf: ::windows_core_sys::PWSTR, cchbuf: u32) -> ::win32_foundation_sys::BOOL;
     pub fn PathUndecorateA(pszpath: ::windows_core_sys::PSTR);
     pub fn PathUndecorateW(pszpath: ::windows_core_sys::PWSTR);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathUnmakeSystemFolderA(pszpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathUnmakeSystemFolderW(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathUnquoteSpacesA(lpsz: ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathUnquoteSpacesW(lpsz: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PathYetAnotherMakeUniqueName(pszuniquename: ::windows_core_sys::PWSTR, pszpath: ::windows_core_sys::PCWSTR, pszshort: ::windows_core_sys::PCWSTR, pszfilespec: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PickIconDlg(hwnd: super::super::Foundation::HWND, psziconpath: ::windows_core_sys::PWSTR, cchiconpath: u32, piiconindex: *mut i32) -> i32;
+    pub fn PathUnmakeSystemFolderA(pszpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathUnmakeSystemFolderW(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathUnquoteSpacesA(lpsz: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathUnquoteSpacesW(lpsz: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PathYetAnotherMakeUniqueName(pszuniquename: ::windows_core_sys::PWSTR, pszpath: ::windows_core_sys::PCWSTR, pszshort: ::windows_core_sys::PCWSTR, pszfilespec: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn PickIconDlg(hwnd: ::win32_foundation_sys::HWND, psziconpath: ::windows_core_sys::PWSTR, cchiconpath: u32, piiconindex: *mut i32) -> i32;
     pub fn QISearch(that: *mut ::core::ffi::c_void, pqit: *const QITAB, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReadCabinetState(pcs: *mut CABINETSTATE, clength: i32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RealDriveType(idrive: i32, foktohitnet: super::super::Foundation::BOOL) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn ReadCabinetState(pcs: *mut CABINETSTATE, clength: i32) -> ::win32_foundation_sys::BOOL;
+    pub fn RealDriveType(idrive: i32, foktohitnet: ::win32_foundation_sys::BOOL) -> i32;
     pub fn RegisterAppConstrainedChangeNotification(routine: PAPPCONSTRAIN_CHANGE_ROUTINE, context: *const ::core::ffi::c_void, registration: *mut *mut _APPCONSTRAIN_REGISTRATION) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RegisterAppStateChangeNotification(routine: PAPPSTATE_CHANGE_ROUTINE, context: *const ::core::ffi::c_void, registration: *mut *mut _APPSTATE_REGISTRATION) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterScaleChangeEvent(hevent: super::super::Foundation::HANDLE, pdwcookie: *mut usize) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterScaleChangeNotifications(displaydevice: DISPLAY_DEVICE_TYPE, hwndnotify: super::super::Foundation::HWND, umsgnotify: u32, pdwcookie: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveWindowSubclass(hwnd: super::super::Foundation::HWND, pfnsubclass: SUBCLASSPROC, uidsubclass: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RestartDialog(hwnd: super::super::Foundation::HWND, pszprompt: ::windows_core_sys::PCWSTR, dwreturn: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RestartDialogEx(hwnd: super::super::Foundation::HWND, pszprompt: ::windows_core_sys::PCWSTR, dwreturn: u32, dwreasoncode: u32) -> i32;
+    pub fn RegisterScaleChangeEvent(hevent: ::win32_foundation_sys::HANDLE, pdwcookie: *mut usize) -> ::windows_core_sys::HRESULT;
+    pub fn RegisterScaleChangeNotifications(displaydevice: DISPLAY_DEVICE_TYPE, hwndnotify: ::win32_foundation_sys::HWND, umsgnotify: u32, pdwcookie: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn RemoveWindowSubclass(hwnd: ::win32_foundation_sys::HWND, pfnsubclass: SUBCLASSPROC, uidsubclass: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn RestartDialog(hwnd: ::win32_foundation_sys::HWND, pszprompt: ::windows_core_sys::PCWSTR, dwreturn: u32) -> i32;
+    pub fn RestartDialogEx(hwnd: ::win32_foundation_sys::HWND, pszprompt: ::windows_core_sys::PCWSTR, dwreturn: u32, dwreasoncode: u32) -> i32;
     pub fn RevokeScaleChangeNotifications(displaydevice: DISPLAY_DEVICE_TYPE, dwcookie: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn SHAddFromPropSheetExtArray(hpsxa: HPSXA, lpfnaddpage: super::Controls::LPFNSVADDPROPSHEETPAGE, lparam: super::super::Foundation::LPARAM) -> u32;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn SHAddFromPropSheetExtArray(hpsxa: HPSXA, lpfnaddpage: super::Controls::LPFNSVADDPROPSHEETPAGE, lparam: ::win32_foundation_sys::LPARAM) -> u32;
     pub fn SHAddToRecentDocs(uflags: u32, pv: *const ::core::ffi::c_void);
     pub fn SHAlloc(cb: usize) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHAllocShared(pvdata: *const ::core::ffi::c_void, dwsize: u32, dwprocessid: u32) -> super::super::Foundation::HANDLE;
+    pub fn SHAllocShared(pvdata: *const ::core::ffi::c_void, dwsize: u32, dwprocessid: u32) -> ::win32_foundation_sys::HANDLE;
     pub fn SHAnsiToAnsi(pszsrc: ::windows_core_sys::PCSTR, pszdst: ::windows_core_sys::PSTR, cchbuf: i32) -> i32;
     pub fn SHAnsiToUnicode(pszsrc: ::windows_core_sys::PCSTR, pwszdst: ::windows_core_sys::PWSTR, cwchbuf: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn SHAppBarMessage(dwmessage: u32, pdata: *mut APPBARDATA) -> usize;
     pub fn SHAssocEnumHandlers(pszextra: ::windows_core_sys::PCWSTR, affilter: ASSOC_FILTER, ppenumhandler: *mut IEnumAssocHandlers) -> ::windows_core_sys::HRESULT;
     pub fn SHAssocEnumHandlersForProtocolByApplication(protocol: ::windows_core_sys::PCWSTR, riid: *const ::windows_core_sys::GUID, enumhandlers: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHAutoComplete(hwndedit: super::super::Foundation::HWND, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn SHAutoComplete(hwndedit: ::win32_foundation_sys::HWND, dwflags: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHBindToFolderIDListParent(psfroot: IShellFolder, pidl: *const Common::ITEMIDLIST, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void, ppidllast: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHBindToFolderIDListParentEx(psfroot: IShellFolder, pidl: *const Common::ITEMIDLIST, ppbc: super::super::System::Com::IBindCtx, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void, ppidllast: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
+    pub fn SHBindToFolderIDListParentEx(psfroot: IShellFolder, pidl: *const Common::ITEMIDLIST, ppbc: ::win32_system_sys::Com::IBindCtx, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void, ppidllast: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHBindToObject(psf: IShellFolder, pidl: *const Common::ITEMIDLIST, pbc: super::super::System::Com::IBindCtx, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn SHBindToObject(psf: IShellFolder, pidl: *const Common::ITEMIDLIST, pbc: ::win32_system_sys::Com::IBindCtx, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHBindToParent(pidl: *const Common::ITEMIDLIST, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void, ppidllast: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+    #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHBrowseForFolderA(lpbi: *const BROWSEINFOA) -> *mut Common::ITEMIDLIST;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+    #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHBrowseForFolderW(lpbi: *const BROWSEINFOW) -> *mut Common::ITEMIDLIST;
     pub fn SHCLSIDFromString(psz: ::windows_core_sys::PCWSTR, pclsid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHChangeNotification_Lock(hchange: super::super::Foundation::HANDLE, dwprocid: u32, pppidl: *mut *mut *mut Common::ITEMIDLIST, plevent: *mut i32) -> ShFindChangeNotificationHandle;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHChangeNotification_Unlock(hlock: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHChangeNotification_Lock(hchange: ::win32_foundation_sys::HANDLE, dwprocid: u32, pppidl: *mut *mut *mut Common::ITEMIDLIST, plevent: *mut i32) -> ShFindChangeNotificationHandle;
+    pub fn SHChangeNotification_Unlock(hlock: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn SHChangeNotify(weventid: SHCNE_ID, uflags: SHCNF_FLAGS, dwitem1: *const ::core::ffi::c_void, dwitem2: *const ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHChangeNotifyDeregister(ulid: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHChangeNotifyRegister(hwnd: super::super::Foundation::HWND, fsources: SHCNRF_SOURCE, fevents: i32, wmsg: u32, centries: i32, pshcne: *const SHChangeNotifyEntry) -> u32;
+    pub fn SHChangeNotifyDeregister(ulid: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHChangeNotifyRegister(hwnd: ::win32_foundation_sys::HWND, fsources: SHCNRF_SOURCE, fevents: i32, wmsg: u32, centries: i32, pshcne: *const SHChangeNotifyEntry) -> u32;
     pub fn SHChangeNotifyRegisterThread(status: SCNRT_STATUS);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHCloneSpecialIDList(hwnd: super::super::Foundation::HWND, csidl: i32, fcreate: super::super::Foundation::BOOL) -> *mut Common::ITEMIDLIST;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHCloneSpecialIDList(hwnd: ::win32_foundation_sys::HWND, csidl: i32, fcreate: ::win32_foundation_sys::BOOL) -> *mut Common::ITEMIDLIST;
     pub fn SHCoCreateInstance(pszclsid: ::windows_core_sys::PCWSTR, pclsid: *const ::windows_core_sys::GUID, punkouter: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHCopyKeyA(hkeysrc: super::super::System::Registry::HKEY, pszsrcsubkey: ::windows_core_sys::PCSTR, hkeydest: super::super::System::Registry::HKEY, freserved: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHCopyKeyW(hkeysrc: super::super::System::Registry::HKEY, pszsrcsubkey: ::windows_core_sys::PCWSTR, hkeydest: super::super::System::Registry::HKEY, freserved: u32) -> super::super::Foundation::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHCopyKeyA(hkeysrc: ::win32_system_sys::Registry::HKEY, pszsrcsubkey: ::windows_core_sys::PCSTR, hkeydest: ::win32_system_sys::Registry::HKEY, freserved: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHCopyKeyW(hkeysrc: ::win32_system_sys::Registry::HKEY, pszsrcsubkey: ::windows_core_sys::PCWSTR, hkeydest: ::win32_system_sys::Registry::HKEY, freserved: u32) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn SHCreateAssociationRegistration(riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHCreateDataObject(pidlfolder: *const Common::ITEMIDLIST, cidl: u32, apidl: *const *const Common::ITEMIDLIST, pdtinner: super::super::System::Com::IDataObject, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
+    pub fn SHCreateDataObject(pidlfolder: *const Common::ITEMIDLIST, cidl: u32, apidl: *const *const Common::ITEMIDLIST, pdtinner: ::win32_system_sys::Com::IDataObject, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    #[cfg(all(feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
     pub fn SHCreateDefaultContextMenu(pdcm: *const DEFCONTEXTMENU, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SHCreateDefaultExtractIcon(riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SHCreateDefaultPropertiesOp(psi: IShellItem, ppfileop: *mut IFileOperation) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHCreateDirectory(hwnd: super::super::Foundation::HWND, pszpath: ::windows_core_sys::PCWSTR) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn SHCreateDirectoryExA(hwnd: super::super::Foundation::HWND, pszpath: ::windows_core_sys::PCSTR, psa: *const super::super::Security::SECURITY_ATTRIBUTES) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn SHCreateDirectoryExW(hwnd: super::super::Foundation::HWND, pszpath: ::windows_core_sys::PCWSTR, psa: *const super::super::Security::SECURITY_ATTRIBUTES) -> i32;
+    pub fn SHCreateDirectory(hwnd: ::win32_foundation_sys::HWND, pszpath: ::windows_core_sys::PCWSTR) -> i32;
+    #[cfg(feature = "Win32_Security")]
+    pub fn SHCreateDirectoryExA(hwnd: ::win32_foundation_sys::HWND, pszpath: ::windows_core_sys::PCSTR, psa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> i32;
+    #[cfg(feature = "Win32_Security")]
+    pub fn SHCreateDirectoryExW(hwnd: ::win32_foundation_sys::HWND, pszpath: ::windows_core_sys::PCWSTR, psa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> i32;
     pub fn SHCreateFileExtractIconW(pszfile: ::windows_core_sys::PCWSTR, dwfileattributes: u32, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHCreateItemFromIDList(pidl: *const Common::ITEMIDLIST, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHCreateItemFromParsingName(pszpath: ::windows_core_sys::PCWSTR, pbc: super::super::System::Com::IBindCtx, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn SHCreateItemFromParsingName(pszpath: ::windows_core_sys::PCWSTR, pbc: ::win32_system_sys::Com::IBindCtx, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHCreateItemFromRelativeName(psiparent: IShellItem, pszname: ::windows_core_sys::PCWSTR, pbc: super::super::System::Com::IBindCtx, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn SHCreateItemFromRelativeName(psiparent: IShellItem, pszname: ::windows_core_sys::PCWSTR, pbc: ::win32_system_sys::Com::IBindCtx, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SHCreateItemInKnownFolder(kfid: *const ::windows_core_sys::GUID, dwkfflags: u32, pszitem: ::windows_core_sys::PCWSTR, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHCreateItemWithParent(pidlparent: *const Common::ITEMIDLIST, psfparent: IShellFolder, pidl: *const Common::ITEMIDLIST, riid: *const ::windows_core_sys::GUID, ppvitem: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHCreateMemStream(pinit: *const u8, cbinit: u32) -> super::super::System::Com::IStream;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
-    pub fn SHCreateProcessAsUserW(pscpi: *mut SHCREATEPROCESSINFOW) -> super::super::Foundation::BOOL;
+    pub fn SHCreateMemStream(pinit: *const u8, cbinit: u32) -> ::win32_system_sys::Com::IStream;
+    #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Threading"))]
+    pub fn SHCreateProcessAsUserW(pscpi: *mut SHCREATEPROCESSINFOW) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SHCreatePropSheetExtArray(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, max_iface: u32) -> HPSXA;
+    pub fn SHCreatePropSheetExtArray(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, max_iface: u32) -> HPSXA;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHCreateQueryCancelAutoPlayMoniker(ppmoniker: *mut super::super::System::Com::IMoniker) -> ::windows_core_sys::HRESULT;
+    pub fn SHCreateQueryCancelAutoPlayMoniker(ppmoniker: *mut ::win32_system_sys::Com::IMoniker) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Ole")]
     pub fn SHCreateShellFolderView(pcsfv: *const SFV_CREATE, ppsv: *mut IShellView) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+    #[cfg(all(feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
     pub fn SHCreateShellFolderViewEx(pcsfv: *const CSFV, ppsv: *mut IShellView) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHCreateShellItem(pidlparent: *const Common::ITEMIDLIST, psfparent: IShellFolder, pidl: *const Common::ITEMIDLIST, ppsi: *mut IShellItem) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHCreateShellItemArray(pidlparent: *const Common::ITEMIDLIST, psf: IShellFolder, cidl: u32, ppidl: *const *const Common::ITEMIDLIST, ppsiitemarray: *mut IShellItemArray) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHCreateShellItemArrayFromDataObject(pdo: super::super::System::Com::IDataObject, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn SHCreateShellItemArrayFromDataObject(pdo: ::win32_system_sys::Com::IDataObject, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHCreateShellItemArrayFromIDLists(cidl: u32, rgpidl: *const *const Common::ITEMIDLIST, ppsiitemarray: *mut IShellItemArray) -> ::windows_core_sys::HRESULT;
     pub fn SHCreateShellItemArrayFromShellItem(psi: IShellItem, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn SHCreateShellPalette(hdc: super::super::Graphics::Gdi::HDC) -> super::super::Graphics::Gdi::HPALETTE;
+    pub fn SHCreateShellPalette(hdc: ::win32_graphics_sys::Gdi::HDC) -> ::win32_graphics_sys::Gdi::HPALETTE;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHCreateStdEnumFmtEtc(cfmt: u32, afmt: *const super::super::System::Com::FORMATETC, ppenumformatetc: *mut super::super::System::Com::IEnumFORMATETC) -> ::windows_core_sys::HRESULT;
+    pub fn SHCreateStdEnumFmtEtc(cfmt: u32, afmt: *const ::win32_system_sys::Com::FORMATETC, ppenumformatetc: *mut ::win32_system_sys::Com::IEnumFORMATETC) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHCreateStreamOnFileA(pszfile: ::windows_core_sys::PCSTR, grfmode: u32, ppstm: *mut super::super::System::Com::IStream) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn SHCreateStreamOnFileEx(pszfile: ::windows_core_sys::PCWSTR, grfmode: u32, dwattributes: u32, fcreate: super::super::Foundation::BOOL, pstmtemplate: super::super::System::Com::IStream, ppstm: *mut super::super::System::Com::IStream) -> ::windows_core_sys::HRESULT;
+    pub fn SHCreateStreamOnFileA(pszfile: ::windows_core_sys::PCSTR, grfmode: u32, ppstm: *mut ::win32_system_sys::Com::IStream) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHCreateStreamOnFileW(pszfile: ::windows_core_sys::PCWSTR, grfmode: u32, ppstm: *mut super::super::System::Com::IStream) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
-    pub fn SHCreateThread(pfnthreadproc: super::super::System::Threading::LPTHREAD_START_ROUTINE, pdata: *const ::core::ffi::c_void, flags: u32, pfncallback: super::super::System::Threading::LPTHREAD_START_ROUTINE) -> super::super::Foundation::BOOL;
+    pub fn SHCreateStreamOnFileEx(pszfile: ::windows_core_sys::PCWSTR, grfmode: u32, dwattributes: u32, fcreate: ::win32_foundation_sys::BOOL, pstmtemplate: ::win32_system_sys::Com::IStream, ppstm: *mut ::win32_system_sys::Com::IStream) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_Com")]
+    pub fn SHCreateStreamOnFileW(pszfile: ::windows_core_sys::PCWSTR, grfmode: u32, ppstm: *mut ::win32_system_sys::Com::IStream) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_Threading")]
+    pub fn SHCreateThread(pfnthreadproc: ::win32_system_sys::Threading::LPTHREAD_START_ROUTINE, pdata: *const ::core::ffi::c_void, flags: u32, pfncallback: ::win32_system_sys::Threading::LPTHREAD_START_ROUTINE) -> ::win32_foundation_sys::BOOL;
     pub fn SHCreateThreadRef(pcref: *mut i32, ppunk: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
-    pub fn SHCreateThreadWithHandle(pfnthreadproc: super::super::System::Threading::LPTHREAD_START_ROUTINE, pdata: *const ::core::ffi::c_void, flags: u32, pfncallback: super::super::System::Threading::LPTHREAD_START_ROUTINE, phandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_System_Threading")]
+    pub fn SHCreateThreadWithHandle(pfnthreadproc: ::win32_system_sys::Threading::LPTHREAD_START_ROUTINE, pdata: *const ::core::ffi::c_void, flags: u32, pfncallback: ::win32_system_sys::Threading::LPTHREAD_START_ROUTINE, phandle: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn SHDefExtractIconA(psziconfile: ::windows_core_sys::PCSTR, iindex: i32, uflags: u32, phiconlarge: *mut super::WindowsAndMessaging::HICON, phiconsmall: *mut super::WindowsAndMessaging::HICON, niconsize: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn SHDefExtractIconW(psziconfile: ::windows_core_sys::PCWSTR, iindex: i32, uflags: u32, phiconlarge: *mut super::WindowsAndMessaging::HICON, phiconsmall: *mut super::WindowsAndMessaging::HICON, niconsize: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHDeleteEmptyKeyA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHDeleteEmptyKeyW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHDeleteKeyA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHDeleteKeyW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHDeleteValueA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHDeleteValueW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
-    pub fn SHDestroyPropSheetExtArray(hpsxa: HPSXA);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub fn SHDoDragDrop(hwnd: super::super::Foundation::HWND, pdata: super::super::System::Com::IDataObject, pdsrc: super::super::System::Ole::IDropSource, dweffect: u32, pdweffect: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHEmptyRecycleBinA(hwnd: super::super::Foundation::HWND, pszrootpath: ::windows_core_sys::PCSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHEmptyRecycleBinW(hwnd: super::super::Foundation::HWND, pszrootpath: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHEnumKeyExA(hkey: super::super::System::Registry::HKEY, dwindex: u32, pszname: ::windows_core_sys::PSTR, pcchname: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHEnumKeyExW(hkey: super::super::System::Registry::HKEY, dwindex: u32, pszname: ::windows_core_sys::PWSTR, pcchname: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHEnumValueA(hkey: super::super::System::Registry::HKEY, dwindex: u32, pszvaluename: ::windows_core_sys::PSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHEnumValueW(hkey: super::super::System::Registry::HKEY, dwindex: u32, pszvaluename: ::windows_core_sys::PWSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SHEnumerateUnreadMailAccountsW(hkeyuser: super::super::System::Registry::HKEY, dwindex: u32, pszmailaddress: ::windows_core_sys::PWSTR, cchmailaddress: i32) -> ::windows_core_sys::HRESULT;
+    pub fn SHDeleteEmptyKeyA(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHDeleteEmptyKeyW(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHDeleteKeyA(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHDeleteKeyW(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHDeleteValueA(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHDeleteValueW(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHDestroyPropSheetExtArray(hpsxa: HPSXA);
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub fn SHDoDragDrop(hwnd: ::win32_foundation_sys::HWND, pdata: ::win32_system_sys::Com::IDataObject, pdsrc: ::win32_system_sys::Ole::IDropSource, dweffect: u32, pdweffect: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn SHEmptyRecycleBinA(hwnd: ::win32_foundation_sys::HWND, pszrootpath: ::windows_core_sys::PCSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn SHEmptyRecycleBinW(hwnd: ::win32_foundation_sys::HWND, pszrootpath: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHEnumKeyExA(hkey: ::win32_system_sys::Registry::HKEY, dwindex: u32, pszname: ::windows_core_sys::PSTR, pcchname: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHEnumKeyExW(hkey: ::win32_system_sys::Registry::HKEY, dwindex: u32, pszname: ::windows_core_sys::PWSTR, pcchname: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHEnumValueA(hkey: ::win32_system_sys::Registry::HKEY, dwindex: u32, pszvaluename: ::windows_core_sys::PSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHEnumValueW(hkey: ::win32_system_sys::Registry::HKEY, dwindex: u32, pszvaluename: ::windows_core_sys::PWSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHEnumerateUnreadMailAccountsW(hkeyuser: ::win32_system_sys::Registry::HKEY, dwindex: u32, pszmailaddress: ::windows_core_sys::PWSTR, cchmailaddress: i32) -> ::windows_core_sys::HRESULT;
     pub fn SHEvaluateSystemCommandTemplate(pszcmdtemplate: ::windows_core_sys::PCWSTR, ppszapplication: *mut ::windows_core_sys::PWSTR, ppszcommandline: *mut ::windows_core_sys::PWSTR, ppszparameters: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn SHFileOperationA(lpfileop: *mut SHFILEOPSTRUCTA) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn SHFileOperationW(lpfileop: *mut SHFILEOPSTRUCTW) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHFindFiles(pidlfolder: *const Common::ITEMIDLIST, pidlsavefile: *const Common::ITEMIDLIST) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn SHFind_InitMenuPopup(hmenu: super::WindowsAndMessaging::HMENU, hwndowner: super::super::Foundation::HWND, idcmdfirst: u32, idcmdlast: u32) -> IContextMenu;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHFindFiles(pidlfolder: *const Common::ITEMIDLIST, pidlsavefile: *const Common::ITEMIDLIST) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn SHFind_InitMenuPopup(hmenu: super::WindowsAndMessaging::HMENU, hwndowner: ::win32_foundation_sys::HWND, idcmdfirst: u32, idcmdlast: u32) -> IContextMenu;
     pub fn SHFlushSFCache();
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHFormatDateTimeA(pft: *const super::super::Foundation::FILETIME, pdwflags: *mut u32, pszbuf: ::windows_core_sys::PSTR, cchbuf: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHFormatDateTimeW(pft: *const super::super::Foundation::FILETIME, pdwflags: *mut u32, pszbuf: ::windows_core_sys::PWSTR, cchbuf: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHFormatDrive(hwnd: super::super::Foundation::HWND, drive: u32, fmtid: SHFMT_ID, options: SHFMT_OPT) -> u32;
+    pub fn SHFormatDateTimeA(pft: *const ::win32_foundation_sys::FILETIME, pdwflags: *mut u32, pszbuf: ::windows_core_sys::PSTR, cchbuf: u32) -> i32;
+    pub fn SHFormatDateTimeW(pft: *const ::win32_foundation_sys::FILETIME, pdwflags: *mut u32, pszbuf: ::windows_core_sys::PWSTR, cchbuf: u32) -> i32;
+    pub fn SHFormatDrive(hwnd: ::win32_foundation_sys::HWND, drive: u32, fmtid: SHFMT_ID, options: SHFMT_OPT) -> u32;
     pub fn SHFree(pv: *const ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHFreeNameMappings(hnamemappings: super::super::Foundation::HANDLE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHFreeShared(hdata: super::super::Foundation::HANDLE, dwprocessid: u32) -> super::super::Foundation::BOOL;
+    pub fn SHFreeNameMappings(hnamemappings: ::win32_foundation_sys::HANDLE);
+    pub fn SHFreeShared(hdata: ::win32_foundation_sys::HANDLE, dwprocessid: u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHGetAttributesFromDataObject(pdo: super::super::System::Com::IDataObject, dwattributemask: u32, pdwattributes: *mut u32, pcitems: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetAttributesFromDataObject(pdo: ::win32_system_sys::Com::IDataObject, dwattributemask: u32, pdwattributes: *mut u32, pcitems: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHGetDataFromIDListA(psf: IShellFolder, pidl: *const Common::ITEMIDLIST, nformat: SHGDFIL_FORMAT, pv: *mut ::core::ffi::c_void, cb: i32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHGetDataFromIDListW(psf: IShellFolder, pidl: *const Common::ITEMIDLIST, nformat: SHGDFIL_FORMAT, pv: *mut ::core::ffi::c_void, cb: i32) -> ::windows_core_sys::HRESULT;
     pub fn SHGetDesktopFolder(ppshf: *mut IShellFolder) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetDiskFreeSpaceExA(pszdirectoryname: ::windows_core_sys::PCSTR, pulfreebytesavailabletocaller: *mut u64, pultotalnumberofbytes: *mut u64, pultotalnumberoffreebytes: *mut u64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetDiskFreeSpaceExW(pszdirectoryname: ::windows_core_sys::PCWSTR, pulfreebytesavailabletocaller: *mut u64, pultotalnumberofbytes: *mut u64, pultotalnumberoffreebytes: *mut u64) -> super::super::Foundation::BOOL;
+    pub fn SHGetDiskFreeSpaceExA(pszdirectoryname: ::windows_core_sys::PCSTR, pulfreebytesavailabletocaller: *mut u64, pultotalnumberofbytes: *mut u64, pultotalnumberoffreebytes: *mut u64) -> ::win32_foundation_sys::BOOL;
+    pub fn SHGetDiskFreeSpaceExW(pszdirectoryname: ::windows_core_sys::PCWSTR, pulfreebytesavailabletocaller: *mut u64, pultotalnumberofbytes: *mut u64, pultotalnumberoffreebytes: *mut u64) -> ::win32_foundation_sys::BOOL;
     pub fn SHGetDriveMedia(pszdrive: ::windows_core_sys::PCWSTR, pdwmediacontent: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn SHGetFileInfoA(pszpath: ::windows_core_sys::PCSTR, dwfileattributes: super::super::Storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, psfi: *mut SHFILEINFOA, cbfileinfo: u32, uflags: SHGFI_FLAGS) -> usize;
     #[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn SHGetFileInfoW(pszpath: ::windows_core_sys::PCWSTR, dwfileattributes: super::super::Storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, psfi: *mut SHFILEINFOW, cbfileinfo: u32, uflags: SHGFI_FLAGS) -> usize;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHGetFolderLocation(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetFolderPathA(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszpath: ::windows_core_sys::PSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetFolderPathAndSubDirA(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszsubdir: ::windows_core_sys::PCSTR, pszpath: ::windows_core_sys::PSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetFolderPathAndSubDirW(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszsubdir: ::windows_core_sys::PCWSTR, pszpath: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetFolderPathW(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszpath: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetFileInfoA(pszpath: ::windows_core_sys::PCSTR, dwfileattributes: ::win32_storage_sys::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, psfi: *mut SHFILEINFOA, cbfileinfo: u32, uflags: SHGFI_FLAGS) -> usize;
+    #[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub fn SHGetFileInfoW(pszpath: ::windows_core_sys::PCWSTR, dwfileattributes: ::win32_storage_sys::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, psfi: *mut SHFILEINFOW, cbfileinfo: u32, uflags: SHGFI_FLAGS) -> usize;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHGetFolderLocation(hwnd: ::win32_foundation_sys::HWND, csidl: i32, htoken: ::win32_foundation_sys::HANDLE, dwflags: u32, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetFolderPathA(hwnd: ::win32_foundation_sys::HWND, csidl: i32, htoken: ::win32_foundation_sys::HANDLE, dwflags: u32, pszpath: ::windows_core_sys::PSTR) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetFolderPathAndSubDirA(hwnd: ::win32_foundation_sys::HWND, csidl: i32, htoken: ::win32_foundation_sys::HANDLE, dwflags: u32, pszsubdir: ::windows_core_sys::PCSTR, pszpath: ::windows_core_sys::PSTR) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetFolderPathAndSubDirW(hwnd: ::win32_foundation_sys::HWND, csidl: i32, htoken: ::win32_foundation_sys::HANDLE, dwflags: u32, pszsubdir: ::windows_core_sys::PCWSTR, pszpath: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetFolderPathW(hwnd: ::win32_foundation_sys::HWND, csidl: i32, htoken: ::win32_foundation_sys::HANDLE, dwflags: u32, pszpath: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHGetIDListFromObject(punk: ::windows_core_sys::IUnknown, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
     pub fn SHGetIconOverlayIndexA(psziconpath: ::windows_core_sys::PCSTR, iiconindex: i32) -> i32;
@@ -710,52 +561,45 @@ extern "system" {
     pub fn SHGetInstanceExplorer(ppunk: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
     pub fn SHGetInverseCMAP(pbmap: *mut u8, cbmap: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHGetItemFromDataObject(pdtobj: super::super::System::Com::IDataObject, dwflags: DATAOBJ_GET_ITEM_FLAGS, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetItemFromDataObject(pdtobj: ::win32_system_sys::Com::IDataObject, dwflags: DATAOBJ_GET_ITEM_FLAGS, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SHGetItemFromObject(punk: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHGetKnownFolderIDList(rfid: *const ::windows_core_sys::GUID, dwflags: u32, htoken: super::super::Foundation::HANDLE, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetKnownFolderItem(rfid: *const ::windows_core_sys::GUID, flags: KNOWN_FOLDER_FLAG, htoken: super::super::Foundation::HANDLE, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetKnownFolderPath(rfid: *const ::windows_core_sys::GUID, dwflags: u32, htoken: super::super::Foundation::HANDLE, ppszpath: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHGetKnownFolderIDList(rfid: *const ::windows_core_sys::GUID, dwflags: u32, htoken: ::win32_foundation_sys::HANDLE, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetKnownFolderItem(rfid: *const ::windows_core_sys::GUID, flags: KNOWN_FOLDER_FLAG, htoken: ::win32_foundation_sys::HANDLE, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetKnownFolderPath(rfid: *const ::windows_core_sys::GUID, dwflags: u32, htoken: ::win32_foundation_sys::HANDLE, ppszpath: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn SHGetLocalizedName(pszpath: ::windows_core_sys::PCWSTR, pszresmodule: ::windows_core_sys::PWSTR, cch: u32, pidsres: *mut i32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHGetMalloc(ppmalloc: *mut super::super::System::Com::IMalloc) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetMalloc(ppmalloc: *mut ::win32_system_sys::Com::IMalloc) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHGetNameFromIDList(pidl: *const Common::ITEMIDLIST, sigdnname: SIGDN, ppszname: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetNewLinkInfoA(pszlinkto: ::windows_core_sys::PCSTR, pszdir: ::windows_core_sys::PCSTR, pszname: ::windows_core_sys::PSTR, pfmustcopy: *mut super::super::Foundation::BOOL, uflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetNewLinkInfoW(pszlinkto: ::windows_core_sys::PCWSTR, pszdir: ::windows_core_sys::PCWSTR, pszname: ::windows_core_sys::PWSTR, pfmustcopy: *mut super::super::Foundation::BOOL, uflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHGetPathFromIDListA(pidl: *const Common::ITEMIDLIST, pszpath: ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHGetPathFromIDListEx(pidl: *const Common::ITEMIDLIST, pszpath: ::windows_core_sys::PWSTR, cchpath: u32, uopts: i32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHGetPathFromIDListW(pidl: *const Common::ITEMIDLIST, pszpath: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
+    pub fn SHGetNewLinkInfoA(pszlinkto: ::windows_core_sys::PCSTR, pszdir: ::windows_core_sys::PCSTR, pszname: ::windows_core_sys::PSTR, pfmustcopy: *mut ::win32_foundation_sys::BOOL, uflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SHGetNewLinkInfoW(pszlinkto: ::windows_core_sys::PCWSTR, pszdir: ::windows_core_sys::PCWSTR, pszname: ::windows_core_sys::PWSTR, pfmustcopy: *mut ::win32_foundation_sys::BOOL, uflags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHGetPathFromIDListA(pidl: *const Common::ITEMIDLIST, pszpath: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHGetPathFromIDListEx(pidl: *const Common::ITEMIDLIST, pszpath: ::windows_core_sys::PWSTR, cchpath: u32, uopts: i32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHGetPathFromIDListW(pidl: *const Common::ITEMIDLIST, pszpath: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHGetRealIDL(psf: IShellFolder, pidlsimple: *const Common::ITEMIDLIST, ppidlreal: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
     pub fn SHGetSetFolderCustomSettings(pfcs: *mut SHFOLDERCUSTOMSETTINGS, pszpath: ::windows_core_sys::PCWSTR, dwreadwrite: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetSetSettings(lpss: *mut SHELLSTATEA, dwmask: SSF_MASK, bset: super::super::Foundation::BOOL);
+    pub fn SHGetSetSettings(lpss: *mut SHELLSTATEA, dwmask: SSF_MASK, bset: ::win32_foundation_sys::BOOL);
     pub fn SHGetSettings(psfs: *mut SHELLFLAGSTATE, dwmask: u32);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHGetSpecialFolderLocation(hwnd: super::super::Foundation::HWND, csidl: i32, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetSpecialFolderPathA(hwnd: super::super::Foundation::HWND, pszpath: ::windows_core_sys::PSTR, csidl: i32, fcreate: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHGetSpecialFolderPathW(hwnd: super::super::Foundation::HWND, pszpath: ::windows_core_sys::PWSTR, csidl: i32, fcreate: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SHGetSpecialFolderLocation(hwnd: ::win32_foundation_sys::HWND, csidl: i32, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows_core_sys::HRESULT;
+    pub fn SHGetSpecialFolderPathA(hwnd: ::win32_foundation_sys::HWND, pszpath: ::windows_core_sys::PSTR, csidl: i32, fcreate: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SHGetSpecialFolderPathW(hwnd: ::win32_foundation_sys::HWND, pszpath: ::windows_core_sys::PWSTR, csidl: i32, fcreate: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn SHGetStockIconInfo(siid: SHSTOCKICONID, uflags: u32, psii: *mut SHSTOCKICONINFO) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub fn SHGetTemporaryPropertyForItem(psi: IShellItem, propkey: *const PropertiesSystem::PROPERTYKEY, ppropvar: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core_sys::HRESULT;
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub fn SHGetTemporaryPropertyForItem(psi: IShellItem, propkey: *const PropertiesSystem::PROPERTYKEY, ppropvar: *mut ::win32_system_sys::Com::StructuredStorage::PROPVARIANT) -> ::windows_core_sys::HRESULT;
     pub fn SHGetThreadRef(ppunk: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHGetUnreadMailCountW(hkeyuser: super::super::System::Registry::HKEY, pszmailaddress: ::windows_core_sys::PCWSTR, pdwcount: *mut u32, pfiletime: *mut super::super::Foundation::FILETIME, pszshellexecutecommand: ::windows_core_sys::PWSTR, cchshellexecutecommand: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHGetValueA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHGetValueW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHGetUnreadMailCountW(hkeyuser: ::win32_system_sys::Registry::HKEY, pszmailaddress: ::windows_core_sys::PCWSTR, pdwcount: *mut u32, pfiletime: *mut ::win32_foundation_sys::FILETIME, pszshellexecutecommand: ::windows_core_sys::PWSTR, cchshellexecutecommand: i32) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHGetValueA(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHGetValueW(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHGetViewStatePropertyBag(pidl: *const Common::ITEMIDLIST, pszbagname: ::windows_core_sys::PCWSTR, dwflags: u32, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SHGlobalCounterDecrement(id: SHGLOBALCOUNTER) -> i32;
@@ -765,224 +609,167 @@ extern "system" {
     pub fn SHHandleUpdateImage(pidlextra: *const Common::ITEMIDLIST) -> i32;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHILCreateFromPath(pszpath: ::windows_core_sys::PCWSTR, ppidl: *mut *mut Common::ITEMIDLIST, rgfinout: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHInvokePrinterCommandA(hwnd: super::super::Foundation::HWND, uaction: u32, lpbuf1: ::windows_core_sys::PCSTR, lpbuf2: ::windows_core_sys::PCSTR, fmodal: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHInvokePrinterCommandW(hwnd: super::super::Foundation::HWND, uaction: u32, lpbuf1: ::windows_core_sys::PCWSTR, lpbuf2: ::windows_core_sys::PCWSTR, fmodal: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn SHInvokePrinterCommandA(hwnd: ::win32_foundation_sys::HWND, uaction: u32, lpbuf1: ::windows_core_sys::PCSTR, lpbuf2: ::windows_core_sys::PCSTR, fmodal: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SHInvokePrinterCommandW(hwnd: ::win32_foundation_sys::HWND, uaction: u32, lpbuf1: ::windows_core_sys::PCWSTR, lpbuf2: ::windows_core_sys::PCWSTR, fmodal: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn SHIsFileAvailableOffline(pwszpath: ::windows_core_sys::PCWSTR, pdwstatus: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHIsLowMemoryMachine(dwtype: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHLimitInputEdit(hwndedit: super::super::Foundation::HWND, psf: IShellFolder) -> ::windows_core_sys::HRESULT;
+    pub fn SHIsLowMemoryMachine(dwtype: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SHLimitInputEdit(hwndedit: ::win32_foundation_sys::HWND, psf: IShellFolder) -> ::windows_core_sys::HRESULT;
     pub fn SHLoadInProc(rclsid: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn SHLoadIndirectString(pszsource: ::windows_core_sys::PCWSTR, pszoutbuf: ::windows_core_sys::PWSTR, cchoutbuf: u32, ppvreserved: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn SHLoadNonloadedIconOverlayIdentifiers() -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHLockShared(hdata: super::super::Foundation::HANDLE, dwprocessid: u32) -> *mut ::core::ffi::c_void;
+    pub fn SHLockShared(hdata: ::win32_foundation_sys::HANDLE, dwprocessid: u32) -> *mut ::core::ffi::c_void;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHMapPIDLToSystemImageListIndex(pshf: IShellFolder, pidl: *const Common::ITEMIDLIST, piindexsel: *mut i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHMessageBoxCheckA(hwnd: super::super::Foundation::HWND, psztext: ::windows_core_sys::PCSTR, pszcaption: ::windows_core_sys::PCSTR, utype: u32, idefault: i32, pszregval: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHMessageBoxCheckW(hwnd: super::super::Foundation::HWND, psztext: ::windows_core_sys::PCWSTR, pszcaption: ::windows_core_sys::PCWSTR, utype: u32, idefault: i32, pszregval: ::windows_core_sys::PCWSTR) -> i32;
+    pub fn SHMessageBoxCheckA(hwnd: ::win32_foundation_sys::HWND, psztext: ::windows_core_sys::PCSTR, pszcaption: ::windows_core_sys::PCSTR, utype: u32, idefault: i32, pszregval: ::windows_core_sys::PCSTR) -> i32;
+    pub fn SHMessageBoxCheckW(hwnd: ::win32_foundation_sys::HWND, psztext: ::windows_core_sys::PCWSTR, pszcaption: ::windows_core_sys::PCWSTR, utype: u32, idefault: i32, pszregval: ::windows_core_sys::PCWSTR) -> i32;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn SHMultiFileProperties(pdtobj: super::super::System::Com::IDataObject, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHObjectProperties(hwnd: super::super::Foundation::HWND, shopobjecttype: SHOP_TYPE, pszobjectname: ::windows_core_sys::PCWSTR, pszpropertypage: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn SHMultiFileProperties(pdtobj: ::win32_system_sys::Com::IDataObject, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn SHObjectProperties(hwnd: ::win32_foundation_sys::HWND, shopobjecttype: SHOP_TYPE, pszobjectname: ::windows_core_sys::PCWSTR, pszpropertypage: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHOpenFolderAndSelectItems(pidlfolder: *const Common::ITEMIDLIST, cidl: u32, apidl: *const *const Common::ITEMIDLIST, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Registry"))]
-    pub fn SHOpenPropSheetW(pszcaption: ::windows_core_sys::PCWSTR, ahkeys: *const super::super::System::Registry::HKEY, ckeys: u32, pclsiddefault: *const ::windows_core_sys::GUID, pdtobj: super::super::System::Com::IDataObject, psb: IShellBrowser, pstartpage: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_System_Registry"))]
+    pub fn SHOpenPropSheetW(pszcaption: ::windows_core_sys::PCWSTR, ahkeys: *const ::win32_system_sys::Registry::HKEY, ckeys: u32, pclsiddefault: *const ::windows_core_sys::GUID, pdtobj: ::win32_system_sys::Com::IDataObject, psb: IShellBrowser, pstartpage: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Registry"))]
-    pub fn SHOpenRegStream2A(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, grfmode: u32) -> super::super::System::Com::IStream;
+    pub fn SHOpenRegStream2A(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, grfmode: u32) -> ::win32_system_sys::Com::IStream;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Registry"))]
-    pub fn SHOpenRegStream2W(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, grfmode: u32) -> super::super::System::Com::IStream;
+    pub fn SHOpenRegStream2W(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, grfmode: u32) -> ::win32_system_sys::Com::IStream;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Registry"))]
-    pub fn SHOpenRegStreamA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, grfmode: u32) -> super::super::System::Com::IStream;
+    pub fn SHOpenRegStreamA(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, grfmode: u32) -> ::win32_system_sys::Com::IStream;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Registry"))]
-    pub fn SHOpenRegStreamW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, grfmode: u32) -> super::super::System::Com::IStream;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHOpenWithDialog(hwndparent: super::super::Foundation::HWND, poainfo: *const OPENASINFO) -> ::windows_core_sys::HRESULT;
+    pub fn SHOpenRegStreamW(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, grfmode: u32) -> ::win32_system_sys::Com::IStream;
+    pub fn SHOpenWithDialog(hwndparent: ::win32_foundation_sys::HWND, poainfo: *const OPENASINFO) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
-    pub fn SHParseDisplayName(pszname: ::windows_core_sys::PCWSTR, pbc: super::super::System::Com::IBindCtx, ppidl: *mut *mut Common::ITEMIDLIST, sfgaoin: u32, psfgaoout: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHPathPrepareForWriteA(hwnd: super::super::Foundation::HWND, punkenablemodless: ::windows_core_sys::IUnknown, pszpath: ::windows_core_sys::PCSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHPathPrepareForWriteW(hwnd: super::super::Foundation::HWND, punkenablemodless: ::windows_core_sys::IUnknown, pszpath: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHQueryInfoKeyA(hkey: super::super::System::Registry::HKEY, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHQueryInfoKeyW(hkey: super::super::System::Registry::HKEY, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+    pub fn SHParseDisplayName(pszname: ::windows_core_sys::PCWSTR, pbc: ::win32_system_sys::Com::IBindCtx, ppidl: *mut *mut Common::ITEMIDLIST, sfgaoin: u32, psfgaoout: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn SHPathPrepareForWriteA(hwnd: ::win32_foundation_sys::HWND, punkenablemodless: ::windows_core_sys::IUnknown, pszpath: ::windows_core_sys::PCSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn SHPathPrepareForWriteW(hwnd: ::win32_foundation_sys::HWND, punkenablemodless: ::windows_core_sys::IUnknown, pszpath: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHQueryInfoKeyA(hkey: ::win32_system_sys::Registry::HKEY, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHQueryInfoKeyW(hkey: ::win32_system_sys::Registry::HKEY, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn SHQueryRecycleBinA(pszrootpath: ::windows_core_sys::PCSTR, pshqueryrbinfo: *mut SHQUERYRBINFO) -> ::windows_core_sys::HRESULT;
     pub fn SHQueryRecycleBinW(pszrootpath: ::windows_core_sys::PCWSTR, pshqueryrbinfo: *mut SHQUERYRBINFO) -> ::windows_core_sys::HRESULT;
     pub fn SHQueryUserNotificationState(pquns: *mut QUERY_USER_NOTIFICATION_STATE) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHQueryValueExA(hkey: super::super::System::Registry::HKEY, pszvalue: ::windows_core_sys::PCSTR, pdwreserved: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHQueryValueExW(hkey: super::super::System::Registry::HKEY, pszvalue: ::windows_core_sys::PCWSTR, pdwreserved: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegCloseUSKey(huskey: isize) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegCreateUSKeyA(pszpath: ::windows_core_sys::PCSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegCreateUSKeyW(pwzpath: ::windows_core_sys::PCWSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegDeleteEmptyUSKeyA(huskey: isize, pszsubkey: ::windows_core_sys::PCSTR, delregflags: SHREGDEL_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegDeleteEmptyUSKeyW(huskey: isize, pwzsubkey: ::windows_core_sys::PCWSTR, delregflags: SHREGDEL_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegDeleteUSValueA(huskey: isize, pszvalue: ::windows_core_sys::PCSTR, delregflags: SHREGDEL_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegDeleteUSValueW(huskey: isize, pwzvalue: ::windows_core_sys::PCWSTR, delregflags: SHREGDEL_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHRegDuplicateHKey(hkey: super::super::System::Registry::HKEY) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegEnumUSKeyA(huskey: isize, dwindex: u32, pszname: ::windows_core_sys::PSTR, pcchname: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegEnumUSKeyW(huskey: isize, dwindex: u32, pwzname: ::windows_core_sys::PWSTR, pcchname: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegEnumUSValueA(huskey: isize, dwindex: u32, pszvaluename: ::windows_core_sys::PSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegEnumUSValueW(huskey: isize, dwindex: u32, pszvaluename: ::windows_core_sys::PWSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegGetBoolUSValueA(pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, fignorehkcu: super::super::Foundation::BOOL, fdefault: super::super::Foundation::BOOL) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegGetBoolUSValueW(pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, fignorehkcu: super::super::Foundation::BOOL, fdefault: super::super::Foundation::BOOL) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHRegGetIntW(hk: super::super::System::Registry::HKEY, pwzkey: ::windows_core_sys::PCWSTR, idefault: i32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHRegGetPathA(hkey: super::super::System::Registry::HKEY, pcszsubkey: ::windows_core_sys::PCSTR, pcszvalue: ::windows_core_sys::PCSTR, pszpath: ::windows_core_sys::PSTR, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHRegGetPathW(hkey: super::super::System::Registry::HKEY, pcszsubkey: ::windows_core_sys::PCWSTR, pcszvalue: ::windows_core_sys::PCWSTR, pszpath: ::windows_core_sys::PWSTR, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegGetUSValueA(pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: super::super::Foundation::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegGetUSValueW(pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: super::super::Foundation::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHRegGetValueA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, srrfflags: i32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegGetValueFromHKCUHKLM(pwszkey: ::windows_core_sys::PCWSTR, pwszvalue: ::windows_core_sys::PCWSTR, srrfflags: i32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHRegGetValueW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, srrfflags: i32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegOpenUSKeyA(pszpath: ::windows_core_sys::PCSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, fignorehkcu: super::super::Foundation::BOOL) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegOpenUSKeyW(pwzpath: ::windows_core_sys::PCWSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, fignorehkcu: super::super::Foundation::BOOL) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegQueryInfoUSKeyA(huskey: isize, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegQueryInfoUSKeyW(huskey: isize, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegQueryUSValueA(huskey: isize, pszvalue: ::windows_core_sys::PCSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: super::super::Foundation::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegQueryUSValueW(huskey: isize, pszvalue: ::windows_core_sys::PCWSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: super::super::Foundation::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHRegSetPathA(hkey: super::super::System::Registry::HKEY, pcszsubkey: ::windows_core_sys::PCSTR, pcszvalue: ::windows_core_sys::PCSTR, pcszpath: ::windows_core_sys::PCSTR, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SHRegSetPathW(hkey: super::super::System::Registry::HKEY, pcszsubkey: ::windows_core_sys::PCWSTR, pcszvalue: ::windows_core_sys::PCWSTR, pcszpath: ::windows_core_sys::PCWSTR, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegSetUSValueA(pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegSetUSValueW(pwzsubkey: ::windows_core_sys::PCWSTR, pwzvalue: ::windows_core_sys::PCWSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegWriteUSValueA(huskey: isize, pszvalue: ::windows_core_sys::PCSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHRegWriteUSValueW(huskey: isize, pwzvalue: ::windows_core_sys::PCWSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHQueryValueExA(hkey: ::win32_system_sys::Registry::HKEY, pszvalue: ::windows_core_sys::PCSTR, pdwreserved: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHQueryValueExW(hkey: ::win32_system_sys::Registry::HKEY, pszvalue: ::windows_core_sys::PCWSTR, pdwreserved: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegCloseUSKey(huskey: isize) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegCreateUSKeyA(pszpath: ::windows_core_sys::PCSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegCreateUSKeyW(pwzpath: ::windows_core_sys::PCWSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegDeleteEmptyUSKeyA(huskey: isize, pszsubkey: ::windows_core_sys::PCSTR, delregflags: SHREGDEL_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegDeleteEmptyUSKeyW(huskey: isize, pwzsubkey: ::windows_core_sys::PCWSTR, delregflags: SHREGDEL_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegDeleteUSValueA(huskey: isize, pszvalue: ::windows_core_sys::PCSTR, delregflags: SHREGDEL_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegDeleteUSValueW(huskey: isize, pwzvalue: ::windows_core_sys::PCWSTR, delregflags: SHREGDEL_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHRegDuplicateHKey(hkey: ::win32_system_sys::Registry::HKEY) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegEnumUSKeyA(huskey: isize, dwindex: u32, pszname: ::windows_core_sys::PSTR, pcchname: *mut u32, enumregflags: SHREGENUM_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegEnumUSKeyW(huskey: isize, dwindex: u32, pwzname: ::windows_core_sys::PWSTR, pcchname: *mut u32, enumregflags: SHREGENUM_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegEnumUSValueA(huskey: isize, dwindex: u32, pszvaluename: ::windows_core_sys::PSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, enumregflags: SHREGENUM_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegEnumUSValueW(huskey: isize, dwindex: u32, pszvaluename: ::windows_core_sys::PWSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, enumregflags: SHREGENUM_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegGetBoolUSValueA(pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, fignorehkcu: ::win32_foundation_sys::BOOL, fdefault: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegGetBoolUSValueW(pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, fignorehkcu: ::win32_foundation_sys::BOOL, fdefault: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHRegGetIntW(hk: ::win32_system_sys::Registry::HKEY, pwzkey: ::windows_core_sys::PCWSTR, idefault: i32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHRegGetPathA(hkey: ::win32_system_sys::Registry::HKEY, pcszsubkey: ::windows_core_sys::PCSTR, pcszvalue: ::windows_core_sys::PCSTR, pszpath: ::windows_core_sys::PSTR, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHRegGetPathW(hkey: ::win32_system_sys::Registry::HKEY, pcszsubkey: ::windows_core_sys::PCWSTR, pcszvalue: ::windows_core_sys::PCWSTR, pszpath: ::windows_core_sys::PWSTR, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegGetUSValueA(pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: ::win32_foundation_sys::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegGetUSValueW(pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: ::win32_foundation_sys::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHRegGetValueA(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, srrfflags: i32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegGetValueFromHKCUHKLM(pwszkey: ::windows_core_sys::PCWSTR, pwszvalue: ::windows_core_sys::PCWSTR, srrfflags: i32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHRegGetValueW(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, srrfflags: i32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegOpenUSKeyA(pszpath: ::windows_core_sys::PCSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, fignorehkcu: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegOpenUSKeyW(pwzpath: ::windows_core_sys::PCWSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, fignorehkcu: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegQueryInfoUSKeyA(huskey: isize, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32, enumregflags: SHREGENUM_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegQueryInfoUSKeyW(huskey: isize, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32, enumregflags: SHREGENUM_FLAGS) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegQueryUSValueA(huskey: isize, pszvalue: ::windows_core_sys::PCSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: ::win32_foundation_sys::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegQueryUSValueW(huskey: isize, pszvalue: ::windows_core_sys::PCWSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: ::win32_foundation_sys::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHRegSetPathA(hkey: ::win32_system_sys::Registry::HKEY, pcszsubkey: ::windows_core_sys::PCSTR, pcszvalue: ::windows_core_sys::PCSTR, pcszpath: ::windows_core_sys::PCSTR, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SHRegSetPathW(hkey: ::win32_system_sys::Registry::HKEY, pcszsubkey: ::windows_core_sys::PCWSTR, pcszvalue: ::windows_core_sys::PCWSTR, pcszpath: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegSetUSValueA(pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegSetUSValueW(pwzsubkey: ::windows_core_sys::PCWSTR, pwzvalue: ::windows_core_sys::PCWSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegWriteUSValueA(huskey: isize, pszvalue: ::windows_core_sys::PCSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
+    pub fn SHRegWriteUSValueW(huskey: isize, pwzvalue: ::windows_core_sys::PCWSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> ::win32_foundation_sys::WIN32_ERROR;
     pub fn SHReleaseThreadRef() -> ::windows_core_sys::HRESULT;
     pub fn SHRemoveLocalizedName(pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn SHReplaceFromPropSheetExtArray(hpsxa: HPSXA, upageid: u32, lpfnreplacewith: super::Controls::LPFNSVADDPROPSHEETPAGE, lparam: super::super::Foundation::LPARAM) -> u32;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn SHReplaceFromPropSheetExtArray(hpsxa: HPSXA, upageid: u32, lpfnreplacewith: super::Controls::LPFNSVADDPROPSHEETPAGE, lparam: ::win32_foundation_sys::LPARAM) -> u32;
     pub fn SHResolveLibrary(psilibrary: IShellItem) -> ::windows_core_sys::HRESULT;
     pub fn SHRestricted(rest: RESTRICTIONS) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHSendMessageBroadcastA(umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHSendMessageBroadcastW(umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHSetDefaultProperties(hwnd: super::super::Foundation::HWND, psi: IShellItem, dwfileopflags: u32, pfops: IFileOperationProgressSink) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHSetFolderPathA(csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszpath: ::windows_core_sys::PCSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHSetFolderPathW(csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn SHSendMessageBroadcastA(umsg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
+    pub fn SHSendMessageBroadcastW(umsg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
+    pub fn SHSetDefaultProperties(hwnd: ::win32_foundation_sys::HWND, psi: IShellItem, dwfileopflags: u32, pfops: IFileOperationProgressSink) -> ::windows_core_sys::HRESULT;
+    pub fn SHSetFolderPathA(csidl: i32, htoken: ::win32_foundation_sys::HANDLE, dwflags: u32, pszpath: ::windows_core_sys::PCSTR) -> ::windows_core_sys::HRESULT;
+    pub fn SHSetFolderPathW(csidl: i32, htoken: ::win32_foundation_sys::HANDLE, dwflags: u32, pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn SHSetInstanceExplorer(punk: ::windows_core_sys::IUnknown);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHSetKnownFolderPath(rfid: *const ::windows_core_sys::GUID, dwflags: u32, htoken: super::super::Foundation::HANDLE, pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn SHSetKnownFolderPath(rfid: *const ::windows_core_sys::GUID, dwflags: u32, htoken: ::win32_foundation_sys::HANDLE, pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn SHSetLocalizedName(pszpath: ::windows_core_sys::PCWSTR, pszresmodule: ::windows_core_sys::PCWSTR, idsres: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub fn SHSetTemporaryPropertyForItem(psi: IShellItem, propkey: *const PropertiesSystem::PROPERTYKEY, propvar: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core_sys::HRESULT;
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub fn SHSetTemporaryPropertyForItem(psi: IShellItem, propkey: *const PropertiesSystem::PROPERTYKEY, propvar: *const ::win32_system_sys::Com::StructuredStorage::PROPVARIANT) -> ::windows_core_sys::HRESULT;
     pub fn SHSetThreadRef(punk: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
     pub fn SHSetUnreadMailCountW(pszmailaddress: ::windows_core_sys::PCWSTR, dwcount: u32, pszshellexecutecommand: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SHSetValueA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32) -> i32;
+    pub fn SHSetValueA(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCSTR, pszvalue: ::windows_core_sys::PCSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SHSetValueW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHShellFolderView_Message(hwndmain: super::super::Foundation::HWND, umsg: u32, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHShowManageLibraryUI(psilibrary: IShellItem, hwndowner: super::super::Foundation::HWND, psztitle: ::windows_core_sys::PCWSTR, pszinstruction: ::windows_core_sys::PCWSTR, lmdoptions: LIBRARYMANAGEDIALOGOPTIONS) -> ::windows_core_sys::HRESULT;
+    pub fn SHSetValueW(hkey: ::win32_system_sys::Registry::HKEY, pszsubkey: ::windows_core_sys::PCWSTR, pszvalue: ::windows_core_sys::PCWSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32) -> i32;
+    pub fn SHShellFolderView_Message(hwndmain: ::win32_foundation_sys::HWND, umsg: u32, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
+    pub fn SHShowManageLibraryUI(psilibrary: IShellItem, hwndowner: ::win32_foundation_sys::HWND, psztitle: ::windows_core_sys::PCWSTR, pszinstruction: ::windows_core_sys::PCWSTR, lmdoptions: LIBRARYMANAGEDIALOGOPTIONS) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn SHSimpleIDListFromPath(pszpath: ::windows_core_sys::PCWSTR) -> *mut Common::ITEMIDLIST;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn SHSkipJunction(pbc: super::super::System::Com::IBindCtx, pclsid: *const ::windows_core_sys::GUID) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHStartNetConnectionDialogW(hwnd: super::super::Foundation::HWND, pszremotename: ::windows_core_sys::PCWSTR, dwtype: u32) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_Com")]
+    pub fn SHSkipJunction(pbc: ::win32_system_sys::Com::IBindCtx, pclsid: *const ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
+    pub fn SHStartNetConnectionDialogW(hwnd: ::win32_foundation_sys::HWND, pszremotename: ::windows_core_sys::PCWSTR, dwtype: u32) -> ::windows_core_sys::HRESULT;
     pub fn SHStrDupA(psz: ::windows_core_sys::PCSTR, ppwsz: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn SHStrDupW(psz: ::windows_core_sys::PCWSTR, ppwsz: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHStripMneumonicA(pszmenu: ::windows_core_sys::PSTR) -> super::super::Foundation::CHAR;
+    pub fn SHStripMneumonicA(pszmenu: ::windows_core_sys::PSTR) -> ::win32_foundation_sys::CHAR;
     pub fn SHStripMneumonicW(pszmenu: ::windows_core_sys::PWSTR) -> u16;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHTestTokenMembership(htoken: super::super::Foundation::HANDLE, ulrid: u32) -> super::super::Foundation::BOOL;
+    pub fn SHTestTokenMembership(htoken: ::win32_foundation_sys::HANDLE, ulrid: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SHUnicodeToAnsi(pwszsrc: ::windows_core_sys::PCWSTR, pszdst: ::windows_core_sys::PSTR, cchbuf: i32) -> i32;
     pub fn SHUnicodeToUnicode(pwzsrc: ::windows_core_sys::PCWSTR, pwzdst: ::windows_core_sys::PWSTR, cwchbuf: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHUnlockShared(pvdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn SHUnlockShared(pvdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn SHUpdateImageA(pszhashitem: ::windows_core_sys::PCSTR, iindex: i32, uflags: u32, iimageindex: i32);
     pub fn SHUpdateImageW(pszhashitem: ::windows_core_sys::PCWSTR, iindex: i32, uflags: u32, iimageindex: i32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SHValidateUNC(hwndowner: super::super::Foundation::HWND, pszfile: ::windows_core_sys::PWSTR, fconnect: VALIDATEUNC_OPTION) -> super::super::Foundation::BOOL;
+    pub fn SHValidateUNC(hwndowner: ::win32_foundation_sys::HWND, pszfile: ::windows_core_sys::PWSTR, fconnect: VALIDATEUNC_OPTION) -> ::win32_foundation_sys::BOOL;
     pub fn SetCurrentProcessExplicitAppUserModelID(appid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn SetMenuContextHelpId(param0: super::WindowsAndMessaging::HMENU, param1: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetWindowContextHelpId(param0: super::super::Foundation::HWND, param1: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetWindowSubclass(hwnd: super::super::Foundation::HWND, pfnsubclass: SUBCLASSPROC, uidsubclass: usize, dwrefdata: usize) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn ShellAboutA(hwnd: super::super::Foundation::HWND, szapp: ::windows_core_sys::PCSTR, szotherstuff: ::windows_core_sys::PCSTR, hicon: super::WindowsAndMessaging::HICON) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn ShellAboutW(hwnd: super::super::Foundation::HWND, szapp: ::windows_core_sys::PCWSTR, szotherstuff: ::windows_core_sys::PCWSTR, hicon: super::WindowsAndMessaging::HICON) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ShellExecuteA(hwnd: super::super::Foundation::HWND, lpoperation: ::windows_core_sys::PCSTR, lpfile: ::windows_core_sys::PCSTR, lpparameters: ::windows_core_sys::PCSTR, lpdirectory: ::windows_core_sys::PCSTR, nshowcmd: i32) -> super::super::Foundation::HINSTANCE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ShellExecuteExA(pexecinfo: *mut SHELLEXECUTEINFOA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ShellExecuteExW(pexecinfo: *mut SHELLEXECUTEINFOW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ShellExecuteW(hwnd: super::super::Foundation::HWND, lpoperation: ::windows_core_sys::PCWSTR, lpfile: ::windows_core_sys::PCWSTR, lpparameters: ::windows_core_sys::PCWSTR, lpdirectory: ::windows_core_sys::PCWSTR, nshowcmd: i32) -> super::super::Foundation::HINSTANCE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ShellMessageBoxA(happinst: super::super::Foundation::HINSTANCE, hwnd: super::super::Foundation::HWND, lpctext: ::windows_core_sys::PCSTR, lpctitle: ::windows_core_sys::PCSTR, fustyle: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ShellMessageBoxW(happinst: super::super::Foundation::HINSTANCE, hwnd: super::super::Foundation::HWND, lpctext: ::windows_core_sys::PCWSTR, lpctitle: ::windows_core_sys::PCWSTR, fustyle: u32) -> i32;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn SetMenuContextHelpId(param0: super::WindowsAndMessaging::HMENU, param1: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetWindowContextHelpId(param0: ::win32_foundation_sys::HWND, param1: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetWindowSubclass(hwnd: ::win32_foundation_sys::HWND, pfnsubclass: SUBCLASSPROC, uidsubclass: usize, dwrefdata: usize) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn ShellAboutA(hwnd: ::win32_foundation_sys::HWND, szapp: ::windows_core_sys::PCSTR, szotherstuff: ::windows_core_sys::PCSTR, hicon: super::WindowsAndMessaging::HICON) -> i32;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn ShellAboutW(hwnd: ::win32_foundation_sys::HWND, szapp: ::windows_core_sys::PCWSTR, szotherstuff: ::windows_core_sys::PCWSTR, hicon: super::WindowsAndMessaging::HICON) -> i32;
+    pub fn ShellExecuteA(hwnd: ::win32_foundation_sys::HWND, lpoperation: ::windows_core_sys::PCSTR, lpfile: ::windows_core_sys::PCSTR, lpparameters: ::windows_core_sys::PCSTR, lpdirectory: ::windows_core_sys::PCSTR, nshowcmd: i32) -> ::win32_foundation_sys::HINSTANCE;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ShellExecuteExA(pexecinfo: *mut SHELLEXECUTEINFOA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ShellExecuteExW(pexecinfo: *mut SHELLEXECUTEINFOW) -> ::win32_foundation_sys::BOOL;
+    pub fn ShellExecuteW(hwnd: ::win32_foundation_sys::HWND, lpoperation: ::windows_core_sys::PCWSTR, lpfile: ::windows_core_sys::PCWSTR, lpparameters: ::windows_core_sys::PCWSTR, lpdirectory: ::windows_core_sys::PCWSTR, nshowcmd: i32) -> ::win32_foundation_sys::HINSTANCE;
+    pub fn ShellMessageBoxA(happinst: ::win32_foundation_sys::HINSTANCE, hwnd: ::win32_foundation_sys::HWND, lpctext: ::windows_core_sys::PCSTR, lpctitle: ::windows_core_sys::PCSTR, fustyle: u32) -> i32;
+    pub fn ShellMessageBoxW(happinst: ::win32_foundation_sys::HINSTANCE, hwnd: ::win32_foundation_sys::HWND, lpctext: ::windows_core_sys::PCWSTR, lpctitle: ::windows_core_sys::PCWSTR, fustyle: u32) -> i32;
     pub fn Shell_GetCachedImageIndex(pwsziconpath: ::windows_core_sys::PCWSTR, iiconindex: i32, uiconflags: u32) -> i32;
     pub fn Shell_GetCachedImageIndexA(psziconpath: ::windows_core_sys::PCSTR, iiconindex: i32, uiconflags: u32) -> i32;
     pub fn Shell_GetCachedImageIndexW(psziconpath: ::windows_core_sys::PCWSTR, iiconindex: i32, uiconflags: u32) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn Shell_GetImageLists(phiml: *mut super::Controls::HIMAGELIST, phimlsmall: *mut super::Controls::HIMAGELIST) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn Shell_GetImageLists(phiml: *mut super::Controls::HIMAGELIST, phimlsmall: *mut super::Controls::HIMAGELIST) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn Shell_MergeMenus(hmdst: super::WindowsAndMessaging::HMENU, hmsrc: super::WindowsAndMessaging::HMENU, uinsert: u32, uidadjust: u32, uidadjustmax: u32, uflags: MM_FLAGS) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn Shell_NotifyIconA(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const NOTIFYICONDATAA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Shell_NotifyIconGetRect(identifier: *const NOTIFYICONIDENTIFIER, iconlocation: *mut super::super::Foundation::RECT) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn Shell_NotifyIconW(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const NOTIFYICONDATAW) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn SignalFileOpen(pidl: *const Common::ITEMIDLIST) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_Urlmon"))]
-    pub fn SoftwareUpdateMessageBox(hwnd: super::super::Foundation::HWND, pszdistunit: ::windows_core_sys::PCWSTR, dwflags: u32, psdi: *mut super::super::System::Com::Urlmon::SOFTDISTINFO) -> u32;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn Shell_NotifyIconA(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const NOTIFYICONDATAA) -> ::win32_foundation_sys::BOOL;
+    pub fn Shell_NotifyIconGetRect(identifier: *const NOTIFYICONIDENTIFIER, iconlocation: *mut ::win32_foundation_sys::RECT) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn Shell_NotifyIconW(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const NOTIFYICONDATAW) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn SignalFileOpen(pidl: *const Common::ITEMIDLIST) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Com_Urlmon")]
+    pub fn SoftwareUpdateMessageBox(hwnd: ::win32_foundation_sys::HWND, pszdistunit: ::windows_core_sys::PCWSTR, dwflags: u32, psdi: *mut ::win32_system_sys::Com::Urlmon::SOFTDISTINFO) -> u32;
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub fn StgMakeUniqueName(pstgparent: super::super::System::Com::StructuredStorage::IStorage, pszfilespec: ::windows_core_sys::PCWSTR, grfmode: u32, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn StgMakeUniqueName(pstgparent: ::win32_system_sys::Com::StructuredStorage::IStorage, pszfilespec: ::windows_core_sys::PCWSTR, grfmode: u32, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn StrCSpnA(pszstr: ::windows_core_sys::PCSTR, pszset: ::windows_core_sys::PCSTR) -> i32;
     pub fn StrCSpnIA(pszstr: ::windows_core_sys::PCSTR, pszset: ::windows_core_sys::PCSTR) -> i32;
     pub fn StrCSpnIW(pszstr: ::windows_core_sys::PCWSTR, pszset: ::windows_core_sys::PCWSTR) -> i32;
@@ -1024,10 +811,8 @@ extern "system" {
     pub fn StrFormatKBSizeW(qdw: i64, pszbuf: ::windows_core_sys::PWSTR, cchbuf: u32) -> ::windows_core_sys::PWSTR;
     pub fn StrFromTimeIntervalA(pszout: ::windows_core_sys::PSTR, cchmax: u32, dwtimems: u32, digits: i32) -> i32;
     pub fn StrFromTimeIntervalW(pszout: ::windows_core_sys::PWSTR, cchmax: u32, dwtimems: u32, digits: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StrIsIntlEqualA(fcasesens: super::super::Foundation::BOOL, pszstring1: ::windows_core_sys::PCSTR, pszstring2: ::windows_core_sys::PCSTR, nchar: i32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StrIsIntlEqualW(fcasesens: super::super::Foundation::BOOL, pszstring1: ::windows_core_sys::PCWSTR, pszstring2: ::windows_core_sys::PCWSTR, nchar: i32) -> super::super::Foundation::BOOL;
+    pub fn StrIsIntlEqualA(fcasesens: ::win32_foundation_sys::BOOL, pszstring1: ::windows_core_sys::PCSTR, pszstring2: ::windows_core_sys::PCSTR, nchar: i32) -> ::win32_foundation_sys::BOOL;
+    pub fn StrIsIntlEqualW(fcasesens: ::win32_foundation_sys::BOOL, pszstring1: ::windows_core_sys::PCWSTR, pszstring2: ::windows_core_sys::PCWSTR, nchar: i32) -> ::win32_foundation_sys::BOOL;
     pub fn StrNCatA(psz1: ::windows_core_sys::PSTR, psz2: ::windows_core_sys::PCSTR, cchmax: i32) -> ::windows_core_sys::PSTR;
     pub fn StrNCatW(psz1: ::windows_core_sys::PWSTR, psz2: ::windows_core_sys::PCWSTR, cchmax: i32) -> ::windows_core_sys::PWSTR;
     pub fn StrPBrkA(psz: ::windows_core_sys::PCSTR, pszset: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
@@ -1038,8 +823,8 @@ extern "system" {
     pub fn StrRChrW(pszstart: ::windows_core_sys::PCWSTR, pszend: ::windows_core_sys::PCWSTR, wmatch: u16) -> ::windows_core_sys::PWSTR;
     pub fn StrRStrIA(pszsource: ::windows_core_sys::PCSTR, pszlast: ::windows_core_sys::PCSTR, pszsrch: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
     pub fn StrRStrIW(pszsource: ::windows_core_sys::PCWSTR, pszlast: ::windows_core_sys::PCWSTR, pszsrch: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
-    pub fn StrRetToBSTR(pstr: *mut Common::STRRET, pidl: *const Common::ITEMIDLIST, pbstr: *mut super::super::Foundation::BSTR) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_UI_Shell_Common")]
+    pub fn StrRetToBSTR(pstr: *mut Common::STRRET, pidl: *const Common::ITEMIDLIST, pbstr: *mut ::win32_foundation_sys::BSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
     pub fn StrRetToBufA(pstr: *mut Common::STRRET, pidl: *const Common::ITEMIDLIST, pszbuf: ::windows_core_sys::PSTR, cchbuf: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_UI_Shell_Common")]
@@ -1056,22 +841,15 @@ extern "system" {
     pub fn StrStrNIW(pszfirst: ::windows_core_sys::PCWSTR, pszsrch: ::windows_core_sys::PCWSTR, cchmax: u32) -> ::windows_core_sys::PWSTR;
     pub fn StrStrNW(pszfirst: ::windows_core_sys::PCWSTR, pszsrch: ::windows_core_sys::PCWSTR, cchmax: u32) -> ::windows_core_sys::PWSTR;
     pub fn StrStrW(pszfirst: ::windows_core_sys::PCWSTR, pszsrch: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StrToInt64ExA(pszstring: ::windows_core_sys::PCSTR, dwflags: i32, pllret: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StrToInt64ExW(pszstring: ::windows_core_sys::PCWSTR, dwflags: i32, pllret: *mut i64) -> super::super::Foundation::BOOL;
+    pub fn StrToInt64ExA(pszstring: ::windows_core_sys::PCSTR, dwflags: i32, pllret: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn StrToInt64ExW(pszstring: ::windows_core_sys::PCWSTR, dwflags: i32, pllret: *mut i64) -> ::win32_foundation_sys::BOOL;
     pub fn StrToIntA(pszsrc: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StrToIntExA(pszstring: ::windows_core_sys::PCSTR, dwflags: i32, piret: *mut i32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StrToIntExW(pszstring: ::windows_core_sys::PCWSTR, dwflags: i32, piret: *mut i32) -> super::super::Foundation::BOOL;
+    pub fn StrToIntExA(pszstring: ::windows_core_sys::PCSTR, dwflags: i32, piret: *mut i32) -> ::win32_foundation_sys::BOOL;
+    pub fn StrToIntExW(pszstring: ::windows_core_sys::PCWSTR, dwflags: i32, piret: *mut i32) -> ::win32_foundation_sys::BOOL;
     pub fn StrToIntW(pszsrc: ::windows_core_sys::PCWSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StrTrimA(psz: ::windows_core_sys::PSTR, psztrimchars: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StrTrimW(psz: ::windows_core_sys::PWSTR, psztrimchars: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UnloadUserProfile(htoken: super::super::Foundation::HANDLE, hprofile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+    pub fn StrTrimA(psz: ::windows_core_sys::PSTR, psztrimchars: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn StrTrimW(psz: ::windows_core_sys::PWSTR, psztrimchars: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn UnloadUserProfile(htoken: ::win32_foundation_sys::HANDLE, hprofile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn UnregisterAppConstrainedChangeNotification(registration: *mut _APPCONSTRAIN_REGISTRATION);
     pub fn UnregisterAppStateChangeNotification(registration: *mut _APPSTATE_REGISTRATION);
     pub fn UnregisterScaleChangeEvent(dwcookie: usize) -> ::windows_core_sys::HRESULT;
@@ -1081,10 +859,8 @@ extern "system" {
     pub fn UrlCanonicalizeW(pszurl: ::windows_core_sys::PCWSTR, pszcanonicalized: ::windows_core_sys::PWSTR, pcchcanonicalized: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn UrlCombineA(pszbase: ::windows_core_sys::PCSTR, pszrelative: ::windows_core_sys::PCSTR, pszcombined: ::windows_core_sys::PSTR, pcchcombined: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn UrlCombineW(pszbase: ::windows_core_sys::PCWSTR, pszrelative: ::windows_core_sys::PCWSTR, pszcombined: ::windows_core_sys::PWSTR, pcchcombined: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UrlCompareA(psz1: ::windows_core_sys::PCSTR, psz2: ::windows_core_sys::PCSTR, fignoreslash: super::super::Foundation::BOOL) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UrlCompareW(psz1: ::windows_core_sys::PCWSTR, psz2: ::windows_core_sys::PCWSTR, fignoreslash: super::super::Foundation::BOOL) -> i32;
+    pub fn UrlCompareA(psz1: ::windows_core_sys::PCSTR, psz2: ::windows_core_sys::PCSTR, fignoreslash: ::win32_foundation_sys::BOOL) -> i32;
+    pub fn UrlCompareW(psz1: ::windows_core_sys::PCWSTR, psz2: ::windows_core_sys::PCWSTR, fignoreslash: ::win32_foundation_sys::BOOL) -> i32;
     pub fn UrlCreateFromPathA(pszpath: ::windows_core_sys::PCSTR, pszurl: ::windows_core_sys::PSTR, pcchurl: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn UrlCreateFromPathW(pszpath: ::windows_core_sys::PCWSTR, pszurl: ::windows_core_sys::PWSTR, pcchurl: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn UrlEscapeA(pszurl: ::windows_core_sys::PCSTR, pszescaped: ::windows_core_sys::PSTR, pcchescaped: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
@@ -1096,29 +872,19 @@ extern "system" {
     pub fn UrlGetPartW(pszin: ::windows_core_sys::PCWSTR, pszout: ::windows_core_sys::PWSTR, pcchout: *mut u32, dwpart: u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn UrlHashA(pszurl: ::windows_core_sys::PCSTR, pbhash: *mut u8, cbhash: u32) -> ::windows_core_sys::HRESULT;
     pub fn UrlHashW(pszurl: ::windows_core_sys::PCWSTR, pbhash: *mut u8, cbhash: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UrlIsA(pszurl: ::windows_core_sys::PCSTR, urlis: URLIS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UrlIsNoHistoryA(pszurl: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UrlIsNoHistoryW(pszurl: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UrlIsOpaqueA(pszurl: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UrlIsOpaqueW(pszurl: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UrlIsW(pszurl: ::windows_core_sys::PCWSTR, urlis: URLIS) -> super::super::Foundation::BOOL;
+    pub fn UrlIsA(pszurl: ::windows_core_sys::PCSTR, urlis: URLIS) -> ::win32_foundation_sys::BOOL;
+    pub fn UrlIsNoHistoryA(pszurl: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn UrlIsNoHistoryW(pszurl: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn UrlIsOpaqueA(pszurl: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn UrlIsOpaqueW(pszurl: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn UrlIsW(pszurl: ::windows_core_sys::PCWSTR, urlis: URLIS) -> ::win32_foundation_sys::BOOL;
     pub fn UrlUnescapeA(pszurl: ::windows_core_sys::PSTR, pszunescaped: ::windows_core_sys::PSTR, pcchunescaped: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn UrlUnescapeW(pszurl: ::windows_core_sys::PWSTR, pszunescaped: ::windows_core_sys::PWSTR, pcchunescaped: *mut u32, dwflags: u32) -> ::windows_core_sys::HRESULT;
     pub fn WhichPlatform() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Win32DeleteFile(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHelpA(hwndmain: super::super::Foundation::HWND, lpszhelp: ::windows_core_sys::PCSTR, ucommand: u32, dwdata: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHelpW(hwndmain: super::super::Foundation::HWND, lpszhelp: ::windows_core_sys::PCWSTR, ucommand: u32, dwdata: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WriteCabinetState(pcs: *const CABINETSTATE) -> super::super::Foundation::BOOL;
+    pub fn Win32DeleteFile(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn WinHelpA(hwndmain: ::win32_foundation_sys::HWND, lpszhelp: ::windows_core_sys::PCSTR, ucommand: u32, dwdata: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn WinHelpW(hwndmain: ::win32_foundation_sys::HWND, lpszhelp: ::windows_core_sys::PCWSTR, ucommand: u32, dwdata: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn WriteCabinetState(pcs: *const CABINETSTATE) -> ::win32_foundation_sys::BOOL;
     pub fn wnsprintfA(pszdest: ::windows_core_sys::PSTR, cchdest: i32, pszfmt: ::windows_core_sys::PCSTR) -> i32;
     pub fn wnsprintfW(pszdest: ::windows_core_sys::PWSTR, cchdest: i32, pszfmt: ::windows_core_sys::PCWSTR) -> i32;
     pub fn wvnsprintfA(pszdest: ::windows_core_sys::PSTR, cchdest: i32, pszfmt: ::windows_core_sys::PCSTR, arglist: *const i8) -> i32;
@@ -1222,20 +988,17 @@ pub const APPACTION_ADDLATER: APPACTIONFLAGS = 256i32;
 pub const APPACTION_UNSCHEDULE: APPACTIONFLAGS = 512i32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct APPBARDATA {
     pub cbSize: u32,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub uCallbackMessage: u32,
     pub uEdge: u32,
-    pub rc: super::super::Foundation::RECT,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub rc: ::win32_foundation_sys::RECT,
+    pub lParam: ::win32_foundation_sys::LPARAM,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for APPBARDATA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for APPBARDATA {
     fn clone(&self) -> Self {
         *self
@@ -1243,20 +1006,17 @@ impl ::core::clone::Clone for APPBARDATA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct APPBARDATA {
     pub cbSize: u32,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub uCallbackMessage: u32,
     pub uEdge: u32,
-    pub rc: super::super::Foundation::RECT,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub rc: ::win32_foundation_sys::RECT,
+    pub lParam: ::win32_foundation_sys::LPARAM,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for APPBARDATA {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for APPBARDATA {
     fn clone(&self) -> Self {
         *self
@@ -1336,8 +1096,7 @@ pub const AIM_COMMENTS: APPINFODATAFLAGS = 32768i32;
 pub const AIM_IMAGE: APPINFODATAFLAGS = 131072i32;
 pub const AIM_READMEURL: APPINFODATAFLAGS = 262144i32;
 pub const AIM_UPDATEINFOURL: APPINFODATAFLAGS = 524288i32;
-#[cfg(feature = "Win32_Foundation")]
-pub type APPLET_PROC = ::core::option::Option<unsafe extern "system" fn(hwndcpl: super::super::Foundation::HWND, msg: u32, lparam1: super::super::Foundation::LPARAM, lparam2: super::super::Foundation::LPARAM) -> i32>;
+pub type APPLET_PROC = ::core::option::Option<unsafe extern "system" fn(hwndcpl: ::win32_foundation_sys::HWND, msg: u32, lparam1: ::win32_foundation_sys::LPARAM, lparam2: ::win32_foundation_sys::LPARAM) -> i32>;
 pub type APPLICATION_VIEW_MIN_WIDTH = i32;
 pub const AVMW_DEFAULT: APPLICATION_VIEW_MIN_WIDTH = 0i32;
 pub const AVMW_320: APPLICATION_VIEW_MIN_WIDTH = 1i32;
@@ -1429,7 +1188,7 @@ pub const ASSOCF_VERIFY: i32 = 64i32;
 #[cfg(feature = "Win32_System_Registry")]
 pub struct ASSOCIATIONELEMENT {
     pub ac: ASSOCCLASS,
-    pub hkClass: super::super::System::Registry::HKEY,
+    pub hkClass: ::win32_system_sys::Registry::HKEY,
     pub pszClass: ::windows_core_sys::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -1447,7 +1206,7 @@ impl ::core::clone::Clone for ASSOCIATIONELEMENT {
 #[cfg(feature = "Win32_System_Registry")]
 pub struct ASSOCIATIONELEMENT {
     pub ac: ASSOCCLASS,
-    pub hkClass: super::super::System::Registry::HKEY,
+    pub hkClass: ::win32_system_sys::Registry::HKEY,
     pub pszClass: ::windows_core_sys::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
@@ -1533,17 +1292,14 @@ pub const ACO_RTLREADING: AUTOCOMPLETEOPTIONS = 64i32;
 pub const ACO_WORD_FILTER: AUTOCOMPLETEOPTIONS = 128i32;
 pub const ACO_NOPREFIXFILTERING: AUTOCOMPLETEOPTIONS = 256i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AUTO_SCROLL_DATA {
     pub iNextSample: i32,
     pub dwLastScroll: u32,
-    pub bFull: super::super::Foundation::BOOL,
-    pub pts: [super::super::Foundation::POINT; 3],
+    pub bFull: ::win32_foundation_sys::BOOL,
+    pub pts: [::win32_foundation_sys::POINT; 3],
     pub dwTimes: [u32; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AUTO_SCROLL_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AUTO_SCROLL_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1618,9 +1374,9 @@ pub const BNE_Dismissed: BANNER_NOTIFICATION_EVENT = 3i32;
 pub const BNE_Button1Clicked: BANNER_NOTIFICATION_EVENT = 4i32;
 pub const BNE_Button2Clicked: BANNER_NOTIFICATION_EVENT = 5i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 pub struct BASEBROWSERDATALH {
-    pub _hwnd: super::super::Foundation::HWND,
+    pub _hwnd: ::win32_foundation_sys::HWND,
     pub _ptl: ITravelLog,
     pub _phlf: IHlinkFrame,
     pub _pautoWB2: IWebBrowser2,
@@ -1630,36 +1386,36 @@ pub struct BASEBROWSERDATALH {
     pub _bitfield: u32,
     pub _uActivateState: u32,
     pub _pidlViewState: *mut Common::ITEMIDLIST,
-    pub _pctView: super::super::System::Ole::IOleCommandTarget,
+    pub _pctView: ::win32_system_sys::Ole::IOleCommandTarget,
     pub _pidlCur: *mut Common::ITEMIDLIST,
     pub _psv: IShellView,
     pub _psf: IShellFolder,
-    pub _hwndView: super::super::Foundation::HWND,
+    pub _hwndView: ::win32_foundation_sys::HWND,
     pub _pszTitleCur: ::windows_core_sys::PWSTR,
     pub _pidlPending: *mut Common::ITEMIDLIST,
     pub _psvPending: IShellView,
     pub _psfPending: IShellFolder,
-    pub _hwndViewPending: super::super::Foundation::HWND,
+    pub _hwndViewPending: ::win32_foundation_sys::HWND,
     pub _pszTitlePending: ::windows_core_sys::PWSTR,
-    pub _fIsViewMSHTML: super::super::Foundation::BOOL,
-    pub _fPrivacyImpacted: super::super::Foundation::BOOL,
+    pub _fIsViewMSHTML: ::win32_foundation_sys::BOOL,
+    pub _fPrivacyImpacted: ::win32_foundation_sys::BOOL,
     pub _clsidView: ::windows_core_sys::GUID,
     pub _clsidViewPending: ::windows_core_sys::GUID,
-    pub _hwndFrame: super::super::Foundation::HWND,
+    pub _hwndFrame: ::win32_foundation_sys::HWND,
     pub _lPhishingFilterStatus: i32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 impl ::core::marker::Copy for BASEBROWSERDATALH {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 impl ::core::clone::Clone for BASEBROWSERDATALH {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 pub struct BASEBROWSERDATAXP {
-    pub _hwnd: super::super::Foundation::HWND,
+    pub _hwnd: ::win32_foundation_sys::HWND,
     pub _ptl: ITravelLog,
     pub _phlf: IHlinkFrame,
     pub _pautoWB2: IWebBrowser2,
@@ -1669,33 +1425,32 @@ pub struct BASEBROWSERDATAXP {
     pub _bitfield: u32,
     pub _uActivateState: u32,
     pub _pidlViewState: *mut Common::ITEMIDLIST,
-    pub _pctView: super::super::System::Ole::IOleCommandTarget,
+    pub _pctView: ::win32_system_sys::Ole::IOleCommandTarget,
     pub _pidlCur: *mut Common::ITEMIDLIST,
     pub _psv: IShellView,
     pub _psf: IShellFolder,
-    pub _hwndView: super::super::Foundation::HWND,
+    pub _hwndView: ::win32_foundation_sys::HWND,
     pub _pszTitleCur: ::windows_core_sys::PWSTR,
     pub _pidlPending: *mut Common::ITEMIDLIST,
     pub _psvPending: IShellView,
     pub _psfPending: IShellFolder,
-    pub _hwndViewPending: super::super::Foundation::HWND,
+    pub _hwndViewPending: ::win32_foundation_sys::HWND,
     pub _pszTitlePending: ::windows_core_sys::PWSTR,
-    pub _fIsViewMSHTML: super::super::Foundation::BOOL,
-    pub _fPrivacyImpacted: super::super::Foundation::BOOL,
+    pub _fIsViewMSHTML: ::win32_foundation_sys::BOOL,
+    pub _fPrivacyImpacted: ::win32_foundation_sys::BOOL,
     pub _clsidView: ::windows_core_sys::GUID,
     pub _clsidViewPending: ::windows_core_sys::GUID,
-    pub _hwndFrame: super::super::Foundation::HWND,
+    pub _hwndFrame: ::win32_foundation_sys::HWND,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 impl ::core::marker::Copy for BASEBROWSERDATAXP {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 impl ::core::clone::Clone for BASEBROWSERDATAXP {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type BFFCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, umsg: u32, lparam: super::super::Foundation::LPARAM, lpdata: super::super::Foundation::LPARAM) -> i32>;
+pub type BFFCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, umsg: u32, lparam: ::win32_foundation_sys::LPARAM, lpdata: ::win32_foundation_sys::LPARAM) -> i32>;
 pub const BFFM_ENABLEOK: u32 = 1125u32;
 pub const BFFM_INITIALIZED: u32 = 1u32;
 pub const BFFM_IUNKNOWN: u32 = 5u32;
@@ -1753,40 +1508,40 @@ pub const BNS_NORMAL: BNSTATE = 0i32;
 pub const BNS_BEGIN_NAVIGATE: BNSTATE = 1i32;
 pub const BNS_NAVIGATE: BNSTATE = 2i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 pub struct BROWSEINFOA {
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation_sys::HWND,
     pub pidlRoot: *mut Common::ITEMIDLIST,
     pub pszDisplayName: ::windows_core_sys::PSTR,
     pub lpszTitle: ::windows_core_sys::PCSTR,
     pub ulFlags: u32,
     pub lpfn: BFFCALLBACK,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub iImage: i32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 impl ::core::marker::Copy for BROWSEINFOA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 impl ::core::clone::Clone for BROWSEINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 pub struct BROWSEINFOW {
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation_sys::HWND,
     pub pidlRoot: *mut Common::ITEMIDLIST,
     pub pszDisplayName: ::windows_core_sys::PWSTR,
     pub lpszTitle: ::windows_core_sys::PCWSTR,
     pub ulFlags: u32,
     pub lpfn: BFFCALLBACK,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub iImage: i32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 impl ::core::marker::Copy for BROWSEINFOW {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 impl ::core::clone::Clone for BROWSEINFOW {
     fn clone(&self) -> Self {
         *self
@@ -2060,59 +1815,52 @@ pub const CMIC_MASK_CONTROL_DOWN: u32 = 1073741824u32;
 pub const CMIC_MASK_PTINVOKE: u32 = 536870912u32;
 pub const CMIC_MASK_SHIFT_DOWN: u32 = 268435456u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CMINVOKECOMMANDINFO {
     pub cbSize: u32,
     pub fMask: u32,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub lpVerb: ::windows_core_sys::PCSTR,
     pub lpParameters: ::windows_core_sys::PCSTR,
     pub lpDirectory: ::windows_core_sys::PCSTR,
     pub nShow: i32,
     pub dwHotKey: u32,
-    pub hIcon: super::super::Foundation::HANDLE,
+    pub hIcon: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CMINVOKECOMMANDINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CMINVOKECOMMANDINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CMINVOKECOMMANDINFOEX {
     pub cbSize: u32,
     pub fMask: u32,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub lpVerb: ::windows_core_sys::PCSTR,
     pub lpParameters: ::windows_core_sys::PCSTR,
     pub lpDirectory: ::windows_core_sys::PCSTR,
     pub nShow: i32,
     pub dwHotKey: u32,
-    pub hIcon: super::super::Foundation::HANDLE,
+    pub hIcon: ::win32_foundation_sys::HANDLE,
     pub lpTitle: ::windows_core_sys::PCSTR,
     pub lpVerbW: ::windows_core_sys::PCWSTR,
     pub lpParametersW: ::windows_core_sys::PCWSTR,
     pub lpDirectoryW: ::windows_core_sys::PCWSTR,
     pub lpTitleW: ::windows_core_sys::PCWSTR,
-    pub ptInvoke: super::super::Foundation::POINT,
+    pub ptInvoke: ::win32_foundation_sys::POINT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CMINVOKECOMMANDINFOEX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CMINVOKECOMMANDINFOEX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CMINVOKECOMMANDINFOEX_REMOTE {
     pub cbSize: u32,
     pub fMask: u32,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub lpVerbString: ::windows_core_sys::PCSTR,
     pub lpParameters: ::windows_core_sys::PCSTR,
     pub lpDirectory: ::windows_core_sys::PCSTR,
@@ -2123,13 +1871,11 @@ pub struct CMINVOKECOMMANDINFOEX_REMOTE {
     pub lpParametersW: ::windows_core_sys::PCWSTR,
     pub lpDirectoryW: ::windows_core_sys::PCWSTR,
     pub lpTitleW: ::windows_core_sys::PCWSTR,
-    pub ptInvoke: super::super::Foundation::POINT,
+    pub ptInvoke: ::win32_foundation_sys::POINT,
     pub lpVerbInt: u32,
     pub lpVerbWInt: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CMINVOKECOMMANDINFOEX_REMOTE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CMINVOKECOMMANDINFOEX_REMOTE {
     fn clone(&self) -> Self {
         *self
@@ -2430,7 +2176,7 @@ pub const CPUS_CHANGE_PASSWORD: CREDENTIAL_PROVIDER_USAGE_SCENARIO = 3i32;
 pub const CPUS_CREDUI: CREDENTIAL_PROVIDER_USAGE_SCENARIO = 4i32;
 pub const CPUS_PLAP: CREDENTIAL_PROVIDER_USAGE_SCENARIO = 5i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 pub struct CSFV {
     pub cbSize: u32,
     pub pshf: IShellFolder,
@@ -2440,9 +2186,9 @@ pub struct CSFV {
     pub pfnCallback: LPFNVIEWCALLBACK,
     pub fvm: FOLDERVIEWMODE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 impl ::core::marker::Copy for CSFV {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 impl ::core::clone::Clone for CSFV {
     fn clone(&self) -> Self {
         *self
@@ -2604,9 +2350,9 @@ pub const DFMR_NO_ASYNC_VERBS: DEFAULT_FOLDER_MENU_RESTRICTIONS = 1024i32;
 pub const DFMR_NO_NATIVECPU_VERBS: DEFAULT_FOLDER_MENU_RESTRICTIONS = 2048i32;
 pub const DFMR_NO_NONWOW_VERBS: DEFAULT_FOLDER_MENU_RESTRICTIONS = 4096i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
 pub struct DEFCONTEXTMENU {
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub pcmcb: IContextMenuCB,
     pub pidlFolder: *mut Common::ITEMIDLIST,
     pub psf: IShellFolder,
@@ -2614,11 +2360,11 @@ pub struct DEFCONTEXTMENU {
     pub apidl: *mut *mut Common::ITEMIDLIST,
     pub punkAssociationInfo: ::windows_core_sys::IUnknown,
     pub cKeys: u32,
-    pub aKeys: *const super::super::System::Registry::HKEY,
+    pub aKeys: *const ::win32_system_sys::Registry::HKEY,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
 impl ::core::marker::Copy for DEFCONTEXTMENU {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
+#[cfg(all(feature = "Win32_System_Registry", feature = "Win32_UI_Shell_Common"))]
 impl ::core::clone::Clone for DEFCONTEXTMENU {
     fn clone(&self) -> Self {
         *self
@@ -2650,20 +2396,17 @@ pub const DBID_FINISHINIT: DESKBANDCID = 5i32;
 pub const DBID_SETWINDOWTHEME: DESKBANDCID = 6i32;
 pub const DBID_PERMITAUTOHIDE: DESKBANDCID = 7i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DESKBANDINFO {
     pub dwMask: u32,
-    pub ptMinSize: super::super::Foundation::POINTL,
-    pub ptMaxSize: super::super::Foundation::POINTL,
-    pub ptIntegral: super::super::Foundation::POINTL,
-    pub ptActual: super::super::Foundation::POINTL,
+    pub ptMinSize: ::win32_foundation_sys::POINTL,
+    pub ptMaxSize: ::win32_foundation_sys::POINTL,
+    pub ptIntegral: ::win32_foundation_sys::POINTL,
+    pub ptActual: ::win32_foundation_sys::POINTL,
     pub wszTitle: [u16; 256],
     pub dwModeFlags: u32,
     pub crBkgnd: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DESKBANDINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DESKBANDINFO {
     fn clone(&self) -> Self {
         *self
@@ -2704,19 +2447,16 @@ impl ::core::clone::Clone for DETAILSINFO {
 }
 pub type DFConstraint = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DFMICS {
     pub cbSize: u32,
     pub fMask: u32,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub idCmdFirst: u32,
     pub idDefMax: u32,
     pub pici: *mut CMINVOKECOMMANDINFO,
     pub punkSite: ::windows_core_sys::IUnknown,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DFMICS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DFMICS {
     fn clone(&self) -> Self {
         *self
@@ -2832,19 +2572,16 @@ pub const DLLVER_PLATFORM_WINDOWS: u32 = 1u32;
 pub const DLLVER_QFE_MASK: u64 = 65535u64;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRAGINFOA {
     pub uSize: u32,
-    pub pt: super::super::Foundation::POINT,
-    pub fNC: super::super::Foundation::BOOL,
+    pub pt: ::win32_foundation_sys::POINT,
+    pub fNC: ::win32_foundation_sys::BOOL,
     pub lpFileList: ::windows_core_sys::PSTR,
     pub grfKeyState: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRAGINFOA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRAGINFOA {
     fn clone(&self) -> Self {
         *self
@@ -2852,19 +2589,16 @@ impl ::core::clone::Clone for DRAGINFOA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRAGINFOA {
     pub uSize: u32,
-    pub pt: super::super::Foundation::POINT,
-    pub fNC: super::super::Foundation::BOOL,
+    pub pt: ::win32_foundation_sys::POINT,
+    pub fNC: ::win32_foundation_sys::BOOL,
     pub lpFileList: ::windows_core_sys::PSTR,
     pub grfKeyState: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRAGINFOA {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRAGINFOA {
     fn clone(&self) -> Self {
         *self
@@ -2872,19 +2606,16 @@ impl ::core::clone::Clone for DRAGINFOA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRAGINFOW {
     pub uSize: u32,
-    pub pt: super::super::Foundation::POINT,
-    pub fNC: super::super::Foundation::BOOL,
+    pub pt: ::win32_foundation_sys::POINT,
+    pub fNC: ::win32_foundation_sys::BOOL,
     pub lpFileList: ::windows_core_sys::PWSTR,
     pub grfKeyState: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRAGINFOW {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRAGINFOW {
     fn clone(&self) -> Self {
         *self
@@ -2892,19 +2623,16 @@ impl ::core::clone::Clone for DRAGINFOW {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRAGINFOW {
     pub uSize: u32,
-    pub pt: super::super::Foundation::POINT,
-    pub fNC: super::super::Foundation::BOOL,
+    pub pt: ::win32_foundation_sys::POINT,
+    pub fNC: ::win32_foundation_sys::BOOL,
     pub lpFileList: ::windows_core_sys::PWSTR,
     pub grfKeyState: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRAGINFOW {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRAGINFOW {
     fn clone(&self) -> Self {
         *self
@@ -2923,16 +2651,13 @@ impl ::core::clone::Clone for DROPDESCRIPTION {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DROPFILES {
     pub pFiles: u32,
-    pub pt: super::super::Foundation::POINT,
-    pub fNC: super::super::Foundation::BOOL,
-    pub fWide: super::super::Foundation::BOOL,
+    pub pt: ::win32_foundation_sys::POINT,
+    pub fNC: ::win32_foundation_sys::BOOL,
+    pub fWide: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DROPFILES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DROPFILES {
     fn clone(&self) -> Self {
         *self
@@ -3005,15 +2730,12 @@ pub const EBO_NOBORDER: EXPLORER_BROWSER_OPTIONS = 64i32;
 pub const EBO_NOPERSISTVIEWSTATE: EXPLORER_BROWSER_OPTIONS = 128i32;
 pub const EXP_DARWIN_ID_SIG: u32 = 2684354566u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXP_DARWIN_LINK {
     pub dbh: DATABLOCK_HEADER,
-    pub szDarwinID: [super::super::Foundation::CHAR; 260],
+    pub szDarwinID: [::win32_foundation_sys::CHAR; 260],
     pub szwDarwinID: [u16; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXP_DARWIN_LINK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXP_DARWIN_LINK {
     fn clone(&self) -> Self {
         *self
@@ -3048,16 +2770,13 @@ impl ::core::clone::Clone for EXP_SPECIAL_FOLDER {
 pub const EXP_SPECIAL_FOLDER_SIG: u32 = 2684354565u32;
 pub const EXP_SZ_ICON_SIG: u32 = 2684354567u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EXP_SZ_LINK {
     pub cbSize: u32,
     pub dwSignature: u32,
-    pub szTarget: [super::super::Foundation::CHAR; 260],
+    pub szTarget: [::win32_foundation_sys::CHAR; 260],
     pub swzTarget: [u16; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EXP_SZ_LINK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EXP_SZ_LINK {
     fn clone(&self) -> Self {
         *self
@@ -3173,74 +2892,62 @@ pub type FFFP_MODE = i32;
 pub const FFFP_EXACTMATCH: FFFP_MODE = 0i32;
 pub const FFFP_NEARESTPARENTMATCH: FFFP_MODE = 1i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILEDESCRIPTORA {
     pub dwFlags: u32,
     pub clsid: ::windows_core_sys::GUID,
-    pub sizel: super::super::Foundation::SIZE,
-    pub pointl: super::super::Foundation::POINTL,
+    pub sizel: ::win32_foundation_sys::SIZE,
+    pub pointl: ::win32_foundation_sys::POINTL,
     pub dwFileAttributes: u32,
-    pub ftCreationTime: super::super::Foundation::FILETIME,
-    pub ftLastAccessTime: super::super::Foundation::FILETIME,
-    pub ftLastWriteTime: super::super::Foundation::FILETIME,
+    pub ftCreationTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastAccessTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastWriteTime: ::win32_foundation_sys::FILETIME,
     pub nFileSizeHigh: u32,
     pub nFileSizeLow: u32,
-    pub cFileName: [super::super::Foundation::CHAR; 260],
+    pub cFileName: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILEDESCRIPTORA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILEDESCRIPTORA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILEDESCRIPTORW {
     pub dwFlags: u32,
     pub clsid: ::windows_core_sys::GUID,
-    pub sizel: super::super::Foundation::SIZE,
-    pub pointl: super::super::Foundation::POINTL,
+    pub sizel: ::win32_foundation_sys::SIZE,
+    pub pointl: ::win32_foundation_sys::POINTL,
     pub dwFileAttributes: u32,
-    pub ftCreationTime: super::super::Foundation::FILETIME,
-    pub ftLastAccessTime: super::super::Foundation::FILETIME,
-    pub ftLastWriteTime: super::super::Foundation::FILETIME,
+    pub ftCreationTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastAccessTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastWriteTime: ::win32_foundation_sys::FILETIME,
     pub nFileSizeHigh: u32,
     pub nFileSizeLow: u32,
     pub cFileName: [u16; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILEDESCRIPTORW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILEDESCRIPTORW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILEGROUPDESCRIPTORA {
     pub cItems: u32,
     pub fgd: [FILEDESCRIPTORA; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILEGROUPDESCRIPTORA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILEGROUPDESCRIPTORA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILEGROUPDESCRIPTORW {
     pub cItems: u32,
     pub fgd: [FILEDESCRIPTORW; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILEGROUPDESCRIPTORW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILEGROUPDESCRIPTORW {
     fn clone(&self) -> Self {
         *self
@@ -3698,25 +3405,21 @@ pub const GPFIDL_UNCPRINTER: i32 = 2i32;
 pub const GenericCredentialProvider: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 634108310, data2: 37613, data3: 17790, data4: [178, 140, 71, 116, 8, 75, 213, 98] };
 pub type HDROP = isize;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HELPINFO {
     pub cbSize: u32,
     pub iContextType: i32,
     pub iCtrlId: i32,
-    pub hItemHandle: super::super::Foundation::HANDLE,
+    pub hItemHandle: ::win32_foundation_sys::HANDLE,
     pub dwContextId: usize,
-    pub MousePos: super::super::Foundation::POINT,
+    pub MousePos: ::win32_foundation_sys::POINT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HELPINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HELPINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HELPWININFOA {
     pub wStructSize: i32,
     pub x: i32,
@@ -3724,11 +3427,9 @@ pub struct HELPWININFOA {
     pub dx: i32,
     pub dy: i32,
     pub wMax: i32,
-    pub rgchMember: [super::super::Foundation::CHAR; 2],
+    pub rgchMember: [::win32_foundation_sys::CHAR; 2],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HELPWININFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HELPWININFOA {
     fn clone(&self) -> Self {
         *self
@@ -3758,17 +3459,14 @@ pub const HLBWIF_DOCWNDMAXIMIZED: HLBWIF_FLAGS = 8u32;
 pub const HLBWIF_HASWEBTOOLBARINFO: HLBWIF_FLAGS = 16u32;
 pub const HLBWIF_WEBTOOLBARHIDDEN: HLBWIF_FLAGS = 32u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HLBWINFO {
     pub cbSize: u32,
     pub grfHLBWIF: u32,
-    pub rcFramePos: super::super::Foundation::RECT,
-    pub rcDocPos: super::super::Foundation::RECT,
+    pub rcFramePos: ::win32_foundation_sys::RECT,
+    pub rcDocPos: ::win32_foundation_sys::RECT,
     pub hltbinfo: HLTBINFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HLBWINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HLBWINFO {
     fn clone(&self) -> Self {
         *self
@@ -3832,14 +3530,11 @@ pub type HLQF_INFO = i32;
 pub const HLQF_ISVALID: HLQF_INFO = 1i32;
 pub const HLQF_ISCURRENT: HLQF_INFO = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HLTBINFO {
     pub uDockType: u32,
-    pub rcTbPos: super::super::Foundation::RECT,
+    pub rcTbPos: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HLTBINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HLTBINFO {
     fn clone(&self) -> Self {
         *self
@@ -4429,10 +4124,10 @@ pub const LSF_MAKEUNIQUENAME: LIBRARYSAVEFLAGS = 2i32;
 pub const LIBRARY_E_NO_ACCESSIBLE_LOCATION: ::windows_core_sys::HRESULT = -2144927231i32;
 pub const LIBRARY_E_NO_SAVE_LOCATION: ::windows_core_sys::HRESULT = -2144927232i32;
 pub const LINK_E_DELETE: ::windows_core_sys::HRESULT = -2144927485i32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-pub type LPFNDFMCALLBACK = ::core::option::Option<unsafe extern "system" fn(psf: IShellFolder, hwnd: super::super::Foundation::HWND, pdtobj: super::super::System::Com::IDataObject, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-pub type LPFNVIEWCALLBACK = ::core::option::Option<unsafe extern "system" fn(psvouter: IShellView, psf: IShellFolder, hwndmain: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> ::windows_core_sys::HRESULT>;
+#[cfg(feature = "Win32_System_Com")]
+pub type LPFNDFMCALLBACK = ::core::option::Option<unsafe extern "system" fn(psf: IShellFolder, hwnd: ::win32_foundation_sys::HWND, pdtobj: ::win32_system_sys::Com::IDataObject, umsg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> ::windows_core_sys::HRESULT>;
+#[cfg(feature = "Win32_System_Ole")]
+pub type LPFNVIEWCALLBACK = ::core::option::Option<unsafe extern "system" fn(psvouter: IShellView, psf: IShellFolder, hwndmain: ::win32_foundation_sys::HWND, umsg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> ::windows_core_sys::HRESULT>;
 pub const LocalThumbnailCache: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1357858116, data2: 44191, data3: 19086, data4: [178, 27, 138, 38, 24, 13, 177, 63] };
 pub const MAXFILELEN: u32 = 13u32;
 pub const MAX_COLUMN_DESC_LEN: u32 = 128u32;
@@ -4479,15 +4174,12 @@ pub const MAV_UNKNOWN: MONITOR_APP_VISIBILITY = 0i32;
 pub const MAV_NO_APP_VISIBLE: MONITOR_APP_VISIBILITY = 1i32;
 pub const MAV_APP_VISIBLE: MONITOR_APP_VISIBILITY = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MULTIKEYHELPA {
     pub mkSize: u32,
-    pub mkKeylist: super::super::Foundation::CHAR,
-    pub szKeyphrase: [super::super::Foundation::CHAR; 1],
+    pub mkKeylist: ::win32_foundation_sys::CHAR,
+    pub szKeyphrase: [::win32_foundation_sys::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MULTIKEYHELPA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MULTIKEYHELPA {
     fn clone(&self) -> Self {
         *self
@@ -4548,20 +4240,20 @@ impl ::core::clone::Clone for NC_ADDRESS {
 pub struct NC_ADDRESS_0(pub u8);
 pub const NETCACHE_E_NEGATIVE_CACHE: ::windows_core_sys::HRESULT = -2144927488i32;
 #[repr(C, packed(1))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct NEWCPLINFOA {
     pub dwSize: u32,
     pub dwFlags: u32,
     pub dwHelpContext: u32,
     pub lData: isize,
     pub hIcon: super::WindowsAndMessaging::HICON,
-    pub szName: [super::super::Foundation::CHAR; 32],
-    pub szInfo: [super::super::Foundation::CHAR; 64],
-    pub szHelpFile: [super::super::Foundation::CHAR; 128],
+    pub szName: [::win32_foundation_sys::CHAR; 32],
+    pub szInfo: [::win32_foundation_sys::CHAR; 64],
+    pub szHelpFile: [::win32_foundation_sys::CHAR; 128],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for NEWCPLINFOA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for NEWCPLINFOA {
     fn clone(&self) -> Self {
         *self
@@ -4608,29 +4300,29 @@ pub const NIS_HIDDEN: u32 = 1u32;
 pub const NIS_SHAREDICON: u32 = 2u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct NOTIFYICONDATAA {
     pub cbSize: u32,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub uID: u32,
     pub uFlags: NOTIFY_ICON_DATA_FLAGS,
     pub uCallbackMessage: u32,
     pub hIcon: super::WindowsAndMessaging::HICON,
-    pub szTip: [super::super::Foundation::CHAR; 128],
+    pub szTip: [::win32_foundation_sys::CHAR; 128],
     pub dwState: u32,
     pub dwStateMask: u32,
-    pub szInfo: [super::super::Foundation::CHAR; 256],
+    pub szInfo: [::win32_foundation_sys::CHAR; 256],
     pub Anonymous: NOTIFYICONDATAA_0,
-    pub szInfoTitle: [super::super::Foundation::CHAR; 64],
+    pub szInfoTitle: [::win32_foundation_sys::CHAR; 64],
     pub dwInfoFlags: u32,
     pub guidItem: ::windows_core_sys::GUID,
     pub hBalloonIcon: super::WindowsAndMessaging::HICON,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for NOTIFYICONDATAA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for NOTIFYICONDATAA {
     fn clone(&self) -> Self {
         *self
@@ -4638,16 +4330,16 @@ impl ::core::clone::Clone for NOTIFYICONDATAA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union NOTIFYICONDATAA_0 {
     pub uTimeout: u32,
     pub uVersion: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for NOTIFYICONDATAA_0 {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for NOTIFYICONDATAA_0 {
     fn clone(&self) -> Self {
         *self
@@ -4655,29 +4347,29 @@ impl ::core::clone::Clone for NOTIFYICONDATAA_0 {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct NOTIFYICONDATAA {
     pub cbSize: u32,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub uID: u32,
     pub uFlags: NOTIFY_ICON_DATA_FLAGS,
     pub uCallbackMessage: u32,
     pub hIcon: super::WindowsAndMessaging::HICON,
-    pub szTip: [super::super::Foundation::CHAR; 128],
+    pub szTip: [::win32_foundation_sys::CHAR; 128],
     pub dwState: u32,
     pub dwStateMask: u32,
-    pub szInfo: [super::super::Foundation::CHAR; 256],
+    pub szInfo: [::win32_foundation_sys::CHAR; 256],
     pub Anonymous: NOTIFYICONDATAA_0,
-    pub szInfoTitle: [super::super::Foundation::CHAR; 64],
+    pub szInfoTitle: [::win32_foundation_sys::CHAR; 64],
     pub dwInfoFlags: u32,
     pub guidItem: ::windows_core_sys::GUID,
     pub hBalloonIcon: super::WindowsAndMessaging::HICON,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for NOTIFYICONDATAA {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for NOTIFYICONDATAA {
     fn clone(&self) -> Self {
         *self
@@ -4685,16 +4377,16 @@ impl ::core::clone::Clone for NOTIFYICONDATAA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union NOTIFYICONDATAA_0 {
     pub uTimeout: u32,
     pub uVersion: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for NOTIFYICONDATAA_0 {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for NOTIFYICONDATAA_0 {
     fn clone(&self) -> Self {
         *self
@@ -4702,10 +4394,10 @@ impl ::core::clone::Clone for NOTIFYICONDATAA_0 {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct NOTIFYICONDATAW {
     pub cbSize: u32,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub uID: u32,
     pub uFlags: NOTIFY_ICON_DATA_FLAGS,
     pub uCallbackMessage: u32,
@@ -4721,10 +4413,10 @@ pub struct NOTIFYICONDATAW {
     pub hBalloonIcon: super::WindowsAndMessaging::HICON,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for NOTIFYICONDATAW {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for NOTIFYICONDATAW {
     fn clone(&self) -> Self {
         *self
@@ -4732,16 +4424,16 @@ impl ::core::clone::Clone for NOTIFYICONDATAW {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union NOTIFYICONDATAW_0 {
     pub uTimeout: u32,
     pub uVersion: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for NOTIFYICONDATAW_0 {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for NOTIFYICONDATAW_0 {
     fn clone(&self) -> Self {
         *self
@@ -4749,10 +4441,10 @@ impl ::core::clone::Clone for NOTIFYICONDATAW_0 {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct NOTIFYICONDATAW {
     pub cbSize: u32,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub uID: u32,
     pub uFlags: NOTIFY_ICON_DATA_FLAGS,
     pub uCallbackMessage: u32,
@@ -4768,10 +4460,10 @@ pub struct NOTIFYICONDATAW {
     pub hBalloonIcon: super::WindowsAndMessaging::HICON,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for NOTIFYICONDATAW {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for NOTIFYICONDATAW {
     fn clone(&self) -> Self {
         *self
@@ -4779,16 +4471,16 @@ impl ::core::clone::Clone for NOTIFYICONDATAW {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub union NOTIFYICONDATAW_0 {
     pub uTimeout: u32,
     pub uVersion: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for NOTIFYICONDATAW_0 {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for NOTIFYICONDATAW_0 {
     fn clone(&self) -> Self {
         *self
@@ -4796,18 +4488,15 @@ impl ::core::clone::Clone for NOTIFYICONDATAW_0 {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NOTIFYICONIDENTIFIER {
     pub cbSize: u32,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub uID: u32,
     pub guidItem: ::windows_core_sys::GUID,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NOTIFYICONIDENTIFIER {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NOTIFYICONIDENTIFIER {
     fn clone(&self) -> Self {
         *self
@@ -4815,18 +4504,15 @@ impl ::core::clone::Clone for NOTIFYICONIDENTIFIER {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NOTIFYICONIDENTIFIER {
     pub cbSize: u32,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub uID: u32,
     pub guidItem: ::windows_core_sys::GUID,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NOTIFYICONIDENTIFIER {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NOTIFYICONIDENTIFIER {
     fn clone(&self) -> Self {
         *self
@@ -4854,7 +4540,7 @@ pub const NPCredentialProvider: ::windows_core_sys::GUID = ::windows_core_sys::G
 #[cfg(feature = "Win32_NetworkManagement_WNet")]
 pub struct NRESARRAY {
     pub cItems: u32,
-    pub nr: [super::super::NetworkManagement::WNet::NETRESOURCEA; 1],
+    pub nr: [::win32_networkmanagement_sys::WNet::NETRESOURCEA; 1],
 }
 #[cfg(feature = "Win32_NetworkManagement_WNet")]
 impl ::core::marker::Copy for NRESARRAY {}
@@ -4907,33 +4593,33 @@ pub const NSTCS2_DISPLAYPINNEDONLY: NSTCSTYLE2 = 8i32;
 pub const NTSCS2_NOSINGLETONAUTOEXPAND: NSTCSTYLE2 = 16i32;
 pub const NTSCS2_NEVERINSERTNONENUMERATED: NSTCSTYLE2 = 32i32;
 #[repr(C, packed(1))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Console"))]
+#[cfg(feature = "Win32_System_Console")]
 pub struct NT_CONSOLE_PROPS {
     pub dbh: DATABLOCK_HEADER,
     pub wFillAttribute: u16,
     pub wPopupFillAttribute: u16,
-    pub dwScreenBufferSize: super::super::System::Console::COORD,
-    pub dwWindowSize: super::super::System::Console::COORD,
-    pub dwWindowOrigin: super::super::System::Console::COORD,
+    pub dwScreenBufferSize: ::win32_system_sys::Console::COORD,
+    pub dwWindowSize: ::win32_system_sys::Console::COORD,
+    pub dwWindowOrigin: ::win32_system_sys::Console::COORD,
     pub nFont: u32,
     pub nInputBufferSize: u32,
-    pub dwFontSize: super::super::System::Console::COORD,
+    pub dwFontSize: ::win32_system_sys::Console::COORD,
     pub uFontFamily: u32,
     pub uFontWeight: u32,
     pub FaceName: [u16; 32],
     pub uCursorSize: u32,
-    pub bFullScreen: super::super::Foundation::BOOL,
-    pub bQuickEdit: super::super::Foundation::BOOL,
-    pub bInsertMode: super::super::Foundation::BOOL,
-    pub bAutoPosition: super::super::Foundation::BOOL,
+    pub bFullScreen: ::win32_foundation_sys::BOOL,
+    pub bQuickEdit: ::win32_foundation_sys::BOOL,
+    pub bInsertMode: ::win32_foundation_sys::BOOL,
+    pub bAutoPosition: ::win32_foundation_sys::BOOL,
     pub uHistoryBufferSize: u32,
     pub uNumberOfHistoryBuffers: u32,
-    pub bHistoryNoDup: super::super::Foundation::BOOL,
+    pub bHistoryNoDup: ::win32_foundation_sys::BOOL,
     pub ColorTable: [u32; 16],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Console"))]
+#[cfg(feature = "Win32_System_Console")]
 impl ::core::marker::Copy for NT_CONSOLE_PROPS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Console"))]
+#[cfg(feature = "Win32_System_Console")]
 impl ::core::clone::Clone for NT_CONSOLE_PROPS {
     fn clone(&self) -> Self {
         *self
@@ -5008,19 +4694,16 @@ pub const OAIF_URL_PROTOCOL: OPEN_AS_INFO_FLAGS = 64u32;
 pub const OAIF_FILE_IS_URI: OPEN_AS_INFO_FLAGS = 128u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_PRINTER_PROPS_INFOA {
     pub dwSize: u32,
     pub pszSheetName: ::windows_core_sys::PSTR,
     pub uSheetIndex: u32,
     pub dwFlags: u32,
-    pub bModal: super::super::Foundation::BOOL,
+    pub bModal: ::win32_foundation_sys::BOOL,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_PRINTER_PROPS_INFOA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOA {
     fn clone(&self) -> Self {
         *self
@@ -5028,19 +4711,16 @@ impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_PRINTER_PROPS_INFOA {
     pub dwSize: u32,
     pub pszSheetName: ::windows_core_sys::PSTR,
     pub uSheetIndex: u32,
     pub dwFlags: u32,
-    pub bModal: super::super::Foundation::BOOL,
+    pub bModal: ::win32_foundation_sys::BOOL,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_PRINTER_PROPS_INFOA {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOA {
     fn clone(&self) -> Self {
         *self
@@ -5048,19 +4728,16 @@ impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_PRINTER_PROPS_INFOW {
     pub dwSize: u32,
     pub pszSheetName: ::windows_core_sys::PWSTR,
     pub uSheetIndex: u32,
     pub dwFlags: u32,
-    pub bModal: super::super::Foundation::BOOL,
+    pub bModal: ::win32_foundation_sys::BOOL,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_PRINTER_PROPS_INFOW {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOW {
     fn clone(&self) -> Self {
         *self
@@ -5068,19 +4745,16 @@ impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOW {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_PRINTER_PROPS_INFOW {
     pub dwSize: u32,
     pub pszSheetName: ::windows_core_sys::PWSTR,
     pub uSheetIndex: u32,
     pub dwFlags: u32,
-    pub bModal: super::super::Foundation::BOOL,
+    pub bModal: ::win32_foundation_sys::BOOL,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_PRINTER_PROPS_INFOW {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_PRINTER_PROPS_INFOW {
     fn clone(&self) -> Self {
         *self
@@ -5146,10 +4820,8 @@ pub const PANE_PRIVACY: u32 = 7u32;
 pub const PANE_PROGRESS: u32 = 6u32;
 pub const PANE_SSL: u32 = 4u32;
 pub const PANE_ZONE: u32 = 1u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PAPPCONSTRAIN_CHANGE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(constrained: super::super::Foundation::BOOLEAN, context: *const ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PAPPSTATE_CHANGE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(quiesced: super::super::Foundation::BOOLEAN, context: *const ::core::ffi::c_void)>;
+pub type PAPPCONSTRAIN_CHANGE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(constrained: ::win32_foundation_sys::BOOLEAN, context: *const ::core::ffi::c_void)>;
+pub type PAPPSTATE_CHANGE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(quiesced: ::win32_foundation_sys::BOOLEAN, context: *const ::core::ffi::c_void)>;
 #[repr(C)]
 pub struct PARSEDURLA {
     pub cbSize: u32,
@@ -5217,8 +4889,7 @@ impl ::core::clone::Clone for PERSIST_FOLDER_TARGET_INFO {
     }
 }
 pub type PFNCANSHAREFOLDERW = ::core::option::Option<unsafe extern "system" fn(pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNSHOWSHAREFOLDERUIW = ::core::option::Option<unsafe extern "system" fn(hwndparent: super::super::Foundation::HWND, pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT>;
+pub type PFNSHOWSHAREFOLDERUIW = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation_sys::HWND, pszpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT>;
 pub const PIDASI_AVG_DATA_RATE: u32 = 4u32;
 pub const PIDASI_CHANNEL_COUNT: u32 = 7u32;
 pub const PIDASI_COMPRESSION: u32 = 10u32;
@@ -5378,7 +5049,6 @@ pub const PRINTACTION_SERVERPROPERTIES: u32 = 7u32;
 pub const PRINTACTION_TESTPAGE: u32 = 4u32;
 pub const PRINT_PROP_FORCE_NAME: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROFILEINFOA {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -5387,18 +5057,15 @@ pub struct PROFILEINFOA {
     pub lpDefaultPath: ::windows_core_sys::PSTR,
     pub lpServerName: ::windows_core_sys::PSTR,
     pub lpPolicyPath: ::windows_core_sys::PSTR,
-    pub hProfile: super::super::Foundation::HANDLE,
+    pub hProfile: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROFILEINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROFILEINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROFILEINFOW {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -5407,11 +5074,9 @@ pub struct PROFILEINFOW {
     pub lpDefaultPath: ::windows_core_sys::PWSTR,
     pub lpServerName: ::windows_core_sys::PWSTR,
     pub lpPolicyPath: ::windows_core_sys::PWSTR,
-    pub hProfile: super::super::Foundation::HANDLE,
+    pub hProfile: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROFILEINFOW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROFILEINFOW {
     fn clone(&self) -> Self {
         *self
@@ -5428,19 +5093,16 @@ pub const PROGDLG_NOTIME: u32 = 4u32;
 pub const PROPSTR_EXTENSIONCOMPLETIONSTATE: &str = "ExtensionCompletionState";
 pub const PROP_CONTRACT_DELEGATE: &str = "ContractDelegate";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PUBAPPINFO {
     pub cbSize: u32,
     pub dwMask: u32,
     pub pszSource: ::windows_core_sys::PWSTR,
-    pub stAssigned: super::super::Foundation::SYSTEMTIME,
-    pub stPublished: super::super::Foundation::SYSTEMTIME,
-    pub stScheduled: super::super::Foundation::SYSTEMTIME,
-    pub stExpire: super::super::Foundation::SYSTEMTIME,
+    pub stAssigned: ::win32_foundation_sys::SYSTEMTIME,
+    pub stPublished: ::win32_foundation_sys::SYSTEMTIME,
+    pub stScheduled: ::win32_foundation_sys::SYSTEMTIME,
+    pub stExpire: ::win32_foundation_sys::SYSTEMTIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PUBAPPINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PUBAPPINFO {
     fn clone(&self) -> Self {
         *self
@@ -5877,15 +5539,15 @@ pub const SFVM_GETPANE: SFVM_MESSAGE_ID = 59i32;
 pub const SFVM_GETHELPTOPIC: SFVM_MESSAGE_ID = 63i32;
 pub const SFVM_GETANIMATION: SFVM_MESSAGE_ID = 68i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 pub struct SFVM_PROPPAGE_DATA {
     pub dwReserved: u32,
     pub pfn: super::Controls::LPFNSVADDPROPSHEETPAGE,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::marker::Copy for SFVM_PROPPAGE_DATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::clone::Clone for SFVM_PROPPAGE_DATA {
     fn clone(&self) -> Self {
         *self
@@ -5920,14 +5582,14 @@ impl ::core::clone::Clone for SFV_CREATE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 pub struct SFV_SETITEMPOS {
     pub pidl: *mut Common::ITEMIDLIST,
-    pub pt: super::super::Foundation::POINT,
+    pub pt: ::win32_foundation_sys::POINT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 impl ::core::marker::Copy for SFV_SETITEMPOS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 impl ::core::clone::Clone for SFV_SETITEMPOS {
     fn clone(&self) -> Self {
         *self
@@ -6097,27 +5759,27 @@ impl ::core::clone::Clone for SHCOLUMNINIT {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Threading"))]
 pub struct SHCREATEPROCESSINFOW {
     pub cbSize: u32,
     pub fMask: u32,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub pszFile: ::windows_core_sys::PCWSTR,
     pub pszParameters: ::windows_core_sys::PCWSTR,
     pub pszCurrentDirectory: ::windows_core_sys::PCWSTR,
-    pub hUserToken: super::super::Foundation::HANDLE,
-    pub lpProcessAttributes: *mut super::super::Security::SECURITY_ATTRIBUTES,
-    pub lpThreadAttributes: *mut super::super::Security::SECURITY_ATTRIBUTES,
-    pub bInheritHandles: super::super::Foundation::BOOL,
+    pub hUserToken: ::win32_foundation_sys::HANDLE,
+    pub lpProcessAttributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES,
+    pub lpThreadAttributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES,
+    pub bInheritHandles: ::win32_foundation_sys::BOOL,
     pub dwCreationFlags: u32,
-    pub lpStartupInfo: *mut super::super::System::Threading::STARTUPINFOW,
-    pub lpProcessInformation: *mut super::super::System::Threading::PROCESS_INFORMATION,
+    pub lpStartupInfo: *mut ::win32_system_sys::Threading::STARTUPINFOW,
+    pub lpProcessInformation: *mut ::win32_system_sys::Threading::PROCESS_INFORMATION,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Threading"))]
 impl ::core::marker::Copy for SHCREATEPROCESSINFOW {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Threading"))]
 impl ::core::clone::Clone for SHCREATEPROCESSINFOW {
     fn clone(&self) -> Self {
         *self
@@ -6125,27 +5787,27 @@ impl ::core::clone::Clone for SHCREATEPROCESSINFOW {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Threading"))]
 pub struct SHCREATEPROCESSINFOW {
     pub cbSize: u32,
     pub fMask: u32,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub pszFile: ::windows_core_sys::PCWSTR,
     pub pszParameters: ::windows_core_sys::PCWSTR,
     pub pszCurrentDirectory: ::windows_core_sys::PCWSTR,
-    pub hUserToken: super::super::Foundation::HANDLE,
-    pub lpProcessAttributes: *mut super::super::Security::SECURITY_ATTRIBUTES,
-    pub lpThreadAttributes: *mut super::super::Security::SECURITY_ATTRIBUTES,
-    pub bInheritHandles: super::super::Foundation::BOOL,
+    pub hUserToken: ::win32_foundation_sys::HANDLE,
+    pub lpProcessAttributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES,
+    pub lpThreadAttributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES,
+    pub bInheritHandles: ::win32_foundation_sys::BOOL,
     pub dwCreationFlags: u32,
-    pub lpStartupInfo: *mut super::super::System::Threading::STARTUPINFOW,
-    pub lpProcessInformation: *mut super::super::System::Threading::PROCESS_INFORMATION,
+    pub lpStartupInfo: *mut ::win32_system_sys::Threading::STARTUPINFOW,
+    pub lpProcessInformation: *mut ::win32_system_sys::Threading::PROCESS_INFORMATION,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Threading"))]
 impl ::core::marker::Copy for SHCREATEPROCESSINFOW {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Threading"))]
 impl ::core::clone::Clone for SHCREATEPROCESSINFOW {
     fn clone(&self) -> Self {
         *self
@@ -6166,14 +5828,14 @@ impl ::core::clone::Clone for SHChangeDWORDAsIDList {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 pub struct SHChangeNotifyEntry {
     pub pidl: *mut Common::ITEMIDLIST,
-    pub fRecursive: super::super::Foundation::BOOL,
+    pub fRecursive: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 impl ::core::marker::Copy for SHChangeNotifyEntry {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
+#[cfg(feature = "Win32_UI_Shell_Common")]
 impl ::core::clone::Clone for SHChangeNotifyEntry {
     fn clone(&self) -> Self {
         *self
@@ -6242,16 +5904,16 @@ pub const SHDID_COMPUTER_SHAREDDOCS: SHDID_ID = 20i32;
 pub const SHDID_MOBILE_DEVICE: SHDID_ID = 21i32;
 pub const SHDID_REMOTE_DESKTOP_DRIVE: SHDID_ID = 22i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct SHDRAGIMAGE {
-    pub sizeDragImage: super::super::Foundation::SIZE,
-    pub ptOffset: super::super::Foundation::POINT,
-    pub hbmpDragImage: super::super::Graphics::Gdi::HBITMAP,
+    pub sizeDragImage: ::win32_foundation_sys::SIZE,
+    pub ptOffset: ::win32_foundation_sys::POINT,
+    pub hbmpDragImage: ::win32_graphics_sys::Gdi::HBITMAP,
     pub crColorKey: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for SHDRAGIMAGE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for SHDRAGIMAGE {
     fn clone(&self) -> Self {
         *self
@@ -6264,29 +5926,29 @@ pub const SBSC_TOGGLE: SHELLBROWSERSHOWCONTROL = 2i32;
 pub const SBSC_QUERY: SHELLBROWSERSHOWCONTROL = 3i32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct SHELLEXECUTEINFOA {
     pub cbSize: u32,
     pub fMask: u32,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub lpVerb: ::windows_core_sys::PCSTR,
     pub lpFile: ::windows_core_sys::PCSTR,
     pub lpParameters: ::windows_core_sys::PCSTR,
     pub lpDirectory: ::windows_core_sys::PCSTR,
     pub nShow: i32,
-    pub hInstApp: super::super::Foundation::HINSTANCE,
+    pub hInstApp: ::win32_foundation_sys::HINSTANCE,
     pub lpIDList: *mut ::core::ffi::c_void,
     pub lpClass: ::windows_core_sys::PCSTR,
-    pub hkeyClass: super::super::System::Registry::HKEY,
+    pub hkeyClass: ::win32_system_sys::Registry::HKEY,
     pub dwHotKey: u32,
     pub Anonymous: SHELLEXECUTEINFOA_0,
-    pub hProcess: super::super::Foundation::HANDLE,
+    pub hProcess: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for SHELLEXECUTEINFOA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for SHELLEXECUTEINFOA {
     fn clone(&self) -> Self {
         *self
@@ -6294,16 +5956,16 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub union SHELLEXECUTEINFOA_0 {
-    pub hIcon: super::super::Foundation::HANDLE,
-    pub hMonitor: super::super::Foundation::HANDLE,
+    pub hIcon: ::win32_foundation_sys::HANDLE,
+    pub hMonitor: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for SHELLEXECUTEINFOA_0 {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for SHELLEXECUTEINFOA_0 {
     fn clone(&self) -> Self {
         *self
@@ -6311,29 +5973,29 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOA_0 {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct SHELLEXECUTEINFOA {
     pub cbSize: u32,
     pub fMask: u32,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub lpVerb: ::windows_core_sys::PCSTR,
     pub lpFile: ::windows_core_sys::PCSTR,
     pub lpParameters: ::windows_core_sys::PCSTR,
     pub lpDirectory: ::windows_core_sys::PCSTR,
     pub nShow: i32,
-    pub hInstApp: super::super::Foundation::HINSTANCE,
+    pub hInstApp: ::win32_foundation_sys::HINSTANCE,
     pub lpIDList: *mut ::core::ffi::c_void,
     pub lpClass: ::windows_core_sys::PCSTR,
-    pub hkeyClass: super::super::System::Registry::HKEY,
+    pub hkeyClass: ::win32_system_sys::Registry::HKEY,
     pub dwHotKey: u32,
     pub Anonymous: SHELLEXECUTEINFOA_0,
-    pub hProcess: super::super::Foundation::HANDLE,
+    pub hProcess: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for SHELLEXECUTEINFOA {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for SHELLEXECUTEINFOA {
     fn clone(&self) -> Self {
         *self
@@ -6341,16 +6003,16 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub union SHELLEXECUTEINFOA_0 {
-    pub hIcon: super::super::Foundation::HANDLE,
-    pub hMonitor: super::super::Foundation::HANDLE,
+    pub hIcon: ::win32_foundation_sys::HANDLE,
+    pub hMonitor: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for SHELLEXECUTEINFOA_0 {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for SHELLEXECUTEINFOA_0 {
     fn clone(&self) -> Self {
         *self
@@ -6358,29 +6020,29 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOA_0 {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct SHELLEXECUTEINFOW {
     pub cbSize: u32,
     pub fMask: u32,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub lpVerb: ::windows_core_sys::PCWSTR,
     pub lpFile: ::windows_core_sys::PCWSTR,
     pub lpParameters: ::windows_core_sys::PCWSTR,
     pub lpDirectory: ::windows_core_sys::PCWSTR,
     pub nShow: i32,
-    pub hInstApp: super::super::Foundation::HINSTANCE,
+    pub hInstApp: ::win32_foundation_sys::HINSTANCE,
     pub lpIDList: *mut ::core::ffi::c_void,
     pub lpClass: ::windows_core_sys::PCWSTR,
-    pub hkeyClass: super::super::System::Registry::HKEY,
+    pub hkeyClass: ::win32_system_sys::Registry::HKEY,
     pub dwHotKey: u32,
     pub Anonymous: SHELLEXECUTEINFOW_0,
-    pub hProcess: super::super::Foundation::HANDLE,
+    pub hProcess: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for SHELLEXECUTEINFOW {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for SHELLEXECUTEINFOW {
     fn clone(&self) -> Self {
         *self
@@ -6388,16 +6050,16 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOW {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub union SHELLEXECUTEINFOW_0 {
-    pub hIcon: super::super::Foundation::HANDLE,
-    pub hMonitor: super::super::Foundation::HANDLE,
+    pub hIcon: ::win32_foundation_sys::HANDLE,
+    pub hMonitor: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for SHELLEXECUTEINFOW_0 {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for SHELLEXECUTEINFOW_0 {
     fn clone(&self) -> Self {
         *self
@@ -6405,29 +6067,29 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOW_0 {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct SHELLEXECUTEINFOW {
     pub cbSize: u32,
     pub fMask: u32,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub lpVerb: ::windows_core_sys::PCWSTR,
     pub lpFile: ::windows_core_sys::PCWSTR,
     pub lpParameters: ::windows_core_sys::PCWSTR,
     pub lpDirectory: ::windows_core_sys::PCWSTR,
     pub nShow: i32,
-    pub hInstApp: super::super::Foundation::HINSTANCE,
+    pub hInstApp: ::win32_foundation_sys::HINSTANCE,
     pub lpIDList: *mut ::core::ffi::c_void,
     pub lpClass: ::windows_core_sys::PCWSTR,
-    pub hkeyClass: super::super::System::Registry::HKEY,
+    pub hkeyClass: ::win32_system_sys::Registry::HKEY,
     pub dwHotKey: u32,
     pub Anonymous: SHELLEXECUTEINFOW_0,
-    pub hProcess: super::super::Foundation::HANDLE,
+    pub hProcess: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for SHELLEXECUTEINFOW {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for SHELLEXECUTEINFOW {
     fn clone(&self) -> Self {
         *self
@@ -6435,16 +6097,16 @@ impl ::core::clone::Clone for SHELLEXECUTEINFOW {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub union SHELLEXECUTEINFOW_0 {
-    pub hIcon: super::super::Foundation::HANDLE,
-    pub hMonitor: super::super::Foundation::HANDLE,
+    pub hIcon: ::win32_foundation_sys::HANDLE,
+    pub hMonitor: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for SHELLEXECUTEINFOW_0 {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for SHELLEXECUTEINFOW_0 {
     fn clone(&self) -> Self {
         *self
@@ -6548,19 +6210,19 @@ pub const SHERB_NOPROGRESSUI: u32 = 2u32;
 pub const SHERB_NOSOUND: u32 = 4u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct SHFILEINFOA {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub iIcon: i32,
     pub dwAttributes: u32,
-    pub szDisplayName: [super::super::Foundation::CHAR; 260],
-    pub szTypeName: [super::super::Foundation::CHAR; 80],
+    pub szDisplayName: [::win32_foundation_sys::CHAR; 260],
+    pub szTypeName: [::win32_foundation_sys::CHAR; 80],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for SHFILEINFOA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for SHFILEINFOA {
     fn clone(&self) -> Self {
         *self
@@ -6568,19 +6230,19 @@ impl ::core::clone::Clone for SHFILEINFOA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct SHFILEINFOA {
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub iIcon: i32,
     pub dwAttributes: u32,
-    pub szDisplayName: [super::super::Foundation::CHAR; 260],
-    pub szTypeName: [super::super::Foundation::CHAR; 80],
+    pub szDisplayName: [::win32_foundation_sys::CHAR; 260],
+    pub szTypeName: [::win32_foundation_sys::CHAR; 80],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for SHFILEINFOA {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for SHFILEINFOA {
     fn clone(&self) -> Self {
         *self
@@ -6628,22 +6290,19 @@ impl ::core::clone::Clone for SHFILEINFOW {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SHFILEOPSTRUCTA {
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub wFunc: u32,
     pub pFrom: *mut i8,
     pub pTo: *mut i8,
     pub fFlags: u16,
-    pub fAnyOperationsAborted: super::super::Foundation::BOOL,
+    pub fAnyOperationsAborted: ::win32_foundation_sys::BOOL,
     pub hNameMappings: *mut ::core::ffi::c_void,
     pub lpszProgressTitle: ::windows_core_sys::PCSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SHFILEOPSTRUCTA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SHFILEOPSTRUCTA {
     fn clone(&self) -> Self {
         *self
@@ -6651,22 +6310,19 @@ impl ::core::clone::Clone for SHFILEOPSTRUCTA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SHFILEOPSTRUCTA {
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub wFunc: u32,
     pub pFrom: *mut i8,
     pub pTo: *mut i8,
     pub fFlags: u16,
-    pub fAnyOperationsAborted: super::super::Foundation::BOOL,
+    pub fAnyOperationsAborted: ::win32_foundation_sys::BOOL,
     pub hNameMappings: *mut ::core::ffi::c_void,
     pub lpszProgressTitle: ::windows_core_sys::PCSTR,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SHFILEOPSTRUCTA {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SHFILEOPSTRUCTA {
     fn clone(&self) -> Self {
         *self
@@ -6674,22 +6330,19 @@ impl ::core::clone::Clone for SHFILEOPSTRUCTA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SHFILEOPSTRUCTW {
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub wFunc: u32,
     pub pFrom: ::windows_core_sys::PCWSTR,
     pub pTo: ::windows_core_sys::PCWSTR,
     pub fFlags: u16,
-    pub fAnyOperationsAborted: super::super::Foundation::BOOL,
+    pub fAnyOperationsAborted: ::win32_foundation_sys::BOOL,
     pub hNameMappings: *mut ::core::ffi::c_void,
     pub lpszProgressTitle: ::windows_core_sys::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SHFILEOPSTRUCTW {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SHFILEOPSTRUCTW {
     fn clone(&self) -> Self {
         *self
@@ -6697,22 +6350,19 @@ impl ::core::clone::Clone for SHFILEOPSTRUCTW {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SHFILEOPSTRUCTW {
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub wFunc: u32,
     pub pFrom: ::windows_core_sys::PCWSTR,
     pub pTo: ::windows_core_sys::PCWSTR,
     pub fFlags: u16,
-    pub fAnyOperationsAborted: super::super::Foundation::BOOL,
+    pub fAnyOperationsAborted: ::win32_foundation_sys::BOOL,
     pub hNameMappings: *mut ::core::ffi::c_void,
     pub lpszProgressTitle: ::windows_core_sys::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SHFILEOPSTRUCTW {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SHFILEOPSTRUCTW {
     fn clone(&self) -> Self {
         *self
@@ -7191,16 +6841,13 @@ pub const SLGP_UNCPRIORITY: SLGP_FLAGS = 2i32;
 pub const SLGP_RAWPATH: SLGP_FLAGS = 4i32;
 pub const SLGP_RELATIVEPRIORITY: SLGP_FLAGS = 8i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SLOWAPPINFO {
     pub ullSize: u64,
-    pub ftLastUsed: super::super::Foundation::FILETIME,
+    pub ftLastUsed: ::win32_foundation_sys::FILETIME,
     pub iTimesUsed: i32,
     pub pszImage: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SLOWAPPINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SLOWAPPINFO {
     fn clone(&self) -> Self {
         *self
@@ -7268,12 +6915,12 @@ pub const SMC_SFEXEC_MIDDLE: u32 = 49u32;
 pub const SMC_SFSELECTITEM: u32 = 10u32;
 pub const SMC_SHCHANGENOTIFY: u32 = 46u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_UI_Shell_Common", feature = "Win32_UI_WindowsAndMessaging"))]
 pub struct SMDATA {
     pub dwMask: u32,
     pub dwFlags: u32,
     pub hmenu: super::WindowsAndMessaging::HMENU,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub uId: u32,
     pub uIdParent: u32,
     pub uIdAncestor: u32,
@@ -7283,9 +6930,9 @@ pub struct SMDATA {
     pub psf: IShellFolder,
     pub pvUserData: *mut ::core::ffi::c_void,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_UI_Shell_Common", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for SMDATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_UI_Shell_Common", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for SMDATA {
     fn clone(&self) -> Self {
         *self
@@ -7507,22 +7154,21 @@ pub const STR_SKIP_BINDING_CLSID: &str = "Skip Binding CLSID";
 pub const STR_STORAGEITEM_CREATION_FLAGS: &str = "SHGETSTORAGEITEM";
 pub const STR_TAB_REUSE_IDENTIFIER: &str = "Tab Reuse Identifier";
 pub const STR_TRACK_CLSID: &str = "Track the CLSID";
-#[cfg(feature = "Win32_Foundation")]
-pub type SUBCLASSPROC = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, uidsubclass: usize, dwrefdata: usize) -> super::super::Foundation::LRESULT>;
+pub type SUBCLASSPROC = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, umsg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM, uidsubclass: usize, dwrefdata: usize) -> ::win32_foundation_sys::LRESULT>;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 pub struct SV2CVW2_PARAMS {
     pub cbSize: u32,
     pub psvPrev: IShellView,
     pub pfs: *mut FOLDERSETTINGS,
     pub psbOwner: IShellBrowser,
-    pub prcView: *mut super::super::Foundation::RECT,
+    pub prcView: *mut ::win32_foundation_sys::RECT,
     pub pvid: *const ::windows_core_sys::GUID,
-    pub hwndView: super::super::Foundation::HWND,
+    pub hwndView: ::win32_foundation_sys::HWND,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::marker::Copy for SV2CVW2_PARAMS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+#[cfg(feature = "Win32_System_Ole")]
 impl ::core::clone::Clone for SV2CVW2_PARAMS {
     fn clone(&self) -> Self {
         *self
@@ -7571,7 +7217,7 @@ pub type SYNCMGRINVOKEFLAGS = i32;
 pub const SYNCMGRINVOKE_STARTSYNC: SYNCMGRINVOKEFLAGS = 2i32;
 pub const SYNCMGRINVOKE_MINIMIZED: SYNCMGRINVOKEFLAGS = 4i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct SYNCMGRITEM {
     pub cbSize: u32,
     pub dwFlags: u32,
@@ -7579,11 +7225,11 @@ pub struct SYNCMGRITEM {
     pub dwItemState: u32,
     pub hIcon: super::WindowsAndMessaging::HICON,
     pub wszItemName: [u16; 128],
-    pub ftLastUpdate: super::super::Foundation::FILETIME,
+    pub ftLastUpdate: ::win32_foundation_sys::FILETIME,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for SYNCMGRITEM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for SYNCMGRITEM {
     fn clone(&self) -> Self {
         *self
@@ -7665,8 +7311,8 @@ pub const SYNCMGR_CR_MAX: SYNCMGR_CANCEL_REQUEST = 2i32;
 #[repr(C)]
 #[cfg(feature = "Win32_System_Com")]
 pub struct SYNCMGR_CONFLICT_ID_INFO {
-    pub pblobID: *mut super::super::System::Com::BYTE_BLOB,
-    pub pblobExtra: *mut super::super::System::Com::BYTE_BLOB,
+    pub pblobID: *mut ::win32_system_sys::Com::BYTE_BLOB,
+    pub pblobExtra: *mut ::win32_system_sys::Com::BYTE_BLOB,
 }
 #[cfg(feature = "Win32_System_Com")]
 impl ::core::marker::Copy for SYNCMGR_CONFLICT_ID_INFO {}
@@ -7997,17 +7643,17 @@ pub const TLOG_BACK: i32 = -1i32;
 pub const TLOG_CURRENT: u32 = 0u32;
 pub const TLOG_FORE: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Ole"))]
 pub struct TOOLBARITEM {
     pub ptbar: IDockingWindow,
-    pub rcBorderTool: super::super::Foundation::RECT,
+    pub rcBorderTool: ::win32_foundation_sys::RECT,
     pub pwszItem: ::windows_core_sys::PWSTR,
-    pub fShow: super::super::Foundation::BOOL,
-    pub hMon: super::super::Graphics::Gdi::HMONITOR,
+    pub fShow: ::win32_foundation_sys::BOOL,
+    pub hMon: ::win32_graphics_sys::Gdi::HMONITOR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Ole"))]
 impl ::core::marker::Copy for TOOLBARITEM {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_System_Ole"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Ole"))]
 impl ::core::clone::Clone for TOOLBARITEM {
     fn clone(&self) -> Self {
         *self
@@ -8510,32 +8156,26 @@ pub type urlassociationdialog_in_flags = i32;
 pub const URLASSOCDLG_FL_USE_DEFAULT_NAME: urlassociationdialog_in_flags = 1i32;
 pub const URLASSOCDLG_FL_REGISTER_ASSOC: urlassociationdialog_in_flags = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct urlinvokecommandinfoA {
     pub dwcbSize: u32,
     pub dwFlags: u32,
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub pcszVerb: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for urlinvokecommandinfoA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for urlinvokecommandinfoA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct urlinvokecommandinfoW {
     pub dwcbSize: u32,
     pub dwFlags: u32,
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub pcszVerb: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for urlinvokecommandinfoW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for urlinvokecommandinfoW {
     fn clone(&self) -> Self {
         *self

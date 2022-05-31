@@ -10,7 +10,6 @@ extern "system" {
     pub fn DdqFreeDiagnosticRecordProducers(hproducerdescription: super::HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION) -> ::windows_core_sys::HRESULT;
     pub fn DdqFreeDiagnosticReport(hreport: super::HDIAGNOSTIC_REPORT) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticDataAccessLevelAllowed(accesslevel: *mut DdqAccessLevel) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn DdqGetDiagnosticRecordAtIndex(hrecord: super::HDIAGNOSTIC_RECORD, index: u32, record: *mut DIAGNOSTIC_DATA_RECORD) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordBinaryDistribution(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, producernames: *const ::windows_core_sys::PWSTR, producernamecount: u32, topnbinaries: u32, binarystats: *mut *mut DIAGNOSTIC_DATA_EVENT_BINARY_STATS, statcount: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordCategoryAtIndex(hcategorydescription: super::HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION, index: u32, categorydescription: *mut DIAGNOSTIC_DATA_EVENT_CATEGORY_DESCRIPTION) -> ::windows_core_sys::HRESULT;
@@ -19,26 +18,22 @@ extern "system" {
     pub fn DdqGetDiagnosticRecordLocaleTagAtIndex(htagdescription: super::HDIAGNOSTIC_EVENT_TAG_DESCRIPTION, index: u32, tagdescription: *mut DIAGNOSTIC_DATA_EVENT_TAG_DESCRIPTION) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordLocaleTagCount(htagdescription: super::HDIAGNOSTIC_EVENT_TAG_DESCRIPTION, tagdescriptioncount: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordLocaleTags(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, locale: ::windows_core_sys::PCWSTR, htagdescription: *mut super::HDIAGNOSTIC_EVENT_TAG_DESCRIPTION) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn DdqGetDiagnosticRecordPage(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, searchcriteria: *const DIAGNOSTIC_DATA_SEARCH_CRITERIA, offset: u32, pagerecordcount: u32, baserowid: i64, hrecord: *mut super::HDIAGNOSTIC_RECORD) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordPayload(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, rowid: i64, payload: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordProducerAtIndex(hproducerdescription: super::HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION, index: u32, producerdescription: *mut DIAGNOSTIC_DATA_EVENT_PRODUCER_DESCRIPTION) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordProducerCategories(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, producername: ::windows_core_sys::PCWSTR, hcategorydescription: *mut super::HDIAGNOSTIC_EVENT_CATEGORY_DESCRIPTION) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordProducerCount(hproducerdescription: super::HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION, producerdescriptioncount: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordProducers(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, hproducerdescription: *mut super::HDIAGNOSTIC_EVENT_PRODUCER_DESCRIPTION) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn DdqGetDiagnosticRecordStats(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, searchcriteria: *const DIAGNOSTIC_DATA_SEARCH_CRITERIA, recordcount: *mut u32, minrowid: *mut i64, maxrowid: *mut i64) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordSummary(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, producernames: *const ::windows_core_sys::PWSTR, producernamecount: u32, generalstats: *mut DIAGNOSTIC_DATA_GENERAL_STATS) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticRecordTagDistribution(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, producernames: *const ::windows_core_sys::PWSTR, producernamecount: u32, tagstats: *mut *mut DIAGNOSTIC_DATA_EVENT_TAG_STATS, statcount: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticReport(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, reportstoretype: u32, hreport: *mut super::HDIAGNOSTIC_REPORT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn DdqGetDiagnosticReportAtIndex(hreport: super::HDIAGNOSTIC_REPORT, index: u32, report: *mut DIAGNOSTIC_REPORT_DATA) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticReportCount(hreport: super::HDIAGNOSTIC_REPORT, reportcount: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetDiagnosticReportStoreReportCount(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, reportstoretype: u32, reportcount: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetSessionAccessLevel(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, accesslevel: *mut DdqAccessLevel) -> ::windows_core_sys::HRESULT;
     pub fn DdqGetTranscriptConfiguration(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, currentconfig: *mut DIAGNOSTIC_DATA_EVENT_TRANSCRIPT_CONFIGURATION) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdqIsDiagnosticRecordSampledIn(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, providergroup: *const ::windows_core_sys::GUID, providerid: *const ::windows_core_sys::GUID, providername: ::windows_core_sys::PCWSTR, eventid: *const u32, eventname: ::windows_core_sys::PCWSTR, eventversion: *const u32, eventkeywords: *const u64, issampledin: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn DdqIsDiagnosticRecordSampledIn(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, providergroup: *const ::windows_core_sys::GUID, providerid: *const ::windows_core_sys::GUID, providername: ::windows_core_sys::PCWSTR, eventid: *const u32, eventname: ::windows_core_sys::PCWSTR, eventversion: *const u32, eventkeywords: *const u64, issampledin: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn DdqSetTranscriptConfiguration(hsession: super::HDIAGNOSTIC_DATA_QUERY_SESSION, desiredconfig: *const DIAGNOSTIC_DATA_EVENT_TRANSCRIPT_CONFIGURATION) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
@@ -125,7 +120,6 @@ impl ::core::clone::Clone for DIAGNOSTIC_DATA_GENERAL_STATS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIAGNOSTIC_DATA_RECORD {
     pub rowId: i64,
     pub timestamp: u64,
@@ -137,21 +131,18 @@ pub struct DIAGNOSTIC_DATA_RECORD {
     pub privacyTagCount: u32,
     pub categoryIds: *mut i32,
     pub categoryIdCount: u32,
-    pub isCoreData: super::super::Foundation::BOOL,
+    pub isCoreData: ::win32_foundation_sys::BOOL,
     pub extra1: ::windows_core_sys::PWSTR,
     pub extra2: ::windows_core_sys::PWSTR,
     pub extra3: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIAGNOSTIC_DATA_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIAGNOSTIC_DATA_RECORD {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIAGNOSTIC_DATA_SEARCH_CRITERIA {
     pub producerNames: *mut ::windows_core_sys::PWSTR,
     pub producerNameCount: u32,
@@ -160,23 +151,20 @@ pub struct DIAGNOSTIC_DATA_SEARCH_CRITERIA {
     pub categoryIdCount: u32,
     pub privacyTags: *const i32,
     pub privacyTagCount: u32,
-    pub coreDataOnly: super::super::Foundation::BOOL,
+    pub coreDataOnly: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIAGNOSTIC_DATA_SEARCH_CRITERIA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIAGNOSTIC_DATA_SEARCH_CRITERIA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIAGNOSTIC_REPORT_DATA {
     pub signature: DIAGNOSTIC_REPORT_SIGNATURE,
     pub bucketId: ::windows_core_sys::GUID,
     pub reportId: ::windows_core_sys::GUID,
-    pub creationTime: super::super::Foundation::FILETIME,
+    pub creationTime: ::win32_foundation_sys::FILETIME,
     pub sizeInBytes: u64,
     pub cabId: ::windows_core_sys::PWSTR,
     pub reportStatus: u32,
@@ -191,9 +179,7 @@ pub struct DIAGNOSTIC_REPORT_DATA {
     pub legacyBucketId: u64,
     pub reportKey: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIAGNOSTIC_REPORT_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIAGNOSTIC_REPORT_DATA {
     fn clone(&self) -> Self {
         *self

@@ -108,9 +108,9 @@ unsafe impl ::windows_core::Interface for IVoiceCommandDefinitionManagerStatics 
 #[doc(hidden)]
 pub struct IVoiceCommandDefinitionManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub InstallCommandDefinitionsFromStorageFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     InstallCommandDefinitionsFromStorageFileAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub InstalledCommandDefinitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -186,46 +186,19 @@ unsafe impl ::windows_core::Interface for IVoiceCommandServiceConnection {
 #[doc(hidden)]
 pub struct IVoiceCommandServiceConnection_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetVoiceCommandAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetVoiceCommandAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestConfirmationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestConfirmationAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestDisambiguationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestDisambiguationAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ReportProgressAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReportProgressAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ReportSuccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReportSuccessAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ReportFailureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReportFailureAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestAppLaunchAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestAppLaunchAsync: usize,
     #[cfg(feature = "Globalization")]
     pub Language: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Globalization"))]
     Language: usize,
-    #[cfg(feature = "Foundation")]
-    pub VoiceCommandCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    VoiceCommandCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveVoiceCommandCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveVoiceCommandCompleted: usize,
+    pub VoiceCommandCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveVoiceCommandCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -270,19 +243,19 @@ impl VoiceCommand {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
         }
     }
     #[cfg(feature = "Media_SpeechRecognition")]
-    pub fn SpeechRecognitionResult(&self) -> ::windows_core::Result<super::super::Media::SpeechRecognition::SpeechRecognitionResult> {
+    pub fn SpeechRecognitionResult(&self) -> ::windows_core::Result<::winrt_media::SpeechRecognition::SpeechRecognitionResult> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SpeechRecognitionResult)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::SpeechRecognition::SpeechRecognitionResult>(result__)
+            (::windows_core::Interface::vtable(this).SpeechRecognitionResult)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_media::SpeechRecognition::SpeechRecognitionResult>(result__)
         }
     }
 }
@@ -617,15 +590,15 @@ impl VoiceCommandContentTile {
         unsafe { (::windows_core::Interface::vtable(this).SetTextLine3)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage")]
-    pub fn Image(&self) -> ::windows_core::Result<super::super::Storage::IStorageFile> {
+    pub fn Image(&self) -> ::windows_core::Result<::winrt_storage::IStorageFile> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::IStorageFile>(result__)
+            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::IStorageFile>(result__)
         }
     }
     #[cfg(feature = "Storage")]
-    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetImage)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -792,11 +765,11 @@ impl VoiceCommandDefinition {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetPhraseListAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, phraselistname: Param0, phraselist: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SetPhraseListAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, phraselistname: Param0, phraselist: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetPhraseListAsync)(::windows_core::Interface::as_raw(this), phraselistname.into_param().abi(), phraselist.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetPhraseListAsync)(::windows_core::Interface::as_raw(this), phraselistname.into_param().abi(), phraselist.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
 }
@@ -874,18 +847,18 @@ unsafe impl ::core::marker::Send for VoiceCommandDefinition {}
 unsafe impl ::core::marker::Sync for VoiceCommandDefinition {}
 pub struct VoiceCommandDefinitionManager;
 impl VoiceCommandDefinitionManager {
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn InstallCommandDefinitionsFromStorageFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::StorageFile>>(file: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Storage")]
+    pub fn InstallCommandDefinitionsFromStorageFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IVoiceCommandDefinitionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InstallCommandDefinitionsFromStorageFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).InstallCommandDefinitionsFromStorageFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn InstalledCommandDefinitions() -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, VoiceCommandDefinition>> {
+    pub fn InstalledCommandDefinitions() -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, VoiceCommandDefinition>> {
         Self::IVoiceCommandDefinitionManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InstalledCommandDefinitions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, VoiceCommandDefinition>>(result__)
+            (::windows_core::Interface::vtable(this).InstalledCommandDefinitions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, VoiceCommandDefinition>>(result__)
         })
     }
     pub fn IVoiceCommandDefinitionManagerStatics<R, F: FnOnce(&IVoiceCommandDefinitionManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1016,11 +989,11 @@ impl VoiceCommandResponse {
         unsafe { (::windows_core::Interface::vtable(this).SetAppLaunchArgument)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn VoiceCommandContentTiles(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<VoiceCommandContentTile>> {
+    pub fn VoiceCommandContentTiles(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<VoiceCommandContentTile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).VoiceCommandContentTiles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<VoiceCommandContentTile>>(result__)
+            (::windows_core::Interface::vtable(this).VoiceCommandContentTiles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<VoiceCommandContentTile>>(result__)
         }
     }
     pub fn MaxSupportedVoiceCommandContentTiles() -> ::windows_core::Result<u32> {
@@ -1036,7 +1009,7 @@ impl VoiceCommandResponse {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateResponseWithTiles<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandUserMessage>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<VoiceCommandContentTile>>>(message: Param0, contenttiles: Param1) -> ::windows_core::Result<VoiceCommandResponse> {
+    pub fn CreateResponseWithTiles<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandUserMessage>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<VoiceCommandContentTile>>>(message: Param0, contenttiles: Param1) -> ::windows_core::Result<VoiceCommandResponse> {
         Self::IVoiceCommandResponseStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateResponseWithTiles)(::windows_core::Interface::as_raw(this), message.into_param().abi(), contenttiles.into_param().abi(), result__.as_mut_ptr()).from_abi::<VoiceCommandResponse>(result__)
@@ -1049,7 +1022,7 @@ impl VoiceCommandResponse {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateResponseForPromptWithTiles<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandUserMessage>, Param1: ::windows_core::IntoParam<'a, VoiceCommandUserMessage>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<VoiceCommandContentTile>>>(message: Param0, repeatmessage: Param1, contenttiles: Param2) -> ::windows_core::Result<VoiceCommandResponse> {
+    pub fn CreateResponseForPromptWithTiles<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandUserMessage>, Param1: ::windows_core::IntoParam<'a, VoiceCommandUserMessage>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<VoiceCommandContentTile>>>(message: Param0, repeatmessage: Param1, contenttiles: Param2) -> ::windows_core::Result<VoiceCommandResponse> {
         Self::IVoiceCommandResponseStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateResponseForPromptWithTiles)(::windows_core::Interface::as_raw(this), message.into_param().abi(), repeatmessage.into_param().abi(), contenttiles.into_param().abi(), result__.as_mut_ptr()).from_abi::<VoiceCommandResponse>(result__)
@@ -1135,80 +1108,71 @@ unsafe impl ::core::marker::Sync for VoiceCommandResponse {}
 #[repr(transparent)]
 pub struct VoiceCommandServiceConnection(::windows_core::IUnknown);
 impl VoiceCommandServiceConnection {
-    #[cfg(feature = "Foundation")]
-    pub fn GetVoiceCommandAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VoiceCommand>> {
+    pub fn GetVoiceCommandAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VoiceCommand>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetVoiceCommandAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VoiceCommand>>(result__)
+            (::windows_core::Interface::vtable(this).GetVoiceCommandAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VoiceCommand>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestConfirmationAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VoiceCommandConfirmationResult>> {
+    pub fn RequestConfirmationAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VoiceCommandConfirmationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestConfirmationAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VoiceCommandConfirmationResult>>(result__)
+            (::windows_core::Interface::vtable(this).RequestConfirmationAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VoiceCommandConfirmationResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestDisambiguationAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<VoiceCommandDisambiguationResult>> {
+    pub fn RequestDisambiguationAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<VoiceCommandDisambiguationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestDisambiguationAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<VoiceCommandDisambiguationResult>>(result__)
+            (::windows_core::Interface::vtable(this).RequestDisambiguationAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<VoiceCommandDisambiguationResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReportProgressAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ReportProgressAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReportProgressAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ReportProgressAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReportSuccessAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ReportSuccessAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReportSuccessAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ReportSuccessAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReportFailureAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ReportFailureAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReportFailureAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ReportFailureAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestAppLaunchAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn RequestAppLaunchAsync<'a, Param0: ::windows_core::IntoParam<'a, VoiceCommandResponse>>(&self, response: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAppLaunchAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).RequestAppLaunchAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     #[cfg(feature = "Globalization")]
-    pub fn Language(&self) -> ::windows_core::Result<super::super::Globalization::Language> {
+    pub fn Language(&self) -> ::windows_core::Result<::winrt_globalization::Language> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Language)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Globalization::Language>(result__)
+            (::windows_core::Interface::vtable(this).Language)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_globalization::Language>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn VoiceCommandCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<VoiceCommandServiceConnection, VoiceCommandCompletedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn VoiceCommandCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<VoiceCommandServiceConnection, VoiceCommandCompletedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).VoiceCommandCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).VoiceCommandCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveVoiceCommandCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveVoiceCommandCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveVoiceCommandCompleted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }

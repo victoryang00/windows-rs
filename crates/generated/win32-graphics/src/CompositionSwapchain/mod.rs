@@ -1,42 +1,42 @@
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 pub struct CompositionFrameDisplayInstance {
-    pub displayAdapterLUID: super::super::Foundation::LUID,
+    pub displayAdapterLUID: ::win32_foundation::LUID,
     pub displayVidPnSourceId: u32,
     pub displayUniqueId: u32,
-    pub renderAdapterLUID: super::super::Foundation::LUID,
+    pub renderAdapterLUID: ::win32_foundation::LUID,
     pub instanceKind: CompositionFrameInstanceKind,
     pub finalTransform: PresentationTransform,
     pub requiredCrossAdapterCopy: u8,
     pub colorSpace: super::Dxgi::Common::DXGI_COLOR_SPACE_TYPE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::marker::Copy for CompositionFrameDisplayInstance {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::clone::Clone for CompositionFrameDisplayInstance {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::fmt::Debug for CompositionFrameDisplayInstance {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CompositionFrameDisplayInstance").field("displayAdapterLUID", &self.displayAdapterLUID).field("displayVidPnSourceId", &self.displayVidPnSourceId).field("displayUniqueId", &self.displayUniqueId).field("renderAdapterLUID", &self.renderAdapterLUID).field("instanceKind", &self.instanceKind).field("finalTransform", &self.finalTransform).field("requiredCrossAdapterCopy", &self.requiredCrossAdapterCopy).field("colorSpace", &self.colorSpace).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 unsafe impl ::windows_core::Abi for CompositionFrameDisplayInstance {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::cmp::PartialEq for CompositionFrameDisplayInstance {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CompositionFrameDisplayInstance>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::cmp::Eq for CompositionFrameDisplayInstance {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::default::Default for CompositionFrameDisplayInstance {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -95,7 +95,7 @@ impl ICompositionFramePresentStatistics {
     pub unsafe fn GetCompositionFrameId(&self) -> u64 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetCompositionFrameId)(::windows_core::Interface::as_raw(self)))
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
     pub unsafe fn GetDisplayInstanceArray(&self, displayinstancearraycount: *mut u32, displayinstancearray: *mut *mut CompositionFrameDisplayInstance) {
         (::windows_core::Interface::vtable(self).GetDisplayInstanceArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(displayinstancearraycount), ::core::mem::transmute(displayinstancearray))
     }
@@ -166,9 +166,9 @@ pub struct ICompositionFramePresentStatistics_Vtbl {
     pub base__: IPresentStatistics_Vtbl,
     pub GetContentTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> usize,
     pub GetCompositionFrameId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> u64,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
     pub GetDisplayInstanceArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, displayinstancearraycount: *mut u32, displayinstancearray: *mut *mut CompositionFrameDisplayInstance),
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common")))]
+    #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetDisplayInstanceArray: usize,
 }
 #[repr(transparent)]
@@ -180,9 +180,8 @@ impl IIndependentFlipFramePresentStatistics {
     pub unsafe fn GetKind(&self) -> PresentStatisticsKind {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.GetKind)(::windows_core::Interface::as_raw(self)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetOutputAdapterLUID(&self) -> super::super::Foundation::LUID {
-        let mut result__: super::super::Foundation::LUID = ::core::mem::zeroed();
+    pub unsafe fn GetOutputAdapterLUID(&self) -> ::win32_foundation::LUID {
+        let mut result__: ::win32_foundation::LUID = ::core::mem::zeroed();
         (::windows_core::Interface::vtable(self).GetOutputAdapterLUID)(::windows_core::Interface::as_raw(self), &mut result__);
         result__
     }
@@ -267,10 +266,7 @@ unsafe impl ::windows_core::Interface for IIndependentFlipFramePresentStatistics
 #[doc(hidden)]
 pub struct IIndependentFlipFramePresentStatistics_Vtbl {
     pub base__: IPresentStatistics_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetOutputAdapterLUID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::LUID),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetOutputAdapterLUID: usize,
+    pub GetOutputAdapterLUID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::win32_foundation::LUID),
     pub GetOutputVidPnSourceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> u32,
     pub GetContentTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> usize,
     pub GetDisplayedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SystemInterruptTime),
@@ -419,10 +415,9 @@ pub struct IPresentStatusPresentStatistics_Vtbl {
 #[repr(transparent)]
 pub struct IPresentationBuffer(::windows_core::IUnknown);
 impl IPresentationBuffer {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetAvailableEvent(&self) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        (::windows_core::Interface::vtable(self).GetAvailableEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+    pub unsafe fn GetAvailableEvent(&self) -> ::windows_core::Result<::win32_foundation::HANDLE> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        (::windows_core::Interface::vtable(self).GetAvailableEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     pub unsafe fn IsAvailable(&self) -> ::windows_core::Result<u8> {
         let mut result__ = ::core::mem::MaybeUninit::<u8>::zeroed();
@@ -473,10 +468,7 @@ unsafe impl ::windows_core::Interface for IPresentationBuffer {
 #[doc(hidden)]
 pub struct IPresentationBuffer_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetAvailableEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, availableeventhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetAvailableEvent: usize,
+    pub GetAvailableEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, availableeventhandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
     pub IsAvailable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isavailable: *mut u8) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -601,8 +593,7 @@ impl IPresentationManager {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).AddBufferFromResource)(::windows_core::Interface::as_raw(self), resource.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPresentationBuffer>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreatePresentationSurface<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, compositionsurfacehandle: Param0) -> ::windows_core::Result<IPresentationSurface> {
+    pub unsafe fn CreatePresentationSurface<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, compositionsurfacehandle: Param0) -> ::windows_core::Result<IPresentationSurface> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePresentationSurface)(::windows_core::Interface::as_raw(self), compositionsurfacehandle.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPresentationSurface>(result__)
     }
@@ -628,15 +619,13 @@ impl IPresentationManager {
     pub unsafe fn CancelPresentsFrom(&self, presentidtocancelfrom: u64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CancelPresentsFrom)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(presentidtocancelfrom)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLostEvent(&self) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        (::windows_core::Interface::vtable(self).GetLostEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+    pub unsafe fn GetLostEvent(&self) -> ::windows_core::Result<::win32_foundation::HANDLE> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        (::windows_core::Interface::vtable(self).GetLostEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetPresentStatisticsAvailableEvent(&self) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        (::windows_core::Interface::vtable(self).GetPresentStatisticsAvailableEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+    pub unsafe fn GetPresentStatisticsAvailableEvent(&self) -> ::windows_core::Result<::win32_foundation::HANDLE> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        (::windows_core::Interface::vtable(self).GetPresentStatisticsAvailableEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     pub unsafe fn EnablePresentStatisticsKind(&self, presentstatisticskind: PresentStatisticsKind, enabled: u8) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnablePresentStatisticsKind)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(presentstatisticskind), ::core::mem::transmute(enabled)).ok()
@@ -691,10 +680,7 @@ unsafe impl ::windows_core::Interface for IPresentationManager {
 pub struct IPresentationManager_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub AddBufferFromResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resource: *mut ::core::ffi::c_void, presentationbuffer: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreatePresentationSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, compositionsurfacehandle: super::super::Foundation::HANDLE, presentationsurface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreatePresentationSurface: usize,
+    pub CreatePresentationSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, compositionsurfacehandle: ::win32_foundation::HANDLE, presentationsurface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetNextPresentId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> u64,
     pub SetTargetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targettime: SystemInterruptTime) -> ::windows_core::HRESULT,
     pub SetPreferredPresentDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, preferredduration: SystemInterruptTime, deviationtolerance: SystemInterruptTime) -> ::windows_core::HRESULT,
@@ -702,14 +688,8 @@ pub struct IPresentationManager_Vtbl {
     pub Present: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetPresentRetiringFence: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, fence: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CancelPresentsFrom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, presentidtocancelfrom: u64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetLostEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, losteventhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetLostEvent: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetPresentStatisticsAvailableEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, presentstatisticsavailableeventhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetPresentStatisticsAvailableEvent: usize,
+    pub GetLostEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, losteventhandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
+    pub GetPresentStatisticsAvailableEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, presentstatisticsavailableeventhandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
     pub EnablePresentStatisticsKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, presentstatisticskind: PresentStatisticsKind, enabled: u8) -> ::windows_core::HRESULT,
     pub GetNextPresentStatistics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nextpresentstatistics: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -730,8 +710,7 @@ impl IPresentationSurface {
     pub unsafe fn SetAlphaMode(&self, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAlphaMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(alphamode)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSourceRect(&self, sourcerect: *const super::super::Foundation::RECT) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSourceRect(&self, sourcerect: *const ::win32_foundation::RECT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSourceRect)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(sourcerect)).ok()
     }
     pub unsafe fn SetTransform(&self, transform: *const PresentationTransform) -> ::windows_core::Result<()> {
@@ -820,10 +799,7 @@ pub struct IPresentationSurface_Vtbl {
     pub SetAlphaMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     SetAlphaMode: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSourceRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourcerect: *const super::super::Foundation::RECT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSourceRect: usize,
+    pub SetSourceRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourcerect: *const ::win32_foundation::RECT) -> ::windows_core::HRESULT,
     pub SetTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transform: *const PresentationTransform) -> ::windows_core::HRESULT,
     pub RestrictToOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, output: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetDisableReadback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u8) -> ::windows_core::HRESULT,

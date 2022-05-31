@@ -811,18 +811,15 @@ pub const XHR_CERT_IGNORE_CERT_CN_INVALID: XHR_CERT_IGNORE_FLAG = 4096u32;
 pub const XHR_CERT_IGNORE_CERT_DATE_INVALID: XHR_CERT_IGNORE_FLAG = 8192u32;
 pub const XHR_CERT_IGNORE_ALL_SERVER_ERRORS: XHR_CERT_IGNORE_FLAG = 12672u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct XHR_COOKIE {
     pub pwszUrl: ::windows_core_sys::PWSTR,
     pub pwszName: ::windows_core_sys::PWSTR,
     pub pwszValue: ::windows_core_sys::PWSTR,
     pub pwszP3PPolicy: ::windows_core_sys::PWSTR,
-    pub ftExpires: super::super::super::Foundation::FILETIME,
+    pub ftExpires: ::win32_foundation_sys::FILETIME,
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for XHR_COOKIE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for XHR_COOKIE {
     fn clone(&self) -> Self {
         *self
@@ -882,20 +879,17 @@ pub const XMLHTTP60: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1
 pub const XMLHTTPRequest: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3985379470, data2: 17225, data3: 4562, data4: [145, 164, 0, 192, 79, 121, 105, 232] };
 pub const XMLSchemaCache60: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2295949831, data2: 61842, data3: 4564, data4: [166, 95, 0, 64, 150, 50, 81, 229] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct XML_ERROR {
     pub _nLine: u32,
-    pub _pchBuf: super::super::super::Foundation::BSTR,
+    pub _pchBuf: ::win32_foundation_sys::BSTR,
     pub _cchBuf: u32,
     pub _ich: u32,
-    pub _pszFound: super::super::super::Foundation::BSTR,
-    pub _pszExpected: super::super::super::Foundation::BSTR,
+    pub _pszFound: ::win32_foundation_sys::BSTR,
+    pub _pszExpected: ::win32_foundation_sys::BSTR,
     pub _reserved1: u32,
     pub _reserved2: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for XML_ERROR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for XML_ERROR {
     fn clone(&self) -> Self {
         *self

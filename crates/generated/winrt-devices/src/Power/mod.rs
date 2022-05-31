@@ -15,16 +15,14 @@ impl Battery {
             (::windows_core::Interface::vtable(this).GetReport)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<BatteryReport>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReportUpdated<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Battery, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn ReportUpdated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<Battery, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ReportUpdated)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ReportUpdated)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveReportUpdated<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveReportUpdated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveReportUpdated)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -34,11 +32,10 @@ impl Battery {
             (::windows_core::Interface::vtable(this).AggregateBattery)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Battery>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Battery>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Battery>> {
         Self::IBatteryStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Battery>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Battery>>(result__)
         })
     }
     pub fn GetDeviceSelector() -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -127,44 +124,40 @@ unsafe impl ::core::marker::Sync for Battery {}
 #[repr(transparent)]
 pub struct BatteryReport(::windows_core::IUnknown);
 impl BatteryReport {
-    #[cfg(feature = "Foundation")]
-    pub fn ChargeRateInMilliwatts(&self) -> ::windows_core::Result<super::super::Foundation::IReference<i32>> {
+    pub fn ChargeRateInMilliwatts(&self) -> ::windows_core::Result<::winrt_foundation::IReference<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ChargeRateInMilliwatts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<i32>>(result__)
+            (::windows_core::Interface::vtable(this).ChargeRateInMilliwatts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DesignCapacityInMilliwattHours(&self) -> ::windows_core::Result<super::super::Foundation::IReference<i32>> {
+    pub fn DesignCapacityInMilliwattHours(&self) -> ::windows_core::Result<::winrt_foundation::IReference<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DesignCapacityInMilliwattHours)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<i32>>(result__)
+            (::windows_core::Interface::vtable(this).DesignCapacityInMilliwattHours)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FullChargeCapacityInMilliwattHours(&self) -> ::windows_core::Result<super::super::Foundation::IReference<i32>> {
+    pub fn FullChargeCapacityInMilliwattHours(&self) -> ::windows_core::Result<::winrt_foundation::IReference<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FullChargeCapacityInMilliwattHours)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<i32>>(result__)
+            (::windows_core::Interface::vtable(this).FullChargeCapacityInMilliwattHours)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemainingCapacityInMilliwattHours(&self) -> ::windows_core::Result<super::super::Foundation::IReference<i32>> {
+    pub fn RemainingCapacityInMilliwattHours(&self) -> ::windows_core::Result<::winrt_foundation::IReference<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RemainingCapacityInMilliwattHours)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<i32>>(result__)
+            (::windows_core::Interface::vtable(this).RemainingCapacityInMilliwattHours)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i32>>(result__)
         }
     }
     #[cfg(feature = "System_Power")]
-    pub fn Status(&self) -> ::windows_core::Result<super::super::System::Power::BatteryStatus> {
+    pub fn Status(&self) -> ::windows_core::Result<::winrt_system::Power::BatteryStatus> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::System::Power::BatteryStatus>::zeroed();
-            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::Power::BatteryStatus>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_system::Power::BatteryStatus>::zeroed();
+            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::Power::BatteryStatus>(result__)
         }
     }
 }
@@ -253,14 +246,8 @@ pub struct IBattery_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetReport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ReportUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReportUpdated: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveReportUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveReportUpdated: usize,
+    pub ReportUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveReportUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -273,24 +260,12 @@ unsafe impl ::windows_core::Interface for IBatteryReport {
 #[doc(hidden)]
 pub struct IBatteryReport_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ChargeRateInMilliwatts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ChargeRateInMilliwatts: usize,
-    #[cfg(feature = "Foundation")]
     pub DesignCapacityInMilliwattHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DesignCapacityInMilliwattHours: usize,
-    #[cfg(feature = "Foundation")]
     pub FullChargeCapacityInMilliwattHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FullChargeCapacityInMilliwattHours: usize,
-    #[cfg(feature = "Foundation")]
     pub RemainingCapacityInMilliwattHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemainingCapacityInMilliwattHours: usize,
     #[cfg(feature = "System_Power")]
-    pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::System::Power::BatteryStatus) -> ::windows_core::HRESULT,
+    pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::Power::BatteryStatus) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System_Power"))]
     Status: usize,
 }
@@ -306,9 +281,6 @@ unsafe impl ::windows_core::Interface for IBatteryStatics {
 pub struct IBatteryStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AggregateBattery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }

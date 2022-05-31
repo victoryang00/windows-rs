@@ -8,8 +8,7 @@ extern "system" {
     pub fn ber_bvdup(pberval: *mut LDAP_BERVAL) -> *mut LDAP_BERVAL;
     pub fn ber_bvecfree(pberval: *mut *mut LDAP_BERVAL);
     pub fn ber_bvfree(bv: *mut LDAP_BERVAL);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ber_first_element(pberelement: *mut berelement, plen: *mut u32, ppopaque: *mut *mut super::super::Foundation::CHAR) -> u32;
+    pub fn ber_first_element(pberelement: *mut berelement, plen: *mut u32, ppopaque: *mut *mut ::win32_foundation_sys::CHAR) -> u32;
     pub fn ber_flatten(pberelement: *mut berelement, pberval: *mut *mut LDAP_BERVAL) -> i32;
     pub fn ber_free(pberelement: *mut berelement, fbuf: i32);
     pub fn ber_init(pberval: *mut LDAP_BERVAL) -> *mut berelement;
@@ -25,17 +24,11 @@ extern "system" {
     pub fn ldap_add(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attrs: *mut *mut ldapmodA) -> u32;
     pub fn ldap_addA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attrs: *mut *mut ldapmodA) -> u32;
     pub fn ldap_addW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, attrs: *mut *mut ldapmodW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_add_ext(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attrs: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_add_extA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attrs: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_add_extW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, attrs: *mut *mut ldapmodW, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_add_ext_s(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attrs: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_add_ext_sA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attrs: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_add_ext_sW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, attrs: *mut *mut ldapmodW, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32;
     pub fn ldap_add_s(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attrs: *mut *mut ldapmodA) -> u32;
     pub fn ldap_add_sA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attrs: *mut *mut ldapmodA) -> u32;
@@ -48,80 +41,50 @@ extern "system" {
     pub fn ldap_bind_sW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, cred: ::windows_core_sys::PCWSTR, method: u32) -> u32;
     pub fn ldap_check_filterA(ld: *mut ldap, searchfilter: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_check_filterW(ld: *mut ldap, searchfilter: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_cleanup(hinstance: super::super::Foundation::HANDLE) -> u32;
+    pub fn ldap_cleanup(hinstance: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn ldap_close_extended_op(ld: *mut ldap, messagenumber: u32) -> u32;
     pub fn ldap_compare(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attr: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_compareA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attr: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_compareW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, attr: ::windows_core_sys::PCWSTR, value: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_compare_ext(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attr: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PCSTR, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_compare_extA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attr: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PCSTR, data: *const LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_compare_extW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, attr: ::windows_core_sys::PCWSTR, value: ::windows_core_sys::PCWSTR, data: *const LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_compare_ext_s(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attr: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PCSTR, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_compare_ext_sA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attr: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PCSTR, data: *const LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_compare_ext_sW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, attr: ::windows_core_sys::PCWSTR, value: ::windows_core_sys::PCWSTR, data: *const LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32;
     pub fn ldap_compare_s(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attr: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_compare_sA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, attr: ::windows_core_sys::PCSTR, value: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_compare_sW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, attr: ::windows_core_sys::PCWSTR, value: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_conn_from_msg(primaryconn: *mut ldap, res: *mut LDAPMessage) -> *mut ldap;
     pub fn ldap_connect(ld: *mut ldap, timeout: *mut LDAP_TIMEVAL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_control_free(control: *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_control_freeA(controls: *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_control_freeW(control: *mut ldapcontrolW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_controls_free(controls: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_controls_freeA(controls: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_controls_freeW(control: *mut *mut ldapcontrolW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_count_entries(ld: *mut ldap, res: *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_count_references(ld: *mut ldap, res: *mut LDAPMessage) -> u32;
     pub fn ldap_count_values(vals: *const ::windows_core_sys::PSTR) -> u32;
     pub fn ldap_count_valuesA(vals: *const ::windows_core_sys::PSTR) -> u32;
     pub fn ldap_count_valuesW(vals: *const ::windows_core_sys::PWSTR) -> u32;
     pub fn ldap_count_values_len(vals: *mut *mut LDAP_BERVAL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_create_page_control(externalhandle: *mut ldap, pagesize: u32, cookie: *mut LDAP_BERVAL, iscritical: u8, control: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_create_page_controlA(externalhandle: *mut ldap, pagesize: u32, cookie: *mut LDAP_BERVAL, iscritical: u8, control: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_create_page_controlW(externalhandle: *mut ldap, pagesize: u32, cookie: *mut LDAP_BERVAL, iscritical: u8, control: *mut *mut ldapcontrolW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_create_sort_control(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, iscritical: u8, control: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_create_sort_controlA(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, iscritical: u8, control: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_create_sort_controlW(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, iscritical: u8, control: *mut *mut ldapcontrolW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_create_vlv_controlA(externalhandle: *mut ldap, vlvinfo: *mut ldapvlvinfo, iscritical: u8, control: *mut *mut ldapcontrolA) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_create_vlv_controlW(externalhandle: *mut ldap, vlvinfo: *mut ldapvlvinfo, iscritical: u8, control: *mut *mut ldapcontrolW) -> i32;
     pub fn ldap_delete(ld: *mut ldap, dn: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_deleteA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_deleteW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_delete_ext(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_delete_extA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_delete_extW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_delete_ext_s(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_delete_ext_sA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_delete_ext_sW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32;
     pub fn ldap_delete_s(ld: *mut ldap, dn: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_delete_sA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR) -> u32;
@@ -129,10 +92,8 @@ extern "system" {
     pub fn ldap_dn2ufn(dn: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
     pub fn ldap_dn2ufnA(dn: ::windows_core_sys::PCSTR) -> ::windows_core_sys::PSTR;
     pub fn ldap_dn2ufnW(dn: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_encode_sort_controlA(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, control: *mut ldapcontrolA, criticality: super::super::Foundation::BOOLEAN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_encode_sort_controlW(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, control: *mut ldapcontrolW, criticality: super::super::Foundation::BOOLEAN) -> u32;
+    pub fn ldap_encode_sort_controlA(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyA, control: *mut ldapcontrolA, criticality: ::win32_foundation_sys::BOOLEAN) -> u32;
+    pub fn ldap_encode_sort_controlW(externalhandle: *mut ldap, sortkeys: *mut *mut ldapsortkeyW, control: *mut ldapcontrolW, criticality: ::win32_foundation_sys::BOOLEAN) -> u32;
     pub fn ldap_err2string(err: u32) -> ::windows_core_sys::PSTR;
     pub fn ldap_err2stringA(err: u32) -> ::windows_core_sys::PSTR;
     pub fn ldap_err2stringW(err: u32) -> ::windows_core_sys::PWSTR;
@@ -142,56 +103,32 @@ extern "system" {
     pub fn ldap_explode_dn(dn: ::windows_core_sys::PCSTR, notypes: u32) -> *mut ::windows_core_sys::PSTR;
     pub fn ldap_explode_dnA(dn: ::windows_core_sys::PCSTR, notypes: u32) -> *mut ::windows_core_sys::PSTR;
     pub fn ldap_explode_dnW(dn: ::windows_core_sys::PCWSTR, notypes: u32) -> *mut ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_extended_operation(ld: *mut ldap, oid: ::windows_core_sys::PCSTR, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_extended_operationA(ld: *mut ldap, oid: ::windows_core_sys::PCSTR, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_extended_operationW(ld: *mut ldap, oid: ::windows_core_sys::PCWSTR, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_extended_operation_sA(externalhandle: *mut ldap, oid: ::windows_core_sys::PCSTR, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, returnedoid: *mut ::windows_core_sys::PSTR, returneddata: *mut *mut LDAP_BERVAL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_extended_operation_sW(externalhandle: *mut ldap, oid: ::windows_core_sys::PCWSTR, data: *mut LDAP_BERVAL, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, returnedoid: *mut ::windows_core_sys::PWSTR, returneddata: *mut *mut LDAP_BERVAL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_first_attribute(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut *mut berelement) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_first_attributeA(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut *mut berelement) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_first_attributeW(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut *mut berelement) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_first_entry(ld: *mut ldap, res: *mut LDAPMessage) -> *mut LDAPMessage;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_first_reference(ld: *mut ldap, res: *mut LDAPMessage) -> *mut LDAPMessage;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_free_controls(controls: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_free_controlsA(controls: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_free_controlsW(controls: *mut *mut ldapcontrolW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_dn(ld: *mut ldap, entry: *mut LDAPMessage) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_dnA(ld: *mut ldap, entry: *mut LDAPMessage) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_dnW(ld: *mut ldap, entry: *mut LDAPMessage) -> ::windows_core_sys::PWSTR;
     pub fn ldap_get_next_page(externalhandle: *mut ldap, searchhandle: *mut ldapsearch, pagesize: u32, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_next_page_s(externalhandle: *mut ldap, searchhandle: *mut ldapsearch, timeout: *mut LDAP_TIMEVAL, pagesize: u32, totalcount: *mut u32, results: *mut *mut LDAPMessage) -> u32;
     pub fn ldap_get_option(ld: *mut ldap, option: i32, outvalue: *mut ::core::ffi::c_void) -> u32;
     pub fn ldap_get_optionW(ld: *mut ldap, option: i32, outvalue: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_paged_count(externalhandle: *mut ldap, searchblock: *mut ldapsearch, totalcount: *mut u32, results: *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_values(ld: *mut ldap, entry: *mut LDAPMessage, attr: ::windows_core_sys::PCSTR) -> *mut ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_valuesA(ld: *mut ldap, entry: *mut LDAPMessage, attr: ::windows_core_sys::PCSTR) -> *mut ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_valuesW(ld: *mut ldap, entry: *mut LDAPMessage, attr: ::windows_core_sys::PCWSTR) -> *mut ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_values_len(externalhandle: *mut ldap, message: *mut LDAPMessage, attr: ::windows_core_sys::PCSTR) -> *mut *mut LDAP_BERVAL;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_values_lenA(externalhandle: *mut ldap, message: *mut LDAPMessage, attr: ::windows_core_sys::PCSTR) -> *mut *mut LDAP_BERVAL;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_get_values_lenW(externalhandle: *mut ldap, message: *mut LDAPMessage, attr: ::windows_core_sys::PCWSTR) -> *mut *mut LDAP_BERVAL;
     pub fn ldap_init(hostname: ::windows_core_sys::PCSTR, portnumber: u32) -> *mut ldap;
     pub fn ldap_initA(hostname: ::windows_core_sys::PCSTR, portnumber: u32) -> *mut ldap;
@@ -202,17 +139,11 @@ extern "system" {
     pub fn ldap_modify(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, mods: *mut *mut ldapmodA) -> u32;
     pub fn ldap_modifyA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, mods: *mut *mut ldapmodA) -> u32;
     pub fn ldap_modifyW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, mods: *mut *mut ldapmodW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_modify_ext(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, mods: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_modify_extA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, mods: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_modify_extW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, mods: *mut *mut ldapmodW, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_modify_ext_s(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, mods: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_modify_ext_sA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, mods: *mut *mut ldapmodA, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_modify_ext_sW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, mods: *mut *mut ldapmodW, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32;
     pub fn ldap_modify_s(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, mods: *mut *mut ldapmodA) -> u32;
     pub fn ldap_modify_sA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, mods: *mut *mut ldapmodA) -> u32;
@@ -229,111 +160,62 @@ extern "system" {
     pub fn ldap_modrdn_s(externalhandle: *mut ldap, distinguishedname: ::windows_core_sys::PCSTR, newdistinguishedname: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_modrdn_sA(externalhandle: *mut ldap, distinguishedname: ::windows_core_sys::PCSTR, newdistinguishedname: ::windows_core_sys::PCSTR) -> u32;
     pub fn ldap_modrdn_sW(externalhandle: *mut ldap, distinguishedname: ::windows_core_sys::PCWSTR, newdistinguishedname: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_msgfree(res: *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_next_attribute(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut berelement) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_next_attributeA(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut berelement) -> ::windows_core_sys::PSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_next_attributeW(ld: *mut ldap, entry: *mut LDAPMessage, ptr: *mut berelement) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_next_entry(ld: *mut ldap, entry: *mut LDAPMessage) -> *mut LDAPMessage;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_next_reference(ld: *mut ldap, entry: *mut LDAPMessage) -> *mut LDAPMessage;
     pub fn ldap_open(hostname: ::windows_core_sys::PCSTR, portnumber: u32) -> *mut ldap;
     pub fn ldap_openA(hostname: ::windows_core_sys::PCSTR, portnumber: u32) -> *mut ldap;
     pub fn ldap_openW(hostname: ::windows_core_sys::PCWSTR, portnumber: u32) -> *mut ldap;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_parse_extended_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core_sys::PSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: super::super::Foundation::BOOLEAN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_parse_extended_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core_sys::PWSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: super::super::Foundation::BOOLEAN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn ldap_parse_extended_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core_sys::PSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: ::win32_foundation_sys::BOOLEAN) -> u32;
+    pub fn ldap_parse_extended_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, resultoid: *mut ::windows_core_sys::PWSTR, resultdata: *mut *mut LDAP_BERVAL, freeit: ::win32_foundation_sys::BOOLEAN) -> u32;
     pub fn ldap_parse_page_control(externalhandle: *mut ldap, servercontrols: *mut *mut ldapcontrolA, totalcount: *mut u32, cookie: *mut *mut LDAP_BERVAL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_parse_page_controlA(externalhandle: *mut ldap, servercontrols: *mut *mut ldapcontrolA, totalcount: *mut u32, cookie: *mut *mut LDAP_BERVAL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_parse_page_controlW(externalhandle: *mut ldap, servercontrols: *mut *mut ldapcontrolW, totalcount: *mut u32, cookie: *mut *mut LDAP_BERVAL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_parse_reference(connection: *mut ldap, resultmessage: *mut LDAPMessage, referrals: *mut *mut ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_parse_referenceA(connection: *mut ldap, resultmessage: *mut LDAPMessage, referrals: *mut *mut ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_parse_referenceW(connection: *mut ldap, resultmessage: *mut LDAPMessage, referrals: *mut *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_parse_result(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core_sys::PSTR, errormessage: *mut ::windows_core_sys::PSTR, referrals: *mut *mut ::windows_core_sys::PSTR, servercontrols: *mut *mut *mut ldapcontrolA, freeit: super::super::Foundation::BOOLEAN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_parse_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core_sys::PSTR, errormessage: *mut ::windows_core_sys::PSTR, referrals: *mut *mut *mut i8, servercontrols: *mut *mut *mut ldapcontrolA, freeit: super::super::Foundation::BOOLEAN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_parse_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core_sys::PWSTR, errormessage: *mut ::windows_core_sys::PWSTR, referrals: *mut *mut *mut u16, servercontrols: *mut *mut *mut ldapcontrolW, freeit: super::super::Foundation::BOOLEAN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn ldap_parse_result(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core_sys::PSTR, errormessage: *mut ::windows_core_sys::PSTR, referrals: *mut *mut ::windows_core_sys::PSTR, servercontrols: *mut *mut *mut ldapcontrolA, freeit: ::win32_foundation_sys::BOOLEAN) -> u32;
+    pub fn ldap_parse_resultA(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core_sys::PSTR, errormessage: *mut ::windows_core_sys::PSTR, referrals: *mut *mut *mut i8, servercontrols: *mut *mut *mut ldapcontrolA, freeit: ::win32_foundation_sys::BOOLEAN) -> u32;
+    pub fn ldap_parse_resultW(connection: *mut ldap, resultmessage: *mut LDAPMessage, returncode: *mut u32, matcheddns: *mut ::windows_core_sys::PWSTR, errormessage: *mut ::windows_core_sys::PWSTR, referrals: *mut *mut *mut u16, servercontrols: *mut *mut *mut ldapcontrolW, freeit: ::win32_foundation_sys::BOOLEAN) -> u32;
     pub fn ldap_parse_sort_control(externalhandle: *mut ldap, control: *mut *mut ldapcontrolA, result: *mut u32, attribute: *mut ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_parse_sort_controlA(externalhandle: *mut ldap, control: *mut *mut ldapcontrolA, result: *mut u32, attribute: *mut ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_parse_sort_controlW(externalhandle: *mut ldap, control: *mut *mut ldapcontrolW, result: *mut u32, attribute: *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_parse_vlv_controlA(externalhandle: *mut ldap, control: *mut *mut ldapcontrolA, targetpos: *mut u32, listcount: *mut u32, context: *mut *mut LDAP_BERVAL, errcode: *mut i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_parse_vlv_controlW(externalhandle: *mut ldap, control: *mut *mut ldapcontrolW, targetpos: *mut u32, listcount: *mut u32, context: *mut *mut LDAP_BERVAL, errcode: *mut i32) -> i32;
     pub fn ldap_perror(ld: *mut ldap, msg: ::windows_core_sys::PCSTR);
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_rename_ext(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, newrdn: ::windows_core_sys::PCSTR, newparent: ::windows_core_sys::PCSTR, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_rename_extA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, newrdn: ::windows_core_sys::PCSTR, newparent: ::windows_core_sys::PCSTR, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_rename_extW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, newrdn: ::windows_core_sys::PCWSTR, newparent: ::windows_core_sys::PCWSTR, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_rename_ext_s(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, newrdn: ::windows_core_sys::PCSTR, newparent: ::windows_core_sys::PCSTR, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_rename_ext_sA(ld: *mut ldap, dn: ::windows_core_sys::PCSTR, newrdn: ::windows_core_sys::PCSTR, newparent: ::windows_core_sys::PCSTR, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_rename_ext_sW(ld: *mut ldap, dn: ::windows_core_sys::PCWSTR, newrdn: ::windows_core_sys::PCWSTR, newparent: ::windows_core_sys::PCWSTR, deleteoldrdn: i32, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_result(ld: *mut ldap, msgid: u32, all: u32, timeout: *const LDAP_TIMEVAL, res: *mut *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_result2error(ld: *mut ldap, res: *mut LDAPMessage, freeit: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_sasl_bindA(externalhandle: *mut ldap, distname: ::windows_core_sys::PCSTR, authmechanism: ::windows_core_sys::PCSTR, cred: *const LDAP_BERVAL, serverctrls: *mut *mut ldapcontrolA, clientctrls: *mut *mut ldapcontrolA, messagenumber: *mut i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_sasl_bindW(externalhandle: *mut ldap, distname: ::windows_core_sys::PCWSTR, authmechanism: ::windows_core_sys::PCWSTR, cred: *const LDAP_BERVAL, serverctrls: *mut *mut ldapcontrolW, clientctrls: *mut *mut ldapcontrolW, messagenumber: *mut i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_sasl_bind_sA(externalhandle: *mut ldap, distname: ::windows_core_sys::PCSTR, authmechanism: ::windows_core_sys::PCSTR, cred: *const LDAP_BERVAL, serverctrls: *mut *mut ldapcontrolA, clientctrls: *mut *mut ldapcontrolA, serverdata: *mut *mut LDAP_BERVAL) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_sasl_bind_sW(externalhandle: *mut ldap, distname: ::windows_core_sys::PCWSTR, authmechanism: ::windows_core_sys::PCWSTR, cred: *const LDAP_BERVAL, serverctrls: *mut *mut ldapcontrolW, clientctrls: *mut *mut ldapcontrolW, serverdata: *mut *mut LDAP_BERVAL) -> i32;
     pub fn ldap_search(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32) -> u32;
     pub fn ldap_searchA(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32) -> u32;
     pub fn ldap_searchW(ld: *mut ldap, base: ::windows_core_sys::PCWSTR, scope: u32, filter: ::windows_core_sys::PCWSTR, attrs: *const *const u16, attrsonly: u32) -> u32;
     pub fn ldap_search_abandon_page(externalhandle: *mut ldap, searchblock: *mut ldapsearch) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_ext(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32, servercontrols: *const *const ldapcontrolA, clientcontrols: *const *const ldapcontrolA, timelimit: u32, sizelimit: u32, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_extA(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32, servercontrols: *const *const ldapcontrolA, clientcontrols: *const *const ldapcontrolA, timelimit: u32, sizelimit: u32, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_extW(ld: *mut ldap, base: ::windows_core_sys::PCWSTR, scope: u32, filter: ::windows_core_sys::PCWSTR, attrs: *const *const u16, attrsonly: u32, servercontrols: *const *const ldapcontrolW, clientcontrols: *const *const ldapcontrolW, timelimit: u32, sizelimit: u32, messagenumber: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_ext_s(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32, servercontrols: *const *const ldapcontrolA, clientcontrols: *const *const ldapcontrolA, timeout: *mut LDAP_TIMEVAL, sizelimit: u32, res: *mut *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_ext_sA(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32, servercontrols: *const *const ldapcontrolA, clientcontrols: *const *const ldapcontrolA, timeout: *mut LDAP_TIMEVAL, sizelimit: u32, res: *mut *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_ext_sW(ld: *mut ldap, base: ::windows_core_sys::PCWSTR, scope: u32, filter: ::windows_core_sys::PCWSTR, attrs: *const *const u16, attrsonly: u32, servercontrols: *const *const ldapcontrolW, clientcontrols: *const *const ldapcontrolW, timeout: *mut LDAP_TIMEVAL, sizelimit: u32, res: *mut *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_init_page(externalhandle: *mut ldap, distinguishedname: ::windows_core_sys::PCSTR, scopeofsearch: u32, searchfilter: ::windows_core_sys::PCSTR, attributelist: *mut *mut i8, attributesonly: u32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, pagetimelimit: u32, totalsizelimit: u32, sortkeys: *mut *mut ldapsortkeyA) -> *mut ldapsearch;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_init_pageA(externalhandle: *mut ldap, distinguishedname: ::windows_core_sys::PCSTR, scopeofsearch: u32, searchfilter: ::windows_core_sys::PCSTR, attributelist: *const *const i8, attributesonly: u32, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA, pagetimelimit: u32, totalsizelimit: u32, sortkeys: *mut *mut ldapsortkeyA) -> *mut ldapsearch;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_init_pageW(externalhandle: *mut ldap, distinguishedname: ::windows_core_sys::PCWSTR, scopeofsearch: u32, searchfilter: ::windows_core_sys::PCWSTR, attributelist: *const *const u16, attributesonly: u32, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW, pagetimelimit: u32, totalsizelimit: u32, sortkeys: *mut *mut ldapsortkeyW) -> *mut ldapsearch;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_s(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32, res: *mut *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_sA(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32, res: *mut *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_sW(ld: *mut ldap, base: ::windows_core_sys::PCWSTR, scope: u32, filter: ::windows_core_sys::PCWSTR, attrs: *const *const u16, attrsonly: u32, res: *mut *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_st(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32, timeout: *mut LDAP_TIMEVAL, res: *mut *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_stA(ld: *mut ldap, base: ::windows_core_sys::PCSTR, scope: u32, filter: ::windows_core_sys::PCSTR, attrs: *const *const i8, attrsonly: u32, timeout: *mut LDAP_TIMEVAL, res: *mut *mut LDAPMessage) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_search_stW(ld: *mut ldap, base: ::windows_core_sys::PCWSTR, scope: u32, filter: ::windows_core_sys::PCWSTR, attrs: *const *const u16, attrsonly: u32, timeout: *mut LDAP_TIMEVAL, res: *mut *mut LDAPMessage) -> u32;
     pub fn ldap_set_dbg_flags(newflags: u32) -> u32;
     pub fn ldap_set_dbg_routine(debugprintroutine: DBGPRINT);
@@ -348,14 +230,10 @@ extern "system" {
     pub fn ldap_sslinit(hostname: ::windows_core_sys::PCSTR, portnumber: u32, secure: i32) -> *mut ldap;
     pub fn ldap_sslinitA(hostname: ::windows_core_sys::PCSTR, portnumber: u32, secure: i32) -> *mut ldap;
     pub fn ldap_sslinitW(hostname: ::windows_core_sys::PCWSTR, portnumber: u32, secure: i32) -> *mut ldap;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_start_tls_sA(externalhandle: *mut ldap, serverreturnvalue: *mut u32, result: *mut *mut LDAPMessage, servercontrols: *mut *mut ldapcontrolA, clientcontrols: *mut *mut ldapcontrolA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ldap_start_tls_sW(externalhandle: *mut ldap, serverreturnvalue: *mut u32, result: *mut *mut LDAPMessage, servercontrols: *mut *mut ldapcontrolW, clientcontrols: *mut *mut ldapcontrolW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_startup(version: *mut ldap_version_info, instance: *mut super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ldap_stop_tls_s(externalhandle: *mut ldap) -> super::super::Foundation::BOOLEAN;
+    pub fn ldap_startup(version: *mut ldap_version_info, instance: *mut ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn ldap_stop_tls_s(externalhandle: *mut ldap) -> ::win32_foundation_sys::BOOLEAN;
     pub fn ldap_ufn2dn(ufn: ::windows_core_sys::PCSTR, pdn: *mut ::windows_core_sys::PSTR) -> u32;
     pub fn ldap_ufn2dnA(ufn: ::windows_core_sys::PCSTR, pdn: *mut ::windows_core_sys::PSTR) -> u32;
     pub fn ldap_ufn2dnW(ufn: ::windows_core_sys::PCWSTR, pdn: *mut ::windows_core_sys::PWSTR) -> u32;
@@ -400,7 +278,6 @@ impl ::core::clone::Clone for LDAPAPIFeatureInfoW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LDAPMessage {
     pub lm_msgid: u32,
     pub lm_msgtype: u32,
@@ -412,13 +289,11 @@ pub struct LDAPMessage {
     pub Request: *mut ::core::ffi::c_void,
     pub lm_returncode: u32,
     pub lm_referral: u16,
-    pub lm_chased: super::super::Foundation::BOOLEAN,
-    pub lm_eom: super::super::Foundation::BOOLEAN,
-    pub ConnectionReferenced: super::super::Foundation::BOOLEAN,
+    pub lm_chased: ::win32_foundation_sys::BOOLEAN,
+    pub lm_eom: ::win32_foundation_sys::BOOLEAN,
+    pub ConnectionReferenced: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LDAPMessage {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LDAPMessage {
     fn clone(&self) -> Self {
         *self
@@ -627,16 +502,13 @@ pub const LDAP_PAGED_RESULT_OID_STRING_W: &str = "1.2.840.113556.1.4.319";
 pub const LDAP_POLICYHINT_APPLY_FULLPWDPOLICY: u32 = 1u32;
 pub const LDAP_PORT: u32 = 389u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LDAP_REFERRAL_CALLBACK {
     pub SizeOfCallbacks: u32,
     pub QueryForConnection: QUERYFORCONNECTION,
     pub NotifyRoutine: NOTIFYOFNEWCONNECTION,
     pub DereferenceRoutine: DEREFERENCECONNECTION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LDAP_REFERRAL_CALLBACK {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LDAP_REFERRAL_CALLBACK {
     fn clone(&self) -> Self {
         *self
@@ -839,15 +711,14 @@ pub const LDAP_VERSION3: u32 = 3u32;
 pub const LDAP_VERSION_MAX: u32 = 3u32;
 pub const LDAP_VERSION_MIN: u32 = 2u32;
 pub const LDAP_VLVINFO_VERSION: u32 = 1u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type NOTIFYOFNEWCONNECTION = ::core::option::Option<unsafe extern "system" fn(primaryconnection: *mut ldap, referralfromconnection: *mut ldap, newdn: ::windows_core_sys::PCWSTR, hostname: ::windows_core_sys::PCSTR, newconnection: *mut ldap, portnumber: u32, secauthidentity: *mut ::core::ffi::c_void, currentuser: *mut ::core::ffi::c_void, errorcodefrombind: u32) -> super::super::Foundation::BOOLEAN>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
-pub type QUERYCLIENTCERT = ::core::option::Option<unsafe extern "system" fn(connection: *mut ldap, trusted_cas: *mut super::super::Security::Authentication::Identity::SecPkgContext_IssuerListInfoEx, ppcertificate: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT) -> super::super::Foundation::BOOLEAN>;
+pub type NOTIFYOFNEWCONNECTION = ::core::option::Option<unsafe extern "system" fn(primaryconnection: *mut ldap, referralfromconnection: *mut ldap, newdn: ::windows_core_sys::PCWSTR, hostname: ::windows_core_sys::PCSTR, newconnection: *mut ldap, portnumber: u32, secauthidentity: *mut ::core::ffi::c_void, currentuser: *mut ::core::ffi::c_void, errorcodefrombind: u32) -> ::win32_foundation_sys::BOOLEAN>;
+#[cfg(all(feature = "Win32_Security_Authentication_Identity", feature = "Win32_Security_Cryptography"))]
+pub type QUERYCLIENTCERT = ::core::option::Option<unsafe extern "system" fn(connection: *mut ldap, trusted_cas: *mut ::win32_security_sys::Authentication::Identity::SecPkgContext_IssuerListInfoEx, ppcertificate: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT) -> ::win32_foundation_sys::BOOLEAN>;
 pub type QUERYFORCONNECTION = ::core::option::Option<unsafe extern "system" fn(primaryconnection: *mut ldap, referralfromconnection: *mut ldap, newdn: ::windows_core_sys::PCWSTR, hostname: ::windows_core_sys::PCSTR, portnumber: u32, secauthidentity: *mut ::core::ffi::c_void, currentusertoken: *mut ::core::ffi::c_void, connectiontouse: *mut *mut ldap) -> u32>;
 pub const SERVER_SEARCH_FLAG_DOMAIN_SCOPE: u32 = 1u32;
 pub const SERVER_SEARCH_FLAG_PHANTOM_ROOT: u32 = 2u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-pub type VERIFYSERVERCERT = ::core::option::Option<unsafe extern "system" fn(connection: *mut ldap, pservercert: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT) -> super::super::Foundation::BOOLEAN>;
+#[cfg(feature = "Win32_Security_Cryptography")]
+pub type VERIFYSERVERCERT = ::core::option::Option<unsafe extern "system" fn(connection: *mut ldap, pservercert: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT) -> ::win32_foundation_sys::BOOLEAN>;
 #[repr(C)]
 pub struct berelement {
     pub opaque: ::windows_core_sys::PSTR,
@@ -939,30 +810,24 @@ impl ::core::clone::Clone for ldapapiinfoW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ldapcontrolA {
     pub ldctl_oid: ::windows_core_sys::PSTR,
     pub ldctl_value: LDAP_BERVAL,
-    pub ldctl_iscritical: super::super::Foundation::BOOLEAN,
+    pub ldctl_iscritical: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ldapcontrolA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ldapcontrolA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ldapcontrolW {
     pub ldctl_oid: ::windows_core_sys::PWSTR,
     pub ldctl_value: LDAP_BERVAL,
-    pub ldctl_iscritical: super::super::Foundation::BOOLEAN,
+    pub ldctl_iscritical: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ldapcontrolW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ldapcontrolW {
     fn clone(&self) -> Self {
         *self
@@ -1017,30 +882,24 @@ impl ::core::clone::Clone for ldapmodW_0 {
 #[repr(C)]
 pub struct ldapsearch(pub u8);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ldapsortkeyA {
     pub sk_attrtype: ::windows_core_sys::PSTR,
     pub sk_matchruleoid: ::windows_core_sys::PSTR,
-    pub sk_reverseorder: super::super::Foundation::BOOLEAN,
+    pub sk_reverseorder: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ldapsortkeyA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ldapsortkeyA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ldapsortkeyW {
     pub sk_attrtype: ::windows_core_sys::PWSTR,
     pub sk_matchruleoid: ::windows_core_sys::PWSTR,
-    pub sk_reverseorder: super::super::Foundation::BOOLEAN,
+    pub sk_reverseorder: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ldapsortkeyW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ldapsortkeyW {
     fn clone(&self) -> Self {
         *self

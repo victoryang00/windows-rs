@@ -1,19 +1,14 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AVIBuildFilterA(lpszfilter: ::windows_core_sys::PSTR, cbfilter: i32, fsaving: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AVIBuildFilterW(lpszfilter: ::windows_core_sys::PWSTR, cbfilter: i32, fsaving: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn AVIBuildFilterA(lpszfilter: ::windows_core_sys::PSTR, cbfilter: i32, fsaving: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn AVIBuildFilterW(lpszfilter: ::windows_core_sys::PWSTR, cbfilter: i32, fsaving: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn AVIClearClipboard() -> ::windows_core_sys::HRESULT;
     pub fn AVIFileAddRef(pfile: IAVIFile) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AVIFileCreateStreamA(pfile: IAVIFile, ppavi: *mut IAVIStream, psi: *const AVISTREAMINFOA) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AVIFileCreateStreamW(pfile: IAVIFile, ppavi: *mut IAVIStream, psi: *const AVISTREAMINFOW) -> ::windows_core_sys::HRESULT;
     pub fn AVIFileEndRecord(pfile: IAVIFile) -> ::windows_core_sys::HRESULT;
     pub fn AVIFileExit();
     pub fn AVIFileGetStream(pfile: IAVIFile, ppavi: *mut IAVIStream, fcctype: u32, lparam: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AVIFileInfoA(pfile: IAVIFile, pfi: *mut AVIFILEINFOA, lsize: i32) -> ::windows_core_sys::HRESULT;
     pub fn AVIFileInfoW(pfile: IAVIFile, pfi: *mut AVIFILEINFOW, lsize: i32) -> ::windows_core_sys::HRESULT;
     pub fn AVIFileInit();
@@ -25,19 +20,13 @@ extern "system" {
     pub fn AVIGetFromClipboard(lppf: *mut IAVIFile) -> ::windows_core_sys::HRESULT;
     pub fn AVIMakeCompressedStream(ppscompressed: *mut IAVIStream, ppssource: IAVIStream, lpoptions: *const AVICOMPRESSOPTIONS, pclsidhandler: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn AVIMakeFileFromStreams(ppfile: *mut IAVIFile, nstreams: i32, papstreams: *const IAVIStream) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AVIMakeStreamFromClipboard(cfformat: u32, hglobal: super::super::Foundation::HANDLE, ppstream: *mut IAVIStream) -> ::windows_core_sys::HRESULT;
+    pub fn AVIMakeStreamFromClipboard(cfformat: u32, hglobal: ::win32_foundation_sys::HANDLE, ppstream: *mut IAVIStream) -> ::windows_core_sys::HRESULT;
     pub fn AVIPutFileOnClipboard(pf: IAVIFile) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AVISaveA(szfile: ::windows_core_sys::PCSTR, pclsidhandler: *const ::windows_core_sys::GUID, lpfncallback: AVISAVECALLBACK, nstreams: i32, pfile: IAVIStream, lpoptions: *const AVICOMPRESSOPTIONS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AVISaveOptions(hwnd: super::super::Foundation::HWND, uiflags: u32, nstreams: i32, ppavi: *const IAVIStream, plpoptions: *mut *mut AVICOMPRESSOPTIONS) -> isize;
+    pub fn AVISaveOptions(hwnd: ::win32_foundation_sys::HWND, uiflags: u32, nstreams: i32, ppavi: *const IAVIStream, plpoptions: *mut *mut AVICOMPRESSOPTIONS) -> isize;
     pub fn AVISaveOptionsFree(nstreams: i32, plpoptions: *const *const AVICOMPRESSOPTIONS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AVISaveVA(szfile: ::windows_core_sys::PCSTR, pclsidhandler: *const ::windows_core_sys::GUID, lpfncallback: AVISAVECALLBACK, nstreams: i32, ppavi: *const IAVIStream, plpoptions: *const *const AVICOMPRESSOPTIONS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AVISaveVW(szfile: ::windows_core_sys::PCWSTR, pclsidhandler: *const ::windows_core_sys::GUID, lpfncallback: AVISAVECALLBACK, nstreams: i32, ppavi: *const IAVIStream, plpoptions: *const *const AVICOMPRESSOPTIONS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AVISaveW(szfile: ::windows_core_sys::PCWSTR, pclsidhandler: *const ::windows_core_sys::GUID, lpfncallback: AVISAVECALLBACK, nstreams: i32, pfile: IAVIStream, lpoptions: *const AVICOMPRESSOPTIONS) -> ::windows_core_sys::HRESULT;
     pub fn AVIStreamAddRef(pavi: IAVIStream) -> u32;
     pub fn AVIStreamBeginStreaming(pavi: IAVIStream, lstart: i32, lend: i32, lrate: i32) -> ::windows_core_sys::HRESULT;
@@ -47,10 +36,8 @@ extern "system" {
     pub fn AVIStreamGetFrame(pg: IGetFrame, lpos: i32) -> *mut ::core::ffi::c_void;
     pub fn AVIStreamGetFrameClose(pg: IGetFrame) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn AVIStreamGetFrameOpen(pavi: IAVIStream, lpbiwanted: *const super::super::Graphics::Gdi::BITMAPINFOHEADER) -> IGetFrame;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn AVIStreamGetFrameOpen(pavi: IAVIStream, lpbiwanted: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER) -> IGetFrame;
     pub fn AVIStreamInfoA(pavi: IAVIStream, psi: *mut AVISTREAMINFOA, lsize: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AVIStreamInfoW(pavi: IAVIStream, psi: *mut AVISTREAMINFOW, lsize: i32) -> ::windows_core_sys::HRESULT;
     pub fn AVIStreamLength(pavi: IAVIStream) -> i32;
     pub fn AVIStreamOpenFromFileA(ppavi: *mut IAVIStream, szfile: ::windows_core_sys::PCSTR, fcctype: u32, lparam: i32, mode: u32, pclsidhandler: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
@@ -65,122 +52,93 @@ extern "system" {
     pub fn AVIStreamTimeToSample(pavi: IAVIStream, ltime: i32) -> i32;
     pub fn AVIStreamWrite(pavi: IAVIStream, lstart: i32, lsamples: i32, lpbuffer: *const ::core::ffi::c_void, cbbuffer: i32, dwflags: u32, plsampwritten: *mut i32, plbyteswritten: *mut i32) -> ::windows_core_sys::HRESULT;
     pub fn AVIStreamWriteData(pavi: IAVIStream, fcc: u32, lp: *const ::core::ffi::c_void, cb: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseDriver(hdriver: HDRVR, lparam1: super::super::Foundation::LPARAM, lparam2: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
+    pub fn CloseDriver(hdriver: HDRVR, lparam1: ::win32_foundation_sys::LPARAM, lparam2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
     pub fn CreateEditableStream(ppseditable: *mut IAVIStream, pssource: IAVIStream) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DefDriverProc(dwdriveridentifier: usize, hdrvr: HDRVR, umsg: u32, lparam1: super::super::Foundation::LPARAM, lparam2: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DrawDibBegin(hdd: isize, hdc: super::super::Graphics::Gdi::HDC, dxdst: i32, dydst: i32, lpbi: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, dxsrc: i32, dysrc: i32, wflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DrawDibChangePalette(hdd: isize, istart: i32, ilen: i32, lppe: *const super::super::Graphics::Gdi::PALETTEENTRY) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DrawDibClose(hdd: isize) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DrawDibDraw(hdd: isize, hdc: super::super::Graphics::Gdi::HDC, xdst: i32, ydst: i32, dxdst: i32, dydst: i32, lpbi: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, xsrc: i32, ysrc: i32, dxsrc: i32, dysrc: i32, wflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DrawDibEnd(hdd: isize) -> super::super::Foundation::BOOL;
+    pub fn DefDriverProc(dwdriveridentifier: usize, hdrvr: HDRVR, umsg: u32, lparam1: ::win32_foundation_sys::LPARAM, lparam2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn DrawDibGetBuffer(hdd: isize, lpbi: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER, dwsize: u32, dwflags: u32) -> *mut ::core::ffi::c_void;
+    pub fn DrawDibBegin(hdd: isize, hdc: ::win32_graphics_sys::Gdi::HDC, dxdst: i32, dydst: i32, lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, dxsrc: i32, dysrc: i32, wflags: u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn DrawDibGetPalette(hdd: isize) -> super::super::Graphics::Gdi::HPALETTE;
+    pub fn DrawDibChangePalette(hdd: isize, istart: i32, ilen: i32, lppe: *const ::win32_graphics_sys::Gdi::PALETTEENTRY) -> ::win32_foundation_sys::BOOL;
+    pub fn DrawDibClose(hdd: isize) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn DrawDibDraw(hdd: isize, hdc: ::win32_graphics_sys::Gdi::HDC, xdst: i32, ydst: i32, dxdst: i32, dydst: i32, lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, xsrc: i32, ysrc: i32, dxsrc: i32, dysrc: i32, wflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn DrawDibEnd(hdd: isize) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn DrawDibGetBuffer(hdd: isize, lpbi: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, dwsize: u32, dwflags: u32) -> *mut ::core::ffi::c_void;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn DrawDibGetPalette(hdd: isize) -> ::win32_graphics_sys::Gdi::HPALETTE;
     pub fn DrawDibOpen() -> isize;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DrawDibProfileDisplay(lpbi: *const super::super::Graphics::Gdi::BITMAPINFOHEADER) -> super::super::Foundation::LRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DrawDibRealize(hdd: isize, hdc: super::super::Graphics::Gdi::HDC, fbackground: super::super::Foundation::BOOL) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DrawDibSetPalette(hdd: isize, hpal: super::super::Graphics::Gdi::HPALETTE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DrawDibStart(hdd: isize, rate: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DrawDibStop(hdd: isize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DrawDibTime(hdd: isize, lpddtime: *mut DRAWDIBTIME) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DriverCallback(dwcallback: usize, dwflags: u32, hdevice: HDRVR, dwmsg: u32, dwuser: usize, dwparam1: usize, dwparam2: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DrvGetModuleHandle(hdriver: HDRVR) -> super::super::Foundation::HINSTANCE;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn DrawDibProfileDisplay(lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER) -> ::win32_foundation_sys::LRESULT;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn DrawDibRealize(hdd: isize, hdc: ::win32_graphics_sys::Gdi::HDC, fbackground: ::win32_foundation_sys::BOOL) -> u32;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn DrawDibSetPalette(hdd: isize, hpal: ::win32_graphics_sys::Gdi::HPALETTE) -> ::win32_foundation_sys::BOOL;
+    pub fn DrawDibStart(hdd: isize, rate: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn DrawDibStop(hdd: isize) -> ::win32_foundation_sys::BOOL;
+    pub fn DrawDibTime(hdd: isize, lpddtime: *mut DRAWDIBTIME) -> ::win32_foundation_sys::BOOL;
+    pub fn DriverCallback(dwcallback: usize, dwflags: u32, hdevice: HDRVR, dwmsg: u32, dwuser: usize, dwparam1: usize, dwparam2: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn DrvGetModuleHandle(hdriver: HDRVR) -> ::win32_foundation_sys::HINSTANCE;
     pub fn EditStreamClone(pavi: IAVIStream, ppresult: *mut IAVIStream) -> ::windows_core_sys::HRESULT;
     pub fn EditStreamCopy(pavi: IAVIStream, plstart: *mut i32, pllength: *mut i32, ppresult: *mut IAVIStream) -> ::windows_core_sys::HRESULT;
     pub fn EditStreamCut(pavi: IAVIStream, plstart: *mut i32, pllength: *mut i32, ppresult: *mut IAVIStream) -> ::windows_core_sys::HRESULT;
     pub fn EditStreamPaste(pavi: IAVIStream, plpos: *mut i32, pllength: *mut i32, pstream: IAVIStream, lstart: i32, lend: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn EditStreamSetInfoA(pavi: IAVIStream, lpinfo: *const AVISTREAMINFOA, cbinfo: i32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn EditStreamSetInfoW(pavi: IAVIStream, lpinfo: *const AVISTREAMINFOW, cbinfo: i32) -> ::windows_core_sys::HRESULT;
     pub fn EditStreamSetNameA(pavi: IAVIStream, lpszname: ::windows_core_sys::PCSTR) -> ::windows_core_sys::HRESULT;
     pub fn EditStreamSetNameW(pavi: IAVIStream, lpszname: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDriverModuleHandle(hdriver: HDRVR) -> super::super::Foundation::HINSTANCE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls_Dialogs"))]
-    pub fn GetOpenFileNamePreviewA(lpofn: *mut super::super::UI::Controls::Dialogs::OPENFILENAMEA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls_Dialogs"))]
-    pub fn GetOpenFileNamePreviewW(lpofn: *mut super::super::UI::Controls::Dialogs::OPENFILENAMEW) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls_Dialogs"))]
-    pub fn GetSaveFileNamePreviewA(lpofn: *mut super::super::UI::Controls::Dialogs::OPENFILENAMEA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls_Dialogs"))]
-    pub fn GetSaveFileNamePreviewW(lpofn: *mut super::super::UI::Controls::Dialogs::OPENFILENAMEW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ICClose(hic: HIC) -> super::super::Foundation::LRESULT;
+    pub fn GetDriverModuleHandle(hdriver: HDRVR) -> ::win32_foundation_sys::HINSTANCE;
+    #[cfg(feature = "Win32_UI_Controls_Dialogs")]
+    pub fn GetOpenFileNamePreviewA(lpofn: *mut ::win32_ui_sys::Controls::Dialogs::OPENFILENAMEA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Controls_Dialogs")]
+    pub fn GetOpenFileNamePreviewW(lpofn: *mut ::win32_ui_sys::Controls::Dialogs::OPENFILENAMEW) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Controls_Dialogs")]
+    pub fn GetSaveFileNamePreviewA(lpofn: *mut ::win32_ui_sys::Controls::Dialogs::OPENFILENAMEA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Controls_Dialogs")]
+    pub fn GetSaveFileNamePreviewW(lpofn: *mut ::win32_ui_sys::Controls::Dialogs::OPENFILENAMEW) -> ::win32_foundation_sys::BOOL;
+    pub fn ICClose(hic: HIC) -> ::win32_foundation_sys::LRESULT;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn ICCompress(hic: HIC, dwflags: u32, lpbioutput: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, lpdata: *mut ::core::ffi::c_void, lpbiinput: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, lpckid: *mut u32, lpdwflags: *mut u32, lframenum: i32, dwframesize: u32, dwquality: u32, lpbiprev: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, lpprev: *const ::core::ffi::c_void) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn ICCompressorChoose(hwnd: super::super::Foundation::HWND, uiflags: u32, pvin: *const ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, pc: *mut COMPVARS, lpsztitle: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn ICCompress(hic: HIC, dwflags: u32, lpbioutput: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpdata: *mut ::core::ffi::c_void, lpbiinput: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbits: *const ::core::ffi::c_void, lpckid: *mut u32, lpdwflags: *mut u32, lframenum: i32, dwframesize: u32, dwquality: u32, lpbiprev: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpprev: *const ::core::ffi::c_void) -> u32;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn ICCompressorChoose(hwnd: ::win32_foundation_sys::HWND, uiflags: u32, pvin: *const ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, pc: *mut COMPVARS, lpsztitle: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn ICCompressorFree(pc: *const COMPVARS);
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn ICDecompress(hic: HIC, dwflags: u32, lpbiformat: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, lpdata: *const ::core::ffi::c_void, lpbi: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, lpbits: *mut ::core::ffi::c_void) -> u32;
+    pub fn ICDecompress(hic: HIC, dwflags: u32, lpbiformat: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpdata: *const ::core::ffi::c_void, lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbits: *mut ::core::ffi::c_void) -> u32;
     pub fn ICDraw(hic: HIC, dwflags: u32, lpformat: *const ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, cbdata: u32, ltime: i32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn ICDrawBegin(hic: HIC, dwflags: u32, hpal: super::super::Graphics::Gdi::HPALETTE, hwnd: super::super::Foundation::HWND, hdc: super::super::Graphics::Gdi::HDC, xdst: i32, ydst: i32, dxdst: i32, dydst: i32, lpbi: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, xsrc: i32, ysrc: i32, dxsrc: i32, dysrc: i32, dwrate: u32, dwscale: u32) -> u32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn ICGetDisplayFormat(hic: HIC, lpbiin: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, lpbiout: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER, bitdepth: i32, dx: i32, dy: i32) -> HIC;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ICGetInfo(hic: HIC, picinfo: *mut ICINFO, cb: u32) -> super::super::Foundation::LRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn ICImageCompress(hic: HIC, uiflags: u32, lpbiin: *const super::super::Graphics::Gdi::BITMAPINFO, lpbits: *const ::core::ffi::c_void, lpbiout: *const super::super::Graphics::Gdi::BITMAPINFO, lquality: i32, plsize: *mut i32) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn ICImageDecompress(hic: HIC, uiflags: u32, lpbiin: *const super::super::Graphics::Gdi::BITMAPINFO, lpbits: *const ::core::ffi::c_void, lpbiout: *const super::super::Graphics::Gdi::BITMAPINFO) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ICInfo(fcctype: u32, fcchandler: u32, lpicinfo: *mut ICINFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ICInstall(fcctype: u32, fcchandler: u32, lparam: super::super::Foundation::LPARAM, szdesc: ::windows_core_sys::PCSTR, wflags: u32) -> super::super::Foundation::BOOL;
+    pub fn ICDrawBegin(hic: HIC, dwflags: u32, hpal: ::win32_graphics_sys::Gdi::HPALETTE, hwnd: ::win32_foundation_sys::HWND, hdc: ::win32_graphics_sys::Gdi::HDC, xdst: i32, ydst: i32, dxdst: i32, dydst: i32, lpbi: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, xsrc: i32, ysrc: i32, dxsrc: i32, dysrc: i32, dwrate: u32, dwscale: u32) -> u32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn ICLocate(fcctype: u32, fcchandler: u32, lpbiin: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, lpbiout: *const super::super::Graphics::Gdi::BITMAPINFOHEADER, wflags: u16) -> HIC;
+    pub fn ICGetDisplayFormat(hic: HIC, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbiout: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, bitdepth: i32, dx: i32, dy: i32) -> HIC;
+    pub fn ICGetInfo(hic: HIC, picinfo: *mut ICINFO, cb: u32) -> ::win32_foundation_sys::LRESULT;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn ICImageCompress(hic: HIC, uiflags: u32, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFO, lpbits: *const ::core::ffi::c_void, lpbiout: *const ::win32_graphics_sys::Gdi::BITMAPINFO, lquality: i32, plsize: *mut i32) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn ICImageDecompress(hic: HIC, uiflags: u32, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFO, lpbits: *const ::core::ffi::c_void, lpbiout: *const ::win32_graphics_sys::Gdi::BITMAPINFO) -> ::win32_foundation_sys::HANDLE;
+    pub fn ICInfo(fcctype: u32, fcchandler: u32, lpicinfo: *mut ICINFO) -> ::win32_foundation_sys::BOOL;
+    pub fn ICInstall(fcctype: u32, fcchandler: u32, lparam: ::win32_foundation_sys::LPARAM, szdesc: ::windows_core_sys::PCSTR, wflags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn ICLocate(fcctype: u32, fcchandler: u32, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, lpbiout: *const ::win32_graphics_sys::Gdi::BITMAPINFOHEADER, wflags: u16) -> HIC;
     pub fn ICOpen(fcctype: u32, fcchandler: u32, wmode: u32) -> HIC;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ICOpenFunction(fcctype: u32, fcchandler: u32, wmode: u32, lpfnhandler: super::super::Foundation::FARPROC) -> HIC;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ICRemove(fcctype: u32, fcchandler: u32, wflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ICSendMessage(hic: HIC, msg: u32, dw1: usize, dw2: usize) -> super::super::Foundation::LRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn ICSeqCompressFrame(pc: *const COMPVARS, uiflags: u32, lpbits: *const ::core::ffi::c_void, pfkey: *mut super::super::Foundation::BOOL, plsize: *mut i32) -> *mut ::core::ffi::c_void;
+    pub fn ICOpenFunction(fcctype: u32, fcchandler: u32, wmode: u32, lpfnhandler: ::win32_foundation_sys::FARPROC) -> HIC;
+    pub fn ICRemove(fcctype: u32, fcchandler: u32, wflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn ICSendMessage(hic: HIC, msg: u32, dw1: usize, dw2: usize) -> ::win32_foundation_sys::LRESULT;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn ICSeqCompressFrame(pc: *const COMPVARS, uiflags: u32, lpbits: *const ::core::ffi::c_void, pfkey: *mut ::win32_foundation_sys::BOOL, plsize: *mut i32) -> *mut ::core::ffi::c_void;
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn ICSeqCompressFrameEnd(pc: *const COMPVARS);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn ICSeqCompressFrameStart(pc: *const COMPVARS, lpbiin: *const super::super::Graphics::Gdi::BITMAPINFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MCIWndCreateA(hwndparent: super::super::Foundation::HWND, hinstance: super::super::Foundation::HINSTANCE, dwstyle: u32, szfile: ::windows_core_sys::PCSTR) -> super::super::Foundation::HWND;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MCIWndCreateW(hwndparent: super::super::Foundation::HWND, hinstance: super::super::Foundation::HINSTANCE, dwstyle: u32, szfile: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HWND;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MCIWndRegisterClass() -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenDriver(szdrivername: ::windows_core_sys::PCWSTR, szsectionname: ::windows_core_sys::PCWSTR, lparam2: super::super::Foundation::LPARAM) -> HDRVR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SendDriverMessage(hdriver: HDRVR, message: u32, lparam1: super::super::Foundation::LPARAM, lparam2: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn ICSeqCompressFrameStart(pc: *const COMPVARS, lpbiin: *const ::win32_graphics_sys::Gdi::BITMAPINFO) -> ::win32_foundation_sys::BOOL;
+    pub fn MCIWndCreateA(hwndparent: ::win32_foundation_sys::HWND, hinstance: ::win32_foundation_sys::HINSTANCE, dwstyle: u32, szfile: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HWND;
+    pub fn MCIWndCreateW(hwndparent: ::win32_foundation_sys::HWND, hinstance: ::win32_foundation_sys::HINSTANCE, dwstyle: u32, szfile: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HWND;
+    pub fn MCIWndRegisterClass() -> ::win32_foundation_sys::BOOL;
+    pub fn OpenDriver(szdrivername: ::windows_core_sys::PCWSTR, szsectionname: ::windows_core_sys::PCWSTR, lparam2: ::win32_foundation_sys::LPARAM) -> HDRVR;
+    pub fn SendDriverMessage(hdriver: HDRVR, message: u32, lparam1: ::win32_foundation_sys::LPARAM, lparam2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
     pub fn VideoForWindowsVersion() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn capCreateCaptureWindowA(lpszwindowname: ::windows_core_sys::PCSTR, dwstyle: u32, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, nid: i32) -> super::super::Foundation::HWND;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn capCreateCaptureWindowW(lpszwindowname: ::windows_core_sys::PCWSTR, dwstyle: u32, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, nid: i32) -> super::super::Foundation::HWND;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn capGetDriverDescriptionA(wdriverindex: u32, lpszname: ::windows_core_sys::PSTR, cbname: i32, lpszver: ::windows_core_sys::PSTR, cbver: i32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn capGetDriverDescriptionW(wdriverindex: u32, lpszname: ::windows_core_sys::PWSTR, cbname: i32, lpszver: ::windows_core_sys::PWSTR, cbver: i32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn capCreateCaptureWindowA(lpszwindowname: ::windows_core_sys::PCSTR, dwstyle: u32, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: ::win32_foundation_sys::HWND, nid: i32) -> ::win32_foundation_sys::HWND;
+    pub fn capCreateCaptureWindowW(lpszwindowname: ::windows_core_sys::PCWSTR, dwstyle: u32, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: ::win32_foundation_sys::HWND, nid: i32) -> ::win32_foundation_sys::HWND;
+    pub fn capGetDriverDescriptionA(wdriverindex: u32, lpszname: ::windows_core_sys::PSTR, cbname: i32, lpszver: ::windows_core_sys::PSTR, cbver: i32) -> ::win32_foundation_sys::BOOL;
+    pub fn capGetDriverDescriptionW(wdriverindex: u32, lpszname: ::windows_core_sys::PWSTR, cbname: i32, lpszver: ::windows_core_sys::PWSTR, cbver: i32) -> ::win32_foundation_sys::BOOL;
     pub fn joyGetDevCapsA(ujoyid: usize, pjc: *mut JOYCAPSA, cbjc: u32) -> u32;
     pub fn joyGetDevCapsW(ujoyid: usize, pjc: *mut JOYCAPSW, cbjc: u32) -> u32;
     pub fn joyGetNumDevs() -> u32;
@@ -188,78 +146,55 @@ extern "system" {
     pub fn joyGetPosEx(ujoyid: u32, pji: *mut JOYINFOEX) -> u32;
     pub fn joyGetThreshold(ujoyid: u32, puthreshold: *mut u32) -> u32;
     pub fn joyReleaseCapture(ujoyid: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn joySetCapture(hwnd: super::super::Foundation::HWND, ujoyid: u32, uperiod: u32, fchanged: super::super::Foundation::BOOL) -> u32;
+    pub fn joySetCapture(hwnd: ::win32_foundation_sys::HWND, ujoyid: u32, uperiod: u32, fchanged: ::win32_foundation_sys::BOOL) -> u32;
     pub fn joySetThreshold(ujoyid: u32, uthreshold: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mciDriverNotify(hwndcallback: super::super::Foundation::HANDLE, wdeviceid: u32, ustatus: u32) -> super::super::Foundation::BOOL;
+    pub fn mciDriverNotify(hwndcallback: ::win32_foundation_sys::HANDLE, wdeviceid: u32, ustatus: u32) -> ::win32_foundation_sys::BOOL;
     pub fn mciDriverYield(wdeviceid: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mciFreeCommandResource(wtable: u32) -> super::super::Foundation::BOOL;
+    pub fn mciFreeCommandResource(wtable: u32) -> ::win32_foundation_sys::BOOL;
     pub fn mciGetCreatorTask(mciid: u32) -> super::HTASK;
     pub fn mciGetDeviceIDA(pszdevice: ::windows_core_sys::PCSTR) -> u32;
     pub fn mciGetDeviceIDFromElementIDA(dwelementid: u32, lpstrtype: ::windows_core_sys::PCSTR) -> u32;
     pub fn mciGetDeviceIDFromElementIDW(dwelementid: u32, lpstrtype: ::windows_core_sys::PCWSTR) -> u32;
     pub fn mciGetDeviceIDW(pszdevice: ::windows_core_sys::PCWSTR) -> u32;
     pub fn mciGetDriverData(wdeviceid: u32) -> usize;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mciGetErrorStringA(mcierr: u32, psztext: ::windows_core_sys::PSTR, cchtext: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mciGetErrorStringW(mcierr: u32, psztext: ::windows_core_sys::PWSTR, cchtext: u32) -> super::super::Foundation::BOOL;
+    pub fn mciGetErrorStringA(mcierr: u32, psztext: ::windows_core_sys::PSTR, cchtext: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn mciGetErrorStringW(mcierr: u32, psztext: ::windows_core_sys::PWSTR, cchtext: u32) -> ::win32_foundation_sys::BOOL;
     pub fn mciGetYieldProc(mciid: u32, pdwyielddata: *const u32) -> YIELDPROC;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mciLoadCommandResource(hinstance: super::super::Foundation::HANDLE, lpresname: ::windows_core_sys::PCWSTR, wtype: u32) -> u32;
+    pub fn mciLoadCommandResource(hinstance: ::win32_foundation_sys::HANDLE, lpresname: ::windows_core_sys::PCWSTR, wtype: u32) -> u32;
     pub fn mciSendCommandA(mciid: u32, umsg: u32, dwparam1: usize, dwparam2: usize) -> u32;
     pub fn mciSendCommandW(mciid: u32, umsg: u32, dwparam1: usize, dwparam2: usize) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mciSendStringA(lpstrcommand: ::windows_core_sys::PCSTR, lpstrreturnstring: ::windows_core_sys::PSTR, ureturnlength: u32, hwndcallback: super::super::Foundation::HWND) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mciSendStringW(lpstrcommand: ::windows_core_sys::PCWSTR, lpstrreturnstring: ::windows_core_sys::PWSTR, ureturnlength: u32, hwndcallback: super::super::Foundation::HWND) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mciSetDriverData(wdeviceid: u32, dwdata: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mciSetYieldProc(mciid: u32, fpyieldproc: YIELDPROC, dwyielddata: u32) -> super::super::Foundation::BOOL;
+    pub fn mciSendStringA(lpstrcommand: ::windows_core_sys::PCSTR, lpstrreturnstring: ::windows_core_sys::PSTR, ureturnlength: u32, hwndcallback: ::win32_foundation_sys::HWND) -> u32;
+    pub fn mciSendStringW(lpstrcommand: ::windows_core_sys::PCWSTR, lpstrreturnstring: ::windows_core_sys::PWSTR, ureturnlength: u32, hwndcallback: ::win32_foundation_sys::HWND) -> u32;
+    pub fn mciSetDriverData(wdeviceid: u32, dwdata: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn mciSetYieldProc(mciid: u32, fpyieldproc: YIELDPROC, dwyielddata: u32) -> ::win32_foundation_sys::BOOL;
     pub fn mmDrvInstall(hdriver: HDRVR, wszdrventry: ::windows_core_sys::PCWSTR, drvmessage: DRIVERMSGPROC, wflags: u32) -> u32;
     pub fn mmGetCurrentTask() -> u32;
     pub fn mmTaskBlock(h: u32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mmTaskCreate(lpfn: LPTASKCALLBACK, lph: *mut super::super::Foundation::HANDLE, dwinst: usize) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mmTaskSignal(h: u32) -> super::super::Foundation::BOOL;
+    pub fn mmTaskCreate(lpfn: LPTASKCALLBACK, lph: *mut ::win32_foundation_sys::HANDLE, dwinst: usize) -> u32;
+    pub fn mmTaskSignal(h: u32) -> ::win32_foundation_sys::BOOL;
     pub fn mmTaskYield();
-    #[cfg(feature = "Win32_Foundation")]
     pub fn mmioAdvance(hmmio: HMMIO, pmmioinfo: *const MMIOINFO, fuadvance: u32) -> u32;
     pub fn mmioAscend(hmmio: HMMIO, pmmcki: *const MMCKINFO, fuascend: u32) -> u32;
     pub fn mmioClose(hmmio: HMMIO, fuclose: u32) -> u32;
     pub fn mmioCreateChunk(hmmio: HMMIO, pmmcki: *const MMCKINFO, fucreate: u32) -> u32;
     pub fn mmioDescend(hmmio: HMMIO, pmmcki: *mut MMCKINFO, pmmckiparent: *const MMCKINFO, fudescend: u32) -> u32;
     pub fn mmioFlush(hmmio: HMMIO, fuflush: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn mmioGetInfo(hmmio: HMMIO, pmmioinfo: *mut MMIOINFO, fuinfo: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn mmioInstallIOProcA(fccioproc: u32, pioproc: LPMMIOPROC, dwflags: u32) -> LPMMIOPROC;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn mmioInstallIOProcW(fccioproc: u32, pioproc: LPMMIOPROC, dwflags: u32) -> LPMMIOPROC;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn mmioOpenA(pszfilename: ::windows_core_sys::PSTR, pmmioinfo: *mut MMIOINFO, fdwopen: u32) -> HMMIO;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn mmioOpenW(pszfilename: ::windows_core_sys::PWSTR, pmmioinfo: *mut MMIOINFO, fdwopen: u32) -> HMMIO;
     pub fn mmioRead(hmmio: HMMIO, pch: *mut i8, cch: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn mmioRenameA(pszfilename: ::windows_core_sys::PCSTR, psznewfilename: ::windows_core_sys::PCSTR, pmmioinfo: *const MMIOINFO, fdwrename: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn mmioRenameW(pszfilename: ::windows_core_sys::PCWSTR, psznewfilename: ::windows_core_sys::PCWSTR, pmmioinfo: *const MMIOINFO, fdwrename: u32) -> u32;
     pub fn mmioSeek(hmmio: HMMIO, loffset: i32, iorigin: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn mmioSendMessage(hmmio: HMMIO, umsg: u32, lparam1: super::super::Foundation::LPARAM, lparam2: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
+    pub fn mmioSendMessage(hmmio: HMMIO, umsg: u32, lparam1: ::win32_foundation_sys::LPARAM, lparam2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT;
     pub fn mmioSetBuffer(hmmio: HMMIO, pchbuffer: ::windows_core_sys::PSTR, cchbuffer: i32, fubuffer: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn mmioSetInfo(hmmio: HMMIO, pmmioinfo: *const MMIOINFO, fuinfo: u32) -> u32;
     pub fn mmioStringToFOURCCA(sz: ::windows_core_sys::PCSTR, uflags: u32) -> u32;
     pub fn mmioStringToFOURCCW(sz: ::windows_core_sys::PCWSTR, uflags: u32) -> u32;
     pub fn mmioWrite(hmmio: HMMIO, pch: ::windows_core_sys::PCSTR, cch: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn sndOpenSound(eventname: ::windows_core_sys::PCWSTR, appname: ::windows_core_sys::PCWSTR, flags: i32, filehandle: *mut super::super::Foundation::HANDLE) -> i32;
+    pub fn sndOpenSound(eventname: ::windows_core_sys::PCWSTR, appname: ::windows_core_sys::PCWSTR, flags: i32, filehandle: *mut ::win32_foundation_sys::HANDLE) -> i32;
 }
 pub const ACMDM_BASE: u32 = 24576u32;
 pub const ACM_MPEG_COPYRIGHT: u32 = 2u32;
@@ -393,7 +328,6 @@ pub const AVIFILEHANDLER_CANACCEPTNONRGB: u32 = 4u32;
 pub const AVIFILEHANDLER_CANREAD: u32 = 1u32;
 pub const AVIFILEHANDLER_CANWRITE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AVIFILEINFOA {
     pub dwMaxBytesPerSec: u32,
     pub dwFlags: u32,
@@ -406,11 +340,9 @@ pub struct AVIFILEINFOA {
     pub dwRate: u32,
     pub dwLength: u32,
     pub dwEditCount: u32,
-    pub szFileType: [super::super::Foundation::CHAR; 64],
+    pub szFileType: [::win32_foundation_sys::CHAR; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AVIFILEINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AVIFILEINFOA {
     fn clone(&self) -> Self {
         *self
@@ -445,10 +377,8 @@ pub const AVIFILEINFO_WASCAPTUREFILE: u32 = 65536u32;
 pub const AVIGETFRAMEF_BESTDISPLAYFMT: u32 = 1u32;
 pub const AVIIF_CONTROLFRAME: i32 = 512i32;
 pub const AVIIF_TWOCC: i32 = 2i32;
-#[cfg(feature = "Win32_Foundation")]
-pub type AVISAVECALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: i32) -> super::super::Foundation::BOOL>;
+pub type AVISAVECALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: i32) -> ::win32_foundation_sys::BOOL>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AVISTREAMINFOA {
     pub fccType: u32,
     pub fccHandler: u32,
@@ -464,21 +394,18 @@ pub struct AVISTREAMINFOA {
     pub dwSuggestedBufferSize: u32,
     pub dwQuality: u32,
     pub dwSampleSize: u32,
-    pub rcFrame: super::super::Foundation::RECT,
+    pub rcFrame: ::win32_foundation_sys::RECT,
     pub dwEditCount: u32,
     pub dwFormatChangeCount: u32,
-    pub szName: [super::super::Foundation::CHAR; 64],
+    pub szName: [::win32_foundation_sys::CHAR; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AVISTREAMINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AVISTREAMINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AVISTREAMINFOW {
     pub fccType: u32,
     pub fccHandler: u32,
@@ -494,14 +421,12 @@ pub struct AVISTREAMINFOW {
     pub dwSuggestedBufferSize: u32,
     pub dwQuality: u32,
     pub dwSampleSize: u32,
-    pub rcFrame: super::super::Foundation::RECT,
+    pub rcFrame: ::win32_foundation_sys::RECT,
     pub dwEditCount: u32,
     pub dwFormatChangeCount: u32,
     pub szName: [u16; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AVISTREAMINFOW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AVISTREAMINFOW {
     fn clone(&self) -> Self {
         *self
@@ -513,35 +438,29 @@ pub const AVISTREAMREAD_CONVENIENT: i32 = -1i32;
 pub const AVSTREAMMASTER_AUDIO: u32 = 0u32;
 pub const AVSTREAMMASTER_NONE: u32 = 1u32;
 pub const BI_1632: u32 = 842217009u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type CAPCONTROLCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, nstate: i32) -> super::super::Foundation::LRESULT>;
+pub type CAPCONTROLCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, nstate: i32) -> ::win32_foundation_sys::LRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CAPDRIVERCAPS {
     pub wDeviceIndex: u32,
-    pub fHasOverlay: super::super::Foundation::BOOL,
-    pub fHasDlgVideoSource: super::super::Foundation::BOOL,
-    pub fHasDlgVideoFormat: super::super::Foundation::BOOL,
-    pub fHasDlgVideoDisplay: super::super::Foundation::BOOL,
-    pub fCaptureInitialized: super::super::Foundation::BOOL,
-    pub fDriverSuppliesPalettes: super::super::Foundation::BOOL,
-    pub hVideoIn: super::super::Foundation::HANDLE,
-    pub hVideoOut: super::super::Foundation::HANDLE,
-    pub hVideoExtIn: super::super::Foundation::HANDLE,
-    pub hVideoExtOut: super::super::Foundation::HANDLE,
+    pub fHasOverlay: ::win32_foundation_sys::BOOL,
+    pub fHasDlgVideoSource: ::win32_foundation_sys::BOOL,
+    pub fHasDlgVideoFormat: ::win32_foundation_sys::BOOL,
+    pub fHasDlgVideoDisplay: ::win32_foundation_sys::BOOL,
+    pub fCaptureInitialized: ::win32_foundation_sys::BOOL,
+    pub fDriverSuppliesPalettes: ::win32_foundation_sys::BOOL,
+    pub hVideoIn: ::win32_foundation_sys::HANDLE,
+    pub hVideoOut: ::win32_foundation_sys::HANDLE,
+    pub hVideoExtIn: ::win32_foundation_sys::HANDLE,
+    pub hVideoExtOut: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CAPDRIVERCAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CAPDRIVERCAPS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type CAPERRORCALLBACKA = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, nid: i32, lpsz: ::windows_core_sys::PCSTR) -> super::super::Foundation::LRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type CAPERRORCALLBACKW = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, nid: i32, lpsz: ::windows_core_sys::PCWSTR) -> super::super::Foundation::LRESULT>;
+pub type CAPERRORCALLBACKA = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, nid: i32, lpsz: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::LRESULT>;
+pub type CAPERRORCALLBACKW = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, nid: i32, lpsz: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::LRESULT>;
 #[repr(C)]
 pub struct CAPINFOCHUNK {
     pub fccInfoID: u32,
@@ -555,81 +474,74 @@ impl ::core::clone::Clone for CAPINFOCHUNK {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct CAPSTATUS {
     pub uiImageWidth: u32,
     pub uiImageHeight: u32,
-    pub fLiveWindow: super::super::Foundation::BOOL,
-    pub fOverlayWindow: super::super::Foundation::BOOL,
-    pub fScale: super::super::Foundation::BOOL,
-    pub ptScroll: super::super::Foundation::POINT,
-    pub fUsingDefaultPalette: super::super::Foundation::BOOL,
-    pub fAudioHardware: super::super::Foundation::BOOL,
-    pub fCapFileExists: super::super::Foundation::BOOL,
+    pub fLiveWindow: ::win32_foundation_sys::BOOL,
+    pub fOverlayWindow: ::win32_foundation_sys::BOOL,
+    pub fScale: ::win32_foundation_sys::BOOL,
+    pub ptScroll: ::win32_foundation_sys::POINT,
+    pub fUsingDefaultPalette: ::win32_foundation_sys::BOOL,
+    pub fAudioHardware: ::win32_foundation_sys::BOOL,
+    pub fCapFileExists: ::win32_foundation_sys::BOOL,
     pub dwCurrentVideoFrame: u32,
     pub dwCurrentVideoFramesDropped: u32,
     pub dwCurrentWaveSamples: u32,
     pub dwCurrentTimeElapsedMS: u32,
-    pub hPalCurrent: super::super::Graphics::Gdi::HPALETTE,
-    pub fCapturingNow: super::super::Foundation::BOOL,
+    pub hPalCurrent: ::win32_graphics_sys::Gdi::HPALETTE,
+    pub fCapturingNow: ::win32_foundation_sys::BOOL,
     pub dwReturn: u32,
     pub wNumVideoAllocated: u32,
     pub wNumAudioAllocated: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for CAPSTATUS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for CAPSTATUS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type CAPSTATUSCALLBACKA = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, nid: i32, lpsz: ::windows_core_sys::PCSTR) -> super::super::Foundation::LRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type CAPSTATUSCALLBACKW = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, nid: i32, lpsz: ::windows_core_sys::PCWSTR) -> super::super::Foundation::LRESULT>;
+pub type CAPSTATUSCALLBACKA = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, nid: i32, lpsz: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::LRESULT>;
+pub type CAPSTATUSCALLBACKW = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, nid: i32, lpsz: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::LRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CAPTUREPARMS {
     pub dwRequestMicroSecPerFrame: u32,
-    pub fMakeUserHitOKToCapture: super::super::Foundation::BOOL,
+    pub fMakeUserHitOKToCapture: ::win32_foundation_sys::BOOL,
     pub wPercentDropForError: u32,
-    pub fYield: super::super::Foundation::BOOL,
+    pub fYield: ::win32_foundation_sys::BOOL,
     pub dwIndexSize: u32,
     pub wChunkGranularity: u32,
-    pub fUsingDOSMemory: super::super::Foundation::BOOL,
+    pub fUsingDOSMemory: ::win32_foundation_sys::BOOL,
     pub wNumVideoRequested: u32,
-    pub fCaptureAudio: super::super::Foundation::BOOL,
+    pub fCaptureAudio: ::win32_foundation_sys::BOOL,
     pub wNumAudioRequested: u32,
     pub vKeyAbort: u32,
-    pub fAbortLeftMouse: super::super::Foundation::BOOL,
-    pub fAbortRightMouse: super::super::Foundation::BOOL,
-    pub fLimitEnabled: super::super::Foundation::BOOL,
+    pub fAbortLeftMouse: ::win32_foundation_sys::BOOL,
+    pub fAbortRightMouse: ::win32_foundation_sys::BOOL,
+    pub fLimitEnabled: ::win32_foundation_sys::BOOL,
     pub wTimeLimit: u32,
-    pub fMCIControl: super::super::Foundation::BOOL,
-    pub fStepMCIDevice: super::super::Foundation::BOOL,
+    pub fMCIControl: ::win32_foundation_sys::BOOL,
+    pub fStepMCIDevice: ::win32_foundation_sys::BOOL,
     pub dwMCIStartTime: u32,
     pub dwMCIStopTime: u32,
-    pub fStepCaptureAt2x: super::super::Foundation::BOOL,
+    pub fStepCaptureAt2x: ::win32_foundation_sys::BOOL,
     pub wStepCaptureAverageFrames: u32,
     pub dwAudioBufferSize: u32,
-    pub fDisableWriteCache: super::super::Foundation::BOOL,
+    pub fDisableWriteCache: ::win32_foundation_sys::BOOL,
     pub AVStreamMaster: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CAPTUREPARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CAPTUREPARMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type CAPVIDEOCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, lpvhdr: *const VIDEOHDR) -> super::super::Foundation::LRESULT>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Media_Audio"))]
-pub type CAPWAVECALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, lpwhdr: *const super::Audio::WAVEHDR) -> super::super::Foundation::LRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type CAPYIELDCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::LRESULT>;
+pub type CAPVIDEOCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, lpvhdr: *const VIDEOHDR) -> ::win32_foundation_sys::LRESULT>;
+#[cfg(feature = "Win32_Media_Audio")]
+pub type CAPWAVECALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND, lpwhdr: *const super::Audio::WAVEHDR) -> ::win32_foundation_sys::LRESULT>;
+pub type CAPYIELDCALLBACK = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::LRESULT>;
 #[repr(C)]
 pub struct CHANNEL_CAPS {
     pub dwFlags: u32,
@@ -658,8 +570,8 @@ pub struct COMPVARS {
     pub hic: HIC,
     pub fccType: u32,
     pub fccHandler: u32,
-    pub lpbiIn: *mut super::super::Graphics::Gdi::BITMAPINFO,
-    pub lpbiOut: *mut super::super::Graphics::Gdi::BITMAPINFO,
+    pub lpbiIn: *mut ::win32_graphics_sys::Gdi::BITMAPINFO,
+    pub lpbiOut: *mut ::win32_graphics_sys::Gdi::BITMAPINFO,
     pub lpBitsOut: *mut ::core::ffi::c_void,
     pub lpBitsPrev: *mut ::core::ffi::c_void,
     pub lFrame: i32,
@@ -888,8 +800,7 @@ impl ::core::clone::Clone for DRAWDIBTIME {
     }
 }
 pub type DRIVERMSGPROC = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: usize, param3: usize, param4: usize) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type DRIVERPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: HDRVR, param2: u32, param3: super::super::Foundation::LPARAM, param4: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT>;
+pub type DRIVERPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: HDRVR, param2: u32, param3: ::win32_foundation_sys::LPARAM, param4: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT>;
 pub const DRIVERS_SECTION: &str = "DRIVERS32";
 #[repr(C, packed(1))]
 #[cfg(feature = "Win32_Media_Audio")]
@@ -1066,7 +977,7 @@ impl ::core::clone::Clone for ECHOSC1WAVEFORMAT {
 #[repr(C, packed(1))]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct EXBMINFOHEADER {
-    pub bmi: super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub bmi: ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub biExtDataOffset: u32,
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -1163,16 +1074,16 @@ pub type IAVIStreaming = *mut ::core::ffi::c_void;
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct ICCOMPRESS {
     pub dwFlags: u32,
-    pub lpbiOutput: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub lpbiOutput: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub lpOutput: *mut ::core::ffi::c_void,
-    pub lpbiInput: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub lpbiInput: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub lpInput: *mut ::core::ffi::c_void,
     pub lpckid: *mut u32,
     pub lpdwFlags: *mut u32,
     pub lFrameNum: i32,
     pub dwFrameSize: u32,
     pub dwQuality: u32,
-    pub lpbiPrev: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub lpbiPrev: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub lpPrev: *mut ::core::ffi::c_void,
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -1184,13 +1095,13 @@ impl ::core::clone::Clone for ICCOMPRESS {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct ICCOMPRESSFRAMES {
     pub dwFlags: u32,
-    pub lpbiOutput: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
-    pub lOutput: super::super::Foundation::LPARAM,
-    pub lpbiInput: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
-    pub lInput: super::super::Foundation::LPARAM,
+    pub lpbiOutput: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
+    pub lOutput: ::win32_foundation_sys::LPARAM,
+    pub lpbiInput: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
+    pub lInput: ::win32_foundation_sys::LPARAM,
     pub lStartFrame: i32,
     pub lFrameCount: i32,
     pub lQuality: i32,
@@ -1203,9 +1114,9 @@ pub struct ICCOMPRESSFRAMES {
     pub GetData: isize,
     pub PutData: isize,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for ICCOMPRESSFRAMES {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for ICCOMPRESSFRAMES {
     fn clone(&self) -> Self {
         *self
@@ -1217,9 +1128,9 @@ pub const ICCOMPRESS_KEYFRAME: i32 = 1i32;
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct ICDECOMPRESS {
     pub dwFlags: u32,
-    pub lpbiInput: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub lpbiInput: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub lpInput: *mut ::core::ffi::c_void,
-    pub lpbiOutput: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub lpbiOutput: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub lpOutput: *mut ::core::ffi::c_void,
     pub ckid: u32,
 }
@@ -1235,9 +1146,9 @@ impl ::core::clone::Clone for ICDECOMPRESS {
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct ICDECOMPRESSEX {
     pub dwFlags: u32,
-    pub lpbiSrc: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub lpbiSrc: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub lpSrc: *mut ::core::ffi::c_void,
-    pub lpbiDst: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub lpbiDst: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub lpDst: *mut ::core::ffi::c_void,
     pub xDst: i32,
     pub yDst: i32,
@@ -1276,17 +1187,17 @@ impl ::core::clone::Clone for ICDRAW {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct ICDRAWBEGIN {
     pub dwFlags: u32,
-    pub hpal: super::super::Graphics::Gdi::HPALETTE,
-    pub hwnd: super::super::Foundation::HWND,
-    pub hdc: super::super::Graphics::Gdi::HDC,
+    pub hpal: ::win32_graphics_sys::Gdi::HPALETTE,
+    pub hwnd: ::win32_foundation_sys::HWND,
+    pub hdc: ::win32_graphics_sys::Gdi::HDC,
     pub xDst: i32,
     pub yDst: i32,
     pub dxDst: i32,
     pub dyDst: i32,
-    pub lpbi: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub lpbi: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub xSrc: i32,
     pub ySrc: i32,
     pub dxSrc: i32,
@@ -1294,9 +1205,9 @@ pub struct ICDRAWBEGIN {
     pub dwRate: u32,
     pub dwScale: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for ICDRAWBEGIN {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for ICDRAWBEGIN {
     fn clone(&self) -> Self {
         *self
@@ -1305,8 +1216,8 @@ impl ::core::clone::Clone for ICDRAWBEGIN {
 #[repr(C)]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct ICDRAWSUGGEST {
-    pub lpbiIn: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
-    pub lpbiSuggest: *mut super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub lpbiIn: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
+    pub lpbiSuggest: *mut ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
     pub dxSrc: i32,
     pub dySrc: i32,
     pub dxDst: i32,
@@ -1452,21 +1363,18 @@ pub const ICM_SETSTATE: u32 = 20481u32;
 pub const ICM_SET_STATUS_PROC: u32 = 16456u32;
 pub const ICM_USER: u32 = 16384u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ICOPEN {
     pub dwSize: u32,
     pub fccType: u32,
     pub fccHandler: u32,
     pub dwVersion: u32,
     pub dwFlags: u32,
-    pub dwError: super::super::Foundation::LRESULT,
+    pub dwError: ::win32_foundation_sys::LRESULT,
     pub pV1Reserved: *mut ::core::ffi::c_void,
     pub pV2Reserved: *mut ::core::ffi::c_void,
     pub dnDevNode: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ICOPEN {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ICOPEN {
     fn clone(&self) -> Self {
         *self
@@ -1478,7 +1386,7 @@ pub struct ICPALETTE {
     pub dwFlags: u32,
     pub iStart: i32,
     pub iLen: i32,
-    pub lppe: *mut super::super::Graphics::Gdi::PALETTEENTRY,
+    pub lppe: *mut ::win32_graphics_sys::Gdi::PALETTEENTRY,
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for ICPALETTE {}
@@ -1492,15 +1400,12 @@ pub const ICQUALITY_DEFAULT: i32 = -1i32;
 pub const ICQUALITY_HIGH: u32 = 10000u32;
 pub const ICQUALITY_LOW: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ICSETSTATUSPROC {
     pub dwFlags: u32,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub Status: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ICSETSTATUSPROC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ICSETSTATUSPROC {
     fn clone(&self) -> Self {
         *self
@@ -1663,11 +1568,10 @@ pub const JIFMK_SOI: u32 = 65496u32;
 pub const JIFMK_SOS: u32 = 65498u32;
 pub const JIFMK_TEM: u32 = 65281u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JOYCAPS2A {
     pub wMid: u16,
     pub wPid: u16,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation_sys::CHAR; 32],
     pub wXmin: u32,
     pub wXmax: u32,
     pub wYmin: u32,
@@ -1687,15 +1591,13 @@ pub struct JOYCAPS2A {
     pub wMaxAxes: u32,
     pub wNumAxes: u32,
     pub wMaxButtons: u32,
-    pub szRegKey: [super::super::Foundation::CHAR; 32],
-    pub szOEMVxD: [super::super::Foundation::CHAR; 260],
+    pub szRegKey: [::win32_foundation_sys::CHAR; 32],
+    pub szOEMVxD: [::win32_foundation_sys::CHAR; 260],
     pub ManufacturerGuid: ::windows_core_sys::GUID,
     pub ProductGuid: ::windows_core_sys::GUID,
     pub NameGuid: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JOYCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JOYCAPS2A {
     fn clone(&self) -> Self {
         *self
@@ -1738,11 +1640,10 @@ impl ::core::clone::Clone for JOYCAPS2W {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JOYCAPSA {
     pub wMid: u16,
     pub wPid: u16,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation_sys::CHAR; 32],
     pub wXmin: u32,
     pub wXmax: u32,
     pub wYmin: u32,
@@ -1762,12 +1663,10 @@ pub struct JOYCAPSA {
     pub wMaxAxes: u32,
     pub wNumAxes: u32,
     pub wMaxButtons: u32,
-    pub szRegKey: [super::super::Foundation::CHAR; 32],
-    pub szOEMVxD: [super::super::Foundation::CHAR; 260],
+    pub szRegKey: [::win32_foundation_sys::CHAR; 32],
+    pub szOEMVxD: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JOYCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JOYCAPSA {
     fn clone(&self) -> Self {
         *self
@@ -1939,10 +1838,9 @@ pub const JPEG_RGB: u32 = 3u32;
 pub const JPEG_Y: u32 = 1u32;
 pub const JPEG_YCbCr: u32 = 2u32;
 pub const KSDATAFORMAT_SUBTYPE_IEEE_FLOAT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3, data2: 0, data3: 16, data4: [128, 0, 0, 170, 0, 56, 155, 113] };
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-pub type LPFNEXTDEVIO = ::core::option::Option<unsafe extern "system" fn(lparam: super::super::Foundation::LPARAM, dwflags: u32, dwiocontrolcode: u32, lpinbuffer: *mut ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesreturned: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPMMIOPROC = ::core::option::Option<unsafe extern "system" fn(lpmmioinfo: ::windows_core_sys::PCSTR, umsg: u32, lparam1: super::super::Foundation::LPARAM, lparam2: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT>;
+#[cfg(feature = "Win32_System_IO")]
+pub type LPFNEXTDEVIO = ::core::option::Option<unsafe extern "system" fn(lparam: ::win32_foundation_sys::LPARAM, dwflags: u32, dwiocontrolcode: u32, lpinbuffer: *mut ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesreturned: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL>;
+pub type LPMMIOPROC = ::core::option::Option<unsafe extern "system" fn(lpmmioinfo: ::windows_core_sys::PCSTR, umsg: u32, lparam1: ::win32_foundation_sys::LPARAM, lparam2: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::LRESULT>;
 pub type LPTASKCALLBACK = ::core::option::Option<unsafe extern "system" fn(dwinst: usize)>;
 pub const MCIERR_AVI_AUDIOERROR: u32 = 619u32;
 pub const MCIERR_AVI_BADPALETTE: u32 = 620u32;
@@ -2149,7 +2047,6 @@ pub const MCI_ANIM_INFO_TEXT: i32 = 65536i32;
 pub const MCI_ANIM_OPEN_NOSTATIC: i32 = 262144i32;
 pub const MCI_ANIM_OPEN_PARENT: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_ANIM_OPEN_PARMSA {
     pub dwCallback: usize,
     pub wDeviceID: u32,
@@ -2157,18 +2054,15 @@ pub struct MCI_ANIM_OPEN_PARMSA {
     pub lpstrElementName: ::windows_core_sys::PCSTR,
     pub lpstrAlias: ::windows_core_sys::PCSTR,
     pub dwStyle: u32,
-    pub hWndParent: super::super::Foundation::HWND,
+    pub hWndParent: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_ANIM_OPEN_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_ANIM_OPEN_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_ANIM_OPEN_PARMSW {
     pub dwCallback: usize,
     pub wDeviceID: u32,
@@ -2176,11 +2070,9 @@ pub struct MCI_ANIM_OPEN_PARMSW {
     pub lpstrElementName: ::windows_core_sys::PCWSTR,
     pub lpstrAlias: ::windows_core_sys::PCWSTR,
     pub dwStyle: u32,
-    pub hWndParent: super::super::Foundation::HWND,
+    pub hWndParent: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_ANIM_OPEN_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_ANIM_OPEN_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -2211,14 +2103,11 @@ pub const MCI_ANIM_REALIZE_BKGD: i32 = 131072i32;
 pub const MCI_ANIM_REALIZE_NORM: i32 = 65536i32;
 pub const MCI_ANIM_RECT: i32 = 65536i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_ANIM_RECT_PARMS {
     pub dwCallback: usize,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_ANIM_RECT_PARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_ANIM_RECT_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2244,15 +2133,15 @@ impl ::core::clone::Clone for MCI_ANIM_STEP_PARMS {
 pub const MCI_ANIM_STEP_REVERSE: i32 = 65536i32;
 pub const MCI_ANIM_UPDATE_HDC: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct MCI_ANIM_UPDATE_PARMS {
     pub dwCallback: usize,
-    pub rc: super::super::Foundation::RECT,
-    pub hDC: super::super::Graphics::Gdi::HDC,
+    pub rc: ::win32_foundation_sys::RECT,
+    pub hDC: ::win32_graphics_sys::Gdi::HDC,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for MCI_ANIM_UPDATE_PARMS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for MCI_ANIM_UPDATE_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2265,32 +2154,26 @@ pub const MCI_ANIM_WINDOW_DISABLE_STRETCH: i32 = 2097152i32;
 pub const MCI_ANIM_WINDOW_ENABLE_STRETCH: i32 = 1048576i32;
 pub const MCI_ANIM_WINDOW_HWND: i32 = 65536i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_ANIM_WINDOW_PARMSA {
     pub dwCallback: usize,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub nCmdShow: u32,
     pub lpstrText: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_ANIM_WINDOW_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_ANIM_WINDOW_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_ANIM_WINDOW_PARMSW {
     pub dwCallback: usize,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub nCmdShow: u32,
     pub lpstrText: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_ANIM_WINDOW_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_ANIM_WINDOW_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -2309,15 +2192,12 @@ pub const MCI_BREAK_HWND: i32 = 512i32;
 pub const MCI_BREAK_KEY: i32 = 256i32;
 pub const MCI_BREAK_OFF: i32 = 1024i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_BREAK_PARMS {
     pub dwCallback: usize,
     pub nVirtKey: i32,
-    pub hwndBreak: super::super::Foundation::HWND,
+    pub hwndBreak: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_BREAK_PARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_BREAK_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2355,30 +2235,24 @@ pub const MCI_DEVTYPE_WAVEFORM_AUDIO: u32 = 522u32;
 pub const MCI_DGV_CAPTURE_AS: i32 = 65536i32;
 pub const MCI_DGV_CAPTURE_AT: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_CAPTURE_PARMSA {
     pub dwCallback: usize,
     pub lpstrFileName: ::windows_core_sys::PSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_CAPTURE_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_CAPTURE_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_CAPTURE_PARMSW {
     pub dwCallback: usize,
     pub lpstrFileName: ::windows_core_sys::PWSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_CAPTURE_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_CAPTURE_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -2387,18 +2261,15 @@ impl ::core::clone::Clone for MCI_DGV_CAPTURE_PARMSW {
 pub const MCI_DGV_COPY_AT: i32 = 65536i32;
 pub const MCI_DGV_COPY_AUDIO_STREAM: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_COPY_PARMS {
     pub dwCallback: usize,
     pub dwFrom: u32,
     pub dwTo: u32,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
     pub dwAudioStream: u32,
     pub dwVideoStream: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_COPY_PARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_COPY_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2422,18 +2293,15 @@ impl ::core::clone::Clone for MCI_DGV_CUE_PARMS {
 pub const MCI_DGV_CUT_AT: i32 = 65536i32;
 pub const MCI_DGV_CUT_AUDIO_STREAM: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_CUT_PARMS {
     pub dwCallback: usize,
     pub dwFrom: u32,
     pub dwTo: u32,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
     pub dwAudioStream: u32,
     pub dwVideoStream: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_CUT_PARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_CUT_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2443,18 +2311,15 @@ pub const MCI_DGV_CUT_VIDEO_STREAM: i32 = 262144i32;
 pub const MCI_DGV_DELETE_AT: i32 = 65536i32;
 pub const MCI_DGV_DELETE_AUDIO_STREAM: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_DELETE_PARMS {
     pub dwCallback: usize,
     pub dwFrom: u32,
     pub dwTo: u32,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
     pub dwAudioStream: u32,
     pub dwVideoStream: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_DELETE_PARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_DELETE_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2594,7 +2459,6 @@ pub const MCI_DGV_OPEN_32BIT: i32 = 1048576i32;
 pub const MCI_DGV_OPEN_NOSTATIC: i32 = 262144i32;
 pub const MCI_DGV_OPEN_PARENT: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_OPEN_PARMSA {
     pub dwCallback: usize,
     pub wDeviceID: u32,
@@ -2602,18 +2466,15 @@ pub struct MCI_DGV_OPEN_PARMSA {
     pub lpstrElementName: ::windows_core_sys::PSTR,
     pub lpstrAlias: ::windows_core_sys::PSTR,
     pub dwStyle: u32,
-    pub hWndParent: super::super::Foundation::HWND,
+    pub hWndParent: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_OPEN_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_OPEN_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_OPEN_PARMSW {
     pub dwCallback: usize,
     pub wDeviceID: u32,
@@ -2621,11 +2482,9 @@ pub struct MCI_DGV_OPEN_PARMSW {
     pub lpstrElementName: ::windows_core_sys::PWSTR,
     pub lpstrAlias: ::windows_core_sys::PWSTR,
     pub dwStyle: u32,
-    pub hWndParent: super::super::Foundation::HWND,
+    pub hWndParent: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_OPEN_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_OPEN_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -2637,17 +2496,14 @@ pub const MCI_DGV_PASTE_AUDIO_STREAM: i32 = 131072i32;
 pub const MCI_DGV_PASTE_INSERT: i32 = 524288i32;
 pub const MCI_DGV_PASTE_OVERWRITE: i32 = 1048576i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_PASTE_PARMS {
     pub dwCallback: usize,
     pub dwTo: u32,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
     pub dwAudioStream: u32,
     pub dwVideoStream: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_PASTE_PARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_PASTE_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2695,18 +2551,15 @@ pub const MCI_DGV_REALIZE_NORM: i32 = 65536i32;
 pub const MCI_DGV_RECORD_AUDIO_STREAM: i32 = 262144i32;
 pub const MCI_DGV_RECORD_HOLD: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_RECORD_PARMS {
     pub dwCallback: usize,
     pub dwFrom: u32,
     pub dwTo: u32,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
     pub dwAudioStream: u32,
     pub dwVideoStream: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_RECORD_PARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_RECORD_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2715,14 +2568,11 @@ impl ::core::clone::Clone for MCI_DGV_RECORD_PARMS {
 pub const MCI_DGV_RECORD_VIDEO_STREAM: i32 = 524288i32;
 pub const MCI_DGV_RECT: i32 = 65536i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_RECT_PARMS {
     pub dwCallback: usize,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_RECT_PARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_RECT_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -2757,30 +2607,24 @@ pub const MCI_DGV_RESERVE_SIZE: i32 = 131072i32;
 pub const MCI_DGV_RESTORE_AT: i32 = 131072i32;
 pub const MCI_DGV_RESTORE_FROM: i32 = 65536i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_RESTORE_PARMSA {
     pub dwCallback: usize,
     pub lpstrFileName: ::windows_core_sys::PSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_RESTORE_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_RESTORE_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_RESTORE_PARMSW {
     pub dwCallback: usize,
     pub lpstrFileName: ::windows_core_sys::PWSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_RESTORE_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_RESTORE_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -2789,30 +2633,24 @@ impl ::core::clone::Clone for MCI_DGV_RESTORE_PARMSW {
 pub const MCI_DGV_SAVE_ABORT: i32 = 131072i32;
 pub const MCI_DGV_SAVE_KEEPRESERVE: i32 = 262144i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_SAVE_PARMSA {
     pub dwCallback: usize,
     pub lpstrFileName: ::windows_core_sys::PSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_SAVE_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_SAVE_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_SAVE_PARMSW {
     pub dwCallback: usize,
     pub lpstrFileName: ::windows_core_sys::PWSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_SAVE_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_SAVE_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -3080,15 +2918,15 @@ pub const MCI_DGV_STOP_HOLD: i32 = 65536i32;
 pub const MCI_DGV_UPDATE_HDC: i32 = 131072i32;
 pub const MCI_DGV_UPDATE_PAINT: i32 = 262144i32;
 #[repr(C, packed(1))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct MCI_DGV_UPDATE_PARMS {
     pub dwCallback: usize,
-    pub rc: super::super::Foundation::RECT,
-    pub hDC: super::super::Graphics::Gdi::HDC,
+    pub rc: ::win32_foundation_sys::RECT,
+    pub hDC: ::win32_graphics_sys::Gdi::HDC,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for MCI_DGV_UPDATE_PARMS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for MCI_DGV_UPDATE_PARMS {
     fn clone(&self) -> Self {
         *self
@@ -3103,32 +2941,26 @@ pub const MCI_DGV_WHERE_WINDOW: i32 = 2097152i32;
 pub const MCI_DGV_WINDOW_DEFAULT: i32 = 0i32;
 pub const MCI_DGV_WINDOW_HWND: i32 = 65536i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_WINDOW_PARMSA {
     pub dwCallback: usize,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub nCmdShow: u32,
     pub lpstrText: ::windows_core_sys::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_WINDOW_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_WINDOW_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_DGV_WINDOW_PARMSW {
     pub dwCallback: usize,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub nCmdShow: u32,
     pub lpstrText: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_DGV_WINDOW_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_DGV_WINDOW_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -3339,30 +3171,24 @@ pub const MCI_OVLY_GETDEVCAPS_CAN_STRETCH: i32 = 16385i32;
 pub const MCI_OVLY_GETDEVCAPS_MAX_WINDOWS: i32 = 16387i32;
 pub const MCI_OVLY_INFO_TEXT: i32 = 65536i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_OVLY_LOAD_PARMSA {
     pub dwCallback: usize,
     pub lpfilename: ::windows_core_sys::PCSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_OVLY_LOAD_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_OVLY_LOAD_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_OVLY_LOAD_PARMSW {
     pub dwCallback: usize,
     pub lpfilename: ::windows_core_sys::PCWSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_OVLY_LOAD_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_OVLY_LOAD_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -3370,7 +3196,6 @@ impl ::core::clone::Clone for MCI_OVLY_LOAD_PARMSW {
 }
 pub const MCI_OVLY_OPEN_PARENT: i32 = 131072i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_OVLY_OPEN_PARMSA {
     pub dwCallback: usize,
     pub wDeviceID: u32,
@@ -3378,18 +3203,15 @@ pub struct MCI_OVLY_OPEN_PARMSA {
     pub lpstrElementName: ::windows_core_sys::PCSTR,
     pub lpstrAlias: ::windows_core_sys::PCSTR,
     pub dwStyle: u32,
-    pub hWndParent: super::super::Foundation::HWND,
+    pub hWndParent: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_OVLY_OPEN_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_OVLY_OPEN_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_OVLY_OPEN_PARMSW {
     pub dwCallback: usize,
     pub wDeviceID: u32,
@@ -3397,11 +3219,9 @@ pub struct MCI_OVLY_OPEN_PARMSW {
     pub lpstrElementName: ::windows_core_sys::PCWSTR,
     pub lpstrAlias: ::windows_core_sys::PCWSTR,
     pub dwStyle: u32,
-    pub hWndParent: super::super::Foundation::HWND,
+    pub hWndParent: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_OVLY_OPEN_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_OVLY_OPEN_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -3414,44 +3234,35 @@ pub const MCI_OVLY_PUT_SOURCE: i32 = 131072i32;
 pub const MCI_OVLY_PUT_VIDEO: i32 = 1048576i32;
 pub const MCI_OVLY_RECT: i32 = 65536i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_OVLY_RECT_PARMS {
     pub dwCallback: usize,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_OVLY_RECT_PARMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_OVLY_RECT_PARMS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_OVLY_SAVE_PARMSA {
     pub dwCallback: usize,
     pub lpfilename: ::windows_core_sys::PCSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_OVLY_SAVE_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_OVLY_SAVE_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_OVLY_SAVE_PARMSW {
     pub dwCallback: usize,
     pub lpfilename: ::windows_core_sys::PCWSTR,
-    pub rc: super::super::Foundation::RECT,
+    pub rc: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_OVLY_SAVE_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_OVLY_SAVE_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -3468,32 +3279,26 @@ pub const MCI_OVLY_WINDOW_DISABLE_STRETCH: i32 = 2097152i32;
 pub const MCI_OVLY_WINDOW_ENABLE_STRETCH: i32 = 1048576i32;
 pub const MCI_OVLY_WINDOW_HWND: i32 = 65536i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_OVLY_WINDOW_PARMSA {
     pub dwCallback: usize,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub nCmdShow: u32,
     pub lpstrText: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_OVLY_WINDOW_PARMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_OVLY_WINDOW_PARMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCI_OVLY_WINDOW_PARMSW {
     pub dwCallback: usize,
-    pub hWnd: super::super::Foundation::HWND,
+    pub hWnd: ::win32_foundation_sys::HWND,
     pub nCmdShow: u32,
     pub lpstrText: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCI_OVLY_WINDOW_PARMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCI_OVLY_WINDOW_PARMSW {
     fn clone(&self) -> Self {
         *self
@@ -3986,7 +3791,6 @@ pub const MMIOERR_SHARINGVIOLATION: u32 = 269u32;
 pub const MMIOERR_TOOMANYOPENFILES: u32 = 271u32;
 pub const MMIOERR_UNBUFFERED: u32 = 266u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MMIOINFO {
     pub dwFlags: u32,
     pub fccIOProc: u32,
@@ -4005,9 +3809,7 @@ pub struct MMIOINFO {
     pub dwReserved2: u32,
     pub hmmio: HMMIO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MMIOINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MMIOINFO {
     fn clone(&self) -> Self {
         *self
@@ -7002,8 +6804,8 @@ pub const VCAPS_CAN_SCALE: u32 = 8u32;
 pub const VCAPS_DST_CAN_CLIP: u32 = 4u32;
 pub const VCAPS_OVERLAY: u32 = 1u32;
 pub const VCAPS_SRC_CAN_CLIP: u32 = 2u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-pub type VFWWDMExtensionProc = ::core::option::Option<unsafe extern "system" fn(pfndeviceiocontrol: *mut ::core::ffi::c_void, pfnaddpropertypage: super::super::UI::Controls::LPFNSVADDPROPSHEETPAGE, lparam: super::super::Foundation::LPARAM) -> u32>;
+#[cfg(feature = "Win32_UI_Controls")]
+pub type VFWWDMExtensionProc = ::core::option::Option<unsafe extern "system" fn(pfndeviceiocontrol: *mut ::core::ffi::c_void, pfnaddpropertypage: ::win32_ui_sys::Controls::LPFNSVADDPROPSHEETPAGE, lparam: ::win32_foundation_sys::LPARAM) -> u32>;
 pub const VFW_HIDE_CAMERACONTROL_PAGE: u32 = 4u32;
 pub const VFW_HIDE_SETTINGS_PAGE: u32 = 1u32;
 pub const VFW_HIDE_VIDEOSRC_PAGE: u32 = 2u32;
@@ -7553,19 +7355,16 @@ impl ::core::clone::Clone for YAMAHA_ADPCMWAVEFORMAT {
 }
 pub type YIELDPROC = ::core::option::Option<unsafe extern "system" fn(mciid: u32, dwyielddata: u32) -> u32>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct s_RIFFWAVE_inst {
     pub bUnshiftedNote: u8,
-    pub chFineTune: super::super::Foundation::CHAR,
-    pub chGain: super::super::Foundation::CHAR,
+    pub chFineTune: ::win32_foundation_sys::CHAR,
+    pub chGain: ::win32_foundation_sys::CHAR,
     pub bLowNote: u8,
     pub bHighNote: u8,
     pub bLowVelocity: u8,
     pub bHighVelocity: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for s_RIFFWAVE_inst {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for s_RIFFWAVE_inst {
     fn clone(&self) -> Self {
         *self

@@ -403,8 +403,7 @@ impl IUIAnimationManager2 {
     pub unsafe fn Resume(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Resume)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetManagerEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationManagerEventHandler2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, handler: Param0, fregisterfornextanimationevent: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetManagerEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationManagerEventHandler2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, handler: Param0, fregisterfornextanimationevent: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetManagerEventHandler)(::windows_core::Interface::as_raw(self), handler.into_param().abi(), fregisterfornextanimationevent.into_param().abi()).ok()
     }
     pub unsafe fn SetCancelPriorityComparison<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationPriorityComparison2>>(&self, comparison: Param0) -> ::windows_core::Result<()> {
@@ -484,10 +483,7 @@ pub struct IUIAnimationManager2_Vtbl {
     pub SetAnimationMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: UI_ANIMATION_MODE) -> ::windows_core::HRESULT,
     pub Pause: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetManagerEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, fregisterfornextanimationevent: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetManagerEventHandler: usize,
+    pub SetManagerEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, fregisterfornextanimationevent: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetCancelPriorityComparison: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, comparison: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetTrimPriorityComparison: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, comparison: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetCompressPriorityComparison: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, comparison: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -906,8 +902,7 @@ impl IUIAnimationStoryboard2 {
     pub unsafe fn AddTransitionBetweenKeyframes<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationVariable2>, Param1: ::windows_core::IntoParam<'a, IUIAnimationTransition2>, Param2: ::windows_core::IntoParam<'a, UI_ANIMATION_KEYFRAME>, Param3: ::windows_core::IntoParam<'a, UI_ANIMATION_KEYFRAME>>(&self, variable: Param0, transition: Param1, startkeyframe: Param2, endkeyframe: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddTransitionBetweenKeyframes)(::windows_core::Interface::as_raw(self), variable.into_param().abi(), transition.into_param().abi(), startkeyframe.into_param().abi(), endkeyframe.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RepeatBetweenKeyframes<'a, Param0: ::windows_core::IntoParam<'a, UI_ANIMATION_KEYFRAME>, Param1: ::windows_core::IntoParam<'a, UI_ANIMATION_KEYFRAME>, Param4: ::windows_core::IntoParam<'a, IUIAnimationLoopIterationChangeHandler2>, Param6: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, startkeyframe: Param0, endkeyframe: Param1, crepetition: f64, repeatmode: UI_ANIMATION_REPEAT_MODE, piterationchangehandler: Param4, id: usize, fregisterfornextanimationevent: Param6) -> ::windows_core::Result<()> {
+    pub unsafe fn RepeatBetweenKeyframes<'a, Param0: ::windows_core::IntoParam<'a, UI_ANIMATION_KEYFRAME>, Param1: ::windows_core::IntoParam<'a, UI_ANIMATION_KEYFRAME>, Param4: ::windows_core::IntoParam<'a, IUIAnimationLoopIterationChangeHandler2>, Param6: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, startkeyframe: Param0, endkeyframe: Param1, crepetition: f64, repeatmode: UI_ANIMATION_REPEAT_MODE, piterationchangehandler: Param4, id: usize, fregisterfornextanimationevent: Param6) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RepeatBetweenKeyframes)(::windows_core::Interface::as_raw(self), startkeyframe.into_param().abi(), endkeyframe.into_param().abi(), ::core::mem::transmute(crepetition), ::core::mem::transmute(repeatmode), piterationchangehandler.into_param().abi(), ::core::mem::transmute(id), fregisterfornextanimationevent.into_param().abi()).ok()
     }
     pub unsafe fn HoldVariable<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationVariable2>>(&self, variable: Param0) -> ::windows_core::Result<()> {
@@ -946,8 +941,7 @@ impl IUIAnimationStoryboard2 {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
         (::windows_core::Interface::vtable(self).GetElapsedTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetStoryboardEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationStoryboardEventHandler2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, handler: Param0, fregisterstatuschangefornextanimationevent: Param1, fregisterupdatefornextanimationevent: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetStoryboardEventHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationStoryboardEventHandler2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, handler: Param0, fregisterstatuschangefornextanimationevent: Param1, fregisterupdatefornextanimationevent: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetStoryboardEventHandler)(::windows_core::Interface::as_raw(self), handler.into_param().abi(), fregisterstatuschangefornextanimationevent.into_param().abi(), fregisterupdatefornextanimationevent.into_param().abi()).ok()
     }
 }
@@ -1000,10 +994,7 @@ pub struct IUIAnimationStoryboard2_Vtbl {
     pub AddKeyframeAfterTransition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transition: ::windows_core::RawPtr, keyframe: *mut UI_ANIMATION_KEYFRAME) -> ::windows_core::HRESULT,
     pub AddTransitionAtKeyframe: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, variable: ::windows_core::RawPtr, transition: ::windows_core::RawPtr, startkeyframe: UI_ANIMATION_KEYFRAME) -> ::windows_core::HRESULT,
     pub AddTransitionBetweenKeyframes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, variable: ::windows_core::RawPtr, transition: ::windows_core::RawPtr, startkeyframe: UI_ANIMATION_KEYFRAME, endkeyframe: UI_ANIMATION_KEYFRAME) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RepeatBetweenKeyframes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startkeyframe: UI_ANIMATION_KEYFRAME, endkeyframe: UI_ANIMATION_KEYFRAME, crepetition: f64, repeatmode: UI_ANIMATION_REPEAT_MODE, piterationchangehandler: ::windows_core::RawPtr, id: usize, fregisterfornextanimationevent: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RepeatBetweenKeyframes: usize,
+    pub RepeatBetweenKeyframes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startkeyframe: UI_ANIMATION_KEYFRAME, endkeyframe: UI_ANIMATION_KEYFRAME, crepetition: f64, repeatmode: UI_ANIMATION_REPEAT_MODE, piterationchangehandler: ::windows_core::RawPtr, id: usize, fregisterfornextanimationevent: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub HoldVariable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, variable: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetLongestAcceptableDelay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, delay: f64) -> ::windows_core::HRESULT,
     pub SetSkipDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, secondsduration: f64) -> ::windows_core::HRESULT,
@@ -1015,10 +1006,7 @@ pub struct IUIAnimationStoryboard2_Vtbl {
     pub GetTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void, id: *mut u32) -> ::windows_core::HRESULT,
     pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, status: *mut UI_ANIMATION_STORYBOARD_STATUS) -> ::windows_core::HRESULT,
     pub GetElapsedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, elapsedtime: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetStoryboardEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, fregisterstatuschangefornextanimationevent: super::super::Foundation::BOOL, fregisterupdatefornextanimationevent: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetStoryboardEventHandler: usize,
+    pub SetStoryboardEventHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, fregisterstatuschangefornextanimationevent: ::win32_foundation::BOOL, fregisterupdatefornextanimationevent: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IUIAnimationStoryboardEventHandler(::windows_core::IUnknown);
@@ -2021,11 +2009,11 @@ impl IUIAnimationVariable2 {
         (::windows_core::Interface::vtable(self).GetVectorValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(value)), value.len() as _).ok()
     }
     #[cfg(feature = "Win32_Graphics_DirectComposition")]
-    pub unsafe fn GetCurve<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::DirectComposition::IDCompositionAnimation>>(&self, animation: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn GetCurve<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::DirectComposition::IDCompositionAnimation>>(&self, animation: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetCurve)(::windows_core::Interface::as_raw(self), animation.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_Graphics_DirectComposition")]
-    pub unsafe fn GetVectorCurve(&self, animation: &[::core::option::Option<super::super::Graphics::DirectComposition::IDCompositionAnimation>]) -> ::windows_core::Result<()> {
+    pub unsafe fn GetVectorCurve(&self, animation: &[::core::option::Option<::win32_graphics::DirectComposition::IDCompositionAnimation>]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetVectorCurve)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(animation)), animation.len() as _).ok()
     }
     pub unsafe fn GetFinalValue(&self) -> ::windows_core::Result<f64> {
@@ -2088,12 +2076,10 @@ impl IUIAnimationVariable2 {
     pub unsafe fn GetTag(&self, object: *mut ::core::option::Option<::windows_core::IUnknown>, id: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetTag)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(object), ::core::mem::transmute(id)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetVariableChangeHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationVariableChangeHandler2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, handler: Param0, fregisterfornextanimationevent: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetVariableChangeHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationVariableChangeHandler2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, handler: Param0, fregisterfornextanimationevent: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetVariableChangeHandler)(::windows_core::Interface::as_raw(self), handler.into_param().abi(), fregisterfornextanimationevent.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetVariableIntegerChangeHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationVariableIntegerChangeHandler2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, handler: Param0, fregisterfornextanimationevent: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetVariableIntegerChangeHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationVariableIntegerChangeHandler2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, handler: Param0, fregisterfornextanimationevent: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetVariableIntegerChangeHandler)(::windows_core::Interface::as_raw(self), handler.into_param().abi(), fregisterfornextanimationevent.into_param().abi()).ok()
     }
     pub unsafe fn SetVariableCurveChangeHandler<'a, Param0: ::windows_core::IntoParam<'a, IUIAnimationVariableCurveChangeHandler2>>(&self, handler: Param0) -> ::windows_core::Result<()> {
@@ -2173,14 +2159,8 @@ pub struct IUIAnimationVariable2_Vtbl {
     pub SetRoundingMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: UI_ANIMATION_ROUNDING_MODE) -> ::windows_core::HRESULT,
     pub SetTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, object: *mut ::core::ffi::c_void, id: u32) -> ::windows_core::HRESULT,
     pub GetTag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, object: *mut *mut ::core::ffi::c_void, id: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetVariableChangeHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, fregisterfornextanimationevent: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetVariableChangeHandler: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetVariableIntegerChangeHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, fregisterfornextanimationevent: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetVariableIntegerChangeHandler: usize,
+    pub SetVariableChangeHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, fregisterfornextanimationevent: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetVariableIntegerChangeHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, fregisterfornextanimationevent: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetVariableCurveChangeHandler: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]

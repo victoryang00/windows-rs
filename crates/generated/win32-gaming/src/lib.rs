@@ -1,31 +1,29 @@
 
 #![allow(non_snake_case, non_upper_case_globals, non_camel_case_types)]
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CheckGamingPrivilegeSilently<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(privilegeid: u32, scope: Param1, policy: Param2) -> ::windows_core::Result<super::Foundation::BOOL> {
+pub unsafe fn CheckGamingPrivilegeSilently<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(privilegeid: u32, scope: Param1, policy: Param2) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CheckGamingPrivilegeSilently(privilegeid: u32, scope: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, policy: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, hasprivilege: *mut super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn CheckGamingPrivilegeSilently(privilegeid: u32, scope: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, policy: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, hasprivilege: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::BOOL>::zeroed();
-        CheckGamingPrivilegeSilently(::core::mem::transmute(privilegeid), scope.into_param().abi(), policy.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        CheckGamingPrivilegeSilently(::core::mem::transmute(privilegeid), scope.into_param().abi(), policy.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CheckGamingPrivilegeSilentlyForUser<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, privilegeid: u32, scope: Param2, policy: Param3) -> ::windows_core::Result<super::Foundation::BOOL> {
+pub unsafe fn CheckGamingPrivilegeSilentlyForUser<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, privilegeid: u32, scope: Param2, policy: Param3) -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CheckGamingPrivilegeSilentlyForUser(user: *mut ::core::ffi::c_void, privilegeid: u32, scope: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, policy: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, hasprivilege: *mut super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn CheckGamingPrivilegeSilentlyForUser(user: *mut ::core::ffi::c_void, privilegeid: u32, scope: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, policy: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, hasprivilege: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::BOOL>::zeroed();
-        CheckGamingPrivilegeSilentlyForUser(user.into_param().abi(), ::core::mem::transmute(privilegeid), scope.into_param().abi(), policy.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        CheckGamingPrivilegeSilentlyForUser(user.into_param().abi(), ::core::mem::transmute(privilegeid), scope.into_param().abi(), policy.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -241,17 +239,16 @@ pub unsafe fn GetGamingDeviceModelInformation() -> ::windows_core::Result<GAMING
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn HasExpandedResources() -> ::windows_core::Result<super::Foundation::BOOL> {
+pub unsafe fn HasExpandedResources() -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn HasExpandedResources(hasexpandedresources: *mut super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn HasExpandedResources(hasexpandedresources: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::BOOL>::zeroed();
-        HasExpandedResources(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        HasExpandedResources(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -261,8 +258,7 @@ pub const ID_GDF_XML_STR: &str = "__GDF_XML";
 #[repr(transparent)]
 pub struct IGameExplorer(::windows_core::IUnknown);
 impl IGameExplorer {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddGame<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::Foundation::BSTR>>(&self, bstrgdfbinarypath: Param0, bstrgameinstalldirectory: Param1, installscope: GAME_INSTALL_SCOPE, pguidinstanceid: *mut ::windows_core::GUID) -> ::windows_core::Result<()> {
+    pub unsafe fn AddGame<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrgdfbinarypath: Param0, bstrgameinstalldirectory: Param1, installscope: GAME_INSTALL_SCOPE, pguidinstanceid: *mut ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddGame)(::windows_core::Interface::as_raw(self), bstrgdfbinarypath.into_param().abi(), bstrgameinstalldirectory.into_param().abi(), ::core::mem::transmute(installscope), ::core::mem::transmute(pguidinstanceid)).ok()
     }
     pub unsafe fn RemoveGame<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, guidinstanceid: Param0) -> ::windows_core::Result<()> {
@@ -271,10 +267,9 @@ impl IGameExplorer {
     pub unsafe fn UpdateGame<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, guidinstanceid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UpdateGame)(::windows_core::Interface::as_raw(self), guidinstanceid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn VerifyAccess<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::BSTR>>(&self, bstrgdfbinarypath: Param0) -> ::windows_core::Result<super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).VerifyAccess)(::windows_core::Interface::as_raw(self), bstrgdfbinarypath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Foundation::BOOL>(result__)
+    pub unsafe fn VerifyAccess<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrgdfbinarypath: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).VerifyAccess)(::windows_core::Interface::as_raw(self), bstrgdfbinarypath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IGameExplorer> for ::windows_core::IUnknown {
@@ -321,16 +316,10 @@ unsafe impl ::windows_core::Interface for IGameExplorer {
 #[doc(hidden)]
 pub struct IGameExplorer_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AddGame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrgdfbinarypath: ::core::mem::ManuallyDrop<super::Foundation::BSTR>, bstrgameinstalldirectory: ::core::mem::ManuallyDrop<super::Foundation::BSTR>, installscope: GAME_INSTALL_SCOPE, pguidinstanceid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AddGame: usize,
+    pub AddGame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrgdfbinarypath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrgameinstalldirectory: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, installscope: GAME_INSTALL_SCOPE, pguidinstanceid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub RemoveGame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guidinstanceid: ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub UpdateGame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, guidinstanceid: ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub VerifyAccess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrgdfbinarypath: ::core::mem::ManuallyDrop<super::Foundation::BSTR>, pfhasaccess: *mut super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    VerifyAccess: usize,
+    pub VerifyAccess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrgdfbinarypath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfhasaccess: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IGameExplorer2(::windows_core::IUnknown);
@@ -341,10 +330,9 @@ impl IGameExplorer2 {
     pub unsafe fn UninstallGame<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, binarygdfpath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UninstallGame)(::windows_core::Interface::as_raw(self), binarygdfpath.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CheckAccess<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, binarygdfpath: Param0) -> ::windows_core::Result<super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).CheckAccess)(::windows_core::Interface::as_raw(self), binarygdfpath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Foundation::BOOL>(result__)
+    pub unsafe fn CheckAccess<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, binarygdfpath: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).CheckAccess)(::windows_core::Interface::as_raw(self), binarygdfpath.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IGameExplorer2> for ::windows_core::IUnknown {
@@ -393,10 +381,7 @@ pub struct IGameExplorer2_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub InstallGame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, binarygdfpath: ::windows_core::PCWSTR, installdirectory: ::windows_core::PCWSTR, installscope: GAME_INSTALL_SCOPE) -> ::windows_core::HRESULT,
     pub UninstallGame: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, binarygdfpath: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CheckAccess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, binarygdfpath: ::windows_core::PCWSTR, phasaccess: *mut super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CheckAccess: usize,
+    pub CheckAccess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, binarygdfpath: ::windows_core::PCWSTR, phasaccess: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IGameStatistics(::windows_core::IUnknown);
@@ -434,8 +419,7 @@ impl IGameStatistics {
     pub unsafe fn SetStatistic<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, categoryindex: u16, statindex: u16, name: Param2, value: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetStatistic)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(categoryindex), ::core::mem::transmute(statindex), name.into_param().abi(), value.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Save<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::BOOL>>(&self, trackchanges: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Save<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, trackchanges: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Save)(::windows_core::Interface::as_raw(self), trackchanges.into_param().abi()).ok()
     }
     pub unsafe fn SetLastPlayedCategory(&self, categoryindex: u32) -> ::windows_core::Result<()> {
@@ -499,10 +483,7 @@ pub struct IGameStatistics_Vtbl {
     pub GetCategoryTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, categoryindex: u16, ptitle: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetStatistic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, categoryindex: u16, statindex: u16, pname: *mut ::windows_core::PWSTR, pvalue: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetStatistic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, categoryindex: u16, statindex: u16, name: ::windows_core::PCWSTR, value: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Save: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, trackchanges: super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Save: usize,
+    pub Save: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, trackchanges: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetLastPlayedCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, categoryindex: u32) -> ::windows_core::HRESULT,
     pub GetLastPlayedCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcategoryindex: *mut u32) -> ::windows_core::HRESULT,
 }
@@ -583,8 +564,7 @@ impl IXblIdpAuthManager {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).GetSandbox)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetTokenAndSignatureWithTokenResult<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param9: ::windows_core::IntoParam<'a, super::Foundation::BOOL>>(&self, msaaccountid: Param0, appsid: Param1, msatarget: Param2, msapolicy: Param3, httpmethod: Param4, uri: Param5, headers: Param6, body: &[u8], forcerefresh: Param9) -> ::windows_core::Result<IXblIdpAuthTokenResult> {
+    pub unsafe fn GetTokenAndSignatureWithTokenResult<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param9: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, msaaccountid: Param0, appsid: Param1, msatarget: Param2, msapolicy: Param3, httpmethod: Param4, uri: Param5, headers: Param6, body: &[u8], forcerefresh: Param9) -> ::windows_core::Result<IXblIdpAuthTokenResult> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetTokenAndSignatureWithTokenResult)(::windows_core::Interface::as_raw(self), msaaccountid.into_param().abi(), appsid.into_param().abi(), msatarget.into_param().abi(), msapolicy.into_param().abi(), httpmethod.into_param().abi(), uri.into_param().abi(), headers.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(body)), body.len() as _, forcerefresh.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXblIdpAuthTokenResult>(result__)
     }
@@ -638,10 +618,7 @@ pub struct IXblIdpAuthManager_Vtbl {
     pub SetAppViewInitialized: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appsid: ::windows_core::PCWSTR, msaaccountid: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub GetEnvironment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, environment: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetSandbox: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sandbox: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetTokenAndSignatureWithTokenResult: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, msaaccountid: ::windows_core::PCWSTR, appsid: ::windows_core::PCWSTR, msatarget: ::windows_core::PCWSTR, msapolicy: ::windows_core::PCWSTR, httpmethod: ::windows_core::PCWSTR, uri: ::windows_core::PCWSTR, headers: ::windows_core::PCWSTR, body: *const u8, bodysize: u32, forcerefresh: super::Foundation::BOOL, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetTokenAndSignatureWithTokenResult: usize,
+    pub GetTokenAndSignatureWithTokenResult: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, msaaccountid: ::windows_core::PCWSTR, appsid: ::windows_core::PCWSTR, msatarget: ::windows_core::PCWSTR, msapolicy: ::windows_core::PCWSTR, httpmethod: ::windows_core::PCWSTR, uri: ::windows_core::PCWSTR, headers: ::windows_core::PCWSTR, body: *const u8, bodysize: u32, forcerefresh: ::win32_foundation::BOOL, result: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IXblIdpAuthTokenResult(::windows_core::IUnknown);
@@ -901,14 +878,13 @@ impl ::core::fmt::Debug for KnownGamingPrivileges {
     }
 }
 pub type PlayerPickerUICompletionRoutine = ::core::option::Option<unsafe extern "system" fn(returncode: ::windows_core::HRESULT, context: *const ::core::ffi::c_void, selectedxuids: *const ::windows_core::HSTRING, selectedxuidscount: usize)>;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ProcessPendingGameUI<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::BOOL>>(waitforcompletion: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn ProcessPendingGameUI<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(waitforcompletion: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ProcessPendingGameUI(waitforcompletion: super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn ProcessPendingGameUI(waitforcompletion: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         ProcessPendingGameUI(waitforcompletion.into_param().abi()).ok()
     }
@@ -1188,14 +1164,13 @@ pub unsafe fn ShowUserSettingsUIForUser<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TryCancelPendingGameUI() -> super::Foundation::BOOL {
+pub unsafe fn TryCancelPendingGameUI() -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TryCancelPendingGameUI() -> super::Foundation::BOOL;
+            fn TryCancelPendingGameUI() -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(TryCancelPendingGameUI())
     }

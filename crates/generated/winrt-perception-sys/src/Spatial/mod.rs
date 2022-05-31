@@ -22,8 +22,8 @@ pub type SpatialAnchorStore = *mut ::core::ffi::c_void;
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct SpatialBoundingBox {
-    pub Center: super::super::Foundation::Numerics::Vector3,
-    pub Extents: super::super::Foundation::Numerics::Vector3,
+    pub Center: ::winrt_foundation_sys::Numerics::Vector3,
+    pub Extents: ::winrt_foundation_sys::Numerics::Vector3,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for SpatialBoundingBox {}
@@ -36,12 +36,12 @@ impl ::core::clone::Clone for SpatialBoundingBox {
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct SpatialBoundingFrustum {
-    pub Near: super::super::Foundation::Numerics::Plane,
-    pub Far: super::super::Foundation::Numerics::Plane,
-    pub Right: super::super::Foundation::Numerics::Plane,
-    pub Left: super::super::Foundation::Numerics::Plane,
-    pub Top: super::super::Foundation::Numerics::Plane,
-    pub Bottom: super::super::Foundation::Numerics::Plane,
+    pub Near: ::winrt_foundation_sys::Numerics::Plane,
+    pub Far: ::winrt_foundation_sys::Numerics::Plane,
+    pub Right: ::winrt_foundation_sys::Numerics::Plane,
+    pub Left: ::winrt_foundation_sys::Numerics::Plane,
+    pub Top: ::winrt_foundation_sys::Numerics::Plane,
+    pub Bottom: ::winrt_foundation_sys::Numerics::Plane,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for SpatialBoundingFrustum {}
@@ -54,9 +54,9 @@ impl ::core::clone::Clone for SpatialBoundingFrustum {
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct SpatialBoundingOrientedBox {
-    pub Center: super::super::Foundation::Numerics::Vector3,
-    pub Extents: super::super::Foundation::Numerics::Vector3,
-    pub Orientation: super::super::Foundation::Numerics::Quaternion,
+    pub Center: ::winrt_foundation_sys::Numerics::Vector3,
+    pub Extents: ::winrt_foundation_sys::Numerics::Vector3,
+    pub Orientation: ::winrt_foundation_sys::Numerics::Quaternion,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for SpatialBoundingOrientedBox {}
@@ -69,7 +69,7 @@ impl ::core::clone::Clone for SpatialBoundingOrientedBox {
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct SpatialBoundingSphere {
-    pub Center: super::super::Foundation::Numerics::Vector3,
+    pub Center: ::winrt_foundation_sys::Numerics::Vector3,
     pub Radius: f32,
 }
 #[cfg(feature = "Foundation_Numerics")]
@@ -164,8 +164,8 @@ impl ::core::clone::Clone for SpatialPerceptionAccessStatus {
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct SpatialRay {
-    pub Origin: super::super::Foundation::Numerics::Vector3,
-    pub Direction: super::super::Foundation::Numerics::Vector3,
+    pub Origin: ::winrt_foundation_sys::Numerics::Vector3,
+    pub Direction: ::winrt_foundation_sys::Numerics::Vector3,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for SpatialRay {}

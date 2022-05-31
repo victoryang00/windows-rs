@@ -26,10 +26,7 @@ unsafe impl ::windows_core::Interface for IResourceLoader2 {
 #[doc(hidden)]
 pub struct IResourceLoader2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetStringForUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetStringForUri: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -55,10 +52,7 @@ unsafe impl ::windows_core::Interface for IResourceLoaderStatics {
 #[doc(hidden)]
 pub struct IResourceLoaderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetStringForReference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetStringForReference: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -122,8 +116,7 @@ impl ResourceLoader {
             (::windows_core::Interface::vtable(this).GetString)(::windows_core::Interface::as_raw(this), resource.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetStringForUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
+    pub fn GetStringForUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::Interface::cast::<IResourceLoader2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
@@ -136,8 +129,7 @@ impl ResourceLoader {
             (::windows_core::Interface::vtable(this).CreateResourceLoaderByName)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<ResourceLoader>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetStringForReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(uri: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
+    pub fn GetStringForReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(uri: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IResourceLoaderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).GetStringForReference)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -168,7 +160,7 @@ impl ResourceLoader {
         })
     }
     #[cfg(feature = "UI")]
-    pub fn GetForUIContext<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::UIContext>>(context: Param0) -> ::windows_core::Result<ResourceLoader> {
+    pub fn GetForUIContext<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_ui::UIContext>>(context: Param0) -> ::windows_core::Result<ResourceLoader> {
         Self::IResourceLoaderStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetForUIContext)(::windows_core::Interface::as_raw(this), context.into_param().abi(), result__.as_mut_ptr()).from_abi::<ResourceLoader>(result__)

@@ -1,151 +1,92 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ProcessIdToSessionId(dwprocessid: u32, psessionid: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSCloseServer(hserver: super::super::Foundation::HANDLE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSConnectSessionA(logonid: u32, targetlogonid: u32, ppassword: ::windows_core_sys::PCSTR, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSConnectSessionW(logonid: u32, targetlogonid: u32, ppassword: ::windows_core_sys::PCWSTR, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSCreateListenerA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, pbuffer: *const WTSLISTENERCONFIGA, flag: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSCreateListenerW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, pbuffer: *const WTSLISTENERCONFIGW, flag: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSDisconnectSession(hserver: super::super::Foundation::HANDLE, sessionid: u32, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnableChildSessions(benable: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateListenersA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plisteners: *mut *mut i8, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateListenersW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plisteners: *mut *mut u16, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateProcessesA(hserver: super::super::Foundation::HANDLE, reserved: u32, version: u32, ppprocessinfo: *mut *mut WTS_PROCESS_INFOA, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateProcessesExA(hserver: super::super::Foundation::HANDLE, plevel: *mut u32, sessionid: u32, ppprocessinfo: *mut ::windows_core_sys::PSTR, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateProcessesExW(hserver: super::super::Foundation::HANDLE, plevel: *mut u32, sessionid: u32, ppprocessinfo: *mut ::windows_core_sys::PWSTR, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateProcessesW(hserver: super::super::Foundation::HANDLE, reserved: u32, version: u32, ppprocessinfo: *mut *mut WTS_PROCESS_INFOW, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateServersA(pdomainname: ::windows_core_sys::PCSTR, reserved: u32, version: u32, ppserverinfo: *mut *mut WTS_SERVER_INFOA, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateServersW(pdomainname: ::windows_core_sys::PCWSTR, reserved: u32, version: u32, ppserverinfo: *mut *mut WTS_SERVER_INFOW, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateSessionsA(hserver: super::super::Foundation::HANDLE, reserved: u32, version: u32, ppsessioninfo: *mut *mut WTS_SESSION_INFOA, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateSessionsExA(hserver: super::super::Foundation::HANDLE, plevel: *mut u32, filter: u32, ppsessioninfo: *mut *mut WTS_SESSION_INFO_1A, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateSessionsExW(hserver: super::super::Foundation::HANDLE, plevel: *mut u32, filter: u32, ppsessioninfo: *mut *mut WTS_SESSION_INFO_1W, pcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateSessionsW(hserver: super::super::Foundation::HANDLE, reserved: u32, version: u32, ppsessioninfo: *mut *mut WTS_SESSION_INFOW, pcount: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn ProcessIdToSessionId(dwprocessid: u32, psessionid: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSCloseServer(hserver: ::win32_foundation_sys::HANDLE);
+    pub fn WTSConnectSessionA(logonid: u32, targetlogonid: u32, ppassword: ::windows_core_sys::PCSTR, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSConnectSessionW(logonid: u32, targetlogonid: u32, ppassword: ::windows_core_sys::PCWSTR, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSCreateListenerA(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, pbuffer: *const WTSLISTENERCONFIGA, flag: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSCreateListenerW(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, pbuffer: *const WTSLISTENERCONFIGW, flag: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSDisconnectSession(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnableChildSessions(benable: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateListenersA(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plisteners: *mut *mut i8, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateListenersW(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plisteners: *mut *mut u16, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateProcessesA(hserver: ::win32_foundation_sys::HANDLE, reserved: u32, version: u32, ppprocessinfo: *mut *mut WTS_PROCESS_INFOA, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateProcessesExA(hserver: ::win32_foundation_sys::HANDLE, plevel: *mut u32, sessionid: u32, ppprocessinfo: *mut ::windows_core_sys::PSTR, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateProcessesExW(hserver: ::win32_foundation_sys::HANDLE, plevel: *mut u32, sessionid: u32, ppprocessinfo: *mut ::windows_core_sys::PWSTR, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateProcessesW(hserver: ::win32_foundation_sys::HANDLE, reserved: u32, version: u32, ppprocessinfo: *mut *mut WTS_PROCESS_INFOW, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateServersA(pdomainname: ::windows_core_sys::PCSTR, reserved: u32, version: u32, ppserverinfo: *mut *mut WTS_SERVER_INFOA, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateServersW(pdomainname: ::windows_core_sys::PCWSTR, reserved: u32, version: u32, ppserverinfo: *mut *mut WTS_SERVER_INFOW, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateSessionsA(hserver: ::win32_foundation_sys::HANDLE, reserved: u32, version: u32, ppsessioninfo: *mut *mut WTS_SESSION_INFOA, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateSessionsExA(hserver: ::win32_foundation_sys::HANDLE, plevel: *mut u32, filter: u32, ppsessioninfo: *mut *mut WTS_SESSION_INFO_1A, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateSessionsExW(hserver: ::win32_foundation_sys::HANDLE, plevel: *mut u32, filter: u32, ppsessioninfo: *mut *mut WTS_SESSION_INFO_1W, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSEnumerateSessionsW(hserver: ::win32_foundation_sys::HANDLE, reserved: u32, version: u32, ppsessioninfo: *mut *mut WTS_SESSION_INFOW, pcount: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn WTSFreeMemory(pmemory: *mut ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSFreeMemoryExA(wtstypeclass: WTS_TYPE_CLASS, pmemory: *const ::core::ffi::c_void, numberofentries: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSFreeMemoryExW(wtstypeclass: WTS_TYPE_CLASS, pmemory: *const ::core::ffi::c_void, numberofentries: u32) -> super::super::Foundation::BOOL;
+    pub fn WTSFreeMemoryExA(wtstypeclass: WTS_TYPE_CLASS, pmemory: *const ::core::ffi::c_void, numberofentries: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSFreeMemoryExW(wtstypeclass: WTS_TYPE_CLASS, pmemory: *const ::core::ffi::c_void, numberofentries: u32) -> ::win32_foundation_sys::BOOL;
     pub fn WTSGetActiveConsoleSessionId() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSGetChildSessionId(psessionid: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn WTSGetListenerSecurityA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn WTSGetListenerSecurityW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSIsChildSessionsEnabled(pbenabled: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSLogoffSession(hserver: super::super::Foundation::HANDLE, sessionid: u32, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSOpenServerA(pservername: ::windows_core_sys::PCSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSOpenServerExA(pservername: ::windows_core_sys::PCSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSOpenServerExW(pservername: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSOpenServerW(pservername: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQueryListenerConfigA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, pbuffer: *mut WTSLISTENERCONFIGA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQueryListenerConfigW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, pbuffer: *mut WTSLISTENERCONFIGW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQuerySessionInformationA(hserver: super::super::Foundation::HANDLE, sessionid: u32, wtsinfoclass: WTS_INFO_CLASS, ppbuffer: *mut ::windows_core_sys::PSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQuerySessionInformationW(hserver: super::super::Foundation::HANDLE, sessionid: u32, wtsinfoclass: WTS_INFO_CLASS, ppbuffer: *mut ::windows_core_sys::PWSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQueryUserConfigA(pservername: ::windows_core_sys::PCSTR, pusername: ::windows_core_sys::PCSTR, wtsconfigclass: WTS_CONFIG_CLASS, ppbuffer: *mut ::windows_core_sys::PSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQueryUserConfigW(pservername: ::windows_core_sys::PCWSTR, pusername: ::windows_core_sys::PCWSTR, wtsconfigclass: WTS_CONFIG_CLASS, ppbuffer: *mut ::windows_core_sys::PWSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQueryUserToken(sessionid: u32, phtoken: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSRegisterSessionNotification(hwnd: super::super::Foundation::HWND, dwflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSRegisterSessionNotificationEx(hserver: super::super::Foundation::HANDLE, hwnd: super::super::Foundation::HWND, dwflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn WTSSendMessageA(hserver: super::super::Foundation::HANDLE, sessionid: u32, ptitle: ::windows_core_sys::PCSTR, titlelength: u32, pmessage: ::windows_core_sys::PCSTR, messagelength: u32, style: super::super::UI::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut super::super::UI::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn WTSSendMessageW(hserver: super::super::Foundation::HANDLE, sessionid: u32, ptitle: ::windows_core_sys::PCWSTR, titlelength: u32, pmessage: ::windows_core_sys::PCWSTR, messagelength: u32, style: super::super::UI::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut super::super::UI::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn WTSSetListenerSecurityA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn WTSSetListenerSecurityW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSSetRenderHint(prenderhintid: *mut u64, hwndowner: super::super::Foundation::HWND, renderhinttype: u32, cbhintdatalength: u32, phintdata: *const u8) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSSetUserConfigA(pservername: ::windows_core_sys::PCSTR, pusername: ::windows_core_sys::PCSTR, wtsconfigclass: WTS_CONFIG_CLASS, pbuffer: ::windows_core_sys::PCSTR, datalength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSSetUserConfigW(pservername: ::windows_core_sys::PCWSTR, pusername: ::windows_core_sys::PCWSTR, wtsconfigclass: WTS_CONFIG_CLASS, pbuffer: ::windows_core_sys::PCWSTR, datalength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSShutdownSystem(hserver: super::super::Foundation::HANDLE, shutdownflag: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSStartRemoteControlSessionA(ptargetservername: ::windows_core_sys::PCSTR, targetlogonid: u32, hotkeyvk: u8, hotkeymodifiers: u16) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSStartRemoteControlSessionW(ptargetservername: ::windows_core_sys::PCWSTR, targetlogonid: u32, hotkeyvk: u8, hotkeymodifiers: u16) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSStopRemoteControlSession(logonid: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSTerminateProcess(hserver: super::super::Foundation::HANDLE, processid: u32, exitcode: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSUnRegisterSessionNotification(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSUnRegisterSessionNotificationEx(hserver: super::super::Foundation::HANDLE, hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelClose(hchannelhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelOpen(hserver: super::super::Foundation::HANDLE, sessionid: u32, pvirtualname: ::windows_core_sys::PCSTR) -> HwtsVirtualChannelHandle;
+    pub fn WTSGetChildSessionId(psessionid: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn WTSGetListenerSecurityA(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn WTSGetListenerSecurityW(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSIsChildSessionsEnabled(pbenabled: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSLogoffSession(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSOpenServerA(pservername: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn WTSOpenServerExA(pservername: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn WTSOpenServerExW(pservername: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn WTSOpenServerW(pservername: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn WTSQueryListenerConfigA(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, pbuffer: *mut WTSLISTENERCONFIGA) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSQueryListenerConfigW(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, pbuffer: *mut WTSLISTENERCONFIGW) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSQuerySessionInformationA(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, wtsinfoclass: WTS_INFO_CLASS, ppbuffer: *mut ::windows_core_sys::PSTR, pbytesreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSQuerySessionInformationW(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, wtsinfoclass: WTS_INFO_CLASS, ppbuffer: *mut ::windows_core_sys::PWSTR, pbytesreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSQueryUserConfigA(pservername: ::windows_core_sys::PCSTR, pusername: ::windows_core_sys::PCSTR, wtsconfigclass: WTS_CONFIG_CLASS, ppbuffer: *mut ::windows_core_sys::PSTR, pbytesreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSQueryUserConfigW(pservername: ::windows_core_sys::PCWSTR, pusername: ::windows_core_sys::PCWSTR, wtsconfigclass: WTS_CONFIG_CLASS, ppbuffer: *mut ::windows_core_sys::PWSTR, pbytesreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSQueryUserToken(sessionid: u32, phtoken: *mut ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSRegisterSessionNotification(hwnd: ::win32_foundation_sys::HWND, dwflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSRegisterSessionNotificationEx(hserver: ::win32_foundation_sys::HANDLE, hwnd: ::win32_foundation_sys::HWND, dwflags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn WTSSendMessageA(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, ptitle: ::windows_core_sys::PCSTR, titlelength: u32, pmessage: ::windows_core_sys::PCSTR, messagelength: u32, style: ::win32_ui_sys::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut ::win32_ui_sys::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn WTSSendMessageW(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, ptitle: ::windows_core_sys::PCWSTR, titlelength: u32, pmessage: ::windows_core_sys::PCWSTR, messagelength: u32, style: ::win32_ui_sys::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut ::win32_ui_sys::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn WTSSetListenerSecurityA(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn WTSSetListenerSecurityW(hserver: ::win32_foundation_sys::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSSetRenderHint(prenderhintid: *mut u64, hwndowner: ::win32_foundation_sys::HWND, renderhinttype: u32, cbhintdatalength: u32, phintdata: *const u8) -> ::windows_core_sys::HRESULT;
+    pub fn WTSSetUserConfigA(pservername: ::windows_core_sys::PCSTR, pusername: ::windows_core_sys::PCSTR, wtsconfigclass: WTS_CONFIG_CLASS, pbuffer: ::windows_core_sys::PCSTR, datalength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSSetUserConfigW(pservername: ::windows_core_sys::PCWSTR, pusername: ::windows_core_sys::PCWSTR, wtsconfigclass: WTS_CONFIG_CLASS, pbuffer: ::windows_core_sys::PCWSTR, datalength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSShutdownSystem(hserver: ::win32_foundation_sys::HANDLE, shutdownflag: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSStartRemoteControlSessionA(ptargetservername: ::windows_core_sys::PCSTR, targetlogonid: u32, hotkeyvk: u8, hotkeymodifiers: u16) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSStartRemoteControlSessionW(ptargetservername: ::windows_core_sys::PCWSTR, targetlogonid: u32, hotkeyvk: u8, hotkeymodifiers: u16) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSStopRemoteControlSession(logonid: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSTerminateProcess(hserver: ::win32_foundation_sys::HANDLE, processid: u32, exitcode: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSUnRegisterSessionNotification(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSUnRegisterSessionNotificationEx(hserver: ::win32_foundation_sys::HANDLE, hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSVirtualChannelClose(hchannelhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSVirtualChannelOpen(hserver: ::win32_foundation_sys::HANDLE, sessionid: u32, pvirtualname: ::windows_core_sys::PCSTR) -> HwtsVirtualChannelHandle;
     pub fn WTSVirtualChannelOpenEx(sessionid: u32, pvirtualname: ::windows_core_sys::PCSTR, flags: u32) -> HwtsVirtualChannelHandle;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelPurgeInput(hchannelhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelPurgeOutput(hchannelhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelQuery(hchannelhandle: super::super::Foundation::HANDLE, param1: WTS_VIRTUAL_CLASS, ppbuffer: *mut *mut ::core::ffi::c_void, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelRead(hchannelhandle: super::super::Foundation::HANDLE, timeout: u32, buffer: ::windows_core_sys::PSTR, buffersize: u32, pbytesread: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelWrite(hchannelhandle: super::super::Foundation::HANDLE, buffer: ::windows_core_sys::PCSTR, length: u32, pbyteswritten: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSWaitSystemEvent(hserver: super::super::Foundation::HANDLE, eventmask: u32, peventflags: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSVirtualChannelPurgeInput(hchannelhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSVirtualChannelPurgeOutput(hchannelhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSVirtualChannelQuery(hchannelhandle: ::win32_foundation_sys::HANDLE, param1: WTS_VIRTUAL_CLASS, ppbuffer: *mut *mut ::core::ffi::c_void, pbytesreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSVirtualChannelRead(hchannelhandle: ::win32_foundation_sys::HANDLE, timeout: u32, buffer: ::windows_core_sys::PSTR, buffersize: u32, pbytesread: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSVirtualChannelWrite(hchannelhandle: ::win32_foundation_sys::HANDLE, buffer: ::windows_core_sys::PCSTR, length: u32, pbyteswritten: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn WTSWaitSystemEvent(hserver: ::win32_foundation_sys::HANDLE, eventmask: u32, peventflags: *mut u32) -> ::win32_foundation_sys::BOOL;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AAAccountingData {
-    pub userName: super::super::Foundation::BSTR,
-    pub clientName: super::super::Foundation::BSTR,
+    pub userName: ::win32_foundation_sys::BSTR,
+    pub clientName: ::win32_foundation_sys::BSTR,
     pub authType: AAAuthSchemes,
-    pub resourceName: super::super::Foundation::BSTR,
+    pub resourceName: ::win32_foundation_sys::BSTR,
     pub portNumber: i32,
-    pub protocolName: super::super::Foundation::BSTR,
+    pub protocolName: ::win32_foundation_sys::BSTR,
     pub numberOfBytesReceived: i32,
     pub numberOfBytesTransfered: i32,
-    pub reasonForDisconnect: super::super::Foundation::BSTR,
+    pub reasonForDisconnect: ::win32_foundation_sys::BSTR,
     pub mainSessionId: ::windows_core_sys::GUID,
     pub subSessionId: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AAAccountingData {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AAAccountingData {
     fn clone(&self) -> Self {
         *self
@@ -210,21 +151,17 @@ impl ::core::clone::Clone for BITMAP_RENDERER_STATISTICS {
 pub const CHANNEL_BUFFER_SIZE: u32 = 65535u32;
 pub const CHANNEL_CHUNK_LENGTH: u32 = 1600u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CHANNEL_DEF {
-    pub name: [super::super::Foundation::CHAR; 8],
+    pub name: [::win32_foundation_sys::CHAR; 8],
     pub options: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CHANNEL_DEF {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CHANNEL_DEF {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CHANNEL_ENTRY_POINTS {
     pub cbSize: u32,
     pub protocolVersion: u32,
@@ -233,9 +170,7 @@ pub struct CHANNEL_ENTRY_POINTS {
     pub pVirtualChannelClose: PVIRTUALCHANNELCLOSE,
     pub pVirtualChannelWrite: PVIRTUALCHANNELWRITE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CHANNEL_ENTRY_POINTS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CHANNEL_ENTRY_POINTS {
     fn clone(&self) -> Self {
         *self
@@ -506,9 +441,7 @@ pub const PROPERTY_TYPE_ENABLE_UNIVERSAL_APPS_FOR_CUSTOM_SHELL: ::windows_core_s
 pub const PROPERTY_TYPE_GET_FAST_RECONNECT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1645401943, data2: 67, data3: 18530, data4: [153, 195, 159, 48, 89, 172, 42, 59] };
 pub const PROPERTY_TYPE_GET_FAST_RECONNECT_USER_SID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 427573882, data2: 309, data3: 19309, data4: [156, 94, 230, 87, 154, 10, 182, 37] };
 pub type PVIRTUALCHANNELCLOSE = ::core::option::Option<unsafe extern "system" fn(openhandle: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PVIRTUALCHANNELENTRY = ::core::option::Option<unsafe extern "system" fn(pentrypoints: *mut CHANNEL_ENTRY_POINTS) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PVIRTUALCHANNELENTRY = ::core::option::Option<unsafe extern "system" fn(pentrypoints: *mut CHANNEL_ENTRY_POINTS) -> ::win32_foundation_sys::BOOL>;
 pub type PVIRTUALCHANNELINIT = ::core::option::Option<unsafe extern "system" fn(ppinithandle: *mut *mut ::core::ffi::c_void, pchannel: *mut CHANNEL_DEF, channelcount: i32, versionrequested: u32, pchanneliniteventproc: PCHANNEL_INIT_EVENT_FN) -> u32>;
 pub type PVIRTUALCHANNELOPEN = ::core::option::Option<unsafe extern "system" fn(pinithandle: *mut ::core::ffi::c_void, popenhandle: *mut u32, pchannelname: ::windows_core_sys::PCSTR, pchannelopeneventproc: PCHANNEL_OPEN_EVENT_FN) -> u32>;
 pub type PVIRTUALCHANNELWRITE = ::core::option::Option<unsafe extern "system" fn(openhandle: u32, pdata: *mut ::core::ffi::c_void, datalength: u32, puserdata: *mut ::core::ffi::c_void) -> u32>;
@@ -554,7 +487,6 @@ pub const RESERVED_FOR_LEGACY: u32 = 4u32;
 pub const RFX_CLIENT_ID_LENGTH: u32 = 32u32;
 pub const RFX_GFX_MAX_SUPPORTED_MONITORS: u32 = 16u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RFX_GFX_MONITOR_INFO {
     pub left: i32,
     pub top: i32,
@@ -563,11 +495,9 @@ pub struct RFX_GFX_MONITOR_INFO {
     pub physicalWidth: u32,
     pub physicalHeight: u32,
     pub orientation: u32,
-    pub primary: super::super::Foundation::BOOL,
+    pub primary: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RFX_GFX_MONITOR_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RFX_GFX_MONITOR_INFO {
     fn clone(&self) -> Self {
         *self
@@ -584,7 +514,6 @@ impl ::core::clone::Clone for RFX_GFX_MSG_CLIENT_DESKTOP_INFO_REQUEST {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RFX_GFX_MSG_CLIENT_DESKTOP_INFO_RESPONSE {
     pub channelHdr: RFX_GFX_MSG_HEADER,
     pub reserved: u32,
@@ -592,9 +521,7 @@ pub struct RFX_GFX_MSG_CLIENT_DESKTOP_INFO_RESPONSE {
     pub MonitorData: [RFX_GFX_MONITOR_INFO; 16],
     pub clientUniqueId: [u16; 32],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RFX_GFX_MSG_CLIENT_DESKTOP_INFO_RESPONSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RFX_GFX_MSG_CLIENT_DESKTOP_INFO_RESPONSE {
     fn clone(&self) -> Self {
         *self
@@ -854,58 +781,51 @@ pub const WRDS_CLIENTADDRESS_LENGTH: u32 = 30u32;
 pub const WRDS_CLIENTNAME_LENGTH: u32 = 20u32;
 pub const WRDS_CLIENT_PRODUCT_ID_LENGTH: u32 = 32u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WRDS_CONNECTION_SETTING {
     pub WRdsConnectionSettings1: WRDS_CONNECTION_SETTINGS_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WRDS_CONNECTION_SETTING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WRDS_CONNECTION_SETTING {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WRDS_CONNECTION_SETTINGS {
     pub WRdsConnectionSettingLevel: WRDS_CONNECTION_SETTING_LEVEL,
     pub WRdsConnectionSetting: WRDS_CONNECTION_SETTING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WRDS_CONNECTION_SETTINGS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WRDS_CONNECTION_SETTINGS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WRDS_CONNECTION_SETTINGS_1 {
-    pub fInheritInitialProgram: super::super::Foundation::BOOLEAN,
-    pub fInheritColorDepth: super::super::Foundation::BOOLEAN,
-    pub fHideTitleBar: super::super::Foundation::BOOLEAN,
-    pub fInheritAutoLogon: super::super::Foundation::BOOLEAN,
-    pub fMaximizeShell: super::super::Foundation::BOOLEAN,
-    pub fDisablePNP: super::super::Foundation::BOOLEAN,
-    pub fPasswordIsScPin: super::super::Foundation::BOOLEAN,
-    pub fPromptForPassword: super::super::Foundation::BOOLEAN,
-    pub fDisableCpm: super::super::Foundation::BOOLEAN,
-    pub fDisableCdm: super::super::Foundation::BOOLEAN,
-    pub fDisableCcm: super::super::Foundation::BOOLEAN,
-    pub fDisableLPT: super::super::Foundation::BOOLEAN,
-    pub fDisableClip: super::super::Foundation::BOOLEAN,
-    pub fResetBroken: super::super::Foundation::BOOLEAN,
-    pub fDisableEncryption: super::super::Foundation::BOOLEAN,
-    pub fDisableAutoReconnect: super::super::Foundation::BOOLEAN,
-    pub fDisableCtrlAltDel: super::super::Foundation::BOOLEAN,
-    pub fDoubleClickDetect: super::super::Foundation::BOOLEAN,
-    pub fEnableWindowsKey: super::super::Foundation::BOOLEAN,
-    pub fUsingSavedCreds: super::super::Foundation::BOOLEAN,
-    pub fMouse: super::super::Foundation::BOOLEAN,
-    pub fNoAudioPlayback: super::super::Foundation::BOOLEAN,
-    pub fRemoteConsoleAudio: super::super::Foundation::BOOLEAN,
+    pub fInheritInitialProgram: ::win32_foundation_sys::BOOLEAN,
+    pub fInheritColorDepth: ::win32_foundation_sys::BOOLEAN,
+    pub fHideTitleBar: ::win32_foundation_sys::BOOLEAN,
+    pub fInheritAutoLogon: ::win32_foundation_sys::BOOLEAN,
+    pub fMaximizeShell: ::win32_foundation_sys::BOOLEAN,
+    pub fDisablePNP: ::win32_foundation_sys::BOOLEAN,
+    pub fPasswordIsScPin: ::win32_foundation_sys::BOOLEAN,
+    pub fPromptForPassword: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableCpm: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableCdm: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableCcm: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableLPT: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableClip: ::win32_foundation_sys::BOOLEAN,
+    pub fResetBroken: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableEncryption: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableAutoReconnect: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableCtrlAltDel: ::win32_foundation_sys::BOOLEAN,
+    pub fDoubleClickDetect: ::win32_foundation_sys::BOOLEAN,
+    pub fEnableWindowsKey: ::win32_foundation_sys::BOOLEAN,
+    pub fUsingSavedCreds: ::win32_foundation_sys::BOOLEAN,
+    pub fMouse: ::win32_foundation_sys::BOOLEAN,
+    pub fNoAudioPlayback: ::win32_foundation_sys::BOOLEAN,
+    pub fRemoteConsoleAudio: ::win32_foundation_sys::BOOLEAN,
     pub EncryptionLevel: u8,
     pub ColorDepth: u16,
     pub ProtocolType: u16,
@@ -949,9 +869,7 @@ pub struct WRDS_CONNECTION_SETTINGS_1 {
     pub ContextSize: u32,
     pub ContextData: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WRDS_CONNECTION_SETTINGS_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WRDS_CONNECTION_SETTINGS_1 {
     fn clone(&self) -> Self {
         *self
@@ -1043,35 +961,28 @@ pub const WRDS_PERF_ENABLE_FONT_SMOOTHING: u32 = 128u32;
 pub const WRDS_PROTOCOL_NAME_LENGTH: u32 = 8u32;
 pub const WRDS_SERVICE_ID_GRAPHICS_GUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3533258573, data2: 719, data3: 17024, data4: [140, 72, 22, 36, 180, 79, 135, 6] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WRDS_SETTING {
     pub WRdsSettings1: WRDS_SETTINGS_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WRDS_SETTING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WRDS_SETTING {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WRDS_SETTINGS {
     pub WRdsSettingType: WRDS_SETTING_TYPE,
     pub WRdsSettingLevel: WRDS_SETTING_LEVEL,
     pub WRdsSetting: WRDS_SETTING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WRDS_SETTINGS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WRDS_SETTINGS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WRDS_SETTINGS_1 {
     pub WRdsDisableClipStatus: WRDS_SETTING_STATUS,
     pub WRdsDisableClipValue: u32,
@@ -1102,12 +1013,10 @@ pub struct WRDS_SETTINGS_1 {
     pub WRdsMaxConnectTimeStatus: WRDS_SETTING_STATUS,
     pub WRdsMaxConnectTimeValue: u32,
     pub WRdsKeepAliveStatus: WRDS_SETTING_STATUS,
-    pub WRdsKeepAliveStartValue: super::super::Foundation::BOOLEAN,
+    pub WRdsKeepAliveStartValue: ::win32_foundation_sys::BOOLEAN,
     pub WRdsKeepAliveIntervalValue: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WRDS_SETTINGS_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WRDS_SETTINGS_1 {
     fn clone(&self) -> Self {
         *self
@@ -1136,31 +1045,28 @@ pub const WRdsGraphicsChannelType_GuaranteedDelivery: WRdsGraphicsChannelType = 
 pub const WRdsGraphicsChannelType_BestEffortDelivery: WRdsGraphicsChannelType = 1i32;
 pub const WRdsGraphicsChannels_LossyChannelMaxMessageSize: u32 = 988u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTSCLIENTA {
-    pub ClientName: [super::super::Foundation::CHAR; 21],
-    pub Domain: [super::super::Foundation::CHAR; 18],
-    pub UserName: [super::super::Foundation::CHAR; 21],
-    pub WorkDirectory: [super::super::Foundation::CHAR; 261],
-    pub InitialProgram: [super::super::Foundation::CHAR; 261],
+    pub ClientName: [::win32_foundation_sys::CHAR; 21],
+    pub Domain: [::win32_foundation_sys::CHAR; 18],
+    pub UserName: [::win32_foundation_sys::CHAR; 21],
+    pub WorkDirectory: [::win32_foundation_sys::CHAR; 261],
+    pub InitialProgram: [::win32_foundation_sys::CHAR; 261],
     pub EncryptionLevel: u8,
     pub ClientAddressFamily: u32,
     pub ClientAddress: [u16; 31],
     pub HRes: u16,
     pub VRes: u16,
     pub ColorDepth: u16,
-    pub ClientDirectory: [super::super::Foundation::CHAR; 261],
+    pub ClientDirectory: [::win32_foundation_sys::CHAR; 261],
     pub ClientBuildNumber: u32,
     pub ClientHardwareId: u32,
     pub ClientProductId: u16,
     pub OutBufCountHost: u16,
     pub OutBufCountClient: u16,
     pub OutBufLength: u16,
-    pub DeviceId: [super::super::Foundation::CHAR; 261],
+    pub DeviceId: [::win32_foundation_sys::CHAR; 261],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTSCLIENTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTSCLIENTA {
     fn clone(&self) -> Self {
         *self
@@ -1195,7 +1101,6 @@ impl ::core::clone::Clone for WTSCLIENTW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTSCONFIGINFOA {
     pub version: u32,
     pub fConnectClientDrivesAtLogon: u32,
@@ -1203,15 +1108,13 @@ pub struct WTSCONFIGINFOA {
     pub fDisablePrinterRedirection: u32,
     pub fDisableDefaultMainClientPrinter: u32,
     pub ShadowSettings: u32,
-    pub LogonUserName: [super::super::Foundation::CHAR; 21],
-    pub LogonDomain: [super::super::Foundation::CHAR; 18],
-    pub WorkDirectory: [super::super::Foundation::CHAR; 261],
-    pub InitialProgram: [super::super::Foundation::CHAR; 261],
-    pub ApplicationName: [super::super::Foundation::CHAR; 261],
+    pub LogonUserName: [::win32_foundation_sys::CHAR; 21],
+    pub LogonDomain: [::win32_foundation_sys::CHAR; 18],
+    pub WorkDirectory: [::win32_foundation_sys::CHAR; 261],
+    pub InitialProgram: [::win32_foundation_sys::CHAR; 261],
+    pub ApplicationName: [::win32_foundation_sys::CHAR; 261],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTSCONFIGINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTSCONFIGINFOA {
     fn clone(&self) -> Self {
         *self
@@ -1238,7 +1141,6 @@ impl ::core::clone::Clone for WTSCONFIGINFOW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTSINFOA {
     pub State: WTS_CONNECTSTATE_CLASS,
     pub SessionId: u32,
@@ -1248,32 +1150,27 @@ pub struct WTSINFOA {
     pub OutgoingFrames: u32,
     pub IncomingCompressedBytes: u32,
     pub OutgoingCompressedBy: u32,
-    pub WinStationName: [super::super::Foundation::CHAR; 32],
-    pub Domain: [super::super::Foundation::CHAR; 17],
-    pub UserName: [super::super::Foundation::CHAR; 21],
+    pub WinStationName: [::win32_foundation_sys::CHAR; 32],
+    pub Domain: [::win32_foundation_sys::CHAR; 17],
+    pub UserName: [::win32_foundation_sys::CHAR; 21],
     pub ConnectTime: i64,
     pub DisconnectTime: i64,
     pub LastInputTime: i64,
     pub LogonTime: i64,
     pub CurrentTime: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTSINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTSINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTSINFOEXA {
     pub Level: u32,
     pub Data: WTSINFOEX_LEVEL_A,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTSINFOEXA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTSINFOEXA {
     fn clone(&self) -> Self {
         *self
@@ -1291,14 +1188,13 @@ impl ::core::clone::Clone for WTSINFOEXW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTSINFOEX_LEVEL1_A {
     pub SessionId: u32,
     pub SessionState: WTS_CONNECTSTATE_CLASS,
     pub SessionFlags: i32,
-    pub WinStationName: [super::super::Foundation::CHAR; 33],
-    pub UserName: [super::super::Foundation::CHAR; 21],
-    pub DomainName: [super::super::Foundation::CHAR; 18],
+    pub WinStationName: [::win32_foundation_sys::CHAR; 33],
+    pub UserName: [::win32_foundation_sys::CHAR; 21],
+    pub DomainName: [::win32_foundation_sys::CHAR; 18],
     pub LogonTime: i64,
     pub ConnectTime: i64,
     pub DisconnectTime: i64,
@@ -1311,9 +1207,7 @@ pub struct WTSINFOEX_LEVEL1_A {
     pub IncomingCompressedBytes: u32,
     pub OutgoingCompressedBytes: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTSINFOEX_LEVEL1_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTSINFOEX_LEVEL1_A {
     fn clone(&self) -> Self {
         *self
@@ -1346,13 +1240,10 @@ impl ::core::clone::Clone for WTSINFOEX_LEVEL1_W {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WTSINFOEX_LEVEL_A {
     pub WTSInfoExLevel1: WTSINFOEX_LEVEL1_A,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTSINFOEX_LEVEL_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTSINFOEX_LEVEL_A {
     fn clone(&self) -> Self {
         *self
@@ -1394,7 +1285,6 @@ impl ::core::clone::Clone for WTSINFOW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTSLISTENERCONFIGA {
     pub version: u32,
     pub fEnableListener: u32,
@@ -1422,15 +1312,13 @@ pub struct WTSLISTENERCONFIGA {
     pub SecurityLayer: u32,
     pub MinEncryptionLevel: u32,
     pub UserAuthentication: u32,
-    pub Comment: [super::super::Foundation::CHAR; 61],
-    pub LogonUserName: [super::super::Foundation::CHAR; 21],
-    pub LogonDomain: [super::super::Foundation::CHAR; 18],
-    pub WorkDirectory: [super::super::Foundation::CHAR; 261],
-    pub InitialProgram: [super::super::Foundation::CHAR; 261],
+    pub Comment: [::win32_foundation_sys::CHAR; 61],
+    pub LogonUserName: [::win32_foundation_sys::CHAR; 21],
+    pub LogonDomain: [::win32_foundation_sys::CHAR; 18],
+    pub WorkDirectory: [::win32_foundation_sys::CHAR; 261],
+    pub InitialProgram: [::win32_foundation_sys::CHAR; 261],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTSLISTENERCONFIGA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTSLISTENERCONFIGA {
     fn clone(&self) -> Self {
         *self
@@ -1543,19 +1431,16 @@ pub const WTSSBX_NOTIFICATION_CHANGED: WTSSBX_NOTIFICATION_TYPE = 2i32;
 pub const WTSSBX_NOTIFICATION_ADDED: WTSSBX_NOTIFICATION_TYPE = 4i32;
 pub const WTSSBX_NOTIFICATION_RESYNC: WTSSBX_NOTIFICATION_TYPE = 8i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTSSBX_SESSION_INFO {
     pub wszUserName: [u16; 105],
     pub wszDomainName: [u16; 257],
     pub ApplicationType: [u16; 257],
     pub dwSessionId: u32,
-    pub CreateTime: super::super::Foundation::FILETIME,
-    pub DisconnectTime: super::super::Foundation::FILETIME,
+    pub CreateTime: ::win32_foundation_sys::FILETIME,
+    pub DisconnectTime: ::win32_foundation_sys::FILETIME,
     pub SessionState: WTSSBX_SESSION_STATE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTSSBX_SESSION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTSSBX_SESSION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1577,7 +1462,6 @@ impl ::core::clone::Clone for WTSSESSION_NOTIFICATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTSUSERCONFIGA {
     pub Source: u32,
     pub InheritInitialProgram: u32,
@@ -1592,15 +1476,13 @@ pub struct WTSUSERCONFIGA {
     pub ReconnectSettings: u32,
     pub ShadowingSettings: u32,
     pub TerminalServerRemoteHomeDir: u32,
-    pub InitialProgram: [super::super::Foundation::CHAR; 261],
-    pub WorkDirectory: [super::super::Foundation::CHAR; 261],
-    pub TerminalServerProfilePath: [super::super::Foundation::CHAR; 261],
-    pub TerminalServerHomeDir: [super::super::Foundation::CHAR; 261],
-    pub TerminalServerHomeDirDrive: [super::super::Foundation::CHAR; 4],
+    pub InitialProgram: [::win32_foundation_sys::CHAR; 261],
+    pub WorkDirectory: [::win32_foundation_sys::CHAR; 261],
+    pub TerminalServerProfilePath: [::win32_foundation_sys::CHAR; 261],
+    pub TerminalServerHomeDir: [::win32_foundation_sys::CHAR; 261],
+    pub TerminalServerHomeDirDrive: [::win32_foundation_sys::CHAR; 4],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTSUSERCONFIGA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTSUSERCONFIGA {
     fn clone(&self) -> Self {
         *self
@@ -1682,42 +1564,41 @@ impl ::core::clone::Clone for WTS_CLIENT_ADDRESS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTS_CLIENT_DATA {
-    pub fDisableCtrlAltDel: super::super::Foundation::BOOLEAN,
-    pub fDoubleClickDetect: super::super::Foundation::BOOLEAN,
-    pub fEnableWindowsKey: super::super::Foundation::BOOLEAN,
-    pub fHideTitleBar: super::super::Foundation::BOOLEAN,
-    pub fInheritAutoLogon: super::super::Foundation::BOOL,
-    pub fPromptForPassword: super::super::Foundation::BOOLEAN,
-    pub fUsingSavedCreds: super::super::Foundation::BOOLEAN,
+    pub fDisableCtrlAltDel: ::win32_foundation_sys::BOOLEAN,
+    pub fDoubleClickDetect: ::win32_foundation_sys::BOOLEAN,
+    pub fEnableWindowsKey: ::win32_foundation_sys::BOOLEAN,
+    pub fHideTitleBar: ::win32_foundation_sys::BOOLEAN,
+    pub fInheritAutoLogon: ::win32_foundation_sys::BOOL,
+    pub fPromptForPassword: ::win32_foundation_sys::BOOLEAN,
+    pub fUsingSavedCreds: ::win32_foundation_sys::BOOLEAN,
     pub Domain: [u16; 256],
     pub UserName: [u16; 256],
     pub Password: [u16; 256],
-    pub fPasswordIsScPin: super::super::Foundation::BOOLEAN,
-    pub fInheritInitialProgram: super::super::Foundation::BOOL,
+    pub fPasswordIsScPin: ::win32_foundation_sys::BOOLEAN,
+    pub fInheritInitialProgram: ::win32_foundation_sys::BOOL,
     pub WorkDirectory: [u16; 257],
     pub InitialProgram: [u16; 257],
-    pub fMaximizeShell: super::super::Foundation::BOOLEAN,
+    pub fMaximizeShell: ::win32_foundation_sys::BOOLEAN,
     pub EncryptionLevel: u8,
     pub PerformanceFlags: u32,
     pub ProtocolName: [u16; 9],
     pub ProtocolType: u16,
-    pub fInheritColorDepth: super::super::Foundation::BOOL,
+    pub fInheritColorDepth: ::win32_foundation_sys::BOOL,
     pub HRes: u16,
     pub VRes: u16,
     pub ColorDepth: u16,
     pub DisplayDriverName: [u16; 9],
     pub DisplayDeviceName: [u16; 20],
-    pub fMouse: super::super::Foundation::BOOLEAN,
+    pub fMouse: ::win32_foundation_sys::BOOLEAN,
     pub KeyboardLayout: u32,
     pub KeyboardType: u32,
     pub KeyboardSubType: u32,
     pub KeyboardFunctionKey: u32,
     pub imeFileName: [u16; 33],
     pub ActiveInputLocale: u32,
-    pub fNoAudioPlayback: super::super::Foundation::BOOLEAN,
-    pub fRemoteConsoleAudio: super::super::Foundation::BOOLEAN,
+    pub fNoAudioPlayback: ::win32_foundation_sys::BOOLEAN,
+    pub fRemoteConsoleAudio: ::win32_foundation_sys::BOOLEAN,
     pub AudioDriverName: [u16; 9],
     pub ClientTimeZone: WTS_TIME_ZONE_INFORMATION,
     pub ClientName: [u16; 21],
@@ -1733,16 +1614,14 @@ pub struct WTS_CLIENT_DATA {
     pub OutBufLength: u16,
     pub ClientSessionId: u32,
     pub ClientDigProductId: [u16; 33],
-    pub fDisableCpm: super::super::Foundation::BOOLEAN,
-    pub fDisableCdm: super::super::Foundation::BOOLEAN,
-    pub fDisableCcm: super::super::Foundation::BOOLEAN,
-    pub fDisableLPT: super::super::Foundation::BOOLEAN,
-    pub fDisableClip: super::super::Foundation::BOOLEAN,
-    pub fDisablePNP: super::super::Foundation::BOOLEAN,
+    pub fDisableCpm: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableCdm: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableCcm: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableLPT: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableClip: ::win32_foundation_sys::BOOLEAN,
+    pub fDisablePNP: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTS_CLIENT_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTS_CLIENT_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1861,18 +1740,15 @@ pub const WTS_INITIALPROGRAM_LENGTH: u32 = 256u32;
 pub const WTS_KEY_EXCHANGE_ALG_DH: u32 = 2u32;
 pub const WTS_KEY_EXCHANGE_ALG_RSA: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTS_LICENSE_CAPABILITIES {
     pub KeyExchangeAlg: u32,
     pub ProtocolVer: u32,
-    pub fAuthenticateServer: super::super::Foundation::BOOL,
+    pub fAuthenticateServer: ::win32_foundation_sys::BOOL,
     pub CertType: WTS_CERT_TYPE,
     pub cbClientName: u32,
     pub rgbClientName: [u8; 42],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTS_LICENSE_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTS_LICENSE_CAPABILITIES {
     fn clone(&self) -> Self {
         *self
@@ -1906,66 +1782,56 @@ pub const WTS_PERF_ENABLE_DESKTOP_COMPOSITION: u32 = 256u32;
 pub const WTS_PERF_ENABLE_ENHANCED_GRAPHICS: u32 = 16u32;
 pub const WTS_PERF_ENABLE_FONT_SMOOTHING: u32 = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTS_POLICY_DATA {
-    pub fDisableEncryption: super::super::Foundation::BOOLEAN,
-    pub fDisableAutoReconnect: super::super::Foundation::BOOLEAN,
+    pub fDisableEncryption: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableAutoReconnect: ::win32_foundation_sys::BOOLEAN,
     pub ColorDepth: u32,
     pub MinEncryptionLevel: u8,
-    pub fDisableCpm: super::super::Foundation::BOOLEAN,
-    pub fDisableCdm: super::super::Foundation::BOOLEAN,
-    pub fDisableCcm: super::super::Foundation::BOOLEAN,
-    pub fDisableLPT: super::super::Foundation::BOOLEAN,
-    pub fDisableClip: super::super::Foundation::BOOLEAN,
-    pub fDisablePNPRedir: super::super::Foundation::BOOLEAN,
+    pub fDisableCpm: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableCdm: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableCcm: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableLPT: ::win32_foundation_sys::BOOLEAN,
+    pub fDisableClip: ::win32_foundation_sys::BOOLEAN,
+    pub fDisablePNPRedir: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTS_POLICY_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTS_POLICY_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTS_PROCESS_INFOA {
     pub SessionId: u32,
     pub ProcessId: u32,
     pub pProcessName: ::windows_core_sys::PSTR,
-    pub pUserSid: super::super::Foundation::PSID,
+    pub pUserSid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTS_PROCESS_INFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTS_PROCESS_INFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTS_PROCESS_INFOW {
     pub SessionId: u32,
     pub ProcessId: u32,
     pub pProcessName: ::windows_core_sys::PWSTR,
-    pub pUserSid: super::super::Foundation::PSID,
+    pub pUserSid: ::win32_foundation_sys::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTS_PROCESS_INFOW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTS_PROCESS_INFOW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTS_PROCESS_INFO_EXA {
     pub SessionId: u32,
     pub ProcessId: u32,
     pub pProcessName: ::windows_core_sys::PSTR,
-    pub pUserSid: super::super::Foundation::PSID,
+    pub pUserSid: ::win32_foundation_sys::PSID,
     pub NumberOfThreads: u32,
     pub HandleCount: u32,
     pub PagefileUsage: u32,
@@ -1975,21 +1841,18 @@ pub struct WTS_PROCESS_INFO_EXA {
     pub UserTime: i64,
     pub KernelTime: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTS_PROCESS_INFO_EXA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTS_PROCESS_INFO_EXA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTS_PROCESS_INFO_EXW {
     pub SessionId: u32,
     pub ProcessId: u32,
     pub pProcessName: ::windows_core_sys::PWSTR,
-    pub pUserSid: super::super::Foundation::PSID,
+    pub pUserSid: ::win32_foundation_sys::PSID,
     pub NumberOfThreads: u32,
     pub HandleCount: u32,
     pub PagefileUsage: u32,
@@ -1999,9 +1862,7 @@ pub struct WTS_PROCESS_INFO_EXW {
     pub UserTime: i64,
     pub KernelTime: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTS_PROCESS_INFO_EXW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTS_PROCESS_INFO_EXW {
     fn clone(&self) -> Self {
         *self
@@ -2373,7 +2234,6 @@ impl ::core::clone::Clone for WTS_USER_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WTS_VALIDATION_INFORMATIONA {
     pub ProductInfo: _WTS_PRODUCT_INFOA,
     pub License: [u8; 16384],
@@ -2381,9 +2241,7 @@ pub struct WTS_VALIDATION_INFORMATIONA {
     pub HardwareID: [u8; 20],
     pub HardwareIDLength: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WTS_VALIDATION_INFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WTS_VALIDATION_INFORMATIONA {
     fn clone(&self) -> Self {
         *self
@@ -2418,14 +2276,11 @@ pub const WTS_WSD_SHUTDOWN: u32 = 2u32;
 pub const Workspace: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1327365286, data2: 15021, data3: 18657, data4: [132, 6, 75, 194, 26, 80, 29, 124] };
 pub type _ITSWkspEvents = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct _WTS_PRODUCT_INFOA {
-    pub CompanyName: [super::super::Foundation::CHAR; 256],
-    pub ProductID: [super::super::Foundation::CHAR; 4],
+    pub CompanyName: [::win32_foundation_sys::CHAR; 256],
+    pub ProductID: [::win32_foundation_sys::CHAR; 4],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for _WTS_PRODUCT_INFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for _WTS_PRODUCT_INFOA {
     fn clone(&self) -> Self {
         *self

@@ -156,14 +156,13 @@ impl ::core::ops::Not for VERIFIER_ENUM_RESOURCE_FLAGS {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn VerifierEnumerateResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(process: Param0, flags: VERIFIER_ENUM_RESOURCE_FLAGS, resourcetype: eAvrfResourceTypes, resourcecallback: AVRF_RESOURCE_ENUMERATE_CALLBACK, enumerationcontext: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn VerifierEnumerateResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(process: Param0, flags: VERIFIER_ENUM_RESOURCE_FLAGS, resourcetype: eAvrfResourceTypes, resourcecallback: AVRF_RESOURCE_ENUMERATE_CALLBACK, enumerationcontext: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn VerifierEnumerateResource(process: super::super::Foundation::HANDLE, flags: VERIFIER_ENUM_RESOURCE_FLAGS, resourcetype: eAvrfResourceTypes, resourcecallback: ::windows_core::RawPtr, enumerationcontext: *mut ::core::ffi::c_void) -> u32;
+            fn VerifierEnumerateResource(process: ::win32_foundation::HANDLE, flags: VERIFIER_ENUM_RESOURCE_FLAGS, resourcetype: eAvrfResourceTypes, resourcecallback: ::windows_core::RawPtr, enumerationcontext: *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(VerifierEnumerateResource(process.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(resourcetype), ::core::mem::transmute(resourcecallback), ::core::mem::transmute(enumerationcontext)))
     }

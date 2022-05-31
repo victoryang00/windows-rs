@@ -2,11 +2,11 @@
 pub struct GattCharacteristic(::windows_core::IUnknown);
 impl GattCharacteristic {
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn GetDescriptors<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, descriptoruuid: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattDescriptor>> {
+    pub fn GetDescriptors<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, descriptoruuid: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDescriptors)(::windows_core::Interface::as_raw(this), descriptoruuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).GetDescriptors)(::windows_core::Interface::as_raw(this), descriptoruuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattDescriptor>>(result__)
         }
     }
     pub fn CharacteristicProperties(&self) -> ::windows_core::Result<GattCharacteristicProperties> {
@@ -49,71 +49,65 @@ impl GattCharacteristic {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PresentationFormats(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattPresentationFormat>> {
+    pub fn PresentationFormats(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattPresentationFormat>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PresentationFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattPresentationFormat>>(result__)
+            (::windows_core::Interface::vtable(this).PresentationFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattPresentationFormat>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadValueAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattReadResult>> {
+    pub fn ReadValueAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattReadResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadValueAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattReadResult>>(result__)
+            (::windows_core::Interface::vtable(this).ReadValueAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattReadResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadValueWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattReadResult>> {
+    pub fn ReadValueWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattReadResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadValueWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattReadResult>>(result__)
+            (::windows_core::Interface::vtable(this).ReadValueWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattReadResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteValueAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteValueAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteValueAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).WriteValueAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteValueWithOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0, writeoption: GattWriteOption) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteValueWithOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0, writeoption: GattWriteOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteValueWithOptionAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), writeoption, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).WriteValueWithOptionAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), writeoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadClientCharacteristicConfigurationDescriptorAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattReadClientCharacteristicConfigurationDescriptorResult>> {
+    pub fn ReadClientCharacteristicConfigurationDescriptorAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattReadClientCharacteristicConfigurationDescriptorResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadClientCharacteristicConfigurationDescriptorAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattReadClientCharacteristicConfigurationDescriptorResult>>(result__)
+            (::windows_core::Interface::vtable(this).ReadClientCharacteristicConfigurationDescriptorAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattReadClientCharacteristicConfigurationDescriptorResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteClientCharacteristicConfigurationDescriptorAsync(&self, clientcharacteristicconfigurationdescriptorvalue: GattClientCharacteristicConfigurationDescriptorValue) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>> {
+    pub fn WriteClientCharacteristicConfigurationDescriptorAsync(&self, clientcharacteristicconfigurationdescriptorvalue: GattClientCharacteristicConfigurationDescriptorValue) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteClientCharacteristicConfigurationDescriptorAsync)(::windows_core::Interface::as_raw(this), clientcharacteristicconfigurationdescriptorvalue, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).WriteClientCharacteristicConfigurationDescriptorAsync)(::windows_core::Interface::as_raw(this), clientcharacteristicconfigurationdescriptorvalue, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ValueChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattCharacteristic, GattValueChangedEventArgs>>>(&self, valuechangedhandler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn ValueChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattCharacteristic, GattValueChangedEventArgs>>>(&self, valuechangedhandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ValueChanged)(::windows_core::Interface::as_raw(this), valuechangedhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ValueChanged)(::windows_core::Interface::as_raw(this), valuechangedhandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveValueChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, valuechangedeventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveValueChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, valuechangedeventcookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveValueChanged)(::windows_core::Interface::as_raw(this), valuechangedeventcookie.into_param().abi()).ok() }
     }
@@ -125,67 +119,62 @@ impl GattCharacteristic {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn GetAllDescriptors(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattDescriptor>> {
+    pub fn GetAllDescriptors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattDescriptor>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristic2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllDescriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllDescriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattDescriptor>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDescriptorsAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDescriptorsResult>> {
+    pub fn GetDescriptorsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDescriptorsResult>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristic3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDescriptorsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDescriptorsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDescriptorsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDescriptorsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDescriptorsWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDescriptorsResult>> {
+    pub fn GetDescriptorsWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDescriptorsResult>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristic3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDescriptorsWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDescriptorsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDescriptorsWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDescriptorsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDescriptorsForUuidAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, descriptoruuid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDescriptorsResult>> {
+    pub fn GetDescriptorsForUuidAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, descriptoruuid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDescriptorsResult>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristic3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDescriptorsForUuidAsync)(::windows_core::Interface::as_raw(this), descriptoruuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDescriptorsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDescriptorsForUuidAsync)(::windows_core::Interface::as_raw(this), descriptoruuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDescriptorsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDescriptorsForUuidWithCacheModeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, descriptoruuid: Param0, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDescriptorsResult>> {
+    pub fn GetDescriptorsForUuidWithCacheModeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, descriptoruuid: Param0, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDescriptorsResult>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristic3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDescriptorsForUuidWithCacheModeAsync)(::windows_core::Interface::as_raw(this), descriptoruuid.into_param().abi(), cachemode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDescriptorsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetDescriptorsForUuidWithCacheModeAsync)(::windows_core::Interface::as_raw(this), descriptoruuid.into_param().abi(), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDescriptorsResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteValueWithResultAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattWriteResult>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteValueWithResultAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattWriteResult>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristic3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteValueWithResultAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattWriteResult>>(result__)
+            (::windows_core::Interface::vtable(this).WriteValueWithResultAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattWriteResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteValueWithResultAndOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0, writeoption: GattWriteOption) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattWriteResult>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteValueWithResultAndOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0, writeoption: GattWriteOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattWriteResult>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristic3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteValueWithResultAndOptionAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), writeoption, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattWriteResult>>(result__)
+            (::windows_core::Interface::vtable(this).WriteValueWithResultAndOptionAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), writeoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattWriteResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteClientCharacteristicConfigurationDescriptorWithResultAsync(&self, clientcharacteristicconfigurationdescriptorvalue: GattClientCharacteristicConfigurationDescriptorValue) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattWriteResult>> {
+    pub fn WriteClientCharacteristicConfigurationDescriptorWithResultAsync(&self, clientcharacteristicconfigurationdescriptorvalue: GattClientCharacteristicConfigurationDescriptorValue) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattWriteResult>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristic3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteClientCharacteristicConfigurationDescriptorWithResultAsync)(::windows_core::Interface::as_raw(this), clientcharacteristicconfigurationdescriptorvalue, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattWriteResult>>(result__)
+            (::windows_core::Interface::vtable(this).WriteClientCharacteristicConfigurationDescriptorWithResultAsync)(::windows_core::Interface::as_raw(this), clientcharacteristicconfigurationdescriptorvalue, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattWriteResult>>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -852,20 +841,19 @@ impl GattCharacteristicsResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattCommunicationStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProtocolError(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<u8>> {
+    pub fn ProtocolError(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Characteristics(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattCharacteristic>> {
+    pub fn Characteristics(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattCharacteristic>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattCharacteristic>>(result__)
+            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattCharacteristic>>(result__)
         }
     }
 }
@@ -992,12 +980,11 @@ impl GattClientNotificationResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattCommunicationStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProtocolError(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<u8>> {
+    pub fn ProtocolError(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
     pub fn BytesSent(&self) -> ::windows_core::Result<u16> {
@@ -1143,36 +1130,34 @@ impl GattDescriptor {
             (::windows_core::Interface::vtable(this).AttributeHandle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadValueAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattReadResult>> {
+    pub fn ReadValueAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattReadResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadValueAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattReadResult>>(result__)
+            (::windows_core::Interface::vtable(this).ReadValueAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattReadResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadValueWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattReadResult>> {
+    pub fn ReadValueWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattReadResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadValueWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattReadResult>>(result__)
+            (::windows_core::Interface::vtable(this).ReadValueWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattReadResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteValueAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteValueAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteValueAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).WriteValueAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteValueWithResultAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattWriteResult>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteValueWithResultAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattWriteResult>> {
         let this = &::windows_core::Interface::cast::<IGattDescriptor2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteValueWithResultAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattWriteResult>>(result__)
+            (::windows_core::Interface::vtable(this).WriteValueWithResultAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattWriteResult>>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -1315,20 +1300,19 @@ impl GattDescriptorsResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattCommunicationStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProtocolError(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<u8>> {
+    pub fn ProtocolError(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Descriptors(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattDescriptor>> {
+    pub fn Descriptors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattDescriptor>>(result__)
         }
     }
 }
@@ -1407,25 +1391,24 @@ unsafe impl ::core::marker::Sync for GattDescriptorsResult {}
 #[repr(transparent)]
 pub struct GattDeviceService(::windows_core::IUnknown);
 impl GattDeviceService {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn GetCharacteristics<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, characteristicuuid: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattCharacteristic>> {
+    pub fn GetCharacteristics<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, characteristicuuid: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattCharacteristic>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCharacteristics)(::windows_core::Interface::as_raw(this), characteristicuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattCharacteristic>>(result__)
+            (::windows_core::Interface::vtable(this).GetCharacteristics)(::windows_core::Interface::as_raw(this), characteristicuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattCharacteristic>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn GetIncludedServices<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, serviceuuid: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattDeviceService>> {
+    pub fn GetIncludedServices<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, serviceuuid: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattDeviceService>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetIncludedServices)(::windows_core::Interface::as_raw(this), serviceuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattDeviceService>>(result__)
+            (::windows_core::Interface::vtable(this).GetIncludedServices)(::windows_core::Interface::as_raw(this), serviceuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattDeviceService>>(result__)
         }
     }
     pub fn DeviceId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1458,27 +1441,27 @@ impl GattDeviceService {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn ParentServices(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattDeviceService>> {
+    pub fn ParentServices(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattDeviceService>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParentServices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattDeviceService>>(result__)
+            (::windows_core::Interface::vtable(this).ParentServices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattDeviceService>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn GetAllCharacteristics(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattCharacteristic>> {
+    pub fn GetAllCharacteristics(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattCharacteristic>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllCharacteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattCharacteristic>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllCharacteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattCharacteristic>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn GetAllIncludedServices(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattDeviceService>> {
+    pub fn GetAllIncludedServices(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattDeviceService>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllIncludedServices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattDeviceService>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllIncludedServices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattDeviceService>>(result__)
         }
     }
     #[cfg(feature = "Devices_Enumeration")]
@@ -1503,91 +1486,81 @@ impl GattDeviceService {
             (::windows_core::Interface::vtable(this).SharingMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattSharingMode>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation"))]
-    pub fn RequestAccessAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::Enumeration::DeviceAccessStatus>> {
+    #[cfg(feature = "Devices_Enumeration")]
+    pub fn RequestAccessAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::Enumeration::DeviceAccessStatus>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::Enumeration::DeviceAccessStatus>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::Enumeration::DeviceAccessStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OpenAsync(&self, sharingmode: GattSharingMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattOpenStatus>> {
+    pub fn OpenAsync(&self, sharingmode: GattSharingMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattOpenStatus>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenAsync)(::windows_core::Interface::as_raw(this), sharingmode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattOpenStatus>>(result__)
+            (::windows_core::Interface::vtable(this).OpenAsync)(::windows_core::Interface::as_raw(this), sharingmode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattOpenStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCharacteristicsAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattCharacteristicsResult>> {
+    pub fn GetCharacteristicsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattCharacteristicsResult>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCharacteristicsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattCharacteristicsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetCharacteristicsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattCharacteristicsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCharacteristicsWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattCharacteristicsResult>> {
+    pub fn GetCharacteristicsWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattCharacteristicsResult>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCharacteristicsWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattCharacteristicsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetCharacteristicsWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattCharacteristicsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCharacteristicsForUuidAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, characteristicuuid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattCharacteristicsResult>> {
+    pub fn GetCharacteristicsForUuidAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, characteristicuuid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattCharacteristicsResult>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCharacteristicsForUuidAsync)(::windows_core::Interface::as_raw(this), characteristicuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattCharacteristicsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetCharacteristicsForUuidAsync)(::windows_core::Interface::as_raw(this), characteristicuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattCharacteristicsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetCharacteristicsForUuidWithCacheModeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, characteristicuuid: Param0, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattCharacteristicsResult>> {
+    pub fn GetCharacteristicsForUuidWithCacheModeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, characteristicuuid: Param0, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattCharacteristicsResult>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCharacteristicsForUuidWithCacheModeAsync)(::windows_core::Interface::as_raw(this), characteristicuuid.into_param().abi(), cachemode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattCharacteristicsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetCharacteristicsForUuidWithCacheModeAsync)(::windows_core::Interface::as_raw(this), characteristicuuid.into_param().abi(), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattCharacteristicsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetIncludedServicesAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDeviceServicesResult>> {
+    pub fn GetIncludedServicesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetIncludedServicesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDeviceServicesResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetIncludedServicesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetIncludedServicesWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDeviceServicesResult>> {
+    pub fn GetIncludedServicesWithCacheModeAsync(&self, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetIncludedServicesWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDeviceServicesResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetIncludedServicesWithCacheModeAsync)(::windows_core::Interface::as_raw(this), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetIncludedServicesForUuidAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, serviceuuid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDeviceServicesResult>> {
+    pub fn GetIncludedServicesForUuidAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, serviceuuid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetIncludedServicesForUuidAsync)(::windows_core::Interface::as_raw(this), serviceuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDeviceServicesResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetIncludedServicesForUuidAsync)(::windows_core::Interface::as_raw(this), serviceuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetIncludedServicesForUuidWithCacheModeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, serviceuuid: Param0, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDeviceServicesResult>> {
+    pub fn GetIncludedServicesForUuidWithCacheModeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, serviceuuid: Param0, cachemode: super::BluetoothCacheMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDeviceServicesResult>> {
         let this = &::windows_core::Interface::cast::<IGattDeviceService3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetIncludedServicesForUuidWithCacheModeAsync)(::windows_core::Interface::as_raw(this), serviceuuid.into_param().abi(), cachemode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDeviceServicesResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetIncludedServicesForUuidWithCacheModeAsync)(::windows_core::Interface::as_raw(this), serviceuuid.into_param().abi(), cachemode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDeviceServicesResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDeviceService>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDeviceService>> {
         Self::IGattDeviceServiceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDeviceService>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDeviceService>>(result__)
         })
     }
     pub fn GetDeviceSelectorFromUuid<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(serviceuuid: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1610,11 +1583,10 @@ impl GattDeviceService {
             (::windows_core::Interface::vtable(this).ConvertShortIdToUuid)(::windows_core::Interface::as_raw(this), shortid, result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdWithSharingModeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0, sharingmode: GattSharingMode) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattDeviceService>> {
+    pub fn FromIdWithSharingModeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0, sharingmode: GattSharingMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattDeviceService>> {
         Self::IGattDeviceServiceStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdWithSharingModeAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), sharingmode, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattDeviceService>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdWithSharingModeAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), sharingmode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattDeviceService>>(result__)
         })
     }
     pub fn GetDeviceSelectorForBluetoothDeviceId<'a, Param0: ::windows_core::IntoParam<'a, super::BluetoothDeviceId>>(bluetoothdeviceid: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1720,30 +1692,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Gat
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<GattDeviceService> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<GattDeviceService> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: GattDeviceService) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&GattDeviceService> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&GattDeviceService> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &GattDeviceService) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for GattDeviceService {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for GattDeviceService {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &GattDeviceService {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &GattDeviceService {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for GattDeviceService {}
@@ -1758,20 +1726,19 @@ impl GattDeviceServicesResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattCommunicationStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProtocolError(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<u8>> {
+    pub fn ProtocolError(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Services(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattDeviceService>> {
+    pub fn Services(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattDeviceService>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Services)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattDeviceService>>(result__)
+            (::windows_core::Interface::vtable(this).Services)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattDeviceService>>(result__)
         }
     }
 }
@@ -1858,11 +1825,11 @@ impl GattLocalCharacteristic {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn StaticValue(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn StaticValue(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StaticValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).StaticValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn CharacteristicProperties(&self) -> ::windows_core::Result<GattCharacteristicProperties> {
@@ -1886,20 +1853,19 @@ impl GattLocalCharacteristic {
             (::windows_core::Interface::vtable(this).WriteProtectionLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattProtectionLevel>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateDescriptorAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, GattLocalDescriptorParameters>>(&self, descriptoruuid: Param0, parameters: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattLocalDescriptorResult>> {
+    pub fn CreateDescriptorAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, GattLocalDescriptorParameters>>(&self, descriptoruuid: Param0, parameters: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattLocalDescriptorResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateDescriptorAsync)(::windows_core::Interface::as_raw(this), descriptoruuid.into_param().abi(), parameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattLocalDescriptorResult>>(result__)
+            (::windows_core::Interface::vtable(this).CreateDescriptorAsync)(::windows_core::Interface::as_raw(this), descriptoruuid.into_param().abi(), parameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattLocalDescriptorResult>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Descriptors(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattLocalDescriptor>> {
+    pub fn Descriptors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattLocalDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattLocalDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattLocalDescriptor>>(result__)
         }
     }
     pub fn UserDescription(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1910,74 +1876,68 @@ impl GattLocalCharacteristic {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PresentationFormats(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattPresentationFormat>> {
+    pub fn PresentationFormats(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattPresentationFormat>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PresentationFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattPresentationFormat>>(result__)
+            (::windows_core::Interface::vtable(this).PresentationFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattPresentationFormat>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SubscribedClients(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattSubscribedClient>> {
+    pub fn SubscribedClients(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattSubscribedClient>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SubscribedClients)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattSubscribedClient>>(result__)
+            (::windows_core::Interface::vtable(this).SubscribedClients)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattSubscribedClient>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SubscribedClientsChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattLocalCharacteristic, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn SubscribedClientsChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattLocalCharacteristic, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).SubscribedClientsChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).SubscribedClientsChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveSubscribedClientsChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveSubscribedClientsChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSubscribedClientsChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattLocalCharacteristic, GattReadRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn ReadRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattLocalCharacteristic, GattReadRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ReadRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveReadRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveReadRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveReadRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattLocalCharacteristic, GattWriteRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn WriteRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattLocalCharacteristic, GattWriteRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).WriteRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveWriteRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveWriteRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveWriteRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn NotifyValueAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<GattClientNotificationResult>>> {
+    pub fn NotifyValueAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<GattClientNotificationResult>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NotifyValueAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<GattClientNotificationResult>>>(result__)
+            (::windows_core::Interface::vtable(this).NotifyValueAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<GattClientNotificationResult>>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn NotifyValueForSubscribedClientAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, GattSubscribedClient>>(&self, value: Param0, subscribedclient: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattClientNotificationResult>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn NotifyValueForSubscribedClientAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, GattSubscribedClient>>(&self, value: Param0, subscribedclient: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattClientNotificationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NotifyValueForSubscribedClientAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), subscribedclient.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattClientNotificationResult>>(result__)
+            (::windows_core::Interface::vtable(this).NotifyValueForSubscribedClientAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), subscribedclient.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattClientNotificationResult>>(result__)
         }
     }
 }
@@ -2064,16 +2024,16 @@ impl GattLocalCharacteristicParameters {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetStaticValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetStaticValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStaticValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn StaticValue(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn StaticValue(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StaticValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).StaticValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn SetCharacteristicProperties(&self, value: GattCharacteristicProperties) -> ::windows_core::Result<()> {
@@ -2121,11 +2081,11 @@ impl GattLocalCharacteristicParameters {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PresentationFormats(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<GattPresentationFormat>> {
+    pub fn PresentationFormats(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<GattPresentationFormat>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PresentationFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<GattPresentationFormat>>(result__)
+            (::windows_core::Interface::vtable(this).PresentationFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<GattPresentationFormat>>(result__)
         }
     }
 }
@@ -2302,11 +2262,11 @@ impl GattLocalDescriptor {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn StaticValue(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn StaticValue(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StaticValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).StaticValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn ReadProtectionLevel(&self) -> ::windows_core::Result<GattProtectionLevel> {
@@ -2323,29 +2283,25 @@ impl GattLocalDescriptor {
             (::windows_core::Interface::vtable(this).WriteProtectionLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattProtectionLevel>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattLocalDescriptor, GattReadRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn ReadRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattLocalDescriptor, GattReadRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ReadRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveReadRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveReadRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveReadRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattLocalDescriptor, GattWriteRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn WriteRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattLocalDescriptor, GattWriteRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).WriteRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveWriteRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveWriteRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveWriteRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2433,16 +2389,16 @@ impl GattLocalDescriptorParameters {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetStaticValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetStaticValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStaticValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn StaticValue(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn StaticValue(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StaticValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).StaticValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn SetReadProtectionLevel(&self, value: GattProtectionLevel) -> ::windows_core::Result<()> {
@@ -2640,20 +2596,19 @@ impl GattLocalService {
             (::windows_core::Interface::vtable(this).Uuid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateCharacteristicAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, GattLocalCharacteristicParameters>>(&self, characteristicuuid: Param0, parameters: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattLocalCharacteristicResult>> {
+    pub fn CreateCharacteristicAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, GattLocalCharacteristicParameters>>(&self, characteristicuuid: Param0, parameters: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattLocalCharacteristicResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateCharacteristicAsync)(::windows_core::Interface::as_raw(this), characteristicuuid.into_param().abi(), parameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattLocalCharacteristicResult>>(result__)
+            (::windows_core::Interface::vtable(this).CreateCharacteristicAsync)(::windows_core::Interface::as_raw(this), characteristicuuid.into_param().abi(), parameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattLocalCharacteristicResult>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Characteristics(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GattLocalCharacteristic>> {
+    pub fn Characteristics(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GattLocalCharacteristic>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GattLocalCharacteristic>>(result__)
+            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GattLocalCharacteristic>>(result__)
         }
     }
 }
@@ -3233,12 +3188,11 @@ impl GattReadClientCharacteristicConfigurationDescriptorResult {
             (::windows_core::Interface::vtable(this).ClientCharacteristicConfigurationDescriptor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattClientCharacteristicConfigurationDescriptorValue>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProtocolError(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<u8>> {
+    pub fn ProtocolError(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = &::windows_core::Interface::cast::<IGattReadClientCharacteristicConfigurationDescriptorResult2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
 }
@@ -3338,21 +3292,19 @@ impl GattReadRequest {
             (::windows_core::Interface::vtable(this).State)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattRequestState>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattReadRequest, GattRequestStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn StateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattReadRequest, GattRequestStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStateChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn RespondWithValue<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn RespondWithValue<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RespondWithValue)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -3443,20 +3395,18 @@ impl GattReadRequestedEventArgs {
             (::windows_core::Interface::vtable(this).Session)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattSession>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetRequestAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattReadRequest>> {
+    pub fn GetRequestAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattReadRequest>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRequestAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattReadRequest>>(result__)
+            (::windows_core::Interface::vtable(this).GetRequestAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattReadRequest>>(result__)
         }
     }
 }
@@ -3543,19 +3493,18 @@ impl GattReadResult {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Value(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn Value(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProtocolError(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<u8>> {
+    pub fn ProtocolError(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = &::windows_core::Interface::cast::<IGattReadResult2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
 }
@@ -3642,24 +3591,22 @@ impl GattReliableWriteTransaction {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn WriteValue<'a, Param0: ::windows_core::IntoParam<'a, GattCharacteristic>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, characteristic: Param0, value: Param1) -> ::windows_core::Result<()> {
+    pub fn WriteValue<'a, Param0: ::windows_core::IntoParam<'a, GattCharacteristic>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, characteristic: Param0, value: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).WriteValue)(::windows_core::Interface::as_raw(this), characteristic.into_param().abi(), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CommitAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>> {
+    pub fn CommitAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CommitAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).CommitAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattCommunicationStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CommitWithResultAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattWriteResult>> {
+    pub fn CommitWithResultAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattWriteResult>> {
         let this = &::windows_core::Interface::cast::<IGattReliableWriteTransaction2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CommitWithResultAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattWriteResult>>(result__)
+            (::windows_core::Interface::vtable(this).CommitWithResultAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattWriteResult>>(result__)
         }
     }
 }
@@ -3876,16 +3823,14 @@ impl GattServiceProvider {
             (::windows_core::Interface::vtable(this).AdvertisementStatus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattServiceProviderAdvertisementStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AdvertisementStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattServiceProvider, GattServiceProviderAdvertisementStatusChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn AdvertisementStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattServiceProvider, GattServiceProviderAdvertisementStatusChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AdvertisementStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AdvertisementStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAdvertisementStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAdvertisementStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAdvertisementStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -3901,11 +3846,10 @@ impl GattServiceProvider {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).StopAdvertising)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(serviceuuid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattServiceProviderResult>> {
+    pub fn CreateAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(serviceuuid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattServiceProviderResult>> {
         Self::IGattServiceProviderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateAsync)(::windows_core::Interface::as_raw(this), serviceuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattServiceProviderResult>>(result__)
+            (::windows_core::Interface::vtable(this).CreateAsync)(::windows_core::Interface::as_raw(this), serviceuuid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattServiceProviderResult>>(result__)
         })
     }
     pub fn IGattServiceProviderStatics<R, F: FnOnce(&IGattServiceProviderStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -4144,16 +4088,16 @@ impl GattServiceProviderAdvertisingParameters {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetServiceData<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetServiceData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IGattServiceProviderAdvertisingParameters2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetServiceData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ServiceData(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn ServiceData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = &::windows_core::Interface::cast::<IGattServiceProviderAdvertisingParameters2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServiceData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).ServiceData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -4468,9 +4412,8 @@ impl ::windows_core::RuntimeName for GattServiceUuids {
 #[repr(transparent)]
 pub struct GattSession(::windows_core::IUnknown);
 impl GattSession {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn DeviceId(&self) -> ::windows_core::Result<super::BluetoothDeviceId> {
@@ -4512,37 +4455,32 @@ impl GattSession {
             (::windows_core::Interface::vtable(this).SessionStatus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattSessionStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MaxPduSizeChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattSession, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MaxPduSizeChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattSession, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxPduSizeChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MaxPduSizeChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMaxPduSizeChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMaxPduSizeChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMaxPduSizeChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SessionStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattSession, GattSessionStatusChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn SessionStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattSession, GattSessionStatusChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).SessionStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).SessionStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveSessionStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveSessionStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSessionStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromDeviceIdAsync<'a, Param0: ::windows_core::IntoParam<'a, super::BluetoothDeviceId>>(deviceid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattSession>> {
+    pub fn FromDeviceIdAsync<'a, Param0: ::windows_core::IntoParam<'a, super::BluetoothDeviceId>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattSession>> {
         Self::IGattSessionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromDeviceIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattSession>>(result__)
+            (::windows_core::Interface::vtable(this).FromDeviceIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattSession>>(result__)
         })
     }
     pub fn IGattSessionStatics<R, F: FnOnce(&IGattSessionStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -4620,30 +4558,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Gat
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<GattSession> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<GattSession> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: GattSession) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&GattSession> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&GattSession> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &GattSession) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for GattSession {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for GattSession {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &GattSession {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &GattSession {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for GattSession {}
@@ -4823,16 +4757,14 @@ impl GattSubscribedClient {
             (::windows_core::Interface::vtable(this).MaxNotificationSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MaxNotificationSizeChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattSubscribedClient, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MaxNotificationSizeChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattSubscribedClient, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxNotificationSizeChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MaxNotificationSizeChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMaxNotificationSizeChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMaxNotificationSizeChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMaxNotificationSizeChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -4913,19 +4845,18 @@ unsafe impl ::core::marker::Sync for GattSubscribedClient {}
 pub struct GattValueChangedEventArgs(::windows_core::IUnknown);
 impl GattValueChangedEventArgs {
     #[cfg(feature = "Storage_Streams")]
-    pub fn CharacteristicValue(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn CharacteristicValue(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CharacteristicValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).CharacteristicValue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
 }
@@ -5038,11 +4969,11 @@ unsafe impl ::windows_core::RuntimeType for GattWriteOption {
 pub struct GattWriteRequest(::windows_core::IUnknown);
 impl GattWriteRequest {
     #[cfg(feature = "Storage_Streams")]
-    pub fn Value(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn Value(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn Offset(&self) -> ::windows_core::Result<u32> {
@@ -5066,16 +4997,14 @@ impl GattWriteRequest {
             (::windows_core::Interface::vtable(this).State)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattRequestState>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<GattWriteRequest, GattRequestStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn StateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GattWriteRequest, GattRequestStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStateChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -5170,20 +5099,18 @@ impl GattWriteRequestedEventArgs {
             (::windows_core::Interface::vtable(this).Session)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattSession>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetRequestAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GattWriteRequest>> {
+    pub fn GetRequestAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GattWriteRequest>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRequestAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GattWriteRequest>>(result__)
+            (::windows_core::Interface::vtable(this).GetRequestAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GattWriteRequest>>(result__)
         }
     }
 }
@@ -5269,12 +5196,11 @@ impl GattWriteResult {
             (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GattCommunicationStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProtocolError(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<u8>> {
+    pub fn ProtocolError(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
 }
@@ -5375,38 +5301,20 @@ pub struct IGattCharacteristic_Vtbl {
     pub PresentationFormats: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     PresentationFormats: usize,
-    #[cfg(feature = "Foundation")]
     pub ReadValueAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadValueAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ReadValueWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadValueWithCacheModeAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub WriteValueAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     WriteValueAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub WriteValueWithOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, writeoption: GattWriteOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     WriteValueWithOptionAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ReadClientCharacteristicConfigurationDescriptorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadClientCharacteristicConfigurationDescriptorAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub WriteClientCharacteristicConfigurationDescriptorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clientcharacteristicconfigurationdescriptorvalue: GattClientCharacteristicConfigurationDescriptorValue, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WriteClientCharacteristicConfigurationDescriptorAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub ValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, valuechangedhandler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ValueChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, valuechangedeventcookie: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveValueChanged: usize,
+    pub ValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, valuechangedhandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, valuechangedeventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -5436,34 +5344,19 @@ unsafe impl ::windows_core::Interface for IGattCharacteristic3 {
 #[doc(hidden)]
 pub struct IGattCharacteristic3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetDescriptorsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDescriptorsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetDescriptorsWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDescriptorsWithCacheModeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetDescriptorsForUuidAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, descriptoruuid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDescriptorsForUuidAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetDescriptorsForUuidWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, descriptoruuid: ::windows_core::GUID, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDescriptorsForUuidWithCacheModeAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub WriteValueWithResultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     WriteValueWithResultAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub WriteValueWithResultAndOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, writeoption: GattWriteOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     WriteValueWithResultAndOptionAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub WriteClientCharacteristicConfigurationDescriptorWithResultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clientcharacteristicconfigurationdescriptorvalue: GattClientCharacteristicConfigurationDescriptorValue, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WriteClientCharacteristicConfigurationDescriptorWithResultAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -5598,10 +5491,7 @@ unsafe impl ::windows_core::Interface for IGattCharacteristicsResult {
 pub struct IGattCharacteristicsResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattCommunicationStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ProtocolError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProtocolError: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub Characteristics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -5620,10 +5510,7 @@ pub struct IGattClientNotificationResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SubscribedClient: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattCommunicationStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ProtocolError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProtocolError: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -5653,17 +5540,11 @@ pub struct IGattDescriptor_Vtbl {
     pub SetProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: GattProtectionLevel) -> ::windows_core::HRESULT,
     pub Uuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub AttributeHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ReadValueAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadValueAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ReadValueWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadValueWithCacheModeAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub WriteValueAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     WriteValueAsync: usize,
 }
 #[doc(hidden)]
@@ -5677,9 +5558,9 @@ unsafe impl ::windows_core::Interface for IGattDescriptor2 {
 #[doc(hidden)]
 pub struct IGattDescriptor2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub WriteValueWithResultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     WriteValueWithResultAsync: usize,
 }
 #[doc(hidden)]
@@ -5728,10 +5609,7 @@ unsafe impl ::windows_core::Interface for IGattDescriptorsResult {
 pub struct IGattDescriptorsResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattCommunicationStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ProtocolError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProtocolError: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub Descriptors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -5805,46 +5683,19 @@ pub struct IGattDeviceService3_Vtbl {
     DeviceAccessInformation: usize,
     pub Session: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SharingMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattSharingMode) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Enumeration")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Enumeration", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Enumeration"))]
     RequestAccessAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub OpenAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sharingmode: GattSharingMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OpenAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetCharacteristicsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCharacteristicsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetCharacteristicsWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCharacteristicsWithCacheModeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetCharacteristicsForUuidAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, characteristicuuid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCharacteristicsForUuidAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetCharacteristicsForUuidWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, characteristicuuid: ::windows_core::GUID, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetCharacteristicsForUuidWithCacheModeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetIncludedServicesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetIncludedServicesAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetIncludedServicesWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetIncludedServicesWithCacheModeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetIncludedServicesForUuidAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceuuid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetIncludedServicesForUuidAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetIncludedServicesForUuidWithCacheModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceuuid: ::windows_core::GUID, cachemode: super::BluetoothCacheMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetIncludedServicesForUuidWithCacheModeAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -5857,10 +5708,7 @@ unsafe impl ::windows_core::Interface for IGattDeviceServiceStatics {
 #[doc(hidden)]
 pub struct IGattDeviceServiceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
     pub GetDeviceSelectorFromUuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceuuid: ::windows_core::GUID, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "deprecated")]
     pub GetDeviceSelectorFromShortId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceshortid: u16, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -5882,10 +5730,7 @@ unsafe impl ::windows_core::Interface for IGattDeviceServiceStatics2 {
 #[doc(hidden)]
 pub struct IGattDeviceServiceStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub FromIdWithSharingModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, sharingmode: GattSharingMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdWithSharingModeAsync: usize,
     pub GetDeviceSelectorForBluetoothDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bluetoothdeviceid: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetDeviceSelectorForBluetoothDeviceIdWithCacheMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bluetoothdeviceid: ::windows_core::RawPtr, cachemode: super::BluetoothCacheMode, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetDeviceSelectorForBluetoothDeviceIdAndUuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bluetoothdeviceid: ::windows_core::RawPtr, serviceuuid: ::windows_core::GUID, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -5903,10 +5748,7 @@ unsafe impl ::windows_core::Interface for IGattDeviceServicesResult {
 pub struct IGattDeviceServicesResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattCommunicationStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ProtocolError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProtocolError: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub Services: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -5931,10 +5773,7 @@ pub struct IGattLocalCharacteristic_Vtbl {
     pub CharacteristicProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattCharacteristicProperties) -> ::windows_core::HRESULT,
     pub ReadProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattProtectionLevel) -> ::windows_core::HRESULT,
     pub WriteProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattProtectionLevel) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub CreateDescriptorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, descriptoruuid: ::windows_core::GUID, parameters: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateDescriptorAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub Descriptors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -5948,37 +5787,19 @@ pub struct IGattLocalCharacteristic_Vtbl {
     pub SubscribedClients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SubscribedClients: usize,
-    #[cfg(feature = "Foundation")]
-    pub SubscribedClientsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SubscribedClientsChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveSubscribedClientsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveSubscribedClientsChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub ReadRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveReadRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveReadRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub WriteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WriteRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveWriteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveWriteRequested: usize,
+    pub SubscribedClientsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveSubscribedClientsChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub ReadRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveReadRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub WriteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveWriteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
     pub NotifyValueAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams")))]
     NotifyValueAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub NotifyValueForSubscribedClientAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, subscribedclient: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     NotifyValueForSubscribedClientAsync: usize,
 }
 #[doc(hidden)]
@@ -6045,22 +5866,10 @@ pub struct IGattLocalDescriptor_Vtbl {
     StaticValue: usize,
     pub ReadProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattProtectionLevel) -> ::windows_core::HRESULT,
     pub WriteProtectionLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattProtectionLevel) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ReadRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveReadRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveReadRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub WriteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WriteRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveWriteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveWriteRequested: usize,
+    pub ReadRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveReadRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub WriteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveWriteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6112,10 +5921,7 @@ unsafe impl ::windows_core::Interface for IGattLocalService {
 pub struct IGattLocalService_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Uuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub CreateCharacteristicAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, characteristicuuid: ::windows_core::GUID, parameters: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateCharacteristicAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub Characteristics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -6257,10 +6063,7 @@ unsafe impl ::windows_core::Interface for IGattReadClientCharacteristicConfigura
 #[doc(hidden)]
 pub struct IGattReadClientCharacteristicConfigurationDescriptorResult2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ProtocolError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProtocolError: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6276,14 +6079,8 @@ pub struct IGattReadRequest_Vtbl {
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub Length: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattRequestState) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub StateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StateChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStateChanged: usize,
+    pub StateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
     pub RespondWithValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
@@ -6302,14 +6099,8 @@ unsafe impl ::windows_core::Interface for IGattReadRequestedEventArgs {
 pub struct IGattReadRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Session: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
-    #[cfg(feature = "Foundation")]
     pub GetRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetRequestAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6339,10 +6130,7 @@ unsafe impl ::windows_core::Interface for IGattReadResult2 {
 #[doc(hidden)]
 pub struct IGattReadResult2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ProtocolError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProtocolError: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6359,10 +6147,7 @@ pub struct IGattReliableWriteTransaction_Vtbl {
     pub WriteValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, characteristic: ::windows_core::RawPtr, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     WriteValue: usize,
-    #[cfg(feature = "Foundation")]
     pub CommitAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CommitAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6375,10 +6160,7 @@ unsafe impl ::windows_core::Interface for IGattReliableWriteTransaction2 {
 #[doc(hidden)]
 pub struct IGattReliableWriteTransaction2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CommitWithResultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CommitWithResultAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6407,14 +6189,8 @@ pub struct IGattServiceProvider_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Service: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AdvertisementStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattServiceProviderAdvertisementStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub AdvertisementStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AdvertisementStatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAdvertisementStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAdvertisementStatusChanged: usize,
+    pub AdvertisementStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAdvertisementStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub StartAdvertising: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub StartAdvertisingWithParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parameters: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub StopAdvertising: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -6494,10 +6270,7 @@ unsafe impl ::windows_core::Interface for IGattServiceProviderStatics {
 #[doc(hidden)]
 pub struct IGattServiceProviderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CreateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, serviceuuid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6562,22 +6335,10 @@ pub struct IGattSession_Vtbl {
     pub MaintainConnection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub MaxPduSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
     pub SessionStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattSessionStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub MaxPduSizeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MaxPduSizeChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMaxPduSizeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMaxPduSizeChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub SessionStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SessionStatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveSessionStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveSessionStatusChanged: usize,
+    pub MaxPduSizeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMaxPduSizeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub SessionStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveSessionStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6590,10 +6351,7 @@ unsafe impl ::windows_core::Interface for IGattSessionStatics {
 #[doc(hidden)]
 pub struct IGattSessionStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub FromDeviceIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromDeviceIdAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6622,14 +6380,8 @@ pub struct IGattSubscribedClient_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Session: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub MaxNotificationSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub MaxNotificationSizeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MaxNotificationSizeChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMaxNotificationSizeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMaxNotificationSizeChanged: usize,
+    pub MaxNotificationSizeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMaxNotificationSizeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6646,10 +6398,7 @@ pub struct IGattValueChangedEventArgs_Vtbl {
     pub CharacteristicValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CharacteristicValue: usize,
-    #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Timestamp: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6669,14 +6418,8 @@ pub struct IGattWriteRequest_Vtbl {
     pub Offset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub Option: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattWriteOption) -> ::windows_core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattRequestState) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub StateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StateChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStateChanged: usize,
+    pub StateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub Respond: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub RespondWithProtocolError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protocolerror: u8) -> ::windows_core::HRESULT,
 }
@@ -6692,14 +6435,8 @@ unsafe impl ::windows_core::Interface for IGattWriteRequestedEventArgs {
 pub struct IGattWriteRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Session: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
-    #[cfg(feature = "Foundation")]
     pub GetRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetRequestAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -6713,8 +6450,5 @@ unsafe impl ::windows_core::Interface for IGattWriteResult {
 pub struct IGattWriteResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GattCommunicationStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ProtocolError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProtocolError: usize,
 }

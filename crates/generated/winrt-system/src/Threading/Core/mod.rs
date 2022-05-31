@@ -9,10 +9,7 @@ unsafe impl ::windows_core::Interface for IPreallocatedWorkItem {
 #[doc(hidden)]
 pub struct IPreallocatedWorkItem_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RunAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RunAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -25,18 +22,9 @@ unsafe impl ::windows_core::Interface for IPreallocatedWorkItemFactory {
 #[doc(hidden)]
 pub struct IPreallocatedWorkItemFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CreateWorkItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateWorkItem: usize,
-    #[cfg(feature = "Foundation")]
     pub CreateWorkItemWithPriority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, priority: super::WorkItemPriority, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateWorkItemWithPriority: usize,
-    #[cfg(feature = "Foundation")]
     pub CreateWorkItemWithPriorityAndOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, priority: super::WorkItemPriority, options: super::WorkItemOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateWorkItemWithPriorityAndOptions: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -64,42 +52,32 @@ unsafe impl ::windows_core::Interface for ISignalNotifierStatics {
 pub struct ISignalNotifierStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AttachToEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, handler: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub AttachToEventWithTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, handler: ::windows_core::RawPtr, timeout: super::super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AttachToEventWithTimeout: usize,
+    pub AttachToEventWithTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, handler: ::windows_core::RawPtr, timeout: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AttachToSemaphore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, handler: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub AttachToSemaphoreWithTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, handler: ::windows_core::RawPtr, timeout: super::super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AttachToSemaphoreWithTimeout: usize,
+    pub AttachToSemaphoreWithTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, handler: ::windows_core::RawPtr, timeout: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct PreallocatedWorkItem(::windows_core::IUnknown);
 impl PreallocatedWorkItem {
-    #[cfg(feature = "Foundation")]
-    pub fn RunAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn RunAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RunAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).RunAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn CreateWorkItem<'a, Param0: ::windows_core::IntoParam<'a, super::WorkItemHandler>>(handler: Param0) -> ::windows_core::Result<PreallocatedWorkItem> {
         Self::IPreallocatedWorkItemFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWorkItem)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<PreallocatedWorkItem>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn CreateWorkItemWithPriority<'a, Param0: ::windows_core::IntoParam<'a, super::WorkItemHandler>>(handler: Param0, priority: super::WorkItemPriority) -> ::windows_core::Result<PreallocatedWorkItem> {
         Self::IPreallocatedWorkItemFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWorkItemWithPriority)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), priority, result__.as_mut_ptr()).from_abi::<PreallocatedWorkItem>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn CreateWorkItemWithPriorityAndOptions<'a, Param0: ::windows_core::IntoParam<'a, super::WorkItemHandler>>(handler: Param0, priority: super::WorkItemPriority, options: super::WorkItemOptions) -> ::windows_core::Result<PreallocatedWorkItem> {
         Self::IPreallocatedWorkItemFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -283,8 +261,7 @@ impl SignalNotifier {
             (::windows_core::Interface::vtable(this).AttachToEvent)(::windows_core::Interface::as_raw(this), name.into_param().abi(), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<SignalNotifier>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AttachToEventWithTimeout<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, SignalHandler>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::TimeSpan>>(name: Param0, handler: Param1, timeout: Param2) -> ::windows_core::Result<SignalNotifier> {
+    pub fn AttachToEventWithTimeout<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, SignalHandler>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(name: Param0, handler: Param1, timeout: Param2) -> ::windows_core::Result<SignalNotifier> {
         Self::ISignalNotifierStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AttachToEventWithTimeout)(::windows_core::Interface::as_raw(this), name.into_param().abi(), handler.into_param().abi(), timeout.into_param().abi(), result__.as_mut_ptr()).from_abi::<SignalNotifier>(result__)
@@ -296,8 +273,7 @@ impl SignalNotifier {
             (::windows_core::Interface::vtable(this).AttachToSemaphore)(::windows_core::Interface::as_raw(this), name.into_param().abi(), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<SignalNotifier>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AttachToSemaphoreWithTimeout<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, SignalHandler>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::TimeSpan>>(name: Param0, handler: Param1, timeout: Param2) -> ::windows_core::Result<SignalNotifier> {
+    pub fn AttachToSemaphoreWithTimeout<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, SignalHandler>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(name: Param0, handler: Param1, timeout: Param2) -> ::windows_core::Result<SignalNotifier> {
         Self::ISignalNotifierStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).AttachToSemaphoreWithTimeout)(::windows_core::Interface::as_raw(this), name.into_param().abi(), handler.into_param().abi(), timeout.into_param().abi(), result__.as_mut_ptr()).from_abi::<SignalNotifier>(result__)

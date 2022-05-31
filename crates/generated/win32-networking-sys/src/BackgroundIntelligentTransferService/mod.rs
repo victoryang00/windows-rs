@@ -207,15 +207,12 @@ impl ::core::clone::Clone for BG_FILE_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BG_FILE_PROGRESS {
     pub BytesTotal: u64,
     pub BytesTransferred: u64,
-    pub Completed: super::super::Foundation::BOOL,
+    pub Completed: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BG_FILE_PROGRESS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BG_FILE_PROGRESS {
     fn clone(&self) -> Self {
         *self
@@ -286,15 +283,12 @@ pub const BG_JOB_STATE_TRANSFERRED: BG_JOB_STATE = 6i32;
 pub const BG_JOB_STATE_ACKNOWLEDGED: BG_JOB_STATE = 7i32;
 pub const BG_JOB_STATE_CANCELLED: BG_JOB_STATE = 8i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BG_JOB_TIMES {
-    pub CreationTime: super::super::Foundation::FILETIME,
-    pub ModificationTime: super::super::Foundation::FILETIME,
-    pub TransferCompletionTime: super::super::Foundation::FILETIME,
+    pub CreationTime: ::win32_foundation_sys::FILETIME,
+    pub ModificationTime: ::win32_foundation_sys::FILETIME,
+    pub TransferCompletionTime: ::win32_foundation_sys::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BG_JOB_TIMES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BG_JOB_TIMES {
     fn clone(&self) -> Self {
         *self
@@ -356,17 +350,14 @@ pub const BITS_JOB_PROPERTY_USE_STORED_CREDENTIALS: BITS_JOB_PROPERTY_ID = 7i32;
 pub const BITS_JOB_PROPERTY_MINIMUM_NOTIFICATION_INTERVAL_MS: BITS_JOB_PROPERTY_ID = 9i32;
 pub const BITS_JOB_PROPERTY_ON_DEMAND_MODE: BITS_JOB_PROPERTY_ID = 10i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union BITS_JOB_PROPERTY_VALUE {
     pub Dword: u32,
     pub ClsID: ::windows_core_sys::GUID,
-    pub Enable: super::super::Foundation::BOOL,
+    pub Enable: ::win32_foundation_sys::BOOL,
     pub Uint64: u64,
     pub Target: BG_AUTH_TARGET,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BITS_JOB_PROPERTY_VALUE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BITS_JOB_PROPERTY_VALUE {
     fn clone(&self) -> Self {
         *self
@@ -402,15 +393,12 @@ pub const BackgroundCopyManager4_0: ::windows_core_sys::GUID = ::windows_core_sy
 pub const BackgroundCopyManager5_0: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 516727628, data2: 59530, data3: 17635, data4: [141, 106, 137, 33, 189, 233, 228, 82] };
 pub const BackgroundCopyQMgr: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1772964590, data2: 20926, data3: 17307, data4: [169, 44, 134, 174, 73, 14, 139, 48] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILESETINFO {
-    pub bstrRemoteFile: super::super::Foundation::BSTR,
-    pub bstrLocalFile: super::super::Foundation::BSTR,
+    pub bstrRemoteFile: ::win32_foundation_sys::BSTR,
+    pub bstrLocalFile: ::win32_foundation_sys::BSTR,
     pub dwSizeHint: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILESETINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILESETINFO {
     fn clone(&self) -> Self {
         *self

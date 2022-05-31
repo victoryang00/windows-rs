@@ -7,20 +7,19 @@ pub mod Headers;
 #[repr(transparent)]
 pub struct HttpBufferContent(::windows_core::IUnknown);
 impl HttpBufferContent {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBuffer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(content: Param0) -> ::windows_core::Result<HttpBufferContent> {
+    pub fn CreateFromBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(content: Param0) -> ::windows_core::Result<HttpBufferContent> {
         Self::IHttpBufferContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBuffer)(::windows_core::Interface::as_raw(this), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpBufferContent>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromBufferWithOffset<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(content: Param0, offset: u32, count: u32) -> ::windows_core::Result<HttpBufferContent> {
+    pub fn CreateFromBufferWithOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(content: Param0, offset: u32, count: u32) -> ::windows_core::Result<HttpBufferContent> {
         Self::IHttpBufferContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBufferWithOffset)(::windows_core::Interface::as_raw(this), content.into_param().abi(), offset, count, result__.as_mut_ptr()).from_abi::<HttpBufferContent>(result__)
@@ -34,36 +33,34 @@ impl HttpBufferContent {
             (::windows_core::Interface::vtable(this).Headers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Headers::HttpContentHeaderCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BufferAllAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn BufferAllAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
+    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
         }
     }
     pub fn TryComputeLength(&self, length: &mut u64) -> ::windows_core::Result<bool> {
@@ -73,17 +70,16 @@ impl HttpBufferContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -164,30 +160,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpBufferContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpBufferContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpBufferContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpBufferContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpBufferContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpBufferContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpBufferContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpBufferContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpBufferContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpBufferContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<HttpBufferContent> for IHttpContent {
@@ -212,30 +204,26 @@ impl<'a> ::windows_core::IntoParam<'a, IHttpContent> for &HttpBufferContent {
         ::core::convert::TryInto::<IHttpContent>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpBufferContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpBufferContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpBufferContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpBufferContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpBufferContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpBufferContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpBufferContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpBufferContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpBufferContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpBufferContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpBufferContent {}
@@ -250,89 +238,80 @@ impl HttpClient {
         static mut SHARED: ::windows_core::FactoryCache<HttpClient, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
+    pub fn DeleteAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).DeleteAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
+    pub fn GetAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetWithOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0, completionoption: HttpCompletionOption) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
+    pub fn GetWithOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0, completionoption: HttpCompletionOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetWithOptionAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).GetWithOptionAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn GetBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, HttpProgress>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn GetBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetBufferAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).GetBufferAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, HttpProgress>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn GetInputStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, HttpProgress>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn GetInputStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetInputStreamAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).GetInputStreamAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetStringAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, HttpProgress>> {
+    pub fn GetStringAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStringAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).GetStringAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PostAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, IHttpContent>>(&self, uri: Param0, content: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
+    pub fn PostAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, IHttpContent>>(&self, uri: Param0, content: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PostAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).PostAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PutAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, IHttpContent>>(&self, uri: Param0, content: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
+    pub fn PutAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, IHttpContent>>(&self, uri: Param0, content: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PutAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).PutAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SendRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
+    pub fn SendRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).SendRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SendRequestWithOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, HttpRequestMessage>>(&self, request: Param0, completionoption: HttpCompletionOption) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
+    pub fn SendRequestWithOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, HttpRequestMessage>>(&self, request: Param0, completionoption: HttpCompletionOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendRequestWithOptionAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).SendRequestWithOptionAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpResponseMessage, HttpProgress>>(result__)
         }
     }
     #[cfg(feature = "Web_Http_Headers")]
@@ -343,84 +322,74 @@ impl HttpClient {
             (::windows_core::Interface::vtable(this).DefaultRequestHeaders)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Headers::HttpRequestHeaderCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryDeleteAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
+    pub fn TryDeleteAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryDeleteAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TryDeleteAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryGetAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
+    pub fn TryGetAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryGetAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TryGetAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryGetAsync2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0, completionoption: HttpCompletionOption) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
+    pub fn TryGetAsync2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0, completionoption: HttpCompletionOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryGetAsync2)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TryGetAsync2)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryGetBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpGetBufferResult, HttpProgress>> {
+    pub fn TryGetBufferAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpGetBufferResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryGetBufferAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpGetBufferResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TryGetBufferAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpGetBufferResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryGetInputStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpGetInputStreamResult, HttpProgress>> {
+    pub fn TryGetInputStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpGetInputStreamResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryGetInputStreamAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpGetInputStreamResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TryGetInputStreamAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpGetInputStreamResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryGetStringAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpGetStringResult, HttpProgress>> {
+    pub fn TryGetStringAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpGetStringResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryGetStringAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpGetStringResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TryGetStringAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpGetStringResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryPostAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, IHttpContent>>(&self, uri: Param0, content: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
+    pub fn TryPostAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, IHttpContent>>(&self, uri: Param0, content: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryPostAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TryPostAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryPutAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, IHttpContent>>(&self, uri: Param0, content: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
+    pub fn TryPutAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, IHttpContent>>(&self, uri: Param0, content: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryPutAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TryPutAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TrySendRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
+    pub fn TrySendRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, HttpRequestMessage>>(&self, request: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySendRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TrySendRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TrySendRequestAsync2<'a, Param0: ::windows_core::IntoParam<'a, HttpRequestMessage>>(&self, request: Param0, completionoption: HttpCompletionOption) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
+    pub fn TrySendRequestAsync2<'a, Param0: ::windows_core::IntoParam<'a, HttpRequestMessage>>(&self, request: Param0, completionoption: HttpCompletionOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>> {
         let this = &::windows_core::Interface::cast::<IHttpClient2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySendRequestAsync2)(::windows_core::Interface::as_raw(this), request.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
+            (::windows_core::Interface::vtable(this).TrySendRequestAsync2)(::windows_core::Interface::as_raw(this), request.into_param().abi(), completionoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<HttpRequestResult, HttpProgress>>(result__)
         }
     }
     #[cfg(feature = "Web_Http_Filters")]
@@ -430,9 +399,8 @@ impl HttpClient {
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), filter.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpClient>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -513,56 +481,48 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpClient> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpClient> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpClient) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpClient> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpClient> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpClient) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpClient {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpClient {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpClient {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpClient {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpClient> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpClient> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpClient) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpClient> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpClient> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpClient) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpClient {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpClient {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpClient {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpClient {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpClient {}
@@ -624,16 +584,14 @@ impl HttpCookie {
             (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Expires(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    pub fn Expires(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Expires)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).Expires)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetExpires<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<super::super::Foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetExpires<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::DateTime>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetExpires)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -676,9 +634,8 @@ impl HttpCookie {
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), name.into_param().abi(), domain.into_param().abi(), path.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpCookie>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -759,30 +716,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpCookie> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpCookie> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpCookie) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpCookie> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpCookie> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpCookie) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpCookie {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpCookie {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpCookie {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpCookie {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpCookie {}
@@ -793,11 +746,11 @@ pub struct HttpCookieCollection(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl HttpCookieCollection {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<HttpCookie>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<HttpCookie>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<HttpCookie>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<HttpCookie>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<HttpCookie>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<HttpCookie>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -863,8 +816,8 @@ unsafe impl ::windows_core::RuntimeType for HttpCookieCollection {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for HttpCookieCollection {
-    type Vtable = super::super::Foundation::Collections::IVectorView_Vtbl<HttpCookie>;
-    const IID: ::windows_core::GUID = <super::super::Foundation::Collections::IVectorView<HttpCookie> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IVectorView_Vtbl<HttpCookie>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVectorView<HttpCookie> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for HttpCookieCollection {
@@ -873,7 +826,7 @@ impl ::windows_core::RuntimeName for HttpCookieCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for HttpCookieCollection {
     type Item = HttpCookie;
-    type IntoIter = super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -881,9 +834,9 @@ impl ::core::iter::IntoIterator for HttpCookieCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &HttpCookieCollection {
     type Item = HttpCookie;
-    type IntoIter = super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::Foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -935,55 +888,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<HttpCookieCollection> for super::super::Foundation::Collections::IIterable<HttpCookie> {
+impl ::core::convert::TryFrom<HttpCookieCollection> for ::winrt_foundation::Collections::IIterable<HttpCookie> {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpCookieCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&HttpCookieCollection> for super::super::Foundation::Collections::IIterable<HttpCookie> {
+impl ::core::convert::TryFrom<&HttpCookieCollection> for ::winrt_foundation::Collections::IIterable<HttpCookie> {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpCookieCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<HttpCookie>> for HttpCookieCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<HttpCookie>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<HttpCookie>> for HttpCookieCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<HttpCookie>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<HttpCookie>> for &HttpCookieCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<HttpCookie>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<HttpCookie>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<HttpCookie>> for &HttpCookieCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<HttpCookie>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<HttpCookie>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<HttpCookieCollection> for super::super::Foundation::Collections::IVectorView<HttpCookie> {
+impl ::core::convert::TryFrom<HttpCookieCollection> for ::winrt_foundation::Collections::IVectorView<HttpCookie> {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpCookieCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&HttpCookieCollection> for super::super::Foundation::Collections::IVectorView<HttpCookie> {
+impl ::core::convert::TryFrom<&HttpCookieCollection> for ::winrt_foundation::Collections::IVectorView<HttpCookie> {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpCookieCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<HttpCookie>> for HttpCookieCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IVectorView<HttpCookie>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<HttpCookie>> for HttpCookieCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<HttpCookie>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVectorView<HttpCookie>> for &HttpCookieCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IVectorView<HttpCookie>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IVectorView<HttpCookie>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<HttpCookie>> for &HttpCookieCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<HttpCookie>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<HttpCookie>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -1012,7 +965,7 @@ impl HttpCookieManager {
         unsafe { (::windows_core::Interface::vtable(this).DeleteCookie)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCookies<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<HttpCookieCollection> {
+    pub fn GetCookies<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, uri: Param0) -> ::windows_core::Result<HttpCookieCollection> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1095,9 +1048,8 @@ unsafe impl ::core::marker::Sync for HttpCookieManager {}
 #[repr(transparent)]
 pub struct HttpFormUrlEncodedContent(::windows_core::IUnknown);
 impl HttpFormUrlEncodedContent {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Web_Http_Headers")]
@@ -1108,36 +1060,34 @@ impl HttpFormUrlEncodedContent {
             (::windows_core::Interface::vtable(this).Headers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Headers::HttpContentHeaderCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BufferAllAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn BufferAllAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
+    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
         }
     }
     pub fn TryComputeLength(&self, length: &mut u64) -> ::windows_core::Result<bool> {
@@ -1147,24 +1097,23 @@ impl HttpFormUrlEncodedContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>>(content: Param0) -> ::windows_core::Result<HttpFormUrlEncodedContent> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, ::windows_core::HSTRING>>>>(content: Param0) -> ::windows_core::Result<HttpFormUrlEncodedContent> {
         Self::IHttpFormUrlEncodedContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpFormUrlEncodedContent>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -1245,30 +1194,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpFormUrlEncodedContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpFormUrlEncodedContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpFormUrlEncodedContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpFormUrlEncodedContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpFormUrlEncodedContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpFormUrlEncodedContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpFormUrlEncodedContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpFormUrlEncodedContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpFormUrlEncodedContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpFormUrlEncodedContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<HttpFormUrlEncodedContent> for IHttpContent {
@@ -1293,30 +1238,26 @@ impl<'a> ::windows_core::IntoParam<'a, IHttpContent> for &HttpFormUrlEncodedCont
         ::core::convert::TryInto::<IHttpContent>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpFormUrlEncodedContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpFormUrlEncodedContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpFormUrlEncodedContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpFormUrlEncodedContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpFormUrlEncodedContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpFormUrlEncodedContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpFormUrlEncodedContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpFormUrlEncodedContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpFormUrlEncodedContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpFormUrlEncodedContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpFormUrlEncodedContent {}
@@ -1324,9 +1265,8 @@ unsafe impl ::core::marker::Sync for HttpFormUrlEncodedContent {}
 #[repr(transparent)]
 pub struct HttpGetBufferResult(::windows_core::IUnknown);
 impl HttpGetBufferResult {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn ExtendedError(&self) -> ::windows_core::Result<::windows_core::HRESULT> {
@@ -1358,16 +1298,15 @@ impl HttpGetBufferResult {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Value(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Value(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -1444,56 +1383,48 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpGetBufferResult> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpGetBufferResult> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpGetBufferResult) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpGetBufferResult> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpGetBufferResult> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpGetBufferResult) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpGetBufferResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpGetBufferResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpGetBufferResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpGetBufferResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpGetBufferResult> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpGetBufferResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpGetBufferResult) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpGetBufferResult> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpGetBufferResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpGetBufferResult) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpGetBufferResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpGetBufferResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpGetBufferResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpGetBufferResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpGetBufferResult {}
@@ -1501,9 +1432,8 @@ unsafe impl ::core::marker::Sync for HttpGetBufferResult {}
 #[repr(transparent)]
 pub struct HttpGetInputStreamResult(::windows_core::IUnknown);
 impl HttpGetInputStreamResult {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn ExtendedError(&self) -> ::windows_core::Result<::windows_core::HRESULT> {
@@ -1535,16 +1465,15 @@ impl HttpGetInputStreamResult {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Value(&self) -> ::windows_core::Result<super::super::Storage::Streams::IInputStream> {
+    pub fn Value(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IInputStream>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -1621,56 +1550,48 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpGetInputStreamResult> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpGetInputStreamResult> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpGetInputStreamResult) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpGetInputStreamResult> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpGetInputStreamResult> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpGetInputStreamResult) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpGetInputStreamResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpGetInputStreamResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpGetInputStreamResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpGetInputStreamResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpGetInputStreamResult> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpGetInputStreamResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpGetInputStreamResult) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpGetInputStreamResult> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpGetInputStreamResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpGetInputStreamResult) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpGetInputStreamResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpGetInputStreamResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpGetInputStreamResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpGetInputStreamResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpGetInputStreamResult {}
@@ -1678,9 +1599,8 @@ unsafe impl ::core::marker::Sync for HttpGetInputStreamResult {}
 #[repr(transparent)]
 pub struct HttpGetStringResult(::windows_core::IUnknown);
 impl HttpGetStringResult {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn ExtendedError(&self) -> ::windows_core::Result<::windows_core::HRESULT> {
@@ -1718,9 +1638,8 @@ impl HttpGetStringResult {
             (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -1797,56 +1716,48 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpGetStringResult> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpGetStringResult> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpGetStringResult) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpGetStringResult> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpGetStringResult> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpGetStringResult) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpGetStringResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpGetStringResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpGetStringResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpGetStringResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpGetStringResult> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpGetStringResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpGetStringResult) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpGetStringResult> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpGetStringResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpGetStringResult) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpGetStringResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpGetStringResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpGetStringResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpGetStringResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpGetStringResult {}
@@ -1909,9 +1820,8 @@ impl HttpMethod {
             (::windows_core::Interface::vtable(this).Put)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HttpMethod>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -1996,30 +1906,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpMethod> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpMethod> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpMethod) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpMethod> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpMethod> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpMethod) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpMethod {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpMethod {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpMethod {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpMethod {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpMethod {}
@@ -2034,9 +1940,8 @@ impl HttpMultipartContent {
         static mut SHARED: ::windows_core::FactoryCache<HttpMultipartContent, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Web_Http_Headers")]
@@ -2047,36 +1952,34 @@ impl HttpMultipartContent {
             (::windows_core::Interface::vtable(this).Headers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Headers::HttpContentHeaderCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BufferAllAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn BufferAllAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
+    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
         }
     }
     pub fn TryComputeLength(&self, length: &mut u64) -> ::windows_core::Result<bool> {
@@ -2086,12 +1989,12 @@ impl HttpMultipartContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
     pub fn Add<'a, Param0: ::windows_core::IntoParam<'a, IHttpContent>>(&self, content: Param0) -> ::windows_core::Result<()> {
@@ -2111,16 +2014,15 @@ impl HttpMultipartContent {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<IHttpContent>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<IHttpContent>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<IHttpContent>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<IHttpContent>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<IHttpContent>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<IHttpContent>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -2164,7 +2066,7 @@ impl ::windows_core::RuntimeName for HttpMultipartContent {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for HttpMultipartContent {
     type Item = IHttpContent;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -2172,7 +2074,7 @@ impl ::core::iter::IntoIterator for HttpMultipartContent {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &HttpMultipartContent {
     type Item = IHttpContent;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -2217,30 +2119,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpMultipartContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpMultipartContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpMultipartContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpMultipartContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpMultipartContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpMultipartContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpMultipartContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpMultipartContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpMultipartContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpMultipartContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<HttpMultipartContent> for IHttpContent {
@@ -2266,55 +2164,51 @@ impl<'a> ::windows_core::IntoParam<'a, IHttpContent> for &HttpMultipartContent {
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<HttpMultipartContent> for super::super::Foundation::Collections::IIterable<IHttpContent> {
+impl ::core::convert::TryFrom<HttpMultipartContent> for ::winrt_foundation::Collections::IIterable<IHttpContent> {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpMultipartContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&HttpMultipartContent> for super::super::Foundation::Collections::IIterable<IHttpContent> {
+impl ::core::convert::TryFrom<&HttpMultipartContent> for ::winrt_foundation::Collections::IIterable<IHttpContent> {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpMultipartContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IHttpContent>> for HttpMultipartContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<IHttpContent>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> for HttpMultipartContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IHttpContent>> for &HttpMultipartContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<IHttpContent>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<IHttpContent>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> for &HttpMultipartContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<IHttpContent>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpMultipartContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpMultipartContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpMultipartContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpMultipartContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpMultipartContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpMultipartContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpMultipartContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpMultipartContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpMultipartContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpMultipartContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpMultipartContent {}
@@ -2329,9 +2223,8 @@ impl HttpMultipartFormDataContent {
         static mut SHARED: ::windows_core::FactoryCache<HttpMultipartFormDataContent, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Web_Http_Headers")]
@@ -2342,36 +2235,34 @@ impl HttpMultipartFormDataContent {
             (::windows_core::Interface::vtable(this).Headers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Headers::HttpContentHeaderCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BufferAllAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn BufferAllAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
+    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
         }
     }
     pub fn TryComputeLength(&self, length: &mut u64) -> ::windows_core::Result<bool> {
@@ -2381,12 +2272,12 @@ impl HttpMultipartFormDataContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
     pub fn Add<'a, Param0: ::windows_core::IntoParam<'a, IHttpContent>>(&self, content: Param0) -> ::windows_core::Result<()> {
@@ -2408,16 +2299,15 @@ impl HttpMultipartFormDataContent {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterator<IHttpContent>> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::Collections::IIterable<IHttpContent>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<IHttpContent>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<IHttpContent>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterator<IHttpContent>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<IHttpContent>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -2461,7 +2351,7 @@ impl ::windows_core::RuntimeName for HttpMultipartFormDataContent {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for HttpMultipartFormDataContent {
     type Item = IHttpContent;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -2469,7 +2359,7 @@ impl ::core::iter::IntoIterator for HttpMultipartFormDataContent {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &HttpMultipartFormDataContent {
     type Item = IHttpContent;
-    type IntoIter = super::super::Foundation::Collections::IIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::IIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         self.First().unwrap()
     }
@@ -2514,30 +2404,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpMultipartFormDataContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpMultipartFormDataContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpMultipartFormDataContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpMultipartFormDataContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpMultipartFormDataContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpMultipartFormDataContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpMultipartFormDataContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpMultipartFormDataContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpMultipartFormDataContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpMultipartFormDataContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<HttpMultipartFormDataContent> for IHttpContent {
@@ -2563,70 +2449,64 @@ impl<'a> ::windows_core::IntoParam<'a, IHttpContent> for &HttpMultipartFormDataC
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<HttpMultipartFormDataContent> for super::super::Foundation::Collections::IIterable<IHttpContent> {
+impl ::core::convert::TryFrom<HttpMultipartFormDataContent> for ::winrt_foundation::Collections::IIterable<IHttpContent> {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpMultipartFormDataContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&HttpMultipartFormDataContent> for super::super::Foundation::Collections::IIterable<IHttpContent> {
+impl ::core::convert::TryFrom<&HttpMultipartFormDataContent> for ::winrt_foundation::Collections::IIterable<IHttpContent> {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpMultipartFormDataContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IHttpContent>> for HttpMultipartFormDataContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<IHttpContent>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> for HttpMultipartFormDataContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IHttpContent>> for &HttpMultipartFormDataContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::Collections::IIterable<IHttpContent>> {
-        ::core::convert::TryInto::<super::super::Foundation::Collections::IIterable<IHttpContent>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> for &HttpMultipartFormDataContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<IHttpContent>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<IHttpContent>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpMultipartFormDataContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpMultipartFormDataContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpMultipartFormDataContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpMultipartFormDataContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpMultipartFormDataContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpMultipartFormDataContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpMultipartFormDataContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpMultipartFormDataContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpMultipartFormDataContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpMultipartFormDataContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpMultipartFormDataContent {}
 unsafe impl ::core::marker::Sync for HttpMultipartFormDataContent {}
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct HttpProgress {
     pub Stage: HttpProgressStage,
     pub BytesSent: u64,
-    pub TotalBytesToSend: ::core::option::Option<super::super::Foundation::IReference<u64>>,
+    pub TotalBytesToSend: ::core::option::Option<::winrt_foundation::IReference<u64>>,
     pub BytesReceived: u64,
-    pub TotalBytesToReceive: ::core::option::Option<super::super::Foundation::IReference<u64>>,
+    pub TotalBytesToReceive: ::core::option::Option<::winrt_foundation::IReference<u64>>,
     pub Retries: u32,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for HttpProgress {
     fn clone(&self) -> Self {
         Self {
@@ -2639,17 +2519,14 @@ impl ::core::clone::Clone for HttpProgress {
         }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::fmt::Debug for HttpProgress {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("HttpProgress").field("Stage", &self.Stage).field("BytesSent", &self.BytesSent).field("TotalBytesToSend", &self.TotalBytesToSend).field("BytesReceived", &self.BytesReceived).field("TotalBytesToReceive", &self.TotalBytesToReceive).field("Retries", &self.Retries).finish()
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::Abi for HttpProgress {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::RuntimeType for HttpProgress {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Web.Http.HttpProgress;enum(Windows.Web.Http.HttpProgressStage;i4);u8;pinterface({61c17706-2d65-11e0-9ae8-d48564015472};u8);u8;pinterface({61c17706-2d65-11e0-9ae8-d48564015472};u8);u4)");
     type DefaultType = Self;
@@ -2657,15 +2534,12 @@ unsafe impl ::windows_core::RuntimeType for HttpProgress {
         Ok(from.clone())
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::PartialEq for HttpProgress {
     fn eq(&self, other: &Self) -> bool {
         self.Stage == other.Stage && self.BytesSent == other.BytesSent && self.TotalBytesToSend == other.TotalBytesToSend && self.BytesReceived == other.BytesReceived && self.TotalBytesToReceive == other.TotalBytesToReceive && self.Retries == other.Retries
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::Eq for HttpProgress {}
-#[cfg(feature = "Foundation")]
 impl ::core::default::Default for HttpProgress {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2722,9 +2596,8 @@ impl HttpRequestMessage {
         static mut SHARED: ::windows_core::FactoryCache<HttpRequestMessage, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Content(&self) -> ::windows_core::Result<IHttpContent> {
@@ -2758,23 +2631,21 @@ impl HttpRequestMessage {
         unsafe { (::windows_core::Interface::vtable(this).SetMethod)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn RequestUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).RequestUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetRequestUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetRequestUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRequestUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2785,16 +2656,14 @@ impl HttpRequestMessage {
             (::windows_core::Interface::vtable(this).TransportInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HttpTransportInformation>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, HttpMethod>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(method: Param0, uri: Param1) -> ::windows_core::Result<HttpRequestMessage> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, HttpMethod>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(method: Param0, uri: Param1) -> ::windows_core::Result<HttpRequestMessage> {
         Self::IHttpRequestMessageFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), method.into_param().abi(), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpRequestMessage>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -2875,56 +2744,48 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpRequestMessage> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpRequestMessage> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpRequestMessage) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpRequestMessage> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpRequestMessage> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpRequestMessage) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpRequestMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpRequestMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpRequestMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpRequestMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpRequestMessage> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpRequestMessage> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpRequestMessage) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpRequestMessage> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpRequestMessage> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpRequestMessage) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpRequestMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpRequestMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpRequestMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpRequestMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpRequestMessage {}
@@ -2932,9 +2793,8 @@ unsafe impl ::core::marker::Sync for HttpRequestMessage {}
 #[repr(transparent)]
 pub struct HttpRequestResult(::windows_core::IUnknown);
 impl HttpRequestResult {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn ExtendedError(&self) -> ::windows_core::Result<::windows_core::HRESULT> {
@@ -2965,9 +2825,8 @@ impl HttpRequestResult {
             (::windows_core::Interface::vtable(this).Succeeded)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -3044,56 +2903,48 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpRequestResult> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpRequestResult> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpRequestResult) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpRequestResult> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpRequestResult> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpRequestResult) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpRequestResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpRequestResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpRequestResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpRequestResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpRequestResult> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpRequestResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpRequestResult) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpRequestResult> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpRequestResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpRequestResult) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpRequestResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpRequestResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpRequestResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpRequestResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpRequestResult {}
@@ -3108,9 +2959,8 @@ impl HttpResponseMessage {
         static mut SHARED: ::windows_core::FactoryCache<HttpResponseMessage, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Content(&self) -> ::windows_core::Result<IHttpContent> {
@@ -3207,9 +3057,8 @@ impl HttpResponseMessage {
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), statuscode, result__.as_mut_ptr()).from_abi::<HttpResponseMessage>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -3290,56 +3139,48 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpResponseMessage> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpResponseMessage> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpResponseMessage) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpResponseMessage> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpResponseMessage> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpResponseMessage) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpResponseMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpResponseMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpResponseMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpResponseMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpResponseMessage> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpResponseMessage> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpResponseMessage) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpResponseMessage> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpResponseMessage> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpResponseMessage) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpResponseMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpResponseMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpResponseMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpResponseMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpResponseMessage {}
@@ -3470,9 +3311,8 @@ unsafe impl ::windows_core::RuntimeType for HttpStatusCode {
 #[repr(transparent)]
 pub struct HttpStreamContent(::windows_core::IUnknown);
 impl HttpStreamContent {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Web_Http_Headers")]
@@ -3483,36 +3323,34 @@ impl HttpStreamContent {
             (::windows_core::Interface::vtable(this).Headers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Headers::HttpContentHeaderCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BufferAllAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn BufferAllAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
+    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
         }
     }
     pub fn TryComputeLength(&self, length: &mut u64) -> ::windows_core::Result<bool> {
@@ -3522,24 +3360,23 @@ impl HttpStreamContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromInputStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IInputStream>>(content: Param0) -> ::windows_core::Result<HttpStreamContent> {
+    pub fn CreateFromInputStream<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(content: Param0) -> ::windows_core::Result<HttpStreamContent> {
         Self::IHttpStreamContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromInputStream)(::windows_core::Interface::as_raw(this), content.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpStreamContent>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -3620,30 +3457,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpStreamContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpStreamContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpStreamContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpStreamContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpStreamContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpStreamContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpStreamContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpStreamContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpStreamContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpStreamContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<HttpStreamContent> for IHttpContent {
@@ -3668,30 +3501,26 @@ impl<'a> ::windows_core::IntoParam<'a, IHttpContent> for &HttpStreamContent {
         ::core::convert::TryInto::<IHttpContent>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpStreamContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpStreamContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpStreamContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpStreamContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpStreamContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpStreamContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpStreamContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpStreamContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpStreamContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpStreamContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpStreamContent {}
@@ -3699,9 +3528,8 @@ unsafe impl ::core::marker::Sync for HttpStreamContent {}
 #[repr(transparent)]
 pub struct HttpStringContent(::windows_core::IUnknown);
 impl HttpStringContent {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Web_Http_Headers")]
@@ -3712,36 +3540,34 @@ impl HttpStringContent {
             (::windows_core::Interface::vtable(this).Headers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Headers::HttpContentHeaderCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BufferAllAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn BufferAllAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
+    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
         }
     }
     pub fn TryComputeLength(&self, length: &mut u64) -> ::windows_core::Result<bool> {
@@ -3751,12 +3577,12 @@ impl HttpStringContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
     pub fn CreateFromString<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(content: Param0) -> ::windows_core::Result<HttpStringContent> {
@@ -3766,22 +3592,21 @@ impl HttpStringContent {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromStringWithEncoding<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(content: Param0, encoding: super::super::Storage::Streams::UnicodeEncoding) -> ::windows_core::Result<HttpStringContent> {
+    pub fn CreateFromStringWithEncoding<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(content: Param0, encoding: ::winrt_storage::Streams::UnicodeEncoding) -> ::windows_core::Result<HttpStringContent> {
         Self::IHttpStringContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromStringWithEncoding)(::windows_core::Interface::as_raw(this), content.into_param().abi(), encoding, result__.as_mut_ptr()).from_abi::<HttpStringContent>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateFromStringWithEncodingAndMediaType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(content: Param0, encoding: super::super::Storage::Streams::UnicodeEncoding, mediatype: Param2) -> ::windows_core::Result<HttpStringContent> {
+    pub fn CreateFromStringWithEncodingAndMediaType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(content: Param0, encoding: ::winrt_storage::Streams::UnicodeEncoding, mediatype: Param2) -> ::windows_core::Result<HttpStringContent> {
         Self::IHttpStringContentFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromStringWithEncodingAndMediaType)(::windows_core::Interface::as_raw(this), content.into_param().abi(), encoding, mediatype.into_param().abi(), result__.as_mut_ptr()).from_abi::<HttpStringContent>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -3862,30 +3687,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpStringContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HttpStringContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpStringContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpStringContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HttpStringContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpStringContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HttpStringContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HttpStringContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HttpStringContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HttpStringContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<HttpStringContent> for IHttpContent {
@@ -3910,30 +3731,26 @@ impl<'a> ::windows_core::IntoParam<'a, IHttpContent> for &HttpStringContent {
         ::core::convert::TryInto::<IHttpContent>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpStringContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpStringContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpStringContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpStringContent> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpStringContent> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpStringContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpStringContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpStringContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpStringContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpStringContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpStringContent {}
@@ -3942,40 +3759,39 @@ unsafe impl ::core::marker::Sync for HttpStringContent {}
 pub struct HttpTransportInformation(::windows_core::IUnknown);
 impl HttpTransportInformation {
     #[cfg(feature = "Security_Cryptography_Certificates")]
-    pub fn ServerCertificate(&self) -> ::windows_core::Result<super::super::Security::Cryptography::Certificates::Certificate> {
+    pub fn ServerCertificate(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Certificates::Certificate> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Cryptography::Certificates::Certificate>(result__)
+            (::windows_core::Interface::vtable(this).ServerCertificate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Certificates::Certificate>(result__)
         }
     }
     #[cfg(feature = "Networking_Sockets")]
-    pub fn ServerCertificateErrorSeverity(&self) -> ::windows_core::Result<super::super::Networking::Sockets::SocketSslErrorSeverity> {
+    pub fn ServerCertificateErrorSeverity(&self) -> ::windows_core::Result<::winrt_networking::Sockets::SocketSslErrorSeverity> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Networking::Sockets::SocketSslErrorSeverity>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Networking::Sockets::SocketSslErrorSeverity>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_networking::Sockets::SocketSslErrorSeverity>::zeroed();
+            (::windows_core::Interface::vtable(this).ServerCertificateErrorSeverity)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::SocketSslErrorSeverity>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
-    pub fn ServerCertificateErrors(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Security::Cryptography::Certificates::ChainValidationResult>> {
+    pub fn ServerCertificateErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Security::Cryptography::Certificates::ChainValidationResult>>(result__)
+            (::windows_core::Interface::vtable(this).ServerCertificateErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::ChainValidationResult>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]
-    pub fn ServerIntermediateCertificates(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Security::Cryptography::Certificates::Certificate>> {
+    pub fn ServerIntermediateCertificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerIntermediateCertificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Security::Cryptography::Certificates::Certificate>>(result__)
+            (::windows_core::Interface::vtable(this).ServerIntermediateCertificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_security::Cryptography::Certificates::Certificate>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -4052,30 +3868,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Htt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HttpTransportInformation> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<HttpTransportInformation> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: HttpTransportInformation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HttpTransportInformation> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&HttpTransportInformation> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HttpTransportInformation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for HttpTransportInformation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for HttpTransportInformation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &HttpTransportInformation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &HttpTransportInformation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HttpTransportInformation {}
@@ -4146,46 +3958,22 @@ unsafe impl ::windows_core::Interface for IHttpClient {
 #[doc(hidden)]
 pub struct IHttpClient_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub DeleteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeleteAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetWithOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, completionoption: HttpCompletionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetWithOptionAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub GetBufferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     GetBufferAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub GetInputStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     GetInputStreamAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetStringAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetStringAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub PostAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PostAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub PutAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PutAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub SendRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SendRequestAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub SendRequestWithOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, completionoption: HttpCompletionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SendRequestWithOptionAsync: usize,
     #[cfg(feature = "Web_Http_Headers")]
     pub DefaultRequestHeaders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Web_Http_Headers"))]
@@ -4202,46 +3990,16 @@ unsafe impl ::windows_core::Interface for IHttpClient2 {
 #[doc(hidden)]
 pub struct IHttpClient2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub TryDeleteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryDeleteAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryGetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryGetAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryGetAsync2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, completionoption: HttpCompletionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryGetAsync2: usize,
-    #[cfg(feature = "Foundation")]
     pub TryGetBufferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryGetBufferAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryGetInputStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryGetInputStreamAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryGetStringAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryGetStringAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryPostAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryPostAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryPutAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, content: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryPutAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TrySendRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TrySendRequestAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TrySendRequestAsync2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, completionoption: HttpCompletionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TrySendRequestAsync2: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4270,36 +4028,34 @@ impl IHttpContent {
             (::windows_core::Interface::vtable(this).Headers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<Headers::HttpContentHeaderCollection>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BufferAllAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn BufferAllAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).BufferAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsBufferAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IBuffer, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsBufferAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IBuffer, u64>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ReadAsInputStreamAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<super::super::Storage::Streams::IInputStream, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsInputStreamAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::winrt_storage::Streams::IInputStream, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
+    pub fn ReadAsStringAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsStringAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<::windows_core::HSTRING, u64>>(result__)
         }
     }
     pub fn TryComputeLength(&self, length: &mut u64) -> ::windows_core::Result<bool> {
@@ -4309,17 +4065,16 @@ impl IHttpContent {
             (::windows_core::Interface::vtable(this).TryComputeLength)(::windows_core::Interface::as_raw(this), length, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn WriteToStreamAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, outputstream: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).WriteToStreamAsync)(::windows_core::Interface::as_raw(this), outputstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
@@ -4363,30 +4118,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IHt
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<IHttpContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<IHttpContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: IHttpContent) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&IHttpContent> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&IHttpContent> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &IHttpContent) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for IHttpContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for IHttpContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &IHttpContent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &IHttpContent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::clone::Clone for IHttpContent {
@@ -4424,26 +4175,20 @@ pub struct IHttpContent_Vtbl {
     pub Headers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Web_Http_Headers"))]
     Headers: usize,
-    #[cfg(feature = "Foundation")]
     pub BufferAllAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BufferAllAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub ReadAsBufferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     ReadAsBufferAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub ReadAsInputStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     ReadAsInputStreamAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ReadAsStringAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadAsStringAsync: usize,
     pub TryComputeLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, length: *mut u64, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub WriteToStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     WriteToStreamAsync: usize,
 }
 #[doc(hidden)]
@@ -4460,14 +4205,8 @@ pub struct IHttpCookie_Vtbl {
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Domain: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Path: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub Expires: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Expires: usize,
-    #[cfg(feature = "Foundation")]
     pub SetExpires: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetExpires: usize,
     pub HttpOnly: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHttpOnly: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub Secure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -4703,14 +4442,8 @@ pub struct IHttpRequestMessage_Vtbl {
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Properties: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetRequestUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetRequestUri: usize,
     pub TransportInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -4724,10 +4457,7 @@ unsafe impl ::windows_core::Interface for IHttpRequestMessageFactory {
 #[doc(hidden)]
 pub struct IHttpRequestMessageFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, method: ::windows_core::RawPtr, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Create: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4817,11 +4547,11 @@ pub struct IHttpStringContentFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateFromString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
-    pub CreateFromStringWithEncoding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, encoding: super::super::Storage::Streams::UnicodeEncoding, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateFromStringWithEncoding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, encoding: ::winrt_storage::Streams::UnicodeEncoding, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CreateFromStringWithEncoding: usize,
     #[cfg(feature = "Storage_Streams")]
-    pub CreateFromStringWithEncodingAndMediaType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, encoding: super::super::Storage::Streams::UnicodeEncoding, mediatype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateFromStringWithEncodingAndMediaType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, encoding: ::winrt_storage::Streams::UnicodeEncoding, mediatype: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     CreateFromStringWithEncodingAndMediaType: usize,
 }
@@ -4841,7 +4571,7 @@ pub struct IHttpTransportInformation_Vtbl {
     #[cfg(not(feature = "Security_Cryptography_Certificates"))]
     ServerCertificate: usize,
     #[cfg(feature = "Networking_Sockets")]
-    pub ServerCertificateErrorSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Networking::Sockets::SocketSslErrorSeverity) -> ::windows_core::HRESULT,
+    pub ServerCertificateErrorSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_networking::Sockets::SocketSslErrorSeverity) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Networking_Sockets"))]
     ServerCertificateErrorSeverity: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "Security_Cryptography_Certificates"))]

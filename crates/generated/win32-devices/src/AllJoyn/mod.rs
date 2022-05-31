@@ -34,42 +34,39 @@ pub const ALLJOYN_TRAFFIC_TYPE_MESSAGES: u32 = 1u32;
 pub const ALLJOYN_TRAFFIC_TYPE_RAW_RELIABLE: u32 = 4u32;
 pub const ALLJOYN_TRAFFIC_TYPE_RAW_UNRELIABLE: u32 = 2u32;
 pub const ALLJOYN_WRITE_READY: u32 = 2u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AllJoynAcceptBusConnection<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(serverbushandle: Param0, abortevent: Param1) -> u32 {
+pub unsafe fn AllJoynAcceptBusConnection<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(serverbushandle: Param0, abortevent: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AllJoynAcceptBusConnection(serverbushandle: super::super::Foundation::HANDLE, abortevent: super::super::Foundation::HANDLE) -> u32;
+            fn AllJoynAcceptBusConnection(serverbushandle: ::win32_foundation::HANDLE, abortevent: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(AllJoynAcceptBusConnection(serverbushandle.into_param().abi(), abortevent.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AllJoynCloseBusHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(bushandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn AllJoynCloseBusHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(bushandle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AllJoynCloseBusHandle(bushandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn AllJoynCloseBusHandle(bushandle: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AllJoynCloseBusHandle(bushandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AllJoynConnectToBus<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(connectionspec: Param0) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn AllJoynConnectToBus<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(connectionspec: Param0) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AllJoynConnectToBus(connectionspec: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn AllJoynConnectToBus(connectionspec: ::windows_core::PCWSTR) -> ::win32_foundation::HANDLE;
         }
         let result__ = AllJoynConnectToBus(connectionspec.into_param().abi());
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -77,70 +74,66 @@ pub unsafe fn AllJoynConnectToBus<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn AllJoynCreateBus(outbuffersize: u32, inbuffersize: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::HANDLE {
+pub unsafe fn AllJoynCreateBus(outbuffersize: u32, inbuffersize: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AllJoynCreateBus(outbuffersize: u32, inbuffersize: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::HANDLE;
+            fn AllJoynCreateBus(outbuffersize: u32, inbuffersize: u32, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(AllJoynCreateBus(::core::mem::transmute(outbuffersize), ::core::mem::transmute(inbuffersize), ::core::mem::transmute(lpsecurityattributes)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AllJoynEnumEvents<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectedbushandle: Param0, eventtoreset: Param1, eventtypes: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AllJoynEnumEvents<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(connectedbushandle: Param0, eventtoreset: Param1, eventtypes: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AllJoynEnumEvents(connectedbushandle: super::super::Foundation::HANDLE, eventtoreset: super::super::Foundation::HANDLE, eventtypes: *mut u32) -> super::super::Foundation::BOOL;
+            fn AllJoynEnumEvents(connectedbushandle: ::win32_foundation::HANDLE, eventtoreset: ::win32_foundation::HANDLE, eventtypes: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AllJoynEnumEvents(connectedbushandle.into_param().abi(), eventtoreset.into_param().abi(), ::core::mem::transmute(eventtypes)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AllJoynEventSelect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectedbushandle: Param0, eventhandle: Param1, eventtypes: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AllJoynEventSelect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(connectedbushandle: Param0, eventhandle: Param1, eventtypes: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AllJoynEventSelect(connectedbushandle: super::super::Foundation::HANDLE, eventhandle: super::super::Foundation::HANDLE, eventtypes: u32) -> super::super::Foundation::BOOL;
+            fn AllJoynEventSelect(connectedbushandle: ::win32_foundation::HANDLE, eventhandle: ::win32_foundation::HANDLE, eventtypes: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AllJoynEventSelect(connectedbushandle.into_param().abi(), eventhandle.into_param().abi(), ::core::mem::transmute(eventtypes)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AllJoynReceiveFromBus<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectedbushandle: Param0, buffer: *mut ::core::ffi::c_void, bytestoread: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn AllJoynReceiveFromBus<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(connectedbushandle: Param0, buffer: *mut ::core::ffi::c_void, bytestoread: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AllJoynReceiveFromBus(connectedbushandle: super::super::Foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bytestoread: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn AllJoynReceiveFromBus(connectedbushandle: ::win32_foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bytestoread: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AllJoynReceiveFromBus(connectedbushandle.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(bytestoread), ::core::mem::transmute(bytestransferred), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AllJoynSendToBus<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(connectedbushandle: Param0, buffer: *const ::core::ffi::c_void, bytestowrite: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn AllJoynSendToBus<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(connectedbushandle: Param0, buffer: *const ::core::ffi::c_void, bytestowrite: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AllJoynSendToBus(connectedbushandle: super::super::Foundation::HANDLE, buffer: *const ::core::ffi::c_void, bytestowrite: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn AllJoynSendToBus(connectedbushandle: ::win32_foundation::HANDLE, buffer: *const ::core::ffi::c_void, bytestowrite: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AllJoynSendToBus(connectedbushandle.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(bytestowrite), ::core::mem::transmute(bytestransferred), ::core::mem::transmute(reserved)))
     }

@@ -1,21 +1,18 @@
 pub type IWaaSAssessor = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OSUpdateAssessment {
-    pub isEndOfSupport: super::super::Foundation::BOOL,
+    pub isEndOfSupport: ::win32_foundation_sys::BOOL,
     pub assessmentForCurrent: UpdateAssessment,
     pub assessmentForUpToDate: UpdateAssessment,
     pub securityStatus: UpdateAssessmentStatus,
-    pub assessmentTime: super::super::Foundation::FILETIME,
-    pub releaseInfoTime: super::super::Foundation::FILETIME,
+    pub assessmentTime: ::win32_foundation_sys::FILETIME,
+    pub releaseInfoTime: ::win32_foundation_sys::FILETIME,
     pub currentOSBuild: ::windows_core_sys::PWSTR,
-    pub currentOSReleaseTime: super::super::Foundation::FILETIME,
+    pub currentOSReleaseTime: ::win32_foundation_sys::FILETIME,
     pub upToDateOSBuild: ::windows_core_sys::PWSTR,
-    pub upToDateOSReleaseTime: super::super::Foundation::FILETIME,
+    pub upToDateOSReleaseTime: ::win32_foundation_sys::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OSUpdateAssessment {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OSUpdateAssessment {
     fn clone(&self) -> Self {
         *self

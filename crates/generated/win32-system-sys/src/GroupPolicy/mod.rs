@@ -1,58 +1,41 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
     pub fn BrowseForGPO(lpbrowseinfo: *mut GPOBROWSEINFO) -> ::windows_core_sys::HRESULT;
     pub fn CommandLineFromMsiDescriptor(descriptor: ::windows_core_sys::PCWSTR, commandline: ::windows_core_sys::PWSTR, commandlinelength: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateGPOLink(lpgpo: ::windows_core_sys::PCWSTR, lpcontainer: ::windows_core_sys::PCWSTR, fhighpriority: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn CreateGPOLink(lpgpo: ::windows_core_sys::PCWSTR, lpcontainer: ::windows_core_sys::PCWSTR, fhighpriority: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn DeleteAllGPOLinks(lpcontainer: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn DeleteGPOLink(lpgpo: ::windows_core_sys::PCWSTR, lpcontainer: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnterCriticalPolicySection(bmachine: super::super::Foundation::BOOL) -> super::super::Foundation::HANDLE;
+    pub fn EnterCriticalPolicySection(bmachine: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::HANDLE;
     pub fn ExportRSoPData(lpnamespace: ::windows_core_sys::PCWSTR, lpfilename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FreeGPOListA(pgpolist: *const GROUP_POLICY_OBJECTA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FreeGPOListW(pgpolist: *const GROUP_POLICY_OBJECTW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GenerateGPNotification(bmachine: super::super::Foundation::BOOL, lpwszmgmtproduct: ::windows_core_sys::PCWSTR, dwmgmtproductoptions: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetAppliedGPOListA(dwflags: u32, pmachinename: ::windows_core_sys::PCSTR, psiduser: super::super::Foundation::PSID, pguidextension: *const ::windows_core_sys::GUID, ppgpolist: *mut *mut GROUP_POLICY_OBJECTA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetAppliedGPOListW(dwflags: u32, pmachinename: ::windows_core_sys::PCWSTR, psiduser: super::super::Foundation::PSID, pguidextension: *const ::windows_core_sys::GUID, ppgpolist: *mut *mut GROUP_POLICY_OBJECTW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetGPOListA(htoken: super::super::Foundation::HANDLE, lpname: ::windows_core_sys::PCSTR, lphostname: ::windows_core_sys::PCSTR, lpcomputername: ::windows_core_sys::PCSTR, dwflags: u32, pgpolist: *mut *mut GROUP_POLICY_OBJECTA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetGPOListW(htoken: super::super::Foundation::HANDLE, lpname: ::windows_core_sys::PCWSTR, lphostname: ::windows_core_sys::PCWSTR, lpcomputername: ::windows_core_sys::PCWSTR, dwflags: u32, pgpolist: *mut *mut GROUP_POLICY_OBJECTW) -> super::super::Foundation::BOOL;
+    pub fn FreeGPOListA(pgpolist: *const GROUP_POLICY_OBJECTA) -> ::win32_foundation_sys::BOOL;
+    pub fn FreeGPOListW(pgpolist: *const GROUP_POLICY_OBJECTW) -> ::win32_foundation_sys::BOOL;
+    pub fn GenerateGPNotification(bmachine: ::win32_foundation_sys::BOOL, lpwszmgmtproduct: ::windows_core_sys::PCWSTR, dwmgmtproductoptions: u32) -> u32;
+    pub fn GetAppliedGPOListA(dwflags: u32, pmachinename: ::windows_core_sys::PCSTR, psiduser: ::win32_foundation_sys::PSID, pguidextension: *const ::windows_core_sys::GUID, ppgpolist: *mut *mut GROUP_POLICY_OBJECTA) -> u32;
+    pub fn GetAppliedGPOListW(dwflags: u32, pmachinename: ::windows_core_sys::PCWSTR, psiduser: ::win32_foundation_sys::PSID, pguidextension: *const ::windows_core_sys::GUID, ppgpolist: *mut *mut GROUP_POLICY_OBJECTW) -> u32;
+    pub fn GetGPOListA(htoken: ::win32_foundation_sys::HANDLE, lpname: ::windows_core_sys::PCSTR, lphostname: ::windows_core_sys::PCSTR, lpcomputername: ::windows_core_sys::PCSTR, dwflags: u32, pgpolist: *mut *mut GROUP_POLICY_OBJECTA) -> ::win32_foundation_sys::BOOL;
+    pub fn GetGPOListW(htoken: ::win32_foundation_sys::HANDLE, lpname: ::windows_core_sys::PCWSTR, lphostname: ::windows_core_sys::PCWSTR, lpcomputername: ::windows_core_sys::PCWSTR, dwflags: u32, pgpolist: *mut *mut GROUP_POLICY_OBJECTW) -> ::win32_foundation_sys::BOOL;
     pub fn GetLocalManagedApplicationData(productcode: ::windows_core_sys::PCWSTR, displayname: *mut ::windows_core_sys::PWSTR, supporturl: *mut ::windows_core_sys::PWSTR);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetLocalManagedApplications(buserapps: super::super::Foundation::BOOL, pdwapps: *mut u32, prglocalapps: *mut *mut LOCALMANAGEDAPPLICATION) -> u32;
+    pub fn GetLocalManagedApplications(buserapps: ::win32_foundation_sys::BOOL, pdwapps: *mut u32, prglocalapps: *mut *mut LOCALMANAGEDAPPLICATION) -> u32;
     #[cfg(feature = "Win32_UI_Shell")]
-    pub fn GetManagedApplicationCategories(dwreserved: u32, pappcategory: *mut super::super::UI::Shell::APPCATEGORYINFOLIST) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn GetManagedApplicationCategories(dwreserved: u32, pappcategory: *mut ::win32_ui_sys::Shell::APPCATEGORYINFOLIST) -> u32;
     pub fn GetManagedApplications(pcategory: *const ::windows_core_sys::GUID, dwqueryflags: u32, dwinfolevel: u32, pdwapps: *mut u32, prgmanagedapps: *mut *mut MANAGEDAPPLICATION) -> u32;
     pub fn ImportRSoPData(lpnamespace: ::windows_core_sys::PCWSTR, lpfilename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn InstallApplication(pinstallinfo: *const INSTALLDATA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LeaveCriticalPolicySection(hsection: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+    pub fn LeaveCriticalPolicySection(hsection: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn ProcessGroupPolicyCompleted(extensionid: *const ::windows_core_sys::GUID, pasynchandle: usize, dwstatus: u32) -> u32;
     pub fn ProcessGroupPolicyCompletedEx(extensionid: *const ::windows_core_sys::GUID, pasynchandle: usize, dwstatus: u32, rsopstatus: ::windows_core_sys::HRESULT) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RefreshPolicy(bmachine: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RefreshPolicyEx(bmachine: super::super::Foundation::BOOL, dwoptions: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterGPNotification(hevent: super::super::Foundation::HANDLE, bmachine: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn RsopAccessCheckByType(psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, pprincipalselfsid: super::super::Foundation::PSID, prsoptoken: *const ::core::ffi::c_void, dwdesiredaccessmask: u32, pobjecttypelist: *const super::super::Security::OBJECT_TYPE_LIST, objecttypelistlength: u32, pgenericmapping: *const super::super::Security::GENERIC_MAPPING, pprivilegeset: *const super::super::Security::PRIVILEGE_SET, pdwprivilegesetlength: *const u32, pdwgrantedaccessmask: *mut u32, pbaccessstatus: *mut i32) -> ::windows_core_sys::HRESULT;
+    pub fn RefreshPolicy(bmachine: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn RefreshPolicyEx(bmachine: ::win32_foundation_sys::BOOL, dwoptions: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn RegisterGPNotification(hevent: ::win32_foundation_sys::HANDLE, bmachine: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn RsopAccessCheckByType(psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, pprincipalselfsid: ::win32_foundation_sys::PSID, prsoptoken: *const ::core::ffi::c_void, dwdesiredaccessmask: u32, pobjecttypelist: *const ::win32_security_sys::OBJECT_TYPE_LIST, objecttypelistlength: u32, pgenericmapping: *const ::win32_security_sys::GENERIC_MAPPING, pprivilegeset: *const ::win32_security_sys::PRIVILEGE_SET, pdwprivilegesetlength: *const u32, pdwgrantedaccessmask: *mut u32, pbaccessstatus: *mut i32) -> ::windows_core_sys::HRESULT;
     pub fn RsopFileAccessCheck(pszfilename: ::windows_core_sys::PCWSTR, prsoptoken: *const ::core::ffi::c_void, dwdesiredaccessmask: u32, pdwgrantedaccessmask: *mut u32, pbaccessstatus: *mut i32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Wmi")]
     pub fn RsopResetPolicySettingStatus(dwflags: u32, pservices: super::Wmi::IWbemServices, psettinginstance: super::Wmi::IWbemClassObject) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Wmi"))]
+    #[cfg(feature = "Win32_System_Wmi")]
     pub fn RsopSetPolicySettingStatus(dwflags: u32, pservices: super::Wmi::IWbemServices, psettinginstance: super::Wmi::IWbemClassObject, ninfo: u32, pstatus: *const POLICYSETTINGSTATUSINFO) -> ::windows_core_sys::HRESULT;
     pub fn UninstallApplication(productcode: ::windows_core_sys::PCWSTR, dwstatus: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UnregisterGPNotification(hevent: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+    pub fn UnregisterGPNotification(hevent: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
 }
 pub type APPSTATE = i32;
 pub const ABSENT: APPSTATE = 0i32;
@@ -193,11 +176,10 @@ pub const GPM_PROCESS_SECURITY: u32 = 2u32;
 pub const GPM_USE_ANYDC: u32 = 1u32;
 pub const GPM_USE_PDC: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GPOBROWSEINFO {
     pub dwSize: u32,
     pub dwFlags: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation_sys::HWND,
     pub lpTitle: ::windows_core_sys::PWSTR,
     pub lpInitialOU: ::windows_core_sys::PWSTR,
     pub lpDSPath: ::windows_core_sys::PWSTR,
@@ -207,9 +189,7 @@ pub struct GPOBROWSEINFO {
     pub gpoType: GROUP_POLICY_OBJECT_TYPE,
     pub gpoHint: GROUP_POLICY_HINT_TYPE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GPOBROWSEINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GPOBROWSEINFO {
     fn clone(&self) -> Self {
         *self
@@ -270,32 +250,28 @@ pub const GPHintSite: GROUP_POLICY_HINT_TYPE = 2i32;
 pub const GPHintDomain: GROUP_POLICY_HINT_TYPE = 3i32;
 pub const GPHintOrganizationalUnit: GROUP_POLICY_HINT_TYPE = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GROUP_POLICY_OBJECTA {
     pub dwOptions: u32,
     pub dwVersion: u32,
     pub lpDSPath: ::windows_core_sys::PSTR,
     pub lpFileSysPath: ::windows_core_sys::PSTR,
     pub lpDisplayName: ::windows_core_sys::PSTR,
-    pub szGPOName: [super::super::Foundation::CHAR; 50],
+    pub szGPOName: [::win32_foundation_sys::CHAR; 50],
     pub GPOLink: GPO_LINK,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub pNext: *mut GROUP_POLICY_OBJECTA,
     pub pPrev: *mut GROUP_POLICY_OBJECTA,
     pub lpExtensions: ::windows_core_sys::PSTR,
-    pub lParam2: super::super::Foundation::LPARAM,
+    pub lParam2: ::win32_foundation_sys::LPARAM,
     pub lpLink: ::windows_core_sys::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GROUP_POLICY_OBJECTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GROUP_POLICY_OBJECTA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GROUP_POLICY_OBJECTW {
     pub dwOptions: u32,
     pub dwVersion: u32,
@@ -304,16 +280,14 @@ pub struct GROUP_POLICY_OBJECTW {
     pub lpDisplayName: ::windows_core_sys::PWSTR,
     pub szGPOName: [u16; 50],
     pub GPOLink: GPO_LINK,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub pNext: *mut GROUP_POLICY_OBJECTW,
     pub pPrev: *mut GROUP_POLICY_OBJECTW,
     pub lpExtensions: ::windows_core_sys::PWSTR,
-    pub lParam2: super::super::Foundation::LPARAM,
+    pub lParam2: ::win32_foundation_sys::LPARAM,
     pub lpLink: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GROUP_POLICY_OBJECTW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GROUP_POLICY_OBJECTW {
     fn clone(&self) -> Self {
         *self
@@ -441,7 +415,6 @@ pub const LOCALSTATE_PUBLISHED: u32 = 2u32;
 pub const LOCALSTATE_UNINSTALLED: u32 = 64u32;
 pub const LOCALSTATE_UNINSTALL_UNMANAGED: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MANAGEDAPPLICATION {
     pub pszPackageName: ::windows_core_sys::PWSTR,
     pub pszPublisher: ::windows_core_sys::PWSTR,
@@ -458,11 +431,9 @@ pub struct MANAGEDAPPLICATION {
     pub pszContact: ::windows_core_sys::PWSTR,
     pub pszSupportUrl: ::windows_core_sys::PWSTR,
     pub dwPathType: u32,
-    pub bInstalled: super::super::Foundation::BOOL,
+    pub bInstalled: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MANAGEDAPPLICATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MANAGEDAPPLICATION {
     fn clone(&self) -> Self {
         *self
@@ -482,18 +453,16 @@ pub const NODEID_RSOPUser: ::windows_core_sys::GUID = ::windows_core_sys::GUID {
 pub const NODEID_RSOPUserSWSettings: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3844889827, data2: 64807, data3: 17410, data4: [132, 222, 217, 165, 242, 133, 137, 16] };
 pub const NODEID_User: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2411771704, data2: 41185, data3: 4561, data4: [167, 211, 0, 0, 248, 117, 113, 227] };
 pub const NODEID_UserSWSettings: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2411771708, data2: 41185, data3: 4561, data4: [167, 211, 0, 0, 248, 117, 113, 227] };
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Wmi"))]
-pub type PFNGENERATEGROUPPOLICY = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, pbabort: *mut super::super::Foundation::BOOL, pwszsite: ::windows_core_sys::PCWSTR, pcomputertarget: *const RSOP_TARGET, pusertarget: *const RSOP_TARGET) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PFNPROCESSGROUPPOLICY = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, htoken: super::super::Foundation::HANDLE, hkeyroot: super::Registry::HKEY, pdeletedgpolist: *const GROUP_POLICY_OBJECTA, pchangedgpolist: *const GROUP_POLICY_OBJECTA, phandle: usize, pbabort: *mut super::super::Foundation::BOOL, pstatuscallback: PFNSTATUSMESSAGECALLBACK) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry", feature = "Win32_System_Wmi"))]
-pub type PFNPROCESSGROUPPOLICYEX = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, htoken: super::super::Foundation::HANDLE, hkeyroot: super::Registry::HKEY, pdeletedgpolist: *const GROUP_POLICY_OBJECTA, pchangedgpolist: *const GROUP_POLICY_OBJECTA, phandle: usize, pbabort: *mut super::super::Foundation::BOOL, pstatuscallback: PFNSTATUSMESSAGECALLBACK, pwbemservices: super::Wmi::IWbemServices, prsopstatus: *mut ::windows_core_sys::HRESULT) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNSTATUSMESSAGECALLBACK = ::core::option::Option<unsafe extern "system" fn(bverbose: super::super::Foundation::BOOL, lpmessage: ::windows_core_sys::PCWSTR) -> u32>;
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Wmi"))]
+pub type PFNGENERATEGROUPPOLICY = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, pbabort: *mut ::win32_foundation_sys::BOOL, pwszsite: ::windows_core_sys::PCWSTR, pcomputertarget: *const RSOP_TARGET, pusertarget: *const RSOP_TARGET) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PFNPROCESSGROUPPOLICY = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, htoken: ::win32_foundation_sys::HANDLE, hkeyroot: super::Registry::HKEY, pdeletedgpolist: *const GROUP_POLICY_OBJECTA, pchangedgpolist: *const GROUP_POLICY_OBJECTA, phandle: usize, pbabort: *mut ::win32_foundation_sys::BOOL, pstatuscallback: PFNSTATUSMESSAGECALLBACK) -> u32>;
+#[cfg(all(feature = "Win32_System_Registry", feature = "Win32_System_Wmi"))]
+pub type PFNPROCESSGROUPPOLICYEX = ::core::option::Option<unsafe extern "system" fn(dwflags: u32, htoken: ::win32_foundation_sys::HANDLE, hkeyroot: super::Registry::HKEY, pdeletedgpolist: *const GROUP_POLICY_OBJECTA, pchangedgpolist: *const GROUP_POLICY_OBJECTA, phandle: usize, pbabort: *mut ::win32_foundation_sys::BOOL, pstatuscallback: PFNSTATUSMESSAGECALLBACK, pwbemservices: super::Wmi::IWbemServices, prsopstatus: *mut ::windows_core_sys::HRESULT) -> u32>;
+pub type PFNSTATUSMESSAGECALLBACK = ::core::option::Option<unsafe extern "system" fn(bverbose: ::win32_foundation_sys::BOOL, lpmessage: ::windows_core_sys::PCWSTR) -> u32>;
 pub const PI_APPLYPOLICY: u32 = 2u32;
 pub const PI_NOUI: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POLICYSETTINGSTATUSINFO {
     pub szKey: ::windows_core_sys::PWSTR,
     pub szEventSource: ::windows_core_sys::PWSTR,
@@ -501,11 +470,9 @@ pub struct POLICYSETTINGSTATUSINFO {
     pub dwEventID: u32,
     pub dwErrorCode: u32,
     pub status: SETTINGSTATUS,
-    pub timeLogged: super::super::Foundation::SYSTEMTIME,
+    pub timeLogged: ::win32_foundation_sys::SYSTEMTIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POLICYSETTINGSTATUSINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POLICYSETTINGSTATUSINFO {
     fn clone(&self) -> Self {
         *self
@@ -527,7 +494,7 @@ pub const RSOP_PLANNING_ASSUME_LOOPBACK_REPLACE: u32 = 4u32;
 pub const RSOP_PLANNING_ASSUME_SLOW_LINK: u32 = 1u32;
 pub const RSOP_PLANNING_ASSUME_USER_WQLFILTER_TRUE: u32 = 8u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Wmi"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Wmi"))]
 pub struct RSOP_TARGET {
     pub pwszAccountName: ::windows_core_sys::PWSTR,
     pub pwszNewSOM: ::windows_core_sys::PWSTR,
@@ -536,9 +503,9 @@ pub struct RSOP_TARGET {
     pub pGPOList: *mut GROUP_POLICY_OBJECTA,
     pub pWbemServices: super::Wmi::IWbemServices,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Wmi"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Wmi"))]
 impl ::core::marker::Copy for RSOP_TARGET {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Wmi"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Wmi"))]
 impl ::core::clone::Clone for RSOP_TARGET {
     fn clone(&self) -> Self {
         *self

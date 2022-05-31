@@ -134,11 +134,11 @@ impl AppointmentsProviderAddAppointmentActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn Verb(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -342,11 +342,11 @@ impl AppointmentsProviderRemoveAppointmentActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn Verb(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -550,11 +550,11 @@ impl AppointmentsProviderReplaceAppointmentActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn Verb(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -758,11 +758,11 @@ impl AppointmentsProviderShowAppointmentDetailsActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn Verb(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -772,12 +772,11 @@ impl AppointmentsProviderShowAppointmentDetailsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Verb)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InstanceStartDate(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    pub fn InstanceStartDate(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InstanceStartDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).InstanceStartDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
     pub fn LocalId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -980,11 +979,11 @@ impl AppointmentsProviderShowTimeFrameActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn Verb(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -994,20 +993,18 @@ impl AppointmentsProviderShowTimeFrameActivatedEventArgs {
             (::windows_core::Interface::vtable(this).Verb)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TimeToShow(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn TimeToShow(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeToShow)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeToShow)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
 }
@@ -1302,11 +1299,11 @@ impl BarcodeScannerPreviewActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn ConnectionId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1480,19 +1477,19 @@ impl CachedFileUpdaterActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "Storage_Provider")]
-    pub fn CachedFileUpdaterUI(&self) -> ::windows_core::Result<super::super::Storage::Provider::CachedFileUpdaterUI> {
+    pub fn CachedFileUpdaterUI(&self) -> ::windows_core::Result<::winrt_storage::Provider::CachedFileUpdaterUI> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CachedFileUpdaterUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Provider::CachedFileUpdaterUI>(result__)
+            (::windows_core::Interface::vtable(this).CachedFileUpdaterUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Provider::CachedFileUpdaterUI>(result__)
         }
     }
 }
@@ -1814,11 +1811,11 @@ impl CommandLineActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn Operation(&self) -> ::windows_core::Result<CommandLineActivationOperation> {
@@ -1995,12 +1992,11 @@ impl CommandLineActivationOperation {
             (::windows_core::Interface::vtable(this).ExitCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -2671,11 +2667,11 @@ impl ContactPanelActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "ApplicationModel_Contacts")]
@@ -3391,11 +3387,11 @@ impl DeviceActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn CurrentlyShownApplicationViewId(&self) -> ::windows_core::Result<i32> {
@@ -3420,11 +3416,11 @@ impl DeviceActivatedEventArgs {
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn ViewSwitcher(&self) -> ::windows_core::Result<super::super::UI::ViewManagement::ActivationViewSwitcher> {
+    pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::ViewManagement::ActivationViewSwitcher>(result__)
+            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ActivationViewSwitcher>(result__)
         }
     }
 }
@@ -3635,19 +3631,19 @@ impl DevicePairingActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "Devices_Enumeration")]
-    pub fn DeviceInformation(&self) -> ::windows_core::Result<super::super::Devices::Enumeration::DeviceInformation> {
+    pub fn DeviceInformation(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeviceInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Enumeration::DeviceInformation>(result__)
+            (::windows_core::Interface::vtable(this).DeviceInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Enumeration::DeviceInformation>(result__)
         }
     }
 }
@@ -3814,11 +3810,11 @@ impl DialReceiverActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn CurrentlyShownApplicationViewId(&self) -> ::windows_core::Result<i32> {
@@ -3850,11 +3846,11 @@ impl DialReceiverActivatedEventArgs {
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn ViewSwitcher(&self) -> ::windows_core::Result<super::super::UI::ViewManagement::ActivationViewSwitcher> {
+    pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::ViewManagement::ActivationViewSwitcher>(result__)
+            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ActivationViewSwitcher>(result__)
         }
     }
 }
@@ -4087,11 +4083,11 @@ impl FileActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn CurrentlyShownApplicationViewId(&self) -> ::windows_core::Result<i32> {
@@ -4102,11 +4098,11 @@ impl FileActivatedEventArgs {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
-    pub fn Files(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Storage::IStorageItem>> {
+    pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::IStorageItem>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Storage::IStorageItem>>(result__)
+            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_storage::IStorageItem>>(result__)
         }
     }
     pub fn Verb(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -4124,19 +4120,19 @@ impl FileActivatedEventArgs {
         }
     }
     #[cfg(feature = "Storage_Search")]
-    pub fn NeighboringFilesQuery(&self) -> ::windows_core::Result<super::super::Storage::Search::StorageFileQueryResult> {
+    pub fn NeighboringFilesQuery(&self) -> ::windows_core::Result<::winrt_storage::Search::StorageFileQueryResult> {
         let this = &::windows_core::Interface::cast::<IFileActivatedEventArgsWithNeighboringFiles>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NeighboringFilesQuery)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Search::StorageFileQueryResult>(result__)
+            (::windows_core::Interface::vtable(this).NeighboringFilesQuery)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Search::StorageFileQueryResult>(result__)
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn ViewSwitcher(&self) -> ::windows_core::Result<super::super::UI::ViewManagement::ActivationViewSwitcher> {
+    pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::ViewManagement::ActivationViewSwitcher>(result__)
+            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ActivationViewSwitcher>(result__)
         }
     }
 }
@@ -4391,19 +4387,19 @@ impl FileOpenPickerActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "Storage_Pickers_Provider")]
-    pub fn FileOpenPickerUI(&self) -> ::windows_core::Result<super::super::Storage::Pickers::Provider::FileOpenPickerUI> {
+    pub fn FileOpenPickerUI(&self) -> ::windows_core::Result<::winrt_storage::Pickers::Provider::FileOpenPickerUI> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FileOpenPickerUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Pickers::Provider::FileOpenPickerUI>(result__)
+            (::windows_core::Interface::vtable(this).FileOpenPickerUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Pickers::Provider::FileOpenPickerUI>(result__)
         }
     }
     pub fn CallerPackageFamilyName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -4601,27 +4597,27 @@ impl FileOpenPickerContinuationEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContinuationData(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage", feature = "deprecated"))]
-    pub fn Files(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Storage::StorageFile>> {
+    pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_storage::StorageFile>>(result__)
         }
     }
 }
@@ -4843,19 +4839,19 @@ impl FileSavePickerActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "Storage_Pickers_Provider")]
-    pub fn FileSavePickerUI(&self) -> ::windows_core::Result<super::super::Storage::Pickers::Provider::FileSavePickerUI> {
+    pub fn FileSavePickerUI(&self) -> ::windows_core::Result<::winrt_storage::Pickers::Provider::FileSavePickerUI> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FileSavePickerUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Pickers::Provider::FileSavePickerUI>(result__)
+            (::windows_core::Interface::vtable(this).FileSavePickerUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Pickers::Provider::FileSavePickerUI>(result__)
         }
     }
     pub fn CallerPackageFamilyName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -5060,27 +5056,27 @@ impl FileSavePickerContinuationEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContinuationData(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     #[cfg(all(feature = "Storage", feature = "deprecated"))]
-    pub fn File(&self) -> ::windows_core::Result<super::super::Storage::StorageFile> {
+    pub fn File(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::StorageFile>(result__)
+            (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFile>(result__)
         }
     }
 }
@@ -5304,27 +5300,27 @@ impl FolderPickerContinuationEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContinuationData(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     #[cfg(all(feature = "Storage", feature = "deprecated"))]
-    pub fn Folder(&self) -> ::windows_core::Result<super::super::Storage::StorageFolder> {
+    pub fn Folder(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Folder)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::StorageFolder>(result__)
+            (::windows_core::Interface::vtable(this).Folder)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFolder>(result__)
         }
     }
 }
@@ -5625,11 +5621,11 @@ pub struct IActivatedEventArgs_Vtbl {
 pub struct IActivatedEventArgsWithUser(::windows_core::IUnknown);
 impl IActivatedEventArgsWithUser {
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -6489,12 +6485,11 @@ pub struct IAppointmentsProviderReplaceAppointmentActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs(::windows_core::IUnknown);
 impl IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs {
-    #[cfg(feature = "Foundation")]
-    pub fn InstanceStartDate(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    pub fn InstanceStartDate(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InstanceStartDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).InstanceStartDate)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
     pub fn LocalId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -6655,30 +6650,25 @@ unsafe impl ::windows_core::Interface for IAppointmentsProviderShowAppointmentDe
 #[doc(hidden)]
 pub struct IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub InstanceStartDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InstanceStartDate: usize,
     pub LocalId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub RoamingId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IAppointmentsProviderShowTimeFrameActivatedEventArgs(::windows_core::IUnknown);
 impl IAppointmentsProviderShowTimeFrameActivatedEventArgs {
-    #[cfg(feature = "Foundation")]
-    pub fn TimeToShow(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn TimeToShow(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeToShow)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).TimeToShow)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -6825,14 +6815,8 @@ unsafe impl ::windows_core::Interface for IAppointmentsProviderShowTimeFrameActi
 #[doc(hidden)]
 pub struct IAppointmentsProviderShowTimeFrameActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub TimeToShow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TimeToShow: usize,
-    #[cfg(feature = "Foundation")]
-    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Duration: usize,
+    pub TimeToShow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IBackgroundActivatedEventArgs(::windows_core::IUnknown);
@@ -7053,11 +7037,11 @@ pub struct IBarcodeScannerPreviewActivatedEventArgs_Vtbl {
 pub struct ICachedFileUpdaterActivatedEventArgs(::windows_core::IUnknown);
 impl ICachedFileUpdaterActivatedEventArgs {
     #[cfg(feature = "Storage_Provider")]
-    pub fn CachedFileUpdaterUI(&self) -> ::windows_core::Result<super::super::Storage::Provider::CachedFileUpdaterUI> {
+    pub fn CachedFileUpdaterUI(&self) -> ::windows_core::Result<::winrt_storage::Provider::CachedFileUpdaterUI> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CachedFileUpdaterUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Provider::CachedFileUpdaterUI>(result__)
+            (::windows_core::Interface::vtable(this).CachedFileUpdaterUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Provider::CachedFileUpdaterUI>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -7457,10 +7441,7 @@ pub struct ICommandLineActivationOperation_Vtbl {
     pub CurrentDirectoryPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetExitCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
     pub ExitCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }
 #[repr(transparent)]
 pub struct IContactActivatedEventArgs(::windows_core::IUnknown);
@@ -8827,11 +8808,11 @@ pub struct IContactsProviderActivatedEventArgs_Vtbl {
 pub struct IContinuationActivatedEventArgs(::windows_core::IUnknown);
 impl IContinuationActivatedEventArgs {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContinuationData(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -9093,11 +9074,11 @@ pub struct IDeviceActivatedEventArgs_Vtbl {
 pub struct IDevicePairingActivatedEventArgs(::windows_core::IUnknown);
 impl IDevicePairingActivatedEventArgs {
     #[cfg(feature = "Devices_Enumeration")]
-    pub fn DeviceInformation(&self) -> ::windows_core::Result<super::super::Devices::Enumeration::DeviceInformation> {
+    pub fn DeviceInformation(&self) -> ::windows_core::Result<::winrt_devices::Enumeration::DeviceInformation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeviceInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Enumeration::DeviceInformation>(result__)
+            (::windows_core::Interface::vtable(this).DeviceInformation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Enumeration::DeviceInformation>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -9387,11 +9368,11 @@ pub struct IDialReceiverActivatedEventArgs_Vtbl {
 pub struct IFileActivatedEventArgs(::windows_core::IUnknown);
 impl IFileActivatedEventArgs {
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
-    pub fn Files(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Storage::IStorageItem>> {
+    pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::IStorageItem>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Storage::IStorageItem>>(result__)
+            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_storage::IStorageItem>>(result__)
         }
     }
     pub fn Verb(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -9653,11 +9634,11 @@ pub struct IFileActivatedEventArgsWithCallerPackageFamilyName_Vtbl {
 pub struct IFileActivatedEventArgsWithNeighboringFiles(::windows_core::IUnknown);
 impl IFileActivatedEventArgsWithNeighboringFiles {
     #[cfg(feature = "Storage_Search")]
-    pub fn NeighboringFilesQuery(&self) -> ::windows_core::Result<super::super::Storage::Search::StorageFileQueryResult> {
+    pub fn NeighboringFilesQuery(&self) -> ::windows_core::Result<::winrt_storage::Search::StorageFileQueryResult> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NeighboringFilesQuery)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Search::StorageFileQueryResult>(result__)
+            (::windows_core::Interface::vtable(this).NeighboringFilesQuery)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Search::StorageFileQueryResult>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -9682,11 +9663,11 @@ impl IFileActivatedEventArgsWithNeighboringFiles {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
-    pub fn Files(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Storage::IStorageItem>> {
+    pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::IStorageItem>> {
         let this = &::windows_core::Interface::cast::<IFileActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Storage::IStorageItem>>(result__)
+            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_storage::IStorageItem>>(result__)
         }
     }
     pub fn Verb(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -9821,11 +9802,11 @@ pub struct IFileActivatedEventArgsWithNeighboringFiles_Vtbl {
 pub struct IFileOpenPickerActivatedEventArgs(::windows_core::IUnknown);
 impl IFileOpenPickerActivatedEventArgs {
     #[cfg(feature = "Storage_Pickers_Provider")]
-    pub fn FileOpenPickerUI(&self) -> ::windows_core::Result<super::super::Storage::Pickers::Provider::FileOpenPickerUI> {
+    pub fn FileOpenPickerUI(&self) -> ::windows_core::Result<::winrt_storage::Pickers::Provider::FileOpenPickerUI> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FileOpenPickerUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Pickers::Provider::FileOpenPickerUI>(result__)
+            (::windows_core::Interface::vtable(this).FileOpenPickerUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Pickers::Provider::FileOpenPickerUI>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -10038,11 +10019,11 @@ pub struct IFileOpenPickerContinuationEventArgs(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl IFileOpenPickerContinuationEventArgs {
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage", feature = "deprecated"))]
-    pub fn Files(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Storage::StorageFile>> {
+    pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_storage::StorageFile>>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -10067,11 +10048,11 @@ impl IFileOpenPickerContinuationEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContinuationData(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
 }
@@ -10222,11 +10203,11 @@ pub struct IFileOpenPickerContinuationEventArgs_Vtbl {
 pub struct IFileSavePickerActivatedEventArgs(::windows_core::IUnknown);
 impl IFileSavePickerActivatedEventArgs {
     #[cfg(feature = "Storage_Pickers_Provider")]
-    pub fn FileSavePickerUI(&self) -> ::windows_core::Result<super::super::Storage::Pickers::Provider::FileSavePickerUI> {
+    pub fn FileSavePickerUI(&self) -> ::windows_core::Result<::winrt_storage::Pickers::Provider::FileSavePickerUI> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FileSavePickerUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Pickers::Provider::FileSavePickerUI>(result__)
+            (::windows_core::Interface::vtable(this).FileSavePickerUI)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Pickers::Provider::FileSavePickerUI>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -10447,11 +10428,11 @@ pub struct IFileSavePickerContinuationEventArgs(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl IFileSavePickerContinuationEventArgs {
     #[cfg(all(feature = "Storage", feature = "deprecated"))]
-    pub fn File(&self) -> ::windows_core::Result<super::super::Storage::StorageFile> {
+    pub fn File(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::StorageFile>(result__)
+            (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFile>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -10476,11 +10457,11 @@ impl IFileSavePickerContinuationEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContinuationData(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
 }
@@ -10633,11 +10614,11 @@ pub struct IFolderPickerContinuationEventArgs(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl IFolderPickerContinuationEventArgs {
     #[cfg(all(feature = "Storage", feature = "deprecated"))]
-    pub fn Folder(&self) -> ::windows_core::Result<super::super::Storage::StorageFolder> {
+    pub fn Folder(&self) -> ::windows_core::Result<::winrt_storage::StorageFolder> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Folder)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::StorageFolder>(result__)
+            (::windows_core::Interface::vtable(this).Folder)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFolder>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -10662,11 +10643,11 @@ impl IFolderPickerContinuationEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContinuationData(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
 }
@@ -11790,11 +11771,11 @@ pub struct IPrelaunchActivatedEventArgs_Vtbl {
 pub struct IPrint3DWorkflowActivatedEventArgs(::windows_core::IUnknown);
 impl IPrint3DWorkflowActivatedEventArgs {
     #[cfg(feature = "Devices_Printers_Extensions")]
-    pub fn Workflow(&self) -> ::windows_core::Result<super::super::Devices::Printers::Extensions::Print3DWorkflow> {
+    pub fn Workflow(&self) -> ::windows_core::Result<::winrt_devices::Printers::Extensions::Print3DWorkflow> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Workflow)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Printers::Extensions::Print3DWorkflow>(result__)
+            (::windows_core::Interface::vtable(this).Workflow)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Printers::Extensions::Print3DWorkflow>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -11921,11 +11902,11 @@ pub struct IPrint3DWorkflowActivatedEventArgs_Vtbl {
 pub struct IPrintTaskSettingsActivatedEventArgs(::windows_core::IUnknown);
 impl IPrintTaskSettingsActivatedEventArgs {
     #[cfg(feature = "Devices_Printers_Extensions")]
-    pub fn Configuration(&self) -> ::windows_core::Result<super::super::Devices::Printers::Extensions::PrintTaskConfiguration> {
+    pub fn Configuration(&self) -> ::windows_core::Result<::winrt_devices::Printers::Extensions::PrintTaskConfiguration> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Configuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Printers::Extensions::PrintTaskConfiguration>(result__)
+            (::windows_core::Interface::vtable(this).Configuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Printers::Extensions::PrintTaskConfiguration>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -12051,12 +12032,11 @@ pub struct IPrintTaskSettingsActivatedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct IProtocolActivatedEventArgs(::windows_core::IUnknown);
 impl IProtocolActivatedEventArgs {
-    #[cfg(feature = "Foundation")]
-    pub fn Uri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn Uri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -12174,10 +12154,7 @@ unsafe impl ::windows_core::Interface for IProtocolActivatedEventArgs {
 #[doc(hidden)]
 pub struct IProtocolActivatedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Uri: usize,
 }
 #[repr(transparent)]
 pub struct IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData(::windows_core::IUnknown);
@@ -12190,11 +12167,11 @@ impl IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Data(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn Data(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -12322,11 +12299,11 @@ pub struct IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData_Vtbl {
 pub struct IProtocolForResultsActivatedEventArgs(::windows_core::IUnknown);
 impl IProtocolForResultsActivatedEventArgs {
     #[cfg(feature = "System")]
-    pub fn ProtocolForResultsOperation(&self) -> ::windows_core::Result<super::super::System::ProtocolForResultsOperation> {
+    pub fn ProtocolForResultsOperation(&self) -> ::windows_core::Result<::winrt_system::ProtocolForResultsOperation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolForResultsOperation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::ProtocolForResultsOperation>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolForResultsOperation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::ProtocolForResultsOperation>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -12941,18 +12918,9 @@ unsafe impl ::windows_core::Interface for ISplashScreen {
 #[doc(hidden)]
 pub struct ISplashScreen_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub ImageLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ImageLocation: usize,
-    #[cfg(feature = "Foundation")]
-    pub Dismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Dismissed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveDismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveDismissed: usize,
+    pub ImageLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    pub Dismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveDismissed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IStartupTaskActivatedEventArgs(::windows_core::IUnknown);
@@ -13108,11 +13076,11 @@ impl IToastNotificationActivatedEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn UserInput(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn UserInput(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UserInput)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).UserInput)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -13371,11 +13339,11 @@ pub struct IUserDataAccountProviderActivatedEventArgs_Vtbl {
 pub struct IViewSwitcherProvider(::windows_core::IUnknown);
 impl IViewSwitcherProvider {
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn ViewSwitcher(&self) -> ::windows_core::Result<super::super::UI::ViewManagement::ActivationViewSwitcher> {
+    pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::ViewManagement::ActivationViewSwitcher>(result__)
+            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ActivationViewSwitcher>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -13502,11 +13470,11 @@ pub struct IViewSwitcherProvider_Vtbl {
 pub struct IVoiceCommandActivatedEventArgs(::windows_core::IUnknown);
 impl IVoiceCommandActivatedEventArgs {
     #[cfg(feature = "Media_SpeechRecognition")]
-    pub fn Result(&self) -> ::windows_core::Result<super::super::Media::SpeechRecognition::SpeechRecognitionResult> {
+    pub fn Result(&self) -> ::windows_core::Result<::winrt_media::SpeechRecognition::SpeechRecognitionResult> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Result)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::SpeechRecognition::SpeechRecognitionResult>(result__)
+            (::windows_core::Interface::vtable(this).Result)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_media::SpeechRecognition::SpeechRecognitionResult>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -13780,11 +13748,11 @@ pub struct IWalletActionActivatedEventArgs_Vtbl {
 pub struct IWebAccountProviderActivatedEventArgs(::windows_core::IUnknown);
 impl IWebAccountProviderActivatedEventArgs {
     #[cfg(feature = "Security_Authentication_Web_Provider")]
-    pub fn Operation(&self) -> ::windows_core::Result<super::super::Security::Authentication::Web::Provider::IWebAccountProviderOperation> {
+    pub fn Operation(&self) -> ::windows_core::Result<::winrt_security::Authentication::Web::Provider::IWebAccountProviderOperation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Operation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Authentication::Web::Provider::IWebAccountProviderOperation>(result__)
+            (::windows_core::Interface::vtable(this).Operation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Authentication::Web::Provider::IWebAccountProviderOperation>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -13911,11 +13879,11 @@ pub struct IWebAccountProviderActivatedEventArgs_Vtbl {
 pub struct IWebAuthenticationBrokerContinuationEventArgs(::windows_core::IUnknown);
 impl IWebAuthenticationBrokerContinuationEventArgs {
     #[cfg(feature = "Security_Authentication_Web")]
-    pub fn WebAuthenticationResult(&self) -> ::windows_core::Result<super::super::Security::Authentication::Web::WebAuthenticationResult> {
+    pub fn WebAuthenticationResult(&self) -> ::windows_core::Result<::winrt_security::Authentication::Web::WebAuthenticationResult> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebAuthenticationResult)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Authentication::Web::WebAuthenticationResult>(result__)
+            (::windows_core::Interface::vtable(this).WebAuthenticationResult)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Authentication::Web::WebAuthenticationResult>(result__)
         }
     }
     pub fn Kind(&self) -> ::windows_core::Result<ActivationKind> {
@@ -13940,11 +13908,11 @@ impl IWebAuthenticationBrokerContinuationEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContinuationData(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
 }
@@ -14093,11 +14061,11 @@ impl LaunchActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn CurrentlyShownApplicationViewId(&self) -> ::windows_core::Result<i32> {
@@ -14136,11 +14104,11 @@ impl LaunchActivatedEventArgs {
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn ViewSwitcher(&self) -> ::windows_core::Result<super::super::UI::ViewManagement::ActivationViewSwitcher> {
+    pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::ViewManagement::ActivationViewSwitcher>(result__)
+            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ActivationViewSwitcher>(result__)
         }
     }
 }
@@ -14395,11 +14363,11 @@ impl LockScreenActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn Info(&self) -> ::windows_core::Result<::windows_core::IInspectable> {
@@ -14602,11 +14570,11 @@ impl LockScreenCallActivatedEventArgs {
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn ViewSwitcher(&self) -> ::windows_core::Result<super::super::UI::ViewManagement::ActivationViewSwitcher> {
+    pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::ViewManagement::ActivationViewSwitcher>(result__)
+            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ActivationViewSwitcher>(result__)
         }
     }
 }
@@ -14936,11 +14904,11 @@ impl PhoneCallActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn LineId(&self) -> ::windows_core::Result<::windows_core::GUID> {
@@ -15262,11 +15230,11 @@ impl Print3DWorkflowActivatedEventArgs {
         }
     }
     #[cfg(feature = "Devices_Printers_Extensions")]
-    pub fn Workflow(&self) -> ::windows_core::Result<super::super::Devices::Printers::Extensions::Print3DWorkflow> {
+    pub fn Workflow(&self) -> ::windows_core::Result<::winrt_devices::Printers::Extensions::Print3DWorkflow> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Workflow)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Printers::Extensions::Print3DWorkflow>(result__)
+            (::windows_core::Interface::vtable(this).Workflow)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Printers::Extensions::Print3DWorkflow>(result__)
         }
     }
 }
@@ -15411,11 +15379,11 @@ impl PrintTaskSettingsActivatedEventArgs {
         }
     }
     #[cfg(feature = "Devices_Printers_Extensions")]
-    pub fn Configuration(&self) -> ::windows_core::Result<super::super::Devices::Printers::Extensions::PrintTaskConfiguration> {
+    pub fn Configuration(&self) -> ::windows_core::Result<::winrt_devices::Printers::Extensions::PrintTaskConfiguration> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Configuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Devices::Printers::Extensions::PrintTaskConfiguration>(result__)
+            (::windows_core::Interface::vtable(this).Configuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Printers::Extensions::PrintTaskConfiguration>(result__)
         }
     }
 }
@@ -15560,11 +15528,11 @@ impl ProtocolActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn CurrentlyShownApplicationViewId(&self) -> ::windows_core::Result<i32> {
@@ -15574,12 +15542,11 @@ impl ProtocolActivatedEventArgs {
             (::windows_core::Interface::vtable(this).CurrentlyShownApplicationViewId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Uri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn Uri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn CallerPackageFamilyName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -15590,19 +15557,19 @@ impl ProtocolActivatedEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Data(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn Data(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn ViewSwitcher(&self) -> ::windows_core::Result<super::super::UI::ViewManagement::ActivationViewSwitcher> {
+    pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::ViewManagement::ActivationViewSwitcher>(result__)
+            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ActivationViewSwitcher>(result__)
         }
     }
 }
@@ -15835,11 +15802,11 @@ impl ProtocolForResultsActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn CurrentlyShownApplicationViewId(&self) -> ::windows_core::Result<i32> {
@@ -15849,12 +15816,11 @@ impl ProtocolForResultsActivatedEventArgs {
             (::windows_core::Interface::vtable(this).CurrentlyShownApplicationViewId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Uri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn Uri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = &::windows_core::Interface::cast::<IProtocolActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     pub fn CallerPackageFamilyName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -15865,27 +15831,27 @@ impl ProtocolForResultsActivatedEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Data(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn Data(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     #[cfg(feature = "System")]
-    pub fn ProtocolForResultsOperation(&self) -> ::windows_core::Result<super::super::System::ProtocolForResultsOperation> {
+    pub fn ProtocolForResultsOperation(&self) -> ::windows_core::Result<::winrt_system::ProtocolForResultsOperation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolForResultsOperation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::ProtocolForResultsOperation>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolForResultsOperation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::ProtocolForResultsOperation>(result__)
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn ViewSwitcher(&self) -> ::windows_core::Result<super::super::UI::ViewManagement::ActivationViewSwitcher> {
+    pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::ViewManagement::ActivationViewSwitcher>(result__)
+            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ActivationViewSwitcher>(result__)
         }
     }
 }
@@ -16140,11 +16106,11 @@ impl RestrictedLaunchActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn SharedContext(&self) -> ::windows_core::Result<::windows_core::IInspectable> {
@@ -16318,11 +16284,11 @@ impl SearchActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn CurrentlyShownApplicationViewId(&self) -> ::windows_core::Result<i32> {
@@ -16355,11 +16321,11 @@ impl SearchActivatedEventArgs {
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn ViewSwitcher(&self) -> ::windows_core::Result<super::super::UI::ViewManagement::ActivationViewSwitcher> {
+    pub fn ViewSwitcher(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ActivationViewSwitcher> {
         let this = &::windows_core::Interface::cast::<IViewSwitcherProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::ViewManagement::ActivationViewSwitcher>(result__)
+            (::windows_core::Interface::vtable(this).ViewSwitcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ActivationViewSwitcher>(result__)
         }
     }
 }
@@ -16592,11 +16558,11 @@ impl ShareTargetActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "ApplicationModel_DataTransfer_ShareTarget")]
@@ -16749,24 +16715,21 @@ unsafe impl ::core::marker::Sync for ShareTargetActivatedEventArgs {}
 #[repr(transparent)]
 pub struct SplashScreen(::windows_core::IUnknown);
 impl SplashScreen {
-    #[cfg(feature = "Foundation")]
-    pub fn ImageLocation(&self) -> ::windows_core::Result<super::super::Foundation::Rect> {
+    pub fn ImageLocation(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).ImageLocation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).ImageLocation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Dismissed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<SplashScreen, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Dismissed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<SplashScreen, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Dismissed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Dismissed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveDismissed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveDismissed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, cookie: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveDismissed)(::windows_core::Interface::as_raw(this), cookie.into_param().abi()).ok() }
     }
@@ -16866,11 +16829,11 @@ impl StartupTaskActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn TaskId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -17023,11 +16986,11 @@ unsafe impl ::core::marker::Sync for StartupTaskActivatedEventArgs {}
 pub struct TileActivatedInfo(::windows_core::IUnknown);
 impl TileActivatedInfo {
     #[cfg(all(feature = "Foundation_Collections", feature = "UI_Notifications"))]
-    pub fn RecentlyShownNotifications(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::UI::Notifications::ShownTileNotification>> {
+    pub fn RecentlyShownNotifications(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_ui::Notifications::ShownTileNotification>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecentlyShownNotifications)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::UI::Notifications::ShownTileNotification>>(result__)
+            (::windows_core::Interface::vtable(this).RecentlyShownNotifications)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_ui::Notifications::ShownTileNotification>>(result__)
         }
     }
 }
@@ -17128,11 +17091,11 @@ impl ToastNotificationActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn CurrentlyShownApplicationViewId(&self) -> ::windows_core::Result<i32> {
@@ -17150,11 +17113,11 @@ impl ToastNotificationActivatedEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn UserInput(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn UserInput(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UserInput)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).UserInput)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
 }
@@ -17492,19 +17455,19 @@ impl VoiceCommandActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "Media_SpeechRecognition")]
-    pub fn Result(&self) -> ::windows_core::Result<super::super::Media::SpeechRecognition::SpeechRecognitionResult> {
+    pub fn Result(&self) -> ::windows_core::Result<::winrt_media::SpeechRecognition::SpeechRecognitionResult> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Result)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Media::SpeechRecognition::SpeechRecognitionResult>(result__)
+            (::windows_core::Interface::vtable(this).Result)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_media::SpeechRecognition::SpeechRecognitionResult>(result__)
         }
     }
 }
@@ -17834,19 +17797,19 @@ impl WebAccountProviderActivatedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = &::windows_core::Interface::cast::<IActivatedEventArgsWithUser>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     #[cfg(feature = "Security_Authentication_Web_Provider")]
-    pub fn Operation(&self) -> ::windows_core::Result<super::super::Security::Authentication::Web::Provider::IWebAccountProviderOperation> {
+    pub fn Operation(&self) -> ::windows_core::Result<::winrt_security::Authentication::Web::Provider::IWebAccountProviderOperation> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Operation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Authentication::Web::Provider::IWebAccountProviderOperation>(result__)
+            (::windows_core::Interface::vtable(this).Operation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Authentication::Web::Provider::IWebAccountProviderOperation>(result__)
         }
     }
 }
@@ -18013,19 +17976,19 @@ impl WebAuthenticationBrokerContinuationEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContinuationData(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn ContinuationData(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<IContinuationActivatedEventArgs>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).ContinuationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     #[cfg(feature = "Security_Authentication_Web")]
-    pub fn WebAuthenticationResult(&self) -> ::windows_core::Result<super::super::Security::Authentication::Web::WebAuthenticationResult> {
+    pub fn WebAuthenticationResult(&self) -> ::windows_core::Result<::winrt_security::Authentication::Web::WebAuthenticationResult> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WebAuthenticationResult)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Authentication::Web::WebAuthenticationResult>(result__)
+            (::windows_core::Interface::vtable(this).WebAuthenticationResult)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Authentication::Web::WebAuthenticationResult>(result__)
         }
     }
 }

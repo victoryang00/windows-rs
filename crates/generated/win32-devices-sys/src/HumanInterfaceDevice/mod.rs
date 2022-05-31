@@ -1,94 +1,51 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DirectInput8Create(hinst: super::super::Foundation::HINSTANCE, dwversion: u32, riidltf: *const ::windows_core_sys::GUID, ppvout: *mut *mut ::core::ffi::c_void, punkouter: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_FlushQueue(hiddeviceobject: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_FreePreparsedData(preparseddata: isize) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetAttributes(hiddeviceobject: super::super::Foundation::HANDLE, attributes: *mut HIDD_ATTRIBUTES) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetConfiguration(hiddeviceobject: super::super::Foundation::HANDLE, configuration: *mut HIDD_CONFIGURATION, configurationlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetFeature(hiddeviceobject: super::super::Foundation::HANDLE, reportbuffer: *mut ::core::ffi::c_void, reportbufferlength: u32) -> super::super::Foundation::BOOLEAN;
+    pub fn DirectInput8Create(hinst: ::win32_foundation_sys::HINSTANCE, dwversion: u32, riidltf: *const ::windows_core_sys::GUID, ppvout: *mut *mut ::core::ffi::c_void, punkouter: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
+    pub fn HidD_FlushQueue(hiddeviceobject: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_FreePreparsedData(preparseddata: isize) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetAttributes(hiddeviceobject: ::win32_foundation_sys::HANDLE, attributes: *mut HIDD_ATTRIBUTES) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetConfiguration(hiddeviceobject: ::win32_foundation_sys::HANDLE, configuration: *mut HIDD_CONFIGURATION, configurationlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetFeature(hiddeviceobject: ::win32_foundation_sys::HANDLE, reportbuffer: *mut ::core::ffi::c_void, reportbufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
     pub fn HidD_GetHidGuid(hidguid: *mut ::windows_core_sys::GUID);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetIndexedString(hiddeviceobject: super::super::Foundation::HANDLE, stringindex: u32, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetInputReport(hiddeviceobject: super::super::Foundation::HANDLE, reportbuffer: *mut ::core::ffi::c_void, reportbufferlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetManufacturerString(hiddeviceobject: super::super::Foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetMsGenreDescriptor(hiddeviceobject: super::super::Foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetNumInputBuffers(hiddeviceobject: super::super::Foundation::HANDLE, numberbuffers: *mut u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetPhysicalDescriptor(hiddeviceobject: super::super::Foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetPreparsedData(hiddeviceobject: super::super::Foundation::HANDLE, preparseddata: *mut isize) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetProductString(hiddeviceobject: super::super::Foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_GetSerialNumberString(hiddeviceobject: super::super::Foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_SetConfiguration(hiddeviceobject: super::super::Foundation::HANDLE, configuration: *const HIDD_CONFIGURATION, configurationlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_SetFeature(hiddeviceobject: super::super::Foundation::HANDLE, reportbuffer: *const ::core::ffi::c_void, reportbufferlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_SetNumInputBuffers(hiddeviceobject: super::super::Foundation::HANDLE, numberbuffers: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidD_SetOutputReport(hiddeviceobject: super::super::Foundation::HANDLE, reportbuffer: *const ::core::ffi::c_void, reportbufferlength: u32) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetButtonArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttondata: *mut HIDP_BUTTON_ARRAY_DATA, buttondatalength: *mut u16, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetButtonCaps(reporttype: HIDP_REPORT_TYPE, buttoncaps: *mut HIDP_BUTTON_CAPS, buttoncapslength: *mut u16, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetCaps(preparseddata: isize, capabilities: *mut HIDP_CAPS) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetData(reporttype: HIDP_REPORT_TYPE, datalist: *mut HIDP_DATA, datalength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetExtendedAttributes(reporttype: HIDP_REPORT_TYPE, dataindex: u16, preparseddata: isize, attributes: *mut HIDP_EXTENDED_ATTRIBUTES, lengthattributes: *mut u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetLinkCollectionNodes(linkcollectionnodes: *mut HIDP_LINK_COLLECTION_NODE, linkcollectionnodeslength: *mut u32, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetScaledUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: *mut i32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetSpecificButtonCaps(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttoncaps: *mut HIDP_BUTTON_CAPS, buttoncapslength: *mut u16, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetSpecificValueCaps(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, valuecaps: *mut HIDP_VALUE_CAPS, valuecapslength: *mut u16, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetUsageValueArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: ::windows_core_sys::PSTR, usagevaluebytelength: u16, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetUsagesEx(reporttype: HIDP_REPORT_TYPE, linkcollection: u16, buttonlist: *mut USAGE_AND_PAGE, usagelength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_GetValueCaps(reporttype: HIDP_REPORT_TYPE, valuecaps: *mut HIDP_VALUE_CAPS, valuecapslength: *mut u16, preparseddata: isize) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_InitializeReportForID(reporttype: HIDP_REPORT_TYPE, reportid: u8, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidD_GetIndexedString(hiddeviceobject: ::win32_foundation_sys::HANDLE, stringindex: u32, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetInputReport(hiddeviceobject: ::win32_foundation_sys::HANDLE, reportbuffer: *mut ::core::ffi::c_void, reportbufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetManufacturerString(hiddeviceobject: ::win32_foundation_sys::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetMsGenreDescriptor(hiddeviceobject: ::win32_foundation_sys::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetNumInputBuffers(hiddeviceobject: ::win32_foundation_sys::HANDLE, numberbuffers: *mut u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetPhysicalDescriptor(hiddeviceobject: ::win32_foundation_sys::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetPreparsedData(hiddeviceobject: ::win32_foundation_sys::HANDLE, preparseddata: *mut isize) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetProductString(hiddeviceobject: ::win32_foundation_sys::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_GetSerialNumberString(hiddeviceobject: ::win32_foundation_sys::HANDLE, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_SetConfiguration(hiddeviceobject: ::win32_foundation_sys::HANDLE, configuration: *const HIDD_CONFIGURATION, configurationlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_SetFeature(hiddeviceobject: ::win32_foundation_sys::HANDLE, reportbuffer: *const ::core::ffi::c_void, reportbufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_SetNumInputBuffers(hiddeviceobject: ::win32_foundation_sys::HANDLE, numberbuffers: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidD_SetOutputReport(hiddeviceobject: ::win32_foundation_sys::HANDLE, reportbuffer: *const ::core::ffi::c_void, reportbufferlength: u32) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn HidP_GetButtonArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttondata: *mut HIDP_BUTTON_ARRAY_DATA, buttondatalength: *mut u16, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetButtonCaps(reporttype: HIDP_REPORT_TYPE, buttoncaps: *mut HIDP_BUTTON_CAPS, buttoncapslength: *mut u16, preparseddata: isize) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetCaps(preparseddata: isize, capabilities: *mut HIDP_CAPS) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetData(reporttype: HIDP_REPORT_TYPE, datalist: *mut HIDP_DATA, datalength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetExtendedAttributes(reporttype: HIDP_REPORT_TYPE, dataindex: u16, preparseddata: isize, attributes: *mut HIDP_EXTENDED_ATTRIBUTES, lengthattributes: *mut u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetLinkCollectionNodes(linkcollectionnodes: *mut HIDP_LINK_COLLECTION_NODE, linkcollectionnodeslength: *mut u32, preparseddata: isize) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetScaledUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: *mut i32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetSpecificButtonCaps(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttoncaps: *mut HIDP_BUTTON_CAPS, buttoncapslength: *mut u16, preparseddata: isize) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetSpecificValueCaps(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, valuecaps: *mut HIDP_VALUE_CAPS, valuecapslength: *mut u16, preparseddata: isize) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetUsageValueArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: ::windows_core_sys::PSTR, usagevaluebytelength: u16, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetUsagesEx(reporttype: HIDP_REPORT_TYPE, linkcollection: u16, buttonlist: *mut USAGE_AND_PAGE, usagelength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_GetValueCaps(reporttype: HIDP_REPORT_TYPE, valuecaps: *mut HIDP_VALUE_CAPS, valuecapslength: *mut u16, preparseddata: isize) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_InitializeReportForID(reporttype: HIDP_REPORT_TYPE, reportid: u8, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
     pub fn HidP_MaxDataListLength(reporttype: HIDP_REPORT_TYPE, preparseddata: isize) -> u32;
     pub fn HidP_MaxUsageListLength(reporttype: HIDP_REPORT_TYPE, usagepage: u16, preparseddata: isize) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetButtonArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttondata: *const HIDP_BUTTON_ARRAY_DATA, buttondatalength: u16, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetData(reporttype: HIDP_REPORT_TYPE, datalist: *mut HIDP_DATA, datalength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetScaledUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: i32, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: u32, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetUsageValueArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: ::windows_core_sys::PCSTR, usagevaluebytelength: u16, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_SetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_TranslateUsagesToI8042ScanCodes(changedusagelist: *const u16, usagelistlength: u32, keyaction: HIDP_KEYBOARD_DIRECTION, modifierstate: *mut HIDP_KEYBOARD_MODIFIER_STATE, insertcodesprocedure: PHIDP_INSERT_SCANCODES, insertcodescontext: *const ::core::ffi::c_void) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_UnsetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HidP_UsageListDifference(previoususagelist: *const u16, currentusagelist: *const u16, breakusagelist: *mut u16, makeusagelist: *mut u16, usagelistlength: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn HidP_SetButtonArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, buttondata: *const HIDP_BUTTON_ARRAY_DATA, buttondatalength: u16, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_SetData(reporttype: HIDP_REPORT_TYPE, datalist: *mut HIDP_DATA, datalength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_SetScaledUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: i32, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_SetUsageValue(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: u32, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_SetUsageValueArray(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usage: u16, usagevalue: ::windows_core_sys::PCSTR, usagevaluebytelength: u16, preparseddata: isize, report: ::windows_core_sys::PSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_SetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_TranslateUsagesToI8042ScanCodes(changedusagelist: *const u16, usagelistlength: u32, keyaction: HIDP_KEYBOARD_DIRECTION, modifierstate: *mut HIDP_KEYBOARD_MODIFIER_STATE, insertcodesprocedure: PHIDP_INSERT_SCANCODES, insertcodescontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_UnsetUsages(reporttype: HIDP_REPORT_TYPE, usagepage: u16, linkcollection: u16, usagelist: *mut u16, usagelength: *mut u32, preparseddata: isize, report: ::windows_core_sys::PCSTR, reportlength: u32) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn HidP_UsageListDifference(previoususagelist: *const u16, currentusagelist: *const u16, breakusagelist: *mut u16, makeusagelist: *mut u16, usagelistlength: u32) -> ::win32_foundation_sys::NTSTATUS;
     pub fn joyConfigChanged(dwflags: u32) -> u32;
 }
 pub const BALLPOINT_I8042_HARDWARE: u32 = 8u32;
@@ -248,7 +205,6 @@ impl ::core::clone::Clone for DIACTIONA_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIACTIONFORMATA {
     pub dwSize: u32,
     pub dwActionSize: u32,
@@ -260,21 +216,18 @@ pub struct DIACTIONFORMATA {
     pub dwBufferSize: u32,
     pub lAxisMin: i32,
     pub lAxisMax: i32,
-    pub hInstString: super::super::Foundation::HINSTANCE,
-    pub ftTimeStamp: super::super::Foundation::FILETIME,
+    pub hInstString: ::win32_foundation_sys::HINSTANCE,
+    pub ftTimeStamp: ::win32_foundation_sys::FILETIME,
     pub dwCRC: u32,
-    pub tszActionMap: [super::super::Foundation::CHAR; 260],
+    pub tszActionMap: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIACTIONFORMATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIACTIONFORMATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIACTIONFORMATW {
     pub dwSize: u32,
     pub dwActionSize: u32,
@@ -286,14 +239,12 @@ pub struct DIACTIONFORMATW {
     pub dwBufferSize: u32,
     pub lAxisMin: i32,
     pub lAxisMax: i32,
-    pub hInstString: super::super::Foundation::HINSTANCE,
-    pub ftTimeStamp: super::super::Foundation::FILETIME,
+    pub hInstString: ::win32_foundation_sys::HINSTANCE,
+    pub ftTimeStamp: ::win32_foundation_sys::FILETIME,
     pub dwCRC: u32,
     pub tszActionMap: [u16; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIACTIONFORMATW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIACTIONFORMATW {
     fn clone(&self) -> Self {
         *self
@@ -1203,40 +1154,34 @@ impl ::core::clone::Clone for DICONDITION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DICONFIGUREDEVICESPARAMSA {
     pub dwSize: u32,
     pub dwcUsers: u32,
     pub lptszUserNames: ::windows_core_sys::PSTR,
     pub dwcFormats: u32,
     pub lprgFormats: *mut DIACTIONFORMATA,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub dics: DICOLORSET,
     pub lpUnkDDSTarget: ::windows_core_sys::IUnknown,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DICONFIGUREDEVICESPARAMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DICONFIGUREDEVICESPARAMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DICONFIGUREDEVICESPARAMSW {
     pub dwSize: u32,
     pub dwcUsers: u32,
     pub lptszUserNames: ::windows_core_sys::PWSTR,
     pub dwcFormats: u32,
     pub lprgFormats: *mut DIACTIONFORMATW,
-    pub hwnd: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
     pub dics: DICOLORSET,
     pub lpUnkDDSTarget: ::windows_core_sys::IUnknown,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DICONFIGUREDEVICESPARAMSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DICONFIGUREDEVICESPARAMSW {
     fn clone(&self) -> Self {
         *self
@@ -1341,28 +1286,24 @@ impl ::core::clone::Clone for DIDEVCAPS_DX3 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEIMAGEINFOA {
-    pub tszImagePath: [super::super::Foundation::CHAR; 260],
+    pub tszImagePath: [::win32_foundation_sys::CHAR; 260],
     pub dwFlags: u32,
     pub dwViewID: u32,
-    pub rcOverlay: super::super::Foundation::RECT,
+    pub rcOverlay: ::win32_foundation_sys::RECT,
     pub dwObjID: u32,
     pub dwcValidPts: u32,
-    pub rgptCalloutLine: [super::super::Foundation::POINT; 5],
-    pub rcCalloutRect: super::super::Foundation::RECT,
+    pub rgptCalloutLine: [::win32_foundation_sys::POINT; 5],
+    pub rcCalloutRect: ::win32_foundation_sys::RECT,
     pub dwTextAlign: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIDEVICEIMAGEINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIDEVICEIMAGEINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEIMAGEINFOHEADERA {
     pub dwSize: u32,
     pub dwSizeImageInfo: u32,
@@ -1374,16 +1315,13 @@ pub struct DIDEVICEIMAGEINFOHEADERA {
     pub dwBufferUsed: u32,
     pub lprgImageInfoArray: *mut DIDEVICEIMAGEINFOA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIDEVICEIMAGEINFOHEADERA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIDEVICEIMAGEINFOHEADERA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEIMAGEINFOHEADERW {
     pub dwSize: u32,
     pub dwSizeImageInfo: u32,
@@ -1395,51 +1333,43 @@ pub struct DIDEVICEIMAGEINFOHEADERW {
     pub dwBufferUsed: u32,
     pub lprgImageInfoArray: *mut DIDEVICEIMAGEINFOW,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIDEVICEIMAGEINFOHEADERW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIDEVICEIMAGEINFOHEADERW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEIMAGEINFOW {
     pub tszImagePath: [u16; 260],
     pub dwFlags: u32,
     pub dwViewID: u32,
-    pub rcOverlay: super::super::Foundation::RECT,
+    pub rcOverlay: ::win32_foundation_sys::RECT,
     pub dwObjID: u32,
     pub dwcValidPts: u32,
-    pub rgptCalloutLine: [super::super::Foundation::POINT; 5],
-    pub rcCalloutRect: super::super::Foundation::RECT,
+    pub rgptCalloutLine: [::win32_foundation_sys::POINT; 5],
+    pub rcCalloutRect: ::win32_foundation_sys::RECT,
     pub dwTextAlign: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIDEVICEIMAGEINFOW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIDEVICEIMAGEINFOW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEINSTANCEA {
     pub dwSize: u32,
     pub guidInstance: ::windows_core_sys::GUID,
     pub guidProduct: ::windows_core_sys::GUID,
     pub dwDevType: u32,
-    pub tszInstanceName: [super::super::Foundation::CHAR; 260],
-    pub tszProductName: [super::super::Foundation::CHAR; 260],
+    pub tszInstanceName: [::win32_foundation_sys::CHAR; 260],
+    pub tszProductName: [::win32_foundation_sys::CHAR; 260],
     pub guidFFDriver: ::windows_core_sys::GUID,
     pub wUsagePage: u16,
     pub wUsage: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIDEVICEINSTANCEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIDEVICEINSTANCEA {
     fn clone(&self) -> Self {
         *self
@@ -1464,18 +1394,15 @@ impl ::core::clone::Clone for DIDEVICEINSTANCEW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEINSTANCE_DX3A {
     pub dwSize: u32,
     pub guidInstance: ::windows_core_sys::GUID,
     pub guidProduct: ::windows_core_sys::GUID,
     pub dwDevType: u32,
-    pub tszInstanceName: [super::super::Foundation::CHAR; 260],
-    pub tszProductName: [super::super::Foundation::CHAR; 260],
+    pub tszInstanceName: [::win32_foundation_sys::CHAR; 260],
+    pub tszProductName: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIDEVICEINSTANCE_DX3A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIDEVICEINSTANCE_DX3A {
     fn clone(&self) -> Self {
         *self
@@ -1524,14 +1451,13 @@ impl ::core::clone::Clone for DIDEVICEOBJECTDATA_DX3 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEOBJECTINSTANCEA {
     pub dwSize: u32,
     pub guidType: ::windows_core_sys::GUID,
     pub dwOfs: u32,
     pub dwType: u32,
     pub dwFlags: u32,
-    pub tszName: [super::super::Foundation::CHAR; 260],
+    pub tszName: [::win32_foundation_sys::CHAR; 260],
     pub dwFFMaxForce: u32,
     pub dwFFForceResolution: u32,
     pub wCollectionNumber: u16,
@@ -1542,9 +1468,7 @@ pub struct DIDEVICEOBJECTINSTANCEA {
     pub wExponent: u16,
     pub wReportId: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIDEVICEOBJECTINSTANCEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIDEVICEOBJECTINSTANCEA {
     fn clone(&self) -> Self {
         *self
@@ -1575,18 +1499,15 @@ impl ::core::clone::Clone for DIDEVICEOBJECTINSTANCEW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIDEVICEOBJECTINSTANCE_DX3A {
     pub dwSize: u32,
     pub guidType: ::windows_core_sys::GUID,
     pub dwOfs: u32,
     pub dwType: u32,
     pub dwFlags: u32,
-    pub tszName: [super::super::Foundation::CHAR; 260],
+    pub tszName: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIDEVICEOBJECTINSTANCE_DX3A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIDEVICEOBJECTINSTANCE_DX3A {
     fn clone(&self) -> Self {
         *self
@@ -1753,18 +1674,15 @@ impl ::core::clone::Clone for DIEFFECTATTRIBUTES {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIEFFECTINFOA {
     pub dwSize: u32,
     pub guid: ::windows_core_sys::GUID,
     pub dwEffType: u32,
     pub dwStaticParams: u32,
     pub dwDynamicParams: u32,
-    pub tszName: [super::super::Foundation::CHAR; 260],
+    pub tszName: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIEFFECTINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIEFFECTINFOA {
     fn clone(&self) -> Self {
         *self
@@ -1941,16 +1859,13 @@ impl ::core::clone::Clone for DIFFOBJECTATTRIBUTES {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DIFILEEFFECT {
     pub dwSize: u32,
     pub GuidEffect: ::windows_core_sys::GUID,
     pub lpDiEffect: *mut DIEFFECT,
-    pub szFriendlyName: [super::super::Foundation::CHAR; 260],
+    pub szFriendlyName: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DIFILEEFFECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DIFILEEFFECT {
     fn clone(&self) -> Self {
         *self
@@ -2898,62 +2813,52 @@ impl ::core::clone::Clone for HIDD_CONFIGURATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HIDP_BUTTON_ARRAY_DATA {
     pub ArrayIndex: u16,
-    pub On: super::super::Foundation::BOOLEAN,
+    pub On: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_BUTTON_ARRAY_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_BUTTON_ARRAY_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HIDP_BUTTON_CAPS {
     pub UsagePage: u16,
     pub ReportID: u8,
-    pub IsAlias: super::super::Foundation::BOOLEAN,
+    pub IsAlias: ::win32_foundation_sys::BOOLEAN,
     pub BitField: u16,
     pub LinkCollection: u16,
     pub LinkUsage: u16,
     pub LinkUsagePage: u16,
-    pub IsRange: super::super::Foundation::BOOLEAN,
-    pub IsStringRange: super::super::Foundation::BOOLEAN,
-    pub IsDesignatorRange: super::super::Foundation::BOOLEAN,
-    pub IsAbsolute: super::super::Foundation::BOOLEAN,
+    pub IsRange: ::win32_foundation_sys::BOOLEAN,
+    pub IsStringRange: ::win32_foundation_sys::BOOLEAN,
+    pub IsDesignatorRange: ::win32_foundation_sys::BOOLEAN,
+    pub IsAbsolute: ::win32_foundation_sys::BOOLEAN,
     pub ReportCount: u16,
     pub Reserved2: u16,
     pub Reserved: [u32; 9],
     pub Anonymous: HIDP_BUTTON_CAPS_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_BUTTON_CAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_BUTTON_CAPS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union HIDP_BUTTON_CAPS_0 {
     pub Range: HIDP_BUTTON_CAPS_0_1,
     pub NotRange: HIDP_BUTTON_CAPS_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_BUTTON_CAPS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_BUTTON_CAPS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HIDP_BUTTON_CAPS_0_0 {
     pub Usage: u16,
     pub Reserved1: u16,
@@ -2964,16 +2869,13 @@ pub struct HIDP_BUTTON_CAPS_0_0 {
     pub DataIndex: u16,
     pub Reserved4: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_BUTTON_CAPS_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_BUTTON_CAPS_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HIDP_BUTTON_CAPS_0_1 {
     pub UsageMin: u16,
     pub UsageMax: u16,
@@ -2984,9 +2886,7 @@ pub struct HIDP_BUTTON_CAPS_0_1 {
     pub DataIndexMin: u16,
     pub DataIndexMax: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_BUTTON_CAPS_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_BUTTON_CAPS_0_1 {
     fn clone(&self) -> Self {
         *self
@@ -3018,29 +2918,23 @@ impl ::core::clone::Clone for HIDP_CAPS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HIDP_DATA {
     pub DataIndex: u16,
     pub Reserved: u16,
     pub Anonymous: HIDP_DATA_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union HIDP_DATA_0 {
     pub RawValue: u32,
-    pub On: super::super::Foundation::BOOLEAN,
+    pub On: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_DATA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_DATA_0 {
     fn clone(&self) -> Self {
         *self
@@ -3127,20 +3021,19 @@ impl ::core::clone::Clone for HIDP_UNKNOWN_TOKEN {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HIDP_VALUE_CAPS {
     pub UsagePage: u16,
     pub ReportID: u8,
-    pub IsAlias: super::super::Foundation::BOOLEAN,
+    pub IsAlias: ::win32_foundation_sys::BOOLEAN,
     pub BitField: u16,
     pub LinkCollection: u16,
     pub LinkUsage: u16,
     pub LinkUsagePage: u16,
-    pub IsRange: super::super::Foundation::BOOLEAN,
-    pub IsStringRange: super::super::Foundation::BOOLEAN,
-    pub IsDesignatorRange: super::super::Foundation::BOOLEAN,
-    pub IsAbsolute: super::super::Foundation::BOOLEAN,
-    pub HasNull: super::super::Foundation::BOOLEAN,
+    pub IsRange: ::win32_foundation_sys::BOOLEAN,
+    pub IsStringRange: ::win32_foundation_sys::BOOLEAN,
+    pub IsDesignatorRange: ::win32_foundation_sys::BOOLEAN,
+    pub IsAbsolute: ::win32_foundation_sys::BOOLEAN,
+    pub HasNull: ::win32_foundation_sys::BOOLEAN,
     pub Reserved: u8,
     pub BitSize: u16,
     pub ReportCount: u16,
@@ -3153,30 +3046,24 @@ pub struct HIDP_VALUE_CAPS {
     pub PhysicalMax: i32,
     pub Anonymous: HIDP_VALUE_CAPS_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_VALUE_CAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_VALUE_CAPS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union HIDP_VALUE_CAPS_0 {
     pub Range: HIDP_VALUE_CAPS_0_1,
     pub NotRange: HIDP_VALUE_CAPS_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_VALUE_CAPS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_VALUE_CAPS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HIDP_VALUE_CAPS_0_0 {
     pub Usage: u16,
     pub Reserved1: u16,
@@ -3187,16 +3074,13 @@ pub struct HIDP_VALUE_CAPS_0_0 {
     pub DataIndex: u16,
     pub Reserved4: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_VALUE_CAPS_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_VALUE_CAPS_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HIDP_VALUE_CAPS_0_1 {
     pub UsageMin: u16,
     pub UsageMax: u16,
@@ -3207,27 +3091,22 @@ pub struct HIDP_VALUE_CAPS_0_1 {
     pub DataIndexMin: u16,
     pub DataIndexMax: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIDP_VALUE_CAPS_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HIDP_VALUE_CAPS_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HID_COLLECTION_INFORMATION {
     pub DescriptorSize: u32,
-    pub Polled: super::super::Foundation::BOOLEAN,
+    pub Polled: ::win32_foundation_sys::BOOLEAN,
     pub Reserved1: [u8; 1],
     pub VendorID: u16,
     pub ProductID: u16,
     pub VersionNumber: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HID_COLLECTION_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HID_COLLECTION_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -3902,14 +3781,11 @@ impl ::core::clone::Clone for INDICATOR_LIST {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct INPUT_BUTTON_ENABLE_INFO {
     pub ButtonType: GPIOBUTTONS_BUTTON_TYPE,
-    pub Enabled: super::super::Foundation::BOOLEAN,
+    pub Enabled: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for INPUT_BUTTON_ENABLE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for INPUT_BUTTON_ENABLE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -4237,32 +4113,19 @@ pub const KEY_TERMSRV_SHADOW: u32 = 16u32;
 pub const KEY_TERMSRV_VKPACKET: u32 = 32u32;
 pub const KEY_UNICODE_SEQUENCE_END: u32 = 512u32;
 pub const KEY_UNICODE_SEQUENCE_ITEM: u32 = 256u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDICONFIGUREDEVICESCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::IUnknown, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMCREATEDEFFECTOBJECTSCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: IDirectInputEffect, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMDEVICEOBJECTSCALLBACKA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEOBJECTINSTANCEA, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMDEVICEOBJECTSCALLBACKW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEOBJECTINSTANCEW, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMDEVICESBYSEMANTICSCBA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEINSTANCEA, param1: IDirectInputDevice8A, param2: u32, param3: u32, param4: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMDEVICESBYSEMANTICSCBW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEINSTANCEW, param1: IDirectInputDevice8W, param2: u32, param3: u32, param4: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMDEVICESCALLBACKA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEINSTANCEA, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMDEVICESCALLBACKW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEINSTANCEW, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMEFFECTSCALLBACKA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIEFFECTINFOA, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMEFFECTSCALLBACKW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIEFFECTINFOW, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIENUMEFFECTSINFILECALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIFILEEFFECT, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPDIJOYTYPECALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPFNSHOWJOYCPL = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND)>;
+pub type LPDICONFIGUREDEVICESCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::IUnknown, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMCREATEDEFFECTOBJECTSCALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: IDirectInputEffect, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMDEVICEOBJECTSCALLBACKA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEOBJECTINSTANCEA, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMDEVICEOBJECTSCALLBACKW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEOBJECTINSTANCEW, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMDEVICESBYSEMANTICSCBA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEINSTANCEA, param1: IDirectInputDevice8A, param2: u32, param3: u32, param4: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMDEVICESBYSEMANTICSCBW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEINSTANCEW, param1: IDirectInputDevice8W, param2: u32, param3: u32, param4: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMDEVICESCALLBACKA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEINSTANCEA, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMDEVICESCALLBACKW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIDEVICEINSTANCEW, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMEFFECTSCALLBACKA = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIEFFECTINFOA, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMEFFECTSCALLBACKW = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIEFFECTINFOW, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIENUMEFFECTSINFILECALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: *mut DIFILEEFFECT, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPDIJOYTYPECALLBACK = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type LPFNSHOWJOYCPL = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation_sys::HWND)>;
 pub const MAXCPOINTSNUM: u32 = 8u32;
 pub const MAX_JOYSTICKOEMVXDNAME: u32 = 260u32;
 pub const MAX_JOYSTRING: u32 = 256u32;
@@ -4356,10 +4219,8 @@ impl ::core::clone::Clone for MOUSE_UNIT_ID_PARAMETER {
 }
 pub const MOUSE_VIRTUAL_DESKTOP: u32 = 2u32;
 pub const MOUSE_WHEEL: u32 = 1024u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_HidP_GetVersionInternal = ::core::option::Option<unsafe extern "system" fn(version: *mut u32) -> super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PHIDP_INSERT_SCANCODES = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, newscancodes: ::windows_core_sys::PCSTR, length: u32) -> super::super::Foundation::BOOLEAN>;
+pub type PFN_HidP_GetVersionInternal = ::core::option::Option<unsafe extern "system" fn(version: *mut u32) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PHIDP_INSERT_SCANCODES = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, newscancodes: ::windows_core_sys::PCSTR, length: u32) -> ::win32_foundation_sys::BOOLEAN>;
 #[repr(C)]
 pub struct USAGE_AND_PAGE {
     pub Usage: u16,

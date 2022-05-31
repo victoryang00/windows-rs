@@ -16,13 +16,13 @@ pub struct IImageScanner_Vtbl {
     pub FeederConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AutoConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsPreviewSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scansource: ImageScannerScanSource, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub ScanPreviewToStreamAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scansource: ImageScannerScanSource, targetstream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     ScanPreviewToStreamAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub ScanFilesToFolderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scansource: ImageScannerScanSource, storagefolder: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     ScanFilesToFolderAsync: usize,
 }
 #[doc(hidden)]
@@ -40,27 +40,24 @@ pub struct IImageScannerFeederConfiguration_Vtbl {
     pub AutoDetectPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetAutoDetectPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Graphics_Printing")]
-    pub PageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Graphics::Printing::PrintMediaSize) -> ::windows_core::HRESULT,
+    pub PageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Printing::PrintMediaSize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Printing"))]
     PageSize: usize,
     #[cfg(feature = "Graphics_Printing")]
-    pub SetPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Graphics::Printing::PrintMediaSize) -> ::windows_core::HRESULT,
+    pub SetPageSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Printing::PrintMediaSize) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Printing"))]
     SetPageSize: usize,
     #[cfg(feature = "Graphics_Printing")]
-    pub PageOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Graphics::Printing::PrintOrientation) -> ::windows_core::HRESULT,
+    pub PageOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::Printing::PrintOrientation) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Printing"))]
     PageOrientation: usize,
     #[cfg(feature = "Graphics_Printing")]
-    pub SetPageOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Graphics::Printing::PrintOrientation) -> ::windows_core::HRESULT,
+    pub SetPageOrientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_graphics::Printing::PrintOrientation) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Printing"))]
     SetPageOrientation: usize,
-    #[cfg(feature = "Foundation")]
-    pub PageSizeDimensions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PageSizeDimensions: usize,
+    pub PageSizeDimensions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
     #[cfg(feature = "Graphics_Printing")]
-    pub IsPageSizeSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagesize: super::super::Graphics::Printing::PrintMediaSize, pageorientation: super::super::Graphics::Printing::PrintOrientation, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub IsPageSizeSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagesize: ::winrt_graphics::Printing::PrintMediaSize, pageorientation: ::winrt_graphics::Printing::PrintOrientation, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Printing"))]
     IsPageSizeSupported: usize,
     pub MaxNumberOfPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
@@ -210,32 +207,28 @@ pub struct IImageScannerScanResult_Vtbl {
 #[repr(transparent)]
 pub struct IImageScannerSourceConfiguration(::windows_core::IUnknown);
 impl IImageScannerSourceConfiguration {
-    #[cfg(feature = "Foundation")]
-    pub fn MinScanArea(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn MinScanArea(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).MinScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).MinScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MaxScanArea(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn MaxScanArea(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).MaxScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SelectedScanRegion(&self) -> ::windows_core::Result<super::super::Foundation::Rect> {
+    pub fn SelectedScanRegion(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectedScanRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).SelectedScanRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetSelectedScanRegion<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSelectedScanRegion<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedScanRegion)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -518,22 +511,10 @@ unsafe impl ::windows_core::Interface for IImageScannerSourceConfiguration {
 #[doc(hidden)]
 pub struct IImageScannerSourceConfiguration_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub MinScanArea: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MinScanArea: usize,
-    #[cfg(feature = "Foundation")]
-    pub MaxScanArea: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MaxScanArea: usize,
-    #[cfg(feature = "Foundation")]
-    pub SelectedScanRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SelectedScanRegion: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetSelectedScanRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetSelectedScanRegion: usize,
+    pub MinScanArea: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
+    pub MaxScanArea: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
+    pub SelectedScanRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    pub SetSelectedScanRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub AutoCroppingMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ImageScannerAutoCroppingMode) -> ::windows_core::HRESULT,
     pub SetAutoCroppingMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ImageScannerAutoCroppingMode) -> ::windows_core::HRESULT,
     pub IsAutoCroppingModeSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ImageScannerAutoCroppingMode, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -571,10 +552,7 @@ unsafe impl ::windows_core::Interface for IImageScannerStatics {
 #[doc(hidden)]
 pub struct IImageScannerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -629,27 +607,26 @@ impl ImageScanner {
             (::windows_core::Interface::vtable(this).IsPreviewSupported)(::windows_core::Interface::as_raw(this), scansource, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ScanPreviewToStreamAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStream>>(&self, scansource: ImageScannerScanSource, targetstream: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ImageScannerPreviewResult>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ScanPreviewToStreamAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStream>>(&self, scansource: ImageScannerScanSource, targetstream: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ImageScannerPreviewResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ScanPreviewToStreamAsync)(::windows_core::Interface::as_raw(this), scansource, targetstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ImageScannerPreviewResult>>(result__)
+            (::windows_core::Interface::vtable(this).ScanPreviewToStreamAsync)(::windows_core::Interface::as_raw(this), scansource, targetstream.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ImageScannerPreviewResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn ScanFilesToFolderAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::StorageFolder>>(&self, scansource: ImageScannerScanSource, storagefolder: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<ImageScannerScanResult, u32>> {
+    #[cfg(feature = "Storage")]
+    pub fn ScanFilesToFolderAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFolder>>(&self, scansource: ImageScannerScanSource, storagefolder: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<ImageScannerScanResult, u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ScanFilesToFolderAsync)(::windows_core::Interface::as_raw(this), scansource, storagefolder.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<ImageScannerScanResult, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ScanFilesToFolderAsync)(::windows_core::Interface::as_raw(this), scansource, storagefolder.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<ImageScannerScanResult, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ImageScanner>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ImageScanner>> {
         Self::IImageScannerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ImageScanner>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ImageScanner>>(result__)
         })
     }
     pub fn GetDeviceSelector() -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -949,41 +926,40 @@ impl ImageScannerFeederConfiguration {
         unsafe { (::windows_core::Interface::vtable(this).SetAutoDetectPageSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Graphics_Printing")]
-    pub fn PageSize(&self) -> ::windows_core::Result<super::super::Graphics::Printing::PrintMediaSize> {
+    pub fn PageSize(&self) -> ::windows_core::Result<::winrt_graphics::Printing::PrintMediaSize> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Graphics::Printing::PrintMediaSize>::zeroed();
-            (::windows_core::Interface::vtable(this).PageSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Graphics::Printing::PrintMediaSize>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::Printing::PrintMediaSize>::zeroed();
+            (::windows_core::Interface::vtable(this).PageSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Printing::PrintMediaSize>(result__)
         }
     }
     #[cfg(feature = "Graphics_Printing")]
-    pub fn SetPageSize(&self, value: super::super::Graphics::Printing::PrintMediaSize) -> ::windows_core::Result<()> {
+    pub fn SetPageSize(&self, value: ::winrt_graphics::Printing::PrintMediaSize) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPageSize)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Graphics_Printing")]
-    pub fn PageOrientation(&self) -> ::windows_core::Result<super::super::Graphics::Printing::PrintOrientation> {
+    pub fn PageOrientation(&self) -> ::windows_core::Result<::winrt_graphics::Printing::PrintOrientation> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Graphics::Printing::PrintOrientation>::zeroed();
-            (::windows_core::Interface::vtable(this).PageOrientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Graphics::Printing::PrintOrientation>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::Printing::PrintOrientation>::zeroed();
+            (::windows_core::Interface::vtable(this).PageOrientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::Printing::PrintOrientation>(result__)
         }
     }
     #[cfg(feature = "Graphics_Printing")]
-    pub fn SetPageOrientation(&self, value: super::super::Graphics::Printing::PrintOrientation) -> ::windows_core::Result<()> {
+    pub fn SetPageOrientation(&self, value: ::winrt_graphics::Printing::PrintOrientation) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPageOrientation)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PageSizeDimensions(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn PageSizeDimensions(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).PageSizeDimensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).PageSizeDimensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
     #[cfg(feature = "Graphics_Printing")]
-    pub fn IsPageSizeSupported(&self, pagesize: super::super::Graphics::Printing::PrintMediaSize, pageorientation: super::super::Graphics::Printing::PrintOrientation) -> ::windows_core::Result<bool> {
+    pub fn IsPageSizeSupported(&self, pagesize: ::winrt_graphics::Printing::PrintMediaSize, pageorientation: ::winrt_graphics::Printing::PrintOrientation) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<IImageScannerFeederConfiguration>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
@@ -1062,32 +1038,28 @@ impl ImageScannerFeederConfiguration {
             (::windows_core::Interface::vtable(this).IsFormatSupported)(::windows_core::Interface::as_raw(this), value, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MinScanArea(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn MinScanArea(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = &::windows_core::Interface::cast::<IImageScannerSourceConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).MinScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).MinScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MaxScanArea(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn MaxScanArea(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = &::windows_core::Interface::cast::<IImageScannerSourceConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).MaxScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SelectedScanRegion(&self) -> ::windows_core::Result<super::super::Foundation::Rect> {
+    pub fn SelectedScanRegion(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IImageScannerSourceConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectedScanRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).SelectedScanRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetSelectedScanRegion<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSelectedScanRegion<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IImageScannerSourceConfiguration>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedScanRegion)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1396,32 +1368,28 @@ impl ImageScannerFlatbedConfiguration {
             (::windows_core::Interface::vtable(this).IsFormatSupported)(::windows_core::Interface::as_raw(this), value, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MinScanArea(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn MinScanArea(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = &::windows_core::Interface::cast::<IImageScannerSourceConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).MinScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).MinScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MaxScanArea(&self) -> ::windows_core::Result<super::super::Foundation::Size> {
+    pub fn MaxScanArea(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = &::windows_core::Interface::cast::<IImageScannerSourceConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).MaxScanArea)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SelectedScanRegion(&self) -> ::windows_core::Result<super::super::Foundation::Rect> {
+    pub fn SelectedScanRegion(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IImageScannerSourceConfiguration>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectedScanRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).SelectedScanRegion)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetSelectedScanRegion<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSelectedScanRegion<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IImageScannerSourceConfiguration>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectedScanRegion)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1871,11 +1839,11 @@ impl ::core::default::Default for ImageScannerResolution {
 pub struct ImageScannerScanResult(::windows_core::IUnknown);
 impl ImageScannerScanResult {
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
-    pub fn ScannedFiles(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Storage::StorageFile>> {
+    pub fn ScannedFiles(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ScannedFiles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).ScannedFiles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_storage::StorageFile>>(result__)
         }
     }
 }

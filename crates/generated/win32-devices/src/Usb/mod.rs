@@ -1057,39 +1057,31 @@ impl ::core::default::Default for USBD_VERSION_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USBFN_BUS_CONFIGURATION_INFO {
     pub ConfigurationName: [u16; 40],
-    pub IsCurrent: super::super::Foundation::BOOLEAN,
-    pub IsActive: super::super::Foundation::BOOLEAN,
+    pub IsCurrent: ::win32_foundation::BOOLEAN,
+    pub IsActive: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USBFN_BUS_CONFIGURATION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USBFN_BUS_CONFIGURATION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for USBFN_BUS_CONFIGURATION_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USBFN_BUS_CONFIGURATION_INFO").field("ConfigurationName", &self.ConfigurationName).field("IsCurrent", &self.IsCurrent).field("IsActive", &self.IsActive).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USBFN_BUS_CONFIGURATION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USBFN_BUS_CONFIGURATION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USBFN_BUS_CONFIGURATION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USBFN_BUS_CONFIGURATION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USBFN_BUS_CONFIGURATION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1123,72 +1115,58 @@ impl ::core::fmt::Debug for USBFN_BUS_SPEED {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USBFN_CLASS_INFORMATION_PACKET {
     pub FullSpeedClassInterface: USBFN_CLASS_INTERFACE,
     pub HighSpeedClassInterface: USBFN_CLASS_INTERFACE,
     pub InterfaceName: [u16; 40],
     pub InterfaceGuid: [u16; 39],
-    pub HasInterfaceGuid: super::super::Foundation::BOOLEAN,
+    pub HasInterfaceGuid: ::win32_foundation::BOOLEAN,
     pub SuperSpeedClassInterface: USBFN_CLASS_INTERFACE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USBFN_CLASS_INFORMATION_PACKET {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USBFN_CLASS_INFORMATION_PACKET {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USBFN_CLASS_INFORMATION_PACKET {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USBFN_CLASS_INFORMATION_PACKET {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USBFN_CLASS_INFORMATION_PACKET>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USBFN_CLASS_INFORMATION_PACKET {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USBFN_CLASS_INFORMATION_PACKET {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USBFN_CLASS_INFORMATION_PACKET_EX {
     pub FullSpeedClassInterfaceEx: USBFN_CLASS_INTERFACE_EX,
     pub HighSpeedClassInterfaceEx: USBFN_CLASS_INTERFACE_EX,
     pub SuperSpeedClassInterfaceEx: USBFN_CLASS_INTERFACE_EX,
     pub InterfaceName: [u16; 40],
     pub InterfaceGuid: [u16; 39],
-    pub HasInterfaceGuid: super::super::Foundation::BOOLEAN,
+    pub HasInterfaceGuid: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USBFN_CLASS_INFORMATION_PACKET_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USBFN_CLASS_INFORMATION_PACKET_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USBFN_CLASS_INFORMATION_PACKET_EX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USBFN_CLASS_INFORMATION_PACKET_EX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USBFN_CLASS_INFORMATION_PACKET_EX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USBFN_CLASS_INFORMATION_PACKET_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USBFN_CLASS_INFORMATION_PACKET_EX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1660,32 +1638,25 @@ impl ::core::default::Default for USBUSER_BANDWIDTH_INFO_REQUEST {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USBUSER_BUS_STATISTICS_0_REQUEST {
     pub Header: USBUSER_REQUEST_HEADER,
     pub BusStatistics0: USB_BUS_STATISTICS_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USBUSER_BUS_STATISTICS_0_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USBUSER_BUS_STATISTICS_0_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USBUSER_BUS_STATISTICS_0_REQUEST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USBUSER_BUS_STATISTICS_0_REQUEST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USBUSER_BUS_STATISTICS_0_REQUEST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USBUSER_BUS_STATISTICS_0_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USBUSER_BUS_STATISTICS_0_REQUEST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1772,32 +1743,25 @@ pub const USBUSER_GET_BUS_STATISTICS_0: u32 = 6u32;
 pub const USBUSER_GET_CONTROLLER_DRIVER_KEY: u32 = 2u32;
 pub const USBUSER_GET_CONTROLLER_INFO_0: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USBUSER_GET_DRIVER_VERSION {
     pub Header: USBUSER_REQUEST_HEADER,
     pub Parameters: USB_DRIVER_VERSION_PARAMETERS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USBUSER_GET_DRIVER_VERSION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USBUSER_GET_DRIVER_VERSION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USBUSER_GET_DRIVER_VERSION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USBUSER_GET_DRIVER_VERSION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USBUSER_GET_DRIVER_VERSION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USBUSER_GET_DRIVER_VERSION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USBUSER_GET_DRIVER_VERSION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1893,32 +1857,25 @@ impl ::core::default::Default for USBUSER_PASS_THRU_REQUEST {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USBUSER_POWER_INFO_REQUEST {
     pub Header: USBUSER_REQUEST_HEADER,
     pub PowerInformation: USB_POWER_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USBUSER_POWER_INFO_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USBUSER_POWER_INFO_REQUEST {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USBUSER_POWER_INFO_REQUEST {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USBUSER_POWER_INFO_REQUEST {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USBUSER_POWER_INFO_REQUEST>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USBUSER_POWER_INFO_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USBUSER_POWER_INFO_REQUEST {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2405,7 +2362,6 @@ impl ::core::default::Default for USB_BOS_DESCRIPTOR {
 }
 pub const USB_BOS_DESCRIPTOR_TYPE: u32 = 15u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USB_BUS_STATISTICS_0 {
     pub DeviceCount: u32,
     pub CurrentSystemTime: i64,
@@ -2419,32 +2375,26 @@ pub struct USB_BUS_STATISTICS_0 {
     pub WorkerSignalCount: u32,
     pub CommonBufferBytes: u32,
     pub WorkerIdleTimeMs: u32,
-    pub RootHubEnabled: super::super::Foundation::BOOLEAN,
+    pub RootHubEnabled: ::win32_foundation::BOOLEAN,
     pub RootHubDevicePowerState: u8,
     pub Unused: u8,
     pub NameIndex: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USB_BUS_STATISTICS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USB_BUS_STATISTICS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USB_BUS_STATISTICS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USB_BUS_STATISTICS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USB_BUS_STATISTICS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USB_BUS_STATISTICS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USB_BUS_STATISTICS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3767,36 +3717,29 @@ pub const USB_DIAG_IGNORE_HUBS_OFF: u32 = 263u32;
 pub const USB_DIAG_IGNORE_HUBS_ON: u32 = 262u32;
 pub const USB_DISALLOW_FIRMWARE_UPDATE: u32 = 0u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USB_DRIVER_VERSION_PARAMETERS {
     pub DriverTrackingCode: u32,
     pub USBDI_Version: u32,
     pub USBUSER_Version: u32,
-    pub CheckedPortDriver: super::super::Foundation::BOOLEAN,
-    pub CheckedMiniportDriver: super::super::Foundation::BOOLEAN,
+    pub CheckedPortDriver: ::win32_foundation::BOOLEAN,
+    pub CheckedMiniportDriver: ::win32_foundation::BOOLEAN,
     pub USB_Version: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USB_DRIVER_VERSION_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USB_DRIVER_VERSION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USB_DRIVER_VERSION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USB_DRIVER_VERSION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USB_DRIVER_VERSION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USB_DRIVER_VERSION_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USB_DRIVER_VERSION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3924,9 +3867,8 @@ pub const USB_FEATURE_TEST_MODE: u32 = 2u32;
 pub const USB_FEATURE_U1_ENABLE: u32 = 48u32;
 pub const USB_FEATURE_U2_ENABLE: u32 = 49u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {
-    pub TimeTrackingHandle: super::super::Foundation::HANDLE,
+    pub TimeTrackingHandle: ::win32_foundation::HANDLE,
     pub InputFrameNumber: u32,
     pub InputMicroFrameNumber: u32,
     pub QueryPerformanceCounterAtInputFrameOrMicroFrame: i64,
@@ -3938,27 +3880,21 @@ pub struct USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {
     pub CurrentHardwareMicroFrameNumber: u32,
     pub CurrentUSBFrameNumber: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4811,7 +4747,6 @@ pub const USB_PORT_STATUS_POWER: u32 = 256u32;
 pub const USB_PORT_STATUS_RESET: u32 = 16u32;
 pub const USB_PORT_STATUS_SUSPEND: u32 = 4u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USB_POWER_INFO {
     pub SystemState: WDMUSB_POWER_STATE,
     pub HcDevicePowerState: WDMUSB_POWER_STATE,
@@ -4821,30 +4756,24 @@ pub struct USB_POWER_INFO {
     pub RhDeviceWake: WDMUSB_POWER_STATE,
     pub RhSystemWake: WDMUSB_POWER_STATE,
     pub LastSystemSleepState: WDMUSB_POWER_STATE,
-    pub CanWakeup: super::super::Foundation::BOOLEAN,
-    pub IsPowered: super::super::Foundation::BOOLEAN,
+    pub CanWakeup: ::win32_foundation::BOOLEAN,
+    pub IsPowered: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USB_POWER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USB_POWER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USB_POWER_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USB_POWER_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USB_POWER_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USB_POWER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USB_POWER_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4919,32 +4848,25 @@ impl ::core::default::Default for USB_SEND_RAW_COMMAND_PARAMETERS {
 }
 pub const USB_START_TRACKING_FOR_TIME_SYNC: u32 = 285u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION {
-    pub TimeTrackingHandle: super::super::Foundation::HANDLE,
-    pub IsStartupDelayTolerable: super::super::Foundation::BOOLEAN,
+    pub TimeTrackingHandle: ::win32_foundation::HANDLE,
+    pub IsStartupDelayTolerable: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4955,31 +4877,24 @@ pub const USB_STATUS_PD_STATUS: u32 = 1u32;
 pub const USB_STATUS_PORT_STATUS: u32 = 0u32;
 pub const USB_STOP_TRACKING_FOR_TIME_SYNC: u32 = 287u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION {
-    pub TimeTrackingHandle: super::super::Foundation::HANDLE,
+    pub TimeTrackingHandle: ::win32_foundation::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5395,196 +5310,184 @@ pub const WMI_USB_HUB_NODE_INFORMATION: u32 = 4u32;
 pub const WMI_USB_PERFORMANCE_INFORMATION: u32 = 1u32;
 pub const WMI_USB_POWER_DEVICE_ENABLE: u32 = 2u32;
 pub const WinUSB_TestGuid: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xda812bff_12c3_46a2_8e2b_dbd3b7834c43);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_AbortPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_AbortPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_AbortPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> super::super::Foundation::BOOL;
+            fn WinUsb_AbortPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_AbortPipe(::core::mem::transmute(interfacehandle), ::core::mem::transmute(pipeid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WinUsb_ControlTransfer<'a, Param1: ::windows_core::IntoParam<'a, WINUSB_SETUP_PACKET>>(interfacehandle: *const ::core::ffi::c_void, setuppacket: Param1, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_ControlTransfer<'a, Param1: ::windows_core::IntoParam<'a, WINUSB_SETUP_PACKET>>(interfacehandle: *const ::core::ffi::c_void, setuppacket: Param1, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_ControlTransfer(interfacehandle: *const ::core::ffi::c_void, setuppacket: WINUSB_SETUP_PACKET, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn WinUsb_ControlTransfer(interfacehandle: *const ::core::ffi::c_void, setuppacket: WINUSB_SETUP_PACKET, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_ControlTransfer(::core::mem::transmute(interfacehandle), setuppacket.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(bufferlength), ::core::mem::transmute(lengthtransferred), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_FlushPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_FlushPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_FlushPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> super::super::Foundation::BOOL;
+            fn WinUsb_FlushPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_FlushPipe(::core::mem::transmute(interfacehandle), ::core::mem::transmute(pipeid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_Free(interfacehandle: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_Free(interfacehandle: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_Free(interfacehandle: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_Free(interfacehandle: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_Free(::core::mem::transmute(interfacehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_GetAdjustedFrameNumber(currentframenumber: *mut u32, timestamp: i64) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_GetAdjustedFrameNumber(currentframenumber: *mut u32, timestamp: i64) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_GetAdjustedFrameNumber(currentframenumber: *mut u32, timestamp: i64) -> super::super::Foundation::BOOL;
+            fn WinUsb_GetAdjustedFrameNumber(currentframenumber: *mut u32, timestamp: i64) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_GetAdjustedFrameNumber(::core::mem::transmute(currentframenumber), ::core::mem::transmute(timestamp)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_GetAssociatedInterface(interfacehandle: *const ::core::ffi::c_void, associatedinterfaceindex: u8, associatedinterfacehandle: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_GetAssociatedInterface(interfacehandle: *const ::core::ffi::c_void, associatedinterfaceindex: u8, associatedinterfacehandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_GetAssociatedInterface(interfacehandle: *const ::core::ffi::c_void, associatedinterfaceindex: u8, associatedinterfacehandle: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_GetAssociatedInterface(interfacehandle: *const ::core::ffi::c_void, associatedinterfaceindex: u8, associatedinterfacehandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_GetAssociatedInterface(::core::mem::transmute(interfacehandle), ::core::mem::transmute(associatedinterfaceindex), ::core::mem::transmute(associatedinterfacehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_GetCurrentAlternateSetting(interfacehandle: *const ::core::ffi::c_void, settingnumber: *mut u8) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_GetCurrentAlternateSetting(interfacehandle: *const ::core::ffi::c_void, settingnumber: *mut u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_GetCurrentAlternateSetting(interfacehandle: *const ::core::ffi::c_void, settingnumber: *mut u8) -> super::super::Foundation::BOOL;
+            fn WinUsb_GetCurrentAlternateSetting(interfacehandle: *const ::core::ffi::c_void, settingnumber: *mut u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_GetCurrentAlternateSetting(::core::mem::transmute(interfacehandle), ::core::mem::transmute(settingnumber)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_GetCurrentFrameNumber(interfacehandle: *const ::core::ffi::c_void, currentframenumber: *mut u32, timestamp: *mut i64) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_GetCurrentFrameNumber(interfacehandle: *const ::core::ffi::c_void, currentframenumber: *mut u32, timestamp: *mut i64) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_GetCurrentFrameNumber(interfacehandle: *const ::core::ffi::c_void, currentframenumber: *mut u32, timestamp: *mut i64) -> super::super::Foundation::BOOL;
+            fn WinUsb_GetCurrentFrameNumber(interfacehandle: *const ::core::ffi::c_void, currentframenumber: *mut u32, timestamp: *mut i64) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_GetCurrentFrameNumber(::core::mem::transmute(interfacehandle), ::core::mem::transmute(currentframenumber), ::core::mem::transmute(timestamp)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_GetCurrentFrameNumberAndQpc(interfacehandle: *const ::core::ffi::c_void, frameqpcinfo: *const USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_GetCurrentFrameNumberAndQpc(interfacehandle: *const ::core::ffi::c_void, frameqpcinfo: *const USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_GetCurrentFrameNumberAndQpc(interfacehandle: *const ::core::ffi::c_void, frameqpcinfo: *const USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION) -> super::super::Foundation::BOOL;
+            fn WinUsb_GetCurrentFrameNumberAndQpc(interfacehandle: *const ::core::ffi::c_void, frameqpcinfo: *const USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_GetCurrentFrameNumberAndQpc(::core::mem::transmute(interfacehandle), ::core::mem::transmute(frameqpcinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_GetDescriptor(interfacehandle: *const ::core::ffi::c_void, descriptortype: u8, index: u8, languageid: u16, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_GetDescriptor(interfacehandle: *const ::core::ffi::c_void, descriptortype: u8, index: u8, languageid: u16, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_GetDescriptor(interfacehandle: *const ::core::ffi::c_void, descriptortype: u8, index: u8, languageid: u16, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32) -> super::super::Foundation::BOOL;
+            fn WinUsb_GetDescriptor(interfacehandle: *const ::core::ffi::c_void, descriptortype: u8, index: u8, languageid: u16, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_GetDescriptor(::core::mem::transmute(interfacehandle), ::core::mem::transmute(descriptortype), ::core::mem::transmute(index), ::core::mem::transmute(languageid), ::core::mem::transmute(buffer), ::core::mem::transmute(bufferlength), ::core::mem::transmute(lengthtransferred)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WinUsb_GetOverlappedResult<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(interfacehandle: *const ::core::ffi::c_void, lpoverlapped: *const super::super::System::IO::OVERLAPPED, lpnumberofbytestransferred: *mut u32, bwait: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_GetOverlappedResult<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(interfacehandle: *const ::core::ffi::c_void, lpoverlapped: *const ::win32_system::IO::OVERLAPPED, lpnumberofbytestransferred: *mut u32, bwait: Param3) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_GetOverlappedResult(interfacehandle: *const ::core::ffi::c_void, lpoverlapped: *const super::super::System::IO::OVERLAPPED, lpnumberofbytestransferred: *mut u32, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn WinUsb_GetOverlappedResult(interfacehandle: *const ::core::ffi::c_void, lpoverlapped: *const ::win32_system::IO::OVERLAPPED, lpnumberofbytestransferred: *mut u32, bwait: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_GetOverlappedResult(::core::mem::transmute(interfacehandle), ::core::mem::transmute(lpoverlapped), ::core::mem::transmute(lpnumberofbytestransferred), bwait.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_GetPipePolicy(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_GetPipePolicy(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_GetPipePolicy(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_GetPipePolicy(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_GetPipePolicy(::core::mem::transmute(interfacehandle), ::core::mem::transmute(pipeid), ::core::mem::transmute(policytype), ::core::mem::transmute(valuelength), ::core::mem::transmute(value)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_GetPowerPolicy(interfacehandle: *const ::core::ffi::c_void, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_GetPowerPolicy(interfacehandle: *const ::core::ffi::c_void, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_GetPowerPolicy(interfacehandle: *const ::core::ffi::c_void, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_GetPowerPolicy(interfacehandle: *const ::core::ffi::c_void, policytype: u32, valuelength: *mut u32, value: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_GetPowerPolicy(::core::mem::transmute(interfacehandle), ::core::mem::transmute(policytype), ::core::mem::transmute(valuelength), ::core::mem::transmute(value)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_Initialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(devicehandle: Param0, interfacehandle: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(devicehandle: Param0, interfacehandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_Initialize(devicehandle: super::super::Foundation::HANDLE, interfacehandle: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_Initialize(devicehandle: ::win32_foundation::HANDLE, interfacehandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_Initialize(devicehandle.into_param().abi(), ::core::mem::transmute(interfacehandle)))
     }
@@ -5617,252 +5520,240 @@ pub unsafe fn WinUsb_ParseDescriptors(descriptorbuffer: *const ::core::ffi::c_vo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_QueryDeviceInformation(interfacehandle: *const ::core::ffi::c_void, informationtype: u32, bufferlength: *mut u32, buffer: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_QueryDeviceInformation(interfacehandle: *const ::core::ffi::c_void, informationtype: u32, bufferlength: *mut u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_QueryDeviceInformation(interfacehandle: *const ::core::ffi::c_void, informationtype: u32, bufferlength: *mut u32, buffer: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_QueryDeviceInformation(interfacehandle: *const ::core::ffi::c_void, informationtype: u32, bufferlength: *mut u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_QueryDeviceInformation(::core::mem::transmute(interfacehandle), ::core::mem::transmute(informationtype), ::core::mem::transmute(bufferlength), ::core::mem::transmute(buffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_QueryInterfaceSettings(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, usbaltinterfacedescriptor: *mut USB_INTERFACE_DESCRIPTOR) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_QueryInterfaceSettings(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, usbaltinterfacedescriptor: *mut USB_INTERFACE_DESCRIPTOR) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_QueryInterfaceSettings(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, usbaltinterfacedescriptor: *mut USB_INTERFACE_DESCRIPTOR) -> super::super::Foundation::BOOL;
+            fn WinUsb_QueryInterfaceSettings(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, usbaltinterfacedescriptor: *mut USB_INTERFACE_DESCRIPTOR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_QueryInterfaceSettings(::core::mem::transmute(interfacehandle), ::core::mem::transmute(alternateinterfacenumber), ::core::mem::transmute(usbaltinterfacedescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_QueryPipe(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, pipeindex: u8, pipeinformation: *mut WINUSB_PIPE_INFORMATION) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_QueryPipe(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, pipeindex: u8, pipeinformation: *mut WINUSB_PIPE_INFORMATION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_QueryPipe(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, pipeindex: u8, pipeinformation: *mut WINUSB_PIPE_INFORMATION) -> super::super::Foundation::BOOL;
+            fn WinUsb_QueryPipe(interfacehandle: *const ::core::ffi::c_void, alternateinterfacenumber: u8, pipeindex: u8, pipeinformation: *mut WINUSB_PIPE_INFORMATION) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_QueryPipe(::core::mem::transmute(interfacehandle), ::core::mem::transmute(alternateinterfacenumber), ::core::mem::transmute(pipeindex), ::core::mem::transmute(pipeinformation)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_QueryPipeEx(interfacehandle: *const ::core::ffi::c_void, alternatesettingnumber: u8, pipeindex: u8, pipeinformationex: *mut WINUSB_PIPE_INFORMATION_EX) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_QueryPipeEx(interfacehandle: *const ::core::ffi::c_void, alternatesettingnumber: u8, pipeindex: u8, pipeinformationex: *mut WINUSB_PIPE_INFORMATION_EX) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_QueryPipeEx(interfacehandle: *const ::core::ffi::c_void, alternatesettingnumber: u8, pipeindex: u8, pipeinformationex: *mut WINUSB_PIPE_INFORMATION_EX) -> super::super::Foundation::BOOL;
+            fn WinUsb_QueryPipeEx(interfacehandle: *const ::core::ffi::c_void, alternatesettingnumber: u8, pipeindex: u8, pipeinformationex: *mut WINUSB_PIPE_INFORMATION_EX) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_QueryPipeEx(::core::mem::transmute(interfacehandle), ::core::mem::transmute(alternatesettingnumber), ::core::mem::transmute(pipeindex), ::core::mem::transmute(pipeinformationex)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WinUsb_ReadIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, isopacketdescriptors: &mut [USBD_ISO_PACKET_DESCRIPTOR], overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_ReadIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, isopacketdescriptors: &mut [USBD_ISO_PACKET_DESCRIPTOR], overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_ReadIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, numberofpackets: u32, isopacketdescriptors: *mut USBD_ISO_PACKET_DESCRIPTOR, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn WinUsb_ReadIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, numberofpackets: u32, isopacketdescriptors: *mut USBD_ISO_PACKET_DESCRIPTOR, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_ReadIsochPipe(::core::mem::transmute(bufferhandle), ::core::mem::transmute(offset), ::core::mem::transmute(length), ::core::mem::transmute(framenumber), isopacketdescriptors.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(isopacketdescriptors)), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WinUsb_ReadIsochPipeAsap<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: Param3, isopacketdescriptors: &mut [USBD_ISO_PACKET_DESCRIPTOR], overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_ReadIsochPipeAsap<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: Param3, isopacketdescriptors: &mut [USBD_ISO_PACKET_DESCRIPTOR], overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_ReadIsochPipeAsap(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: super::super::Foundation::BOOL, numberofpackets: u32, isopacketdescriptors: *mut USBD_ISO_PACKET_DESCRIPTOR, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn WinUsb_ReadIsochPipeAsap(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: ::win32_foundation::BOOL, numberofpackets: u32, isopacketdescriptors: *mut USBD_ISO_PACKET_DESCRIPTOR, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_ReadIsochPipeAsap(::core::mem::transmute(bufferhandle), ::core::mem::transmute(offset), ::core::mem::transmute(length), continuestream.into_param().abi(), isopacketdescriptors.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(isopacketdescriptors)), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WinUsb_ReadPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_ReadPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_ReadPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn WinUsb_ReadPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_ReadPipe(::core::mem::transmute(interfacehandle), ::core::mem::transmute(pipeid), ::core::mem::transmute(buffer), ::core::mem::transmute(bufferlength), ::core::mem::transmute(lengthtransferred), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_RegisterIsochBuffer(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, isochbufferhandle: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_RegisterIsochBuffer(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, isochbufferhandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_RegisterIsochBuffer(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, isochbufferhandle: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_RegisterIsochBuffer(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *mut u8, bufferlength: u32, isochbufferhandle: *mut *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_RegisterIsochBuffer(::core::mem::transmute(interfacehandle), ::core::mem::transmute(pipeid), ::core::mem::transmute(buffer), ::core::mem::transmute(bufferlength), ::core::mem::transmute(isochbufferhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_ResetPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_ResetPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_ResetPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> super::super::Foundation::BOOL;
+            fn WinUsb_ResetPipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_ResetPipe(::core::mem::transmute(interfacehandle), ::core::mem::transmute(pipeid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_SetCurrentAlternateSetting(interfacehandle: *const ::core::ffi::c_void, settingnumber: u8) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_SetCurrentAlternateSetting(interfacehandle: *const ::core::ffi::c_void, settingnumber: u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_SetCurrentAlternateSetting(interfacehandle: *const ::core::ffi::c_void, settingnumber: u8) -> super::super::Foundation::BOOL;
+            fn WinUsb_SetCurrentAlternateSetting(interfacehandle: *const ::core::ffi::c_void, settingnumber: u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_SetCurrentAlternateSetting(::core::mem::transmute(interfacehandle), ::core::mem::transmute(settingnumber)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_SetPipePolicy(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, policytype: u32, valuelength: u32, value: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_SetPipePolicy(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, policytype: u32, valuelength: u32, value: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_SetPipePolicy(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, policytype: u32, valuelength: u32, value: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_SetPipePolicy(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, policytype: u32, valuelength: u32, value: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_SetPipePolicy(::core::mem::transmute(interfacehandle), ::core::mem::transmute(pipeid), ::core::mem::transmute(policytype), ::core::mem::transmute(valuelength), ::core::mem::transmute(value)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_SetPowerPolicy(interfacehandle: *const ::core::ffi::c_void, policytype: u32, valuelength: u32, value: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_SetPowerPolicy(interfacehandle: *const ::core::ffi::c_void, policytype: u32, valuelength: u32, value: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_SetPowerPolicy(interfacehandle: *const ::core::ffi::c_void, policytype: u32, valuelength: u32, value: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_SetPowerPolicy(interfacehandle: *const ::core::ffi::c_void, policytype: u32, valuelength: u32, value: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_SetPowerPolicy(::core::mem::transmute(interfacehandle), ::core::mem::transmute(policytype), ::core::mem::transmute(valuelength), ::core::mem::transmute(value)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_StartTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, starttrackinginfo: *const USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_StartTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, starttrackinginfo: *const USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_StartTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, starttrackinginfo: *const USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION) -> super::super::Foundation::BOOL;
+            fn WinUsb_StartTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, starttrackinginfo: *const USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_StartTrackingForTimeSync(::core::mem::transmute(interfacehandle), ::core::mem::transmute(starttrackinginfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_StopTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, stoptrackinginfo: *const USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_StopTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, stoptrackinginfo: *const USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_StopTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, stoptrackinginfo: *const USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION) -> super::super::Foundation::BOOL;
+            fn WinUsb_StopTrackingForTimeSync(interfacehandle: *const ::core::ffi::c_void, stoptrackinginfo: *const USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_StopTrackingForTimeSync(::core::mem::transmute(interfacehandle), ::core::mem::transmute(stoptrackinginfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WinUsb_UnregisterIsochBuffer(isochbufferhandle: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_UnregisterIsochBuffer(isochbufferhandle: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_UnregisterIsochBuffer(isochbufferhandle: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn WinUsb_UnregisterIsochBuffer(isochbufferhandle: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_UnregisterIsochBuffer(::core::mem::transmute(isochbufferhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WinUsb_WriteIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_WriteIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_WriteIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn WinUsb_WriteIsochPipe(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, framenumber: *mut u32, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_WriteIsochPipe(::core::mem::transmute(bufferhandle), ::core::mem::transmute(offset), ::core::mem::transmute(length), ::core::mem::transmute(framenumber), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WinUsb_WriteIsochPipeAsap<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: Param3, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_WriteIsochPipeAsap<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: Param3, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_WriteIsochPipeAsap(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: super::super::Foundation::BOOL, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn WinUsb_WriteIsochPipeAsap(bufferhandle: *const ::core::ffi::c_void, offset: u32, length: u32, continuestream: ::win32_foundation::BOOL, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_WriteIsochPipeAsap(::core::mem::transmute(bufferhandle), ::core::mem::transmute(offset), ::core::mem::transmute(length), continuestream.into_param().abi(), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WinUsb_WritePipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *const u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn WinUsb_WritePipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *const u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WinUsb_WritePipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *const u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn WinUsb_WritePipe(interfacehandle: *const ::core::ffi::c_void, pipeid: u8, buffer: *const u8, bufferlength: u32, lengthtransferred: *mut u32, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WinUsb_WritePipe(::core::mem::transmute(interfacehandle), ::core::mem::transmute(pipeid), ::core::mem::transmute(buffer), ::core::mem::transmute(bufferlength), ::core::mem::transmute(lengthtransferred), ::core::mem::transmute(overlapped)))
     }

@@ -28,26 +28,11 @@ pub struct IWiFiDirectService_Vtbl {
     #[cfg(not(feature = "Storage_Streams"))]
     SetSessionInfo: usize,
     pub ServiceError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut WiFiDirectServiceError) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SessionDeferred: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SessionDeferred: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveSessionDeferred: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveSessionDeferred: usize,
-    #[cfg(feature = "Foundation")]
+    pub SessionDeferred: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveSessionDeferred: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub GetProvisioningInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, selectedconfigurationmethod: WiFiDirectServiceConfigurationMethod, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetProvisioningInfoAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ConnectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ConnectAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ConnectAsyncWithPin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pin: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ConnectAsyncWithPin: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -95,37 +80,19 @@ pub struct IWiFiDirectServiceAdvertiser_Vtbl {
     SetDeferredSessionInfo: usize,
     pub AdvertisementStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut WiFiDirectServiceAdvertisementStatus) -> ::windows_core::HRESULT,
     pub ServiceError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut WiFiDirectServiceError) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SessionRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SessionRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveSessionRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveSessionRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub AutoAcceptSessionConnected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AutoAcceptSessionConnected: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAutoAcceptSessionConnected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAutoAcceptSessionConnected: usize,
-    #[cfg(feature = "Foundation")]
-    pub AdvertisementStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AdvertisementStatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAdvertisementStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAdvertisementStatusChanged: usize,
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation"))]
+    pub SessionRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveSessionRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub AutoAcceptSessionConnected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAutoAcceptSessionConnected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub AdvertisementStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAdvertisementStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Devices_Enumeration")]
     pub ConnectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceinfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Enumeration", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Enumeration"))]
     ConnectAsync: usize,
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Enumeration")]
     pub ConnectAsyncWithPin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceinfo: ::windows_core::RawPtr, pin: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Enumeration", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Enumeration"))]
     ConnectAsyncWithPin: usize,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -213,30 +180,18 @@ pub struct IWiFiDirectServiceSession_Vtbl {
     pub GetConnectionEndpointPairs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Networking")))]
     GetConnectionEndpointPairs: usize,
-    #[cfg(feature = "Foundation")]
-    pub SessionStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SessionStatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveSessionStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveSessionStatusChanged: usize,
-    #[cfg(all(feature = "Foundation", feature = "Networking_Sockets"))]
+    pub SessionStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveSessionStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Networking_Sockets")]
     pub AddStreamSocketListenerAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Networking_Sockets")))]
+    #[cfg(not(feature = "Networking_Sockets"))]
     AddStreamSocketListenerAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Networking_Sockets"))]
+    #[cfg(feature = "Networking_Sockets")]
     pub AddDatagramSocketAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Networking_Sockets")))]
+    #[cfg(not(feature = "Networking_Sockets"))]
     AddDatagramSocketAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemotePortAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemotePortAdded: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveRemotePortAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveRemotePortAdded: usize,
+    pub RemotePortAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveRemotePortAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -304,28 +259,25 @@ pub struct IWiFiDirectServiceStatics_Vtbl {
     pub GetSelectorWithFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, servicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, serviceinfofilter: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     GetSelectorWithFilter: usize,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
 }
 #[repr(transparent)]
 pub struct WiFiDirectService(::windows_core::IUnknown);
 impl WiFiDirectService {
     #[cfg(feature = "Storage_Streams")]
-    pub fn RemoteServiceInfo(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn RemoteServiceInfo(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RemoteServiceInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).RemoteServiceInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SupportedConfigurationMethods(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<WiFiDirectServiceConfigurationMethod>> {
+    pub fn SupportedConfigurationMethods(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<WiFiDirectServiceConfigurationMethod>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedConfigurationMethods)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<WiFiDirectServiceConfigurationMethod>>(result__)
+            (::windows_core::Interface::vtable(this).SupportedConfigurationMethods)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<WiFiDirectServiceConfigurationMethod>>(result__)
         }
     }
     pub fn PreferGroupOwnerMode(&self) -> ::windows_core::Result<bool> {
@@ -340,15 +292,15 @@ impl WiFiDirectService {
         unsafe { (::windows_core::Interface::vtable(this).SetPreferGroupOwnerMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SessionInfo(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn SessionInfo(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).SessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetSessionInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSessionInfo<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSessionInfo)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -359,41 +311,36 @@ impl WiFiDirectService {
             (::windows_core::Interface::vtable(this).ServiceError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WiFiDirectServiceError>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SessionDeferred<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<WiFiDirectService, WiFiDirectServiceSessionDeferredEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn SessionDeferred<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<WiFiDirectService, WiFiDirectServiceSessionDeferredEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).SessionDeferred)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).SessionDeferred)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveSessionDeferred<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveSessionDeferred<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSessionDeferred)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetProvisioningInfoAsync(&self, selectedconfigurationmethod: WiFiDirectServiceConfigurationMethod) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceProvisioningInfo>> {
+    pub fn GetProvisioningInfoAsync(&self, selectedconfigurationmethod: WiFiDirectServiceConfigurationMethod) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WiFiDirectServiceProvisioningInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetProvisioningInfoAsync)(::windows_core::Interface::as_raw(this), selectedconfigurationmethod, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceProvisioningInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetProvisioningInfoAsync)(::windows_core::Interface::as_raw(this), selectedconfigurationmethod, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WiFiDirectServiceProvisioningInfo>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ConnectAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceSession>> {
+    pub fn ConnectAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WiFiDirectServiceSession>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceSession>>(result__)
+            (::windows_core::Interface::vtable(this).ConnectAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WiFiDirectServiceSession>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ConnectAsyncWithPin<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, pin: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceSession>> {
+    pub fn ConnectAsyncWithPin<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, pin: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WiFiDirectServiceSession>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectAsyncWithPin)(::windows_core::Interface::as_raw(this), pin.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceSession>>(result__)
+            (::windows_core::Interface::vtable(this).ConnectAsyncWithPin)(::windows_core::Interface::as_raw(this), pin.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WiFiDirectServiceSession>>(result__)
         }
     }
     pub fn GetSelector<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(servicename: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -403,17 +350,16 @@ impl WiFiDirectService {
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetSelectorWithFilter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(servicename: Param0, serviceinfofilter: Param1) -> ::windows_core::Result<::windows_core::HSTRING> {
+    pub fn GetSelectorWithFilter<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(servicename: Param0, serviceinfofilter: Param1) -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::IWiFiDirectServiceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).GetSelectorWithFilter)(::windows_core::Interface::as_raw(this), servicename.into_param().abi(), serviceinfofilter.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WiFiDirectService>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WiFiDirectService>> {
         Self::IWiFiDirectServiceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WiFiDirectService>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WiFiDirectService>>(result__)
         })
     }
     pub fn IWiFiDirectServiceStatics<R, F: FnOnce(&IWiFiDirectServiceStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -539,23 +485,23 @@ impl WiFiDirectServiceAdvertiser {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ServiceNamePrefixes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn ServiceNamePrefixes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServiceNamePrefixes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).ServiceNamePrefixes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ServiceInfo(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn ServiceInfo(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServiceInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).ServiceInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetServiceInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetServiceInfo<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetServiceInfo)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -582,11 +528,11 @@ impl WiFiDirectServiceAdvertiser {
         unsafe { (::windows_core::Interface::vtable(this).SetPreferGroupOwnerMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PreferredConfigurationMethods(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<WiFiDirectServiceConfigurationMethod>> {
+    pub fn PreferredConfigurationMethods(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<WiFiDirectServiceConfigurationMethod>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PreferredConfigurationMethods)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<WiFiDirectServiceConfigurationMethod>>(result__)
+            (::windows_core::Interface::vtable(this).PreferredConfigurationMethods)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<WiFiDirectServiceConfigurationMethod>>(result__)
         }
     }
     pub fn ServiceStatus(&self) -> ::windows_core::Result<WiFiDirectServiceStatus> {
@@ -612,15 +558,15 @@ impl WiFiDirectServiceAdvertiser {
         unsafe { (::windows_core::Interface::vtable(this).SetCustomServiceStatusCode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn DeferredSessionInfo(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn DeferredSessionInfo(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeferredSessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).DeferredSessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetDeferredSessionInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDeferredSessionInfo<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDeferredSessionInfo)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -638,59 +584,53 @@ impl WiFiDirectServiceAdvertiser {
             (::windows_core::Interface::vtable(this).ServiceError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WiFiDirectServiceError>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SessionRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<WiFiDirectServiceAdvertiser, WiFiDirectServiceSessionRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn SessionRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<WiFiDirectServiceAdvertiser, WiFiDirectServiceSessionRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).SessionRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).SessionRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveSessionRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveSessionRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSessionRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AutoAcceptSessionConnected<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<WiFiDirectServiceAdvertiser, WiFiDirectServiceAutoAcceptSessionConnectedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn AutoAcceptSessionConnected<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<WiFiDirectServiceAdvertiser, WiFiDirectServiceAutoAcceptSessionConnectedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AutoAcceptSessionConnected)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AutoAcceptSessionConnected)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAutoAcceptSessionConnected<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAutoAcceptSessionConnected<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAutoAcceptSessionConnected)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AdvertisementStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<WiFiDirectServiceAdvertiser, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn AdvertisementStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<WiFiDirectServiceAdvertiser, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AdvertisementStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AdvertisementStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAdvertisementStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAdvertisementStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAdvertisementStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation"))]
-    pub fn ConnectAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Enumeration::DeviceInformation>>(&self, deviceinfo: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceSession>> {
+    #[cfg(feature = "Devices_Enumeration")]
+    pub fn ConnectAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Enumeration::DeviceInformation>>(&self, deviceinfo: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WiFiDirectServiceSession>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectAsync)(::windows_core::Interface::as_raw(this), deviceinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceSession>>(result__)
+            (::windows_core::Interface::vtable(this).ConnectAsync)(::windows_core::Interface::as_raw(this), deviceinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WiFiDirectServiceSession>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Enumeration", feature = "Foundation"))]
-    pub fn ConnectAsyncWithPin<'a, Param0: ::windows_core::IntoParam<'a, super::super::Enumeration::DeviceInformation>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, deviceinfo: Param0, pin: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceSession>> {
+    #[cfg(feature = "Devices_Enumeration")]
+    pub fn ConnectAsyncWithPin<'a, Param0: ::windows_core::IntoParam<'a, super::super::Enumeration::DeviceInformation>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, deviceinfo: Param0, pin: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WiFiDirectServiceSession>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectAsyncWithPin)(::windows_core::Interface::as_raw(this), deviceinfo.into_param().abi(), pin.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WiFiDirectServiceSession>>(result__)
+            (::windows_core::Interface::vtable(this).ConnectAsyncWithPin)(::windows_core::Interface::as_raw(this), deviceinfo.into_param().abi(), pin.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WiFiDirectServiceSession>>(result__)
         }
     }
     pub fn Start(&self) -> ::windows_core::Result<()> {
@@ -795,11 +735,11 @@ impl WiFiDirectServiceAutoAcceptSessionConnectedEventArgs {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SessionInfo(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn SessionInfo(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).SessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -1072,11 +1012,11 @@ unsafe impl ::core::marker::Sync for WiFiDirectServiceProvisioningInfo {}
 pub struct WiFiDirectServiceRemotePortAddedEventArgs(::windows_core::IUnknown);
 impl WiFiDirectServiceRemotePortAddedEventArgs {
     #[cfg(all(feature = "Foundation_Collections", feature = "Networking"))]
-    pub fn EndpointPairs(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<super::super::super::Networking::EndpointPair>> {
+    pub fn EndpointPairs(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_networking::EndpointPair>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EndpointPairs)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<super::super::super::Networking::EndpointPair>>(result__)
+            (::windows_core::Interface::vtable(this).EndpointPairs)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_networking::EndpointPair>>(result__)
         }
     }
     pub fn Protocol(&self) -> ::windows_core::Result<WiFiDirectServiceIPProtocol> {
@@ -1162,9 +1102,8 @@ unsafe impl ::core::marker::Sync for WiFiDirectServiceRemotePortAddedEventArgs {
 #[repr(transparent)]
 pub struct WiFiDirectServiceSession(::windows_core::IUnknown);
 impl WiFiDirectServiceSession {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn ServiceName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1217,52 +1156,48 @@ impl WiFiDirectServiceSession {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Networking"))]
-    pub fn GetConnectionEndpointPairs(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<super::super::super::Networking::EndpointPair>> {
+    pub fn GetConnectionEndpointPairs(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_networking::EndpointPair>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetConnectionEndpointPairs)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<super::super::super::Networking::EndpointPair>>(result__)
+            (::windows_core::Interface::vtable(this).GetConnectionEndpointPairs)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_networking::EndpointPair>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SessionStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<WiFiDirectServiceSession, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn SessionStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<WiFiDirectServiceSession, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).SessionStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).SessionStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveSessionStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveSessionStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveSessionStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "Networking_Sockets"))]
-    pub fn AddStreamSocketListenerAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Networking::Sockets::StreamSocketListener>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Networking_Sockets")]
+    pub fn AddStreamSocketListenerAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::Sockets::StreamSocketListener>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddStreamSocketListenerAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).AddStreamSocketListenerAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Networking_Sockets"))]
-    pub fn AddDatagramSocketAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Networking::Sockets::DatagramSocket>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Networking_Sockets")]
+    pub fn AddDatagramSocketAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::Sockets::DatagramSocket>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddDatagramSocketAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).AddDatagramSocketAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemotePortAdded<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<WiFiDirectServiceSession, WiFiDirectServiceRemotePortAddedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn RemotePortAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<WiFiDirectServiceSession, WiFiDirectServiceRemotePortAddedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).RemotePortAdded)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).RemotePortAdded)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveRemotePortAdded<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveRemotePortAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRemotePortAdded)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -1337,30 +1272,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a WiF
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<WiFiDirectServiceSession> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<WiFiDirectServiceSession> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: WiFiDirectServiceSession) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&WiFiDirectServiceSession> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&WiFiDirectServiceSession> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &WiFiDirectServiceSession) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for WiFiDirectServiceSession {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for WiFiDirectServiceSession {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &WiFiDirectServiceSession {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &WiFiDirectServiceSession {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for WiFiDirectServiceSession {}
@@ -1369,11 +1300,11 @@ unsafe impl ::core::marker::Sync for WiFiDirectServiceSession {}
 pub struct WiFiDirectServiceSessionDeferredEventArgs(::windows_core::IUnknown);
 impl WiFiDirectServiceSessionDeferredEventArgs {
     #[cfg(feature = "Storage_Streams")]
-    pub fn DeferredSessionInfo(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn DeferredSessionInfo(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeferredSessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).DeferredSessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -1489,9 +1420,8 @@ unsafe impl ::windows_core::RuntimeType for WiFiDirectServiceSessionErrorStatus 
 #[repr(transparent)]
 pub struct WiFiDirectServiceSessionRequest(::windows_core::IUnknown);
 impl WiFiDirectServiceSessionRequest {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Devices_Enumeration")]
@@ -1510,11 +1440,11 @@ impl WiFiDirectServiceSessionRequest {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SessionInfo(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn SessionInfo(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).SessionInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -1588,30 +1518,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a WiF
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<WiFiDirectServiceSessionRequest> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<WiFiDirectServiceSessionRequest> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: WiFiDirectServiceSessionRequest) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&WiFiDirectServiceSessionRequest> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&WiFiDirectServiceSessionRequest> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &WiFiDirectServiceSessionRequest) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for WiFiDirectServiceSessionRequest {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for WiFiDirectServiceSessionRequest {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &WiFiDirectServiceSessionRequest {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &WiFiDirectServiceSessionRequest {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for WiFiDirectServiceSessionRequest {}

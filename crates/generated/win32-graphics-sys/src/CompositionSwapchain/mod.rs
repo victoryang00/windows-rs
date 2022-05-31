@@ -3,20 +3,20 @@ extern "system" {
     pub fn CreatePresentationFactory(d3ddevice: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, presentationfactory: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 pub struct CompositionFrameDisplayInstance {
-    pub displayAdapterLUID: super::super::Foundation::LUID,
+    pub displayAdapterLUID: ::win32_foundation_sys::LUID,
     pub displayVidPnSourceId: u32,
     pub displayUniqueId: u32,
-    pub renderAdapterLUID: super::super::Foundation::LUID,
+    pub renderAdapterLUID: ::win32_foundation_sys::LUID,
     pub instanceKind: CompositionFrameInstanceKind,
     pub finalTransform: PresentationTransform,
     pub requiredCrossAdapterCopy: u8,
     pub colorSpace: super::Dxgi::Common::DXGI_COLOR_SPACE_TYPE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::marker::Copy for CompositionFrameDisplayInstance {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::clone::Clone for CompositionFrameDisplayInstance {
     fn clone(&self) -> Self {
         *self

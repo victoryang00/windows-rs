@@ -1,54 +1,51 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ApplicationRecoveryFinished<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(bsuccess: Param0) {
+pub unsafe fn ApplicationRecoveryFinished<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(bsuccess: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ApplicationRecoveryFinished(bsuccess: super::super::Foundation::BOOL);
+            fn ApplicationRecoveryFinished(bsuccess: ::win32_foundation::BOOL);
         }
         ApplicationRecoveryFinished(bsuccess.into_param().abi())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ApplicationRecoveryInProgress() -> ::windows_core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn ApplicationRecoveryInProgress() -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ApplicationRecoveryInProgress(pbcancelled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn ApplicationRecoveryInProgress(pbcancelled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        ApplicationRecoveryInProgress(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        ApplicationRecoveryInProgress(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
+#[cfg(feature = "Win32_System_WindowsProgramming")]
 #[inline]
-pub unsafe fn GetApplicationRecoveryCallback<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, precoverycallback: *mut super::WindowsProgramming::APPLICATION_RECOVERY_CALLBACK, ppvparameter: *mut *mut ::core::ffi::c_void, pdwpinginterval: *mut u32, pdwflags: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn GetApplicationRecoveryCallback<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0, precoverycallback: *mut super::WindowsProgramming::APPLICATION_RECOVERY_CALLBACK, ppvparameter: *mut *mut ::core::ffi::c_void, pdwpinginterval: *mut u32, pdwflags: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetApplicationRecoveryCallback(hprocess: super::super::Foundation::HANDLE, precoverycallback: *mut ::windows_core::RawPtr, ppvparameter: *mut *mut ::core::ffi::c_void, pdwpinginterval: *mut u32, pdwflags: *mut u32) -> ::windows_core::HRESULT;
+            fn GetApplicationRecoveryCallback(hprocess: ::win32_foundation::HANDLE, precoverycallback: *mut ::windows_core::RawPtr, ppvparameter: *mut *mut ::core::ffi::c_void, pdwpinginterval: *mut u32, pdwflags: *mut u32) -> ::windows_core::HRESULT;
         }
         GetApplicationRecoveryCallback(hprocess.into_param().abi(), ::core::mem::transmute(precoverycallback), ::core::mem::transmute(ppvparameter), ::core::mem::transmute(pdwpinginterval), ::core::mem::transmute(pdwflags)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetApplicationRestartSettings<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0, pwzcommandline: ::windows_core::PWSTR, pcchsize: *mut u32, pdwflags: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn GetApplicationRestartSettings<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0, pwzcommandline: ::windows_core::PWSTR, pcchsize: *mut u32, pdwflags: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetApplicationRestartSettings(hprocess: super::super::Foundation::HANDLE, pwzcommandline: ::windows_core::PWSTR, pcchsize: *mut u32, pdwflags: *mut u32) -> ::windows_core::HRESULT;
+            fn GetApplicationRestartSettings(hprocess: ::win32_foundation::HANDLE, pwzcommandline: ::windows_core::PWSTR, pcchsize: *mut u32, pdwflags: *mut u32) -> ::windows_core::HRESULT;
         }
         GetApplicationRestartSettings(hprocess.into_param().abi(), ::core::mem::transmute(pwzcommandline), ::core::mem::transmute(pcchsize), ::core::mem::transmute(pdwflags)).ok()
     }

@@ -30,7 +30,7 @@ pub const ACMDM_STREAM_UNPREPARE: u32 = 24658u32;
 pub const ACMDM_STREAM_UPDATE: u32 = 24659u32;
 pub const ACMDM_USER: u32 = 16384u32;
 #[repr(C, packed(1))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 pub struct ACMDRIVERDETAILSA {
     pub cbStruct: u32,
     pub fccType: u32,
@@ -42,34 +42,34 @@ pub struct ACMDRIVERDETAILSA {
     pub fdwSupport: u32,
     pub cFormatTags: u32,
     pub cFilterTags: u32,
-    pub hicon: super::super::UI::WindowsAndMessaging::HICON,
-    pub szShortName: [super::super::Foundation::CHAR; 32],
-    pub szLongName: [super::super::Foundation::CHAR; 128],
-    pub szCopyright: [super::super::Foundation::CHAR; 80],
-    pub szLicensing: [super::super::Foundation::CHAR; 128],
-    pub szFeatures: [super::super::Foundation::CHAR; 512],
+    pub hicon: ::win32_ui::WindowsAndMessaging::HICON,
+    pub szShortName: [::win32_foundation::CHAR; 32],
+    pub szLongName: [::win32_foundation::CHAR; 128],
+    pub szCopyright: [::win32_foundation::CHAR; 80],
+    pub szLicensing: [::win32_foundation::CHAR; 128],
+    pub szFeatures: [::win32_foundation::CHAR; 512],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::marker::Copy for ACMDRIVERDETAILSA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::clone::Clone for ACMDRIVERDETAILSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 unsafe impl ::windows_core::Abi for ACMDRIVERDETAILSA {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::PartialEq for ACMDRIVERDETAILSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACMDRIVERDETAILSA>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::cmp::Eq for ACMDRIVERDETAILSA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 impl ::core::default::Default for ACMDRIVERDETAILSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -88,7 +88,7 @@ pub struct ACMDRIVERDETAILSW {
     pub fdwSupport: u32,
     pub cFormatTags: u32,
     pub cFilterTags: u32,
-    pub hicon: super::super::UI::WindowsAndMessaging::HICON,
+    pub hicon: ::win32_ui::WindowsAndMessaging::HICON,
     pub szShortName: [u16; 32],
     pub szLongName: [u16; 128],
     pub szCopyright: [u16; 80],
@@ -133,8 +133,7 @@ pub const ACMDRIVERDETAILS_SUPPORTF_DISABLED: i32 = -2147483648i32;
 pub const ACMDRIVERDETAILS_SUPPORTF_FILTER: i32 = 4i32;
 pub const ACMDRIVERDETAILS_SUPPORTF_HARDWARE: i32 = 8i32;
 pub const ACMDRIVERDETAILS_SUPPORTF_LOCAL: i32 = 1073741824i32;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMDRIVERENUMCB = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, dwinstance: usize, fdwsupport: u32) -> super::super::Foundation::BOOL>;
+pub type ACMDRIVERENUMCB = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, dwinstance: usize, fdwsupport: u32) -> ::win32_foundation::BOOL>;
 #[repr(C, packed(1))]
 pub struct ACMDRVFORMATSUGGEST {
     pub cbStruct: u32,
@@ -274,61 +273,51 @@ pub const ACMERR_CANCELED: u32 = 515u32;
 pub const ACMERR_NOTPOSSIBLE: u32 = 512u32;
 pub const ACMERR_UNPREPARED: u32 = 514u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACMFILTERCHOOSEA {
     pub cbStruct: u32,
     pub fdwStyle: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub pwfltr: *mut WAVEFILTER,
     pub cbwfltr: u32,
     pub pszTitle: ::windows_core::PCSTR,
-    pub szFilterTag: [super::super::Foundation::CHAR; 48],
-    pub szFilter: [super::super::Foundation::CHAR; 128],
+    pub szFilterTag: [::win32_foundation::CHAR; 48],
+    pub szFilter: [::win32_foundation::CHAR; 128],
     pub pszName: ::windows_core::PSTR,
     pub cchName: u32,
     pub fdwEnum: u32,
     pub pwfltrEnum: *mut WAVEFILTER,
-    pub hInstance: super::super::Foundation::HINSTANCE,
+    pub hInstance: ::win32_foundation::HINSTANCE,
     pub pszTemplateName: ::windows_core::PCSTR,
-    pub lCustData: super::super::Foundation::LPARAM,
+    pub lCustData: ::win32_foundation::LPARAM,
     pub pfnHook: ACMFILTERCHOOSEHOOKPROCA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACMFILTERCHOOSEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACMFILTERCHOOSEA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ACMFILTERCHOOSEA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ACMFILTERCHOOSEA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACMFILTERCHOOSEA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ACMFILTERCHOOSEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ACMFILTERCHOOSEA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFILTERCHOOSEHOOKPROCA = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFILTERCHOOSEHOOKPROCW = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> u32>;
+pub type ACMFILTERCHOOSEHOOKPROCA = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, umsg: u32, wparam: ::win32_foundation::WPARAM, lparam: ::win32_foundation::LPARAM) -> u32>;
+pub type ACMFILTERCHOOSEHOOKPROCW = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, umsg: u32, wparam: ::win32_foundation::WPARAM, lparam: ::win32_foundation::LPARAM) -> u32>;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACMFILTERCHOOSEW {
     pub cbStruct: u32,
     pub fdwStyle: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub pwfltr: *mut WAVEFILTER,
     pub cbwfltr: u32,
     pub pszTitle: ::windows_core::PCWSTR,
@@ -338,32 +327,26 @@ pub struct ACMFILTERCHOOSEW {
     pub cchName: u32,
     pub fdwEnum: u32,
     pub pwfltrEnum: *mut WAVEFILTER,
-    pub hInstance: super::super::Foundation::HINSTANCE,
+    pub hInstance: ::win32_foundation::HINSTANCE,
     pub pszTemplateName: ::windows_core::PCWSTR,
-    pub lCustData: super::super::Foundation::LPARAM,
+    pub lCustData: ::win32_foundation::LPARAM,
     pub pfnHook: ACMFILTERCHOOSEHOOKPROCW,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACMFILTERCHOOSEW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACMFILTERCHOOSEW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ACMFILTERCHOOSEW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ACMFILTERCHOOSEW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACMFILTERCHOOSEW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ACMFILTERCHOOSEW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ACMFILTERCHOOSEW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -376,7 +359,6 @@ pub const ACMFILTERCHOOSE_STYLEF_ENABLETEMPLATEHANDLE: i32 = 32i32;
 pub const ACMFILTERCHOOSE_STYLEF_INITTOFILTERSTRUCT: i32 = 64i32;
 pub const ACMFILTERCHOOSE_STYLEF_SHOWHELP: i32 = 4i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACMFILTERDETAILSA {
     pub cbStruct: u32,
     pub dwFilterIndex: u32,
@@ -384,29 +366,23 @@ pub struct ACMFILTERDETAILSA {
     pub fdwSupport: u32,
     pub pwfltr: *mut WAVEFILTER,
     pub cbwfltr: u32,
-    pub szFilter: [super::super::Foundation::CHAR; 128],
+    pub szFilter: [::win32_foundation::CHAR; 128],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACMFILTERDETAILSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACMFILTERDETAILSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ACMFILTERDETAILSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ACMFILTERDETAILSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACMFILTERDETAILSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ACMFILTERDETAILSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ACMFILTERDETAILSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -443,12 +419,9 @@ impl ::core::default::Default for ACMFILTERDETAILSW {
     }
 }
 pub const ACMFILTERDETAILS_FILTER_CHARS: u32 = 128u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFILTERENUMCBA = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, pafd: *mut ACMFILTERDETAILSA, dwinstance: usize, fdwsupport: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFILTERENUMCBW = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, pafd: *mut ACMFILTERDETAILSW, dwinstance: usize, fdwsupport: u32) -> super::super::Foundation::BOOL>;
+pub type ACMFILTERENUMCBA = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, pafd: *mut ACMFILTERDETAILSA, dwinstance: usize, fdwsupport: u32) -> ::win32_foundation::BOOL>;
+pub type ACMFILTERENUMCBW = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, pafd: *mut ACMFILTERDETAILSW, dwinstance: usize, fdwsupport: u32) -> ::win32_foundation::BOOL>;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACMFILTERTAGDETAILSA {
     pub cbStruct: u32,
     pub dwFilterTagIndex: u32,
@@ -456,29 +429,23 @@ pub struct ACMFILTERTAGDETAILSA {
     pub cbFilterSize: u32,
     pub fdwSupport: u32,
     pub cStandardFilters: u32,
-    pub szFilterTag: [super::super::Foundation::CHAR; 48],
+    pub szFilterTag: [::win32_foundation::CHAR; 48],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACMFILTERTAGDETAILSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACMFILTERTAGDETAILSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ACMFILTERTAGDETAILSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ACMFILTERTAGDETAILSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACMFILTERTAGDETAILSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ACMFILTERTAGDETAILSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ACMFILTERTAGDETAILSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -515,66 +482,54 @@ impl ::core::default::Default for ACMFILTERTAGDETAILSW {
     }
 }
 pub const ACMFILTERTAGDETAILS_FILTERTAG_CHARS: u32 = 48u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFILTERTAGENUMCBA = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, paftd: *mut ACMFILTERTAGDETAILSA, dwinstance: usize, fdwsupport: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFILTERTAGENUMCBW = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, paftd: *mut ACMFILTERTAGDETAILSW, dwinstance: usize, fdwsupport: u32) -> super::super::Foundation::BOOL>;
+pub type ACMFILTERTAGENUMCBA = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, paftd: *mut ACMFILTERTAGDETAILSA, dwinstance: usize, fdwsupport: u32) -> ::win32_foundation::BOOL>;
+pub type ACMFILTERTAGENUMCBW = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, paftd: *mut ACMFILTERTAGDETAILSW, dwinstance: usize, fdwsupport: u32) -> ::win32_foundation::BOOL>;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACMFORMATCHOOSEA {
     pub cbStruct: u32,
     pub fdwStyle: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub pwfx: *mut WAVEFORMATEX,
     pub cbwfx: u32,
     pub pszTitle: ::windows_core::PCSTR,
-    pub szFormatTag: [super::super::Foundation::CHAR; 48],
-    pub szFormat: [super::super::Foundation::CHAR; 128],
+    pub szFormatTag: [::win32_foundation::CHAR; 48],
+    pub szFormat: [::win32_foundation::CHAR; 128],
     pub pszName: ::windows_core::PSTR,
     pub cchName: u32,
     pub fdwEnum: u32,
     pub pwfxEnum: *mut WAVEFORMATEX,
-    pub hInstance: super::super::Foundation::HINSTANCE,
+    pub hInstance: ::win32_foundation::HINSTANCE,
     pub pszTemplateName: ::windows_core::PCSTR,
-    pub lCustData: super::super::Foundation::LPARAM,
+    pub lCustData: ::win32_foundation::LPARAM,
     pub pfnHook: ACMFORMATCHOOSEHOOKPROCA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACMFORMATCHOOSEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACMFORMATCHOOSEA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ACMFORMATCHOOSEA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ACMFORMATCHOOSEA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACMFORMATCHOOSEA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ACMFORMATCHOOSEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ACMFORMATCHOOSEA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFORMATCHOOSEHOOKPROCA = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFORMATCHOOSEHOOKPROCW = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> u32>;
+pub type ACMFORMATCHOOSEHOOKPROCA = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, umsg: u32, wparam: ::win32_foundation::WPARAM, lparam: ::win32_foundation::LPARAM) -> u32>;
+pub type ACMFORMATCHOOSEHOOKPROCW = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, umsg: u32, wparam: ::win32_foundation::WPARAM, lparam: ::win32_foundation::LPARAM) -> u32>;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACMFORMATCHOOSEW {
     pub cbStruct: u32,
     pub fdwStyle: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub pwfx: *mut WAVEFORMATEX,
     pub cbwfx: u32,
     pub pszTitle: ::windows_core::PCWSTR,
@@ -584,32 +539,26 @@ pub struct ACMFORMATCHOOSEW {
     pub cchName: u32,
     pub fdwEnum: u32,
     pub pwfxEnum: *mut WAVEFORMATEX,
-    pub hInstance: super::super::Foundation::HINSTANCE,
+    pub hInstance: ::win32_foundation::HINSTANCE,
     pub pszTemplateName: ::windows_core::PCWSTR,
-    pub lCustData: super::super::Foundation::LPARAM,
+    pub lCustData: ::win32_foundation::LPARAM,
     pub pfnHook: ACMFORMATCHOOSEHOOKPROCW,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACMFORMATCHOOSEW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACMFORMATCHOOSEW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ACMFORMATCHOOSEW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ACMFORMATCHOOSEW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACMFORMATCHOOSEW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ACMFORMATCHOOSEW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ACMFORMATCHOOSEW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -622,7 +571,6 @@ pub const ACMFORMATCHOOSE_STYLEF_ENABLETEMPLATEHANDLE: i32 = 32i32;
 pub const ACMFORMATCHOOSE_STYLEF_INITTOWFXSTRUCT: i32 = 64i32;
 pub const ACMFORMATCHOOSE_STYLEF_SHOWHELP: i32 = 4i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACMFORMATDETAILSA {
     pub cbStruct: u32,
     pub dwFormatIndex: u32,
@@ -630,41 +578,32 @@ pub struct ACMFORMATDETAILSA {
     pub fdwSupport: u32,
     pub pwfx: *mut WAVEFORMATEX,
     pub cbwfx: u32,
-    pub szFormat: [super::super::Foundation::CHAR; 128],
+    pub szFormat: [::win32_foundation::CHAR; 128],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACMFORMATDETAILSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACMFORMATDETAILSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ACMFORMATDETAILSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ACMFORMATDETAILSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACMFORMATDETAILSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ACMFORMATDETAILSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ACMFORMATDETAILSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 pub const ACMFORMATDETAILS_FORMAT_CHARS: u32 = 128u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFORMATENUMCBA = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, pafd: *mut ACMFORMATDETAILSA, dwinstance: usize, fdwsupport: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFORMATENUMCBW = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, pafd: *mut tACMFORMATDETAILSW, dwinstance: usize, fdwsupport: u32) -> super::super::Foundation::BOOL>;
+pub type ACMFORMATENUMCBA = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, pafd: *mut ACMFORMATDETAILSA, dwinstance: usize, fdwsupport: u32) -> ::win32_foundation::BOOL>;
+pub type ACMFORMATENUMCBW = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, pafd: *mut tACMFORMATDETAILSW, dwinstance: usize, fdwsupport: u32) -> ::win32_foundation::BOOL>;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ACMFORMATTAGDETAILSA {
     pub cbStruct: u32,
     pub dwFormatTagIndex: u32,
@@ -672,29 +611,23 @@ pub struct ACMFORMATTAGDETAILSA {
     pub cbFormatSize: u32,
     pub fdwSupport: u32,
     pub cStandardFormats: u32,
-    pub szFormatTag: [super::super::Foundation::CHAR; 48],
+    pub szFormatTag: [::win32_foundation::CHAR; 48],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ACMFORMATTAGDETAILSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ACMFORMATTAGDETAILSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ACMFORMATTAGDETAILSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ACMFORMATTAGDETAILSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ACMFORMATTAGDETAILSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ACMFORMATTAGDETAILSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ACMFORMATTAGDETAILSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -731,10 +664,8 @@ impl ::core::default::Default for ACMFORMATTAGDETAILSW {
     }
 }
 pub const ACMFORMATTAGDETAILS_FORMATTAG_CHARS: u32 = 48u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFORMATTAGENUMCBA = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, paftd: *mut ACMFORMATTAGDETAILSA, dwinstance: usize, fdwsupport: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type ACMFORMATTAGENUMCBW = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, paftd: *mut ACMFORMATTAGDETAILSW, dwinstance: usize, fdwsupport: u32) -> super::super::Foundation::BOOL>;
+pub type ACMFORMATTAGENUMCBA = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, paftd: *mut ACMFORMATTAGDETAILSA, dwinstance: usize, fdwsupport: u32) -> ::win32_foundation::BOOL>;
+pub type ACMFORMATTAGENUMCBW = ::core::option::Option<unsafe extern "system" fn(hadid: HACMDRIVERID, paftd: *mut ACMFORMATTAGDETAILSW, dwinstance: usize, fdwsupport: u32) -> ::win32_foundation::BOOL>;
 pub const ACMHELPMSGCONTEXTHELP: &str = "acmchoose_contexthelp";
 pub const ACMHELPMSGCONTEXTHELPA: &str = "acmchoose_contexthelp";
 pub const ACMHELPMSGCONTEXTHELPW: &str = "acmchoose_contexthelp";
@@ -1293,39 +1224,31 @@ impl ::core::ops::Not for AUDIO_DUCKING_OPTIONS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AUDIO_EFFECT {
     pub id: ::windows_core::GUID,
-    pub canSetState: super::super::Foundation::BOOL,
+    pub canSetState: ::win32_foundation::BOOL,
     pub state: AUDIO_EFFECT_STATE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AUDIO_EFFECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AUDIO_EFFECT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for AUDIO_EFFECT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("AUDIO_EFFECT").field("id", &self.id).field("canSetState", &self.canSetState).field("state", &self.state).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for AUDIO_EFFECT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUDIO_EFFECT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIO_EFFECT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for AUDIO_EFFECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for AUDIO_EFFECT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1392,53 +1315,44 @@ impl ::core::fmt::Debug for AUDIO_STREAM_CATEGORY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AUDIO_VOLUME_NOTIFICATION_DATA {
     pub guidEventContext: ::windows_core::GUID,
-    pub bMuted: super::super::Foundation::BOOL,
+    pub bMuted: ::win32_foundation::BOOL,
     pub fMasterVolume: f32,
     pub nChannels: u32,
     pub afChannelVolumes: [f32; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AUDIO_VOLUME_NOTIFICATION_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AUDIO_VOLUME_NOTIFICATION_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for AUDIO_VOLUME_NOTIFICATION_DATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("AUDIO_VOLUME_NOTIFICATION_DATA").field("guidEventContext", &self.guidEventContext).field("bMuted", &self.bMuted).field("fMasterVolume", &self.fMasterVolume).field("nChannels", &self.nChannels).field("afChannelVolumes", &self.afChannelVolumes).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for AUDIO_VOLUME_NOTIFICATION_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUDIO_VOLUME_NOTIFICATION_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUDIO_VOLUME_NOTIFICATION_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for AUDIO_VOLUME_NOTIFICATION_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for AUDIO_VOLUME_NOTIFICATION_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AUXCAPS2A {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub wTechnology: u16,
     pub wReserved1: u16,
     pub dwSupport: u32,
@@ -1446,27 +1360,21 @@ pub struct AUXCAPS2A {
     pub ProductGuid: ::windows_core::GUID,
     pub NameGuid: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AUXCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AUXCAPS2A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for AUXCAPS2A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUXCAPS2A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUXCAPS2A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for AUXCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for AUXCAPS2A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1506,37 +1414,30 @@ impl ::core::default::Default for AUXCAPS2W {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AUXCAPSA {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub wTechnology: u16,
     pub wReserved1: u16,
     pub dwSupport: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AUXCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AUXCAPSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for AUXCAPSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUXCAPSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUXCAPSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for AUXCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for AUXCAPSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1576,14 +1477,14 @@ pub const AUXCAPS_AUXIN: u32 = 2u32;
 pub const AUXCAPS_CDAUDIO: u32 = 1u32;
 pub const AUXCAPS_LRVOLUME: u32 = 2u32;
 pub const AUXCAPS_VOLUME: u32 = 1u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 #[inline]
-pub unsafe fn ActivateAudioInterfaceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, IActivateAudioInterfaceCompletionHandler>>(deviceinterfacepath: Param0, riid: *const ::windows_core::GUID, activationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, completionhandler: Param3) -> ::windows_core::Result<IActivateAudioInterfaceAsyncOperation> {
+pub unsafe fn ActivateAudioInterfaceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, IActivateAudioInterfaceCompletionHandler>>(deviceinterfacepath: Param0, riid: *const ::windows_core::GUID, activationparams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, completionhandler: Param3) -> ::windows_core::Result<IActivateAudioInterfaceAsyncOperation> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ActivateAudioInterfaceAsync(deviceinterfacepath: ::windows_core::PCWSTR, riid: *const ::windows_core::GUID, activationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, completionhandler: ::windows_core::RawPtr, activationoperation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn ActivateAudioInterfaceAsync(deviceinterfacepath: ::windows_core::PCWSTR, riid: *const ::windows_core::GUID, activationparams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, completionhandler: ::windows_core::RawPtr, activationoperation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         ActivateAudioInterfaceAsync(deviceinterfacepath.into_param().abi(), ::core::mem::transmute(riid), ::core::mem::transmute(activationparams), completionhandler.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IActivateAudioInterfaceAsyncOperation>(result__)
@@ -1621,54 +1522,44 @@ impl ::core::default::Default for AudioClient3ActivationParams {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AudioClientProperties {
     pub cbSize: u32,
-    pub bIsOffload: super::super::Foundation::BOOL,
+    pub bIsOffload: ::win32_foundation::BOOL,
     pub eCategory: AUDIO_STREAM_CATEGORY,
     pub Options: AUDCLNT_STREAMOPTIONS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AudioClientProperties {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AudioClientProperties {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for AudioClientProperties {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("AudioClientProperties").field("cbSize", &self.cbSize).field("bIsOffload", &self.bIsOffload).field("eCategory", &self.eCategory).field("Options", &self.Options).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for AudioClientProperties {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AudioClientProperties {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AudioClientProperties>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for AudioClientProperties {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for AudioClientProperties {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AudioExtensionParams {
-    pub AddPageParam: super::super::Foundation::LPARAM,
+    pub AddPageParam: ::win32_foundation::LPARAM,
     pub pEndpoint: ::core::option::Option<IMMDevice>,
     pub pPnpInterface: ::core::option::Option<IMMDevice>,
     pub pPnpDevnode: ::core::option::Option<IMMDevice>,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AudioExtensionParams {
     fn clone(&self) -> Self {
         Self {
@@ -1679,25 +1570,20 @@ impl ::core::clone::Clone for AudioExtensionParams {
         }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for AudioExtensionParams {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("AudioExtensionParams").field("AddPageParam", &self.AddPageParam).field("pEndpoint", &self.pEndpoint).field("pPnpInterface", &self.pPnpInterface).field("pPnpDevnode", &self.pPnpDevnode).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for AudioExtensionParams {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AudioExtensionParams {
     fn eq(&self, other: &Self) -> bool {
         self.AddPageParam == other.AddPageParam && self.pEndpoint == other.pEndpoint && self.pPnpInterface == other.pPnpInterface && self.pPnpDevnode == other.pPnpDevnode
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for AudioExtensionParams {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for AudioExtensionParams {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2665,14 +2551,12 @@ impl IAudioAmbisonicsControl {
     pub unsafe fn SetData(&self, pambisonicsparams: &[AMBISONICS_PARAMS]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pambisonicsparams)), pambisonicsparams.len() as _).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetHeadTracking<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, benableheadtracking: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetHeadTracking<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, benableheadtracking: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetHeadTracking)(::windows_core::Interface::as_raw(self), benableheadtracking.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetHeadTracking(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetHeadTracking)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetHeadTracking(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetHeadTracking)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn SetRotation(&self, x: f32, y: f32, z: f32, w: f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRotation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(x), ::core::mem::transmute(y), ::core::mem::transmute(z), ::core::mem::transmute(w)).ok()
@@ -2723,26 +2607,18 @@ unsafe impl ::windows_core::Interface for IAudioAmbisonicsControl {
 pub struct IAudioAmbisonicsControl_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub SetData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pambisonicsparams: *const AMBISONICS_PARAMS, cbambisonicsparams: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetHeadTracking: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, benableheadtracking: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetHeadTracking: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetHeadTracking: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbenableheadtracking: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetHeadTracking: usize,
+    pub SetHeadTracking: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, benableheadtracking: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetHeadTracking: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbenableheadtracking: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetRotation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, x: f32, y: f32, z: f32, w: f32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IAudioAutoGainControl(::windows_core::IUnknown);
 impl IAudioAutoGainControl {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetEnabled(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetEnabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetEnabled(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetEnabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEnabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, benable: Param0, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEnabled<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, benable: Param0, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEnabled)(::windows_core::Interface::as_raw(self), benable.into_param().abi(), ::core::mem::transmute(pguideventcontext)).ok()
     }
 }
@@ -2790,14 +2666,8 @@ unsafe impl ::windows_core::Interface for IAudioAutoGainControl {
 #[doc(hidden)]
 pub struct IAudioAutoGainControl_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbenabled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetEnabled: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, benable: super::super::Foundation::BOOL, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetEnabled: usize,
+    pub GetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbenabled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, benable: ::win32_foundation::BOOL, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IAudioBass(::windows_core::IUnknown);
@@ -3045,8 +2915,7 @@ impl IAudioClient {
     pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEventHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, eventhandle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEventHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, eventhandle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEventHandle)(::windows_core::Interface::as_raw(self), eventhandle.into_param().abi()).ok()
     }
     pub unsafe fn GetService<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
@@ -3108,10 +2977,7 @@ pub struct IAudioClient_Vtbl {
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetEventHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandle: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetEventHandle: usize,
+    pub SetEventHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventhandle: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
     pub GetService: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, riid: *const ::windows_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -3151,25 +3017,21 @@ impl IAudioClient2 {
     pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEventHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, eventhandle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEventHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, eventhandle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetEventHandle)(::windows_core::Interface::as_raw(self), eventhandle.into_param().abi()).ok()
     }
     pub unsafe fn GetService<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.GetService)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsOffloadCapable(&self, category: AUDIO_STREAM_CATEGORY) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsOffloadCapable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(category), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsOffloadCapable(&self, category: AUDIO_STREAM_CATEGORY) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsOffloadCapable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(category), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetClientProperties(&self, pproperties: *const AudioClientProperties) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetClientProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pproperties)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBufferSizeLimits<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pformat: *const WAVEFORMATEX, beventdriven: Param1, phnsminbufferduration: *mut i64, phnsmaxbufferduration: *mut i64) -> ::windows_core::Result<()> {
+    pub unsafe fn GetBufferSizeLimits<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pformat: *const WAVEFORMATEX, beventdriven: Param1, phnsminbufferduration: *mut i64, phnsmaxbufferduration: *mut i64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetBufferSizeLimits)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pformat), beventdriven.into_param().abi(), ::core::mem::transmute(phnsminbufferduration), ::core::mem::transmute(phnsmaxbufferduration)).ok()
     }
 }
@@ -3237,18 +3099,9 @@ unsafe impl ::windows_core::Interface for IAudioClient2 {
 #[doc(hidden)]
 pub struct IAudioClient2_Vtbl {
     pub base__: IAudioClient_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsOffloadCapable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: AUDIO_STREAM_CATEGORY, pboffloadcapable: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsOffloadCapable: usize,
-    #[cfg(feature = "Win32_Foundation")]
+    pub IsOffloadCapable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: AUDIO_STREAM_CATEGORY, pboffloadcapable: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetClientProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pproperties: *const AudioClientProperties) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetClientProperties: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBufferSizeLimits: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pformat: *const WAVEFORMATEX, beventdriven: super::super::Foundation::BOOL, phnsminbufferduration: *mut i64, phnsmaxbufferduration: *mut i64) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBufferSizeLimits: usize,
+    pub GetBufferSizeLimits: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pformat: *const WAVEFORMATEX, beventdriven: ::win32_foundation::BOOL, phnsminbufferduration: *mut i64, phnsmaxbufferduration: *mut i64) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IAudioClient3(::windows_core::IUnknown);
@@ -3287,25 +3140,21 @@ impl IAudioClient3 {
     pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEventHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, eventhandle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEventHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, eventhandle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetEventHandle)(::windows_core::Interface::as_raw(self), eventhandle.into_param().abi()).ok()
     }
     pub unsafe fn GetService<T: ::windows_core::Interface>(&self) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.base__.GetService)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsOffloadCapable(&self, category: AUDIO_STREAM_CATEGORY) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsOffloadCapable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(category), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsOffloadCapable(&self, category: AUDIO_STREAM_CATEGORY) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsOffloadCapable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(category), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn SetClientProperties(&self, pproperties: *const AudioClientProperties) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetClientProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pproperties)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBufferSizeLimits<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pformat: *const WAVEFORMATEX, beventdriven: Param1, phnsminbufferduration: *mut i64, phnsmaxbufferduration: *mut i64) -> ::windows_core::Result<()> {
+    pub unsafe fn GetBufferSizeLimits<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pformat: *const WAVEFORMATEX, beventdriven: Param1, phnsminbufferduration: *mut i64, phnsmaxbufferduration: *mut i64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetBufferSizeLimits)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pformat), beventdriven.into_param().abi(), ::core::mem::transmute(phnsminbufferduration), ::core::mem::transmute(phnsmaxbufferduration)).ok()
     }
     pub unsafe fn GetSharedModeEnginePeriod(&self, pformat: *const WAVEFORMATEX, pdefaultperiodinframes: *mut u32, pfundamentalperiodinframes: *mut u32, pminperiodinframes: *mut u32, pmaxperiodinframes: *mut u32) -> ::windows_core::Result<()> {
@@ -3690,7 +3539,6 @@ impl IAudioEffectsManager {
     pub unsafe fn UnregisterAudioEffectsChangedNotificationCallback<'a, Param0: ::windows_core::IntoParam<'a, IAudioEffectsChangedNotificationClient>>(&self, client: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnregisterAudioEffectsChangedNotificationCallback)(::windows_core::Interface::as_raw(self), client.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetAudioEffects(&self, effects: *mut *mut AUDIO_EFFECT, numeffects: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetAudioEffects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(effects), ::core::mem::transmute(numeffects)).ok()
     }
@@ -3744,10 +3592,7 @@ pub struct IAudioEffectsManager_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub RegisterAudioEffectsChangedNotificationCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, client: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub UnregisterAudioEffectsChangedNotificationCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, client: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetAudioEffects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, effects: *mut *mut AUDIO_EFFECT, numeffects: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetAudioEffects: usize,
     pub SetAudioEffectState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, effectid: ::windows_core::GUID, state: AUDIO_EFFECT_STATE) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -3870,13 +3715,11 @@ pub struct IAudioInputSelector_Vtbl {
 #[repr(transparent)]
 pub struct IAudioLoudness(::windows_core::IUnknown);
 impl IAudioLoudness {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetEnabled(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetEnabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetEnabled(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetEnabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEnabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, benable: Param0, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEnabled<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, benable: Param0, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEnabled)(::windows_core::Interface::as_raw(self), benable.into_param().abi(), ::core::mem::transmute(pguideventcontext)).ok()
     }
 }
@@ -3924,14 +3767,8 @@ unsafe impl ::windows_core::Interface for IAudioLoudness {
 #[doc(hidden)]
 pub struct IAudioLoudness_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbenabled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetEnabled: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, benable: super::super::Foundation::BOOL, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetEnabled: usize,
+    pub GetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbenabled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, benable: ::win32_foundation::BOOL, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IAudioMidrange(::windows_core::IUnknown);
@@ -4025,14 +3862,12 @@ pub struct IAudioMidrange_Vtbl {
 #[repr(transparent)]
 pub struct IAudioMute(::windows_core::IUnknown);
 impl IAudioMute {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMute<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bmuted: Param0, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+    pub unsafe fn SetMute<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, bmuted: Param0, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMute)(::windows_core::Interface::as_raw(self), bmuted.into_param().abi(), ::core::mem::transmute(pguideventcontext)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetMute(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetMute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetMute(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetMute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IAudioMute> for ::windows_core::IUnknown {
@@ -4079,14 +3914,8 @@ unsafe impl ::windows_core::Interface for IAudioMute {
 #[doc(hidden)]
 pub struct IAudioMute_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetMute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bmuted: super::super::Foundation::BOOL, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetMute: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetMute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbmuted: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetMute: usize,
+    pub SetMute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bmuted: ::win32_foundation::BOOL, pguideventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub GetMute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbmuted: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IAudioOutputSelector(::windows_core::IUnknown);
@@ -4401,8 +4230,7 @@ impl IAudioSessionControl2 {
     pub unsafe fn IsSystemSoundsSession(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IsSystemSoundsSession)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDuckingPreference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, optout: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDuckingPreference<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, optout: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDuckingPreference)(::windows_core::Interface::as_raw(self), optout.into_param().abi()).ok()
     }
 }
@@ -4474,10 +4302,7 @@ pub struct IAudioSessionControl2_Vtbl {
     pub GetSessionInstanceIdentifier: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetProcessId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut u32) -> ::windows_core::HRESULT,
     pub IsSystemSoundsSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDuckingPreference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, optout: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDuckingPreference: usize,
+    pub SetDuckingPreference: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, optout: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IAudioSessionEnumerator(::windows_core::IUnknown);
@@ -4547,8 +4372,7 @@ impl IAudioSessionEvents {
     pub unsafe fn OnIconPathChanged<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, newiconpath: Param0, eventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIconPathChanged)(::windows_core::Interface::as_raw(self), newiconpath.into_param().abi(), ::core::mem::transmute(eventcontext)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OnSimpleVolumeChanged<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, newvolume: f32, newmute: Param1, eventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+    pub unsafe fn OnSimpleVolumeChanged<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, newvolume: f32, newmute: Param1, eventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnSimpleVolumeChanged)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(newvolume), newmute.into_param().abi(), ::core::mem::transmute(eventcontext)).ok()
     }
     pub unsafe fn OnChannelVolumeChanged(&self, newchannelvolumearray: &[f32], changedchannel: u32, eventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
@@ -4610,10 +4434,7 @@ pub struct IAudioSessionEvents_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub OnDisplayNameChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newdisplayname: ::windows_core::PCWSTR, eventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub OnIconPathChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newiconpath: ::windows_core::PCWSTR, eventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OnSimpleVolumeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newvolume: f32, newmute: super::super::Foundation::BOOL, eventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OnSimpleVolumeChanged: usize,
+    pub OnSimpleVolumeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newvolume: f32, newmute: ::win32_foundation::BOOL, eventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub OnChannelVolumeChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, channelcount: u32, newchannelvolumearray: *const f32, changedchannel: u32, eventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub OnGroupingParamChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newgroupingparam: *const ::windows_core::GUID, eventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub OnStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newstate: AudioSessionState) -> ::windows_core::HRESULT,
@@ -4966,7 +4787,7 @@ pub struct IAudioStreamVolume_Vtbl {
 pub struct IAudioSystemEffectsPropertyChangeNotificationClient(::windows_core::IUnknown);
 impl IAudioSystemEffectsPropertyChangeNotificationClient {
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn OnPropertyChanged<'a, Param1: ::windows_core::IntoParam<'a, super::super::UI::Shell::PropertiesSystem::PROPERTYKEY>>(&self, r#type: __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002, key: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn OnPropertyChanged<'a, Param1: ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>>(&self, r#type: __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002, key: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnPropertyChanged)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(r#type), key.into_param().abi()).ok()
     }
 }
@@ -5015,7 +4836,7 @@ unsafe impl ::windows_core::Interface for IAudioSystemEffectsPropertyChangeNotif
 pub struct IAudioSystemEffectsPropertyChangeNotificationClient_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub OnPropertyChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002, key: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::HRESULT,
+    pub OnPropertyChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002, key: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     OnPropertyChanged: usize,
 }
@@ -5023,19 +4844,19 @@ pub struct IAudioSystemEffectsPropertyChangeNotificationClient_Vtbl {
 pub struct IAudioSystemEffectsPropertyStore(::windows_core::IUnknown);
 impl IAudioSystemEffectsPropertyStore {
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn OpenDefaultPropertyStore(&self, stgmaccess: u32) -> ::windows_core::Result<super::super::UI::Shell::PropertiesSystem::IPropertyStore> {
+    pub unsafe fn OpenDefaultPropertyStore(&self, stgmaccess: u32) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).OpenDefaultPropertyStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(stgmaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::UI::Shell::PropertiesSystem::IPropertyStore>(result__)
+        (::windows_core::Interface::vtable(self).OpenDefaultPropertyStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(stgmaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::IPropertyStore>(result__)
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn OpenUserPropertyStore(&self, stgmaccess: u32) -> ::windows_core::Result<super::super::UI::Shell::PropertiesSystem::IPropertyStore> {
+    pub unsafe fn OpenUserPropertyStore(&self, stgmaccess: u32) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).OpenUserPropertyStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(stgmaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::UI::Shell::PropertiesSystem::IPropertyStore>(result__)
+        (::windows_core::Interface::vtable(self).OpenUserPropertyStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(stgmaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::IPropertyStore>(result__)
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn OpenVolatilePropertyStore(&self, stgmaccess: u32) -> ::windows_core::Result<super::super::UI::Shell::PropertiesSystem::IPropertyStore> {
+    pub unsafe fn OpenVolatilePropertyStore(&self, stgmaccess: u32) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).OpenVolatilePropertyStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(stgmaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::UI::Shell::PropertiesSystem::IPropertyStore>(result__)
+        (::windows_core::Interface::vtable(self).OpenVolatilePropertyStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(stgmaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::IPropertyStore>(result__)
     }
     pub unsafe fn ResetUserPropertyStore(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ResetUserPropertyStore)(::windows_core::Interface::as_raw(self)).ok()
@@ -5434,10 +5255,9 @@ impl IConnector {
     pub unsafe fn Disconnect(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Disconnect)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsConnected(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsConnected)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsConnected(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsConnected)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetConnectedTo(&self) -> ::windows_core::Result<IConnector> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5500,10 +5320,7 @@ pub struct IConnector_Vtbl {
     pub GetDataFlow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pflow: *mut DataFlow) -> ::windows_core::HRESULT,
     pub ConnectTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pconnectto: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Disconnect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsConnected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbconnected: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsConnected: usize,
+    pub IsConnected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbconnected: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetConnectedTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppconto: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetConnectorIdConnectedTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppwstrconnectorid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetDeviceIdConnectedTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppwstrdeviceid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
@@ -5713,8 +5530,7 @@ impl IDeviceTopology {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).GetDeviceId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetSignalPath<'a, Param0: ::windows_core::IntoParam<'a, IPart>, Param1: ::windows_core::IntoParam<'a, IPart>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pipartfrom: Param0, pipartto: Param1, brejectmixedpaths: Param2) -> ::windows_core::Result<IPartsList> {
+    pub unsafe fn GetSignalPath<'a, Param0: ::windows_core::IntoParam<'a, IPart>, Param1: ::windows_core::IntoParam<'a, IPart>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pipartfrom: Param0, pipartto: Param1, brejectmixedpaths: Param2) -> ::windows_core::Result<IPartsList> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSignalPath)(::windows_core::Interface::as_raw(self), pipartfrom.into_param().abi(), pipartto.into_param().abi(), brejectmixedpaths.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPartsList>(result__)
     }
@@ -5769,22 +5585,19 @@ pub struct IDeviceTopology_Vtbl {
     pub GetSubunit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nindex: u32, ppsubunit: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetPartById: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, nid: u32, pppart: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppwstrdeviceid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetSignalPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pipartfrom: ::windows_core::RawPtr, pipartto: ::windows_core::RawPtr, brejectmixedpaths: super::super::Foundation::BOOL, ppparts: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetSignalPath: usize,
+    pub GetSignalPath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pipartfrom: ::windows_core::RawPtr, pipartto: ::windows_core::RawPtr, brejectmixedpaths: ::win32_foundation::BOOL, ppparts: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IMMDevice(::windows_core::IUnknown);
 impl IMMDevice {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn Activate(&self, iid: *const ::windows_core::GUID, dwclsctx: super::super::System::Com::CLSCTX, pactivationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn Activate(&self, iid: *const ::windows_core::GUID, dwclsctx: ::win32_system::Com::CLSCTX, pactivationparams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Activate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iid), ::core::mem::transmute(dwclsctx), ::core::mem::transmute(pactivationparams), ::core::mem::transmute(ppinterface)).ok()
     }
     #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub unsafe fn OpenPropertyStore(&self, stgmaccess: super::super::System::Com::StructuredStorage::STGM) -> ::windows_core::Result<super::super::UI::Shell::PropertiesSystem::IPropertyStore> {
+    pub unsafe fn OpenPropertyStore(&self, stgmaccess: ::win32_system::Com::StructuredStorage::STGM) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).OpenPropertyStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(stgmaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::UI::Shell::PropertiesSystem::IPropertyStore>(result__)
+        (::windows_core::Interface::vtable(self).OpenPropertyStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(stgmaccess), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::IPropertyStore>(result__)
     }
     pub unsafe fn GetId(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
@@ -5839,12 +5652,12 @@ unsafe impl ::windows_core::Interface for IMMDevice {
 #[doc(hidden)]
 pub struct IMMDevice_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iid: *const ::windows_core::GUID, dwclsctx: super::super::System::Com::CLSCTX, pactivationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iid: *const ::windows_core::GUID, dwclsctx: ::win32_system::Com::CLSCTX, pactivationparams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     Activate: usize,
     #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub OpenPropertyStore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stgmaccess: super::super::System::Com::StructuredStorage::STGM, ppproperties: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub OpenPropertyStore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stgmaccess: ::win32_system::Com::StructuredStorage::STGM, ppproperties: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
     OpenPropertyStore: usize,
     pub GetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppstrid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
@@ -5853,8 +5666,8 @@ pub struct IMMDevice_Vtbl {
 #[repr(transparent)]
 pub struct IMMDeviceActivator(::windows_core::IUnknown);
 impl IMMDeviceActivator {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn Activate<'a, Param1: ::windows_core::IntoParam<'a, IMMDevice>>(&self, iid: *const ::windows_core::GUID, pdevice: Param1, pactivationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn Activate<'a, Param1: ::windows_core::IntoParam<'a, IMMDevice>>(&self, iid: *const ::windows_core::GUID, pdevice: Param1, pactivationparams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Activate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iid), pdevice.into_param().abi(), ::core::mem::transmute(pactivationparams), ::core::mem::transmute(ppinterface)).ok()
     }
 }
@@ -5902,9 +5715,9 @@ unsafe impl ::windows_core::Interface for IMMDeviceActivator {
 #[doc(hidden)]
 pub struct IMMDeviceActivator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iid: *const ::windows_core::GUID, pdevice: ::windows_core::RawPtr, pactivationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub Activate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iid: *const ::windows_core::GUID, pdevice: ::windows_core::RawPtr, pactivationparams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     Activate: usize,
 }
 #[repr(transparent)]
@@ -6108,7 +5921,7 @@ impl IMMNotificationClient {
         (::windows_core::Interface::vtable(self).OnDefaultDeviceChanged)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(flow), ::core::mem::transmute(role), pwstrdefaultdeviceid.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn OnPropertyValueChanged<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::UI::Shell::PropertiesSystem::PROPERTYKEY>>(&self, pwstrdeviceid: Param0, key: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn OnPropertyValueChanged<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>>(&self, pwstrdeviceid: Param0, key: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnPropertyValueChanged)(::windows_core::Interface::as_raw(self), pwstrdeviceid.into_param().abi(), key.into_param().abi()).ok()
     }
 }
@@ -6161,7 +5974,7 @@ pub struct IMMNotificationClient_Vtbl {
     pub OnDeviceRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwstrdeviceid: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub OnDefaultDeviceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flow: EDataFlow, role: ERole, pwstrdefaultdeviceid: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub OnPropertyValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwstrdeviceid: ::windows_core::PCWSTR, key: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::HRESULT,
+    pub OnPropertyValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwstrdeviceid: ::windows_core::PCWSTR, key: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     OnPropertyValueChanged: usize,
 }
@@ -6169,7 +5982,7 @@ pub struct IMMNotificationClient_Vtbl {
 pub struct IMessageFilter(::windows_core::IUnknown);
 impl IMessageFilter {
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn HandleInComingCall<'a, Param1: ::windows_core::IntoParam<'a, super::HTASK>>(&self, dwcalltype: u32, htaskcaller: Param1, dwtickcount: u32, lpinterfaceinfo: *const super::super::System::Com::INTERFACEINFO) -> u32 {
+    pub unsafe fn HandleInComingCall<'a, Param1: ::windows_core::IntoParam<'a, super::HTASK>>(&self, dwcalltype: u32, htaskcaller: Param1, dwtickcount: u32, lpinterfaceinfo: *const ::win32_system::Com::INTERFACEINFO) -> u32 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).HandleInComingCall)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwcalltype), htaskcaller.into_param().abi(), ::core::mem::transmute(dwtickcount), ::core::mem::transmute(lpinterfaceinfo)))
     }
     pub unsafe fn RetryRejectedCall<'a, Param0: ::windows_core::IntoParam<'a, super::HTASK>>(&self, htaskcallee: Param0, dwtickcount: u32, dwrejecttype: u32) -> u32 {
@@ -6224,7 +6037,7 @@ unsafe impl ::windows_core::Interface for IMessageFilter {
 pub struct IMessageFilter_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_System_Com")]
-    pub HandleInComingCall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwcalltype: u32, htaskcaller: super::HTASK, dwtickcount: u32, lpinterfaceinfo: *const super::super::System::Com::INTERFACEINFO) -> u32,
+    pub HandleInComingCall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwcalltype: u32, htaskcaller: super::HTASK, dwtickcount: u32, lpinterfaceinfo: *const ::win32_system::Com::INTERFACEINFO) -> u32,
     #[cfg(not(feature = "Win32_System_Com"))]
     HandleInComingCall: usize,
     pub RetryRejectedCall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, htaskcallee: super::HTASK, dwtickcount: u32, dwrejecttype: u32) -> u32,
@@ -6485,14 +6298,12 @@ impl ISimpleAudioVolume {
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         (::windows_core::Interface::vtable(self).GetMasterVolume)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMute<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bmute: Param0, eventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
+    pub unsafe fn SetMute<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, bmute: Param0, eventcontext: *const ::windows_core::GUID) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMute)(::windows_core::Interface::as_raw(self), bmute.into_param().abi(), ::core::mem::transmute(eventcontext)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetMute(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetMute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetMute(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetMute)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<ISimpleAudioVolume> for ::windows_core::IUnknown {
@@ -6541,14 +6352,8 @@ pub struct ISimpleAudioVolume_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub SetMasterVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flevel: f32, eventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetMasterVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pflevel: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetMute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bmute: super::super::Foundation::BOOL, eventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetMute: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetMute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbmute: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetMute: usize,
+    pub SetMute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bmute: ::win32_foundation::BOOL, eventcontext: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
+    pub GetMute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbmute: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISpatialAudioClient(::windows_core::IUnknown);
@@ -6575,12 +6380,12 @@ impl ISpatialAudioClient {
     pub unsafe fn IsAudioObjectFormatSupported(&self, objectformat: *const WAVEFORMATEX) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IsAudioObjectFormatSupported)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(objectformat)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn IsSpatialAudioStreamAvailable(&self, streamuuid: *const ::windows_core::GUID, auxiliaryinfo: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn IsSpatialAudioStreamAvailable(&self, streamuuid: *const ::windows_core::GUID, auxiliaryinfo: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IsSpatialAudioStreamAvailable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(streamuuid), ::core::mem::transmute(auxiliaryinfo)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn ActivateSpatialAudioStream<T: ::windows_core::Interface>(&self, activationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<T> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn ActivateSpatialAudioStream<T: ::windows_core::Interface>(&self, activationparams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).ActivateSpatialAudioStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(activationparams), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -6635,13 +6440,13 @@ pub struct ISpatialAudioClient_Vtbl {
     pub GetSupportedAudioObjectFormatEnumerator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, enumerator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetMaxFrameCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, objectformat: *const WAVEFORMATEX, framecountperbuffer: *mut u32) -> ::windows_core::HRESULT,
     pub IsAudioObjectFormatSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, objectformat: *const WAVEFORMATEX) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub IsSpatialAudioStreamAvailable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, streamuuid: *const ::windows_core::GUID, auxiliaryinfo: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub IsSpatialAudioStreamAvailable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, streamuuid: *const ::windows_core::GUID, auxiliaryinfo: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     IsSpatialAudioStreamAvailable: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub ActivateSpatialAudioStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, activationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT, riid: *const ::windows_core::GUID, stream: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub ActivateSpatialAudioStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, activationparams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT, riid: *const ::windows_core::GUID, stream: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     ActivateSpatialAudioStream: usize,
 }
 #[repr(transparent)]
@@ -6669,22 +6474,20 @@ impl ISpatialAudioClient2 {
     pub unsafe fn IsAudioObjectFormatSupported(&self, objectformat: *const WAVEFORMATEX) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.IsAudioObjectFormatSupported)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(objectformat)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn IsSpatialAudioStreamAvailable(&self, streamuuid: *const ::windows_core::GUID, auxiliaryinfo: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn IsSpatialAudioStreamAvailable(&self, streamuuid: *const ::windows_core::GUID, auxiliaryinfo: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.IsSpatialAudioStreamAvailable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(streamuuid), ::core::mem::transmute(auxiliaryinfo)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn ActivateSpatialAudioStream<T: ::windows_core::Interface>(&self, activationparams: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<T> {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn ActivateSpatialAudioStream<T: ::windows_core::Interface>(&self, activationparams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).base__.ActivateSpatialAudioStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(activationparams), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsOffloadCapable(&self, category: AUDIO_STREAM_CATEGORY) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsOffloadCapable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(category), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsOffloadCapable(&self, category: AUDIO_STREAM_CATEGORY) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsOffloadCapable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(category), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetMaxFrameCountForCategory<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, category: AUDIO_STREAM_CATEGORY, offloadenabled: Param1, objectformat: *const WAVEFORMATEX) -> ::windows_core::Result<u32> {
+    pub unsafe fn GetMaxFrameCountForCategory<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, category: AUDIO_STREAM_CATEGORY, offloadenabled: Param1, objectformat: *const WAVEFORMATEX) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetMaxFrameCountForCategory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(category), offloadenabled.into_param().abi(), ::core::mem::transmute(objectformat), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -6753,14 +6556,8 @@ unsafe impl ::windows_core::Interface for ISpatialAudioClient2 {
 #[doc(hidden)]
 pub struct ISpatialAudioClient2_Vtbl {
     pub base__: ISpatialAudioClient_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsOffloadCapable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: AUDIO_STREAM_CATEGORY, isoffloadcapable: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsOffloadCapable: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetMaxFrameCountForCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: AUDIO_STREAM_CATEGORY, offloadenabled: super::super::Foundation::BOOL, objectformat: *const WAVEFORMATEX, framecountperbuffer: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetMaxFrameCountForCategory: usize,
+    pub IsOffloadCapable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: AUDIO_STREAM_CATEGORY, isoffloadcapable: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetMaxFrameCountForCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: AUDIO_STREAM_CATEGORY, offloadenabled: ::win32_foundation::BOOL, objectformat: *const WAVEFORMATEX, framecountperbuffer: *mut u32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISpatialAudioMetadataClient(::windows_core::IUnknown);
@@ -7171,10 +6968,9 @@ impl ISpatialAudioObject {
     pub unsafe fn SetEndOfStream(&self, framecount: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetEndOfStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(framecount)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsActive(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsActive(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetAudioObjectType(&self) -> ::windows_core::Result<AudioObjectType> {
         let mut result__ = ::core::mem::MaybeUninit::<AudioObjectType>::zeroed();
@@ -7263,10 +7059,9 @@ impl ISpatialAudioObjectBase {
     pub unsafe fn SetEndOfStream(&self, framecount: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEndOfStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(framecount)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsActive(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsActive(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetAudioObjectType(&self) -> ::windows_core::Result<AudioObjectType> {
         let mut result__ = ::core::mem::MaybeUninit::<AudioObjectType>::zeroed();
@@ -7319,10 +7114,7 @@ pub struct ISpatialAudioObjectBase_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer: *mut *mut u8, bufferlength: *mut u32) -> ::windows_core::HRESULT,
     pub SetEndOfStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, framecount: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsActive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isactive: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsActive: usize,
+    pub IsActive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isactive: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetAudioObjectType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, audioobjecttype: *mut AudioObjectType) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -7334,10 +7126,9 @@ impl ISpatialAudioObjectForHrtf {
     pub unsafe fn SetEndOfStream(&self, framecount: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetEndOfStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(framecount)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsActive(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsActive(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetAudioObjectType(&self) -> ::windows_core::Result<AudioObjectType> {
         let mut result__ = ::core::mem::MaybeUninit::<AudioObjectType>::zeroed();
@@ -7442,10 +7233,9 @@ impl ISpatialAudioObjectForMetadataCommands {
     pub unsafe fn SetEndOfStream(&self, framecount: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetEndOfStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(framecount)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsActive(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsActive(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetAudioObjectType(&self) -> ::windows_core::Result<AudioObjectType> {
         let mut result__ = ::core::mem::MaybeUninit::<AudioObjectType>::zeroed();
@@ -7530,10 +7320,9 @@ impl ISpatialAudioObjectForMetadataItems {
     pub unsafe fn SetEndOfStream(&self, framecount: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetEndOfStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(framecount)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsActive(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsActive(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsActive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetAudioObjectType(&self) -> ::windows_core::Result<AudioObjectType> {
         let mut result__ = ::core::mem::MaybeUninit::<AudioObjectType>::zeroed();
@@ -8086,8 +7875,7 @@ unsafe impl ::windows_core::Interface for ISubunit {
 pub struct ISubunit_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type LPACMDRIVERPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: HACMDRIVERID, param2: u32, param3: super::super::Foundation::LPARAM, param4: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT>;
+pub type LPACMDRIVERPROC = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: HACMDRIVERID, param2: u32, param3: ::win32_foundation::LPARAM, param4: ::win32_foundation::LPARAM) -> ::win32_foundation::LRESULT>;
 #[cfg(feature = "Win32_Media_Multimedia")]
 pub type LPMIDICALLBACK = ::core::option::Option<unsafe extern "system" fn(hdrvr: super::Multimedia::HDRVR, umsg: u32, dwuser: usize, dw1: usize, dw2: usize)>;
 #[cfg(feature = "Win32_Media_Multimedia")]
@@ -8172,38 +7960,31 @@ impl ::core::default::Default for MIDIHDR {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIDIINCAPS2A {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub dwSupport: u32,
     pub ManufacturerGuid: ::windows_core::GUID,
     pub ProductGuid: ::windows_core::GUID,
     pub NameGuid: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIDIINCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIDIINCAPS2A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIDIINCAPS2A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIDIINCAPS2A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDIINCAPS2A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIDIINCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIDIINCAPS2A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8241,35 +8022,28 @@ impl ::core::default::Default for MIDIINCAPS2W {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIDIINCAPSA {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub dwSupport: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIDIINCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIDIINCAPSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIDIINCAPSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIDIINCAPSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDIINCAPSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIDIINCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIDIINCAPSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8304,12 +8078,11 @@ impl ::core::default::Default for MIDIINCAPSW {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIDIOUTCAPS2A {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub wTechnology: u16,
     pub wVoices: u16,
     pub wNotes: u16,
@@ -8319,27 +8092,21 @@ pub struct MIDIOUTCAPS2A {
     pub ProductGuid: ::windows_core::GUID,
     pub NameGuid: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIDIOUTCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIDIOUTCAPS2A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIDIOUTCAPS2A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIDIOUTCAPS2A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDIOUTCAPS2A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIDIOUTCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIDIOUTCAPS2A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8381,39 +8148,32 @@ impl ::core::default::Default for MIDIOUTCAPS2W {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIDIOUTCAPSA {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub wTechnology: u16,
     pub wVoices: u16,
     pub wNotes: u16,
     pub wChannelMask: u16,
     pub dwSupport: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIDIOUTCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIDIOUTCAPSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIDIOUTCAPSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIDIOUTCAPSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIDIOUTCAPSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIDIOUTCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIDIOUTCAPSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8602,39 +8362,32 @@ impl ::core::ops::Not for MIDI_WAVE_OPEN_TYPE {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERCAPS2A {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub fdwSupport: u32,
     pub cDestinations: u32,
     pub ManufacturerGuid: ::windows_core::GUID,
     pub ProductGuid: ::windows_core::GUID,
     pub NameGuid: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCAPS2A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCAPS2A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCAPS2A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCAPS2A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCAPS2A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8673,36 +8426,29 @@ impl ::core::default::Default for MIXERCAPS2W {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERCAPSA {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub fdwSupport: u32,
     pub cDestinations: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCAPSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCAPSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCAPSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCAPSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCAPSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8738,176 +8484,140 @@ impl ::core::default::Default for MIXERCAPSW {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERCONTROLA {
     pub cbStruct: u32,
     pub dwControlID: u32,
     pub dwControlType: u32,
     pub fdwControl: u32,
     pub cMultipleItems: u32,
-    pub szShortName: [super::super::Foundation::CHAR; 16],
-    pub szName: [super::super::Foundation::CHAR; 64],
+    pub szShortName: [::win32_foundation::CHAR; 16],
+    pub szName: [::win32_foundation::CHAR; 64],
     pub Bounds: MIXERCONTROLA_0,
     pub Metrics: MIXERCONTROLA_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCONTROLA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCONTROLA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCONTROLA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCONTROLA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCONTROLA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCONTROLA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCONTROLA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub union MIXERCONTROLA_0 {
     pub Anonymous1: MIXERCONTROLA_0_0,
     pub Anonymous2: MIXERCONTROLA_0_1,
     pub dwReserved: [u32; 6],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCONTROLA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCONTROLA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCONTROLA_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCONTROLA_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCONTROLA_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCONTROLA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCONTROLA_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERCONTROLA_0_0 {
     pub lMinimum: i32,
     pub lMaximum: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCONTROLA_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCONTROLA_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCONTROLA_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCONTROLA_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCONTROLA_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCONTROLA_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCONTROLA_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERCONTROLA_0_1 {
     pub dwMinimum: u32,
     pub dwMaximum: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCONTROLA_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCONTROLA_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCONTROLA_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCONTROLA_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCONTROLA_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCONTROLA_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCONTROLA_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub union MIXERCONTROLA_1 {
     pub cSteps: u32,
     pub cbCustomData: u32,
     pub dwReserved: [u32; 6],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCONTROLA_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCONTROLA_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCONTROLA_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCONTROLA_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCONTROLA_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCONTROLA_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCONTROLA_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERCONTROLDETAILS {
     pub cbStruct: u32,
     pub dwControlID: u32,
@@ -8916,59 +8626,46 @@ pub struct MIXERCONTROLDETAILS {
     pub cbDetails: u32,
     pub paDetails: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCONTROLDETAILS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCONTROLDETAILS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCONTROLDETAILS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCONTROLDETAILS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCONTROLDETAILS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCONTROLDETAILS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCONTROLDETAILS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub union MIXERCONTROLDETAILS_0 {
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub cMultipleItems: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCONTROLDETAILS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCONTROLDETAILS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCONTROLDETAILS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCONTROLDETAILS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCONTROLDETAILS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCONTROLDETAILS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCONTROLDETAILS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8999,33 +8696,26 @@ impl ::core::default::Default for MIXERCONTROLDETAILS_BOOLEAN {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERCONTROLDETAILS_LISTTEXTA {
     pub dwParam1: u32,
     pub dwParam2: u32,
-    pub szName: [super::super::Foundation::CHAR; 64],
+    pub szName: [::win32_foundation::CHAR; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERCONTROLDETAILS_LISTTEXTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERCONTROLDETAILS_LISTTEXTA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERCONTROLDETAILS_LISTTEXTA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERCONTROLDETAILS_LISTTEXTA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERCONTROLDETAILS_LISTTEXTA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERCONTROLDETAILS_LISTTEXTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERCONTROLDETAILS_LISTTEXTA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9298,7 +8988,6 @@ pub const MIXERCONTROL_CT_UNITS_PERCENT: i32 = 327680i32;
 pub const MIXERCONTROL_CT_UNITS_SIGNED: i32 = 131072i32;
 pub const MIXERCONTROL_CT_UNITS_UNSIGNED: i32 = 196608i32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERLINEA {
     pub cbStruct: u32,
     pub dwDestination: u32,
@@ -9310,74 +8999,60 @@ pub struct MIXERLINEA {
     pub cChannels: u32,
     pub cConnections: u32,
     pub cControls: u32,
-    pub szShortName: [super::super::Foundation::CHAR; 16],
-    pub szName: [super::super::Foundation::CHAR; 64],
+    pub szShortName: [::win32_foundation::CHAR; 16],
+    pub szName: [::win32_foundation::CHAR; 64],
     pub Target: MIXERLINEA_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERLINEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERLINEA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERLINEA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERLINEA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERLINEA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERLINEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERLINEA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERLINEA_0 {
     pub dwType: u32,
     pub dwDeviceID: u32,
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERLINEA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERLINEA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERLINEA_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERLINEA_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERLINEA_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERLINEA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERLINEA_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MIXERLINECONTROLSA {
     pub cbStruct: u32,
     pub dwLineID: u32,
@@ -9386,59 +9061,46 @@ pub struct MIXERLINECONTROLSA {
     pub cbmxctrl: u32,
     pub pamxctrl: *mut MIXERCONTROLA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERLINECONTROLSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERLINECONTROLSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERLINECONTROLSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERLINECONTROLSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERLINECONTROLSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERLINECONTROLSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERLINECONTROLSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub union MIXERLINECONTROLSA_0 {
     pub dwControlID: u32,
     pub dwControlType: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MIXERLINECONTROLSA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MIXERLINECONTROLSA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MIXERLINECONTROLSA_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MIXERLINECONTROLSA_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MIXERLINECONTROLSA_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MIXERLINECONTROLSA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MIXERLINECONTROLSA_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9684,37 +9346,37 @@ impl ::core::default::Default for PCMWAVEFORMAT {
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpointLogo_IconEffects: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xf1ab780d_2010_4ed3_a3a6_8b87f0f0c476), pid: 0u32 };
+pub const PKEY_AudioEndpointLogo_IconEffects: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xf1ab780d_2010_4ed3_a3a6_8b87f0f0c476), pid: 0u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpointLogo_IconPath: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xf1ab780d_2010_4ed3_a3a6_8b87f0f0c476), pid: 1u32 };
+pub const PKEY_AudioEndpointLogo_IconPath: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xf1ab780d_2010_4ed3_a3a6_8b87f0f0c476), pid: 1u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpointSettings_LaunchContract: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x14242002_0320_4de4_9555_a7d82b73c286), pid: 1u32 };
+pub const PKEY_AudioEndpointSettings_LaunchContract: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x14242002_0320_4de4_9555_a7d82b73c286), pid: 1u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpointSettings_MenuText: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x14242002_0320_4de4_9555_a7d82b73c286), pid: 0u32 };
+pub const PKEY_AudioEndpointSettings_MenuText: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x14242002_0320_4de4_9555_a7d82b73c286), pid: 0u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_Association: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 2u32 };
+pub const PKEY_AudioEndpoint_Association: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 2u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_ControlPanelPageProvider: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 1u32 };
+pub const PKEY_AudioEndpoint_ControlPanelPageProvider: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 1u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_Default_VolumeInDb: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 9u32 };
+pub const PKEY_AudioEndpoint_Default_VolumeInDb: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 9u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_Disable_SysFx: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 5u32 };
+pub const PKEY_AudioEndpoint_Disable_SysFx: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 5u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_FormFactor: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 0u32 };
+pub const PKEY_AudioEndpoint_FormFactor: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 0u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_FullRangeSpeakers: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 6u32 };
+pub const PKEY_AudioEndpoint_FullRangeSpeakers: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 6u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_GUID: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 4u32 };
+pub const PKEY_AudioEndpoint_GUID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 4u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_JackSubType: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 8u32 };
+pub const PKEY_AudioEndpoint_JackSubType: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 8u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_PhysicalSpeakers: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 3u32 };
+pub const PKEY_AudioEndpoint_PhysicalSpeakers: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 3u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEndpoint_Supports_EventDriven_Mode: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 7u32 };
+pub const PKEY_AudioEndpoint_Supports_EventDriven_Mode: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x1da5d803_d492_4edd_8c23_e0c0ffee7f0e), pid: 7u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEngine_DeviceFormat: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xf19f064d_082c_4e27_bc73_6882a1bb8e4c), pid: 0u32 };
+pub const PKEY_AudioEngine_DeviceFormat: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xf19f064d_082c_4e27_bc73_6882a1bb8e4c), pid: 0u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_AudioEngine_OEMFormat: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xe4870e26_3cc5_4cd2_ba46_ca0a9a70ed04), pid: 3u32 };
+pub const PKEY_AudioEngine_OEMFormat: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0xe4870e26_3cc5_4cd2_ba46_ca0a9a70ed04), pid: 3u32 };
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
 pub struct PROCESS_LOOPBACK_MODE(pub i32);
@@ -9763,28 +9425,26 @@ impl ::core::fmt::Debug for PartType {
         f.debug_tuple("PartType").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PlaySoundA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(pszsound: Param0, hmod: Param1, fdwsound: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn PlaySoundA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>>(pszsound: Param0, hmod: Param1, fdwsound: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PlaySoundA(pszsound: ::windows_core::PCSTR, hmod: super::super::Foundation::HINSTANCE, fdwsound: u32) -> super::super::Foundation::BOOL;
+            fn PlaySoundA(pszsound: ::windows_core::PCSTR, hmod: ::win32_foundation::HINSTANCE, fdwsound: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PlaySoundA(pszsound.into_param().abi(), hmod.into_param().abi(), ::core::mem::transmute(fdwsound)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PlaySoundW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(pszsound: Param0, hmod: Param1, fdwsound: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn PlaySoundW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>>(pszsound: Param0, hmod: Param1, fdwsound: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PlaySoundW(pszsound: ::windows_core::PCWSTR, hmod: super::super::Foundation::HINSTANCE, fdwsound: u32) -> super::super::Foundation::BOOL;
+            fn PlaySoundW(pszsound: ::windows_core::PCWSTR, hmod: ::win32_foundation::HINSTANCE, fdwsound: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PlaySoundW(pszsound.into_param().abi(), hmod.into_param().abi(), ::core::mem::transmute(fdwsound)))
     }
@@ -9936,47 +9596,41 @@ impl ::core::default::Default for SpatialAudioClientActivationParams {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SpatialAudioHrtfActivationParams {
     pub ObjectFormat: *const WAVEFORMATEX,
     pub StaticObjectTypeMask: AudioObjectType,
     pub MinDynamicObjectCount: u32,
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
-    pub EventHandle: super::super::Foundation::HANDLE,
+    pub EventHandle: ::win32_foundation::HANDLE,
     pub NotifyObject: ::core::option::Option<ISpatialAudioObjectRenderStreamNotify>,
     pub DistanceDecay: *mut SpatialAudioHrtfDistanceDecay,
     pub Directivity: *mut SpatialAudioHrtfDirectivityUnion,
     pub Environment: *mut SpatialAudioHrtfEnvironmentType,
     pub Orientation: *mut f32,
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SpatialAudioHrtfActivationParams {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SpatialAudioHrtfActivationParams {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialAudioHrtfActivationParams>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SpatialAudioHrtfActivationParams {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SpatialAudioHrtfActivationParams {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SpatialAudioHrtfActivationParams2 {
     pub ObjectFormat: *const WAVEFORMATEX,
     pub StaticObjectTypeMask: AudioObjectType,
     pub MinDynamicObjectCount: u32,
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
-    pub EventHandle: super::super::Foundation::HANDLE,
+    pub EventHandle: ::win32_foundation::HANDLE,
     pub NotifyObject: ::core::option::Option<ISpatialAudioObjectRenderStreamNotify>,
     pub DistanceDecay: *mut SpatialAudioHrtfDistanceDecay,
     pub Directivity: *mut SpatialAudioHrtfDirectivityUnion,
@@ -9984,19 +9638,15 @@ pub struct SpatialAudioHrtfActivationParams2 {
     pub Orientation: *mut f32,
     pub Options: SPATIAL_AUDIO_STREAM_OPTIONS,
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SpatialAudioHrtfActivationParams2 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SpatialAudioHrtfActivationParams2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialAudioHrtfActivationParams2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SpatialAudioHrtfActivationParams2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SpatialAudioHrtfActivationParams2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10287,124 +9937,114 @@ impl ::core::fmt::Debug for SpatialAudioMetadataWriterOverflowMode {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SpatialAudioObjectRenderStreamActivationParams {
     pub ObjectFormat: *const WAVEFORMATEX,
     pub StaticObjectTypeMask: AudioObjectType,
     pub MinDynamicObjectCount: u32,
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
-    pub EventHandle: super::super::Foundation::HANDLE,
+    pub EventHandle: ::win32_foundation::HANDLE,
     pub NotifyObject: ::core::option::Option<ISpatialAudioObjectRenderStreamNotify>,
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SpatialAudioObjectRenderStreamActivationParams {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SpatialAudioObjectRenderStreamActivationParams {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialAudioObjectRenderStreamActivationParams>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SpatialAudioObjectRenderStreamActivationParams {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SpatialAudioObjectRenderStreamActivationParams {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SpatialAudioObjectRenderStreamActivationParams2 {
     pub ObjectFormat: *const WAVEFORMATEX,
     pub StaticObjectTypeMask: AudioObjectType,
     pub MinDynamicObjectCount: u32,
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
-    pub EventHandle: super::super::Foundation::HANDLE,
+    pub EventHandle: ::win32_foundation::HANDLE,
     pub NotifyObject: ::core::option::Option<ISpatialAudioObjectRenderStreamNotify>,
     pub Options: SPATIAL_AUDIO_STREAM_OPTIONS,
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SpatialAudioObjectRenderStreamActivationParams2 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SpatialAudioObjectRenderStreamActivationParams2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialAudioObjectRenderStreamActivationParams2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SpatialAudioObjectRenderStreamActivationParams2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SpatialAudioObjectRenderStreamActivationParams2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct SpatialAudioObjectRenderStreamForMetadataActivationParams {
     pub ObjectFormat: *const WAVEFORMATEX,
     pub StaticObjectTypeMask: AudioObjectType,
     pub MinDynamicObjectCount: u32,
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
-    pub EventHandle: super::super::Foundation::HANDLE,
+    pub EventHandle: ::win32_foundation::HANDLE,
     pub MetadataFormatId: ::windows_core::GUID,
     pub MaxMetadataItemCount: u16,
-    pub MetadataActivationParams: *const super::super::System::Com::StructuredStorage::PROPVARIANT,
+    pub MetadataActivationParams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT,
     pub NotifyObject: ::core::option::Option<ISpatialAudioObjectRenderStreamNotify>,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 unsafe impl ::windows_core::Abi for SpatialAudioObjectRenderStreamForMetadataActivationParams {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::PartialEq for SpatialAudioObjectRenderStreamForMetadataActivationParams {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialAudioObjectRenderStreamForMetadataActivationParams>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::Eq for SpatialAudioObjectRenderStreamForMetadataActivationParams {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::default::Default for SpatialAudioObjectRenderStreamForMetadataActivationParams {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(1))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct SpatialAudioObjectRenderStreamForMetadataActivationParams2 {
     pub ObjectFormat: *const WAVEFORMATEX,
     pub StaticObjectTypeMask: AudioObjectType,
     pub MinDynamicObjectCount: u32,
     pub MaxDynamicObjectCount: u32,
     pub Category: AUDIO_STREAM_CATEGORY,
-    pub EventHandle: super::super::Foundation::HANDLE,
+    pub EventHandle: ::win32_foundation::HANDLE,
     pub MetadataFormatId: ::windows_core::GUID,
     pub MaxMetadataItemCount: u32,
-    pub MetadataActivationParams: *const super::super::System::Com::StructuredStorage::PROPVARIANT,
+    pub MetadataActivationParams: *const ::win32_system::Com::StructuredStorage::PROPVARIANT,
     pub NotifyObject: ::core::option::Option<ISpatialAudioObjectRenderStreamNotify>,
     pub Options: SPATIAL_AUDIO_STREAM_OPTIONS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 unsafe impl ::windows_core::Abi for SpatialAudioObjectRenderStreamForMetadataActivationParams2 {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::PartialEq for SpatialAudioObjectRenderStreamForMetadataActivationParams2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SpatialAudioObjectRenderStreamForMetadataActivationParams2>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::cmp::Eq for SpatialAudioObjectRenderStreamForMetadataActivationParams2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+#[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::default::Default for SpatialAudioObjectRenderStreamForMetadataActivationParams2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10612,12 +10252,11 @@ impl ::core::default::Default for WAVEHDR {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WAVEINCAPS2A {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub dwFormats: u32,
     pub wChannels: u16,
     pub wReserved1: u16,
@@ -10625,27 +10264,21 @@ pub struct WAVEINCAPS2A {
     pub ProductGuid: ::windows_core::GUID,
     pub NameGuid: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WAVEINCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WAVEINCAPS2A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WAVEINCAPS2A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WAVEINCAPS2A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WAVEINCAPS2A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WAVEINCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WAVEINCAPS2A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10685,37 +10318,30 @@ impl ::core::default::Default for WAVEINCAPS2W {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WAVEINCAPSA {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub dwFormats: u32,
     pub wChannels: u16,
     pub wReserved1: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WAVEINCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WAVEINCAPSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WAVEINCAPSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WAVEINCAPSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WAVEINCAPSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WAVEINCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WAVEINCAPSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10755,12 +10381,11 @@ pub const WAVEIN_MAPPER_STATUS_DEVICE: u32 = 0u32;
 pub const WAVEIN_MAPPER_STATUS_FORMAT: u32 = 2u32;
 pub const WAVEIN_MAPPER_STATUS_MAPPED: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WAVEOUTCAPS2A {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub dwFormats: u32,
     pub wChannels: u16,
     pub wReserved1: u16,
@@ -10769,27 +10394,21 @@ pub struct WAVEOUTCAPS2A {
     pub ProductGuid: ::windows_core::GUID,
     pub NameGuid: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WAVEOUTCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WAVEOUTCAPS2A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WAVEOUTCAPS2A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WAVEOUTCAPS2A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WAVEOUTCAPS2A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WAVEOUTCAPS2A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WAVEOUTCAPS2A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10830,38 +10449,31 @@ impl ::core::default::Default for WAVEOUTCAPS2W {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WAVEOUTCAPSA {
     pub wMid: u16,
     pub wPid: u16,
     pub vDriverVersion: u32,
-    pub szPname: [super::super::Foundation::CHAR; 32],
+    pub szPname: [::win32_foundation::CHAR; 32],
     pub dwFormats: u32,
     pub wChannels: u16,
     pub wReserved1: u16,
     pub dwSupport: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WAVEOUTCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WAVEOUTCAPSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WAVEOUTCAPSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WAVEOUTCAPSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WAVEOUTCAPSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WAVEOUTCAPSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WAVEOUTCAPSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10991,28 +10603,26 @@ impl ::core::fmt::Debug for __MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002 {
         f.debug_tuple("__MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn acmDriverAddA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(phadid: *mut isize, hinstmodule: Param1, lparam: Param2, dwpriority: u32, fdwadd: u32) -> u32 {
+pub unsafe fn acmDriverAddA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(phadid: *mut isize, hinstmodule: Param1, lparam: Param2, dwpriority: u32, fdwadd: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn acmDriverAddA(phadid: *mut isize, hinstmodule: super::super::Foundation::HINSTANCE, lparam: super::super::Foundation::LPARAM, dwpriority: u32, fdwadd: u32) -> u32;
+            fn acmDriverAddA(phadid: *mut isize, hinstmodule: ::win32_foundation::HINSTANCE, lparam: ::win32_foundation::LPARAM, dwpriority: u32, fdwadd: u32) -> u32;
         }
         ::core::mem::transmute(acmDriverAddA(::core::mem::transmute(phadid), hinstmodule.into_param().abi(), lparam.into_param().abi(), ::core::mem::transmute(dwpriority), ::core::mem::transmute(fdwadd)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn acmDriverAddW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(phadid: *mut isize, hinstmodule: Param1, lparam: Param2, dwpriority: u32, fdwadd: u32) -> u32 {
+pub unsafe fn acmDriverAddW<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(phadid: *mut isize, hinstmodule: Param1, lparam: Param2, dwpriority: u32, fdwadd: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn acmDriverAddW(phadid: *mut isize, hinstmodule: super::super::Foundation::HINSTANCE, lparam: super::super::Foundation::LPARAM, dwpriority: u32, fdwadd: u32) -> u32;
+            fn acmDriverAddW(phadid: *mut isize, hinstmodule: ::win32_foundation::HINSTANCE, lparam: ::win32_foundation::LPARAM, dwpriority: u32, fdwadd: u32) -> u32;
         }
         ::core::mem::transmute(acmDriverAddW(::core::mem::transmute(phadid), hinstmodule.into_param().abi(), lparam.into_param().abi(), ::core::mem::transmute(dwpriority), ::core::mem::transmute(fdwadd)))
     }
@@ -11032,7 +10642,7 @@ pub unsafe fn acmDriverClose<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
 pub unsafe fn acmDriverDetailsA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVERID>>(hadid: Param0, padd: *mut ACMDRIVERDETAILSA, fdwdetails: u32) -> u32 {
     #[cfg(windows)]
@@ -11060,7 +10670,6 @@ pub unsafe fn acmDriverDetailsW<'a, Param0: ::windows_core::IntoParam<'a, HACMDR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmDriverEnum(fncallback: ACMDRIVERENUMCB, dwinstance: usize, fdwenum: u32) -> u32 {
     #[cfg(windows)]
@@ -11087,14 +10696,13 @@ pub unsafe fn acmDriverID<'a, Param0: ::windows_core::IntoParam<'a, HACMOBJ>>(ha
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn acmDriverMessage<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(had: Param0, umsg: u32, lparam1: Param2, lparam2: Param3) -> super::super::Foundation::LRESULT {
+pub unsafe fn acmDriverMessage<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(had: Param0, umsg: u32, lparam1: Param2, lparam2: Param3) -> ::win32_foundation::LRESULT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn acmDriverMessage(had: HACMDRIVER, umsg: u32, lparam1: super::super::Foundation::LPARAM, lparam2: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
+            fn acmDriverMessage(had: HACMDRIVER, umsg: u32, lparam1: ::win32_foundation::LPARAM, lparam2: ::win32_foundation::LPARAM) -> ::win32_foundation::LRESULT;
         }
         ::core::mem::transmute(acmDriverMessage(had.into_param().abi(), ::core::mem::transmute(umsg), lparam1.into_param().abi(), lparam2.into_param().abi()))
     }
@@ -11140,7 +10748,6 @@ pub unsafe fn acmDriverRemove<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIV
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFilterChooseA(pafltrc: *mut ACMFILTERCHOOSEA) -> u32 {
     #[cfg(windows)]
@@ -11154,7 +10761,6 @@ pub unsafe fn acmFilterChooseA(pafltrc: *mut ACMFILTERCHOOSEA) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFilterChooseW(pafltrc: *mut ACMFILTERCHOOSEW) -> u32 {
     #[cfg(windows)]
@@ -11168,7 +10774,6 @@ pub unsafe fn acmFilterChooseW(pafltrc: *mut ACMFILTERCHOOSEW) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFilterDetailsA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, pafd: *mut ACMFILTERDETAILSA, fdwdetails: u32) -> u32 {
     #[cfg(windows)]
@@ -11195,7 +10800,6 @@ pub unsafe fn acmFilterDetailsW<'a, Param0: ::windows_core::IntoParam<'a, HACMDR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFilterEnumA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, pafd: *mut ACMFILTERDETAILSA, fncallback: ACMFILTERENUMCBA, dwinstance: usize, fdwenum: u32) -> u32 {
     #[cfg(windows)]
@@ -11209,7 +10813,6 @@ pub unsafe fn acmFilterEnumA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFilterEnumW<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, pafd: *mut ACMFILTERDETAILSW, fncallback: ACMFILTERENUMCBW, dwinstance: usize, fdwenum: u32) -> u32 {
     #[cfg(windows)]
@@ -11223,7 +10826,6 @@ pub unsafe fn acmFilterEnumW<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFilterTagDetailsA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, paftd: *mut ACMFILTERTAGDETAILSA, fdwdetails: u32) -> u32 {
     #[cfg(windows)]
@@ -11250,7 +10852,6 @@ pub unsafe fn acmFilterTagDetailsW<'a, Param0: ::windows_core::IntoParam<'a, HAC
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFilterTagEnumA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, paftd: *mut ACMFILTERTAGDETAILSA, fncallback: ACMFILTERTAGENUMCBA, dwinstance: usize, fdwenum: u32) -> u32 {
     #[cfg(windows)]
@@ -11264,7 +10865,6 @@ pub unsafe fn acmFilterTagEnumA<'a, Param0: ::windows_core::IntoParam<'a, HACMDR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFilterTagEnumW<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, paftd: *mut ACMFILTERTAGDETAILSW, fncallback: ACMFILTERTAGENUMCBW, dwinstance: usize, fdwenum: u32) -> u32 {
     #[cfg(windows)]
@@ -11278,7 +10878,6 @@ pub unsafe fn acmFilterTagEnumW<'a, Param0: ::windows_core::IntoParam<'a, HACMDR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFormatChooseA(pafmtc: *mut ACMFORMATCHOOSEA) -> u32 {
     #[cfg(windows)]
@@ -11292,7 +10891,6 @@ pub unsafe fn acmFormatChooseA(pafmtc: *mut ACMFORMATCHOOSEA) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFormatChooseW(pafmtc: *mut ACMFORMATCHOOSEW) -> u32 {
     #[cfg(windows)]
@@ -11306,7 +10904,6 @@ pub unsafe fn acmFormatChooseW(pafmtc: *mut ACMFORMATCHOOSEW) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFormatDetailsA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, pafd: *mut ACMFORMATDETAILSA, fdwdetails: u32) -> u32 {
     #[cfg(windows)]
@@ -11333,7 +10930,6 @@ pub unsafe fn acmFormatDetailsW<'a, Param0: ::windows_core::IntoParam<'a, HACMDR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFormatEnumA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, pafd: *mut ACMFORMATDETAILSA, fncallback: ACMFORMATENUMCBA, dwinstance: usize, fdwenum: u32) -> u32 {
     #[cfg(windows)]
@@ -11347,7 +10943,6 @@ pub unsafe fn acmFormatEnumA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFormatEnumW<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, pafd: *mut tACMFORMATDETAILSW, fncallback: ACMFORMATENUMCBW, dwinstance: usize, fdwenum: u32) -> u32 {
     #[cfg(windows)]
@@ -11374,7 +10969,6 @@ pub unsafe fn acmFormatSuggest<'a, Param0: ::windows_core::IntoParam<'a, HACMDRI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFormatTagDetailsA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, paftd: *mut ACMFORMATTAGDETAILSA, fdwdetails: u32) -> u32 {
     #[cfg(windows)]
@@ -11401,7 +10995,6 @@ pub unsafe fn acmFormatTagDetailsW<'a, Param0: ::windows_core::IntoParam<'a, HAC
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFormatTagEnumA<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, paftd: *mut ACMFORMATTAGDETAILSA, fncallback: ACMFORMATTAGENUMCBA, dwinstance: usize, fdwenum: u32) -> u32 {
     #[cfg(windows)]
@@ -11415,7 +11008,6 @@ pub unsafe fn acmFormatTagEnumA<'a, Param0: ::windows_core::IntoParam<'a, HACMDR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn acmFormatTagEnumW<'a, Param0: ::windows_core::IntoParam<'a, HACMDRIVER>>(had: Param0, paftd: *mut ACMFORMATTAGDETAILSW, fncallback: ACMFORMATTAGENUMCBW, dwinstance: usize, fdwenum: u32) -> u32 {
     #[cfg(windows)]
@@ -11481,14 +11073,13 @@ pub unsafe fn acmStreamConvert<'a, Param0: ::windows_core::IntoParam<'a, HACMSTR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn acmStreamMessage<'a, Param0: ::windows_core::IntoParam<'a, HACMSTREAM>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(has: Param0, umsg: u32, lparam1: Param2, lparam2: Param3) -> u32 {
+pub unsafe fn acmStreamMessage<'a, Param0: ::windows_core::IntoParam<'a, HACMSTREAM>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(has: Param0, umsg: u32, lparam1: Param2, lparam2: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn acmStreamMessage(has: HACMSTREAM, umsg: u32, lparam1: super::super::Foundation::LPARAM, lparam2: super::super::Foundation::LPARAM) -> u32;
+            fn acmStreamMessage(has: HACMSTREAM, umsg: u32, lparam1: ::win32_foundation::LPARAM, lparam2: ::win32_foundation::LPARAM) -> u32;
         }
         ::core::mem::transmute(acmStreamMessage(has.into_param().abi(), ::core::mem::transmute(umsg), lparam1.into_param().abi(), lparam2.into_param().abi()))
     }
@@ -11560,7 +11151,6 @@ pub unsafe fn acmStreamUnprepareHeader<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn auxGetDevCapsA(udeviceid: usize, pac: *mut AUXCAPSA, cbac: u32) -> u32 {
     #[cfg(windows)]
@@ -11691,7 +11281,6 @@ pub unsafe fn midiInClose<'a, Param0: ::windows_core::IntoParam<'a, HMIDIIN>>(hm
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn midiInGetDevCapsA(udeviceid: usize, pmic: *mut MIDIINCAPSA, cbmic: u32) -> u32 {
     #[cfg(windows)]
@@ -11900,7 +11489,6 @@ pub unsafe fn midiOutClose<'a, Param0: ::windows_core::IntoParam<'a, HMIDIOUT>>(
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn midiOutGetDevCapsA(udeviceid: usize, pmoc: *mut MIDIOUTCAPSA, cbmoc: u32) -> u32 {
     #[cfg(windows)]
@@ -12213,7 +11801,6 @@ pub unsafe fn mixerClose<'a, Param0: ::windows_core::IntoParam<'a, HMIXER>>(hmx:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn mixerGetControlDetailsA<'a, Param0: ::windows_core::IntoParam<'a, HMIXEROBJ>>(hmxobj: Param0, pmxcd: *mut MIXERCONTROLDETAILS, fdwdetails: u32) -> u32 {
     #[cfg(windows)]
@@ -12227,7 +11814,6 @@ pub unsafe fn mixerGetControlDetailsA<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn mixerGetControlDetailsW<'a, Param0: ::windows_core::IntoParam<'a, HMIXEROBJ>>(hmxobj: Param0, pmxcd: *mut MIXERCONTROLDETAILS, fdwdetails: u32) -> u32 {
     #[cfg(windows)]
@@ -12241,7 +11827,6 @@ pub unsafe fn mixerGetControlDetailsW<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn mixerGetDevCapsA(umxid: usize, pmxcaps: *mut MIXERCAPSA, cbmxcaps: u32) -> u32 {
     #[cfg(windows)]
@@ -12281,7 +11866,6 @@ pub unsafe fn mixerGetID<'a, Param0: ::windows_core::IntoParam<'a, HMIXEROBJ>>(h
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn mixerGetLineControlsA<'a, Param0: ::windows_core::IntoParam<'a, HMIXEROBJ>>(hmxobj: Param0, pmxlc: *mut MIXERLINECONTROLSA, fdwcontrols: u32) -> u32 {
     #[cfg(windows)]
@@ -12308,7 +11892,6 @@ pub unsafe fn mixerGetLineControlsW<'a, Param0: ::windows_core::IntoParam<'a, HM
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn mixerGetLineInfoA<'a, Param0: ::windows_core::IntoParam<'a, HMIXEROBJ>>(hmxobj: Param0, pmxl: *mut MIXERLINEA, fdwinfo: u32) -> u32 {
     #[cfg(windows)]
@@ -12374,7 +11957,6 @@ pub unsafe fn mixerOpen(phmx: *mut isize, umxid: u32, dwcallback: usize, dwinsta
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn mixerSetControlDetails<'a, Param0: ::windows_core::IntoParam<'a, HMIXEROBJ>>(hmxobj: Param0, pmxcd: *const MIXERCONTROLDETAILS, fdwdetails: u32) -> u32 {
     #[cfg(windows)]
@@ -12388,28 +11970,26 @@ pub unsafe fn mixerSetControlDetails<'a, Param0: ::windows_core::IntoParam<'a, H
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn sndPlaySoundA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszsound: Param0, fusound: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn sndPlaySoundA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pszsound: Param0, fusound: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn sndPlaySoundA(pszsound: ::windows_core::PCSTR, fusound: u32) -> super::super::Foundation::BOOL;
+            fn sndPlaySoundA(pszsound: ::windows_core::PCSTR, fusound: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(sndPlaySoundA(pszsound.into_param().abi(), ::core::mem::transmute(fusound)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn sndPlaySoundW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszsound: Param0, fusound: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn sndPlaySoundW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszsound: Param0, fusound: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn sndPlaySoundW(pszsound: ::windows_core::PCWSTR, fusound: u32) -> super::super::Foundation::BOOL;
+            fn sndPlaySoundW(pszsound: ::windows_core::PCWSTR, fusound: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(sndPlaySoundW(pszsound.into_param().abi(), ::core::mem::transmute(fusound)))
     }
@@ -12536,7 +12116,6 @@ pub unsafe fn waveInClose<'a, Param0: ::windows_core::IntoParam<'a, HWAVEIN>>(hw
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn waveInGetDevCapsA(udeviceid: usize, pwic: *mut WAVEINCAPSA, cbwic: u32) -> u32 {
     #[cfg(windows)]
@@ -12745,7 +12324,6 @@ pub unsafe fn waveOutClose<'a, Param0: ::windows_core::IntoParam<'a, HWAVEOUT>>(
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn waveOutGetDevCapsA(udeviceid: usize, pwoc: *mut WAVEOUTCAPSA, cbwoc: u32) -> u32 {
     #[cfg(windows)]

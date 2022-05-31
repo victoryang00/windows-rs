@@ -446,18 +446,15 @@ impl ::core::clone::Clone for VSS_VOLUME_PROP {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VSS_VOLUME_PROTECTION_INFO {
     pub m_protectionLevel: VSS_PROTECTION_LEVEL,
-    pub m_volumeIsOfflineForProtection: super::super::Foundation::BOOL,
+    pub m_volumeIsOfflineForProtection: ::win32_foundation_sys::BOOL,
     pub m_protectionFault: VSS_PROTECTION_FAULT,
     pub m_failureStatus: i32,
-    pub m_volumeHasUnusedDiffArea: super::super::Foundation::BOOL,
+    pub m_volumeHasUnusedDiffArea: ::win32_foundation_sys::BOOL,
     pub m_reserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VSS_VOLUME_PROTECTION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VSS_VOLUME_PROTECTION_INFO {
     fn clone(&self) -> Self {
         *self

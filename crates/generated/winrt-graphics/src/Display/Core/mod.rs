@@ -132,11 +132,11 @@ unsafe impl ::windows_core::RuntimeType for HdmiDisplayHdrOption {
 pub struct HdmiDisplayInformation(::windows_core::IUnknown);
 impl HdmiDisplayInformation {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetSupportedDisplayModes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<HdmiDisplayMode>> {
+    pub fn GetSupportedDisplayModes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HdmiDisplayMode>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSupportedDisplayModes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<HdmiDisplayMode>>(result__)
+            (::windows_core::Interface::vtable(this).GetSupportedDisplayModes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<HdmiDisplayMode>>(result__)
         }
     }
     pub fn GetCurrentDisplayMode(&self) -> ::windows_core::Result<HdmiDisplayMode> {
@@ -146,48 +146,42 @@ impl HdmiDisplayInformation {
             (::windows_core::Interface::vtable(this).GetCurrentDisplayMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<HdmiDisplayMode>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetDefaultDisplayModeAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn SetDefaultDisplayModeAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetDefaultDisplayModeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetDefaultDisplayModeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestSetCurrentDisplayModeAsync<'a, Param0: ::windows_core::IntoParam<'a, HdmiDisplayMode>>(&self, mode: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestSetCurrentDisplayModeAsync<'a, Param0: ::windows_core::IntoParam<'a, HdmiDisplayMode>>(&self, mode: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestSetCurrentDisplayModeAsync)(::windows_core::Interface::as_raw(this), mode.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestSetCurrentDisplayModeAsync)(::windows_core::Interface::as_raw(this), mode.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestSetCurrentDisplayModeWithHdrAsync<'a, Param0: ::windows_core::IntoParam<'a, HdmiDisplayMode>>(&self, mode: Param0, hdroption: HdmiDisplayHdrOption) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestSetCurrentDisplayModeWithHdrAsync<'a, Param0: ::windows_core::IntoParam<'a, HdmiDisplayMode>>(&self, mode: Param0, hdroption: HdmiDisplayHdrOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestSetCurrentDisplayModeWithHdrAsync)(::windows_core::Interface::as_raw(this), mode.into_param().abi(), hdroption, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestSetCurrentDisplayModeWithHdrAsync)(::windows_core::Interface::as_raw(this), mode.into_param().abi(), hdroption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestSetCurrentDisplayModeWithHdrAndMetadataAsync<'a, Param0: ::windows_core::IntoParam<'a, HdmiDisplayMode>, Param2: ::windows_core::IntoParam<'a, HdmiDisplayHdr2086Metadata>>(&self, mode: Param0, hdroption: HdmiDisplayHdrOption, hdrmetadata: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestSetCurrentDisplayModeWithHdrAndMetadataAsync<'a, Param0: ::windows_core::IntoParam<'a, HdmiDisplayMode>, Param2: ::windows_core::IntoParam<'a, HdmiDisplayHdr2086Metadata>>(&self, mode: Param0, hdroption: HdmiDisplayHdrOption, hdrmetadata: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestSetCurrentDisplayModeWithHdrAndMetadataAsync)(::windows_core::Interface::as_raw(this), mode.into_param().abi(), hdroption, hdrmetadata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestSetCurrentDisplayModeWithHdrAndMetadataAsync)(::windows_core::Interface::as_raw(this), mode.into_param().abi(), hdroption, hdrmetadata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DisplayModesChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<HdmiDisplayInformation, ::windows_core::IInspectable>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn DisplayModesChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<HdmiDisplayInformation, ::windows_core::IInspectable>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).DisplayModesChanged)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).DisplayModesChanged)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveDisplayModesChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveDisplayModesChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveDisplayModesChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -485,30 +479,12 @@ pub struct IHdmiDisplayInformation_Vtbl {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetSupportedDisplayModes: usize,
     pub GetCurrentDisplayMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SetDefaultDisplayModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetDefaultDisplayModeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestSetCurrentDisplayModeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestSetCurrentDisplayModeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestSetCurrentDisplayModeWithHdrAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: ::windows_core::RawPtr, hdroption: HdmiDisplayHdrOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestSetCurrentDisplayModeWithHdrAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestSetCurrentDisplayModeWithHdrAndMetadataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: ::windows_core::RawPtr, hdroption: HdmiDisplayHdrOption, hdrmetadata: HdmiDisplayHdr2086Metadata, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestSetCurrentDisplayModeWithHdrAndMetadataAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub DisplayModesChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DisplayModesChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveDisplayModesChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveDisplayModesChanged: usize,
+    pub DisplayModesChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveDisplayModesChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]

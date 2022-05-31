@@ -6,30 +6,27 @@ extern "system" {
     pub fn HcsCloseOperation(operation: HCS_OPERATION);
     pub fn HcsCloseProcess(process: HCS_PROCESS);
     pub fn HcsCrashComputeSystem(computesystem: HCS_SYSTEM, operation: HCS_OPERATION, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn HcsCreateComputeSystem(id: ::windows_core_sys::PCWSTR, configuration: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const super::super::Security::SECURITY_DESCRIPTOR, computesystem: *mut HCS_SYSTEM) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Security")]
+    pub fn HcsCreateComputeSystem(id: ::windows_core_sys::PCWSTR, configuration: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const ::win32_security_sys::SECURITY_DESCRIPTOR, computesystem: *mut HCS_SYSTEM) -> ::windows_core_sys::HRESULT;
     pub fn HcsCreateComputeSystemInNamespace(idnamespace: ::windows_core_sys::PCWSTR, id: ::windows_core_sys::PCWSTR, configuration: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION, options: *const HCS_CREATE_OPTIONS, computesystem: *mut HCS_SYSTEM) -> ::windows_core_sys::HRESULT;
     pub fn HcsCreateEmptyGuestStateFile(gueststatefilepath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsCreateEmptyRuntimeStateFile(runtimestatefilepath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsCreateOperation(context: *const ::core::ffi::c_void, callback: HCS_OPERATION_COMPLETION) -> HCS_OPERATION;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn HcsCreateProcess(computesystem: HCS_SYSTEM, processparameters: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const super::super::Security::SECURITY_DESCRIPTOR, process: *mut HCS_PROCESS) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Security")]
+    pub fn HcsCreateProcess(computesystem: HCS_SYSTEM, processparameters: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION, securitydescriptor: *const ::win32_security_sys::SECURITY_DESCRIPTOR, process: *mut HCS_PROCESS) -> ::windows_core_sys::HRESULT;
     pub fn HcsDestroyLayer(layerpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsDetachLayerStorageFilter(layerpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsEnumerateComputeSystems(query: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION) -> ::windows_core_sys::HRESULT;
     pub fn HcsEnumerateComputeSystemsInNamespace(idnamespace: ::windows_core_sys::PCWSTR, query: ::windows_core_sys::PCWSTR, operation: HCS_OPERATION) -> ::windows_core_sys::HRESULT;
     pub fn HcsExportLayer(layerpath: ::windows_core_sys::PCWSTR, exportfolderpath: ::windows_core_sys::PCWSTR, layerdata: ::windows_core_sys::PCWSTR, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsExportLegacyWritableLayer(writablelayermountpath: ::windows_core_sys::PCWSTR, writablelayerfolderpath: ::windows_core_sys::PCWSTR, exportfolderpath: ::windows_core_sys::PCWSTR, layerdata: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HcsFormatWritableLayerVhd(vhdhandle: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn HcsFormatWritableLayerVhd(vhdhandle: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn HcsGetComputeSystemFromOperation(operation: HCS_OPERATION) -> HCS_SYSTEM;
     pub fn HcsGetComputeSystemProperties(computesystem: HCS_SYSTEM, operation: HCS_OPERATION, propertyquery: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HcsGetLayerVhdMountPath(vhdhandle: super::super::Foundation::HANDLE, mountpath: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn HcsGetLayerVhdMountPath(vhdhandle: ::win32_foundation_sys::HANDLE, mountpath: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsGetOperationContext(operation: HCS_OPERATION) -> *mut ::core::ffi::c_void;
     pub fn HcsGetOperationId(operation: HCS_OPERATION) -> u64;
     pub fn HcsGetOperationResult(operation: HCS_OPERATION, resultdocument: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn HcsGetOperationResultAndProcessInfo(operation: HCS_OPERATION, processinformation: *mut HCS_PROCESS_INFORMATION, resultdocument: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsGetOperationType(operation: HCS_OPERATION) -> HCS_OPERATION_TYPE;
     pub fn HcsGetProcessFromOperation(operation: HCS_OPERATION) -> HCS_PROCESS;
@@ -42,8 +39,7 @@ extern "system" {
     pub fn HcsImportLayer(layerpath: ::windows_core_sys::PCWSTR, sourcefolderpath: ::windows_core_sys::PCWSTR, layerdata: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsInitializeLegacyWritableLayer(writablelayermountpath: ::windows_core_sys::PCWSTR, writablelayerfolderpath: ::windows_core_sys::PCWSTR, layerdata: ::windows_core_sys::PCWSTR, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsInitializeWritableLayer(writablelayerpath: ::windows_core_sys::PCWSTR, layerdata: ::windows_core_sys::PCWSTR, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HcsModifyComputeSystem(computesystem: HCS_SYSTEM, operation: HCS_OPERATION, configuration: ::windows_core_sys::PCWSTR, identity: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn HcsModifyComputeSystem(computesystem: HCS_SYSTEM, operation: HCS_OPERATION, configuration: ::windows_core_sys::PCWSTR, identity: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn HcsModifyProcess(process: HCS_PROCESS, operation: HCS_OPERATION, settings: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsModifyServiceSettings(settings: ::windows_core_sys::PCWSTR, result: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsOpenComputeSystem(id: ::windows_core_sys::PCWSTR, requestedaccess: u32, computesystem: *mut HCS_SYSTEM) -> ::windows_core_sys::HRESULT;
@@ -58,8 +54,7 @@ extern "system" {
     pub fn HcsSetOperationCallback(operation: HCS_OPERATION, context: *const ::core::ffi::c_void, callback: HCS_OPERATION_COMPLETION) -> ::windows_core_sys::HRESULT;
     pub fn HcsSetOperationContext(operation: HCS_OPERATION, context: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn HcsSetProcessCallback(process: HCS_PROCESS, callbackoptions: HCS_EVENT_OPTIONS, context: *const ::core::ffi::c_void, callback: HCS_EVENT_CALLBACK) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HcsSetupBaseOSLayer(layerpath: ::windows_core_sys::PCWSTR, vhdhandle: super::super::Foundation::HANDLE, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn HcsSetupBaseOSLayer(layerpath: ::windows_core_sys::PCWSTR, vhdhandle: ::win32_foundation_sys::HANDLE, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsSetupBaseOSVolume(layerpath: ::windows_core_sys::PCWSTR, volumepath: ::windows_core_sys::PCWSTR, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsShutDownComputeSystem(computesystem: HCS_SYSTEM, operation: HCS_OPERATION, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsSignalProcess(process: HCS_PROCESS, operation: HCS_OPERATION, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
@@ -69,25 +64,24 @@ extern "system" {
     pub fn HcsTerminateProcess(process: HCS_PROCESS, operation: HCS_OPERATION, options: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsWaitForComputeSystemExit(computesystem: HCS_SYSTEM, timeoutms: u32, result: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsWaitForOperationResult(operation: HCS_OPERATION, timeoutms: u32, resultdocument: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn HcsWaitForOperationResultAndProcessInfo(operation: HCS_OPERATION, timeoutms: u32, processinformation: *mut HCS_PROCESS_INFORMATION, resultdocument: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn HcsWaitForProcessExit(computesystem: HCS_PROCESS, timeoutms: u32, result: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
 }
 pub type HCS_CREATE_OPTIONS = i32;
 pub const HcsCreateOptions_1: HCS_CREATE_OPTIONS = 65536i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct HCS_CREATE_OPTIONS_1 {
     pub Version: HCS_CREATE_OPTIONS,
-    pub UserToken: super::super::Foundation::HANDLE,
-    pub SecurityDescriptor: *mut super::super::Security::SECURITY_DESCRIPTOR,
+    pub UserToken: ::win32_foundation_sys::HANDLE,
+    pub SecurityDescriptor: *mut ::win32_security_sys::SECURITY_DESCRIPTOR,
     pub CallbackOptions: HCS_EVENT_OPTIONS,
     pub CallbackContext: *mut ::core::ffi::c_void,
     pub Callback: HCS_EVENT_CALLBACK,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for HCS_CREATE_OPTIONS_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for HCS_CREATE_OPTIONS_1 {
     fn clone(&self) -> Self {
         *self
@@ -168,17 +162,14 @@ pub const HcsOperationTypeModifyProcess: HCS_OPERATION_TYPE = 14i32;
 pub const HcsOperationTypeCrash: HCS_OPERATION_TYPE = 15i32;
 pub type HCS_PROCESS = isize;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HCS_PROCESS_INFORMATION {
     pub ProcessId: u32,
     pub Reserved: u32,
-    pub StdInput: super::super::Foundation::HANDLE,
-    pub StdOutput: super::super::Foundation::HANDLE,
-    pub StdError: super::super::Foundation::HANDLE,
+    pub StdInput: ::win32_foundation_sys::HANDLE,
+    pub StdOutput: ::win32_foundation_sys::HANDLE,
+    pub StdError: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HCS_PROCESS_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HCS_PROCESS_INFORMATION {
     fn clone(&self) -> Self {
         *self

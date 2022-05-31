@@ -10,8 +10,7 @@ extern "system" {
     pub fn WMCreateWriterFileSink(ppsink: *mut IWMWriterFileSink) -> ::windows_core_sys::HRESULT;
     pub fn WMCreateWriterNetworkSink(ppsink: *mut IWMWriterNetworkSink) -> ::windows_core_sys::HRESULT;
     pub fn WMCreateWriterPushSink(ppsink: *mut IWMWriterPushSink) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WMIsContentProtected(pwszfilename: ::windows_core_sys::PCWSTR, pfisprotected: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn WMIsContentProtected(pwszfilename: ::windows_core_sys::PCWSTR, pfisprotected: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
 pub struct AM_WMT_EVENT_DATA {
@@ -295,7 +294,7 @@ pub const WMMEDIATYPE_Script: ::windows_core_sys::GUID = ::windows_core_sys::GUI
 pub const WMMEDIATYPE_Text: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2612666023, data2: 23218, data3: 18473, data4: [186, 87, 9, 64, 32, 155, 207, 62] };
 pub const WMMEDIATYPE_Video: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1935960438, data2: 0, data3: 16, data4: [128, 0, 0, 170, 0, 56, 155, 113] };
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct WMMPEG2VIDEOINFO {
     pub hdr: WMVIDEOINFOHEADER2,
     pub dwStartTimeCode: u32,
@@ -305,9 +304,9 @@ pub struct WMMPEG2VIDEOINFO {
     pub dwFlags: u32,
     pub dwSequenceHeader: [u32; 1],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for WMMPEG2VIDEOINFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for WMMPEG2VIDEOINFO {
     fn clone(&self) -> Self {
         *self
@@ -573,7 +572,6 @@ impl ::core::clone::Clone for WMT_VIDEOIMAGE_SAMPLE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WMT_VIDEOIMAGE_SAMPLE2 {
     pub dwMagic: u32,
     pub dwStructSize: u32,
@@ -601,11 +599,9 @@ pub struct WMT_VIDEOIMAGE_SAMPLE2 {
     pub fEffectPara2: f32,
     pub fEffectPara3: f32,
     pub fEffectPara4: f32,
-    pub bKeepPrevImage: super::super::Foundation::BOOL,
+    pub bKeepPrevImage: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WMT_VIDEOIMAGE_SAMPLE2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WMT_VIDEOIMAGE_SAMPLE2 {
     fn clone(&self) -> Self {
         *self
@@ -680,28 +676,28 @@ impl ::core::clone::Clone for WMT_WEBSTREAM_SAMPLE_HEADER {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct WMVIDEOINFOHEADER {
-    pub rcSource: super::super::Foundation::RECT,
-    pub rcTarget: super::super::Foundation::RECT,
+    pub rcSource: ::win32_foundation_sys::RECT,
+    pub rcTarget: ::win32_foundation_sys::RECT,
     pub dwBitRate: u32,
     pub dwBitErrorRate: u32,
     pub AvgTimePerFrame: i64,
-    pub bmiHeader: super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub bmiHeader: ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for WMVIDEOINFOHEADER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for WMVIDEOINFOHEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct WMVIDEOINFOHEADER2 {
-    pub rcSource: super::super::Foundation::RECT,
-    pub rcTarget: super::super::Foundation::RECT,
+    pub rcSource: ::win32_foundation_sys::RECT,
+    pub rcTarget: ::win32_foundation_sys::RECT,
     pub dwBitRate: u32,
     pub dwBitErrorRate: u32,
     pub AvgTimePerFrame: i64,
@@ -711,11 +707,11 @@ pub struct WMVIDEOINFOHEADER2 {
     pub dwPictAspectRatioY: u32,
     pub dwReserved1: u32,
     pub dwReserved2: u32,
-    pub bmiHeader: super::super::Graphics::Gdi::BITMAPINFOHEADER,
+    pub bmiHeader: ::win32_graphics_sys::Gdi::BITMAPINFOHEADER,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for WMVIDEOINFOHEADER2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for WMVIDEOINFOHEADER2 {
     fn clone(&self) -> Self {
         *self
@@ -798,21 +794,18 @@ impl ::core::clone::Clone for WM_LEAKY_BUCKET_PAIR {
 pub const WM_MAX_STREAMS: u32 = 63u32;
 pub const WM_MAX_VIDEO_STREAMS: u32 = 63u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WM_MEDIA_TYPE {
     pub majortype: ::windows_core_sys::GUID,
     pub subtype: ::windows_core_sys::GUID,
-    pub bFixedSizeSamples: super::super::Foundation::BOOL,
-    pub bTemporalCompression: super::super::Foundation::BOOL,
+    pub bFixedSizeSamples: ::win32_foundation_sys::BOOL,
+    pub bTemporalCompression: ::win32_foundation_sys::BOOL,
     pub lSampleSize: u32,
     pub formattype: ::windows_core_sys::GUID,
     pub pUnk: ::windows_core_sys::IUnknown,
     pub cbFormat: u32,
     pub pbFormat: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WM_MEDIA_TYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WM_MEDIA_TYPE {
     fn clone(&self) -> Self {
         *self
@@ -848,21 +841,18 @@ impl ::core::clone::Clone for WM_PORT_NUMBER_RANGE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WM_READER_CLIENTINFO {
     pub cbSize: u32,
     pub wszLang: ::windows_core_sys::PWSTR,
     pub wszBrowserUserAgent: ::windows_core_sys::PWSTR,
     pub wszBrowserWebPage: ::windows_core_sys::PWSTR,
     pub qwReserved: u64,
-    pub pReserved: *mut super::super::Foundation::LPARAM,
+    pub pReserved: *mut ::win32_foundation_sys::LPARAM,
     pub wszHostExe: ::windows_core_sys::PWSTR,
     pub qwHostVersion: u64,
     pub wszPlayerUserAgent: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WM_READER_CLIENTINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WM_READER_CLIENTINFO {
     fn clone(&self) -> Self {
         *self
@@ -891,14 +881,11 @@ pub const WM_SF_CLEANPOINT: WM_SF_TYPE = 1i32;
 pub const WM_SF_DISCONTINUITY: WM_SF_TYPE = 2i32;
 pub const WM_SF_DATALOSS: WM_SF_TYPE = 4i32;
 #[repr(C, packed(2))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WM_STREAM_PRIORITY_RECORD {
     pub wStreamNumber: u16,
-    pub fMandatory: super::super::Foundation::BOOL,
+    pub fMandatory: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WM_STREAM_PRIORITY_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WM_STREAM_PRIORITY_RECORD {
     fn clone(&self) -> Self {
         *self

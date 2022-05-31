@@ -30,11 +30,11 @@ impl AttributedNetworkUsage {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn AttributionThumbnail(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn AttributionThumbnail(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AttributionThumbnail)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).AttributionThumbnail)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
 }
@@ -434,11 +434,11 @@ impl ConnectionProfile {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetNetworkNames(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn GetNetworkNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetNetworkNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetNetworkNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn GetConnectionCost(&self) -> ::windows_core::Result<ConnectionCost> {
@@ -462,16 +462,16 @@ impl ConnectionProfile {
             (::windows_core::Interface::vtable(this).NetworkAdapter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<NetworkAdapter>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetLocalUsage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(&self, starttime: Param0, endtime: Param1) -> ::windows_core::Result<DataUsage> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetLocalUsage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, starttime: Param0, endtime: Param1) -> ::windows_core::Result<DataUsage> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).GetLocalUsage)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), endtime.into_param().abi(), result__.as_mut_ptr()).from_abi::<DataUsage>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetLocalUsagePerRoamingStates<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(&self, starttime: Param0, endtime: Param1, states: RoamingStates) -> ::windows_core::Result<DataUsage> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetLocalUsagePerRoamingStates<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, starttime: Param0, endtime: Param1, states: RoamingStates) -> ::windows_core::Result<DataUsage> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -513,20 +513,18 @@ impl ConnectionProfile {
             (::windows_core::Interface::vtable(this).WlanConnectionProfileDetails)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<WlanConnectionProfileDetails>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ServiceProviderGuid(&self) -> ::windows_core::Result<super::super::Foundation::IReference<::windows_core::GUID>> {
+    pub fn ServiceProviderGuid(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::windows_core::GUID>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfile2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServiceProviderGuid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<::windows_core::GUID>>(result__)
+            (::windows_core::Interface::vtable(this).ServiceProviderGuid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::windows_core::GUID>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetSignalBars(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u8>> {
+    pub fn GetSignalBars(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfile2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSignalBars)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).GetSignalBars)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
     pub fn GetDomainConnectivityLevel(&self) -> ::windows_core::Result<DomainConnectivityLevel> {
@@ -537,35 +535,35 @@ impl ConnectionProfile {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetNetworkUsageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param3: ::windows_core::IntoParam<'a, NetworkUsageStates>>(&self, starttime: Param0, endtime: Param1, granularity: DataUsageGranularity, states: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<NetworkUsage>>> {
+    pub fn GetNetworkUsageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param3: ::windows_core::IntoParam<'a, NetworkUsageStates>>(&self, starttime: Param0, endtime: Param1, granularity: DataUsageGranularity, states: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<NetworkUsage>>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfile2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetNetworkUsageAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), endtime.into_param().abi(), granularity, states.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<NetworkUsage>>>(result__)
+            (::windows_core::Interface::vtable(this).GetNetworkUsageAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), endtime.into_param().abi(), granularity, states.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<NetworkUsage>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetConnectivityIntervalsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param2: ::windows_core::IntoParam<'a, NetworkUsageStates>>(&self, starttime: Param0, endtime: Param1, states: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ConnectivityInterval>>> {
+    pub fn GetConnectivityIntervalsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param2: ::windows_core::IntoParam<'a, NetworkUsageStates>>(&self, starttime: Param0, endtime: Param1, states: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ConnectivityInterval>>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfile2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetConnectivityIntervalsAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), endtime.into_param().abi(), states.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ConnectivityInterval>>>(result__)
+            (::windows_core::Interface::vtable(this).GetConnectivityIntervalsAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), endtime.into_param().abi(), states.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ConnectivityInterval>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAttributedNetworkUsageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param2: ::windows_core::IntoParam<'a, NetworkUsageStates>>(&self, starttime: Param0, endtime: Param1, states: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<AttributedNetworkUsage>>> {
+    pub fn GetAttributedNetworkUsageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param2: ::windows_core::IntoParam<'a, NetworkUsageStates>>(&self, starttime: Param0, endtime: Param1, states: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AttributedNetworkUsage>>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfile3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAttributedNetworkUsageAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), endtime.into_param().abi(), states.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<AttributedNetworkUsage>>>(result__)
+            (::windows_core::Interface::vtable(this).GetAttributedNetworkUsageAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), endtime.into_param().abi(), states.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<AttributedNetworkUsage>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetProviderNetworkUsageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param2: ::windows_core::IntoParam<'a, NetworkUsageStates>>(&self, starttime: Param0, endtime: Param1, states: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ProviderNetworkUsage>>> {
+    pub fn GetProviderNetworkUsageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param2: ::windows_core::IntoParam<'a, NetworkUsageStates>>(&self, starttime: Param0, endtime: Param1, states: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ProviderNetworkUsage>>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfile4>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetProviderNetworkUsageAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), endtime.into_param().abi(), states.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ProviderNetworkUsage>>>(result__)
+            (::windows_core::Interface::vtable(this).GetProviderNetworkUsageAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), endtime.into_param().abi(), states.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ProviderNetworkUsage>>>(result__)
         }
     }
     pub fn CanDelete(&self) -> ::windows_core::Result<bool> {
@@ -575,12 +573,11 @@ impl ConnectionProfile {
             (::windows_core::Interface::vtable(this).CanDelete)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryDeleteAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ConnectionProfileDeleteStatus>> {
+    pub fn TryDeleteAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ConnectionProfileDeleteStatus>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfile5>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryDeleteAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ConnectionProfileDeleteStatus>>(result__)
+            (::windows_core::Interface::vtable(this).TryDeleteAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ConnectionProfileDeleteStatus>>(result__)
         }
     }
 }
@@ -745,77 +742,67 @@ impl ConnectionProfileFilter {
             (::windows_core::Interface::vtable(this).NetworkCostType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<NetworkCostType>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetServiceProviderGuid<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<::windows_core::GUID>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetServiceProviderGuid<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::windows_core::GUID>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetServiceProviderGuid)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ServiceProviderGuid(&self) -> ::windows_core::Result<super::super::Foundation::IReference<::windows_core::GUID>> {
+    pub fn ServiceProviderGuid(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::windows_core::GUID>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServiceProviderGuid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<::windows_core::GUID>>(result__)
+            (::windows_core::Interface::vtable(this).ServiceProviderGuid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::windows_core::GUID>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetIsRoaming<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<bool>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIsRoaming<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<bool>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IConnectionProfileFilter2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsRoaming)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn IsRoaming(&self) -> ::windows_core::Result<super::super::Foundation::IReference<bool>> {
+    pub fn IsRoaming(&self) -> ::windows_core::Result<::winrt_foundation::IReference<bool>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfileFilter2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).IsRoaming)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<bool>>(result__)
+            (::windows_core::Interface::vtable(this).IsRoaming)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetIsOverDataLimit<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<bool>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIsOverDataLimit<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<bool>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IConnectionProfileFilter2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsOverDataLimit)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn IsOverDataLimit(&self) -> ::windows_core::Result<super::super::Foundation::IReference<bool>> {
+    pub fn IsOverDataLimit(&self) -> ::windows_core::Result<::winrt_foundation::IReference<bool>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfileFilter2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).IsOverDataLimit)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<bool>>(result__)
+            (::windows_core::Interface::vtable(this).IsOverDataLimit)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetIsBackgroundDataUsageRestricted<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<bool>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIsBackgroundDataUsageRestricted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<bool>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IConnectionProfileFilter2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIsBackgroundDataUsageRestricted)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn IsBackgroundDataUsageRestricted(&self) -> ::windows_core::Result<super::super::Foundation::IReference<bool>> {
+    pub fn IsBackgroundDataUsageRestricted(&self) -> ::windows_core::Result<::winrt_foundation::IReference<bool>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfileFilter2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).IsBackgroundDataUsageRestricted)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<bool>>(result__)
+            (::windows_core::Interface::vtable(this).IsBackgroundDataUsageRestricted)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<bool>>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn RawData(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn RawData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = &::windows_core::Interface::cast::<IConnectionProfileFilter2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RawData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).RawData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPurposeGuid<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<::windows_core::GUID>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPurposeGuid<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::windows_core::GUID>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IConnectionProfileFilter3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPurposeGuid)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PurposeGuid(&self) -> ::windows_core::Result<super::super::Foundation::IReference<::windows_core::GUID>> {
+    pub fn PurposeGuid(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::windows_core::GUID>> {
         let this = &::windows_core::Interface::cast::<IConnectionProfileFilter3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PurposeGuid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<::windows_core::GUID>>(result__)
+            (::windows_core::Interface::vtable(this).PurposeGuid)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::windows_core::GUID>>(result__)
         }
     }
 }
@@ -894,9 +881,8 @@ unsafe impl ::core::marker::Sync for ConnectionProfileFilter {}
 #[repr(transparent)]
 pub struct ConnectionSession(::windows_core::IUnknown);
 impl ConnectionSession {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn ConnectionProfile(&self) -> ::windows_core::Result<ConnectionProfile> {
@@ -977,30 +963,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Con
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<ConnectionSession> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<ConnectionSession> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: ConnectionSession) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&ConnectionSession> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&ConnectionSession> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &ConnectionSession) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for ConnectionSession {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for ConnectionSession {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &ConnectionSession {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &ConnectionSession {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for ConnectionSession {}
@@ -1008,20 +990,18 @@ unsafe impl ::core::marker::Sync for ConnectionSession {}
 #[repr(transparent)]
 pub struct ConnectivityInterval(::windows_core::IUnknown);
 impl ConnectivityInterval {
-    #[cfg(feature = "Foundation")]
-    pub fn StartTime(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn StartTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).StartTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).StartTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ConnectionDuration(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn ConnectionDuration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectionDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).ConnectionDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
 }
@@ -1099,11 +1079,10 @@ unsafe impl ::core::marker::Send for ConnectivityInterval {}
 unsafe impl ::core::marker::Sync for ConnectivityInterval {}
 pub struct ConnectivityManager;
 impl ConnectivityManager {
-    #[cfg(feature = "Foundation")]
-    pub fn AcquireConnectionAsync<'a, Param0: ::windows_core::IntoParam<'a, CellularApnContext>>(cellularapncontext: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ConnectionSession>> {
+    pub fn AcquireConnectionAsync<'a, Param0: ::windows_core::IntoParam<'a, CellularApnContext>>(cellularapncontext: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ConnectionSession>> {
         Self::IConnectivityManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AcquireConnectionAsync)(::windows_core::Interface::as_raw(this), cellularapncontext.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ConnectionSession>>(result__)
+            (::windows_core::Interface::vtable(this).AcquireConnectionAsync)(::windows_core::Interface::as_raw(this), cellularapncontext.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ConnectionSession>>(result__)
         })
     }
     pub fn AddHttpRoutePolicy<'a, Param0: ::windows_core::IntoParam<'a, RoutePolicy>>(routepolicy: Param0) -> ::windows_core::Result<()> {
@@ -1130,44 +1109,39 @@ impl DataPlanStatus {
             (::windows_core::Interface::vtable(this).DataPlanUsage)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DataPlanUsage>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DataLimitInMegabytes(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn DataLimitInMegabytes(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DataLimitInMegabytes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).DataLimitInMegabytes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InboundBitsPerSecond(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u64>> {
+    pub fn InboundBitsPerSecond(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InboundBitsPerSecond)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u64>>(result__)
+            (::windows_core::Interface::vtable(this).InboundBitsPerSecond)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OutboundBitsPerSecond(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u64>> {
+    pub fn OutboundBitsPerSecond(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OutboundBitsPerSecond)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u64>>(result__)
+            (::windows_core::Interface::vtable(this).OutboundBitsPerSecond)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn NextBillingCycle(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    pub fn NextBillingCycle(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NextBillingCycle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).NextBillingCycle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MaxTransferSizeInMegabytes(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn MaxTransferSizeInMegabytes(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MaxTransferSizeInMegabytes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).MaxTransferSizeInMegabytes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
 }
@@ -1253,12 +1227,11 @@ impl DataPlanUsage {
             (::windows_core::Interface::vtable(this).MegabytesUsed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LastSyncTime(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn LastSyncTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).LastSyncTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).LastSyncTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
 }
@@ -1621,13 +1594,13 @@ pub struct IConnectionProfile_Vtbl {
     pub GetConnectionCost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDataPlanStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub NetworkAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub GetLocalUsage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, endtime: super::super::Foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub GetLocalUsage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, endtime: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     GetLocalUsage: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub GetLocalUsagePerRoamingStates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, endtime: super::super::Foundation::DateTime, states: RoamingStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub GetLocalUsagePerRoamingStates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, endtime: ::winrt_foundation::DateTime, states: RoamingStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     GetLocalUsagePerRoamingStates: usize,
     pub NetworkSecuritySettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1646,21 +1619,15 @@ pub struct IConnectionProfile2_Vtbl {
     pub IsWlanConnectionProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub WwanConnectionProfileDetails: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub WlanConnectionProfileDetails: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ServiceProviderGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ServiceProviderGuid: usize,
-    #[cfg(feature = "Foundation")]
     pub GetSignalBars: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetSignalBars: usize,
     pub GetDomainConnectivityLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DomainConnectivityLevel) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub GetNetworkUsageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, endtime: super::super::Foundation::DateTime, granularity: DataUsageGranularity, states: NetworkUsageStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetNetworkUsageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, endtime: ::winrt_foundation::DateTime, granularity: DataUsageGranularity, states: NetworkUsageStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetNetworkUsageAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub GetConnectivityIntervalsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, endtime: super::super::Foundation::DateTime, states: NetworkUsageStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetConnectivityIntervalsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, endtime: ::winrt_foundation::DateTime, states: NetworkUsageStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetConnectivityIntervalsAsync: usize,
 }
@@ -1676,7 +1643,7 @@ unsafe impl ::windows_core::Interface for IConnectionProfile3 {
 pub struct IConnectionProfile3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Collections")]
-    pub GetAttributedNetworkUsageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, endtime: super::super::Foundation::DateTime, states: NetworkUsageStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetAttributedNetworkUsageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, endtime: ::winrt_foundation::DateTime, states: NetworkUsageStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetAttributedNetworkUsageAsync: usize,
 }
@@ -1692,7 +1659,7 @@ unsafe impl ::windows_core::Interface for IConnectionProfile4 {
 pub struct IConnectionProfile4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Collections")]
-    pub GetProviderNetworkUsageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, endtime: super::super::Foundation::DateTime, states: NetworkUsageStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetProviderNetworkUsageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, endtime: ::winrt_foundation::DateTime, states: NetworkUsageStates, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetProviderNetworkUsageAsync: usize,
 }
@@ -1708,10 +1675,7 @@ unsafe impl ::windows_core::Interface for IConnectionProfile5 {
 pub struct IConnectionProfile5_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CanDelete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub TryDeleteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryDeleteAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1732,14 +1696,8 @@ pub struct IConnectionProfileFilter_Vtbl {
     pub IsWlanConnectionProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetNetworkCostType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: NetworkCostType) -> ::windows_core::HRESULT,
     pub NetworkCostType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut NetworkCostType) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SetServiceProviderGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetServiceProviderGuid: usize,
-    #[cfg(feature = "Foundation")]
     pub ServiceProviderGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ServiceProviderGuid: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1752,30 +1710,12 @@ unsafe impl ::windows_core::Interface for IConnectionProfileFilter2 {
 #[doc(hidden)]
 pub struct IConnectionProfileFilter2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub SetIsRoaming: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetIsRoaming: usize,
-    #[cfg(feature = "Foundation")]
     pub IsRoaming: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    IsRoaming: usize,
-    #[cfg(feature = "Foundation")]
     pub SetIsOverDataLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetIsOverDataLimit: usize,
-    #[cfg(feature = "Foundation")]
     pub IsOverDataLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    IsOverDataLimit: usize,
-    #[cfg(feature = "Foundation")]
     pub SetIsBackgroundDataUsageRestricted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetIsBackgroundDataUsageRestricted: usize,
-    #[cfg(feature = "Foundation")]
     pub IsBackgroundDataUsageRestricted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    IsBackgroundDataUsageRestricted: usize,
     #[cfg(feature = "Storage_Streams")]
     pub RawData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
@@ -1792,14 +1732,8 @@ unsafe impl ::windows_core::Interface for IConnectionProfileFilter3 {
 #[doc(hidden)]
 pub struct IConnectionProfileFilter3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub SetPurposeGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPurposeGuid: usize,
-    #[cfg(feature = "Foundation")]
     pub PurposeGuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PurposeGuid: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1825,14 +1759,8 @@ unsafe impl ::windows_core::Interface for IConnectivityInterval {
 #[doc(hidden)]
 pub struct IConnectivityInterval_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub StartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StartTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub ConnectionDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ConnectionDuration: usize,
+    pub StartTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub ConnectionDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1845,10 +1773,7 @@ unsafe impl ::windows_core::Interface for IConnectivityManagerStatics {
 #[doc(hidden)]
 pub struct IConnectivityManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub AcquireConnectionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cellularapncontext: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AcquireConnectionAsync: usize,
     pub AddHttpRoutePolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, routepolicy: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveHttpRoutePolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, routepolicy: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1864,26 +1789,11 @@ unsafe impl ::windows_core::Interface for IDataPlanStatus {
 pub struct IDataPlanStatus_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DataPlanUsage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub DataLimitInMegabytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DataLimitInMegabytes: usize,
-    #[cfg(feature = "Foundation")]
     pub InboundBitsPerSecond: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InboundBitsPerSecond: usize,
-    #[cfg(feature = "Foundation")]
     pub OutboundBitsPerSecond: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OutboundBitsPerSecond: usize,
-    #[cfg(feature = "Foundation")]
     pub NextBillingCycle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    NextBillingCycle: usize,
-    #[cfg(feature = "Foundation")]
     pub MaxTransferSizeInMegabytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MaxTransferSizeInMegabytes: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1897,10 +1807,7 @@ unsafe impl ::windows_core::Interface for IDataPlanUsage {
 pub struct IDataPlanUsage_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MegabytesUsed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub LastSyncTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LastSyncTime: usize,
+    pub LastSyncTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[cfg(feature = "deprecated")]
@@ -1937,10 +1844,7 @@ unsafe impl ::windows_core::Interface for IIPInformation {
 pub struct IIPInformation_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub NetworkAdapter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub PrefixLength: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PrefixLength: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1990,10 +1894,7 @@ pub struct INetworkAdapter_Vtbl {
     pub IanaInterfaceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub NetworkItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub NetworkAdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetConnectedProfileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetConnectedProfileAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2019,22 +1920,13 @@ pub struct INetworkInformationStatics_Vtbl {
     pub GetHostNames: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetHostNames: usize,
-    #[cfg(feature = "Foundation")]
     pub GetProxyConfigurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetProxyConfigurationAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetSortedEndpointPairs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, destinationlist: ::windows_core::RawPtr, sortoptions: super::HostNameSortOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetSortedEndpointPairs: usize,
-    #[cfg(feature = "Foundation")]
-    pub NetworkStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, networkstatushandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    NetworkStatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveNetworkStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveNetworkStatusChanged: usize,
+    pub NetworkStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, networkstatushandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveNetworkStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2125,10 +2017,7 @@ pub struct INetworkUsage_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub BytesSent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u64) -> ::windows_core::HRESULT,
     pub BytesReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ConnectionDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ConnectionDuration: usize,
+    pub ConnectionDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPInformation(::windows_core::IUnknown);
@@ -2140,12 +2029,11 @@ impl IPInformation {
             (::windows_core::Interface::vtable(this).NetworkAdapter)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<NetworkAdapter>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PrefixLength(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u8>> {
+    pub fn PrefixLength(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PrefixLength)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).PrefixLength)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
 }
@@ -2435,11 +2323,11 @@ impl LanIdentifierData {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Value(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<u8>> {
+    pub fn Value(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<u8>>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u8>>(result__)
         }
     }
 }
@@ -2553,12 +2441,11 @@ impl NetworkAdapter {
             (::windows_core::Interface::vtable(this).NetworkAdapterId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetConnectedProfileAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ConnectionProfile>> {
+    pub fn GetConnectedProfileAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ConnectionProfile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetConnectedProfileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ConnectionProfile>>(result__)
+            (::windows_core::Interface::vtable(this).GetConnectedProfileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ConnectionProfile>>(result__)
         }
     }
 }
@@ -2796,10 +2683,10 @@ unsafe impl ::windows_core::RuntimeType for NetworkEncryptionType {
 pub struct NetworkInformation;
 impl NetworkInformation {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetConnectionProfiles() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<ConnectionProfile>> {
+    pub fn GetConnectionProfiles() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<ConnectionProfile>> {
         Self::INetworkInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetConnectionProfiles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<ConnectionProfile>>(result__)
+            (::windows_core::Interface::vtable(this).GetConnectionProfiles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<ConnectionProfile>>(result__)
         })
     }
     pub fn GetInternetConnectionProfile() -> ::windows_core::Result<ConnectionProfile> {
@@ -2809,49 +2696,46 @@ impl NetworkInformation {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetLanIdentifiers() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<LanIdentifier>> {
+    pub fn GetLanIdentifiers() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<LanIdentifier>> {
         Self::INetworkInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetLanIdentifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<LanIdentifier>>(result__)
+            (::windows_core::Interface::vtable(this).GetLanIdentifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<LanIdentifier>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetHostNames() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::HostName>> {
+    pub fn GetHostNames() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::HostName>> {
         Self::INetworkInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetHostNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::HostName>>(result__)
+            (::windows_core::Interface::vtable(this).GetHostNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::HostName>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetProxyConfigurationAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(uri: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<ProxyConfiguration>> {
+    pub fn GetProxyConfigurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProxyConfiguration>> {
         Self::INetworkInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetProxyConfigurationAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<ProxyConfiguration>>(result__)
+            (::windows_core::Interface::vtable(this).GetProxyConfigurationAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProxyConfiguration>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetSortedEndpointPairs<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::EndpointPair>>>(destinationlist: Param0, sortoptions: super::HostNameSortOptions) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::EndpointPair>> {
+    pub fn GetSortedEndpointPairs<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::EndpointPair>>>(destinationlist: Param0, sortoptions: super::HostNameSortOptions) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::EndpointPair>> {
         Self::INetworkInformationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSortedEndpointPairs)(::windows_core::Interface::as_raw(this), destinationlist.into_param().abi(), sortoptions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::EndpointPair>>(result__)
+            (::windows_core::Interface::vtable(this).GetSortedEndpointPairs)(::windows_core::Interface::as_raw(this), destinationlist.into_param().abi(), sortoptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::EndpointPair>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn NetworkStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, NetworkStatusChangedEventHandler>>(networkstatushandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn NetworkStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, NetworkStatusChangedEventHandler>>(networkstatushandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::INetworkInformationStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).NetworkStatusChanged)(::windows_core::Interface::as_raw(this), networkstatushandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).NetworkStatusChanged)(::windows_core::Interface::as_raw(this), networkstatushandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveNetworkStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(eventcookie: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveNetworkStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(eventcookie: Param0) -> ::windows_core::Result<()> {
         Self::INetworkInformationStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveNetworkStatusChanged)(::windows_core::Interface::as_raw(this), eventcookie.into_param().abi()).ok() })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindConnectionProfilesAsync<'a, Param0: ::windows_core::IntoParam<'a, ConnectionProfileFilter>>(pprofilefilter: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ConnectionProfile>>> {
+    pub fn FindConnectionProfilesAsync<'a, Param0: ::windows_core::IntoParam<'a, ConnectionProfileFilter>>(pprofilefilter: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ConnectionProfile>>> {
         Self::INetworkInformationStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindConnectionProfilesAsync)(::windows_core::Interface::as_raw(this), pprofilefilter.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<ConnectionProfile>>>(result__)
+            (::windows_core::Interface::vtable(this).FindConnectionProfilesAsync)(::windows_core::Interface::as_raw(this), pprofilefilter.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<ConnectionProfile>>>(result__)
         })
     }
     pub fn INetworkInformationStatics<R, F: FnOnce(&INetworkInformationStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -3340,12 +3224,11 @@ impl NetworkUsage {
             (::windows_core::Interface::vtable(this).BytesReceived)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u64>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ConnectionDuration(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn ConnectionDuration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectionDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).ConnectionDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
 }
@@ -3559,11 +3442,11 @@ unsafe impl ::core::marker::Sync for ProviderNetworkUsage {}
 pub struct ProxyConfiguration(::windows_core::IUnknown);
 impl ProxyConfiguration {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ProxyUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<super::super::Foundation::Uri>> {
+    pub fn ProxyUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProxyUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).ProxyUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Uri>>(result__)
         }
     }
     pub fn CanConnectDirectly(&self) -> ::windows_core::Result<bool> {
@@ -3971,11 +3854,11 @@ impl WwanConnectionProfileDetails {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PurposeGuids(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::GUID>> {
+    pub fn PurposeGuids(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::GUID>> {
         let this = &::windows_core::Interface::cast::<IWwanConnectionProfileDetails2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PurposeGuids)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::GUID>>(result__)
+            (::windows_core::Interface::vtable(this).PurposeGuids)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::GUID>>(result__)
         }
     }
 }

@@ -3,16 +3,14 @@ pub const CEventPublisher: ::windows_core::GUID = ::windows_core::GUID::from_u12
 pub const CEventSubscription: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7542e960_79c7_11d1_88f9_0080c7d771bf);
 pub const CEventSystem: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4e14fba2_2e22_11d1_9964_00c04fbbb345);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COMEVENTSYSCHANGEINFO {
     pub cbSize: u32,
     pub changeType: EOC_ChangeType,
-    pub objectId: super::super::super::Foundation::BSTR,
-    pub partitionId: super::super::super::Foundation::BSTR,
-    pub applicationId: super::super::super::Foundation::BSTR,
+    pub objectId: ::win32_foundation::BSTR,
+    pub partitionId: ::win32_foundation::BSTR,
+    pub applicationId: ::win32_foundation::BSTR,
     pub reserved: [::windows_core::GUID; 10],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COMEVENTSYSCHANGEINFO {
     fn clone(&self) -> Self {
         Self {
@@ -25,25 +23,20 @@ impl ::core::clone::Clone for COMEVENTSYSCHANGEINFO {
         }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for COMEVENTSYSCHANGEINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("COMEVENTSYSCHANGEINFO").field("cbSize", &self.cbSize).field("changeType", &self.changeType).field("objectId", &self.objectId).field("partitionId", &self.partitionId).field("applicationId", &self.applicationId).field("reserved", &self.reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for COMEVENTSYSCHANGEINFO {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for COMEVENTSYSCHANGEINFO {
     fn eq(&self, other: &Self) -> bool {
         self.cbSize == other.cbSize && self.changeType == other.changeType && self.objectId == other.objectId && self.partitionId == other.partitionId && self.applicationId == other.applicationId && self.reserved == other.reserved
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for COMEVENTSYSCHANGEINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for COMEVENTSYSCHANGEINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -193,67 +186,53 @@ pub struct IEnumEventObject_Vtbl {
 #[repr(transparent)]
 pub struct IEventClass(::windows_core::IUnknown);
 impl IEventClass {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EventClassID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).EventClassID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn EventClassID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).EventClassID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEventClassID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstreventclassid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEventClassID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstreventclassid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEventClassID)(::windows_core::Interface::as_raw(self), bstreventclassid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EventClassName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).EventClassName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn EventClassName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).EventClassName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEventClassName<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstreventclassname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEventClassName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstreventclassname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEventClassName)(::windows_core::Interface::as_raw(self), bstreventclassname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OwnerSID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).OwnerSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OwnerSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).OwnerSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetOwnerSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrownersid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetOwnerSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrownersid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetOwnerSID)(::windows_core::Interface::as_raw(self), bstrownersid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FiringInterfaceID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).FiringInterfaceID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FiringInterfaceID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).FiringInterfaceID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFiringInterfaceID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrfiringinterfaceid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFiringInterfaceID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfiringinterfaceid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFiringInterfaceID)(::windows_core::Interface::as_raw(self), bstrfiringinterfaceid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Description(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Description(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescription)(::windows_core::Interface::as_raw(self), bstrdescription.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CustomConfigCLSID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CustomConfigCLSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CustomConfigCLSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CustomConfigCLSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCustomConfigCLSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrcustomconfigclsid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCustomConfigCLSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcustomconfigclsid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCustomConfigCLSID)(::windows_core::Interface::as_raw(self), bstrcustomconfigclsid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TypeLib(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TypeLib)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TypeLib(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TypeLib)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTypeLib<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrtypelib: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTypeLib<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtypelib: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTypeLib)(::windows_core::Interface::as_raw(self), bstrtypelib.into_param().abi()).ok()
     }
 }
@@ -321,163 +300,99 @@ unsafe impl ::windows_core::Interface for IEventClass {
 #[doc(hidden)]
 pub struct IEventClass_Vtbl {
     pub base__: super::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub EventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstreventclassid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EventClassID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetEventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstreventclassid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetEventClassID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub EventClassName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstreventclassname: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EventClassName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetEventClassName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstreventclassname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetEventClassName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrownersid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OwnerSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetOwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrownersid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetOwnerSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FiringInterfaceID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfiringinterfaceid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FiringInterfaceID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetFiringInterfaceID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfiringinterfaceid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetFiringInterfaceID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdescription: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Description: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdescription: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDescription: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CustomConfigCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcustomconfigclsid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CustomConfigCLSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetCustomConfigCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcustomconfigclsid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetCustomConfigCLSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TypeLib: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtypelib: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TypeLib: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTypeLib: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtypelib: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTypeLib: usize,
+    pub EventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstreventclassid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetEventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstreventclassid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub EventClassName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstreventclassname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetEventClassName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstreventclassname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub OwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrownersid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetOwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrownersid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub FiringInterfaceID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfiringinterfaceid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetFiringInterfaceID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfiringinterfaceid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdescription: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdescription: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub CustomConfigCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcustomconfigclsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetCustomConfigCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcustomconfigclsid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub TypeLib: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtypelib: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTypeLib: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtypelib: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IEventClass2(::windows_core::IUnknown);
 impl IEventClass2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EventClassID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.EventClassID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn EventClassID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.EventClassID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEventClassID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstreventclassid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEventClassID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstreventclassid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetEventClassID)(::windows_core::Interface::as_raw(self), bstreventclassid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EventClassName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.EventClassName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn EventClassName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.EventClassName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEventClassName<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstreventclassname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEventClassName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstreventclassname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetEventClassName)(::windows_core::Interface::as_raw(self), bstreventclassname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OwnerSID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.OwnerSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OwnerSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.OwnerSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetOwnerSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrownersid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetOwnerSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrownersid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetOwnerSID)(::windows_core::Interface::as_raw(self), bstrownersid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FiringInterfaceID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.FiringInterfaceID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FiringInterfaceID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.FiringInterfaceID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFiringInterfaceID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrfiringinterfaceid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFiringInterfaceID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfiringinterfaceid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetFiringInterfaceID)(::windows_core::Interface::as_raw(self), bstrfiringinterfaceid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Description(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Description(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetDescription)(::windows_core::Interface::as_raw(self), bstrdescription.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CustomConfigCLSID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CustomConfigCLSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CustomConfigCLSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CustomConfigCLSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCustomConfigCLSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrcustomconfigclsid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCustomConfigCLSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcustomconfigclsid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetCustomConfigCLSID)(::windows_core::Interface::as_raw(self), bstrcustomconfigclsid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TypeLib(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.TypeLib)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TypeLib(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.TypeLib)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTypeLib<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrtypelib: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTypeLib<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtypelib: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetTypeLib)(::windows_core::Interface::as_raw(self), bstrtypelib.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PublisherID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).PublisherID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn PublisherID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).PublisherID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPublisherID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpublisherid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetPublisherID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpublisherid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPublisherID)(::windows_core::Interface::as_raw(self), bstrpublisherid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MultiInterfacePublisherFilterCLSID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).MultiInterfacePublisherFilterCLSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn MultiInterfacePublisherFilterCLSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).MultiInterfacePublisherFilterCLSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMultiInterfacePublisherFilterCLSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpubfilclsid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetMultiInterfacePublisherFilterCLSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpubfilclsid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMultiInterfacePublisherFilterCLSID)(::windows_core::Interface::as_raw(self), bstrpubfilclsid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AllowInprocActivation(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).AllowInprocActivation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn AllowInprocActivation(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).AllowInprocActivation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetAllowInprocActivation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, fallowinprocactivation: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetAllowInprocActivation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fallowinprocactivation: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAllowInprocActivation)(::windows_core::Interface::as_raw(self), fallowinprocactivation.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FireInParallel(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).FireInParallel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn FireInParallel(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).FireInParallel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFireInParallel<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, ffireinparallel: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFireInParallel<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ffireinparallel: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFireInParallel)(::windows_core::Interface::as_raw(self), ffireinparallel.into_param().abi()).ok()
     }
 }
@@ -565,62 +480,33 @@ unsafe impl ::windows_core::Interface for IEventClass2 {
 #[doc(hidden)]
 pub struct IEventClass2_Vtbl {
     pub base__: IEventClass_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublisherid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PublisherID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublisherid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPublisherID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MultiInterfacePublisherFilterCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpubfilclsid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MultiInterfacePublisherFilterCLSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetMultiInterfacePublisherFilterCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpubfilclsid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetMultiInterfacePublisherFilterCLSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfallowinprocactivation: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AllowInprocActivation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetAllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fallowinprocactivation: super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetAllowInprocActivation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FireInParallel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pffireinparallel: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FireInParallel: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetFireInParallel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ffireinparallel: super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetFireInParallel: usize,
+    pub PublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublisherid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetPublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublisherid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub MultiInterfacePublisherFilterCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpubfilclsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetMultiInterfacePublisherFilterCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpubfilclsid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub AllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfallowinprocactivation: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetAllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fallowinprocactivation: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub FireInParallel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pffireinparallel: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetFireInParallel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ffireinparallel: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IEventControl(::windows_core::IUnknown);
 impl IEventControl {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPublisherFilter<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, IPublisherFilter>>(&self, methodname: Param0, ppublisherfilter: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetPublisherFilter<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, IPublisherFilter>>(&self, methodname: Param0, ppublisherfilter: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPublisherFilter)(::windows_core::Interface::as_raw(self), methodname.into_param().abi(), ppublisherfilter.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AllowInprocActivation(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).AllowInprocActivation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn AllowInprocActivation(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).AllowInprocActivation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetAllowInprocActivation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, fallowinprocactivation: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetAllowInprocActivation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fallowinprocactivation: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAllowInprocActivation)(::windows_core::Interface::as_raw(self), fallowinprocactivation.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetSubscriptions<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, methodname: Param0, optionalcriteria: Param1, optionalerrorindex: *const i32) -> ::windows_core::Result<IEventObjectCollection> {
+    pub unsafe fn GetSubscriptions<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, methodname: Param0, optionalcriteria: Param1, optionalerrorindex: *const i32) -> ::windows_core::Result<IEventObjectCollection> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSubscriptions)(::windows_core::Interface::as_raw(self), methodname.into_param().abi(), optionalcriteria.into_param().abi(), ::core::mem::transmute(optionalerrorindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEventObjectCollection>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDefaultQuery<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, methodname: Param0, criteria: Param1) -> ::windows_core::Result<i32> {
+    pub unsafe fn SetDefaultQuery<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, methodname: Param0, criteria: Param1) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).SetDefaultQuery)(::windows_core::Interface::as_raw(self), methodname.into_param().abi(), criteria.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
@@ -689,40 +575,22 @@ unsafe impl ::windows_core::Interface for IEventControl {
 #[doc(hidden)]
 pub struct IEventControl_Vtbl {
     pub base__: super::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPublisherFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppublisherfilter: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPublisherFilter: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfallowinprocactivation: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AllowInprocActivation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetAllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fallowinprocactivation: super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetAllowInprocActivation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetSubscriptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, optionalcriteria: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, optionalerrorindex: *const i32, ppcollection: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetSubscriptions: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDefaultQuery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, criteria: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, errorindex: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDefaultQuery: usize,
+    pub SetPublisherFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppublisherfilter: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub AllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfallowinprocactivation: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetAllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fallowinprocactivation: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetSubscriptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, optionalcriteria: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, optionalerrorindex: *const i32, ppcollection: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetDefaultQuery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, criteria: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, errorindex: *mut i32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IEventObjectChange(::windows_core::IUnknown);
 impl IEventObjectChange {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ChangedSubscription<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, changetype: EOC_ChangeType, bstrsubscriptionid: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn ChangedSubscription<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, changetype: EOC_ChangeType, bstrsubscriptionid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ChangedSubscription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(changetype), bstrsubscriptionid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ChangedEventClass<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, changetype: EOC_ChangeType, bstreventclassid: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn ChangedEventClass<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, changetype: EOC_ChangeType, bstreventclassid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ChangedEventClass)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(changetype), bstreventclassid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ChangedPublisher<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, changetype: EOC_ChangeType, bstrpublisherid: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn ChangedPublisher<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, changetype: EOC_ChangeType, bstrpublisherid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ChangedPublisher)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(changetype), bstrpublisherid.into_param().abi()).ok()
     }
 }
@@ -770,27 +638,16 @@ unsafe impl ::windows_core::Interface for IEventObjectChange {
 #[doc(hidden)]
 pub struct IEventObjectChange_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ChangedSubscription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changetype: EOC_ChangeType, bstrsubscriptionid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ChangedSubscription: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ChangedEventClass: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changetype: EOC_ChangeType, bstreventclassid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ChangedEventClass: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ChangedPublisher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changetype: EOC_ChangeType, bstrpublisherid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ChangedPublisher: usize,
+    pub ChangedSubscription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changetype: EOC_ChangeType, bstrsubscriptionid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub ChangedEventClass: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changetype: EOC_ChangeType, bstreventclassid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub ChangedPublisher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, changetype: EOC_ChangeType, bstrpublisherid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IEventObjectChange2(::windows_core::IUnknown);
 impl IEventObjectChange2 {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn ChangedSubscription(&self, pinfo: *const COMEVENTSYSCHANGEINFO) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ChangedSubscription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pinfo)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn ChangedEventClass(&self, pinfo: *const COMEVENTSYSCHANGEINFO) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ChangedEventClass)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pinfo)).ok()
     }
@@ -839,14 +696,8 @@ unsafe impl ::windows_core::Interface for IEventObjectChange2 {
 #[doc(hidden)]
 pub struct IEventObjectChange2_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub ChangedSubscription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinfo: *const COMEVENTSYSCHANGEINFO) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ChangedSubscription: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub ChangedEventClass: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinfo: *const COMEVENTSYSCHANGEINFO) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ChangedEventClass: usize,
 }
 #[repr(transparent)]
 pub struct IEventObjectCollection(::windows_core::IUnknown);
@@ -855,8 +706,8 @@ impl IEventObjectCollection {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, objectid: Param0) -> ::windows_core::Result<super::VARIANT> {
+    #[cfg(feature = "Win32_System_Ole")]
+    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, objectid: Param0) -> ::windows_core::Result<super::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), objectid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::VARIANT>(result__)
     }
@@ -868,12 +719,11 @@ impl IEventObjectCollection {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub unsafe fn Add<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, item: *const super::VARIANT, objectid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Ole")]
+    pub unsafe fn Add<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, item: *const super::VARIANT, objectid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(item), objectid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, objectid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, objectid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), objectid.into_param().abi()).ok()
     }
 }
@@ -942,39 +792,34 @@ unsafe impl ::windows_core::Interface for IEventObjectCollection {
 pub struct IEventObjectCollection_Vtbl {
     pub base__: super::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunkenum: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, objectid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pitem: *mut super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    #[cfg(feature = "Win32_System_Ole")]
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, objectid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pitem: *mut super::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
     get_Item: usize,
     pub NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcount: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, item: *const super::VARIANT, objectid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    #[cfg(feature = "Win32_System_Ole")]
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, item: *const super::VARIANT, objectid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
     Add: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, objectid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Remove: usize,
+    pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, objectid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IEventProperty(::windows_core::IUnknown);
 impl IEventProperty {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, propertyname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, propertyname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetName)(::windows_core::Interface::as_raw(self), propertyname.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+    #[cfg(feature = "Win32_System_Ole")]
     pub unsafe fn Value(&self) -> ::windows_core::Result<super::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).Value)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+    #[cfg(feature = "Win32_System_Ole")]
     pub unsafe fn SetValue(&self, propertyvalue: *const super::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertyvalue)).ok()
     }
@@ -1043,82 +888,65 @@ unsafe impl ::windows_core::Interface for IEventProperty {
 #[doc(hidden)]
 pub struct IEventProperty_Vtbl {
     pub base__: super::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetName: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_System_Ole")]
     pub Value: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyvalue: *mut super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    #[cfg(not(feature = "Win32_System_Ole"))]
     Value: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
+    #[cfg(feature = "Win32_System_Ole")]
     pub SetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyvalue: *const super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    #[cfg(not(feature = "Win32_System_Ole"))]
     SetValue: usize,
 }
 #[repr(transparent)]
 pub struct IEventPublisher(::windows_core::IUnknown);
 impl IEventPublisher {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PublisherID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).PublisherID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn PublisherID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).PublisherID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPublisherID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpublisherid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetPublisherID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpublisherid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPublisherID)(::windows_core::Interface::as_raw(self), bstrpublisherid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PublisherName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).PublisherName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn PublisherName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).PublisherName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPublisherName<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpublishername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetPublisherName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpublishername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPublisherName)(::windows_core::Interface::as_raw(self), bstrpublishername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PublisherType(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).PublisherType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn PublisherType(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).PublisherType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPublisherType<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpublishertype: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetPublisherType<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpublishertype: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPublisherType)(::windows_core::Interface::as_raw(self), bstrpublishertype.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OwnerSID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).OwnerSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OwnerSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).OwnerSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetOwnerSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrownersid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetOwnerSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrownersid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetOwnerSID)(::windows_core::Interface::as_raw(self), bstrownersid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Description(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Description(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescription)(::windows_core::Interface::as_raw(self), bstrdescription.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetDefaultProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<super::VARIANT> {
+    #[cfg(feature = "Win32_System_Ole")]
+    pub unsafe fn GetDefaultProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<super::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetDefaultProperty)(::windows_core::Interface::as_raw(self), bstrpropertyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub unsafe fn PutDefaultProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpropertyname: Param0, propertyvalue: *const super::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Ole")]
+    pub unsafe fn PutDefaultProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpropertyname: Param0, propertyvalue: *const super::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PutDefaultProperty)(::windows_core::Interface::as_raw(self), bstrpropertyname.into_param().abi(), ::core::mem::transmute(propertyvalue)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RemoveDefaultProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn RemoveDefaultProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RemoveDefaultProperty)(::windows_core::Interface::as_raw(self), bstrpropertyname.into_param().abi()).ok()
     }
     pub unsafe fn GetDefaultPropertyCollection(&self) -> ::windows_core::Result<IEventObjectCollection> {
@@ -1190,115 +1018,70 @@ unsafe impl ::windows_core::Interface for IEventPublisher {
 #[doc(hidden)]
 pub struct IEventPublisher_Vtbl {
     pub base__: super::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublisherid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PublisherID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublisherid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPublisherID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PublisherName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublishername: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PublisherName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPublisherName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublishername: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPublisherName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PublisherType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublishertype: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PublisherType: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPublisherType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublishertype: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPublisherType: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrownersid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OwnerSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetOwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrownersid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetOwnerSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdescription: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Description: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdescription: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDescription: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub GetDefaultProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertyvalue: *mut super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    pub PublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublisherid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetPublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublisherid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub PublisherName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublishername: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetPublisherName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublishername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub PublisherType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublishertype: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetPublisherType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublishertype: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub OwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrownersid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetOwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrownersid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdescription: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdescription: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub GetDefaultProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, propertyvalue: *mut super::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
     GetDefaultProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub PutDefaultProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertyvalue: *const super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    #[cfg(feature = "Win32_System_Ole")]
+    pub PutDefaultProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, propertyvalue: *const super::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
     PutDefaultProperty: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RemoveDefaultProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RemoveDefaultProperty: usize,
+    pub RemoveDefaultProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub GetDefaultPropertyCollection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, collection: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IEventSubscription(::windows_core::IUnknown);
 impl IEventSubscription {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SubscriptionID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SubscriptionID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SubscriptionID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SubscriptionID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSubscriptionID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrsubscriptionid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSubscriptionID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsubscriptionid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSubscriptionID)(::windows_core::Interface::as_raw(self), bstrsubscriptionid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SubscriptionName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SubscriptionName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SubscriptionName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SubscriptionName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSubscriptionName<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrsubscriptionname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSubscriptionName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsubscriptionname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSubscriptionName)(::windows_core::Interface::as_raw(self), bstrsubscriptionname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PublisherID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).PublisherID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn PublisherID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).PublisherID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPublisherID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpublisherid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetPublisherID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpublisherid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPublisherID)(::windows_core::Interface::as_raw(self), bstrpublisherid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EventClassID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).EventClassID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn EventClassID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).EventClassID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEventClassID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstreventclassid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEventClassID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstreventclassid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEventClassID)(::windows_core::Interface::as_raw(self), bstreventclassid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MethodName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).MethodName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn MethodName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).MethodName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMethodName<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrmethodname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetMethodName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrmethodname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMethodName)(::windows_core::Interface::as_raw(self), bstrmethodname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SubscriberCLSID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SubscriberCLSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SubscriberCLSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SubscriberCLSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSubscriberCLSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrsubscriberclsid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSubscriberCLSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsubscriberclsid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSubscriberCLSID)(::windows_core::Interface::as_raw(self), bstrsubscriberclsid.into_param().abi()).ok()
     }
     pub unsafe fn SubscriberInterface(&self) -> ::windows_core::Result<::windows_core::IUnknown> {
@@ -1308,92 +1091,78 @@ impl IEventSubscription {
     pub unsafe fn SetSubscriberInterface<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, psubscriberinterface: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSubscriberInterface)(::windows_core::Interface::as_raw(self), psubscriberinterface.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PerUser(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).PerUser)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn PerUser(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).PerUser)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPerUser<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, fperuser: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetPerUser<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fperuser: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetPerUser)(::windows_core::Interface::as_raw(self), fperuser.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OwnerSID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).OwnerSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OwnerSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).OwnerSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetOwnerSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrownersid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetOwnerSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrownersid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetOwnerSID)(::windows_core::Interface::as_raw(self), bstrownersid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Enabled(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).Enabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn Enabled(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).Enabled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEnabled<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, fenabled: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEnabled<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fenabled: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEnabled)(::windows_core::Interface::as_raw(self), fenabled.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Description(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Description(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescription)(::windows_core::Interface::as_raw(self), bstrdescription.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MachineName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).MachineName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn MachineName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).MachineName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMachineName<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrmachinename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetMachineName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrmachinename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMachineName)(::windows_core::Interface::as_raw(self), bstrmachinename.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetPublisherProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<super::VARIANT> {
+    #[cfg(feature = "Win32_System_Ole")]
+    pub unsafe fn GetPublisherProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<super::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetPublisherProperty)(::windows_core::Interface::as_raw(self), bstrpropertyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub unsafe fn PutPublisherProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpropertyname: Param0, propertyvalue: *const super::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Ole")]
+    pub unsafe fn PutPublisherProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpropertyname: Param0, propertyvalue: *const super::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PutPublisherProperty)(::windows_core::Interface::as_raw(self), bstrpropertyname.into_param().abi(), ::core::mem::transmute(propertyvalue)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RemovePublisherProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn RemovePublisherProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RemovePublisherProperty)(::windows_core::Interface::as_raw(self), bstrpropertyname.into_param().abi()).ok()
     }
     pub unsafe fn GetPublisherPropertyCollection(&self) -> ::windows_core::Result<IEventObjectCollection> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetPublisherPropertyCollection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEventObjectCollection>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetSubscriberProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<super::VARIANT> {
+    #[cfg(feature = "Win32_System_Ole")]
+    pub unsafe fn GetSubscriberProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<super::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).GetSubscriberProperty)(::windows_core::Interface::as_raw(self), bstrpropertyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub unsafe fn PutSubscriberProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpropertyname: Param0, propertyvalue: *const super::VARIANT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Ole")]
+    pub unsafe fn PutSubscriberProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpropertyname: Param0, propertyvalue: *const super::VARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PutSubscriberProperty)(::windows_core::Interface::as_raw(self), bstrpropertyname.into_param().abi(), ::core::mem::transmute(propertyvalue)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RemoveSubscriberProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn RemoveSubscriberProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrpropertyname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RemoveSubscriberProperty)(::windows_core::Interface::as_raw(self), bstrpropertyname.into_param().abi()).ok()
     }
     pub unsafe fn GetSubscriberPropertyCollection(&self) -> ::windows_core::Result<IEventObjectCollection> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSubscriberPropertyCollection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEventObjectCollection>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn InterfaceID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).InterfaceID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn InterfaceID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).InterfaceID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetInterfaceID<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, bstrinterfaceid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetInterfaceID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrinterfaceid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetInterfaceID)(::windows_core::Interface::as_raw(self), bstrinterfaceid.into_param().abi()).ok()
     }
 }
@@ -1461,159 +1230,75 @@ unsafe impl ::windows_core::Interface for IEventSubscription {
 #[doc(hidden)]
 pub struct IEventSubscription_Vtbl {
     pub base__: super::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SubscriptionID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubscriptionid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SubscriptionID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSubscriptionID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubscriptionid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSubscriptionID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SubscriptionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubscriptionname: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SubscriptionName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSubscriptionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubscriptionname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSubscriptionName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublisherid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PublisherID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublisherid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPublisherID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub EventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstreventclassid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EventClassID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetEventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstreventclassid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetEventClassID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MethodName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrmethodname: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MethodName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetMethodName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmethodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetMethodName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SubscriberCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubscriberclsid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SubscriberCLSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSubscriberCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubscriberclsid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSubscriberCLSID: usize,
+    pub SubscriptionID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubscriptionid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSubscriptionID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubscriptionid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub SubscriptionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubscriptionname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSubscriptionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubscriptionname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub PublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrpublisherid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetPublisherID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpublisherid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub EventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstreventclassid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetEventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstreventclassid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub MethodName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrmethodname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetMethodName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmethodname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub SubscriberCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubscriberclsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSubscriberCLSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubscriberclsid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SubscriberInterface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppsubscriberinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetSubscriberInterface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psubscriberinterface: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PerUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfperuser: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PerUser: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPerUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fperuser: super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPerUser: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrownersid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OwnerSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetOwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrownersid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetOwnerSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Enabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfenabled: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Enabled: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenabled: super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetEnabled: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdescription: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Description: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdescription: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDescription: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MachineName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrmachinename: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MachineName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetMachineName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmachinename: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetMachineName: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub GetPublisherProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertyvalue: *mut super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    pub PerUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfperuser: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetPerUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fperuser: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub OwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrownersid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetOwnerSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrownersid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Enabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfenabled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenabled: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdescription: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdescription: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub MachineName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrmachinename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetMachineName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmachinename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_System_Ole")]
+    pub GetPublisherProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, propertyvalue: *mut super::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
     GetPublisherProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub PutPublisherProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertyvalue: *const super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    #[cfg(feature = "Win32_System_Ole")]
+    pub PutPublisherProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, propertyvalue: *const super::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
     PutPublisherProperty: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RemovePublisherProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RemovePublisherProperty: usize,
+    pub RemovePublisherProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub GetPublisherPropertyCollection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, collection: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub GetSubscriberProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertyvalue: *mut super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    #[cfg(feature = "Win32_System_Ole")]
+    pub GetSubscriberProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, propertyvalue: *mut super::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
     GetSubscriberProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole"))]
-    pub PutSubscriberProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, propertyvalue: *const super::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Ole")))]
+    #[cfg(feature = "Win32_System_Ole")]
+    pub PutSubscriberProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, propertyvalue: *const super::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Ole"))]
     PutSubscriberProperty: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RemoveSubscriberProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RemoveSubscriberProperty: usize,
+    pub RemoveSubscriberProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrpropertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub GetSubscriberPropertyCollection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, collection: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub InterfaceID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrinterfaceid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    InterfaceID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetInterfaceID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrinterfaceid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetInterfaceID: usize,
+    pub InterfaceID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrinterfaceid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetInterfaceID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrinterfaceid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IEventSystem(::windows_core::IUnknown);
 impl IEventSystem {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, progid: Param0, querycriteria: Param1, errorindex: *mut i32, ppinterface: *mut ::core::option::Option<::windows_core::IUnknown>) -> ::windows_core::Result<()> {
+    pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, progid: Param0, querycriteria: Param1, errorindex: *mut i32, ppinterface: *mut ::core::option::Option<::windows_core::IUnknown>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Query)(::windows_core::Interface::as_raw(self), progid.into_param().abi(), querycriteria.into_param().abi(), ::core::mem::transmute(errorindex), ::core::mem::transmute(ppinterface)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Store<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, progid: Param0, pinterface: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn Store<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, progid: Param0, pinterface: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Store)(::windows_core::Interface::as_raw(self), progid.into_param().abi(), pinterface.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, progid: Param0, querycriteria: Param1) -> ::windows_core::Result<i32> {
+    pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, progid: Param0, querycriteria: Param1) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), progid.into_param().abi(), querycriteria.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EventObjectChangeEventClassID(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).EventObjectChangeEventClassID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    pub unsafe fn EventObjectChangeEventClassID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).EventObjectChangeEventClassID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryS<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, progid: Param0, querycriteria: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn QueryS<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, progid: Param0, querycriteria: Param1) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).QueryS)(::windows_core::Interface::as_raw(self), progid.into_param().abi(), querycriteria.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RemoveS<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, progid: Param0, querycriteria: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn RemoveS<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, progid: Param0, querycriteria: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RemoveS)(::windows_core::Interface::as_raw(self), progid.into_param().abi(), querycriteria.into_param().abi()).ok()
     }
 }
@@ -1681,30 +1366,12 @@ unsafe impl ::windows_core::Interface for IEventSystem {
 #[doc(hidden)]
 pub struct IEventSystem_Vtbl {
     pub base__: super::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Query: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, querycriteria: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, errorindex: *mut i32, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Query: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Store: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, pinterface: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Store: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, querycriteria: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, errorindex: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Remove: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub EventObjectChangeEventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstreventclassid: *mut super::super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EventObjectChangeEventClassID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub QueryS: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, querycriteria: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    QueryS: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RemoveS: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, querycriteria: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RemoveS: usize,
+    pub Query: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, querycriteria: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, errorindex: *mut i32, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Store: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pinterface: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, querycriteria: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, errorindex: *mut i32) -> ::windows_core::HRESULT,
+    pub EventObjectChangeEventClassID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstreventclassid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub QueryS: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, querycriteria: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub RemoveS: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, progid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, querycriteria: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IFiringControl(::windows_core::IUnknown);
@@ -1785,32 +1452,26 @@ impl IMultiInterfaceEventControl {
     pub unsafe fn SetMultiInterfacePublisherFilter<'a, Param0: ::windows_core::IntoParam<'a, IMultiInterfacePublisherFilter>>(&self, classfilter: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMultiInterfacePublisherFilter)(::windows_core::Interface::as_raw(self), classfilter.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetSubscriptions<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, eventiid: *const ::windows_core::GUID, bstrmethodname: Param1, optionalcriteria: Param2, optionalerrorindex: *const i32) -> ::windows_core::Result<IEventObjectCollection> {
+    pub unsafe fn GetSubscriptions<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, eventiid: *const ::windows_core::GUID, bstrmethodname: Param1, optionalcriteria: Param2, optionalerrorindex: *const i32) -> ::windows_core::Result<IEventObjectCollection> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSubscriptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(eventiid), bstrmethodname.into_param().abi(), optionalcriteria.into_param().abi(), ::core::mem::transmute(optionalerrorindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEventObjectCollection>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDefaultQuery<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>>(&self, eventiid: *const ::windows_core::GUID, bstrmethodname: Param1, bstrcriteria: Param2) -> ::windows_core::Result<i32> {
+    pub unsafe fn SetDefaultQuery<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, eventiid: *const ::windows_core::GUID, bstrmethodname: Param1, bstrcriteria: Param2) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).SetDefaultQuery)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(eventiid), bstrmethodname.into_param().abi(), bstrcriteria.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AllowInprocActivation(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).AllowInprocActivation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn AllowInprocActivation(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).AllowInprocActivation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetAllowInprocActivation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, fallowinprocactivation: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetAllowInprocActivation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fallowinprocactivation: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAllowInprocActivation)(::windows_core::Interface::as_raw(self), fallowinprocactivation.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FireInParallel(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).FireInParallel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn FireInParallel(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).FireInParallel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFireInParallel<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, ffireinparallel: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFireInParallel<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ffireinparallel: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFireInParallel)(::windows_core::Interface::as_raw(self), ffireinparallel.into_param().abi()).ok()
     }
 }
@@ -1859,30 +1520,12 @@ unsafe impl ::windows_core::Interface for IMultiInterfaceEventControl {
 pub struct IMultiInterfaceEventControl_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub SetMultiInterfacePublisherFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, classfilter: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetSubscriptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventiid: *const ::windows_core::GUID, bstrmethodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, optionalcriteria: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, optionalerrorindex: *const i32, ppcollection: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetSubscriptions: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDefaultQuery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventiid: *const ::windows_core::GUID, bstrmethodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, bstrcriteria: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, errorindex: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDefaultQuery: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfallowinprocactivation: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AllowInprocActivation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetAllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fallowinprocactivation: super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetAllowInprocActivation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FireInParallel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pffireinparallel: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FireInParallel: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetFireInParallel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ffireinparallel: super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetFireInParallel: usize,
+    pub GetSubscriptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventiid: *const ::windows_core::GUID, bstrmethodname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, optionalcriteria: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, optionalerrorindex: *const i32, ppcollection: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub SetDefaultQuery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventiid: *const ::windows_core::GUID, bstrmethodname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrcriteria: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, errorindex: *mut i32) -> ::windows_core::HRESULT,
+    pub AllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfallowinprocactivation: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetAllowInprocActivation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fallowinprocactivation: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub FireInParallel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pffireinparallel: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetFireInParallel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ffireinparallel: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IMultiInterfacePublisherFilter(::windows_core::IUnknown);
@@ -1890,8 +1533,7 @@ impl IMultiInterfacePublisherFilter {
     pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, IMultiInterfaceEventControl>>(&self, peic: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), peic.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PrepareToFire<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFiringControl>>(&self, iid: *const ::windows_core::GUID, methodname: Param1, firingcontrol: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn PrepareToFire<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFiringControl>>(&self, iid: *const ::windows_core::GUID, methodname: Param1, firingcontrol: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PrepareToFire)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iid), methodname.into_param().abi(), firingcontrol.into_param().abi()).ok()
     }
 }
@@ -1940,20 +1582,15 @@ unsafe impl ::windows_core::Interface for IMultiInterfacePublisherFilter {
 pub struct IMultiInterfacePublisherFilter_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, peic: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PrepareToFire: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iid: *const ::windows_core::GUID, methodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, firingcontrol: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PrepareToFire: usize,
+    pub PrepareToFire: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, iid: *const ::windows_core::GUID, methodname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, firingcontrol: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPublisherFilter(::windows_core::IUnknown);
 impl IPublisherFilter {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::IDispatch>>(&self, methodname: Param0, dispuserdefined: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::IDispatch>>(&self, methodname: Param0, dispuserdefined: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), methodname.into_param().abi(), dispuserdefined.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PrepareToFire<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, IFiringControl>>(&self, methodname: Param0, firingcontrol: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn PrepareToFire<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, IFiringControl>>(&self, methodname: Param0, firingcontrol: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PrepareToFire)(::windows_core::Interface::as_raw(self), methodname.into_param().abi(), firingcontrol.into_param().abi()).ok()
     }
 }
@@ -2001,12 +1638,6 @@ unsafe impl ::windows_core::Interface for IPublisherFilter {
 #[doc(hidden)]
 pub struct IPublisherFilter_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, dispuserdefined: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Initialize: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PrepareToFire: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>, firingcontrol: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PrepareToFire: usize,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, dispuserdefined: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub PrepareToFire: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, methodname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, firingcontrol: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }

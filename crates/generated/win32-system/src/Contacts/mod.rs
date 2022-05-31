@@ -434,15 +434,13 @@ impl IContactAggregationContact {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsMe(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsMe)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsMe(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsMe)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsExternal(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsExternal)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsExternal(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsExternal)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn NetworkSourceId(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -525,14 +523,8 @@ pub struct IContactAggregationContact_Vtbl {
     pub SetAccountId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, paccountid: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub AggregateId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppaggregateid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppitemid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsMe: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pisme: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsMe: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsExternal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pisexternal: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsExternal: usize,
+    pub IsMe: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pisme: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub IsExternal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pisexternal: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub NetworkSourceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnetworksourceid: *mut u32) -> ::windows_core::HRESULT,
     pub SetNetworkSourceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, networksourceid: u32) -> ::windows_core::HRESULT,
     pub NetworkSourceIdString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppnetworksourceid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
@@ -798,13 +790,11 @@ impl IContactAggregationLink {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsLinkResolved(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsLinkResolved)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsLinkResolved(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsLinkResolved)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsLinkResolved<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, islinkresolved: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsLinkResolved<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, islinkresolved: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetIsLinkResolved)(::windows_core::Interface::as_raw(self), islinkresolved.into_param().abi()).ok()
     }
     pub unsafe fn NetworkSourceIdString(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -892,14 +882,8 @@ pub struct IContactAggregationLink_Vtbl {
     pub AccountId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppaccountid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetAccountId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, paccountid: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppitemid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsLinkResolved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pislinkresolved: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsLinkResolved: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetIsLinkResolved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, islinkresolved: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetIsLinkResolved: usize,
+    pub IsLinkResolved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pislinkresolved: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetIsLinkResolved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, islinkresolved: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub NetworkSourceIdString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppnetworksourceid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetNetworkSourceIdString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnetworksourceid: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub RemoteObjectId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppremoteobjectid: *mut *mut CONTACT_AGGREGATION_BLOB) -> ::windows_core::HRESULT,
@@ -986,8 +970,7 @@ impl IContactAggregationManager {
     pub unsafe fn GetVersionInfo(&self, plmajorversion: *mut i32, plminorversion: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetVersionInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(plmajorversion), ::core::mem::transmute(plminorversion)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateOrOpenGroup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pgroupname: Param0, options: CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS, pcreatedgroup: *mut super::super::Foundation::BOOL, ppgroup: *mut ::core::option::Option<IContactAggregationGroup>) -> ::windows_core::Result<()> {
+    pub unsafe fn CreateOrOpenGroup<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pgroupname: Param0, options: CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS, pcreatedgroup: *mut ::win32_foundation::BOOL, ppgroup: *mut ::core::option::Option<IContactAggregationGroup>) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CreateOrOpenGroup)(::windows_core::Interface::as_raw(self), pgroupname.into_param().abi(), ::core::mem::transmute(options), ::core::mem::transmute(pcreatedgroup), ::core::mem::transmute(ppgroup)).ok()
     }
     pub unsafe fn CreateExternalContact(&self) -> ::windows_core::Result<IContactAggregationContact> {
@@ -1087,10 +1070,7 @@ unsafe impl ::windows_core::Interface for IContactAggregationManager {
 pub struct IContactAggregationManager_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetVersionInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plmajorversion: *mut i32, plminorversion: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateOrOpenGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgroupname: ::windows_core::PCWSTR, options: CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS, pcreatedgroup: *mut super::super::Foundation::BOOL, ppgroup: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateOrOpenGroup: usize,
+    pub CreateOrOpenGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgroupname: ::windows_core::PCWSTR, options: CONTACT_AGGREGATION_CREATE_OR_OPEN_OPTIONS, pcreatedgroup: *mut ::win32_foundation::BOOL, ppgroup: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateExternalContact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateServerPerson: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppserverperson: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateServerContactLink: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppservercontactlink: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1167,13 +1147,11 @@ impl IContactAggregationServerPerson {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
         (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsTombstone(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsTombstone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsTombstone(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsTombstone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsTombstone<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, istombstone: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsTombstone<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, istombstone: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetIsTombstone)(::windows_core::Interface::as_raw(self), istombstone.into_param().abi()).ok()
     }
     pub unsafe fn LinkedAggregateId(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -1252,14 +1230,8 @@ pub struct IContactAggregationServerPerson_Vtbl {
     pub GroupsBaseline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppgroups: *mut *mut CONTACT_AGGREGATION_BLOB) -> ::windows_core::HRESULT,
     pub SetGroupsBaseline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgroups: *const CONTACT_AGGREGATION_BLOB) -> ::windows_core::HRESULT,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsTombstone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pistombstone: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsTombstone: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetIsTombstone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, istombstone: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetIsTombstone: usize,
+    pub IsTombstone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pistombstone: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetIsTombstone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, istombstone: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub LinkedAggregateId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pplinkedaggregateid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetLinkedAggregateId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plinkedaggregateid: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub ObjectId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppobjectid: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
@@ -1488,8 +1460,7 @@ impl IContactProperties {
     pub unsafe fn GetString<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszpropertyname: Param0, dwflags: u32, pszvalue: &mut [u16], pdwcchpropertyvaluerequired: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetString)(::windows_core::Interface::as_raw(self), pszpropertyname.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszvalue)), pszvalue.len() as _, ::core::mem::transmute(pdwcchpropertyvaluerequired)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetDate<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszpropertyname: Param0, dwflags: u32, pftdatetime: *mut super::super::Foundation::FILETIME) -> ::windows_core::Result<()> {
+    pub unsafe fn GetDate<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszpropertyname: Param0, dwflags: u32, pftdatetime: *mut ::win32_foundation::FILETIME) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetDate)(::windows_core::Interface::as_raw(self), pszpropertyname.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pftdatetime)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -1502,8 +1473,7 @@ impl IContactProperties {
     pub unsafe fn SetString<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszpropertyname: Param0, dwflags: u32, pszvalue: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetString)(::windows_core::Interface::as_raw(self), pszpropertyname.into_param().abi(), ::core::mem::transmute(dwflags), pszvalue.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDate<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::FILETIME>>(&self, pszpropertyname: Param0, dwflags: u32, ftdatetime: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDate<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::FILETIME>>(&self, pszpropertyname: Param0, dwflags: u32, ftdatetime: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDate)(::windows_core::Interface::as_raw(self), pszpropertyname.into_param().abi(), ::core::mem::transmute(dwflags), ftdatetime.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -1513,8 +1483,7 @@ impl IContactProperties {
     pub unsafe fn SetLabels<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszarrayelementname: Param0, dwflags: u32, ppszlabels: &[::windows_core::PWSTR]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLabels)(::windows_core::Interface::as_raw(self), pszarrayelementname.into_param().abi(), ::core::mem::transmute(dwflags), ppszlabels.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppszlabels))).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateArrayNode<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pszarrayname: Param0, dwflags: u32, fappend: Param2, psznewarrayelementname: &mut [u16], pdwcchnewarrayelementnamerequired: *mut u32) -> ::windows_core::Result<()> {
+    pub unsafe fn CreateArrayNode<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pszarrayname: Param0, dwflags: u32, fappend: Param2, psznewarrayelementname: &mut [u16], pdwcchnewarrayelementnamerequired: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CreateArrayNode)(::windows_core::Interface::as_raw(self), pszarrayname.into_param().abi(), ::core::mem::transmute(dwflags), fappend.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(psznewarrayelementname)), psznewarrayelementname.len() as _, ::core::mem::transmute(pdwcchnewarrayelementnamerequired)).ok()
     }
     pub unsafe fn DeleteProperty<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszpropertyname: Param0, dwflags: u32) -> ::windows_core::Result<()> {
@@ -1526,8 +1495,7 @@ impl IContactProperties {
     pub unsafe fn DeleteLabels<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszarrayelementname: Param0, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DeleteLabels)(::windows_core::Interface::as_raw(self), pszarrayelementname.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetPropertyCollection<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pppropertycollection: *mut ::core::option::Option<IContactPropertyCollection>, dwflags: u32, pszmultivaluename: Param2, ppszlabels: &[::windows_core::PWSTR], fanylabelmatches: Param5) -> ::windows_core::Result<()> {
+    pub unsafe fn GetPropertyCollection<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pppropertycollection: *mut ::core::option::Option<IContactPropertyCollection>, dwflags: u32, pszmultivaluename: Param2, ppszlabels: &[::windows_core::PWSTR], fanylabelmatches: Param5) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetPropertyCollection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pppropertycollection), ::core::mem::transmute(dwflags), pszmultivaluename.into_param().abi(), ppszlabels.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppszlabels)), fanylabelmatches.into_param().abi()).ok()
     }
 }
@@ -1576,36 +1544,24 @@ unsafe impl ::windows_core::Interface for IContactProperties {
 pub struct IContactProperties_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PCWSTR, dwflags: u32, pszvalue: ::windows_core::PWSTR, cchvalue: u32, pdwcchpropertyvaluerequired: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PCWSTR, dwflags: u32, pftdatetime: *mut super::super::Foundation::FILETIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDate: usize,
+    pub GetDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PCWSTR, dwflags: u32, pftdatetime: *mut ::win32_foundation::FILETIME) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub GetBinary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PCWSTR, dwflags: u32, pszcontenttype: ::windows_core::PWSTR, cchcontenttype: u32, pdwcchcontenttyperequired: *mut u32, ppstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetBinary: usize,
     pub GetLabels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszarrayelementname: ::windows_core::PCWSTR, dwflags: u32, pszlabels: ::windows_core::PWSTR, cchlabels: u32, pdwcchlabelsrequired: *mut u32) -> ::windows_core::HRESULT,
     pub SetString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PCWSTR, dwflags: u32, pszvalue: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PCWSTR, dwflags: u32, ftdatetime: super::super::Foundation::FILETIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDate: usize,
+    pub SetDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PCWSTR, dwflags: u32, ftdatetime: ::win32_foundation::FILETIME) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub SetBinary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PCWSTR, dwflags: u32, pszcontenttype: ::windows_core::PCWSTR, pstream: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     SetBinary: usize,
     pub SetLabels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszarrayelementname: ::windows_core::PCWSTR, dwflags: u32, dwlabelcount: u32, ppszlabels: *const ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateArrayNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszarrayname: ::windows_core::PCWSTR, dwflags: u32, fappend: super::super::Foundation::BOOL, psznewarrayelementname: ::windows_core::PWSTR, cchnewarrayelementname: u32, pdwcchnewarrayelementnamerequired: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateArrayNode: usize,
+    pub CreateArrayNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszarrayname: ::windows_core::PCWSTR, dwflags: u32, fappend: ::win32_foundation::BOOL, psznewarrayelementname: ::windows_core::PWSTR, cchnewarrayelementname: u32, pdwcchnewarrayelementnamerequired: *mut u32) -> ::windows_core::HRESULT,
     pub DeleteProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PCWSTR, dwflags: u32) -> ::windows_core::HRESULT,
     pub DeleteArrayNode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszarrayelementname: ::windows_core::PCWSTR, dwflags: u32) -> ::windows_core::HRESULT,
     pub DeleteLabels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszarrayelementname: ::windows_core::PCWSTR, dwflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetPropertyCollection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppropertycollection: *mut ::windows_core::RawPtr, dwflags: u32, pszmultivaluename: ::windows_core::PCWSTR, dwlabelcount: u32, ppszlabels: *const ::windows_core::PWSTR, fanylabelmatches: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetPropertyCollection: usize,
+    pub GetPropertyCollection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppropertycollection: *mut ::windows_core::RawPtr, dwflags: u32, pszmultivaluename: ::windows_core::PCWSTR, dwlabelcount: u32, ppszlabels: *const ::windows_core::PWSTR, fanylabelmatches: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IContactPropertyCollection(::windows_core::IUnknown);
@@ -1625,8 +1581,7 @@ impl IContactPropertyCollection {
     pub unsafe fn GetPropertyVersion(&self, pdwversion: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetPropertyVersion)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwversion)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetPropertyModificationDate(&self, pftmodificationdate: *mut super::super::Foundation::FILETIME) -> ::windows_core::Result<()> {
+    pub unsafe fn GetPropertyModificationDate(&self, pftmodificationdate: *mut ::win32_foundation::FILETIME) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetPropertyModificationDate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pftmodificationdate)).ok()
     }
     pub unsafe fn GetPropertyArrayElementID(&self, pszarrayelementid: &mut [u16], pdwccharrayelementidrequired: *mut u32) -> ::windows_core::Result<()> {
@@ -1682,9 +1637,6 @@ pub struct IContactPropertyCollection_Vtbl {
     pub GetPropertyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszpropertyname: ::windows_core::PWSTR, cchpropertyname: u32, pdwcchpropertynamerequired: *mut u32) -> ::windows_core::HRESULT,
     pub GetPropertyType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwtype: *mut u32) -> ::windows_core::HRESULT,
     pub GetPropertyVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwversion: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetPropertyModificationDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pftmodificationdate: *mut super::super::Foundation::FILETIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetPropertyModificationDate: usize,
+    pub GetPropertyModificationDate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pftmodificationdate: *mut ::win32_foundation::FILETIME) -> ::windows_core::HRESULT,
     pub GetPropertyArrayElementID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszarrayelementid: ::windows_core::PWSTR, ccharrayelementid: u32, pdwccharrayelementidrequired: *mut u32) -> ::windows_core::HRESULT,
 }

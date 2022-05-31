@@ -105,12 +105,11 @@ impl CivicAddress {
             (::windows_core::Interface::vtable(this).PostalCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
 }
@@ -243,21 +242,21 @@ impl GeoboundingBox {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryCompute<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows_core::Result<GeoboundingBox> {
+    pub fn TryCompute<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryCompute)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryComputeWithAltitudeReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem) -> ::windows_core::Result<GeoboundingBox> {
+    pub fn TryComputeWithAltitudeReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryComputeWithAltitudeReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altituderefsystem, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TryComputeWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<GeoboundingBox> {
+    pub fn TryComputeWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altituderefsystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<GeoboundingBox> {
         Self::IGeoboundingBoxStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).TryComputeWithAltitudeReferenceAndSpatialReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altituderefsystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<GeoboundingBox>(result__)
@@ -561,12 +560,12 @@ impl Geocoordinate {
             (::windows_core::Interface::vtable(this).Longitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn Altitude(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    #[cfg(feature = "deprecated")]
+    pub fn Altitude(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Altitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).Altitude)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
     pub fn Accuracy(&self) -> ::windows_core::Result<f64> {
@@ -576,36 +575,32 @@ impl Geocoordinate {
             (::windows_core::Interface::vtable(this).Accuracy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AltitudeAccuracy(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn AltitudeAccuracy(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AltitudeAccuracy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).AltitudeAccuracy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Heading(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn Heading(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Heading)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).Heading)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Speed(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn Speed(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Speed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).Speed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn Point(&self) -> ::windows_core::Result<Geopoint> {
@@ -629,12 +624,11 @@ impl Geocoordinate {
             (::windows_core::Interface::vtable(this).SatelliteData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GeocoordinateSatelliteData>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PositionSourceTimestamp(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::DateTime>> {
+    pub fn PositionSourceTimestamp(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::DateTime>> {
         let this = &::windows_core::Interface::cast::<IGeocoordinateWithPositionSourceTimestamp>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PositionSourceTimestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).PositionSourceTimestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::DateTime>>(result__)
         }
     }
     pub fn IsRemoteSource(&self) -> ::windows_core::Result<bool> {
@@ -720,44 +714,39 @@ unsafe impl ::core::marker::Sync for Geocoordinate {}
 #[repr(transparent)]
 pub struct GeocoordinateSatelliteData(::windows_core::IUnknown);
 impl GeocoordinateSatelliteData {
-    #[cfg(feature = "Foundation")]
-    pub fn PositionDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn PositionDilutionOfPrecision(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PositionDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).PositionDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn HorizontalDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn HorizontalDilutionOfPrecision(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).HorizontalDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).HorizontalDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn VerticalDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn VerticalDilutionOfPrecision(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).VerticalDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).VerticalDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GeometricDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn GeometricDilutionOfPrecision(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = &::windows_core::Interface::cast::<IGeocoordinateSatelliteData2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GeometricDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).GeometricDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TimeDilutionOfPrecision(&self) -> ::windows_core::Result<super::super::Foundation::IReference<f64>> {
+    pub fn TimeDilutionOfPrecision(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = &::windows_core::Interface::cast::<IGeocoordinateSatelliteData2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TimeDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).TimeDilutionOfPrecision)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
 }
@@ -917,45 +906,39 @@ impl Geolocator {
             (::windows_core::Interface::vtable(this).LocationStatus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PositionStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetGeopositionAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Geoposition>> {
+    pub fn GetGeopositionAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Geoposition>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetGeopositionAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Geoposition>>(result__)
+            (::windows_core::Interface::vtable(this).GetGeopositionAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Geoposition>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetGeopositionAsyncWithAgeAndTimeout<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, maximumage: Param0, timeout: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Geoposition>> {
+    pub fn GetGeopositionAsyncWithAgeAndTimeout<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, maximumage: Param0, timeout: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Geoposition>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetGeopositionAsyncWithAgeAndTimeout)(::windows_core::Interface::as_raw(this), maximumage.into_param().abi(), timeout.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Geoposition>>(result__)
+            (::windows_core::Interface::vtable(this).GetGeopositionAsyncWithAgeAndTimeout)(::windows_core::Interface::as_raw(this), maximumage.into_param().abi(), timeout.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Geoposition>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PositionChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Geolocator, PositionChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn PositionChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<Geolocator, PositionChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PositionChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PositionChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePositionChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePositionChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePositionChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<Geolocator, StatusChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn StatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<Geolocator, StatusChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -963,25 +946,24 @@ impl Geolocator {
         let this = &::windows_core::Interface::cast::<IGeolocator2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).AllowFallbackToConsentlessPositions)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestAccessAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<GeolocationAccessStatus>> {
+    pub fn RequestAccessAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GeolocationAccessStatus>> {
         Self::IGeolocatorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<GeolocationAccessStatus>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GeolocationAccessStatus>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetGeopositionHistoryAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(starttime: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>> {
+    pub fn GetGeopositionHistoryAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(starttime: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Geoposition>>> {
         Self::IGeolocatorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetGeopositionHistoryAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>>(result__)
+            (::windows_core::Interface::vtable(this).GetGeopositionHistoryAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Geoposition>>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetGeopositionHistoryWithDurationAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(starttime: Param0, duration: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>> {
+    pub fn GetGeopositionHistoryWithDurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(starttime: Param0, duration: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Geoposition>>> {
         Self::IGeolocatorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetGeopositionHistoryWithDurationAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), duration.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<Geoposition>>>(result__)
+            (::windows_core::Interface::vtable(this).GetGeopositionHistoryWithDurationAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), duration.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Geoposition>>>(result__)
         })
     }
     pub fn IsDefaultGeopositionRecommended() -> ::windows_core::Result<bool> {
@@ -990,27 +972,23 @@ impl Geolocator {
             (::windows_core::Interface::vtable(this).IsDefaultGeopositionRecommended)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetDefaultGeoposition<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<BasicGeoposition>>>(value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDefaultGeoposition<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<BasicGeoposition>>>(value: Param0) -> ::windows_core::Result<()> {
         Self::IGeolocatorStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).SetDefaultGeoposition)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DefaultGeoposition() -> ::windows_core::Result<super::super::Foundation::IReference<BasicGeoposition>> {
+    pub fn DefaultGeoposition() -> ::windows_core::Result<::winrt_foundation::IReference<BasicGeoposition>> {
         Self::IGeolocatorStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DefaultGeoposition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<BasicGeoposition>>(result__)
+            (::windows_core::Interface::vtable(this).DefaultGeoposition)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<BasicGeoposition>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DesiredAccuracyInMeters(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn DesiredAccuracyInMeters(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = &::windows_core::Interface::cast::<IGeolocatorWithScalarAccuracy>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DesiredAccuracyInMeters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).DesiredAccuracyInMeters)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetDesiredAccuracyInMeters<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<u32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDesiredAccuracyInMeters<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<u32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IGeolocatorWithScalarAccuracy>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDesiredAccuracyInMeters)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1099,29 +1077,29 @@ unsafe impl ::core::marker::Sync for Geolocator {}
 pub struct Geopath(::windows_core::IUnknown);
 impl Geopath {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Positions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<BasicGeoposition>> {
+    pub fn Positions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<BasicGeoposition>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Positions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<BasicGeoposition>>(result__)
+            (::windows_core::Interface::vtable(this).Positions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<BasicGeoposition>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows_core::Result<Geopath> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0) -> ::windows_core::Result<Geopath> {
         Self::IGeopathFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), result__.as_mut_ptr()).from_abi::<Geopath>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateWithAltitudeReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows_core::Result<Geopath> {
+    pub fn CreateWithAltitudeReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem) -> ::windows_core::Result<Geopath> {
         Self::IGeopathFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithAltitudeReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altitudereferencesystem, result__.as_mut_ptr()).from_abi::<Geopath>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<Geopath> {
+    pub fn CreateWithAltitudeReferenceAndSpatialReference<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<BasicGeoposition>>>(positions: Param0, altitudereferencesystem: AltitudeReferenceSystem, spatialreferenceid: u32) -> ::windows_core::Result<Geopath> {
         Self::IGeopathFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithAltitudeReferenceAndSpatialReference)(::windows_core::Interface::as_raw(this), positions.into_param().abi(), altitudereferencesystem, spatialreferenceid, result__.as_mut_ptr()).from_abi::<Geopath>(result__)
@@ -1544,12 +1522,11 @@ impl Geovisit {
             (::windows_core::Interface::vtable(this).StateChange)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<VisitStateChange>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
 }
@@ -1650,24 +1627,21 @@ impl GeovisitMonitor {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Stop)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn VisitStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<GeovisitMonitor, GeovisitStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn VisitStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GeovisitMonitor, GeovisitStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).VisitStateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).VisitStateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveVisitStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveVisitStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveVisitStateChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetLastReportAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Geovisit>> {
+    pub fn GetLastReportAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Geovisit>> {
         Self::IGeovisitMonitorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetLastReportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Geovisit>>(result__)
+            (::windows_core::Interface::vtable(this).GetLastReportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Geovisit>>(result__)
         })
     }
     pub fn IGeovisitMonitorStatics<R, F: FnOnce(&IGeovisitMonitorStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1834,11 +1808,11 @@ unsafe impl ::core::marker::Sync for GeovisitStateChangedEventArgs {}
 pub struct GeovisitTriggerDetails(::windows_core::IUnknown);
 impl GeovisitTriggerDetails {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReadReports(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<Geovisit>> {
+    pub fn ReadReports(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Geovisit>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadReports)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<Geovisit>>(result__)
+            (::windows_core::Interface::vtable(this).ReadReports)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Geovisit>>(result__)
         }
     }
 }
@@ -1929,10 +1903,7 @@ pub struct ICivicAddress_Vtbl {
     pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub City: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub PostalCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Timestamp: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2038,27 +2009,15 @@ pub struct IGeocoordinate_Vtbl {
     pub Longitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     Longitude: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub Altitude: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     Altitude: usize,
     pub Accuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub AltitudeAccuracy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AltitudeAccuracy: usize,
-    #[cfg(feature = "Foundation")]
     pub Heading: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Heading: usize,
-    #[cfg(feature = "Foundation")]
     pub Speed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Speed: usize,
-    #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Timestamp: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2071,18 +2030,9 @@ unsafe impl ::windows_core::Interface for IGeocoordinateSatelliteData {
 #[doc(hidden)]
 pub struct IGeocoordinateSatelliteData_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub PositionDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PositionDilutionOfPrecision: usize,
-    #[cfg(feature = "Foundation")]
     pub HorizontalDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    HorizontalDilutionOfPrecision: usize,
-    #[cfg(feature = "Foundation")]
     pub VerticalDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    VerticalDilutionOfPrecision: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2095,14 +2045,8 @@ unsafe impl ::windows_core::Interface for IGeocoordinateSatelliteData2 {
 #[doc(hidden)]
 pub struct IGeocoordinateSatelliteData2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GeometricDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GeometricDilutionOfPrecision: usize,
-    #[cfg(feature = "Foundation")]
     pub TimeDilutionOfPrecision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TimeDilutionOfPrecision: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2142,10 +2086,7 @@ unsafe impl ::windows_core::Interface for IGeocoordinateWithPositionSourceTimest
 #[doc(hidden)]
 pub struct IGeocoordinateWithPositionSourceTimestamp_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub PositionSourceTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PositionSourceTimestamp: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2178,30 +2119,12 @@ pub struct IGeolocator_Vtbl {
     pub ReportInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub SetReportInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u32) -> ::windows_core::HRESULT,
     pub LocationStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut PositionStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetGeopositionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetGeopositionAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub GetGeopositionAsyncWithAgeAndTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maximumage: super::super::Foundation::TimeSpan, timeout: super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetGeopositionAsyncWithAgeAndTimeout: usize,
-    #[cfg(feature = "Foundation")]
-    pub PositionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PositionChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePositionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePositionChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub StatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStatusChanged: usize,
+    pub GetGeopositionAsyncWithAgeAndTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maximumage: ::winrt_foundation::TimeSpan, timeout: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub PositionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemovePositionChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub StatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2227,16 +2150,13 @@ unsafe impl ::windows_core::Interface for IGeolocatorStatics {
 #[doc(hidden)]
 pub struct IGeolocatorStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestAccessAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub GetGeopositionHistoryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetGeopositionHistoryAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetGeopositionHistoryAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
-    pub GetGeopositionHistoryWithDurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, duration: super::super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub GetGeopositionHistoryWithDurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, duration: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetGeopositionHistoryWithDurationAsync: usize,
 }
@@ -2252,14 +2172,8 @@ unsafe impl ::windows_core::Interface for IGeolocatorStatics2 {
 pub struct IGeolocatorStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsDefaultGeopositionRecommended: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SetDefaultGeoposition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetDefaultGeoposition: usize,
-    #[cfg(feature = "Foundation")]
     pub DefaultGeoposition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DefaultGeoposition: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2272,14 +2186,8 @@ unsafe impl ::windows_core::Interface for IGeolocatorWithScalarAccuracy {
 #[doc(hidden)]
 pub struct IGeolocatorWithScalarAccuracy_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub DesiredAccuracyInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DesiredAccuracyInMeters: usize,
-    #[cfg(feature = "Foundation")]
     pub SetDesiredAccuracyInMeters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetDesiredAccuracyInMeters: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2489,10 +2397,7 @@ pub struct IGeovisit_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub StateChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut VisitStateChange) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Timestamp: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2508,14 +2413,8 @@ pub struct IGeovisitMonitor_Vtbl {
     pub MonitoringScope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut VisitMonitoringScope) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: VisitMonitoringScope) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub VisitStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    VisitStateChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveVisitStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveVisitStateChanged: usize,
+    pub VisitStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveVisitStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2528,10 +2427,7 @@ unsafe impl ::windows_core::Interface for IGeovisitMonitorStatics {
 #[doc(hidden)]
 pub struct IGeovisitMonitorStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetLastReportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetLastReportAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]

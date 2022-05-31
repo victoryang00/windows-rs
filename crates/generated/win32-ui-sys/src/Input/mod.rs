@@ -14,25 +14,16 @@ pub mod Touch;
 pub mod XboxController;
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DefRawInputProc(parawinput: *const *const RAWINPUT, ninput: i32, cbsizeheader: u32) -> super::super::Foundation::LRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCIMSSM(inputmessagesource: *mut INPUT_MESSAGE_SOURCE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentInputMessageSource(inputmessagesource: *mut INPUT_MESSAGE_SOURCE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn DefRawInputProc(parawinput: *const *const RAWINPUT, ninput: i32, cbsizeheader: u32) -> ::win32_foundation_sys::LRESULT;
+    pub fn GetCIMSSM(inputmessagesource: *mut INPUT_MESSAGE_SOURCE) -> ::win32_foundation_sys::BOOL;
+    pub fn GetCurrentInputMessageSource(inputmessagesource: *mut INPUT_MESSAGE_SOURCE) -> ::win32_foundation_sys::BOOL;
     pub fn GetRawInputBuffer(pdata: *mut RAWINPUT, pcbsize: *mut u32, cbsizeheader: u32) -> u32;
     pub fn GetRawInputData(hrawinput: HRAWINPUT, uicommand: RAW_INPUT_DATA_COMMAND_FLAGS, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32, cbsizeheader: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetRawInputDeviceInfoA(hdevice: super::super::Foundation::HANDLE, uicommand: RAW_INPUT_DEVICE_INFO_COMMAND, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetRawInputDeviceInfoW(hdevice: super::super::Foundation::HANDLE, uicommand: RAW_INPUT_DEVICE_INFO_COMMAND, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn GetRawInputDeviceInfoA(hdevice: ::win32_foundation_sys::HANDLE, uicommand: RAW_INPUT_DEVICE_INFO_COMMAND, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32) -> u32;
+    pub fn GetRawInputDeviceInfoW(hdevice: ::win32_foundation_sys::HANDLE, uicommand: RAW_INPUT_DEVICE_INFO_COMMAND, pdata: *mut ::core::ffi::c_void, pcbsize: *mut u32) -> u32;
     pub fn GetRawInputDeviceList(prawinputdevicelist: *mut RAWINPUTDEVICELIST, puinumdevices: *mut u32, cbsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn GetRegisteredRawInputDevices(prawinputdevices: *mut RAWINPUTDEVICE, puinumdevices: *mut u32, cbsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterRawInputDevices(prawinputdevices: *const RAWINPUTDEVICE, uinumdevices: u32, cbsize: u32) -> super::super::Foundation::BOOL;
+    pub fn RegisterRawInputDevices(prawinputdevices: *const RAWINPUTDEVICE, uinumdevices: u32, cbsize: u32) -> ::win32_foundation_sys::BOOL;
 }
 pub type HRAWINPUT = isize;
 pub type INPUT_MESSAGE_DEVICE_TYPE = i32;
@@ -71,59 +62,47 @@ impl ::core::clone::Clone for RAWHID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAWINPUT {
     pub header: RAWINPUTHEADER,
     pub data: RAWINPUT_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAWINPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAWINPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union RAWINPUT_0 {
     pub mouse: RAWMOUSE,
     pub keyboard: RAWKEYBOARD,
     pub hid: RAWHID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAWINPUT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAWINPUT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAWINPUTDEVICE {
     pub usUsagePage: u16,
     pub usUsage: u16,
     pub dwFlags: RAWINPUTDEVICE_FLAGS,
-    pub hwndTarget: super::super::Foundation::HWND,
+    pub hwndTarget: ::win32_foundation_sys::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAWINPUTDEVICE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAWINPUTDEVICE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAWINPUTDEVICELIST {
-    pub hDevice: super::super::Foundation::HANDLE,
+    pub hDevice: ::win32_foundation_sys::HANDLE,
     pub dwType: RID_DEVICE_INFO_TYPE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAWINPUTDEVICELIST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAWINPUTDEVICELIST {
     fn clone(&self) -> Self {
         *self
@@ -141,16 +120,13 @@ pub const RIDEV_APPKEYS: RAWINPUTDEVICE_FLAGS = 1024u32;
 pub const RIDEV_EXINPUTSINK: RAWINPUTDEVICE_FLAGS = 4096u32;
 pub const RIDEV_DEVNOTIFY: RAWINPUTDEVICE_FLAGS = 8192u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAWINPUTHEADER {
     pub dwType: u32,
     pub dwSize: u32,
-    pub hDevice: super::super::Foundation::HANDLE,
-    pub wParam: super::super::Foundation::WPARAM,
+    pub hDevice: ::win32_foundation_sys::HANDLE,
+    pub wParam: ::win32_foundation_sys::WPARAM,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAWINPUTHEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAWINPUTHEADER {
     fn clone(&self) -> Self {
         *self
@@ -216,30 +192,24 @@ pub const RIDI_PREPARSEDDATA: RAW_INPUT_DEVICE_INFO_COMMAND = 536870917u32;
 pub const RIDI_DEVICENAME: RAW_INPUT_DEVICE_INFO_COMMAND = 536870919u32;
 pub const RIDI_DEVICEINFO: RAW_INPUT_DEVICE_INFO_COMMAND = 536870923u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RID_DEVICE_INFO {
     pub cbSize: u32,
     pub dwType: RID_DEVICE_INFO_TYPE,
     pub Anonymous: RID_DEVICE_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RID_DEVICE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RID_DEVICE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union RID_DEVICE_INFO_0 {
     pub mouse: RID_DEVICE_INFO_MOUSE,
     pub keyboard: RID_DEVICE_INFO_KEYBOARD,
     pub hid: RID_DEVICE_INFO_HID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RID_DEVICE_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RID_DEVICE_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -275,16 +245,13 @@ impl ::core::clone::Clone for RID_DEVICE_INFO_KEYBOARD {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RID_DEVICE_INFO_MOUSE {
     pub dwId: u32,
     pub dwNumberOfButtons: u32,
     pub dwSampleRate: u32,
-    pub fHasHorizontalWheel: super::super::Foundation::BOOL,
+    pub fHasHorizontalWheel: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RID_DEVICE_INFO_MOUSE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RID_DEVICE_INFO_MOUSE {
     fn clone(&self) -> Self {
         *self

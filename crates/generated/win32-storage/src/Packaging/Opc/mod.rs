@@ -1,16 +1,14 @@
 #[repr(transparent)]
 pub struct IOpcCertificateEnumerator(::windows_core::IUnknown);
 impl IOpcCertificateEnumerator {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MoveNext(&self, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn MoveNext(&self, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hasnext)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MovePrevious(&self, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn MovePrevious(&self, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(hasprevious)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub unsafe fn GetCurrent(&self, certificate: *const *const super::super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub unsafe fn GetCurrent(&self, certificate: *const *const ::win32_security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetCurrent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(certificate)).ok()
     }
     pub unsafe fn Clone(&self) -> ::windows_core::Result<IOpcCertificateEnumerator> {
@@ -62,29 +60,23 @@ unsafe impl ::windows_core::Interface for IOpcCertificateEnumerator {
 #[doc(hidden)]
 pub struct IOpcCertificateEnumerator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MoveNext: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MovePrevious: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: *const *const super::super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: *const *const ::win32_security::Cryptography::CERT_CONTEXT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Cryptography"))]
     GetCurrent: usize,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copy: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IOpcCertificateSet(::windows_core::IUnknown);
 impl IOpcCertificateSet {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub unsafe fn Add(&self, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub unsafe fn Add(&self, certificate: *const ::win32_security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(certificate)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub unsafe fn Remove(&self, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub unsafe fn Remove(&self, certificate: *const ::win32_security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(certificate)).ok()
     }
     pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<IOpcCertificateEnumerator> {
@@ -136,13 +128,13 @@ unsafe impl ::windows_core::Interface for IOpcCertificateSet {
 #[doc(hidden)]
 pub struct IOpcCertificateSet_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: *const ::win32_security::Cryptography::CERT_CONTEXT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Cryptography"))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: *const ::win32_security::Cryptography::CERT_CONTEXT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Cryptography"))]
     Remove: usize,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificateenumerator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -272,15 +264,13 @@ pub struct IOpcDigitalSignature_Vtbl {
 #[repr(transparent)]
 pub struct IOpcDigitalSignatureEnumerator(::windows_core::IUnknown);
 impl IOpcDigitalSignatureEnumerator {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetCurrent(&self) -> ::windows_core::Result<IOpcDigitalSignature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -335,14 +325,8 @@ unsafe impl ::windows_core::Interface for IOpcDigitalSignatureEnumerator {
 #[doc(hidden)]
 pub struct IOpcDigitalSignatureEnumerator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MoveNext: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MovePrevious: usize,
+    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, digitalsignature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copy: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -370,12 +354,12 @@ impl IOpcDigitalSignatureManager {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSigningOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcSigningOptions>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub unsafe fn Validate<'a, Param0: ::windows_core::IntoParam<'a, IOpcDigitalSignature>>(&self, signature: Param0, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT, validationresult: *mut OPC_SIGNATURE_VALIDATION_RESULT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub unsafe fn Validate<'a, Param0: ::windows_core::IntoParam<'a, IOpcDigitalSignature>>(&self, signature: Param0, certificate: *const ::win32_security::Cryptography::CERT_CONTEXT, validationresult: *mut OPC_SIGNATURE_VALIDATION_RESULT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Validate)(::windows_core::Interface::as_raw(self), signature.into_param().abi(), ::core::mem::transmute(certificate), ::core::mem::transmute(validationresult)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub unsafe fn Sign<'a, Param1: ::windows_core::IntoParam<'a, IOpcSigningOptions>>(&self, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT, signingoptions: Param1) -> ::windows_core::Result<IOpcDigitalSignature> {
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub unsafe fn Sign<'a, Param1: ::windows_core::IntoParam<'a, IOpcSigningOptions>>(&self, certificate: *const ::win32_security::Cryptography::CERT_CONTEXT, signingoptions: Param1) -> ::windows_core::Result<IOpcDigitalSignature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Sign)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(certificate), signingoptions.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcDigitalSignature>(result__)
     }
@@ -443,13 +427,13 @@ pub struct IOpcDigitalSignatureManager_Vtbl {
     #[cfg(not(feature = "Win32_System_Com"))]
     RemoveSignature: usize,
     pub CreateSigningOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signingoptions: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub Validate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signature: ::windows_core::RawPtr, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT, validationresult: *mut OPC_SIGNATURE_VALIDATION_RESULT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub Validate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signature: ::windows_core::RawPtr, certificate: *const ::win32_security::Cryptography::CERT_CONTEXT, validationresult: *mut OPC_SIGNATURE_VALIDATION_RESULT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Cryptography"))]
     Validate: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub Sign: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: *const super::super::super::Security::Cryptography::CERT_CONTEXT, signingoptions: ::windows_core::RawPtr, digitalsignature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub Sign: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: *const ::win32_security::Cryptography::CERT_CONTEXT, signingoptions: ::windows_core::RawPtr, digitalsignature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Cryptography"))]
     Sign: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub ReplaceSignatureXml: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signaturepartname: ::windows_core::RawPtr, newsignaturexml: *const u8, count: u32, digitalsignature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -469,22 +453,22 @@ impl IOpcFactory {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePartUri)(::windows_core::Interface::as_raw(self), pwzuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcPartUri>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateStreamOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, filename: Param0, iomode: OPC_STREAM_IO_MODE, securityattributes: *const super::super::super::Security::SECURITY_ATTRIBUTES, dwflagsandattributes: u32) -> ::windows_core::Result<super::super::super::System::Com::IStream> {
+    #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Com"))]
+    pub unsafe fn CreateStreamOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, filename: Param0, iomode: OPC_STREAM_IO_MODE, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, dwflagsandattributes: u32) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateStreamOnFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(iomode), ::core::mem::transmute(securityattributes), ::core::mem::transmute(dwflagsandattributes), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).CreateStreamOnFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(iomode), ::core::mem::transmute(securityattributes), ::core::mem::transmute(dwflagsandattributes), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     pub unsafe fn CreatePackage(&self) -> ::windows_core::Result<IOpcPackage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePackage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcPackage>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn ReadPackageFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::Com::IStream>>(&self, stream: Param0, flags: OPC_READ_FLAGS) -> ::windows_core::Result<IOpcPackage> {
+    pub unsafe fn ReadPackageFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, stream: Param0, flags: OPC_READ_FLAGS) -> ::windows_core::Result<IOpcPackage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).ReadPackageFromStream)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcPackage>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn WritePackageToStream<'a, Param0: ::windows_core::IntoParam<'a, IOpcPackage>, Param2: ::windows_core::IntoParam<'a, super::super::super::System::Com::IStream>>(&self, package: Param0, flags: OPC_WRITE_FLAGS, stream: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn WritePackageToStream<'a, Param0: ::windows_core::IntoParam<'a, IOpcPackage>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, package: Param0, flags: OPC_WRITE_FLAGS, stream: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).WritePackageToStream)(::windows_core::Interface::as_raw(self), package.into_param().abi(), ::core::mem::transmute(flags), stream.into_param().abi()).ok()
     }
     pub unsafe fn CreateDigitalSignatureManager<'a, Param0: ::windows_core::IntoParam<'a, IOpcPackage>>(&self, package: Param0) -> ::windows_core::Result<IOpcDigitalSignatureManager> {
@@ -544,9 +528,9 @@ pub struct IOpcFactory_Vtbl {
     pub CreatePartUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwzuri: ::windows_core::PCWSTR, parturi: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     CreatePartUri: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Com"))]
-    pub CreateStreamOnFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, iomode: OPC_STREAM_IO_MODE, securityattributes: *const super::super::super::Security::SECURITY_ATTRIBUTES, dwflagsandattributes: u32, stream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Com"))]
+    pub CreateStreamOnFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, iomode: OPC_STREAM_IO_MODE, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, dwflagsandattributes: u32, stream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Security", feature = "Win32_System_Com")))]
     CreateStreamOnFile: usize,
     pub CreatePackage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -626,9 +610,9 @@ impl IOpcPart {
         (::windows_core::Interface::vtable(self).GetRelationshipSet)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcRelationshipSet>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetContentStream(&self) -> ::windows_core::Result<super::super::super::System::Com::IStream> {
+    pub unsafe fn GetContentStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetContentStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetContentStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn GetName(&self) -> ::windows_core::Result<IOpcPartUri> {
@@ -703,15 +687,13 @@ pub struct IOpcPart_Vtbl {
 #[repr(transparent)]
 pub struct IOpcPartEnumerator(::windows_core::IUnknown);
 impl IOpcPartEnumerator {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetCurrent(&self) -> ::windows_core::Result<IOpcPart> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -766,14 +748,8 @@ unsafe impl ::windows_core::Interface for IOpcPartEnumerator {
 #[doc(hidden)]
 pub struct IOpcPartEnumerator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MoveNext: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MovePrevious: usize,
+    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, part: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copy: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -794,10 +770,10 @@ impl IOpcPartSet {
     pub unsafe fn DeletePart<'a, Param0: ::windows_core::IntoParam<'a, IOpcPartUri>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DeletePart)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn PartExists<'a, Param0: ::windows_core::IntoParam<'a, IOpcPartUri>>(&self, name: Param0) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).PartExists)(::windows_core::Interface::as_raw(self), name.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn PartExists<'a, Param0: ::windows_core::IntoParam<'a, IOpcPartUri>>(&self, name: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).PartExists)(::windows_core::Interface::as_raw(self), name.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<IOpcPartEnumerator> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -860,9 +836,9 @@ pub struct IOpcPartSet_Vtbl {
     pub DeletePart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     DeletePart: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub PartExists: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::RawPtr, partexists: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub PartExists: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::RawPtr, partexists: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     PartExists: usize,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, partenumerator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -871,97 +847,97 @@ pub struct IOpcPartSet_Vtbl {
 pub struct IOpcPartUri(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IOpcPartUri {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPropertyBSTR(&self, uriprop: super::super::super::System::Com::Uri_PROPERTY, pbstrproperty: *mut super::super::super::Foundation::BSTR, dwflags: u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetPropertyBSTR(&self, uriprop: ::win32_system::Com::Uri_PROPERTY, pbstrproperty: *mut ::win32_foundation::BSTR, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetPropertyBSTR)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(pbstrproperty), ::core::mem::transmute(dwflags)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetPropertyLength(&self, uriprop: super::super::super::System::Com::Uri_PROPERTY, pcchproperty: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetPropertyLength(&self, uriprop: ::win32_system::Com::Uri_PROPERTY, pcchproperty: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetPropertyLength)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(pcchproperty), ::core::mem::transmute(dwflags)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetPropertyDWORD(&self, uriprop: super::super::super::System::Com::Uri_PROPERTY, pdwproperty: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetPropertyDWORD(&self, uriprop: ::win32_system::Com::Uri_PROPERTY, pdwproperty: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetPropertyDWORD)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(pdwproperty), ::core::mem::transmute(dwflags)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn HasProperty(&self, uriprop: super::super::super::System::Com::Uri_PROPERTY) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.HasProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn HasProperty(&self, uriprop: ::win32_system::Com::Uri_PROPERTY) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.HasProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetAbsoluteUri(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetAbsoluteUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetAbsoluteUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetAbsoluteUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetAuthority(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetAuthority)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetAuthority(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetAuthority)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetDisplayUri(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetDisplayUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetDisplayUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetDisplayUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetDomain(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetDomain)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetDomain(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetDomain)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetExtension(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetExtension)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetExtension(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetExtension)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFragment(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetFragment)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFragment(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetFragment)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetHost(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetHost)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetHost(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetHost)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPassword(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetPassword)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetPassword(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetPassword)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPath(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetPath(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPathAndQuery(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetPathAndQuery)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetPathAndQuery(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetPathAndQuery)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetQuery(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetQuery)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetQuery(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetQuery)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetRawUri(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetRawUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetRawUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetRawUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetSchemeName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetSchemeName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetSchemeName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetSchemeName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetUserInfo(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetUserInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetUserInfo(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetUserInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetUserName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.GetUserName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetUserName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.GetUserName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn GetHostType(&self) -> ::windows_core::Result<u32> {
@@ -988,10 +964,10 @@ impl IOpcPartUri {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn IsEqual<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri>>(&self, puri: Param0) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.base__.IsEqual)(::windows_core::Interface::as_raw(self), puri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn IsEqual<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>>(&self, puri: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.base__.IsEqual)(::windows_core::Interface::as_raw(self), puri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn GetRelationshipsPartUri(&self) -> ::windows_core::Result<IOpcPartUri> {
@@ -999,12 +975,12 @@ impl IOpcPartUri {
         (::windows_core::Interface::vtable(self).base__.GetRelationshipsPartUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcPartUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetRelativeUri<'a, Param0: ::windows_core::IntoParam<'a, IOpcPartUri>>(&self, targetparturi: Param0) -> ::windows_core::Result<super::super::super::System::Com::IUri> {
+    pub unsafe fn GetRelativeUri<'a, Param0: ::windows_core::IntoParam<'a, IOpcPartUri>>(&self, targetparturi: Param0) -> ::windows_core::Result<::win32_system::Com::IUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetRelativeUri)(::windows_core::Interface::as_raw(self), targetparturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::System::Com::IUri>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetRelativeUri)(::windows_core::Interface::as_raw(self), targetparturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CombinePartUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri>>(&self, relativeuri: Param0) -> ::windows_core::Result<IOpcPartUri> {
+    pub unsafe fn CombinePartUri<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>>(&self, relativeuri: Param0) -> ::windows_core::Result<IOpcPartUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CombinePartUri)(::windows_core::Interface::as_raw(self), relativeuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcPartUri>(result__)
     }
@@ -1018,10 +994,9 @@ impl IOpcPartUri {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSourceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcUri>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsRelationshipsPartUri(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsRelationshipsPartUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsRelationshipsPartUri(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsRelationshipsPartUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -1049,26 +1024,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IOpcPar
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IOpcPartUri> for super::super::super::System::Com::IUri {
+impl ::core::convert::From<IOpcPartUri> for ::win32_system::Com::IUri {
     fn from(value: IOpcPartUri) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IOpcPartUri> for super::super::super::System::Com::IUri {
+impl ::core::convert::From<&IOpcPartUri> for ::win32_system::Com::IUri {
     fn from(value: &IOpcPartUri) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri> for IOpcPartUri {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::System::Com::IUri> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IUri> for IOpcPartUri {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IUri> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri> for &'a IOpcPartUri {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::System::Com::IUri> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IUri> for &'a IOpcPartUri {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IUri> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1134,10 +1109,7 @@ pub struct IOpcPartUri_Vtbl {
     pub GetSourceUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sourceuri: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetSourceUri: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsRelationshipsPartUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isrelationshipuri: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsRelationshipsPartUri: usize,
+    pub IsRelationshipsPartUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isrelationshipuri: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IOpcRelationship(::windows_core::IUnknown);
@@ -1156,9 +1128,9 @@ impl IOpcRelationship {
         (::windows_core::Interface::vtable(self).GetSourceUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetTargetUri(&self) -> ::windows_core::Result<super::super::super::System::Com::IUri> {
+    pub unsafe fn GetTargetUri(&self) -> ::windows_core::Result<::win32_system::Com::IUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetTargetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::System::Com::IUri>(result__)
+        (::windows_core::Interface::vtable(self).GetTargetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IUri>(result__)
     }
     pub unsafe fn GetTargetMode(&self) -> ::windows_core::Result<OPC_URI_TARGET_MODE> {
         let mut result__ = ::core::mem::MaybeUninit::<OPC_URI_TARGET_MODE>::zeroed();
@@ -1224,15 +1196,13 @@ pub struct IOpcRelationship_Vtbl {
 #[repr(transparent)]
 pub struct IOpcRelationshipEnumerator(::windows_core::IUnknown);
 impl IOpcRelationshipEnumerator {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetCurrent(&self) -> ::windows_core::Result<IOpcRelationship> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1287,14 +1257,8 @@ unsafe impl ::windows_core::Interface for IOpcRelationshipEnumerator {
 #[doc(hidden)]
 pub struct IOpcRelationshipEnumerator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MoveNext: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MovePrevious: usize,
+    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relationship: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copy: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1360,15 +1324,13 @@ pub struct IOpcRelationshipSelector_Vtbl {
 #[repr(transparent)]
 pub struct IOpcRelationshipSelectorEnumerator(::windows_core::IUnknown);
 impl IOpcRelationshipSelectorEnumerator {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetCurrent(&self) -> ::windows_core::Result<IOpcRelationshipSelector> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1423,14 +1385,8 @@ unsafe impl ::windows_core::Interface for IOpcRelationshipSelectorEnumerator {
 #[doc(hidden)]
 pub struct IOpcRelationshipSelectorEnumerator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MoveNext: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MovePrevious: usize,
+    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relationshipselector: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copy: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1505,17 +1461,16 @@ impl IOpcRelationshipSet {
         (::windows_core::Interface::vtable(self).GetRelationship)(::windows_core::Interface::as_raw(self), relationshipidentifier.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcRelationship>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateRelationship<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri>>(&self, relationshipidentifier: Param0, relationshiptype: Param1, targeturi: Param2, targetmode: OPC_URI_TARGET_MODE) -> ::windows_core::Result<IOpcRelationship> {
+    pub unsafe fn CreateRelationship<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>>(&self, relationshipidentifier: Param0, relationshiptype: Param1, targeturi: Param2, targetmode: OPC_URI_TARGET_MODE) -> ::windows_core::Result<IOpcRelationship> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateRelationship)(::windows_core::Interface::as_raw(self), relationshipidentifier.into_param().abi(), relationshiptype.into_param().abi(), targeturi.into_param().abi(), ::core::mem::transmute(targetmode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcRelationship>(result__)
     }
     pub unsafe fn DeleteRelationship<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, relationshipidentifier: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DeleteRelationship)(::windows_core::Interface::as_raw(self), relationshipidentifier.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RelationshipExists<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, relationshipidentifier: Param0) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).RelationshipExists)(::windows_core::Interface::as_raw(self), relationshipidentifier.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn RelationshipExists<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, relationshipidentifier: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).RelationshipExists)(::windows_core::Interface::as_raw(self), relationshipidentifier.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetEnumerator(&self) -> ::windows_core::Result<IOpcRelationshipEnumerator> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1526,9 +1481,9 @@ impl IOpcRelationshipSet {
         (::windows_core::Interface::vtable(self).GetEnumeratorForType)(::windows_core::Interface::as_raw(self), relationshiptype.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcRelationshipEnumerator>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetRelationshipsContentStream(&self) -> ::windows_core::Result<super::super::super::System::Com::IStream> {
+    pub unsafe fn GetRelationshipsContentStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetRelationshipsContentStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetRelationshipsContentStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
 }
 impl ::core::convert::From<IOpcRelationshipSet> for ::windows_core::IUnknown {
@@ -1581,10 +1536,7 @@ pub struct IOpcRelationshipSet_Vtbl {
     #[cfg(not(feature = "Win32_System_Com"))]
     CreateRelationship: usize,
     pub DeleteRelationship: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relationshipidentifier: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RelationshipExists: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relationshipidentifier: ::windows_core::PCWSTR, relationshipexists: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RelationshipExists: usize,
+    pub RelationshipExists: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relationshipidentifier: ::windows_core::PCWSTR, relationshipexists: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetEnumerator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relationshipenumerator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetEnumeratorForType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relationshiptype: ::windows_core::PCWSTR, relationshipenumerator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -1648,15 +1600,13 @@ pub struct IOpcSignatureCustomObject_Vtbl {
 #[repr(transparent)]
 pub struct IOpcSignatureCustomObjectEnumerator(::windows_core::IUnknown);
 impl IOpcSignatureCustomObjectEnumerator {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetCurrent(&self) -> ::windows_core::Result<IOpcSignatureCustomObject> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1711,14 +1661,8 @@ unsafe impl ::windows_core::Interface for IOpcSignatureCustomObjectEnumerator {
 #[doc(hidden)]
 pub struct IOpcSignatureCustomObjectEnumerator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MoveNext: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MovePrevious: usize,
+    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, customobject: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copy: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -1865,15 +1809,13 @@ pub struct IOpcSignaturePartReference_Vtbl {
 #[repr(transparent)]
 pub struct IOpcSignaturePartReferenceEnumerator(::windows_core::IUnknown);
 impl IOpcSignaturePartReferenceEnumerator {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetCurrent(&self) -> ::windows_core::Result<IOpcSignaturePartReference> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1928,14 +1870,8 @@ unsafe impl ::windows_core::Interface for IOpcSignaturePartReferenceEnumerator {
 #[doc(hidden)]
 pub struct IOpcSignaturePartReferenceEnumerator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MoveNext: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MovePrevious: usize,
+    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, partreference: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copy: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2014,9 +1950,9 @@ impl IOpcSignatureReference {
         (::windows_core::Interface::vtable(self).GetId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::PWSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetUri(&self) -> ::windows_core::Result<super::super::super::System::Com::IUri> {
+    pub unsafe fn GetUri(&self) -> ::windows_core::Result<::win32_system::Com::IUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::System::Com::IUri>(result__)
+        (::windows_core::Interface::vtable(self).GetUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IUri>(result__)
     }
     pub unsafe fn GetType(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
@@ -2091,15 +2027,13 @@ pub struct IOpcSignatureReference_Vtbl {
 #[repr(transparent)]
 pub struct IOpcSignatureReferenceEnumerator(::windows_core::IUnknown);
 impl IOpcSignatureReferenceEnumerator {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetCurrent(&self) -> ::windows_core::Result<IOpcSignatureReference> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2154,14 +2088,8 @@ unsafe impl ::windows_core::Interface for IOpcSignatureReferenceEnumerator {
 #[doc(hidden)]
 pub struct IOpcSignatureReferenceEnumerator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MoveNext: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MovePrevious: usize,
+    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reference: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copy: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2169,7 +2097,7 @@ pub struct IOpcSignatureReferenceEnumerator_Vtbl {
 pub struct IOpcSignatureReferenceSet(::windows_core::IUnknown);
 impl IOpcSignatureReferenceSet {
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, referenceuri: Param0, referenceid: Param1, r#type: Param2, digestmethod: Param3, transformmethod: OPC_CANONICALIZATION_METHOD) -> ::windows_core::Result<IOpcSignatureReference> {
+    pub unsafe fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, referenceuri: Param0, referenceid: Param1, r#type: Param2, digestmethod: Param3, transformmethod: OPC_CANONICALIZATION_METHOD) -> ::windows_core::Result<IOpcSignatureReference> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Create)(::windows_core::Interface::as_raw(self), referenceuri.into_param().abi(), referenceid.into_param().abi(), r#type.into_param().abi(), digestmethod.into_param().abi(), ::core::mem::transmute(transformmethod), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcSignatureReference>(result__)
     }
@@ -2317,15 +2245,13 @@ pub struct IOpcSignatureRelationshipReference_Vtbl {
 #[repr(transparent)]
 pub struct IOpcSignatureRelationshipReferenceEnumerator(::windows_core::IUnknown);
 impl IOpcSignatureRelationshipReferenceEnumerator {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MoveNext(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MoveNext)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn MovePrevious(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).MovePrevious)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetCurrent(&self) -> ::windows_core::Result<IOpcSignatureRelationshipReference> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2380,14 +2306,8 @@ unsafe impl ::windows_core::Interface for IOpcSignatureRelationshipReferenceEnum
 #[doc(hidden)]
 pub struct IOpcSignatureRelationshipReferenceEnumerator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MoveNext: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MovePrevious: usize,
+    pub MoveNext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasnext: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub MovePrevious: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hasprevious: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetCurrent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relationshipreference: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, copy: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2604,97 +2524,97 @@ pub struct IOpcSigningOptions_Vtbl {
 pub struct IOpcUri(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IOpcUri {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPropertyBSTR(&self, uriprop: super::super::super::System::Com::Uri_PROPERTY, pbstrproperty: *mut super::super::super::Foundation::BSTR, dwflags: u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetPropertyBSTR(&self, uriprop: ::win32_system::Com::Uri_PROPERTY, pbstrproperty: *mut ::win32_foundation::BSTR, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetPropertyBSTR)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(pbstrproperty), ::core::mem::transmute(dwflags)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetPropertyLength(&self, uriprop: super::super::super::System::Com::Uri_PROPERTY, pcchproperty: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetPropertyLength(&self, uriprop: ::win32_system::Com::Uri_PROPERTY, pcchproperty: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetPropertyLength)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(pcchproperty), ::core::mem::transmute(dwflags)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetPropertyDWORD(&self, uriprop: super::super::super::System::Com::Uri_PROPERTY, pdwproperty: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetPropertyDWORD(&self, uriprop: ::win32_system::Com::Uri_PROPERTY, pdwproperty: *mut u32, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetPropertyDWORD)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(pdwproperty), ::core::mem::transmute(dwflags)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn HasProperty(&self, uriprop: super::super::super::System::Com::Uri_PROPERTY) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.HasProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn HasProperty(&self, uriprop: ::win32_system::Com::Uri_PROPERTY) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.HasProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(uriprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetAbsoluteUri(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetAbsoluteUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetAbsoluteUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetAbsoluteUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetAuthority(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetAuthority)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetAuthority(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetAuthority)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetDisplayUri(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetDisplayUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetDisplayUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetDisplayUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetDomain(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetDomain)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetDomain(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetDomain)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetExtension(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetExtension)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetExtension(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetExtension)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetFragment(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetFragment)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetFragment(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetFragment)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetHost(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetHost)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetHost(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetHost)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPassword(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetPassword)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetPassword(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetPassword)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPath(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetPath(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetPath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetPathAndQuery(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetPathAndQuery)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetPathAndQuery(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetPathAndQuery)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetQuery(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetQuery)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetQuery(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetQuery)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetRawUri(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetRawUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetRawUri(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetRawUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetSchemeName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetSchemeName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetSchemeName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetSchemeName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetUserInfo(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetUserInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetUserInfo(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetUserInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetUserName(&self) -> ::windows_core::Result<super::super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetUserName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BSTR>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetUserName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetUserName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn GetHostType(&self) -> ::windows_core::Result<u32> {
@@ -2721,10 +2641,10 @@ impl IOpcUri {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn IsEqual<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri>>(&self, puri: Param0) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsEqual)(::windows_core::Interface::as_raw(self), puri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn IsEqual<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>>(&self, puri: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsEqual)(::windows_core::Interface::as_raw(self), puri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn GetRelationshipsPartUri(&self) -> ::windows_core::Result<IOpcPartUri> {
@@ -2732,12 +2652,12 @@ impl IOpcUri {
         (::windows_core::Interface::vtable(self).GetRelationshipsPartUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcPartUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetRelativeUri<'a, Param0: ::windows_core::IntoParam<'a, IOpcPartUri>>(&self, targetparturi: Param0) -> ::windows_core::Result<super::super::super::System::Com::IUri> {
+    pub unsafe fn GetRelativeUri<'a, Param0: ::windows_core::IntoParam<'a, IOpcPartUri>>(&self, targetparturi: Param0) -> ::windows_core::Result<::win32_system::Com::IUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetRelativeUri)(::windows_core::Interface::as_raw(self), targetparturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::System::Com::IUri>(result__)
+        (::windows_core::Interface::vtable(self).GetRelativeUri)(::windows_core::Interface::as_raw(self), targetparturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CombinePartUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri>>(&self, relativeuri: Param0) -> ::windows_core::Result<IOpcPartUri> {
+    pub unsafe fn CombinePartUri<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>>(&self, relativeuri: Param0) -> ::windows_core::Result<IOpcPartUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CombinePartUri)(::windows_core::Interface::as_raw(self), relativeuri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IOpcPartUri>(result__)
     }
@@ -2767,26 +2687,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IOpcUri
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IOpcUri> for super::super::super::System::Com::IUri {
+impl ::core::convert::From<IOpcUri> for ::win32_system::Com::IUri {
     fn from(value: IOpcUri) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IOpcUri> for super::super::super::System::Com::IUri {
+impl ::core::convert::From<&IOpcUri> for ::win32_system::Com::IUri {
     fn from(value: &IOpcUri) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri> for IOpcUri {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::System::Com::IUri> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IUri> for IOpcUri {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IUri> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::System::Com::IUri> for &'a IOpcUri {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::System::Com::IUri> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IUri> for &'a IOpcUri {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IUri> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -2819,7 +2739,7 @@ unsafe impl ::windows_core::Interface for IOpcUri {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IOpcUri_Vtbl {
-    pub base__: super::super::super::System::Com::IUri_Vtbl,
+    pub base__: ::win32_system::Com::IUri_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub GetRelationshipsPartUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relationshipparturi: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]

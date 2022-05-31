@@ -128,29 +128,25 @@ impl CachedFileUpdaterUI {
             (::windows_core::Interface::vtable(this).UpdateTarget)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<CachedFileTarget>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FileUpdateRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<CachedFileUpdaterUI, FileUpdateRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn FileUpdateRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<CachedFileUpdaterUI, FileUpdateRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).FileUpdateRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).FileUpdateRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveFileUpdateRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveFileUpdateRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveFileUpdateRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UIRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<CachedFileUpdaterUI, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn UIRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<CachedFileUpdaterUI, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).UIRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).UIRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveUIRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveUIRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveUIRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -590,22 +586,10 @@ pub struct ICachedFileUpdaterUI_Vtbl {
     pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub UpdateTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CachedFileTarget) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub FileUpdateRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FileUpdateRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveFileUpdateRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveFileUpdateRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub UIRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UIRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveUIRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveUIRequested: usize,
+    pub FileUpdateRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveFileUpdateRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub UIRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveUIRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub UIStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UIStatus) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -715,10 +699,7 @@ unsafe impl ::windows_core::Interface for IStorageProviderErrorCommand {
 pub struct IStorageProviderErrorCommand_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Label: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ActionUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ActionUri: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -731,10 +712,7 @@ unsafe impl ::windows_core::Interface for IStorageProviderErrorCommandFactory {
 #[doc(hidden)]
 pub struct IStorageProviderErrorCommandFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, label: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, actionuri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateInstance: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -948,11 +926,11 @@ pub struct IStorageProviderItemPropertyDefinition_Vtbl {
 pub struct IStorageProviderItemPropertySource(::windows_core::IUnknown);
 impl IStorageProviderItemPropertySource {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetItemProperties<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, itempath: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<StorageProviderItemProperty>> {
+    pub fn GetItemProperties<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, itempath: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<StorageProviderItemProperty>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetItemProperties)(::windows_core::Interface::as_raw(this), itempath.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<StorageProviderItemProperty>>(result__)
+            (::windows_core::Interface::vtable(this).GetItemProperties)(::windows_core::Interface::as_raw(this), itempath.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<StorageProviderItemProperty>>(result__)
         }
     }
 }
@@ -1161,16 +1139,14 @@ impl IStorageProviderStatusSource {
             (::windows_core::Interface::vtable(this).GetStatus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<StorageProviderStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<IStorageProviderStatusSource, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn Changed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<IStorageProviderStatusSource, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Changed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -1247,14 +1223,8 @@ unsafe impl ::windows_core::Interface for IStorageProviderStatusSource {
 pub struct IStorageProviderStatusSource_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Changed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveChanged: usize,
+    pub Changed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1305,14 +1275,8 @@ pub struct IStorageProviderSyncRootInfo_Vtbl {
     pub StorageProviderItemPropertyDefinitions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     StorageProviderItemPropertyDefinitions: usize,
-    #[cfg(feature = "Foundation")]
     pub RecycleBinUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RecycleBinUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetRecycleBinUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetRecycleBinUri: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1657,16 +1621,14 @@ impl StorageProviderErrorCommand {
             (::windows_core::Interface::vtable(this).Label)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ActionUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn ActionUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ActionUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ActionUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateInstance<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(label: Param0, actionuri: Param1) -> ::windows_core::Result<StorageProviderErrorCommand> {
+    pub fn CreateInstance<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(label: Param0, actionuri: Param1) -> ::windows_core::Result<StorageProviderErrorCommand> {
         Self::IStorageProviderErrorCommandFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstance)(::windows_core::Interface::as_raw(this), label.into_param().abi(), actionuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<StorageProviderErrorCommand>(result__)
@@ -2304,10 +2266,10 @@ unsafe impl ::windows_core::RuntimeType for StorageProviderInSyncPolicy {
 pub struct StorageProviderItemProperties;
 impl StorageProviderItemProperties {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetAsync<'a, Param0: ::windows_core::IntoParam<'a, super::IStorageItem>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<StorageProviderItemProperty>>>(item: Param0, itemproperties: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SetAsync<'a, Param0: ::windows_core::IntoParam<'a, super::IStorageItem>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<StorageProviderItemProperty>>>(item: Param0, itemproperties: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IStorageProviderItemPropertiesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetAsync)(::windows_core::Interface::as_raw(this), item.into_param().abi(), itemproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetAsync)(::windows_core::Interface::as_raw(this), item.into_param().abi(), itemproperties.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn IStorageProviderItemPropertiesStatics<R, F: FnOnce(&IStorageProviderItemPropertiesStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -2660,11 +2622,11 @@ impl StorageProviderStatus {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ErrorMessages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<StorageProviderError>> {
+    pub fn ErrorMessages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<StorageProviderError>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ErrorMessages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<StorageProviderError>>(result__)
+            (::windows_core::Interface::vtable(this).ErrorMessages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<StorageProviderError>>(result__)
         }
     }
     pub fn CreateInstance<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(state: StorageProviderState, message: Param1) -> ::windows_core::Result<StorageProviderStatus> {
@@ -2674,7 +2636,7 @@ impl StorageProviderStatus {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateInstance2<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<StorageProviderError>>>(state: StorageProviderState, message: Param1, errormessages: Param2) -> ::windows_core::Result<StorageProviderStatus> {
+    pub fn CreateInstance2<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<StorageProviderError>>>(state: StorageProviderState, message: Param1, errormessages: Param2) -> ::windows_core::Result<StorageProviderStatus> {
         Self::IStorageProviderStatusFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstance2)(::windows_core::Interface::as_raw(this), state, message.into_param().abi(), errormessages.into_param().abi(), result__.as_mut_ptr()).from_abi::<StorageProviderStatus>(result__)
@@ -2924,23 +2886,21 @@ impl StorageProviderSyncRootInfo {
         unsafe { (::windows_core::Interface::vtable(this).SetAllowPinning)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn StorageProviderItemPropertyDefinitions(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<StorageProviderItemPropertyDefinition>> {
+    pub fn StorageProviderItemPropertyDefinitions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<StorageProviderItemPropertyDefinition>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StorageProviderItemPropertyDefinitions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<StorageProviderItemPropertyDefinition>>(result__)
+            (::windows_core::Interface::vtable(this).StorageProviderItemPropertyDefinitions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<StorageProviderItemPropertyDefinition>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RecycleBinUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn RecycleBinUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecycleBinUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).RecycleBinUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetRecycleBinUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetRecycleBinUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRecycleBinUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2956,11 +2916,11 @@ impl StorageProviderSyncRootInfo {
         unsafe { (::windows_core::Interface::vtable(this).SetProviderId)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FallbackFileTypeInfo(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<StorageProviderFileTypeInfo>> {
+    pub fn FallbackFileTypeInfo(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<StorageProviderFileTypeInfo>> {
         let this = &::windows_core::Interface::cast::<IStorageProviderSyncRootInfo3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FallbackFileTypeInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<StorageProviderFileTypeInfo>>(result__)
+            (::windows_core::Interface::vtable(this).FallbackFileTypeInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<StorageProviderFileTypeInfo>>(result__)
         }
     }
 }
@@ -3057,10 +3017,10 @@ impl StorageProviderSyncRootManager {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCurrentSyncRoots() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<StorageProviderSyncRootInfo>> {
+    pub fn GetCurrentSyncRoots() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<StorageProviderSyncRootInfo>> {
         Self::IStorageProviderSyncRootManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCurrentSyncRoots)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<StorageProviderSyncRootInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetCurrentSyncRoots)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<StorageProviderSyncRootInfo>>(result__)
         })
     }
     pub fn IsSupported() -> ::windows_core::Result<bool> {

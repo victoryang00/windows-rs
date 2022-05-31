@@ -4,9 +4,9 @@ pub struct IEnumNetworkConnections(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IEnumNetworkConnections {
     #[cfg(feature = "Win32_System_Ole")]
-    pub unsafe fn _NewEnum(&self) -> ::windows_core::Result<super::super::System::Ole::IEnumVARIANT> {
+    pub unsafe fn _NewEnum(&self) -> ::windows_core::Result<::win32_system::Ole::IEnumVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Ole::IEnumVARIANT>(result__)
+        (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Ole::IEnumVARIANT>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn Next(&self, rgelt: &mut [::core::option::Option<INetworkConnection>], pceltfetched: *mut u32) -> ::windows_core::Result<()> {
@@ -49,26 +49,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IEnumNe
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IEnumNetworkConnections> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IEnumNetworkConnections> for ::win32_system::Com::IDispatch {
     fn from(value: IEnumNetworkConnections) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IEnumNetworkConnections> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IEnumNetworkConnections> for ::win32_system::Com::IDispatch {
     fn from(value: &IEnumNetworkConnections) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IEnumNetworkConnections {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IEnumNetworkConnections {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IEnumNetworkConnections {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IEnumNetworkConnections {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -101,7 +101,7 @@ unsafe impl ::windows_core::Interface for IEnumNetworkConnections {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEnumNetworkConnections_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Ole")]
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenumvar: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
@@ -123,9 +123,9 @@ pub struct IEnumNetworks(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IEnumNetworks {
     #[cfg(feature = "Win32_System_Ole")]
-    pub unsafe fn _NewEnum(&self) -> ::windows_core::Result<super::super::System::Ole::IEnumVARIANT> {
+    pub unsafe fn _NewEnum(&self) -> ::windows_core::Result<::win32_system::Ole::IEnumVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Ole::IEnumVARIANT>(result__)
+        (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Ole::IEnumVARIANT>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn Next(&self, rgelt: &mut [::core::option::Option<INetwork>], pceltfetched: *mut u32) -> ::windows_core::Result<()> {
@@ -168,26 +168,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IEnumNe
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IEnumNetworks> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IEnumNetworks> for ::win32_system::Com::IDispatch {
     fn from(value: IEnumNetworks) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IEnumNetworks> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IEnumNetworks> for ::win32_system::Com::IDispatch {
     fn from(value: &IEnumNetworks) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IEnumNetworks {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IEnumNetworks {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IEnumNetworks {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IEnumNetworks {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -220,7 +220,7 @@ unsafe impl ::windows_core::Interface for IEnumNetworks {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEnumNetworks_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Ole")]
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenumvar: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Ole"))]
@@ -241,22 +241,18 @@ pub struct IEnumNetworks_Vtbl {
 pub struct INetwork(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl INetwork {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, sznetworknewname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, sznetworknewname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetName)(::windows_core::Interface::as_raw(self), sznetworknewname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetDescription(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetDescription(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetDescription)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, szdescription: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, szdescription: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescription)(::windows_core::Interface::as_raw(self), szdescription.into_param().abi()).ok()
     }
     pub unsafe fn GetNetworkId(&self) -> ::windows_core::Result<::windows_core::GUID> {
@@ -320,26 +316,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetwor
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<INetwork> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<INetwork> for ::win32_system::Com::IDispatch {
     fn from(value: INetwork) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&INetwork> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&INetwork> for ::win32_system::Com::IDispatch {
     fn from(value: &INetwork) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for INetwork {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for INetwork {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a INetwork {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a INetwork {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -372,23 +368,11 @@ unsafe impl ::windows_core::Interface for INetwork {
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetwork_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psznetworkname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sznetworknewname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszdescription: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDescription: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, szdescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDescription: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub GetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psznetworkname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, sznetworknewname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub GetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszdescription: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, szdescription: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub GetNetworkId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgdguidnetworkid: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetDomainType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnetworktype: *mut NLM_DOMAIN_TYPE) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -462,26 +446,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetwor
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<INetworkConnection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<INetworkConnection> for ::win32_system::Com::IDispatch {
     fn from(value: INetworkConnection) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&INetworkConnection> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&INetworkConnection> for ::win32_system::Com::IDispatch {
     fn from(value: &INetworkConnection) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for INetworkConnection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for INetworkConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a INetworkConnection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a INetworkConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -514,7 +498,7 @@ unsafe impl ::windows_core::Interface for INetworkConnection {
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetworkConnection_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub GetNetwork: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppnetwork: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -533,7 +517,6 @@ impl INetworkConnectionCost {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetCost)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetDataPlanStatus(&self) -> ::windows_core::Result<NLM_DATAPLAN_STATUS> {
         let mut result__ = ::core::mem::MaybeUninit::<NLM_DATAPLAN_STATUS>::zeroed();
         (::windows_core::Interface::vtable(self).GetDataPlanStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<NLM_DATAPLAN_STATUS>(result__)
@@ -584,10 +567,7 @@ unsafe impl ::windows_core::Interface for INetworkConnectionCost {
 pub struct INetworkConnectionCost_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetCost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcost: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetDataPlanStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdataplanstatus: *mut NLM_DATAPLAN_STATUS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDataPlanStatus: usize,
 }
 #[repr(transparent)]
 pub struct INetworkConnectionCostEvents(::windows_core::IUnknown);
@@ -709,7 +689,6 @@ impl INetworkCostManager {
     pub unsafe fn GetCost(&self, pcost: *mut u32, pdestipaddr: *const NLM_SOCKADDR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetCost)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcost), ::core::mem::transmute(pdestipaddr)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetDataPlanStatus(&self, pdataplanstatus: *mut NLM_DATAPLAN_STATUS, pdestipaddr: *const NLM_SOCKADDR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetDataPlanStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdataplanstatus), ::core::mem::transmute(pdestipaddr)).ok()
     }
@@ -762,10 +741,7 @@ unsafe impl ::windows_core::Interface for INetworkCostManager {
 pub struct INetworkCostManager_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetCost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcost: *mut u32, pdestipaddr: *const NLM_SOCKADDR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetDataPlanStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdataplanstatus: *mut NLM_DATAPLAN_STATUS, pdestipaddr: *const NLM_SOCKADDR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDataPlanStatus: usize,
     pub SetDestinationAddresses: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, length: u32, pdestipaddrlist: *const NLM_SOCKADDR, bappend: i16) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -959,26 +935,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a INetwor
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<INetworkListManager> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<INetworkListManager> for ::win32_system::Com::IDispatch {
     fn from(value: INetworkListManager) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&INetworkListManager> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&INetworkListManager> for ::win32_system::Com::IDispatch {
     fn from(value: &INetworkListManager) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for INetworkListManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for INetworkListManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a INetworkListManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a INetworkListManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -1011,7 +987,7 @@ unsafe impl ::windows_core::Interface for INetworkListManager {
 #[repr(C)]
 #[doc(hidden)]
 pub struct INetworkListManager_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub GetNetworks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, flags: NLM_ENUM_NETWORK, ppenumnetwork: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -1185,44 +1161,36 @@ impl ::core::fmt::Debug for NLM_CONNECTIVITY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NLM_DATAPLAN_STATUS {
     pub InterfaceGuid: ::windows_core::GUID,
     pub UsageData: NLM_USAGE_DATA,
     pub DataLimitInMegabytes: u32,
     pub InboundBandwidthInKbps: u32,
     pub OutboundBandwidthInKbps: u32,
-    pub NextBillingCycle: super::super::Foundation::FILETIME,
+    pub NextBillingCycle: ::win32_foundation::FILETIME,
     pub MaxTransferSizeInMegabytes: u32,
     pub Reserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NLM_DATAPLAN_STATUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NLM_DATAPLAN_STATUS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NLM_DATAPLAN_STATUS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NLM_DATAPLAN_STATUS").field("InterfaceGuid", &self.InterfaceGuid).field("UsageData", &self.UsageData).field("DataLimitInMegabytes", &self.DataLimitInMegabytes).field("InboundBandwidthInKbps", &self.InboundBandwidthInKbps).field("OutboundBandwidthInKbps", &self.OutboundBandwidthInKbps).field("NextBillingCycle", &self.NextBillingCycle).field("MaxTransferSizeInMegabytes", &self.MaxTransferSizeInMegabytes).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NLM_DATAPLAN_STATUS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NLM_DATAPLAN_STATUS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NLM_DATAPLAN_STATUS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NLM_DATAPLAN_STATUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NLM_DATAPLAN_STATUS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1444,38 +1412,30 @@ impl ::core::default::Default for NLM_SOCKADDR {
 }
 pub const NLM_UNKNOWN_DATAPLAN_STATUS: u32 = 4294967295u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NLM_USAGE_DATA {
     pub UsageInMegabytes: u32,
-    pub LastSyncTime: super::super::Foundation::FILETIME,
+    pub LastSyncTime: ::win32_foundation::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NLM_USAGE_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NLM_USAGE_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NLM_USAGE_DATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NLM_USAGE_DATA").field("UsageInMegabytes", &self.UsageInMegabytes).field("LastSyncTime", &self.LastSyncTime).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NLM_USAGE_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NLM_USAGE_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NLM_USAGE_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NLM_USAGE_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NLM_USAGE_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

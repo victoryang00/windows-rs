@@ -96,13 +96,10 @@ impl ::core::clone::Clone for FillBehavior {
 pub type GravityConnectedAnimationConfiguration = *mut ::core::ffi::c_void;
 pub type KeySpline = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct KeyTime {
-    pub TimeSpan: super::super::super::super::Foundation::TimeSpan,
+    pub TimeSpan: ::winrt_foundation_sys::TimeSpan,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for KeyTime {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for KeyTime {
     fn clone(&self) -> Self {
         *self
@@ -133,15 +130,12 @@ pub type QuarticEase = *mut ::core::ffi::c_void;
 pub type QuinticEase = *mut ::core::ffi::c_void;
 pub type ReorderThemeTransition = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct RepeatBehavior {
     pub Count: f64,
-    pub Duration: super::super::super::super::Foundation::TimeSpan,
+    pub Duration: ::winrt_foundation_sys::TimeSpan,
     pub Type: RepeatBehaviorType,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for RepeatBehavior {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for RepeatBehavior {
     fn clone(&self) -> Self {
         *self

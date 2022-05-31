@@ -6,22 +6,21 @@ impl CommunicationBlockingAccessManager {
             (::windows_core::Interface::vtable(this).IsBlockingActive)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn IsBlockedNumberAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(number: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn IsBlockedNumberAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(number: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ICommunicationBlockingAccessManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).IsBlockedNumberAsync)(::windows_core::Interface::as_raw(this), number.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).IsBlockedNumberAsync)(::windows_core::Interface::as_raw(this), number.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ShowBlockNumbersUI<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(phonenumbers: Param0) -> ::windows_core::Result<bool> {
+    pub fn ShowBlockNumbersUI<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(phonenumbers: Param0) -> ::windows_core::Result<bool> {
         Self::ICommunicationBlockingAccessManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).ShowBlockNumbersUI)(::windows_core::Interface::as_raw(this), phonenumbers.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ShowUnblockNumbersUI<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(phonenumbers: Param0) -> ::windows_core::Result<bool> {
+    pub fn ShowUnblockNumbersUI<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(phonenumbers: Param0) -> ::windows_core::Result<bool> {
         Self::ICommunicationBlockingAccessManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).ShowUnblockNumbersUI)(::windows_core::Interface::as_raw(this), phonenumbers.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
@@ -52,11 +51,10 @@ impl CommunicationBlockingAppManager {
     pub fn ShowCommunicationBlockingSettingsUI() -> ::windows_core::Result<()> {
         Self::ICommunicationBlockingAppManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).ShowCommunicationBlockingSettingsUI)(::windows_core::Interface::as_raw(this)).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestSetAsActiveBlockingAppAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestSetAsActiveBlockingAppAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ICommunicationBlockingAppManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestSetAsActiveBlockingAppAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestSetAsActiveBlockingAppAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
     pub fn ICommunicationBlockingAppManagerStatics<R, F: FnOnce(&ICommunicationBlockingAppManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -83,10 +81,7 @@ unsafe impl ::windows_core::Interface for ICommunicationBlockingAccessManagerSta
 pub struct ICommunicationBlockingAccessManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsBlockingActive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub IsBlockedNumberAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, number: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    IsBlockedNumberAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub ShowBlockNumbersUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phonenumbers: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -123,8 +118,5 @@ unsafe impl ::windows_core::Interface for ICommunicationBlockingAppManagerStatic
 #[doc(hidden)]
 pub struct ICommunicationBlockingAppManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RequestSetAsActiveBlockingAppAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestSetAsActiveBlockingAppAsync: usize,
 }

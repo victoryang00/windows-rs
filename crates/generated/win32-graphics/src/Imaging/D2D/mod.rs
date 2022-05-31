@@ -79,7 +79,7 @@ impl IWICImagingFactory2 {
         (::windows_core::Interface::vtable(self).base__.CreateDecoderFromFilename)(::windows_core::Interface::as_raw(self), wzfilename.into_param().abi(), ::core::mem::transmute(pguidvendor), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(metadataoptions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::IWICBitmapDecoder>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateDecoderFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::Com::IStream>>(&self, pistream: Param0, pguidvendor: *const ::windows_core::GUID, metadataoptions: super::WICDecodeOptions) -> ::windows_core::Result<super::IWICBitmapDecoder> {
+    pub unsafe fn CreateDecoderFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, pistream: Param0, pguidvendor: *const ::windows_core::GUID, metadataoptions: super::WICDecodeOptions) -> ::windows_core::Result<super::IWICBitmapDecoder> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateDecoderFromStream)(::windows_core::Interface::as_raw(self), pistream.into_param().abi(), ::core::mem::transmute(pguidvendor), ::core::mem::transmute(metadataoptions), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::IWICBitmapDecoder>(result__)
     }
@@ -154,14 +154,14 @@ impl IWICImagingFactory2 {
         (::windows_core::Interface::vtable(self).base__.CreateBitmapFromHBITMAP)(::windows_core::Interface::as_raw(self), hbitmap.into_param().abi(), hpalette.into_param().abi(), ::core::mem::transmute(options), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::IWICBitmap>(result__)
     }
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-    pub unsafe fn CreateBitmapFromHICON<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::UI::WindowsAndMessaging::HICON>>(&self, hicon: Param0) -> ::windows_core::Result<super::IWICBitmap> {
+    pub unsafe fn CreateBitmapFromHICON<'a, Param0: ::windows_core::IntoParam<'a, ::win32_ui::WindowsAndMessaging::HICON>>(&self, hicon: Param0) -> ::windows_core::Result<super::IWICBitmap> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateBitmapFromHICON)(::windows_core::Interface::as_raw(self), hicon.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::IWICBitmap>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateComponentEnumerator(&self, componenttypes: u32, options: u32) -> ::windows_core::Result<super::super::super::System::Com::IEnumUnknown> {
+    pub unsafe fn CreateComponentEnumerator(&self, componenttypes: u32, options: u32) -> ::windows_core::Result<::win32_system::Com::IEnumUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CreateComponentEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(componenttypes), ::core::mem::transmute(options), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::System::Com::IEnumUnknown>(result__)
+        (::windows_core::Interface::vtable(self).base__.CreateComponentEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(componenttypes), ::core::mem::transmute(options), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IEnumUnknown>(result__)
     }
     pub unsafe fn CreateFastMetadataEncoderFromDecoder<'a, Param0: ::windows_core::IntoParam<'a, super::IWICBitmapDecoder>>(&self, pidecoder: Param0) -> ::windows_core::Result<super::IWICFastMetadataEncoder> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

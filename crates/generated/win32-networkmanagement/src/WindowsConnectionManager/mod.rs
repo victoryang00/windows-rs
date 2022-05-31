@@ -1,4 +1,3 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FreeInterfaceContextTable(interfacecontexttable: *const NET_INTERFACE_CONTEXT_TABLE) {
     #[cfg(windows)]
@@ -12,7 +11,6 @@ pub unsafe fn FreeInterfaceContextTable(interfacecontexttable: *const NET_INTERF
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetInterfaceContextTableForHostName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hostname: Param0, proxyname: Param1, flags: u32, connectionprofilefilterrawdata: *const u8, connectionprofilefilterrawdatasize: u32) -> ::windows_core::Result<*mut NET_INTERFACE_CONTEXT_TABLE> {
     #[cfg(windows)]
@@ -58,39 +56,31 @@ impl ::core::default::Default for NET_INTERFACE_CONTEXT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_INTERFACE_CONTEXT_TABLE {
-    pub InterfaceContextHandle: super::super::Foundation::HANDLE,
+    pub InterfaceContextHandle: ::win32_foundation::HANDLE,
     pub NumberOfEntries: u32,
     pub InterfaceContextArray: *mut NET_INTERFACE_CONTEXT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_INTERFACE_CONTEXT_TABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_INTERFACE_CONTEXT_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NET_INTERFACE_CONTEXT_TABLE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NET_INTERFACE_CONTEXT_TABLE").field("InterfaceContextHandle", &self.InterfaceContextHandle).field("NumberOfEntries", &self.NumberOfEntries).field("InterfaceContextArray", &self.InterfaceContextArray).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NET_INTERFACE_CONTEXT_TABLE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_INTERFACE_CONTEXT_TABLE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_INTERFACE_CONTEXT_TABLE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NET_INTERFACE_CONTEXT_TABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NET_INTERFACE_CONTEXT_TABLE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -113,29 +103,27 @@ pub unsafe fn OnDemandGetRoutingHint<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OnDemandRegisterNotification(callback: ONDEMAND_NOTIFICATION_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn OnDemandRegisterNotification(callback: ONDEMAND_NOTIFICATION_CALLBACK, callbackcontext: *const ::core::ffi::c_void) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OnDemandRegisterNotification(callback: ::windows_core::RawPtr, callbackcontext: *const ::core::ffi::c_void, registrationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn OnDemandRegisterNotification(callback: ::windows_core::RawPtr, callbackcontext: *const ::core::ffi::c_void, registrationhandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        OnDemandRegisterNotification(::core::mem::transmute(callback), ::core::mem::transmute(callbackcontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        OnDemandRegisterNotification(::core::mem::transmute(callback), ::core::mem::transmute(callbackcontext), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OnDemandUnRegisterNotification<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(registrationhandle: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn OnDemandUnRegisterNotification<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(registrationhandle: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OnDemandUnRegisterNotification(registrationhandle: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn OnDemandUnRegisterNotification(registrationhandle: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         OnDemandUnRegisterNotification(registrationhandle.into_param().abi()).ok()
     }
@@ -145,39 +133,31 @@ pub unsafe fn OnDemandUnRegisterNotification<'a, Param0: ::windows_core::IntoPar
 pub const WCM_API_VERSION: u32 = 1u32;
 pub const WCM_API_VERSION_1_0: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WCM_BILLING_CYCLE_INFO {
-    pub StartDate: super::super::Foundation::FILETIME,
+    pub StartDate: ::win32_foundation::FILETIME,
     pub Duration: WCM_TIME_INTERVAL,
-    pub Reset: super::super::Foundation::BOOL,
+    pub Reset: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WCM_BILLING_CYCLE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WCM_BILLING_CYCLE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WCM_BILLING_CYCLE_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WCM_BILLING_CYCLE_INFO").field("StartDate", &self.StartDate).field("Duration", &self.Duration).field("Reset", &self.Reset).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WCM_BILLING_CYCLE_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WCM_BILLING_CYCLE_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WCM_BILLING_CYCLE_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WCM_BILLING_CYCLE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WCM_BILLING_CYCLE_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -270,7 +250,6 @@ impl ::core::fmt::Debug for WCM_CONNECTION_COST_SOURCE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WCM_DATAPLAN_STATUS {
     pub UsageData: WCM_USAGE_DATA,
     pub DataLimitInMegabytes: u32,
@@ -280,33 +259,26 @@ pub struct WCM_DATAPLAN_STATUS {
     pub MaxTransferSizeInMegabytes: u32,
     pub Reserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WCM_DATAPLAN_STATUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WCM_DATAPLAN_STATUS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WCM_DATAPLAN_STATUS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WCM_DATAPLAN_STATUS").field("UsageData", &self.UsageData).field("DataLimitInMegabytes", &self.DataLimitInMegabytes).field("InboundBandwidthInKbps", &self.InboundBandwidthInKbps).field("OutboundBandwidthInKbps", &self.OutboundBandwidthInKbps).field("BillingCycle", &self.BillingCycle).field("MaxTransferSizeInMegabytes", &self.MaxTransferSizeInMegabytes).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WCM_DATAPLAN_STATUS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WCM_DATAPLAN_STATUS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WCM_DATAPLAN_STATUS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WCM_DATAPLAN_STATUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WCM_DATAPLAN_STATUS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -342,38 +314,30 @@ impl ::core::fmt::Debug for WCM_MEDIA_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WCM_POLICY_VALUE {
-    pub fValue: super::super::Foundation::BOOL,
-    pub fIsGroupPolicy: super::super::Foundation::BOOL,
+    pub fValue: ::win32_foundation::BOOL,
+    pub fIsGroupPolicy: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WCM_POLICY_VALUE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WCM_POLICY_VALUE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WCM_POLICY_VALUE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WCM_POLICY_VALUE").field("fValue", &self.fValue).field("fIsGroupPolicy", &self.fIsGroupPolicy).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WCM_POLICY_VALUE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WCM_POLICY_VALUE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WCM_POLICY_VALUE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WCM_POLICY_VALUE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WCM_POLICY_VALUE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -506,38 +470,30 @@ impl ::core::default::Default for WCM_TIME_INTERVAL {
 }
 pub const WCM_UNKNOWN_DATAPLAN_STATUS: u32 = 4294967295u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WCM_USAGE_DATA {
     pub UsageInMegabytes: u32,
-    pub LastSyncTime: super::super::Foundation::FILETIME,
+    pub LastSyncTime: ::win32_foundation::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WCM_USAGE_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WCM_USAGE_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WCM_USAGE_DATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WCM_USAGE_DATA").field("UsageInMegabytes", &self.UsageInMegabytes).field("LastSyncTime", &self.LastSyncTime).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WCM_USAGE_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WCM_USAGE_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WCM_USAGE_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WCM_USAGE_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WCM_USAGE_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -582,14 +538,13 @@ pub unsafe fn WcmQueryProperty<'a, Param1: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WcmSetProfileList<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pprofilelist: *const WCM_PROFILE_INFO_LIST, dwposition: u32, fignoreunknownprofiles: Param2, preserved: *mut ::core::ffi::c_void) -> u32 {
+pub unsafe fn WcmSetProfileList<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(pprofilelist: *const WCM_PROFILE_INFO_LIST, dwposition: u32, fignoreunknownprofiles: Param2, preserved: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WcmSetProfileList(pprofilelist: *const WCM_PROFILE_INFO_LIST, dwposition: u32, fignoreunknownprofiles: super::super::Foundation::BOOL, preserved: *mut ::core::ffi::c_void) -> u32;
+            fn WcmSetProfileList(pprofilelist: *const WCM_PROFILE_INFO_LIST, dwposition: u32, fignoreunknownprofiles: ::win32_foundation::BOOL, preserved: *mut ::core::ffi::c_void) -> u32;
         }
         ::core::mem::transmute(WcmSetProfileList(::core::mem::transmute(pprofilelist), ::core::mem::transmute(dwposition), fignoreunknownprofiles.into_param().abi(), ::core::mem::transmute(preserved)))
     }

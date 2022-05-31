@@ -1,42 +1,34 @@
 pub const ALLOW_NO_AUTH: u32 = 1u32;
 pub const ATADDRESSLEN: u32 = 32u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AUTH_VALIDATION_EX {
     pub Header: MPRAPI_OBJECT_HEADER,
-    pub hRasConnection: super::super::Foundation::HANDLE,
+    pub hRasConnection: ::win32_foundation::HANDLE,
     pub wszUserName: [u16; 257],
     pub wszLogonDomain: [u16; 16],
     pub AuthInfoSize: u32,
     pub AuthInfo: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AUTH_VALIDATION_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AUTH_VALIDATION_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for AUTH_VALIDATION_EX {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("AUTH_VALIDATION_EX").field("Header", &self.Header).field("hRasConnection", &self.hRasConnection).field("wszUserName", &self.wszUserName).field("wszLogonDomain", &self.wszLogonDomain).field("AuthInfoSize", &self.AuthInfoSize).field("AuthInfo", &self.AuthInfo).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for AUTH_VALIDATION_EX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for AUTH_VALIDATION_EX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<AUTH_VALIDATION_EX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for AUTH_VALIDATION_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for AUTH_VALIDATION_EX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -381,40 +373,40 @@ unsafe impl ::windows_core::Abi for HRASCONN {
     type Abi = Self;
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct IKEV2_CONFIG_PARAMS {
     pub dwNumPorts: u32,
     pub dwPortFlags: u32,
     pub dwTunnelConfigParamFlags: u32,
     pub TunnelConfigParams: IKEV2_TUNNEL_CONFIG_PARAMS4,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for IKEV2_CONFIG_PARAMS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for IKEV2_CONFIG_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for IKEV2_CONFIG_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IKEV2_CONFIG_PARAMS").field("dwNumPorts", &self.dwNumPorts).field("dwPortFlags", &self.dwPortFlags).field("dwTunnelConfigParamFlags", &self.dwTunnelConfigParamFlags).field("TunnelConfigParams", &self.TunnelConfigParams).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for IKEV2_CONFIG_PARAMS {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for IKEV2_CONFIG_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKEV2_CONFIG_PARAMS>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for IKEV2_CONFIG_PARAMS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for IKEV2_CONFIG_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -584,8 +576,8 @@ pub struct IKEV2_TUNNEL_CONFIG_PARAMS2 {
     pub dwSaDataSizeForRenegotiation: u32,
     pub dwConfigOptions: u32,
     pub dwTotalCertificates: u32,
-    pub certificateNames: *mut super::super::Security::Cryptography::CRYPTOAPI_BLOB,
-    pub machineCertificateName: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub certificateNames: *mut ::win32_security::Cryptography::CRYPTOAPI_BLOB,
+    pub machineCertificateName: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub dwEncryptionType: u32,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
 }
@@ -633,7 +625,7 @@ impl ::core::default::Default for IKEV2_TUNNEL_CONFIG_PARAMS2 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct IKEV2_TUNNEL_CONFIG_PARAMS3 {
     pub dwIdleTimeout: u32,
     pub dwNetworkBlackoutTime: u32,
@@ -641,23 +633,23 @@ pub struct IKEV2_TUNNEL_CONFIG_PARAMS3 {
     pub dwSaDataSizeForRenegotiation: u32,
     pub dwConfigOptions: u32,
     pub dwTotalCertificates: u32,
-    pub certificateNames: *mut super::super::Security::Cryptography::CRYPTOAPI_BLOB,
-    pub machineCertificateName: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub certificateNames: *mut ::win32_security::Cryptography::CRYPTOAPI_BLOB,
+    pub machineCertificateName: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub dwEncryptionType: u32,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
     pub dwTotalEkus: u32,
     pub certificateEKUs: *mut MPR_CERT_EKU,
-    pub machineCertificateHash: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub machineCertificateHash: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for IKEV2_TUNNEL_CONFIG_PARAMS3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IKEV2_TUNNEL_CONFIG_PARAMS3")
@@ -677,26 +669,26 @@ impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS3 {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKEV2_TUNNEL_CONFIG_PARAMS3>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for IKEV2_TUNNEL_CONFIG_PARAMS3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for IKEV2_TUNNEL_CONFIG_PARAMS3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct IKEV2_TUNNEL_CONFIG_PARAMS4 {
     pub dwIdleTimeout: u32,
     pub dwNetworkBlackoutTime: u32,
@@ -704,24 +696,24 @@ pub struct IKEV2_TUNNEL_CONFIG_PARAMS4 {
     pub dwSaDataSizeForRenegotiation: u32,
     pub dwConfigOptions: u32,
     pub dwTotalCertificates: u32,
-    pub certificateNames: *mut super::super::Security::Cryptography::CRYPTOAPI_BLOB,
-    pub machineCertificateName: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub certificateNames: *mut ::win32_security::Cryptography::CRYPTOAPI_BLOB,
+    pub machineCertificateName: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub dwEncryptionType: u32,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
     pub dwTotalEkus: u32,
     pub certificateEKUs: *mut MPR_CERT_EKU,
-    pub machineCertificateHash: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub machineCertificateHash: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub dwMmSaLifeTime: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for IKEV2_TUNNEL_CONFIG_PARAMS4 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IKEV2_TUNNEL_CONFIG_PARAMS4")
@@ -742,19 +734,19 @@ impl ::core::fmt::Debug for IKEV2_TUNNEL_CONFIG_PARAMS4 {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKEV2_TUNNEL_CONFIG_PARAMS4>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for IKEV2_TUNNEL_CONFIG_PARAMS4 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for IKEV2_TUNNEL_CONFIG_PARAMS4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -929,40 +921,32 @@ impl ::core::fmt::Debug for MGM_ENUM_TYPES {
 }
 pub const MGM_FORWARD_STATE_FLAG: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MGM_IF_ENTRY {
     pub dwIfIndex: u32,
     pub dwIfNextHopAddr: u32,
-    pub bIGMP: super::super::Foundation::BOOL,
-    pub bIsEnabled: super::super::Foundation::BOOL,
+    pub bIGMP: ::win32_foundation::BOOL,
+    pub bIsEnabled: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MGM_IF_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MGM_IF_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MGM_IF_ENTRY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MGM_IF_ENTRY").field("dwIfIndex", &self.dwIfIndex).field("dwIfNextHopAddr", &self.dwIfNextHopAddr).field("bIGMP", &self.bIGMP).field("bIsEnabled", &self.bIsEnabled).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MGM_IF_ENTRY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MGM_IF_ENTRY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MGM_IF_ENTRY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MGM_IF_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MGM_IF_ENTRY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -972,7 +956,7 @@ pub const MGM_JOIN_STATE_FLAG: u32 = 1u32;
 pub const MGM_MFE_STATS_0: u32 = 1u32;
 pub const MGM_MFE_STATS_1: u32 = 2u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct MPRAPI_ADMIN_DLL_CALLBACKS {
     pub revision: u8,
     pub lpfnMprAdminGetIpAddressForUser: PMPRADMINGETIPADDRESSFORUSER,
@@ -988,15 +972,15 @@ pub struct MPRAPI_ADMIN_DLL_CALLBACKS {
     pub lpfnRasAdminConnectionHangupNotificationEx: PMPRADMINCONNECTIONHANGUPNOTIFICATIONEX,
     pub lpfnRASValidatePreAuthenticatedConnectionEx: PMPRADMINRASVALIDATEPREAUTHENTICATEDCONNECTIONEX,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for MPRAPI_ADMIN_DLL_CALLBACKS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for MPRAPI_ADMIN_DLL_CALLBACKS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::fmt::Debug for MPRAPI_ADMIN_DLL_CALLBACKS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPRAPI_ADMIN_DLL_CALLBACKS")
@@ -1016,19 +1000,19 @@ impl ::core::fmt::Debug for MPRAPI_ADMIN_DLL_CALLBACKS {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 unsafe impl ::windows_core::Abi for MPRAPI_ADMIN_DLL_CALLBACKS {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MPRAPI_ADMIN_DLL_CALLBACKS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPRAPI_ADMIN_DLL_CALLBACKS>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::Eq for MPRAPI_ADMIN_DLL_CALLBACKS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::default::Default for MPRAPI_ADMIN_DLL_CALLBACKS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1123,47 +1107,47 @@ pub const MPRAPI_SET_CONFIG_PROTOCOL_FOR_L2TP: u32 = 2u32;
 pub const MPRAPI_SET_CONFIG_PROTOCOL_FOR_PPTP: u32 = 1u32;
 pub const MPRAPI_SET_CONFIG_PROTOCOL_FOR_SSTP: u32 = 4u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     pub IkeConfigParams: IKEV2_CONFIG_PARAMS,
     pub PptpConfigParams: PPTP_CONFIG_PARAMS,
     pub L2tpConfigParams: L2TP_CONFIG_PARAMS1,
     pub SstpConfigParams: SSTP_CONFIG_PARAMS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for MPRAPI_TUNNEL_CONFIG_PARAMS0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPRAPI_TUNNEL_CONFIG_PARAMS0").field("IkeConfigParams", &self.IkeConfigParams).field("PptpConfigParams", &self.PptpConfigParams).field("L2tpConfigParams", &self.L2tpConfigParams).field("SstpConfigParams", &self.SstpConfigParams).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPRAPI_TUNNEL_CONFIG_PARAMS0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for MPRAPI_TUNNEL_CONFIG_PARAMS0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for MPRAPI_TUNNEL_CONFIG_PARAMS0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     pub IkeConfigParams: IKEV2_CONFIG_PARAMS,
     pub PptpConfigParams: PPTP_CONFIG_PARAMS,
@@ -1171,33 +1155,33 @@ pub struct MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     pub SstpConfigParams: SSTP_CONFIG_PARAMS,
     pub GREConfigParams: GRE_CONFIG_PARAMS0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for MPRAPI_TUNNEL_CONFIG_PARAMS1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPRAPI_TUNNEL_CONFIG_PARAMS1").field("IkeConfigParams", &self.IkeConfigParams).field("PptpConfigParams", &self.PptpConfigParams).field("L2tpConfigParams", &self.L2tpConfigParams).field("SstpConfigParams", &self.SstpConfigParams).field("GREConfigParams", &self.GREConfigParams).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPRAPI_TUNNEL_CONFIG_PARAMS1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for MPRAPI_TUNNEL_CONFIG_PARAMS1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for MPRAPI_TUNNEL_CONFIG_PARAMS1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1248,39 +1232,31 @@ pub const MPRNP_Ip: u32 = 4u32;
 pub const MPRNP_Ipv6: u32 = 8u32;
 pub const MPRNP_Ipx: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MPR_CERT_EKU {
     pub dwSize: u32,
-    pub IsEKUOID: super::super::Foundation::BOOL,
+    pub IsEKUOID: ::win32_foundation::BOOL,
     pub pwszEKU: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MPR_CERT_EKU {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MPR_CERT_EKU {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MPR_CERT_EKU {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_CERT_EKU").field("dwSize", &self.dwSize).field("IsEKUOID", &self.IsEKUOID).field("pwszEKU", &self.pwszEKU).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MPR_CERT_EKU {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MPR_CERT_EKU {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_CERT_EKU>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MPR_CERT_EKU {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MPR_CERT_EKU {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1437,76 +1413,60 @@ impl ::core::fmt::Debug for MPR_ET {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MPR_FILTER_0 {
-    pub fEnable: super::super::Foundation::BOOL,
+    pub fEnable: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MPR_FILTER_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MPR_FILTER_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MPR_FILTER_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_FILTER_0").field("fEnable", &self.fEnable).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MPR_FILTER_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MPR_FILTER_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_FILTER_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MPR_FILTER_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MPR_FILTER_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MPR_IFTRANSPORT_0 {
     pub dwTransportId: u32,
-    pub hIfTransport: super::super::Foundation::HANDLE,
+    pub hIfTransport: ::win32_foundation::HANDLE,
     pub wszIfTransportName: [u16; 41],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MPR_IFTRANSPORT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MPR_IFTRANSPORT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MPR_IFTRANSPORT_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_IFTRANSPORT_0").field("dwTransportId", &self.dwTransportId).field("hIfTransport", &self.hIfTransport).field("wszIfTransportName", &self.wszIfTransportName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MPR_IFTRANSPORT_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MPR_IFTRANSPORT_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_IFTRANSPORT_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MPR_IFTRANSPORT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MPR_IFTRANSPORT_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1630,98 +1590,81 @@ impl ::core::default::Default for MPR_IF_CUSTOMINFOEX2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MPR_INTERFACE_0 {
     pub wszInterfaceName: [u16; 257],
-    pub hInterface: super::super::Foundation::HANDLE,
-    pub fEnabled: super::super::Foundation::BOOL,
+    pub hInterface: ::win32_foundation::HANDLE,
+    pub fEnabled: ::win32_foundation::BOOL,
     pub dwIfType: ROUTER_INTERFACE_TYPE,
     pub dwConnectionState: ROUTER_CONNECTION_STATE,
     pub fUnReachabilityReasons: u32,
     pub dwLastError: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MPR_INTERFACE_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MPR_INTERFACE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MPR_INTERFACE_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_INTERFACE_0").field("wszInterfaceName", &self.wszInterfaceName).field("hInterface", &self.hInterface).field("fEnabled", &self.fEnabled).field("dwIfType", &self.dwIfType).field("dwConnectionState", &self.dwConnectionState).field("fUnReachabilityReasons", &self.fUnReachabilityReasons).field("dwLastError", &self.dwLastError).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MPR_INTERFACE_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MPR_INTERFACE_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_INTERFACE_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MPR_INTERFACE_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MPR_INTERFACE_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MPR_INTERFACE_1 {
     pub wszInterfaceName: [u16; 257],
-    pub hInterface: super::super::Foundation::HANDLE,
-    pub fEnabled: super::super::Foundation::BOOL,
+    pub hInterface: ::win32_foundation::HANDLE,
+    pub fEnabled: ::win32_foundation::BOOL,
     pub dwIfType: ROUTER_INTERFACE_TYPE,
     pub dwConnectionState: ROUTER_CONNECTION_STATE,
     pub fUnReachabilityReasons: u32,
     pub dwLastError: u32,
     pub lpwsDialoutHoursRestriction: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MPR_INTERFACE_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MPR_INTERFACE_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MPR_INTERFACE_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_INTERFACE_1").field("wszInterfaceName", &self.wszInterfaceName).field("hInterface", &self.hInterface).field("fEnabled", &self.fEnabled).field("dwIfType", &self.dwIfType).field("dwConnectionState", &self.dwConnectionState).field("fUnReachabilityReasons", &self.fUnReachabilityReasons).field("dwLastError", &self.dwLastError).field("lpwsDialoutHoursRestriction", &self.lpwsDialoutHoursRestriction).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MPR_INTERFACE_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MPR_INTERFACE_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_INTERFACE_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MPR_INTERFACE_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MPR_INTERFACE_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MPR_INTERFACE_2 {
     pub wszInterfaceName: [u16; 257],
-    pub hInterface: super::super::Foundation::HANDLE,
-    pub fEnabled: super::super::Foundation::BOOL,
+    pub hInterface: ::win32_foundation::HANDLE,
+    pub fEnabled: ::win32_foundation::BOOL,
     pub dwIfType: ROUTER_INTERFACE_TYPE,
     pub dwConnectionState: ROUTER_CONNECTION_STATE,
     pub fUnReachabilityReasons: u32,
@@ -1757,15 +1700,12 @@ pub struct MPR_INTERFACE_2 {
     pub guidId: ::windows_core::GUID,
     pub dwVpnStrategy: MPR_VS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MPR_INTERFACE_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MPR_INTERFACE_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MPR_INTERFACE_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_INTERFACE_2")
@@ -1809,30 +1749,26 @@ impl ::core::fmt::Debug for MPR_INTERFACE_2 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MPR_INTERFACE_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MPR_INTERFACE_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_INTERFACE_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MPR_INTERFACE_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MPR_INTERFACE_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct MPR_INTERFACE_3 {
     pub wszInterfaceName: [u16; 257],
-    pub hInterface: super::super::Foundation::HANDLE,
-    pub fEnabled: super::super::Foundation::BOOL,
+    pub hInterface: ::win32_foundation::HANDLE,
+    pub fEnabled: ::win32_foundation::BOOL,
     pub dwIfType: ROUTER_INTERFACE_TYPE,
     pub dwConnectionState: ROUTER_CONNECTION_STATE,
     pub fUnReachabilityReasons: u32,
@@ -1868,31 +1804,31 @@ pub struct MPR_INTERFACE_3 {
     pub guidId: ::windows_core::GUID,
     pub dwVpnStrategy: MPR_VS,
     pub AddressCount: u32,
-    pub ipv6addrDns: super::super::Networking::WinSock::IN6_ADDR,
-    pub ipv6addrDnsAlt: super::super::Networking::WinSock::IN6_ADDR,
-    pub ipv6addr: *mut super::super::Networking::WinSock::IN6_ADDR,
+    pub ipv6addrDns: ::win32_networking::WinSock::IN6_ADDR,
+    pub ipv6addrDnsAlt: ::win32_networking::WinSock::IN6_ADDR,
+    pub ipv6addr: *mut ::win32_networking::WinSock::IN6_ADDR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for MPR_INTERFACE_3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for MPR_INTERFACE_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 unsafe impl ::windows_core::Abi for MPR_INTERFACE_3 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for MPR_INTERFACE_3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_INTERFACE_3>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::Eq for MPR_INTERFACE_3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::default::Default for MPR_INTERFACE_3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1973,40 +1909,32 @@ pub const MPR_MaxPhoneNumber: u32 = 128u32;
 pub const MPR_MaxUserData: u32 = 200u32;
 pub const MPR_MaxX25Address: u32 = 200u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MPR_SERVER_0 {
-    pub fLanOnlyMode: super::super::Foundation::BOOL,
+    pub fLanOnlyMode: ::win32_foundation::BOOL,
     pub dwUpTime: u32,
     pub dwTotalPorts: u32,
     pub dwPortsInUse: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MPR_SERVER_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MPR_SERVER_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MPR_SERVER_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_SERVER_0").field("fLanOnlyMode", &self.fLanOnlyMode).field("dwUpTime", &self.dwUpTime).field("dwTotalPorts", &self.dwTotalPorts).field("dwPortsInUse", &self.dwPortsInUse).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MPR_SERVER_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MPR_SERVER_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_SERVER_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MPR_SERVER_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MPR_SERVER_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2079,7 +2007,7 @@ impl ::core::default::Default for MPR_SERVER_2 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct MPR_SERVER_EX0 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub fLanOnlyMode: u32,
@@ -2089,40 +2017,40 @@ pub struct MPR_SERVER_EX0 {
     pub Reserved: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for MPR_SERVER_EX0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for MPR_SERVER_EX0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for MPR_SERVER_EX0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_SERVER_EX0").field("Header", &self.Header).field("fLanOnlyMode", &self.fLanOnlyMode).field("dwUpTime", &self.dwUpTime).field("dwTotalPorts", &self.dwTotalPorts).field("dwPortsInUse", &self.dwPortsInUse).field("Reserved", &self.Reserved).field("ConfigParams", &self.ConfigParams).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for MPR_SERVER_EX0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for MPR_SERVER_EX0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_SERVER_EX0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for MPR_SERVER_EX0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for MPR_SERVER_EX0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct MPR_SERVER_EX1 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub fLanOnlyMode: u32,
@@ -2132,150 +2060,142 @@ pub struct MPR_SERVER_EX1 {
     pub Reserved: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS1,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for MPR_SERVER_EX1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for MPR_SERVER_EX1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for MPR_SERVER_EX1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_SERVER_EX1").field("Header", &self.Header).field("fLanOnlyMode", &self.fLanOnlyMode).field("dwUpTime", &self.dwUpTime).field("dwTotalPorts", &self.dwTotalPorts).field("dwPortsInUse", &self.dwPortsInUse).field("Reserved", &self.Reserved).field("ConfigParams", &self.ConfigParams).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for MPR_SERVER_EX1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for MPR_SERVER_EX1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_SERVER_EX1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for MPR_SERVER_EX1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for MPR_SERVER_EX1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct MPR_SERVER_SET_CONFIG_EX0 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub setConfigForProtocols: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for MPR_SERVER_SET_CONFIG_EX0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for MPR_SERVER_SET_CONFIG_EX0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for MPR_SERVER_SET_CONFIG_EX0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_SERVER_SET_CONFIG_EX0").field("Header", &self.Header).field("setConfigForProtocols", &self.setConfigForProtocols).field("ConfigParams", &self.ConfigParams).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for MPR_SERVER_SET_CONFIG_EX0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for MPR_SERVER_SET_CONFIG_EX0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_SERVER_SET_CONFIG_EX0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for MPR_SERVER_SET_CONFIG_EX0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for MPR_SERVER_SET_CONFIG_EX0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct MPR_SERVER_SET_CONFIG_EX1 {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub setConfigForProtocols: u32,
     pub ConfigParams: MPRAPI_TUNNEL_CONFIG_PARAMS1,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for MPR_SERVER_SET_CONFIG_EX1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for MPR_SERVER_SET_CONFIG_EX1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for MPR_SERVER_SET_CONFIG_EX1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_SERVER_SET_CONFIG_EX1").field("Header", &self.Header).field("setConfigForProtocols", &self.setConfigForProtocols).field("ConfigParams", &self.ConfigParams).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for MPR_SERVER_SET_CONFIG_EX1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for MPR_SERVER_SET_CONFIG_EX1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_SERVER_SET_CONFIG_EX1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for MPR_SERVER_SET_CONFIG_EX1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for MPR_SERVER_SET_CONFIG_EX1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MPR_TRANSPORT_0 {
     pub dwTransportId: u32,
-    pub hTransport: super::super::Foundation::HANDLE,
+    pub hTransport: ::win32_foundation::HANDLE,
     pub wszTransportName: [u16; 41],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MPR_TRANSPORT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MPR_TRANSPORT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MPR_TRANSPORT_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MPR_TRANSPORT_0").field("dwTransportId", &self.dwTransportId).field("hTransport", &self.hTransport).field("wszTransportName", &self.wszTransportName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MPR_TRANSPORT_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MPR_TRANSPORT_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MPR_TRANSPORT_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MPR_TRANSPORT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MPR_TRANSPORT_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2374,42 +2294,39 @@ impl ::core::fmt::Debug for MPR_VS {
 }
 pub const MPR_VS_Ikev2First: u32 = 8u32;
 pub const MPR_VS_Ikev2Only: u32 = 7u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MgmAddGroupMembershipEntry<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprotocol: Param0, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32 {
+pub unsafe fn MgmAddGroupMembershipEntry<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprotocol: Param0, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MgmAddGroupMembershipEntry(hprotocol: super::super::Foundation::HANDLE, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32;
+            fn MgmAddGroupMembershipEntry(hprotocol: ::win32_foundation::HANDLE, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32;
         }
         ::core::mem::transmute(MgmAddGroupMembershipEntry(hprotocol.into_param().abi(), ::core::mem::transmute(dwsourceaddr), ::core::mem::transmute(dwsourcemask), ::core::mem::transmute(dwgroupaddr), ::core::mem::transmute(dwgroupmask), ::core::mem::transmute(dwifindex), ::core::mem::transmute(dwifnexthopipaddr), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MgmDeRegisterMProtocol<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprotocol: Param0) -> u32 {
+pub unsafe fn MgmDeRegisterMProtocol<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprotocol: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MgmDeRegisterMProtocol(hprotocol: super::super::Foundation::HANDLE) -> u32;
+            fn MgmDeRegisterMProtocol(hprotocol: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MgmDeRegisterMProtocol(hprotocol.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MgmDeleteGroupMembershipEntry<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprotocol: Param0, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32 {
+pub unsafe fn MgmDeleteGroupMembershipEntry<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprotocol: Param0, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MgmDeleteGroupMembershipEntry(hprotocol: super::super::Foundation::HANDLE, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32;
+            fn MgmDeleteGroupMembershipEntry(hprotocol: ::win32_foundation::HANDLE, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32;
         }
         ::core::mem::transmute(MgmDeleteGroupMembershipEntry(hprotocol.into_param().abi(), ::core::mem::transmute(dwsourceaddr), ::core::mem::transmute(dwsourcemask), ::core::mem::transmute(dwgroupaddr), ::core::mem::transmute(dwgroupmask), ::core::mem::transmute(dwifindex), ::core::mem::transmute(dwifnexthopipaddr), ::core::mem::transmute(dwflags)))
     }
@@ -2511,84 +2428,78 @@ pub unsafe fn MgmGetProtocolOnInterface(dwifindex: u32, dwifnexthopaddr: u32, pd
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MgmGroupEnumerationEnd<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(henum: Param0) -> u32 {
+pub unsafe fn MgmGroupEnumerationEnd<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(henum: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MgmGroupEnumerationEnd(henum: super::super::Foundation::HANDLE) -> u32;
+            fn MgmGroupEnumerationEnd(henum: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MgmGroupEnumerationEnd(henum.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MgmGroupEnumerationGetNext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(henum: Param0, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32 {
+pub unsafe fn MgmGroupEnumerationGetNext<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(henum: Param0, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MgmGroupEnumerationGetNext(henum: super::super::Foundation::HANDLE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32;
+            fn MgmGroupEnumerationGetNext(henum: ::win32_foundation::HANDLE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(MgmGroupEnumerationGetNext(henum.into_param().abi(), ::core::mem::transmute(pdwbuffersize), ::core::mem::transmute(pbbuffer), ::core::mem::transmute(pdwnumentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MgmGroupEnumerationStart<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprotocol: Param0, metenumtype: MGM_ENUM_TYPES, phenumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MgmGroupEnumerationStart<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprotocol: Param0, metenumtype: MGM_ENUM_TYPES, phenumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MgmGroupEnumerationStart(hprotocol: super::super::Foundation::HANDLE, metenumtype: MGM_ENUM_TYPES, phenumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MgmGroupEnumerationStart(hprotocol: ::win32_foundation::HANDLE, metenumtype: MGM_ENUM_TYPES, phenumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MgmGroupEnumerationStart(hprotocol.into_param().abi(), ::core::mem::transmute(metenumtype), ::core::mem::transmute(phenumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MgmRegisterMProtocol(prpiinfo: *mut ROUTING_PROTOCOL_CONFIG, dwprotocolid: u32, dwcomponentid: u32, phprotocol: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MgmRegisterMProtocol(prpiinfo: *mut ROUTING_PROTOCOL_CONFIG, dwprotocolid: u32, dwcomponentid: u32, phprotocol: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MgmRegisterMProtocol(prpiinfo: *mut ROUTING_PROTOCOL_CONFIG, dwprotocolid: u32, dwcomponentid: u32, phprotocol: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MgmRegisterMProtocol(prpiinfo: *mut ROUTING_PROTOCOL_CONFIG, dwprotocolid: u32, dwcomponentid: u32, phprotocol: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MgmRegisterMProtocol(::core::mem::transmute(prpiinfo), ::core::mem::transmute(dwprotocolid), ::core::mem::transmute(dwcomponentid), ::core::mem::transmute(phprotocol)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MgmReleaseInterfaceOwnership<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprotocol: Param0, dwifindex: u32, dwifnexthopaddr: u32) -> u32 {
+pub unsafe fn MgmReleaseInterfaceOwnership<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprotocol: Param0, dwifindex: u32, dwifnexthopaddr: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MgmReleaseInterfaceOwnership(hprotocol: super::super::Foundation::HANDLE, dwifindex: u32, dwifnexthopaddr: u32) -> u32;
+            fn MgmReleaseInterfaceOwnership(hprotocol: ::win32_foundation::HANDLE, dwifindex: u32, dwifnexthopaddr: u32) -> u32;
         }
         ::core::mem::transmute(MgmReleaseInterfaceOwnership(hprotocol.into_param().abi(), ::core::mem::transmute(dwifindex), ::core::mem::transmute(dwifnexthopaddr)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MgmTakeInterfaceOwnership<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprotocol: Param0, dwifindex: u32, dwifnexthopaddr: u32) -> u32 {
+pub unsafe fn MgmTakeInterfaceOwnership<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprotocol: Param0, dwifindex: u32, dwifnexthopaddr: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MgmTakeInterfaceOwnership(hprotocol: super::super::Foundation::HANDLE, dwifindex: u32, dwifnexthopaddr: u32) -> u32;
+            fn MgmTakeInterfaceOwnership(hprotocol: ::win32_foundation::HANDLE, dwifindex: u32, dwifnexthopaddr: u32) -> u32;
         }
         ::core::mem::transmute(MgmTakeInterfaceOwnership(hprotocol.into_param().abi(), ::core::mem::transmute(dwifindex), ::core::mem::transmute(dwifnexthopaddr)))
     }
@@ -2608,14 +2519,13 @@ pub unsafe fn MprAdminBufferFree(pbuffer: *const ::core::ffi::c_void) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminConnectionClearStats<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrasserver: isize, hrasconnection: Param1) -> u32 {
+pub unsafe fn MprAdminConnectionClearStats<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrasserver: isize, hrasconnection: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminConnectionClearStats(hrasserver: isize, hrasconnection: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminConnectionClearStats(hrasserver: isize, hrasconnection: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminConnectionClearStats(::core::mem::transmute(hrasserver), hrasconnection.into_param().abi()))
     }
@@ -2635,7 +2545,6 @@ pub unsafe fn MprAdminConnectionEnum(hrasserver: isize, dwlevel: u32, lplpbbuffe
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MprAdminConnectionEnumEx(hrasserver: isize, pobjectheader: *const MPRAPI_OBJECT_HEADER, dwpreferedmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, pprasconn: *mut *mut RAS_CONNECTION_EX, lpdwresumehandle: *const u32) -> u32 {
     #[cfg(windows)]
@@ -2649,56 +2558,52 @@ pub unsafe fn MprAdminConnectionEnumEx(hrasserver: isize, pobjectheader: *const 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminConnectionGetInfo<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrasserver: isize, dwlevel: u32, hrasconnection: Param2, lplpbbuffer: *mut *mut u8) -> u32 {
+pub unsafe fn MprAdminConnectionGetInfo<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrasserver: isize, dwlevel: u32, hrasconnection: Param2, lplpbbuffer: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminConnectionGetInfo(hrasserver: isize, dwlevel: u32, hrasconnection: super::super::Foundation::HANDLE, lplpbbuffer: *mut *mut u8) -> u32;
+            fn MprAdminConnectionGetInfo(hrasserver: isize, dwlevel: u32, hrasconnection: ::win32_foundation::HANDLE, lplpbbuffer: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(MprAdminConnectionGetInfo(::core::mem::transmute(hrasserver), ::core::mem::transmute(dwlevel), hrasconnection.into_param().abi(), ::core::mem::transmute(lplpbbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminConnectionGetInfoEx<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrasserver: isize, hrasconnection: Param1, prasconnection: *mut RAS_CONNECTION_EX) -> u32 {
+pub unsafe fn MprAdminConnectionGetInfoEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrasserver: isize, hrasconnection: Param1, prasconnection: *mut RAS_CONNECTION_EX) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminConnectionGetInfoEx(hrasserver: isize, hrasconnection: super::super::Foundation::HANDLE, prasconnection: *mut RAS_CONNECTION_EX) -> u32;
+            fn MprAdminConnectionGetInfoEx(hrasserver: isize, hrasconnection: ::win32_foundation::HANDLE, prasconnection: *mut RAS_CONNECTION_EX) -> u32;
         }
         ::core::mem::transmute(MprAdminConnectionGetInfoEx(::core::mem::transmute(hrasserver), hrasconnection.into_param().abi(), ::core::mem::transmute(prasconnection)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminConnectionRemoveQuarantine<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hrasserver: Param0, hrasconnection: Param1, fisipaddress: Param2) -> u32 {
+pub unsafe fn MprAdminConnectionRemoveQuarantine<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hrasserver: Param0, hrasconnection: Param1, fisipaddress: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminConnectionRemoveQuarantine(hrasserver: super::super::Foundation::HANDLE, hrasconnection: super::super::Foundation::HANDLE, fisipaddress: super::super::Foundation::BOOL) -> u32;
+            fn MprAdminConnectionRemoveQuarantine(hrasserver: ::win32_foundation::HANDLE, hrasconnection: ::win32_foundation::HANDLE, fisipaddress: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(MprAdminConnectionRemoveQuarantine(hrasserver.into_param().abi(), hrasconnection.into_param().abi(), fisipaddress.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminDeregisterConnectionNotification<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, heventnotification: Param1) -> u32 {
+pub unsafe fn MprAdminDeregisterConnectionNotification<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, heventnotification: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminDeregisterConnectionNotification(hmprserver: isize, heventnotification: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminDeregisterConnectionNotification(hmprserver: isize, heventnotification: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminDeregisterConnectionNotification(::core::mem::transmute(hmprserver), heventnotification.into_param().abi()))
     }
@@ -2718,14 +2623,13 @@ pub unsafe fn MprAdminDeviceEnum(hmprserver: isize, dwlevel: u32, lplpbbuffer: *
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminEstablishDomainRasServer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pszdomain: Param0, pszmachine: Param1, benable: Param2) -> u32 {
+pub unsafe fn MprAdminEstablishDomainRasServer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(pszdomain: Param0, pszmachine: Param1, benable: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminEstablishDomainRasServer(pszdomain: ::windows_core::PCWSTR, pszmachine: ::windows_core::PCWSTR, benable: super::super::Foundation::BOOL) -> u32;
+            fn MprAdminEstablishDomainRasServer(pszdomain: ::windows_core::PCWSTR, pszmachine: ::windows_core::PCWSTR, benable: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(MprAdminEstablishDomainRasServer(pszdomain.into_param().abi(), pszmachine.into_param().abi(), benable.into_param().abi()))
     }
@@ -2758,84 +2662,78 @@ pub unsafe fn MprAdminGetPDCServer<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceConnect<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hmprserver: isize, hinterface: Param1, hevent: Param2, fsynchronous: Param3) -> u32 {
+pub unsafe fn MprAdminInterfaceConnect<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hmprserver: isize, hinterface: Param1, hevent: Param2, fsynchronous: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceConnect(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, hevent: super::super::Foundation::HANDLE, fsynchronous: super::super::Foundation::BOOL) -> u32;
+            fn MprAdminInterfaceConnect(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, hevent: ::win32_foundation::HANDLE, fsynchronous: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceConnect(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), hevent.into_param().abi(), fsynchronous.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceCreate(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8, phinterface: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MprAdminInterfaceCreate(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8, phinterface: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceCreate(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8, phinterface: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminInterfaceCreate(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8, phinterface: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceCreate(::core::mem::transmute(hmprserver), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lpbbuffer), ::core::mem::transmute(phinterface)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceDelete<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1) -> u32 {
+pub unsafe fn MprAdminInterfaceDelete<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceDelete(hmprserver: isize, hinterface: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminInterfaceDelete(hmprserver: isize, hinterface: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceDelete(::core::mem::transmute(hmprserver), hinterface.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceDeviceGetInfo<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwindex: u32, dwlevel: u32, lplpbuffer: *mut *mut u8) -> u32 {
+pub unsafe fn MprAdminInterfaceDeviceGetInfo<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwindex: u32, dwlevel: u32, lplpbuffer: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceDeviceGetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwindex: u32, dwlevel: u32, lplpbuffer: *mut *mut u8) -> u32;
+            fn MprAdminInterfaceDeviceGetInfo(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwindex: u32, dwlevel: u32, lplpbuffer: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceDeviceGetInfo(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lplpbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceDeviceSetInfo<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwindex: u32, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
+pub unsafe fn MprAdminInterfaceDeviceSetInfo<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwindex: u32, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceDeviceSetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwindex: u32, dwlevel: u32, lpbbuffer: *const u8) -> u32;
+            fn MprAdminInterfaceDeviceSetInfo(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwindex: u32, dwlevel: u32, lpbbuffer: *const u8) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceDeviceSetInfo(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lpbbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceDisconnect<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1) -> u32 {
+pub unsafe fn MprAdminInterfaceDisconnect<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceDisconnect(hmprserver: isize, hinterface: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminInterfaceDisconnect(hmprserver: isize, hinterface: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceDisconnect(::core::mem::transmute(hmprserver), hinterface.into_param().abi()))
     }
@@ -2868,70 +2766,66 @@ pub unsafe fn MprAdminInterfaceGetCredentials<'a, Param0: ::windows_core::IntoPa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceGetCredentialsEx<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32 {
+pub unsafe fn MprAdminInterfaceGetCredentialsEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceGetCredentialsEx(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
+            fn MprAdminInterfaceGetCredentialsEx(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceGetCredentialsEx(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lplpbbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
 #[inline]
-pub unsafe fn MprAdminInterfaceGetCustomInfoEx<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32 {
+pub unsafe fn MprAdminInterfaceGetCustomInfoEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceGetCustomInfoEx(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32;
+            fn MprAdminInterfaceGetCustomInfoEx(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceGetCustomInfoEx(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(pcustominfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceGetHandle<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hmprserver: isize, lpwsinterfacename: Param1, phinterface: *mut super::super::Foundation::HANDLE, fincludeclientinterfaces: Param3) -> u32 {
+pub unsafe fn MprAdminInterfaceGetHandle<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hmprserver: isize, lpwsinterfacename: Param1, phinterface: *mut ::win32_foundation::HANDLE, fincludeclientinterfaces: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceGetHandle(hmprserver: isize, lpwsinterfacename: ::windows_core::PCWSTR, phinterface: *mut super::super::Foundation::HANDLE, fincludeclientinterfaces: super::super::Foundation::BOOL) -> u32;
+            fn MprAdminInterfaceGetHandle(hmprserver: isize, lpwsinterfacename: ::windows_core::PCWSTR, phinterface: *mut ::win32_foundation::HANDLE, fincludeclientinterfaces: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceGetHandle(::core::mem::transmute(hmprserver), lpwsinterfacename.into_param().abi(), ::core::mem::transmute(phinterface), fincludeclientinterfaces.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceGetInfo<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwlevel: u32, lplpbbuffer: *const *const u8) -> u32 {
+pub unsafe fn MprAdminInterfaceGetInfo<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwlevel: u32, lplpbbuffer: *const *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceGetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwlevel: u32, lplpbbuffer: *const *const u8) -> u32;
+            fn MprAdminInterfaceGetInfo(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwlevel: u32, lplpbbuffer: *const *const u8) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceGetInfo(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lplpbbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceQueryUpdateResult<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwprotocolid: u32, lpdwupdateresult: *mut u32) -> u32 {
+pub unsafe fn MprAdminInterfaceQueryUpdateResult<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwprotocolid: u32, lpdwupdateresult: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceQueryUpdateResult(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwprotocolid: u32, lpdwupdateresult: *mut u32) -> u32;
+            fn MprAdminInterfaceQueryUpdateResult(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwprotocolid: u32, lpdwupdateresult: *mut u32) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceQueryUpdateResult(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwprotocolid), ::core::mem::transmute(lpdwupdateresult)))
     }
@@ -2951,168 +2845,157 @@ pub unsafe fn MprAdminInterfaceSetCredentials<'a, Param0: ::windows_core::IntoPa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceSetCredentialsEx<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
+pub unsafe fn MprAdminInterfaceSetCredentialsEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceSetCredentialsEx(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
+            fn MprAdminInterfaceSetCredentialsEx(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceSetCredentialsEx(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lpbbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
 #[inline]
-pub unsafe fn MprAdminInterfaceSetCustomInfoEx<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32 {
+pub unsafe fn MprAdminInterfaceSetCustomInfoEx<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceSetCustomInfoEx(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32;
+            fn MprAdminInterfaceSetCustomInfoEx(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceSetCustomInfoEx(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(pcustominfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceSetInfo<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
+pub unsafe fn MprAdminInterfaceSetInfo<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceSetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
+            fn MprAdminInterfaceSetInfo(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceSetInfo(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lpbbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceTransportAdd<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32 {
+pub unsafe fn MprAdminInterfaceTransportAdd<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceTransportAdd(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
+            fn MprAdminInterfaceTransportAdd(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceTransportAdd(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(pinterfaceinfo), ::core::mem::transmute(dwinterfaceinfosize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceTransportGetInfo<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwtransportid: u32, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32 {
+pub unsafe fn MprAdminInterfaceTransportGetInfo<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwtransportid: u32, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceTransportGetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwtransportid: u32, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32;
+            fn MprAdminInterfaceTransportGetInfo(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwtransportid: u32, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceTransportGetInfo(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(ppinterfaceinfo), ::core::mem::transmute(lpdwinterfaceinfosize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceTransportRemove<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwtransportid: u32) -> u32 {
+pub unsafe fn MprAdminInterfaceTransportRemove<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwtransportid: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceTransportRemove(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwtransportid: u32) -> u32;
+            fn MprAdminInterfaceTransportRemove(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwtransportid: u32) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceTransportRemove(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwtransportid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceTransportSetInfo<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32 {
+pub unsafe fn MprAdminInterfaceTransportSetInfo<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceTransportSetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
+            fn MprAdminInterfaceTransportSetInfo(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceTransportSetInfo(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(pinterfaceinfo), ::core::mem::transmute(dwinterfaceinfosize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceUpdatePhonebookInfo<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1) -> u32 {
+pub unsafe fn MprAdminInterfaceUpdatePhonebookInfo<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceUpdatePhonebookInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminInterfaceUpdatePhonebookInfo(hmprserver: isize, hinterface: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceUpdatePhonebookInfo(::core::mem::transmute(hmprserver), hinterface.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminInterfaceUpdateRoutes<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwprotocolid: u32, hevent: Param3) -> u32 {
+pub unsafe fn MprAdminInterfaceUpdateRoutes<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, hinterface: Param1, dwprotocolid: u32, hevent: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminInterfaceUpdateRoutes(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwprotocolid: u32, hevent: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminInterfaceUpdateRoutes(hmprserver: isize, hinterface: ::win32_foundation::HANDLE, dwprotocolid: u32, hevent: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminInterfaceUpdateRoutes(::core::mem::transmute(hmprserver), hinterface.into_param().abi(), ::core::mem::transmute(dwprotocolid), hevent.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminIsDomainRasServer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdomain: Param0, pszmachine: Param1, pbisrasserver: *mut super::super::Foundation::BOOL) -> u32 {
+pub unsafe fn MprAdminIsDomainRasServer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pszdomain: Param0, pszmachine: Param1, pbisrasserver: *mut ::win32_foundation::BOOL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminIsDomainRasServer(pszdomain: ::windows_core::PCWSTR, pszmachine: ::windows_core::PCWSTR, pbisrasserver: *mut super::super::Foundation::BOOL) -> u32;
+            fn MprAdminIsDomainRasServer(pszdomain: ::windows_core::PCWSTR, pszmachine: ::windows_core::PCWSTR, pbisrasserver: *mut ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(MprAdminIsDomainRasServer(pszdomain.into_param().abi(), pszmachine.into_param().abi(), ::core::mem::transmute(pbisrasserver)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminIsServiceInitialized<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpwsservername: Param0, fisserviceinitialized: *const super::super::Foundation::BOOL) -> u32 {
+pub unsafe fn MprAdminIsServiceInitialized<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpwsservername: Param0, fisserviceinitialized: *const ::win32_foundation::BOOL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminIsServiceInitialized(lpwsservername: ::windows_core::PCWSTR, fisserviceinitialized: *const super::super::Foundation::BOOL) -> u32;
+            fn MprAdminIsServiceInitialized(lpwsservername: ::windows_core::PCWSTR, fisserviceinitialized: *const ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(MprAdminIsServiceInitialized(lpwsservername.into_param().abi(), ::core::mem::transmute(fisserviceinitialized)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminIsServiceRunning<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpwsservername: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn MprAdminIsServiceRunning<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpwsservername: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminIsServiceRunning(lpwsservername: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn MprAdminIsServiceRunning(lpwsservername: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(MprAdminIsServiceRunning(lpwsservername.into_param().abi()))
     }
@@ -3236,98 +3119,91 @@ pub unsafe fn MprAdminMIBServerDisconnect(hmibserver: isize) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminPortClearStats<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrasserver: isize, hport: Param1) -> u32 {
+pub unsafe fn MprAdminPortClearStats<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrasserver: isize, hport: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminPortClearStats(hrasserver: isize, hport: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminPortClearStats(hrasserver: isize, hport: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminPortClearStats(::core::mem::transmute(hrasserver), hport.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminPortDisconnect<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrasserver: isize, hport: Param1) -> u32 {
+pub unsafe fn MprAdminPortDisconnect<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrasserver: isize, hport: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminPortDisconnect(hrasserver: isize, hport: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminPortDisconnect(hrasserver: isize, hport: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminPortDisconnect(::core::mem::transmute(hrasserver), hport.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminPortEnum<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrasserver: isize, dwlevel: u32, hrasconnection: Param2, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *const u32) -> u32 {
+pub unsafe fn MprAdminPortEnum<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrasserver: isize, dwlevel: u32, hrasconnection: Param2, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *const u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminPortEnum(hrasserver: isize, dwlevel: u32, hrasconnection: super::super::Foundation::HANDLE, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *const u32) -> u32;
+            fn MprAdminPortEnum(hrasserver: isize, dwlevel: u32, hrasconnection: ::win32_foundation::HANDLE, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *const u32) -> u32;
         }
         ::core::mem::transmute(MprAdminPortEnum(::core::mem::transmute(hrasserver), ::core::mem::transmute(dwlevel), hrasconnection.into_param().abi(), ::core::mem::transmute(lplpbbuffer), ::core::mem::transmute(dwprefmaxlen), ::core::mem::transmute(lpdwentriesread), ::core::mem::transmute(lpdwtotalentries), ::core::mem::transmute(lpdwresumehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminPortGetInfo<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrasserver: isize, dwlevel: u32, hport: Param2, lplpbbuffer: *mut *mut u8) -> u32 {
+pub unsafe fn MprAdminPortGetInfo<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrasserver: isize, dwlevel: u32, hport: Param2, lplpbbuffer: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminPortGetInfo(hrasserver: isize, dwlevel: u32, hport: super::super::Foundation::HANDLE, lplpbbuffer: *mut *mut u8) -> u32;
+            fn MprAdminPortGetInfo(hrasserver: isize, dwlevel: u32, hport: ::win32_foundation::HANDLE, lplpbbuffer: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(MprAdminPortGetInfo(::core::mem::transmute(hrasserver), ::core::mem::transmute(dwlevel), hport.into_param().abi(), ::core::mem::transmute(lplpbbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminPortReset<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrasserver: isize, hport: Param1) -> u32 {
+pub unsafe fn MprAdminPortReset<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrasserver: isize, hport: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminPortReset(hrasserver: isize, hport: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminPortReset(hrasserver: isize, hport: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminPortReset(::core::mem::transmute(hrasserver), hport.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminRegisterConnectionNotification<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprserver: isize, heventnotification: Param1) -> u32 {
+pub unsafe fn MprAdminRegisterConnectionNotification<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprserver: isize, heventnotification: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminRegisterConnectionNotification(hmprserver: isize, heventnotification: super::super::Foundation::HANDLE) -> u32;
+            fn MprAdminRegisterConnectionNotification(hmprserver: isize, heventnotification: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprAdminRegisterConnectionNotification(::core::mem::transmute(hmprserver), heventnotification.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminSendUserMessage<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprserver: isize, hconnection: Param1, lpwszmessage: Param2) -> u32 {
+pub unsafe fn MprAdminSendUserMessage<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprserver: isize, hconnection: Param1, lpwszmessage: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminSendUserMessage(hmprserver: isize, hconnection: super::super::Foundation::HANDLE, lpwszmessage: ::windows_core::PCWSTR) -> u32;
+            fn MprAdminSendUserMessage(hmprserver: isize, hconnection: ::win32_foundation::HANDLE, lpwszmessage: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(MprAdminSendUserMessage(::core::mem::transmute(hmprserver), hconnection.into_param().abi(), lpwszmessage.into_param().abi()))
     }
@@ -3386,7 +3262,7 @@ pub unsafe fn MprAdminServerGetInfo(hmprserver: isize, dwlevel: u32, lplpbbuffer
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 #[inline]
 pub unsafe fn MprAdminServerGetInfoEx(hmprserver: isize, pserverinfo: *mut MPR_SERVER_EX1) -> u32 {
     #[cfg(windows)]
@@ -3426,7 +3302,7 @@ pub unsafe fn MprAdminServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer: 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 #[inline]
 pub unsafe fn MprAdminServerSetInfoEx(hmprserver: isize, pserverinfo: *const MPR_SERVER_SET_CONFIG_EX1) -> u32 {
     #[cfg(windows)]
@@ -3479,14 +3355,13 @@ pub unsafe fn MprAdminTransportSetInfo(hmprserver: isize, dwtransportid: u32, pg
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprAdminUpdateConnection<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hrasserver: isize, hrasconnection: Param1, prasupdateconnection: *const RAS_UPDATE_CONNECTION) -> u32 {
+pub unsafe fn MprAdminUpdateConnection<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hrasserver: isize, hrasconnection: Param1, prasupdateconnection: *const RAS_UPDATE_CONNECTION) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprAdminUpdateConnection(hrasserver: isize, hrasconnection: super::super::Foundation::HANDLE, prasupdateconnection: *const RAS_UPDATE_CONNECTION) -> u32;
+            fn MprAdminUpdateConnection(hrasserver: isize, hrasconnection: ::win32_foundation::HANDLE, prasupdateconnection: *const RAS_UPDATE_CONNECTION) -> u32;
         }
         ::core::mem::transmute(MprAdminUpdateConnection(::core::mem::transmute(hrasserver), hrasconnection.into_param().abi(), ::core::mem::transmute(prasupdateconnection)))
     }
@@ -3532,322 +3407,302 @@ pub unsafe fn MprConfigBufferFree(pbuffer: *const ::core::ffi::c_void) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigFilterGetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, dwtransportid: u32, lpbuffer: *mut u8) -> u32 {
+pub unsafe fn MprConfigFilterGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, dwtransportid: u32, lpbuffer: *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigFilterGetInfo(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, dwtransportid: u32, lpbuffer: *mut u8) -> u32;
+            fn MprConfigFilterGetInfo(hmprconfig: ::win32_foundation::HANDLE, dwlevel: u32, dwtransportid: u32, lpbuffer: *mut u8) -> u32;
         }
         ::core::mem::transmute(MprConfigFilterGetInfo(hmprconfig.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(lpbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigFilterSetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, dwtransportid: u32, lpbuffer: *const u8) -> u32 {
+pub unsafe fn MprConfigFilterSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, dwtransportid: u32, lpbuffer: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigFilterSetInfo(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, dwtransportid: u32, lpbuffer: *const u8) -> u32;
+            fn MprConfigFilterSetInfo(hmprconfig: ::win32_foundation::HANDLE, dwlevel: u32, dwtransportid: u32, lpbuffer: *const u8) -> u32;
         }
         ::core::mem::transmute(MprConfigFilterSetInfo(hmprconfig.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(lpbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigGetFriendlyName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, pszguidname: Param1, pszbuffer: ::windows_core::PWSTR, dwbuffersize: u32) -> u32 {
+pub unsafe fn MprConfigGetFriendlyName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, pszguidname: Param1, pszbuffer: ::windows_core::PWSTR, dwbuffersize: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigGetFriendlyName(hmprconfig: super::super::Foundation::HANDLE, pszguidname: ::windows_core::PCWSTR, pszbuffer: ::windows_core::PWSTR, dwbuffersize: u32) -> u32;
+            fn MprConfigGetFriendlyName(hmprconfig: ::win32_foundation::HANDLE, pszguidname: ::windows_core::PCWSTR, pszbuffer: ::windows_core::PWSTR, dwbuffersize: u32) -> u32;
         }
         ::core::mem::transmute(MprConfigGetFriendlyName(hmprconfig.into_param().abi(), pszguidname.into_param().abi(), ::core::mem::transmute(pszbuffer), ::core::mem::transmute(dwbuffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigGetGuidName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, pszfriendlyname: Param1, pszbuffer: ::windows_core::PWSTR, dwbuffersize: u32) -> u32 {
+pub unsafe fn MprConfigGetGuidName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, pszfriendlyname: Param1, pszbuffer: ::windows_core::PWSTR, dwbuffersize: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigGetGuidName(hmprconfig: super::super::Foundation::HANDLE, pszfriendlyname: ::windows_core::PCWSTR, pszbuffer: ::windows_core::PWSTR, dwbuffersize: u32) -> u32;
+            fn MprConfigGetGuidName(hmprconfig: ::win32_foundation::HANDLE, pszfriendlyname: ::windows_core::PCWSTR, pszbuffer: ::windows_core::PWSTR, dwbuffersize: u32) -> u32;
         }
         ::core::mem::transmute(MprConfigGetGuidName(hmprconfig.into_param().abi(), pszfriendlyname.into_param().abi(), ::core::mem::transmute(pszbuffer), ::core::mem::transmute(dwbuffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceCreate<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, lpbbuffer: *const u8, phrouterinterface: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MprConfigInterfaceCreate<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, lpbbuffer: *const u8, phrouterinterface: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceCreate(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8, phrouterinterface: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigInterfaceCreate(hmprconfig: ::win32_foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8, phrouterinterface: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceCreate(hmprconfig.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lpbbuffer), ::core::mem::transmute(phrouterinterface)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceDelete<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1) -> u32 {
+pub unsafe fn MprConfigInterfaceDelete<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceDelete(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigInterfaceDelete(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceDelete(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceEnum<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32 {
+pub unsafe fn MprConfigInterfaceEnum<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceEnum(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
+            fn MprConfigInterfaceEnum(hmprconfig: ::win32_foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceEnum(hmprconfig.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lplpbuffer), ::core::mem::transmute(dwprefmaxlen), ::core::mem::transmute(lpdwentriesread), ::core::mem::transmute(lpdwtotalentries), ::core::mem::transmute(lpdwresumehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
 #[inline]
-pub unsafe fn MprConfigInterfaceGetCustomInfoEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32 {
+pub unsafe fn MprConfigInterfaceGetCustomInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceGetCustomInfoEx(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32;
+            fn MprConfigInterfaceGetCustomInfoEx(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceGetCustomInfoEx(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), ::core::mem::transmute(pcustominfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceGetHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, lpwsinterfacename: Param1, phrouterinterface: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MprConfigInterfaceGetHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, lpwsinterfacename: Param1, phrouterinterface: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceGetHandle(hmprconfig: super::super::Foundation::HANDLE, lpwsinterfacename: ::windows_core::PCWSTR, phrouterinterface: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigInterfaceGetHandle(hmprconfig: ::win32_foundation::HANDLE, lpwsinterfacename: ::windows_core::PCWSTR, phrouterinterface: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceGetHandle(hmprconfig.into_param().abi(), lpwsinterfacename.into_param().abi(), ::core::mem::transmute(phrouterinterface)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceGetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, dwlevel: u32, lplpbuffer: *mut *mut u8, lpdwbuffersize: *mut u32) -> u32 {
+pub unsafe fn MprConfigInterfaceGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, dwlevel: u32, lplpbuffer: *mut *mut u8, lpdwbuffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceGetInfo(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, lpdwbuffersize: *mut u32) -> u32;
+            fn MprConfigInterfaceGetInfo(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, lpdwbuffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceGetInfo(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lplpbuffer), ::core::mem::transmute(lpdwbuffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
 #[inline]
-pub unsafe fn MprConfigInterfaceSetCustomInfoEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32 {
+pub unsafe fn MprConfigInterfaceSetCustomInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceSetCustomInfoEx(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32;
+            fn MprConfigInterfaceSetCustomInfoEx(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceSetCustomInfoEx(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), ::core::mem::transmute(pcustominfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceSetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
+pub unsafe fn MprConfigInterfaceSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceSetInfo(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
+            fn MprConfigInterfaceSetInfo(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceSetInfo(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lpbbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceTransportAdd<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, hrouterinterface: Param1, dwtransportid: u32, lpwstransportname: Param3, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32, phrouteriftransport: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MprConfigInterfaceTransportAdd<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, hrouterinterface: Param1, dwtransportid: u32, lpwstransportname: Param3, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32, phrouteriftransport: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceTransportAdd(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwtransportid: u32, lpwstransportname: ::windows_core::PCWSTR, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32, phrouteriftransport: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigInterfaceTransportAdd(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, dwtransportid: u32, lpwstransportname: ::windows_core::PCWSTR, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32, phrouteriftransport: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceTransportAdd(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), ::core::mem::transmute(dwtransportid), lpwstransportname.into_param().abi(), ::core::mem::transmute(pinterfaceinfo), ::core::mem::transmute(dwinterfaceinfosize), ::core::mem::transmute(phrouteriftransport)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceTransportEnum<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32 {
+pub unsafe fn MprConfigInterfaceTransportEnum<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceTransportEnum(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
+            fn MprConfigInterfaceTransportEnum(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceTransportEnum(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lplpbuffer), ::core::mem::transmute(dwprefmaxlen), ::core::mem::transmute(lpdwentriesread), ::core::mem::transmute(lpdwtotalentries), ::core::mem::transmute(lpdwresumehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceTransportGetHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, dwtransportid: u32, phrouteriftransport: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MprConfigInterfaceTransportGetHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, dwtransportid: u32, phrouteriftransport: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceTransportGetHandle(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwtransportid: u32, phrouteriftransport: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigInterfaceTransportGetHandle(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, dwtransportid: u32, phrouteriftransport: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceTransportGetHandle(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(phrouteriftransport)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceTransportGetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, hrouteriftransport: Param2, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32 {
+pub unsafe fn MprConfigInterfaceTransportGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, hrouteriftransport: Param2, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceTransportGetInfo(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, hrouteriftransport: super::super::Foundation::HANDLE, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32;
+            fn MprConfigInterfaceTransportGetInfo(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, hrouteriftransport: ::win32_foundation::HANDLE, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceTransportGetInfo(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), hrouteriftransport.into_param().abi(), ::core::mem::transmute(ppinterfaceinfo), ::core::mem::transmute(lpdwinterfaceinfosize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceTransportRemove<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, hrouteriftransport: Param2) -> u32 {
+pub unsafe fn MprConfigInterfaceTransportRemove<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, hrouteriftransport: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceTransportRemove(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, hrouteriftransport: super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigInterfaceTransportRemove(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, hrouteriftransport: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceTransportRemove(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), hrouteriftransport.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigInterfaceTransportSetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, hrouteriftransport: Param2, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32 {
+pub unsafe fn MprConfigInterfaceTransportSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hrouterinterface: Param1, hrouteriftransport: Param2, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigInterfaceTransportSetInfo(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, hrouteriftransport: super::super::Foundation::HANDLE, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
+            fn MprConfigInterfaceTransportSetInfo(hmprconfig: ::win32_foundation::HANDLE, hrouterinterface: ::win32_foundation::HANDLE, hrouteriftransport: ::win32_foundation::HANDLE, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
         }
         ::core::mem::transmute(MprConfigInterfaceTransportSetInfo(hmprconfig.into_param().abi(), hrouterinterface.into_param().abi(), hrouteriftransport.into_param().abi(), ::core::mem::transmute(pinterfaceinfo), ::core::mem::transmute(dwinterfaceinfosize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigServerBackup<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, lpwspath: Param1) -> u32 {
+pub unsafe fn MprConfigServerBackup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, lpwspath: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigServerBackup(hmprconfig: super::super::Foundation::HANDLE, lpwspath: ::windows_core::PCWSTR) -> u32;
+            fn MprConfigServerBackup(hmprconfig: ::win32_foundation::HANDLE, lpwspath: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(MprConfigServerBackup(hmprconfig.into_param().abi(), lpwspath.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigServerConnect<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpwsservername: Param0, phmprconfig: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MprConfigServerConnect<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpwsservername: Param0, phmprconfig: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigServerConnect(lpwsservername: ::windows_core::PCWSTR, phmprconfig: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigServerConnect(lpwsservername: ::windows_core::PCWSTR, phmprconfig: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigServerConnect(lpwsservername.into_param().abi(), ::core::mem::transmute(phmprconfig)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigServerDisconnect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0) {
+pub unsafe fn MprConfigServerDisconnect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigServerDisconnect(hmprconfig: super::super::Foundation::HANDLE);
+            fn MprConfigServerDisconnect(hmprconfig: ::win32_foundation::HANDLE);
         }
         MprConfigServerDisconnect(hmprconfig.into_param().abi())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigServerGetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32 {
+pub unsafe fn MprConfigServerGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigServerGetInfo(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
+            fn MprConfigServerGetInfo(hmprconfig: ::win32_foundation::HANDLE, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
         }
         ::core::mem::transmute(MprConfigServerGetInfo(hmprconfig.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lplpbbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 #[inline]
-pub unsafe fn MprConfigServerGetInfoEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, pserverinfo: *mut MPR_SERVER_EX1) -> u32 {
+pub unsafe fn MprConfigServerGetInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, pserverinfo: *mut MPR_SERVER_EX1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigServerGetInfoEx(hmprconfig: super::super::Foundation::HANDLE, pserverinfo: *mut MPR_SERVER_EX1) -> u32;
+            fn MprConfigServerGetInfoEx(hmprconfig: ::win32_foundation::HANDLE, pserverinfo: *mut MPR_SERVER_EX1) -> u32;
         }
         ::core::mem::transmute(MprConfigServerGetInfoEx(hmprconfig.into_param().abi(), ::core::mem::transmute(pserverinfo)))
     }
@@ -3867,28 +3722,26 @@ pub unsafe fn MprConfigServerInstall(dwlevel: u32, pbuffer: *const ::core::ffi::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigServerRefresh<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0) -> u32 {
+pub unsafe fn MprConfigServerRefresh<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigServerRefresh(hmprconfig: super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigServerRefresh(hmprconfig: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigServerRefresh(hmprconfig.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigServerRestore<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, lpwspath: Param1) -> u32 {
+pub unsafe fn MprConfigServerRestore<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, lpwspath: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigServerRestore(hmprconfig: super::super::Foundation::HANDLE, lpwspath: ::windows_core::PCWSTR) -> u32;
+            fn MprConfigServerRestore(hmprconfig: ::win32_foundation::HANDLE, lpwspath: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(MprConfigServerRestore(hmprconfig.into_param().abi(), lpwspath.into_param().abi()))
     }
@@ -3908,98 +3761,92 @@ pub unsafe fn MprConfigServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 #[inline]
-pub unsafe fn MprConfigServerSetInfoEx<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, psetserverconfig: *const MPR_SERVER_SET_CONFIG_EX1) -> u32 {
+pub unsafe fn MprConfigServerSetInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, psetserverconfig: *const MPR_SERVER_SET_CONFIG_EX1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigServerSetInfoEx(hmprconfig: super::super::Foundation::HANDLE, psetserverconfig: *const MPR_SERVER_SET_CONFIG_EX1) -> u32;
+            fn MprConfigServerSetInfoEx(hmprconfig: ::win32_foundation::HANDLE, psetserverconfig: *const MPR_SERVER_SET_CONFIG_EX1) -> u32;
         }
         ::core::mem::transmute(MprConfigServerSetInfoEx(hmprconfig.into_param().abi(), ::core::mem::transmute(psetserverconfig)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigTransportCreate<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, dwtransportid: u32, lpwstransportname: Param2, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: Param7, phroutertransport: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MprConfigTransportCreate<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param7: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, dwtransportid: u32, lpwstransportname: Param2, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: Param7, phroutertransport: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigTransportCreate(hmprconfig: super::super::Foundation::HANDLE, dwtransportid: u32, lpwstransportname: ::windows_core::PCWSTR, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: ::windows_core::PCWSTR, phroutertransport: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigTransportCreate(hmprconfig: ::win32_foundation::HANDLE, dwtransportid: u32, lpwstransportname: ::windows_core::PCWSTR, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: ::windows_core::PCWSTR, phroutertransport: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigTransportCreate(hmprconfig.into_param().abi(), ::core::mem::transmute(dwtransportid), lpwstransportname.into_param().abi(), ::core::mem::transmute(pglobalinfo), ::core::mem::transmute(dwglobalinfosize), ::core::mem::transmute(pclientinterfaceinfo), ::core::mem::transmute(dwclientinterfaceinfosize), lpwsdllpath.into_param().abi(), ::core::mem::transmute(phroutertransport)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigTransportDelete<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hroutertransport: Param1) -> u32 {
+pub unsafe fn MprConfigTransportDelete<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hroutertransport: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigTransportDelete(hmprconfig: super::super::Foundation::HANDLE, hroutertransport: super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigTransportDelete(hmprconfig: ::win32_foundation::HANDLE, hroutertransport: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigTransportDelete(hmprconfig.into_param().abi(), hroutertransport.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigTransportEnum<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32 {
+pub unsafe fn MprConfigTransportEnum<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigTransportEnum(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
+            fn MprConfigTransportEnum(hmprconfig: ::win32_foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
         }
         ::core::mem::transmute(MprConfigTransportEnum(hmprconfig.into_param().abi(), ::core::mem::transmute(dwlevel), ::core::mem::transmute(lplpbuffer), ::core::mem::transmute(dwprefmaxlen), ::core::mem::transmute(lpdwentriesread), ::core::mem::transmute(lpdwtotalentries), ::core::mem::transmute(lpdwresumehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigTransportGetHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, dwtransportid: u32, phroutertransport: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn MprConfigTransportGetHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, dwtransportid: u32, phroutertransport: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigTransportGetHandle(hmprconfig: super::super::Foundation::HANDLE, dwtransportid: u32, phroutertransport: *mut super::super::Foundation::HANDLE) -> u32;
+            fn MprConfigTransportGetHandle(hmprconfig: ::win32_foundation::HANDLE, dwtransportid: u32, phroutertransport: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(MprConfigTransportGetHandle(hmprconfig.into_param().abi(), ::core::mem::transmute(dwtransportid), ::core::mem::transmute(phroutertransport)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigTransportGetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hmprconfig: Param0, hroutertransport: Param1, ppglobalinfo: *mut *mut u8, lpdwglobalinfosize: *mut u32, ppclientinterfaceinfo: *mut *mut u8, lpdwclientinterfaceinfosize: *mut u32, lplpwsdllpath: *mut ::windows_core::PWSTR) -> u32 {
+pub unsafe fn MprConfigTransportGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hmprconfig: Param0, hroutertransport: Param1, ppglobalinfo: *mut *mut u8, lpdwglobalinfosize: *mut u32, ppclientinterfaceinfo: *mut *mut u8, lpdwclientinterfaceinfosize: *mut u32, lplpwsdllpath: *mut ::windows_core::PWSTR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigTransportGetInfo(hmprconfig: super::super::Foundation::HANDLE, hroutertransport: super::super::Foundation::HANDLE, ppglobalinfo: *mut *mut u8, lpdwglobalinfosize: *mut u32, ppclientinterfaceinfo: *mut *mut u8, lpdwclientinterfaceinfosize: *mut u32, lplpwsdllpath: *mut ::windows_core::PWSTR) -> u32;
+            fn MprConfigTransportGetInfo(hmprconfig: ::win32_foundation::HANDLE, hroutertransport: ::win32_foundation::HANDLE, ppglobalinfo: *mut *mut u8, lpdwglobalinfosize: *mut u32, ppclientinterfaceinfo: *mut *mut u8, lpdwclientinterfaceinfosize: *mut u32, lplpwsdllpath: *mut ::windows_core::PWSTR) -> u32;
         }
         ::core::mem::transmute(MprConfigTransportGetInfo(hmprconfig.into_param().abi(), hroutertransport.into_param().abi(), ::core::mem::transmute(ppglobalinfo), ::core::mem::transmute(lpdwglobalinfosize), ::core::mem::transmute(ppclientinterfaceinfo), ::core::mem::transmute(lpdwclientinterfaceinfosize), ::core::mem::transmute(lplpwsdllpath)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn MprConfigTransportSetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, hroutertransport: Param1, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: Param6) -> u32 {
+pub unsafe fn MprConfigTransportSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hmprconfig: Param0, hroutertransport: Param1, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: Param6) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MprConfigTransportSetInfo(hmprconfig: super::super::Foundation::HANDLE, hroutertransport: super::super::Foundation::HANDLE, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: ::windows_core::PCWSTR) -> u32;
+            fn MprConfigTransportSetInfo(hmprconfig: ::win32_foundation::HANDLE, hroutertransport: ::win32_foundation::HANDLE, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(MprConfigTransportSetInfo(hmprconfig.into_param().abi(), hroutertransport.into_param().abi(), ::core::mem::transmute(pglobalinfo), ::core::mem::transmute(dwglobalinfosize), ::core::mem::transmute(pclientinterfaceinfo), ::core::mem::transmute(dwclientinterfaceinfosize), lpwsdllpath.into_param().abi()))
     }
@@ -4123,71 +3970,48 @@ pub unsafe fn MprInfoRemoveAll(lpheader: *const ::core::ffi::c_void, lplpnewhead
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type ORASADFUNC = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HWND, param1: ::windows_core::PCSTR, param2: u32, param3: *mut u32) -> super::super::Foundation::BOOL>;
+pub type ORASADFUNC = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HWND, param1: ::windows_core::PCSTR, param2: u32, param3: *mut u32) -> ::win32_foundation::BOOL>;
 pub const PENDING: u32 = 600u32;
 pub type PFNRASFREEBUFFER = ::core::option::Option<unsafe extern "system" fn(pbufer: *mut u8) -> u32>;
 pub type PFNRASGETBUFFER = ::core::option::Option<unsafe extern "system" fn(ppbuffer: *mut *mut u8, pdwsize: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNRASRECEIVEBUFFER = ::core::option::Option<unsafe extern "system" fn(hport: super::super::Foundation::HANDLE, pbuffer: *mut u8, pdwsize: *mut u32, dwtimeout: u32, hevent: super::super::Foundation::HANDLE) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNRASRETRIEVEBUFFER = ::core::option::Option<unsafe extern "system" fn(hport: super::super::Foundation::HANDLE, pbuffer: *mut u8, pdwsize: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNRASSENDBUFFER = ::core::option::Option<unsafe extern "system" fn(hport: super::super::Foundation::HANDLE, pbuffer: *mut u8, dwsize: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNRASSETCOMMSETTINGS = ::core::option::Option<unsafe extern "system" fn(hport: super::super::Foundation::HANDLE, prascommsettings: *mut RASCOMMSETTINGS, pvreserved: *mut ::core::ffi::c_void) -> u32>;
+pub type PFNRASRECEIVEBUFFER = ::core::option::Option<unsafe extern "system" fn(hport: ::win32_foundation::HANDLE, pbuffer: *mut u8, pdwsize: *mut u32, dwtimeout: u32, hevent: ::win32_foundation::HANDLE) -> u32>;
+pub type PFNRASRETRIEVEBUFFER = ::core::option::Option<unsafe extern "system" fn(hport: ::win32_foundation::HANDLE, pbuffer: *mut u8, pdwsize: *mut u32) -> u32>;
+pub type PFNRASSENDBUFFER = ::core::option::Option<unsafe extern "system" fn(hport: ::win32_foundation::HANDLE, pbuffer: *mut u8, dwsize: u32) -> u32>;
+pub type PFNRASSETCOMMSETTINGS = ::core::option::Option<unsafe extern "system" fn(hport: ::win32_foundation::HANDLE, prascommsettings: *mut RASCOMMSETTINGS, pvreserved: *mut ::core::ffi::c_void) -> u32>;
 pub const PID_ATALK: u32 = 41u32;
 pub const PID_IP: u32 = 33u32;
 pub const PID_IPV6: u32 = 87u32;
 pub const PID_IPX: u32 = 43u32;
 pub const PID_NBF: u32 = 63u32;
-#[cfg(feature = "Win32_Foundation")]
 pub type PMGM_CREATION_ALERT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwinifindex: u32, dwinifnexthopaddr: u32, dwifcount: u32, pmieoutiflist: *mut MGM_IF_ENTRY) -> u32>;
 pub type PMGM_DISABLE_IGMP_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwifindex: u32, dwifnexthopaddr: u32) -> u32>;
 pub type PMGM_ENABLE_IGMP_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwifindex: u32, dwifnexthopaddr: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMGM_JOIN_ALERT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, bmemberupdate: super::super::Foundation::BOOL) -> u32>;
+pub type PMGM_JOIN_ALERT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, bmemberupdate: ::win32_foundation::BOOL) -> u32>;
 pub type PMGM_LOCAL_JOIN_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopaddr: u32) -> u32>;
 pub type PMGM_LOCAL_LEAVE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopaddr: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMGM_PRUNE_ALERT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopaddr: u32, bmemberdelete: super::super::Foundation::BOOL, pdwtimeout: *mut u32) -> u32>;
+pub type PMGM_PRUNE_ALERT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopaddr: u32, bmemberdelete: ::win32_foundation::BOOL, pdwtimeout: *mut u32) -> u32>;
 pub type PMGM_RPF_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, pdwinifindex: *mut u32, pdwinifnexthopaddr: *mut u32, pdwupstreamnbr: *mut u32, dwhdrsize: u32, pbpackethdr: *mut u8, pbroute: *mut u8) -> u32>;
 pub type PMGM_WRONG_IF_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dwsourceaddr: u32, dwgroupaddr: u32, dwifindex: u32, dwifnexthopaddr: u32, dwhdrsize: u32, pbpackethdr: *mut u8) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMPRADMINACCEPTNEWCONNECTION = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMPRADMINACCEPTNEWCONNECTION2 = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMPRADMINACCEPTNEWCONNECTION3 = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2, param3: *mut RAS_CONNECTION_3) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMPRADMINACCEPTNEWCONNECTIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_EX) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMPRADMINACCEPTNEWLINK = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_PORT_0, param1: *mut RAS_PORT_1) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMPRADMINACCEPTREAUTHENTICATION = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2, param3: *mut RAS_CONNECTION_3) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMPRADMINACCEPTREAUTHENTICATIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_EX) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMPRADMINACCEPTTUNNELENDPOINTCHANGEEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_EX) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PMPRADMINACCEPTNEWCONNECTION = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1) -> ::win32_foundation::BOOL>;
+pub type PMPRADMINACCEPTNEWCONNECTION2 = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2) -> ::win32_foundation::BOOL>;
+pub type PMPRADMINACCEPTNEWCONNECTION3 = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2, param3: *mut RAS_CONNECTION_3) -> ::win32_foundation::BOOL>;
+pub type PMPRADMINACCEPTNEWCONNECTIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_EX) -> ::win32_foundation::BOOL>;
+pub type PMPRADMINACCEPTNEWLINK = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_PORT_0, param1: *mut RAS_PORT_1) -> ::win32_foundation::BOOL>;
+pub type PMPRADMINACCEPTREAUTHENTICATION = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2, param3: *mut RAS_CONNECTION_3) -> ::win32_foundation::BOOL>;
+pub type PMPRADMINACCEPTREAUTHENTICATIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_EX) -> ::win32_foundation::BOOL>;
+pub type PMPRADMINACCEPTTUNNELENDPOINTCHANGEEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_EX) -> ::win32_foundation::BOOL>;
 pub type PMPRADMINCONNECTIONHANGUPNOTIFICATION = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1)>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PMPRADMINCONNECTIONHANGUPNOTIFICATION2 = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2)>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PMPRADMINCONNECTIONHANGUPNOTIFICATION3 = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_0, param1: *mut RAS_CONNECTION_1, param2: *mut RAS_CONNECTION_2, param3: RAS_CONNECTION_3)>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PMPRADMINCONNECTIONHANGUPNOTIFICATIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_CONNECTION_EX)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PMPRADMINGETIPADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut u32, param3: *mut super::super::Foundation::BOOL) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-pub type PMPRADMINGETIPV6ADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut super::super::Networking::WinSock::IN6_ADDR, param3: *mut super::super::Foundation::BOOL) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PMPRADMINGETIPADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut u32, param3: *mut ::win32_foundation::BOOL) -> u32>;
+#[cfg(feature = "Win32_Networking_WinSock")]
+pub type PMPRADMINGETIPV6ADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut ::win32_networking::WinSock::IN6_ADDR, param3: *mut ::win32_foundation::BOOL) -> u32>;
 pub type PMPRADMINLINKHANGUPNOTIFICATION = ::core::option::Option<unsafe extern "system" fn(param0: *mut RAS_PORT_0, param1: *mut RAS_PORT_1)>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PMPRADMINRASVALIDATEPREAUTHENTICATEDCONNECTIONEX = ::core::option::Option<unsafe extern "system" fn(param0: *mut AUTH_VALIDATION_EX) -> u32>;
 pub type PMPRADMINRELEASEIPADRESS = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut u32)>;
 #[cfg(feature = "Win32_Networking_WinSock")]
-pub type PMPRADMINRELEASEIPV6ADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut super::super::Networking::WinSock::IN6_ADDR)>;
+pub type PMPRADMINRELEASEIPV6ADDRESSFORUSER = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut ::win32_networking::WinSock::IN6_ADDR)>;
 pub type PMPRADMINTERMINATEDLL = ::core::option::Option<unsafe extern "system" fn() -> u32>;
 #[repr(C)]
 pub struct PPP_ATCP_INFO {
@@ -4936,40 +4760,31 @@ impl ::core::default::Default for PROJECTION_INFO2_0 {
     }
 }
 pub const RASADFLG_PositionDlg: u32 = 1u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type RASADFUNCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR, param1: ::windows_core::PCSTR, param2: *mut RASADPARAMS, param3: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type RASADFUNCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut RASADPARAMS, param3: *mut u32) -> super::super::Foundation::BOOL>;
+pub type RASADFUNCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR, param1: ::windows_core::PCSTR, param2: *mut RASADPARAMS, param3: *mut u32) -> ::win32_foundation::BOOL>;
+pub type RASADFUNCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *mut RASADPARAMS, param3: *mut u32) -> ::win32_foundation::BOOL>;
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASADPARAMS {
     pub dwSize: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub dwFlags: u32,
     pub xDlg: i32,
     pub yDlg: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASADPARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASADPARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASADPARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASADPARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASADPARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASADPARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASADPARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4981,40 +4796,32 @@ pub const RASADP_FailedConnectionTimeout: u32 = 3u32;
 pub const RASADP_LoginSessionDisable: u32 = 1u32;
 pub const RASADP_SavedAddressesLimit: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASAMBA {
     pub dwSize: u32,
     pub dwError: u32,
-    pub szNetBiosError: [super::super::Foundation::CHAR; 17],
+    pub szNetBiosError: [::win32_foundation::CHAR; 17],
     pub bLana: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASAMBA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASAMBA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASAMBA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASAMBA").field("dwSize", &self.dwSize).field("dwError", &self.dwError).field("szNetBiosError", &self.szNetBiosError).field("bLana", &self.bLana).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASAMBA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASAMBA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASAMBA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASAMBA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASAMBA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5079,40 +4886,32 @@ impl ::core::fmt::Debug for RASAPIVERSION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASAUTODIALENTRYA {
     pub dwSize: u32,
     pub dwFlags: u32,
     pub dwDialingLocation: u32,
-    pub szEntry: [super::super::Foundation::CHAR; 257],
+    pub szEntry: [::win32_foundation::CHAR; 257],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASAUTODIALENTRYA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASAUTODIALENTRYA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASAUTODIALENTRYA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASAUTODIALENTRYA").field("dwSize", &self.dwSize).field("dwFlags", &self.dwFlags).field("dwDialingLocation", &self.dwDialingLocation).field("szEntry", &self.szEntry).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASAUTODIALENTRYA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASAUTODIALENTRYA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASAUTODIALENTRYA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASAUTODIALENTRYA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASAUTODIALENTRYA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5211,41 +5010,34 @@ impl ::core::default::Default for RASCOMMSETTINGS {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASCONNA {
     pub dwSize: u32,
     pub hrasconn: HRASCONN,
-    pub szEntryName: [super::super::Foundation::CHAR; 257],
-    pub szDeviceType: [super::super::Foundation::CHAR; 17],
-    pub szDeviceName: [super::super::Foundation::CHAR; 129],
-    pub szPhonebook: [super::super::Foundation::CHAR; 260],
+    pub szEntryName: [::win32_foundation::CHAR; 257],
+    pub szDeviceType: [::win32_foundation::CHAR; 17],
+    pub szDeviceName: [::win32_foundation::CHAR; 129],
+    pub szPhonebook: [::win32_foundation::CHAR; 260],
     pub dwSubEntry: u32,
     pub guidEntry: ::windows_core::GUID,
     pub dwFlags: u32,
-    pub luid: super::super::Foundation::LUID,
+    pub luid: ::win32_foundation::LUID,
     pub guidCorrelationId: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASCONNA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASCONNA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASCONNA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASCONNA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCONNA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASCONNA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASCONNA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5306,39 +5098,39 @@ impl ::core::fmt::Debug for RASCONNSTATE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct RASCONNSTATUSA {
     pub dwSize: u32,
     pub rasconnstate: RASCONNSTATE,
     pub dwError: u32,
-    pub szDeviceType: [super::super::Foundation::CHAR; 17],
-    pub szDeviceName: [super::super::Foundation::CHAR; 129],
-    pub szPhoneNumber: [super::super::Foundation::CHAR; 129],
+    pub szDeviceType: [::win32_foundation::CHAR; 17],
+    pub szDeviceName: [::win32_foundation::CHAR; 129],
+    pub szPhoneNumber: [::win32_foundation::CHAR; 129],
     pub localEndPoint: RASTUNNELENDPOINT,
     pub remoteEndPoint: RASTUNNELENDPOINT,
     pub rasconnsubstate: RASCONNSUBSTATE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for RASCONNSTATUSA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for RASCONNSTATUSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 unsafe impl ::windows_core::Abi for RASCONNSTATUSA {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for RASCONNSTATUSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCONNSTATUSA>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::Eq for RASCONNSTATUSA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::default::Default for RASCONNSTATUSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5410,7 +5202,6 @@ impl ::core::fmt::Debug for RASCONNSUBSTATE {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASCONNW {
     pub dwSize: u32,
     pub hrasconn: HRASCONN,
@@ -5421,71 +5212,57 @@ pub struct RASCONNW {
     pub dwSubEntry: u32,
     pub guidEntry: ::windows_core::GUID,
     pub dwFlags: u32,
-    pub luid: super::super::Foundation::LUID,
+    pub luid: ::win32_foundation::LUID,
     pub guidCorrelationId: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASCONNW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASCONNW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASCONNW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASCONNW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCONNW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASCONNW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASCONNW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASCREDENTIALSA {
     pub dwSize: u32,
     pub dwMask: u32,
-    pub szUserName: [super::super::Foundation::CHAR; 257],
-    pub szPassword: [super::super::Foundation::CHAR; 257],
-    pub szDomain: [super::super::Foundation::CHAR; 16],
+    pub szUserName: [::win32_foundation::CHAR; 257],
+    pub szPassword: [::win32_foundation::CHAR; 257],
+    pub szDomain: [::win32_foundation::CHAR; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASCREDENTIALSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASCREDENTIALSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASCREDENTIALSA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASCREDENTIALSA").field("dwSize", &self.dwSize).field("dwMask", &self.dwMask).field("szUserName", &self.szUserName).field("szPassword", &self.szPassword).field("szDomain", &self.szDomain).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASCREDENTIALSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASCREDENTIALSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCREDENTIALSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASCREDENTIALSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASCREDENTIALSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5561,32 +5338,25 @@ impl ::core::default::Default for RASCTRYINFO {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASCUSTOMSCRIPTEXTENSIONS {
     pub dwSize: u32,
     pub pfnRasSetCommSettings: PFNRASSETCOMMSETTINGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASCUSTOMSCRIPTEXTENSIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASCUSTOMSCRIPTEXTENSIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASCUSTOMSCRIPTEXTENSIONS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASCUSTOMSCRIPTEXTENSIONS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCUSTOMSCRIPTEXTENSIONS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASCUSTOMSCRIPTEXTENSIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASCUSTOMSCRIPTEXTENSIONS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5597,39 +5367,31 @@ pub const RASDDFLAG_LinkFailure: u32 = 2147483648u32;
 pub const RASDDFLAG_NoPrompt: u32 = 2u32;
 pub const RASDDFLAG_PositionDlg: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASDEVINFOA {
     pub dwSize: u32,
-    pub szDeviceType: [super::super::Foundation::CHAR; 17],
-    pub szDeviceName: [super::super::Foundation::CHAR; 129],
+    pub szDeviceType: [::win32_foundation::CHAR; 17],
+    pub szDeviceName: [::win32_foundation::CHAR; 129],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASDEVINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASDEVINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASDEVINFOA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASDEVINFOA").field("dwSize", &self.dwSize).field("szDeviceType", &self.szDeviceType).field("szDeviceName", &self.szDeviceName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASDEVINFOA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASDEVINFOA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASDEVINFOA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASDEVINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASDEVINFOA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5692,10 +5454,9 @@ impl ::core::default::Default for RASDEVSPECIFICINFO {
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASDIALDLG {
     pub dwSize: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub dwFlags: u32,
     pub xDlg: i32,
     pub yDlg: i32,
@@ -5704,27 +5465,21 @@ pub struct RASDIALDLG {
     pub reserved: usize,
     pub reserved2: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASDIALDLG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASDIALDLG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASDIALDLG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASDIALDLG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASDIALDLG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASDIALDLG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASDIALDLG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5732,38 +5487,31 @@ impl ::core::default::Default for RASDIALDLG {
 }
 pub const RASDIALEVENT: &str = "RasDialEvent";
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASDIALEXTENSIONS {
     pub dwSize: u32,
     pub dwfOptions: u32,
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation::HWND,
     pub reserved: usize,
     pub reserved1: usize,
     pub RasEapInfo: RASEAPINFO,
-    pub fSkipPppAuth: super::super::Foundation::BOOL,
+    pub fSkipPppAuth: ::win32_foundation::BOOL,
     pub RasDevSpecificInfo: RASDEVSPECIFICINFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASDIALEXTENSIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASDIALEXTENSIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASDIALEXTENSIONS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASDIALEXTENSIONS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASDIALEXTENSIONS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASDIALEXTENSIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASDIALEXTENSIONS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5773,41 +5521,34 @@ pub type RASDIALFUNC = ::core::option::Option<unsafe extern "system" fn(param0: 
 pub type RASDIALFUNC1 = ::core::option::Option<unsafe extern "system" fn(param0: HRASCONN, param1: u32, param2: RASCONNSTATE, param3: u32, param4: u32)>;
 pub type RASDIALFUNC2 = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: u32, param2: HRASCONN, param3: u32, param4: RASCONNSTATE, param5: u32, param6: u32) -> u32>;
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASDIALPARAMSA {
     pub dwSize: u32,
-    pub szEntryName: [super::super::Foundation::CHAR; 257],
-    pub szPhoneNumber: [super::super::Foundation::CHAR; 129],
-    pub szCallbackNumber: [super::super::Foundation::CHAR; 129],
-    pub szUserName: [super::super::Foundation::CHAR; 257],
-    pub szPassword: [super::super::Foundation::CHAR; 257],
-    pub szDomain: [super::super::Foundation::CHAR; 16],
+    pub szEntryName: [::win32_foundation::CHAR; 257],
+    pub szPhoneNumber: [::win32_foundation::CHAR; 129],
+    pub szCallbackNumber: [::win32_foundation::CHAR; 129],
+    pub szUserName: [::win32_foundation::CHAR; 257],
+    pub szPassword: [::win32_foundation::CHAR; 257],
+    pub szDomain: [::win32_foundation::CHAR; 16],
     pub dwSubEntry: u32,
     pub dwCallbackId: usize,
     pub dwIfIndex: u32,
     pub szEncPassword: ::windows_core::PSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASDIALPARAMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASDIALPARAMSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASDIALPARAMSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASDIALPARAMSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASDIALPARAMSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASDIALPARAMSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASDIALPARAMSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5890,39 +5631,31 @@ impl ::core::default::Default for RASEAPINFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASEAPUSERIDENTITYA {
-    pub szUserName: [super::super::Foundation::CHAR; 257],
+    pub szUserName: [::win32_foundation::CHAR; 257],
     pub dwSizeofEapInfo: u32,
     pub pbEapInfo: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASEAPUSERIDENTITYA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASEAPUSERIDENTITYA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASEAPUSERIDENTITYA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASEAPUSERIDENTITYA").field("szUserName", &self.szUserName).field("dwSizeofEapInfo", &self.dwSizeofEapInfo).field("pbEapInfo", &self.pbEapInfo).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASEAPUSERIDENTITYA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASEAPUSERIDENTITYA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASEAPUSERIDENTITYA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASEAPUSERIDENTITYA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASEAPUSERIDENTITYA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5972,14 +5705,14 @@ pub const RASEDFLAG_NoRename: u32 = 8u32;
 pub const RASEDFLAG_PositionDlg: u32 = 1u32;
 pub const RASEDFLAG_ShellOwned: u32 = 1073741824u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct RASENTRYA {
     pub dwSize: u32,
     pub dwfOptions: u32,
     pub dwCountryID: u32,
     pub dwCountryCode: u32,
-    pub szAreaCode: [super::super::Foundation::CHAR; 11],
-    pub szLocalPhoneNumber: [super::super::Foundation::CHAR; 129],
+    pub szAreaCode: [::win32_foundation::CHAR; 11],
+    pub szLocalPhoneNumber: [::win32_foundation::CHAR; 129],
     pub dwAlternateOffset: u32,
     pub ipaddr: RASIPADDR,
     pub ipaddrDns: RASIPADDR,
@@ -5989,15 +5722,15 @@ pub struct RASENTRYA {
     pub dwFrameSize: u32,
     pub dwfNetProtocols: u32,
     pub dwFramingProtocol: u32,
-    pub szScript: [super::super::Foundation::CHAR; 260],
-    pub szAutodialDll: [super::super::Foundation::CHAR; 260],
-    pub szAutodialFunc: [super::super::Foundation::CHAR; 260],
-    pub szDeviceType: [super::super::Foundation::CHAR; 17],
-    pub szDeviceName: [super::super::Foundation::CHAR; 129],
-    pub szX25PadType: [super::super::Foundation::CHAR; 33],
-    pub szX25Address: [super::super::Foundation::CHAR; 201],
-    pub szX25Facilities: [super::super::Foundation::CHAR; 201],
-    pub szX25UserData: [super::super::Foundation::CHAR; 201],
+    pub szScript: [::win32_foundation::CHAR; 260],
+    pub szAutodialDll: [::win32_foundation::CHAR; 260],
+    pub szAutodialFunc: [::win32_foundation::CHAR; 260],
+    pub szDeviceType: [::win32_foundation::CHAR; 17],
+    pub szDeviceName: [::win32_foundation::CHAR; 129],
+    pub szX25PadType: [::win32_foundation::CHAR; 33],
+    pub szX25Address: [::win32_foundation::CHAR; 201],
+    pub szX25Facilities: [::win32_foundation::CHAR; 201],
+    pub szX25UserData: [::win32_foundation::CHAR; 201],
     pub dwChannels: u32,
     pub dwReserved1: u32,
     pub dwReserved2: u32,
@@ -6012,100 +5745,92 @@ pub struct RASENTRYA {
     pub dwEncryptionType: u32,
     pub dwCustomAuthKey: u32,
     pub guidId: ::windows_core::GUID,
-    pub szCustomDialDll: [super::super::Foundation::CHAR; 260],
+    pub szCustomDialDll: [::win32_foundation::CHAR; 260],
     pub dwVpnStrategy: u32,
     pub dwfOptions2: u32,
     pub dwfOptions3: u32,
-    pub szDnsSuffix: [super::super::Foundation::CHAR; 256],
+    pub szDnsSuffix: [::win32_foundation::CHAR; 256],
     pub dwTcpWindowSize: u32,
-    pub szPrerequisitePbk: [super::super::Foundation::CHAR; 260],
-    pub szPrerequisiteEntry: [super::super::Foundation::CHAR; 257],
+    pub szPrerequisitePbk: [::win32_foundation::CHAR; 260],
+    pub szPrerequisiteEntry: [::win32_foundation::CHAR; 257],
     pub dwRedialCount: u32,
     pub dwRedialPause: u32,
-    pub ipv6addrDns: super::super::Networking::WinSock::IN6_ADDR,
-    pub ipv6addrDnsAlt: super::super::Networking::WinSock::IN6_ADDR,
+    pub ipv6addrDns: ::win32_networking::WinSock::IN6_ADDR,
+    pub ipv6addrDnsAlt: ::win32_networking::WinSock::IN6_ADDR,
     pub dwIPv4InterfaceMetric: u32,
     pub dwIPv6InterfaceMetric: u32,
-    pub ipv6addr: super::super::Networking::WinSock::IN6_ADDR,
+    pub ipv6addr: ::win32_networking::WinSock::IN6_ADDR,
     pub dwIPv6PrefixLength: u32,
     pub dwNetworkOutageTime: u32,
-    pub szIDi: [super::super::Foundation::CHAR; 257],
-    pub szIDr: [super::super::Foundation::CHAR; 257],
-    pub fIsImsConfig: super::super::Foundation::BOOL,
+    pub szIDi: [::win32_foundation::CHAR; 257],
+    pub szIDr: [::win32_foundation::CHAR; 257],
+    pub fIsImsConfig: ::win32_foundation::BOOL,
     pub IdiType: IKEV2_ID_PAYLOAD_TYPE,
     pub IdrType: IKEV2_ID_PAYLOAD_TYPE,
-    pub fDisableIKEv2Fragmentation: super::super::Foundation::BOOL,
+    pub fDisableIKEv2Fragmentation: ::win32_foundation::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for RASENTRYA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for RASENTRYA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 unsafe impl ::windows_core::Abi for RASENTRYA {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for RASENTRYA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASENTRYA>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::Eq for RASENTRYA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::default::Default for RASENTRYA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASENTRYDLGA {
     pub dwSize: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub dwFlags: u32,
     pub xDlg: i32,
     pub yDlg: i32,
-    pub szEntry: [super::super::Foundation::CHAR; 257],
+    pub szEntry: [::win32_foundation::CHAR; 257],
     pub dwError: u32,
     pub reserved: usize,
     pub reserved2: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASENTRYDLGA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASENTRYDLGA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASENTRYDLGA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASENTRYDLGA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASENTRYDLGA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASENTRYDLGA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASENTRYDLGA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASENTRYDLGW {
     pub dwSize: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub dwFlags: u32,
     pub xDlg: i32,
     pub yDlg: i32,
@@ -6114,67 +5839,53 @@ pub struct RASENTRYDLGW {
     pub reserved: usize,
     pub reserved2: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASENTRYDLGW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASENTRYDLGW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASENTRYDLGW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASENTRYDLGW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASENTRYDLGW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASENTRYDLGW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASENTRYDLGW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASENTRYNAMEA {
     pub dwSize: u32,
-    pub szEntryName: [super::super::Foundation::CHAR; 257],
+    pub szEntryName: [::win32_foundation::CHAR; 257],
     pub dwFlags: u32,
-    pub szPhonebookPath: [super::super::Foundation::CHAR; 261],
+    pub szPhonebookPath: [::win32_foundation::CHAR; 261],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASENTRYNAMEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASENTRYNAMEA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASENTRYNAMEA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASENTRYNAMEA").field("dwSize", &self.dwSize).field("szEntryName", &self.szEntryName).field("dwFlags", &self.dwFlags).field("szPhonebookPath", &self.szPhonebookPath).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASENTRYNAMEA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASENTRYNAMEA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASENTRYNAMEA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASENTRYNAMEA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASENTRYNAMEA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6213,7 +5924,7 @@ impl ::core::default::Default for RASENTRYNAMEW {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct RASENTRYW {
     pub dwSize: u32,
     pub dwfOptions: u32,
@@ -6263,41 +5974,41 @@ pub struct RASENTRYW {
     pub szPrerequisiteEntry: [u16; 257],
     pub dwRedialCount: u32,
     pub dwRedialPause: u32,
-    pub ipv6addrDns: super::super::Networking::WinSock::IN6_ADDR,
-    pub ipv6addrDnsAlt: super::super::Networking::WinSock::IN6_ADDR,
+    pub ipv6addrDns: ::win32_networking::WinSock::IN6_ADDR,
+    pub ipv6addrDnsAlt: ::win32_networking::WinSock::IN6_ADDR,
     pub dwIPv4InterfaceMetric: u32,
     pub dwIPv6InterfaceMetric: u32,
-    pub ipv6addr: super::super::Networking::WinSock::IN6_ADDR,
+    pub ipv6addr: ::win32_networking::WinSock::IN6_ADDR,
     pub dwIPv6PrefixLength: u32,
     pub dwNetworkOutageTime: u32,
     pub szIDi: [u16; 257],
     pub szIDr: [u16; 257],
-    pub fIsImsConfig: super::super::Foundation::BOOL,
+    pub fIsImsConfig: ::win32_foundation::BOOL,
     pub IdiType: IKEV2_ID_PAYLOAD_TYPE,
     pub IdrType: IKEV2_ID_PAYLOAD_TYPE,
-    pub fDisableIKEv2Fragmentation: super::super::Foundation::BOOL,
+    pub fDisableIKEv2Fragmentation: ::win32_foundation::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for RASENTRYW {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for RASENTRYW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 unsafe impl ::windows_core::Abi for RASENTRYW {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for RASENTRYW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASENTRYW>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::Eq for RASENTRYW {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::default::Default for RASENTRYW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6404,20 +6115,20 @@ pub const RASIDS_UseGlobalValue: u32 = 0u32;
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct RASIKEV2_PROJECTION_INFO {
     pub dwIPv4NegotiationError: u32,
-    pub ipv4Address: super::super::Networking::WinSock::IN_ADDR,
-    pub ipv4ServerAddress: super::super::Networking::WinSock::IN_ADDR,
+    pub ipv4Address: ::win32_networking::WinSock::IN_ADDR,
+    pub ipv4ServerAddress: ::win32_networking::WinSock::IN_ADDR,
     pub dwIPv6NegotiationError: u32,
-    pub ipv6Address: super::super::Networking::WinSock::IN6_ADDR,
-    pub ipv6ServerAddress: super::super::Networking::WinSock::IN6_ADDR,
+    pub ipv6Address: ::win32_networking::WinSock::IN6_ADDR,
+    pub ipv6ServerAddress: ::win32_networking::WinSock::IN6_ADDR,
     pub dwPrefixLength: u32,
     pub dwAuthenticationProtocol: u32,
     pub dwEapTypeId: u32,
     pub dwFlags: RASIKEV_PROJECTION_INFO_FLAGS,
     pub dwEncryptionMethod: u32,
     pub numIPv4ServerAddresses: u32,
-    pub ipv4ServerAddresses: *mut super::super::Networking::WinSock::IN_ADDR,
+    pub ipv4ServerAddresses: *mut ::win32_networking::WinSock::IN_ADDR,
     pub numIPv6ServerAddresses: u32,
-    pub ipv6ServerAddresses: *mut super::super::Networking::WinSock::IN6_ADDR,
+    pub ipv6ServerAddresses: *mut ::win32_networking::WinSock::IN6_ADDR,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for RASIKEV2_PROJECTION_INFO {}
@@ -6578,42 +6289,34 @@ pub const RASLCPO_PFC: u32 = 1u32;
 pub const RASLCPO_SSHF: u32 = 4u32;
 pub const RASNAP_ProbationTime: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASNOUSERA {
     pub dwSize: u32,
     pub dwFlags: u32,
     pub dwTimeoutMs: u32,
-    pub szUserName: [super::super::Foundation::CHAR; 257],
-    pub szPassword: [super::super::Foundation::CHAR; 257],
-    pub szDomain: [super::super::Foundation::CHAR; 16],
+    pub szUserName: [::win32_foundation::CHAR; 257],
+    pub szPassword: [::win32_foundation::CHAR; 257],
+    pub szDomain: [::win32_foundation::CHAR; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASNOUSERA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASNOUSERA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASNOUSERA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASNOUSERA").field("dwSize", &self.dwSize).field("dwFlags", &self.dwFlags).field("dwTimeoutMs", &self.dwTimeoutMs).field("szUserName", &self.szUserName).field("szPassword", &self.szPassword).field("szDomain", &self.szDomain).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASNOUSERA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASNOUSERA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASNOUSERA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASNOUSERA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASNOUSERA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6670,10 +6373,9 @@ pub const RASPBDFLAG_NoUser: u32 = 16u32;
 pub const RASPBDFLAG_PositionDlg: u32 = 1u32;
 pub const RASPBDFLAG_UpdateDefaults: u32 = 2147483648u32;
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASPBDLGA {
     pub dwSize: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub dwFlags: u32,
     pub xDlg: i32,
     pub yDlg: i32,
@@ -6683,27 +6385,21 @@ pub struct RASPBDLGA {
     pub reserved: usize,
     pub reserved2: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASPBDLGA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASPBDLGA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASPBDLGA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASPBDLGA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASPBDLGA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASPBDLGA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASPBDLGA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6712,10 +6408,9 @@ impl ::core::default::Default for RASPBDLGA {
 pub type RASPBDLGFUNCA = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: u32, param2: ::windows_core::PCSTR, param3: *mut ::core::ffi::c_void)>;
 pub type RASPBDLGFUNCW = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: u32, param2: ::windows_core::PCWSTR, param3: *mut ::core::ffi::c_void)>;
 #[repr(C, packed(4))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASPBDLGW {
     pub dwSize: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub dwFlags: u32,
     pub xDlg: i32,
     pub yDlg: i32,
@@ -6725,27 +6420,21 @@ pub struct RASPBDLGW {
     pub reserved: usize,
     pub reserved2: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASPBDLGW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASPBDLGW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASPBDLGW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASPBDLGW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASPBDLGW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASPBDLGW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASPBDLGW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6786,42 +6475,34 @@ impl ::core::default::Default for RASPPPCCP {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASPPPIPA {
     pub dwSize: u32,
     pub dwError: u32,
-    pub szIpAddress: [super::super::Foundation::CHAR; 16],
-    pub szServerIpAddress: [super::super::Foundation::CHAR; 16],
+    pub szIpAddress: [::win32_foundation::CHAR; 16],
+    pub szServerIpAddress: [::win32_foundation::CHAR; 16],
     pub dwOptions: u32,
     pub dwServerOptions: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASPPPIPA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASPPPIPA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASPPPIPA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASPPPIPA").field("dwSize", &self.dwSize).field("dwError", &self.dwError).field("szIpAddress", &self.szIpAddress).field("szServerIpAddress", &self.szServerIpAddress).field("dwOptions", &self.dwOptions).field("dwServerOptions", &self.dwServerOptions).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASPPPIPA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASPPPIPA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASPPPIPA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASPPPIPA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASPPPIPA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6896,49 +6577,40 @@ impl ::core::default::Default for RASPPPIPW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASPPPIPXA {
     pub dwSize: u32,
     pub dwError: u32,
-    pub szIpxAddress: [super::super::Foundation::CHAR; 22],
+    pub szIpxAddress: [::win32_foundation::CHAR; 22],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASPPPIPXA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASPPPIPXA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASPPPIPXA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASPPPIPXA").field("dwSize", &self.dwSize).field("dwError", &self.dwError).field("szIpxAddress", &self.szIpxAddress).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASPPPIPXA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASPPPIPXA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASPPPIPXA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASPPPIPXA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASPPPIPXA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASPPPLCPA {
     pub dwSize: u32,
-    pub fBundled: super::super::Foundation::BOOL,
+    pub fBundled: ::win32_foundation::BOOL,
     pub dwError: u32,
     pub dwAuthenticationProtocol: u32,
     pub dwAuthenticationData: u32,
@@ -6946,22 +6618,19 @@ pub struct RASPPPLCPA {
     pub dwServerAuthenticationProtocol: u32,
     pub dwServerAuthenticationData: u32,
     pub dwServerEapTypeId: u32,
-    pub fMultilink: super::super::Foundation::BOOL,
+    pub fMultilink: ::win32_foundation::BOOL,
     pub dwTerminateReason: u32,
     pub dwServerTerminateReason: u32,
-    pub szReplyMessage: [super::super::Foundation::CHAR; 1024],
+    pub szReplyMessage: [::win32_foundation::CHAR; 1024],
     pub dwOptions: u32,
     pub dwServerOptions: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASPPPLCPA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASPPPLCPA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASPPPLCPA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASPPPLCPA")
@@ -6983,29 +6652,24 @@ impl ::core::fmt::Debug for RASPPPLCPA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASPPPLCPA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASPPPLCPA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASPPPLCPA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASPPPLCPA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASPPPLCPA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASPPPLCPW {
     pub dwSize: u32,
-    pub fBundled: super::super::Foundation::BOOL,
+    pub fBundled: ::win32_foundation::BOOL,
     pub dwError: u32,
     pub dwAuthenticationProtocol: u32,
     pub dwAuthenticationData: u32,
@@ -7013,22 +6677,19 @@ pub struct RASPPPLCPW {
     pub dwServerAuthenticationProtocol: u32,
     pub dwServerAuthenticationData: u32,
     pub dwServerEapTypeId: u32,
-    pub fMultilink: super::super::Foundation::BOOL,
+    pub fMultilink: ::win32_foundation::BOOL,
     pub dwTerminateReason: u32,
     pub dwServerTerminateReason: u32,
     pub szReplyMessage: [u16; 1024],
     pub dwOptions: u32,
     pub dwServerOptions: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASPPPLCPW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASPPPLCPW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASPPPLCPW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASPPPLCPW")
@@ -7050,61 +6711,49 @@ impl ::core::fmt::Debug for RASPPPLCPW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASPPPLCPW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASPPPLCPW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASPPPLCPW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASPPPLCPW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASPPPLCPW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASPPPNBFA {
     pub dwSize: u32,
     pub dwError: u32,
     pub dwNetBiosError: u32,
-    pub szNetBiosError: [super::super::Foundation::CHAR; 17],
-    pub szWorkstationName: [super::super::Foundation::CHAR; 17],
+    pub szNetBiosError: [::win32_foundation::CHAR; 17],
+    pub szWorkstationName: [::win32_foundation::CHAR; 17],
     pub bLana: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASPPPNBFA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASPPPNBFA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASPPPNBFA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASPPPNBFA").field("dwSize", &self.dwSize).field("dwError", &self.dwError).field("dwNetBiosError", &self.dwNetBiosError).field("szNetBiosError", &self.szNetBiosError).field("szWorkstationName", &self.szWorkstationName).field("bLana", &self.bLana).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASPPPNBFA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASPPPNBFA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASPPPNBFA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASPPPNBFA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASPPPNBFA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7145,18 +6794,18 @@ impl ::core::default::Default for RASPPPNBFW {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct RASPPP_PROJECTION_INFO {
     pub dwIPv4NegotiationError: u32,
-    pub ipv4Address: super::super::Networking::WinSock::IN_ADDR,
-    pub ipv4ServerAddress: super::super::Networking::WinSock::IN_ADDR,
+    pub ipv4Address: ::win32_networking::WinSock::IN_ADDR,
+    pub ipv4ServerAddress: ::win32_networking::WinSock::IN_ADDR,
     pub dwIPv4Options: u32,
     pub dwIPv4ServerOptions: u32,
     pub dwIPv6NegotiationError: u32,
     pub bInterfaceIdentifier: [u8; 8],
     pub bServerInterfaceIdentifier: [u8; 8],
-    pub fBundled: super::super::Foundation::BOOL,
-    pub fMultilink: super::super::Foundation::BOOL,
+    pub fBundled: ::win32_foundation::BOOL,
+    pub fMultilink: ::win32_foundation::BOOL,
     pub dwAuthenticationProtocol: RASPPP_PROJECTION_INFO_SERVER_AUTH_PROTOCOL,
     pub dwAuthenticationData: RASPPP_PROJECTION_INFO_SERVER_AUTH_DATA,
     pub dwServerAuthenticationProtocol: RASPPP_PROJECTION_INFO_SERVER_AUTH_PROTOCOL,
@@ -7171,27 +6820,27 @@ pub struct RASPPP_PROJECTION_INFO {
     pub dwCcpOptions: u32,
     pub dwCcpServerOptions: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for RASPPP_PROJECTION_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for RASPPP_PROJECTION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 unsafe impl ::windows_core::Abi for RASPPP_PROJECTION_INFO {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for RASPPP_PROJECTION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASPPP_PROJECTION_INFO>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::Eq for RASPPP_PROJECTION_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::default::Default for RASPPP_PROJECTION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7308,42 +6957,34 @@ impl ::core::fmt::Debug for RASPROJECTION_INFO_TYPE {
 }
 pub type RASSECURITYPROC = ::core::option::Option<unsafe extern "system" fn() -> u32>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASSUBENTRYA {
     pub dwSize: u32,
     pub dwfFlags: u32,
-    pub szDeviceType: [super::super::Foundation::CHAR; 17],
-    pub szDeviceName: [super::super::Foundation::CHAR; 129],
-    pub szLocalPhoneNumber: [super::super::Foundation::CHAR; 129],
+    pub szDeviceType: [::win32_foundation::CHAR; 17],
+    pub szDeviceName: [::win32_foundation::CHAR; 129],
+    pub szLocalPhoneNumber: [::win32_foundation::CHAR; 129],
     pub dwAlternateOffset: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASSUBENTRYA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASSUBENTRYA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASSUBENTRYA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASSUBENTRYA").field("dwSize", &self.dwSize).field("dwfFlags", &self.dwfFlags).field("szDeviceType", &self.szDeviceType).field("szDeviceName", &self.szDeviceName).field("szLocalPhoneNumber", &self.szLocalPhoneNumber).field("dwAlternateOffset", &self.dwAlternateOffset).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASSUBENTRYA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASSUBENTRYA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASSUBENTRYA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASSUBENTRYA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASSUBENTRYA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7418,8 +7059,8 @@ impl ::core::default::Default for RASTUNNELENDPOINT {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub union RASTUNNELENDPOINT_0 {
-    pub ipv4: super::super::Networking::WinSock::IN_ADDR,
-    pub ipv6: super::super::Networking::WinSock::IN6_ADDR,
+    pub ipv4: ::win32_networking::WinSock::IN_ADDR,
+    pub ipv6: ::win32_networking::WinSock::IN6_ADDR,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for RASTUNNELENDPOINT_0 {}
@@ -7487,10 +7128,9 @@ impl ::core::default::Default for RASUPDATECONN {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_CONNECTION_0 {
-    pub hConnection: super::super::Foundation::HANDLE,
-    pub hInterface: super::super::Foundation::HANDLE,
+    pub hConnection: ::win32_foundation::HANDLE,
+    pub hInterface: ::win32_foundation::HANDLE,
     pub dwConnectDuration: u32,
     pub dwInterfaceType: ROUTER_INTERFACE_TYPE,
     pub dwConnectionFlags: RAS_FLAGS,
@@ -7499,43 +7139,35 @@ pub struct RAS_CONNECTION_0 {
     pub wszLogonDomain: [u16; 16],
     pub wszRemoteComputer: [u16; 17],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_CONNECTION_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_CONNECTION_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RAS_CONNECTION_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RAS_CONNECTION_0").field("hConnection", &self.hConnection).field("hInterface", &self.hInterface).field("dwConnectDuration", &self.dwConnectDuration).field("dwInterfaceType", &self.dwInterfaceType).field("dwConnectionFlags", &self.dwConnectionFlags).field("wszInterfaceName", &self.wszInterfaceName).field("wszUserName", &self.wszUserName).field("wszLogonDomain", &self.wszLogonDomain).field("wszRemoteComputer", &self.wszRemoteComputer).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_CONNECTION_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_CONNECTION_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_CONNECTION_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_CONNECTION_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_CONNECTION_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_CONNECTION_1 {
-    pub hConnection: super::super::Foundation::HANDLE,
-    pub hInterface: super::super::Foundation::HANDLE,
+    pub hConnection: ::win32_foundation::HANDLE,
+    pub hInterface: ::win32_foundation::HANDLE,
     pub PppInfo: PPP_INFO,
     pub dwBytesXmited: u32,
     pub dwBytesRcved: u32,
@@ -7550,15 +7182,12 @@ pub struct RAS_CONNECTION_1 {
     pub dwCompressionRatioIn: u32,
     pub dwCompressionRatioOut: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_CONNECTION_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_CONNECTION_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RAS_CONNECTION_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RAS_CONNECTION_1")
@@ -7580,112 +7209,91 @@ impl ::core::fmt::Debug for RAS_CONNECTION_1 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_CONNECTION_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_CONNECTION_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_CONNECTION_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_CONNECTION_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_CONNECTION_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_CONNECTION_2 {
-    pub hConnection: super::super::Foundation::HANDLE,
+    pub hConnection: ::win32_foundation::HANDLE,
     pub wszUserName: [u16; 257],
     pub dwInterfaceType: ROUTER_INTERFACE_TYPE,
     pub guid: ::windows_core::GUID,
     pub PppInfo2: PPP_INFO_2,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_CONNECTION_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_CONNECTION_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RAS_CONNECTION_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RAS_CONNECTION_2").field("hConnection", &self.hConnection).field("wszUserName", &self.wszUserName).field("dwInterfaceType", &self.dwInterfaceType).field("guid", &self.guid).field("PppInfo2", &self.PppInfo2).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_CONNECTION_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_CONNECTION_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_CONNECTION_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_CONNECTION_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_CONNECTION_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_CONNECTION_3 {
     pub dwVersion: u32,
     pub dwSize: u32,
-    pub hConnection: super::super::Foundation::HANDLE,
+    pub hConnection: ::win32_foundation::HANDLE,
     pub wszUserName: [u16; 257],
     pub dwInterfaceType: ROUTER_INTERFACE_TYPE,
     pub guid: ::windows_core::GUID,
     pub PppInfo3: PPP_INFO_3,
     pub rasQuarState: RAS_QUARANTINE_STATE,
-    pub timer: super::super::Foundation::FILETIME,
+    pub timer: ::win32_foundation::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_CONNECTION_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_CONNECTION_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RAS_CONNECTION_3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RAS_CONNECTION_3").field("dwVersion", &self.dwVersion).field("dwSize", &self.dwSize).field("hConnection", &self.hConnection).field("wszUserName", &self.wszUserName).field("dwInterfaceType", &self.dwInterfaceType).field("guid", &self.guid).field("PppInfo3", &self.PppInfo3).field("rasQuarState", &self.rasQuarState).field("timer", &self.timer).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_CONNECTION_3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_CONNECTION_3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_CONNECTION_3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_CONNECTION_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_CONNECTION_3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_CONNECTION_4 {
     pub dwConnectDuration: u32,
     pub dwInterfaceType: ROUTER_INTERFACE_TYPE,
@@ -7696,8 +7304,8 @@ pub struct RAS_CONNECTION_4 {
     pub wszRemoteComputer: [u16; 17],
     pub guid: ::windows_core::GUID,
     pub rasQuarState: RAS_QUARANTINE_STATE,
-    pub probationTime: super::super::Foundation::FILETIME,
-    pub connectionStartTime: super::super::Foundation::FILETIME,
+    pub probationTime: ::win32_foundation::FILETIME,
+    pub connectionStartTime: ::win32_foundation::FILETIME,
     pub ullBytesXmited: u64,
     pub ullBytesRcved: u64,
     pub dwFramesXmited: u32,
@@ -7714,38 +7322,31 @@ pub struct RAS_CONNECTION_4 {
     pub wszRemoteEndpointAddress: [u16; 65],
     pub wszLocalEndpointAddress: [u16; 65],
     pub ProjectionInfo: PROJECTION_INFO2,
-    pub hConnection: super::super::Foundation::HANDLE,
-    pub hInterface: super::super::Foundation::HANDLE,
+    pub hConnection: ::win32_foundation::HANDLE,
+    pub hInterface: ::win32_foundation::HANDLE,
     pub dwDeviceType: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_CONNECTION_4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_CONNECTION_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_CONNECTION_4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_CONNECTION_4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_CONNECTION_4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_CONNECTION_4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_CONNECTION_4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_CONNECTION_EX {
     pub Header: MPRAPI_OBJECT_HEADER,
     pub dwConnectDuration: u32,
@@ -7757,7 +7358,7 @@ pub struct RAS_CONNECTION_EX {
     pub wszRemoteComputer: [u16; 17],
     pub guid: ::windows_core::GUID,
     pub rasQuarState: RAS_QUARANTINE_STATE,
-    pub probationTime: super::super::Foundation::FILETIME,
+    pub probationTime: ::win32_foundation::FILETIME,
     pub dwBytesXmited: u32,
     pub dwBytesRcved: u32,
     pub dwFramesXmited: u32,
@@ -7774,30 +7375,24 @@ pub struct RAS_CONNECTION_EX {
     pub wszRemoteEndpointAddress: [u16; 65],
     pub wszLocalEndpointAddress: [u16; 65],
     pub ProjectionInfo: PROJECTION_INFO,
-    pub hConnection: super::super::Foundation::HANDLE,
-    pub hInterface: super::super::Foundation::HANDLE,
+    pub hConnection: ::win32_foundation::HANDLE,
+    pub hInterface: ::win32_foundation::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_CONNECTION_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_CONNECTION_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_CONNECTION_EX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_CONNECTION_EX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_CONNECTION_EX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_CONNECTION_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_CONNECTION_EX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7872,10 +7467,9 @@ pub const RAS_MaxReplyMessage: u32 = 1024u32;
 pub const RAS_MaxUserData: u32 = 200u32;
 pub const RAS_MaxX25Address: u32 = 200u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_PORT_0 {
-    pub hPort: super::super::Foundation::HANDLE,
-    pub hConnection: super::super::Foundation::HANDLE,
+    pub hPort: ::win32_foundation::HANDLE,
+    pub hConnection: ::win32_foundation::HANDLE,
     pub dwPortCondition: RAS_PORT_CONDITION,
     pub dwTotalNumberOfCalls: u32,
     pub dwConnectDuration: u32,
@@ -7884,43 +7478,35 @@ pub struct RAS_PORT_0 {
     pub wszDeviceName: [u16; 129],
     pub wszDeviceType: [u16; 17],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_PORT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_PORT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RAS_PORT_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RAS_PORT_0").field("hPort", &self.hPort).field("hConnection", &self.hConnection).field("dwPortCondition", &self.dwPortCondition).field("dwTotalNumberOfCalls", &self.dwTotalNumberOfCalls).field("dwConnectDuration", &self.dwConnectDuration).field("wszPortName", &self.wszPortName).field("wszMediaName", &self.wszMediaName).field("wszDeviceName", &self.wszDeviceName).field("wszDeviceType", &self.wszDeviceType).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_PORT_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_PORT_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_PORT_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_PORT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_PORT_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_PORT_1 {
-    pub hPort: super::super::Foundation::HANDLE,
-    pub hConnection: super::super::Foundation::HANDLE,
+    pub hPort: ::win32_foundation::HANDLE,
+    pub hConnection: ::win32_foundation::HANDLE,
     pub dwHardwareCondition: RAS_HARDWARE_CONDITION,
     pub dwLineSpeed: u32,
     pub dwBytesXmited: u32,
@@ -7936,15 +7522,12 @@ pub struct RAS_PORT_1 {
     pub dwCompressionRatioIn: u32,
     pub dwCompressionRatioOut: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_PORT_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_PORT_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RAS_PORT_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RAS_PORT_1")
@@ -7967,29 +7550,24 @@ impl ::core::fmt::Debug for RAS_PORT_1 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_PORT_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_PORT_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_PORT_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_PORT_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_PORT_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_PORT_2 {
-    pub hPort: super::super::Foundation::HANDLE,
-    pub hConnection: super::super::Foundation::HANDLE,
+    pub hPort: ::win32_foundation::HANDLE,
+    pub hConnection: ::win32_foundation::HANDLE,
     pub dwConn_State: u32,
     pub wszPortName: [u16; 17],
     pub wszMediaName: [u16; 17],
@@ -8016,15 +7594,12 @@ pub struct RAS_PORT_2 {
     pub ullBytesRcvUncompressed: u64,
     pub ullBytesRcvCompressed: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_PORT_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_PORT_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RAS_PORT_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RAS_PORT_2")
@@ -8058,19 +7633,15 @@ impl ::core::fmt::Debug for RAS_PORT_2 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_PORT_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_PORT_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_PORT_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_PORT_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_PORT_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8106,65 +7677,65 @@ impl ::core::fmt::Debug for RAS_PORT_CONDITION {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct RAS_PROJECTION_INFO {
     pub version: RASAPIVERSION,
     pub r#type: RASPROJECTION_INFO_TYPE,
     pub Anonymous: RAS_PROJECTION_INFO_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for RAS_PROJECTION_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for RAS_PROJECTION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 unsafe impl ::windows_core::Abi for RAS_PROJECTION_INFO {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for RAS_PROJECTION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_PROJECTION_INFO>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::Eq for RAS_PROJECTION_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::default::Default for RAS_PROJECTION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub union RAS_PROJECTION_INFO_0 {
     pub ppp: RASPPP_PROJECTION_INFO,
     pub ikev2: RASIKEV2_PROJECTION_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for RAS_PROJECTION_INFO_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for RAS_PROJECTION_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 unsafe impl ::windows_core::Abi for RAS_PROJECTION_INFO_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::PartialEq for RAS_PROJECTION_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_PROJECTION_INFO_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::cmp::Eq for RAS_PROJECTION_INFO_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::default::Default for RAS_PROJECTION_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8197,39 +7768,31 @@ impl ::core::fmt::Debug for RAS_QUARANTINE_STATE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAS_SECURITY_INFO {
     pub LastError: u32,
     pub BytesReceived: u32,
-    pub DeviceName: [super::super::Foundation::CHAR; 129],
+    pub DeviceName: [::win32_foundation::CHAR; 129],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAS_SECURITY_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAS_SECURITY_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RAS_SECURITY_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RAS_SECURITY_INFO").field("LastError", &self.LastError).field("BytesReceived", &self.BytesReceived).field("DeviceName", &self.DeviceName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAS_SECURITY_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAS_SECURITY_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAS_SECURITY_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAS_SECURITY_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAS_SECURITY_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8474,7 +8037,7 @@ impl ::core::default::Default for ROUTER_CUSTOM_IKEv2_POLICY0 {
 pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
     pub dwSaLifeTime: u32,
     pub dwSaDataSize: u32,
-    pub certificateName: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub certificateName: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
 }
 #[cfg(feature = "Win32_Security_Cryptography")]
@@ -8514,9 +8077,9 @@ impl ::core::default::Default for ROUTER_IKEv2_IF_CUSTOM_CONFIG0 {
 pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
     pub dwSaLifeTime: u32,
     pub dwSaDataSize: u32,
-    pub certificateName: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub certificateName: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
-    pub certificateHash: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub certificateHash: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
 }
 #[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {}
@@ -8555,9 +8118,9 @@ impl ::core::default::Default for ROUTER_IKEv2_IF_CUSTOM_CONFIG1 {
 pub struct ROUTER_IKEv2_IF_CUSTOM_CONFIG2 {
     pub dwSaLifeTime: u32,
     pub dwSaDataSize: u32,
-    pub certificateName: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub certificateName: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub customPolicy: *mut ROUTER_CUSTOM_IKEv2_POLICY0,
-    pub certificateHash: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub certificateHash: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
     pub dwMmSaLifeTime: u32,
     pub vpnTrafficSelectors: MPR_VPN_TRAFFIC_SELECTORS,
 }
@@ -8625,7 +8188,6 @@ impl ::core::fmt::Debug for ROUTER_INTERFACE_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ROUTING_PROTOCOL_CONFIG {
     pub dwCallbackFlags: u32,
     pub pfnRpfCallback: PMGM_RPF_CALLBACK,
@@ -8638,15 +8200,12 @@ pub struct ROUTING_PROTOCOL_CONFIG {
     pub pfnDisableIgmpCallback: PMGM_DISABLE_IGMP_CALLBACK,
     pub pfnEnableIgmpCallback: PMGM_ENABLE_IGMP_CALLBACK,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ROUTING_PROTOCOL_CONFIG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ROUTING_PROTOCOL_CONFIG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for ROUTING_PROTOCOL_CONFIG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ROUTING_PROTOCOL_CONFIG")
@@ -8663,19 +8222,15 @@ impl ::core::fmt::Debug for ROUTING_PROTOCOL_CONFIG {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ROUTING_PROTOCOL_CONFIG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ROUTING_PROTOCOL_CONFIG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ROUTING_PROTOCOL_CONFIG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ROUTING_PROTOCOL_CONFIG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ROUTING_PROTOCOL_CONFIG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8690,49 +8245,40 @@ pub const RTM_DEST_FLAG_DONT_FORWARD: u32 = 4u32;
 pub const RTM_DEST_FLAG_FWD_ENGIN_ADD: u32 = 2u32;
 pub const RTM_DEST_FLAG_NATURAL_NET: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RTM_DEST_INFO {
     pub DestHandle: isize,
     pub DestAddress: RTM_NET_ADDRESS,
-    pub LastChanged: super::super::Foundation::FILETIME,
+    pub LastChanged: ::win32_foundation::FILETIME,
     pub BelongsToViews: u32,
     pub NumberOfViews: u32,
     pub ViewInfo: [RTM_DEST_INFO_0; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RTM_DEST_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RTM_DEST_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RTM_DEST_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RTM_DEST_INFO").field("DestHandle", &self.DestHandle).field("DestAddress", &self.DestAddress).field("LastChanged", &self.LastChanged).field("BelongsToViews", &self.BelongsToViews).field("NumberOfViews", &self.NumberOfViews).field("ViewInfo", &self.ViewInfo).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RTM_DEST_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RTM_DEST_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTM_DEST_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RTM_DEST_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RTM_DEST_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RTM_DEST_INFO_0 {
     pub ViewId: i32,
     pub NumRoutes: u32,
@@ -8741,33 +8287,26 @@ pub struct RTM_DEST_INFO_0 {
     pub DestFlags: u32,
     pub HoldRoute: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RTM_DEST_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RTM_DEST_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RTM_DEST_INFO_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RTM_DEST_INFO_0").field("ViewId", &self.ViewId).field("NumRoutes", &self.NumRoutes).field("Route", &self.Route).field("Owner", &self.Owner).field("DestFlags", &self.DestFlags).field("HoldRoute", &self.HoldRoute).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RTM_DEST_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RTM_DEST_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RTM_DEST_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RTM_DEST_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RTM_DEST_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9274,56 +8813,52 @@ pub unsafe fn RasClearLinkStatistics<'a, Param0: ::windows_core::IntoParam<'a, H
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasConnectionNotificationA<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(param0: Param0, param1: Param1, param2: u32) -> u32 {
+pub unsafe fn RasConnectionNotificationA<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(param0: Param0, param1: Param1, param2: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasConnectionNotificationA(param0: HRASCONN, param1: super::super::Foundation::HANDLE, param2: u32) -> u32;
+            fn RasConnectionNotificationA(param0: HRASCONN, param1: ::win32_foundation::HANDLE, param2: u32) -> u32;
         }
         ::core::mem::transmute(RasConnectionNotificationA(param0.into_param().abi(), param1.into_param().abi(), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasConnectionNotificationW<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(param0: Param0, param1: Param1, param2: u32) -> u32 {
+pub unsafe fn RasConnectionNotificationW<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(param0: Param0, param1: Param1, param2: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasConnectionNotificationW(param0: HRASCONN, param1: super::super::Foundation::HANDLE, param2: u32) -> u32;
+            fn RasConnectionNotificationW(param0: HRASCONN, param1: ::win32_foundation::HANDLE, param2: u32) -> u32;
         }
         ::core::mem::transmute(RasConnectionNotificationW(param0.into_param().abi(), param1.into_param().abi(), ::core::mem::transmute(param2)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasCreatePhonebookEntryA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1) -> u32 {
+pub unsafe fn RasCreatePhonebookEntryA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasCreatePhonebookEntryA(param0: super::super::Foundation::HWND, param1: ::windows_core::PCSTR) -> u32;
+            fn RasCreatePhonebookEntryA(param0: ::win32_foundation::HWND, param1: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(RasCreatePhonebookEntryA(param0.into_param().abi(), param1.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasCreatePhonebookEntryW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, param1: Param1) -> u32 {
+pub unsafe fn RasCreatePhonebookEntryW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, param1: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasCreatePhonebookEntryW(param0: super::super::Foundation::HWND, param1: ::windows_core::PCWSTR) -> u32;
+            fn RasCreatePhonebookEntryW(param0: ::win32_foundation::HWND, param1: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(RasCreatePhonebookEntryW(param0.into_param().abi(), param1.into_param().abi()))
     }
@@ -9331,15 +8866,11 @@ pub unsafe fn RasCreatePhonebookEntryW<'a, Param0: ::windows_core::IntoParam<'a,
     unimplemented!("Unsupported target OS");
 }
 pub type RasCustomDeleteEntryNotifyFn = ::core::option::Option<unsafe extern "system" fn(lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, dwflags: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type RasCustomDialDlgFn = ::core::option::Option<unsafe extern "system" fn(hinstdll: super::super::Foundation::HINSTANCE, dwflags: u32, lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpszphonenumber: ::windows_core::PCWSTR, lpinfo: *mut RASDIALDLG, pvinfo: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type RasCustomDialFn = ::core::option::Option<unsafe extern "system" fn(hinstdll: super::super::Foundation::HINSTANCE, lprasdialextensions: *mut RASDIALEXTENSIONS, lpszphonebook: ::windows_core::PCWSTR, lprasdialparams: *mut RASDIALPARAMSA, dwnotifiertype: u32, lpvnotifier: *mut ::core::ffi::c_void, lphrasconn: *mut HRASCONN, dwflags: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type RasCustomEntryDlgFn = ::core::option::Option<unsafe extern "system" fn(hinstdll: super::super::Foundation::HINSTANCE, lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpinfo: *mut RASENTRYDLGA, dwflags: u32) -> super::super::Foundation::BOOL>;
+pub type RasCustomDialDlgFn = ::core::option::Option<unsafe extern "system" fn(hinstdll: ::win32_foundation::HINSTANCE, dwflags: u32, lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpszphonenumber: ::windows_core::PCWSTR, lpinfo: *mut RASDIALDLG, pvinfo: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL>;
+pub type RasCustomDialFn = ::core::option::Option<unsafe extern "system" fn(hinstdll: ::win32_foundation::HINSTANCE, lprasdialextensions: *mut RASDIALEXTENSIONS, lpszphonebook: ::windows_core::PCWSTR, lprasdialparams: *mut RASDIALPARAMSA, dwnotifiertype: u32, lpvnotifier: *mut ::core::ffi::c_void, lphrasconn: *mut HRASCONN, dwflags: u32) -> u32>;
+pub type RasCustomEntryDlgFn = ::core::option::Option<unsafe extern "system" fn(hinstdll: ::win32_foundation::HINSTANCE, lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpinfo: *mut RASENTRYDLGA, dwflags: u32) -> ::win32_foundation::BOOL>;
 pub type RasCustomHangUpFn = ::core::option::Option<unsafe extern "system" fn(hrasconn: HRASCONN) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type RasCustomScriptExecuteFn = ::core::option::Option<unsafe extern "system" fn(hport: super::super::Foundation::HANDLE, lpszphonebook: ::windows_core::PCWSTR, lpszentryname: ::windows_core::PCWSTR, pfnrasgetbuffer: PFNRASGETBUFFER, pfnrasfreebuffer: PFNRASFREEBUFFER, pfnrassendbuffer: PFNRASSENDBUFFER, pfnrasreceivebuffer: PFNRASRECEIVEBUFFER, pfnrasretrievebuffer: PFNRASRETRIEVEBUFFER, hwnd: super::super::Foundation::HWND, prasdialparams: *mut RASDIALPARAMSA, pvreserved: *mut ::core::ffi::c_void) -> u32>;
+pub type RasCustomScriptExecuteFn = ::core::option::Option<unsafe extern "system" fn(hport: ::win32_foundation::HANDLE, lpszphonebook: ::windows_core::PCWSTR, lpszentryname: ::windows_core::PCWSTR, pfnrasgetbuffer: PFNRASGETBUFFER, pfnrasfreebuffer: PFNRASFREEBUFFER, pfnrassendbuffer: PFNRASSENDBUFFER, pfnrasreceivebuffer: PFNRASRECEIVEBUFFER, pfnrasretrievebuffer: PFNRASRETRIEVEBUFFER, hwnd: ::win32_foundation::HWND, prasdialparams: *mut RASDIALPARAMSA, pvreserved: *mut ::core::ffi::c_void) -> u32>;
 #[inline]
 pub unsafe fn RasDeleteEntryA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1) -> u32 {
     #[cfg(windows)]
@@ -9392,7 +8923,6 @@ pub unsafe fn RasDeleteSubEntryW<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasDialA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: *const RASDIALEXTENSIONS, param1: Param1, param2: *const RASDIALPARAMSA, param3: u32, param4: *const ::core::ffi::c_void, param5: *mut HRASCONN) -> u32 {
     #[cfg(windows)]
@@ -9406,35 +8936,32 @@ pub unsafe fn RasDialA<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasDialDlgA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpszphonenumber: Param2, lpinfo: *mut RASDIALDLG) -> super::super::Foundation::BOOL {
+pub unsafe fn RasDialDlgA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpszphonenumber: Param2, lpinfo: *mut RASDIALDLG) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasDialDlgA(lpszphonebook: ::windows_core::PCSTR, lpszentry: ::windows_core::PCSTR, lpszphonenumber: ::windows_core::PCSTR, lpinfo: *mut RASDIALDLG) -> super::super::Foundation::BOOL;
+            fn RasDialDlgA(lpszphonebook: ::windows_core::PCSTR, lpszentry: ::windows_core::PCSTR, lpszphonenumber: ::windows_core::PCSTR, lpinfo: *mut RASDIALDLG) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RasDialDlgA(lpszphonebook.into_param().abi(), lpszentry.into_param().abi(), lpszphonenumber.into_param().abi(), ::core::mem::transmute(lpinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasDialDlgW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpszphonenumber: Param2, lpinfo: *mut RASDIALDLG) -> super::super::Foundation::BOOL {
+pub unsafe fn RasDialDlgW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpszphonenumber: Param2, lpinfo: *mut RASDIALDLG) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasDialDlgW(lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpszphonenumber: ::windows_core::PCWSTR, lpinfo: *mut RASDIALDLG) -> super::super::Foundation::BOOL;
+            fn RasDialDlgW(lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpszphonenumber: ::windows_core::PCWSTR, lpinfo: *mut RASDIALDLG) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RasDialDlgW(lpszphonebook.into_param().abi(), lpszentry.into_param().abi(), lpszphonenumber.into_param().abi(), ::core::mem::transmute(lpinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasDialW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: *const RASDIALEXTENSIONS, param1: Param1, param2: *const RASDIALPARAMSW, param3: u32, param4: *const ::core::ffi::c_void, param5: *mut HRASCONN) -> u32 {
     #[cfg(windows)]
@@ -9448,56 +8975,52 @@ pub unsafe fn RasDialW<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasEditPhonebookEntryA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: Param2) -> u32 {
+pub unsafe fn RasEditPhonebookEntryA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasEditPhonebookEntryA(param0: super::super::Foundation::HWND, param1: ::windows_core::PCSTR, param2: ::windows_core::PCSTR) -> u32;
+            fn RasEditPhonebookEntryA(param0: ::win32_foundation::HWND, param1: ::windows_core::PCSTR, param2: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(RasEditPhonebookEntryA(param0.into_param().abi(), param1.into_param().abi(), param2.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasEditPhonebookEntryW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, param1: Param1, param2: Param2) -> u32 {
+pub unsafe fn RasEditPhonebookEntryW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, param1: Param1, param2: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasEditPhonebookEntryW(param0: super::super::Foundation::HWND, param1: ::windows_core::PCWSTR, param2: ::windows_core::PCWSTR) -> u32;
+            fn RasEditPhonebookEntryW(param0: ::win32_foundation::HWND, param1: ::windows_core::PCWSTR, param2: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(RasEditPhonebookEntryW(param0.into_param().abi(), param1.into_param().abi(), param2.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasEntryDlgA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpinfo: *mut RASENTRYDLGA) -> super::super::Foundation::BOOL {
+pub unsafe fn RasEntryDlgA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpinfo: *mut RASENTRYDLGA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasEntryDlgA(lpszphonebook: ::windows_core::PCSTR, lpszentry: ::windows_core::PCSTR, lpinfo: *mut RASENTRYDLGA) -> super::super::Foundation::BOOL;
+            fn RasEntryDlgA(lpszphonebook: ::windows_core::PCSTR, lpszentry: ::windows_core::PCSTR, lpinfo: *mut RASENTRYDLGA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RasEntryDlgA(lpszphonebook.into_param().abi(), lpszentry.into_param().abi(), ::core::mem::transmute(lpinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasEntryDlgW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpinfo: *mut RASENTRYDLGW) -> super::super::Foundation::BOOL {
+pub unsafe fn RasEntryDlgW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpinfo: *mut RASENTRYDLGW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasEntryDlgW(lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpinfo: *mut RASENTRYDLGW) -> super::super::Foundation::BOOL;
+            fn RasEntryDlgW(lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpinfo: *mut RASENTRYDLGW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RasEntryDlgW(lpszphonebook.into_param().abi(), lpszentry.into_param().abi(), ::core::mem::transmute(lpinfo)))
     }
@@ -9530,7 +9053,6 @@ pub unsafe fn RasEnumAutodialAddressesW(lpprasautodialaddresses: *mut ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasEnumConnectionsA(param0: *mut RASCONNA, param1: *mut u32, param2: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -9544,7 +9066,6 @@ pub unsafe fn RasEnumConnectionsA(param0: *mut RASCONNA, param1: *mut u32, param
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasEnumConnectionsW(param0: *mut RASCONNW, param1: *mut u32, param2: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -9558,7 +9079,6 @@ pub unsafe fn RasEnumConnectionsW(param0: *mut RASCONNW, param1: *mut u32, param
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasEnumDevicesA(param0: *mut RASDEVINFOA, param1: *mut u32, param2: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -9585,7 +9105,6 @@ pub unsafe fn RasEnumDevicesW(param0: *mut RASDEVINFOW, param1: *mut u32, param2
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasEnumEntriesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: *mut RASENTRYNAMEA, param3: *mut u32, param4: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -9612,7 +9131,6 @@ pub unsafe fn RasEnumEntriesW<'a, Param0: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasFreeEapUserIdentityA(praseapuseridentity: *const RASEAPUSERIDENTITYA) {
     #[cfg(windows)]
@@ -9639,7 +9157,6 @@ pub unsafe fn RasFreeEapUserIdentityW(praseapuseridentity: *const RASEAPUSERIDEN
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasGetAutodialAddressA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: *const u32, param2: *mut RASAUTODIALENTRYA, param3: *mut u32, param4: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -9718,7 +9235,7 @@ pub unsafe fn RasGetAutodialParamW(param0: u32, param1: *mut ::core::ffi::c_void
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
 pub unsafe fn RasGetConnectStatusA<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>>(param0: Param0, param1: *mut RASCONNSTATUSA) -> u32 {
     #[cfg(windows)]
@@ -9785,7 +9302,6 @@ pub unsafe fn RasGetCountryInfoW(param0: *mut RASCTRYINFO, param1: *mut u32) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasGetCredentialsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: *mut RASCREDENTIALSA) -> u32 {
     #[cfg(windows)]
@@ -9838,63 +9354,58 @@ pub unsafe fn RasGetCustomAuthDataW<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasGetEapUserDataA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(htoken: Param0, pszphonebook: Param1, pszentry: Param2, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32 {
+pub unsafe fn RasGetEapUserDataA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(htoken: Param0, pszphonebook: Param1, pszentry: Param2, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasGetEapUserDataA(htoken: super::super::Foundation::HANDLE, pszphonebook: ::windows_core::PCSTR, pszentry: ::windows_core::PCSTR, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32;
+            fn RasGetEapUserDataA(htoken: ::win32_foundation::HANDLE, pszphonebook: ::windows_core::PCSTR, pszentry: ::windows_core::PCSTR, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32;
         }
         ::core::mem::transmute(RasGetEapUserDataA(htoken.into_param().abi(), pszphonebook.into_param().abi(), pszentry.into_param().abi(), ::core::mem::transmute(pbeapdata), ::core::mem::transmute(pdwsizeofeapdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasGetEapUserDataW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(htoken: Param0, pszphonebook: Param1, pszentry: Param2, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32 {
+pub unsafe fn RasGetEapUserDataW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(htoken: Param0, pszphonebook: Param1, pszentry: Param2, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasGetEapUserDataW(htoken: super::super::Foundation::HANDLE, pszphonebook: ::windows_core::PCWSTR, pszentry: ::windows_core::PCWSTR, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32;
+            fn RasGetEapUserDataW(htoken: ::win32_foundation::HANDLE, pszphonebook: ::windows_core::PCWSTR, pszentry: ::windows_core::PCWSTR, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32;
         }
         ::core::mem::transmute(RasGetEapUserDataW(htoken.into_param().abi(), pszphonebook.into_param().abi(), pszentry.into_param().abi(), ::core::mem::transmute(pbeapdata), ::core::mem::transmute(pdwsizeofeapdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasGetEapUserIdentityA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(pszphonebook: Param0, pszentry: Param1, dwflags: u32, hwnd: Param3, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYA) -> u32 {
+pub unsafe fn RasGetEapUserIdentityA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(pszphonebook: Param0, pszentry: Param1, dwflags: u32, hwnd: Param3, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYA) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasGetEapUserIdentityA(pszphonebook: ::windows_core::PCSTR, pszentry: ::windows_core::PCSTR, dwflags: u32, hwnd: super::super::Foundation::HWND, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYA) -> u32;
+            fn RasGetEapUserIdentityA(pszphonebook: ::windows_core::PCSTR, pszentry: ::windows_core::PCSTR, dwflags: u32, hwnd: ::win32_foundation::HWND, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYA) -> u32;
         }
         ::core::mem::transmute(RasGetEapUserIdentityA(pszphonebook.into_param().abi(), pszentry.into_param().abi(), ::core::mem::transmute(dwflags), hwnd.into_param().abi(), ::core::mem::transmute(ppraseapuseridentity)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasGetEapUserIdentityW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(pszphonebook: Param0, pszentry: Param1, dwflags: u32, hwnd: Param3, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYW) -> u32 {
+pub unsafe fn RasGetEapUserIdentityW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(pszphonebook: Param0, pszentry: Param1, dwflags: u32, hwnd: Param3, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYW) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasGetEapUserIdentityW(pszphonebook: ::windows_core::PCWSTR, pszentry: ::windows_core::PCWSTR, dwflags: u32, hwnd: super::super::Foundation::HWND, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYW) -> u32;
+            fn RasGetEapUserIdentityW(pszphonebook: ::windows_core::PCWSTR, pszentry: ::windows_core::PCWSTR, dwflags: u32, hwnd: ::win32_foundation::HWND, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYW) -> u32;
         }
         ::core::mem::transmute(RasGetEapUserIdentityW(pszphonebook.into_param().abi(), pszentry.into_param().abi(), ::core::mem::transmute(dwflags), hwnd.into_param().abi(), ::core::mem::transmute(ppraseapuseridentity)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasGetEntryDialParamsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: *mut RASDIALPARAMSA, param2: *mut i32) -> u32 {
     #[cfg(windows)]
@@ -9921,7 +9432,7 @@ pub unsafe fn RasGetEntryDialParamsW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
 pub unsafe fn RasGetEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: *mut RASENTRYA, param3: *mut u32, param4: *mut u8, param5: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -9935,7 +9446,7 @@ pub unsafe fn RasGetEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
 pub unsafe fn RasGetEntryPropertiesW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, param1: Param1, param2: *mut RASENTRYW, param3: *mut u32, param4: *mut u8, param5: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -10014,7 +9525,7 @@ pub unsafe fn RasGetProjectionInfoA<'a, Param0: ::windows_core::IntoParam<'a, HR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
 pub unsafe fn RasGetProjectionInfoEx<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>>(hrasconn: Param0, prasprojection: *mut RAS_PROJECTION_INFO, lpdwsize: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -10067,7 +9578,6 @@ pub unsafe fn RasGetSubEntryHandleW<'a, Param0: ::windows_core::IntoParam<'a, HR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasGetSubEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: u32, param3: *mut RASSUBENTRYA, param4: *mut u32, param5: *mut u8, param6: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -10120,42 +9630,39 @@ pub unsafe fn RasHangUpW<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>>(pa
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasInvokeEapUI<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(param0: Param0, param1: u32, param2: *const RASDIALEXTENSIONS, param3: Param3) -> u32 {
+pub unsafe fn RasInvokeEapUI<'a, Param0: ::windows_core::IntoParam<'a, HRASCONN>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(param0: Param0, param1: u32, param2: *const RASDIALEXTENSIONS, param3: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasInvokeEapUI(param0: HRASCONN, param1: u32, param2: *const RASDIALEXTENSIONS, param3: super::super::Foundation::HWND) -> u32;
+            fn RasInvokeEapUI(param0: HRASCONN, param1: u32, param2: *const RASDIALEXTENSIONS, param3: ::win32_foundation::HWND) -> u32;
         }
         ::core::mem::transmute(RasInvokeEapUI(param0.into_param().abi(), ::core::mem::transmute(param1), ::core::mem::transmute(param2), param3.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasPhonebookDlgA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpinfo: *mut RASPBDLGA) -> super::super::Foundation::BOOL {
+pub unsafe fn RasPhonebookDlgA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpinfo: *mut RASPBDLGA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasPhonebookDlgA(lpszphonebook: ::windows_core::PCSTR, lpszentry: ::windows_core::PCSTR, lpinfo: *mut RASPBDLGA) -> super::super::Foundation::BOOL;
+            fn RasPhonebookDlgA(lpszphonebook: ::windows_core::PCSTR, lpszentry: ::windows_core::PCSTR, lpinfo: *mut RASPBDLGA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RasPhonebookDlgA(lpszphonebook.into_param().abi(), lpszentry.into_param().abi(), ::core::mem::transmute(lpinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasPhonebookDlgW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpinfo: *mut RASPBDLGW) -> super::super::Foundation::BOOL {
+pub unsafe fn RasPhonebookDlgW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszphonebook: Param0, lpszentry: Param1, lpinfo: *mut RASPBDLGW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasPhonebookDlgW(lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpinfo: *mut RASPBDLGW) -> super::super::Foundation::BOOL;
+            fn RasPhonebookDlgW(lpszphonebook: ::windows_core::PCWSTR, lpszentry: ::windows_core::PCWSTR, lpinfo: *mut RASPBDLGW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RasPhonebookDlgW(lpszphonebook.into_param().abi(), lpszentry.into_param().abi(), ::core::mem::transmute(lpinfo)))
     }
@@ -10188,7 +9695,6 @@ pub unsafe fn RasRenameEntryW<'a, Param0: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasSetAutodialAddressA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: u32, param2: *const RASAUTODIALENTRYA, param3: u32, param4: u32) -> u32 {
     #[cfg(windows)]
@@ -10215,28 +9721,26 @@ pub unsafe fn RasSetAutodialAddressW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasSetAutodialEnableA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(param0: u32, param1: Param1) -> u32 {
+pub unsafe fn RasSetAutodialEnableA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(param0: u32, param1: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasSetAutodialEnableA(param0: u32, param1: super::super::Foundation::BOOL) -> u32;
+            fn RasSetAutodialEnableA(param0: u32, param1: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RasSetAutodialEnableA(::core::mem::transmute(param0), param1.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasSetAutodialEnableW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(param0: u32, param1: Param1) -> u32 {
+pub unsafe fn RasSetAutodialEnableW<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(param0: u32, param1: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasSetAutodialEnableW(param0: u32, param1: super::super::Foundation::BOOL) -> u32;
+            fn RasSetAutodialEnableW(param0: u32, param1: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RasSetAutodialEnableW(::core::mem::transmute(param0), param1.into_param().abi()))
     }
@@ -10269,28 +9773,26 @@ pub unsafe fn RasSetAutodialParamW(param0: u32, param1: *const ::core::ffi::c_vo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasSetCredentialsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(param0: Param0, param1: Param1, param2: *const RASCREDENTIALSA, param3: Param3) -> u32 {
+pub unsafe fn RasSetCredentialsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(param0: Param0, param1: Param1, param2: *const RASCREDENTIALSA, param3: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasSetCredentialsA(param0: ::windows_core::PCSTR, param1: ::windows_core::PCSTR, param2: *const RASCREDENTIALSA, param3: super::super::Foundation::BOOL) -> u32;
+            fn RasSetCredentialsA(param0: ::windows_core::PCSTR, param1: ::windows_core::PCSTR, param2: *const RASCREDENTIALSA, param3: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RasSetCredentialsA(param0.into_param().abi(), param1.into_param().abi(), ::core::mem::transmute(param2), param3.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasSetCredentialsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(param0: Param0, param1: Param1, param2: *const RASCREDENTIALSW, param3: Param3) -> u32 {
+pub unsafe fn RasSetCredentialsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(param0: Param0, param1: Param1, param2: *const RASCREDENTIALSW, param3: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasSetCredentialsW(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *const RASCREDENTIALSW, param3: super::super::Foundation::BOOL) -> u32;
+            fn RasSetCredentialsW(param0: ::windows_core::PCWSTR, param1: ::windows_core::PCWSTR, param2: *const RASCREDENTIALSW, param3: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RasSetCredentialsW(param0.into_param().abi(), param1.into_param().abi(), ::core::mem::transmute(param2), param3.into_param().abi()))
     }
@@ -10323,63 +9825,59 @@ pub unsafe fn RasSetCustomAuthDataW<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasSetEapUserDataA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(htoken: Param0, pszphonebook: Param1, pszentry: Param2, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32 {
+pub unsafe fn RasSetEapUserDataA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(htoken: Param0, pszphonebook: Param1, pszentry: Param2, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasSetEapUserDataA(htoken: super::super::Foundation::HANDLE, pszphonebook: ::windows_core::PCSTR, pszentry: ::windows_core::PCSTR, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32;
+            fn RasSetEapUserDataA(htoken: ::win32_foundation::HANDLE, pszphonebook: ::windows_core::PCSTR, pszentry: ::windows_core::PCSTR, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32;
         }
         ::core::mem::transmute(RasSetEapUserDataA(htoken.into_param().abi(), pszphonebook.into_param().abi(), pszentry.into_param().abi(), ::core::mem::transmute(pbeapdata), ::core::mem::transmute(dwsizeofeapdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasSetEapUserDataW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(htoken: Param0, pszphonebook: Param1, pszentry: Param2, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32 {
+pub unsafe fn RasSetEapUserDataW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(htoken: Param0, pszphonebook: Param1, pszentry: Param2, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasSetEapUserDataW(htoken: super::super::Foundation::HANDLE, pszphonebook: ::windows_core::PCWSTR, pszentry: ::windows_core::PCWSTR, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32;
+            fn RasSetEapUserDataW(htoken: ::win32_foundation::HANDLE, pszphonebook: ::windows_core::PCWSTR, pszentry: ::windows_core::PCWSTR, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32;
         }
         ::core::mem::transmute(RasSetEapUserDataW(htoken.into_param().abi(), pszphonebook.into_param().abi(), pszentry.into_param().abi(), ::core::mem::transmute(pbeapdata), ::core::mem::transmute(dwsizeofeapdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasSetEntryDialParamsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(param0: Param0, param1: *const RASDIALPARAMSA, param2: Param2) -> u32 {
+pub unsafe fn RasSetEntryDialParamsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(param0: Param0, param1: *const RASDIALPARAMSA, param2: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasSetEntryDialParamsA(param0: ::windows_core::PCSTR, param1: *const RASDIALPARAMSA, param2: super::super::Foundation::BOOL) -> u32;
+            fn RasSetEntryDialParamsA(param0: ::windows_core::PCSTR, param1: *const RASDIALPARAMSA, param2: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RasSetEntryDialParamsA(param0.into_param().abi(), ::core::mem::transmute(param1), param2.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RasSetEntryDialParamsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(param0: Param0, param1: *const RASDIALPARAMSW, param2: Param2) -> u32 {
+pub unsafe fn RasSetEntryDialParamsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(param0: Param0, param1: *const RASDIALPARAMSW, param2: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RasSetEntryDialParamsW(param0: ::windows_core::PCWSTR, param1: *const RASDIALPARAMSW, param2: super::super::Foundation::BOOL) -> u32;
+            fn RasSetEntryDialParamsW(param0: ::windows_core::PCWSTR, param1: *const RASDIALPARAMSW, param2: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RasSetEntryDialParamsW(param0.into_param().abi(), ::core::mem::transmute(param1), param2.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
 pub unsafe fn RasSetEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: *const RASENTRYA, param3: u32, param4: *const u8, param5: u32) -> u32 {
     #[cfg(windows)]
@@ -10393,7 +9891,7 @@ pub unsafe fn RasSetEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
 pub unsafe fn RasSetEntryPropertiesW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(param0: Param0, param1: Param1, param2: *const RASENTRYW, param3: u32, param4: *const u8, param5: u32) -> u32 {
     #[cfg(windows)]
@@ -10407,7 +9905,6 @@ pub unsafe fn RasSetEntryPropertiesW<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasSetSubEntryPropertiesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(param0: Param0, param1: Param1, param2: u32, param3: *const RASSUBENTRYA, param4: u32, param5: *const u8, param6: u32) -> u32 {
     #[cfg(windows)]
@@ -10500,14 +9997,13 @@ pub unsafe fn RtmAddRouteToDest(rtmreghandle: isize, routehandle: *mut isize, de
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RtmBlockMethods<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(rtmreghandle: isize, targethandle: Param1, targettype: u8, blockingflag: u32) -> u32 {
+pub unsafe fn RtmBlockMethods<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(rtmreghandle: isize, targethandle: Param1, targettype: u8, blockingflag: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmBlockMethods(rtmreghandle: isize, targethandle: super::super::Foundation::HANDLE, targettype: u8, blockingflag: u32) -> u32;
+            fn RtmBlockMethods(rtmreghandle: isize, targethandle: ::win32_foundation::HANDLE, targettype: u8, blockingflag: u32) -> u32;
         }
         ::core::mem::transmute(RtmBlockMethods(::core::mem::transmute(rtmreghandle), targethandle.into_param().abi(), ::core::mem::transmute(targettype), ::core::mem::transmute(blockingflag)))
     }
@@ -10516,12 +10012,12 @@ pub unsafe fn RtmBlockMethods<'a, Param1: ::windows_core::IntoParam<'a, super::s
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
-pub unsafe fn RtmConvertIpv6AddressAndLengthToNetAddress<'a, Param1: ::windows_core::IntoParam<'a, super::super::Networking::WinSock::IN6_ADDR>>(pnetaddress: *mut RTM_NET_ADDRESS, address: Param1, dwlength: u32, dwaddresssize: u32) -> u32 {
+pub unsafe fn RtmConvertIpv6AddressAndLengthToNetAddress<'a, Param1: ::windows_core::IntoParam<'a, ::win32_networking::WinSock::IN6_ADDR>>(pnetaddress: *mut RTM_NET_ADDRESS, address: Param1, dwlength: u32, dwaddresssize: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmConvertIpv6AddressAndLengthToNetAddress(pnetaddress: *mut RTM_NET_ADDRESS, address: super::super::Networking::WinSock::IN6_ADDR, dwlength: u32, dwaddresssize: u32) -> u32;
+            fn RtmConvertIpv6AddressAndLengthToNetAddress(pnetaddress: *mut RTM_NET_ADDRESS, address: ::win32_networking::WinSock::IN6_ADDR, dwlength: u32, dwaddresssize: u32) -> u32;
         }
         ::core::mem::transmute(RtmConvertIpv6AddressAndLengthToNetAddress(::core::mem::transmute(pnetaddress), address.into_param().abi(), ::core::mem::transmute(dwlength), ::core::mem::transmute(dwaddresssize)))
     }
@@ -10530,12 +10026,12 @@ pub unsafe fn RtmConvertIpv6AddressAndLengthToNetAddress<'a, Param1: ::windows_c
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
-pub unsafe fn RtmConvertNetAddressToIpv6AddressAndLength(pnetaddress: *mut RTM_NET_ADDRESS, paddress: *mut super::super::Networking::WinSock::IN6_ADDR, plength: *mut u32, dwaddresssize: u32) -> u32 {
+pub unsafe fn RtmConvertNetAddressToIpv6AddressAndLength(pnetaddress: *mut RTM_NET_ADDRESS, paddress: *mut ::win32_networking::WinSock::IN6_ADDR, plength: *mut u32, dwaddresssize: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmConvertNetAddressToIpv6AddressAndLength(pnetaddress: *mut RTM_NET_ADDRESS, paddress: *mut super::super::Networking::WinSock::IN6_ADDR, plength: *mut u32, dwaddresssize: u32) -> u32;
+            fn RtmConvertNetAddressToIpv6AddressAndLength(pnetaddress: *mut RTM_NET_ADDRESS, paddress: *mut ::win32_networking::WinSock::IN6_ADDR, plength: *mut u32, dwaddresssize: u32) -> u32;
         }
         ::core::mem::transmute(RtmConvertNetAddressToIpv6AddressAndLength(::core::mem::transmute(pnetaddress), ::core::mem::transmute(paddress), ::core::mem::transmute(plength), ::core::mem::transmute(dwaddresssize)))
     }
@@ -10698,21 +10194,19 @@ pub unsafe fn RtmFindNextHop(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RtmGetChangeStatus(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, changestatus: *mut super::super::Foundation::BOOL) -> u32 {
+pub unsafe fn RtmGetChangeStatus(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, changestatus: *mut ::win32_foundation::BOOL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmGetChangeStatus(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, changestatus: *mut super::super::Foundation::BOOL) -> u32;
+            fn RtmGetChangeStatus(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, changestatus: *mut ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RtmGetChangeStatus(::core::mem::transmute(rtmreghandle), ::core::mem::transmute(notifyhandle), ::core::mem::transmute(desthandle), ::core::mem::transmute(changestatus)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetChangedDests(rtmreghandle: isize, notifyhandle: isize, numdests: *mut u32, changeddests: *mut RTM_DEST_INFO) -> u32 {
     #[cfg(windows)]
@@ -10726,7 +10220,6 @@ pub unsafe fn RtmGetChangedDests(rtmreghandle: isize, notifyhandle: isize, numde
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetDestInfo(rtmreghandle: isize, desthandle: isize, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32 {
     #[cfg(windows)]
@@ -10766,7 +10259,6 @@ pub unsafe fn RtmGetEntityMethods(rtmreghandle: isize, entityhandle: isize, numm
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetEnumDests(rtmreghandle: isize, enumhandle: isize, numdests: *mut u32, destinfos: *mut RTM_DEST_INFO) -> u32 {
     #[cfg(windows)]
@@ -10806,7 +10298,6 @@ pub unsafe fn RtmGetEnumRoutes(rtmreghandle: isize, enumhandle: isize, numroutes
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetExactMatchDestination(rtmreghandle: isize, destaddress: *mut RTM_NET_ADDRESS, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32 {
     #[cfg(windows)]
@@ -10833,7 +10324,6 @@ pub unsafe fn RtmGetExactMatchRoute(rtmreghandle: isize, destaddress: *mut RTM_N
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetLessSpecificDestination(rtmreghandle: isize, desthandle: isize, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32 {
     #[cfg(windows)]
@@ -10860,7 +10350,6 @@ pub unsafe fn RtmGetListEnumRoutes(rtmreghandle: isize, enumhandle: isize, numro
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetMostSpecificDestination(rtmreghandle: isize, destaddress: *mut RTM_NET_ADDRESS, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32 {
     #[cfg(windows)]
@@ -11017,98 +10506,91 @@ pub unsafe fn RtmIsBestRoute(rtmreghandle: isize, routehandle: isize, bestinview
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RtmIsMarkedForChangeNotification(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, destmarked: *mut super::super::Foundation::BOOL) -> u32 {
+pub unsafe fn RtmIsMarkedForChangeNotification(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, destmarked: *mut ::win32_foundation::BOOL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmIsMarkedForChangeNotification(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, destmarked: *mut super::super::Foundation::BOOL) -> u32;
+            fn RtmIsMarkedForChangeNotification(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, destmarked: *mut ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RtmIsMarkedForChangeNotification(::core::mem::transmute(rtmreghandle), ::core::mem::transmute(notifyhandle), ::core::mem::transmute(desthandle), ::core::mem::transmute(destmarked)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RtmLockDestination<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(rtmreghandle: isize, desthandle: isize, exclusive: Param2, lockdest: Param3) -> u32 {
+pub unsafe fn RtmLockDestination<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(rtmreghandle: isize, desthandle: isize, exclusive: Param2, lockdest: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmLockDestination(rtmreghandle: isize, desthandle: isize, exclusive: super::super::Foundation::BOOL, lockdest: super::super::Foundation::BOOL) -> u32;
+            fn RtmLockDestination(rtmreghandle: isize, desthandle: isize, exclusive: ::win32_foundation::BOOL, lockdest: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RtmLockDestination(::core::mem::transmute(rtmreghandle), ::core::mem::transmute(desthandle), exclusive.into_param().abi(), lockdest.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RtmLockNextHop<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(rtmreghandle: isize, nexthophandle: isize, exclusive: Param2, locknexthop: Param3, nexthoppointer: *mut *mut RTM_NEXTHOP_INFO) -> u32 {
+pub unsafe fn RtmLockNextHop<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(rtmreghandle: isize, nexthophandle: isize, exclusive: Param2, locknexthop: Param3, nexthoppointer: *mut *mut RTM_NEXTHOP_INFO) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmLockNextHop(rtmreghandle: isize, nexthophandle: isize, exclusive: super::super::Foundation::BOOL, locknexthop: super::super::Foundation::BOOL, nexthoppointer: *mut *mut RTM_NEXTHOP_INFO) -> u32;
+            fn RtmLockNextHop(rtmreghandle: isize, nexthophandle: isize, exclusive: ::win32_foundation::BOOL, locknexthop: ::win32_foundation::BOOL, nexthoppointer: *mut *mut RTM_NEXTHOP_INFO) -> u32;
         }
         ::core::mem::transmute(RtmLockNextHop(::core::mem::transmute(rtmreghandle), ::core::mem::transmute(nexthophandle), exclusive.into_param().abi(), locknexthop.into_param().abi(), ::core::mem::transmute(nexthoppointer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RtmLockRoute<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(rtmreghandle: isize, routehandle: isize, exclusive: Param2, lockroute: Param3, routepointer: *mut *mut RTM_ROUTE_INFO) -> u32 {
+pub unsafe fn RtmLockRoute<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(rtmreghandle: isize, routehandle: isize, exclusive: Param2, lockroute: Param3, routepointer: *mut *mut RTM_ROUTE_INFO) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmLockRoute(rtmreghandle: isize, routehandle: isize, exclusive: super::super::Foundation::BOOL, lockroute: super::super::Foundation::BOOL, routepointer: *mut *mut RTM_ROUTE_INFO) -> u32;
+            fn RtmLockRoute(rtmreghandle: isize, routehandle: isize, exclusive: ::win32_foundation::BOOL, lockroute: ::win32_foundation::BOOL, routepointer: *mut *mut RTM_ROUTE_INFO) -> u32;
         }
         ::core::mem::transmute(RtmLockRoute(::core::mem::transmute(rtmreghandle), ::core::mem::transmute(routehandle), exclusive.into_param().abi(), lockroute.into_param().abi(), ::core::mem::transmute(routepointer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RtmMarkDestForChangeNotification<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, markdest: Param3) -> u32 {
+pub unsafe fn RtmMarkDestForChangeNotification<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, markdest: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmMarkDestForChangeNotification(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, markdest: super::super::Foundation::BOOL) -> u32;
+            fn RtmMarkDestForChangeNotification(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, markdest: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(RtmMarkDestForChangeNotification(::core::mem::transmute(rtmreghandle), ::core::mem::transmute(notifyhandle), ::core::mem::transmute(desthandle), markdest.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RtmReferenceHandles(rtmreghandle: isize, numhandles: u32, rtmhandles: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn RtmReferenceHandles(rtmreghandle: isize, numhandles: u32, rtmhandles: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmReferenceHandles(rtmreghandle: isize, numhandles: u32, rtmhandles: *mut super::super::Foundation::HANDLE) -> u32;
+            fn RtmReferenceHandles(rtmreghandle: isize, numhandles: u32, rtmhandles: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(RtmReferenceHandles(::core::mem::transmute(rtmreghandle), ::core::mem::transmute(numhandles), ::core::mem::transmute(rtmhandles)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RtmRegisterEntity<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(rtmentityinfo: *mut RTM_ENTITY_INFO, exportmethods: *mut RTM_ENTITY_EXPORT_METHODS, eventcallback: RTM_EVENT_CALLBACK, reserveopaquepointer: Param3, rtmregprofile: *mut RTM_REGN_PROFILE, rtmreghandle: *mut isize) -> u32 {
+pub unsafe fn RtmRegisterEntity<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(rtmentityinfo: *mut RTM_ENTITY_INFO, exportmethods: *mut RTM_ENTITY_EXPORT_METHODS, eventcallback: RTM_EVENT_CALLBACK, reserveopaquepointer: Param3, rtmregprofile: *mut RTM_REGN_PROFILE, rtmreghandle: *mut isize) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RtmRegisterEntity(rtmentityinfo: *mut RTM_ENTITY_INFO, exportmethods: *mut RTM_ENTITY_EXPORT_METHODS, eventcallback: ::windows_core::RawPtr, reserveopaquepointer: super::super::Foundation::BOOL, rtmregprofile: *mut RTM_REGN_PROFILE, rtmreghandle: *mut isize) -> u32;
+            fn RtmRegisterEntity(rtmentityinfo: *mut RTM_ENTITY_INFO, exportmethods: *mut RTM_ENTITY_EXPORT_METHODS, eventcallback: ::windows_core::RawPtr, reserveopaquepointer: ::win32_foundation::BOOL, rtmregprofile: *mut RTM_REGN_PROFILE, rtmreghandle: *mut isize) -> u32;
         }
         ::core::mem::transmute(RtmRegisterEntity(::core::mem::transmute(rtmentityinfo), ::core::mem::transmute(exportmethods), ::core::mem::transmute(eventcallback), reserveopaquepointer.into_param().abi(), ::core::mem::transmute(rtmregprofile), ::core::mem::transmute(rtmreghandle)))
     }
@@ -11128,7 +10610,6 @@ pub unsafe fn RtmRegisterForChangeNotification(rtmreghandle: isize, targetviews:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmReleaseChangedDests(rtmreghandle: isize, notifyhandle: isize, numdests: u32, changeddests: *mut RTM_DEST_INFO) -> u32 {
     #[cfg(windows)]
@@ -11142,7 +10623,6 @@ pub unsafe fn RtmReleaseChangedDests(rtmreghandle: isize, notifyhandle: isize, n
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmReleaseDestInfo(rtmreghandle: isize, destinfo: *mut RTM_DEST_INFO) -> u32 {
     #[cfg(windows)]
@@ -11156,7 +10636,6 @@ pub unsafe fn RtmReleaseDestInfo(rtmreghandle: isize, destinfo: *mut RTM_DEST_IN
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmReleaseDests(rtmreghandle: isize, numdests: u32, destinfos: *mut RTM_DEST_INFO) -> u32 {
     #[cfg(windows)]
@@ -11262,41 +10741,33 @@ pub unsafe fn RtmUpdateAndUnlockRoute(rtmreghandle: isize, routehandle: isize, t
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECURITY_MESSAGE {
     pub dwMsgId: SECURITY_MESSAGE_MSG_ID,
     pub hPort: isize,
     pub dwError: u32,
-    pub UserName: [super::super::Foundation::CHAR; 257],
-    pub Domain: [super::super::Foundation::CHAR; 16],
+    pub UserName: [::win32_foundation::CHAR; 257],
+    pub Domain: [::win32_foundation::CHAR; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECURITY_MESSAGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECURITY_MESSAGE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SECURITY_MESSAGE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SECURITY_MESSAGE").field("dwMsgId", &self.dwMsgId).field("hPort", &self.hPort).field("dwError", &self.dwError).field("UserName", &self.UserName).field("Domain", &self.Domain).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SECURITY_MESSAGE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SECURITY_MESSAGE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SECURITY_MESSAGE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SECURITY_MESSAGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SECURITY_MESSAGE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11360,79 +10831,79 @@ impl ::core::default::Default for SOURCE_GROUP_ENTRY {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct SSTP_CERT_INFO {
-    pub isDefault: super::super::Foundation::BOOL,
-    pub certBlob: super::super::Security::Cryptography::CRYPTOAPI_BLOB,
+    pub isDefault: ::win32_foundation::BOOL,
+    pub certBlob: ::win32_security::Cryptography::CRYPTOAPI_BLOB,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for SSTP_CERT_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for SSTP_CERT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for SSTP_CERT_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SSTP_CERT_INFO").field("isDefault", &self.isDefault).field("certBlob", &self.certBlob).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for SSTP_CERT_INFO {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for SSTP_CERT_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSTP_CERT_INFO>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for SSTP_CERT_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for SSTP_CERT_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct SSTP_CONFIG_PARAMS {
     pub dwNumPorts: u32,
     pub dwPortFlags: u32,
-    pub isUseHttps: super::super::Foundation::BOOL,
+    pub isUseHttps: ::win32_foundation::BOOL,
     pub certAlgorithm: u32,
     pub sstpCertDetails: SSTP_CERT_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for SSTP_CONFIG_PARAMS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for SSTP_CONFIG_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for SSTP_CONFIG_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SSTP_CONFIG_PARAMS").field("dwNumPorts", &self.dwNumPorts).field("dwPortFlags", &self.dwPortFlags).field("isUseHttps", &self.isUseHttps).field("certAlgorithm", &self.certAlgorithm).field("sstpCertDetails", &self.sstpCertDetails).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for SSTP_CONFIG_PARAMS {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for SSTP_CONFIG_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SSTP_CONFIG_PARAMS>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for SSTP_CONFIG_PARAMS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for SSTP_CONFIG_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11473,8 +10944,8 @@ impl ::core::default::Default for VPN_TS_IP_ADDRESS {
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub union VPN_TS_IP_ADDRESS_0 {
-    pub v4: super::super::Networking::WinSock::IN_ADDR,
-    pub v6: super::super::Networking::WinSock::IN6_ADDR,
+    pub v4: ::win32_networking::WinSock::IN_ADDR,
+    pub v6: ::win32_networking::WinSock::IN6_ADDR,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for VPN_TS_IP_ADDRESS_0 {}

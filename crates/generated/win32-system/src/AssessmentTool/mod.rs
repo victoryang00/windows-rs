@@ -19,93 +19,93 @@ impl IAccessibleWinSAT {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.accChildCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn get_accChild<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<super::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.get_accChild)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::IDispatch>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
-    pub unsafe fn get_accName<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.get_accName)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    pub unsafe fn get_accName<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.get_accName)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
-    pub unsafe fn get_accValue<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.get_accValue)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    pub unsafe fn get_accValue<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.get_accValue)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
-    pub unsafe fn get_accDescription<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.get_accDescription)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    pub unsafe fn get_accDescription<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.get_accDescription)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn get_accRole<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.get_accRole)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn get_accState<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.get_accState)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
-    pub unsafe fn get_accHelp<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.get_accHelp)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    pub unsafe fn get_accHelp<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.get_accHelp)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
-    pub unsafe fn get_accHelpTopic<'a, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, pszhelpfile: *mut super::super::Foundation::BSTR, varchild: Param1, pidtopic: *mut i32) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    pub unsafe fn get_accHelpTopic<'a, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, pszhelpfile: *mut ::win32_foundation::BSTR, varchild: Param1, pidtopic: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.get_accHelpTopic)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pszhelpfile), varchild.into_param().abi(), ::core::mem::transmute(pidtopic)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
-    pub unsafe fn get_accKeyboardShortcut<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.get_accKeyboardShortcut)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    pub unsafe fn get_accKeyboardShortcut<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.get_accKeyboardShortcut)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn accFocus(&self) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.accFocus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn accSelection(&self) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.accSelection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
-    pub unsafe fn get_accDefaultAction<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.get_accDefaultAction)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    pub unsafe fn get_accDefaultAction<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.get_accDefaultAction)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn accSelect<'a, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, flagsselect: i32, varchild: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.accSelect)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(flagsselect), varchild.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn accLocation<'a, Param4: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, pxleft: *mut i32, pytop: *mut i32, pcxwidth: *mut i32, pcyheight: *mut i32, varchild: Param4) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.accLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pxleft), ::core::mem::transmute(pytop), ::core::mem::transmute(pcxwidth), ::core::mem::transmute(pcyheight), varchild.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn accNavigate<'a, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, navdir: i32, varstart: Param1) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.accNavigate)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(navdir), varstart.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn accHitTest(&self, xleft: i32, ytop: i32) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.accHitTest)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(xleft), ::core::mem::transmute(ytop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
     pub unsafe fn accDoDefaultAction<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, varchild: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.accDoDefaultAction)(::windows_core::Interface::as_raw(self), varchild.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
-    pub unsafe fn put_accName<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, varchild: Param0, szname: Param1) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    pub unsafe fn put_accName<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, varchild: Param0, szname: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.put_accName)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), szname.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
-    pub unsafe fn put_accValue<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, varchild: Param0, szvalue: Param1) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole", feature = "Win32_UI_Accessibility"))]
+    pub unsafe fn put_accValue<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, varchild: Param0, szvalue: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.put_accValue)(::windows_core::Interface::as_raw(self), varchild.into_param().abi(), szvalue.into_param().abi()).ok()
     }
     pub unsafe fn SetAccessiblityData<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, wsname: Param0, wsvalue: Param1, wsdesc: Param2) -> ::windows_core::Result<()> {
@@ -161,26 +161,26 @@ impl<'a> ::windows_core::IntoParam<'a, super::Com::IDispatch> for &'a IAccessibl
     }
 }
 #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Accessibility"))]
-impl ::core::convert::From<IAccessibleWinSAT> for super::super::UI::Accessibility::IAccessible {
+impl ::core::convert::From<IAccessibleWinSAT> for ::win32_ui::Accessibility::IAccessible {
     fn from(value: IAccessibleWinSAT) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Accessibility"))]
-impl ::core::convert::From<&IAccessibleWinSAT> for super::super::UI::Accessibility::IAccessible {
+impl ::core::convert::From<&IAccessibleWinSAT> for ::win32_ui::Accessibility::IAccessible {
     fn from(value: &IAccessibleWinSAT) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Accessibility"))]
-impl<'a> ::windows_core::IntoParam<'a, super::super::UI::Accessibility::IAccessible> for IAccessibleWinSAT {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::UI::Accessibility::IAccessible> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Accessibility::IAccessible> for IAccessibleWinSAT {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Accessibility::IAccessible> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Accessibility"))]
-impl<'a> ::windows_core::IntoParam<'a, super::super::UI::Accessibility::IAccessible> for &'a IAccessibleWinSAT {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::UI::Accessibility::IAccessible> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Accessibility::IAccessible> for &'a IAccessibleWinSAT {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Accessibility::IAccessible> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -213,18 +213,16 @@ unsafe impl ::windows_core::Interface for IAccessibleWinSAT {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAccessibleWinSAT_Vtbl {
-    pub base__: super::super::UI::Accessibility::IAccessible_Vtbl,
+    pub base__: ::win32_ui::Accessibility::IAccessible_Vtbl,
     pub SetAccessiblityData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wsname: ::windows_core::PCWSTR, wsvalue: ::windows_core::PCWSTR, wsdesc: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IInitiateWinSATAssessment(::windows_core::IUnknown);
 impl IInitiateWinSATAssessment {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn InitiateAssessment<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, IWinSATInitiateEvents>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, cmdline: Param0, pcallbacks: Param1, callerhwnd: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn InitiateAssessment<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, IWinSATInitiateEvents>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, cmdline: Param0, pcallbacks: Param1, callerhwnd: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).InitiateAssessment)(::windows_core::Interface::as_raw(self), cmdline.into_param().abi(), pcallbacks.into_param().abi(), callerhwnd.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn InitiateFormalAssessment<'a, Param0: ::windows_core::IntoParam<'a, IWinSATInitiateEvents>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, pcallbacks: Param0, callerhwnd: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn InitiateFormalAssessment<'a, Param0: ::windows_core::IntoParam<'a, IWinSATInitiateEvents>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, pcallbacks: Param0, callerhwnd: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).InitiateFormalAssessment)(::windows_core::Interface::as_raw(self), pcallbacks.into_param().abi(), callerhwnd.into_param().abi()).ok()
     }
     pub unsafe fn CancelAssessment(&self) -> ::windows_core::Result<()> {
@@ -275,14 +273,8 @@ unsafe impl ::windows_core::Interface for IInitiateWinSATAssessment {
 #[doc(hidden)]
 pub struct IInitiateWinSATAssessment_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub InitiateAssessment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cmdline: ::windows_core::PCWSTR, pcallbacks: ::windows_core::RawPtr, callerhwnd: super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    InitiateAssessment: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub InitiateFormalAssessment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcallbacks: ::windows_core::RawPtr, callerhwnd: super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    InitiateFormalAssessment: usize,
+    pub InitiateAssessment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, cmdline: ::windows_core::PCWSTR, pcallbacks: ::windows_core::RawPtr, callerhwnd: ::win32_foundation::HWND) -> ::windows_core::HRESULT,
+    pub InitiateFormalAssessment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcallbacks: ::windows_core::RawPtr, callerhwnd: ::win32_foundation::HWND) -> ::windows_core::HRESULT,
     pub CancelAssessment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -294,15 +286,13 @@ impl IProvideWinSATAssessmentInfo {
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         (::windows_core::Interface::vtable(self).Score)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Title(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Title)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Title(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Title)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Description(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Description(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -384,14 +374,8 @@ unsafe impl ::windows_core::Interface for IProvideWinSATAssessmentInfo {
 pub struct IProvideWinSATAssessmentInfo_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Score: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, score: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, title: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Title: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Description: usize,
+    pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, title: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -407,7 +391,7 @@ impl IProvideWinSATResultsInfo {
         let mut result__ = ::core::mem::MaybeUninit::<WINSAT_ASSESSMENT_STATE>::zeroed();
         (::windows_core::Interface::vtable(self).AssessmentState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WINSAT_ASSESSMENT_STATE>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn AssessmentDateTime(&self) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).AssessmentDateTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
@@ -416,10 +400,9 @@ impl IProvideWinSATResultsInfo {
         let mut result__ = ::core::mem::MaybeUninit::<f32>::zeroed();
         (::windows_core::Interface::vtable(self).SystemRating)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RatingStateDesc(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).RatingStateDesc)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn RatingStateDesc(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).RatingStateDesc)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -505,23 +488,20 @@ pub struct IProvideWinSATResultsInfo_Vtbl {
     #[cfg(not(feature = "Win32_System_Com"))]
     GetAssessmentInfo: usize,
     pub AssessmentState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, state: *mut WINSAT_ASSESSMENT_STATE) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub AssessmentDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filetime: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     AssessmentDateTime: usize,
     pub SystemRating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, level: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RatingStateDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RatingStateDesc: usize,
+    pub RatingStateDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IProvideWinSATVisuals(::windows_core::IUnknown);
 impl IProvideWinSATVisuals {
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub unsafe fn get_Bitmap(&self, bitmapsize: WINSAT_BITMAP_SIZE, state: WINSAT_ASSESSMENT_STATE, rating: f32) -> ::windows_core::Result<super::super::Graphics::Gdi::HBITMAP> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Graphics::Gdi::HBITMAP>::zeroed();
-        (::windows_core::Interface::vtable(self).get_Bitmap)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bitmapsize), ::core::mem::transmute(state), ::core::mem::transmute(rating), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Graphics::Gdi::HBITMAP>(result__)
+    pub unsafe fn get_Bitmap(&self, bitmapsize: WINSAT_BITMAP_SIZE, state: WINSAT_ASSESSMENT_STATE, rating: f32) -> ::windows_core::Result<::win32_graphics::Gdi::HBITMAP> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_graphics::Gdi::HBITMAP>::zeroed();
+        (::windows_core::Interface::vtable(self).get_Bitmap)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bitmapsize), ::core::mem::transmute(state), ::core::mem::transmute(rating), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Gdi::HBITMAP>(result__)
     }
 }
 impl ::core::convert::From<IProvideWinSATVisuals> for ::windows_core::IUnknown {
@@ -569,7 +549,7 @@ unsafe impl ::windows_core::Interface for IProvideWinSATVisuals {
 pub struct IProvideWinSATVisuals_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub get_Bitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bitmapsize: WINSAT_BITMAP_SIZE, state: WINSAT_ASSESSMENT_STATE, rating: f32, pbitmap: *mut super::super::Graphics::Gdi::HBITMAP) -> ::windows_core::HRESULT,
+    pub get_Bitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bitmapsize: WINSAT_BITMAP_SIZE, state: WINSAT_ASSESSMENT_STATE, rating: f32, pbitmap: *mut ::win32_graphics::Gdi::HBITMAP) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Gdi"))]
     get_Bitmap: usize,
 }
@@ -578,10 +558,10 @@ pub struct IProvideWinSATVisuals_Vtbl {
 pub struct IQueryAllWinSATAssessments(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IQueryAllWinSATAssessments {
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn get_AllXML<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, xpath: Param0, namespaces: Param1) -> ::windows_core::Result<super::super::Data::Xml::MsXml::IXMLDOMNodeList> {
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    pub unsafe fn get_AllXML<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, xpath: Param0, namespaces: Param1) -> ::windows_core::Result<::win32_data::Xml::MsXml::IXMLDOMNodeList> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).get_AllXML)(::windows_core::Interface::as_raw(self), xpath.into_param().abi(), namespaces.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Data::Xml::MsXml::IXMLDOMNodeList>(result__)
+        (::windows_core::Interface::vtable(self).get_AllXML)(::windows_core::Interface::as_raw(self), xpath.into_param().abi(), namespaces.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_data::Xml::MsXml::IXMLDOMNodeList>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -662,9 +642,9 @@ unsafe impl ::windows_core::Interface for IQueryAllWinSATAssessments {
 #[doc(hidden)]
 pub struct IQueryAllWinSATAssessments_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub get_AllXML: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, namespaces: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppdomnodelist: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    pub get_AllXML: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xpath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, namespaces: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppdomnodelist: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
     get_AllXML: usize,
 }
 #[repr(transparent)]
@@ -726,10 +706,10 @@ pub struct IQueryOEMWinSATCustomization_Vtbl {
 pub struct IQueryRecentWinSATAssessment(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IQueryRecentWinSATAssessment {
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn get_XML<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, xpath: Param0, namespaces: Param1) -> ::windows_core::Result<super::super::Data::Xml::MsXml::IXMLDOMNodeList> {
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    pub unsafe fn get_XML<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, xpath: Param0, namespaces: Param1) -> ::windows_core::Result<::win32_data::Xml::MsXml::IXMLDOMNodeList> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).get_XML)(::windows_core::Interface::as_raw(self), xpath.into_param().abi(), namespaces.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Data::Xml::MsXml::IXMLDOMNodeList>(result__)
+        (::windows_core::Interface::vtable(self).get_XML)(::windows_core::Interface::as_raw(self), xpath.into_param().abi(), namespaces.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_data::Xml::MsXml::IXMLDOMNodeList>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn Info(&self) -> ::windows_core::Result<IProvideWinSATResultsInfo> {
@@ -815,9 +795,9 @@ unsafe impl ::windows_core::Interface for IQueryRecentWinSATAssessment {
 #[doc(hidden)]
 pub struct IQueryRecentWinSATAssessment_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub get_XML: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, namespaces: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppdomnodelist: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
+    pub get_XML: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, xpath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, namespaces: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppdomnodelist: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com")))]
     get_XML: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub Info: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppwinsatassessmentinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,

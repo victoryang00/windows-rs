@@ -26,10 +26,7 @@ pub struct IUsbBulkInPipe_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MaxTransferSizeBytes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub EndpointDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ClearStallAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ClearStallAsync: usize,
     pub SetReadOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: UsbReadOptions) -> ::windows_core::HRESULT,
     pub ReadOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UsbReadOptions) -> ::windows_core::HRESULT,
     pub FlushBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -65,10 +62,7 @@ unsafe impl ::windows_core::Interface for IUsbBulkOutPipe {
 pub struct IUsbBulkOutPipe_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub EndpointDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ClearStallAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ClearStallAsync: usize,
     pub SetWriteOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: UsbWriteOptions) -> ::windows_core::HRESULT,
     pub WriteOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UsbWriteOptions) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
@@ -176,21 +170,18 @@ unsafe impl ::windows_core::Interface for IUsbDevice {
 #[doc(hidden)]
 pub struct IUsbDevice_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SendControlOutTransferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, setuppacket: ::windows_core::RawPtr, buffer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SendControlOutTransferAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub SendControlOutTransferAsyncNoBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, setuppacket: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SendControlOutTransferAsyncNoBuffer: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SendControlInTransferAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, setuppacket: ::windows_core::RawPtr, buffer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SendControlInTransferAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SendControlInTransferAsyncNoBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, setuppacket: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SendControlInTransferAsyncNoBuffer: usize,
     pub DefaultInterface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DeviceDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -209,22 +200,10 @@ pub struct IUsbDeviceClass_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ClassCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u8) -> ::windows_core::HRESULT,
     pub SetClassCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u8) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SubclassCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SubclassCode: usize,
-    #[cfg(feature = "Foundation")]
     pub SetSubclassCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetSubclassCode: usize,
-    #[cfg(feature = "Foundation")]
     pub ProtocolCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProtocolCode: usize,
-    #[cfg(feature = "Foundation")]
     pub SetProtocolCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetProtocolCode: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -292,10 +271,7 @@ pub struct IUsbDeviceStatics_Vtbl {
     pub GetDeviceSelectorGuidOnly: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, winusbinterfaceclass: ::windows_core::GUID, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetDeviceSelectorVidPidOnly: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vendorid: u32, productid: u32, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetDeviceClassSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usbclass: ::windows_core::RawPtr, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -426,10 +402,7 @@ pub struct IUsbInterfaceSetting_Vtbl {
     #[cfg(not(feature = "Foundation_Collections"))]
     InterruptOutEndpoints: usize,
     pub Selected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SelectSettingAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SelectSettingAsync: usize,
     pub InterfaceDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub Descriptors: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -449,10 +422,7 @@ pub struct IUsbInterruptInEndpointDescriptor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MaxPacketSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub EndpointNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u8) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Interval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Interval: usize,
+    pub Interval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Pipe: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -483,18 +453,9 @@ unsafe impl ::windows_core::Interface for IUsbInterruptInPipe {
 pub struct IUsbInterruptInPipe_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub EndpointDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ClearStallAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ClearStallAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub DataReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DataReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveDataReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveDataReceived: usize,
+    pub DataReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveDataReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -509,10 +470,7 @@ pub struct IUsbInterruptOutEndpointDescriptor_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub MaxPacketSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub EndpointNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u8) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Interval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Interval: usize,
+    pub Interval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Pipe: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -527,10 +485,7 @@ unsafe impl ::windows_core::Interface for IUsbInterruptOutPipe {
 pub struct IUsbInterruptOutPipe_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub EndpointDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ClearStallAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ClearStallAsync: usize,
     pub SetWriteOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: UsbWriteOptions) -> ::windows_core::HRESULT,
     pub WriteOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UsbWriteOptions) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
@@ -690,12 +645,11 @@ impl UsbBulkInPipe {
             (::windows_core::Interface::vtable(this).EndpointDescriptor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UsbBulkInEndpointDescriptor>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ClearStallAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ClearStallAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ClearStallAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ClearStallAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn SetReadOptions(&self, value: UsbReadOptions) -> ::windows_core::Result<()> {
@@ -714,11 +668,11 @@ impl UsbBulkInPipe {
         unsafe { (::windows_core::Interface::vtable(this).FlushBuffer)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn InputStream(&self) -> ::windows_core::Result<super::super::Storage::Streams::IInputStream> {
+    pub fn InputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IInputStream>(result__)
+            (::windows_core::Interface::vtable(this).InputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
 }
@@ -901,12 +855,11 @@ impl UsbBulkOutPipe {
             (::windows_core::Interface::vtable(this).EndpointDescriptor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UsbBulkOutEndpointDescriptor>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ClearStallAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ClearStallAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ClearStallAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ClearStallAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn SetWriteOptions(&self, value: UsbWriteOptions) -> ::windows_core::Result<()> {
@@ -921,11 +874,11 @@ impl UsbBulkOutPipe {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn OutputStream(&self) -> ::windows_core::Result<super::super::Storage::Streams::IOutputStream> {
+    pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OutputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IOutputStream>(result__)
+            (::windows_core::Interface::vtable(this).OutputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IOutputStream>(result__)
         }
     }
 }
@@ -1005,11 +958,11 @@ unsafe impl ::core::marker::Sync for UsbBulkOutPipe {}
 pub struct UsbConfiguration(::windows_core::IUnknown);
 impl UsbConfiguration {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn UsbInterfaces(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbInterface>> {
+    pub fn UsbInterfaces(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbInterface>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UsbInterfaces)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbInterface>>(result__)
+            (::windows_core::Interface::vtable(this).UsbInterfaces)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbInterface>>(result__)
         }
     }
     pub fn ConfigurationDescriptor(&self) -> ::windows_core::Result<UsbConfigurationDescriptor> {
@@ -1020,11 +973,11 @@ impl UsbConfiguration {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Descriptors(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbDescriptor>> {
+    pub fn Descriptors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbDescriptor>>(result__)
         }
     }
 }
@@ -1435,7 +1388,7 @@ impl UsbDescriptor {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ReadDescriptorBuffer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<()> {
+    pub fn ReadDescriptorBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReadDescriptorBuffer)(::windows_core::Interface::as_raw(this), buffer.into_param().abi()).ok() }
     }
@@ -1515,41 +1468,39 @@ unsafe impl ::core::marker::Sync for UsbDescriptor {}
 #[repr(transparent)]
 pub struct UsbDevice(::windows_core::IUnknown);
 impl UsbDevice {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SendControlOutTransferAsync<'a, Param0: ::windows_core::IntoParam<'a, UsbSetupPacket>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, setuppacket: Param0, buffer: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<u32>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SendControlOutTransferAsync<'a, Param0: ::windows_core::IntoParam<'a, UsbSetupPacket>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, setuppacket: Param0, buffer: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendControlOutTransferAsync)(::windows_core::Interface::as_raw(this), setuppacket.into_param().abi(), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<u32>>(result__)
+            (::windows_core::Interface::vtable(this).SendControlOutTransferAsync)(::windows_core::Interface::as_raw(this), setuppacket.into_param().abi(), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SendControlOutTransferAsyncNoBuffer<'a, Param0: ::windows_core::IntoParam<'a, UsbSetupPacket>>(&self, setuppacket: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<u32>> {
+    pub fn SendControlOutTransferAsyncNoBuffer<'a, Param0: ::windows_core::IntoParam<'a, UsbSetupPacket>>(&self, setuppacket: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendControlOutTransferAsyncNoBuffer)(::windows_core::Interface::as_raw(this), setuppacket.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<u32>>(result__)
+            (::windows_core::Interface::vtable(this).SendControlOutTransferAsyncNoBuffer)(::windows_core::Interface::as_raw(this), setuppacket.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<u32>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SendControlInTransferAsync<'a, Param0: ::windows_core::IntoParam<'a, UsbSetupPacket>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, setuppacket: Param0, buffer: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SendControlInTransferAsync<'a, Param0: ::windows_core::IntoParam<'a, UsbSetupPacket>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, setuppacket: Param0, buffer: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendControlInTransferAsync)(::windows_core::Interface::as_raw(this), setuppacket.into_param().abi(), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).SendControlInTransferAsync)(::windows_core::Interface::as_raw(this), setuppacket.into_param().abi(), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SendControlInTransferAsyncNoBuffer<'a, Param0: ::windows_core::IntoParam<'a, UsbSetupPacket>>(&self, setuppacket: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SendControlInTransferAsyncNoBuffer<'a, Param0: ::windows_core::IntoParam<'a, UsbSetupPacket>>(&self, setuppacket: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendControlInTransferAsyncNoBuffer)(::windows_core::Interface::as_raw(this), setuppacket.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).SendControlInTransferAsyncNoBuffer)(::windows_core::Interface::as_raw(this), setuppacket.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
     pub fn DefaultInterface(&self) -> ::windows_core::Result<UsbInterface> {
@@ -1597,11 +1548,10 @@ impl UsbDevice {
             (::windows_core::Interface::vtable(this).GetDeviceClassSelector)(::windows_core::Interface::as_raw(this), usbclass.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<UsbDevice>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UsbDevice>> {
         Self::IUsbDeviceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<UsbDevice>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UsbDevice>>(result__)
         })
     }
     pub fn IUsbDeviceStatics<R, F: FnOnce(&IUsbDeviceStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1679,30 +1629,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Usb
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<UsbDevice> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<UsbDevice> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: UsbDevice) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&UsbDevice> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&UsbDevice> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &UsbDevice) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for UsbDevice {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for UsbDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &UsbDevice {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &UsbDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for UsbDevice {}
@@ -1728,29 +1674,25 @@ impl UsbDeviceClass {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetClassCode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SubclassCode(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u8>> {
+    pub fn SubclassCode(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SubclassCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).SubclassCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetSubclassCode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<u8>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSubclassCode<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<u8>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSubclassCode)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProtocolCode(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u8>> {
+    pub fn ProtocolCode(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u8>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProtocolCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u8>>(result__)
+            (::windows_core::Interface::vtable(this).ProtocolCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u8>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetProtocolCode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<u8>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetProtocolCode<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<u8>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProtocolCode)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2259,43 +2201,43 @@ unsafe impl ::windows_core::RuntimeType for UsbEndpointType {
 pub struct UsbInterface(::windows_core::IUnknown);
 impl UsbInterface {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BulkInPipes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbBulkInPipe>> {
+    pub fn BulkInPipes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbBulkInPipe>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BulkInPipes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbBulkInPipe>>(result__)
+            (::windows_core::Interface::vtable(this).BulkInPipes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbBulkInPipe>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn InterruptInPipes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbInterruptInPipe>> {
+    pub fn InterruptInPipes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbInterruptInPipe>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InterruptInPipes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbInterruptInPipe>>(result__)
+            (::windows_core::Interface::vtable(this).InterruptInPipes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbInterruptInPipe>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BulkOutPipes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbBulkOutPipe>> {
+    pub fn BulkOutPipes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbBulkOutPipe>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BulkOutPipes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbBulkOutPipe>>(result__)
+            (::windows_core::Interface::vtable(this).BulkOutPipes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbBulkOutPipe>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn InterruptOutPipes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbInterruptOutPipe>> {
+    pub fn InterruptOutPipes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbInterruptOutPipe>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InterruptOutPipes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbInterruptOutPipe>>(result__)
+            (::windows_core::Interface::vtable(this).InterruptOutPipes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbInterruptOutPipe>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn InterfaceSettings(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbInterfaceSetting>> {
+    pub fn InterfaceSettings(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbInterfaceSetting>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InterfaceSettings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbInterfaceSetting>>(result__)
+            (::windows_core::Interface::vtable(this).InterfaceSettings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbInterfaceSetting>>(result__)
         }
     }
     pub fn InterfaceNumber(&self) -> ::windows_core::Result<u8> {
@@ -2306,11 +2248,11 @@ impl UsbInterface {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Descriptors(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbDescriptor>> {
+    pub fn Descriptors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbDescriptor>>(result__)
         }
     }
 }
@@ -2517,35 +2459,35 @@ unsafe impl ::core::marker::Sync for UsbInterfaceDescriptor {}
 pub struct UsbInterfaceSetting(::windows_core::IUnknown);
 impl UsbInterfaceSetting {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BulkInEndpoints(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbBulkInEndpointDescriptor>> {
+    pub fn BulkInEndpoints(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbBulkInEndpointDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BulkInEndpoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbBulkInEndpointDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).BulkInEndpoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbBulkInEndpointDescriptor>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn InterruptInEndpoints(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbInterruptInEndpointDescriptor>> {
+    pub fn InterruptInEndpoints(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbInterruptInEndpointDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InterruptInEndpoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbInterruptInEndpointDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).InterruptInEndpoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbInterruptInEndpointDescriptor>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BulkOutEndpoints(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbBulkOutEndpointDescriptor>> {
+    pub fn BulkOutEndpoints(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbBulkOutEndpointDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BulkOutEndpoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbBulkOutEndpointDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).BulkOutEndpoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbBulkOutEndpointDescriptor>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn InterruptOutEndpoints(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbInterruptOutEndpointDescriptor>> {
+    pub fn InterruptOutEndpoints(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbInterruptOutEndpointDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InterruptOutEndpoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbInterruptOutEndpointDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).InterruptOutEndpoints)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbInterruptOutEndpointDescriptor>>(result__)
         }
     }
     pub fn Selected(&self) -> ::windows_core::Result<bool> {
@@ -2555,12 +2497,11 @@ impl UsbInterfaceSetting {
             (::windows_core::Interface::vtable(this).Selected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SelectSettingAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SelectSettingAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectSettingAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SelectSettingAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn InterfaceDescriptor(&self) -> ::windows_core::Result<UsbInterfaceDescriptor> {
@@ -2571,11 +2512,11 @@ impl UsbInterfaceSetting {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Descriptors(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<UsbDescriptor>> {
+    pub fn Descriptors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UsbDescriptor>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<UsbDescriptor>>(result__)
+            (::windows_core::Interface::vtable(this).Descriptors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UsbDescriptor>>(result__)
         }
     }
 }
@@ -2668,12 +2609,11 @@ impl UsbInterruptInEndpointDescriptor {
             (::windows_core::Interface::vtable(this).EndpointNumber)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u8>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Interval(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn Interval(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Interval)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Interval)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn Pipe(&self) -> ::windows_core::Result<UsbInterruptInPipe> {
@@ -2760,11 +2700,11 @@ unsafe impl ::core::marker::Sync for UsbInterruptInEndpointDescriptor {}
 pub struct UsbInterruptInEventArgs(::windows_core::IUnknown);
 impl UsbInterruptInEventArgs {
     #[cfg(feature = "Storage_Streams")]
-    pub fn InterruptData(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn InterruptData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InterruptData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).InterruptData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -2850,24 +2790,21 @@ impl UsbInterruptInPipe {
             (::windows_core::Interface::vtable(this).EndpointDescriptor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UsbInterruptInEndpointDescriptor>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ClearStallAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ClearStallAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ClearStallAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ClearStallAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DataReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<UsbInterruptInPipe, UsbInterruptInEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn DataReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<UsbInterruptInPipe, UsbInterruptInEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).DataReceived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).DataReceived)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveDataReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveDataReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveDataReceived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2961,12 +2898,11 @@ impl UsbInterruptOutEndpointDescriptor {
             (::windows_core::Interface::vtable(this).EndpointNumber)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u8>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Interval(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn Interval(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Interval)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Interval)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn Pipe(&self) -> ::windows_core::Result<UsbInterruptOutPipe> {
@@ -3059,12 +2995,11 @@ impl UsbInterruptOutPipe {
             (::windows_core::Interface::vtable(this).EndpointDescriptor)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UsbInterruptOutEndpointDescriptor>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ClearStallAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ClearStallAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ClearStallAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ClearStallAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn SetWriteOptions(&self, value: UsbWriteOptions) -> ::windows_core::Result<()> {
@@ -3079,11 +3014,11 @@ impl UsbInterruptOutPipe {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn OutputStream(&self) -> ::windows_core::Result<super::super::Storage::Streams::IOutputStream> {
+    pub fn OutputStream(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OutputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IOutputStream>(result__)
+            (::windows_core::Interface::vtable(this).OutputStream)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IOutputStream>(result__)
         }
     }
 }
@@ -3289,7 +3224,7 @@ impl UsbSetupPacket {
         unsafe { (::windows_core::Interface::vtable(this).SetLength)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateWithEightByteBuffer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(eightbytebuffer: Param0) -> ::windows_core::Result<UsbSetupPacket> {
+    pub fn CreateWithEightByteBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(eightbytebuffer: Param0) -> ::windows_core::Result<UsbSetupPacket> {
         Self::IUsbSetupPacketFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateWithEightByteBuffer)(::windows_core::Interface::as_raw(this), eightbytebuffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<UsbSetupPacket>(result__)

@@ -84,85 +84,74 @@ pub unsafe fn GetManagementAppHyperlink(pszhyperlink: &mut [u16]) -> ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsDeviceRegisteredWithManagement(pfisdeviceregisteredwithmanagement: *mut super::super::Foundation::BOOL, pszupn: &mut [u16]) -> ::windows_core::Result<()> {
+pub unsafe fn IsDeviceRegisteredWithManagement(pfisdeviceregisteredwithmanagement: *mut ::win32_foundation::BOOL, pszupn: &mut [u16]) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsDeviceRegisteredWithManagement(pfisdeviceregisteredwithmanagement: *mut super::super::Foundation::BOOL, cchupn: u32, pszupn: ::windows_core::PWSTR) -> ::windows_core::HRESULT;
+            fn IsDeviceRegisteredWithManagement(pfisdeviceregisteredwithmanagement: *mut ::win32_foundation::BOOL, cchupn: u32, pszupn: ::windows_core::PWSTR) -> ::windows_core::HRESULT;
         }
         IsDeviceRegisteredWithManagement(::core::mem::transmute(pfisdeviceregisteredwithmanagement), pszupn.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszupn))).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsManagementRegistrationAllowed() -> ::windows_core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn IsManagementRegistrationAllowed() -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsManagementRegistrationAllowed(pfismanagementregistrationallowed: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn IsManagementRegistrationAllowed(pfismanagementregistrationallowed: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        IsManagementRegistrationAllowed(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        IsManagementRegistrationAllowed(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsMdmUxWithoutAadAllowed() -> ::windows_core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn IsMdmUxWithoutAadAllowed() -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsMdmUxWithoutAadAllowed(isenrollmentallowed: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn IsMdmUxWithoutAadAllowed(isenrollmentallowed: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        IsMdmUxWithoutAadAllowed(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        IsMdmUxWithoutAadAllowed(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MANAGEMENT_REGISTRATION_INFO {
-    pub fDeviceRegisteredWithManagement: super::super::Foundation::BOOL,
+    pub fDeviceRegisteredWithManagement: ::win32_foundation::BOOL,
     pub dwDeviceRegistionKind: u32,
     pub pszUPN: ::windows_core::PWSTR,
     pub pszMDMServiceUri: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MANAGEMENT_REGISTRATION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MANAGEMENT_REGISTRATION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for MANAGEMENT_REGISTRATION_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("MANAGEMENT_REGISTRATION_INFO").field("fDeviceRegisteredWithManagement", &self.fDeviceRegisteredWithManagement).field("dwDeviceRegistionKind", &self.dwDeviceRegistionKind).field("pszUPN", &self.pszUPN).field("pszMDMServiceUri", &self.pszMDMServiceUri).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for MANAGEMENT_REGISTRATION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for MANAGEMENT_REGISTRATION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<MANAGEMENT_REGISTRATION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for MANAGEMENT_REGISTRATION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for MANAGEMENT_REGISTRATION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -283,17 +272,16 @@ impl ::core::fmt::Debug for REGISTRATION_INFORMATION_CLASS {
         f.debug_tuple("REGISTRATION_INFORMATION_CLASS").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterDeviceWithLocalManagement() -> ::windows_core::Result<super::super::Foundation::BOOL> {
+pub unsafe fn RegisterDeviceWithLocalManagement() -> ::windows_core::Result<::win32_foundation::BOOL> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterDeviceWithLocalManagement(alreadyregistered: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn RegisterDeviceWithLocalManagement(alreadyregistered: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        RegisterDeviceWithLocalManagement(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        RegisterDeviceWithLocalManagement(::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -311,14 +299,13 @@ pub unsafe fn RegisterDeviceWithManagement<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterDeviceWithManagementUsingAADCredentials<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(usertoken: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn RegisterDeviceWithManagementUsingAADCredentials<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(usertoken: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterDeviceWithManagementUsingAADCredentials(usertoken: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn RegisterDeviceWithManagementUsingAADCredentials(usertoken: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         RegisterDeviceWithManagementUsingAADCredentials(usertoken.into_param().abi()).ok()
     }
@@ -364,14 +351,13 @@ pub unsafe fn SetDeviceManagementConfigInfo<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetManagedExternally<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(ismanagedexternally: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn SetManagedExternally<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(ismanagedexternally: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetManagedExternally(ismanagedexternally: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn SetManagedExternally(ismanagedexternally: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         SetManagedExternally(ismanagedexternally.into_param().abi()).ok()
     }

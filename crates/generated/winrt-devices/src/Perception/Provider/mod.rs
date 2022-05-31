@@ -82,11 +82,11 @@ pub struct IPerceptionCorrelation_Vtbl {
     #[cfg(not(feature = "deprecated"))]
     TargetId: usize,
     #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "deprecated")))]
     Position: usize,
     #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
-    pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
+    pub Orientation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Quaternion) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "deprecated")))]
     Orientation: usize,
 }
@@ -105,7 +105,7 @@ unsafe impl ::windows_core::Interface for IPerceptionCorrelationFactory {
 pub struct IPerceptionCorrelationFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
-    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targetid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, position: super::super::super::Foundation::Numerics::Vector3, orientation: super::super::super::Foundation::Numerics::Quaternion, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targetid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, position: ::winrt_foundation::Numerics::Vector3, orientation: ::winrt_foundation::Numerics::Quaternion, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Numerics", feature = "deprecated")))]
     Create: usize,
 }
@@ -199,21 +199,21 @@ unsafe impl ::windows_core::Interface for IPerceptionFrame {
 #[doc(hidden)]
 pub struct IPerceptionFrame_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RelativeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RelativeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RelativeTime: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub SetRelativeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub SetRelativeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     SetRelativeTime: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
     Properties: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub FrameData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     FrameData: usize,
 }
 #[cfg(feature = "deprecated")]
@@ -238,11 +238,11 @@ impl IPerceptionFrameProvider {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IPropertySet> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IPropertySet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IPropertySet>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IPropertySet>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -260,9 +260,8 @@ impl IPerceptionFrameProvider {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetProperty)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
@@ -314,30 +313,30 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IPe
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl ::core::convert::TryFrom<IPerceptionFrameProvider> for super::super::super::Foundation::IClosable {
+#[cfg(feature = "deprecated")]
+impl ::core::convert::TryFrom<IPerceptionFrameProvider> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: IPerceptionFrameProvider) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl ::core::convert::TryFrom<&IPerceptionFrameProvider> for super::super::super::Foundation::IClosable {
+#[cfg(feature = "deprecated")]
+impl ::core::convert::TryFrom<&IPerceptionFrameProvider> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &IPerceptionFrameProvider) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for IPerceptionFrameProvider {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+#[cfg(feature = "deprecated")]
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for IPerceptionFrameProvider {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &IPerceptionFrameProvider {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+#[cfg(feature = "deprecated")]
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &IPerceptionFrameProvider {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "deprecated")]
@@ -471,9 +470,8 @@ impl IPerceptionFrameProviderManager {
             (::windows_core::Interface::vtable(this).GetFrameProvider)(::windows_core::Interface::as_raw(this), frameproviderinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<IPerceptionFrameProvider>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
@@ -525,30 +523,30 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IPe
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl ::core::convert::TryFrom<IPerceptionFrameProviderManager> for super::super::super::Foundation::IClosable {
+#[cfg(feature = "deprecated")]
+impl ::core::convert::TryFrom<IPerceptionFrameProviderManager> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: IPerceptionFrameProviderManager) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl ::core::convert::TryFrom<&IPerceptionFrameProviderManager> for super::super::super::Foundation::IClosable {
+#[cfg(feature = "deprecated")]
+impl ::core::convert::TryFrom<&IPerceptionFrameProviderManager> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &IPerceptionFrameProviderManager) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for IPerceptionFrameProviderManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+#[cfg(feature = "deprecated")]
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for IPerceptionFrameProviderManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &IPerceptionFrameProviderManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+#[cfg(feature = "deprecated")]
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &IPerceptionFrameProviderManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "deprecated")]
@@ -679,9 +677,9 @@ pub struct IPerceptionPropertyChangeRequest_Vtbl {
     pub SetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::PerceptionFrameSourcePropertyChangeStatus) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     SetStatus: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetDeferral: usize,
 }
 #[doc(hidden)]
@@ -721,9 +719,9 @@ unsafe impl ::windows_core::Interface for IPerceptionVideoFrameAllocatorFactory 
 #[doc(hidden)]
 pub struct IPerceptionVideoFrameAllocatorFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Graphics_Imaging", feature = "deprecated"))]
-    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxoutstandingframecountforwrite: u32, format: super::super::super::Graphics::Imaging::BitmapPixelFormat, resolution: super::super::super::Foundation::Size, alpha: super::super::super::Graphics::Imaging::BitmapAlphaMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics_Imaging", feature = "deprecated")))]
+    #[cfg(all(feature = "Graphics_Imaging", feature = "deprecated"))]
+    pub Create: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, maxoutstandingframecountforwrite: u32, format: ::winrt_graphics::Imaging::BitmapPixelFormat, resolution: ::winrt_foundation::Size, alpha: ::winrt_graphics::Imaging::BitmapAlphaMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Graphics_Imaging", feature = "deprecated")))]
     Create: usize,
 }
 #[cfg(feature = "deprecated")]
@@ -767,15 +765,15 @@ pub struct PerceptionControlGroup(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl PerceptionControlGroup {
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn FrameProviderIds(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn FrameProviderIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FrameProviderIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).FrameProviderIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(ids: Param0) -> ::windows_core::Result<PerceptionControlGroup> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(ids: Param0) -> ::windows_core::Result<PerceptionControlGroup> {
         Self::IPerceptionControlGroupFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), ids.into_param().abi(), result__.as_mut_ptr()).from_abi::<PerceptionControlGroup>(result__)
@@ -890,23 +888,23 @@ impl PerceptionCorrelation {
         }
     }
     #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Vector3> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
-    pub fn Orientation(&self) -> ::windows_core::Result<super::super::super::Foundation::Numerics::Quaternion> {
+    pub fn Orientation(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Quaternion> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Numerics::Quaternion>::zeroed();
-            (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Numerics::Quaternion>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Quaternion>::zeroed();
+            (::windows_core::Interface::vtable(this).Orientation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Quaternion>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Numerics", feature = "deprecated"))]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Numerics::Quaternion>>(targetid: Param0, position: Param1, orientation: Param2) -> ::windows_core::Result<PerceptionCorrelation> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Quaternion>>(targetid: Param0, position: Param1, orientation: Param2) -> ::windows_core::Result<PerceptionCorrelation> {
         Self::IPerceptionCorrelationFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), targetid.into_param().abi(), position.into_param().abi(), orientation.into_param().abi(), result__.as_mut_ptr()).from_abi::<PerceptionCorrelation>(result__)
@@ -1013,15 +1011,15 @@ pub struct PerceptionCorrelationGroup(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl PerceptionCorrelationGroup {
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn RelativeLocations(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<PerceptionCorrelation>> {
+    pub fn RelativeLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<PerceptionCorrelation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RelativeLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<PerceptionCorrelation>>(result__)
+            (::windows_core::Interface::vtable(this).RelativeLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<PerceptionCorrelation>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<PerceptionCorrelation>>>(relativelocations: Param0) -> ::windows_core::Result<PerceptionCorrelationGroup> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<PerceptionCorrelation>>>(relativelocations: Param0) -> ::windows_core::Result<PerceptionCorrelationGroup> {
         Self::IPerceptionCorrelationGroupFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), relativelocations.into_param().abi(), result__.as_mut_ptr()).from_abi::<PerceptionCorrelationGroup>(result__)
@@ -1128,15 +1126,15 @@ pub struct PerceptionFaceAuthenticationGroup(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl PerceptionFaceAuthenticationGroup {
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn FrameProviderIds(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn FrameProviderIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FrameProviderIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).FrameProviderIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, PerceptionStartFaceAuthenticationHandler>, Param2: ::windows_core::IntoParam<'a, PerceptionStopFaceAuthenticationHandler>>(ids: Param0, starthandler: Param1, stophandler: Param2) -> ::windows_core::Result<PerceptionFaceAuthenticationGroup> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, PerceptionStartFaceAuthenticationHandler>, Param2: ::windows_core::IntoParam<'a, PerceptionStopFaceAuthenticationHandler>>(ids: Param0, starthandler: Param1, stophandler: Param2) -> ::windows_core::Result<PerceptionFaceAuthenticationGroup> {
         Self::IPerceptionFaceAuthenticationGroupFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), ids.into_param().abi(), starthandler.into_param().abi(), stophandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<PerceptionFaceAuthenticationGroup>(result__)
@@ -1242,33 +1240,33 @@ unsafe impl ::core::marker::Sync for PerceptionFaceAuthenticationGroup {}
 pub struct PerceptionFrame(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl PerceptionFrame {
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RelativeTime(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    #[cfg(feature = "deprecated")]
+    pub fn RelativeTime(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).RelativeTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).RelativeTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn SetRelativeTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn SetRelativeTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRelativeTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::ValueSet> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn FrameData(&self) -> ::windows_core::Result<super::super::super::Foundation::IMemoryBuffer> {
+    #[cfg(feature = "deprecated")]
+    pub fn FrameData(&self) -> ::windows_core::Result<::winrt_foundation::IMemoryBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FrameData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IMemoryBuffer>(result__)
+            (::windows_core::Interface::vtable(this).FrameData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IMemoryBuffer>(result__)
         }
     }
 }
@@ -1616,12 +1614,12 @@ impl PerceptionPropertyChangeRequest {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStatus)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::super::super::Foundation::Deferral> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -1925,9 +1923,8 @@ pub struct PerceptionStopFaceAuthenticationHandler_Vtbl {
 pub struct PerceptionVideoFrameAllocator(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl PerceptionVideoFrameAllocator {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "deprecated")]
@@ -1939,15 +1936,15 @@ impl PerceptionVideoFrameAllocator {
         }
     }
     #[cfg(all(feature = "Media", feature = "deprecated"))]
-    pub fn CopyFromVideoFrame<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Media::VideoFrame>>(&self, frame: Param0) -> ::windows_core::Result<PerceptionFrame> {
+    pub fn CopyFromVideoFrame<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_media::VideoFrame>>(&self, frame: Param0) -> ::windows_core::Result<PerceptionFrame> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CopyFromVideoFrame)(::windows_core::Interface::as_raw(this), frame.into_param().abi(), result__.as_mut_ptr()).from_abi::<PerceptionFrame>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Graphics_Imaging", feature = "deprecated"))]
-    pub fn Create<'a, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Size>>(maxoutstandingframecountforwrite: u32, format: super::super::super::Graphics::Imaging::BitmapPixelFormat, resolution: Param2, alpha: super::super::super::Graphics::Imaging::BitmapAlphaMode) -> ::windows_core::Result<PerceptionVideoFrameAllocator> {
+    #[cfg(all(feature = "Graphics_Imaging", feature = "deprecated"))]
+    pub fn Create<'a, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(maxoutstandingframecountforwrite: u32, format: ::winrt_graphics::Imaging::BitmapPixelFormat, resolution: Param2, alpha: ::winrt_graphics::Imaging::BitmapAlphaMode) -> ::windows_core::Result<PerceptionVideoFrameAllocator> {
         Self::IPerceptionVideoFrameAllocatorFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), maxoutstandingframecountforwrite, format, resolution.into_param().abi(), alpha, result__.as_mut_ptr()).from_abi::<PerceptionVideoFrameAllocator>(result__)
@@ -2044,30 +2041,30 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Per
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl ::core::convert::TryFrom<PerceptionVideoFrameAllocator> for super::super::super::Foundation::IClosable {
+#[cfg(feature = "deprecated")]
+impl ::core::convert::TryFrom<PerceptionVideoFrameAllocator> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: PerceptionVideoFrameAllocator) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl ::core::convert::TryFrom<&PerceptionVideoFrameAllocator> for super::super::super::Foundation::IClosable {
+#[cfg(feature = "deprecated")]
+impl ::core::convert::TryFrom<&PerceptionVideoFrameAllocator> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &PerceptionVideoFrameAllocator) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for PerceptionVideoFrameAllocator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+#[cfg(feature = "deprecated")]
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for PerceptionVideoFrameAllocator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(all(feature = "Foundation", feature = "deprecated"))]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &PerceptionVideoFrameAllocator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+#[cfg(feature = "deprecated")]
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &PerceptionVideoFrameAllocator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "deprecated")]

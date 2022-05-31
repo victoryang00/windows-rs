@@ -86,9 +86,9 @@ unsafe impl ::windows_core::Interface for ILocalLocationFinderStatics {
 #[doc(hidden)]
 pub struct ILocalLocationFinderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub FindLocalLocationsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, searchterm: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, searcharea: ::windows_core::RawPtr, localcategory: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, maxresults: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     FindLocalLocationsAsync: usize,
 }
 #[doc(hidden)]
@@ -103,17 +103,11 @@ unsafe impl ::windows_core::Interface for ILocalLocationHoursOfOperationItem {
 pub struct ILocalLocationHoursOfOperationItem_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Globalization")]
-    pub Day: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Globalization::DayOfWeek) -> ::windows_core::HRESULT,
+    pub Day: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_globalization::DayOfWeek) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Globalization"))]
     Day: usize,
-    #[cfg(feature = "Foundation")]
-    pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Start: usize,
-    #[cfg(feature = "Foundation")]
-    pub Span: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Span: usize,
+    pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub Span: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -126,14 +120,8 @@ unsafe impl ::windows_core::Interface for ILocalLocationRatingInfo {
 #[doc(hidden)]
 pub struct ILocalLocationRatingInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub AggregateRating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AggregateRating: usize,
-    #[cfg(feature = "Foundation")]
     pub RatingCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RatingCount: usize,
     pub ProviderIdentifier: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -239,11 +227,11 @@ impl LocalLocation {
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Point(&self) -> ::windows_core::Result<super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Point(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Point)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Point)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     pub fn PhoneNumber(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -275,11 +263,11 @@ impl LocalLocation {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn HoursOfOperation(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<LocalLocationHoursOfOperationItem>> {
+    pub fn HoursOfOperation(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<LocalLocationHoursOfOperationItem>> {
         let this = &::windows_core::Interface::cast::<ILocalLocation2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).HoursOfOperation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<LocalLocationHoursOfOperationItem>>(result__)
+            (::windows_core::Interface::vtable(this).HoursOfOperation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<LocalLocationHoursOfOperationItem>>(result__)
         }
     }
 }
@@ -357,11 +345,11 @@ unsafe impl ::core::marker::Send for LocalLocation {}
 unsafe impl ::core::marker::Sync for LocalLocation {}
 pub struct LocalLocationFinder;
 impl LocalLocationFinder {
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn FindLocalLocationsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::super::Devices::Geolocation::Geocircle>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(searchterm: Param0, searcharea: Param1, localcategory: Param2, maxresults: u32) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<LocalLocationFinderResult>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn FindLocalLocationsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geocircle>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(searchterm: Param0, searcharea: Param1, localcategory: Param2, maxresults: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LocalLocationFinderResult>> {
         Self::ILocalLocationFinderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindLocalLocationsAsync)(::windows_core::Interface::as_raw(this), searchterm.into_param().abi(), searcharea.into_param().abi(), localcategory.into_param().abi(), maxresults, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<LocalLocationFinderResult>>(result__)
+            (::windows_core::Interface::vtable(this).FindLocalLocationsAsync)(::windows_core::Interface::as_raw(this), searchterm.into_param().abi(), searcharea.into_param().abi(), localcategory.into_param().abi(), maxresults, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LocalLocationFinderResult>>(result__)
         })
     }
     pub fn ILocalLocationFinderStatics<R, F: FnOnce(&ILocalLocationFinderStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -376,11 +364,11 @@ impl ::windows_core::RuntimeName for LocalLocationFinder {
 pub struct LocalLocationFinderResult(::windows_core::IUnknown);
 impl LocalLocationFinderResult {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LocalLocations(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<LocalLocation>> {
+    pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<LocalLocation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<LocalLocation>>(result__)
+            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<LocalLocation>>(result__)
         }
     }
     pub fn Status(&self) -> ::windows_core::Result<LocalLocationFinderStatus> {
@@ -506,27 +494,25 @@ unsafe impl ::windows_core::RuntimeType for LocalLocationFinderStatus {
 pub struct LocalLocationHoursOfOperationItem(::windows_core::IUnknown);
 impl LocalLocationHoursOfOperationItem {
     #[cfg(feature = "Globalization")]
-    pub fn Day(&self) -> ::windows_core::Result<super::super::super::Globalization::DayOfWeek> {
+    pub fn Day(&self) -> ::windows_core::Result<::winrt_globalization::DayOfWeek> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Globalization::DayOfWeek>::zeroed();
-            (::windows_core::Interface::vtable(this).Day)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Globalization::DayOfWeek>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_globalization::DayOfWeek>::zeroed();
+            (::windows_core::Interface::vtable(this).Day)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_globalization::DayOfWeek>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Start(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Start(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Start)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Start)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Span(&self) -> ::windows_core::Result<super::super::super::Foundation::TimeSpan> {
+    pub fn Span(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Span)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Span)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
 }
@@ -605,20 +591,18 @@ unsafe impl ::core::marker::Sync for LocalLocationHoursOfOperationItem {}
 #[repr(transparent)]
 pub struct LocalLocationRatingInfo(::windows_core::IUnknown);
 impl LocalLocationRatingInfo {
-    #[cfg(feature = "Foundation")]
-    pub fn AggregateRating(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<f64>> {
+    pub fn AggregateRating(&self) -> ::windows_core::Result<::winrt_foundation::IReference<f64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AggregateRating)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<f64>>(result__)
+            (::windows_core::Interface::vtable(this).AggregateRating)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<f64>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RatingCount(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<i32>> {
+    pub fn RatingCount(&self) -> ::windows_core::Result<::winrt_foundation::IReference<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RatingCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<i32>>(result__)
+            (::windows_core::Interface::vtable(this).RatingCount)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i32>>(result__)
         }
     }
     pub fn ProviderIdentifier(&self) -> ::windows_core::Result<::windows_core::HSTRING> {

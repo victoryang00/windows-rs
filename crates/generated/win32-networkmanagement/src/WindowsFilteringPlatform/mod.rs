@@ -316,70 +316,70 @@ impl ::core::fmt::Debug for FWPM_CHANGE_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_CLASSIFY_OPTION0 {
     pub r#type: FWP_CLASSIFY_OPTION_TYPE,
     pub value: FWP_VALUE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_CLASSIFY_OPTION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_CLASSIFY_OPTION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_CLASSIFY_OPTION0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_CLASSIFY_OPTION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_CLASSIFY_OPTION0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_CLASSIFY_OPTION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_CLASSIFY_OPTION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_CLASSIFY_OPTIONS0 {
     pub numOptions: u32,
     pub options: *mut FWPM_CLASSIFY_OPTION0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_CLASSIFY_OPTIONS0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_CLASSIFY_OPTIONS0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for FWPM_CLASSIFY_OPTIONS0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_CLASSIFY_OPTIONS0").field("numOptions", &self.numOptions).field("options", &self.options).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_CLASSIFY_OPTIONS0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_CLASSIFY_OPTIONS0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_CLASSIFY_OPTIONS0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_CLASSIFY_OPTIONS0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_CLASSIFY_OPTIONS0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -522,7 +522,6 @@ pub const FWPM_CONDITION_VSWITCH_SOURCE_INTERFACE_TYPE: ::windows_core::GUID = :
 pub const FWPM_CONDITION_VSWITCH_SOURCE_VM_ID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x9c2a9ec2_9fc6_42bc_bdd8_406d4da0be64);
 pub const FWPM_CONDITION_VSWITCH_TENANT_NETWORK_ID: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xdc04843c_79e6_4e44_a025_65b9bb0f9f94);
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_CONNECTION0 {
     pub connectionId: u64,
     pub ipVersion: FWP_IP_VERSION,
@@ -537,99 +536,78 @@ pub struct FWPM_CONNECTION0 {
     pub bytesTransferredIn: u64,
     pub bytesTransferredOut: u64,
     pub bytesTransferredTotal: u64,
-    pub startSysTime: super::super::Foundation::FILETIME,
+    pub startSysTime: ::win32_foundation::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_CONNECTION0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_CONNECTION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_CONNECTION0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_CONNECTION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_CONNECTION0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_CONNECTION0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_CONNECTION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union FWPM_CONNECTION0_0 {
     pub localV4Address: u32,
     pub localV6Address: [u8; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_CONNECTION0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_CONNECTION0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_CONNECTION0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_CONNECTION0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_CONNECTION0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_CONNECTION0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_CONNECTION0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union FWPM_CONNECTION0_1 {
     pub remoteV4Address: u32,
     pub remoteV6Address: [u8; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_CONNECTION0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_CONNECTION0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_CONNECTION0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_CONNECTION0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_CONNECTION0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_CONNECTION0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_CONNECTION0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 pub type FWPM_CONNECTION_CALLBACK0 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, eventtype: FWPM_CONNECTION_EVENT_TYPE, connection: *const FWPM_CONNECTION0)>;
 pub const FWPM_CONNECTION_ENUM_FLAG_QUERY_BYTES_TRANSFERRED: u32 = 1u32;
 #[repr(C)]
@@ -840,7 +818,7 @@ impl ::core::fmt::Debug for FWPM_FIELD_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_FILTER0 {
     pub filterKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -858,59 +836,59 @@ pub struct FWPM_FILTER0 {
     pub filterId: u64,
     pub effectiveWeight: FWP_VALUE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_FILTER0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_FILTER0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_FILTER0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_FILTER0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_FILTER0_0 {
     pub rawContext: u64,
     pub providerContextKey: ::windows_core::GUID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_FILTER0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_FILTER0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_FILTER0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_FILTER0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -949,40 +927,40 @@ impl ::core::default::Default for FWPM_FILTER_CHANGE0 {
 }
 pub type FWPM_FILTER_CHANGE_CALLBACK0 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, change: *const FWPM_FILTER_CHANGE0)>;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_FILTER_CONDITION0 {
     pub fieldKey: ::windows_core::GUID,
     pub matchType: FWP_MATCH_TYPE,
     pub conditionValue: FWP_CONDITION_VALUE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_FILTER_CONDITION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_FILTER_CONDITION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER_CONDITION0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER_CONDITION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER_CONDITION0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_FILTER_CONDITION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_FILTER_CONDITION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_FILTER_ENUM_TEMPLATE0 {
     pub providerKey: *mut ::windows_core::GUID,
     pub layerKey: ::windows_core::GUID,
@@ -994,33 +972,33 @@ pub struct FWPM_FILTER_ENUM_TEMPLATE0 {
     pub actionMask: u32,
     pub calloutKey: *mut ::windows_core::GUID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_FILTER_ENUM_TEMPLATE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_FILTER_ENUM_TEMPLATE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for FWPM_FILTER_ENUM_TEMPLATE0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_FILTER_ENUM_TEMPLATE0").field("providerKey", &self.providerKey).field("layerKey", &self.layerKey).field("enumType", &self.enumType).field("flags", &self.flags).field("providerContextTemplate", &self.providerContextTemplate).field("numFilterConditions", &self.numFilterConditions).field("filterCondition", &self.filterCondition).field("actionMask", &self.actionMask).field("calloutKey", &self.calloutKey).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER_ENUM_TEMPLATE0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER_ENUM_TEMPLATE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER_ENUM_TEMPLATE0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_FILTER_ENUM_TEMPLATE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_FILTER_ENUM_TEMPLATE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1092,39 +1070,39 @@ pub const FWPM_FILTER_FLAG_RESERVED1: u32 = 8192u32;
 pub const FWPM_FILTER_FLAG_SILENT_MODE: u32 = 1024u32;
 pub const FWPM_FILTER_FLAG_SYSTEMOS_ONLY: u32 = 256u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_FILTER_SUBSCRIPTION0 {
     pub enumTemplate: *mut FWPM_FILTER_ENUM_TEMPLATE0,
     pub flags: u32,
     pub sessionKey: ::windows_core::GUID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_FILTER_SUBSCRIPTION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_FILTER_SUBSCRIPTION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for FWPM_FILTER_SUBSCRIPTION0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_FILTER_SUBSCRIPTION0").field("enumTemplate", &self.enumTemplate).field("flags", &self.flags).field("sessionKey", &self.sessionKey).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_FILTER_SUBSCRIPTION0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_FILTER_SUBSCRIPTION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_FILTER_SUBSCRIPTION0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_FILTER_SUBSCRIPTION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_FILTER_SUBSCRIPTION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1330,40 +1308,40 @@ pub const FWPM_LAYER_STREAM_V4_DISCARD: ::windows_core::GUID = ::windows_core::G
 pub const FWPM_LAYER_STREAM_V6: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x47c9137a_7ec4_46b3_b6e4_48e926b1eda4);
 pub const FWPM_LAYER_STREAM_V6_DISCARD: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x10a59fc7_b628_4c41_9eb8_cf37d55103cf);
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT0 {
     pub header: FWPM_NET_EVENT_HEADER0,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT0_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT0_0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE0,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -1372,67 +1350,67 @@ pub union FWPM_NET_EVENT0_0 {
     pub ipsecDrop: *mut FWPM_NET_EVENT_IPSEC_KERNEL_DROP0,
     pub idpDrop: *mut FWPM_NET_EVENT_IPSEC_DOSP_DROP0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT1 {
     pub header: FWPM_NET_EVENT_HEADER1,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT1_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT1_0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE1,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -1441,67 +1419,67 @@ pub union FWPM_NET_EVENT1_0 {
     pub ipsecDrop: *mut FWPM_NET_EVENT_IPSEC_KERNEL_DROP0,
     pub idpDrop: *mut FWPM_NET_EVENT_IPSEC_DOSP_DROP0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT1_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT1_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT1_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT1_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT1_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT1_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT2 {
     pub header: FWPM_NET_EVENT_HEADER2,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT2_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT2 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT2>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT2_0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE1,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -1514,67 +1492,67 @@ pub union FWPM_NET_EVENT2_0 {
     pub capabilityAllow: *mut FWPM_NET_EVENT_CAPABILITY_ALLOW0,
     pub classifyDropMac: *mut FWPM_NET_EVENT_CLASSIFY_DROP_MAC0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT2_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT2_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT3 {
     pub header: FWPM_NET_EVENT_HEADER3,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT3_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT3 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT3>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT3_0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE1,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE0,
@@ -1587,67 +1565,67 @@ pub union FWPM_NET_EVENT3_0 {
     pub capabilityAllow: *mut FWPM_NET_EVENT_CAPABILITY_ALLOW0,
     pub classifyDropMac: *mut FWPM_NET_EVENT_CLASSIFY_DROP_MAC0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT3_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT3_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT3_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT3_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT3_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT3_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT3_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT4_ {
     pub header: FWPM_NET_EVENT_HEADER3,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT4__0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT4_ {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT4_ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT4_ {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT4_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT4_>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT4_ {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT4_ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT4__0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_,
@@ -1660,67 +1638,67 @@ pub union FWPM_NET_EVENT4__0 {
     pub capabilityAllow: *mut FWPM_NET_EVENT_CAPABILITY_ALLOW0,
     pub classifyDropMac: *mut FWPM_NET_EVENT_CLASSIFY_DROP_MAC0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT4__0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT4__0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT4__0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT4__0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT4__0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT4__0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT4__0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT5_ {
     pub header: FWPM_NET_EVENT_HEADER3,
     pub r#type: FWPM_NET_EVENT_TYPE,
     pub Anonymous: FWPM_NET_EVENT5__0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT5_ {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT5_ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT5_ {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT5_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT5_>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT5_ {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT5_ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT5__0 {
     pub ikeMmFailure: *mut FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_,
     pub ikeQmFailure: *mut FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_,
@@ -1734,122 +1712,105 @@ pub union FWPM_NET_EVENT5__0 {
     pub classifyDropMac: *mut FWPM_NET_EVENT_CLASSIFY_DROP_MAC0,
     pub lpmPacketArrival: *mut FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0_,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT5__0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT5__0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT5__0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT5__0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT5__0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT5__0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT5__0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub type FWPM_NET_EVENT_CALLBACK0 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT1)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub type FWPM_NET_EVENT_CALLBACK1 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT2)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub type FWPM_NET_EVENT_CALLBACK2 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT3)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub type FWPM_NET_EVENT_CALLBACK3 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT4_)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub type FWPM_NET_EVENT_CALLBACK4 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, event: *const FWPM_NET_EVENT5_)>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_NET_EVENT_CAPABILITY_ALLOW0 {
     pub networkCapabilityId: FWPM_APPC_NETWORK_CAPABILITY_TYPE,
     pub filterId: u64,
-    pub isLoopback: super::super::Foundation::BOOL,
+    pub isLoopback: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_CAPABILITY_ALLOW0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_CAPABILITY_ALLOW0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_CAPABILITY_ALLOW0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_CAPABILITY_ALLOW0").field("networkCapabilityId", &self.networkCapabilityId).field("filterId", &self.filterId).field("isLoopback", &self.isLoopback).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_CAPABILITY_ALLOW0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_CAPABILITY_ALLOW0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_CAPABILITY_ALLOW0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_CAPABILITY_ALLOW0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_NET_EVENT_CAPABILITY_ALLOW0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_NET_EVENT_CAPABILITY_DROP0 {
     pub networkCapabilityId: FWPM_APPC_NETWORK_CAPABILITY_TYPE,
     pub filterId: u64,
-    pub isLoopback: super::super::Foundation::BOOL,
+    pub isLoopback: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_CAPABILITY_DROP0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_CAPABILITY_DROP0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_CAPABILITY_DROP0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_CAPABILITY_DROP0").field("networkCapabilityId", &self.networkCapabilityId).field("filterId", &self.filterId).field("isLoopback", &self.isLoopback).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_CAPABILITY_DROP0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_CAPABILITY_DROP0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_CAPABILITY_DROP0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_CAPABILITY_DROP0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_NET_EVENT_CAPABILITY_DROP0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_NET_EVENT_CLASSIFY_ALLOW0 {
     pub filterId: u64,
     pub layerId: u16,
@@ -1857,35 +1818,28 @@ pub struct FWPM_NET_EVENT_CLASSIFY_ALLOW0 {
     pub originalProfile: u32,
     pub currentProfile: u32,
     pub msFwpDirection: u32,
-    pub isLoopback: super::super::Foundation::BOOL,
+    pub isLoopback: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_CLASSIFY_ALLOW0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_CLASSIFY_ALLOW0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_CLASSIFY_ALLOW0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_CLASSIFY_ALLOW0").field("filterId", &self.filterId).field("layerId", &self.layerId).field("reauthReason", &self.reauthReason).field("originalProfile", &self.originalProfile).field("currentProfile", &self.currentProfile).field("msFwpDirection", &self.msFwpDirection).field("isLoopback", &self.isLoopback).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_CLASSIFY_ALLOW0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_CLASSIFY_ALLOW0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_CLASSIFY_ALLOW0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_CLASSIFY_ALLOW0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_NET_EVENT_CLASSIFY_ALLOW0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1922,7 +1876,6 @@ impl ::core::default::Default for FWPM_NET_EVENT_CLASSIFY_DROP0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_NET_EVENT_CLASSIFY_DROP1 {
     pub filterId: u64,
     pub layerId: u16,
@@ -1930,42 +1883,34 @@ pub struct FWPM_NET_EVENT_CLASSIFY_DROP1 {
     pub originalProfile: u32,
     pub currentProfile: u32,
     pub msFwpDirection: u32,
-    pub isLoopback: super::super::Foundation::BOOL,
+    pub isLoopback: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_CLASSIFY_DROP1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_CLASSIFY_DROP1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_CLASSIFY_DROP1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_CLASSIFY_DROP1").field("filterId", &self.filterId).field("layerId", &self.layerId).field("reauthReason", &self.reauthReason).field("originalProfile", &self.originalProfile).field("currentProfile", &self.currentProfile).field("msFwpDirection", &self.msFwpDirection).field("isLoopback", &self.isLoopback).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_CLASSIFY_DROP1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_CLASSIFY_DROP1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_CLASSIFY_DROP1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_CLASSIFY_DROP1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_NET_EVENT_CLASSIFY_DROP1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_NET_EVENT_CLASSIFY_DROP2 {
     pub filterId: u64,
     pub layerId: u16,
@@ -1973,20 +1918,17 @@ pub struct FWPM_NET_EVENT_CLASSIFY_DROP2 {
     pub originalProfile: u32,
     pub currentProfile: u32,
     pub msFwpDirection: u32,
-    pub isLoopback: super::super::Foundation::BOOL,
+    pub isLoopback: ::win32_foundation::BOOL,
     pub vSwitchId: FWP_BYTE_BLOB,
     pub vSwitchSourcePort: u32,
     pub vSwitchDestinationPort: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_CLASSIFY_DROP2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_CLASSIFY_DROP2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_CLASSIFY_DROP2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_CLASSIFY_DROP2")
@@ -2003,26 +1945,21 @@ impl ::core::fmt::Debug for FWPM_NET_EVENT_CLASSIFY_DROP2 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_CLASSIFY_DROP2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_CLASSIFY_DROP2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_CLASSIFY_DROP2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_CLASSIFY_DROP2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_NET_EVENT_CLASSIFY_DROP2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {
     pub localMacAddr: FWP_BYTE_ARRAY6,
     pub remoteMacAddr: FWP_BYTE_ARRAY6,
@@ -2039,20 +1976,17 @@ pub struct FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {
     pub originalProfile: u32,
     pub currentProfile: u32,
     pub msFwpDirection: u32,
-    pub isLoopback: super::super::Foundation::BOOL,
+    pub isLoopback: ::win32_foundation::BOOL,
     pub vSwitchId: FWP_BYTE_BLOB,
     pub vSwitchSourcePort: u32,
     pub vSwitchDestinationPort: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_CLASSIFY_DROP_MAC0")
@@ -2078,59 +2012,55 @@ impl ::core::fmt::Debug for FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_CLASSIFY_DROP_MAC0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_NET_EVENT_CLASSIFY_DROP_MAC0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_ENUM_TEMPLATE0 {
-    pub startTime: super::super::Foundation::FILETIME,
-    pub endTime: super::super::Foundation::FILETIME,
+    pub startTime: ::win32_foundation::FILETIME,
+    pub endTime: ::win32_foundation::FILETIME,
     pub numFilterConditions: u32,
     pub filterCondition: *mut FWPM_FILTER_CONDITION0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_ENUM_TEMPLATE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_ENUM_TEMPLATE0").field("startTime", &self.startTime).field("endTime", &self.endTime).field("numFilterConditions", &self.numFilterConditions).field("filterCondition", &self.filterCondition).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_ENUM_TEMPLATE0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_ENUM_TEMPLATE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_ENUM_TEMPLATE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2151,9 +2081,9 @@ pub const FWPM_NET_EVENT_FLAG_REMOTE_PORT_SET: u32 = 16u32;
 pub const FWPM_NET_EVENT_FLAG_SCOPE_ID_SET: u32 = 128u32;
 pub const FWPM_NET_EVENT_FLAG_USER_ID_SET: u32 = 64u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_HEADER0 {
-    pub timeStamp: super::super::Foundation::FILETIME,
+    pub timeStamp: ::win32_foundation::FILETIME,
     pub flags: u32,
     pub ipVersion: FWP_IP_VERSION,
     pub ipProtocol: u8,
@@ -2163,102 +2093,102 @@ pub struct FWPM_NET_EVENT_HEADER0 {
     pub remotePort: u16,
     pub scopeId: u32,
     pub appId: FWP_BYTE_BLOB,
-    pub userId: *mut super::super::Security::SID,
+    pub userId: *mut ::win32_security::SID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER0_0 {
     pub localAddrV4: u32,
     pub localAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER0_1 {
     pub remoteAddrV4: u32,
     pub remoteAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER0_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER0_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER0_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER0_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_HEADER1 {
-    pub timeStamp: super::super::Foundation::FILETIME,
+    pub timeStamp: ::win32_foundation::FILETIME,
     pub flags: u32,
     pub ipVersion: FWP_IP_VERSION,
     pub ipProtocol: u8,
@@ -2268,195 +2198,195 @@ pub struct FWPM_NET_EVENT_HEADER1 {
     pub remotePort: u16,
     pub scopeId: u32,
     pub appId: FWP_BYTE_BLOB,
-    pub userId: *mut super::super::Security::SID,
+    pub userId: *mut ::win32_security::SID,
     pub Anonymous3: FWPM_NET_EVENT_HEADER1_2,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER1_0 {
     pub localAddrV4: u32,
     pub localAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER1_1 {
     pub remoteAddrV4: u32,
     pub remoteAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER1_2 {
     pub Anonymous: FWPM_NET_EVENT_HEADER1_2_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_2 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_2>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_HEADER1_2_0 {
     pub reserved1: FWP_AF,
     pub Anonymous: FWPM_NET_EVENT_HEADER1_2_0_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_2_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_2_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER1_2_0_0 {
     pub Anonymous: FWPM_NET_EVENT_HEADER1_2_0_0_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_2_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_2_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_2_0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_2_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_2_0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_2_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_2_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     pub reserved2: FWP_BYTE_ARRAY6,
     pub reserved3: FWP_BYTE_ARRAY6,
@@ -2468,42 +2398,42 @@ pub struct FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     pub reserved9: u16,
     pub reserved10: u64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER1_2_0_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_HEADER1_2_0_0_0").field("reserved2", &self.reserved2).field("reserved3", &self.reserved3).field("reserved4", &self.reserved4).field("reserved5", &self.reserved5).field("reserved6", &self.reserved6).field("reserved7", &self.reserved7).field("reserved8", &self.reserved8).field("reserved9", &self.reserved9).field("reserved10", &self.reserved10).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER1_2_0_0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER1_2_0_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER1_2_0_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_HEADER2 {
-    pub timeStamp: super::super::Foundation::FILETIME,
+    pub timeStamp: ::win32_foundation::FILETIME,
     pub flags: u32,
     pub ipVersion: FWP_IP_VERSION,
     pub ipProtocol: u8,
@@ -2513,104 +2443,104 @@ pub struct FWPM_NET_EVENT_HEADER2 {
     pub remotePort: u16,
     pub scopeId: u32,
     pub appId: FWP_BYTE_BLOB,
-    pub userId: *mut super::super::Security::SID,
+    pub userId: *mut ::win32_security::SID,
     pub addressFamily: FWP_AF,
-    pub packageSid: *mut super::super::Security::SID,
+    pub packageSid: *mut ::win32_security::SID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER2 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER2>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER2_0 {
     pub localAddrV4: u32,
     pub localAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER2_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER2_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER2_1 {
     pub remoteAddrV4: u32,
     pub remoteAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER2_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER2_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER2_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER2_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER2_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER2_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER2_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_HEADER3 {
-    pub timeStamp: super::super::Foundation::FILETIME,
+    pub timeStamp: ::win32_foundation::FILETIME,
     pub flags: u32,
     pub ipVersion: FWP_IP_VERSION,
     pub ipProtocol: u8,
@@ -2620,98 +2550,98 @@ pub struct FWPM_NET_EVENT_HEADER3 {
     pub remotePort: u16,
     pub scopeId: u32,
     pub appId: FWP_BYTE_BLOB,
-    pub userId: *mut super::super::Security::SID,
+    pub userId: *mut ::win32_security::SID,
     pub addressFamily: FWP_AF,
-    pub packageSid: *mut super::super::Security::SID,
+    pub packageSid: *mut ::win32_security::SID,
     pub enterpriseId: ::windows_core::PWSTR,
     pub policyFlags: u64,
     pub effectiveName: FWP_BYTE_BLOB,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER3 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER3>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER3_0 {
     pub localAddrV4: u32,
     pub localAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER3_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER3_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER3_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER3_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER3_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER3_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER3_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_HEADER3_1 {
     pub remoteAddrV4: u32,
     pub remoteAddrV6: FWP_BYTE_ARRAY16,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_HEADER3_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_HEADER3_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_HEADER3_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_HEADER3_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_HEADER3_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_HEADER3_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_HEADER3_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2982,7 +2912,7 @@ impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_MM_FAILURE2_ {
 pub const FWPM_NET_EVENT_IKEEXT_MM_FAILURE_FLAG_BENIGN: u32 = 1u32;
 pub const FWPM_NET_EVENT_IKEEXT_MM_FAILURE_FLAG_MULTIPLE: u32 = 2u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     pub failureErrorCode: u32,
     pub failurePoint: IPSEC_FAILURE_POINT,
@@ -2994,96 +2924,96 @@ pub struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     pub Anonymous2: FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1,
     pub qmFilterId: u64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     pub localSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     pub remoteSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     pub failureErrorCode: u32,
     pub failurePoint: IPSEC_FAILURE_POINT,
@@ -3097,89 +3027,89 @@ pub struct FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     pub mmSaLuid: u64,
     pub mmProviderContextKey: ::windows_core::GUID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1_ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     pub localSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     pub remoteSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_IKEEXT_QM_FAILURE1__1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3332,39 +3262,39 @@ impl ::core::default::Default for FWPM_NET_EVENT_LPM_PACKET_ARRIVAL0_ {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_NET_EVENT_SUBSCRIPTION0 {
     pub enumTemplate: *mut FWPM_NET_EVENT_ENUM_TEMPLATE0,
     pub flags: u32,
     pub sessionKey: ::windows_core::GUID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_NET_EVENT_SUBSCRIPTION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_NET_EVENT_SUBSCRIPTION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for FWPM_NET_EVENT_SUBSCRIPTION0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_NET_EVENT_SUBSCRIPTION0").field("enumTemplate", &self.enumTemplate).field("flags", &self.flags).field("sessionKey", &self.sessionKey).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_NET_EVENT_SUBSCRIPTION0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_NET_EVENT_SUBSCRIPTION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_NET_EVENT_SUBSCRIPTION0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_NET_EVENT_SUBSCRIPTION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_NET_EVENT_SUBSCRIPTION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3469,7 +3399,7 @@ impl ::core::default::Default for FWPM_PROVIDER_CHANGE0 {
 }
 pub type FWPM_PROVIDER_CHANGE_CALLBACK0 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, change: *const FWPM_PROVIDER_CHANGE0)>;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_PROVIDER_CONTEXT0 {
     pub providerContextKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -3480,34 +3410,34 @@ pub struct FWPM_PROVIDER_CONTEXT0 {
     pub Anonymous: FWPM_PROVIDER_CONTEXT0_0,
     pub providerContextId: u64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_PROVIDER_CONTEXT0_0 {
     pub keyingPolicy: *mut IPSEC_KEYING_POLICY0,
     pub ikeQmTransportPolicy: *mut IPSEC_TRANSPORT_POLICY0,
@@ -3519,34 +3449,34 @@ pub union FWPM_PROVIDER_CONTEXT0_0 {
     pub dataBuffer: *mut FWP_BYTE_BLOB,
     pub classifyOptions: *mut FWPM_CLASSIFY_OPTIONS0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_PROVIDER_CONTEXT1 {
     pub providerContextKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -3557,34 +3487,34 @@ pub struct FWPM_PROVIDER_CONTEXT1 {
     pub Anonymous: FWPM_PROVIDER_CONTEXT1_0,
     pub providerContextId: u64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_PROVIDER_CONTEXT1_0 {
     pub keyingPolicy: *mut IPSEC_KEYING_POLICY0,
     pub ikeQmTransportPolicy: *mut IPSEC_TRANSPORT_POLICY1,
@@ -3599,34 +3529,34 @@ pub union FWPM_PROVIDER_CONTEXT1_0 {
     pub ikeV2MmPolicy: *mut IKEEXT_POLICY1,
     pub idpOptions: *mut IPSEC_DOSP_OPTIONS0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT1_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT1_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT1_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT1_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT1_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT1_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_PROVIDER_CONTEXT2 {
     pub providerContextKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -3637,34 +3567,34 @@ pub struct FWPM_PROVIDER_CONTEXT2 {
     pub Anonymous: FWPM_PROVIDER_CONTEXT2_0,
     pub providerContextId: u64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT2 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT2>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_PROVIDER_CONTEXT2_0 {
     pub keyingPolicy: *mut IPSEC_KEYING_POLICY1,
     pub ikeQmTransportPolicy: *mut IPSEC_TRANSPORT_POLICY2,
@@ -3680,34 +3610,34 @@ pub union FWPM_PROVIDER_CONTEXT2_0 {
     pub ikeV2MmPolicy: *mut IKEEXT_POLICY2,
     pub idpOptions: *mut IPSEC_DOSP_OPTIONS0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT2_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT2_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT2_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT2_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT2_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_PROVIDER_CONTEXT3_ {
     pub providerContextKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
@@ -3718,34 +3648,34 @@ pub struct FWPM_PROVIDER_CONTEXT3_ {
     pub Anonymous: FWPM_PROVIDER_CONTEXT3__0,
     pub providerContextId: u64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT3_ {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT3_ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT3_ {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT3_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT3_>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT3_ {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT3_ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWPM_PROVIDER_CONTEXT3__0 {
     pub keyingPolicy: *mut IPSEC_KEYING_POLICY1,
     pub ikeQmTransportPolicy: *mut IPSEC_TRANSPORT_POLICY2,
@@ -3761,27 +3691,27 @@ pub union FWPM_PROVIDER_CONTEXT3__0 {
     pub ikeV2MmPolicy: *mut IKEEXT_POLICY2,
     pub idpOptions: *mut IPSEC_DOSP_OPTIONS0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_PROVIDER_CONTEXT3__0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_PROVIDER_CONTEXT3__0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_PROVIDER_CONTEXT3__0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_PROVIDER_CONTEXT3__0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_PROVIDER_CONTEXT3__0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_PROVIDER_CONTEXT3__0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_PROVIDER_CONTEXT3__0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4018,44 +3948,44 @@ impl ::core::fmt::Debug for FWPM_SERVICE_STATE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWPM_SESSION0 {
     pub sessionKey: ::windows_core::GUID,
     pub displayData: FWPM_DISPLAY_DATA0,
     pub flags: u32,
     pub txnWaitTimeoutInMSec: u32,
     pub processId: u32,
-    pub sid: *mut super::super::Security::SID,
+    pub sid: *mut ::win32_security::SID,
     pub username: ::windows_core::PWSTR,
-    pub kernelMode: super::super::Foundation::BOOL,
+    pub kernelMode: ::win32_foundation::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWPM_SESSION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWPM_SESSION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for FWPM_SESSION0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_SESSION0").field("sessionKey", &self.sessionKey).field("displayData", &self.displayData).field("flags", &self.flags).field("txnWaitTimeoutInMSec", &self.txnWaitTimeoutInMSec).field("processId", &self.processId).field("sid", &self.sid).field("username", &self.username).field("kernelMode", &self.kernelMode).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWPM_SESSION0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWPM_SESSION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_SESSION0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWPM_SESSION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWPM_SESSION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4454,148 +4384,117 @@ pub const FWPM_TUNNEL_FLAG_POINT_TO_POINT: u32 = 1u32;
 pub const FWPM_TUNNEL_FLAG_RESERVED0: u32 = 4u32;
 pub const FWPM_TXN_READ_ONLY: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_VSWITCH_EVENT0 {
     pub eventType: FWPM_VSWITCH_EVENT_TYPE,
     pub vSwitchId: ::windows_core::PWSTR,
     pub Anonymous: FWPM_VSWITCH_EVENT0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_VSWITCH_EVENT0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_VSWITCH_EVENT0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_VSWITCH_EVENT0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_VSWITCH_EVENT0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_VSWITCH_EVENT0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_VSWITCH_EVENT0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_VSWITCH_EVENT0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union FWPM_VSWITCH_EVENT0_0 {
     pub positionInfo: FWPM_VSWITCH_EVENT0_0_0,
     pub reorderInfo: FWPM_VSWITCH_EVENT0_0_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_VSWITCH_EVENT0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_VSWITCH_EVENT0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_VSWITCH_EVENT0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_VSWITCH_EVENT0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_VSWITCH_EVENT0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_VSWITCH_EVENT0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_VSWITCH_EVENT0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_VSWITCH_EVENT0_0_0 {
     pub numvSwitchFilterExtensions: u32,
     pub vSwitchFilterExtensions: *mut ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_VSWITCH_EVENT0_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_VSWITCH_EVENT0_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FWPM_VSWITCH_EVENT0_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_VSWITCH_EVENT0_0_0").field("numvSwitchFilterExtensions", &self.numvSwitchFilterExtensions).field("vSwitchFilterExtensions", &self.vSwitchFilterExtensions).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_VSWITCH_EVENT0_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_VSWITCH_EVENT0_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_VSWITCH_EVENT0_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_VSWITCH_EVENT0_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_VSWITCH_EVENT0_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FWPM_VSWITCH_EVENT0_0_1 {
-    pub inRequiredPosition: super::super::Foundation::BOOL,
+    pub inRequiredPosition: ::win32_foundation::BOOL,
     pub numvSwitchFilterExtensions: u32,
     pub vSwitchFilterExtensions: *mut ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FWPM_VSWITCH_EVENT0_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FWPM_VSWITCH_EVENT0_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FWPM_VSWITCH_EVENT0_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWPM_VSWITCH_EVENT0_0_1").field("inRequiredPosition", &self.inRequiredPosition).field("numvSwitchFilterExtensions", &self.numvSwitchFilterExtensions).field("vSwitchFilterExtensions", &self.vSwitchFilterExtensions).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FWPM_VSWITCH_EVENT0_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FWPM_VSWITCH_EVENT0_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWPM_VSWITCH_EVENT0_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FWPM_VSWITCH_EVENT0_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FWPM_VSWITCH_EVENT0_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 pub type FWPM_VSWITCH_EVENT_CALLBACK0 = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, vswitchevent: *const FWPM_VSWITCH_EVENT0) -> u32>;
 #[repr(C)]
 pub struct FWPM_VSWITCH_EVENT_SUBSCRIPTION0 {
@@ -4934,39 +4833,39 @@ pub const FWP_CONDITION_SOCKET_PROPERTY_FLAG_ALLOW_EDGE_TRAFFIC: u32 = 2u32;
 pub const FWP_CONDITION_SOCKET_PROPERTY_FLAG_DENY_EDGE_TRAFFIC: u32 = 4u32;
 pub const FWP_CONDITION_SOCKET_PROPERTY_FLAG_IS_SYSTEM_PORT_RPC: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWP_CONDITION_VALUE0 {
     pub r#type: FWP_DATA_TYPE,
     pub Anonymous: FWP_CONDITION_VALUE0_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWP_CONDITION_VALUE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWP_CONDITION_VALUE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWP_CONDITION_VALUE0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWP_CONDITION_VALUE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_CONDITION_VALUE0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWP_CONDITION_VALUE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWP_CONDITION_VALUE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWP_CONDITION_VALUE0_0 {
     pub uint8: u8,
     pub uint16: u16,
@@ -4980,7 +4879,7 @@ pub union FWP_CONDITION_VALUE0_0 {
     pub double64: *mut f64,
     pub byteArray16: *mut FWP_BYTE_ARRAY16,
     pub byteBlob: *mut FWP_BYTE_BLOB,
-    pub sid: *mut super::super::Security::SID,
+    pub sid: *mut ::win32_security::SID,
     pub sd: *mut FWP_BYTE_BLOB,
     pub tokenInformation: *mut FWP_TOKEN_INFORMATION,
     pub tokenAccessInformation: *mut FWP_BYTE_BLOB,
@@ -4990,27 +4889,27 @@ pub union FWP_CONDITION_VALUE0_0 {
     pub v6AddrMask: *mut FWP_V6_ADDR_AND_MASK,
     pub rangeValue: *mut FWP_RANGE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWP_CONDITION_VALUE0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWP_CONDITION_VALUE0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWP_CONDITION_VALUE0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWP_CONDITION_VALUE0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_CONDITION_VALUE0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWP_CONDITION_VALUE0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWP_CONDITION_VALUE0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5213,72 +5112,72 @@ pub const FWP_OPTION_VALUE_DISABLE_LOOSE_SOURCE: u32 = 0u32;
 pub const FWP_OPTION_VALUE_ENABLE_LOCAL_ONLY_MAPPING: u32 = 1u32;
 pub const FWP_OPTION_VALUE_ENABLE_LOOSE_SOURCE: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWP_RANGE0 {
     pub valueLow: FWP_VALUE0,
     pub valueHigh: FWP_VALUE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWP_RANGE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWP_RANGE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWP_RANGE0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWP_RANGE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_RANGE0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWP_RANGE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWP_RANGE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWP_TOKEN_INFORMATION {
     pub sidCount: u32,
-    pub sids: *mut super::super::Security::SID_AND_ATTRIBUTES,
+    pub sids: *mut ::win32_security::SID_AND_ATTRIBUTES,
     pub restrictedSidCount: u32,
-    pub restrictedSids: *mut super::super::Security::SID_AND_ATTRIBUTES,
+    pub restrictedSids: *mut ::win32_security::SID_AND_ATTRIBUTES,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWP_TOKEN_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWP_TOKEN_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for FWP_TOKEN_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FWP_TOKEN_INFORMATION").field("sidCount", &self.sidCount).field("sids", &self.sids).field("restrictedSidCount", &self.restrictedSidCount).field("restrictedSids", &self.restrictedSids).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWP_TOKEN_INFORMATION {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWP_TOKEN_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_TOKEN_INFORMATION>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWP_TOKEN_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWP_TOKEN_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5346,39 +5245,39 @@ impl ::core::default::Default for FWP_V6_ADDR_AND_MASK {
 }
 pub const FWP_V6_ADDR_SIZE: u32 = 16u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct FWP_VALUE0 {
     pub r#type: FWP_DATA_TYPE,
     pub Anonymous: FWP_VALUE0_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWP_VALUE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWP_VALUE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWP_VALUE0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWP_VALUE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_VALUE0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWP_VALUE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWP_VALUE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union FWP_VALUE0_0 {
     pub uint8: u8,
     pub uint16: u16,
@@ -5392,34 +5291,34 @@ pub union FWP_VALUE0_0 {
     pub double64: *mut f64,
     pub byteArray16: *mut FWP_BYTE_ARRAY16,
     pub byteBlob: *mut FWP_BYTE_BLOB,
-    pub sid: *mut super::super::Security::SID,
+    pub sid: *mut ::win32_security::SID,
     pub sd: *mut FWP_BYTE_BLOB,
     pub tokenInformation: *mut FWP_TOKEN_INFORMATION,
     pub tokenAccessInformation: *mut FWP_BYTE_BLOB,
     pub unicodeString: ::windows_core::PWSTR,
     pub byteArray6: *mut FWP_BYTE_ARRAY6,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for FWP_VALUE0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for FWP_VALUE0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for FWP_VALUE0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for FWP_VALUE0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FWP_VALUE0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for FWP_VALUE0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for FWP_VALUE0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5451,588 +5350,565 @@ impl ::core::fmt::Debug for FWP_VSWITCH_NETWORK_TYPE {
         f.debug_tuple("FWP_VSWITCH_NETWORK_TYPE").field(&self.0).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmCalloutAdd0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, callout: *const FWPM_CALLOUT0, sd: Param2, id: *mut u32) -> u32 {
+pub unsafe fn FwpmCalloutAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, callout: *const FWPM_CALLOUT0, sd: Param2, id: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutAdd0(enginehandle: super::super::Foundation::HANDLE, callout: *const FWPM_CALLOUT0, sd: super::super::Security::PSECURITY_DESCRIPTOR, id: *mut u32) -> u32;
+            fn FwpmCalloutAdd0(enginehandle: ::win32_foundation::HANDLE, callout: *const FWPM_CALLOUT0, sd: ::win32_security::PSECURITY_DESCRIPTOR, id: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutAdd0(enginehandle.into_param().abi(), ::core::mem::transmute(callout), sd.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_CALLOUT_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmCalloutCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_CALLOUT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const FWPM_CALLOUT_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmCalloutCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const FWPM_CALLOUT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u32) -> u32 {
+pub unsafe fn FwpmCalloutDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutDeleteById0(enginehandle: super::super::Foundation::HANDLE, id: u32) -> u32;
+            fn FwpmCalloutDeleteById0(enginehandle: ::win32_foundation::HANDLE, id: u32) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutDeleteById0(enginehandle.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
+pub unsafe fn FwpmCalloutDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutDeleteByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
+            fn FwpmCalloutDeleteByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutDeleteByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn FwpmCalloutDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmCalloutDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_CALLOUT0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmCalloutEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_CALLOUT0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_CALLOUT0, numentriesreturned: *mut u32) -> u32;
+            fn FwpmCalloutEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_CALLOUT0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutGetById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u32, callout: *mut *mut FWPM_CALLOUT0) -> u32 {
+pub unsafe fn FwpmCalloutGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u32, callout: *mut *mut FWPM_CALLOUT0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutGetById0(enginehandle: super::super::Foundation::HANDLE, id: u32, callout: *mut *mut FWPM_CALLOUT0) -> u32;
+            fn FwpmCalloutGetById0(enginehandle: ::win32_foundation::HANDLE, id: u32, callout: *mut *mut FWPM_CALLOUT0) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutGetById0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(callout)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, callout: *mut *mut FWPM_CALLOUT0) -> u32 {
+pub unsafe fn FwpmCalloutGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, callout: *mut *mut FWPM_CALLOUT0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutGetByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, callout: *mut *mut FWPM_CALLOUT0) -> u32;
+            fn FwpmCalloutGetByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, callout: *mut *mut FWPM_CALLOUT0) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutGetByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(callout)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmCalloutGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmCalloutGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutGetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmCalloutGetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutGetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmCalloutSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmCalloutSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutSetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmCalloutSetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutSetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_CALLOUT_SUBSCRIPTION0, callback: FWPM_CALLOUT_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmCalloutSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_CALLOUT_SUBSCRIPTION0, callback: FWPM_CALLOUT_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutSubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_CALLOUT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmCalloutSubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_CALLOUT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutSubscribeChanges0(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(changehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_CALLOUT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
+pub unsafe fn FwpmCalloutSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_CALLOUT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutSubscriptionsGet0(enginehandle: super::super::Foundation::HANDLE, entries: *mut *mut *mut FWPM_CALLOUT_SUBSCRIPTION0, numentries: *mut u32) -> u32;
+            fn FwpmCalloutSubscriptionsGet0(enginehandle: ::win32_foundation::HANDLE, entries: *mut *mut *mut FWPM_CALLOUT_SUBSCRIPTION0, numentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutSubscriptionsGet0(enginehandle.into_param().abi(), ::core::mem::transmute(entries), ::core::mem::transmute(numentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmCalloutUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
+pub unsafe fn FwpmCalloutUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmCalloutUnsubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, changehandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmCalloutUnsubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, changehandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmCalloutUnsubscribeChanges0(enginehandle.into_param().abi(), changehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmConnectionCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_CONNECTION_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmConnectionCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_CONNECTION_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmConnectionCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const FWPM_CONNECTION_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmConnectionCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const FWPM_CONNECTION_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmConnectionCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmConnectionDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn FwpmConnectionDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmConnectionDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmConnectionDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmConnectionDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmConnectionEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_CONNECTION0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmConnectionEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_CONNECTION0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmConnectionEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_CONNECTION0, numentriesreturned: *mut u32) -> u32;
+            fn FwpmConnectionEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_CONNECTION0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmConnectionEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmConnectionGetById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, connection: *mut *mut FWPM_CONNECTION0) -> u32 {
+pub unsafe fn FwpmConnectionGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, connection: *mut *mut FWPM_CONNECTION0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmConnectionGetById0(enginehandle: super::super::Foundation::HANDLE, id: u64, connection: *mut *mut FWPM_CONNECTION0) -> u32;
+            fn FwpmConnectionGetById0(enginehandle: ::win32_foundation::HANDLE, id: u64, connection: *mut *mut FWPM_CONNECTION0) -> u32;
         }
         ::core::mem::transmute(FwpmConnectionGetById0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(connection)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmConnectionGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmConnectionGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmConnectionGetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmConnectionGetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmConnectionGetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmConnectionSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmConnectionSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmConnectionSetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmConnectionSetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmConnectionSetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmConnectionSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_CONNECTION_SUBSCRIPTION0, callback: FWPM_CONNECTION_CALLBACK0, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmConnectionSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_CONNECTION_SUBSCRIPTION0, callback: FWPM_CONNECTION_CALLBACK0, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmConnectionSubscribe0(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_CONNECTION_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmConnectionSubscribe0(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_CONNECTION_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmConnectionSubscribe0(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(eventshandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmConnectionUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, eventshandle: Param1) -> u32 {
+pub unsafe fn FwpmConnectionUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, eventshandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmConnectionUnsubscribe0(enginehandle: super::super::Foundation::HANDLE, eventshandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmConnectionUnsubscribe0(enginehandle: ::win32_foundation::HANDLE, eventshandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmConnectionUnsubscribe0(enginehandle.into_param().abi(), eventshandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmDynamicKeywordSubscribe0(flags: u32, callback: FWPM_DYNAMIC_KEYWORD_CALLBACK0, context: *const ::core::ffi::c_void, subscriptionhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmDynamicKeywordSubscribe0(flags: u32, callback: FWPM_DYNAMIC_KEYWORD_CALLBACK0, context: *const ::core::ffi::c_void, subscriptionhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmDynamicKeywordSubscribe0(flags: u32, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, subscriptionhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmDynamicKeywordSubscribe0(flags: u32, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, subscriptionhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmDynamicKeywordSubscribe0(::core::mem::transmute(flags), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(subscriptionhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmDynamicKeywordUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(subscriptionhandle: Param0) -> u32 {
+pub unsafe fn FwpmDynamicKeywordUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(subscriptionhandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmDynamicKeywordUnsubscribe0(subscriptionhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmDynamicKeywordUnsubscribe0(subscriptionhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmDynamicKeywordUnsubscribe0(subscriptionhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmEngineClose0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0) -> u32 {
+pub unsafe fn FwpmEngineClose0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmEngineClose0(enginehandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmEngineClose0(enginehandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmEngineClose0(enginehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmEngineGetOption0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, option: FWPM_ENGINE_OPTION, value: *mut *mut FWP_VALUE0) -> u32 {
+pub unsafe fn FwpmEngineGetOption0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, option: FWPM_ENGINE_OPTION, value: *mut *mut FWP_VALUE0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmEngineGetOption0(enginehandle: super::super::Foundation::HANDLE, option: FWPM_ENGINE_OPTION, value: *mut *mut FWP_VALUE0) -> u32;
+            fn FwpmEngineGetOption0(enginehandle: ::win32_foundation::HANDLE, option: FWPM_ENGINE_OPTION, value: *mut *mut FWP_VALUE0) -> u32;
         }
         ::core::mem::transmute(FwpmEngineGetOption0(enginehandle.into_param().abi(), ::core::mem::transmute(option), ::core::mem::transmute(value)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmEngineGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmEngineGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmEngineGetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmEngineGetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmEngineGetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Rpc"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Rpc"))]
 #[inline]
-pub unsafe fn FwpmEngineOpen0<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, authnservice: u32, authidentity: *const super::super::System::Rpc::SEC_WINNT_AUTH_IDENTITY_W, session: *const FWPM_SESSION0, enginehandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmEngineOpen0<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, authnservice: u32, authidentity: *const ::win32_system::Rpc::SEC_WINNT_AUTH_IDENTITY_W, session: *const FWPM_SESSION0, enginehandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmEngineOpen0(servername: ::windows_core::PCWSTR, authnservice: u32, authidentity: *const super::super::System::Rpc::SEC_WINNT_AUTH_IDENTITY_W, session: *const FWPM_SESSION0, enginehandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmEngineOpen0(servername: ::windows_core::PCWSTR, authnservice: u32, authidentity: *const ::win32_system::Rpc::SEC_WINNT_AUTH_IDENTITY_W, session: *const FWPM_SESSION0, enginehandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmEngineOpen0(servername.into_param().abi(), ::core::mem::transmute(authnservice), ::core::mem::transmute(authidentity), ::core::mem::transmute(session), ::core::mem::transmute(enginehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmEngineSetOption0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, option: FWPM_ENGINE_OPTION, newvalue: *const FWP_VALUE0) -> u32 {
+pub unsafe fn FwpmEngineSetOption0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, option: FWPM_ENGINE_OPTION, newvalue: *const FWP_VALUE0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmEngineSetOption0(enginehandle: super::super::Foundation::HANDLE, option: FWPM_ENGINE_OPTION, newvalue: *const FWP_VALUE0) -> u32;
+            fn FwpmEngineSetOption0(enginehandle: ::win32_foundation::HANDLE, option: FWPM_ENGINE_OPTION, newvalue: *const FWP_VALUE0) -> u32;
         }
         ::core::mem::transmute(FwpmEngineSetOption0(enginehandle.into_param().abi(), ::core::mem::transmute(option), ::core::mem::transmute(newvalue)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmEngineSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmEngineSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmEngineSetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmEngineSetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmEngineSetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmFilterAdd0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, filter: *const FWPM_FILTER0, sd: Param2, id: *mut u64) -> u32 {
+pub unsafe fn FwpmFilterAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, filter: *const FWPM_FILTER0, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterAdd0(enginehandle: super::super::Foundation::HANDLE, filter: *const FWPM_FILTER0, sd: super::super::Security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
+            fn FwpmFilterAdd0(enginehandle: ::win32_foundation::HANDLE, filter: *const FWPM_FILTER0, sd: ::win32_security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
         }
         ::core::mem::transmute(FwpmFilterAdd0(enginehandle.into_param().abi(), ::core::mem::transmute(filter), sd.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmFilterCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_FILTER_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmFilterCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_FILTER_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const FWPM_FILTER_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmFilterCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const FWPM_FILTER_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmFilterCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmFilterDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
+pub unsafe fn FwpmFilterDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterDeleteById0(enginehandle: super::super::Foundation::HANDLE, id: u64) -> u32;
+            fn FwpmFilterDeleteById0(enginehandle: ::win32_foundation::HANDLE, id: u64) -> u32;
         }
         ::core::mem::transmute(FwpmFilterDeleteById0(enginehandle.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmFilterDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
+pub unsafe fn FwpmFilterDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterDeleteByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
+            fn FwpmFilterDeleteByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
         }
         ::core::mem::transmute(FwpmFilterDeleteByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmFilterDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn FwpmFilterDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmFilterDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmFilterDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmFilterEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_FILTER0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmFilterEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_FILTER0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_FILTER0, numentriesreturned: *mut u32) -> u32;
+            fn FwpmFilterEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_FILTER0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmFilterEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmFilterGetById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, filter: *mut *mut FWPM_FILTER0) -> u32 {
+pub unsafe fn FwpmFilterGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, filter: *mut *mut FWPM_FILTER0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterGetById0(enginehandle: super::super::Foundation::HANDLE, id: u64, filter: *mut *mut FWPM_FILTER0) -> u32;
+            fn FwpmFilterGetById0(enginehandle: ::win32_foundation::HANDLE, id: u64, filter: *mut *mut FWPM_FILTER0) -> u32;
         }
         ::core::mem::transmute(FwpmFilterGetById0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(filter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmFilterGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, filter: *mut *mut FWPM_FILTER0) -> u32 {
+pub unsafe fn FwpmFilterGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, filter: *mut *mut FWPM_FILTER0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterGetByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, filter: *mut *mut FWPM_FILTER0) -> u32;
+            fn FwpmFilterGetByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, filter: *mut *mut FWPM_FILTER0) -> u32;
         }
         ::core::mem::transmute(FwpmFilterGetByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(filter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmFilterGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmFilterGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterGetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmFilterGetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmFilterGetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmFilterSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmFilterSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterSetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmFilterSetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmFilterSetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmFilterSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_FILTER_SUBSCRIPTION0, callback: FWPM_FILTER_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmFilterSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_FILTER_SUBSCRIPTION0, callback: FWPM_FILTER_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterSubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_FILTER_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmFilterSubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_FILTER_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmFilterSubscribeChanges0(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(changehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmFilterSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_FILTER_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
+pub unsafe fn FwpmFilterSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_FILTER_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterSubscriptionsGet0(enginehandle: super::super::Foundation::HANDLE, entries: *mut *mut *mut FWPM_FILTER_SUBSCRIPTION0, numentries: *mut u32) -> u32;
+            fn FwpmFilterSubscriptionsGet0(enginehandle: ::win32_foundation::HANDLE, entries: *mut *mut *mut FWPM_FILTER_SUBSCRIPTION0, numentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmFilterSubscriptionsGet0(enginehandle.into_param().abi(), ::core::mem::transmute(entries), ::core::mem::transmute(numentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmFilterUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
+pub unsafe fn FwpmFilterUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmFilterUnsubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, changehandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmFilterUnsubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, changehandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmFilterUnsubscribeChanges0(enginehandle.into_param().abi(), changehandle.into_param().abi()))
     }
@@ -6065,1246 +5941,1205 @@ pub unsafe fn FwpmGetAppIdFromFileName0<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmIPsecTunnelAdd0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param6: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT0, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT0, filterconditions: &[FWPM_FILTER_CONDITION0], sd: Param6) -> u32 {
+pub unsafe fn FwpmIPsecTunnelAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param6: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT0, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT0, filterconditions: &[FWPM_FILTER_CONDITION0], sd: Param6) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmIPsecTunnelAdd0(enginehandle: super::super::Foundation::HANDLE, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT0, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT0, numfilterconditions: u32, filterconditions: *const FWPM_FILTER_CONDITION0, sd: super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmIPsecTunnelAdd0(enginehandle: ::win32_foundation::HANDLE, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT0, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT0, numfilterconditions: u32, filterconditions: *const FWPM_FILTER_CONDITION0, sd: ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmIPsecTunnelAdd0(enginehandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(mainmodepolicy), ::core::mem::transmute(tunnelpolicy), filterconditions.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(filterconditions)), sd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmIPsecTunnelAdd1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param7: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT1, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT1, filterconditions: &[FWPM_FILTER_CONDITION0], keymodkey: *const ::windows_core::GUID, sd: Param7) -> u32 {
+pub unsafe fn FwpmIPsecTunnelAdd1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param7: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT1, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT1, filterconditions: &[FWPM_FILTER_CONDITION0], keymodkey: *const ::windows_core::GUID, sd: Param7) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmIPsecTunnelAdd1(enginehandle: super::super::Foundation::HANDLE, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT1, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT1, numfilterconditions: u32, filterconditions: *const FWPM_FILTER_CONDITION0, keymodkey: *const ::windows_core::GUID, sd: super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmIPsecTunnelAdd1(enginehandle: ::win32_foundation::HANDLE, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT1, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT1, numfilterconditions: u32, filterconditions: *const FWPM_FILTER_CONDITION0, keymodkey: *const ::windows_core::GUID, sd: ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmIPsecTunnelAdd1(enginehandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(mainmodepolicy), ::core::mem::transmute(tunnelpolicy), filterconditions.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(filterconditions)), ::core::mem::transmute(keymodkey), sd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmIPsecTunnelAdd2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param7: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT2, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT2, filterconditions: &[FWPM_FILTER_CONDITION0], keymodkey: *const ::windows_core::GUID, sd: Param7) -> u32 {
+pub unsafe fn FwpmIPsecTunnelAdd2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param7: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT2, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT2, filterconditions: &[FWPM_FILTER_CONDITION0], keymodkey: *const ::windows_core::GUID, sd: Param7) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmIPsecTunnelAdd2(enginehandle: super::super::Foundation::HANDLE, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT2, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT2, numfilterconditions: u32, filterconditions: *const FWPM_FILTER_CONDITION0, keymodkey: *const ::windows_core::GUID, sd: super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmIPsecTunnelAdd2(enginehandle: ::win32_foundation::HANDLE, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT2, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT2, numfilterconditions: u32, filterconditions: *const FWPM_FILTER_CONDITION0, keymodkey: *const ::windows_core::GUID, sd: ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmIPsecTunnelAdd2(enginehandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(mainmodepolicy), ::core::mem::transmute(tunnelpolicy), filterconditions.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(filterconditions)), ::core::mem::transmute(keymodkey), sd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmIPsecTunnelAdd3<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param7: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT3_, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT3_, filterconditions: &[FWPM_FILTER_CONDITION0], keymodkey: *const ::windows_core::GUID, sd: Param7) -> u32 {
+pub unsafe fn FwpmIPsecTunnelAdd3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param7: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT3_, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT3_, filterconditions: &[FWPM_FILTER_CONDITION0], keymodkey: *const ::windows_core::GUID, sd: Param7) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmIPsecTunnelAdd3(enginehandle: super::super::Foundation::HANDLE, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT3_, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT3_, numfilterconditions: u32, filterconditions: *const FWPM_FILTER_CONDITION0, keymodkey: *const ::windows_core::GUID, sd: super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmIPsecTunnelAdd3(enginehandle: ::win32_foundation::HANDLE, flags: u32, mainmodepolicy: *const FWPM_PROVIDER_CONTEXT3_, tunnelpolicy: *const FWPM_PROVIDER_CONTEXT3_, numfilterconditions: u32, filterconditions: *const FWPM_FILTER_CONDITION0, keymodkey: *const ::windows_core::GUID, sd: ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmIPsecTunnelAdd3(enginehandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(mainmodepolicy), ::core::mem::transmute(tunnelpolicy), filterconditions.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(filterconditions)), ::core::mem::transmute(keymodkey), sd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmIPsecTunnelDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
+pub unsafe fn FwpmIPsecTunnelDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmIPsecTunnelDeleteByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
+            fn FwpmIPsecTunnelDeleteByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
         }
         ::core::mem::transmute(FwpmIPsecTunnelDeleteByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmLayerCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_LAYER_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmLayerCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_LAYER_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmLayerCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const FWPM_LAYER_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmLayerCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const FWPM_LAYER_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmLayerCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmLayerDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn FwpmLayerDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmLayerDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmLayerDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmLayerDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmLayerEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_LAYER0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmLayerEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_LAYER0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmLayerEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_LAYER0, numentriesreturned: *mut u32) -> u32;
+            fn FwpmLayerEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_LAYER0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmLayerEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmLayerGetById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u16, layer: *mut *mut FWPM_LAYER0) -> u32 {
+pub unsafe fn FwpmLayerGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u16, layer: *mut *mut FWPM_LAYER0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmLayerGetById0(enginehandle: super::super::Foundation::HANDLE, id: u16, layer: *mut *mut FWPM_LAYER0) -> u32;
+            fn FwpmLayerGetById0(enginehandle: ::win32_foundation::HANDLE, id: u16, layer: *mut *mut FWPM_LAYER0) -> u32;
         }
         ::core::mem::transmute(FwpmLayerGetById0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(layer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmLayerGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, layer: *mut *mut FWPM_LAYER0) -> u32 {
+pub unsafe fn FwpmLayerGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, layer: *mut *mut FWPM_LAYER0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmLayerGetByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, layer: *mut *mut FWPM_LAYER0) -> u32;
+            fn FwpmLayerGetByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, layer: *mut *mut FWPM_LAYER0) -> u32;
         }
         ::core::mem::transmute(FwpmLayerGetByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(layer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmLayerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmLayerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmLayerGetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmLayerGetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmLayerGetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmLayerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmLayerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmLayerSetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmLayerSetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmLayerSetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_NET_EVENT_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmNetEventCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_NET_EVENT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const FWPM_NET_EVENT_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmNetEventCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const FWPM_NET_EVENT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmNetEventDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn FwpmNetEventDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmNetEventDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmNetEventEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT0, numentriesreturned: *mut u32) -> u32;
+            fn FwpmNetEventEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventEnum1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT1, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmNetEventEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT1, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventEnum1(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT1, numentriesreturned: *mut u32) -> u32;
+            fn FwpmNetEventEnum1(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT1, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventEnum1(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventEnum2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT2, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmNetEventEnum2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT2, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventEnum2(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT2, numentriesreturned: *mut u32) -> u32;
+            fn FwpmNetEventEnum2(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT2, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventEnum2(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventEnum3<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT3, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmNetEventEnum3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT3, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventEnum3(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT3, numentriesreturned: *mut u32) -> u32;
+            fn FwpmNetEventEnum3(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT3, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventEnum3(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventEnum4<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT4_, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmNetEventEnum4<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT4_, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventEnum4(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT4_, numentriesreturned: *mut u32) -> u32;
+            fn FwpmNetEventEnum4(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT4_, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventEnum4(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventEnum5<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT5_, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmNetEventEnum5<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT5_, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventEnum5(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT5_, numentriesreturned: *mut u32) -> u32;
+            fn FwpmNetEventEnum5(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_NET_EVENT5_, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventEnum5(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK0, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmNetEventSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK0, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventSubscribe0(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmNetEventSubscribe0(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventSubscribe0(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(eventshandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventSubscribe1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK1, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmNetEventSubscribe1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK1, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventSubscribe1(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmNetEventSubscribe1(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventSubscribe1(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(eventshandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventSubscribe2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK2, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmNetEventSubscribe2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK2, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventSubscribe2(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmNetEventSubscribe2(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventSubscribe2(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(eventshandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventSubscribe3<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK3, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmNetEventSubscribe3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK3, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventSubscribe3(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmNetEventSubscribe3(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventSubscribe3(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(eventshandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventSubscribe4<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK4, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmNetEventSubscribe4<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: FWPM_NET_EVENT_CALLBACK4, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventSubscribe4(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmNetEventSubscribe4(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_NET_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventSubscribe4(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(eventshandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_NET_EVENT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
+pub unsafe fn FwpmNetEventSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_NET_EVENT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventSubscriptionsGet0(enginehandle: super::super::Foundation::HANDLE, entries: *mut *mut *mut FWPM_NET_EVENT_SUBSCRIPTION0, numentries: *mut u32) -> u32;
+            fn FwpmNetEventSubscriptionsGet0(enginehandle: ::win32_foundation::HANDLE, entries: *mut *mut *mut FWPM_NET_EVENT_SUBSCRIPTION0, numentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventSubscriptionsGet0(enginehandle.into_param().abi(), ::core::mem::transmute(entries), ::core::mem::transmute(numentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmNetEventUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, eventshandle: Param1) -> u32 {
+pub unsafe fn FwpmNetEventUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, eventshandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventUnsubscribe0(enginehandle: super::super::Foundation::HANDLE, eventshandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmNetEventUnsubscribe0(enginehandle: ::win32_foundation::HANDLE, eventshandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventUnsubscribe0(enginehandle.into_param().abi(), eventshandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventsGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmNetEventsGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventsGetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmNetEventsGetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventsGetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmNetEventsSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmNetEventsSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmNetEventsSetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmNetEventsSetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmNetEventsSetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderAdd0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, provider: *const FWPM_PROVIDER0, sd: Param2) -> u32 {
+pub unsafe fn FwpmProviderAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, provider: *const FWPM_PROVIDER0, sd: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderAdd0(enginehandle: super::super::Foundation::HANDLE, provider: *const FWPM_PROVIDER0, sd: super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmProviderAdd0(enginehandle: ::win32_foundation::HANDLE, provider: *const FWPM_PROVIDER0, sd: ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmProviderAdd0(enginehandle.into_param().abi(), ::core::mem::transmute(provider), sd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextAdd0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT0, sd: Param2, id: *mut u64) -> u32 {
+pub unsafe fn FwpmProviderContextAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT0, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextAdd0(enginehandle: super::super::Foundation::HANDLE, providercontext: *const FWPM_PROVIDER_CONTEXT0, sd: super::super::Security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
+            fn FwpmProviderContextAdd0(enginehandle: ::win32_foundation::HANDLE, providercontext: *const FWPM_PROVIDER_CONTEXT0, sd: ::win32_security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextAdd0(enginehandle.into_param().abi(), ::core::mem::transmute(providercontext), sd.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextAdd1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT1, sd: Param2, id: *mut u64) -> u32 {
+pub unsafe fn FwpmProviderContextAdd1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT1, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextAdd1(enginehandle: super::super::Foundation::HANDLE, providercontext: *const FWPM_PROVIDER_CONTEXT1, sd: super::super::Security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
+            fn FwpmProviderContextAdd1(enginehandle: ::win32_foundation::HANDLE, providercontext: *const FWPM_PROVIDER_CONTEXT1, sd: ::win32_security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextAdd1(enginehandle.into_param().abi(), ::core::mem::transmute(providercontext), sd.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextAdd2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT2, sd: Param2, id: *mut u64) -> u32 {
+pub unsafe fn FwpmProviderContextAdd2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT2, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextAdd2(enginehandle: super::super::Foundation::HANDLE, providercontext: *const FWPM_PROVIDER_CONTEXT2, sd: super::super::Security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
+            fn FwpmProviderContextAdd2(enginehandle: ::win32_foundation::HANDLE, providercontext: *const FWPM_PROVIDER_CONTEXT2, sd: ::win32_security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextAdd2(enginehandle.into_param().abi(), ::core::mem::transmute(providercontext), sd.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextAdd3<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT3_, sd: Param2, id: *mut u64) -> u32 {
+pub unsafe fn FwpmProviderContextAdd3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, providercontext: *const FWPM_PROVIDER_CONTEXT3_, sd: Param2, id: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextAdd3(enginehandle: super::super::Foundation::HANDLE, providercontext: *const FWPM_PROVIDER_CONTEXT3_, sd: super::super::Security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
+            fn FwpmProviderContextAdd3(enginehandle: ::win32_foundation::HANDLE, providercontext: *const FWPM_PROVIDER_CONTEXT3_, sd: ::win32_security::PSECURITY_DESCRIPTOR, id: *mut u64) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextAdd3(enginehandle.into_param().abi(), ::core::mem::transmute(providercontext), sd.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderContextCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_PROVIDER_CONTEXT_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmProviderContextCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_PROVIDER_CONTEXT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const FWPM_PROVIDER_CONTEXT_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmProviderContextCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const FWPM_PROVIDER_CONTEXT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderContextDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
+pub unsafe fn FwpmProviderContextDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextDeleteById0(enginehandle: super::super::Foundation::HANDLE, id: u64) -> u32;
+            fn FwpmProviderContextDeleteById0(enginehandle: ::win32_foundation::HANDLE, id: u64) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextDeleteById0(enginehandle.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderContextDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
+pub unsafe fn FwpmProviderContextDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextDeleteByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
+            fn FwpmProviderContextDeleteByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextDeleteByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderContextDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn FwpmProviderContextDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmProviderContextDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmProviderContextEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT0, numentriesreturned: *mut u32) -> u32;
+            fn FwpmProviderContextEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextEnum1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT1, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmProviderContextEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT1, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextEnum1(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT1, numentriesreturned: *mut u32) -> u32;
+            fn FwpmProviderContextEnum1(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT1, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextEnum1(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextEnum2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT2, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmProviderContextEnum2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT2, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextEnum2(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT2, numentriesreturned: *mut u32) -> u32;
+            fn FwpmProviderContextEnum2(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT2, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextEnum2(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextEnum3<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT3_, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmProviderContextEnum3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT3_, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextEnum3(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT3_, numentriesreturned: *mut u32) -> u32;
+            fn FwpmProviderContextEnum3(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT3_, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextEnum3(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextGetById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32 {
+pub unsafe fn FwpmProviderContextGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextGetById0(enginehandle: super::super::Foundation::HANDLE, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32;
+            fn FwpmProviderContextGetById0(enginehandle: ::win32_foundation::HANDLE, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextGetById0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(providercontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextGetById1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32 {
+pub unsafe fn FwpmProviderContextGetById1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextGetById1(enginehandle: super::super::Foundation::HANDLE, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32;
+            fn FwpmProviderContextGetById1(enginehandle: ::win32_foundation::HANDLE, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextGetById1(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(providercontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextGetById2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32 {
+pub unsafe fn FwpmProviderContextGetById2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextGetById2(enginehandle: super::super::Foundation::HANDLE, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32;
+            fn FwpmProviderContextGetById2(enginehandle: ::win32_foundation::HANDLE, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextGetById2(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(providercontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextGetById3<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32 {
+pub unsafe fn FwpmProviderContextGetById3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextGetById3(enginehandle: super::super::Foundation::HANDLE, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32;
+            fn FwpmProviderContextGetById3(enginehandle: ::win32_foundation::HANDLE, id: u64, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextGetById3(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(providercontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32 {
+pub unsafe fn FwpmProviderContextGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextGetByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32;
+            fn FwpmProviderContextGetByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT0) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextGetByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(providercontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextGetByKey1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32 {
+pub unsafe fn FwpmProviderContextGetByKey1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextGetByKey1(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32;
+            fn FwpmProviderContextGetByKey1(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT1) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextGetByKey1(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(providercontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextGetByKey2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32 {
+pub unsafe fn FwpmProviderContextGetByKey2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextGetByKey2(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32;
+            fn FwpmProviderContextGetByKey2(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT2) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextGetByKey2(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(providercontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextGetByKey3<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32 {
+pub unsafe fn FwpmProviderContextGetByKey3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextGetByKey3(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32;
+            fn FwpmProviderContextGetByKey3(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, providercontext: *mut *mut FWPM_PROVIDER_CONTEXT3_) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextGetByKey3(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(providercontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmProviderContextGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextGetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmProviderContextGetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextGetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderContextSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmProviderContextSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextSetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmProviderContextSetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextSetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderContextSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0, callback: FWPM_PROVIDER_CONTEXT_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmProviderContextSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0, callback: FWPM_PROVIDER_CONTEXT_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextSubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmProviderContextSubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextSubscribeChanges0(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(changehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderContextSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
+pub unsafe fn FwpmProviderContextSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextSubscriptionsGet0(enginehandle: super::super::Foundation::HANDLE, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0, numentries: *mut u32) -> u32;
+            fn FwpmProviderContextSubscriptionsGet0(enginehandle: ::win32_foundation::HANDLE, entries: *mut *mut *mut FWPM_PROVIDER_CONTEXT_SUBSCRIPTION0, numentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextSubscriptionsGet0(enginehandle.into_param().abi(), ::core::mem::transmute(entries), ::core::mem::transmute(numentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderContextUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
+pub unsafe fn FwpmProviderContextUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderContextUnsubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, changehandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmProviderContextUnsubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, changehandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmProviderContextUnsubscribeChanges0(enginehandle.into_param().abi(), changehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_PROVIDER_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmProviderCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_PROVIDER_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const FWPM_PROVIDER_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmProviderCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const FWPM_PROVIDER_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmProviderCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
+pub unsafe fn FwpmProviderDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderDeleteByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
+            fn FwpmProviderDeleteByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
         }
         ::core::mem::transmute(FwpmProviderDeleteByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn FwpmProviderDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmProviderDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmProviderDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmProviderEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER0, numentriesreturned: *mut u32) -> u32;
+            fn FwpmProviderEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_PROVIDER0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmProviderEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, provider: *mut *mut FWPM_PROVIDER0) -> u32 {
+pub unsafe fn FwpmProviderGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, provider: *mut *mut FWPM_PROVIDER0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderGetByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, provider: *mut *mut FWPM_PROVIDER0) -> u32;
+            fn FwpmProviderGetByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, provider: *mut *mut FWPM_PROVIDER0) -> u32;
         }
         ::core::mem::transmute(FwpmProviderGetByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(provider)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmProviderGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderGetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmProviderGetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmProviderGetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmProviderSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmProviderSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderSetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmProviderSetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmProviderSetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_PROVIDER_SUBSCRIPTION0, callback: FWPM_PROVIDER_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmProviderSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_PROVIDER_SUBSCRIPTION0, callback: FWPM_PROVIDER_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderSubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_PROVIDER_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmProviderSubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_PROVIDER_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmProviderSubscribeChanges0(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(changehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_PROVIDER_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
+pub unsafe fn FwpmProviderSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_PROVIDER_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderSubscriptionsGet0(enginehandle: super::super::Foundation::HANDLE, entries: *mut *mut *mut FWPM_PROVIDER_SUBSCRIPTION0, numentries: *mut u32) -> u32;
+            fn FwpmProviderSubscriptionsGet0(enginehandle: ::win32_foundation::HANDLE, entries: *mut *mut *mut FWPM_PROVIDER_SUBSCRIPTION0, numentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmProviderSubscriptionsGet0(enginehandle.into_param().abi(), ::core::mem::transmute(entries), ::core::mem::transmute(numentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmProviderUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
+pub unsafe fn FwpmProviderUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmProviderUnsubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, changehandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmProviderUnsubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, changehandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmProviderUnsubscribeChanges0(enginehandle.into_param().abi(), changehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSessionCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_SESSION_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmSessionCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_SESSION_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSessionCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const FWPM_SESSION_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmSessionCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const FWPM_SESSION_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmSessionCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSessionDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn FwpmSessionDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSessionDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmSessionDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmSessionDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmSessionEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_SESSION0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmSessionEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_SESSION0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSessionEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_SESSION0, numentriesreturned: *mut u32) -> u32;
+            fn FwpmSessionEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_SESSION0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmSessionEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmSubLayerAdd0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, sublayer: *const FWPM_SUBLAYER0, sd: Param2) -> u32 {
+pub unsafe fn FwpmSubLayerAdd0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(enginehandle: Param0, sublayer: *const FWPM_SUBLAYER0, sd: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerAdd0(enginehandle: super::super::Foundation::HANDLE, sublayer: *const FWPM_SUBLAYER0, sd: super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmSubLayerAdd0(enginehandle: ::win32_foundation::HANDLE, sublayer: *const FWPM_SUBLAYER0, sd: ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerAdd0(enginehandle.into_param().abi(), ::core::mem::transmute(sublayer), sd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSubLayerCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_SUBLAYER_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmSubLayerCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const FWPM_SUBLAYER_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const FWPM_SUBLAYER_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmSubLayerCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const FWPM_SUBLAYER_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSubLayerDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
+pub unsafe fn FwpmSubLayerDeleteByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerDeleteByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
+            fn FwpmSubLayerDeleteByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerDeleteByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSubLayerDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn FwpmSubLayerDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmSubLayerDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSubLayerEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_SUBLAYER0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn FwpmSubLayerEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut FWPM_SUBLAYER0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_SUBLAYER0, numentriesreturned: *mut u32) -> u32;
+            fn FwpmSubLayerEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut FWPM_SUBLAYER0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSubLayerGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, sublayer: *mut *mut FWPM_SUBLAYER0) -> u32 {
+pub unsafe fn FwpmSubLayerGetByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, sublayer: *mut *mut FWPM_SUBLAYER0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerGetByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, sublayer: *mut *mut FWPM_SUBLAYER0) -> u32;
+            fn FwpmSubLayerGetByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, sublayer: *mut *mut FWPM_SUBLAYER0) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerGetByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(sublayer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmSubLayerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmSubLayerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerGetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmSubLayerGetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerGetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmSubLayerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmSubLayerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerSetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmSubLayerSetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, key: *const ::windows_core::GUID, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerSetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(key), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSubLayerSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_SUBLAYER_SUBSCRIPTION0, callback: FWPM_SUBLAYER_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmSubLayerSubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_SUBLAYER_SUBSCRIPTION0, callback: FWPM_SUBLAYER_CHANGE_CALLBACK0, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerSubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_SUBLAYER_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmSubLayerSubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_SUBLAYER_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, changehandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerSubscribeChanges0(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(changehandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSubLayerSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_SUBLAYER_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
+pub unsafe fn FwpmSubLayerSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut FWPM_SUBLAYER_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerSubscriptionsGet0(enginehandle: super::super::Foundation::HANDLE, entries: *mut *mut *mut FWPM_SUBLAYER_SUBSCRIPTION0, numentries: *mut u32) -> u32;
+            fn FwpmSubLayerSubscriptionsGet0(enginehandle: ::win32_foundation::HANDLE, entries: *mut *mut *mut FWPM_SUBLAYER_SUBSCRIPTION0, numentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerSubscriptionsGet0(enginehandle.into_param().abi(), ::core::mem::transmute(entries), ::core::mem::transmute(numentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSubLayerUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
+pub unsafe fn FwpmSubLayerUnsubscribeChanges0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, changehandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSubLayerUnsubscribeChanges0(enginehandle: super::super::Foundation::HANDLE, changehandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmSubLayerUnsubscribeChanges0(enginehandle: ::win32_foundation::HANDLE, changehandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmSubLayerUnsubscribeChanges0(enginehandle.into_param().abi(), changehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSystemPortsGet0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, sysports: *mut *mut FWPM_SYSTEM_PORTS0) -> u32 {
+pub unsafe fn FwpmSystemPortsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, sysports: *mut *mut FWPM_SYSTEM_PORTS0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSystemPortsGet0(enginehandle: super::super::Foundation::HANDLE, sysports: *mut *mut FWPM_SYSTEM_PORTS0) -> u32;
+            fn FwpmSystemPortsGet0(enginehandle: ::win32_foundation::HANDLE, sysports: *mut *mut FWPM_SYSTEM_PORTS0) -> u32;
         }
         ::core::mem::transmute(FwpmSystemPortsGet0(enginehandle.into_param().abi(), ::core::mem::transmute(sysports)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSystemPortsSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, reserved: *mut ::core::ffi::c_void, callback: FWPM_SYSTEM_PORTS_CALLBACK0, context: *const ::core::ffi::c_void, sysportshandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmSystemPortsSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, reserved: *mut ::core::ffi::c_void, callback: FWPM_SYSTEM_PORTS_CALLBACK0, context: *const ::core::ffi::c_void, sysportshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSystemPortsSubscribe0(enginehandle: super::super::Foundation::HANDLE, reserved: *mut ::core::ffi::c_void, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, sysportshandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmSystemPortsSubscribe0(enginehandle: ::win32_foundation::HANDLE, reserved: *mut ::core::ffi::c_void, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, sysportshandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmSystemPortsSubscribe0(enginehandle.into_param().abi(), ::core::mem::transmute(reserved), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(sysportshandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmSystemPortsUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, sysportshandle: Param1) -> u32 {
+pub unsafe fn FwpmSystemPortsUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, sysportshandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmSystemPortsUnsubscribe0(enginehandle: super::super::Foundation::HANDLE, sysportshandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmSystemPortsUnsubscribe0(enginehandle: ::win32_foundation::HANDLE, sysportshandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmSystemPortsUnsubscribe0(enginehandle.into_param().abi(), sysportshandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmTransactionAbort0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0) -> u32 {
+pub unsafe fn FwpmTransactionAbort0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmTransactionAbort0(enginehandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmTransactionAbort0(enginehandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmTransactionAbort0(enginehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmTransactionBegin0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, flags: u32) -> u32 {
+pub unsafe fn FwpmTransactionBegin0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, flags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmTransactionBegin0(enginehandle: super::super::Foundation::HANDLE, flags: u32) -> u32;
+            fn FwpmTransactionBegin0(enginehandle: ::win32_foundation::HANDLE, flags: u32) -> u32;
         }
         ::core::mem::transmute(FwpmTransactionBegin0(enginehandle.into_param().abi(), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmTransactionCommit0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0) -> u32 {
+pub unsafe fn FwpmTransactionCommit0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmTransactionCommit0(enginehandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmTransactionCommit0(enginehandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmTransactionCommit0(enginehandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmvSwitchEventSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_VSWITCH_EVENT_SUBSCRIPTION0, callback: FWPM_VSWITCH_EVENT_CALLBACK0, context: *const ::core::ffi::c_void, subscriptionhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn FwpmvSwitchEventSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const FWPM_VSWITCH_EVENT_SUBSCRIPTION0, callback: FWPM_VSWITCH_EVENT_CALLBACK0, context: *const ::core::ffi::c_void, subscriptionhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmvSwitchEventSubscribe0(enginehandle: super::super::Foundation::HANDLE, subscription: *const FWPM_VSWITCH_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, subscriptionhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn FwpmvSwitchEventSubscribe0(enginehandle: ::win32_foundation::HANDLE, subscription: *const FWPM_VSWITCH_EVENT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, subscriptionhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmvSwitchEventSubscribe0(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(subscriptionhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FwpmvSwitchEventUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscriptionhandle: Param1) -> u32 {
+pub unsafe fn FwpmvSwitchEventUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscriptionhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmvSwitchEventUnsubscribe0(enginehandle: super::super::Foundation::HANDLE, subscriptionhandle: super::super::Foundation::HANDLE) -> u32;
+            fn FwpmvSwitchEventUnsubscribe0(enginehandle: ::win32_foundation::HANDLE, subscriptionhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(FwpmvSwitchEventUnsubscribe0(enginehandle.into_param().abi(), subscriptionhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmvSwitchEventsGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn FwpmvSwitchEventsGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmvSwitchEventsGetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn FwpmvSwitchEventsGetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(FwpmvSwitchEventsGetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FwpmvSwitchEventsSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn FwpmvSwitchEventsSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FwpmvSwitchEventsSetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn FwpmvSwitchEventsSetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(FwpmvSwitchEventsSetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
@@ -10339,33 +10174,33 @@ impl ::core::default::Default for IKEEXT_SA_DETAILS2_0 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct IKEEXT_SA_ENUM_TEMPLATE0 {
     pub localSubNet: FWP_CONDITION_VALUE0,
     pub remoteSubNet: FWP_CONDITION_VALUE0,
     pub localMainModeCertHash: FWP_BYTE_BLOB,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IKEEXT_SA_ENUM_TEMPLATE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IKEEXT_SA_ENUM_TEMPLATE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IKEEXT_SA_ENUM_TEMPLATE0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IKEEXT_SA_ENUM_TEMPLATE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IKEEXT_SA_ENUM_TEMPLATE0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IKEEXT_SA_ENUM_TEMPLATE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IKEEXT_SA_ENUM_TEMPLATE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11533,7 +11368,7 @@ impl ::core::default::Default for IPSEC_KEY_MANAGER0 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct IPSEC_KEY_MANAGER_CALLBACKS0 {
     pub reserved: ::windows_core::GUID,
     pub flags: u32,
@@ -11541,44 +11376,43 @@ pub struct IPSEC_KEY_MANAGER_CALLBACKS0 {
     pub keyDictation: IPSEC_KEY_MANAGER_DICTATE_KEY0,
     pub keyNotify: IPSEC_KEY_MANAGER_NOTIFY_KEY0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IPSEC_KEY_MANAGER_CALLBACKS0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IPSEC_KEY_MANAGER_CALLBACKS0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for IPSEC_KEY_MANAGER_CALLBACKS0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IPSEC_KEY_MANAGER_CALLBACKS0").field("reserved", &self.reserved).field("flags", &self.flags).field("keyDictationCheck", &self.keyDictationCheck.map(|f| f as usize)).field("keyDictation", &self.keyDictation.map(|f| f as usize)).field("keyNotify", &self.keyNotify.map(|f| f as usize)).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IPSEC_KEY_MANAGER_CALLBACKS0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IPSEC_KEY_MANAGER_CALLBACKS0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_KEY_MANAGER_CALLBACKS0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IPSEC_KEY_MANAGER_CALLBACKS0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IPSEC_KEY_MANAGER_CALLBACKS0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-pub type IPSEC_KEY_MANAGER_DICTATE_KEY0 = ::core::option::Option<unsafe extern "system" fn(inboundsadetails: *mut IPSEC_SA_DETAILS1, outboundsadetails: *mut IPSEC_SA_DETAILS1, keyingmodulegenkey: *mut super::super::Foundation::BOOL) -> u32>;
+#[cfg(feature = "Win32_Security")]
+pub type IPSEC_KEY_MANAGER_DICTATE_KEY0 = ::core::option::Option<unsafe extern "system" fn(inboundsadetails: *mut IPSEC_SA_DETAILS1, outboundsadetails: *mut IPSEC_SA_DETAILS1, keyingmodulegenkey: *mut ::win32_foundation::BOOL) -> u32>;
 pub const IPSEC_KEY_MANAGER_FLAG_DICTATE_KEY: u32 = 1u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type IPSEC_KEY_MANAGER_KEY_DICTATION_CHECK0 = ::core::option::Option<unsafe extern "system" fn(iketraffic: *const IKEEXT_TRAFFIC0, willdictatekey: *mut super::super::Foundation::BOOL, weight: *mut u32)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+pub type IPSEC_KEY_MANAGER_KEY_DICTATION_CHECK0 = ::core::option::Option<unsafe extern "system" fn(iketraffic: *const IKEEXT_TRAFFIC0, willdictatekey: *mut ::win32_foundation::BOOL, weight: *mut u32)>;
+#[cfg(feature = "Win32_Security")]
 pub type IPSEC_KEY_MANAGER_NOTIFY_KEY0 = ::core::option::Option<unsafe extern "system" fn(inboundsa: *const IPSEC_SA_DETAILS1, outboundsa: *const IPSEC_SA_DETAILS1)>;
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -12052,78 +11886,78 @@ impl ::core::default::Default for IPSEC_SA_CIPHER_INFORMATION0 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct IPSEC_SA_CONTEXT0 {
     pub saContextId: u64,
     pub inboundSa: *mut IPSEC_SA_DETAILS0,
     pub outboundSa: *mut IPSEC_SA_DETAILS0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IPSEC_SA_CONTEXT0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IPSEC_SA_CONTEXT0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for IPSEC_SA_CONTEXT0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IPSEC_SA_CONTEXT0").field("saContextId", &self.saContextId).field("inboundSa", &self.inboundSa).field("outboundSa", &self.outboundSa).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_CONTEXT0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_CONTEXT0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_CONTEXT0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IPSEC_SA_CONTEXT0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IPSEC_SA_CONTEXT0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct IPSEC_SA_CONTEXT1 {
     pub saContextId: u64,
     pub inboundSa: *mut IPSEC_SA_DETAILS1,
     pub outboundSa: *mut IPSEC_SA_DETAILS1,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IPSEC_SA_CONTEXT1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IPSEC_SA_CONTEXT1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for IPSEC_SA_CONTEXT1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IPSEC_SA_CONTEXT1").field("saContextId", &self.saContextId).field("inboundSa", &self.inboundSa).field("outboundSa", &self.outboundSa).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_CONTEXT1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_CONTEXT1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_CONTEXT1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IPSEC_SA_CONTEXT1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IPSEC_SA_CONTEXT1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12161,32 +11995,32 @@ impl ::core::default::Default for IPSEC_SA_CONTEXT_CHANGE0 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     pub localSubNet: FWP_CONDITION_VALUE0,
     pub remoteSubNet: FWP_CONDITION_VALUE0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_CONTEXT_ENUM_TEMPLATE0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IPSEC_SA_CONTEXT_ENUM_TEMPLATE0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12218,46 +12052,46 @@ impl ::core::fmt::Debug for IPSEC_SA_CONTEXT_EVENT_TYPE0 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     pub enumTemplate: *mut IPSEC_SA_CONTEXT_ENUM_TEMPLATE0,
     pub flags: u32,
     pub sessionKey: ::windows_core::GUID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IPSEC_SA_CONTEXT_SUBSCRIPTION0").field("enumTemplate", &self.enumTemplate).field("flags", &self.flags).field("sessionKey", &self.sessionKey).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_CONTEXT_SUBSCRIPTION0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IPSEC_SA_CONTEXT_SUBSCRIPTION0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct IPSEC_SA_DETAILS0 {
     pub ipVersion: FWP_IP_VERSION,
     pub saDirection: FWP_DIRECTION,
@@ -12266,65 +12100,65 @@ pub struct IPSEC_SA_DETAILS0 {
     pub Anonymous: IPSEC_SA_DETAILS0_0,
     pub transportFilter: *mut FWPM_FILTER0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IPSEC_SA_DETAILS0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IPSEC_SA_DETAILS0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_DETAILS0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_DETAILS0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_DETAILS0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IPSEC_SA_DETAILS0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IPSEC_SA_DETAILS0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union IPSEC_SA_DETAILS0_0 {
     pub udpEncapsulation: *mut IPSEC_V4_UDP_ENCAPSULATION0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IPSEC_SA_DETAILS0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IPSEC_SA_DETAILS0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_DETAILS0_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_DETAILS0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_DETAILS0_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IPSEC_SA_DETAILS0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IPSEC_SA_DETAILS0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct IPSEC_SA_DETAILS1 {
     pub ipVersion: FWP_IP_VERSION,
     pub saDirection: FWP_DIRECTION,
@@ -12334,58 +12168,58 @@ pub struct IPSEC_SA_DETAILS1 {
     pub transportFilter: *mut FWPM_FILTER0,
     pub virtualIfTunnelInfo: IPSEC_VIRTUAL_IF_TUNNEL_INFO0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IPSEC_SA_DETAILS1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IPSEC_SA_DETAILS1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_DETAILS1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_DETAILS1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_DETAILS1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IPSEC_SA_DETAILS1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IPSEC_SA_DETAILS1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union IPSEC_SA_DETAILS1_0 {
     pub udpEncapsulation: *mut IPSEC_V4_UDP_ENCAPSULATION0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for IPSEC_SA_DETAILS1_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for IPSEC_SA_DETAILS1_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for IPSEC_SA_DETAILS1_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for IPSEC_SA_DETAILS1_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IPSEC_SA_DETAILS1_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for IPSEC_SA_DETAILS1_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for IPSEC_SA_DETAILS1_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -13721,742 +13555,709 @@ impl ::core::default::Default for IPSEC_VIRTUAL_IF_TUNNEL_INFO0 {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecDospGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn IPsecDospGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecDospGetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn IPsecDospGetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(IPsecDospGetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecDospGetStatistics0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, idpstatistics: *mut IPSEC_DOSP_STATISTICS0) -> u32 {
+pub unsafe fn IPsecDospGetStatistics0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, idpstatistics: *mut IPSEC_DOSP_STATISTICS0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecDospGetStatistics0(enginehandle: super::super::Foundation::HANDLE, idpstatistics: *mut IPSEC_DOSP_STATISTICS0) -> u32;
+            fn IPsecDospGetStatistics0(enginehandle: ::win32_foundation::HANDLE, idpstatistics: *mut IPSEC_DOSP_STATISTICS0) -> u32;
         }
         ::core::mem::transmute(IPsecDospGetStatistics0(enginehandle.into_param().abi(), ::core::mem::transmute(idpstatistics)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecDospSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn IPsecDospSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecDospSetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn IPsecDospSetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(IPsecDospSetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecDospStateCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IPSEC_DOSP_STATE_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn IPsecDospStateCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IPSEC_DOSP_STATE_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecDospStateCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const IPSEC_DOSP_STATE_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn IPsecDospStateCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const IPSEC_DOSP_STATE_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecDospStateCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecDospStateDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn IPsecDospStateDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecDospStateDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn IPsecDospStateDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecDospStateDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecDospStateEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_DOSP_STATE0, numentries: *mut u32) -> u32 {
+pub unsafe fn IPsecDospStateEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_DOSP_STATE0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecDospStateEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_DOSP_STATE0, numentries: *mut u32) -> u32;
+            fn IPsecDospStateEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_DOSP_STATE0, numentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(IPsecDospStateEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecGetStatistics0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, ipsecstatistics: *mut IPSEC_STATISTICS0) -> u32 {
+pub unsafe fn IPsecGetStatistics0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, ipsecstatistics: *mut IPSEC_STATISTICS0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecGetStatistics0(enginehandle: super::super::Foundation::HANDLE, ipsecstatistics: *mut IPSEC_STATISTICS0) -> u32;
+            fn IPsecGetStatistics0(enginehandle: ::win32_foundation::HANDLE, ipsecstatistics: *mut IPSEC_STATISTICS0) -> u32;
         }
         ::core::mem::transmute(IPsecGetStatistics0(enginehandle.into_param().abi(), ::core::mem::transmute(ipsecstatistics)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecGetStatistics1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, ipsecstatistics: *mut IPSEC_STATISTICS1) -> u32 {
+pub unsafe fn IPsecGetStatistics1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, ipsecstatistics: *mut IPSEC_STATISTICS1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecGetStatistics1(enginehandle: super::super::Foundation::HANDLE, ipsecstatistics: *mut IPSEC_STATISTICS1) -> u32;
+            fn IPsecGetStatistics1(enginehandle: ::win32_foundation::HANDLE, ipsecstatistics: *mut IPSEC_STATISTICS1) -> u32;
         }
         ::core::mem::transmute(IPsecGetStatistics1(enginehandle.into_param().abi(), ::core::mem::transmute(ipsecstatistics)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecKeyManagerAddAndRegister0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, keymanager: *const IPSEC_KEY_MANAGER0, keymanagercallbacks: *const IPSEC_KEY_MANAGER_CALLBACKS0, keymgmthandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn IPsecKeyManagerAddAndRegister0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, keymanager: *const IPSEC_KEY_MANAGER0, keymanagercallbacks: *const IPSEC_KEY_MANAGER_CALLBACKS0, keymgmthandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecKeyManagerAddAndRegister0(enginehandle: super::super::Foundation::HANDLE, keymanager: *const IPSEC_KEY_MANAGER0, keymanagercallbacks: *const IPSEC_KEY_MANAGER_CALLBACKS0, keymgmthandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn IPsecKeyManagerAddAndRegister0(enginehandle: ::win32_foundation::HANDLE, keymanager: *const IPSEC_KEY_MANAGER0, keymanagercallbacks: *const IPSEC_KEY_MANAGER_CALLBACKS0, keymgmthandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecKeyManagerAddAndRegister0(enginehandle.into_param().abi(), ::core::mem::transmute(keymanager), ::core::mem::transmute(keymanagercallbacks), ::core::mem::transmute(keymgmthandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecKeyManagerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn IPsecKeyManagerGetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecKeyManagerGetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn IPsecKeyManagerGetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(IPsecKeyManagerGetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(reserved), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecKeyManagerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn IPsecKeyManagerSetSecurityInfoByKey0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecKeyManagerSetSecurityInfoByKey0(enginehandle: super::super::Foundation::HANDLE, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn IPsecKeyManagerSetSecurityInfoByKey0(enginehandle: ::win32_foundation::HANDLE, reserved: *const ::core::ffi::c_void, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(IPsecKeyManagerSetSecurityInfoByKey0(enginehandle.into_param().abi(), ::core::mem::transmute(reserved), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecKeyManagerUnregisterAndDelete0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, keymgmthandle: Param1) -> u32 {
+pub unsafe fn IPsecKeyManagerUnregisterAndDelete0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, keymgmthandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecKeyManagerUnregisterAndDelete0(enginehandle: super::super::Foundation::HANDLE, keymgmthandle: super::super::Foundation::HANDLE) -> u32;
+            fn IPsecKeyManagerUnregisterAndDelete0(enginehandle: ::win32_foundation::HANDLE, keymgmthandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecKeyManagerUnregisterAndDelete0(enginehandle.into_param().abi(), keymgmthandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecKeyManagersGet0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut IPSEC_KEY_MANAGER0, numentries: *mut u32) -> u32 {
+pub unsafe fn IPsecKeyManagersGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut IPSEC_KEY_MANAGER0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecKeyManagersGet0(enginehandle: super::super::Foundation::HANDLE, entries: *mut *mut *mut IPSEC_KEY_MANAGER0, numentries: *mut u32) -> u32;
+            fn IPsecKeyManagersGet0(enginehandle: ::win32_foundation::HANDLE, entries: *mut *mut *mut IPSEC_KEY_MANAGER0, numentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(IPsecKeyManagersGet0(enginehandle.into_param().abi(), ::core::mem::transmute(entries), ::core::mem::transmute(numentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextAddInbound0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, inboundbundle: *const IPSEC_SA_BUNDLE0) -> u32 {
+pub unsafe fn IPsecSaContextAddInbound0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, inboundbundle: *const IPSEC_SA_BUNDLE0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextAddInbound0(enginehandle: super::super::Foundation::HANDLE, id: u64, inboundbundle: *const IPSEC_SA_BUNDLE0) -> u32;
+            fn IPsecSaContextAddInbound0(enginehandle: ::win32_foundation::HANDLE, id: u64, inboundbundle: *const IPSEC_SA_BUNDLE0) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextAddInbound0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(inboundbundle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextAddInbound1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, inboundbundle: *const IPSEC_SA_BUNDLE1) -> u32 {
+pub unsafe fn IPsecSaContextAddInbound1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, inboundbundle: *const IPSEC_SA_BUNDLE1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextAddInbound1(enginehandle: super::super::Foundation::HANDLE, id: u64, inboundbundle: *const IPSEC_SA_BUNDLE1) -> u32;
+            fn IPsecSaContextAddInbound1(enginehandle: ::win32_foundation::HANDLE, id: u64, inboundbundle: *const IPSEC_SA_BUNDLE1) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextAddInbound1(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(inboundbundle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextAddOutbound0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, outboundbundle: *const IPSEC_SA_BUNDLE0) -> u32 {
+pub unsafe fn IPsecSaContextAddOutbound0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, outboundbundle: *const IPSEC_SA_BUNDLE0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextAddOutbound0(enginehandle: super::super::Foundation::HANDLE, id: u64, outboundbundle: *const IPSEC_SA_BUNDLE0) -> u32;
+            fn IPsecSaContextAddOutbound0(enginehandle: ::win32_foundation::HANDLE, id: u64, outboundbundle: *const IPSEC_SA_BUNDLE0) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextAddOutbound0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(outboundbundle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextAddOutbound1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, outboundbundle: *const IPSEC_SA_BUNDLE1) -> u32 {
+pub unsafe fn IPsecSaContextAddOutbound1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, outboundbundle: *const IPSEC_SA_BUNDLE1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextAddOutbound1(enginehandle: super::super::Foundation::HANDLE, id: u64, outboundbundle: *const IPSEC_SA_BUNDLE1) -> u32;
+            fn IPsecSaContextAddOutbound1(enginehandle: ::win32_foundation::HANDLE, id: u64, outboundbundle: *const IPSEC_SA_BUNDLE1) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextAddOutbound1(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(outboundbundle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextCreate0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, outboundtraffic: *const IPSEC_TRAFFIC0, inboundfilterid: *mut u64, id: *mut u64) -> u32 {
+pub unsafe fn IPsecSaContextCreate0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, outboundtraffic: *const IPSEC_TRAFFIC0, inboundfilterid: *mut u64, id: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextCreate0(enginehandle: super::super::Foundation::HANDLE, outboundtraffic: *const IPSEC_TRAFFIC0, inboundfilterid: *mut u64, id: *mut u64) -> u32;
+            fn IPsecSaContextCreate0(enginehandle: ::win32_foundation::HANDLE, outboundtraffic: *const IPSEC_TRAFFIC0, inboundfilterid: *mut u64, id: *mut u64) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextCreate0(enginehandle.into_param().abi(), ::core::mem::transmute(outboundtraffic), ::core::mem::transmute(inboundfilterid), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextCreate1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, outboundtraffic: *const IPSEC_TRAFFIC1, virtualiftunnelinfo: *const IPSEC_VIRTUAL_IF_TUNNEL_INFO0, inboundfilterid: *mut u64, id: *mut u64) -> u32 {
+pub unsafe fn IPsecSaContextCreate1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, outboundtraffic: *const IPSEC_TRAFFIC1, virtualiftunnelinfo: *const IPSEC_VIRTUAL_IF_TUNNEL_INFO0, inboundfilterid: *mut u64, id: *mut u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextCreate1(enginehandle: super::super::Foundation::HANDLE, outboundtraffic: *const IPSEC_TRAFFIC1, virtualiftunnelinfo: *const IPSEC_VIRTUAL_IF_TUNNEL_INFO0, inboundfilterid: *mut u64, id: *mut u64) -> u32;
+            fn IPsecSaContextCreate1(enginehandle: ::win32_foundation::HANDLE, outboundtraffic: *const IPSEC_TRAFFIC1, virtualiftunnelinfo: *const IPSEC_VIRTUAL_IF_TUNNEL_INFO0, inboundfilterid: *mut u64, id: *mut u64) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextCreate1(enginehandle.into_param().abi(), ::core::mem::transmute(outboundtraffic), ::core::mem::transmute(virtualiftunnelinfo), ::core::mem::transmute(inboundfilterid), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaContextCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IPSEC_SA_CONTEXT_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn IPsecSaContextCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IPSEC_SA_CONTEXT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const IPSEC_SA_CONTEXT_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn IPsecSaContextCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const IPSEC_SA_CONTEXT_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
+pub unsafe fn IPsecSaContextDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextDeleteById0(enginehandle: super::super::Foundation::HANDLE, id: u64) -> u32;
+            fn IPsecSaContextDeleteById0(enginehandle: ::win32_foundation::HANDLE, id: u64) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextDeleteById0(enginehandle.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn IPsecSaContextDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn IPsecSaContextDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaContextEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn IPsecSaContextEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT0, numentriesreturned: *mut u32) -> u32;
+            fn IPsecSaContextEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaContextEnum1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT1, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn IPsecSaContextEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT1, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextEnum1(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT1, numentriesreturned: *mut u32) -> u32;
+            fn IPsecSaContextEnum1(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_CONTEXT1, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextEnum1(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextExpire0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
+pub unsafe fn IPsecSaContextExpire0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextExpire0(enginehandle: super::super::Foundation::HANDLE, id: u64) -> u32;
+            fn IPsecSaContextExpire0(enginehandle: ::win32_foundation::HANDLE, id: u64) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextExpire0(enginehandle.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaContextGetById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT0) -> u32 {
+pub unsafe fn IPsecSaContextGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextGetById0(enginehandle: super::super::Foundation::HANDLE, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT0) -> u32;
+            fn IPsecSaContextGetById0(enginehandle: ::win32_foundation::HANDLE, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT0) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextGetById0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(sacontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaContextGetById1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT1) -> u32 {
+pub unsafe fn IPsecSaContextGetById1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextGetById1(enginehandle: super::super::Foundation::HANDLE, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT1) -> u32;
+            fn IPsecSaContextGetById1(enginehandle: ::win32_foundation::HANDLE, id: u64, sacontext: *mut *mut IPSEC_SA_CONTEXT1) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextGetById1(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(sacontext)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextGetSpi0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, getspi: *const IPSEC_GETSPI0, inboundspi: *mut u32) -> u32 {
+pub unsafe fn IPsecSaContextGetSpi0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, getspi: *const IPSEC_GETSPI0, inboundspi: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextGetSpi0(enginehandle: super::super::Foundation::HANDLE, id: u64, getspi: *const IPSEC_GETSPI0, inboundspi: *mut u32) -> u32;
+            fn IPsecSaContextGetSpi0(enginehandle: ::win32_foundation::HANDLE, id: u64, getspi: *const IPSEC_GETSPI0, inboundspi: *mut u32) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextGetSpi0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(getspi), ::core::mem::transmute(inboundspi)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextGetSpi1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, getspi: *const IPSEC_GETSPI1, inboundspi: *mut u32) -> u32 {
+pub unsafe fn IPsecSaContextGetSpi1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, getspi: *const IPSEC_GETSPI1, inboundspi: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextGetSpi1(enginehandle: super::super::Foundation::HANDLE, id: u64, getspi: *const IPSEC_GETSPI1, inboundspi: *mut u32) -> u32;
+            fn IPsecSaContextGetSpi1(enginehandle: ::win32_foundation::HANDLE, id: u64, getspi: *const IPSEC_GETSPI1, inboundspi: *mut u32) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextGetSpi1(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(getspi), ::core::mem::transmute(inboundspi)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextSetSpi0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, getspi: *const IPSEC_GETSPI1, inboundspi: u32) -> u32 {
+pub unsafe fn IPsecSaContextSetSpi0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, getspi: *const IPSEC_GETSPI1, inboundspi: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextSetSpi0(enginehandle: super::super::Foundation::HANDLE, id: u64, getspi: *const IPSEC_GETSPI1, inboundspi: u32) -> u32;
+            fn IPsecSaContextSetSpi0(enginehandle: ::win32_foundation::HANDLE, id: u64, getspi: *const IPSEC_GETSPI1, inboundspi: u32) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextSetSpi0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(getspi), ::core::mem::transmute(inboundspi)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaContextSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, subscription: *const IPSEC_SA_CONTEXT_SUBSCRIPTION0, callback: IPSEC_SA_CONTEXT_CALLBACK0, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn IPsecSaContextSubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, subscription: *const IPSEC_SA_CONTEXT_SUBSCRIPTION0, callback: IPSEC_SA_CONTEXT_CALLBACK0, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextSubscribe0(enginehandle: super::super::Foundation::HANDLE, subscription: *const IPSEC_SA_CONTEXT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn IPsecSaContextSubscribe0(enginehandle: ::win32_foundation::HANDLE, subscription: *const IPSEC_SA_CONTEXT_SUBSCRIPTION0, callback: ::windows_core::RawPtr, context: *const ::core::ffi::c_void, eventshandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextSubscribe0(enginehandle.into_param().abi(), ::core::mem::transmute(subscription), ::core::mem::transmute(callback), ::core::mem::transmute(context), ::core::mem::transmute(eventshandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaContextSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut IPSEC_SA_CONTEXT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
+pub unsafe fn IPsecSaContextSubscriptionsGet0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, entries: *mut *mut *mut IPSEC_SA_CONTEXT_SUBSCRIPTION0, numentries: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextSubscriptionsGet0(enginehandle: super::super::Foundation::HANDLE, entries: *mut *mut *mut IPSEC_SA_CONTEXT_SUBSCRIPTION0, numentries: *mut u32) -> u32;
+            fn IPsecSaContextSubscriptionsGet0(enginehandle: ::win32_foundation::HANDLE, entries: *mut *mut *mut IPSEC_SA_CONTEXT_SUBSCRIPTION0, numentries: *mut u32) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextSubscriptionsGet0(enginehandle.into_param().abi(), ::core::mem::transmute(entries), ::core::mem::transmute(numentries)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaContextUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, eventshandle: Param1) -> u32 {
+pub unsafe fn IPsecSaContextUnsubscribe0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, eventshandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextUnsubscribe0(enginehandle: super::super::Foundation::HANDLE, eventshandle: super::super::Foundation::HANDLE) -> u32;
+            fn IPsecSaContextUnsubscribe0(enginehandle: ::win32_foundation::HANDLE, eventshandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextUnsubscribe0(enginehandle.into_param().abi(), eventshandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaContextUpdate0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, flags: u64, newvalues: *const IPSEC_SA_CONTEXT1) -> u32 {
+pub unsafe fn IPsecSaContextUpdate0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, flags: u64, newvalues: *const IPSEC_SA_CONTEXT1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaContextUpdate0(enginehandle: super::super::Foundation::HANDLE, flags: u64, newvalues: *const IPSEC_SA_CONTEXT1) -> u32;
+            fn IPsecSaContextUpdate0(enginehandle: ::win32_foundation::HANDLE, flags: u64, newvalues: *const IPSEC_SA_CONTEXT1) -> u32;
         }
         ::core::mem::transmute(IPsecSaContextUpdate0(enginehandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(newvalues)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IPSEC_SA_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn IPsecSaCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IPSEC_SA_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const IPSEC_SA_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn IPsecSaCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const IPSEC_SA_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecSaCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaDbGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn IPsecSaDbGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaDbGetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn IPsecSaDbGetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(IPsecSaDbGetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaDbSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn IPsecSaDbSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaDbSetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn IPsecSaDbSetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(IPsecSaDbSetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IPsecSaDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn IPsecSaDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn IPsecSaDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IPsecSaDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn IPsecSaEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS0, numentriesreturned: *mut u32) -> u32;
+            fn IPsecSaEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(IPsecSaEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IPsecSaEnum1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS1, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn IPsecSaEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS1, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IPsecSaEnum1(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS1, numentriesreturned: *mut u32) -> u32;
+            fn IPsecSaEnum1(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IPSEC_SA_DETAILS1, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(IPsecSaEnum1(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextGetStatistics0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, ikeextstatistics: *mut IKEEXT_STATISTICS0) -> u32 {
+pub unsafe fn IkeextGetStatistics0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, ikeextstatistics: *mut IKEEXT_STATISTICS0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextGetStatistics0(enginehandle: super::super::Foundation::HANDLE, ikeextstatistics: *mut IKEEXT_STATISTICS0) -> u32;
+            fn IkeextGetStatistics0(enginehandle: ::win32_foundation::HANDLE, ikeextstatistics: *mut IKEEXT_STATISTICS0) -> u32;
         }
         ::core::mem::transmute(IkeextGetStatistics0(enginehandle.into_param().abi(), ::core::mem::transmute(ikeextstatistics)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextGetStatistics1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, ikeextstatistics: *mut IKEEXT_STATISTICS1) -> u32 {
+pub unsafe fn IkeextGetStatistics1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, ikeextstatistics: *mut IKEEXT_STATISTICS1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextGetStatistics1(enginehandle: super::super::Foundation::HANDLE, ikeextstatistics: *mut IKEEXT_STATISTICS1) -> u32;
+            fn IkeextGetStatistics1(enginehandle: ::win32_foundation::HANDLE, ikeextstatistics: *mut IKEEXT_STATISTICS1) -> u32;
         }
         ::core::mem::transmute(IkeextGetStatistics1(enginehandle.into_param().abi(), ::core::mem::transmute(ikeextstatistics)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IkeextSaCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IKEEXT_SA_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn IkeextSaCreateEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumtemplate: *const IKEEXT_SA_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaCreateEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumtemplate: *const IKEEXT_SA_ENUM_TEMPLATE0, enumhandle: *mut super::super::Foundation::HANDLE) -> u32;
+            fn IkeextSaCreateEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumtemplate: *const IKEEXT_SA_ENUM_TEMPLATE0, enumhandle: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IkeextSaCreateEnumHandle0(enginehandle.into_param().abi(), ::core::mem::transmute(enumtemplate), ::core::mem::transmute(enumhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IkeextSaDbGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32 {
+pub unsafe fn IkeextSaDbGetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaDbGetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *mut super::super::Foundation::PSID, sidgroup: *mut super::super::Foundation::PSID, dacl: *mut *mut super::super::Security::ACL, sacl: *mut *mut super::super::Security::ACL, securitydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn IkeextSaDbGetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *mut ::win32_foundation::PSID, sidgroup: *mut ::win32_foundation::PSID, dacl: *mut *mut ::win32_security::ACL, sacl: *mut *mut ::win32_security::ACL, securitydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(IkeextSaDbGetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl), ::core::mem::transmute(securitydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn IkeextSaDbSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32 {
+pub unsafe fn IkeextSaDbSetSecurityInfo0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaDbSetSecurityInfo0(enginehandle: super::super::Foundation::HANDLE, securityinfo: u32, sidowner: *const super::super::Security::SID, sidgroup: *const super::super::Security::SID, dacl: *const super::super::Security::ACL, sacl: *const super::super::Security::ACL) -> u32;
+            fn IkeextSaDbSetSecurityInfo0(enginehandle: ::win32_foundation::HANDLE, securityinfo: u32, sidowner: *const ::win32_security::SID, sidgroup: *const ::win32_security::SID, dacl: *const ::win32_security::ACL, sacl: *const ::win32_security::ACL) -> u32;
         }
         ::core::mem::transmute(IkeextSaDbSetSecurityInfo0(enginehandle.into_param().abi(), ::core::mem::transmute(securityinfo), ::core::mem::transmute(sidowner), ::core::mem::transmute(sidgroup), ::core::mem::transmute(dacl), ::core::mem::transmute(sacl)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextSaDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
+pub unsafe fn IkeextSaDeleteById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaDeleteById0(enginehandle: super::super::Foundation::HANDLE, id: u64) -> u32;
+            fn IkeextSaDeleteById0(enginehandle: ::win32_foundation::HANDLE, id: u64) -> u32;
         }
         ::core::mem::transmute(IkeextSaDeleteById0(enginehandle.into_param().abi(), ::core::mem::transmute(id)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextSaDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
+pub unsafe fn IkeextSaDestroyEnumHandle0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaDestroyEnumHandle0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE) -> u32;
+            fn IkeextSaDestroyEnumHandle0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(IkeextSaDestroyEnumHandle0(enginehandle.into_param().abi(), enumhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextSaEnum0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS0, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn IkeextSaEnum0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS0, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaEnum0(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS0, numentriesreturned: *mut u32) -> u32;
+            fn IkeextSaEnum0(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS0, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(IkeextSaEnum0(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextSaEnum1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS1, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn IkeextSaEnum1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS1, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaEnum1(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS1, numentriesreturned: *mut u32) -> u32;
+            fn IkeextSaEnum1(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS1, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(IkeextSaEnum1(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextSaEnum2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS2, numentriesreturned: *mut u32) -> u32 {
+pub unsafe fn IkeextSaEnum2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, enumhandle: Param1, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS2, numentriesreturned: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaEnum2(enginehandle: super::super::Foundation::HANDLE, enumhandle: super::super::Foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS2, numentriesreturned: *mut u32) -> u32;
+            fn IkeextSaEnum2(enginehandle: ::win32_foundation::HANDLE, enumhandle: ::win32_foundation::HANDLE, numentriesrequested: u32, entries: *mut *mut *mut IKEEXT_SA_DETAILS2, numentriesreturned: *mut u32) -> u32;
         }
         ::core::mem::transmute(IkeextSaEnum2(enginehandle.into_param().abi(), enumhandle.into_param().abi(), ::core::mem::transmute(numentriesrequested), ::core::mem::transmute(entries), ::core::mem::transmute(numentriesreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextSaGetById0<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, sa: *mut *mut IKEEXT_SA_DETAILS0) -> u32 {
+pub unsafe fn IkeextSaGetById0<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, sa: *mut *mut IKEEXT_SA_DETAILS0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaGetById0(enginehandle: super::super::Foundation::HANDLE, id: u64, sa: *mut *mut IKEEXT_SA_DETAILS0) -> u32;
+            fn IkeextSaGetById0(enginehandle: ::win32_foundation::HANDLE, id: u64, sa: *mut *mut IKEEXT_SA_DETAILS0) -> u32;
         }
         ::core::mem::transmute(IkeextSaGetById0(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(sa)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextSaGetById1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, salookupcontext: *const ::windows_core::GUID, sa: *mut *mut IKEEXT_SA_DETAILS1) -> u32 {
+pub unsafe fn IkeextSaGetById1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, salookupcontext: *const ::windows_core::GUID, sa: *mut *mut IKEEXT_SA_DETAILS1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaGetById1(enginehandle: super::super::Foundation::HANDLE, id: u64, salookupcontext: *const ::windows_core::GUID, sa: *mut *mut IKEEXT_SA_DETAILS1) -> u32;
+            fn IkeextSaGetById1(enginehandle: ::win32_foundation::HANDLE, id: u64, salookupcontext: *const ::windows_core::GUID, sa: *mut *mut IKEEXT_SA_DETAILS1) -> u32;
         }
         ::core::mem::transmute(IkeextSaGetById1(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(salookupcontext), ::core::mem::transmute(sa)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IkeextSaGetById2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(enginehandle: Param0, id: u64, salookupcontext: *const ::windows_core::GUID, sa: *mut *mut IKEEXT_SA_DETAILS2) -> u32 {
+pub unsafe fn IkeextSaGetById2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(enginehandle: Param0, id: u64, salookupcontext: *const ::windows_core::GUID, sa: *mut *mut IKEEXT_SA_DETAILS2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IkeextSaGetById2(enginehandle: super::super::Foundation::HANDLE, id: u64, salookupcontext: *const ::windows_core::GUID, sa: *mut *mut IKEEXT_SA_DETAILS2) -> u32;
+            fn IkeextSaGetById2(enginehandle: ::win32_foundation::HANDLE, id: u64, salookupcontext: *const ::windows_core::GUID, sa: *mut *mut IKEEXT_SA_DETAILS2) -> u32;
         }
         ::core::mem::transmute(IkeextSaGetById2(enginehandle.into_param().abi(), ::core::mem::transmute(id), ::core::mem::transmute(salookupcontext), ::core::mem::transmute(sa)))
     }

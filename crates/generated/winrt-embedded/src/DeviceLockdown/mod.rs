@@ -1,10 +1,10 @@
 pub struct DeviceLockdownProfile;
 impl DeviceLockdownProfile {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetSupportedLockdownProfiles() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::GUID>> {
+    pub fn GetSupportedLockdownProfiles() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::GUID>> {
         Self::IDeviceLockdownProfileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSupportedLockdownProfiles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::GUID>>(result__)
+            (::windows_core::Interface::vtable(this).GetSupportedLockdownProfiles)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::GUID>>(result__)
         })
     }
     pub fn GetCurrentLockdownProfile() -> ::windows_core::Result<::windows_core::GUID> {
@@ -13,11 +13,10 @@ impl DeviceLockdownProfile {
             (::windows_core::Interface::vtable(this).GetCurrentLockdownProfile)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::GUID>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ApplyLockdownProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(profileid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn ApplyLockdownProfileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(profileid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IDeviceLockdownProfileStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ApplyLockdownProfileAsync)(::windows_core::Interface::as_raw(this), profileid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ApplyLockdownProfileAsync)(::windows_core::Interface::as_raw(this), profileid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn GetLockdownProfileInformation<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(profileid: Param0) -> ::windows_core::Result<DeviceLockdownProfileInformation> {
@@ -146,9 +145,6 @@ pub struct IDeviceLockdownProfileStatics_Vtbl {
     #[cfg(not(feature = "Foundation_Collections"))]
     GetSupportedLockdownProfiles: usize,
     pub GetCurrentLockdownProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ApplyLockdownProfileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profileid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ApplyLockdownProfileAsync: usize,
     pub GetLockdownProfileInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, profileid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }

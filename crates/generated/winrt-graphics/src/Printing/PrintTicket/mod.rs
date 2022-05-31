@@ -180,14 +180,8 @@ pub struct IWorkflowPrintTicket_Vtbl {
     pub PageOutputQualityFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub PageResolutionFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetFeature: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, xmlnamespace: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub NotifyXmlChangedAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    NotifyXmlChangedAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ValidateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ValidateAsync: usize,
     pub GetParameterInitializer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, xmlnamespace: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetParameterInitializerAsInteger: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, xmlnamespace: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, integervalue: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetParameterInitializerAsString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, xmlnamespace: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, stringvalue: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -225,11 +219,11 @@ impl PrintTicketCapabilities {
         }
     }
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn XmlNode(&self) -> ::windows_core::Result<super::super::super::Data::Xml::Dom::IXmlNode> {
+    pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Data::Xml::Dom::IXmlNode>(result__)
+            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::IXmlNode>(result__)
         }
     }
     pub fn DocumentBindingFeature(&self) -> ::windows_core::Result<PrintTicketFeature> {
@@ -442,11 +436,11 @@ impl PrintTicketFeature {
         }
     }
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn XmlNode(&self) -> ::windows_core::Result<super::super::super::Data::Xml::Dom::IXmlNode> {
+    pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Data::Xml::Dom::IXmlNode>(result__)
+            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::IXmlNode>(result__)
         }
     }
     pub fn DisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -464,11 +458,11 @@ impl PrintTicketFeature {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Options(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<PrintTicketOption>> {
+    pub fn Options(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<PrintTicketOption>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Options)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<PrintTicketOption>>(result__)
+            (::windows_core::Interface::vtable(this).Options)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<PrintTicketOption>>(result__)
         }
     }
     pub fn GetSelectedOption(&self) -> ::windows_core::Result<PrintTicketOption> {
@@ -613,11 +607,11 @@ impl PrintTicketOption {
         }
     }
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn XmlNode(&self) -> ::windows_core::Result<super::super::super::Data::Xml::Dom::IXmlNode> {
+    pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Data::Xml::Dom::IXmlNode>(result__)
+            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::IXmlNode>(result__)
         }
     }
     pub fn DisplayName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -628,19 +622,19 @@ impl PrintTicketOption {
         }
     }
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn GetPropertyNode<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0, xmlnamespace: Param1) -> ::windows_core::Result<super::super::super::Data::Xml::Dom::IXmlNode> {
+    pub fn GetPropertyNode<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0, xmlnamespace: Param1) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPropertyNode)(::windows_core::Interface::as_raw(this), name.into_param().abi(), xmlnamespace.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Data::Xml::Dom::IXmlNode>(result__)
+            (::windows_core::Interface::vtable(this).GetPropertyNode)(::windows_core::Interface::as_raw(this), name.into_param().abi(), xmlnamespace.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::IXmlNode>(result__)
         }
     }
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn GetScoredPropertyNode<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0, xmlnamespace: Param1) -> ::windows_core::Result<super::super::super::Data::Xml::Dom::IXmlNode> {
+    pub fn GetScoredPropertyNode<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0, xmlnamespace: Param1) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetScoredPropertyNode)(::windows_core::Interface::as_raw(this), name.into_param().abi(), xmlnamespace.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Data::Xml::Dom::IXmlNode>(result__)
+            (::windows_core::Interface::vtable(this).GetScoredPropertyNode)(::windows_core::Interface::as_raw(this), name.into_param().abi(), xmlnamespace.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::IXmlNode>(result__)
         }
     }
     pub fn GetPropertyValue<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0, xmlnamespace: Param1) -> ::windows_core::Result<PrintTicketValue> {
@@ -782,11 +776,11 @@ impl PrintTicketParameterDefinition {
         }
     }
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn XmlNode(&self) -> ::windows_core::Result<super::super::super::Data::Xml::Dom::IXmlNode> {
+    pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Data::Xml::Dom::IXmlNode>(result__)
+            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::IXmlNode>(result__)
         }
     }
     pub fn DataType(&self) -> ::windows_core::Result<PrintTicketParameterDataType> {
@@ -908,11 +902,11 @@ impl PrintTicketParameterInitializer {
         }
     }
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn XmlNode(&self) -> ::windows_core::Result<super::super::super::Data::Xml::Dom::IXmlNode> {
+    pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Data::Xml::Dom::IXmlNode>(result__)
+            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::IXmlNode>(result__)
         }
     }
     pub fn SetValue<'a, Param0: ::windows_core::IntoParam<'a, PrintTicketValue>>(&self, value: Param0) -> ::windows_core::Result<()> {
@@ -1148,11 +1142,11 @@ impl WorkflowPrintTicket {
         }
     }
     #[cfg(feature = "Data_Xml_Dom")]
-    pub fn XmlNode(&self) -> ::windows_core::Result<super::super::super::Data::Xml::Dom::IXmlNode> {
+    pub fn XmlNode(&self) -> ::windows_core::Result<::winrt_data::Xml::Dom::IXmlNode> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Data::Xml::Dom::IXmlNode>(result__)
+            (::windows_core::Interface::vtable(this).XmlNode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_data::Xml::Dom::IXmlNode>(result__)
         }
     }
     pub fn GetCapabilities(&self) -> ::windows_core::Result<PrintTicketCapabilities> {
@@ -1274,20 +1268,18 @@ impl WorkflowPrintTicket {
             (::windows_core::Interface::vtable(this).GetFeature)(::windows_core::Interface::as_raw(this), name.into_param().abi(), xmlnamespace.into_param().abi(), result__.as_mut_ptr()).from_abi::<PrintTicketFeature>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn NotifyXmlChangedAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn NotifyXmlChangedAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NotifyXmlChangedAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).NotifyXmlChangedAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ValidateAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<WorkflowPrintTicketValidationResult>> {
+    pub fn ValidateAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<WorkflowPrintTicketValidationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ValidateAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<WorkflowPrintTicketValidationResult>>(result__)
+            (::windows_core::Interface::vtable(this).ValidateAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<WorkflowPrintTicketValidationResult>>(result__)
         }
     }
     pub fn GetParameterInitializer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0, xmlnamespace: Param1) -> ::windows_core::Result<PrintTicketParameterInitializer> {

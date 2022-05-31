@@ -257,12 +257,12 @@ pub const FhConfigMgr: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x
 pub const FhReassociation: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4d728e35_16fa_4320_9e8b_bfd7100a8846);
 #[cfg(feature = "Win32_System_WindowsProgramming")]
 #[inline]
-pub unsafe fn FhServiceBlockBackup<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn FhServiceBlockBackup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FhServiceBlockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
+            fn FhServiceBlockBackup(pipe: ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
         }
         FhServiceBlockBackup(pipe.into_param().abi()).ok()
     }
@@ -271,69 +271,69 @@ pub unsafe fn FhServiceBlockBackup<'a, Param0: ::windows_core::IntoParam<'a, sup
 }
 #[cfg(feature = "Win32_System_WindowsProgramming")]
 #[inline]
-pub unsafe fn FhServiceClosePipe<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn FhServiceClosePipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FhServiceClosePipe(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
+            fn FhServiceClosePipe(pipe: ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
         }
         FhServiceClosePipe(pipe.into_param().abi()).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
+#[cfg(feature = "Win32_System_WindowsProgramming")]
 #[inline]
-pub unsafe fn FhServiceOpenPipe<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(startserviceifstopped: Param0) -> ::windows_core::Result<super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE> {
+pub unsafe fn FhServiceOpenPipe<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(startserviceifstopped: Param0) -> ::windows_core::Result<::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FhServiceOpenPipe(startserviceifstopped: super::super::Foundation::BOOL, pipe: *mut super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
+            fn FhServiceOpenPipe(startserviceifstopped: ::win32_foundation::BOOL, pipe: *mut ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>::zeroed();
-        FhServiceOpenPipe(startserviceifstopped.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>::zeroed();
+        FhServiceOpenPipe(startserviceifstopped.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
 #[cfg(feature = "Win32_System_WindowsProgramming")]
 #[inline]
-pub unsafe fn FhServiceReloadConfiguration<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn FhServiceReloadConfiguration<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FhServiceReloadConfiguration(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
+            fn FhServiceReloadConfiguration(pipe: ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
         }
         FhServiceReloadConfiguration(pipe.into_param().abi()).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
+#[cfg(feature = "Win32_System_WindowsProgramming")]
 #[inline]
-pub unsafe fn FhServiceStartBackup<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pipe: Param0, lowpriorityio: Param1) -> ::windows_core::Result<()> {
+pub unsafe fn FhServiceStartBackup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(pipe: Param0, lowpriorityio: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FhServiceStartBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, lowpriorityio: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn FhServiceStartBackup(pipe: ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, lowpriorityio: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         FhServiceStartBackup(pipe.into_param().abi(), lowpriorityio.into_param().abi()).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
+#[cfg(feature = "Win32_System_WindowsProgramming")]
 #[inline]
-pub unsafe fn FhServiceStopBackup<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pipe: Param0, stoptracking: Param1) -> ::windows_core::Result<()> {
+pub unsafe fn FhServiceStopBackup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(pipe: Param0, stoptracking: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FhServiceStopBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, stoptracking: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn FhServiceStopBackup(pipe: ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, stoptracking: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         FhServiceStopBackup(pipe.into_param().abi(), stoptracking.into_param().abi()).ok()
     }
@@ -342,12 +342,12 @@ pub unsafe fn FhServiceStopBackup<'a, Param0: ::windows_core::IntoParam<'a, supe
 }
 #[cfg(feature = "Win32_System_WindowsProgramming")]
 #[inline]
-pub unsafe fn FhServiceUnblockBackup<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn FhServiceUnblockBackup<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE>>(pipe: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FhServiceUnblockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
+            fn FhServiceUnblockBackup(pipe: ::win32_system::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core::HRESULT;
         }
         FhServiceUnblockBackup(pipe.into_param().abi()).ok()
     }
@@ -360,19 +360,16 @@ impl IFhConfigMgr {
     pub unsafe fn LoadConfiguration(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).LoadConfiguration)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateDefaultConfiguration<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, overwriteifexists: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn CreateDefaultConfiguration<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, overwriteifexists: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CreateDefaultConfiguration)(::windows_core::Interface::as_raw(self), overwriteifexists.into_param().abi()).ok()
     }
     pub unsafe fn SaveConfiguration(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SaveConfiguration)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddRemoveExcludeRule<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, add: Param0, category: FH_PROTECTED_ITEM_CATEGORY, item: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn AddRemoveExcludeRule<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, add: Param0, category: FH_PROTECTED_ITEM_CATEGORY, item: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddRemoveExcludeRule)(::windows_core::Interface::as_raw(self), add.into_param().abi(), ::core::mem::transmute(category), item.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIncludeExcludeRules<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, include: Param0, category: FH_PROTECTED_ITEM_CATEGORY) -> ::windows_core::Result<IFhScopeIterator> {
+    pub unsafe fn GetIncludeExcludeRules<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, include: Param0, category: FH_PROTECTED_ITEM_CATEGORY) -> ::windows_core::Result<IFhScopeIterator> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetIncludeExcludeRules)(::windows_core::Interface::as_raw(self), include.into_param().abi(), ::core::mem::transmute(category), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFhScopeIterator>(result__)
     }
@@ -394,21 +391,17 @@ impl IFhConfigMgr {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetDefaultTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFhTarget>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ValidateTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, targeturl: Param0) -> ::windows_core::Result<FH_DEVICE_VALIDATION_RESULT> {
+    pub unsafe fn ValidateTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, targeturl: Param0) -> ::windows_core::Result<FH_DEVICE_VALIDATION_RESULT> {
         let mut result__ = ::core::mem::MaybeUninit::<FH_DEVICE_VALIDATION_RESULT>::zeroed();
         (::windows_core::Interface::vtable(self).ValidateTarget)(::windows_core::Interface::as_raw(self), targeturl.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FH_DEVICE_VALIDATION_RESULT>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ProvisionAndSetNewTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, targeturl: Param0, targetname: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn ProvisionAndSetNewTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, targeturl: Param0, targetname: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ProvisionAndSetNewTarget)(::windows_core::Interface::as_raw(self), targeturl.into_param().abi(), targetname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ChangeDefaultTargetRecommendation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, recommend: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn ChangeDefaultTargetRecommendation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, recommend: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ChangeDefaultTargetRecommendation)(::windows_core::Interface::as_raw(self), recommend.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn QueryProtectionStatus(&self, protectionstate: *mut u32, protecteduntiltime: *mut super::super::Foundation::BSTR) -> ::windows_core::Result<()> {
+    pub unsafe fn QueryProtectionStatus(&self, protectionstate: *mut u32, protecteduntiltime: *mut ::win32_foundation::BSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).QueryProtectionStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(protectionstate), ::core::mem::transmute(protecteduntiltime)).ok()
     }
 }
@@ -457,62 +450,37 @@ unsafe impl ::windows_core::Interface for IFhConfigMgr {
 pub struct IFhConfigMgr_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub LoadConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateDefaultConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, overwriteifexists: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateDefaultConfiguration: usize,
+    pub CreateDefaultConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, overwriteifexists: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SaveConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AddRemoveExcludeRule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, add: super::super::Foundation::BOOL, category: FH_PROTECTED_ITEM_CATEGORY, item: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AddRemoveExcludeRule: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetIncludeExcludeRules: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, include: super::super::Foundation::BOOL, category: FH_PROTECTED_ITEM_CATEGORY, iterator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIncludeExcludeRules: usize,
+    pub AddRemoveExcludeRule: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, add: ::win32_foundation::BOOL, category: FH_PROTECTED_ITEM_CATEGORY, item: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub GetIncludeExcludeRules: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, include: ::win32_foundation::BOOL, category: FH_PROTECTED_ITEM_CATEGORY, iterator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetLocalPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localpolicytype: FH_LOCAL_POLICY_TYPE, policyvalue: *mut u64) -> ::windows_core::HRESULT,
     pub SetLocalPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, localpolicytype: FH_LOCAL_POLICY_TYPE, policyvalue: u64) -> ::windows_core::HRESULT,
     pub GetBackupStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, backupstatus: *mut FH_BACKUP_STATUS) -> ::windows_core::HRESULT,
     pub SetBackupStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, backupstatus: FH_BACKUP_STATUS) -> ::windows_core::HRESULT,
     pub GetDefaultTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, defaulttarget: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ValidateTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targeturl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, validationresult: *mut FH_DEVICE_VALIDATION_RESULT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ValidateTarget: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ProvisionAndSetNewTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targeturl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, targetname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ProvisionAndSetNewTarget: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ChangeDefaultTargetRecommendation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, recommend: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ChangeDefaultTargetRecommendation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub QueryProtectionStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protectionstate: *mut u32, protecteduntiltime: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    QueryProtectionStatus: usize,
+    pub ValidateTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targeturl: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, validationresult: *mut FH_DEVICE_VALIDATION_RESULT) -> ::windows_core::HRESULT,
+    pub ProvisionAndSetNewTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targeturl: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, targetname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub ChangeDefaultTargetRecommendation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, recommend: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub QueryProtectionStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, protectionstate: *mut u32, protecteduntiltime: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IFhReassociation(::windows_core::IUnknown);
 impl IFhReassociation {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ValidateTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, targeturl: Param0) -> ::windows_core::Result<FH_DEVICE_VALIDATION_RESULT> {
+    pub unsafe fn ValidateTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, targeturl: Param0) -> ::windows_core::Result<FH_DEVICE_VALIDATION_RESULT> {
         let mut result__ = ::core::mem::MaybeUninit::<FH_DEVICE_VALIDATION_RESULT>::zeroed();
         (::windows_core::Interface::vtable(self).ValidateTarget)(::windows_core::Interface::as_raw(self), targeturl.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FH_DEVICE_VALIDATION_RESULT>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ScanTargetForConfigurations<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, targeturl: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn ScanTargetForConfigurations<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, targeturl: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ScanTargetForConfigurations)(::windows_core::Interface::as_raw(self), targeturl.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetConfigurationDetails(&self, index: u32, username: *mut super::super::Foundation::BSTR, pcname: *mut super::super::Foundation::BSTR, backuptime: *mut super::super::Foundation::FILETIME) -> ::windows_core::Result<()> {
+    pub unsafe fn GetConfigurationDetails(&self, index: u32, username: *mut ::win32_foundation::BSTR, pcname: *mut ::win32_foundation::BSTR, backuptime: *mut ::win32_foundation::FILETIME) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetConfigurationDetails)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(username), ::core::mem::transmute(pcname), ::core::mem::transmute(backuptime)).ok()
     }
     pub unsafe fn SelectConfiguration(&self, index: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SelectConfiguration)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PerformReassociation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, overwriteifexists: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn PerformReassociation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, overwriteifexists: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PerformReassociation)(::windows_core::Interface::as_raw(self), overwriteifexists.into_param().abi()).ok()
     }
 }
@@ -560,23 +528,11 @@ unsafe impl ::windows_core::Interface for IFhReassociation {
 #[doc(hidden)]
 pub struct IFhReassociation_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ValidateTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targeturl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, validationresult: *mut FH_DEVICE_VALIDATION_RESULT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ValidateTarget: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ScanTargetForConfigurations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targeturl: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ScanTargetForConfigurations: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetConfigurationDetails: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, username: *mut super::super::Foundation::BSTR, pcname: *mut super::super::Foundation::BSTR, backuptime: *mut super::super::Foundation::FILETIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetConfigurationDetails: usize,
+    pub ValidateTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targeturl: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, validationresult: *mut FH_DEVICE_VALIDATION_RESULT) -> ::windows_core::HRESULT,
+    pub ScanTargetForConfigurations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targeturl: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub GetConfigurationDetails: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, username: *mut ::win32_foundation::BSTR, pcname: *mut ::win32_foundation::BSTR, backuptime: *mut ::win32_foundation::FILETIME) -> ::windows_core::HRESULT,
     pub SelectConfiguration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PerformReassociation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, overwriteifexists: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PerformReassociation: usize,
+    pub PerformReassociation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, overwriteifexists: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IFhScopeIterator(::windows_core::IUnknown);
@@ -584,10 +540,9 @@ impl IFhScopeIterator {
     pub unsafe fn MoveToNextItem(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).MoveToNextItem)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetItem(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetItem)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetItem(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetItem)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 impl ::core::convert::From<IFhScopeIterator> for ::windows_core::IUnknown {
@@ -635,18 +590,14 @@ unsafe impl ::windows_core::Interface for IFhScopeIterator {
 pub struct IFhScopeIterator_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub MoveToNextItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, item: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetItem: usize,
+    pub GetItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, item: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IFhTarget(::windows_core::IUnknown);
 impl IFhTarget {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetStringProperty(&self, propertytype: FH_TARGET_PROPERTY_TYPE) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetStringProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertytype), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetStringProperty(&self, propertytype: FH_TARGET_PROPERTY_TYPE) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetStringProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(propertytype), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GetNumericalProperty(&self, propertytype: FH_TARGET_PROPERTY_TYPE) -> ::windows_core::Result<u64> {
         let mut result__ = ::core::mem::MaybeUninit::<u64>::zeroed();
@@ -697,9 +648,6 @@ unsafe impl ::windows_core::Interface for IFhTarget {
 #[doc(hidden)]
 pub struct IFhTarget_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetStringProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertytype: FH_TARGET_PROPERTY_TYPE, propertyvalue: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetStringProperty: usize,
+    pub GetStringProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertytype: FH_TARGET_PROPERTY_TYPE, propertyvalue: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GetNumericalProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertytype: FH_TARGET_PROPERTY_TYPE, propertyvalue: *mut u64) -> ::windows_core::HRESULT,
 }

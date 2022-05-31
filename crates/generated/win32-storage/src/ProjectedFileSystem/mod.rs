@@ -1,5 +1,4 @@
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_CALLBACKS {
     pub StartDirectoryEnumerationCallback: PRJ_START_DIRECTORY_ENUMERATION_CB,
     pub EndDirectoryEnumerationCallback: PRJ_END_DIRECTORY_ENUMERATION_CB,
@@ -10,15 +9,12 @@ pub struct PRJ_CALLBACKS {
     pub NotificationCallback: PRJ_NOTIFICATION_CB,
     pub CancelCommandCallback: PRJ_CANCEL_COMMAND_CB,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_CALLBACKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_CALLBACKS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRJ_CALLBACKS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRJ_CALLBACKS")
@@ -33,19 +29,15 @@ impl ::core::fmt::Debug for PRJ_CALLBACKS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_CALLBACKS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_CALLBACKS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_CALLBACKS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_CALLBACKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_CALLBACKS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -390,9 +382,8 @@ impl ::core::fmt::Debug for PRJ_EXT_INFO_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_FILE_BASIC_INFO {
-    pub IsDirectory: super::super::Foundation::BOOLEAN,
+    pub IsDirectory: ::win32_foundation::BOOLEAN,
     pub FileSize: i64,
     pub CreationTime: i64,
     pub LastAccessTime: i64,
@@ -400,33 +391,26 @@ pub struct PRJ_FILE_BASIC_INFO {
     pub ChangeTime: i64,
     pub FileAttributes: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_FILE_BASIC_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_FILE_BASIC_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRJ_FILE_BASIC_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRJ_FILE_BASIC_INFO").field("IsDirectory", &self.IsDirectory).field("FileSize", &self.FileSize).field("CreationTime", &self.CreationTime).field("LastAccessTime", &self.LastAccessTime).field("LastWriteTime", &self.LastWriteTime).field("ChangeTime", &self.ChangeTime).field("FileAttributes", &self.FileAttributes).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_FILE_BASIC_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_FILE_BASIC_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_FILE_BASIC_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_FILE_BASIC_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_FILE_BASIC_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -551,8 +535,7 @@ impl ::core::fmt::Debug for PRJ_NOTIFICATION {
         f.debug_tuple("PRJ_NOTIFICATION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type PRJ_NOTIFICATION_CB = ::core::option::Option<unsafe extern "system" fn(callbackdata: *const PRJ_CALLBACK_DATA, isdirectory: super::super::Foundation::BOOLEAN, notification: PRJ_NOTIFICATION, destinationfilename: ::windows_core::PCWSTR, operationparameters: *mut PRJ_NOTIFICATION_PARAMETERS) -> ::windows_core::HRESULT>;
+pub type PRJ_NOTIFICATION_CB = ::core::option::Option<unsafe extern "system" fn(callbackdata: *const PRJ_CALLBACK_DATA, isdirectory: ::win32_foundation::BOOLEAN, notification: PRJ_NOTIFICATION, destinationfilename: ::windows_core::PCWSTR, operationparameters: *mut PRJ_NOTIFICATION_PARAMETERS) -> ::windows_core::HRESULT>;
 #[repr(C)]
 pub struct PRJ_NOTIFICATION_MAPPING {
     pub NotificationBitMask: PRJ_NOTIFY_TYPES,
@@ -584,144 +567,113 @@ impl ::core::default::Default for PRJ_NOTIFICATION_MAPPING {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PRJ_NOTIFICATION_PARAMETERS {
     pub PostCreate: PRJ_NOTIFICATION_PARAMETERS_2,
     pub FileRenamed: PRJ_NOTIFICATION_PARAMETERS_1,
     pub FileDeletedOnHandleClose: PRJ_NOTIFICATION_PARAMETERS_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_NOTIFICATION_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_NOTIFICATION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_NOTIFICATION_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_NOTIFICATION_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_NOTIFICATION_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_NOTIFICATION_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_NOTIFICATION_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_NOTIFICATION_PARAMETERS_0 {
-    pub IsFileModified: super::super::Foundation::BOOLEAN,
+    pub IsFileModified: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_NOTIFICATION_PARAMETERS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_NOTIFICATION_PARAMETERS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRJ_NOTIFICATION_PARAMETERS_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRJ_NOTIFICATION_PARAMETERS_0").field("IsFileModified", &self.IsFileModified).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_NOTIFICATION_PARAMETERS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_NOTIFICATION_PARAMETERS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_NOTIFICATION_PARAMETERS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_NOTIFICATION_PARAMETERS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_NOTIFICATION_PARAMETERS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_NOTIFICATION_PARAMETERS_1 {
     pub NotificationMask: PRJ_NOTIFY_TYPES,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_NOTIFICATION_PARAMETERS_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_NOTIFICATION_PARAMETERS_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRJ_NOTIFICATION_PARAMETERS_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRJ_NOTIFICATION_PARAMETERS_1").field("NotificationMask", &self.NotificationMask).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_NOTIFICATION_PARAMETERS_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_NOTIFICATION_PARAMETERS_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_NOTIFICATION_PARAMETERS_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_NOTIFICATION_PARAMETERS_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_NOTIFICATION_PARAMETERS_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_NOTIFICATION_PARAMETERS_2 {
     pub NotificationMask: PRJ_NOTIFY_TYPES,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_NOTIFICATION_PARAMETERS_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_NOTIFICATION_PARAMETERS_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRJ_NOTIFICATION_PARAMETERS_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRJ_NOTIFICATION_PARAMETERS_2").field("NotificationMask", &self.NotificationMask).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_NOTIFICATION_PARAMETERS_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_NOTIFICATION_PARAMETERS_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_NOTIFICATION_PARAMETERS_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_NOTIFICATION_PARAMETERS_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_NOTIFICATION_PARAMETERS_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -816,7 +768,6 @@ impl ::core::fmt::Debug for PRJ_PLACEHOLDER_ID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_PLACEHOLDER_INFO {
     pub FileBasicInfo: PRJ_FILE_BASIC_INFO,
     pub EaInformation: PRJ_PLACEHOLDER_INFO_0,
@@ -825,147 +776,116 @@ pub struct PRJ_PLACEHOLDER_INFO {
     pub VersionInfo: PRJ_PLACEHOLDER_VERSION_INFO,
     pub VariableData: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_PLACEHOLDER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_PLACEHOLDER_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRJ_PLACEHOLDER_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRJ_PLACEHOLDER_INFO").field("FileBasicInfo", &self.FileBasicInfo).field("EaInformation", &self.EaInformation).field("SecurityInformation", &self.SecurityInformation).field("StreamsInformation", &self.StreamsInformation).field("VersionInfo", &self.VersionInfo).field("VariableData", &self.VariableData).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_PLACEHOLDER_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_PLACEHOLDER_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_PLACEHOLDER_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_PLACEHOLDER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_PLACEHOLDER_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_PLACEHOLDER_INFO_0 {
     pub EaBufferSize: u32,
     pub OffsetToFirstEa: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_PLACEHOLDER_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_PLACEHOLDER_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRJ_PLACEHOLDER_INFO_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRJ_PLACEHOLDER_INFO_0").field("EaBufferSize", &self.EaBufferSize).field("OffsetToFirstEa", &self.OffsetToFirstEa).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_PLACEHOLDER_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_PLACEHOLDER_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_PLACEHOLDER_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_PLACEHOLDER_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_PLACEHOLDER_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_PLACEHOLDER_INFO_1 {
     pub SecurityBufferSize: u32,
     pub OffsetToSecurityDescriptor: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_PLACEHOLDER_INFO_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_PLACEHOLDER_INFO_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRJ_PLACEHOLDER_INFO_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRJ_PLACEHOLDER_INFO_1").field("SecurityBufferSize", &self.SecurityBufferSize).field("OffsetToSecurityDescriptor", &self.OffsetToSecurityDescriptor).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_PLACEHOLDER_INFO_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_PLACEHOLDER_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_PLACEHOLDER_INFO_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_PLACEHOLDER_INFO_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_PLACEHOLDER_INFO_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PRJ_PLACEHOLDER_INFO_2 {
     pub StreamsInfoBufferSize: u32,
     pub OffsetToFirstStreamInfo: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PRJ_PLACEHOLDER_INFO_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PRJ_PLACEHOLDER_INFO_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PRJ_PLACEHOLDER_INFO_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PRJ_PLACEHOLDER_INFO_2").field("StreamsInfoBufferSize", &self.StreamsInfoBufferSize).field("OffsetToFirstStreamInfo", &self.OffsetToFirstStreamInfo).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PRJ_PLACEHOLDER_INFO_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PRJ_PLACEHOLDER_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PRJ_PLACEHOLDER_INFO_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PRJ_PLACEHOLDER_INFO_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PRJ_PLACEHOLDER_INFO_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1285,14 +1205,13 @@ pub unsafe fn PrjDeleteFile<'a, Param0: ::windows_core::IntoParam<'a, PRJ_NAMESP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PrjDoesNameContainWildCards<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filename: Param0) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn PrjDoesNameContainWildCards<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filename: Param0) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrjDoesNameContainWildCards(filename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOLEAN;
+            fn PrjDoesNameContainWildCards(filename: ::windows_core::PCWSTR) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(PrjDoesNameContainWildCards(filename.into_param().abi()))
     }
@@ -1312,21 +1231,19 @@ pub unsafe fn PrjFileNameCompare<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PrjFileNameMatch<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filenametocheck: Param0, pattern: Param1) -> super::super::Foundation::BOOLEAN {
+pub unsafe fn PrjFileNameMatch<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(filenametocheck: Param0, pattern: Param1) -> ::win32_foundation::BOOLEAN {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrjFileNameMatch(filenametocheck: ::windows_core::PCWSTR, pattern: ::windows_core::PCWSTR) -> super::super::Foundation::BOOLEAN;
+            fn PrjFileNameMatch(filenametocheck: ::windows_core::PCWSTR, pattern: ::windows_core::PCWSTR) -> ::win32_foundation::BOOLEAN;
         }
         ::core::mem::transmute(PrjFileNameMatch(filenametocheck.into_param().abi(), pattern.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PrjFillDirEntryBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, PRJ_DIR_ENTRY_BUFFER_HANDLE>>(filename: Param0, filebasicinfo: *const PRJ_FILE_BASIC_INFO, direntrybufferhandle: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1340,7 +1257,6 @@ pub unsafe fn PrjFillDirEntryBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PrjFillDirEntryBuffer2<'a, Param0: ::windows_core::IntoParam<'a, PRJ_DIR_ENTRY_BUFFER_HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(direntrybufferhandle: Param0, filename: Param1, filebasicinfo: *const PRJ_FILE_BASIC_INFO, extendedinfo: *const PRJ_EXTENDED_INFO) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1408,7 +1324,6 @@ pub unsafe fn PrjMarkDirectoryAsPlaceholder<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PrjStartVirtualizing<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(virtualizationrootpath: Param0, callbacks: *const PRJ_CALLBACKS, instancecontext: *const ::core::ffi::c_void, options: *const PRJ_STARTVIRTUALIZING_OPTIONS) -> ::windows_core::Result<PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT> {
     #[cfg(windows)]
@@ -1436,7 +1351,6 @@ pub unsafe fn PrjStopVirtualizing<'a, Param0: ::windows_core::IntoParam<'a, PRJ_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PrjUpdateFileIfNeeded<'a, Param0: ::windows_core::IntoParam<'a, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(namespacevirtualizationcontext: Param0, destinationfilename: Param1, placeholderinfo: *const PRJ_PLACEHOLDER_INFO, placeholderinfosize: u32, updateflags: PRJ_UPDATE_TYPES) -> ::windows_core::Result<PRJ_UPDATE_FAILURE_CAUSES> {
     #[cfg(windows)]
@@ -1464,7 +1378,6 @@ pub unsafe fn PrjWriteFileData<'a, Param0: ::windows_core::IntoParam<'a, PRJ_NAM
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PrjWritePlaceholderInfo<'a, Param0: ::windows_core::IntoParam<'a, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(namespacevirtualizationcontext: Param0, destinationfilename: Param1, placeholderinfo: *const PRJ_PLACEHOLDER_INFO, placeholderinfosize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -1478,7 +1391,6 @@ pub unsafe fn PrjWritePlaceholderInfo<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PrjWritePlaceholderInfo2<'a, Param0: ::windows_core::IntoParam<'a, PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(namespacevirtualizationcontext: Param0, destinationfilename: Param1, placeholderinfo: *const PRJ_PLACEHOLDER_INFO, placeholderinfosize: u32, extendedinfo: *const PRJ_EXTENDED_INFO) -> ::windows_core::Result<()> {
     #[cfg(windows)]

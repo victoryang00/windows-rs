@@ -41,14 +41,14 @@ pub unsafe fn D3D10CreateBlob(numbytes: usize) -> ::windows_core::Result<super::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi"))]
+#[cfg(feature = "Win32_Graphics_Dxgi")]
 #[inline]
-pub unsafe fn D3D10CreateDevice<'a, Param0: ::windows_core::IntoParam<'a, super::Dxgi::IDXGIAdapter>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(padapter: Param0, drivertype: D3D10_DRIVER_TYPE, software: Param2, flags: u32, sdkversion: u32) -> ::windows_core::Result<ID3D10Device> {
+pub unsafe fn D3D10CreateDevice<'a, Param0: ::windows_core::IntoParam<'a, super::Dxgi::IDXGIAdapter>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>>(padapter: Param0, drivertype: D3D10_DRIVER_TYPE, software: Param2, flags: u32, sdkversion: u32) -> ::windows_core::Result<ID3D10Device> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn D3D10CreateDevice(padapter: ::windows_core::RawPtr, drivertype: D3D10_DRIVER_TYPE, software: super::super::Foundation::HINSTANCE, flags: u32, sdkversion: u32, ppdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn D3D10CreateDevice(padapter: ::windows_core::RawPtr, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation::HINSTANCE, flags: u32, sdkversion: u32, ppdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         D3D10CreateDevice(padapter.into_param().abi(), ::core::mem::transmute(drivertype), software.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(sdkversion), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10Device>(result__)
@@ -56,14 +56,14 @@ pub unsafe fn D3D10CreateDevice<'a, Param0: ::windows_core::IntoParam<'a, super:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi"))]
+#[cfg(feature = "Win32_Graphics_Dxgi")]
 #[inline]
-pub unsafe fn D3D10CreateDevice1<'a, Param0: ::windows_core::IntoParam<'a, super::Dxgi::IDXGIAdapter>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(padapter: Param0, drivertype: D3D10_DRIVER_TYPE, software: Param2, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32) -> ::windows_core::Result<ID3D10Device1> {
+pub unsafe fn D3D10CreateDevice1<'a, Param0: ::windows_core::IntoParam<'a, super::Dxgi::IDXGIAdapter>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>>(padapter: Param0, drivertype: D3D10_DRIVER_TYPE, software: Param2, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32) -> ::windows_core::Result<ID3D10Device1> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn D3D10CreateDevice1(padapter: ::windows_core::RawPtr, drivertype: D3D10_DRIVER_TYPE, software: super::super::Foundation::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, ppdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn D3D10CreateDevice1(padapter: ::windows_core::RawPtr, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, ppdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         D3D10CreateDevice1(padapter.into_param().abi(), ::core::mem::transmute(drivertype), software.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(hardwarelevel), ::core::mem::transmute(sdkversion), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10Device1>(result__)
@@ -71,28 +71,28 @@ pub unsafe fn D3D10CreateDevice1<'a, Param0: ::windows_core::IntoParam<'a, super
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 #[inline]
-pub unsafe fn D3D10CreateDeviceAndSwapChain<'a, Param0: ::windows_core::IntoParam<'a, super::Dxgi::IDXGIAdapter>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(padapter: Param0, drivertype: D3D10_DRIVER_TYPE, software: Param2, flags: u32, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut ::core::option::Option<super::Dxgi::IDXGISwapChain>, ppdevice: *mut ::core::option::Option<ID3D10Device>) -> ::windows_core::Result<()> {
+pub unsafe fn D3D10CreateDeviceAndSwapChain<'a, Param0: ::windows_core::IntoParam<'a, super::Dxgi::IDXGIAdapter>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>>(padapter: Param0, drivertype: D3D10_DRIVER_TYPE, software: Param2, flags: u32, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut ::core::option::Option<super::Dxgi::IDXGISwapChain>, ppdevice: *mut ::core::option::Option<ID3D10Device>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn D3D10CreateDeviceAndSwapChain(padapter: ::windows_core::RawPtr, drivertype: D3D10_DRIVER_TYPE, software: super::super::Foundation::HINSTANCE, flags: u32, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut ::windows_core::RawPtr, ppdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn D3D10CreateDeviceAndSwapChain(padapter: ::windows_core::RawPtr, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation::HINSTANCE, flags: u32, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut ::windows_core::RawPtr, ppdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         D3D10CreateDeviceAndSwapChain(padapter.into_param().abi(), ::core::mem::transmute(drivertype), software.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(sdkversion), ::core::mem::transmute(pswapchaindesc), ::core::mem::transmute(ppswapchain), ::core::mem::transmute(ppdevice)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 #[inline]
-pub unsafe fn D3D10CreateDeviceAndSwapChain1<'a, Param0: ::windows_core::IntoParam<'a, super::Dxgi::IDXGIAdapter>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(padapter: Param0, drivertype: D3D10_DRIVER_TYPE, software: Param2, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut ::core::option::Option<super::Dxgi::IDXGISwapChain>, ppdevice: *mut ::core::option::Option<ID3D10Device1>) -> ::windows_core::Result<()> {
+pub unsafe fn D3D10CreateDeviceAndSwapChain1<'a, Param0: ::windows_core::IntoParam<'a, super::Dxgi::IDXGIAdapter>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>>(padapter: Param0, drivertype: D3D10_DRIVER_TYPE, software: Param2, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut ::core::option::Option<super::Dxgi::IDXGISwapChain>, ppdevice: *mut ::core::option::Option<ID3D10Device1>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn D3D10CreateDeviceAndSwapChain1(padapter: ::windows_core::RawPtr, drivertype: D3D10_DRIVER_TYPE, software: super::super::Foundation::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut ::windows_core::RawPtr, ppdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn D3D10CreateDeviceAndSwapChain1(padapter: ::windows_core::RawPtr, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut ::windows_core::RawPtr, ppdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         D3D10CreateDeviceAndSwapChain1(padapter.into_param().abi(), ::core::mem::transmute(drivertype), software.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(hardwarelevel), ::core::mem::transmute(sdkversion), ::core::mem::transmute(pswapchaindesc), ::core::mem::transmute(ppswapchain), ::core::mem::transmute(ppdevice)).ok()
     }
@@ -141,14 +141,14 @@ pub unsafe fn D3D10CreateStateBlock<'a, Param0: ::windows_core::IntoParam<'a, ID
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D"))]
+#[cfg(feature = "Win32_Graphics_Direct3D")]
 #[inline]
-pub unsafe fn D3D10DisassembleEffect<'a, Param0: ::windows_core::IntoParam<'a, ID3D10Effect>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(peffect: Param0, enablecolorcode: Param1) -> ::windows_core::Result<super::Direct3D::ID3DBlob> {
+pub unsafe fn D3D10DisassembleEffect<'a, Param0: ::windows_core::IntoParam<'a, ID3D10Effect>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(peffect: Param0, enablecolorcode: Param1) -> ::windows_core::Result<super::Direct3D::ID3DBlob> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn D3D10DisassembleEffect(peffect: ::windows_core::RawPtr, enablecolorcode: super::super::Foundation::BOOL, ppdisassembly: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn D3D10DisassembleEffect(peffect: ::windows_core::RawPtr, enablecolorcode: ::win32_foundation::BOOL, ppdisassembly: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         D3D10DisassembleEffect(peffect.into_param().abi(), enablecolorcode.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Direct3D::ID3DBlob>(result__)
@@ -156,14 +156,14 @@ pub unsafe fn D3D10DisassembleEffect<'a, Param0: ::windows_core::IntoParam<'a, I
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D"))]
+#[cfg(feature = "Win32_Graphics_Direct3D")]
 #[inline]
-pub unsafe fn D3D10DisassembleShader<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pshader: *const ::core::ffi::c_void, bytecodelength: usize, enablecolorcode: Param2, pcomments: Param3) -> ::windows_core::Result<super::Direct3D::ID3DBlob> {
+pub unsafe fn D3D10DisassembleShader<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pshader: *const ::core::ffi::c_void, bytecodelength: usize, enablecolorcode: Param2, pcomments: Param3) -> ::windows_core::Result<super::Direct3D::ID3DBlob> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn D3D10DisassembleShader(pshader: *const ::core::ffi::c_void, bytecodelength: usize, enablecolorcode: super::super::Foundation::BOOL, pcomments: ::windows_core::PCSTR, ppdisassembly: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn D3D10DisassembleShader(pshader: *const ::core::ffi::c_void, bytecodelength: usize, enablecolorcode: ::win32_foundation::BOOL, pcomments: ::windows_core::PCSTR, ppdisassembly: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         D3D10DisassembleShader(::core::mem::transmute(pshader), ::core::mem::transmute(bytecodelength), enablecolorcode.into_param().abi(), pcomments.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Direct3D::ID3DBlob>(result__)
@@ -366,14 +366,13 @@ pub unsafe fn D3D10StateBlockMaskEnableCapture(pmask: *mut D3D10_STATE_BLOCK_MAS
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn D3D10StateBlockMaskGetSetting(pmask: *const D3D10_STATE_BLOCK_MASK, statetype: D3D10_DEVICE_STATE_TYPES, entry: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn D3D10StateBlockMaskGetSetting(pmask: *const D3D10_STATE_BLOCK_MASK, statetype: D3D10_DEVICE_STATE_TYPES, entry: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn D3D10StateBlockMaskGetSetting(pmask: *const D3D10_STATE_BLOCK_MASK, statetype: D3D10_DEVICE_STATE_TYPES, entry: u32) -> super::super::Foundation::BOOL;
+            fn D3D10StateBlockMaskGetSetting(pmask: *const D3D10_STATE_BLOCK_MASK, statetype: D3D10_DEVICE_STATE_TYPES, entry: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(D3D10StateBlockMaskGetSetting(::core::mem::transmute(pmask), ::core::mem::transmute(statetype), ::core::mem::transmute(entry)))
     }
@@ -530,10 +529,9 @@ impl ::core::fmt::Debug for D3D10_BLEND {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_BLEND_DESC {
-    pub AlphaToCoverageEnable: super::super::Foundation::BOOL,
-    pub BlendEnable: [super::super::Foundation::BOOL; 8],
+    pub AlphaToCoverageEnable: ::win32_foundation::BOOL,
+    pub BlendEnable: [::win32_foundation::BOOL; 8],
     pub SrcBlend: D3D10_BLEND,
     pub DestBlend: D3D10_BLEND,
     pub BlendOp: D3D10_BLEND_OP,
@@ -542,72 +540,57 @@ pub struct D3D10_BLEND_DESC {
     pub BlendOpAlpha: D3D10_BLEND_OP,
     pub RenderTargetWriteMask: [u8; 8],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_BLEND_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_BLEND_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_BLEND_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_BLEND_DESC").field("AlphaToCoverageEnable", &self.AlphaToCoverageEnable).field("BlendEnable", &self.BlendEnable).field("SrcBlend", &self.SrcBlend).field("DestBlend", &self.DestBlend).field("BlendOp", &self.BlendOp).field("SrcBlendAlpha", &self.SrcBlendAlpha).field("DestBlendAlpha", &self.DestBlendAlpha).field("BlendOpAlpha", &self.BlendOpAlpha).field("RenderTargetWriteMask", &self.RenderTargetWriteMask).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_BLEND_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_BLEND_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_BLEND_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_BLEND_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_BLEND_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_BLEND_DESC1 {
-    pub AlphaToCoverageEnable: super::super::Foundation::BOOL,
-    pub IndependentBlendEnable: super::super::Foundation::BOOL,
+    pub AlphaToCoverageEnable: ::win32_foundation::BOOL,
+    pub IndependentBlendEnable: ::win32_foundation::BOOL,
     pub RenderTarget: [D3D10_RENDER_TARGET_BLEND_DESC1; 8],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_BLEND_DESC1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_BLEND_DESC1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_BLEND_DESC1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_BLEND_DESC1").field("AlphaToCoverageEnable", &self.AlphaToCoverageEnable).field("IndependentBlendEnable", &self.IndependentBlendEnable).field("RenderTarget", &self.RenderTarget).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_BLEND_DESC1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_BLEND_DESC1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_BLEND_DESC1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_BLEND_DESC1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_BLEND_DESC1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1249,44 +1232,36 @@ impl ::core::default::Default for D3D10_DEPTH_STENCILOP_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_DEPTH_STENCIL_DESC {
-    pub DepthEnable: super::super::Foundation::BOOL,
+    pub DepthEnable: ::win32_foundation::BOOL,
     pub DepthWriteMask: D3D10_DEPTH_WRITE_MASK,
     pub DepthFunc: D3D10_COMPARISON_FUNC,
-    pub StencilEnable: super::super::Foundation::BOOL,
+    pub StencilEnable: ::win32_foundation::BOOL,
     pub StencilReadMask: u8,
     pub StencilWriteMask: u8,
     pub FrontFace: D3D10_DEPTH_STENCILOP_DESC,
     pub BackFace: D3D10_DEPTH_STENCILOP_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_DEPTH_STENCIL_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_DEPTH_STENCIL_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_DEPTH_STENCIL_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_DEPTH_STENCIL_DESC").field("DepthEnable", &self.DepthEnable).field("DepthWriteMask", &self.DepthWriteMask).field("DepthFunc", &self.DepthFunc).field("StencilEnable", &self.StencilEnable).field("StencilReadMask", &self.StencilReadMask).field("StencilWriteMask", &self.StencilWriteMask).field("FrontFace", &self.FrontFace).field("BackFace", &self.BackFace).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_DEPTH_STENCIL_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_DEPTH_STENCIL_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_DEPTH_STENCIL_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_DEPTH_STENCIL_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_DEPTH_STENCIL_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1490,85 +1465,69 @@ impl ::core::fmt::Debug for D3D10_DSV_DIMENSION {
 pub const D3D10_EFFECT_COMPILE_ALLOW_SLOW_OPS: u32 = 2u32;
 pub const D3D10_EFFECT_COMPILE_CHILD_EFFECT: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_EFFECT_DESC {
-    pub IsChildEffect: super::super::Foundation::BOOL,
+    pub IsChildEffect: ::win32_foundation::BOOL,
     pub ConstantBuffers: u32,
     pub SharedConstantBuffers: u32,
     pub GlobalVariables: u32,
     pub SharedGlobalVariables: u32,
     pub Techniques: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_EFFECT_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_EFFECT_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_EFFECT_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_EFFECT_DESC").field("IsChildEffect", &self.IsChildEffect).field("ConstantBuffers", &self.ConstantBuffers).field("SharedConstantBuffers", &self.SharedConstantBuffers).field("GlobalVariables", &self.GlobalVariables).field("SharedGlobalVariables", &self.SharedGlobalVariables).field("Techniques", &self.Techniques).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_EFFECT_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_EFFECT_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_EFFECT_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_EFFECT_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_EFFECT_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_EFFECT_SHADER_DESC {
     pub pInputSignature: *const u8,
-    pub IsInline: super::super::Foundation::BOOL,
+    pub IsInline: ::win32_foundation::BOOL,
     pub pBytecode: *const u8,
     pub BytecodeLength: u32,
     pub SODecl: ::windows_core::PCSTR,
     pub NumInputSignatureEntries: u32,
     pub NumOutputSignatureEntries: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_EFFECT_SHADER_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_EFFECT_SHADER_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_EFFECT_SHADER_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_EFFECT_SHADER_DESC").field("pInputSignature", &self.pInputSignature).field("IsInline", &self.IsInline).field("pBytecode", &self.pBytecode).field("BytecodeLength", &self.BytecodeLength).field("SODecl", &self.SODecl).field("NumInputSignatureEntries", &self.NumInputSignatureEntries).field("NumOutputSignatureEntries", &self.NumOutputSignatureEntries).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_EFFECT_SHADER_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_EFFECT_SHADER_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_EFFECT_SHADER_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_EFFECT_SHADER_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_EFFECT_SHADER_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2934,38 +2893,30 @@ impl ::core::default::Default for D3D10_QUERY_DATA_SO_STATISTICS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {
     pub Frequency: u64,
-    pub Disjoint: super::super::Foundation::BOOL,
+    pub Disjoint: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_QUERY_DATA_TIMESTAMP_DISJOINT").field("Frequency", &self.Frequency).field("Disjoint", &self.Disjoint).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_QUERY_DATA_TIMESTAMP_DISJOINT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3048,28 +2999,24 @@ impl ::core::fmt::Debug for D3D10_RAISE_FLAG {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_RASTERIZER_DESC {
     pub FillMode: D3D10_FILL_MODE,
     pub CullMode: D3D10_CULL_MODE,
-    pub FrontCounterClockwise: super::super::Foundation::BOOL,
+    pub FrontCounterClockwise: ::win32_foundation::BOOL,
     pub DepthBias: i32,
     pub DepthBiasClamp: f32,
     pub SlopeScaledDepthBias: f32,
-    pub DepthClipEnable: super::super::Foundation::BOOL,
-    pub ScissorEnable: super::super::Foundation::BOOL,
-    pub MultisampleEnable: super::super::Foundation::BOOL,
-    pub AntialiasedLineEnable: super::super::Foundation::BOOL,
+    pub DepthClipEnable: ::win32_foundation::BOOL,
+    pub ScissorEnable: ::win32_foundation::BOOL,
+    pub MultisampleEnable: ::win32_foundation::BOOL,
+    pub AntialiasedLineEnable: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_RASTERIZER_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_RASTERIZER_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_RASTERIZER_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_RASTERIZER_DESC")
@@ -3086,19 +3033,15 @@ impl ::core::fmt::Debug for D3D10_RASTERIZER_DESC {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_RASTERIZER_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_RASTERIZER_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_RASTERIZER_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_RASTERIZER_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_RASTERIZER_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3106,9 +3049,8 @@ impl ::core::default::Default for D3D10_RASTERIZER_DESC {
 }
 pub const D3D10_REGKEY_PATH: &str = "Software\\Microsoft\\Direct3D";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_RENDER_TARGET_BLEND_DESC1 {
-    pub BlendEnable: super::super::Foundation::BOOL,
+    pub BlendEnable: ::win32_foundation::BOOL,
     pub SrcBlend: D3D10_BLEND,
     pub DestBlend: D3D10_BLEND,
     pub BlendOp: D3D10_BLEND_OP,
@@ -3117,33 +3059,26 @@ pub struct D3D10_RENDER_TARGET_BLEND_DESC1 {
     pub BlendOpAlpha: D3D10_BLEND_OP,
     pub RenderTargetWriteMask: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_RENDER_TARGET_BLEND_DESC1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_RENDER_TARGET_BLEND_DESC1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_RENDER_TARGET_BLEND_DESC1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_RENDER_TARGET_BLEND_DESC1").field("BlendEnable", &self.BlendEnable).field("SrcBlend", &self.SrcBlend).field("DestBlend", &self.DestBlend).field("BlendOp", &self.BlendOp).field("SrcBlendAlpha", &self.SrcBlendAlpha).field("DestBlendAlpha", &self.DestBlendAlpha).field("BlendOpAlpha", &self.BlendOpAlpha).field("RenderTargetWriteMask", &self.RenderTargetWriteMask).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_RENDER_TARGET_BLEND_DESC1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_RENDER_TARGET_BLEND_DESC1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_RENDER_TARGET_BLEND_DESC1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_RENDER_TARGET_BLEND_DESC1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_RENDER_TARGET_BLEND_DESC1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3550,7 +3485,6 @@ impl ::core::default::Default for D3D10_SHADER_DEBUG_INPUT_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_SHADER_DEBUG_INST_INFO {
     pub Id: u32,
     pub Opcode: u32,
@@ -3563,33 +3497,26 @@ pub struct D3D10_SHADER_DEBUG_INST_INFO {
     pub AccessedVars: u32,
     pub AccessedVarsInfo: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_SHADER_DEBUG_INST_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_SHADER_DEBUG_INST_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_SHADER_DEBUG_INST_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_SHADER_DEBUG_INST_INFO").field("Id", &self.Id).field("Opcode", &self.Opcode).field("uOutputs", &self.uOutputs).field("pOutputs", &self.pOutputs).field("TokenId", &self.TokenId).field("NestingLevel", &self.NestingLevel).field("Scopes", &self.Scopes).field("ScopeInfo", &self.ScopeInfo).field("AccessedVars", &self.AccessedVars).field("AccessedVarsInfo", &self.AccessedVarsInfo).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_SHADER_DEBUG_INST_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_SHADER_DEBUG_INST_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_SHADER_DEBUG_INST_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_SHADER_DEBUG_INST_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_SHADER_DEBUG_INST_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3598,7 +3525,6 @@ impl ::core::default::Default for D3D10_SHADER_DEBUG_INST_INFO {
 pub const D3D10_SHADER_DEBUG_NAME_FOR_BINARY: u32 = 8388608u32;
 pub const D3D10_SHADER_DEBUG_NAME_FOR_SOURCE: u32 = 4194304u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     pub OutputRegisterSet: D3D10_SHADER_DEBUG_REGTYPE,
     pub OutputReg: u32,
@@ -3608,40 +3534,32 @@ pub struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     pub IndexReg: u32,
     pub IndexComp: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_SHADER_DEBUG_OUTPUTREG_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_SHADER_DEBUG_OUTPUTREG_INFO").field("OutputRegisterSet", &self.OutputRegisterSet).field("OutputReg", &self.OutputReg).field("TempArrayReg", &self.TempArrayReg).field("OutputComponents", &self.OutputComponents).field("OutputVars", &self.OutputVars).field("IndexReg", &self.IndexReg).field("IndexComp", &self.IndexComp).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_SHADER_DEBUG_OUTPUTREG_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_SHADER_DEBUG_OUTPUTREG_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_SHADER_DEBUG_OUTPUTVAR {
     pub Var: u32,
     pub uValueMin: u32,
@@ -3650,36 +3568,29 @@ pub struct D3D10_SHADER_DEBUG_OUTPUTVAR {
     pub iValueMax: i32,
     pub fValueMin: f32,
     pub fValueMax: f32,
-    pub bNaNPossible: super::super::Foundation::BOOL,
-    pub bInfPossible: super::super::Foundation::BOOL,
+    pub bNaNPossible: ::win32_foundation::BOOL,
+    pub bInfPossible: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_SHADER_DEBUG_OUTPUTVAR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_SHADER_DEBUG_OUTPUTVAR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for D3D10_SHADER_DEBUG_OUTPUTVAR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("D3D10_SHADER_DEBUG_OUTPUTVAR").field("Var", &self.Var).field("uValueMin", &self.uValueMin).field("uValueMax", &self.uValueMax).field("iValueMin", &self.iValueMin).field("iValueMax", &self.iValueMax).field("fValueMin", &self.fValueMin).field("fValueMax", &self.fValueMax).field("bNaNPossible", &self.bNaNPossible).field("bInfPossible", &self.bInfPossible).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for D3D10_SHADER_DEBUG_OUTPUTVAR {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for D3D10_SHADER_DEBUG_OUTPUTVAR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<D3D10_SHADER_DEBUG_OUTPUTVAR>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for D3D10_SHADER_DEBUG_OUTPUTVAR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for D3D10_SHADER_DEBUG_OUTPUTVAR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5662,7 +5573,6 @@ impl ID3D10BlendState {
     pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, pdata: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), pdata.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetDesc(&self, pdesc: *mut D3D10_BLEND_DESC) {
         (::windows_core::Interface::vtable(self).GetDesc)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdesc))
     }
@@ -5733,10 +5643,7 @@ unsafe impl ::windows_core::Interface for ID3D10BlendState {
 #[doc(hidden)]
 pub struct ID3D10BlendState_Vtbl {
     pub base__: ID3D10DeviceChild_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_BLEND_DESC),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDesc: usize,
 }
 #[repr(transparent)]
 pub struct ID3D10BlendState1(::windows_core::IUnknown);
@@ -5753,11 +5660,9 @@ impl ID3D10BlendState1 {
     pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, pdata: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), pdata.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetDesc(&self, pdesc: *mut D3D10_BLEND_DESC) {
         (::windows_core::Interface::vtable(self).base__.GetDesc)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdesc))
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetDesc1(&self, pdesc: *mut D3D10_BLEND_DESC1) {
         (::windows_core::Interface::vtable(self).GetDesc1)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdesc))
     }
@@ -5848,10 +5753,7 @@ unsafe impl ::windows_core::Interface for ID3D10BlendState1 {
 #[doc(hidden)]
 pub struct ID3D10BlendState1_Vtbl {
     pub base__: ID3D10BlendState_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetDesc1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_BLEND_DESC1),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDesc1: usize,
 }
 #[repr(transparent)]
 pub struct ID3D10Buffer(::windows_core::IUnknown);
@@ -6199,7 +6101,6 @@ impl ID3D10DepthStencilState {
     pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, pdata: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), pdata.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetDesc(&self, pdesc: *mut D3D10_DEPTH_STENCIL_DESC) {
         (::windows_core::Interface::vtable(self).GetDesc)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdesc))
     }
@@ -6270,10 +6171,7 @@ unsafe impl ::windows_core::Interface for ID3D10DepthStencilState {
 #[doc(hidden)]
 pub struct ID3D10DepthStencilState_Vtbl {
     pub base__: ID3D10DeviceChild_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_DEPTH_STENCIL_DESC),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDesc: usize,
 }
 #[repr(transparent)]
 pub struct ID3D10DepthStencilView(::windows_core::IUnknown);
@@ -6448,8 +6346,7 @@ impl ID3D10Device {
     pub unsafe fn VSSetSamplers(&self, startslot: u32, ppsamplers: &[::core::option::Option<ID3D10SamplerState>]) {
         (::windows_core::Interface::vtable(self).VSSetSamplers)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(startslot), ppsamplers.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppsamplers)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPredication<'a, Param0: ::windows_core::IntoParam<'a, ID3D10Predicate>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, ppredicate: Param0, predicatevalue: Param1) {
+    pub unsafe fn SetPredication<'a, Param0: ::windows_core::IntoParam<'a, ID3D10Predicate>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ppredicate: Param0, predicatevalue: Param1) {
         (::windows_core::Interface::vtable(self).SetPredication)(::windows_core::Interface::as_raw(self), ppredicate.into_param().abi(), predicatevalue.into_param().abi())
     }
     pub unsafe fn GSSetShaderResources(&self, startslot: u32, ppshaderresourceviews: &[::core::option::Option<ID3D10ShaderResourceView>]) {
@@ -6479,8 +6376,7 @@ impl ID3D10Device {
     pub unsafe fn RSSetViewports(&self, pviewports: &[D3D10_VIEWPORT]) {
         (::windows_core::Interface::vtable(self).RSSetViewports)(::windows_core::Interface::as_raw(self), pviewports.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pviewports)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RSSetScissorRects(&self, prects: &[super::super::Foundation::RECT]) {
+    pub unsafe fn RSSetScissorRects(&self, prects: &[::win32_foundation::RECT]) {
         (::windows_core::Interface::vtable(self).RSSetScissorRects)(::windows_core::Interface::as_raw(self), prects.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(prects)))
     }
     pub unsafe fn CopySubresourceRegion<'a, Param0: ::windows_core::IntoParam<'a, ID3D10Resource>, Param5: ::windows_core::IntoParam<'a, ID3D10Resource>>(&self, pdstresource: Param0, dstsubresource: u32, dstx: u32, dsty: u32, dstz: u32, psrcresource: Param5, srcsubresource: u32, psrcbox: *const D3D10_BOX) {
@@ -6549,8 +6445,7 @@ impl ID3D10Device {
     pub unsafe fn VSGetSamplers(&self, startslot: u32, ppsamplers: &mut [::core::option::Option<ID3D10SamplerState>]) {
         (::windows_core::Interface::vtable(self).VSGetSamplers)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(startslot), ppsamplers.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(ppsamplers)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetPredication(&self, pppredicate: *mut ::core::option::Option<ID3D10Predicate>, ppredicatevalue: *mut super::super::Foundation::BOOL) {
+    pub unsafe fn GetPredication(&self, pppredicate: *mut ::core::option::Option<ID3D10Predicate>, ppredicatevalue: *mut ::win32_foundation::BOOL) {
         (::windows_core::Interface::vtable(self).GetPredication)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pppredicate), ::core::mem::transmute(ppredicatevalue))
     }
     pub unsafe fn GSGetShaderResources(&self, startslot: u32, ppshaderresourceviews: &mut [::core::option::Option<ID3D10ShaderResourceView>]) {
@@ -6577,8 +6472,7 @@ impl ID3D10Device {
     pub unsafe fn RSGetViewports(&self, numviewports: *mut u32, pviewports: *mut D3D10_VIEWPORT) {
         (::windows_core::Interface::vtable(self).RSGetViewports)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(numviewports), ::core::mem::transmute(pviewports))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RSGetScissorRects(&self, numrects: *mut u32, prects: *mut super::super::Foundation::RECT) {
+    pub unsafe fn RSGetScissorRects(&self, numrects: *mut u32, prects: *mut ::win32_foundation::RECT) {
         (::windows_core::Interface::vtable(self).RSGetScissorRects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(numrects), ::core::mem::transmute(prects))
     }
     pub unsafe fn GetDeviceRemovedReason(&self) -> ::windows_core::Result<()> {
@@ -6660,17 +6554,14 @@ impl ID3D10Device {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePixelShader)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pshaderbytecode)), pshaderbytecode.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10PixelShader>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateBlendState(&self, pblendstatedesc: *const D3D10_BLEND_DESC) -> ::windows_core::Result<ID3D10BlendState> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateBlendState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pblendstatedesc), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10BlendState>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateDepthStencilState(&self, pdepthstencildesc: *const D3D10_DEPTH_STENCIL_DESC) -> ::windows_core::Result<ID3D10DepthStencilState> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateDepthStencilState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdepthstencildesc), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10DepthStencilState>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateRasterizerState(&self, prasterizerdesc: *const D3D10_RASTERIZER_DESC) -> ::windows_core::Result<ID3D10RasterizerState> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateRasterizerState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(prasterizerdesc), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10RasterizerState>(result__)
@@ -6710,8 +6601,7 @@ impl ID3D10Device {
     pub unsafe fn GetCreationFlags(&self) -> u32 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetCreationFlags)(::windows_core::Interface::as_raw(self)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenSharedResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hresource: Param0, returnedinterface: *const ::windows_core::GUID, ppresource: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+    pub unsafe fn OpenSharedResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hresource: Param0, returnedinterface: *const ::windows_core::GUID, ppresource: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OpenSharedResource)(::windows_core::Interface::as_raw(self), hresource.into_param().abi(), ::core::mem::transmute(returnedinterface), ::core::mem::transmute(ppresource)).ok()
     }
     pub unsafe fn SetTextFilterSize(&self, width: u32, height: u32) {
@@ -6791,10 +6681,7 @@ pub struct ID3D10Device_Vtbl {
     IASetPrimitiveTopology: usize,
     pub VSSetShaderResources: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startslot: u32, numviews: u32, ppshaderresourceviews: *const ::windows_core::RawPtr),
     pub VSSetSamplers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startslot: u32, numsamplers: u32, ppsamplers: *const ::windows_core::RawPtr),
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetPredication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppredicate: ::windows_core::RawPtr, predicatevalue: super::super::Foundation::BOOL),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetPredication: usize,
+    pub SetPredication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppredicate: ::windows_core::RawPtr, predicatevalue: ::win32_foundation::BOOL),
     pub GSSetShaderResources: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startslot: u32, numviews: u32, ppshaderresourceviews: *const ::windows_core::RawPtr),
     pub GSSetSamplers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startslot: u32, numsamplers: u32, ppsamplers: *const ::windows_core::RawPtr),
     pub OMSetRenderTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numviews: u32, pprendertargetviews: *const ::windows_core::RawPtr, pdepthstencilview: ::windows_core::RawPtr),
@@ -6804,10 +6691,7 @@ pub struct ID3D10Device_Vtbl {
     pub DrawAuto: unsafe extern "system" fn(this: *mut ::core::ffi::c_void),
     pub RSSetState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prasterizerstate: ::windows_core::RawPtr),
     pub RSSetViewports: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numviewports: u32, pviewports: *const D3D10_VIEWPORT),
-    #[cfg(feature = "Win32_Foundation")]
-    pub RSSetScissorRects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numrects: u32, prects: *const super::super::Foundation::RECT),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RSSetScissorRects: usize,
+    pub RSSetScissorRects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numrects: u32, prects: *const ::win32_foundation::RECT),
     pub CopySubresourceRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdstresource: ::windows_core::RawPtr, dstsubresource: u32, dstx: u32, dsty: u32, dstz: u32, psrcresource: ::windows_core::RawPtr, srcsubresource: u32, psrcbox: *const D3D10_BOX),
     pub CopyResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdstresource: ::windows_core::RawPtr, psrcresource: ::windows_core::RawPtr),
     pub UpdateSubresource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdstresource: ::windows_core::RawPtr, dstsubresource: u32, pdstbox: *const D3D10_BOX, psrcdata: *const ::core::ffi::c_void, srcrowpitch: u32, srcdepthpitch: u32),
@@ -6838,10 +6722,7 @@ pub struct ID3D10Device_Vtbl {
     IAGetPrimitiveTopology: usize,
     pub VSGetShaderResources: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startslot: u32, numviews: u32, ppshaderresourceviews: *mut ::windows_core::RawPtr),
     pub VSGetSamplers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startslot: u32, numsamplers: u32, ppsamplers: *mut ::windows_core::RawPtr),
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetPredication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppredicate: *mut ::windows_core::RawPtr, ppredicatevalue: *mut super::super::Foundation::BOOL),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetPredication: usize,
+    pub GetPredication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppredicate: *mut ::windows_core::RawPtr, ppredicatevalue: *mut ::win32_foundation::BOOL),
     pub GSGetShaderResources: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startslot: u32, numviews: u32, ppshaderresourceviews: *mut ::windows_core::RawPtr),
     pub GSGetSamplers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startslot: u32, numsamplers: u32, ppsamplers: *mut ::windows_core::RawPtr),
     pub OMGetRenderTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numviews: u32, pprendertargetviews: *mut ::windows_core::RawPtr, ppdepthstencilview: *mut ::windows_core::RawPtr),
@@ -6850,10 +6731,7 @@ pub struct ID3D10Device_Vtbl {
     pub SOGetTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numbuffers: u32, ppsotargets: *mut ::windows_core::RawPtr, poffsets: *mut u32),
     pub RSGetState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprasterizerstate: *mut ::windows_core::RawPtr),
     pub RSGetViewports: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numviewports: *mut u32, pviewports: *mut D3D10_VIEWPORT),
-    #[cfg(feature = "Win32_Foundation")]
-    pub RSGetScissorRects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numrects: *mut u32, prects: *mut super::super::Foundation::RECT),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RSGetScissorRects: usize,
+    pub RSGetScissorRects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numrects: *mut u32, prects: *mut ::win32_foundation::RECT),
     pub GetDeviceRemovedReason: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetExceptionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, raiseflags: u32) -> ::windows_core::HRESULT,
     pub GetExceptionMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> u32,
@@ -6895,18 +6773,9 @@ pub struct ID3D10Device_Vtbl {
     pub CreateGeometryShader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, ppgeometryshader: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateGeometryShaderWithStreamOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, psodeclaration: *const D3D10_SO_DECLARATION_ENTRY, numentries: u32, outputstreamstride: u32, ppgeometryshader: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreatePixelShader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, pppixelshader: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub CreateBlendState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pblendstatedesc: *const D3D10_BLEND_DESC, ppblendstate: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateBlendState: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub CreateDepthStencilState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdepthstencildesc: *const D3D10_DEPTH_STENCIL_DESC, ppdepthstencilstate: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateDepthStencilState: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub CreateRasterizerState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prasterizerdesc: *const D3D10_RASTERIZER_DESC, pprasterizerstate: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateRasterizerState: usize,
     pub CreateSamplerState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, psamplerdesc: *const D3D10_SAMPLER_DESC, ppsamplerstate: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateQuery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pquerydesc: *const D3D10_QUERY_DESC, ppquery: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreatePredicate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppredicatedesc: *const D3D10_QUERY_DESC, pppredicate: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -6922,10 +6791,7 @@ pub struct ID3D10Device_Vtbl {
     pub CheckCounterInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcounterinfo: *mut D3D10_COUNTER_INFO),
     pub CheckCounter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *const D3D10_COUNTER_DESC, ptype: *mut D3D10_COUNTER_TYPE, pactivecounters: *mut u32, szname: ::windows_core::PSTR, pnamelength: *mut u32, szunits: ::windows_core::PSTR, punitslength: *mut u32, szdescription: ::windows_core::PSTR, pdescriptionlength: *mut u32) -> ::windows_core::HRESULT,
     pub GetCreationFlags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> u32,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OpenSharedResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hresource: super::super::Foundation::HANDLE, returnedinterface: *const ::windows_core::GUID, ppresource: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OpenSharedResource: usize,
+    pub OpenSharedResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hresource: ::win32_foundation::HANDLE, returnedinterface: *const ::windows_core::GUID, ppresource: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetTextFilterSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: u32, height: u32),
     pub GetTextFilterSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwidth: *mut u32, pheight: *mut u32),
 }
@@ -6988,8 +6854,7 @@ impl ID3D10Device1 {
     pub unsafe fn VSSetSamplers(&self, startslot: u32, ppsamplers: &[::core::option::Option<ID3D10SamplerState>]) {
         (::windows_core::Interface::vtable(self).base__.VSSetSamplers)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(startslot), ppsamplers.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppsamplers)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetPredication<'a, Param0: ::windows_core::IntoParam<'a, ID3D10Predicate>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, ppredicate: Param0, predicatevalue: Param1) {
+    pub unsafe fn SetPredication<'a, Param0: ::windows_core::IntoParam<'a, ID3D10Predicate>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ppredicate: Param0, predicatevalue: Param1) {
         (::windows_core::Interface::vtable(self).base__.SetPredication)(::windows_core::Interface::as_raw(self), ppredicate.into_param().abi(), predicatevalue.into_param().abi())
     }
     pub unsafe fn GSSetShaderResources(&self, startslot: u32, ppshaderresourceviews: &[::core::option::Option<ID3D10ShaderResourceView>]) {
@@ -7019,8 +6884,7 @@ impl ID3D10Device1 {
     pub unsafe fn RSSetViewports(&self, pviewports: &[D3D10_VIEWPORT]) {
         (::windows_core::Interface::vtable(self).base__.RSSetViewports)(::windows_core::Interface::as_raw(self), pviewports.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pviewports)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RSSetScissorRects(&self, prects: &[super::super::Foundation::RECT]) {
+    pub unsafe fn RSSetScissorRects(&self, prects: &[::win32_foundation::RECT]) {
         (::windows_core::Interface::vtable(self).base__.RSSetScissorRects)(::windows_core::Interface::as_raw(self), prects.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(prects)))
     }
     pub unsafe fn CopySubresourceRegion<'a, Param0: ::windows_core::IntoParam<'a, ID3D10Resource>, Param5: ::windows_core::IntoParam<'a, ID3D10Resource>>(&self, pdstresource: Param0, dstsubresource: u32, dstx: u32, dsty: u32, dstz: u32, psrcresource: Param5, srcsubresource: u32, psrcbox: *const D3D10_BOX) {
@@ -7089,8 +6953,7 @@ impl ID3D10Device1 {
     pub unsafe fn VSGetSamplers(&self, startslot: u32, ppsamplers: &mut [::core::option::Option<ID3D10SamplerState>]) {
         (::windows_core::Interface::vtable(self).base__.VSGetSamplers)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(startslot), ppsamplers.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(ppsamplers)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetPredication(&self, pppredicate: *mut ::core::option::Option<ID3D10Predicate>, ppredicatevalue: *mut super::super::Foundation::BOOL) {
+    pub unsafe fn GetPredication(&self, pppredicate: *mut ::core::option::Option<ID3D10Predicate>, ppredicatevalue: *mut ::win32_foundation::BOOL) {
         (::windows_core::Interface::vtable(self).base__.GetPredication)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pppredicate), ::core::mem::transmute(ppredicatevalue))
     }
     pub unsafe fn GSGetShaderResources(&self, startslot: u32, ppshaderresourceviews: &mut [::core::option::Option<ID3D10ShaderResourceView>]) {
@@ -7117,8 +6980,7 @@ impl ID3D10Device1 {
     pub unsafe fn RSGetViewports(&self, numviewports: *mut u32, pviewports: *mut D3D10_VIEWPORT) {
         (::windows_core::Interface::vtable(self).base__.RSGetViewports)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(numviewports), ::core::mem::transmute(pviewports))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RSGetScissorRects(&self, numrects: *mut u32, prects: *mut super::super::Foundation::RECT) {
+    pub unsafe fn RSGetScissorRects(&self, numrects: *mut u32, prects: *mut ::win32_foundation::RECT) {
         (::windows_core::Interface::vtable(self).base__.RSGetScissorRects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(numrects), ::core::mem::transmute(prects))
     }
     pub unsafe fn GetDeviceRemovedReason(&self) -> ::windows_core::Result<()> {
@@ -7200,17 +7062,14 @@ impl ID3D10Device1 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePixelShader)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pshaderbytecode)), pshaderbytecode.len() as _, ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10PixelShader>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateBlendState(&self, pblendstatedesc: *const D3D10_BLEND_DESC) -> ::windows_core::Result<ID3D10BlendState> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateBlendState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pblendstatedesc), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10BlendState>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateDepthStencilState(&self, pdepthstencildesc: *const D3D10_DEPTH_STENCIL_DESC) -> ::windows_core::Result<ID3D10DepthStencilState> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateDepthStencilState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdepthstencildesc), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10DepthStencilState>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateRasterizerState(&self, prasterizerdesc: *const D3D10_RASTERIZER_DESC) -> ::windows_core::Result<ID3D10RasterizerState> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateRasterizerState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(prasterizerdesc), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10RasterizerState>(result__)
@@ -7250,8 +7109,7 @@ impl ID3D10Device1 {
     pub unsafe fn GetCreationFlags(&self) -> u32 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.GetCreationFlags)(::windows_core::Interface::as_raw(self)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OpenSharedResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hresource: Param0, returnedinterface: *const ::windows_core::GUID, ppresource: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+    pub unsafe fn OpenSharedResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hresource: Param0, returnedinterface: *const ::windows_core::GUID, ppresource: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.OpenSharedResource)(::windows_core::Interface::as_raw(self), hresource.into_param().abi(), ::core::mem::transmute(returnedinterface), ::core::mem::transmute(ppresource)).ok()
     }
     pub unsafe fn SetTextFilterSize(&self, width: u32, height: u32) {
@@ -7265,7 +7123,6 @@ impl ID3D10Device1 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateShaderResourceView1)(::windows_core::Interface::as_raw(self), presource.into_param().abi(), ::core::mem::transmute(pdesc), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10ShaderResourceView1>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn CreateBlendState1(&self, pblendstatedesc: *const D3D10_BLEND_DESC1) -> ::windows_core::Result<ID3D10BlendState1> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateBlendState1)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pblendstatedesc), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10BlendState1>(result__)
@@ -7344,10 +7201,7 @@ pub struct ID3D10Device1_Vtbl {
     pub CreateShaderResourceView1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, presource: ::windows_core::RawPtr, pdesc: *const D3D10_SHADER_RESOURCE_VIEW_DESC1, ppsrview: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Graphics_Direct3D", feature = "Win32_Graphics_Dxgi_Common")))]
     CreateShaderResourceView1: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub CreateBlendState1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pblendstatedesc: *const D3D10_BLEND_DESC1, ppblendstate: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateBlendState1: usize,
     pub GetFeatureLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> D3D10_FEATURE_LEVEL1,
 }
 #[repr(transparent)]
@@ -7420,19 +7274,16 @@ pub struct ID3D10DeviceChild_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10Effect(::windows_core::IUnknown);
 impl ID3D10Effect {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsValid)(::windows_core::Interface::as_raw(self)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsPool(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsPool(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsPool)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetDevice(&self) -> ::windows_core::Result<ID3D10Device> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetDevice)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10Device>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetDesc(&self) -> ::windows_core::Result<D3D10_EFFECT_DESC> {
         let mut result__ = ::core::mem::MaybeUninit::<D3D10_EFFECT_DESC>::zeroed();
         (::windows_core::Interface::vtable(self).GetDesc)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<D3D10_EFFECT_DESC>(result__)
@@ -7461,8 +7312,7 @@ impl ID3D10Effect {
     pub unsafe fn Optimize(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Optimize)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsOptimized(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsOptimized(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsOptimized)(::windows_core::Interface::as_raw(self)))
     }
 }
@@ -7512,19 +7362,10 @@ unsafe impl ::windows_core::Interface for ID3D10Effect {
 #[doc(hidden)]
 pub struct ID3D10Effect_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsValid: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsPool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsPool: usize,
+    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
+    pub IsPool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
     pub GetDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_EFFECT_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDesc: usize,
     pub GetConstantBufferByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32) -> ::core::option::Option<ID3D10EffectConstantBuffer>,
     pub GetConstantBufferByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::PCSTR) -> ::core::option::Option<ID3D10EffectConstantBuffer>,
     pub GetVariableByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32) -> ::core::option::Option<ID3D10EffectVariable>,
@@ -7533,16 +7374,12 @@ pub struct ID3D10Effect_Vtbl {
     pub GetTechniqueByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32) -> ::core::option::Option<ID3D10EffectTechnique>,
     pub GetTechniqueByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::PCSTR) -> ::core::option::Option<ID3D10EffectTechnique>,
     pub Optimize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsOptimized: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsOptimized: usize,
+    pub IsOptimized: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
 }
 #[repr(transparent)]
 pub struct ID3D10EffectBlendVariable(::windows_core::IUnknown);
 impl ID3D10EffectBlendVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -7622,7 +7459,6 @@ impl ID3D10EffectBlendVariable {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetBlendState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10BlendState>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetBackingStore(&self, index: u32, pblenddesc: *mut D3D10_BLEND_DESC) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetBackingStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(pblenddesc)).ok()
     }
@@ -7674,16 +7510,12 @@ unsafe impl ::windows_core::Interface for ID3D10EffectBlendVariable {
 pub struct ID3D10EffectBlendVariable_Vtbl {
     pub base__: ID3D10EffectVariable_Vtbl,
     pub GetBlendState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, ppblendstate: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetBackingStore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, pblenddesc: *mut D3D10_BLEND_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBackingStore: usize,
 }
 #[repr(transparent)]
 pub struct ID3D10EffectConstantBuffer(::windows_core::IUnknown);
 impl ID3D10EffectConstantBuffer {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -7828,8 +7660,7 @@ pub struct ID3D10EffectConstantBuffer_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectDepthStencilVariable(::windows_core::IUnknown);
 impl ID3D10EffectDepthStencilVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -7909,7 +7740,6 @@ impl ID3D10EffectDepthStencilVariable {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetDepthStencilState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10DepthStencilState>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetBackingStore(&self, index: u32) -> ::windows_core::Result<D3D10_DEPTH_STENCIL_DESC> {
         let mut result__ = ::core::mem::MaybeUninit::<D3D10_DEPTH_STENCIL_DESC>::zeroed();
         (::windows_core::Interface::vtable(self).GetBackingStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<D3D10_DEPTH_STENCIL_DESC>(result__)
@@ -7962,16 +7792,12 @@ unsafe impl ::windows_core::Interface for ID3D10EffectDepthStencilVariable {
 pub struct ID3D10EffectDepthStencilVariable_Vtbl {
     pub base__: ID3D10EffectVariable_Vtbl,
     pub GetDepthStencilState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, ppdepthstencilstate: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetBackingStore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, pdepthstencildesc: *mut D3D10_DEPTH_STENCIL_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBackingStore: usize,
 }
 #[repr(transparent)]
 pub struct ID3D10EffectDepthStencilViewVariable(::windows_core::IUnknown);
 impl ID3D10EffectDepthStencilViewVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -8115,8 +7941,7 @@ pub struct ID3D10EffectDepthStencilViewVariable_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectMatrixVariable(::windows_core::IUnknown);
 impl ID3D10EffectMatrixVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -8275,8 +8100,7 @@ pub struct ID3D10EffectMatrixVariable_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectPass(::windows_core::IUnknown);
 impl ID3D10EffectPass {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetDesc(&self, pdesc: *mut D3D10_PASS_DESC) -> ::windows_core::Result<()> {
@@ -8330,10 +8154,7 @@ unsafe impl ::windows_core::Interface for ID3D10EffectPass {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ID3D10EffectPass_Vtbl {
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsValid: usize,
+    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
     pub GetDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_PASS_DESC) -> ::windows_core::HRESULT,
     pub GetVertexShaderDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_PASS_SHADER_DESC) -> ::windows_core::HRESULT,
     pub GetGeometryShaderDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_PASS_SHADER_DESC) -> ::windows_core::HRESULT,
@@ -8401,8 +8222,7 @@ pub struct ID3D10EffectPool_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectRasterizerVariable(::windows_core::IUnknown);
 impl ID3D10EffectRasterizerVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -8482,7 +8302,6 @@ impl ID3D10EffectRasterizerVariable {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetRasterizerState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ID3D10RasterizerState>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetBackingStore(&self, index: u32) -> ::windows_core::Result<D3D10_RASTERIZER_DESC> {
         let mut result__ = ::core::mem::MaybeUninit::<D3D10_RASTERIZER_DESC>::zeroed();
         (::windows_core::Interface::vtable(self).GetBackingStore)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<D3D10_RASTERIZER_DESC>(result__)
@@ -8535,16 +8354,12 @@ unsafe impl ::windows_core::Interface for ID3D10EffectRasterizerVariable {
 pub struct ID3D10EffectRasterizerVariable_Vtbl {
     pub base__: ID3D10EffectVariable_Vtbl,
     pub GetRasterizerState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, pprasterizerstate: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetBackingStore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, prasterizerdesc: *mut D3D10_RASTERIZER_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBackingStore: usize,
 }
 #[repr(transparent)]
 pub struct ID3D10EffectRenderTargetViewVariable(::windows_core::IUnknown);
 impl ID3D10EffectRenderTargetViewVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -8688,8 +8503,7 @@ pub struct ID3D10EffectRenderTargetViewVariable_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectSamplerVariable(::windows_core::IUnknown);
 impl ID3D10EffectSamplerVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -8826,8 +8640,7 @@ pub struct ID3D10EffectSamplerVariable_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectScalarVariable(::windows_core::IUnknown);
 impl ID3D10EffectScalarVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -8929,21 +8742,17 @@ impl ID3D10EffectScalarVariable {
     pub unsafe fn GetIntArray(&self, pdata: &mut [i32], offset: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetIntArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pdata)), ::core::mem::transmute(offset), pdata.len() as _).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBool<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBool<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, value: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBool)(::windows_core::Interface::as_raw(self), value.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBool(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetBool)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetBool(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetBool)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBoolArray(&self, pdata: &[super::super::Foundation::BOOL], offset: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBoolArray(&self, pdata: &[::win32_foundation::BOOL], offset: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBoolArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(pdata)), ::core::mem::transmute(offset), pdata.len() as _).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBoolArray(&self, pdata: &mut [super::super::Foundation::BOOL], offset: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetBoolArray(&self, pdata: &mut [::win32_foundation::BOOL], offset: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetBoolArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pdata)), ::core::mem::transmute(offset), pdata.len() as _).ok()
     }
 }
@@ -9001,28 +8810,15 @@ pub struct ID3D10EffectScalarVariable_Vtbl {
     pub GetInt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvalue: *mut i32) -> ::windows_core::HRESULT,
     pub SetIntArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *const i32, offset: u32, count: u32) -> ::windows_core::HRESULT,
     pub GetIntArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut i32, offset: u32, count: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBool: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvalue: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBool: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBoolArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *const super::super::Foundation::BOOL, offset: u32, count: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBoolArray: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBoolArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut super::super::Foundation::BOOL, offset: u32, count: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBoolArray: usize,
+    pub SetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvalue: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetBoolArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *const ::win32_foundation::BOOL, offset: u32, count: u32) -> ::windows_core::HRESULT,
+    pub GetBoolArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut ::win32_foundation::BOOL, offset: u32, count: u32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ID3D10EffectShaderResourceVariable(::windows_core::IUnknown);
 impl ID3D10EffectShaderResourceVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -9166,8 +8962,7 @@ pub struct ID3D10EffectShaderResourceVariable_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectShaderVariable(::windows_core::IUnknown);
 impl ID3D10EffectShaderVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -9243,7 +9038,6 @@ impl ID3D10EffectShaderVariable {
     pub unsafe fn GetRawValue(&self, pdata: *mut ::core::ffi::c_void, offset: u32, bytecount: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetRawValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata), ::core::mem::transmute(offset), ::core::mem::transmute(bytecount)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetShaderDesc(&self, shaderindex: u32) -> ::windows_core::Result<D3D10_EFFECT_SHADER_DESC> {
         let mut result__ = ::core::mem::MaybeUninit::<D3D10_EFFECT_SHADER_DESC>::zeroed();
         (::windows_core::Interface::vtable(self).GetShaderDesc)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(shaderindex), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<D3D10_EFFECT_SHADER_DESC>(result__)
@@ -9317,10 +9111,7 @@ unsafe impl ::windows_core::Interface for ID3D10EffectShaderVariable {
 #[doc(hidden)]
 pub struct ID3D10EffectShaderVariable_Vtbl {
     pub base__: ID3D10EffectVariable_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetShaderDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shaderindex: u32, pdesc: *mut D3D10_EFFECT_SHADER_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetShaderDesc: usize,
     pub GetVertexShader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shaderindex: u32, ppvs: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetGeometryShader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shaderindex: u32, ppgs: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetPixelShader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shaderindex: u32, ppps: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -9336,8 +9127,7 @@ pub struct ID3D10EffectShaderVariable_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectStringVariable(::windows_core::IUnknown);
 impl ID3D10EffectStringVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -9473,8 +9263,7 @@ pub struct ID3D10EffectStringVariable_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectTechnique(::windows_core::IUnknown);
 impl ID3D10EffectTechnique {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetDesc(&self, pdesc: *mut D3D10_TECHNIQUE_DESC) -> ::windows_core::Result<()> {
@@ -9522,10 +9311,7 @@ unsafe impl ::windows_core::Interface for ID3D10EffectTechnique {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ID3D10EffectTechnique_Vtbl {
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsValid: usize,
+    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
     pub GetDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_TECHNIQUE_DESC) -> ::windows_core::HRESULT,
     pub GetAnnotationByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32) -> ::core::option::Option<ID3D10EffectVariable>,
     pub GetAnnotationByName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::PCSTR) -> ::core::option::Option<ID3D10EffectVariable>,
@@ -9536,8 +9322,7 @@ pub struct ID3D10EffectTechnique_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectType(::windows_core::IUnknown);
 impl ID3D10EffectType {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsValid)(::windows_core::Interface::as_raw(self)))
     }
     #[cfg(feature = "Win32_Graphics_Direct3D")]
@@ -9585,10 +9370,7 @@ unsafe impl ::windows_core::Interface for ID3D10EffectType {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ID3D10EffectType_Vtbl {
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsValid: usize,
+    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
     #[cfg(feature = "Win32_Graphics_Direct3D")]
     pub GetDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_EFFECT_TYPE_DESC) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
@@ -9602,8 +9384,7 @@ pub struct ID3D10EffectType_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectVariable(::windows_core::IUnknown);
 impl ID3D10EffectVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -9705,10 +9486,7 @@ unsafe impl ::windows_core::Interface for ID3D10EffectVariable {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ID3D10EffectVariable_Vtbl {
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsValid: usize,
+    pub IsValid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
     pub GetType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::core::option::Option<ID3D10EffectType>,
     pub GetDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_EFFECT_VARIABLE_DESC) -> ::windows_core::HRESULT,
     pub GetAnnotationByIndex: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32) -> ::core::option::Option<ID3D10EffectVariable>,
@@ -9737,8 +9515,7 @@ pub struct ID3D10EffectVariable_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10EffectVectorVariable(::windows_core::IUnknown);
 impl ID3D10EffectVectorVariable {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsValid(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn IsValid(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).base__.IsValid)(::windows_core::Interface::as_raw(self)))
     }
     pub unsafe fn GetType(&self) -> ::core::option::Option<ID3D10EffectType> {
@@ -9814,8 +9591,7 @@ impl ID3D10EffectVectorVariable {
     pub unsafe fn GetRawValue(&self, pdata: *mut ::core::ffi::c_void, offset: u32, bytecount: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetRawValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata), ::core::mem::transmute(offset), ::core::mem::transmute(bytecount)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBoolVector(&self, pdata: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBoolVector(&self, pdata: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBoolVector)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata)).ok()
     }
     pub unsafe fn SetIntVector(&self, pdata: *mut i32) -> ::windows_core::Result<()> {
@@ -9824,8 +9600,7 @@ impl ID3D10EffectVectorVariable {
     pub unsafe fn SetFloatVector(&self, pdata: *mut f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFloatVector)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBoolVector(&self, pdata: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetBoolVector(&self, pdata: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetBoolVector)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata)).ok()
     }
     pub unsafe fn GetIntVector(&self, pdata: *mut i32) -> ::windows_core::Result<()> {
@@ -9834,8 +9609,7 @@ impl ID3D10EffectVectorVariable {
     pub unsafe fn GetFloatVector(&self, pdata: *mut f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetFloatVector)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBoolVectorArray(&self, pdata: *mut super::super::Foundation::BOOL, offset: u32, count: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBoolVectorArray(&self, pdata: *mut ::win32_foundation::BOOL, offset: u32, count: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBoolVectorArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata), ::core::mem::transmute(offset), ::core::mem::transmute(count)).ok()
     }
     pub unsafe fn SetIntVectorArray(&self, pdata: *mut i32, offset: u32, count: u32) -> ::windows_core::Result<()> {
@@ -9844,8 +9618,7 @@ impl ID3D10EffectVectorVariable {
     pub unsafe fn SetFloatVectorArray(&self, pdata: *mut f32, offset: u32, count: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFloatVectorArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata), ::core::mem::transmute(offset), ::core::mem::transmute(count)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBoolVectorArray(&self, pdata: *mut super::super::Foundation::BOOL, offset: u32, count: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn GetBoolVectorArray(&self, pdata: *mut ::win32_foundation::BOOL, offset: u32, count: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetBoolVectorArray)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdata), ::core::mem::transmute(offset), ::core::mem::transmute(count)).ok()
     }
     pub unsafe fn GetIntVectorArray(&self, pdata: *mut i32, offset: u32, count: u32) -> ::windows_core::Result<()> {
@@ -9901,28 +9674,16 @@ unsafe impl ::windows_core::Interface for ID3D10EffectVectorVariable {
 #[doc(hidden)]
 pub struct ID3D10EffectVectorVariable_Vtbl {
     pub base__: ID3D10EffectVariable_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBoolVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBoolVector: usize,
+    pub SetBoolVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetIntVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut i32) -> ::windows_core::HRESULT,
     pub SetFloatVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBoolVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBoolVector: usize,
+    pub GetBoolVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetIntVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut i32) -> ::windows_core::HRESULT,
     pub GetFloatVector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBoolVectorArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut super::super::Foundation::BOOL, offset: u32, count: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBoolVectorArray: usize,
+    pub SetBoolVectorArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut ::win32_foundation::BOOL, offset: u32, count: u32) -> ::windows_core::HRESULT,
     pub SetIntVectorArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut i32, offset: u32, count: u32) -> ::windows_core::HRESULT,
     pub SetFloatVectorArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut f32, offset: u32, count: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBoolVectorArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut super::super::Foundation::BOOL, offset: u32, count: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBoolVectorArray: usize,
+    pub GetBoolVectorArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut ::win32_foundation::BOOL, offset: u32, count: u32) -> ::windows_core::HRESULT,
     pub GetIntVectorArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut i32, offset: u32, count: u32) -> ::windows_core::HRESULT,
     pub GetFloatVectorArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdata: *mut f32, offset: u32, count: u32) -> ::windows_core::HRESULT,
 }
@@ -10093,36 +9854,28 @@ impl ID3D10InfoQueue {
     pub unsafe fn AddApplicationMessage<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(&self, severity: D3D10_MESSAGE_SEVERITY, pdescription: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddApplicationMessage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(severity), pdescription.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBreakOnCategory<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, category: D3D10_MESSAGE_CATEGORY, benable: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBreakOnCategory<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, category: D3D10_MESSAGE_CATEGORY, benable: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBreakOnCategory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(category), benable.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBreakOnSeverity<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, severity: D3D10_MESSAGE_SEVERITY, benable: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBreakOnSeverity<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, severity: D3D10_MESSAGE_SEVERITY, benable: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBreakOnSeverity)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(severity), benable.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBreakOnID<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, id: D3D10_MESSAGE_ID, benable: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBreakOnID<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, id: D3D10_MESSAGE_ID, benable: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBreakOnID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id), benable.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBreakOnCategory(&self, category: D3D10_MESSAGE_CATEGORY) -> super::super::Foundation::BOOL {
+    pub unsafe fn GetBreakOnCategory(&self, category: D3D10_MESSAGE_CATEGORY) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetBreakOnCategory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(category)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBreakOnSeverity(&self, severity: D3D10_MESSAGE_SEVERITY) -> super::super::Foundation::BOOL {
+    pub unsafe fn GetBreakOnSeverity(&self, severity: D3D10_MESSAGE_SEVERITY) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetBreakOnSeverity)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(severity)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBreakOnID(&self, id: D3D10_MESSAGE_ID) -> super::super::Foundation::BOOL {
+    pub unsafe fn GetBreakOnID(&self, id: D3D10_MESSAGE_ID) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetBreakOnID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(id)))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMuteDebugOutput<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bmute: Param0) {
+    pub unsafe fn SetMuteDebugOutput<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, bmute: Param0) {
         (::windows_core::Interface::vtable(self).SetMuteDebugOutput)(::windows_core::Interface::as_raw(self), bmute.into_param().abi())
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetMuteDebugOutput(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn GetMuteDebugOutput(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetMuteDebugOutput)(::windows_core::Interface::as_raw(self)))
     }
 }
@@ -10199,38 +9952,14 @@ pub struct ID3D10InfoQueue_Vtbl {
     pub GetRetrievalFilterStackSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> u32,
     pub AddMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: D3D10_MESSAGE_CATEGORY, severity: D3D10_MESSAGE_SEVERITY, id: D3D10_MESSAGE_ID, pdescription: ::windows_core::PCSTR) -> ::windows_core::HRESULT,
     pub AddApplicationMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, severity: D3D10_MESSAGE_SEVERITY, pdescription: ::windows_core::PCSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBreakOnCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: D3D10_MESSAGE_CATEGORY, benable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBreakOnCategory: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBreakOnSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, severity: D3D10_MESSAGE_SEVERITY, benable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBreakOnSeverity: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBreakOnID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: D3D10_MESSAGE_ID, benable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBreakOnID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBreakOnCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: D3D10_MESSAGE_CATEGORY) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBreakOnCategory: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBreakOnSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, severity: D3D10_MESSAGE_SEVERITY) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBreakOnSeverity: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBreakOnID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: D3D10_MESSAGE_ID) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBreakOnID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetMuteDebugOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bmute: super::super::Foundation::BOOL),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetMuteDebugOutput: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetMuteDebugOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetMuteDebugOutput: usize,
+    pub SetBreakOnCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: D3D10_MESSAGE_CATEGORY, benable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetBreakOnSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, severity: D3D10_MESSAGE_SEVERITY, benable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetBreakOnID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: D3D10_MESSAGE_ID, benable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetBreakOnCategory: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, category: D3D10_MESSAGE_CATEGORY) -> ::win32_foundation::BOOL,
+    pub GetBreakOnSeverity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, severity: D3D10_MESSAGE_SEVERITY) -> ::win32_foundation::BOOL,
+    pub GetBreakOnID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: D3D10_MESSAGE_ID) -> ::win32_foundation::BOOL,
+    pub SetMuteDebugOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bmute: ::win32_foundation::BOOL),
+    pub GetMuteDebugOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
 }
 #[repr(transparent)]
 pub struct ID3D10InputLayout(::windows_core::IUnknown);
@@ -10324,12 +10053,10 @@ impl ID3D10Multithread {
     pub unsafe fn Leave(&self) {
         (::windows_core::Interface::vtable(self).Leave)(::windows_core::Interface::as_raw(self))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMultithreadProtected<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bmtprotect: Param0) -> super::super::Foundation::BOOL {
+    pub unsafe fn SetMultithreadProtected<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, bmtprotect: Param0) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).SetMultithreadProtected)(::windows_core::Interface::as_raw(self), bmtprotect.into_param().abi()))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetMultithreadProtected(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn GetMultithreadProtected(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetMultithreadProtected)(::windows_core::Interface::as_raw(self)))
     }
 }
@@ -10381,14 +10108,8 @@ pub struct ID3D10Multithread_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Enter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void),
     pub Leave: unsafe extern "system" fn(this: *mut ::core::ffi::c_void),
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetMultithreadProtected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bmtprotect: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetMultithreadProtected: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetMultithreadProtected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetMultithreadProtected: usize,
+    pub SetMultithreadProtected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bmtprotect: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL,
+    pub GetMultithreadProtected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
 }
 #[repr(transparent)]
 pub struct ID3D10PixelShader(::windows_core::IUnknown);
@@ -10745,7 +10466,6 @@ impl ID3D10RasterizerState {
     pub unsafe fn SetPrivateDataInterface<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, guid: *const ::windows_core::GUID, pdata: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetPrivateDataInterface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(guid), pdata.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetDesc(&self, pdesc: *mut D3D10_RASTERIZER_DESC) {
         (::windows_core::Interface::vtable(self).GetDesc)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdesc))
     }
@@ -10816,10 +10536,7 @@ unsafe impl ::windows_core::Interface for ID3D10RasterizerState {
 #[doc(hidden)]
 pub struct ID3D10RasterizerState_Vtbl {
     pub base__: ID3D10DeviceChild_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetDesc: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdesc: *mut D3D10_RASTERIZER_DESC),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetDesc: usize,
 }
 #[repr(transparent)]
 pub struct ID3D10RenderTargetView(::windows_core::IUnknown);
@@ -11270,15 +10987,13 @@ impl ID3D10ShaderReflection1 {
         let mut result__ = ::core::mem::MaybeUninit::<super::Direct3D::D3D_PRIMITIVE>::zeroed();
         (::windows_core::Interface::vtable(self).GetGSInputPrimitive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Direct3D::D3D_PRIMITIVE>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsLevel9Shader(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsLevel9Shader)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsLevel9Shader(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsLevel9Shader)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsSampleFrequencyShader(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsSampleFrequencyShader)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsSampleFrequencyShader(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsSampleFrequencyShader)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<ID3D10ShaderReflection1> for ::windows_core::IUnknown {
@@ -11358,14 +11073,8 @@ pub struct ID3D10ShaderReflection1_Vtbl {
     pub GetGSInputPrimitive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pprim: *mut super::Direct3D::D3D_PRIMITIVE) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct3D"))]
     GetGSInputPrimitive: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsLevel9Shader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pblevel9shader: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsLevel9Shader: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsSampleFrequencyShader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbsamplefrequency: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsSampleFrequencyShader: usize,
+    pub IsLevel9Shader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pblevel9shader: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub IsSampleFrequencyShader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbsamplefrequency: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ID3D10ShaderReflectionConstantBuffer(::windows_core::IUnknown);
@@ -11826,12 +11535,10 @@ pub struct ID3D10StateBlock_Vtbl {
 #[repr(transparent)]
 pub struct ID3D10SwitchToRef(::windows_core::IUnknown);
 impl ID3D10SwitchToRef {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetUseRef<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, useref: Param0) -> super::super::Foundation::BOOL {
+    pub unsafe fn SetUseRef<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, useref: Param0) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).SetUseRef)(::windows_core::Interface::as_raw(self), useref.into_param().abi()))
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUseRef(&self) -> super::super::Foundation::BOOL {
+    pub unsafe fn GetUseRef(&self) -> ::win32_foundation::BOOL {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetUseRef)(::windows_core::Interface::as_raw(self)))
     }
 }
@@ -11881,14 +11588,8 @@ unsafe impl ::windows_core::Interface for ID3D10SwitchToRef {
 #[doc(hidden)]
 pub struct ID3D10SwitchToRef_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetUseRef: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, useref: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetUseRef: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUseRef: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUseRef: usize,
+    pub SetUseRef: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, useref: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL,
+    pub GetUseRef: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL,
 }
 #[repr(transparent)]
 pub struct ID3D10Texture1D(::windows_core::IUnknown);
@@ -12446,8 +12147,8 @@ pub struct ID3D10View_Vtbl {
     pub base__: ID3D10DeviceChild_Vtbl,
     pub GetResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppresource: *mut ::windows_core::RawPtr),
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi"))]
-pub type PFN_D3D10_CREATE_DEVICE1 = ::core::option::Option<unsafe extern "system" fn(param0: ::core::option::Option<super::Dxgi::IDXGIAdapter>, param1: D3D10_DRIVER_TYPE, param2: super::super::Foundation::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut ::core::option::Option<ID3D10Device1>) -> ::windows_core::HRESULT>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
-pub type PFN_D3D10_CREATE_DEVICE_AND_SWAP_CHAIN1 = ::core::option::Option<unsafe extern "system" fn(param0: ::core::option::Option<super::Dxgi::IDXGIAdapter>, param1: D3D10_DRIVER_TYPE, param2: super::super::Foundation::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut super::Dxgi::DXGI_SWAP_CHAIN_DESC, param7: *mut ::core::option::Option<super::Dxgi::IDXGISwapChain>, param8: *mut ::core::option::Option<ID3D10Device1>) -> ::windows_core::HRESULT>;
+#[cfg(feature = "Win32_Graphics_Dxgi")]
+pub type PFN_D3D10_CREATE_DEVICE1 = ::core::option::Option<unsafe extern "system" fn(param0: ::core::option::Option<super::Dxgi::IDXGIAdapter>, param1: D3D10_DRIVER_TYPE, param2: ::win32_foundation::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut ::core::option::Option<ID3D10Device1>) -> ::windows_core::HRESULT>;
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+pub type PFN_D3D10_CREATE_DEVICE_AND_SWAP_CHAIN1 = ::core::option::Option<unsafe extern "system" fn(param0: ::core::option::Option<super::Dxgi::IDXGIAdapter>, param1: D3D10_DRIVER_TYPE, param2: ::win32_foundation::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut super::Dxgi::DXGI_SWAP_CHAIN_DESC, param7: *mut ::core::option::Option<super::Dxgi::IDXGISwapChain>, param8: *mut ::core::option::Option<ID3D10Device1>) -> ::windows_core::HRESULT>;
 pub const _FACD3D10: u32 = 2169u32;

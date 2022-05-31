@@ -1,11 +1,8 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsDestinationReachableA(lpszdestination: ::windows_core_sys::PCSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsDestinationReachableW(lpszdestination: ::windows_core_sys::PCWSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsNetworkAlive(lpdwflags: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn IsDestinationReachableA(lpszdestination: ::windows_core_sys::PCSTR, lpqocinfo: *mut QOCINFO) -> ::win32_foundation_sys::BOOL;
+    pub fn IsDestinationReachableW(lpszdestination: ::windows_core_sys::PCWSTR, lpqocinfo: *mut QOCINFO) -> ::win32_foundation_sys::BOOL;
+    pub fn IsNetworkAlive(lpdwflags: *mut u32) -> ::win32_foundation_sys::BOOL;
 }
 pub const CONNECTION_AOL: u32 = 4u32;
 pub type ISensLogon = *mut ::core::ffi::c_void;

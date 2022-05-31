@@ -376,8 +376,7 @@ impl IDXCoreAdapterFactory {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).CreateAdapterList)(::windows_core::Interface::as_raw(self), filterattributes.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(filterattributes)), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetAdapterByLuid<T: ::windows_core::Interface>(&self, adapterluid: *const super::super::Foundation::LUID) -> ::windows_core::Result<T> {
+    pub unsafe fn GetAdapterByLuid<T: ::windows_core::Interface>(&self, adapterluid: *const ::win32_foundation::LUID) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetAdapterByLuid)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(adapterluid), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -437,10 +436,7 @@ unsafe impl ::windows_core::Interface for IDXCoreAdapterFactory {
 pub struct IDXCoreAdapterFactory_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub CreateAdapterList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, numattributes: u32, filterattributes: *const ::windows_core::GUID, riid: *const ::windows_core::GUID, ppvadapterlist: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetAdapterByLuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adapterluid: *const super::super::Foundation::LUID, riid: *const ::windows_core::GUID, ppvadapter: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetAdapterByLuid: usize,
+    pub GetAdapterByLuid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, adapterluid: *const ::win32_foundation::LUID, riid: *const ::windows_core::GUID, ppvadapter: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub IsNotificationTypeSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, notificationtype: DXCoreNotificationType) -> bool,
     pub RegisterEventNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dxcoreobject: *mut ::core::ffi::c_void, notificationtype: DXCoreNotificationType, callbackfunction: ::windows_core::RawPtr, callbackcontext: *const ::core::ffi::c_void, eventcookie: *mut u32) -> ::windows_core::HRESULT,
     pub UnregisterEventNotification: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventcookie: u32) -> ::windows_core::HRESULT,

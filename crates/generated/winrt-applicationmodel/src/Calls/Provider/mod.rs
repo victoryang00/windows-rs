@@ -76,10 +76,7 @@ unsafe impl ::windows_core::Interface for IPhoneCallOriginManagerStatics2 {
 #[doc(hidden)]
 pub struct IPhoneCallOriginManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RequestSetAsActiveCallOriginAppAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestSetAsActiveCallOriginAppAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -149,15 +146,15 @@ impl PhoneCallOrigin {
         unsafe { (::windows_core::Interface::vtable(this).SetDisplayName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage")]
-    pub fn DisplayPicture(&self) -> ::windows_core::Result<super::super::super::Storage::StorageFile> {
+    pub fn DisplayPicture(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = &::windows_core::Interface::cast::<IPhoneCallOrigin3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DisplayPicture)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::StorageFile>(result__)
+            (::windows_core::Interface::vtable(this).DisplayPicture)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFile>(result__)
         }
     }
     #[cfg(feature = "Storage")]
-    pub fn SetDisplayPicture<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::StorageFile>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDisplayPicture<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IPhoneCallOrigin3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDisplayPicture)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -248,11 +245,10 @@ impl PhoneCallOriginManager {
     pub fn SetCallOrigin<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param1: ::windows_core::IntoParam<'a, PhoneCallOrigin>>(requestid: Param0, callorigin: Param1) -> ::windows_core::Result<()> {
         Self::IPhoneCallOriginManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetCallOrigin)(::windows_core::Interface::as_raw(this), requestid.into_param().abi(), callorigin.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestSetAsActiveCallOriginAppAsync() -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestSetAsActiveCallOriginAppAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::IPhoneCallOriginManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestSetAsActiveCallOriginAppAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestSetAsActiveCallOriginAppAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
     pub fn IsSupported() -> ::windows_core::Result<bool> {

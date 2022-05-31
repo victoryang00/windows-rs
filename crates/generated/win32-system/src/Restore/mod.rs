@@ -17,34 +17,27 @@ pub const MIN_RPT: u32 = 0u32;
 pub const OE_SETTING: u32 = 4u32;
 pub const RESTORE: u32 = 6u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESTOREPOINTINFOA {
     pub dwEventType: RESTOREPOINTINFO_EVENT_TYPE,
     pub dwRestorePtType: RESTOREPOINTINFO_TYPE,
     pub llSequenceNumber: i64,
-    pub szDescription: [super::super::Foundation::CHAR; 64],
+    pub szDescription: [::win32_foundation::CHAR; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESTOREPOINTINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESTOREPOINTINFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RESTOREPOINTINFOA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RESTOREPOINTINFOA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RESTOREPOINTINFOA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RESTOREPOINTINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RESTOREPOINTINFOA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -130,28 +123,26 @@ impl ::core::fmt::Debug for RESTOREPOINTINFO_TYPE {
         f.debug_tuple("RESTOREPOINTINFO_TYPE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SRSetRestorePointA(prestoreptspec: *const RESTOREPOINTINFOA, psmgrstatus: *mut STATEMGRSTATUS) -> super::super::Foundation::BOOL {
+pub unsafe fn SRSetRestorePointA(prestoreptspec: *const RESTOREPOINTINFOA, psmgrstatus: *mut STATEMGRSTATUS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SRSetRestorePointA(prestoreptspec: *const RESTOREPOINTINFOA, psmgrstatus: *mut STATEMGRSTATUS) -> super::super::Foundation::BOOL;
+            fn SRSetRestorePointA(prestoreptspec: *const RESTOREPOINTINFOA, psmgrstatus: *mut STATEMGRSTATUS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SRSetRestorePointA(::core::mem::transmute(prestoreptspec), ::core::mem::transmute(psmgrstatus)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SRSetRestorePointW(prestoreptspec: *const RESTOREPOINTINFOW, psmgrstatus: *mut STATEMGRSTATUS) -> super::super::Foundation::BOOL {
+pub unsafe fn SRSetRestorePointW(prestoreptspec: *const RESTOREPOINTINFOW, psmgrstatus: *mut STATEMGRSTATUS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SRSetRestorePointW(prestoreptspec: *const RESTOREPOINTINFOW, psmgrstatus: *mut STATEMGRSTATUS) -> super::super::Foundation::BOOL;
+            fn SRSetRestorePointW(prestoreptspec: *const RESTOREPOINTINFOW, psmgrstatus: *mut STATEMGRSTATUS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SRSetRestorePointW(::core::mem::transmute(prestoreptspec), ::core::mem::transmute(psmgrstatus)))
     }
@@ -187,35 +178,28 @@ pub const WINDOWS_BOOT: u32 = 9u32;
 pub const WINDOWS_SHUTDOWN: u32 = 8u32;
 pub const WINDOWS_UPDATE: u32 = 17u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct _RESTOREPTINFOEX {
-    pub ftCreation: super::super::Foundation::FILETIME,
+    pub ftCreation: ::win32_foundation::FILETIME,
     pub dwEventType: u32,
     pub dwRestorePtType: u32,
     pub dwRPNum: u32,
     pub szDescription: [u16; 256],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for _RESTOREPTINFOEX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for _RESTOREPTINFOEX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for _RESTOREPTINFOEX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for _RESTOREPTINFOEX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_RESTOREPTINFOEX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for _RESTOREPTINFOEX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for _RESTOREPTINFOEX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

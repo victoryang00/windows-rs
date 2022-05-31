@@ -2,19 +2,19 @@
 pub struct Certificate(::windows_core::IUnknown);
 impl Certificate {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BuildChainAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<Certificate>>>(&self, certificates: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<CertificateChain>> {
+    pub fn BuildChainAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Certificate>>>(&self, certificates: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CertificateChain>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BuildChainAsync)(::windows_core::Interface::as_raw(this), certificates.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<CertificateChain>>(result__)
+            (::windows_core::Interface::vtable(this).BuildChainAsync)(::windows_core::Interface::as_raw(this), certificates.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CertificateChain>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn BuildChainWithParametersAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<Certificate>>, Param1: ::windows_core::IntoParam<'a, ChainBuildingParameters>>(&self, certificates: Param0, parameters: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<CertificateChain>> {
+    pub fn BuildChainWithParametersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Certificate>>, Param1: ::windows_core::IntoParam<'a, ChainBuildingParameters>>(&self, certificates: Param0, parameters: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CertificateChain>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BuildChainWithParametersAsync)(::windows_core::Interface::as_raw(this), certificates.into_param().abi(), parameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<CertificateChain>>(result__)
+            (::windows_core::Interface::vtable(this).BuildChainWithParametersAsync)(::windows_core::Interface::as_raw(this), certificates.into_param().abi(), parameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CertificateChain>>(result__)
         }
     }
     pub fn SerialNumber(&self) -> ::windows_core::Result<::windows_core::Array<u8>> {
@@ -39,11 +39,11 @@ impl Certificate {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetCertificateBlob(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn GetCertificateBlob(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCertificateBlob)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).GetCertificateBlob)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn Subject(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -74,28 +74,26 @@ impl Certificate {
             (::windows_core::Interface::vtable(this).IsStronglyProtected)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ValidFrom(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn ValidFrom(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).ValidFrom)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).ValidFrom)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ValidTo(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn ValidTo(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).ValidTo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).ValidTo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn EnhancedKeyUsages(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn EnhancedKeyUsages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EnhancedKeyUsages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).EnhancedKeyUsages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn SetFriendlyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<()> {
@@ -173,7 +171,7 @@ impl Certificate {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateCertificate<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(certblob: Param0) -> ::windows_core::Result<Certificate> {
+    pub fn CreateCertificate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(certblob: Param0) -> ::windows_core::Result<Certificate> {
         Self::ICertificateFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCertificate)(::windows_core::Interface::as_raw(this), certblob.into_param().abi(), result__.as_mut_ptr()).from_abi::<Certificate>(result__)
@@ -274,11 +272,11 @@ impl CertificateChain {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCertificates(&self, includeroot: bool) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<Certificate>> {
+    pub fn GetCertificates(&self, includeroot: bool) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Certificate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCertificates)(::windows_core::Interface::as_raw(this), includeroot, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<Certificate>>(result__)
+            (::windows_core::Interface::vtable(this).GetCertificates)(::windows_core::Interface::as_raw(this), includeroot, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Certificate>>(result__)
         }
     }
 }
@@ -391,25 +389,22 @@ unsafe impl ::windows_core::RuntimeType for CertificateChainPolicy {
 }
 pub struct CertificateEnrollmentManager;
 impl CertificateEnrollmentManager {
-    #[cfg(feature = "Foundation")]
-    pub fn CreateRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, CertificateRequestProperties>>(request: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn CreateRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, CertificateRequestProperties>>(request: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::ICertificateEnrollmentManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).CreateRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InstallCertificateAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(certificate: Param0, installoption: InstallOptions) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn InstallCertificateAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(certificate: Param0, installoption: InstallOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ICertificateEnrollmentManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InstallCertificateAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), installoption, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).InstallCertificateAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), installoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ImportPfxDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(pfxdata: Param0, password: Param1, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: Param5) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn ImportPfxDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(pfxdata: Param0, password: Param1, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ICertificateEnrollmentManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ImportPfxDataAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), exportable, keyprotectionlevel, installoption, friendlyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ImportPfxDataAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), exportable, keyprotectionlevel, installoption, friendlyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn UserCertificateEnrollmentManager() -> ::windows_core::Result<UserCertificateEnrollmentManager> {
@@ -418,18 +413,16 @@ impl CertificateEnrollmentManager {
             (::windows_core::Interface::vtable(this).UserCertificateEnrollmentManager)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserCertificateEnrollmentManager>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ImportPfxDataToKspAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param6: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(pfxdata: Param0, password: Param1, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: Param5, keystorageprovider: Param6) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn ImportPfxDataToKspAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param6: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(pfxdata: Param0, password: Param1, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: Param5, keystorageprovider: Param6) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ICertificateEnrollmentManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ImportPfxDataToKspAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), exportable, keyprotectionlevel, installoption, friendlyname.into_param().abi(), keystorageprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ImportPfxDataToKspAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), exportable, keyprotectionlevel, installoption, friendlyname.into_param().abi(), keystorageprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ImportPfxDataToKspWithParametersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, PfxImportParameters>>(pfxdata: Param0, password: Param1, pfximportparameters: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn ImportPfxDataToKspWithParametersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, PfxImportParameters>>(pfxdata: Param0, password: Param1, pfximportparameters: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ICertificateEnrollmentManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ImportPfxDataToKspWithParametersAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), pfximportparameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ImportPfxDataToKspWithParametersAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), pfximportparameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn ICertificateEnrollmentManagerStatics<R, F: FnOnce(&ICertificateEnrollmentManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -750,11 +743,11 @@ impl CertificateQuery {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn EnhancedKeyUsages(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn EnhancedKeyUsages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EnhancedKeyUsages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).EnhancedKeyUsages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn IssuerName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1105,11 +1098,11 @@ impl CertificateRequestProperties {
         unsafe { (::windows_core::Interface::vtable(this).SetUseExistingKey)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SuppressedDefaults(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn SuppressedDefaults(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<ICertificateRequestProperties4>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SuppressedDefaults)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).SuppressedDefaults)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn SubjectAlternativeName(&self) -> ::windows_core::Result<SubjectAlternativeNameInfo> {
@@ -1120,11 +1113,11 @@ impl CertificateRequestProperties {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Extensions(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<CertificateExtension>> {
+    pub fn Extensions(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<CertificateExtension>> {
         let this = &::windows_core::Interface::cast::<ICertificateRequestProperties4>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Extensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<CertificateExtension>>(result__)
+            (::windows_core::Interface::vtable(this).Extensions)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<CertificateExtension>>(result__)
         }
     }
 }
@@ -1294,17 +1287,17 @@ unsafe impl ::core::marker::Sync for CertificateStore {}
 pub struct CertificateStores;
 impl CertificateStores {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindAllAsync() -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<Certificate>>> {
+    pub fn FindAllAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Certificate>>> {
         Self::ICertificateStoresStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<Certificate>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Certificate>>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindAllWithQueryAsync<'a, Param0: ::windows_core::IntoParam<'a, CertificateQuery>>(query: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<Certificate>>> {
+    pub fn FindAllWithQueryAsync<'a, Param0: ::windows_core::IntoParam<'a, CertificateQuery>>(query: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Certificate>>> {
         Self::ICertificateStoresStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllWithQueryAsync)(::windows_core::Interface::as_raw(this), query.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<Certificate>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllWithQueryAsync)(::windows_core::Interface::as_raw(this), query.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<Certificate>>>(result__)
         })
     }
     pub fn TrustedRootCertificationAuthorities() -> ::windows_core::Result<CertificateStore> {
@@ -1354,23 +1347,21 @@ impl ChainBuildingParameters {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn EnhancedKeyUsages(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn EnhancedKeyUsages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EnhancedKeyUsages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).EnhancedKeyUsages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ValidationTimestamp(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn ValidationTimestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).ValidationTimestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).ValidationTimestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetValidationTimestamp<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetValidationTimestamp<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetValidationTimestamp)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1419,11 +1410,11 @@ impl ChainBuildingParameters {
         unsafe { (::windows_core::Interface::vtable(this).SetCurrentTimeValidationEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ExclusiveTrustRoots(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<Certificate>> {
+    pub fn ExclusiveTrustRoots(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Certificate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExclusiveTrustRoots)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<Certificate>>(result__)
+            (::windows_core::Interface::vtable(this).ExclusiveTrustRoots)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Certificate>>(result__)
         }
     }
 }
@@ -1521,15 +1512,15 @@ impl ChainValidationParameters {
         unsafe { (::windows_core::Interface::vtable(this).SetCertificateChainPolicy)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Networking")]
-    pub fn ServerDnsName(&self) -> ::windows_core::Result<super::super::super::Networking::HostName> {
+    pub fn ServerDnsName(&self) -> ::windows_core::Result<::winrt_networking::HostName> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServerDnsName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Networking::HostName>(result__)
+            (::windows_core::Interface::vtable(this).ServerDnsName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::HostName>(result__)
         }
     }
     #[cfg(feature = "Networking")]
-    pub fn SetServerDnsName<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Networking::HostName>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetServerDnsName<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_networking::HostName>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetServerDnsName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1655,11 +1646,11 @@ unsafe impl ::windows_core::RuntimeType for ChainValidationResult {
 pub struct CmsAttachedSignature(::windows_core::IUnknown);
 impl CmsAttachedSignature {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Certificates(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<Certificate>> {
+    pub fn Certificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Certificate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Certificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<Certificate>>(result__)
+            (::windows_core::Interface::vtable(this).Certificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Certificate>>(result__)
         }
     }
     pub fn Content(&self) -> ::windows_core::Result<::windows_core::Array<u8>> {
@@ -1670,11 +1661,11 @@ impl CmsAttachedSignature {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Signers(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<CmsSignerInfo>> {
+    pub fn Signers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CmsSignerInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Signers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<CmsSignerInfo>>(result__)
+            (::windows_core::Interface::vtable(this).Signers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<CmsSignerInfo>>(result__)
         }
     }
     pub fn VerifySignature(&self) -> ::windows_core::Result<SignatureValidationResult> {
@@ -1685,17 +1676,17 @@ impl CmsAttachedSignature {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateCmsAttachedSignature<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(inputblob: Param0) -> ::windows_core::Result<CmsAttachedSignature> {
+    pub fn CreateCmsAttachedSignature<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(inputblob: Param0) -> ::windows_core::Result<CmsAttachedSignature> {
         Self::ICmsAttachedSignatureFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCmsAttachedSignature)(::windows_core::Interface::as_raw(this), inputblob.into_param().abi(), result__.as_mut_ptr()).from_abi::<CmsAttachedSignature>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn GenerateSignatureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<CmsSignerInfo>>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<Certificate>>>(data: Param0, signers: Param1, certificates: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>> {
+    pub fn GenerateSignatureAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CmsSignerInfo>>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Certificate>>>(data: Param0, signers: Param1, certificates: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         Self::ICmsAttachedSignatureStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GenerateSignatureAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), signers.into_param().abi(), certificates.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).GenerateSignatureAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), signers.into_param().abi(), certificates.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         })
     }
     pub fn ICmsAttachedSignatureFactory<R, F: FnOnce(&ICmsAttachedSignatureFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1783,41 +1774,41 @@ unsafe impl ::core::marker::Sync for CmsAttachedSignature {}
 pub struct CmsDetachedSignature(::windows_core::IUnknown);
 impl CmsDetachedSignature {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Certificates(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<Certificate>> {
+    pub fn Certificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Certificate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Certificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<Certificate>>(result__)
+            (::windows_core::Interface::vtable(this).Certificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Certificate>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Signers(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<CmsSignerInfo>> {
+    pub fn Signers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<CmsSignerInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Signers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<CmsSignerInfo>>(result__)
-        }
-    }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn VerifySignatureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IInputStream>>(&self, data: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<SignatureValidationResult>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).VerifySignatureAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<SignatureValidationResult>>(result__)
+            (::windows_core::Interface::vtable(this).Signers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<CmsSignerInfo>>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateCmsDetachedSignature<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(inputblob: Param0) -> ::windows_core::Result<CmsDetachedSignature> {
+    pub fn VerifySignatureAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, data: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SignatureValidationResult>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).VerifySignatureAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SignatureValidationResult>>(result__)
+        }
+    }
+    #[cfg(feature = "Storage_Streams")]
+    pub fn CreateCmsDetachedSignature<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(inputblob: Param0) -> ::windows_core::Result<CmsDetachedSignature> {
         Self::ICmsDetachedSignatureFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCmsDetachedSignature)(::windows_core::Interface::as_raw(this), inputblob.into_param().abi(), result__.as_mut_ptr()).from_abi::<CmsDetachedSignature>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn GenerateSignatureAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IInputStream>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<CmsSignerInfo>>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<Certificate>>>(data: Param0, signers: Param1, certificates: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>> {
+    pub fn GenerateSignatureAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<CmsSignerInfo>>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<Certificate>>>(data: Param0, signers: Param1, certificates: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         Self::ICmsDetachedSignatureStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GenerateSignatureAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), signers.into_param().abi(), certificates.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).GenerateSignatureAsync)(::windows_core::Interface::as_raw(this), data.into_param().abi(), signers.into_param().abi(), certificates.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         })
     }
     pub fn ICmsDetachedSignatureFactory<R, F: FnOnce(&ICmsDetachedSignatureFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -2024,19 +2015,18 @@ impl CmsTimestampInfo {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Certificates(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<Certificate>> {
+    pub fn Certificates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<Certificate>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Certificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<Certificate>>(result__)
+            (::windows_core::Interface::vtable(this).Certificates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<Certificate>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Timestamp(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn Timestamp(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
 }
@@ -2239,14 +2229,8 @@ pub struct ICertificate_Vtbl {
     pub Issuer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub HasPrivateKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsStronglyProtected: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ValidFrom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ValidFrom: usize,
-    #[cfg(feature = "Foundation")]
-    pub ValidTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ValidTo: usize,
+    pub ValidFrom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub ValidTo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub EnhancedKeyUsages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -2316,18 +2300,9 @@ unsafe impl ::windows_core::Interface for ICertificateEnrollmentManagerStatics {
 #[doc(hidden)]
 pub struct ICertificateEnrollmentManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CreateRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateRequestAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub InstallCertificateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, installoption: InstallOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InstallCertificateAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ImportPfxDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfxdata: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, password: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ImportPfxDataAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2341,10 +2316,7 @@ unsafe impl ::windows_core::Interface for ICertificateEnrollmentManagerStatics2 
 pub struct ICertificateEnrollmentManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub UserCertificateEnrollmentManager: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ImportPfxDataToKspAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfxdata: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, password: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, keystorageprovider: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ImportPfxDataToKspAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2357,10 +2329,7 @@ unsafe impl ::windows_core::Interface for ICertificateEnrollmentManagerStatics3 
 #[doc(hidden)]
 pub struct ICertificateEnrollmentManagerStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ImportPfxDataToKspWithParametersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfxdata: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, password: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, pfximportparameters: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ImportPfxDataToKspWithParametersAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2636,14 +2605,8 @@ pub struct IChainBuildingParameters_Vtbl {
     pub EnhancedKeyUsages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     EnhancedKeyUsages: usize,
-    #[cfg(feature = "Foundation")]
-    pub ValidationTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ValidationTimestamp: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetValidationTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetValidationTimestamp: usize,
+    pub ValidationTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub SetValidationTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub RevocationCheckEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetRevocationCheckEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub NetworkRetrievalEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -2752,9 +2715,9 @@ pub struct ICmsDetachedSignature_Vtbl {
     pub Signers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Signers: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub VerifySignatureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     VerifySignatureAsync: usize,
 }
 #[doc(hidden)]
@@ -2822,10 +2785,7 @@ pub struct ICmsTimestampInfo_Vtbl {
     pub Certificates: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     Certificates: usize,
-    #[cfg(feature = "Foundation")]
-    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Timestamp: usize,
+    pub Timestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2872,10 +2832,7 @@ unsafe impl ::windows_core::Interface for IKeyAttestationHelperStatics {
 #[doc(hidden)]
 pub struct IKeyAttestationHelperStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub DecryptTpmAttestationCredentialAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, credential: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DecryptTpmAttestationCredentialAsync: usize,
     pub GetTpmAttestationCredentialId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, credential: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -2889,10 +2846,7 @@ unsafe impl ::windows_core::Interface for IKeyAttestationHelperStatics2 {
 #[doc(hidden)]
 pub struct IKeyAttestationHelperStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub DecryptTpmAttestationCredentialWithContainerNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, credential: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, containername: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DecryptTpmAttestationCredentialWithContainerNameAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3047,22 +3001,10 @@ unsafe impl ::windows_core::Interface for IUserCertificateEnrollmentManager {
 #[doc(hidden)]
 pub struct IUserCertificateEnrollmentManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CreateRequestAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateRequestAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub InstallCertificateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, installoption: InstallOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InstallCertificateAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ImportPfxDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfxdata: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, password: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ImportPfxDataAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub ImportPfxDataToKspAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfxdata: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, password: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, keystorageprovider: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ImportPfxDataToKspAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3075,10 +3017,7 @@ unsafe impl ::windows_core::Interface for IUserCertificateEnrollmentManager2 {
 #[doc(hidden)]
 pub struct IUserCertificateEnrollmentManager2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ImportPfxDataToKspWithParametersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfxdata: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, password: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, pfximportparameters: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ImportPfxDataToKspWithParametersAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3091,14 +3030,8 @@ unsafe impl ::windows_core::Interface for IUserCertificateStore {
 #[doc(hidden)]
 pub struct IUserCertificateStore_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RequestAddAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestAddAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestDeleteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestDeleteAsync: usize,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -3238,11 +3171,10 @@ impl ::windows_core::RuntimeName for KeyAlgorithmNames {
 }
 pub struct KeyAttestationHelper;
 impl KeyAttestationHelper {
-    #[cfg(feature = "Foundation")]
-    pub fn DecryptTpmAttestationCredentialAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(credential: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn DecryptTpmAttestationCredentialAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(credential: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IKeyAttestationHelperStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DecryptTpmAttestationCredentialAsync)(::windows_core::Interface::as_raw(this), credential.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).DecryptTpmAttestationCredentialAsync)(::windows_core::Interface::as_raw(this), credential.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
     pub fn GetTpmAttestationCredentialId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(credential: Param0) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -3251,11 +3183,10 @@ impl KeyAttestationHelper {
             (::windows_core::Interface::vtable(this).GetTpmAttestationCredentialId)(::windows_core::Interface::as_raw(this), credential.into_param().abi(), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DecryptTpmAttestationCredentialWithContainerNameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(credential: Param0, containername: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn DecryptTpmAttestationCredentialWithContainerNameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(credential: Param0, containername: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IKeyAttestationHelperStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DecryptTpmAttestationCredentialWithContainerNameAsync)(::windows_core::Interface::as_raw(this), credential.into_param().abi(), containername.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).DecryptTpmAttestationCredentialWithContainerNameAsync)(::windows_core::Interface::as_raw(this), credential.into_param().abi(), containername.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
     pub fn IKeyAttestationHelperStatics<R, F: FnOnce(&IKeyAttestationHelperStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -3612,99 +3543,99 @@ impl SubjectAlternativeNameInfo {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn EmailName(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn EmailName(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EmailName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).EmailName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn IPAddress(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn IPAddress(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).IPAddress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).IPAddress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Url(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn Url(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Url)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Url)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DnsName(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn DnsName(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DnsName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).DnsName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DistinguishedName(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn DistinguishedName(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DistinguishedName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).DistinguishedName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PrincipalName(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn PrincipalName(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PrincipalName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).PrincipalName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn EmailNames(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn EmailNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<ISubjectAlternativeNameInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EmailNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).EmailNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn IPAddresses(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn IPAddresses(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<ISubjectAlternativeNameInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).IPAddresses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).IPAddresses)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Urls(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn Urls(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<ISubjectAlternativeNameInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Urls)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).Urls)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DnsNames(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn DnsNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<ISubjectAlternativeNameInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DnsNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).DnsNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DistinguishedNames(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn DistinguishedNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<ISubjectAlternativeNameInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DistinguishedNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).DistinguishedNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PrincipalNames(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn PrincipalNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<ISubjectAlternativeNameInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PrincipalNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).PrincipalNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn Extension(&self) -> ::windows_core::Result<CertificateExtension> {
@@ -3790,44 +3721,39 @@ unsafe impl ::core::marker::Sync for SubjectAlternativeNameInfo {}
 #[repr(transparent)]
 pub struct UserCertificateEnrollmentManager(::windows_core::IUnknown);
 impl UserCertificateEnrollmentManager {
-    #[cfg(feature = "Foundation")]
-    pub fn CreateRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, CertificateRequestProperties>>(&self, request: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn CreateRequestAsync<'a, Param0: ::windows_core::IntoParam<'a, CertificateRequestProperties>>(&self, request: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).CreateRequestAsync)(::windows_core::Interface::as_raw(this), request.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InstallCertificateAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, certificate: Param0, installoption: InstallOptions) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn InstallCertificateAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, certificate: Param0, installoption: InstallOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InstallCertificateAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), installoption, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).InstallCertificateAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), installoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ImportPfxDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, pfxdata: Param0, password: Param1, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: Param5) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn ImportPfxDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, pfxdata: Param0, password: Param1, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ImportPfxDataAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), exportable, keyprotectionlevel, installoption, friendlyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ImportPfxDataAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), exportable, keyprotectionlevel, installoption, friendlyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ImportPfxDataToKspAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param6: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, pfxdata: Param0, password: Param1, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: Param5, keystorageprovider: Param6) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn ImportPfxDataToKspAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param6: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, pfxdata: Param0, password: Param1, exportable: ExportOption, keyprotectionlevel: KeyProtectionLevel, installoption: InstallOptions, friendlyname: Param5, keystorageprovider: Param6) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ImportPfxDataToKspAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), exportable, keyprotectionlevel, installoption, friendlyname.into_param().abi(), keystorageprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ImportPfxDataToKspAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), exportable, keyprotectionlevel, installoption, friendlyname.into_param().abi(), keystorageprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ImportPfxDataToKspWithParametersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, PfxImportParameters>>(&self, pfxdata: Param0, password: Param1, pfximportparameters: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn ImportPfxDataToKspWithParametersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, PfxImportParameters>>(&self, pfxdata: Param0, password: Param1, pfximportparameters: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<IUserCertificateEnrollmentManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ImportPfxDataToKspWithParametersAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), pfximportparameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ImportPfxDataToKspWithParametersAsync)(::windows_core::Interface::as_raw(this), pfxdata.into_param().abi(), password.into_param().abi(), pfximportparameters.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
 }
@@ -3906,20 +3832,18 @@ unsafe impl ::core::marker::Sync for UserCertificateEnrollmentManager {}
 #[repr(transparent)]
 pub struct UserCertificateStore(::windows_core::IUnknown);
 impl UserCertificateStore {
-    #[cfg(feature = "Foundation")]
-    pub fn RequestAddAsync<'a, Param0: ::windows_core::IntoParam<'a, Certificate>>(&self, certificate: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestAddAsync<'a, Param0: ::windows_core::IntoParam<'a, Certificate>>(&self, certificate: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAddAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAddAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestDeleteAsync<'a, Param0: ::windows_core::IntoParam<'a, Certificate>>(&self, certificate: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestDeleteAsync<'a, Param0: ::windows_core::IntoParam<'a, Certificate>>(&self, certificate: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestDeleteAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestDeleteAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn Name(&self) -> ::windows_core::Result<::windows_core::HSTRING> {

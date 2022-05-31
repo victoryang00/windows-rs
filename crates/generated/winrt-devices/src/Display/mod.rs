@@ -39,11 +39,11 @@ impl DisplayMonitor {
         }
     }
     #[cfg(feature = "Graphics")]
-    pub fn DisplayAdapterId(&self) -> ::windows_core::Result<super::super::Graphics::DisplayAdapterId> {
+    pub fn DisplayAdapterId(&self) -> ::windows_core::Result<::winrt_graphics::DisplayAdapterId> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Graphics::DisplayAdapterId>::zeroed();
-            (::windows_core::Interface::vtable(this).DisplayAdapterId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Graphics::DisplayAdapterId>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::DisplayAdapterId>::zeroed();
+            (::windows_core::Interface::vtable(this).DisplayAdapterId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::DisplayAdapterId>(result__)
         }
     }
     pub fn DisplayAdapterTargetId(&self) -> ::windows_core::Result<u32> {
@@ -61,19 +61,18 @@ impl DisplayMonitor {
         }
     }
     #[cfg(feature = "Graphics")]
-    pub fn NativeResolutionInRawPixels(&self) -> ::windows_core::Result<super::super::Graphics::SizeInt32> {
+    pub fn NativeResolutionInRawPixels(&self) -> ::windows_core::Result<::winrt_graphics::SizeInt32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Graphics::SizeInt32>::zeroed();
-            (::windows_core::Interface::vtable(this).NativeResolutionInRawPixels)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Graphics::SizeInt32>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_graphics::SizeInt32>::zeroed();
+            (::windows_core::Interface::vtable(this).NativeResolutionInRawPixels)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_graphics::SizeInt32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PhysicalSizeInInches(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::super::Foundation::Size>> {
+    pub fn PhysicalSizeInInches(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Size>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PhysicalSizeInInches)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::super::Foundation::Size>>(result__)
+            (::windows_core::Interface::vtable(this).PhysicalSizeInInches)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Size>>(result__)
         }
     }
     pub fn RawDpiX(&self) -> ::windows_core::Result<f32> {
@@ -90,36 +89,32 @@ impl DisplayMonitor {
             (::windows_core::Interface::vtable(this).RawDpiY)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RedPrimary(&self) -> ::windows_core::Result<super::super::Foundation::Point> {
+    pub fn RedPrimary(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).RedPrimary)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).RedPrimary)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GreenPrimary(&self) -> ::windows_core::Result<super::super::Foundation::Point> {
+    pub fn GreenPrimary(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).GreenPrimary)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).GreenPrimary)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BluePrimary(&self) -> ::windows_core::Result<super::super::Foundation::Point> {
+    pub fn BluePrimary(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).BluePrimary)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).BluePrimary)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WhitePoint(&self) -> ::windows_core::Result<super::super::Foundation::Point> {
+    pub fn WhitePoint(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).WhitePoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).WhitePoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     pub fn MaxLuminanceInNits(&self) -> ::windows_core::Result<f32> {
@@ -163,18 +158,16 @@ impl DisplayMonitor {
             (::windows_core::Interface::vtable(this).GetDeviceSelector)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<DisplayMonitor>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DisplayMonitor>> {
         Self::IDisplayMonitorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<DisplayMonitor>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DisplayMonitor>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromInterfaceIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceinterfaceid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<DisplayMonitor>> {
+    pub fn FromInterfaceIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceinterfaceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DisplayMonitor>> {
         Self::IDisplayMonitorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromInterfaceIdAsync)(::windows_core::Interface::as_raw(this), deviceinterfaceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<DisplayMonitor>>(result__)
+            (::windows_core::Interface::vtable(this).FromInterfaceIdAsync)(::windows_core::Interface::as_raw(this), deviceinterfaceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DisplayMonitor>>(result__)
         })
     }
     pub fn IDisplayMonitorStatics<R, F: FnOnce(&IDisplayMonitorStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -412,37 +405,22 @@ pub struct IDisplayMonitor_Vtbl {
     pub PhysicalConnector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DisplayMonitorPhysicalConnectorKind) -> ::windows_core::HRESULT,
     pub DisplayAdapterDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Graphics")]
-    pub DisplayAdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Graphics::DisplayAdapterId) -> ::windows_core::HRESULT,
+    pub DisplayAdapterId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::DisplayAdapterId) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics"))]
     DisplayAdapterId: usize,
     pub DisplayAdapterTargetId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub UsageKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DisplayMonitorUsageKind) -> ::windows_core::HRESULT,
     #[cfg(feature = "Graphics")]
-    pub NativeResolutionInRawPixels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Graphics::SizeInt32) -> ::windows_core::HRESULT,
+    pub NativeResolutionInRawPixels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_graphics::SizeInt32) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics"))]
     NativeResolutionInRawPixels: usize,
-    #[cfg(feature = "Foundation")]
     pub PhysicalSizeInInches: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PhysicalSizeInInches: usize,
     pub RawDpiX: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub RawDpiY: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub RedPrimary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RedPrimary: usize,
-    #[cfg(feature = "Foundation")]
-    pub GreenPrimary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GreenPrimary: usize,
-    #[cfg(feature = "Foundation")]
-    pub BluePrimary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BluePrimary: usize,
-    #[cfg(feature = "Foundation")]
-    pub WhitePoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WhitePoint: usize,
+    pub RedPrimary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub GreenPrimary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub BluePrimary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub WhitePoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub MaxLuminanceInNits: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub MinLuminanceInNits: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub MaxAverageFullFrameLuminanceInNits: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
@@ -473,12 +451,6 @@ unsafe impl ::windows_core::Interface for IDisplayMonitorStatics {
 pub struct IDisplayMonitorStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub FromInterfaceIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceinterfaceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromInterfaceIdAsync: usize,
 }

@@ -2,14 +2,12 @@ pub const E_SURFACE_CONTENTS_LOST: u32 = 2150301728u32;
 #[repr(transparent)]
 pub struct IDesktopWindowXamlSourceNative(::windows_core::IUnknown);
 impl IDesktopWindowXamlSourceNative {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AttachToWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(&self, parentwnd: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn AttachToWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, parentwnd: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AttachToWindow)(::windows_core::Interface::as_raw(self), parentwnd.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WindowHandle(&self) -> ::windows_core::Result<super::super::super::Foundation::HWND> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::HWND>::zeroed();
-        (::windows_core::Interface::vtable(self).WindowHandle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::HWND>(result__)
+    pub unsafe fn WindowHandle(&self) -> ::windows_core::Result<::win32_foundation::HWND> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HWND>::zeroed();
+        (::windows_core::Interface::vtable(self).WindowHandle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HWND>(result__)
     }
 }
 impl ::core::convert::From<IDesktopWindowXamlSourceNative> for ::windows_core::IUnknown {
@@ -56,29 +54,21 @@ unsafe impl ::windows_core::Interface for IDesktopWindowXamlSourceNative {
 #[doc(hidden)]
 pub struct IDesktopWindowXamlSourceNative_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AttachToWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parentwnd: super::super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AttachToWindow: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub WindowHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: *mut super::super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    WindowHandle: usize,
+    pub AttachToWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parentwnd: ::win32_foundation::HWND) -> ::windows_core::HRESULT,
+    pub WindowHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: *mut ::win32_foundation::HWND) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IDesktopWindowXamlSourceNative2(::windows_core::IUnknown);
 impl IDesktopWindowXamlSourceNative2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AttachToWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(&self, parentwnd: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn AttachToWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, parentwnd: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.AttachToWindow)(::windows_core::Interface::as_raw(self), parentwnd.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn WindowHandle(&self) -> ::windows_core::Result<super::super::super::Foundation::HWND> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::HWND>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.WindowHandle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::HWND>(result__)
+    pub unsafe fn WindowHandle(&self) -> ::windows_core::Result<::win32_foundation::HWND> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HWND>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.WindowHandle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HWND>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub unsafe fn PreTranslateMessage(&self, message: *const super::super::super::UI::WindowsAndMessaging::MSG, result: *mut super::super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub unsafe fn PreTranslateMessage(&self, message: *const ::win32_ui::WindowsAndMessaging::MSG, result: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PreTranslateMessage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(message), ::core::mem::transmute(result)).ok()
     }
 }
@@ -146,9 +136,9 @@ unsafe impl ::windows_core::Interface for IDesktopWindowXamlSourceNative2 {
 #[doc(hidden)]
 pub struct IDesktopWindowXamlSourceNative2_Vtbl {
     pub base__: IDesktopWindowXamlSourceNative_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub PreTranslateMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: *const super::super::super::UI::WindowsAndMessaging::MSG, result: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging")))]
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub PreTranslateMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: *const ::win32_ui::WindowsAndMessaging::MSG, result: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
     PreTranslateMessage: usize,
 }
 #[repr(transparent)]
@@ -591,11 +581,11 @@ pub struct ISurfaceImageSourceManagerNative_Vtbl {
 pub struct ISurfaceImageSourceNative(::windows_core::IUnknown);
 impl ISurfaceImageSourceNative {
     #[cfg(feature = "Win32_Graphics_Dxgi")]
-    pub unsafe fn SetDevice<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Dxgi::IDXGIDevice>>(&self, device: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGIDevice>>(&self, device: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDevice)(::windows_core::Interface::as_raw(self), device.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi"))]
-    pub unsafe fn BeginDraw<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::RECT>>(&self, updaterect: Param0, surface: *mut ::core::option::Option<super::super::super::Graphics::Dxgi::IDXGISurface>, offset: *mut super::super::super::Foundation::POINT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    pub unsafe fn BeginDraw<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, updaterect: Param0, surface: *mut ::core::option::Option<::win32_graphics::Dxgi::IDXGISurface>, offset: *mut ::win32_foundation::POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BeginDraw)(::windows_core::Interface::as_raw(self), updaterect.into_param().abi(), ::core::mem::transmute(surface), ::core::mem::transmute(offset)).ok()
     }
     pub unsafe fn EndDraw(&self) -> ::windows_core::Result<()> {
@@ -650,9 +640,9 @@ pub struct ISurfaceImageSourceNative_Vtbl {
     pub SetDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, device: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
     SetDevice: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi"))]
-    pub BeginDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: super::super::super::Foundation::RECT, surface: *mut ::windows_core::RawPtr, offset: *mut super::super::super::Foundation::POINT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi")))]
+    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    pub BeginDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: ::win32_foundation::RECT, surface: *mut ::windows_core::RawPtr, offset: *mut ::win32_foundation::POINT) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Graphics_Dxgi"))]
     BeginDraw: usize,
     pub EndDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -662,8 +652,7 @@ impl ISurfaceImageSourceNativeWithD2D {
     pub unsafe fn SetDevice<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, device: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDevice)(::windows_core::Interface::as_raw(self), device.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn BeginDraw(&self, updaterect: *const super::super::super::Foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, offset: *mut super::super::super::Foundation::POINT) -> ::windows_core::Result<()> {
+    pub unsafe fn BeginDraw(&self, updaterect: *const ::win32_foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, offset: *mut ::win32_foundation::POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BeginDraw)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(updaterect), ::core::mem::transmute(iid), ::core::mem::transmute(updateobject), ::core::mem::transmute(offset)).ok()
     }
     pub unsafe fn EndDraw(&self) -> ::windows_core::Result<()> {
@@ -721,10 +710,7 @@ unsafe impl ::windows_core::Interface for ISurfaceImageSourceNativeWithD2D {
 pub struct ISurfaceImageSourceNativeWithD2D_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub SetDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, device: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub BeginDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: *const super::super::super::Foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, offset: *mut super::super::super::Foundation::POINT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    BeginDraw: usize,
+    pub BeginDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: *const ::win32_foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, offset: *mut ::win32_foundation::POINT) -> ::windows_core::HRESULT,
     pub EndDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SuspendDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ResumeDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -733,7 +719,7 @@ pub struct ISurfaceImageSourceNativeWithD2D_Vtbl {
 pub struct ISwapChainBackgroundPanelNative(::windows_core::IUnknown);
 impl ISwapChainBackgroundPanelNative {
     #[cfg(feature = "Win32_Graphics_Dxgi")]
-    pub unsafe fn SetSwapChain<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Dxgi::IDXGISwapChain>>(&self, swapchain: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSwapChain<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGISwapChain>>(&self, swapchain: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSwapChain)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi()).ok()
     }
 }
@@ -790,7 +776,7 @@ pub struct ISwapChainBackgroundPanelNative_Vtbl {
 pub struct ISwapChainPanelNative(::windows_core::IUnknown);
 impl ISwapChainPanelNative {
     #[cfg(feature = "Win32_Graphics_Dxgi")]
-    pub unsafe fn SetSwapChain<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Dxgi::IDXGISwapChain>>(&self, swapchain: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSwapChain<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGISwapChain>>(&self, swapchain: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSwapChain)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi()).ok()
     }
 }
@@ -847,11 +833,10 @@ pub struct ISwapChainPanelNative_Vtbl {
 pub struct ISwapChainPanelNative2(::windows_core::IUnknown);
 impl ISwapChainPanelNative2 {
     #[cfg(feature = "Win32_Graphics_Dxgi")]
-    pub unsafe fn SetSwapChain<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Dxgi::IDXGISwapChain>>(&self, swapchain: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSwapChain<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGISwapChain>>(&self, swapchain: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetSwapChain)(::windows_core::Interface::as_raw(self), swapchain.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSwapChainHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(&self, swapchainhandle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSwapChainHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, swapchainhandle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSwapChainHandle)(::windows_core::Interface::as_raw(self), swapchainhandle.into_param().abi()).ok()
     }
 }
@@ -919,10 +904,7 @@ unsafe impl ::windows_core::Interface for ISwapChainPanelNative2 {
 #[doc(hidden)]
 pub struct ISwapChainPanelNative2_Vtbl {
     pub base__: ISwapChainPanelNative_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSwapChainHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, swapchainhandle: super::super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSwapChainHandle: usize,
+    pub SetSwapChainHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, swapchainhandle: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ITrackerOwner(::windows_core::IUnknown);
@@ -994,32 +976,29 @@ pub struct ITrackerOwner_Vtbl {
 pub struct IVirtualSurfaceImageSourceNative(::windows_core::IUnknown);
 impl IVirtualSurfaceImageSourceNative {
     #[cfg(feature = "Win32_Graphics_Dxgi")]
-    pub unsafe fn SetDevice<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Dxgi::IDXGIDevice>>(&self, device: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Dxgi::IDXGIDevice>>(&self, device: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetDevice)(::windows_core::Interface::as_raw(self), device.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi"))]
-    pub unsafe fn BeginDraw<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::RECT>>(&self, updaterect: Param0, surface: *mut ::core::option::Option<super::super::super::Graphics::Dxgi::IDXGISurface>, offset: *mut super::super::super::Foundation::POINT) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    pub unsafe fn BeginDraw<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, updaterect: Param0, surface: *mut ::core::option::Option<::win32_graphics::Dxgi::IDXGISurface>, offset: *mut ::win32_foundation::POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.BeginDraw)(::windows_core::Interface::as_raw(self), updaterect.into_param().abi(), ::core::mem::transmute(surface), ::core::mem::transmute(offset)).ok()
     }
     pub unsafe fn EndDraw(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.EndDraw)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Invalidate<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::RECT>>(&self, updaterect: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Invalidate<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::RECT>>(&self, updaterect: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Invalidate)(::windows_core::Interface::as_raw(self), updaterect.into_param().abi()).ok()
     }
     pub unsafe fn GetUpdateRectCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetUpdateRectCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUpdateRects(&self, updates: &mut [super::super::super::Foundation::RECT]) -> ::windows_core::Result<()> {
+    pub unsafe fn GetUpdateRects(&self, updates: &mut [::win32_foundation::RECT]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetUpdateRects)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(updates)), updates.len() as _).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetVisibleBounds(&self) -> ::windows_core::Result<super::super::super::Foundation::RECT> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::RECT>::zeroed();
-        (::windows_core::Interface::vtable(self).GetVisibleBounds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::RECT>(result__)
+    pub unsafe fn GetVisibleBounds(&self) -> ::windows_core::Result<::win32_foundation::RECT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::RECT>::zeroed();
+        (::windows_core::Interface::vtable(self).GetVisibleBounds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::RECT>(result__)
     }
     pub unsafe fn RegisterForUpdatesNeeded<'a, Param0: ::windows_core::IntoParam<'a, IVirtualSurfaceUpdatesCallbackNative>>(&self, callback: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RegisterForUpdatesNeeded)(::windows_core::Interface::as_raw(self), callback.into_param().abi()).ok()
@@ -1092,19 +1071,10 @@ unsafe impl ::windows_core::Interface for IVirtualSurfaceImageSourceNative {
 #[doc(hidden)]
 pub struct IVirtualSurfaceImageSourceNative_Vtbl {
     pub base__: ISurfaceImageSourceNative_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Invalidate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: super::super::super::Foundation::RECT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Invalidate: usize,
+    pub Invalidate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: ::win32_foundation::RECT) -> ::windows_core::HRESULT,
     pub GetUpdateRectCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUpdateRects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updates: *mut super::super::super::Foundation::RECT, count: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUpdateRects: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetVisibleBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bounds: *mut super::super::super::Foundation::RECT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetVisibleBounds: usize,
+    pub GetUpdateRects: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updates: *mut ::win32_foundation::RECT, count: u32) -> ::windows_core::HRESULT,
+    pub GetVisibleBounds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bounds: *mut ::win32_foundation::RECT) -> ::windows_core::HRESULT,
     pub RegisterForUpdatesNeeded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, callback: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Resize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newwidth: i32, newheight: i32) -> ::windows_core::HRESULT,
 }

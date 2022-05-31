@@ -5,17 +5,14 @@ pub const WSBAPP_ASYNC_IN_PROGRESS: ::windows_core_sys::HRESULT = 7995396i32;
 pub const WSB_MAX_OB_STATUS_ENTRY: u32 = 5u32;
 pub const WSB_MAX_OB_STATUS_VALUE_TYPE_PAIR: u32 = 5u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WSB_OB_REGISTRATION_INFO {
     pub m_wszResourceDLL: ::windows_core_sys::PWSTR,
     pub m_guidSnapinId: ::windows_core_sys::GUID,
     pub m_dwProviderName: u32,
     pub m_dwProviderIcon: u32,
-    pub m_bSupportsRemoting: super::super::Foundation::BOOLEAN,
+    pub m_bSupportsRemoting: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WSB_OB_REGISTRATION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WSB_OB_REGISTRATION_INFO {
     fn clone(&self) -> Self {
         *self

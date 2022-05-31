@@ -3,43 +3,33 @@ extern "system" {
     pub fn FilterAttach(lpfiltername: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR, lpinstancename: ::windows_core_sys::PCWSTR, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn FilterAttachAtAltitude(lpfiltername: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR, lpaltitude: ::windows_core_sys::PCWSTR, lpinstancename: ::windows_core_sys::PCWSTR, dwcreatedinstancenamelength: u32, lpcreatedinstancename: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn FilterClose(hfilter: HFILTER) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn FilterConnectCommunicationPort(lpportname: ::windows_core_sys::PCWSTR, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, hport: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Security")]
+    pub fn FilterConnectCommunicationPort(lpportname: ::windows_core_sys::PCWSTR, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, hport: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn FilterCreate(lpfiltername: ::windows_core_sys::PCWSTR, hfilter: *mut HFILTER) -> ::windows_core_sys::HRESULT;
     pub fn FilterDetach(lpfiltername: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR, lpinstancename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterFindClose(hfilterfind: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn FilterFindClose(hfilterfind: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn FilterFindFirst(dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterfind: *mut FilterFindHandle) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterFindNext(hfilterfind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn FilterFindNext(hfilterfind: ::win32_foundation_sys::HANDLE, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn FilterGetDosName(lpvolumename: ::windows_core_sys::PCWSTR, lpdosname: ::windows_core_sys::PWSTR, dwdosnamebuffersize: u32) -> ::windows_core_sys::HRESULT;
     pub fn FilterGetInformation(hfilter: HFILTER, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn FilterGetMessage(hport: super::super::Foundation::HANDLE, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn FilterGetMessage(hport: ::win32_foundation_sys::HANDLE, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
     pub fn FilterInstanceClose(hinstance: HFILTER_INSTANCE) -> ::windows_core_sys::HRESULT;
     pub fn FilterInstanceCreate(lpfiltername: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR, lpinstancename: ::windows_core_sys::PCWSTR, hinstance: *mut HFILTER_INSTANCE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterInstanceFindClose(hfilterinstancefind: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn FilterInstanceFindClose(hfilterinstancefind: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn FilterInstanceFindFirst(lpfiltername: ::windows_core_sys::PCWSTR, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpfilterinstancefind: *mut FilterInstanceFindHandle) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterInstanceFindNext(hfilterinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn FilterInstanceFindNext(hfilterinstancefind: ::win32_foundation_sys::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn FilterInstanceGetInformation(hinstance: HFILTER_INSTANCE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn FilterLoad(lpfiltername: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterReplyMessage(hport: super::super::Foundation::HANDLE, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterSendMessage(hport: super::super::Foundation::HANDLE, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn FilterReplyMessage(hport: ::win32_foundation_sys::HANDLE, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows_core_sys::HRESULT;
+    pub fn FilterSendMessage(hport: ::win32_foundation_sys::HANDLE, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn FilterUnload(lpfiltername: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterVolumeFindClose(hvolumefind: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn FilterVolumeFindClose(hvolumefind: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn FilterVolumeFindFirst(dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumefind: *mut FilterVolumeFindHandle) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterVolumeFindNext(hvolumefind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterVolumeInstanceFindClose(hvolumeinstancefind: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn FilterVolumeFindNext(hvolumefind: ::win32_foundation_sys::HANDLE, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn FilterVolumeInstanceFindClose(hvolumeinstancefind: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn FilterVolumeInstanceFindFirst(lpvolumename: ::windows_core_sys::PCWSTR, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32, lpvolumeinstancefind: *mut FilterVolumeInstanceFindHandle) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FilterVolumeInstanceFindNext(hvolumeinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn FilterVolumeInstanceFindNext(hvolumeinstancefind: ::win32_foundation_sys::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
 pub struct FILTER_AGGREGATE_BASIC_INFORMATION {
@@ -174,14 +164,11 @@ impl ::core::clone::Clone for FILTER_MESSAGE_HEADER {
 }
 pub const FILTER_NAME_MAX_CHARS: u32 = 255u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILTER_REPLY_HEADER {
-    pub Status: super::super::Foundation::NTSTATUS,
+    pub Status: ::win32_foundation_sys::NTSTATUS,
     pub MessageId: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILTER_REPLY_HEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILTER_REPLY_HEADER {
     fn clone(&self) -> Self {
         *self

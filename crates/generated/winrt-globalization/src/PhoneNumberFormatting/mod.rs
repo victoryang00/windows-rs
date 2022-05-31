@@ -333,9 +333,8 @@ impl PhoneNumberInfo {
             (::windows_core::Interface::vtable(this).TryParseWithRegion)(::windows_core::Interface::as_raw(this), input.into_param().abi(), regioncode.into_param().abi(), phonenumber as *mut _ as _, result__.as_mut_ptr()).from_abi::<PhoneNumberParseResult>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -420,30 +419,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Pho
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<PhoneNumberInfo> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<PhoneNumberInfo> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: PhoneNumberInfo) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&PhoneNumberInfo> for super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&PhoneNumberInfo> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &PhoneNumberInfo) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for PhoneNumberInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for PhoneNumberInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IStringable> for &PhoneNumberInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &PhoneNumberInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for PhoneNumberInfo {}

@@ -162,28 +162,26 @@ impl ::core::default::Default for OPERATION_START_PARAMETERS {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OperationEnd(operationendparams: *const OPERATION_END_PARAMETERS) -> super::super::Foundation::BOOL {
+pub unsafe fn OperationEnd(operationendparams: *const OPERATION_END_PARAMETERS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OperationEnd(operationendparams: *const OPERATION_END_PARAMETERS) -> super::super::Foundation::BOOL;
+            fn OperationEnd(operationendparams: *const OPERATION_END_PARAMETERS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(OperationEnd(::core::mem::transmute(operationendparams)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OperationStart(operationstartparams: *const OPERATION_START_PARAMETERS) -> super::super::Foundation::BOOL {
+pub unsafe fn OperationStart(operationstartparams: *const OPERATION_START_PARAMETERS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OperationStart(operationstartparams: *const OPERATION_START_PARAMETERS) -> super::super::Foundation::BOOL;
+            fn OperationStart(operationstartparams: *const OPERATION_START_PARAMETERS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(OperationStart(::core::mem::transmute(operationstartparams)))
     }

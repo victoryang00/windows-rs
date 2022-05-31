@@ -28,13 +28,13 @@ pub struct ISecondaryAuthenticationFactorAuthentication_Vtbl {
     pub DeviceConfigurationData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Storage_Streams", feature = "deprecated")))]
     DeviceConfigurationData: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
     pub FinishAuthenticationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, devicehmac: ::windows_core::RawPtr, sessionhmac: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage_Streams", feature = "deprecated")))]
     FinishAuthenticationAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub AbortAuthenticationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, errorlogmessage: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     AbortAuthenticationAsync: usize,
 }
 #[doc(hidden)]
@@ -120,25 +120,25 @@ unsafe impl ::windows_core::Interface for ISecondaryAuthenticationFactorAuthenti
 #[doc(hidden)]
 pub struct ISecondaryAuthenticationFactorAuthenticationStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub ShowNotificationMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, devicename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, message: SecondaryAuthenticationFactorAuthenticationMessage, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     ShowNotificationMessageAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
     pub StartAuthenticationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, serviceauthenticationnonce: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage_Streams", feature = "deprecated")))]
     StartAuthenticationAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub AuthenticationStageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub AuthenticationStageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     AuthenticationStageChanged: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub RemoveAuthenticationStageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub RemoveAuthenticationStageChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     RemoveAuthenticationStageChanged: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub GetAuthenticationStageInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     GetAuthenticationStageInfoAsync: usize,
 }
 #[doc(hidden)]
@@ -155,17 +155,17 @@ unsafe impl ::windows_core::Interface for ISecondaryAuthenticationFactorDevicePr
 #[doc(hidden)]
 pub struct ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub RegisterDevicePresenceMonitoringAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, deviceinstancepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, monitoringmode: SecondaryAuthenticationFactorDevicePresenceMonitoringMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     RegisterDevicePresenceMonitoringAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
     pub RegisterDevicePresenceMonitoringWithNewDeviceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, deviceinstancepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, monitoringmode: SecondaryAuthenticationFactorDevicePresenceMonitoringMode, devicefriendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, devicemodelnumber: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, deviceconfigurationdata: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage_Streams", feature = "deprecated")))]
     RegisterDevicePresenceMonitoringWithNewDeviceAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub UnregisterDevicePresenceMonitoringAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     UnregisterDevicePresenceMonitoringAsync: usize,
     #[cfg(feature = "deprecated")]
     pub IsDevicePresenceMonitoringSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -221,9 +221,9 @@ pub struct ISecondaryAuthenticationFactorInfo2_Vtbl {
     pub PresenceMonitoringMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SecondaryAuthenticationFactorDevicePresenceMonitoringMode) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "deprecated"))]
     PresenceMonitoringMode: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub UpdateDevicePresenceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, presencestate: SecondaryAuthenticationFactorDevicePresence, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     UpdateDevicePresenceAsync: usize,
     #[cfg(feature = "deprecated")]
     pub IsAuthenticationSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -244,13 +244,13 @@ unsafe impl ::windows_core::Interface for ISecondaryAuthenticationFactorRegistra
 #[doc(hidden)]
 pub struct ISecondaryAuthenticationFactorRegistration_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
     pub FinishRegisteringDeviceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceconfigurationdata: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage_Streams", feature = "deprecated")))]
     FinishRegisteringDeviceAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub AbortRegisteringDeviceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, errorlogmessage: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     AbortRegisteringDeviceAsync: usize,
 }
 #[doc(hidden)]
@@ -290,21 +290,21 @@ unsafe impl ::windows_core::Interface for ISecondaryAuthenticationFactorRegistra
 #[doc(hidden)]
 pub struct ISecondaryAuthenticationFactorRegistrationStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
     pub RequestStartRegisteringDeviceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, capabilities: SecondaryAuthenticationFactorDeviceCapabilities, devicefriendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, devicemodelnumber: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, devicekey: ::windows_core::RawPtr, mutualauthenticationkey: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage_Streams", feature = "deprecated")))]
     RequestStartRegisteringDeviceAsync: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
     pub FindAllRegisteredDeviceInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, querytype: SecondaryAuthenticationFactorDeviceFindScope, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "deprecated")))]
     FindAllRegisteredDeviceInfoAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
+    #[cfg(feature = "deprecated")]
     pub UnregisterDeviceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(not(feature = "deprecated"))]
     UnregisterDeviceAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
     pub UpdateDeviceConfigurationDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, deviceconfigurationdata: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated")))]
+    #[cfg(not(all(feature = "Storage_Streams", feature = "deprecated")))]
     UpdateDeviceConfigurationDataAsync: usize,
 }
 #[cfg(feature = "deprecated")]
@@ -313,83 +313,83 @@ pub struct SecondaryAuthenticationFactorAuthentication(::windows_core::IUnknown)
 #[cfg(feature = "deprecated")]
 impl SecondaryAuthenticationFactorAuthentication {
     #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn ServiceAuthenticationHmac(&self) -> ::windows_core::Result<super::super::super::super::Storage::Streams::IBuffer> {
+    pub fn ServiceAuthenticationHmac(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServiceAuthenticationHmac)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).ServiceAuthenticationHmac)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn SessionNonce(&self) -> ::windows_core::Result<super::super::super::super::Storage::Streams::IBuffer> {
+    pub fn SessionNonce(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SessionNonce)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).SessionNonce)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn DeviceNonce(&self) -> ::windows_core::Result<super::super::super::super::Storage::Streams::IBuffer> {
+    pub fn DeviceNonce(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeviceNonce)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).DeviceNonce)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn DeviceConfigurationData(&self) -> ::windows_core::Result<super::super::super::super::Storage::Streams::IBuffer> {
+    pub fn DeviceConfigurationData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeviceConfigurationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).DeviceConfigurationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn FinishAuthenticationAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IBuffer>>(&self, devicehmac: Param0, sessionhmac: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorFinishAuthenticationStatus>> {
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
+    pub fn FinishAuthenticationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, devicehmac: Param0, sessionhmac: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorFinishAuthenticationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FinishAuthenticationAsync)(::windows_core::Interface::as_raw(this), devicehmac.into_param().abi(), sessionhmac.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorFinishAuthenticationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).FinishAuthenticationAsync)(::windows_core::Interface::as_raw(this), devicehmac.into_param().abi(), sessionhmac.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorFinishAuthenticationStatus>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn AbortAuthenticationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, errorlogmessage: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "deprecated")]
+    pub fn AbortAuthenticationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, errorlogmessage: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AbortAuthenticationAsync)(::windows_core::Interface::as_raw(this), errorlogmessage.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).AbortAuthenticationAsync)(::windows_core::Interface::as_raw(this), errorlogmessage.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn ShowNotificationMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(devicename: Param0, message: SecondaryAuthenticationFactorAuthenticationMessage) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "deprecated")]
+    pub fn ShowNotificationMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(devicename: Param0, message: SecondaryAuthenticationFactorAuthenticationMessage) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ISecondaryAuthenticationFactorAuthenticationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShowNotificationMessageAsync)(::windows_core::Interface::as_raw(this), devicename.into_param().abi(), message, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ShowNotificationMessageAsync)(::windows_core::Interface::as_raw(this), devicename.into_param().abi(), message, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn StartAuthenticationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IBuffer>>(deviceid: Param0, serviceauthenticationnonce: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorAuthenticationResult>> {
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
+    pub fn StartAuthenticationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(deviceid: Param0, serviceauthenticationnonce: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorAuthenticationResult>> {
         Self::ISecondaryAuthenticationFactorAuthenticationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StartAuthenticationAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), serviceauthenticationnonce.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorAuthenticationResult>>(result__)
+            (::windows_core::Interface::vtable(this).StartAuthenticationAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), serviceauthenticationnonce.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorAuthenticationResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn AuthenticationStageChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventHandler<SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs>>>(handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    #[cfg(feature = "deprecated")]
+    pub fn AuthenticationStageChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::ISecondaryAuthenticationFactorAuthenticationStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticationStageChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AuthenticationStageChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RemoveAuthenticationStageChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    #[cfg(feature = "deprecated")]
+    pub fn RemoveAuthenticationStageChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::ISecondaryAuthenticationFactorAuthenticationStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveAuthenticationStageChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetAuthenticationStageInfoAsync() -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorAuthenticationStageInfo>> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetAuthenticationStageInfoAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorAuthenticationStageInfo>> {
         Self::ISecondaryAuthenticationFactorAuthenticationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAuthenticationStageInfoAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorAuthenticationStageInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetAuthenticationStageInfoAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorAuthenticationStageInfo>>(result__)
         })
     }
     #[cfg(feature = "deprecated")]
@@ -1339,11 +1339,11 @@ impl SecondaryAuthenticationFactorInfo {
         }
     }
     #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn DeviceConfigurationData(&self) -> ::windows_core::Result<super::super::super::super::Storage::Streams::IBuffer> {
+    pub fn DeviceConfigurationData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeviceConfigurationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).DeviceConfigurationData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -1354,12 +1354,12 @@ impl SecondaryAuthenticationFactorInfo {
             (::windows_core::Interface::vtable(this).PresenceMonitoringMode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SecondaryAuthenticationFactorDevicePresenceMonitoringMode>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn UpdateDevicePresenceAsync(&self, presencestate: SecondaryAuthenticationFactorDevicePresence) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "deprecated")]
+    pub fn UpdateDevicePresenceAsync(&self, presencestate: SecondaryAuthenticationFactorDevicePresence) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<ISecondaryAuthenticationFactorInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdateDevicePresenceAsync)(::windows_core::Interface::as_raw(this), presencestate, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).UpdateDevicePresenceAsync)(::windows_core::Interface::as_raw(this), presencestate, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     #[cfg(feature = "deprecated")]
@@ -1465,25 +1465,25 @@ unsafe impl ::core::marker::Sync for SecondaryAuthenticationFactorInfo {}
 pub struct SecondaryAuthenticationFactorRegistration(::windows_core::IUnknown);
 #[cfg(feature = "deprecated")]
 impl SecondaryAuthenticationFactorRegistration {
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn RegisterDevicePresenceMonitoringAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0, deviceinstancepath: Param1, monitoringmode: SecondaryAuthenticationFactorDevicePresenceMonitoringMode) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>> {
+    #[cfg(feature = "deprecated")]
+    pub fn RegisterDevicePresenceMonitoringAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0, deviceinstancepath: Param1, monitoringmode: SecondaryAuthenticationFactorDevicePresenceMonitoringMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>> {
         Self::ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterDevicePresenceMonitoringAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), deviceinstancepath.into_param().abi(), monitoringmode, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterDevicePresenceMonitoringAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), deviceinstancepath.into_param().abi(), monitoringmode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn RegisterDevicePresenceMonitoringWithNewDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IBuffer>>(deviceid: Param0, deviceinstancepath: Param1, monitoringmode: SecondaryAuthenticationFactorDevicePresenceMonitoringMode, devicefriendlyname: Param3, devicemodelnumber: Param4, deviceconfigurationdata: Param5) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>> {
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
+    pub fn RegisterDevicePresenceMonitoringWithNewDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param5: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(deviceid: Param0, deviceinstancepath: Param1, monitoringmode: SecondaryAuthenticationFactorDevicePresenceMonitoringMode, devicefriendlyname: Param3, devicemodelnumber: Param4, deviceconfigurationdata: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>> {
         Self::ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterDevicePresenceMonitoringWithNewDeviceAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), deviceinstancepath.into_param().abi(), monitoringmode, devicefriendlyname.into_param().abi(), devicemodelnumber.into_param().abi(), deviceconfigurationdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterDevicePresenceMonitoringWithNewDeviceAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), deviceinstancepath.into_param().abi(), monitoringmode, devicefriendlyname.into_param().abi(), devicemodelnumber.into_param().abi(), deviceconfigurationdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn UnregisterDevicePresenceMonitoringAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "deprecated")]
+    pub fn UnregisterDevicePresenceMonitoringAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UnregisterDevicePresenceMonitoringAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).UnregisterDevicePresenceMonitoringAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(feature = "deprecated")]
@@ -1493,48 +1493,48 @@ impl SecondaryAuthenticationFactorRegistration {
             (::windows_core::Interface::vtable(this).IsDevicePresenceMonitoringSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn FinishRegisteringDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IBuffer>>(&self, deviceconfigurationdata: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
+    pub fn FinishRegisteringDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, deviceconfigurationdata: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FinishRegisteringDeviceAsync)(::windows_core::Interface::as_raw(this), deviceconfigurationdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).FinishRegisteringDeviceAsync)(::windows_core::Interface::as_raw(this), deviceconfigurationdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn AbortRegisteringDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, errorlogmessage: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "deprecated")]
+    pub fn AbortRegisteringDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, errorlogmessage: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AbortRegisteringDeviceAsync)(::windows_core::Interface::as_raw(this), errorlogmessage.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).AbortRegisteringDeviceAsync)(::windows_core::Interface::as_raw(this), errorlogmessage.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn RequestStartRegisteringDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IBuffer>, Param5: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IBuffer>>(deviceid: Param0, capabilities: SecondaryAuthenticationFactorDeviceCapabilities, devicefriendlyname: Param2, devicemodelnumber: Param3, devicekey: Param4, mutualauthenticationkey: Param5) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorRegistrationResult>> {
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
+    pub fn RequestStartRegisteringDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param5: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(deviceid: Param0, capabilities: SecondaryAuthenticationFactorDeviceCapabilities, devicefriendlyname: Param2, devicemodelnumber: Param3, devicekey: Param4, mutualauthenticationkey: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorRegistrationResult>> {
         Self::ISecondaryAuthenticationFactorRegistrationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestStartRegisteringDeviceAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), capabilities, devicefriendlyname.into_param().abi(), devicemodelnumber.into_param().abi(), devicekey.into_param().abi(), mutualauthenticationkey.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<SecondaryAuthenticationFactorRegistrationResult>>(result__)
+            (::windows_core::Interface::vtable(this).RequestStartRegisteringDeviceAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), capabilities, devicefriendlyname.into_param().abi(), devicemodelnumber.into_param().abi(), devicekey.into_param().abi(), mutualauthenticationkey.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SecondaryAuthenticationFactorRegistrationResult>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn FindAllRegisteredDeviceInfoAsync(querytype: SecondaryAuthenticationFactorDeviceFindScope) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Foundation::Collections::IVectorView<SecondaryAuthenticationFactorInfo>>> {
+    pub fn FindAllRegisteredDeviceInfoAsync(querytype: SecondaryAuthenticationFactorDeviceFindScope) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<SecondaryAuthenticationFactorInfo>>> {
         Self::ISecondaryAuthenticationFactorRegistrationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllRegisteredDeviceInfoAsync)(::windows_core::Interface::as_raw(this), querytype, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::super::super::Foundation::Collections::IVectorView<SecondaryAuthenticationFactorInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllRegisteredDeviceInfoAsync)(::windows_core::Interface::as_raw(this), querytype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<SecondaryAuthenticationFactorInfo>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn UnregisterDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "deprecated")]
+    pub fn UnregisterDeviceAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ISecondaryAuthenticationFactorRegistrationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UnregisterDeviceAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).UnregisterDeviceAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams", feature = "deprecated"))]
-    pub fn UpdateDeviceConfigurationDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IBuffer>>(deviceid: Param0, deviceconfigurationdata: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    #[cfg(all(feature = "Storage_Streams", feature = "deprecated"))]
+    pub fn UpdateDeviceConfigurationDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(deviceid: Param0, deviceconfigurationdata: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ISecondaryAuthenticationFactorRegistrationStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdateDeviceConfigurationDataAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), deviceconfigurationdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).UpdateDeviceConfigurationDataAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), deviceconfigurationdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     #[cfg(feature = "deprecated")]

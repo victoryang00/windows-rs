@@ -2,8 +2,7 @@
 extern "system" {
     pub fn McastApiCleanup();
     pub fn McastApiStartup(version: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn McastEnumerateScopes(addrfamily: u16, requery: super::super::Foundation::BOOL, pscopelist: *mut MCAST_SCOPE_ENTRY, pscopelen: *mut u32, pscopecount: *mut u32) -> u32;
+    pub fn McastEnumerateScopes(addrfamily: u16, requery: ::win32_foundation_sys::BOOL, pscopelist: *mut MCAST_SCOPE_ENTRY, pscopelen: *mut u32, pscopecount: *mut u32) -> u32;
     pub fn McastGenUID(prequestid: *mut MCAST_CLIENT_UID) -> u32;
     pub fn McastReleaseAddress(addrfamily: u16, prequestid: *mut MCAST_CLIENT_UID, preleaserequest: *mut MCAST_LEASE_REQUEST) -> u32;
     pub fn McastRenewAddress(addrfamily: u16, prequestid: *mut MCAST_CLIENT_UID, prenewrequest: *mut MCAST_LEASE_REQUEST, prenewresponse: *mut MCAST_LEASE_RESPONSE) -> u32;
@@ -79,16 +78,13 @@ impl ::core::clone::Clone for MCAST_SCOPE_CTX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MCAST_SCOPE_ENTRY {
     pub ScopeCtx: MCAST_SCOPE_CTX,
     pub LastAddr: IPNG_ADDRESS,
     pub TTL: u32,
-    pub ScopeDesc: super::super::Foundation::UNICODE_STRING,
+    pub ScopeDesc: ::win32_foundation_sys::UNICODE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MCAST_SCOPE_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MCAST_SCOPE_ENTRY {
     fn clone(&self) -> Self {
         *self

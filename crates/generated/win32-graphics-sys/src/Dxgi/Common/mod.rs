@@ -174,17 +174,14 @@ impl ::core::clone::Clone for DXGI_GAMMA_CONTROL {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DXGI_GAMMA_CONTROL_CAPABILITIES {
-    pub ScaleAndOffsetSupported: super::super::super::Foundation::BOOL,
+    pub ScaleAndOffsetSupported: ::win32_foundation_sys::BOOL,
     pub MaxConvertedValue: f32,
     pub MinConvertedValue: f32,
     pub NumGammaControlPoints: u32,
     pub ControlPointPositions: [f32; 1025],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DXGI_GAMMA_CONTROL_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DXGI_GAMMA_CONTROL_CAPABILITIES {
     fn clone(&self) -> Self {
         *self

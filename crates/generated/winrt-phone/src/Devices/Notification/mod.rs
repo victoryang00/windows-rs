@@ -9,10 +9,7 @@ unsafe impl ::windows_core::Interface for IVibrationDevice {
 #[doc(hidden)]
 pub struct IVibrationDevice_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Vibrate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, duration: super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Vibrate: usize,
+    pub Vibrate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, duration: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -31,8 +28,7 @@ pub struct IVibrationDeviceStatics_Vtbl {
 #[repr(transparent)]
 pub struct VibrationDevice(::windows_core::IUnknown);
 impl VibrationDevice {
-    #[cfg(feature = "Foundation")]
-    pub fn Vibrate<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TimeSpan>>(&self, duration: Param0) -> ::windows_core::Result<()> {
+    pub fn Vibrate<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, duration: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Vibrate)(::windows_core::Interface::as_raw(this), duration.into_param().abi()).ok() }
     }

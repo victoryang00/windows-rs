@@ -1,24 +1,18 @@
 #[link(name = "windows")]
 extern "system" {
     pub fn ProtectFileToEnterpriseIdentity(fileorfolderpath: ::windows_core_sys::PCWSTR, identity: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn SrpCloseThreadNetworkContext(threadnetworkcontext: *mut HTHREAD_NETWORK_CONTEXT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn SrpCreateThreadNetworkContext(enterpriseid: ::windows_core_sys::PCWSTR, threadnetworkcontext: *mut HTHREAD_NETWORK_CONTEXT) -> ::windows_core_sys::HRESULT;
     pub fn SrpDisablePermissiveModeFileEncryption() -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Appx"))]
-    pub fn SrpDoesPolicyAllowAppExecution(packageid: *const super::super::Storage::Packaging::Appx::PACKAGE_ID, isallowed: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Storage_Packaging_Appx")]
+    pub fn SrpDoesPolicyAllowAppExecution(packageid: *const ::win32_storage_sys::Packaging::Appx::PACKAGE_ID, isallowed: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn SrpEnablePermissiveModeFileEncryption(enterpriseid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SrpGetEnterpriseIds(tokenhandle: super::super::Foundation::HANDLE, numberofbytes: *mut u32, enterpriseids: *mut ::windows_core_sys::PWSTR, enterpriseidcount: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SrpGetEnterprisePolicy(tokenhandle: super::super::Foundation::HANDLE, policyflags: *mut ENTERPRISE_DATA_POLICIES) -> ::windows_core_sys::HRESULT;
+    pub fn SrpGetEnterpriseIds(tokenhandle: ::win32_foundation_sys::HANDLE, numberofbytes: *mut u32, enterpriseids: *mut ::windows_core_sys::PWSTR, enterpriseidcount: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn SrpGetEnterprisePolicy(tokenhandle: ::win32_foundation_sys::HANDLE, policyflags: *mut ENTERPRISE_DATA_POLICIES) -> ::windows_core_sys::HRESULT;
     pub fn SrpHostingInitialize(version: SRPHOSTING_VERSION, r#type: SRPHOSTING_TYPE, pvdata: *const ::core::ffi::c_void, cbdata: u32) -> ::windows_core_sys::HRESULT;
     pub fn SrpHostingTerminate(r#type: SRPHOSTING_TYPE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SrpIsTokenService(tokenhandle: super::super::Foundation::HANDLE, istokenservice: *mut u8) -> super::super::Foundation::NTSTATUS;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SrpSetTokenEnterpriseId(tokenhandle: super::super::Foundation::HANDLE, enterpriseid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn SrpIsTokenService(tokenhandle: ::win32_foundation_sys::HANDLE, istokenservice: *mut u8) -> ::win32_foundation_sys::NTSTATUS;
+    pub fn SrpSetTokenEnterpriseId(tokenhandle: ::win32_foundation_sys::HANDLE, enterpriseid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn UnprotectFile(fileorfolderpath: ::windows_core_sys::PCWSTR, options: *const FILE_UNPROTECT_OPTIONS) -> ::windows_core_sys::HRESULT;
 }
 pub type ENTERPRISE_DATA_POLICIES = u32;
@@ -37,14 +31,11 @@ impl ::core::clone::Clone for FILE_UNPROTECT_OPTIONS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HTHREAD_NETWORK_CONTEXT {
     pub ThreadId: u32,
-    pub ThreadContext: super::super::Foundation::HANDLE,
+    pub ThreadContext: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HTHREAD_NETWORK_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HTHREAD_NETWORK_CONTEXT {
     fn clone(&self) -> Self {
         *self

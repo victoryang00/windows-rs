@@ -1,30 +1,24 @@
 #[cfg(feature = "Provider")]
 pub mod Provider;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct GpioChangeCount {
     pub Count: u64,
-    pub RelativeTime: super::super::Foundation::TimeSpan,
+    pub RelativeTime: ::winrt_foundation::TimeSpan,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for GpioChangeCount {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for GpioChangeCount {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::fmt::Debug for GpioChangeCount {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GpioChangeCount").field("Count", &self.Count).field("RelativeTime", &self.RelativeTime).finish()
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::Abi for GpioChangeCount {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::RuntimeType for GpioChangeCount {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Devices.Gpio.GpioChangeCount;u8;struct(Windows.Foundation.TimeSpan;i8))");
     type DefaultType = Self;
@@ -32,15 +26,12 @@ unsafe impl ::windows_core::RuntimeType for GpioChangeCount {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::PartialEq for GpioChangeCount {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GpioChangeCount>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::Eq for GpioChangeCount {}
-#[cfg(feature = "Foundation")]
 impl ::core::default::Default for GpioChangeCount {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -49,9 +40,8 @@ impl ::core::default::Default for GpioChangeCount {
 #[repr(transparent)]
 pub struct GpioChangeCounter(::windows_core::IUnknown);
 impl GpioChangeCounter {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn SetPolarity(&self, value: GpioChangePolarity) -> ::windows_core::Result<()> {
@@ -80,7 +70,6 @@ impl GpioChangeCounter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Stop)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Read(&self) -> ::windows_core::Result<GpioChangeCount> {
         let this = self;
         unsafe {
@@ -88,7 +77,6 @@ impl GpioChangeCounter {
             (::windows_core::Interface::vtable(this).Read)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GpioChangeCount>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Reset(&self) -> ::windows_core::Result<GpioChangeCount> {
         let this = self;
         unsafe {
@@ -177,30 +165,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Gpi
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<GpioChangeCounter> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<GpioChangeCounter> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: GpioChangeCounter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&GpioChangeCounter> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&GpioChangeCounter> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &GpioChangeCounter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for GpioChangeCounter {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for GpioChangeCounter {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &GpioChangeCounter {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &GpioChangeCounter {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for GpioChangeCounter {}
@@ -242,9 +226,8 @@ unsafe impl ::windows_core::RuntimeType for GpioChangePolarity {
 #[repr(transparent)]
 pub struct GpioChangeReader(::windows_core::IUnknown);
 impl GpioChangeReader {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Capacity(&self) -> ::windows_core::Result<i32> {
@@ -305,7 +288,6 @@ impl GpioChangeReader {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Clear)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn GetNextItem(&self) -> ::windows_core::Result<GpioChangeRecord> {
         let this = self;
         unsafe {
@@ -313,7 +295,6 @@ impl GpioChangeReader {
             (::windows_core::Interface::vtable(this).GetNextItem)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<GpioChangeRecord>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn PeekNextItem(&self) -> ::windows_core::Result<GpioChangeRecord> {
         let this = self;
         unsafe {
@@ -322,19 +303,18 @@ impl GpioChangeReader {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAllItems(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<GpioChangeRecord>> {
+    pub fn GetAllItems(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<GpioChangeRecord>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllItems)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<GpioChangeRecord>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllItems)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<GpioChangeRecord>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WaitForItemsAsync(&self, count: i32) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn WaitForItemsAsync(&self, count: i32) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WaitForItemsAsync)(::windows_core::Interface::as_raw(this), count, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).WaitForItemsAsync)(::windows_core::Interface::as_raw(this), count, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, GpioPin>>(pin: Param0) -> ::windows_core::Result<GpioChangeReader> {
@@ -424,59 +404,49 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Gpi
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<GpioChangeReader> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<GpioChangeReader> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: GpioChangeReader) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&GpioChangeReader> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&GpioChangeReader> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &GpioChangeReader) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for GpioChangeReader {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for GpioChangeReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &GpioChangeReader {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &GpioChangeReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for GpioChangeReader {}
 unsafe impl ::core::marker::Sync for GpioChangeReader {}
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct GpioChangeRecord {
-    pub RelativeTime: super::super::Foundation::TimeSpan,
+    pub RelativeTime: ::winrt_foundation::TimeSpan,
     pub Edge: GpioPinEdge,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for GpioChangeRecord {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for GpioChangeRecord {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::fmt::Debug for GpioChangeRecord {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GpioChangeRecord").field("RelativeTime", &self.RelativeTime).field("Edge", &self.Edge).finish()
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::Abi for GpioChangeRecord {
     type Abi = Self;
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::RuntimeType for GpioChangeRecord {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"struct(Windows.Devices.Gpio.GpioChangeRecord;struct(Windows.Foundation.TimeSpan;i8);enum(Windows.Devices.Gpio.GpioPinEdge;i4))");
     type DefaultType = Self;
@@ -484,15 +454,12 @@ unsafe impl ::windows_core::RuntimeType for GpioChangeRecord {
         Ok(*from)
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::PartialEq for GpioChangeRecord {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GpioChangeRecord>()) == 0 }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::Eq for GpioChangeRecord {}
-#[cfg(feature = "Foundation")]
 impl ::core::default::Default for GpioChangeRecord {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -536,17 +503,16 @@ impl GpioController {
         })
     }
     #[cfg(all(feature = "Devices_Gpio_Provider", feature = "Foundation_Collections"))]
-    pub fn GetControllersAsync<'a, Param0: ::windows_core::IntoParam<'a, Provider::IGpioProvider>>(provider: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<GpioController>>> {
+    pub fn GetControllersAsync<'a, Param0: ::windows_core::IntoParam<'a, Provider::IGpioProvider>>(provider: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<GpioController>>> {
         Self::IGpioControllerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetControllersAsync)(::windows_core::Interface::as_raw(this), provider.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<GpioController>>>(result__)
+            (::windows_core::Interface::vtable(this).GetControllersAsync)(::windows_core::Interface::as_raw(this), provider.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<GpioController>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDefaultAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<GpioController>> {
+    pub fn GetDefaultAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GpioController>> {
         Self::IGpioControllerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDefaultAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<GpioController>>(result__)
+            (::windows_core::Interface::vtable(this).GetDefaultAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GpioController>>(result__)
         })
     }
     pub fn IGpioControllerStatics<R, F: FnOnce(&IGpioControllerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -669,34 +635,29 @@ unsafe impl ::windows_core::RuntimeType for GpioOpenStatus {
 #[repr(transparent)]
 pub struct GpioPin(::windows_core::IUnknown);
 impl GpioPin {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ValueChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<GpioPin, GpioPinValueChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn ValueChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<GpioPin, GpioPinValueChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ValueChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ValueChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveValueChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveValueChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveValueChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DebounceTimeout(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn DebounceTimeout(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).DebounceTimeout)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).DebounceTimeout)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetDebounceTimeout<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDebounceTimeout<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDebounceTimeout)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -814,30 +775,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Gpi
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<GpioPin> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<GpioPin> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: GpioPin) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&GpioPin> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&GpioPin> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &GpioPin) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for GpioPin {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for GpioPin {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &GpioPin {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &GpioPin {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for GpioPin {}
@@ -1079,14 +1036,8 @@ pub struct IGpioChangeCounter_Vtbl {
     pub IsStarted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub Read: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GpioChangeCount) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Read: usize,
-    #[cfg(feature = "Foundation")]
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GpioChangeCount) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Reset: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1122,22 +1073,13 @@ pub struct IGpioChangeReader_Vtbl {
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetNextItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GpioChangeRecord) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetNextItem: usize,
-    #[cfg(feature = "Foundation")]
     pub PeekNextItem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GpioChangeRecord) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PeekNextItem: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetAllItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetAllItems: usize,
-    #[cfg(feature = "Foundation")]
     pub WaitForItemsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: i32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WaitForItemsAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1197,10 +1139,7 @@ pub struct IGpioControllerStatics2_Vtbl {
     pub GetControllersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, provider: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Devices_Gpio_Provider", feature = "Foundation_Collections")))]
     GetControllersAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDefaultAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1213,22 +1152,10 @@ unsafe impl ::windows_core::Interface for IGpioPin {
 #[doc(hidden)]
 pub struct IGpioPin_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub ValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ValueChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveValueChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub DebounceTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DebounceTimeout: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetDebounceTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetDebounceTimeout: usize,
+    pub ValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveValueChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub DebounceTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub SetDebounceTimeout: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub PinNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SharingMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut GpioSharingMode) -> ::windows_core::HRESULT,
     pub IsDriveModeSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, drivemode: GpioPinDriveMode, result__: *mut bool) -> ::windows_core::HRESULT,

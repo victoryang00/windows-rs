@@ -43,7 +43,7 @@ extern "system" {
     pub fn JetCloseTable(sesid: super::StructuredStorage::JET_SESID, tableid: super::StructuredStorage::JET_TABLEID) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetCommitTransaction(sesid: super::StructuredStorage::JET_SESID, grbit: u32) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+    #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetCommitTransaction2(sesid: super::StructuredStorage::JET_SESID, grbit: u32, cmsecdurablecommit: u32, pcommitid: *mut JET_COMMIT_ID) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetCompactA(sesid: super::StructuredStorage::JET_SESID, szdatabasesrc: *const i8, szdatabasedest: *const i8, pfnstatus: JET_PFNSTATUS, pconvert: *const CONVERT_A, grbit: u32) -> i32;
@@ -161,7 +161,7 @@ extern "system" {
     pub fn JetEnumerateColumns(sesid: super::StructuredStorage::JET_SESID, tableid: super::StructuredStorage::JET_TABLEID, cenumcolumnid: u32, rgenumcolumnid: *const JET_ENUMCOLUMNID, pcenumcolumn: *mut u32, prgenumcolumn: *mut *mut JET_ENUMCOLUMN, pfnrealloc: JET_PFNREALLOC, pvrealloccontext: *const ::core::ffi::c_void, cbdatamost: u32, grbit: u32) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetEscrowUpdate(sesid: super::StructuredStorage::JET_SESID, tableid: super::StructuredStorage::JET_TABLEID, columnid: u32, pv: *const ::core::ffi::c_void, cbmax: u32, pvold: *mut ::core::ffi::c_void, cboldmax: u32, pcboldactual: *mut u32, grbit: u32) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+    #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetExternalRestore2A(szcheckpointfilepath: *const i8, szlogpath: *const i8, rgrstmap: *const JET_RSTMAP_A, crstfilemap: i32, szbackuplogpath: *const i8, ploginfo: *mut JET_LOGINFO_A, sztargetinstancename: *const i8, sztargetinstancelogpath: *const i8, sztargetinstancecheckpointpath: *const i8, pfn: JET_PFNSTATUS) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetExternalRestore2W(szcheckpointfilepath: *const u16, szlogpath: *const u16, rgrstmap: *const JET_RSTMAP_W, crstfilemap: i32, szbackuplogpath: *const u16, ploginfo: *mut JET_LOGINFO_W, sztargetinstancename: *const u16, sztargetinstancelogpath: *const u16, sztargetinstancecheckpointpath: *const u16, pfn: JET_PFNSTATUS) -> i32;
@@ -210,7 +210,7 @@ extern "system" {
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetGetLock(sesid: super::StructuredStorage::JET_SESID, tableid: super::StructuredStorage::JET_TABLEID, grbit: u32) -> i32;
     pub fn JetGetLogInfoA(szzlogs: *mut i8, cbmax: u32, pcbactual: *mut u32) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+    #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetGetLogInfoInstance2A(instance: super::StructuredStorage::JET_INSTANCE, szzlogs: *mut i8, cbmax: u32, pcbactual: *mut u32, ploginfo: *mut JET_LOGINFO_A) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetGetLogInfoInstance2W(instance: super::StructuredStorage::JET_INSTANCE, wszzlogs: *mut u16, cbmax: u32, pcbactual: *mut u32, ploginfo: *mut JET_LOGINFO_W) -> i32;
@@ -272,9 +272,9 @@ extern "system" {
     pub fn JetInit(pinstance: *mut super::StructuredStorage::JET_INSTANCE) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetInit2(pinstance: *mut super::StructuredStorage::JET_INSTANCE, grbit: u32) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+    #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetInit3A(pinstance: *mut super::StructuredStorage::JET_INSTANCE, prstinfo: *const JET_RSTINFO_A, grbit: u32) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+    #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetInit3W(pinstance: *mut super::StructuredStorage::JET_INSTANCE, prstinfo: *const JET_RSTINFO_W, grbit: u32) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetIntersectIndexes(sesid: super::StructuredStorage::JET_SESID, rgindexrange: *const JET_INDEXRANGE, cindexrange: u32, precordlist: *mut JET_RECORDLIST, grbit: u32) -> i32;
@@ -505,104 +505,83 @@ impl ::core::clone::Clone for CONVERT_W_0_0 {
 }
 pub const JET_BASE_NAME_LENGTH: u32 = 3u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_BKINFO {
     pub lgposMark: JET_LGPOS,
     pub Anonymous: JET_BKINFO_0,
     pub genLow: u32,
     pub genHigh: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_BKINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_BKINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union JET_BKINFO_0 {
     pub logtimeMark: JET_LOGTIME,
     pub bklogtimeMark: JET_BKLOGTIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_BKINFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_BKINFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_BKLOGTIME {
-    pub bSeconds: super::super::Foundation::CHAR,
-    pub bMinutes: super::super::Foundation::CHAR,
-    pub bHours: super::super::Foundation::CHAR,
-    pub bDay: super::super::Foundation::CHAR,
-    pub bMonth: super::super::Foundation::CHAR,
-    pub bYear: super::super::Foundation::CHAR,
+    pub bSeconds: ::win32_foundation_sys::CHAR,
+    pub bMinutes: ::win32_foundation_sys::CHAR,
+    pub bHours: ::win32_foundation_sys::CHAR,
+    pub bDay: ::win32_foundation_sys::CHAR,
+    pub bMonth: ::win32_foundation_sys::CHAR,
+    pub bYear: ::win32_foundation_sys::CHAR,
     pub Anonymous1: JET_BKLOGTIME_0,
     pub Anonymous2: JET_BKLOGTIME_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_BKLOGTIME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_BKLOGTIME {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union JET_BKLOGTIME_0 {
-    pub bFiller1: super::super::Foundation::CHAR,
+    pub bFiller1: ::win32_foundation_sys::CHAR,
     pub Anonymous: JET_BKLOGTIME_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_BKLOGTIME_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_BKLOGTIME_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_BKLOGTIME_0_0 {
     pub _bitfield: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_BKLOGTIME_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_BKLOGTIME_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union JET_BKLOGTIME_1 {
-    pub bFiller2: super::super::Foundation::CHAR,
+    pub bFiller2: ::win32_foundation_sys::CHAR,
     pub Anonymous: JET_BKLOGTIME_1_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_BKLOGTIME_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_BKLOGTIME_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_BKLOGTIME_1_0 {
     pub _bitfield: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_BKLOGTIME_1_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_BKLOGTIME_1_0 {
     fn clone(&self) -> Self {
         *self
@@ -611,7 +590,6 @@ impl ::core::clone::Clone for JET_BKLOGTIME_1_0 {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub type JET_CALLBACK = ::core::option::Option<unsafe extern "system" fn(sesid: super::StructuredStorage::JET_SESID, dbid: u32, tableid: super::StructuredStorage::JET_TABLEID, cbtyp: u32, pvarg1: *mut ::core::ffi::c_void, pvarg2: *mut ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void, ulunused: super::StructuredStorage::JET_API_PTR) -> i32>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_COLUMNBASE_A {
     pub cbStruct: u32,
     pub columnid: u32,
@@ -622,12 +600,10 @@ pub struct JET_COLUMNBASE_A {
     pub wFiller: u16,
     pub cbMax: u32,
     pub grbit: u32,
-    pub szBaseTableName: [super::super::Foundation::CHAR; 256],
-    pub szBaseColumnName: [super::super::Foundation::CHAR; 256],
+    pub szBaseTableName: [::win32_foundation_sys::CHAR; 256],
+    pub szBaseColumnName: [::win32_foundation_sys::CHAR; 256],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_COLUMNBASE_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_COLUMNBASE_A {
     fn clone(&self) -> Self {
         *self
@@ -740,17 +716,14 @@ impl ::core::clone::Clone for JET_COLUMNLIST {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_COMMIT_ID {
     pub signLog: JET_SIGNATURE,
     pub reserved: i32,
     pub commitId: i64,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_COMMIT_ID {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_COMMIT_ID {
     fn clone(&self) -> Self {
         *self
@@ -758,17 +731,14 @@ impl ::core::clone::Clone for JET_COMMIT_ID {
 }
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_COMMIT_ID {
     pub signLog: JET_SIGNATURE,
     pub reserved: i32,
     pub commitId: i64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_COMMIT_ID {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_COMMIT_ID {
     fn clone(&self) -> Self {
         *self
@@ -802,7 +772,6 @@ pub const JET_ColInfoGrbitMinimalInfo: u32 = 1073741824u32;
 pub const JET_ColInfoGrbitNonDerivedColumnsOnly: u32 = 2147483648u32;
 pub const JET_ColInfoGrbitSortByColumnid: u32 = 536870912u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_DBINFOMISC {
     pub ulVersion: u32,
     pub ulUpdate: u32,
@@ -826,16 +795,13 @@ pub struct JET_DBINFOMISC {
     pub lSPNumber: i32,
     pub cbPageSize: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_DBINFOMISC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_DBINFOMISC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_DBINFOMISC2 {
     pub ulVersion: u32,
     pub ulUpdate: u32,
@@ -874,16 +840,13 @@ pub struct JET_DBINFOMISC2 {
     pub logtimeBadChecksum: JET_LOGTIME,
     pub ulBadChecksumOld: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_DBINFOMISC2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_DBINFOMISC2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_DBINFOMISC3 {
     pub ulVersion: u32,
     pub ulUpdate: u32,
@@ -923,16 +886,13 @@ pub struct JET_DBINFOMISC3 {
     pub ulBadChecksumOld: u32,
     pub genCommitted: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_DBINFOMISC3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_DBINFOMISC3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_DBINFOMISC4 {
     pub ulVersion: u32,
     pub ulUpdate: u32,
@@ -974,9 +934,7 @@ pub struct JET_DBINFOMISC4 {
     pub bkinfoCopyPrev: JET_BKINFO,
     pub bkinfoDiffPrev: JET_BKINFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_DBINFOMISC4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_DBINFOMISC4 {
     fn clone(&self) -> Self {
         *self
@@ -1549,16 +1507,13 @@ impl ::core::clone::Clone for JET_LGPOS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_LOGINFO_A {
     pub cbSize: u32,
     pub ulGenLow: u32,
     pub ulGenHigh: u32,
-    pub szBaseName: [super::super::Foundation::CHAR; 4],
+    pub szBaseName: [::win32_foundation_sys::CHAR; 4],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_LOGINFO_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_LOGINFO_A {
     fn clone(&self) -> Self {
         *self
@@ -1578,74 +1533,59 @@ impl ::core::clone::Clone for JET_LOGINFO_W {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_LOGTIME {
-    pub bSeconds: super::super::Foundation::CHAR,
-    pub bMinutes: super::super::Foundation::CHAR,
-    pub bHours: super::super::Foundation::CHAR,
-    pub bDay: super::super::Foundation::CHAR,
-    pub bMonth: super::super::Foundation::CHAR,
-    pub bYear: super::super::Foundation::CHAR,
+    pub bSeconds: ::win32_foundation_sys::CHAR,
+    pub bMinutes: ::win32_foundation_sys::CHAR,
+    pub bHours: ::win32_foundation_sys::CHAR,
+    pub bDay: ::win32_foundation_sys::CHAR,
+    pub bMonth: ::win32_foundation_sys::CHAR,
+    pub bYear: ::win32_foundation_sys::CHAR,
     pub Anonymous1: JET_LOGTIME_0,
     pub Anonymous2: JET_LOGTIME_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_LOGTIME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_LOGTIME {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union JET_LOGTIME_0 {
-    pub bFiller1: super::super::Foundation::CHAR,
+    pub bFiller1: ::win32_foundation_sys::CHAR,
     pub Anonymous: JET_LOGTIME_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_LOGTIME_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_LOGTIME_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_LOGTIME_0_0 {
     pub _bitfield: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_LOGTIME_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_LOGTIME_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union JET_LOGTIME_1 {
-    pub bFiller2: super::super::Foundation::CHAR,
+    pub bFiller2: ::win32_foundation_sys::CHAR,
     pub Anonymous: JET_LOGTIME_1_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_LOGTIME_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_LOGTIME_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_LOGTIME_1_0 {
     pub _bitfield: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_LOGTIME_1_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_LOGTIME_1_0 {
     fn clone(&self) -> Self {
         *self
@@ -1782,14 +1722,13 @@ pub const JET_OnlineDefragAllOBSOLETE: u32 = 1u32;
 pub const JET_OnlineDefragDatabases: u32 = 2u32;
 pub const JET_OnlineDefragDisable: u32 = 0u32;
 pub const JET_OnlineDefragSpaceTrees: u32 = 4u32;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+#[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub type JET_PFNDURABLECOMMITCALLBACK = ::core::option::Option<unsafe extern "system" fn(instance: super::StructuredStorage::JET_INSTANCE, pcommitidseen: *const JET_COMMIT_ID, grbit: u32) -> i32>;
 pub type JET_PFNREALLOC = ::core::option::Option<unsafe extern "system" fn(pvcontext: *const ::core::ffi::c_void, pv: *const ::core::ffi::c_void, cb: u32) -> *mut ::core::ffi::c_void>;
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub type JET_PFNSTATUS = ::core::option::Option<unsafe extern "system" fn(sesid: super::StructuredStorage::JET_SESID, snp: u32, snt: u32, pv: *const ::core::ffi::c_void) -> i32>;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_RBSINFOMISC {
     pub lRBSGeneration: i32,
     pub logtimeCreate: JET_LOGTIME,
@@ -1799,10 +1738,8 @@ pub struct JET_RBSINFOMISC {
     pub cbLogicalFileSize: u64,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_RBSINFOMISC {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_RBSINFOMISC {
     fn clone(&self) -> Self {
         *self
@@ -1810,7 +1747,6 @@ impl ::core::clone::Clone for JET_RBSINFOMISC {
 }
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_RBSINFOMISC {
     pub lRBSGeneration: i32,
     pub logtimeCreate: JET_LOGTIME,
@@ -1820,10 +1756,8 @@ pub struct JET_RBSINFOMISC {
     pub cbLogicalFileSize: u64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_RBSINFOMISC {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_RBSINFOMISC {
     fn clone(&self) -> Self {
         *self
@@ -1831,7 +1765,6 @@ impl ::core::clone::Clone for JET_RBSINFOMISC {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_RBSREVERTINFOMISC {
     pub lGenMinRevertStart: i32,
     pub lGenMaxRevertStart: i32,
@@ -1842,10 +1775,8 @@ pub struct JET_RBSREVERTINFOMISC {
     pub cPagesReverted: u64,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_RBSREVERTINFOMISC {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_RBSREVERTINFOMISC {
     fn clone(&self) -> Self {
         *self
@@ -1853,7 +1784,6 @@ impl ::core::clone::Clone for JET_RBSREVERTINFOMISC {
 }
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_RBSREVERTINFOMISC {
     pub lGenMinRevertStart: i32,
     pub lGenMaxRevertStart: i32,
@@ -1864,10 +1794,8 @@ pub struct JET_RBSREVERTINFOMISC {
     pub cPagesReverted: u64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_RBSREVERTINFOMISC {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_RBSREVERTINFOMISC {
     fn clone(&self) -> Self {
         *self
@@ -2030,7 +1958,7 @@ impl ::core::clone::Clone for JET_RETRIEVECOLUMN {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+#[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_RSTINFO_A {
     pub cbStruct: u32,
     pub rgrstmap: *mut JET_RSTMAP_A,
@@ -2039,16 +1967,16 @@ pub struct JET_RSTINFO_A {
     pub logtimeStop: JET_LOGTIME,
     pub pfnStatus: JET_PFNSTATUS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+#[cfg(feature = "Win32_Storage_StructuredStorage")]
 impl ::core::marker::Copy for JET_RSTINFO_A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+#[cfg(feature = "Win32_Storage_StructuredStorage")]
 impl ::core::clone::Clone for JET_RSTINFO_A {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+#[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_RSTINFO_W {
     pub cbStruct: u32,
     pub rgrstmap: *mut JET_RSTMAP_W,
@@ -2057,9 +1985,9 @@ pub struct JET_RSTINFO_W {
     pub logtimeStop: JET_LOGTIME,
     pub pfnStatus: JET_PFNSTATUS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+#[cfg(feature = "Win32_Storage_StructuredStorage")]
 impl ::core::marker::Copy for JET_RSTINFO_W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_StructuredStorage"))]
+#[cfg(feature = "Win32_Storage_StructuredStorage")]
 impl ::core::clone::Clone for JET_RSTINFO_W {
     fn clone(&self) -> Self {
         *self
@@ -2148,15 +2076,12 @@ impl ::core::clone::Clone for JET_SETSYSPARAM_W {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JET_SIGNATURE {
     pub ulRandom: u32,
     pub logtimeCreate: JET_LOGTIME,
-    pub szComputerName: [super::super::Foundation::CHAR; 16],
+    pub szComputerName: [::win32_foundation_sys::CHAR; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JET_SIGNATURE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JET_SIGNATURE {
     fn clone(&self) -> Self {
         *self

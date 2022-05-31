@@ -236,7 +236,6 @@ pub const XACTSTAT_OPEN: XACTSTAT = 3i32;
 pub const XACTSTAT_NOTPREPARED: XACTSTAT = 524227i32;
 pub const XACTSTAT_ALL: XACTSTAT = 524287i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct XACTSTATS {
     pub cOpen: u32,
     pub cCommitting: u32,
@@ -245,11 +244,9 @@ pub struct XACTSTATS {
     pub cAborted: u32,
     pub cInDoubt: u32,
     pub cHeuristicDecision: u32,
-    pub timeTransactionsUp: super::super::Foundation::FILETIME,
+    pub timeTransactionsUp: ::win32_foundation_sys::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for XACTSTATS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for XACTSTATS {
     fn clone(&self) -> Self {
         *self
@@ -311,14 +308,11 @@ pub const XAER_PROTO: i32 = -6i32;
 pub const XAER_RMERR: i32 = -3i32;
 pub const XAER_RMFAIL: i32 = -7i32;
 pub type XA_CLOSE_EPT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: i32, param2: i32) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type XA_COMMIT_EPT = ::core::option::Option<unsafe extern "system" fn(param0: *mut xid_t, param1: i32, param2: i32) -> i32>;
 pub type XA_COMPLETE_EPT = ::core::option::Option<unsafe extern "system" fn(param0: *mut i32, param1: *mut i32, param2: i32, param3: i32) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type XA_END_EPT = ::core::option::Option<unsafe extern "system" fn(param0: *mut xid_t, param1: i32, param2: i32) -> i32>;
 pub const XA_FMTID_DTC: u32 = 4478019u32;
 pub const XA_FMTID_DTC_VER1: u32 = 21255235u32;
-#[cfg(feature = "Win32_Foundation")]
 pub type XA_FORGET_EPT = ::core::option::Option<unsafe extern "system" fn(param0: *mut xid_t, param1: i32, param2: i32) -> i32>;
 pub const XA_HEURCOM: u32 = 7u32;
 pub const XA_HEURHAZ: u32 = 8u32;
@@ -327,7 +321,6 @@ pub const XA_HEURRB: u32 = 6u32;
 pub const XA_NOMIGRATE: u32 = 9u32;
 pub const XA_OK: u32 = 0u32;
 pub type XA_OPEN_EPT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: i32, param2: i32) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type XA_PREPARE_EPT = ::core::option::Option<unsafe extern "system" fn(param0: *mut xid_t, param1: i32, param2: i32) -> i32>;
 pub const XA_RBBASE: u32 = 100u32;
 pub const XA_RBCOMMFAIL: u32 = 101u32;
@@ -340,12 +333,9 @@ pub const XA_RBROLLBACK: u32 = 100u32;
 pub const XA_RBTIMEOUT: u32 = 106u32;
 pub const XA_RBTRANSIENT: u32 = 107u32;
 pub const XA_RDONLY: u32 = 3u32;
-#[cfg(feature = "Win32_Foundation")]
 pub type XA_RECOVER_EPT = ::core::option::Option<unsafe extern "system" fn(param0: *mut xid_t, param1: i32, param2: i32, param3: i32) -> i32>;
 pub const XA_RETRY: u32 = 4u32;
-#[cfg(feature = "Win32_Foundation")]
 pub type XA_ROLLBACK_EPT = ::core::option::Option<unsafe extern "system" fn(param0: *mut xid_t, param1: i32, param2: i32) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type XA_START_EPT = ::core::option::Option<unsafe extern "system" fn(param0: *mut xid_t, param1: i32, param2: i32) -> i32>;
 pub const XA_SWITCH_F_DTC: u32 = 1u32;
 pub const XIDDATASIZE: u32 = 128u32;
@@ -396,9 +386,8 @@ impl ::core::clone::Clone for _ProxyConfigParams {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct xa_switch_t {
-    pub name: [super::super::Foundation::CHAR; 32],
+    pub name: [::win32_foundation_sys::CHAR; 32],
     pub flags: i32,
     pub version: i32,
     pub xa_open_entry: isize,
@@ -412,25 +401,20 @@ pub struct xa_switch_t {
     pub xa_forget_entry: isize,
     pub xa_complete_entry: isize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for xa_switch_t {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for xa_switch_t {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct xid_t {
     pub formatID: i32,
     pub gtrid_length: i32,
     pub bqual_length: i32,
-    pub data: [super::super::Foundation::CHAR; 128],
+    pub data: [::win32_foundation_sys::CHAR; 128],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for xid_t {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for xid_t {
     fn clone(&self) -> Self {
         *self

@@ -1,65 +1,43 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BroadcastSystemMessageA(flags: u32, lpinfo: *mut u32, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BroadcastSystemMessageExA(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BroadcastSystemMessageExW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BroadcastSystemMessageW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseDesktop(hdesktop: HDESK) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseWindowStation(hwinsta: HWINSTA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
-    pub fn CreateDesktopA(lpszdesktop: ::windows_core_sys::PCSTR, lpszdevice: ::windows_core_sys::PCSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HDESK;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
-    pub fn CreateDesktopExA(lpszdesktop: ::windows_core_sys::PCSTR, lpszdevice: ::windows_core_sys::PCSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
-    pub fn CreateDesktopExW(lpszdesktop: ::windows_core_sys::PCWSTR, lpszdevice: ::windows_core_sys::PCWSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
-    pub fn CreateDesktopW(lpszdesktop: ::windows_core_sys::PCWSTR, lpszdevice: ::windows_core_sys::PCWSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HDESK;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateWindowStationA(lpwinsta: ::windows_core_sys::PCSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HWINSTA;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateWindowStationW(lpwinsta: ::windows_core_sys::PCWSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HWINSTA;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn EnumDesktopWindows(hdesktop: HDESK, lpfn: super::super::UI::WindowsAndMessaging::WNDENUMPROC, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumDesktopsA(hwinsta: HWINSTA, lpenumfunc: DESKTOPENUMPROCA, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumDesktopsW(hwinsta: HWINSTA, lpenumfunc: DESKTOPENUMPROCW, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumWindowStationsA(lpenumfunc: WINSTAENUMPROCA, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumWindowStationsW(lpenumfunc: WINSTAENUMPROCW, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+    pub fn BroadcastSystemMessageA(flags: u32, lpinfo: *mut u32, msg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> i32;
+    pub fn BroadcastSystemMessageExA(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
+    pub fn BroadcastSystemMessageExW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
+    pub fn BroadcastSystemMessageW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> i32;
+    pub fn CloseDesktop(hdesktop: HDESK) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseWindowStation(hwinsta: HWINSTA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+    pub fn CreateDesktopA(lpszdesktop: ::windows_core_sys::PCSTR, lpszdevice: ::windows_core_sys::PCSTR, pdevmode: *mut ::win32_graphics_sys::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> HDESK;
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+    pub fn CreateDesktopExA(lpszdesktop: ::windows_core_sys::PCSTR, lpszdevice: ::windows_core_sys::PCSTR, pdevmode: *mut ::win32_graphics_sys::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+    pub fn CreateDesktopExW(lpszdesktop: ::windows_core_sys::PCWSTR, lpszdevice: ::windows_core_sys::PCWSTR, pdevmode: *mut ::win32_graphics_sys::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+    pub fn CreateDesktopW(lpszdesktop: ::windows_core_sys::PCWSTR, lpszdevice: ::windows_core_sys::PCWSTR, pdevmode: *mut ::win32_graphics_sys::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> HDESK;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateWindowStationA(lpwinsta: ::windows_core_sys::PCSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> HWINSTA;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateWindowStationW(lpwinsta: ::windows_core_sys::PCWSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> HWINSTA;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn EnumDesktopWindows(hdesktop: HDESK, lpfn: ::win32_ui_sys::WindowsAndMessaging::WNDENUMPROC, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
+    pub fn EnumDesktopsA(hwinsta: HWINSTA, lpenumfunc: DESKTOPENUMPROCA, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
+    pub fn EnumDesktopsW(hwinsta: HWINSTA, lpenumfunc: DESKTOPENUMPROCW, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
+    pub fn EnumWindowStationsA(lpenumfunc: WINSTAENUMPROCA, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
+    pub fn EnumWindowStationsW(lpenumfunc: WINSTAENUMPROCW, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
     pub fn GetProcessWindowStation() -> HWINSTA;
     pub fn GetThreadDesktop(dwthreadid: u32) -> HDESK;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetUserObjectInformationA(hobj: super::super::Foundation::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetUserObjectInformationW(hobj: super::super::Foundation::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenDesktopA(lpszdesktop: ::windows_core_sys::PCSTR, dwflags: u32, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenDesktopW(lpszdesktop: ::windows_core_sys::PCWSTR, dwflags: u32, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenInputDesktop(dwflags: u32, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenWindowStationA(lpszwinsta: ::windows_core_sys::PCSTR, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HWINSTA;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenWindowStationW(lpszwinsta: ::windows_core_sys::PCWSTR, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HWINSTA;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetProcessWindowStation(hwinsta: HWINSTA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetThreadDesktop(hdesktop: HDESK) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetUserObjectInformationA(hobj: super::super::Foundation::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetUserObjectInformationW(hobj: super::super::Foundation::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SwitchDesktop(hdesktop: HDESK) -> super::super::Foundation::BOOL;
+    pub fn GetUserObjectInformationA(hobj: ::win32_foundation_sys::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetUserObjectInformationW(hobj: ::win32_foundation_sys::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn OpenDesktopA(lpszdesktop: ::windows_core_sys::PCSTR, dwflags: u32, finherit: ::win32_foundation_sys::BOOL, dwdesiredaccess: u32) -> HDESK;
+    pub fn OpenDesktopW(lpszdesktop: ::windows_core_sys::PCWSTR, dwflags: u32, finherit: ::win32_foundation_sys::BOOL, dwdesiredaccess: u32) -> HDESK;
+    pub fn OpenInputDesktop(dwflags: u32, finherit: ::win32_foundation_sys::BOOL, dwdesiredaccess: u32) -> HDESK;
+    pub fn OpenWindowStationA(lpszwinsta: ::windows_core_sys::PCSTR, finherit: ::win32_foundation_sys::BOOL, dwdesiredaccess: u32) -> HWINSTA;
+    pub fn OpenWindowStationW(lpszwinsta: ::windows_core_sys::PCWSTR, finherit: ::win32_foundation_sys::BOOL, dwdesiredaccess: u32) -> HWINSTA;
+    pub fn SetProcessWindowStation(hwinsta: HWINSTA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetThreadDesktop(hdesktop: HDESK) -> ::win32_foundation_sys::BOOL;
+    pub fn SetUserObjectInformationA(hobj: ::win32_foundation_sys::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetUserObjectInformationW(hobj: ::win32_foundation_sys::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SwitchDesktop(hdesktop: HDESK) -> ::win32_foundation_sys::BOOL;
 }
 pub type BROADCAST_SYSTEM_MESSAGE_FLAGS = u32;
 pub const BSF_ALLOWSFW: BROADCAST_SYSTEM_MESSAGE_FLAGS = 128u32;
@@ -78,37 +56,29 @@ pub const BSM_ALLCOMPONENTS: BROADCAST_SYSTEM_MESSAGE_INFO = 0u32;
 pub const BSM_ALLDESKTOPS: BROADCAST_SYSTEM_MESSAGE_INFO = 16u32;
 pub const BSM_APPLICATIONS: BROADCAST_SYSTEM_MESSAGE_INFO = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BSMINFO {
     pub cbSize: u32,
     pub hdesk: HDESK,
-    pub hwnd: super::super::Foundation::HWND,
-    pub luid: super::super::Foundation::LUID,
+    pub hwnd: ::win32_foundation_sys::HWND,
+    pub luid: ::win32_foundation_sys::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BSMINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BSMINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type DESKTOPENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type DESKTOPENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
+pub type DESKTOPENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL>;
+pub type DESKTOPENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL>;
 pub type HDESK = isize;
 pub type HWINSTA = isize;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USEROBJECTFLAGS {
-    pub fInherit: super::super::Foundation::BOOL,
-    pub fReserved: super::super::Foundation::BOOL,
+    pub fInherit: ::win32_foundation_sys::BOOL,
+    pub fReserved: ::win32_foundation_sys::BOOL,
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USEROBJECTFLAGS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USEROBJECTFLAGS {
     fn clone(&self) -> Self {
         *self
@@ -121,7 +91,5 @@ pub const UOI_IO: USER_OBJECT_INFORMATION_INDEX = 6u32;
 pub const UOI_NAME: USER_OBJECT_INFORMATION_INDEX = 2u32;
 pub const UOI_TYPE: USER_OBJECT_INFORMATION_INDEX = 3u32;
 pub const UOI_USER_SID: USER_OBJECT_INFORMATION_INDEX = 4u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type WINSTAENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type WINSTAENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
+pub type WINSTAENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR, param1: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL>;
+pub type WINSTAENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR, param1: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL>;

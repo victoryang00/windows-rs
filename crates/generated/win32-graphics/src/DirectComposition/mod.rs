@@ -90,41 +90,33 @@ impl ::core::default::Default for COMPOSITION_STATS {
 }
 pub const COMPOSITION_STATS_MAX_TARGETS: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COMPOSITION_TARGET_ID {
-    pub displayAdapterLuid: super::super::Foundation::LUID,
-    pub renderAdapterLuid: super::super::Foundation::LUID,
+    pub displayAdapterLuid: ::win32_foundation::LUID,
+    pub renderAdapterLuid: ::win32_foundation::LUID,
     pub vidPnSourceId: u32,
     pub vidPnTargetId: u32,
     pub uniqueId: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COMPOSITION_TARGET_ID {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COMPOSITION_TARGET_ID {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for COMPOSITION_TARGET_ID {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("COMPOSITION_TARGET_ID").field("displayAdapterLuid", &self.displayAdapterLuid).field("renderAdapterLuid", &self.renderAdapterLuid).field("vidPnSourceId", &self.vidPnSourceId).field("vidPnTargetId", &self.vidPnTargetId).field("uniqueId", &self.uniqueId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for COMPOSITION_TARGET_ID {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for COMPOSITION_TARGET_ID {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMPOSITION_TARGET_ID>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for COMPOSITION_TARGET_ID {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for COMPOSITION_TARGET_ID {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -357,42 +349,39 @@ impl ::core::fmt::Debug for DCOMPOSITION_OPACITY_MODE {
         f.debug_tuple("DCOMPOSITION_OPACITY_MODE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DCompositionAttachMouseDragToHwnd<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(visual: Param0, hwnd: Param1, enable: Param2) -> ::windows_core::Result<()> {
+pub unsafe fn DCompositionAttachMouseDragToHwnd<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(visual: Param0, hwnd: Param1, enable: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DCompositionAttachMouseDragToHwnd(visual: ::windows_core::RawPtr, hwnd: super::super::Foundation::HWND, enable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn DCompositionAttachMouseDragToHwnd(visual: ::windows_core::RawPtr, hwnd: ::win32_foundation::HWND, enable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         DCompositionAttachMouseDragToHwnd(visual.into_param().abi(), hwnd.into_param().abi(), enable.into_param().abi()).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DCompositionAttachMouseWheelToHwnd<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(visual: Param0, hwnd: Param1, enable: Param2) -> ::windows_core::Result<()> {
+pub unsafe fn DCompositionAttachMouseWheelToHwnd<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(visual: Param0, hwnd: Param1, enable: Param2) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DCompositionAttachMouseWheelToHwnd(visual: ::windows_core::RawPtr, hwnd: super::super::Foundation::HWND, enable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn DCompositionAttachMouseWheelToHwnd(visual: ::windows_core::RawPtr, hwnd: ::win32_foundation::HWND, enable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         DCompositionAttachMouseWheelToHwnd(visual.into_param().abi(), hwnd.into_param().abi(), enable.into_param().abi()).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DCompositionBoostCompositorClock<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(enable: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn DCompositionBoostCompositorClock<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(enable: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DCompositionBoostCompositorClock(enable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn DCompositionBoostCompositorClock(enable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         DCompositionBoostCompositorClock(enable.into_param().abi()).ok()
     }
@@ -439,17 +428,17 @@ pub unsafe fn DCompositionCreateDevice3<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, surfacehandle: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, surfacehandle: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        DCompositionCreateSurfaceHandle(::core::mem::transmute(desiredaccess), ::core::mem::transmute(securityattributes), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        DCompositionCreateSurfaceHandle(::core::mem::transmute(desiredaccess), ::core::mem::transmute(securityattributes), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -468,7 +457,6 @@ pub unsafe fn DCompositionGetFrameId(frameidtype: COMPOSITION_FRAME_ID_TYPE) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DCompositionGetStatistics(frameid: u64, framestats: *mut COMPOSITION_FRAME_STATS, targetidcount: u32, targetids: *mut COMPOSITION_TARGET_ID, actualtargetidcount: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
@@ -482,7 +470,6 @@ pub unsafe fn DCompositionGetStatistics(frameid: u64, framestats: *mut COMPOSITI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DCompositionGetTargetStatistics(frameid: u64, targetid: *const COMPOSITION_TARGET_ID) -> ::windows_core::Result<COMPOSITION_TARGET_STATS> {
     #[cfg(windows)]
@@ -528,14 +515,13 @@ impl ::core::default::Default for DCompositionInkTrailPoint {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DCompositionWaitForCompositorClock(handles: &[super::super::Foundation::HANDLE], timeoutinms: u32) -> u32 {
+pub unsafe fn DCompositionWaitForCompositorClock(handles: &[::win32_foundation::HANDLE], timeoutinms: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DCompositionWaitForCompositorClock(count: u32, handles: *const super::super::Foundation::HANDLE, timeoutinms: u32) -> u32;
+            fn DCompositionWaitForCompositorClock(count: u32, handles: *const ::win32_foundation::HANDLE, timeoutinms: u32) -> u32;
         }
         ::core::mem::transmute(DCompositionWaitForCompositorClock(handles.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(handles)), ::core::mem::transmute(timeoutinms)))
     }
@@ -557,7 +543,7 @@ impl IDCompositionAffineTransform2DEffect {
         (::windows_core::Interface::vtable(self).SetBorderMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bordermode)).ok()
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub unsafe fn SetTransformMatrix(&self, transformmatrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTransformMatrix(&self, transformmatrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTransformMatrix)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(transformmatrix)).ok()
     }
     pub unsafe fn SetTransformMatrixElement<'a, Param2: ::windows_core::IntoParam<'a, IDCompositionAnimation>>(&self, row: i32, column: i32, animation: Param2) -> ::windows_core::Result<()> {
@@ -666,7 +652,7 @@ pub struct IDCompositionAffineTransform2DEffect_Vtbl {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     SetBorderMode: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetTransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transformmatrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
+    pub SetTransformMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transformmatrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetTransformMatrix: usize,
     pub SetTransformMatrixElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -757,8 +743,7 @@ impl IDCompositionArithmeticCompositeEffect {
     pub unsafe fn SetCoefficients(&self, coefficients: *const super::Direct2D::Common::D2D_VECTOR_4F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCoefficients)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(coefficients)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetClampOutput<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, clampoutput: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetClampOutput<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, clampoutput: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetClampOutput)(::windows_core::Interface::as_raw(self), clampoutput.into_param().abi()).ok()
     }
     pub unsafe fn SetCoefficient1<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionAnimation>>(&self, animation: Param0) -> ::windows_core::Result<()> {
@@ -874,10 +859,7 @@ pub struct IDCompositionArithmeticCompositeEffect_Vtbl {
     pub SetCoefficients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coefficients: *const super::Direct2D::Common::D2D_VECTOR_4F) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     SetCoefficients: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clampoutput: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetClampOutput: usize,
+    pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clampoutput: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetCoefficient1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetCoefficient12: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, coeffcient1: f32) -> ::windows_core::HRESULT,
     pub SetCoefficient2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1195,8 +1177,7 @@ impl IDCompositionColorMatrixEffect {
     pub unsafe fn SetAlphaMode(&self, mode: super::Direct2D::Common::D2D1_COLORMATRIX_ALPHA_MODE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAlphaMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(mode)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetClampOutput<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, clamp: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetClampOutput<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, clamp: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetClampOutput)(::windows_core::Interface::as_raw(self), clamp.into_param().abi()).ok()
     }
 }
@@ -1294,10 +1275,7 @@ pub struct IDCompositionColorMatrixEffect_Vtbl {
     pub SetAlphaMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mode: super::Direct2D::Common::D2D1_COLORMATRIX_ALPHA_MODE) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     SetAlphaMode: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clamp: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetClampOutput: usize,
+    pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clamp: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IDCompositionCompositeEffect(::windows_core::IUnknown);
@@ -1558,18 +1536,15 @@ impl IDCompositionDesktopDevice {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateAnimation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionAnimation>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateTargetForHwnd<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hwnd: Param0, topmost: Param1) -> ::windows_core::Result<IDCompositionTarget> {
+    pub unsafe fn CreateTargetForHwnd<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hwnd: Param0, topmost: Param1) -> ::windows_core::Result<IDCompositionTarget> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateTargetForHwnd)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), topmost.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionTarget>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateSurfaceFromHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, handle: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn CreateSurfaceFromHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, handle: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSurfaceFromHandle)(::windows_core::Interface::as_raw(self), handle.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateSurfaceFromHwnd<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwnd: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn CreateSurfaceFromHwnd<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, hwnd: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSurfaceFromHwnd)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
@@ -1638,18 +1613,9 @@ unsafe impl ::windows_core::Interface for IDCompositionDesktopDevice {
 #[doc(hidden)]
 pub struct IDCompositionDesktopDevice_Vtbl {
     pub base__: IDCompositionDevice2_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateTargetForHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, topmost: super::super::Foundation::BOOL, target: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateTargetForHwnd: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateSurfaceFromHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handle: super::super::Foundation::HANDLE, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateSurfaceFromHandle: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateSurfaceFromHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateSurfaceFromHwnd: usize,
+    pub CreateTargetForHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, topmost: ::win32_foundation::BOOL, target: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateSurfaceFromHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handle: ::win32_foundation::HANDLE, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub CreateSurfaceFromHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IDCompositionDevice(::windows_core::IUnknown);
@@ -1665,8 +1631,7 @@ impl IDCompositionDevice {
         let mut result__ = ::core::mem::MaybeUninit::<DCOMPOSITION_FRAME_STATISTICS>::zeroed();
         (::windows_core::Interface::vtable(self).GetFrameStatistics)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<DCOMPOSITION_FRAME_STATISTICS>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateTargetForHwnd<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, hwnd: Param0, topmost: Param1) -> ::windows_core::Result<IDCompositionTarget> {
+    pub unsafe fn CreateTargetForHwnd<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, hwnd: Param0, topmost: Param1) -> ::windows_core::Result<IDCompositionTarget> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateTargetForHwnd)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), topmost.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionTarget>(result__)
     }
@@ -1684,13 +1649,11 @@ impl IDCompositionDevice {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateVirtualSurface)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(initialwidth), ::core::mem::transmute(initialheight), ::core::mem::transmute(pixelformat), ::core::mem::transmute(alphamode), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionVirtualSurface>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateSurfaceFromHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, handle: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn CreateSurfaceFromHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, handle: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSurfaceFromHandle)(::windows_core::Interface::as_raw(self), handle.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateSurfaceFromHwnd<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwnd: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
+    pub unsafe fn CreateSurfaceFromHwnd<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, hwnd: Param0) -> ::windows_core::Result<::windows_core::IUnknown> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSurfaceFromHwnd)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
@@ -1750,10 +1713,9 @@ impl IDCompositionDevice {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateAnimation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IDCompositionAnimation>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CheckDeviceState(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).CheckDeviceState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn CheckDeviceState(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).CheckDeviceState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IDCompositionDevice> for ::windows_core::IUnknown {
@@ -1806,10 +1768,7 @@ pub struct IDCompositionDevice_Vtbl {
     pub GetFrameStatistics: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, statistics: *mut DCOMPOSITION_FRAME_STATISTICS) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     GetFrameStatistics: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateTargetForHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, topmost: super::super::Foundation::BOOL, target: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateTargetForHwnd: usize,
+    pub CreateTargetForHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, topmost: ::win32_foundation::BOOL, target: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
     pub CreateSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: u32, height: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE, surface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1819,14 +1778,8 @@ pub struct IDCompositionDevice_Vtbl {
     pub CreateVirtualSurface: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, initialwidth: u32, initialheight: u32, pixelformat: super::Dxgi::Common::DXGI_FORMAT, alphamode: super::Dxgi::Common::DXGI_ALPHA_MODE, virtualsurface: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Dxgi_Common"))]
     CreateVirtualSurface: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateSurfaceFromHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handle: super::super::Foundation::HANDLE, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateSurfaceFromHandle: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateSurfaceFromHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateSurfaceFromHwnd: usize,
+    pub CreateSurfaceFromHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handle: ::win32_foundation::HANDLE, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub CreateSurfaceFromHwnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, surface: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CreateTranslateTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, translatetransform: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateScaleTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scaletransform: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateRotateTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rotatetransform: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1841,10 +1794,7 @@ pub struct IDCompositionDevice_Vtbl {
     pub CreateEffectGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, effectgroup: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateRectangleClip: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clip: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateAnimation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CheckDeviceState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfvalid: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CheckDeviceState: usize,
+    pub CheckDeviceState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfvalid: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IDCompositionDevice2(::windows_core::IUnknown);
@@ -2773,8 +2723,7 @@ impl IDCompositionLinearTransferEffect {
     pub unsafe fn SetRedSlope2(&self, redslope: f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRedSlope2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(redslope)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetRedDisable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, reddisable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetRedDisable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, reddisable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRedDisable)(::windows_core::Interface::as_raw(self), reddisable.into_param().abi()).ok()
     }
     pub unsafe fn SetGreenYIntercept<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionAnimation>>(&self, animation: Param0) -> ::windows_core::Result<()> {
@@ -2789,8 +2738,7 @@ impl IDCompositionLinearTransferEffect {
     pub unsafe fn SetGreenSlope2(&self, greenslope: f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetGreenSlope2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(greenslope)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetGreenDisable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, greendisable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetGreenDisable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, greendisable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetGreenDisable)(::windows_core::Interface::as_raw(self), greendisable.into_param().abi()).ok()
     }
     pub unsafe fn SetBlueYIntercept<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionAnimation>>(&self, animation: Param0) -> ::windows_core::Result<()> {
@@ -2805,8 +2753,7 @@ impl IDCompositionLinearTransferEffect {
     pub unsafe fn SetBlueSlope2(&self, blueslope: f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBlueSlope2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(blueslope)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBlueDisable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bluedisable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBlueDisable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, bluedisable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBlueDisable)(::windows_core::Interface::as_raw(self), bluedisable.into_param().abi()).ok()
     }
     pub unsafe fn SetAlphaYIntercept<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionAnimation>>(&self, animation: Param0) -> ::windows_core::Result<()> {
@@ -2821,12 +2768,10 @@ impl IDCompositionLinearTransferEffect {
     pub unsafe fn SetAlphaSlope2(&self, alphaslope: f32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAlphaSlope2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(alphaslope)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetAlphaDisable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, alphadisable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetAlphaDisable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, alphadisable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAlphaDisable)(::windows_core::Interface::as_raw(self), alphadisable.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetClampOutput<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, clampoutput: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetClampOutput<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, clampoutput: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetClampOutput)(::windows_core::Interface::as_raw(self), clampoutput.into_param().abi()).ok()
     }
 }
@@ -2918,44 +2863,29 @@ pub struct IDCompositionLinearTransferEffect_Vtbl {
     pub SetRedYIntercept2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, redyintercept: f32) -> ::windows_core::HRESULT,
     pub SetRedSlope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetRedSlope2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, redslope: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetRedDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reddisable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetRedDisable: usize,
+    pub SetRedDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reddisable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetGreenYIntercept: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetGreenYIntercept2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, greenyintercept: f32) -> ::windows_core::HRESULT,
     pub SetGreenSlope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetGreenSlope2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, greenslope: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetGreenDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, greendisable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetGreenDisable: usize,
+    pub SetGreenDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, greendisable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetBlueYIntercept: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetBlueYIntercept2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, blueyintercept: f32) -> ::windows_core::HRESULT,
     pub SetBlueSlope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetBlueSlope2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, blueslope: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBlueDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bluedisable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBlueDisable: usize,
+    pub SetBlueDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bluedisable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetAlphaYIntercept: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetAlphaYIntercept2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alphayintercept: f32) -> ::windows_core::HRESULT,
     pub SetAlphaSlope: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetAlphaSlope2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alphaslope: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetAlphaDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alphadisable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetAlphaDisable: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clampoutput: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetClampOutput: usize,
+    pub SetAlphaDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alphadisable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clampoutput: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IDCompositionMatrixTransform(::windows_core::IUnknown);
 impl IDCompositionMatrixTransform {
     #[cfg(feature = "Foundation_Numerics")]
-    pub unsafe fn SetMatrix(&self, matrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetMatrix(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetMatrix)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
     pub unsafe fn SetMatrixElement<'a, Param2: ::windows_core::IntoParam<'a, IDCompositionAnimation>>(&self, row: i32, column: i32, animation: Param2) -> ::windows_core::Result<()> {
@@ -3070,7 +3000,7 @@ unsafe impl ::windows_core::Interface for IDCompositionMatrixTransform {
 pub struct IDCompositionMatrixTransform_Vtbl {
     pub base__: IDCompositionTransform_Vtbl,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
+    pub SetMatrix: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetMatrix: usize,
     pub SetMatrixElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, row: i32, column: i32, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4286,8 +4216,7 @@ pub struct IDCompositionSkewTransform_Vtbl {
 #[repr(transparent)]
 pub struct IDCompositionSurface(::windows_core::IUnknown);
 impl IDCompositionSurface {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn BeginDraw(&self, updaterect: *const super::super::Foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut super::super::Foundation::POINT) -> ::windows_core::Result<()> {
+    pub unsafe fn BeginDraw(&self, updaterect: *const ::win32_foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut ::win32_foundation::POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BeginDraw)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(updaterect), ::core::mem::transmute(iid), ::core::mem::transmute(updateobject), ::core::mem::transmute(updateoffset)).ok()
     }
     pub unsafe fn EndDraw(&self) -> ::windows_core::Result<()> {
@@ -4299,8 +4228,7 @@ impl IDCompositionSurface {
     pub unsafe fn ResumeDraw(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ResumeDraw)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Scroll(&self, scrollrect: *const super::super::Foundation::RECT, cliprect: *const super::super::Foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn Scroll(&self, scrollrect: *const ::win32_foundation::RECT, cliprect: *const ::win32_foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Scroll)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(scrollrect), ::core::mem::transmute(cliprect), ::core::mem::transmute(offsetx), ::core::mem::transmute(offsety)).ok()
     }
 }
@@ -4348,17 +4276,11 @@ unsafe impl ::windows_core::Interface for IDCompositionSurface {
 #[doc(hidden)]
 pub struct IDCompositionSurface_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub BeginDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: *const super::super::Foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut super::super::Foundation::POINT) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    BeginDraw: usize,
+    pub BeginDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, updaterect: *const ::win32_foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut ::win32_foundation::POINT) -> ::windows_core::HRESULT,
     pub EndDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SuspendDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ResumeDraw: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Scroll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scrollrect: *const super::super::Foundation::RECT, cliprect: *const super::super::Foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Scroll: usize,
+    pub Scroll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scrollrect: *const ::win32_foundation::RECT, cliprect: *const ::win32_foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IDCompositionSurfaceFactory(::windows_core::IUnknown);
@@ -4445,24 +4367,19 @@ impl IDCompositionTableTransferEffect {
     pub unsafe fn SetAlphaTable(&self, tablevalues: &[f32]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAlphaTable)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(tablevalues)), tablevalues.len() as _).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetRedDisable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, reddisable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetRedDisable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, reddisable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRedDisable)(::windows_core::Interface::as_raw(self), reddisable.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetGreenDisable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, greendisable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetGreenDisable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, greendisable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetGreenDisable)(::windows_core::Interface::as_raw(self), greendisable.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBlueDisable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, bluedisable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBlueDisable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, bluedisable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBlueDisable)(::windows_core::Interface::as_raw(self), bluedisable.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetAlphaDisable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, alphadisable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetAlphaDisable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, alphadisable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAlphaDisable)(::windows_core::Interface::as_raw(self), alphadisable.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetClampOutput<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, clampoutput: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetClampOutput<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, clampoutput: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetClampOutput)(::windows_core::Interface::as_raw(self), clampoutput.into_param().abi()).ok()
     }
     pub unsafe fn SetRedTableValue<'a, Param1: ::windows_core::IntoParam<'a, IDCompositionAnimation>>(&self, index: u32, animation: Param1) -> ::windows_core::Result<()> {
@@ -4578,26 +4495,11 @@ pub struct IDCompositionTableTransferEffect_Vtbl {
     pub SetGreenTable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tablevalues: *const f32, count: u32) -> ::windows_core::HRESULT,
     pub SetBlueTable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tablevalues: *const f32, count: u32) -> ::windows_core::HRESULT,
     pub SetAlphaTable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, tablevalues: *const f32, count: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetRedDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reddisable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetRedDisable: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetGreenDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, greendisable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetGreenDisable: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBlueDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bluedisable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBlueDisable: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetAlphaDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alphadisable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetAlphaDisable: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clampoutput: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetClampOutput: usize,
+    pub SetRedDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reddisable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetGreenDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, greendisable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetBlueDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bluedisable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetAlphaDisable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, alphadisable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetClampOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clampoutput: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub SetRedTableValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetRedTableValue2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, value: f32) -> ::windows_core::HRESULT,
     pub SetGreenTableValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, animation: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -5082,8 +4984,7 @@ impl IDCompositionTurbulenceEffect {
     pub unsafe fn SetNoise(&self, noise: super::Direct2D::Common::D2D1_TURBULENCE_NOISE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetNoise)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(noise)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetStitchable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, stitchable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetStitchable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, stitchable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetStitchable)(::windows_core::Interface::as_raw(self), stitchable.into_param().abi()).ok()
     }
 }
@@ -5189,16 +5090,12 @@ pub struct IDCompositionTurbulenceEffect_Vtbl {
     pub SetNoise: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, noise: super::Direct2D::Common::D2D1_TURBULENCE_NOISE) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     SetNoise: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetStitchable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stitchable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetStitchable: usize,
+    pub SetStitchable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stitchable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IDCompositionVirtualSurface(::windows_core::IUnknown);
 impl IDCompositionVirtualSurface {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn BeginDraw(&self, updaterect: *const super::super::Foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut super::super::Foundation::POINT) -> ::windows_core::Result<()> {
+    pub unsafe fn BeginDraw(&self, updaterect: *const ::win32_foundation::RECT, iid: *const ::windows_core::GUID, updateobject: *mut *mut ::core::ffi::c_void, updateoffset: *mut ::win32_foundation::POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.BeginDraw)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(updaterect), ::core::mem::transmute(iid), ::core::mem::transmute(updateobject), ::core::mem::transmute(updateoffset)).ok()
     }
     pub unsafe fn EndDraw(&self) -> ::windows_core::Result<()> {
@@ -5210,15 +5107,13 @@ impl IDCompositionVirtualSurface {
     pub unsafe fn ResumeDraw(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ResumeDraw)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Scroll(&self, scrollrect: *const super::super::Foundation::RECT, cliprect: *const super::super::Foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn Scroll(&self, scrollrect: *const ::win32_foundation::RECT, cliprect: *const ::win32_foundation::RECT, offsetx: i32, offsety: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Scroll)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(scrollrect), ::core::mem::transmute(cliprect), ::core::mem::transmute(offsetx), ::core::mem::transmute(offsety)).ok()
     }
     pub unsafe fn Resize(&self, width: u32, height: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Resize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(width), ::core::mem::transmute(height)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Trim(&self, rectangles: &[super::super::Foundation::RECT]) -> ::windows_core::Result<()> {
+    pub unsafe fn Trim(&self, rectangles: &[::win32_foundation::RECT]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Trim)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_ptr_or_null(rectangles)), rectangles.len() as _).ok()
     }
 }
@@ -5287,10 +5182,7 @@ unsafe impl ::windows_core::Interface for IDCompositionVirtualSurface {
 pub struct IDCompositionVirtualSurface_Vtbl {
     pub base__: IDCompositionSurface_Vtbl,
     pub Resize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, width: u32, height: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Trim: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rectangles: *const super::super::Foundation::RECT, count: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Trim: usize,
+    pub Trim: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rectangles: *const ::win32_foundation::RECT, count: u32) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IDCompositionVisual(::windows_core::IUnknown);
@@ -5311,7 +5203,7 @@ impl IDCompositionVisual {
         (::windows_core::Interface::vtable(self).SetTransform)(::windows_core::Interface::as_raw(self), transform.into_param().abi()).ok()
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub unsafe fn SetTransform2(&self, matrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTransform2(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTransform2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
     pub unsafe fn SetTransformParent<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0) -> ::windows_core::Result<()> {
@@ -5336,8 +5228,7 @@ impl IDCompositionVisual {
     pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, content: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContent)(::windows_core::Interface::as_raw(self), content.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0, insertabove: Param1, referencevisual: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn AddVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0, insertabove: Param1, referencevisual: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddVisual)(::windows_core::Interface::as_raw(self), visual.into_param().abi(), insertabove.into_param().abi(), referencevisual.into_param().abi()).ok()
     }
     pub unsafe fn RemoveVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0) -> ::windows_core::Result<()> {
@@ -5400,7 +5291,7 @@ pub struct IDCompositionVisual_Vtbl {
     pub SetOffsetY2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offsety: f32) -> ::windows_core::HRESULT,
     pub SetTransform: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, transform: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetTransform2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
+    pub SetTransform2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetTransform2: usize,
     pub SetTransformParent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -5413,10 +5304,7 @@ pub struct IDCompositionVisual_Vtbl {
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     SetClip2: usize,
     pub SetContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, content: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AddVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: ::windows_core::RawPtr, insertabove: super::super::Foundation::BOOL, referencevisual: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AddVisual: usize,
+    pub AddVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: ::windows_core::RawPtr, insertabove: ::win32_foundation::BOOL, referencevisual: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveVisual: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visual: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RemoveAllVisuals: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetCompositeMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, compositemode: DCOMPOSITION_COMPOSITE_MODE) -> ::windows_core::HRESULT,
@@ -5440,7 +5328,7 @@ impl IDCompositionVisual2 {
         (::windows_core::Interface::vtable(self).base__.SetTransform)(::windows_core::Interface::as_raw(self), transform.into_param().abi()).ok()
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub unsafe fn SetTransform2(&self, matrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTransform2(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetTransform2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
     pub unsafe fn SetTransformParent<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0) -> ::windows_core::Result<()> {
@@ -5465,8 +5353,7 @@ impl IDCompositionVisual2 {
     pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, content: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetContent)(::windows_core::Interface::as_raw(self), content.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0, insertabove: Param1, referencevisual: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn AddVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0, insertabove: Param1, referencevisual: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.AddVisual)(::windows_core::Interface::as_raw(self), visual.into_param().abi(), insertabove.into_param().abi(), referencevisual.into_param().abi()).ok()
     }
     pub unsafe fn RemoveVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0) -> ::windows_core::Result<()> {
@@ -5571,7 +5458,7 @@ impl IDCompositionVisual3 {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SetTransform)(::windows_core::Interface::as_raw(self), transform.into_param().abi()).ok()
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub unsafe fn SetTransform2(&self, matrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTransform2(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SetTransform2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
     pub unsafe fn SetTransformParent<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0) -> ::windows_core::Result<()> {
@@ -5596,8 +5483,7 @@ impl IDCompositionVisual3 {
     pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, content: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.SetContent)(::windows_core::Interface::as_raw(self), content.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0, insertabove: Param1, referencevisual: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn AddVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0, insertabove: Param1, referencevisual: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.base__.AddVisual)(::windows_core::Interface::as_raw(self), visual.into_param().abi(), insertabove.into_param().abi(), referencevisual.into_param().abi()).ok()
     }
     pub unsafe fn RemoveVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0) -> ::windows_core::Result<()> {
@@ -5650,8 +5536,7 @@ impl IDCompositionVisual3 {
     pub unsafe fn SetTransform4(&self, matrix: *const super::Direct2D::Common::D2D_MATRIX_4X4_F) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTransform4)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetVisible<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, visible: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetVisible<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, visible: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetVisible)(::windows_core::Interface::as_raw(self), visible.into_param().abi()).ok()
     }
 }
@@ -5769,10 +5654,7 @@ pub struct IDCompositionVisual3_Vtbl {
     pub SetTransform4: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, matrix: *const super::Direct2D::Common::D2D_MATRIX_4X4_F) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_Graphics_Direct2D_Common"))]
     SetTransform4: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visible: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetVisible: usize,
+    pub SetVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visible: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IDCompositionVisualDebug(::windows_core::IUnknown);
@@ -5793,7 +5675,7 @@ impl IDCompositionVisualDebug {
         (::windows_core::Interface::vtable(self).base__.base__.SetTransform)(::windows_core::Interface::as_raw(self), transform.into_param().abi()).ok()
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub unsafe fn SetTransform2(&self, matrix: *const super::super::super::Foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTransform2(&self, matrix: *const ::winrt_foundation::Numerics::Matrix3x2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetTransform2)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(matrix)).ok()
     }
     pub unsafe fn SetTransformParent<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0) -> ::windows_core::Result<()> {
@@ -5818,8 +5700,7 @@ impl IDCompositionVisualDebug {
     pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, content: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.SetContent)(::windows_core::Interface::as_raw(self), content.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AddVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0, insertabove: Param1, referencevisual: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn AddVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0, insertabove: Param1, referencevisual: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.AddVisual)(::windows_core::Interface::as_raw(self), visual.into_param().abi(), insertabove.into_param().abi(), referencevisual.into_param().abi()).ok()
     }
     pub unsafe fn RemoveVisual<'a, Param0: ::windows_core::IntoParam<'a, IDCompositionVisual>>(&self, visual: Param0) -> ::windows_core::Result<()> {

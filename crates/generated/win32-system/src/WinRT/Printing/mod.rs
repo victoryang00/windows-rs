@@ -1,13 +1,11 @@
 #[repr(transparent)]
 pub struct IPrintManagerInterop(::windows_core::IUnknown);
 impl IPrintManagerInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ShowPrintUIForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn ShowPrintUIForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).ShowPrintUIForWindowAsync)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -76,32 +74,26 @@ unsafe impl ::windows_core::Interface for IPrintManagerInterop {
 #[doc(hidden)]
 pub struct IPrintManagerInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::super::Foundation::HWND, riid: *const ::windows_core::GUID, printmanager: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ShowPrintUIForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::super::Foundation::HWND, riid: *const ::windows_core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ShowPrintUIForWindowAsync: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, printmanager: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub ShowPrintUIForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IPrintWorkflowConfigurationNative(::windows_core::IUnknown);
 impl IPrintWorkflowConfigurationNative {
     #[cfg(all(feature = "Win32_Graphics_Printing", feature = "Win32_System_Com"))]
-    pub unsafe fn PrinterQueue(&self) -> ::windows_core::Result<super::super::super::Graphics::Printing::IPrinterQueue> {
+    pub unsafe fn PrinterQueue(&self) -> ::windows_core::Result<::win32_graphics::Printing::IPrinterQueue> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).PrinterQueue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Graphics::Printing::IPrinterQueue>(result__)
+        (::windows_core::Interface::vtable(self).PrinterQueue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Printing::IPrinterQueue>(result__)
     }
     #[cfg(all(feature = "Win32_Graphics_Printing", feature = "Win32_System_Com"))]
-    pub unsafe fn DriverProperties(&self) -> ::windows_core::Result<super::super::super::Graphics::Printing::IPrinterPropertyBag> {
+    pub unsafe fn DriverProperties(&self) -> ::windows_core::Result<::win32_graphics::Printing::IPrinterPropertyBag> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).DriverProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Graphics::Printing::IPrinterPropertyBag>(result__)
+        (::windows_core::Interface::vtable(self).DriverProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Printing::IPrinterPropertyBag>(result__)
     }
     #[cfg(all(feature = "Win32_Graphics_Printing", feature = "Win32_System_Com"))]
-    pub unsafe fn UserProperties(&self) -> ::windows_core::Result<super::super::super::Graphics::Printing::IPrinterPropertyBag> {
+    pub unsafe fn UserProperties(&self) -> ::windows_core::Result<::win32_graphics::Printing::IPrinterPropertyBag> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).UserProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Graphics::Printing::IPrinterPropertyBag>(result__)
+        (::windows_core::Interface::vtable(self).UserProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Printing::IPrinterPropertyBag>(result__)
     }
 }
 impl ::core::convert::From<IPrintWorkflowConfigurationNative> for ::windows_core::IUnknown {
@@ -168,9 +160,9 @@ impl IPrintWorkflowObjectModelSourceFileContentNative {
         (::windows_core::Interface::vtable(self).StartXpsOMGeneration)(::windows_core::Interface::as_raw(self), receiver.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_Storage_Xps")]
-    pub unsafe fn ObjectFactory(&self) -> ::windows_core::Result<super::super::super::Storage::Xps::IXpsOMObjectFactory1> {
+    pub unsafe fn ObjectFactory(&self) -> ::windows_core::Result<::win32_storage::Xps::IXpsOMObjectFactory1> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).ObjectFactory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Storage::Xps::IXpsOMObjectFactory1>(result__)
+        (::windows_core::Interface::vtable(self).ObjectFactory)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_storage::Xps::IXpsOMObjectFactory1>(result__)
     }
 }
 impl ::core::convert::From<IPrintWorkflowObjectModelSourceFileContentNative> for ::windows_core::IUnknown {
@@ -227,9 +219,9 @@ pub struct IPrintWorkflowObjectModelSourceFileContentNative_Vtbl {
 pub struct IPrintWorkflowXpsObjectModelTargetPackageNative(::windows_core::IUnknown);
 impl IPrintWorkflowXpsObjectModelTargetPackageNative {
     #[cfg(feature = "Win32_Storage_Xps")]
-    pub unsafe fn DocumentPackageTarget(&self) -> ::windows_core::Result<super::super::super::Storage::Xps::IXpsDocumentPackageTarget> {
+    pub unsafe fn DocumentPackageTarget(&self) -> ::windows_core::Result<::win32_storage::Xps::IXpsDocumentPackageTarget> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).DocumentPackageTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Storage::Xps::IXpsDocumentPackageTarget>(result__)
+        (::windows_core::Interface::vtable(self).DocumentPackageTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_storage::Xps::IXpsDocumentPackageTarget>(result__)
     }
 }
 impl ::core::convert::From<IPrintWorkflowXpsObjectModelTargetPackageNative> for ::windows_core::IUnknown {
@@ -296,7 +288,7 @@ impl IPrintWorkflowXpsReceiver {
         (::windows_core::Interface::vtable(self).AddDocumentData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(documentid), documentprintticket.into_param().abi(), documenturi.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_Storage_Xps")]
-    pub unsafe fn AddPage<'a, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Xps::IXpsOMPageReference>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, documentid: u32, pageid: u32, pagereference: Param2, pageuri: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn AddPage<'a, Param2: ::windows_core::IntoParam<'a, ::win32_storage::Xps::IXpsOMPageReference>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, documentid: u32, pageid: u32, pagereference: Param2, pageuri: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddPage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(documentid), ::core::mem::transmute(pageid), pagereference.into_param().abi(), pageuri.into_param().abi()).ok()
     }
     pub unsafe fn Close(&self) -> ::windows_core::Result<()> {
@@ -377,7 +369,7 @@ impl IPrintWorkflowXpsReceiver2 {
         (::windows_core::Interface::vtable(self).base__.AddDocumentData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(documentid), documentprintticket.into_param().abi(), documenturi.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_Storage_Xps")]
-    pub unsafe fn AddPage<'a, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Xps::IXpsOMPageReference>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, documentid: u32, pageid: u32, pagereference: Param2, pageuri: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn AddPage<'a, Param2: ::windows_core::IntoParam<'a, ::win32_storage::Xps::IXpsOMPageReference>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, documentid: u32, pageid: u32, pagereference: Param2, pageuri: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.AddPage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(documentid), ::core::mem::transmute(pageid), pagereference.into_param().abi(), pageuri.into_param().abi()).ok()
     }
     pub unsafe fn Close(&self) -> ::windows_core::Result<()> {
@@ -456,13 +448,11 @@ pub struct IPrintWorkflowXpsReceiver2_Vtbl {
 #[repr(transparent)]
 pub struct IPrinting3DManagerInterop(::windows_core::IUnknown);
 impl IPrinting3DManagerInterop {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn GetForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).GetForWindow)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ShowPrintUIForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
+    pub unsafe fn ShowPrintUIForWindowAsync<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, T: ::windows_core::Interface>(&self, appwindow: Param0) -> ::windows_core::Result<T> {
         let mut result__ = ::core::option::Option::None;
         (::windows_core::Interface::vtable(self).ShowPrintUIForWindowAsync)(::windows_core::Interface::as_raw(self), appwindow.into_param().abi(), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
@@ -531,12 +521,6 @@ unsafe impl ::windows_core::Interface for IPrinting3DManagerInterop {
 #[doc(hidden)]
 pub struct IPrinting3DManagerInterop_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::super::Foundation::HWND, riid: *const ::windows_core::GUID, printmanager: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetForWindow: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ShowPrintUIForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: super::super::super::Foundation::HWND, riid: *const ::windows_core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ShowPrintUIForWindowAsync: usize,
+    pub GetForWindow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, printmanager: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub ShowPrintUIForWindowAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appwindow: ::win32_foundation::HWND, riid: *const ::windows_core::GUID, asyncoperation: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }

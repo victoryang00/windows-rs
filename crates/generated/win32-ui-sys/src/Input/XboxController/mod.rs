@@ -1,7 +1,6 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn XInputEnable(enable: super::super::super::Foundation::BOOL);
+    pub fn XInputEnable(enable: ::win32_foundation_sys::BOOL);
     pub fn XInputGetAudioDeviceIds(dwuserindex: u32, prenderdeviceid: ::windows_core_sys::PWSTR, prendercount: *mut u32, pcapturedeviceid: ::windows_core_sys::PWSTR, pcapturecount: *mut u32) -> u32;
     pub fn XInputGetBatteryInformation(dwuserindex: u32, devtype: u8, pbatteryinformation: *mut XINPUT_BATTERY_INFORMATION) -> u32;
     pub fn XInputGetCapabilities(dwuserindex: u32, dwflags: u32, pcapabilities: *mut XINPUT_CAPABILITIES) -> u32;

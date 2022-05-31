@@ -113,12 +113,10 @@ pub struct IWsbApplicationBackupSupport_Vtbl {
 #[repr(transparent)]
 pub struct IWsbApplicationRestoreSupport(::windows_core::IUnknown);
 impl IWsbApplicationRestoreSupport {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PreRestore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, bnorollforward: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn PreRestore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, bnorollforward: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PreRestore)(::windows_core::Interface::as_raw(self), wszwritermetadata.into_param().abi(), wszcomponentname.into_param().abi(), wszcomponentlogicalpath.into_param().abi(), bnorollforward.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PostRestore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOLEAN>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, bnorollforward: Param3) -> ::windows_core::Result<()> {
+    pub unsafe fn PostRestore<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOLEAN>>(&self, wszwritermetadata: Param0, wszcomponentname: Param1, wszcomponentlogicalpath: Param2, bnorollforward: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PostRestore)(::windows_core::Interface::as_raw(self), wszwritermetadata.into_param().abi(), wszcomponentname.into_param().abi(), wszcomponentlogicalpath.into_param().abi(), bnorollforward.into_param().abi()).ok()
     }
     pub unsafe fn OrderComponents(&self, ccomponents: u32, rgcomponentname: *const ::windows_core::PWSTR, rgcomponentlogicalpaths: *const ::windows_core::PWSTR, prgcomponentname: *mut *mut ::windows_core::PWSTR, prgcomponentlogicalpath: *mut *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
@@ -173,14 +171,8 @@ unsafe impl ::windows_core::Interface for IWsbApplicationRestoreSupport {
 #[doc(hidden)]
 pub struct IWsbApplicationRestoreSupport_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PreRestore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows_core::PCWSTR, wszcomponentname: ::windows_core::PCWSTR, wszcomponentlogicalpath: ::windows_core::PCWSTR, bnorollforward: super::super::Foundation::BOOLEAN) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PreRestore: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PostRestore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows_core::PCWSTR, wszcomponentname: ::windows_core::PCWSTR, wszcomponentlogicalpath: ::windows_core::PCWSTR, bnorollforward: super::super::Foundation::BOOLEAN) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PostRestore: usize,
+    pub PreRestore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows_core::PCWSTR, wszcomponentname: ::windows_core::PCWSTR, wszcomponentlogicalpath: ::windows_core::PCWSTR, bnorollforward: ::win32_foundation::BOOLEAN) -> ::windows_core::HRESULT,
+    pub PostRestore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, wszwritermetadata: ::windows_core::PCWSTR, wszcomponentname: ::windows_core::PCWSTR, wszcomponentlogicalpath: ::windows_core::PCWSTR, bnorollforward: ::win32_foundation::BOOLEAN) -> ::windows_core::HRESULT,
     pub OrderComponents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ccomponents: u32, rgcomponentname: *const ::windows_core::PWSTR, rgcomponentlogicalpaths: *const ::windows_core::PWSTR, prgcomponentname: *mut *mut ::windows_core::PWSTR, prgcomponentlogicalpath: *mut *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub IsRollForwardSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbrollforwardsupported: *mut u8) -> ::windows_core::HRESULT,
 }
@@ -188,41 +180,33 @@ pub const WSBAPP_ASYNC_IN_PROGRESS: ::windows_core::HRESULT = ::windows_core::HR
 pub const WSB_MAX_OB_STATUS_ENTRY: u32 = 5u32;
 pub const WSB_MAX_OB_STATUS_VALUE_TYPE_PAIR: u32 = 5u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WSB_OB_REGISTRATION_INFO {
     pub m_wszResourceDLL: ::windows_core::PWSTR,
     pub m_guidSnapinId: ::windows_core::GUID,
     pub m_dwProviderName: u32,
     pub m_dwProviderIcon: u32,
-    pub m_bSupportsRemoting: super::super::Foundation::BOOLEAN,
+    pub m_bSupportsRemoting: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WSB_OB_REGISTRATION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WSB_OB_REGISTRATION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WSB_OB_REGISTRATION_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WSB_OB_REGISTRATION_INFO").field("m_wszResourceDLL", &self.m_wszResourceDLL).field("m_guidSnapinId", &self.m_guidSnapinId).field("m_dwProviderName", &self.m_dwProviderName).field("m_dwProviderIcon", &self.m_dwProviderIcon).field("m_bSupportsRemoting", &self.m_bSupportsRemoting).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WSB_OB_REGISTRATION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WSB_OB_REGISTRATION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WSB_OB_REGISTRATION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WSB_OB_REGISTRATION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WSB_OB_REGISTRATION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

@@ -1,217 +1,139 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BRUSHOBJ_hGetColorTransform(pbo: *mut BRUSHOBJ) -> super::super::Foundation::HANDLE;
+    pub fn BRUSHOBJ_hGetColorTransform(pbo: *mut BRUSHOBJ) -> ::win32_foundation_sys::HANDLE;
     pub fn BRUSHOBJ_pvAllocRbrush(pbo: *mut BRUSHOBJ, cj: u32) -> *mut ::core::ffi::c_void;
     pub fn BRUSHOBJ_pvGetRbrush(pbo: *mut BRUSHOBJ) -> *mut ::core::ffi::c_void;
     pub fn BRUSHOBJ_ulGetBrushColor(pbo: *mut BRUSHOBJ) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CLIPOBJ_bEnum(pco: *mut CLIPOBJ, cj: u32, pul: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CLIPOBJ_cEnumStart(pco: *mut CLIPOBJ, ball: super::super::Foundation::BOOL, itype: u32, idirection: u32, climit: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn CLIPOBJ_bEnum(pco: *mut CLIPOBJ, cj: u32, pul: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn CLIPOBJ_cEnumStart(pco: *mut CLIPOBJ, ball: ::win32_foundation_sys::BOOL, itype: u32, idirection: u32, climit: u32) -> u32;
     pub fn CLIPOBJ_ppoGetPath(pco: *mut CLIPOBJ) -> *mut PATHOBJ;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CapabilitiesRequestAndCapabilitiesReply(hmonitor: super::super::Foundation::HANDLE, pszasciicapabilitiesstring: ::windows_core_sys::PSTR, dwcapabilitiesstringlengthincharacters: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DegaussMonitor(hmonitor: super::super::Foundation::HANDLE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DestroyPhysicalMonitor(hmonitor: super::super::Foundation::HANDLE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn CapabilitiesRequestAndCapabilitiesReply(hmonitor: ::win32_foundation_sys::HANDLE, pszasciicapabilitiesstring: ::windows_core_sys::PSTR, dwcapabilitiesstringlengthincharacters: u32) -> i32;
+    pub fn DegaussMonitor(hmonitor: ::win32_foundation_sys::HANDLE) -> i32;
+    pub fn DestroyPhysicalMonitor(hmonitor: ::win32_foundation_sys::HANDLE) -> i32;
     pub fn DestroyPhysicalMonitors(dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *const PHYSICAL_MONITOR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn DisplayConfigGetDeviceInfo(requestpacket: *mut DISPLAYCONFIG_DEVICE_INFO_HEADER) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn DisplayConfigSetDeviceInfo(setpacket: *const DISPLAYCONFIG_DEVICE_INFO_HEADER) -> i32;
     pub fn EngAcquireSemaphore(hsem: HSEMAPHORE);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn EngAlphaBlend(psodest: *mut SURFOBJ, psosrc: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, prcldest: *mut super::super::Foundation::RECTL, prclsrc: *mut super::super::Foundation::RECTL, pblendobj: *mut BLENDOBJ) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngAssociateSurface(hsurf: HSURF, hdev: HDEV, flhooks: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngBitBlt(psotrg: *const SURFOBJ, psosrc: *const SURFOBJ, psomask: *const SURFOBJ, pco: *const CLIPOBJ, pxlo: *const XLATEOBJ, prcltrg: *const super::super::Foundation::RECTL, pptlsrc: *const super::super::Foundation::POINTL, pptlmask: *const super::super::Foundation::POINTL, pbo: *const BRUSHOBJ, pptlbrush: *const super::super::Foundation::POINTL, rop4: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngCheckAbort(pso: *mut SURFOBJ) -> super::super::Foundation::BOOL;
-    pub fn EngComputeGlyphSet(ncodepage: i32, nfirstchar: i32, cchars: i32) -> *mut FD_GLYPHSET;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngCopyBits(psodest: *mut SURFOBJ, psosrc: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, prcldest: *mut super::super::Foundation::RECTL, pptlsrc: *mut super::super::Foundation::POINTL) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn EngCreateBitmap(sizl: super::super::Foundation::SIZE, lwidth: i32, iformat: u32, fl: u32, pvbits: *mut ::core::ffi::c_void) -> super::super::Graphics::Gdi::HBITMAP;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngCreateClip() -> *mut CLIPOBJ;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn EngCreateDeviceBitmap(dhsurf: DHSURF, sizl: super::super::Foundation::SIZE, iformatcompat: u32) -> super::super::Graphics::Gdi::HBITMAP;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngCreateDeviceSurface(dhsurf: DHSURF, sizl: super::super::Foundation::SIZE, iformatcompat: u32) -> HSURF;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn EngCreatePalette(imode: u32, ccolors: u32, pulcolors: *mut u32, flred: u32, flgreen: u32, flblue: u32) -> super::super::Graphics::Gdi::HPALETTE;
+    pub fn EngAlphaBlend(psodest: *mut SURFOBJ, psosrc: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, prcldest: *mut ::win32_foundation_sys::RECTL, prclsrc: *mut ::win32_foundation_sys::RECTL, pblendobj: *mut BLENDOBJ) -> ::win32_foundation_sys::BOOL;
+    pub fn EngAssociateSurface(hsurf: HSURF, hdev: HDEV, flhooks: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngBitBlt(psotrg: *const SURFOBJ, psosrc: *const SURFOBJ, psomask: *const SURFOBJ, pco: *const CLIPOBJ, pxlo: *const XLATEOBJ, prcltrg: *const ::win32_foundation_sys::RECTL, pptlsrc: *const ::win32_foundation_sys::POINTL, pptlmask: *const ::win32_foundation_sys::POINTL, pbo: *const BRUSHOBJ, pptlbrush: *const ::win32_foundation_sys::POINTL, rop4: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngCheckAbort(pso: *mut SURFOBJ) -> ::win32_foundation_sys::BOOL;
+    pub fn EngComputeGlyphSet(ncodepage: i32, nfirstchar: i32, cchars: i32) -> *mut FD_GLYPHSET;
+    pub fn EngCopyBits(psodest: *mut SURFOBJ, psosrc: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, prcldest: *mut ::win32_foundation_sys::RECTL, pptlsrc: *mut ::win32_foundation_sys::POINTL) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn EngCreateBitmap(sizl: ::win32_foundation_sys::SIZE, lwidth: i32, iformat: u32, fl: u32, pvbits: *mut ::core::ffi::c_void) -> ::win32_graphics_sys::Gdi::HBITMAP;
+    pub fn EngCreateClip() -> *mut CLIPOBJ;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn EngCreateDeviceBitmap(dhsurf: DHSURF, sizl: ::win32_foundation_sys::SIZE, iformatcompat: u32) -> ::win32_graphics_sys::Gdi::HBITMAP;
+    pub fn EngCreateDeviceSurface(dhsurf: DHSURF, sizl: ::win32_foundation_sys::SIZE, iformatcompat: u32) -> HSURF;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn EngCreatePalette(imode: u32, ccolors: u32, pulcolors: *mut u32, flred: u32, flgreen: u32, flblue: u32) -> ::win32_graphics_sys::Gdi::HPALETTE;
     pub fn EngCreateSemaphore() -> HSEMAPHORE;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn EngDeleteClip(pco: *const CLIPOBJ);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn EngDeletePalette(hpal: super::super::Graphics::Gdi::HPALETTE) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn EngDeletePalette(hpal: ::win32_graphics_sys::Gdi::HPALETTE) -> ::win32_foundation_sys::BOOL;
     pub fn EngDeletePath(ppo: *mut PATHOBJ);
     pub fn EngDeleteSemaphore(hsem: HSEMAPHORE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngDeleteSurface(hsurf: HSURF) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngEraseSurface(pso: *mut SURFOBJ, prcl: *mut super::super::Foundation::RECTL, icolor: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngFillPath(pso: *mut SURFOBJ, ppo: *mut PATHOBJ, pco: *mut CLIPOBJ, pbo: *mut BRUSHOBJ, pptlbrushorg: *mut super::super::Foundation::POINTL, mix: u32, floptions: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngFindResource(h: super::super::Foundation::HANDLE, iname: i32, itype: i32, pulsize: *mut u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngFreeModule(h: super::super::Foundation::HANDLE);
+    pub fn EngDeleteSurface(hsurf: HSURF) -> ::win32_foundation_sys::BOOL;
+    pub fn EngEraseSurface(pso: *mut SURFOBJ, prcl: *mut ::win32_foundation_sys::RECTL, icolor: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngFillPath(pso: *mut SURFOBJ, ppo: *mut PATHOBJ, pco: *mut CLIPOBJ, pbo: *mut BRUSHOBJ, pptlbrushorg: *mut ::win32_foundation_sys::POINTL, mix: u32, floptions: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngFindResource(h: ::win32_foundation_sys::HANDLE, iname: i32, itype: i32, pulsize: *mut u32) -> *mut ::core::ffi::c_void;
+    pub fn EngFreeModule(h: ::win32_foundation_sys::HANDLE);
     pub fn EngGetCurrentCodePage(oemcodepage: *mut u16, ansicodepage: *mut u16);
     pub fn EngGetDriverName(hdev: HDEV) -> ::windows_core_sys::PWSTR;
     pub fn EngGetPrinterDataFileName(hdev: HDEV) -> ::windows_core_sys::PWSTR;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn EngGradientFill(psodest: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, pvertex: *mut super::super::Graphics::Gdi::TRIVERTEX, nvertex: u32, pmesh: *mut ::core::ffi::c_void, nmesh: u32, prclextents: *mut super::super::Foundation::RECTL, pptlditherorg: *mut super::super::Foundation::POINTL, ulmode: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngLineTo(pso: *mut SURFOBJ, pco: *mut CLIPOBJ, pbo: *mut BRUSHOBJ, x1: i32, y1: i32, x2: i32, y2: i32, prclbounds: *mut super::super::Foundation::RECTL, mix: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngLoadModule(pwsz: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn EngGradientFill(psodest: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, pvertex: *mut ::win32_graphics_sys::Gdi::TRIVERTEX, nvertex: u32, pmesh: *mut ::core::ffi::c_void, nmesh: u32, prclextents: *mut ::win32_foundation_sys::RECTL, pptlditherorg: *mut ::win32_foundation_sys::POINTL, ulmode: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngLineTo(pso: *mut SURFOBJ, pco: *mut CLIPOBJ, pbo: *mut BRUSHOBJ, x1: i32, y1: i32, x2: i32, y2: i32, prclbounds: *mut ::win32_foundation_sys::RECTL, mix: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngLoadModule(pwsz: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
     pub fn EngLockSurface(hsurf: HSURF) -> *mut SURFOBJ;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngMarkBandingSurface(hsurf: HSURF) -> super::super::Foundation::BOOL;
+    pub fn EngMarkBandingSurface(hsurf: HSURF) -> ::win32_foundation_sys::BOOL;
     pub fn EngMultiByteToUnicodeN(unicodestring: ::windows_core_sys::PWSTR, maxbytesinunicodestring: u32, bytesinunicodestring: *mut u32, multibytestring: ::windows_core_sys::PCSTR, bytesinmultibytestring: u32);
     pub fn EngMultiByteToWideChar(codepage: u32, widecharstring: ::windows_core_sys::PWSTR, bytesinwidecharstring: i32, multibytestring: ::windows_core_sys::PCSTR, bytesinmultibytestring: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngPaint(pso: *mut SURFOBJ, pco: *mut CLIPOBJ, pbo: *mut BRUSHOBJ, pptlbrushorg: *mut super::super::Foundation::POINTL, mix: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn EngPlgBlt(psotrg: *mut SURFOBJ, psosrc: *mut SURFOBJ, psomsk: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, pca: *mut super::super::Graphics::Gdi::COLORADJUSTMENT, pptlbrushorg: *mut super::super::Foundation::POINTL, pptfx: *mut POINTFIX, prcl: *mut super::super::Foundation::RECTL, pptl: *mut super::super::Foundation::POINTL, imode: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn EngQueryEMFInfo(hdev: HDEV, pemfinfo: *mut EMFINFO) -> super::super::Foundation::BOOL;
+    pub fn EngPaint(pso: *mut SURFOBJ, pco: *mut CLIPOBJ, pbo: *mut BRUSHOBJ, pptlbrushorg: *mut ::win32_foundation_sys::POINTL, mix: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn EngPlgBlt(psotrg: *mut SURFOBJ, psosrc: *mut SURFOBJ, psomsk: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, pca: *mut ::win32_graphics_sys::Gdi::COLORADJUSTMENT, pptlbrushorg: *mut ::win32_foundation_sys::POINTL, pptfx: *mut POINTFIX, prcl: *mut ::win32_foundation_sys::RECTL, pptl: *mut ::win32_foundation_sys::POINTL, imode: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn EngQueryEMFInfo(hdev: HDEV, pemfinfo: *mut EMFINFO) -> ::win32_foundation_sys::BOOL;
     pub fn EngQueryLocalTime(param0: *mut ENG_TIME_FIELDS);
     pub fn EngReleaseSemaphore(hsem: HSEMAPHORE);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn EngStretchBlt(psodest: *mut SURFOBJ, psosrc: *mut SURFOBJ, psomask: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, pca: *mut super::super::Graphics::Gdi::COLORADJUSTMENT, pptlhtorg: *mut super::super::Foundation::POINTL, prcldest: *mut super::super::Foundation::RECTL, prclsrc: *mut super::super::Foundation::RECTL, pptlmask: *mut super::super::Foundation::POINTL, imode: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn EngStretchBltROP(psodest: *mut SURFOBJ, psosrc: *mut SURFOBJ, psomask: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, pca: *mut super::super::Graphics::Gdi::COLORADJUSTMENT, pptlhtorg: *mut super::super::Foundation::POINTL, prcldest: *mut super::super::Foundation::RECTL, prclsrc: *mut super::super::Foundation::RECTL, pptlmask: *mut super::super::Foundation::POINTL, imode: u32, pbo: *mut BRUSHOBJ, rop4: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngStrokeAndFillPath(pso: *mut SURFOBJ, ppo: *mut PATHOBJ, pco: *mut CLIPOBJ, pxo: *mut XFORMOBJ, pbostroke: *mut BRUSHOBJ, plineattrs: *mut LINEATTRS, pbofill: *mut BRUSHOBJ, pptlbrushorg: *mut super::super::Foundation::POINTL, mixfill: u32, floptions: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngStrokePath(pso: *mut SURFOBJ, ppo: *mut PATHOBJ, pco: *mut CLIPOBJ, pxo: *mut XFORMOBJ, pbo: *mut BRUSHOBJ, pptlbrushorg: *mut super::super::Foundation::POINTL, plineattrs: *mut LINEATTRS, mix: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngTextOut(pso: *mut SURFOBJ, pstro: *mut STROBJ, pfo: *mut FONTOBJ, pco: *mut CLIPOBJ, prclextra: *mut super::super::Foundation::RECTL, prclopaque: *mut super::super::Foundation::RECTL, pbofore: *mut BRUSHOBJ, pboopaque: *mut BRUSHOBJ, pptlorg: *mut super::super::Foundation::POINTL, mix: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EngTransparentBlt(psodst: *const SURFOBJ, psosrc: *const SURFOBJ, pco: *const CLIPOBJ, pxlo: *const XLATEOBJ, prcldst: *const super::super::Foundation::RECTL, prclsrc: *const super::super::Foundation::RECTL, transcolor: u32, bcalledfrombitblt: u32) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn EngStretchBlt(psodest: *mut SURFOBJ, psosrc: *mut SURFOBJ, psomask: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, pca: *mut ::win32_graphics_sys::Gdi::COLORADJUSTMENT, pptlhtorg: *mut ::win32_foundation_sys::POINTL, prcldest: *mut ::win32_foundation_sys::RECTL, prclsrc: *mut ::win32_foundation_sys::RECTL, pptlmask: *mut ::win32_foundation_sys::POINTL, imode: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn EngStretchBltROP(psodest: *mut SURFOBJ, psosrc: *mut SURFOBJ, psomask: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, pca: *mut ::win32_graphics_sys::Gdi::COLORADJUSTMENT, pptlhtorg: *mut ::win32_foundation_sys::POINTL, prcldest: *mut ::win32_foundation_sys::RECTL, prclsrc: *mut ::win32_foundation_sys::RECTL, pptlmask: *mut ::win32_foundation_sys::POINTL, imode: u32, pbo: *mut BRUSHOBJ, rop4: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngStrokeAndFillPath(pso: *mut SURFOBJ, ppo: *mut PATHOBJ, pco: *mut CLIPOBJ, pxo: *mut XFORMOBJ, pbostroke: *mut BRUSHOBJ, plineattrs: *mut LINEATTRS, pbofill: *mut BRUSHOBJ, pptlbrushorg: *mut ::win32_foundation_sys::POINTL, mixfill: u32, floptions: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngStrokePath(pso: *mut SURFOBJ, ppo: *mut PATHOBJ, pco: *mut CLIPOBJ, pxo: *mut XFORMOBJ, pbo: *mut BRUSHOBJ, pptlbrushorg: *mut ::win32_foundation_sys::POINTL, plineattrs: *mut LINEATTRS, mix: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngTextOut(pso: *mut SURFOBJ, pstro: *mut STROBJ, pfo: *mut FONTOBJ, pco: *mut CLIPOBJ, prclextra: *mut ::win32_foundation_sys::RECTL, prclopaque: *mut ::win32_foundation_sys::RECTL, pbofore: *mut BRUSHOBJ, pboopaque: *mut BRUSHOBJ, pptlorg: *mut ::win32_foundation_sys::POINTL, mix: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn EngTransparentBlt(psodst: *const SURFOBJ, psosrc: *const SURFOBJ, pco: *const CLIPOBJ, pxlo: *const XLATEOBJ, prcldst: *const ::win32_foundation_sys::RECTL, prclsrc: *const ::win32_foundation_sys::RECTL, transcolor: u32, bcalledfrombitblt: u32) -> ::win32_foundation_sys::BOOL;
     pub fn EngUnicodeToMultiByteN(multibytestring: ::windows_core_sys::PSTR, maxbytesinmultibytestring: u32, bytesinmultibytestring: *mut u32, unicodestring: ::windows_core_sys::PCWSTR, bytesinunicodestring: u32);
-    #[cfg(feature = "Win32_Foundation")]
     pub fn EngUnlockSurface(pso: *mut SURFOBJ);
     pub fn EngWideCharToMultiByte(codepage: u32, widecharstring: ::windows_core_sys::PCWSTR, bytesinwidecharstring: i32, multibytestring: ::windows_core_sys::PSTR, bytesinmultibytestring: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn FONTOBJ_cGetAllGlyphHandles(pfo: *mut FONTOBJ, phg: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn FONTOBJ_cGetGlyphs(pfo: *mut FONTOBJ, imode: u32, cglyph: u32, phg: *mut u32, ppvglyph: *mut *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn FONTOBJ_pQueryGlyphAttrs(pfo: *mut FONTOBJ, imode: u32) -> *mut FD_GLYPHATTR;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn FONTOBJ_pfdg(pfo: *mut FONTOBJ) -> *mut FD_GLYPHSET;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+    #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn FONTOBJ_pifi(pfo: *const FONTOBJ) -> *mut IFIMETRICS;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn FONTOBJ_pvTrueTypeFontFile(pfo: *mut FONTOBJ, pcjfile: *mut u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn FONTOBJ_pxoGetXform(pfo: *const FONTOBJ) -> *mut XFORMOBJ;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn FONTOBJ_vGetInfo(pfo: *mut FONTOBJ, cjsize: u32, pfi: *mut FONTINFO);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetAutoRotationState(pstate: *mut AR_STATE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCapabilitiesStringLength(hmonitor: super::super::Foundation::HANDLE, pdwcapabilitiesstringlengthincharacters: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDisplayAutoRotationPreferences(porientation: *mut ORIENTATION_PREFERENCE) -> super::super::Foundation::BOOL;
+    pub fn GetAutoRotationState(pstate: *mut AR_STATE) -> ::win32_foundation_sys::BOOL;
+    pub fn GetCapabilitiesStringLength(hmonitor: ::win32_foundation_sys::HANDLE, pdwcapabilitiesstringlengthincharacters: *mut u32) -> i32;
+    pub fn GetDisplayAutoRotationPreferences(porientation: *mut ORIENTATION_PREFERENCE) -> ::win32_foundation_sys::BOOL;
     pub fn GetDisplayConfigBufferSizes(flags: u32, numpatharrayelements: *mut u32, nummodeinfoarrayelements: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetMonitorBrightness(hmonitor: super::super::Foundation::HANDLE, pdwminimumbrightness: *mut u32, pdwcurrentbrightness: *mut u32, pdwmaximumbrightness: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetMonitorCapabilities(hmonitor: super::super::Foundation::HANDLE, pdwmonitorcapabilities: *mut u32, pdwsupportedcolortemperatures: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetMonitorColorTemperature(hmonitor: super::super::Foundation::HANDLE, pctcurrentcolortemperature: *mut MC_COLOR_TEMPERATURE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetMonitorContrast(hmonitor: super::super::Foundation::HANDLE, pdwminimumcontrast: *mut u32, pdwcurrentcontrast: *mut u32, pdwmaximumcontrast: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetMonitorDisplayAreaPosition(hmonitor: super::super::Foundation::HANDLE, ptpositiontype: MC_POSITION_TYPE, pdwminimumposition: *mut u32, pdwcurrentposition: *mut u32, pdwmaximumposition: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetMonitorDisplayAreaSize(hmonitor: super::super::Foundation::HANDLE, stsizetype: MC_SIZE_TYPE, pdwminimumwidthorheight: *mut u32, pdwcurrentwidthorheight: *mut u32, pdwmaximumwidthorheight: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetMonitorRedGreenOrBlueDrive(hmonitor: super::super::Foundation::HANDLE, dtdrivetype: MC_DRIVE_TYPE, pdwminimumdrive: *mut u32, pdwcurrentdrive: *mut u32, pdwmaximumdrive: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetMonitorRedGreenOrBlueGain(hmonitor: super::super::Foundation::HANDLE, gtgaintype: MC_GAIN_TYPE, pdwminimumgain: *mut u32, pdwcurrentgain: *mut u32, pdwmaximumgain: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetMonitorTechnologyType(hmonitor: super::super::Foundation::HANDLE, pdtydisplaytechnologytype: *mut MC_DISPLAY_TECHNOLOGY_TYPE) -> i32;
+    pub fn GetMonitorBrightness(hmonitor: ::win32_foundation_sys::HANDLE, pdwminimumbrightness: *mut u32, pdwcurrentbrightness: *mut u32, pdwmaximumbrightness: *mut u32) -> i32;
+    pub fn GetMonitorCapabilities(hmonitor: ::win32_foundation_sys::HANDLE, pdwmonitorcapabilities: *mut u32, pdwsupportedcolortemperatures: *mut u32) -> i32;
+    pub fn GetMonitorColorTemperature(hmonitor: ::win32_foundation_sys::HANDLE, pctcurrentcolortemperature: *mut MC_COLOR_TEMPERATURE) -> i32;
+    pub fn GetMonitorContrast(hmonitor: ::win32_foundation_sys::HANDLE, pdwminimumcontrast: *mut u32, pdwcurrentcontrast: *mut u32, pdwmaximumcontrast: *mut u32) -> i32;
+    pub fn GetMonitorDisplayAreaPosition(hmonitor: ::win32_foundation_sys::HANDLE, ptpositiontype: MC_POSITION_TYPE, pdwminimumposition: *mut u32, pdwcurrentposition: *mut u32, pdwmaximumposition: *mut u32) -> i32;
+    pub fn GetMonitorDisplayAreaSize(hmonitor: ::win32_foundation_sys::HANDLE, stsizetype: MC_SIZE_TYPE, pdwminimumwidthorheight: *mut u32, pdwcurrentwidthorheight: *mut u32, pdwmaximumwidthorheight: *mut u32) -> i32;
+    pub fn GetMonitorRedGreenOrBlueDrive(hmonitor: ::win32_foundation_sys::HANDLE, dtdrivetype: MC_DRIVE_TYPE, pdwminimumdrive: *mut u32, pdwcurrentdrive: *mut u32, pdwmaximumdrive: *mut u32) -> i32;
+    pub fn GetMonitorRedGreenOrBlueGain(hmonitor: ::win32_foundation_sys::HANDLE, gtgaintype: MC_GAIN_TYPE, pdwminimumgain: *mut u32, pdwcurrentgain: *mut u32, pdwmaximumgain: *mut u32) -> i32;
+    pub fn GetMonitorTechnologyType(hmonitor: ::win32_foundation_sys::HANDLE, pdtydisplaytechnologytype: *mut MC_DISPLAY_TECHNOLOGY_TYPE) -> i32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn GetNumberOfPhysicalMonitorsFromHMONITOR(hmonitor: super::super::Graphics::Gdi::HMONITOR, pdwnumberofphysicalmonitors: *mut u32) -> i32;
+    pub fn GetNumberOfPhysicalMonitorsFromHMONITOR(hmonitor: ::win32_graphics_sys::Gdi::HMONITOR, pdwnumberofphysicalmonitors: *mut u32) -> i32;
     #[cfg(feature = "Win32_Graphics_Direct3D9")]
-    pub fn GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: super::super::Graphics::Direct3D9::IDirect3DDevice9, pdwnumberofphysicalmonitors: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn GetPhysicalMonitorsFromHMONITOR(hmonitor: super::super::Graphics::Gdi::HMONITOR, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
-    pub fn GetPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: super::super::Graphics::Direct3D9::IDirect3DDevice9, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetTimingReport(hmonitor: super::super::Foundation::HANDLE, pmtrmonitortimingreport: *mut MC_TIMING_REPORT) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVCPFeatureAndVCPFeatureReply(hmonitor: super::super::Foundation::HANDLE, bvcpcode: u8, pvct: *mut MC_VCP_CODE_TYPE, pdwcurrentvalue: *mut u32, pdwmaximumvalue: *mut u32) -> i32;
+    pub fn GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: ::win32_graphics_sys::Direct3D9::IDirect3DDevice9, pdwnumberofphysicalmonitors: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn HT_Get8BPPFormatPalette(ppaletteentry: *mut super::super::Graphics::Gdi::PALETTEENTRY, redgamma: u16, greengamma: u16, bluegamma: u16) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn HT_Get8BPPMaskPalette(ppaletteentry: *mut super::super::Graphics::Gdi::PALETTEENTRY, use8bppmaskpal: super::super::Foundation::BOOL, cmymask: u8, redgamma: u16, greengamma: u16, bluegamma: u16) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PATHOBJ_bEnum(ppo: *mut PATHOBJ, ppd: *mut PATHDATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PATHOBJ_bEnumClipLines(ppo: *mut PATHOBJ, cb: u32, pcl: *mut CLIPLINE) -> super::super::Foundation::BOOL;
+    pub fn GetPhysicalMonitorsFromHMONITOR(hmonitor: ::win32_graphics_sys::Gdi::HMONITOR, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> i32;
+    #[cfg(feature = "Win32_Graphics_Direct3D9")]
+    pub fn GetPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: ::win32_graphics_sys::Direct3D9::IDirect3DDevice9, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> ::windows_core_sys::HRESULT;
+    pub fn GetTimingReport(hmonitor: ::win32_foundation_sys::HANDLE, pmtrmonitortimingreport: *mut MC_TIMING_REPORT) -> i32;
+    pub fn GetVCPFeatureAndVCPFeatureReply(hmonitor: ::win32_foundation_sys::HANDLE, bvcpcode: u8, pvct: *mut MC_VCP_CODE_TYPE, pdwcurrentvalue: *mut u32, pdwmaximumvalue: *mut u32) -> i32;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn HT_Get8BPPFormatPalette(ppaletteentry: *mut ::win32_graphics_sys::Gdi::PALETTEENTRY, redgamma: u16, greengamma: u16, bluegamma: u16) -> i32;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn HT_Get8BPPMaskPalette(ppaletteentry: *mut ::win32_graphics_sys::Gdi::PALETTEENTRY, use8bppmaskpal: ::win32_foundation_sys::BOOL, cmymask: u8, redgamma: u16, greengamma: u16, bluegamma: u16) -> i32;
+    pub fn PATHOBJ_bEnum(ppo: *mut PATHOBJ, ppd: *mut PATHDATA) -> ::win32_foundation_sys::BOOL;
+    pub fn PATHOBJ_bEnumClipLines(ppo: *mut PATHOBJ, cb: u32, pcl: *mut CLIPLINE) -> ::win32_foundation_sys::BOOL;
     pub fn PATHOBJ_vEnumStart(ppo: *mut PATHOBJ);
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PATHOBJ_vEnumStartClipLines(ppo: *mut PATHOBJ, pco: *mut CLIPOBJ, pso: *mut SURFOBJ, pla: *mut LINEATTRS);
     pub fn PATHOBJ_vGetBounds(ppo: *mut PATHOBJ, prectfx: *mut RECTFX);
-    #[cfg(feature = "Win32_Foundation")]
     pub fn QueryDisplayConfig(flags: u32, numpatharrayelements: *mut u32, patharray: *mut DISPLAYCONFIG_PATH_INFO, nummodeinfoarrayelements: *mut u32, modeinfoarray: *mut DISPLAYCONFIG_MODE_INFO, currenttopologyid: *mut DISPLAYCONFIG_TOPOLOGY_ID) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RestoreMonitorFactoryColorDefaults(hmonitor: super::super::Foundation::HANDLE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RestoreMonitorFactoryDefaults(hmonitor: super::super::Foundation::HANDLE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn STROBJ_bEnum(pstro: *mut STROBJ, pc: *mut u32, ppgpos: *mut *mut GLYPHPOS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn STROBJ_bEnumPositionsOnly(pstro: *mut STROBJ, pc: *mut u32, ppgpos: *mut *mut GLYPHPOS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn STROBJ_bGetAdvanceWidths(pso: *mut STROBJ, ifirst: u32, c: u32, pptqd: *mut POINTQF) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn RestoreMonitorFactoryColorDefaults(hmonitor: ::win32_foundation_sys::HANDLE) -> i32;
+    pub fn RestoreMonitorFactoryDefaults(hmonitor: ::win32_foundation_sys::HANDLE) -> i32;
+    pub fn STROBJ_bEnum(pstro: *mut STROBJ, pc: *mut u32, ppgpos: *mut *mut GLYPHPOS) -> ::win32_foundation_sys::BOOL;
+    pub fn STROBJ_bEnumPositionsOnly(pstro: *mut STROBJ, pc: *mut u32, ppgpos: *mut *mut GLYPHPOS) -> ::win32_foundation_sys::BOOL;
+    pub fn STROBJ_bGetAdvanceWidths(pso: *mut STROBJ, ifirst: u32, c: u32, pptqd: *mut POINTQF) -> ::win32_foundation_sys::BOOL;
     pub fn STROBJ_dwGetCodePage(pstro: *mut STROBJ) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn STROBJ_vEnumStart(pstro: *mut STROBJ);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaveCurrentMonitorSettings(hmonitor: super::super::Foundation::HANDLE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SaveCurrentSettings(hmonitor: super::super::Foundation::HANDLE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetDisplayAutoRotationPreferences(orientation: ORIENTATION_PREFERENCE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn SaveCurrentMonitorSettings(hmonitor: ::win32_foundation_sys::HANDLE) -> i32;
+    pub fn SaveCurrentSettings(hmonitor: ::win32_foundation_sys::HANDLE) -> i32;
+    pub fn SetDisplayAutoRotationPreferences(orientation: ORIENTATION_PREFERENCE) -> ::win32_foundation_sys::BOOL;
     pub fn SetDisplayConfig(numpatharrayelements: u32, patharray: *const DISPLAYCONFIG_PATH_INFO, nummodeinfoarrayelements: u32, modeinfoarray: *const DISPLAYCONFIG_MODE_INFO, flags: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetMonitorBrightness(hmonitor: super::super::Foundation::HANDLE, dwnewbrightness: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetMonitorColorTemperature(hmonitor: super::super::Foundation::HANDLE, ctcurrentcolortemperature: MC_COLOR_TEMPERATURE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetMonitorContrast(hmonitor: super::super::Foundation::HANDLE, dwnewcontrast: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetMonitorDisplayAreaPosition(hmonitor: super::super::Foundation::HANDLE, ptpositiontype: MC_POSITION_TYPE, dwnewposition: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetMonitorDisplayAreaSize(hmonitor: super::super::Foundation::HANDLE, stsizetype: MC_SIZE_TYPE, dwnewdisplayareawidthorheight: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetMonitorRedGreenOrBlueDrive(hmonitor: super::super::Foundation::HANDLE, dtdrivetype: MC_DRIVE_TYPE, dwnewdrive: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetMonitorRedGreenOrBlueGain(hmonitor: super::super::Foundation::HANDLE, gtgaintype: MC_GAIN_TYPE, dwnewgain: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetVCPFeature(hmonitor: super::super::Foundation::HANDLE, bvcpcode: u8, dwnewvalue: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn XFORMOBJ_bApplyXform(pxo: *mut XFORMOBJ, imode: u32, cpoints: u32, pvin: *mut ::core::ffi::c_void, pvout: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn SetMonitorBrightness(hmonitor: ::win32_foundation_sys::HANDLE, dwnewbrightness: u32) -> i32;
+    pub fn SetMonitorColorTemperature(hmonitor: ::win32_foundation_sys::HANDLE, ctcurrentcolortemperature: MC_COLOR_TEMPERATURE) -> i32;
+    pub fn SetMonitorContrast(hmonitor: ::win32_foundation_sys::HANDLE, dwnewcontrast: u32) -> i32;
+    pub fn SetMonitorDisplayAreaPosition(hmonitor: ::win32_foundation_sys::HANDLE, ptpositiontype: MC_POSITION_TYPE, dwnewposition: u32) -> i32;
+    pub fn SetMonitorDisplayAreaSize(hmonitor: ::win32_foundation_sys::HANDLE, stsizetype: MC_SIZE_TYPE, dwnewdisplayareawidthorheight: u32) -> i32;
+    pub fn SetMonitorRedGreenOrBlueDrive(hmonitor: ::win32_foundation_sys::HANDLE, dtdrivetype: MC_DRIVE_TYPE, dwnewdrive: u32) -> i32;
+    pub fn SetMonitorRedGreenOrBlueGain(hmonitor: ::win32_foundation_sys::HANDLE, gtgaintype: MC_GAIN_TYPE, dwnewgain: u32) -> i32;
+    pub fn SetVCPFeature(hmonitor: ::win32_foundation_sys::HANDLE, bvcpcode: u8, dwnewvalue: u32) -> i32;
+    pub fn XFORMOBJ_bApplyXform(pxo: *mut XFORMOBJ, imode: u32, cpoints: u32, pvin: *mut ::core::ffi::c_void, pvout: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn XFORMOBJ_iGetXform(pxo: *const XFORMOBJ, pxform: *mut XFORML) -> u32;
     pub fn XLATEOBJ_cGetPalette(pxlo: *mut XLATEOBJ, ipal: u32, cpal: u32, ppal: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn XLATEOBJ_hGetColorTransform(pxlo: *mut XLATEOBJ) -> super::super::Foundation::HANDLE;
+    pub fn XLATEOBJ_hGetColorTransform(pxlo: *mut XLATEOBJ) -> ::win32_foundation_sys::HANDLE;
     pub fn XLATEOBJ_iXlate(pxlo: *mut XLATEOBJ, icolor: u32) -> u32;
     pub fn XLATEOBJ_piVector(pxlo: *mut XLATEOBJ) -> *mut u32;
 }
@@ -285,7 +207,7 @@ pub const BITMAP_PLANES: u32 = 1u32;
 #[repr(C)]
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct BLENDOBJ {
-    pub BlendFunction: super::super::Graphics::Gdi::BLENDFUNCTION,
+    pub BlendFunction: ::win32_graphics_sys::Gdi::BLENDFUNCTION,
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for BLENDOBJ {}
@@ -384,17 +306,14 @@ pub const CDBEX_NTSHAREDSURFACEHANDLE: u32 = 4u32;
 pub const CDBEX_REDIRECTION: u32 = 1u32;
 pub const CDBEX_REUSE: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CDDDXGK_REDIRBITMAPPRESENTINFO {
     pub NumDirtyRects: u32,
-    pub DirtyRect: *mut super::super::Foundation::RECT,
+    pub DirtyRect: *mut ::win32_foundation_sys::RECT,
     pub NumContexts: u32,
-    pub hContext: [super::super::Foundation::HANDLE; 65],
-    pub bDoNotSynchronizeWithDxContent: super::super::Foundation::BOOLEAN,
+    pub hContext: [::win32_foundation_sys::HANDLE; 65],
+    pub bDoNotSynchronizeWithDxContent: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CDDDXGK_REDIRBITMAPPRESENTINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CDDDXGK_REDIRBITMAPPRESENTINFO {
     fn clone(&self) -> Self {
         *self
@@ -408,14 +327,14 @@ pub const CD_RIGHTDOWN: i32 = 0i32;
 pub const CD_RIGHTUP: i32 = 2i32;
 pub const CD_UPWARDS: i32 = 2i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Console"))]
+#[cfg(feature = "Win32_System_Console")]
 pub struct CHAR_IMAGE_INFO {
-    pub CharInfo: super::super::System::Console::CHAR_INFO,
+    pub CharInfo: ::win32_system_sys::Console::CHAR_INFO,
     pub FontImageInfo: FONT_IMAGE_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Console"))]
+#[cfg(feature = "Win32_System_Console")]
 impl ::core::marker::Copy for CHAR_IMAGE_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Console"))]
+#[cfg(feature = "Win32_System_Console")]
 impl ::core::clone::Clone for CHAR_IMAGE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -462,18 +381,15 @@ impl ::core::clone::Clone for CLIPLINE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLIPOBJ {
     pub iUniq: u32,
-    pub rclBounds: super::super::Foundation::RECTL,
+    pub rclBounds: ::win32_foundation_sys::RECTL,
     pub iDComplexity: u8,
     pub iFComplexity: u8,
     pub iMode: u8,
     pub fjOptions: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLIPOBJ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLIPOBJ {
     fn clone(&self) -> Self {
         *self
@@ -733,14 +649,14 @@ impl ::core::clone::Clone for DEVHTINFO {
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct DEVINFO {
     pub flGraphicsCaps: u32,
-    pub lfDefaultFont: super::super::Graphics::Gdi::LOGFONTW,
-    pub lfAnsiVarFont: super::super::Graphics::Gdi::LOGFONTW,
-    pub lfAnsiFixFont: super::super::Graphics::Gdi::LOGFONTW,
+    pub lfDefaultFont: ::win32_graphics_sys::Gdi::LOGFONTW,
+    pub lfAnsiVarFont: ::win32_graphics_sys::Gdi::LOGFONTW,
+    pub lfAnsiFixFont: ::win32_graphics_sys::Gdi::LOGFONTW,
     pub cFonts: u32,
     pub iDitherFormat: u32,
     pub cxDither: u16,
     pub cyDither: u16,
-    pub hpalDefault: super::super::Graphics::Gdi::HPALETTE,
+    pub hpalDefault: ::win32_graphics_sys::Gdi::HPALETTE,
     pub flGraphicsCaps2: u32,
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -773,45 +689,36 @@ impl ::core::clone::Clone for DISPLAYCONFIG_2DREGION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_ADAPTER_NAME {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub adapterDevicePath: [u16; 128],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_ADAPTER_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_ADAPTER_NAME {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_DESKTOP_IMAGE_INFO {
-    pub PathSourceSize: super::super::Foundation::POINTL,
-    pub DesktopImageRegion: super::super::Foundation::RECTL,
-    pub DesktopImageClip: super::super::Foundation::RECTL,
+    pub PathSourceSize: ::win32_foundation_sys::POINTL,
+    pub DesktopImageRegion: ::win32_foundation_sys::RECTL,
+    pub DesktopImageClip: ::win32_foundation_sys::RECTL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_DESKTOP_IMAGE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_DESKTOP_IMAGE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_DEVICE_INFO_HEADER {
     pub r#type: DISPLAYCONFIG_DEVICE_INFO_TYPE,
     pub size: u32,
-    pub adapterId: super::super::Foundation::LUID,
+    pub adapterId: ::win32_foundation_sys::LUID,
     pub id: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_DEVICE_INFO_HEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_DEVICE_INFO_HEADER {
     fn clone(&self) -> Self {
         *self
@@ -833,115 +740,100 @@ pub const DISPLAYCONFIG_DEVICE_INFO_GET_MONITOR_SPECIALIZATION: DISPLAYCONFIG_DE
 pub const DISPLAYCONFIG_DEVICE_INFO_SET_MONITOR_SPECIALIZATION: DISPLAYCONFIG_DEVICE_INFO_TYPE = 13i32;
 pub const DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32: DISPLAYCONFIG_DEVICE_INFO_TYPE = -1i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub Anonymous: DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_0,
-    pub colorEncoding: super::super::Graphics::Gdi::DISPLAYCONFIG_COLOR_ENCODING,
+    pub colorEncoding: ::win32_graphics_sys::Gdi::DISPLAYCONFIG_COLOR_ENCODING,
     pub bitsPerColorChannel: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub union DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_0 {
     pub Anonymous: DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_0_0,
     pub value: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_0_0 {
     pub _bitfield: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub Anonymous: DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION_0 {
     pub Anonymous: DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION_0_0,
     pub value: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION_0_0 {
     pub _bitfield: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_MODE_INFO {
     pub infoType: DISPLAYCONFIG_MODE_INFO_TYPE,
     pub id: u32,
-    pub adapterId: super::super::Foundation::LUID,
+    pub adapterId: ::win32_foundation_sys::LUID,
     pub Anonymous: DISPLAYCONFIG_MODE_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_MODE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_MODE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DISPLAYCONFIG_MODE_INFO_0 {
     pub targetMode: DISPLAYCONFIG_TARGET_MODE,
     pub sourceMode: DISPLAYCONFIG_SOURCE_MODE,
     pub desktopImageInfo: DISPLAYCONFIG_DESKTOP_IMAGE_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_MODE_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_MODE_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -953,67 +845,54 @@ pub const DISPLAYCONFIG_MODE_INFO_TYPE_TARGET: DISPLAYCONFIG_MODE_INFO_TYPE = 2i
 pub const DISPLAYCONFIG_MODE_INFO_TYPE_DESKTOP_IMAGE: DISPLAYCONFIG_MODE_INFO_TYPE = 3i32;
 pub const DISPLAYCONFIG_MODE_INFO_TYPE_FORCE_UINT32: DISPLAYCONFIG_MODE_INFO_TYPE = -1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_PATH_INFO {
     pub sourceInfo: DISPLAYCONFIG_PATH_SOURCE_INFO,
     pub targetInfo: DISPLAYCONFIG_PATH_TARGET_INFO,
     pub flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_PATH_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_PATH_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_PATH_SOURCE_INFO {
-    pub adapterId: super::super::Foundation::LUID,
+    pub adapterId: ::win32_foundation_sys::LUID,
     pub id: u32,
     pub Anonymous: DISPLAYCONFIG_PATH_SOURCE_INFO_0,
     pub statusFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_PATH_SOURCE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_PATH_SOURCE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DISPLAYCONFIG_PATH_SOURCE_INFO_0 {
     pub modeInfoIdx: u32,
     pub Anonymous: DISPLAYCONFIG_PATH_SOURCE_INFO_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_PATH_SOURCE_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_PATH_SOURCE_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_PATH_SOURCE_INFO_0_0 {
     pub _bitfield: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_PATH_SOURCE_INFO_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_PATH_SOURCE_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_PATH_TARGET_INFO {
-    pub adapterId: super::super::Foundation::LUID,
+    pub adapterId: ::win32_foundation_sys::LUID,
     pub id: u32,
     pub Anonymous: DISPLAYCONFIG_PATH_TARGET_INFO_0,
     pub outputTechnology: DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY,
@@ -1021,39 +900,31 @@ pub struct DISPLAYCONFIG_PATH_TARGET_INFO {
     pub scaling: DISPLAYCONFIG_SCALING,
     pub refreshRate: DISPLAYCONFIG_RATIONAL,
     pub scanLineOrdering: DISPLAYCONFIG_SCANLINE_ORDERING,
-    pub targetAvailable: super::super::Foundation::BOOL,
+    pub targetAvailable: ::win32_foundation_sys::BOOL,
     pub statusFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_PATH_TARGET_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_PATH_TARGET_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DISPLAYCONFIG_PATH_TARGET_INFO_0 {
     pub modeInfoIdx: u32,
     pub Anonymous: DISPLAYCONFIG_PATH_TARGET_INFO_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_PATH_TARGET_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_PATH_TARGET_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_PATH_TARGET_INFO_0_0 {
     pub _bitfield: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_PATH_TARGET_INFO_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_PATH_TARGET_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
@@ -1099,62 +970,49 @@ pub const DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST: DISPLAYCON
 pub const DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST: DISPLAYCONFIG_SCANLINE_ORDERING = 3i32;
 pub const DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32: DISPLAYCONFIG_SCANLINE_ORDERING = -1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SDR_WHITE_LEVEL {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub SDRWhiteLevel: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SDR_WHITE_LEVEL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SDR_WHITE_LEVEL {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub Anonymous: DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE_0 {
     pub Anonymous: DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE_0_0,
     pub value: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE_0_0 {
     pub _bitfield: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub Anonymous: DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION_0,
@@ -1162,169 +1020,133 @@ pub struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION {
     pub specializationSubType: ::windows_core_sys::GUID,
     pub specializationApplicationName: [u16; 128],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION_0 {
     pub Anonymous: DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION_0_0,
     pub value: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION_0_0 {
     pub _bitfield: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub Anonymous: DISPLAYCONFIG_SET_TARGET_PERSISTENCE_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SET_TARGET_PERSISTENCE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SET_TARGET_PERSISTENCE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DISPLAYCONFIG_SET_TARGET_PERSISTENCE_0 {
     pub Anonymous: DISPLAYCONFIG_SET_TARGET_PERSISTENCE_0_0,
     pub value: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SET_TARGET_PERSISTENCE_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SET_TARGET_PERSISTENCE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE_0_0 {
     pub _bitfield: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SET_TARGET_PERSISTENCE_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SET_TARGET_PERSISTENCE_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SOURCE_DEVICE_NAME {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub viewGdiDeviceName: [u16; 32],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SOURCE_DEVICE_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SOURCE_DEVICE_NAME {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SOURCE_MODE {
     pub width: u32,
     pub height: u32,
     pub pixelFormat: DISPLAYCONFIG_PIXELFORMAT,
-    pub position: super::super::Foundation::POINTL,
+    pub position: ::win32_foundation_sys::POINTL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SOURCE_MODE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SOURCE_MODE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub Anonymous: DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION_0 {
     pub Anonymous: DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION_0_0,
     pub value: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION_0_0 {
     pub _bitfield: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_TARGET_BASE_TYPE {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub baseOutputTechnology: DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_TARGET_BASE_TYPE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_TARGET_BASE_TYPE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_TARGET_DEVICE_NAME {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub flags: DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS,
@@ -1335,9 +1157,7 @@ pub struct DISPLAYCONFIG_TARGET_DEVICE_NAME {
     pub monitorFriendlyDeviceName: [u16; 64],
     pub monitorDevicePath: [u16; 128],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_TARGET_DEVICE_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_TARGET_DEVICE_NAME {
     fn clone(&self) -> Self {
         *self
@@ -1385,16 +1205,13 @@ impl ::core::clone::Clone for DISPLAYCONFIG_TARGET_MODE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISPLAYCONFIG_TARGET_PREFERRED_MODE {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub width: u32,
     pub height: u32,
     pub targetMode: DISPLAYCONFIG_TARGET_MODE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISPLAYCONFIG_TARGET_PREFERRED_MODE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISPLAYCONFIG_TARGET_PREFERRED_MODE {
     fn clone(&self) -> Self {
         *self
@@ -1493,30 +1310,24 @@ pub const DRD_ERROR: u32 = 1u32;
 pub const DRD_SUCCESS: u32 = 0u32;
 pub const DRH_APIBITMAP: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRH_APIBITMAPDATA {
     pub pso: *mut SURFOBJ,
-    pub b: super::super::Foundation::BOOL,
+    pub b: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRH_APIBITMAPDATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRH_APIBITMAPDATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRIVEROBJ {
     pub pvObj: *mut ::core::ffi::c_void,
     pub pFreeProc: FREEOBJPROC,
     pub hdev: HDEV,
     pub dhpdev: DHPDEV,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRIVEROBJ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRIVEROBJ {
     fn clone(&self) -> Self {
         *self
@@ -1590,28 +1401,28 @@ pub const DXGK_WIN32K_PARAM_FLAG_DISABLEVIEW: u32 = 4u32;
 pub const DXGK_WIN32K_PARAM_FLAG_MODESWITCH: u32 = 2u32;
 pub const DXGK_WIN32K_PARAM_FLAG_UPDATEREGISTRY: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct DisplayMode {
     pub DeviceName: [u16; 32],
-    pub devMode: super::super::Graphics::Gdi::DEVMODEW,
+    pub devMode: ::win32_graphics_sys::Gdi::DEVMODEW,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for DisplayMode {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for DisplayMode {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct DisplayModes {
     pub numDisplayModes: i32,
     pub displayMode: [DisplayMode; 1],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for DisplayModes {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for DisplayModes {
     fn clone(&self) -> Self {
         *self
@@ -1626,7 +1437,7 @@ pub const EHN_RESTORED: u32 = 0u32;
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct EMFINFO {
     pub nSize: u32,
-    pub hdc: super::super::Graphics::Gdi::HDC,
+    pub hdc: ::win32_graphics_sys::Gdi::HDC,
     pub pvEMF: *mut u8,
     pub pvCurrentRecord: *mut u8,
 }
@@ -1691,14 +1502,11 @@ impl ::core::clone::Clone for ENG_TIME_FIELDS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ENUMRECTS {
     pub c: u32,
-    pub arcl: [super::super::Foundation::RECTL; 1],
+    pub arcl: [::win32_foundation_sys::RECTL; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ENUMRECTS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ENUMRECTS {
     fn clone(&self) -> Self {
         *self
@@ -1713,7 +1521,6 @@ pub const FDM_TYPE_CONST_BEARINGS: u32 = 16u32;
 pub const FDM_TYPE_MAXEXT_EQUAL_BM_SIDE: u32 = 2u32;
 pub const FDM_TYPE_ZERO_BEARINGS: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FD_DEVICEMETRICS {
     pub flRealizedType: u32,
     pub pteBase: POINTE,
@@ -1721,10 +1528,10 @@ pub struct FD_DEVICEMETRICS {
     pub lD: i32,
     pub fxMaxAscender: i32,
     pub fxMaxDescender: i32,
-    pub ptlUnderline1: super::super::Foundation::POINTL,
-    pub ptlStrikeOut: super::super::Foundation::POINTL,
-    pub ptlULThickness: super::super::Foundation::POINTL,
-    pub ptlSOThickness: super::super::Foundation::POINTL,
+    pub ptlUnderline1: ::win32_foundation_sys::POINTL,
+    pub ptlStrikeOut: ::win32_foundation_sys::POINTL,
+    pub ptlULThickness: ::win32_foundation_sys::POINTL,
+    pub ptlSOThickness: ::win32_foundation_sys::POINTL,
     pub cxMax: u32,
     pub cyMax: u32,
     pub cjGlyphMax: u32,
@@ -1738,9 +1545,7 @@ pub struct FD_DEVICEMETRICS {
     pub lMinD: i32,
     pub alReserved: [i32; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FD_DEVICEMETRICS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FD_DEVICEMETRICS {
     fn clone(&self) -> Self {
         *self
@@ -1961,7 +1766,6 @@ pub const FM_SEL_UNDERSCORE: u32 = 2u32;
 pub const FM_TYPE_LICENSED: u32 = 2u32;
 pub const FM_VERSION_NUMBER: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FONTDIFF {
     pub jReserved1: u8,
     pub jReserved2: u8,
@@ -1971,11 +1775,9 @@ pub struct FONTDIFF {
     pub fsSelection: u16,
     pub fwdAveCharWidth: i16,
     pub fwdMaxCharInc: i16,
-    pub ptlCaret: super::super::Foundation::POINTL,
+    pub ptlCaret: ::win32_foundation_sys::POINTL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FONTDIFF {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FONTDIFF {
     fn clone(&self) -> Self {
         *self
@@ -1998,7 +1800,6 @@ impl ::core::clone::Clone for FONTINFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FONTOBJ {
     pub iUniq: u32,
     pub iFace: u32,
@@ -2006,14 +1807,12 @@ pub struct FONTOBJ {
     pub flFontType: u32,
     pub iTTUniq: usize,
     pub iFile: usize,
-    pub sizLogResPpi: super::super::Foundation::SIZE,
+    pub sizLogResPpi: ::win32_foundation_sys::SIZE,
     pub ulStyleSize: u32,
     pub pvConsumer: *mut ::core::ffi::c_void,
     pub pvProducer: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FONTOBJ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FONTOBJ {
     fn clone(&self) -> Self {
         *self
@@ -2034,7 +1833,7 @@ impl ::core::clone::Clone for FONTSIM {
 #[repr(C)]
 #[cfg(feature = "Win32_System_Console")]
 pub struct FONT_IMAGE_INFO {
-    pub FontSize: super::super::System::Console::COORD,
+    pub FontSize: ::win32_system_sys::Console::COORD,
     pub ImageBits: *mut u8,
 }
 #[cfg(feature = "Win32_System_Console")]
@@ -2069,13 +1868,12 @@ pub const FO_SIM_ITALIC: u32 = 16384u32;
 pub const FO_VERT_FACE: u32 = 8388608u32;
 pub const FP_ALTERNATEMODE: i32 = 1i32;
 pub const FP_WINDINGMODE: i32 = 2i32;
-#[cfg(feature = "Win32_Foundation")]
-pub type FREEOBJPROC = ::core::option::Option<unsafe extern "system" fn(pdriverobj: *mut DRIVEROBJ) -> super::super::Foundation::BOOL>;
+pub type FREEOBJPROC = ::core::option::Option<unsafe extern "system" fn(pdriverobj: *mut DRIVEROBJ) -> ::win32_foundation_sys::BOOL>;
 #[repr(C)]
 #[cfg(feature = "Win32_System_Console")]
 pub struct FSCNTL_SCREEN_INFO {
-    pub Position: super::super::System::Console::COORD,
-    pub ScreenSize: super::super::System::Console::COORD,
+    pub Position: ::win32_system_sys::Console::COORD,
+    pub ScreenSize: ::win32_system_sys::Console::COORD,
     pub nNumberOfChars: u32,
 }
 #[cfg(feature = "Win32_System_Console")]
@@ -2139,8 +1937,8 @@ impl ::core::clone::Clone for FSVIDEO_REVERSE_MOUSE_POINTER {
 #[repr(C)]
 #[cfg(feature = "Win32_System_Console")]
 pub struct FSVIDEO_SCREEN_INFORMATION {
-    pub ScreenSize: super::super::System::Console::COORD,
-    pub FontSize: super::super::System::Console::COORD,
+    pub ScreenSize: ::win32_system_sys::Console::COORD,
+    pub FontSize: ::win32_system_sys::Console::COORD,
 }
 #[cfg(feature = "Win32_System_Console")]
 impl ::core::marker::Copy for FSVIDEO_SCREEN_INFORMATION {}
@@ -2151,14 +1949,14 @@ impl ::core::clone::Clone for FSVIDEO_SCREEN_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Console"))]
+#[cfg(feature = "Win32_System_Console")]
 pub struct FSVIDEO_WRITE_TO_FRAME_BUFFER {
     pub SrcBuffer: *mut CHAR_IMAGE_INFO,
     pub DestScreen: FSCNTL_SCREEN_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Console"))]
+#[cfg(feature = "Win32_System_Console")]
 impl ::core::marker::Copy for FSVIDEO_WRITE_TO_FRAME_BUFFER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Console"))]
+#[cfg(feature = "Win32_System_Console")]
 impl ::core::clone::Clone for FSVIDEO_WRITE_TO_FRAME_BUFFER {
     fn clone(&self) -> Self {
         *self
@@ -2260,7 +2058,6 @@ pub const GCAPS_VECTORFONT: u32 = 512u32;
 pub const GCAPS_VERTSTRIKE: u32 = 128u32;
 pub const GCAPS_WINDINGFILL: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GDIINFO {
     pub ulVersion: u32,
     pub ulTechnology: u32,
@@ -2284,8 +2081,8 @@ pub struct GDIINFO {
     pub xStyleStep: i32,
     pub yStyleStep: i32,
     pub denStyleStep: i32,
-    pub ptlPhysOffset: super::super::Foundation::POINTL,
-    pub szlPhysSize: super::super::Foundation::SIZE,
+    pub ptlPhysOffset: ::win32_foundation_sys::POINTL,
+    pub szlPhysSize: ::win32_foundation_sys::SIZE,
     pub ulNumPalReg: u32,
     pub ciDevice: COLORINFO,
     pub ulDevicePelsDPI: u32,
@@ -2308,9 +2105,7 @@ pub struct GDIINFO {
     pub ulPhysicalPixelCharacteristics: u32,
     pub ulPhysicalPixelGamma: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GDIINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GDIINFO {
     fn clone(&self) -> Self {
         *self
@@ -2320,22 +2115,18 @@ pub const GDI_DRIVER_VERSION: u32 = 16384u32;
 pub const GETCONNECTEDIDS_SOURCE: u32 = 1u32;
 pub const GETCONNECTEDIDS_TARGET: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GLYPHBITS {
-    pub ptlOrigin: super::super::Foundation::POINTL,
-    pub sizlBitmap: super::super::Foundation::SIZE,
+    pub ptlOrigin: ::win32_foundation_sys::POINTL,
+    pub sizlBitmap: ::win32_foundation_sys::SIZE,
     pub aj: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GLYPHBITS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GLYPHBITS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GLYPHDATA {
     pub gdf: GLYPHDEF,
     pub hg: u32,
@@ -2344,41 +2135,33 @@ pub struct GLYPHDATA {
     pub fxAB: i32,
     pub fxInkTop: i32,
     pub fxInkBottom: i32,
-    pub rclInk: super::super::Foundation::RECTL,
+    pub rclInk: ::win32_foundation_sys::RECTL,
     pub ptqD: POINTQF,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GLYPHDATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GLYPHDATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union GLYPHDEF {
     pub pgb: *mut GLYPHBITS,
     pub ppo: *mut PATHOBJ,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GLYPHDEF {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GLYPHDEF {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GLYPHPOS {
     pub hg: u32,
     pub pgdf: *mut GLYPHDEF,
-    pub ptl: super::super::Foundation::POINTL,
+    pub ptl: ::win32_foundation_sys::POINTL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GLYPHPOS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GLYPHPOS {
     fn clone(&self) -> Self {
         *self
@@ -2500,7 +2283,7 @@ impl ::core::clone::Clone for IFIEXTRA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct IFIMETRICS {
     pub cjThis: u32,
     pub cjIfiExtra: u32,
@@ -2553,21 +2336,21 @@ pub struct IFIMETRICS {
     pub wcLastChar: u16,
     pub wcDefaultChar: u16,
     pub wcBreakChar: u16,
-    pub ptlBaseline: super::super::Foundation::POINTL,
-    pub ptlAspect: super::super::Foundation::POINTL,
-    pub ptlCaret: super::super::Foundation::POINTL,
-    pub rclFontBox: super::super::Foundation::RECTL,
+    pub ptlBaseline: ::win32_foundation_sys::POINTL,
+    pub ptlAspect: ::win32_foundation_sys::POINTL,
+    pub ptlCaret: ::win32_foundation_sys::POINTL,
+    pub rclFontBox: ::win32_foundation_sys::RECTL,
     pub achVendId: [u8; 4],
     pub cKerningPairs: u32,
     pub ulPanoseCulture: u32,
-    pub panose: super::super::Graphics::Gdi::PANOSE,
+    pub panose: ::win32_graphics_sys::Gdi::PANOSE,
     pub Align: *mut ::core::ffi::c_void,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for IFIMETRICS {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for IFIMETRICS {
     fn clone(&self) -> Self {
         *self
@@ -2575,7 +2358,7 @@ impl ::core::clone::Clone for IFIMETRICS {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct IFIMETRICS {
     pub cjThis: u32,
     pub cjIfiExtra: u32,
@@ -2628,20 +2411,20 @@ pub struct IFIMETRICS {
     pub wcLastChar: u16,
     pub wcDefaultChar: u16,
     pub wcBreakChar: u16,
-    pub ptlBaseline: super::super::Foundation::POINTL,
-    pub ptlAspect: super::super::Foundation::POINTL,
-    pub ptlCaret: super::super::Foundation::POINTL,
-    pub rclFontBox: super::super::Foundation::RECTL,
+    pub ptlBaseline: ::win32_foundation_sys::POINTL,
+    pub ptlAspect: ::win32_foundation_sys::POINTL,
+    pub ptlCaret: ::win32_foundation_sys::POINTL,
+    pub rclFontBox: ::win32_foundation_sys::RECTL,
     pub achVendId: [u8; 4],
     pub cKerningPairs: u32,
     pub ulPanoseCulture: u32,
-    pub panose: super::super::Graphics::Gdi::PANOSE,
+    pub panose: ::win32_graphics_sys::Gdi::PANOSE,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for IFIMETRICS {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for IFIMETRICS {
     fn clone(&self) -> Self {
         *self
@@ -2750,16 +2533,13 @@ pub const INDEX_DrvUnloadFontFile: i32 = 46i32;
 pub const INDEX_DrvUnlockDisplayArea: i32 = 102i32;
 pub const INDEX_LAST: i32 = 89i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct INDIRECT_DISPLAY_INFO {
-    pub DisplayAdapterLuid: super::super::Foundation::LUID,
+    pub DisplayAdapterLuid: ::win32_foundation_sys::LUID,
     pub Flags: u32,
     pub NumMonitors: u32,
     pub DisplayAdapterTargetBase: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for INDIRECT_DISPLAY_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for INDIRECT_DISPLAY_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3407,202 +3187,136 @@ pub const PD_CLOSEFIGURE: u32 = 8u32;
 pub const PD_ENDSUBPATH: u32 = 2u32;
 pub const PD_RESETSTYLE: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PERBANDINFO {
-    pub bRepeatThisBand: super::super::Foundation::BOOL,
-    pub szlBand: super::super::Foundation::SIZE,
+    pub bRepeatThisBand: ::win32_foundation_sys::BOOL,
+    pub szlBand: ::win32_foundation_sys::SIZE,
     pub ulHorzRes: u32,
     pub ulVertRes: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PERBANDINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PERBANDINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 pub type PFN = ::core::option::Option<unsafe extern "system" fn() -> isize>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvAccumulateD3DDirtyRect = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut CDDDXGK_REDIRBITMAPPRESENTINFO) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvAlphaBlend = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut CLIPOBJ, param3: *mut XLATEOBJ, param4: *mut super::super::Foundation::RECTL, param5: *mut super::super::Foundation::RECTL, param6: *mut BLENDOBJ) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvAssertMode = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvAssociateSharedSurface = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: super::super::Foundation::HANDLE, param2: super::super::Foundation::HANDLE, param3: super::super::Foundation::SIZE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvBitBlt = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut CLIPOBJ, param4: *mut XLATEOBJ, param5: *mut super::super::Foundation::RECTL, param6: *mut super::super::Foundation::POINTL, param7: *mut super::super::Foundation::POINTL, param8: *mut BRUSHOBJ, param9: *mut super::super::Foundation::POINTL, param10: u32) -> super::super::Foundation::BOOL>;
+pub type PFN_DrvAccumulateD3DDirtyRect = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut CDDDXGK_REDIRBITMAPPRESENTINFO) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvAlphaBlend = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut CLIPOBJ, param3: *mut XLATEOBJ, param4: *mut ::win32_foundation_sys::RECTL, param5: *mut ::win32_foundation_sys::RECTL, param6: *mut BLENDOBJ) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvAssertMode = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvAssociateSharedSurface = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: ::win32_foundation_sys::HANDLE, param2: ::win32_foundation_sys::HANDLE, param3: ::win32_foundation_sys::SIZE) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvBitBlt = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut CLIPOBJ, param4: *mut XLATEOBJ, param5: *mut ::win32_foundation_sys::RECTL, param6: *mut ::win32_foundation_sys::POINTL, param7: *mut ::win32_foundation_sys::POINTL, param8: *mut BRUSHOBJ, param9: *mut ::win32_foundation_sys::POINTL, param10: u32) -> ::win32_foundation_sys::BOOL>;
 pub type PFN_DrvCompletePDEV = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: HDEV)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvCopyBits = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut CLIPOBJ, param3: *mut XLATEOBJ, param4: *mut super::super::Foundation::RECTL, param5: *mut super::super::Foundation::POINTL) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvCreateDeviceBitmap = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: super::super::Foundation::SIZE, param2: u32) -> super::super::Graphics::Gdi::HBITMAP>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvCreateDeviceBitmapEx = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: super::super::Foundation::SIZE, param2: u32, param3: u32, param4: DHSURF, param5: u32, param6: u32, param7: *mut super::super::Foundation::HANDLE) -> super::super::Graphics::Gdi::HBITMAP>;
+pub type PFN_DrvCopyBits = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut CLIPOBJ, param3: *mut XLATEOBJ, param4: *mut ::win32_foundation_sys::RECTL, param5: *mut ::win32_foundation_sys::POINTL) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvCreateDeviceBitmap = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: ::win32_foundation_sys::SIZE, param2: u32) -> ::win32_graphics_sys::Gdi::HBITMAP>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvCreateDeviceBitmapEx = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: ::win32_foundation_sys::SIZE, param2: u32, param3: u32, param4: DHSURF, param5: u32, param6: u32, param7: *mut ::win32_foundation_sys::HANDLE) -> ::win32_graphics_sys::Gdi::HBITMAP>;
 pub type PFN_DrvDeleteDeviceBitmap = ::core::option::Option<unsafe extern "system" fn(param0: DHSURF)>;
 pub type PFN_DrvDeleteDeviceBitmapEx = ::core::option::Option<unsafe extern "system" fn(param0: DHSURF)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvDeriveSurface = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Graphics::DirectDraw::DD_DIRECTDRAW_GLOBAL, param1: *mut super::super::Graphics::DirectDraw::DD_SURFACE_LOCAL) -> super::super::Graphics::Gdi::HBITMAP>;
+#[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
+pub type PFN_DrvDeriveSurface = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::win32_graphics_sys::DirectDraw::DD_DIRECTDRAW_GLOBAL, param1: *mut ::win32_graphics_sys::DirectDraw::DD_SURFACE_LOCAL) -> ::win32_graphics_sys::Gdi::HBITMAP>;
 #[cfg(feature = "Win32_Graphics_OpenGL")]
-pub type PFN_DrvDescribePixelFormat = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: i32, param2: u32, param3: *mut super::super::Graphics::OpenGL::PIXELFORMATDESCRIPTOR) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PFN_DrvDescribePixelFormat = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: i32, param2: u32, param3: *mut ::win32_graphics_sys::OpenGL::PIXELFORMATDESCRIPTOR) -> i32>;
 pub type PFN_DrvDestroyFont = ::core::option::Option<unsafe extern "system" fn(param0: *mut FONTOBJ)>;
 pub type PFN_DrvDisableDirectDraw = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV)>;
 pub type PFN_DrvDisableDriver = ::core::option::Option<unsafe extern "system" fn()>;
 pub type PFN_DrvDisablePDEV = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV)>;
 pub type PFN_DrvDisableSurface = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV)>;
 pub type PFN_DrvDitherColor = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: u32, param2: u32, param3: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvDrawEscape = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: u32, param2: *mut CLIPOBJ, param3: *mut super::super::Foundation::RECTL, param4: u32, param5: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvEnableDirectDraw = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut super::super::Graphics::DirectDraw::DD_CALLBACKS, param2: *mut super::super::Graphics::DirectDraw::DD_SURFACECALLBACKS, param3: *mut super::super::Graphics::DirectDraw::DD_PALETTECALLBACKS) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvEnableDriver = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: *mut DRVENABLEDATA) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvEnablePDEV = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Graphics::Gdi::DEVMODEW, param1: ::windows_core_sys::PCWSTR, param2: u32, param3: *mut HSURF, param4: u32, param5: *mut GDIINFO, param6: u32, param7: *mut DEVINFO, param8: HDEV, param9: ::windows_core_sys::PCWSTR, param10: super::super::Foundation::HANDLE) -> DHPDEV>;
+pub type PFN_DrvDrawEscape = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: u32, param2: *mut CLIPOBJ, param3: *mut ::win32_foundation_sys::RECTL, param4: u32, param5: *mut ::core::ffi::c_void) -> u32>;
+#[cfg(all(feature = "Win32_Graphics_DirectDraw", feature = "Win32_Graphics_Gdi"))]
+pub type PFN_DrvEnableDirectDraw = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut ::win32_graphics_sys::DirectDraw::DD_CALLBACKS, param2: *mut ::win32_graphics_sys::DirectDraw::DD_SURFACECALLBACKS, param3: *mut ::win32_graphics_sys::DirectDraw::DD_PALETTECALLBACKS) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvEnableDriver = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: *mut DRVENABLEDATA) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvEnablePDEV = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::win32_graphics_sys::Gdi::DEVMODEW, param1: ::windows_core_sys::PCWSTR, param2: u32, param3: *mut HSURF, param4: u32, param5: *mut GDIINFO, param6: u32, param7: *mut DEVINFO, param8: HDEV, param9: ::windows_core_sys::PCWSTR, param10: ::win32_foundation_sys::HANDLE) -> DHPDEV>;
 pub type PFN_DrvEnableSurface = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV) -> HSURF>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvEndDoc = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ, fl: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvEndDxInterop = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: super::super::Foundation::BOOL, param2: *mut super::super::Foundation::BOOL, kernelmodedevicehandle: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PFN_DrvEndDoc = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ, fl: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvEndDxInterop = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: ::win32_foundation_sys::BOOL, param2: *mut ::win32_foundation_sys::BOOL, kernelmodedevicehandle: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 pub type PFN_DrvEscape = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: u32, param2: u32, param3: *mut ::core::ffi::c_void, param4: u32, param5: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvFillPath = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut PATHOBJ, param2: *mut CLIPOBJ, param3: *mut BRUSHOBJ, param4: *mut super::super::Foundation::POINTL, param5: u32, param6: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PFN_DrvFillPath = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut PATHOBJ, param2: *mut CLIPOBJ, param3: *mut BRUSHOBJ, param4: *mut ::win32_foundation_sys::POINTL, param5: u32, param6: u32) -> ::win32_foundation_sys::BOOL>;
 pub type PFN_DrvFontManagement = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut FONTOBJ, param2: u32, param3: u32, param4: *mut ::core::ffi::c_void, param5: u32, param6: *mut ::core::ffi::c_void) -> u32>;
 pub type PFN_DrvFree = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::core::ffi::c_void, param1: usize)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_DirectDraw"))]
-pub type PFN_DrvGetDirectDrawInfo = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut super::super::Graphics::DirectDraw::DD_HALINFO, param2: *mut u32, param3: *mut super::super::Graphics::DirectDraw::VIDEOMEMORY, param4: *mut u32, param5: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
+#[cfg(feature = "Win32_Graphics_DirectDraw")]
+pub type PFN_DrvGetDirectDrawInfo = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut ::win32_graphics_sys::DirectDraw::DD_HALINFO, param2: *mut u32, param3: *mut ::win32_graphics_sys::DirectDraw::VIDEOMEMORY, param4: *mut u32, param5: *mut u32) -> ::win32_foundation_sys::BOOL>;
 pub type PFN_DrvGetGlyphMode = ::core::option::Option<unsafe extern "system" fn(dhpdev: DHPDEV, pfo: *mut FONTOBJ) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvGetModes = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE, param1: u32, param2: *mut super::super::Graphics::Gdi::DEVMODEW) -> u32>;
-pub type PFN_DrvGetTrueTypeFile = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: *mut u32) -> *mut ::core::ffi::c_void>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvGradientFill = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut CLIPOBJ, param2: *mut XLATEOBJ, param3: *mut super::super::Graphics::Gdi::TRIVERTEX, param4: u32, param5: *mut ::core::ffi::c_void, param6: u32, param7: *mut super::super::Foundation::RECTL, param8: *mut super::super::Foundation::POINTL, param9: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvIcmCheckBitmapBits = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: super::super::Foundation::HANDLE, param2: *mut SURFOBJ, param3: *mut u8) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_ColorSystem"))]
-pub type PFN_DrvIcmCreateColorTransform = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut super::super::UI::ColorSystem::LOGCOLORSPACEW, param2: *mut ::core::ffi::c_void, param3: u32, param4: *mut ::core::ffi::c_void, param5: u32, param6: *mut ::core::ffi::c_void, param7: u32, param8: u32) -> super::super::Foundation::HANDLE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvIcmDeleteColorTransform = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvIcmSetDeviceGammaRamp = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: u32, param2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvLineTo = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut CLIPOBJ, param2: *mut BRUSHOBJ, param3: i32, param4: i32, param5: i32, param6: i32, param7: *mut super::super::Foundation::RECTL, param8: u32) -> super::super::Foundation::BOOL>;
 #[cfg(feature = "Win32_Graphics_Gdi")]
-pub type PFN_DrvLoadFontFile = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: *mut usize, param2: *mut *mut ::core::ffi::c_void, param3: *mut u32, param4: *mut super::super::Graphics::Gdi::DESIGNVECTOR, param5: u32, param6: u32) -> usize>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvLockDisplayArea = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut super::super::Foundation::RECTL)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvMovePointer = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ, x: i32, y: i32, prcl: *mut super::super::Foundation::RECTL)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvNextBand = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, ppointl: *mut super::super::Foundation::POINTL) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PFN_DrvGetModes = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation_sys::HANDLE, param1: u32, param2: *mut ::win32_graphics_sys::Gdi::DEVMODEW) -> u32>;
+pub type PFN_DrvGetTrueTypeFile = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: *mut u32) -> *mut ::core::ffi::c_void>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvGradientFill = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut CLIPOBJ, param2: *mut XLATEOBJ, param3: *mut ::win32_graphics_sys::Gdi::TRIVERTEX, param4: u32, param5: *mut ::core::ffi::c_void, param6: u32, param7: *mut ::win32_foundation_sys::RECTL, param8: *mut ::win32_foundation_sys::POINTL, param9: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvIcmCheckBitmapBits = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: ::win32_foundation_sys::HANDLE, param2: *mut SURFOBJ, param3: *mut u8) -> ::win32_foundation_sys::BOOL>;
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_ColorSystem"))]
+pub type PFN_DrvIcmCreateColorTransform = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut ::win32_ui_sys::ColorSystem::LOGCOLORSPACEW, param2: *mut ::core::ffi::c_void, param3: u32, param4: *mut ::core::ffi::c_void, param5: u32, param6: *mut ::core::ffi::c_void, param7: u32, param8: u32) -> ::win32_foundation_sys::HANDLE>;
+pub type PFN_DrvIcmDeleteColorTransform = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvIcmSetDeviceGammaRamp = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: u32, param2: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvLineTo = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut CLIPOBJ, param2: *mut BRUSHOBJ, param3: i32, param4: i32, param5: i32, param6: i32, param7: *mut ::win32_foundation_sys::RECTL, param8: u32) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvLoadFontFile = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: *mut usize, param2: *mut *mut ::core::ffi::c_void, param3: *mut u32, param4: *mut ::win32_graphics_sys::Gdi::DESIGNVECTOR, param5: u32, param6: u32) -> usize>;
+pub type PFN_DrvLockDisplayArea = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut ::win32_foundation_sys::RECTL)>;
+pub type PFN_DrvMovePointer = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ, x: i32, y: i32, prcl: *mut ::win32_foundation_sys::RECTL)>;
+pub type PFN_DrvNextBand = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, ppointl: *mut ::win32_foundation_sys::POINTL) -> ::win32_foundation_sys::BOOL>;
 pub type PFN_DrvNotify = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: u32, param2: *mut ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvPaint = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut CLIPOBJ, param2: *mut BRUSHOBJ, param3: *mut super::super::Foundation::POINTL, param4: u32) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvPlgBlt = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut CLIPOBJ, param4: *mut XLATEOBJ, param5: *mut super::super::Graphics::Gdi::COLORADJUSTMENT, param6: *mut super::super::Foundation::POINTL, param7: *mut POINTFIX, param8: *mut super::super::Foundation::RECTL, param9: *mut super::super::Foundation::POINTL, param10: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvQueryAdvanceWidths = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut FONTOBJ, param2: u32, param3: *mut u32, param4: *mut ::core::ffi::c_void, param5: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvQueryDeviceSupport = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut XLATEOBJ, param2: *mut XFORMOBJ, param3: u32, param4: u32, param5: *mut ::core::ffi::c_void, param6: u32, param7: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+pub type PFN_DrvPaint = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut CLIPOBJ, param2: *mut BRUSHOBJ, param3: *mut ::win32_foundation_sys::POINTL, param4: u32) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvPlgBlt = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut CLIPOBJ, param4: *mut XLATEOBJ, param5: *mut ::win32_graphics_sys::Gdi::COLORADJUSTMENT, param6: *mut ::win32_foundation_sys::POINTL, param7: *mut POINTFIX, param8: *mut ::win32_foundation_sys::RECTL, param9: *mut ::win32_foundation_sys::POINTL, param10: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvQueryAdvanceWidths = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut FONTOBJ, param2: u32, param3: *mut u32, param4: *mut ::core::ffi::c_void, param5: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvQueryDeviceSupport = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut XLATEOBJ, param2: *mut XFORMOBJ, param3: u32, param4: u32, param5: *mut ::core::ffi::c_void, param6: u32, param7: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub type PFN_DrvQueryFont = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: usize, param2: u32, param3: *mut usize) -> *mut IFIMETRICS>;
 pub type PFN_DrvQueryFontCaps = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: *mut u32) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFN_DrvQueryFontData = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut FONTOBJ, param2: u32, param3: u32, param4: *mut GLYPHDATA, param5: *mut ::core::ffi::c_void, param6: u32) -> i32>;
 pub type PFN_DrvQueryFontFile = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: u32, param2: u32, param3: *mut u32) -> i32>;
 pub type PFN_DrvQueryFontTree = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: usize, param2: u32, param3: u32, param4: *mut usize) -> *mut ::core::ffi::c_void>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFN_DrvQueryGlyphAttrs = ::core::option::Option<unsafe extern "system" fn(param0: *mut FONTOBJ, param1: u32) -> *mut FD_GLYPHATTR>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvQueryPerBandInfo = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut PERBANDINFO) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvQuerySpoolType = ::core::option::Option<unsafe extern "system" fn(dhpdev: DHPDEV, pwchtype: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvQueryTrueTypeOutline = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut FONTOBJ, param2: u32, param3: super::super::Foundation::BOOL, param4: *mut GLYPHDATA, param5: u32, param6: *mut super::super::Graphics::Gdi::TTPOLYGONHEADER) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvQueryTrueTypeSection = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: u32, param3: *mut super::super::Foundation::HANDLE, param4: *mut i32) -> i32>;
+pub type PFN_DrvQueryPerBandInfo = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut PERBANDINFO) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvQuerySpoolType = ::core::option::Option<unsafe extern "system" fn(dhpdev: DHPDEV, pwchtype: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvQueryTrueTypeOutline = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut FONTOBJ, param2: u32, param3: ::win32_foundation_sys::BOOL, param4: *mut GLYPHDATA, param5: u32, param6: *mut ::win32_graphics_sys::Gdi::TTPOLYGONHEADER) -> i32>;
+pub type PFN_DrvQueryTrueTypeSection = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: u32, param3: *mut ::win32_foundation_sys::HANDLE, param4: *mut i32) -> i32>;
 pub type PFN_DrvQueryTrueTypeTable = ::core::option::Option<unsafe extern "system" fn(param0: usize, param1: u32, param2: u32, param3: i32, param4: u32, param5: *mut u8, param6: *mut *mut u8, param7: *mut u32) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvRealizeBrush = ::core::option::Option<unsafe extern "system" fn(param0: *mut BRUSHOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut SURFOBJ, param4: *mut XLATEOBJ, param5: u32) -> super::super::Foundation::BOOL>;
+pub type PFN_DrvRealizeBrush = ::core::option::Option<unsafe extern "system" fn(param0: *mut BRUSHOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut SURFOBJ, param4: *mut XLATEOBJ, param5: u32) -> ::win32_foundation_sys::BOOL>;
 pub type PFN_DrvRenderHint = ::core::option::Option<unsafe extern "system" fn(dhpdev: DHPDEV, notifycode: u32, length: usize, data: *const ::core::ffi::c_void) -> i32>;
 pub type PFN_DrvResetDevice = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvResetPDEV = ::core::option::Option<unsafe extern "system" fn(dhpdevold: DHPDEV, dhpdevnew: DHPDEV) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSaveScreenBits = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: u32, param2: usize, param3: *mut super::super::Foundation::RECTL) -> usize>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSendPage = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSetPalette = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut PALOBJ, param2: u32, param3: u32, param4: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSetPixelFormat = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: i32, param2: super::super::Foundation::HWND) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSetPointerShape = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut XLATEOBJ, param4: i32, param5: i32, param6: i32, param7: i32, param8: *mut super::super::Foundation::RECTL, param9: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvStartBanding = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, ppointl: *mut super::super::Foundation::POINTL) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvStartDoc = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ, pwszdocname: ::windows_core_sys::PCWSTR, dwjobid: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvStartDxInterop = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: super::super::Foundation::BOOL, kernelmodedevicehandle: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvStartPage = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvStretchBlt = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut CLIPOBJ, param4: *mut XLATEOBJ, param5: *mut super::super::Graphics::Gdi::COLORADJUSTMENT, param6: *mut super::super::Foundation::POINTL, param7: *mut super::super::Foundation::RECTL, param8: *mut super::super::Foundation::RECTL, param9: *mut super::super::Foundation::POINTL, param10: u32) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvStretchBltROP = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut CLIPOBJ, param4: *mut XLATEOBJ, param5: *mut super::super::Graphics::Gdi::COLORADJUSTMENT, param6: *mut super::super::Foundation::POINTL, param7: *mut super::super::Foundation::RECTL, param8: *mut super::super::Foundation::RECTL, param9: *mut super::super::Foundation::POINTL, param10: u32, param11: *mut BRUSHOBJ, param12: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvStrokeAndFillPath = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut PATHOBJ, param2: *mut CLIPOBJ, param3: *mut XFORMOBJ, param4: *mut BRUSHOBJ, param5: *mut LINEATTRS, param6: *mut BRUSHOBJ, param7: *mut super::super::Foundation::POINTL, param8: u32, param9: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvStrokePath = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut PATHOBJ, param2: *mut CLIPOBJ, param3: *mut XFORMOBJ, param4: *mut BRUSHOBJ, param5: *mut super::super::Foundation::POINTL, param6: *mut LINEATTRS, param7: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSurfaceComplete = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSwapBuffers = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut WNDOBJ) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSynchronize = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut super::super::Foundation::RECTL)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSynchronizeRedirectionBitmaps = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut u64) -> super::super::Foundation::NTSTATUS>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvSynchronizeSurface = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut super::super::Foundation::RECTL, param2: u32)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvTextOut = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut STROBJ, param2: *mut FONTOBJ, param3: *mut CLIPOBJ, param4: *mut super::super::Foundation::RECTL, param5: *mut super::super::Foundation::RECTL, param6: *mut BRUSHOBJ, param7: *mut BRUSHOBJ, param8: *mut super::super::Foundation::POINTL, param9: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvTransparentBlt = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut CLIPOBJ, param3: *mut XLATEOBJ, param4: *mut super::super::Foundation::RECTL, param5: *mut super::super::Foundation::RECTL, param6: u32, param7: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvUnloadFontFile = ::core::option::Option<unsafe extern "system" fn(param0: usize) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvUnlockDisplayArea = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut super::super::Foundation::RECTL)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_EngCombineRgn = ::core::option::Option<unsafe extern "system" fn(hrgntrg: super::super::Foundation::HANDLE, hrgnsrc1: super::super::Foundation::HANDLE, hrgnsrc2: super::super::Foundation::HANDLE, imode: i32) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_EngCopyRgn = ::core::option::Option<unsafe extern "system" fn(hrgndst: super::super::Foundation::HANDLE, hrgnsrc: super::super::Foundation::HANDLE) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_EngCreateRectRgn = ::core::option::Option<unsafe extern "system" fn(left: i32, top: i32, right: i32, bottom: i32) -> super::super::Foundation::HANDLE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_EngDeleteRgn = ::core::option::Option<unsafe extern "system" fn(hrgn: super::super::Foundation::HANDLE)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_EngIntersectRgn = ::core::option::Option<unsafe extern "system" fn(hrgnresult: super::super::Foundation::HANDLE, hrgna: super::super::Foundation::HANDLE, hrgnb: super::super::Foundation::HANDLE) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_EngSubtractRgn = ::core::option::Option<unsafe extern "system" fn(hrgnresult: super::super::Foundation::HANDLE, hrgna: super::super::Foundation::HANDLE, hrgnb: super::super::Foundation::HANDLE) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_EngUnionRgn = ::core::option::Option<unsafe extern "system" fn(hrgnresult: super::super::Foundation::HANDLE, hrgna: super::super::Foundation::HANDLE, hrgnb: super::super::Foundation::HANDLE) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFN_EngXorRgn = ::core::option::Option<unsafe extern "system" fn(hrgnresult: super::super::Foundation::HANDLE, hrgna: super::super::Foundation::HANDLE, hrgnb: super::super::Foundation::HANDLE) -> i32>;
+pub type PFN_DrvResetPDEV = ::core::option::Option<unsafe extern "system" fn(dhpdevold: DHPDEV, dhpdevnew: DHPDEV) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvSaveScreenBits = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: u32, param2: usize, param3: *mut ::win32_foundation_sys::RECTL) -> usize>;
+pub type PFN_DrvSendPage = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvSetPalette = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut PALOBJ, param2: u32, param3: u32, param4: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvSetPixelFormat = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: i32, param2: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvSetPointerShape = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut XLATEOBJ, param4: i32, param5: i32, param6: i32, param7: i32, param8: *mut ::win32_foundation_sys::RECTL, param9: u32) -> u32>;
+pub type PFN_DrvStartBanding = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, ppointl: *mut ::win32_foundation_sys::POINTL) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvStartDoc = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ, pwszdocname: ::windows_core_sys::PCWSTR, dwjobid: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvStartDxInterop = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: ::win32_foundation_sys::BOOL, kernelmodedevicehandle: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvStartPage = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvStretchBlt = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut CLIPOBJ, param4: *mut XLATEOBJ, param5: *mut ::win32_graphics_sys::Gdi::COLORADJUSTMENT, param6: *mut ::win32_foundation_sys::POINTL, param7: *mut ::win32_foundation_sys::RECTL, param8: *mut ::win32_foundation_sys::RECTL, param9: *mut ::win32_foundation_sys::POINTL, param10: u32) -> ::win32_foundation_sys::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFN_DrvStretchBltROP = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut SURFOBJ, param3: *mut CLIPOBJ, param4: *mut XLATEOBJ, param5: *mut ::win32_graphics_sys::Gdi::COLORADJUSTMENT, param6: *mut ::win32_foundation_sys::POINTL, param7: *mut ::win32_foundation_sys::RECTL, param8: *mut ::win32_foundation_sys::RECTL, param9: *mut ::win32_foundation_sys::POINTL, param10: u32, param11: *mut BRUSHOBJ, param12: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvStrokeAndFillPath = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut PATHOBJ, param2: *mut CLIPOBJ, param3: *mut XFORMOBJ, param4: *mut BRUSHOBJ, param5: *mut LINEATTRS, param6: *mut BRUSHOBJ, param7: *mut ::win32_foundation_sys::POINTL, param8: u32, param9: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvStrokePath = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut PATHOBJ, param2: *mut CLIPOBJ, param3: *mut XFORMOBJ, param4: *mut BRUSHOBJ, param5: *mut ::win32_foundation_sys::POINTL, param6: *mut LINEATTRS, param7: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvSurfaceComplete = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvSwapBuffers = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut WNDOBJ) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvSynchronize = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut ::win32_foundation_sys::RECTL)>;
+pub type PFN_DrvSynchronizeRedirectionBitmaps = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut u64) -> ::win32_foundation_sys::NTSTATUS>;
+pub type PFN_DrvSynchronizeSurface = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut ::win32_foundation_sys::RECTL, param2: u32)>;
+pub type PFN_DrvTextOut = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut STROBJ, param2: *mut FONTOBJ, param3: *mut CLIPOBJ, param4: *mut ::win32_foundation_sys::RECTL, param5: *mut ::win32_foundation_sys::RECTL, param6: *mut BRUSHOBJ, param7: *mut BRUSHOBJ, param8: *mut ::win32_foundation_sys::POINTL, param9: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvTransparentBlt = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut SURFOBJ, param2: *mut CLIPOBJ, param3: *mut XLATEOBJ, param4: *mut ::win32_foundation_sys::RECTL, param5: *mut ::win32_foundation_sys::RECTL, param6: u32, param7: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvUnloadFontFile = ::core::option::Option<unsafe extern "system" fn(param0: usize) -> ::win32_foundation_sys::BOOL>;
+pub type PFN_DrvUnlockDisplayArea = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut ::win32_foundation_sys::RECTL)>;
+pub type PFN_EngCombineRgn = ::core::option::Option<unsafe extern "system" fn(hrgntrg: ::win32_foundation_sys::HANDLE, hrgnsrc1: ::win32_foundation_sys::HANDLE, hrgnsrc2: ::win32_foundation_sys::HANDLE, imode: i32) -> i32>;
+pub type PFN_EngCopyRgn = ::core::option::Option<unsafe extern "system" fn(hrgndst: ::win32_foundation_sys::HANDLE, hrgnsrc: ::win32_foundation_sys::HANDLE) -> i32>;
+pub type PFN_EngCreateRectRgn = ::core::option::Option<unsafe extern "system" fn(left: i32, top: i32, right: i32, bottom: i32) -> ::win32_foundation_sys::HANDLE>;
+pub type PFN_EngDeleteRgn = ::core::option::Option<unsafe extern "system" fn(hrgn: ::win32_foundation_sys::HANDLE)>;
+pub type PFN_EngIntersectRgn = ::core::option::Option<unsafe extern "system" fn(hrgnresult: ::win32_foundation_sys::HANDLE, hrgna: ::win32_foundation_sys::HANDLE, hrgnb: ::win32_foundation_sys::HANDLE) -> i32>;
+pub type PFN_EngSubtractRgn = ::core::option::Option<unsafe extern "system" fn(hrgnresult: ::win32_foundation_sys::HANDLE, hrgna: ::win32_foundation_sys::HANDLE, hrgnb: ::win32_foundation_sys::HANDLE) -> i32>;
+pub type PFN_EngUnionRgn = ::core::option::Option<unsafe extern "system" fn(hrgnresult: ::win32_foundation_sys::HANDLE, hrgna: ::win32_foundation_sys::HANDLE, hrgnb: ::win32_foundation_sys::HANDLE) -> i32>;
+pub type PFN_EngXorRgn = ::core::option::Option<unsafe extern "system" fn(hrgnresult: ::win32_foundation_sys::HANDLE, hrgna: ::win32_foundation_sys::HANDLE, hrgnb: ::win32_foundation_sys::HANDLE) -> i32>;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PHYSICAL_MONITOR {
-    pub hPhysicalMonitor: super::super::Foundation::HANDLE,
+    pub hPhysicalMonitor: ::win32_foundation_sys::HANDLE,
     pub szPhysicalMonitorDescription: [u16; 128],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PHYSICAL_MONITOR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PHYSICAL_MONITOR {
     fn clone(&self) -> Self {
         *self
@@ -3779,18 +3493,15 @@ pub const SS_FREE: u32 = 2u32;
 pub const SS_RESTORE: u32 = 1u32;
 pub const SS_SAVE: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STROBJ {
     pub cGlyphs: u32,
     pub flAccel: u32,
     pub ulCharInc: u32,
-    pub rclBkGround: super::super::Foundation::RECTL,
+    pub rclBkGround: ::win32_foundation_sys::RECTL,
     pub pgp: *mut GLYPHPOS,
     pub pwszOrg: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STROBJ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STROBJ {
     fn clone(&self) -> Self {
         *self
@@ -3799,13 +3510,12 @@ impl ::core::clone::Clone for STROBJ {
 pub const STYPE_BITMAP: i32 = 0i32;
 pub const STYPE_DEVBITMAP: i32 = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SURFOBJ {
     pub dhsurf: DHSURF,
     pub hsurf: HSURF,
     pub dhpdev: DHPDEV,
     pub hdev: HDEV,
-    pub sizlBitmap: super::super::Foundation::SIZE,
+    pub sizlBitmap: ::win32_foundation_sys::SIZE,
     pub cjBits: u32,
     pub pvBits: *mut ::core::ffi::c_void,
     pub pvScan0: *mut ::core::ffi::c_void,
@@ -3815,9 +3525,7 @@ pub struct SURFOBJ {
     pub iType: u16,
     pub fjBitmap: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SURFOBJ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SURFOBJ {
     fn clone(&self) -> Self {
         *self
@@ -3842,29 +3550,23 @@ pub const TTO_METRICS_ONLY: u32 = 1u32;
 pub const TTO_QUBICS: u32 = 2u32;
 pub const TTO_UNHINTED: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TYPE1_FONT {
-    pub hPFM: super::super::Foundation::HANDLE,
-    pub hPFB: super::super::Foundation::HANDLE,
+    pub hPFM: ::win32_foundation_sys::HANDLE,
+    pub hPFB: ::win32_foundation_sys::HANDLE,
     pub ulIdentifier: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TYPE1_FONT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TYPE1_FONT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VGA_CHAR {
-    pub Char: super::super::Foundation::CHAR,
-    pub Attributes: super::super::Foundation::CHAR,
+    pub Char: ::win32_foundation_sys::CHAR,
+    pub Attributes: ::win32_foundation_sys::CHAR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VGA_CHAR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VGA_CHAR {
     fn clone(&self) -> Self {
         *self
@@ -3931,29 +3633,23 @@ pub const VideoBanked1R1W: VIDEO_BANK_TYPE = 2i32;
 pub const VideoBanked2RW: VIDEO_BANK_TYPE = 3i32;
 pub const NumVideoBankTypes: VIDEO_BANK_TYPE = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VIDEO_BRIGHTNESS_POLICY {
-    pub DefaultToBiosPolicy: super::super::Foundation::BOOLEAN,
+    pub DefaultToBiosPolicy: ::win32_foundation_sys::BOOLEAN,
     pub LevelCount: u8,
     pub Level: [VIDEO_BRIGHTNESS_POLICY_0; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VIDEO_BRIGHTNESS_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VIDEO_BRIGHTNESS_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VIDEO_BRIGHTNESS_POLICY_0 {
     pub BatteryLevel: u8,
     pub Brightness: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VIDEO_BRIGHTNESS_POLICY_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VIDEO_BRIGHTNESS_POLICY_0 {
     fn clone(&self) -> Self {
         *self
@@ -4405,16 +4101,13 @@ impl ::core::clone::Clone for VIDEO_REGISTER_VDM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VIDEO_SHARE_MEMORY {
-    pub ProcessHandle: super::super::Foundation::HANDLE,
+    pub ProcessHandle: ::win32_foundation_sys::HANDLE,
     pub ViewOffset: u32,
     pub ViewSize: u32,
     pub RequestedVirtualAddress: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VIDEO_SHARE_MEMORY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VIDEO_SHARE_MEMORY {
     fn clone(&self) -> Self {
         *self
@@ -4436,50 +4129,41 @@ pub const VIDEO_STATE_NON_STANDARD_VGA: u32 = 1u32;
 pub const VIDEO_STATE_PACKED_CHAIN4_MODE: u32 = 4u32;
 pub const VIDEO_STATE_UNEMULATED_VGA_STATE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VIDEO_VDM {
-    pub ProcessHandle: super::super::Foundation::HANDLE,
+    pub ProcessHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VIDEO_VDM {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VIDEO_VDM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VIDEO_WIN32K_CALLBACKS {
     pub PhysDisp: *mut ::core::ffi::c_void,
     pub Callout: PVIDEO_WIN32K_CALLOUT,
     pub bACPI: u32,
-    pub pPhysDeviceObject: super::super::Foundation::HANDLE,
+    pub pPhysDeviceObject: ::win32_foundation_sys::HANDLE,
     pub DualviewFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VIDEO_WIN32K_CALLBACKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VIDEO_WIN32K_CALLBACKS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VIDEO_WIN32K_CALLBACKS_PARAMS {
     pub CalloutType: VIDEO_WIN32K_CALLBACKS_PARAMS_TYPE,
     pub PhysDisp: *mut ::core::ffi::c_void,
     pub Param: usize,
     pub Status: i32,
-    pub LockUserSession: super::super::Foundation::BOOLEAN,
-    pub IsPostDevice: super::super::Foundation::BOOLEAN,
-    pub SurpriseRemoval: super::super::Foundation::BOOLEAN,
-    pub WaitForQueueReady: super::super::Foundation::BOOLEAN,
+    pub LockUserSession: ::win32_foundation_sys::BOOLEAN,
+    pub IsPostDevice: ::win32_foundation_sys::BOOLEAN,
+    pub SurpriseRemoval: ::win32_foundation_sys::BOOLEAN,
+    pub WaitForQueueReady: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VIDEO_WIN32K_CALLBACKS_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VIDEO_WIN32K_CALLBACKS_PARAMS {
     fn clone(&self) -> Self {
         *self
@@ -4514,22 +4198,18 @@ pub const WINDDI_MAXSETPALETTECOLORINDEX: u32 = 255u32;
 pub const WINDDI_MAXSETPALETTECOLORS: u32 = 256u32;
 pub const WINDDI_MAX_BROADCAST_CONTEXT: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WNDOBJ {
     pub coClient: CLIPOBJ,
     pub pvConsumer: *mut ::core::ffi::c_void,
-    pub rclClient: super::super::Foundation::RECTL,
+    pub rclClient: ::win32_foundation_sys::RECTL,
     pub psoOwner: *mut SURFOBJ,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WNDOBJ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WNDOBJ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 pub type WNDOBJCHANGEPROC = ::core::option::Option<unsafe extern "system" fn(pwo: *mut WNDOBJ, fl: u32)>;
 pub const WNDOBJ_SETUP: u32 = 4354u32;
 pub const WOC_CHANGED: u32 = 16u32;

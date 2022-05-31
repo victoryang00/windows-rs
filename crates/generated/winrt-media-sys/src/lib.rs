@@ -133,14 +133,11 @@ impl ::core::clone::Clone for MediaPlaybackType {
 }
 pub type MediaProcessingTriggerDetails = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct MediaTimeRange {
-    pub Start: super::Foundation::TimeSpan,
-    pub End: super::Foundation::TimeSpan,
+    pub Start: ::winrt_foundation_sys::TimeSpan,
+    pub End: ::winrt_foundation_sys::TimeSpan,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for MediaTimeRange {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for MediaTimeRange {
     fn clone(&self) -> Self {
         *self

@@ -1,25 +1,15 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseGestureInfoHandle(hgestureinfo: HGESTUREINFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseTouchInputHandle(htouchinput: HTOUCHINPUT) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetGestureConfig(hwnd: super::super::super::Foundation::HWND, dwreserved: u32, dwflags: u32, pcids: *const u32, pgestureconfig: *mut GESTURECONFIG, cbsize: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetGestureExtraArgs(hgestureinfo: HGESTUREINFO, cbextraargs: u32, pextraargs: *mut u8) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetGestureInfo(hgestureinfo: HGESTUREINFO, pgestureinfo: *mut GESTUREINFO) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetTouchInputInfo(htouchinput: HTOUCHINPUT, cinputs: u32, pinputs: *mut TOUCHINPUT, cbsize: i32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsTouchWindow(hwnd: super::super::super::Foundation::HWND, pulflags: *mut u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterTouchWindow(hwnd: super::super::super::Foundation::HWND, ulflags: REGISTER_TOUCH_WINDOW_FLAGS) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetGestureConfig(hwnd: super::super::super::Foundation::HWND, dwreserved: u32, cids: u32, pgestureconfig: *const GESTURECONFIG, cbsize: u32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UnregisterTouchWindow(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::BOOL;
+    pub fn CloseGestureInfoHandle(hgestureinfo: HGESTUREINFO) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseTouchInputHandle(htouchinput: HTOUCHINPUT) -> ::win32_foundation_sys::BOOL;
+    pub fn GetGestureConfig(hwnd: ::win32_foundation_sys::HWND, dwreserved: u32, dwflags: u32, pcids: *const u32, pgestureconfig: *mut GESTURECONFIG, cbsize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetGestureExtraArgs(hgestureinfo: HGESTUREINFO, cbextraargs: u32, pextraargs: *mut u8) -> ::win32_foundation_sys::BOOL;
+    pub fn GetGestureInfo(hgestureinfo: HGESTUREINFO, pgestureinfo: *mut GESTUREINFO) -> ::win32_foundation_sys::BOOL;
+    pub fn GetTouchInputInfo(htouchinput: HTOUCHINPUT, cinputs: u32, pinputs: *mut TOUCHINPUT, cbsize: i32) -> ::win32_foundation_sys::BOOL;
+    pub fn IsTouchWindow(hwnd: ::win32_foundation_sys::HWND, pulflags: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn RegisterTouchWindow(hwnd: ::win32_foundation_sys::HWND, ulflags: REGISTER_TOUCH_WINDOW_FLAGS) -> ::win32_foundation_sys::BOOL;
+    pub fn SetGestureConfig(hwnd: ::win32_foundation_sys::HWND, dwreserved: u32, cids: u32, pgestureconfig: *const GESTURECONFIG, cbsize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn UnregisterTouchWindow(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
 }
 #[repr(C)]
 pub struct GESTURECONFIG {
@@ -43,38 +33,32 @@ pub const GID_TWOFINGERTAP: GESTURECONFIG_ID = 6u32;
 pub const GID_PRESSANDTAP: GESTURECONFIG_ID = 7u32;
 pub const GID_ROLLOVER: GESTURECONFIG_ID = 7u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GESTUREINFO {
     pub cbSize: u32,
     pub dwFlags: u32,
     pub dwID: u32,
-    pub hwndTarget: super::super::super::Foundation::HWND,
-    pub ptsLocation: super::super::super::Foundation::POINTS,
+    pub hwndTarget: ::win32_foundation_sys::HWND,
+    pub ptsLocation: ::win32_foundation_sys::POINTS,
     pub dwInstanceID: u32,
     pub dwSequenceID: u32,
     pub ullArguments: u64,
     pub cbExtraArgs: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GESTUREINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GESTUREINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GESTURENOTIFYSTRUCT {
     pub cbSize: u32,
     pub dwFlags: u32,
-    pub hwndTarget: super::super::super::Foundation::HWND,
-    pub ptsLocation: super::super::super::Foundation::POINTS,
+    pub hwndTarget: ::win32_foundation_sys::HWND,
+    pub ptsLocation: ::win32_foundation_sys::POINTS,
     pub dwInstanceID: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GESTURENOTIFYSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GESTURENOTIFYSTRUCT {
     fn clone(&self) -> Self {
         *self
@@ -106,11 +90,10 @@ pub const TOUCHEVENTF_NOCOALESCE: TOUCHEVENTF_FLAGS = 32u32;
 pub const TOUCHEVENTF_PEN: TOUCHEVENTF_FLAGS = 64u32;
 pub const TOUCHEVENTF_PALM: TOUCHEVENTF_FLAGS = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TOUCHINPUT {
     pub x: i32,
     pub y: i32,
-    pub hSource: super::super::super::Foundation::HANDLE,
+    pub hSource: ::win32_foundation_sys::HANDLE,
     pub dwID: u32,
     pub dwFlags: TOUCHEVENTF_FLAGS,
     pub dwMask: TOUCHINPUTMASKF_MASK,
@@ -119,9 +102,7 @@ pub struct TOUCHINPUT {
     pub cxContact: u32,
     pub cyContact: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TOUCHINPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TOUCHINPUT {
     fn clone(&self) -> Self {
         *self

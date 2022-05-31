@@ -2,7 +2,7 @@
 pub struct IDummyHICONIncluder(::windows_core::IUnknown);
 impl IDummyHICONIncluder {
     #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub unsafe fn Dummy<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::UI::WindowsAndMessaging::HICON>, Param1: ::windows_core::IntoParam<'a, super::super::super::Graphics::Gdi::HDC>>(&self, h1: Param0, h2: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn Dummy<'a, Param0: ::windows_core::IntoParam<'a, ::win32_ui::WindowsAndMessaging::HICON>, Param1: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(&self, h1: Param0, h2: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Dummy)(::windows_core::Interface::as_raw(self), h1.into_param().abi(), h2.into_param().abi()).ok()
     }
 }
@@ -51,7 +51,7 @@ unsafe impl ::windows_core::Interface for IDummyHICONIncluder {
 pub struct IDummyHICONIncluder_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub Dummy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, h1: super::super::super::UI::WindowsAndMessaging::HICON, h2: super::super::super::Graphics::Gdi::HDC) -> ::windows_core::HRESULT,
+    pub Dummy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, h1: ::win32_ui::WindowsAndMessaging::HICON, h2: ::win32_graphics::Gdi::HDC) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging")))]
     Dummy: usize,
 }
@@ -59,7 +59,7 @@ pub struct IDummyHICONIncluder_Vtbl {
 pub struct IThumbnailExtractor(::windows_core::IUnknown);
 impl IThumbnailExtractor {
     #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn ExtractThumbnail<'a, Param0: ::windows_core::IntoParam<'a, super::StructuredStorage::IStorage>>(&self, pstg: Param0, ullength: u32, ulheight: u32, puloutputlength: *mut u32, puloutputheight: *mut u32, phoutputbitmap: *mut super::super::super::Graphics::Gdi::HBITMAP) -> ::windows_core::Result<()> {
+    pub unsafe fn ExtractThumbnail<'a, Param0: ::windows_core::IntoParam<'a, super::StructuredStorage::IStorage>>(&self, pstg: Param0, ullength: u32, ulheight: u32, puloutputlength: *mut u32, puloutputheight: *mut u32, phoutputbitmap: *mut ::win32_graphics::Gdi::HBITMAP) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ExtractThumbnail)(::windows_core::Interface::as_raw(self), pstg.into_param().abi(), ::core::mem::transmute(ullength), ::core::mem::transmute(ulheight), ::core::mem::transmute(puloutputlength), ::core::mem::transmute(puloutputheight), ::core::mem::transmute(phoutputbitmap)).ok()
     }
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
@@ -112,7 +112,7 @@ unsafe impl ::windows_core::Interface for IThumbnailExtractor {
 pub struct IThumbnailExtractor_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
-    pub ExtractThumbnail: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstg: ::windows_core::RawPtr, ullength: u32, ulheight: u32, puloutputlength: *mut u32, puloutputheight: *mut u32, phoutputbitmap: *mut super::super::super::Graphics::Gdi::HBITMAP) -> ::windows_core::HRESULT,
+    pub ExtractThumbnail: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstg: ::windows_core::RawPtr, ullength: u32, ulheight: u32, puloutputlength: *mut u32, puloutputheight: *mut u32, phoutputbitmap: *mut ::win32_graphics::Gdi::HBITMAP) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage")))]
     ExtractThumbnail: usize,
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]

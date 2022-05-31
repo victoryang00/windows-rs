@@ -35,14 +35,14 @@ impl ::core::fmt::Debug for GRAPHICS_EFFECT_PROPERTY_MAPPING {
 pub struct IGeometrySource2DInterop(::windows_core::IUnknown);
 impl IGeometrySource2DInterop {
     #[cfg(feature = "Win32_Graphics_Direct2D")]
-    pub unsafe fn GetGeometry(&self) -> ::windows_core::Result<super::super::super::super::Graphics::Direct2D::ID2D1Geometry> {
+    pub unsafe fn GetGeometry(&self) -> ::windows_core::Result<::win32_graphics::Direct2D::ID2D1Geometry> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetGeometry)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::super::Graphics::Direct2D::ID2D1Geometry>(result__)
+        (::windows_core::Interface::vtable(self).GetGeometry)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct2D::ID2D1Geometry>(result__)
     }
     #[cfg(feature = "Win32_Graphics_Direct2D")]
-    pub unsafe fn TryGetGeometryUsingFactory<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Graphics::Direct2D::ID2D1Factory>>(&self, factory: Param0) -> ::windows_core::Result<super::super::super::super::Graphics::Direct2D::ID2D1Geometry> {
+    pub unsafe fn TryGetGeometryUsingFactory<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct2D::ID2D1Factory>>(&self, factory: Param0) -> ::windows_core::Result<::win32_graphics::Direct2D::ID2D1Geometry> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).TryGetGeometryUsingFactory)(::windows_core::Interface::as_raw(self), factory.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::super::Graphics::Direct2D::ID2D1Geometry>(result__)
+        (::windows_core::Interface::vtable(self).TryGetGeometryUsingFactory)(::windows_core::Interface::as_raw(self), factory.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_graphics::Direct2D::ID2D1Geometry>(result__)
     }
 }
 impl ::core::convert::From<IGeometrySource2DInterop> for ::windows_core::IUnknown {
@@ -112,15 +112,14 @@ impl IGraphicsEffectD2D1Interop {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetPropertyCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Foundation")]
-    pub unsafe fn GetProperty(&self, index: u32) -> ::windows_core::Result<super::super::super::super::super::Foundation::IPropertyValue> {
+    pub unsafe fn GetProperty(&self, index: u32) -> ::windows_core::Result<::winrt_foundation::IPropertyValue> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::super::super::Foundation::IPropertyValue>(result__)
+        (::windows_core::Interface::vtable(self).GetProperty)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_foundation::IPropertyValue>(result__)
     }
     #[cfg(feature = "Graphics_Effects")]
-    pub unsafe fn GetSource(&self, index: u32) -> ::windows_core::Result<super::super::super::super::super::Graphics::Effects::IGraphicsEffectSource> {
+    pub unsafe fn GetSource(&self, index: u32) -> ::windows_core::Result<::winrt_graphics::Effects::IGraphicsEffectSource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetSource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::super::super::Graphics::Effects::IGraphicsEffectSource>(result__)
+        (::windows_core::Interface::vtable(self).GetSource)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::winrt_graphics::Effects::IGraphicsEffectSource>(result__)
     }
     pub unsafe fn GetSourceCount(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -174,10 +173,7 @@ pub struct IGraphicsEffectD2D1Interop_Vtbl {
     pub GetEffectId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, id: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub GetNamedPropertyMapping: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::PCWSTR, index: *mut u32, mapping: *mut GRAPHICS_EFFECT_PROPERTY_MAPPING) -> ::windows_core::HRESULT,
     pub GetPropertyCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, value: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetProperty: usize,
     #[cfg(feature = "Graphics_Effects")]
     pub GetSource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, source: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Effects"))]

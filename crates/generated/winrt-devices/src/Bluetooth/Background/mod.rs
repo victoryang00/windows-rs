@@ -50,12 +50,11 @@ impl BluetoothLEAdvertisementPublisherTriggerDetails {
             (::windows_core::Interface::vtable(this).Error)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::BluetoothError>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SelectedTransmitPowerLevelInDBm(&self) -> ::windows_core::Result<super::super::super::Foundation::IReference<i16>> {
+    pub fn SelectedTransmitPowerLevelInDBm(&self) -> ::windows_core::Result<::winrt_foundation::IReference<i16>> {
         let this = &::windows_core::Interface::cast::<IBluetoothLEAdvertisementPublisherTriggerDetails2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectedTransmitPowerLevelInDBm)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IReference<i16>>(result__)
+            (::windows_core::Interface::vtable(this).SelectedTransmitPowerLevelInDBm)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<i16>>(result__)
         }
     }
 }
@@ -142,11 +141,11 @@ impl BluetoothLEAdvertisementWatcherTriggerDetails {
         }
     }
     #[cfg(all(feature = "Devices_Bluetooth_Advertisement", feature = "Foundation_Collections"))]
-    pub fn Advertisements(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<super::Advertisement::BluetoothLEAdvertisementReceivedEventArgs>> {
+    pub fn Advertisements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::Advertisement::BluetoothLEAdvertisementReceivedEventArgs>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Advertisements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<super::Advertisement::BluetoothLEAdvertisementReceivedEventArgs>>(result__)
+            (::windows_core::Interface::vtable(this).Advertisements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::Advertisement::BluetoothLEAdvertisementReceivedEventArgs>>(result__)
         }
     }
     pub fn SignalStrengthFilter(&self) -> ::windows_core::Result<super::BluetoothSignalStrengthFilter> {
@@ -241,11 +240,11 @@ impl GattCharacteristicNotificationTriggerDetails {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Value(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn Value(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn Error(&self) -> ::windows_core::Result<super::BluetoothError> {
@@ -263,11 +262,11 @@ impl GattCharacteristicNotificationTriggerDetails {
         }
     }
     #[cfg(all(feature = "Devices_Bluetooth_GenericAttributeProfile", feature = "Foundation_Collections"))]
-    pub fn ValueChangedEvents(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<super::GenericAttributeProfile::GattValueChangedEventArgs>> {
+    pub fn ValueChangedEvents(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<super::GenericAttributeProfile::GattValueChangedEventArgs>> {
         let this = &::windows_core::Interface::cast::<IGattCharacteristicNotificationTriggerDetails2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ValueChangedEvents)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<super::GenericAttributeProfile::GattValueChangedEventArgs>>(result__)
+            (::windows_core::Interface::vtable(this).ValueChangedEvents)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<super::GenericAttributeProfile::GattValueChangedEventArgs>>(result__)
         }
     }
 }
@@ -366,10 +365,10 @@ impl GattServiceProviderConnection {
         unsafe { (::windows_core::Interface::vtable(this).Start)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AllServices() -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, GattServiceProviderConnection>> {
+    pub fn AllServices() -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, GattServiceProviderConnection>> {
         Self::IGattServiceProviderConnectionStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AllServices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, GattServiceProviderConnection>>(result__)
+            (::windows_core::Interface::vtable(this).AllServices)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, GattServiceProviderConnection>>(result__)
         })
     }
     pub fn IGattServiceProviderConnectionStatics<R, F: FnOnce(&IGattServiceProviderConnectionStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -560,10 +559,7 @@ unsafe impl ::windows_core::Interface for IBluetoothLEAdvertisementPublisherTrig
 #[doc(hidden)]
 pub struct IBluetoothLEAdvertisementPublisherTriggerDetails2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub SelectedTransmitPowerLevelInDBm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SelectedTransmitPowerLevelInDBm: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -740,11 +736,11 @@ pub struct IRfcommOutboundConnectionInformation_Vtbl {
 pub struct RfcommConnectionTriggerDetails(::windows_core::IUnknown);
 impl RfcommConnectionTriggerDetails {
     #[cfg(feature = "Networking_Sockets")]
-    pub fn Socket(&self) -> ::windows_core::Result<super::super::super::Networking::Sockets::StreamSocket> {
+    pub fn Socket(&self) -> ::windows_core::Result<::winrt_networking::Sockets::StreamSocket> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Socket)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Networking::Sockets::StreamSocket>(result__)
+            (::windows_core::Interface::vtable(this).Socket)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_networking::Sockets::StreamSocket>(result__)
         }
     }
     pub fn Incoming(&self) -> ::windows_core::Result<bool> {
@@ -838,15 +834,15 @@ unsafe impl ::core::marker::Sync for RfcommConnectionTriggerDetails {}
 pub struct RfcommInboundConnectionInformation(::windows_core::IUnknown);
 impl RfcommInboundConnectionInformation {
     #[cfg(feature = "Storage_Streams")]
-    pub fn SdpRecord(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn SdpRecord(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SdpRecord)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).SdpRecord)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetSdpRecord<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSdpRecord<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSdpRecord)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }

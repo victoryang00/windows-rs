@@ -84,13 +84,10 @@ impl ::core::clone::Clone for PWM_PIN_GET_POLARITY_OUTPUT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PWM_PIN_IS_STARTED_OUTPUT {
-    pub IsStarted: super::super::Foundation::BOOLEAN,
+    pub IsStarted: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PWM_PIN_IS_STARTED_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PWM_PIN_IS_STARTED_OUTPUT {
     fn clone(&self) -> Self {
         *self

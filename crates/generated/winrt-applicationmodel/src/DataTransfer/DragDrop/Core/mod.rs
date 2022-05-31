@@ -1,16 +1,14 @@
 #[repr(transparent)]
 pub struct CoreDragDropManager(::windows_core::IUnknown);
 impl CoreDragDropManager {
-    #[cfg(feature = "Foundation")]
-    pub fn TargetRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<CoreDragDropManager, CoreDropOperationTargetRequestedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn TargetRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<CoreDragDropManager, CoreDropOperationTargetRequestedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TargetRequested)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TargetRequested)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTargetRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTargetRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTargetRequested)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -125,12 +123,11 @@ impl CoreDragInfo {
             (::windows_core::Interface::vtable(this).Modifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::DragDropModifiers>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     pub fn AllowedOperations(&self) -> ::windows_core::Result<super::super::DataPackageOperation> {
@@ -235,12 +232,12 @@ impl CoreDragOperation {
         unsafe { (::windows_core::Interface::vtable(this).SetPointerId)(::windows_core::Interface::as_raw(this), pointerid).ok() }
     }
     #[cfg(feature = "Graphics_Imaging")]
-    pub fn SetDragUIContentFromSoftwareBitmap<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Graphics::Imaging::SoftwareBitmap>>(&self, softwarebitmap: Param0) -> ::windows_core::Result<()> {
+    pub fn SetDragUIContentFromSoftwareBitmap<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Imaging::SoftwareBitmap>>(&self, softwarebitmap: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDragUIContentFromSoftwareBitmap)(::windows_core::Interface::as_raw(this), softwarebitmap.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "Graphics_Imaging"))]
-    pub fn SetDragUIContentFromSoftwareBitmapWithAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Graphics::Imaging::SoftwareBitmap>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, softwarebitmap: Param0, anchorpoint: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Graphics_Imaging")]
+    pub fn SetDragUIContentFromSoftwareBitmapWithAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Imaging::SoftwareBitmap>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, softwarebitmap: Param0, anchorpoint: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDragUIContentFromSoftwareBitmapWithAnchorPoint)(::windows_core::Interface::as_raw(this), softwarebitmap.into_param().abi(), anchorpoint.into_param().abi()).ok() }
     }
@@ -255,12 +252,11 @@ impl CoreDragOperation {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDragUIContentMode)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StartAsync(&self) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::DataPackageOperation>> {
+    pub fn StartAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::DataPackageOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StartAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::DataPackageOperation>>(result__)
+            (::windows_core::Interface::vtable(this).StartAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::DataPackageOperation>>(result__)
         }
     }
     pub fn AllowedOperations(&self) -> ::windows_core::Result<super::super::DataPackageOperation> {
@@ -412,12 +408,12 @@ unsafe impl ::windows_core::RuntimeType for CoreDragUIContentMode {
 pub struct CoreDragUIOverride(::windows_core::IUnknown);
 impl CoreDragUIOverride {
     #[cfg(feature = "Graphics_Imaging")]
-    pub fn SetContentFromSoftwareBitmap<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Graphics::Imaging::SoftwareBitmap>>(&self, softwarebitmap: Param0) -> ::windows_core::Result<()> {
+    pub fn SetContentFromSoftwareBitmap<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Imaging::SoftwareBitmap>>(&self, softwarebitmap: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetContentFromSoftwareBitmap)(::windows_core::Interface::as_raw(this), softwarebitmap.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "Graphics_Imaging"))]
-    pub fn SetContentFromSoftwareBitmapWithAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Graphics::Imaging::SoftwareBitmap>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, softwarebitmap: Param0, anchorpoint: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Graphics_Imaging")]
+    pub fn SetContentFromSoftwareBitmapWithAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_graphics::Imaging::SoftwareBitmap>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, softwarebitmap: Param0, anchorpoint: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetContentFromSoftwareBitmapWithAnchorPoint)(::windows_core::Interface::as_raw(this), softwarebitmap.into_param().abi(), anchorpoint.into_param().abi()).ok() }
     }
@@ -633,14 +629,8 @@ unsafe impl ::windows_core::Interface for ICoreDragDropManager {
 #[doc(hidden)]
 pub struct ICoreDragDropManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub TargetRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TargetRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTargetRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTargetRequested: usize,
+    pub TargetRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTargetRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub AreConcurrentOperationsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetAreConcurrentOperationsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
 }
@@ -670,10 +660,7 @@ pub struct ICoreDragInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Data: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Modifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::DragDropModifiers) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -705,16 +692,13 @@ pub struct ICoreDragOperation_Vtbl {
     pub SetDragUIContentFromSoftwareBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, softwarebitmap: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Imaging"))]
     SetDragUIContentFromSoftwareBitmap: usize,
-    #[cfg(all(feature = "Foundation", feature = "Graphics_Imaging"))]
-    pub SetDragUIContentFromSoftwareBitmapWithAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, softwarebitmap: ::windows_core::RawPtr, anchorpoint: super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics_Imaging")))]
+    #[cfg(feature = "Graphics_Imaging")]
+    pub SetDragUIContentFromSoftwareBitmapWithAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, softwarebitmap: ::windows_core::RawPtr, anchorpoint: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Graphics_Imaging"))]
     SetDragUIContentFromSoftwareBitmapWithAnchorPoint: usize,
     pub DragUIContentMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut CoreDragUIContentMode) -> ::windows_core::HRESULT,
     pub SetDragUIContentMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: CoreDragUIContentMode) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub StartAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StartAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -745,9 +729,9 @@ pub struct ICoreDragUIOverride_Vtbl {
     pub SetContentFromSoftwareBitmap: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, softwarebitmap: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Graphics_Imaging"))]
     SetContentFromSoftwareBitmap: usize,
-    #[cfg(all(feature = "Foundation", feature = "Graphics_Imaging"))]
-    pub SetContentFromSoftwareBitmapWithAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, softwarebitmap: ::windows_core::RawPtr, anchorpoint: super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Graphics_Imaging")))]
+    #[cfg(feature = "Graphics_Imaging")]
+    pub SetContentFromSoftwareBitmapWithAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, softwarebitmap: ::windows_core::RawPtr, anchorpoint: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Graphics_Imaging"))]
     SetContentFromSoftwareBitmapWithAnchorPoint: usize,
     pub IsContentVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsContentVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
@@ -762,36 +746,32 @@ pub struct ICoreDragUIOverride_Vtbl {
 #[repr(transparent)]
 pub struct ICoreDropOperationTarget(::windows_core::IUnknown);
 impl ICoreDropOperationTarget {
-    #[cfg(feature = "Foundation")]
-    pub fn EnterAsync<'a, Param0: ::windows_core::IntoParam<'a, CoreDragInfo>, Param1: ::windows_core::IntoParam<'a, CoreDragUIOverride>>(&self, draginfo: Param0, draguioverride: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::DataPackageOperation>> {
+    pub fn EnterAsync<'a, Param0: ::windows_core::IntoParam<'a, CoreDragInfo>, Param1: ::windows_core::IntoParam<'a, CoreDragUIOverride>>(&self, draginfo: Param0, draguioverride: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::DataPackageOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EnterAsync)(::windows_core::Interface::as_raw(this), draginfo.into_param().abi(), draguioverride.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::DataPackageOperation>>(result__)
+            (::windows_core::Interface::vtable(this).EnterAsync)(::windows_core::Interface::as_raw(this), draginfo.into_param().abi(), draguioverride.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::DataPackageOperation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OverAsync<'a, Param0: ::windows_core::IntoParam<'a, CoreDragInfo>, Param1: ::windows_core::IntoParam<'a, CoreDragUIOverride>>(&self, draginfo: Param0, draguioverride: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::DataPackageOperation>> {
+    pub fn OverAsync<'a, Param0: ::windows_core::IntoParam<'a, CoreDragInfo>, Param1: ::windows_core::IntoParam<'a, CoreDragUIOverride>>(&self, draginfo: Param0, draguioverride: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::DataPackageOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OverAsync)(::windows_core::Interface::as_raw(this), draginfo.into_param().abi(), draguioverride.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::DataPackageOperation>>(result__)
+            (::windows_core::Interface::vtable(this).OverAsync)(::windows_core::Interface::as_raw(this), draginfo.into_param().abi(), draguioverride.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::DataPackageOperation>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LeaveAsync<'a, Param0: ::windows_core::IntoParam<'a, CoreDragInfo>>(&self, draginfo: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncAction> {
+    pub fn LeaveAsync<'a, Param0: ::windows_core::IntoParam<'a, CoreDragInfo>>(&self, draginfo: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LeaveAsync)(::windows_core::Interface::as_raw(this), draginfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).LeaveAsync)(::windows_core::Interface::as_raw(this), draginfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DropAsync<'a, Param0: ::windows_core::IntoParam<'a, CoreDragInfo>>(&self, draginfo: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<super::super::DataPackageOperation>> {
+    pub fn DropAsync<'a, Param0: ::windows_core::IntoParam<'a, CoreDragInfo>>(&self, draginfo: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::super::DataPackageOperation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DropAsync)(::windows_core::Interface::as_raw(this), draginfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<super::super::DataPackageOperation>>(result__)
+            (::windows_core::Interface::vtable(this).DropAsync)(::windows_core::Interface::as_raw(this), draginfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::super::DataPackageOperation>>(result__)
         }
     }
 }
@@ -866,22 +846,10 @@ unsafe impl ::windows_core::Interface for ICoreDropOperationTarget {
 #[doc(hidden)]
 pub struct ICoreDropOperationTarget_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub EnterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, draginfo: ::windows_core::RawPtr, draguioverride: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EnterAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub OverAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, draginfo: ::windows_core::RawPtr, draguioverride: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OverAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LeaveAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, draginfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LeaveAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub DropAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, draginfo: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DropAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]

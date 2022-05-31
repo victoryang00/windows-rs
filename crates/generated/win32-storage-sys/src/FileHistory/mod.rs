@@ -1,19 +1,19 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceBlockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn FhServiceBlockBackup(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceClosePipe(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FhServiceOpenPipe(startserviceifstopped: super::super::Foundation::BOOL, pipe: *mut super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn FhServiceClosePipe(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceReloadConfiguration(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FhServiceStartBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, lowpriorityio: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FhServiceStopBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, stoptracking: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn FhServiceOpenPipe(startserviceifstopped: ::win32_foundation_sys::BOOL, pipe: *mut ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceUnblockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn FhServiceReloadConfiguration(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    pub fn FhServiceStartBackup(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, lowpriorityio: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    pub fn FhServiceStopBackup(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, stoptracking: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    pub fn FhServiceUnblockBackup(pipe: ::win32_system_sys::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
 }
 pub const FHCFG_E_CONFIGURATION_PREVIOUSLY_LOADED: ::windows_core_sys::HRESULT = -2147220731i32;
 pub const FHCFG_E_CONFIG_ALREADY_EXISTS: ::windows_core_sys::HRESULT = -2147220734i32;

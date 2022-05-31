@@ -1510,41 +1510,33 @@ impl ::core::default::Default for DEVICE_EVENT_RBC_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEV_BROADCAST_DEVICEINTERFACE_A {
     pub dbcc_size: u32,
     pub dbcc_devicetype: u32,
     pub dbcc_reserved: u32,
     pub dbcc_classguid: ::windows_core::GUID,
-    pub dbcc_name: [super::super::Foundation::CHAR; 1],
+    pub dbcc_name: [::win32_foundation::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEV_BROADCAST_DEVICEINTERFACE_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEV_BROADCAST_DEVICEINTERFACE_A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DEV_BROADCAST_DEVICEINTERFACE_A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DEV_BROADCAST_DEVICEINTERFACE_A").field("dbcc_size", &self.dbcc_size).field("dbcc_devicetype", &self.dbcc_devicetype).field("dbcc_reserved", &self.dbcc_reserved).field("dbcc_classguid", &self.dbcc_classguid).field("dbcc_name", &self.dbcc_name).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DEV_BROADCAST_DEVICEINTERFACE_A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEV_BROADCAST_DEVICEINTERFACE_A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEV_BROADCAST_DEVICEINTERFACE_A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DEV_BROADCAST_DEVICEINTERFACE_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DEV_BROADCAST_DEVICEINTERFACE_A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1616,44 +1608,36 @@ impl ::core::default::Default for DEV_BROADCAST_DEVNODE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEV_BROADCAST_HANDLE {
     pub dbch_size: u32,
     pub dbch_devicetype: u32,
     pub dbch_reserved: u32,
-    pub dbch_handle: super::super::Foundation::HANDLE,
+    pub dbch_handle: ::win32_foundation::HANDLE,
     pub dbch_hdevnotify: *mut ::core::ffi::c_void,
     pub dbch_eventguid: ::windows_core::GUID,
     pub dbch_nameoffset: i32,
     pub dbch_data: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEV_BROADCAST_HANDLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEV_BROADCAST_HANDLE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DEV_BROADCAST_HANDLE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DEV_BROADCAST_HANDLE").field("dbch_size", &self.dbch_size).field("dbch_devicetype", &self.dbch_devicetype).field("dbch_reserved", &self.dbch_reserved).field("dbch_handle", &self.dbch_handle).field("dbch_hdevnotify", &self.dbch_hdevnotify).field("dbch_eventguid", &self.dbch_eventguid).field("dbch_nameoffset", &self.dbch_nameoffset).field("dbch_data", &self.dbch_data).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DEV_BROADCAST_HANDLE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEV_BROADCAST_HANDLE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEV_BROADCAST_HANDLE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DEV_BROADCAST_HANDLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DEV_BROADCAST_HANDLE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1856,40 +1840,32 @@ impl ::core::default::Default for DEV_BROADCAST_OEM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEV_BROADCAST_PORT_A {
     pub dbcp_size: u32,
     pub dbcp_devicetype: u32,
     pub dbcp_reserved: u32,
-    pub dbcp_name: [super::super::Foundation::CHAR; 1],
+    pub dbcp_name: [::win32_foundation::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEV_BROADCAST_PORT_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEV_BROADCAST_PORT_A {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DEV_BROADCAST_PORT_A {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DEV_BROADCAST_PORT_A").field("dbcp_size", &self.dbcp_size).field("dbcp_devicetype", &self.dbcp_devicetype).field("dbcp_reserved", &self.dbcp_reserved).field("dbcp_name", &self.dbcp_name).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DEV_BROADCAST_PORT_A {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DEV_BROADCAST_PORT_A {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DEV_BROADCAST_PORT_A>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DEV_BROADCAST_PORT_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DEV_BROADCAST_PORT_A {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3846,41 +3822,33 @@ pub const IMAGE_COMDAT_SELECT_NEWEST: u32 = 7u32;
 pub const IMAGE_COMDAT_SELECT_NODUPLICATES: u32 = 1u32;
 pub const IMAGE_COMDAT_SELECT_SAME_SIZE: u32 = 3u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGE_DEBUG_MISC {
     pub DataType: u32,
     pub Length: u32,
-    pub Unicode: super::super::Foundation::BOOLEAN,
+    pub Unicode: ::win32_foundation::BOOLEAN,
     pub Reserved: [u8; 3],
     pub Data: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGE_DEBUG_MISC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGE_DEBUG_MISC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for IMAGE_DEBUG_MISC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IMAGE_DEBUG_MISC").field("DataType", &self.DataType).field("Length", &self.Length).field("Unicode", &self.Unicode).field("Reserved", &self.Reserved).field("Data", &self.Data).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for IMAGE_DEBUG_MISC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IMAGE_DEBUG_MISC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IMAGE_DEBUG_MISC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for IMAGE_DEBUG_MISC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for IMAGE_DEBUG_MISC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4308,38 +4276,30 @@ pub const IMAGE_HOT_PATCH_NONE: u32 = 0u32;
 pub const IMAGE_HOT_PATCH_NO_CALL_TARGET: u32 = 409600u32;
 pub const IMAGE_HOT_PATCH_REL32: u32 = 245760u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGE_IMPORT_BY_NAME {
     pub Hint: u16,
-    pub Name: [super::super::Foundation::CHAR; 1],
+    pub Name: [::win32_foundation::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGE_IMPORT_BY_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGE_IMPORT_BY_NAME {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for IMAGE_IMPORT_BY_NAME {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IMAGE_IMPORT_BY_NAME").field("Hint", &self.Hint).field("Name", &self.Name).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for IMAGE_IMPORT_BY_NAME {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IMAGE_IMPORT_BY_NAME {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IMAGE_IMPORT_BY_NAME>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for IMAGE_IMPORT_BY_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for IMAGE_IMPORT_BY_NAME {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4502,11 +4462,10 @@ pub const IMAGE_ORDINAL_FLAG: u64 = 9223372036854775808u64;
 pub const IMAGE_ORDINAL_FLAG32: u32 = 2147483648u32;
 pub const IMAGE_ORDINAL_FLAG64: u64 = 9223372036854775808u64;
 #[repr(C, packed(2))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGE_OS2_HEADER {
     pub ne_magic: u16,
-    pub ne_ver: super::super::Foundation::CHAR,
-    pub ne_rev: super::super::Foundation::CHAR,
+    pub ne_ver: ::win32_foundation::CHAR,
+    pub ne_rev: ::win32_foundation::CHAR,
     pub ne_enttab: u16,
     pub ne_cbenttab: u16,
     pub ne_crc: i32,
@@ -4535,27 +4494,21 @@ pub struct IMAGE_OS2_HEADER {
     pub ne_swaparea: u16,
     pub ne_expver: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGE_OS2_HEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGE_OS2_HEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for IMAGE_OS2_HEADER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IMAGE_OS2_HEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IMAGE_OS2_HEADER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for IMAGE_OS2_HEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for IMAGE_OS2_HEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4564,43 +4517,35 @@ impl ::core::default::Default for IMAGE_OS2_HEADER {
 pub const IMAGE_OS2_SIGNATURE: u16 = 17742u16;
 pub const IMAGE_OS2_SIGNATURE_LE: u16 = 17740u16;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGE_POLICY_ENTRY {
     pub Type: IMAGE_POLICY_ENTRY_TYPE,
     pub PolicyId: IMAGE_POLICY_ID,
     pub u: IMAGE_POLICY_ENTRY_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGE_POLICY_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGE_POLICY_ENTRY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for IMAGE_POLICY_ENTRY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IMAGE_POLICY_ENTRY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IMAGE_POLICY_ENTRY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for IMAGE_POLICY_ENTRY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for IMAGE_POLICY_ENTRY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union IMAGE_POLICY_ENTRY_0 {
     pub None: *const ::core::ffi::c_void,
-    pub BoolValue: super::super::Foundation::BOOLEAN,
+    pub BoolValue: ::win32_foundation::BOOLEAN,
     pub Int8Value: i8,
     pub UInt8Value: u8,
     pub Int16Value: i16,
@@ -4612,27 +4557,21 @@ pub union IMAGE_POLICY_ENTRY_0 {
     pub AnsiStringValue: ::windows_core::PCSTR,
     pub UnicodeStringValue: ::windows_core::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGE_POLICY_ENTRY_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGE_POLICY_ENTRY_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for IMAGE_POLICY_ENTRY_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IMAGE_POLICY_ENTRY_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IMAGE_POLICY_ENTRY_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for IMAGE_POLICY_ENTRY_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for IMAGE_POLICY_ENTRY_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4710,34 +4649,27 @@ impl ::core::fmt::Debug for IMAGE_POLICY_ID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGE_POLICY_METADATA {
     pub Version: u8,
     pub Reserved0: [u8; 7],
     pub ApplicationId: u64,
     pub Policies: [IMAGE_POLICY_ENTRY; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGE_POLICY_METADATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGE_POLICY_METADATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for IMAGE_POLICY_METADATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IMAGE_POLICY_METADATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IMAGE_POLICY_METADATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for IMAGE_POLICY_METADATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for IMAGE_POLICY_METADATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5287,38 +5219,30 @@ impl ::core::default::Default for IMAGE_RESOURCE_DIRECTORY_ENTRY_1_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IMAGE_RESOURCE_DIRECTORY_STRING {
     pub Length: u16,
-    pub NameString: [super::super::Foundation::CHAR; 1],
+    pub NameString: [::win32_foundation::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IMAGE_RESOURCE_DIRECTORY_STRING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IMAGE_RESOURCE_DIRECTORY_STRING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for IMAGE_RESOURCE_DIRECTORY_STRING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("IMAGE_RESOURCE_DIRECTORY_STRING").field("Length", &self.Length).field("NameString", &self.NameString).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for IMAGE_RESOURCE_DIRECTORY_STRING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for IMAGE_RESOURCE_DIRECTORY_STRING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<IMAGE_RESOURCE_DIRECTORY_STRING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for IMAGE_RESOURCE_DIRECTORY_STRING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for IMAGE_RESOURCE_DIRECTORY_STRING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6010,125 +5934,66 @@ pub const INITIAL_CPSR: u32 = 16u32;
 pub const INITIAL_FPCSR: u32 = 639u32;
 pub const INITIAL_FPSCR: u32 = 0u32;
 pub const INITIAL_MXCSR: u32 = 8064u32;
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_BAD_BLOCK_WITH_NAME: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479649i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_CDROM_EXCLUSIVE_LOCK: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074004101i32);
+pub const IO_BAD_BLOCK_WITH_NAME: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479649i32);
+pub const IO_CDROM_EXCLUSIVE_LOCK: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074004101i32);
 pub const IO_COMPLETION_MODIFY_STATE: u32 = 2u32;
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_DRIVER_CANCEL_TIMEOUT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221450i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_DUMP_CALLBACK_EXCEPTION: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479517i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_DUMP_CREATION_SUCCESS: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(262306i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_DUMP_DIRECT_CONFIG_FAILED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479632i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_DUMP_DRIVER_LOAD_FAILURE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479635i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_DUMP_DUMPFILE_CONFLICT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479633i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_DUMP_INITIALIZATION_FAILURE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479634i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_DUMP_PAGE_CONFIG_FAILED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479631i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_DUMP_POINTER_FAILURE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479636i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERROR_DISK_RESOURCES_EXHAUSTED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479530i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERROR_DUMP_CREATION_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479519i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERROR_IO_HARDWARE_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479526i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_BAD_BLOCK: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479673i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_BAD_FIRMWARE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479655i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_CONFIGURATION_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479677i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_CONTROLLER_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479669i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_DMA_CONFLICT_DETECTED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479657i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_DMA_RESOURCE_CONFLICT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479653i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_DRIVER_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479676i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_INCORRECT_IRQL: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479667i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_INSUFFICIENT_RESOURCES: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479678i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_INTERNAL_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479668i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_INTERRUPT_RESOURCE_CONFLICT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479652i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_INVALID_IOBASE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479666i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_INVALID_REQUEST: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479664i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_IRQ_CONFLICT_DETECTED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479656i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_LAYERED_FAILURE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479662i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_MEMORY_CONFLICT_DETECTED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479659i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_MEMORY_RESOURCE_CONFLICT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479651i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_NOT_READY: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479665i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_OVERRUN_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479672i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_PARITY: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479675i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_PORT_CONFLICT_DETECTED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479658i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_PORT_RESOURCE_CONFLICT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479650i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_PORT_TIMEOUT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479563i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_PROTOCOL: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479660i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_RESET: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479661i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_RETRY_SUCCEEDED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(262145i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_SEEK_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479674i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_SEQUENCE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479670i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_THREAD_STUCK_IN_DEVICE_DRIVER: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479572i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_TIMEOUT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479671i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_ERR_VERSION: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479663i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_FILE_QUOTA_CORRUPT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479638i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_FILE_QUOTA_FAILED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221464i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_FILE_QUOTA_LIMIT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074004005i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_FILE_QUOTA_STARTED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074004006i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_FILE_QUOTA_SUCCEEDED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074004007i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_FILE_QUOTA_THRESHOLD: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074004004i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_FILE_SYSTEM_CORRUPT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479639i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_FILE_SYSTEM_CORRUPT_WITH_NAME: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479625i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_INFO_THROTTLE_COMPLETE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074004087i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_LOST_DELAYED_WRITE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221454i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_LOST_DELAYED_WRITE_NETWORK_DISCONNECTED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221365i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_LOST_DELAYED_WRITE_NETWORK_LOCAL_DISK_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221363i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_LOST_DELAYED_WRITE_NETWORK_SERVER_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221364i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_RECOVERED_VIA_ECC: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221471i32);
+pub const IO_DRIVER_CANCEL_TIMEOUT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221450i32);
+pub const IO_DUMP_CALLBACK_EXCEPTION: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479517i32);
+pub const IO_DUMP_CREATION_SUCCESS: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(262306i32);
+pub const IO_DUMP_DIRECT_CONFIG_FAILED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479632i32);
+pub const IO_DUMP_DRIVER_LOAD_FAILURE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479635i32);
+pub const IO_DUMP_DUMPFILE_CONFLICT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479633i32);
+pub const IO_DUMP_INITIALIZATION_FAILURE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479634i32);
+pub const IO_DUMP_PAGE_CONFIG_FAILED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479631i32);
+pub const IO_DUMP_POINTER_FAILURE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479636i32);
+pub const IO_ERROR_DISK_RESOURCES_EXHAUSTED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479530i32);
+pub const IO_ERROR_DUMP_CREATION_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479519i32);
+pub const IO_ERROR_IO_HARDWARE_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479526i32);
+pub const IO_ERR_BAD_BLOCK: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479673i32);
+pub const IO_ERR_BAD_FIRMWARE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479655i32);
+pub const IO_ERR_CONFIGURATION_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479677i32);
+pub const IO_ERR_CONTROLLER_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479669i32);
+pub const IO_ERR_DMA_CONFLICT_DETECTED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479657i32);
+pub const IO_ERR_DMA_RESOURCE_CONFLICT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479653i32);
+pub const IO_ERR_DRIVER_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479676i32);
+pub const IO_ERR_INCORRECT_IRQL: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479667i32);
+pub const IO_ERR_INSUFFICIENT_RESOURCES: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479678i32);
+pub const IO_ERR_INTERNAL_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479668i32);
+pub const IO_ERR_INTERRUPT_RESOURCE_CONFLICT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479652i32);
+pub const IO_ERR_INVALID_IOBASE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479666i32);
+pub const IO_ERR_INVALID_REQUEST: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479664i32);
+pub const IO_ERR_IRQ_CONFLICT_DETECTED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479656i32);
+pub const IO_ERR_LAYERED_FAILURE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479662i32);
+pub const IO_ERR_MEMORY_CONFLICT_DETECTED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479659i32);
+pub const IO_ERR_MEMORY_RESOURCE_CONFLICT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479651i32);
+pub const IO_ERR_NOT_READY: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479665i32);
+pub const IO_ERR_OVERRUN_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479672i32);
+pub const IO_ERR_PARITY: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479675i32);
+pub const IO_ERR_PORT_CONFLICT_DETECTED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479658i32);
+pub const IO_ERR_PORT_RESOURCE_CONFLICT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479650i32);
+pub const IO_ERR_PORT_TIMEOUT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479563i32);
+pub const IO_ERR_PROTOCOL: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479660i32);
+pub const IO_ERR_RESET: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479661i32);
+pub const IO_ERR_RETRY_SUCCEEDED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(262145i32);
+pub const IO_ERR_SEEK_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479674i32);
+pub const IO_ERR_SEQUENCE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479670i32);
+pub const IO_ERR_THREAD_STUCK_IN_DEVICE_DRIVER: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479572i32);
+pub const IO_ERR_TIMEOUT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479671i32);
+pub const IO_ERR_VERSION: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479663i32);
+pub const IO_FILE_QUOTA_CORRUPT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479638i32);
+pub const IO_FILE_QUOTA_FAILED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221464i32);
+pub const IO_FILE_QUOTA_LIMIT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074004005i32);
+pub const IO_FILE_QUOTA_STARTED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074004006i32);
+pub const IO_FILE_QUOTA_SUCCEEDED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074004007i32);
+pub const IO_FILE_QUOTA_THRESHOLD: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074004004i32);
+pub const IO_FILE_SYSTEM_CORRUPT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479639i32);
+pub const IO_FILE_SYSTEM_CORRUPT_WITH_NAME: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479625i32);
+pub const IO_INFO_THROTTLE_COMPLETE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074004087i32);
+pub const IO_LOST_DELAYED_WRITE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221454i32);
+pub const IO_LOST_DELAYED_WRITE_NETWORK_DISCONNECTED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221365i32);
+pub const IO_LOST_DELAYED_WRITE_NETWORK_LOCAL_DISK_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221363i32);
+pub const IO_LOST_DELAYED_WRITE_NETWORK_SERVER_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221364i32);
+pub const IO_RECOVERED_VIA_ECC: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221471i32);
 pub const IO_REPARSE_TAG_AF_UNIX: u32 = 2147483683u32;
 pub const IO_REPARSE_TAG_APPEXECLINK: u32 = 2147483675u32;
 pub const IO_REPARSE_TAG_CLOUD: u32 = 2415919130u32;
@@ -6177,68 +6042,37 @@ pub const IO_REPARSE_TAG_WCI_LINK_1: u32 = 2684358695u32;
 pub const IO_REPARSE_TAG_WCI_TOMBSTONE: u32 = 2684354591u32;
 pub const IO_REPARSE_TAG_WIM: u32 = 2147483656u32;
 pub const IO_REPARSE_TAG_WOF: u32 = 2147483671u32;
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_SYSTEM_SLEEP_FAILED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073479637i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_ADAPTER_FIRMWARE_UPDATED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074004128i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_ALLOCATION_FAILED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221448i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_BUS_RESET: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221386i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_COMPLETION_TIME: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221349i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_DEVICE_HAS_INTERNAL_DUMP: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221361i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_DISK_CAPACITY_CHANGED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221353i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_DISK_FIRMWARE_UPDATED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074004127i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_DISK_PROVISIONING_TYPE_CHANGED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221352i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_DISK_SURPRISE_REMOVED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221347i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_DUMP_DISABLED_DEVICE_GONE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221348i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_DUPLICATE_PATH: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221445i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_DUPLICATE_SIGNATURE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221446i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_INTERRUPT_STILL_PENDING: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221451i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_IO_OPERATION_RETRIED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221351i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_LOG_FLUSH_FAILED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221447i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_PAGING_FAILURE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221453i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_REPEATED_DISK_GUID: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221346i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_RESET: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221375i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_SOFT_THRESHOLD_REACHED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221360i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221359i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX_LUN_LUN: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221358i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX_LUN_POOL: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221357i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX_POOL_LUN: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221356i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX_POOL_POOL: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221355i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_VOLUME_LOST_DISK_EXTENT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221362i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WARNING_WRITE_FUA_PROBLEM: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221372i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WRITE_CACHE_DISABLED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221470i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WRITE_CACHE_ENABLED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221472i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WRN_BAD_FIRMWARE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221478i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const IO_WRN_FAILURE_PREDICTED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147221452i32);
+pub const IO_SYSTEM_SLEEP_FAILED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073479637i32);
+pub const IO_WARNING_ADAPTER_FIRMWARE_UPDATED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074004128i32);
+pub const IO_WARNING_ALLOCATION_FAILED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221448i32);
+pub const IO_WARNING_BUS_RESET: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221386i32);
+pub const IO_WARNING_COMPLETION_TIME: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221349i32);
+pub const IO_WARNING_DEVICE_HAS_INTERNAL_DUMP: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221361i32);
+pub const IO_WARNING_DISK_CAPACITY_CHANGED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221353i32);
+pub const IO_WARNING_DISK_FIRMWARE_UPDATED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074004127i32);
+pub const IO_WARNING_DISK_PROVISIONING_TYPE_CHANGED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221352i32);
+pub const IO_WARNING_DISK_SURPRISE_REMOVED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221347i32);
+pub const IO_WARNING_DUMP_DISABLED_DEVICE_GONE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221348i32);
+pub const IO_WARNING_DUPLICATE_PATH: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221445i32);
+pub const IO_WARNING_DUPLICATE_SIGNATURE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221446i32);
+pub const IO_WARNING_INTERRUPT_STILL_PENDING: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221451i32);
+pub const IO_WARNING_IO_OPERATION_RETRIED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221351i32);
+pub const IO_WARNING_LOG_FLUSH_FAILED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221447i32);
+pub const IO_WARNING_PAGING_FAILURE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221453i32);
+pub const IO_WARNING_REPEATED_DISK_GUID: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221346i32);
+pub const IO_WARNING_RESET: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221375i32);
+pub const IO_WARNING_SOFT_THRESHOLD_REACHED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221360i32);
+pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221359i32);
+pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX_LUN_LUN: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221358i32);
+pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX_LUN_POOL: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221357i32);
+pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX_POOL_LUN: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221356i32);
+pub const IO_WARNING_SOFT_THRESHOLD_REACHED_EX_POOL_POOL: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221355i32);
+pub const IO_WARNING_VOLUME_LOST_DISK_EXTENT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221362i32);
+pub const IO_WARNING_WRITE_FUA_PROBLEM: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221372i32);
+pub const IO_WRITE_CACHE_DISABLED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221470i32);
+pub const IO_WRITE_CACHE_ENABLED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221472i32);
+pub const IO_WRN_BAD_FIRMWARE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221478i32);
+pub const IO_WRN_FAILURE_PREDICTED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147221452i32);
 pub const IS_TEXT_UNICODE_DBCS_LEADBYTE: u32 = 1024u32;
 pub const IS_TEXT_UNICODE_UTF8: u32 = 2048u32;
 pub const JOB_OBJECT_ASSIGN_PROCESS: u32 = 1u32;
@@ -6615,134 +6449,70 @@ pub const MAXWORD: u32 = 65535u32;
 pub const MAX_ACL_REVISION: u32 = 4u32;
 pub const MAX_HW_COUNTERS: u32 = 16u32;
 pub const MAX_UCSCHAR: u32 = 1114111u32;
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_BUS_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414022i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_BUS_TIMEOUT_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414021i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_CACHE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414083i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_CPU: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414030i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_CPU_BUS: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414079i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_MAS: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414075i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_MEM_1_2: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414071i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_MEM_1_2_5: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414069i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_MEM_1_2_5_4: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414067i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_MEM_UNKNOWN: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414073i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_BUS_MASTER_ABORT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414055i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_BUS_MASTER_ABORT_NO_INFO: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414053i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_BUS_PARITY: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414063i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_BUS_PARITY_NO_INFO: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414061i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_BUS_SERR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414059i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_BUS_SERR_NO_INFO: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414057i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_BUS_TIMEOUT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414051i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_BUS_TIMEOUT_NO_INFO: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414049i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_BUS_UNKNOWN: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414047i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PCI_DEVICE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414045i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_PLATFORM_SPECIFIC: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414041i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_REGISTER_FILE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414077i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_SMBIOS: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414043i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_SYSTEM_EVENT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414065i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_TLB: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414081i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_UNKNOWN: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414039i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_ERROR_UNKNOWN_NO_CPU: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414037i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_EXTERNAL_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414017i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_FRC_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414016i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_INFO_CPU_THERMAL_THROTTLING_REMOVED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074069616i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_INFO_MEMORY_PAGE_MARKED_BAD: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074069620i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_INFO_NO_MORE_CORRECTED_ERROR_LOGS: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(1074069619i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_INTERNALTIMER_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414020i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_MEMORYHIERARCHY_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414024i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_MICROCODE_ROM_PARITY_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414018i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_TLB_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-1073414023i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_CACHE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155908i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_CMC_THRESHOLD_EXCEEDED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155859i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_CPE_THRESHOLD_EXCEEDED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155858i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_CPU: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155855i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_CPU_BUS: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155904i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_CPU_THERMAL_THROTTLED: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155857i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_MAS: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155900i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_MEM_1_2: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155896i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_MEM_1_2_5: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155894i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_MEM_1_2_5_4: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155892i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_MEM_UNKNOWN: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155898i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_BUS_MASTER_ABORT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155880i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_BUS_MASTER_ABORT_NO_INFO: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155878i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_BUS_PARITY: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155888i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_BUS_PARITY_NO_INFO: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155886i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_BUS_SERR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155884i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_BUS_SERR_NO_INFO: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155882i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_BUS_TIMEOUT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155876i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_BUS_TIMEOUT_NO_INFO: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155874i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_BUS_UNKNOWN: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155872i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PCI_DEVICE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155870i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_PLATFORM_SPECIFIC: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155866i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_REGISTER_FILE: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155902i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_SMBIOS: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155868i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_SYSTEM_EVENT: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155890i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_TLB: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155906i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_UNKNOWN: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155864i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const MCA_WARNING_UNKNOWN_NO_CPU: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2147155862i32);
+pub const MCA_BUS_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414022i32);
+pub const MCA_BUS_TIMEOUT_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414021i32);
+pub const MCA_ERROR_CACHE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414083i32);
+pub const MCA_ERROR_CPU: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414030i32);
+pub const MCA_ERROR_CPU_BUS: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414079i32);
+pub const MCA_ERROR_MAS: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414075i32);
+pub const MCA_ERROR_MEM_1_2: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414071i32);
+pub const MCA_ERROR_MEM_1_2_5: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414069i32);
+pub const MCA_ERROR_MEM_1_2_5_4: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414067i32);
+pub const MCA_ERROR_MEM_UNKNOWN: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414073i32);
+pub const MCA_ERROR_PCI_BUS_MASTER_ABORT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414055i32);
+pub const MCA_ERROR_PCI_BUS_MASTER_ABORT_NO_INFO: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414053i32);
+pub const MCA_ERROR_PCI_BUS_PARITY: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414063i32);
+pub const MCA_ERROR_PCI_BUS_PARITY_NO_INFO: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414061i32);
+pub const MCA_ERROR_PCI_BUS_SERR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414059i32);
+pub const MCA_ERROR_PCI_BUS_SERR_NO_INFO: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414057i32);
+pub const MCA_ERROR_PCI_BUS_TIMEOUT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414051i32);
+pub const MCA_ERROR_PCI_BUS_TIMEOUT_NO_INFO: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414049i32);
+pub const MCA_ERROR_PCI_BUS_UNKNOWN: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414047i32);
+pub const MCA_ERROR_PCI_DEVICE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414045i32);
+pub const MCA_ERROR_PLATFORM_SPECIFIC: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414041i32);
+pub const MCA_ERROR_REGISTER_FILE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414077i32);
+pub const MCA_ERROR_SMBIOS: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414043i32);
+pub const MCA_ERROR_SYSTEM_EVENT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414065i32);
+pub const MCA_ERROR_TLB: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414081i32);
+pub const MCA_ERROR_UNKNOWN: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414039i32);
+pub const MCA_ERROR_UNKNOWN_NO_CPU: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414037i32);
+pub const MCA_EXTERNAL_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414017i32);
+pub const MCA_FRC_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414016i32);
+pub const MCA_INFO_CPU_THERMAL_THROTTLING_REMOVED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074069616i32);
+pub const MCA_INFO_MEMORY_PAGE_MARKED_BAD: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074069620i32);
+pub const MCA_INFO_NO_MORE_CORRECTED_ERROR_LOGS: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(1074069619i32);
+pub const MCA_INTERNALTIMER_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414020i32);
+pub const MCA_MEMORYHIERARCHY_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414024i32);
+pub const MCA_MICROCODE_ROM_PARITY_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414018i32);
+pub const MCA_TLB_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-1073414023i32);
+pub const MCA_WARNING_CACHE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155908i32);
+pub const MCA_WARNING_CMC_THRESHOLD_EXCEEDED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155859i32);
+pub const MCA_WARNING_CPE_THRESHOLD_EXCEEDED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155858i32);
+pub const MCA_WARNING_CPU: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155855i32);
+pub const MCA_WARNING_CPU_BUS: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155904i32);
+pub const MCA_WARNING_CPU_THERMAL_THROTTLED: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155857i32);
+pub const MCA_WARNING_MAS: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155900i32);
+pub const MCA_WARNING_MEM_1_2: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155896i32);
+pub const MCA_WARNING_MEM_1_2_5: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155894i32);
+pub const MCA_WARNING_MEM_1_2_5_4: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155892i32);
+pub const MCA_WARNING_MEM_UNKNOWN: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155898i32);
+pub const MCA_WARNING_PCI_BUS_MASTER_ABORT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155880i32);
+pub const MCA_WARNING_PCI_BUS_MASTER_ABORT_NO_INFO: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155878i32);
+pub const MCA_WARNING_PCI_BUS_PARITY: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155888i32);
+pub const MCA_WARNING_PCI_BUS_PARITY_NO_INFO: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155886i32);
+pub const MCA_WARNING_PCI_BUS_SERR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155884i32);
+pub const MCA_WARNING_PCI_BUS_SERR_NO_INFO: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155882i32);
+pub const MCA_WARNING_PCI_BUS_TIMEOUT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155876i32);
+pub const MCA_WARNING_PCI_BUS_TIMEOUT_NO_INFO: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155874i32);
+pub const MCA_WARNING_PCI_BUS_UNKNOWN: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155872i32);
+pub const MCA_WARNING_PCI_DEVICE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155870i32);
+pub const MCA_WARNING_PLATFORM_SPECIFIC: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155866i32);
+pub const MCA_WARNING_REGISTER_FILE: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155902i32);
+pub const MCA_WARNING_SMBIOS: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155868i32);
+pub const MCA_WARNING_SYSTEM_EVENT: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155890i32);
+pub const MCA_WARNING_TLB: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155906i32);
+pub const MCA_WARNING_UNKNOWN: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155864i32);
+pub const MCA_WARNING_UNKNOWN_NO_CPU: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2147155862i32);
 pub const MEMORY_ALLOCATION_ALIGNMENT: u32 = 16u32;
 #[repr(C)]
 pub struct MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE {
@@ -7179,7 +6949,7 @@ pub const PERFSTATE_POLICY_CHANGE_INCREASE_MAX: u32 = 3u32;
 pub const PERFSTATE_POLICY_CHANGE_ROCKET: u32 = 2u32;
 pub const PERFSTATE_POLICY_CHANGE_SINGLE: u32 = 1u32;
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 pub type PEXCEPTION_FILTER = ::core::option::Option<unsafe extern "system" fn(exceptionpointers: *mut super::Diagnostics::Debug::EXCEPTION_POINTERS, establisherframe: *const ::core::ffi::c_void) -> i32>;
 pub const PF_ALPHA_BYTE_INSTRUCTIONS: u32 = 5u32;
 pub const PF_ARM_NEON_INSTRUCTIONS_AVAILABLE: u32 = 19u32;
@@ -7205,11 +6975,11 @@ pub const PF_TEMPORAL_LEVEL_3: u32 = 3u32;
 pub type PIMAGE_TLS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(dllhandle: *mut ::core::ffi::c_void, reason: u32, reserved: *mut ::core::ffi::c_void)>;
 pub const POLICY_AUDIT_SUBCATEGORY_COUNT: u32 = 59u32;
 #[cfg(target_arch = "aarch64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-pub type POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(process: super::super::Foundation::HANDLE, tableaddress: *const ::core::ffi::c_void, entries: *mut u32, functions: *mut *mut super::Diagnostics::Debug::IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY) -> u32>;
+#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+pub type POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(process: ::win32_foundation::HANDLE, tableaddress: *const ::core::ffi::c_void, entries: *mut u32, functions: *mut *mut super::Diagnostics::Debug::IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY) -> u32>;
 #[cfg(target_arch = "x86_64")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-pub type POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(process: super::super::Foundation::HANDLE, tableaddress: *const ::core::ffi::c_void, entries: *mut u32, functions: *mut *mut super::Diagnostics::Debug::IMAGE_RUNTIME_FUNCTION_ENTRY) -> u32>;
+#[cfg(feature = "Win32_System_Diagnostics_Debug")]
+pub type POUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(process: ::win32_foundation::HANDLE, tableaddress: *const ::core::ffi::c_void, entries: *mut u32, functions: *mut *mut super::Diagnostics::Debug::IMAGE_RUNTIME_FUNCTION_ENTRY) -> u32>;
 pub const POWERBUTTON_ACTION_INDEX_HIBERNATE: u32 = 2u32;
 pub const POWERBUTTON_ACTION_INDEX_NOTHING: u32 = 0u32;
 pub const POWERBUTTON_ACTION_INDEX_SHUTDOWN: u32 = 3u32;
@@ -7272,38 +7042,30 @@ impl ::core::default::Default for POWER_IDLE_RESILIENCY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POWER_MONITOR_INVOCATION {
-    pub Console: super::super::Foundation::BOOLEAN,
+    pub Console: ::win32_foundation::BOOLEAN,
     pub RequestReason: POWER_MONITOR_REQUEST_REASON,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POWER_MONITOR_INVOCATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POWER_MONITOR_INVOCATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for POWER_MONITOR_INVOCATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POWER_MONITOR_INVOCATION").field("Console", &self.Console).field("RequestReason", &self.RequestReason).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for POWER_MONITOR_INVOCATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POWER_MONITOR_INVOCATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POWER_MONITOR_INVOCATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for POWER_MONITOR_INVOCATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for POWER_MONITOR_INVOCATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7413,37 +7175,29 @@ impl ::core::fmt::Debug for POWER_MONITOR_REQUEST_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POWER_PLATFORM_INFORMATION {
-    pub AoAc: super::super::Foundation::BOOLEAN,
+    pub AoAc: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POWER_PLATFORM_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POWER_PLATFORM_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for POWER_PLATFORM_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POWER_PLATFORM_INFORMATION").field("AoAc", &self.AoAc).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for POWER_PLATFORM_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POWER_PLATFORM_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POWER_PLATFORM_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for POWER_PLATFORM_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for POWER_PLATFORM_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7451,113 +7205,89 @@ impl ::core::default::Default for POWER_PLATFORM_INFORMATION {
 }
 pub const POWER_REQUEST_CONTEXT_VERSION: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {
-    pub IsAllowed: super::super::Foundation::BOOLEAN,
+    pub IsAllowed: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES").field("IsAllowed", &self.IsAllowed).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POWER_SESSION_CONNECT {
-    pub Connected: super::super::Foundation::BOOLEAN,
-    pub Console: super::super::Foundation::BOOLEAN,
+    pub Connected: ::win32_foundation::BOOLEAN,
+    pub Console: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POWER_SESSION_CONNECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POWER_SESSION_CONNECT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for POWER_SESSION_CONNECT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POWER_SESSION_CONNECT").field("Connected", &self.Connected).field("Console", &self.Console).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for POWER_SESSION_CONNECT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POWER_SESSION_CONNECT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POWER_SESSION_CONNECT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for POWER_SESSION_CONNECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for POWER_SESSION_CONNECT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POWER_SESSION_RIT_STATE {
-    pub Active: super::super::Foundation::BOOLEAN,
+    pub Active: ::win32_foundation::BOOLEAN,
     pub LastInputTime: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POWER_SESSION_RIT_STATE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POWER_SESSION_RIT_STATE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for POWER_SESSION_RIT_STATE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POWER_SESSION_RIT_STATE").field("Active", &self.Active).field("LastInputTime", &self.LastInputTime).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for POWER_SESSION_RIT_STATE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POWER_SESSION_RIT_STATE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POWER_SESSION_RIT_STATE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for POWER_SESSION_RIT_STATE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for POWER_SESSION_RIT_STATE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -7594,39 +7324,31 @@ impl ::core::default::Default for POWER_SESSION_TIMEOUTS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct POWER_SESSION_WINLOGON {
     pub SessionId: u32,
-    pub Console: super::super::Foundation::BOOLEAN,
-    pub Locked: super::super::Foundation::BOOLEAN,
+    pub Console: ::win32_foundation::BOOLEAN,
+    pub Locked: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for POWER_SESSION_WINLOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for POWER_SESSION_WINLOGON {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for POWER_SESSION_WINLOGON {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("POWER_SESSION_WINLOGON").field("SessionId", &self.SessionId).field("Console", &self.Console).field("Locked", &self.Locked).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for POWER_SESSION_WINLOGON {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for POWER_SESSION_WINLOGON {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<POWER_SESSION_WINLOGON>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for POWER_SESSION_WINLOGON {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for POWER_SESSION_WINLOGON {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9026,101 +8748,79 @@ impl ::core::default::Default for PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY_0
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROCESS_MITIGATION_DEP_POLICY {
     pub Anonymous: PROCESS_MITIGATION_DEP_POLICY_0,
-    pub Permanent: super::super::Foundation::BOOLEAN,
+    pub Permanent: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROCESS_MITIGATION_DEP_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROCESS_MITIGATION_DEP_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PROCESS_MITIGATION_DEP_POLICY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PROCESS_MITIGATION_DEP_POLICY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESS_MITIGATION_DEP_POLICY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PROCESS_MITIGATION_DEP_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PROCESS_MITIGATION_DEP_POLICY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PROCESS_MITIGATION_DEP_POLICY_0 {
     pub Flags: u32,
     pub Anonymous: PROCESS_MITIGATION_DEP_POLICY_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROCESS_MITIGATION_DEP_POLICY_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROCESS_MITIGATION_DEP_POLICY_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PROCESS_MITIGATION_DEP_POLICY_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PROCESS_MITIGATION_DEP_POLICY_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESS_MITIGATION_DEP_POLICY_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PROCESS_MITIGATION_DEP_POLICY_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PROCESS_MITIGATION_DEP_POLICY_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROCESS_MITIGATION_DEP_POLICY_0_0 {
     pub _bitfield: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROCESS_MITIGATION_DEP_POLICY_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROCESS_MITIGATION_DEP_POLICY_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PROCESS_MITIGATION_DEP_POLICY_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PROCESS_MITIGATION_DEP_POLICY_0_0").field("_bitfield", &self._bitfield).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PROCESS_MITIGATION_DEP_POLICY_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PROCESS_MITIGATION_DEP_POLICY_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PROCESS_MITIGATION_DEP_POLICY_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PROCESS_MITIGATION_DEP_POLICY_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PROCESS_MITIGATION_DEP_POLICY_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10065,11 +9765,9 @@ pub const PRODUCT_XBOX_NATIVEOS: u32 = 193u32;
 pub const PRODUCT_XBOX_SCARLETTHOSTOS: u32 = 197u32;
 pub const PRODUCT_XBOX_SYSTEMOS: u32 = 192u32;
 #[cfg(target_arch = "aarch64")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PTERMINATION_HANDLER = ::core::option::Option<unsafe extern "system" fn(_abnormal_termination: super::super::Foundation::BOOLEAN, establisherframe: u64)>;
+pub type PTERMINATION_HANDLER = ::core::option::Option<unsafe extern "system" fn(_abnormal_termination: ::win32_foundation::BOOLEAN, establisherframe: u64)>;
 #[cfg(target_arch = "x86_64")]
-#[cfg(feature = "Win32_Foundation")]
-pub type PTERMINATION_HANDLER = ::core::option::Option<unsafe extern "system" fn(_abnormal_termination: super::super::Foundation::BOOLEAN, establisherframe: *mut ::core::ffi::c_void)>;
+pub type PTERMINATION_HANDLER = ::core::option::Option<unsafe extern "system" fn(_abnormal_termination: ::win32_foundation::BOOLEAN, establisherframe: *mut ::core::ffi::c_void)>;
 pub type PUMS_SCHEDULER_ENTRY_POINT = ::core::option::Option<unsafe extern "system" fn(reason: RTL_UMS_SCHEDULER_REASON, activationpayload: usize, schedulerparam: *const ::core::ffi::c_void)>;
 pub const PcTeb: u32 = 24u32;
 #[repr(C)]
@@ -10169,41 +9867,33 @@ impl ::core::default::Default for RATE_QUOTA_LIMIT_0 {
 pub const READ_THREAD_PROFILING_FLAG_DISPATCHING: u32 = 1u32;
 pub const READ_THREAD_PROFILING_FLAG_HARDWARE_COUNTERS: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct REARRANGE_FILE_DATA {
     pub SourceStartingOffset: u64,
     pub TargetOffset: u64,
-    pub SourceFileHandle: super::super::Foundation::HANDLE,
+    pub SourceFileHandle: ::win32_foundation::HANDLE,
     pub Length: u32,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for REARRANGE_FILE_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for REARRANGE_FILE_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for REARRANGE_FILE_DATA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("REARRANGE_FILE_DATA").field("SourceStartingOffset", &self.SourceStartingOffset).field("TargetOffset", &self.TargetOffset).field("SourceFileHandle", &self.SourceFileHandle).field("Length", &self.Length).field("Flags", &self.Flags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for REARRANGE_FILE_DATA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for REARRANGE_FILE_DATA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<REARRANGE_FILE_DATA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for REARRANGE_FILE_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for REARRANGE_FILE_DATA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10333,38 +10023,30 @@ impl ::core::default::Default for RESOURCEMANAGER_BASIC_INFORMATION {
 }
 pub const RESOURCEMANAGER_COMPLETE_PROPAGATION: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESOURCEMANAGER_COMPLETION_INFORMATION {
-    pub IoCompletionPortHandle: super::super::Foundation::HANDLE,
+    pub IoCompletionPortHandle: ::win32_foundation::HANDLE,
     pub CompletionKey: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESOURCEMANAGER_COMPLETION_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESOURCEMANAGER_COMPLETION_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RESOURCEMANAGER_COMPLETION_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RESOURCEMANAGER_COMPLETION_INFORMATION").field("IoCompletionPortHandle", &self.IoCompletionPortHandle).field("CompletionKey", &self.CompletionKey).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RESOURCEMANAGER_COMPLETION_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RESOURCEMANAGER_COMPLETION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RESOURCEMANAGER_COMPLETION_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RESOURCEMANAGER_COMPLETION_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RESOURCEMANAGER_COMPLETION_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11390,42 +11072,34 @@ pub const SEF_AI_USE_EXTRA_PARAMS: u32 = 2048u32;
 pub const SEF_FORCE_USER_MODE: u32 = 8192u32;
 pub const SEMAPHORE_MODIFY_STATE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVERSILO_BASIC_INFORMATION {
     pub ServiceSessionId: u32,
     pub State: SERVERSILO_STATE,
     pub ExitStatus: u32,
-    pub IsDownlevelContainer: super::super::Foundation::BOOLEAN,
+    pub IsDownlevelContainer: ::win32_foundation::BOOLEAN,
     pub ApiSetSchema: *mut ::core::ffi::c_void,
     pub HostApiSetSchema: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVERSILO_BASIC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVERSILO_BASIC_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVERSILO_BASIC_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVERSILO_BASIC_INFORMATION").field("ServiceSessionId", &self.ServiceSessionId).field("State", &self.State).field("ExitStatus", &self.ExitStatus).field("IsDownlevelContainer", &self.IsDownlevelContainer).field("ApiSetSchema", &self.ApiSetSchema).field("HostApiSetSchema", &self.HostApiSetSchema).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVERSILO_BASIC_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVERSILO_BASIC_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVERSILO_BASIC_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVERSILO_BASIC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVERSILO_BASIC_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11607,96 +11281,96 @@ pub const SE_TAKE_OWNERSHIP_NAME: &str = "SeTakeOwnershipPrivilege";
 pub const SE_TCB_NAME: &str = "SeTcbPrivilege";
 pub const SE_TIME_ZONE_NAME: &str = "SeTimeZonePrivilege";
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct SE_TOKEN_USER {
     pub Anonymous1: SE_TOKEN_USER_0,
     pub Anonymous2: SE_TOKEN_USER_1,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for SE_TOKEN_USER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for SE_TOKEN_USER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for SE_TOKEN_USER {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for SE_TOKEN_USER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SE_TOKEN_USER>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for SE_TOKEN_USER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for SE_TOKEN_USER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union SE_TOKEN_USER_0 {
-    pub TokenUser: super::super::Security::TOKEN_USER,
-    pub User: super::super::Security::SID_AND_ATTRIBUTES,
+    pub TokenUser: ::win32_security::TOKEN_USER,
+    pub User: ::win32_security::SID_AND_ATTRIBUTES,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for SE_TOKEN_USER_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for SE_TOKEN_USER_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for SE_TOKEN_USER_0 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for SE_TOKEN_USER_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SE_TOKEN_USER_0>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for SE_TOKEN_USER_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for SE_TOKEN_USER_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub union SE_TOKEN_USER_1 {
-    pub Sid: super::super::Security::SID,
+    pub Sid: ::win32_security::SID,
     pub Buffer: [u8; 68],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for SE_TOKEN_USER_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for SE_TOKEN_USER_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for SE_TOKEN_USER_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for SE_TOKEN_USER_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SE_TOKEN_USER_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for SE_TOKEN_USER_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for SE_TOKEN_USER_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11772,41 +11446,33 @@ pub const SID_MAX_SUB_AUTHORITIES: u32 = 15u32;
 pub const SID_RECOMMENDED_SUB_AUTHORITIES: u32 = 1u32;
 pub const SID_REVISION: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SILOOBJECT_BASIC_INFORMATION {
     pub SiloId: u32,
     pub SiloParentId: u32,
     pub NumberOfProcesses: u32,
-    pub IsInServerSilo: super::super::Foundation::BOOLEAN,
+    pub IsInServerSilo: ::win32_foundation::BOOLEAN,
     pub Reserved: [u8; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SILOOBJECT_BASIC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SILOOBJECT_BASIC_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SILOOBJECT_BASIC_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SILOOBJECT_BASIC_INFORMATION").field("SiloId", &self.SiloId).field("SiloParentId", &self.SiloParentId).field("NumberOfProcesses", &self.NumberOfProcesses).field("IsInServerSilo", &self.IsInServerSilo).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SILOOBJECT_BASIC_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SILOOBJECT_BASIC_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SILOOBJECT_BASIC_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SILOOBJECT_BASIC_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SILOOBJECT_BASIC_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12275,12 +11941,11 @@ pub const TAPE_DRIVE_TAPE_REMAINING: u32 = 512u32;
 pub const TAPE_DRIVE_VARIABLE_BLOCK: u32 = 2048u32;
 pub const TAPE_DRIVE_WRITE_PROTECT: u32 = 4096u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TAPE_GET_DRIVE_PARAMETERS {
-    pub ECC: super::super::Foundation::BOOLEAN,
-    pub Compression: super::super::Foundation::BOOLEAN,
-    pub DataPadding: super::super::Foundation::BOOLEAN,
-    pub ReportSetmarks: super::super::Foundation::BOOLEAN,
+    pub ECC: ::win32_foundation::BOOLEAN,
+    pub Compression: ::win32_foundation::BOOLEAN,
+    pub DataPadding: ::win32_foundation::BOOLEAN,
+    pub ReportSetmarks: ::win32_foundation::BOOLEAN,
     pub DefaultBlockSize: u32,
     pub MaximumBlockSize: u32,
     pub MinimumBlockSize: u32,
@@ -12289,15 +11954,12 @@ pub struct TAPE_GET_DRIVE_PARAMETERS {
     pub FeaturesHigh: TAPE_GET_DRIVE_PARAMETERS_FEATURES_HIGH,
     pub EOTWarningZoneSize: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TAPE_GET_DRIVE_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TAPE_GET_DRIVE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TAPE_GET_DRIVE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TAPE_GET_DRIVE_PARAMETERS")
@@ -12315,19 +11977,15 @@ impl ::core::fmt::Debug for TAPE_GET_DRIVE_PARAMETERS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TAPE_GET_DRIVE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TAPE_GET_DRIVE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TAPE_GET_DRIVE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TAPE_GET_DRIVE_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TAPE_GET_DRIVE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12413,41 +12071,33 @@ impl ::core::ops::Not for TAPE_GET_DRIVE_PARAMETERS_FEATURES_HIGH {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TAPE_GET_MEDIA_PARAMETERS {
     pub Capacity: i64,
     pub Remaining: i64,
     pub BlockSize: u32,
     pub PartitionCount: u32,
-    pub WriteProtected: super::super::Foundation::BOOLEAN,
+    pub WriteProtected: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TAPE_GET_MEDIA_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TAPE_GET_MEDIA_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TAPE_GET_MEDIA_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TAPE_GET_MEDIA_PARAMETERS").field("Capacity", &self.Capacity).field("Remaining", &self.Remaining).field("BlockSize", &self.BlockSize).field("PartitionCount", &self.PartitionCount).field("WriteProtected", &self.WriteProtected).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TAPE_GET_MEDIA_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TAPE_GET_MEDIA_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TAPE_GET_MEDIA_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TAPE_GET_MEDIA_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TAPE_GET_MEDIA_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12460,41 +12110,33 @@ pub const TAPE_QUERY_DRIVE_PARAMETERS: i32 = 0i32;
 pub const TAPE_QUERY_IO_ERROR_DATA: i32 = 3i32;
 pub const TAPE_QUERY_MEDIA_CAPACITY: i32 = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TAPE_SET_DRIVE_PARAMETERS {
-    pub ECC: super::super::Foundation::BOOLEAN,
-    pub Compression: super::super::Foundation::BOOLEAN,
-    pub DataPadding: super::super::Foundation::BOOLEAN,
-    pub ReportSetmarks: super::super::Foundation::BOOLEAN,
+    pub ECC: ::win32_foundation::BOOLEAN,
+    pub Compression: ::win32_foundation::BOOLEAN,
+    pub DataPadding: ::win32_foundation::BOOLEAN,
+    pub ReportSetmarks: ::win32_foundation::BOOLEAN,
     pub EOTWarningZoneSize: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TAPE_SET_DRIVE_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TAPE_SET_DRIVE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TAPE_SET_DRIVE_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TAPE_SET_DRIVE_PARAMETERS").field("ECC", &self.ECC).field("Compression", &self.Compression).field("DataPadding", &self.DataPadding).field("ReportSetmarks", &self.ReportSetmarks).field("EOTWarningZoneSize", &self.EOTWarningZoneSize).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TAPE_SET_DRIVE_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TAPE_SET_DRIVE_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TAPE_SET_DRIVE_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TAPE_SET_DRIVE_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TAPE_SET_DRIVE_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12575,75 +12217,59 @@ pub const TIME_ZONE_ID_STANDARD: u32 = 1u32;
 pub const TIME_ZONE_ID_UNKNOWN: u32 = 0u32;
 pub const TLS_MINIMUM_AVAILABLE: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TOKEN_BNO_ISOLATION_INFORMATION {
     pub IsolationPrefix: ::windows_core::PWSTR,
-    pub IsolationEnabled: super::super::Foundation::BOOLEAN,
+    pub IsolationEnabled: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TOKEN_BNO_ISOLATION_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TOKEN_BNO_ISOLATION_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TOKEN_BNO_ISOLATION_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TOKEN_BNO_ISOLATION_INFORMATION").field("IsolationPrefix", &self.IsolationPrefix).field("IsolationEnabled", &self.IsolationEnabled).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TOKEN_BNO_ISOLATION_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TOKEN_BNO_ISOLATION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TOKEN_BNO_ISOLATION_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TOKEN_BNO_ISOLATION_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TOKEN_BNO_ISOLATION_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TOKEN_SID_INFORMATION {
-    pub Sid: super::super::Foundation::PSID,
+    pub Sid: ::win32_foundation::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TOKEN_SID_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TOKEN_SID_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TOKEN_SID_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TOKEN_SID_INFORMATION").field("Sid", &self.Sid).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TOKEN_SID_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TOKEN_SID_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TOKEN_SID_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TOKEN_SID_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TOKEN_SID_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12867,37 +12493,29 @@ impl ::core::default::Default for TRANSACTION_BASIC_INFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRANSACTION_BIND_INFORMATION {
-    pub TmHandle: super::super::Foundation::HANDLE,
+    pub TmHandle: ::win32_foundation::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRANSACTION_BIND_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRANSACTION_BIND_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TRANSACTION_BIND_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TRANSACTION_BIND_INFORMATION").field("TmHandle", &self.TmHandle).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TRANSACTION_BIND_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TRANSACTION_BIND_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSACTION_BIND_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TRANSACTION_BIND_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TRANSACTION_BIND_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -13216,14 +12834,13 @@ impl ::core::fmt::Debug for USER_ACTIVITY_PRESENCE {
         f.debug_tuple("USER_ACTIVITY_PRESENCE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnregisterDeviceNotification(handle: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn UnregisterDeviceNotification(handle: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnregisterDeviceNotification(handle: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn UnregisterDeviceNotification(handle: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(UnregisterDeviceNotification(::core::mem::transmute(handle)))
     }
@@ -13267,12 +12884,9 @@ pub const VER_SUITE_STORAGE_SERVER: u32 = 8192u32;
 pub const VER_SUITE_TERMINAL: u32 = 16u32;
 pub const VER_SUITE_WH_SERVER: u32 = 32768u32;
 pub const VER_WORKSTATION_NT: u32 = 1073741824u32;
-#[cfg(feature = "Win32_Foundation")]
-pub const VOLMGR_KSR_BYPASS: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2143813629i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const VOLMGR_KSR_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2143813631i32);
-#[cfg(feature = "Win32_Foundation")]
-pub const VOLMGR_KSR_READ_ERROR: super::super::Foundation::NTSTATUS = super::super::Foundation::NTSTATUS(-2143813630i32);
+pub const VOLMGR_KSR_BYPASS: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2143813629i32);
+pub const VOLMGR_KSR_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2143813631i32);
+pub const VOLMGR_KSR_READ_ERROR: ::win32_foundation::NTSTATUS = ::win32_foundation::NTSTATUS(-2143813630i32);
 pub const VRL_CUSTOM_CLASS_BEGIN: u32 = 256u32;
 pub const VRL_ENABLE_KERNEL_BREAKS: u32 = 2147483648u32;
 pub const VRL_PREDEFINED_CLASS_BEGIN: u32 = 1u32;
@@ -13449,38 +13063,30 @@ impl ::core::default::Default for _DEV_BROADCAST_HEADER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct _DEV_BROADCAST_USERDEFINED {
     pub dbud_dbh: DEV_BROADCAST_HDR,
-    pub dbud_szName: [super::super::Foundation::CHAR; 1],
+    pub dbud_szName: [::win32_foundation::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for _DEV_BROADCAST_USERDEFINED {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for _DEV_BROADCAST_USERDEFINED {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for _DEV_BROADCAST_USERDEFINED {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("_DEV_BROADCAST_USERDEFINED").field("dbud_dbh", &self.dbud_dbh).field("dbud_szName", &self.dbud_szName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for _DEV_BROADCAST_USERDEFINED {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for _DEV_BROADCAST_USERDEFINED {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<_DEV_BROADCAST_USERDEFINED>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for _DEV_BROADCAST_USERDEFINED {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for _DEV_BROADCAST_USERDEFINED {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -14082,7 +13688,7 @@ impl ::core::default::Default for userHPALETTE {
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub union userHPALETTE_0 {
     pub hInproc: i32,
-    pub hRemote: *mut super::super::Graphics::Gdi::LOGPALETTE,
+    pub hRemote: *mut ::win32_graphics::Gdi::LOGPALETTE,
     pub hInproc64: i64,
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]

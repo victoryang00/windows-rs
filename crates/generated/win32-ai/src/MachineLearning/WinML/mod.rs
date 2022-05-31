@@ -983,12 +983,10 @@ impl IWinMLModel {
     pub unsafe fn EnumerateMetadata(&self, index: u32, pkey: *mut ::windows_core::PWSTR, pvalue: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnumerateMetadata)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(pkey), ::core::mem::transmute(pvalue)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn EnumerateModelInputs(&self, index: u32) -> ::windows_core::Result<*mut WINML_VARIABLE_DESC> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut WINML_VARIABLE_DESC>::zeroed();
         (::windows_core::Interface::vtable(self).EnumerateModelInputs)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut WINML_VARIABLE_DESC>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn EnumerateModelOutputs(&self, index: u32) -> ::windows_core::Result<*mut WINML_VARIABLE_DESC> {
         let mut result__ = ::core::mem::MaybeUninit::<*mut WINML_VARIABLE_DESC>::zeroed();
         (::windows_core::Interface::vtable(self).EnumerateModelOutputs)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(index), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<*mut WINML_VARIABLE_DESC>(result__)
@@ -1040,14 +1038,8 @@ pub struct IWinMLModel_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppdescription: *mut *mut WINML_MODEL_DESC) -> ::windows_core::HRESULT,
     pub EnumerateMetadata: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, pkey: *mut ::windows_core::PWSTR, pvalue: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub EnumerateModelInputs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, ppinputdescriptor: *mut *mut WINML_VARIABLE_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EnumerateModelInputs: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub EnumerateModelOutputs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, index: u32, ppoutputdescriptor: *mut *mut WINML_VARIABLE_DESC) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EnumerateModelOutputs: usize,
 }
 #[repr(transparent)]
 pub struct IWinMLRuntime(::windows_core::IUnknown);
@@ -1057,7 +1049,7 @@ impl IWinMLRuntime {
         (::windows_core::Interface::vtable(self).LoadModel)(::windows_core::Interface::as_raw(self), path.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWinMLModel>(result__)
     }
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub unsafe fn CreateEvaluationContext<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12Device>>(&self, device: Param0) -> ::windows_core::Result<IWinMLEvaluationContext> {
+    pub unsafe fn CreateEvaluationContext<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12Device>>(&self, device: Param0) -> ::windows_core::Result<IWinMLEvaluationContext> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateEvaluationContext)(::windows_core::Interface::as_raw(self), device.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IWinMLEvaluationContext>(result__)
     }
@@ -2125,7 +2117,7 @@ pub struct WINML_RESOURCE_BINDING_DESC {
     pub ElementType: WINML_TENSOR_DATA_TYPE,
     pub NumDimensions: u32,
     pub pShape: *mut i64,
-    pub pResource: ::core::option::Option<super::super::super::Graphics::Direct3D12::ID3D12Resource>,
+    pub pResource: ::core::option::Option<::win32_graphics::Direct3D12::ID3D12Resource>,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 impl ::core::clone::Clone for WINML_RESOURCE_BINDING_DESC {
@@ -2366,69 +2358,55 @@ impl ::core::default::Default for WINML_TENSOR_VARIABLE_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WINML_VARIABLE_DESC {
     pub Name: ::windows_core::PWSTR,
     pub Description: ::windows_core::PWSTR,
     pub FeatureType: WINML_FEATURE_TYPE,
-    pub Required: super::super::super::Foundation::BOOL,
+    pub Required: ::win32_foundation::BOOL,
     pub Anonymous: WINML_VARIABLE_DESC_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WINML_VARIABLE_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WINML_VARIABLE_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WINML_VARIABLE_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WINML_VARIABLE_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WINML_VARIABLE_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WINML_VARIABLE_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WINML_VARIABLE_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WINML_VARIABLE_DESC_0 {
     pub Tensor: WINML_TENSOR_VARIABLE_DESC,
     pub Sequence: WINML_SEQUENCE_VARIABLE_DESC,
     pub Map: WINML_MAP_VARIABLE_DESC,
     pub Image: WINML_IMAGE_VARIABLE_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WINML_VARIABLE_DESC_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WINML_VARIABLE_DESC_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WINML_VARIABLE_DESC_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WINML_VARIABLE_DESC_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WINML_VARIABLE_DESC_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WINML_VARIABLE_DESC_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WINML_VARIABLE_DESC_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

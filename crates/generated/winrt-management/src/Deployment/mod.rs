@@ -75,11 +75,11 @@ impl AddPackageOptions {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DependencyPackageUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn DependencyPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DependencyPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).DependencyPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     pub fn TargetVolume(&self) -> ::windows_core::Result<PackageVolume> {
@@ -94,39 +94,37 @@ impl AddPackageOptions {
         unsafe { (::windows_core::Interface::vtable(this).SetTargetVolume)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OptionalPackageFamilyNames(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn OptionalPackageFamilyNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OptionalPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).OptionalPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OptionalPackageUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn OptionalPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OptionalPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).OptionalPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RelatedPackageUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn RelatedPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RelatedPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).RelatedPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ExternalLocationUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn ExternalLocationUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExternalLocationUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ExternalLocationUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetExternalLocationUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetExternalLocationUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetExternalLocationUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -335,8 +333,7 @@ impl AppInstallerManager {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ClearAutoUpdateSettings)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PauseAutoUpdatesUntil<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(&self, packagefamilyname: Param0, datetime: Param1) -> ::windows_core::Result<()> {
+    pub fn PauseAutoUpdatesUntil<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, packagefamilyname: Param0, datetime: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).PauseAutoUpdatesUntil)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), datetime.into_param().abi()).ok() }
     }
@@ -440,28 +437,26 @@ impl AutoUpdateSettingsOptions {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "ApplicationModel")]
-    pub fn Version(&self) -> ::windows_core::Result<super::super::ApplicationModel::PackageVersion> {
+    pub fn Version(&self) -> ::windows_core::Result<::winrt_applicationmodel::PackageVersion> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::ApplicationModel::PackageVersion>::zeroed();
-            (::windows_core::Interface::vtable(this).Version)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::PackageVersion>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_applicationmodel::PackageVersion>::zeroed();
+            (::windows_core::Interface::vtable(this).Version)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::PackageVersion>(result__)
         }
     }
     #[cfg(feature = "ApplicationModel")]
-    pub fn SetVersion<'a, Param0: ::windows_core::IntoParam<'a, super::super::ApplicationModel::PackageVersion>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetVersion<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::PackageVersion>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetVersion)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AppInstallerUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn AppInstallerUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppInstallerUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).AppInstallerUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetAppInstallerUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetAppInstallerUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAppInstallerUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -543,39 +538,39 @@ impl AutoUpdateSettingsOptions {
         unsafe { (::windows_core::Interface::vtable(this).SetIsAutoRepairEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn UpdateUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn UpdateUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdateUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).UpdateUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RepairUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn RepairUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RepairUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).RepairUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DependencyPackageUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn DependencyPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DependencyPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).DependencyPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OptionalPackageUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn OptionalPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OptionalPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).OptionalPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     #[cfg(feature = "ApplicationModel")]
-    pub fn CreateFromAppInstallerInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::ApplicationModel::AppInstallerInfo>>(appinstallerinfo: Param0) -> ::windows_core::Result<AutoUpdateSettingsOptions> {
+    pub fn CreateFromAppInstallerInfo<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::AppInstallerInfo>>(appinstallerinfo: Param0) -> ::windows_core::Result<AutoUpdateSettingsOptions> {
         Self::IAutoUpdateSettingsOptionsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromAppInstallerInfo)(::windows_core::Interface::as_raw(this), appinstallerinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<AutoUpdateSettingsOptions>(result__)
@@ -669,11 +664,11 @@ impl CreateSharedPackageContainerOptions {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Members(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<SharedPackageContainerMember>> {
+    pub fn Members(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SharedPackageContainerMember>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Members)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<SharedPackageContainerMember>>(result__)
+            (::windows_core::Interface::vtable(this).Members)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SharedPackageContainerMember>>(result__)
         }
     }
     pub fn ForceAppShutdown(&self) -> ::windows_core::Result<bool> {
@@ -1439,14 +1434,8 @@ pub struct IAddPackageOptions_Vtbl {
     pub RelatedPackageUris: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     RelatedPackageUris: usize,
-    #[cfg(feature = "Foundation")]
     pub ExternalLocationUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ExternalLocationUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetExternalLocationUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetExternalLocationUri: usize,
     pub StubPackageOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut StubPackageOption) -> ::windows_core::HRESULT,
     pub SetStubPackageOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: StubPackageOption) -> ::windows_core::HRESULT,
     pub DeveloperMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -1483,10 +1472,7 @@ pub struct IAppInstallerManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SetAutoUpdateSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, appinstallerinfo: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ClearAutoUpdateSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub PauseAutoUpdatesUntil: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, datetime: super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PauseAutoUpdatesUntil: usize,
+    pub PauseAutoUpdatesUntil: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, datetime: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1514,21 +1500,15 @@ unsafe impl ::windows_core::Interface for IAutoUpdateSettingsOptions {
 pub struct IAutoUpdateSettingsOptions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "ApplicationModel")]
-    pub Version: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::ApplicationModel::PackageVersion) -> ::windows_core::HRESULT,
+    pub Version: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_applicationmodel::PackageVersion) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "ApplicationModel"))]
     Version: usize,
     #[cfg(feature = "ApplicationModel")]
-    pub SetVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::ApplicationModel::PackageVersion) -> ::windows_core::HRESULT,
+    pub SetVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_applicationmodel::PackageVersion) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "ApplicationModel"))]
     SetVersion: usize,
-    #[cfg(feature = "Foundation")]
     pub AppInstallerUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AppInstallerUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetAppInstallerUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetAppInstallerUri: usize,
     pub OnLaunch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetOnLaunch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub HoursBetweenUpdateChecks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
@@ -1724,10 +1704,7 @@ pub struct IPackageManager_Vtbl {
     pub UpdatePackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packageuri: ::windows_core::RawPtr, dependencypackageuris: ::windows_core::RawPtr, deploymentoptions: DeploymentOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     UpdatePackageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RemovePackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefullname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePackageAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub StagePackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packageuri: ::windows_core::RawPtr, dependencypackageuris: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -1761,10 +1738,7 @@ pub struct IPackageManager_Vtbl {
     pub FindPackageByPackageFullName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefullname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "ApplicationModel"))]
     FindPackageByPackageFullName: usize,
-    #[cfg(feature = "Foundation")]
     pub CleanupPackageForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, usersecurityid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CleanupPackageForUserAsync: usize,
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
     pub FindPackagesByPackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
@@ -1789,10 +1763,7 @@ unsafe impl ::windows_core::Interface for IPackageManager10 {
 #[doc(hidden)]
 pub struct IPackageManager10_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ProvisionPackageForAllUsersWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mainpackagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProvisionPackageForAllUsersWithOptionsAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1805,10 +1776,7 @@ unsafe impl ::windows_core::Interface for IPackageManager2 {
 #[doc(hidden)]
 pub struct IPackageManager2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RemovePackageWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefullname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, removaloptions: RemovalOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePackageWithOptionsAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub StagePackageWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packageuri: ::windows_core::RawPtr, dependencypackageuris: ::windows_core::RawPtr, deploymentoptions: DeploymentOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -1841,10 +1809,7 @@ pub struct IPackageManager2_Vtbl {
     pub FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usersecurityid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, packagetypes: PackageTypes, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
     FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes: usize,
-    #[cfg(feature = "Foundation")]
     pub StageUserDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefullname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StageUserDataAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1857,10 +1822,7 @@ unsafe impl ::windows_core::Interface for IPackageManager3 {
 #[doc(hidden)]
 pub struct IPackageManager3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub AddPackageVolumeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagestorepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AddPackageVolumeAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub AddPackageToVolumeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packageuri: ::windows_core::RawPtr, dependencypackageuris: ::windows_core::RawPtr, deploymentoptions: DeploymentOptions, targetvolume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -1876,32 +1838,17 @@ pub struct IPackageManager3_Vtbl {
     #[cfg(not(feature = "Foundation_Collections"))]
     FindPackageVolumes: usize,
     pub GetDefaultPackageVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub MovePackageToVolumeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefullname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, deploymentoptions: DeploymentOptions, targetvolume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MovePackageToVolumeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RemovePackageVolumeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, volume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePackageVolumeAsync: usize,
     pub SetDefaultPackageVolume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, volume: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetPackageStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefullname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, status: PackageStatus) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SetPackageVolumeOfflineAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagevolume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPackageVolumeOfflineAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub SetPackageVolumeOnlineAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagevolume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPackageVolumeOnlineAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub StagePackageToVolumeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packageuri: ::windows_core::RawPtr, dependencypackageuris: ::windows_core::RawPtr, deploymentoptions: DeploymentOptions, targetvolume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     StagePackageToVolumeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub StageUserDataWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefullname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, deploymentoptions: DeploymentOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StageUserDataWithOptionsAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1955,18 +1902,9 @@ unsafe impl ::windows_core::Interface for IPackageManager6 {
 #[doc(hidden)]
 pub struct IPackageManager6_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ProvisionPackageForAllUsersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ProvisionPackageForAllUsersAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub AddPackageByAppInstallerFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appinstallerfileuri: ::windows_core::RawPtr, options: AddPackageByAppInstallerOptions, targetvolume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AddPackageByAppInstallerFileAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestAddPackageByAppInstallerFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appinstallerfileuri: ::windows_core::RawPtr, options: AddPackageByAppInstallerOptions, targetvolume: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestAddPackageByAppInstallerFileAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub AddPackageToVolumeAndRelatedSetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packageuri: ::windows_core::RawPtr, dependencypackageuris: ::windows_core::RawPtr, options: DeploymentOptions, targetvolume: ::windows_core::RawPtr, optionalpackagefamilynames: ::windows_core::RawPtr, packageuristoinstall: ::windows_core::RawPtr, relatedpackageuris: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -2007,10 +1945,7 @@ unsafe impl ::windows_core::Interface for IPackageManager8 {
 #[doc(hidden)]
 pub struct IPackageManager8_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub DeprovisionPackageForAllUsersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeprovisionPackageForAllUsersAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2027,18 +1962,9 @@ pub struct IPackageManager9_Vtbl {
     pub FindProvisionedPackages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
     FindProvisionedPackages: usize,
-    #[cfg(feature = "Foundation")]
     pub AddPackageByUriAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packageuri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AddPackageByUriAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub StagePackageByUriAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packageuri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StagePackageByUriAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RegisterPackageByUriAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, manifesturi: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RegisterPackageByUriAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub RegisterPackagesByFullNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefullnames: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -2057,13 +1983,13 @@ unsafe impl ::windows_core::Interface for IPackageManagerDebugSettings {
 #[doc(hidden)]
 pub struct IPackageManagerDebugSettings_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation"))]
-    pub SetContentGroupStateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, package: ::windows_core::RawPtr, contentgroupname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, state: super::super::ApplicationModel::PackageContentGroupState, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation")))]
+    #[cfg(feature = "ApplicationModel")]
+    pub SetContentGroupStateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, package: ::windows_core::RawPtr, contentgroupname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, state: ::winrt_applicationmodel::PackageContentGroupState, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel"))]
     SetContentGroupStateAsync: usize,
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation"))]
-    pub SetContentGroupStateWithPercentageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, package: ::windows_core::RawPtr, contentgroupname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, state: super::super::ApplicationModel::PackageContentGroupState, completionpercentage: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation")))]
+    #[cfg(feature = "ApplicationModel")]
+    pub SetContentGroupStateWithPercentageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, package: ::windows_core::RawPtr, contentgroupname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, state: ::winrt_applicationmodel::PackageContentGroupState, completionpercentage: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "ApplicationModel"))]
     SetContentGroupStateWithPercentageAsync: usize,
 }
 #[doc(hidden)]
@@ -2167,10 +2093,7 @@ pub struct IPackageVolume2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsFullTrustPackageSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsAppxInstallSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetAvailableSpaceAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAvailableSpaceAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2193,14 +2116,8 @@ pub struct IRegisterPackageOptions_Vtbl {
     pub OptionalPackageFamilyNames: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     OptionalPackageFamilyNames: usize,
-    #[cfg(feature = "Foundation")]
     pub ExternalLocationUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ExternalLocationUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetExternalLocationUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetExternalLocationUri: usize,
     pub DeveloperMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetDeveloperMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub ForceAppShutdown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -2331,14 +2248,8 @@ pub struct IStagePackageOptions_Vtbl {
     pub RelatedPackageUris: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     RelatedPackageUris: usize,
-    #[cfg(feature = "Foundation")]
     pub ExternalLocationUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ExternalLocationUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetExternalLocationUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetExternalLocationUri: usize,
     pub StubPackageOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut StubPackageOption) -> ::windows_core::HRESULT,
     pub SetStubPackageOption: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: StubPackageOption) -> ::windows_core::HRESULT,
     pub DeveloperMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -2395,19 +2306,19 @@ impl PackageAllUserProvisioningOptions {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OptionalPackageFamilyNames(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn OptionalPackageFamilyNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OptionalPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).OptionalPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ProjectionOrderPackageFamilyNames(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn ProjectionOrderPackageFamilyNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProjectionOrderPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).ProjectionOrderPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
 }
@@ -2529,83 +2440,82 @@ impl PackageManager {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AddPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn AddPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddPackageAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).AddPackageAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn UpdatePackageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn UpdatePackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdatePackageAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).UpdatePackageAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RemovePackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RemovePackageAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
-        }
-    }
-    #[cfg(feature = "Foundation_Collections")]
-    pub fn StagePackageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StagePackageAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RemovePackageAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RegisterPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(&self, manifesturi: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn StagePackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterPackageAsync)(::windows_core::Interface::as_raw(this), manifesturi.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
-        }
-    }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
-        }
-    }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityId)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
-        }
-    }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByNamePublisher<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagename: Param0, packagepublisher: Param1) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByNamePublisher)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
-        }
-    }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdNamePublisher<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagename: Param1, packagepublisher: Param2) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdNamePublisher)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).StagePackageAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindUsers<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<PackageUserInformation>> {
+    pub fn RegisterPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(&self, manifesturi: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindUsers)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<PackageUserInformation>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterPackageAsync)(::windows_core::Interface::as_raw(this), manifesturi.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+        }
+    }
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub fn FindPackages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindPackages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
+        }
+    }
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub fn FindPackagesByUserSecurityId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityId)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
+        }
+    }
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub fn FindPackagesByNamePublisher<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagename: Param0, packagepublisher: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindPackagesByNamePublisher)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
+        }
+    }
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub fn FindPackagesByUserSecurityIdNamePublisher<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagename: Param1, packagepublisher: Param2) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdNamePublisher)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
+        }
+    }
+    #[cfg(feature = "Foundation_Collections")]
+    pub fn FindUsers<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<PackageUserInformation>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindUsers)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<PackageUserInformation>>(result__)
         }
     }
     pub fn SetPackageState<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0, packagestate: PackageState) -> ::windows_core::Result<()> {
@@ -2613,147 +2523,142 @@ impl PackageManager {
         unsafe { (::windows_core::Interface::vtable(this).SetPackageState)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), packagestate).ok() }
     }
     #[cfg(feature = "ApplicationModel")]
-    pub fn FindPackageByPackageFullName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<super::super::ApplicationModel::Package> {
+    pub fn FindPackageByPackageFullName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<::winrt_applicationmodel::Package> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackageByPackageFullName)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::Package>(result__)
+            (::windows_core::Interface::vtable(this).FindPackageByPackageFullName)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Package>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CleanupPackageForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagename: Param0, usersecurityid: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn CleanupPackageForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagename: Param0, usersecurityid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CleanupPackageForUserAsync)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), usersecurityid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
-        }
-    }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByPackageFamilyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByPackageFamilyName)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).CleanupPackageForUserAsync)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), usersecurityid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdPackageFamilyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefamilyname: Param1) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByPackageFamilyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdPackageFamilyName)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByPackageFamilyName)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
+        }
+    }
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub fn FindPackagesByUserSecurityIdPackageFamilyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefamilyname: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdPackageFamilyName)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(feature = "ApplicationModel")]
-    pub fn FindPackageByUserSecurityIdPackageFullName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefullname: Param1) -> ::windows_core::Result<super::super::ApplicationModel::Package> {
+    pub fn FindPackageByUserSecurityIdPackageFullName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefullname: Param1) -> ::windows_core::Result<::winrt_applicationmodel::Package> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackageByUserSecurityIdPackageFullName)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::ApplicationModel::Package>(result__)
+            (::windows_core::Interface::vtable(this).FindPackageByUserSecurityIdPackageFullName)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::Package>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProvisionPackageForAllUsersWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, PackageAllUserProvisioningOptions>>(&self, mainpackagefamilyname: Param0, options: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn ProvisionPackageForAllUsersWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, PackageAllUserProvisioningOptions>>(&self, mainpackagefamilyname: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager10>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProvisionPackageForAllUsersWithOptionsAsync)(::windows_core::Interface::as_raw(this), mainpackagefamilyname.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).ProvisionPackageForAllUsersWithOptionsAsync)(::windows_core::Interface::as_raw(this), mainpackagefamilyname.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePackageWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0, removaloptions: RemovalOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RemovePackageWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0, removaloptions: RemovalOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RemovePackageWithOptionsAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), removaloptions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RemovePackageWithOptionsAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), removaloptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn StagePackageWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn StagePackageWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StagePackageWithOptionsAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).StagePackageWithOptionsAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RegisterPackageByFullNameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, mainpackagefullname: Param0, dependencypackagefullnames: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RegisterPackageByFullNameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, mainpackagefullname: Param0, dependencypackagefullnames: Param1, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterPackageByFullNameAsync)(::windows_core::Interface::as_raw(this), mainpackagefullname.into_param().abi(), dependencypackagefullnames.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterPackageByFullNameAsync)(::windows_core::Interface::as_raw(this), mainpackagefullname.into_param().abi(), dependencypackagefullnames.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesWithPackageTypes(&self, packagetypes: PackageTypes) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesWithPackageTypes(&self, packagetypes: PackageTypes) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesWithPackageTypes)(::windows_core::Interface::as_raw(this), packagetypes, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesWithPackageTypes)(::windows_core::Interface::as_raw(this), packagetypes, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagetypes: PackageTypes) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByUserSecurityIdWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagetypes: PackageTypes) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByNamePublisherWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagename: Param0, packagepublisher: Param1, packagetypes: PackageTypes) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByNamePublisherWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagename: Param0, packagepublisher: Param1, packagetypes: PackageTypes) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByNamePublisherWithPackageTypes)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), packagepublisher.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByNamePublisherWithPackageTypes)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), packagepublisher.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdNamePublisherWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagename: Param1, packagepublisher: Param2, packagetypes: PackageTypes) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByUserSecurityIdNamePublisherWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagename: Param1, packagepublisher: Param2, packagetypes: PackageTypes) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdNamePublisherWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagename.into_param().abi(), packagepublisher.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdNamePublisherWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagename.into_param().abi(), packagepublisher.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByPackageFamilyNameWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0, packagetypes: PackageTypes) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByPackageFamilyNameWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0, packagetypes: PackageTypes) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByPackageFamilyNameWithPackageTypes)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByPackageFamilyNameWithPackageTypes)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefamilyname: Param1, packagetypes: PackageTypes) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefamilyname: Param1, packagetypes: PackageTypes) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefamilyname.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefamilyname.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<::winrt_applicationmodel::Package>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StageUserDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn StageUserDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StageUserDataAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).StageUserDataAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AddPackageVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagestorepath: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<PackageVolume>> {
+    pub fn AddPackageVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagestorepath: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<PackageVolume>> {
         let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddPackageVolumeAsync)(::windows_core::Interface::as_raw(this), packagestorepath.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<PackageVolume>>(result__)
+            (::windows_core::Interface::vtable(this).AddPackageVolumeAsync)(::windows_core::Interface::as_raw(this), packagestorepath.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<PackageVolume>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AddPackageToVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions, targetvolume: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn AddPackageToVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions, targetvolume: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddPackageToVolumeAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).AddPackageToVolumeAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     pub fn ClearPackageStatus<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0, status: PackageStatus) -> ::windows_core::Result<()> {
@@ -2761,11 +2666,11 @@ impl PackageManager {
         unsafe { (::windows_core::Interface::vtable(this).ClearPackageStatus)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), status).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RegisterPackageWithAppDataVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>>(&self, manifesturi: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions, appdatavolume: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RegisterPackageWithAppDataVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>>(&self, manifesturi: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions, appdatavolume: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterPackageWithAppDataVolumeAsync)(::windows_core::Interface::as_raw(this), manifesturi.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, appdatavolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterPackageWithAppDataVolumeAsync)(::windows_core::Interface::as_raw(this), manifesturi.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, appdatavolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     pub fn FindPackageVolumeByName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, volumename: Param0) -> ::windows_core::Result<PackageVolume> {
@@ -2776,11 +2681,11 @@ impl PackageManager {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindPackageVolumes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IIterable<PackageVolume>> {
+    pub fn FindPackageVolumes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterable<PackageVolume>> {
         let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackageVolumes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IIterable<PackageVolume>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackageVolumes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterable<PackageVolume>>(result__)
         }
     }
     pub fn GetDefaultPackageVolume(&self) -> ::windows_core::Result<PackageVolume> {
@@ -2790,20 +2695,18 @@ impl PackageManager {
             (::windows_core::Interface::vtable(this).GetDefaultPackageVolume)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PackageVolume>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MovePackageToVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packagefullname: Param0, deploymentoptions: DeploymentOptions, targetvolume: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn MovePackageToVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packagefullname: Param0, deploymentoptions: DeploymentOptions, targetvolume: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MovePackageToVolumeAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).MovePackageToVolumeAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePackageVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, PackageVolume>>(&self, volume: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RemovePackageVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, PackageVolume>>(&self, volume: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RemovePackageVolumeAsync)(::windows_core::Interface::as_raw(this), volume.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RemovePackageVolumeAsync)(::windows_core::Interface::as_raw(this), volume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     pub fn SetDefaultPackageVolume<'a, Param0: ::windows_core::IntoParam<'a, PackageVolume>>(&self, volume: Param0) -> ::windows_core::Result<()> {
@@ -2814,84 +2717,65 @@ impl PackageManager {
         let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetPackageStatus)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), status).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPackageVolumeOfflineAsync<'a, Param0: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packagevolume: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn SetPackageVolumeOfflineAsync<'a, Param0: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packagevolume: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetPackageVolumeOfflineAsync)(::windows_core::Interface::as_raw(this), packagevolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).SetPackageVolumeOfflineAsync)(::windows_core::Interface::as_raw(this), packagevolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPackageVolumeOnlineAsync<'a, Param0: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packagevolume: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn SetPackageVolumeOnlineAsync<'a, Param0: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packagevolume: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetPackageVolumeOnlineAsync)(::windows_core::Interface::as_raw(this), packagevolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
-        }
-    }
-    #[cfg(feature = "Foundation_Collections")]
-    pub fn StagePackageToVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions, targetvolume: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
-        let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StagePackageToVolumeAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
-        }
-    }
-    #[cfg(feature = "Foundation")]
-    pub fn StageUserDataWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
-        let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StageUserDataWithOptionsAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).SetPackageVolumeOnlineAsync)(::windows_core::Interface::as_raw(this), packagevolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetPackageVolumesAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<PackageVolume>>> {
+    pub fn StagePackageToVolumeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions, targetvolume: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+        let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).StagePackageToVolumeAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+        }
+    }
+    pub fn StageUserDataWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0, deploymentoptions: DeploymentOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+        let this = &::windows_core::Interface::cast::<IPackageManager3>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).StageUserDataWithOptionsAsync)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), deploymentoptions, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+        }
+    }
+    #[cfg(feature = "Foundation_Collections")]
+    pub fn GetPackageVolumesAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<PackageVolume>>> {
         let this = &::windows_core::Interface::cast::<IPackageManager4>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPackageVolumesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<PackageVolume>>>(result__)
+            (::windows_core::Interface::vtable(this).GetPackageVolumesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<PackageVolume>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AddPackageToVolumeAndOptionalPackagesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(
-        &self,
-        packageuri: Param0,
-        dependencypackageuris: Param1,
-        deploymentoptions: DeploymentOptions,
-        targetvolume: Param3,
-        optionalpackagefamilynames: Param4,
-        externalpackageuris: Param5,
-    ) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn AddPackageToVolumeAndOptionalPackagesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions, targetvolume: Param3, optionalpackagefamilynames: Param4, externalpackageuris: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager5>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddPackageToVolumeAndOptionalPackagesAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), externalpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).AddPackageToVolumeAndOptionalPackagesAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), externalpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn StagePackageToVolumeAndOptionalPackagesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(
-        &self,
-        packageuri: Param0,
-        dependencypackageuris: Param1,
-        deploymentoptions: DeploymentOptions,
-        targetvolume: Param3,
-        optionalpackagefamilynames: Param4,
-        externalpackageuris: Param5,
-    ) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn StagePackageToVolumeAndOptionalPackagesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions, targetvolume: Param3, optionalpackagefamilynames: Param4, externalpackageuris: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager5>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StagePackageToVolumeAndOptionalPackagesAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), externalpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).StagePackageToVolumeAndOptionalPackagesAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), externalpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RegisterPackageByFamilyNameAndOptionalPackagesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, mainpackagefamilyname: Param0, dependencypackagefamilynames: Param1, deploymentoptions: DeploymentOptions, appdatavolume: Param3, optionalpackagefamilynames: Param4) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RegisterPackageByFamilyNameAndOptionalPackagesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, mainpackagefamilyname: Param0, dependencypackagefamilynames: Param1, deploymentoptions: DeploymentOptions, appdatavolume: Param3, optionalpackagefamilynames: Param4) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager5>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterPackageByFamilyNameAndOptionalPackagesAsync)(::windows_core::Interface::as_raw(this), mainpackagefamilyname.into_param().abi(), dependencypackagefamilynames.into_param().abi(), deploymentoptions, appdatavolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterPackageByFamilyNameAndOptionalPackagesAsync)(::windows_core::Interface::as_raw(this), mainpackagefamilyname.into_param().abi(), dependencypackagefamilynames.into_param().abi(), deploymentoptions, appdatavolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     pub fn DebugSettings(&self) -> ::windows_core::Result<PackageManagerDebugSettings> {
@@ -2901,32 +2785,29 @@ impl PackageManager {
             (::windows_core::Interface::vtable(this).DebugSettings)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PackageManagerDebugSettings>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ProvisionPackageForAllUsersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn ProvisionPackageForAllUsersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProvisionPackageForAllUsersAsync)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).ProvisionPackageForAllUsersAsync)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AddPackageByAppInstallerFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, PackageVolume>>(&self, appinstallerfileuri: Param0, options: AddPackageByAppInstallerOptions, targetvolume: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn AddPackageByAppInstallerFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, PackageVolume>>(&self, appinstallerfileuri: Param0, options: AddPackageByAppInstallerOptions, targetvolume: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddPackageByAppInstallerFileAsync)(::windows_core::Interface::as_raw(this), appinstallerfileuri.into_param().abi(), options, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).AddPackageByAppInstallerFileAsync)(::windows_core::Interface::as_raw(this), appinstallerfileuri.into_param().abi(), options, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestAddPackageByAppInstallerFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, PackageVolume>>(&self, appinstallerfileuri: Param0, options: AddPackageByAppInstallerOptions, targetvolume: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RequestAddPackageByAppInstallerFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, PackageVolume>>(&self, appinstallerfileuri: Param0, options: AddPackageByAppInstallerOptions, targetvolume: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAddPackageByAppInstallerFileAsync)(::windows_core::Interface::as_raw(this), appinstallerfileuri.into_param().abi(), options, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAddPackageByAppInstallerFileAsync)(::windows_core::Interface::as_raw(this), appinstallerfileuri.into_param().abi(), options, targetvolume.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AddPackageToVolumeAndRelatedSetAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param6: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(
+    pub fn AddPackageToVolumeAndRelatedSetAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param6: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(
         &self,
         packageuri: Param0,
         dependencypackageuris: Param1,
@@ -2935,15 +2816,15 @@ impl PackageManager {
         optionalpackagefamilynames: Param4,
         packageuristoinstall: Param5,
         relatedpackageuris: Param6,
-    ) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    ) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddPackageToVolumeAndRelatedSetAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), options, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), packageuristoinstall.into_param().abi(), relatedpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).AddPackageToVolumeAndRelatedSetAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), options, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), packageuristoinstall.into_param().abi(), relatedpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn StagePackageToVolumeAndRelatedSetAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param6: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(
+    pub fn StagePackageToVolumeAndRelatedSetAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param6: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(
         &self,
         packageuri: Param0,
         dependencypackageuris: Param1,
@@ -2952,31 +2833,23 @@ impl PackageManager {
         optionalpackagefamilynames: Param4,
         packageuristoinstall: Param5,
         relatedpackageuris: Param6,
-    ) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    ) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StagePackageToVolumeAndRelatedSetAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), options, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), packageuristoinstall.into_param().abi(), relatedpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).StagePackageToVolumeAndRelatedSetAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), options, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), packageuristoinstall.into_param().abi(), relatedpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RequestAddPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(
-        &self,
-        packageuri: Param0,
-        dependencypackageuris: Param1,
-        deploymentoptions: DeploymentOptions,
-        targetvolume: Param3,
-        optionalpackagefamilynames: Param4,
-        relatedpackageuris: Param5,
-    ) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RequestAddPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(&self, packageuri: Param0, dependencypackageuris: Param1, deploymentoptions: DeploymentOptions, targetvolume: Param3, optionalpackagefamilynames: Param4, relatedpackageuris: Param5) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAddPackageAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), relatedpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAddPackageAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), relatedpackageuris.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RequestAddPackageAndRelatedSetAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>, Param6: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(
+    pub fn RequestAddPackageAndRelatedSetAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param3: ::windows_core::IntoParam<'a, PackageVolume>, Param4: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param5: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>, Param6: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(
         &self,
         packageuri: Param0,
         dependencypackageuris: Param1,
@@ -2985,59 +2858,55 @@ impl PackageManager {
         optionalpackagefamilynames: Param4,
         relatedpackageuris: Param5,
         packageuristoinstall: Param6,
-    ) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    ) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager7>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAddPackageAndRelatedSetAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), relatedpackageuris.into_param().abi(), packageuristoinstall.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAddPackageAndRelatedSetAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), dependencypackageuris.into_param().abi(), deploymentoptions, targetvolume.into_param().abi(), optionalpackagefamilynames.into_param().abi(), relatedpackageuris.into_param().abi(), packageuristoinstall.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeprovisionPackageForAllUsersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn DeprovisionPackageForAllUsersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager8>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeprovisionPackageForAllUsersAsync)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).DeprovisionPackageForAllUsersAsync)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindProvisionedPackages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindProvisionedPackages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = &::windows_core::Interface::cast::<IPackageManager9>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindProvisionedPackages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindProvisionedPackages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AddPackageByUriAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, AddPackageOptions>>(&self, packageuri: Param0, options: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn AddPackageByUriAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, AddPackageOptions>>(&self, packageuri: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager9>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddPackageByUriAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).AddPackageByUriAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StagePackageByUriAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, StagePackageOptions>>(&self, packageuri: Param0, options: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn StagePackageByUriAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, StagePackageOptions>>(&self, packageuri: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager9>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StagePackageByUriAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).StagePackageByUriAsync)(::windows_core::Interface::as_raw(this), packageuri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RegisterPackageByUriAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, RegisterPackageOptions>>(&self, manifesturi: Param0, options: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RegisterPackageByUriAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, RegisterPackageOptions>>(&self, manifesturi: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager9>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterPackageByUriAsync)(::windows_core::Interface::as_raw(this), manifesturi.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterPackageByUriAsync)(::windows_core::Interface::as_raw(this), manifesturi.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RegisterPackagesByFullNameAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, RegisterPackageOptions>>(&self, packagefullnames: Param0, options: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
+    pub fn RegisterPackagesByFullNameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param1: ::windows_core::IntoParam<'a, RegisterPackageOptions>>(&self, packagefullnames: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>> {
         let this = &::windows_core::Interface::cast::<IPackageManager9>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterPackagesByFullNameAsync)(::windows_core::Interface::as_raw(this), packagefullnames.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterPackagesByFullNameAsync)(::windows_core::Interface::as_raw(this), packagefullnames.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress>>(result__)
         }
     }
     pub fn SetPackageStubPreference<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0, usestub: PackageStubPreference) -> ::windows_core::Result<()> {
@@ -3127,20 +2996,20 @@ unsafe impl ::core::marker::Sync for PackageManager {}
 #[repr(transparent)]
 pub struct PackageManagerDebugSettings(::windows_core::IUnknown);
 impl PackageManagerDebugSettings {
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation"))]
-    pub fn SetContentGroupStateAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::ApplicationModel::Package>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, package: Param0, contentgroupname: Param1, state: super::super::ApplicationModel::PackageContentGroupState) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "ApplicationModel")]
+    pub fn SetContentGroupStateAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Package>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, package: Param0, contentgroupname: Param1, state: ::winrt_applicationmodel::PackageContentGroupState) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetContentGroupStateAsync)(::windows_core::Interface::as_raw(this), package.into_param().abi(), contentgroupname.into_param().abi(), state, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetContentGroupStateAsync)(::windows_core::Interface::as_raw(this), package.into_param().abi(), contentgroupname.into_param().abi(), state, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation"))]
-    pub fn SetContentGroupStateWithPercentageAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::ApplicationModel::Package>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, package: Param0, contentgroupname: Param1, state: super::super::ApplicationModel::PackageContentGroupState, completionpercentage: f64) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "ApplicationModel")]
+    pub fn SetContentGroupStateWithPercentageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Package>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, package: Param0, contentgroupname: Param1, state: ::winrt_applicationmodel::PackageContentGroupState, completionpercentage: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetContentGroupStateWithPercentageAsync)(::windows_core::Interface::as_raw(this), package.into_param().abi(), contentgroupname.into_param().abi(), state, completionpercentage, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetContentGroupStateWithPercentageAsync)(::windows_core::Interface::as_raw(this), package.into_param().abi(), contentgroupname.into_param().abi(), state, completionpercentage, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
 }
@@ -3551,115 +3420,115 @@ impl PackageVolume {
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackages(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackages(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackages)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByNamePublisher<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagename: Param0, packagepublisher: Param1) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByNamePublisher<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagename: Param0, packagepublisher: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByNamePublisher)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByNamePublisher)(::windows_core::Interface::as_raw(this), packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByPackageFamilyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByPackageFamilyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefamilyname: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByPackageFamilyName)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByPackageFamilyName)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesWithPackageTypes(&self, packagetypes: PackageTypes) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesWithPackageTypes(&self, packagetypes: PackageTypes) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesWithPackageTypes)(::windows_core::Interface::as_raw(this), packagetypes, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesWithPackageTypes)(::windows_core::Interface::as_raw(this), packagetypes, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByNamePublisherWithPackagesTypes<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagetypes: PackageTypes, packagename: Param1, packagepublisher: Param2) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByNamePublisherWithPackagesTypes<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagetypes: PackageTypes, packagename: Param1, packagepublisher: Param2) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByNamePublisherWithPackagesTypes)(::windows_core::Interface::as_raw(this), packagetypes, packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByNamePublisherWithPackagesTypes)(::windows_core::Interface::as_raw(this), packagetypes, packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByPackageFamilyNameWithPackageTypes<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagetypes: PackageTypes, packagefamilyname: Param1) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByPackageFamilyNameWithPackageTypes<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagetypes: PackageTypes, packagefamilyname: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByPackageFamilyNameWithPackageTypes)(::windows_core::Interface::as_raw(this), packagetypes, packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByPackageFamilyNameWithPackageTypes)(::windows_core::Interface::as_raw(this), packagetypes, packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackageByPackageFullName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackageByPackageFullName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, packagefullname: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackageByPackageFullName)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackageByPackageFullName)(::windows_core::Interface::as_raw(this), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByUserSecurityId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityId)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityId)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdNamePublisher<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagename: Param1, packagepublisher: Param2) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByUserSecurityIdNamePublisher<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagename: Param1, packagepublisher: Param2) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdNamePublisher)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdNamePublisher)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdPackageFamilyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefamilyname: Param1) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByUserSecurityIdPackageFamilyName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefamilyname: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdPackageFamilyName)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdPackageFamilyName)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagetypes: PackageTypes) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByUserSecurityIdWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagetypes: PackageTypes) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagetypes, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdNamePublisherWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagetypes: PackageTypes, packagename: Param2, packagepublisher: Param3) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByUserSecurityIdNamePublisherWithPackageTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagetypes: PackageTypes, packagename: Param2, packagepublisher: Param3) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdNamePublisherWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagetypes, packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdNamePublisherWithPackageTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagetypes, packagename.into_param().abi(), packagepublisher.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagetypes: PackageTypes, packagefamilyname: Param2) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagetypes: PackageTypes, packagefamilyname: Param2) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagetypes, packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagetypes, packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindPackageByUserSecurityIdPackageFullName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefullname: Param1) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>> {
+    pub fn FindPackageByUserSecurityIdPackageFullName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, usersecurityid: Param0, packagefullname: Param1) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindPackageByUserSecurityIdPackageFullName)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::ApplicationModel::Package>>(result__)
+            (::windows_core::Interface::vtable(this).FindPackageByUserSecurityIdPackageFullName)(::windows_core::Interface::as_raw(this), usersecurityid.into_param().abi(), packagefullname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_applicationmodel::Package>>(result__)
         }
     }
     pub fn IsFullTrustPackageSupported(&self) -> ::windows_core::Result<bool> {
@@ -3676,12 +3545,11 @@ impl PackageVolume {
             (::windows_core::Interface::vtable(this).IsAppxInstallSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAvailableSpaceAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<u64>> {
+    pub fn GetAvailableSpaceAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<u64>> {
         let this = &::windows_core::Interface::cast::<IPackageVolume2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAvailableSpaceAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<u64>>(result__)
+            (::windows_core::Interface::vtable(this).GetAvailableSpaceAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<u64>>(result__)
         }
     }
 }
@@ -3768,11 +3636,11 @@ impl RegisterPackageOptions {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DependencyPackageUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn DependencyPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DependencyPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).DependencyPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     pub fn AppDataVolume(&self) -> ::windows_core::Result<PackageVolume> {
@@ -3787,23 +3655,21 @@ impl RegisterPackageOptions {
         unsafe { (::windows_core::Interface::vtable(this).SetAppDataVolume)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OptionalPackageFamilyNames(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn OptionalPackageFamilyNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OptionalPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).OptionalPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ExternalLocationUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn ExternalLocationUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExternalLocationUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ExternalLocationUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetExternalLocationUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetExternalLocationUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetExternalLocationUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -4049,11 +3915,11 @@ impl SharedPackageContainer {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetMembers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<SharedPackageContainerMember>> {
+    pub fn GetMembers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SharedPackageContainerMember>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetMembers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<SharedPackageContainerMember>>(result__)
+            (::windows_core::Interface::vtable(this).GetMembers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SharedPackageContainerMember>>(result__)
         }
     }
     pub fn RemovePackageFamily<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, UpdateSharedPackageContainerOptions>>(&self, packagefamilyname: Param0, options: Param1) -> ::windows_core::Result<UpdateSharedPackageContainerResult> {
@@ -4202,19 +4068,19 @@ impl SharedPackageContainerManager {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindContainers(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<SharedPackageContainer>> {
+    pub fn FindContainers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SharedPackageContainer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindContainers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<SharedPackageContainer>>(result__)
+            (::windows_core::Interface::vtable(this).FindContainers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SharedPackageContainer>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindContainersWithOptions<'a, Param0: ::windows_core::IntoParam<'a, FindSharedPackageContainerOptions>>(&self, options: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<SharedPackageContainer>> {
+    pub fn FindContainersWithOptions<'a, Param0: ::windows_core::IntoParam<'a, FindSharedPackageContainerOptions>>(&self, options: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<SharedPackageContainer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindContainersWithOptions)(::windows_core::Interface::as_raw(this), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<SharedPackageContainer>>(result__)
+            (::windows_core::Interface::vtable(this).FindContainersWithOptions)(::windows_core::Interface::as_raw(this), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<SharedPackageContainer>>(result__)
         }
     }
     pub fn GetDefault() -> ::windows_core::Result<SharedPackageContainerManager> {
@@ -4453,11 +4319,11 @@ impl StagePackageOptions {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn DependencyPackageUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn DependencyPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DependencyPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).DependencyPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     pub fn TargetVolume(&self) -> ::windows_core::Result<PackageVolume> {
@@ -4472,39 +4338,37 @@ impl StagePackageOptions {
         unsafe { (::windows_core::Interface::vtable(this).SetTargetVolume)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OptionalPackageFamilyNames(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn OptionalPackageFamilyNames(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OptionalPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).OptionalPackageFamilyNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn OptionalPackageUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn OptionalPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OptionalPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).OptionalPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RelatedPackageUris(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn RelatedPackageUris(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RelatedPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).RelatedPackageUris)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ExternalLocationUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn ExternalLocationUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExternalLocationUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ExternalLocationUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetExternalLocationUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetExternalLocationUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetExternalLocationUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }

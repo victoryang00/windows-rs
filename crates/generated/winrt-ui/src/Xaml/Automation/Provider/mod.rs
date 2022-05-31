@@ -2551,8 +2551,7 @@ impl ITextEditProvider {
             (::windows_core::Interface::vtable(this).RangeFromChild)(::windows_core::Interface::as_raw(this), childelement.into_param().abi(), result__.as_mut_ptr()).from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RangeFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, screenlocation: Param0) -> ::windows_core::Result<ITextRangeProvider> {
+    pub fn RangeFromPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, screenlocation: Param0) -> ::windows_core::Result<ITextRangeProvider> {
         let this = &::windows_core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2694,8 +2693,7 @@ impl ITextProvider {
             (::windows_core::Interface::vtable(this).RangeFromChild)(::windows_core::Interface::as_raw(this), childelement.into_param().abi(), result__.as_mut_ptr()).from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RangeFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, screenlocation: Param0) -> ::windows_core::Result<ITextRangeProvider> {
+    pub fn RangeFromPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, screenlocation: Param0) -> ::windows_core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2779,10 +2777,7 @@ pub struct ITextProvider_Vtbl {
     pub GetSelection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result_size__: *mut u32, result__: *mut *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetVisibleRanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result_size__: *mut u32, result__: *mut *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RangeFromChild: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, childelement: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub RangeFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, screenlocation: super::super::super::super::Foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RangeFromPoint: usize,
+    pub RangeFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, screenlocation: ::winrt_foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ITextProvider2(::windows_core::IUnknown);
@@ -2836,8 +2831,7 @@ impl ITextProvider2 {
             (::windows_core::Interface::vtable(this).RangeFromChild)(::windows_core::Interface::as_raw(this), childelement.into_param().abi(), result__.as_mut_ptr()).from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RangeFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, screenlocation: Param0) -> ::windows_core::Result<ITextRangeProvider> {
+    pub fn RangeFromPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, screenlocation: Param0) -> ::windows_core::Result<ITextRangeProvider> {
         let this = &::windows_core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

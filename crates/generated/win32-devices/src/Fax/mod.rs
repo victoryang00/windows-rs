@@ -4,14 +4,13 @@ pub const CF_MSFAXSRV_ROUTEEXT_NAME: &str = "FAXSRV_RoutingExtName";
 pub const CF_MSFAXSRV_ROUTING_METHOD_GUID: &str = "FAXSRV_RoutingMethodGuid";
 pub const CF_MSFAXSRV_SERVER_NAME: &str = "FAXSRV_ServerName";
 pub const CLSID_Sti: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xb323f8e0_2e68_11d0_90ea_00aa0060f86c);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CanSendToFaxRecipient() -> super::super::Foundation::BOOL {
+pub unsafe fn CanSendToFaxRecipient() -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CanSendToFaxRecipient() -> super::super::Foundation::BOOL;
+            fn CanSendToFaxRecipient() -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CanSendToFaxRecipient())
     }
@@ -143,31 +142,27 @@ impl ::core::fmt::Debug for FAX_ACCOUNT_EVENTS_TYPE_ENUM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_CONFIGURATIONA {
     pub SizeOfStruct: u32,
     pub Retries: u32,
     pub RetryDelay: u32,
     pub DirtyDays: u32,
-    pub Branding: super::super::Foundation::BOOL,
-    pub UseDeviceTsid: super::super::Foundation::BOOL,
-    pub ServerCp: super::super::Foundation::BOOL,
-    pub PauseServerQueue: super::super::Foundation::BOOL,
+    pub Branding: ::win32_foundation::BOOL,
+    pub UseDeviceTsid: ::win32_foundation::BOOL,
+    pub ServerCp: ::win32_foundation::BOOL,
+    pub PauseServerQueue: ::win32_foundation::BOOL,
     pub StartCheapTime: FAX_TIME,
     pub StopCheapTime: FAX_TIME,
-    pub ArchiveOutgoingFaxes: super::super::Foundation::BOOL,
+    pub ArchiveOutgoingFaxes: ::win32_foundation::BOOL,
     pub ArchiveDirectory: ::windows_core::PCSTR,
     pub Reserved: ::windows_core::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_CONFIGURATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_CONFIGURATIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_CONFIGURATIONA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_CONFIGURATIONA")
@@ -187,50 +182,42 @@ impl ::core::fmt::Debug for FAX_CONFIGURATIONA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_CONFIGURATIONA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_CONFIGURATIONA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_CONFIGURATIONA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_CONFIGURATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_CONFIGURATIONA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_CONFIGURATIONW {
     pub SizeOfStruct: u32,
     pub Retries: u32,
     pub RetryDelay: u32,
     pub DirtyDays: u32,
-    pub Branding: super::super::Foundation::BOOL,
-    pub UseDeviceTsid: super::super::Foundation::BOOL,
-    pub ServerCp: super::super::Foundation::BOOL,
-    pub PauseServerQueue: super::super::Foundation::BOOL,
+    pub Branding: ::win32_foundation::BOOL,
+    pub UseDeviceTsid: ::win32_foundation::BOOL,
+    pub ServerCp: ::win32_foundation::BOOL,
+    pub PauseServerQueue: ::win32_foundation::BOOL,
     pub StartCheapTime: FAX_TIME,
     pub StopCheapTime: FAX_TIME,
-    pub ArchiveOutgoingFaxes: super::super::Foundation::BOOL,
+    pub ArchiveOutgoingFaxes: ::win32_foundation::BOOL,
     pub ArchiveDirectory: ::windows_core::PCWSTR,
     pub Reserved: ::windows_core::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_CONFIGURATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_CONFIGURATIONW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_CONFIGURATIONW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_CONFIGURATIONW")
@@ -250,19 +237,15 @@ impl ::core::fmt::Debug for FAX_CONFIGURATIONW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_CONFIGURATIONW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_CONFIGURATIONW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_CONFIGURATIONW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_CONFIGURATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_CONFIGURATIONW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -271,39 +254,39 @@ impl ::core::default::Default for FAX_CONFIGURATIONW {
 pub const FAX_CONFIG_QUERY: u32 = 4u32;
 pub const FAX_CONFIG_SET: u32 = 8u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct FAX_CONTEXT_INFOA {
     pub SizeOfStruct: u32,
-    pub hDC: super::super::Graphics::Gdi::HDC,
-    pub ServerName: [super::super::Foundation::CHAR; 16],
+    pub hDC: ::win32_graphics::Gdi::HDC,
+    pub ServerName: [::win32_foundation::CHAR; 16],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for FAX_CONTEXT_INFOA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::clone::Clone for FAX_CONTEXT_INFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::fmt::Debug for FAX_CONTEXT_INFOA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_CONTEXT_INFOA").field("SizeOfStruct", &self.SizeOfStruct).field("hDC", &self.hDC).field("ServerName", &self.ServerName).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 unsafe impl ::windows_core::Abi for FAX_CONTEXT_INFOA {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::PartialEq for FAX_CONTEXT_INFOA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_CONTEXT_INFOA>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::cmp::Eq for FAX_CONTEXT_INFOA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::default::Default for FAX_CONTEXT_INFOA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -313,7 +296,7 @@ impl ::core::default::Default for FAX_CONTEXT_INFOA {
 #[cfg(feature = "Win32_Graphics_Gdi")]
 pub struct FAX_CONTEXT_INFOW {
     pub SizeOfStruct: u32,
-    pub hDC: super::super::Graphics::Gdi::HDC,
+    pub hDC: ::win32_graphics::Gdi::HDC,
     pub ServerName: [u16; 16],
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
@@ -349,11 +332,10 @@ impl ::core::default::Default for FAX_CONTEXT_INFOW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_COVERPAGE_INFOA {
     pub SizeOfStruct: u32,
     pub CoverPageName: ::windows_core::PCSTR,
-    pub UseServerCoverPage: super::super::Foundation::BOOL,
+    pub UseServerCoverPage: ::win32_foundation::BOOL,
     pub RecName: ::windows_core::PCSTR,
     pub RecFaxNumber: ::windows_core::PCSTR,
     pub RecCompany: ::windows_core::PCSTR,
@@ -378,18 +360,15 @@ pub struct FAX_COVERPAGE_INFOA {
     pub SdrOfficePhone: ::windows_core::PCSTR,
     pub Note: ::windows_core::PCSTR,
     pub Subject: ::windows_core::PCSTR,
-    pub TimeSent: super::super::Foundation::SYSTEMTIME,
+    pub TimeSent: ::win32_foundation::SYSTEMTIME,
     pub PageCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_COVERPAGE_INFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_COVERPAGE_INFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_COVERPAGE_INFOA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_COVERPAGE_INFOA")
@@ -425,30 +404,25 @@ impl ::core::fmt::Debug for FAX_COVERPAGE_INFOA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_COVERPAGE_INFOA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_COVERPAGE_INFOA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_COVERPAGE_INFOA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_COVERPAGE_INFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_COVERPAGE_INFOA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_COVERPAGE_INFOW {
     pub SizeOfStruct: u32,
     pub CoverPageName: ::windows_core::PCWSTR,
-    pub UseServerCoverPage: super::super::Foundation::BOOL,
+    pub UseServerCoverPage: ::win32_foundation::BOOL,
     pub RecName: ::windows_core::PCWSTR,
     pub RecFaxNumber: ::windows_core::PCWSTR,
     pub RecCompany: ::windows_core::PCWSTR,
@@ -473,18 +447,15 @@ pub struct FAX_COVERPAGE_INFOW {
     pub SdrOfficePhone: ::windows_core::PCWSTR,
     pub Note: ::windows_core::PCWSTR,
     pub Subject: ::windows_core::PCWSTR,
-    pub TimeSent: super::super::Foundation::SYSTEMTIME,
+    pub TimeSent: ::win32_foundation::SYSTEMTIME,
     pub PageCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_COVERPAGE_INFOW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_COVERPAGE_INFOW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_COVERPAGE_INFOW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_COVERPAGE_INFOW")
@@ -520,19 +491,15 @@ impl ::core::fmt::Debug for FAX_COVERPAGE_INFOW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_COVERPAGE_INFOW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_COVERPAGE_INFOW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_COVERPAGE_INFOW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_COVERPAGE_INFOW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_COVERPAGE_INFOW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -589,7 +556,6 @@ impl ::core::fmt::Debug for FAX_DEVICE_RECEIVE_MODE_ENUM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_DEVICE_STATUSA {
     pub SizeOfStruct: u32,
     pub CallerId: ::windows_core::PCSTR,
@@ -604,23 +570,20 @@ pub struct FAX_DEVICE_STATUSA {
     pub SenderName: ::windows_core::PCSTR,
     pub RecipientName: ::windows_core::PCSTR,
     pub Size: u32,
-    pub StartTime: super::super::Foundation::FILETIME,
+    pub StartTime: ::win32_foundation::FILETIME,
     pub Status: u32,
     pub StatusString: ::windows_core::PCSTR,
-    pub SubmittedTime: super::super::Foundation::FILETIME,
+    pub SubmittedTime: ::win32_foundation::FILETIME,
     pub TotalPages: u32,
     pub Tsid: ::windows_core::PCSTR,
     pub UserName: ::windows_core::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_DEVICE_STATUSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_DEVICE_STATUSA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_DEVICE_STATUSA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_DEVICE_STATUSA")
@@ -647,26 +610,21 @@ impl ::core::fmt::Debug for FAX_DEVICE_STATUSA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_DEVICE_STATUSA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_DEVICE_STATUSA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_DEVICE_STATUSA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_DEVICE_STATUSA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_DEVICE_STATUSA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_DEVICE_STATUSW {
     pub SizeOfStruct: u32,
     pub CallerId: ::windows_core::PCWSTR,
@@ -681,23 +639,20 @@ pub struct FAX_DEVICE_STATUSW {
     pub SenderName: ::windows_core::PCWSTR,
     pub RecipientName: ::windows_core::PCWSTR,
     pub Size: u32,
-    pub StartTime: super::super::Foundation::FILETIME,
+    pub StartTime: ::win32_foundation::FILETIME,
     pub Status: u32,
     pub StatusString: ::windows_core::PCWSTR,
-    pub SubmittedTime: super::super::Foundation::FILETIME,
+    pub SubmittedTime: ::win32_foundation::FILETIME,
     pub TotalPages: u32,
     pub Tsid: ::windows_core::PCWSTR,
     pub UserName: ::windows_core::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_DEVICE_STATUSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_DEVICE_STATUSW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_DEVICE_STATUSW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_DEVICE_STATUSW")
@@ -724,19 +679,15 @@ impl ::core::fmt::Debug for FAX_DEVICE_STATUSW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_DEVICE_STATUSW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_DEVICE_STATUSW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_DEVICE_STATUSW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_DEVICE_STATUSW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_DEVICE_STATUSW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -971,82 +922,66 @@ pub const FAX_ERR_SRV_OUTOFMEMORY: i32 = 7001i32;
 pub const FAX_ERR_START: i32 = 7001i32;
 pub const FAX_ERR_VERSION_MISMATCH: i32 = 7012i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_EVENTA {
     pub SizeOfStruct: u32,
-    pub TimeStamp: super::super::Foundation::FILETIME,
+    pub TimeStamp: ::win32_foundation::FILETIME,
     pub DeviceId: u32,
     pub EventId: u32,
     pub JobId: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_EVENTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_EVENTA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_EVENTA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_EVENTA").field("SizeOfStruct", &self.SizeOfStruct).field("TimeStamp", &self.TimeStamp).field("DeviceId", &self.DeviceId).field("EventId", &self.EventId).field("JobId", &self.JobId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_EVENTA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_EVENTA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_EVENTA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_EVENTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_EVENTA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_EVENTW {
     pub SizeOfStruct: u32,
-    pub TimeStamp: super::super::Foundation::FILETIME,
+    pub TimeStamp: ::win32_foundation::FILETIME,
     pub DeviceId: u32,
     pub EventId: u32,
     pub JobId: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_EVENTW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_EVENTW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_EVENTW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_EVENTW").field("SizeOfStruct", &self.SizeOfStruct).field("TimeStamp", &self.TimeStamp).field("DeviceId", &self.DeviceId).field("EventId", &self.EventId).field("JobId", &self.JobId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_EVENTW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_EVENTW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_EVENTW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_EVENTW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_EVENTW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1162,7 +1097,6 @@ impl ::core::fmt::Debug for FAX_GROUP_STATUS_ENUM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_JOB_ENTRYA {
     pub SizeOfStruct: u32,
     pub JobId: u32,
@@ -1180,20 +1114,17 @@ pub struct FAX_JOB_ENTRYA {
     pub SenderDept: ::windows_core::PCSTR,
     pub BillingCode: ::windows_core::PCSTR,
     pub ScheduleAction: u32,
-    pub ScheduleTime: super::super::Foundation::SYSTEMTIME,
+    pub ScheduleTime: ::win32_foundation::SYSTEMTIME,
     pub DeliveryReportType: u32,
     pub DeliveryReportAddress: ::windows_core::PCSTR,
     pub DocumentName: ::windows_core::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_JOB_ENTRYA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_JOB_ENTRYA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_JOB_ENTRYA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_JOB_ENTRYA")
@@ -1220,26 +1151,21 @@ impl ::core::fmt::Debug for FAX_JOB_ENTRYA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_JOB_ENTRYA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_JOB_ENTRYA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_JOB_ENTRYA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_JOB_ENTRYA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_JOB_ENTRYA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_JOB_ENTRYW {
     pub SizeOfStruct: u32,
     pub JobId: u32,
@@ -1257,20 +1183,17 @@ pub struct FAX_JOB_ENTRYW {
     pub SenderDept: ::windows_core::PCWSTR,
     pub BillingCode: ::windows_core::PCWSTR,
     pub ScheduleAction: u32,
-    pub ScheduleTime: super::super::Foundation::SYSTEMTIME,
+    pub ScheduleTime: ::win32_foundation::SYSTEMTIME,
     pub DeliveryReportType: u32,
     pub DeliveryReportAddress: ::windows_core::PCWSTR,
     pub DocumentName: ::windows_core::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_JOB_ENTRYW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_JOB_ENTRYW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_JOB_ENTRYW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_JOB_ENTRYW")
@@ -1297,19 +1220,15 @@ impl ::core::fmt::Debug for FAX_JOB_ENTRYW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_JOB_ENTRYW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_JOB_ENTRYW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_JOB_ENTRYW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_JOB_ENTRYW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_JOB_ENTRYW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1389,7 +1308,6 @@ impl ::core::fmt::Debug for FAX_JOB_OPERATIONS_ENUM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_JOB_PARAMA {
     pub SizeOfStruct: u32,
     pub RecipientNumber: ::windows_core::PCSTR,
@@ -1400,22 +1318,19 @@ pub struct FAX_JOB_PARAMA {
     pub SenderDept: ::windows_core::PCSTR,
     pub BillingCode: ::windows_core::PCSTR,
     pub ScheduleAction: u32,
-    pub ScheduleTime: super::super::Foundation::SYSTEMTIME,
+    pub ScheduleTime: ::win32_foundation::SYSTEMTIME,
     pub DeliveryReportType: u32,
     pub DeliveryReportAddress: ::windows_core::PCSTR,
     pub DocumentName: ::windows_core::PCSTR,
     pub CallHandle: u32,
     pub Reserved: [usize; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_JOB_PARAMA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_JOB_PARAMA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_JOB_PARAMA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_JOB_PARAMA")
@@ -1437,26 +1352,21 @@ impl ::core::fmt::Debug for FAX_JOB_PARAMA {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_JOB_PARAMA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_JOB_PARAMA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_JOB_PARAMA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_JOB_PARAMA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_JOB_PARAMA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_JOB_PARAMW {
     pub SizeOfStruct: u32,
     pub RecipientNumber: ::windows_core::PCWSTR,
@@ -1467,22 +1377,19 @@ pub struct FAX_JOB_PARAMW {
     pub SenderDept: ::windows_core::PCWSTR,
     pub BillingCode: ::windows_core::PCWSTR,
     pub ScheduleAction: u32,
-    pub ScheduleTime: super::super::Foundation::SYSTEMTIME,
+    pub ScheduleTime: ::win32_foundation::SYSTEMTIME,
     pub DeliveryReportType: u32,
     pub DeliveryReportAddress: ::windows_core::PCWSTR,
     pub DocumentName: ::windows_core::PCWSTR,
     pub CallHandle: u32,
     pub Reserved: [usize; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_JOB_PARAMW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_JOB_PARAMW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_JOB_PARAMW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_JOB_PARAMW")
@@ -1504,19 +1411,15 @@ impl ::core::fmt::Debug for FAX_JOB_PARAMW {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_JOB_PARAMW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_JOB_PARAMW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_JOB_PARAMW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_JOB_PARAMW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_JOB_PARAMW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2020,7 +1923,6 @@ impl ::core::default::Default for FAX_ROUTE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_ROUTE_CALLBACKROUTINES {
     pub SizeOfStruct: u32,
     pub FaxRouteAddFile: PFAXROUTEADDFILE,
@@ -2029,44 +1931,36 @@ pub struct FAX_ROUTE_CALLBACKROUTINES {
     pub FaxRouteEnumFiles: PFAXROUTEENUMFILES,
     pub FaxRouteModifyRoutingData: PFAXROUTEMODIFYROUTINGDATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_ROUTE_CALLBACKROUTINES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_ROUTE_CALLBACKROUTINES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_ROUTE_CALLBACKROUTINES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_ROUTE_CALLBACKROUTINES").field("SizeOfStruct", &self.SizeOfStruct).field("FaxRouteAddFile", &self.FaxRouteAddFile.map(|f| f as usize)).field("FaxRouteDeleteFile", &self.FaxRouteDeleteFile.map(|f| f as usize)).field("FaxRouteGetFile", &self.FaxRouteGetFile.map(|f| f as usize)).field("FaxRouteEnumFiles", &self.FaxRouteEnumFiles.map(|f| f as usize)).field("FaxRouteModifyRoutingData", &self.FaxRouteModifyRoutingData.map(|f| f as usize)).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_ROUTE_CALLBACKROUTINES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_ROUTE_CALLBACKROUTINES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_ROUTE_CALLBACKROUTINES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_ROUTE_CALLBACKROUTINES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_ROUTE_CALLBACKROUTINES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_ROUTING_METHODA {
     pub SizeOfStruct: u32,
     pub DeviceId: u32,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation::BOOL,
     pub DeviceName: ::windows_core::PCSTR,
     pub Guid: ::windows_core::PCSTR,
     pub FriendlyName: ::windows_core::PCSTR,
@@ -2074,44 +1968,36 @@ pub struct FAX_ROUTING_METHODA {
     pub ExtensionImageName: ::windows_core::PCSTR,
     pub ExtensionFriendlyName: ::windows_core::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_ROUTING_METHODA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_ROUTING_METHODA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_ROUTING_METHODA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_ROUTING_METHODA").field("SizeOfStruct", &self.SizeOfStruct).field("DeviceId", &self.DeviceId).field("Enabled", &self.Enabled).field("DeviceName", &self.DeviceName).field("Guid", &self.Guid).field("FriendlyName", &self.FriendlyName).field("FunctionName", &self.FunctionName).field("ExtensionImageName", &self.ExtensionImageName).field("ExtensionFriendlyName", &self.ExtensionFriendlyName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_ROUTING_METHODA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_ROUTING_METHODA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_ROUTING_METHODA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_ROUTING_METHODA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_ROUTING_METHODA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_ROUTING_METHODW {
     pub SizeOfStruct: u32,
     pub DeviceId: u32,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation::BOOL,
     pub DeviceName: ::windows_core::PCWSTR,
     pub Guid: ::windows_core::PCWSTR,
     pub FriendlyName: ::windows_core::PCWSTR,
@@ -2119,33 +2005,26 @@ pub struct FAX_ROUTING_METHODW {
     pub ExtensionImageName: ::windows_core::PCWSTR,
     pub ExtensionFriendlyName: ::windows_core::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_ROUTING_METHODW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_ROUTING_METHODW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_ROUTING_METHODW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_ROUTING_METHODW").field("SizeOfStruct", &self.SizeOfStruct).field("DeviceId", &self.DeviceId).field("Enabled", &self.Enabled).field("DeviceName", &self.DeviceName).field("Guid", &self.Guid).field("FriendlyName", &self.FriendlyName).field("FunctionName", &self.FunctionName).field("ExtensionImageName", &self.ExtensionImageName).field("ExtensionFriendlyName", &self.ExtensionFriendlyName).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_ROUTING_METHODW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_ROUTING_METHODW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_ROUTING_METHODW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_ROUTING_METHODW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_ROUTING_METHODW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2227,7 +2106,6 @@ impl ::core::fmt::Debug for FAX_SCHEDULE_TYPE_ENUM {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FAX_SEND {
     pub SizeOfStruct: u32,
     pub FileName: ::windows_core::PWSTR,
@@ -2235,37 +2113,30 @@ pub struct FAX_SEND {
     pub CallerNumber: ::windows_core::PWSTR,
     pub ReceiverName: ::windows_core::PWSTR,
     pub ReceiverNumber: ::windows_core::PWSTR,
-    pub Branding: super::super::Foundation::BOOL,
+    pub Branding: ::win32_foundation::BOOL,
     pub CallHandle: u32,
     pub Reserved: [u32; 3],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FAX_SEND {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FAX_SEND {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FAX_SEND {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FAX_SEND").field("SizeOfStruct", &self.SizeOfStruct).field("FileName", &self.FileName).field("CallerName", &self.CallerName).field("CallerNumber", &self.CallerNumber).field("ReceiverName", &self.ReceiverName).field("ReceiverNumber", &self.ReceiverNumber).field("Branding", &self.Branding).field("CallHandle", &self.CallHandle).field("Reserved", &self.Reserved).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FAX_SEND {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FAX_SEND {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FAX_SEND>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FAX_SEND {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FAX_SEND {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2456,28 +2327,26 @@ pub const FS_NO_DIAL_TONE: u32 = 536871424u32;
 pub const FS_RECEIVING: u32 = 536870916u32;
 pub const FS_TRANSMITTING: u32 = 536870914u32;
 pub const FS_USER_ABORT: u32 = 538968064u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxAbort<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, jobid: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxAbort<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, jobid: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxAbort(faxhandle: super::super::Foundation::HANDLE, jobid: u32) -> super::super::Foundation::BOOL;
+            fn FaxAbort(faxhandle: ::win32_foundation::HANDLE, jobid: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxAbort(faxhandle.into_param().abi(), ::core::mem::transmute(jobid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxAccessCheck<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, accessmask: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxAccessCheck<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, accessmask: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxAccessCheck(faxhandle: super::super::Foundation::HANDLE, accessmask: u32) -> super::super::Foundation::BOOL;
+            fn FaxAccessCheck(faxhandle: ::win32_foundation::HANDLE, accessmask: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxAccessCheck(faxhandle.into_param().abi(), ::core::mem::transmute(accessmask)))
     }
@@ -2494,42 +2363,39 @@ pub const FaxAccountSet: ::windows_core::GUID = ::windows_core::GUID::from_u128(
 pub const FaxAccounts: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xda1f94aa_ee2c_47c0_8f4f_2a217075b76e);
 pub const FaxActivity: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcfef5d0e_e84d_462e_aabb_87d31eb04fef);
 pub const FaxActivityLogging: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xf0a0294e_3bbd_48b8_8f13_8c591a55bdbc);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxClose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxClose<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxClose(faxhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn FaxClose(faxhandle: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxClose(faxhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxCompleteJobParamsA(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxCompleteJobParamsA(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxCompleteJobParamsA(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL;
+            fn FaxCompleteJobParamsA(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxCompleteJobParamsA(::core::mem::transmute(jobparams), ::core::mem::transmute(coverpageinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxCompleteJobParamsW(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxCompleteJobParamsW(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxCompleteJobParamsW(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL;
+            fn FaxCompleteJobParamsW(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxCompleteJobParamsW(::core::mem::transmute(jobparams), ::core::mem::transmute(coverpageinfo)))
     }
@@ -2537,28 +2403,26 @@ pub unsafe fn FaxCompleteJobParamsW(jobparams: *mut *mut FAX_JOB_PARAMW, coverpa
     unimplemented!("Unsupported target OS");
 }
 pub const FaxConfiguration: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5857326f_e7b3_41a7_9c19_a91b463e2d56);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxConnectFaxServerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(machinename: Param0, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxConnectFaxServerA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(machinename: Param0, faxhandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxConnectFaxServerA(machinename: ::windows_core::PCSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn FaxConnectFaxServerA(machinename: ::windows_core::PCSTR, faxhandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxConnectFaxServerA(machinename.into_param().abi(), ::core::mem::transmute(faxhandle)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxConnectFaxServerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(machinename: Param0, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxConnectFaxServerW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(machinename: Param0, faxhandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxConnectFaxServerW(machinename: ::windows_core::PCWSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn FaxConnectFaxServerW(machinename: ::windows_core::PCWSTR, faxhandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxConnectFaxServerW(machinename.into_param().abi(), ::core::mem::transmute(faxhandle)))
     }
@@ -2571,140 +2435,130 @@ pub const FaxDeviceProvider: ::windows_core::GUID = ::windows_core::GUID::from_u
 pub const FaxDeviceProviders: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xeb8fe768_875a_4f5f_82c5_03f23aac1bd7);
 pub const FaxDevices: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x5589e28e_23cb_4919_8808_e6101846e80d);
 pub const FaxDocument: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x0f3f9f91_c838_415e_a4f3_3e828ca445e0);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnableRoutingMethodA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(faxporthandle: Param0, routingguid: Param1, enabled: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnableRoutingMethodA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(faxporthandle: Param0, routingguid: Param1, enabled: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnableRoutingMethodA(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn FaxEnableRoutingMethodA(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCSTR, enabled: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnableRoutingMethodA(faxporthandle.into_param().abi(), routingguid.into_param().abi(), enabled.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnableRoutingMethodW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(faxporthandle: Param0, routingguid: Param1, enabled: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnableRoutingMethodW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(faxporthandle: Param0, routingguid: Param1, enabled: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnableRoutingMethodW(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCWSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+            fn FaxEnableRoutingMethodW(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCWSTR, enabled: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnableRoutingMethodW(faxporthandle.into_param().abi(), routingguid.into_param().abi(), enabled.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnumGlobalRoutingInfoA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnumGlobalRoutingInfoA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnumGlobalRoutingInfoA(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxEnumGlobalRoutingInfoA(faxhandle: ::win32_foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnumGlobalRoutingInfoA(faxhandle.into_param().abi(), ::core::mem::transmute(routinginfo), ::core::mem::transmute(methodsreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnumGlobalRoutingInfoW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnumGlobalRoutingInfoW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnumGlobalRoutingInfoW(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxEnumGlobalRoutingInfoW(faxhandle: ::win32_foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnumGlobalRoutingInfoW(faxhandle.into_param().abi(), ::core::mem::transmute(routinginfo), ::core::mem::transmute(methodsreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnumJobsA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnumJobsA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnumJobsA(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxEnumJobsA(faxhandle: ::win32_foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnumJobsA(faxhandle.into_param().abi(), ::core::mem::transmute(jobentry), ::core::mem::transmute(jobsreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnumJobsW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnumJobsW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnumJobsW(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxEnumJobsW(faxhandle: ::win32_foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnumJobsW(faxhandle.into_param().abi(), ::core::mem::transmute(jobentry), ::core::mem::transmute(jobsreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnumPortsA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnumPortsA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnumPortsA(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxEnumPortsA(faxhandle: ::win32_foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnumPortsA(faxhandle.into_param().abi(), ::core::mem::transmute(portinfo), ::core::mem::transmute(portsreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnumPortsW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnumPortsW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnumPortsW(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxEnumPortsW(faxhandle: ::win32_foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnumPortsW(faxhandle.into_param().abi(), ::core::mem::transmute(portinfo), ::core::mem::transmute(portsreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnumRoutingMethodsA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxporthandle: Param0, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnumRoutingMethodsA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxporthandle: Param0, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnumRoutingMethodsA(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxEnumRoutingMethodsA(faxporthandle: ::win32_foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnumRoutingMethodsA(faxporthandle.into_param().abi(), ::core::mem::transmute(routingmethod), ::core::mem::transmute(methodsreturned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxEnumRoutingMethodsW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxporthandle: Param0, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxEnumRoutingMethodsW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxporthandle: Param0, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxEnumRoutingMethodsW(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxEnumRoutingMethodsW(faxporthandle: ::win32_foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxEnumRoutingMethodsW(faxporthandle.into_param().abi(), ::core::mem::transmute(routingmethod), ::core::mem::transmute(methodsreturned)))
     }
@@ -2726,182 +2580,169 @@ pub unsafe fn FaxFreeBuffer(buffer: *mut ::core::ffi::c_void) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetConfigurationA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetConfigurationA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetConfigurationA(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL;
+            fn FaxGetConfigurationA(faxhandle: ::win32_foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetConfigurationA(faxhandle.into_param().abi(), ::core::mem::transmute(faxconfig)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetConfigurationW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetConfigurationW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetConfigurationW(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL;
+            fn FaxGetConfigurationW(faxhandle: ::win32_foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetConfigurationW(faxhandle.into_param().abi(), ::core::mem::transmute(faxconfig)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetDeviceStatusA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxporthandle: Param0, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetDeviceStatusA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxporthandle: Param0, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetDeviceStatusA(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> super::super::Foundation::BOOL;
+            fn FaxGetDeviceStatusA(faxporthandle: ::win32_foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetDeviceStatusA(faxporthandle.into_param().abi(), ::core::mem::transmute(devicestatus)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetDeviceStatusW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxporthandle: Param0, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetDeviceStatusW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxporthandle: Param0, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetDeviceStatusW(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> super::super::Foundation::BOOL;
+            fn FaxGetDeviceStatusW(faxporthandle: ::win32_foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetDeviceStatusW(faxporthandle.into_param().abi(), ::core::mem::transmute(devicestatus)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetJobA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetJobA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetJobA(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL;
+            fn FaxGetJobA(faxhandle: ::win32_foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetJobA(faxhandle.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(jobentry)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetJobW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetJobW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetJobW(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL;
+            fn FaxGetJobW(faxhandle: ::win32_foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetJobW(faxhandle.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(jobentry)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetLoggingCategoriesA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetLoggingCategoriesA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetLoggingCategoriesA(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxGetLoggingCategoriesA(faxhandle: ::win32_foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetLoggingCategoriesA(faxhandle.into_param().abi(), ::core::mem::transmute(categories), ::core::mem::transmute(numbercategories)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetLoggingCategoriesW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetLoggingCategoriesW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetLoggingCategoriesW(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxGetLoggingCategoriesW(faxhandle: ::win32_foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetLoggingCategoriesW(faxhandle.into_param().abi(), ::core::mem::transmute(categories), ::core::mem::transmute(numbercategories)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetPageData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetPageData<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetPageData(faxhandle: super::super::Foundation::HANDLE, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxGetPageData(faxhandle: ::win32_foundation::HANDLE, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetPageData(faxhandle.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(buffer), ::core::mem::transmute(buffersize), ::core::mem::transmute(imagewidth), ::core::mem::transmute(imageheight)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetPortA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxporthandle: Param0, portinfo: *mut *mut FAX_PORT_INFOA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetPortA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxporthandle: Param0, portinfo: *mut *mut FAX_PORT_INFOA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetPortA(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA) -> super::super::Foundation::BOOL;
+            fn FaxGetPortA(faxporthandle: ::win32_foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetPortA(faxporthandle.into_param().abi(), ::core::mem::transmute(portinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetPortW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxporthandle: Param0, portinfo: *mut *mut FAX_PORT_INFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetPortW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxporthandle: Param0, portinfo: *mut *mut FAX_PORT_INFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetPortW(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW) -> super::super::Foundation::BOOL;
+            fn FaxGetPortW(faxporthandle: ::win32_foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetPortW(faxporthandle.into_param().abi(), ::core::mem::transmute(portinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetRoutingInfoA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(faxporthandle: Param0, routingguid: Param1, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetRoutingInfoA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(faxporthandle: Param0, routingguid: Param1, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetRoutingInfoA(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxGetRoutingInfoA(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetRoutingInfoA(faxporthandle.into_param().abi(), routingguid.into_param().abi(), ::core::mem::transmute(routinginfobuffer), ::core::mem::transmute(routinginfobuffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxGetRoutingInfoW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxporthandle: Param0, routingguid: Param1, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxGetRoutingInfoW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxporthandle: Param0, routingguid: Param1, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxGetRoutingInfoW(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCWSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxGetRoutingInfoW(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCWSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxGetRoutingInfoW(faxporthandle.into_param().abi(), routingguid.into_param().abi(), ::core::mem::transmute(routinginfobuffer), ::core::mem::transmute(routinginfobuffersize)))
     }
@@ -2919,14 +2760,13 @@ pub const FaxIncomingJobs: ::windows_core::GUID = ::windows_core::GUID::from_u12
 pub const FaxIncomingMessage: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1932fcf7_9d43_4d5a_89ff_03861b321736);
 pub const FaxIncomingMessageIterator: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6088e1d8_3fc8_45c2_87b1_909a29607ea9);
 pub const FaxIncomingQueue: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x69131717_f3f1_40e3_809d_a6cbf7bd85e5);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxInitializeEventQueue<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(faxhandle: Param0, completionport: Param1, completionkey: usize, hwnd: Param3, messagestart: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxInitializeEventQueue<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(faxhandle: Param0, completionport: Param1, completionkey: usize, hwnd: Param3, messagestart: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxInitializeEventQueue(faxhandle: super::super::Foundation::HANDLE, completionport: super::super::Foundation::HANDLE, completionkey: usize, hwnd: super::super::Foundation::HWND, messagestart: u32) -> super::super::Foundation::BOOL;
+            fn FaxInitializeEventQueue(faxhandle: ::win32_foundation::HANDLE, completionport: ::win32_foundation::HANDLE, completionkey: usize, hwnd: ::win32_foundation::HWND, messagestart: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxInitializeEventQueue(faxhandle.into_param().abi(), completionport.into_param().abi(), ::core::mem::transmute(completionkey), hwnd.into_param().abi(), ::core::mem::transmute(messagestart)))
     }
@@ -2935,14 +2775,13 @@ pub unsafe fn FaxInitializeEventQueue<'a, Param0: ::windows_core::IntoParam<'a, 
 }
 pub const FaxJobStatus: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7bf222f4_be8d_442f_841d_6132742423bb);
 pub const FaxLoggingOptions: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x1bf9eea6_ece0_4785_a18b_de56e9eef96a);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxOpenPort<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, deviceid: u32, flags: u32, faxporthandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxOpenPort<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, deviceid: u32, flags: u32, faxporthandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxOpenPort(faxhandle: super::super::Foundation::HANDLE, deviceid: u32, flags: u32, faxporthandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn FaxOpenPort(faxhandle: ::win32_foundation::HANDLE, deviceid: u32, flags: u32, faxporthandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxOpenPort(faxhandle.into_param().abi(), ::core::mem::transmute(deviceid), ::core::mem::transmute(flags), ::core::mem::transmute(faxporthandle)))
     }
@@ -2960,28 +2799,28 @@ pub const FaxOutgoingJobs: ::windows_core::GUID = ::windows_core::GUID::from_u12
 pub const FaxOutgoingMessage: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x91b4a378_4ad8_4aef_a4dc_97d96e939a3a);
 pub const FaxOutgoingMessageIterator: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8a3224d0_d30b_49de_9813_cb385790fbbb);
 pub const FaxOutgoingQueue: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x7421169e_8c43_4b0d_bb16_645c8fa40357);
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn FaxPrintCoverPageA(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxPrintCoverPageA(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxPrintCoverPageA(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL;
+            fn FaxPrintCoverPageA(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxPrintCoverPageA(::core::mem::transmute(faxcontextinfo), ::core::mem::transmute(coverpageinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn FaxPrintCoverPageW(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxPrintCoverPageW(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxPrintCoverPageW(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL;
+            fn FaxPrintCoverPageW(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxPrintCoverPageW(::core::mem::transmute(faxcontextinfo), ::core::mem::transmute(coverpageinfo)))
     }
@@ -2991,28 +2830,26 @@ pub unsafe fn FaxPrintCoverPageW(faxcontextinfo: *const FAX_CONTEXT_INFOW, cover
 pub const FaxReceiptOptions: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x6982487b_227b_4c96_a61c_248348b05ab6);
 pub const FaxRecipient: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x60bf3301_7df8_4bd8_9148_7b5801f9efdf);
 pub const FaxRecipients: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xea9bdf53_10a9_4d4f_a067_63c8f84f01b0);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxRegisterRoutingExtensionW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxhandle: Param0, extensionname: Param1, friendlyname: Param2, imagename: Param3, callback: PFAX_ROUTING_INSTALLATION_CALLBACKW, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxRegisterRoutingExtensionW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxhandle: Param0, extensionname: Param1, friendlyname: Param2, imagename: Param3, callback: PFAX_ROUTING_INSTALLATION_CALLBACKW, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxRegisterRoutingExtensionW(faxhandle: super::super::Foundation::HANDLE, extensionname: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, imagename: ::windows_core::PCWSTR, callback: ::windows_core::RawPtr, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn FaxRegisterRoutingExtensionW(faxhandle: ::win32_foundation::HANDLE, extensionname: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, imagename: ::windows_core::PCWSTR, callback: ::windows_core::RawPtr, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxRegisterRoutingExtensionW(faxhandle.into_param().abi(), extensionname.into_param().abi(), friendlyname.into_param().abi(), imagename.into_param().abi(), ::core::mem::transmute(callback), ::core::mem::transmute(context)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxRegisterServiceProviderW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(deviceprovider: Param0, friendlyname: Param1, imagename: Param2, tspname: Param3) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxRegisterServiceProviderW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(deviceprovider: Param0, friendlyname: Param1, imagename: Param2, tspname: Param3) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxRegisterServiceProviderW(deviceprovider: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, imagename: ::windows_core::PCWSTR, tspname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn FaxRegisterServiceProviderW(deviceprovider: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, imagename: ::windows_core::PCWSTR, tspname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxRegisterServiceProviderW(deviceprovider.into_param().abi(), friendlyname.into_param().abi(), imagename.into_param().abi(), tspname.into_param().abi()))
     }
@@ -3021,56 +2858,52 @@ pub unsafe fn FaxRegisterServiceProviderW<'a, Param0: ::windows_core::IntoParam<
 }
 pub const FaxSecurity: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x10c4ddde_abf0_43df_964f_7f3ac21a4c7b);
 pub const FaxSecurity2: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x735c1248_ec89_4c30_a127_656e92e3c4ea);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSendDocumentA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(faxhandle: Param0, filename: Param1, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSendDocumentA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(faxhandle: Param0, filename: Param1, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSendDocumentA(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core::PCSTR, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxSendDocumentA(faxhandle: ::win32_foundation::HANDLE, filename: ::windows_core::PCSTR, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSendDocumentA(faxhandle.into_param().abi(), filename.into_param().abi(), ::core::mem::transmute(jobparams), ::core::mem::transmute(coverpageinfo), ::core::mem::transmute(faxjobid)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSendDocumentForBroadcastA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(faxhandle: Param0, filename: Param1, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKA, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSendDocumentForBroadcastA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(faxhandle: Param0, filename: Param1, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKA, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSendDocumentForBroadcastA(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core::PCSTR, faxjobid: *mut u32, faxrecipientcallback: ::windows_core::RawPtr, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn FaxSendDocumentForBroadcastA(faxhandle: ::win32_foundation::HANDLE, filename: ::windows_core::PCSTR, faxjobid: *mut u32, faxrecipientcallback: ::windows_core::RawPtr, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSendDocumentForBroadcastA(faxhandle.into_param().abi(), filename.into_param().abi(), ::core::mem::transmute(faxjobid), ::core::mem::transmute(faxrecipientcallback), ::core::mem::transmute(context)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSendDocumentForBroadcastW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxhandle: Param0, filename: Param1, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKW, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSendDocumentForBroadcastW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxhandle: Param0, filename: Param1, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKW, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSendDocumentForBroadcastW(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core::PCWSTR, faxjobid: *mut u32, faxrecipientcallback: ::windows_core::RawPtr, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn FaxSendDocumentForBroadcastW(faxhandle: ::win32_foundation::HANDLE, filename: ::windows_core::PCWSTR, faxjobid: *mut u32, faxrecipientcallback: ::windows_core::RawPtr, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSendDocumentForBroadcastW(faxhandle.into_param().abi(), filename.into_param().abi(), ::core::mem::transmute(faxjobid), ::core::mem::transmute(faxrecipientcallback), ::core::mem::transmute(context)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSendDocumentW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxhandle: Param0, filename: Param1, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSendDocumentW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxhandle: Param0, filename: Param1, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSendDocumentW(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core::PCWSTR, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> super::super::Foundation::BOOL;
+            fn FaxSendDocumentW(faxhandle: ::win32_foundation::HANDLE, filename: ::windows_core::PCWSTR, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSendDocumentW(faxhandle.into_param().abi(), filename.into_param().abi(), ::core::mem::transmute(jobparams), ::core::mem::transmute(coverpageinfo), ::core::mem::transmute(faxjobid)))
     }
@@ -3079,210 +2912,197 @@ pub unsafe fn FaxSendDocumentW<'a, Param0: ::windows_core::IntoParam<'a, super::
 }
 pub const FaxSender: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x265d84d0_1850_4360_b7c8_758bbb5f0b96);
 pub const FaxServer: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xcda8acb0_8cf5_4f6c_9ba2_5931d40c8cae);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetConfigurationA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, faxconfig: *const FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetConfigurationA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, faxconfig: *const FAX_CONFIGURATIONA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetConfigurationA(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL;
+            fn FaxSetConfigurationA(faxhandle: ::win32_foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetConfigurationA(faxhandle.into_param().abi(), ::core::mem::transmute(faxconfig)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetConfigurationW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, faxconfig: *const FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetConfigurationW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, faxconfig: *const FAX_CONFIGURATIONW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetConfigurationW(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL;
+            fn FaxSetConfigurationW(faxhandle: ::win32_foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetConfigurationW(faxhandle.into_param().abi(), ::core::mem::transmute(faxconfig)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetGlobalRoutingInfoA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetGlobalRoutingInfoA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetGlobalRoutingInfoA(faxhandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> super::super::Foundation::BOOL;
+            fn FaxSetGlobalRoutingInfoA(faxhandle: ::win32_foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetGlobalRoutingInfoA(faxhandle.into_param().abi(), ::core::mem::transmute(routinginfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetGlobalRoutingInfoW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetGlobalRoutingInfoW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetGlobalRoutingInfoW(faxhandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> super::super::Foundation::BOOL;
+            fn FaxSetGlobalRoutingInfoW(faxhandle: ::win32_foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetGlobalRoutingInfoW(faxhandle.into_param().abi(), ::core::mem::transmute(routinginfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetJobA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetJobA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetJobA(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL;
+            fn FaxSetJobA(faxhandle: ::win32_foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetJobA(faxhandle.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(command), ::core::mem::transmute(jobentry)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetJobW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetJobW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetJobW(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL;
+            fn FaxSetJobW(faxhandle: ::win32_foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetJobW(faxhandle.into_param().abi(), ::core::mem::transmute(jobid), ::core::mem::transmute(command), ::core::mem::transmute(jobentry)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetLoggingCategoriesA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetLoggingCategoriesA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetLoggingCategoriesA(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> super::super::Foundation::BOOL;
+            fn FaxSetLoggingCategoriesA(faxhandle: ::win32_foundation::HANDLE, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetLoggingCategoriesA(faxhandle.into_param().abi(), ::core::mem::transmute(categories), ::core::mem::transmute(numbercategories)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetLoggingCategoriesW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxhandle: Param0, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetLoggingCategoriesW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxhandle: Param0, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetLoggingCategoriesW(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> super::super::Foundation::BOOL;
+            fn FaxSetLoggingCategoriesW(faxhandle: ::win32_foundation::HANDLE, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetLoggingCategoriesW(faxhandle.into_param().abi(), ::core::mem::transmute(categories), ::core::mem::transmute(numbercategories)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetPortA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxporthandle: Param0, portinfo: *const FAX_PORT_INFOA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetPortA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxporthandle: Param0, portinfo: *const FAX_PORT_INFOA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetPortA(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOA) -> super::super::Foundation::BOOL;
+            fn FaxSetPortA(faxporthandle: ::win32_foundation::HANDLE, portinfo: *const FAX_PORT_INFOA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetPortA(faxporthandle.into_param().abi(), ::core::mem::transmute(portinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetPortW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(faxporthandle: Param0, portinfo: *const FAX_PORT_INFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetPortW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(faxporthandle: Param0, portinfo: *const FAX_PORT_INFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetPortW(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOW) -> super::super::Foundation::BOOL;
+            fn FaxSetPortW(faxporthandle: ::win32_foundation::HANDLE, portinfo: *const FAX_PORT_INFOW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetPortW(faxporthandle.into_param().abi(), ::core::mem::transmute(portinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetRoutingInfoA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(faxporthandle: Param0, routingguid: Param1, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetRoutingInfoA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(faxporthandle: Param0, routingguid: Param1, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetRoutingInfoA(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL;
+            fn FaxSetRoutingInfoA(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetRoutingInfoA(faxporthandle.into_param().abi(), routingguid.into_param().abi(), ::core::mem::transmute(routinginfobuffer), ::core::mem::transmute(routinginfobuffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxSetRoutingInfoW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxporthandle: Param0, routingguid: Param1, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxSetRoutingInfoW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(faxporthandle: Param0, routingguid: Param1, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxSetRoutingInfoW(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCWSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL;
+            fn FaxSetRoutingInfoW(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCWSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxSetRoutingInfoW(faxporthandle.into_param().abi(), routingguid.into_param().abi(), ::core::mem::transmute(routinginfobuffer), ::core::mem::transmute(routinginfobuffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn FaxStartPrintJobA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(printername: Param0, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxStartPrintJobA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(printername: Param0, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxStartPrintJobA(printername: ::windows_core::PCSTR, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> super::super::Foundation::BOOL;
+            fn FaxStartPrintJobA(printername: ::windows_core::PCSTR, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxStartPrintJobA(printername.into_param().abi(), ::core::mem::transmute(printinfo), ::core::mem::transmute(faxjobid), ::core::mem::transmute(faxcontextinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn FaxStartPrintJobW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(printername: Param0, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxStartPrintJobW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(printername: Param0, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxStartPrintJobW(printername: ::windows_core::PCWSTR, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> super::super::Foundation::BOOL;
+            fn FaxStartPrintJobW(printername: ::windows_core::PCWSTR, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxStartPrintJobW(printername.into_param().abi(), ::core::mem::transmute(printinfo), ::core::mem::transmute(faxjobid), ::core::mem::transmute(faxcontextinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FaxUnregisterServiceProviderW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(deviceprovider: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn FaxUnregisterServiceProviderW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(deviceprovider: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FaxUnregisterServiceProviderW(deviceprovider: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn FaxUnregisterServiceProviderW(deviceprovider: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(FaxUnregisterServiceProviderW(deviceprovider.into_param().abi()))
     }
@@ -3301,10 +3121,9 @@ pub const GUID_ScanPrintImage: ::windows_core::GUID = ::windows_core::GUID::from
 pub struct IFaxAccount(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxAccount {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AccountName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).AccountName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn AccountName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).AccountName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn Folders(&self) -> ::windows_core::Result<IFaxAccountFolders> {
@@ -3344,26 +3163,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAcc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxAccount> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxAccount> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxAccount) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxAccount> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxAccount> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxAccount) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxAccount {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxAccount {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxAccount {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxAccount {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -3396,11 +3215,8 @@ unsafe impl ::windows_core::Interface for IFaxAccount {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxAccount_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AccountName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstraccountname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AccountName: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub AccountName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstraccountname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Folders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppfolders: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -3459,26 +3275,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAcc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxAccountFolders> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxAccountFolders> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxAccountFolders) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxAccountFolders> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxAccountFolders> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxAccountFolders) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxAccountFolders {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxAccountFolders {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxAccountFolders {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxAccountFolders {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -3511,7 +3327,7 @@ unsafe impl ::windows_core::Interface for IFaxAccountFolders {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxAccountFolders_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub OutgoingQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxoutgoingqueue: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -3550,8 +3366,8 @@ impl IFaxAccountIncomingArchive {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetMessages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lprefetchsize), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxIncomingMessageIterator>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrmessageid: Param0) -> ::windows_core::Result<IFaxIncomingMessage> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetMessage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrmessageid: Param0) -> ::windows_core::Result<IFaxIncomingMessage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetMessage)(::windows_core::Interface::as_raw(self), bstrmessageid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxIncomingMessage>(result__)
     }
@@ -3581,26 +3397,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAcc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxAccountIncomingArchive> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxAccountIncomingArchive> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxAccountIncomingArchive) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxAccountIncomingArchive> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxAccountIncomingArchive> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxAccountIncomingArchive) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxAccountIncomingArchive {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxAccountIncomingArchive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxAccountIncomingArchive {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxAccountIncomingArchive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -3633,7 +3449,7 @@ unsafe impl ::windows_core::Interface for IFaxAccountIncomingArchive {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxAccountIncomingArchive_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub SizeLow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsizelow: *mut i32) -> ::windows_core::HRESULT,
     pub SizeHigh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsizehigh: *mut i32) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -3641,9 +3457,9 @@ pub struct IFaxAccountIncomingArchive_Vtbl {
     pub GetMessages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lprefetchsize: i32, pfaxincomingmessageiterator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetMessages: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxincomingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxincomingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetMessage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -3656,8 +3472,8 @@ impl IFaxAccountIncomingQueue {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetJobs)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxIncomingJobs>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetJob<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrjobid: Param0) -> ::windows_core::Result<IFaxIncomingJob> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetJob<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrjobid: Param0) -> ::windows_core::Result<IFaxIncomingJob> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetJob)(::windows_core::Interface::as_raw(self), bstrjobid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxIncomingJob>(result__)
     }
@@ -3687,26 +3503,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAcc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxAccountIncomingQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxAccountIncomingQueue> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxAccountIncomingQueue) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxAccountIncomingQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxAccountIncomingQueue> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxAccountIncomingQueue) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxAccountIncomingQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxAccountIncomingQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxAccountIncomingQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxAccountIncomingQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -3739,14 +3555,14 @@ unsafe impl ::windows_core::Interface for IFaxAccountIncomingQueue {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxAccountIncomingQueue_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub GetJobs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxincomingjobs: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetJobs: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetJob: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxincomingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetJob: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxincomingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetJob: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -3779,26 +3595,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAcc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxAccountNotify> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxAccountNotify> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxAccountNotify) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxAccountNotify> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxAccountNotify> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxAccountNotify) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxAccountNotify {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxAccountNotify {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxAccountNotify {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxAccountNotify {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -3831,7 +3647,7 @@ unsafe impl ::windows_core::Interface for IFaxAccountNotify {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxAccountNotify_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -3854,8 +3670,8 @@ impl IFaxAccountOutgoingArchive {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetMessages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lprefetchsize), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutgoingMessageIterator>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrmessageid: Param0) -> ::windows_core::Result<IFaxOutgoingMessage> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetMessage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrmessageid: Param0) -> ::windows_core::Result<IFaxOutgoingMessage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetMessage)(::windows_core::Interface::as_raw(self), bstrmessageid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutgoingMessage>(result__)
     }
@@ -3885,26 +3701,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAcc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxAccountOutgoingArchive> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxAccountOutgoingArchive> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxAccountOutgoingArchive) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxAccountOutgoingArchive> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxAccountOutgoingArchive> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxAccountOutgoingArchive) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxAccountOutgoingArchive {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxAccountOutgoingArchive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxAccountOutgoingArchive {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxAccountOutgoingArchive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -3937,7 +3753,7 @@ unsafe impl ::windows_core::Interface for IFaxAccountOutgoingArchive {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxAccountOutgoingArchive_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub SizeLow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsizelow: *mut i32) -> ::windows_core::HRESULT,
     pub SizeHigh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsizehigh: *mut i32) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -3945,9 +3761,9 @@ pub struct IFaxAccountOutgoingArchive_Vtbl {
     pub GetMessages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lprefetchsize: i32, pfaxoutgoingmessageiterator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetMessages: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxoutgoingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxoutgoingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetMessage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -3960,8 +3776,8 @@ impl IFaxAccountOutgoingQueue {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetJobs)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutgoingJobs>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetJob<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrjobid: Param0) -> ::windows_core::Result<IFaxOutgoingJob> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetJob<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrjobid: Param0) -> ::windows_core::Result<IFaxOutgoingJob> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetJob)(::windows_core::Interface::as_raw(self), bstrjobid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutgoingJob>(result__)
     }
@@ -3991,26 +3807,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAcc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxAccountOutgoingQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxAccountOutgoingQueue> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxAccountOutgoingQueue) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxAccountOutgoingQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxAccountOutgoingQueue> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxAccountOutgoingQueue) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxAccountOutgoingQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxAccountOutgoingQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxAccountOutgoingQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxAccountOutgoingQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -4043,14 +3859,14 @@ unsafe impl ::windows_core::Interface for IFaxAccountOutgoingQueue {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxAccountOutgoingQueue_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub GetJobs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxoutgoingjobs: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetJobs: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetJob: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxoutgoingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetJob: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxoutgoingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetJob: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -4063,18 +3879,17 @@ impl IFaxAccountSet {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetAccounts)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxAccounts>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetAccount<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstraccountname: Param0) -> ::windows_core::Result<IFaxAccount> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetAccount<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstraccountname: Param0) -> ::windows_core::Result<IFaxAccount> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetAccount)(::windows_core::Interface::as_raw(self), bstraccountname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxAccount>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn AddAccount<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstraccountname: Param0) -> ::windows_core::Result<IFaxAccount> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn AddAccount<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstraccountname: Param0) -> ::windows_core::Result<IFaxAccount> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).AddAccount)(::windows_core::Interface::as_raw(self), bstraccountname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxAccount>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RemoveAccount<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstraccountname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn RemoveAccount<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstraccountname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RemoveAccount)(::windows_core::Interface::as_raw(self), bstraccountname.into_param().abi()).ok()
     }
 }
@@ -4103,26 +3918,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAcc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxAccountSet> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxAccountSet> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxAccountSet) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxAccountSet> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxAccountSet> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxAccountSet) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxAccountSet {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxAccountSet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxAccountSet {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxAccountSet {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -4155,23 +3970,20 @@ unsafe impl ::windows_core::Interface for IFaxAccountSet {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxAccountSet_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub GetAccounts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppfaxaccounts: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetAccounts: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstraccountname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxaccount: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstraccountname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxaccount: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetAccount: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub AddAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstraccountname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxaccount: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub AddAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstraccountname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxaccount: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     AddAccount: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RemoveAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstraccountname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RemoveAccount: usize,
+    pub RemoveAccount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstraccountname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -4182,8 +3994,8 @@ impl IFaxAccounts {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxAccount> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxAccount> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), vindex.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxAccount>(result__)
     }
@@ -4217,26 +4029,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAcc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxAccounts> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxAccounts> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxAccounts) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxAccounts> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxAccounts> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxAccounts) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxAccounts {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxAccounts {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxAccounts {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxAccounts {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -4269,11 +4081,11 @@ unsafe impl ::windows_core::Interface for IFaxAccounts {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxAccounts_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfaxaccount: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfaxaccount: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -4327,26 +4139,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAct
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxActivity> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxActivity> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxActivity) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxActivity> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxActivity> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxActivity) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxActivity {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxActivity {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxActivity {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxActivity {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -4379,7 +4191,7 @@ unsafe impl ::windows_core::Interface for IFaxActivity {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxActivity_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub IncomingMessages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plincomingmessages: *mut i32) -> ::windows_core::HRESULT,
     pub RoutingMessages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plroutingmessages: *mut i32) -> ::windows_core::HRESULT,
     pub OutgoingMessages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ploutgoingmessages: *mut i32) -> ::windows_core::HRESULT,
@@ -4405,13 +4217,11 @@ impl IFaxActivityLogging {
     pub unsafe fn SetLogOutgoing(&self, blogoutgoing: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLogOutgoing)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(blogoutgoing)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DatabasePath(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DatabasePath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DatabasePath(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DatabasePath)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDatabasePath<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdatabasepath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDatabasePath<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdatabasepath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDatabasePath)(::windows_core::Interface::as_raw(self), bstrdatabasepath.into_param().abi()).ok()
     }
     pub unsafe fn Refresh(&self) -> ::windows_core::Result<()> {
@@ -4446,26 +4256,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxAct
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxActivityLogging> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxActivityLogging> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxActivityLogging) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxActivityLogging> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxActivityLogging> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxActivityLogging) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxActivityLogging {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxActivityLogging {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxActivityLogging {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxActivityLogging {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -4498,19 +4308,13 @@ unsafe impl ::windows_core::Interface for IFaxActivityLogging {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxActivityLogging_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub LogIncoming: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pblogincoming: *mut i16) -> ::windows_core::HRESULT,
     pub SetLogIncoming: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, blogincoming: i16) -> ::windows_core::HRESULT,
     pub LogOutgoing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pblogoutgoing: *mut i16) -> ::windows_core::HRESULT,
     pub SetLogOutgoing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, blogoutgoing: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DatabasePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdatabasepath: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DatabasePath: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDatabasePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdatabasepath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDatabasePath: usize,
+    pub DatabasePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdatabasepath: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDatabasePath: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdatabasepath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Save: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -4526,13 +4330,11 @@ impl IFaxConfiguration {
     pub unsafe fn SetUseArchive(&self, busearchive: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetUseArchive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(busearchive)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ArchiveLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ArchiveLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ArchiveLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ArchiveLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetArchiveLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrarchivelocation: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetArchiveLocation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrarchivelocation: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetArchiveLocation)(::windows_core::Interface::as_raw(self), bstrarchivelocation.into_param().abi()).ok()
     }
     pub unsafe fn SizeQuotaWarning(&self) -> ::windows_core::Result<i16> {
@@ -4694,26 +4496,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxCon
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxConfiguration> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxConfiguration> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxConfiguration) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxConfiguration> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxConfiguration> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxConfiguration) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxConfiguration {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxConfiguration {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxConfiguration {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxConfiguration {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -4746,17 +4548,11 @@ unsafe impl ::windows_core::Interface for IFaxConfiguration {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxConfiguration_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub UseArchive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbusearchive: *mut i16) -> ::windows_core::HRESULT,
     pub SetUseArchive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, busearchive: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ArchiveLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrarchivelocation: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ArchiveLocation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetArchiveLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrarchivelocation: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetArchiveLocation: usize,
+    pub ArchiveLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrarchivelocation: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetArchiveLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrarchivelocation: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SizeQuotaWarning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbsizequotawarning: *mut i16) -> ::windows_core::HRESULT,
     pub SetSizeQuotaWarning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsizequotawarning: i16) -> ::windows_core::HRESULT,
     pub HighQuotaWaterMark: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plhighquotawatermark: *mut i32) -> ::windows_core::HRESULT,
@@ -4805,15 +4601,13 @@ impl IFaxDevice {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ProviderUniqueName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ProviderUniqueName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ProviderUniqueName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ProviderUniqueName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn PoweredOff(&self) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
@@ -4827,18 +4621,16 @@ impl IFaxDevice {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).SendingNow)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn UsedRoutingMethods(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).UsedRoutingMethods)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn UsedRoutingMethods(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).UsedRoutingMethods)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Description(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Description(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Description)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDescription<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdescription: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescription)(::windows_core::Interface::as_raw(self), bstrdescription.into_param().abi()).ok()
     }
     pub unsafe fn SendEnabled(&self) -> ::windows_core::Result<i16> {
@@ -4862,22 +4654,18 @@ impl IFaxDevice {
     pub unsafe fn SetRingsBeforeAnswer(&self, lringsbeforeanswer: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRingsBeforeAnswer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lringsbeforeanswer)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcsid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcsid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCSID)(::windows_core::Interface::as_raw(self), bstrcsid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtsid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtsid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTSID)(::windows_core::Interface::as_raw(self), bstrtsid.into_param().abi()).ok()
     }
     pub unsafe fn Refresh(&self) -> ::windows_core::Result<()> {
@@ -4886,17 +4674,16 @@ impl IFaxDevice {
     pub unsafe fn Save(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Save)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrguid: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetExtensionProperty)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn GetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrguid: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetExtensionProperty)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, bstrguid: Param0, vproperty: Param1) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn SetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, bstrguid: Param0, vproperty: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetExtensionProperty)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), vproperty.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UseRoutingMethod<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrmethodguid: Param0, buse: i16) -> ::windows_core::Result<()> {
+    pub unsafe fn UseRoutingMethod<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrmethodguid: Param0, buse: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UseRoutingMethod)(::windows_core::Interface::as_raw(self), bstrmethodguid.into_param().abi(), ::core::mem::transmute(buse)).ok()
     }
     pub unsafe fn RingingNow(&self) -> ::windows_core::Result<i16> {
@@ -4932,26 +4719,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxDev
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxDevice> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxDevice> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxDevice) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxDevice> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxDevice> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxDevice) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxDevice {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxDevice {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -4984,67 +4771,40 @@ unsafe impl ::windows_core::Interface for IFaxDevice {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxDevice_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plid: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DeviceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdevicename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DeviceName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ProviderUniqueName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrprovideruniquename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ProviderUniqueName: usize,
+    pub DeviceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdevicename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub ProviderUniqueName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrprovideruniquename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub PoweredOff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbpoweredoff: *mut i16) -> ::windows_core::HRESULT,
     pub ReceivingNow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbreceivingnow: *mut i16) -> ::windows_core::HRESULT,
     pub SendingNow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbsendingnow: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub UsedRoutingMethods: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvusedroutingmethods: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub UsedRoutingMethods: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvusedroutingmethods: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     UsedRoutingMethods: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdescription: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Description: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdescription: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDescription: usize,
+    pub Description: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdescription: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdescription: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SendEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbsendenabled: *mut i16) -> ::windows_core::HRESULT,
     pub SetSendEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsendenabled: i16) -> ::windows_core::HRESULT,
     pub ReceiveMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, preceivemode: *mut FAX_DEVICE_RECEIVE_MODE_ENUM) -> ::windows_core::HRESULT,
     pub SetReceiveMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, receivemode: FAX_DEVICE_RECEIVE_MODE_ENUM) -> ::windows_core::HRESULT,
     pub RingsBeforeAnswer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plringsbeforeanswer: *mut i32) -> ::windows_core::HRESULT,
     pub SetRingsBeforeAnswer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lringsbeforeanswer: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetCSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetCSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTSID: usize,
+    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetCSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcsid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtsid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Save: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetExtensionProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvproperty: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetExtensionProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pvproperty: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetExtensionProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetExtensionProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, vproperty: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetExtensionProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, vproperty: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetExtensionProperty: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub UseRoutingMethod: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmethodguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, buse: i16) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    UseRoutingMethod: usize,
+    pub UseRoutingMethod: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmethodguid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, buse: i16) -> ::windows_core::HRESULT,
     pub RingingNow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbringingnow: *mut i16) -> ::windows_core::HRESULT,
     pub AnswerCall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -5100,26 +4860,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxDev
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxDeviceIds> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxDeviceIds> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxDeviceIds) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxDeviceIds> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxDeviceIds> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxDeviceIds) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxDeviceIds {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxDeviceIds {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxDeviceIds {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxDeviceIds {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -5152,7 +4912,7 @@ unsafe impl ::windows_core::Interface for IFaxDeviceIds {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxDeviceIds_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lindex: i32, pldeviceid: *mut i32) -> ::windows_core::HRESULT,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
@@ -5165,25 +4925,21 @@ pub struct IFaxDeviceIds_Vtbl {
 pub struct IFaxDeviceProvider(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxDeviceProvider {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FriendlyName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).FriendlyName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FriendlyName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).FriendlyName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ImageName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ImageName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ImageName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ImageName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UniqueName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).UniqueName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn UniqueName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).UniqueName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TapiProviderName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TapiProviderName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TapiProviderName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TapiProviderName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn MajorVersion(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -5213,10 +4969,10 @@ impl IFaxDeviceProvider {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).InitErrorCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn DeviceIds(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).DeviceIds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn DeviceIds(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).DeviceIds)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -5244,26 +5000,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxDev
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxDeviceProvider> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxDeviceProvider> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxDeviceProvider) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxDeviceProvider> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxDeviceProvider> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxDeviceProvider) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxDeviceProvider {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxDeviceProvider {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxDeviceProvider {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxDeviceProvider {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -5296,23 +5052,11 @@ unsafe impl ::windows_core::Interface for IFaxDeviceProvider {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxDeviceProvider_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfriendlyname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FriendlyName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ImageName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrimagename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ImageName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub UniqueName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstruniquename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    UniqueName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TapiProviderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtapiprovidername: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TapiProviderName: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub FriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfriendlyname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub ImageName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrimagename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub UniqueName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstruniquename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub TapiProviderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtapiprovidername: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub MajorVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plmajorversion: *mut i32) -> ::windows_core::HRESULT,
     pub MinorVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plminorversion: *mut i32) -> ::windows_core::HRESULT,
     pub MajorBuild: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plmajorbuild: *mut i32) -> ::windows_core::HRESULT,
@@ -5320,9 +5064,9 @@ pub struct IFaxDeviceProvider_Vtbl {
     pub Debug: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbdebug: *mut i16) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstatus: *mut FAX_PROVIDER_STATUS_ENUM) -> ::windows_core::HRESULT,
     pub InitErrorCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pliniterrorcode: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub DeviceIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvdeviceids: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub DeviceIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvdeviceids: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     DeviceIds: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -5334,8 +5078,8 @@ impl IFaxDeviceProviders {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxDeviceProvider> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxDeviceProvider> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), vindex.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxDeviceProvider>(result__)
     }
@@ -5369,26 +5113,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxDev
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxDeviceProviders> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxDeviceProviders> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxDeviceProviders) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxDeviceProviders> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxDeviceProviders> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxDeviceProviders) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxDeviceProviders {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxDeviceProviders {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxDeviceProviders {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxDeviceProviders {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -5421,11 +5165,11 @@ unsafe impl ::windows_core::Interface for IFaxDeviceProviders {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxDeviceProviders_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfaxdeviceprovider: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfaxdeviceprovider: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -5438,8 +5182,8 @@ impl IFaxDevices {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxDevice> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxDevice> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), vindex.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxDevice>(result__)
     }
@@ -5478,26 +5222,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxDev
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxDevices> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxDevices> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxDevices) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxDevices> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxDevices> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxDevices) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxDevices {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxDevices {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxDevices {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxDevices {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -5530,11 +5274,11 @@ unsafe impl ::windows_core::Interface for IFaxDevices {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxDevices_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfaxdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfaxdevice: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -5547,13 +5291,11 @@ pub struct IFaxDevices_Vtbl {
 pub struct IFaxDocument(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxDocument {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Body(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Body)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Body(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Body)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBody<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrbody: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBody<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrbody: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBody)(::windows_core::Interface::as_raw(self), bstrbody.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -5566,31 +5308,25 @@ impl IFaxDocument {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Recipients)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxRecipients>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CoverPage(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CoverPage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CoverPage(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CoverPage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCoverPage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcoverpage: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCoverPage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcoverpage: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCoverPage)(::windows_core::Interface::as_raw(self), bstrcoverpage.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Subject(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Subject(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSubject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsubject: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSubject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsubject: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSubject)(::windows_core::Interface::as_raw(self), bstrsubject.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Note(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Note)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Note(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Note)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetNote<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrnote: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetNote<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrnote: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetNote)(::windows_core::Interface::as_raw(self), bstrnote.into_param().abi()).ok()
     }
     pub unsafe fn ScheduleTime(&self) -> ::windows_core::Result<f64> {
@@ -5600,22 +5336,18 @@ impl IFaxDocument {
     pub unsafe fn SetScheduleTime(&self, datescheduletime: f64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetScheduleTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(datescheduletime)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ReceiptAddress(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ReceiptAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ReceiptAddress(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ReceiptAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetReceiptAddress<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrreceiptaddress: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetReceiptAddress<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrreceiptaddress: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetReceiptAddress)(::windows_core::Interface::as_raw(self), bstrreceiptaddress.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDocumentName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdocumentname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDocumentName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdocumentname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDocumentName)(::windows_core::Interface::as_raw(self), bstrdocumentname.into_param().abi()).ok()
     }
     pub unsafe fn CallHandle(&self) -> ::windows_core::Result<i32> {
@@ -5661,23 +5393,23 @@ impl IFaxDocument {
         (::windows_core::Interface::vtable(self).SetPriority)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(priority)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn TapiConnection(&self) -> ::windows_core::Result<super::super::System::Com::IDispatch> {
+    pub unsafe fn TapiConnection(&self) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).TapiConnection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IDispatch>(result__)
+        (::windows_core::Interface::vtable(self).TapiConnection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn putref_TapiConnection<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, ptapiconnection: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn putref_TapiConnection<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, ptapiconnection: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).putref_TapiConnection)(::windows_core::Interface::as_raw(self), ptapiconnection.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Submit<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfaxservername: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).Submit)(::windows_core::Interface::as_raw(self), bstrfaxservername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Submit<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfaxservername: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).Submit)(::windows_core::Interface::as_raw(self), bstrfaxservername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn ConnectedSubmit<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer>>(&self, pfaxserver: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).ConnectedSubmit)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn ConnectedSubmit<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer>>(&self, pfaxserver: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).ConnectedSubmit)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
     pub unsafe fn AttachFaxToReceipt(&self) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
@@ -5712,26 +5444,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxDoc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxDocument> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxDocument> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxDocument) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxDocument> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxDocument> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxDocument) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxDocument {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxDocument {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxDocument {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -5764,15 +5496,9 @@ unsafe impl ::windows_core::Interface for IFaxDocument {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxDocument_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Body: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrbody: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Body: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBody: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrbody: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBody: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub Body: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrbody: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetBody: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrbody: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Sender: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppfaxsender: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -5781,48 +5507,18 @@ pub struct IFaxDocument_Vtbl {
     pub Recipients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppfaxrecipients: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Recipients: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CoverPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcoverpage: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CoverPage: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetCoverPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcoverpage: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetCoverPage: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Subject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubject: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Subject: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSubject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubject: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSubject: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Note: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrnote: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Note: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetNote: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrnote: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetNote: usize,
+    pub CoverPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcoverpage: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetCoverPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcoverpage: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Subject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubject: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSubject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubject: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Note: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrnote: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetNote: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrnote: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub ScheduleTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatescheduletime: *mut f64) -> ::windows_core::HRESULT,
     pub SetScheduleTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, datescheduletime: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ReceiptAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrreceiptaddress: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ReceiptAddress: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetReceiptAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrreceiptaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetReceiptAddress: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DocumentName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdocumentname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DocumentName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDocumentName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdocumentname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDocumentName: usize,
+    pub ReceiptAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrreceiptaddress: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetReceiptAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrreceiptaddress: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub DocumentName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdocumentname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDocumentName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdocumentname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub CallHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcallhandle: *mut i32) -> ::windows_core::HRESULT,
     pub SetCallHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lcallhandle: i32) -> ::windows_core::HRESULT,
     pub CoverPageType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcoverpagetype: *mut FAX_COVERPAGE_TYPE_ENUM) -> ::windows_core::HRESULT,
@@ -5843,13 +5539,13 @@ pub struct IFaxDocument_Vtbl {
     pub putref_TapiConnection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptapiconnection: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     putref_TapiConnection: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub Submit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxservername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvfaxoutgoingjobids: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Submit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxservername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pvfaxoutgoingjobids: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Submit: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub ConnectedSubmit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, pvfaxoutgoingjobids: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ConnectedSubmit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, pvfaxoutgoingjobids: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ConnectedSubmit: usize,
     pub AttachFaxToReceipt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbattachfax: *mut i16) -> ::windows_core::HRESULT,
     pub SetAttachFaxToReceipt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, battachfax: i16) -> ::windows_core::HRESULT,
@@ -5859,13 +5555,11 @@ pub struct IFaxDocument_Vtbl {
 pub struct IFaxDocument2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxDocument2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Body(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Body)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Body(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Body)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBody<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrbody: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBody<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrbody: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetBody)(::windows_core::Interface::as_raw(self), bstrbody.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -5878,31 +5572,25 @@ impl IFaxDocument2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Recipients)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxRecipients>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CoverPage(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CoverPage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CoverPage(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CoverPage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCoverPage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcoverpage: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCoverPage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcoverpage: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetCoverPage)(::windows_core::Interface::as_raw(self), bstrcoverpage.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Subject(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Subject(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSubject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsubject: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSubject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsubject: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetSubject)(::windows_core::Interface::as_raw(self), bstrsubject.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Note(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Note)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Note(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Note)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetNote<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrnote: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetNote<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrnote: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetNote)(::windows_core::Interface::as_raw(self), bstrnote.into_param().abi()).ok()
     }
     pub unsafe fn ScheduleTime(&self) -> ::windows_core::Result<f64> {
@@ -5912,22 +5600,18 @@ impl IFaxDocument2 {
     pub unsafe fn SetScheduleTime(&self, datescheduletime: f64) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetScheduleTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(datescheduletime)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ReceiptAddress(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.ReceiptAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ReceiptAddress(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.ReceiptAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetReceiptAddress<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrreceiptaddress: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetReceiptAddress<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrreceiptaddress: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetReceiptAddress)(::windows_core::Interface::as_raw(self), bstrreceiptaddress.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDocumentName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdocumentname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDocumentName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdocumentname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetDocumentName)(::windows_core::Interface::as_raw(self), bstrdocumentname.into_param().abi()).ok()
     }
     pub unsafe fn CallHandle(&self) -> ::windows_core::Result<i32> {
@@ -5973,23 +5657,23 @@ impl IFaxDocument2 {
         (::windows_core::Interface::vtable(self).base__.SetPriority)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(priority)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn TapiConnection(&self) -> ::windows_core::Result<super::super::System::Com::IDispatch> {
+    pub unsafe fn TapiConnection(&self) -> ::windows_core::Result<::win32_system::Com::IDispatch> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.TapiConnection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IDispatch>(result__)
+        (::windows_core::Interface::vtable(self).base__.TapiConnection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IDispatch>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn putref_TapiConnection<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch>>(&self, ptapiconnection: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn putref_TapiConnection<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch>>(&self, ptapiconnection: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.putref_TapiConnection)(::windows_core::Interface::as_raw(self), ptapiconnection.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Submit<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfaxservername: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Submit)(::windows_core::Interface::as_raw(self), bstrfaxservername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Submit<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfaxservername: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Submit)(::windows_core::Interface::as_raw(self), bstrfaxservername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn ConnectedSubmit<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer>>(&self, pfaxserver: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.ConnectedSubmit)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn ConnectedSubmit<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer>>(&self, pfaxserver: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.ConnectedSubmit)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
     pub unsafe fn AttachFaxToReceipt(&self) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
@@ -5998,26 +5682,25 @@ impl IFaxDocument2 {
     pub unsafe fn SetAttachFaxToReceipt(&self, battachfax: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetAttachFaxToReceipt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(battachfax)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Bodies(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).Bodies)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Bodies(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).Bodies)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetBodies<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vbodies: Param0) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn SetBodies<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vbodies: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBodies)(::windows_core::Interface::as_raw(self), vbodies.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Submit2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfaxservername: Param0, pvfaxoutgoingjobids: *mut super::super::System::Com::VARIANT, plerrorbodyfile: *mut i32) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Submit2<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfaxservername: Param0, pvfaxoutgoingjobids: *mut ::win32_system::Com::VARIANT, plerrorbodyfile: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Submit2)(::windows_core::Interface::as_raw(self), bstrfaxservername.into_param().abi(), ::core::mem::transmute(pvfaxoutgoingjobids), ::core::mem::transmute(plerrorbodyfile)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn ConnectedSubmit2<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer>>(&self, pfaxserver: Param0, pvfaxoutgoingjobids: *mut super::super::System::Com::VARIANT, plerrorbodyfile: *mut i32) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn ConnectedSubmit2<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer>>(&self, pfaxserver: Param0, pvfaxoutgoingjobids: *mut ::win32_system::Com::VARIANT, plerrorbodyfile: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConnectedSubmit2)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), ::core::mem::transmute(pvfaxoutgoingjobids), ::core::mem::transmute(plerrorbodyfile)).ok()
     }
 }
@@ -6046,26 +5729,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxDoc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxDocument2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxDocument2> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxDocument2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxDocument2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxDocument2> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxDocument2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxDocument2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxDocument2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxDocument2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxDocument2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -6123,25 +5806,22 @@ unsafe impl ::windows_core::Interface for IFaxDocument2 {
 #[doc(hidden)]
 pub struct IFaxDocument2_Vtbl {
     pub base__: IFaxDocument_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SubmissionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubmissionid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SubmissionId: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub Bodies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvbodies: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    pub SubmissionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubmissionid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Bodies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvbodies: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Bodies: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetBodies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vbodies: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetBodies: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vbodies: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetBodies: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub Submit2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxservername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvfaxoutgoingjobids: *mut super::super::System::Com::VARIANT, plerrorbodyfile: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Submit2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxservername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pvfaxoutgoingjobids: *mut ::win32_system::Com::VARIANT, plerrorbodyfile: *mut i32) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Submit2: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub ConnectedSubmit2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, pvfaxoutgoingjobids: *mut super::super::System::Com::VARIANT, plerrorbodyfile: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub ConnectedSubmit2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, pvfaxoutgoingjobids: *mut ::win32_system::Com::VARIANT, plerrorbodyfile: *mut i32) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     ConnectedSubmit2: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -6209,26 +5889,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxEve
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxEventLogging> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxEventLogging> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxEventLogging) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxEventLogging> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxEventLogging> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxEventLogging) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxEventLogging {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxEventLogging {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxEventLogging {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxEventLogging {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -6261,7 +5941,7 @@ unsafe impl ::windows_core::Interface for IFaxEventLogging {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxEventLogging_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub InitEventsLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, piniteventlevel: *mut FAX_LOG_LEVEL_ENUM) -> ::windows_core::HRESULT,
     pub SetInitEventsLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, initeventlevel: FAX_LOG_LEVEL_ENUM) -> ::windows_core::HRESULT,
     pub InboundEventsLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinboundeventlevel: *mut FAX_LOG_LEVEL_ENUM) -> ::windows_core::HRESULT,
@@ -6324,26 +6004,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxFol
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxFolders> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxFolders> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxFolders) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxFolders> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxFolders> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxFolders) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxFolders {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxFolders {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxFolders {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxFolders {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -6376,7 +6056,7 @@ unsafe impl ::windows_core::Interface for IFaxFolders {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxFolders_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub OutgoingQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxoutgoingqueue: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -6435,26 +6115,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInb
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxInboundRouting> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxInboundRouting> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxInboundRouting) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxInboundRouting> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxInboundRouting> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxInboundRouting) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxInboundRouting {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxInboundRouting {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxInboundRouting {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxInboundRouting {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -6487,7 +6167,7 @@ unsafe impl ::windows_core::Interface for IFaxInboundRouting {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxInboundRouting_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub GetExtensions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxinboundroutingextensions: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -6502,20 +6182,17 @@ pub struct IFaxInboundRouting_Vtbl {
 pub struct IFaxInboundRoutingExtension(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxInboundRoutingExtension {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FriendlyName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).FriendlyName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FriendlyName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).FriendlyName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ImageName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ImageName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ImageName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ImageName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UniqueName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).UniqueName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn UniqueName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).UniqueName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn MajorVersion(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -6545,10 +6222,10 @@ impl IFaxInboundRoutingExtension {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).InitErrorCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Methods(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).Methods)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Methods(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).Methods)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -6576,26 +6253,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInb
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxInboundRoutingExtension> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxInboundRoutingExtension> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxInboundRoutingExtension) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxInboundRoutingExtension> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxInboundRoutingExtension> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxInboundRoutingExtension) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxInboundRoutingExtension {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxInboundRoutingExtension {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxInboundRoutingExtension {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxInboundRoutingExtension {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -6628,19 +6305,10 @@ unsafe impl ::windows_core::Interface for IFaxInboundRoutingExtension {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxInboundRoutingExtension_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfriendlyname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FriendlyName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ImageName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrimagename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ImageName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub UniqueName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstruniquename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    UniqueName: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub FriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfriendlyname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub ImageName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrimagename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub UniqueName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstruniquename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub MajorVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plmajorversion: *mut i32) -> ::windows_core::HRESULT,
     pub MinorVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plminorversion: *mut i32) -> ::windows_core::HRESULT,
     pub MajorBuild: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plmajorbuild: *mut i32) -> ::windows_core::HRESULT,
@@ -6648,9 +6316,9 @@ pub struct IFaxInboundRoutingExtension_Vtbl {
     pub Debug: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbdebug: *mut i16) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstatus: *mut FAX_PROVIDER_STATUS_ENUM) -> ::windows_core::HRESULT,
     pub InitErrorCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pliniterrorcode: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub Methods: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvmethods: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Methods: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvmethods: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Methods: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -6662,8 +6330,8 @@ impl IFaxInboundRoutingExtensions {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxInboundRoutingExtension> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxInboundRoutingExtension> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), vindex.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxInboundRoutingExtension>(result__)
     }
@@ -6697,26 +6365,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInb
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxInboundRoutingExtensions> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxInboundRoutingExtensions> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxInboundRoutingExtensions) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxInboundRoutingExtensions> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxInboundRoutingExtensions> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxInboundRoutingExtensions) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxInboundRoutingExtensions {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxInboundRoutingExtensions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxInboundRoutingExtensions {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxInboundRoutingExtensions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -6749,11 +6417,11 @@ unsafe impl ::windows_core::Interface for IFaxInboundRoutingExtensions {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxInboundRoutingExtensions_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfaxinboundroutingextension: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfaxinboundroutingextension: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -6762,30 +6430,25 @@ pub struct IFaxInboundRoutingExtensions_Vtbl {
 pub struct IFaxInboundRoutingMethod(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxInboundRoutingMethod {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GUID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GUID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GUID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GUID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FunctionName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).FunctionName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FunctionName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).FunctionName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExtensionFriendlyName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ExtensionFriendlyName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ExtensionFriendlyName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ExtensionFriendlyName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExtensionImageName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ExtensionImageName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ExtensionImageName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ExtensionImageName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Priority(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -6826,26 +6489,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInb
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxInboundRoutingMethod> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxInboundRoutingMethod> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxInboundRoutingMethod) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxInboundRoutingMethod> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxInboundRoutingMethod> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxInboundRoutingMethod) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxInboundRoutingMethod {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxInboundRoutingMethod {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxInboundRoutingMethod {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxInboundRoutingMethod {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -6878,27 +6541,12 @@ unsafe impl ::windows_core::Interface for IFaxInboundRoutingMethod {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxInboundRoutingMethod_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GUID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrguid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GUID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FunctionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfunctionname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FunctionName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ExtensionFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextensionfriendlyname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ExtensionFriendlyName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ExtensionImageName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextensionimagename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ExtensionImageName: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub GUID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrguid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub FunctionName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfunctionname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub ExtensionFriendlyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextensionfriendlyname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub ExtensionImageName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextensionimagename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Priority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plpriority: *mut i32) -> ::windows_core::HRESULT,
     pub SetPriority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpriority: i32) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -6913,8 +6561,8 @@ impl IFaxInboundRoutingMethods {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxInboundRoutingMethod> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxInboundRoutingMethod> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), vindex.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxInboundRoutingMethod>(result__)
     }
@@ -6948,26 +6596,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInb
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxInboundRoutingMethods> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxInboundRoutingMethods> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxInboundRoutingMethods) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxInboundRoutingMethods> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxInboundRoutingMethods> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxInboundRoutingMethods) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxInboundRoutingMethods {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxInboundRoutingMethods {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxInboundRoutingMethods {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxInboundRoutingMethods {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -7000,11 +6648,11 @@ unsafe impl ::windows_core::Interface for IFaxInboundRoutingMethods {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxInboundRoutingMethods_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfaxinboundroutingmethod: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfaxinboundroutingmethod: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -7020,13 +6668,11 @@ impl IFaxIncomingArchive {
     pub unsafe fn SetUseArchive(&self, busearchive: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetUseArchive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(busearchive)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ArchiveFolder(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ArchiveFolder)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ArchiveFolder(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ArchiveFolder)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetArchiveFolder<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrarchivefolder: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetArchiveFolder<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrarchivefolder: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetArchiveFolder)(::windows_core::Interface::as_raw(self), bstrarchivefolder.into_param().abi()).ok()
     }
     pub unsafe fn SizeQuotaWarning(&self) -> ::windows_core::Result<i16> {
@@ -7076,8 +6722,8 @@ impl IFaxIncomingArchive {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetMessages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lprefetchsize), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxIncomingMessageIterator>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrmessageid: Param0) -> ::windows_core::Result<IFaxIncomingMessage> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetMessage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrmessageid: Param0) -> ::windows_core::Result<IFaxIncomingMessage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetMessage)(::windows_core::Interface::as_raw(self), bstrmessageid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxIncomingMessage>(result__)
     }
@@ -7107,26 +6753,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxIncomingArchive> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxIncomingArchive> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxIncomingArchive) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxIncomingArchive> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxIncomingArchive> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxIncomingArchive) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxIncomingArchive {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxIncomingArchive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxIncomingArchive {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxIncomingArchive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -7159,17 +6805,11 @@ unsafe impl ::windows_core::Interface for IFaxIncomingArchive {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxIncomingArchive_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub UseArchive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbusearchive: *mut i16) -> ::windows_core::HRESULT,
     pub SetUseArchive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, busearchive: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ArchiveFolder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrarchivefolder: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ArchiveFolder: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetArchiveFolder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrarchivefolder: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetArchiveFolder: usize,
+    pub ArchiveFolder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrarchivefolder: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetArchiveFolder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrarchivefolder: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SizeQuotaWarning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbsizequotawarning: *mut i16) -> ::windows_core::HRESULT,
     pub SetSizeQuotaWarning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsizequotawarning: i16) -> ::windows_core::HRESULT,
     pub HighQuotaWaterMark: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plhighquotawatermark: *mut i32) -> ::windows_core::HRESULT,
@@ -7186,9 +6826,9 @@ pub struct IFaxIncomingArchive_Vtbl {
     pub GetMessages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lprefetchsize: i32, pfaxincomingmessageiterator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetMessages: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxincomingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxincomingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetMessage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -7200,10 +6840,9 @@ impl IFaxIncomingJob {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Size)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Id(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Id(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn CurrentPage(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -7221,10 +6860,9 @@ impl IFaxIncomingJob {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_JOB_EXTENDED_STATUS_ENUM>::zeroed();
         (::windows_core::Interface::vtable(self).ExtendedStatusCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FAX_JOB_EXTENDED_STATUS_ENUM>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExtendedStatus(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ExtendedStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ExtendedStatus(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ExtendedStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn AvailableOperations(&self) -> ::windows_core::Result<FAX_JOB_OPERATIONS_ENUM> {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_JOB_OPERATIONS_ENUM>::zeroed();
@@ -7242,25 +6880,21 @@ impl IFaxIncomingJob {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
         (::windows_core::Interface::vtable(self).TransmissionEnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CallerId(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CallerId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CallerId(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CallerId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RoutingInformation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).RoutingInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn RoutingInformation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).RoutingInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn JobType(&self) -> ::windows_core::Result<FAX_JOB_TYPE_ENUM> {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_JOB_TYPE_ENUM>::zeroed();
@@ -7272,8 +6906,7 @@ impl IFaxIncomingJob {
     pub unsafe fn Refresh(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Refresh)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CopyTiff)(::windows_core::Interface::as_raw(self), bstrtiffpath.into_param().abi()).ok()
     }
 }
@@ -7302,26 +6935,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxIncomingJob> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxIncomingJob> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxIncomingJob) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxIncomingJob> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxIncomingJob> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxIncomingJob) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxIncomingJob {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxIncomingJob {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxIncomingJob {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxIncomingJob {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -7354,47 +6987,26 @@ unsafe impl ::windows_core::Interface for IFaxIncomingJob {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxIncomingJob_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsize: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Id: usize,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub CurrentPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcurrentpage: *mut i32) -> ::windows_core::HRESULT,
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pldeviceid: *mut i32) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstatus: *mut FAX_JOB_STATUS_ENUM) -> ::windows_core::HRESULT,
     pub ExtendedStatusCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pextendedstatuscode: *mut FAX_JOB_EXTENDED_STATUS_ENUM) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ExtendedStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextendedstatus: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ExtendedStatus: usize,
+    pub ExtendedStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextendedstatus: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub AvailableOperations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pavailableoperations: *mut FAX_JOB_OPERATIONS_ENUM) -> ::windows_core::HRESULT,
     pub Retries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plretries: *mut i32) -> ::windows_core::HRESULT,
     pub TransmissionStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionstart: *mut f64) -> ::windows_core::HRESULT,
     pub TransmissionEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionend: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CallerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcallerid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CallerId: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RoutingInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrroutinginformation: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RoutingInformation: usize,
+    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub CallerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcallerid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub RoutingInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrroutinginformation: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub JobType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pjobtype: *mut FAX_JOB_TYPE_ENUM) -> ::windows_core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CopyTiff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtiffpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CopyTiff: usize,
+    pub CopyTiff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtiffpath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -7405,8 +7017,8 @@ impl IFaxIncomingJobs {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxIncomingJob> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxIncomingJob> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), vindex.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxIncomingJob>(result__)
     }
@@ -7440,26 +7052,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxIncomingJobs> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxIncomingJobs> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxIncomingJobs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxIncomingJobs> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxIncomingJobs> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxIncomingJobs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxIncomingJobs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxIncomingJobs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxIncomingJobs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxIncomingJobs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -7492,11 +7104,11 @@ unsafe impl ::windows_core::Interface for IFaxIncomingJobs {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxIncomingJobs_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfaxincomingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfaxincomingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -7505,10 +7117,9 @@ pub struct IFaxIncomingJobs_Vtbl {
 pub struct IFaxIncomingMessage(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxIncomingMessage {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Id(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Id(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Pages(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -7518,10 +7129,9 @@ impl IFaxIncomingMessage {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Size)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Retries(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -7535,28 +7145,23 @@ impl IFaxIncomingMessage {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
         (::windows_core::Interface::vtable(self).TransmissionEnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CallerId(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CallerId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CallerId(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CallerId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RoutingInformation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).RoutingInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn RoutingInformation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).RoutingInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CopyTiff)(::windows_core::Interface::as_raw(self), bstrtiffpath.into_param().abi()).ok()
     }
     pub unsafe fn Delete(&self) -> ::windows_core::Result<()> {
@@ -7588,26 +7193,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxIncomingMessage> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxIncomingMessage> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxIncomingMessage) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxIncomingMessage> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxIncomingMessage> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxIncomingMessage) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxIncomingMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxIncomingMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxIncomingMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxIncomingMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -7640,40 +7245,19 @@ unsafe impl ::windows_core::Interface for IFaxIncomingMessage {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxIncomingMessage_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Id: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Pages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plpages: *mut i32) -> ::windows_core::HRESULT,
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsize: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DeviceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdevicename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DeviceName: usize,
+    pub DeviceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdevicename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Retries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plretries: *mut i32) -> ::windows_core::HRESULT,
     pub TransmissionStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionstart: *mut f64) -> ::windows_core::HRESULT,
     pub TransmissionEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionend: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CallerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcallerid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CallerId: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RoutingInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrroutinginformation: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RoutingInformation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CopyTiff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtiffpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CopyTiff: usize,
+    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub CallerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcallerid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub RoutingInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrroutinginformation: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub CopyTiff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtiffpath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -7681,10 +7265,9 @@ pub struct IFaxIncomingMessage_Vtbl {
 pub struct IFaxIncomingMessage2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxIncomingMessage2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Id(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Id(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Pages(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -7694,10 +7277,9 @@ impl IFaxIncomingMessage2 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Size)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Retries(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -7711,58 +7293,47 @@ impl IFaxIncomingMessage2 {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
         (::windows_core::Interface::vtable(self).base__.TransmissionEnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CallerId(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CallerId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CallerId(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CallerId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RoutingInformation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.RoutingInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn RoutingInformation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.RoutingInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CopyTiff)(::windows_core::Interface::as_raw(self), bstrtiffpath.into_param().abi()).ok()
     }
     pub unsafe fn Delete(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Delete)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Subject(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Subject(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSubject<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsubject: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSubject<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsubject: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSubject)(::windows_core::Interface::as_raw(self), bstrsubject.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SenderName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SenderName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SenderName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SenderName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSenderName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsendername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSenderName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsendername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSenderName)(::windows_core::Interface::as_raw(self), bstrsendername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SenderFaxNumber(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SenderFaxNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SenderFaxNumber(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SenderFaxNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSenderFaxNumber<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsenderfaxnumber: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSenderFaxNumber<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsenderfaxnumber: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSenderFaxNumber)(::windows_core::Interface::as_raw(self), bstrsenderfaxnumber.into_param().abi()).ok()
     }
     pub unsafe fn HasCoverPage(&self) -> ::windows_core::Result<i16> {
@@ -7772,13 +7343,11 @@ impl IFaxIncomingMessage2 {
     pub unsafe fn SetHasCoverPage(&self, bhascoverpage: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetHasCoverPage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bhascoverpage)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Recipients(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Recipients)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Recipients(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Recipients)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetRecipients<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrrecipients: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetRecipients<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrrecipients: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetRecipients)(::windows_core::Interface::as_raw(self), bstrrecipients.into_param().abi()).ok()
     }
     pub unsafe fn WasReAssigned(&self) -> ::windows_core::Result<i16> {
@@ -7827,26 +7396,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxIncomingMessage2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxIncomingMessage2> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxIncomingMessage2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxIncomingMessage2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxIncomingMessage2> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxIncomingMessage2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxIncomingMessage2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxIncomingMessage2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxIncomingMessage2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxIncomingMessage2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -7904,40 +7473,16 @@ unsafe impl ::windows_core::Interface for IFaxIncomingMessage2 {
 #[doc(hidden)]
 pub struct IFaxIncomingMessage2_Vtbl {
     pub base__: IFaxIncomingMessage_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Subject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubject: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Subject: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSubject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubject: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSubject: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SenderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsendername: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SenderName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSenderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsendername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSenderName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SenderFaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsenderfaxnumber: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SenderFaxNumber: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSenderFaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsenderfaxnumber: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSenderFaxNumber: usize,
+    pub Subject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubject: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSubject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsubject: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub SenderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsendername: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSenderName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsendername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub SenderFaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsenderfaxnumber: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSenderFaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsenderfaxnumber: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub HasCoverPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbhascoverpage: *mut i16) -> ::windows_core::HRESULT,
     pub SetHasCoverPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bhascoverpage: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Recipients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrrecipients: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Recipients: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetRecipients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrrecipients: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetRecipients: usize,
+    pub Recipients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrrecipients: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetRecipients: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrrecipients: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub WasReAssigned: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbwasreassigned: *mut i16) -> ::windows_core::HRESULT,
     pub Read: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbread: *mut i16) -> ::windows_core::HRESULT,
     pub SetRead: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bread: i16) -> ::windows_core::HRESULT,
@@ -7998,26 +7543,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxIncomingMessageIterator> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxIncomingMessageIterator> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxIncomingMessageIterator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxIncomingMessageIterator> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxIncomingMessageIterator> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxIncomingMessageIterator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxIncomingMessageIterator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxIncomingMessageIterator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxIncomingMessageIterator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxIncomingMessageIterator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -8050,7 +7595,7 @@ unsafe impl ::windows_core::Interface for IFaxIncomingMessageIterator {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxIncomingMessageIterator_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub Message: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxincomingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -8084,8 +7629,8 @@ impl IFaxIncomingQueue {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetJobs)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxIncomingJobs>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetJob<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrjobid: Param0) -> ::windows_core::Result<IFaxIncomingJob> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetJob<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrjobid: Param0) -> ::windows_core::Result<IFaxIncomingJob> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetJob)(::windows_core::Interface::as_raw(self), bstrjobid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxIncomingJob>(result__)
     }
@@ -8115,26 +7660,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxInc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxIncomingQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxIncomingQueue> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxIncomingQueue) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxIncomingQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxIncomingQueue> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxIncomingQueue) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxIncomingQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxIncomingQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxIncomingQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxIncomingQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -8167,7 +7712,7 @@ unsafe impl ::windows_core::Interface for IFaxIncomingQueue {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxIncomingQueue_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Blocked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbblocked: *mut i16) -> ::windows_core::HRESULT,
     pub SetBlocked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bblocked: i16) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -8176,9 +7721,9 @@ pub struct IFaxIncomingQueue_Vtbl {
     pub GetJobs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxincomingjobs: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetJobs: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetJob: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxincomingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetJob: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxincomingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetJob: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -8206,24 +7751,21 @@ impl IFaxJobStatus {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).DeviceId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn ExtendedStatusCode(&self) -> ::windows_core::Result<FAX_JOB_EXTENDED_STATUS_ENUM> {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_JOB_EXTENDED_STATUS_ENUM>::zeroed();
         (::windows_core::Interface::vtable(self).ExtendedStatusCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FAX_JOB_EXTENDED_STATUS_ENUM>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExtendedStatus(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ExtendedStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ExtendedStatus(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ExtendedStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn AvailableOperations(&self) -> ::windows_core::Result<FAX_JOB_OPERATIONS_ENUM> {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_JOB_OPERATIONS_ENUM>::zeroed();
@@ -8249,15 +7791,13 @@ impl IFaxJobStatus {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
         (::windows_core::Interface::vtable(self).TransmissionEnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CallerId(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CallerId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CallerId(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CallerId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RoutingInformation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).RoutingInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn RoutingInformation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).RoutingInformation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -8285,26 +7825,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxJob
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxJobStatus> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxJobStatus> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxJobStatus) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxJobStatus> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxJobStatus> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxJobStatus) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxJobStatus {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxJobStatus {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxJobStatus {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxJobStatus {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -8337,39 +7877,24 @@ unsafe impl ::windows_core::Interface for IFaxJobStatus {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxJobStatus_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstatus: *mut FAX_JOB_STATUS_ENUM) -> ::windows_core::HRESULT,
     pub Pages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plpages: *mut i32) -> ::windows_core::HRESULT,
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsize: *mut i32) -> ::windows_core::HRESULT,
     pub CurrentPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcurrentpage: *mut i32) -> ::windows_core::HRESULT,
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pldeviceid: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TSID: usize,
+    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub ExtendedStatusCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pextendedstatuscode: *mut FAX_JOB_EXTENDED_STATUS_ENUM) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ExtendedStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextendedstatus: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ExtendedStatus: usize,
+    pub ExtendedStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextendedstatus: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub AvailableOperations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pavailableoperations: *mut FAX_JOB_OPERATIONS_ENUM) -> ::windows_core::HRESULT,
     pub Retries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plretries: *mut i32) -> ::windows_core::HRESULT,
     pub JobType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pjobtype: *mut FAX_JOB_TYPE_ENUM) -> ::windows_core::HRESULT,
     pub ScheduledTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatescheduledtime: *mut f64) -> ::windows_core::HRESULT,
     pub TransmissionStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionstart: *mut f64) -> ::windows_core::HRESULT,
     pub TransmissionEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionend: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CallerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcallerid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CallerId: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RoutingInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrroutinginformation: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RoutingInformation: usize,
+    pub CallerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcallerid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub RoutingInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrroutinginformation: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -8412,26 +7937,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxLog
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxLoggingOptions> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxLoggingOptions> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxLoggingOptions) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxLoggingOptions> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxLoggingOptions> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxLoggingOptions) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxLoggingOptions {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxLoggingOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxLoggingOptions {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxLoggingOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -8464,7 +7989,7 @@ unsafe impl ::windows_core::Interface for IFaxLoggingOptions {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxLoggingOptions_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub EventLogging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxeventlogging: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -8515,26 +8040,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutboundRouting> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutboundRouting> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutboundRouting) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutboundRouting> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutboundRouting> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutboundRouting) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutboundRouting {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutboundRouting {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutboundRouting {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutboundRouting {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -8567,7 +8092,7 @@ unsafe impl ::windows_core::Interface for IFaxOutboundRouting {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutboundRouting_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub GetGroups: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxoutboundroutinggroups: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -8582,10 +8107,9 @@ pub struct IFaxOutboundRouting_Vtbl {
 pub struct IFaxOutboundRoutingGroup(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxOutboundRoutingGroup {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Status(&self) -> ::windows_core::Result<FAX_GROUP_STATUS_ENUM> {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_GROUP_STATUS_ENUM>::zeroed();
@@ -8622,26 +8146,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutboundRoutingGroup> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutboundRoutingGroup> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutboundRoutingGroup) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutboundRoutingGroup> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutboundRoutingGroup> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutboundRoutingGroup) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutboundRoutingGroup {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutboundRoutingGroup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutboundRoutingGroup {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutboundRoutingGroup {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -8674,11 +8198,8 @@ unsafe impl ::windows_core::Interface for IFaxOutboundRoutingGroup {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutboundRoutingGroup_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstatus: *mut FAX_GROUP_STATUS_ENUM) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub DeviceIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxdeviceids: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -8694,8 +8215,8 @@ impl IFaxOutboundRoutingGroups {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxOutboundRoutingGroup> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxOutboundRoutingGroup> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), vindex.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutboundRoutingGroup>(result__)
     }
@@ -8703,13 +8224,13 @@ impl IFaxOutboundRoutingGroups {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IFaxOutboundRoutingGroup> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<IFaxOutboundRoutingGroup> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutboundRoutingGroup>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Remove<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), vindex.into_param().abi()).ok()
     }
 }
@@ -8738,26 +8259,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutboundRoutingGroups> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutboundRoutingGroups> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutboundRoutingGroups) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutboundRoutingGroups> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutboundRoutingGroups> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutboundRoutingGroups) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutboundRoutingGroups {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutboundRoutingGroups {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutboundRoutingGroups {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutboundRoutingGroups {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -8790,20 +8311,20 @@ unsafe impl ::windows_core::Interface for IFaxOutboundRoutingGroups {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutboundRoutingGroups_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfaxoutboundroutinggroup: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfaxoutboundroutinggroup: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxoutboundroutinggroup: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxoutboundroutinggroup: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Remove: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -8837,13 +8358,11 @@ impl IFaxOutboundRoutingRule {
     pub unsafe fn SetDeviceId(&self, deviceid: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDeviceId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(deviceid)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GroupName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GroupName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GroupName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GroupName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetGroupName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrgroupname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetGroupName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrgroupname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetGroupName)(::windows_core::Interface::as_raw(self), bstrgroupname.into_param().abi()).ok()
     }
     pub unsafe fn Refresh(&self) -> ::windows_core::Result<()> {
@@ -8878,26 +8397,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutboundRoutingRule> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutboundRoutingRule> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutboundRoutingRule) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutboundRoutingRule> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutboundRoutingRule> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutboundRoutingRule) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutboundRoutingRule {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutboundRoutingRule {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutboundRoutingRule {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutboundRoutingRule {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -8930,7 +8449,7 @@ unsafe impl ::windows_core::Interface for IFaxOutboundRoutingRule {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutboundRoutingRule_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub CountryCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcountrycode: *mut i32) -> ::windows_core::HRESULT,
     pub AreaCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plareacode: *mut i32) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstatus: *mut FAX_RULE_STATUS_ENUM) -> ::windows_core::HRESULT,
@@ -8938,14 +8457,8 @@ pub struct IFaxOutboundRoutingRule_Vtbl {
     pub SetUseDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, busedevice: i16) -> ::windows_core::HRESULT,
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pldeviceid: *mut i32) -> ::windows_core::HRESULT,
     pub SetDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GroupName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrgroupname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GroupName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetGroupName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrgroupname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetGroupName: usize,
+    pub GroupName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrgroupname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetGroupName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrgroupname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Save: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -8978,8 +8491,8 @@ impl IFaxOutboundRoutingRules {
     pub unsafe fn Remove(&self, lindex: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Remove)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lindex)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Add<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, lcountrycode: i32, lareacode: i32, busedevice: i16, bstrgroupname: Param3, ldeviceid: i32) -> ::windows_core::Result<IFaxOutboundRoutingRule> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Add<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, lcountrycode: i32, lareacode: i32, busedevice: i16, bstrgroupname: Param3, ldeviceid: i32) -> ::windows_core::Result<IFaxOutboundRoutingRule> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lcountrycode), ::core::mem::transmute(lareacode), ::core::mem::transmute(busedevice), bstrgroupname.into_param().abi(), ::core::mem::transmute(ldeviceid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutboundRoutingRule>(result__)
     }
@@ -9009,26 +8522,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutboundRoutingRules> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutboundRoutingRules> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutboundRoutingRules) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutboundRoutingRules> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutboundRoutingRules> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutboundRoutingRules) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutboundRoutingRules {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutboundRoutingRules {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutboundRoutingRules {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutboundRoutingRules {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -9061,7 +8574,7 @@ unsafe impl ::windows_core::Interface for IFaxOutboundRoutingRules {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutboundRoutingRules_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lindex: i32, pfaxoutboundroutingrule: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -9074,9 +8587,9 @@ pub struct IFaxOutboundRoutingRules_Vtbl {
     ItemByCountryAndArea: usize,
     pub RemoveByCountryAndArea: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lcountrycode: i32, lareacode: i32) -> ::windows_core::HRESULT,
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lindex: i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lcountrycode: i32, lareacode: i32, busedevice: i16, bstrgroupname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ldeviceid: i32, pfaxoutboundroutingrule: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lcountrycode: i32, lareacode: i32, busedevice: i16, bstrgroupname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ldeviceid: i32, pfaxoutboundroutingrule: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -9091,13 +8604,11 @@ impl IFaxOutgoingArchive {
     pub unsafe fn SetUseArchive(&self, busearchive: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetUseArchive)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(busearchive)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ArchiveFolder(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ArchiveFolder)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ArchiveFolder(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ArchiveFolder)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetArchiveFolder<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrarchivefolder: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetArchiveFolder<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrarchivefolder: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetArchiveFolder)(::windows_core::Interface::as_raw(self), bstrarchivefolder.into_param().abi()).ok()
     }
     pub unsafe fn SizeQuotaWarning(&self) -> ::windows_core::Result<i16> {
@@ -9147,8 +8658,8 @@ impl IFaxOutgoingArchive {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetMessages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lprefetchsize), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutgoingMessageIterator>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrmessageid: Param0) -> ::windows_core::Result<IFaxOutgoingMessage> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetMessage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrmessageid: Param0) -> ::windows_core::Result<IFaxOutgoingMessage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetMessage)(::windows_core::Interface::as_raw(self), bstrmessageid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutgoingMessage>(result__)
     }
@@ -9178,26 +8689,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutgoingArchive> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutgoingArchive> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutgoingArchive) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutgoingArchive> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutgoingArchive> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutgoingArchive) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutgoingArchive {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutgoingArchive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutgoingArchive {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutgoingArchive {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -9230,17 +8741,11 @@ unsafe impl ::windows_core::Interface for IFaxOutgoingArchive {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutgoingArchive_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub UseArchive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbusearchive: *mut i16) -> ::windows_core::HRESULT,
     pub SetUseArchive: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, busearchive: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ArchiveFolder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrarchivefolder: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ArchiveFolder: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetArchiveFolder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrarchivefolder: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetArchiveFolder: usize,
+    pub ArchiveFolder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrarchivefolder: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetArchiveFolder: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrarchivefolder: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SizeQuotaWarning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbsizequotawarning: *mut i16) -> ::windows_core::HRESULT,
     pub SetSizeQuotaWarning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bsizequotawarning: i16) -> ::windows_core::HRESULT,
     pub HighQuotaWaterMark: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plhighquotawatermark: *mut i32) -> ::windows_core::HRESULT,
@@ -9257,9 +8762,9 @@ pub struct IFaxOutgoingArchive_Vtbl {
     pub GetMessages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lprefetchsize: i32, pfaxoutgoingmessageiterator: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetMessages: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxoutgoingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxoutgoingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetMessage: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -9267,15 +8772,13 @@ pub struct IFaxOutgoingArchive_Vtbl {
 pub struct IFaxOutgoingJob(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxOutgoingJob {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Subject(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Subject(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Pages(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -9285,15 +8788,13 @@ impl IFaxOutgoingJob {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Size)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Id(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Id(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn OriginalScheduledTime(&self) -> ::windows_core::Result<f64> {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
@@ -9337,10 +8838,9 @@ impl IFaxOutgoingJob {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_JOB_EXTENDED_STATUS_ENUM>::zeroed();
         (::windows_core::Interface::vtable(self).ExtendedStatusCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FAX_JOB_EXTENDED_STATUS_ENUM>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExtendedStatus(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ExtendedStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ExtendedStatus(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ExtendedStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn AvailableOperations(&self) -> ::windows_core::Result<FAX_JOB_OPERATIONS_ENUM> {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_JOB_OPERATIONS_ENUM>::zeroed();
@@ -9362,15 +8862,13 @@ impl IFaxOutgoingJob {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
         (::windows_core::Interface::vtable(self).TransmissionEnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GroupBroadcastReceipts(&self) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
@@ -9385,8 +8883,7 @@ impl IFaxOutgoingJob {
     pub unsafe fn Restart(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Restart)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CopyTiff)(::windows_core::Interface::as_raw(self), bstrtiffpath.into_param().abi()).ok()
     }
     pub unsafe fn Refresh(&self) -> ::windows_core::Result<()> {
@@ -9421,26 +8918,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutgoingJob> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutgoingJob> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutgoingJob) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutgoingJob> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutgoingJob> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutgoingJob) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutgoingJob {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutgoingJob {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutgoingJob {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutgoingJob {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -9473,25 +8970,13 @@ unsafe impl ::windows_core::Interface for IFaxOutgoingJob {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutgoingJob_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Subject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubject: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Subject: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DocumentName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdocumentname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DocumentName: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub Subject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubject: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub DocumentName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdocumentname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Pages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plpages: *mut i32) -> ::windows_core::HRESULT,
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsize: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SubmissionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubmissionid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SubmissionId: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Id: usize,
+    pub SubmissionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubmissionid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub OriginalScheduledTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdateoriginalscheduledtime: *mut f64) -> ::windows_core::HRESULT,
     pub SubmissionTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatesubmissiontime: *mut f64) -> ::windows_core::HRESULT,
     pub ReceiptType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, preceipttype: *mut FAX_RECEIPT_TYPE_ENUM) -> ::windows_core::HRESULT,
@@ -9508,31 +8993,19 @@ pub struct IFaxOutgoingJob_Vtbl {
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pldeviceid: *mut i32) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstatus: *mut FAX_JOB_STATUS_ENUM) -> ::windows_core::HRESULT,
     pub ExtendedStatusCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pextendedstatuscode: *mut FAX_JOB_EXTENDED_STATUS_ENUM) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ExtendedStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextendedstatus: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ExtendedStatus: usize,
+    pub ExtendedStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrextendedstatus: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub AvailableOperations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pavailableoperations: *mut FAX_JOB_OPERATIONS_ENUM) -> ::windows_core::HRESULT,
     pub Retries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plretries: *mut i32) -> ::windows_core::HRESULT,
     pub ScheduledTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatescheduledtime: *mut f64) -> ::windows_core::HRESULT,
     pub TransmissionStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionstart: *mut f64) -> ::windows_core::HRESULT,
     pub TransmissionEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionend: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TSID: usize,
+    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub GroupBroadcastReceipts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbgroupbroadcastreceipts: *mut i16) -> ::windows_core::HRESULT,
     pub Pause: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Restart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CopyTiff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtiffpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CopyTiff: usize,
+    pub CopyTiff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtiffpath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Cancel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -9541,15 +9014,13 @@ pub struct IFaxOutgoingJob_Vtbl {
 pub struct IFaxOutgoingJob2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxOutgoingJob2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Subject(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Subject(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Pages(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -9559,15 +9030,13 @@ impl IFaxOutgoingJob2 {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Size)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Id(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Id(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn OriginalScheduledTime(&self) -> ::windows_core::Result<f64> {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
@@ -9611,10 +9080,9 @@ impl IFaxOutgoingJob2 {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_JOB_EXTENDED_STATUS_ENUM>::zeroed();
         (::windows_core::Interface::vtable(self).base__.ExtendedStatusCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FAX_JOB_EXTENDED_STATUS_ENUM>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExtendedStatus(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.ExtendedStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ExtendedStatus(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.ExtendedStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn AvailableOperations(&self) -> ::windows_core::Result<FAX_JOB_OPERATIONS_ENUM> {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_JOB_OPERATIONS_ENUM>::zeroed();
@@ -9636,15 +9104,13 @@ impl IFaxOutgoingJob2 {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
         (::windows_core::Interface::vtable(self).base__.TransmissionEnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn GroupBroadcastReceipts(&self) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
@@ -9659,8 +9125,7 @@ impl IFaxOutgoingJob2 {
     pub unsafe fn Restart(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Restart)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CopyTiff)(::windows_core::Interface::as_raw(self), bstrtiffpath.into_param().abi()).ok()
     }
     pub unsafe fn Refresh(&self) -> ::windows_core::Result<()> {
@@ -9673,10 +9138,9 @@ impl IFaxOutgoingJob2 {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
         (::windows_core::Interface::vtable(self).HasCoverPage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i16>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ReceiptAddress(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ReceiptAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ReceiptAddress(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ReceiptAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn ScheduleType(&self) -> ::windows_core::Result<FAX_SCHEDULE_TYPE_ENUM> {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_SCHEDULE_TYPE_ENUM>::zeroed();
@@ -9708,26 +9172,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutgoingJob2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutgoingJob2> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutgoingJob2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutgoingJob2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutgoingJob2> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutgoingJob2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutgoingJob2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutgoingJob2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutgoingJob2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutgoingJob2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -9786,10 +9250,7 @@ unsafe impl ::windows_core::Interface for IFaxOutgoingJob2 {
 pub struct IFaxOutgoingJob2_Vtbl {
     pub base__: IFaxOutgoingJob_Vtbl,
     pub HasCoverPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbhascoverpage: *mut i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ReceiptAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrreceiptaddress: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ReceiptAddress: usize,
+    pub ReceiptAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrreceiptaddress: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub ScheduleType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pscheduletype: *mut FAX_SCHEDULE_TYPE_ENUM) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -9801,8 +9262,8 @@ impl IFaxOutgoingJobs {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxOutgoingJob> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vindex: Param0) -> ::windows_core::Result<IFaxOutgoingJob> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), vindex.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutgoingJob>(result__)
     }
@@ -9836,26 +9297,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutgoingJobs> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutgoingJobs> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutgoingJobs) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutgoingJobs> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutgoingJobs> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutgoingJobs) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutgoingJobs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutgoingJobs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutgoingJobs {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutgoingJobs {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -9888,11 +9349,11 @@ unsafe impl ::windows_core::Interface for IFaxOutgoingJobs {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutgoingJobs_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, pfaxoutgoingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vindex: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>, pfaxoutgoingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -9901,25 +9362,21 @@ pub struct IFaxOutgoingJobs_Vtbl {
 pub struct IFaxOutgoingMessage(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxOutgoingMessage {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Id(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Id(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Subject(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Subject(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Retries(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -9955,10 +9412,9 @@ impl IFaxOutgoingMessage {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Recipient)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxRecipient>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn TransmissionStart(&self) -> ::windows_core::Result<f64> {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
@@ -9968,18 +9424,15 @@ impl IFaxOutgoingMessage {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
         (::windows_core::Interface::vtable(self).TransmissionEnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).CopyTiff)(::windows_core::Interface::as_raw(self), bstrtiffpath.into_param().abi()).ok()
     }
     pub unsafe fn Delete(&self) -> ::windows_core::Result<()> {
@@ -10011,26 +9464,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutgoingMessage> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutgoingMessage> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutgoingMessage) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutgoingMessage> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutgoingMessage> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutgoingMessage) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutgoingMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutgoingMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutgoingMessage {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutgoingMessage {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10063,23 +9516,11 @@ unsafe impl ::windows_core::Interface for IFaxOutgoingMessage {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutgoingMessage_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SubmissionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubmissionid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SubmissionId: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Id: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Subject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubject: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Subject: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DocumentName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdocumentname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DocumentName: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub SubmissionId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubmissionid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub Subject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsubject: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub DocumentName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdocumentname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Retries: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plretries: *mut i32) -> ::windows_core::HRESULT,
     pub Pages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plpages: *mut i32) -> ::windows_core::HRESULT,
     pub Size: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsize: *mut i32) -> ::windows_core::HRESULT,
@@ -10094,24 +9535,12 @@ pub struct IFaxOutgoingMessage_Vtbl {
     pub Recipient: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppfaxrecipient: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Recipient: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DeviceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdevicename: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DeviceName: usize,
+    pub DeviceName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdevicename: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub TransmissionStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionstart: *mut f64) -> ::windows_core::HRESULT,
     pub TransmissionEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdatetransmissionend: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CopyTiff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtiffpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CopyTiff: usize,
+    pub CSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub CopyTiff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtiffpath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Delete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10119,25 +9548,21 @@ pub struct IFaxOutgoingMessage_Vtbl {
 pub struct IFaxOutgoingMessage2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxOutgoingMessage2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SubmissionId(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.SubmissionId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Id(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Id(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Subject(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Subject(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.Subject)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DocumentName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DocumentName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Retries(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -10173,10 +9598,9 @@ impl IFaxOutgoingMessage2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Recipient)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxRecipient>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DeviceName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.DeviceName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn TransmissionStart(&self) -> ::windows_core::Result<f64> {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
@@ -10186,18 +9610,15 @@ impl IFaxOutgoingMessage2 {
         let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
         (::windows_core::Interface::vtable(self).base__.TransmissionEnd)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<f64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.CSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn CopyTiff<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtiffpath: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.CopyTiff)(::windows_core::Interface::as_raw(self), bstrtiffpath.into_param().abi()).ok()
     }
     pub unsafe fn Delete(&self) -> ::windows_core::Result<()> {
@@ -10211,10 +9632,9 @@ impl IFaxOutgoingMessage2 {
         let mut result__ = ::core::mem::MaybeUninit::<FAX_RECEIPT_TYPE_ENUM>::zeroed();
         (::windows_core::Interface::vtable(self).ReceiptType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<FAX_RECEIPT_TYPE_ENUM>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ReceiptAddress(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ReceiptAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ReceiptAddress(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ReceiptAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Read(&self) -> ::windows_core::Result<i16> {
         let mut result__ = ::core::mem::MaybeUninit::<i16>::zeroed();
@@ -10255,26 +9675,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutgoingMessage2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutgoingMessage2> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutgoingMessage2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutgoingMessage2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutgoingMessage2> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutgoingMessage2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutgoingMessage2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutgoingMessage2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutgoingMessage2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutgoingMessage2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10334,10 +9754,7 @@ pub struct IFaxOutgoingMessage2_Vtbl {
     pub base__: IFaxOutgoingMessage_Vtbl,
     pub HasCoverPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbhascoverpage: *mut i16) -> ::windows_core::HRESULT,
     pub ReceiptType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, preceipttype: *mut FAX_RECEIPT_TYPE_ENUM) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ReceiptAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrreceiptaddress: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ReceiptAddress: usize,
+    pub ReceiptAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrreceiptaddress: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Read: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbread: *mut i16) -> ::windows_core::HRESULT,
     pub SetRead: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bread: i16) -> ::windows_core::HRESULT,
     pub Save: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -10396,26 +9813,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutgoingMessageIterator> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutgoingMessageIterator> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutgoingMessageIterator) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutgoingMessageIterator> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutgoingMessageIterator> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutgoingMessageIterator) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutgoingMessageIterator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutgoingMessageIterator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutgoingMessageIterator {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutgoingMessageIterator {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10448,7 +9865,7 @@ unsafe impl ::windows_core::Interface for IFaxOutgoingMessageIterator {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutgoingMessageIterator_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     #[cfg(feature = "Win32_System_Com")]
     pub Message: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxoutgoingmessage: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -10545,8 +9962,8 @@ impl IFaxOutgoingQueue {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetJobs)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutgoingJobs>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn GetJob<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrjobid: Param0) -> ::windows_core::Result<IFaxOutgoingJob> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn GetJob<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrjobid: Param0) -> ::windows_core::Result<IFaxOutgoingJob> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetJob)(::windows_core::Interface::as_raw(self), bstrjobid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxOutgoingJob>(result__)
     }
@@ -10576,26 +9993,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxOut
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxOutgoingQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxOutgoingQueue> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxOutgoingQueue) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxOutgoingQueue> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxOutgoingQueue> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxOutgoingQueue) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxOutgoingQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxOutgoingQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxOutgoingQueue {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxOutgoingQueue {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10628,7 +10045,7 @@ unsafe impl ::windows_core::Interface for IFaxOutgoingQueue {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxOutgoingQueue_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub Blocked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbblocked: *mut i16) -> ::windows_core::HRESULT,
     pub SetBlocked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bblocked: i16) -> ::windows_core::HRESULT,
     pub Paused: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbpaused: *mut i16) -> ::windows_core::HRESULT,
@@ -10655,9 +10072,9 @@ pub struct IFaxOutgoingQueue_Vtbl {
     pub GetJobs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxoutgoingjobs: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     GetJobs: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub GetJob: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pfaxoutgoingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub GetJob: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pfaxoutgoingjob: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     GetJob: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -10672,13 +10089,11 @@ impl IFaxReceiptOptions {
     pub unsafe fn SetAuthenticationType(&self, r#type: FAX_SMTP_AUTHENTICATION_TYPE_ENUM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAuthenticationType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(r#type)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SMTPServer(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SMTPServer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SMTPServer(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SMTPServer)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSMTPServer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsmtpserver: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSMTPServer<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsmtpserver: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSMTPServer)(::windows_core::Interface::as_raw(self), bstrsmtpserver.into_param().abi()).ok()
     }
     pub unsafe fn SMTPPort(&self) -> ::windows_core::Result<i32> {
@@ -10688,22 +10103,18 @@ impl IFaxReceiptOptions {
     pub unsafe fn SetSMTPPort(&self, lsmtpport: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSMTPPort)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lsmtpport)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SMTPSender(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SMTPSender)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SMTPSender(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SMTPSender)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSMTPSender<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsmtpsender: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSMTPSender<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsmtpsender: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSMTPSender)(::windows_core::Interface::as_raw(self), bstrsmtpsender.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SMTPUser(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SMTPUser)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SMTPUser(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SMTPUser)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSMTPUser<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsmtpuser: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSMTPUser<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsmtpuser: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSMTPUser)(::windows_core::Interface::as_raw(self), bstrsmtpuser.into_param().abi()).ok()
     }
     pub unsafe fn AllowedReceipts(&self) -> ::windows_core::Result<FAX_RECEIPT_TYPE_ENUM> {
@@ -10713,13 +10124,11 @@ impl IFaxReceiptOptions {
     pub unsafe fn SetAllowedReceipts(&self, allowedreceipts: FAX_RECEIPT_TYPE_ENUM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAllowedReceipts)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(allowedreceipts)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SMTPPassword(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).SMTPPassword)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn SMTPPassword(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).SMTPPassword)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSMTPPassword<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsmtppassword: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSMTPPassword<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsmtppassword: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSMTPPassword)(::windows_core::Interface::as_raw(self), bstrsmtppassword.into_param().abi()).ok()
     }
     pub unsafe fn Refresh(&self) -> ::windows_core::Result<()> {
@@ -10761,26 +10170,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxRec
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxReceiptOptions> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxReceiptOptions> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxReceiptOptions) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxReceiptOptions> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxReceiptOptions> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxReceiptOptions) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxReceiptOptions {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxReceiptOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxReceiptOptions {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxReceiptOptions {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10813,45 +10222,21 @@ unsafe impl ::windows_core::Interface for IFaxReceiptOptions {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxReceiptOptions_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub AuthenticationType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptype: *mut FAX_SMTP_AUTHENTICATION_TYPE_ENUM) -> ::windows_core::HRESULT,
     pub SetAuthenticationType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: FAX_SMTP_AUTHENTICATION_TYPE_ENUM) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SMTPServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsmtpserver: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SMTPServer: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSMTPServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsmtpserver: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSMTPServer: usize,
+    pub SMTPServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsmtpserver: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSMTPServer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsmtpserver: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SMTPPort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plsmtpport: *mut i32) -> ::windows_core::HRESULT,
     pub SetSMTPPort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lsmtpport: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SMTPSender: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsmtpsender: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SMTPSender: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSMTPSender: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsmtpsender: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSMTPSender: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SMTPUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsmtpuser: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SMTPUser: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSMTPUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsmtpuser: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSMTPUser: usize,
+    pub SMTPSender: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsmtpsender: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSMTPSender: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsmtpsender: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub SMTPUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsmtpuser: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSMTPUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsmtpuser: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub AllowedReceipts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pallowedreceipts: *mut FAX_RECEIPT_TYPE_ENUM) -> ::windows_core::HRESULT,
     pub SetAllowedReceipts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, allowedreceipts: FAX_RECEIPT_TYPE_ENUM) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SMTPPassword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsmtppassword: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SMTPPassword: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSMTPPassword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsmtppassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSMTPPassword: usize,
+    pub SMTPPassword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrsmtppassword: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetSMTPPassword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsmtppassword: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Save: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub UseForInboundRouting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbuseforinboundrouting: *mut i16) -> ::windows_core::HRESULT,
@@ -10862,22 +10247,18 @@ pub struct IFaxReceiptOptions_Vtbl {
 pub struct IFaxRecipient(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxRecipient {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FaxNumber(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).FaxNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FaxNumber(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).FaxNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFaxNumber<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfaxnumber: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFaxNumber<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfaxnumber: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFaxNumber)(::windows_core::Interface::as_raw(self), bstrfaxnumber.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetName)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi()).ok()
     }
 }
@@ -10906,26 +10287,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxRec
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxRecipient> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxRecipient> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxRecipient) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxRecipient> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxRecipient> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxRecipient) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxRecipient {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxRecipient {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxRecipient {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxRecipient {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -10958,23 +10339,11 @@ unsafe impl ::windows_core::Interface for IFaxRecipient {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxRecipient_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfaxnumber: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FaxNumber: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetFaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxnumber: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetFaxNumber: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetName: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub FaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfaxnumber: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetFaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxnumber: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -10994,8 +10363,8 @@ impl IFaxRecipients {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfaxnumber: Param0, bstrrecipientname: Param1) -> ::windows_core::Result<IFaxRecipient> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Add<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfaxnumber: Param0, bstrrecipientname: Param1) -> ::windows_core::Result<IFaxRecipient> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), bstrfaxnumber.into_param().abi(), bstrrecipientname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IFaxRecipient>(result__)
     }
@@ -11028,26 +10397,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxRec
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxRecipients> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxRecipients> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxRecipients) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxRecipients> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxRecipients> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxRecipients) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxRecipients {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxRecipients {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxRecipients {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxRecipients {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11080,16 +10449,16 @@ unsafe impl ::windows_core::Interface for IFaxRecipients {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxRecipients_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lindex: i32, ppfaxrecipient: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plcount: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxnumber: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrrecipientname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ppfaxrecipient: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxnumber: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrrecipientname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ppfaxrecipient: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Add: usize,
     pub Remove: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lindex: i32) -> ::windows_core::HRESULT,
 }
@@ -11098,13 +10467,13 @@ pub struct IFaxRecipients_Vtbl {
 pub struct IFaxSecurity(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxSecurity {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Descriptor(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).Descriptor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Descriptor(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).Descriptor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetDescriptor<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vdescriptor: Param0) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn SetDescriptor<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vdescriptor: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescriptor)(::windows_core::Interface::as_raw(self), vdescriptor.into_param().abi()).ok()
     }
     pub unsafe fn GrantedRights(&self) -> ::windows_core::Result<FAX_ACCESS_RIGHTS_ENUM> {
@@ -11150,26 +10519,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxSec
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxSecurity> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxSecurity> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxSecurity) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxSecurity> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxSecurity> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxSecurity) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxSecurity {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxSecurity {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxSecurity {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxSecurity {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11202,14 +10571,14 @@ unsafe impl ::windows_core::Interface for IFaxSecurity {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxSecurity_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub Descriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvdescriptor: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Descriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvdescriptor: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Descriptor: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vdescriptor: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vdescriptor: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetDescriptor: usize,
     pub GrantedRights: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgrantedrights: *mut FAX_ACCESS_RIGHTS_ENUM) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -11222,13 +10591,13 @@ pub struct IFaxSecurity_Vtbl {
 pub struct IFaxSecurity2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxSecurity2 {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn Descriptor(&self) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).Descriptor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn Descriptor(&self) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).Descriptor)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetDescriptor<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, vdescriptor: Param0) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn SetDescriptor<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, vdescriptor: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDescriptor)(::windows_core::Interface::as_raw(self), vdescriptor.into_param().abi()).ok()
     }
     pub unsafe fn GrantedRights(&self) -> ::windows_core::Result<FAX_ACCESS_RIGHTS_ENUM_2> {
@@ -11274,26 +10643,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxSec
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxSecurity2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxSecurity2> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxSecurity2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxSecurity2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxSecurity2> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxSecurity2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxSecurity2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxSecurity2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxSecurity2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxSecurity2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11326,14 +10695,14 @@ unsafe impl ::windows_core::Interface for IFaxSecurity2 {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxSecurity2_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub Descriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvdescriptor: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub Descriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvdescriptor: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     Descriptor: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vdescriptor: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetDescriptor: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vdescriptor: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetDescriptor: usize,
     pub GrantedRights: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pgrantedrights: *mut FAX_ACCESS_RIGHTS_ENUM_2) -> ::windows_core::HRESULT,
     pub Refresh: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -11346,148 +10715,116 @@ pub struct IFaxSecurity2_Vtbl {
 pub struct IFaxSender(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxSender {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn BillingCode(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).BillingCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn BillingCode(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).BillingCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetBillingCode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrbillingcode: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetBillingCode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrbillingcode: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBillingCode)(::windows_core::Interface::as_raw(self), bstrbillingcode.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn City(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).City)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn City(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).City)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCity<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcity: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCity<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcity: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCity)(::windows_core::Interface::as_raw(self), bstrcity.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Company(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Company)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Company(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Company)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCompany<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcompany: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCompany<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcompany: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCompany)(::windows_core::Interface::as_raw(self), bstrcompany.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Country(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Country)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Country(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Country)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCountry<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcountry: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCountry<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcountry: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCountry)(::windows_core::Interface::as_raw(self), bstrcountry.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Department(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Department)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Department(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Department)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDepartment<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdepartment: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDepartment<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdepartment: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDepartment)(::windows_core::Interface::as_raw(self), bstrdepartment.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Email(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Email)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Email(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Email)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetEmail<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstremail: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetEmail<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstremail: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetEmail)(::windows_core::Interface::as_raw(self), bstremail.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn FaxNumber(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).FaxNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn FaxNumber(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).FaxNumber)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetFaxNumber<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrfaxnumber: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetFaxNumber<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrfaxnumber: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetFaxNumber)(::windows_core::Interface::as_raw(self), bstrfaxnumber.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HomePhone(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).HomePhone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn HomePhone(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).HomePhone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetHomePhone<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrhomephone: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetHomePhone<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrhomephone: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetHomePhone)(::windows_core::Interface::as_raw(self), bstrhomephone.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetName)(::windows_core::Interface::as_raw(self), bstrname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn TSID(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn TSID(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).TSID)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTSID<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtsid: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTSID<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtsid: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTSID)(::windows_core::Interface::as_raw(self), bstrtsid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OfficePhone(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).OfficePhone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OfficePhone(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).OfficePhone)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetOfficePhone<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrofficephone: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetOfficePhone<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrofficephone: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetOfficePhone)(::windows_core::Interface::as_raw(self), bstrofficephone.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn OfficeLocation(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).OfficeLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn OfficeLocation(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).OfficeLocation)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetOfficeLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrofficelocation: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetOfficeLocation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrofficelocation: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetOfficeLocation)(::windows_core::Interface::as_raw(self), bstrofficelocation.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn State(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).State)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn State(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).State)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrstate: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrstate: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetState)(::windows_core::Interface::as_raw(self), bstrstate.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn StreetAddress(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).StreetAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn StreetAddress(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).StreetAddress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetStreetAddress<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrstreetaddress: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetStreetAddress<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrstreetaddress: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetStreetAddress)(::windows_core::Interface::as_raw(self), bstrstreetaddress.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Title(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Title)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Title(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Title)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetTitle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrtitle: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetTitle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrtitle: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetTitle)(::windows_core::Interface::as_raw(self), bstrtitle.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ZipCode(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ZipCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ZipCode(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ZipCode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetZipCode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrzipcode: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetZipCode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrzipcode: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetZipCode)(::windows_core::Interface::as_raw(self), bstrzipcode.into_param().abi()).ok()
     }
     pub unsafe fn LoadDefaultSender(&self) -> ::windows_core::Result<()> {
@@ -11522,26 +10859,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxSen
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxSender> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxSender> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxSender) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxSender> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxSender> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxSender) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxSender {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxSender {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxSender {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxSender {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11574,135 +10911,39 @@ unsafe impl ::windows_core::Interface for IFaxSender {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxSender_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub BillingCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrbillingcode: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    BillingCode: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetBillingCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrbillingcode: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetBillingCode: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub City: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcity: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    City: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetCity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcity: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetCity: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Company: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcompany: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Company: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetCompany: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcompany: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetCompany: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Country: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcountry: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Country: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetCountry: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcountry: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetCountry: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Department: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdepartment: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Department: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDepartment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdepartment: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDepartment: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Email: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstremail: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Email: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetEmail: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstremail: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetEmail: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub FaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfaxnumber: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    FaxNumber: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetFaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxnumber: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetFaxNumber: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub HomePhone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrhomephone: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    HomePhone: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetHomePhone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrhomephone: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetHomePhone: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    TSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTSID: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OfficePhone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrofficephone: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OfficePhone: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetOfficePhone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrofficephone: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetOfficePhone: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub OfficeLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrofficelocation: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    OfficeLocation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetOfficeLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrofficelocation: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetOfficeLocation: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrstate: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    State: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrstate: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetState: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub StreetAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrstreetaddress: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    StreetAddress: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetStreetAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrstreetaddress: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetStreetAddress: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtitle: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Title: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtitle: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetTitle: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ZipCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrzipcode: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ZipCode: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetZipCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrzipcode: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetZipCode: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub BillingCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrbillingcode: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetBillingCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrbillingcode: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub City: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcity: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetCity: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcity: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Company: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcompany: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetCompany: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcompany: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Country: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrcountry: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetCountry: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcountry: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Department: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdepartment: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetDepartment: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdepartment: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Email: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstremail: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetEmail: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstremail: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub FaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrfaxnumber: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetFaxNumber: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrfaxnumber: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub HomePhone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrhomephone: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetHomePhone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrhomephone: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub TSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtsid: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTSID: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtsid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub OfficePhone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrofficephone: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetOfficePhone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrofficephone: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub OfficeLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrofficelocation: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetOfficeLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrofficelocation: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrstate: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrstate: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub StreetAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrstreetaddress: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetStreetAddress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrstreetaddress: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrtitle: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrtitle: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub ZipCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrzipcode: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub SetZipCode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrzipcode: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub LoadDefaultSender: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SaveDefaultSender: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -11711,14 +10952,12 @@ pub struct IFaxSender_Vtbl {
 pub struct IFaxServer(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxServer {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Connect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrservername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Connect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrservername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Connect)(::windows_core::Interface::as_raw(self), bstrservername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ServerName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ServerName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ServerName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ServerName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn GetDeviceProviders(&self) -> ::windows_core::Result<IFaxDeviceProviders> {
@@ -11788,32 +11027,29 @@ impl IFaxServer {
     pub unsafe fn Disconnect(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Disconnect)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrguid: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetExtensionProperty)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn GetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrguid: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetExtensionProperty)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, bstrguid: Param0, vproperty: Param1) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn SetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, bstrguid: Param0, vproperty: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetExtensionProperty)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), vproperty.into_param().abi()).ok()
     }
     pub unsafe fn ListenToServerEvents(&self, eventtypes: FAX_SERVER_EVENTS_TYPE_ENUM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ListenToServerEvents)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(eventtypes)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RegisterDeviceProvider<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrguid: Param0, bstrfriendlyname: Param1, bstrimagename: Param2, tspname: Param3, lfspiversion: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn RegisterDeviceProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrguid: Param0, bstrfriendlyname: Param1, bstrimagename: Param2, tspname: Param3, lfspiversion: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RegisterDeviceProvider)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), bstrfriendlyname.into_param().abi(), bstrimagename.into_param().abi(), tspname.into_param().abi(), ::core::mem::transmute(lfspiversion)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UnregisterDeviceProvider<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstruniquename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn UnregisterDeviceProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstruniquename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnregisterDeviceProvider)(::windows_core::Interface::as_raw(self), bstruniquename.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn RegisterInboundRoutingExtension<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, bstrextensionname: Param0, bstrfriendlyname: Param1, bstrimagename: Param2, vmethods: Param3) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn RegisterInboundRoutingExtension<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, bstrextensionname: Param0, bstrfriendlyname: Param1, bstrimagename: Param2, vmethods: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RegisterInboundRoutingExtension)(::windows_core::Interface::as_raw(self), bstrextensionname.into_param().abi(), bstrfriendlyname.into_param().abi(), bstrimagename.into_param().abi(), vmethods.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UnregisterInboundRoutingExtension<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrextensionuniquename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn UnregisterInboundRoutingExtension<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrextensionuniquename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnregisterInboundRoutingExtension)(::windows_core::Interface::as_raw(self), bstrextensionuniquename.into_param().abi()).ok()
     }
     pub unsafe fn RegisteredEvents(&self) -> ::windows_core::Result<FAX_SERVER_EVENTS_TYPE_ENUM> {
@@ -11850,26 +11086,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxSer
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxServer> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxServer> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxServer) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxServer> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxServer> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxServer) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxServer {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxServer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxServer {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxServer {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -11902,15 +11138,9 @@ unsafe impl ::windows_core::Interface for IFaxServer {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxServer_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Connect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrservername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Connect: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ServerName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrservername: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ServerName: usize,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    pub Connect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrservername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub ServerName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrservername: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub GetDeviceProviders: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppfaxdeviceproviders: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -11953,31 +11183,22 @@ pub struct IFaxServer_Vtbl {
     #[cfg(not(feature = "Win32_System_Com"))]
     Security: usize,
     pub Disconnect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub GetExtensionProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pvproperty: *mut super::super::System::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub GetExtensionProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pvproperty: *mut ::win32_system::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     GetExtensionProperty: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub SetExtensionProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, vproperty: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub SetExtensionProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, vproperty: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     SetExtensionProperty: usize,
     pub ListenToServerEvents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, eventtypes: FAX_SERVER_EVENTS_TYPE_ENUM) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RegisterDeviceProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrfriendlyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrimagename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, tspname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lfspiversion: i32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RegisterDeviceProvider: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub UnregisterDeviceProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstruniquename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    UnregisterDeviceProvider: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub RegisterInboundRoutingExtension: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrextensionname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrfriendlyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrimagename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, vmethods: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    pub RegisterDeviceProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrguid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrfriendlyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrimagename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, tspname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, lfspiversion: i32) -> ::windows_core::HRESULT,
+    pub UnregisterDeviceProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstruniquename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub RegisterInboundRoutingExtension: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrextensionname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrfriendlyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrimagename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, vmethods: ::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     RegisterInboundRoutingExtension: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub UnregisterInboundRoutingExtension: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrextensionuniquename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    UnregisterInboundRoutingExtension: usize,
+    pub UnregisterInboundRoutingExtension: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrextensionuniquename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub RegisteredEvents: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, peventtypes: *mut FAX_SERVER_EVENTS_TYPE_ENUM) -> ::windows_core::HRESULT,
     pub APIVersion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, papiversion: *mut FAX_SERVER_APIVERSION_ENUM) -> ::windows_core::HRESULT,
 }
@@ -11986,14 +11207,12 @@ pub struct IFaxServer_Vtbl {
 pub struct IFaxServer2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IFaxServer2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Connect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrservername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Connect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrservername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Connect)(::windows_core::Interface::as_raw(self), bstrservername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ServerName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.ServerName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ServerName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.ServerName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
     pub unsafe fn GetDeviceProviders(&self) -> ::windows_core::Result<IFaxDeviceProviders> {
@@ -12063,32 +11282,29 @@ impl IFaxServer2 {
     pub unsafe fn Disconnect(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Disconnect)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn GetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrguid: Param0) -> ::windows_core::Result<super::super::System::Com::VARIANT> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetExtensionProperty)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::VARIANT>(result__)
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn GetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrguid: Param0) -> ::windows_core::Result<::win32_system::Com::VARIANT> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_system::Com::VARIANT>>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetExtensionProperty)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn SetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, bstrguid: Param0, vproperty: Param1) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn SetExtensionProperty<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, bstrguid: Param0, vproperty: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetExtensionProperty)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), vproperty.into_param().abi()).ok()
     }
     pub unsafe fn ListenToServerEvents(&self, eventtypes: FAX_SERVER_EVENTS_TYPE_ENUM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ListenToServerEvents)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(eventtypes)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RegisterDeviceProvider<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrguid: Param0, bstrfriendlyname: Param1, bstrimagename: Param2, tspname: Param3, lfspiversion: i32) -> ::windows_core::Result<()> {
+    pub unsafe fn RegisterDeviceProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrguid: Param0, bstrfriendlyname: Param1, bstrimagename: Param2, tspname: Param3, lfspiversion: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.RegisterDeviceProvider)(::windows_core::Interface::as_raw(self), bstrguid.into_param().abi(), bstrfriendlyname.into_param().abi(), bstrimagename.into_param().abi(), tspname.into_param().abi(), ::core::mem::transmute(lfspiversion)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UnregisterDeviceProvider<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstruniquename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn UnregisterDeviceProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstruniquename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.UnregisterDeviceProvider)(::windows_core::Interface::as_raw(self), bstruniquename.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn RegisterInboundRoutingExtension<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, super::super::System::Com::VARIANT>>(&self, bstrextensionname: Param0, bstrfriendlyname: Param1, bstrimagename: Param2, vmethods: Param3) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn RegisterInboundRoutingExtension<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::VARIANT>>(&self, bstrextensionname: Param0, bstrfriendlyname: Param1, bstrimagename: Param2, vmethods: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.RegisterInboundRoutingExtension)(::windows_core::Interface::as_raw(self), bstrextensionname.into_param().abi(), bstrfriendlyname.into_param().abi(), bstrimagename.into_param().abi(), vmethods.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn UnregisterInboundRoutingExtension<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrextensionuniquename: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn UnregisterInboundRoutingExtension<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrextensionuniquename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.UnregisterInboundRoutingExtension)(::windows_core::Interface::as_raw(self), bstrextensionuniquename.into_param().abi()).ok()
     }
     pub unsafe fn RegisteredEvents(&self) -> ::windows_core::Result<FAX_SERVER_EVENTS_TYPE_ENUM> {
@@ -12145,26 +11361,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxSer
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxServer2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxServer2> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxServer2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxServer2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxServer2> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxServer2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxServer2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxServer2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxServer2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxServer2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -12269,26 +11485,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxSer
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxServerNotify> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxServerNotify> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxServerNotify) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxServerNotify> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxServerNotify> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxServerNotify) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxServerNotify {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxServerNotify {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxServerNotify {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxServerNotify {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -12321,7 +11537,7 @@ unsafe impl ::windows_core::Interface for IFaxServerNotify {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxServerNotify_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -12353,26 +11569,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IFaxSer
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IFaxServerNotify2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<IFaxServerNotify2> for ::win32_system::Com::IDispatch {
     fn from(value: IFaxServerNotify2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IFaxServerNotify2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IFaxServerNotify2> for ::win32_system::Com::IDispatch {
     fn from(value: &IFaxServerNotify2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for IFaxServerNotify2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IFaxServerNotify2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a IFaxServerNotify2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IFaxServerNotify2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -12405,15 +11621,14 @@ unsafe impl ::windows_core::Interface for IFaxServerNotify2 {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IFaxServerNotify2_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
 }
 pub const IS_DIGITAL_CAMERA_STR: &str = "IsDigitalCamera";
 pub const IS_DIGITAL_CAMERA_VAL: u32 = 1u32;
 #[repr(transparent)]
 pub struct IStiDevice(::windows_core::IUnknown);
 impl IStiDevice {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hinst: Param0, pwszdevicename: Param1, dwversion: u32, dwmode: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hinst: Param0, pwszdevicename: Param1, dwversion: u32, dwmode: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), hinst.into_param().abi(), pwszdevicename.into_param().abi(), ::core::mem::transmute(dwversion), ::core::mem::transmute(dwmode)).ok()
     }
     pub unsafe fn GetCapabilities(&self, pdevcaps: *mut STI_DEV_CAPS) -> ::windows_core::Result<()> {
@@ -12441,23 +11656,22 @@ impl IStiDevice {
     pub unsafe fn UnLockDevice(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnLockDevice)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawReadData(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawReadData(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawReadData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(lpdwnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawWriteData(&self, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawWriteData(&self, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawWriteData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawReadCommand(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawReadCommand(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawReadCommand)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(lpdwnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawWriteCommand(&self, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawWriteCommand(&self, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawWriteCommand)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn Subscribe(&self, lpsubsribe: *mut STISUBSCRIBE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Subscribe)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpsubsribe)).ok()
     }
@@ -12517,10 +11731,7 @@ unsafe impl ::windows_core::Interface for IStiDevice {
 #[doc(hidden)]
 pub struct IStiDevice_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hinst: super::super::Foundation::HINSTANCE, pwszdevicename: ::windows_core::PCWSTR, dwversion: u32, dwmode: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Initialize: usize,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hinst: ::win32_foundation::HINSTANCE, pwszdevicename: ::windows_core::PCWSTR, dwversion: u32, dwmode: u32) -> ::windows_core::HRESULT,
     pub GetCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevcaps: *mut STI_DEV_CAPS) -> ::windows_core::HRESULT,
     pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevstatus: *mut STI_DEVICE_STATUS) -> ::windows_core::HRESULT,
     pub DeviceReset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -12529,26 +11740,23 @@ pub struct IStiDevice_Vtbl {
     pub GetLastError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwlastdeviceerror: *mut u32) -> ::windows_core::HRESULT,
     pub LockDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwtimeout: u32) -> ::windows_core::HRESULT,
     pub UnLockDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawReadData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawReadData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawReadData: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawWriteData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawWriteData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawWriteData: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawReadCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawReadCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawReadCommand: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawWriteCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawWriteCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawWriteCommand: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub Subscribe: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpsubsribe: *mut STISUBSCRIBE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Subscribe: usize,
     pub GetLastNotificationData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpnotify: *mut STINOTIFY) -> ::windows_core::HRESULT,
     pub UnSubscribe: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetLastErrorInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plasterrorinfo: *mut _ERROR_INFOW) -> ::windows_core::HRESULT,
@@ -12559,20 +11767,20 @@ impl IStiDeviceControl {
     pub unsafe fn Initialize<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, dwdevicetype: u32, dwmode: u32, pwszportname: Param2, dwflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwdevicetype), ::core::mem::transmute(dwmode), pwszportname.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawReadData(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawReadData(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawReadData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(lpdwnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawWriteData(&self, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawWriteData(&self, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawWriteData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawReadCommand(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawReadCommand(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawReadCommand)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(lpdwnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawWriteCommand(&self, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawWriteCommand(&self, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawWriteCommand)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
     pub unsafe fn RawDeviceControl(&self, escapefunction: u32, lpindata: *mut ::core::ffi::c_void, cbindatasize: u32, poutdata: *mut ::core::ffi::c_void, dwoutdatasize: u32, pdwactualdata: *mut u32) -> ::windows_core::Result<()> {
@@ -12584,8 +11792,7 @@ impl IStiDeviceControl {
     pub unsafe fn GetMyDevicePortName(&self, lpszdevicepath: &mut [u16]) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetMyDevicePortName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpszdevicepath)), lpszdevicepath.len() as _).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetMyDeviceHandle(&self, lph: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
+    pub unsafe fn GetMyDeviceHandle(&self, lph: *mut ::win32_foundation::HANDLE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetMyDeviceHandle)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lph)).ok()
     }
     pub unsafe fn GetMyDeviceOpenMode(&self, pdwopenmode: *mut u32) -> ::windows_core::Result<()> {
@@ -12640,29 +11847,26 @@ unsafe impl ::windows_core::Interface for IStiDeviceControl {
 pub struct IStiDeviceControl_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwdevicetype: u32, dwmode: u32, pwszportname: ::windows_core::PCWSTR, dwflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawReadData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawReadData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawReadData: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawWriteData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawWriteData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawWriteData: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawReadCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawReadCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawReadCommand: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawWriteCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawWriteCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawWriteCommand: usize,
     pub RawDeviceControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, escapefunction: u32, lpindata: *mut ::core::ffi::c_void, cbindatasize: u32, poutdata: *mut ::core::ffi::c_void, dwoutdatasize: u32, pdwactualdata: *mut u32) -> ::windows_core::HRESULT,
     pub GetLastError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpdwlasterror: *mut u32) -> ::windows_core::HRESULT,
     pub GetMyDevicePortName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpszdevicepath: ::windows_core::PWSTR, cwdevicepathsize: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetMyDeviceHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lph: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetMyDeviceHandle: usize,
+    pub GetMyDeviceHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lph: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
     pub GetMyDeviceOpenMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwopenmode: *mut u32) -> ::windows_core::HRESULT,
     pub WriteToErrorLog: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwmessagetype: u32, pszmessage: ::windows_core::PCWSTR, dwerrorcode: u32) -> ::windows_core::HRESULT,
 }
@@ -12672,7 +11876,7 @@ pub struct IStiDeviceW(pub u8);
 pub struct IStiUSD(::windows_core::IUnknown);
 impl IStiUSD {
     #[cfg(feature = "Win32_System_Registry")]
-    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, IStiDeviceControl>, Param2: ::windows_core::IntoParam<'a, super::super::System::Registry::HKEY>>(&self, pheldcb: Param0, dwstiversion: u32, hparameterskey: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, IStiDeviceControl>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Registry::HKEY>>(&self, pheldcb: Param0, dwstiversion: u32, hparameterskey: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), pheldcb.into_param().abi(), ::core::mem::transmute(dwstiversion), hparameterskey.into_param().abi()).ok()
     }
     pub unsafe fn GetCapabilities(&self) -> ::windows_core::Result<STI_USD_CAPS> {
@@ -12701,24 +11905,23 @@ impl IStiUSD {
     pub unsafe fn UnLockDevice(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnLockDevice)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawReadData(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawReadData(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawReadData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(lpdwnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawWriteData(&self, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawWriteData(&self, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawWriteData)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawReadCommand(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawReadCommand(&self, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawReadCommand)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(lpdwnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub unsafe fn RawWriteCommand(&self, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_IO")]
+    pub unsafe fn RawWriteCommand(&self, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RawWriteCommand)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofbytes), ::core::mem::transmute(lpoverlapped)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetNotificationHandle<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hevent: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetNotificationHandle<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hevent: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetNotificationHandle)(::windows_core::Interface::as_raw(self), hevent.into_param().abi()).ok()
     }
     pub unsafe fn GetNotificationData(&self) -> ::windows_core::Result<STINOTIFY> {
@@ -12775,7 +11978,7 @@ unsafe impl ::windows_core::Interface for IStiUSD {
 pub struct IStiUSD_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_System_Registry")]
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pheldcb: ::windows_core::RawPtr, dwstiversion: u32, hparameterskey: super::super::System::Registry::HKEY) -> ::windows_core::HRESULT,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pheldcb: ::windows_core::RawPtr, dwstiversion: u32, hparameterskey: ::win32_system::Registry::HKEY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Registry"))]
     Initialize: usize,
     pub GetCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdevcaps: *mut STI_USD_CAPS) -> ::windows_core::HRESULT,
@@ -12786,34 +11989,30 @@ pub struct IStiUSD_Vtbl {
     pub GetLastError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwlastdeviceerror: *mut u32) -> ::windows_core::HRESULT,
     pub LockDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub UnLockDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawReadData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawReadData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawReadData: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawWriteData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawWriteData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawWriteData: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawReadCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawReadCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, lpdwnumberofbytes: *mut u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawReadCommand: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub RawWriteCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_IO")))]
+    #[cfg(feature = "Win32_System_IO")]
+    pub RawWriteCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpbuffer: *const ::core::ffi::c_void, nnumberofbytes: u32, lpoverlapped: *const ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_IO"))]
     RawWriteCommand: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetNotificationHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hevent: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetNotificationHandle: usize,
+    pub SetNotificationHandle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hevent: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
     pub GetNotificationData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lpnotify: *mut STINOTIFY) -> ::windows_core::HRESULT,
     pub GetLastErrorInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plasterrorinfo: *mut _ERROR_INFOW) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IStillImageW(::windows_core::IUnknown);
 impl IStillImageW {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>>(&self, hinst: Param0, dwversion: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>>(&self, hinst: Param0, dwversion: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), hinst.into_param().abi(), ::core::mem::transmute(dwversion)).ok()
     }
     pub unsafe fn GetDeviceList(&self, dwtype: u32, dwflags: u32, pdwitemsreturned: *mut u32, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
@@ -12840,14 +12039,12 @@ impl IStillImageW {
     pub unsafe fn UnregisterLaunchApplication<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszappname: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).UnregisterLaunchApplication)(::windows_core::Interface::as_raw(self), pwszappname.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EnableHwNotifications<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pwszdevicename: Param0, bnewstate: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn EnableHwNotifications<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pwszdevicename: Param0, bnewstate: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EnableHwNotifications)(::windows_core::Interface::as_raw(self), pwszdevicename.into_param().abi(), bnewstate.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetHwNotificationState<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszdevicename: Param0) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetHwNotificationState)(::windows_core::Interface::as_raw(self), pwszdevicename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetHwNotificationState<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszdevicename: Param0) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetHwNotificationState)(::windows_core::Interface::as_raw(self), pwszdevicename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn RefreshDeviceBus<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszdevicename: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RefreshDeviceBus)(::windows_core::Interface::as_raw(self), pwszdevicename.into_param().abi()).ok()
@@ -12906,10 +12103,7 @@ unsafe impl ::windows_core::Interface for IStillImageW {
 #[doc(hidden)]
 pub struct IStillImageW_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hinst: super::super::Foundation::HINSTANCE, dwversion: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Initialize: usize,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hinst: ::win32_foundation::HINSTANCE, dwversion: u32) -> ::windows_core::HRESULT,
     pub GetDeviceList: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwtype: u32, dwflags: u32, pdwitemsreturned: *mut u32, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetDeviceInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicename: ::windows_core::PCWSTR, ppbuffer: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CreateDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicename: ::windows_core::PCWSTR, dwmode: u32, pdevice: *mut ::windows_core::RawPtr, punkouter: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -12918,14 +12112,8 @@ pub struct IStillImageW_Vtbl {
     pub GetSTILaunchInformation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicename: ::windows_core::PWSTR, pdweventcode: *mut u32, pwszeventname: ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub RegisterLaunchApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszappname: ::windows_core::PCWSTR, pwszcommandline: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub UnregisterLaunchApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszappname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub EnableHwNotifications: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicename: ::windows_core::PCWSTR, bnewstate: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EnableHwNotifications: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetHwNotificationState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicename: ::windows_core::PCWSTR, pbcurrentstate: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetHwNotificationState: usize,
+    pub EnableHwNotifications: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicename: ::windows_core::PCWSTR, bnewstate: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetHwNotificationState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicename: ::windows_core::PCWSTR, pbcurrentstate: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub RefreshDeviceBus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicename: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub LaunchApplicationForDevice: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszdevicename: ::windows_core::PCWSTR, pwszappname: ::windows_core::PCWSTR, pstinotify: *const STINOTIFY) -> ::windows_core::HRESULT,
     pub SetupDeviceParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, param0: *mut STI_DEVICE_INFORMATIONW) -> ::windows_core::HRESULT,
@@ -12948,181 +12136,102 @@ pub const MAX_NOTIFICATION_DATA: u32 = 64u32;
 pub const MS_FAXROUTE_EMAIL_GUID: &str = "{6bbf7bfe-9af2-11d0-abf7-00c04fd91a4e}";
 pub const MS_FAXROUTE_FOLDER_GUID: &str = "{92041a90-9af2-11d0-abf7-00c04fd91a4e}";
 pub const MS_FAXROUTE_PRINTING_GUID: &str = "{aec1b37c-9af2-11d0-abf7-00c04fd91a4e}";
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXABORT = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXACCESSCHECK = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, accessmask: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCLOSE = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCOMPLETEJOBPARAMSA = ::core::option::Option<unsafe extern "system" fn(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCOMPLETEJOBPARAMSW = ::core::option::Option<unsafe extern "system" fn(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCONNECTFAXSERVERA = ::core::option::Option<unsafe extern "system" fn(machinename: ::windows_core::PCSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXCONNECTFAXSERVERW = ::core::option::Option<unsafe extern "system" fn(machinename: ::windows_core::PCWSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVABORTOPERATION = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-pub type PFAXDEVCONFIGURE = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::UI::Controls::HPROPSHEETPAGE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVENDJOB = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVINITIALIZE = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: super::super::Foundation::HANDLE, param2: *mut PFAX_LINECALLBACK, param3: PFAX_SERVICE_CALLBACK) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVRECEIVE = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE, param1: u32, param2: *mut FAX_RECEIVE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVREPORTSTATUS = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE, param1: *mut FAX_DEV_STATUS, param2: u32, param3: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVSEND = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE, param1: *mut FAX_SEND, param2: PFAX_SEND_CALLBACK) -> super::super::Foundation::BOOL>;
+pub type PFAXABORT = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, jobid: u32) -> ::win32_foundation::BOOL>;
+pub type PFAXACCESSCHECK = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, accessmask: u32) -> ::win32_foundation::BOOL>;
+pub type PFAXCLOSE = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL>;
+pub type PFAXCOMPLETEJOBPARAMSA = ::core::option::Option<unsafe extern "system" fn(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> ::win32_foundation::BOOL>;
+pub type PFAXCOMPLETEJOBPARAMSW = ::core::option::Option<unsafe extern "system" fn(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> ::win32_foundation::BOOL>;
+pub type PFAXCONNECTFAXSERVERA = ::core::option::Option<unsafe extern "system" fn(machinename: ::windows_core::PCSTR, faxhandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL>;
+pub type PFAXCONNECTFAXSERVERW = ::core::option::Option<unsafe extern "system" fn(machinename: ::windows_core::PCWSTR, faxhandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL>;
+pub type PFAXDEVABORTOPERATION = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL>;
+#[cfg(feature = "Win32_UI_Controls")]
+pub type PFAXDEVCONFIGURE = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::win32_ui::Controls::HPROPSHEETPAGE) -> ::win32_foundation::BOOL>;
+pub type PFAXDEVENDJOB = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL>;
+pub type PFAXDEVINITIALIZE = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: ::win32_foundation::HANDLE, param2: *mut PFAX_LINECALLBACK, param3: PFAX_SERVICE_CALLBACK) -> ::win32_foundation::BOOL>;
+pub type PFAXDEVRECEIVE = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HANDLE, param1: u32, param2: *mut FAX_RECEIVE) -> ::win32_foundation::BOOL>;
+pub type PFAXDEVREPORTSTATUS = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HANDLE, param1: *mut FAX_DEV_STATUS, param2: u32, param3: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXDEVSEND = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HANDLE, param1: *mut FAX_SEND, param2: PFAX_SEND_CALLBACK) -> ::win32_foundation::BOOL>;
 pub type PFAXDEVSHUTDOWN = ::core::option::Option<unsafe extern "system" fn() -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVSTARTJOB = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: *mut super::super::Foundation::HANDLE, param3: super::super::Foundation::HANDLE, param4: usize) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXDEVVIRTUALDEVICECREATION = ::core::option::Option<unsafe extern "system" fn(devicecount: *mut u32, devicenameprefix: ::windows_core::PWSTR, deviceidprefix: *mut u32, completionport: super::super::Foundation::HANDLE, completionkey: usize) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENABLEROUTINGMETHODA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENABLEROUTINGMETHODW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCWSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMGLOBALROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMGLOBALROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMJOBSA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMJOBSW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMPORTSA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMPORTSW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMROUTINGMETHODSA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXENUMROUTINGMETHODSW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL>;
+pub type PFAXDEVSTARTJOB = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: *mut ::win32_foundation::HANDLE, param3: ::win32_foundation::HANDLE, param4: usize) -> ::win32_foundation::BOOL>;
+pub type PFAXDEVVIRTUALDEVICECREATION = ::core::option::Option<unsafe extern "system" fn(devicecount: *mut u32, devicenameprefix: ::windows_core::PWSTR, deviceidprefix: *mut u32, completionport: ::win32_foundation::HANDLE, completionkey: usize) -> ::win32_foundation::BOOL>;
+pub type PFAXENABLEROUTINGMETHODA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCSTR, enabled: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL>;
+pub type PFAXENABLEROUTINGMETHODW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCWSTR, enabled: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL>;
+pub type PFAXENUMGLOBALROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXENUMGLOBALROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXENUMJOBSA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXENUMJOBSW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXENUMPORTSA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXENUMPORTSW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXENUMROUTINGMETHODSA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXENUMROUTINGMETHODSW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> ::win32_foundation::BOOL>;
 pub type PFAXFREEBUFFER = ::core::option::Option<unsafe extern "system" fn(buffer: *mut ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETCONFIGURATIONA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETCONFIGURATIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETDEVICESTATUSA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETDEVICESTATUSW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETJOBA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETJOBW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETLOGGINGCATEGORIESA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETLOGGINGCATEGORIESW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETPAGEDATA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETPORTA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETPORTW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXGETROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCWSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXINITIALIZEEVENTQUEUE = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, completionport: super::super::Foundation::HANDLE, completionkey: usize, hwnd: super::super::Foundation::HWND, messagestart: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXOPENPORT = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, deviceid: u32, flags: u32, faxporthandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFAXPRINTCOVERPAGEA = ::core::option::Option<unsafe extern "system" fn(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFAXPRINTCOVERPAGEW = ::core::option::Option<unsafe extern "system" fn(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXREGISTERROUTINGEXTENSIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, extensionname: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, imagename: ::windows_core::PCWSTR, callback: PFAX_ROUTING_INSTALLATION_CALLBACKW, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXREGISTERSERVICEPROVIDERW = ::core::option::Option<unsafe extern "system" fn(deviceprovider: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, imagename: ::windows_core::PCWSTR, tspname: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL>;
+pub type PFAXGETCONFIGURATIONA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> ::win32_foundation::BOOL>;
+pub type PFAXGETCONFIGURATIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> ::win32_foundation::BOOL>;
+pub type PFAXGETDEVICESTATUSA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> ::win32_foundation::BOOL>;
+pub type PFAXGETDEVICESTATUSW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> ::win32_foundation::BOOL>;
+pub type PFAXGETJOBA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> ::win32_foundation::BOOL>;
+pub type PFAXGETJOBW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> ::win32_foundation::BOOL>;
+pub type PFAXGETLOGGINGCATEGORIESA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXGETLOGGINGCATEGORIESW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXGETPAGEDATA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXGETPORTA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA) -> ::win32_foundation::BOOL>;
+pub type PFAXGETPORTW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW) -> ::win32_foundation::BOOL>;
+pub type PFAXGETROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXGETROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCWSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXINITIALIZEEVENTQUEUE = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, completionport: ::win32_foundation::HANDLE, completionkey: usize, hwnd: ::win32_foundation::HWND, messagestart: u32) -> ::win32_foundation::BOOL>;
+pub type PFAXOPENPORT = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, deviceid: u32, flags: u32, faxporthandle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFAXPRINTCOVERPAGEA = ::core::option::Option<unsafe extern "system" fn(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> ::win32_foundation::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFAXPRINTCOVERPAGEW = ::core::option::Option<unsafe extern "system" fn(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> ::win32_foundation::BOOL>;
+pub type PFAXREGISTERROUTINGEXTENSIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, extensionname: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, imagename: ::windows_core::PCWSTR, callback: PFAX_ROUTING_INSTALLATION_CALLBACKW, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL>;
+pub type PFAXREGISTERSERVICEPROVIDERW = ::core::option::Option<unsafe extern "system" fn(deviceprovider: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, imagename: ::windows_core::PCWSTR, tspname: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL>;
 pub type PFAXROUTEADDFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, filename: ::windows_core::PCWSTR, guid: *mut ::windows_core::GUID) -> i32>;
 pub type PFAXROUTEDELETEFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, filename: ::windows_core::PCWSTR) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEDEVICECHANGENOTIFICATION = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEDEVICEENABLE = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: u32, param2: i32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEENUMFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, guidowner: *mut ::windows_core::GUID, guidcaller: *mut ::windows_core::GUID, filename: ::windows_core::PCWSTR, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEENUMFILES = ::core::option::Option<unsafe extern "system" fn(jobid: u32, guid: *mut ::windows_core::GUID, fileenumerator: PFAXROUTEENUMFILE, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEGETFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, index: u32, filenamebuffer: ::windows_core::PWSTR, requiredsize: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEGETROUTINGINFO = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: u32, param2: *mut u8, param3: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEINITIALIZE = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE, param1: *mut FAX_ROUTE_CALLBACKROUTINES) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEMETHOD = ::core::option::Option<unsafe extern "system" fn(param0: *const FAX_ROUTE, param1: *mut *mut ::core::ffi::c_void, param2: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTEMODIFYROUTINGDATA = ::core::option::Option<unsafe extern "system" fn(jobid: u32, routingguid: ::windows_core::PCWSTR, routingdata: *mut u8, routingdatasize: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXROUTESETROUTINGINFO = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: u32, param2: *const u8, param3: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSENDDOCUMENTA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core::PCSTR, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSENDDOCUMENTFORBROADCASTA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core::PCSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKA, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSENDDOCUMENTFORBROADCASTW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core::PCWSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKW, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSENDDOCUMENTW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, filename: ::windows_core::PCWSTR, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETCONFIGURATIONA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETCONFIGURATIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETGLOBALROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETGLOBALROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETJOBA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETJOBW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETLOGGINGCATEGORIESA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETLOGGINGCATEGORIESW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETPORTA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETPORTW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXSETROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows_core::PCWSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFAXSTARTPRINTJOBA = ::core::option::Option<unsafe extern "system" fn(printername: ::windows_core::PCSTR, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFAXSTARTPRINTJOBW = ::core::option::Option<unsafe extern "system" fn(printername: ::windows_core::PCWSTR, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAXUNREGISTERSERVICEPROVIDERW = ::core::option::Option<unsafe extern "system" fn(deviceprovider: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL>;
+pub type PFAXROUTEDEVICECHANGENOTIFICATION = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: ::win32_foundation::BOOL) -> ::win32_foundation::BOOL>;
+pub type PFAXROUTEDEVICEENABLE = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: u32, param2: i32) -> ::win32_foundation::BOOL>;
+pub type PFAXROUTEENUMFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, guidowner: *mut ::windows_core::GUID, guidcaller: *mut ::windows_core::GUID, filename: ::windows_core::PCWSTR, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL>;
+pub type PFAXROUTEENUMFILES = ::core::option::Option<unsafe extern "system" fn(jobid: u32, guid: *mut ::windows_core::GUID, fileenumerator: PFAXROUTEENUMFILE, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL>;
+pub type PFAXROUTEGETFILE = ::core::option::Option<unsafe extern "system" fn(jobid: u32, index: u32, filenamebuffer: ::windows_core::PWSTR, requiredsize: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXROUTEGETROUTINGINFO = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: u32, param2: *mut u8, param3: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXROUTEINITIALIZE = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HANDLE, param1: *mut FAX_ROUTE_CALLBACKROUTINES) -> ::win32_foundation::BOOL>;
+pub type PFAXROUTEMETHOD = ::core::option::Option<unsafe extern "system" fn(param0: *const FAX_ROUTE, param1: *mut *mut ::core::ffi::c_void, param2: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXROUTEMODIFYROUTINGDATA = ::core::option::Option<unsafe extern "system" fn(jobid: u32, routingguid: ::windows_core::PCWSTR, routingdata: *mut u8, routingdatasize: u32) -> ::win32_foundation::BOOL>;
+pub type PFAXROUTESETROUTINGINFO = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: u32, param2: *const u8, param3: u32) -> ::win32_foundation::BOOL>;
+pub type PFAXSENDDOCUMENTA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, filename: ::windows_core::PCSTR, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXSENDDOCUMENTFORBROADCASTA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, filename: ::windows_core::PCSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKA, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL>;
+pub type PFAXSENDDOCUMENTFORBROADCASTW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, filename: ::windows_core::PCWSTR, faxjobid: *mut u32, faxrecipientcallback: PFAX_RECIPIENT_CALLBACKW, context: *mut ::core::ffi::c_void) -> ::win32_foundation::BOOL>;
+pub type PFAXSENDDOCUMENTW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, filename: ::windows_core::PCWSTR, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> ::win32_foundation::BOOL>;
+pub type PFAXSETCONFIGURATIONA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONA) -> ::win32_foundation::BOOL>;
+pub type PFAXSETCONFIGURATIONW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONW) -> ::win32_foundation::BOOL>;
+pub type PFAXSETGLOBALROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> ::win32_foundation::BOOL>;
+pub type PFAXSETGLOBALROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> ::win32_foundation::BOOL>;
+pub type PFAXSETJOBA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> ::win32_foundation::BOOL>;
+pub type PFAXSETJOBW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> ::win32_foundation::BOOL>;
+pub type PFAXSETLOGGINGCATEGORIESA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> ::win32_foundation::BOOL>;
+pub type PFAXSETLOGGINGCATEGORIESW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> ::win32_foundation::BOOL>;
+pub type PFAXSETPORTA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, portinfo: *const FAX_PORT_INFOA) -> ::win32_foundation::BOOL>;
+pub type PFAXSETPORTW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, portinfo: *const FAX_PORT_INFOW) -> ::win32_foundation::BOOL>;
+pub type PFAXSETROUTINGINFOA = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation::BOOL>;
+pub type PFAXSETROUTINGINFOW = ::core::option::Option<unsafe extern "system" fn(faxporthandle: ::win32_foundation::HANDLE, routingguid: ::windows_core::PCWSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> ::win32_foundation::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFAXSTARTPRINTJOBA = ::core::option::Option<unsafe extern "system" fn(printername: ::windows_core::PCSTR, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> ::win32_foundation::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type PFAXSTARTPRINTJOBW = ::core::option::Option<unsafe extern "system" fn(printername: ::windows_core::PCWSTR, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> ::win32_foundation::BOOL>;
+pub type PFAXUNREGISTERSERVICEPROVIDERW = ::core::option::Option<unsafe extern "system" fn(deviceprovider: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL>;
 pub type PFAX_EXT_CONFIG_CHANGE = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: ::windows_core::PCWSTR, param2: *mut u8, param3: u32) -> ::windows_core::HRESULT>;
 pub type PFAX_EXT_FREE_BUFFER = ::core::option::Option<unsafe extern "system" fn(param0: *mut ::core::ffi::c_void)>;
 pub type PFAX_EXT_GET_DATA = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: FAX_ENUM_DEVICE_ID_SOURCE, param2: ::windows_core::PCWSTR, param3: *mut *mut u8, param4: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFAX_EXT_INITIALIZE_CONFIG = ::core::option::Option<unsafe extern "system" fn(param0: PFAX_EXT_GET_DATA, param1: PFAX_EXT_SET_DATA, param2: PFAX_EXT_REGISTER_FOR_EVENTS, param3: PFAX_EXT_UNREGISTER_FOR_EVENTS, param4: PFAX_EXT_FREE_BUFFER) -> ::windows_core::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_EXT_REGISTER_FOR_EVENTS = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HINSTANCE, param1: u32, param2: FAX_ENUM_DEVICE_ID_SOURCE, param3: ::windows_core::PCWSTR, param4: PFAX_EXT_CONFIG_CHANGE) -> super::super::Foundation::HANDLE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_EXT_SET_DATA = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HINSTANCE, param1: u32, param2: FAX_ENUM_DEVICE_ID_SOURCE, param3: ::windows_core::PCWSTR, param4: *mut u8, param5: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_EXT_UNREGISTER_FOR_EVENTS = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Foundation::HANDLE) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_LINECALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, hdevice: u32, dwmessage: u32, dwinstance: usize, dwparam1: usize, dwparam2: usize, dwparam3: usize)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_RECIPIENT_CALLBACKA = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, recipientnumber: u32, context: *mut ::core::ffi::c_void, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *mut FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_RECIPIENT_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, recipientnumber: u32, context: *mut ::core::ffi::c_void, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *mut FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_ROUTING_INSTALLATION_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, context: *mut ::core::ffi::c_void, methodname: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, functionname: ::windows_core::PCWSTR, guid: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_SEND_CALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, callhandle: u32, reserved1: u32, reserved2: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFAX_SERVICE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: super::super::Foundation::HANDLE, deviceid: u32, param1: usize, param2: usize, param3: usize) -> super::super::Foundation::BOOL>;
+pub type PFAX_EXT_REGISTER_FOR_EVENTS = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HINSTANCE, param1: u32, param2: FAX_ENUM_DEVICE_ID_SOURCE, param3: ::windows_core::PCWSTR, param4: PFAX_EXT_CONFIG_CHANGE) -> ::win32_foundation::HANDLE>;
+pub type PFAX_EXT_SET_DATA = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HINSTANCE, param1: u32, param2: FAX_ENUM_DEVICE_ID_SOURCE, param3: ::windows_core::PCWSTR, param4: *mut u8, param5: u32) -> u32>;
+pub type PFAX_EXT_UNREGISTER_FOR_EVENTS = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_foundation::HANDLE) -> u32>;
+pub type PFAX_LINECALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, hdevice: u32, dwmessage: u32, dwinstance: usize, dwparam1: usize, dwparam2: usize, dwparam3: usize)>;
+pub type PFAX_RECIPIENT_CALLBACKA = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, recipientnumber: u32, context: *mut ::core::ffi::c_void, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *mut FAX_COVERPAGE_INFOA) -> ::win32_foundation::BOOL>;
+pub type PFAX_RECIPIENT_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, recipientnumber: u32, context: *mut ::core::ffi::c_void, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *mut FAX_COVERPAGE_INFOW) -> ::win32_foundation::BOOL>;
+pub type PFAX_ROUTING_INSTALLATION_CALLBACKW = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, context: *mut ::core::ffi::c_void, methodname: ::windows_core::PCWSTR, friendlyname: ::windows_core::PCWSTR, functionname: ::windows_core::PCWSTR, guid: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL>;
+pub type PFAX_SEND_CALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, callhandle: u32, reserved1: u32, reserved2: u32) -> ::win32_foundation::BOOL>;
+pub type PFAX_SERVICE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(faxhandle: ::win32_foundation::HANDLE, deviceid: u32, param1: usize, param2: usize, param3: usize) -> ::win32_foundation::BOOL>;
 pub const REGSTR_VAL_BAUDRATE: &str = "BaudRate";
 pub const REGSTR_VAL_BAUDRATE_A: &str = "BaudRate";
 pub const REGSTR_VAL_DATA_W: &str = "DeviceData";
@@ -13201,42 +12310,34 @@ impl ::core::default::Default for STINOTIFY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STISUBSCRIBE {
     pub dwSize: u32,
     pub dwFlags: u32,
     pub dwFilter: u32,
-    pub hWndNotify: super::super::Foundation::HWND,
-    pub hEvent: super::super::Foundation::HANDLE,
+    pub hWndNotify: ::win32_foundation::HWND,
+    pub hEvent: ::win32_foundation::HANDLE,
     pub uiNotificationMessage: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STISUBSCRIBE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STISUBSCRIBE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for STISUBSCRIBE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("STISUBSCRIBE").field("dwSize", &self.dwSize).field("dwFlags", &self.dwFlags).field("dwFilter", &self.dwFilter).field("hWndNotify", &self.hWndNotify).field("hEvent", &self.hEvent).field("uiNotificationMessage", &self.uiNotificationMessage).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for STISUBSCRIBE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for STISUBSCRIBE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<STISUBSCRIBE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for STISUBSCRIBE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for STISUBSCRIBE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -13604,14 +12705,13 @@ impl ::core::fmt::Debug for SendToMode {
         f.debug_tuple("SendToMode").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StiCreateInstanceW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HINSTANCE>, Param3: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(hinst: Param0, dwver: u32, ppsti: *mut ::core::option::Option<IStillImageW>, punkouter: Param3) -> ::windows_core::Result<()> {
+pub unsafe fn StiCreateInstanceW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HINSTANCE>, Param3: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(hinst: Param0, dwver: u32, ppsti: *mut ::core::option::Option<IStillImageW>, punkouter: Param3) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StiCreateInstanceW(hinst: super::super::Foundation::HINSTANCE, dwver: u32, ppsti: *mut ::windows_core::RawPtr, punkouter: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
+            fn StiCreateInstanceW(hinst: ::win32_foundation::HINSTANCE, dwver: u32, ppsti: *mut ::windows_core::RawPtr, punkouter: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT;
         }
         StiCreateInstanceW(hinst.into_param().abi(), ::core::mem::transmute(dwver), ::core::mem::transmute(ppsti), punkouter.into_param().abi()).ok()
     }
@@ -13656,44 +12756,44 @@ impl ::core::default::Default for _ERROR_INFOW {
 pub struct _IFaxAccountNotify(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl _IFaxAccountNotify {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingJobAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxaccount: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingJobAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxaccount: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingJobAdded)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrjobid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingJobRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxaccount: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingJobRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxaccount: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingJobRemoved)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrjobid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingJobChanged<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFaxJobStatus>>(&self, pfaxaccount: Param0, bstrjobid: Param1, pjobstatus: Param2) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingJobChanged<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFaxJobStatus>>(&self, pfaxaccount: Param0, bstrjobid: Param1, pjobstatus: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingJobChanged)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrjobid.into_param().abi(), pjobstatus.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingJobAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxaccount: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingJobAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxaccount: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingJobAdded)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrjobid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingJobRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxaccount: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingJobRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxaccount: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingJobRemoved)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrjobid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingJobChanged<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFaxJobStatus>>(&self, pfaxaccount: Param0, bstrjobid: Param1, pjobstatus: Param2) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingJobChanged<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFaxJobStatus>>(&self, pfaxaccount: Param0, bstrjobid: Param1, pjobstatus: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingJobChanged)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrjobid.into_param().abi(), pjobstatus.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingMessageAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxaccount: Param0, bstrmessageid: Param1, faddedtoreceivefolder: i16) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingMessageAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxaccount: Param0, bstrmessageid: Param1, faddedtoreceivefolder: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingMessageAdded)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrmessageid.into_param().abi(), ::core::mem::transmute(faddedtoreceivefolder)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingMessageRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxaccount: Param0, bstrmessageid: Param1, fremovedfromreceivefolder: i16) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingMessageRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxaccount: Param0, bstrmessageid: Param1, fremovedfromreceivefolder: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingMessageRemoved)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrmessageid.into_param().abi(), ::core::mem::transmute(fremovedfromreceivefolder)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingMessageAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxaccount: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingMessageAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxaccount: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingMessageAdded)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrmessageid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingMessageRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxaccount: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingMessageRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxAccount>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxaccount: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingMessageRemoved)(::windows_core::Interface::as_raw(self), pfaxaccount.into_param().abi(), bstrmessageid.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -13726,26 +12826,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a _IFaxAc
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<_IFaxAccountNotify> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<_IFaxAccountNotify> for ::win32_system::Com::IDispatch {
     fn from(value: _IFaxAccountNotify) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&_IFaxAccountNotify> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&_IFaxAccountNotify> for ::win32_system::Com::IDispatch {
     fn from(value: &_IFaxAccountNotify) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for _IFaxAccountNotify {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for _IFaxAccountNotify {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a _IFaxAccountNotify {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a _IFaxAccountNotify {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -13778,46 +12878,46 @@ unsafe impl ::windows_core::Interface for _IFaxAccountNotify {
 #[repr(C)]
 #[doc(hidden)]
 pub struct _IFaxAccountNotify_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingJobAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingJobAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingJobAdded: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingJobRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingJobRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingJobRemoved: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingJobChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pjobstatus: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingJobChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pjobstatus: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingJobChanged: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingJobAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingJobAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingJobAdded: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingJobRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingJobRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingJobRemoved: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingJobChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pjobstatus: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingJobChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pjobstatus: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingJobChanged: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingMessageAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, faddedtoreceivefolder: i16) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingMessageAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, faddedtoreceivefolder: i16) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingMessageAdded: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingMessageRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, fremovedfromreceivefolder: i16) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingMessageRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, fremovedfromreceivefolder: i16) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingMessageRemoved: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingMessageAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingMessageAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingMessageAdded: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingMessageRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingMessageRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxaccount: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingMessageRemoved: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub OnServerShutDown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -13829,44 +12929,44 @@ pub struct _IFaxAccountNotify_Vtbl {
 pub struct _IFaxServerNotify2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl _IFaxServerNotify2 {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingJobAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxserver: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingJobAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxserver: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingJobAdded)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrjobid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingJobRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxserver: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingJobRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxserver: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingJobRemoved)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrjobid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingJobChanged<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFaxJobStatus>>(&self, pfaxserver: Param0, bstrjobid: Param1, pjobstatus: Param2) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingJobChanged<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFaxJobStatus>>(&self, pfaxserver: Param0, bstrjobid: Param1, pjobstatus: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingJobChanged)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrjobid.into_param().abi(), pjobstatus.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingJobAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxserver: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingJobAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxserver: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingJobAdded)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrjobid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingJobRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxserver: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingJobRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxserver: Param0, bstrjobid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingJobRemoved)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrjobid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingJobChanged<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFaxJobStatus>>(&self, pfaxserver: Param0, bstrjobid: Param1, pjobstatus: Param2) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingJobChanged<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, IFaxJobStatus>>(&self, pfaxserver: Param0, bstrjobid: Param1, pjobstatus: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingJobChanged)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrjobid.into_param().abi(), pjobstatus.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingMessageAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxserver: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingMessageAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxserver: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingMessageAdded)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrmessageid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnIncomingMessageRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxserver: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnIncomingMessageRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxserver: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnIncomingMessageRemoved)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrmessageid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingMessageAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxserver: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingMessageAdded<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxserver: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingMessageAdded)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrmessageid.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnOutgoingMessageRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxserver: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnOutgoingMessageRemoved<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxserver: Param0, bstrmessageid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnOutgoingMessageRemoved)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), bstrmessageid.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -13917,8 +13017,8 @@ impl _IFaxServerNotify2 {
     pub unsafe fn OnQueuesStatusChange<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>>(&self, pfaxserver: Param0, boutgoingqueueblocked: i16, boutgoingqueuepaused: i16, bincomingqueueblocked: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnQueuesStatusChange)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), ::core::mem::transmute(boutgoingqueueblocked), ::core::mem::transmute(boutgoingqueuepaused), ::core::mem::transmute(bincomingqueueblocked)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn OnNewCall<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pfaxserver: Param0, lcallid: i32, ldeviceid: i32, bstrcallerid: Param3) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn OnNewCall<'a, Param0: ::windows_core::IntoParam<'a, IFaxServer2>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pfaxserver: Param0, lcallid: i32, ldeviceid: i32, bstrcallerid: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).OnNewCall)(::windows_core::Interface::as_raw(self), pfaxserver.into_param().abi(), ::core::mem::transmute(lcallid), ::core::mem::transmute(ldeviceid), bstrcallerid.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -13959,26 +13059,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a _IFaxSe
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<_IFaxServerNotify2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<_IFaxServerNotify2> for ::win32_system::Com::IDispatch {
     fn from(value: _IFaxServerNotify2) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&_IFaxServerNotify2> for super::super::System::Com::IDispatch {
+impl ::core::convert::From<&_IFaxServerNotify2> for ::win32_system::Com::IDispatch {
     fn from(value: &_IFaxServerNotify2) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for _IFaxServerNotify2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for _IFaxServerNotify2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::System::Com::IDispatch> for &'a _IFaxServerNotify2 {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a _IFaxServerNotify2 {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -14011,46 +13111,46 @@ unsafe impl ::windows_core::Interface for _IFaxServerNotify2 {
 #[repr(C)]
 #[doc(hidden)]
 pub struct _IFaxServerNotify2_Vtbl {
-    pub base__: super::super::System::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingJobAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingJobAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingJobAdded: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingJobRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingJobRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingJobRemoved: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingJobChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pjobstatus: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingJobChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pjobstatus: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingJobChanged: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingJobAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingJobAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingJobAdded: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingJobRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingJobRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingJobRemoved: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingJobChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pjobstatus: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingJobChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrjobid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pjobstatus: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingJobChanged: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingMessageAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingMessageAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingMessageAdded: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnIncomingMessageRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnIncomingMessageRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnIncomingMessageRemoved: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingMessageAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingMessageAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingMessageAdded: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnOutgoingMessageRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnOutgoingMessageRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, bstrmessageid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnOutgoingMessageRemoved: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub OnReceiptOptionsChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -14100,9 +13200,9 @@ pub struct _IFaxServerNotify2_Vtbl {
     pub OnQueuesStatusChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, boutgoingqueueblocked: i16, boutgoingqueuepaused: i16, bincomingqueueblocked: i16) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     OnQueuesStatusChange: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub OnNewCall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, lcallid: i32, ldeviceid: i32, bstrcallerid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub OnNewCall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr, lcallid: i32, ldeviceid: i32, bstrcallerid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     OnNewCall: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub OnServerShutDown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfaxserver: ::windows_core::RawPtr) -> ::windows_core::HRESULT,

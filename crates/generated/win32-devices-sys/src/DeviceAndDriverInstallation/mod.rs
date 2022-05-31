@@ -2,9 +2,9 @@
 extern "system" {
     pub fn CMP_WaitNoPendingInstallEvents(dwtimeout: u32) -> u32;
     #[cfg(feature = "Win32_Data_HtmlHelp")]
-    pub fn CM_Add_Empty_Log_Conf(plclogconf: *mut usize, dndevinst: u32, priority: super::super::Data::HtmlHelp::PRIORITY, ulflags: u32) -> CONFIGRET;
+    pub fn CM_Add_Empty_Log_Conf(plclogconf: *mut usize, dndevinst: u32, priority: ::win32_data_sys::HtmlHelp::PRIORITY, ulflags: u32) -> CONFIGRET;
     #[cfg(feature = "Win32_Data_HtmlHelp")]
-    pub fn CM_Add_Empty_Log_Conf_Ex(plclogconf: *mut usize, dndevinst: u32, priority: super::super::Data::HtmlHelp::PRIORITY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+    pub fn CM_Add_Empty_Log_Conf_Ex(plclogconf: *mut usize, dndevinst: u32, priority: ::win32_data_sys::HtmlHelp::PRIORITY, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Add_IDA(dndevinst: u32, pszid: ::windows_core_sys::PCSTR, ulflags: u32) -> CONFIGRET;
     pub fn CM_Add_IDW(dndevinst: u32, pszid: ::windows_core_sys::PCWSTR, ulflags: u32) -> CONFIGRET;
     pub fn CM_Add_ID_ExA(dndevinst: u32, pszid: ::windows_core_sys::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
@@ -28,10 +28,8 @@ extern "system" {
     pub fn CM_Delete_Device_Interface_Key_ExA(pszdeviceinterface: ::windows_core_sys::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Delete_Device_Interface_Key_ExW(pszdeviceinterface: ::windows_core_sys::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Delete_Range(ullstartvalue: u64, ullendvalue: u64, rlh: usize, ulflags: u32) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CM_Detect_Resource_Conflict(dndevinst: u32, resourceid: u32, resourcedata: *const ::core::ffi::c_void, resourcelen: u32, pbconflictdetected: *mut super::super::Foundation::BOOL, ulflags: u32) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CM_Detect_Resource_Conflict_Ex(dndevinst: u32, resourceid: u32, resourcedata: *const ::core::ffi::c_void, resourcelen: u32, pbconflictdetected: *mut super::super::Foundation::BOOL, ulflags: u32, hmachine: isize) -> CONFIGRET;
+    pub fn CM_Detect_Resource_Conflict(dndevinst: u32, resourceid: u32, resourcedata: *const ::core::ffi::c_void, resourcelen: u32, pbconflictdetected: *mut ::win32_foundation_sys::BOOL, ulflags: u32) -> CONFIGRET;
+    pub fn CM_Detect_Resource_Conflict_Ex(dndevinst: u32, resourceid: u32, resourcedata: *const ::core::ffi::c_void, resourcelen: u32, pbconflictdetected: *mut ::win32_foundation_sys::BOOL, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Disable_DevNode(dndevinst: u32, ulflags: u32) -> CONFIGRET;
     pub fn CM_Disable_DevNode_Ex(dndevinst: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Disconnect_Machine(hmachine: isize) -> CONFIGRET;
@@ -136,10 +134,8 @@ extern "system" {
     pub fn CM_Get_HW_Prof_FlagsW(pdeviceid: *const u16, ulhardwareprofile: u32, pulvalue: *mut u32, ulflags: u32) -> CONFIGRET;
     pub fn CM_Get_HW_Prof_Flags_ExA(pdeviceid: *const i8, ulhardwareprofile: u32, pulvalue: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Get_HW_Prof_Flags_ExW(pdeviceid: *const u16, ulhardwareprofile: u32, pulvalue: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn CM_Get_Hardware_Profile_InfoA(ulindex: u32, phwprofileinfo: *mut HWProfileInfo_sA, ulflags: u32) -> CONFIGRET;
     pub fn CM_Get_Hardware_Profile_InfoW(ulindex: u32, phwprofileinfo: *mut HWProfileInfo_sW, ulflags: u32) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn CM_Get_Hardware_Profile_Info_ExA(ulindex: u32, phwprofileinfo: *mut HWProfileInfo_sA, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Get_Hardware_Profile_Info_ExW(ulindex: u32, phwprofileinfo: *mut HWProfileInfo_sW, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Get_Log_Conf_Priority(lclogconf: usize, ppriority: *mut u32, ulflags: u32) -> CONFIGRET;
@@ -155,7 +151,6 @@ extern "system" {
     pub fn CM_Get_Res_Des_Data_Size(pulsize: *mut u32, rdresdes: usize, ulflags: u32) -> CONFIGRET;
     pub fn CM_Get_Res_Des_Data_Size_Ex(pulsize: *mut u32, rdresdes: usize, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Get_Resource_Conflict_Count(clconflictlist: usize, pulcount: *mut u32) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn CM_Get_Resource_Conflict_DetailsA(clconflictlist: usize, ulindex: u32, pconflictdetails: *mut CONFLICT_DETAILS_A) -> CONFIGRET;
     pub fn CM_Get_Resource_Conflict_DetailsW(clconflictlist: usize, ulindex: u32, pconflictdetails: *mut CONFLICT_DETAILS_W) -> CONFIGRET;
     pub fn CM_Get_Sibling(pdndevinst: *mut u32, dndevinst: u32, ulflags: u32) -> CONFIGRET;
@@ -164,14 +159,10 @@ extern "system" {
     pub fn CM_Get_Version_Ex(hmachine: isize) -> u16;
     pub fn CM_Intersect_Range_List(rlhold1: usize, rlhold2: usize, rlhnew: usize, ulflags: u32) -> CONFIGRET;
     pub fn CM_Invert_Range_List(rlhold: usize, rlhnew: usize, ullmaxvalue: u64, ulflags: u32) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CM_Is_Dock_Station_Present(pbpresent: *mut super::super::Foundation::BOOL) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CM_Is_Dock_Station_Present_Ex(pbpresent: *mut super::super::Foundation::BOOL, hmachine: isize) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CM_Is_Version_Available(wversion: u16) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CM_Is_Version_Available_Ex(wversion: u16, hmachine: isize) -> super::super::Foundation::BOOL;
+    pub fn CM_Is_Dock_Station_Present(pbpresent: *mut ::win32_foundation_sys::BOOL) -> CONFIGRET;
+    pub fn CM_Is_Dock_Station_Present_Ex(pbpresent: *mut ::win32_foundation_sys::BOOL, hmachine: isize) -> CONFIGRET;
+    pub fn CM_Is_Version_Available(wversion: u16) -> ::win32_foundation_sys::BOOL;
+    pub fn CM_Is_Version_Available_Ex(wversion: u16, hmachine: isize) -> ::win32_foundation_sys::BOOL;
     pub fn CM_Locate_DevNodeA(pdndevinst: *mut u32, pdeviceid: *const i8, ulflags: u32) -> CONFIGRET;
     pub fn CM_Locate_DevNodeW(pdndevinst: *mut u32, pdeviceid: *const u16, ulflags: u32) -> CONFIGRET;
     pub fn CM_Locate_DevNode_ExA(pdndevinst: *mut u32, pdeviceid: *const i8, ulflags: u32, hmachine: isize) -> CONFIGRET;
@@ -184,25 +175,25 @@ extern "system" {
     pub fn CM_Move_DevNode_Ex(dnfromdevinst: u32, dntodevinst: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Next_Range(preelement: *mut usize, pullstart: *mut u64, pullend: *mut u64, ulflags: u32) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_Class_KeyA(classguid: *const ::windows_core_sys::GUID, pszclassname: ::windows_core_sys::PCSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
+    pub fn CM_Open_Class_KeyA(classguid: *const ::windows_core_sys::GUID, pszclassname: ::windows_core_sys::PCSTR, samdesired: u32, disposition: u32, phkclass: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_Class_KeyW(classguid: *const ::windows_core_sys::GUID, pszclassname: ::windows_core_sys::PCWSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
+    pub fn CM_Open_Class_KeyW(classguid: *const ::windows_core_sys::GUID, pszclassname: ::windows_core_sys::PCWSTR, samdesired: u32, disposition: u32, phkclass: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_Class_Key_ExA(classguid: *const ::windows_core_sys::GUID, pszclassname: ::windows_core_sys::PCSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+    pub fn CM_Open_Class_Key_ExA(classguid: *const ::windows_core_sys::GUID, pszclassname: ::windows_core_sys::PCSTR, samdesired: u32, disposition: u32, phkclass: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_Class_Key_ExW(classguid: *const ::windows_core_sys::GUID, pszclassname: ::windows_core_sys::PCWSTR, samdesired: u32, disposition: u32, phkclass: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+    pub fn CM_Open_Class_Key_ExW(classguid: *const ::windows_core_sys::GUID, pszclassname: ::windows_core_sys::PCWSTR, samdesired: u32, disposition: u32, phkclass: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_DevNode_Key(dndevnode: u32, samdesired: u32, ulhardwareprofile: u32, disposition: u32, phkdevice: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
+    pub fn CM_Open_DevNode_Key(dndevnode: u32, samdesired: u32, ulhardwareprofile: u32, disposition: u32, phkdevice: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_DevNode_Key_Ex(dndevnode: u32, samdesired: u32, ulhardwareprofile: u32, disposition: u32, phkdevice: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+    pub fn CM_Open_DevNode_Key_Ex(dndevnode: u32, samdesired: u32, ulhardwareprofile: u32, disposition: u32, phkdevice: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_Device_Interface_KeyA(pszdeviceinterface: ::windows_core_sys::PCSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
+    pub fn CM_Open_Device_Interface_KeyA(pszdeviceinterface: ::windows_core_sys::PCSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_Device_Interface_KeyW(pszdeviceinterface: ::windows_core_sys::PCWSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32) -> CONFIGRET;
+    pub fn CM_Open_Device_Interface_KeyW(pszdeviceinterface: ::windows_core_sys::PCWSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_Device_Interface_Key_ExA(pszdeviceinterface: ::windows_core_sys::PCSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+    pub fn CM_Open_Device_Interface_Key_ExA(pszdeviceinterface: ::windows_core_sys::PCSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn CM_Open_Device_Interface_Key_ExW(pszdeviceinterface: ::windows_core_sys::PCWSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut super::super::System::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
+    pub fn CM_Open_Device_Interface_Key_ExW(pszdeviceinterface: ::windows_core_sys::PCWSTR, samdesired: u32, disposition: u32, phkdeviceinterface: *mut ::win32_system_sys::Registry::HKEY, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Query_And_Remove_SubTreeA(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core_sys::PSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
     pub fn CM_Query_And_Remove_SubTreeW(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core_sys::PWSTR, ulnamelength: u32, ulflags: u32) -> CONFIGRET;
     pub fn CM_Query_And_Remove_SubTree_ExA(dnancestor: u32, pvetotype: *mut PNP_VETO_TYPE, pszvetoname: ::windows_core_sys::PSTR, ulnamelength: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
@@ -222,7 +213,6 @@ extern "system" {
     pub fn CM_Register_Device_InterfaceW(dndevinst: u32, interfaceclassguid: *const ::windows_core_sys::GUID, pszreference: ::windows_core_sys::PCWSTR, pszdeviceinterface: ::windows_core_sys::PWSTR, pullength: *mut u32, ulflags: u32) -> CONFIGRET;
     pub fn CM_Register_Device_Interface_ExA(dndevinst: u32, interfaceclassguid: *const ::windows_core_sys::GUID, pszreference: ::windows_core_sys::PCSTR, pszdeviceinterface: ::windows_core_sys::PSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Register_Device_Interface_ExW(dndevinst: u32, interfaceclassguid: *const ::windows_core_sys::GUID, pszreference: ::windows_core_sys::PCWSTR, pszdeviceinterface: ::windows_core_sys::PWSTR, pullength: *mut u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn CM_Register_Notification(pfilter: *const CM_NOTIFY_FILTER, pcontext: *const ::core::ffi::c_void, pcallback: PCM_NOTIFY_CALLBACK, pnotifycontext: *mut isize) -> CONFIGRET;
     pub fn CM_Remove_SubTree(dnancestor: u32, ulflags: u32) -> CONFIGRET;
     pub fn CM_Remove_SubTree_Ex(dnancestor: u32, ulflags: u32, hmachine: isize) -> CONFIGRET;
@@ -270,669 +260,397 @@ extern "system" {
     pub fn CM_Unregister_Device_Interface_ExA(pszdeviceinterface: ::windows_core_sys::PCSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Unregister_Device_Interface_ExW(pszdeviceinterface: ::windows_core_sys::PCWSTR, ulflags: u32, hmachine: isize) -> CONFIGRET;
     pub fn CM_Unregister_Notification(notifycontext: HCMNOTIFICATION) -> CONFIGRET;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DiInstallDevice(hwndparent: super::super::Foundation::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DiInstallDriverA(hwndparent: super::super::Foundation::HWND, infpath: ::windows_core_sys::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DiInstallDriverW(hwndparent: super::super::Foundation::HWND, infpath: ::windows_core_sys::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DiRollbackDriver(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, hwndparent: super::super::Foundation::HWND, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DiShowUpdateDevice(hwndparent: super::super::Foundation::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DiShowUpdateDriver(hwndparent: super::super::Foundation::HWND, filepath: ::windows_core_sys::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DiUninstallDevice(hwndparent: super::super::Foundation::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DiUninstallDriverA(hwndparent: super::super::Foundation::HWND, infpath: ::windows_core_sys::PCSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DiUninstallDriverW(hwndparent: super::super::Foundation::HWND, infpath: ::windows_core_sys::PCWSTR, flags: u32, needreboot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn InstallHinfSectionA(window: super::super::Foundation::HWND, modulehandle: super::super::Foundation::HINSTANCE, commandline: ::windows_core_sys::PCSTR, showcommand: i32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn InstallHinfSectionW(window: super::super::Foundation::HWND, modulehandle: super::super::Foundation::HINSTANCE, commandline: ::windows_core_sys::PCWSTR, showcommand: i32);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAddInstallSectionToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAddInstallSectionToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAddSectionToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAddSectionToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAddToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core_sys::PCSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAddToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core_sys::PCWSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAddToSourceListA(flags: u32, source: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAddToSourceListW(flags: u32, source: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAdjustDiskSpaceListA(diskspace: *const ::core::ffi::c_void, driveroot: ::windows_core_sys::PCSTR, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupAdjustDiskSpaceListW(diskspace: *const ::core::ffi::c_void, driveroot: ::windows_core_sys::PCWSTR, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupBackupErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCSTR, sourcefile: ::windows_core_sys::PCSTR, targetfile: ::windows_core_sys::PCSTR, win32errorcode: u32, style: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupBackupErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCWSTR, sourcefile: ::windows_core_sys::PCWSTR, targetfile: ::windows_core_sys::PCWSTR, win32errorcode: u32, style: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupCancelTemporarySourceList() -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupCloseFileQueue(queuehandle: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn DiInstallDevice(hwndparent: ::win32_foundation_sys::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, flags: u32, needreboot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn DiInstallDriverA(hwndparent: ::win32_foundation_sys::HWND, infpath: ::windows_core_sys::PCSTR, flags: u32, needreboot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn DiInstallDriverW(hwndparent: ::win32_foundation_sys::HWND, infpath: ::windows_core_sys::PCWSTR, flags: u32, needreboot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn DiRollbackDriver(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, hwndparent: ::win32_foundation_sys::HWND, flags: u32, needreboot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn DiShowUpdateDevice(hwndparent: ::win32_foundation_sys::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn DiShowUpdateDriver(hwndparent: ::win32_foundation_sys::HWND, filepath: ::windows_core_sys::PCWSTR, flags: u32, needreboot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn DiUninstallDevice(hwndparent: ::win32_foundation_sys::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, flags: u32, needreboot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn DiUninstallDriverA(hwndparent: ::win32_foundation_sys::HWND, infpath: ::windows_core_sys::PCSTR, flags: u32, needreboot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn DiUninstallDriverW(hwndparent: ::win32_foundation_sys::HWND, infpath: ::windows_core_sys::PCWSTR, flags: u32, needreboot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn InstallHinfSectionA(window: ::win32_foundation_sys::HWND, modulehandle: ::win32_foundation_sys::HINSTANCE, commandline: ::windows_core_sys::PCSTR, showcommand: i32);
+    pub fn InstallHinfSectionW(window: ::win32_foundation_sys::HWND, modulehandle: ::win32_foundation_sys::HINSTANCE, commandline: ::windows_core_sys::PCWSTR, showcommand: i32);
+    pub fn SetupAddInstallSectionToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupAddInstallSectionToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupAddSectionToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupAddSectionToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupAddToDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core_sys::PCSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupAddToDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core_sys::PCWSTR, filesize: i64, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupAddToSourceListA(flags: u32, source: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupAddToSourceListW(flags: u32, source: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupAdjustDiskSpaceListA(diskspace: *const ::core::ffi::c_void, driveroot: ::windows_core_sys::PCSTR, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupAdjustDiskSpaceListW(diskspace: *const ::core::ffi::c_void, driveroot: ::windows_core_sys::PCWSTR, amount: i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupBackupErrorA(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCSTR, sourcefile: ::windows_core_sys::PCSTR, targetfile: ::windows_core_sys::PCSTR, win32errorcode: u32, style: u32) -> u32;
+    pub fn SetupBackupErrorW(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCWSTR, sourcefile: ::windows_core_sys::PCWSTR, targetfile: ::windows_core_sys::PCWSTR, win32errorcode: u32, style: u32) -> u32;
+    pub fn SetupCancelTemporarySourceList() -> ::win32_foundation_sys::BOOL;
+    pub fn SetupCloseFileQueue(queuehandle: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn SetupCloseInfFile(infhandle: *const ::core::ffi::c_void);
     pub fn SetupCloseLog();
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupCommitFileQueueA(owner: super::super::Foundation::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupCommitFileQueueW(owner: super::super::Foundation::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupConfigureWmiFromInfSectionA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupConfigureWmiFromInfSectionW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupCopyErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCSTR, diskname: ::windows_core_sys::PCSTR, pathtosource: ::windows_core_sys::PCSTR, sourcefile: ::windows_core_sys::PCSTR, targetpathfile: ::windows_core_sys::PCSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows_core_sys::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupCopyErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCWSTR, diskname: ::windows_core_sys::PCWSTR, pathtosource: ::windows_core_sys::PCWSTR, sourcefile: ::windows_core_sys::PCWSTR, targetpathfile: ::windows_core_sys::PCWSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows_core_sys::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupCopyOEMInfA(sourceinffilename: ::windows_core_sys::PCSTR, oemsourcemedialocation: ::windows_core_sys::PCSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows_core_sys::PSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupCopyOEMInfW(sourceinffilename: ::windows_core_sys::PCWSTR, oemsourcemedialocation: ::windows_core_sys::PCWSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows_core_sys::PWSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
+    pub fn SetupCommitFileQueueA(owner: ::win32_foundation_sys::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupCommitFileQueueW(owner: ::win32_foundation_sys::HWND, queuehandle: *const ::core::ffi::c_void, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupConfigureWmiFromInfSectionA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupConfigureWmiFromInfSectionW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupCopyErrorA(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCSTR, diskname: ::windows_core_sys::PCSTR, pathtosource: ::windows_core_sys::PCSTR, sourcefile: ::windows_core_sys::PCSTR, targetpathfile: ::windows_core_sys::PCSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows_core_sys::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
+    pub fn SetupCopyErrorW(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCWSTR, diskname: ::windows_core_sys::PCWSTR, pathtosource: ::windows_core_sys::PCWSTR, sourcefile: ::windows_core_sys::PCWSTR, targetpathfile: ::windows_core_sys::PCWSTR, win32errorcode: u32, style: u32, pathbuffer: ::windows_core_sys::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
+    pub fn SetupCopyOEMInfA(sourceinffilename: ::windows_core_sys::PCSTR, oemsourcemedialocation: ::windows_core_sys::PCSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows_core_sys::PSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupCopyOEMInfW(sourceinffilename: ::windows_core_sys::PCWSTR, oemsourcemedialocation: ::windows_core_sys::PCWSTR, oemsourcemediatype: OEM_SOURCE_MEDIA_TYPE, copystyle: u32, destinationinffilename: ::windows_core_sys::PWSTR, destinationinffilenamesize: u32, requiredsize: *mut u32, destinationinffilenamecomponent: *mut ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn SetupCreateDiskSpaceListA(reserved1: *mut ::core::ffi::c_void, reserved2: u32, flags: u32) -> *mut ::core::ffi::c_void;
     pub fn SetupCreateDiskSpaceListW(reserved1: *mut ::core::ffi::c_void, reserved2: u32, flags: u32) -> *mut ::core::ffi::c_void;
     pub fn SetupDecompressOrCopyFileA(sourcefilename: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR, compressiontype: *const u32) -> u32;
     pub fn SetupDecompressOrCopyFileW(sourcefilename: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR, compressiontype: *const u32) -> u32;
     pub fn SetupDefaultQueueCallbackA(context: *const ::core::ffi::c_void, notification: u32, param1: usize, param2: usize) -> u32;
     pub fn SetupDefaultQueueCallbackW(context: *const ::core::ffi::c_void, notification: u32, param1: usize, param2: usize) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDeleteErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, win32errorcode: u32, style: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDeleteErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, win32errorcode: u32, style: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDestroyDiskSpaceList(diskspace: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiAskForOEMDisk(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiBuildClassInfoList(flags: u32, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiBuildClassInfoListExA(flags: u32, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiBuildClassInfoListExW(flags: u32, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiBuildDriverInfoList(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, drivertype: SETUP_DI_BUILD_DRIVER_DRIVER_TYPE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiCallClassInstaller(installfunction: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiCancelDriverInfoSearch(deviceinfoset: HDEVINFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiChangeState(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiClassGuidsFromNameA(classname: ::windows_core_sys::PCSTR, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiClassGuidsFromNameExA(classname: ::windows_core_sys::PCSTR, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiClassGuidsFromNameExW(classname: ::windows_core_sys::PCWSTR, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiClassGuidsFromNameW(classname: ::windows_core_sys::PCWSTR, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiClassNameFromGuidA(classguid: *const ::windows_core_sys::GUID, classname: ::windows_core_sys::PSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiClassNameFromGuidExA(classguid: *const ::windows_core_sys::GUID, classname: ::windows_core_sys::PSTR, classnamesize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiClassNameFromGuidExW(classguid: *const ::windows_core_sys::GUID, classname: ::windows_core_sys::PWSTR, classnamesize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiClassNameFromGuidW(classguid: *const ::windows_core_sys::GUID, classname: ::windows_core_sys::PWSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn SetupDeleteErrorA(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCSTR, file: ::windows_core_sys::PCSTR, win32errorcode: u32, style: u32) -> u32;
+    pub fn SetupDeleteErrorW(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCWSTR, file: ::windows_core_sys::PCWSTR, win32errorcode: u32, style: u32) -> u32;
+    pub fn SetupDestroyDiskSpaceList(diskspace: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiAskForOEMDisk(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiBuildClassInfoList(flags: u32, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiBuildClassInfoListExA(flags: u32, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiBuildClassInfoListExW(flags: u32, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiBuildDriverInfoList(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, drivertype: SETUP_DI_BUILD_DRIVER_DRIVER_TYPE) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiCallClassInstaller(installfunction: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiCancelDriverInfoSearch(deviceinfoset: HDEVINFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiChangeState(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiClassGuidsFromNameA(classname: ::windows_core_sys::PCSTR, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiClassGuidsFromNameExA(classname: ::windows_core_sys::PCSTR, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiClassGuidsFromNameExW(classname: ::windows_core_sys::PCWSTR, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiClassGuidsFromNameW(classname: ::windows_core_sys::PCWSTR, classguidlist: *mut ::windows_core_sys::GUID, classguidlistsize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiClassNameFromGuidA(classguid: *const ::windows_core_sys::GUID, classname: ::windows_core_sys::PSTR, classnamesize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiClassNameFromGuidExA(classguid: *const ::windows_core_sys::GUID, classname: ::windows_core_sys::PSTR, classnamesize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiClassNameFromGuidExW(classguid: *const ::windows_core_sys::GUID, classname: ::windows_core_sys::PWSTR, classnamesize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiClassNameFromGuidW(classguid: *const ::windows_core_sys::GUID, classname: ::windows_core_sys::PWSTR, classnamesize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SetupDiCreateDevRegKeyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCSTR) -> super::super::System::Registry::HKEY;
+    pub fn SetupDiCreateDevRegKeyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCSTR) -> ::win32_system_sys::Registry::HKEY;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SetupDiCreateDevRegKeyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCWSTR) -> super::super::System::Registry::HKEY;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiCreateDeviceInfoA(deviceinfoset: HDEVINFO, devicename: ::windows_core_sys::PCSTR, classguid: *const ::windows_core_sys::GUID, devicedescription: ::windows_core_sys::PCSTR, hwndparent: super::super::Foundation::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiCreateDeviceInfoList(classguid: *const ::windows_core_sys::GUID, hwndparent: super::super::Foundation::HWND) -> HDEVINFO;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiCreateDeviceInfoListExA(classguid: *const ::windows_core_sys::GUID, hwndparent: super::super::Foundation::HWND, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiCreateDeviceInfoListExW(classguid: *const ::windows_core_sys::GUID, hwndparent: super::super::Foundation::HWND, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiCreateDeviceInfoW(deviceinfoset: HDEVINFO, devicename: ::windows_core_sys::PCWSTR, classguid: *const ::windows_core_sys::GUID, devicedescription: ::windows_core_sys::PCWSTR, hwndparent: super::super::Foundation::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiCreateDeviceInterfaceA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core_sys::GUID, referencestring: ::windows_core_sys::PCSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
+    pub fn SetupDiCreateDevRegKeyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCWSTR) -> ::win32_system_sys::Registry::HKEY;
+    pub fn SetupDiCreateDeviceInfoA(deviceinfoset: HDEVINFO, devicename: ::windows_core_sys::PCSTR, classguid: *const ::windows_core_sys::GUID, devicedescription: ::windows_core_sys::PCSTR, hwndparent: ::win32_foundation_sys::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiCreateDeviceInfoList(classguid: *const ::windows_core_sys::GUID, hwndparent: ::win32_foundation_sys::HWND) -> HDEVINFO;
+    pub fn SetupDiCreateDeviceInfoListExA(classguid: *const ::windows_core_sys::GUID, hwndparent: ::win32_foundation_sys::HWND, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
+    pub fn SetupDiCreateDeviceInfoListExW(classguid: *const ::windows_core_sys::GUID, hwndparent: ::win32_foundation_sys::HWND, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
+    pub fn SetupDiCreateDeviceInfoW(deviceinfoset: HDEVINFO, devicename: ::windows_core_sys::PCWSTR, classguid: *const ::windows_core_sys::GUID, devicedescription: ::windows_core_sys::PCWSTR, hwndparent: ::win32_foundation_sys::HWND, creationflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiCreateDeviceInterfaceA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core_sys::GUID, referencestring: ::windows_core_sys::PCSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SetupDiCreateDeviceInterfaceRegKeyA(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCSTR) -> super::super::System::Registry::HKEY;
+    pub fn SetupDiCreateDeviceInterfaceRegKeyA(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCSTR) -> ::win32_system_sys::Registry::HKEY;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SetupDiCreateDeviceInterfaceRegKeyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCWSTR) -> super::super::System::Registry::HKEY;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiCreateDeviceInterfaceW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core_sys::GUID, referencestring: ::windows_core_sys::PCWSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiDeleteDevRegKey(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiDeleteDeviceInfo(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiDeleteDeviceInterfaceData(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiDeleteDeviceInterfaceRegKey(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn SetupDiDestroyClassImageList(classimagelistdata: *const SP_CLASSIMAGELIST_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiDestroyDeviceInfoList(deviceinfoset: HDEVINFO) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiDestroyDriverInfoList(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn SetupDiDrawMiniIcon(hdc: super::super::Graphics::Gdi::HDC, rc: super::super::Foundation::RECT, miniiconindex: i32, flags: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiEnumDeviceInfo(deviceinfoset: HDEVINFO, memberindex: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiEnumDeviceInterfaces(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core_sys::GUID, memberindex: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiEnumDriverInfoA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiEnumDriverInfoW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupDiGetActualModelsSectionA(context: *const INFCONTEXT, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core_sys::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupDiGetActualModelsSectionW(context: *const INFCONTEXT, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core_sys::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetActualSectionToInstallA(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCSTR, infsectionwithext: ::windows_core_sys::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupDiGetActualSectionToInstallExA(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core_sys::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core_sys::PSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupDiGetActualSectionToInstallExW(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCWSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core_sys::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core_sys::PWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetActualSectionToInstallW(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCWSTR, infsectionwithext: ::windows_core_sys::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassBitmapIndex(classguid: *const ::windows_core_sys::GUID, miniiconindex: *mut i32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassDescriptionA(classguid: *const ::windows_core_sys::GUID, classdescription: ::windows_core_sys::PSTR, classdescriptionsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassDescriptionExA(classguid: *const ::windows_core_sys::GUID, classdescription: ::windows_core_sys::PSTR, classdescriptionsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassDescriptionExW(classguid: *const ::windows_core_sys::GUID, classdescription: ::windows_core_sys::PWSTR, classdescriptionsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassDescriptionW(classguid: *const ::windows_core_sys::GUID, classdescription: ::windows_core_sys::PWSTR, classdescriptionsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn SetupDiGetClassDevPropertySheetsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERA_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn SetupDiGetClassDevPropertySheetsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const super::super::UI::Controls::PROPSHEETHEADERW_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassDevsA(classguid: *const ::windows_core_sys::GUID, enumerator: ::windows_core_sys::PCSTR, hwndparent: super::super::Foundation::HWND, flags: u32) -> HDEVINFO;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassDevsExA(classguid: *const ::windows_core_sys::GUID, enumerator: ::windows_core_sys::PCSTR, hwndparent: super::super::Foundation::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassDevsExW(classguid: *const ::windows_core_sys::GUID, enumerator: ::windows_core_sys::PCWSTR, hwndparent: super::super::Foundation::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassDevsW(classguid: *const ::windows_core_sys::GUID, enumerator: ::windows_core_sys::PCWSTR, hwndparent: super::super::Foundation::HWND, flags: u32) -> HDEVINFO;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn SetupDiGetClassImageIndex(classimagelistdata: *const SP_CLASSIMAGELIST_DATA, classguid: *const ::windows_core_sys::GUID, imageindex: *mut i32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn SetupDiGetClassImageList(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn SetupDiGetClassImageListExA(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn SetupDiGetClassImageListExW(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiGetClassPropertyExW(classguid: *const ::windows_core_sys::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiGetClassPropertyKeys(classguid: *const ::windows_core_sys::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiGetClassPropertyKeysExW(classguid: *const ::windows_core_sys::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiGetClassPropertyW(classguid: *const ::windows_core_sys::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassRegistryPropertyA(classguid: *const ::windows_core_sys::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetClassRegistryPropertyW(classguid: *const ::windows_core_sys::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetCustomDevicePropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows_core_sys::PCSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetCustomDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows_core_sys::PCWSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInfoListClass(deviceinfoset: HDEVINFO, classguid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInfoListDetailA(deviceinfoset: HDEVINFO, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_A) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInfoListDetailW(deviceinfoset: HDEVINFO, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_W) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInstanceIdA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows_core_sys::PSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInstanceIdW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows_core_sys::PWSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInterfaceAlias(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, aliasinterfaceclassguid: *const ::windows_core_sys::GUID, aliasdeviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInterfaceDetailA(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_A, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceInterfaceDetailW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_W, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiGetDeviceInterfacePropertyKeys(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiGetDeviceInterfacePropertyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiGetDevicePropertyKeys(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiGetDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceRegistryPropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDeviceRegistryPropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDriverInfoDetailA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_A, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDriverInfoDetailW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_W, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDriverInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetDriverInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetHwProfileFriendlyNameA(hwprofile: u32, friendlyname: ::windows_core_sys::PSTR, friendlynamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetHwProfileFriendlyNameExA(hwprofile: u32, friendlyname: ::windows_core_sys::PSTR, friendlynamesize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetHwProfileFriendlyNameExW(hwprofile: u32, friendlyname: ::windows_core_sys::PWSTR, friendlynamesize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetHwProfileFriendlyNameW(hwprofile: u32, friendlyname: ::windows_core_sys::PWSTR, friendlynamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetHwProfileList(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetHwProfileListExA(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetHwProfileListExW(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetINFClassA(infname: ::windows_core_sys::PCSTR, classguid: *mut ::windows_core_sys::GUID, classname: ::windows_core_sys::PSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetINFClassW(infname: ::windows_core_sys::PCWSTR, classguid: *mut ::windows_core_sys::GUID, classname: ::windows_core_sys::PWSTR, classnamesize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetSelectedDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetSelectedDriverA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiGetSelectedDriverW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
-    pub fn SetupDiGetWizardPage(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, installwizarddata: *const SP_INSTALLWIZARD_DATA, pagetype: u32, flags: u32) -> super::super::UI::Controls::HPROPSHEETPAGE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiInstallClassA(hwndparent: super::super::Foundation::HWND, inffilename: ::windows_core_sys::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiInstallClassExA(hwndparent: super::super::Foundation::HWND, inffilename: ::windows_core_sys::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows_core_sys::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiInstallClassExW(hwndparent: super::super::Foundation::HWND, inffilename: ::windows_core_sys::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows_core_sys::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiInstallClassW(hwndparent: super::super::Foundation::HWND, inffilename: ::windows_core_sys::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiInstallDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiInstallDeviceInterfaces(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiInstallDriverFiles(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn SetupDiLoadClassIcon(classguid: *const ::windows_core_sys::GUID, largeicon: *mut super::super::UI::WindowsAndMessaging::HICON, miniiconindex: *mut i32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn SetupDiLoadDeviceIcon(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, cxicon: u32, cyicon: u32, flags: u32, hicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> super::super::Foundation::BOOL;
+    pub fn SetupDiCreateDeviceInterfaceRegKeyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32, infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCWSTR) -> ::win32_system_sys::Registry::HKEY;
+    pub fn SetupDiCreateDeviceInterfaceW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core_sys::GUID, referencestring: ::windows_core_sys::PCWSTR, creationflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiDeleteDevRegKey(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiDeleteDeviceInfo(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiDeleteDeviceInterfaceData(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiDeleteDeviceInterfaceRegKey(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn SetupDiDestroyClassImageList(classimagelistdata: *const SP_CLASSIMAGELIST_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiDestroyDeviceInfoList(deviceinfoset: HDEVINFO) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiDestroyDriverInfoList(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn SetupDiDrawMiniIcon(hdc: ::win32_graphics_sys::Gdi::HDC, rc: ::win32_foundation_sys::RECT, miniiconindex: i32, flags: u32) -> i32;
+    pub fn SetupDiEnumDeviceInfo(deviceinfoset: HDEVINFO, memberindex: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiEnumDeviceInterfaces(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, interfaceclassguid: *const ::windows_core_sys::GUID, memberindex: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiEnumDriverInfoA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiEnumDriverInfoW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, drivertype: u32, memberindex: u32, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupDiGetActualModelsSectionA(context: *const INFCONTEXT, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core_sys::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupDiGetActualModelsSectionW(context: *const INFCONTEXT, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core_sys::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetActualSectionToInstallA(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCSTR, infsectionwithext: ::windows_core_sys::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core_sys::PSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupDiGetActualSectionToInstallExA(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core_sys::PSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core_sys::PSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupDiGetActualSectionToInstallExW(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCWSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsectionwithext: ::windows_core_sys::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core_sys::PWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetActualSectionToInstallW(infhandle: *const ::core::ffi::c_void, infsectionname: ::windows_core_sys::PCWSTR, infsectionwithext: ::windows_core_sys::PWSTR, infsectionwithextsize: u32, requiredsize: *mut u32, extension: *mut ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassBitmapIndex(classguid: *const ::windows_core_sys::GUID, miniiconindex: *mut i32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassDescriptionA(classguid: *const ::windows_core_sys::GUID, classdescription: ::windows_core_sys::PSTR, classdescriptionsize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassDescriptionExA(classguid: *const ::windows_core_sys::GUID, classdescription: ::windows_core_sys::PSTR, classdescriptionsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassDescriptionExW(classguid: *const ::windows_core_sys::GUID, classdescription: ::windows_core_sys::PWSTR, classdescriptionsize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassDescriptionW(classguid: *const ::windows_core_sys::GUID, classdescription: ::windows_core_sys::PWSTR, classdescriptionsize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub fn SetupDiGetClassDevPropertySheetsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const ::win32_ui_sys::Controls::PROPSHEETHEADERA_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub fn SetupDiGetClassDevPropertySheetsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertysheetheader: *const ::win32_ui_sys::Controls::PROPSHEETHEADERW_V2, propertysheetheaderpagelistsize: u32, requiredsize: *mut u32, propertysheettype: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassDevsA(classguid: *const ::windows_core_sys::GUID, enumerator: ::windows_core_sys::PCSTR, hwndparent: ::win32_foundation_sys::HWND, flags: u32) -> HDEVINFO;
+    pub fn SetupDiGetClassDevsExA(classguid: *const ::windows_core_sys::GUID, enumerator: ::windows_core_sys::PCSTR, hwndparent: ::win32_foundation_sys::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
+    pub fn SetupDiGetClassDevsExW(classguid: *const ::windows_core_sys::GUID, enumerator: ::windows_core_sys::PCWSTR, hwndparent: ::win32_foundation_sys::HWND, flags: u32, deviceinfoset: HDEVINFO, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> HDEVINFO;
+    pub fn SetupDiGetClassDevsW(classguid: *const ::windows_core_sys::GUID, enumerator: ::windows_core_sys::PCWSTR, hwndparent: ::win32_foundation_sys::HWND, flags: u32) -> HDEVINFO;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn SetupDiGetClassImageIndex(classimagelistdata: *const SP_CLASSIMAGELIST_DATA, classguid: *const ::windows_core_sys::GUID, imageindex: *mut i32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn SetupDiGetClassImageList(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn SetupDiGetClassImageListExA(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn SetupDiGetClassImageListExW(classimagelistdata: *mut SP_CLASSIMAGELIST_DATA, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *mut SP_CLASSINSTALL_HEADER, classinstallparamssize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiGetClassPropertyExW(classguid: *const ::windows_core_sys::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiGetClassPropertyKeys(classguid: *const ::windows_core_sys::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiGetClassPropertyKeysExW(classguid: *const ::windows_core_sys::GUID, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiGetClassPropertyW(classguid: *const ::windows_core_sys::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassRegistryPropertyA(classguid: *const ::windows_core_sys::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetClassRegistryPropertyW(classguid: *const ::windows_core_sys::GUID, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetCustomDevicePropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows_core_sys::PCSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetCustomDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, custompropertyname: ::windows_core_sys::PCWSTR, flags: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInfoListClass(deviceinfoset: HDEVINFO, classguid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInfoListDetailA(deviceinfoset: HDEVINFO, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_A) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInfoListDetailW(deviceinfoset: HDEVINFO, deviceinfosetdetaildata: *mut SP_DEVINFO_LIST_DETAIL_DATA_W) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_A) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *mut SP_DEVINSTALL_PARAMS_W) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInstanceIdA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows_core_sys::PSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInstanceIdW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstanceid: ::windows_core_sys::PWSTR, deviceinstanceidsize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInterfaceAlias(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, aliasinterfaceclassguid: *const ::windows_core_sys::GUID, aliasdeviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInterfaceDetailA(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_A, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceInterfaceDetailW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, deviceinterfacedetaildata: *mut SP_DEVICE_INTERFACE_DETAIL_DATA_W, deviceinterfacedetaildatasize: u32, requiredsize: *mut u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiGetDeviceInterfacePropertyKeys(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiGetDeviceInterfacePropertyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiGetDevicePropertyKeys(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykeyarray: *mut super::Properties::DEVPROPKEY, propertykeycount: u32, requiredpropertykeycount: *mut u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiGetDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceRegistryPropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDeviceRegistryPropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, property: u32, propertyregdatatype: *mut u32, propertybuffer: *mut u8, propertybuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDriverInfoDetailA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_A, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDriverInfoDetailW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinfodetaildata: *mut SP_DRVINFO_DETAIL_DATA_W, driverinfodetaildatasize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDriverInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetDriverInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *mut SP_DRVINSTALL_PARAMS) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetHwProfileFriendlyNameA(hwprofile: u32, friendlyname: ::windows_core_sys::PSTR, friendlynamesize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetHwProfileFriendlyNameExA(hwprofile: u32, friendlyname: ::windows_core_sys::PSTR, friendlynamesize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetHwProfileFriendlyNameExW(hwprofile: u32, friendlyname: ::windows_core_sys::PWSTR, friendlynamesize: u32, requiredsize: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetHwProfileFriendlyNameW(hwprofile: u32, friendlyname: ::windows_core_sys::PWSTR, friendlynamesize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetHwProfileList(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetHwProfileListExA(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetHwProfileListExW(hwprofilelist: *mut u32, hwprofilelistsize: u32, requiredsize: *mut u32, currentlyactiveindex: *mut u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetINFClassA(infname: ::windows_core_sys::PCSTR, classguid: *mut ::windows_core_sys::GUID, classname: ::windows_core_sys::PSTR, classnamesize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetINFClassW(infname: ::windows_core_sys::PCWSTR, classguid: *mut ::windows_core_sys::GUID, classname: ::windows_core_sys::PWSTR, classnamesize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetSelectedDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetSelectedDriverA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiGetSelectedDriverW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_Controls")]
+    pub fn SetupDiGetWizardPage(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, installwizarddata: *const SP_INSTALLWIZARD_DATA, pagetype: u32, flags: u32) -> ::win32_ui_sys::Controls::HPROPSHEETPAGE;
+    pub fn SetupDiInstallClassA(hwndparent: ::win32_foundation_sys::HWND, inffilename: ::windows_core_sys::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiInstallClassExA(hwndparent: ::win32_foundation_sys::HWND, inffilename: ::windows_core_sys::PCSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows_core_sys::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiInstallClassExW(hwndparent: ::win32_foundation_sys::HWND, inffilename: ::windows_core_sys::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void, interfaceclassguid: *const ::windows_core_sys::GUID, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiInstallClassW(hwndparent: ::win32_foundation_sys::HWND, inffilename: ::windows_core_sys::PCWSTR, flags: u32, filequeue: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiInstallDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiInstallDeviceInterfaces(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiInstallDriverFiles(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn SetupDiLoadClassIcon(classguid: *const ::windows_core_sys::GUID, largeicon: *mut ::win32_ui_sys::WindowsAndMessaging::HICON, miniiconindex: *mut i32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
+    pub fn SetupDiLoadDeviceIcon(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, cxicon: u32, cyicon: u32, flags: u32, hicon: *mut ::win32_ui_sys::WindowsAndMessaging::HICON) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SetupDiOpenClassRegKey(classguid: *const ::windows_core_sys::GUID, samdesired: u32) -> super::super::System::Registry::HKEY;
+    pub fn SetupDiOpenClassRegKey(classguid: *const ::windows_core_sys::GUID, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SetupDiOpenClassRegKeyExA(classguid: *const ::windows_core_sys::GUID, samdesired: u32, flags: u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::System::Registry::HKEY;
+    pub fn SetupDiOpenClassRegKeyExA(classguid: *const ::windows_core_sys::GUID, samdesired: u32, flags: u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_system_sys::Registry::HKEY;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SetupDiOpenClassRegKeyExW(classguid: *const ::windows_core_sys::GUID, samdesired: u32, flags: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::System::Registry::HKEY;
+    pub fn SetupDiOpenClassRegKeyExW(classguid: *const ::windows_core_sys::GUID, samdesired: u32, flags: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_system_sys::Registry::HKEY;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SetupDiOpenDevRegKey(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, samdesired: u32) -> super::super::System::Registry::HKEY;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiOpenDeviceInfoA(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows_core_sys::PCSTR, hwndparent: super::super::Foundation::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiOpenDeviceInfoW(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows_core_sys::PCWSTR, hwndparent: super::super::Foundation::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiOpenDeviceInterfaceA(deviceinfoset: HDEVINFO, devicepath: ::windows_core_sys::PCSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
+    pub fn SetupDiOpenDevRegKey(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, scope: u32, hwprofile: u32, keytype: u32, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
+    pub fn SetupDiOpenDeviceInfoA(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows_core_sys::PCSTR, hwndparent: ::win32_foundation_sys::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiOpenDeviceInfoW(deviceinfoset: HDEVINFO, deviceinstanceid: ::windows_core_sys::PCWSTR, hwndparent: ::win32_foundation_sys::HWND, openflags: u32, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiOpenDeviceInterfaceA(deviceinfoset: HDEVINFO, devicepath: ::windows_core_sys::PCSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn SetupDiOpenDeviceInterfaceRegKey(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32) -> super::super::System::Registry::HKEY;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiOpenDeviceInterfaceW(deviceinfoset: HDEVINFO, devicepath: ::windows_core_sys::PCWSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiRegisterCoDeviceInstallers(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiRegisterDeviceInfo(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, flags: u32, compareproc: PSP_DETSIG_CMPPROC, comparecontext: *const ::core::ffi::c_void, dupdeviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiRemoveDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiRemoveDeviceInterface(deviceinfoset: HDEVINFO, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiRestartDevices(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSelectBestCompatDrv(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSelectDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSelectOEMDrv(hwndparent: super::super::Foundation::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetClassInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetClassInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiSetClassPropertyExW(classguid: *const ::windows_core_sys::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiSetClassPropertyW(classguid: *const ::windows_core_sys::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetClassRegistryPropertyA(classguid: *const ::windows_core_sys::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetClassRegistryPropertyW(classguid: *const ::windows_core_sys::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetDeviceInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_A) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetDeviceInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_W) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetDeviceInterfaceDefault(deviceinfoset: HDEVINFO, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiSetDeviceInterfacePropertyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Devices_Properties", feature = "Win32_Foundation"))]
-    pub fn SetupDiSetDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetDeviceRegistryPropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetDeviceRegistryPropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetDriverInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetDriverInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetSelectedDevice(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetSelectedDriverA(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiSetSelectedDriverW(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupDiUnremoveDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
+    pub fn SetupDiOpenDeviceInterfaceRegKey(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, reserved: u32, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
+    pub fn SetupDiOpenDeviceInterfaceW(deviceinfoset: HDEVINFO, devicepath: ::windows_core_sys::PCWSTR, openflags: u32, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiRegisterCoDeviceInstallers(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiRegisterDeviceInfo(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, flags: u32, compareproc: PSP_DETSIG_CMPPROC, comparecontext: *const ::core::ffi::c_void, dupdeviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiRemoveDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiRemoveDeviceInterface(deviceinfoset: HDEVINFO, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiRestartDevices(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSelectBestCompatDrv(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSelectDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSelectOEMDrv(hwndparent: ::win32_foundation_sys::HWND, deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetClassInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetClassInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, classinstallparams: *const SP_CLASSINSTALL_HEADER, classinstallparamssize: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiSetClassPropertyExW(classguid: *const ::windows_core_sys::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiSetClassPropertyW(classguid: *const ::windows_core_sys::GUID, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetClassRegistryPropertyA(classguid: *const ::windows_core_sys::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: ::windows_core_sys::PCSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetClassRegistryPropertyW(classguid: *const ::windows_core_sys::GUID, property: u32, propertybuffer: *const u8, propertybuffersize: u32, machinename: ::windows_core_sys::PCWSTR, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetDeviceInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_A) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetDeviceInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, deviceinstallparams: *const SP_DEVINSTALL_PARAMS_W) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetDeviceInterfaceDefault(deviceinfoset: HDEVINFO, deviceinterfacedata: *mut SP_DEVICE_INTERFACE_DATA, flags: u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiSetDeviceInterfacePropertyW(deviceinfoset: HDEVINFO, deviceinterfacedata: *const SP_DEVICE_INTERFACE_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Devices_Properties")]
+    pub fn SetupDiSetDevicePropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, propertykey: *const super::Properties::DEVPROPKEY, propertytype: u32, propertybuffer: *const u8, propertybuffersize: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetDeviceRegistryPropertyA(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetDeviceRegistryPropertyW(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, property: u32, propertybuffer: *const u8, propertybuffersize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetDriverInstallParamsA(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_A, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetDriverInstallParamsW(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, driverinfodata: *const SP_DRVINFO_DATA_V2_W, driverinstallparams: *const SP_DRVINSTALL_PARAMS) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetSelectedDevice(deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetSelectedDriverA(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_A) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiSetSelectedDriverW(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA, driverinfodata: *mut SP_DRVINFO_DATA_V2_W) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupDiUnremoveDevice(deviceinfoset: HDEVINFO, deviceinfodata: *mut SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
     pub fn SetupDuplicateDiskSpaceListA(diskspace: *const ::core::ffi::c_void, reserved1: *mut ::core::ffi::c_void, reserved2: u32, flags: u32) -> *mut ::core::ffi::c_void;
     pub fn SetupDuplicateDiskSpaceListW(diskspace: *const ::core::ffi::c_void, reserved1: *mut ::core::ffi::c_void, reserved2: u32, flags: u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupEnumInfSectionsA(infhandle: *const ::core::ffi::c_void, index: u32, buffer: ::windows_core_sys::PSTR, size: u32, sizeneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupEnumInfSectionsW(infhandle: *const ::core::ffi::c_void, index: u32, buffer: ::windows_core_sys::PWSTR, size: u32, sizeneeded: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupFindFirstLineA(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR, key: ::windows_core_sys::PCSTR, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupFindFirstLineW(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR, key: ::windows_core_sys::PCWSTR, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupFindNextLine(contextin: *const INFCONTEXT, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupFindNextMatchLineA(contextin: *const INFCONTEXT, key: ::windows_core_sys::PCSTR, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupFindNextMatchLineW(contextin: *const INFCONTEXT, key: ::windows_core_sys::PCWSTR, contextout: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupFreeSourceListA(list: *mut *mut ::windows_core_sys::PSTR, count: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupFreeSourceListW(list: *mut *mut ::windows_core_sys::PWSTR, count: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetBackupInformationA(queuehandle: *const ::core::ffi::c_void, backupparams: *mut SP_BACKUP_QUEUE_PARAMS_V2_A) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetBackupInformationW(queuehandle: *const ::core::ffi::c_void, backupparams: *mut SP_BACKUP_QUEUE_PARAMS_V2_W) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetBinaryField(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: *mut u8, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn SetupEnumInfSectionsA(infhandle: *const ::core::ffi::c_void, index: u32, buffer: ::windows_core_sys::PSTR, size: u32, sizeneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupEnumInfSectionsW(infhandle: *const ::core::ffi::c_void, index: u32, buffer: ::windows_core_sys::PWSTR, size: u32, sizeneeded: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupFindFirstLineA(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR, key: ::windows_core_sys::PCSTR, context: *mut INFCONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupFindFirstLineW(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR, key: ::windows_core_sys::PCWSTR, context: *mut INFCONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupFindNextLine(contextin: *const INFCONTEXT, contextout: *mut INFCONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupFindNextMatchLineA(contextin: *const INFCONTEXT, key: ::windows_core_sys::PCSTR, contextout: *mut INFCONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupFindNextMatchLineW(contextin: *const INFCONTEXT, key: ::windows_core_sys::PCWSTR, contextout: *mut INFCONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupFreeSourceListA(list: *mut *mut ::windows_core_sys::PSTR, count: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupFreeSourceListW(list: *mut *mut ::windows_core_sys::PWSTR, count: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetBackupInformationA(queuehandle: *const ::core::ffi::c_void, backupparams: *mut SP_BACKUP_QUEUE_PARAMS_V2_A) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetBackupInformationW(queuehandle: *const ::core::ffi::c_void, backupparams: *mut SP_BACKUP_QUEUE_PARAMS_V2_W) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetBinaryField(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: *mut u8, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetupGetFieldCount(context: *const INFCONTEXT) -> u32;
     pub fn SetupGetFileCompressionInfoA(sourcefilename: ::windows_core_sys::PCSTR, actualsourcefilename: *mut ::windows_core_sys::PSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetFileCompressionInfoExA(sourcefilename: ::windows_core_sys::PCSTR, actualsourcefilenamebuffer: ::windows_core_sys::PCSTR, actualsourcefilenamebufferlen: u32, requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetFileCompressionInfoExW(sourcefilename: ::windows_core_sys::PCWSTR, actualsourcefilenamebuffer: ::windows_core_sys::PCWSTR, actualsourcefilenamebufferlen: u32, requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn SetupGetFileCompressionInfoExA(sourcefilename: ::windows_core_sys::PCSTR, actualsourcefilenamebuffer: ::windows_core_sys::PCSTR, actualsourcefilenamebufferlen: u32, requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetFileCompressionInfoExW(sourcefilename: ::windows_core_sys::PCWSTR, actualsourcefilenamebuffer: ::windows_core_sys::PCWSTR, actualsourcefilenamebufferlen: u32, requiredbufferlen: *mut u32, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetupGetFileCompressionInfoW(sourcefilename: ::windows_core_sys::PCWSTR, actualsourcefilename: *mut ::windows_core_sys::PWSTR, sourcefilesize: *mut u32, targetfilesize: *mut u32, compressiontype: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetFileQueueCount(filequeue: *const ::core::ffi::c_void, subqueuefileop: u32, numoperations: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetFileQueueFlags(filequeue: *const ::core::ffi::c_void, flags: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupGetInfDriverStoreLocationA(filename: ::windows_core_sys::PCSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupGetInfDriverStoreLocationW(filename: ::windows_core_sys::PCWSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetInfFileListA(directorypath: ::windows_core_sys::PCSTR, infstyle: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetInfFileListW(directorypath: ::windows_core_sys::PCWSTR, infstyle: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetInfInformationA(infspec: *const ::core::ffi::c_void, searchcontrol: u32, returnbuffer: *mut SP_INF_INFORMATION, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetInfInformationW(infspec: *const ::core::ffi::c_void, searchcontrol: u32, returnbuffer: *mut SP_INF_INFORMATION, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetInfPublishedNameA(driverstorelocation: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetInfPublishedNameW(driverstorelocation: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetIntField(context: *const INFCONTEXT, fieldindex: u32, integervalue: *mut i32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetLineByIndexA(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetLineByIndexW(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR, index: u32, context: *mut INFCONTEXT) -> super::super::Foundation::BOOL;
+    pub fn SetupGetFileQueueCount(filequeue: *const ::core::ffi::c_void, subqueuefileop: u32, numoperations: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetFileQueueFlags(filequeue: *const ::core::ffi::c_void, flags: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupGetInfDriverStoreLocationA(filename: ::windows_core_sys::PCSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupGetInfDriverStoreLocationW(filename: ::windows_core_sys::PCWSTR, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, localename: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetInfFileListA(directorypath: ::windows_core_sys::PCSTR, infstyle: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetInfFileListW(directorypath: ::windows_core_sys::PCWSTR, infstyle: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetInfInformationA(infspec: *const ::core::ffi::c_void, searchcontrol: u32, returnbuffer: *mut SP_INF_INFORMATION, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetInfInformationW(infspec: *const ::core::ffi::c_void, searchcontrol: u32, returnbuffer: *mut SP_INF_INFORMATION, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetInfPublishedNameA(driverstorelocation: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetInfPublishedNameW(driverstorelocation: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetIntField(context: *const INFCONTEXT, fieldindex: u32, integervalue: *mut i32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetLineByIndexA(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR, index: u32, context: *mut INFCONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetLineByIndexW(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR, index: u32, context: *mut INFCONTEXT) -> ::win32_foundation_sys::BOOL;
     pub fn SetupGetLineCountA(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR) -> i32;
     pub fn SetupGetLineCountW(infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetLineTextA(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR, key: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetLineTextW(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR, key: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetMultiSzFieldA(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetMultiSzFieldW(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetNonInteractiveMode() -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetSourceFileLocationA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core_sys::PCSTR, sourceid: *mut u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetSourceFileLocationW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core_sys::PCWSTR, sourceid: *mut u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetSourceFileSizeA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core_sys::PCSTR, section: ::windows_core_sys::PCSTR, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetSourceFileSizeW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core_sys::PCWSTR, section: ::windows_core_sys::PCWSTR, filesize: *mut u32, roundingfactor: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetSourceInfoA(infhandle: *const ::core::ffi::c_void, sourceid: u32, infodesired: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetSourceInfoW(infhandle: *const ::core::ffi::c_void, sourceid: u32, infodesired: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetStringFieldA(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetStringFieldW(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetTargetPathA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupGetTargetPathW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn SetupGetLineTextA(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR, key: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetLineTextW(context: *const INFCONTEXT, infhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR, key: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetMultiSzFieldA(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetMultiSzFieldW(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetNonInteractiveMode() -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetSourceFileLocationA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core_sys::PCSTR, sourceid: *mut u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetSourceFileLocationW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core_sys::PCWSTR, sourceid: *mut u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetSourceFileSizeA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core_sys::PCSTR, section: ::windows_core_sys::PCSTR, filesize: *mut u32, roundingfactor: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetSourceFileSizeW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, filename: ::windows_core_sys::PCWSTR, section: ::windows_core_sys::PCWSTR, filesize: *mut u32, roundingfactor: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetSourceInfoA(infhandle: *const ::core::ffi::c_void, sourceid: u32, infodesired: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetSourceInfoW(infhandle: *const ::core::ffi::c_void, sourceid: u32, infodesired: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetStringFieldA(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetStringFieldW(context: *const INFCONTEXT, fieldindex: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetTargetPathA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupGetTargetPathW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, section: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetupGetThreadLogToken() -> u64;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInitDefaultQueueCallback(ownerwindow: super::super::Foundation::HWND) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInitDefaultQueueCallbackEx(ownerwindow: super::super::Foundation::HWND, alternateprogresswindow: super::super::Foundation::HWND, progressmessage: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
+    pub fn SetupInitDefaultQueueCallback(ownerwindow: ::win32_foundation_sys::HWND) -> *mut ::core::ffi::c_void;
+    pub fn SetupInitDefaultQueueCallbackEx(ownerwindow: ::win32_foundation_sys::HWND, alternateprogresswindow: ::win32_foundation_sys::HWND, progressmessage: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
     pub fn SetupInitializeFileLogA(logfilename: ::windows_core_sys::PCSTR, flags: u32) -> *mut ::core::ffi::c_void;
     pub fn SetupInitializeFileLogW(logfilename: ::windows_core_sys::PCWSTR, flags: u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallFileA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core_sys::PCSTR, sourcepathroot: ::windows_core_sys::PCSTR, destinationname: ::windows_core_sys::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallFileExA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core_sys::PCSTR, sourcepathroot: ::windows_core_sys::PCSTR, destinationname: ::windows_core_sys::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallFileExW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core_sys::PCWSTR, sourcepathroot: ::windows_core_sys::PCWSTR, destinationname: ::windows_core_sys::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, filewasinuse: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallFileW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core_sys::PCWSTR, sourcepathroot: ::windows_core_sys::PCWSTR, destinationname: ::windows_core_sys::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallFilesFromInfSectionA(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, sourcerootpath: ::windows_core_sys::PCSTR, copyflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallFilesFromInfSectionW(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, sourcerootpath: ::windows_core_sys::PCWSTR, copyflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SetupInstallFromInfSectionA(owner: super::super::Foundation::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, flags: u32, relativekeyroot: super::super::System::Registry::HKEY, sourcerootpath: ::windows_core_sys::PCSTR, copyflags: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn SetupInstallFromInfSectionW(owner: super::super::Foundation::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, flags: u32, relativekeyroot: super::super::System::Registry::HKEY, sourcerootpath: ::windows_core_sys::PCWSTR, copyflags: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallServicesFromInfSectionA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallServicesFromInfSectionExA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallServicesFromInfSectionExW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupInstallServicesFromInfSectionW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupIterateCabinetA(cabinetfile: ::windows_core_sys::PCSTR, reserved: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupIterateCabinetW(cabinetfile: ::windows_core_sys::PCWSTR, reserved: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupLogErrorA(messagestring: ::windows_core_sys::PCSTR, severity: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupLogErrorW(messagestring: ::windows_core_sys::PCWSTR, severity: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupLogFileA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCSTR, sourcefilename: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR, checksum: u32, disktagfile: ::windows_core_sys::PCSTR, diskdescription: ::windows_core_sys::PCSTR, otherinfo: ::windows_core_sys::PCSTR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupLogFileW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCWSTR, sourcefilename: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR, checksum: u32, disktagfile: ::windows_core_sys::PCWSTR, diskdescription: ::windows_core_sys::PCWSTR, otherinfo: ::windows_core_sys::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupOpenAppendInfFileA(filename: ::windows_core_sys::PCSTR, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupOpenAppendInfFileW(filename: ::windows_core_sys::PCWSTR, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn SetupInstallFileA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core_sys::PCSTR, sourcepathroot: ::windows_core_sys::PCSTR, destinationname: ::windows_core_sys::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupInstallFileExA(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core_sys::PCSTR, sourcepathroot: ::windows_core_sys::PCSTR, destinationname: ::windows_core_sys::PCSTR, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, filewasinuse: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupInstallFileExW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core_sys::PCWSTR, sourcepathroot: ::windows_core_sys::PCWSTR, destinationname: ::windows_core_sys::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, filewasinuse: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupInstallFileW(infhandle: *const ::core::ffi::c_void, infcontext: *const INFCONTEXT, sourcefile: ::windows_core_sys::PCWSTR, sourcepathroot: ::windows_core_sys::PCWSTR, destinationname: ::windows_core_sys::PCWSTR, copystyle: SP_COPY_STYLE, copymsghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupInstallFilesFromInfSectionA(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, sourcerootpath: ::windows_core_sys::PCSTR, copyflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupInstallFilesFromInfSectionW(infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, filequeue: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, sourcerootpath: ::windows_core_sys::PCWSTR, copyflags: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SetupInstallFromInfSectionA(owner: ::win32_foundation_sys::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, flags: u32, relativekeyroot: ::win32_system_sys::Registry::HKEY, sourcerootpath: ::windows_core_sys::PCSTR, copyflags: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn SetupInstallFromInfSectionW(owner: ::win32_foundation_sys::HWND, infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, flags: u32, relativekeyroot: ::win32_system_sys::Registry::HKEY, sourcerootpath: ::windows_core_sys::PCWSTR, copyflags: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupInstallServicesFromInfSectionA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupInstallServicesFromInfSectionExA(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupInstallServicesFromInfSectionExW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, flags: u32, deviceinfoset: HDEVINFO, deviceinfodata: *const SP_DEVINFO_DATA, reserved1: *mut ::core::ffi::c_void, reserved2: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupInstallServicesFromInfSectionW(infhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupIterateCabinetA(cabinetfile: ::windows_core_sys::PCSTR, reserved: u32, msghandler: PSP_FILE_CALLBACK_A, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupIterateCabinetW(cabinetfile: ::windows_core_sys::PCWSTR, reserved: u32, msghandler: PSP_FILE_CALLBACK_W, context: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupLogErrorA(messagestring: ::windows_core_sys::PCSTR, severity: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupLogErrorW(messagestring: ::windows_core_sys::PCWSTR, severity: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupLogFileA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCSTR, sourcefilename: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR, checksum: u32, disktagfile: ::windows_core_sys::PCSTR, diskdescription: ::windows_core_sys::PCSTR, otherinfo: ::windows_core_sys::PCSTR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupLogFileW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCWSTR, sourcefilename: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR, checksum: u32, disktagfile: ::windows_core_sys::PCWSTR, diskdescription: ::windows_core_sys::PCWSTR, otherinfo: ::windows_core_sys::PCWSTR, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupOpenAppendInfFileA(filename: ::windows_core_sys::PCSTR, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupOpenAppendInfFileW(filename: ::windows_core_sys::PCWSTR, infhandle: *const ::core::ffi::c_void, errorline: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetupOpenFileQueue() -> *mut ::core::ffi::c_void;
     pub fn SetupOpenInfFileA(filename: ::windows_core_sys::PCSTR, infclass: ::windows_core_sys::PCSTR, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void;
     pub fn SetupOpenInfFileW(filename: ::windows_core_sys::PCWSTR, infclass: ::windows_core_sys::PCWSTR, infstyle: u32, errorline: *mut u32) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupOpenLog(erase: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn SetupOpenLog(erase: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn SetupOpenMasterInf() -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupPrepareQueueForRestoreA(queuehandle: *const ::core::ffi::c_void, backuppath: ::windows_core_sys::PCSTR, restoreflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupPrepareQueueForRestoreW(queuehandle: *const ::core::ffi::c_void, backuppath: ::windows_core_sys::PCWSTR, restoreflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupPromptForDiskA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCSTR, diskname: ::windows_core_sys::PCSTR, pathtosource: ::windows_core_sys::PCSTR, filesought: ::windows_core_sys::PCSTR, tagfile: ::windows_core_sys::PCSTR, diskpromptstyle: u32, pathbuffer: ::windows_core_sys::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupPromptForDiskW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCWSTR, diskname: ::windows_core_sys::PCWSTR, pathtosource: ::windows_core_sys::PCWSTR, filesought: ::windows_core_sys::PCWSTR, tagfile: ::windows_core_sys::PCWSTR, diskpromptstyle: u32, pathbuffer: ::windows_core_sys::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupPromptReboot(filequeue: *const ::core::ffi::c_void, owner: super::super::Foundation::HWND, scanonly: super::super::Foundation::BOOL) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueryDrivesInDiskSpaceListA(diskspace: *const ::core::ffi::c_void, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueryDrivesInDiskSpaceListW(diskspace: *const ::core::ffi::c_void, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueryFileLogA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueryFileLogW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueryInfFileInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueryInfFileInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupQueryInfOriginalFileInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, originalfileinfo: *mut SP_ORIGINAL_FILE_INFO_A) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupQueryInfOriginalFileInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, originalfileinfo: *mut SP_ORIGINAL_FILE_INFO_W) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueryInfVersionInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueryInfVersionInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQuerySourceListA(flags: u32, list: *mut *mut ::windows_core_sys::PSTR, count: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQuerySourceListW(flags: u32, list: *mut *mut ::windows_core_sys::PWSTR, count: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQuerySpaceRequiredOnDriveA(diskspace: *const ::core::ffi::c_void, drivespec: ::windows_core_sys::PCSTR, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQuerySpaceRequiredOnDriveW(diskspace: *const ::core::ffi::c_void, drivespec: ::windows_core_sys::PCWSTR, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueCopyA(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCSTR, sourcepath: ::windows_core_sys::PCSTR, sourcefilename: ::windows_core_sys::PCSTR, sourcedescription: ::windows_core_sys::PCSTR, sourcetagfile: ::windows_core_sys::PCSTR, targetdirectory: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR, copystyle: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueCopyIndirectA(copyparams: *const SP_FILE_COPY_PARAMS_A) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueCopyIndirectW(copyparams: *const SP_FILE_COPY_PARAMS_W) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueCopySectionA(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCSTR, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR, copystyle: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueCopySectionW(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCWSTR, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR, copystyle: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueCopyW(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCWSTR, sourcepath: ::windows_core_sys::PCWSTR, sourcefilename: ::windows_core_sys::PCWSTR, sourcedescription: ::windows_core_sys::PCWSTR, sourcetagfile: ::windows_core_sys::PCWSTR, targetdirectory: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR, copystyle: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueDefaultCopyA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCSTR, sourcefilename: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR, copystyle: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueDefaultCopyW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCWSTR, sourcefilename: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR, copystyle: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueDeleteA(queuehandle: *const ::core::ffi::c_void, pathpart1: ::windows_core_sys::PCSTR, pathpart2: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueDeleteSectionA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueDeleteSectionW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueDeleteW(queuehandle: *const ::core::ffi::c_void, pathpart1: ::windows_core_sys::PCWSTR, pathpart2: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueRenameA(queuehandle: *const ::core::ffi::c_void, sourcepath: ::windows_core_sys::PCSTR, sourcefilename: ::windows_core_sys::PCSTR, targetpath: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueRenameSectionA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueRenameSectionW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupQueueRenameW(queuehandle: *const ::core::ffi::c_void, sourcepath: ::windows_core_sys::PCWSTR, sourcefilename: ::windows_core_sys::PCWSTR, targetpath: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveFileLogEntryA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveFileLogEntryW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core_sys::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core_sys::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveFromSourceListA(flags: u32, source: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveFromSourceListW(flags: u32, source: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveInstallSectionFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveInstallSectionFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveSectionFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRemoveSectionFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRenameErrorA(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCSTR, sourcefile: ::windows_core_sys::PCSTR, targetfile: ::windows_core_sys::PCSTR, win32errorcode: u32, style: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupRenameErrorW(hwndparent: super::super::Foundation::HWND, dialogtitle: ::windows_core_sys::PCWSTR, sourcefile: ::windows_core_sys::PCWSTR, targetfile: ::windows_core_sys::PCWSTR, win32errorcode: u32, style: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupScanFileQueueA(filequeue: *const ::core::ffi::c_void, flags: u32, window: super::super::Foundation::HWND, callbackroutine: PSP_FILE_CALLBACK_A, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupScanFileQueueW(filequeue: *const ::core::ffi::c_void, flags: u32, window: super::super::Foundation::HWND, callbackroutine: PSP_FILE_CALLBACK_W, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetDirectoryIdA(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetDirectoryIdExA(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core_sys::PCSTR, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetDirectoryIdExW(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core_sys::PCWSTR, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetDirectoryIdW(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupSetFileQueueAlternatePlatformA(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupSetFileQueueAlternatePlatformW(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetFileQueueFlags(filequeue: *const ::core::ffi::c_void, flagmask: u32, flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetNonInteractiveMode(noninteractiveflag: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetPlatformPathOverrideA(r#override: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetPlatformPathOverrideW(r#override: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetSourceListA(flags: u32, sourcelist: *const ::windows_core_sys::PSTR, sourcecount: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupSetSourceListW(flags: u32, sourcelist: *const ::windows_core_sys::PWSTR, sourcecount: u32) -> super::super::Foundation::BOOL;
+    pub fn SetupPrepareQueueForRestoreA(queuehandle: *const ::core::ffi::c_void, backuppath: ::windows_core_sys::PCSTR, restoreflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupPrepareQueueForRestoreW(queuehandle: *const ::core::ffi::c_void, backuppath: ::windows_core_sys::PCWSTR, restoreflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupPromptForDiskA(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCSTR, diskname: ::windows_core_sys::PCSTR, pathtosource: ::windows_core_sys::PCSTR, filesought: ::windows_core_sys::PCSTR, tagfile: ::windows_core_sys::PCSTR, diskpromptstyle: u32, pathbuffer: ::windows_core_sys::PSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
+    pub fn SetupPromptForDiskW(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCWSTR, diskname: ::windows_core_sys::PCWSTR, pathtosource: ::windows_core_sys::PCWSTR, filesought: ::windows_core_sys::PCWSTR, tagfile: ::windows_core_sys::PCWSTR, diskpromptstyle: u32, pathbuffer: ::windows_core_sys::PWSTR, pathbuffersize: u32, pathrequiredsize: *mut u32) -> u32;
+    pub fn SetupPromptReboot(filequeue: *const ::core::ffi::c_void, owner: ::win32_foundation_sys::HWND, scanonly: ::win32_foundation_sys::BOOL) -> i32;
+    pub fn SetupQueryDrivesInDiskSpaceListA(diskspace: *const ::core::ffi::c_void, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueryDrivesInDiskSpaceListW(diskspace: *const ::core::ffi::c_void, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueryFileLogA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueryFileLogW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR, desiredinfo: SetupFileLogInfo, dataout: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueryInfFileInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueryInfFileInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupQueryInfOriginalFileInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, originalfileinfo: *mut SP_ORIGINAL_FILE_INFO_A) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupQueryInfOriginalFileInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, originalfileinfo: *mut SP_ORIGINAL_FILE_INFO_W) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueryInfVersionInformationA(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: ::windows_core_sys::PCSTR, returnbuffer: ::windows_core_sys::PSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueryInfVersionInformationW(infinformation: *const SP_INF_INFORMATION, infindex: u32, key: ::windows_core_sys::PCWSTR, returnbuffer: ::windows_core_sys::PWSTR, returnbuffersize: u32, requiredsize: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQuerySourceListA(flags: u32, list: *mut *mut ::windows_core_sys::PSTR, count: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQuerySourceListW(flags: u32, list: *mut *mut ::windows_core_sys::PWSTR, count: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQuerySpaceRequiredOnDriveA(diskspace: *const ::core::ffi::c_void, drivespec: ::windows_core_sys::PCSTR, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQuerySpaceRequiredOnDriveW(diskspace: *const ::core::ffi::c_void, drivespec: ::windows_core_sys::PCWSTR, spacerequired: *mut i64, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueCopyA(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCSTR, sourcepath: ::windows_core_sys::PCSTR, sourcefilename: ::windows_core_sys::PCSTR, sourcedescription: ::windows_core_sys::PCSTR, sourcetagfile: ::windows_core_sys::PCSTR, targetdirectory: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR, copystyle: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueCopyIndirectA(copyparams: *const SP_FILE_COPY_PARAMS_A) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueCopyIndirectW(copyparams: *const SP_FILE_COPY_PARAMS_W) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueCopySectionA(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCSTR, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR, copystyle: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueCopySectionW(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCWSTR, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR, copystyle: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueCopyW(queuehandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCWSTR, sourcepath: ::windows_core_sys::PCWSTR, sourcefilename: ::windows_core_sys::PCWSTR, sourcedescription: ::windows_core_sys::PCWSTR, sourcetagfile: ::windows_core_sys::PCWSTR, targetdirectory: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR, copystyle: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueDefaultCopyA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCSTR, sourcefilename: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR, copystyle: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueDefaultCopyW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, sourcerootpath: ::windows_core_sys::PCWSTR, sourcefilename: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR, copystyle: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueDeleteA(queuehandle: *const ::core::ffi::c_void, pathpart1: ::windows_core_sys::PCSTR, pathpart2: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueDeleteSectionA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueDeleteSectionW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueDeleteW(queuehandle: *const ::core::ffi::c_void, pathpart1: ::windows_core_sys::PCWSTR, pathpart2: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueRenameA(queuehandle: *const ::core::ffi::c_void, sourcepath: ::windows_core_sys::PCSTR, sourcefilename: ::windows_core_sys::PCSTR, targetpath: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueRenameSectionA(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueRenameSectionW(queuehandle: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, section: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupQueueRenameW(queuehandle: *const ::core::ffi::c_void, sourcepath: ::windows_core_sys::PCWSTR, sourcefilename: ::windows_core_sys::PCWSTR, targetpath: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveFileLogEntryA(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCSTR, targetfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveFileLogEntryW(fileloghandle: *const ::core::ffi::c_void, logsectionname: ::windows_core_sys::PCWSTR, targetfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core_sys::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, targetfilespec: ::windows_core_sys::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveFromSourceListA(flags: u32, source: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveFromSourceListW(flags: u32, source: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveInstallSectionFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveInstallSectionFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, layoutinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveSectionFromDiskSpaceListA(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRemoveSectionFromDiskSpaceListW(diskspace: *const ::core::ffi::c_void, infhandle: *const ::core::ffi::c_void, listinfhandle: *const ::core::ffi::c_void, sectionname: ::windows_core_sys::PCWSTR, operation: SETUP_FILE_OPERATION, reserved1: *mut ::core::ffi::c_void, reserved2: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupRenameErrorA(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCSTR, sourcefile: ::windows_core_sys::PCSTR, targetfile: ::windows_core_sys::PCSTR, win32errorcode: u32, style: u32) -> u32;
+    pub fn SetupRenameErrorW(hwndparent: ::win32_foundation_sys::HWND, dialogtitle: ::windows_core_sys::PCWSTR, sourcefile: ::windows_core_sys::PCWSTR, targetfile: ::windows_core_sys::PCWSTR, win32errorcode: u32, style: u32) -> u32;
+    pub fn SetupScanFileQueueA(filequeue: *const ::core::ffi::c_void, flags: u32, window: ::win32_foundation_sys::HWND, callbackroutine: PSP_FILE_CALLBACK_A, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupScanFileQueueW(filequeue: *const ::core::ffi::c_void, flags: u32, window: ::win32_foundation_sys::HWND, callbackroutine: PSP_FILE_CALLBACK_W, callbackcontext: *const ::core::ffi::c_void, result: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetDirectoryIdA(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetDirectoryIdExA(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core_sys::PCSTR, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetDirectoryIdExW(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core_sys::PCWSTR, flags: u32, reserved1: u32, reserved2: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetDirectoryIdW(infhandle: *const ::core::ffi::c_void, id: u32, directory: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupSetFileQueueAlternatePlatformA(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupSetFileQueueAlternatePlatformW(queuehandle: *const ::core::ffi::c_void, alternateplatforminfo: *const SP_ALTPLATFORM_INFO_V2, alternatedefaultcatalogfile: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetFileQueueFlags(filequeue: *const ::core::ffi::c_void, flagmask: u32, flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetNonInteractiveMode(noninteractiveflag: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetPlatformPathOverrideA(r#override: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetPlatformPathOverrideW(r#override: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetSourceListA(flags: u32, sourcelist: *const ::windows_core_sys::PSTR, sourcecount: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupSetSourceListW(flags: u32, sourcelist: *const ::windows_core_sys::PWSTR, sourcecount: u32) -> ::win32_foundation_sys::BOOL;
     pub fn SetupSetThreadLogToken(logtoken: u64);
     pub fn SetupTermDefaultQueueCallback(context: *const ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupTerminateFileLog(fileloghandle: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupUninstallNewlyCopiedInfs(filequeue: *const ::core::ffi::c_void, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupUninstallOEMInfA(inffilename: ::windows_core_sys::PCSTR, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetupUninstallOEMInfW(inffilename: ::windows_core_sys::PCWSTR, flags: u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupVerifyInfFileA(infname: ::windows_core_sys::PCSTR, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_A) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug"))]
-    pub fn SetupVerifyInfFileW(infname: ::windows_core_sys::PCWSTR, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_W) -> super::super::Foundation::BOOL;
+    pub fn SetupTerminateFileLog(fileloghandle: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupUninstallNewlyCopiedInfs(filequeue: *const ::core::ffi::c_void, flags: u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupUninstallOEMInfA(inffilename: ::windows_core_sys::PCSTR, flags: u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetupUninstallOEMInfW(inffilename: ::windows_core_sys::PCWSTR, flags: u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupVerifyInfFileA(infname: ::windows_core_sys::PCSTR, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_A) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_Diagnostics_Debug")]
+    pub fn SetupVerifyInfFileW(infname: ::windows_core_sys::PCWSTR, altplatforminfo: *const SP_ALTPLATFORM_INFO_V2, infsignerinfo: *mut SP_INF_SIGNER_INFO_V2_W) -> ::win32_foundation_sys::BOOL;
     pub fn SetupWriteTextLog(logtoken: u64, category: u32, flags: u32, messagestr: ::windows_core_sys::PCSTR);
     pub fn SetupWriteTextLogError(logtoken: u64, category: u32, logflags: u32, error: u32, messagestr: ::windows_core_sys::PCSTR);
     pub fn SetupWriteTextLogInfLine(logtoken: u64, flags: u32, infhandle: *const ::core::ffi::c_void, context: *const INFCONTEXT);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UpdateDriverForPlugAndPlayDevicesA(hwndparent: super::super::Foundation::HWND, hardwareid: ::windows_core_sys::PCSTR, fullinfpath: ::windows_core_sys::PCSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UpdateDriverForPlugAndPlayDevicesW(hwndparent: super::super::Foundation::HWND, hardwareid: ::windows_core_sys::PCWSTR, fullinfpath: ::windows_core_sys::PCWSTR, installflags: u32, brebootrequired: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn UpdateDriverForPlugAndPlayDevicesA(hwndparent: ::win32_foundation_sys::HWND, hardwareid: ::windows_core_sys::PCSTR, fullinfpath: ::windows_core_sys::PCSTR, installflags: u32, brebootrequired: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn UpdateDriverForPlugAndPlayDevicesW(hwndparent: ::win32_foundation_sys::HWND, hardwareid: ::windows_core_sys::PCWSTR, fullinfpath: ::windows_core_sys::PCWSTR, installflags: u32, brebootrequired: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
 }
 pub const ALLOC_LOG_CONF: u32 = 2u32;
 pub const BASIC_LOG_CONF: u32 = 0u32;
@@ -1284,7 +1002,6 @@ impl ::core::clone::Clone for CM_NOTIFY_EVENT_DATA_0_2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CM_NOTIFY_FILTER {
     pub cbSize: u32,
     pub Flags: u32,
@@ -1292,63 +1009,49 @@ pub struct CM_NOTIFY_FILTER {
     pub Reserved: u32,
     pub u: CM_NOTIFY_FILTER_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CM_NOTIFY_FILTER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CM_NOTIFY_FILTER {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union CM_NOTIFY_FILTER_0 {
     pub DeviceInterface: CM_NOTIFY_FILTER_0_2,
     pub DeviceHandle: CM_NOTIFY_FILTER_0_0,
     pub DeviceInstance: CM_NOTIFY_FILTER_0_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CM_NOTIFY_FILTER_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CM_NOTIFY_FILTER_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CM_NOTIFY_FILTER_0_0 {
-    pub hTarget: super::super::Foundation::HANDLE,
+    pub hTarget: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CM_NOTIFY_FILTER_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CM_NOTIFY_FILTER_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CM_NOTIFY_FILTER_0_1 {
     pub InstanceId: [u16; 200],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CM_NOTIFY_FILTER_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CM_NOTIFY_FILTER_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CM_NOTIFY_FILTER_0_2 {
     pub ClassGuid: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CM_NOTIFY_FILTER_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CM_NOTIFY_FILTER_0_2 {
     fn clone(&self) -> Self {
         *self
@@ -1478,17 +1181,14 @@ pub const CM_SET_HW_PROF_FLAGS_BITS: u32 = 1u32;
 pub const CM_SET_HW_PROF_FLAGS_UI_NOT_OK: u32 = 1u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COINSTALLER_CONTEXT_DATA {
-    pub PostProcessing: super::super::Foundation::BOOL,
+    pub PostProcessing: ::win32_foundation_sys::BOOL,
     pub InstallResult: u32,
     pub PrivateData: *mut ::core::ffi::c_void,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COINSTALLER_CONTEXT_DATA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COINSTALLER_CONTEXT_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1496,17 +1196,14 @@ impl ::core::clone::Clone for COINSTALLER_CONTEXT_DATA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COINSTALLER_CONTEXT_DATA {
-    pub PostProcessing: super::super::Foundation::BOOL,
+    pub PostProcessing: ::win32_foundation_sys::BOOL,
     pub InstallResult: u32,
     pub PrivateData: *mut ::core::ffi::c_void,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COINSTALLER_CONTEXT_DATA {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COINSTALLER_CONTEXT_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1580,18 +1277,15 @@ pub const CR_INVALID_INDEX: CONFIGRET = 58u32;
 pub const CR_INVALID_STRUCTURE_SIZE: CONFIGRET = 59u32;
 pub const NUM_CR_RESULTS: CONFIGRET = 60u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CONFLICT_DETAILS_A {
     pub CD_ulSize: u32,
     pub CD_ulMask: u32,
     pub CD_dnDevInst: u32,
     pub CD_rdResDes: usize,
     pub CD_ulFlags: u32,
-    pub CD_szDescription: [super::super::Foundation::CHAR; 260],
+    pub CD_szDescription: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CONFLICT_DETAILS_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CONFLICT_DETAILS_A {
     fn clone(&self) -> Self {
         *self
@@ -2196,7 +1890,6 @@ pub const FILE_COMPRESSION_NTCAB: u32 = 3u32;
 pub const FILE_COMPRESSION_WINLZA: u32 = 1u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILE_IN_CABINET_INFO_A {
     pub NameInCabinet: ::windows_core_sys::PCSTR,
     pub FileSize: u32,
@@ -2204,13 +1897,11 @@ pub struct FILE_IN_CABINET_INFO_A {
     pub DosDate: u16,
     pub DosTime: u16,
     pub DosAttribs: u16,
-    pub FullTargetName: [super::super::Foundation::CHAR; 260],
+    pub FullTargetName: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILE_IN_CABINET_INFO_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILE_IN_CABINET_INFO_A {
     fn clone(&self) -> Self {
         *self
@@ -2218,7 +1909,6 @@ impl ::core::clone::Clone for FILE_IN_CABINET_INFO_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILE_IN_CABINET_INFO_A {
     pub NameInCabinet: ::windows_core_sys::PCSTR,
     pub FileSize: u32,
@@ -2226,13 +1916,11 @@ pub struct FILE_IN_CABINET_INFO_A {
     pub DosDate: u16,
     pub DosTime: u16,
     pub DosAttribs: u16,
-    pub FullTargetName: [super::super::Foundation::CHAR; 260],
+    pub FullTargetName: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILE_IN_CABINET_INFO_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILE_IN_CABINET_INFO_A {
     fn clone(&self) -> Self {
         *self
@@ -2504,15 +2192,12 @@ pub const GUID_WUDF_DEVICE_HOST_PROBLEM: ::windows_core_sys::GUID = ::windows_co
 pub type HCMNOTIFICATION = isize;
 pub type HDEVINFO = isize;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HWProfileInfo_sA {
     pub HWPI_ulHWProfile: u32,
-    pub HWPI_szFriendlyName: [super::super::Foundation::CHAR; 80],
+    pub HWPI_szFriendlyName: [::win32_foundation_sys::CHAR; 80],
     pub HWPI_dwFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HWProfileInfo_sA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HWProfileInfo_sA {
     fn clone(&self) -> Self {
         *self
@@ -3115,8 +2800,7 @@ impl ::core::clone::Clone for PCCARD_RESOURCE {
 pub const PCD_MAX_IO: u32 = 2u32;
 pub const PCD_MAX_MEMORY: u32 = 2u32;
 pub type PCM_NOTIFY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hnotify: HCMNOTIFICATION, context: *const ::core::ffi::c_void, action: CM_NOTIFY_ACTION, eventdata: *const CM_NOTIFY_EVENT_DATA, eventdatasize: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PDETECT_PROGRESS_NOTIFY = ::core::option::Option<unsafe extern "system" fn(progressnotifyparam: *const ::core::ffi::c_void, detectcomplete: u32) -> super::super::Foundation::BOOL>;
+pub type PDETECT_PROGRESS_NOTIFY = ::core::option::Option<unsafe extern "system" fn(progressnotifyparam: *const ::core::ffi::c_void, detectcomplete: u32) -> ::win32_foundation_sys::BOOL>;
 pub type PNP_VETO_TYPE = i32;
 pub const PNP_VetoTypeUnknown: PNP_VETO_TYPE = 0i32;
 pub const PNP_VetoLegacyDevice: PNP_VETO_TYPE = 1i32;
@@ -3415,7 +3099,7 @@ pub const SP_ALTPLATFORM_FLAGS_VERSION_RANGE: u32 = 1u32;
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 pub struct SP_ALTPLATFORM_INFO_V1 {
     pub cbSize: u32,
-    pub Platform: super::super::System::Diagnostics::Debug::VER_PLATFORM,
+    pub Platform: ::win32_system_sys::Diagnostics::Debug::VER_PLATFORM,
     pub MajorVersion: u32,
     pub MinorVersion: u32,
     pub ProcessorArchitecture: u16,
@@ -3436,7 +3120,7 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V1 {
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 pub struct SP_ALTPLATFORM_INFO_V1 {
     pub cbSize: u32,
-    pub Platform: super::super::System::Diagnostics::Debug::VER_PLATFORM,
+    pub Platform: ::win32_system_sys::Diagnostics::Debug::VER_PLATFORM,
     pub MajorVersion: u32,
     pub MinorVersion: u32,
     pub ProcessorArchitecture: u16,
@@ -3457,7 +3141,7 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V1 {
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 pub struct SP_ALTPLATFORM_INFO_V2 {
     pub cbSize: u32,
-    pub Platform: super::super::System::Diagnostics::Debug::VER_PLATFORM,
+    pub Platform: ::win32_system_sys::Diagnostics::Debug::VER_PLATFORM,
     pub MajorVersion: u32,
     pub MinorVersion: u32,
     pub ProcessorArchitecture: u16,
@@ -3497,7 +3181,7 @@ impl ::core::clone::Clone for SP_ALTPLATFORM_INFO_V2_0 {
 #[cfg(feature = "Win32_System_Diagnostics_Debug")]
 pub struct SP_ALTPLATFORM_INFO_V2 {
     pub cbSize: u32,
-    pub Platform: super::super::System::Diagnostics::Debug::VER_PLATFORM,
+    pub Platform: ::win32_system_sys::Diagnostics::Debug::VER_PLATFORM,
     pub MajorVersion: u32,
     pub MinorVersion: u32,
     pub ProcessorArchitecture: u16,
@@ -3611,17 +3295,14 @@ pub const SP_BACKUP_BOOTFILE: u32 = 8u32;
 pub const SP_BACKUP_DEMANDPASS: u32 = 2u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_BACKUP_QUEUE_PARAMS_V1_A {
     pub cbSize: u32,
-    pub FullInfPath: [super::super::Foundation::CHAR; 260],
+    pub FullInfPath: [::win32_foundation_sys::CHAR; 260],
     pub FilenameOffset: i32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_BACKUP_QUEUE_PARAMS_V1_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V1_A {
     fn clone(&self) -> Self {
         *self
@@ -3629,17 +3310,14 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V1_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_BACKUP_QUEUE_PARAMS_V1_A {
     pub cbSize: u32,
-    pub FullInfPath: [super::super::Foundation::CHAR; 260],
+    pub FullInfPath: [::win32_foundation_sys::CHAR; 260],
     pub FilenameOffset: i32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_BACKUP_QUEUE_PARAMS_V1_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V1_A {
     fn clone(&self) -> Self {
         *self
@@ -3677,18 +3355,15 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V1_W {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_BACKUP_QUEUE_PARAMS_V2_A {
     pub cbSize: u32,
-    pub FullInfPath: [super::super::Foundation::CHAR; 260],
+    pub FullInfPath: [::win32_foundation_sys::CHAR; 260],
     pub FilenameOffset: i32,
-    pub ReinstallInstance: [super::super::Foundation::CHAR; 260],
+    pub ReinstallInstance: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_BACKUP_QUEUE_PARAMS_V2_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V2_A {
     fn clone(&self) -> Self {
         *self
@@ -3696,18 +3371,15 @@ impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V2_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_BACKUP_QUEUE_PARAMS_V2_A {
     pub cbSize: u32,
-    pub FullInfPath: [super::super::Foundation::CHAR; 260],
+    pub FullInfPath: [::win32_foundation_sys::CHAR; 260],
     pub FilenameOffset: i32,
-    pub ReinstallInstance: [super::super::Foundation::CHAR; 260],
+    pub ReinstallInstance: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_BACKUP_QUEUE_PARAMS_V2_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_BACKUP_QUEUE_PARAMS_V2_A {
     fn clone(&self) -> Self {
         *self
@@ -3751,7 +3423,7 @@ pub const SP_BACKUP_SPECIAL: u32 = 4u32;
 #[cfg(feature = "Win32_UI_Controls")]
 pub struct SP_CLASSIMAGELIST_DATA {
     pub cbSize: u32,
-    pub ImageList: super::super::UI::Controls::HIMAGELIST,
+    pub ImageList: ::win32_ui_sys::Controls::HIMAGELIST,
     pub Reserved: usize,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -3769,7 +3441,7 @@ impl ::core::clone::Clone for SP_CLASSIMAGELIST_DATA {
 #[cfg(feature = "Win32_UI_Controls")]
 pub struct SP_CLASSIMAGELIST_DATA {
     pub cbSize: u32,
-    pub ImageList: super::super::UI::Controls::HIMAGELIST,
+    pub ImageList: ::win32_ui_sys::Controls::HIMAGELIST,
     pub Reserved: usize,
 }
 #[cfg(target_arch = "x86")]
@@ -3841,17 +3513,14 @@ pub const SP_COPY_INBOX_INF: SP_COPY_STYLE = 134217728u32;
 pub const SP_COPY_HARDLINK: SP_COPY_STYLE = 268435456u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DETECTDEVICE_PARAMS {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
     pub DetectProgressNotify: PDETECT_PROGRESS_NOTIFY,
     pub ProgressNotifyParam: *mut ::core::ffi::c_void,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DETECTDEVICE_PARAMS {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DETECTDEVICE_PARAMS {
     fn clone(&self) -> Self {
         *self
@@ -3859,17 +3528,14 @@ impl ::core::clone::Clone for SP_DETECTDEVICE_PARAMS {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DETECTDEVICE_PARAMS {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
     pub DetectProgressNotify: PDETECT_PROGRESS_NOTIFY,
     pub ProgressNotifyParam: *mut ::core::ffi::c_void,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DETECTDEVICE_PARAMS {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DETECTDEVICE_PARAMS {
     fn clone(&self) -> Self {
         *self
@@ -3909,16 +3575,13 @@ impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DATA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     pub cbSize: u32,
-    pub DevicePath: [super::super::Foundation::CHAR; 1],
+    pub DevicePath: [::win32_foundation_sys::CHAR; 1],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVICE_INTERFACE_DETAIL_DATA_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     fn clone(&self) -> Self {
         *self
@@ -3926,16 +3589,13 @@ impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     pub cbSize: u32,
-    pub DevicePath: [super::super::Foundation::CHAR; 1],
+    pub DevicePath: [::win32_foundation_sys::CHAR; 1],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVICE_INTERFACE_DETAIL_DATA_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVICE_INTERFACE_DETAIL_DATA_A {
     fn clone(&self) -> Self {
         *self
@@ -4003,18 +3663,15 @@ impl ::core::clone::Clone for SP_DEVINFO_DATA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_A {
     pub cbSize: u32,
     pub ClassGuid: ::windows_core_sys::GUID,
-    pub RemoteMachineHandle: super::super::Foundation::HANDLE,
-    pub RemoteMachineName: [super::super::Foundation::CHAR; 263],
+    pub RemoteMachineHandle: ::win32_foundation_sys::HANDLE,
+    pub RemoteMachineName: [::win32_foundation_sys::CHAR; 263],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVINFO_LIST_DETAIL_DATA_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_A {
     fn clone(&self) -> Self {
         *self
@@ -4022,18 +3679,15 @@ impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_A {
     pub cbSize: u32,
     pub ClassGuid: ::windows_core_sys::GUID,
-    pub RemoteMachineHandle: super::super::Foundation::HANDLE,
-    pub RemoteMachineName: [super::super::Foundation::CHAR; 263],
+    pub RemoteMachineHandle: ::win32_foundation_sys::HANDLE,
+    pub RemoteMachineName: [::win32_foundation_sys::CHAR; 263],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVINFO_LIST_DETAIL_DATA_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_A {
     fn clone(&self) -> Self {
         *self
@@ -4041,18 +3695,15 @@ impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_A {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_W {
     pub cbSize: u32,
     pub ClassGuid: ::windows_core_sys::GUID,
-    pub RemoteMachineHandle: super::super::Foundation::HANDLE,
+    pub RemoteMachineHandle: ::win32_foundation_sys::HANDLE,
     pub RemoteMachineName: [u16; 263],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVINFO_LIST_DETAIL_DATA_W {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_W {
     fn clone(&self) -> Self {
         *self
@@ -4060,18 +3711,15 @@ impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_W {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINFO_LIST_DETAIL_DATA_W {
     pub cbSize: u32,
     pub ClassGuid: ::windows_core_sys::GUID,
-    pub RemoteMachineHandle: super::super::Foundation::HANDLE,
+    pub RemoteMachineHandle: ::win32_foundation_sys::HANDLE,
     pub RemoteMachineName: [u16; 263],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVINFO_LIST_DETAIL_DATA_W {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_W {
     fn clone(&self) -> Self {
         *self
@@ -4079,24 +3727,21 @@ impl ::core::clone::Clone for SP_DEVINFO_LIST_DETAIL_DATA_W {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINSTALL_PARAMS_A {
     pub cbSize: u32,
     pub Flags: u32,
     pub FlagsEx: u32,
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub InstallMsgHandler: PSP_FILE_CALLBACK_A,
     pub InstallMsgHandlerContext: *mut ::core::ffi::c_void,
     pub FileQueue: *mut ::core::ffi::c_void,
     pub ClassInstallReserved: usize,
     pub Reserved: u32,
-    pub DriverPath: [super::super::Foundation::CHAR; 260],
+    pub DriverPath: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVINSTALL_PARAMS_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_A {
     fn clone(&self) -> Self {
         *self
@@ -4104,24 +3749,21 @@ impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINSTALL_PARAMS_A {
     pub cbSize: u32,
     pub Flags: u32,
     pub FlagsEx: u32,
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub InstallMsgHandler: PSP_FILE_CALLBACK_A,
     pub InstallMsgHandlerContext: *mut ::core::ffi::c_void,
     pub FileQueue: *mut ::core::ffi::c_void,
     pub ClassInstallReserved: usize,
     pub Reserved: u32,
-    pub DriverPath: [super::super::Foundation::CHAR; 260],
+    pub DriverPath: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVINSTALL_PARAMS_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_A {
     fn clone(&self) -> Self {
         *self
@@ -4129,12 +3771,11 @@ impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_A {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINSTALL_PARAMS_W {
     pub cbSize: u32,
     pub Flags: u32,
     pub FlagsEx: u32,
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub InstallMsgHandler: PSP_FILE_CALLBACK_A,
     pub InstallMsgHandlerContext: *mut ::core::ffi::c_void,
     pub FileQueue: *mut ::core::ffi::c_void,
@@ -4143,10 +3784,8 @@ pub struct SP_DEVINSTALL_PARAMS_W {
     pub DriverPath: [u16; 260],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVINSTALL_PARAMS_W {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_W {
     fn clone(&self) -> Self {
         *self
@@ -4154,12 +3793,11 @@ impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_W {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DEVINSTALL_PARAMS_W {
     pub cbSize: u32,
     pub Flags: u32,
     pub FlagsEx: u32,
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub InstallMsgHandler: PSP_FILE_CALLBACK_A,
     pub InstallMsgHandlerContext: *mut ::core::ffi::c_void,
     pub FileQueue: *mut ::core::ffi::c_void,
@@ -4168,10 +3806,8 @@ pub struct SP_DEVINSTALL_PARAMS_W {
     pub DriverPath: [u16; 260],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DEVINSTALL_PARAMS_W {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_W {
     fn clone(&self) -> Self {
         *self
@@ -4179,20 +3815,17 @@ impl ::core::clone::Clone for SP_DEVINSTALL_PARAMS_W {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DATA_V1_A {
     pub cbSize: u32,
     pub DriverType: u32,
     pub Reserved: usize,
-    pub Description: [super::super::Foundation::CHAR; 256],
-    pub MfgName: [super::super::Foundation::CHAR; 256],
-    pub ProviderName: [super::super::Foundation::CHAR; 256],
+    pub Description: [::win32_foundation_sys::CHAR; 256],
+    pub MfgName: [::win32_foundation_sys::CHAR; 256],
+    pub ProviderName: [::win32_foundation_sys::CHAR; 256],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DATA_V1_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DATA_V1_A {
     fn clone(&self) -> Self {
         *self
@@ -4200,20 +3833,17 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V1_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DATA_V1_A {
     pub cbSize: u32,
     pub DriverType: u32,
     pub Reserved: usize,
-    pub Description: [super::super::Foundation::CHAR; 256],
-    pub MfgName: [super::super::Foundation::CHAR; 256],
-    pub ProviderName: [super::super::Foundation::CHAR; 256],
+    pub Description: [::win32_foundation_sys::CHAR; 256],
+    pub MfgName: [::win32_foundation_sys::CHAR; 256],
+    pub ProviderName: [::win32_foundation_sys::CHAR; 256],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DATA_V1_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DATA_V1_A {
     fn clone(&self) -> Self {
         *self
@@ -4257,22 +3887,19 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V1_W {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DATA_V2_A {
     pub cbSize: u32,
     pub DriverType: u32,
     pub Reserved: usize,
-    pub Description: [super::super::Foundation::CHAR; 256],
-    pub MfgName: [super::super::Foundation::CHAR; 256],
-    pub ProviderName: [super::super::Foundation::CHAR; 256],
-    pub DriverDate: super::super::Foundation::FILETIME,
+    pub Description: [::win32_foundation_sys::CHAR; 256],
+    pub MfgName: [::win32_foundation_sys::CHAR; 256],
+    pub ProviderName: [::win32_foundation_sys::CHAR; 256],
+    pub DriverDate: ::win32_foundation_sys::FILETIME,
     pub DriverVersion: u64,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DATA_V2_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_A {
     fn clone(&self) -> Self {
         *self
@@ -4280,22 +3907,19 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DATA_V2_A {
     pub cbSize: u32,
     pub DriverType: u32,
     pub Reserved: usize,
-    pub Description: [super::super::Foundation::CHAR; 256],
-    pub MfgName: [super::super::Foundation::CHAR; 256],
-    pub ProviderName: [super::super::Foundation::CHAR; 256],
-    pub DriverDate: super::super::Foundation::FILETIME,
+    pub Description: [::win32_foundation_sys::CHAR; 256],
+    pub MfgName: [::win32_foundation_sys::CHAR; 256],
+    pub ProviderName: [::win32_foundation_sys::CHAR; 256],
+    pub DriverDate: ::win32_foundation_sys::FILETIME,
     pub DriverVersion: u64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DATA_V2_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_A {
     fn clone(&self) -> Self {
         *self
@@ -4303,7 +3927,6 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_A {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DATA_V2_W {
     pub cbSize: u32,
     pub DriverType: u32,
@@ -4311,14 +3934,12 @@ pub struct SP_DRVINFO_DATA_V2_W {
     pub Description: [u16; 256],
     pub MfgName: [u16; 256],
     pub ProviderName: [u16; 256],
-    pub DriverDate: super::super::Foundation::FILETIME,
+    pub DriverDate: ::win32_foundation_sys::FILETIME,
     pub DriverVersion: u64,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DATA_V2_W {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_W {
     fn clone(&self) -> Self {
         *self
@@ -4326,7 +3947,6 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_W {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DATA_V2_W {
     pub cbSize: u32,
     pub DriverType: u32,
@@ -4334,14 +3954,12 @@ pub struct SP_DRVINFO_DATA_V2_W {
     pub Description: [u16; 256],
     pub MfgName: [u16; 256],
     pub ProviderName: [u16; 256],
-    pub DriverDate: super::super::Foundation::FILETIME,
+    pub DriverDate: ::win32_foundation_sys::FILETIME,
     pub DriverVersion: u64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DATA_V2_W {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_W {
     fn clone(&self) -> Self {
         *self
@@ -4349,23 +3967,20 @@ impl ::core::clone::Clone for SP_DRVINFO_DATA_V2_W {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DETAIL_DATA_A {
     pub cbSize: u32,
-    pub InfDate: super::super::Foundation::FILETIME,
+    pub InfDate: ::win32_foundation_sys::FILETIME,
     pub CompatIDsOffset: u32,
     pub CompatIDsLength: u32,
     pub Reserved: usize,
-    pub SectionName: [super::super::Foundation::CHAR; 256],
-    pub InfFileName: [super::super::Foundation::CHAR; 260],
-    pub DrvDescription: [super::super::Foundation::CHAR; 256],
-    pub HardwareID: [super::super::Foundation::CHAR; 1],
+    pub SectionName: [::win32_foundation_sys::CHAR; 256],
+    pub InfFileName: [::win32_foundation_sys::CHAR; 260],
+    pub DrvDescription: [::win32_foundation_sys::CHAR; 256],
+    pub HardwareID: [::win32_foundation_sys::CHAR; 1],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DETAIL_DATA_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_A {
     fn clone(&self) -> Self {
         *self
@@ -4373,23 +3988,20 @@ impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DETAIL_DATA_A {
     pub cbSize: u32,
-    pub InfDate: super::super::Foundation::FILETIME,
+    pub InfDate: ::win32_foundation_sys::FILETIME,
     pub CompatIDsOffset: u32,
     pub CompatIDsLength: u32,
     pub Reserved: usize,
-    pub SectionName: [super::super::Foundation::CHAR; 256],
-    pub InfFileName: [super::super::Foundation::CHAR; 260],
-    pub DrvDescription: [super::super::Foundation::CHAR; 256],
-    pub HardwareID: [super::super::Foundation::CHAR; 1],
+    pub SectionName: [::win32_foundation_sys::CHAR; 256],
+    pub InfFileName: [::win32_foundation_sys::CHAR; 260],
+    pub DrvDescription: [::win32_foundation_sys::CHAR; 256],
+    pub HardwareID: [::win32_foundation_sys::CHAR; 1],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DETAIL_DATA_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_A {
     fn clone(&self) -> Self {
         *self
@@ -4397,10 +4009,9 @@ impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_A {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DETAIL_DATA_W {
     pub cbSize: u32,
-    pub InfDate: super::super::Foundation::FILETIME,
+    pub InfDate: ::win32_foundation_sys::FILETIME,
     pub CompatIDsOffset: u32,
     pub CompatIDsLength: u32,
     pub Reserved: usize,
@@ -4410,10 +4021,8 @@ pub struct SP_DRVINFO_DETAIL_DATA_W {
     pub HardwareID: [u16; 1],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DETAIL_DATA_W {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_W {
     fn clone(&self) -> Self {
         *self
@@ -4421,10 +4030,9 @@ impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_W {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_DRVINFO_DETAIL_DATA_W {
     pub cbSize: u32,
-    pub InfDate: super::super::Foundation::FILETIME,
+    pub InfDate: ::win32_foundation_sys::FILETIME,
     pub CompatIDsOffset: u32,
     pub CompatIDsLength: u32,
     pub Reserved: usize,
@@ -4434,10 +4042,8 @@ pub struct SP_DRVINFO_DETAIL_DATA_W {
     pub HardwareID: [u16; 1],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_DRVINFO_DETAIL_DATA_W {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_DRVINFO_DETAIL_DATA_W {
     fn clone(&self) -> Self {
         *self
@@ -4636,18 +4242,15 @@ impl ::core::clone::Clone for SP_INF_INFORMATION {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_INF_SIGNER_INFO_V1_A {
     pub cbSize: u32,
-    pub CatalogFile: [super::super::Foundation::CHAR; 260],
-    pub DigitalSigner: [super::super::Foundation::CHAR; 260],
-    pub DigitalSignerVersion: [super::super::Foundation::CHAR; 260],
+    pub CatalogFile: [::win32_foundation_sys::CHAR; 260],
+    pub DigitalSigner: [::win32_foundation_sys::CHAR; 260],
+    pub DigitalSignerVersion: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_INF_SIGNER_INFO_V1_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V1_A {
     fn clone(&self) -> Self {
         *self
@@ -4655,18 +4258,15 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V1_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_INF_SIGNER_INFO_V1_A {
     pub cbSize: u32,
-    pub CatalogFile: [super::super::Foundation::CHAR; 260],
-    pub DigitalSigner: [super::super::Foundation::CHAR; 260],
-    pub DigitalSignerVersion: [super::super::Foundation::CHAR; 260],
+    pub CatalogFile: [::win32_foundation_sys::CHAR; 260],
+    pub DigitalSigner: [::win32_foundation_sys::CHAR; 260],
+    pub DigitalSignerVersion: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_INF_SIGNER_INFO_V1_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V1_A {
     fn clone(&self) -> Self {
         *self
@@ -4706,19 +4306,16 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V1_W {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_INF_SIGNER_INFO_V2_A {
     pub cbSize: u32,
-    pub CatalogFile: [super::super::Foundation::CHAR; 260],
-    pub DigitalSigner: [super::super::Foundation::CHAR; 260],
-    pub DigitalSignerVersion: [super::super::Foundation::CHAR; 260],
+    pub CatalogFile: [::win32_foundation_sys::CHAR; 260],
+    pub DigitalSigner: [::win32_foundation_sys::CHAR; 260],
+    pub DigitalSignerVersion: [::win32_foundation_sys::CHAR; 260],
     pub SignerScore: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_INF_SIGNER_INFO_V2_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V2_A {
     fn clone(&self) -> Self {
         *self
@@ -4726,19 +4323,16 @@ impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V2_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_INF_SIGNER_INFO_V2_A {
     pub cbSize: u32,
-    pub CatalogFile: [super::super::Foundation::CHAR; 260],
-    pub DigitalSigner: [super::super::Foundation::CHAR; 260],
-    pub DigitalSignerVersion: [super::super::Foundation::CHAR; 260],
+    pub CatalogFile: [::win32_foundation_sys::CHAR; 260],
+    pub DigitalSigner: [::win32_foundation_sys::CHAR; 260],
+    pub DigitalSignerVersion: [::win32_foundation_sys::CHAR; 260],
     pub SignerScore: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_INF_SIGNER_INFO_V2_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_INF_SIGNER_INFO_V2_A {
     fn clone(&self) -> Self {
         *self
@@ -4784,22 +4378,22 @@ pub const INF_STYLE_OLDNT: SP_INF_STYLE = 1u32;
 pub const INF_STYLE_WIN4: SP_INF_STYLE = 2u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 pub struct SP_INSTALLWIZARD_DATA {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
     pub Flags: u32,
-    pub DynamicPages: [super::super::UI::Controls::HPROPSHEETPAGE; 20],
+    pub DynamicPages: [::win32_ui_sys::Controls::HPROPSHEETPAGE; 20],
     pub NumDynamicPages: u32,
     pub DynamicPageFlags: u32,
     pub PrivateFlags: u32,
-    pub PrivateData: super::super::Foundation::LPARAM,
-    pub hwndWizardDlg: super::super::Foundation::HWND,
+    pub PrivateData: ::win32_foundation_sys::LPARAM,
+    pub hwndWizardDlg: ::win32_foundation_sys::HWND,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::marker::Copy for SP_INSTALLWIZARD_DATA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::clone::Clone for SP_INSTALLWIZARD_DATA {
     fn clone(&self) -> Self {
         *self
@@ -4807,22 +4401,22 @@ impl ::core::clone::Clone for SP_INSTALLWIZARD_DATA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 pub struct SP_INSTALLWIZARD_DATA {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
     pub Flags: u32,
-    pub DynamicPages: [super::super::UI::Controls::HPROPSHEETPAGE; 20],
+    pub DynamicPages: [::win32_ui_sys::Controls::HPROPSHEETPAGE; 20],
     pub NumDynamicPages: u32,
     pub DynamicPageFlags: u32,
     pub PrivateFlags: u32,
-    pub PrivateData: super::super::Foundation::LPARAM,
-    pub hwndWizardDlg: super::super::Foundation::HWND,
+    pub PrivateData: ::win32_foundation_sys::LPARAM,
+    pub hwndWizardDlg: ::win32_foundation_sys::HWND,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::marker::Copy for SP_INSTALLWIZARD_DATA {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::clone::Clone for SP_INSTALLWIZARD_DATA {
     fn clone(&self) -> Self {
         *self
@@ -4831,19 +4425,19 @@ impl ::core::clone::Clone for SP_INSTALLWIZARD_DATA {
 pub const SP_MAX_MACHINENAME_LENGTH: u32 = 263u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 pub struct SP_NEWDEVICEWIZARD_DATA {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
     pub Flags: u32,
-    pub DynamicPages: [super::super::UI::Controls::HPROPSHEETPAGE; 20],
+    pub DynamicPages: [::win32_ui_sys::Controls::HPROPSHEETPAGE; 20],
     pub NumDynamicPages: u32,
-    pub hwndWizardDlg: super::super::Foundation::HWND,
+    pub hwndWizardDlg: ::win32_foundation_sys::HWND,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::marker::Copy for SP_NEWDEVICEWIZARD_DATA {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::clone::Clone for SP_NEWDEVICEWIZARD_DATA {
     fn clone(&self) -> Self {
         *self
@@ -4851,19 +4445,19 @@ impl ::core::clone::Clone for SP_NEWDEVICEWIZARD_DATA {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 pub struct SP_NEWDEVICEWIZARD_DATA {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
     pub Flags: u32,
-    pub DynamicPages: [super::super::UI::Controls::HPROPSHEETPAGE; 20],
+    pub DynamicPages: [::win32_ui_sys::Controls::HPROPSHEETPAGE; 20],
     pub NumDynamicPages: u32,
-    pub hwndWizardDlg: super::super::Foundation::HWND,
+    pub hwndWizardDlg: ::win32_foundation_sys::HWND,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::marker::Copy for SP_NEWDEVICEWIZARD_DATA {}
 #[cfg(target_arch = "x86")]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
+#[cfg(feature = "Win32_UI_Controls")]
 impl ::core::clone::Clone for SP_NEWDEVICEWIZARD_DATA {
     fn clone(&self) -> Self {
         *self
@@ -4871,17 +4465,14 @@ impl ::core::clone::Clone for SP_NEWDEVICEWIZARD_DATA {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_ORIGINAL_FILE_INFO_A {
     pub cbSize: u32,
-    pub OriginalInfName: [super::super::Foundation::CHAR; 260],
-    pub OriginalCatalogName: [super::super::Foundation::CHAR; 260],
+    pub OriginalInfName: [::win32_foundation_sys::CHAR; 260],
+    pub OriginalCatalogName: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_ORIGINAL_FILE_INFO_A {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_ORIGINAL_FILE_INFO_A {
     fn clone(&self) -> Self {
         *self
@@ -4889,17 +4480,14 @@ impl ::core::clone::Clone for SP_ORIGINAL_FILE_INFO_A {
 }
 #[repr(C, packed(1))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_ORIGINAL_FILE_INFO_A {
     pub cbSize: u32,
-    pub OriginalInfName: [super::super::Foundation::CHAR; 260],
-    pub OriginalCatalogName: [super::super::Foundation::CHAR; 260],
+    pub OriginalInfName: [::win32_foundation_sys::CHAR; 260],
+    pub OriginalCatalogName: [::win32_foundation_sys::CHAR; 260],
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_ORIGINAL_FILE_INFO_A {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_ORIGINAL_FILE_INFO_A {
     fn clone(&self) -> Self {
         *self
@@ -4936,14 +4524,11 @@ impl ::core::clone::Clone for SP_ORIGINAL_FILE_INFO_W {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_POWERMESSAGEWAKE_PARAMS_A {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
-    pub PowerMessageWake: [super::super::Foundation::CHAR; 512],
+    pub PowerMessageWake: [::win32_foundation_sys::CHAR; 512],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_POWERMESSAGEWAKE_PARAMS_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_POWERMESSAGEWAKE_PARAMS_A {
     fn clone(&self) -> Self {
         *self
@@ -5136,18 +4721,15 @@ impl ::core::clone::Clone for SP_REMOVEDEVICE_PARAMS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_SELECTDEVICE_PARAMS_A {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
-    pub Title: [super::super::Foundation::CHAR; 60],
-    pub Instructions: [super::super::Foundation::CHAR; 256],
-    pub ListLabel: [super::super::Foundation::CHAR; 30],
-    pub SubTitle: [super::super::Foundation::CHAR; 256],
+    pub Title: [::win32_foundation_sys::CHAR; 60],
+    pub Instructions: [::win32_foundation_sys::CHAR; 256],
+    pub ListLabel: [::win32_foundation_sys::CHAR; 30],
+    pub SubTitle: [::win32_foundation_sys::CHAR; 256],
     pub Reserved: [u8; 2],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_SELECTDEVICE_PARAMS_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_SELECTDEVICE_PARAMS_A {
     fn clone(&self) -> Self {
         *self
@@ -5188,15 +4770,12 @@ impl ::core::clone::Clone for SP_SELECTDEVICE_PARAMS_W {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SP_TROUBLESHOOTER_PARAMS_A {
     pub ClassInstallHeader: SP_CLASSINSTALL_HEADER,
-    pub ChmFile: [super::super::Foundation::CHAR; 260],
-    pub HtmlTroubleShooter: [super::super::Foundation::CHAR; 260],
+    pub ChmFile: [::win32_foundation_sys::CHAR; 260],
+    pub HtmlTroubleShooter: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SP_TROUBLESHOOTER_PARAMS_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SP_TROUBLESHOOTER_PARAMS_A {
     fn clone(&self) -> Self {
         *self

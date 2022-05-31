@@ -322,38 +322,30 @@ impl ::core::default::Default for FILTER_MESSAGE_HEADER {
 }
 pub const FILTER_NAME_MAX_CHARS: u32 = 255u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILTER_REPLY_HEADER {
-    pub Status: super::super::Foundation::NTSTATUS,
+    pub Status: ::win32_foundation::NTSTATUS,
     pub MessageId: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILTER_REPLY_HEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILTER_REPLY_HEADER {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FILTER_REPLY_HEADER {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FILTER_REPLY_HEADER").field("Status", &self.Status).field("MessageId", &self.MessageId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FILTER_REPLY_HEADER {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FILTER_REPLY_HEADER {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FILTER_REPLY_HEADER>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FILTER_REPLY_HEADER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FILTER_REPLY_HEADER {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -549,17 +541,17 @@ pub unsafe fn FilterClose<'a, Param0: ::windows_core::IntoParam<'a, HFILTER>>(hf
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn FilterConnectCommunicationPort<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpportname: Param0, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<super::super::Foundation::HANDLE> {
+pub unsafe fn FilterConnectCommunicationPort<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpportname: Param0, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<::win32_foundation::HANDLE> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterConnectCommunicationPort(lpportname: ::windows_core::PCWSTR, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, hport: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn FilterConnectCommunicationPort(lpportname: ::windows_core::PCWSTR, dwoptions: u32, lpcontext: *const ::core::ffi::c_void, wsizeofcontext: u16, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, hport: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::HANDLE>::zeroed();
-        FilterConnectCommunicationPort(lpportname.into_param().abi(), ::core::mem::transmute(dwoptions), ::core::mem::transmute(lpcontext), ::core::mem::transmute(wsizeofcontext), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::HANDLE>(result__)
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::HANDLE>::zeroed();
+        FilterConnectCommunicationPort(lpportname.into_param().abi(), ::core::mem::transmute(dwoptions), ::core::mem::transmute(lpcontext), ::core::mem::transmute(wsizeofcontext), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::HANDLE>(result__)
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
@@ -591,14 +583,13 @@ pub unsafe fn FilterDetach<'a, Param0: ::windows_core::IntoParam<'a, ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterFindClose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterfind: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn FilterFindClose<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfilterfind: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterFindClose(hfilterfind: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn FilterFindClose(hfilterfind: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         FilterFindClose(hfilterfind.into_param().abi()).ok()
     }
@@ -645,14 +636,13 @@ impl ::core::fmt::Debug for FilterFindHandle {
 unsafe impl ::windows_core::Abi for FilterFindHandle {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterFindNext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterfind: Param0, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn FilterFindNext<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfilterfind: Param0, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterFindNext(hfilterfind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
+            fn FilterFindNext(hfilterfind: ::win32_foundation::HANDLE, dwinformationclass: FILTER_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterFindNext(hfilterfind.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -685,14 +675,14 @@ pub unsafe fn FilterGetInformation<'a, Param0: ::windows_core::IntoParam<'a, HFI
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn FilterGetMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hport: Param0, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::Result<()> {
+pub unsafe fn FilterGetMessage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hport: Param0, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterGetMessage(hport: super::super::Foundation::HANDLE, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core::HRESULT;
+            fn FilterGetMessage(hport: ::win32_foundation::HANDLE, lpmessagebuffer: *mut FILTER_MESSAGE_HEADER, dwmessagebuffersize: u32, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::windows_core::HRESULT;
         }
         FilterGetMessage(hport.into_param().abi(), ::core::mem::transmute(lpmessagebuffer), ::core::mem::transmute(dwmessagebuffersize), ::core::mem::transmute(lpoverlapped)).ok()
     }
@@ -726,14 +716,13 @@ pub unsafe fn FilterInstanceCreate<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterInstanceFindClose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterinstancefind: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn FilterInstanceFindClose<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfilterinstancefind: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterInstanceFindClose(hfilterinstancefind: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn FilterInstanceFindClose(hfilterinstancefind: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         FilterInstanceFindClose(hfilterinstancefind.into_param().abi()).ok()
     }
@@ -780,14 +769,13 @@ impl ::core::fmt::Debug for FilterInstanceFindHandle {
 unsafe impl ::windows_core::Abi for FilterInstanceFindHandle {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterInstanceFindNext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfilterinstancefind: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn FilterInstanceFindNext<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfilterinstancefind: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterInstanceFindNext(hfilterinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
+            fn FilterInstanceFindNext(hfilterinstancefind: ::win32_foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterInstanceFindNext(hfilterinstancefind.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -820,28 +808,26 @@ pub unsafe fn FilterLoad<'a, Param0: ::windows_core::IntoParam<'a, ::windows_cor
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterReplyMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hport: Param0, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows_core::Result<()> {
+pub unsafe fn FilterReplyMessage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hport: Param0, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterReplyMessage(hport: super::super::Foundation::HANDLE, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows_core::HRESULT;
+            fn FilterReplyMessage(hport: ::win32_foundation::HANDLE, lpreplybuffer: *const FILTER_REPLY_HEADER, dwreplybuffersize: u32) -> ::windows_core::HRESULT;
         }
         FilterReplyMessage(hport.into_param().abi(), ::core::mem::transmute(lpreplybuffer), ::core::mem::transmute(dwreplybuffersize)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterSendMessage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hport: Param0, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn FilterSendMessage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hport: Param0, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterSendMessage(hport: super::super::Foundation::HANDLE, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
+            fn FilterSendMessage(hport: ::win32_foundation::HANDLE, lpinbuffer: *const ::core::ffi::c_void, dwinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, dwoutbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterSendMessage(hport.into_param().abi(), ::core::mem::transmute(lpinbuffer), ::core::mem::transmute(dwinbuffersize), ::core::mem::transmute(lpoutbuffer), ::core::mem::transmute(dwoutbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
@@ -861,14 +847,13 @@ pub unsafe fn FilterUnload<'a, Param0: ::windows_core::IntoParam<'a, ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeFindClose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumefind: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn FilterVolumeFindClose<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hvolumefind: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeFindClose(hvolumefind: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn FilterVolumeFindClose(hvolumefind: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         FilterVolumeFindClose(hvolumefind.into_param().abi()).ok()
     }
@@ -915,28 +900,26 @@ impl ::core::fmt::Debug for FilterVolumeFindHandle {
 unsafe impl ::windows_core::Abi for FilterVolumeFindHandle {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeFindNext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumefind: Param0, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn FilterVolumeFindNext<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hvolumefind: Param0, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeFindNext(hvolumefind: super::super::Foundation::HANDLE, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
+            fn FilterVolumeFindNext(hvolumefind: ::win32_foundation::HANDLE, dwinformationclass: FILTER_VOLUME_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterVolumeFindNext(hvolumefind.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeInstanceFindClose<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumeinstancefind: Param0) -> ::windows_core::Result<()> {
+pub unsafe fn FilterVolumeInstanceFindClose<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hvolumeinstancefind: Param0) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeInstanceFindClose(hvolumeinstancefind: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT;
+            fn FilterVolumeInstanceFindClose(hvolumeinstancefind: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT;
         }
         FilterVolumeInstanceFindClose(hvolumeinstancefind.into_param().abi()).ok()
     }
@@ -983,14 +966,13 @@ impl ::core::fmt::Debug for FilterVolumeInstanceFindHandle {
 unsafe impl ::windows_core::Abi for FilterVolumeInstanceFindHandle {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn FilterVolumeInstanceFindNext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hvolumeinstancefind: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn FilterVolumeInstanceFindNext<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hvolumeinstancefind: Param0, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn FilterVolumeInstanceFindNext(hvolumeinstancefind: super::super::Foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
+            fn FilterVolumeInstanceFindNext(hvolumeinstancefind: ::win32_foundation::HANDLE, dwinformationclass: INSTANCE_INFORMATION_CLASS, lpbuffer: *mut ::core::ffi::c_void, dwbuffersize: u32, lpbytesreturned: *mut u32) -> ::windows_core::HRESULT;
         }
         FilterVolumeInstanceFindNext(hvolumeinstancefind.into_param().abi(), ::core::mem::transmute(dwinformationclass), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(dwbuffersize), ::core::mem::transmute(lpbytesreturned)).ok()
     }

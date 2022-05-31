@@ -564,7 +564,7 @@ pub const STATUS_SEVERITY_RTC_ERROR: u32 = 2u32;
 #[repr(C)]
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct TRANSPORT_SETTING {
-    pub SettingId: super::super::Networking::WinSock::TRANSPORT_SETTING_ID,
+    pub SettingId: ::win32_networking_sys::WinSock::TRANSPORT_SETTING_ID,
     pub Length: *mut u32,
     pub Value: *mut u8,
 }

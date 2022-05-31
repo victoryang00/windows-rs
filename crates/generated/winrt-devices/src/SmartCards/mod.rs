@@ -222,13 +222,10 @@ unsafe impl ::windows_core::Interface for ISmartCard {
 pub struct ISmartCard_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Reader: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetStatusAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetStatusAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub GetAnswerToResetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     GetAnswerToResetAsync: usize,
 }
 #[doc(hidden)]
@@ -312,10 +309,7 @@ pub struct ISmartCardAppletIdGroupRegistration_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub ActivationPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SmartCardAppletIdGroupActivationPolicy) -> ::windows_core::HRESULT,
     pub AppletIdGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub RequestActivationPolicyChangeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, policy: SmartCardAppletIdGroupActivationPolicy, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestActivationPolicyChangeAsync: usize,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub SetAutomaticResponseApdusAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, apdus: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -409,22 +403,10 @@ unsafe impl ::windows_core::Interface for ISmartCardAutomaticResponseApdu2 {
 #[doc(hidden)]
 pub struct ISmartCardAutomaticResponseApdu2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub InputState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InputState: usize,
-    #[cfg(feature = "Foundation")]
     pub SetInputState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetInputState: usize,
-    #[cfg(feature = "Foundation")]
     pub OutputState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OutputState: usize,
-    #[cfg(feature = "Foundation")]
     pub SetOutputState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetOutputState: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -471,21 +453,21 @@ pub struct ISmartCardChallengeContext_Vtbl {
     pub Challenge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Challenge: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub VerifyResponseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     VerifyResponseAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub ProvisionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, formatcard: bool, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     ProvisionAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub ProvisionAsyncWithNewCardId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, formatcard: bool, newcardid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     ProvisionAsyncWithNewCardId: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub ChangeAdministrativeKeyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr, newadministrativekey: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     ChangeAdministrativeKeyAsync: usize,
 }
 #[doc(hidden)]
@@ -499,10 +481,7 @@ unsafe impl ::windows_core::Interface for ISmartCardConnect {
 #[doc(hidden)]
 pub struct ISmartCardConnect_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ConnectAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ConnectAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -515,9 +494,9 @@ unsafe impl ::windows_core::Interface for ISmartCardConnection {
 #[doc(hidden)]
 pub struct ISmartCardConnection_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub TransmitAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, command: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     TransmitAsync: usize,
 }
 #[doc(hidden)]
@@ -551,34 +530,22 @@ pub struct ISmartCardCryptogramGenerator_Vtbl {
     pub SupportedSmartCardCryptogramStorageKeyCapabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SupportedSmartCardCryptogramStorageKeyCapabilities: usize,
-    #[cfg(feature = "Foundation")]
     pub DeleteCryptogramMaterialStorageKeyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storagekeyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeleteCryptogramMaterialStorageKeyAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub CreateCryptogramMaterialStorageKeyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, promptingbehavior: SmartCardUnlockPromptingBehavior, storagekeyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, algorithm: SmartCardCryptogramStorageKeyAlgorithm, capabilities: SmartCardCryptogramStorageKeyCapabilities, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateCryptogramMaterialStorageKeyAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Security_Cryptography_Core"))]
-    pub RequestCryptogramMaterialStorageKeyInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, promptingbehavior: SmartCardUnlockPromptingBehavior, storagekeyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, format: super::super::Security::Cryptography::Core::CryptographicPublicKeyBlobType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Cryptography_Core")))]
+    #[cfg(feature = "Security_Cryptography_Core")]
+    pub RequestCryptogramMaterialStorageKeyInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, promptingbehavior: SmartCardUnlockPromptingBehavior, storagekeyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, format: ::winrt_security::Cryptography::Core::CryptographicPublicKeyBlobType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Security_Cryptography_Core"))]
     RequestCryptogramMaterialStorageKeyInfoAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub ImportCryptogramMaterialPackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, format: SmartCardCryptogramMaterialPackageFormat, storagekeyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, materialpackagename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, cryptogrammaterialpackage: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     ImportCryptogramMaterialPackageAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub TryProvePossessionOfCryptogramMaterialPackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, promptingbehavior: SmartCardUnlockPromptingBehavior, responseformat: SmartCardCryptogramMaterialPackageConfirmationResponseFormat, materialpackagename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, materialname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, challenge: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     TryProvePossessionOfCryptogramMaterialPackageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestUnlockCryptogramMaterialForUseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, promptingbehavior: SmartCardUnlockPromptingBehavior, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestUnlockCryptogramMaterialForUseAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub DeleteCryptogramMaterialPackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, materialpackagename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeleteCryptogramMaterialPackageAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -595,22 +562,10 @@ pub struct ISmartCardCryptogramGenerator2_Vtbl {
     pub ValidateRequestApduAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, promptingbehavior: SmartCardUnlockPromptingBehavior, apdutovalidate: ::windows_core::RawPtr, cryptogramplacementsteps: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams")))]
     ValidateRequestApduAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetAllCryptogramStorageKeyCharacteristicsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAllCryptogramStorageKeyCharacteristicsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetAllCryptogramMaterialPackageCharacteristicsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAllCryptogramMaterialPackageCharacteristicsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storagekeyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetAllCryptogramMaterialCharacteristicsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, promptingbehavior: SmartCardUnlockPromptingBehavior, materialpackagename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAllCryptogramMaterialCharacteristicsAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -623,10 +578,7 @@ unsafe impl ::windows_core::Interface for ISmartCardCryptogramGeneratorStatics {
 #[doc(hidden)]
 pub struct ISmartCardCryptogramGeneratorStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetSmartCardCryptogramGeneratorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetSmartCardCryptogramGeneratorAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -734,10 +686,7 @@ pub struct ISmartCardCryptogramMaterialPackageCharacteristics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PackageName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub StorageKeyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub DateImported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DateImported: usize,
+    pub DateImported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub PackageFormat: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SmartCardCryptogramMaterialPackageFormat) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -805,10 +754,7 @@ unsafe impl ::windows_core::Interface for ISmartCardCryptogramStorageKeyCharacte
 pub struct ISmartCardCryptogramStorageKeyCharacteristics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub StorageKeyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub DateCreated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DateCreated: usize,
+    pub DateCreated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub Algorithm: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SmartCardCryptogramStorageKeyAlgorithm) -> ::windows_core::HRESULT,
     pub Capabilities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SmartCardCryptogramStorageKeyCapabilities) -> ::windows_core::HRESULT,
 }
@@ -825,7 +771,7 @@ pub struct ISmartCardCryptogramStorageKeyInfo_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub OperationStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SmartCardCryptogramGeneratorOperationStatus) -> ::windows_core::HRESULT,
     #[cfg(feature = "Security_Cryptography_Core")]
-    pub PublicKeyBlobType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Security::Cryptography::Core::CryptographicPublicKeyBlobType) -> ::windows_core::HRESULT,
+    pub PublicKeyBlobType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_security::Cryptography::Core::CryptographicPublicKeyBlobType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Security_Cryptography_Core"))]
     PublicKeyBlobType: usize,
     #[cfg(feature = "Storage_Streams")]
@@ -880,22 +826,10 @@ unsafe impl ::windows_core::Interface for ISmartCardEmulator2 {
 #[doc(hidden)]
 pub struct ISmartCardEmulator2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub ApduReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ApduReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveApduReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveApduReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub ConnectionDeactivated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ConnectionDeactivated: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveConnectionDeactivated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveConnectionDeactivated: usize,
+    pub ApduReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveApduReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub ConnectionDeactivated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveConnectionDeactivated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub IsHostCardEmulationSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
@@ -915,9 +849,9 @@ pub struct ISmartCardEmulatorApduReceivedEventArgs_Vtbl {
     #[cfg(not(feature = "Storage_Streams"))]
     CommandApdu: usize,
     pub ConnectionProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub TryRespondAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, responseapdu: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     TryRespondAsync: usize,
     pub AutomaticResponseStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SmartCardAutomaticResponseStatus) -> ::windows_core::HRESULT,
 }
@@ -933,9 +867,9 @@ unsafe impl ::windows_core::Interface for ISmartCardEmulatorApduReceivedEventArg
 pub struct ISmartCardEmulatorApduReceivedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub TryRespondWithStateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, responseapdu: ::windows_core::RawPtr, nextstate: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     TryRespondWithStateAsync: usize,
 }
 #[doc(hidden)]
@@ -997,10 +931,7 @@ unsafe impl ::windows_core::Interface for ISmartCardEmulatorStatics {
 #[doc(hidden)]
 pub struct ISmartCardEmulatorStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetDefaultAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDefaultAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1017,14 +948,8 @@ pub struct ISmartCardEmulatorStatics2_Vtbl {
     pub GetAppletIdGroupRegistrationsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetAppletIdGroupRegistrationsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RegisterAppletIdGroupAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, appletidgroup: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RegisterAppletIdGroupAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub UnregisterAppletIdGroupAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, registration: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UnregisterAppletIdGroupAsync: usize,
     pub MaxAppletIdGroupRegistrations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -1092,10 +1017,7 @@ pub struct ISmartCardPinResetRequest_Vtbl {
     pub Challenge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     Challenge: usize,
-    #[cfg(feature = "Foundation")]
-    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Deadline: usize,
+    pub Deadline: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
     pub SetResponse: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, response: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -1114,26 +1036,11 @@ unsafe impl ::windows_core::Interface for ISmartCardProvisioning {
 pub struct ISmartCardProvisioning_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SmartCard: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetIdAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetNameAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetChallengeContextAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetChallengeContextAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestPinChangeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestPinChangeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestPinResetAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestPinResetAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1146,10 +1053,7 @@ unsafe impl ::windows_core::Interface for ISmartCardProvisioning2 {
 #[doc(hidden)]
 pub struct ISmartCardProvisioning2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetAuthorityKeyContainerNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetAuthorityKeyContainerNameAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1162,22 +1066,16 @@ unsafe impl ::windows_core::Interface for ISmartCardProvisioningStatics {
 #[doc(hidden)]
 pub struct ISmartCardProvisioningStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub FromSmartCardAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, card: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromSmartCardAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub RequestVirtualSmartCardCreationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, friendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, administrativekey: ::windows_core::RawPtr, pinpolicy: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     RequestVirtualSmartCardCreationAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub RequestVirtualSmartCardCreationAsyncWithCardId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, friendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, administrativekey: ::windows_core::RawPtr, pinpolicy: ::windows_core::RawPtr, cardid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     RequestVirtualSmartCardCreationAsyncWithCardId: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestVirtualSmartCardDeletionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, card: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestVirtualSmartCardDeletionAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1190,13 +1088,13 @@ unsafe impl ::windows_core::Interface for ISmartCardProvisioningStatics2 {
 #[doc(hidden)]
 pub struct ISmartCardProvisioningStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub RequestAttestedVirtualSmartCardCreationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, friendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, administrativekey: ::windows_core::RawPtr, pinpolicy: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     RequestAttestedVirtualSmartCardCreationAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub RequestAttestedVirtualSmartCardCreationAsyncWithCardId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, friendlyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, administrativekey: ::windows_core::RawPtr, pinpolicy: ::windows_core::RawPtr, cardid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     RequestAttestedVirtualSmartCardCreationAsyncWithCardId: usize,
 }
 #[doc(hidden)]
@@ -1213,30 +1111,15 @@ pub struct ISmartCardReader_Vtbl {
     pub DeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SmartCardReaderKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetStatusAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetStatusAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub FindAllCardsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     FindAllCardsAsync: usize,
-    #[cfg(feature = "Foundation")]
-    pub CardAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CardAdded: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCardAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCardAdded: usize,
-    #[cfg(feature = "Foundation")]
-    pub CardRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CardRemoved: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCardRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCardRemoved: usize,
+    pub CardAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCardAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub CardRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCardRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1251,10 +1134,7 @@ pub struct ISmartCardReaderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetDeviceSelectorWithKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, kind: SmartCardReaderKind, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1289,14 +1169,8 @@ unsafe impl ::windows_core::Interface for ISmartCardTriggerDetails2 {
 pub struct ISmartCardTriggerDetails2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Emulator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub TryLaunchCurrentAppAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, arguments: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryLaunchCurrentAppAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryLaunchCurrentAppWithBehaviorAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, arguments: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, behavior: SmartCardLaunchBehavior, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryLaunchCurrentAppWithBehaviorAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1314,17 +1188,17 @@ pub struct ISmartCardTriggerDetails3_Vtbl {
 pub struct KnownSmartCardAppletIds;
 impl KnownSmartCardAppletIds {
     #[cfg(feature = "Storage_Streams")]
-    pub fn PaymentSystemEnvironment() -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn PaymentSystemEnvironment() -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         Self::IKnownSmartCardAppletIds(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PaymentSystemEnvironment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).PaymentSystemEnvironment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ProximityPaymentSystemEnvironment() -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn ProximityPaymentSystemEnvironment() -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         Self::IKnownSmartCardAppletIds(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProximityPaymentSystemEnvironment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).ProximityPaymentSystemEnvironment)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         })
     }
     pub fn IKnownSmartCardAppletIds<R, F: FnOnce(&IKnownSmartCardAppletIds) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1345,28 +1219,26 @@ impl SmartCard {
             (::windows_core::Interface::vtable(this).Reader)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SmartCardReader>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetStatusAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardStatus>> {
+    pub fn GetStatusAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStatusAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardStatus>>(result__)
+            (::windows_core::Interface::vtable(this).GetStatusAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardStatus>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn GetAnswerToResetAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn GetAnswerToResetAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAnswerToResetAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).GetAnswerToResetAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ConnectAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardConnection>> {
+    pub fn ConnectAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardConnection>> {
         let this = &::windows_core::Interface::cast::<ISmartCardConnect>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardConnection>>(result__)
+            (::windows_core::Interface::vtable(this).ConnectAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardConnection>>(result__)
         }
     }
 }
@@ -1497,11 +1369,11 @@ impl SmartCardAppletIdGroup {
         unsafe { (::windows_core::Interface::vtable(this).SetDisplayName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn AppletIds(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Storage::Streams::IBuffer>> {
+    pub fn AppletIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppletIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).AppletIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
     pub fn SmartCardEmulationCategory(&self) -> ::windows_core::Result<SmartCardEmulationCategory> {
@@ -1538,15 +1410,15 @@ impl SmartCardAppletIdGroup {
         unsafe { (::windows_core::Interface::vtable(this).SetAutomaticEnablement)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Logo(&self) -> ::windows_core::Result<super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn Logo(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = &::windows_core::Interface::cast::<ISmartCardAppletIdGroup2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Logo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).Logo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetLogo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetLogo<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ISmartCardAppletIdGroup2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetLogo)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1562,11 +1434,11 @@ impl SmartCardAppletIdGroup {
         unsafe { (::windows_core::Interface::vtable(this).SetDescription)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Properties(&self) -> ::windows_core::Result<super::super::Foundation::Collections::ValueSet> {
+    pub fn Properties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = &::windows_core::Interface::cast::<ISmartCardAppletIdGroup2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Properties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
     pub fn SecureUserAuthenticationRequired(&self) -> ::windows_core::Result<bool> {
@@ -1581,7 +1453,7 @@ impl SmartCardAppletIdGroup {
         unsafe { (::windows_core::Interface::vtable(this).SetSecureUserAuthenticationRequired)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IVector<super::super::Storage::Streams::IBuffer>>>(displayname: Param0, appletids: Param1, emulationcategory: SmartCardEmulationCategory, emulationtype: SmartCardEmulationType) -> ::windows_core::Result<SmartCardAppletIdGroup> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<::winrt_storage::Streams::IBuffer>>>(displayname: Param0, appletids: Param1, emulationcategory: SmartCardEmulationCategory, emulationtype: SmartCardEmulationType) -> ::windows_core::Result<SmartCardAppletIdGroup> {
         Self::ISmartCardAppletIdGroupFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), displayname.into_param().abi(), appletids.into_param().abi(), emulationcategory, emulationtype, result__.as_mut_ptr()).from_abi::<SmartCardAppletIdGroup>(result__)
@@ -1725,12 +1597,11 @@ impl SmartCardAppletIdGroupRegistration {
             (::windows_core::Interface::vtable(this).AppletIdGroup)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SmartCardAppletIdGroup>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestActivationPolicyChangeAsync(&self, policy: SmartCardAppletIdGroupActivationPolicy) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardActivationPolicyChangeResult>> {
+    pub fn RequestActivationPolicyChangeAsync(&self, policy: SmartCardAppletIdGroupActivationPolicy) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardActivationPolicyChangeResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestActivationPolicyChangeAsync)(::windows_core::Interface::as_raw(this), policy, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardActivationPolicyChangeResult>>(result__)
+            (::windows_core::Interface::vtable(this).RequestActivationPolicyChangeAsync)(::windows_core::Interface::as_raw(this), policy, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardActivationPolicyChangeResult>>(result__)
         }
     }
     pub fn Id(&self) -> ::windows_core::Result<::windows_core::GUID> {
@@ -1741,11 +1612,11 @@ impl SmartCardAppletIdGroupRegistration {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetAutomaticResponseApdusAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<SmartCardAutomaticResponseApdu>>>(&self, apdus: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SetAutomaticResponseApdusAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<SmartCardAutomaticResponseApdu>>>(&self, apdus: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetAutomaticResponseApdusAsync)(::windows_core::Interface::as_raw(this), apdus.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetAutomaticResponseApdusAsync)(::windows_core::Interface::as_raw(this), apdus.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn SmartCardReaderId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1756,11 +1627,11 @@ impl SmartCardAppletIdGroupRegistration {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::ValueSet>>(&self, props: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SetPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, props: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = &::windows_core::Interface::cast::<ISmartCardAppletIdGroupRegistration2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetPropertiesAsync)(::windows_core::Interface::as_raw(this), props.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetPropertiesAsync)(::windows_core::Interface::as_raw(this), props.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
 }
@@ -1840,28 +1711,28 @@ unsafe impl ::core::marker::Sync for SmartCardAppletIdGroupRegistration {}
 pub struct SmartCardAutomaticResponseApdu(::windows_core::IUnknown);
 impl SmartCardAutomaticResponseApdu {
     #[cfg(feature = "Storage_Streams")]
-    pub fn CommandApdu(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn CommandApdu(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CommandApdu)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).CommandApdu)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetCommandApdu<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCommandApdu<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCommandApdu)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CommandApduBitMask(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn CommandApduBitMask(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CommandApduBitMask)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).CommandApduBitMask)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetCommandApduBitMask<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCommandApduBitMask<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCommandApduBitMask)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1877,54 +1748,50 @@ impl SmartCardAutomaticResponseApdu {
         unsafe { (::windows_core::Interface::vtable(this).SetShouldMatchLength)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn AppletId(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn AppletId(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppletId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).AppletId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetAppletId<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetAppletId<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAppletId)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ResponseApdu(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn ResponseApdu(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ResponseApdu)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).ResponseApdu)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetResponseApdu<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetResponseApdu<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetResponseApdu)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InputState(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn InputState(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = &::windows_core::Interface::cast::<ISmartCardAutomaticResponseApdu2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InputState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).InputState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetInputState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<u32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetInputState<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<u32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ISmartCardAutomaticResponseApdu2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetInputState)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OutputState(&self) -> ::windows_core::Result<super::super::Foundation::IReference<u32>> {
+    pub fn OutputState(&self) -> ::windows_core::Result<::winrt_foundation::IReference<u32>> {
         let this = &::windows_core::Interface::cast::<ISmartCardAutomaticResponseApdu2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OutputState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<u32>>(result__)
+            (::windows_core::Interface::vtable(this).OutputState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetOutputState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<u32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetOutputState<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<u32>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ISmartCardAutomaticResponseApdu2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOutputState)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1940,7 +1807,7 @@ impl SmartCardAutomaticResponseApdu {
         unsafe { (::windows_core::Interface::vtable(this).SetAllowWhenCryptogramGeneratorNotPrepared)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(commandapdu: Param0, responseapdu: Param1) -> ::windows_core::Result<SmartCardAutomaticResponseApdu> {
+    pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(commandapdu: Param0, responseapdu: Param1) -> ::windows_core::Result<SmartCardAutomaticResponseApdu> {
         Self::ISmartCardAutomaticResponseApduFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), commandapdu.into_param().abi(), responseapdu.into_param().abi(), result__.as_mut_ptr()).from_abi::<SmartCardAutomaticResponseApdu>(result__)
@@ -2060,49 +1927,48 @@ unsafe impl ::windows_core::RuntimeType for SmartCardAutomaticResponseStatus {
 #[repr(transparent)]
 pub struct SmartCardChallengeContext(::windows_core::IUnknown);
 impl SmartCardChallengeContext {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Challenge(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Challenge(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Challenge)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Challenge)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn VerifyResponseAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, response: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn VerifyResponseAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, response: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).VerifyResponseAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).VerifyResponseAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ProvisionAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, response: Param0, formatcard: bool) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ProvisionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, response: Param0, formatcard: bool) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProvisionAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), formatcard, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ProvisionAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), formatcard, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ProvisionAsyncWithNewCardId<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, response: Param0, formatcard: bool, newcardid: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ProvisionAsyncWithNewCardId<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(&self, response: Param0, formatcard: bool, newcardid: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ProvisionAsyncWithNewCardId)(::windows_core::Interface::as_raw(this), response.into_param().abi(), formatcard, newcardid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ProvisionAsyncWithNewCardId)(::windows_core::Interface::as_raw(this), response.into_param().abi(), formatcard, newcardid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ChangeAdministrativeKeyAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, response: Param0, newadministrativekey: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ChangeAdministrativeKeyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, response: Param0, newadministrativekey: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ChangeAdministrativeKeyAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), newadministrativekey.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ChangeAdministrativeKeyAsync)(::windows_core::Interface::as_raw(this), response.into_param().abi(), newadministrativekey.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
 }
@@ -2176,30 +2042,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sma
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<SmartCardChallengeContext> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<SmartCardChallengeContext> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: SmartCardChallengeContext) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&SmartCardChallengeContext> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&SmartCardChallengeContext> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &SmartCardChallengeContext) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for SmartCardChallengeContext {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for SmartCardChallengeContext {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &SmartCardChallengeContext {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &SmartCardChallengeContext {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for SmartCardChallengeContext {}
@@ -2207,17 +2069,16 @@ unsafe impl ::core::marker::Sync for SmartCardChallengeContext {}
 #[repr(transparent)]
 pub struct SmartCardConnection(::windows_core::IUnknown);
 impl SmartCardConnection {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn TransmitAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, command: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn TransmitAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, command: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TransmitAsync)(::windows_core::Interface::as_raw(this), command.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).TransmitAsync)(::windows_core::Interface::as_raw(this), command.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
 }
@@ -2291,30 +2152,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Sma
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<SmartCardConnection> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<SmartCardConnection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: SmartCardConnection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&SmartCardConnection> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&SmartCardConnection> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &SmartCardConnection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for SmartCardConnection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for SmartCardConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &SmartCardConnection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &SmartCardConnection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for SmartCardConnection {}
@@ -2363,146 +2220,137 @@ unsafe impl ::windows_core::RuntimeType for SmartCardCryptogramAlgorithm {
 pub struct SmartCardCryptogramGenerator(::windows_core::IUnknown);
 impl SmartCardCryptogramGenerator {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SupportedCryptogramMaterialTypes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialType>> {
+    pub fn SupportedCryptogramMaterialTypes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialType>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedCryptogramMaterialTypes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialType>>(result__)
+            (::windows_core::Interface::vtable(this).SupportedCryptogramMaterialTypes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialType>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SupportedCryptogramAlgorithms(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>> {
+    pub fn SupportedCryptogramAlgorithms(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedCryptogramAlgorithms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>>(result__)
+            (::windows_core::Interface::vtable(this).SupportedCryptogramAlgorithms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SupportedCryptogramMaterialPackageFormats(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageFormat>> {
+    pub fn SupportedCryptogramMaterialPackageFormats(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageFormat>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedCryptogramMaterialPackageFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageFormat>>(result__)
+            (::windows_core::Interface::vtable(this).SupportedCryptogramMaterialPackageFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageFormat>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SupportedCryptogramMaterialPackageConfirmationResponseFormats(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageConfirmationResponseFormat>> {
+    pub fn SupportedCryptogramMaterialPackageConfirmationResponseFormats(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageConfirmationResponseFormat>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedCryptogramMaterialPackageConfirmationResponseFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageConfirmationResponseFormat>>(result__)
+            (::windows_core::Interface::vtable(this).SupportedCryptogramMaterialPackageConfirmationResponseFormats)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageConfirmationResponseFormat>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SupportedSmartCardCryptogramStorageKeyCapabilities(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramStorageKeyCapabilities>> {
+    pub fn SupportedSmartCardCryptogramStorageKeyCapabilities(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramStorageKeyCapabilities>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedSmartCardCryptogramStorageKeyCapabilities)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramStorageKeyCapabilities>>(result__)
+            (::windows_core::Interface::vtable(this).SupportedSmartCardCryptogramStorageKeyCapabilities)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramStorageKeyCapabilities>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteCryptogramMaterialStorageKeyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, storagekeyname: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
+    pub fn DeleteCryptogramMaterialStorageKeyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, storagekeyname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteCryptogramMaterialStorageKeyAsync)(::windows_core::Interface::as_raw(this), storagekeyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).DeleteCryptogramMaterialStorageKeyAsync)(::windows_core::Interface::as_raw(this), storagekeyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateCryptogramMaterialStorageKeyAsync<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, storagekeyname: Param1, algorithm: SmartCardCryptogramStorageKeyAlgorithm, capabilities: SmartCardCryptogramStorageKeyCapabilities) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
+    pub fn CreateCryptogramMaterialStorageKeyAsync<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, storagekeyname: Param1, algorithm: SmartCardCryptogramStorageKeyAlgorithm, capabilities: SmartCardCryptogramStorageKeyCapabilities) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateCryptogramMaterialStorageKeyAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, storagekeyname.into_param().abi(), algorithm, capabilities, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).CreateCryptogramMaterialStorageKeyAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, storagekeyname.into_param().abi(), algorithm, capabilities, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Security_Cryptography_Core"))]
-    pub fn RequestCryptogramMaterialStorageKeyInfoAsync<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, storagekeyname: Param1, format: super::super::Security::Cryptography::Core::CryptographicPublicKeyBlobType) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramStorageKeyInfo>> {
+    #[cfg(feature = "Security_Cryptography_Core")]
+    pub fn RequestCryptogramMaterialStorageKeyInfoAsync<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, storagekeyname: Param1, format: ::winrt_security::Cryptography::Core::CryptographicPublicKeyBlobType) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramStorageKeyInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestCryptogramMaterialStorageKeyInfoAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, storagekeyname.into_param().abi(), format, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramStorageKeyInfo>>(result__)
+            (::windows_core::Interface::vtable(this).RequestCryptogramMaterialStorageKeyInfoAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, storagekeyname.into_param().abi(), format, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramStorageKeyInfo>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn ImportCryptogramMaterialPackageAsync<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, format: SmartCardCryptogramMaterialPackageFormat, storagekeyname: Param1, materialpackagename: Param2, cryptogrammaterialpackage: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn ImportCryptogramMaterialPackageAsync<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, format: SmartCardCryptogramMaterialPackageFormat, storagekeyname: Param1, materialpackagename: Param2, cryptogrammaterialpackage: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ImportCryptogramMaterialPackageAsync)(::windows_core::Interface::as_raw(this), format, storagekeyname.into_param().abi(), materialpackagename.into_param().abi(), cryptogrammaterialpackage.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).ImportCryptogramMaterialPackageAsync)(::windows_core::Interface::as_raw(this), format, storagekeyname.into_param().abi(), materialpackagename.into_param().abi(), cryptogrammaterialpackage.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn TryProvePossessionOfCryptogramMaterialPackageAsync<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, responseformat: SmartCardCryptogramMaterialPackageConfirmationResponseFormat, materialpackagename: Param2, materialname: Param3, challenge: Param4) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramMaterialPossessionProof>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn TryProvePossessionOfCryptogramMaterialPackageAsync<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param4: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, responseformat: SmartCardCryptogramMaterialPackageConfirmationResponseFormat, materialpackagename: Param2, materialname: Param3, challenge: Param4) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramMaterialPossessionProof>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryProvePossessionOfCryptogramMaterialPackageAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, responseformat, materialpackagename.into_param().abi(), materialname.into_param().abi(), challenge.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramMaterialPossessionProof>>(result__)
+            (::windows_core::Interface::vtable(this).TryProvePossessionOfCryptogramMaterialPackageAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, responseformat, materialpackagename.into_param().abi(), materialname.into_param().abi(), challenge.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramMaterialPossessionProof>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestUnlockCryptogramMaterialForUseAsync(&self, promptingbehavior: SmartCardUnlockPromptingBehavior) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
+    pub fn RequestUnlockCryptogramMaterialForUseAsync(&self, promptingbehavior: SmartCardUnlockPromptingBehavior) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestUnlockCryptogramMaterialForUseAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).RequestUnlockCryptogramMaterialForUseAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteCryptogramMaterialPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, materialpackagename: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
+    pub fn DeleteCryptogramMaterialPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, materialpackagename: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteCryptogramMaterialPackageAsync)(::windows_core::Interface::as_raw(this), materialpackagename.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).DeleteCryptogramMaterialPackageAsync)(::windows_core::Interface::as_raw(this), materialpackagename.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn ValidateRequestApduAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<SmartCardCryptogramPlacementStep>>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, apdutovalidate: Param1, cryptogramplacementsteps: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
+    pub fn ValidateRequestApduAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<SmartCardCryptogramPlacementStep>>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, apdutovalidate: Param1, cryptogramplacementsteps: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
         let this = &::windows_core::Interface::cast::<ISmartCardCryptogramGenerator2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ValidateRequestApduAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, apdutovalidate.into_param().abi(), cryptogramplacementsteps.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).ValidateRequestApduAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, apdutovalidate.into_param().abi(), cryptogramplacementsteps.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAllCryptogramStorageKeyCharacteristicsAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult>> {
+    pub fn GetAllCryptogramStorageKeyCharacteristicsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult>> {
         let this = &::windows_core::Interface::cast::<ISmartCardCryptogramGenerator2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllCryptogramStorageKeyCharacteristicsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllCryptogramStorageKeyCharacteristicsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAllCryptogramMaterialPackageCharacteristicsAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>> {
+    pub fn GetAllCryptogramMaterialPackageCharacteristicsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>> {
         let this = &::windows_core::Interface::cast::<ISmartCardCryptogramGenerator2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllCryptogramMaterialPackageCharacteristicsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllCryptogramMaterialPackageCharacteristicsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, storagekeyname: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>> {
+    pub fn GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, storagekeyname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>> {
         let this = &::windows_core::Interface::cast::<ISmartCardCryptogramGenerator2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync)(::windows_core::Interface::as_raw(this), storagekeyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync)(::windows_core::Interface::as_raw(this), storagekeyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAllCryptogramMaterialCharacteristicsAsync<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, materialpackagename: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult>> {
+    pub fn GetAllCryptogramMaterialCharacteristicsAsync<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, promptingbehavior: SmartCardUnlockPromptingBehavior, materialpackagename: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult>> {
         let this = &::windows_core::Interface::cast::<ISmartCardCryptogramGenerator2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllCryptogramMaterialCharacteristicsAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, materialpackagename.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllCryptogramMaterialCharacteristicsAsync)(::windows_core::Interface::as_raw(this), promptingbehavior, materialpackagename.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetSmartCardCryptogramGeneratorAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGenerator>> {
+    pub fn GetSmartCardCryptogramGeneratorAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGenerator>> {
         Self::ISmartCardCryptogramGeneratorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSmartCardCryptogramGeneratorAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGenerator>>(result__)
+            (::windows_core::Interface::vtable(this).GetSmartCardCryptogramGeneratorAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGenerator>>(result__)
         })
     }
     pub fn IsSupported() -> ::windows_core::Result<bool> {
@@ -2655,11 +2503,11 @@ impl SmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Characteristics(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialCharacteristics>> {
+    pub fn Characteristics(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialCharacteristics>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialCharacteristics>>(result__)
+            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialCharacteristics>>(result__)
         }
     }
 }
@@ -2753,11 +2601,11 @@ impl SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Characteristics(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageCharacteristics>> {
+    pub fn Characteristics(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageCharacteristics>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageCharacteristics>>(result__)
+            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageCharacteristics>>(result__)
         }
     }
 }
@@ -2851,11 +2699,11 @@ impl SmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Characteristics(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramStorageKeyCharacteristics>> {
+    pub fn Characteristics(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramStorageKeyCharacteristics>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramStorageKeyCharacteristics>>(result__)
+            (::windows_core::Interface::vtable(this).Characteristics)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramStorageKeyCharacteristics>>(result__)
         }
     }
 }
@@ -2949,27 +2797,27 @@ impl SmartCardCryptogramMaterialCharacteristics {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AllowedAlgorithms(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>> {
+    pub fn AllowedAlgorithms(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AllowedAlgorithms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>>(result__)
+            (::windows_core::Interface::vtable(this).AllowedAlgorithms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AllowedProofOfPossessionAlgorithms(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageConfirmationResponseFormat>> {
+    pub fn AllowedProofOfPossessionAlgorithms(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageConfirmationResponseFormat>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AllowedProofOfPossessionAlgorithms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageConfirmationResponseFormat>>(result__)
+            (::windows_core::Interface::vtable(this).AllowedProofOfPossessionAlgorithms)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramMaterialPackageConfirmationResponseFormat>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AllowedValidations(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>> {
+    pub fn AllowedValidations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AllowedValidations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>>(result__)
+            (::windows_core::Interface::vtable(this).AllowedValidations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SmartCardCryptogramAlgorithm>>(result__)
         }
     }
     pub fn MaterialType(&self) -> ::windows_core::Result<SmartCardCryptogramMaterialType> {
@@ -3097,12 +2945,11 @@ impl SmartCardCryptogramMaterialPackageCharacteristics {
             (::windows_core::Interface::vtable(this).StorageKeyName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DateImported(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn DateImported(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).DateImported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).DateImported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn PackageFormat(&self) -> ::windows_core::Result<SmartCardCryptogramMaterialPackageFormat> {
@@ -3262,11 +3109,11 @@ impl SmartCardCryptogramMaterialPossessionProof {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Proof(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Proof(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Proof)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Proof)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -3495,15 +3342,15 @@ impl SmartCardCryptogramPlacementStep {
         unsafe { (::windows_core::Interface::vtable(this).SetAlgorithm)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SourceData(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn SourceData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SourceData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).SourceData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetSourceData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSourceData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSourceData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -3769,12 +3616,11 @@ impl SmartCardCryptogramStorageKeyCharacteristics {
             (::windows_core::Interface::vtable(this).StorageKeyName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DateCreated(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn DateCreated(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).DateCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).DateCreated)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn Algorithm(&self) -> ::windows_core::Result<SmartCardCryptogramStorageKeyAlgorithm> {
@@ -3875,19 +3721,19 @@ impl SmartCardCryptogramStorageKeyInfo {
         }
     }
     #[cfg(feature = "Security_Cryptography_Core")]
-    pub fn PublicKeyBlobType(&self) -> ::windows_core::Result<super::super::Security::Cryptography::Core::CryptographicPublicKeyBlobType> {
+    pub fn PublicKeyBlobType(&self) -> ::windows_core::Result<::winrt_security::Cryptography::Core::CryptographicPublicKeyBlobType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Security::Cryptography::Core::CryptographicPublicKeyBlobType>::zeroed();
-            (::windows_core::Interface::vtable(this).PublicKeyBlobType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Security::Cryptography::Core::CryptographicPublicKeyBlobType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_security::Cryptography::Core::CryptographicPublicKeyBlobType>::zeroed();
+            (::windows_core::Interface::vtable(this).PublicKeyBlobType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Cryptography::Core::CryptographicPublicKeyBlobType>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn PublicKey(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn PublicKey(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PublicKey)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).PublicKey)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn AttestationStatus(&self) -> ::windows_core::Result<SmartCardCryptographicKeyAttestationStatus> {
@@ -3898,19 +3744,19 @@ impl SmartCardCryptogramStorageKeyInfo {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Attestation(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Attestation(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Attestation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Attestation)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn AttestationCertificateChain(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn AttestationCertificateChain(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AttestationCertificateChain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).AttestationCertificateChain)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn Capabilities(&self) -> ::windows_core::Result<SmartCardCryptogramStorageKeyCapabilities> {
@@ -4116,29 +3962,25 @@ impl SmartCardEmulator {
             (::windows_core::Interface::vtable(this).EnablementPolicy)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SmartCardEmulatorEnablementPolicy>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ApduReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<SmartCardEmulator, SmartCardEmulatorApduReceivedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn ApduReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<SmartCardEmulator, SmartCardEmulatorApduReceivedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<ISmartCardEmulator2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ApduReceived)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ApduReceived)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveApduReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveApduReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ISmartCardEmulator2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveApduReceived)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ConnectionDeactivated<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<SmartCardEmulator, SmartCardEmulatorConnectionDeactivatedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn ConnectionDeactivated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<SmartCardEmulator, SmartCardEmulatorConnectionDeactivatedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<ISmartCardEmulator2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ConnectionDeactivated)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ConnectionDeactivated)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveConnectionDeactivated<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveConnectionDeactivated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ISmartCardEmulator2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveConnectionDeactivated)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -4153,32 +3995,29 @@ impl SmartCardEmulator {
             (::windows_core::Interface::vtable(this).IsHostCardEmulationSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDefaultAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardEmulator>> {
+    pub fn GetDefaultAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardEmulator>> {
         Self::ISmartCardEmulatorStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDefaultAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardEmulator>>(result__)
+            (::windows_core::Interface::vtable(this).GetDefaultAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardEmulator>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAppletIdGroupRegistrationsAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<SmartCardAppletIdGroupRegistration>>> {
+    pub fn GetAppletIdGroupRegistrationsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<SmartCardAppletIdGroupRegistration>>> {
         Self::ISmartCardEmulatorStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAppletIdGroupRegistrationsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<SmartCardAppletIdGroupRegistration>>>(result__)
+            (::windows_core::Interface::vtable(this).GetAppletIdGroupRegistrationsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<SmartCardAppletIdGroupRegistration>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RegisterAppletIdGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCardAppletIdGroup>>(appletidgroup: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardAppletIdGroupRegistration>> {
+    pub fn RegisterAppletIdGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCardAppletIdGroup>>(appletidgroup: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardAppletIdGroupRegistration>> {
         Self::ISmartCardEmulatorStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterAppletIdGroupAsync)(::windows_core::Interface::as_raw(this), appletidgroup.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardAppletIdGroupRegistration>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterAppletIdGroupAsync)(::windows_core::Interface::as_raw(this), appletidgroup.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardAppletIdGroupRegistration>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UnregisterAppletIdGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCardAppletIdGroupRegistration>>(registration: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn UnregisterAppletIdGroupAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCardAppletIdGroupRegistration>>(registration: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::ISmartCardEmulatorStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UnregisterAppletIdGroupAsync)(::windows_core::Interface::as_raw(this), registration.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).UnregisterAppletIdGroupAsync)(::windows_core::Interface::as_raw(this), registration.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
     pub fn MaxAppletIdGroupRegistrations() -> ::windows_core::Result<u16> {
@@ -4282,11 +4121,11 @@ unsafe impl ::core::marker::Sync for SmartCardEmulator {}
 pub struct SmartCardEmulatorApduReceivedEventArgs(::windows_core::IUnknown);
 impl SmartCardEmulatorApduReceivedEventArgs {
     #[cfg(feature = "Storage_Streams")]
-    pub fn CommandApdu(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn CommandApdu(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CommandApdu)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).CommandApdu)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn ConnectionProperties(&self) -> ::windows_core::Result<SmartCardEmulatorConnectionProperties> {
@@ -4296,12 +4135,12 @@ impl SmartCardEmulatorApduReceivedEventArgs {
             (::windows_core::Interface::vtable(this).ConnectionProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SmartCardEmulatorConnectionProperties>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn TryRespondAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, responseapdu: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn TryRespondAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, responseapdu: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryRespondAsync)(::windows_core::Interface::as_raw(this), responseapdu.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryRespondAsync)(::windows_core::Interface::as_raw(this), responseapdu.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn AutomaticResponseStatus(&self) -> ::windows_core::Result<SmartCardAutomaticResponseStatus> {
@@ -4318,28 +4157,28 @@ impl SmartCardEmulatorApduReceivedEventArgs {
             (::windows_core::Interface::vtable(this).State)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn TryRespondWithStateAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<u32>>>(&self, responseapdu: Param0, nextstate: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn TryRespondWithStateAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<u32>>>(&self, responseapdu: Param0, nextstate: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<ISmartCardEmulatorApduReceivedEventArgs2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryRespondWithStateAsync)(::windows_core::Interface::as_raw(this), responseapdu.into_param().abi(), nextstate.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryRespondWithStateAsync)(::windows_core::Interface::as_raw(this), responseapdu.into_param().abi(), nextstate.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn TryRespondWithCryptogramsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<SmartCardCryptogramPlacementStep>>>(&self, responsetemplate: Param0, cryptogramplacementsteps: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
+    pub fn TryRespondWithCryptogramsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<SmartCardCryptogramPlacementStep>>>(&self, responsetemplate: Param0, cryptogramplacementsteps: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
         let this = &::windows_core::Interface::cast::<ISmartCardEmulatorApduReceivedEventArgsWithCryptograms>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryRespondWithCryptogramsAsync)(::windows_core::Interface::as_raw(this), responsetemplate.into_param().abi(), cryptogramplacementsteps.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).TryRespondWithCryptogramsAsync)(::windows_core::Interface::as_raw(this), responsetemplate.into_param().abi(), cryptogramplacementsteps.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn TryRespondWithCryptogramsAndStateAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<SmartCardCryptogramPlacementStep>>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::IReference<u32>>>(&self, responsetemplate: Param0, cryptogramplacementsteps: Param1, nextstate: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
+    pub fn TryRespondWithCryptogramsAndStateAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<SmartCardCryptogramPlacementStep>>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<u32>>>(&self, responsetemplate: Param0, cryptogramplacementsteps: Param1, nextstate: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>> {
         let this = &::windows_core::Interface::cast::<ISmartCardEmulatorApduReceivedEventArgsWithCryptograms>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryRespondWithCryptogramsAndStateAsync)(::windows_core::Interface::as_raw(this), responsetemplate.into_param().abi(), cryptogramplacementsteps.into_param().abi(), nextstate.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
+            (::windows_core::Interface::vtable(this).TryRespondWithCryptogramsAndStateAsync)(::windows_core::Interface::as_raw(this), responsetemplate.into_param().abi(), cryptogramplacementsteps.into_param().abi(), nextstate.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>>(result__)
         }
     }
 }
@@ -5079,19 +4918,18 @@ pub struct SmartCardPinResetHandler_Vtbl {
 pub struct SmartCardPinResetRequest(::windows_core::IUnknown);
 impl SmartCardPinResetRequest {
     #[cfg(feature = "Storage_Streams")]
-    pub fn Challenge(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Challenge(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Challenge)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Challenge)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Deadline(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn Deadline(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).Deadline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).Deadline)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn GetDeferral(&self) -> ::windows_core::Result<SmartCardPinResetDeferral> {
@@ -5102,7 +4940,7 @@ impl SmartCardPinResetRequest {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetResponse<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, response: Param0) -> ::windows_core::Result<()> {
+    pub fn SetResponse<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, response: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetResponse)(::windows_core::Interface::as_raw(this), response.into_param().abi()).ok() }
     }
@@ -5189,94 +5027,86 @@ impl SmartCardProvisioning {
             (::windows_core::Interface::vtable(this).SmartCard)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SmartCard>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetIdAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::GUID>> {
+    pub fn GetIdAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::GUID>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetIdAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::GUID>>(result__)
+            (::windows_core::Interface::vtable(this).GetIdAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::GUID>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetNameAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetNameAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetChallengeContextAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardChallengeContext>> {
+    pub fn GetChallengeContextAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardChallengeContext>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetChallengeContextAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardChallengeContext>>(result__)
+            (::windows_core::Interface::vtable(this).GetChallengeContextAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardChallengeContext>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestPinChangeAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestPinChangeAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestPinChangeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestPinChangeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestPinResetAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCardPinResetHandler>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestPinResetAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCardPinResetHandler>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestPinResetAsync)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestPinResetAsync)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetAuthorityKeyContainerNameAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetAuthorityKeyContainerNameAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         let this = &::windows_core::Interface::cast::<ISmartCardProvisioning2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAuthorityKeyContainerNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetAuthorityKeyContainerNameAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromSmartCardAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCard>>(card: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>> {
+    pub fn FromSmartCardAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCard>>(card: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>> {
         Self::ISmartCardProvisioningStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromSmartCardAsync)(::windows_core::Interface::as_raw(this), card.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
+            (::windows_core::Interface::vtable(this).FromSmartCardAsync)(::windows_core::Interface::as_raw(this), card.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn RequestVirtualSmartCardCreationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, SmartCardPinPolicy>>(friendlyname: Param0, administrativekey: Param1, pinpolicy: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn RequestVirtualSmartCardCreationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, SmartCardPinPolicy>>(friendlyname: Param0, administrativekey: Param1, pinpolicy: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>> {
         Self::ISmartCardProvisioningStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestVirtualSmartCardCreationAsync)(::windows_core::Interface::as_raw(this), friendlyname.into_param().abi(), administrativekey.into_param().abi(), pinpolicy.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
+            (::windows_core::Interface::vtable(this).RequestVirtualSmartCardCreationAsync)(::windows_core::Interface::as_raw(this), friendlyname.into_param().abi(), administrativekey.into_param().abi(), pinpolicy.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn RequestVirtualSmartCardCreationAsyncWithCardId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, SmartCardPinPolicy>, Param3: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(friendlyname: Param0, administrativekey: Param1, pinpolicy: Param2, cardid: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn RequestVirtualSmartCardCreationAsyncWithCardId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, SmartCardPinPolicy>, Param3: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(friendlyname: Param0, administrativekey: Param1, pinpolicy: Param2, cardid: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>> {
         Self::ISmartCardProvisioningStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestVirtualSmartCardCreationAsyncWithCardId)(::windows_core::Interface::as_raw(this), friendlyname.into_param().abi(), administrativekey.into_param().abi(), pinpolicy.into_param().abi(), cardid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
+            (::windows_core::Interface::vtable(this).RequestVirtualSmartCardCreationAsyncWithCardId)(::windows_core::Interface::as_raw(this), friendlyname.into_param().abi(), administrativekey.into_param().abi(), pinpolicy.into_param().abi(), cardid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestVirtualSmartCardDeletionAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCard>>(card: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn RequestVirtualSmartCardDeletionAsync<'a, Param0: ::windows_core::IntoParam<'a, SmartCard>>(card: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ISmartCardProvisioningStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestVirtualSmartCardDeletionAsync)(::windows_core::Interface::as_raw(this), card.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).RequestVirtualSmartCardDeletionAsync)(::windows_core::Interface::as_raw(this), card.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn RequestAttestedVirtualSmartCardCreationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, SmartCardPinPolicy>>(friendlyname: Param0, administrativekey: Param1, pinpolicy: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn RequestAttestedVirtualSmartCardCreationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, SmartCardPinPolicy>>(friendlyname: Param0, administrativekey: Param1, pinpolicy: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>> {
         Self::ISmartCardProvisioningStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAttestedVirtualSmartCardCreationAsync)(::windows_core::Interface::as_raw(this), friendlyname.into_param().abi(), administrativekey.into_param().abi(), pinpolicy.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAttestedVirtualSmartCardCreationAsync)(::windows_core::Interface::as_raw(this), friendlyname.into_param().abi(), administrativekey.into_param().abi(), pinpolicy.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn RequestAttestedVirtualSmartCardCreationAsyncWithCardId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, SmartCardPinPolicy>, Param3: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(friendlyname: Param0, administrativekey: Param1, pinpolicy: Param2, cardid: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn RequestAttestedVirtualSmartCardCreationAsyncWithCardId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, SmartCardPinPolicy>, Param3: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(friendlyname: Param0, administrativekey: Param1, pinpolicy: Param2, cardid: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>> {
         Self::ISmartCardProvisioningStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAttestedVirtualSmartCardCreationAsyncWithCardId)(::windows_core::Interface::as_raw(this), friendlyname.into_param().abi(), administrativekey.into_param().abi(), pinpolicy.into_param().abi(), cardid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAttestedVirtualSmartCardCreationAsyncWithCardId)(::windows_core::Interface::as_raw(this), friendlyname.into_param().abi(), administrativekey.into_param().abi(), pinpolicy.into_param().abi(), cardid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardProvisioning>>(result__)
         })
     }
     pub fn ISmartCardProvisioningStatics<R, F: FnOnce(&ISmartCardProvisioningStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -5384,45 +5214,40 @@ impl SmartCardReader {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SmartCardReaderKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetStatusAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardReaderStatus>> {
+    pub fn GetStatusAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardReaderStatus>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStatusAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardReaderStatus>>(result__)
+            (::windows_core::Interface::vtable(this).GetStatusAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardReaderStatus>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindAllCardsAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<SmartCard>>> {
+    pub fn FindAllCardsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<SmartCard>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllCardsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Foundation::Collections::IVectorView<SmartCard>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllCardsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<SmartCard>>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CardAdded<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<SmartCardReader, CardAddedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn CardAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<SmartCardReader, CardAddedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CardAdded)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CardAdded)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCardAdded<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCardAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCardAdded)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CardRemoved<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<SmartCardReader, CardRemovedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn CardRemoved<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<SmartCardReader, CardRemovedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CardRemoved)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CardRemoved)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCardRemoved<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCardRemoved<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCardRemoved)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -5438,11 +5263,10 @@ impl SmartCardReader {
             (::windows_core::Interface::vtable(this).GetDeviceSelectorWithKind)(::windows_core::Interface::as_raw(this), kind, result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<SmartCardReader>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<SmartCardReader>> {
         Self::ISmartCardReaderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<SmartCardReader>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<SmartCardReader>>(result__)
         })
     }
     pub fn ISmartCardReaderStatics<R, F: FnOnce(&ISmartCardReaderStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -5640,19 +5464,19 @@ impl SmartCardTriggerDetails {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SourceAppletId(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn SourceAppletId(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SourceAppletId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).SourceAppletId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn TriggerData(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn TriggerData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TriggerData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).TriggerData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn Emulator(&self) -> ::windows_core::Result<SmartCardEmulator> {
@@ -5662,20 +5486,18 @@ impl SmartCardTriggerDetails {
             (::windows_core::Interface::vtable(this).Emulator)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SmartCardEmulator>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryLaunchCurrentAppAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, arguments: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryLaunchCurrentAppAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, arguments: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<ISmartCardTriggerDetails2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryLaunchCurrentAppAsync)(::windows_core::Interface::as_raw(this), arguments.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryLaunchCurrentAppAsync)(::windows_core::Interface::as_raw(this), arguments.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryLaunchCurrentAppWithBehaviorAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, arguments: Param0, behavior: SmartCardLaunchBehavior) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryLaunchCurrentAppWithBehaviorAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, arguments: Param0, behavior: SmartCardLaunchBehavior) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<ISmartCardTriggerDetails2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryLaunchCurrentAppWithBehaviorAsync)(::windows_core::Interface::as_raw(this), arguments.into_param().abi(), behavior, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryLaunchCurrentAppWithBehaviorAsync)(::windows_core::Interface::as_raw(this), arguments.into_param().abi(), behavior, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn SmartCard(&self) -> ::windows_core::Result<SmartCard> {

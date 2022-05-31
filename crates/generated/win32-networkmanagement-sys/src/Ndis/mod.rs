@@ -1056,15 +1056,14 @@ pub const NDIS_HD_SPLIT_PARAMETERS_REVISION_1: u32 = 1u32;
 pub const NDIS_HYPERVISOR_INFO_FLAG_HYPERVISOR_PRESENT: u32 = 1u32;
 pub const NDIS_HYPERVISOR_INFO_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NDIS_INTERFACE_INFORMATION {
     pub ifOperStatus: NET_IF_OPER_STATUS,
     pub ifOperStatusFlags: u32,
     pub MediaConnectState: NET_IF_MEDIA_CONNECT_STATE,
     pub MediaDuplexState: NET_IF_MEDIA_DUPLEX_STATE,
     pub ifMtu: u32,
-    pub ifPromiscuousMode: super::super::Foundation::BOOLEAN,
-    pub ifDeviceWakeUpEnable: super::super::Foundation::BOOLEAN,
+    pub ifPromiscuousMode: ::win32_foundation_sys::BOOLEAN,
+    pub ifDeviceWakeUpEnable: ::win32_foundation_sys::BOOLEAN,
     pub XmitLinkSpeed: u64,
     pub RcvLinkSpeed: u64,
     pub ifLastChange: u64,
@@ -1091,9 +1090,7 @@ pub struct NDIS_INTERFACE_INFORMATION {
     pub CompartmentId: u32,
     pub SupportedStatistics: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NDIS_INTERFACE_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NDIS_INTERFACE_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -2332,18 +2329,15 @@ impl ::core::clone::Clone for NDIS_TIMEOUT_DPC_REQUEST_CAPABILITIES {
 }
 pub const NDIS_TIMEOUT_DPC_REQUEST_CAPABILITIES_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NDIS_TIMESTAMP_CAPABILITIES {
     pub Header: NDIS_OBJECT_HEADER,
     pub HardwareClockFrequencyHz: u64,
-    pub CrossTimestamp: super::super::Foundation::BOOLEAN,
+    pub CrossTimestamp: ::win32_foundation_sys::BOOLEAN,
     pub Reserved1: u64,
     pub Reserved2: u64,
     pub TimestampFlags: NDIS_TIMESTAMP_CAPABILITY_FLAGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NDIS_TIMESTAMP_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NDIS_TIMESTAMP_CAPABILITIES {
     fn clone(&self) -> Self {
         *self
@@ -2351,26 +2345,23 @@ impl ::core::clone::Clone for NDIS_TIMESTAMP_CAPABILITIES {
 }
 pub const NDIS_TIMESTAMP_CAPABILITIES_REVISION_1: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NDIS_TIMESTAMP_CAPABILITY_FLAGS {
-    pub PtpV2OverUdpIPv4EventMsgReceiveHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv4AllMsgReceiveHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv4EventMsgTransmitHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv4AllMsgTransmitHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv6EventMsgReceiveHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv6AllMsgReceiveHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv6EventMsgTransmitHw: super::super::Foundation::BOOLEAN,
-    pub PtpV2OverUdpIPv6AllMsgTransmitHw: super::super::Foundation::BOOLEAN,
-    pub AllReceiveHw: super::super::Foundation::BOOLEAN,
-    pub AllTransmitHw: super::super::Foundation::BOOLEAN,
-    pub TaggedTransmitHw: super::super::Foundation::BOOLEAN,
-    pub AllReceiveSw: super::super::Foundation::BOOLEAN,
-    pub AllTransmitSw: super::super::Foundation::BOOLEAN,
-    pub TaggedTransmitSw: super::super::Foundation::BOOLEAN,
+    pub PtpV2OverUdpIPv4EventMsgReceiveHw: ::win32_foundation_sys::BOOLEAN,
+    pub PtpV2OverUdpIPv4AllMsgReceiveHw: ::win32_foundation_sys::BOOLEAN,
+    pub PtpV2OverUdpIPv4EventMsgTransmitHw: ::win32_foundation_sys::BOOLEAN,
+    pub PtpV2OverUdpIPv4AllMsgTransmitHw: ::win32_foundation_sys::BOOLEAN,
+    pub PtpV2OverUdpIPv6EventMsgReceiveHw: ::win32_foundation_sys::BOOLEAN,
+    pub PtpV2OverUdpIPv6AllMsgReceiveHw: ::win32_foundation_sys::BOOLEAN,
+    pub PtpV2OverUdpIPv6EventMsgTransmitHw: ::win32_foundation_sys::BOOLEAN,
+    pub PtpV2OverUdpIPv6AllMsgTransmitHw: ::win32_foundation_sys::BOOLEAN,
+    pub AllReceiveHw: ::win32_foundation_sys::BOOLEAN,
+    pub AllTransmitHw: ::win32_foundation_sys::BOOLEAN,
+    pub TaggedTransmitHw: ::win32_foundation_sys::BOOLEAN,
+    pub AllReceiveSw: ::win32_foundation_sys::BOOLEAN,
+    pub AllTransmitSw: ::win32_foundation_sys::BOOLEAN,
+    pub TaggedTransmitSw: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NDIS_TIMESTAMP_CAPABILITY_FLAGS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NDIS_TIMESTAMP_CAPABILITY_FLAGS {
     fn clone(&self) -> Self {
         *self
@@ -2474,17 +2465,14 @@ pub const NDIS_WLAN_WAKE_ON_NLO_DISCOVERY_ENABLED: u32 = 1u32;
 pub const NDIS_WLAN_WAKE_ON_NLO_DISCOVERY_SUPPORTED: u32 = 1u32;
 pub const NDIS_WMI_DEFAULT_METHOD_ID: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NDIS_WMI_ENUM_ADAPTER {
     pub Header: NDIS_OBJECT_HEADER,
     pub IfIndex: u32,
     pub NetLuid: NET_LUID_LH,
     pub DeviceNameLength: u16,
-    pub DeviceName: [super::super::Foundation::CHAR; 1],
+    pub DeviceName: [::win32_foundation_sys::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NDIS_WMI_ENUM_ADAPTER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NDIS_WMI_ENUM_ADAPTER {
     fn clone(&self) -> Self {
         *self
@@ -3058,7 +3046,6 @@ pub const OFFLOAD_IPSEC_INTEGRITY_MD5: OFFLOAD_INTEGRITY_ALGO = 1i32;
 pub const OFFLOAD_IPSEC_INTEGRITY_SHA: OFFLOAD_INTEGRITY_ALGO = 2i32;
 pub const OFFLOAD_IPSEC_INTEGRITY_MAX: OFFLOAD_INTEGRITY_ALGO = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OFFLOAD_IPSEC_ADD_SA {
     pub SrcAddr: u32,
     pub SrcMask: u32,
@@ -3072,20 +3059,17 @@ pub struct OFFLOAD_IPSEC_ADD_SA {
     pub Flags: u16,
     pub NumSAs: i16,
     pub SecAssoc: [OFFLOAD_SECURITY_ASSOCIATION; 3],
-    pub OffloadHandle: super::super::Foundation::HANDLE,
+    pub OffloadHandle: ::win32_foundation_sys::HANDLE,
     pub KeyLen: u32,
     pub KeyMat: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OFFLOAD_IPSEC_ADD_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OFFLOAD_IPSEC_ADD_SA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OFFLOAD_IPSEC_ADD_UDPESP_SA {
     pub SrcAddr: u32,
     pub SrcMask: u32,
@@ -3099,42 +3083,34 @@ pub struct OFFLOAD_IPSEC_ADD_UDPESP_SA {
     pub Flags: u16,
     pub NumSAs: i16,
     pub SecAssoc: [OFFLOAD_SECURITY_ASSOCIATION; 3],
-    pub OffloadHandle: super::super::Foundation::HANDLE,
+    pub OffloadHandle: ::win32_foundation_sys::HANDLE,
     pub EncapTypeEntry: OFFLOAD_IPSEC_UDPESP_ENCAPTYPE_ENTRY,
-    pub EncapTypeEntryOffldHandle: super::super::Foundation::HANDLE,
+    pub EncapTypeEntryOffldHandle: ::win32_foundation_sys::HANDLE,
     pub KeyLen: u32,
     pub KeyMat: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OFFLOAD_IPSEC_ADD_UDPESP_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OFFLOAD_IPSEC_ADD_UDPESP_SA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OFFLOAD_IPSEC_DELETE_SA {
-    pub OffloadHandle: super::super::Foundation::HANDLE,
+    pub OffloadHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OFFLOAD_IPSEC_DELETE_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OFFLOAD_IPSEC_DELETE_SA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OFFLOAD_IPSEC_DELETE_UDPESP_SA {
-    pub OffloadHandle: super::super::Foundation::HANDLE,
-    pub EncapTypeEntryOffldHandle: super::super::Foundation::HANDLE,
+    pub OffloadHandle: ::win32_foundation_sys::HANDLE,
+    pub EncapTypeEntryOffldHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OFFLOAD_IPSEC_DELETE_UDPESP_SA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OFFLOAD_IPSEC_DELETE_UDPESP_SA {
     fn clone(&self) -> Self {
         *self

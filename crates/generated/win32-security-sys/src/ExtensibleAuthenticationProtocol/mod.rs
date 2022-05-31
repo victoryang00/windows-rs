@@ -1,47 +1,37 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EapHostPeerBeginSession(dwflags: u32, eaptype: EAP_METHOD_TYPE, pattributearray: *const EAP_ATTRIBUTES, htokenimpersonateuser: super::super::Foundation::HANDLE, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, dwmaxsendpacketsize: u32, pconnectionid: *const ::windows_core_sys::GUID, func: NotificationHandler, pcontextdata: *mut ::core::ffi::c_void, psessionid: *mut u32, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerBeginSession(dwflags: u32, eaptype: EAP_METHOD_TYPE, pattributearray: *const EAP_ATTRIBUTES, htokenimpersonateuser: ::win32_foundation_sys::HANDLE, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, dwmaxsendpacketsize: u32, pconnectionid: *const ::windows_core_sys::GUID, func: NotificationHandler, pcontextdata: *mut ::core::ffi::c_void, psessionid: *mut u32, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerClearConnection(pconnectionid: *mut ::windows_core_sys::GUID, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub fn EapHostPeerConfigBlob2Xml(dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconfigin: u32, pconfigin: *const u8, ppconfigdoc: *mut super::super::Data::Xml::MsXml::IXMLDOMDocument2, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerConfigBlob2Xml(dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconfigin: u32, pconfigin: *const u8, ppconfigdoc: *mut ::win32_data_sys::Xml::MsXml::IXMLDOMDocument2, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub fn EapHostPeerConfigXml2Blob(dwflags: u32, pconfigdoc: super::super::Data::Xml::MsXml::IXMLDOMNode, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerConfigXml2Blob(dwflags: u32, pconfigdoc: ::win32_data_sys::Xml::MsXml::IXMLDOMNode, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub fn EapHostPeerCredentialsXml2Blob(dwflags: u32, pcredentialsdoc: super::super::Data::Xml::MsXml::IXMLDOMNode, dwsizeofconfigin: u32, pconfigin: *const u8, pdwsizeofcredentialsout: *mut u32, ppcredentialsout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerCredentialsXml2Blob(dwflags: u32, pcredentialsdoc: ::win32_data_sys::Xml::MsXml::IXMLDOMNode, dwsizeofconfigin: u32, pconfigin: *const u8, pdwsizeofcredentialsout: *mut u32, ppcredentialsout: *mut *mut u8, peapmethodtype: *mut EAP_METHOD_TYPE, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerEndSession(sessionhandle: u32, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerFreeEapError(peaperror: *mut EAP_ERROR);
     pub fn EapHostPeerFreeErrorMemory(peaperror: *mut EAP_ERROR);
     pub fn EapHostPeerFreeMemory(pdata: *mut u8);
     pub fn EapHostPeerFreeRuntimeMemory(pdata: *mut u8);
     pub fn EapHostPeerGetAuthStatus(sessionhandle: u32, authparam: EapHostPeerAuthParams, pcbauthdata: *mut u32, ppauthdata: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EapHostPeerGetDataToUnplumbCredentials(pconnectionidthatlastsavedcreds: *mut ::windows_core_sys::GUID, phcredentialimpersonationtoken: *mut isize, sessionhandle: u32, ppeaperror: *mut *mut EAP_ERROR, fsavetocredman: *mut super::super::Foundation::BOOL) -> u32;
+    pub fn EapHostPeerGetDataToUnplumbCredentials(pconnectionidthatlastsavedcreds: *mut ::windows_core_sys::GUID, phcredentialimpersonationtoken: *mut isize, sessionhandle: u32, ppeaperror: *mut *mut EAP_ERROR, fsavetocredman: *mut ::win32_foundation_sys::BOOL) -> u32;
     pub fn EapHostPeerGetEncryptedPassword(dwsizeofpassword: u32, szpassword: ::windows_core_sys::PCWSTR, ppszencpassword: *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EapHostPeerGetIdentity(dwversion: u32, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, htokenimpersonateuser: super::super::Foundation::HANDLE, pfinvokeui: *mut super::super::Foundation::BOOL, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows_core_sys::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut u8) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EapHostPeerGetMethodProperties(dwversion: u32, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, huserimpersonationtoken: super::super::Foundation::HANDLE, dweapconndatasize: u32, pbeapconndata: *const u8, dwuserdatasize: u32, pbuserdata: *const u8, pmethodpropertyarray: *mut EAP_METHOD_PROPERTY_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerGetIdentity(dwversion: u32, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, htokenimpersonateuser: ::win32_foundation_sys::HANDLE, pfinvokeui: *mut ::win32_foundation_sys::BOOL, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows_core_sys::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut u8) -> u32;
+    pub fn EapHostPeerGetMethodProperties(dwversion: u32, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, huserimpersonationtoken: ::win32_foundation_sys::HANDLE, dweapconndatasize: u32, pbeapconndata: *const u8, dwuserdatasize: u32, pbuserdata: *const u8, pmethodpropertyarray: *mut EAP_METHOD_PROPERTY_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerGetMethods(peapmethodinfoarray: *mut EAP_METHOD_INFO_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerGetResponseAttributes(sessionhandle: u32, pattribs: *mut EAP_ATTRIBUTES, ppeaperror: *mut *mut EAP_ERROR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn EapHostPeerGetResult(sessionhandle: u32, reason: EapHostPeerMethodResultReason, ppresult: *mut EapHostPeerMethodResult, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerGetSendPacket(sessionhandle: u32, pcbsendpacket: *mut u32, ppsendpacket: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerGetUIContext(sessionhandle: u32, pdwsizeofuicontextdata: *mut u32, ppuicontextdata: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerInitialize() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EapHostPeerInvokeConfigUI(hwndparent: super::super::Foundation::HWND, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconfigin: u32, pconfigin: *const u8, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EapHostPeerInvokeIdentityUI(dwversion: u32, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, hwndparent: super::super::Foundation::HWND, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows_core_sys::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EapHostPeerInvokeInteractiveUI(hwndparent: super::super::Foundation::HWND, dwsizeofuicontextdata: u32, puicontextdata: *const u8, pdwsizeofdatafrominteractiveui: *mut u32, ppdatafrominteractiveui: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerInvokeConfigUI(hwndparent: ::win32_foundation_sys::HWND, dwflags: u32, eapmethodtype: EAP_METHOD_TYPE, dwsizeofconfigin: u32, pconfigin: *const u8, pdwsizeofconfigout: *mut u32, ppconfigout: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerInvokeIdentityUI(dwversion: u32, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, hwndparent: ::win32_foundation_sys::HWND, dwsizeofconnectiondata: u32, pconnectiondata: *const u8, dwsizeofuserdata: u32, puserdata: *const u8, pdwsizeofuserdataout: *mut u32, ppuserdataout: *mut *mut u8, ppwszidentity: *mut ::windows_core_sys::PWSTR, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32;
+    pub fn EapHostPeerInvokeInteractiveUI(hwndparent: ::win32_foundation_sys::HWND, dwsizeofuicontextdata: u32, puicontextdata: *const u8, pdwsizeofdatafrominteractiveui: *mut u32, ppdatafrominteractiveui: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerProcessReceivedPacket(sessionhandle: u32, cbreceivepacket: u32, preceivepacket: *const u8, peapoutput: *mut EapHostPeerResponseAction, ppeaperror: *mut *mut EAP_ERROR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EapHostPeerQueryCredentialInputFields(huserimpersonationtoken: super::super::Foundation::HANDLE, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, dweapconndatasize: u32, pbeapconndata: *const u8, peapconfiginputfieldarray: *mut EAP_CONFIG_INPUT_FIELD_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerQueryCredentialInputFields(huserimpersonationtoken: ::win32_foundation_sys::HANDLE, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, dweapconndatasize: u32, pbeapconndata: *const u8, peapconfiginputfieldarray: *mut EAP_CONFIG_INPUT_FIELD_ARRAY, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerQueryInteractiveUIInputFields(dwversion: u32, dwflags: u32, dwsizeofuicontextdata: u32, puicontextdata: *const u8, peapinteractiveuidata: *mut EAP_INTERACTIVE_UI_DATA, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn EapHostPeerQueryUIBlobFromInteractiveUIInputFields(dwversion: u32, dwflags: u32, dwsizeofuicontextdata: u32, puicontextdata: *const u8, peapinteractiveuidata: *const EAP_INTERACTIVE_UI_DATA, pdwsizeofdatafrominteractiveui: *mut u32, ppdatafrominteractiveui: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR, ppvreserved: *mut *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EapHostPeerQueryUserBlobFromCredentialInputFields(huserimpersonationtoken: super::super::Foundation::HANDLE, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, dweapconndatasize: u32, pbeapconndata: *const u8, peapconfiginputfieldarray: *const EAP_CONFIG_INPUT_FIELD_ARRAY, pdwuserblobsize: *mut u32, ppbuserblob: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
+    pub fn EapHostPeerQueryUserBlobFromCredentialInputFields(huserimpersonationtoken: ::win32_foundation_sys::HANDLE, eapmethodtype: EAP_METHOD_TYPE, dwflags: u32, dweapconndatasize: u32, pbeapconndata: *const u8, peapconfiginputfieldarray: *const EAP_CONFIG_INPUT_FIELD_ARRAY, pdwuserblobsize: *mut u32, ppbuserblob: *mut *mut u8, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerSetResponseAttributes(sessionhandle: u32, pattribs: *const EAP_ATTRIBUTES, peapoutput: *mut EapHostPeerResponseAction, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerSetUIContext(sessionhandle: u32, dwsizeofuicontextdata: u32, puicontextdata: *const u8, peapoutput: *mut EapHostPeerResponseAction, ppeaperror: *mut *mut EAP_ERROR) -> u32;
     pub fn EapHostPeerUninitialize();
@@ -434,15 +424,12 @@ pub const EAP_METHOD_AUTHENTICATOR_RESPONSE_RESPOND: EAP_METHOD_AUTHENTICATOR_RE
 pub const EAP_METHOD_AUTHENTICATOR_RESPONSE_AUTHENTICATE: EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION = 4i32;
 pub const EAP_METHOD_AUTHENTICATOR_RESPONSE_HANDLE_IDENTITY: EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION = 5i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EAP_METHOD_AUTHENTICATOR_RESULT {
-    pub fIsSuccess: super::super::Foundation::BOOL,
+    pub fIsSuccess: ::win32_foundation_sys::BOOL,
     pub dwFailureReason: u32,
     pub pAuthAttribs: *mut EAP_ATTRIBUTES,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EAP_METHOD_AUTHENTICATOR_RESULT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EAP_METHOD_AUTHENTICATOR_RESULT {
     fn clone(&self) -> Self {
         *self
@@ -500,29 +487,23 @@ impl ::core::clone::Clone for EAP_METHOD_INFO_EX {
 }
 pub const EAP_METHOD_INVALID_PACKET: u32 = 2151809047u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EAP_METHOD_PROPERTY {
     pub eapMethodPropertyType: EAP_METHOD_PROPERTY_TYPE,
     pub eapMethodPropertyValueType: EAP_METHOD_PROPERTY_VALUE_TYPE,
     pub eapMethodPropertyValue: EAP_METHOD_PROPERTY_VALUE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EAP_METHOD_PROPERTY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EAP_METHOD_PROPERTY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EAP_METHOD_PROPERTY_ARRAY {
     pub dwNumberOfProperties: u32,
     pub pMethodProperty: *mut EAP_METHOD_PROPERTY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EAP_METHOD_PROPERTY_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EAP_METHOD_PROPERTY_ARRAY {
     fn clone(&self) -> Self {
         *self
@@ -561,29 +542,23 @@ pub const emptPropSharedStateEquivalence: EAP_METHOD_PROPERTY_TYPE = 28i32;
 pub const emptLegacyMethodPropertyFlag: EAP_METHOD_PROPERTY_TYPE = 31i32;
 pub const emptPropVendorSpecific: EAP_METHOD_PROPERTY_TYPE = 255i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union EAP_METHOD_PROPERTY_VALUE {
     pub empvBool: EAP_METHOD_PROPERTY_VALUE_BOOL,
     pub empvDword: EAP_METHOD_PROPERTY_VALUE_DWORD,
     pub empvString: EAP_METHOD_PROPERTY_VALUE_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EAP_METHOD_PROPERTY_VALUE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EAP_METHOD_PROPERTY_VALUE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EAP_METHOD_PROPERTY_VALUE_BOOL {
     pub length: u32,
-    pub value: super::super::Foundation::BOOL,
+    pub value: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EAP_METHOD_PROPERTY_VALUE_BOOL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EAP_METHOD_PROPERTY_VALUE_BOOL {
     fn clone(&self) -> Self {
         *self
@@ -744,14 +719,13 @@ pub const EapHostPeerIdentity: EapHostPeerAuthParams = 2i32;
 pub const EapHostPeerIdentityExtendedInfo: EapHostPeerAuthParams = 3i32;
 pub const EapHostNapInfo: EapHostPeerAuthParams = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EapHostPeerMethodResult {
-    pub fIsSuccess: super::super::Foundation::BOOL,
+    pub fIsSuccess: ::win32_foundation_sys::BOOL,
     pub dwFailureReasonCode: u32,
-    pub fSaveConnectionData: super::super::Foundation::BOOL,
+    pub fSaveConnectionData: ::win32_foundation_sys::BOOL,
     pub dwSizeofConnectionData: u32,
     pub pConnectionData: *mut u8,
-    pub fSaveUserData: super::super::Foundation::BOOL,
+    pub fSaveUserData: ::win32_foundation_sys::BOOL,
     pub dwSizeofUserData: u32,
     pub pUserData: *mut u8,
     pub pAttribArray: *mut EAP_ATTRIBUTES,
@@ -759,9 +733,7 @@ pub struct EapHostPeerMethodResult {
     pub pEapMethodInfo: *mut EAP_METHOD_INFO,
     pub pEapError: *mut EAP_ERROR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EapHostPeerMethodResult {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EapHostPeerMethodResult {
     fn clone(&self) -> Self {
         *self
@@ -793,14 +765,11 @@ impl ::core::clone::Clone for EapPacket {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EapPeerMethodOutput {
     pub action: EapPeerMethodResponseAction,
-    pub fAllowNotifications: super::super::Foundation::BOOL,
+    pub fAllowNotifications: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EapPeerMethodOutput {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EapPeerMethodOutput {
     fn clone(&self) -> Self {
         *self
@@ -814,24 +783,24 @@ pub const EapPeerMethodResponseActionInvokeUI: EapPeerMethodResponseAction = 3i3
 pub const EapPeerMethodResponseActionRespond: EapPeerMethodResponseAction = 4i32;
 pub const EapPeerMethodResponseActionNone: EapPeerMethodResponseAction = 5i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct EapPeerMethodResult {
-    pub fIsSuccess: super::super::Foundation::BOOL,
+    pub fIsSuccess: ::win32_foundation_sys::BOOL,
     pub dwFailureReasonCode: u32,
-    pub fSaveConnectionData: super::super::Foundation::BOOL,
+    pub fSaveConnectionData: ::win32_foundation_sys::BOOL,
     pub dwSizeofConnectionData: u32,
     pub pConnectionData: *mut u8,
-    pub fSaveUserData: super::super::Foundation::BOOL,
+    pub fSaveUserData: ::win32_foundation_sys::BOOL,
     pub dwSizeofUserData: u32,
     pub pUserData: *mut u8,
     pub pAttribArray: *mut EAP_ATTRIBUTES,
     pub pEapError: *mut EAP_ERROR,
     pub pNgcKerbTicket: *mut NgcTicketContext,
-    pub fSaveToCredMan: super::super::Foundation::BOOL,
+    pub fSaveToCredMan: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for EapPeerMethodResult {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for EapPeerMethodResult {
     fn clone(&self) -> Self {
         *self
@@ -967,15 +936,15 @@ pub const MAX_EAP_CONFIG_INPUT_FIELD_LENGTH: u32 = 256u32;
 pub const MAX_EAP_CONFIG_INPUT_FIELD_VALUE_LENGTH: u32 = 1024u32;
 pub const NCRYPT_PIN_CACHE_PIN_BYTE_LENGTH: u32 = 90u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct NgcTicketContext {
     pub wszTicket: [u16; 45],
     pub hKey: super::Cryptography::NCRYPT_KEY_HANDLE,
-    pub hImpersonateToken: super::super::Foundation::HANDLE,
+    pub hImpersonateToken: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for NgcTicketContext {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for NgcTicketContext {
     fn clone(&self) -> Self {
         *self
@@ -1008,60 +977,57 @@ impl ::core::clone::Clone for PPP_EAP_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PPP_EAP_INPUT {
     pub dwSizeInBytes: u32,
     pub fFlags: u32,
-    pub fAuthenticator: super::super::Foundation::BOOL,
+    pub fAuthenticator: ::win32_foundation_sys::BOOL,
     pub pwszIdentity: ::windows_core_sys::PWSTR,
     pub pwszPassword: ::windows_core_sys::PWSTR,
     pub bInitialId: u8,
     pub pUserAttributes: *mut RAS_AUTH_ATTRIBUTE,
-    pub fAuthenticationComplete: super::super::Foundation::BOOL,
+    pub fAuthenticationComplete: ::win32_foundation_sys::BOOL,
     pub dwAuthResultCode: u32,
-    pub hTokenImpersonateUser: super::super::Foundation::HANDLE,
-    pub fSuccessPacketReceived: super::super::Foundation::BOOL,
-    pub fDataReceivedFromInteractiveUI: super::super::Foundation::BOOL,
+    pub hTokenImpersonateUser: ::win32_foundation_sys::HANDLE,
+    pub fSuccessPacketReceived: ::win32_foundation_sys::BOOL,
+    pub fDataReceivedFromInteractiveUI: ::win32_foundation_sys::BOOL,
     pub pDataFromInteractiveUI: *mut u8,
     pub dwSizeOfDataFromInteractiveUI: u32,
     pub pConnectionData: *mut u8,
     pub dwSizeOfConnectionData: u32,
     pub pUserData: *mut u8,
     pub dwSizeOfUserData: u32,
-    pub hReserved: super::super::Foundation::HANDLE,
+    pub hReserved: ::win32_foundation_sys::HANDLE,
     pub guidConnectionId: ::windows_core_sys::GUID,
-    pub isVpn: super::super::Foundation::BOOL,
+    pub isVpn: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PPP_EAP_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PPP_EAP_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct PPP_EAP_OUTPUT {
     pub dwSizeInBytes: u32,
     pub Action: PPP_EAP_ACTION,
     pub dwAuthResultCode: u32,
     pub pUserAttributes: *mut RAS_AUTH_ATTRIBUTE,
-    pub fInvokeInteractiveUI: super::super::Foundation::BOOL,
+    pub fInvokeInteractiveUI: ::win32_foundation_sys::BOOL,
     pub pUIContextData: *mut u8,
     pub dwSizeOfUIContextData: u32,
-    pub fSaveConnectionData: super::super::Foundation::BOOL,
+    pub fSaveConnectionData: ::win32_foundation_sys::BOOL,
     pub pConnectionData: *mut u8,
     pub dwSizeOfConnectionData: u32,
-    pub fSaveUserData: super::super::Foundation::BOOL,
+    pub fSaveUserData: ::win32_foundation_sys::BOOL,
     pub pUserData: *mut u8,
     pub dwSizeOfUserData: u32,
     pub pNgcKerbTicket: *mut NgcTicketContext,
-    pub fSaveToCredMan: super::super::Foundation::BOOL,
+    pub fSaveToCredMan: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for PPP_EAP_OUTPUT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for PPP_EAP_OUTPUT {
     fn clone(&self) -> Self {
         *self

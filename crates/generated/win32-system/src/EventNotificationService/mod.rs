@@ -4,32 +4,25 @@ pub const CONNECTION_AOL: u32 = 4u32;
 pub struct ISensLogon(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ISensLogon {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Logon<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Logon<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Logon)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Logoff<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Logoff<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Logoff)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn StartShell<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn StartShell<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).StartShell)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayLock<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn DisplayLock<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DisplayLock)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisplayUnlock<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn DisplayUnlock<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DisplayUnlock)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn StartScreenSaver<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn StartScreenSaver<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).StartScreenSaver)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn StopScreenSaver<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn StopScreenSaver<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).StopScreenSaver)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi()).ok()
     }
 }
@@ -111,58 +104,32 @@ unsafe impl ::windows_core::Interface for ISensLogon {
 #[doc(hidden)]
 pub struct ISensLogon_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Logon: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Logon: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Logoff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Logoff: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub StartShell: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    StartShell: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DisplayLock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DisplayLock: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DisplayUnlock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DisplayUnlock: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub StartScreenSaver: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    StartScreenSaver: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub StopScreenSaver: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    StopScreenSaver: usize,
+    pub Logon: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub Logoff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub StartShell: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub DisplayLock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub DisplayUnlock: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub StartScreenSaver: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub StopScreenSaver: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
 pub struct ISensLogon2(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ISensLogon2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Logon<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn Logon<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Logon)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi(), ::core::mem::transmute(dwsessionid)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Logoff<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn Logoff<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Logoff)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi(), ::core::mem::transmute(dwsessionid)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SessionDisconnect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn SessionDisconnect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SessionDisconnect)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi(), ::core::mem::transmute(dwsessionid)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SessionReconnect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn SessionReconnect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SessionReconnect)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi(), ::core::mem::transmute(dwsessionid)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PostShell<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn PostShell<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrusername: Param0, dwsessionid: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).PostShell)(::windows_core::Interface::as_raw(self), bstrusername.into_param().abi(), ::core::mem::transmute(dwsessionid)).ok()
     }
 }
@@ -244,50 +211,30 @@ unsafe impl ::windows_core::Interface for ISensLogon2 {
 #[doc(hidden)]
 pub struct ISensLogon2_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Logon: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Logon: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Logoff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Logoff: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SessionDisconnect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SessionDisconnect: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SessionReconnect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SessionReconnect: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PostShell: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PostShell: usize,
+    pub Logon: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
+    pub Logoff: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
+    pub SessionDisconnect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
+    pub SessionReconnect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
+    pub PostShell: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, dwsessionid: u32) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
 pub struct ISensNetwork(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl ISensNetwork {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ConnectionMade<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrconnection: Param0, ultype: u32, lpqocinfo: *const SENS_QOCINFO) -> ::windows_core::Result<()> {
+    pub unsafe fn ConnectionMade<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrconnection: Param0, ultype: u32, lpqocinfo: *const SENS_QOCINFO) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConnectionMade)(::windows_core::Interface::as_raw(self), bstrconnection.into_param().abi(), ::core::mem::transmute(ultype), ::core::mem::transmute(lpqocinfo)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ConnectionMadeNoQOCInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrconnection: Param0, ultype: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn ConnectionMadeNoQOCInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrconnection: Param0, ultype: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConnectionMadeNoQOCInfo)(::windows_core::Interface::as_raw(self), bstrconnection.into_param().abi(), ::core::mem::transmute(ultype)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ConnectionLost<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrconnection: Param0, ultype: SENS_CONNECTION_TYPE) -> ::windows_core::Result<()> {
+    pub unsafe fn ConnectionLost<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrconnection: Param0, ultype: SENS_CONNECTION_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConnectionLost)(::windows_core::Interface::as_raw(self), bstrconnection.into_param().abi(), ::core::mem::transmute(ultype)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DestinationReachable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdestination: Param0, bstrconnection: Param1, ultype: u32, lpqocinfo: *const SENS_QOCINFO) -> ::windows_core::Result<()> {
+    pub unsafe fn DestinationReachable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdestination: Param0, bstrconnection: Param1, ultype: u32, lpqocinfo: *const SENS_QOCINFO) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DestinationReachable)(::windows_core::Interface::as_raw(self), bstrdestination.into_param().abi(), bstrconnection.into_param().abi(), ::core::mem::transmute(ultype), ::core::mem::transmute(lpqocinfo)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DestinationReachableNoQOCInfo<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdestination: Param0, bstrconnection: Param1, ultype: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn DestinationReachableNoQOCInfo<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdestination: Param0, bstrconnection: Param1, ultype: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DestinationReachableNoQOCInfo)(::windows_core::Interface::as_raw(self), bstrdestination.into_param().abi(), bstrconnection.into_param().abi(), ::core::mem::transmute(ultype)).ok()
     }
 }
@@ -369,26 +316,11 @@ unsafe impl ::windows_core::Interface for ISensNetwork {
 #[doc(hidden)]
 pub struct ISensNetwork_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ConnectionMade: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnection: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ultype: u32, lpqocinfo: *const SENS_QOCINFO) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ConnectionMade: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ConnectionMadeNoQOCInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnection: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ultype: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ConnectionMadeNoQOCInfo: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ConnectionLost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnection: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ultype: SENS_CONNECTION_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ConnectionLost: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DestinationReachable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdestination: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrconnection: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ultype: u32, lpqocinfo: *const SENS_QOCINFO) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DestinationReachable: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DestinationReachableNoQOCInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdestination: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrconnection: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, ultype: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DestinationReachableNoQOCInfo: usize,
+    pub ConnectionMade: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnection: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ultype: u32, lpqocinfo: *const SENS_QOCINFO) -> ::windows_core::HRESULT,
+    pub ConnectionMadeNoQOCInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnection: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ultype: u32) -> ::windows_core::HRESULT,
+    pub ConnectionLost: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnection: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ultype: SENS_CONNECTION_TYPE) -> ::windows_core::HRESULT,
+    pub DestinationReachable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdestination: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrconnection: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ultype: u32, lpqocinfo: *const SENS_QOCINFO) -> ::windows_core::HRESULT,
+    pub DestinationReachableNoQOCInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdestination: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrconnection: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, ultype: u32) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -487,42 +419,39 @@ pub struct ISensOnNow_Vtbl {
     pub OnBatteryPower: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwbatterylifepercent: u32) -> ::windows_core::HRESULT,
     pub BatteryLow: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwbatterylifepercent: u32) -> ::windows_core::HRESULT,
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsDestinationReachableA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdestination: Param0, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn IsDestinationReachableA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdestination: Param0, lpqocinfo: *mut QOCINFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsDestinationReachableA(lpszdestination: ::windows_core::PCSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
+            fn IsDestinationReachableA(lpszdestination: ::windows_core::PCSTR, lpqocinfo: *mut QOCINFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsDestinationReachableA(lpszdestination.into_param().abi(), ::core::mem::transmute(lpqocinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsDestinationReachableW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdestination: Param0, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL {
+pub unsafe fn IsDestinationReachableW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdestination: Param0, lpqocinfo: *mut QOCINFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsDestinationReachableW(lpszdestination: ::windows_core::PCWSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
+            fn IsDestinationReachableW(lpszdestination: ::windows_core::PCWSTR, lpqocinfo: *mut QOCINFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsDestinationReachableW(lpszdestination.into_param().abi(), ::core::mem::transmute(lpqocinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsNetworkAlive(lpdwflags: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn IsNetworkAlive(lpdwflags: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsNetworkAlive(lpdwflags: *mut u32) -> super::super::Foundation::BOOL;
+            fn IsNetworkAlive(lpdwflags: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsNetworkAlive(::core::mem::transmute(lpdwflags)))
     }

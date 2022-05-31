@@ -140,15 +140,12 @@ pub const D3D12_BLEND_INV_SRC1_COLOR: D3D12_BLEND = 17i32;
 pub const D3D12_BLEND_SRC1_ALPHA: D3D12_BLEND = 18i32;
 pub const D3D12_BLEND_INV_SRC1_ALPHA: D3D12_BLEND = 19i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_BLEND_DESC {
-    pub AlphaToCoverageEnable: super::super::Foundation::BOOL,
-    pub IndependentBlendEnable: super::super::Foundation::BOOL,
+    pub AlphaToCoverageEnable: ::win32_foundation_sys::BOOL,
+    pub IndependentBlendEnable: ::win32_foundation_sys::BOOL,
     pub RenderTarget: [D3D12_RENDER_TARGET_BLEND_DESC; 8],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_BLEND_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_BLEND_DESC {
     fn clone(&self) -> Self {
         *self
@@ -633,41 +630,35 @@ impl ::core::clone::Clone for D3D12_DEPTH_STENCILOP_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_DEPTH_STENCIL_DESC {
-    pub DepthEnable: super::super::Foundation::BOOL,
+    pub DepthEnable: ::win32_foundation_sys::BOOL,
     pub DepthWriteMask: D3D12_DEPTH_WRITE_MASK,
     pub DepthFunc: D3D12_COMPARISON_FUNC,
-    pub StencilEnable: super::super::Foundation::BOOL,
+    pub StencilEnable: ::win32_foundation_sys::BOOL,
     pub StencilReadMask: u8,
     pub StencilWriteMask: u8,
     pub FrontFace: D3D12_DEPTH_STENCILOP_DESC,
     pub BackFace: D3D12_DEPTH_STENCILOP_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_DEPTH_STENCIL_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_DEPTH_STENCIL_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_DEPTH_STENCIL_DESC1 {
-    pub DepthEnable: super::super::Foundation::BOOL,
+    pub DepthEnable: ::win32_foundation_sys::BOOL,
     pub DepthWriteMask: D3D12_DEPTH_WRITE_MASK,
     pub DepthFunc: D3D12_COMPARISON_FUNC,
-    pub StencilEnable: super::super::Foundation::BOOL,
+    pub StencilEnable: ::win32_foundation_sys::BOOL,
     pub StencilReadMask: u8,
     pub StencilWriteMask: u8,
     pub FrontFace: D3D12_DEPTH_STENCILOP_DESC,
     pub BackFace: D3D12_DEPTH_STENCILOP_DESC,
-    pub DepthBoundsTestEnable: super::super::Foundation::BOOL,
+    pub DepthBoundsTestEnable: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_DEPTH_STENCIL_DESC1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_DEPTH_STENCIL_DESC1 {
     fn clone(&self) -> Self {
         *self
@@ -834,16 +825,13 @@ impl ::core::clone::Clone for D3D12_DEVICE_REMOVED_EXTENDED_DATA3 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_DISCARD_REGION {
     pub NumRects: u32,
-    pub pRects: *const super::super::Foundation::RECT,
+    pub pRects: *const ::win32_foundation_sys::RECT,
     pub FirstSubresource: u32,
     pub NumSubresources: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_DISCARD_REGION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_DISCARD_REGION {
     fn clone(&self) -> Self {
         *self
@@ -1191,212 +1179,173 @@ pub const D3D12_FEATURE_D3D12_OPTIONS9: D3D12_FEATURE = 37i32;
 pub const D3D12_FEATURE_D3D12_OPTIONS10: D3D12_FEATURE = 39i32;
 pub const D3D12_FEATURE_D3D12_OPTIONS11: D3D12_FEATURE = 40i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_ARCHITECTURE {
     pub NodeIndex: u32,
-    pub TileBasedRenderer: super::super::Foundation::BOOL,
-    pub UMA: super::super::Foundation::BOOL,
-    pub CacheCoherentUMA: super::super::Foundation::BOOL,
+    pub TileBasedRenderer: ::win32_foundation_sys::BOOL,
+    pub UMA: ::win32_foundation_sys::BOOL,
+    pub CacheCoherentUMA: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_ARCHITECTURE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_ARCHITECTURE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_ARCHITECTURE1 {
     pub NodeIndex: u32,
-    pub TileBasedRenderer: super::super::Foundation::BOOL,
-    pub UMA: super::super::Foundation::BOOL,
-    pub CacheCoherentUMA: super::super::Foundation::BOOL,
-    pub IsolatedMMU: super::super::Foundation::BOOL,
+    pub TileBasedRenderer: ::win32_foundation_sys::BOOL,
+    pub UMA: ::win32_foundation_sys::BOOL,
+    pub CacheCoherentUMA: ::win32_foundation_sys::BOOL,
+    pub IsolatedMMU: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_ARCHITECTURE1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_ARCHITECTURE1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY {
     pub CommandListType: D3D12_COMMAND_LIST_TYPE,
     pub Priority: u32,
-    pub PriorityForTypeIsSupported: super::super::Foundation::BOOL,
+    pub PriorityForTypeIsSupported: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_CROSS_NODE {
     pub SharingTier: D3D12_CROSS_NODE_SHARING_TIER,
-    pub AtomicShaderInstructions: super::super::Foundation::BOOL,
+    pub AtomicShaderInstructions: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_CROSS_NODE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_CROSS_NODE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS {
-    pub DoublePrecisionFloatShaderOps: super::super::Foundation::BOOL,
-    pub OutputMergerLogicOp: super::super::Foundation::BOOL,
+    pub DoublePrecisionFloatShaderOps: ::win32_foundation_sys::BOOL,
+    pub OutputMergerLogicOp: ::win32_foundation_sys::BOOL,
     pub MinPrecisionSupport: D3D12_SHADER_MIN_PRECISION_SUPPORT,
     pub TiledResourcesTier: D3D12_TILED_RESOURCES_TIER,
     pub ResourceBindingTier: D3D12_RESOURCE_BINDING_TIER,
-    pub PSSpecifiedStencilRefSupported: super::super::Foundation::BOOL,
-    pub TypedUAVLoadAdditionalFormats: super::super::Foundation::BOOL,
-    pub ROVsSupported: super::super::Foundation::BOOL,
+    pub PSSpecifiedStencilRefSupported: ::win32_foundation_sys::BOOL,
+    pub TypedUAVLoadAdditionalFormats: ::win32_foundation_sys::BOOL,
+    pub ROVsSupported: ::win32_foundation_sys::BOOL,
     pub ConservativeRasterizationTier: D3D12_CONSERVATIVE_RASTERIZATION_TIER,
     pub MaxGPUVirtualAddressBitsPerResource: u32,
-    pub StandardSwizzle64KBSupported: super::super::Foundation::BOOL,
+    pub StandardSwizzle64KBSupported: ::win32_foundation_sys::BOOL,
     pub CrossNodeSharingTier: D3D12_CROSS_NODE_SHARING_TIER,
-    pub CrossAdapterRowMajorTextureSupported: super::super::Foundation::BOOL,
-    pub VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation: super::super::Foundation::BOOL,
+    pub CrossAdapterRowMajorTextureSupported: ::win32_foundation_sys::BOOL,
+    pub VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation: ::win32_foundation_sys::BOOL,
     pub ResourceHeapTier: D3D12_RESOURCE_HEAP_TIER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS1 {
-    pub WaveOps: super::super::Foundation::BOOL,
+    pub WaveOps: ::win32_foundation_sys::BOOL,
     pub WaveLaneCountMin: u32,
     pub WaveLaneCountMax: u32,
     pub TotalLaneCount: u32,
-    pub ExpandedComputeResourceStates: super::super::Foundation::BOOL,
-    pub Int64ShaderOps: super::super::Foundation::BOOL,
+    pub ExpandedComputeResourceStates: ::win32_foundation_sys::BOOL,
+    pub Int64ShaderOps: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS10 {
-    pub VariableRateShadingSumCombinerSupported: super::super::Foundation::BOOL,
-    pub MeshShaderPerPrimitiveShadingRateSupported: super::super::Foundation::BOOL,
+    pub VariableRateShadingSumCombinerSupported: ::win32_foundation_sys::BOOL,
+    pub MeshShaderPerPrimitiveShadingRateSupported: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS10 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS10 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS11 {
-    pub AtomicInt64OnDescriptorHeapResourceSupported: super::super::Foundation::BOOL,
+    pub AtomicInt64OnDescriptorHeapResourceSupported: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS11 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS11 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS2 {
-    pub DepthBoundsTestSupported: super::super::Foundation::BOOL,
+    pub DepthBoundsTestSupported: ::win32_foundation_sys::BOOL,
     pub ProgrammableSamplePositionsTier: D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS3 {
-    pub CopyQueueTimestampQueriesSupported: super::super::Foundation::BOOL,
-    pub CastingFullyTypedFormatSupported: super::super::Foundation::BOOL,
+    pub CopyQueueTimestampQueriesSupported: ::win32_foundation_sys::BOOL,
+    pub CastingFullyTypedFormatSupported: ::win32_foundation_sys::BOOL,
     pub WriteBufferImmediateSupportFlags: D3D12_COMMAND_LIST_SUPPORT_FLAGS,
     pub ViewInstancingTier: D3D12_VIEW_INSTANCING_TIER,
-    pub BarycentricsSupported: super::super::Foundation::BOOL,
+    pub BarycentricsSupported: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS4 {
-    pub MSAA64KBAlignedTextureSupported: super::super::Foundation::BOOL,
+    pub MSAA64KBAlignedTextureSupported: ::win32_foundation_sys::BOOL,
     pub SharedResourceCompatibilityTier: D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER,
-    pub Native16BitShaderOpsSupported: super::super::Foundation::BOOL,
+    pub Native16BitShaderOpsSupported: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS5 {
-    pub SRVOnlyTiledResourceTier3: super::super::Foundation::BOOL,
+    pub SRVOnlyTiledResourceTier3: ::win32_foundation_sys::BOOL,
     pub RenderPassesTier: D3D12_RENDER_PASS_TIER,
     pub RaytracingTier: D3D12_RAYTRACING_TIER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS5 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS5 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS6 {
-    pub AdditionalShadingRatesSupported: super::super::Foundation::BOOL,
-    pub PerPrimitiveShadingRateSupportedWithViewportIndexing: super::super::Foundation::BOOL,
+    pub AdditionalShadingRatesSupported: ::win32_foundation_sys::BOOL,
+    pub PerPrimitiveShadingRateSupportedWithViewportIndexing: ::win32_foundation_sys::BOOL,
     pub VariableShadingRateTier: D3D12_VARIABLE_SHADING_RATE_TIER,
     pub ShadingRateImageTileSize: u32,
-    pub BackgroundProcessingSupported: super::super::Foundation::BOOL,
+    pub BackgroundProcessingSupported: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS6 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS6 {
     fn clone(&self) -> Self {
         *self
@@ -1414,58 +1363,46 @@ impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS7 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS8 {
-    pub UnalignedBlockTexturesSupported: super::super::Foundation::BOOL,
+    pub UnalignedBlockTexturesSupported: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS8 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS8 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_D3D12_OPTIONS9 {
-    pub MeshShaderPipelineStatsSupported: super::super::Foundation::BOOL,
-    pub MeshShaderSupportsFullRangeRenderTargetArrayIndex: super::super::Foundation::BOOL,
-    pub AtomicInt64OnTypedResourceSupported: super::super::Foundation::BOOL,
-    pub AtomicInt64OnGroupSharedSupported: super::super::Foundation::BOOL,
-    pub DerivativesInMeshAndAmplificationShadersSupported: super::super::Foundation::BOOL,
+    pub MeshShaderPipelineStatsSupported: ::win32_foundation_sys::BOOL,
+    pub MeshShaderSupportsFullRangeRenderTargetArrayIndex: ::win32_foundation_sys::BOOL,
+    pub AtomicInt64OnTypedResourceSupported: ::win32_foundation_sys::BOOL,
+    pub AtomicInt64OnGroupSharedSupported: ::win32_foundation_sys::BOOL,
+    pub DerivativesInMeshAndAmplificationShadersSupported: ::win32_foundation_sys::BOOL,
     pub WaveMMATier: D3D12_WAVE_MMA_TIER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_D3D12_OPTIONS9 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_D3D12_OPTIONS9 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_DISPLAYABLE {
-    pub DisplayableTexture: super::super::Foundation::BOOL,
+    pub DisplayableTexture: ::win32_foundation_sys::BOOL,
     pub SharedResourceCompatibilityTier: D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_DISPLAYABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_DISPLAYABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_FEATURE_DATA_EXISTING_HEAPS {
-    pub Supported: super::super::Foundation::BOOL,
+    pub Supported: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_FEATURE_DATA_EXISTING_HEAPS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_FEATURE_DATA_EXISTING_HEAPS {
     fn clone(&self) -> Self {
         *self
@@ -1747,7 +1684,7 @@ pub const D3D12_FTOI_INSTRUCTION_MIN_INPUT: f32 = -2147483600f32;
 pub const D3D12_FTOU_INSTRUCTION_MAX_INPUT: f32 = 4294967300f32;
 pub const D3D12_FTOU_INSTRUCTION_MIN_INPUT: f32 = 0f32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D"))]
+#[cfg(feature = "Win32_Graphics_Direct3D")]
 pub struct D3D12_FUNCTION_DESC {
     pub Version: u32,
     pub Creator: ::windows_core_sys::PCSTR,
@@ -1779,13 +1716,13 @@ pub struct D3D12_FUNCTION_DESC {
     pub RequiredFeatureFlags: u64,
     pub Name: ::windows_core_sys::PCSTR,
     pub FunctionParameterCount: i32,
-    pub HasReturn: super::super::Foundation::BOOL,
-    pub Has10Level9VertexShader: super::super::Foundation::BOOL,
-    pub Has10Level9PixelShader: super::super::Foundation::BOOL,
+    pub HasReturn: ::win32_foundation_sys::BOOL,
+    pub Has10Level9VertexShader: ::win32_foundation_sys::BOOL,
+    pub Has10Level9PixelShader: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D"))]
+#[cfg(feature = "Win32_Graphics_Direct3D")]
 impl ::core::marker::Copy for D3D12_FUNCTION_DESC {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D"))]
+#[cfg(feature = "Win32_Graphics_Direct3D")]
 impl ::core::clone::Clone for D3D12_FUNCTION_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1861,7 +1798,7 @@ impl ::core::clone::Clone for D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 pub struct D3D12_GRAPHICS_PIPELINE_STATE_DESC {
     pub pRootSignature: ID3D12RootSignature,
     pub VS: D3D12_SHADER_BYTECODE,
@@ -1885,9 +1822,9 @@ pub struct D3D12_GRAPHICS_PIPELINE_STATE_DESC {
     pub CachedPSO: D3D12_CACHED_PIPELINE_STATE,
     pub Flags: D3D12_PIPELINE_STATE_FLAGS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::marker::Copy for D3D12_GRAPHICS_PIPELINE_STATE_DESC {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::clone::Clone for D3D12_GRAPHICS_PIPELINE_STATE_DESC {
     fn clone(&self) -> Self {
         *self
@@ -3593,23 +3530,20 @@ impl ::core::clone::Clone for D3D12_RANGE_UINT64 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_RASTERIZER_DESC {
     pub FillMode: D3D12_FILL_MODE,
     pub CullMode: D3D12_CULL_MODE,
-    pub FrontCounterClockwise: super::super::Foundation::BOOL,
+    pub FrontCounterClockwise: ::win32_foundation_sys::BOOL,
     pub DepthBias: i32,
     pub DepthBiasClamp: f32,
     pub SlopeScaledDepthBias: f32,
-    pub DepthClipEnable: super::super::Foundation::BOOL,
-    pub MultisampleEnable: super::super::Foundation::BOOL,
-    pub AntialiasedLineEnable: super::super::Foundation::BOOL,
+    pub DepthClipEnable: ::win32_foundation_sys::BOOL,
+    pub MultisampleEnable: ::win32_foundation_sys::BOOL,
+    pub AntialiasedLineEnable: ::win32_foundation_sys::BOOL,
     pub ForcedSampleCount: u32,
     pub ConservativeRaster: D3D12_CONSERVATIVE_RASTERIZATION_MODE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_RASTERIZER_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_RASTERIZER_DESC {
     fn clone(&self) -> Self {
         *self
@@ -3923,7 +3857,7 @@ pub const D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE_PRESERVE: D3D12_RENDER_PASS_BE
 pub const D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE_CLEAR: D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE = 2i32;
 pub const D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE_NO_ACCESS: D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE = 3i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 pub struct D3D12_RENDER_PASS_DEPTH_STENCIL_DESC {
     pub cpuDescriptor: D3D12_CPU_DESCRIPTOR_HANDLE,
     pub DepthBeginningAccess: D3D12_RENDER_PASS_BEGINNING_ACCESS,
@@ -3931,43 +3865,43 @@ pub struct D3D12_RENDER_PASS_DEPTH_STENCIL_DESC {
     pub DepthEndingAccess: D3D12_RENDER_PASS_ENDING_ACCESS,
     pub StencilEndingAccess: D3D12_RENDER_PASS_ENDING_ACCESS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::marker::Copy for D3D12_RENDER_PASS_DEPTH_STENCIL_DESC {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::clone::Clone for D3D12_RENDER_PASS_DEPTH_STENCIL_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 pub struct D3D12_RENDER_PASS_ENDING_ACCESS {
     pub Type: D3D12_RENDER_PASS_ENDING_ACCESS_TYPE,
     pub Anonymous: D3D12_RENDER_PASS_ENDING_ACCESS_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::marker::Copy for D3D12_RENDER_PASS_ENDING_ACCESS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::clone::Clone for D3D12_RENDER_PASS_ENDING_ACCESS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 pub union D3D12_RENDER_PASS_ENDING_ACCESS_0 {
     pub Resolve: D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::marker::Copy for D3D12_RENDER_PASS_ENDING_ACCESS_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::clone::Clone for D3D12_RENDER_PASS_ENDING_ACCESS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 pub struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS {
     pub pSrcResource: ID3D12Resource,
     pub pDstResource: ID3D12Resource,
@@ -3975,28 +3909,25 @@ pub struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS {
     pub pSubresourceParameters: *const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS,
     pub Format: super::Dxgi::Common::DXGI_FORMAT,
     pub ResolveMode: D3D12_RESOLVE_MODE,
-    pub PreserveResolveSource: super::super::Foundation::BOOL,
+    pub PreserveResolveSource: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::marker::Copy for D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::clone::Clone for D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS {
     pub SrcSubresource: u32,
     pub DstSubresource: u32,
     pub DstX: u32,
     pub DstY: u32,
-    pub SrcRect: super::super::Foundation::RECT,
+    pub SrcRect: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS {
     fn clone(&self) -> Self {
         *self
@@ -4013,15 +3944,15 @@ pub const D3D12_RENDER_PASS_FLAG_ALLOW_UAV_WRITES: D3D12_RENDER_PASS_FLAGS = 1u3
 pub const D3D12_RENDER_PASS_FLAG_SUSPENDING_PASS: D3D12_RENDER_PASS_FLAGS = 2u32;
 pub const D3D12_RENDER_PASS_FLAG_RESUMING_PASS: D3D12_RENDER_PASS_FLAGS = 4u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 pub struct D3D12_RENDER_PASS_RENDER_TARGET_DESC {
     pub cpuDescriptor: D3D12_CPU_DESCRIPTOR_HANDLE,
     pub BeginningAccess: D3D12_RENDER_PASS_BEGINNING_ACCESS,
     pub EndingAccess: D3D12_RENDER_PASS_ENDING_ACCESS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::marker::Copy for D3D12_RENDER_PASS_RENDER_TARGET_DESC {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::clone::Clone for D3D12_RENDER_PASS_RENDER_TARGET_DESC {
     fn clone(&self) -> Self {
         *self
@@ -4032,10 +3963,9 @@ pub const D3D12_RENDER_PASS_TIER_0: D3D12_RENDER_PASS_TIER = 0i32;
 pub const D3D12_RENDER_PASS_TIER_1: D3D12_RENDER_PASS_TIER = 1i32;
 pub const D3D12_RENDER_PASS_TIER_2: D3D12_RENDER_PASS_TIER = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_RENDER_TARGET_BLEND_DESC {
-    pub BlendEnable: super::super::Foundation::BOOL,
-    pub LogicOpEnable: super::super::Foundation::BOOL,
+    pub BlendEnable: ::win32_foundation_sys::BOOL,
+    pub LogicOpEnable: ::win32_foundation_sys::BOOL,
     pub SrcBlend: D3D12_BLEND,
     pub DestBlend: D3D12_BLEND,
     pub BlendOp: D3D12_BLEND_OP,
@@ -4045,9 +3975,7 @@ pub struct D3D12_RENDER_TARGET_BLEND_DESC {
     pub LogicOp: D3D12_LOGIC_OP,
     pub RenderTargetWriteMask: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_RENDER_TARGET_BLEND_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_RENDER_TARGET_BLEND_DESC {
     fn clone(&self) -> Self {
         *self
@@ -5521,17 +5449,14 @@ pub const D3D12_TILE_RANGE_FLAG_NULL: D3D12_TILE_RANGE_FLAGS = 1i32;
 pub const D3D12_TILE_RANGE_FLAG_SKIP: D3D12_TILE_RANGE_FLAGS = 2i32;
 pub const D3D12_TILE_RANGE_FLAG_REUSE_SINGLE_TILE: D3D12_TILE_RANGE_FLAGS = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D12_TILE_REGION_SIZE {
     pub NumTiles: u32,
-    pub UseBox: super::super::Foundation::BOOL,
+    pub UseBox: ::win32_foundation_sys::BOOL,
     pub Width: u32,
     pub Height: u16,
     pub Depth: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D12_TILE_REGION_SIZE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D12_TILE_REGION_SIZE {
     fn clone(&self) -> Self {
         *self

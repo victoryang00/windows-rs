@@ -6,22 +6,16 @@ extern "system" {
     pub fn GetDeviceManagementConfigInfo(providerid: ::windows_core_sys::PCWSTR, configstringbufferlength: *mut u32, configstring: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn GetDeviceRegistrationInfo(deviceinformationclass: REGISTRATION_INFORMATION_CLASS, ppdeviceregistrationinfo: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn GetManagementAppHyperlink(cchhyperlink: u32, pszhyperlink: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsDeviceRegisteredWithManagement(pfisdeviceregisteredwithmanagement: *mut super::super::Foundation::BOOL, cchupn: u32, pszupn: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsManagementRegistrationAllowed(pfismanagementregistrationallowed: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsMdmUxWithoutAadAllowed(isenrollmentallowed: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterDeviceWithLocalManagement(alreadyregistered: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn IsDeviceRegisteredWithManagement(pfisdeviceregisteredwithmanagement: *mut ::win32_foundation_sys::BOOL, cchupn: u32, pszupn: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn IsManagementRegistrationAllowed(pfismanagementregistrationallowed: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn IsMdmUxWithoutAadAllowed(isenrollmentallowed: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn RegisterDeviceWithLocalManagement(alreadyregistered: *mut ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn RegisterDeviceWithManagement(pszupn: ::windows_core_sys::PCWSTR, ppszmdmserviceuri: ::windows_core_sys::PCWSTR, ppzsaccesstoken: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterDeviceWithManagementUsingAADCredentials(usertoken: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn RegisterDeviceWithManagementUsingAADCredentials(usertoken: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn RegisterDeviceWithManagementUsingAADDeviceCredentials() -> ::windows_core_sys::HRESULT;
     pub fn RegisterDeviceWithManagementUsingAADDeviceCredentials2(mdmapplicationid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn SetDeviceManagementConfigInfo(providerid: ::windows_core_sys::PCWSTR, configstring: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetManagedExternally(ismanagedexternally: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn SetManagedExternally(ismanagedexternally: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn UnregisterDeviceWithLocalManagement() -> ::windows_core_sys::HRESULT;
     pub fn UnregisterDeviceWithManagement(enrollmentid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
 }
@@ -31,16 +25,13 @@ pub const DEVICEREGISTRATIONTYPE_MDM_ONLY: u32 = 0u32;
 pub const DEVICEREGISTRATIONTYPE_MDM_USERSPECIFIC_WITH_AAD: u32 = 13u32;
 pub const DEVICE_ENROLLER_FACILITY_CODE: u32 = 24u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MANAGEMENT_REGISTRATION_INFO {
-    pub fDeviceRegisteredWithManagement: super::super::Foundation::BOOL,
+    pub fDeviceRegisteredWithManagement: ::win32_foundation_sys::BOOL,
     pub dwDeviceRegistionKind: u32,
     pub pszUPN: ::windows_core_sys::PWSTR,
     pub pszMDMServiceUri: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MANAGEMENT_REGISTRATION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MANAGEMENT_REGISTRATION_INFO {
     fn clone(&self) -> Self {
         *self

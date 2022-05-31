@@ -1,25 +1,17 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
     pub fn CertSelectionGetSerializedBlob(pcsi: *const CERT_SELECTUI_INPUT, ppoutbuffer: *mut *mut ::core::ffi::c_void, puloutbuffersize: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CryptUIDlgCertMgr(pcryptuicertmgr: *const CRYPTUI_CERT_MGR_STRUCT) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CryptUIDlgSelectCertificateFromStore(hcertstore: super::HCERTSTORE, hwnd: super::super::super::Foundation::HWND, pwsztitle: ::windows_core_sys::PCWSTR, pwszdisplaystring: ::windows_core_sys::PCWSTR, dwdontusecolumn: u32, dwflags: u32, pvreserved: *const ::core::ffi::c_void) -> *mut super::CERT_CONTEXT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn CryptUIDlgViewCertificateA(pcertviewinfo: *const CRYPTUI_VIEWCERTIFICATE_STRUCTA, pfpropertieschanged: *mut super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn CryptUIDlgViewCertificateW(pcertviewinfo: *const CRYPTUI_VIEWCERTIFICATE_STRUCTW, pfpropertieschanged: *mut super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CryptUIDlgViewContext(dwcontexttype: u32, pvcontext: *const ::core::ffi::c_void, hwnd: super::super::super::Foundation::HWND, pwsztitle: ::windows_core_sys::PCWSTR, dwflags: u32, pvreserved: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CryptUIWizDigitalSign(dwflags: u32, hwndparent: super::super::super::Foundation::HWND, pwszwizardtitle: ::windows_core_sys::PCWSTR, pdigitalsigninfo: *const CRYPTUI_WIZ_DIGITAL_SIGN_INFO, ppsigncontext: *mut *mut CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CryptUIWizExport(dwflags: CRYPTUI_WIZ_FLAGS, hwndparent: super::super::super::Foundation::HWND, pwszwizardtitle: ::windows_core_sys::PCWSTR, pexportinfo: *const CRYPTUI_WIZ_EXPORT_INFO, pvoid: *const ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CryptUIWizFreeDigitalSignContext(psigncontext: *const CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CryptUIWizImport(dwflags: CRYPTUI_WIZ_FLAGS, hwndparent: super::super::super::Foundation::HWND, pwszwizardtitle: ::windows_core_sys::PCWSTR, pimportsrc: *const CRYPTUI_WIZ_IMPORT_SRC_INFO, hdestcertstore: super::HCERTSTORE) -> super::super::super::Foundation::BOOL;
+    pub fn CryptUIDlgCertMgr(pcryptuicertmgr: *const CRYPTUI_CERT_MGR_STRUCT) -> ::win32_foundation_sys::BOOL;
+    pub fn CryptUIDlgSelectCertificateFromStore(hcertstore: super::HCERTSTORE, hwnd: ::win32_foundation_sys::HWND, pwsztitle: ::windows_core_sys::PCWSTR, pwszdisplaystring: ::windows_core_sys::PCWSTR, dwdontusecolumn: u32, dwflags: u32, pvreserved: *const ::core::ffi::c_void) -> *mut super::CERT_CONTEXT;
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub fn CryptUIDlgViewCertificateA(pcertviewinfo: *const CRYPTUI_VIEWCERTIFICATE_STRUCTA, pfpropertieschanged: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+    pub fn CryptUIDlgViewCertificateW(pcertviewinfo: *const CRYPTUI_VIEWCERTIFICATE_STRUCTW, pfpropertieschanged: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn CryptUIDlgViewContext(dwcontexttype: u32, pvcontext: *const ::core::ffi::c_void, hwnd: ::win32_foundation_sys::HWND, pwsztitle: ::windows_core_sys::PCWSTR, dwflags: u32, pvreserved: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn CryptUIWizDigitalSign(dwflags: u32, hwndparent: ::win32_foundation_sys::HWND, pwszwizardtitle: ::windows_core_sys::PCWSTR, pdigitalsigninfo: *const CRYPTUI_WIZ_DIGITAL_SIGN_INFO, ppsigncontext: *mut *mut CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn CryptUIWizExport(dwflags: CRYPTUI_WIZ_FLAGS, hwndparent: ::win32_foundation_sys::HWND, pwszwizardtitle: ::windows_core_sys::PCWSTR, pexportinfo: *const CRYPTUI_WIZ_EXPORT_INFO, pvoid: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn CryptUIWizFreeDigitalSignContext(psigncontext: *const CRYPTUI_WIZ_DIGITAL_SIGN_CONTEXT) -> ::win32_foundation_sys::BOOL;
+    pub fn CryptUIWizImport(dwflags: CRYPTUI_WIZ_FLAGS, hwndparent: ::win32_foundation_sys::HWND, pwszwizardtitle: ::windows_core_sys::PCWSTR, pimportsrc: *const CRYPTUI_WIZ_IMPORT_SRC_INFO, hdestcertstore: super::HCERTSTORE) -> ::win32_foundation_sys::BOOL;
 }
 pub const ACTION_REVOCATION_DEFAULT_CACHE: u32 = 131072u32;
 pub const ACTION_REVOCATION_DEFAULT_ONLINE: u32 = 65536u32;
@@ -44,26 +36,22 @@ pub const CERT_FILTER_OP_NOT_EXISTS: u32 = 2u32;
 pub const CERT_FILTER_VALID_SIGNATURE: u32 = 4u32;
 pub const CERT_FILTER_VALID_TIME_RANGE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CERT_SELECTUI_INPUT {
     pub hStore: super::HCERTSTORE,
     pub prgpChain: *mut *mut super::CERT_CHAIN_CONTEXT,
     pub cChain: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CERT_SELECTUI_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CERT_SELECTUI_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CERT_SELECT_STRUCT_A {
     pub dwSize: u32,
-    pub hwndParent: super::super::super::Foundation::HWND,
-    pub hInstance: super::super::super::Foundation::HINSTANCE,
+    pub hwndParent: ::win32_foundation_sys::HWND,
+    pub hInstance: ::win32_foundation_sys::HINSTANCE,
     pub pTemplateName: ::windows_core_sys::PCSTR,
     pub dwFlags: CERT_SELECT_STRUCT_FLAGS,
     pub szTitle: ::windows_core_sys::PCSTR,
@@ -72,16 +60,14 @@ pub struct CERT_SELECT_STRUCT_A {
     pub szPurposeOid: ::windows_core_sys::PCSTR,
     pub cCertContext: u32,
     pub arrayCertContext: *mut *mut super::CERT_CONTEXT,
-    pub lCustData: super::super::super::Foundation::LPARAM,
+    pub lCustData: ::win32_foundation_sys::LPARAM,
     pub pfnHook: PFNCMHOOKPROC,
     pub pfnFilter: PFNCMFILTERPROC,
     pub szHelpFileName: ::windows_core_sys::PCSTR,
     pub dwHelpId: u32,
     pub hprov: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CERT_SELECT_STRUCT_A {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CERT_SELECT_STRUCT_A {
     fn clone(&self) -> Self {
         *self
@@ -95,11 +81,10 @@ pub const CSS_SHOW_HELP: CERT_SELECT_STRUCT_FLAGS = 16u32;
 pub const CSS_ENABLETEMPLATE: CERT_SELECT_STRUCT_FLAGS = 32u32;
 pub const CSS_ENABLETEMPLATEHANDLE: CERT_SELECT_STRUCT_FLAGS = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CERT_SELECT_STRUCT_W {
     pub dwSize: u32,
-    pub hwndParent: super::super::super::Foundation::HWND,
-    pub hInstance: super::super::super::Foundation::HINSTANCE,
+    pub hwndParent: ::win32_foundation_sys::HWND,
+    pub hInstance: ::win32_foundation_sys::HINSTANCE,
     pub pTemplateName: ::windows_core_sys::PCWSTR,
     pub dwFlags: CERT_SELECT_STRUCT_FLAGS,
     pub szTitle: ::windows_core_sys::PCWSTR,
@@ -108,16 +93,14 @@ pub struct CERT_SELECT_STRUCT_W {
     pub szPurposeOid: ::windows_core_sys::PCSTR,
     pub cCertContext: u32,
     pub arrayCertContext: *mut *mut super::CERT_CONTEXT,
-    pub lCustData: super::super::super::Foundation::LPARAM,
+    pub lCustData: ::win32_foundation_sys::LPARAM,
     pub pfnHook: PFNCMHOOKPROC,
     pub pfnFilter: PFNCMFILTERPROC,
     pub szHelpFileName: ::windows_core_sys::PCWSTR,
     pub dwHelpId: u32,
     pub hprov: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CERT_SELECT_STRUCT_W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CERT_SELECT_STRUCT_W {
     fn clone(&self) -> Self {
         *self
@@ -148,7 +131,6 @@ pub const CERT_VALIDITY_PERIOD_NESTING_FAILURE: u32 = 1024u32;
 pub const CERT_VALIDITY_SIGNATURE_FAILS: u32 = 4u32;
 pub const CERT_VALIDITY_UNKNOWN_CRITICAL_EXTENSION: u32 = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CERT_VERIFY_CERTIFICATE_TRUST {
     pub cbSize: u32,
     pub pccert: *const super::CERT_CONTEXT,
@@ -163,27 +145,25 @@ pub struct CERT_VERIFY_CERTIFICATE_TRUST {
     pub rghstoreCAs: *mut super::HCERTSTORE,
     pub cTrustStores: u32,
     pub rghstoreTrust: *mut super::HCERTSTORE,
-    pub lCustData: super::super::super::Foundation::LPARAM,
+    pub lCustData: ::win32_foundation_sys::LPARAM,
     pub pfnTrustHelper: PFNTRUSTHELPER,
     pub pcChain: *mut u32,
     pub prgChain: *mut *mut *mut super::CERT_CONTEXT,
     pub prgdwErrors: *mut *mut u32,
     pub prgpbTrustInfo: *mut *mut super::CRYPTOAPI_BLOB,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CERT_VERIFY_CERTIFICATE_TRUST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CERT_VERIFY_CERTIFICATE_TRUST {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 pub struct CERT_VIEWPROPERTIES_STRUCT_A {
     pub dwSize: u32,
-    pub hwndParent: super::super::super::Foundation::HWND,
-    pub hInstance: super::super::super::Foundation::HINSTANCE,
+    pub hwndParent: ::win32_foundation_sys::HWND,
+    pub hInstance: ::win32_foundation_sys::HINSTANCE,
     pub dwFlags: CERT_VIEWPROPERTIES_STRUCT_FLAGS,
     pub szTitle: ::windows_core_sys::PCSTR,
     pub pCertContext: *const super::CERT_CONTEXT,
@@ -196,17 +176,17 @@ pub struct CERT_VIEWPROPERTIES_STRUCT_A {
     pub cTrustStores: u32,
     pub rghstoreTrust: *mut super::HCERTSTORE,
     pub hprov: usize,
-    pub lCustData: super::super::super::Foundation::LPARAM,
+    pub lCustData: ::win32_foundation_sys::LPARAM,
     pub dwPad: u32,
     pub szHelpFileName: ::windows_core_sys::PCSTR,
     pub dwHelpId: u32,
     pub nStartPage: u32,
     pub cArrayPropSheetPages: u32,
-    pub arrayPropSheetPages: *mut super::super::super::UI::Controls::PROPSHEETPAGEA,
+    pub arrayPropSheetPages: *mut ::win32_ui_sys::Controls::PROPSHEETPAGEA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for CERT_VIEWPROPERTIES_STRUCT_A {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for CERT_VIEWPROPERTIES_STRUCT_A {
     fn clone(&self) -> Self {
         *self
@@ -224,11 +204,11 @@ pub const CM_NO_EDITTRUST: CERT_VIEWPROPERTIES_STRUCT_FLAGS = 128u32;
 pub const CM_HIDE_DETAILPAGE: CERT_VIEWPROPERTIES_STRUCT_FLAGS = 256u32;
 pub const CM_ADD_CERT_STORES: CERT_VIEWPROPERTIES_STRUCT_FLAGS = 512u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 pub struct CERT_VIEWPROPERTIES_STRUCT_W {
     pub dwSize: u32,
-    pub hwndParent: super::super::super::Foundation::HWND,
-    pub hInstance: super::super::super::Foundation::HINSTANCE,
+    pub hwndParent: ::win32_foundation_sys::HWND,
+    pub hInstance: ::win32_foundation_sys::HINSTANCE,
     pub dwFlags: CERT_VIEWPROPERTIES_STRUCT_FLAGS,
     pub szTitle: ::windows_core_sys::PCWSTR,
     pub pCertContext: *const super::CERT_CONTEXT,
@@ -241,17 +221,17 @@ pub struct CERT_VIEWPROPERTIES_STRUCT_W {
     pub cTrustStores: u32,
     pub rghstoreTrust: *mut super::HCERTSTORE,
     pub hprov: usize,
-    pub lCustData: super::super::super::Foundation::LPARAM,
+    pub lCustData: ::win32_foundation_sys::LPARAM,
     pub dwPad: u32,
     pub szHelpFileName: ::windows_core_sys::PCWSTR,
     pub dwHelpId: u32,
     pub nStartPage: u32,
     pub cArrayPropSheetPages: u32,
-    pub arrayPropSheetPages: *mut super::super::super::UI::Controls::PROPSHEETPAGEA,
+    pub arrayPropSheetPages: *mut ::win32_ui_sys::Controls::PROPSHEETPAGEA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for CERT_VIEWPROPERTIES_STRUCT_W {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for CERT_VIEWPROPERTIES_STRUCT_W {
     fn clone(&self) -> Self {
         *self
@@ -295,17 +275,14 @@ pub const CRYPTDLG_REVOCATION_ONLINE: u32 = 2147483648u32;
 pub const CRYPTUI_CERT_MGR_PUBLISHER_TAB: u32 = 4u32;
 pub const CRYPTUI_CERT_MGR_SINGLE_TAB_FLAG: u32 = 32768u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CRYPTUI_CERT_MGR_STRUCT {
     pub dwSize: u32,
-    pub hwndParent: super::super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub dwFlags: u32,
     pub pwszTitle: ::windows_core_sys::PCWSTR,
     pub pszInitUsageOID: ::windows_core_sys::PCSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_CERT_MGR_STRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_CERT_MGR_STRUCT {
     fn clone(&self) -> Self {
         *self
@@ -313,14 +290,11 @@ impl ::core::clone::Clone for CRYPTUI_CERT_MGR_STRUCT {
 }
 pub const CRYPTUI_CERT_MGR_TAB_MASK: u32 = 15u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CRYPTUI_INITDIALOG_STRUCT {
-    pub lParam: super::super::super::Foundation::LPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub pCertContext: *const super::CERT_CONTEXT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_INITDIALOG_STRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_INITDIALOG_STRUCT {
     fn clone(&self) -> Self {
         *self
@@ -354,88 +328,88 @@ pub const CRYPTUI_DISABLE_HTMLLINK: CRYPTUI_VIEWCERTIFICATE_FLAGS = 65536u32;
 pub const CRYPTUI_DISABLE_ISSUERSTATEMENT: CRYPTUI_VIEWCERTIFICATE_FLAGS = 131072u32;
 pub const CRYPTUI_CACHE_ONLY_URL_RETRIEVAL: CRYPTUI_VIEWCERTIFICATE_FLAGS = 262144u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     pub dwSize: u32,
-    pub hwndParent: super::super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub dwFlags: CRYPTUI_VIEWCERTIFICATE_FLAGS,
     pub szTitle: ::windows_core_sys::PCSTR,
     pub pCertContext: *const super::CERT_CONTEXT,
     pub rgszPurposes: *mut ::windows_core_sys::PSTR,
     pub cPurposes: u32,
     pub Anonymous: CRYPTUI_VIEWCERTIFICATE_STRUCTA_0,
-    pub fpCryptProviderDataTrustedUsage: super::super::super::Foundation::BOOL,
+    pub fpCryptProviderDataTrustedUsage: ::win32_foundation_sys::BOOL,
     pub idxSigner: u32,
     pub idxCert: u32,
-    pub fCounterSigner: super::super::super::Foundation::BOOL,
+    pub fCounterSigner: ::win32_foundation_sys::BOOL,
     pub idxCounterSigner: u32,
     pub cStores: u32,
     pub rghStores: *mut super::HCERTSTORE,
     pub cPropSheetPages: u32,
-    pub rgPropSheetPages: *mut super::super::super::UI::Controls::PROPSHEETPAGEA,
+    pub rgPropSheetPages: *mut ::win32_ui_sys::Controls::PROPSHEETPAGEA,
     pub nStartPage: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 pub union CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {
     pub pCryptProviderData: *const super::super::WinTrust::CRYPT_PROVIDER_DATA,
-    pub hWVTStateData: super::super::super::Foundation::HANDLE,
+    pub hWVTStateData: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 pub struct CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     pub dwSize: u32,
-    pub hwndParent: super::super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub dwFlags: CRYPTUI_VIEWCERTIFICATE_FLAGS,
     pub szTitle: ::windows_core_sys::PCWSTR,
     pub pCertContext: *const super::CERT_CONTEXT,
     pub rgszPurposes: *mut ::windows_core_sys::PSTR,
     pub cPurposes: u32,
     pub Anonymous: CRYPTUI_VIEWCERTIFICATE_STRUCTW_0,
-    pub fpCryptProviderDataTrustedUsage: super::super::super::Foundation::BOOL,
+    pub fpCryptProviderDataTrustedUsage: ::win32_foundation_sys::BOOL,
     pub idxSigner: u32,
     pub idxCert: u32,
-    pub fCounterSigner: super::super::super::Foundation::BOOL,
+    pub fCounterSigner: ::win32_foundation_sys::BOOL,
     pub idxCounterSigner: u32,
     pub cStores: u32,
     pub rghStores: *mut super::HCERTSTORE,
     pub cPropSheetPages: u32,
-    pub rgPropSheetPages: *mut super::super::super::UI::Controls::PROPSHEETPAGEW,
+    pub rgPropSheetPages: *mut ::win32_ui_sys::Controls::PROPSHEETPAGEW,
     pub nStartPage: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTW {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 pub union CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {
     pub pCryptProviderData: *const super::super::WinTrust::CRYPT_PROVIDER_DATA,
-    pub hWVTStateData: super::super::super::Foundation::HANDLE,
+    pub hWVTStateData: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::marker::Copy for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security_Cryptography_Catalog", feature = "Win32_Security_Cryptography_Sip", feature = "Win32_Security_WinTrust", feature = "Win32_UI_Controls", feature = "Win32_UI_WindowsAndMessaging"))]
 impl ::core::clone::Clone for CRYPTUI_VIEWCERTIFICATE_STRUCTW_0 {
     fn clone(&self) -> Self {
         *self
@@ -521,7 +495,6 @@ impl ::core::clone::Clone for CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO {
 }
 pub const CRYPTUI_WIZ_DIGITAL_SIGN_INCLUDE_PAGE_HASHES: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CRYPTUI_WIZ_DIGITAL_SIGN_INFO {
     pub dwSize: u32,
     pub dwSubjectChoice: CRYPTUI_WIZ_DIGITAL_SIGN_SUBJECT,
@@ -532,38 +505,30 @@ pub struct CRYPTUI_WIZ_DIGITAL_SIGN_INFO {
     pub dwAdditionalCertChoice: CRYPTUI_WIZ_DIGITAL_ADDITIONAL_CERT_CHOICE,
     pub pSignExtInfo: *mut CRYPTUI_WIZ_DIGITAL_SIGN_EXTENDED_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_WIZ_DIGITAL_SIGN_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_WIZ_DIGITAL_SIGN_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union CRYPTUI_WIZ_DIGITAL_SIGN_INFO_0 {
     pub pwszFileName: ::windows_core_sys::PCWSTR,
     pub pSignBlobInfo: *mut CRYPTUI_WIZ_DIGITAL_SIGN_BLOB_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_WIZ_DIGITAL_SIGN_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_WIZ_DIGITAL_SIGN_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union CRYPTUI_WIZ_DIGITAL_SIGN_INFO_1 {
     pub pSigningCertContext: *const super::CERT_CONTEXT,
     pub pSigningCertStore: *mut CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO,
     pub pSigningCertPvkInfo: *mut CRYPTUI_WIZ_DIGITAL_SIGN_CERT_PVK_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_WIZ_DIGITAL_SIGN_INFO_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_WIZ_DIGITAL_SIGN_INFO_1 {
     fn clone(&self) -> Self {
         *self
@@ -589,7 +554,6 @@ pub type CRYPTUI_WIZ_DIGITAL_SIGN_SIG_TYPE = u32;
 pub const CRYPTUI_WIZ_DIGITAL_SIGN_COMMERCIAL: CRYPTUI_WIZ_DIGITAL_SIGN_SIG_TYPE = 1u32;
 pub const CRYPTUI_WIZ_DIGITAL_SIGN_INDIVIDUAL: CRYPTUI_WIZ_DIGITAL_SIGN_SIG_TYPE = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO {
     pub dwSize: u32,
     pub cCertStore: u32,
@@ -597,9 +561,7 @@ pub struct CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO {
     pub pFilterCallback: PFNCFILTERPROC,
     pub pvCallbackData: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_WIZ_DIGITAL_SIGN_STORE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -610,18 +572,15 @@ pub const CRYPTUI_WIZ_DIGITAL_SIGN_SUBJECT_BLOB: CRYPTUI_WIZ_DIGITAL_SIGN_SUBJEC
 pub const CRYPTUI_WIZ_DIGITAL_SIGN_SUBJECT_FILE: CRYPTUI_WIZ_DIGITAL_SIGN_SUBJECT = 1u32;
 pub const CRYPTUI_WIZ_DIGITAL_SIGN_SUBJECT_NONE: CRYPTUI_WIZ_DIGITAL_SIGN_SUBJECT = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CRYPTUI_WIZ_EXPORT_CERTCONTEXT_INFO {
     pub dwSize: u32,
     pub dwExportFormat: CRYPTUI_WIZ_EXPORT_FORMAT,
-    pub fExportChain: super::super::super::Foundation::BOOL,
-    pub fExportPrivateKeys: super::super::super::Foundation::BOOL,
+    pub fExportChain: ::win32_foundation_sys::BOOL,
+    pub fExportPrivateKeys: ::win32_foundation_sys::BOOL,
     pub pwszPassword: ::windows_core_sys::PCWSTR,
-    pub fStrongEncryption: super::super::super::Foundation::BOOL,
+    pub fStrongEncryption: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_WIZ_EXPORT_CERTCONTEXT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_WIZ_EXPORT_CERTCONTEXT_INFO {
     fn clone(&self) -> Self {
         *self
@@ -636,7 +595,6 @@ pub const CRYPTUI_WIZ_EXPORT_FORMAT_CRL: CRYPTUI_WIZ_EXPORT_FORMAT = 6u32;
 pub const CRYPTUI_WIZ_EXPORT_FORMAT_CTL: CRYPTUI_WIZ_EXPORT_FORMAT = 7u32;
 pub const CRYPTUI_WIZ_EXPORT_FORMAT_SERIALIZED_CERT_STORE: u32 = 5u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CRYPTUI_WIZ_EXPORT_INFO {
     pub dwSize: u32,
     pub pwszExportFileName: ::windows_core_sys::PCWSTR,
@@ -645,25 +603,20 @@ pub struct CRYPTUI_WIZ_EXPORT_INFO {
     pub cStores: u32,
     pub rghStores: *mut super::HCERTSTORE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_WIZ_EXPORT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_WIZ_EXPORT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union CRYPTUI_WIZ_EXPORT_INFO_0 {
     pub pCertContext: *const super::CERT_CONTEXT,
     pub pCTLContext: *mut super::CTL_CONTEXT,
     pub pCRLContext: *mut super::CRL_CONTEXT,
     pub hCertStore: super::HCERTSTORE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_WIZ_EXPORT_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_WIZ_EXPORT_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -689,7 +642,6 @@ pub const CRYPTUI_WIZ_IMPORT_REMOTE_DEST_STORE: CRYPTUI_WIZ_FLAGS = 4194304u32;
 pub const CRYPTUI_WIZ_EXPORT_PRIVATE_KEY: CRYPTUI_WIZ_FLAGS = 256u32;
 pub const CRYPTUI_WIZ_EXPORT_NO_DELETE_PRIVATE_KEY: CRYPTUI_WIZ_FLAGS = 512u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CRYPTUI_WIZ_IMPORT_SRC_INFO {
     pub dwSize: u32,
     pub dwSubjectChoice: CRYPTUI_WIZ_IMPORT_SUBJECT_OPTION,
@@ -697,16 +649,13 @@ pub struct CRYPTUI_WIZ_IMPORT_SRC_INFO {
     pub dwFlags: super::CRYPT_KEY_FLAGS,
     pub pwszPassword: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_WIZ_IMPORT_SRC_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_WIZ_IMPORT_SRC_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union CRYPTUI_WIZ_IMPORT_SRC_INFO_0 {
     pub pwszFileName: ::windows_core_sys::PCWSTR,
     pub pCertContext: *const super::CERT_CONTEXT,
@@ -714,9 +663,7 @@ pub union CRYPTUI_WIZ_IMPORT_SRC_INFO_0 {
     pub pCRLContext: *mut super::CRL_CONTEXT,
     pub hCertStore: super::HCERTSTORE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CRYPTUI_WIZ_IMPORT_SRC_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CRYPTUI_WIZ_IMPORT_SRC_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -731,15 +678,12 @@ pub const CRYPTUI_WIZ_IMPORT_SUBJECT_CERT_STORE: CRYPTUI_WIZ_IMPORT_SUBJECT_OPTI
 pub const CRYTPDLG_FLAGS_MASK: u32 = 4278190080u32;
 pub const CSS_SELECTCERT_MASK: u32 = 16777215u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CTL_MODIFY_REQUEST {
     pub pccert: *const super::CERT_CONTEXT,
     pub dwOperation: CTL_MODIFY_REQUEST_OPERATION,
     pub dwError: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CTL_MODIFY_REQUEST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CTL_MODIFY_REQUEST {
     fn clone(&self) -> Self {
         *self
@@ -749,14 +693,10 @@ pub type CTL_MODIFY_REQUEST_OPERATION = u32;
 pub const CTL_MODIFY_REQUEST_ADD_TRUSTED: CTL_MODIFY_REQUEST_OPERATION = 3u32;
 pub const CTL_MODIFY_REQUEST_ADD_NOT_TRUSTED: CTL_MODIFY_REQUEST_OPERATION = 1u32;
 pub const CTL_MODIFY_REQUEST_REMOVE: CTL_MODIFY_REQUEST_OPERATION = 2u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNCFILTERPROC = ::core::option::Option<unsafe extern "system" fn(pcertcontext: *const super::CERT_CONTEXT, pfinitialselectedcert: *mut super::super::super::Foundation::BOOL, pvcallbackdata: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNCMFILTERPROC = ::core::option::Option<unsafe extern "system" fn(pcertcontext: *const super::CERT_CONTEXT, param1: super::super::super::Foundation::LPARAM, param2: u32, param3: u32) -> super::super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNCMHOOKPROC = ::core::option::Option<unsafe extern "system" fn(hwnddialog: super::super::super::Foundation::HWND, message: u32, wparam: super::super::super::Foundation::WPARAM, lparam: super::super::super::Foundation::LPARAM) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PFNTRUSTHELPER = ::core::option::Option<unsafe extern "system" fn(pcertcontext: *const super::CERT_CONTEXT, lcustdata: super::super::super::Foundation::LPARAM, fleafcertificate: super::super::super::Foundation::BOOL, pbtrustblob: *mut u8) -> ::windows_core_sys::HRESULT>;
+pub type PFNCFILTERPROC = ::core::option::Option<unsafe extern "system" fn(pcertcontext: *const super::CERT_CONTEXT, pfinitialselectedcert: *mut ::win32_foundation_sys::BOOL, pvcallbackdata: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type PFNCMFILTERPROC = ::core::option::Option<unsafe extern "system" fn(pcertcontext: *const super::CERT_CONTEXT, param1: ::win32_foundation_sys::LPARAM, param2: u32, param3: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PFNCMHOOKPROC = ::core::option::Option<unsafe extern "system" fn(hwnddialog: ::win32_foundation_sys::HWND, message: u32, wparam: ::win32_foundation_sys::WPARAM, lparam: ::win32_foundation_sys::LPARAM) -> u32>;
+pub type PFNTRUSTHELPER = ::core::option::Option<unsafe extern "system" fn(pcertcontext: *const super::CERT_CONTEXT, lcustdata: ::win32_foundation_sys::LPARAM, fleafcertificate: ::win32_foundation_sys::BOOL, pbtrustblob: *mut u8) -> ::windows_core_sys::HRESULT>;
 pub const POLICY_IGNORE_NON_CRITICAL_BC: u32 = 1u32;
 pub const SELCERT_ALGORITHM: u32 = 105u32;
 pub const SELCERT_CERTLIST: u32 = 102u32;

@@ -1,32 +1,21 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AssignProcessToJobObject(hjob: super::super::Foundation::HANDLE, hprocess: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateJobObjectA(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateJobObjectW(lpjobattributes: *const super::super::Security::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateJobSet(numjob: u32, userjobset: *const JOB_SET_ARRAY, flags: u32) -> super::super::Foundation::BOOL;
+    pub fn AssignProcessToJobObject(hjob: ::win32_foundation_sys::HANDLE, hprocess: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateJobObjectA(lpjobattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateJobObjectW(lpjobattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, lpname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn CreateJobSet(numjob: u32, userjobset: *const JOB_SET_ARRAY, flags: u32) -> ::win32_foundation_sys::BOOL;
     pub fn FreeMemoryJobObject(buffer: *const ::core::ffi::c_void);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsProcessInJob(processhandle: super::super::Foundation::HANDLE, jobhandle: super::super::Foundation::HANDLE, result: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenJobObjectA(dwdesiredaccess: u32, binherithandle: super::super::Foundation::BOOL, lpname: ::windows_core_sys::PCSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenJobObjectW(dwdesiredaccess: u32, binherithandle: super::super::Foundation::BOOL, lpname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryInformationJobObject(hjob: super::super::Foundation::HANDLE, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *mut ::core::ffi::c_void, cbjobobjectinformationlength: u32, lpreturnlength: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryIoRateControlInformationJobObject(hjob: super::super::Foundation::HANDLE, volumename: ::windows_core_sys::PCWSTR, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetInformationJobObject(hjob: super::super::Foundation::HANDLE, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *const ::core::ffi::c_void, cbjobobjectinformationlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetIoRateControlInformationJobObject(hjob: super::super::Foundation::HANDLE, ioratecontrolinfo: *const JOBOBJECT_IO_RATE_CONTROL_INFORMATION) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TerminateJobObject(hjob: super::super::Foundation::HANDLE, uexitcode: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UserHandleGrantAccess(huserhandle: super::super::Foundation::HANDLE, hjob: super::super::Foundation::HANDLE, bgrant: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn IsProcessInJob(processhandle: ::win32_foundation_sys::HANDLE, jobhandle: ::win32_foundation_sys::HANDLE, result: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn OpenJobObjectA(dwdesiredaccess: u32, binherithandle: ::win32_foundation_sys::BOOL, lpname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn OpenJobObjectW(dwdesiredaccess: u32, binherithandle: ::win32_foundation_sys::BOOL, lpname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn QueryInformationJobObject(hjob: ::win32_foundation_sys::HANDLE, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *mut ::core::ffi::c_void, cbjobobjectinformationlength: u32, lpreturnlength: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn QueryIoRateControlInformationJobObject(hjob: ::win32_foundation_sys::HANDLE, volumename: ::windows_core_sys::PCWSTR, infoblocks: *mut *mut JOBOBJECT_IO_RATE_CONTROL_INFORMATION, infoblockcount: *mut u32) -> u32;
+    pub fn SetInformationJobObject(hjob: ::win32_foundation_sys::HANDLE, jobobjectinformationclass: JOBOBJECTINFOCLASS, lpjobobjectinformation: *const ::core::ffi::c_void, cbjobobjectinformationlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetIoRateControlInformationJobObject(hjob: ::win32_foundation_sys::HANDLE, ioratecontrolinfo: *const JOBOBJECT_IO_RATE_CONTROL_INFORMATION) -> u32;
+    pub fn TerminateJobObject(hjob: ::win32_foundation_sys::HANDLE, uexitcode: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn UserHandleGrantAccess(huserhandle: ::win32_foundation_sys::HANDLE, hjob: ::win32_foundation_sys::HANDLE, bgrant: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
 }
 pub type JOBOBJECTINFOCLASS = i32;
 pub const JobObjectBasicAccountingInformation: JOBOBJECTINFOCLASS = 1i32;
@@ -78,14 +67,11 @@ pub const JobObjectReserved24Information: JOBOBJECTINFOCLASS = 46i32;
 pub const JobObjectReserved25Information: JOBOBJECTINFOCLASS = 47i32;
 pub const MaxJobObjectInfoClass: JOBOBJECTINFOCLASS = 48i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     pub CompletionKey: *mut ::core::ffi::c_void,
-    pub CompletionPort: super::super::Foundation::HANDLE,
+    pub CompletionPort: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JOBOBJECT_ASSOCIATE_COMPLETION_PORT {
     fn clone(&self) -> Self {
         *self
@@ -515,17 +501,17 @@ pub const ToleranceIntervalShort: JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL = 1i
 pub const ToleranceIntervalMedium: JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL = 2i32;
 pub const ToleranceIntervalLong: JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL = 3i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     pub SecurityLimitFlags: JOB_OBJECT_SECURITY,
-    pub JobToken: super::super::Foundation::HANDLE,
-    pub SidsToDisable: *mut super::super::Security::TOKEN_GROUPS,
-    pub PrivilegesToDelete: *mut super::super::Security::TOKEN_PRIVILEGES,
-    pub RestrictedSids: *mut super::super::Security::TOKEN_GROUPS,
+    pub JobToken: ::win32_foundation_sys::HANDLE,
+    pub SidsToDisable: *mut ::win32_security_sys::TOKEN_GROUPS,
+    pub PrivilegesToDelete: *mut ::win32_security_sys::TOKEN_PRIVILEGES,
+    pub RestrictedSids: *mut ::win32_security_sys::TOKEN_GROUPS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for JOBOBJECT_SECURITY_LIMIT_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for JOBOBJECT_SECURITY_LIMIT_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -597,15 +583,12 @@ pub const JOB_OBJECT_UILIMIT_GLOBALATOMS: JOB_OBJECT_UILIMIT = 32u32;
 pub const JOB_OBJECT_UILIMIT_DESKTOP: JOB_OBJECT_UILIMIT = 64u32;
 pub const JOB_OBJECT_UILIMIT_EXITWINDOWS: JOB_OBJECT_UILIMIT = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct JOB_SET_ARRAY {
-    pub JobHandle: super::super::Foundation::HANDLE,
+    pub JobHandle: ::win32_foundation_sys::HANDLE,
     pub MemberLevel: u32,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for JOB_SET_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for JOB_SET_ARRAY {
     fn clone(&self) -> Self {
         *self

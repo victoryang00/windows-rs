@@ -1,24 +1,18 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DCompositionAttachMouseDragToHwnd(visual: IDCompositionVisual, hwnd: super::super::Foundation::HWND, enable: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DCompositionAttachMouseWheelToHwnd(visual: IDCompositionVisual, hwnd: super::super::Foundation::HWND, enable: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DCompositionBoostCompositorClock(enable: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn DCompositionAttachMouseDragToHwnd(visual: IDCompositionVisual, hwnd: ::win32_foundation_sys::HWND, enable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn DCompositionAttachMouseWheelToHwnd(visual: IDCompositionVisual, hwnd: ::win32_foundation_sys::HWND, enable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn DCompositionBoostCompositorClock(enable: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Dxgi")]
     pub fn DCompositionCreateDevice(dxgidevice: super::Dxgi::IDXGIDevice, iid: *const ::windows_core_sys::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DCompositionCreateDevice2(renderingdevice: ::windows_core_sys::IUnknown, iid: *const ::windows_core_sys::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DCompositionCreateDevice3(renderingdevice: ::windows_core_sys::IUnknown, iid: *const ::windows_core_sys::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, surfacehandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Security")]
+    pub fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, surfacehandle: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn DCompositionGetFrameId(frameidtype: COMPOSITION_FRAME_ID_TYPE, frameid: *mut u64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn DCompositionGetStatistics(frameid: u64, framestats: *mut COMPOSITION_FRAME_STATS, targetidcount: u32, targetids: *mut COMPOSITION_TARGET_ID, actualtargetidcount: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn DCompositionGetTargetStatistics(frameid: u64, targetid: *const COMPOSITION_TARGET_ID, targetstats: *mut COMPOSITION_TARGET_STATS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DCompositionWaitForCompositorClock(count: u32, handles: *const super::super::Foundation::HANDLE, timeoutinms: u32) -> u32;
+    pub fn DCompositionWaitForCompositorClock(count: u32, handles: *const ::win32_foundation_sys::HANDLE, timeoutinms: u32) -> u32;
 }
 pub const COMPOSITIONOBJECT_READ: i32 = 1i32;
 pub const COMPOSITIONOBJECT_WRITE: i32 = 2i32;
@@ -53,17 +47,14 @@ impl ::core::clone::Clone for COMPOSITION_STATS {
 }
 pub const COMPOSITION_STATS_MAX_TARGETS: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COMPOSITION_TARGET_ID {
-    pub displayAdapterLuid: super::super::Foundation::LUID,
-    pub renderAdapterLuid: super::super::Foundation::LUID,
+    pub displayAdapterLuid: ::win32_foundation_sys::LUID,
+    pub renderAdapterLuid: ::win32_foundation_sys::LUID,
     pub vidPnSourceId: u32,
     pub vidPnTargetId: u32,
     pub uniqueId: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COMPOSITION_TARGET_ID {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COMPOSITION_TARGET_ID {
     fn clone(&self) -> Self {
         *self

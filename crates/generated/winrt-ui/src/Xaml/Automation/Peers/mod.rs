@@ -1470,20 +1470,19 @@ impl AutomationPeer {
             (::windows_core::Interface::vtable(this).GetAutomationId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetBoundingRectangle(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn GetBoundingRectangle(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).GetBoundingRectangle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).GetBoundingRectangle)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetChildren(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<AutomationPeer>> {
+    pub fn GetChildren(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AutomationPeer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetChildren)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<AutomationPeer>>(result__)
+            (::windows_core::Interface::vtable(this).GetChildren)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<AutomationPeer>>(result__)
         }
     }
     pub fn GetClassName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1493,12 +1492,11 @@ impl AutomationPeer {
             (::windows_core::Interface::vtable(this).GetClassName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetClickablePoint(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn GetClickablePoint(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).GetClickablePoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).GetClickablePoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     pub fn GetHelpText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1622,8 +1620,8 @@ impl AutomationPeer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).InvalidatePeer)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub fn GetPeerFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, point: Param0) -> ::windows_core::Result<AutomationPeer> {
+    #[cfg(feature = "deprecated")]
+    pub fn GetPeerFromPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, point: Param0) -> ::windows_core::Result<AutomationPeer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1644,8 +1642,7 @@ impl AutomationPeer {
             (::windows_core::Interface::vtable(this).Navigate)(::windows_core::Interface::as_raw(this), direction, result__.as_mut_ptr()).from_abi::<::windows_core::IInspectable>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetElementFromPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, pointinwindowcoordinates: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
+    pub fn GetElementFromPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, pointinwindowcoordinates: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = &::windows_core::Interface::cast::<IAutomationPeer3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
@@ -1664,19 +1661,19 @@ impl AutomationPeer {
         unsafe { (::windows_core::Interface::vtable(this).ShowContextMenu)(::windows_core::Interface::as_raw(this)).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetControlledPeers(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<AutomationPeer>> {
+    pub fn GetControlledPeers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AutomationPeer>> {
         let this = &::windows_core::Interface::cast::<IAutomationPeer3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetControlledPeers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<AutomationPeer>>(result__)
+            (::windows_core::Interface::vtable(this).GetControlledPeers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<AutomationPeer>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAnnotations(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<AutomationPeerAnnotation>> {
+    pub fn GetAnnotations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AutomationPeerAnnotation>> {
         let this = &::windows_core::Interface::cast::<IAutomationPeer3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAnnotations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<AutomationPeerAnnotation>>(result__)
+            (::windows_core::Interface::vtable(this).GetAnnotations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<AutomationPeerAnnotation>>(result__)
         }
     }
     pub fn SetParent<'a, Param0: ::windows_core::IntoParam<'a, AutomationPeer>>(&self, peer: Param0) -> ::windows_core::Result<()> {
@@ -1684,7 +1681,7 @@ impl AutomationPeer {
         unsafe { (::windows_core::Interface::vtable(this).SetParent)(::windows_core::Interface::as_raw(this), peer.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RaiseTextEditTextChangedEvent<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(&self, automationtexteditchangetype: super::AutomationTextEditChangeType, changeddata: Param1) -> ::windows_core::Result<()> {
+    pub fn RaiseTextEditTextChangedEvent<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(&self, automationtexteditchangetype: super::AutomationTextEditChangeType, changeddata: Param1) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAutomationPeer3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RaiseTextEditTextChangedEvent)(::windows_core::Interface::as_raw(this), automationtexteditchangetype, changeddata.into_param().abi()).ok() }
     }
@@ -7235,19 +7232,13 @@ pub struct IAutomationPeer_Vtbl {
     pub GetAccessKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetAutomationControlType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AutomationControlType) -> ::windows_core::HRESULT,
     pub GetAutomationId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetBoundingRectangle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetBoundingRectangle: usize,
+    pub GetBoundingRectangle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub GetChildren: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetChildren: usize,
     pub GetClassName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetClickablePoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetClickablePoint: usize,
+    pub GetClickablePoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub GetHelpText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetItemStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetItemType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -7269,9 +7260,9 @@ pub struct IAutomationPeer_Vtbl {
     #[cfg(not(feature = "deprecated"))]
     GetParent: usize,
     pub InvalidatePeer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "deprecated"))]
-    pub GetPeerFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: super::super::super::super::Foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "deprecated")))]
+    #[cfg(feature = "deprecated")]
+    pub GetPeerFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: ::winrt_foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "deprecated"))]
     GetPeerFromPoint: usize,
     pub GetLiveSetting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AutomationLiveSetting) -> ::windows_core::HRESULT,
 }
@@ -7299,10 +7290,7 @@ unsafe impl ::windows_core::Interface for IAutomationPeer3 {
 pub struct IAutomationPeer3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Navigate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, direction: AutomationNavigationDirection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetElementFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointinwindowcoordinates: super::super::super::super::Foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetElementFromPoint: usize,
+    pub GetElementFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointinwindowcoordinates: ::winrt_foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetFocusedElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ShowContextMenu: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
@@ -7477,19 +7465,13 @@ pub struct IAutomationPeerOverrides_Vtbl {
     pub GetAccessKeyCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetAutomationControlTypeCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AutomationControlType) -> ::windows_core::HRESULT,
     pub GetAutomationIdCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetBoundingRectangleCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetBoundingRectangleCore: usize,
+    pub GetBoundingRectangleCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub GetChildrenCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetChildrenCore: usize,
     pub GetClassNameCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetClickablePointCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetClickablePointCore: usize,
+    pub GetClickablePointCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub GetHelpTextCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetItemStatusCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetItemTypeCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
@@ -7506,10 +7488,7 @@ pub struct IAutomationPeerOverrides_Vtbl {
     pub IsPasswordCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsRequiredForFormCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetFocusCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetPeerFromPointCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: super::super::super::super::Foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPeerFromPointCore: usize,
+    pub GetPeerFromPointCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, point: ::winrt_foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetLiveSettingCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AutomationLiveSetting) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -7541,10 +7520,7 @@ unsafe impl ::windows_core::Interface for IAutomationPeerOverrides3 {
 pub struct IAutomationPeerOverrides3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub NavigateCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, direction: AutomationNavigationDirection, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetElementFromPointCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointinwindowcoordinates: super::super::super::super::Foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetElementFromPointCore: usize,
+    pub GetElementFromPointCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pointinwindowcoordinates: ::winrt_foundation::Point, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub GetFocusedElementCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub GetAnnotationsCore: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,

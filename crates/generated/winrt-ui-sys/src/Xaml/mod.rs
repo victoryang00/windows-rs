@@ -156,14 +156,11 @@ pub type DragUI = *mut ::core::ffi::c_void;
 pub type DragUIOverride = *mut ::core::ffi::c_void;
 pub type DropCompletedEventArgs = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct Duration {
-    pub TimeSpan: super::super::Foundation::TimeSpan,
+    pub TimeSpan: ::winrt_foundation_sys::TimeSpan,
     pub Type: DurationType,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for Duration {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for Duration {
     fn clone(&self) -> Self {
         *self

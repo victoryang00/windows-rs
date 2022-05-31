@@ -1,66 +1,55 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfCloseHandle(filehandle: super::super::Foundation::HANDLE);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+    pub fn CfCloseHandle(filehandle: ::win32_foundation_sys::HANDLE);
+    #[cfg(feature = "Win32_System_CorrelationVector")]
     pub fn CfConnectSyncRoot(syncrootpath: ::windows_core_sys::PCWSTR, callbacktable: *const CF_CALLBACK_REGISTRATION, callbackcontext: *const ::core::ffi::c_void, connectflags: CF_CONNECT_FLAGS, connectionkey: *mut CF_CONNECTION_KEY) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfConvertToPlaceholder(filehandle: super::super::Foundation::HANDLE, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, convertflags: CF_CONVERT_FLAGS, convertusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn CfConvertToPlaceholder(filehandle: ::win32_foundation_sys::HANDLE, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, convertflags: CF_CONVERT_FLAGS, convertusn: *mut i64, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Storage_FileSystem")]
     pub fn CfCreatePlaceholders(basedirectorypath: ::windows_core_sys::PCWSTR, placeholderarray: *mut CF_PLACEHOLDER_CREATE_INFO, placeholdercount: u32, createflags: CF_CREATE_FLAGS, entriesprocessed: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfDehydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, dehydrateflags: CF_DEHYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn CfDehydratePlaceholder(filehandle: ::win32_foundation_sys::HANDLE, startingoffset: i64, length: i64, dehydrateflags: CF_DEHYDRATE_FLAGS, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
     pub fn CfDisconnectSyncRoot(connectionkey: CF_CONNECTION_KEY) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_CorrelationVector"))]
+    #[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_CorrelationVector"))]
     pub fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPERATION_PARAMETERS) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
-    pub fn CfGetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *mut super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfGetPlaceholderInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfGetPlaceholderRangeInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_RANGE_INFO_CLASS, startingoffset: i64, length: i64, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_CorrelationVector")]
+    pub fn CfGetCorrelationVector(filehandle: ::win32_foundation_sys::HANDLE, correlationvector: *mut ::win32_system_sys::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core_sys::HRESULT;
+    pub fn CfGetPlaceholderInfo(filehandle: ::win32_foundation_sys::HANDLE, infoclass: CF_PLACEHOLDER_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn CfGetPlaceholderRangeInfo(filehandle: ::win32_foundation_sys::HANDLE, infoclass: CF_PLACEHOLDER_RANGE_INFO_CLASS, startingoffset: i64, length: i64, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn CfGetPlaceholderStateFromAttributeTag(fileattributes: u32, reparsetag: u32) -> CF_PLACEHOLDER_STATE;
     #[cfg(feature = "Win32_Storage_FileSystem")]
     pub fn CfGetPlaceholderStateFromFileInfo(infobuffer: *const ::core::ffi::c_void, infoclass: super::FileSystem::FILE_INFO_BY_HANDLE_CLASS) -> CF_PLACEHOLDER_STATE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+    #[cfg(feature = "Win32_Storage_FileSystem")]
     pub fn CfGetPlaceholderStateFromFindData(finddata: *const super::FileSystem::WIN32_FIND_DATAA) -> CF_PLACEHOLDER_STATE;
     pub fn CfGetPlatformInfo(platformversion: *mut CF_PLATFORM_INFO) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfGetSyncRootInfoByHandle(filehandle: super::super::Foundation::HANDLE, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn CfGetSyncRootInfoByHandle(filehandle: ::win32_foundation_sys::HANDLE, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn CfGetSyncRootInfoByPath(filepath: ::windows_core_sys::PCWSTR, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfGetTransferKey(filehandle: super::super::Foundation::HANDLE, transferkey: *mut i64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfGetWin32HandleFromProtectedHandle(protectedhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfHydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, hydrateflags: CF_HYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfOpenFileWithOplock(filepath: ::windows_core_sys::PCWSTR, flags: CF_OPEN_FILE_FLAGS, protectedhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn CfGetTransferKey(filehandle: ::win32_foundation_sys::HANDLE, transferkey: *mut i64) -> ::windows_core_sys::HRESULT;
+    pub fn CfGetWin32HandleFromProtectedHandle(protectedhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn CfHydratePlaceholder(filehandle: ::win32_foundation_sys::HANDLE, startingoffset: i64, length: i64, hydrateflags: CF_HYDRATE_FLAGS, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    pub fn CfOpenFileWithOplock(filepath: ::windows_core_sys::PCWSTR, flags: CF_OPEN_FILE_FLAGS, protectedhandle: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn CfQuerySyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: *mut CF_SYNC_PROVIDER_STATUS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfReferenceProtectedHandle(protectedhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOLEAN;
+    pub fn CfReferenceProtectedHandle(protectedhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOLEAN;
     pub fn CfRegisterSyncRoot(syncrootpath: ::windows_core_sys::PCWSTR, registration: *const CF_SYNC_REGISTRATION, policies: *const CF_SYNC_POLICIES, registerflags: CF_REGISTER_FLAGS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfReleaseProtectedHandle(protectedhandle: super::super::Foundation::HANDLE);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfReleaseTransferKey(filehandle: super::super::Foundation::HANDLE, transferkey: *mut i64);
+    pub fn CfReleaseProtectedHandle(protectedhandle: ::win32_foundation_sys::HANDLE);
+    pub fn CfReleaseTransferKey(filehandle: ::win32_foundation_sys::HANDLE, transferkey: *mut i64);
     pub fn CfReportProviderProgress(connectionkey: CF_CONNECTION_KEY, transferkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64) -> ::windows_core_sys::HRESULT;
     pub fn CfReportProviderProgress2(connectionkey: CF_CONNECTION_KEY, transferkey: i64, requestkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64, targetsessionid: u32) -> ::windows_core_sys::HRESULT;
     pub fn CfReportSyncStatus(syncrootpath: ::windows_core_sys::PCWSTR, syncstatus: *const CF_SYNC_STATUS) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfRevertPlaceholder(filehandle: super::super::Foundation::HANDLE, revertflags: CF_REVERT_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
-    pub fn CfSetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *const super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CfSetInSyncState(filehandle: super::super::Foundation::HANDLE, insyncstate: CF_IN_SYNC_STATE, insyncflags: CF_SET_IN_SYNC_FLAGS, insyncusn: *mut i64) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfSetPinState(filehandle: super::super::Foundation::HANDLE, pinstate: CF_PIN_STATE, pinflags: CF_SET_PIN_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn CfRevertPlaceholder(filehandle: ::win32_foundation_sys::HANDLE, revertflags: CF_REVERT_FLAGS, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_CorrelationVector")]
+    pub fn CfSetCorrelationVector(filehandle: ::win32_foundation_sys::HANDLE, correlationvector: *const ::win32_system_sys::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core_sys::HRESULT;
+    pub fn CfSetInSyncState(filehandle: ::win32_foundation_sys::HANDLE, insyncstate: CF_IN_SYNC_STATE, insyncflags: CF_SET_IN_SYNC_FLAGS, insyncusn: *mut i64) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn CfSetPinState(filehandle: ::win32_foundation_sys::HANDLE, pinstate: CF_PIN_STATE, pinflags: CF_SET_PIN_FLAGS, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
     pub fn CfUnregisterSyncRoot(syncrootpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_IO"))]
-    pub fn CfUpdatePlaceholder(filehandle: super::super::Foundation::HANDLE, fsmetadata: *const CF_FS_METADATA, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, dehydraterangearray: *const CF_FILE_RANGE, dehydraterangecount: u32, updateflags: CF_UPDATE_FLAGS, updateusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    #[cfg(all(feature = "Win32_Storage_FileSystem", feature = "Win32_System_IO"))]
+    pub fn CfUpdatePlaceholder(filehandle: ::win32_foundation_sys::HANDLE, fsmetadata: *const CF_FS_METADATA, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, dehydraterangearray: *const CF_FILE_RANGE, dehydraterangecount: u32, updateflags: CF_UPDATE_FLAGS, updateusn: *mut i64, overlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
     pub fn CfUpdateSyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: CF_SYNC_PROVIDER_STATUS) -> ::windows_core_sys::HRESULT;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 pub type CF_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackinfo: *const CF_CALLBACK_INFO, callbackparameters: *const CF_CALLBACK_PARAMETERS)>;
 pub type CF_CALLBACK_CANCEL_FLAGS = u32;
 pub const CF_CALLBACK_CANCEL_FLAG_NONE: CF_CALLBACK_CANCEL_FLAGS = 0u32;
@@ -95,7 +84,7 @@ pub const CF_CALLBACK_FETCH_DATA_FLAG_EXPLICIT_HYDRATION: CF_CALLBACK_FETCH_DATA
 pub type CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS = u32;
 pub const CF_CALLBACK_FETCH_PLACEHOLDERS_FLAG_NONE: CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS = 0u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 pub struct CF_CALLBACK_INFO {
     pub StructSize: u32,
     pub ConnectionKey: CF_CONNECTION_KEY,
@@ -113,13 +102,13 @@ pub struct CF_CALLBACK_INFO {
     pub NormalizedPath: ::windows_core_sys::PCWSTR,
     pub TransferKey: i64,
     pub PriorityHint: u8,
-    pub CorrelationVector: *mut super::super::System::CorrelationVector::CORRELATION_VECTOR,
+    pub CorrelationVector: *mut ::win32_system_sys::CorrelationVector::CORRELATION_VECTOR,
     pub ProcessInfo: *mut CF_PROCESS_INFO,
     pub RequestKey: i64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 impl ::core::marker::Copy for CF_CALLBACK_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 impl ::core::clone::Clone for CF_CALLBACK_INFO {
     fn clone(&self) -> Self {
         *self
@@ -317,14 +306,14 @@ impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_11 {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 pub struct CF_CALLBACK_REGISTRATION {
     pub Type: CF_CALLBACK_TYPE,
     pub Callback: CF_CALLBACK,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 impl ::core::marker::Copy for CF_CALLBACK_REGISTRATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 impl ::core::clone::Clone for CF_CALLBACK_REGISTRATION {
     fn clone(&self) -> Self {
         *self
@@ -483,40 +472,40 @@ pub const CF_OPERATION_ACK_DELETE_FLAG_NONE: CF_OPERATION_ACK_DELETE_FLAGS = 0u3
 pub type CF_OPERATION_ACK_RENAME_FLAGS = u32;
 pub const CF_OPERATION_ACK_RENAME_FLAG_NONE: CF_OPERATION_ACK_RENAME_FLAGS = 0u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 pub struct CF_OPERATION_INFO {
     pub StructSize: u32,
     pub Type: CF_OPERATION_TYPE,
     pub ConnectionKey: CF_CONNECTION_KEY,
     pub TransferKey: i64,
-    pub CorrelationVector: *const super::super::System::CorrelationVector::CORRELATION_VECTOR,
+    pub CorrelationVector: *const ::win32_system_sys::CorrelationVector::CORRELATION_VECTOR,
     pub SyncStatus: *const CF_SYNC_STATUS,
     pub RequestKey: i64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 impl ::core::marker::Copy for CF_OPERATION_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
+#[cfg(feature = "Win32_System_CorrelationVector")]
 impl ::core::clone::Clone for CF_OPERATION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_OPERATION_PARAMETERS {
     pub ParamSize: u32,
     pub Anonymous: CF_OPERATION_PARAMETERS_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub union CF_OPERATION_PARAMETERS_0 {
     pub TransferData: CF_OPERATION_PARAMETERS_0_6,
     pub RetrieveData: CF_OPERATION_PARAMETERS_0_5,
@@ -527,92 +516,92 @@ pub union CF_OPERATION_PARAMETERS_0 {
     pub AckRename: CF_OPERATION_PARAMETERS_0_3,
     pub AckDelete: CF_OPERATION_PARAMETERS_0_2,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_OPERATION_PARAMETERS_0_0 {
     pub Flags: CF_OPERATION_ACK_DATA_FLAGS,
-    pub CompletionStatus: super::super::Foundation::NTSTATUS,
+    pub CompletionStatus: ::win32_foundation_sys::NTSTATUS,
     pub Offset: i64,
     pub Length: i64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_OPERATION_PARAMETERS_0_1 {
     pub Flags: CF_OPERATION_ACK_DEHYDRATE_FLAGS,
-    pub CompletionStatus: super::super::Foundation::NTSTATUS,
+    pub CompletionStatus: ::win32_foundation_sys::NTSTATUS,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_OPERATION_PARAMETERS_0_2 {
     pub Flags: CF_OPERATION_ACK_DELETE_FLAGS,
-    pub CompletionStatus: super::super::Foundation::NTSTATUS,
+    pub CompletionStatus: ::win32_foundation_sys::NTSTATUS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_OPERATION_PARAMETERS_0_3 {
     pub Flags: CF_OPERATION_ACK_RENAME_FLAGS,
-    pub CompletionStatus: super::super::Foundation::NTSTATUS,
+    pub CompletionStatus: ::win32_foundation_sys::NTSTATUS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_OPERATION_PARAMETERS_0_4 {
     pub Flags: CF_OPERATION_RESTART_HYDRATION_FLAGS,
     pub FsMetadata: *const CF_FS_METADATA,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_4 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_OPERATION_PARAMETERS_0_5 {
     pub Flags: CF_OPERATION_RETRIEVE_DATA_FLAGS,
     pub Buffer: *mut ::core::ffi::c_void,
@@ -620,44 +609,44 @@ pub struct CF_OPERATION_PARAMETERS_0_5 {
     pub Length: i64,
     pub ReturnedLength: i64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_5 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_5 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_OPERATION_PARAMETERS_0_6 {
     pub Flags: CF_OPERATION_TRANSFER_DATA_FLAGS,
-    pub CompletionStatus: super::super::Foundation::NTSTATUS,
+    pub CompletionStatus: ::win32_foundation_sys::NTSTATUS,
     pub Buffer: *const ::core::ffi::c_void,
     pub Offset: i64,
     pub Length: i64,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_6 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_6 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_OPERATION_PARAMETERS_0_7 {
     pub Flags: CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS,
-    pub CompletionStatus: super::super::Foundation::NTSTATUS,
+    pub CompletionStatus: ::win32_foundation_sys::NTSTATUS,
     pub PlaceholderTotalCount: i64,
     pub PlaceholderArray: *mut CF_PLACEHOLDER_CREATE_INFO,
     pub PlaceholderCount: u32,
     pub EntriesProcessed: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::marker::Copy for CF_OPERATION_PARAMETERS_0_7 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
+#[cfg(feature = "Win32_Storage_FileSystem")]
 impl ::core::clone::Clone for CF_OPERATION_PARAMETERS_0_7 {
     fn clone(&self) -> Self {
         *self

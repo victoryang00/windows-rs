@@ -1,9 +1,8 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn StartXpsPrintJob(printername: ::windows_core_sys::PCWSTR, jobname: ::windows_core_sys::PCWSTR, outputfilename: ::windows_core_sys::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, printablepageson: *const u8, printablepagesoncount: u32, xpsprintjob: *mut IXpsPrintJob, documentstream: *mut IXpsPrintJobStream, printticketstream: *mut IXpsPrintJobStream) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StartXpsPrintJob1(printername: ::windows_core_sys::PCWSTR, jobname: ::windows_core_sys::PCWSTR, outputfilename: ::windows_core_sys::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, xpsprintjob: *mut IXpsPrintJob, printcontentreceiver: *mut super::IXpsOMPackageTarget) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_System_Com")]
+    pub fn StartXpsPrintJob(printername: ::windows_core_sys::PCWSTR, jobname: ::windows_core_sys::PCWSTR, outputfilename: ::windows_core_sys::PCWSTR, progressevent: ::win32_foundation_sys::HANDLE, completionevent: ::win32_foundation_sys::HANDLE, printablepageson: *const u8, printablepagesoncount: u32, xpsprintjob: *mut IXpsPrintJob, documentstream: *mut IXpsPrintJobStream, printticketstream: *mut IXpsPrintJobStream) -> ::windows_core_sys::HRESULT;
+    pub fn StartXpsPrintJob1(printername: ::windows_core_sys::PCWSTR, jobname: ::windows_core_sys::PCWSTR, outputfilename: ::windows_core_sys::PCWSTR, progressevent: ::win32_foundation_sys::HANDLE, completionevent: ::win32_foundation_sys::HANDLE, xpsprintjob: *mut IXpsPrintJob, printcontentreceiver: *mut super::IXpsOMPackageTarget) -> ::windows_core_sys::HRESULT;
 }
 pub const ID_DOCUMENTPACKAGETARGET_MSXPS: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2628665512, data2: 57041, data3: 16841, data4: [169, 253, 215, 53, 239, 51, 174, 218] };
 pub const ID_DOCUMENTPACKAGETARGET_OPENXPS: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 5684082, data2: 35996, data3: 17938, data4: [189, 15, 147, 1, 42, 135, 9, 157] };

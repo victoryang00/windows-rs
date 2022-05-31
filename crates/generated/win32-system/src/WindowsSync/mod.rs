@@ -100,7 +100,6 @@ impl ::core::fmt::Debug for FILTER_COMBINATION_TYPE {
 #[repr(transparent)]
 pub struct IAsynchronousDataRetriever(::windows_core::IUnknown);
 impl IAsynchronousDataRetriever {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetIdParameters(&self, pidparameters: *mut ID_PARAMETERS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetIdParameters)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pidparameters)).ok()
     }
@@ -158,10 +157,7 @@ unsafe impl ::windows_core::Interface for IAsynchronousDataRetriever {
 #[doc(hidden)]
 pub struct IAsynchronousDataRetriever_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetIdParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidparameters: *mut ID_PARAMETERS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIdParameters: usize,
     pub RegisterCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdataretrievercallback: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub RevokeCallback: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdataretrievercallback: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub LoadChangeData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ploadchangecontext: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -955,78 +951,62 @@ pub struct ICustomFilterInfo_Vtbl {
     pub GetSyncFilter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pisyncfilter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ID_PARAMETERS {
     pub dwSize: u32,
     pub replicaId: ID_PARAMETER_PAIR,
     pub itemId: ID_PARAMETER_PAIR,
     pub changeUnitId: ID_PARAMETER_PAIR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ID_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ID_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for ID_PARAMETERS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ID_PARAMETERS").field("dwSize", &self.dwSize).field("replicaId", &self.replicaId).field("itemId", &self.itemId).field("changeUnitId", &self.changeUnitId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ID_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ID_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ID_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ID_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ID_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ID_PARAMETER_PAIR {
-    pub fIsVariable: super::super::Foundation::BOOL,
+    pub fIsVariable: ::win32_foundation::BOOL,
     pub cbIdSize: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ID_PARAMETER_PAIR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ID_PARAMETER_PAIR {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for ID_PARAMETER_PAIR {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ID_PARAMETER_PAIR").field("fIsVariable", &self.fIsVariable).field("cbIdSize", &self.cbIdSize).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for ID_PARAMETER_PAIR {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for ID_PARAMETER_PAIR {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<ID_PARAMETER_PAIR>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for ID_PARAMETER_PAIR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for ID_PARAMETER_PAIR {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1756,8 +1736,7 @@ impl IFeedClockVector {
     pub unsafe fn GetUpdateCount(&self, pdwupdatecount: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetUpdateCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwupdatecount)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsNoConflictsSpecified(&self, pfisnoconflictsspecified: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn IsNoConflictsSpecified(&self, pfisnoconflictsspecified: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IsNoConflictsSpecified)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pfisnoconflictsspecified)).ok()
     }
 }
@@ -1826,10 +1805,7 @@ unsafe impl ::windows_core::Interface for IFeedClockVector {
 pub struct IFeedClockVector_Vtbl {
     pub base__: IClockVector_Vtbl,
     pub GetUpdateCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwupdatecount: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsNoConflictsSpecified: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfisnoconflictsspecified: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsNoConflictsSpecified: usize,
+    pub IsNoConflictsSpecified: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfisnoconflictsspecified: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IFeedClockVectorElement(::windows_core::IUnknown);
@@ -2146,7 +2122,6 @@ pub struct IFilterTrackingRequestCallback_Vtbl {
 #[repr(transparent)]
 pub struct IFilterTrackingSyncChangeBuilder(::windows_core::IUnknown);
 impl IFilterTrackingSyncChangeBuilder {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn AddFilterChange(&self, dwfilterkey: u32, pfilterchange: *const SYNC_FILTER_CHANGE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddFilterChange)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwfilterkey), ::core::mem::transmute(pfilterchange)).ok()
     }
@@ -2198,10 +2173,7 @@ unsafe impl ::windows_core::Interface for IFilterTrackingSyncChangeBuilder {
 #[doc(hidden)]
 pub struct IFilterTrackingSyncChangeBuilder_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub AddFilterChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwfilterkey: u32, pfilterchange: *const SYNC_FILTER_CHANGE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AddFilterChange: usize,
     pub SetAllChangeUnitsPresentFlag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -2210,8 +2182,7 @@ impl IForgottenKnowledge {
     pub unsafe fn GetOwnerReplicaId(&self, pbreplicaid: *mut u8, pcbidsize: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetOwnerReplicaId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pbreplicaid), ::core::mem::transmute(pcbidsize)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Serialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fserializereplicakeymap: Param0, pbknowledge: *mut u8, pcbknowledge: *mut u32) -> ::windows_core::Result<()> {
+    pub unsafe fn Serialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fserializereplicakeymap: Param0, pbknowledge: *mut u8, pcbknowledge: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Serialize)(::windows_core::Interface::as_raw(self), fserializereplicakeymap.into_param().abi(), ::core::mem::transmute(pbknowledge), ::core::mem::transmute(pcbknowledge)).ok()
     }
     pub unsafe fn SetLocalTickCount(&self, ulltickcount: u64) -> ::windows_core::Result<()> {
@@ -2359,7 +2330,6 @@ pub struct IForgottenKnowledge_Vtbl {
 #[repr(transparent)]
 pub struct IKnowledgeSyncProvider(::windows_core::IUnknown);
 impl IKnowledgeSyncProvider {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetIdParameters(&self, pidparameters: *mut ID_PARAMETERS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetIdParameters)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pidparameters)).ok()
     }
@@ -2768,7 +2738,7 @@ pub struct IRecoverableErrorData_Vtbl {
 pub struct IRegisteredSyncProvider(::windows_core::IUnknown);
 impl IRegisteredSyncProvider {
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn Init<'a, Param2: ::windows_core::IntoParam<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore>>(&self, pguidinstanceid: *const ::windows_core::GUID, pguidcontenttype: *const ::windows_core::GUID, pcontextpropertystore: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn Init<'a, Param2: ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore>>(&self, pguidinstanceid: *const ::windows_core::GUID, pguidcontenttype: *const ::windows_core::GUID, pcontextpropertystore: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Init)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidinstanceid), ::core::mem::transmute(pguidcontenttype), pcontextpropertystore.into_param().abi()).ok()
     }
     pub unsafe fn GetInstanceId(&self) -> ::windows_core::Result<::windows_core::GUID> {
@@ -3371,8 +3341,7 @@ impl ISyncChangeBatch {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetChangeEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumSyncChanges>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetIsLastBatch)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pflastbatch)).ok()
     }
     pub unsafe fn GetWorkEstimateForBatch(&self, pdwworkforbatch: *mut u32) -> ::windows_core::Result<()> {
@@ -3418,8 +3387,7 @@ impl ISyncChangeBatch {
     pub unsafe fn BeginUnorderedGroup(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).BeginUnorderedGroup)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EndUnorderedGroup<'a, Param0: ::windows_core::IntoParam<'a, ISyncKnowledge>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pmadewithknowledge: Param0, fallchangesforknowledge: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn EndUnorderedGroup<'a, Param0: ::windows_core::IntoParam<'a, ISyncKnowledge>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pmadewithknowledge: Param0, fallchangesforknowledge: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).EndUnorderedGroup)(::windows_core::Interface::as_raw(self), pmadewithknowledge.into_param().abi(), fallchangesforknowledge.into_param().abi()).ok()
     }
     pub unsafe fn AddLoggedConflict<'a, Param6: ::windows_core::IntoParam<'a, ISyncKnowledge>>(&self, pbownerreplicaid: *const u8, pbitemid: *const u8, pchangeversion: *const SYNC_VERSION, pcreationversion: *const SYNC_VERSION, dwflags: u32, dwworkforchange: u32, pconflictknowledge: Param6) -> ::windows_core::Result<ISyncChangeBuilder> {
@@ -3492,10 +3460,7 @@ unsafe impl ::windows_core::Interface for ISyncChangeBatch {
 pub struct ISyncChangeBatch_Vtbl {
     pub base__: ISyncChangeBatchBase_Vtbl,
     pub BeginUnorderedGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub EndUnorderedGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pmadewithknowledge: ::windows_core::RawPtr, fallchangesforknowledge: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    EndUnorderedGroup: usize,
+    pub EndUnorderedGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pmadewithknowledge: ::windows_core::RawPtr, fallchangesforknowledge: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub AddLoggedConflict: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbownerreplicaid: *const u8, pbitemid: *const u8, pchangeversion: *const SYNC_VERSION, pcreationversion: *const SYNC_VERSION, dwflags: u32, dwworkforchange: u32, pconflictknowledge: ::windows_core::RawPtr, ppchangebuilder: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -3505,8 +3470,7 @@ impl ISyncChangeBatch2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetChangeEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumSyncChanges>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetIsLastBatch)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pflastbatch)).ok()
     }
     pub unsafe fn GetWorkEstimateForBatch(&self, pdwworkforbatch: *mut u32) -> ::windows_core::Result<()> {
@@ -3552,8 +3516,7 @@ impl ISyncChangeBatch2 {
     pub unsafe fn BeginUnorderedGroup(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.BeginUnorderedGroup)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn EndUnorderedGroup<'a, Param0: ::windows_core::IntoParam<'a, ISyncKnowledge>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pmadewithknowledge: Param0, fallchangesforknowledge: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn EndUnorderedGroup<'a, Param0: ::windows_core::IntoParam<'a, ISyncKnowledge>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pmadewithknowledge: Param0, fallchangesforknowledge: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.EndUnorderedGroup)(::windows_core::Interface::as_raw(self), pmadewithknowledge.into_param().abi(), fallchangesforknowledge.into_param().abi()).ok()
     }
     pub unsafe fn AddLoggedConflict<'a, Param6: ::windows_core::IntoParam<'a, ISyncKnowledge>>(&self, pbownerreplicaid: *const u8, pbitemid: *const u8, pchangeversion: *const SYNC_VERSION, pcreationversion: *const SYNC_VERSION, dwflags: u32, dwworkforchange: u32, pconflictknowledge: Param6) -> ::windows_core::Result<ISyncChangeBuilder> {
@@ -3670,8 +3633,7 @@ impl ISyncChangeBatchAdvanced {
     pub unsafe fn GetUpperBoundItemId(&self, pbitemid: *mut u8, pcbidsize: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetUpperBoundItemId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pbitemid), ::core::mem::transmute(pcbidsize)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetBatchLevelKnowledgeShouldBeApplied(&self, pfbatchknowledgeshouldbeapplied: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetBatchLevelKnowledgeShouldBeApplied(&self, pfbatchknowledgeshouldbeapplied: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetBatchLevelKnowledgeShouldBeApplied)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pfbatchknowledgeshouldbeapplied)).ok()
     }
 }
@@ -3722,10 +3684,7 @@ pub struct ISyncChangeBatchAdvanced_Vtbl {
     pub GetFilterInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppfilterinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ConvertFullEnumerationChangeBatchToRegularChangeBatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppchangebatch: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetUpperBoundItemId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbitemid: *mut u8, pcbidsize: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetBatchLevelKnowledgeShouldBeApplied: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfbatchknowledgeshouldbeapplied: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetBatchLevelKnowledgeShouldBeApplied: usize,
+    pub GetBatchLevelKnowledgeShouldBeApplied: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfbatchknowledgeshouldbeapplied: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISyncChangeBatchBase(::windows_core::IUnknown);
@@ -3734,8 +3693,7 @@ impl ISyncChangeBatchBase {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetChangeEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumSyncChanges>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetIsLastBatch)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pflastbatch)).ok()
     }
     pub unsafe fn GetWorkEstimateForBatch(&self, pdwworkforbatch: *mut u32) -> ::windows_core::Result<()> {
@@ -3824,10 +3782,7 @@ unsafe impl ::windows_core::Interface for ISyncChangeBatchBase {
 pub struct ISyncChangeBatchBase_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetChangeEnumerator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppenum: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetIsLastBatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pflastbatch: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIsLastBatch: usize,
+    pub GetIsLastBatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pflastbatch: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetWorkEstimateForBatch: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwworkforbatch: *mut u32) -> ::windows_core::HRESULT,
     pub GetRemainingWorkEstimateForSession: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwremainingworkforsession: *mut u32) -> ::windows_core::HRESULT,
     pub BeginOrderedGroup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pblowerbound: *const u8) -> ::windows_core::HRESULT,
@@ -3848,8 +3803,7 @@ impl ISyncChangeBatchBase2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetChangeEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumSyncChanges>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetIsLastBatch)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pflastbatch)).ok()
     }
     pub unsafe fn GetWorkEstimateForBatch(&self, pdwworkforbatch: *mut u32) -> ::windows_core::Result<()> {
@@ -4056,8 +4010,7 @@ impl ISyncChangeBatchWithPrerequisite {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetChangeEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumSyncChanges>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetIsLastBatch)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pflastbatch)).ok()
     }
     pub unsafe fn GetWorkEstimateForBatch(&self, pdwworkforbatch: *mut u32) -> ::windows_core::Result<()> {
@@ -4301,12 +4254,10 @@ impl ISyncChangeWithFilterKeyMap {
     pub unsafe fn GetFilterCount(&self, pdwfiltercount: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetFilterCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwfiltercount)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetFilterChange(&self, dwfilterkey: u32, pfilterchange: *mut SYNC_FILTER_CHANGE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetFilterChange)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwfilterkey), ::core::mem::transmute(pfilterchange)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetAllChangeUnitsPresentFlag(&self, pfallchangeunitspresent: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetAllChangeUnitsPresentFlag(&self, pfallchangeunitspresent: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetAllChangeUnitsPresentFlag)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pfallchangeunitspresent)).ok()
     }
     pub unsafe fn GetFilterForgottenKnowledge(&self, dwfilterkey: u32) -> ::windows_core::Result<ISyncKnowledge> {
@@ -4379,14 +4330,8 @@ unsafe impl ::windows_core::Interface for ISyncChangeWithFilterKeyMap {
 pub struct ISyncChangeWithFilterKeyMap_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetFilterCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwfiltercount: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetFilterChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwfilterkey: u32, pfilterchange: *mut SYNC_FILTER_CHANGE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetFilterChange: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetAllChangeUnitsPresentFlag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfallchangeunitspresent: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetAllChangeUnitsPresentFlag: usize,
+    pub GetAllChangeUnitsPresentFlag: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfallchangeunitspresent: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetFilterForgottenKnowledge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwfilterkey: u32, ppifilterforgottenknowledge: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetFilteredReplicaLearnedKnowledge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdestinationknowledge: ::windows_core::RawPtr, pnewmoveins: ::windows_core::RawPtr, pplearnedknowledge: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetLearnedFilterForgottenKnowledge: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdestinationknowledge: ::windows_core::RawPtr, pnewmoveins: ::windows_core::RawPtr, dwfilterkey: u32, pplearnedfilterforgottenknowledge: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4881,8 +4826,7 @@ impl ISyncFullEnumerationChangeBatch {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetChangeEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumSyncChanges>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetIsLastBatch)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pflastbatch)).ok()
     }
     pub unsafe fn GetWorkEstimateForBatch(&self, pdwworkforbatch: *mut u32) -> ::windows_core::Result<()> {
@@ -5011,8 +4955,7 @@ impl ISyncFullEnumerationChangeBatch2 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.base__.GetChangeEnumerator)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IEnumSyncChanges>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetIsLastBatch(&self, pflastbatch: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.base__.GetIsLastBatch)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pflastbatch)).ok()
     }
     pub unsafe fn GetWorkEstimateForBatch(&self, pdwworkforbatch: *mut u32) -> ::windows_core::Result<()> {
@@ -5162,8 +5105,7 @@ impl ISyncKnowledge {
     pub unsafe fn GetOwnerReplicaId(&self, pbreplicaid: *mut u8, pcbidsize: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetOwnerReplicaId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pbreplicaid), ::core::mem::transmute(pcbidsize)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Serialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fserializereplicakeymap: Param0, pbknowledge: *mut u8, pcbknowledge: *mut u32) -> ::windows_core::Result<()> {
+    pub unsafe fn Serialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fserializereplicakeymap: Param0, pbknowledge: *mut u8, pcbknowledge: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Serialize)(::windows_core::Interface::as_raw(self), fserializereplicakeymap.into_param().abi(), ::core::mem::transmute(pbknowledge), ::core::mem::transmute(pcbknowledge)).ok()
     }
     pub unsafe fn SetLocalTickCount(&self, ulltickcount: u64) -> ::windows_core::Result<()> {
@@ -5284,10 +5226,7 @@ unsafe impl ::windows_core::Interface for ISyncKnowledge {
 pub struct ISyncKnowledge_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetOwnerReplicaId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbreplicaid: *mut u8, pcbidsize: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Serialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fserializereplicakeymap: super::super::Foundation::BOOL, pbknowledge: *mut u8, pcbknowledge: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Serialize: usize,
+    pub Serialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fserializereplicakeymap: ::win32_foundation::BOOL, pbknowledge: *mut u8, pcbknowledge: *mut u32) -> ::windows_core::HRESULT,
     pub SetLocalTickCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ulltickcount: u64) -> ::windows_core::HRESULT,
     pub ContainsChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbversionownerreplicaid: *const u8, pgiditemid: *const u8, psyncversion: *const SYNC_VERSION) -> ::windows_core::HRESULT,
     pub ContainsChangeUnit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbversionownerreplicaid: *const u8, pbitemid: *const u8, pbchangeunitid: *const u8, psyncversion: *const SYNC_VERSION) -> ::windows_core::HRESULT,
@@ -5317,8 +5256,7 @@ impl ISyncKnowledge2 {
     pub unsafe fn GetOwnerReplicaId(&self, pbreplicaid: *mut u8, pcbidsize: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetOwnerReplicaId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pbreplicaid), ::core::mem::transmute(pcbidsize)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Serialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fserializereplicakeymap: Param0, pbknowledge: *mut u8, pcbknowledge: *mut u32) -> ::windows_core::Result<()> {
+    pub unsafe fn Serialize<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fserializereplicakeymap: Param0, pbknowledge: *mut u8, pcbknowledge: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Serialize)(::windows_core::Interface::as_raw(self), fserializereplicakeymap.into_param().abi(), ::core::mem::transmute(pbknowledge), ::core::mem::transmute(pcbknowledge)).ok()
     }
     pub unsafe fn SetLocalTickCount(&self, ulltickcount: u64) -> ::windows_core::Result<()> {
@@ -5393,7 +5331,6 @@ impl ISyncKnowledge2 {
     pub unsafe fn GetVersion(&self, pdwversion: *mut u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetVersion)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwversion)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetIdParameters(&self, pidparameters: *mut ID_PARAMETERS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetIdParameters)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pidparameters)).ok()
     }
@@ -5505,10 +5442,7 @@ unsafe impl ::windows_core::Interface for ISyncKnowledge2 {
 #[doc(hidden)]
 pub struct ISyncKnowledge2_Vtbl {
     pub base__: ISyncKnowledge_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetIdParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidparameters: *mut ID_PARAMETERS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIdParameters: usize,
     pub ProjectOntoColumnSet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppcolumns: *const *const u8, count: u32, ppiknowledgeout: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SerializeWithOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targetformatversion: SYNC_SERIALIZATION_VERSION, dwflags: u32, pbbuffer: *mut u8, pdwserializedsize: *mut u32) -> ::windows_core::HRESULT,
     pub GetLowestUncontainedId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pisyncknowledge: ::windows_core::RawPtr, pbitemid: *mut u8, pcbitemidsize: *mut u32) -> ::windows_core::HRESULT,
@@ -5579,7 +5513,6 @@ pub struct ISyncMergeTombstoneChange_Vtbl {
 #[repr(transparent)]
 pub struct ISyncProvider(::windows_core::IUnknown);
 impl ISyncProvider {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetIdParameters(&self, pidparameters: *mut ID_PARAMETERS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetIdParameters)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pidparameters)).ok()
     }
@@ -5628,30 +5561,27 @@ unsafe impl ::windows_core::Interface for ISyncProvider {
 #[doc(hidden)]
 pub struct ISyncProvider_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetIdParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidparameters: *mut ID_PARAMETERS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIdParameters: usize,
 }
 #[repr(transparent)]
 pub struct ISyncProviderConfigUI(::windows_core::IUnknown);
 impl ISyncProviderConfigUI {
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn Init<'a, Param2: ::windows_core::IntoParam<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore>>(&self, pguidinstanceid: *const ::windows_core::GUID, pguidcontenttype: *const ::windows_core::GUID, pconfigurationproperties: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn Init<'a, Param2: ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore>>(&self, pguidinstanceid: *const ::windows_core::GUID, pguidcontenttype: *const ::windows_core::GUID, pconfigurationproperties: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Init)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidinstanceid), ::core::mem::transmute(pguidcontenttype), pconfigurationproperties.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn GetRegisteredProperties(&self) -> ::windows_core::Result<super::super::UI::Shell::PropertiesSystem::IPropertyStore> {
+    pub unsafe fn GetRegisteredProperties(&self) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetRegisteredProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::UI::Shell::PropertiesSystem::IPropertyStore>(result__)
+        (::windows_core::Interface::vtable(self).GetRegisteredProperties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::IPropertyStore>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub unsafe fn CreateAndRegisterNewSyncProvider<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, hwndparent: Param0, punkcontext: Param1) -> ::windows_core::Result<ISyncProviderInfo> {
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub unsafe fn CreateAndRegisterNewSyncProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, hwndparent: Param0, punkcontext: Param1) -> ::windows_core::Result<ISyncProviderInfo> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateAndRegisterNewSyncProvider)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), punkcontext.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncProviderInfo>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub unsafe fn ModifySyncProvider<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>, Param2: ::windows_core::IntoParam<'a, ISyncProviderInfo>>(&self, hwndparent: Param0, punkcontext: Param1, pproviderinfo: Param2) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub unsafe fn ModifySyncProvider<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>, Param2: ::windows_core::IntoParam<'a, ISyncProviderInfo>>(&self, hwndparent: Param0, punkcontext: Param1, pproviderinfo: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ModifySyncProvider)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), punkcontext.into_param().abi(), pproviderinfo.into_param().abi()).ok()
     }
 }
@@ -5707,13 +5637,13 @@ pub struct ISyncProviderConfigUI_Vtbl {
     pub GetRegisteredProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppconfiguiproperties: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     GetRegisteredProperties: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub CreateAndRegisterNewSyncProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: super::super::Foundation::HWND, punkcontext: *mut ::core::ffi::c_void, ppproviderinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub CreateAndRegisterNewSyncProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: ::win32_foundation::HWND, punkcontext: *mut ::core::ffi::c_void, ppproviderinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     CreateAndRegisterNewSyncProvider: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub ModifySyncProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: super::super::Foundation::HWND, punkcontext: *mut ::core::ffi::c_void, pproviderinfo: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
+    pub ModifySyncProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: ::win32_foundation::HWND, punkcontext: *mut ::core::ffi::c_void, pproviderinfo: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     ModifySyncProvider: usize,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
@@ -5727,17 +5657,17 @@ impl ISyncProviderConfigUIInfo {
         (::windows_core::Interface::vtable(self).base__.GetCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn GetAt(&self, iprop: u32) -> ::windows_core::Result<super::super::UI::Shell::PropertiesSystem::PROPERTYKEY> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::UI::Shell::PropertiesSystem::PROPERTYKEY>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::UI::Shell::PropertiesSystem::PROPERTYKEY>(result__)
+    pub unsafe fn GetAt(&self, iprop: u32) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub unsafe fn GetValue(&self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<super::Com::StructuredStorage::PROPVARIANT> {
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub unsafe fn GetValue(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<super::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub unsafe fn SetValue(&self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, propvar: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub unsafe fn SetValue(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, propvar: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(propvar)).ok()
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
@@ -5774,26 +5704,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISyncPr
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-impl ::core::convert::From<ISyncProviderConfigUIInfo> for super::super::UI::Shell::PropertiesSystem::IPropertyStore {
+impl ::core::convert::From<ISyncProviderConfigUIInfo> for ::win32_ui::Shell::PropertiesSystem::IPropertyStore {
     fn from(value: ISyncProviderConfigUIInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-impl ::core::convert::From<&ISyncProviderConfigUIInfo> for super::super::UI::Shell::PropertiesSystem::IPropertyStore {
+impl ::core::convert::From<&ISyncProviderConfigUIInfo> for ::win32_ui::Shell::PropertiesSystem::IPropertyStore {
     fn from(value: &ISyncProviderConfigUIInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore> for ISyncProviderConfigUIInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> for ISyncProviderConfigUIInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore> for &'a ISyncProviderConfigUIInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> for &'a ISyncProviderConfigUIInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -5826,7 +5756,7 @@ unsafe impl ::windows_core::Interface for ISyncProviderConfigUIInfo {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISyncProviderConfigUIInfo_Vtbl {
-    pub base__: super::super::UI::Shell::PropertiesSystem::IPropertyStore_Vtbl,
+    pub base__: ::win32_ui::Shell::PropertiesSystem::IPropertyStore_Vtbl,
     pub GetSyncProviderConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwclscontext: u32, ppsyncproviderconfigui: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
@@ -5840,17 +5770,17 @@ impl ISyncProviderInfo {
         (::windows_core::Interface::vtable(self).base__.GetCount)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn GetAt(&self, iprop: u32) -> ::windows_core::Result<super::super::UI::Shell::PropertiesSystem::PROPERTYKEY> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::UI::Shell::PropertiesSystem::PROPERTYKEY>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::UI::Shell::PropertiesSystem::PROPERTYKEY>(result__)
+    pub unsafe fn GetAt(&self, iprop: u32) -> ::windows_core::Result<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(iprop), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::Shell::PropertiesSystem::PROPERTYKEY>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub unsafe fn GetValue(&self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<super::Com::StructuredStorage::PROPVARIANT> {
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub unsafe fn GetValue(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<super::Com::StructuredStorage::PROPVARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::StructuredStorage::PROPVARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::StructuredStorage::PROPVARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub unsafe fn SetValue(&self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, propvar: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub unsafe fn SetValue(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, propvar: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key), ::core::mem::transmute(propvar)).ok()
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
@@ -5887,26 +5817,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a ISyncPr
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-impl ::core::convert::From<ISyncProviderInfo> for super::super::UI::Shell::PropertiesSystem::IPropertyStore {
+impl ::core::convert::From<ISyncProviderInfo> for ::win32_ui::Shell::PropertiesSystem::IPropertyStore {
     fn from(value: ISyncProviderInfo) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-impl ::core::convert::From<&ISyncProviderInfo> for super::super::UI::Shell::PropertiesSystem::IPropertyStore {
+impl ::core::convert::From<&ISyncProviderInfo> for ::win32_ui::Shell::PropertiesSystem::IPropertyStore {
     fn from(value: &ISyncProviderInfo) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore> for ISyncProviderInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> for ISyncProviderInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore> for &'a ISyncProviderInfo {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::UI::Shell::PropertiesSystem::IPropertyStore> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> for &'a ISyncProviderInfo {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_ui::Shell::PropertiesSystem::IPropertyStore> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -5939,13 +5869,13 @@ unsafe impl ::windows_core::Interface for ISyncProviderInfo {
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISyncProviderInfo_Vtbl {
-    pub base__: super::super::UI::Shell::PropertiesSystem::IPropertyStore_Vtbl,
+    pub base__: ::win32_ui::Shell::PropertiesSystem::IPropertyStore_Vtbl,
     pub GetSyncProvider: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwclscontext: u32, ppsyncprovider: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISyncProviderRegistration(::windows_core::IUnknown);
 impl ISyncProviderRegistration {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
     pub unsafe fn CreateSyncProviderConfigUIRegistrationInstance(&self, pconfiguiconfig: *const SyncProviderConfigUIConfiguration) -> ::windows_core::Result<ISyncProviderConfigUIInfo> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSyncProviderConfigUIRegistrationInstance)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pconfiguiconfig), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncProviderConfigUIInfo>(result__)
@@ -5999,16 +5929,13 @@ impl ISyncProviderRegistration {
     pub unsafe fn SetSyncProviderState(&self, pguidinstanceid: *const ::windows_core::GUID, dwstateflagsmask: u32, dwstateflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSyncProviderState)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pguidinstanceid), ::core::mem::transmute(dwstateflagsmask), ::core::mem::transmute(dwstateflags)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RegisterForEvent(&self, phevent: *mut super::super::Foundation::HANDLE) -> ::windows_core::Result<()> {
+    pub unsafe fn RegisterForEvent(&self, phevent: *mut ::win32_foundation::HANDLE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RegisterForEvent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(phevent)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RevokeEvent<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hevent: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn RevokeEvent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hevent: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RevokeEvent)(::windows_core::Interface::as_raw(self), hevent.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetChange<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(&self, hevent: Param0) -> ::windows_core::Result<ISyncRegistrationChange> {
+    pub unsafe fn GetChange<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, hevent: Param0) -> ::windows_core::Result<ISyncRegistrationChange> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetChange)(::windows_core::Interface::as_raw(self), hevent.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<ISyncRegistrationChange>(result__)
     }
@@ -6057,9 +5984,9 @@ unsafe impl ::windows_core::Interface for ISyncProviderRegistration {
 #[doc(hidden)]
 pub struct ISyncProviderRegistration_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
     pub CreateSyncProviderConfigUIRegistrationInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pconfiguiconfig: *const SyncProviderConfigUIConfiguration, ppconfiguiinfo: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     CreateSyncProviderConfigUIRegistrationInstance: usize,
     pub UnregisterSyncProviderConfigUI: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID) -> ::windows_core::HRESULT,
     pub EnumerateSyncProviderConfigUIs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidcontenttype: *const ::windows_core::GUID, dwsupportedarchitecture: u32, ppenumsyncproviderconfiguiinfos: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -6085,18 +6012,9 @@ pub struct ISyncProviderRegistration_Vtbl {
     pub GetSyncProviderConfigUIFromInstanceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, dwclscontext: u32, ppconfigui: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetSyncProviderState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, pdwstateflags: *mut u32) -> ::windows_core::HRESULT,
     pub SetSyncProviderState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pguidinstanceid: *const ::windows_core::GUID, dwstateflagsmask: u32, dwstateflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RegisterForEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phevent: *mut super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RegisterForEvent: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RevokeEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hevent: super::super::Foundation::HANDLE) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RevokeEvent: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hevent: super::super::Foundation::HANDLE, ppchange: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetChange: usize,
+    pub RegisterForEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phevent: *mut ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
+    pub RevokeEvent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hevent: ::win32_foundation::HANDLE) -> ::windows_core::HRESULT,
+    pub GetChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hevent: ::win32_foundation::HANDLE, ppchange: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISyncRegistrationChange(::windows_core::IUnknown);
@@ -6214,8 +6132,7 @@ pub struct ISyncSessionExtendedErrorInfo_Vtbl {
 #[repr(transparent)]
 pub struct ISyncSessionState(::windows_core::IUnknown);
 impl ISyncSessionState {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsCanceled(&self, pfiscanceled: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn IsCanceled(&self, pfiscanceled: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IsCanceled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pfiscanceled)).ok()
     }
     pub unsafe fn GetInfoForChangeApplication(&self, pbchangeapplierinfo: *mut u8, pcbchangeapplierinfo: *mut u32) -> ::windows_core::Result<()> {
@@ -6281,10 +6198,7 @@ unsafe impl ::windows_core::Interface for ISyncSessionState {
 #[doc(hidden)]
 pub struct ISyncSessionState_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsCanceled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfiscanceled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsCanceled: usize,
+    pub IsCanceled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfiscanceled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetInfoForChangeApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbchangeapplierinfo: *mut u8, pcbchangeapplierinfo: *mut u32) -> ::windows_core::HRESULT,
     pub LoadInfoFromChangeApplication: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbchangeapplierinfo: *const u8, cbchangeapplierinfo: u32) -> ::windows_core::HRESULT,
     pub GetForgottenKnowledgeRecoveryRangeStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbrangestart: *mut u8, pcbrangestart: *mut u32) -> ::windows_core::HRESULT,
@@ -6295,8 +6209,7 @@ pub struct ISyncSessionState_Vtbl {
 #[repr(transparent)]
 pub struct ISyncSessionState2(::windows_core::IUnknown);
 impl ISyncSessionState2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsCanceled(&self, pfiscanceled: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn IsCanceled(&self, pfiscanceled: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.IsCanceled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pfiscanceled)).ok()
     }
     pub unsafe fn GetInfoForChangeApplication(&self, pbchangeapplierinfo: *mut u8, pcbchangeapplierinfo: *mut u32) -> ::windows_core::Result<()> {
@@ -6317,8 +6230,7 @@ impl ISyncSessionState2 {
     pub unsafe fn OnProgress(&self, provider: SYNC_PROVIDER_ROLE, syncstage: SYNC_PROGRESS_STAGE, dwcompletedwork: u32, dwtotalwork: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.OnProgress)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(provider), ::core::mem::transmute(syncstage), ::core::mem::transmute(dwcompletedwork), ::core::mem::transmute(dwtotalwork)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetProviderWithError<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fself: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetProviderWithError<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fself: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetProviderWithError)(::windows_core::Interface::as_raw(self), fself.into_param().abi()).ok()
     }
     pub unsafe fn GetSessionErrorStatus(&self, phrsessionerror: *mut ::windows_core::HRESULT) -> ::windows_core::Result<()> {
@@ -6389,16 +6301,12 @@ unsafe impl ::windows_core::Interface for ISyncSessionState2 {
 #[doc(hidden)]
 pub struct ISyncSessionState2_Vtbl {
     pub base__: ISyncSessionState_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetProviderWithError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fself: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetProviderWithError: usize,
+    pub SetProviderWithError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fself: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetSessionErrorStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phrsessionerror: *mut ::windows_core::HRESULT) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISynchronousDataRetriever(::windows_core::IUnknown);
 impl ISynchronousDataRetriever {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetIdParameters(&self, pidparameters: *mut ID_PARAMETERS) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetIdParameters)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pidparameters)).ok()
     }
@@ -6451,10 +6359,7 @@ unsafe impl ::windows_core::Interface for ISynchronousDataRetriever {
 #[doc(hidden)]
 pub struct ISynchronousDataRetriever_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetIdParameters: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pidparameters: *mut ID_PARAMETERS) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIdParameters: usize,
     pub LoadChangeData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ploadchangecontext: ::windows_core::RawPtr, ppunkdata: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -6484,49 +6389,49 @@ impl ::core::fmt::Debug for KNOWLEDGE_COOKIE_COMPARISON_RESULT {
     }
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_CAPABILITIES: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 5u32 };
+pub const PKEY_CONFIGUI_CAPABILITIES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 5u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_CLSID: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 3u32 };
+pub const PKEY_CONFIGUI_CLSID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 3u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_CONTENTTYPE: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 4u32 };
+pub const PKEY_CONFIGUI_CONTENTTYPE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 4u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_DESCRIPTION: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 9u32 };
+pub const PKEY_CONFIGUI_DESCRIPTION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 9u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_ICON: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 11u32 };
+pub const PKEY_CONFIGUI_ICON: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 11u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_INSTANCEID: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 2u32 };
+pub const PKEY_CONFIGUI_INSTANCEID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 2u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_IS_GLOBAL: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 7u32 };
+pub const PKEY_CONFIGUI_IS_GLOBAL: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 7u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_MENUITEM: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 13u32 };
+pub const PKEY_CONFIGUI_MENUITEM: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 13u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_MENUITEM_NOUI: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 12u32 };
+pub const PKEY_CONFIGUI_MENUITEM_NOUI: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 12u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_NAME: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 8u32 };
+pub const PKEY_CONFIGUI_NAME: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 8u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_SUPPORTED_ARCHITECTURE: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 6u32 };
+pub const PKEY_CONFIGUI_SUPPORTED_ARCHITECTURE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 6u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CONFIGUI_TOOLTIPS: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 10u32 };
+pub const PKEY_CONFIGUI_TOOLTIPS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x554b24ea_e8e3_45ba_9352_dfb561e171e4), pid: 10u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_CAPABILITIES: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 6u32 };
+pub const PKEY_PROVIDER_CAPABILITIES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 6u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_CLSID: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 3u32 };
+pub const PKEY_PROVIDER_CLSID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 3u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_CONFIGUI: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 4u32 };
+pub const PKEY_PROVIDER_CONFIGUI: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 4u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_CONTENTTYPE: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 5u32 };
+pub const PKEY_PROVIDER_CONTENTTYPE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 5u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_DESCRIPTION: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 9u32 };
+pub const PKEY_PROVIDER_DESCRIPTION: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 9u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_ICON: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 11u32 };
+pub const PKEY_PROVIDER_ICON: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 11u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_INSTANCEID: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 2u32 };
+pub const PKEY_PROVIDER_INSTANCEID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 2u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_NAME: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 8u32 };
+pub const PKEY_PROVIDER_NAME: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 8u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_SUPPORTED_ARCHITECTURE: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 7u32 };
+pub const PKEY_PROVIDER_SUPPORTED_ARCHITECTURE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 7u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_PROVIDER_TOOLTIPS: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 10u32 };
+pub const PKEY_PROVIDER_TOOLTIPS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x84179e61_60f6_4c1c_88ed_f1c531b32bda), pid: 10u32 };
 pub const SYNC_CHANGE_FLAG_DELETED: u32 = 1u32;
 pub const SYNC_CHANGE_FLAG_DOES_NOT_EXIST: u32 = 2u32;
 pub const SYNC_CHANGE_FLAG_GHOST: u32 = 4u32;
@@ -6560,38 +6465,30 @@ impl ::core::fmt::Debug for SYNC_CONSTRAINT_RESOLVE_ACTION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SYNC_FILTER_CHANGE {
-    pub fMoveIn: super::super::Foundation::BOOL,
+    pub fMoveIn: ::win32_foundation::BOOL,
     pub moveVersion: SYNC_VERSION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SYNC_FILTER_CHANGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SYNC_FILTER_CHANGE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SYNC_FILTER_CHANGE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SYNC_FILTER_CHANGE").field("fMoveIn", &self.fMoveIn).field("moveVersion", &self.moveVersion).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SYNC_FILTER_CHANGE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SYNC_FILTER_CHANGE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SYNC_FILTER_CHANGE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SYNC_FILTER_CHANGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SYNC_FILTER_CHANGE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6904,7 +6801,6 @@ impl ::core::default::Default for SYNC_VERSION {
 pub const SYNC_VERSION_FLAG_FROM_FEED: u32 = 1u32;
 pub const SYNC_VERSION_FLAG_HAS_BY: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SyncProviderConfigUIConfiguration {
     pub dwVersion: u32,
     pub guidInstanceId: ::windows_core::GUID,
@@ -6912,35 +6808,28 @@ pub struct SyncProviderConfigUIConfiguration {
     pub guidContentType: ::windows_core::GUID,
     pub dwCapabilities: u32,
     pub dwSupportedArchitecture: u32,
-    pub fIsGlobal: super::super::Foundation::BOOL,
+    pub fIsGlobal: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SyncProviderConfigUIConfiguration {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SyncProviderConfigUIConfiguration {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SyncProviderConfigUIConfiguration {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SyncProviderConfigUIConfiguration").field("dwVersion", &self.dwVersion).field("guidInstanceId", &self.guidInstanceId).field("clsidConfigUI", &self.clsidConfigUI).field("guidContentType", &self.guidContentType).field("dwCapabilities", &self.dwCapabilities).field("dwSupportedArchitecture", &self.dwSupportedArchitecture).field("fIsGlobal", &self.fIsGlobal).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SyncProviderConfigUIConfiguration {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SyncProviderConfigUIConfiguration {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SyncProviderConfigUIConfiguration>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SyncProviderConfigUIConfiguration {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SyncProviderConfigUIConfiguration {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

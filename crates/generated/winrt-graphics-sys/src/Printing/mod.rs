@@ -361,16 +361,13 @@ impl ::core::clone::Clone for PrintOrientation {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct PrintPageDescription {
-    pub PageSize: super::super::Foundation::Size,
-    pub ImageableRect: super::super::Foundation::Rect,
+    pub PageSize: ::winrt_foundation_sys::Size,
+    pub ImageableRect: ::winrt_foundation_sys::Rect,
     pub DpiX: u32,
     pub DpiY: u32,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for PrintPageDescription {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for PrintPageDescription {
     fn clone(&self) -> Self {
         *self

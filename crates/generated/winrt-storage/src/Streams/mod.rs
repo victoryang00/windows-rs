@@ -25,18 +25,16 @@ impl Buffer {
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), capacity, result__.as_mut_ptr()).from_abi::<Buffer>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateCopyFromMemoryBuffer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::IMemoryBuffer>>(input: Param0) -> ::windows_core::Result<Buffer> {
+    pub fn CreateCopyFromMemoryBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IMemoryBuffer>>(input: Param0) -> ::windows_core::Result<Buffer> {
         Self::IBufferStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCopyFromMemoryBuffer)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<Buffer>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateMemoryBufferOverIBuffer<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(input: Param0) -> ::windows_core::Result<super::super::Foundation::MemoryBuffer> {
+    pub fn CreateMemoryBufferOverIBuffer<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(input: Param0) -> ::windows_core::Result<::winrt_foundation::MemoryBuffer> {
         Self::IBufferStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateMemoryBufferOverIBuffer)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::MemoryBuffer>(result__)
+            (::windows_core::Interface::vtable(this).CreateMemoryBufferOverIBuffer)(::windows_core::Interface::as_raw(this), input.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::MemoryBuffer>(result__)
         })
     }
     pub fn IBufferFactory<R, F: FnOnce(&IBufferFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -178,9 +176,8 @@ unsafe impl ::windows_core::RuntimeType for ByteOrder {
 #[repr(transparent)]
 pub struct DataReader(::windows_core::IUnknown);
 impl DataReader {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn UnconsumedBufferLength(&self) -> ::windows_core::Result<u32> {
@@ -318,23 +315,20 @@ impl DataReader {
             (::windows_core::Interface::vtable(this).ReadString)(::windows_core::Interface::as_raw(this), codeunitcount, result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadDateTime(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn ReadDateTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadDateTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).ReadDateTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadTimeSpan(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn ReadTimeSpan(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadTimeSpan)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).ReadTimeSpan)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn LoadAsync(&self, count: u32) -> ::windows_core::Result<DataReaderLoadOperation> {
         let this = self;
         unsafe {
@@ -447,30 +441,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Dat
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DataReader> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<DataReader> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: DataReader) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DataReader> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&DataReader> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &DataReader) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for DataReader {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for DataReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &DataReader {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &DataReader {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<DataReader> for IDataReader {
@@ -497,59 +487,49 @@ impl<'a> ::windows_core::IntoParam<'a, IDataReader> for &DataReader {
 }
 unsafe impl ::core::marker::Send for DataReader {}
 unsafe impl ::core::marker::Sync for DataReader {}
-#[cfg(feature = "Foundation")]
 #[repr(transparent)]
 pub struct DataReaderLoadOperation(::windows_core::IUnknown);
-#[cfg(feature = "Foundation")]
 impl DataReaderLoadOperation {
-    #[cfg(feature = "Foundation")]
     pub fn Id(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Status(&self) -> ::windows_core::Result<super::super::Foundation::AsyncStatus> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+    pub fn Status(&self) -> ::windows_core::Result<::winrt_foundation::AsyncStatus> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::AsyncStatus>::zeroed();
-            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::AsyncStatus>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::AsyncStatus>::zeroed();
+            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::AsyncStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ErrorCode(&self) -> ::windows_core::Result<::windows_core::HRESULT> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::HRESULT>::zeroed();
             (::windows_core::Interface::vtable(this).ErrorCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HRESULT>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Cancel(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Cancel)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::AsyncOperationCompletedHandler<u32>>>(&self, handler: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::AsyncOperationCompletedHandler<u32>>>(&self, handler: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Completed(&self) -> ::windows_core::Result<super::super::Foundation::AsyncOperationCompletedHandler<u32>> {
+    pub fn Completed(&self) -> ::windows_core::Result<::winrt_foundation::AsyncOperationCompletedHandler<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::AsyncOperationCompletedHandler<u32>>(result__)
+            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::AsyncOperationCompletedHandler<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn GetResults(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -558,27 +538,22 @@ impl DataReaderLoadOperation {
         }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for DataReaderLoadOperation {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::PartialEq for DataReaderLoadOperation {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::Eq for DataReaderLoadOperation {}
-#[cfg(feature = "Foundation")]
 impl ::core::fmt::Debug for DataReaderLoadOperation {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("DataReaderLoadOperation").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::RuntimeType for DataReaderLoadOperation {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Storage.Streams.DataReaderLoadOperation;pinterface({9fc2b0bb-e446-44e2-aa61-9cab8f636af2};u4))");
     type DefaultType = ::core::option::Option<Self>;
@@ -586,21 +561,18 @@ unsafe impl ::windows_core::RuntimeType for DataReaderLoadOperation {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::Interface for DataReaderLoadOperation {
-    type Vtable = super::super::Foundation::IAsyncOperation_Vtbl<u32>;
-    const IID: ::windows_core::GUID = <super::super::Foundation::IAsyncOperation<u32> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::IAsyncOperation_Vtbl<u32>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::IAsyncOperation<u32> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation")]
 impl ::windows_core::RuntimeName for DataReaderLoadOperation {
     const NAME: &'static str = "Windows.Storage.Streams.DataReaderLoadOperation";
 }
-#[cfg(feature = "Foundation")]
 impl DataReaderLoadOperation {
     pub fn get(&self) -> ::windows_core::Result<u32> {
-        if self.Status()? == super::super::Foundation::AsyncStatus::Started {
+        if self.Status()? == ::winrt_foundation::AsyncStatus::Started {
             let (_waiter, signaler) = ::windows_core::Waiter::new()?;
-            self.SetCompleted(super::super::Foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
+            self.SetCompleted(::winrt_foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
                 unsafe {
                     signaler.signal();
                 }
@@ -610,13 +582,12 @@ impl DataReaderLoadOperation {
         self.GetResults()
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::std::future::Future for DataReaderLoadOperation {
     type Output = ::windows_core::Result<u32>;
     fn poll(self: ::std::pin::Pin<&mut Self>, context: &mut ::std::task::Context) -> ::std::task::Poll<Self::Output> {
-        if self.Status()? == super::super::Foundation::AsyncStatus::Started {
+        if self.Status()? == ::winrt_foundation::AsyncStatus::Started {
             let waker = context.waker().clone();
-            let _ = self.SetCompleted(super::super::Foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
+            let _ = self.SetCompleted(::winrt_foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
                 waker.wake_by_ref();
                 Ok(())
             }));
@@ -626,109 +597,91 @@ impl ::std::future::Future for DataReaderLoadOperation {
         }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<DataReaderLoadOperation> for ::windows_core::IUnknown {
     fn from(value: DataReaderLoadOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<&DataReaderLoadOperation> for ::windows_core::IUnknown {
     fn from(value: &DataReaderLoadOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for DataReaderLoadOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a DataReaderLoadOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<DataReaderLoadOperation> for ::windows_core::IInspectable {
     fn from(value: DataReaderLoadOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<&DataReaderLoadOperation> for ::windows_core::IInspectable {
     fn from(value: &DataReaderLoadOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for DataReaderLoadOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a DataReaderLoadOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DataReaderLoadOperation> for super::super::Foundation::IAsyncInfo {
+impl ::core::convert::TryFrom<DataReaderLoadOperation> for ::winrt_foundation::IAsyncInfo {
     type Error = ::windows_core::Error;
     fn try_from(value: DataReaderLoadOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DataReaderLoadOperation> for super::super::Foundation::IAsyncInfo {
+impl ::core::convert::TryFrom<&DataReaderLoadOperation> for ::winrt_foundation::IAsyncInfo {
     type Error = ::windows_core::Error;
     fn try_from(value: &DataReaderLoadOperation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IAsyncInfo> for DataReaderLoadOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IAsyncInfo> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncInfo> for DataReaderLoadOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncInfo> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IAsyncInfo> for &DataReaderLoadOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IAsyncInfo> {
-        ::core::convert::TryInto::<super::super::Foundation::IAsyncInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncInfo> for &DataReaderLoadOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncInfo> {
+        ::core::convert::TryInto::<::winrt_foundation::IAsyncInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DataReaderLoadOperation> for super::super::Foundation::IAsyncOperation<u32> {
+impl ::core::convert::TryFrom<DataReaderLoadOperation> for ::winrt_foundation::IAsyncOperation<u32> {
     type Error = ::windows_core::Error;
     fn try_from(value: DataReaderLoadOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DataReaderLoadOperation> for super::super::Foundation::IAsyncOperation<u32> {
+impl ::core::convert::TryFrom<&DataReaderLoadOperation> for ::winrt_foundation::IAsyncOperation<u32> {
     type Error = ::windows_core::Error;
     fn try_from(value: &DataReaderLoadOperation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IAsyncOperation<u32>> for DataReaderLoadOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IAsyncOperation<u32>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncOperation<u32>> for DataReaderLoadOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncOperation<u32>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IAsyncOperation<u32>> for &DataReaderLoadOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IAsyncOperation<u32>> {
-        ::core::convert::TryInto::<super::super::Foundation::IAsyncOperation<u32>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncOperation<u32>> for &DataReaderLoadOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncOperation<u32>> {
+        ::core::convert::TryInto::<::winrt_foundation::IAsyncOperation<u32>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::core::marker::Send for DataReaderLoadOperation {}
-#[cfg(feature = "Foundation")]
 unsafe impl ::core::marker::Sync for DataReaderLoadOperation {}
 #[repr(transparent)]
 pub struct DataWriter(::windows_core::IUnknown);
@@ -740,9 +693,8 @@ impl DataWriter {
         static mut SHARED: ::windows_core::FactoryCache<DataWriter, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn UnstoredBufferLength(&self) -> ::windows_core::Result<u32> {
@@ -830,13 +782,11 @@ impl DataWriter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).WriteDouble)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteDateTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn WriteDateTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).WriteDateTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteTimeSpan<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn WriteTimeSpan<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).WriteTimeSpan)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -854,7 +804,6 @@ impl DataWriter {
             (::windows_core::Interface::vtable(this).MeasureString)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn StoreAsync(&self) -> ::windows_core::Result<DataWriterStoreOperation> {
         let this = self;
         unsafe {
@@ -862,12 +811,11 @@ impl DataWriter {
             (::windows_core::Interface::vtable(this).StoreAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DataWriterStoreOperation>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn DetachBuffer(&self) -> ::windows_core::Result<IBuffer> {
@@ -965,30 +913,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Dat
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DataWriter> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<DataWriter> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: DataWriter) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DataWriter> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&DataWriter> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &DataWriter) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for DataWriter {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for DataWriter {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &DataWriter {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &DataWriter {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<DataWriter> for IDataWriter {
@@ -1015,59 +959,49 @@ impl<'a> ::windows_core::IntoParam<'a, IDataWriter> for &DataWriter {
 }
 unsafe impl ::core::marker::Send for DataWriter {}
 unsafe impl ::core::marker::Sync for DataWriter {}
-#[cfg(feature = "Foundation")]
 #[repr(transparent)]
 pub struct DataWriterStoreOperation(::windows_core::IUnknown);
-#[cfg(feature = "Foundation")]
 impl DataWriterStoreOperation {
-    #[cfg(feature = "Foundation")]
     pub fn Id(&self) -> ::windows_core::Result<u32> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
             (::windows_core::Interface::vtable(this).Id)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Status(&self) -> ::windows_core::Result<super::super::Foundation::AsyncStatus> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+    pub fn Status(&self) -> ::windows_core::Result<::winrt_foundation::AsyncStatus> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::AsyncStatus>::zeroed();
-            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::AsyncStatus>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::AsyncStatus>::zeroed();
+            (::windows_core::Interface::vtable(this).Status)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::AsyncStatus>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ErrorCode(&self) -> ::windows_core::Result<::windows_core::HRESULT> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::HRESULT>::zeroed();
             (::windows_core::Interface::vtable(this).ErrorCode)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HRESULT>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Cancel(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Cancel)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IAsyncInfo>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IAsyncInfo>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::AsyncOperationCompletedHandler<u32>>>(&self, handler: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::AsyncOperationCompletedHandler<u32>>>(&self, handler: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Completed(&self) -> ::windows_core::Result<super::super::Foundation::AsyncOperationCompletedHandler<u32>> {
+    pub fn Completed(&self) -> ::windows_core::Result<::winrt_foundation::AsyncOperationCompletedHandler<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::AsyncOperationCompletedHandler<u32>>(result__)
+            (::windows_core::Interface::vtable(this).Completed)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::AsyncOperationCompletedHandler<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn GetResults(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
@@ -1076,27 +1010,22 @@ impl DataWriterStoreOperation {
         }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for DataWriterStoreOperation {
     fn clone(&self) -> Self {
         Self(self.0.clone())
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::PartialEq for DataWriterStoreOperation {
     fn eq(&self, other: &Self) -> bool {
         self.0 == other.0
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::cmp::Eq for DataWriterStoreOperation {}
-#[cfg(feature = "Foundation")]
 impl ::core::fmt::Debug for DataWriterStoreOperation {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("DataWriterStoreOperation").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::RuntimeType for DataWriterStoreOperation {
     const SIGNATURE: ::windows_core::ConstBuffer = ::windows_core::ConstBuffer::from_slice(b"rc(Windows.Storage.Streams.DataWriterStoreOperation;pinterface({9fc2b0bb-e446-44e2-aa61-9cab8f636af2};u4))");
     type DefaultType = ::core::option::Option<Self>;
@@ -1104,21 +1033,18 @@ unsafe impl ::windows_core::RuntimeType for DataWriterStoreOperation {
         from.as_ref().cloned().ok_or(::windows_core::Error::OK)
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::windows_core::Interface for DataWriterStoreOperation {
-    type Vtable = super::super::Foundation::IAsyncOperation_Vtbl<u32>;
-    const IID: ::windows_core::GUID = <super::super::Foundation::IAsyncOperation<u32> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::IAsyncOperation_Vtbl<u32>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::IAsyncOperation<u32> as ::windows_core::Interface>::IID;
 }
-#[cfg(feature = "Foundation")]
 impl ::windows_core::RuntimeName for DataWriterStoreOperation {
     const NAME: &'static str = "Windows.Storage.Streams.DataWriterStoreOperation";
 }
-#[cfg(feature = "Foundation")]
 impl DataWriterStoreOperation {
     pub fn get(&self) -> ::windows_core::Result<u32> {
-        if self.Status()? == super::super::Foundation::AsyncStatus::Started {
+        if self.Status()? == ::winrt_foundation::AsyncStatus::Started {
             let (_waiter, signaler) = ::windows_core::Waiter::new()?;
-            self.SetCompleted(super::super::Foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
+            self.SetCompleted(::winrt_foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
                 unsafe {
                     signaler.signal();
                 }
@@ -1128,13 +1054,12 @@ impl DataWriterStoreOperation {
         self.GetResults()
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::std::future::Future for DataWriterStoreOperation {
     type Output = ::windows_core::Result<u32>;
     fn poll(self: ::std::pin::Pin<&mut Self>, context: &mut ::std::task::Context) -> ::std::task::Poll<Self::Output> {
-        if self.Status()? == super::super::Foundation::AsyncStatus::Started {
+        if self.Status()? == ::winrt_foundation::AsyncStatus::Started {
             let waker = context.waker().clone();
-            let _ = self.SetCompleted(super::super::Foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
+            let _ = self.SetCompleted(::winrt_foundation::AsyncOperationCompletedHandler::new(move |_sender, _args| {
                 waker.wake_by_ref();
                 Ok(())
             }));
@@ -1144,124 +1069,104 @@ impl ::std::future::Future for DataWriterStoreOperation {
         }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<DataWriterStoreOperation> for ::windows_core::IUnknown {
     fn from(value: DataWriterStoreOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<&DataWriterStoreOperation> for ::windows_core::IUnknown {
     fn from(value: &DataWriterStoreOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for DataWriterStoreOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a DataWriterStoreOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IUnknown> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<DataWriterStoreOperation> for ::windows_core::IInspectable {
     fn from(value: DataWriterStoreOperation) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
-#[cfg(feature = "Foundation")]
 impl ::core::convert::From<&DataWriterStoreOperation> for ::windows_core::IInspectable {
     fn from(value: &DataWriterStoreOperation) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for DataWriterStoreOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
 impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a DataWriterStoreOperation {
     fn into_param(self) -> ::windows_core::Param<'a, ::windows_core::IInspectable> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DataWriterStoreOperation> for super::super::Foundation::IAsyncInfo {
+impl ::core::convert::TryFrom<DataWriterStoreOperation> for ::winrt_foundation::IAsyncInfo {
     type Error = ::windows_core::Error;
     fn try_from(value: DataWriterStoreOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DataWriterStoreOperation> for super::super::Foundation::IAsyncInfo {
+impl ::core::convert::TryFrom<&DataWriterStoreOperation> for ::winrt_foundation::IAsyncInfo {
     type Error = ::windows_core::Error;
     fn try_from(value: &DataWriterStoreOperation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IAsyncInfo> for DataWriterStoreOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IAsyncInfo> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncInfo> for DataWriterStoreOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncInfo> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IAsyncInfo> for &DataWriterStoreOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IAsyncInfo> {
-        ::core::convert::TryInto::<super::super::Foundation::IAsyncInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncInfo> for &DataWriterStoreOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncInfo> {
+        ::core::convert::TryInto::<::winrt_foundation::IAsyncInfo>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DataWriterStoreOperation> for super::super::Foundation::IAsyncOperation<u32> {
+impl ::core::convert::TryFrom<DataWriterStoreOperation> for ::winrt_foundation::IAsyncOperation<u32> {
     type Error = ::windows_core::Error;
     fn try_from(value: DataWriterStoreOperation) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DataWriterStoreOperation> for super::super::Foundation::IAsyncOperation<u32> {
+impl ::core::convert::TryFrom<&DataWriterStoreOperation> for ::winrt_foundation::IAsyncOperation<u32> {
     type Error = ::windows_core::Error;
     fn try_from(value: &DataWriterStoreOperation) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IAsyncOperation<u32>> for DataWriterStoreOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IAsyncOperation<u32>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncOperation<u32>> for DataWriterStoreOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncOperation<u32>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IAsyncOperation<u32>> for &DataWriterStoreOperation {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IAsyncOperation<u32>> {
-        ::core::convert::TryInto::<super::super::Foundation::IAsyncOperation<u32>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IAsyncOperation<u32>> for &DataWriterStoreOperation {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IAsyncOperation<u32>> {
+        ::core::convert::TryInto::<::winrt_foundation::IAsyncOperation<u32>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
-#[cfg(feature = "Foundation")]
 unsafe impl ::core::marker::Send for DataWriterStoreOperation {}
-#[cfg(feature = "Foundation")]
 unsafe impl ::core::marker::Sync for DataWriterStoreOperation {}
 #[repr(transparent)]
 pub struct FileInputStream(::windows_core::IUnknown);
 impl FileInputStream {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
         }
     }
 }
@@ -1335,30 +1240,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Fil
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<FileInputStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<FileInputStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: FileInputStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&FileInputStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&FileInputStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileInputStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for FileInputStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for FileInputStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &FileInputStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &FileInputStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<FileInputStream> for IInputStream {
@@ -1424,25 +1325,22 @@ unsafe impl ::windows_core::RuntimeType for FileOpenDisposition {
 #[repr(transparent)]
 pub struct FileOutputStream(::windows_core::IUnknown);
 impl FileOutputStream {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
 }
@@ -1516,30 +1414,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Fil
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<FileOutputStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<FileOutputStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: FileOutputStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&FileOutputStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&FileOutputStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileOutputStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for FileOutputStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for FileOutputStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &FileOutputStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &FileOutputStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<FileOutputStream> for IOutputStream {
@@ -1569,89 +1463,81 @@ unsafe impl ::core::marker::Sync for FileOutputStream {}
 #[repr(transparent)]
 pub struct FileRandomAccessStream(::windows_core::IUnknown);
 impl FileRandomAccessStream {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OpenAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filepath: Param0, accessmode: super::FileAccessMode) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IRandomAccessStream>> {
+    pub fn OpenAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filepath: Param0, accessmode: super::FileAccessMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IRandomAccessStream>> {
         Self::IFileRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenAsync)(::windows_core::Interface::as_raw(this), filepath.into_param().abi(), accessmode, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IRandomAccessStream>>(result__)
+            (::windows_core::Interface::vtable(this).OpenAsync)(::windows_core::Interface::as_raw(this), filepath.into_param().abi(), accessmode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IRandomAccessStream>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OpenWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filepath: Param0, accessmode: super::FileAccessMode, sharingoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IRandomAccessStream>> {
+    pub fn OpenWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filepath: Param0, accessmode: super::FileAccessMode, sharingoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IRandomAccessStream>> {
         Self::IFileRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenWithOptionsAsync)(::windows_core::Interface::as_raw(this), filepath.into_param().abi(), accessmode, sharingoptions, opendisposition, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IRandomAccessStream>>(result__)
+            (::windows_core::Interface::vtable(this).OpenWithOptionsAsync)(::windows_core::Interface::as_raw(this), filepath.into_param().abi(), accessmode, sharingoptions, opendisposition, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IRandomAccessStream>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OpenTransactedWriteAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filepath: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::StorageStreamTransaction>> {
+    pub fn OpenTransactedWriteAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filepath: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::StorageStreamTransaction>> {
         Self::IFileRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenTransactedWriteAsync)(::windows_core::Interface::as_raw(this), filepath.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::StorageStreamTransaction>>(result__)
+            (::windows_core::Interface::vtable(this).OpenTransactedWriteAsync)(::windows_core::Interface::as_raw(this), filepath.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::StorageStreamTransaction>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn OpenTransactedWriteWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filepath: Param0, openoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::StorageStreamTransaction>> {
+    pub fn OpenTransactedWriteWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filepath: Param0, openoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::StorageStreamTransaction>> {
         Self::IFileRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenTransactedWriteWithOptionsAsync)(::windows_core::Interface::as_raw(this), filepath.into_param().abi(), openoptions, opendisposition, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::StorageStreamTransaction>>(result__)
+            (::windows_core::Interface::vtable(this).OpenTransactedWriteWithOptionsAsync)(::windows_core::Interface::as_raw(this), filepath.into_param().abi(), openoptions, opendisposition, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::StorageStreamTransaction>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "System"))]
-    pub fn OpenForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, filepath: Param1, accessmode: super::FileAccessMode) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IRandomAccessStream>> {
+    #[cfg(feature = "System")]
+    pub fn OpenForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, filepath: Param1, accessmode: super::FileAccessMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IRandomAccessStream>> {
         Self::IFileRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), filepath.into_param().abi(), accessmode, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IRandomAccessStream>>(result__)
+            (::windows_core::Interface::vtable(this).OpenForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), filepath.into_param().abi(), accessmode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IRandomAccessStream>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "System"))]
-    pub fn OpenForUserWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, filepath: Param1, accessmode: super::FileAccessMode, sharingoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IRandomAccessStream>> {
+    #[cfg(feature = "System")]
+    pub fn OpenForUserWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, filepath: Param1, accessmode: super::FileAccessMode, sharingoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IRandomAccessStream>> {
         Self::IFileRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenForUserWithOptionsAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), filepath.into_param().abi(), accessmode, sharingoptions, opendisposition, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IRandomAccessStream>>(result__)
+            (::windows_core::Interface::vtable(this).OpenForUserWithOptionsAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), filepath.into_param().abi(), accessmode, sharingoptions, opendisposition, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IRandomAccessStream>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "System"))]
-    pub fn OpenTransactedWriteForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, filepath: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::StorageStreamTransaction>> {
+    #[cfg(feature = "System")]
+    pub fn OpenTransactedWriteForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, filepath: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::StorageStreamTransaction>> {
         Self::IFileRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenTransactedWriteForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), filepath.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::StorageStreamTransaction>>(result__)
+            (::windows_core::Interface::vtable(this).OpenTransactedWriteForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), filepath.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::StorageStreamTransaction>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "System"))]
-    pub fn OpenTransactedWriteForUserWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, filepath: Param1, openoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::StorageStreamTransaction>> {
+    #[cfg(feature = "System")]
+    pub fn OpenTransactedWriteForUserWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, filepath: Param1, openoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<super::StorageStreamTransaction>> {
         Self::IFileRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenTransactedWriteForUserWithOptionsAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), filepath.into_param().abi(), openoptions, opendisposition, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::StorageStreamTransaction>>(result__)
+            (::windows_core::Interface::vtable(this).OpenTransactedWriteForUserWithOptionsAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), filepath.into_param().abi(), openoptions, opendisposition, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<super::StorageStreamTransaction>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
         let this = &::windows_core::Interface::cast::<IInputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn Size(&self) -> ::windows_core::Result<u64> {
@@ -1786,30 +1672,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Fil
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<FileRandomAccessStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<FileRandomAccessStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: FileRandomAccessStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&FileRandomAccessStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&FileRandomAccessStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &FileRandomAccessStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for FileRandomAccessStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for FileRandomAccessStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &FileRandomAccessStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &FileRandomAccessStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<FileRandomAccessStream> for IInputStream {
@@ -2001,14 +1883,8 @@ unsafe impl ::windows_core::Interface for IBufferStatics {
 #[doc(hidden)]
 pub struct IBufferStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CreateCopyFromMemoryBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, input: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateCopyFromMemoryBuffer: usize,
-    #[cfg(feature = "Foundation")]
     pub CreateMemoryBufferOverIBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, input: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateMemoryBufferOverIBuffer: usize,
 }
 #[repr(transparent)]
 pub struct IContentTypeProvider(::windows_core::IUnknown);
@@ -2232,23 +2108,20 @@ impl IDataReader {
             (::windows_core::Interface::vtable(this).ReadString)(::windows_core::Interface::as_raw(this), codeunitcount, result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadDateTime(&self) -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn ReadDateTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadDateTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).ReadDateTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadTimeSpan(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn ReadTimeSpan(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadTimeSpan)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).ReadTimeSpan)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn LoadAsync(&self, count: u32) -> ::windows_core::Result<DataReaderLoadOperation> {
         let this = self;
         unsafe {
@@ -2363,18 +2236,9 @@ pub struct IDataReader_Vtbl {
     pub ReadSingle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f32) -> ::windows_core::HRESULT,
     pub ReadDouble: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub ReadString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, codeunitcount: u32, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ReadDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadDateTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub ReadTimeSpan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadTimeSpan: usize,
-    #[cfg(feature = "Foundation")]
+    pub ReadDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub ReadTimeSpan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub LoadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LoadAsync: usize,
     pub DetachBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DetachStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2492,13 +2356,11 @@ impl IDataWriter {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).WriteDouble)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteDateTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn WriteDateTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).WriteDateTime)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteTimeSpan<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn WriteTimeSpan<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).WriteTimeSpan)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2516,7 +2378,6 @@ impl IDataWriter {
             (::windows_core::Interface::vtable(this).MeasureString)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<u32>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn StoreAsync(&self) -> ::windows_core::Result<DataWriterStoreOperation> {
         let this = self;
         unsafe {
@@ -2524,12 +2385,11 @@ impl IDataWriter {
             (::windows_core::Interface::vtable(this).StoreAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DataWriterStoreOperation>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn DetachBuffer(&self) -> ::windows_core::Result<IBuffer> {
@@ -2637,24 +2497,12 @@ pub struct IDataWriter_Vtbl {
     pub WriteUInt64: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: u64) -> ::windows_core::HRESULT,
     pub WriteSingle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f32) -> ::windows_core::HRESULT,
     pub WriteDouble: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub WriteDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WriteDateTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub WriteTimeSpan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WriteTimeSpan: usize,
+    pub WriteDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub WriteTimeSpan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub WriteString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut u32) -> ::windows_core::HRESULT,
     pub MeasureString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub StoreAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StoreAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub FlushAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FlushAsync: usize,
     pub DetachBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DetachStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
@@ -2682,53 +2530,39 @@ unsafe impl ::windows_core::Interface for IFileRandomAccessStreamStatics {
 #[doc(hidden)]
 pub struct IFileRandomAccessStreamStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub OpenAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, accessmode: super::FileAccessMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OpenAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub OpenWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, accessmode: super::FileAccessMode, sharingoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OpenWithOptionsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub OpenTransactedWriteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OpenTransactedWriteAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub OpenTransactedWriteWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, openoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OpenTransactedWriteWithOptionsAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "System"))]
+    #[cfg(feature = "System")]
     pub OpenForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, accessmode: super::FileAccessMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    #[cfg(not(feature = "System"))]
     OpenForUserAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "System"))]
+    #[cfg(feature = "System")]
     pub OpenForUserWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, accessmode: super::FileAccessMode, sharingoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    #[cfg(not(feature = "System"))]
     OpenForUserWithOptionsAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "System"))]
+    #[cfg(feature = "System")]
     pub OpenTransactedWriteForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    #[cfg(not(feature = "System"))]
     OpenTransactedWriteForUserAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "System"))]
+    #[cfg(feature = "System")]
     pub OpenTransactedWriteForUserWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, filepath: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, openoptions: super::StorageOpenOptions, opendisposition: FileOpenDisposition, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    #[cfg(not(feature = "System"))]
     OpenTransactedWriteForUserWithOptionsAsync: usize,
 }
 #[repr(transparent)]
 pub struct IInputStream(::windows_core::IUnknown);
 impl IInputStream {
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
@@ -2772,30 +2606,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IIn
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<IInputStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<IInputStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: IInputStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&IInputStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&IInputStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &IInputStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for IInputStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for IInputStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &IInputStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &IInputStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::clone::Clone for IInputStream {
@@ -2829,20 +2659,16 @@ unsafe impl ::windows_core::Interface for IInputStream {
 #[doc(hidden)]
 pub struct IInputStream_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ReadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer: ::windows_core::RawPtr, count: u32, options: InputStreamOptions, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ReadAsync: usize,
 }
 #[repr(transparent)]
 pub struct IInputStreamReference(::windows_core::IUnknown);
 impl IInputStreamReference {
-    #[cfg(feature = "Foundation")]
-    pub fn OpenSequentialReadAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IInputStream>> {
+    pub fn OpenSequentialReadAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IInputStream>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenSequentialReadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IInputStream>>(result__)
+            (::windows_core::Interface::vtable(this).OpenSequentialReadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IInputStream>>(result__)
         }
     }
 }
@@ -2917,33 +2743,27 @@ unsafe impl ::windows_core::Interface for IInputStreamReference {
 #[doc(hidden)]
 pub struct IInputStreamReference_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub OpenSequentialReadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OpenSequentialReadAsync: usize,
 }
 #[repr(transparent)]
 pub struct IOutputStream(::windows_core::IUnknown);
 impl IOutputStream {
-    #[cfg(feature = "Foundation")]
-    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
 }
@@ -2987,30 +2807,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IOu
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<IOutputStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<IOutputStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: IOutputStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&IOutputStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&IOutputStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &IOutputStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for IOutputStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for IOutputStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &IOutputStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &IOutputStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::clone::Clone for IOutputStream {
@@ -3044,20 +2860,14 @@ unsafe impl ::windows_core::Interface for IOutputStream {
 #[doc(hidden)]
 pub struct IOutputStream_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub WriteAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, buffer: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    WriteAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub FlushAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FlushAsync: usize,
 }
 #[repr(transparent)]
 pub struct IPropertySetSerializer(::windows_core::IUnknown);
 impl IPropertySetSerializer {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Serialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IPropertySet>>(&self, propertyset: Param0) -> ::windows_core::Result<IBuffer> {
+    pub fn Serialize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>>(&self, propertyset: Param0) -> ::windows_core::Result<IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -3065,7 +2875,7 @@ impl IPropertySetSerializer {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Deserialize<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IPropertySet>, Param1: ::windows_core::IntoParam<'a, IBuffer>>(&self, propertyset: Param0, buffer: Param1) -> ::windows_core::Result<()> {
+    pub fn Deserialize<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>, Param1: ::windows_core::IntoParam<'a, IBuffer>>(&self, propertyset: Param0, buffer: Param1) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Deserialize)(::windows_core::Interface::as_raw(this), propertyset.into_param().abi(), buffer.into_param().abi()).ok() }
     }
@@ -3210,33 +3020,29 @@ impl IRandomAccessStream {
             (::windows_core::Interface::vtable(this).CanWrite)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
         let this = &::windows_core::Interface::cast::<IInputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
 }
@@ -3280,30 +3086,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IRa
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<IRandomAccessStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<IRandomAccessStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: IRandomAccessStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&IRandomAccessStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&IRandomAccessStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &IRandomAccessStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for IRandomAccessStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for IRandomAccessStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &IRandomAccessStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &IRandomAccessStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<IRandomAccessStream> for IInputStream {
@@ -3394,12 +3196,11 @@ pub struct IRandomAccessStream_Vtbl {
 #[repr(transparent)]
 pub struct IRandomAccessStreamReference(::windows_core::IUnknown);
 impl IRandomAccessStreamReference {
-    #[cfg(feature = "Foundation")]
-    pub fn OpenReadAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IRandomAccessStreamWithContentType>> {
+    pub fn OpenReadAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IRandomAccessStreamWithContentType>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenReadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IRandomAccessStreamWithContentType>>(result__)
+            (::windows_core::Interface::vtable(this).OpenReadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IRandomAccessStreamWithContentType>>(result__)
         }
     }
 }
@@ -3474,10 +3275,7 @@ unsafe impl ::windows_core::Interface for IRandomAccessStreamReference {
 #[doc(hidden)]
 pub struct IRandomAccessStreamReference_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub OpenReadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    OpenReadAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3491,10 +3289,7 @@ unsafe impl ::windows_core::Interface for IRandomAccessStreamReferenceStatics {
 pub struct IRandomAccessStreamReferenceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateFromFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub CreateFromUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateFromUri: usize,
     pub CreateFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -3508,25 +3303,15 @@ unsafe impl ::windows_core::Interface for IRandomAccessStreamStatics {
 #[doc(hidden)]
 pub struct IRandomAccessStreamStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CopyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, destination: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CopyAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub CopySizeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, destination: ::windows_core::RawPtr, bytestocopy: u64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CopySizeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub CopyAndCloseAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, destination: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CopyAndCloseAsync: usize,
 }
 #[repr(transparent)]
 pub struct IRandomAccessStreamWithContentType(::windows_core::IUnknown);
 impl IRandomAccessStreamWithContentType {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn ContentType(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -3536,28 +3321,25 @@ impl IRandomAccessStreamWithContentType {
             (::windows_core::Interface::vtable(this).ContentType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
         let this = &::windows_core::Interface::cast::<IInputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn Size(&self) -> ::windows_core::Result<u64> {
@@ -3658,30 +3440,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a IRa
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<IRandomAccessStreamWithContentType> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<IRandomAccessStreamWithContentType> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: IRandomAccessStreamWithContentType) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&IRandomAccessStreamWithContentType> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&IRandomAccessStreamWithContentType> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &IRandomAccessStreamWithContentType) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for IRandomAccessStreamWithContentType {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for IRandomAccessStreamWithContentType {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &IRandomAccessStreamWithContentType {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &IRandomAccessStreamWithContentType {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<IRandomAccessStreamWithContentType> for IContentTypeProvider {
@@ -3814,33 +3592,29 @@ impl InMemoryRandomAccessStream {
         static mut SHARED: ::windows_core::FactoryCache<InMemoryRandomAccessStream, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
         let this = &::windows_core::Interface::cast::<IInputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn Size(&self) -> ::windows_core::Result<u64> {
@@ -3971,30 +3745,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a InM
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InMemoryRandomAccessStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InMemoryRandomAccessStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InMemoryRandomAccessStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InMemoryRandomAccessStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InMemoryRandomAccessStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InMemoryRandomAccessStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for InMemoryRandomAccessStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InMemoryRandomAccessStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &InMemoryRandomAccessStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InMemoryRandomAccessStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<InMemoryRandomAccessStream> for IInputStream {
@@ -4130,17 +3900,15 @@ unsafe impl ::windows_core::RuntimeType for InputStreamOptions {
 #[repr(transparent)]
 pub struct InputStreamOverStream(::windows_core::IUnknown);
 impl InputStreamOverStream {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
         }
     }
 }
@@ -4214,30 +3982,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Inp
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<InputStreamOverStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<InputStreamOverStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: InputStreamOverStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&InputStreamOverStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&InputStreamOverStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &InputStreamOverStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for InputStreamOverStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for InputStreamOverStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &InputStreamOverStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &InputStreamOverStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<InputStreamOverStream> for IInputStream {
@@ -4267,25 +4031,22 @@ unsafe impl ::core::marker::Sync for InputStreamOverStream {}
 #[repr(transparent)]
 pub struct OutputStreamOverStream(::windows_core::IUnknown);
 impl OutputStreamOverStream {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
 }
@@ -4359,30 +4120,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Out
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<OutputStreamOverStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<OutputStreamOverStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: OutputStreamOverStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&OutputStreamOverStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&OutputStreamOverStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &OutputStreamOverStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for OutputStreamOverStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for OutputStreamOverStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &OutputStreamOverStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &OutputStreamOverStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<OutputStreamOverStream> for IOutputStream {
@@ -4411,25 +4168,22 @@ unsafe impl ::core::marker::Send for OutputStreamOverStream {}
 unsafe impl ::core::marker::Sync for OutputStreamOverStream {}
 pub struct RandomAccessStream;
 impl RandomAccessStream {
-    #[cfg(feature = "Foundation")]
-    pub fn CopyAsync<'a, Param0: ::windows_core::IntoParam<'a, IInputStream>, Param1: ::windows_core::IntoParam<'a, IOutputStream>>(source: Param0, destination: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn CopyAsync<'a, Param0: ::windows_core::IntoParam<'a, IInputStream>, Param1: ::windows_core::IntoParam<'a, IOutputStream>>(source: Param0, destination: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         Self::IRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CopyAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), destination.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).CopyAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), destination.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CopySizeAsync<'a, Param0: ::windows_core::IntoParam<'a, IInputStream>, Param1: ::windows_core::IntoParam<'a, IOutputStream>>(source: Param0, destination: Param1, bytestocopy: u64) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn CopySizeAsync<'a, Param0: ::windows_core::IntoParam<'a, IInputStream>, Param1: ::windows_core::IntoParam<'a, IOutputStream>>(source: Param0, destination: Param1, bytestocopy: u64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         Self::IRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CopySizeAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), destination.into_param().abi(), bytestocopy, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).CopySizeAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), destination.into_param().abi(), bytestocopy, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CopyAndCloseAsync<'a, Param0: ::windows_core::IntoParam<'a, IInputStream>, Param1: ::windows_core::IntoParam<'a, IOutputStream>>(source: Param0, destination: Param1) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>> {
+    pub fn CopyAndCloseAsync<'a, Param0: ::windows_core::IntoParam<'a, IInputStream>, Param1: ::windows_core::IntoParam<'a, IOutputStream>>(source: Param0, destination: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>> {
         Self::IRandomAccessStreamStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CopyAndCloseAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), destination.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
+            (::windows_core::Interface::vtable(this).CopyAndCloseAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), destination.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u64, u64>>(result__)
         })
     }
     pub fn IRandomAccessStreamStatics<R, F: FnOnce(&IRandomAccessStreamStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -4443,33 +4197,29 @@ impl ::windows_core::RuntimeName for RandomAccessStream {
 #[repr(transparent)]
 pub struct RandomAccessStreamOverStream(::windows_core::IUnknown);
 impl RandomAccessStreamOverStream {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0, count: u32, options: InputStreamOptions) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>> {
         let this = &::windows_core::Interface::cast::<IInputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), count, options, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<IBuffer, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>> {
+    pub fn WriteAsync<'a, Param0: ::windows_core::IntoParam<'a, IBuffer>>(&self, buffer: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
+            (::windows_core::Interface::vtable(this).WriteAsync)(::windows_core::Interface::as_raw(this), buffer.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperationWithProgress<u32, u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FlushAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn FlushAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IOutputStream>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).FlushAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn Size(&self) -> ::windows_core::Result<u64> {
@@ -4600,30 +4350,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Ran
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<RandomAccessStreamOverStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<RandomAccessStreamOverStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: RandomAccessStreamOverStream) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&RandomAccessStreamOverStream> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&RandomAccessStreamOverStream> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &RandomAccessStreamOverStream) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for RandomAccessStreamOverStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for RandomAccessStreamOverStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &RandomAccessStreamOverStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &RandomAccessStreamOverStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 impl ::core::convert::TryFrom<RandomAccessStreamOverStream> for IInputStream {
@@ -4697,12 +4443,11 @@ unsafe impl ::core::marker::Sync for RandomAccessStreamOverStream {}
 #[repr(transparent)]
 pub struct RandomAccessStreamReference(::windows_core::IUnknown);
 impl RandomAccessStreamReference {
-    #[cfg(feature = "Foundation")]
-    pub fn OpenReadAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<IRandomAccessStreamWithContentType>> {
+    pub fn OpenReadAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<IRandomAccessStreamWithContentType>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenReadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<IRandomAccessStreamWithContentType>>(result__)
+            (::windows_core::Interface::vtable(this).OpenReadAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<IRandomAccessStreamWithContentType>>(result__)
         }
     }
     pub fn CreateFromFile<'a, Param0: ::windows_core::IntoParam<'a, super::IStorageFile>>(file: Param0) -> ::windows_core::Result<RandomAccessStreamReference> {
@@ -4711,8 +4456,7 @@ impl RandomAccessStreamReference {
             (::windows_core::Interface::vtable(this).CreateFromFile)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<RandomAccessStreamReference>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateFromUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(uri: Param0) -> ::windows_core::Result<RandomAccessStreamReference> {
+    pub fn CreateFromUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(uri: Param0) -> ::windows_core::Result<RandomAccessStreamReference> {
         Self::IRandomAccessStreamReferenceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromUri)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<RandomAccessStreamReference>(result__)

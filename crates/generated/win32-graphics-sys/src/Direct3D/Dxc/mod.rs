@@ -2,7 +2,7 @@
 extern "system" {
     pub fn DxcCreateInstance(rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn DxcCreateInstance2(pmalloc: super::super::super::System::Com::IMalloc, rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn DxcCreateInstance2(pmalloc: ::win32_system_sys::Com::IMalloc, rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 pub const CLSID_DxcAssembler: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3609779048, data2: 63747, data3: 20352, data4: [148, 205, 220, 207, 118, 236, 113, 81] };
 pub const CLSID_DxcCompiler: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1944202643, data2: 59086, data3: 18419, data4: [181, 191, 240, 102, 79, 57, 193, 176] };
@@ -78,7 +78,7 @@ impl ::core::clone::Clone for DxcBuffer {
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-pub type DxcCreateInstance2Proc = ::core::option::Option<unsafe extern "system" fn(pmalloc: super::super::super::System::Com::IMalloc, rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
+pub type DxcCreateInstance2Proc = ::core::option::Option<unsafe extern "system" fn(pmalloc: ::win32_system_sys::Com::IMalloc, rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 pub type DxcCreateInstanceProc = ::core::option::Option<unsafe extern "system" fn(rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
 pub struct DxcDefine {

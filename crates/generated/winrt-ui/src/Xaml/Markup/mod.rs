@@ -431,37 +431,19 @@ pub struct IXamlBindingHelperStatics_Vtbl {
     pub SetPropertyFromString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetPropertyFromBoolean: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: bool) -> ::windows_core::HRESULT,
     pub SetPropertyFromChar16: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: u16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SetPropertyFromDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPropertyFromDateTime: usize,
+    pub SetPropertyFromDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub SetPropertyFromDouble: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: f64) -> ::windows_core::HRESULT,
     pub SetPropertyFromInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: i32) -> ::windows_core::HRESULT,
     pub SetPropertyFromUInt32: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: u32) -> ::windows_core::HRESULT,
     pub SetPropertyFromInt64: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: i64) -> ::windows_core::HRESULT,
     pub SetPropertyFromUInt64: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: u64) -> ::windows_core::HRESULT,
     pub SetPropertyFromSingle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: f32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub SetPropertyFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPropertyFromPoint: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetPropertyFromRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPropertyFromRect: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetPropertyFromSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: super::super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPropertyFromSize: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetPropertyFromTimeSpan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPropertyFromTimeSpan: usize,
+    pub SetPropertyFromPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub SetPropertyFromRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    pub SetPropertyFromSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: ::winrt_foundation::Size) -> ::windows_core::HRESULT,
+    pub SetPropertyFromTimeSpan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub SetPropertyFromByte: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: u8) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SetPropertyFromUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPropertyFromUri: usize,
     pub SetPropertyFromObject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dependencyobject: *mut ::core::ffi::c_void, propertytoset: ::windows_core::RawPtr, value: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -1292,7 +1274,7 @@ unsafe impl ::core::marker::Sync for MarkupExtension {}
 pub struct XamlBinaryWriter(::windows_core::IUnknown);
 impl XamlBinaryWriter {
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn Write<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVector<super::super::super::Storage::Streams::IRandomAccessStream>>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVector<super::super::super::Storage::Streams::IRandomAccessStream>>, Param2: ::windows_core::IntoParam<'a, IXamlMetadataProvider>>(inputstreams: Param0, outputstreams: Param1, xamlmetadataprovider: Param2) -> ::windows_core::Result<XamlBinaryWriterErrorInformation> {
+    pub fn Write<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<::winrt_storage::Streams::IRandomAccessStream>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<::winrt_storage::Streams::IRandomAccessStream>>, Param2: ::windows_core::IntoParam<'a, IXamlMetadataProvider>>(inputstreams: Param0, outputstreams: Param1, xamlmetadataprovider: Param2) -> ::windows_core::Result<XamlBinaryWriterErrorInformation> {
         Self::IXamlBinaryWriterStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<XamlBinaryWriterErrorInformation>::zeroed();
             (::windows_core::Interface::vtable(this).Write)(::windows_core::Interface::as_raw(this), inputstreams.into_param().abi(), outputstreams.into_param().abi(), xamlmetadataprovider.into_param().abi(), result__.as_mut_ptr()).from_abi::<XamlBinaryWriterErrorInformation>(result__)
@@ -1453,8 +1435,7 @@ impl XamlBindingHelper {
     pub fn SetPropertyFromChar16<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>>(dependencyobject: Param0, propertytoset: Param1, value: u16) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPropertyFromChar16)(::windows_core::Interface::as_raw(this), dependencyobject.into_param().abi(), propertytoset.into_param().abi(), value).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPropertyFromDateTime<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::DateTime>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetPropertyFromDateTime<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPropertyFromDateTime)(::windows_core::Interface::as_raw(this), dependencyobject.into_param().abi(), propertytoset.into_param().abi(), value.into_param().abi()).ok() })
     }
     pub fn SetPropertyFromDouble<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>>(dependencyobject: Param0, propertytoset: Param1, value: f64) -> ::windows_core::Result<()> {
@@ -1475,27 +1456,22 @@ impl XamlBindingHelper {
     pub fn SetPropertyFromSingle<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>>(dependencyobject: Param0, propertytoset: Param1, value: f32) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPropertyFromSingle)(::windows_core::Interface::as_raw(this), dependencyobject.into_param().abi(), propertytoset.into_param().abi(), value).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPropertyFromPoint<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetPropertyFromPoint<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPropertyFromPoint)(::windows_core::Interface::as_raw(this), dependencyobject.into_param().abi(), propertytoset.into_param().abi(), value.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPropertyFromRect<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Rect>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetPropertyFromRect<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPropertyFromRect)(::windows_core::Interface::as_raw(this), dependencyobject.into_param().abi(), propertytoset.into_param().abi(), value.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPropertyFromSize<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Size>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetPropertyFromSize<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPropertyFromSize)(::windows_core::Interface::as_raw(this), dependencyobject.into_param().abi(), propertytoset.into_param().abi(), value.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPropertyFromTimeSpan<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::TimeSpan>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetPropertyFromTimeSpan<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPropertyFromTimeSpan)(::windows_core::Interface::as_raw(this), dependencyobject.into_param().abi(), propertytoset.into_param().abi(), value.into_param().abi()).ok() })
     }
     pub fn SetPropertyFromByte<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>>(dependencyobject: Param0, propertytoset: Param1, value: u8) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPropertyFromByte)(::windows_core::Interface::as_raw(this), dependencyobject.into_param().abi(), propertytoset.into_param().abi(), value).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetPropertyFromUri<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
+    pub fn SetPropertyFromUri<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {
         Self::IXamlBindingHelperStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPropertyFromUri)(::windows_core::Interface::as_raw(this), dependencyobject.into_param().abi(), propertytoset.into_param().abi(), value.into_param().abi()).ok() })
     }
     pub fn SetPropertyFromObject<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>, Param1: ::windows_core::IntoParam<'a, super::DependencyProperty>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IInspectable>>(dependencyobject: Param0, propertytoset: Param1, value: Param2) -> ::windows_core::Result<()> {

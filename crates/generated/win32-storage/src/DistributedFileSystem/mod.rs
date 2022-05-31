@@ -280,7 +280,7 @@ pub struct DFS_INFO_107 {
     pub PropertyFlagMask: u32,
     pub PropertyFlags: u32,
     pub SdLengthReserved: u32,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
 }
 #[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for DFS_INFO_107 {}
@@ -318,7 +318,7 @@ impl ::core::default::Default for DFS_INFO_107 {
 #[cfg(feature = "Win32_Security")]
 pub struct DFS_INFO_150 {
     pub SdLengthReserved: u32,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
 }
 #[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for DFS_INFO_150 {}
@@ -816,7 +816,7 @@ pub struct DFS_INFO_8 {
     pub PropertyFlags: u32,
     pub MetadataSize: u32,
     pub SdLengthReserved: u32,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
     pub NumberOfStorages: u32,
 }
 #[cfg(feature = "Win32_Security")]
@@ -862,7 +862,7 @@ pub struct DFS_INFO_9 {
     pub PropertyFlags: u32,
     pub MetadataSize: u32,
     pub SdLengthReserved: u32,
-    pub pSecurityDescriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub pSecurityDescriptor: ::win32_security::PSECURITY_DESCRIPTOR,
     pub NumberOfStorages: u32,
     pub Storage: *mut DFS_STORAGE_INFO_1,
 }
@@ -1289,12 +1289,12 @@ pub unsafe fn NetDfsGetClientInfo<'a, Param0: ::windows_core::IntoParam<'a, ::wi
 }
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn NetDfsGetFtContainerSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(domainname: Param0, securityinformation: u32, ppsecuritydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32 {
+pub unsafe fn NetDfsGetFtContainerSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(domainname: Param0, securityinformation: u32, ppsecuritydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetDfsGetFtContainerSecurity(domainname: ::windows_core::PCWSTR, securityinformation: u32, ppsecuritydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32;
+            fn NetDfsGetFtContainerSecurity(domainname: ::windows_core::PCWSTR, securityinformation: u32, ppsecuritydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetDfsGetFtContainerSecurity(domainname.into_param().abi(), ::core::mem::transmute(securityinformation), ::core::mem::transmute(ppsecuritydescriptor), ::core::mem::transmute(lpcbsecuritydescriptor)))
     }
@@ -1316,12 +1316,12 @@ pub unsafe fn NetDfsGetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_
 }
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn NetDfsGetSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dfsentrypath: Param0, securityinformation: u32, ppsecuritydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32 {
+pub unsafe fn NetDfsGetSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dfsentrypath: Param0, securityinformation: u32, ppsecuritydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetDfsGetSecurity(dfsentrypath: ::windows_core::PCWSTR, securityinformation: u32, ppsecuritydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32;
+            fn NetDfsGetSecurity(dfsentrypath: ::windows_core::PCWSTR, securityinformation: u32, ppsecuritydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetDfsGetSecurity(dfsentrypath.into_param().abi(), ::core::mem::transmute(securityinformation), ::core::mem::transmute(ppsecuritydescriptor), ::core::mem::transmute(lpcbsecuritydescriptor)))
     }
@@ -1330,12 +1330,12 @@ pub unsafe fn NetDfsGetSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::wind
 }
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn NetDfsGetStdContainerSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(machinename: Param0, securityinformation: u32, ppsecuritydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32 {
+pub unsafe fn NetDfsGetStdContainerSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(machinename: Param0, securityinformation: u32, ppsecuritydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetDfsGetStdContainerSecurity(machinename: ::windows_core::PCWSTR, securityinformation: u32, ppsecuritydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32;
+            fn NetDfsGetStdContainerSecurity(machinename: ::windows_core::PCWSTR, securityinformation: u32, ppsecuritydescriptor: *mut ::win32_security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> u32;
         }
         ::core::mem::transmute(NetDfsGetStdContainerSecurity(machinename.into_param().abi(), ::core::mem::transmute(securityinformation), ::core::mem::transmute(ppsecuritydescriptor), ::core::mem::transmute(lpcbsecuritydescriptor)))
     }
@@ -1448,12 +1448,12 @@ pub unsafe fn NetDfsSetClientInfo<'a, Param0: ::windows_core::IntoParam<'a, ::wi
 }
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn NetDfsSetFtContainerSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(domainname: Param0, securityinformation: u32, psecuritydescriptor: Param2) -> u32 {
+pub unsafe fn NetDfsSetFtContainerSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(domainname: Param0, securityinformation: u32, psecuritydescriptor: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetDfsSetFtContainerSecurity(domainname: ::windows_core::PCWSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn NetDfsSetFtContainerSecurity(domainname: ::windows_core::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(NetDfsSetFtContainerSecurity(domainname.into_param().abi(), ::core::mem::transmute(securityinformation), psecuritydescriptor.into_param().abi()))
     }
@@ -1475,12 +1475,12 @@ pub unsafe fn NetDfsSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_
 }
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn NetDfsSetSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(dfsentrypath: Param0, securityinformation: u32, psecuritydescriptor: Param2) -> u32 {
+pub unsafe fn NetDfsSetSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(dfsentrypath: Param0, securityinformation: u32, psecuritydescriptor: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetDfsSetSecurity(dfsentrypath: ::windows_core::PCWSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn NetDfsSetSecurity(dfsentrypath: ::windows_core::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(NetDfsSetSecurity(dfsentrypath.into_param().abi(), ::core::mem::transmute(securityinformation), psecuritydescriptor.into_param().abi()))
     }
@@ -1489,12 +1489,12 @@ pub unsafe fn NetDfsSetSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::wind
 }
 #[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn NetDfsSetStdContainerSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(machinename: Param0, securityinformation: u32, psecuritydescriptor: Param2) -> u32 {
+pub unsafe fn NetDfsSetStdContainerSecurity<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(machinename: Param0, securityinformation: u32, psecuritydescriptor: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetDfsSetStdContainerSecurity(machinename: ::windows_core::PCWSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> u32;
+            fn NetDfsSetStdContainerSecurity(machinename: ::windows_core::PCWSTR, securityinformation: u32, psecuritydescriptor: ::win32_security::PSECURITY_DESCRIPTOR) -> u32;
         }
         ::core::mem::transmute(NetDfsSetStdContainerSecurity(machinename.into_param().abi(), ::core::mem::transmute(securityinformation), psecuritydescriptor.into_param().abi()))
     }

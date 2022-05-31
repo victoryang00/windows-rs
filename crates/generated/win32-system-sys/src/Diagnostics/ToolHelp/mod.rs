@@ -1,37 +1,21 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateToolhelp32Snapshot(dwflags: CREATE_TOOLHELP_SNAPSHOT_FLAGS, th32processid: u32) -> super::super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Heap32First(lphe: *mut HEAPENTRY32, th32processid: u32, th32heapid: usize) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Heap32ListFirst(hsnapshot: super::super::super::Foundation::HANDLE, lphl: *mut HEAPLIST32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Heap32ListNext(hsnapshot: super::super::super::Foundation::HANDLE, lphl: *mut HEAPLIST32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Heap32Next(lphe: *mut HEAPENTRY32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Module32First(hsnapshot: super::super::super::Foundation::HANDLE, lpme: *mut MODULEENTRY32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Module32FirstW(hsnapshot: super::super::super::Foundation::HANDLE, lpme: *mut MODULEENTRY32W) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Module32Next(hsnapshot: super::super::super::Foundation::HANDLE, lpme: *mut MODULEENTRY32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Module32NextW(hsnapshot: super::super::super::Foundation::HANDLE, lpme: *mut MODULEENTRY32W) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Process32First(hsnapshot: super::super::super::Foundation::HANDLE, lppe: *mut PROCESSENTRY32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Process32FirstW(hsnapshot: super::super::super::Foundation::HANDLE, lppe: *mut PROCESSENTRY32W) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Process32Next(hsnapshot: super::super::super::Foundation::HANDLE, lppe: *mut PROCESSENTRY32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Process32NextW(hsnapshot: super::super::super::Foundation::HANDLE, lppe: *mut PROCESSENTRY32W) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Thread32First(hsnapshot: super::super::super::Foundation::HANDLE, lpte: *mut THREADENTRY32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Thread32Next(hsnapshot: super::super::super::Foundation::HANDLE, lpte: *mut THREADENTRY32) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Toolhelp32ReadProcessMemory(th32processid: u32, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, cbread: usize, lpnumberofbytesread: *mut usize) -> super::super::super::Foundation::BOOL;
+    pub fn CreateToolhelp32Snapshot(dwflags: CREATE_TOOLHELP_SNAPSHOT_FLAGS, th32processid: u32) -> ::win32_foundation_sys::HANDLE;
+    pub fn Heap32First(lphe: *mut HEAPENTRY32, th32processid: u32, th32heapid: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn Heap32ListFirst(hsnapshot: ::win32_foundation_sys::HANDLE, lphl: *mut HEAPLIST32) -> ::win32_foundation_sys::BOOL;
+    pub fn Heap32ListNext(hsnapshot: ::win32_foundation_sys::HANDLE, lphl: *mut HEAPLIST32) -> ::win32_foundation_sys::BOOL;
+    pub fn Heap32Next(lphe: *mut HEAPENTRY32) -> ::win32_foundation_sys::BOOL;
+    pub fn Module32First(hsnapshot: ::win32_foundation_sys::HANDLE, lpme: *mut MODULEENTRY32) -> ::win32_foundation_sys::BOOL;
+    pub fn Module32FirstW(hsnapshot: ::win32_foundation_sys::HANDLE, lpme: *mut MODULEENTRY32W) -> ::win32_foundation_sys::BOOL;
+    pub fn Module32Next(hsnapshot: ::win32_foundation_sys::HANDLE, lpme: *mut MODULEENTRY32) -> ::win32_foundation_sys::BOOL;
+    pub fn Module32NextW(hsnapshot: ::win32_foundation_sys::HANDLE, lpme: *mut MODULEENTRY32W) -> ::win32_foundation_sys::BOOL;
+    pub fn Process32First(hsnapshot: ::win32_foundation_sys::HANDLE, lppe: *mut PROCESSENTRY32) -> ::win32_foundation_sys::BOOL;
+    pub fn Process32FirstW(hsnapshot: ::win32_foundation_sys::HANDLE, lppe: *mut PROCESSENTRY32W) -> ::win32_foundation_sys::BOOL;
+    pub fn Process32Next(hsnapshot: ::win32_foundation_sys::HANDLE, lppe: *mut PROCESSENTRY32) -> ::win32_foundation_sys::BOOL;
+    pub fn Process32NextW(hsnapshot: ::win32_foundation_sys::HANDLE, lppe: *mut PROCESSENTRY32W) -> ::win32_foundation_sys::BOOL;
+    pub fn Thread32First(hsnapshot: ::win32_foundation_sys::HANDLE, lpte: *mut THREADENTRY32) -> ::win32_foundation_sys::BOOL;
+    pub fn Thread32Next(hsnapshot: ::win32_foundation_sys::HANDLE, lpte: *mut THREADENTRY32) -> ::win32_foundation_sys::BOOL;
+    pub fn Toolhelp32ReadProcessMemory(th32processid: u32, lpbaseaddress: *const ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, cbread: usize, lpnumberofbytesread: *mut usize) -> ::win32_foundation_sys::BOOL;
 }
 pub type CREATE_TOOLHELP_SNAPSHOT_FLAGS = u32;
 pub const TH32CS_INHERIT: CREATE_TOOLHELP_SNAPSHOT_FLAGS = 2147483648u32;
@@ -42,10 +26,9 @@ pub const TH32CS_SNAPMODULE32: CREATE_TOOLHELP_SNAPSHOT_FLAGS = 16u32;
 pub const TH32CS_SNAPPROCESS: CREATE_TOOLHELP_SNAPSHOT_FLAGS = 2u32;
 pub const TH32CS_SNAPTHREAD: CREATE_TOOLHELP_SNAPSHOT_FLAGS = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HEAPENTRY32 {
     pub dwSize: usize,
-    pub hHandle: super::super::super::Foundation::HANDLE,
+    pub hHandle: ::win32_foundation_sys::HANDLE,
     pub dwAddress: usize,
     pub dwBlockSize: usize,
     pub dwFlags: HEAPENTRY32_FLAGS,
@@ -54,9 +37,7 @@ pub struct HEAPENTRY32 {
     pub th32ProcessID: u32,
     pub th32HeapID: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HEAPENTRY32 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HEAPENTRY32 {
     fn clone(&self) -> Self {
         *self
@@ -83,7 +64,6 @@ pub const HF32_DEFAULT: u32 = 1u32;
 pub const HF32_SHARED: u32 = 2u32;
 pub const MAX_MODULE_NAME32: u32 = 255u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MODULEENTRY32 {
     pub dwSize: u32,
     pub th32ModuleID: u32,
@@ -92,20 +72,17 @@ pub struct MODULEENTRY32 {
     pub ProccntUsage: u32,
     pub modBaseAddr: *mut u8,
     pub modBaseSize: u32,
-    pub hModule: super::super::super::Foundation::HINSTANCE,
-    pub szModule: [super::super::super::Foundation::CHAR; 256],
-    pub szExePath: [super::super::super::Foundation::CHAR; 260],
+    pub hModule: ::win32_foundation_sys::HINSTANCE,
+    pub szModule: [::win32_foundation_sys::CHAR; 256],
+    pub szExePath: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MODULEENTRY32 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MODULEENTRY32 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MODULEENTRY32W {
     pub dwSize: u32,
     pub th32ModuleID: u32,
@@ -114,20 +91,17 @@ pub struct MODULEENTRY32W {
     pub ProccntUsage: u32,
     pub modBaseAddr: *mut u8,
     pub modBaseSize: u32,
-    pub hModule: super::super::super::Foundation::HINSTANCE,
+    pub hModule: ::win32_foundation_sys::HINSTANCE,
     pub szModule: [u16; 256],
     pub szExePath: [u16; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MODULEENTRY32W {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MODULEENTRY32W {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROCESSENTRY32 {
     pub dwSize: u32,
     pub cntUsage: u32,
@@ -138,11 +112,9 @@ pub struct PROCESSENTRY32 {
     pub th32ParentProcessID: u32,
     pub pcPriClassBase: i32,
     pub dwFlags: u32,
-    pub szExeFile: [super::super::super::Foundation::CHAR; 260],
+    pub szExeFile: [::win32_foundation_sys::CHAR; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROCESSENTRY32 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROCESSENTRY32 {
     fn clone(&self) -> Self {
         *self

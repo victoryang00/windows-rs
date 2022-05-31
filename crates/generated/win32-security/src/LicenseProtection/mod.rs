@@ -39,14 +39,13 @@ pub unsafe fn RegisterLicenseKeyWithExpiration<'a, Param0: ::windows_core::IntoP
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ValidateLicenseKeyProtection<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(licensekey: Param0, notvalidbefore: *mut super::super::Foundation::FILETIME, notvalidafter: *mut super::super::Foundation::FILETIME, status: *mut LicenseProtectionStatus) -> ::windows_core::Result<()> {
+pub unsafe fn ValidateLicenseKeyProtection<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(licensekey: Param0, notvalidbefore: *mut ::win32_foundation::FILETIME, notvalidafter: *mut ::win32_foundation::FILETIME, status: *mut LicenseProtectionStatus) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ValidateLicenseKeyProtection(licensekey: ::windows_core::PCWSTR, notvalidbefore: *mut super::super::Foundation::FILETIME, notvalidafter: *mut super::super::Foundation::FILETIME, status: *mut LicenseProtectionStatus) -> ::windows_core::HRESULT;
+            fn ValidateLicenseKeyProtection(licensekey: ::windows_core::PCWSTR, notvalidbefore: *mut ::win32_foundation::FILETIME, notvalidafter: *mut ::win32_foundation::FILETIME, status: *mut LicenseProtectionStatus) -> ::windows_core::HRESULT;
         }
         ValidateLicenseKeyProtection(licensekey.into_param().abi(), ::core::mem::transmute(notvalidbefore), ::core::mem::transmute(notvalidafter), ::core::mem::transmute(status)).ok()
     }

@@ -9,11 +9,11 @@ impl GameSaveBlobGetResult {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn Value(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, super::super::super::Storage::Streams::IBuffer>> {
+    pub fn Value(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, super::super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
 }
@@ -190,11 +190,11 @@ impl GameSaveBlobInfoGetResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Value(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GameSaveBlobInfo>> {
+    pub fn Value(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GameSaveBlobInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GameSaveBlobInfo>>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GameSaveBlobInfo>>(result__)
         }
     }
 }
@@ -273,28 +273,25 @@ unsafe impl ::core::marker::Sync for GameSaveBlobInfoGetResult {}
 #[repr(transparent)]
 pub struct GameSaveBlobInfoQuery(::windows_core::IUnknown);
 impl GameSaveBlobInfoQuery {
-    #[cfg(feature = "Foundation")]
-    pub fn GetBlobInfoAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveBlobInfoGetResult>> {
+    pub fn GetBlobInfoAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveBlobInfoGetResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetBlobInfoAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveBlobInfoGetResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetBlobInfoAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveBlobInfoGetResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetBlobInfoWithIndexAndMaxAsync(&self, startindex: u32, maxnumberofitems: u32) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveBlobInfoGetResult>> {
+    pub fn GetBlobInfoWithIndexAndMaxAsync(&self, startindex: u32, maxnumberofitems: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveBlobInfoGetResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetBlobInfoWithIndexAndMaxAsync)(::windows_core::Interface::as_raw(this), startindex, maxnumberofitems, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveBlobInfoGetResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetBlobInfoWithIndexAndMaxAsync)(::windows_core::Interface::as_raw(this), startindex, maxnumberofitems, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveBlobInfoGetResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetItemCountAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<u32>> {
+    pub fn GetItemCountAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetItemCountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetItemCountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<u32>>(result__)
         }
     }
 }
@@ -388,35 +385,35 @@ impl GameSaveContainer {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn SubmitUpdatesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, super::super::super::Storage::Streams::IBuffer>>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, blobstowrite: Param0, blobstodelete: Param1, displayname: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveOperationResult>> {
+    pub fn SubmitUpdatesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::winrt_storage::Streams::IBuffer>>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, blobstowrite: Param0, blobstodelete: Param1, displayname: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveOperationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SubmitUpdatesAsync)(::windows_core::Interface::as_raw(this), blobstowrite.into_param().abi(), blobstodelete.into_param().abi(), displayname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveOperationResult>>(result__)
+            (::windows_core::Interface::vtable(this).SubmitUpdatesAsync)(::windows_core::Interface::as_raw(this), blobstowrite.into_param().abi(), blobstodelete.into_param().abi(), displayname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveOperationResult>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, super::super::super::Storage::Streams::IBuffer>>>(&self, blobstoread: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveOperationResult>> {
+    pub fn ReadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::winrt_storage::Streams::IBuffer>>>(&self, blobstoread: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveOperationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), blobstoread.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveOperationResult>>(result__)
+            (::windows_core::Interface::vtable(this).ReadAsync)(::windows_core::Interface::as_raw(this), blobstoread.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveOperationResult>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, blobstoread: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveBlobGetResult>> {
+    pub fn GetAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, blobstoread: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveBlobGetResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAsync)(::windows_core::Interface::as_raw(this), blobstoread.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveBlobGetResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetAsync)(::windows_core::Interface::as_raw(this), blobstoread.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveBlobGetResult>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SubmitPropertySetUpdatesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IPropertySet>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, blobstowrite: Param0, blobstodelete: Param1, displayname: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveOperationResult>> {
+    pub fn SubmitPropertySetUpdatesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IPropertySet>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, blobstowrite: Param0, blobstodelete: Param1, displayname: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveOperationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SubmitPropertySetUpdatesAsync)(::windows_core::Interface::as_raw(this), blobstowrite.into_param().abi(), blobstodelete.into_param().abi(), displayname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveOperationResult>>(result__)
+            (::windows_core::Interface::vtable(this).SubmitPropertySetUpdatesAsync)(::windows_core::Interface::as_raw(this), blobstowrite.into_param().abi(), blobstodelete.into_param().abi(), displayname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveOperationResult>>(result__)
         }
     }
     pub fn CreateBlobInfoQuery<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, blobnameprefix: Param0) -> ::windows_core::Result<GameSaveBlobInfoQuery> {
@@ -523,12 +520,11 @@ impl GameSaveContainerInfo {
             (::windows_core::Interface::vtable(this).DisplayName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LastModifiedTime(&self) -> ::windows_core::Result<super::super::super::Foundation::DateTime> {
+    pub fn LastModifiedTime(&self) -> ::windows_core::Result<::winrt_foundation::DateTime> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).LastModifiedTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).LastModifiedTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         }
     }
     pub fn NeedsSync(&self) -> ::windows_core::Result<bool> {
@@ -622,11 +618,11 @@ impl GameSaveContainerInfoGetResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Value(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<GameSaveContainerInfo>> {
+    pub fn Value(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<GameSaveContainerInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<GameSaveContainerInfo>>(result__)
+            (::windows_core::Interface::vtable(this).Value)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<GameSaveContainerInfo>>(result__)
         }
     }
 }
@@ -705,28 +701,25 @@ unsafe impl ::core::marker::Sync for GameSaveContainerInfoGetResult {}
 #[repr(transparent)]
 pub struct GameSaveContainerInfoQuery(::windows_core::IUnknown);
 impl GameSaveContainerInfoQuery {
-    #[cfg(feature = "Foundation")]
-    pub fn GetContainerInfoAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveContainerInfoGetResult>> {
+    pub fn GetContainerInfoAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveContainerInfoGetResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetContainerInfoAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveContainerInfoGetResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetContainerInfoAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveContainerInfoGetResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetContainerInfoWithIndexAndMaxAsync(&self, startindex: u32, maxnumberofitems: u32) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveContainerInfoGetResult>> {
+    pub fn GetContainerInfoWithIndexAndMaxAsync(&self, startindex: u32, maxnumberofitems: u32) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveContainerInfoGetResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetContainerInfoWithIndexAndMaxAsync)(::windows_core::Interface::as_raw(this), startindex, maxnumberofitems, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveContainerInfoGetResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetContainerInfoWithIndexAndMaxAsync)(::windows_core::Interface::as_raw(this), startindex, maxnumberofitems, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveContainerInfoGetResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetItemCountAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<u32>> {
+    pub fn GetItemCountAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetItemCountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetItemCountAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<u32>>(result__)
         }
     }
 }
@@ -935,11 +928,11 @@ unsafe impl ::core::marker::Sync for GameSaveOperationResult {}
 pub struct GameSaveProvider(::windows_core::IUnknown);
 impl GameSaveProvider {
     #[cfg(feature = "System")]
-    pub fn User(&self) -> ::windows_core::Result<super::super::super::System::User> {
+    pub fn User(&self) -> ::windows_core::Result<::winrt_system::User> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::User>(result__)
+            (::windows_core::Interface::vtable(this).User)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::User>(result__)
         }
     }
     pub fn CreateContainer<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0) -> ::windows_core::Result<GameSaveContainer> {
@@ -949,12 +942,11 @@ impl GameSaveProvider {
             (::windows_core::Interface::vtable(this).CreateContainer)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<GameSaveContainer>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteContainerAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveOperationResult>> {
+    pub fn DeleteContainerAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, name: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveOperationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteContainerAsync)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveOperationResult>>(result__)
+            (::windows_core::Interface::vtable(this).DeleteContainerAsync)(::windows_core::Interface::as_raw(this), name.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveOperationResult>>(result__)
         }
     }
     pub fn CreateContainerInfoQuery(&self) -> ::windows_core::Result<GameSaveContainerInfoQuery> {
@@ -971,34 +963,33 @@ impl GameSaveProvider {
             (::windows_core::Interface::vtable(this).CreateContainerInfoQueryWithName)(::windows_core::Interface::as_raw(this), containernameprefix.into_param().abi(), result__.as_mut_ptr()).from_abi::<GameSaveContainerInfoQuery>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetRemainingBytesInQuotaAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<i64>> {
+    pub fn GetRemainingBytesInQuotaAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<i64>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRemainingBytesInQuotaAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<i64>>(result__)
+            (::windows_core::Interface::vtable(this).GetRemainingBytesInQuotaAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<i64>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ContainersChangedSinceLastSync(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn ContainersChangedSinceLastSync(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ContainersChangedSinceLastSync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).ContainersChangedSinceLastSync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "System"))]
-    pub fn GetForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, serviceconfigid: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveProviderGetResult>> {
+    #[cfg(feature = "System")]
+    pub fn GetForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, serviceconfigid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveProviderGetResult>> {
         Self::IGameSaveProviderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), serviceconfigid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveProviderGetResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), serviceconfigid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveProviderGetResult>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "System"))]
-    pub fn GetSyncOnDemandForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::System::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, serviceconfigid: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<GameSaveProviderGetResult>> {
+    #[cfg(feature = "System")]
+    pub fn GetSyncOnDemandForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_system::User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, serviceconfigid: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameSaveProviderGetResult>> {
         Self::IGameSaveProviderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetSyncOnDemandForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), serviceconfigid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<GameSaveProviderGetResult>>(result__)
+            (::windows_core::Interface::vtable(this).GetSyncOnDemandForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), serviceconfigid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameSaveProviderGetResult>>(result__)
         })
     }
     pub fn IGameSaveProviderStatics<R, F: FnOnce(&IGameSaveProviderStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1227,18 +1218,9 @@ unsafe impl ::windows_core::Interface for IGameSaveBlobInfoQuery {
 #[doc(hidden)]
 pub struct IGameSaveBlobInfoQuery_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetBlobInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetBlobInfoAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetBlobInfoWithIndexAndMaxAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startindex: u32, maxnumberofitems: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetBlobInfoWithIndexAndMaxAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetItemCountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetItemCountAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1285,10 +1267,7 @@ pub struct IGameSaveContainerInfo_Vtbl {
     pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub TotalSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u64) -> ::windows_core::HRESULT,
     pub DisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub LastModifiedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LastModifiedTime: usize,
+    pub LastModifiedTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub NeedsSync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -1319,18 +1298,9 @@ unsafe impl ::windows_core::Interface for IGameSaveContainerInfoQuery {
 #[doc(hidden)]
 pub struct IGameSaveContainerInfoQuery_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetContainerInfoAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetContainerInfoAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetContainerInfoWithIndexAndMaxAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startindex: u32, maxnumberofitems: u32, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetContainerInfoWithIndexAndMaxAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetItemCountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetItemCountAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1361,16 +1331,10 @@ pub struct IGameSaveProvider_Vtbl {
     #[cfg(not(feature = "System"))]
     User: usize,
     pub CreateContainer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub DeleteContainerAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeleteContainerAsync: usize,
     pub CreateContainerInfoQuery: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateContainerInfoQueryWithName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, containernameprefix: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetRemainingBytesInQuotaAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetRemainingBytesInQuotaAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub ContainersChangedSinceLastSync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -1401,12 +1365,12 @@ unsafe impl ::windows_core::Interface for IGameSaveProviderStatics {
 #[doc(hidden)]
 pub struct IGameSaveProviderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "System"))]
+    #[cfg(feature = "System")]
     pub GetForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, serviceconfigid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    #[cfg(not(feature = "System"))]
     GetForUserAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "System"))]
+    #[cfg(feature = "System")]
     pub GetSyncOnDemandForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, serviceconfigid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System")))]
+    #[cfg(not(feature = "System"))]
     GetSyncOnDemandForUserAsync: usize,
 }

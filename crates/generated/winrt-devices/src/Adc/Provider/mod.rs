@@ -149,11 +149,11 @@ pub struct IAdcControllerProvider_Vtbl {
 pub struct IAdcProvider(::windows_core::IUnknown);
 impl IAdcProvider {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetControllers(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<IAdcControllerProvider>> {
+    pub fn GetControllers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IAdcControllerProvider>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetControllers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<IAdcControllerProvider>>(result__)
+            (::windows_core::Interface::vtable(this).GetControllers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IAdcControllerProvider>>(result__)
         }
     }
 }

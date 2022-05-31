@@ -1,26 +1,24 @@
 pub const APPCRASH_EVENT: &str = "APPCRASH";
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddERExcludedApplicationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(szapplication: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn AddERExcludedApplicationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(szapplication: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddERExcludedApplicationA(szapplication: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn AddERExcludedApplicationA(szapplication: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddERExcludedApplicationA(szapplication.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddERExcludedApplicationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(wszapplication: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn AddERExcludedApplicationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(wszapplication: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddERExcludedApplicationW(wszapplication: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn AddERExcludedApplicationW(wszapplication: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AddERExcludedApplicationW(wszapplication.into_param().abi()))
     }
@@ -115,11 +113,11 @@ unsafe impl ::windows_core::Abi for HREPORTSTORE {
     type Abi = Self;
 }
 pub const PACKAGED_APPCRASH_EVENT: &str = "MoAppCrash";
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-pub type PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbiscustomdebugger: *mut super::super::Foundation::BOOL, pwszdebuggerlaunch: ::windows_core::PWSTR, pchdebuggerlaunch: *mut u32, pbisdebuggerautolaunch: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-pub type PFN_WER_RUNTIME_EXCEPTION_EVENT = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbownershipclaimed: *mut super::super::Foundation::BOOL, pwszeventname: ::windows_core::PWSTR, pchsize: *mut u32, pdwsignaturecount: *mut u32) -> ::windows_core::HRESULT>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+pub type PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbiscustomdebugger: *mut ::win32_foundation::BOOL, pwszdebuggerlaunch: ::windows_core::PWSTR, pchdebuggerlaunch: *mut u32, pbisdebuggerautolaunch: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT>;
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+pub type PFN_WER_RUNTIME_EXCEPTION_EVENT = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbownershipclaimed: *mut ::win32_foundation::BOOL, pwszeventname: ::windows_core::PWSTR, pchsize: *mut u32, pdwsignaturecount: *mut u32) -> ::windows_core::HRESULT>;
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 pub type PFN_WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, dwindex: u32, pwszname: ::windows_core::PWSTR, pchname: *mut u32, pwszvalue: ::windows_core::PWSTR, pchvalue: *mut u32) -> ::windows_core::HRESULT>;
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -148,7 +146,7 @@ impl ::core::fmt::Debug for REPORT_STORE_TYPES {
         f.debug_tuple("REPORT_STORE_TYPES").field(&self.0).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 #[inline]
 pub unsafe fn ReportFault(pep: *const super::Diagnostics::Debug::EXCEPTION_POINTERS, dwopt: u32) -> EFaultRepRetVal {
     #[cfg(windows)]
@@ -191,12 +189,11 @@ impl ::core::fmt::Debug for WER_CONSENT {
 }
 pub const WER_DUMP_AUXILIARY: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_DUMP_CUSTOM_OPTIONS {
     pub dwSize: u32,
     pub dwMask: u32,
     pub dwDumpFlags: u32,
-    pub bOnlyThisThread: super::super::Foundation::BOOL,
+    pub bOnlyThisThread: ::win32_foundation::BOOL,
     pub dwExceptionThreadFlags: u32,
     pub dwOtherThreadFlags: u32,
     pub dwExceptionThreadExFlags: u32,
@@ -205,15 +202,12 @@ pub struct WER_DUMP_CUSTOM_OPTIONS {
     pub dwOtherModuleFlags: u32,
     pub wzPreferredModuleList: [u16; 256],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_DUMP_CUSTOM_OPTIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_DUMP_CUSTOM_OPTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_DUMP_CUSTOM_OPTIONS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_DUMP_CUSTOM_OPTIONS")
@@ -231,31 +225,26 @@ impl ::core::fmt::Debug for WER_DUMP_CUSTOM_OPTIONS {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_DUMP_CUSTOM_OPTIONS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_DUMP_CUSTOM_OPTIONS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_DUMP_CUSTOM_OPTIONS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_DUMP_CUSTOM_OPTIONS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_DUMP_CUSTOM_OPTIONS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_DUMP_CUSTOM_OPTIONS_V2 {
     pub dwSize: u32,
     pub dwMask: u32,
     pub dwDumpFlags: u32,
-    pub bOnlyThisThread: super::super::Foundation::BOOL,
+    pub bOnlyThisThread: ::win32_foundation::BOOL,
     pub dwExceptionThreadFlags: u32,
     pub dwOtherThreadFlags: u32,
     pub dwExceptionThreadExFlags: u32,
@@ -266,15 +255,12 @@ pub struct WER_DUMP_CUSTOM_OPTIONS_V2 {
     pub dwPreferredModuleResetFlags: u32,
     pub dwOtherModuleResetFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_DUMP_CUSTOM_OPTIONS_V2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_DUMP_CUSTOM_OPTIONS_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_DUMP_CUSTOM_OPTIONS_V2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_DUMP_CUSTOM_OPTIONS_V2")
@@ -294,31 +280,26 @@ impl ::core::fmt::Debug for WER_DUMP_CUSTOM_OPTIONS_V2 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_DUMP_CUSTOM_OPTIONS_V2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_DUMP_CUSTOM_OPTIONS_V2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_DUMP_CUSTOM_OPTIONS_V2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_DUMP_CUSTOM_OPTIONS_V2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_DUMP_CUSTOM_OPTIONS_V2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_DUMP_CUSTOM_OPTIONS_V3 {
     pub dwSize: u32,
     pub dwMask: u32,
     pub dwDumpFlags: u32,
-    pub bOnlyThisThread: super::super::Foundation::BOOL,
+    pub bOnlyThisThread: ::win32_foundation::BOOL,
     pub dwExceptionThreadFlags: u32,
     pub dwOtherThreadFlags: u32,
     pub dwExceptionThreadExFlags: u32,
@@ -329,18 +310,15 @@ pub struct WER_DUMP_CUSTOM_OPTIONS_V3 {
     pub dwPreferredModuleResetFlags: u32,
     pub dwOtherModuleResetFlags: u32,
     pub pvDumpKey: *mut ::core::ffi::c_void,
-    pub hSnapshot: super::super::Foundation::HANDLE,
+    pub hSnapshot: ::win32_foundation::HANDLE,
     pub dwThreadID: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_DUMP_CUSTOM_OPTIONS_V3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_DUMP_CUSTOM_OPTIONS_V3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_DUMP_CUSTOM_OPTIONS_V3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_DUMP_CUSTOM_OPTIONS_V3")
@@ -363,19 +341,15 @@ impl ::core::fmt::Debug for WER_DUMP_CUSTOM_OPTIONS_V3 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_DUMP_CUSTOM_OPTIONS_V3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_DUMP_CUSTOM_OPTIONS_V3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_DUMP_CUSTOM_OPTIONS_V3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_DUMP_CUSTOM_OPTIONS_V3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_DUMP_CUSTOM_OPTIONS_V3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -412,38 +386,38 @@ impl ::core::fmt::Debug for WER_DUMP_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 pub struct WER_EXCEPTION_INFORMATION {
     pub pExceptionPointers: *mut super::Diagnostics::Debug::EXCEPTION_POINTERS,
-    pub bClientPointers: super::super::Foundation::BOOL,
+    pub bClientPointers: ::win32_foundation::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::marker::Copy for WER_EXCEPTION_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::clone::Clone for WER_EXCEPTION_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::fmt::Debug for WER_EXCEPTION_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_EXCEPTION_INFORMATION").field("pExceptionPointers", &self.pExceptionPointers).field("bClientPointers", &self.bClientPointers).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 unsafe impl ::windows_core::Abi for WER_EXCEPTION_INFORMATION {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::cmp::PartialEq for WER_EXCEPTION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_EXCEPTION_INFORMATION>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::cmp::Eq for WER_EXCEPTION_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::default::Default for WER_EXCEPTION_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -649,72 +623,60 @@ impl ::core::fmt::Debug for WER_REGISTER_FILE_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_INFORMATION {
     pub dwSize: u32,
-    pub hProcess: super::super::Foundation::HANDLE,
+    pub hProcess: ::win32_foundation::HANDLE,
     pub wzConsentKey: [u16; 64],
     pub wzFriendlyEventName: [u16; 128],
     pub wzApplicationName: [u16; 128],
     pub wzApplicationPath: [u16; 260],
     pub wzDescription: [u16; 512],
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation::HWND,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_REPORT_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_REPORT_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_REPORT_INFORMATION {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_REPORT_INFORMATION").field("dwSize", &self.dwSize).field("hProcess", &self.hProcess).field("wzConsentKey", &self.wzConsentKey).field("wzFriendlyEventName", &self.wzFriendlyEventName).field("wzApplicationName", &self.wzApplicationName).field("wzApplicationPath", &self.wzApplicationPath).field("wzDescription", &self.wzDescription).field("hwndParent", &self.hwndParent).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_REPORT_INFORMATION {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_REPORT_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_REPORT_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_INFORMATION_V3 {
     pub dwSize: u32,
-    pub hProcess: super::super::Foundation::HANDLE,
+    pub hProcess: ::win32_foundation::HANDLE,
     pub wzConsentKey: [u16; 64],
     pub wzFriendlyEventName: [u16; 128],
     pub wzApplicationName: [u16; 128],
     pub wzApplicationPath: [u16; 260],
     pub wzDescription: [u16; 512],
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation::HWND,
     pub wzNamespacePartner: [u16; 64],
     pub wzNamespaceGroup: [u16; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_REPORT_INFORMATION_V3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_REPORT_INFORMATION_V3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_REPORT_INFORMATION_V3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_REPORT_INFORMATION_V3")
@@ -731,50 +693,42 @@ impl ::core::fmt::Debug for WER_REPORT_INFORMATION_V3 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_REPORT_INFORMATION_V3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_INFORMATION_V3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION_V3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_REPORT_INFORMATION_V3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_REPORT_INFORMATION_V3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_INFORMATION_V4 {
     pub dwSize: u32,
-    pub hProcess: super::super::Foundation::HANDLE,
+    pub hProcess: ::win32_foundation::HANDLE,
     pub wzConsentKey: [u16; 64],
     pub wzFriendlyEventName: [u16; 128],
     pub wzApplicationName: [u16; 128],
     pub wzApplicationPath: [u16; 260],
     pub wzDescription: [u16; 512],
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation::HWND,
     pub wzNamespacePartner: [u16; 64],
     pub wzNamespaceGroup: [u16; 64],
     pub rgbApplicationIdentity: [u8; 16],
-    pub hSnapshot: super::super::Foundation::HANDLE,
-    pub hDeleteFilesImpersonationToken: super::super::Foundation::HANDLE,
+    pub hSnapshot: ::win32_foundation::HANDLE,
+    pub hDeleteFilesImpersonationToken: ::win32_foundation::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_REPORT_INFORMATION_V4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_REPORT_INFORMATION_V4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_REPORT_INFORMATION_V4 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_REPORT_INFORMATION_V4")
@@ -794,51 +748,43 @@ impl ::core::fmt::Debug for WER_REPORT_INFORMATION_V4 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_REPORT_INFORMATION_V4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_INFORMATION_V4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION_V4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_REPORT_INFORMATION_V4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_REPORT_INFORMATION_V4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_INFORMATION_V5 {
     pub dwSize: u32,
-    pub hProcess: super::super::Foundation::HANDLE,
+    pub hProcess: ::win32_foundation::HANDLE,
     pub wzConsentKey: [u16; 64],
     pub wzFriendlyEventName: [u16; 128],
     pub wzApplicationName: [u16; 128],
     pub wzApplicationPath: [u16; 260],
     pub wzDescription: [u16; 512],
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation::HWND,
     pub wzNamespacePartner: [u16; 64],
     pub wzNamespaceGroup: [u16; 64],
     pub rgbApplicationIdentity: [u8; 16],
-    pub hSnapshot: super::super::Foundation::HANDLE,
-    pub hDeleteFilesImpersonationToken: super::super::Foundation::HANDLE,
+    pub hSnapshot: ::win32_foundation::HANDLE,
+    pub hDeleteFilesImpersonationToken: ::win32_foundation::HANDLE,
     pub submitResultMax: WER_SUBMIT_RESULT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_REPORT_INFORMATION_V5 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_REPORT_INFORMATION_V5 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_REPORT_INFORMATION_V5 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_REPORT_INFORMATION_V5")
@@ -859,72 +805,59 @@ impl ::core::fmt::Debug for WER_REPORT_INFORMATION_V5 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_REPORT_INFORMATION_V5 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_INFORMATION_V5 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_INFORMATION_V5>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_REPORT_INFORMATION_V5 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_REPORT_INFORMATION_V5 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_METADATA_V1 {
     pub Signature: WER_REPORT_SIGNATURE,
     pub BucketId: ::windows_core::GUID,
     pub ReportId: ::windows_core::GUID,
-    pub CreationTime: super::super::Foundation::FILETIME,
+    pub CreationTime: ::win32_foundation::FILETIME,
     pub SizeInBytes: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_REPORT_METADATA_V1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_REPORT_METADATA_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_REPORT_METADATA_V1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_REPORT_METADATA_V1").field("Signature", &self.Signature).field("BucketId", &self.BucketId).field("ReportId", &self.ReportId).field("CreationTime", &self.CreationTime).field("SizeInBytes", &self.SizeInBytes).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_REPORT_METADATA_V1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_METADATA_V1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_METADATA_V1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_REPORT_METADATA_V1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_REPORT_METADATA_V1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_METADATA_V2 {
     pub Signature: WER_REPORT_SIGNATURE,
     pub BucketId: ::windows_core::GUID,
     pub ReportId: ::windows_core::GUID,
-    pub CreationTime: super::super::Foundation::FILETIME,
+    pub CreationTime: ::win32_foundation::FILETIME,
     pub SizeInBytes: u64,
     pub CabId: [u16; 260],
     pub ReportStatus: u32,
@@ -933,15 +866,12 @@ pub struct WER_REPORT_METADATA_V2 {
     pub SizeOfFileNames: u32,
     pub FileNames: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_REPORT_METADATA_V2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_REPORT_METADATA_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_REPORT_METADATA_V2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_REPORT_METADATA_V2")
@@ -959,31 +889,26 @@ impl ::core::fmt::Debug for WER_REPORT_METADATA_V2 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_REPORT_METADATA_V2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_METADATA_V2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_METADATA_V2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_REPORT_METADATA_V2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_REPORT_METADATA_V2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_METADATA_V3 {
     pub Signature: WER_REPORT_SIGNATURE,
     pub BucketId: ::windows_core::GUID,
     pub ReportId: ::windows_core::GUID,
-    pub CreationTime: super::super::Foundation::FILETIME,
+    pub CreationTime: ::win32_foundation::FILETIME,
     pub SizeInBytes: u64,
     pub CabId: [u16; 260],
     pub ReportStatus: u32,
@@ -998,15 +923,12 @@ pub struct WER_REPORT_METADATA_V3 {
     pub BucketIdString: [u16; 260],
     pub LegacyBucketId: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_REPORT_METADATA_V3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WER_REPORT_METADATA_V3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WER_REPORT_METADATA_V3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WER_REPORT_METADATA_V3")
@@ -1030,19 +952,15 @@ impl ::core::fmt::Debug for WER_REPORT_METADATA_V3 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WER_REPORT_METADATA_V3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WER_REPORT_METADATA_V3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_REPORT_METADATA_V3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WER_REPORT_METADATA_V3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WER_REPORT_METADATA_V3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1173,38 +1091,38 @@ pub const WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH: &str = "OutOfProcessExceptionEv
 pub const WER_RUNTIME_EXCEPTION_EVENT_FUNCTION: &str = "OutOfProcessExceptionEventCallback";
 pub const WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE_FUNCTION: &str = "OutOfProcessExceptionEventSignatureCallback";
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 pub struct WER_RUNTIME_EXCEPTION_INFORMATION {
     pub dwSize: u32,
-    pub hProcess: super::super::Foundation::HANDLE,
-    pub hThread: super::super::Foundation::HANDLE,
+    pub hProcess: ::win32_foundation::HANDLE,
+    pub hThread: ::win32_foundation::HANDLE,
     pub exceptionRecord: super::Diagnostics::Debug::EXCEPTION_RECORD,
     pub context: super::Diagnostics::Debug::CONTEXT,
     pub pwszReportId: ::windows_core::PCWSTR,
-    pub bIsFatal: super::super::Foundation::BOOL,
+    pub bIsFatal: ::win32_foundation::BOOL,
     pub dwReserved: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::marker::Copy for WER_RUNTIME_EXCEPTION_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::clone::Clone for WER_RUNTIME_EXCEPTION_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 unsafe impl ::windows_core::Abi for WER_RUNTIME_EXCEPTION_INFORMATION {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::cmp::PartialEq for WER_RUNTIME_EXCEPTION_INFORMATION {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WER_RUNTIME_EXCEPTION_INFORMATION>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::cmp::Eq for WER_RUNTIME_EXCEPTION_INFORMATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 impl ::core::default::Default for WER_RUNTIME_EXCEPTION_INFORMATION {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1311,14 +1229,13 @@ impl ::core::fmt::Debug for WER_SUBMIT_RESULT {
         f.debug_tuple("WER_SUBMIT_RESULT").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerAddExcludedApplication<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pwzexename: Param0, ballusers: Param1) -> ::windows_core::Result<()> {
+pub unsafe fn WerAddExcludedApplication<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(pwzexename: Param0, ballusers: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerAddExcludedApplication(pwzexename: ::windows_core::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn WerAddExcludedApplication(pwzexename: ::windows_core::PCWSTR, ballusers: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         WerAddExcludedApplication(pwzexename.into_param().abi(), ballusers.into_param().abi()).ok()
     }
@@ -1338,14 +1255,13 @@ pub unsafe fn WerFreeString<'a, Param0: ::windows_core::IntoParam<'a, ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerGetFlags<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> ::windows_core::Result<WER_FAULT_REPORTING> {
+pub unsafe fn WerGetFlags<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0) -> ::windows_core::Result<WER_FAULT_REPORTING> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerGetFlags(hprocess: super::super::Foundation::HANDLE, pdwflags: *mut WER_FAULT_REPORTING) -> ::windows_core::HRESULT;
+            fn WerGetFlags(hprocess: ::win32_foundation::HANDLE, pdwflags: *mut WER_FAULT_REPORTING) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<WER_FAULT_REPORTING>::zeroed();
         WerGetFlags(hprocess.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WER_FAULT_REPORTING>(result__)
@@ -1444,28 +1360,27 @@ pub unsafe fn WerRegisterRuntimeExceptionModule<'a, Param0: ::windows_core::Into
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerRemoveExcludedApplication<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(pwzexename: Param0, ballusers: Param1) -> ::windows_core::Result<()> {
+pub unsafe fn WerRemoveExcludedApplication<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(pwzexename: Param0, ballusers: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerRemoveExcludedApplication(pwzexename: ::windows_core::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn WerRemoveExcludedApplication(pwzexename: ::windows_core::PCWSTR, ballusers: ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         WerRemoveExcludedApplication(pwzexename.into_param().abi(), ballusers.into_param().abi()).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 #[inline]
-pub unsafe fn WerReportAddDump<'a, Param0: ::windows_core::IntoParam<'a, HREPORT>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hreporthandle: Param0, hprocess: Param1, hthread: Param2, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows_core::Result<()> {
+pub unsafe fn WerReportAddDump<'a, Param0: ::windows_core::IntoParam<'a, HREPORT>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hreporthandle: Param0, hprocess: Param1, hthread: Param2, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportAddDump(hreporthandle: HREPORT, hprocess: super::super::Foundation::HANDLE, hthread: super::super::Foundation::HANDLE, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows_core::HRESULT;
+            fn WerReportAddDump(hreporthandle: HREPORT, hprocess: ::win32_foundation::HANDLE, hthread: ::win32_foundation::HANDLE, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows_core::HRESULT;
         }
         WerReportAddDump(hreporthandle.into_param().abi(), hprocess.into_param().abi(), hthread.into_param().abi(), ::core::mem::transmute(dumptype), ::core::mem::transmute(pexceptionparam), ::core::mem::transmute(pdumpcustomoptions), ::core::mem::transmute(dwflags)).ok()
     }
@@ -1498,7 +1413,6 @@ pub unsafe fn WerReportCloseHandle<'a, Param0: ::windows_core::IntoParam<'a, HRE
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WerReportCreate<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pwzeventtype: Param0, reptype: WER_REPORT_TYPE, preportinformation: *const WER_REPORT_INFORMATION) -> ::windows_core::Result<HREPORT> {
     #[cfg(windows)]
@@ -1513,14 +1427,13 @@ pub unsafe fn WerReportCreate<'a, Param0: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WerReportHang<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndhungapp: Param0, pwzhungapplicationname: Param1) -> ::windows_core::Result<()> {
+pub unsafe fn WerReportHang<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndhungapp: Param0, pwzhungapplicationname: Param1) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WerReportHang(hwndhungapp: super::super::Foundation::HWND, pwzhungapplicationname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
+            fn WerReportHang(hwndhungapp: ::win32_foundation::HWND, pwzhungapplicationname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT;
         }
         WerReportHang(hwndhungapp.into_param().abi(), pwzhungapplicationname.into_param().abi()).ok()
     }
@@ -1676,7 +1589,6 @@ pub unsafe fn WerStorePurge() -> ::windows_core::Result<()> {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WerStoreQueryReportMetadataV1<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1) -> ::windows_core::Result<WER_REPORT_METADATA_V1> {
     #[cfg(windows)]
@@ -1691,7 +1603,6 @@ pub unsafe fn WerStoreQueryReportMetadataV1<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WerStoreQueryReportMetadataV2<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1) -> ::windows_core::Result<WER_REPORT_METADATA_V2> {
     #[cfg(windows)]
@@ -1706,7 +1617,6 @@ pub unsafe fn WerStoreQueryReportMetadataV2<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WerStoreQueryReportMetadataV3<'a, Param0: ::windows_core::IntoParam<'a, HREPORTSTORE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hreportstore: Param0, pszreportkey: Param1) -> ::windows_core::Result<WER_REPORT_METADATA_V3> {
     #[cfg(windows)]
@@ -1828,5 +1738,5 @@ pub unsafe fn WerUnregisterRuntimeExceptionModule<'a, Param0: ::windows_core::In
 }
 pub type pfn_ADDEREXCLUDEDAPPLICATIONA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR) -> EFaultRepRetVal>;
 pub type pfn_ADDEREXCLUDEDAPPLICATIONW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR) -> EFaultRepRetVal>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
+#[cfg(all(feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 pub type pfn_REPORTFAULT = ::core::option::Option<unsafe extern "system" fn(param0: *const super::Diagnostics::Debug::EXCEPTION_POINTERS, param1: u32) -> EFaultRepRetVal>;

@@ -3,15 +3,13 @@ pub const FACILITY_WPC: u32 = 2457u32;
 #[repr(transparent)]
 pub struct IWPCGamesSettings(::windows_core::IUnknown);
 impl IWPCGamesSettings {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsLoggingRequired(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsLoggingRequired)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsLoggingRequired(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsLoggingRequired)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastSettingsChangeTime(&self) -> ::windows_core::Result<super::super::Foundation::SYSTEMTIME> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::SYSTEMTIME>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetLastSettingsChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::SYSTEMTIME>(result__)
+    pub unsafe fn GetLastSettingsChangeTime(&self) -> ::windows_core::Result<::win32_foundation::SYSTEMTIME> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::SYSTEMTIME>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetLastSettingsChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::SYSTEMTIME>(result__)
     }
     pub unsafe fn GetRestrictions(&self) -> ::windows_core::Result<WPCFLAG_RESTRICTION> {
         let mut result__ = ::core::mem::MaybeUninit::<WPCFLAG_RESTRICTION>::zeroed();
@@ -91,17 +89,14 @@ pub struct IWPCGamesSettings_Vtbl {
 #[repr(transparent)]
 pub struct IWPCProviderConfig(::windows_core::IUnknown);
 impl IWPCProviderConfig {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUserSummary<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrsid: Param0) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GetUserSummary)(::windows_core::Interface::as_raw(self), bstrsid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GetUserSummary<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrsid: Param0) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GetUserSummary)(::windows_core::Interface::as_raw(self), bstrsid.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Configure<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, hwnd: Param0, bstrsid: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn Configure<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, hwnd: Param0, bstrsid: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Configure)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), bstrsid.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RequestOverride<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, hwnd: Param0, bstrpath: Param1, dwflags: WPCFLAG_RESTRICTION) -> ::windows_core::Result<()> {
+    pub unsafe fn RequestOverride<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, hwnd: Param0, bstrpath: Param1, dwflags: WPCFLAG_RESTRICTION) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RequestOverride)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), bstrpath.into_param().abi(), ::core::mem::transmute(dwflags)).ok()
     }
 }
@@ -149,18 +144,9 @@ unsafe impl ::windows_core::Interface for IWPCProviderConfig {
 #[doc(hidden)]
 pub struct IWPCProviderConfig_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUserSummary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrusersummary: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUserSummary: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Configure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, bstrsid: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Configure: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RequestOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, bstrpath: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, dwflags: WPCFLAG_RESTRICTION) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RequestOverride: usize,
+    pub GetUserSummary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrsid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pbstrusersummary: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub Configure: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, bstrsid: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub RequestOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, bstrpath: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, dwflags: WPCFLAG_RESTRICTION) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWPCProviderState(::windows_core::IUnknown);
@@ -276,15 +262,13 @@ pub struct IWPCProviderSupport_Vtbl {
 #[repr(transparent)]
 pub struct IWPCSettings(::windows_core::IUnknown);
 impl IWPCSettings {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsLoggingRequired(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsLoggingRequired)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsLoggingRequired(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsLoggingRequired)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastSettingsChangeTime(&self) -> ::windows_core::Result<super::super::Foundation::SYSTEMTIME> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::SYSTEMTIME>::zeroed();
-        (::windows_core::Interface::vtable(self).GetLastSettingsChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::SYSTEMTIME>(result__)
+    pub unsafe fn GetLastSettingsChangeTime(&self) -> ::windows_core::Result<::win32_foundation::SYSTEMTIME> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::SYSTEMTIME>::zeroed();
+        (::windows_core::Interface::vtable(self).GetLastSettingsChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::SYSTEMTIME>(result__)
     }
     pub unsafe fn GetRestrictions(&self) -> ::windows_core::Result<WPCFLAG_RESTRICTION> {
         let mut result__ = ::core::mem::MaybeUninit::<WPCFLAG_RESTRICTION>::zeroed();
@@ -335,28 +319,20 @@ unsafe impl ::windows_core::Interface for IWPCSettings {
 #[doc(hidden)]
 pub struct IWPCSettings_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsLoggingRequired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfrequired: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsLoggingRequired: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetLastSettingsChangeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptime: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetLastSettingsChangeTime: usize,
+    pub IsLoggingRequired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pfrequired: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetLastSettingsChangeTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptime: *mut ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
     pub GetRestrictions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwrestrictions: *mut WPCFLAG_RESTRICTION) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWPCWebSettings(::windows_core::IUnknown);
 impl IWPCWebSettings {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsLoggingRequired(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsLoggingRequired)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsLoggingRequired(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsLoggingRequired)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastSettingsChangeTime(&self) -> ::windows_core::Result<super::super::Foundation::SYSTEMTIME> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::SYSTEMTIME>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetLastSettingsChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::SYSTEMTIME>(result__)
+    pub unsafe fn GetLastSettingsChangeTime(&self) -> ::windows_core::Result<::win32_foundation::SYSTEMTIME> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::SYSTEMTIME>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetLastSettingsChangeTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::SYSTEMTIME>(result__)
     }
     pub unsafe fn GetRestrictions(&self) -> ::windows_core::Result<WPCFLAG_RESTRICTION> {
         let mut result__ = ::core::mem::MaybeUninit::<WPCFLAG_RESTRICTION>::zeroed();
@@ -366,10 +342,9 @@ impl IWPCWebSettings {
         let mut result__ = ::core::mem::MaybeUninit::<WPCFLAG_WEB_SETTING>::zeroed();
         (::windows_core::Interface::vtable(self).GetSettings)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<WPCFLAG_WEB_SETTING>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RequestURLOverride<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hwnd: Param0, pcszurl: Param1, ppcszsuburls: &[::windows_core::PWSTR]) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).RequestURLOverride)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), pcszurl.into_param().abi(), ppcszsuburls.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppcszsuburls)), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn RequestURLOverride<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, hwnd: Param0, pcszurl: Param1, ppcszsuburls: &[::windows_core::PWSTR]) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).RequestURLOverride)(::windows_core::Interface::as_raw(self), hwnd.into_param().abi(), pcszurl.into_param().abi(), ppcszsuburls.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(ppcszsuburls)), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IWPCWebSettings> for ::windows_core::IUnknown {
@@ -437,10 +412,7 @@ unsafe impl ::windows_core::Interface for IWPCWebSettings {
 pub struct IWPCWebSettings_Vtbl {
     pub base__: IWPCSettings_Vtbl,
     pub GetSettings: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwsettings: *mut WPCFLAG_WEB_SETTING) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RequestURLOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, pcszurl: ::windows_core::PCWSTR, curls: u32, ppcszsuburls: *const ::windows_core::PWSTR, pfchanged: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RequestURLOverride: usize,
+    pub RequestURLOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwnd: ::win32_foundation::HWND, pcszurl: ::windows_core::PCWSTR, curls: u32, ppcszsuburls: *const ::windows_core::PWSTR, pfchanged: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IWindowsParentalControls(::windows_core::IUnknown);

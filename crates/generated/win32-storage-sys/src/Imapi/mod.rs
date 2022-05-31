@@ -2,14 +2,14 @@
 extern "system" {
     pub fn CloseIMsgSession(lpmsgsess: *mut _MSGSESS);
     #[cfg(feature = "Win32_System_AddressBook")]
-    pub fn GetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptagarray: *mut super::super::System::AddressBook::SPropTagArray, lpppropattrarray: *mut *mut SPropAttrArray) -> ::windows_core_sys::HRESULT;
+    pub fn GetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptagarray: *mut ::win32_system_sys::AddressBook::SPropTagArray, lpppropattrarray: *mut *mut SPropAttrArray) -> ::windows_core_sys::HRESULT;
     pub fn MapStorageSCode(stgscode: i32) -> i32;
     #[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com_StructuredStorage"))]
-    pub fn OpenIMsgOnIStg(lpmsgsess: *mut _MSGSESS, lpallocatebuffer: super::super::System::AddressBook::LPALLOCATEBUFFER, lpallocatemore: super::super::System::AddressBook::LPALLOCATEMORE, lpfreebuffer: super::super::System::AddressBook::LPFREEBUFFER, lpmalloc: super::super::System::Com::IMalloc, lpmapisup: *mut ::core::ffi::c_void, lpstg: super::super::System::Com::StructuredStorage::IStorage, lpfmsgcallrelease: *mut MSGCALLRELEASE, ulcallerdata: u32, ulflags: u32, lppmsg: *mut super::super::System::AddressBook::IMessage) -> i32;
+    pub fn OpenIMsgOnIStg(lpmsgsess: *mut _MSGSESS, lpallocatebuffer: ::win32_system_sys::AddressBook::LPALLOCATEBUFFER, lpallocatemore: ::win32_system_sys::AddressBook::LPALLOCATEMORE, lpfreebuffer: ::win32_system_sys::AddressBook::LPFREEBUFFER, lpmalloc: ::win32_system_sys::Com::IMalloc, lpmapisup: *mut ::core::ffi::c_void, lpstg: ::win32_system_sys::Com::StructuredStorage::IStorage, lpfmsgcallrelease: *mut MSGCALLRELEASE, ulcallerdata: u32, ulflags: u32, lppmsg: *mut ::win32_system_sys::AddressBook::IMessage) -> i32;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn OpenIMsgSession(lpmalloc: super::super::System::Com::IMalloc, ulflags: u32, lppmsgsess: *mut *mut _MSGSESS) -> i32;
+    pub fn OpenIMsgSession(lpmalloc: ::win32_system_sys::Com::IMalloc, ulflags: u32, lppmsgsess: *mut *mut _MSGSESS) -> i32;
     #[cfg(feature = "Win32_System_AddressBook")]
-    pub fn SetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptags: *mut super::super::System::AddressBook::SPropTagArray, lppropattrs: *mut SPropAttrArray, lpppropproblems: *mut *mut super::super::System::AddressBook::SPropProblemArray) -> ::windows_core_sys::HRESULT;
+    pub fn SetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptags: *mut ::win32_system_sys::AddressBook::SPropTagArray, lppropattrs: *mut SPropAttrArray, lpppropproblems: *mut *mut ::win32_system_sys::AddressBook::SPropProblemArray) -> ::windows_core_sys::HRESULT;
 }
 pub const BlockRange: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3037186599, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
 pub const BlockRangeList: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3037186600, data2: 8708, data3: 4573, data4: [150, 106, 0, 26, 160, 27, 188, 88] };
@@ -686,7 +686,7 @@ pub const MSDiscMasterObj: ::windows_core_sys::GUID = ::windows_core_sys::GUID {
 pub const MSDiscRecorderObj: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1376569953, data2: 20901, data3: 4563, data4: [145, 68, 0, 16, 75, 161, 28, 94] };
 pub const MSEnumDiscRecordersObj: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2315474554, data2: 25547, data3: 19368, data4: [186, 246, 82, 17, 152, 22, 209, 239] };
 #[cfg(feature = "Win32_System_AddressBook")]
-pub type MSGCALLRELEASE = ::core::option::Option<unsafe extern "system" fn(ulcallerdata: u32, lpmessage: super::super::System::AddressBook::IMessage)>;
+pub type MSGCALLRELEASE = ::core::option::Option<unsafe extern "system" fn(ulcallerdata: u32, lpmessage: ::win32_system_sys::AddressBook::IMessage)>;
 pub const MsftDiscFormat2Data: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 657801514, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 pub const MsftDiscFormat2Erase: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 657801515, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };
 pub const MsftDiscFormat2RawCD: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 657801512, data2: 32612, data3: 23311, data4: [143, 0, 93, 119, 175, 190, 38, 30] };

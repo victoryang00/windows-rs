@@ -60,13 +60,11 @@ impl IReferenceClock {
         let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
         (::windows_core::Interface::vtable(self).GetTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AdviseTime<'a, Param2: ::windows_core::IntoParam<'a, super::Foundation::HANDLE>>(&self, basetime: i64, streamtime: i64, hevent: Param2) -> ::windows_core::Result<usize> {
+    pub unsafe fn AdviseTime<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, basetime: i64, streamtime: i64, hevent: Param2) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
         (::windows_core::Interface::vtable(self).AdviseTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(basetime), ::core::mem::transmute(streamtime), hevent.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AdvisePeriodic<'a, Param2: ::windows_core::IntoParam<'a, super::Foundation::HANDLE>>(&self, starttime: i64, periodtime: i64, hsemaphore: Param2) -> ::windows_core::Result<usize> {
+    pub unsafe fn AdvisePeriodic<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, starttime: i64, periodtime: i64, hsemaphore: Param2) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
         (::windows_core::Interface::vtable(self).AdvisePeriodic)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(starttime), ::core::mem::transmute(periodtime), hsemaphore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
@@ -119,14 +117,8 @@ unsafe impl ::windows_core::Interface for IReferenceClock {
 pub struct IReferenceClock_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ptime: *mut i64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AdviseTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, basetime: i64, streamtime: i64, hevent: super::Foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AdviseTime: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub AdvisePeriodic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: i64, periodtime: i64, hsemaphore: super::Foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    AdvisePeriodic: usize,
+    pub AdviseTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, basetime: i64, streamtime: i64, hevent: ::win32_foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows_core::HRESULT,
+    pub AdvisePeriodic: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: i64, periodtime: i64, hsemaphore: ::win32_foundation::HANDLE, pdwadvisecookie: *mut usize) -> ::windows_core::HRESULT,
     pub Unadvise: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwadvisecookie: usize) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -136,13 +128,11 @@ impl IReferenceClock2 {
         let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
         (::windows_core::Interface::vtable(self).base__.GetTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i64>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AdviseTime<'a, Param2: ::windows_core::IntoParam<'a, super::Foundation::HANDLE>>(&self, basetime: i64, streamtime: i64, hevent: Param2) -> ::windows_core::Result<usize> {
+    pub unsafe fn AdviseTime<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, basetime: i64, streamtime: i64, hevent: Param2) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
         (::windows_core::Interface::vtable(self).base__.AdviseTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(basetime), ::core::mem::transmute(streamtime), hevent.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn AdvisePeriodic<'a, Param2: ::windows_core::IntoParam<'a, super::Foundation::HANDLE>>(&self, starttime: i64, periodtime: i64, hsemaphore: Param2) -> ::windows_core::Result<usize> {
+    pub unsafe fn AdvisePeriodic<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(&self, starttime: i64, periodtime: i64, hsemaphore: Param2) -> ::windows_core::Result<usize> {
         let mut result__ = ::core::mem::MaybeUninit::<usize>::zeroed();
         (::windows_core::Interface::vtable(self).base__.AdvisePeriodic)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(starttime), ::core::mem::transmute(periodtime), hsemaphore.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<usize>(result__)
     }

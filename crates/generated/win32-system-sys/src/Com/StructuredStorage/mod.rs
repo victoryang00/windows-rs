@@ -3,12 +3,9 @@ extern "system" {
     pub fn CoGetInstanceFromFile(pserverinfo: *const super::COSERVERINFO, pclsid: *const ::windows_core_sys::GUID, punkouter: ::windows_core_sys::IUnknown, dwclsctx: super::CLSCTX, grfmode: u32, pwszname: ::windows_core_sys::PCWSTR, dwcount: u32, presults: *mut super::MULTI_QI) -> ::windows_core_sys::HRESULT;
     pub fn CoGetInstanceFromIStorage(pserverinfo: *const super::COSERVERINFO, pclsid: *const ::windows_core_sys::GUID, punkouter: ::windows_core_sys::IUnknown, dwclsctx: super::CLSCTX, pstg: IStorage, dwcount: u32, presults: *mut super::MULTI_QI) -> ::windows_core_sys::HRESULT;
     pub fn CoGetInterfaceAndReleaseStream(pstm: super::IStream, iid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateILockBytesOnHGlobal(hglobal: isize, fdeleteonrelease: super::super::super::Foundation::BOOL, pplkbyt: *mut ILockBytes) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateStreamOnHGlobal(hglobal: isize, fdeleteonrelease: super::super::super::Foundation::BOOL, ppstm: *mut super::IStream) -> ::windows_core_sys::HRESULT;
+    pub fn CreateILockBytesOnHGlobal(hglobal: isize, fdeleteonrelease: ::win32_foundation_sys::BOOL, pplkbyt: *mut ILockBytes) -> ::windows_core_sys::HRESULT;
+    pub fn CreateStreamOnHGlobal(hglobal: isize, fdeleteonrelease: ::win32_foundation_sys::BOOL, ppstm: *mut super::IStream) -> ::windows_core_sys::HRESULT;
     pub fn FmtIdToPropStgName(pfmtid: *const ::windows_core_sys::GUID, oszname: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn FreePropVariantArray(cvariants: u32, rgvars: *mut PROPVARIANT) -> ::windows_core_sys::HRESULT;
     pub fn GetConvertStg(pstg: IStorage) -> ::windows_core_sys::HRESULT;
     pub fn GetHGlobalFromILockBytes(plkbyt: ILockBytes, phglobal: *mut isize) -> ::windows_core_sys::HRESULT;
@@ -20,26 +17,20 @@ extern "system" {
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn OleConvertOLESTREAMToIStorageEx(polestm: *mut OLESTREAM, pstg: IStorage, pcfformat: *mut u16, plwwidth: *mut i32, plheight: *mut i32, pdwsize: *mut u32, pmedium: *mut super::STGMEDIUM) -> ::windows_core_sys::HRESULT;
     pub fn PropStgNameToFmtId(oszname: ::windows_core_sys::PCWSTR, pfmtid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PropVariantClear(pvar: *mut PROPVARIANT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PropVariantCopy(pvardest: *mut PROPVARIANT, pvarsrc: *const PROPVARIANT) -> ::windows_core_sys::HRESULT;
     pub fn ReadClassStg(pstg: IStorage, pclsid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn ReadClassStm(pstm: super::IStream, pclsid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn ReadFmtUserTypeStg(pstg: IStorage, pcf: *mut u16, lplpszusertype: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetConvertStg(pstg: IStorage, fconvert: super::super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StgConvertPropertyToVariant(pprop: *const SERIALIZEDPROPERTYVALUE, codepage: u16, pvar: *mut PROPVARIANT, pma: *const PMemoryAllocator) -> super::super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StgConvertVariantToProperty(pvar: *const PROPVARIANT, codepage: u16, pprop: *mut SERIALIZEDPROPERTYVALUE, pcb: *mut u32, pid: u32, freserved: super::super::super::Foundation::BOOLEAN, pcindirect: *mut u32) -> *mut SERIALIZEDPROPERTYVALUE;
+    pub fn SetConvertStg(pstg: IStorage, fconvert: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn StgConvertPropertyToVariant(pprop: *const SERIALIZEDPROPERTYVALUE, codepage: u16, pvar: *mut PROPVARIANT, pma: *const PMemoryAllocator) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn StgConvertVariantToProperty(pvar: *const PROPVARIANT, codepage: u16, pprop: *mut SERIALIZEDPROPERTYVALUE, pcb: *mut u32, pid: u32, freserved: ::win32_foundation_sys::BOOLEAN, pcindirect: *mut u32) -> *mut SERIALIZEDPROPERTYVALUE;
     pub fn StgCreateDocfile(pwcsname: ::windows_core_sys::PCWSTR, grfmode: STGM, reserved: u32, ppstgopen: *mut IStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgCreateDocfileOnILockBytes(plkbyt: ILockBytes, grfmode: STGM, reserved: u32, ppstgopen: *mut IStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgCreatePropSetStg(pstorage: IStorage, dwreserved: u32, pppropsetstg: *mut IPropertySetStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgCreatePropStg(punk: ::windows_core_sys::IUnknown, fmtid: *const ::windows_core_sys::GUID, pclsid: *const ::windows_core_sys::GUID, grfflags: u32, dwreserved: u32, pppropstg: *mut IPropertyStorage) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security")]
-    pub fn StgCreateStorageEx(pwcsname: ::windows_core_sys::PCWSTR, grfmode: STGM, stgfmt: STGFMT, grfattrs: u32, pstgoptions: *mut STGOPTIONS, psecuritydescriptor: super::super::super::Security::PSECURITY_DESCRIPTOR, riid: *const ::windows_core_sys::GUID, ppobjectopen: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn StgCreateStorageEx(pwcsname: ::windows_core_sys::PCWSTR, grfmode: STGM, stgfmt: STGFMT, grfattrs: u32, pstgoptions: *mut STGOPTIONS, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, riid: *const ::windows_core_sys::GUID, ppobjectopen: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn StgDeserializePropVariant(pprop: *const SERIALIZEDPROPERTYVALUE, cbmax: u32, ppropvar: *mut PROPVARIANT) -> ::windows_core_sys::HRESULT;
     pub fn StgGetIFillLockBytesOnFile(pwcsname: ::windows_core_sys::PCWSTR, ppflb: *mut IFillLockBytes) -> ::windows_core_sys::HRESULT;
     pub fn StgGetIFillLockBytesOnILockBytes(pilb: ILockBytes, ppflb: *mut IFillLockBytes) -> ::windows_core_sys::HRESULT;
@@ -50,13 +41,11 @@ extern "system" {
     pub fn StgOpenPropStg(punk: ::windows_core_sys::IUnknown, fmtid: *const ::windows_core_sys::GUID, grfflags: u32, dwreserved: u32, pppropstg: *mut IPropertyStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgOpenStorage(pwcsname: ::windows_core_sys::PCWSTR, pstgpriority: IStorage, grfmode: STGM, snbexclude: *const *const u16, reserved: u32, ppstgopen: *mut IStorage) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Security")]
-    pub fn StgOpenStorageEx(pwcsname: ::windows_core_sys::PCWSTR, grfmode: STGM, stgfmt: STGFMT, grfattrs: u32, pstgoptions: *mut STGOPTIONS, psecuritydescriptor: super::super::super::Security::PSECURITY_DESCRIPTOR, riid: *const ::windows_core_sys::GUID, ppobjectopen: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn StgOpenStorageEx(pwcsname: ::windows_core_sys::PCWSTR, grfmode: STGM, stgfmt: STGFMT, grfattrs: u32, pstgoptions: *mut STGOPTIONS, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, riid: *const ::windows_core_sys::GUID, ppobjectopen: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn StgOpenStorageOnILockBytes(plkbyt: ILockBytes, pstgpriority: IStorage, grfmode: u32, snbexclude: *const *const u16, reserved: u32, ppstgopen: *mut IStorage) -> ::windows_core_sys::HRESULT;
     pub fn StgPropertyLengthAsVariant(pprop: *const SERIALIZEDPROPERTYVALUE, cbprop: u32, codepage: u16, breserved: u8) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn StgSerializePropVariant(ppropvar: *const PROPVARIANT, ppprop: *mut *mut SERIALIZEDPROPERTYVALUE, pcb: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn StgSetTimes(lpszname: ::windows_core_sys::PCWSTR, pctime: *const super::super::super::Foundation::FILETIME, patime: *const super::super::super::Foundation::FILETIME, pmtime: *const super::super::super::Foundation::FILETIME) -> ::windows_core_sys::HRESULT;
+    pub fn StgSetTimes(lpszname: ::windows_core_sys::PCWSTR, pctime: *const ::win32_foundation_sys::FILETIME, patime: *const ::win32_foundation_sys::FILETIME, pmtime: *const ::win32_foundation_sys::FILETIME) -> ::windows_core_sys::HRESULT;
     pub fn WriteClassStg(pstg: IStorage, rclsid: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn WriteClassStm(pstm: super::IStream, rclsid: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn WriteFmtUserTypeStg(pstg: IStorage, cf: u16, lpszusertype: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
@@ -84,14 +73,11 @@ impl ::core::clone::Clone for CABOOL {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CABSTR {
     pub cElems: u32,
-    pub pElems: *mut super::super::super::Foundation::BSTR,
+    pub pElems: *mut ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CABSTR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CABSTR {
     fn clone(&self) -> Self {
         *self
@@ -175,14 +161,11 @@ impl ::core::clone::Clone for CADBL {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CAFILETIME {
     pub cElems: u32,
-    pub pElems: *mut super::super::super::Foundation::FILETIME,
+    pub pElems: *mut ::win32_foundation_sys::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CAFILETIME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CAFILETIME {
     fn clone(&self) -> Self {
         *self
@@ -255,14 +238,11 @@ impl ::core::clone::Clone for CALPWSTR {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CAPROPVARIANT {
     pub cElems: u32,
     pub pElems: *mut PROPVARIANT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CAPROPVARIANT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CAPROPVARIANT {
     fn clone(&self) -> Self {
         *self
@@ -492,34 +472,27 @@ pub type PROPSPEC_KIND = u32;
 pub const PRSPEC_LPWSTR: PROPSPEC_KIND = 0u32;
 pub const PRSPEC_PROPID: PROPSPEC_KIND = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROPVARIANT {
     pub Anonymous: PROPVARIANT_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROPVARIANT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROPVARIANT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PROPVARIANT_0 {
     pub Anonymous: PROPVARIANT_0_0,
-    pub decVal: super::super::super::Foundation::DECIMAL,
+    pub decVal: ::win32_foundation_sys::DECIMAL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROPVARIANT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROPVARIANT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PROPVARIANT_0_0 {
     pub vt: u16,
     pub wReserved1: u16,
@@ -527,18 +500,15 @@ pub struct PROPVARIANT_0_0 {
     pub wReserved3: u16,
     pub Anonymous: PROPVARIANT_0_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROPVARIANT_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROPVARIANT_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union PROPVARIANT_0_0_0 {
-    pub cVal: super::super::super::Foundation::CHAR,
+    pub cVal: ::win32_foundation_sys::CHAR,
     pub bVal: u8,
     pub iVal: i16,
     pub uiVal: u16,
@@ -555,10 +525,10 @@ pub union PROPVARIANT_0_0_0 {
     pub scode: i32,
     pub cyVal: super::CY,
     pub date: f64,
-    pub filetime: super::super::super::Foundation::FILETIME,
+    pub filetime: ::win32_foundation_sys::FILETIME,
     pub puuid: *mut ::windows_core_sys::GUID,
     pub pclipdata: *mut CLIPDATA,
-    pub bstrVal: super::super::super::Foundation::BSTR,
+    pub bstrVal: ::win32_foundation_sys::BSTR,
     pub bstrblobVal: BSTRBLOB,
     pub blob: super::BLOB,
     pub pszVal: ::windows_core_sys::PSTR,
@@ -602,19 +572,17 @@ pub union PROPVARIANT_0_0_0 {
     pub pfltVal: *mut f32,
     pub pdblVal: *mut f64,
     pub pboolVal: *mut i16,
-    pub pdecVal: *mut super::super::super::Foundation::DECIMAL,
+    pub pdecVal: *mut ::win32_foundation_sys::DECIMAL,
     pub pscode: *mut i32,
     pub pcyVal: *mut super::CY,
     pub pdate: *mut f64,
-    pub pbstrVal: *mut super::super::super::Foundation::BSTR,
+    pub pbstrVal: *mut ::win32_foundation_sys::BSTR,
     pub ppunkVal: *mut ::windows_core_sys::IUnknown,
     pub ppdispVal: *mut super::IDispatch,
     pub pparray: *mut *mut super::SAFEARRAY,
     pub pvarVal: *mut PROPVARIANT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PROPVARIANT_0_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PROPVARIANT_0_0_0 {
     fn clone(&self) -> Self {
         *self
@@ -649,19 +617,16 @@ pub const STATFLAG_DEFAULT: STATFLAG = 0i32;
 pub const STATFLAG_NONAME: STATFLAG = 1i32;
 pub const STATFLAG_NOOPEN: STATFLAG = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STATPROPSETSTG {
     pub fmtid: ::windows_core_sys::GUID,
     pub clsid: ::windows_core_sys::GUID,
     pub grfFlags: u32,
-    pub mtime: super::super::super::Foundation::FILETIME,
-    pub ctime: super::super::super::Foundation::FILETIME,
-    pub atime: super::super::super::Foundation::FILETIME,
+    pub mtime: ::win32_foundation_sys::FILETIME,
+    pub ctime: ::win32_foundation_sys::FILETIME,
+    pub atime: ::win32_foundation_sys::FILETIME,
     pub dwOSVersion: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STATPROPSETSTG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STATPROPSETSTG {
     fn clone(&self) -> Self {
         *self

@@ -140,10 +140,7 @@ pub struct IIppAttributeValueStatics_Vtbl {
     pub CreateOctetStringArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, values: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams")))]
     CreateOctetStringArray: usize,
-    #[cfg(feature = "Foundation")]
-    pub CreateDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateDateTime: usize,
+    pub CreateDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::DateTime, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub CreateDateTimeArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, values: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -191,10 +188,7 @@ pub struct IIppAttributeValueStatics_Vtbl {
     pub CreateKeywordArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, values: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     CreateKeywordArray: usize,
-    #[cfg(feature = "Foundation")]
     pub CreateUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateUri: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub CreateUriArray: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, values: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -259,10 +253,7 @@ unsafe impl ::windows_core::Interface for IIppPrintDevice {
 pub struct IIppPrintDevice_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PrinterName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub PrinterUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PrinterUri: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
     pub GetPrinterAttributesAsBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, attributenames: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage_Streams")))]
@@ -376,10 +367,7 @@ unsafe impl ::windows_core::Interface for IPrint3DDeviceStatics {
 #[doc(hidden)]
 pub struct IPrint3DDeviceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FromIdAsync: usize,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -393,17 +381,17 @@ unsafe impl ::windows_core::Interface for IPrintSchema {
 #[doc(hidden)]
 pub struct IPrintSchema_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub GetDefaultPrintTicketAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     GetDefaultPrintTicketAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub GetCapabilitiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, constrainticket: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     GetCapabilitiesAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub MergeAndValidateWithDefaultPrintTicketAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deltaticket: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     MergeAndValidateWithDefaultPrintTicketAsync: usize,
 }
 #[repr(transparent)]
@@ -424,11 +412,11 @@ impl IppAttributeError {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetUnsupportedValues(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<IppAttributeValue>> {
+    pub fn GetUnsupportedValues(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IppAttributeValue>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetUnsupportedValues)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<IppAttributeValue>>(result__)
+            (::windows_core::Interface::vtable(this).GetUnsupportedValues)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IppAttributeValue>>(result__)
         }
     }
 }
@@ -551,147 +539,147 @@ impl IppAttributeValue {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetIntegerArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<i32>> {
+    pub fn GetIntegerArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetIntegerArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<i32>>(result__)
+            (::windows_core::Interface::vtable(this).GetIntegerArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<i32>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetBooleanArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<bool>> {
+    pub fn GetBooleanArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetBooleanArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<bool>>(result__)
+            (::windows_core::Interface::vtable(this).GetBooleanArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<bool>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetEnumArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<i32>> {
+    pub fn GetEnumArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<i32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetEnumArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<i32>>(result__)
+            (::windows_core::Interface::vtable(this).GetEnumArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<i32>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn GetOctetStringArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Storage::Streams::IBuffer>> {
+    pub fn GetOctetStringArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_storage::Streams::IBuffer>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetOctetStringArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).GetOctetStringArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_storage::Streams::IBuffer>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetDateTimeArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::DateTime>> {
+    pub fn GetDateTimeArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::DateTime>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDateTimeArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::DateTime>>(result__)
+            (::windows_core::Interface::vtable(this).GetDateTimeArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::DateTime>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetResolutionArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<IppResolution>> {
+    pub fn GetResolutionArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<IppResolution>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetResolutionArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<IppResolution>>(result__)
+            (::windows_core::Interface::vtable(this).GetResolutionArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<IppResolution>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetRangeOfIntegerArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<IppIntegerRange>> {
+    pub fn GetRangeOfIntegerArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<IppIntegerRange>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRangeOfIntegerArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<IppIntegerRange>>(result__)
+            (::windows_core::Interface::vtable(this).GetRangeOfIntegerArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<IppIntegerRange>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCollectionArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, IppAttributeValue>>> {
+    pub fn GetCollectionArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, IppAttributeValue>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCollectionArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, IppAttributeValue>>>(result__)
+            (::windows_core::Interface::vtable(this).GetCollectionArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, IppAttributeValue>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetTextWithLanguageArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<IppTextWithLanguage>> {
+    pub fn GetTextWithLanguageArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<IppTextWithLanguage>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTextWithLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<IppTextWithLanguage>>(result__)
+            (::windows_core::Interface::vtable(this).GetTextWithLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<IppTextWithLanguage>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetNameWithLanguageArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<IppTextWithLanguage>> {
+    pub fn GetNameWithLanguageArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<IppTextWithLanguage>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetNameWithLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<IppTextWithLanguage>>(result__)
+            (::windows_core::Interface::vtable(this).GetNameWithLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<IppTextWithLanguage>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetTextWithoutLanguageArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn GetTextWithoutLanguageArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetTextWithoutLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetTextWithoutLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetNameWithoutLanguageArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn GetNameWithoutLanguageArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetNameWithoutLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetNameWithoutLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetKeywordArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn GetKeywordArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetKeywordArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetKeywordArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetUriArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>> {
+    pub fn GetUriArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetUriArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Foundation::Uri>>(result__)
+            (::windows_core::Interface::vtable(this).GetUriArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_foundation::Uri>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetUriSchemaArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn GetUriSchemaArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetUriSchemaArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetUriSchemaArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetCharsetArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn GetCharsetArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCharsetArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetCharsetArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetNaturalLanguageArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn GetNaturalLanguageArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetNaturalLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetNaturalLanguageArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetMimeMediaTypeArray(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn GetMimeMediaTypeArray(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetMimeMediaTypeArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetMimeMediaTypeArray)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn CreateUnsupported() -> ::windows_core::Result<IppAttributeValue> {
@@ -719,7 +707,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateIntegerArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i32>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateIntegerArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i32>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateIntegerArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -732,7 +720,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateBooleanArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<bool>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateBooleanArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<bool>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateBooleanArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -745,35 +733,34 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateEnumArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<i32>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateEnumArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<i32>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateEnumArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateOctetString<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(value: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateOctetString<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(value: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateOctetString)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn CreateOctetStringArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Storage::Streams::IBuffer>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateOctetStringArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_storage::Streams::IBuffer>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateOctetStringArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateDateTime<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>>(value: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateDateTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(value: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateDateTime)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateDateTimeArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::DateTime>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateDateTimeArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::DateTime>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateDateTimeArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -786,7 +773,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateResolutionArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IppResolution>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateResolutionArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IppResolution>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateResolutionArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -799,21 +786,21 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateRangeOfIntegerArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IppIntegerRange>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateRangeOfIntegerArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IppIntegerRange>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateRangeOfIntegerArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateCollection<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IppAttributeValue>>>>(memberattributes: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateCollection<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IppAttributeValue>>>>(memberattributes: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCollection)(::windows_core::Interface::as_raw(this), memberattributes.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateCollectionArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IppAttributeValue>>>>>(memberattributesarray: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateCollectionArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IppAttributeValue>>>>>(memberattributesarray: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCollectionArray)(::windows_core::Interface::as_raw(this), memberattributesarray.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -826,7 +813,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateTextWithLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IppTextWithLanguage>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateTextWithLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IppTextWithLanguage>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateTextWithLanguageArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -839,7 +826,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateNameWithLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<IppTextWithLanguage>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateNameWithLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<IppTextWithLanguage>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateNameWithLanguageArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -852,7 +839,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateTextWithoutLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateTextWithoutLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateTextWithoutLanguageArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -865,7 +852,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateNameWithoutLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateNameWithoutLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateNameWithoutLanguageArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -878,21 +865,20 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateKeywordArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateKeywordArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateKeywordArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Uri>>(value: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(value: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateUri)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateUriArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Uri>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateUriArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Uri>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateUriArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -905,7 +891,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateUriSchemaArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateUriSchemaArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateUriSchemaArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -918,7 +904,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateCharsetArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateCharsetArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateCharsetArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -931,7 +917,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateNaturalLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateNaturalLanguageArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateNaturalLanguageArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -944,7 +930,7 @@ impl IppAttributeValue {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn CreateMimeMediaArray<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
+    pub fn CreateMimeMediaArray<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(values: Param0) -> ::windows_core::Result<IppAttributeValue> {
         Self::IIppAttributeValueStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateMimeMediaArray)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<IppAttributeValue>(result__)
@@ -1189,32 +1175,31 @@ impl IppPrintDevice {
             (::windows_core::Interface::vtable(this).PrinterName)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PrinterUri(&self) -> ::windows_core::Result<super::super::Foundation::Uri> {
+    pub fn PrinterUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PrinterUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).PrinterUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage_Streams"))]
-    pub fn GetPrinterAttributesAsBuffer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, attributenames: Param0) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn GetPrinterAttributesAsBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, attributenames: Param0) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPrinterAttributesAsBuffer)(::windows_core::Interface::as_raw(this), attributenames.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).GetPrinterAttributesAsBuffer)(::windows_core::Interface::as_raw(this), attributenames.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetPrinterAttributes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, attributenames: Param0) -> ::windows_core::Result<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IppAttributeValue>> {
+    pub fn GetPrinterAttributes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, attributenames: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IppAttributeValue>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPrinterAttributes)(::windows_core::Interface::as_raw(this), attributenames.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMap<::windows_core::HSTRING, IppAttributeValue>>(result__)
+            (::windows_core::Interface::vtable(this).GetPrinterAttributes)(::windows_core::Interface::as_raw(this), attributenames.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, IppAttributeValue>>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetPrinterAttributesFromBuffer<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, printerattributesbuffer: Param0) -> ::windows_core::Result<IppSetAttributesResult> {
+    pub fn SetPrinterAttributesFromBuffer<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, printerattributesbuffer: Param0) -> ::windows_core::Result<IppSetAttributesResult> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1222,7 +1207,7 @@ impl IppPrintDevice {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetPrinterAttributes<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<super::super::Foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IppAttributeValue>>>>(&self, printerattributes: Param0) -> ::windows_core::Result<IppSetAttributesResult> {
+    pub fn SetPrinterAttributes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_foundation::Collections::IKeyValuePair<::windows_core::HSTRING, IppAttributeValue>>>>(&self, printerattributes: Param0) -> ::windows_core::Result<IppSetAttributesResult> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -1453,11 +1438,11 @@ impl IppSetAttributesResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AttributeErrors(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, IppAttributeError>> {
+    pub fn AttributeErrors(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, IppAttributeError>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AttributeErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, IppAttributeError>>(result__)
+            (::windows_core::Interface::vtable(this).AttributeErrors)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, IppAttributeError>>(result__)
         }
     }
 }
@@ -1643,11 +1628,10 @@ impl Print3DDevice {
             (::windows_core::Interface::vtable(this).PrintSchema)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<PrintSchema>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Print3DDevice>> {
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Print3DDevice>> {
         Self::IPrint3DDeviceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Print3DDevice>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Print3DDevice>>(result__)
         })
     }
     pub fn GetDeviceSelector() -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1736,28 +1720,28 @@ unsafe impl ::core::marker::Sync for Print3DDevice {}
 #[repr(transparent)]
 pub struct PrintSchema(::windows_core::IUnknown);
 impl PrintSchema {
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn GetDefaultPrintTicketAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IRandomAccessStreamWithContentType>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn GetDefaultPrintTicketAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDefaultPrintTicketAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IRandomAccessStreamWithContentType>>(result__)
+            (::windows_core::Interface::vtable(this).GetDefaultPrintTicketAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn GetCapabilitiesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamWithContentType>>(&self, constrainticket: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IRandomAccessStreamWithContentType>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn GetCapabilitiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamWithContentType>>(&self, constrainticket: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetCapabilitiesAsync)(::windows_core::Interface::as_raw(this), constrainticket.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IRandomAccessStreamWithContentType>>(result__)
+            (::windows_core::Interface::vtable(this).GetCapabilitiesAsync)(::windows_core::Interface::as_raw(this), constrainticket.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn MergeAndValidateWithDefaultPrintTicketAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IRandomAccessStreamWithContentType>>(&self, deltaticket: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IRandomAccessStreamWithContentType>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn MergeAndValidateWithDefaultPrintTicketAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamWithContentType>>(&self, deltaticket: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MergeAndValidateWithDefaultPrintTicketAsync)(::windows_core::Interface::as_raw(this), deltaticket.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::Streams::IRandomAccessStreamWithContentType>>(result__)
+            (::windows_core::Interface::vtable(this).MergeAndValidateWithDefaultPrintTicketAsync)(::windows_core::Interface::as_raw(this), deltaticket.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamWithContentType>>(result__)
         }
     }
 }

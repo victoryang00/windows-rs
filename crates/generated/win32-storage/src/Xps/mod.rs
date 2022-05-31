@@ -1,15 +1,15 @@
 #[cfg(feature = "Printing")]
 pub mod Printing;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type ABORTPROC = ::core::option::Option<unsafe extern "system" fn(param0: super::super::Graphics::Gdi::HDC, param1: i32) -> super::super::Foundation::BOOL>;
+#[cfg(feature = "Win32_Graphics_Gdi")]
+pub type ABORTPROC = ::core::option::Option<unsafe extern "system" fn(param0: ::win32_graphics::Gdi::HDC, param1: i32) -> ::win32_foundation::BOOL>;
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn AbortDoc<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn AbortDoc<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AbortDoc(hdc: super::super::Graphics::Gdi::HDC) -> i32;
+            fn AbortDoc(hdc: ::win32_graphics::Gdi::HDC) -> i32;
         }
         ::core::mem::transmute(AbortDoc(hdc.into_param().abi()))
     }
@@ -135,67 +135,59 @@ impl ::core::default::Default for DOCINFOW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRAWPATRECT {
-    pub ptPosition: super::super::Foundation::POINT,
-    pub ptSize: super::super::Foundation::POINT,
+    pub ptPosition: ::win32_foundation::POINT,
+    pub ptSize: ::win32_foundation::POINT,
     pub wStyle: u16,
     pub wPattern: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRAWPATRECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRAWPATRECT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DRAWPATRECT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DRAWPATRECT").field("ptPosition", &self.ptPosition).field("ptSize", &self.ptSize).field("wStyle", &self.wStyle).field("wPattern", &self.wPattern).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DRAWPATRECT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DRAWPATRECT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DRAWPATRECT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DRAWPATRECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DRAWPATRECT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn DeviceCapabilitiesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pdevice: Param0, pport: Param1, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core::PSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEA) -> i32 {
+pub unsafe fn DeviceCapabilitiesA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(pdevice: Param0, pport: Param1, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core::PSTR, pdevmode: *const ::win32_graphics::Gdi::DEVMODEA) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeviceCapabilitiesA(pdevice: ::windows_core::PCSTR, pport: ::windows_core::PCSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core::PSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEA) -> i32;
+            fn DeviceCapabilitiesA(pdevice: ::windows_core::PCSTR, pport: ::windows_core::PCSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core::PSTR, pdevmode: *const ::win32_graphics::Gdi::DEVMODEA) -> i32;
         }
         ::core::mem::transmute(DeviceCapabilitiesA(pdevice.into_param().abi(), pport.into_param().abi(), ::core::mem::transmute(fwcapability), ::core::mem::transmute(poutput), ::core::mem::transmute(pdevmode)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn DeviceCapabilitiesW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pdevice: Param0, pport: Param1, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core::PWSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEW) -> i32 {
+pub unsafe fn DeviceCapabilitiesW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pdevice: Param0, pport: Param1, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core::PWSTR, pdevmode: *const ::win32_graphics::Gdi::DEVMODEW) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeviceCapabilitiesW(pdevice: ::windows_core::PCWSTR, pport: ::windows_core::PCWSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core::PWSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEW) -> i32;
+            fn DeviceCapabilitiesW(pdevice: ::windows_core::PCWSTR, pport: ::windows_core::PCWSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core::PWSTR, pdevmode: *const ::win32_graphics::Gdi::DEVMODEW) -> i32;
         }
         ::core::mem::transmute(DeviceCapabilitiesW(pdevice.into_param().abi(), pport.into_param().abi(), ::core::mem::transmute(fwcapability), ::core::mem::transmute(poutput), ::core::mem::transmute(pdevmode)))
     }
@@ -204,12 +196,12 @@ pub unsafe fn DeviceCapabilitiesW<'a, Param0: ::windows_core::IntoParam<'a, ::wi
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn EndDoc<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn EndDoc<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EndDoc(hdc: super::super::Graphics::Gdi::HDC) -> i32;
+            fn EndDoc(hdc: ::win32_graphics::Gdi::HDC) -> i32;
         }
         ::core::mem::transmute(EndDoc(hdc.into_param().abi()))
     }
@@ -218,12 +210,12 @@ pub unsafe fn EndDoc<'a, Param0: ::windows_core::IntoParam<'a, super::super::Gra
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn EndPage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn EndPage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EndPage(hdc: super::super::Graphics::Gdi::HDC) -> i32;
+            fn EndPage(hdc: ::win32_graphics::Gdi::HDC) -> i32;
         }
         ::core::mem::transmute(EndPage(hdc.into_param().abi()))
     }
@@ -232,12 +224,12 @@ pub unsafe fn EndPage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Gr
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn Escape<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hdc: Param0, iescape: i32, cjin: i32, pvin: Param3, pvout: *mut ::core::ffi::c_void) -> i32 {
+pub unsafe fn Escape<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hdc: Param0, iescape: i32, cjin: i32, pvin: Param3, pvout: *mut ::core::ffi::c_void) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn Escape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjin: i32, pvin: ::windows_core::PCSTR, pvout: *mut ::core::ffi::c_void) -> i32;
+            fn Escape(hdc: ::win32_graphics::Gdi::HDC, iescape: i32, cjin: i32, pvin: ::windows_core::PCSTR, pvout: *mut ::core::ffi::c_void) -> i32;
         }
         ::core::mem::transmute(Escape(hdc.into_param().abi(), ::core::mem::transmute(iescape), ::core::mem::transmute(cjin), pvin.into_param().abi(), ::core::mem::transmute(pvout)))
     }
@@ -246,12 +238,12 @@ pub unsafe fn Escape<'a, Param0: ::windows_core::IntoParam<'a, super::super::Gra
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn ExtEscape<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hdc: Param0, iescape: i32, cjinput: i32, lpindata: Param3, cjoutput: i32, lpoutdata: ::windows_core::PSTR) -> i32 {
+pub unsafe fn ExtEscape<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hdc: Param0, iescape: i32, cjinput: i32, lpindata: Param3, cjoutput: i32, lpoutdata: ::windows_core::PSTR) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ExtEscape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjinput: i32, lpindata: ::windows_core::PCSTR, cjoutput: i32, lpoutdata: ::windows_core::PSTR) -> i32;
+            fn ExtEscape(hdc: ::win32_graphics::Gdi::HDC, iescape: i32, cjinput: i32, lpindata: ::windows_core::PCSTR, cjoutput: i32, lpoutdata: ::windows_core::PSTR) -> i32;
         }
         ::core::mem::transmute(ExtEscape(hdc.into_param().abi(), ::core::mem::transmute(iescape), ::core::mem::transmute(cjinput), lpindata.into_param().abi(), ::core::mem::transmute(cjoutput), ::core::mem::transmute(lpoutdata)))
     }
@@ -357,7 +349,7 @@ pub struct IXpsDocumentPackageTarget_Vtbl {
 pub struct IXpsDocumentPackageTarget3D(::windows_core::IUnknown);
 impl IXpsDocumentPackageTarget3D {
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn GetXpsOMPackageWriter3D<'a, Param0: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param3: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, documentsequencepartname: Param0, discardcontrolpartname: Param1, modelpartname: Param2, modeldata: Param3) -> ::windows_core::Result<IXpsOMPackageWriter3D> {
+    pub unsafe fn GetXpsOMPackageWriter3D<'a, Param0: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, documentsequencepartname: Param0, discardcontrolpartname: Param1, modelpartname: Param2, modeldata: Param3) -> ::windows_core::Result<IXpsOMPackageWriter3D> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetXpsOMPackageWriter3D)(::windows_core::Interface::as_raw(self), documentsequencepartname.into_param().abi(), discardcontrolpartname.into_param().abi(), modelpartname.into_param().abi(), modeldata.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackageWriter3D>(result__)
     }
@@ -581,22 +573,20 @@ impl IXpsOMCanvas {
     pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, ishyperlink: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ishyperlink: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ishyperlink.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetHyperlinkNavigateUri(&self) -> ::windows_core::Result<super::super::System::Com::IUri> {
+    pub unsafe fn GetHyperlinkNavigateUri(&self) -> ::windows_core::Result<::win32_system::Com::IUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IUri>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn SetHyperlinkNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IUri>>(&self, hyperlinkuri: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetHyperlinkNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>>(&self, hyperlinkuri: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), hyperlinkuri.into_param().abi()).ok()
     }
     pub unsafe fn GetLanguage(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -610,13 +600,11 @@ impl IXpsOMCanvas {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetVisuals)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMVisualCollection>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetUseAliasedEdgeMode(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetUseAliasedEdgeMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetUseAliasedEdgeMode(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetUseAliasedEdgeMode)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetUseAliasedEdgeMode<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, usealiasededgemode: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetUseAliasedEdgeMode<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, usealiasededgemode: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetUseAliasedEdgeMode)(::windows_core::Interface::as_raw(self), usealiasededgemode.into_param().abi()).ok()
     }
     pub unsafe fn GetAccessibilityShortDescription(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -741,14 +729,8 @@ unsafe impl ::windows_core::Interface for IXpsOMCanvas {
 pub struct IXpsOMCanvas_Vtbl {
     pub base__: IXpsOMVisual_Vtbl,
     pub GetVisuals: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, visuals: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetUseAliasedEdgeMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usealiasededgemode: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUseAliasedEdgeMode: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetUseAliasedEdgeMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usealiasededgemode: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetUseAliasedEdgeMode: usize,
+    pub GetUseAliasedEdgeMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usealiasededgemode: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetUseAliasedEdgeMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usealiasededgemode: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetAccessibilityShortDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shortdescription: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetAccessibilityShortDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shortdescription: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub GetAccessibilityLongDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, longdescription: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
@@ -773,12 +755,12 @@ impl IXpsOMColorProfileResource {
         (::windows_core::Interface::vtable(self).base__.base__.SetPartName)(::windows_core::Interface::as_raw(self), parturi.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetStream(&self) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn GetStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContent)(::windows_core::Interface::as_raw(self), sourcestream.into_param().abi(), partname.into_param().abi()).ok()
     }
 }
@@ -996,13 +978,11 @@ impl IXpsOMCoreProperties {
     pub unsafe fn SetContentType<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, contenttype: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContentType)(::windows_core::Interface::as_raw(self), contenttype.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetCreated(&self) -> ::windows_core::Result<super::super::Foundation::SYSTEMTIME> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::SYSTEMTIME>::zeroed();
-        (::windows_core::Interface::vtable(self).GetCreated)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::SYSTEMTIME>(result__)
+    pub unsafe fn GetCreated(&self) -> ::windows_core::Result<::win32_foundation::SYSTEMTIME> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::SYSTEMTIME>::zeroed();
+        (::windows_core::Interface::vtable(self).GetCreated)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::SYSTEMTIME>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCreated(&self, created: *const super::super::Foundation::SYSTEMTIME) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCreated(&self, created: *const ::win32_foundation::SYSTEMTIME) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCreated)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(created)).ok()
     }
     pub unsafe fn GetCreator(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -1047,22 +1027,18 @@ impl IXpsOMCoreProperties {
     pub unsafe fn SetLastModifiedBy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, lastmodifiedby: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLastModifiedBy)(::windows_core::Interface::as_raw(self), lastmodifiedby.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetLastPrinted(&self) -> ::windows_core::Result<super::super::Foundation::SYSTEMTIME> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::SYSTEMTIME>::zeroed();
-        (::windows_core::Interface::vtable(self).GetLastPrinted)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::SYSTEMTIME>(result__)
+    pub unsafe fn GetLastPrinted(&self) -> ::windows_core::Result<::win32_foundation::SYSTEMTIME> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::SYSTEMTIME>::zeroed();
+        (::windows_core::Interface::vtable(self).GetLastPrinted)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::SYSTEMTIME>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetLastPrinted(&self, lastprinted: *const super::super::Foundation::SYSTEMTIME) -> ::windows_core::Result<()> {
+    pub unsafe fn SetLastPrinted(&self, lastprinted: *const ::win32_foundation::SYSTEMTIME) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetLastPrinted)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lastprinted)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetModified(&self) -> ::windows_core::Result<super::super::Foundation::SYSTEMTIME> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::SYSTEMTIME>::zeroed();
-        (::windows_core::Interface::vtable(self).GetModified)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::SYSTEMTIME>(result__)
+    pub unsafe fn GetModified(&self) -> ::windows_core::Result<::win32_foundation::SYSTEMTIME> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::SYSTEMTIME>::zeroed();
+        (::windows_core::Interface::vtable(self).GetModified)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::SYSTEMTIME>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetModified(&self, modified: *const super::super::Foundation::SYSTEMTIME) -> ::windows_core::Result<()> {
+    pub unsafe fn SetModified(&self, modified: *const ::win32_foundation::SYSTEMTIME) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetModified)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(modified)).ok()
     }
     pub unsafe fn GetRevision(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -1169,14 +1145,8 @@ pub struct IXpsOMCoreProperties_Vtbl {
     pub SetContentStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, contentstatus: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub GetContentType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, contenttype: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetContentType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, contenttype: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetCreated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, created: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetCreated: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetCreated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, created: *const super::super::Foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetCreated: usize,
+    pub GetCreated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, created: *mut ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
+    pub SetCreated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, created: *const ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
     pub GetCreator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, creator: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetCreator: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, creator: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub GetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, description: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
@@ -1189,22 +1159,10 @@ pub struct IXpsOMCoreProperties_Vtbl {
     pub SetLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, language: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub GetLastModifiedBy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lastmodifiedby: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetLastModifiedBy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lastmodifiedby: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetLastPrinted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lastprinted: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetLastPrinted: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetLastPrinted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lastprinted: *const super::super::Foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetLastPrinted: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetModified: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, modified: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetModified: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetModified: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, modified: *const super::super::Foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetModified: usize,
+    pub GetLastPrinted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lastprinted: *mut ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
+    pub SetLastPrinted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lastprinted: *const ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
+    pub GetModified: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, modified: *mut ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
+    pub SetModified: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, modified: *const ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
     pub GetRevision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, revision: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetRevision: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, revision: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub GetSubject: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, subject: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
@@ -1689,12 +1647,12 @@ impl IXpsOMDocumentStructureResource {
         (::windows_core::Interface::vtable(self).GetOwner)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMDocument>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetStream(&self) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn GetStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContent)(::windows_core::Interface::as_raw(self), sourcestream.into_param().abi(), partname.into_param().abi()).ok()
     }
 }
@@ -1805,12 +1763,12 @@ impl IXpsOMFontResource {
         (::windows_core::Interface::vtable(self).base__.base__.SetPartName)(::windows_core::Interface::as_raw(self), parturi.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetStream(&self) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn GetStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, embeddingoption: XPS_FONT_EMBEDDING, partname: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, embeddingoption: XPS_FONT_EMBEDDING, partname: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContent)(::windows_core::Interface::as_raw(self), sourcestream.into_param().abi(), ::core::mem::transmute(embeddingoption), partname.into_param().abi()).ok()
     }
     pub unsafe fn GetEmbeddingOption(&self) -> ::windows_core::Result<XPS_FONT_EMBEDDING> {
@@ -2128,12 +2086,10 @@ impl IXpsOMGeometryFigure {
     pub unsafe fn GetSegmentTypes(&self, segmentcount: *mut u32, segmenttypes: *mut XPS_SEGMENT_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetSegmentTypes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(segmentcount), ::core::mem::transmute(segmenttypes)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetSegmentStrokes(&self, segmentcount: *mut u32, segmentstrokes: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn GetSegmentStrokes(&self, segmentcount: *mut u32, segmentstrokes: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetSegmentStrokes)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(segmentcount), ::core::mem::transmute(segmentstrokes)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSegments(&self, segmentcount: u32, segmentdatacount: u32, segmenttypes: *const XPS_SEGMENT_TYPE, segmentdata: *const f32, segmentstrokes: *const super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSegments(&self, segmentcount: u32, segmentdatacount: u32, segmenttypes: *const XPS_SEGMENT_TYPE, segmentdata: *const f32, segmentstrokes: *const ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSegments)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(segmentcount), ::core::mem::transmute(segmentdatacount), ::core::mem::transmute(segmenttypes), ::core::mem::transmute(segmentdata), ::core::mem::transmute(segmentstrokes)).ok()
     }
     pub unsafe fn GetStartPoint(&self) -> ::windows_core::Result<XPS_POINT> {
@@ -2143,22 +2099,18 @@ impl IXpsOMGeometryFigure {
     pub unsafe fn SetStartPoint(&self, startpoint: *const XPS_POINT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetStartPoint)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(startpoint)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsClosed(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetIsClosed)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsClosed(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetIsClosed)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsClosed<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, isclosed: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsClosed<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, isclosed: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetIsClosed)(::windows_core::Interface::as_raw(self), isclosed.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsFilled(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetIsFilled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsFilled(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetIsFilled)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsFilled<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, isfilled: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsFilled<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, isfilled: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetIsFilled)(::windows_core::Interface::as_raw(self), isfilled.into_param().abi()).ok()
     }
     pub unsafe fn GetSegmentCount(&self) -> ::windows_core::Result<u32> {
@@ -2225,32 +2177,14 @@ pub struct IXpsOMGeometryFigure_Vtbl {
     pub GetOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, owner: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetSegmentData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, datacount: *mut u32, segmentdata: *mut f32) -> ::windows_core::HRESULT,
     pub GetSegmentTypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segmentcount: *mut u32, segmenttypes: *mut XPS_SEGMENT_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetSegmentStrokes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segmentcount: *mut u32, segmentstrokes: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetSegmentStrokes: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSegments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segmentcount: u32, segmentdatacount: u32, segmenttypes: *const XPS_SEGMENT_TYPE, segmentdata: *const f32, segmentstrokes: *const super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSegments: usize,
+    pub GetSegmentStrokes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segmentcount: *mut u32, segmentstrokes: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetSegments: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segmentcount: u32, segmentdatacount: u32, segmenttypes: *const XPS_SEGMENT_TYPE, segmentdata: *const f32, segmentstrokes: *const ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetStartPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startpoint: *mut XPS_POINT) -> ::windows_core::HRESULT,
     pub SetStartPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, startpoint: *const XPS_POINT) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetIsClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isclosed: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIsClosed: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetIsClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isclosed: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetIsClosed: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetIsFilled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isfilled: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIsFilled: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetIsFilled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isfilled: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetIsFilled: usize,
+    pub GetIsClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isclosed: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetIsClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isclosed: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub GetIsFilled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isfilled: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetIsFilled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isfilled: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetSegmentCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segmentcount: *mut u32) -> ::windows_core::HRESULT,
     pub GetSegmentDataCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segmentdatacount: *mut u32) -> ::windows_core::HRESULT,
     pub GetSegmentStrokePattern: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, segmentstrokepattern: *mut XPS_SEGMENT_STROKE_PATTERN) -> ::windows_core::HRESULT,
@@ -2410,22 +2344,20 @@ impl IXpsOMGlyphs {
     pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, ishyperlink: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ishyperlink: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ishyperlink.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetHyperlinkNavigateUri(&self) -> ::windows_core::Result<super::super::System::Com::IUri> {
+    pub unsafe fn GetHyperlinkNavigateUri(&self) -> ::windows_core::Result<::win32_system::Com::IUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IUri>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn SetHyperlinkNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IUri>>(&self, hyperlinkuri: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetHyperlinkNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>>(&self, hyperlinkuri: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), hyperlinkuri.into_param().abi()).ok()
     }
     pub unsafe fn GetLanguage(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -2464,10 +2396,9 @@ impl IXpsOMGlyphs {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).GetBidiLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsSideways(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetIsSideways)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsSideways(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetIsSideways)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetDeviceFontName(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::PWSTR>::zeroed();
@@ -2627,10 +2558,7 @@ pub struct IXpsOMGlyphs_Vtbl {
     pub GetProhibitedCaretStopCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prohibitedcaretstopcount: *mut u32) -> ::windows_core::HRESULT,
     pub GetProhibitedCaretStops: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, prohibitedcaretstopcount: *mut u32, prohibitedcaretstops: *mut u32) -> ::windows_core::HRESULT,
     pub GetBidiLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bidilevel: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetIsSideways: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, issideways: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIsSideways: usize,
+    pub GetIsSideways: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, issideways: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetDeviceFontName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, devicefontname: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetStyleSimulations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stylesimulations: *mut XPS_STYLE_SIMULATION) -> ::windows_core::HRESULT,
     pub SetStyleSimulations: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stylesimulations: XPS_STYLE_SIMULATION) -> ::windows_core::HRESULT,
@@ -2700,13 +2628,11 @@ impl IXpsOMGlyphsEditor {
     pub unsafe fn SetBidiLevel(&self, bidilevel: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetBidiLevel)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bidilevel)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsSideways(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetIsSideways)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsSideways(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetIsSideways)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsSideways<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, issideways: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsSideways<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, issideways: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetIsSideways)(::windows_core::Interface::as_raw(self), issideways.into_param().abi()).ok()
     }
     pub unsafe fn GetDeviceFontName(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -2775,14 +2701,8 @@ pub struct IXpsOMGlyphsEditor_Vtbl {
     pub SetProhibitedCaretStops: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, count: u32, prohibitedcaretstops: *const u32) -> ::windows_core::HRESULT,
     pub GetBidiLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bidilevel: *mut u32) -> ::windows_core::HRESULT,
     pub SetBidiLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bidilevel: u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetIsSideways: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, issideways: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIsSideways: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetIsSideways: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, issideways: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetIsSideways: usize,
+    pub GetIsSideways: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, issideways: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetIsSideways: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, issideways: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetDeviceFontName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, devicefontname: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetDeviceFontName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, devicefontname: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
@@ -3286,12 +3206,12 @@ impl IXpsOMImageResource {
         (::windows_core::Interface::vtable(self).base__.base__.SetPartName)(::windows_core::Interface::as_raw(self), parturi.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetStream(&self) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn GetStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, imagetype: XPS_IMAGE_TYPE, partname: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, imagetype: XPS_IMAGE_TYPE, partname: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContent)(::windows_core::Interface::as_raw(self), sourcestream.into_param().abi(), ::core::mem::transmute(imagetype), partname.into_param().abi()).ok()
     }
     pub unsafe fn GetImageType(&self) -> ::windows_core::Result<XPS_IMAGE_TYPE> {
@@ -3817,28 +3737,27 @@ impl IXpsOMObjectFactory {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePackage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreatePackageFromFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, filename: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage> {
+    pub unsafe fn CreatePackageFromFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, filename: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePackageFromFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), reuseobjects.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackage>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePackageFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, stream: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn CreatePackageFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, stream: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePackageFromStream)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), reuseobjects.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackage>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateStoryFragmentsResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMStoryFragmentsResource> {
+    pub unsafe fn CreateStoryFragmentsResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMStoryFragmentsResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateStoryFragmentsResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMStoryFragmentsResource>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateDocumentStructureResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMDocumentStructureResource> {
+    pub unsafe fn CreateDocumentStructureResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMDocumentStructureResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateDocumentStructureResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMDocumentStructureResource>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateSignatureBlockResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMSignatureBlockResource> {
+    pub unsafe fn CreateSignatureBlockResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMSignatureBlockResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSignatureBlockResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMSignatureBlockResource>(result__)
     }
@@ -3848,7 +3767,7 @@ impl IXpsOMObjectFactory {
         (::windows_core::Interface::vtable(self).CreateRemoteDictionaryResource)(::windows_core::Interface::as_raw(self), dictionary.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMRemoteDictionaryResource>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateRemoteDictionaryResourceFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>>(&self, dictionarymarkupstream: Param0, dictionaryparturi: Param1, resources: Param2) -> ::windows_core::Result<IXpsOMRemoteDictionaryResource> {
+    pub unsafe fn CreateRemoteDictionaryResourceFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>>(&self, dictionarymarkupstream: Param0, dictionaryparturi: Param1, resources: Param2) -> ::windows_core::Result<IXpsOMRemoteDictionaryResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateRemoteDictionaryResourceFromStream)(::windows_core::Interface::as_raw(self), dictionarymarkupstream.into_param().abi(), dictionaryparturi.into_param().abi(), resources.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMRemoteDictionaryResource>(result__)
     }
@@ -3875,8 +3794,8 @@ impl IXpsOMObjectFactory {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pagedimensions), language.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPage>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePageFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pagemarkupstream: Param0, parturi: Param1, resources: Param2, reuseobjects: Param3) -> ::windows_core::Result<IXpsOMPage> {
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreatePageFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pagemarkupstream: Param0, parturi: Param1, resources: Param2, reuseobjects: Param3) -> ::windows_core::Result<IXpsOMPage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePageFromStream)(::windows_core::Interface::as_raw(self), pagemarkupstream.into_param().abi(), parturi.into_param().abi(), resources.into_param().abi(), reuseobjects.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPage>(result__)
     }
@@ -3909,7 +3828,7 @@ impl IXpsOMObjectFactory {
         (::windows_core::Interface::vtable(self).CreateSolidColorBrush)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(color), colorprofile.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMSolidColorBrush>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateColorProfileResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMColorProfileResource> {
+    pub unsafe fn CreateColorProfileResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMColorProfileResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateColorProfileResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMColorProfileResource>(result__)
     }
@@ -3922,17 +3841,17 @@ impl IXpsOMObjectFactory {
         (::windows_core::Interface::vtable(self).CreateVisualBrush)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(viewbox), ::core::mem::transmute(viewport), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMVisualBrush>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateImageResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, contenttype: XPS_IMAGE_TYPE, parturi: Param2) -> ::windows_core::Result<IXpsOMImageResource> {
+    pub unsafe fn CreateImageResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, contenttype: XPS_IMAGE_TYPE, parturi: Param2) -> ::windows_core::Result<IXpsOMImageResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateImageResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), ::core::mem::transmute(contenttype), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMImageResource>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePrintTicketResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMPrintTicketResource> {
+    pub unsafe fn CreatePrintTicketResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMPrintTicketResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePrintTicketResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPrintTicketResource>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateFontResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, acquiredstream: Param0, fontembedding: XPS_FONT_EMBEDDING, parturi: Param2, isobfsourcestream: Param3) -> ::windows_core::Result<IXpsOMFontResource> {
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreateFontResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, acquiredstream: Param0, fontembedding: XPS_FONT_EMBEDDING, parturi: Param2, isobfsourcestream: Param3) -> ::windows_core::Result<IXpsOMFontResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateFontResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), ::core::mem::transmute(fontembedding), parturi.into_param().abi(), isobfsourcestream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMFontResource>(result__)
     }
@@ -3961,11 +3880,11 @@ impl IXpsOMObjectFactory {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePartUriCollection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPartUriCollection>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePackageWriterOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param6: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param7: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param8: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param9: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
+    #[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreatePackageWriterOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param6: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param7: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param8: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param9: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
         &self,
         filename: Param0,
-        securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES,
+        securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES,
         flagsandattributes: u32,
         optimizemarkupsize: Param3,
         interleaving: XPS_INTERLEAVING,
@@ -3992,8 +3911,8 @@ impl IXpsOMObjectFactory {
         )
         .from_abi::<IXpsOMPackageWriter>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePackageWriterOnStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param4: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param5: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param6: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param7: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreatePackageWriterOnStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param4: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param5: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param6: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param7: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
         &self,
         outputstream: Param0,
         optimizemarkupsize: Param1,
@@ -4013,9 +3932,9 @@ impl IXpsOMObjectFactory {
         (::windows_core::Interface::vtable(self).CreatePartUri)(::windows_core::Interface::as_raw(self), uri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Packaging::Opc::IOpcPartUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateReadOnlyStreamOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, filename: Param0) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn CreateReadOnlyStreamOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, filename: Param0) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).CreateReadOnlyStreamOnFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).CreateReadOnlyStreamOnFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
 }
 impl ::core::convert::From<IXpsOMObjectFactory> for ::windows_core::IUnknown {
@@ -4063,13 +3982,10 @@ unsafe impl ::windows_core::Interface for IXpsOMObjectFactory {
 pub struct IXpsOMObjectFactory_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub CreatePackage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreatePackageFromFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, reuseobjects: super::super::Foundation::BOOL, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreatePackageFromFile: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub CreatePackageFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, reuseobjects: super::super::Foundation::BOOL, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    pub CreatePackageFromFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, reuseobjects: ::win32_foundation::BOOL, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreatePackageFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, reuseobjects: ::win32_foundation::BOOL, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     CreatePackageFromStream: usize,
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
     pub CreateStoryFragmentsResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, acquiredstream: ::windows_core::RawPtr, parturi: ::windows_core::RawPtr, storyfragmentsresource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4105,9 +4021,9 @@ pub struct IXpsOMObjectFactory_Vtbl {
     pub CreatePage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagedimensions: *const XPS_SIZE, language: ::windows_core::PCWSTR, parturi: ::windows_core::RawPtr, page: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreatePage: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub CreatePageFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagemarkupstream: ::windows_core::RawPtr, parturi: ::windows_core::RawPtr, resources: ::windows_core::RawPtr, reuseobjects: super::super::Foundation::BOOL, page: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePageFromStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagemarkupstream: ::windows_core::RawPtr, parturi: ::windows_core::RawPtr, resources: ::windows_core::RawPtr, reuseobjects: ::win32_foundation::BOOL, page: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreatePageFromStream: usize,
     pub CreateCanvas: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, canvas: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateGlyphs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fontresource: ::windows_core::RawPtr, glyphs: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4130,9 +4046,9 @@ pub struct IXpsOMObjectFactory_Vtbl {
     pub CreatePrintTicketResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, acquiredstream: ::windows_core::RawPtr, parturi: ::windows_core::RawPtr, printticketresource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreatePrintTicketResource: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub CreateFontResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, acquiredstream: ::windows_core::RawPtr, fontembedding: XPS_FONT_EMBEDDING, parturi: ::windows_core::RawPtr, isobfsourcestream: super::super::Foundation::BOOL, fontresource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreateFontResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, acquiredstream: ::windows_core::RawPtr, fontembedding: XPS_FONT_EMBEDDING, parturi: ::windows_core::RawPtr, isobfsourcestream: ::win32_foundation::BOOL, fontresource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreateFontResource: usize,
     pub CreateGradientStop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, color: *const XPS_COLOR, colorprofile: ::windows_core::RawPtr, offset: f32, gradientstop: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateLinearGradientBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, gradstop1: ::windows_core::RawPtr, gradstop2: ::windows_core::RawPtr, startpoint: *const XPS_POINT, endpoint: *const XPS_POINT, lineargradientbrush: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4143,13 +4059,13 @@ pub struct IXpsOMObjectFactory_Vtbl {
     CreateCoreProperties: usize,
     pub CreateDictionary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dictionary: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreatePartUriCollection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parturicollection: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub CreatePackageWriterOnFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: super::super::Foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: ::windows_core::RawPtr, coreproperties: ::windows_core::RawPtr, packagethumbnail: ::windows_core::RawPtr, documentsequenceprintticket: ::windows_core::RawPtr, discardcontrolpartname: ::windows_core::RawPtr, packagewriter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePackageWriterOnFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: ::win32_foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: ::windows_core::RawPtr, coreproperties: ::windows_core::RawPtr, packagethumbnail: ::windows_core::RawPtr, documentsequenceprintticket: ::windows_core::RawPtr, discardcontrolpartname: ::windows_core::RawPtr, packagewriter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreatePackageWriterOnFile: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub CreatePackageWriterOnStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, optimizemarkupsize: super::super::Foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: ::windows_core::RawPtr, coreproperties: ::windows_core::RawPtr, packagethumbnail: ::windows_core::RawPtr, documentsequenceprintticket: ::windows_core::RawPtr, discardcontrolpartname: ::windows_core::RawPtr, packagewriter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePackageWriterOnStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, optimizemarkupsize: ::win32_foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: ::windows_core::RawPtr, coreproperties: ::windows_core::RawPtr, packagethumbnail: ::windows_core::RawPtr, documentsequenceprintticket: ::windows_core::RawPtr, discardcontrolpartname: ::windows_core::RawPtr, packagewriter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreatePackageWriterOnStream: usize,
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
     pub CreatePartUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::PCWSTR, parturi: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4167,28 +4083,27 @@ impl IXpsOMObjectFactory1 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePackage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackage>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreatePackageFromFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, filename: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage> {
+    pub unsafe fn CreatePackageFromFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, filename: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePackageFromFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), reuseobjects.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackage>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePackageFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, stream: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn CreatePackageFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, stream: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePackageFromStream)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), reuseobjects.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackage>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateStoryFragmentsResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMStoryFragmentsResource> {
+    pub unsafe fn CreateStoryFragmentsResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMStoryFragmentsResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateStoryFragmentsResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMStoryFragmentsResource>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateDocumentStructureResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMDocumentStructureResource> {
+    pub unsafe fn CreateDocumentStructureResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMDocumentStructureResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateDocumentStructureResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMDocumentStructureResource>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateSignatureBlockResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMSignatureBlockResource> {
+    pub unsafe fn CreateSignatureBlockResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMSignatureBlockResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateSignatureBlockResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMSignatureBlockResource>(result__)
     }
@@ -4198,7 +4113,7 @@ impl IXpsOMObjectFactory1 {
         (::windows_core::Interface::vtable(self).base__.CreateRemoteDictionaryResource)(::windows_core::Interface::as_raw(self), dictionary.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMRemoteDictionaryResource>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateRemoteDictionaryResourceFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>>(&self, dictionarymarkupstream: Param0, dictionaryparturi: Param1, resources: Param2) -> ::windows_core::Result<IXpsOMRemoteDictionaryResource> {
+    pub unsafe fn CreateRemoteDictionaryResourceFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>>(&self, dictionarymarkupstream: Param0, dictionaryparturi: Param1, resources: Param2) -> ::windows_core::Result<IXpsOMRemoteDictionaryResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateRemoteDictionaryResourceFromStream)(::windows_core::Interface::as_raw(self), dictionarymarkupstream.into_param().abi(), dictionaryparturi.into_param().abi(), resources.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMRemoteDictionaryResource>(result__)
     }
@@ -4225,8 +4140,8 @@ impl IXpsOMObjectFactory1 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePage)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pagedimensions), language.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPage>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePageFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pagemarkupstream: Param0, parturi: Param1, resources: Param2, reuseobjects: Param3) -> ::windows_core::Result<IXpsOMPage> {
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreatePageFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pagemarkupstream: Param0, parturi: Param1, resources: Param2, reuseobjects: Param3) -> ::windows_core::Result<IXpsOMPage> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePageFromStream)(::windows_core::Interface::as_raw(self), pagemarkupstream.into_param().abi(), parturi.into_param().abi(), resources.into_param().abi(), reuseobjects.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPage>(result__)
     }
@@ -4259,7 +4174,7 @@ impl IXpsOMObjectFactory1 {
         (::windows_core::Interface::vtable(self).base__.CreateSolidColorBrush)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(color), colorprofile.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMSolidColorBrush>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateColorProfileResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMColorProfileResource> {
+    pub unsafe fn CreateColorProfileResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMColorProfileResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateColorProfileResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMColorProfileResource>(result__)
     }
@@ -4272,17 +4187,17 @@ impl IXpsOMObjectFactory1 {
         (::windows_core::Interface::vtable(self).base__.CreateVisualBrush)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(viewbox), ::core::mem::transmute(viewport), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMVisualBrush>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateImageResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, contenttype: XPS_IMAGE_TYPE, parturi: Param2) -> ::windows_core::Result<IXpsOMImageResource> {
+    pub unsafe fn CreateImageResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, contenttype: XPS_IMAGE_TYPE, parturi: Param2) -> ::windows_core::Result<IXpsOMImageResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateImageResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), ::core::mem::transmute(contenttype), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMImageResource>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePrintTicketResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMPrintTicketResource> {
+    pub unsafe fn CreatePrintTicketResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, acquiredstream: Param0, parturi: Param1) -> ::windows_core::Result<IXpsOMPrintTicketResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePrintTicketResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPrintTicketResource>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateFontResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, acquiredstream: Param0, fontembedding: XPS_FONT_EMBEDDING, parturi: Param2, isobfsourcestream: Param3) -> ::windows_core::Result<IXpsOMFontResource> {
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreateFontResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param2: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, acquiredstream: Param0, fontembedding: XPS_FONT_EMBEDDING, parturi: Param2, isobfsourcestream: Param3) -> ::windows_core::Result<IXpsOMFontResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreateFontResource)(::windows_core::Interface::as_raw(self), acquiredstream.into_param().abi(), ::core::mem::transmute(fontembedding), parturi.into_param().abi(), isobfsourcestream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMFontResource>(result__)
     }
@@ -4311,11 +4226,11 @@ impl IXpsOMObjectFactory1 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.CreatePartUriCollection)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPartUriCollection>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePackageWriterOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param6: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param7: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param8: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param9: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
+    #[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreatePackageWriterOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param6: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param7: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param8: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param9: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
         &self,
         filename: Param0,
-        securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES,
+        securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES,
         flagsandattributes: u32,
         optimizemarkupsize: Param3,
         interleaving: XPS_INTERLEAVING,
@@ -4342,8 +4257,8 @@ impl IXpsOMObjectFactory1 {
         )
         .from_abi::<IXpsOMPackageWriter>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePackageWriterOnStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param4: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param5: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param6: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param7: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreatePackageWriterOnStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param4: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param5: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param6: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param7: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
         &self,
         outputstream: Param0,
         optimizemarkupsize: Param1,
@@ -4363,16 +4278,16 @@ impl IXpsOMObjectFactory1 {
         (::windows_core::Interface::vtable(self).base__.CreatePartUri)(::windows_core::Interface::as_raw(self), uri.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Packaging::Opc::IOpcPartUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateReadOnlyStreamOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, filename: Param0) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn CreateReadOnlyStreamOnFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, filename: Param0) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.CreateReadOnlyStreamOnFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).base__.CreateReadOnlyStreamOnFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     pub unsafe fn GetDocumentTypeFromFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, filename: Param0) -> ::windows_core::Result<XPS_DOCUMENT_TYPE> {
         let mut result__ = ::core::mem::MaybeUninit::<XPS_DOCUMENT_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).GetDocumentTypeFromFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<XPS_DOCUMENT_TYPE>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetDocumentTypeFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, xpsdocumentstream: Param0) -> ::windows_core::Result<XPS_DOCUMENT_TYPE> {
+    pub unsafe fn GetDocumentTypeFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, xpsdocumentstream: Param0) -> ::windows_core::Result<XPS_DOCUMENT_TYPE> {
         let mut result__ = ::core::mem::MaybeUninit::<XPS_DOCUMENT_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).GetDocumentTypeFromStream)(::windows_core::Interface::as_raw(self), xpsdocumentstream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<XPS_DOCUMENT_TYPE>(result__)
     }
@@ -4382,11 +4297,11 @@ impl IXpsOMObjectFactory1 {
     pub unsafe fn ConvertJpegXRToHDPhoto<'a, Param0: ::windows_core::IntoParam<'a, IXpsOMImageResource>>(&self, imageresource: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConvertJpegXRToHDPhoto)(::windows_core::Interface::as_raw(self), imageresource.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePackageWriterOnFile1<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param6: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param7: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param8: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param9: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
+    #[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreatePackageWriterOnFile1<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param6: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param7: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param8: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param9: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
         &self,
         filename: Param0,
-        securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES,
+        securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES,
         flagsandattributes: u32,
         optimizemarkupsize: Param3,
         interleaving: XPS_INTERLEAVING,
@@ -4415,8 +4330,8 @@ impl IXpsOMObjectFactory1 {
         )
         .from_abi::<IXpsOMPackageWriter>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePackageWriterOnStream1<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param4: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param5: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param6: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param7: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreatePackageWriterOnStream1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param4: ::windows_core::IntoParam<'a, IXpsOMCoreProperties>, Param5: ::windows_core::IntoParam<'a, IXpsOMImageResource>, Param6: ::windows_core::IntoParam<'a, IXpsOMPrintTicketResource>, Param7: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(
         &self,
         outputstream: Param0,
         optimizemarkupsize: Param1,
@@ -4435,13 +4350,12 @@ impl IXpsOMObjectFactory1 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePackage1)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackage1>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePackageFromStream1<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, stream: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage1> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn CreatePackageFromStream1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, stream: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage1> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePackageFromStream1)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), reuseobjects.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackage1>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreatePackageFromFile1<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, filename: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage1> {
+    pub unsafe fn CreatePackageFromFile1<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, filename: Param0, reuseobjects: Param1) -> ::windows_core::Result<IXpsOMPackage1> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePackageFromFile1)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), reuseobjects.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPackage1>(result__)
     }
@@ -4450,13 +4364,13 @@ impl IXpsOMObjectFactory1 {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePage1)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pagedimensions), language.into_param().abi(), parturi.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPage1>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreatePageFromStream1<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pagemarkupstream: Param0, parturi: Param1, resources: Param2, reuseobjects: Param3) -> ::windows_core::Result<IXpsOMPage1> {
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub unsafe fn CreatePageFromStream1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pagemarkupstream: Param0, parturi: Param1, resources: Param2, reuseobjects: Param3) -> ::windows_core::Result<IXpsOMPage1> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreatePageFromStream1)(::windows_core::Interface::as_raw(self), pagemarkupstream.into_param().abi(), parturi.into_param().abi(), resources.into_param().abi(), reuseobjects.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPage1>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateRemoteDictionaryResourceFromStream1<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>>(&self, dictionarymarkupstream: Param0, parturi: Param1, resources: Param2) -> ::windows_core::Result<IXpsOMRemoteDictionaryResource> {
+    pub unsafe fn CreateRemoteDictionaryResourceFromStream1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param2: ::windows_core::IntoParam<'a, IXpsOMPartResources>>(&self, dictionarymarkupstream: Param0, parturi: Param1, resources: Param2) -> ::windows_core::Result<IXpsOMRemoteDictionaryResource> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateRemoteDictionaryResourceFromStream1)(::windows_core::Interface::as_raw(self), dictionarymarkupstream.into_param().abi(), parturi.into_param().abi(), resources.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMRemoteDictionaryResource>(result__)
     }
@@ -4532,30 +4446,27 @@ pub struct IXpsOMObjectFactory1_Vtbl {
     GetDocumentTypeFromStream: usize,
     pub ConvertHDPhotoToJpegXR: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, imageresource: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ConvertJpegXRToHDPhoto: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, imageresource: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub CreatePackageWriterOnFile1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: super::super::Foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: ::windows_core::RawPtr, coreproperties: ::windows_core::RawPtr, packagethumbnail: ::windows_core::RawPtr, documentsequenceprintticket: ::windows_core::RawPtr, discardcontrolpartname: ::windows_core::RawPtr, documenttype: XPS_DOCUMENT_TYPE, packagewriter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePackageWriterOnFile1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: ::win32_foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: ::windows_core::RawPtr, coreproperties: ::windows_core::RawPtr, packagethumbnail: ::windows_core::RawPtr, documentsequenceprintticket: ::windows_core::RawPtr, discardcontrolpartname: ::windows_core::RawPtr, documenttype: XPS_DOCUMENT_TYPE, packagewriter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Security", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreatePackageWriterOnFile1: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub CreatePackageWriterOnStream1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, optimizemarkupsize: super::super::Foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: ::windows_core::RawPtr, coreproperties: ::windows_core::RawPtr, packagethumbnail: ::windows_core::RawPtr, documentsequenceprintticket: ::windows_core::RawPtr, discardcontrolpartname: ::windows_core::RawPtr, documenttype: XPS_DOCUMENT_TYPE, packagewriter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePackageWriterOnStream1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, optimizemarkupsize: ::win32_foundation::BOOL, interleaving: XPS_INTERLEAVING, documentsequencepartname: ::windows_core::RawPtr, coreproperties: ::windows_core::RawPtr, packagethumbnail: ::windows_core::RawPtr, documentsequenceprintticket: ::windows_core::RawPtr, discardcontrolpartname: ::windows_core::RawPtr, documenttype: XPS_DOCUMENT_TYPE, packagewriter: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreatePackageWriterOnStream1: usize,
     pub CreatePackage1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub CreatePackageFromStream1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, reuseobjects: super::super::Foundation::BOOL, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreatePackageFromStream1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, reuseobjects: ::win32_foundation::BOOL, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     CreatePackageFromStream1: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreatePackageFromFile1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, reuseobjects: super::super::Foundation::BOOL, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreatePackageFromFile1: usize,
+    pub CreatePackageFromFile1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, reuseobjects: ::win32_foundation::BOOL, package: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
     pub CreatePage1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagedimensions: *const XPS_SIZE, language: ::windows_core::PCWSTR, parturi: ::windows_core::RawPtr, page: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreatePage1: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub CreatePageFromStream1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagemarkupstream: ::windows_core::RawPtr, parturi: ::windows_core::RawPtr, resources: ::windows_core::RawPtr, reuseobjects: super::super::Foundation::BOOL, page: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
+    #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
+    pub CreatePageFromStream1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagemarkupstream: ::windows_core::RawPtr, parturi: ::windows_core::RawPtr, resources: ::windows_core::RawPtr, reuseobjects: ::win32_foundation::BOOL, page: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     CreatePageFromStream1: usize,
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
     pub CreateRemoteDictionaryResourceFromStream1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dictionarymarkupstream: ::windows_core::RawPtr, parturi: ::windows_core::RawPtr, resources: ::windows_core::RawPtr, dictionaryresource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4595,12 +4506,12 @@ impl IXpsOMPackage {
     pub unsafe fn SetThumbnailResource<'a, Param0: ::windows_core::IntoParam<'a, IXpsOMImageResource>>(&self, imageresource: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetThumbnailResource)(::windows_core::Interface::as_raw(self), imageresource.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub unsafe fn WriteToFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, filename: Param0, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: Param3) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Security")]
+    pub unsafe fn WriteToFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, filename: Param0, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).WriteToFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(securityattributes), ::core::mem::transmute(flagsandattributes), optimizemarkupsize.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn WriteToStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn WriteToStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).WriteToStream)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), optimizemarkupsize.into_param().abi()).ok()
     }
 }
@@ -4662,13 +4573,13 @@ pub struct IXpsOMPackage_Vtbl {
     SetDiscardControlPartName: usize,
     pub GetThumbnailResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, imageresource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetThumbnailResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, imageresource: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub WriteToFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security")))]
+    #[cfg(feature = "Win32_Security")]
+    pub WriteToFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security"))]
     WriteToFile: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub WriteToStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, optimizemarkupsize: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub WriteToStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, optimizemarkupsize: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     WriteToStream: usize,
 }
 #[repr(transparent)]
@@ -4704,24 +4615,24 @@ impl IXpsOMPackage1 {
     pub unsafe fn SetThumbnailResource<'a, Param0: ::windows_core::IntoParam<'a, IXpsOMImageResource>>(&self, imageresource: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetThumbnailResource)(::windows_core::Interface::as_raw(self), imageresource.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub unsafe fn WriteToFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, filename: Param0, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: Param3) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Security")]
+    pub unsafe fn WriteToFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, filename: Param0, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: Param3) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.WriteToFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(securityattributes), ::core::mem::transmute(flagsandattributes), optimizemarkupsize.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn WriteToStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn WriteToStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.WriteToStream)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), optimizemarkupsize.into_param().abi()).ok()
     }
     pub unsafe fn GetDocumentType(&self) -> ::windows_core::Result<XPS_DOCUMENT_TYPE> {
         let mut result__ = ::core::mem::MaybeUninit::<XPS_DOCUMENT_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).GetDocumentType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<XPS_DOCUMENT_TYPE>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub unsafe fn WriteToFile1<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, filename: Param0, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: Param3, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Security")]
+    pub unsafe fn WriteToFile1<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, filename: Param0, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: Param3, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).WriteToFile1)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(securityattributes), ::core::mem::transmute(flagsandattributes), optimizemarkupsize.into_param().abi(), ::core::mem::transmute(documenttype)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn WriteToStream1<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, outputstream: Param0, optimizemarkupsize: Param1, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn WriteToStream1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, outputstream: Param0, optimizemarkupsize: Param1, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).WriteToStream1)(::windows_core::Interface::as_raw(self), outputstream.into_param().abi(), optimizemarkupsize.into_param().abi(), ::core::mem::transmute(documenttype)).ok()
     }
 }
@@ -4790,13 +4701,13 @@ unsafe impl ::windows_core::Interface for IXpsOMPackage1 {
 pub struct IXpsOMPackage1_Vtbl {
     pub base__: IXpsOMPackage_Vtbl,
     pub GetDocumentType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, documenttype: *mut XPS_DOCUMENT_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub WriteToFile1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: super::super::Foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security")))]
+    #[cfg(feature = "Win32_Security")]
+    pub WriteToFile1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flagsandattributes: u32, optimizemarkupsize: ::win32_foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security"))]
     WriteToFile1: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub WriteToStream1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, optimizemarkupsize: super::super::Foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub WriteToStream1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputstream: ::windows_core::RawPtr, optimizemarkupsize: ::win32_foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     WriteToStream1: usize,
 }
 #[repr(transparent)]
@@ -4873,10 +4784,9 @@ impl IXpsOMPackageWriter {
     pub unsafe fn Close(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Close)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsClosed(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsClosed)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsClosed(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsClosed)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<IXpsOMPackageWriter> for ::windows_core::IUnknown {
@@ -4930,10 +4840,7 @@ pub struct IXpsOMPackageWriter_Vtbl {
     pub AddPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, page: ::windows_core::RawPtr, advisorypagedimensions: *const XPS_SIZE, discardableresourceparts: ::windows_core::RawPtr, storyfragments: ::windows_core::RawPtr, pageprintticket: ::windows_core::RawPtr, pagethumbnail: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub AddResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resource: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Close: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isclosed: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsClosed: usize,
+    pub IsClosed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, isclosed: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IXpsOMPackageWriter3D(::windows_core::IUnknown);
@@ -4951,17 +4858,16 @@ impl IXpsOMPackageWriter3D {
     pub unsafe fn Close(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Close)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsClosed(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.IsClosed)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsClosed(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.IsClosed)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn AddModelTexture<'a, Param0: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, texturepartname: Param0, texturedata: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn AddModelTexture<'a, Param0: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, texturepartname: Param0, texturedata: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).AddModelTexture)(::windows_core::Interface::as_raw(self), texturepartname.into_param().abi(), texturedata.into_param().abi()).ok()
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn SetModelPrintTicket<'a, Param0: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param1: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, printticketpartname: Param0, printticketdata: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetModelPrintTicket<'a, Param0: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>, Param1: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, printticketpartname: Param0, printticketdata: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetModelPrintTicket)(::windows_core::Interface::as_raw(self), printticketpartname.into_param().abi(), printticketdata.into_param().abi()).ok()
     }
 }
@@ -5093,13 +4999,11 @@ impl IXpsOMPage {
     pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, ishyperlinktarget: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ishyperlinktarget: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ishyperlinktarget.into_param().abi()).ok()
     }
     pub unsafe fn GetDictionary(&self) -> ::windows_core::Result<IXpsOMDictionary> {
@@ -5120,8 +5024,8 @@ impl IXpsOMPage {
     pub unsafe fn SetDictionaryResource<'a, Param0: ::windows_core::IntoParam<'a, IXpsOMRemoteDictionaryResource>>(&self, remotedictionaryresource: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDictionaryResource)(::windows_core::Interface::as_raw(self), remotedictionaryresource.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Write<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Write<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Write)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), optimizemarkupsize.into_param().abi()).ok()
     }
     pub unsafe fn GenerateUnusedLookupKey(&self, r#type: XPS_OBJECT_TYPE) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -5209,22 +5113,16 @@ pub struct IXpsOMPage_Vtbl {
     pub SetLanguage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, language: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub GetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ishyperlinktarget: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIsHyperlinkTarget: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ishyperlinktarget: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetIsHyperlinkTarget: usize,
+    pub GetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ishyperlinktarget: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ishyperlinktarget: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetDictionary: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourcedictionary: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDictionaryLocal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourcedictionary: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetDictionaryLocal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, resourcedictionary: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDictionaryResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotedictionaryresource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetDictionaryResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotedictionaryresource: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Write: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, optimizemarkupsize: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub Write: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, optimizemarkupsize: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Write: usize,
     pub GenerateUnusedLookupKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, r#type: XPS_OBJECT_TYPE, key: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, page: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -5284,13 +5182,11 @@ impl IXpsOMPage1 {
     pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, ishyperlinktarget: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ishyperlinktarget: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ishyperlinktarget.into_param().abi()).ok()
     }
     pub unsafe fn GetDictionary(&self) -> ::windows_core::Result<IXpsOMDictionary> {
@@ -5311,8 +5207,8 @@ impl IXpsOMPage1 {
     pub unsafe fn SetDictionaryResource<'a, Param0: ::windows_core::IntoParam<'a, IXpsOMRemoteDictionaryResource>>(&self, remotedictionaryresource: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetDictionaryResource)(::windows_core::Interface::as_raw(self), remotedictionaryresource.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Write<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Write<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Write)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), optimizemarkupsize.into_param().abi()).ok()
     }
     pub unsafe fn GenerateUnusedLookupKey(&self, r#type: XPS_OBJECT_TYPE) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -5327,8 +5223,8 @@ impl IXpsOMPage1 {
         let mut result__ = ::core::mem::MaybeUninit::<XPS_DOCUMENT_TYPE>::zeroed();
         (::windows_core::Interface::vtable(self).GetDocumentType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<XPS_DOCUMENT_TYPE>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn Write1<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn Write1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, stream: Param0, optimizemarkupsize: Param1, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Write1)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), optimizemarkupsize.into_param().abi(), ::core::mem::transmute(documenttype)).ok()
     }
 }
@@ -5417,9 +5313,9 @@ unsafe impl ::windows_core::Interface for IXpsOMPage1 {
 pub struct IXpsOMPage1_Vtbl {
     pub base__: IXpsOMPage_Vtbl,
     pub GetDocumentType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, documenttype: *mut XPS_DOCUMENT_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub Write1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, optimizemarkupsize: super::super::Foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub Write1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr, optimizemarkupsize: ::win32_foundation::BOOL, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     Write1: usize,
 }
 #[repr(transparent)]
@@ -5439,10 +5335,9 @@ impl IXpsOMPageReference {
     pub unsafe fn DiscardPage(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DiscardPage)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn IsPageLoaded(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).IsPageLoaded)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn IsPageLoaded(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).IsPageLoaded)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn GetAdvisoryPageDimensions(&self) -> ::windows_core::Result<XPS_SIZE> {
         let mut result__ = ::core::mem::MaybeUninit::<XPS_SIZE>::zeroed();
@@ -5480,10 +5375,9 @@ impl IXpsOMPageReference {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CollectPartResources)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPartResources>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HasRestrictedFonts(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).HasRestrictedFonts)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn HasRestrictedFonts(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).HasRestrictedFonts)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn Clone(&self) -> ::windows_core::Result<IXpsOMPageReference> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -5538,10 +5432,7 @@ pub struct IXpsOMPageReference_Vtbl {
     pub GetPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, page: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, page: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub DiscardPage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub IsPageLoaded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ispageloaded: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    IsPageLoaded: usize,
+    pub IsPageLoaded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ispageloaded: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetAdvisoryPageDimensions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagedimensions: *mut XPS_SIZE) -> ::windows_core::HRESULT,
     pub SetAdvisoryPageDimensions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagedimensions: *const XPS_SIZE) -> ::windows_core::HRESULT,
     pub GetStoryFragmentsResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, storyfragmentsresource: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -5552,10 +5443,7 @@ pub struct IXpsOMPageReference_Vtbl {
     pub SetThumbnailResource: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, imageresource: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CollectLinkTargets: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, linktargets: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CollectPartResources: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, partresources: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub HasRestrictedFonts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, restrictedfonts: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    HasRestrictedFonts: usize,
+    pub HasRestrictedFonts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, restrictedfonts: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub Clone: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pagereference: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -5938,22 +5826,20 @@ impl IXpsOMPath {
     pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).base__.GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, ishyperlink: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ishyperlink: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ishyperlink.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetHyperlinkNavigateUri(&self) -> ::windows_core::Result<super::super::System::Com::IUri> {
+    pub unsafe fn GetHyperlinkNavigateUri(&self) -> ::windows_core::Result<::win32_system::Com::IUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).base__.GetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IUri>(result__)
+        (::windows_core::Interface::vtable(self).base__.GetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn SetHyperlinkNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IUri>>(&self, hyperlinkuri: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetHyperlinkNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>>(&self, hyperlinkuri: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.SetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), hyperlinkuri.into_param().abi()).ok()
     }
     pub unsafe fn GetLanguage(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -5995,13 +5881,11 @@ impl IXpsOMPath {
     pub unsafe fn SetAccessibilityLongDescription<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, longdescription: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAccessibilityLongDescription)(::windows_core::Interface::as_raw(self), longdescription.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetSnapsToPixels(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetSnapsToPixels)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetSnapsToPixels(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetSnapsToPixels)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetSnapsToPixels<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, snapstopixels: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetSnapsToPixels<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, snapstopixels: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetSnapsToPixels)(::windows_core::Interface::as_raw(self), snapstopixels.into_param().abi()).ok()
     }
     pub unsafe fn GetStrokeBrush(&self) -> ::windows_core::Result<IXpsOMBrush> {
@@ -6191,14 +6075,8 @@ pub struct IXpsOMPath_Vtbl {
     pub SetAccessibilityShortDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shortdescription: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub GetAccessibilityLongDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, longdescription: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetAccessibilityLongDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, longdescription: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetSnapsToPixels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, snapstopixels: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetSnapsToPixels: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetSnapsToPixels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, snapstopixels: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetSnapsToPixels: usize,
+    pub GetSnapsToPixels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, snapstopixels: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetSnapsToPixels: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, snapstopixels: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetStrokeBrush: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, brush: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetStrokeBrushLocal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, brush: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetStrokeBrushLocal: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, brush: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -6239,12 +6117,12 @@ impl IXpsOMPrintTicketResource {
         (::windows_core::Interface::vtable(self).base__.base__.SetPartName)(::windows_core::Interface::as_raw(self), parturi.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetStream(&self) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn GetStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContent)(::windows_core::Interface::as_raw(self), sourcestream.into_param().abi(), partname.into_param().abi()).ok()
     }
 }
@@ -6664,7 +6542,7 @@ impl IXpsOMRemoteDictionaryResource1 {
         (::windows_core::Interface::vtable(self).GetDocumentType)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<XPS_DOCUMENT_TYPE>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn Write1<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::ISequentialStream>>(&self, stream: Param0, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::Result<()> {
+    pub unsafe fn Write1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream>>(&self, stream: Param0, documenttype: XPS_DOCUMENT_TYPE) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Write1)(::windows_core::Interface::as_raw(self), stream.into_param().abi(), ::core::mem::transmute(documenttype)).ok()
     }
 }
@@ -7016,12 +6894,12 @@ impl IXpsOMSignatureBlockResource {
         (::windows_core::Interface::vtable(self).GetOwner)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMDocument>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetStream(&self) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn GetStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContent)(::windows_core::Interface::as_raw(self), sourcestream.into_param().abi(), partname.into_param().abi()).ok()
     }
 }
@@ -7337,12 +7215,12 @@ impl IXpsOMStoryFragmentsResource {
         (::windows_core::Interface::vtable(self).GetOwner)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsOMPageReference>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetStream(&self) -> ::windows_core::Result<super::super::System::Com::IStream> {
+    pub unsafe fn GetStream(&self) -> ::windows_core::Result<::win32_system::Com::IStream> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IStream>(result__)
+        (::windows_core::Interface::vtable(self).GetStream)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IStream>(result__)
     }
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
-    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
+    pub unsafe fn SetContent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, super::Packaging::Opc::IOpcPartUri>>(&self, sourcestream: Param0, partname: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContent)(::windows_core::Interface::as_raw(self), sourcestream.into_param().abi(), partname.into_param().abi()).ok()
     }
 }
@@ -7731,22 +7609,20 @@ impl IXpsOMVisual {
     pub unsafe fn SetName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, name: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetName)(::windows_core::Interface::as_raw(self), name.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn GetIsHyperlinkTarget(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).GetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, ishyperlink: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetIsHyperlinkTarget<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, ishyperlink: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetIsHyperlinkTarget)(::windows_core::Interface::as_raw(self), ishyperlink.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn GetHyperlinkNavigateUri(&self) -> ::windows_core::Result<super::super::System::Com::IUri> {
+    pub unsafe fn GetHyperlinkNavigateUri(&self) -> ::windows_core::Result<::win32_system::Com::IUri> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).GetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Com::IUri>(result__)
+        (::windows_core::Interface::vtable(self).GetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Com::IUri>(result__)
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn SetHyperlinkNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IUri>>(&self, hyperlinkuri: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetHyperlinkNavigateUri<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IUri>>(&self, hyperlinkuri: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetHyperlinkNavigateUri)(::windows_core::Interface::as_raw(self), hyperlinkuri.into_param().abi()).ok()
     }
     pub unsafe fn GetLanguage(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -7840,14 +7716,8 @@ pub struct IXpsOMVisual_Vtbl {
     pub SetOpacityMaskBrushLookup: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     pub GetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, name: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ishyperlink: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetIsHyperlinkTarget: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ishyperlink: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetIsHyperlinkTarget: usize,
+    pub GetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ishyperlink: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub SetIsHyperlinkTarget: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ishyperlink: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub GetHyperlinkNavigateUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hyperlinkuri: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -8154,8 +8024,8 @@ impl IXpsSignature {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).GetSignaturePartName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Packaging::Opc::IOpcPartUri>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub unsafe fn Verify(&self, x509certificate: *const super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<XPS_SIGNATURE_STATUS> {
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub unsafe fn Verify(&self, x509certificate: *const ::win32_security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<XPS_SIGNATURE_STATUS> {
         let mut result__ = ::core::mem::MaybeUninit::<XPS_SIGNATURE_STATUS>::zeroed();
         (::windows_core::Interface::vtable(self).Verify)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(x509certificate), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<XPS_SIGNATURE_STATUS>(result__)
     }
@@ -8239,9 +8109,9 @@ pub struct IXpsSignature_Vtbl {
     pub GetSignaturePartName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signaturepartname: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com")))]
     GetSignaturePartName: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub Verify: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, x509certificate: *const super::super::Security::Cryptography::CERT_CONTEXT, sigstatus: *mut XPS_SIGNATURE_STATUS) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub Verify: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, x509certificate: *const ::win32_security::Cryptography::CERT_CONTEXT, sigstatus: *mut XPS_SIGNATURE_STATUS) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Cryptography"))]
     Verify: usize,
     pub GetPolicy: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, policy: *mut XPS_SIGN_POLICY) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_Storage_Packaging_Opc")]
@@ -8470,11 +8340,11 @@ impl IXpsSignatureManager {
         (::windows_core::Interface::vtable(self).LoadPackageFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn LoadPackageStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, stream: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn LoadPackageStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, stream: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).LoadPackageStream)(::windows_core::Interface::as_raw(self), stream.into_param().abi()).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub unsafe fn Sign<'a, Param0: ::windows_core::IntoParam<'a, IXpsSigningOptions>>(&self, signoptions: Param0, x509certificate: *const super::super::Security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<IXpsSignature> {
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub unsafe fn Sign<'a, Param0: ::windows_core::IntoParam<'a, IXpsSigningOptions>>(&self, signoptions: Param0, x509certificate: *const ::win32_security::Cryptography::CERT_CONTEXT) -> ::windows_core::Result<IXpsSignature> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Sign)(::windows_core::Interface::as_raw(self), signoptions.into_param().abi(), ::core::mem::transmute(x509certificate), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsSignature>(result__)
     }
@@ -8504,12 +8374,12 @@ impl IXpsSignatureManager {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateSigningOptions)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IXpsSigningOptions>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub unsafe fn SavePackageToFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, filename: Param0, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Win32_Security")]
+    pub unsafe fn SavePackageToFile<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, filename: Param0, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flagsandattributes: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SavePackageToFile)(::windows_core::Interface::as_raw(self), filename.into_param().abi(), ::core::mem::transmute(securityattributes), ::core::mem::transmute(flagsandattributes)).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn SavePackageToStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>>(&self, stream: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SavePackageToStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, stream: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SavePackageToStream)(::windows_core::Interface::as_raw(self), stream.into_param().abi()).ok()
     }
 }
@@ -8562,9 +8432,9 @@ pub struct IXpsSignatureManager_Vtbl {
     pub LoadPackageStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     LoadPackageStream: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub Sign: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signoptions: ::windows_core::RawPtr, x509certificate: *const super::super::Security::Cryptography::CERT_CONTEXT, signature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography")))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub Sign: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signoptions: ::windows_core::RawPtr, x509certificate: *const ::win32_security::Cryptography::CERT_CONTEXT, signature: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security_Cryptography"))]
     Sign: usize,
     #[cfg(all(feature = "Win32_Storage_Packaging_Opc", feature = "Win32_System_Com"))]
     pub GetSignatureOriginPartName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signatureoriginpartname: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -8581,9 +8451,9 @@ pub struct IXpsSignatureManager_Vtbl {
     AddSignatureBlock: usize,
     pub GetSignatureBlocks: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signatureblocks: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateSigningOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, signingoptions: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub SavePackageToFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flagsandattributes: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_Security")))]
+    #[cfg(feature = "Win32_Security")]
+    pub SavePackageToFile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::windows_core::PCWSTR, securityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flagsandattributes: u32) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_Security"))]
     SavePackageToFile: usize,
     #[cfg(feature = "Win32_System_Com")]
     pub SavePackageToStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stream: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -8972,38 +8842,30 @@ impl ::core::default::Default for PSFEATURE_CUSTPAPER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PSFEATURE_OUTPUT {
-    pub bPageIndependent: super::super::Foundation::BOOL,
-    pub bSetPageDevice: super::super::Foundation::BOOL,
+    pub bPageIndependent: ::win32_foundation::BOOL,
+    pub bSetPageDevice: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PSFEATURE_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PSFEATURE_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for PSFEATURE_OUTPUT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("PSFEATURE_OUTPUT").field("bPageIndependent", &self.bPageIndependent).field("bSetPageDevice", &self.bSetPageDevice).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for PSFEATURE_OUTPUT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for PSFEATURE_OUTPUT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<PSFEATURE_OUTPUT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for PSFEATURE_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for PSFEATURE_OUTPUT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9121,28 +8983,28 @@ impl ::core::ops::Not for PSINJECT_POINT {
         Self(self.0.not())
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn PrintWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hwnd: Param0, hdcblt: Param1, nflags: PRINT_WINDOW_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn PrintWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hwnd: Param0, hdcblt: Param1, nflags: PRINT_WINDOW_FLAGS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PrintWindow(hwnd: super::super::Foundation::HWND, hdcblt: super::super::Graphics::Gdi::HDC, nflags: PRINT_WINDOW_FLAGS) -> super::super::Foundation::BOOL;
+            fn PrintWindow(hwnd: ::win32_foundation::HWND, hdcblt: ::win32_graphics::Gdi::HDC, nflags: PRINT_WINDOW_FLAGS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PrintWindow(hwnd.into_param().abi(), hdcblt.into_param().abi(), ::core::mem::transmute(nflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
+#[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn SetAbortProc<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hdc: Param0, proc: ABORTPROC) -> i32 {
+pub unsafe fn SetAbortProc<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hdc: Param0, proc: ABORTPROC) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetAbortProc(hdc: super::super::Graphics::Gdi::HDC, proc: ::windows_core::RawPtr) -> i32;
+            fn SetAbortProc(hdc: ::win32_graphics::Gdi::HDC, proc: ::windows_core::RawPtr) -> i32;
         }
         ::core::mem::transmute(SetAbortProc(hdc.into_param().abi(), ::core::mem::transmute(proc)))
     }
@@ -9151,12 +9013,12 @@ pub unsafe fn SetAbortProc<'a, Param0: ::windows_core::IntoParam<'a, super::supe
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn StartDocA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hdc: Param0, lpdi: *const DOCINFOA) -> i32 {
+pub unsafe fn StartDocA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hdc: Param0, lpdi: *const DOCINFOA) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartDocA(hdc: super::super::Graphics::Gdi::HDC, lpdi: *const DOCINFOA) -> i32;
+            fn StartDocA(hdc: ::win32_graphics::Gdi::HDC, lpdi: *const DOCINFOA) -> i32;
         }
         ::core::mem::transmute(StartDocA(hdc.into_param().abi(), ::core::mem::transmute(lpdi)))
     }
@@ -9165,12 +9027,12 @@ pub unsafe fn StartDocA<'a, Param0: ::windows_core::IntoParam<'a, super::super::
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn StartDocW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hdc: Param0, lpdi: *const DOCINFOW) -> i32 {
+pub unsafe fn StartDocW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hdc: Param0, lpdi: *const DOCINFOW) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartDocW(hdc: super::super::Graphics::Gdi::HDC, lpdi: *const DOCINFOW) -> i32;
+            fn StartDocW(hdc: ::win32_graphics::Gdi::HDC, lpdi: *const DOCINFOW) -> i32;
         }
         ::core::mem::transmute(StartDocW(hdc.into_param().abi(), ::core::mem::transmute(lpdi)))
     }
@@ -9179,12 +9041,12 @@ pub unsafe fn StartDocW<'a, Param0: ::windows_core::IntoParam<'a, super::super::
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn StartPage<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HDC>>(hdc: Param0) -> i32 {
+pub unsafe fn StartPage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HDC>>(hdc: Param0) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartPage(hdc: super::super::Graphics::Gdi::HDC) -> i32;
+            fn StartPage(hdc: ::win32_graphics::Gdi::HDC) -> i32;
         }
         ::core::mem::transmute(StartPage(hdc.into_param().abi()))
     }

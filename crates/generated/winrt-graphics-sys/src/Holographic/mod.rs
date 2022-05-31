@@ -101,8 +101,8 @@ impl ::core::clone::Clone for HolographicSpaceUserPresence {
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct HolographicStereoTransform {
-    pub Left: super::super::Foundation::Numerics::Matrix4x4,
-    pub Right: super::super::Foundation::Numerics::Matrix4x4,
+    pub Left: ::winrt_foundation_sys::Numerics::Matrix4x4,
+    pub Right: ::winrt_foundation_sys::Numerics::Matrix4x4,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for HolographicStereoTransform {}

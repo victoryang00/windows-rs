@@ -2,85 +2,63 @@
 extern "system" {
     pub fn AddAtomA(lpstring: ::windows_core_sys::PCSTR) -> u16;
     pub fn AddAtomW(lpstring: ::windows_core_sys::PCWSTR) -> u16;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AddClipboardFormatListener(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ChangeClipboardChain(hwndremove: super::super::Foundation::HWND, hwndnewnext: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseClipboard() -> super::super::Foundation::BOOL;
+    pub fn AddClipboardFormatListener(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
+    pub fn ChangeClipboardChain(hwndremove: ::win32_foundation_sys::HWND, hwndnewnext: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseClipboard() -> ::win32_foundation_sys::BOOL;
     pub fn CountClipboardFormats() -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeAbandonTransaction(idinst: u32, hconv: HCONV, idtransaction: u32) -> super::super::Foundation::BOOL;
+    pub fn DdeAbandonTransaction(idinst: u32, hconv: HCONV, idtransaction: u32) -> ::win32_foundation_sys::BOOL;
     pub fn DdeAccessData(hdata: HDDEDATA, pcbdatasize: *mut u32) -> *mut u8;
     pub fn DdeAddData(hdata: HDDEDATA, psrc: *const u8, cb: u32, cboff: u32) -> HDDEDATA;
     pub fn DdeClientTransaction(pdata: *const u8, cbdata: u32, hconv: HCONV, hszitem: HSZ, wfmt: u32, wtype: DDE_CLIENT_TRANSACTION_TYPE, dwtimeout: u32, pdwresult: *mut u32) -> HDDEDATA;
     pub fn DdeCmpStringHandles(hsz1: HSZ, hsz2: HSZ) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+    #[cfg(feature = "Win32_Security")]
     pub fn DdeConnect(idinst: u32, hszservice: HSZ, hsztopic: HSZ, pcc: *const CONVCONTEXT) -> HCONV;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+    #[cfg(feature = "Win32_Security")]
     pub fn DdeConnectList(idinst: u32, hszservice: HSZ, hsztopic: HSZ, hconvlist: HCONVLIST, pcc: *const CONVCONTEXT) -> HCONVLIST;
     pub fn DdeCreateDataHandle(idinst: u32, psrc: *const u8, cb: u32, cboff: u32, hszitem: HSZ, wfmt: u32, afcmd: u32) -> HDDEDATA;
     pub fn DdeCreateStringHandleA(idinst: u32, psz: ::windows_core_sys::PCSTR, icodepage: i32) -> HSZ;
     pub fn DdeCreateStringHandleW(idinst: u32, psz: ::windows_core_sys::PCWSTR, icodepage: i32) -> HSZ;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeDisconnect(hconv: HCONV) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeDisconnectList(hconvlist: HCONVLIST) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeEnableCallback(idinst: u32, hconv: HCONV, wcmd: DDE_ENABLE_CALLBACK_CMD) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeFreeDataHandle(hdata: HDDEDATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeFreeStringHandle(idinst: u32, hsz: HSZ) -> super::super::Foundation::BOOL;
+    pub fn DdeDisconnect(hconv: HCONV) -> ::win32_foundation_sys::BOOL;
+    pub fn DdeDisconnectList(hconvlist: HCONVLIST) -> ::win32_foundation_sys::BOOL;
+    pub fn DdeEnableCallback(idinst: u32, hconv: HCONV, wcmd: DDE_ENABLE_CALLBACK_CMD) -> ::win32_foundation_sys::BOOL;
+    pub fn DdeFreeDataHandle(hdata: HDDEDATA) -> ::win32_foundation_sys::BOOL;
+    pub fn DdeFreeStringHandle(idinst: u32, hsz: HSZ) -> ::win32_foundation_sys::BOOL;
     pub fn DdeGetData(hdata: HDDEDATA, pdst: *mut u8, cbmax: u32, cboff: u32) -> u32;
     pub fn DdeGetLastError(idinst: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeImpersonateClient(hconv: HCONV) -> super::super::Foundation::BOOL;
+    pub fn DdeImpersonateClient(hconv: HCONV) -> ::win32_foundation_sys::BOOL;
     pub fn DdeInitializeA(pidinst: *mut u32, pfncallback: PFNCALLBACK, afcmd: DDE_INITIALIZE_COMMAND, ulres: u32) -> u32;
     pub fn DdeInitializeW(pidinst: *mut u32, pfncallback: PFNCALLBACK, afcmd: DDE_INITIALIZE_COMMAND, ulres: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeKeepStringHandle(idinst: u32, hsz: HSZ) -> super::super::Foundation::BOOL;
+    pub fn DdeKeepStringHandle(idinst: u32, hsz: HSZ) -> ::win32_foundation_sys::BOOL;
     pub fn DdeNameService(idinst: u32, hsz1: HSZ, hsz2: HSZ, afcmd: DDE_NAME_SERVICE_CMD) -> HDDEDATA;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdePostAdvise(idinst: u32, hsztopic: HSZ, hszitem: HSZ) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+    pub fn DdePostAdvise(idinst: u32, hsztopic: HSZ, hszitem: HSZ) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
     pub fn DdeQueryConvInfo(hconv: HCONV, idtransaction: u32, pconvinfo: *mut CONVINFO) -> u32;
     pub fn DdeQueryNextServer(hconvlist: HCONVLIST, hconvprev: HCONV) -> HCONV;
     pub fn DdeQueryStringA(idinst: u32, hsz: HSZ, psz: ::windows_core_sys::PSTR, cchmax: u32, icodepage: i32) -> u32;
     pub fn DdeQueryStringW(idinst: u32, hsz: HSZ, psz: ::windows_core_sys::PWSTR, cchmax: u32, icodepage: i32) -> u32;
     pub fn DdeReconnect(hconv: HCONV) -> HCONV;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn DdeSetQualityOfService(hwndclient: super::super::Foundation::HWND, pqosnew: *const super::super::Security::SECURITY_QUALITY_OF_SERVICE, pqosprev: *mut super::super::Security::SECURITY_QUALITY_OF_SERVICE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeSetUserHandle(hconv: HCONV, id: u32, huser: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeUnaccessData(hdata: HDDEDATA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DdeUninitialize(idinst: u32) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn DdeSetQualityOfService(hwndclient: ::win32_foundation_sys::HWND, pqosnew: *const ::win32_security_sys::SECURITY_QUALITY_OF_SERVICE, pqosprev: *mut ::win32_security_sys::SECURITY_QUALITY_OF_SERVICE) -> ::win32_foundation_sys::BOOL;
+    pub fn DdeSetUserHandle(hconv: HCONV, id: u32, huser: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn DdeUnaccessData(hdata: HDDEDATA) -> ::win32_foundation_sys::BOOL;
+    pub fn DdeUninitialize(idinst: u32) -> ::win32_foundation_sys::BOOL;
     pub fn DeleteAtom(natom: u16) -> u16;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EmptyClipboard() -> super::super::Foundation::BOOL;
+    pub fn EmptyClipboard() -> ::win32_foundation_sys::BOOL;
     pub fn EnumClipboardFormats(format: u32) -> u32;
     pub fn FindAtomA(lpstring: ::windows_core_sys::PCSTR) -> u16;
     pub fn FindAtomW(lpstring: ::windows_core_sys::PCWSTR) -> u16;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FreeDDElParam(msg: u32, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+    pub fn FreeDDElParam(msg: u32, lparam: ::win32_foundation_sys::LPARAM) -> ::win32_foundation_sys::BOOL;
     pub fn GetAtomNameA(natom: u16, lpbuffer: ::windows_core_sys::PSTR, nsize: i32) -> u32;
     pub fn GetAtomNameW(natom: u16, lpbuffer: ::windows_core_sys::PWSTR, nsize: i32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetClipboardData(uformat: u32) -> super::super::Foundation::HANDLE;
+    pub fn GetClipboardData(uformat: u32) -> ::win32_foundation_sys::HANDLE;
     pub fn GetClipboardFormatNameA(format: u32, lpszformatname: ::windows_core_sys::PSTR, cchmaxcount: i32) -> i32;
     pub fn GetClipboardFormatNameW(format: u32, lpszformatname: ::windows_core_sys::PWSTR, cchmaxcount: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetClipboardOwner() -> super::super::Foundation::HWND;
+    pub fn GetClipboardOwner() -> ::win32_foundation_sys::HWND;
     pub fn GetClipboardSequenceNumber() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetClipboardViewer() -> super::super::Foundation::HWND;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetOpenClipboardWindow() -> super::super::Foundation::HWND;
+    pub fn GetClipboardViewer() -> ::win32_foundation_sys::HWND;
+    pub fn GetOpenClipboardWindow() -> ::win32_foundation_sys::HWND;
     pub fn GetPriorityClipboardFormat(paformatprioritylist: *const u32, cformats: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetUpdatedClipboardFormats(lpuiformats: *mut u32, cformats: u32, pcformatsout: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn GetUpdatedClipboardFormats(lpuiformats: *mut u32, cformats: u32, pcformatsout: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GlobalAddAtomA(lpstring: ::windows_core_sys::PCSTR) -> u16;
     pub fn GlobalAddAtomExA(lpstring: ::windows_core_sys::PCSTR, flags: u32) -> u16;
     pub fn GlobalAddAtomExW(lpstring: ::windows_core_sys::PCWSTR, flags: u32) -> u16;
@@ -90,36 +68,26 @@ extern "system" {
     pub fn GlobalFindAtomW(lpstring: ::windows_core_sys::PCWSTR) -> u16;
     pub fn GlobalGetAtomNameA(natom: u16, lpbuffer: ::windows_core_sys::PSTR, nsize: i32) -> u32;
     pub fn GlobalGetAtomNameW(natom: u16, lpbuffer: ::windows_core_sys::PWSTR, nsize: i32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ImpersonateDdeClientWindow(hwndclient: super::super::Foundation::HWND, hwndserver: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn InitAtomTable(nsize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsClipboardFormatAvailable(format: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenClipboard(hwndnewowner: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PackDDElParam(msg: u32, uilo: usize, uihi: usize) -> super::super::Foundation::LPARAM;
+    pub fn ImpersonateDdeClientWindow(hwndclient: ::win32_foundation_sys::HWND, hwndserver: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
+    pub fn InitAtomTable(nsize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn IsClipboardFormatAvailable(format: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn OpenClipboard(hwndnewowner: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
+    pub fn PackDDElParam(msg: u32, uilo: usize, uihi: usize) -> ::win32_foundation_sys::LPARAM;
     pub fn RegisterClipboardFormatA(lpszformat: ::windows_core_sys::PCSTR) -> u32;
     pub fn RegisterClipboardFormatW(lpszformat: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveClipboardFormatListener(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReuseDDElParam(lparam: super::super::Foundation::LPARAM, msgin: u32, msgout: u32, uilo: usize, uihi: usize) -> super::super::Foundation::LPARAM;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetClipboardData(uformat: u32, hmem: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetClipboardViewer(hwndnewviewer: super::super::Foundation::HWND) -> super::super::Foundation::HWND;
+    pub fn RemoveClipboardFormatListener(hwnd: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::BOOL;
+    pub fn ReuseDDElParam(lparam: ::win32_foundation_sys::LPARAM, msgin: u32, msgout: u32, uilo: usize, uihi: usize) -> ::win32_foundation_sys::LPARAM;
+    pub fn SetClipboardData(uformat: u32, hmem: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE;
+    pub fn SetClipboardViewer(hwndnewviewer: ::win32_foundation_sys::HWND) -> ::win32_foundation_sys::HWND;
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn SetWinMetaFileBits(nsize: u32, lpmeta16data: *const u8, hdcref: super::super::Graphics::Gdi::HDC, lpmfp: *const METAFILEPICT) -> super::super::Graphics::Gdi::HENHMETAFILE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UnpackDDElParam(msg: u32, lparam: super::super::Foundation::LPARAM, puilo: *mut usize, puihi: *mut usize) -> super::super::Foundation::BOOL;
+    pub fn SetWinMetaFileBits(nsize: u32, lpmeta16data: *const u8, hdcref: ::win32_graphics_sys::Gdi::HDC, lpmfp: *const METAFILEPICT) -> ::win32_graphics_sys::Gdi::HENHMETAFILE;
+    pub fn UnpackDDElParam(msg: u32, lparam: ::win32_foundation_sys::LPARAM, puilo: *mut usize, puihi: *mut usize) -> ::win32_foundation_sys::BOOL;
 }
 pub const APPCLASS_MASK: i32 = 15i32;
 pub const APPCMD_MASK: i32 = 4080i32;
 pub const CADV_LATEACK: u32 = 65535u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct CONVCONTEXT {
     pub cb: u32,
     pub wFlags: u32,
@@ -127,18 +95,18 @@ pub struct CONVCONTEXT {
     pub iCodePage: i32,
     pub dwLangID: u32,
     pub dwSecurity: u32,
-    pub qos: super::super::Security::SECURITY_QUALITY_OF_SERVICE,
+    pub qos: ::win32_security_sys::SECURITY_QUALITY_OF_SERVICE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for CONVCONTEXT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for CONVCONTEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct CONVINFO {
     pub cb: u32,
     pub hUser: usize,
@@ -154,12 +122,12 @@ pub struct CONVINFO {
     pub wLastError: u32,
     pub hConvList: HCONVLIST,
     pub ConvCtxt: CONVCONTEXT,
-    pub hwnd: super::super::Foundation::HWND,
-    pub hwndPartner: super::super::Foundation::HWND,
+    pub hwnd: ::win32_foundation_sys::HWND,
+    pub hwndPartner: ::win32_foundation_sys::HWND,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for CONVINFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for CONVINFO {
     fn clone(&self) -> Self {
         *self
@@ -391,7 +359,7 @@ pub struct METAFILEPICT {
     pub mm: i32,
     pub xExt: i32,
     pub yExt: i32,
-    pub hMF: super::super::Graphics::Gdi::HMETAFILE,
+    pub hMF: ::win32_graphics_sys::Gdi::HMETAFILE,
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 impl ::core::marker::Copy for METAFILEPICT {}
@@ -407,11 +375,11 @@ pub const MH_CREATE: u32 = 1u32;
 pub const MH_DELETE: u32 = 3u32;
 pub const MH_KEEP: u32 = 2u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct MONCBSTRUCT {
     pub cb: u32,
     pub dwTime: u32,
-    pub hTask: super::super::Foundation::HANDLE,
+    pub hTask: ::win32_foundation_sys::HANDLE,
     pub dwRet: u32,
     pub wType: u32,
     pub wFmt: u32,
@@ -425,125 +393,107 @@ pub struct MONCBSTRUCT {
     pub cbData: u32,
     pub Data: [u32; 8],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for MONCBSTRUCT {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for MONCBSTRUCT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MONCONVSTRUCT {
     pub cb: u32,
-    pub fConnect: super::super::Foundation::BOOL,
+    pub fConnect: ::win32_foundation_sys::BOOL,
     pub dwTime: u32,
-    pub hTask: super::super::Foundation::HANDLE,
+    pub hTask: ::win32_foundation_sys::HANDLE,
     pub hszSvc: HSZ,
     pub hszTopic: HSZ,
     pub hConvClient: HCONV,
     pub hConvServer: HCONV,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MONCONVSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MONCONVSTRUCT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MONERRSTRUCT {
     pub cb: u32,
     pub wLastError: u32,
     pub dwTime: u32,
-    pub hTask: super::super::Foundation::HANDLE,
+    pub hTask: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MONERRSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MONERRSTRUCT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MONHSZSTRUCTA {
     pub cb: u32,
-    pub fsAction: super::super::Foundation::BOOL,
+    pub fsAction: ::win32_foundation_sys::BOOL,
     pub dwTime: u32,
     pub hsz: HSZ,
-    pub hTask: super::super::Foundation::HANDLE,
-    pub str: [super::super::Foundation::CHAR; 1],
+    pub hTask: ::win32_foundation_sys::HANDLE,
+    pub str: [::win32_foundation_sys::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MONHSZSTRUCTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MONHSZSTRUCTA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MONHSZSTRUCTW {
     pub cb: u32,
-    pub fsAction: super::super::Foundation::BOOL,
+    pub fsAction: ::win32_foundation_sys::BOOL,
     pub dwTime: u32,
     pub hsz: HSZ,
-    pub hTask: super::super::Foundation::HANDLE,
+    pub hTask: ::win32_foundation_sys::HANDLE,
     pub str: [u16; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MONHSZSTRUCTW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MONHSZSTRUCTW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MONLINKSTRUCT {
     pub cb: u32,
     pub dwTime: u32,
-    pub hTask: super::super::Foundation::HANDLE,
-    pub fEstablished: super::super::Foundation::BOOL,
-    pub fNoData: super::super::Foundation::BOOL,
+    pub hTask: ::win32_foundation_sys::HANDLE,
+    pub fEstablished: ::win32_foundation_sys::BOOL,
+    pub fNoData: ::win32_foundation_sys::BOOL,
     pub hszSvc: HSZ,
     pub hszTopic: HSZ,
     pub hszItem: HSZ,
     pub wFmt: u32,
-    pub fServer: super::super::Foundation::BOOL,
+    pub fServer: ::win32_foundation_sys::BOOL,
     pub hConvServer: HCONV,
     pub hConvClient: HCONV,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MONLINKSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MONLINKSTRUCT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MONMSGSTRUCT {
     pub cb: u32,
-    pub hwndTo: super::super::Foundation::HWND,
+    pub hwndTo: ::win32_foundation_sys::HWND,
     pub dwTime: u32,
-    pub hTask: super::super::Foundation::HANDLE,
+    pub hTask: ::win32_foundation_sys::HANDLE,
     pub wMsg: u32,
-    pub wParam: super::super::Foundation::WPARAM,
-    pub lParam: super::super::Foundation::LPARAM,
+    pub wParam: ::win32_foundation_sys::WPARAM,
+    pub lParam: ::win32_foundation_sys::LPARAM,
     pub dmhd: DDEML_MSG_HOOK_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MONMSGSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MONMSGSTRUCT {
     fn clone(&self) -> Self {
         *self

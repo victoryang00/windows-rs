@@ -1,53 +1,49 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BuildCommDCBA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpdef: Param0, lpdcb: *mut DCB) -> super::super::Foundation::BOOL {
+pub unsafe fn BuildCommDCBA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpdef: Param0, lpdcb: *mut DCB) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BuildCommDCBA(lpdef: ::windows_core::PCSTR, lpdcb: *mut DCB) -> super::super::Foundation::BOOL;
+            fn BuildCommDCBA(lpdef: ::windows_core::PCSTR, lpdcb: *mut DCB) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(BuildCommDCBA(lpdef.into_param().abi(), ::core::mem::transmute(lpdcb)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BuildCommDCBAndTimeoutsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpdef: Param0, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL {
+pub unsafe fn BuildCommDCBAndTimeoutsA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpdef: Param0, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BuildCommDCBAndTimeoutsA(lpdef: ::windows_core::PCSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL;
+            fn BuildCommDCBAndTimeoutsA(lpdef: ::windows_core::PCSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(BuildCommDCBAndTimeoutsA(lpdef.into_param().abi(), ::core::mem::transmute(lpdcb), ::core::mem::transmute(lpcommtimeouts)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BuildCommDCBAndTimeoutsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpdef: Param0, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL {
+pub unsafe fn BuildCommDCBAndTimeoutsW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpdef: Param0, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BuildCommDCBAndTimeoutsW(lpdef: ::windows_core::PCWSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL;
+            fn BuildCommDCBAndTimeoutsW(lpdef: ::windows_core::PCWSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(BuildCommDCBAndTimeoutsW(lpdef.into_param().abi(), ::core::mem::transmute(lpdcb), ::core::mem::transmute(lpcommtimeouts)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BuildCommDCBW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpdef: Param0, lpdcb: *mut DCB) -> super::super::Foundation::BOOL {
+pub unsafe fn BuildCommDCBW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpdef: Param0, lpdcb: *mut DCB) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BuildCommDCBW(lpdef: ::windows_core::PCWSTR, lpdcb: *mut DCB) -> super::super::Foundation::BOOL;
+            fn BuildCommDCBW(lpdef: ::windows_core::PCWSTR, lpdcb: *mut DCB) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(BuildCommDCBW(lpdef.into_param().abi(), ::core::mem::transmute(lpdcb)))
     }
@@ -110,7 +106,6 @@ impl ::core::ops::Not for CLEAR_COMM_ERROR_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COMMCONFIG {
     pub dwSize: u32,
     pub wVersion: u16,
@@ -121,33 +116,26 @@ pub struct COMMCONFIG {
     pub dwProviderSize: u32,
     pub wcProviderData: [u16; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COMMCONFIG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COMMCONFIG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for COMMCONFIG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("COMMCONFIG").field("dwSize", &self.dwSize).field("wVersion", &self.wVersion).field("wReserved", &self.wReserved).field("dcb", &self.dcb).field("dwProviderSubType", &self.dwProviderSubType).field("dwProviderOffset", &self.dwProviderOffset).field("dwProviderSize", &self.dwProviderSize).field("wcProviderData", &self.wcProviderData).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for COMMCONFIG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for COMMCONFIG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<COMMCONFIG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for COMMCONFIG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for COMMCONFIG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -403,56 +391,52 @@ impl ::core::default::Default for COMSTAT {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ClearCommBreak<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn ClearCommBreak<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ClearCommBreak(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn ClearCommBreak(hfile: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ClearCommBreak(hfile.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ClearCommError<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, lperrors: *mut CLEAR_COMM_ERROR_FLAGS, lpstat: *mut COMSTAT) -> super::super::Foundation::BOOL {
+pub unsafe fn ClearCommError<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, lperrors: *mut CLEAR_COMM_ERROR_FLAGS, lpstat: *mut COMSTAT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ClearCommError(hfile: super::super::Foundation::HANDLE, lperrors: *mut CLEAR_COMM_ERROR_FLAGS, lpstat: *mut COMSTAT) -> super::super::Foundation::BOOL;
+            fn ClearCommError(hfile: ::win32_foundation::HANDLE, lperrors: *mut CLEAR_COMM_ERROR_FLAGS, lpstat: *mut COMSTAT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ClearCommError(hfile.into_param().abi(), ::core::mem::transmute(lperrors), ::core::mem::transmute(lpstat)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CommConfigDialogA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(lpszname: Param0, hwnd: Param1, lpcc: *mut COMMCONFIG) -> super::super::Foundation::BOOL {
+pub unsafe fn CommConfigDialogA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(lpszname: Param0, hwnd: Param1, lpcc: *mut COMMCONFIG) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CommConfigDialogA(lpszname: ::windows_core::PCSTR, hwnd: super::super::Foundation::HWND, lpcc: *mut COMMCONFIG) -> super::super::Foundation::BOOL;
+            fn CommConfigDialogA(lpszname: ::windows_core::PCSTR, hwnd: ::win32_foundation::HWND, lpcc: *mut COMMCONFIG) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CommConfigDialogA(lpszname.into_param().abi(), hwnd.into_param().abi(), ::core::mem::transmute(lpcc)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CommConfigDialogW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(lpszname: Param0, hwnd: Param1, lpcc: *mut COMMCONFIG) -> super::super::Foundation::BOOL {
+pub unsafe fn CommConfigDialogW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(lpszname: Param0, hwnd: Param1, lpcc: *mut COMMCONFIG) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CommConfigDialogW(lpszname: ::windows_core::PCWSTR, hwnd: super::super::Foundation::HWND, lpcc: *mut COMMCONFIG) -> super::super::Foundation::BOOL;
+            fn CommConfigDialogW(lpszname: ::windows_core::PCWSTR, hwnd: ::win32_foundation::HWND, lpcc: *mut COMMCONFIG) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CommConfigDialogW(lpszname.into_param().abi(), hwnd.into_param().abi(), ::core::mem::transmute(lpcc)))
     }
@@ -460,7 +444,6 @@ pub unsafe fn CommConfigDialogW<'a, Param0: ::windows_core::IntoParam<'a, ::wind
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DCB {
     pub DCBlength: u32,
     pub BaudRate: u32,
@@ -471,22 +454,19 @@ pub struct DCB {
     pub ByteSize: u8,
     pub Parity: DCB_PARITY,
     pub StopBits: DCB_STOP_BITS,
-    pub XonChar: super::super::Foundation::CHAR,
-    pub XoffChar: super::super::Foundation::CHAR,
-    pub ErrorChar: super::super::Foundation::CHAR,
-    pub EofChar: super::super::Foundation::CHAR,
-    pub EvtChar: super::super::Foundation::CHAR,
+    pub XonChar: ::win32_foundation::CHAR,
+    pub XoffChar: ::win32_foundation::CHAR,
+    pub ErrorChar: ::win32_foundation::CHAR,
+    pub EofChar: ::win32_foundation::CHAR,
+    pub EvtChar: ::win32_foundation::CHAR,
     pub wReserved1: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DCB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DCB {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DCB {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DCB")
@@ -508,19 +488,15 @@ impl ::core::fmt::Debug for DCB {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DCB {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DCB {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DCB>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DCB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DCB {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -608,56 +584,52 @@ impl ::core::fmt::Debug for ESCAPE_COMM_FUNCTION {
         f.debug_tuple("ESCAPE_COMM_FUNCTION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EscapeCommFunction<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, dwfunc: ESCAPE_COMM_FUNCTION) -> super::super::Foundation::BOOL {
+pub unsafe fn EscapeCommFunction<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, dwfunc: ESCAPE_COMM_FUNCTION) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EscapeCommFunction(hfile: super::super::Foundation::HANDLE, dwfunc: ESCAPE_COMM_FUNCTION) -> super::super::Foundation::BOOL;
+            fn EscapeCommFunction(hfile: ::win32_foundation::HANDLE, dwfunc: ESCAPE_COMM_FUNCTION) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EscapeCommFunction(hfile.into_param().abi(), ::core::mem::transmute(dwfunc)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCommConfig<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hcommdev: Param0, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCommConfig<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hcommdev: Param0, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCommConfig(hcommdev: super::super::Foundation::HANDLE, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetCommConfig(hcommdev: ::win32_foundation::HANDLE, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetCommConfig(hcommdev.into_param().abi(), ::core::mem::transmute(lpcc), ::core::mem::transmute(lpdwsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCommMask<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, lpevtmask: *mut COMM_EVENT_MASK) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCommMask<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, lpevtmask: *mut COMM_EVENT_MASK) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCommMask(hfile: super::super::Foundation::HANDLE, lpevtmask: *mut COMM_EVENT_MASK) -> super::super::Foundation::BOOL;
+            fn GetCommMask(hfile: ::win32_foundation::HANDLE, lpevtmask: *mut COMM_EVENT_MASK) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetCommMask(hfile.into_param().abi(), ::core::mem::transmute(lpevtmask)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCommModemStatus<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, lpmodemstat: *mut MODEM_STATUS_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCommModemStatus<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, lpmodemstat: *mut MODEM_STATUS_FLAGS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCommModemStatus(hfile: super::super::Foundation::HANDLE, lpmodemstat: *mut MODEM_STATUS_FLAGS) -> super::super::Foundation::BOOL;
+            fn GetCommModemStatus(hfile: ::win32_foundation::HANDLE, lpmodemstat: *mut MODEM_STATUS_FLAGS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetCommModemStatus(hfile.into_param().abi(), ::core::mem::transmute(lpmodemstat)))
     }
@@ -677,70 +649,65 @@ pub unsafe fn GetCommPorts(lpportnumbers: &mut [u32], puportnumbersfound: *mut u
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCommProperties<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, lpcommprop: *mut COMMPROP) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCommProperties<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, lpcommprop: *mut COMMPROP) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCommProperties(hfile: super::super::Foundation::HANDLE, lpcommprop: *mut COMMPROP) -> super::super::Foundation::BOOL;
+            fn GetCommProperties(hfile: ::win32_foundation::HANDLE, lpcommprop: *mut COMMPROP) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetCommProperties(hfile.into_param().abi(), ::core::mem::transmute(lpcommprop)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCommState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, lpdcb: *mut DCB) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCommState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, lpdcb: *mut DCB) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCommState(hfile: super::super::Foundation::HANDLE, lpdcb: *mut DCB) -> super::super::Foundation::BOOL;
+            fn GetCommState(hfile: ::win32_foundation::HANDLE, lpdcb: *mut DCB) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetCommState(hfile.into_param().abi(), ::core::mem::transmute(lpdcb)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetCommTimeouts<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL {
+pub unsafe fn GetCommTimeouts<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, lpcommtimeouts: *mut COMMTIMEOUTS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetCommTimeouts(hfile: super::super::Foundation::HANDLE, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL;
+            fn GetCommTimeouts(hfile: ::win32_foundation::HANDLE, lpcommtimeouts: *mut COMMTIMEOUTS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetCommTimeouts(hfile.into_param().abi(), ::core::mem::transmute(lpcommtimeouts)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDefaultCommConfigA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszname: Param0, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetDefaultCommConfigA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszname: Param0, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDefaultCommConfigA(lpszname: ::windows_core::PCSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetDefaultCommConfigA(lpszname: ::windows_core::PCSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetDefaultCommConfigA(lpszname.into_param().abi(), ::core::mem::transmute(lpcc), ::core::mem::transmute(lpdwsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDefaultCommConfigW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszname: Param0, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetDefaultCommConfigW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszname: Param0, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDefaultCommConfigW(lpszname: ::windows_core::PCWSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetDefaultCommConfigW(lpszname: ::windows_core::PCWSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetDefaultCommConfigW(lpszname.into_param().abi(), ::core::mem::transmute(lpcc), ::core::mem::transmute(lpdwsize)))
     }
@@ -1225,14 +1192,13 @@ impl ::core::ops::Not for MODEM_STATUS_FLAGS {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenCommPort(uportnumber: u32, dwdesiredaccess: u32, dwflagsandattributes: u32) -> super::super::Foundation::HANDLE {
+pub unsafe fn OpenCommPort(uportnumber: u32, dwdesiredaccess: u32, dwflagsandattributes: u32) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenCommPort(uportnumber: u32, dwdesiredaccess: u32, dwflagsandattributes: u32) -> super::super::Foundation::HANDLE;
+            fn OpenCommPort(uportnumber: u32, dwdesiredaccess: u32, dwflagsandattributes: u32) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(OpenCommPort(::core::mem::transmute(uportnumber), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(dwflagsandattributes)))
     }
@@ -1293,14 +1259,13 @@ impl ::core::ops::Not for PURGE_COMM_FLAGS {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PurgeComm<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, dwflags: PURGE_COMM_FLAGS) -> super::super::Foundation::BOOL {
+pub unsafe fn PurgeComm<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, dwflags: PURGE_COMM_FLAGS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PurgeComm(hfile: super::super::Foundation::HANDLE, dwflags: PURGE_COMM_FLAGS) -> super::super::Foundation::BOOL;
+            fn PurgeComm(hfile: ::win32_foundation::HANDLE, dwflags: PURGE_COMM_FLAGS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PurgeComm(hfile.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
@@ -1308,140 +1273,131 @@ pub unsafe fn PurgeComm<'a, Param0: ::windows_core::IntoParam<'a, super::super::
     unimplemented!("Unsupported target OS");
 }
 pub const SID_3GPP_SUPSVCMODEL: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xd7d08e07_d767_4478_b14a_eecc87ea12f7);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCommBreak<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCommBreak<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCommBreak(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn SetCommBreak(hfile: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetCommBreak(hfile.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCommConfig<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hcommdev: Param0, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCommConfig<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hcommdev: Param0, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCommConfig(hcommdev: super::super::Foundation::HANDLE, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL;
+            fn SetCommConfig(hcommdev: ::win32_foundation::HANDLE, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetCommConfig(hcommdev.into_param().abi(), ::core::mem::transmute(lpcc), ::core::mem::transmute(dwsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCommMask<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, dwevtmask: COMM_EVENT_MASK) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCommMask<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, dwevtmask: COMM_EVENT_MASK) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCommMask(hfile: super::super::Foundation::HANDLE, dwevtmask: COMM_EVENT_MASK) -> super::super::Foundation::BOOL;
+            fn SetCommMask(hfile: ::win32_foundation::HANDLE, dwevtmask: COMM_EVENT_MASK) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetCommMask(hfile.into_param().abi(), ::core::mem::transmute(dwevtmask)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCommState<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, lpdcb: *const DCB) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCommState<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, lpdcb: *const DCB) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCommState(hfile: super::super::Foundation::HANDLE, lpdcb: *const DCB) -> super::super::Foundation::BOOL;
+            fn SetCommState(hfile: ::win32_foundation::HANDLE, lpdcb: *const DCB) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetCommState(hfile.into_param().abi(), ::core::mem::transmute(lpdcb)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetCommTimeouts<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, lpcommtimeouts: *const COMMTIMEOUTS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetCommTimeouts<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, lpcommtimeouts: *const COMMTIMEOUTS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetCommTimeouts(hfile: super::super::Foundation::HANDLE, lpcommtimeouts: *const COMMTIMEOUTS) -> super::super::Foundation::BOOL;
+            fn SetCommTimeouts(hfile: ::win32_foundation::HANDLE, lpcommtimeouts: *const COMMTIMEOUTS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetCommTimeouts(hfile.into_param().abi(), ::core::mem::transmute(lpcommtimeouts)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDefaultCommConfigA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszname: Param0, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDefaultCommConfigA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszname: Param0, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetDefaultCommConfigA(lpszname: ::windows_core::PCSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL;
+            fn SetDefaultCommConfigA(lpszname: ::windows_core::PCSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetDefaultCommConfigA(lpszname.into_param().abi(), ::core::mem::transmute(lpcc), ::core::mem::transmute(dwsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDefaultCommConfigW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszname: Param0, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDefaultCommConfigW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszname: Param0, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetDefaultCommConfigW(lpszname: ::windows_core::PCWSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL;
+            fn SetDefaultCommConfigW(lpszname: ::windows_core::PCWSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetDefaultCommConfigW(lpszname.into_param().abi(), ::core::mem::transmute(lpcc), ::core::mem::transmute(dwsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetupComm<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, dwinqueue: u32, dwoutqueue: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetupComm<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, dwinqueue: u32, dwoutqueue: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetupComm(hfile: super::super::Foundation::HANDLE, dwinqueue: u32, dwoutqueue: u32) -> super::super::Foundation::BOOL;
+            fn SetupComm(hfile: ::win32_foundation::HANDLE, dwinqueue: u32, dwoutqueue: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetupComm(hfile.into_param().abi(), ::core::mem::transmute(dwinqueue), ::core::mem::transmute(dwoutqueue)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TransmitCommChar<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::CHAR>>(hfile: Param0, cchar: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn TransmitCommChar<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::CHAR>>(hfile: Param0, cchar: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TransmitCommChar(hfile: super::super::Foundation::HANDLE, cchar: super::super::Foundation::CHAR) -> super::super::Foundation::BOOL;
+            fn TransmitCommChar(hfile: ::win32_foundation::HANDLE, cchar: ::win32_foundation::CHAR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(TransmitCommChar(hfile.into_param().abi(), cchar.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn WaitCommEvent<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hfile: Param0, lpevtmask: *mut COMM_EVENT_MASK, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
+pub unsafe fn WaitCommEvent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hfile: Param0, lpevtmask: *mut COMM_EVENT_MASK, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WaitCommEvent(hfile: super::super::Foundation::HANDLE, lpevtmask: *mut COMM_EVENT_MASK, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+            fn WaitCommEvent(hfile: ::win32_foundation::HANDLE, lpevtmask: *mut COMM_EVENT_MASK, lpoverlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(WaitCommEvent(hfile.into_param().abi(), ::core::mem::transmute(lpevtmask), ::core::mem::transmute(lpoverlapped)))
     }

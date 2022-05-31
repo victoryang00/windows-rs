@@ -348,56 +348,53 @@ impl ::core::fmt::Debug for ATTACH_VIRTUAL_DISK_VERSION {
         f.debug_tuple("ATTACH_VIRTUAL_DISK_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AddVirtualDiskParent<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(virtualdiskhandle: Param0, parentpath: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn AddVirtualDiskParent<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(virtualdiskhandle: Param0, parentpath: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AddVirtualDiskParent(virtualdiskhandle: super::super::Foundation::HANDLE, parentpath: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn AddVirtualDiskParent(virtualdiskhandle: ::win32_foundation::HANDLE, parentpath: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(AddVirtualDiskParent(virtualdiskhandle.into_param().abi(), parentpath.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ApplySnapshotVhdSet<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const APPLY_SNAPSHOT_VHDSET_PARAMETERS, flags: APPLY_SNAPSHOT_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn ApplySnapshotVhdSet<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const APPLY_SNAPSHOT_VHDSET_PARAMETERS, flags: APPLY_SNAPSHOT_VHDSET_FLAG) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ApplySnapshotVhdSet(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const APPLY_SNAPSHOT_VHDSET_PARAMETERS, flags: APPLY_SNAPSHOT_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR;
+            fn ApplySnapshotVhdSet(virtualdiskhandle: ::win32_foundation::HANDLE, parameters: *const APPLY_SNAPSHOT_VHDSET_PARAMETERS, flags: APPLY_SNAPSHOT_VHDSET_FLAG) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(ApplySnapshotVhdSet(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(parameters), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_IO"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn AttachVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(virtualdiskhandle: Param0, securitydescriptor: Param1, flags: ATTACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const ATTACH_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn AttachVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(virtualdiskhandle: Param0, securitydescriptor: Param1, flags: ATTACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const ATTACH_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AttachVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, securitydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, flags: ATTACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const ATTACH_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
+            fn AttachVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, securitydescriptor: ::win32_security::PSECURITY_DESCRIPTOR, flags: ATTACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const ATTACH_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(AttachVirtualDisk(virtualdiskhandle.into_param().abi(), securitydescriptor.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(providerspecificflags), ::core::mem::transmute(parameters), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BreakMirrorVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn BreakMirrorVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BreakMirrorVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR;
+            fn BreakMirrorVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(BreakMirrorVirtualDisk(virtualdiskhandle.into_param().abi()))
     }
@@ -901,42 +898,41 @@ impl ::core::fmt::Debug for CREATE_VIRTUAL_DISK_VERSION {
         f.debug_tuple("CREATE_VIRTUAL_DISK_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn CompactVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, flags: COMPACT_VIRTUAL_DISK_FLAG, parameters: *const COMPACT_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn CompactVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: COMPACT_VIRTUAL_DISK_FLAG, parameters: *const COMPACT_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CompactVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: COMPACT_VIRTUAL_DISK_FLAG, parameters: *const COMPACT_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
+            fn CompactVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, flags: COMPACT_VIRTUAL_DISK_FLAG, parameters: *const COMPACT_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(CompactVirtualDisk(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(parameters), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CompleteForkVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn CompleteForkVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CompleteForkVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR;
+            fn CompleteForkVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(CompleteForkVirtualDisk(virtualdiskhandle.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_IO"))]
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_IO"))]
 #[inline]
-pub unsafe fn CreateVirtualDisk<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: Param1, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, securitydescriptor: Param3, flags: CREATE_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const CREATE_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED, handle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn CreateVirtualDisk<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: Param1, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, securitydescriptor: Param3, flags: CREATE_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const CREATE_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED, handle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateVirtualDisk(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: ::windows_core::PCWSTR, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, securitydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, flags: CREATE_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const CREATE_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED, handle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR;
+            fn CreateVirtualDisk(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: ::windows_core::PCWSTR, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, securitydescriptor: ::win32_security::PSECURITY_DESCRIPTOR, flags: CREATE_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const CREATE_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED, handle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(CreateVirtualDisk(::core::mem::transmute(virtualstoragetype), path.into_param().abi(), ::core::mem::transmute(virtualdiskaccessmask), securitydescriptor.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(providerspecificflags), ::core::mem::transmute(parameters), ::core::mem::transmute(overlapped), ::core::mem::transmute(handle)))
     }
@@ -1213,42 +1209,39 @@ impl ::core::ops::Not for DETACH_VIRTUAL_DISK_FLAG {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteSnapshotVhdSet<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const DELETE_SNAPSHOT_VHDSET_PARAMETERS, flags: DELETE_SNAPSHOT_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn DeleteSnapshotVhdSet<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const DELETE_SNAPSHOT_VHDSET_PARAMETERS, flags: DELETE_SNAPSHOT_VHDSET_FLAG) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeleteSnapshotVhdSet(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const DELETE_SNAPSHOT_VHDSET_PARAMETERS, flags: DELETE_SNAPSHOT_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR;
+            fn DeleteSnapshotVhdSet(virtualdiskhandle: ::win32_foundation::HANDLE, parameters: *const DELETE_SNAPSHOT_VHDSET_PARAMETERS, flags: DELETE_SNAPSHOT_VHDSET_FLAG) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(DeleteSnapshotVhdSet(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(parameters), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeleteVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, item: *const ::windows_core::GUID) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn DeleteVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, item: *const ::windows_core::GUID) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeleteVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, item: *const ::windows_core::GUID) -> super::super::Foundation::WIN32_ERROR;
+            fn DeleteVirtualDiskMetadata(virtualdiskhandle: ::win32_foundation::HANDLE, item: *const ::windows_core::GUID) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(DeleteVirtualDiskMetadata(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(item)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DetachVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, flags: DETACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn DetachVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: DETACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DetachVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: DETACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn DetachVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, flags: DETACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(DetachVirtualDisk(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(providerspecificflags)))
     }
@@ -1409,28 +1402,27 @@ impl ::core::fmt::Debug for EXPAND_VIRTUAL_DISK_VERSION {
         f.debug_tuple("EXPAND_VIRTUAL_DISK_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumerateVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, numberofitems: *mut u32, items: *mut ::windows_core::GUID) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn EnumerateVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, numberofitems: *mut u32, items: *mut ::windows_core::GUID) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumerateVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, numberofitems: *mut u32, items: *mut ::windows_core::GUID) -> super::super::Foundation::WIN32_ERROR;
+            fn EnumerateVirtualDiskMetadata(virtualdiskhandle: ::win32_foundation::HANDLE, numberofitems: *mut u32, items: *mut ::windows_core::GUID) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(EnumerateVirtualDiskMetadata(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(numberofitems), ::core::mem::transmute(items)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn ExpandVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, flags: EXPAND_VIRTUAL_DISK_FLAG, parameters: *const EXPAND_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn ExpandVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: EXPAND_VIRTUAL_DISK_FLAG, parameters: *const EXPAND_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ExpandVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: EXPAND_VIRTUAL_DISK_FLAG, parameters: *const EXPAND_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
+            fn ExpandVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, flags: EXPAND_VIRTUAL_DISK_FLAG, parameters: *const EXPAND_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(ExpandVirtualDisk(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(parameters), ::core::mem::transmute(overlapped)))
     }
@@ -1591,14 +1583,14 @@ impl ::core::fmt::Debug for FORK_VIRTUAL_DISK_VERSION {
         f.debug_tuple("FORK_VIRTUAL_DISK_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn ForkVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, flags: FORK_VIRTUAL_DISK_FLAG, parameters: *const FORK_VIRTUAL_DISK_PARAMETERS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn ForkVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: FORK_VIRTUAL_DISK_FLAG, parameters: *const FORK_VIRTUAL_DISK_PARAMETERS, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ForkVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: FORK_VIRTUAL_DISK_FLAG, parameters: *const FORK_VIRTUAL_DISK_PARAMETERS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
+            fn ForkVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, flags: FORK_VIRTUAL_DISK_FLAG, parameters: *const FORK_VIRTUAL_DISK_PARAMETERS, overlapped: *mut ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(ForkVirtualDisk(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(parameters), ::core::mem::transmute(overlapped)))
     }
@@ -1659,39 +1651,31 @@ impl ::core::ops::Not for GET_STORAGE_DEPENDENCY_FLAG {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GET_VIRTUAL_DISK_INFO {
     pub Version: GET_VIRTUAL_DISK_INFO_VERSION,
     pub Anonymous: GET_VIRTUAL_DISK_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GET_VIRTUAL_DISK_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GET_VIRTUAL_DISK_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GET_VIRTUAL_DISK_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GET_VIRTUAL_DISK_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GET_VIRTUAL_DISK_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GET_VIRTUAL_DISK_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GET_VIRTUAL_DISK_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union GET_VIRTUAL_DISK_INFO_0 {
     pub Size: GET_VIRTUAL_DISK_INFO_0_3,
     pub Identifier: ::windows_core::GUID,
@@ -1700,8 +1684,8 @@ pub union GET_VIRTUAL_DISK_INFO_0 {
     pub ParentTimestamp: u32,
     pub VirtualStorageType: VIRTUAL_STORAGE_TYPE,
     pub ProviderSubtype: u32,
-    pub Is4kAligned: super::super::Foundation::BOOL,
-    pub IsLoaded: super::super::Foundation::BOOL,
+    pub Is4kAligned: ::win32_foundation::BOOL,
+    pub IsLoaded: ::win32_foundation::BOOL,
     pub PhysicalDisk: GET_VIRTUAL_DISK_INFO_0_2,
     pub VhdPhysicalSectorSize: u32,
     pub SmallestSafeVirtualSize: u64,
@@ -1709,183 +1693,145 @@ pub union GET_VIRTUAL_DISK_INFO_0 {
     pub VirtualDiskId: ::windows_core::GUID,
     pub ChangeTrackingState: GET_VIRTUAL_DISK_INFO_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GET_VIRTUAL_DISK_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GET_VIRTUAL_DISK_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GET_VIRTUAL_DISK_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GET_VIRTUAL_DISK_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GET_VIRTUAL_DISK_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GET_VIRTUAL_DISK_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GET_VIRTUAL_DISK_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GET_VIRTUAL_DISK_INFO_0_0 {
-    pub Enabled: super::super::Foundation::BOOL,
-    pub NewerChanges: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation::BOOL,
+    pub NewerChanges: ::win32_foundation::BOOL,
     pub MostRecentId: [u16; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GET_VIRTUAL_DISK_INFO_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GET_VIRTUAL_DISK_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for GET_VIRTUAL_DISK_INFO_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GET_VIRTUAL_DISK_INFO_0_0").field("Enabled", &self.Enabled).field("NewerChanges", &self.NewerChanges).field("MostRecentId", &self.MostRecentId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GET_VIRTUAL_DISK_INFO_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GET_VIRTUAL_DISK_INFO_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GET_VIRTUAL_DISK_INFO_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GET_VIRTUAL_DISK_INFO_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GET_VIRTUAL_DISK_INFO_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GET_VIRTUAL_DISK_INFO_0_1 {
-    pub ParentResolved: super::super::Foundation::BOOL,
+    pub ParentResolved: ::win32_foundation::BOOL,
     pub ParentLocationBuffer: [u16; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GET_VIRTUAL_DISK_INFO_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GET_VIRTUAL_DISK_INFO_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for GET_VIRTUAL_DISK_INFO_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GET_VIRTUAL_DISK_INFO_0_1").field("ParentResolved", &self.ParentResolved).field("ParentLocationBuffer", &self.ParentLocationBuffer).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GET_VIRTUAL_DISK_INFO_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GET_VIRTUAL_DISK_INFO_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GET_VIRTUAL_DISK_INFO_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GET_VIRTUAL_DISK_INFO_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GET_VIRTUAL_DISK_INFO_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GET_VIRTUAL_DISK_INFO_0_2 {
     pub LogicalSectorSize: u32,
     pub PhysicalSectorSize: u32,
-    pub IsRemote: super::super::Foundation::BOOL,
+    pub IsRemote: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GET_VIRTUAL_DISK_INFO_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GET_VIRTUAL_DISK_INFO_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for GET_VIRTUAL_DISK_INFO_0_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GET_VIRTUAL_DISK_INFO_0_2").field("LogicalSectorSize", &self.LogicalSectorSize).field("PhysicalSectorSize", &self.PhysicalSectorSize).field("IsRemote", &self.IsRemote).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GET_VIRTUAL_DISK_INFO_0_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GET_VIRTUAL_DISK_INFO_0_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GET_VIRTUAL_DISK_INFO_0_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GET_VIRTUAL_DISK_INFO_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GET_VIRTUAL_DISK_INFO_0_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GET_VIRTUAL_DISK_INFO_0_3 {
     pub VirtualSize: u64,
     pub PhysicalSize: u64,
     pub BlockSize: u32,
     pub SectorSize: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GET_VIRTUAL_DISK_INFO_0_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GET_VIRTUAL_DISK_INFO_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for GET_VIRTUAL_DISK_INFO_0_3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GET_VIRTUAL_DISK_INFO_0_3").field("VirtualSize", &self.VirtualSize).field("PhysicalSize", &self.PhysicalSize).field("BlockSize", &self.BlockSize).field("SectorSize", &self.SectorSize).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GET_VIRTUAL_DISK_INFO_0_3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GET_VIRTUAL_DISK_INFO_0_3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GET_VIRTUAL_DISK_INFO_0_3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GET_VIRTUAL_DISK_INFO_0_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GET_VIRTUAL_DISK_INFO_0_3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1929,84 +1875,79 @@ impl ::core::fmt::Debug for GET_VIRTUAL_DISK_INFO_VERSION {
         f.debug_tuple("GET_VIRTUAL_DISK_INFO_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetAllAttachedVirtualDiskPhysicalPaths(pathsbuffersizeinbytes: *mut u32, pathsbuffer: ::windows_core::PWSTR) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn GetAllAttachedVirtualDiskPhysicalPaths(pathsbuffersizeinbytes: *mut u32, pathsbuffer: ::windows_core::PWSTR) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetAllAttachedVirtualDiskPhysicalPaths(pathsbuffersizeinbytes: *mut u32, pathsbuffer: ::windows_core::PWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn GetAllAttachedVirtualDiskPhysicalPaths(pathsbuffersizeinbytes: *mut u32, pathsbuffer: ::windows_core::PWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(GetAllAttachedVirtualDiskPhysicalPaths(::core::mem::transmute(pathsbuffersizeinbytes), ::core::mem::transmute(pathsbuffer)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetStorageDependencyInformation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(objecthandle: Param0, flags: GET_STORAGE_DEPENDENCY_FLAG, storagedependencyinfosize: u32, storagedependencyinfo: *mut STORAGE_DEPENDENCY_INFO, sizeused: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn GetStorageDependencyInformation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(objecthandle: Param0, flags: GET_STORAGE_DEPENDENCY_FLAG, storagedependencyinfosize: u32, storagedependencyinfo: *mut STORAGE_DEPENDENCY_INFO, sizeused: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetStorageDependencyInformation(objecthandle: super::super::Foundation::HANDLE, flags: GET_STORAGE_DEPENDENCY_FLAG, storagedependencyinfosize: u32, storagedependencyinfo: *mut STORAGE_DEPENDENCY_INFO, sizeused: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn GetStorageDependencyInformation(objecthandle: ::win32_foundation::HANDLE, flags: GET_STORAGE_DEPENDENCY_FLAG, storagedependencyinfosize: u32, storagedependencyinfo: *mut STORAGE_DEPENDENCY_INFO, sizeused: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(GetStorageDependencyInformation(objecthandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(storagedependencyinfosize), ::core::mem::transmute(storagedependencyinfo), ::core::mem::transmute(sizeused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetVirtualDiskInformation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, virtualdiskinfosize: *mut u32, virtualdiskinfo: *mut GET_VIRTUAL_DISK_INFO, sizeused: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn GetVirtualDiskInformation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, virtualdiskinfosize: *mut u32, virtualdiskinfo: *mut GET_VIRTUAL_DISK_INFO, sizeused: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetVirtualDiskInformation(virtualdiskhandle: super::super::Foundation::HANDLE, virtualdiskinfosize: *mut u32, virtualdiskinfo: *mut GET_VIRTUAL_DISK_INFO, sizeused: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn GetVirtualDiskInformation(virtualdiskhandle: ::win32_foundation::HANDLE, virtualdiskinfosize: *mut u32, virtualdiskinfo: *mut GET_VIRTUAL_DISK_INFO, sizeused: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(GetVirtualDiskInformation(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(virtualdiskinfosize), ::core::mem::transmute(virtualdiskinfo), ::core::mem::transmute(sizeused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, item: *const ::windows_core::GUID, metadatasize: *mut u32, metadata: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn GetVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, item: *const ::windows_core::GUID, metadatasize: *mut u32, metadata: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, item: *const ::windows_core::GUID, metadatasize: *mut u32, metadata: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+            fn GetVirtualDiskMetadata(virtualdiskhandle: ::win32_foundation::HANDLE, item: *const ::windows_core::GUID, metadatasize: *mut u32, metadata: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(GetVirtualDiskMetadata(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(item), ::core::mem::transmute(metadatasize), ::core::mem::transmute(metadata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn GetVirtualDiskOperationProgress<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, overlapped: *const super::super::System::IO::OVERLAPPED, progress: *mut VIRTUAL_DISK_PROGRESS) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn GetVirtualDiskOperationProgress<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, overlapped: *const ::win32_system::IO::OVERLAPPED, progress: *mut VIRTUAL_DISK_PROGRESS) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetVirtualDiskOperationProgress(virtualdiskhandle: super::super::Foundation::HANDLE, overlapped: *const super::super::System::IO::OVERLAPPED, progress: *mut VIRTUAL_DISK_PROGRESS) -> super::super::Foundation::WIN32_ERROR;
+            fn GetVirtualDiskOperationProgress(virtualdiskhandle: ::win32_foundation::HANDLE, overlapped: *const ::win32_system::IO::OVERLAPPED, progress: *mut VIRTUAL_DISK_PROGRESS) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(GetVirtualDiskOperationProgress(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(overlapped), ::core::mem::transmute(progress)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetVirtualDiskPhysicalPath<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, diskpathsizeinbytes: *mut u32, diskpath: ::windows_core::PWSTR) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn GetVirtualDiskPhysicalPath<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, diskpathsizeinbytes: *mut u32, diskpath: ::windows_core::PWSTR) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetVirtualDiskPhysicalPath(virtualdiskhandle: super::super::Foundation::HANDLE, diskpathsizeinbytes: *mut u32, diskpath: ::windows_core::PWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn GetVirtualDiskPhysicalPath(virtualdiskhandle: ::win32_foundation::HANDLE, diskpathsizeinbytes: *mut u32, diskpath: ::windows_core::PWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(GetVirtualDiskPhysicalPath(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(diskpathsizeinbytes), ::core::mem::transmute(diskpath)))
     }
@@ -2515,42 +2456,41 @@ impl ::core::fmt::Debug for MODIFY_VHDSET_VERSION {
         f.debug_tuple("MODIFY_VHDSET_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn MergeVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, flags: MERGE_VIRTUAL_DISK_FLAG, parameters: *const MERGE_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn MergeVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: MERGE_VIRTUAL_DISK_FLAG, parameters: *const MERGE_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MergeVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: MERGE_VIRTUAL_DISK_FLAG, parameters: *const MERGE_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
+            fn MergeVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, flags: MERGE_VIRTUAL_DISK_FLAG, parameters: *const MERGE_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(MergeVirtualDisk(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(parameters), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn MirrorVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, flags: MIRROR_VIRTUAL_DISK_FLAG, parameters: *const MIRROR_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn MirrorVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: MIRROR_VIRTUAL_DISK_FLAG, parameters: *const MIRROR_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn MirrorVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: MIRROR_VIRTUAL_DISK_FLAG, parameters: *const MIRROR_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
+            fn MirrorVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, flags: MIRROR_VIRTUAL_DISK_FLAG, parameters: *const MIRROR_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(MirrorVirtualDisk(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(parameters), ::core::mem::transmute(overlapped)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ModifyVhdSet<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const MODIFY_VHDSET_PARAMETERS, flags: MODIFY_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn ModifyVhdSet<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const MODIFY_VHDSET_PARAMETERS, flags: MODIFY_VHDSET_FLAG) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ModifyVhdSet(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const MODIFY_VHDSET_PARAMETERS, flags: MODIFY_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR;
+            fn ModifyVhdSet(virtualdiskhandle: ::win32_foundation::HANDLE, parameters: *const MODIFY_VHDSET_PARAMETERS, flags: MODIFY_VHDSET_FLAG) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(ModifyVhdSet(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(parameters), ::core::mem::transmute(flags)))
     }
@@ -2621,181 +2561,143 @@ impl ::core::ops::Not for OPEN_VIRTUAL_DISK_FLAG {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_VIRTUAL_DISK_PARAMETERS {
     pub Version: OPEN_VIRTUAL_DISK_VERSION,
     pub Anonymous: OPEN_VIRTUAL_DISK_PARAMETERS_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_VIRTUAL_DISK_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_VIRTUAL_DISK_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OPEN_VIRTUAL_DISK_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPEN_VIRTUAL_DISK_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPEN_VIRTUAL_DISK_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OPEN_VIRTUAL_DISK_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OPEN_VIRTUAL_DISK_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union OPEN_VIRTUAL_DISK_PARAMETERS_0 {
     pub Version1: OPEN_VIRTUAL_DISK_PARAMETERS_0_0,
     pub Version2: OPEN_VIRTUAL_DISK_PARAMETERS_0_1,
     pub Version3: OPEN_VIRTUAL_DISK_PARAMETERS_0_2,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_VIRTUAL_DISK_PARAMETERS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_VIRTUAL_DISK_PARAMETERS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OPEN_VIRTUAL_DISK_PARAMETERS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPEN_VIRTUAL_DISK_PARAMETERS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPEN_VIRTUAL_DISK_PARAMETERS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OPEN_VIRTUAL_DISK_PARAMETERS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OPEN_VIRTUAL_DISK_PARAMETERS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_VIRTUAL_DISK_PARAMETERS_0_0 {
     pub RWDepth: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_VIRTUAL_DISK_PARAMETERS_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_VIRTUAL_DISK_PARAMETERS_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OPEN_VIRTUAL_DISK_PARAMETERS_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OPEN_VIRTUAL_DISK_PARAMETERS_0_0").field("RWDepth", &self.RWDepth).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OPEN_VIRTUAL_DISK_PARAMETERS_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPEN_VIRTUAL_DISK_PARAMETERS_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPEN_VIRTUAL_DISK_PARAMETERS_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OPEN_VIRTUAL_DISK_PARAMETERS_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OPEN_VIRTUAL_DISK_PARAMETERS_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {
-    pub GetInfoOnly: super::super::Foundation::BOOL,
-    pub ReadOnly: super::super::Foundation::BOOL,
+    pub GetInfoOnly: ::win32_foundation::BOOL,
+    pub ReadOnly: ::win32_foundation::BOOL,
     pub ResiliencyGuid: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OPEN_VIRTUAL_DISK_PARAMETERS_0_1").field("GetInfoOnly", &self.GetInfoOnly).field("ReadOnly", &self.ReadOnly).field("ResiliencyGuid", &self.ResiliencyGuid).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPEN_VIRTUAL_DISK_PARAMETERS_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {
-    pub GetInfoOnly: super::super::Foundation::BOOL,
-    pub ReadOnly: super::super::Foundation::BOOL,
+    pub GetInfoOnly: ::win32_foundation::BOOL,
+    pub ReadOnly: ::win32_foundation::BOOL,
     pub ResiliencyGuid: ::windows_core::GUID,
     pub SnapshotId: ::windows_core::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OPEN_VIRTUAL_DISK_PARAMETERS_0_2").field("GetInfoOnly", &self.GetInfoOnly).field("ReadOnly", &self.ReadOnly).field("ResiliencyGuid", &self.ResiliencyGuid).field("SnapshotId", &self.SnapshotId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<OPEN_VIRTUAL_DISK_PARAMETERS_0_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2828,14 +2730,13 @@ impl ::core::fmt::Debug for OPEN_VIRTUAL_DISK_VERSION {
         f.debug_tuple("OPEN_VIRTUAL_DISK_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenVirtualDisk<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: Param1, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, flags: OPEN_VIRTUAL_DISK_FLAG, parameters: *const OPEN_VIRTUAL_DISK_PARAMETERS, handle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn OpenVirtualDisk<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: Param1, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, flags: OPEN_VIRTUAL_DISK_FLAG, parameters: *const OPEN_VIRTUAL_DISK_PARAMETERS, handle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenVirtualDisk(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: ::windows_core::PCWSTR, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, flags: OPEN_VIRTUAL_DISK_FLAG, parameters: *const OPEN_VIRTUAL_DISK_PARAMETERS, handle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR;
+            fn OpenVirtualDisk(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: ::windows_core::PCWSTR, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, flags: OPEN_VIRTUAL_DISK_FLAG, parameters: *const OPEN_VIRTUAL_DISK_PARAMETERS, handle: *mut ::win32_foundation::HANDLE) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(OpenVirtualDisk(::core::mem::transmute(virtualstoragetype), path.into_param().abi(), ::core::mem::transmute(virtualdiskaccessmask), ::core::mem::transmute(flags), ::core::mem::transmute(parameters), ::core::mem::transmute(handle)))
     }
@@ -2924,14 +2825,13 @@ impl ::core::default::Default for QUERY_CHANGES_VIRTUAL_DISK_RANGE {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn QueryChangesVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(virtualdiskhandle: Param0, changetrackingid: Param1, byteoffset: u64, bytelength: u64, flags: QUERY_CHANGES_VIRTUAL_DISK_FLAG, ranges: *mut QUERY_CHANGES_VIRTUAL_DISK_RANGE, rangecount: *mut u32, processedlength: *mut u64) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn QueryChangesVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(virtualdiskhandle: Param0, changetrackingid: Param1, byteoffset: u64, bytelength: u64, flags: QUERY_CHANGES_VIRTUAL_DISK_FLAG, ranges: *mut QUERY_CHANGES_VIRTUAL_DISK_RANGE, rangecount: *mut u32, processedlength: *mut u64) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn QueryChangesVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, changetrackingid: ::windows_core::PCWSTR, byteoffset: u64, bytelength: u64, flags: QUERY_CHANGES_VIRTUAL_DISK_FLAG, ranges: *mut QUERY_CHANGES_VIRTUAL_DISK_RANGE, rangecount: *mut u32, processedlength: *mut u64) -> super::super::Foundation::WIN32_ERROR;
+            fn QueryChangesVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, changetrackingid: ::windows_core::PCWSTR, byteoffset: u64, bytelength: u64, flags: QUERY_CHANGES_VIRTUAL_DISK_FLAG, ranges: *mut QUERY_CHANGES_VIRTUAL_DISK_RANGE, rangecount: *mut u32, processedlength: *mut u64) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(QueryChangesVirtualDisk(virtualdiskhandle.into_param().abi(), changetrackingid.into_param().abi(), ::core::mem::transmute(byteoffset), ::core::mem::transmute(bytelength), ::core::mem::transmute(flags), ::core::mem::transmute(ranges), ::core::mem::transmute(rangecount), ::core::mem::transmute(processedlength)))
     }
@@ -2990,72 +2890,57 @@ impl ::core::ops::Not for RAW_SCSI_VIRTUAL_DISK_FLAG {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAW_SCSI_VIRTUAL_DISK_PARAMETERS {
     pub Version: RAW_SCSI_VIRTUAL_DISK_VERSION,
     pub Anonymous: RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAW_SCSI_VIRTUAL_DISK_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAW_SCSI_VIRTUAL_DISK_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAW_SCSI_VIRTUAL_DISK_PARAMETERS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAW_SCSI_VIRTUAL_DISK_PARAMETERS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAW_SCSI_VIRTUAL_DISK_PARAMETERS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAW_SCSI_VIRTUAL_DISK_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAW_SCSI_VIRTUAL_DISK_PARAMETERS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0 {
     pub Version1: RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0 {
-    pub RSVDHandle: super::super::Foundation::BOOL,
+    pub RSVDHandle: ::win32_foundation::BOOL,
     pub DataIn: u8,
     pub CdbLength: u8,
     pub SenseInfoLength: u8,
@@ -3065,33 +2950,26 @@ pub struct RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0 {
     pub SenseInfo: *mut u8,
     pub Cdb: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0").field("RSVDHandle", &self.RSVDHandle).field("DataIn", &self.DataIn).field("CdbLength", &self.CdbLength).field("SenseInfoLength", &self.SenseInfoLength).field("SrbFlags", &self.SrbFlags).field("DataTransferLength", &self.DataTransferLength).field("DataBuffer", &self.DataBuffer).field("SenseInfo", &self.SenseInfo).field("Cdb", &self.Cdb).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RAW_SCSI_VIRTUAL_DISK_PARAMETERS_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3356,28 +3234,27 @@ impl ::core::fmt::Debug for RESIZE_VIRTUAL_DISK_VERSION {
         f.debug_tuple("RESIZE_VIRTUAL_DISK_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RawSCSIVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const RAW_SCSI_VIRTUAL_DISK_PARAMETERS, flags: RAW_SCSI_VIRTUAL_DISK_FLAG, response: *mut RAW_SCSI_VIRTUAL_DISK_RESPONSE) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RawSCSIVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const RAW_SCSI_VIRTUAL_DISK_PARAMETERS, flags: RAW_SCSI_VIRTUAL_DISK_FLAG, response: *mut RAW_SCSI_VIRTUAL_DISK_RESPONSE) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RawSCSIVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const RAW_SCSI_VIRTUAL_DISK_PARAMETERS, flags: RAW_SCSI_VIRTUAL_DISK_FLAG, response: *mut RAW_SCSI_VIRTUAL_DISK_RESPONSE) -> super::super::Foundation::WIN32_ERROR;
+            fn RawSCSIVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, parameters: *const RAW_SCSI_VIRTUAL_DISK_PARAMETERS, flags: RAW_SCSI_VIRTUAL_DISK_FLAG, response: *mut RAW_SCSI_VIRTUAL_DISK_RESPONSE) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RawSCSIVirtualDisk(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(parameters), ::core::mem::transmute(flags), ::core::mem::transmute(response)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
+#[cfg(feature = "Win32_System_IO")]
 #[inline]
-pub unsafe fn ResizeVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, flags: RESIZE_VIRTUAL_DISK_FLAG, parameters: *const RESIZE_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn ResizeVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, flags: RESIZE_VIRTUAL_DISK_FLAG, parameters: *const RESIZE_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ResizeVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: RESIZE_VIRTUAL_DISK_FLAG, parameters: *const RESIZE_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
+            fn ResizeVirtualDisk(virtualdiskhandle: ::win32_foundation::HANDLE, flags: RESIZE_VIRTUAL_DISK_FLAG, parameters: *const RESIZE_VIRTUAL_DISK_PARAMETERS, overlapped: *const ::win32_system::IO::OVERLAPPED) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(ResizeVirtualDisk(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(parameters), ::core::mem::transmute(overlapped)))
     }
@@ -3385,145 +3262,115 @@ pub unsafe fn ResizeVirtualDisk<'a, Param0: ::windows_core::IntoParam<'a, super:
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SET_VIRTUAL_DISK_INFO {
     pub Version: SET_VIRTUAL_DISK_INFO_VERSION,
     pub Anonymous: SET_VIRTUAL_DISK_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SET_VIRTUAL_DISK_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SET_VIRTUAL_DISK_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SET_VIRTUAL_DISK_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SET_VIRTUAL_DISK_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SET_VIRTUAL_DISK_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SET_VIRTUAL_DISK_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SET_VIRTUAL_DISK_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union SET_VIRTUAL_DISK_INFO_0 {
     pub ParentFilePath: ::windows_core::PCWSTR,
     pub UniqueIdentifier: ::windows_core::GUID,
     pub ParentPathWithDepthInfo: SET_VIRTUAL_DISK_INFO_0_1,
     pub VhdPhysicalSectorSize: u32,
     pub VirtualDiskId: ::windows_core::GUID,
-    pub ChangeTrackingEnabled: super::super::Foundation::BOOL,
+    pub ChangeTrackingEnabled: ::win32_foundation::BOOL,
     pub ParentLocator: SET_VIRTUAL_DISK_INFO_0_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SET_VIRTUAL_DISK_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SET_VIRTUAL_DISK_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SET_VIRTUAL_DISK_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SET_VIRTUAL_DISK_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SET_VIRTUAL_DISK_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SET_VIRTUAL_DISK_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SET_VIRTUAL_DISK_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SET_VIRTUAL_DISK_INFO_0_0 {
     pub LinkageId: ::windows_core::GUID,
     pub ParentFilePath: ::windows_core::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SET_VIRTUAL_DISK_INFO_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SET_VIRTUAL_DISK_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SET_VIRTUAL_DISK_INFO_0_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SET_VIRTUAL_DISK_INFO_0_0").field("LinkageId", &self.LinkageId).field("ParentFilePath", &self.ParentFilePath).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SET_VIRTUAL_DISK_INFO_0_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SET_VIRTUAL_DISK_INFO_0_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SET_VIRTUAL_DISK_INFO_0_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SET_VIRTUAL_DISK_INFO_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SET_VIRTUAL_DISK_INFO_0_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SET_VIRTUAL_DISK_INFO_0_1 {
     pub ChildDepth: u32,
     pub ParentFilePath: ::windows_core::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SET_VIRTUAL_DISK_INFO_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SET_VIRTUAL_DISK_INFO_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SET_VIRTUAL_DISK_INFO_0_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SET_VIRTUAL_DISK_INFO_0_1").field("ChildDepth", &self.ChildDepth).field("ParentFilePath", &self.ParentFilePath).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SET_VIRTUAL_DISK_INFO_0_1 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SET_VIRTUAL_DISK_INFO_0_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SET_VIRTUAL_DISK_INFO_0_1>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SET_VIRTUAL_DISK_INFO_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SET_VIRTUAL_DISK_INFO_0_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3711,28 +3558,26 @@ impl ::core::fmt::Debug for STORAGE_DEPENDENCY_INFO_VERSION {
         f.debug_tuple("STORAGE_DEPENDENCY_INFO_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetVirtualDiskInformation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, virtualdiskinfo: *const SET_VIRTUAL_DISK_INFO) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn SetVirtualDiskInformation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, virtualdiskinfo: *const SET_VIRTUAL_DISK_INFO) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetVirtualDiskInformation(virtualdiskhandle: super::super::Foundation::HANDLE, virtualdiskinfo: *const SET_VIRTUAL_DISK_INFO) -> super::super::Foundation::WIN32_ERROR;
+            fn SetVirtualDiskInformation(virtualdiskhandle: ::win32_foundation::HANDLE, virtualdiskinfo: *const SET_VIRTUAL_DISK_INFO) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(SetVirtualDiskInformation(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(virtualdiskinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, item: *const ::windows_core::GUID, metadatasize: u32, metadata: *const ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn SetVirtualDiskMetadata<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, item: *const ::windows_core::GUID, metadatasize: u32, metadata: *const ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, item: *const ::windows_core::GUID, metadatasize: u32, metadata: *const ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+            fn SetVirtualDiskMetadata(virtualdiskhandle: ::win32_foundation::HANDLE, item: *const ::windows_core::GUID, metadatasize: u32, metadata: *const ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(SetVirtualDiskMetadata(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(item), ::core::mem::transmute(metadatasize), ::core::mem::transmute(metadata)))
     }
@@ -3893,14 +3738,13 @@ impl ::core::fmt::Debug for TAKE_SNAPSHOT_VHDSET_VERSION {
         f.debug_tuple("TAKE_SNAPSHOT_VHDSET_VERSION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TakeSnapshotVhdSet<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const TAKE_SNAPSHOT_VHDSET_PARAMETERS, flags: TAKE_SNAPSHOT_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn TakeSnapshotVhdSet<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(virtualdiskhandle: Param0, parameters: *const TAKE_SNAPSHOT_VHDSET_PARAMETERS, flags: TAKE_SNAPSHOT_VHDSET_FLAG) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TakeSnapshotVhdSet(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const TAKE_SNAPSHOT_VHDSET_PARAMETERS, flags: TAKE_SNAPSHOT_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR;
+            fn TakeSnapshotVhdSet(virtualdiskhandle: ::win32_foundation::HANDLE, parameters: *const TAKE_SNAPSHOT_VHDSET_PARAMETERS, flags: TAKE_SNAPSHOT_VHDSET_FLAG) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(TakeSnapshotVhdSet(virtualdiskhandle.into_param().abi(), ::core::mem::transmute(parameters), ::core::mem::transmute(flags)))
     }

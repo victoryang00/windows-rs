@@ -117,11 +117,11 @@ unsafe impl ::core::marker::Sync for EnterpriseKeyCredentialRegistrationInfo {}
 pub struct EnterpriseKeyCredentialRegistrationManager(::windows_core::IUnknown);
 impl EnterpriseKeyCredentialRegistrationManager {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetRegistrationsAsync(&self) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<EnterpriseKeyCredentialRegistrationInfo>>> {
+    pub fn GetRegistrationsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EnterpriseKeyCredentialRegistrationInfo>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetRegistrationsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<EnterpriseKeyCredentialRegistrationInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).GetRegistrationsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<EnterpriseKeyCredentialRegistrationInfo>>>(result__)
         }
     }
     pub fn Current() -> ::windows_core::Result<EnterpriseKeyCredentialRegistrationManager> {

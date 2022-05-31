@@ -118,19 +118,19 @@ unsafe impl ::core::marker::Sync for AppActivationResult {}
 pub struct AppDiagnosticInfo(::windows_core::IUnknown);
 impl AppDiagnosticInfo {
     #[cfg(feature = "ApplicationModel")]
-    pub fn AppInfo(&self) -> ::windows_core::Result<super::ApplicationModel::AppInfo> {
+    pub fn AppInfo(&self) -> ::windows_core::Result<::winrt_applicationmodel::AppInfo> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::ApplicationModel::AppInfo>(result__)
+            (::windows_core::Interface::vtable(this).AppInfo)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_applicationmodel::AppInfo>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetResourceGroups(&self) -> ::windows_core::Result<super::Foundation::Collections::IVector<AppResourceGroupInfo>> {
+    pub fn GetResourceGroups(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AppResourceGroupInfo>> {
         let this = &::windows_core::Interface::cast::<IAppDiagnosticInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetResourceGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVector<AppResourceGroupInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetResourceGroups)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<AppResourceGroupInfo>>(result__)
         }
     }
     pub fn CreateResourceGroupWatcher(&self) -> ::windows_core::Result<AppResourceGroupInfoWatcher> {
@@ -140,19 +140,18 @@ impl AppDiagnosticInfo {
             (::windows_core::Interface::vtable(this).CreateResourceGroupWatcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AppResourceGroupInfoWatcher>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchAsync(&self) -> ::windows_core::Result<super::Foundation::IAsyncOperation<AppActivationResult>> {
+    pub fn LaunchAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppActivationResult>> {
         let this = &::windows_core::Interface::cast::<IAppDiagnosticInfo3>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<AppActivationResult>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppActivationResult>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RequestInfoAsync() -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppDiagnosticInfo>>> {
+    pub fn RequestInfoAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppDiagnosticInfo>>> {
         Self::IAppDiagnosticInfoStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestInfoAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppDiagnosticInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).RequestInfoAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppDiagnosticInfo>>>(result__)
         })
     }
     pub fn CreateWatcher() -> ::windows_core::Result<AppDiagnosticInfoWatcher> {
@@ -161,32 +160,31 @@ impl AppDiagnosticInfo {
             (::windows_core::Interface::vtable(this).CreateWatcher)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AppDiagnosticInfoWatcher>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestAccessAsync() -> ::windows_core::Result<super::Foundation::IAsyncOperation<DiagnosticAccessStatus>> {
+    pub fn RequestAccessAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DiagnosticAccessStatus>> {
         Self::IAppDiagnosticInfoStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<DiagnosticAccessStatus>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DiagnosticAccessStatus>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RequestInfoForPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(packagefamilyname: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppDiagnosticInfo>>> {
+    pub fn RequestInfoForPackageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(packagefamilyname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppDiagnosticInfo>>> {
         Self::IAppDiagnosticInfoStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestInfoForPackageAsync)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppDiagnosticInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).RequestInfoForPackageAsync)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppDiagnosticInfo>>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RequestInfoForAppAsync() -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppDiagnosticInfo>>> {
+    pub fn RequestInfoForAppAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppDiagnosticInfo>>> {
         Self::IAppDiagnosticInfoStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestInfoForAppAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppDiagnosticInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).RequestInfoForAppAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppDiagnosticInfo>>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RequestInfoForAppUserModelId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appusermodelid: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppDiagnosticInfo>>> {
+    pub fn RequestInfoForAppUserModelId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appusermodelid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppDiagnosticInfo>>> {
         Self::IAppDiagnosticInfoStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestInfoForAppUserModelId)(::windows_core::Interface::as_raw(this), appusermodelid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppDiagnosticInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).RequestInfoForAppUserModelId)(::windows_core::Interface::as_raw(this), appusermodelid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppDiagnosticInfo>>>(result__)
         })
     }
     pub fn IAppDiagnosticInfoStatics<R, F: FnOnce(&IAppDiagnosticInfoStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -273,55 +271,47 @@ unsafe impl ::core::marker::Sync for AppDiagnosticInfo {}
 #[repr(transparent)]
 pub struct AppDiagnosticInfoWatcher(::windows_core::IUnknown);
 impl AppDiagnosticInfoWatcher {
-    #[cfg(feature = "Foundation")]
-    pub fn Added<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<AppDiagnosticInfoWatcher, AppDiagnosticInfoWatcherEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Added<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppDiagnosticInfoWatcher, AppDiagnosticInfoWatcherEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Added)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Added)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAdded<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAdded)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Removed<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<AppDiagnosticInfoWatcher, AppDiagnosticInfoWatcherEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Removed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppDiagnosticInfoWatcher, AppDiagnosticInfoWatcherEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Removed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Removed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveRemoved<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveRemoved<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRemoved)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn EnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<AppDiagnosticInfoWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn EnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppDiagnosticInfoWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).EnumerationCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).EnumerationCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveEnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveEnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveEnumerationCompleted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<AppDiagnosticInfoWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppDiagnosticInfoWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStopped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -1044,11 +1034,11 @@ impl AppResourceGroupInfo {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetBackgroundTaskReports(&self) -> ::windows_core::Result<super::Foundation::Collections::IVector<AppResourceGroupBackgroundTaskReport>> {
+    pub fn GetBackgroundTaskReports(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AppResourceGroupBackgroundTaskReport>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetBackgroundTaskReports)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVector<AppResourceGroupBackgroundTaskReport>>(result__)
+            (::windows_core::Interface::vtable(this).GetBackgroundTaskReports)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<AppResourceGroupBackgroundTaskReport>>(result__)
         }
     }
     pub fn GetMemoryReport(&self) -> ::windows_core::Result<AppResourceGroupMemoryReport> {
@@ -1059,11 +1049,11 @@ impl AppResourceGroupInfo {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "System_Diagnostics"))]
-    pub fn GetProcessDiagnosticInfos(&self) -> ::windows_core::Result<super::Foundation::Collections::IVector<Diagnostics::ProcessDiagnosticInfo>> {
+    pub fn GetProcessDiagnosticInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<Diagnostics::ProcessDiagnosticInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetProcessDiagnosticInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVector<Diagnostics::ProcessDiagnosticInfo>>(result__)
+            (::windows_core::Interface::vtable(this).GetProcessDiagnosticInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<Diagnostics::ProcessDiagnosticInfo>>(result__)
         }
     }
     pub fn GetStateReport(&self) -> ::windows_core::Result<AppResourceGroupStateReport> {
@@ -1073,28 +1063,25 @@ impl AppResourceGroupInfo {
             (::windows_core::Interface::vtable(this).GetStateReport)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AppResourceGroupStateReport>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StartSuspendAsync(&self) -> ::windows_core::Result<super::Foundation::IAsyncOperation<AppExecutionStateChangeResult>> {
+    pub fn StartSuspendAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppExecutionStateChangeResult>> {
         let this = &::windows_core::Interface::cast::<IAppResourceGroupInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StartSuspendAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<AppExecutionStateChangeResult>>(result__)
+            (::windows_core::Interface::vtable(this).StartSuspendAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppExecutionStateChangeResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StartResumeAsync(&self) -> ::windows_core::Result<super::Foundation::IAsyncOperation<AppExecutionStateChangeResult>> {
+    pub fn StartResumeAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppExecutionStateChangeResult>> {
         let this = &::windows_core::Interface::cast::<IAppResourceGroupInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StartResumeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<AppExecutionStateChangeResult>>(result__)
+            (::windows_core::Interface::vtable(this).StartResumeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppExecutionStateChangeResult>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StartTerminateAsync(&self) -> ::windows_core::Result<super::Foundation::IAsyncOperation<AppExecutionStateChangeResult>> {
+    pub fn StartTerminateAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppExecutionStateChangeResult>> {
         let this = &::windows_core::Interface::cast::<IAppResourceGroupInfo2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StartTerminateAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<AppExecutionStateChangeResult>>(result__)
+            (::windows_core::Interface::vtable(this).StartTerminateAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppExecutionStateChangeResult>>(result__)
         }
     }
 }
@@ -1173,68 +1160,58 @@ unsafe impl ::core::marker::Sync for AppResourceGroupInfo {}
 #[repr(transparent)]
 pub struct AppResourceGroupInfoWatcher(::windows_core::IUnknown);
 impl AppResourceGroupInfoWatcher {
-    #[cfg(feature = "Foundation")]
-    pub fn Added<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<AppResourceGroupInfoWatcher, AppResourceGroupInfoWatcherEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Added<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppResourceGroupInfoWatcher, AppResourceGroupInfoWatcherEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Added)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Added)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAdded<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAdded)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Removed<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<AppResourceGroupInfoWatcher, AppResourceGroupInfoWatcherEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Removed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppResourceGroupInfoWatcher, AppResourceGroupInfoWatcherEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Removed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Removed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveRemoved<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveRemoved<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRemoved)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn EnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<AppResourceGroupInfoWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn EnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppResourceGroupInfoWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).EnumerationCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).EnumerationCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveEnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveEnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveEnumerationCompleted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<AppResourceGroupInfoWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppResourceGroupInfoWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStopped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ExecutionStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<AppResourceGroupInfoWatcher, AppResourceGroupInfoWatcherExecutionStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn ExecutionStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<AppResourceGroupInfoWatcher, AppResourceGroupInfoWatcherExecutionStateChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ExecutionStateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ExecutionStateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveExecutionStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveExecutionStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveExecutionStateChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -1330,11 +1307,11 @@ unsafe impl ::core::marker::Sync for AppResourceGroupInfoWatcher {}
 pub struct AppResourceGroupInfoWatcherEventArgs(::windows_core::IUnknown);
 impl AppResourceGroupInfoWatcherEventArgs {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AppDiagnosticInfos(&self) -> ::windows_core::Result<super::Foundation::Collections::IVectorView<AppDiagnosticInfo>> {
+    pub fn AppDiagnosticInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AppDiagnosticInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppDiagnosticInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<AppDiagnosticInfo>>(result__)
+            (::windows_core::Interface::vtable(this).AppDiagnosticInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<AppDiagnosticInfo>>(result__)
         }
     }
     pub fn AppResourceGroupInfo(&self) -> ::windows_core::Result<AppResourceGroupInfo> {
@@ -1421,11 +1398,11 @@ unsafe impl ::core::marker::Sync for AppResourceGroupInfoWatcherEventArgs {}
 pub struct AppResourceGroupInfoWatcherExecutionStateChangedEventArgs(::windows_core::IUnknown);
 impl AppResourceGroupInfoWatcherExecutionStateChangedEventArgs {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AppDiagnosticInfos(&self) -> ::windows_core::Result<super::Foundation::Collections::IVectorView<AppDiagnosticInfo>> {
+    pub fn AppDiagnosticInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AppDiagnosticInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AppDiagnosticInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<AppDiagnosticInfo>>(result__)
+            (::windows_core::Interface::vtable(this).AppDiagnosticInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<AppDiagnosticInfo>>(result__)
         }
     }
     pub fn AppResourceGroupInfo(&self) -> ::windows_core::Result<AppResourceGroupInfo> {
@@ -1872,31 +1849,31 @@ impl AppUriHandlerRegistration {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAppAddedHostsAsync(&self) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppUriHandlerHost>>> {
+    pub fn GetAppAddedHostsAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppUriHandlerHost>>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAppAddedHostsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVector<AppUriHandlerHost>>>(result__)
+            (::windows_core::Interface::vtable(this).GetAppAddedHostsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVector<AppUriHandlerHost>>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetAppAddedHostsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Collections::IIterable<AppUriHandlerHost>>>(&self, hosts: Param0) -> ::windows_core::Result<super::Foundation::IAsyncAction> {
+    pub fn SetAppAddedHostsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<AppUriHandlerHost>>>(&self, hosts: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SetAppAddedHostsAsync)(::windows_core::Interface::as_raw(this), hosts.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SetAppAddedHostsAsync)(::windows_core::Interface::as_raw(this), hosts.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAllHosts(&self) -> ::windows_core::Result<super::Foundation::Collections::IVector<AppUriHandlerHost>> {
+    pub fn GetAllHosts(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AppUriHandlerHost>> {
         let this = &::windows_core::Interface::cast::<IAppUriHandlerRegistration2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAllHosts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVector<AppUriHandlerHost>>(result__)
+            (::windows_core::Interface::vtable(this).GetAllHosts)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<AppUriHandlerHost>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn UpdateHosts<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Collections::IIterable<AppUriHandlerHost>>>(&self, hosts: Param0) -> ::windows_core::Result<()> {
+    pub fn UpdateHosts<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<AppUriHandlerHost>>>(&self, hosts: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IAppUriHandlerRegistration2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).UpdateHosts)(::windows_core::Interface::as_raw(this), hosts.into_param().abi()).ok() }
     }
@@ -2145,8 +2122,7 @@ unsafe impl ::windows_core::RuntimeType for AutoUpdateTimeZoneStatus {
 }
 pub struct DateTimeSettings;
 impl DateTimeSettings {
-    #[cfg(feature = "Foundation")]
-    pub fn SetSystemDateTime<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::DateTime>>(utcdatetime: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSystemDateTime<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>>(utcdatetime: Param0) -> ::windows_core::Result<()> {
         Self::IDateTimeSettingsStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetSystemDateTime)(::windows_core::Interface::as_raw(this), utcdatetime.into_param().abi()).ok() })
     }
     pub fn IDateTimeSettingsStatics<R, F: FnOnce(&IDateTimeSettingsStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -2216,29 +2192,25 @@ impl DispatcherQueue {
             (::windows_core::Interface::vtable(this).TryEnqueueWithPriority)(::windows_core::Interface::as_raw(this), priority, callback.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShutdownStarting<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<DispatcherQueue, DispatcherQueueShutdownStartingEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn ShutdownStarting<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DispatcherQueue, DispatcherQueueShutdownStartingEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ShutdownStarting)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ShutdownStarting)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveShutdownStarting<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveShutdownStarting<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveShutdownStarting)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShutdownCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<DispatcherQueue, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn ShutdownCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DispatcherQueue, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ShutdownCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ShutdownCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveShutdownCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveShutdownCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveShutdownCompleted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2342,12 +2314,11 @@ impl DispatcherQueueController {
             (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DispatcherQueue>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ShutdownQueueAsync(&self) -> ::windows_core::Result<super::Foundation::IAsyncAction> {
+    pub fn ShutdownQueueAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ShutdownQueueAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).ShutdownQueueAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn CreateOnDedicatedThread() -> ::windows_core::Result<DispatcherQueueController> {
@@ -2553,12 +2524,11 @@ unsafe impl ::windows_core::RuntimeType for DispatcherQueuePriority {
 #[repr(transparent)]
 pub struct DispatcherQueueShutdownStartingEventArgs(::windows_core::IUnknown);
 impl DispatcherQueueShutdownStartingEventArgs {
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeferral(&self) -> ::windows_core::Result<super::Foundation::Deferral> {
+    pub fn GetDeferral(&self) -> ::windows_core::Result<::winrt_foundation::Deferral> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Deferral>(result__)
+            (::windows_core::Interface::vtable(this).GetDeferral)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Deferral>(result__)
         }
     }
 }
@@ -2637,16 +2607,14 @@ unsafe impl ::core::marker::Sync for DispatcherQueueShutdownStartingEventArgs {}
 #[repr(transparent)]
 pub struct DispatcherQueueTimer(::windows_core::IUnknown);
 impl DispatcherQueueTimer {
-    #[cfg(feature = "Foundation")]
-    pub fn Interval(&self) -> ::windows_core::Result<super::Foundation::TimeSpan> {
+    pub fn Interval(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Interval)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Interval)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetInterval<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetInterval<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInterval)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2676,16 +2644,14 @@ impl DispatcherQueueTimer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Stop)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Tick<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<DispatcherQueueTimer, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Tick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DispatcherQueueTimer, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Tick)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Tick)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTick<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTick)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2773,23 +2739,23 @@ impl FolderLauncherOptions {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
-    pub fn ItemsToSelect(&self) -> ::windows_core::Result<super::Foundation::Collections::IVector<super::Storage::IStorageItem>> {
+    pub fn ItemsToSelect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_storage::IStorageItem>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ItemsToSelect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVector<super::Storage::IStorageItem>>(result__)
+            (::windows_core::Interface::vtable(this).ItemsToSelect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_storage::IStorageItem>>(result__)
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn DesiredRemainingView(&self) -> ::windows_core::Result<super::UI::ViewManagement::ViewSizePreference> {
+    pub fn DesiredRemainingView(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ViewSizePreference> {
         let this = &::windows_core::Interface::cast::<ILauncherViewOptions>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::UI::ViewManagement::ViewSizePreference>::zeroed();
-            (::windows_core::Interface::vtable(this).DesiredRemainingView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UI::ViewManagement::ViewSizePreference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::ViewManagement::ViewSizePreference>::zeroed();
+            (::windows_core::Interface::vtable(this).DesiredRemainingView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ViewSizePreference>(result__)
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn SetDesiredRemainingView(&self, value: super::UI::ViewManagement::ViewSizePreference) -> ::windows_core::Result<()> {
+    pub fn SetDesiredRemainingView(&self, value: ::winrt_ui::ViewManagement::ViewSizePreference) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ILauncherViewOptions>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDesiredRemainingView)(::windows_core::Interface::as_raw(this), value).ok() }
     }
@@ -2946,10 +2912,7 @@ unsafe impl ::windows_core::Interface for IAppDiagnosticInfo3 {
 #[doc(hidden)]
 pub struct IAppDiagnosticInfo3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub LaunchAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2979,10 +2942,7 @@ unsafe impl ::windows_core::Interface for IAppDiagnosticInfoStatics2 {
 pub struct IAppDiagnosticInfoStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateWatcher: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestAccessAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub RequestInfoForPackageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -3007,38 +2967,14 @@ unsafe impl ::windows_core::Interface for IAppDiagnosticInfoWatcher {
 #[doc(hidden)]
 pub struct IAppDiagnosticInfoWatcher_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Added: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Added: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAdded: usize,
-    #[cfg(feature = "Foundation")]
-    pub Removed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Removed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveRemoved: usize,
-    #[cfg(feature = "Foundation")]
-    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EnumerationCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveEnumerationCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Stopped: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStopped: usize,
+    pub Added: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Removed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AppDiagnosticInfoWatcherStatus) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -3163,18 +3099,9 @@ unsafe impl ::windows_core::Interface for IAppResourceGroupInfo2 {
 #[doc(hidden)]
 pub struct IAppResourceGroupInfo2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub StartSuspendAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StartSuspendAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub StartResumeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StartResumeAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub StartTerminateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StartTerminateAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3187,46 +3114,16 @@ unsafe impl ::windows_core::Interface for IAppResourceGroupInfoWatcher {
 #[doc(hidden)]
 pub struct IAppResourceGroupInfoWatcher_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Added: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Added: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAdded: usize,
-    #[cfg(feature = "Foundation")]
-    pub Removed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Removed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveRemoved: usize,
-    #[cfg(feature = "Foundation")]
-    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EnumerationCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveEnumerationCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Stopped: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStopped: usize,
-    #[cfg(feature = "Foundation")]
-    pub ExecutionStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ExecutionStateChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveExecutionStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveExecutionStateChanged: usize,
+    pub Added: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Removed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub ExecutionStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveExecutionStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AppResourceGroupInfoWatcherStatus) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -3445,10 +3342,7 @@ unsafe impl ::windows_core::Interface for IDateTimeSettingsStatics {
 #[doc(hidden)]
 pub struct IDateTimeSettingsStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub SetSystemDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, utcdatetime: super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetSystemDateTime: usize,
+    pub SetSystemDateTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, utcdatetime: ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3464,22 +3358,10 @@ pub struct IDispatcherQueue_Vtbl {
     pub CreateTimer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub TryEnqueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, callback: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     pub TryEnqueueWithPriority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, priority: DispatcherQueuePriority, callback: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ShutdownStarting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShutdownStarting: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveShutdownStarting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveShutdownStarting: usize,
-    #[cfg(feature = "Foundation")]
-    pub ShutdownCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShutdownCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveShutdownCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveShutdownCompleted: usize,
+    pub ShutdownStarting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveShutdownStarting: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub ShutdownCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveShutdownCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3506,10 +3388,7 @@ unsafe impl ::windows_core::Interface for IDispatcherQueueController {
 pub struct IDispatcherQueueController_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DispatcherQueue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub ShutdownQueueAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ShutdownQueueAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3535,10 +3414,7 @@ unsafe impl ::windows_core::Interface for IDispatcherQueueShutdownStartingEventA
 #[doc(hidden)]
 pub struct IDispatcherQueueShutdownStartingEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeferral: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3564,27 +3440,15 @@ unsafe impl ::windows_core::Interface for IDispatcherQueueTimer {
 #[doc(hidden)]
 pub struct IDispatcherQueueTimer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Interval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Interval: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetInterval: usize,
+    pub Interval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub SetInterval: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub IsRunning: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub IsRepeating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsRepeating: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Tick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Tick: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTick: usize,
+    pub Tick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3673,14 +3537,8 @@ pub struct ILauncherOptions_Vtbl {
     pub SetPreferredApplicationPackageFamilyName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub PreferredApplicationDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetPreferredApplicationDisplayName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub FallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FallbackUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetFallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetFallbackUri: usize,
     pub ContentType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetContentType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
 }
@@ -3745,22 +3603,16 @@ unsafe impl ::windows_core::Interface for ILauncherStatics {
 #[doc(hidden)]
 pub struct ILauncherStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub LaunchFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     LaunchFileAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub LaunchFileWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     LaunchFileWithOptionsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LaunchUriAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchUriAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LaunchUriWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchUriWithOptionsAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3773,10 +3625,7 @@ unsafe impl ::windows_core::Interface for ILauncherStatics2 {
 #[doc(hidden)]
 pub struct ILauncherStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub LaunchUriForResultsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchUriForResultsAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub LaunchUriForResultsWithDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, inputdata: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -3785,21 +3634,15 @@ pub struct ILauncherStatics2_Vtbl {
     pub LaunchUriWithDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, inputdata: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     LaunchUriWithDataAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub QueryUriSupportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, launchquerysupporttype: LaunchQuerySupportType, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    QueryUriSupportAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub QueryUriSupportWithPackageFamilyNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, launchquerysupporttype: LaunchQuerySupportType, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    QueryUriSupportWithPackageFamilyNameAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub QueryFileSupportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     QueryFileSupportAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub QueryFileSupportWithPackageFamilyNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     QueryFileSupportWithPackageFamilyNameAsync: usize,
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
     pub FindUriSchemeHandlersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scheme: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -3825,13 +3668,13 @@ unsafe impl ::windows_core::Interface for ILauncherStatics3 {
 #[doc(hidden)]
 pub struct ILauncherStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub LaunchFolderAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     LaunchFolderAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub LaunchFolderWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, folder: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     LaunchFolderWithOptionsAsync: usize,
 }
 #[doc(hidden)]
@@ -3845,34 +3688,19 @@ unsafe impl ::windows_core::Interface for ILauncherStatics4 {
 #[doc(hidden)]
 pub struct ILauncherStatics4_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub QueryAppUriSupportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    QueryAppUriSupportAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub QueryAppUriSupportWithPackageFamilyNameAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, packagefamilyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    QueryAppUriSupportWithPackageFamilyNameAsync: usize,
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
     pub FindAppUriHandlersAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "ApplicationModel", feature = "Foundation_Collections")))]
     FindAppUriHandlersAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LaunchUriForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchUriForUserAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LaunchUriWithOptionsForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchUriWithOptionsForUserAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub LaunchUriWithDataForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, inputdata: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     LaunchUriWithDataForUserAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LaunchUriForResultsForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchUriForResultsForUserAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub LaunchUriForResultsWithDataForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, inputdata: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -3889,22 +3717,10 @@ unsafe impl ::windows_core::Interface for ILauncherStatics5 {
 #[doc(hidden)]
 pub struct ILauncherStatics5_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub LaunchFolderPathAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchFolderPathAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LaunchFolderPathWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, path: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchFolderPathWithOptionsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LaunchFolderPathForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, path: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchFolderPathForUserAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub LaunchFolderPathWithOptionsForUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, user: ::windows_core::RawPtr, path: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LaunchFolderPathWithOptionsForUserAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3917,28 +3733,16 @@ unsafe impl ::windows_core::Interface for ILauncherUIOptions {
 #[doc(hidden)]
 pub struct ILauncherUIOptions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub InvocationPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InvocationPoint: usize,
-    #[cfg(feature = "Foundation")]
     pub SetInvocationPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetInvocationPoint: usize,
-    #[cfg(feature = "Foundation")]
     pub SelectionRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SelectionRect: usize,
-    #[cfg(feature = "Foundation")]
     pub SetSelectionRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetSelectionRect: usize,
     #[cfg(feature = "UI_Popups")]
-    pub PreferredPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::UI::Popups::Placement) -> ::windows_core::HRESULT,
+    pub PreferredPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::Popups::Placement) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_Popups"))]
     PreferredPlacement: usize,
     #[cfg(feature = "UI_Popups")]
-    pub SetPreferredPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::UI::Popups::Placement) -> ::windows_core::HRESULT,
+    pub SetPreferredPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_ui::Popups::Placement) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_Popups"))]
     SetPreferredPlacement: usize,
 }
@@ -3946,15 +3750,15 @@ pub struct ILauncherUIOptions_Vtbl {
 pub struct ILauncherViewOptions(::windows_core::IUnknown);
 impl ILauncherViewOptions {
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn DesiredRemainingView(&self) -> ::windows_core::Result<super::UI::ViewManagement::ViewSizePreference> {
+    pub fn DesiredRemainingView(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ViewSizePreference> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::UI::ViewManagement::ViewSizePreference>::zeroed();
-            (::windows_core::Interface::vtable(this).DesiredRemainingView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UI::ViewManagement::ViewSizePreference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::ViewManagement::ViewSizePreference>::zeroed();
+            (::windows_core::Interface::vtable(this).DesiredRemainingView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ViewSizePreference>(result__)
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn SetDesiredRemainingView(&self, value: super::UI::ViewManagement::ViewSizePreference) -> ::windows_core::Result<()> {
+    pub fn SetDesiredRemainingView(&self, value: ::winrt_ui::ViewManagement::ViewSizePreference) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetDesiredRemainingView)(::windows_core::Interface::as_raw(this), value).ok() }
     }
@@ -4031,11 +3835,11 @@ unsafe impl ::windows_core::Interface for ILauncherViewOptions {
 pub struct ILauncherViewOptions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "UI_ViewManagement")]
-    pub DesiredRemainingView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::UI::ViewManagement::ViewSizePreference) -> ::windows_core::HRESULT,
+    pub DesiredRemainingView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_ui::ViewManagement::ViewSizePreference) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_ViewManagement"))]
     DesiredRemainingView: usize,
     #[cfg(feature = "UI_ViewManagement")]
-    pub SetDesiredRemainingView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::UI::ViewManagement::ViewSizePreference) -> ::windows_core::HRESULT,
+    pub SetDesiredRemainingView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_ui::ViewManagement::ViewSizePreference) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "UI_ViewManagement"))]
     SetDesiredRemainingView: usize,
 }
@@ -4053,30 +3857,12 @@ pub struct IMemoryManagerStatics_Vtbl {
     pub AppMemoryUsage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u64) -> ::windows_core::HRESULT,
     pub AppMemoryUsageLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u64) -> ::windows_core::HRESULT,
     pub AppMemoryUsageLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut AppMemoryUsageLevel) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub AppMemoryUsageIncreased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AppMemoryUsageIncreased: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAppMemoryUsageIncreased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAppMemoryUsageIncreased: usize,
-    #[cfg(feature = "Foundation")]
-    pub AppMemoryUsageDecreased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AppMemoryUsageDecreased: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAppMemoryUsageDecreased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAppMemoryUsageDecreased: usize,
-    #[cfg(feature = "Foundation")]
-    pub AppMemoryUsageLimitChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AppMemoryUsageLimitChanging: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAppMemoryUsageLimitChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAppMemoryUsageLimitChanging: usize,
+    pub AppMemoryUsageIncreased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAppMemoryUsageIncreased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub AppMemoryUsageDecreased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAppMemoryUsageDecreased: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub AppMemoryUsageLimitChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAppMemoryUsageLimitChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4180,14 +3966,8 @@ unsafe impl ::windows_core::Interface for IProcessLauncherStatics {
 #[doc(hidden)]
 pub struct IProcessLauncherStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub RunToCompletionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, args: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RunToCompletionAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RunToCompletionAsyncWithOptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, filename: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, args: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RunToCompletionAsyncWithOptions: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4230,14 +4010,8 @@ unsafe impl ::windows_core::Interface for IRemoteLauncherOptions {
 #[doc(hidden)]
 pub struct IRemoteLauncherOptions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub FallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FallbackUri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetFallbackUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetFallbackUri: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub PreferredAppIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -4254,13 +4028,13 @@ unsafe impl ::windows_core::Interface for IRemoteLauncherStatics {
 #[doc(hidden)]
 pub struct IRemoteLauncherStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "System_RemoteSystems"))]
+    #[cfg(feature = "System_RemoteSystems")]
     pub LaunchUriAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotesystemconnectionrequest: ::windows_core::RawPtr, uri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System_RemoteSystems")))]
+    #[cfg(not(feature = "System_RemoteSystems"))]
     LaunchUriAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "System_RemoteSystems"))]
+    #[cfg(feature = "System_RemoteSystems")]
     pub LaunchUriWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotesystemconnectionrequest: ::windows_core::RawPtr, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "System_RemoteSystems")))]
+    #[cfg(not(feature = "System_RemoteSystems"))]
     LaunchUriWithOptionsAsync: usize,
     #[cfg(all(feature = "Foundation_Collections", feature = "System_RemoteSystems"))]
     pub LaunchUriWithDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, remotesystemconnectionrequest: ::windows_core::RawPtr, uri: ::windows_core::RawPtr, options: ::windows_core::RawPtr, inputdata: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -4278,10 +4052,7 @@ unsafe impl ::windows_core::Interface for IShutdownManagerStatics {
 #[doc(hidden)]
 pub struct IShutdownManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub BeginShutdown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shutdownkind: ShutdownKind, timeout: super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BeginShutdown: usize,
+    pub BeginShutdown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, shutdownkind: ShutdownKind, timeout: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub CancelShutdown: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -4297,10 +4068,7 @@ pub struct IShutdownManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsPowerStateSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, powerstate: PowerState, result__: *mut bool) -> ::windows_core::HRESULT,
     pub EnterPowerState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, powerstate: PowerState) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub EnterPowerStateWithTimeSpan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, powerstate: PowerState, wakeupafter: super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EnterPowerStateWithTimeSpan: usize,
+    pub EnterPowerStateWithTimeSpan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, powerstate: PowerState, wakeupafter: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4332,10 +4100,7 @@ unsafe impl ::windows_core::Interface for ITimeZoneSettingsStatics2 {
 #[doc(hidden)]
 pub struct ITimeZoneSettingsStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub AutoUpdateTimeZoneAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timeout: super::Foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AutoUpdateTimeZoneAsync: usize,
+    pub AutoUpdateTimeZoneAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timeout: ::winrt_foundation::TimeSpan, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4351,17 +4116,14 @@ pub struct IUser_Vtbl {
     pub NonRoamableId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub AuthenticationStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UserAuthenticationStatus) -> ::windows_core::HRESULT,
     pub Type: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UserType) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetPropertyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPropertyAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetPropertiesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, values: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetPropertiesAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub GetPictureAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, desiredsize: UserPictureSize, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     GetPictureAsync: usize,
 }
 #[doc(hidden)]
@@ -4375,10 +4137,7 @@ unsafe impl ::windows_core::Interface for IUser2 {
 #[doc(hidden)]
 pub struct IUser2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CheckUserAgeConsentGroupAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, consentgroup: UserAgeConsentGroup, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CheckUserAgeConsentGroupAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4465,14 +4224,8 @@ unsafe impl ::windows_core::Interface for IUserDeviceAssociationStatics {
 pub struct IUserDeviceAssociationStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FindUserFromDeviceId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub UserDeviceAssociationChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UserDeviceAssociationChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveUserDeviceAssociationChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveUserDeviceAssociationChanged: usize,
+    pub UserDeviceAssociationChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveUserDeviceAssociationChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4489,10 +4242,7 @@ pub struct IUserPicker_Vtbl {
     pub SetAllowGuestAccounts: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub SuggestedSelectedUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetSuggestedSelectedUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub PickSingleUserAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PickSingleUserAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -4560,62 +4310,20 @@ pub struct IUserWatcher_Vtbl {
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut UserWatcherStatus) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Added: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Added: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAdded: usize,
-    #[cfg(feature = "Foundation")]
-    pub Removed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Removed: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveRemoved: usize,
-    #[cfg(feature = "Foundation")]
-    pub Updated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Updated: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveUpdated: usize,
-    #[cfg(feature = "Foundation")]
-    pub AuthenticationStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AuthenticationStatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAuthenticationStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAuthenticationStatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub AuthenticationStatusChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AuthenticationStatusChanging: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAuthenticationStatusChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAuthenticationStatusChanging: usize,
-    #[cfg(feature = "Foundation")]
-    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EnumerationCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveEnumerationCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Stopped: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStopped: usize,
+    pub Added: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Removed: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveRemoved: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Updated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub AuthenticationStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAuthenticationStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub AuthenticationStatusChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAuthenticationStatusChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 pub struct KnownUserProperties;
 impl KnownUserProperties {
@@ -4807,11 +4515,11 @@ impl LaunchUriResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Result(&self) -> ::windows_core::Result<super::Foundation::Collections::ValueSet> {
+    pub fn Result(&self) -> ::windows_core::Result<::winrt_foundation::Collections::ValueSet> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Result)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::ValueSet>(result__)
+            (::windows_core::Interface::vtable(this).Result)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::ValueSet>(result__)
         }
     }
 }
@@ -4924,200 +4632,186 @@ unsafe impl ::windows_core::RuntimeType for LaunchUriStatus {
 }
 pub struct Launcher;
 impl Launcher {
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn LaunchFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Storage")]
+    pub fn LaunchFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn LaunchFileWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>>(file: Param0, options: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Storage")]
+    pub fn LaunchFileWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>>(file: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchFileWithOptionsAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchFileWithOptionsAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchUriAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>>(uri: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    pub fn LaunchUriAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchUriWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>>(uri: Param0, options: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    pub fn LaunchUriWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>>(uri: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriWithOptionsAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriWithOptionsAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchUriForResultsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>>(uri: Param0, options: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchUriResult>> {
+    pub fn LaunchUriForResultsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>>(uri: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchUriResult>> {
         Self::ILauncherStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriForResultsAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchUriResult>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriForResultsAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchUriResult>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LaunchUriForResultsWithDataAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>, Param2: ::windows_core::IntoParam<'a, super::Foundation::Collections::ValueSet>>(uri: Param0, options: Param1, inputdata: Param2) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchUriResult>> {
+    pub fn LaunchUriForResultsWithDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(uri: Param0, options: Param1, inputdata: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchUriResult>> {
         Self::ILauncherStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriForResultsWithDataAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchUriResult>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriForResultsWithDataAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchUriResult>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LaunchUriWithDataAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>, Param2: ::windows_core::IntoParam<'a, super::Foundation::Collections::ValueSet>>(uri: Param0, options: Param1, inputdata: Param2) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    pub fn LaunchUriWithDataAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, LauncherOptions>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(uri: Param0, options: Param1, inputdata: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriWithDataAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriWithDataAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn QueryUriSupportAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>>(uri: Param0, launchquerysupporttype: LaunchQuerySupportType) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
+    pub fn QueryUriSupportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(uri: Param0, launchquerysupporttype: LaunchQuerySupportType) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
         Self::ILauncherStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).QueryUriSupportAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), launchquerysupporttype, result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
+            (::windows_core::Interface::vtable(this).QueryUriSupportAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), launchquerysupporttype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn QueryUriSupportWithPackageFamilyNameAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(uri: Param0, launchquerysupporttype: LaunchQuerySupportType, packagefamilyname: Param2) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
+    pub fn QueryUriSupportWithPackageFamilyNameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(uri: Param0, launchquerysupporttype: LaunchQuerySupportType, packagefamilyname: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
         Self::ILauncherStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).QueryUriSupportWithPackageFamilyNameAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), launchquerysupporttype, packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
+            (::windows_core::Interface::vtable(this).QueryUriSupportWithPackageFamilyNameAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), launchquerysupporttype, packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn QueryFileSupportAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::StorageFile>>(file: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
+    #[cfg(feature = "Storage")]
+    pub fn QueryFileSupportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
         Self::ILauncherStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).QueryFileSupportAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
+            (::windows_core::Interface::vtable(this).QueryFileSupportAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn QueryFileSupportWithPackageFamilyNameAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::StorageFile>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(file: Param0, packagefamilyname: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
+    #[cfg(feature = "Storage")]
+    pub fn QueryFileSupportWithPackageFamilyNameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(file: Param0, packagefamilyname: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
         Self::ILauncherStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).QueryFileSupportWithPackageFamilyNameAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
-        })
-    }
-    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindUriSchemeHandlersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(scheme: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<super::ApplicationModel::AppInfo>>> {
-        Self::ILauncherStatics2(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindUriSchemeHandlersAsync)(::windows_core::Interface::as_raw(this), scheme.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<super::ApplicationModel::AppInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).QueryFileSupportWithPackageFamilyNameAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
         })
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindUriSchemeHandlersWithLaunchUriTypeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(scheme: Param0, launchquerysupporttype: LaunchQuerySupportType) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<super::ApplicationModel::AppInfo>>> {
+    pub fn FindUriSchemeHandlersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(scheme: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_applicationmodel::AppInfo>>> {
         Self::ILauncherStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindUriSchemeHandlersWithLaunchUriTypeAsync)(::windows_core::Interface::as_raw(this), scheme.into_param().abi(), launchquerysupporttype, result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<super::ApplicationModel::AppInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).FindUriSchemeHandlersAsync)(::windows_core::Interface::as_raw(this), scheme.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_applicationmodel::AppInfo>>>(result__)
         })
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindFileHandlersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(extension: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<super::ApplicationModel::AppInfo>>> {
+    pub fn FindUriSchemeHandlersWithLaunchUriTypeAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(scheme: Param0, launchquerysupporttype: LaunchQuerySupportType) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_applicationmodel::AppInfo>>> {
         Self::ILauncherStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindFileHandlersAsync)(::windows_core::Interface::as_raw(this), extension.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<super::ApplicationModel::AppInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).FindUriSchemeHandlersWithLaunchUriTypeAsync)(::windows_core::Interface::as_raw(this), scheme.into_param().abi(), launchquerysupporttype, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_applicationmodel::AppInfo>>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn LaunchFolderAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::IStorageFolder>>(folder: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
+    pub fn FindFileHandlersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(extension: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_applicationmodel::AppInfo>>> {
+        Self::ILauncherStatics2(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
+            (::windows_core::Interface::vtable(this).FindFileHandlersAsync)(::windows_core::Interface::as_raw(this), extension.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_applicationmodel::AppInfo>>>(result__)
+        })
+    }
+    #[cfg(feature = "Storage")]
+    pub fn LaunchFolderAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFolder>>(folder: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchFolderAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchFolderAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn LaunchFolderWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, FolderLauncherOptions>>(folder: Param0, options: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Storage")]
+    pub fn LaunchFolderWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, FolderLauncherOptions>>(folder: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchFolderWithOptionsAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchFolderWithOptionsAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn QueryAppUriSupportAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>>(uri: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
+    pub fn QueryAppUriSupportAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
         Self::ILauncherStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).QueryAppUriSupportAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
+            (::windows_core::Interface::vtable(this).QueryAppUriSupportAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn QueryAppUriSupportWithPackageFamilyNameAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(uri: Param0, packagefamilyname: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
+    pub fn QueryAppUriSupportWithPackageFamilyNameAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(uri: Param0, packagefamilyname: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>> {
         Self::ILauncherStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).QueryAppUriSupportWithPackageFamilyNameAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
+            (::windows_core::Interface::vtable(this).QueryAppUriSupportWithPackageFamilyNameAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchQuerySupportStatus>>(result__)
         })
     }
     #[cfg(all(feature = "ApplicationModel", feature = "Foundation_Collections"))]
-    pub fn FindAppUriHandlersAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>>(uri: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<super::ApplicationModel::AppInfo>>> {
+    pub fn FindAppUriHandlersAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(uri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_applicationmodel::AppInfo>>> {
         Self::ILauncherStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAppUriHandlersAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<super::ApplicationModel::AppInfo>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAppUriHandlersAsync)(::windows_core::Interface::as_raw(this), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::winrt_applicationmodel::AppInfo>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchUriForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, super::Foundation::Uri>>(user: Param0, uri: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchUriStatus>> {
+    pub fn LaunchUriForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(user: Param0, uri: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchUriStatus>> {
         Self::ILauncherStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchUriStatus>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchUriStatus>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchUriWithOptionsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, LauncherOptions>>(user: Param0, uri: Param1, options: Param2) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchUriStatus>> {
+    pub fn LaunchUriWithOptionsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, LauncherOptions>>(user: Param0, uri: Param1, options: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchUriStatus>> {
         Self::ILauncherStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriWithOptionsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchUriStatus>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriWithOptionsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchUriStatus>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LaunchUriWithDataForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, LauncherOptions>, Param3: ::windows_core::IntoParam<'a, super::Foundation::Collections::ValueSet>>(user: Param0, uri: Param1, options: Param2, inputdata: Param3) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchUriStatus>> {
+    pub fn LaunchUriWithDataForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, LauncherOptions>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(user: Param0, uri: Param1, options: Param2, inputdata: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchUriStatus>> {
         Self::ILauncherStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriWithDataForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchUriStatus>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriWithDataForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchUriStatus>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchUriForResultsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, LauncherOptions>>(user: Param0, uri: Param1, options: Param2) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchUriResult>> {
+    pub fn LaunchUriForResultsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, LauncherOptions>>(user: Param0, uri: Param1, options: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchUriResult>> {
         Self::ILauncherStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriForResultsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchUriResult>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriForResultsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchUriResult>>(result__)
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn LaunchUriForResultsWithDataForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, LauncherOptions>, Param3: ::windows_core::IntoParam<'a, super::Foundation::Collections::ValueSet>>(user: Param0, uri: Param1, options: Param2, inputdata: Param3) -> ::windows_core::Result<super::Foundation::IAsyncOperation<LaunchUriResult>> {
+    pub fn LaunchUriForResultsWithDataForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, LauncherOptions>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(user: Param0, uri: Param1, options: Param2, inputdata: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<LaunchUriResult>> {
         Self::ILauncherStatics4(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriForResultsWithDataForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<LaunchUriResult>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriForResultsWithDataForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<LaunchUriResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchFolderPathAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(path: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    pub fn LaunchFolderPathAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(path: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchFolderPathAsync)(::windows_core::Interface::as_raw(this), path.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchFolderPathAsync)(::windows_core::Interface::as_raw(this), path.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchFolderPathWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, FolderLauncherOptions>>(path: Param0, options: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    pub fn LaunchFolderPathWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, FolderLauncherOptions>>(path: Param0, options: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchFolderPathWithOptionsAsync)(::windows_core::Interface::as_raw(this), path.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchFolderPathWithOptionsAsync)(::windows_core::Interface::as_raw(this), path.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchFolderPathForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, path: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    pub fn LaunchFolderPathForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(user: Param0, path: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchFolderPathForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), path.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchFolderPathForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), path.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LaunchFolderPathWithOptionsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, FolderLauncherOptions>>(user: Param0, path: Param1, options: Param2) -> ::windows_core::Result<super::Foundation::IAsyncOperation<bool>> {
+    pub fn LaunchFolderPathWithOptionsForUserAsync<'a, Param0: ::windows_core::IntoParam<'a, User>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, FolderLauncherOptions>>(user: Param0, path: Param1, options: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ILauncherStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchFolderPathWithOptionsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), path.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchFolderPathWithOptionsForUserAsync)(::windows_core::Interface::as_raw(this), user.into_param().abi(), path.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
     pub fn ILauncherStatics<R, F: FnOnce(&ILauncherStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -5205,16 +4899,14 @@ impl LauncherOptions {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPreferredApplicationDisplayName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FallbackUri(&self) -> ::windows_core::Result<super::Foundation::Uri> {
+    pub fn FallbackUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).FallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetFallbackUri<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetFallbackUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFallbackUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -5241,15 +4933,15 @@ impl LauncherOptions {
         unsafe { (::windows_core::Interface::vtable(this).SetTargetApplicationPackageFamilyName)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Search")]
-    pub fn NeighboringFilesQuery(&self) -> ::windows_core::Result<super::Storage::Search::StorageFileQueryResult> {
+    pub fn NeighboringFilesQuery(&self) -> ::windows_core::Result<::winrt_storage::Search::StorageFileQueryResult> {
         let this = &::windows_core::Interface::cast::<ILauncherOptions2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).NeighboringFilesQuery)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Storage::Search::StorageFileQueryResult>(result__)
+            (::windows_core::Interface::vtable(this).NeighboringFilesQuery)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Search::StorageFileQueryResult>(result__)
         }
     }
     #[cfg(feature = "Storage_Search")]
-    pub fn SetNeighboringFilesQuery<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::Search::StorageFileQueryResult>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetNeighboringFilesQuery<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Search::StorageFileQueryResult>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ILauncherOptions2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetNeighboringFilesQuery)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -5276,15 +4968,15 @@ impl LauncherOptions {
         unsafe { (::windows_core::Interface::vtable(this).SetLimitPickerToCurrentAppAndAppUriHandlers)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn DesiredRemainingView(&self) -> ::windows_core::Result<super::UI::ViewManagement::ViewSizePreference> {
+    pub fn DesiredRemainingView(&self) -> ::windows_core::Result<::winrt_ui::ViewManagement::ViewSizePreference> {
         let this = &::windows_core::Interface::cast::<ILauncherViewOptions>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::UI::ViewManagement::ViewSizePreference>::zeroed();
-            (::windows_core::Interface::vtable(this).DesiredRemainingView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UI::ViewManagement::ViewSizePreference>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::ViewManagement::ViewSizePreference>::zeroed();
+            (::windows_core::Interface::vtable(this).DesiredRemainingView)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::ViewManagement::ViewSizePreference>(result__)
         }
     }
     #[cfg(feature = "UI_ViewManagement")]
-    pub fn SetDesiredRemainingView(&self, value: super::UI::ViewManagement::ViewSizePreference) -> ::windows_core::Result<()> {
+    pub fn SetDesiredRemainingView(&self, value: ::winrt_ui::ViewManagement::ViewSizePreference) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ILauncherViewOptions>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetDesiredRemainingView)(::windows_core::Interface::as_raw(this), value).ok() }
     }
@@ -5386,42 +5078,38 @@ unsafe impl ::core::marker::Sync for LauncherOptions {}
 #[repr(transparent)]
 pub struct LauncherUIOptions(::windows_core::IUnknown);
 impl LauncherUIOptions {
-    #[cfg(feature = "Foundation")]
-    pub fn InvocationPoint(&self) -> ::windows_core::Result<super::Foundation::IReference<super::Foundation::Point>> {
+    pub fn InvocationPoint(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Point>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).InvocationPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IReference<super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).InvocationPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Point>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetInvocationPoint<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::IReference<super::Foundation::Point>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetInvocationPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Point>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetInvocationPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SelectionRect(&self) -> ::windows_core::Result<super::Foundation::IReference<super::Foundation::Rect>> {
+    pub fn SelectionRect(&self) -> ::windows_core::Result<::winrt_foundation::IReference<::winrt_foundation::Rect>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SelectionRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IReference<super::Foundation::Rect>>(result__)
+            (::windows_core::Interface::vtable(this).SelectionRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<::winrt_foundation::Rect>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetSelectionRect<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::IReference<super::Foundation::Rect>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetSelectionRect<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<::winrt_foundation::Rect>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSelectionRect)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "UI_Popups")]
-    pub fn PreferredPlacement(&self) -> ::windows_core::Result<super::UI::Popups::Placement> {
+    pub fn PreferredPlacement(&self) -> ::windows_core::Result<::winrt_ui::Popups::Placement> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::UI::Popups::Placement>::zeroed();
-            (::windows_core::Interface::vtable(this).PreferredPlacement)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UI::Popups::Placement>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_ui::Popups::Placement>::zeroed();
+            (::windows_core::Interface::vtable(this).PreferredPlacement)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Popups::Placement>(result__)
         }
     }
     #[cfg(feature = "UI_Popups")]
-    pub fn SetPreferredPlacement(&self, value: super::UI::Popups::Placement) -> ::windows_core::Result<()> {
+    pub fn SetPreferredPlacement(&self, value: ::winrt_ui::Popups::Placement) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPreferredPlacement)(::windows_core::Interface::as_raw(this), value).ok() }
     }
@@ -5518,37 +5206,31 @@ impl MemoryManager {
             (::windows_core::Interface::vtable(this).AppMemoryUsageLevel)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AppMemoryUsageLevel>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AppMemoryUsageIncreased<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn AppMemoryUsageIncreased<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IMemoryManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AppMemoryUsageIncreased)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AppMemoryUsageIncreased)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAppMemoryUsageIncreased<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAppMemoryUsageIncreased<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IMemoryManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveAppMemoryUsageIncreased)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AppMemoryUsageDecreased<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn AppMemoryUsageDecreased<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IMemoryManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AppMemoryUsageDecreased)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AppMemoryUsageDecreased)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAppMemoryUsageDecreased<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAppMemoryUsageDecreased<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IMemoryManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveAppMemoryUsageDecreased)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AppMemoryUsageLimitChanging<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventHandler<AppMemoryUsageLimitChangingEventArgs>>>(handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn AppMemoryUsageLimitChanging<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<AppMemoryUsageLimitChangingEventArgs>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IMemoryManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AppMemoryUsageLimitChanging)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AppMemoryUsageLimitChanging)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAppMemoryUsageLimitChanging<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAppMemoryUsageLimitChanging<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IMemoryManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveAppMemoryUsageLimitChanging)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn GetAppMemoryReport() -> ::windows_core::Result<AppMemoryReport> {
@@ -5630,18 +5312,16 @@ unsafe impl ::windows_core::RuntimeType for PowerState {
 }
 pub struct ProcessLauncher;
 impl ProcessLauncher {
-    #[cfg(feature = "Foundation")]
-    pub fn RunToCompletionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filename: Param0, args: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<ProcessLauncherResult>> {
+    pub fn RunToCompletionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(filename: Param0, args: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProcessLauncherResult>> {
         Self::IProcessLauncherStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RunToCompletionAsync)(::windows_core::Interface::as_raw(this), filename.into_param().abi(), args.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<ProcessLauncherResult>>(result__)
+            (::windows_core::Interface::vtable(this).RunToCompletionAsync)(::windows_core::Interface::as_raw(this), filename.into_param().abi(), args.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProcessLauncherResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RunToCompletionAsyncWithOptions<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ProcessLauncherOptions>>(filename: Param0, args: Param1, options: Param2) -> ::windows_core::Result<super::Foundation::IAsyncOperation<ProcessLauncherResult>> {
+    pub fn RunToCompletionAsyncWithOptions<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ProcessLauncherOptions>>(filename: Param0, args: Param1, options: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<ProcessLauncherResult>> {
         Self::IProcessLauncherStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RunToCompletionAsyncWithOptions)(::windows_core::Interface::as_raw(this), filename.into_param().abi(), args.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<ProcessLauncherResult>>(result__)
+            (::windows_core::Interface::vtable(this).RunToCompletionAsyncWithOptions)(::windows_core::Interface::as_raw(this), filename.into_param().abi(), args.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<ProcessLauncherResult>>(result__)
         })
     }
     pub fn IProcessLauncherStatics<R, F: FnOnce(&IProcessLauncherStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -5663,41 +5343,41 @@ impl ProcessLauncherOptions {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn StandardInput(&self) -> ::windows_core::Result<super::Storage::Streams::IInputStream> {
+    pub fn StandardInput(&self) -> ::windows_core::Result<::winrt_storage::Streams::IInputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StandardInput)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Storage::Streams::IInputStream>(result__)
+            (::windows_core::Interface::vtable(this).StandardInput)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IInputStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetStandardInput<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::Streams::IInputStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetStandardInput<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IInputStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStandardInput)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn StandardOutput(&self) -> ::windows_core::Result<super::Storage::Streams::IOutputStream> {
+    pub fn StandardOutput(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StandardOutput)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Storage::Streams::IOutputStream>(result__)
+            (::windows_core::Interface::vtable(this).StandardOutput)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IOutputStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetStandardOutput<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::Streams::IOutputStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetStandardOutput<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStandardOutput)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn StandardError(&self) -> ::windows_core::Result<super::Storage::Streams::IOutputStream> {
+    pub fn StandardError(&self) -> ::windows_core::Result<::winrt_storage::Streams::IOutputStream> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StandardError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Storage::Streams::IOutputStream>(result__)
+            (::windows_core::Interface::vtable(this).StandardError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IOutputStream>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetStandardError<'a, Param0: ::windows_core::IntoParam<'a, super::Storage::Streams::IOutputStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetStandardError<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IOutputStream>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStandardError)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -6000,7 +5680,7 @@ unsafe impl ::windows_core::RuntimeType for ProcessorArchitecture {
 pub struct ProtocolForResultsOperation(::windows_core::IUnknown);
 impl ProtocolForResultsOperation {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ReportCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Collections::ValueSet>>(&self, data: Param0) -> ::windows_core::Result<()> {
+    pub fn ReportCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(&self, data: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).ReportCompleted)(::windows_core::Interface::as_raw(this), data.into_param().abi()).ok() }
     }
@@ -6118,25 +5798,25 @@ unsafe impl ::windows_core::RuntimeType for RemoteLaunchUriStatus {
 }
 pub struct RemoteLauncher;
 impl RemoteLauncher {
-    #[cfg(all(feature = "Foundation", feature = "System_RemoteSystems"))]
-    pub fn LaunchUriAsync<'a, Param0: ::windows_core::IntoParam<'a, RemoteSystems::RemoteSystemConnectionRequest>, Param1: ::windows_core::IntoParam<'a, super::Foundation::Uri>>(remotesystemconnectionrequest: Param0, uri: Param1) -> ::windows_core::Result<super::Foundation::IAsyncOperation<RemoteLaunchUriStatus>> {
+    #[cfg(feature = "System_RemoteSystems")]
+    pub fn LaunchUriAsync<'a, Param0: ::windows_core::IntoParam<'a, RemoteSystems::RemoteSystemConnectionRequest>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(remotesystemconnectionrequest: Param0, uri: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<RemoteLaunchUriStatus>> {
         Self::IRemoteLauncherStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriAsync)(::windows_core::Interface::as_raw(this), remotesystemconnectionrequest.into_param().abi(), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<RemoteLaunchUriStatus>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriAsync)(::windows_core::Interface::as_raw(this), remotesystemconnectionrequest.into_param().abi(), uri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<RemoteLaunchUriStatus>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "System_RemoteSystems"))]
-    pub fn LaunchUriWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, RemoteSystems::RemoteSystemConnectionRequest>, Param1: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, RemoteLauncherOptions>>(remotesystemconnectionrequest: Param0, uri: Param1, options: Param2) -> ::windows_core::Result<super::Foundation::IAsyncOperation<RemoteLaunchUriStatus>> {
+    #[cfg(feature = "System_RemoteSystems")]
+    pub fn LaunchUriWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, RemoteSystems::RemoteSystemConnectionRequest>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, RemoteLauncherOptions>>(remotesystemconnectionrequest: Param0, uri: Param1, options: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<RemoteLaunchUriStatus>> {
         Self::IRemoteLauncherStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriWithOptionsAsync)(::windows_core::Interface::as_raw(this), remotesystemconnectionrequest.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<RemoteLaunchUriStatus>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriWithOptionsAsync)(::windows_core::Interface::as_raw(this), remotesystemconnectionrequest.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<RemoteLaunchUriStatus>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "System_RemoteSystems"))]
-    pub fn LaunchUriWithDataAsync<'a, Param0: ::windows_core::IntoParam<'a, RemoteSystems::RemoteSystemConnectionRequest>, Param1: ::windows_core::IntoParam<'a, super::Foundation::Uri>, Param2: ::windows_core::IntoParam<'a, RemoteLauncherOptions>, Param3: ::windows_core::IntoParam<'a, super::Foundation::Collections::ValueSet>>(remotesystemconnectionrequest: Param0, uri: Param1, options: Param2, inputdata: Param3) -> ::windows_core::Result<super::Foundation::IAsyncOperation<RemoteLaunchUriStatus>> {
+    pub fn LaunchUriWithDataAsync<'a, Param0: ::windows_core::IntoParam<'a, RemoteSystems::RemoteSystemConnectionRequest>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>, Param2: ::windows_core::IntoParam<'a, RemoteLauncherOptions>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::ValueSet>>(remotesystemconnectionrequest: Param0, uri: Param1, options: Param2, inputdata: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<RemoteLaunchUriStatus>> {
         Self::IRemoteLauncherStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LaunchUriWithDataAsync)(::windows_core::Interface::as_raw(this), remotesystemconnectionrequest.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<RemoteLaunchUriStatus>>(result__)
+            (::windows_core::Interface::vtable(this).LaunchUriWithDataAsync)(::windows_core::Interface::as_raw(this), remotesystemconnectionrequest.into_param().abi(), uri.into_param().abi(), options.into_param().abi(), inputdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<RemoteLaunchUriStatus>>(result__)
         })
     }
     pub fn IRemoteLauncherStatics<R, F: FnOnce(&IRemoteLauncherStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -6157,25 +5837,23 @@ impl RemoteLauncherOptions {
         static mut SHARED: ::windows_core::FactoryCache<RemoteLauncherOptions, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FallbackUri(&self) -> ::windows_core::Result<super::Foundation::Uri> {
+    pub fn FallbackUri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).FallbackUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetFallbackUri<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetFallbackUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetFallbackUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PreferredAppIds(&self) -> ::windows_core::Result<super::Foundation::Collections::IVector<::windows_core::HSTRING>> {
+    pub fn PreferredAppIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PreferredAppIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).PreferredAppIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::windows_core::HSTRING>>(result__)
         }
     }
 }
@@ -6286,8 +5964,7 @@ unsafe impl ::windows_core::RuntimeType for ShutdownKind {
 }
 pub struct ShutdownManager;
 impl ShutdownManager {
-    #[cfg(feature = "Foundation")]
-    pub fn BeginShutdown<'a, Param1: ::windows_core::IntoParam<'a, super::Foundation::TimeSpan>>(shutdownkind: ShutdownKind, timeout: Param1) -> ::windows_core::Result<()> {
+    pub fn BeginShutdown<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(shutdownkind: ShutdownKind, timeout: Param1) -> ::windows_core::Result<()> {
         Self::IShutdownManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).BeginShutdown)(::windows_core::Interface::as_raw(this), shutdownkind, timeout.into_param().abi()).ok() })
     }
     pub fn CancelShutdown() -> ::windows_core::Result<()> {
@@ -6302,8 +5979,7 @@ impl ShutdownManager {
     pub fn EnterPowerState(powerstate: PowerState) -> ::windows_core::Result<()> {
         Self::IShutdownManagerStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).EnterPowerState)(::windows_core::Interface::as_raw(this), powerstate).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn EnterPowerStateWithTimeSpan<'a, Param1: ::windows_core::IntoParam<'a, super::Foundation::TimeSpan>>(powerstate: PowerState, wakeupafter: Param1) -> ::windows_core::Result<()> {
+    pub fn EnterPowerStateWithTimeSpan<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(powerstate: PowerState, wakeupafter: Param1) -> ::windows_core::Result<()> {
         Self::IShutdownManagerStatics2(|this| unsafe { (::windows_core::Interface::vtable(this).EnterPowerStateWithTimeSpan)(::windows_core::Interface::as_raw(this), powerstate, wakeupafter.into_param().abi()).ok() })
     }
     pub fn IShutdownManagerStatics<R, F: FnOnce(&IShutdownManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -6327,10 +6003,10 @@ impl TimeZoneSettings {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SupportedTimeZoneDisplayNames() -> ::windows_core::Result<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn SupportedTimeZoneDisplayNames() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::ITimeZoneSettingsStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedTimeZoneDisplayNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).SupportedTimeZoneDisplayNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
     pub fn CanChangeTimeZone() -> ::windows_core::Result<bool> {
@@ -6342,11 +6018,10 @@ impl TimeZoneSettings {
     pub fn ChangeTimeZoneByDisplayName<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(timezonedisplayname: Param0) -> ::windows_core::Result<()> {
         Self::ITimeZoneSettingsStatics(|this| unsafe { (::windows_core::Interface::vtable(this).ChangeTimeZoneByDisplayName)(::windows_core::Interface::as_raw(this), timezonedisplayname.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AutoUpdateTimeZoneAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TimeSpan>>(timeout: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<AutoUpdateTimeZoneStatus>> {
+    pub fn AutoUpdateTimeZoneAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(timeout: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AutoUpdateTimeZoneStatus>> {
         Self::ITimeZoneSettingsStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AutoUpdateTimeZoneAsync)(::windows_core::Interface::as_raw(this), timeout.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<AutoUpdateTimeZoneStatus>>(result__)
+            (::windows_core::Interface::vtable(this).AutoUpdateTimeZoneAsync)(::windows_core::Interface::as_raw(this), timeout.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AutoUpdateTimeZoneStatus>>(result__)
         })
     }
     pub fn ITimeZoneSettingsStatics<R, F: FnOnce(&ITimeZoneSettingsStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -6385,36 +6060,34 @@ impl User {
             (::windows_core::Interface::vtable(this).Type)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<UserType>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetPropertyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<::windows_core::IInspectable>> {
+    pub fn GetPropertyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPropertyAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).GetPropertyAsync)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::IInspectable>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(&self, values: Param0) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IPropertySet>> {
+    pub fn GetPropertiesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(&self, values: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IPropertySet>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPropertiesAsync)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IPropertySet>>(result__)
+            (::windows_core::Interface::vtable(this).GetPropertiesAsync)(::windows_core::Interface::as_raw(this), values.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IPropertySet>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn GetPictureAsync(&self, desiredsize: UserPictureSize) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Storage::Streams::IRandomAccessStreamReference>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn GetPictureAsync(&self, desiredsize: UserPictureSize) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamReference>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPictureAsync)(::windows_core::Interface::as_raw(this), desiredsize, result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Storage::Streams::IRandomAccessStreamReference>>(result__)
+            (::windows_core::Interface::vtable(this).GetPictureAsync)(::windows_core::Interface::as_raw(this), desiredsize, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IRandomAccessStreamReference>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CheckUserAgeConsentGroupAsync(&self, consentgroup: UserAgeConsentGroup) -> ::windows_core::Result<super::Foundation::IAsyncOperation<UserAgeConsentResult>> {
+    pub fn CheckUserAgeConsentGroupAsync(&self, consentgroup: UserAgeConsentGroup) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UserAgeConsentResult>> {
         let this = &::windows_core::Interface::cast::<IUser2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CheckUserAgeConsentGroupAsync)(::windows_core::Interface::as_raw(this), consentgroup, result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<UserAgeConsentResult>>(result__)
+            (::windows_core::Interface::vtable(this).CheckUserAgeConsentGroupAsync)(::windows_core::Interface::as_raw(this), consentgroup, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UserAgeConsentResult>>(result__)
         }
     }
     pub fn CreateWatcher() -> ::windows_core::Result<UserWatcher> {
@@ -6424,24 +6097,24 @@ impl User {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindAllAsync() -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<User>>> {
+    pub fn FindAllAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<User>>> {
         Self::IUserStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<User>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<User>>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn FindAllAsyncByType(r#type: UserType) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<User>>> {
+    pub fn FindAllAsyncByType(r#type: UserType) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<User>>> {
         Self::IUserStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllAsyncByType)(::windows_core::Interface::as_raw(this), r#type, result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<User>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllAsyncByType)(::windows_core::Interface::as_raw(this), r#type, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<User>>>(result__)
         })
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "deprecated"))]
-    pub fn FindAllAsyncByTypeAndStatus(r#type: UserType, status: UserAuthenticationStatus) -> ::windows_core::Result<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<User>>> {
+    pub fn FindAllAsyncByTypeAndStatus(r#type: UserType, status: UserAuthenticationStatus) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<User>>> {
         Self::IUserStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindAllAsyncByTypeAndStatus)(::windows_core::Interface::as_raw(this), r#type, status, result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<super::Foundation::Collections::IVectorView<User>>>(result__)
+            (::windows_core::Interface::vtable(this).FindAllAsyncByTypeAndStatus)(::windows_core::Interface::as_raw(this), r#type, status, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<User>>>(result__)
         })
     }
     pub fn GetFromId<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(nonroamableid: Param0) -> ::windows_core::Result<User> {
@@ -6836,11 +6509,11 @@ impl UserChangedEventArgs {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ChangedPropertyKinds(&self) -> ::windows_core::Result<super::Foundation::Collections::IVectorView<UserWatcherUpdateKind>> {
+    pub fn ChangedPropertyKinds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UserWatcherUpdateKind>> {
         let this = &::windows_core::Interface::cast::<IUserChangedEventArgs2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ChangedPropertyKinds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::Collections::IVectorView<UserWatcherUpdateKind>>(result__)
+            (::windows_core::Interface::vtable(this).ChangedPropertyKinds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UserWatcherUpdateKind>>(result__)
         }
     }
 }
@@ -6924,15 +6597,13 @@ impl UserDeviceAssociation {
             (::windows_core::Interface::vtable(this).FindUserFromDeviceId)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), result__.as_mut_ptr()).from_abi::<User>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UserDeviceAssociationChanged<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventHandler<UserDeviceAssociationChangedEventArgs>>>(handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn UserDeviceAssociationChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<UserDeviceAssociationChangedEventArgs>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IUserDeviceAssociationStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).UserDeviceAssociationChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).UserDeviceAssociationChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveUserDeviceAssociationChanged<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveUserDeviceAssociationChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IUserDeviceAssociationStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveUserDeviceAssociationChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn IUserDeviceAssociationStatics<R, F: FnOnce(&IUserDeviceAssociationStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -7072,12 +6743,11 @@ impl UserPicker {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSuggestedSelectedUser)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PickSingleUserAsync(&self) -> ::windows_core::Result<super::Foundation::IAsyncOperation<User>> {
+    pub fn PickSingleUserAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<User>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PickSingleUserAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::Foundation::IAsyncOperation<User>>(result__)
+            (::windows_core::Interface::vtable(this).PickSingleUserAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<User>>(result__)
         }
     }
     pub fn IsSupported() -> ::windows_core::Result<bool> {
@@ -7252,94 +6922,80 @@ impl UserWatcher {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Stop)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Added<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<UserWatcher, UserChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Added<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<UserWatcher, UserChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Added)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Added)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAdded<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAdded)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Removed<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<UserWatcher, UserChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Removed<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<UserWatcher, UserChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Removed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Removed)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveRemoved<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveRemoved<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveRemoved)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Updated<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<UserWatcher, UserChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Updated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<UserWatcher, UserChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Updated)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Updated)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveUpdated<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveUpdated<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveUpdated)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AuthenticationStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<UserWatcher, UserChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn AuthenticationStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<UserWatcher, UserChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticationStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AuthenticationStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAuthenticationStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAuthenticationStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAuthenticationStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AuthenticationStatusChanging<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<UserWatcher, UserAuthenticationStatusChangingEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn AuthenticationStatusChanging<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<UserWatcher, UserAuthenticationStatusChangingEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticationStatusChanging)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).AuthenticationStatusChanging)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAuthenticationStatusChanging<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAuthenticationStatusChanging<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAuthenticationStatusChanging)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn EnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<UserWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn EnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<UserWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).EnumerationCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).EnumerationCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveEnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveEnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveEnumerationCompleted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::TypedEventHandler<UserWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::Foundation::EventRegistrationToken> {
+    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<UserWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStopped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }

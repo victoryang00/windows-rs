@@ -1,21 +1,14 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AllJoynAcceptBusConnection(serverbushandle: super::super::Foundation::HANDLE, abortevent: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AllJoynCloseBusHandle(bushandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AllJoynConnectToBus(connectionspec: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn AllJoynCreateBus(outbuffersize: u32, inbuffersize: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AllJoynEnumEvents(connectedbushandle: super::super::Foundation::HANDLE, eventtoreset: super::super::Foundation::HANDLE, eventtypes: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AllJoynEventSelect(connectedbushandle: super::super::Foundation::HANDLE, eventhandle: super::super::Foundation::HANDLE, eventtypes: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AllJoynReceiveFromBus(connectedbushandle: super::super::Foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bytestoread: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AllJoynSendToBus(connectedbushandle: super::super::Foundation::HANDLE, buffer: *const ::core::ffi::c_void, bytestowrite: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn AllJoynAcceptBusConnection(serverbushandle: ::win32_foundation_sys::HANDLE, abortevent: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn AllJoynCloseBusHandle(bushandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn AllJoynConnectToBus(connectionspec: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn AllJoynCreateBus(outbuffersize: u32, inbuffersize: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
+    pub fn AllJoynEnumEvents(connectedbushandle: ::win32_foundation_sys::HANDLE, eventtoreset: ::win32_foundation_sys::HANDLE, eventtypes: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn AllJoynEventSelect(connectedbushandle: ::win32_foundation_sys::HANDLE, eventhandle: ::win32_foundation_sys::HANDLE, eventtypes: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn AllJoynReceiveFromBus(connectedbushandle: ::win32_foundation_sys::HANDLE, buffer: *mut ::core::ffi::c_void, bytestoread: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn AllJoynSendToBus(connectedbushandle: ::win32_foundation_sys::HANDLE, buffer: *const ::core::ffi::c_void, bytestowrite: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn QCC_StatusText(status: QStatus) -> ::windows_core_sys::PSTR;
     pub fn alljoyn_aboutdata_create(defaultlanguage: ::windows_core_sys::PCSTR) -> alljoyn_aboutdata;
     pub fn alljoyn_aboutdata_create_empty() -> alljoyn_aboutdata;

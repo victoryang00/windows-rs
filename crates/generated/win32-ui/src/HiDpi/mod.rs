@@ -1,25 +1,24 @@
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn AdjustWindowRectExForDpi<'a, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lprect: *mut super::super::Foundation::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: Param2, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn AdjustWindowRectExForDpi<'a, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lprect: *mut ::win32_foundation::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: Param2, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AdjustWindowRectExForDpi(lprect: *mut super::super::Foundation::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: super::super::Foundation::BOOL, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> super::super::Foundation::BOOL;
+            fn AdjustWindowRectExForDpi(lprect: *mut ::win32_foundation::RECT, dwstyle: super::WindowsAndMessaging::WINDOW_STYLE, bmenu: ::win32_foundation::BOOL, dwexstyle: super::WindowsAndMessaging::WINDOW_EX_STYLE, dpi: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AdjustWindowRectExForDpi(::core::mem::transmute(lprect), ::core::mem::transmute(dwstyle), bmenu.into_param().abi(), ::core::mem::transmute(dwexstyle), ::core::mem::transmute(dpi)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn AreDpiAwarenessContextsEqual<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>, Param1: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(dpicontexta: Param0, dpicontextb: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn AreDpiAwarenessContextsEqual<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>, Param1: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(dpicontexta: Param0, dpicontextb: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn AreDpiAwarenessContextsEqual(dpicontexta: DPI_AWARENESS_CONTEXT, dpicontextb: DPI_AWARENESS_CONTEXT) -> super::super::Foundation::BOOL;
+            fn AreDpiAwarenessContextsEqual(dpicontexta: DPI_AWARENESS_CONTEXT, dpicontextb: DPI_AWARENESS_CONTEXT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(AreDpiAwarenessContextsEqual(dpicontexta.into_param().abi(), dpicontextb.into_param().abi()))
     }
@@ -216,14 +215,13 @@ impl ::core::fmt::Debug for DPI_HOSTING_BEHAVIOR {
         f.debug_tuple("DPI_HOSTING_BEHAVIOR").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnableNonClientDpiScaling<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn EnableNonClientDpiScaling<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnableNonClientDpiScaling(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
+            fn EnableNonClientDpiScaling(hwnd: ::win32_foundation::HWND) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnableNonClientDpiScaling(hwnd.into_param().abi()))
     }
@@ -243,42 +241,39 @@ pub unsafe fn GetAwarenessFromDpiAwarenessContext<'a, Param0: ::windows_core::In
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDialogControlDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS {
+pub unsafe fn GetDialogControlDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDialogControlDpiChangeBehavior(hwnd: super::super::Foundation::HWND) -> DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS;
+            fn GetDialogControlDpiChangeBehavior(hwnd: ::win32_foundation::HWND) -> DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS;
         }
         ::core::mem::transmute(GetDialogControlDpiChangeBehavior(hwnd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDialogDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0) -> DIALOG_DPI_CHANGE_BEHAVIORS {
+pub unsafe fn GetDialogDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hdlg: Param0) -> DIALOG_DPI_CHANGE_BEHAVIORS {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDialogDpiChangeBehavior(hdlg: super::super::Foundation::HWND) -> DIALOG_DPI_CHANGE_BEHAVIORS;
+            fn GetDialogDpiChangeBehavior(hdlg: ::win32_foundation::HWND) -> DIALOG_DPI_CHANGE_BEHAVIORS;
         }
         ::core::mem::transmute(GetDialogDpiChangeBehavior(hdlg.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDpiAwarenessContextForProcess<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> DPI_AWARENESS_CONTEXT {
+pub unsafe fn GetDpiAwarenessContextForProcess<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0) -> DPI_AWARENESS_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDpiAwarenessContextForProcess(hprocess: super::super::Foundation::HANDLE) -> DPI_AWARENESS_CONTEXT;
+            fn GetDpiAwarenessContextForProcess(hprocess: ::win32_foundation::HANDLE) -> DPI_AWARENESS_CONTEXT;
         }
         ::core::mem::transmute(GetDpiAwarenessContextForProcess(hprocess.into_param().abi()))
     }
@@ -287,12 +282,12 @@ pub unsafe fn GetDpiAwarenessContextForProcess<'a, Param0: ::windows_core::IntoP
 }
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
-pub unsafe fn GetDpiForMonitor<'a, Param0: ::windows_core::IntoParam<'a, super::super::Graphics::Gdi::HMONITOR>>(hmonitor: Param0, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core::Result<()> {
+pub unsafe fn GetDpiForMonitor<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Gdi::HMONITOR>>(hmonitor: Param0, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDpiForMonitor(hmonitor: super::super::Graphics::Gdi::HMONITOR, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core::HRESULT;
+            fn GetDpiForMonitor(hmonitor: ::win32_graphics::Gdi::HMONITOR, dpitype: MONITOR_DPI_TYPE, dpix: *mut u32, dpiy: *mut u32) -> ::windows_core::HRESULT;
         }
         GetDpiForMonitor(hmonitor.into_param().abi(), ::core::mem::transmute(dpitype), ::core::mem::transmute(dpix), ::core::mem::transmute(dpiy)).ok()
     }
@@ -312,14 +307,13 @@ pub unsafe fn GetDpiForSystem() -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDpiForWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> u32 {
+pub unsafe fn GetDpiForWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDpiForWindow(hwnd: super::super::Foundation::HWND) -> u32;
+            fn GetDpiForWindow(hwnd: ::win32_foundation::HWND) -> u32;
         }
         ::core::mem::transmute(GetDpiForWindow(hwnd.into_param().abi()))
     }
@@ -339,14 +333,13 @@ pub unsafe fn GetDpiFromDpiAwarenessContext<'a, Param0: ::windows_core::IntoPara
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetProcessDpiAwareness<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> ::windows_core::Result<PROCESS_DPI_AWARENESS> {
+pub unsafe fn GetProcessDpiAwareness<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0) -> ::windows_core::Result<PROCESS_DPI_AWARENESS> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetProcessDpiAwareness(hprocess: super::super::Foundation::HANDLE, value: *mut PROCESS_DPI_AWARENESS) -> ::windows_core::HRESULT;
+            fn GetProcessDpiAwareness(hprocess: ::win32_foundation::HANDLE, value: *mut PROCESS_DPI_AWARENESS) -> ::windows_core::HRESULT;
         }
         let mut result__ = ::core::mem::MaybeUninit::<PROCESS_DPI_AWARENESS>::zeroed();
         GetProcessDpiAwareness(hprocess.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<PROCESS_DPI_AWARENESS>(result__)
@@ -354,14 +347,13 @@ pub unsafe fn GetProcessDpiAwareness<'a, Param0: ::windows_core::IntoParam<'a, s
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetSystemDpiForProcess<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hprocess: Param0) -> u32 {
+pub unsafe fn GetSystemDpiForProcess<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hprocess: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetSystemDpiForProcess(hprocess: super::super::Foundation::HANDLE) -> u32;
+            fn GetSystemDpiForProcess(hprocess: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(GetSystemDpiForProcess(hprocess.into_param().abi()))
     }
@@ -407,56 +399,52 @@ pub unsafe fn GetThreadDpiHostingBehavior() -> DPI_HOSTING_BEHAVIOR {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> DPI_AWARENESS_CONTEXT {
+pub unsafe fn GetWindowDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> DPI_AWARENESS_CONTEXT {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetWindowDpiAwarenessContext(hwnd: super::super::Foundation::HWND) -> DPI_AWARENESS_CONTEXT;
+            fn GetWindowDpiAwarenessContext(hwnd: ::win32_foundation::HWND) -> DPI_AWARENESS_CONTEXT;
         }
         ::core::mem::transmute(GetWindowDpiAwarenessContext(hwnd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetWindowDpiHostingBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0) -> DPI_HOSTING_BEHAVIOR {
+pub unsafe fn GetWindowDpiHostingBehavior<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> DPI_HOSTING_BEHAVIOR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetWindowDpiHostingBehavior(hwnd: super::super::Foundation::HWND) -> DPI_HOSTING_BEHAVIOR;
+            fn GetWindowDpiHostingBehavior(hwnd: ::win32_foundation::HWND) -> DPI_HOSTING_BEHAVIOR;
         }
         ::core::mem::transmute(GetWindowDpiHostingBehavior(hwnd.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsValidDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn IsValidDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsValidDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> super::super::Foundation::BOOL;
+            fn IsValidDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsValidDpiAwarenessContext(value.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn LogicalToPhysicalPointForPerMonitorDPI<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn LogicalToPhysicalPointForPerMonitorDPI<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, lppoint: *mut ::win32_foundation::POINT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn LogicalToPhysicalPointForPerMonitorDPI(hwnd: super::super::Foundation::HWND, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
+            fn LogicalToPhysicalPointForPerMonitorDPI(hwnd: ::win32_foundation::HWND, lppoint: *mut ::win32_foundation::POINT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(LogicalToPhysicalPointForPerMonitorDPI(hwnd.into_param().abi(), ::core::mem::transmute(lppoint)))
     }
@@ -489,14 +477,13 @@ impl ::core::fmt::Debug for MONITOR_DPI_TYPE {
         f.debug_tuple("MONITOR_DPI_TYPE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenThemeDataForDpi<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, pszclasslist: Param1, dpi: u32) -> isize {
+pub unsafe fn OpenThemeDataForDpi<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwnd: Param0, pszclasslist: Param1, dpi: u32) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenThemeDataForDpi(hwnd: super::super::Foundation::HWND, pszclasslist: ::windows_core::PCWSTR, dpi: u32) -> isize;
+            fn OpenThemeDataForDpi(hwnd: ::win32_foundation::HWND, pszclasslist: ::windows_core::PCWSTR, dpi: u32) -> isize;
         }
         ::core::mem::transmute(OpenThemeDataForDpi(hwnd.into_param().abi(), pszclasslist.into_param().abi(), ::core::mem::transmute(dpi)))
     }
@@ -528,42 +515,39 @@ impl ::core::fmt::Debug for PROCESS_DPI_AWARENESS {
         f.debug_tuple("PROCESS_DPI_AWARENESS").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn PhysicalToLogicalPointForPerMonitorDPI<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
+pub unsafe fn PhysicalToLogicalPointForPerMonitorDPI<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, lppoint: *mut ::win32_foundation::POINT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn PhysicalToLogicalPointForPerMonitorDPI(hwnd: super::super::Foundation::HWND, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
+            fn PhysicalToLogicalPointForPerMonitorDPI(hwnd: ::win32_foundation::HWND, lppoint: *mut ::win32_foundation::POINT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(PhysicalToLogicalPointForPerMonitorDPI(hwnd.into_param().abi(), ::core::mem::transmute(lppoint)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDialogControlDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, mask: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS, values: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDialogControlDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, mask: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS, values: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetDialogControlDpiChangeBehavior(hwnd: super::super::Foundation::HWND, mask: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS, values: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL;
+            fn SetDialogControlDpiChangeBehavior(hwnd: ::win32_foundation::HWND, mask: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS, values: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetDialogControlDpiChangeBehavior(hwnd.into_param().abi(), ::core::mem::transmute(mask), ::core::mem::transmute(values)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetDialogDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hdlg: Param0, mask: DIALOG_DPI_CHANGE_BEHAVIORS, values: DIALOG_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL {
+pub unsafe fn SetDialogDpiChangeBehavior<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hdlg: Param0, mask: DIALOG_DPI_CHANGE_BEHAVIORS, values: DIALOG_DPI_CHANGE_BEHAVIORS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetDialogDpiChangeBehavior(hdlg: super::super::Foundation::HWND, mask: DIALOG_DPI_CHANGE_BEHAVIORS, values: DIALOG_DPI_CHANGE_BEHAVIORS) -> super::super::Foundation::BOOL;
+            fn SetDialogDpiChangeBehavior(hdlg: ::win32_foundation::HWND, mask: DIALOG_DPI_CHANGE_BEHAVIORS, values: DIALOG_DPI_CHANGE_BEHAVIORS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetDialogDpiChangeBehavior(hdlg.into_param().abi(), ::core::mem::transmute(mask), ::core::mem::transmute(values)))
     }
@@ -583,14 +567,13 @@ pub unsafe fn SetProcessDpiAwareness(value: PROCESS_DPI_AWARENESS) -> ::windows_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetProcessDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetProcessDpiAwarenessContext<'a, Param0: ::windows_core::IntoParam<'a, DPI_AWARENESS_CONTEXT>>(value: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetProcessDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> super::super::Foundation::BOOL;
+            fn SetProcessDpiAwarenessContext(value: DPI_AWARENESS_CONTEXT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetProcessDpiAwarenessContext(value.into_param().abi()))
     }
@@ -623,14 +606,13 @@ pub unsafe fn SetThreadDpiHostingBehavior(value: DPI_HOSTING_BEHAVIOR) -> DPI_HO
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SystemParametersInfoForDpi(uiaction: u32, uiparam: u32, pvparam: *mut ::core::ffi::c_void, fwinini: u32, dpi: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SystemParametersInfoForDpi(uiaction: u32, uiparam: u32, pvparam: *mut ::core::ffi::c_void, fwinini: u32, dpi: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SystemParametersInfoForDpi(uiaction: u32, uiparam: u32, pvparam: *mut ::core::ffi::c_void, fwinini: u32, dpi: u32) -> super::super::Foundation::BOOL;
+            fn SystemParametersInfoForDpi(uiaction: u32, uiparam: u32, pvparam: *mut ::core::ffi::c_void, fwinini: u32, dpi: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SystemParametersInfoForDpi(::core::mem::transmute(uiaction), ::core::mem::transmute(uiparam), ::core::mem::transmute(pvparam), ::core::mem::transmute(fwinini), ::core::mem::transmute(dpi)))
     }

@@ -80,21 +80,17 @@ impl ::core::clone::Clone for REQUESTBODY_GetStatus {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct REQUESTBODY_Renew {
     pub Expires: *mut WSD_EVENTING_EXPIRES,
     pub Any: *mut WSDXML_ELEMENT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for REQUESTBODY_Renew {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for REQUESTBODY_Renew {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct REQUESTBODY_Subscribe {
     pub EndTo: *mut WSD_ENDPOINT_REFERENCE,
     pub Delivery: *mut WSD_EVENTING_DELIVERY_MODE,
@@ -102,9 +98,7 @@ pub struct REQUESTBODY_Subscribe {
     pub Filter: *mut WSD_EVENTING_FILTER,
     pub Any: *mut WSDXML_ELEMENT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for REQUESTBODY_Subscribe {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for REQUESTBODY_Subscribe {
     fn clone(&self) -> Self {
         *self
@@ -131,43 +125,34 @@ impl ::core::clone::Clone for RESPONSEBODY_GetMetadata {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESPONSEBODY_GetStatus {
     pub expires: *mut WSD_EVENTING_EXPIRES,
     pub any: *mut WSDXML_ELEMENT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESPONSEBODY_GetStatus {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESPONSEBODY_GetStatus {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESPONSEBODY_Renew {
     pub expires: *mut WSD_EVENTING_EXPIRES,
     pub any: *mut WSDXML_ELEMENT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESPONSEBODY_Renew {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESPONSEBODY_Renew {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESPONSEBODY_Subscribe {
     pub SubscriptionManager: *mut WSD_ENDPOINT_REFERENCE,
     pub expires: *mut WSD_EVENTING_EXPIRES,
     pub any: *mut WSDXML_ELEMENT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESPONSEBODY_Subscribe {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESPONSEBODY_Subscribe {
     fn clone(&self) -> Self {
         *self
@@ -444,9 +429,8 @@ pub const WSD_SECURITY_REQUIRE_HTTP_CLIENT_AUTH: WSD_CONFIG_PARAM_TYPE = 11i32;
 pub const WSD_SECURITY_REQUIRE_CLIENT_CERT_OR_HTTP_CLIENT_AUTH: WSD_CONFIG_PARAM_TYPE = 12i32;
 pub const WSD_SECURITY_USE_HTTP_CLIENT_AUTH: WSD_CONFIG_PARAM_TYPE = 13i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WSD_DATETIME {
-    pub isPositive: super::super::Foundation::BOOL,
+    pub isPositive: ::win32_foundation_sys::BOOL,
     pub year: u32,
     pub month: u8,
     pub day: u8,
@@ -454,14 +438,12 @@ pub struct WSD_DATETIME {
     pub minute: u8,
     pub second: u8,
     pub millisecond: u32,
-    pub TZIsLocal: super::super::Foundation::BOOL,
-    pub TZIsPositive: super::super::Foundation::BOOL,
+    pub TZIsLocal: ::win32_foundation_sys::BOOL,
+    pub TZIsPositive: ::win32_foundation_sys::BOOL,
     pub TZHour: u8,
     pub TZMinute: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WSD_DATETIME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WSD_DATETIME {
     fn clone(&self) -> Self {
         *self
@@ -471,9 +453,8 @@ pub const WSD_DEFAULT_EVENTING_ADDRESS: &str = "http://*:5357/";
 pub const WSD_DEFAULT_HOSTING_ADDRESS: &str = "http://*:5357/";
 pub const WSD_DEFAULT_SECURE_HOSTING_ADDRESS: &str = "https://*:5358/";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WSD_DURATION {
-    pub isPositive: super::super::Foundation::BOOL,
+    pub isPositive: ::win32_foundation_sys::BOOL,
     pub year: u32,
     pub month: u32,
     pub day: u32,
@@ -482,9 +463,7 @@ pub struct WSD_DURATION {
     pub second: u32,
     pub millisecond: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WSD_DURATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WSD_DURATION {
     fn clone(&self) -> Self {
         *self
@@ -555,14 +534,11 @@ impl ::core::clone::Clone for WSD_EVENTING_DELIVERY_MODE_PUSH {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WSD_EVENTING_EXPIRES {
     pub Duration: *mut WSD_DURATION,
     pub DateTime: *mut WSD_DATETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WSD_EVENTING_EXPIRES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WSD_EVENTING_EXPIRES {
     fn clone(&self) -> Self {
         *self
@@ -859,37 +835,37 @@ impl ::core::clone::Clone for WSD_SCOPES {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct WSD_SECURITY_CERT_VALIDATION {
-    pub certMatchArray: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT,
+    pub certMatchArray: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT,
     pub dwCertMatchArrayCount: u32,
-    pub hCertMatchStore: super::super::Security::Cryptography::HCERTSTORE,
-    pub hCertIssuerStore: super::super::Security::Cryptography::HCERTSTORE,
+    pub hCertMatchStore: ::win32_security_sys::Cryptography::HCERTSTORE,
+    pub hCertIssuerStore: ::win32_security_sys::Cryptography::HCERTSTORE,
     pub dwCertCheckOptions: u32,
     pub pszCNGHashAlgId: ::windows_core_sys::PCWSTR,
     pub pbCertHash: *mut u8,
     pub dwCertHashSize: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for WSD_SECURITY_CERT_VALIDATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for WSD_SECURITY_CERT_VALIDATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct WSD_SECURITY_CERT_VALIDATION_V1 {
-    pub certMatchArray: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT,
+    pub certMatchArray: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT,
     pub dwCertMatchArrayCount: u32,
-    pub hCertMatchStore: super::super::Security::Cryptography::HCERTSTORE,
-    pub hCertIssuerStore: super::super::Security::Cryptography::HCERTSTORE,
+    pub hCertMatchStore: ::win32_security_sys::Cryptography::HCERTSTORE,
+    pub hCertIssuerStore: ::win32_security_sys::Cryptography::HCERTSTORE,
     pub dwCertCheckOptions: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for WSD_SECURITY_CERT_VALIDATION_V1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for WSD_SECURITY_CERT_VALIDATION_V1 {
     fn clone(&self) -> Self {
         *self
@@ -898,16 +874,16 @@ impl ::core::clone::Clone for WSD_SECURITY_CERT_VALIDATION_V1 {
 pub const WSD_SECURITY_HTTP_AUTH_SCHEME_NEGOTIATE: u32 = 1u32;
 pub const WSD_SECURITY_HTTP_AUTH_SCHEME_NTLM: u32 = 2u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct WSD_SECURITY_SIGNATURE_VALIDATION {
-    pub signingCertArray: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT,
+    pub signingCertArray: *mut *mut ::win32_security_sys::Cryptography::CERT_CONTEXT,
     pub dwSigningCertArrayCount: u32,
-    pub hSigningCertStore: super::super::Security::Cryptography::HCERTSTORE,
+    pub hSigningCertStore: ::win32_security_sys::Cryptography::HCERTSTORE,
     pub dwFlags: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for WSD_SECURITY_SIGNATURE_VALIDATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for WSD_SECURITY_SIGNATURE_VALIDATION {
     fn clone(&self) -> Self {
         *self
@@ -1015,16 +991,13 @@ impl ::core::clone::Clone for WSD_SOAP_MESSAGE {
 }
 pub type WSD_STUB_FUNCTION = ::core::option::Option<unsafe extern "system" fn(server: ::windows_core_sys::IUnknown, session: IWSDServiceMessaging, event: *mut WSD_EVENT) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WSD_SYNCHRONOUS_RESPONSE_CONTEXT {
     pub hr: ::windows_core_sys::HRESULT,
-    pub eventHandle: super::super::Foundation::HANDLE,
+    pub eventHandle: ::win32_foundation_sys::HANDLE,
     pub messageParameters: IWSDMessageParameters,
     pub results: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WSD_SYNCHRONOUS_RESPONSE_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WSD_SYNCHRONOUS_RESPONSE_CONTEXT {
     fn clone(&self) -> Self {
         *self

@@ -156,7 +156,7 @@ impl AsymmetricKeyAlgorithmProvider {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ImportDefaultPrivateKeyBlob<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, keyblob: Param0) -> ::windows_core::Result<CryptographicKey> {
+    pub fn ImportDefaultPrivateKeyBlob<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, keyblob: Param0) -> ::windows_core::Result<CryptographicKey> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -164,7 +164,7 @@ impl AsymmetricKeyAlgorithmProvider {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ImportKeyPairWithBlobType<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, keyblob: Param0, blobtype: CryptographicPrivateKeyBlobType) -> ::windows_core::Result<CryptographicKey> {
+    pub fn ImportKeyPairWithBlobType<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, keyblob: Param0, blobtype: CryptographicPrivateKeyBlobType) -> ::windows_core::Result<CryptographicKey> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -172,7 +172,7 @@ impl AsymmetricKeyAlgorithmProvider {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ImportDefaultPublicKeyBlob<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, keyblob: Param0) -> ::windows_core::Result<CryptographicKey> {
+    pub fn ImportDefaultPublicKeyBlob<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, keyblob: Param0) -> ::windows_core::Result<CryptographicKey> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -180,7 +180,7 @@ impl AsymmetricKeyAlgorithmProvider {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ImportPublicKeyWithBlobType<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, keyblob: Param0, blobtype: CryptographicPublicKeyBlobType) -> ::windows_core::Result<CryptographicKey> {
+    pub fn ImportPublicKeyWithBlobType<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, keyblob: Param0, blobtype: CryptographicPublicKeyBlobType) -> ::windows_core::Result<CryptographicKey> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -320,87 +320,87 @@ unsafe impl ::windows_core::RuntimeType for Capi1KdfTargetAlgorithm {
 pub struct CryptographicEngine;
 impl CryptographicEngine {
     #[cfg(feature = "Storage_Streams")]
-    pub fn Encrypt<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1, iv: Param2) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn Encrypt<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1, iv: Param2) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         Self::ICryptographicEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Encrypt)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), iv.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Encrypt)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), iv.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Decrypt<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1, iv: Param2) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn Decrypt<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1, iv: Param2) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         Self::ICryptographicEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Decrypt)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), iv.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Decrypt)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), iv.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn EncryptAndAuthenticate<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param3: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1, nonce: Param2, authenticateddata: Param3) -> ::windows_core::Result<EncryptedAndAuthenticatedData> {
+    pub fn EncryptAndAuthenticate<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param3: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1, nonce: Param2, authenticateddata: Param3) -> ::windows_core::Result<EncryptedAndAuthenticatedData> {
         Self::ICryptographicEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).EncryptAndAuthenticate)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), nonce.into_param().abi(), authenticateddata.into_param().abi(), result__.as_mut_ptr()).from_abi::<EncryptedAndAuthenticatedData>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn DecryptAndAuthenticate<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param3: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param4: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1, nonce: Param2, authenticationtag: Param3, authenticateddata: Param4) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn DecryptAndAuthenticate<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param3: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param4: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1, nonce: Param2, authenticationtag: Param3, authenticateddata: Param4) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         Self::ICryptographicEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DecryptAndAuthenticate)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), nonce.into_param().abi(), authenticationtag.into_param().abi(), authenticateddata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).DecryptAndAuthenticate)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), nonce.into_param().abi(), authenticationtag.into_param().abi(), authenticateddata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Sign<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn Sign<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         Self::ICryptographicEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Sign)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Sign)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn VerifySignature<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1, signature: Param2) -> ::windows_core::Result<bool> {
+    pub fn VerifySignature<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1, signature: Param2) -> ::windows_core::Result<bool> {
         Self::ICryptographicEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).VerifySignature)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), signature.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn DeriveKeyMaterial<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, KeyDerivationParameters>>(key: Param0, parameters: Param1, desiredkeysize: u32) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn DeriveKeyMaterial<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, KeyDerivationParameters>>(key: Param0, parameters: Param1, desiredkeysize: u32) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         Self::ICryptographicEngineStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeriveKeyMaterial)(::windows_core::Interface::as_raw(this), key.into_param().abi(), parameters.into_param().abi(), desiredkeysize, result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).DeriveKeyMaterial)(::windows_core::Interface::as_raw(this), key.into_param().abi(), parameters.into_param().abi(), desiredkeysize, result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SignHashedData<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn SignHashedData<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         Self::ICryptographicEngineStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SignHashedData)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).SignHashedData)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn VerifySignatureWithHashInput<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1, signature: Param2) -> ::windows_core::Result<bool> {
+    pub fn VerifySignatureWithHashInput<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1, signature: Param2) -> ::windows_core::Result<bool> {
         Self::ICryptographicEngineStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).VerifySignatureWithHashInput)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), signature.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn DecryptAsync<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1, iv: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn DecryptAsync<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1, iv: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         Self::ICryptographicEngineStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DecryptAsync)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), iv.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).DecryptAsync)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), iv.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SignAsync<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SignAsync<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         Self::ICryptographicEngineStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SignAsync)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).SignAsync)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn SignHashedDataAsync<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(key: Param0, data: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn SignHashedDataAsync<'a, Param0: ::windows_core::IntoParam<'a, CryptographicKey>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(key: Param0, data: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>> {
         Self::ICryptographicEngineStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SignHashedDataAsync)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Storage::Streams::IBuffer>>(result__)
+            (::windows_core::Interface::vtable(this).SignHashedDataAsync)(::windows_core::Interface::as_raw(this), key.into_param().abi(), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::Streams::IBuffer>>(result__)
         })
     }
     pub fn ICryptographicEngineStatics<R, F: FnOnce(&ICryptographicEngineStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -419,16 +419,16 @@ impl ::windows_core::RuntimeName for CryptographicEngine {
 pub struct CryptographicHash(::windows_core::IUnknown);
 impl CryptographicHash {
     #[cfg(feature = "Storage_Streams")]
-    pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, data: Param0) -> ::windows_core::Result<()> {
+    pub fn Append<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, data: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).Append)(::windows_core::Interface::as_raw(this), data.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn GetValueAndReset(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn GetValueAndReset(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetValueAndReset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).GetValueAndReset)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -515,35 +515,35 @@ impl CryptographicKey {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ExportDefaultPrivateKeyBlobType(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn ExportDefaultPrivateKeyBlobType(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExportDefaultPrivateKeyBlobType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).ExportDefaultPrivateKeyBlobType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ExportPrivateKeyWithBlobType(&self, blobtype: CryptographicPrivateKeyBlobType) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn ExportPrivateKeyWithBlobType(&self, blobtype: CryptographicPrivateKeyBlobType) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExportPrivateKeyWithBlobType)(::windows_core::Interface::as_raw(this), blobtype, result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).ExportPrivateKeyWithBlobType)(::windows_core::Interface::as_raw(this), blobtype, result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ExportDefaultPublicKeyBlobType(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn ExportDefaultPublicKeyBlobType(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExportDefaultPublicKeyBlobType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).ExportDefaultPublicKeyBlobType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn ExportPublicKeyWithBlobType(&self, blobtype: CryptographicPublicKeyBlobType) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn ExportPublicKeyWithBlobType(&self, blobtype: CryptographicPublicKeyBlobType) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ExportPublicKeyWithBlobType)(::windows_core::Interface::as_raw(this), blobtype, result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).ExportPublicKeyWithBlobType)(::windows_core::Interface::as_raw(this), blobtype, result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -999,10 +999,10 @@ impl EccCurveNames {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AllEccCurveNames() -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn AllEccCurveNames() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::IEccCurveNamesStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AllEccCurveNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).AllEccCurveNames)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
     pub fn IEccCurveNamesStatics<R, F: FnOnce(&IEccCurveNamesStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -1017,19 +1017,19 @@ impl ::windows_core::RuntimeName for EccCurveNames {
 pub struct EncryptedAndAuthenticatedData(::windows_core::IUnknown);
 impl EncryptedAndAuthenticatedData {
     #[cfg(feature = "Storage_Streams")]
-    pub fn EncryptedData(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn EncryptedData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).EncryptedData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).EncryptedData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn AuthenticationTag(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn AuthenticationTag(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AuthenticationTag)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).AuthenticationTag)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
 }
@@ -1163,11 +1163,11 @@ impl HashAlgorithmProvider {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn HashData<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, data: Param0) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn HashData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, data: Param0) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).HashData)(::windows_core::Interface::as_raw(this), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).HashData)(::windows_core::Interface::as_raw(this), data.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn CreateHash(&self) -> ::windows_core::Result<CryptographicHash> {
@@ -1421,17 +1421,17 @@ pub struct ICryptographicEngineStatics2_Vtbl {
     pub VerifySignatureWithHashInput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::windows_core::RawPtr, data: ::windows_core::RawPtr, signature: ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
     VerifySignatureWithHashInput: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub DecryptAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::windows_core::RawPtr, data: ::windows_core::RawPtr, iv: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     DecryptAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SignAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::windows_core::RawPtr, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SignAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub SignHashedDataAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: ::windows_core::RawPtr, data: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     SignHashedDataAsync: usize,
 }
 #[doc(hidden)]
@@ -1835,9 +1835,9 @@ unsafe impl ::windows_core::Interface for IPersistedKeyProviderStatics {
 #[doc(hidden)]
 pub struct IPersistedKeyProviderStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Security_Cryptography_Certificates"))]
+    #[cfg(feature = "Security_Cryptography_Certificates")]
     pub OpenKeyPairFromCertificateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: ::windows_core::RawPtr, hashalgorithmname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, padding: CryptographicPadding, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Security_Cryptography_Certificates")))]
+    #[cfg(not(feature = "Security_Cryptography_Certificates"))]
     OpenKeyPairFromCertificateAsync: usize,
     #[cfg(feature = "Security_Cryptography_Certificates")]
     pub OpenPublicKeyFromCertificate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, certificate: ::windows_core::RawPtr, hashalgorithmname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, padding: CryptographicPadding, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2051,7 +2051,7 @@ impl KeyDerivationAlgorithmProvider {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, keymaterial: Param0) -> ::windows_core::Result<CryptographicKey> {
+    pub fn CreateKey<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, keymaterial: Param0) -> ::windows_core::Result<CryptographicKey> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2145,15 +2145,15 @@ unsafe impl ::core::marker::Sync for KeyDerivationAlgorithmProvider {}
 pub struct KeyDerivationParameters(::windows_core::IUnknown);
 impl KeyDerivationParameters {
     #[cfg(feature = "Storage_Streams")]
-    pub fn KdfGenericBinary(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn KdfGenericBinary(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).KdfGenericBinary)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).KdfGenericBinary)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetKdfGenericBinary<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetKdfGenericBinary<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetKdfGenericBinary)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -2176,21 +2176,21 @@ impl KeyDerivationParameters {
         unsafe { (::windows_core::Interface::vtable(this).SetCapi1KdfTargetAlgorithm)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn BuildForPbkdf2<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(pbkdf2salt: Param0, iterationcount: u32) -> ::windows_core::Result<KeyDerivationParameters> {
+    pub fn BuildForPbkdf2<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(pbkdf2salt: Param0, iterationcount: u32) -> ::windows_core::Result<KeyDerivationParameters> {
         Self::IKeyDerivationParametersStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).BuildForPbkdf2)(::windows_core::Interface::as_raw(this), pbkdf2salt.into_param().abi(), iterationcount, result__.as_mut_ptr()).from_abi::<KeyDerivationParameters>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn BuildForSP800108<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(label: Param0, context: Param1) -> ::windows_core::Result<KeyDerivationParameters> {
+    pub fn BuildForSP800108<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(label: Param0, context: Param1) -> ::windows_core::Result<KeyDerivationParameters> {
         Self::IKeyDerivationParametersStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).BuildForSP800108)(::windows_core::Interface::as_raw(this), label.into_param().abi(), context.into_param().abi(), result__.as_mut_ptr()).from_abi::<KeyDerivationParameters>(result__)
         })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn BuildForSP80056a<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param3: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>, Param4: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(algorithmid: Param0, partyuinfo: Param1, partyvinfo: Param2, supppubinfo: Param3, suppprivinfo: Param4) -> ::windows_core::Result<KeyDerivationParameters> {
+    pub fn BuildForSP80056a<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param1: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param3: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>, Param4: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(algorithmid: Param0, partyuinfo: Param1, partyvinfo: Param2, supppubinfo: Param3, suppprivinfo: Param4) -> ::windows_core::Result<KeyDerivationParameters> {
         Self::IKeyDerivationParametersStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).BuildForSP80056a)(::windows_core::Interface::as_raw(this), algorithmid.into_param().abi(), partyuinfo.into_param().abi(), partyvinfo.into_param().abi(), supppubinfo.into_param().abi(), suppprivinfo.into_param().abi(), result__.as_mut_ptr()).from_abi::<KeyDerivationParameters>(result__)
@@ -2347,7 +2347,7 @@ impl MacAlgorithmProvider {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, keymaterial: Param0) -> ::windows_core::Result<CryptographicKey> {
+    pub fn CreateKey<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, keymaterial: Param0) -> ::windows_core::Result<CryptographicKey> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2355,7 +2355,7 @@ impl MacAlgorithmProvider {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateHash<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, keymaterial: Param0) -> ::windows_core::Result<CryptographicHash> {
+    pub fn CreateHash<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, keymaterial: Param0) -> ::windows_core::Result<CryptographicHash> {
         let this = &::windows_core::Interface::cast::<IMacAlgorithmProvider2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -2447,11 +2447,11 @@ unsafe impl ::core::marker::Send for MacAlgorithmProvider {}
 unsafe impl ::core::marker::Sync for MacAlgorithmProvider {}
 pub struct PersistedKeyProvider;
 impl PersistedKeyProvider {
-    #[cfg(all(feature = "Foundation", feature = "Security_Cryptography_Certificates"))]
-    pub fn OpenKeyPairFromCertificateAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Certificates::Certificate>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(certificate: Param0, hashalgorithmname: Param1, padding: CryptographicPadding) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<CryptographicKey>> {
+    #[cfg(feature = "Security_Cryptography_Certificates")]
+    pub fn OpenKeyPairFromCertificateAsync<'a, Param0: ::windows_core::IntoParam<'a, super::Certificates::Certificate>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(certificate: Param0, hashalgorithmname: Param1, padding: CryptographicPadding) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CryptographicKey>> {
         Self::IPersistedKeyProviderStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OpenKeyPairFromCertificateAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), hashalgorithmname.into_param().abi(), padding, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<CryptographicKey>>(result__)
+            (::windows_core::Interface::vtable(this).OpenKeyPairFromCertificateAsync)(::windows_core::Interface::as_raw(this), certificate.into_param().abi(), hashalgorithmname.into_param().abi(), padding, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CryptographicKey>>(result__)
         })
     }
     #[cfg(feature = "Security_Cryptography_Certificates")]
@@ -2611,7 +2611,7 @@ impl SymmetricKeyAlgorithmProvider {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn CreateSymmetricKey<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, keymaterial: Param0) -> ::windows_core::Result<CryptographicKey> {
+    pub fn CreateSymmetricKey<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, keymaterial: Param0) -> ::windows_core::Result<CryptographicKey> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();

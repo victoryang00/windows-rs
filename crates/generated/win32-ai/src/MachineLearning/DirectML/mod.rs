@@ -1,6 +1,6 @@
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[inline]
-pub unsafe fn DMLCreateDevice<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12Device>, T: ::windows_core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
+pub unsafe fn DMLCreateDevice<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12Device>, T: ::windows_core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14,7 +14,7 @@ pub unsafe fn DMLCreateDevice<'a, Param0: ::windows_core::IntoParam<'a, super::s
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 #[inline]
-pub unsafe fn DMLCreateDevice1<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12Device>, T: ::windows_core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
+pub unsafe fn DMLCreateDevice1<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12Device>, T: ::windows_core::Interface>(d3d12device: Param0, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, result__: *mut ::core::option::Option<T>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -795,7 +795,6 @@ impl ::core::default::Default for DML_ARGMIN_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     pub InputGradientTensor: *const DML_TENSOR_DESC,
     pub OutputGradientTensor: *const DML_TENSOR_DESC,
@@ -804,42 +803,34 @@ pub struct DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     pub WindowSize: *const u32,
     pub StartPadding: *const u32,
     pub EndPadding: *const u32,
-    pub IncludePadding: super::super::super::Foundation::BOOL,
+    pub IncludePadding: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC").field("InputGradientTensor", &self.InputGradientTensor).field("OutputGradientTensor", &self.OutputGradientTensor).field("DimensionCount", &self.DimensionCount).field("Strides", &self.Strides).field("WindowSize", &self.WindowSize).field("StartPadding", &self.StartPadding).field("EndPadding", &self.EndPadding).field("IncludePadding", &self.IncludePadding).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_AVERAGE_POOLING_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
@@ -848,35 +839,28 @@ pub struct DML_AVERAGE_POOLING_OPERATOR_DESC {
     pub WindowSize: *const u32,
     pub StartPadding: *const u32,
     pub EndPadding: *const u32,
-    pub IncludePadding: super::super::super::Foundation::BOOL,
+    pub IncludePadding: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_AVERAGE_POOLING_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_AVERAGE_POOLING_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_AVERAGE_POOLING_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_AVERAGE_POOLING_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("DimensionCount", &self.DimensionCount).field("Strides", &self.Strides).field("WindowSize", &self.WindowSize).field("StartPadding", &self.StartPadding).field("EndPadding", &self.EndPadding).field("IncludePadding", &self.IncludePadding).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_AVERAGE_POOLING_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_AVERAGE_POOLING_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_AVERAGE_POOLING_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_AVERAGE_POOLING_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_AVERAGE_POOLING_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -954,7 +938,6 @@ impl ::core::default::Default for DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub MeanTensor: *const DML_TENSOR_DESC,
@@ -962,37 +945,30 @@ pub struct DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     pub ScaleTensor: *const DML_TENSOR_DESC,
     pub BiasTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
-    pub Spatial: super::super::super::Foundation::BOOL,
+    pub Spatial: ::win32_foundation::BOOL,
     pub Epsilon: f32,
     pub FusedActivation: *const DML_OPERATOR_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_BATCH_NORMALIZATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_BATCH_NORMALIZATION_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("MeanTensor", &self.MeanTensor).field("VarianceTensor", &self.VarianceTensor).field("ScaleTensor", &self.ScaleTensor).field("BiasTensor", &self.BiasTensor).field("OutputTensor", &self.OutputTensor).field("Spatial", &self.Spatial).field("Epsilon", &self.Epsilon).field("FusedActivation", &self.FusedActivation).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_BATCH_NORMALIZATION_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_BATCH_NORMALIZATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_BATCH_NORMALIZATION_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1063,8 +1039,8 @@ impl ::core::default::Default for DML_BINDING_PROPERTIES {
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct DML_BINDING_TABLE_DESC {
     pub Dispatchable: ::core::option::Option<IDMLDispatchable>,
-    pub CPUDescriptorHandle: super::super::super::Graphics::Direct3D12::D3D12_CPU_DESCRIPTOR_HANDLE,
-    pub GPUDescriptorHandle: super::super::super::Graphics::Direct3D12::D3D12_GPU_DESCRIPTOR_HANDLE,
+    pub CPUDescriptorHandle: ::win32_graphics::Direct3D12::D3D12_CPU_DESCRIPTOR_HANDLE,
+    pub GPUDescriptorHandle: ::win32_graphics::Direct3D12::D3D12_GPU_DESCRIPTOR_HANDLE,
     pub SizeInDescriptors: u32,
 }
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
@@ -1168,7 +1144,7 @@ impl ::core::default::Default for DML_BUFFER_ARRAY_BINDING {
 #[repr(C)]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct DML_BUFFER_BINDING {
-    pub Buffer: ::core::option::Option<super::super::super::Graphics::Direct3D12::ID3D12Resource>,
+    pub Buffer: ::core::option::Option<::win32_graphics::Direct3D12::ID3D12Resource>,
     pub Offset: u64,
     pub SizeInBytes: u64,
 }
@@ -1476,82 +1452,66 @@ impl ::core::ops::Not for DML_CREATE_DEVICE_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
     pub Axis: u32,
     pub AxisDirection: DML_AXIS_DIRECTION,
-    pub HasExclusiveProduct: super::super::super::Foundation::BOOL,
+    pub HasExclusiveProduct: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_CUMULATIVE_PRODUCT_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Axis", &self.Axis).field("AxisDirection", &self.AxisDirection).field("HasExclusiveProduct", &self.HasExclusiveProduct).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CUMULATIVE_PRODUCT_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_CUMULATIVE_PRODUCT_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
     pub Axis: u32,
     pub AxisDirection: DML_AXIS_DIRECTION,
-    pub HasExclusiveSum: super::super::super::Foundation::BOOL,
+    pub HasExclusiveSum: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_CUMULATIVE_SUMMATION_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("Axis", &self.Axis).field("AxisDirection", &self.AxisDirection).field("HasExclusiveSum", &self.HasExclusiveSum).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_CUMULATIVE_SUMMATION_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_CUMULATIVE_SUMMATION_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3749,37 +3709,29 @@ impl ::core::default::Default for DML_FEATURE_DATA_FEATURE_LEVELS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
-    pub IsSupported: super::super::super::Foundation::BOOL,
+    pub IsSupported: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT").field("IsSupported", &self.IsSupported).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4243,7 +4195,6 @@ impl ::core::fmt::Debug for DML_GRAPH_NODE_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_GRU_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub WeightTensor: *const DML_TENSOR_DESC,
@@ -4256,17 +4207,14 @@ pub struct DML_GRU_OPERATOR_DESC {
     pub ActivationDescCount: u32,
     pub ActivationDescs: *const DML_OPERATOR_DESC,
     pub Direction: DML_RECURRENT_NETWORK_DIRECTION,
-    pub LinearBeforeReset: super::super::super::Foundation::BOOL,
+    pub LinearBeforeReset: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_GRU_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_GRU_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_GRU_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_GRU_OPERATOR_DESC")
@@ -4285,19 +4233,15 @@ impl ::core::fmt::Debug for DML_GRU_OPERATOR_DESC {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_GRU_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_GRU_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_GRU_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_GRU_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_GRU_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4450,87 +4394,71 @@ impl ::core::default::Default for DML_JOIN_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub InputGradientTensor: *const DML_TENSOR_DESC,
     pub OutputGradientTensor: *const DML_TENSOR_DESC,
-    pub CrossChannel: super::super::super::Foundation::BOOL,
+    pub CrossChannel: ::win32_foundation::BOOL,
     pub LocalSize: u32,
     pub Alpha: f32,
     pub Beta: f32,
     pub Bias: f32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("InputGradientTensor", &self.InputGradientTensor).field("OutputGradientTensor", &self.OutputGradientTensor).field("CrossChannel", &self.CrossChannel).field("LocalSize", &self.LocalSize).field("Alpha", &self.Alpha).field("Beta", &self.Beta).field("Bias", &self.Bias).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
-    pub CrossChannel: super::super::super::Foundation::BOOL,
+    pub CrossChannel: ::win32_foundation::BOOL,
     pub LocalSize: u32,
     pub Alpha: f32,
     pub Beta: f32,
     pub Bias: f32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("OutputTensor", &self.OutputTensor).field("CrossChannel", &self.CrossChannel).field("LocalSize", &self.LocalSize).field("Alpha", &self.Alpha).field("Beta", &self.Beta).field("Bias", &self.Bias).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4606,7 +4534,6 @@ impl ::core::default::Default for DML_LP_POOLING_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_LSTM_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub WeightTensor: *const DML_TENSOR_DESC,
@@ -4623,18 +4550,15 @@ pub struct DML_LSTM_OPERATOR_DESC {
     pub ActivationDescs: *const DML_OPERATOR_DESC,
     pub Direction: DML_RECURRENT_NETWORK_DIRECTION,
     pub ClipThreshold: f32,
-    pub UseClipThreshold: super::super::super::Foundation::BOOL,
-    pub CoupleInputForget: super::super::super::Foundation::BOOL,
+    pub UseClipThreshold: ::win32_foundation::BOOL,
+    pub CoupleInputForget: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_LSTM_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_LSTM_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_LSTM_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_LSTM_OPERATOR_DESC")
@@ -4658,19 +4582,15 @@ impl ::core::fmt::Debug for DML_LSTM_OPERATOR_DESC {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_LSTM_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_LSTM_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_LSTM_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_LSTM_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_LSTM_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4910,7 +4830,6 @@ impl ::core::default::Default for DML_MAX_UNPOOLING_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub ScaleTensor: *const DML_TENSOR_DESC,
@@ -4918,81 +4837,66 @@ pub struct DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     pub OutputTensor: *const DML_TENSOR_DESC,
     pub AxisCount: u32,
     pub Axes: *const u32,
-    pub NormalizeVariance: super::super::super::Foundation::BOOL,
+    pub NormalizeVariance: ::win32_foundation::BOOL,
     pub Epsilon: f32,
     pub FusedActivation: *const DML_OPERATOR_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("ScaleTensor", &self.ScaleTensor).field("BiasTensor", &self.BiasTensor).field("OutputTensor", &self.OutputTensor).field("AxisCount", &self.AxisCount).field("Axes", &self.Axes).field("NormalizeVariance", &self.NormalizeVariance).field("Epsilon", &self.Epsilon).field("FusedActivation", &self.FusedActivation).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub ScaleTensor: *const DML_TENSOR_DESC,
     pub BiasTensor: *const DML_TENSOR_DESC,
     pub OutputTensor: *const DML_TENSOR_DESC,
-    pub CrossChannel: super::super::super::Foundation::BOOL,
-    pub NormalizeVariance: super::super::super::Foundation::BOOL,
+    pub CrossChannel: ::win32_foundation::BOOL,
+    pub NormalizeVariance: ::win32_foundation::BOOL,
     pub Epsilon: f32,
     pub FusedActivation: *const DML_OPERATOR_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC").field("InputTensor", &self.InputTensor).field("ScaleTensor", &self.ScaleTensor).field("BiasTensor", &self.BiasTensor).field("OutputTensor", &self.OutputTensor).field("CrossChannel", &self.CrossChannel).field("NormalizeVariance", &self.NormalizeVariance).field("Epsilon", &self.Epsilon).field("FusedActivation", &self.FusedActivation).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5820,7 +5724,6 @@ impl ::core::default::Default for DML_RNN_OPERATOR_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DML_ROI_ALIGN1_OPERATOR_DESC {
     pub InputTensor: *const DML_TENSOR_DESC,
     pub ROITensor: *const DML_TENSOR_DESC,
@@ -5835,17 +5738,14 @@ pub struct DML_ROI_ALIGN1_OPERATOR_DESC {
     pub OutOfBoundsInputValue: f32,
     pub MinimumSamplesPerOutput: u32,
     pub MaximumSamplesPerOutput: u32,
-    pub AlignRegionsToCorners: super::super::super::Foundation::BOOL,
+    pub AlignRegionsToCorners: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DML_ROI_ALIGN1_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DML_ROI_ALIGN1_OPERATOR_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DML_ROI_ALIGN1_OPERATOR_DESC {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DML_ROI_ALIGN1_OPERATOR_DESC")
@@ -5866,19 +5766,15 @@ impl ::core::fmt::Debug for DML_ROI_ALIGN1_OPERATOR_DESC {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DML_ROI_ALIGN1_OPERATOR_DESC {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DML_ROI_ALIGN1_OPERATOR_DESC {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DML_ROI_ALIGN1_OPERATOR_DESC>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DML_ROI_ALIGN1_OPERATOR_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DML_ROI_ALIGN1_OPERATOR_DESC {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6808,7 +6704,7 @@ impl IDMLCommandRecorder {
         (::windows_core::Interface::vtable(self).base__.GetDevice)(::windows_core::Interface::as_raw(self), &<T as ::windows_core::Interface>::IID, &mut result__ as *mut _ as *mut _).and_some(result__)
     }
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub unsafe fn RecordDispatch<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Graphics::Direct3D12::ID3D12CommandList>, Param1: ::windows_core::IntoParam<'a, IDMLDispatchable>, Param2: ::windows_core::IntoParam<'a, IDMLBindingTable>>(&self, commandlist: Param0, dispatchable: Param1, bindings: Param2) {
+    pub unsafe fn RecordDispatch<'a, Param0: ::windows_core::IntoParam<'a, ::win32_graphics::Direct3D12::ID3D12CommandList>, Param1: ::windows_core::IntoParam<'a, IDMLDispatchable>, Param2: ::windows_core::IntoParam<'a, IDMLBindingTable>>(&self, commandlist: Param0, dispatchable: Param1, bindings: Param2) {
         (::windows_core::Interface::vtable(self).RecordDispatch)(::windows_core::Interface::as_raw(self), commandlist.into_param().abi(), dispatchable.into_param().abi(), bindings.into_param().abi())
     }
 }
@@ -7054,8 +6950,7 @@ pub struct IDMLCompiledOperator_Vtbl {
 #[repr(transparent)]
 pub struct IDMLDebugDevice(::windows_core::IUnknown);
 impl IDMLDebugDevice {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetMuteDebugOutput<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::BOOL>>(&self, mute: Param0) {
+    pub unsafe fn SetMuteDebugOutput<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, mute: Param0) {
         (::windows_core::Interface::vtable(self).SetMuteDebugOutput)(::windows_core::Interface::as_raw(self), mute.into_param().abi())
     }
 }
@@ -7103,10 +6998,7 @@ unsafe impl ::windows_core::Interface for IDMLDebugDevice {
 #[doc(hidden)]
 pub struct IDMLDebugDevice_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetMuteDebugOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mute: super::super::super::Foundation::BOOL),
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetMuteDebugOutput: usize,
+    pub SetMuteDebugOutput: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, mute: ::win32_foundation::BOOL),
 }
 #[repr(transparent)]
 pub struct IDMLDevice(::windows_core::IUnknown);

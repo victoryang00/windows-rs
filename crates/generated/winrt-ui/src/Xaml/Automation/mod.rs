@@ -1095,10 +1095,10 @@ impl AutomationProperties {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetControlledPeers<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<super::UIElement>> {
+    pub fn GetControlledPeers<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::UIElement>> {
         Self::IAutomationPropertiesStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetControlledPeers)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<super::UIElement>>(result__)
+            (::windows_core::Interface::vtable(this).GetControlledPeers)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::UIElement>>(result__)
         })
     }
     pub fn PositionInSetProperty() -> ::windows_core::Result<super::DependencyProperty> {
@@ -1153,10 +1153,10 @@ impl AutomationProperties {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAnnotations<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<AutomationAnnotation>> {
+    pub fn GetAnnotations<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<AutomationAnnotation>> {
         Self::IAutomationPropertiesStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAnnotations)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<AutomationAnnotation>>(result__)
+            (::windows_core::Interface::vtable(this).GetAnnotations)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<AutomationAnnotation>>(result__)
         })
     }
     pub fn LandmarkTypeProperty() -> ::windows_core::Result<super::DependencyProperty> {
@@ -1258,10 +1258,10 @@ impl AutomationProperties {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetDescribedBy<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<super::DependencyObject>> {
+    pub fn GetDescribedBy<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::DependencyObject>> {
         Self::IAutomationPropertiesStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDescribedBy)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<super::DependencyObject>>(result__)
+            (::windows_core::Interface::vtable(this).GetDescribedBy)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::DependencyObject>>(result__)
         })
     }
     pub fn FlowsToProperty() -> ::windows_core::Result<super::DependencyProperty> {
@@ -1271,10 +1271,10 @@ impl AutomationProperties {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetFlowsTo<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<super::DependencyObject>> {
+    pub fn GetFlowsTo<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::DependencyObject>> {
         Self::IAutomationPropertiesStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFlowsTo)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<super::DependencyObject>>(result__)
+            (::windows_core::Interface::vtable(this).GetFlowsTo)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::DependencyObject>>(result__)
         })
     }
     pub fn FlowsFromProperty() -> ::windows_core::Result<super::DependencyProperty> {
@@ -1284,10 +1284,10 @@ impl AutomationProperties {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetFlowsFrom<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<super::DependencyObject>> {
+    pub fn GetFlowsFrom<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::DependencyObject>> {
         Self::IAutomationPropertiesStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFlowsFrom)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<super::DependencyObject>>(result__)
+            (::windows_core::Interface::vtable(this).GetFlowsFrom)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::DependencyObject>>(result__)
         })
     }
     pub fn CultureProperty() -> ::windows_core::Result<super::DependencyProperty> {

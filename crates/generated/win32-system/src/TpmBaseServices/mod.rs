@@ -1,25 +1,23 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDeviceID(pbwindowsaik: *mut u8, cbwindowsaik: u32, pcbresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+pub unsafe fn GetDeviceID(pbwindowsaik: *mut u8, cbwindowsaik: u32, pcbresult: *mut u32, pfprotectedbytpm: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDeviceID(pbwindowsaik: *mut u8, cbwindowsaik: u32, pcbresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn GetDeviceID(pbwindowsaik: *mut u8, cbwindowsaik: u32, pcbresult: *mut u32, pfprotectedbytpm: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         GetDeviceID(::core::mem::transmute(pbwindowsaik), ::core::mem::transmute(cbwindowsaik), ::core::mem::transmute(pcbresult), ::core::mem::transmute(pfprotectedbytpm)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetDeviceIDString(pszwindowsaik: &mut [u16], pcchresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+pub unsafe fn GetDeviceIDString(pszwindowsaik: &mut [u16], pcchresult: *mut u32, pfprotectedbytpm: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetDeviceIDString(pszwindowsaik: ::windows_core::PWSTR, cchwindowsaik: u32, pcchresult: *mut u32, pfprotectedbytpm: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT;
+            fn GetDeviceIDString(pszwindowsaik: ::windows_core::PWSTR, cchwindowsaik: u32, pcchresult: *mut u32, pfprotectedbytpm: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT;
         }
         GetDeviceIDString(::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pszwindowsaik)), pszwindowsaik.len() as _, ::core::mem::transmute(pcchresult), ::core::mem::transmute(pfprotectedbytpm)).ok()
     }

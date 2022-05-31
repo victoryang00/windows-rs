@@ -1,9 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SRSetRestorePointA(prestoreptspec: *const RESTOREPOINTINFOA, psmgrstatus: *mut STATEMGRSTATUS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SRSetRestorePointW(prestoreptspec: *const RESTOREPOINTINFOW, psmgrstatus: *mut STATEMGRSTATUS) -> super::super::Foundation::BOOL;
+    pub fn SRSetRestorePointA(prestoreptspec: *const RESTOREPOINTINFOA, psmgrstatus: *mut STATEMGRSTATUS) -> ::win32_foundation_sys::BOOL;
+    pub fn SRSetRestorePointW(prestoreptspec: *const RESTOREPOINTINFOW, psmgrstatus: *mut STATEMGRSTATUS) -> ::win32_foundation_sys::BOOL;
 }
 pub const ACCESSIBILITY_SETTING: u32 = 3u32;
 pub const APPLICATION_RUN: u32 = 5u32;
@@ -24,16 +22,13 @@ pub const MIN_RPT: u32 = 0u32;
 pub const OE_SETTING: u32 = 4u32;
 pub const RESTORE: u32 = 6u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESTOREPOINTINFOA {
     pub dwEventType: RESTOREPOINTINFO_EVENT_TYPE,
     pub dwRestorePtType: RESTOREPOINTINFO_TYPE,
     pub llSequenceNumber: i64,
-    pub szDescription: [super::super::Foundation::CHAR; 64],
+    pub szDescription: [::win32_foundation_sys::CHAR; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESTOREPOINTINFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESTOREPOINTINFOA {
     fn clone(&self) -> Self {
         *self
@@ -78,17 +73,14 @@ pub const WINDOWS_BOOT: u32 = 9u32;
 pub const WINDOWS_SHUTDOWN: u32 = 8u32;
 pub const WINDOWS_UPDATE: u32 = 17u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct _RESTOREPTINFOEX {
-    pub ftCreation: super::super::Foundation::FILETIME,
+    pub ftCreation: ::win32_foundation_sys::FILETIME,
     pub dwEventType: u32,
     pub dwRestorePtType: u32,
     pub dwRPNum: u32,
     pub szDescription: [u16; 256],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for _RESTOREPTINFOEX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for _RESTOREPTINFOEX {
     fn clone(&self) -> Self {
         *self

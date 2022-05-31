@@ -152,11 +152,11 @@ impl HidBooleanControlDescription {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ParentCollections(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<HidCollection>> {
+    pub fn ParentCollections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HidCollection>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParentCollections)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<HidCollection>>(result__)
+            (::windows_core::Interface::vtable(this).ParentCollections)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<HidCollection>>(result__)
         }
     }
     pub fn IsAbsolute(&self) -> ::windows_core::Result<bool> {
@@ -385,9 +385,8 @@ unsafe impl ::windows_core::RuntimeType for HidCollectionType {
 #[repr(transparent)]
 pub struct HidDevice(::windows_core::IUnknown);
 impl HidDevice {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn VendorId(&self) -> ::windows_core::Result<u16> {
@@ -425,36 +424,32 @@ impl HidDevice {
             (::windows_core::Interface::vtable(this).UsageId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<u16>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetInputReportAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<HidInputReport>> {
+    pub fn GetInputReportAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<HidInputReport>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetInputReportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<HidInputReport>>(result__)
+            (::windows_core::Interface::vtable(this).GetInputReportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<HidInputReport>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetInputReportByIdAsync(&self, reportid: u16) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<HidInputReport>> {
+    pub fn GetInputReportByIdAsync(&self, reportid: u16) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<HidInputReport>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetInputReportByIdAsync)(::windows_core::Interface::as_raw(this), reportid, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<HidInputReport>>(result__)
+            (::windows_core::Interface::vtable(this).GetInputReportByIdAsync)(::windows_core::Interface::as_raw(this), reportid, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<HidInputReport>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetFeatureReportAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<HidFeatureReport>> {
+    pub fn GetFeatureReportAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<HidFeatureReport>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFeatureReportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<HidFeatureReport>>(result__)
+            (::windows_core::Interface::vtable(this).GetFeatureReportAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<HidFeatureReport>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetFeatureReportByIdAsync(&self, reportid: u16) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<HidFeatureReport>> {
+    pub fn GetFeatureReportByIdAsync(&self, reportid: u16) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<HidFeatureReport>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFeatureReportByIdAsync)(::windows_core::Interface::as_raw(this), reportid, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<HidFeatureReport>>(result__)
+            (::windows_core::Interface::vtable(this).GetFeatureReportByIdAsync)(::windows_core::Interface::as_raw(this), reportid, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<HidFeatureReport>>(result__)
         }
     }
     pub fn CreateOutputReport(&self) -> ::windows_core::Result<HidOutputReport> {
@@ -485,48 +480,44 @@ impl HidDevice {
             (::windows_core::Interface::vtable(this).CreateFeatureReportById)(::windows_core::Interface::as_raw(this), reportid, result__.as_mut_ptr()).from_abi::<HidFeatureReport>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SendOutputReportAsync<'a, Param0: ::windows_core::IntoParam<'a, HidOutputReport>>(&self, outputreport: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<u32>> {
+    pub fn SendOutputReportAsync<'a, Param0: ::windows_core::IntoParam<'a, HidOutputReport>>(&self, outputreport: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendOutputReportAsync)(::windows_core::Interface::as_raw(this), outputreport.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<u32>>(result__)
+            (::windows_core::Interface::vtable(this).SendOutputReportAsync)(::windows_core::Interface::as_raw(this), outputreport.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<u32>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SendFeatureReportAsync<'a, Param0: ::windows_core::IntoParam<'a, HidFeatureReport>>(&self, featurereport: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<u32>> {
+    pub fn SendFeatureReportAsync<'a, Param0: ::windows_core::IntoParam<'a, HidFeatureReport>>(&self, featurereport: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SendFeatureReportAsync)(::windows_core::Interface::as_raw(this), featurereport.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<u32>>(result__)
+            (::windows_core::Interface::vtable(this).SendFeatureReportAsync)(::windows_core::Interface::as_raw(this), featurereport.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<u32>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetBooleanControlDescriptions(&self, reporttype: HidReportType, usagepage: u16, usageid: u16) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<HidBooleanControlDescription>> {
+    pub fn GetBooleanControlDescriptions(&self, reporttype: HidReportType, usagepage: u16, usageid: u16) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HidBooleanControlDescription>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetBooleanControlDescriptions)(::windows_core::Interface::as_raw(this), reporttype, usagepage, usageid, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<HidBooleanControlDescription>>(result__)
+            (::windows_core::Interface::vtable(this).GetBooleanControlDescriptions)(::windows_core::Interface::as_raw(this), reporttype, usagepage, usageid, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<HidBooleanControlDescription>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetNumericControlDescriptions(&self, reporttype: HidReportType, usagepage: u16, usageid: u16) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<HidNumericControlDescription>> {
+    pub fn GetNumericControlDescriptions(&self, reporttype: HidReportType, usagepage: u16, usageid: u16) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HidNumericControlDescription>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetNumericControlDescriptions)(::windows_core::Interface::as_raw(this), reporttype, usagepage, usageid, result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<HidNumericControlDescription>>(result__)
+            (::windows_core::Interface::vtable(this).GetNumericControlDescriptions)(::windows_core::Interface::as_raw(this), reporttype, usagepage, usageid, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<HidNumericControlDescription>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn InputReportReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TypedEventHandler<HidDevice, HidInputReportReceivedEventArgs>>>(&self, reporthandler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn InputReportReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<HidDevice, HidInputReportReceivedEventArgs>>>(&self, reporthandler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).InputReportReceived)(::windows_core::Interface::as_raw(this), reporthandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).InputReportReceived)(::windows_core::Interface::as_raw(this), reporthandler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveInputReportReceived<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveInputReportReceived<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveInputReportReceived)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -542,11 +533,11 @@ impl HidDevice {
             (::windows_core::Interface::vtable(this).GetDeviceSelectorVidPid)(::windows_core::Interface::as_raw(this), usagepage, usageid, vendorid, productid, result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0, accessmode: super::super::Storage::FileAccessMode) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<HidDevice>> {
+    #[cfg(feature = "Storage")]
+    pub fn FromIdAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(deviceid: Param0, accessmode: ::winrt_storage::FileAccessMode) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<HidDevice>> {
         Self::IHidDeviceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), accessmode, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<HidDevice>>(result__)
+            (::windows_core::Interface::vtable(this).FromIdAsync)(::windows_core::Interface::as_raw(this), deviceid.into_param().abi(), accessmode, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<HidDevice>>(result__)
         })
     }
     pub fn IHidDeviceStatics<R, F: FnOnce(&IHidDeviceStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -624,30 +615,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Hid
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<HidDevice> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<HidDevice> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: HidDevice) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&HidDevice> for super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&HidDevice> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &HidDevice) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for HidDevice {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for HidDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::Foundation::IClosable> for &HidDevice {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &HidDevice {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for HidDevice {}
@@ -663,15 +650,15 @@ impl HidFeatureReport {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Data(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Data(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -787,27 +774,27 @@ impl HidInputReport {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Data(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Data(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ActivatedBooleanControls(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<HidBooleanControl>> {
+    pub fn ActivatedBooleanControls(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HidBooleanControl>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ActivatedBooleanControls)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<HidBooleanControl>>(result__)
+            (::windows_core::Interface::vtable(this).ActivatedBooleanControls)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<HidBooleanControl>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TransitionedBooleanControls(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<HidBooleanControl>> {
+    pub fn TransitionedBooleanControls(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HidBooleanControl>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TransitionedBooleanControls)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<HidBooleanControl>>(result__)
+            (::windows_core::Interface::vtable(this).TransitionedBooleanControls)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<HidBooleanControl>>(result__)
         }
     }
     pub fn GetBooleanControl(&self, usagepage: u16, usageid: u16) -> ::windows_core::Result<HidBooleanControl> {
@@ -1236,11 +1223,11 @@ impl HidNumericControlDescription {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn ParentCollections(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<HidCollection>> {
+    pub fn ParentCollections(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<HidCollection>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ParentCollections)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<HidCollection>>(result__)
+            (::windows_core::Interface::vtable(this).ParentCollections)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<HidCollection>>(result__)
         }
     }
 }
@@ -1327,15 +1314,15 @@ impl HidOutputReport {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Data(&self) -> ::windows_core::Result<super::super::Storage::Streams::IBuffer> {
+    pub fn Data(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Data)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1558,34 +1545,16 @@ pub struct IHidDevice_Vtbl {
     pub Version: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
     pub UsagePage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
     pub UsageId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub GetInputReportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetInputReportAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetInputReportByIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reportid: u16, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetInputReportByIdAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetFeatureReportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetFeatureReportAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetFeatureReportByIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reportid: u16, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetFeatureReportByIdAsync: usize,
     pub CreateOutputReport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateOutputReportById: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reportid: u16, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateFeatureReport: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CreateFeatureReportById: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reportid: u16, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub SendOutputReportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, outputreport: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SendOutputReportAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub SendFeatureReportAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, featurereport: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SendFeatureReportAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub GetBooleanControlDescriptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reporttype: HidReportType, usagepage: u16, usageid: u16, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -1594,14 +1563,8 @@ pub struct IHidDevice_Vtbl {
     pub GetNumericControlDescriptions: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reporttype: HidReportType, usagepage: u16, usageid: u16, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetNumericControlDescriptions: usize,
-    #[cfg(feature = "Foundation")]
-    pub InputReportReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reporthandler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    InputReportReceived: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveInputReportReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveInputReportReceived: usize,
+    pub InputReportReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reporthandler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveInputReportReceived: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1616,9 +1579,9 @@ pub struct IHidDeviceStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetDeviceSelector: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usagepage: u16, usageid: u16, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub GetDeviceSelectorVidPid: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, usagepage: u16, usageid: u16, vendorid: u16, productid: u16, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, accessmode: super::super::Storage::FileAccessMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(feature = "Storage")]
+    pub FromIdAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, deviceid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, accessmode: ::winrt_storage::FileAccessMode, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Storage"))]
     FromIdAsync: usize,
 }
 #[doc(hidden)]

@@ -3,8 +3,7 @@ extern "system" {
     pub fn D3DPERF_BeginEvent(col: u32, wszname: ::windows_core_sys::PCWSTR) -> i32;
     pub fn D3DPERF_EndEvent() -> i32;
     pub fn D3DPERF_GetStatus() -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn D3DPERF_QueryRepeatFrame() -> super::super::Foundation::BOOL;
+    pub fn D3DPERF_QueryRepeatFrame() -> ::win32_foundation_sys::BOOL;
     pub fn D3DPERF_SetMarker(col: u32, wszname: ::windows_core_sys::PCWSTR);
     pub fn D3DPERF_SetOptions(dwoptions: u32);
     pub fn D3DPERF_SetRegion(col: u32, wszname: ::windows_core_sys::PCWSTR);
@@ -20,11 +19,10 @@ pub const D3D9b_SDK_VERSION: u32 = 31u32;
 pub const D3DADAPTER_DEFAULT: u32 = 0u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DADAPTER_IDENTIFIER9 {
-    pub Driver: [super::super::Foundation::CHAR; 512],
-    pub Description: [super::super::Foundation::CHAR; 512],
-    pub DeviceName: [super::super::Foundation::CHAR; 32],
+    pub Driver: [::win32_foundation_sys::CHAR; 512],
+    pub Description: [::win32_foundation_sys::CHAR; 512],
+    pub DeviceName: [::win32_foundation_sys::CHAR; 32],
     pub DriverVersion: i64,
     pub VendorId: u32,
     pub DeviceId: u32,
@@ -34,10 +32,8 @@ pub struct D3DADAPTER_IDENTIFIER9 {
     pub WHQLLevel: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DADAPTER_IDENTIFIER9 {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DADAPTER_IDENTIFIER9 {
     fn clone(&self) -> Self {
         *self
@@ -45,11 +41,10 @@ impl ::core::clone::Clone for D3DADAPTER_IDENTIFIER9 {
 }
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DADAPTER_IDENTIFIER9 {
-    pub Driver: [super::super::Foundation::CHAR; 512],
-    pub Description: [super::super::Foundation::CHAR; 512],
-    pub DeviceName: [super::super::Foundation::CHAR; 32],
+    pub Driver: [::win32_foundation_sys::CHAR; 512],
+    pub Description: [::win32_foundation_sys::CHAR; 512],
+    pub DeviceName: [::win32_foundation_sys::CHAR; 32],
     pub DriverVersion: i64,
     pub VendorId: u32,
     pub DeviceId: u32,
@@ -59,10 +54,8 @@ pub struct D3DADAPTER_IDENTIFIER9 {
     pub WHQLLevel: u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DADAPTER_IDENTIFIER9 {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DADAPTER_IDENTIFIER9 {
     fn clone(&self) -> Self {
         *self
@@ -101,108 +94,87 @@ pub const D3DAUTHENTICATEDCHANNEL_D3D9: D3DAUTHENTICATEDCHANNELTYPE = 1i32;
 pub const D3DAUTHENTICATEDCHANNEL_DRIVER_SOFTWARE: D3DAUTHENTICATEDCHANNELTYPE = 2i32;
 pub const D3DAUTHENTICATEDCHANNEL_DRIVER_HARDWARE: D3DAUTHENTICATEDCHANNELTYPE = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION {
     pub Parameters: D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
-    pub DXVA2DecodeHandle: super::super::Foundation::HANDLE,
-    pub CryptoSessionHandle: super::super::Foundation::HANDLE,
-    pub DeviceHandle: super::super::Foundation::HANDLE,
+    pub DXVA2DecodeHandle: ::win32_foundation_sys::HANDLE,
+    pub CryptoSessionHandle: ::win32_foundation_sys::HANDLE,
+    pub DeviceHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGUREINITIALIZE {
     pub Parameters: D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
     pub StartSequenceQuery: u32,
     pub StartSequenceConfigure: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_CONFIGUREINITIALIZE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGUREINITIALIZE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGUREPROTECTION {
     pub Parameters: D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
     pub Protections: D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_CONFIGUREPROTECTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGUREPROTECTION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE {
     pub Parameters: D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
     pub ProcessIdentiferType: D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE,
-    pub ProcessHandle: super::super::Foundation::HANDLE,
-    pub AllowAccess: super::super::Foundation::BOOL,
+    pub ProcessHandle: ::win32_foundation_sys::HANDLE,
+    pub AllowAccess: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION {
     pub Parameters: D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
     pub EncryptionGuid: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT {
     pub omac: D3D_OMAC,
     pub ConfigureType: ::windows_core_sys::GUID,
-    pub hChannel: super::super::Foundation::HANDLE,
+    pub hChannel: ::win32_foundation_sys::HANDLE,
     pub SequenceNumber: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT {
     pub omac: D3D_OMAC,
     pub ConfigureType: ::windows_core_sys::GUID,
-    pub hChannel: super::super::Foundation::HANDLE,
+    pub hChannel: ::win32_foundation_sys::HANDLE,
     pub SequenceNumber: u32,
     pub ReturnCode: ::windows_core_sys::HRESULT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT {
     fn clone(&self) -> Self {
         *self
@@ -244,164 +216,131 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS_0_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYCHANNELTYPE_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub ChannelType: D3DAUTHENTICATEDCHANNELTYPE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYCHANNELTYPE_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYCHANNELTYPE_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT {
     pub Input: D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
-    pub DXVA2DecodeHandle: super::super::Foundation::HANDLE,
+    pub DXVA2DecodeHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
-    pub DXVA2DecodeHandle: super::super::Foundation::HANDLE,
-    pub CryptoSessionHandle: super::super::Foundation::HANDLE,
-    pub DeviceHandle: super::super::Foundation::HANDLE,
+    pub DXVA2DecodeHandle: ::win32_foundation_sys::HANDLE,
+    pub CryptoSessionHandle: ::win32_foundation_sys::HANDLE,
+    pub DeviceHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYDEVICEHANDLE_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
-    pub DeviceHandle: super::super::Foundation::HANDLE,
+    pub DeviceHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYDEVICEHANDLE_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYDEVICEHANDLE_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub NumEncryptionGuids: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT {
     pub Input: D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
     pub EncryptionGuidIndex: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub EncryptionGuidIndex: u32,
     pub EncryptionGuid: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYINFOBUSTYPE_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub BusType: D3DBUSTYPE,
-    pub bAccessibleInContiguousBlocks: super::super::Foundation::BOOL,
-    pub bAccessibleInNonContiguousBlocks: super::super::Foundation::BOOL,
+    pub bAccessibleInContiguousBlocks: ::win32_foundation_sys::BOOL,
+    pub bAccessibleInNonContiguousBlocks: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYINFOBUSTYPE_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYINFOBUSTYPE_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT {
     pub Input: D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
-    pub DeviceHandle: super::super::Foundation::HANDLE,
-    pub CryptoSessionHandle: super::super::Foundation::HANDLE,
+    pub DeviceHandle: ::win32_foundation_sys::HANDLE,
+    pub CryptoSessionHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
-    pub DeviceHandle: super::super::Foundation::HANDLE,
-    pub CryptoSessionHandle: super::super::Foundation::HANDLE,
+    pub DeviceHandle: ::win32_foundation_sys::HANDLE,
+    pub CryptoSessionHandle: ::win32_foundation_sys::HANDLE,
     pub NumOutputIDs: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT {
     pub Input: D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
-    pub DeviceHandle: super::super::Foundation::HANDLE,
-    pub CryptoSessionHandle: super::super::Foundation::HANDLE,
+    pub DeviceHandle: ::win32_foundation_sys::HANDLE,
+    pub CryptoSessionHandle: ::win32_foundation_sys::HANDLE,
     pub OutputIDIndex: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT {
     fn clone(&self) -> Self {
         *self
@@ -409,19 +348,16 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
-    pub DeviceHandle: super::super::Foundation::HANDLE,
-    pub CryptoSessionHandle: super::super::Foundation::HANDLE,
+    pub DeviceHandle: ::win32_foundation_sys::HANDLE,
+    pub CryptoSessionHandle: ::win32_foundation_sys::HANDLE,
     pub OutputIDIndex: u32,
     pub OutputID: u64,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT {
     fn clone(&self) -> Self {
         *self
@@ -429,137 +365,110 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT {
 }
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
-    pub DeviceHandle: super::super::Foundation::HANDLE,
-    pub CryptoSessionHandle: super::super::Foundation::HANDLE,
+    pub DeviceHandle: ::win32_foundation_sys::HANDLE,
+    pub CryptoSessionHandle: ::win32_foundation_sys::HANDLE,
     pub OutputIDIndex: u32,
     pub OutputID: u64,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYPROTECTION_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub ProtectionFlags: D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYPROTECTION_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYPROTECTION_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub NumRestrictedSharedResourceProcesses: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT {
     pub Input: D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
     pub ProcessIndex: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub ProcessIndex: u32,
     pub ProcessIdentifer: D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE,
-    pub ProcessHandle: super::super::Foundation::HANDLE,
+    pub ProcessHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub EncryptionGuid: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub NumUnrestrictedProtectedSharedResources: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT_OUTPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERY_INPUT {
     pub QueryType: ::windows_core_sys::GUID,
-    pub hChannel: super::super::Foundation::HANDLE,
+    pub hChannel: ::win32_foundation_sys::HANDLE,
     pub SequenceNumber: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERY_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERY_INPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT {
     pub omac: D3D_OMAC,
     pub QueryType: ::windows_core_sys::GUID,
-    pub hChannel: super::super::Foundation::HANDLE,
+    pub hChannel: ::win32_foundation_sys::HANDLE,
     pub SequenceNumber: u32,
     pub ReturnCode: ::windows_core_sys::HRESULT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT {
     fn clone(&self) -> Self {
         *self
@@ -928,16 +837,13 @@ pub const D3DDEVCAPS_QUINTICRTPATCHES: i32 = 2097152i32;
 pub const D3DDEVCAPS_RTPATCHES: i32 = 4194304i32;
 pub const D3DDEVCAPS_RTPATCHHANDLEZERO: i32 = 8388608i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DDEVICE_CREATION_PARAMETERS {
     pub AdapterOrdinal: u32,
     pub DeviceType: D3DDEVTYPE,
-    pub hFocusWindow: super::super::Foundation::HWND,
+    pub hFocusWindow: ::win32_foundation_sys::HWND,
     pub BehaviorFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DDEVICE_CREATION_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DDEVICE_CREATION_PARAMETERS {
     fn clone(&self) -> Self {
         *self
@@ -1018,13 +924,10 @@ impl ::core::clone::Clone for D3DDEVINFO_D3DVERTEXSTATS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DDEVINFO_RESOURCEMANAGER {
     pub stats: [D3DRESOURCESTATS; 8],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DDEVINFO_RESOURCEMANAGER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DDEVINFO_RESOURCEMANAGER {
     fn clone(&self) -> Self {
         *self
@@ -1470,7 +1373,6 @@ pub const D3DPRESENT_INTERVAL_THREE: i32 = 4i32;
 pub const D3DPRESENT_INTERVAL_TWO: i32 = 2i32;
 pub const D3DPRESENT_LINEAR_CONTENT: i32 = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DPRESENT_PARAMETERS {
     pub BackBufferWidth: u32,
     pub BackBufferHeight: u32,
@@ -1479,17 +1381,15 @@ pub struct D3DPRESENT_PARAMETERS {
     pub MultiSampleType: D3DMULTISAMPLE_TYPE,
     pub MultiSampleQuality: u32,
     pub SwapEffect: D3DSWAPEFFECT,
-    pub hDeviceWindow: super::super::Foundation::HWND,
-    pub Windowed: super::super::Foundation::BOOL,
-    pub EnableAutoDepthStencil: super::super::Foundation::BOOL,
+    pub hDeviceWindow: ::win32_foundation_sys::HWND,
+    pub Windowed: ::win32_foundation_sys::BOOL,
+    pub EnableAutoDepthStencil: ::win32_foundation_sys::BOOL,
     pub AutoDepthStencilFormat: D3DFORMAT,
     pub Flags: u32,
     pub FullScreen_RefreshRateInHz: u32,
     pub PresentationInterval: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DPRESENT_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DPRESENT_PARAMETERS {
     fn clone(&self) -> Self {
         *self
@@ -1575,14 +1475,11 @@ impl ::core::clone::Clone for D3DRANGE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DRASTER_STATUS {
-    pub InVBlank: super::super::Foundation::BOOL,
+    pub InVBlank: ::win32_foundation_sys::BOOL,
     pub ScanLine: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DRASTER_STATUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DRASTER_STATUS {
     fn clone(&self) -> Self {
         *self
@@ -1723,9 +1620,8 @@ pub const D3DRS_DESTBLENDALPHA: D3DRENDERSTATETYPE = 208i32;
 pub const D3DRS_BLENDOPALPHA: D3DRENDERSTATETYPE = 209i32;
 pub const D3DRS_FORCE_DWORD: D3DRENDERSTATETYPE = 2147483647i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3DRESOURCESTATS {
-    pub bThrashing: super::super::Foundation::BOOL,
+    pub bThrashing: ::win32_foundation_sys::BOOL,
     pub ApproxBytesDownloaded: u32,
     pub NumEvicts: u32,
     pub NumVidCreates: u32,
@@ -1737,9 +1633,7 @@ pub struct D3DRESOURCESTATS {
     pub TotalManaged: u32,
     pub TotalBytes: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DRESOURCESTATS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3DRESOURCESTATS {
     fn clone(&self) -> Self {
         *self

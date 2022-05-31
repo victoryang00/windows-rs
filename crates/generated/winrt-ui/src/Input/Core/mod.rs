@@ -66,15 +66,15 @@ impl RadialControllerIndependentInputSource {
         }
     }
     #[cfg(feature = "System")]
-    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::super::super::System::DispatcherQueue> {
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<::winrt_system::DispatcherQueue> {
         let this = &::windows_core::Interface::cast::<IRadialControllerIndependentInputSource2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::DispatcherQueue>(result__)
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::DispatcherQueue>(result__)
         }
     }
     #[cfg(feature = "ApplicationModel_Core")]
-    pub fn CreateForView<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::ApplicationModel::Core::CoreApplicationView>>(view: Param0) -> ::windows_core::Result<RadialControllerIndependentInputSource> {
+    pub fn CreateForView<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_applicationmodel::Core::CoreApplicationView>>(view: Param0) -> ::windows_core::Result<RadialControllerIndependentInputSource> {
         Self::IRadialControllerIndependentInputSourceStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateForView)(::windows_core::Interface::as_raw(this), view.into_param().abi(), result__.as_mut_ptr()).from_abi::<RadialControllerIndependentInputSource>(result__)

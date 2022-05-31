@@ -13,16 +13,15 @@ extern "system" {
 }
 pub const AppDomainHelper: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4012177033, data2: 5368, data3: 19858, data4: [180, 175, 215, 177, 240, 231, 15, 212] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ApplicationProcessRecycleInfo {
-    pub IsRecyclable: super::super::Foundation::BOOL,
-    pub IsRecycled: super::super::Foundation::BOOL,
-    pub TimeRecycled: super::super::Foundation::FILETIME,
-    pub TimeToTerminate: super::super::Foundation::FILETIME,
+    pub IsRecyclable: ::win32_foundation_sys::BOOL,
+    pub IsRecycled: ::win32_foundation_sys::BOOL,
+    pub TimeRecycled: ::win32_foundation_sys::FILETIME,
+    pub TimeToTerminate: ::win32_foundation_sys::FILETIME,
     pub RecycleReasonCode: i32,
-    pub IsPendingRecycle: super::super::Foundation::BOOL,
-    pub HasAutomaticLifetimeRecycling: super::super::Foundation::BOOL,
-    pub TimeForAutomaticRecycling: super::super::Foundation::FILETIME,
+    pub IsPendingRecycle: ::win32_foundation_sys::BOOL,
+    pub HasAutomaticLifetimeRecycling: ::win32_foundation_sys::BOOL,
+    pub TimeForAutomaticRecycling: ::win32_foundation_sys::FILETIME,
     pub MemoryLimitInKB: u32,
     pub MemoryUsageInKBLastCheck: u32,
     pub ActivationLimit: u32,
@@ -30,9 +29,7 @@ pub struct ApplicationProcessRecycleInfo {
     pub CallLimit: u32,
     pub NumCallsLastReported: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ApplicationProcessRecycleInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ApplicationProcessRecycleInfo {
     fn clone(&self) -> Self {
         *self
@@ -56,7 +53,6 @@ impl ::core::clone::Clone for ApplicationProcessStatistics {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ApplicationProcessSummary {
     pub PartitionIdPrimaryApplication: ::windows_core_sys::GUID,
     pub ApplicationIdPrimaryApplication: ::windows_core_sys::GUID,
@@ -64,13 +60,11 @@ pub struct ApplicationProcessSummary {
     pub ProcessId: u32,
     pub Type: COMPLUS_APPTYPE,
     pub ProcessExeName: ::windows_core_sys::PWSTR,
-    pub IsService: super::super::Foundation::BOOL,
-    pub IsPaused: super::super::Foundation::BOOL,
-    pub IsRecycled: super::super::Foundation::BOOL,
+    pub IsService: ::win32_foundation_sys::BOOL,
+    pub IsPaused: ::win32_foundation_sys::BOOL,
+    pub IsRecycled: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ApplicationProcessSummary {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ApplicationProcessSummary {
     fn clone(&self) -> Self {
         *self
@@ -514,15 +508,12 @@ pub const CoMTSLocator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { da
 pub const ComServiceEvents: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3970674883, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 pub const ComSystemAppEventData: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3970674886, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ComponentHangMonitorInfo {
-    pub IsMonitored: super::super::Foundation::BOOL,
-    pub TerminateOnHang: super::super::Foundation::BOOL,
+    pub IsMonitored: ::win32_foundation_sys::BOOL,
+    pub TerminateOnHang: ::win32_foundation_sys::BOOL,
     pub AvgCallThresholdInMs: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ComponentHangMonitorInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ComponentHangMonitorInfo {
     fn clone(&self) -> Self {
         *self
@@ -604,18 +595,15 @@ pub const GATD_INCLUDE_CLASS_NAME: GetAppTrackerDataFlags = 8i32;
 pub const GATD_INCLUDE_APPLICATION_NAME: GetAppTrackerDataFlags = 16i32;
 pub const GetSecurityCallContextAppObject: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3970674856, data2: 32537, data3: 4562, data4: [151, 142, 0, 0, 248, 117, 126, 42] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HANG_INFO {
-    pub fAppHangMonitorEnabled: super::super::Foundation::BOOL,
-    pub fTerminateOnHang: super::super::Foundation::BOOL,
+    pub fAppHangMonitorEnabled: ::win32_foundation_sys::BOOL,
+    pub fTerminateOnHang: ::win32_foundation_sys::BOOL,
     pub DumpType: DUMPTYPE,
     pub dwHangTimeout: u32,
     pub dwDumpCount: u32,
     pub dwInfoMsgCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HANG_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HANG_INFO {
     fn clone(&self) -> Self {
         *self

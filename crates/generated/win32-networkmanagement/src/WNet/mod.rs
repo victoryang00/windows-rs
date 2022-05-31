@@ -1,80 +1,64 @@
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CONNECTDLGSTRUCTA {
     pub cbStructure: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub lpConnRes: *mut NETRESOURCEA,
     pub dwFlags: CONNECTDLGSTRUCT_FLAGS,
     pub dwDevNum: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CONNECTDLGSTRUCTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CONNECTDLGSTRUCTA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for CONNECTDLGSTRUCTA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CONNECTDLGSTRUCTA").field("cbStructure", &self.cbStructure).field("hwndOwner", &self.hwndOwner).field("lpConnRes", &self.lpConnRes).field("dwFlags", &self.dwFlags).field("dwDevNum", &self.dwDevNum).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CONNECTDLGSTRUCTA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CONNECTDLGSTRUCTA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONNECTDLGSTRUCTA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CONNECTDLGSTRUCTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CONNECTDLGSTRUCTA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CONNECTDLGSTRUCTW {
     pub cbStructure: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub lpConnRes: *mut NETRESOURCEW,
     pub dwFlags: CONNECTDLGSTRUCT_FLAGS,
     pub dwDevNum: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CONNECTDLGSTRUCTW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CONNECTDLGSTRUCTW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for CONNECTDLGSTRUCTW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("CONNECTDLGSTRUCTW").field("cbStructure", &self.cbStructure).field("hwndOwner", &self.hwndOwner).field("lpConnRes", &self.lpConnRes).field("dwFlags", &self.dwFlags).field("dwDevNum", &self.dwDevNum).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for CONNECTDLGSTRUCTW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for CONNECTDLGSTRUCTW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<CONNECTDLGSTRUCTW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for CONNECTDLGSTRUCTW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for CONNECTDLGSTRUCTW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -147,82 +131,66 @@ pub const CONNECT_REQUIRE_PRIVACY: u32 = 32768u32;
 pub const CONNECT_RESERVED: u32 = 4278190080u32;
 pub const CONNECT_WRITE_THROUGH_SEMANTICS: u32 = 65536u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISCDLGSTRUCTA {
     pub cbStructure: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub lpLocalName: ::windows_core::PSTR,
     pub lpRemoteName: ::windows_core::PSTR,
     pub dwFlags: DISCDLGSTRUCT_FLAGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISCDLGSTRUCTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISCDLGSTRUCTA {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DISCDLGSTRUCTA {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DISCDLGSTRUCTA").field("cbStructure", &self.cbStructure).field("hwndOwner", &self.hwndOwner).field("lpLocalName", &self.lpLocalName).field("lpRemoteName", &self.lpRemoteName).field("dwFlags", &self.dwFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DISCDLGSTRUCTA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DISCDLGSTRUCTA {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DISCDLGSTRUCTA>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DISCDLGSTRUCTA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DISCDLGSTRUCTA {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DISCDLGSTRUCTW {
     pub cbStructure: u32,
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub lpLocalName: ::windows_core::PWSTR,
     pub lpRemoteName: ::windows_core::PWSTR,
     pub dwFlags: DISCDLGSTRUCT_FLAGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DISCDLGSTRUCTW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DISCDLGSTRUCTW {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DISCDLGSTRUCTW {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DISCDLGSTRUCTW").field("cbStructure", &self.cbStructure).field("hwndOwner", &self.hwndOwner).field("lpLocalName", &self.lpLocalName).field("lpRemoteName", &self.lpRemoteName).field("dwFlags", &self.dwFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DISCDLGSTRUCTW {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DISCDLGSTRUCTW {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DISCDLGSTRUCTW>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DISCDLGSTRUCTW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DISCDLGSTRUCTW {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -340,44 +308,36 @@ impl ::core::default::Default for NETCONNECTINFOSTRUCT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NETINFOSTRUCT {
     pub cbStructure: u32,
     pub dwProviderVersion: u32,
-    pub dwStatus: super::super::Foundation::WIN32_ERROR,
+    pub dwStatus: ::win32_foundation::WIN32_ERROR,
     pub dwCharacteristics: NETINFOSTRUCT_CHARACTERISTICS,
     pub dwHandle: usize,
     pub wNetType: u16,
     pub dwPrinters: u32,
     pub dwDrives: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NETINFOSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NETINFOSTRUCT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NETINFOSTRUCT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NETINFOSTRUCT").field("cbStructure", &self.cbStructure).field("dwProviderVersion", &self.dwProviderVersion).field("dwStatus", &self.dwStatus).field("dwCharacteristics", &self.dwCharacteristics).field("dwHandle", &self.dwHandle).field("wNetType", &self.wNetType).field("dwPrinters", &self.dwPrinters).field("dwDrives", &self.dwDrives).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NETINFOSTRUCT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NETINFOSTRUCT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETINFOSTRUCT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NETINFOSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NETINFOSTRUCT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -672,79 +632,63 @@ impl ::core::ops::Not for NET_USE_CONNECT_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NOTIFYADD {
-    pub hwndOwner: super::super::Foundation::HWND,
+    pub hwndOwner: ::win32_foundation::HWND,
     pub NetResource: NETRESOURCEA,
     pub dwAddFlags: NET_USE_CONNECT_FLAGS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NOTIFYADD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NOTIFYADD {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NOTIFYADD {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NOTIFYADD").field("hwndOwner", &self.hwndOwner).field("NetResource", &self.NetResource).field("dwAddFlags", &self.dwAddFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NOTIFYADD {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NOTIFYADD {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NOTIFYADD>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NOTIFYADD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NOTIFYADD {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NOTIFYCANCEL {
     pub lpName: ::windows_core::PWSTR,
     pub lpProvider: ::windows_core::PWSTR,
     pub dwFlags: u32,
-    pub fForce: super::super::Foundation::BOOL,
+    pub fForce: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NOTIFYCANCEL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NOTIFYCANCEL {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NOTIFYCANCEL {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NOTIFYCANCEL").field("lpName", &self.lpName).field("lpProvider", &self.lpProvider).field("dwFlags", &self.dwFlags).field("fForce", &self.fForce).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NOTIFYCANCEL {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NOTIFYCANCEL {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NOTIFYCANCEL>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NOTIFYCANCEL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NOTIFYCANCEL {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -796,70 +740,65 @@ pub unsafe fn NPAddConnection<'a, Param1: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPAddConnection3<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lppassword: Param2, lpusername: Param3, dwflags: NET_USE_CONNECT_FLAGS) -> u32 {
+pub unsafe fn NPAddConnection3<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lppassword: Param2, lpusername: Param3, dwflags: NET_USE_CONNECT_FLAGS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NPAddConnection3(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows_core::PCWSTR, lpusername: ::windows_core::PCWSTR, dwflags: NET_USE_CONNECT_FLAGS) -> u32;
+            fn NPAddConnection3(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows_core::PCWSTR, lpusername: ::windows_core::PCWSTR, dwflags: NET_USE_CONNECT_FLAGS) -> u32;
         }
         ::core::mem::transmute(NPAddConnection3(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), lppassword.into_param().abi(), lpusername.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPAddConnection4<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lpauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32 {
+pub unsafe fn NPAddConnection4<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lpauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NPAddConnection4(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lpauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32;
+            fn NPAddConnection4(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEW, lpauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32;
         }
         ::core::mem::transmute(NPAddConnection4(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), ::core::mem::transmute(lpauthbuffer), ::core::mem::transmute(cbauthbuffer), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpuseoptions), ::core::mem::transmute(cbuseoptions)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPCancelConnection<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpname: Param0, fforce: Param1) -> u32 {
+pub unsafe fn NPCancelConnection<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpname: Param0, fforce: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NPCancelConnection(lpname: ::windows_core::PCWSTR, fforce: super::super::Foundation::BOOL) -> u32;
+            fn NPCancelConnection(lpname: ::windows_core::PCWSTR, fforce: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(NPCancelConnection(lpname.into_param().abi(), fforce.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPCancelConnection2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpname: Param0, fforce: Param1, dwflags: u32) -> u32 {
+pub unsafe fn NPCancelConnection2<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpname: Param0, fforce: Param1, dwflags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NPCancelConnection2(lpname: ::windows_core::PCWSTR, fforce: super::super::Foundation::BOOL, dwflags: u32) -> u32;
+            fn NPCancelConnection2(lpname: ::windows_core::PCWSTR, fforce: ::win32_foundation::BOOL, dwflags: u32) -> u32;
         }
         ::core::mem::transmute(NPCancelConnection2(lpname.into_param().abi(), fforce.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPCloseEnum<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(henum: Param0) -> u32 {
+pub unsafe fn NPCloseEnum<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(henum: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NPCloseEnum(henum: super::super::Foundation::HANDLE) -> u32;
+            fn NPCloseEnum(henum: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(NPCloseEnum(henum.into_param().abi()))
     }
@@ -891,14 +830,13 @@ impl ::core::fmt::Debug for NPDIRECTORY_NOTIFY_OPERATION {
         f.debug_tuple("NPDIRECTORY_NOTIFY_OPERATION").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPEnumResource<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(henum: Param0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
+pub unsafe fn NPEnumResource<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(henum: Param0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NPEnumResource(henum: super::super::Foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
+            fn NPEnumResource(henum: ::win32_foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(NPEnumResource(henum.into_param().abi(), ::core::mem::transmute(lpccount), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(lpbuffersize)))
     }
@@ -1035,14 +973,13 @@ pub unsafe fn NPGetUser<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NPOpenEnum(dwscope: u32, dwtype: u32, dwusage: u32, lpnetresource: *const NETRESOURCEW, lphenum: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn NPOpenEnum(dwscope: u32, dwtype: u32, dwusage: u32, lpnetresource: *const NETRESOURCEW, lphenum: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NPOpenEnum(dwscope: u32, dwtype: u32, dwusage: u32, lpnetresource: *const NETRESOURCEW, lphenum: *mut super::super::Foundation::HANDLE) -> u32;
+            fn NPOpenEnum(dwscope: u32, dwtype: u32, dwusage: u32, lpnetresource: *const NETRESOURCEW, lphenum: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(NPOpenEnum(::core::mem::transmute(dwscope), ::core::mem::transmute(dwtype), ::core::mem::transmute(dwusage), ::core::mem::transmute(lpnetresource), ::core::mem::transmute(lphenum)))
     }
@@ -1101,54 +1038,37 @@ impl ::core::fmt::Debug for NetEnumHandle {
 unsafe impl ::windows_core::Abi for NetEnumHandle {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 pub type PF_AddConnectNotify = ::core::option::Option<unsafe extern "system" fn(lpnotifyinfo: *mut NOTIFYINFO, lpaddinfo: *const NOTIFYADD) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PF_CancelConnectNotify = ::core::option::Option<unsafe extern "system" fn(lpnotifyinfo: *mut NOTIFYINFO, lpcancelinfo: *const NOTIFYCANCEL) -> u32>;
 pub type PF_NPAddConnection = ::core::option::Option<unsafe extern "system" fn(lpnetresource: *const NETRESOURCEW, lppassword: ::windows_core::PCWSTR, lpusername: ::windows_core::PCWSTR) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPAddConnection3 = ::core::option::Option<unsafe extern "system" fn(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows_core::PCWSTR, lpusername: ::windows_core::PCWSTR, dwflags: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPAddConnection4 = ::core::option::Option<unsafe extern "system" fn(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lpauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPCancelConnection = ::core::option::Option<unsafe extern "system" fn(lpname: ::windows_core::PCWSTR, fforce: super::super::Foundation::BOOL) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPCancelConnection2 = ::core::option::Option<unsafe extern "system" fn(lpname: ::windows_core::PCWSTR, fforce: super::super::Foundation::BOOL, dwflags: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPCloseEnum = ::core::option::Option<unsafe extern "system" fn(henum: super::super::Foundation::HANDLE) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPDeviceMode = ::core::option::Option<unsafe extern "system" fn(hparent: super::super::Foundation::HWND) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPDirectoryNotify = ::core::option::Option<unsafe extern "system" fn(hwnd: super::super::Foundation::HWND, lpdir: ::windows_core::PCWSTR, dwoper: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPEnumResource = ::core::option::Option<unsafe extern "system" fn(henum: super::super::Foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPFMXEditPerm = ::core::option::Option<unsafe extern "system" fn(lpdrivename: ::windows_core::PCWSTR, hwndfmx: super::super::Foundation::HWND, ndialogtype: u32) -> u32>;
+pub type PF_NPAddConnection3 = ::core::option::Option<unsafe extern "system" fn(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows_core::PCWSTR, lpusername: ::windows_core::PCWSTR, dwflags: u32) -> u32>;
+pub type PF_NPAddConnection4 = ::core::option::Option<unsafe extern "system" fn(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEW, lpauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32>;
+pub type PF_NPCancelConnection = ::core::option::Option<unsafe extern "system" fn(lpname: ::windows_core::PCWSTR, fforce: ::win32_foundation::BOOL) -> u32>;
+pub type PF_NPCancelConnection2 = ::core::option::Option<unsafe extern "system" fn(lpname: ::windows_core::PCWSTR, fforce: ::win32_foundation::BOOL, dwflags: u32) -> u32>;
+pub type PF_NPCloseEnum = ::core::option::Option<unsafe extern "system" fn(henum: ::win32_foundation::HANDLE) -> u32>;
+pub type PF_NPDeviceMode = ::core::option::Option<unsafe extern "system" fn(hparent: ::win32_foundation::HWND) -> u32>;
+pub type PF_NPDirectoryNotify = ::core::option::Option<unsafe extern "system" fn(hwnd: ::win32_foundation::HWND, lpdir: ::windows_core::PCWSTR, dwoper: u32) -> u32>;
+pub type PF_NPEnumResource = ::core::option::Option<unsafe extern "system" fn(henum: ::win32_foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32>;
+pub type PF_NPFMXEditPerm = ::core::option::Option<unsafe extern "system" fn(lpdrivename: ::windows_core::PCWSTR, hwndfmx: ::win32_foundation::HWND, ndialogtype: u32) -> u32>;
 pub type PF_NPFMXGetPermCaps = ::core::option::Option<unsafe extern "system" fn(lpdrivename: ::windows_core::PCWSTR) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPFMXGetPermHelp = ::core::option::Option<unsafe extern "system" fn(lpdrivename: ::windows_core::PCWSTR, ndialogtype: u32, fdirectory: super::super::Foundation::BOOL, lpfilenamebuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32, lpnhelpcontext: *mut u32) -> u32>;
+pub type PF_NPFMXGetPermHelp = ::core::option::Option<unsafe extern "system" fn(lpdrivename: ::windows_core::PCWSTR, ndialogtype: u32, fdirectory: ::win32_foundation::BOOL, lpfilenamebuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32, lpnhelpcontext: *mut u32) -> u32>;
 pub type PF_NPFormatNetworkName = ::core::option::Option<unsafe extern "system" fn(lpremotename: ::windows_core::PCWSTR, lpformattedname: ::windows_core::PWSTR, lpnlength: *mut u32, dwflags: u32, dwavecharperline: u32) -> u32>;
 pub type PF_NPGetCaps = ::core::option::Option<unsafe extern "system" fn(ndex: u32) -> u32>;
 pub type PF_NPGetConnection = ::core::option::Option<unsafe extern "system" fn(lplocalname: ::windows_core::PCWSTR, lpremotename: ::windows_core::PWSTR, lpnbufferlen: *mut u32) -> u32>;
 pub type PF_NPGetConnection3 = ::core::option::Option<unsafe extern "system" fn(lplocalname: ::windows_core::PCWSTR, dwlevel: u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32>;
 pub type PF_NPGetConnectionPerformance = ::core::option::Option<unsafe extern "system" fn(lpremotename: ::windows_core::PCWSTR, lpnetconnectinfo: *mut NETCONNECTINFOSTRUCT) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPGetDirectoryType = ::core::option::Option<unsafe extern "system" fn(lpname: ::windows_core::PCWSTR, lptype: *const i32, bflushcache: super::super::Foundation::BOOL) -> u32>;
+pub type PF_NPGetDirectoryType = ::core::option::Option<unsafe extern "system" fn(lpname: ::windows_core::PCWSTR, lptype: *const i32, bflushcache: ::win32_foundation::BOOL) -> u32>;
 pub type PF_NPGetPersistentUseOptionsForConnection = ::core::option::Option<unsafe extern "system" fn(lpremotepath: ::windows_core::PCWSTR, lpreaduseoptions: *const u8, cbreaduseoptions: u32, lpwriteuseoptions: *mut u8, lpsizewriteuseoptions: *mut u32) -> u32>;
 pub type PF_NPGetPropertyText = ::core::option::Option<unsafe extern "system" fn(ibutton: u32, npropsel: u32, lpname: ::windows_core::PCWSTR, lpbuttonname: ::windows_core::PWSTR, nbuttonnamelen: u32, ntype: u32) -> u32>;
 pub type PF_NPGetResourceInformation = ::core::option::Option<unsafe extern "system" fn(lpnetresource: *const NETRESOURCEW, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32, lplpsystem: *mut ::windows_core::PWSTR) -> u32>;
 pub type PF_NPGetResourceParent = ::core::option::Option<unsafe extern "system" fn(lpnetresource: *const NETRESOURCEW, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32>;
 pub type PF_NPGetUniversalName = ::core::option::Option<unsafe extern "system" fn(lplocalpath: ::windows_core::PCWSTR, dwinfolevel: u32, lpbuffer: *mut ::core::ffi::c_void, lpnbuffersize: *mut u32) -> u32>;
 pub type PF_NPGetUser = ::core::option::Option<unsafe extern "system" fn(lpname: ::windows_core::PCWSTR, lpusername: ::windows_core::PWSTR, lpnbufferlen: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPLogonNotify = ::core::option::Option<unsafe extern "system" fn(lplogonid: *const super::super::Foundation::LUID, lpauthentinfotype: ::windows_core::PCWSTR, lpauthentinfo: *const ::core::ffi::c_void, lppreviousauthentinfotype: ::windows_core::PCWSTR, lppreviousauthentinfo: *const ::core::ffi::c_void, lpstationname: ::windows_core::PCWSTR, stationhandle: *const ::core::ffi::c_void, lplogonscript: *mut ::windows_core::PWSTR) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPOpenEnum = ::core::option::Option<unsafe extern "system" fn(dwscope: u32, dwtype: u32, dwusage: u32, lpnetresource: *const NETRESOURCEW, lphenum: *mut super::super::Foundation::HANDLE) -> u32>;
+pub type PF_NPLogonNotify = ::core::option::Option<unsafe extern "system" fn(lplogonid: *const ::win32_foundation::LUID, lpauthentinfotype: ::windows_core::PCWSTR, lpauthentinfo: *const ::core::ffi::c_void, lppreviousauthentinfotype: ::windows_core::PCWSTR, lppreviousauthentinfo: *const ::core::ffi::c_void, lpstationname: ::windows_core::PCWSTR, stationhandle: *const ::core::ffi::c_void, lplogonscript: *mut ::windows_core::PWSTR) -> u32>;
+pub type PF_NPOpenEnum = ::core::option::Option<unsafe extern "system" fn(dwscope: u32, dwtype: u32, dwusage: u32, lpnetresource: *const NETRESOURCEW, lphenum: *mut ::win32_foundation::HANDLE) -> u32>;
 pub type PF_NPPasswordChangeNotify = ::core::option::Option<unsafe extern "system" fn(lpauthentinfotype: ::windows_core::PCWSTR, lpauthentinfo: *const ::core::ffi::c_void, lppreviousauthentinfotype: ::windows_core::PCWSTR, lppreviousauthentinfo: *const ::core::ffi::c_void, lpstationname: ::windows_core::PCWSTR, stationhandle: *const ::core::ffi::c_void, dwchangeinfo: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPPropertyDialog = ::core::option::Option<unsafe extern "system" fn(hwndparent: super::super::Foundation::HWND, ibuttondlg: u32, npropsel: u32, lpfilename: ::windows_core::PCWSTR, ntype: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PF_NPSearchDialog = ::core::option::Option<unsafe extern "system" fn(hwndparent: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lpbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, lpnflags: *mut u32) -> u32>;
+pub type PF_NPPropertyDialog = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation::HWND, ibuttondlg: u32, npropsel: u32, lpfilename: ::windows_core::PCWSTR, ntype: u32) -> u32>;
+pub type PF_NPSearchDialog = ::core::option::Option<unsafe extern "system" fn(hwndparent: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEW, lpbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, lpnflags: *mut u32) -> u32>;
 #[repr(C)]
 pub struct REMOTE_NAME_INFOA {
     pub lpUniversalName: ::windows_core::PSTR,
@@ -1469,56 +1389,52 @@ pub unsafe fn WNetAddConnection2W<'a, Param1: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetAddConnection3A<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, lppassword: Param2, lpusername: Param3, dwflags: u32) -> u32 {
+pub unsafe fn WNetAddConnection3A<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, lppassword: Param2, lpusername: Param3, dwflags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetAddConnection3A(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEA, lppassword: ::windows_core::PCSTR, lpusername: ::windows_core::PCSTR, dwflags: u32) -> u32;
+            fn WNetAddConnection3A(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEA, lppassword: ::windows_core::PCSTR, lpusername: ::windows_core::PCSTR, dwflags: u32) -> u32;
         }
         ::core::mem::transmute(WNetAddConnection3A(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), lppassword.into_param().abi(), lpusername.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetAddConnection3W<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lppassword: Param2, lpusername: Param3, dwflags: u32) -> u32 {
+pub unsafe fn WNetAddConnection3W<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lppassword: Param2, lpusername: Param3, dwflags: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetAddConnection3W(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows_core::PCWSTR, lpusername: ::windows_core::PCWSTR, dwflags: u32) -> u32;
+            fn WNetAddConnection3W(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows_core::PCWSTR, lpusername: ::windows_core::PCWSTR, dwflags: u32) -> u32;
         }
         ::core::mem::transmute(WNetAddConnection3W(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), lppassword.into_param().abi(), lpusername.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetAddConnection4A<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32 {
+pub unsafe fn WNetAddConnection4A<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetAddConnection4A(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32;
+            fn WNetAddConnection4A(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32;
         }
         ::core::mem::transmute(WNetAddConnection4A(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), ::core::mem::transmute(pauthbuffer), ::core::mem::transmute(cbauthbuffer), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpuseoptions), ::core::mem::transmute(cbuseoptions)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetAddConnection4W<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32 {
+pub unsafe fn WNetAddConnection4W<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetAddConnection4W(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32;
+            fn WNetAddConnection4W(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32) -> u32;
         }
         ::core::mem::transmute(WNetAddConnection4W(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), ::core::mem::transmute(pauthbuffer), ::core::mem::transmute(cbauthbuffer), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpuseoptions), ::core::mem::transmute(cbuseoptions)))
     }
@@ -1551,91 +1467,84 @@ pub unsafe fn WNetAddConnectionW<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCancelConnection2A<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpname: Param0, dwflags: u32, fforce: Param2) -> u32 {
+pub unsafe fn WNetCancelConnection2A<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpname: Param0, dwflags: u32, fforce: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetCancelConnection2A(lpname: ::windows_core::PCSTR, dwflags: u32, fforce: super::super::Foundation::BOOL) -> u32;
+            fn WNetCancelConnection2A(lpname: ::windows_core::PCSTR, dwflags: u32, fforce: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(WNetCancelConnection2A(lpname.into_param().abi(), ::core::mem::transmute(dwflags), fforce.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCancelConnection2W<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpname: Param0, dwflags: u32, fforce: Param2) -> u32 {
+pub unsafe fn WNetCancelConnection2W<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpname: Param0, dwflags: u32, fforce: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetCancelConnection2W(lpname: ::windows_core::PCWSTR, dwflags: u32, fforce: super::super::Foundation::BOOL) -> u32;
+            fn WNetCancelConnection2W(lpname: ::windows_core::PCWSTR, dwflags: u32, fforce: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(WNetCancelConnection2W(lpname.into_param().abi(), ::core::mem::transmute(dwflags), fforce.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCancelConnectionA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpname: Param0, fforce: Param1) -> u32 {
+pub unsafe fn WNetCancelConnectionA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpname: Param0, fforce: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetCancelConnectionA(lpname: ::windows_core::PCSTR, fforce: super::super::Foundation::BOOL) -> u32;
+            fn WNetCancelConnectionA(lpname: ::windows_core::PCSTR, fforce: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(WNetCancelConnectionA(lpname.into_param().abi(), fforce.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCancelConnectionW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpname: Param0, fforce: Param1) -> u32 {
+pub unsafe fn WNetCancelConnectionW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpname: Param0, fforce: Param1) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetCancelConnectionW(lpname: ::windows_core::PCWSTR, fforce: super::super::Foundation::BOOL) -> u32;
+            fn WNetCancelConnectionW(lpname: ::windows_core::PCWSTR, fforce: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(WNetCancelConnectionW(lpname.into_param().abi(), fforce.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetCloseEnum<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(henum: Param0) -> u32 {
+pub unsafe fn WNetCloseEnum<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(henum: Param0) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetCloseEnum(henum: super::super::Foundation::HANDLE) -> u32;
+            fn WNetCloseEnum(henum: ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(WNetCloseEnum(henum.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetConnectionDialog<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, dwtype: u32) -> u32 {
+pub unsafe fn WNetConnectionDialog<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, dwtype: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetConnectionDialog(hwnd: super::super::Foundation::HWND, dwtype: u32) -> u32;
+            fn WNetConnectionDialog(hwnd: ::win32_foundation::HWND, dwtype: u32) -> u32;
         }
         ::core::mem::transmute(WNetConnectionDialog(hwnd.into_param().abi(), ::core::mem::transmute(dwtype)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WNetConnectionDialog1A(lpconndlgstruct: *mut CONNECTDLGSTRUCTA) -> u32 {
     #[cfg(windows)]
@@ -1649,7 +1558,6 @@ pub unsafe fn WNetConnectionDialog1A(lpconndlgstruct: *mut CONNECTDLGSTRUCTA) ->
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WNetConnectionDialog1W(lpconndlgstruct: *mut CONNECTDLGSTRUCTW) -> u32 {
     #[cfg(windows)]
@@ -1663,21 +1571,19 @@ pub unsafe fn WNetConnectionDialog1W(lpconndlgstruct: *mut CONNECTDLGSTRUCTW) ->
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetDisconnectDialog<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwnd: Param0, dwtype: u32) -> u32 {
+pub unsafe fn WNetDisconnectDialog<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, dwtype: u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetDisconnectDialog(hwnd: super::super::Foundation::HWND, dwtype: u32) -> u32;
+            fn WNetDisconnectDialog(hwnd: ::win32_foundation::HWND, dwtype: u32) -> u32;
         }
         ::core::mem::transmute(WNetDisconnectDialog(hwnd.into_param().abi(), ::core::mem::transmute(dwtype)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WNetDisconnectDialog1A(lpconndlgstruct: *const DISCDLGSTRUCTA) -> u32 {
     #[cfg(windows)]
@@ -1691,7 +1597,6 @@ pub unsafe fn WNetDisconnectDialog1A(lpconndlgstruct: *const DISCDLGSTRUCTA) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WNetDisconnectDialog1W(lpconndlgstruct: *const DISCDLGSTRUCTW) -> u32 {
     #[cfg(windows)]
@@ -1705,28 +1610,26 @@ pub unsafe fn WNetDisconnectDialog1W(lpconndlgstruct: *const DISCDLGSTRUCTW) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetEnumResourceA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(henum: Param0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
+pub unsafe fn WNetEnumResourceA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(henum: Param0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetEnumResourceA(henum: super::super::Foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
+            fn WNetEnumResourceA(henum: ::win32_foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(WNetEnumResourceA(henum.into_param().abi(), ::core::mem::transmute(lpccount), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(lpbuffersize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetEnumResourceW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(henum: Param0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
+pub unsafe fn WNetEnumResourceW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(henum: Param0, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetEnumResourceW(henum: super::super::Foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
+            fn WNetEnumResourceW(henum: ::win32_foundation::HANDLE, lpccount: *mut u32, lpbuffer: *mut ::core::ffi::c_void, lpbuffersize: *mut u32) -> u32;
         }
         ::core::mem::transmute(WNetEnumResourceW(henum.into_param().abi(), ::core::mem::transmute(lpccount), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(lpbuffersize)))
     }
@@ -1785,7 +1688,6 @@ pub unsafe fn WNetGetLastErrorW(lperror: *mut u32, lperrorbuf: &mut [u16], lpnam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WNetGetNetworkInformationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpprovider: Param0, lpnetinfostruct: *mut NETINFOSTRUCT) -> u32 {
     #[cfg(windows)]
@@ -1799,7 +1701,6 @@ pub unsafe fn WNetGetNetworkInformationA<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WNetGetNetworkInformationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpprovider: Param0, lpnetinfostruct: *mut NETINFOSTRUCT) -> u32 {
     #[cfg(windows)]
@@ -1995,56 +1896,52 @@ pub unsafe fn WNetSetLastErrorW<'a, Param1: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetUseConnection4A<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows_core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
+pub unsafe fn WNetUseConnection4A<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows_core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetUseConnection4A(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows_core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
+            fn WNetUseConnection4A(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEA, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows_core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
         }
         ::core::mem::transmute(WNetUseConnection4A(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), ::core::mem::transmute(pauthbuffer), ::core::mem::transmute(cbauthbuffer), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpuseoptions), ::core::mem::transmute(cbuseoptions), ::core::mem::transmute(lpaccessname), ::core::mem::transmute(lpbuffersize), ::core::mem::transmute(lpresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetUseConnection4W<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows_core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
+pub unsafe fn WNetUseConnection4W<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows_core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetUseConnection4W(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows_core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
+            fn WNetUseConnection4W(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEW, pauthbuffer: *const ::core::ffi::c_void, cbauthbuffer: u32, dwflags: u32, lpuseoptions: *const u8, cbuseoptions: u32, lpaccessname: ::windows_core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
         }
         ::core::mem::transmute(WNetUseConnection4W(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), ::core::mem::transmute(pauthbuffer), ::core::mem::transmute(cbauthbuffer), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpuseoptions), ::core::mem::transmute(cbuseoptions), ::core::mem::transmute(lpaccessname), ::core::mem::transmute(lpbuffersize), ::core::mem::transmute(lpresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetUseConnectionA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, lppassword: Param2, lpuserid: Param3, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows_core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
+pub unsafe fn WNetUseConnectionA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEA, lppassword: Param2, lpuserid: Param3, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows_core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetUseConnectionA(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEA, lppassword: ::windows_core::PCSTR, lpuserid: ::windows_core::PCSTR, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows_core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
+            fn WNetUseConnectionA(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEA, lppassword: ::windows_core::PCSTR, lpuserid: ::windows_core::PCSTR, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows_core::PSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
         }
         ::core::mem::transmute(WNetUseConnectionA(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), lppassword.into_param().abi(), lpuserid.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpaccessname), ::core::mem::transmute(lpbuffersize), ::core::mem::transmute(lpresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn WNetUseConnectionW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lppassword: Param2, lpuserid: Param3, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows_core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
+pub unsafe fn WNetUseConnectionW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hwndowner: Param0, lpnetresource: *const NETRESOURCEW, lppassword: Param2, lpuserid: Param3, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows_core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn WNetUseConnectionW(hwndowner: super::super::Foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows_core::PCWSTR, lpuserid: ::windows_core::PCWSTR, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows_core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
+            fn WNetUseConnectionW(hwndowner: ::win32_foundation::HWND, lpnetresource: *const NETRESOURCEW, lppassword: ::windows_core::PCWSTR, lpuserid: ::windows_core::PCWSTR, dwflags: NET_USE_CONNECT_FLAGS, lpaccessname: ::windows_core::PWSTR, lpbuffersize: *mut u32, lpresult: *mut u32) -> u32;
         }
         ::core::mem::transmute(WNetUseConnectionW(hwndowner.into_param().abi(), ::core::mem::transmute(lpnetresource), lppassword.into_param().abi(), lpuserid.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpaccessname), ::core::mem::transmute(lpbuffersize), ::core::mem::transmute(lpresult)))
     }

@@ -3,18 +3,16 @@ pub mod D2D;
 #[link(name = "windows")]
 extern "system" {
     pub fn WICConvertBitmapSource(dstformat: *const ::windows_core_sys::GUID, pisrc: IWICBitmapSource, ppidst: *mut IWICBitmapSource) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WICCreateBitmapFromSection(width: u32, height: u32, pixelformat: *const ::windows_core_sys::GUID, hsection: super::super::Foundation::HANDLE, stride: u32, offset: u32, ppibitmap: *mut IWICBitmap) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WICCreateBitmapFromSectionEx(width: u32, height: u32, pixelformat: *const ::windows_core_sys::GUID, hsection: super::super::Foundation::HANDLE, stride: u32, offset: u32, desiredaccesslevel: WICSectionAccessLevel, ppibitmap: *mut IWICBitmap) -> ::windows_core_sys::HRESULT;
+    pub fn WICCreateBitmapFromSection(width: u32, height: u32, pixelformat: *const ::windows_core_sys::GUID, hsection: ::win32_foundation_sys::HANDLE, stride: u32, offset: u32, ppibitmap: *mut IWICBitmap) -> ::windows_core_sys::HRESULT;
+    pub fn WICCreateBitmapFromSectionEx(width: u32, height: u32, pixelformat: *const ::windows_core_sys::GUID, hsection: ::win32_foundation_sys::HANDLE, stride: u32, offset: u32, desiredaccesslevel: WICSectionAccessLevel, ppibitmap: *mut IWICBitmap) -> ::windows_core_sys::HRESULT;
     pub fn WICGetMetadataContentSize(guidcontainerformat: *const ::windows_core_sys::GUID, piwriter: IWICMetadataWriter, pcbsize: *mut u64) -> ::windows_core_sys::HRESULT;
     pub fn WICMapGuidToShortName(guid: *const ::windows_core_sys::GUID, cchname: u32, wzname: ::windows_core_sys::PWSTR, pcchactual: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn WICMapSchemaToName(guidmetadataformat: *const ::windows_core_sys::GUID, pwzschema: ::windows_core_sys::PCWSTR, cchname: u32, wzname: ::windows_core_sys::PWSTR, pcchactual: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn WICMapShortNameToGuid(wzname: ::windows_core_sys::PCWSTR, pguid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn WICMatchMetadataContent(guidcontainerformat: *const ::windows_core_sys::GUID, pguidvendor: *const ::windows_core_sys::GUID, pistream: super::super::System::Com::IStream, pguidmetadataformat: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
+    pub fn WICMatchMetadataContent(guidcontainerformat: *const ::windows_core_sys::GUID, pguidvendor: *const ::windows_core_sys::GUID, pistream: ::win32_system_sys::Com::IStream, pguidmetadataformat: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn WICSerializeMetadataContent(guidcontainerformat: *const ::windows_core_sys::GUID, piwriter: IWICMetadataWriter, dwpersistoptions: u32, pistream: super::super::System::Com::IStream) -> ::windows_core_sys::HRESULT;
+    pub fn WICSerializeMetadataContent(guidcontainerformat: *const ::windows_core_sys::GUID, piwriter: IWICMetadataWriter, dwpersistoptions: u32, pistream: ::win32_system_sys::Com::IStream) -> ::windows_core_sys::HRESULT;
 }
 pub const CATID_WICBitmapDecoders: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2128177207, data2: 38640, data3: 18450, data4: [178, 17, 241, 60, 36, 17, 126, 211] };
 pub const CATID_WICBitmapEncoders: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2893378198, data2: 13602, data3: 19985, data4: [152, 98, 193, 123, 229, 161, 118, 126] };
@@ -413,17 +411,14 @@ pub const WICBitmapPaletteTypeFixedGray16: WICBitmapPaletteType = 11i32;
 pub const WICBitmapPaletteTypeFixedGray256: WICBitmapPaletteType = 12i32;
 pub const WICBITMAPPALETTETYPE_FORCE_DWORD: WICBitmapPaletteType = 2147483647i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WICBitmapPattern {
     pub Position: u64,
     pub Length: u32,
     pub Pattern: *mut u8,
     pub Mask: *mut u8,
-    pub EndOfStream: super::super::Foundation::BOOL,
+    pub EndOfStream: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WICBitmapPattern {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WICBitmapPattern {
     fn clone(&self) -> Self {
         *self

@@ -128,7 +128,7 @@ impl ::core::clone::Clone for DisplayPresentStatus {
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct DisplayPresentationRate {
-    pub VerticalSyncRate: super::super::super::Foundation::Numerics::Rational,
+    pub VerticalSyncRate: ::winrt_foundation_sys::Numerics::Rational,
     pub VerticalSyncsPerPresentation: i32,
 }
 #[cfg(feature = "Foundation_Numerics")]

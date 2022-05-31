@@ -2,10 +2,10 @@
 pub struct ApplicationDataManager(::windows_core::IUnknown);
 impl ApplicationDataManager {
     #[cfg(feature = "Storage")]
-    pub fn CreateForPackageFamily<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(packagefamilyname: Param0) -> ::windows_core::Result<super::super::Storage::ApplicationData> {
+    pub fn CreateForPackageFamily<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(packagefamilyname: Param0) -> ::windows_core::Result<::winrt_storage::ApplicationData> {
         Self::IApplicationDataManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateForPackageFamily)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Storage::ApplicationData>(result__)
+            (::windows_core::Interface::vtable(this).CreateForPackageFamily)(::windows_core::Interface::as_raw(this), packagefamilyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_storage::ApplicationData>(result__)
         })
     }
     pub fn IApplicationDataManagerStatics<R, F: FnOnce(&IApplicationDataManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

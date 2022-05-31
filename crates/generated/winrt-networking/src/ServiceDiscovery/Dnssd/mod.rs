@@ -29,9 +29,8 @@ impl DnssdRegistrationResult {
             (::windows_core::Interface::vtable(this).HasInstanceNameChanged)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -108,30 +107,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Dns
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DnssdRegistrationResult> for super::super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<DnssdRegistrationResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: DnssdRegistrationResult) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DnssdRegistrationResult> for super::super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&DnssdRegistrationResult> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &DnssdRegistrationResult) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IStringable> for DnssdRegistrationResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for DnssdRegistrationResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IStringable> for &DnssdRegistrationResult {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &DnssdRegistrationResult {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for DnssdRegistrationResult {}
@@ -230,43 +225,43 @@ impl DnssdServiceInstance {
         unsafe { (::windows_core::Interface::vtable(this).SetWeight)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TextAttributes(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+    pub fn TextAttributes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TextAttributes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).TextAttributes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Networking_Sockets"))]
-    pub fn RegisterStreamSocketListenerAsync1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::StreamSocketListener>>(&self, socket: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<DnssdRegistrationResult>> {
+    #[cfg(feature = "Networking_Sockets")]
+    pub fn RegisterStreamSocketListenerAsync1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::StreamSocketListener>>(&self, socket: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterStreamSocketListenerAsync1)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterStreamSocketListenerAsync1)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
-    pub fn RegisterStreamSocketListenerAsync2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::StreamSocketListener>, Param1: ::windows_core::IntoParam<'a, super::super::Connectivity::NetworkAdapter>>(&self, socket: Param0, adapter: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<DnssdRegistrationResult>> {
+    #[cfg(all(feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
+    pub fn RegisterStreamSocketListenerAsync2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::StreamSocketListener>, Param1: ::windows_core::IntoParam<'a, super::super::Connectivity::NetworkAdapter>>(&self, socket: Param0, adapter: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterStreamSocketListenerAsync2)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), adapter.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterStreamSocketListenerAsync2)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), adapter.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Networking_Sockets"))]
-    pub fn RegisterDatagramSocketAsync1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::DatagramSocket>>(&self, socket: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<DnssdRegistrationResult>> {
+    #[cfg(feature = "Networking_Sockets")]
+    pub fn RegisterDatagramSocketAsync1<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::DatagramSocket>>(&self, socket: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterDatagramSocketAsync1)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterDatagramSocketAsync1)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
-    pub fn RegisterDatagramSocketAsync2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::DatagramSocket>, Param1: ::windows_core::IntoParam<'a, super::super::Connectivity::NetworkAdapter>>(&self, socket: Param0, adapter: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<DnssdRegistrationResult>> {
+    #[cfg(all(feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
+    pub fn RegisterDatagramSocketAsync2<'a, Param0: ::windows_core::IntoParam<'a, super::super::Sockets::DatagramSocket>, Param1: ::windows_core::IntoParam<'a, super::super::Connectivity::NetworkAdapter>>(&self, socket: Param0, adapter: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RegisterDatagramSocketAsync2)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), adapter.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
+            (::windows_core::Interface::vtable(this).RegisterDatagramSocketAsync2)(::windows_core::Interface::as_raw(this), socket.into_param().abi(), adapter.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DnssdRegistrationResult>>(result__)
         }
     }
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, super::super::HostName>>(dnssdserviceinstancename: Param0, hostname: Param1, port: u16) -> ::windows_core::Result<DnssdServiceInstance> {
@@ -275,9 +270,8 @@ impl DnssdServiceInstance {
             (::windows_core::Interface::vtable(this).Create)(::windows_core::Interface::as_raw(this), dnssdserviceinstancename.into_param().abi(), hostname.into_param().abi(), port, result__.as_mut_ptr()).from_abi::<DnssdServiceInstance>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
     pub fn ToString(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IStringable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IStringable>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::windows_core::HSTRING>>::zeroed();
             (::windows_core::Interface::vtable(this).ToString)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
@@ -358,30 +352,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Dns
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DnssdServiceInstance> for super::super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<DnssdServiceInstance> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: DnssdServiceInstance) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DnssdServiceInstance> for super::super::super::Foundation::IStringable {
+impl ::core::convert::TryFrom<&DnssdServiceInstance> for ::winrt_foundation::IStringable {
     type Error = ::windows_core::Error;
     fn try_from(value: &DnssdServiceInstance) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IStringable> for DnssdServiceInstance {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IStringable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for DnssdServiceInstance {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IStringable> for &DnssdServiceInstance {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IStringable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IStringable> for &DnssdServiceInstance {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IStringable> {
+        ::core::convert::TryInto::<::winrt_foundation::IStringable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for DnssdServiceInstance {}
@@ -392,11 +382,11 @@ pub struct DnssdServiceInstanceCollection(::windows_core::IUnknown);
 #[cfg(feature = "Foundation_Collections")]
 impl DnssdServiceInstanceCollection {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn First(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IIterator<DnssdServiceInstance>> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::Collections::IIterable<DnssdServiceInstance>>(self)?;
+    pub fn First(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IIterator<DnssdServiceInstance>> {
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::Collections::IIterable<DnssdServiceInstance>>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IIterator<DnssdServiceInstance>>(result__)
+            (::windows_core::Interface::vtable(this).First)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IIterator<DnssdServiceInstance>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
@@ -462,8 +452,8 @@ unsafe impl ::windows_core::RuntimeType for DnssdServiceInstanceCollection {
 }
 #[cfg(feature = "Foundation_Collections")]
 unsafe impl ::windows_core::Interface for DnssdServiceInstanceCollection {
-    type Vtable = super::super::super::Foundation::Collections::IVectorView_Vtbl<DnssdServiceInstance>;
-    const IID: ::windows_core::GUID = <super::super::super::Foundation::Collections::IVectorView<DnssdServiceInstance> as ::windows_core::Interface>::IID;
+    type Vtable = ::winrt_foundation::Collections::IVectorView_Vtbl<DnssdServiceInstance>;
+    const IID: ::windows_core::GUID = <::winrt_foundation::Collections::IVectorView<DnssdServiceInstance> as ::windows_core::Interface>::IID;
 }
 #[cfg(feature = "Foundation_Collections")]
 impl ::windows_core::RuntimeName for DnssdServiceInstanceCollection {
@@ -472,7 +462,7 @@ impl ::windows_core::RuntimeName for DnssdServiceInstanceCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for DnssdServiceInstanceCollection {
     type Item = DnssdServiceInstance;
-    type IntoIter = super::super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
         ::core::iter::IntoIterator::into_iter(&self)
     }
@@ -480,9 +470,9 @@ impl ::core::iter::IntoIterator for DnssdServiceInstanceCollection {
 #[cfg(feature = "Foundation_Collections")]
 impl ::core::iter::IntoIterator for &DnssdServiceInstanceCollection {
     type Item = DnssdServiceInstance;
-    type IntoIter = super::super::super::Foundation::Collections::VectorViewIterator<Self::Item>;
+    type IntoIter = ::winrt_foundation::Collections::VectorViewIterator<Self::Item>;
     fn into_iter(self) -> Self::IntoIter {
-        super::super::super::Foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
+        ::winrt_foundation::Collections::VectorViewIterator::new(::core::convert::TryInto::try_into(self).ok())
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -534,55 +524,55 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Dns
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<DnssdServiceInstanceCollection> for super::super::super::Foundation::Collections::IIterable<DnssdServiceInstance> {
+impl ::core::convert::TryFrom<DnssdServiceInstanceCollection> for ::winrt_foundation::Collections::IIterable<DnssdServiceInstance> {
     type Error = ::windows_core::Error;
     fn try_from(value: DnssdServiceInstanceCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&DnssdServiceInstanceCollection> for super::super::super::Foundation::Collections::IIterable<DnssdServiceInstance> {
+impl ::core::convert::TryFrom<&DnssdServiceInstanceCollection> for ::winrt_foundation::Collections::IIterable<DnssdServiceInstance> {
     type Error = ::windows_core::Error;
     fn try_from(value: &DnssdServiceInstanceCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<DnssdServiceInstance>> for DnssdServiceInstanceCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<DnssdServiceInstance>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DnssdServiceInstance>> for DnssdServiceInstanceCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<DnssdServiceInstance>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<DnssdServiceInstance>> for &DnssdServiceInstanceCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IIterable<DnssdServiceInstance>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IIterable<DnssdServiceInstance>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DnssdServiceInstance>> for &DnssdServiceInstanceCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IIterable<DnssdServiceInstance>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IIterable<DnssdServiceInstance>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<DnssdServiceInstanceCollection> for super::super::super::Foundation::Collections::IVectorView<DnssdServiceInstance> {
+impl ::core::convert::TryFrom<DnssdServiceInstanceCollection> for ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance> {
     type Error = ::windows_core::Error;
     fn try_from(value: DnssdServiceInstanceCollection) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl ::core::convert::TryFrom<&DnssdServiceInstanceCollection> for super::super::super::Foundation::Collections::IVectorView<DnssdServiceInstance> {
+impl ::core::convert::TryFrom<&DnssdServiceInstanceCollection> for ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance> {
     type Error = ::windows_core::Error;
     fn try_from(value: &DnssdServiceInstanceCollection) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<DnssdServiceInstance>> for DnssdServiceInstanceCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVectorView<DnssdServiceInstance>> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>> for DnssdServiceInstanceCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IVectorView<DnssdServiceInstance>> for &DnssdServiceInstanceCollection {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::Collections::IVectorView<DnssdServiceInstance>> {
-        ::core::convert::TryInto::<super::super::super::Foundation::Collections::IVectorView<DnssdServiceInstance>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>> for &DnssdServiceInstanceCollection {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>> {
+        ::core::convert::TryInto::<::winrt_foundation::Collections::IVectorView<DnssdServiceInstance>>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 #[cfg(feature = "Foundation_Collections")]
@@ -592,42 +582,36 @@ unsafe impl ::core::marker::Sync for DnssdServiceInstanceCollection {}
 #[repr(transparent)]
 pub struct DnssdServiceWatcher(::windows_core::IUnknown);
 impl DnssdServiceWatcher {
-    #[cfg(feature = "Foundation")]
-    pub fn Added<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DnssdServiceWatcher, DnssdServiceInstance>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Added<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DnssdServiceWatcher, DnssdServiceInstance>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Added)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Added)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveAdded<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveAdded<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveAdded)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn EnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DnssdServiceWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn EnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DnssdServiceWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).EnumerationCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).EnumerationCompleted)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveEnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveEnumerationCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveEnumerationCompleted)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DnssdServiceWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Stopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DnssdServiceWatcher, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Stopped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStopped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveStopped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -796,21 +780,21 @@ pub struct IDnssdServiceInstance_Vtbl {
     pub TextAttributes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     TextAttributes: usize,
-    #[cfg(all(feature = "Foundation", feature = "Networking_Sockets"))]
+    #[cfg(feature = "Networking_Sockets")]
     pub RegisterStreamSocketListenerAsync1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, socket: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Networking_Sockets")))]
+    #[cfg(not(feature = "Networking_Sockets"))]
     RegisterStreamSocketListenerAsync1: usize,
-    #[cfg(all(feature = "Foundation", feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
+    #[cfg(all(feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
     pub RegisterStreamSocketListenerAsync2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, socket: ::windows_core::RawPtr, adapter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Networking_Connectivity", feature = "Networking_Sockets")))]
+    #[cfg(not(all(feature = "Networking_Connectivity", feature = "Networking_Sockets")))]
     RegisterStreamSocketListenerAsync2: usize,
-    #[cfg(all(feature = "Foundation", feature = "Networking_Sockets"))]
+    #[cfg(feature = "Networking_Sockets")]
     pub RegisterDatagramSocketAsync1: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, socket: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Networking_Sockets")))]
+    #[cfg(not(feature = "Networking_Sockets"))]
     RegisterDatagramSocketAsync1: usize,
-    #[cfg(all(feature = "Foundation", feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
+    #[cfg(all(feature = "Networking_Connectivity", feature = "Networking_Sockets"))]
     pub RegisterDatagramSocketAsync2: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, socket: ::windows_core::RawPtr, adapter: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Networking_Connectivity", feature = "Networking_Sockets")))]
+    #[cfg(not(all(feature = "Networking_Connectivity", feature = "Networking_Sockets")))]
     RegisterDatagramSocketAsync2: usize,
 }
 #[doc(hidden)]
@@ -837,30 +821,12 @@ unsafe impl ::windows_core::Interface for IDnssdServiceWatcher {
 #[doc(hidden)]
 pub struct IDnssdServiceWatcher_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Added: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Added: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveAdded: usize,
-    #[cfg(feature = "Foundation")]
-    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    EnumerationCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveEnumerationCompleted: usize,
-    #[cfg(feature = "Foundation")]
-    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Stopped: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStopped: usize,
+    pub Added: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveAdded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub EnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveEnumerationCompleted: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub Stopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStopped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DnssdServiceWatcherStatus) -> ::windows_core::HRESULT,
     pub Start: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,

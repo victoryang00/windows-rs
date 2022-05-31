@@ -6,21 +6,21 @@ extern "system" {
     pub fn D3D10CompileShader(psrcdata: ::windows_core_sys::PCSTR, srcdatasize: usize, pfilename: ::windows_core_sys::PCSTR, pdefines: *const super::Direct3D::D3D_SHADER_MACRO, pinclude: super::Direct3D::ID3DInclude, pfunctionname: ::windows_core_sys::PCSTR, pprofile: ::windows_core_sys::PCSTR, flags: u32, ppshader: *mut super::Direct3D::ID3DBlob, pperrormsgs: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Direct3D")]
     pub fn D3D10CreateBlob(numbytes: usize, ppbuffer: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi"))]
-    pub fn D3D10CreateDevice(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: super::super::Foundation::HINSTANCE, flags: u32, sdkversion: u32, ppdevice: *mut ID3D10Device) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi"))]
-    pub fn D3D10CreateDevice1(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: super::super::Foundation::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, ppdevice: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
-    pub fn D3D10CreateDeviceAndSwapChain(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: super::super::Foundation::HINSTANCE, flags: u32, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut super::Dxgi::IDXGISwapChain, ppdevice: *mut ID3D10Device) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
-    pub fn D3D10CreateDeviceAndSwapChain1(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: super::super::Foundation::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut super::Dxgi::IDXGISwapChain, ppdevice: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    pub fn D3D10CreateDevice(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation_sys::HINSTANCE, flags: u32, sdkversion: u32, ppdevice: *mut ID3D10Device) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Graphics_Dxgi")]
+    pub fn D3D10CreateDevice1(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation_sys::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, ppdevice: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub fn D3D10CreateDeviceAndSwapChain(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation_sys::HINSTANCE, flags: u32, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut super::Dxgi::IDXGISwapChain, ppdevice: *mut ID3D10Device) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+    pub fn D3D10CreateDeviceAndSwapChain1(padapter: super::Dxgi::IDXGIAdapter, drivertype: D3D10_DRIVER_TYPE, software: ::win32_foundation_sys::HINSTANCE, flags: u32, hardwarelevel: D3D10_FEATURE_LEVEL1, sdkversion: u32, pswapchaindesc: *const super::Dxgi::DXGI_SWAP_CHAIN_DESC, ppswapchain: *mut super::Dxgi::IDXGISwapChain, ppdevice: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT;
     pub fn D3D10CreateEffectFromMemory(pdata: *const ::core::ffi::c_void, datalength: usize, fxflags: u32, pdevice: ID3D10Device, peffectpool: ID3D10EffectPool, ppeffect: *mut ID3D10Effect) -> ::windows_core_sys::HRESULT;
     pub fn D3D10CreateEffectPoolFromMemory(pdata: *const ::core::ffi::c_void, datalength: usize, fxflags: u32, pdevice: ID3D10Device, ppeffectpool: *mut ID3D10EffectPool) -> ::windows_core_sys::HRESULT;
     pub fn D3D10CreateStateBlock(pdevice: ID3D10Device, pstateblockmask: *const D3D10_STATE_BLOCK_MASK, ppstateblock: *mut ID3D10StateBlock) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D"))]
-    pub fn D3D10DisassembleEffect(peffect: ID3D10Effect, enablecolorcode: super::super::Foundation::BOOL, ppdisassembly: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D"))]
-    pub fn D3D10DisassembleShader(pshader: *const ::core::ffi::c_void, bytecodelength: usize, enablecolorcode: super::super::Foundation::BOOL, pcomments: ::windows_core_sys::PCSTR, ppdisassembly: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    pub fn D3D10DisassembleEffect(peffect: ID3D10Effect, enablecolorcode: ::win32_foundation_sys::BOOL, ppdisassembly: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Graphics_Direct3D")]
+    pub fn D3D10DisassembleShader(pshader: *const ::core::ffi::c_void, bytecodelength: usize, enablecolorcode: ::win32_foundation_sys::BOOL, pcomments: ::windows_core_sys::PCSTR, ppdisassembly: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
     pub fn D3D10GetGeometryShaderProfile(pdevice: ID3D10Device) -> ::windows_core_sys::PSTR;
     #[cfg(feature = "Win32_Graphics_Direct3D")]
     pub fn D3D10GetInputAndOutputSignatureBlob(pshaderbytecode: *const ::core::ffi::c_void, bytecodelength: usize, ppsignatureblob: *mut super::Direct3D::ID3DBlob) -> ::windows_core_sys::HRESULT;
@@ -40,8 +40,7 @@ extern "system" {
     pub fn D3D10StateBlockMaskDisableCapture(pmask: *mut D3D10_STATE_BLOCK_MASK, statetype: D3D10_DEVICE_STATE_TYPES, rangestart: u32, rangelength: u32) -> ::windows_core_sys::HRESULT;
     pub fn D3D10StateBlockMaskEnableAll(pmask: *mut D3D10_STATE_BLOCK_MASK) -> ::windows_core_sys::HRESULT;
     pub fn D3D10StateBlockMaskEnableCapture(pmask: *mut D3D10_STATE_BLOCK_MASK, statetype: D3D10_DEVICE_STATE_TYPES, rangestart: u32, rangelength: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn D3D10StateBlockMaskGetSetting(pmask: *const D3D10_STATE_BLOCK_MASK, statetype: D3D10_DEVICE_STATE_TYPES, entry: u32) -> super::super::Foundation::BOOL;
+    pub fn D3D10StateBlockMaskGetSetting(pmask: *const D3D10_STATE_BLOCK_MASK, statetype: D3D10_DEVICE_STATE_TYPES, entry: u32) -> ::win32_foundation_sys::BOOL;
     pub fn D3D10StateBlockMaskIntersect(pa: *const D3D10_STATE_BLOCK_MASK, pb: *const D3D10_STATE_BLOCK_MASK, presult: *mut D3D10_STATE_BLOCK_MASK) -> ::windows_core_sys::HRESULT;
     pub fn D3D10StateBlockMaskUnion(pa: *const D3D10_STATE_BLOCK_MASK, pb: *const D3D10_STATE_BLOCK_MASK, presult: *mut D3D10_STATE_BLOCK_MASK) -> ::windows_core_sys::HRESULT;
 }
@@ -104,10 +103,9 @@ pub const D3D10_BLEND_INV_SRC1_COLOR: D3D10_BLEND = 17i32;
 pub const D3D10_BLEND_SRC1_ALPHA: D3D10_BLEND = 18i32;
 pub const D3D10_BLEND_INV_SRC1_ALPHA: D3D10_BLEND = 19i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_BLEND_DESC {
-    pub AlphaToCoverageEnable: super::super::Foundation::BOOL,
-    pub BlendEnable: [super::super::Foundation::BOOL; 8],
+    pub AlphaToCoverageEnable: ::win32_foundation_sys::BOOL,
+    pub BlendEnable: [::win32_foundation_sys::BOOL; 8],
     pub SrcBlend: D3D10_BLEND,
     pub DestBlend: D3D10_BLEND,
     pub BlendOp: D3D10_BLEND_OP,
@@ -116,24 +114,19 @@ pub struct D3D10_BLEND_DESC {
     pub BlendOpAlpha: D3D10_BLEND_OP,
     pub RenderTargetWriteMask: [u8; 8],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_BLEND_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_BLEND_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_BLEND_DESC1 {
-    pub AlphaToCoverageEnable: super::super::Foundation::BOOL,
-    pub IndependentBlendEnable: super::super::Foundation::BOOL,
+    pub AlphaToCoverageEnable: ::win32_foundation_sys::BOOL,
+    pub IndependentBlendEnable: ::win32_foundation_sys::BOOL,
     pub RenderTarget: [D3D10_RENDER_TARGET_BLEND_DESC1; 8],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_BLEND_DESC1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_BLEND_DESC1 {
     fn clone(&self) -> Self {
         *self
@@ -407,20 +400,17 @@ impl ::core::clone::Clone for D3D10_DEPTH_STENCILOP_DESC {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_DEPTH_STENCIL_DESC {
-    pub DepthEnable: super::super::Foundation::BOOL,
+    pub DepthEnable: ::win32_foundation_sys::BOOL,
     pub DepthWriteMask: D3D10_DEPTH_WRITE_MASK,
     pub DepthFunc: D3D10_COMPARISON_FUNC,
-    pub StencilEnable: super::super::Foundation::BOOL,
+    pub StencilEnable: ::win32_foundation_sys::BOOL,
     pub StencilReadMask: u8,
     pub StencilWriteMask: u8,
     pub FrontFace: D3D10_DEPTH_STENCILOP_DESC,
     pub BackFace: D3D10_DEPTH_STENCILOP_DESC,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_DEPTH_STENCIL_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_DEPTH_STENCIL_DESC {
     fn clone(&self) -> Self {
         *self
@@ -504,37 +494,31 @@ pub const D3D10_DSV_DIMENSION_TEXTURE2DMSARRAY: D3D10_DSV_DIMENSION = 6i32;
 pub const D3D10_EFFECT_COMPILE_ALLOW_SLOW_OPS: u32 = 2u32;
 pub const D3D10_EFFECT_COMPILE_CHILD_EFFECT: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_EFFECT_DESC {
-    pub IsChildEffect: super::super::Foundation::BOOL,
+    pub IsChildEffect: ::win32_foundation_sys::BOOL,
     pub ConstantBuffers: u32,
     pub SharedConstantBuffers: u32,
     pub GlobalVariables: u32,
     pub SharedGlobalVariables: u32,
     pub Techniques: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_EFFECT_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_EFFECT_DESC {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_EFFECT_SHADER_DESC {
     pub pInputSignature: *const u8,
-    pub IsInline: super::super::Foundation::BOOL,
+    pub IsInline: ::win32_foundation_sys::BOOL,
     pub pBytecode: *const u8,
     pub BytecodeLength: u32,
     pub SODecl: ::windows_core_sys::PCSTR,
     pub NumInputSignatureEntries: u32,
     pub NumOutputSignatureEntries: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_EFFECT_SHADER_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_EFFECT_SHADER_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1411,14 +1395,11 @@ impl ::core::clone::Clone for D3D10_QUERY_DATA_SO_STATISTICS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {
     pub Frequency: u64,
-    pub Disjoint: super::super::Foundation::BOOL,
+    pub Disjoint: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_QUERY_DATA_TIMESTAMP_DISJOINT {
     fn clone(&self) -> Self {
         *self
@@ -1440,22 +1421,19 @@ pub const D3D10_QUERY_MISC_PREDICATEHINT: D3D10_QUERY_MISC_FLAG = 1i32;
 pub type D3D10_RAISE_FLAG = i32;
 pub const D3D10_RAISE_FLAG_DRIVER_INTERNAL_ERROR: D3D10_RAISE_FLAG = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_RASTERIZER_DESC {
     pub FillMode: D3D10_FILL_MODE,
     pub CullMode: D3D10_CULL_MODE,
-    pub FrontCounterClockwise: super::super::Foundation::BOOL,
+    pub FrontCounterClockwise: ::win32_foundation_sys::BOOL,
     pub DepthBias: i32,
     pub DepthBiasClamp: f32,
     pub SlopeScaledDepthBias: f32,
-    pub DepthClipEnable: super::super::Foundation::BOOL,
-    pub ScissorEnable: super::super::Foundation::BOOL,
-    pub MultisampleEnable: super::super::Foundation::BOOL,
-    pub AntialiasedLineEnable: super::super::Foundation::BOOL,
+    pub DepthClipEnable: ::win32_foundation_sys::BOOL,
+    pub ScissorEnable: ::win32_foundation_sys::BOOL,
+    pub MultisampleEnable: ::win32_foundation_sys::BOOL,
+    pub AntialiasedLineEnable: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_RASTERIZER_DESC {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_RASTERIZER_DESC {
     fn clone(&self) -> Self {
         *self
@@ -1463,9 +1441,8 @@ impl ::core::clone::Clone for D3D10_RASTERIZER_DESC {
 }
 pub const D3D10_REGKEY_PATH: &str = "Software\\Microsoft\\Direct3D";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_RENDER_TARGET_BLEND_DESC1 {
-    pub BlendEnable: super::super::Foundation::BOOL,
+    pub BlendEnable: ::win32_foundation_sys::BOOL,
     pub SrcBlend: D3D10_BLEND,
     pub DestBlend: D3D10_BLEND,
     pub BlendOp: D3D10_BLEND_OP,
@@ -1474,9 +1451,7 @@ pub struct D3D10_RENDER_TARGET_BLEND_DESC1 {
     pub BlendOpAlpha: D3D10_BLEND_OP,
     pub RenderTargetWriteMask: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_RENDER_TARGET_BLEND_DESC1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_RENDER_TARGET_BLEND_DESC1 {
     fn clone(&self) -> Self {
         *self
@@ -1662,7 +1637,6 @@ impl ::core::clone::Clone for D3D10_SHADER_DEBUG_INPUT_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_SHADER_DEBUG_INST_INFO {
     pub Id: u32,
     pub Opcode: u32,
@@ -1675,9 +1649,7 @@ pub struct D3D10_SHADER_DEBUG_INST_INFO {
     pub AccessedVars: u32,
     pub AccessedVarsInfo: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_SHADER_DEBUG_INST_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_SHADER_DEBUG_INST_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1686,7 +1658,6 @@ impl ::core::clone::Clone for D3D10_SHADER_DEBUG_INST_INFO {
 pub const D3D10_SHADER_DEBUG_NAME_FOR_BINARY: u32 = 8388608u32;
 pub const D3D10_SHADER_DEBUG_NAME_FOR_SOURCE: u32 = 4194304u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     pub OutputRegisterSet: D3D10_SHADER_DEBUG_REGTYPE,
     pub OutputReg: u32,
@@ -1696,16 +1667,13 @@ pub struct D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     pub IndexReg: u32,
     pub IndexComp: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_SHADER_DEBUG_OUTPUTREG_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_SHADER_DEBUG_OUTPUTREG_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct D3D10_SHADER_DEBUG_OUTPUTVAR {
     pub Var: u32,
     pub uValueMin: u32,
@@ -1714,12 +1682,10 @@ pub struct D3D10_SHADER_DEBUG_OUTPUTVAR {
     pub iValueMax: i32,
     pub fValueMin: f32,
     pub fValueMax: f32,
-    pub bNaNPossible: super::super::Foundation::BOOL,
-    pub bInfPossible: super::super::Foundation::BOOL,
+    pub bNaNPossible: ::win32_foundation_sys::BOOL,
+    pub bInfPossible: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3D10_SHADER_DEBUG_OUTPUTVAR {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for D3D10_SHADER_DEBUG_OUTPUTVAR {
     fn clone(&self) -> Self {
         *self
@@ -2563,8 +2529,8 @@ pub type ID3D10Texture2D = *mut ::core::ffi::c_void;
 pub type ID3D10Texture3D = *mut ::core::ffi::c_void;
 pub type ID3D10VertexShader = *mut ::core::ffi::c_void;
 pub type ID3D10View = *mut ::core::ffi::c_void;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi"))]
-pub type PFN_D3D10_CREATE_DEVICE1 = ::core::option::Option<unsafe extern "system" fn(param0: super::Dxgi::IDXGIAdapter, param1: D3D10_DRIVER_TYPE, param2: super::super::Foundation::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Dxgi_Common"))]
-pub type PFN_D3D10_CREATE_DEVICE_AND_SWAP_CHAIN1 = ::core::option::Option<unsafe extern "system" fn(param0: super::Dxgi::IDXGIAdapter, param1: D3D10_DRIVER_TYPE, param2: super::super::Foundation::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut super::Dxgi::DXGI_SWAP_CHAIN_DESC, param7: *mut super::Dxgi::IDXGISwapChain, param8: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT>;
+#[cfg(feature = "Win32_Graphics_Dxgi")]
+pub type PFN_D3D10_CREATE_DEVICE1 = ::core::option::Option<unsafe extern "system" fn(param0: super::Dxgi::IDXGIAdapter, param1: D3D10_DRIVER_TYPE, param2: ::win32_foundation_sys::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT>;
+#[cfg(feature = "Win32_Graphics_Dxgi_Common")]
+pub type PFN_D3D10_CREATE_DEVICE_AND_SWAP_CHAIN1 = ::core::option::Option<unsafe extern "system" fn(param0: super::Dxgi::IDXGIAdapter, param1: D3D10_DRIVER_TYPE, param2: ::win32_foundation_sys::HINSTANCE, param3: u32, param4: D3D10_FEATURE_LEVEL1, param5: u32, param6: *mut super::Dxgi::DXGI_SWAP_CHAIN_DESC, param7: *mut super::Dxgi::IDXGISwapChain, param8: *mut ID3D10Device1) -> ::windows_core_sys::HRESULT>;
 pub const _FACD3D10: u32 = 2169u32;

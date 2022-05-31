@@ -274,10 +274,9 @@ impl IRDPSRAPIApplication {
     pub unsafe fn SetShared(&self, newval: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetShared)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(newval)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Flags(&self) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
@@ -369,10 +368,7 @@ pub struct IRDPSRAPIApplication_Vtbl {
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut i32) -> ::windows_core::HRESULT,
     pub Shared: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut i16) -> ::windows_core::HRESULT,
     pub SetShared: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newval: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Flags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwflags: *mut u32) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -595,10 +591,9 @@ impl IRDPSRAPIAttendee {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Id)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RemoteName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).RemoteName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn RemoteName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).RemoteName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn ControlLevel(&self) -> ::windows_core::Result<CTRL_LEVEL> {
         let mut result__ = ::core::mem::MaybeUninit::<CTRL_LEVEL>::zeroed();
@@ -703,10 +698,7 @@ unsafe impl ::windows_core::Interface for IRDPSRAPIAttendee {
 pub struct IRDPSRAPIAttendee_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pid: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RemoteName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RemoteName: usize,
+    pub RemoteName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub ControlLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pval: *mut CTRL_LEVEL) -> ::windows_core::HRESULT,
     pub SetControlLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pnewval: CTRL_LEVEL) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
@@ -1051,14 +1043,12 @@ pub struct IRDPSRAPIClipboardUseEvents_Vtbl {
 #[repr(transparent)]
 pub struct IRDPSRAPIDebug(::windows_core::IUnknown);
 impl IRDPSRAPIDebug {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetCLXCmdLine<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, clxcmdline: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetCLXCmdLine<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, clxcmdline: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetCLXCmdLine)(::windows_core::Interface::as_raw(self), clxcmdline.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CLXCmdLine(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).CLXCmdLine)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn CLXCmdLine(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).CLXCmdLine)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 impl ::core::convert::From<IRDPSRAPIDebug> for ::windows_core::IUnknown {
@@ -1105,14 +1095,8 @@ unsafe impl ::windows_core::Interface for IRDPSRAPIDebug {
 #[doc(hidden)]
 pub struct IRDPSRAPIDebug_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetCLXCmdLine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clxcmdline: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetCLXCmdLine: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CLXCmdLine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pclxcmdline: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CLXCmdLine: usize,
+    pub SetCLXCmdLine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, clxcmdline: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub CLXCmdLine: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pclxcmdline: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
@@ -1228,20 +1212,17 @@ pub struct IRDPSRAPIFrameBuffer_Vtbl {
 pub struct IRDPSRAPIInvitation(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IRDPSRAPIInvitation {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ConnectionString(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).ConnectionString)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn ConnectionString(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).ConnectionString)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn GroupName(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).GroupName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn GroupName(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).GroupName)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Password(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Password)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Password(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Password)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn AttendeeLimit(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -1336,18 +1317,9 @@ unsafe impl ::windows_core::Interface for IRDPSRAPIInvitation {
 #[doc(hidden)]
 pub struct IRDPSRAPIInvitation_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ConnectionString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ConnectionString: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub GroupName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GroupName: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Password: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Password: usize,
+    pub ConnectionString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub GroupName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
+    pub Password: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub AttendeeLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut i32) -> ::windows_core::HRESULT,
     pub SetAttendeeLimit: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newval: i32) -> ::windows_core::HRESULT,
     pub Revoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut i16) -> ::windows_core::HRESULT,
@@ -1362,7 +1334,7 @@ impl IRDPSRAPIInvitationManager {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, item: Param0) -> ::windows_core::Result<IRDPSRAPIInvitation> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), item.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRDPSRAPIInvitation>(result__)
@@ -1371,8 +1343,8 @@ impl IRDPSRAPIInvitationManager {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).Count)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateInvitation<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrauthstring: Param0, bstrgroupname: Param1, bstrpassword: Param2, attendeelimit: i32) -> ::windows_core::Result<IRDPSRAPIInvitation> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn CreateInvitation<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrauthstring: Param0, bstrgroupname: Param1, bstrpassword: Param2, attendeelimit: i32) -> ::windows_core::Result<IRDPSRAPIInvitation> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateInvitation)(::windows_core::Interface::as_raw(self), bstrauthstring.into_param().abi(), bstrgroupname.into_param().abi(), bstrpassword.into_param().abi(), ::core::mem::transmute(attendeelimit), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRDPSRAPIInvitation>(result__)
     }
@@ -1456,14 +1428,14 @@ unsafe impl ::windows_core::Interface for IRDPSRAPIInvitationManager {
 pub struct IRDPSRAPIInvitationManager_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, item: ::core::mem::ManuallyDrop<super::Com::VARIANT>, ppinvitation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
     pub Count: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub CreateInvitation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrauthstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrgroupname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, attendeelimit: i32, ppinvitation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateInvitation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrauthstring: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrgroupname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, attendeelimit: i32, ppinvitation: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     CreateInvitation: usize,
 }
 #[repr(transparent)]
@@ -1522,8 +1494,7 @@ pub struct IRDPSRAPIPerfCounterLogger_Vtbl {
 #[repr(transparent)]
 pub struct IRDPSRAPIPerfCounterLoggingManager(::windows_core::IUnknown);
 impl IRDPSRAPIPerfCounterLoggingManager {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateLogger<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrcountername: Param0) -> ::windows_core::Result<IRDPSRAPIPerfCounterLogger> {
+    pub unsafe fn CreateLogger<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrcountername: Param0) -> ::windows_core::Result<IRDPSRAPIPerfCounterLogger> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateLogger)(::windows_core::Interface::as_raw(self), bstrcountername.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRDPSRAPIPerfCounterLogger>(result__)
     }
@@ -1572,23 +1543,20 @@ unsafe impl ::windows_core::Interface for IRDPSRAPIPerfCounterLoggingManager {
 #[doc(hidden)]
 pub struct IRDPSRAPIPerfCounterLoggingManager_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateLogger: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcountername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pplogger: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateLogger: usize,
+    pub CreateLogger: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrcountername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pplogger: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
 pub struct IRDPSRAPISessionProperties(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IRDPSRAPISessionProperties {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn get_Property<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, propertyname: Param0) -> ::windows_core::Result<super::Com::VARIANT> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn get_Property<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, propertyname: Param0) -> ::windows_core::Result<super::Com::VARIANT> {
         let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::Com::VARIANT>>::zeroed();
         (::windows_core::Interface::vtable(self).get_Property)(::windows_core::Interface::as_raw(self), propertyname.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::Com::VARIANT>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub unsafe fn put_Property<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, propertyname: Param0, newval: Param1) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub unsafe fn put_Property<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, propertyname: Param0, newval: Param1) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).put_Property)(::windows_core::Interface::as_raw(self), propertyname.into_param().abi(), newval.into_param().abi()).ok()
     }
 }
@@ -1670,13 +1638,13 @@ unsafe impl ::windows_core::Interface for IRDPSRAPISessionProperties {
 #[doc(hidden)]
 pub struct IRDPSRAPISessionProperties_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub get_Property: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pval: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub get_Property: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pval: *mut super::Com::VARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Property: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
-    pub put_Property: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, newval: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    pub put_Property: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, newval: ::core::mem::ManuallyDrop<super::Com::VARIANT>) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     put_Property: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -1728,8 +1696,7 @@ impl IRDPSRAPISharingSession {
     pub unsafe fn Resume(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Resume)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ConnectToClient<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrconnectionstring: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn ConnectToClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrconnectionstring: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConnectToClient)(::windows_core::Interface::as_raw(self), bstrconnectionstring.into_param().abi()).ok()
     }
     pub unsafe fn SetDesktopSharedRect(&self, left: i32, top: i32, right: i32, bottom: i32) -> ::windows_core::Result<()> {
@@ -1843,10 +1810,7 @@ pub struct IRDPSRAPISharingSession_Vtbl {
     VirtualChannelManager: usize,
     pub Pause: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Resume: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ConnectToClient: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnectionstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ConnectToClient: usize,
+    pub ConnectToClient: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnectionstring: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub SetDesktopSharedRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, left: i32, top: i32, right: i32, bottom: i32) -> ::windows_core::HRESULT,
     pub GetDesktopSharedRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pleft: *mut i32, ptop: *mut i32, pright: *mut i32, pbottom: *mut i32) -> ::windows_core::HRESULT,
 }
@@ -1899,8 +1863,7 @@ impl IRDPSRAPISharingSession2 {
     pub unsafe fn Resume(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.Resume)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ConnectToClient<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrconnectionstring: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn ConnectToClient<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrconnectionstring: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.ConnectToClient)(::windows_core::Interface::as_raw(self), bstrconnectionstring.into_param().abi()).ok()
     }
     pub unsafe fn SetDesktopSharedRect(&self, left: i32, top: i32, right: i32, bottom: i32) -> ::windows_core::Result<()> {
@@ -1909,8 +1872,7 @@ impl IRDPSRAPISharingSession2 {
     pub unsafe fn GetDesktopSharedRect(&self, pleft: *mut i32, ptop: *mut i32, pright: *mut i32, pbottom: *mut i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetDesktopSharedRect)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pleft), ::core::mem::transmute(ptop), ::core::mem::transmute(pright), ::core::mem::transmute(pbottom)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ConnectUsingTransportStream<'a, Param0: ::windows_core::IntoParam<'a, IRDPSRAPITransportStream>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, pstream: Param0, bstrgroup: Param1, bstrauthenticatedattendeename: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn ConnectUsingTransportStream<'a, Param0: ::windows_core::IntoParam<'a, IRDPSRAPITransportStream>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, pstream: Param0, bstrgroup: Param1, bstrauthenticatedattendeename: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ConnectUsingTransportStream)(::windows_core::Interface::as_raw(self), pstream.into_param().abi(), bstrgroup.into_param().abi(), bstrauthenticatedattendeename.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_System_Com")]
@@ -2025,10 +1987,7 @@ unsafe impl ::windows_core::Interface for IRDPSRAPISharingSession2 {
 #[doc(hidden)]
 pub struct IRDPSRAPISharingSession2_Vtbl {
     pub base__: IRDPSRAPISharingSession_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ConnectUsingTransportStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstream: ::windows_core::RawPtr, bstrgroup: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrauthenticatedattendeename: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ConnectUsingTransportStream: usize,
+    pub ConnectUsingTransportStream: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pstream: ::windows_core::RawPtr, bstrgroup: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrauthenticatedattendeename: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub FrameBuffer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
@@ -2051,19 +2010,17 @@ impl IRDPSRAPITcpConnectionInfo {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).LocalPort)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn LocalIP(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).LocalIP)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn LocalIP(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).LocalIP)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn PeerPort(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
         (::windows_core::Interface::vtable(self).PeerPort)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<i32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn PeerIP(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).PeerIP)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn PeerIP(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).PeerIP)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -2146,15 +2103,9 @@ pub struct IRDPSRAPITcpConnectionInfo_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub Protocol: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plprotocol: *mut i32) -> ::windows_core::HRESULT,
     pub LocalPort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plport: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub LocalIP: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbsrlocalip: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    LocalIP: usize,
+    pub LocalIP: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbsrlocalip: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub PeerPort: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plport: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub PeerIP: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrip: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    PeerIP: usize,
+    pub PeerIP: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrip: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct IRDPSRAPITransportStream(::windows_core::IUnknown);
@@ -2391,8 +2342,7 @@ pub struct IRDPSRAPITransportStreamEvents_Vtbl {
 pub struct IRDPSRAPIViewer(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IRDPSRAPIViewer {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Connect<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrconnectionstring: Param0, bstrname: Param1, bstrpassword: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn Connect<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrconnectionstring: Param0, bstrname: Param1, bstrpassword: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Connect)(::windows_core::Interface::as_raw(self), bstrconnectionstring.into_param().abi(), bstrname.into_param().abi(), bstrpassword.into_param().abi()).ok()
     }
     pub unsafe fn Disconnect(&self) -> ::windows_core::Result<()> {
@@ -2428,14 +2378,12 @@ impl IRDPSRAPIViewer {
     pub unsafe fn RequestControl(&self, ctrllevel: CTRL_LEVEL) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RequestControl)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(ctrllevel)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetDisconnectedText<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdisconnectedtext: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetDisconnectedText<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdisconnectedtext: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetDisconnectedText)(::windows_core::Interface::as_raw(self), bstrdisconnectedtext.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DisconnectedText(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).DisconnectedText)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn DisconnectedText(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).DisconnectedText)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn RequestColorDepthChange(&self, bpp: i32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RequestColorDepthChange)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(bpp)).ok()
@@ -2445,10 +2393,9 @@ impl IRDPSRAPIViewer {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Properties)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRDPSRAPISessionProperties>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn StartReverseConnectListener<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrconnectionstring: Param0, bstrusername: Param1, bstrpassword: Param2) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).StartReverseConnectListener)(::windows_core::Interface::as_raw(self), bstrconnectionstring.into_param().abi(), bstrusername.into_param().abi(), bstrpassword.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn StartReverseConnectListener<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrconnectionstring: Param0, bstrusername: Param1, bstrpassword: Param2) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).StartReverseConnectListener)(::windows_core::Interface::as_raw(self), bstrconnectionstring.into_param().abi(), bstrusername.into_param().abi(), bstrpassword.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -2529,10 +2476,7 @@ unsafe impl ::windows_core::Interface for IRDPSRAPIViewer {
 #[doc(hidden)]
 pub struct IRDPSRAPIViewer_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Connect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnectionstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Connect: usize,
+    pub Connect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnectionstring: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
     pub Disconnect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Attendees: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -2553,40 +2497,29 @@ pub struct IRDPSRAPIViewer_Vtbl {
     pub SetSmartSizing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, vbsmartsizing: i16) -> ::windows_core::HRESULT,
     pub SmartSizing: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvbsmartsizing: *mut i16) -> ::windows_core::HRESULT,
     pub RequestControl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ctrllevel: CTRL_LEVEL) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetDisconnectedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdisconnectedtext: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetDisconnectedText: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DisconnectedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdisconnectedtext: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DisconnectedText: usize,
+    pub SetDisconnectedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdisconnectedtext: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>) -> ::windows_core::HRESULT,
+    pub DisconnectedText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrdisconnectedtext: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub RequestColorDepthChange: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bpp: i32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Com")]
     pub Properties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppval: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Com"))]
     Properties: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub StartReverseConnectListener: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnectionstring: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, pbstrreverseconnectstring: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    StartReverseConnectListener: usize,
+    pub StartReverseConnectListener: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrconnectionstring: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrusername: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrpassword: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, pbstrreverseconnectstring: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
 }
 #[cfg(feature = "Win32_System_Com")]
 #[repr(transparent)]
 pub struct IRDPSRAPIVirtualChannel(::windows_core::IUnknown);
 #[cfg(feature = "Win32_System_Com")]
 impl IRDPSRAPIVirtualChannel {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SendData<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrdata: Param0, lattendeeid: i32, channelsendflags: u32) -> ::windows_core::Result<()> {
+    pub unsafe fn SendData<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrdata: Param0, lattendeeid: i32, channelsendflags: u32) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SendData)(::windows_core::Interface::as_raw(self), bstrdata.into_param().abi(), ::core::mem::transmute(lattendeeid), ::core::mem::transmute(channelsendflags)).ok()
     }
     pub unsafe fn SetAccess(&self, lattendeeid: i32, accesstype: CHANNEL_ACCESS_ENUM) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetAccess)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(lattendeeid), ::core::mem::transmute(accesstype)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Flags(&self) -> ::windows_core::Result<i32> {
         let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
@@ -2675,15 +2608,9 @@ unsafe impl ::windows_core::Interface for IRDPSRAPIVirtualChannel {
 #[doc(hidden)]
 pub struct IRDPSRAPIVirtualChannel_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SendData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdata: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, lattendeeid: i32, channelsendflags: u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SendData: usize,
+    pub SendData: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrdata: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, lattendeeid: i32, channelsendflags: u32) -> ::windows_core::HRESULT,
     pub SetAccess: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lattendeeid: i32, accesstype: CHANNEL_ACCESS_ENUM) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pbstrname: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Flags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, plflags: *mut i32) -> ::windows_core::HRESULT,
     pub Priority: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppriority: *mut CHANNEL_PRIORITY) -> ::windows_core::HRESULT,
 }
@@ -2696,13 +2623,13 @@ impl IRDPSRAPIVirtualChannelManager {
         let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
         (::windows_core::Interface::vtable(self)._NewEnum)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::windows_core::IUnknown>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub unsafe fn get_Item<'a, Param0: ::windows_core::IntoParam<'a, super::Com::VARIANT>>(&self, item: Param0) -> ::windows_core::Result<IRDPSRAPIVirtualChannel> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).get_Item)(::windows_core::Interface::as_raw(self), item.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRDPSRAPIVirtualChannel>(result__)
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub unsafe fn CreateVirtualChannel<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrchannelname: Param0, priority: CHANNEL_PRIORITY, channelflags: u32) -> ::windows_core::Result<IRDPSRAPIVirtualChannel> {
+    #[cfg(feature = "Win32_System_Com")]
+    pub unsafe fn CreateVirtualChannel<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrchannelname: Param0, priority: CHANNEL_PRIORITY, channelflags: u32) -> ::windows_core::Result<IRDPSRAPIVirtualChannel> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateVirtualChannel)(::windows_core::Interface::as_raw(self), bstrchannelname.into_param().abi(), ::core::mem::transmute(priority), ::core::mem::transmute(channelflags), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IRDPSRAPIVirtualChannel>(result__)
     }
@@ -2786,13 +2713,13 @@ unsafe impl ::windows_core::Interface for IRDPSRAPIVirtualChannelManager {
 pub struct IRDPSRAPIVirtualChannelManager_Vtbl {
     pub base__: super::Com::IDispatch_Vtbl,
     pub _NewEnum: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, retval: *mut *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
+    #[cfg(all(feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
     pub get_Item: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, item: ::core::mem::ManuallyDrop<super::Com::VARIANT>, pchannel: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
+    #[cfg(not(all(feature = "Win32_System_Com", feature = "Win32_System_Ole")))]
     get_Item: usize,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub CreateVirtualChannel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrchannelname: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, priority: CHANNEL_PRIORITY, channelflags: u32, ppchannel: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com")))]
+    #[cfg(feature = "Win32_System_Com")]
+    pub CreateVirtualChannel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrchannelname: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, priority: CHANNEL_PRIORITY, channelflags: u32, ppchannel: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Win32_System_Com"))]
     CreateVirtualChannel: usize,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -2816,10 +2743,9 @@ impl IRDPSRAPIWindow {
     pub unsafe fn SetShared(&self, newval: i16) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetShared)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(newval)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Name(&self) -> ::windows_core::Result<super::super::Foundation::BSTR> {
-        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<super::super::Foundation::BSTR>>::zeroed();
-        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BSTR>(result__)
+    pub unsafe fn Name(&self) -> ::windows_core::Result<::win32_foundation::BSTR> {
+        let mut result__ = ::core::mem::MaybeUninit::<::core::mem::ManuallyDrop<::win32_foundation::BSTR>>::zeroed();
+        (::windows_core::Interface::vtable(self).Name)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BSTR>(result__)
     }
     pub unsafe fn Show(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Show)(::windows_core::Interface::as_raw(self)).ok()
@@ -2914,10 +2840,7 @@ pub struct IRDPSRAPIWindow_Vtbl {
     Application: usize,
     pub Shared: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut i16) -> ::windows_core::HRESULT,
     pub SetShared: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, newval: i16) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut super::super::Foundation::BSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Name: usize,
+    pub Name: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pretval: *mut ::win32_foundation::BSTR) -> ::windows_core::HRESULT,
     pub Show: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Flags: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwflags: *mut u32) -> ::windows_core::HRESULT,
 }

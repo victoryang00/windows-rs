@@ -219,28 +219,28 @@ impl DeviceAccountConfiguration {
         unsafe { (::windows_core::Interface::vtable(this).SetOutgoingServerUsername)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn IncomingServerCredential(&self) -> ::windows_core::Result<super::super::super::Security::Credentials::PasswordCredential> {
+    pub fn IncomingServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).IncomingServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).IncomingServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn SetIncomingServerCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetIncomingServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetIncomingServerCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn OutgoingServerCredential(&self) -> ::windows_core::Result<super::super::super::Security::Credentials::PasswordCredential> {
+    pub fn OutgoingServerCredential(&self) -> ::windows_core::Result<::winrt_security::Credentials::PasswordCredential> {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).OutgoingServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Security::Credentials::PasswordCredential>(result__)
+            (::windows_core::Interface::vtable(this).OutgoingServerCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_security::Credentials::PasswordCredential>(result__)
         }
     }
     #[cfg(feature = "Security_Credentials")]
-    pub fn SetOutgoingServerCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetOutgoingServerCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_security::Credentials::PasswordCredential>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetOutgoingServerCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -401,16 +401,14 @@ impl DeviceAccountConfiguration {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCalDavSyncScheduleKind)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CardDavServerUrl(&self) -> ::windows_core::Result<super::super::super::Foundation::Uri> {
+    pub fn CardDavServerUrl(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CardDavServerUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).CardDavServerUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetCardDavServerUrl<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCardDavServerUrl<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCardDavServerUrl)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -425,16 +423,14 @@ impl DeviceAccountConfiguration {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCardDavRequiresSsl)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CalDavServerUrl(&self) -> ::windows_core::Result<super::super::super::Foundation::Uri> {
+    pub fn CalDavServerUrl(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CalDavServerUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).CalDavServerUrl)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetCalDavServerUrl<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCalDavServerUrl<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IDeviceAccountConfiguration2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCalDavServerUrl)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -854,24 +850,12 @@ pub struct IDeviceAccountConfiguration2_Vtbl {
     pub SetCardDavSyncScheduleKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: DeviceAccountSyncScheduleKind) -> ::windows_core::HRESULT,
     pub CalDavSyncScheduleKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DeviceAccountSyncScheduleKind) -> ::windows_core::HRESULT,
     pub SetCalDavSyncScheduleKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: DeviceAccountSyncScheduleKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub CardDavServerUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CardDavServerUrl: usize,
-    #[cfg(feature = "Foundation")]
     pub SetCardDavServerUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetCardDavServerUrl: usize,
     pub CardDavRequiresSsl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetCardDavRequiresSsl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub CalDavServerUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CalDavServerUrl: usize,
-    #[cfg(feature = "Foundation")]
     pub SetCalDavServerUrl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetCalDavServerUrl: usize,
     pub CalDavRequiresSsl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetCalDavRequiresSsl: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub WasModifiedByUser: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -918,58 +902,42 @@ unsafe impl ::windows_core::Interface for IUserDataAccountSystemAccessManagerSta
 #[doc(hidden)]
 pub struct IUserDataAccountSystemAccessManagerStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub SuppressLocalAccountWithAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, userdataaccountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SuppressLocalAccountWithAccountAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub CreateDeviceAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, account: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateDeviceAccountAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub DeleteDeviceAccountAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, accountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DeleteDeviceAccountAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetDeviceAccountConfigurationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, accountid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetDeviceAccountConfigurationAsync: usize,
 }
 pub struct UserDataAccountSystemAccessManager;
 impl UserDataAccountSystemAccessManager {
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AddAndShowDeviceAccountsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Collections::IIterable<DeviceAccountConfiguration>>>(accounts: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
+    pub fn AddAndShowDeviceAccountsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<DeviceAccountConfiguration>>>(accounts: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>> {
         Self::IUserDataAccountSystemAccessManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AddAndShowDeviceAccountsAsync)(::windows_core::Interface::as_raw(this), accounts.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
+            (::windows_core::Interface::vtable(this).AddAndShowDeviceAccountsAsync)(::windows_core::Interface::as_raw(this), accounts.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SuppressLocalAccountWithAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(userdataaccountid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn SuppressLocalAccountWithAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(userdataaccountid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IUserDataAccountSystemAccessManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SuppressLocalAccountWithAccountAsync)(::windows_core::Interface::as_raw(this), userdataaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SuppressLocalAccountWithAccountAsync)(::windows_core::Interface::as_raw(this), userdataaccountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateDeviceAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, DeviceAccountConfiguration>>(account: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn CreateDeviceAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, DeviceAccountConfiguration>>(account: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IUserDataAccountSystemAccessManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateDeviceAccountAsync)(::windows_core::Interface::as_raw(this), account.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).CreateDeviceAccountAsync)(::windows_core::Interface::as_raw(this), account.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DeleteDeviceAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(accountid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn DeleteDeviceAccountAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(accountid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         Self::IUserDataAccountSystemAccessManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).DeleteDeviceAccountAsync)(::windows_core::Interface::as_raw(this), accountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).DeleteDeviceAccountAsync)(::windows_core::Interface::as_raw(this), accountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetDeviceAccountConfigurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(accountid: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<DeviceAccountConfiguration>> {
+    pub fn GetDeviceAccountConfigurationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(accountid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DeviceAccountConfiguration>> {
         Self::IUserDataAccountSystemAccessManagerStatics2(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetDeviceAccountConfigurationAsync)(::windows_core::Interface::as_raw(this), accountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<DeviceAccountConfiguration>>(result__)
+            (::windows_core::Interface::vtable(this).GetDeviceAccountConfigurationAsync)(::windows_core::Interface::as_raw(this), accountid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DeviceAccountConfiguration>>(result__)
         })
     }
     pub fn IUserDataAccountSystemAccessManagerStatics<R, F: FnOnce(&IUserDataAccountSystemAccessManagerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

@@ -9,11 +9,11 @@ impl EyesPose {
         }
     }
     #[cfg(all(feature = "Foundation_Numerics", feature = "Perception_Spatial"))]
-    pub fn Gaze(&self) -> ::windows_core::Result<super::super::Foundation::IReference<super::Spatial::SpatialRay>> {
+    pub fn Gaze(&self) -> ::windows_core::Result<::winrt_foundation::IReference<super::Spatial::SpatialRay>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Gaze)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IReference<super::Spatial::SpatialRay>>(result__)
+            (::windows_core::Interface::vtable(this).Gaze)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IReference<super::Spatial::SpatialRay>>(result__)
         }
     }
     pub fn UpdateTimestamp(&self) -> ::windows_core::Result<super::PerceptionTimestamp> {
@@ -29,11 +29,11 @@ impl EyesPose {
             (::windows_core::Interface::vtable(this).IsSupported)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
-    pub fn RequestAccessAsync() -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::UI::Input::GazeInputAccessStatus>> {
+    #[cfg(feature = "UI_Input")]
+    pub fn RequestAccessAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_ui::Input::GazeInputAccessStatus>> {
         Self::IEyesPoseStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::UI::Input::GazeInputAccessStatus>>(result__)
+            (::windows_core::Interface::vtable(this).RequestAccessAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_ui::Input::GazeInputAccessStatus>>(result__)
         })
     }
     pub fn IEyesPoseStatics<R, F: FnOnce(&IEyesPoseStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -174,11 +174,11 @@ unsafe impl ::windows_core::RuntimeType for HandJointKind {
 pub struct HandMeshObserver(::windows_core::IUnknown);
 impl HandMeshObserver {
     #[cfg(feature = "UI_Input_Spatial")]
-    pub fn Source(&self) -> ::windows_core::Result<super::super::UI::Input::Spatial::SpatialInteractionSource> {
+    pub fn Source(&self) -> ::windows_core::Result<::winrt_ui::Input::Spatial::SpatialInteractionSource> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Source)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::UI::Input::Spatial::SpatialInteractionSource>(result__)
+            (::windows_core::Interface::vtable(this).Source)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_ui::Input::Spatial::SpatialInteractionSource>(result__)
         }
     }
     pub fn TriangleIndexCount(&self) -> ::windows_core::Result<u32> {
@@ -303,8 +303,8 @@ unsafe impl ::core::marker::Sync for HandMeshObserver {}
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct HandMeshVertex {
-    pub Position: super::super::Foundation::Numerics::Vector3,
-    pub Normal: super::super::Foundation::Numerics::Vector3,
+    pub Position: ::winrt_foundation::Numerics::Vector3,
+    pub Normal: ::winrt_foundation::Numerics::Vector3,
 }
 #[cfg(feature = "Foundation_Numerics")]
 impl ::core::marker::Copy for HandMeshVertex {}
@@ -551,27 +551,27 @@ unsafe impl ::core::marker::Sync for HandPose {}
 pub struct HeadPose(::windows_core::IUnknown);
 impl HeadPose {
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::Foundation::Numerics::Vector3> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn ForwardDirection(&self) -> ::windows_core::Result<super::super::Foundation::Numerics::Vector3> {
+    pub fn ForwardDirection(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).ForwardDirection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).ForwardDirection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn UpDirection(&self) -> ::windows_core::Result<super::super::Foundation::Numerics::Vector3> {
+    pub fn UpDirection(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).UpDirection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).UpDirection)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
 }
@@ -677,9 +677,9 @@ unsafe impl ::windows_core::Interface for IEyesPoseStatics {
 pub struct IEyesPoseStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub RequestAccessAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     RequestAccessAsync: usize,
 }
 #[doc(hidden)]
@@ -766,23 +766,23 @@ unsafe impl ::windows_core::Interface for IHeadPose {
 pub struct IHeadPose_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Foundation_Numerics")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Position: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub ForwardDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub ForwardDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     ForwardDirection: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub UpDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub UpDirection: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     UpDirection: usize,
 }
 #[repr(C)]
 #[cfg(feature = "Foundation_Numerics")]
 pub struct JointPose {
-    pub Orientation: super::super::Foundation::Numerics::Quaternion,
-    pub Position: super::super::Foundation::Numerics::Vector3,
+    pub Orientation: ::winrt_foundation::Numerics::Quaternion,
+    pub Position: ::winrt_foundation::Numerics::Vector3,
     pub Radius: f32,
     pub Accuracy: JointPoseAccuracy,
 }

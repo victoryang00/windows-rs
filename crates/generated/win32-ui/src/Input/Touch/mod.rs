@@ -1,25 +1,23 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CloseGestureInfoHandle<'a, Param0: ::windows_core::IntoParam<'a, HGESTUREINFO>>(hgestureinfo: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn CloseGestureInfoHandle<'a, Param0: ::windows_core::IntoParam<'a, HGESTUREINFO>>(hgestureinfo: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CloseGestureInfoHandle(hgestureinfo: HGESTUREINFO) -> super::super::super::Foundation::BOOL;
+            fn CloseGestureInfoHandle(hgestureinfo: HGESTUREINFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CloseGestureInfoHandle(hgestureinfo.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CloseTouchInputHandle<'a, Param0: ::windows_core::IntoParam<'a, HTOUCHINPUT>>(htouchinput: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn CloseTouchInputHandle<'a, Param0: ::windows_core::IntoParam<'a, HTOUCHINPUT>>(htouchinput: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CloseTouchInputHandle(htouchinput: HTOUCHINPUT) -> super::super::super::Foundation::BOOL;
+            fn CloseTouchInputHandle(htouchinput: HTOUCHINPUT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CloseTouchInputHandle(htouchinput.into_param().abi()))
     }
@@ -116,141 +114,121 @@ impl ::core::ops::Not for GESTURECONFIG_ID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GESTUREINFO {
     pub cbSize: u32,
     pub dwFlags: u32,
     pub dwID: u32,
-    pub hwndTarget: super::super::super::Foundation::HWND,
-    pub ptsLocation: super::super::super::Foundation::POINTS,
+    pub hwndTarget: ::win32_foundation::HWND,
+    pub ptsLocation: ::win32_foundation::POINTS,
     pub dwInstanceID: u32,
     pub dwSequenceID: u32,
     pub ullArguments: u64,
     pub cbExtraArgs: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GESTUREINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GESTUREINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for GESTUREINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GESTUREINFO").field("cbSize", &self.cbSize).field("dwFlags", &self.dwFlags).field("dwID", &self.dwID).field("hwndTarget", &self.hwndTarget).field("ptsLocation", &self.ptsLocation).field("dwInstanceID", &self.dwInstanceID).field("dwSequenceID", &self.dwSequenceID).field("ullArguments", &self.ullArguments).field("cbExtraArgs", &self.cbExtraArgs).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GESTUREINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GESTUREINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GESTUREINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GESTUREINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GESTUREINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GESTURENOTIFYSTRUCT {
     pub cbSize: u32,
     pub dwFlags: u32,
-    pub hwndTarget: super::super::super::Foundation::HWND,
-    pub ptsLocation: super::super::super::Foundation::POINTS,
+    pub hwndTarget: ::win32_foundation::HWND,
+    pub ptsLocation: ::win32_foundation::POINTS,
     pub dwInstanceID: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GESTURENOTIFYSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GESTURENOTIFYSTRUCT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for GESTURENOTIFYSTRUCT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GESTURENOTIFYSTRUCT").field("cbSize", &self.cbSize).field("dwFlags", &self.dwFlags).field("hwndTarget", &self.hwndTarget).field("ptsLocation", &self.ptsLocation).field("dwInstanceID", &self.dwInstanceID).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GESTURENOTIFYSTRUCT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GESTURENOTIFYSTRUCT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GESTURENOTIFYSTRUCT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GESTURENOTIFYSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GESTURENOTIFYSTRUCT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetGestureConfig<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, dwreserved: u32, dwflags: u32, pgestureconfig: &mut [GESTURECONFIG], cbsize: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetGestureConfig<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, dwreserved: u32, dwflags: u32, pgestureconfig: &mut [GESTURECONFIG], cbsize: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetGestureConfig(hwnd: super::super::super::Foundation::HWND, dwreserved: u32, dwflags: u32, pcids: *const u32, pgestureconfig: *mut GESTURECONFIG, cbsize: u32) -> super::super::super::Foundation::BOOL;
+            fn GetGestureConfig(hwnd: ::win32_foundation::HWND, dwreserved: u32, dwflags: u32, pcids: *const u32, pgestureconfig: *mut GESTURECONFIG, cbsize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetGestureConfig(hwnd.into_param().abi(), ::core::mem::transmute(dwreserved), ::core::mem::transmute(dwflags), pgestureconfig.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pgestureconfig)), ::core::mem::transmute(cbsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetGestureExtraArgs<'a, Param0: ::windows_core::IntoParam<'a, HGESTUREINFO>>(hgestureinfo: Param0, cbextraargs: u32, pextraargs: *mut u8) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetGestureExtraArgs<'a, Param0: ::windows_core::IntoParam<'a, HGESTUREINFO>>(hgestureinfo: Param0, cbextraargs: u32, pextraargs: *mut u8) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetGestureExtraArgs(hgestureinfo: HGESTUREINFO, cbextraargs: u32, pextraargs: *mut u8) -> super::super::super::Foundation::BOOL;
+            fn GetGestureExtraArgs(hgestureinfo: HGESTUREINFO, cbextraargs: u32, pextraargs: *mut u8) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetGestureExtraArgs(hgestureinfo.into_param().abi(), ::core::mem::transmute(cbextraargs), ::core::mem::transmute(pextraargs)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetGestureInfo<'a, Param0: ::windows_core::IntoParam<'a, HGESTUREINFO>>(hgestureinfo: Param0, pgestureinfo: *mut GESTUREINFO) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetGestureInfo<'a, Param0: ::windows_core::IntoParam<'a, HGESTUREINFO>>(hgestureinfo: Param0, pgestureinfo: *mut GESTUREINFO) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetGestureInfo(hgestureinfo: HGESTUREINFO, pgestureinfo: *mut GESTUREINFO) -> super::super::super::Foundation::BOOL;
+            fn GetGestureInfo(hgestureinfo: HGESTUREINFO, pgestureinfo: *mut GESTUREINFO) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetGestureInfo(hgestureinfo.into_param().abi(), ::core::mem::transmute(pgestureinfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetTouchInputInfo<'a, Param0: ::windows_core::IntoParam<'a, HTOUCHINPUT>>(htouchinput: Param0, pinputs: &mut [TOUCHINPUT], cbsize: i32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn GetTouchInputInfo<'a, Param0: ::windows_core::IntoParam<'a, HTOUCHINPUT>>(htouchinput: Param0, pinputs: &mut [TOUCHINPUT], cbsize: i32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetTouchInputInfo(htouchinput: HTOUCHINPUT, cinputs: u32, pinputs: *mut TOUCHINPUT, cbsize: i32) -> super::super::super::Foundation::BOOL;
+            fn GetTouchInputInfo(htouchinput: HTOUCHINPUT, cinputs: u32, pinputs: *mut TOUCHINPUT, cbsize: i32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetTouchInputInfo(htouchinput.into_param().abi(), pinputs.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(pinputs)), ::core::mem::transmute(cbsize)))
     }
@@ -471,15 +449,13 @@ impl IInertiaProcessor {
     pub unsafe fn Reset(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Reset)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Process(&self) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).Process)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn Process(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).Process)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ProcessTime(&self, timestamp: u32) -> ::windows_core::Result<super::super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).ProcessTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(timestamp), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::super::Foundation::BOOL>(result__)
+    pub unsafe fn ProcessTime(&self, timestamp: u32) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).ProcessTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(timestamp), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
     pub unsafe fn Complete(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Complete)(::windows_core::Interface::as_raw(self)).ok()
@@ -577,14 +553,8 @@ pub struct IInertiaProcessor_Vtbl {
     pub InitialTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: *mut u32) -> ::windows_core::HRESULT,
     pub SetInitialTimestamp: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: u32) -> ::windows_core::HRESULT,
     pub Reset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Process: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, completed: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Process: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ProcessTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: u32, completed: *mut super::super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ProcessTime: usize,
+    pub Process: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, completed: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
+    pub ProcessTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: u32, completed: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CompleteTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, timestamp: u32) -> ::windows_core::HRESULT,
 }
@@ -731,14 +701,13 @@ pub struct IManipulationProcessor_Vtbl {
     pub SetMinimumScaleRotateRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, minradius: f32) -> ::windows_core::HRESULT,
 }
 pub const InertiaProcessor: ::windows_core::GUID = ::windows_core::GUID::from_u128(0xabb27087_4ce0_4e58_a0cb_e24df96814be);
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn IsTouchWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, pulflags: *mut u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn IsTouchWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, pulflags: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn IsTouchWindow(hwnd: super::super::super::Foundation::HWND, pulflags: *mut u32) -> super::super::super::Foundation::BOOL;
+            fn IsTouchWindow(hwnd: ::win32_foundation::HWND, pulflags: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(IsTouchWindow(hwnd.into_param().abi(), ::core::mem::transmute(pulflags)))
     }
@@ -798,28 +767,26 @@ impl ::core::fmt::Debug for REGISTER_TOUCH_WINDOW_FLAGS {
         f.debug_tuple("REGISTER_TOUCH_WINDOW_FLAGS").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegisterTouchWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, ulflags: REGISTER_TOUCH_WINDOW_FLAGS) -> super::super::super::Foundation::BOOL {
+pub unsafe fn RegisterTouchWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, ulflags: REGISTER_TOUCH_WINDOW_FLAGS) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegisterTouchWindow(hwnd: super::super::super::Foundation::HWND, ulflags: REGISTER_TOUCH_WINDOW_FLAGS) -> super::super::super::Foundation::BOOL;
+            fn RegisterTouchWindow(hwnd: ::win32_foundation::HWND, ulflags: REGISTER_TOUCH_WINDOW_FLAGS) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(RegisterTouchWindow(hwnd.into_param().abi(), ::core::mem::transmute(ulflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetGestureConfig<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0, dwreserved: u32, pgestureconfig: &[GESTURECONFIG], cbsize: u32) -> super::super::super::Foundation::BOOL {
+pub unsafe fn SetGestureConfig<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0, dwreserved: u32, pgestureconfig: &[GESTURECONFIG], cbsize: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetGestureConfig(hwnd: super::super::super::Foundation::HWND, dwreserved: u32, cids: u32, pgestureconfig: *const GESTURECONFIG, cbsize: u32) -> super::super::super::Foundation::BOOL;
+            fn SetGestureConfig(hwnd: ::win32_foundation::HWND, dwreserved: u32, cids: u32, pgestureconfig: *const GESTURECONFIG, cbsize: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetGestureConfig(hwnd.into_param().abi(), ::core::mem::transmute(dwreserved), pgestureconfig.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(pgestureconfig)), ::core::mem::transmute(cbsize)))
     }
@@ -885,11 +852,10 @@ impl ::core::ops::Not for TOUCHEVENTF_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TOUCHINPUT {
     pub x: i32,
     pub y: i32,
-    pub hSource: super::super::super::Foundation::HANDLE,
+    pub hSource: ::win32_foundation::HANDLE,
     pub dwID: u32,
     pub dwFlags: TOUCHEVENTF_FLAGS,
     pub dwMask: TOUCHINPUTMASKF_MASK,
@@ -898,33 +864,26 @@ pub struct TOUCHINPUT {
     pub cxContact: u32,
     pub cyContact: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TOUCHINPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TOUCHINPUT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TOUCHINPUT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TOUCHINPUT").field("x", &self.x).field("y", &self.y).field("hSource", &self.hSource).field("dwID", &self.dwID).field("dwFlags", &self.dwFlags).field("dwMask", &self.dwMask).field("dwTime", &self.dwTime).field("dwExtraInfo", &self.dwExtraInfo).field("cxContact", &self.cxContact).field("cyContact", &self.cyContact).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TOUCHINPUT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TOUCHINPUT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TOUCHINPUT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TOUCHINPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TOUCHINPUT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -983,14 +942,13 @@ impl ::core::ops::Not for TOUCHINPUTMASKF_MASK {
         Self(self.0.not())
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn UnregisterTouchWindow<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::HWND>>(hwnd: Param0) -> super::super::super::Foundation::BOOL {
+pub unsafe fn UnregisterTouchWindow<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(hwnd: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn UnregisterTouchWindow(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::BOOL;
+            fn UnregisterTouchWindow(hwnd: ::win32_foundation::HWND) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(UnregisterTouchWindow(hwnd.into_param().abi()))
     }

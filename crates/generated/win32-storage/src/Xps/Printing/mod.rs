@@ -35,26 +35,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IPrintD
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IPrintDocumentPackageStatusEvent> for super::super::super::System::Com::IDispatch {
+impl ::core::convert::From<IPrintDocumentPackageStatusEvent> for ::win32_system::Com::IDispatch {
     fn from(value: IPrintDocumentPackageStatusEvent) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IPrintDocumentPackageStatusEvent> for super::super::super::System::Com::IDispatch {
+impl ::core::convert::From<&IPrintDocumentPackageStatusEvent> for ::win32_system::Com::IDispatch {
     fn from(value: &IPrintDocumentPackageStatusEvent) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::System::Com::IDispatch> for IPrintDocumentPackageStatusEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for IPrintDocumentPackageStatusEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::System::Com::IDispatch> for &'a IPrintDocumentPackageStatusEvent {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::System::Com::IDispatch> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::IDispatch> for &'a IPrintDocumentPackageStatusEvent {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::IDispatch> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -87,7 +87,7 @@ unsafe impl ::windows_core::Interface for IPrintDocumentPackageStatusEvent {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPrintDocumentPackageStatusEvent_Vtbl {
-    pub base__: super::super::super::System::Com::IDispatch_Vtbl,
+    pub base__: ::win32_system::Com::IDispatch_Vtbl,
     pub PackageStatusUpdated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, packagestatus: *const PrintDocumentPackageStatus) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -156,7 +156,7 @@ pub struct IPrintDocumentPackageTarget_Vtbl {
 pub struct IPrintDocumentPackageTargetFactory(::windows_core::IUnknown);
 impl IPrintDocumentPackageTargetFactory {
     #[cfg(feature = "Win32_System_Com")]
-    pub unsafe fn CreateDocumentPackageTargetForPrintJob<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::super::System::Com::IStream>, Param3: ::windows_core::IntoParam<'a, super::super::super::System::Com::IStream>>(&self, printername: Param0, jobname: Param1, joboutputstream: Param2, jobprintticketstream: Param3) -> ::windows_core::Result<IPrintDocumentPackageTarget> {
+    pub unsafe fn CreateDocumentPackageTargetForPrintJob<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param3: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>>(&self, printername: Param0, jobname: Param1, joboutputstream: Param2, jobprintticketstream: Param3) -> ::windows_core::Result<IPrintDocumentPackageTarget> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).CreateDocumentPackageTargetForPrintJob)(::windows_core::Interface::as_raw(self), printername.into_param().abi(), jobname.into_param().abi(), joboutputstream.into_param().abi(), jobprintticketstream.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<IPrintDocumentPackageTarget>(result__)
     }
@@ -310,26 +310,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IUnknown> for &'a IXpsPri
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<IXpsPrintJobStream> for super::super::super::System::Com::ISequentialStream {
+impl ::core::convert::From<IXpsPrintJobStream> for ::win32_system::Com::ISequentialStream {
     fn from(value: IXpsPrintJobStream) -> Self {
         unsafe { ::core::mem::transmute(value) }
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl ::core::convert::From<&IXpsPrintJobStream> for super::super::super::System::Com::ISequentialStream {
+impl ::core::convert::From<&IXpsPrintJobStream> for ::win32_system::Com::ISequentialStream {
     fn from(value: &IXpsPrintJobStream) -> Self {
         ::core::convert::From::from(::core::clone::Clone::clone(value))
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::System::Com::ISequentialStream> for IXpsPrintJobStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::System::Com::ISequentialStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream> for IXpsPrintJobStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::ISequentialStream> {
         ::windows_core::Param::Owned(unsafe { ::core::mem::transmute(self) })
     }
 }
 #[cfg(feature = "Win32_System_Com")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::System::Com::ISequentialStream> for &'a IXpsPrintJobStream {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::System::Com::ISequentialStream> {
+impl<'a> ::windows_core::IntoParam<'a, ::win32_system::Com::ISequentialStream> for &'a IXpsPrintJobStream {
+    fn into_param(self) -> ::windows_core::Param<'a, ::win32_system::Com::ISequentialStream> {
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
@@ -362,7 +362,7 @@ unsafe impl ::windows_core::Interface for IXpsPrintJobStream {
 #[repr(C)]
 #[doc(hidden)]
 pub struct IXpsPrintJobStream_Vtbl {
-    pub base__: super::super::super::System::Com::ISequentialStream_Vtbl,
+    pub base__: ::win32_system::Com::ISequentialStream_Vtbl,
     pub Close: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -427,28 +427,27 @@ impl ::core::default::Default for PrintDocumentPackageStatus {
 }
 pub const PrintDocumentPackageTarget: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4842669e_9947_46ea_8ba2_d8cce432c2ca);
 pub const PrintDocumentPackageTargetFactory: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x348ef17d_6c81_4982_92b4_ee188a43867a);
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn StartXpsPrintJob<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(printername: Param0, jobname: Param1, outputfilename: Param2, progressevent: Param3, completionevent: Param4, printablepageson: &[u8], xpsprintjob: *mut ::core::option::Option<IXpsPrintJob>, documentstream: *mut ::core::option::Option<IXpsPrintJobStream>, printticketstream: *mut ::core::option::Option<IXpsPrintJobStream>) -> ::windows_core::Result<()> {
+pub unsafe fn StartXpsPrintJob<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(printername: Param0, jobname: Param1, outputfilename: Param2, progressevent: Param3, completionevent: Param4, printablepageson: &[u8], xpsprintjob: *mut ::core::option::Option<IXpsPrintJob>, documentstream: *mut ::core::option::Option<IXpsPrintJobStream>, printticketstream: *mut ::core::option::Option<IXpsPrintJobStream>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartXpsPrintJob(printername: ::windows_core::PCWSTR, jobname: ::windows_core::PCWSTR, outputfilename: ::windows_core::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, printablepageson: *const u8, printablepagesoncount: u32, xpsprintjob: *mut ::windows_core::RawPtr, documentstream: *mut ::windows_core::RawPtr, printticketstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn StartXpsPrintJob(printername: ::windows_core::PCWSTR, jobname: ::windows_core::PCWSTR, outputfilename: ::windows_core::PCWSTR, progressevent: ::win32_foundation::HANDLE, completionevent: ::win32_foundation::HANDLE, printablepageson: *const u8, printablepagesoncount: u32, xpsprintjob: *mut ::windows_core::RawPtr, documentstream: *mut ::windows_core::RawPtr, printticketstream: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         StartXpsPrintJob(printername.into_param().abi(), jobname.into_param().abi(), outputfilename.into_param().abi(), progressevent.into_param().abi(), completionevent.into_param().abi(), ::core::mem::transmute(::windows_core::as_ptr_or_null(printablepageson)), printablepageson.len() as _, ::core::mem::transmute(xpsprintjob), ::core::mem::transmute(documentstream), ::core::mem::transmute(printticketstream)).ok()
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn StartXpsPrintJob1<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, super::super::super::Foundation::HANDLE>>(printername: Param0, jobname: Param1, outputfilename: Param2, progressevent: Param3, completionevent: Param4, xpsprintjob: *mut ::core::option::Option<IXpsPrintJob>, printcontentreceiver: *mut ::core::option::Option<super::IXpsOMPackageTarget>) -> ::windows_core::Result<()> {
+pub unsafe fn StartXpsPrintJob1<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(printername: Param0, jobname: Param1, outputfilename: Param2, progressevent: Param3, completionevent: Param4, xpsprintjob: *mut ::core::option::Option<IXpsPrintJob>, printcontentreceiver: *mut ::core::option::Option<super::IXpsOMPackageTarget>) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn StartXpsPrintJob1(printername: ::windows_core::PCWSTR, jobname: ::windows_core::PCWSTR, outputfilename: ::windows_core::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, xpsprintjob: *mut ::windows_core::RawPtr, printcontentreceiver: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
+            fn StartXpsPrintJob1(printername: ::windows_core::PCWSTR, jobname: ::windows_core::PCWSTR, outputfilename: ::windows_core::PCWSTR, progressevent: ::win32_foundation::HANDLE, completionevent: ::win32_foundation::HANDLE, xpsprintjob: *mut ::windows_core::RawPtr, printcontentreceiver: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT;
         }
         StartXpsPrintJob1(printername.into_param().abi(), jobname.into_param().abi(), outputfilename.into_param().abi(), progressevent.into_param().abi(), completionevent.into_param().abi(), ::core::mem::transmute(xpsprintjob), ::core::mem::transmute(printcontentreceiver)).ok()
     }

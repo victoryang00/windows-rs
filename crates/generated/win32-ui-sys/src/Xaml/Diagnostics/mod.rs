@@ -24,8 +24,8 @@ pub const BaseValueSourceVisualState: BaseValueSource = 14i32;
 pub struct BitmapDescription {
     pub Width: u32,
     pub Height: u32,
-    pub Format: super::super::super::Graphics::Dxgi::Common::DXGI_FORMAT,
-    pub AlphaMode: super::super::super::Graphics::Dxgi::Common::DXGI_ALPHA_MODE,
+    pub Format: ::win32_graphics_sys::Dxgi::Common::DXGI_FORMAT,
+    pub AlphaMode: ::win32_graphics_sys::Dxgi::Common::DXGI_ALPHA_MODE,
 }
 #[cfg(feature = "Win32_Graphics_Dxgi_Common")]
 impl ::core::marker::Copy for BitmapDescription {}
@@ -36,16 +36,13 @@ impl ::core::clone::Clone for BitmapDescription {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CollectionElementValue {
     pub Index: u32,
-    pub ValueType: super::super::super::Foundation::BSTR,
-    pub Value: super::super::super::Foundation::BSTR,
+    pub ValueType: ::win32_foundation_sys::BSTR,
+    pub Value: ::win32_foundation_sys::BSTR,
     pub MetadataBits: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CollectionElementValue {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CollectionElementValue {
     fn clone(&self) -> Self {
         *self
@@ -53,15 +50,15 @@ impl ::core::clone::Clone for CollectionElementValue {
 }
 pub const E_UNKNOWNTYPE: ::windows_core_sys::HRESULT = -2144665560i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 pub struct EnumType {
-    pub Name: super::super::super::Foundation::BSTR,
-    pub ValueInts: *mut super::super::super::System::Com::SAFEARRAY,
-    pub ValueStrings: *mut super::super::super::System::Com::SAFEARRAY,
+    pub Name: ::win32_foundation_sys::BSTR,
+    pub ValueInts: *mut ::win32_system_sys::Com::SAFEARRAY,
+    pub ValueStrings: *mut ::win32_system_sys::Com::SAFEARRAY,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 impl ::core::marker::Copy for EnumType {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
+#[cfg(feature = "Win32_System_Com")]
 impl ::core::clone::Clone for EnumType {
     fn clone(&self) -> Self {
         *self
@@ -105,39 +102,33 @@ impl ::core::clone::Clone for ParentChildRelation {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PropertyChainSource {
     pub Handle: u64,
-    pub TargetType: super::super::super::Foundation::BSTR,
-    pub Name: super::super::super::Foundation::BSTR,
+    pub TargetType: ::win32_foundation_sys::BSTR,
+    pub Name: ::win32_foundation_sys::BSTR,
     pub Source: BaseValueSource,
     pub SrcInfo: SourceInfo,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PropertyChainSource {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PropertyChainSource {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PropertyChainValue {
     pub Index: u32,
-    pub Type: super::super::super::Foundation::BSTR,
-    pub DeclaringType: super::super::super::Foundation::BSTR,
-    pub ValueType: super::super::super::Foundation::BSTR,
-    pub ItemType: super::super::super::Foundation::BSTR,
-    pub Value: super::super::super::Foundation::BSTR,
-    pub Overridden: super::super::super::Foundation::BOOL,
+    pub Type: ::win32_foundation_sys::BSTR,
+    pub DeclaringType: ::win32_foundation_sys::BSTR,
+    pub ValueType: ::win32_foundation_sys::BSTR,
+    pub ItemType: ::win32_foundation_sys::BSTR,
+    pub Value: ::win32_foundation_sys::BSTR,
+    pub Overridden: ::win32_foundation_sys::BOOL,
     pub MetadataBits: i64,
-    pub PropertyName: super::super::super::Foundation::BSTR,
+    pub PropertyName: ::win32_foundation_sys::BSTR,
     pub PropertyChainIndex: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PropertyChainValue {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PropertyChainValue {
     fn clone(&self) -> Self {
         *self
@@ -150,34 +141,28 @@ pub type ResourceType = i32;
 pub const ResourceTypeStatic: ResourceType = 0i32;
 pub const ResourceTypeTheme: ResourceType = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SourceInfo {
-    pub FileName: super::super::super::Foundation::BSTR,
+    pub FileName: ::win32_foundation_sys::BSTR,
     pub LineNumber: u32,
     pub ColumnNumber: u32,
     pub CharPosition: u32,
-    pub Hash: super::super::super::Foundation::BSTR,
+    pub Hash: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SourceInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SourceInfo {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VisualElement {
     pub Handle: u64,
     pub SrcInfo: SourceInfo,
-    pub Type: super::super::super::Foundation::BSTR,
-    pub Name: super::super::super::Foundation::BSTR,
+    pub Type: ::win32_foundation_sys::BSTR,
+    pub Name: ::win32_foundation_sys::BSTR,
     pub NumChildren: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VisualElement {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VisualElement {
     fn clone(&self) -> Self {
         *self

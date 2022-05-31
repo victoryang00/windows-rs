@@ -1,6 +1,6 @@
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 #[inline]
-pub unsafe fn BindIFilterFromStorage<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::StructuredStorage::IStorage>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(pstg: Param0, punkouter: Param1, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+pub unsafe fn BindIFilterFromStorage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::StructuredStorage::IStorage>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(pstg: Param0, punkouter: Param1, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -14,7 +14,7 @@ pub unsafe fn BindIFilterFromStorage<'a, Param0: ::windows_core::IntoParam<'a, s
 }
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
-pub unsafe fn BindIFilterFromStream<'a, Param0: ::windows_core::IntoParam<'a, super::super::System::Com::IStream>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(pstm: Param0, punkouter: Param1, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
+pub unsafe fn BindIFilterFromStream<'a, Param0: ::windows_core::IntoParam<'a, ::win32_system::Com::IStream>, Param1: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(pstm: Param0, punkouter: Param1, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
@@ -470,7 +470,7 @@ pub const FILTER_W_MONIKER_CLIPPED: ::windows_core::HRESULT = ::windows_core::HR
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct FULLPROPSPEC {
     pub guidPropSet: ::windows_core::GUID,
-    pub psProperty: super::super::System::Com::StructuredStorage::PROPSPEC,
+    pub psProperty: ::win32_system::Com::StructuredStorage::PROPSPEC,
 }
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for FULLPROPSPEC {}
@@ -573,8 +573,8 @@ impl IFilter {
     pub unsafe fn GetText(&self, pcwcbuffer: *mut u32, awcbuffer: ::windows_core::PWSTR) -> i32 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetText)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pcwcbuffer), ::core::mem::transmute(awcbuffer)))
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub unsafe fn GetValue(&self, pppropvalue: *mut *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> i32 {
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub unsafe fn GetValue(&self, pppropvalue: *mut *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> i32 {
         ::core::mem::transmute((::windows_core::Interface::vtable(self).GetValue)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pppropvalue)))
     }
     pub unsafe fn BindRegion<'a, Param0: ::windows_core::IntoParam<'a, FILTERREGION>>(&self, origpos: Param0, riid: *const ::windows_core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> i32 {
@@ -634,9 +634,9 @@ pub struct IFilter_Vtbl {
     #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetChunk: usize,
     pub GetText: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcwcbuffer: *mut u32, awcbuffer: ::windows_core::PWSTR) -> i32,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
-    pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppropvalue: *mut *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> i32,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
+    pub GetValue: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pppropvalue: *mut *mut ::win32_system::Com::StructuredStorage::PROPVARIANT) -> i32,
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetValue: usize,
     pub BindRegion: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, origpos: FILTERREGION, riid: *const ::windows_core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> i32,
 }

@@ -21,16 +21,12 @@ unsafe impl ::windows_core::Interface for IWindowManagementPreviewStatics {
 #[doc(hidden)]
 pub struct IWindowManagementPreviewStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub SetPreferredMinSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::windows_core::RawPtr, preferredframeminsize: super::super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetPreferredMinSize: usize,
+    pub SetPreferredMinSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, window: ::windows_core::RawPtr, preferredframeminsize: ::winrt_foundation::Size) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct WindowManagementPreview(::windows_core::IUnknown);
 impl WindowManagementPreview {
-    #[cfg(feature = "Foundation")]
-    pub fn SetPreferredMinSize<'a, Param0: ::windows_core::IntoParam<'a, super::AppWindow>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Size>>(window: Param0, preferredframeminsize: Param1) -> ::windows_core::Result<()> {
+    pub fn SetPreferredMinSize<'a, Param0: ::windows_core::IntoParam<'a, super::AppWindow>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(window: Param0, preferredframeminsize: Param1) -> ::windows_core::Result<()> {
         Self::IWindowManagementPreviewStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetPreferredMinSize)(::windows_core::Interface::as_raw(this), window.into_param().abi(), preferredframeminsize.into_param().abi()).ok() })
     }
     pub fn IWindowManagementPreviewStatics<R, F: FnOnce(&IWindowManagementPreviewStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

@@ -46,50 +46,23 @@ pub struct ISystemUpdateManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsSupported: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub State: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut SystemUpdateManagerState) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub StateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    StateChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveStateChanged: usize,
+    pub StateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveStateChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub DownloadProgress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub InstallProgress: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub UserActiveHoursStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UserActiveHoursStart: usize,
-    #[cfg(feature = "Foundation")]
-    pub UserActiveHoursEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UserActiveHoursEnd: usize,
+    pub UserActiveHoursStart: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub UserActiveHoursEnd: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub UserActiveHoursMax: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub TrySetUserActiveHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, start: super::super::Foundation::TimeSpan, end: super::super::Foundation::TimeSpan, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TrySetUserActiveHours: usize,
-    #[cfg(feature = "Foundation")]
-    pub LastUpdateCheckTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LastUpdateCheckTime: usize,
-    #[cfg(feature = "Foundation")]
-    pub LastUpdateInstallTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::DateTime) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LastUpdateInstallTime: usize,
+    pub TrySetUserActiveHours: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, start: ::winrt_foundation::TimeSpan, end: ::winrt_foundation::TimeSpan, result__: *mut bool) -> ::windows_core::HRESULT,
+    pub LastUpdateCheckTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
+    pub LastUpdateInstallTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::DateTime) -> ::windows_core::HRESULT,
     pub LastErrorInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub GetAutomaticRebootBlockIds: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     GetAutomaticRebootBlockIds: usize,
-    #[cfg(feature = "Foundation")]
     pub BlockAutomaticRebootAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lockid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BlockAutomaticRebootAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub UnblockAutomaticRebootAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, lockid: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UnblockAutomaticRebootAsync: usize,
     pub ExtendedError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::HRESULT) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub GetUpdateItems: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -421,15 +394,13 @@ impl SystemUpdateManager {
             (::windows_core::Interface::vtable(this).State)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<SystemUpdateManagerState>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn StateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<super::super::Foundation::EventRegistrationToken> {
+    pub fn StateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).StateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).StateChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveStateChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveStateChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::ISystemUpdateManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveStateChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn DownloadProgress() -> ::windows_core::Result<f64> {
@@ -444,18 +415,16 @@ impl SystemUpdateManager {
             (::windows_core::Interface::vtable(this).InstallProgress)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<f64>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UserActiveHoursStart() -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn UserActiveHoursStart() -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).UserActiveHoursStart)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).UserActiveHoursStart)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UserActiveHoursEnd() -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn UserActiveHoursEnd() -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).UserActiveHoursEnd)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).UserActiveHoursEnd)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         })
     }
     pub fn UserActiveHoursMax() -> ::windows_core::Result<i32> {
@@ -464,25 +433,22 @@ impl SystemUpdateManager {
             (::windows_core::Interface::vtable(this).UserActiveHoursMax)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<i32>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TrySetUserActiveHours<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>>(start: Param0, end: Param1) -> ::windows_core::Result<bool> {
+    pub fn TrySetUserActiveHours<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(start: Param0, end: Param1) -> ::windows_core::Result<bool> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).TrySetUserActiveHours)(::windows_core::Interface::as_raw(this), start.into_param().abi(), end.into_param().abi(), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LastUpdateCheckTime() -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn LastUpdateCheckTime() -> ::windows_core::Result<::winrt_foundation::DateTime> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).LastUpdateCheckTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).LastUpdateCheckTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LastUpdateInstallTime() -> ::windows_core::Result<super::super::Foundation::DateTime> {
+    pub fn LastUpdateInstallTime() -> ::windows_core::Result<::winrt_foundation::DateTime> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::DateTime>::zeroed();
-            (::windows_core::Interface::vtable(this).LastUpdateInstallTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::DateTime>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::DateTime>::zeroed();
+            (::windows_core::Interface::vtable(this).LastUpdateInstallTime)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::DateTime>(result__)
         })
     }
     pub fn LastErrorInfo() -> ::windows_core::Result<SystemUpdateLastErrorInfo> {
@@ -492,24 +458,22 @@ impl SystemUpdateManager {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetAutomaticRebootBlockIds() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn GetAutomaticRebootBlockIds() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetAutomaticRebootBlockIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetAutomaticRebootBlockIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BlockAutomaticRebootAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(lockid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn BlockAutomaticRebootAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(lockid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).BlockAutomaticRebootAsync)(::windows_core::Interface::as_raw(this), lockid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).BlockAutomaticRebootAsync)(::windows_core::Interface::as_raw(this), lockid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UnblockAutomaticRebootAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(lockid: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn UnblockAutomaticRebootAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(lockid: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UnblockAutomaticRebootAsync)(::windows_core::Interface::as_raw(this), lockid.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).UnblockAutomaticRebootAsync)(::windows_core::Interface::as_raw(this), lockid.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         })
     }
     pub fn ExtendedError() -> ::windows_core::Result<::windows_core::HRESULT> {
@@ -519,10 +483,10 @@ impl SystemUpdateManager {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetUpdateItems() -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<SystemUpdateItem>> {
+    pub fn GetUpdateItems() -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<SystemUpdateItem>> {
         Self::ISystemUpdateManagerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetUpdateItems)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<SystemUpdateItem>>(result__)
+            (::windows_core::Interface::vtable(this).GetUpdateItems)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<SystemUpdateItem>>(result__)
         })
     }
     pub fn AttentionRequiredReason() -> ::windows_core::Result<SystemUpdateAttentionRequiredReason> {

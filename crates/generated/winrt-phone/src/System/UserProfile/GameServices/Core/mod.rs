@@ -1,38 +1,33 @@
 pub struct GameService;
 impl GameService {
-    #[cfg(feature = "Foundation")]
-    pub fn ServiceUri() -> ::windows_core::Result<super::super::super::super::super::Foundation::Uri> {
+    pub fn ServiceUri() -> ::windows_core::Result<::winrt_foundation::Uri> {
         Self::IGameService(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).ServiceUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).ServiceUri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetGamerProfileAsync() -> ::windows_core::Result<super::super::super::super::super::Foundation::IAsyncOperation<GameServicePropertyCollection>> {
+    pub fn GetGamerProfileAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameServicePropertyCollection>> {
         Self::IGameService(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetGamerProfileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::super::Foundation::IAsyncOperation<GameServicePropertyCollection>>(result__)
+            (::windows_core::Interface::vtable(this).GetGamerProfileAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameServicePropertyCollection>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetInstalledGameItemsAsync() -> ::windows_core::Result<super::super::super::super::super::Foundation::IAsyncOperation<GameServicePropertyCollection>> {
+    pub fn GetInstalledGameItemsAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<GameServicePropertyCollection>> {
         Self::IGameService(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetInstalledGameItemsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::super::Foundation::IAsyncOperation<GameServicePropertyCollection>>(result__)
+            (::windows_core::Interface::vtable(this).GetInstalledGameItemsAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<GameServicePropertyCollection>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetPartnerTokenAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::super::Foundation::Uri>>(audienceuri: Param0) -> ::windows_core::Result<super::super::super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetPartnerTokenAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(audienceuri: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IGameService(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPartnerTokenAsync)(::windows_core::Interface::as_raw(this), audienceuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetPartnerTokenAsync)(::windows_core::Interface::as_raw(this), audienceuri.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetPrivilegesAsync() -> ::windows_core::Result<super::super::super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>> {
+    pub fn GetPrivilegesAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>> {
         Self::IGameService(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPrivilegesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::super::Foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).GetPrivilegesAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::HSTRING>>(result__)
         })
     }
     pub fn GrantAchievement(achievementid: u32) -> ::windows_core::Result<()> {
@@ -42,11 +37,10 @@ impl GameService {
         Self::IGameService(|this| unsafe { (::windows_core::Interface::vtable(this).GrantAvatarAward)(::windows_core::Interface::as_raw(this), avatarawardid).ok() })
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn PostResult<'a, Param4: ::windows_core::IntoParam<'a, super::super::super::super::super::Storage::Streams::IBuffer>>(gamevariant: u32, scorekind: GameServiceScoreKind, scorevalue: i64, gameoutcome: GameServiceGameOutcome, buffer: Param4) -> ::windows_core::Result<()> {
+    pub fn PostResult<'a, Param4: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(gamevariant: u32, scorekind: GameServiceScoreKind, scorevalue: i64, gameoutcome: GameServiceGameOutcome, buffer: Param4) -> ::windows_core::Result<()> {
         Self::IGameService(|this| unsafe { (::windows_core::Interface::vtable(this).PostResult)(::windows_core::Interface::as_raw(this), gamevariant, scorekind, scorevalue, gameoutcome, buffer.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn NotifyPartnerTokenExpired<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::super::Foundation::Uri>>(audienceuri: Param0) -> ::windows_core::Result<()> {
+    pub fn NotifyPartnerTokenExpired<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(audienceuri: Param0) -> ::windows_core::Result<()> {
         Self::IGameService2(|this| unsafe { (::windows_core::Interface::vtable(this).NotifyPartnerTokenExpired)(::windows_core::Interface::as_raw(this), audienceuri.into_param().abi()).ok() })
     }
     pub fn GetAuthenticationStatus() -> ::windows_core::Result<u32> {
@@ -105,12 +99,11 @@ unsafe impl ::windows_core::RuntimeType for GameServiceGameOutcome {
 #[repr(transparent)]
 pub struct GameServicePropertyCollection(::windows_core::IUnknown);
 impl GameServicePropertyCollection {
-    #[cfg(feature = "Foundation")]
-    pub fn GetPropertyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<super::super::super::super::super::Foundation::IAsyncOperation<::windows_core::IInspectable>> {
+    pub fn GetPropertyAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, propertyname: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPropertyAsync)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::super::Foundation::IAsyncOperation<::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).GetPropertyAsync)(::windows_core::Interface::as_raw(this), propertyname.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::windows_core::IInspectable>>(result__)
         }
     }
 }
@@ -230,26 +223,11 @@ unsafe impl ::windows_core::Interface for IGameService {
 #[doc(hidden)]
 pub struct IGameService_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub ServiceUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ServiceUri: usize,
-    #[cfg(feature = "Foundation")]
     pub GetGamerProfileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetGamerProfileAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetInstalledGameItemsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetInstalledGameItemsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetPartnerTokenAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, audienceuri: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPartnerTokenAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub GetPrivilegesAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPrivilegesAsync: usize,
     pub GrantAchievement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, achievementid: u32) -> ::windows_core::HRESULT,
     pub GrantAvatarAward: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, avatarawardid: u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
@@ -268,10 +246,7 @@ unsafe impl ::windows_core::Interface for IGameService2 {
 #[doc(hidden)]
 pub struct IGameService2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub NotifyPartnerTokenExpired: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, audienceuri: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    NotifyPartnerTokenExpired: usize,
     pub GetAuthenticationStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -285,8 +260,5 @@ unsafe impl ::windows_core::Interface for IGameServicePropertyCollection {
 #[doc(hidden)]
 pub struct IGameServicePropertyCollection_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub GetPropertyAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, propertyname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPropertyAsync: usize,
 }

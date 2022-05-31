@@ -1,9 +1,9 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub fn BindIFilterFromStorage(pstg: super::super::System::Com::StructuredStorage::IStorage, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn BindIFilterFromStorage(pstg: ::win32_system_sys::Com::StructuredStorage::IStorage, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn BindIFilterFromStream(pstm: super::super::System::Com::IStream, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn BindIFilterFromStream(pstm: ::win32_system_sys::Com::IStream, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn LoadIFilter(pwcspath: ::windows_core_sys::PCWSTR, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn LoadIFilterEx(pwcspath: ::windows_core_sys::PCWSTR, dwflags: u32, riid: *const ::windows_core_sys::GUID, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
@@ -226,7 +226,7 @@ pub const FILTER_W_MONIKER_CLIPPED: ::windows_core_sys::HRESULT = 268036i32;
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct FULLPROPSPEC {
     pub guidPropSet: ::windows_core_sys::GUID,
-    pub psProperty: super::super::System::Com::StructuredStorage::PROPSPEC,
+    pub psProperty: ::win32_system_sys::Com::StructuredStorage::PROPSPEC,
 }
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 impl ::core::marker::Copy for FULLPROPSPEC {}

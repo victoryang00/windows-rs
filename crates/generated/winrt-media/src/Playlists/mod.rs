@@ -13,17 +13,14 @@ pub struct IPlaylist_Vtbl {
     pub Files: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(all(feature = "Foundation_Collections", feature = "Storage")))]
     Files: usize,
-    #[cfg(feature = "Foundation")]
     pub SaveAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SaveAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub SaveAsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, savelocation: ::windows_core::RawPtr, desiredname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, option: super::super::Storage::NameCollisionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(feature = "Storage")]
+    pub SaveAsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, savelocation: ::windows_core::RawPtr, desiredname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, option: ::winrt_storage::NameCollisionOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Storage"))]
     SaveAsAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub SaveAsWithFormatAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, savelocation: ::windows_core::RawPtr, desiredname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, option: super::super::Storage::NameCollisionOption, playlistformat: PlaylistFormat, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(feature = "Storage")]
+    pub SaveAsWithFormatAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, savelocation: ::windows_core::RawPtr, desiredname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, option: ::winrt_storage::NameCollisionOption, playlistformat: PlaylistFormat, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Storage"))]
     SaveAsWithFormatAsync: usize,
 }
 #[doc(hidden)]
@@ -37,9 +34,9 @@ unsafe impl ::windows_core::Interface for IPlaylistStatics {
 #[doc(hidden)]
 pub struct IPlaylistStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub LoadAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     LoadAsync: usize,
 }
 #[repr(transparent)]
@@ -53,42 +50,41 @@ impl Playlist {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
-    pub fn Files(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVector<super::super::Storage::StorageFile>> {
+    pub fn Files(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVector<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).Files)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_storage::StorageFile>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SaveAsync(&self) -> ::windows_core::Result<super::super::Foundation::IAsyncAction> {
+    pub fn SaveAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).SaveAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn SaveAsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, savelocation: Param0, desiredname: Param1, option: super::super::Storage::NameCollisionOption) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::StorageFile>> {
+    #[cfg(feature = "Storage")]
+    pub fn SaveAsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, savelocation: Param0, desiredname: Param1, option: ::winrt_storage::NameCollisionOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveAsAsync)(::windows_core::Interface::as_raw(this), savelocation.into_param().abi(), desiredname.into_param().abi(), option, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).SaveAsAsync)(::windows_core::Interface::as_raw(this), savelocation.into_param().abi(), desiredname.into_param().abi(), option, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::StorageFile>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn SaveAsWithFormatAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, savelocation: Param0, desiredname: Param1, option: super::super::Storage::NameCollisionOption, playlistformat: PlaylistFormat) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<super::super::Storage::StorageFile>> {
+    #[cfg(feature = "Storage")]
+    pub fn SaveAsWithFormatAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, savelocation: Param0, desiredname: Param1, option: ::winrt_storage::NameCollisionOption, playlistformat: PlaylistFormat) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<::winrt_storage::StorageFile>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveAsWithFormatAsync)(::windows_core::Interface::as_raw(this), savelocation.into_param().abi(), desiredname.into_param().abi(), option, playlistformat, result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<super::super::Storage::StorageFile>>(result__)
+            (::windows_core::Interface::vtable(this).SaveAsWithFormatAsync)(::windows_core::Interface::as_raw(this), savelocation.into_param().abi(), desiredname.into_param().abi(), option, playlistformat, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<::winrt_storage::StorageFile>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<Playlist>> {
+    #[cfg(feature = "Storage")]
+    pub fn LoadAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::IStorageFile>>(file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<Playlist>> {
         Self::IPlaylistStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<Playlist>>(result__)
+            (::windows_core::Interface::vtable(this).LoadAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<Playlist>>(result__)
         })
     }
     pub fn IPlaylistStatics<R, F: FnOnce(&IPlaylistStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

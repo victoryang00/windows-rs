@@ -113,137 +113,123 @@ impl ::core::ops::Not for BROADCAST_SYSTEM_MESSAGE_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BSMINFO {
     pub cbSize: u32,
     pub hdesk: HDESK,
-    pub hwnd: super::super::Foundation::HWND,
-    pub luid: super::super::Foundation::LUID,
+    pub hwnd: ::win32_foundation::HWND,
+    pub luid: ::win32_foundation::LUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BSMINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BSMINFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for BSMINFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("BSMINFO").field("cbSize", &self.cbSize).field("hdesk", &self.hdesk).field("hwnd", &self.hwnd).field("luid", &self.luid).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for BSMINFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for BSMINFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<BSMINFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for BSMINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for BSMINFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BroadcastSystemMessageA<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(flags: u32, lpinfo: *mut u32, msg: u32, wparam: Param3, lparam: Param4) -> i32 {
+pub unsafe fn BroadcastSystemMessageA<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(flags: u32, lpinfo: *mut u32, msg: u32, wparam: Param3, lparam: Param4) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BroadcastSystemMessageA(flags: u32, lpinfo: *mut u32, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> i32;
+            fn BroadcastSystemMessageA(flags: u32, lpinfo: *mut u32, msg: u32, wparam: ::win32_foundation::WPARAM, lparam: ::win32_foundation::LPARAM) -> i32;
         }
         ::core::mem::transmute(BroadcastSystemMessageA(::core::mem::transmute(flags), ::core::mem::transmute(lpinfo), ::core::mem::transmute(msg), wparam.into_param().abi(), lparam.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BroadcastSystemMessageExA<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: Param3, lparam: Param4, pbsminfo: *mut BSMINFO) -> i32 {
+pub unsafe fn BroadcastSystemMessageExA<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: Param3, lparam: Param4, pbsminfo: *mut BSMINFO) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BroadcastSystemMessageExA(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
+            fn BroadcastSystemMessageExA(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: ::win32_foundation::WPARAM, lparam: ::win32_foundation::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
         }
         ::core::mem::transmute(BroadcastSystemMessageExA(::core::mem::transmute(flags), ::core::mem::transmute(lpinfo), ::core::mem::transmute(msg), wparam.into_param().abi(), lparam.into_param().abi(), ::core::mem::transmute(pbsminfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BroadcastSystemMessageExW<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: Param3, lparam: Param4, pbsminfo: *mut BSMINFO) -> i32 {
+pub unsafe fn BroadcastSystemMessageExW<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: Param3, lparam: Param4, pbsminfo: *mut BSMINFO) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BroadcastSystemMessageExW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
+            fn BroadcastSystemMessageExW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: ::win32_foundation::WPARAM, lparam: ::win32_foundation::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
         }
         ::core::mem::transmute(BroadcastSystemMessageExW(::core::mem::transmute(flags), ::core::mem::transmute(lpinfo), ::core::mem::transmute(msg), wparam.into_param().abi(), lparam.into_param().abi(), ::core::mem::transmute(pbsminfo)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BroadcastSystemMessageW<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: Param3, lparam: Param4) -> i32 {
+pub unsafe fn BroadcastSystemMessageW<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::WPARAM>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: Param3, lparam: Param4) -> i32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BroadcastSystemMessageW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> i32;
+            fn BroadcastSystemMessageW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: ::win32_foundation::WPARAM, lparam: ::win32_foundation::LPARAM) -> i32;
         }
         ::core::mem::transmute(BroadcastSystemMessageW(::core::mem::transmute(flags), ::core::mem::transmute(lpinfo), ::core::mem::transmute(msg), wparam.into_param().abi(), lparam.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CloseDesktop<'a, Param0: ::windows_core::IntoParam<'a, HDESK>>(hdesktop: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CloseDesktop<'a, Param0: ::windows_core::IntoParam<'a, HDESK>>(hdesktop: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CloseDesktop(hdesktop: HDESK) -> super::super::Foundation::BOOL;
+            fn CloseDesktop(hdesktop: HDESK) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CloseDesktop(hdesktop.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CloseWindowStation<'a, Param0: ::windows_core::IntoParam<'a, HWINSTA>>(hwinsta: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CloseWindowStation<'a, Param0: ::windows_core::IntoParam<'a, HWINSTA>>(hwinsta: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CloseWindowStation(hwinsta: HWINSTA) -> super::super::Foundation::BOOL;
+            fn CloseWindowStation(hwinsta: HWINSTA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CloseWindowStation(hwinsta.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn CreateDesktopA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HDESK> {
+pub unsafe fn CreateDesktopA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDesktopA(lpszdesktop: ::windows_core::PCSTR, lpszdevice: ::windows_core::PCSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HDESK;
+            fn CreateDesktopA(lpszdesktop: ::windows_core::PCSTR, lpszdevice: ::windows_core::PCSTR, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> HDESK;
         }
         let result__ = CreateDesktopA(lpszdesktop.into_param().abi(), lpszdevice.into_param().abi(), ::core::mem::transmute(pdevmode), ::core::mem::transmute(dwflags), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(lpsa));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -251,14 +237,14 @@ pub unsafe fn CreateDesktopA<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn CreateDesktopExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDESK> {
+pub unsafe fn CreateDesktopExA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDesktopExA(lpszdesktop: ::windows_core::PCSTR, lpszdevice: ::windows_core::PCSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
+            fn CreateDesktopExA(lpszdesktop: ::windows_core::PCSTR, lpszdevice: ::windows_core::PCSTR, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEA, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
         }
         let result__ = CreateDesktopExA(lpszdesktop.into_param().abi(), lpszdevice.into_param().abi(), ::core::mem::transmute(pdevmode), ::core::mem::transmute(dwflags), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(lpsa), ::core::mem::transmute(ulheapsize), ::core::mem::transmute(pvoid));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -266,14 +252,14 @@ pub unsafe fn CreateDesktopExA<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn CreateDesktopExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDESK> {
+pub unsafe fn CreateDesktopExW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDesktopExW(lpszdesktop: ::windows_core::PCWSTR, lpszdevice: ::windows_core::PCWSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
+            fn CreateDesktopExW(lpszdesktop: ::windows_core::PCWSTR, lpszdevice: ::windows_core::PCWSTR, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
         }
         let result__ = CreateDesktopExW(lpszdesktop.into_param().abi(), lpszdevice.into_param().abi(), ::core::mem::transmute(pdevmode), ::core::mem::transmute(dwflags), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(lpsa), ::core::mem::transmute(ulheapsize), ::core::mem::transmute(pvoid));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -281,14 +267,14 @@ pub unsafe fn CreateDesktopExW<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
+#[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_Security"))]
 #[inline]
-pub unsafe fn CreateDesktopW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HDESK> {
+pub unsafe fn CreateDesktopW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszdesktop: Param0, lpszdevice: Param1, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateDesktopW(lpszdesktop: ::windows_core::PCWSTR, lpszdevice: ::windows_core::PCWSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HDESK;
+            fn CreateDesktopW(lpszdesktop: ::windows_core::PCWSTR, lpszdevice: ::windows_core::PCWSTR, pdevmode: *mut ::win32_graphics::Gdi::DEVMODEW, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> HDESK;
         }
         let result__ = CreateDesktopW(lpszdesktop.into_param().abi(), lpszdevice.into_param().abi(), ::core::mem::transmute(pdevmode), ::core::mem::transmute(dwflags), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(lpsa));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -296,14 +282,14 @@ pub unsafe fn CreateDesktopW<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn CreateWindowStationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpwinsta: Param0, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HWINSTA> {
+pub unsafe fn CreateWindowStationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpwinsta: Param0, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HWINSTA> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateWindowStationA(lpwinsta: ::windows_core::PCSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HWINSTA;
+            fn CreateWindowStationA(lpwinsta: ::windows_core::PCSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> HWINSTA;
         }
         let result__ = CreateWindowStationA(lpwinsta.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(lpsa));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -311,14 +297,14 @@ pub unsafe fn CreateWindowStationA<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn CreateWindowStationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpwinsta: Param0, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HWINSTA> {
+pub unsafe fn CreateWindowStationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpwinsta: Param0, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::windows_core::Result<HWINSTA> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CreateWindowStationW(lpwinsta: ::windows_core::PCWSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HWINSTA;
+            fn CreateWindowStationW(lpwinsta: ::windows_core::PCWSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const ::win32_security::SECURITY_ATTRIBUTES) -> HWINSTA;
         }
         let result__ = CreateWindowStationW(lpwinsta.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(dwdesiredaccess), ::core::mem::transmute(lpsa));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -326,74 +312,68 @@ pub unsafe fn CreateWindowStationW<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type DESKTOPENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type DESKTOPENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
+pub type DESKTOPENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR, param1: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL>;
+pub type DESKTOPENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL>;
+#[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
-pub unsafe fn EnumDesktopWindows<'a, Param0: ::windows_core::IntoParam<'a, HDESK>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hdesktop: Param0, lpfn: super::super::UI::WindowsAndMessaging::WNDENUMPROC, lparam: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDesktopWindows<'a, Param0: ::windows_core::IntoParam<'a, HDESK>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(hdesktop: Param0, lpfn: ::win32_ui::WindowsAndMessaging::WNDENUMPROC, lparam: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDesktopWindows(hdesktop: HDESK, lpfn: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumDesktopWindows(hdesktop: HDESK, lpfn: ::windows_core::RawPtr, lparam: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumDesktopWindows(hdesktop.into_param().abi(), ::core::mem::transmute(lpfn), lparam.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDesktopsA<'a, Param0: ::windows_core::IntoParam<'a, HWINSTA>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwinsta: Param0, lpenumfunc: DESKTOPENUMPROCA, lparam: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDesktopsA<'a, Param0: ::windows_core::IntoParam<'a, HWINSTA>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(hwinsta: Param0, lpenumfunc: DESKTOPENUMPROCA, lparam: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDesktopsA(hwinsta: HWINSTA, lpenumfunc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumDesktopsA(hwinsta: HWINSTA, lpenumfunc: ::windows_core::RawPtr, lparam: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumDesktopsA(hwinsta.into_param().abi(), ::core::mem::transmute(lpenumfunc), lparam.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumDesktopsW<'a, Param0: ::windows_core::IntoParam<'a, HWINSTA>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(hwinsta: Param0, lpenumfunc: DESKTOPENUMPROCW, lparam: Param2) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumDesktopsW<'a, Param0: ::windows_core::IntoParam<'a, HWINSTA>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(hwinsta: Param0, lpenumfunc: DESKTOPENUMPROCW, lparam: Param2) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumDesktopsW(hwinsta: HWINSTA, lpenumfunc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumDesktopsW(hwinsta: HWINSTA, lpenumfunc: ::windows_core::RawPtr, lparam: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumDesktopsW(hwinsta.into_param().abi(), ::core::mem::transmute(lpenumfunc), lparam.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumWindowStationsA<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpenumfunc: WINSTAENUMPROCA, lparam: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumWindowStationsA<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(lpenumfunc: WINSTAENUMPROCA, lparam: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumWindowStationsA(lpenumfunc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumWindowStationsA(lpenumfunc: ::windows_core::RawPtr, lparam: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumWindowStationsA(::core::mem::transmute(lpenumfunc), lparam.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EnumWindowStationsW<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::LPARAM>>(lpenumfunc: WINSTAENUMPROCW, lparam: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn EnumWindowStationsW<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::LPARAM>>(lpenumfunc: WINSTAENUMPROCW, lparam: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EnumWindowStationsW(lpenumfunc: ::windows_core::RawPtr, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
+            fn EnumWindowStationsW(lpenumfunc: ::windows_core::RawPtr, lparam: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EnumWindowStationsW(::core::mem::transmute(lpenumfunc), lparam.into_param().abi()))
     }
@@ -428,28 +408,26 @@ pub unsafe fn GetThreadDesktop(dwthreadid: u32) -> ::windows_core::Result<HDESK>
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetUserObjectInformationA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hobj: Param0, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetUserObjectInformationA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hobj: Param0, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetUserObjectInformationA(hobj: super::super::Foundation::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetUserObjectInformationA(hobj: ::win32_foundation::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetUserObjectInformationA(hobj.into_param().abi(), ::core::mem::transmute(nindex), ::core::mem::transmute(pvinfo), ::core::mem::transmute(nlength), ::core::mem::transmute(lpnlengthneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetUserObjectInformationW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hobj: Param0, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetUserObjectInformationW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hobj: Param0, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetUserObjectInformationW(hobj: super::super::Foundation::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetUserObjectInformationW(hobj: ::win32_foundation::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetUserObjectInformationW(hobj.into_param().abi(), ::core::mem::transmute(nindex), ::core::mem::transmute(pvinfo), ::core::mem::transmute(nlength), ::core::mem::transmute(lpnlengthneeded)))
     }
@@ -510,14 +488,13 @@ impl ::core::fmt::Debug for HWINSTA {
 unsafe impl ::windows_core::Abi for HWINSTA {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenDesktopA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpszdesktop: Param0, dwflags: u32, finherit: Param2, dwdesiredaccess: u32) -> ::windows_core::Result<HDESK> {
+pub unsafe fn OpenDesktopA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpszdesktop: Param0, dwflags: u32, finherit: Param2, dwdesiredaccess: u32) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenDesktopA(lpszdesktop: ::windows_core::PCSTR, dwflags: u32, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
+            fn OpenDesktopA(lpszdesktop: ::windows_core::PCSTR, dwflags: u32, finherit: ::win32_foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
         }
         let result__ = OpenDesktopA(lpszdesktop.into_param().abi(), ::core::mem::transmute(dwflags), finherit.into_param().abi(), ::core::mem::transmute(dwdesiredaccess));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -525,14 +502,13 @@ pub unsafe fn OpenDesktopA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenDesktopW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpszdesktop: Param0, dwflags: u32, finherit: Param2, dwdesiredaccess: u32) -> ::windows_core::Result<HDESK> {
+pub unsafe fn OpenDesktopW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpszdesktop: Param0, dwflags: u32, finherit: Param2, dwdesiredaccess: u32) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenDesktopW(lpszdesktop: ::windows_core::PCWSTR, dwflags: u32, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
+            fn OpenDesktopW(lpszdesktop: ::windows_core::PCWSTR, dwflags: u32, finherit: ::win32_foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
         }
         let result__ = OpenDesktopW(lpszdesktop.into_param().abi(), ::core::mem::transmute(dwflags), finherit.into_param().abi(), ::core::mem::transmute(dwdesiredaccess));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -540,14 +516,13 @@ pub unsafe fn OpenDesktopW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_c
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenInputDesktop<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(dwflags: u32, finherit: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<HDESK> {
+pub unsafe fn OpenInputDesktop<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(dwflags: u32, finherit: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<HDESK> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenInputDesktop(dwflags: u32, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
+            fn OpenInputDesktop(dwflags: u32, finherit: ::win32_foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
         }
         let result__ = OpenInputDesktop(::core::mem::transmute(dwflags), finherit.into_param().abi(), ::core::mem::transmute(dwdesiredaccess));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -555,14 +530,13 @@ pub unsafe fn OpenInputDesktop<'a, Param1: ::windows_core::IntoParam<'a, super::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenWindowStationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpszwinsta: Param0, finherit: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<HWINSTA> {
+pub unsafe fn OpenWindowStationA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpszwinsta: Param0, finherit: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<HWINSTA> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenWindowStationA(lpszwinsta: ::windows_core::PCSTR, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HWINSTA;
+            fn OpenWindowStationA(lpszwinsta: ::windows_core::PCSTR, finherit: ::win32_foundation::BOOL, dwdesiredaccess: u32) -> HWINSTA;
         }
         let result__ = OpenWindowStationA(lpszwinsta.into_param().abi(), finherit.into_param().abi(), ::core::mem::transmute(dwdesiredaccess));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -570,14 +544,13 @@ pub unsafe fn OpenWindowStationA<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn OpenWindowStationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(lpszwinsta: Param0, finherit: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<HWINSTA> {
+pub unsafe fn OpenWindowStationW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(lpszwinsta: Param0, finherit: Param1, dwdesiredaccess: u32) -> ::windows_core::Result<HWINSTA> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn OpenWindowStationW(lpszwinsta: ::windows_core::PCWSTR, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HWINSTA;
+            fn OpenWindowStationW(lpszwinsta: ::windows_core::PCWSTR, finherit: ::win32_foundation::BOOL, dwdesiredaccess: u32) -> HWINSTA;
         }
         let result__ = OpenWindowStationW(lpszwinsta.into_param().abi(), finherit.into_param().abi(), ::core::mem::transmute(dwdesiredaccess));
         (!result__.is_invalid()).then(|| result__).ok_or_else(::windows_core::Error::from_win32)
@@ -585,70 +558,65 @@ pub unsafe fn OpenWindowStationW<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetProcessWindowStation<'a, Param0: ::windows_core::IntoParam<'a, HWINSTA>>(hwinsta: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetProcessWindowStation<'a, Param0: ::windows_core::IntoParam<'a, HWINSTA>>(hwinsta: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetProcessWindowStation(hwinsta: HWINSTA) -> super::super::Foundation::BOOL;
+            fn SetProcessWindowStation(hwinsta: HWINSTA) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetProcessWindowStation(hwinsta.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetThreadDesktop<'a, Param0: ::windows_core::IntoParam<'a, HDESK>>(hdesktop: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SetThreadDesktop<'a, Param0: ::windows_core::IntoParam<'a, HDESK>>(hdesktop: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetThreadDesktop(hdesktop: HDESK) -> super::super::Foundation::BOOL;
+            fn SetThreadDesktop(hdesktop: HDESK) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetThreadDesktop(hdesktop.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetUserObjectInformationA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hobj: Param0, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetUserObjectInformationA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hobj: Param0, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetUserObjectInformationA(hobj: super::super::Foundation::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> super::super::Foundation::BOOL;
+            fn SetUserObjectInformationA(hobj: ::win32_foundation::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetUserObjectInformationA(hobj.into_param().abi(), ::core::mem::transmute(nindex), ::core::mem::transmute(pvinfo), ::core::mem::transmute(nlength)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SetUserObjectInformationW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hobj: Param0, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn SetUserObjectInformationW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hobj: Param0, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SetUserObjectInformationW(hobj: super::super::Foundation::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> super::super::Foundation::BOOL;
+            fn SetUserObjectInformationW(hobj: ::win32_foundation::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SetUserObjectInformationW(hobj.into_param().abi(), ::core::mem::transmute(nindex), ::core::mem::transmute(pvinfo), ::core::mem::transmute(nlength)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn SwitchDesktop<'a, Param0: ::windows_core::IntoParam<'a, HDESK>>(hdesktop: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn SwitchDesktop<'a, Param0: ::windows_core::IntoParam<'a, HDESK>>(hdesktop: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn SwitchDesktop(hdesktop: HDESK) -> super::super::Foundation::BOOL;
+            fn SwitchDesktop(hdesktop: HDESK) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(SwitchDesktop(hdesktop.into_param().abi()))
     }
@@ -656,39 +624,31 @@ pub unsafe fn SwitchDesktop<'a, Param0: ::windows_core::IntoParam<'a, HDESK>>(hd
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USEROBJECTFLAGS {
-    pub fInherit: super::super::Foundation::BOOL,
-    pub fReserved: super::super::Foundation::BOOL,
+    pub fInherit: ::win32_foundation::BOOL,
+    pub fReserved: ::win32_foundation::BOOL,
     pub dwFlags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USEROBJECTFLAGS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USEROBJECTFLAGS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for USEROBJECTFLAGS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USEROBJECTFLAGS").field("fInherit", &self.fInherit).field("fReserved", &self.fReserved).field("dwFlags", &self.dwFlags).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USEROBJECTFLAGS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USEROBJECTFLAGS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USEROBJECTFLAGS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USEROBJECTFLAGS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USEROBJECTFLAGS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -722,7 +682,5 @@ impl ::core::fmt::Debug for USER_OBJECT_INFORMATION_INDEX {
         f.debug_tuple("USER_OBJECT_INFORMATION_INDEX").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type WINSTAENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type WINSTAENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL>;
+pub type WINSTAENUMPROCA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCSTR, param1: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL>;
+pub type WINSTAENUMPROCW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core::PCWSTR, param1: ::win32_foundation::LPARAM) -> ::win32_foundation::BOOL>;

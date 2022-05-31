@@ -251,11 +251,11 @@ impl UserDataAccountProviderAddAccountOperation {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn PartnerAccountInfos(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVectorView<UserDataAccountPartnerAccountInfo>> {
+    pub fn PartnerAccountInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<UserDataAccountPartnerAccountInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PartnerAccountInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVectorView<UserDataAccountPartnerAccountInfo>>(result__)
+            (::windows_core::Interface::vtable(this).PartnerAccountInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<UserDataAccountPartnerAccountInfo>>(result__)
         }
     }
     pub fn ReportCompleted<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, userdataaccountid: Param0) -> ::windows_core::Result<()> {

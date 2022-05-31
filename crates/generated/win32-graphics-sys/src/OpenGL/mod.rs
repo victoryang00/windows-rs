@@ -8,10 +8,10 @@ extern "system" {
     pub fn GetEnhMetaFilePixelFormat(hemf: super::Gdi::HENHMETAFILE, cbbuffer: u32, ppfd: *mut PIXELFORMATDESCRIPTOR) -> u32;
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn GetPixelFormat(hdc: super::Gdi::HDC) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn SetPixelFormat(hdc: super::Gdi::HDC, format: i32, ppfd: *const PIXELFORMATDESCRIPTOR) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn SwapBuffers(param0: super::Gdi::HDC) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn SetPixelFormat(hdc: super::Gdi::HDC, format: i32, ppfd: *const PIXELFORMATDESCRIPTOR) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn SwapBuffers(param0: super::Gdi::HDC) -> ::win32_foundation_sys::BOOL;
     pub fn glAccum(op: u32, value: f32);
     pub fn glAlphaFunc(func: u32, r#ref: f32);
     pub fn glAreTexturesResident(n: i32, textures: *const u32, residences: *mut u8) -> u8;
@@ -400,41 +400,37 @@ extern "system" {
     pub fn gluTessProperty(tess: *mut GLUtesselator, which: u32, value: f64);
     pub fn gluTessVertex(tess: *mut GLUtesselator, coords: *mut f64, data: *mut ::core::ffi::c_void);
     pub fn gluUnProject(winx: f64, winy: f64, winz: f64, modelmatrix: *const f64, projmatrix: *const f64, viewport: *const i32, objx: *mut f64, objy: *mut f64, objz: *mut f64) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn wglCopyContext(param0: HGLRC, param1: HGLRC, param2: u32) -> super::super::Foundation::BOOL;
+    pub fn wglCopyContext(param0: HGLRC, param1: HGLRC, param2: u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn wglCreateContext(param0: super::Gdi::HDC) -> HGLRC;
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn wglCreateLayerContext(param0: super::Gdi::HDC, param1: i32) -> HGLRC;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn wglDeleteContext(param0: HGLRC) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn wglDescribeLayerPlane(param0: super::Gdi::HDC, param1: i32, param2: i32, param3: u32, param4: *mut LAYERPLANEDESCRIPTOR) -> super::super::Foundation::BOOL;
+    pub fn wglDeleteContext(param0: HGLRC) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn wglDescribeLayerPlane(param0: super::Gdi::HDC, param1: i32, param2: i32, param3: u32, param4: *mut LAYERPLANEDESCRIPTOR) -> ::win32_foundation_sys::BOOL;
     pub fn wglGetCurrentContext() -> HGLRC;
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn wglGetCurrentDC() -> super::Gdi::HDC;
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn wglGetLayerPaletteEntries(param0: super::Gdi::HDC, param1: i32, param2: i32, param3: i32, param4: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn wglGetProcAddress(param0: ::windows_core_sys::PCSTR) -> super::super::Foundation::PROC;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn wglMakeCurrent(param0: super::Gdi::HDC, param1: HGLRC) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn wglRealizeLayerPalette(param0: super::Gdi::HDC, param1: i32, param2: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn wglGetProcAddress(param0: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::PROC;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn wglMakeCurrent(param0: super::Gdi::HDC, param1: HGLRC) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn wglRealizeLayerPalette(param0: super::Gdi::HDC, param1: i32, param2: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn wglSetLayerPaletteEntries(param0: super::Gdi::HDC, param1: i32, param2: i32, param3: i32, param4: *const u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn wglShareLists(param0: HGLRC, param1: HGLRC) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn wglSwapLayerBuffers(param0: super::Gdi::HDC, param1: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn wglUseFontBitmapsA(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn wglUseFontBitmapsW(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn wglUseFontOutlinesA(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn wglUseFontOutlinesW(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> super::super::Foundation::BOOL;
+    pub fn wglShareLists(param0: HGLRC, param1: HGLRC) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn wglSwapLayerBuffers(param0: super::Gdi::HDC, param1: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn wglUseFontBitmapsA(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn wglUseFontBitmapsW(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn wglUseFontOutlinesA(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Graphics_Gdi")]
+    pub fn wglUseFontOutlinesW(param0: super::Gdi::HDC, param1: u32, param2: u32, param3: u32, param4: f32, param5: f32, param6: i32, param7: *mut GLYPHMETRICSFLOAT) -> ::win32_foundation_sys::BOOL;
 }
 #[repr(C)]
 #[cfg(feature = "Win32_Graphics_Gdi")]

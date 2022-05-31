@@ -1,18 +1,15 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_System_Com")]
-    pub fn GetTnefStreamCodepage(lpstream: super::super::System::Com::IStream, lpulcodepage: *mut u32, lpulsubcodepage: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn GetTnefStreamCodepage(lpstream: ::win32_system_sys::Com::IStream, lpulcodepage: *mut u32, lpulsubcodepage: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com"))]
-    pub fn OpenTnefStream(lpvsupport: *mut ::core::ffi::c_void, lpstream: super::super::System::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: super::super::System::AddressBook::IMessage, wkeyval: u16, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT;
+    pub fn OpenTnefStream(lpvsupport: *mut ::core::ffi::c_void, lpstream: ::win32_system_sys::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: ::win32_system_sys::AddressBook::IMessage, wkeyval: u16, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com"))]
-    pub fn OpenTnefStreamEx(lpvsupport: *mut ::core::ffi::c_void, lpstream: super::super::System::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: super::super::System::AddressBook::IMessage, wkeyval: u16, lpadressbook: super::super::System::AddressBook::IAddrBook, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT;
+    pub fn OpenTnefStreamEx(lpvsupport: *mut ::core::ffi::c_void, lpstream: ::win32_system_sys::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: ::win32_system_sys::AddressBook::IMessage, wkeyval: u16, lpadressbook: ::win32_system_sys::AddressBook::IAddrBook, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT;
     pub fn lineAccept(hcall: u32, lpsuseruserinfo: ::windows_core_sys::PCSTR, dwsize: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineAddProvider(lpszproviderfilename: ::windows_core_sys::PCSTR, hwndowner: super::super::Foundation::HWND, lpdwpermanentproviderid: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineAddProviderA(lpszproviderfilename: ::windows_core_sys::PCSTR, hwndowner: super::super::Foundation::HWND, lpdwpermanentproviderid: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineAddProviderW(lpszproviderfilename: ::windows_core_sys::PCWSTR, hwndowner: super::super::Foundation::HWND, lpdwpermanentproviderid: *mut u32) -> i32;
+    pub fn lineAddProvider(lpszproviderfilename: ::windows_core_sys::PCSTR, hwndowner: ::win32_foundation_sys::HWND, lpdwpermanentproviderid: *mut u32) -> i32;
+    pub fn lineAddProviderA(lpszproviderfilename: ::windows_core_sys::PCSTR, hwndowner: ::win32_foundation_sys::HWND, lpdwpermanentproviderid: *mut u32) -> i32;
+    pub fn lineAddProviderW(lpszproviderfilename: ::windows_core_sys::PCWSTR, hwndowner: ::win32_foundation_sys::HWND, lpdwpermanentproviderid: *mut u32) -> i32;
     pub fn lineAddToConference(hconfcall: u32, hconsultcall: u32) -> i32;
     pub fn lineAgentSpecific(hline: u32, dwaddressid: u32, dwagentextensionidindex: u32, lpparams: *mut ::core::ffi::c_void, dwsize: u32) -> i32;
     pub fn lineAnswer(hcall: u32, lpsuseruserinfo: ::windows_core_sys::PCSTR, dwsize: u32) -> i32;
@@ -22,20 +19,13 @@ extern "system" {
     pub fn lineClose(hline: u32) -> i32;
     pub fn lineCompleteCall(hcall: u32, lpdwcompletionid: *mut u32, dwcompletionmode: u32, dwmessageid: u32) -> i32;
     pub fn lineCompleteTransfer(hcall: u32, hconsultcall: u32, lphconfcall: *mut u32, dwtransfermode: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineConfigDialog(dwdeviceid: u32, hwndowner: super::super::Foundation::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineConfigDialogA(dwdeviceid: u32, hwndowner: super::super::Foundation::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineConfigDialogEdit(dwdeviceid: u32, hwndowner: super::super::Foundation::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR, lpdeviceconfigin: *const ::core::ffi::c_void, dwsize: u32, lpdeviceconfigout: *mut VARSTRING) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineConfigDialogEditA(dwdeviceid: u32, hwndowner: super::super::Foundation::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR, lpdeviceconfigin: *const ::core::ffi::c_void, dwsize: u32, lpdeviceconfigout: *mut VARSTRING) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineConfigDialogEditW(dwdeviceid: u32, hwndowner: super::super::Foundation::HWND, lpszdeviceclass: ::windows_core_sys::PCWSTR, lpdeviceconfigin: *const ::core::ffi::c_void, dwsize: u32, lpdeviceconfigout: *mut VARSTRING) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineConfigDialogW(dwdeviceid: u32, hwndowner: super::super::Foundation::HWND, lpszdeviceclass: ::windows_core_sys::PCWSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineConfigProvider(hwndowner: super::super::Foundation::HWND, dwpermanentproviderid: u32) -> i32;
+    pub fn lineConfigDialog(dwdeviceid: u32, hwndowner: ::win32_foundation_sys::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR) -> i32;
+    pub fn lineConfigDialogA(dwdeviceid: u32, hwndowner: ::win32_foundation_sys::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR) -> i32;
+    pub fn lineConfigDialogEdit(dwdeviceid: u32, hwndowner: ::win32_foundation_sys::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR, lpdeviceconfigin: *const ::core::ffi::c_void, dwsize: u32, lpdeviceconfigout: *mut VARSTRING) -> i32;
+    pub fn lineConfigDialogEditA(dwdeviceid: u32, hwndowner: ::win32_foundation_sys::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR, lpdeviceconfigin: *const ::core::ffi::c_void, dwsize: u32, lpdeviceconfigout: *mut VARSTRING) -> i32;
+    pub fn lineConfigDialogEditW(dwdeviceid: u32, hwndowner: ::win32_foundation_sys::HWND, lpszdeviceclass: ::windows_core_sys::PCWSTR, lpdeviceconfigin: *const ::core::ffi::c_void, dwsize: u32, lpdeviceconfigout: *mut VARSTRING) -> i32;
+    pub fn lineConfigDialogW(dwdeviceid: u32, hwndowner: ::win32_foundation_sys::HWND, lpszdeviceclass: ::windows_core_sys::PCWSTR) -> i32;
+    pub fn lineConfigProvider(hwndowner: ::win32_foundation_sys::HWND, dwpermanentproviderid: u32) -> i32;
     pub fn lineCreateAgentA(hline: u32, lpszagentid: ::windows_core_sys::PCSTR, lpszagentpin: ::windows_core_sys::PCSTR, lphagent: *mut u32) -> i32;
     pub fn lineCreateAgentSessionA(hline: u32, hagent: u32, lpszagentpin: ::windows_core_sys::PCSTR, dwworkingaddressid: u32, lpgroupid: *mut ::windows_core_sys::GUID, lphagentsession: *mut u32) -> i32;
     pub fn lineCreateAgentSessionW(hline: u32, hagent: u32, lpszagentpin: ::windows_core_sys::PCWSTR, dwworkingaddressid: u32, lpgroupid: *mut ::windows_core_sys::GUID, lphagentsession: *mut u32) -> i32;
@@ -85,7 +75,6 @@ extern "system" {
     pub fn lineGetCallInfo(hcall: u32, lpcallinfo: *mut LINECALLINFO) -> i32;
     pub fn lineGetCallInfoA(hcall: u32, lpcallinfo: *mut LINECALLINFO) -> i32;
     pub fn lineGetCallInfoW(hcall: u32, lpcallinfo: *mut LINECALLINFO) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn lineGetCallStatus(hcall: u32, lpcallstatus: *mut LINECALLSTATUS) -> i32;
     pub fn lineGetConfRelatedCalls(hcall: u32, lpcalllist: *mut LINECALLLIST) -> i32;
     pub fn lineGetCountry(dwcountryid: u32, dwapiversion: u32, lplinecountrylist: *mut LINECOUNTRYLIST) -> i32;
@@ -129,12 +118,9 @@ extern "system" {
     pub fn lineHandoffA(hcall: u32, lpszfilename: ::windows_core_sys::PCSTR, dwmediamode: u32) -> i32;
     pub fn lineHandoffW(hcall: u32, lpszfilename: ::windows_core_sys::PCWSTR, dwmediamode: u32) -> i32;
     pub fn lineHold(hcall: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineInitialize(lphlineapp: *mut u32, hinstance: super::super::Foundation::HINSTANCE, lpfncallback: LINECALLBACK, lpszappname: ::windows_core_sys::PCSTR, lpdwnumdevs: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineInitializeExA(lphlineapp: *mut u32, hinstance: super::super::Foundation::HINSTANCE, lpfncallback: LINECALLBACK, lpszfriendlyappname: ::windows_core_sys::PCSTR, lpdwnumdevs: *mut u32, lpdwapiversion: *mut u32, lplineinitializeexparams: *mut LINEINITIALIZEEXPARAMS) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineInitializeExW(lphlineapp: *mut u32, hinstance: super::super::Foundation::HINSTANCE, lpfncallback: LINECALLBACK, lpszfriendlyappname: ::windows_core_sys::PCWSTR, lpdwnumdevs: *mut u32, lpdwapiversion: *mut u32, lplineinitializeexparams: *mut LINEINITIALIZEEXPARAMS) -> i32;
+    pub fn lineInitialize(lphlineapp: *mut u32, hinstance: ::win32_foundation_sys::HINSTANCE, lpfncallback: LINECALLBACK, lpszappname: ::windows_core_sys::PCSTR, lpdwnumdevs: *mut u32) -> i32;
+    pub fn lineInitializeExA(lphlineapp: *mut u32, hinstance: ::win32_foundation_sys::HINSTANCE, lpfncallback: LINECALLBACK, lpszfriendlyappname: ::windows_core_sys::PCSTR, lpdwnumdevs: *mut u32, lpdwapiversion: *mut u32, lplineinitializeexparams: *mut LINEINITIALIZEEXPARAMS) -> i32;
+    pub fn lineInitializeExW(lphlineapp: *mut u32, hinstance: ::win32_foundation_sys::HINSTANCE, lpfncallback: LINECALLBACK, lpszfriendlyappname: ::windows_core_sys::PCWSTR, lpdwnumdevs: *mut u32, lpdwapiversion: *mut u32, lplineinitializeexparams: *mut LINEINITIALIZEEXPARAMS) -> i32;
     pub fn lineMakeCall(hline: u32, lphcall: *mut u32, lpszdestaddress: ::windows_core_sys::PCSTR, dwcountrycode: u32, lpcallparams: *const LINECALLPARAMS) -> i32;
     pub fn lineMakeCallA(hline: u32, lphcall: *mut u32, lpszdestaddress: ::windows_core_sys::PCSTR, dwcountrycode: u32, lpcallparams: *const LINECALLPARAMS) -> i32;
     pub fn lineMakeCallW(hline: u32, lphcall: *mut u32, lpszdestaddress: ::windows_core_sys::PCWSTR, dwcountrycode: u32, lpcallparams: *const LINECALLPARAMS) -> i32;
@@ -164,8 +150,7 @@ extern "system" {
     pub fn lineRegisterRequestRecipient(hlineapp: u32, dwregistrationinstance: u32, dwrequestmode: u32, benable: u32) -> i32;
     pub fn lineReleaseUserUserInfo(hcall: u32) -> i32;
     pub fn lineRemoveFromConference(hcall: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineRemoveProvider(dwpermanentproviderid: u32, hwndowner: super::super::Foundation::HWND) -> i32;
+    pub fn lineRemoveProvider(dwpermanentproviderid: u32, hwndowner: ::win32_foundation_sys::HWND) -> i32;
     pub fn lineSecureCall(hcall: u32) -> i32;
     pub fn lineSendUserUserInfo(hcall: u32, lpsuseruserinfo: ::windows_core_sys::PCSTR, dwsize: u32) -> i32;
     pub fn lineSetAgentActivity(hline: u32, dwaddressid: u32, dwactivityid: u32) -> i32;
@@ -208,24 +193,18 @@ extern "system" {
     pub fn lineTranslateAddress(hlineapp: u32, dwdeviceid: u32, dwapiversion: u32, lpszaddressin: ::windows_core_sys::PCSTR, dwcard: u32, dwtranslateoptions: u32, lptranslateoutput: *mut LINETRANSLATEOUTPUT) -> i32;
     pub fn lineTranslateAddressA(hlineapp: u32, dwdeviceid: u32, dwapiversion: u32, lpszaddressin: ::windows_core_sys::PCSTR, dwcard: u32, dwtranslateoptions: u32, lptranslateoutput: *mut LINETRANSLATEOUTPUT) -> i32;
     pub fn lineTranslateAddressW(hlineapp: u32, dwdeviceid: u32, dwapiversion: u32, lpszaddressin: ::windows_core_sys::PCWSTR, dwcard: u32, dwtranslateoptions: u32, lptranslateoutput: *mut LINETRANSLATEOUTPUT) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineTranslateDialog(hlineapp: u32, dwdeviceid: u32, dwapiversion: u32, hwndowner: super::super::Foundation::HWND, lpszaddressin: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineTranslateDialogA(hlineapp: u32, dwdeviceid: u32, dwapiversion: u32, hwndowner: super::super::Foundation::HWND, lpszaddressin: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn lineTranslateDialogW(hlineapp: u32, dwdeviceid: u32, dwapiversion: u32, hwndowner: super::super::Foundation::HWND, lpszaddressin: ::windows_core_sys::PCWSTR) -> i32;
+    pub fn lineTranslateDialog(hlineapp: u32, dwdeviceid: u32, dwapiversion: u32, hwndowner: ::win32_foundation_sys::HWND, lpszaddressin: ::windows_core_sys::PCSTR) -> i32;
+    pub fn lineTranslateDialogA(hlineapp: u32, dwdeviceid: u32, dwapiversion: u32, hwndowner: ::win32_foundation_sys::HWND, lpszaddressin: ::windows_core_sys::PCSTR) -> i32;
+    pub fn lineTranslateDialogW(hlineapp: u32, dwdeviceid: u32, dwapiversion: u32, hwndowner: ::win32_foundation_sys::HWND, lpszaddressin: ::windows_core_sys::PCWSTR) -> i32;
     pub fn lineUncompleteCall(hline: u32, dwcompletionid: u32) -> i32;
     pub fn lineUnhold(hcall: u32) -> i32;
     pub fn lineUnpark(hline: u32, dwaddressid: u32, lphcall: *mut u32, lpszdestaddress: ::windows_core_sys::PCSTR) -> i32;
     pub fn lineUnparkA(hline: u32, dwaddressid: u32, lphcall: *mut u32, lpszdestaddress: ::windows_core_sys::PCSTR) -> i32;
     pub fn lineUnparkW(hline: u32, dwaddressid: u32, lphcall: *mut u32, lpszdestaddress: ::windows_core_sys::PCWSTR) -> i32;
     pub fn phoneClose(hphone: u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn phoneConfigDialog(dwdeviceid: u32, hwndowner: super::super::Foundation::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn phoneConfigDialogA(dwdeviceid: u32, hwndowner: super::super::Foundation::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn phoneConfigDialogW(dwdeviceid: u32, hwndowner: super::super::Foundation::HWND, lpszdeviceclass: ::windows_core_sys::PCWSTR) -> i32;
+    pub fn phoneConfigDialog(dwdeviceid: u32, hwndowner: ::win32_foundation_sys::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR) -> i32;
+    pub fn phoneConfigDialogA(dwdeviceid: u32, hwndowner: ::win32_foundation_sys::HWND, lpszdeviceclass: ::windows_core_sys::PCSTR) -> i32;
+    pub fn phoneConfigDialogW(dwdeviceid: u32, hwndowner: ::win32_foundation_sys::HWND, lpszdeviceclass: ::windows_core_sys::PCWSTR) -> i32;
     pub fn phoneDevSpecific(hphone: u32, lpparams: *mut ::core::ffi::c_void, dwsize: u32) -> i32;
     pub fn phoneGetButtonInfo(hphone: u32, dwbuttonlampid: u32, lpbuttoninfo: *mut PHONEBUTTONINFO) -> i32;
     pub fn phoneGetButtonInfoA(hphone: u32, dwbuttonlampid: u32, lpbuttoninfo: *mut PHONEBUTTONINFO) -> i32;
@@ -251,12 +230,9 @@ extern "system" {
     pub fn phoneGetStatusMessages(hphone: u32, lpdwphonestates: *mut u32, lpdwbuttonmodes: *mut u32, lpdwbuttonstates: *mut u32) -> i32;
     pub fn phoneGetStatusW(hphone: u32, lpphonestatus: *mut PHONESTATUS) -> i32;
     pub fn phoneGetVolume(hphone: u32, dwhookswitchdev: u32, lpdwvolume: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn phoneInitialize(lphphoneapp: *mut u32, hinstance: super::super::Foundation::HINSTANCE, lpfncallback: PHONECALLBACK, lpszappname: ::windows_core_sys::PCSTR, lpdwnumdevs: *mut u32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn phoneInitializeExA(lphphoneapp: *mut u32, hinstance: super::super::Foundation::HINSTANCE, lpfncallback: PHONECALLBACK, lpszfriendlyappname: ::windows_core_sys::PCSTR, lpdwnumdevs: *mut u32, lpdwapiversion: *mut u32, lpphoneinitializeexparams: *mut PHONEINITIALIZEEXPARAMS) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn phoneInitializeExW(lphphoneapp: *mut u32, hinstance: super::super::Foundation::HINSTANCE, lpfncallback: PHONECALLBACK, lpszfriendlyappname: ::windows_core_sys::PCWSTR, lpdwnumdevs: *mut u32, lpdwapiversion: *mut u32, lpphoneinitializeexparams: *mut PHONEINITIALIZEEXPARAMS) -> i32;
+    pub fn phoneInitialize(lphphoneapp: *mut u32, hinstance: ::win32_foundation_sys::HINSTANCE, lpfncallback: PHONECALLBACK, lpszappname: ::windows_core_sys::PCSTR, lpdwnumdevs: *mut u32) -> i32;
+    pub fn phoneInitializeExA(lphphoneapp: *mut u32, hinstance: ::win32_foundation_sys::HINSTANCE, lpfncallback: PHONECALLBACK, lpszfriendlyappname: ::windows_core_sys::PCSTR, lpdwnumdevs: *mut u32, lpdwapiversion: *mut u32, lpphoneinitializeexparams: *mut PHONEINITIALIZEEXPARAMS) -> i32;
+    pub fn phoneInitializeExW(lphphoneapp: *mut u32, hinstance: ::win32_foundation_sys::HINSTANCE, lpfncallback: PHONECALLBACK, lpszfriendlyappname: ::windows_core_sys::PCWSTR, lpdwnumdevs: *mut u32, lpdwapiversion: *mut u32, lpphoneinitializeexparams: *mut PHONEINITIALIZEEXPARAMS) -> i32;
     pub fn phoneNegotiateAPIVersion(hphoneapp: u32, dwdeviceid: u32, dwapilowversion: u32, dwapihighversion: u32, lpdwapiversion: *mut u32, lpextensionid: *mut PHONEEXTENSIONID) -> i32;
     pub fn phoneNegotiateExtVersion(hphoneapp: u32, dwdeviceid: u32, dwapiversion: u32, dwextlowversion: u32, dwexthighversion: u32, lpdwextversion: *mut u32) -> i32;
     pub fn phoneOpen(hphoneapp: u32, dwdeviceid: u32, lphphone: *mut u32, dwapiversion: u32, dwextversion: u32, dwcallbackinstance: usize, dwprivilege: u32) -> i32;
@@ -275,17 +251,13 @@ extern "system" {
     pub fn tapiGetLocationInfo(lpszcountrycode: ::windows_core_sys::PSTR, lpszcitycode: ::windows_core_sys::PSTR) -> i32;
     pub fn tapiGetLocationInfoA(lpszcountrycode: ::windows_core_sys::PSTR, lpszcitycode: ::windows_core_sys::PSTR) -> i32;
     pub fn tapiGetLocationInfoW(lpszcountrycodew: ::windows_core_sys::PWSTR, lpszcitycodew: ::windows_core_sys::PWSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn tapiRequestDrop(hwnd: super::super::Foundation::HWND, wrequestid: super::super::Foundation::WPARAM) -> i32;
+    pub fn tapiRequestDrop(hwnd: ::win32_foundation_sys::HWND, wrequestid: ::win32_foundation_sys::WPARAM) -> i32;
     pub fn tapiRequestMakeCall(lpszdestaddress: ::windows_core_sys::PCSTR, lpszappname: ::windows_core_sys::PCSTR, lpszcalledparty: ::windows_core_sys::PCSTR, lpszcomment: ::windows_core_sys::PCSTR) -> i32;
     pub fn tapiRequestMakeCallA(lpszdestaddress: ::windows_core_sys::PCSTR, lpszappname: ::windows_core_sys::PCSTR, lpszcalledparty: ::windows_core_sys::PCSTR, lpszcomment: ::windows_core_sys::PCSTR) -> i32;
     pub fn tapiRequestMakeCallW(lpszdestaddress: ::windows_core_sys::PCWSTR, lpszappname: ::windows_core_sys::PCWSTR, lpszcalledparty: ::windows_core_sys::PCWSTR, lpszcomment: ::windows_core_sys::PCWSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn tapiRequestMediaCall(hwnd: super::super::Foundation::HWND, wrequestid: super::super::Foundation::WPARAM, lpszdeviceclass: ::windows_core_sys::PCSTR, lpdeviceid: ::windows_core_sys::PCSTR, dwsize: u32, dwsecure: u32, lpszdestaddress: ::windows_core_sys::PCSTR, lpszappname: ::windows_core_sys::PCSTR, lpszcalledparty: ::windows_core_sys::PCSTR, lpszcomment: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn tapiRequestMediaCallA(hwnd: super::super::Foundation::HWND, wrequestid: super::super::Foundation::WPARAM, lpszdeviceclass: ::windows_core_sys::PCSTR, lpdeviceid: ::windows_core_sys::PCSTR, dwsize: u32, dwsecure: u32, lpszdestaddress: ::windows_core_sys::PCSTR, lpszappname: ::windows_core_sys::PCSTR, lpszcalledparty: ::windows_core_sys::PCSTR, lpszcomment: ::windows_core_sys::PCSTR) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn tapiRequestMediaCallW(hwnd: super::super::Foundation::HWND, wrequestid: super::super::Foundation::WPARAM, lpszdeviceclass: ::windows_core_sys::PCWSTR, lpdeviceid: ::windows_core_sys::PCWSTR, dwsize: u32, dwsecure: u32, lpszdestaddress: ::windows_core_sys::PCWSTR, lpszappname: ::windows_core_sys::PCWSTR, lpszcalledparty: ::windows_core_sys::PCWSTR, lpszcomment: ::windows_core_sys::PCWSTR) -> i32;
+    pub fn tapiRequestMediaCall(hwnd: ::win32_foundation_sys::HWND, wrequestid: ::win32_foundation_sys::WPARAM, lpszdeviceclass: ::windows_core_sys::PCSTR, lpdeviceid: ::windows_core_sys::PCSTR, dwsize: u32, dwsecure: u32, lpszdestaddress: ::windows_core_sys::PCSTR, lpszappname: ::windows_core_sys::PCSTR, lpszcalledparty: ::windows_core_sys::PCSTR, lpszcomment: ::windows_core_sys::PCSTR) -> i32;
+    pub fn tapiRequestMediaCallA(hwnd: ::win32_foundation_sys::HWND, wrequestid: ::win32_foundation_sys::WPARAM, lpszdeviceclass: ::windows_core_sys::PCSTR, lpdeviceid: ::windows_core_sys::PCSTR, dwsize: u32, dwsecure: u32, lpszdestaddress: ::windows_core_sys::PCSTR, lpszappname: ::windows_core_sys::PCSTR, lpszcalledparty: ::windows_core_sys::PCSTR, lpszcomment: ::windows_core_sys::PCSTR) -> i32;
+    pub fn tapiRequestMediaCallW(hwnd: ::win32_foundation_sys::HWND, wrequestid: ::win32_foundation_sys::WPARAM, lpszdeviceclass: ::windows_core_sys::PCWSTR, lpdeviceid: ::windows_core_sys::PCWSTR, dwsize: u32, dwsecure: u32, lpszdestaddress: ::windows_core_sys::PCWSTR, lpszappname: ::windows_core_sys::PCWSTR, lpszcalledparty: ::windows_core_sys::PCWSTR, lpszcomment: ::windows_core_sys::PCWSTR) -> i32;
 }
 pub type ACDGROUP_EVENT = i32;
 pub const ACDGE_NEW_GROUP: ACDGROUP_EVENT = 0i32;
@@ -1065,7 +1037,7 @@ pub struct LINEAGENTINFO {
     pub dwAgentState: u32,
     pub dwNextAgentState: u32,
     pub dwMeasurementPeriod: u32,
-    pub cyOverallCallRate: super::super::System::Com::CY,
+    pub cyOverallCallRate: ::win32_system_sys::Com::CY,
     pub dwNumberOfACDCalls: u32,
     pub dwNumberOfIncomingCalls: u32,
     pub dwNumberOfOutgoingCalls: u32,
@@ -1126,7 +1098,7 @@ pub struct LINEAGENTSESSIONINFO {
     pub dwAverageCallTime: u32,
     pub dwTotalWrapUpTime: u32,
     pub dwAverageWrapUpTime: u32,
-    pub cyACDCallRate: super::super::System::Com::CY,
+    pub cyACDCallRate: ::win32_system_sys::Com::CY,
     pub dwLongestTimeToAnswer: u32,
     pub dwAverageTimeToAnswer: u32,
 }
@@ -1546,7 +1518,6 @@ pub const LINECALLSTATE_RINGBACK: u32 = 32u32;
 pub const LINECALLSTATE_SPECIALINFO: u32 = 128u32;
 pub const LINECALLSTATE_UNKNOWN: u32 = 32768u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LINECALLSTATUS {
     pub dwTotalSize: u32,
     pub dwNeededSize: u32,
@@ -1558,11 +1529,9 @@ pub struct LINECALLSTATUS {
     pub dwDevSpecificSize: u32,
     pub dwDevSpecificOffset: u32,
     pub dwCallFeatures2: u32,
-    pub tStateEntryTime: super::super::Foundation::SYSTEMTIME,
+    pub tStateEntryTime: ::win32_foundation_sys::SYSTEMTIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LINECALLSTATUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LINECALLSTATUS {
     fn clone(&self) -> Self {
         *self
@@ -2022,7 +1991,6 @@ pub const LINEINITIALIZEEXOPTION_USECOMPLETIONPORT: u32 = 3u32;
 pub const LINEINITIALIZEEXOPTION_USEEVENT: u32 = 2u32;
 pub const LINEINITIALIZEEXOPTION_USEHIDDENWINDOW: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LINEINITIALIZEEXPARAMS {
     pub dwTotalSize: u32,
     pub dwNeededSize: u32,
@@ -2031,23 +1999,18 @@ pub struct LINEINITIALIZEEXPARAMS {
     pub Handles: LINEINITIALIZEEXPARAMS_0,
     pub dwCompletionKey: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LINEINITIALIZEEXPARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LINEINITIALIZEEXPARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub union LINEINITIALIZEEXPARAMS_0 {
-    pub hEvent: super::super::Foundation::HANDLE,
-    pub hCompletionPort: super::super::Foundation::HANDLE,
+    pub hEvent: ::win32_foundation_sys::HANDLE,
+    pub hCompletionPort: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LINEINITIALIZEEXPARAMS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LINEINITIALIZEEXPARAMS_0 {
     fn clone(&self) -> Self {
         *self
@@ -2660,38 +2623,32 @@ pub const LINEREMOVEFROMCONF_ANY: u32 = 3u32;
 pub const LINEREMOVEFROMCONF_LAST: u32 = 2u32;
 pub const LINEREMOVEFROMCONF_NONE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LINEREQMAKECALL {
-    pub szDestAddress: [super::super::Foundation::CHAR; 80],
-    pub szAppName: [super::super::Foundation::CHAR; 40],
-    pub szCalledParty: [super::super::Foundation::CHAR; 40],
-    pub szComment: [super::super::Foundation::CHAR; 80],
+    pub szDestAddress: [::win32_foundation_sys::CHAR; 80],
+    pub szAppName: [::win32_foundation_sys::CHAR; 40],
+    pub szCalledParty: [::win32_foundation_sys::CHAR; 40],
+    pub szComment: [::win32_foundation_sys::CHAR; 80],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LINEREQMAKECALL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LINEREQMAKECALL {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LINEREQMEDIACALL {
-    pub hWnd: super::super::Foundation::HWND,
-    pub wRequestID: super::super::Foundation::WPARAM,
-    pub szDeviceClass: [super::super::Foundation::CHAR; 40],
+    pub hWnd: ::win32_foundation_sys::HWND,
+    pub wRequestID: ::win32_foundation_sys::WPARAM,
+    pub szDeviceClass: [::win32_foundation_sys::CHAR; 40],
     pub ucDeviceID: [u8; 40],
     pub dwSize: u32,
     pub dwSecure: u32,
-    pub szDestAddress: [super::super::Foundation::CHAR; 80],
-    pub szAppName: [super::super::Foundation::CHAR; 40],
-    pub szCalledParty: [super::super::Foundation::CHAR; 40],
-    pub szComment: [super::super::Foundation::CHAR; 80],
+    pub szDestAddress: [::win32_foundation_sys::CHAR; 80],
+    pub szAppName: [::win32_foundation_sys::CHAR; 40],
+    pub szCalledParty: [::win32_foundation_sys::CHAR; 40],
+    pub szComment: [::win32_foundation_sys::CHAR; 80],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LINEREQMEDIACALL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LINEREQMEDIACALL {
     fn clone(&self) -> Self {
         *self
@@ -2830,11 +2787,11 @@ pub const LINE_REMOVE: i32 = 25i32;
 pub const LINE_REPLY: i32 = 12i32;
 pub const LINE_REQUEST: i32 = 13i32;
 #[cfg(feature = "Win32_System_Com")]
-pub type LPGETTNEFSTREAMCODEPAGE = ::core::option::Option<unsafe extern "system" fn(lpstream: super::super::System::Com::IStream, lpulcodepage: *mut u32, lpulsubcodepage: *mut u32) -> ::windows_core_sys::HRESULT>;
+pub type LPGETTNEFSTREAMCODEPAGE = ::core::option::Option<unsafe extern "system" fn(lpstream: ::win32_system_sys::Com::IStream, lpulcodepage: *mut u32, lpulsubcodepage: *mut u32) -> ::windows_core_sys::HRESULT>;
 #[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com"))]
-pub type LPOPENTNEFSTREAM = ::core::option::Option<unsafe extern "system" fn(lpvsupport: *mut ::core::ffi::c_void, lpstream: super::super::System::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: super::super::System::AddressBook::IMessage, wkeyval: u16, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT>;
+pub type LPOPENTNEFSTREAM = ::core::option::Option<unsafe extern "system" fn(lpvsupport: *mut ::core::ffi::c_void, lpstream: ::win32_system_sys::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: ::win32_system_sys::AddressBook::IMessage, wkeyval: u16, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT>;
 #[cfg(all(feature = "Win32_System_AddressBook", feature = "Win32_System_Com"))]
-pub type LPOPENTNEFSTREAMEX = ::core::option::Option<unsafe extern "system" fn(lpvsupport: *mut ::core::ffi::c_void, lpstream: super::super::System::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: super::super::System::AddressBook::IMessage, wkeyval: u16, lpadressbook: super::super::System::AddressBook::IAddrBook, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT>;
+pub type LPOPENTNEFSTREAMEX = ::core::option::Option<unsafe extern "system" fn(lpvsupport: *mut ::core::ffi::c_void, lpstream: ::win32_system_sys::Com::IStream, lpszstreamname: *const i8, ulflags: u32, lpmessage: ::win32_system_sys::AddressBook::IMessage, wkeyval: u16, lpadressbook: ::win32_system_sys::AddressBook::IAddrBook, lpptnef: *mut ITnef) -> ::windows_core_sys::HRESULT>;
 pub type MSP_ADDRESS_EVENT = i32;
 pub const ADDRESS_TERMINAL_AVAILABLE: MSP_ADDRESS_EVENT = 0i32;
 pub const ADDRESS_TERMINAL_UNAVAILABLE: MSP_ADDRESS_EVENT = 1i32;
@@ -2964,7 +2921,7 @@ impl ::core::clone::Clone for MSP_EVENT_INFO_0_3 {
 #[repr(C)]
 #[cfg(feature = "Win32_System_Com")]
 pub struct MSP_EVENT_INFO_0_4 {
-    pub pEvent: super::super::System::Com::IDispatch,
+    pub pEvent: ::win32_system_sys::Com::IDispatch,
     pub lEventCode: i32,
 }
 #[cfg(feature = "Win32_System_Com")]
@@ -3019,7 +2976,6 @@ impl ::core::clone::Clone for MSP_EVENT_INFO_0_7 {
 }
 pub const McastAddressAllocation: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3742215922, data2: 41609, data3: 4561, data4: [134, 151, 0, 96, 8, 176, 229, 210] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NSID {
     pub dwSize: u32,
     pub uchType: [u8; 16],
@@ -3027,23 +2983,18 @@ pub struct NSID {
     pub lTime: i32,
     pub address: NSID_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NSID {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NSID {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union NSID_0 {
     pub alias: _ADDR_ALIAS,
-    pub rgchInterNet: [super::super::Foundation::CHAR; 1],
+    pub rgchInterNet: [::win32_foundation_sys::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NSID_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NSID_0 {
     fn clone(&self) -> Self {
         *self
@@ -3291,7 +3242,6 @@ pub const PHONEINITIALIZEEXOPTION_USECOMPLETIONPORT: u32 = 3u32;
 pub const PHONEINITIALIZEEXOPTION_USEEVENT: u32 = 2u32;
 pub const PHONEINITIALIZEEXOPTION_USEHIDDENWINDOW: u32 = 1u32;
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PHONEINITIALIZEEXPARAMS {
     pub dwTotalSize: u32,
     pub dwNeededSize: u32,
@@ -3300,23 +3250,18 @@ pub struct PHONEINITIALIZEEXPARAMS {
     pub Handles: PHONEINITIALIZEEXPARAMS_0,
     pub dwCompletionKey: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PHONEINITIALIZEEXPARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PHONEINITIALIZEEXPARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub union PHONEINITIALIZEEXPARAMS_0 {
-    pub hEvent: super::super::Foundation::HANDLE,
-    pub hCompletionPort: super::super::Foundation::HANDLE,
+    pub hEvent: ::win32_foundation_sys::HANDLE,
+    pub hCompletionPort: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PHONEINITIALIZEEXPARAMS_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PHONEINITIALIZEEXPARAMS_0 {
     fn clone(&self) -> Self {
         *self
@@ -3970,17 +3915,14 @@ impl ::core::clone::Clone for VARSTRING {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct _ADDR_ALIAS {
-    pub rgchName: [super::super::Foundation::CHAR; 41],
-    pub rgchEName: [super::super::Foundation::CHAR; 11],
-    pub rgchSrvr: [super::super::Foundation::CHAR; 12],
+    pub rgchName: [::win32_foundation_sys::CHAR; 41],
+    pub rgchEName: [::win32_foundation_sys::CHAR; 11],
+    pub rgchSrvr: [::win32_foundation_sys::CHAR; 12],
     pub dibDetail: u32,
     pub r#type: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for _ADDR_ALIAS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for _ADDR_ALIAS {
     fn clone(&self) -> Self {
         *self
@@ -4053,10 +3995,9 @@ impl ::core::clone::Clone for linereqmakecallW_tag {
     }
 }
 #[repr(C, packed(1))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct linereqmediacallW_tag {
-    pub hWnd: super::super::Foundation::HWND,
-    pub wRequestID: super::super::Foundation::WPARAM,
+    pub hWnd: ::win32_foundation_sys::HWND,
+    pub wRequestID: ::win32_foundation_sys::WPARAM,
     pub szDeviceClass: [u16; 40],
     pub ucDeviceID: [u8; 40],
     pub dwSize: u32,
@@ -4066,9 +4007,7 @@ pub struct linereqmediacallW_tag {
     pub szCalledParty: [u16; 40],
     pub szComment: [u16; 80],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for linereqmediacallW_tag {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for linereqmediacallW_tag {
     fn clone(&self) -> Self {
         *self

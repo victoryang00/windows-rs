@@ -38,25 +38,22 @@ unsafe impl ::windows_core::RuntimeType for AuthenticationProtocol {
 }
 pub struct CredentialPicker;
 impl CredentialPicker {
-    #[cfg(feature = "Foundation")]
-    pub fn PickWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, CredentialPickerOptions>>(options: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<CredentialPickerResults>> {
+    pub fn PickWithOptionsAsync<'a, Param0: ::windows_core::IntoParam<'a, CredentialPickerOptions>>(options: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CredentialPickerResults>> {
         Self::ICredentialPickerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PickWithOptionsAsync)(::windows_core::Interface::as_raw(this), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<CredentialPickerResults>>(result__)
+            (::windows_core::Interface::vtable(this).PickWithOptionsAsync)(::windows_core::Interface::as_raw(this), options.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CredentialPickerResults>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PickWithMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(targetname: Param0, message: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<CredentialPickerResults>> {
+    pub fn PickWithMessageAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(targetname: Param0, message: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CredentialPickerResults>> {
         Self::ICredentialPickerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PickWithMessageAsync)(::windows_core::Interface::as_raw(this), targetname.into_param().abi(), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<CredentialPickerResults>>(result__)
+            (::windows_core::Interface::vtable(this).PickWithMessageAsync)(::windows_core::Interface::as_raw(this), targetname.into_param().abi(), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CredentialPickerResults>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PickWithCaptionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(targetname: Param0, message: Param1, caption: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<CredentialPickerResults>> {
+    pub fn PickWithCaptionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(targetname: Param0, message: Param1, caption: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<CredentialPickerResults>> {
         Self::ICredentialPickerStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PickWithCaptionAsync)(::windows_core::Interface::as_raw(this), targetname.into_param().abi(), message.into_param().abi(), caption.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<CredentialPickerResults>>(result__)
+            (::windows_core::Interface::vtable(this).PickWithCaptionAsync)(::windows_core::Interface::as_raw(this), targetname.into_param().abi(), message.into_param().abi(), caption.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<CredentialPickerResults>>(result__)
         })
     }
     pub fn ICredentialPickerStatics<R, F: FnOnce(&ICredentialPickerStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -144,16 +141,16 @@ impl CredentialPickerOptions {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetPreviousCredential<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPreviousCredential<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IBuffer>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPreviousCredential)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn PreviousCredential(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn PreviousCredential(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PreviousCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).PreviousCredential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn SetAlwaysDisplayDialog(&self, value: bool) -> ::windows_core::Result<()> {
@@ -285,11 +282,11 @@ impl CredentialPickerResults {
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Credential(&self) -> ::windows_core::Result<super::super::super::Storage::Streams::IBuffer> {
+    pub fn Credential(&self) -> ::windows_core::Result<::winrt_storage::Streams::IBuffer> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Credential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Storage::Streams::IBuffer>(result__)
+            (::windows_core::Interface::vtable(this).Credential)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IBuffer>(result__)
         }
     }
     pub fn CredentialDomainName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -489,18 +486,9 @@ unsafe impl ::windows_core::Interface for ICredentialPickerStatics {
 #[doc(hidden)]
 pub struct ICredentialPickerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub PickWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, options: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PickWithOptionsAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub PickWithMessageAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targetname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PickWithMessageAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub PickWithCaptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, targetname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, caption: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PickWithCaptionAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -513,14 +501,8 @@ unsafe impl ::windows_core::Interface for IUserConsentVerifierStatics {
 #[doc(hidden)]
 pub struct IUserConsentVerifierStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub CheckAvailabilityAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CheckAvailabilityAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub RequestVerificationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, message: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RequestVerificationAsync: usize,
 }
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
@@ -562,18 +544,16 @@ unsafe impl ::windows_core::RuntimeType for UserConsentVerificationResult {
 }
 pub struct UserConsentVerifier;
 impl UserConsentVerifier {
-    #[cfg(feature = "Foundation")]
-    pub fn CheckAvailabilityAsync() -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<UserConsentVerifierAvailability>> {
+    pub fn CheckAvailabilityAsync() -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UserConsentVerifierAvailability>> {
         Self::IUserConsentVerifierStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CheckAvailabilityAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<UserConsentVerifierAvailability>>(result__)
+            (::windows_core::Interface::vtable(this).CheckAvailabilityAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UserConsentVerifierAvailability>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RequestVerificationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(message: Param0) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<UserConsentVerificationResult>> {
+    pub fn RequestVerificationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(message: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<UserConsentVerificationResult>> {
         Self::IUserConsentVerifierStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RequestVerificationAsync)(::windows_core::Interface::as_raw(this), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<UserConsentVerificationResult>>(result__)
+            (::windows_core::Interface::vtable(this).RequestVerificationAsync)(::windows_core::Interface::as_raw(this), message.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<UserConsentVerificationResult>>(result__)
         })
     }
     pub fn IUserConsentVerifierStatics<R, F: FnOnce(&IUserConsentVerifierStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

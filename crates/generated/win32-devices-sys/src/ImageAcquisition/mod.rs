@@ -71,40 +71,34 @@ pub const DETECT_FLAT: u32 = 8u32;
 pub const DETECT_SCAN: u32 = 16u32;
 pub const DETECT_STOR: u32 = 4096u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEVICEDIALOGDATA {
     pub cbSize: u32,
-    pub hwndParent: super::super::Foundation::HWND,
+    pub hwndParent: ::win32_foundation_sys::HWND,
     pub pIWiaItemRoot: IWiaItem,
     pub dwFlags: u32,
     pub lIntent: i32,
     pub lItemCount: i32,
     pub ppWiaItems: *mut IWiaItem,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEVICEDIALOGDATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEVICEDIALOGDATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DEVICEDIALOGDATA2 {
     pub cbSize: u32,
     pub pIWiaItemRoot: IWiaItem2,
     pub dwFlags: u32,
-    pub hwndParent: super::super::Foundation::HWND,
-    pub bstrFolderName: super::super::Foundation::BSTR,
-    pub bstrFilename: super::super::Foundation::BSTR,
+    pub hwndParent: ::win32_foundation_sys::HWND,
+    pub bstrFolderName: ::win32_foundation_sys::BSTR,
+    pub bstrFilename: ::win32_foundation_sys::BSTR,
     pub lNumFiles: i32,
-    pub pbstrFilePaths: *mut super::super::Foundation::BSTR,
+    pub pbstrFilePaths: *mut ::win32_foundation_sys::BSTR,
     pub pWiaItem: IWiaItem2,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DEVICEDIALOGDATA2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DEVICEDIALOGDATA2 {
     fn clone(&self) -> Self {
         *self
@@ -114,7 +108,6 @@ pub const DEVICE_ATTENTION: u32 = 1024u32;
 pub const DUP: u32 = 4u32;
 pub const DUPLEX: u32 = 4u32;
 pub const DUP_READY: u32 = 4u32;
-#[cfg(feature = "Win32_Foundation")]
 pub type DeviceDialogFunction = ::core::option::Option<unsafe extern "system" fn(param0: *mut DEVICEDIALOGDATA) -> ::windows_core_sys::HRESULT>;
 pub const EFFECTMODE_BW: u32 = 2u32;
 pub const EFFECTMODE_SEPIA: u32 = 3u32;
@@ -225,7 +218,6 @@ pub const MCRO_STATUS_OK: u32 = 1u32;
 pub const MICR_READER: u32 = 1048576u32;
 pub const MICR_READER_READY: u32 = 65536u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MINIDRV_TRANSFER_CONTEXT {
     pub lSize: i32,
     pub lWidthInPixels: i32,
@@ -243,8 +235,8 @@ pub struct MINIDRV_TRANSFER_CONTEXT {
     pub lNumBuffers: i32,
     pub pBaseBuffer: *mut u8,
     pub pTransferBuffer: *mut u8,
-    pub bTransferDataCB: super::super::Foundation::BOOL,
-    pub bClassDrvAllocBuf: super::super::Foundation::BOOL,
+    pub bTransferDataCB: ::win32_foundation_sys::BOOL,
+    pub bClassDrvAllocBuf: ::win32_foundation_sys::BOOL,
     pub lClientAddress: isize,
     pub pIWiaMiniDrvCallBack: IWiaMiniDrvCallBack,
     pub lImageSize: i32,
@@ -255,9 +247,7 @@ pub struct MINIDRV_TRANSFER_CONTEXT {
     pub lCurIfdOffset: i32,
     pub lPrevIfdOffset: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MINIDRV_TRANSFER_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MINIDRV_TRANSFER_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -290,7 +280,6 @@ pub const RIGHT_JUSTIFIED: u32 = 2u32;
 pub const ROT180: u32 = 2u32;
 pub const ROT270: u32 = 3u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SCANINFO {
     pub ADF: i32,
     pub TPA: i32,
@@ -325,13 +314,11 @@ pub struct SCANINFO {
     pub bNeedDataAlignment: i32,
     pub DelayBetweenRead: i32,
     pub MaxBufferSize: i32,
-    pub DeviceIOHandles: [super::super::Foundation::HANDLE; 16],
+    pub DeviceIOHandles: [::win32_foundation_sys::HANDLE; 16],
     pub lReserved: [i32; 4],
     pub pMicroDriverContext: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SCANINFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SCANINFO {
     fn clone(&self) -> Self {
         *self
@@ -386,7 +373,6 @@ pub const TYMED_CALLBACK: u32 = 128u32;
 pub const TYMED_MULTIPAGE_CALLBACK: u32 = 512u32;
 pub const TYMED_MULTIPAGE_FILE: u32 = 256u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VAL {
     pub lVal: i32,
     pub dblVal: f64,
@@ -394,13 +380,11 @@ pub struct VAL {
     pub pScanInfo: *mut SCANINFO,
     pub handle: isize,
     pub ppButtonNames: *mut *mut u16,
-    pub pHandle: *mut super::super::Foundation::HANDLE,
+    pub pHandle: *mut ::win32_foundation_sys::HANDLE,
     pub lReserved: i32,
-    pub szVal: [super::super::Foundation::CHAR; 255],
+    pub szVal: [::win32_foundation_sys::CHAR; 255],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VAL {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VAL {
     fn clone(&self) -> Self {
         *self
@@ -414,48 +398,39 @@ pub const WHITEBALANCE_MANUAL: u32 = 1u32;
 pub const WHITEBALANCE_ONEPUSH_AUTO: u32 = 3u32;
 pub const WHITEBALANCE_TUNGSTEN: u32 = 6u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIAS_CHANGED_VALUE_INFO {
-    pub bChanged: super::super::Foundation::BOOL,
+    pub bChanged: ::win32_foundation_sys::BOOL,
     pub vt: i32,
     pub Old: WIAS_CHANGED_VALUE_INFO_1,
     pub Current: WIAS_CHANGED_VALUE_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIAS_CHANGED_VALUE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIAS_CHANGED_VALUE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WIAS_CHANGED_VALUE_INFO_0 {
     pub lVal: i32,
     pub fltVal: f32,
-    pub bstrVal: super::super::Foundation::BSTR,
+    pub bstrVal: ::win32_foundation_sys::BSTR,
     pub guidVal: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIAS_CHANGED_VALUE_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIAS_CHANGED_VALUE_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WIAS_CHANGED_VALUE_INFO_1 {
     pub lVal: i32,
     pub fltVal: f32,
-    pub bstrVal: super::super::Foundation::BSTR,
+    pub bstrVal: ::win32_foundation_sys::BSTR,
     pub guidVal: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIAS_CHANGED_VALUE_INFO_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIAS_CHANGED_VALUE_INFO_1 {
     fn clone(&self) -> Self {
         *self
@@ -691,19 +666,16 @@ pub const WIA_DATA_RAW_YUV: u32 = 8u32;
 pub const WIA_DATA_RAW_YUVK: u32 = 9u32;
 pub const WIA_DATA_THRESHOLD: u32 = 0u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_DATA_TRANSFER_INFO {
     pub ulSize: u32,
     pub ulSection: u32,
     pub ulBufferSize: u32,
-    pub bDoubleBuffer: super::super::Foundation::BOOL,
+    pub bDoubleBuffer: ::win32_foundation_sys::BOOL,
     pub ulReserved1: u32,
     pub ulReserved2: u32,
     pub ulReserved3: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_DATA_TRANSFER_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_DATA_TRANSFER_INFO {
     fn clone(&self) -> Self {
         *self
@@ -719,18 +691,15 @@ pub const WIA_DEVICE_NOT_CONNECTED: u32 = 0u32;
 pub const WIA_DEVINFO_ENUM_ALL: u32 = 15u32;
 pub const WIA_DEVINFO_ENUM_LOCAL: u32 = 16u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_DEV_CAP {
     pub guid: ::windows_core_sys::GUID,
     pub ulFlags: u32,
-    pub bstrName: super::super::Foundation::BSTR,
-    pub bstrDescription: super::super::Foundation::BSTR,
-    pub bstrIcon: super::super::Foundation::BSTR,
-    pub bstrCommandline: super::super::Foundation::BSTR,
+    pub bstrName: ::win32_foundation_sys::BSTR,
+    pub bstrDescription: ::win32_foundation_sys::BSTR,
+    pub bstrIcon: ::win32_foundation_sys::BSTR,
+    pub bstrCommandline: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_DEV_CAP {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_DEV_CAP {
     fn clone(&self) -> Self {
         *self
@@ -784,18 +753,15 @@ pub const WIA_DIP_VEND_DESC_STR: &str = "Manufacturer";
 pub const WIA_DIP_WIA_VERSION: u32 = 14u32;
 pub const WIA_DIP_WIA_VERSION_STR: &str = "WIA Version";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_DITHER_PATTERN_DATA {
     pub lSize: i32,
-    pub bstrPatternName: super::super::Foundation::BSTR,
+    pub bstrPatternName: ::win32_foundation_sys::BSTR,
     pub lPatternWidth: i32,
     pub lPatternLength: i32,
     pub cbPattern: i32,
     pub pbPattern: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_DITHER_PATTERN_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_DITHER_PATTERN_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1618,37 +1584,30 @@ pub const WIA_PRINT_YEAR: u32 = 1u32;
 pub const WIA_PRIVATE_DEVPROP: u32 = 38914u32;
 pub const WIA_PRIVATE_ITEMPROP: u32 = 71682u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_CONTEXT {
     pub cProps: u32,
     pub pProps: *mut u32,
-    pub pChanged: *mut super::super::Foundation::BOOL,
+    pub pChanged: *mut ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_CONTEXT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO {
     pub lAccessFlags: u32,
     pub vt: u16,
     pub ValidVal: WIA_PROPERTY_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union WIA_PROPERTY_INFO_0 {
     pub Range: WIA_PROPERTY_INFO_0_7,
     pub RangeFloat: WIA_PROPERTY_INFO_0_6,
@@ -1659,128 +1618,102 @@ pub union WIA_PROPERTY_INFO_0 {
     pub Flag: WIA_PROPERTY_INFO_0_0,
     pub None: WIA_PROPERTY_INFO_0_5,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO_0_0 {
     pub Nom: i32,
     pub ValidBits: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO_0_1 {
     pub cNumList: i32,
-    pub Nom: super::super::Foundation::BSTR,
-    pub pList: *mut super::super::Foundation::BSTR,
+    pub Nom: ::win32_foundation_sys::BSTR,
+    pub pList: *mut ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO_0_2 {
     pub cNumList: i32,
     pub Nom: f64,
     pub pList: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO_0_3 {
     pub cNumList: i32,
     pub Nom: ::windows_core_sys::GUID,
     pub pList: *mut ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO_0_4 {
     pub cNumList: i32,
     pub Nom: i32,
     pub pList: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0_4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO_0_5 {
     pub Dummy: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0_5 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_5 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO_0_6 {
     pub Min: f64,
     pub Nom: f64,
     pub Max: f64,
     pub Inc: f64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0_6 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_6 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIA_PROPERTY_INFO_0_7 {
     pub Min: i32,
     pub Nom: i32,
     pub Max: i32,
     pub Inc: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIA_PROPERTY_INFO_0_7 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIA_PROPERTY_INFO_0_7 {
     fn clone(&self) -> Self {
         *self

@@ -2,22 +2,18 @@
 extern "system" {
     pub fn AddISNSServerA(address: ::windows_core_sys::PCSTR) -> u32;
     pub fn AddISNSServerW(address: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AddIScsiConnectionA(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, reserved: *mut ::core::ffi::c_void, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core_sys::PCSTR, connectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
     pub fn AddIScsiConnectionW(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, reserved: *mut ::core::ffi::c_void, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core_sys::PCSTR, connectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AddIScsiSendTargetPortalA(initiatorinstance: ::windows_core_sys::PCSTR, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
     pub fn AddIScsiSendTargetPortalW(initiatorinstance: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, loginoptions: *mut ISCSI_LOGIN_OPTIONS, securityflags: u64, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AddIScsiStaticTargetA(targetname: ::windows_core_sys::PCSTR, targetalias: ::windows_core_sys::PCSTR, targetflags: u32, persist: super::super::Foundation::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AddIScsiStaticTargetW(targetname: ::windows_core_sys::PCWSTR, targetalias: ::windows_core_sys::PCWSTR, targetflags: u32, persist: super::super::Foundation::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPW) -> u32;
+    pub fn AddIScsiStaticTargetA(targetname: ::windows_core_sys::PCSTR, targetalias: ::windows_core_sys::PCSTR, targetflags: u32, persist: ::win32_foundation_sys::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPA) -> u32;
+    pub fn AddIScsiStaticTargetW(targetname: ::windows_core_sys::PCWSTR, targetalias: ::windows_core_sys::PCWSTR, targetflags: u32, persist: ::win32_foundation_sys::BOOLEAN, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, portalgroup: *mut ISCSI_TARGET_PORTAL_GROUPW) -> u32;
     pub fn AddPersistentIScsiDeviceA(devicepath: ::windows_core_sys::PCSTR) -> u32;
     pub fn AddPersistentIScsiDeviceW(devicepath: ::windows_core_sys::PCWSTR) -> u32;
     pub fn AddRadiusServerA(address: ::windows_core_sys::PCSTR) -> u32;
     pub fn AddRadiusServerW(address: ::windows_core_sys::PCWSTR) -> u32;
     pub fn ClearPersistentIScsiDevices() -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ioctl"))]
+    #[cfg(feature = "Win32_System_Ioctl")]
     pub fn GetDevicesForIScsiSessionA(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, devicecount: *mut u32, devices: *mut ISCSI_DEVICE_ON_SESSIONA) -> u32;
     #[cfg(feature = "Win32_System_Ioctl")]
     pub fn GetDevicesForIScsiSessionW(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, devicecount: *mut u32, devices: *mut ISCSI_DEVICE_ON_SESSIONW) -> u32;
@@ -26,29 +22,23 @@ extern "system" {
     pub fn GetIScsiInitiatorNodeNameA(initiatornodename: ::windows_core_sys::PSTR) -> u32;
     pub fn GetIScsiInitiatorNodeNameW(initiatornodename: ::windows_core_sys::PWSTR) -> u32;
     pub fn GetIScsiSessionListA(buffersize: *mut u32, sessioncount: *mut u32, sessioninfo: *mut ISCSI_SESSION_INFOA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn GetIScsiSessionListEx(buffersize: *mut u32, sessioncountptr: *mut u32, sessioninfo: *mut ISCSI_SESSION_INFO_EX) -> u32;
     pub fn GetIScsiSessionListW(buffersize: *mut u32, sessioncount: *mut u32, sessioninfo: *mut ISCSI_SESSION_INFOW) -> u32;
     pub fn GetIScsiTargetInformationA(targetname: ::windows_core_sys::PCSTR, discoverymechanism: ::windows_core_sys::PCSTR, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
     pub fn GetIScsiTargetInformationW(targetname: ::windows_core_sys::PCWSTR, discoverymechanism: ::windows_core_sys::PCWSTR, infoclass: TARGET_INFORMATION_CLASS, buffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
     pub fn GetIScsiVersionInformation(versioninfo: *mut ISCSI_VERSION_INFO) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LoginIScsiTargetA(targetname: ::windows_core_sys::PCSTR, isinformationalsession: super::super::Foundation::BOOLEAN, initiatorinstance: ::windows_core_sys::PCSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core_sys::PCSTR, ispersistent: super::super::Foundation::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LoginIScsiTargetW(targetname: ::windows_core_sys::PCWSTR, isinformationalsession: super::super::Foundation::BOOLEAN, initiatorinstance: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core_sys::PCSTR, ispersistent: super::super::Foundation::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
+    pub fn LoginIScsiTargetA(targetname: ::windows_core_sys::PCSTR, isinformationalsession: ::win32_foundation_sys::BOOLEAN, initiatorinstance: ::windows_core_sys::PCSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALA, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGA, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core_sys::PCSTR, ispersistent: ::win32_foundation_sys::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
+    pub fn LoginIScsiTargetW(targetname: ::windows_core_sys::PCWSTR, isinformationalsession: ::win32_foundation_sys::BOOLEAN, initiatorinstance: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, targetportal: *mut ISCSI_TARGET_PORTALW, securityflags: u64, mappings: *mut ISCSI_TARGET_MAPPINGW, loginoptions: *mut ISCSI_LOGIN_OPTIONS, keysize: u32, key: ::windows_core_sys::PCSTR, ispersistent: ::win32_foundation_sys::BOOLEAN, uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, uniqueconnectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
     pub fn LogoutIScsiTarget(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
     pub fn RefreshISNSServerA(address: ::windows_core_sys::PCSTR) -> u32;
     pub fn RefreshISNSServerW(address: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RefreshIScsiSendTargetPortalA(initiatorinstance: ::windows_core_sys::PCSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
     pub fn RefreshIScsiSendTargetPortalW(initiatorinstance: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
     pub fn RemoveISNSServerA(address: ::windows_core_sys::PCSTR) -> u32;
     pub fn RemoveISNSServerW(address: ::windows_core_sys::PCWSTR) -> u32;
     pub fn RemoveIScsiConnection(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, connectionid: *mut ISCSI_UNIQUE_SESSION_ID) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RemoveIScsiPersistentTargetA(initiatorinstance: ::windows_core_sys::PCSTR, initiatorportnumber: u32, targetname: ::windows_core_sys::PCSTR, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
     pub fn RemoveIScsiPersistentTargetW(initiatorinstance: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, targetname: ::windows_core_sys::PCWSTR, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn RemoveIScsiSendTargetPortalA(initiatorinstance: ::windows_core_sys::PCSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALA) -> u32;
     pub fn RemoveIScsiSendTargetPortalW(initiatorinstance: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, portal: *mut ISCSI_TARGET_PORTALW) -> u32;
     pub fn RemoveIScsiStaticTargetA(targetname: ::windows_core_sys::PCSTR) -> u32;
@@ -57,30 +47,22 @@ extern "system" {
     pub fn RemovePersistentIScsiDeviceW(devicepath: ::windows_core_sys::PCWSTR) -> u32;
     pub fn RemoveRadiusServerA(address: ::windows_core_sys::PCSTR) -> u32;
     pub fn RemoveRadiusServerW(address: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ReportActiveIScsiTargetMappingsA(buffersize: *mut u32, mappingcount: *mut u32, mappings: *mut ISCSI_TARGET_MAPPINGA) -> u32;
     pub fn ReportActiveIScsiTargetMappingsW(buffersize: *mut u32, mappingcount: *mut u32, mappings: *mut ISCSI_TARGET_MAPPINGW) -> u32;
     pub fn ReportISNSServerListA(buffersizeinchar: *mut u32, buffer: ::windows_core_sys::PSTR) -> u32;
     pub fn ReportISNSServerListW(buffersizeinchar: *mut u32, buffer: ::windows_core_sys::PWSTR) -> u32;
     pub fn ReportIScsiInitiatorListA(buffersize: *mut u32, buffer: ::windows_core_sys::PSTR) -> u32;
     pub fn ReportIScsiInitiatorListW(buffersize: *mut u32, buffer: ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ReportIScsiPersistentLoginsA(count: *mut u32, persistentlogininfo: *mut PERSISTENT_ISCSI_LOGIN_INFOA, buffersizeinbytes: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ReportIScsiPersistentLoginsW(count: *mut u32, persistentlogininfo: *mut PERSISTENT_ISCSI_LOGIN_INFOW, buffersizeinbytes: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ReportIScsiSendTargetPortalsA(portalcount: *mut u32, portalinfo: *mut ISCSI_TARGET_PORTAL_INFOA) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ReportIScsiSendTargetPortalsExA(portalcount: *mut u32, portalinfosize: *mut u32, portalinfo: *mut ISCSI_TARGET_PORTAL_INFO_EXA) -> u32;
     pub fn ReportIScsiSendTargetPortalsExW(portalcount: *mut u32, portalinfosize: *mut u32, portalinfo: *mut ISCSI_TARGET_PORTAL_INFO_EXW) -> u32;
     pub fn ReportIScsiSendTargetPortalsW(portalcount: *mut u32, portalinfo: *mut ISCSI_TARGET_PORTAL_INFOW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ReportIScsiTargetPortalsA(initiatorname: ::windows_core_sys::PCSTR, targetname: ::windows_core_sys::PCSTR, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALA) -> u32;
     pub fn ReportIScsiTargetPortalsW(initiatorname: ::windows_core_sys::PCWSTR, targetname: ::windows_core_sys::PCWSTR, targetportaltag: *mut u16, elementcount: *mut u32, portals: *mut ISCSI_TARGET_PORTALW) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReportIScsiTargetsA(forceupdate: super::super::Foundation::BOOLEAN, buffersize: *mut u32, buffer: ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReportIScsiTargetsW(forceupdate: super::super::Foundation::BOOLEAN, buffersize: *mut u32, buffer: ::windows_core_sys::PWSTR) -> u32;
+    pub fn ReportIScsiTargetsA(forceupdate: ::win32_foundation_sys::BOOLEAN, buffersize: *mut u32, buffer: ::windows_core_sys::PSTR) -> u32;
+    pub fn ReportIScsiTargetsW(forceupdate: ::win32_foundation_sys::BOOLEAN, buffersize: *mut u32, buffer: ::windows_core_sys::PWSTR) -> u32;
     pub fn ReportPersistentIScsiDevicesA(buffersizeinchar: *mut u32, buffer: ::windows_core_sys::PSTR) -> u32;
     pub fn ReportPersistentIScsiDevicesW(buffersizeinchar: *mut u32, buffer: ::windows_core_sys::PWSTR) -> u32;
     pub fn ReportRadiusServerListA(buffersizeinchar: *mut u32, buffer: ::windows_core_sys::PSTR) -> u32;
@@ -88,20 +70,15 @@ extern "system" {
     pub fn SendScsiInquiry(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, lun: u64, evpdcmddt: u8, pagecode: u8, scsistatus: *mut u8, responsesize: *mut u32, responsebuffer: *mut u8, sensesize: *mut u32, sensebuffer: *mut u8) -> u32;
     pub fn SendScsiReadCapacity(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, lun: u64, scsistatus: *mut u8, responsesize: *mut u32, responsebuffer: *mut u8, sensesize: *mut u32, sensebuffer: *mut u8) -> u32;
     pub fn SendScsiReportLuns(uniquesessionid: *mut ISCSI_UNIQUE_SESSION_ID, scsistatus: *mut u8, responsesize: *mut u32, responsebuffer: *mut u8, sensesize: *mut u32, sensebuffer: *mut u8) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetIScsiGroupPresharedKey(keylength: u32, key: *mut u8, persist: super::super::Foundation::BOOLEAN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetIScsiIKEInfoA(initiatorname: ::windows_core_sys::PCSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: super::super::Foundation::BOOLEAN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetIScsiIKEInfoW(initiatorname: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: super::super::Foundation::BOOLEAN) -> u32;
+    pub fn SetIScsiGroupPresharedKey(keylength: u32, key: *mut u8, persist: ::win32_foundation_sys::BOOLEAN) -> u32;
+    pub fn SetIScsiIKEInfoA(initiatorname: ::windows_core_sys::PCSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: ::win32_foundation_sys::BOOLEAN) -> u32;
+    pub fn SetIScsiIKEInfoW(initiatorname: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, authinfo: *mut IKE_AUTHENTICATION_INFORMATION, persist: ::win32_foundation_sys::BOOLEAN) -> u32;
     pub fn SetIScsiInitiatorCHAPSharedSecret(sharedsecretlength: u32, sharedsecret: *mut u8) -> u32;
     pub fn SetIScsiInitiatorNodeNameA(initiatornodename: ::windows_core_sys::PCSTR) -> u32;
     pub fn SetIScsiInitiatorNodeNameW(initiatornodename: ::windows_core_sys::PCWSTR) -> u32;
     pub fn SetIScsiInitiatorRADIUSSharedSecret(sharedsecretlength: u32, sharedsecret: *mut u8) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetIScsiTunnelModeOuterAddressA(initiatorname: ::windows_core_sys::PCSTR, initiatorportnumber: u32, destinationaddress: ::windows_core_sys::PCSTR, outermodeaddress: ::windows_core_sys::PCSTR, persist: super::super::Foundation::BOOLEAN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetIScsiTunnelModeOuterAddressW(initiatorname: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, destinationaddress: ::windows_core_sys::PCWSTR, outermodeaddress: ::windows_core_sys::PCWSTR, persist: super::super::Foundation::BOOLEAN) -> u32;
+    pub fn SetIScsiTunnelModeOuterAddressA(initiatorname: ::windows_core_sys::PCSTR, initiatorportnumber: u32, destinationaddress: ::windows_core_sys::PCSTR, outermodeaddress: ::windows_core_sys::PCSTR, persist: ::win32_foundation_sys::BOOLEAN) -> u32;
+    pub fn SetIScsiTunnelModeOuterAddressW(initiatorname: ::windows_core_sys::PCWSTR, initiatorportnumber: u32, destinationaddress: ::windows_core_sys::PCWSTR, outermodeaddress: ::windows_core_sys::PCWSTR, persist: ::win32_foundation_sys::BOOLEAN) -> u32;
     pub fn SetupPersistentIScsiDevices() -> u32;
     pub fn SetupPersistentIScsiVolumes() -> u32;
 }
@@ -249,7 +226,6 @@ pub const DUMP_EX_FLAG_RESUME_SUPPORT: u32 = 4u32;
 pub const DUMP_EX_FLAG_SUPPORT_64BITMEMORY: u32 = 1u32;
 pub const DUMP_EX_FLAG_SUPPORT_DD_TELEMETRY: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DUMP_POINTERS {
     pub AdapterObject: *mut _ADAPTER_OBJECT,
     pub MappedRegisterBase: *mut ::core::ffi::c_void,
@@ -257,27 +233,24 @@ pub struct DUMP_POINTERS {
     pub CommonBufferVa: *mut ::core::ffi::c_void,
     pub CommonBufferPa: i64,
     pub CommonBufferSize: u32,
-    pub AllocateCommonBuffers: super::super::Foundation::BOOLEAN,
-    pub UseDiskDump: super::super::Foundation::BOOLEAN,
+    pub AllocateCommonBuffers: ::win32_foundation_sys::BOOLEAN,
+    pub UseDiskDump: ::win32_foundation_sys::BOOLEAN,
     pub Spare1: [u8; 2],
     pub DeviceObject: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DUMP_POINTERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DUMP_POINTERS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DUMP_POINTERS_EX {
     pub Header: DUMP_POINTERS_VERSION,
     pub DumpData: *mut ::core::ffi::c_void,
     pub CommonBufferVa: *mut ::core::ffi::c_void,
     pub CommonBufferSize: u32,
-    pub AllocateCommonBuffers: super::super::Foundation::BOOLEAN,
+    pub AllocateCommonBuffers: ::win32_foundation_sys::BOOLEAN,
     pub DeviceObject: *mut ::core::ffi::c_void,
     pub DriverList: *mut ::core::ffi::c_void,
     pub dwPortFlags: u32,
@@ -286,13 +259,11 @@ pub struct DUMP_POINTERS_EX {
     pub MaxTransferSize: u32,
     pub AdapterObject: *mut ::core::ffi::c_void,
     pub MappedRegisterBase: *mut ::core::ffi::c_void,
-    pub DeviceReady: *mut super::super::Foundation::BOOLEAN,
+    pub DeviceReady: *mut ::win32_foundation_sys::BOOLEAN,
     pub DumpDevicePowerOn: PDUMP_DEVICE_POWERON_ROUTINE,
     pub DumpDevicePowerOnContext: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DUMP_POINTERS_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DUMP_POINTERS_EX {
     fn clone(&self) -> Self {
         *self
@@ -391,11 +362,10 @@ pub const HYBRID_FUNCTION_ENABLE_CACHING_MEDIUM: u32 = 17u32;
 pub const HYBRID_FUNCTION_GET_INFO: u32 = 1u32;
 pub const HYBRID_FUNCTION_SET_DIRTY_THRESHOLD: u32 = 18u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HYBRID_INFORMATION {
     pub Version: u32,
     pub Size: u32,
-    pub HybridSupported: super::super::Foundation::BOOLEAN,
+    pub HybridSupported: ::win32_foundation_sys::BOOLEAN,
     pub Status: NVCACHE_STATUS,
     pub CacheTypeEffective: NVCACHE_TYPE,
     pub CacheTypeDefault: NVCACHE_TYPE,
@@ -404,32 +374,26 @@ pub struct HYBRID_INFORMATION {
     pub Attributes: HYBRID_INFORMATION_0,
     pub Priorities: HYBRID_INFORMATION_1,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HYBRID_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HYBRID_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HYBRID_INFORMATION_0 {
     pub _bitfield: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HYBRID_INFORMATION_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HYBRID_INFORMATION_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HYBRID_INFORMATION_1 {
     pub PriorityLevelCount: u8,
-    pub MaxPriorityBehavior: super::super::Foundation::BOOLEAN,
+    pub MaxPriorityBehavior: ::win32_foundation_sys::BOOLEAN,
     pub OptimalWriteGranularity: u8,
     pub Reserved: u8,
     pub DirtyThresholdLow: u32,
@@ -437,25 +401,20 @@ pub struct HYBRID_INFORMATION_1 {
     pub SupportedCommands: HYBRID_INFORMATION_1_0,
     pub Priority: [NVCACHE_PRIORITY_LEVEL_DESCRIPTOR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HYBRID_INFORMATION_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HYBRID_INFORMATION_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HYBRID_INFORMATION_1_0 {
     pub _bitfield: u32,
     pub MaxEvictCommands: u32,
     pub MaxLbaRangeCountForEvict: u32,
     pub MaxLbaRangeCountForChangeLba: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HYBRID_INFORMATION_1_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HYBRID_INFORMATION_1_0 {
     fn clone(&self) -> Self {
         *self
@@ -573,20 +532,17 @@ pub const IOCTL_SCSI_PASS_THROUGH_DIRECT_EX: u32 = 315464u32;
 pub const IOCTL_SCSI_PASS_THROUGH_EX: u32 = 315460u32;
 pub const IOCTL_SCSI_RESCAN_BUS: u32 = 266268u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IO_SCSI_CAPABILITIES {
     pub Length: u32,
     pub MaximumTransferLength: u32,
     pub MaximumPhysicalPages: u32,
     pub SupportedAsynchronousEvents: u32,
     pub AlignmentMask: u32,
-    pub TaggedQueuing: super::super::Foundation::BOOLEAN,
-    pub AdapterScansDown: super::super::Foundation::BOOLEAN,
-    pub AdapterUsesPio: super::super::Foundation::BOOLEAN,
+    pub TaggedQueuing: ::win32_foundation_sys::BOOLEAN,
+    pub AdapterScansDown: ::win32_foundation_sys::BOOLEAN,
+    pub AdapterUsesPio: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IO_SCSI_CAPABILITIES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IO_SCSI_CAPABILITIES {
     fn clone(&self) -> Self {
         *self
@@ -645,20 +601,20 @@ impl ::core::clone::Clone for ISCSI_CONNECTION_INFO_EX {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ioctl"))]
+#[cfg(feature = "Win32_System_Ioctl")]
 pub struct ISCSI_DEVICE_ON_SESSIONA {
-    pub InitiatorName: [super::super::Foundation::CHAR; 256],
-    pub TargetName: [super::super::Foundation::CHAR; 224],
+    pub InitiatorName: [::win32_foundation_sys::CHAR; 256],
+    pub TargetName: [::win32_foundation_sys::CHAR; 224],
     pub ScsiAddress: SCSI_ADDRESS,
     pub DeviceInterfaceType: ::windows_core_sys::GUID,
-    pub DeviceInterfaceName: [super::super::Foundation::CHAR; 260],
-    pub LegacyName: [super::super::Foundation::CHAR; 260],
-    pub StorageDeviceNumber: super::super::System::Ioctl::STORAGE_DEVICE_NUMBER,
+    pub DeviceInterfaceName: [::win32_foundation_sys::CHAR; 260],
+    pub LegacyName: [::win32_foundation_sys::CHAR; 260],
+    pub StorageDeviceNumber: ::win32_system_sys::Ioctl::STORAGE_DEVICE_NUMBER,
     pub DeviceInstance: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ioctl"))]
+#[cfg(feature = "Win32_System_Ioctl")]
 impl ::core::marker::Copy for ISCSI_DEVICE_ON_SESSIONA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ioctl"))]
+#[cfg(feature = "Win32_System_Ioctl")]
 impl ::core::clone::Clone for ISCSI_DEVICE_ON_SESSIONA {
     fn clone(&self) -> Self {
         *self
@@ -673,7 +629,7 @@ pub struct ISCSI_DEVICE_ON_SESSIONW {
     pub DeviceInterfaceType: ::windows_core_sys::GUID,
     pub DeviceInterfaceName: [u16; 260],
     pub LegacyName: [u16; 260],
-    pub StorageDeviceNumber: super::super::System::Ioctl::STORAGE_DEVICE_NUMBER,
+    pub StorageDeviceNumber: ::win32_system_sys::Ioctl::STORAGE_DEVICE_NUMBER,
     pub DeviceInstance: u32,
 }
 #[cfg(feature = "Win32_System_Ioctl")]
@@ -766,14 +722,13 @@ impl ::core::clone::Clone for ISCSI_SESSION_INFOW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ISCSI_SESSION_INFO_EX {
     pub SessionId: ISCSI_UNIQUE_SESSION_ID,
-    pub InitialR2t: super::super::Foundation::BOOLEAN,
-    pub ImmediateData: super::super::Foundation::BOOLEAN,
+    pub InitialR2t: ::win32_foundation_sys::BOOLEAN,
+    pub ImmediateData: ::win32_foundation_sys::BOOLEAN,
     pub Type: u8,
-    pub DataSequenceInOrder: super::super::Foundation::BOOLEAN,
-    pub DataPduInOrder: super::super::Foundation::BOOLEAN,
+    pub DataSequenceInOrder: ::win32_foundation_sys::BOOLEAN,
+    pub DataPduInOrder: ::win32_foundation_sys::BOOLEAN,
     pub ErrorRecoveryLevel: u8,
     pub MaxOutstandingR2t: u32,
     pub FirstBurstLength: u32,
@@ -782,9 +737,7 @@ pub struct ISCSI_SESSION_INFO_EX {
     pub ConnectionCount: u32,
     pub Connections: *mut ISCSI_CONNECTION_INFO_EX,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ISCSI_SESSION_INFO_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ISCSI_SESSION_INFO_EX {
     fn clone(&self) -> Self {
         *self
@@ -793,20 +746,17 @@ impl ::core::clone::Clone for ISCSI_SESSION_INFO_EX {
 pub const ISCSI_TARGET_FLAG_HIDE_STATIC_TARGET: u32 = 2u32;
 pub const ISCSI_TARGET_FLAG_MERGE_TARGET_INFORMATION: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ISCSI_TARGET_MAPPINGA {
-    pub InitiatorName: [super::super::Foundation::CHAR; 256],
-    pub TargetName: [super::super::Foundation::CHAR; 224],
-    pub OSDeviceName: [super::super::Foundation::CHAR; 260],
+    pub InitiatorName: [::win32_foundation_sys::CHAR; 256],
+    pub TargetName: [::win32_foundation_sys::CHAR; 224],
+    pub OSDeviceName: [::win32_foundation_sys::CHAR; 260],
     pub SessionId: ISCSI_UNIQUE_SESSION_ID,
     pub OSBusNumber: u32,
     pub OSTargetNumber: u32,
     pub LUNCount: u32,
     pub LUNList: *mut SCSI_LUN_LIST,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ISCSI_TARGET_MAPPINGA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ISCSI_TARGET_MAPPINGA {
     fn clone(&self) -> Self {
         *self
@@ -830,15 +780,12 @@ impl ::core::clone::Clone for ISCSI_TARGET_MAPPINGW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ISCSI_TARGET_PORTALA {
-    pub SymbolicName: [super::super::Foundation::CHAR; 256],
-    pub Address: [super::super::Foundation::CHAR; 256],
+    pub SymbolicName: [::win32_foundation_sys::CHAR; 256],
+    pub Address: [::win32_foundation_sys::CHAR; 256],
     pub Socket: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ISCSI_TARGET_PORTALA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ISCSI_TARGET_PORTALA {
     fn clone(&self) -> Self {
         *self
@@ -857,14 +804,11 @@ impl ::core::clone::Clone for ISCSI_TARGET_PORTALW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ISCSI_TARGET_PORTAL_GROUPA {
     pub Count: u32,
     pub Portals: [ISCSI_TARGET_PORTALA; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ISCSI_TARGET_PORTAL_GROUPA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ISCSI_TARGET_PORTAL_GROUPA {
     fn clone(&self) -> Self {
         *self
@@ -882,17 +826,14 @@ impl ::core::clone::Clone for ISCSI_TARGET_PORTAL_GROUPW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ISCSI_TARGET_PORTAL_INFOA {
-    pub InitiatorName: [super::super::Foundation::CHAR; 256],
+    pub InitiatorName: [::win32_foundation_sys::CHAR; 256],
     pub InitiatorPortNumber: u32,
-    pub SymbolicName: [super::super::Foundation::CHAR; 256],
-    pub Address: [super::super::Foundation::CHAR; 256],
+    pub SymbolicName: [::win32_foundation_sys::CHAR; 256],
+    pub Address: [::win32_foundation_sys::CHAR; 256],
     pub Socket: u16,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ISCSI_TARGET_PORTAL_INFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ISCSI_TARGET_PORTAL_INFOA {
     fn clone(&self) -> Self {
         *self
@@ -913,19 +854,16 @@ impl ::core::clone::Clone for ISCSI_TARGET_PORTAL_INFOW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct ISCSI_TARGET_PORTAL_INFO_EXA {
-    pub InitiatorName: [super::super::Foundation::CHAR; 256],
+    pub InitiatorName: [::win32_foundation_sys::CHAR; 256],
     pub InitiatorPortNumber: u32,
-    pub SymbolicName: [super::super::Foundation::CHAR; 256],
-    pub Address: [super::super::Foundation::CHAR; 256],
+    pub SymbolicName: [::win32_foundation_sys::CHAR; 256],
+    pub Address: [::win32_foundation_sys::CHAR; 256],
     pub Socket: u16,
     pub SecurityFlags: u64,
     pub LoginOptions: ISCSI_LOGIN_OPTIONS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ISCSI_TARGET_PORTAL_INFO_EXA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for ISCSI_TARGET_PORTAL_INFO_EXA {
     fn clone(&self) -> Self {
         *self
@@ -1306,30 +1244,26 @@ pub const NVSEPWriteCacheTypeWriteBack: NV_SEP_WRITE_CACHE_TYPE = 2i32;
 pub const NVSEPWriteCacheTypeWriteThrough: NV_SEP_WRITE_CACHE_TYPE = 3i32;
 pub type PDUMP_DEVICE_POWERON_ROUTINE = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void) -> i32>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PERSISTENT_ISCSI_LOGIN_INFOA {
-    pub TargetName: [super::super::Foundation::CHAR; 224],
-    pub IsInformationalSession: super::super::Foundation::BOOLEAN,
-    pub InitiatorInstance: [super::super::Foundation::CHAR; 256],
+    pub TargetName: [::win32_foundation_sys::CHAR; 224],
+    pub IsInformationalSession: ::win32_foundation_sys::BOOLEAN,
+    pub InitiatorInstance: [::win32_foundation_sys::CHAR; 256],
     pub InitiatorPortNumber: u32,
     pub TargetPortal: ISCSI_TARGET_PORTALA,
     pub SecurityFlags: u64,
     pub Mappings: *mut ISCSI_TARGET_MAPPINGA,
     pub LoginOptions: ISCSI_LOGIN_OPTIONS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PERSISTENT_ISCSI_LOGIN_INFOA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PERSISTENT_ISCSI_LOGIN_INFOA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PERSISTENT_ISCSI_LOGIN_INFOW {
     pub TargetName: [u16; 224],
-    pub IsInformationalSession: super::super::Foundation::BOOLEAN,
+    pub IsInformationalSession: ::win32_foundation_sys::BOOLEAN,
     pub InitiatorInstance: [u16; 256],
     pub InitiatorPortNumber: u32,
     pub TargetPortal: ISCSI_TARGET_PORTALW,
@@ -1337,9 +1271,7 @@ pub struct PERSISTENT_ISCSI_LOGIN_INFOW {
     pub Mappings: *mut ISCSI_TARGET_MAPPINGW,
     pub LoginOptions: ISCSI_LOGIN_OPTIONS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PERSISTENT_ISCSI_LOGIN_INFOW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PERSISTENT_ISCSI_LOGIN_INFOW {
     fn clone(&self) -> Self {
         *self
@@ -1383,19 +1315,16 @@ impl ::core::clone::Clone for SCSI_BUS_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SCSI_INQUIRY_DATA {
     pub PathId: u8,
     pub TargetId: u8,
     pub Lun: u8,
-    pub DeviceClaimed: super::super::Foundation::BOOLEAN,
+    pub DeviceClaimed: ::win32_foundation_sys::BOOLEAN,
     pub InquiryDataLength: u32,
     pub NextInquiryDataOffset: u32,
     pub InquiryData: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SCSI_INQUIRY_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SCSI_INQUIRY_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1740,20 +1669,17 @@ impl ::core::clone::Clone for STORAGE_FIRMWARE_DOWNLOAD_V2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STORAGE_FIRMWARE_INFO {
     pub Version: u32,
     pub Size: u32,
-    pub UpgradeSupport: super::super::Foundation::BOOLEAN,
+    pub UpgradeSupport: ::win32_foundation_sys::BOOLEAN,
     pub SlotCount: u8,
     pub ActiveSlot: u8,
     pub PendingActivateSlot: u8,
     pub Reserved: u32,
     pub Slot: [STORAGE_FIRMWARE_SLOT_INFO; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STORAGE_FIRMWARE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STORAGE_FIRMWARE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1763,69 +1689,57 @@ pub const STORAGE_FIRMWARE_INFO_INVALID_SLOT: u32 = 255u32;
 pub const STORAGE_FIRMWARE_INFO_STRUCTURE_VERSION: u32 = 1u32;
 pub const STORAGE_FIRMWARE_INFO_STRUCTURE_VERSION_V2: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STORAGE_FIRMWARE_INFO_V2 {
     pub Version: u32,
     pub Size: u32,
-    pub UpgradeSupport: super::super::Foundation::BOOLEAN,
+    pub UpgradeSupport: ::win32_foundation_sys::BOOLEAN,
     pub SlotCount: u8,
     pub ActiveSlot: u8,
     pub PendingActivateSlot: u8,
-    pub FirmwareShared: super::super::Foundation::BOOLEAN,
+    pub FirmwareShared: ::win32_foundation_sys::BOOLEAN,
     pub Reserved: [u8; 3],
     pub ImagePayloadAlignment: u32,
     pub ImagePayloadMaxSize: u32,
     pub Slot: [STORAGE_FIRMWARE_SLOT_INFO_V2; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STORAGE_FIRMWARE_INFO_V2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STORAGE_FIRMWARE_INFO_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STORAGE_FIRMWARE_SLOT_INFO {
     pub SlotNumber: u8,
-    pub ReadOnly: super::super::Foundation::BOOLEAN,
+    pub ReadOnly: ::win32_foundation_sys::BOOLEAN,
     pub Reserved: [u8; 6],
     pub Revision: STORAGE_FIRMWARE_SLOT_INFO_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STORAGE_FIRMWARE_SLOT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STORAGE_FIRMWARE_SLOT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union STORAGE_FIRMWARE_SLOT_INFO_0 {
     pub Info: [u8; 8],
     pub AsUlonglong: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STORAGE_FIRMWARE_SLOT_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STORAGE_FIRMWARE_SLOT_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct STORAGE_FIRMWARE_SLOT_INFO_V2 {
     pub SlotNumber: u8,
-    pub ReadOnly: super::super::Foundation::BOOLEAN,
+    pub ReadOnly: ::win32_foundation_sys::BOOLEAN,
     pub Reserved: [u8; 6],
     pub Revision: [u8; 16],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STORAGE_FIRMWARE_SLOT_INFO_V2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for STORAGE_FIRMWARE_SLOT_INFO_V2 {
     fn clone(&self) -> Self {
         *self

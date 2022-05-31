@@ -27,8 +27,8 @@ impl ::core::clone::Clone for APOInitBaseStruct {
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct APOInitSystemEffects {
     pub APOInit: APOInitBaseStruct,
-    pub pAPOEndpointProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
-    pub pAPOSystemEffectsProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pAPOEndpointProperties: ::win32_ui_sys::Shell::PropertiesSystem::IPropertyStore,
+    pub pAPOSystemEffectsProperties: ::win32_ui_sys::Shell::PropertiesSystem::IPropertyStore,
     pub pReserved: *mut ::core::ffi::c_void,
     pub pDeviceCollection: super::IMMDeviceCollection,
 }
@@ -41,41 +41,41 @@ impl ::core::clone::Clone for APOInitSystemEffects {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct APOInitSystemEffects2 {
     pub APOInit: APOInitBaseStruct,
-    pub pAPOEndpointProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
-    pub pAPOSystemEffectsProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pAPOEndpointProperties: ::win32_ui_sys::Shell::PropertiesSystem::IPropertyStore,
+    pub pAPOSystemEffectsProperties: ::win32_ui_sys::Shell::PropertiesSystem::IPropertyStore,
     pub pReserved: *mut ::core::ffi::c_void,
     pub pDeviceCollection: super::IMMDeviceCollection,
     pub nSoftwareIoDeviceInCollection: u32,
     pub nSoftwareIoConnectorIndex: u32,
     pub AudioProcessingMode: ::windows_core_sys::GUID,
-    pub InitializeForDiscoveryOnly: super::super::super::Foundation::BOOL,
+    pub InitializeForDiscoveryOnly: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for APOInitSystemEffects2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::clone::Clone for APOInitSystemEffects2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem"))]
 pub struct APOInitSystemEffects3 {
     pub APOInit: APOInitBaseStruct,
-    pub pAPOEndpointProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
-    pub pServiceProvider: super::super::super::System::Com::IServiceProvider,
+    pub pAPOEndpointProperties: ::win32_ui_sys::Shell::PropertiesSystem::IPropertyStore,
+    pub pServiceProvider: ::win32_system_sys::Com::IServiceProvider,
     pub pDeviceCollection: super::IMMDeviceCollection,
     pub nSoftwareIoDeviceInCollection: u32,
     pub nSoftwareIoConnectorIndex: u32,
     pub AudioProcessingMode: ::windows_core_sys::GUID,
-    pub InitializeForDiscoveryOnly: super::super::super::Foundation::BOOL,
+    pub InitializeForDiscoveryOnly: ::win32_foundation_sys::BOOL,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem"))]
 impl ::core::marker::Copy for APOInitSystemEffects3 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_PropertiesSystem"))]
 impl ::core::clone::Clone for APOInitSystemEffects3 {
     fn clone(&self) -> Self {
         *self
@@ -143,29 +143,29 @@ pub const APO_LOG_LEVEL_WARNING: APO_LOG_LEVEL = 3i32;
 pub const APO_LOG_LEVEL_INFO: APO_LOG_LEVEL = 4i32;
 pub const APO_LOG_LEVEL_VERBOSE: APO_LOG_LEVEL = 5i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct APO_NOTIFICATION {
     pub r#type: APO_NOTIFICATION_TYPE,
     pub Anonymous: APO_NOTIFICATION_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for APO_NOTIFICATION {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::clone::Clone for APO_NOTIFICATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub union APO_NOTIFICATION_0 {
     pub audioEndpointVolumeChange: AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION,
     pub audioEndpointPropertyChange: AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION,
     pub audioSystemEffectsPropertyChange: AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for APO_NOTIFICATION_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::clone::Clone for APO_NOTIFICATION_0 {
     fn clone(&self) -> Self {
         *self
@@ -238,8 +238,8 @@ impl ::core::clone::Clone for AUDIO_ENDPOINT_PROPERTY_CHANGE_APO_NOTIFICATION_DE
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION {
     pub endpoint: super::IMMDevice,
-    pub propertyStore: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
-    pub propertyKey: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY,
+    pub propertyStore: ::win32_ui_sys::Shell::PropertiesSystem::IPropertyStore,
+    pub propertyKey: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for AUDIO_ENDPOINT_PROPERTY_CHANGE_NOTIFICATION {}
@@ -260,14 +260,11 @@ impl ::core::clone::Clone for AUDIO_ENDPOINT_VOLUME_APO_NOTIFICATION_DESCRIPTOR 
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION {
     pub endpoint: super::IMMDevice,
     pub volume: *mut super::AUDIO_VOLUME_NOTIFICATION_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AUDIO_ENDPOINT_VOLUME_CHANGE_NOTIFICATION {
     fn clone(&self) -> Self {
         *self
@@ -281,15 +278,12 @@ pub const AUDIO_MAX_FRAMERATE: f64 = 384000f64;
 pub const AUDIO_MIN_CHANNELS: u32 = 1u32;
 pub const AUDIO_MIN_FRAMERATE: f64 = 10f64;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct AUDIO_SYSTEMEFFECT {
     pub id: ::windows_core_sys::GUID,
-    pub canSetState: super::super::super::Foundation::BOOL,
+    pub canSetState: ::win32_foundation_sys::BOOL,
     pub state: AUDIO_SYSTEMEFFECT_STATE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for AUDIO_SYSTEMEFFECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for AUDIO_SYSTEMEFFECT {
     fn clone(&self) -> Self {
         *self
@@ -312,8 +306,8 @@ pub struct AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION {
     pub endpoint: super::IMMDevice,
     pub propertyStoreContext: ::windows_core_sys::GUID,
     pub propertyStoreType: super::__MIDL___MIDL_itf_mmdeviceapi_0000_0008_0002,
-    pub propertyStore: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
-    pub propertyKey: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY,
+    pub propertyStore: ::win32_ui_sys::Shell::PropertiesSystem::IPropertyStore,
+    pub propertyKey: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY,
 }
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for AUDIO_SYSTEMEFFECTS_PROPERTY_CHANGE_NOTIFICATION {}
@@ -327,15 +321,15 @@ pub type AUDIO_SYSTEMEFFECT_STATE = i32;
 pub const AUDIO_SYSTEMEFFECT_STATE_OFF: AUDIO_SYSTEMEFFECT_STATE = 0i32;
 pub const AUDIO_SYSTEMEFFECT_STATE_ON: AUDIO_SYSTEMEFFECT_STATE = 1i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub struct AudioFXExtensionParams {
-    pub AddPageParam: super::super::super::Foundation::LPARAM,
+    pub AddPageParam: ::win32_foundation_sys::LPARAM,
     pub pwstrEndpointID: ::windows_core_sys::PWSTR,
-    pub pFxProperties: super::super::super::UI::Shell::PropertiesSystem::IPropertyStore,
+    pub pFxProperties: ::win32_ui_sys::Shell::PropertiesSystem::IPropertyStore,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::marker::Copy for AudioFXExtensionParams {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_PropertiesSystem"))]
+#[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 impl ::core::clone::Clone for AudioFXExtensionParams {
     fn clone(&self) -> Self {
         *self
@@ -365,65 +359,65 @@ pub type IAudioSystemEffects2 = *mut ::core::ffi::c_void;
 pub type IAudioSystemEffects3 = *mut ::core::ffi::c_void;
 pub type IAudioSystemEffectsCustomFormats = *mut ::core::ffi::c_void;
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_APO_SWFallback_ProcessingModes: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 13u32 };
+pub const PKEY_APO_SWFallback_ProcessingModes: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 13u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CompositeFX_EndpointEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 15u32 };
+pub const PKEY_CompositeFX_EndpointEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 15u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CompositeFX_KeywordDetector_EndpointEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 18u32 };
+pub const PKEY_CompositeFX_KeywordDetector_EndpointEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 18u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CompositeFX_KeywordDetector_ModeEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 17u32 };
+pub const PKEY_CompositeFX_KeywordDetector_ModeEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 17u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CompositeFX_KeywordDetector_StreamEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 16u32 };
+pub const PKEY_CompositeFX_KeywordDetector_StreamEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 16u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CompositeFX_ModeEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 14u32 };
+pub const PKEY_CompositeFX_ModeEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 14u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CompositeFX_Offload_ModeEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 20u32 };
+pub const PKEY_CompositeFX_Offload_ModeEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 20u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CompositeFX_Offload_StreamEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 19u32 };
+pub const PKEY_CompositeFX_Offload_StreamEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 19u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_CompositeFX_StreamEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 13u32 };
+pub const PKEY_CompositeFX_StreamEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 13u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_EFX_KeywordDetector_ProcessingModes_Supported_For_Streaming: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 10u32 };
+pub const PKEY_EFX_KeywordDetector_ProcessingModes_Supported_For_Streaming: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 10u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_EFX_ProcessingModes_Supported_For_Streaming: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 7u32 };
+pub const PKEY_EFX_ProcessingModes_Supported_For_Streaming: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 7u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_Association: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 0u32 };
+pub const PKEY_FX_Association: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 0u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_EndpointEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 7u32 };
+pub const PKEY_FX_EndpointEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 7u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_FriendlyName: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 4u32 };
+pub const PKEY_FX_FriendlyName: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 4u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_KeywordDetector_EndpointEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 10u32 };
+pub const PKEY_FX_KeywordDetector_EndpointEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 10u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_KeywordDetector_ModeEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 9u32 };
+pub const PKEY_FX_KeywordDetector_ModeEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 9u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_KeywordDetector_StreamEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 8u32 };
+pub const PKEY_FX_KeywordDetector_StreamEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 8u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_ModeEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 6u32 };
+pub const PKEY_FX_ModeEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 6u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_Offload_ModeEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 12u32 };
+pub const PKEY_FX_Offload_ModeEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 12u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_Offload_StreamEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 11u32 };
+pub const PKEY_FX_Offload_StreamEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 11u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_PostMixEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 2u32 };
+pub const PKEY_FX_PostMixEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 2u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_PreMixEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 1u32 };
+pub const PKEY_FX_PreMixEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 1u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_StreamEffectClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 5u32 };
+pub const PKEY_FX_StreamEffectClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 5u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_FX_UserInterfaceClsid: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 3u32 };
+pub const PKEY_FX_UserInterfaceClsid: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3494774182, data2: 22859, data3: 20406, data4: [168, 13, 1, 175, 94, 237, 125, 29] }, pid: 3u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_MFX_KeywordDetector_ProcessingModes_Supported_For_Streaming: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 9u32 };
+pub const PKEY_MFX_KeywordDetector_ProcessingModes_Supported_For_Streaming: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 9u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_MFX_Offload_ProcessingModes_Supported_For_Streaming: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 12u32 };
+pub const PKEY_MFX_Offload_ProcessingModes_Supported_For_Streaming: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 12u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_MFX_ProcessingModes_Supported_For_Streaming: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 6u32 };
+pub const PKEY_MFX_ProcessingModes_Supported_For_Streaming: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 6u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_SFX_KeywordDetector_ProcessingModes_Supported_For_Streaming: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 8u32 };
+pub const PKEY_SFX_KeywordDetector_ProcessingModes_Supported_For_Streaming: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 8u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_SFX_Offload_ProcessingModes_Supported_For_Streaming: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 11u32 };
+pub const PKEY_SFX_Offload_ProcessingModes_Supported_For_Streaming: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 11u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const PKEY_SFX_ProcessingModes_Supported_For_Streaming: super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 5u32 };
+pub const PKEY_SFX_ProcessingModes_Supported_For_Streaming: ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui_sys::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core_sys::GUID { data1: 3550034495, data2: 39362, data3: 17410, data4: [181, 236, 169, 42, 3, 103, 102, 75] }, pid: 5u32 };
 pub const SID_AudioProcessingObjectLoggingService: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2340423855, data2: 2553, data3: 17774, data4: [161, 115, 189, 181, 132, 153, 188, 231] };
 pub const SID_AudioProcessingObjectRTQueue: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1166809631, data2: 26777, data3: 19474, data4: [153, 172, 226, 230, 172, 37, 49, 4] };
 #[repr(C)]

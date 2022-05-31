@@ -95,14 +95,13 @@ pub const DTRESULTPROB: u32 = 2u32;
 pub const EISAFLAG_NO_IO_MERGE: u32 = 1u32;
 pub const EISAFLAG_SLOT_IO_FIRST: u32 = 2u32;
 pub const EISA_NO_MAX_FUNCTION: u32 = 255u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetRegistryValueWithFallbackW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HKEY>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkeyprimary: Param0, pwszprimarysubkey: Param1, hkeyfallback: Param2, pwszfallbacksubkey: Param3, pwszvalue: Param4, dwflags: u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, cbdatain: u32, pcbdataout: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn GetRegistryValueWithFallbackW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HKEY>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkeyprimary: Param0, pwszprimarysubkey: Param1, hkeyfallback: Param2, pwszfallbacksubkey: Param3, pwszvalue: Param4, dwflags: u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, cbdatain: u32, pcbdataout: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetRegistryValueWithFallbackW(hkeyprimary: HKEY, pwszprimarysubkey: ::windows_core::PCWSTR, hkeyfallback: HKEY, pwszfallbacksubkey: ::windows_core::PCWSTR, pwszvalue: ::windows_core::PCWSTR, dwflags: u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, cbdatain: u32, pcbdataout: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn GetRegistryValueWithFallbackW(hkeyprimary: HKEY, pwszprimarysubkey: ::windows_core::PCWSTR, hkeyfallback: HKEY, pwszfallbacksubkey: ::windows_core::PCWSTR, pwszvalue: ::windows_core::PCWSTR, dwflags: u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, cbdatain: u32, pcbdataout: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(GetRegistryValueWithFallbackW(hkeyprimary.into_param().abi(), pwszprimarysubkey.into_param().abi(), hkeyfallback.into_param().abi(), pwszfallbacksubkey.into_param().abi(), pwszvalue.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdwtype), ::core::mem::transmute(pvdata), ::core::mem::transmute(cbdatain), ::core::mem::transmute(pcbdataout)))
     }
@@ -1319,28 +1318,26 @@ pub const RRF_SUBKEY_WOW6432KEY: u32 = 131072u32;
 pub const RRF_SUBKEY_WOW6464KEY: u32 = 65536u32;
 pub const RRF_WOW64_MASK: u32 = 196608u32;
 pub const RRF_ZEROONFAILURE: u32 = 536870912u32;
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegCloseKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegCloseKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegCloseKey(hkey: HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegCloseKey(hkey: HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegCloseKey(hkey.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegConnectRegistryA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, HKEY>>(lpmachinename: Param0, hkey: Param1, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegConnectRegistryA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param1: ::windows_core::IntoParam<'a, HKEY>>(lpmachinename: Param0, hkey: Param1, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegConnectRegistryA(lpmachinename: ::windows_core::PCSTR, hkey: HKEY, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegConnectRegistryA(lpmachinename: ::windows_core::PCSTR, hkey: HKEY, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegConnectRegistryA(lpmachinename.into_param().abi(), hkey.into_param().abi(), ::core::mem::transmute(phkresult)))
     }
@@ -1373,1092 +1370,1024 @@ pub unsafe fn RegConnectRegistryExW<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegConnectRegistryW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, HKEY>>(lpmachinename: Param0, hkey: Param1, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegConnectRegistryW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, HKEY>>(lpmachinename: Param0, hkey: Param1, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegConnectRegistryW(lpmachinename: ::windows_core::PCWSTR, hkey: HKEY, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegConnectRegistryW(lpmachinename: ::windows_core::PCWSTR, hkey: HKEY, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegConnectRegistryW(lpmachinename.into_param().abi(), hkey.into_param().abi(), ::core::mem::transmute(phkresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegCopyTreeA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, HKEY>>(hkeysrc: Param0, lpsubkey: Param1, hkeydest: Param2) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegCopyTreeA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, HKEY>>(hkeysrc: Param0, lpsubkey: Param1, hkeydest: Param2) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegCopyTreeA(hkeysrc: HKEY, lpsubkey: ::windows_core::PCSTR, hkeydest: HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegCopyTreeA(hkeysrc: HKEY, lpsubkey: ::windows_core::PCSTR, hkeydest: HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegCopyTreeA(hkeysrc.into_param().abi(), lpsubkey.into_param().abi(), hkeydest.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegCopyTreeW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HKEY>>(hkeysrc: Param0, lpsubkey: Param1, hkeydest: Param2) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegCopyTreeW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, HKEY>>(hkeysrc: Param0, lpsubkey: Param1, hkeydest: Param2) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegCopyTreeW(hkeysrc: HKEY, lpsubkey: ::windows_core::PCWSTR, hkeydest: HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegCopyTreeW(hkeysrc: HKEY, lpsubkey: ::windows_core::PCWSTR, hkeydest: HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegCopyTreeW(hkeysrc.into_param().abi(), lpsubkey.into_param().abi(), hkeydest.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegCreateKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegCreateKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegCreateKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegCreateKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegCreateKeyA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(phkresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegCreateKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegCreateKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegCreateKeyExA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, reserved: u32, lpclass: ::windows_core::PCSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> super::super::Foundation::WIN32_ERROR;
+            fn RegCreateKeyExA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, reserved: u32, lpclass: ::windows_core::PCSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegCreateKeyExA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(reserved), lpclass.into_param().abi(), ::core::mem::transmute(dwoptions), ::core::mem::transmute(samdesired), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(phkresult), ::core::mem::transmute(lpdwdisposition)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegCreateKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegCreateKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegCreateKeyExW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, reserved: u32, lpclass: ::windows_core::PCWSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> super::super::Foundation::WIN32_ERROR;
+            fn RegCreateKeyExW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, reserved: u32, lpclass: ::windows_core::PCWSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegCreateKeyExW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(reserved), lpclass.into_param().abi(), ::core::mem::transmute(dwoptions), ::core::mem::transmute(samdesired), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(phkresult), ::core::mem::transmute(lpdwdisposition)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegCreateKeyTransactedA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param9: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: Param9, pextendedparemeter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegCreateKeyTransactedA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param9: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: Param9, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegCreateKeyTransactedA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, reserved: u32, lpclass: ::windows_core::PCSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: super::super::Foundation::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+            fn RegCreateKeyTransactedA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, reserved: u32, lpclass: ::windows_core::PCSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: ::win32_foundation::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegCreateKeyTransactedA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(reserved), lpclass.into_param().abi(), ::core::mem::transmute(dwoptions), ::core::mem::transmute(samdesired), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(phkresult), ::core::mem::transmute(lpdwdisposition), htransaction.into_param().abi(), ::core::mem::transmute(pextendedparemeter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegCreateKeyTransactedW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param9: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: Param9, pextendedparemeter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegCreateKeyTransactedW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param9: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, reserved: u32, lpclass: Param3, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: Param9, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegCreateKeyTransactedW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, reserved: u32, lpclass: ::windows_core::PCWSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: super::super::Foundation::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+            fn RegCreateKeyTransactedW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, reserved: u32, lpclass: ::windows_core::PCWSTR, dwoptions: REG_OPEN_CREATE_OPTIONS, samdesired: REG_SAM_FLAGS, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, phkresult: *mut HKEY, lpdwdisposition: *mut REG_CREATE_KEY_DISPOSITION, htransaction: ::win32_foundation::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegCreateKeyTransactedW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(reserved), lpclass.into_param().abi(), ::core::mem::transmute(dwoptions), ::core::mem::transmute(samdesired), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(phkresult), ::core::mem::transmute(lpdwdisposition), htransaction.into_param().abi(), ::core::mem::transmute(pextendedparemeter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegCreateKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegCreateKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegCreateKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegCreateKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegCreateKeyW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(phkresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteKeyA(hkey.into_param().abi(), lpsubkey.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, samdesired: u32, reserved: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, samdesired: u32, reserved: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteKeyExA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, samdesired: u32, reserved: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteKeyExA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, samdesired: u32, reserved: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteKeyExA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, samdesired: u32, reserved: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, samdesired: u32, reserved: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteKeyExW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, samdesired: u32, reserved: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteKeyExW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, samdesired: u32, reserved: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteKeyExW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteKeyTransactedA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, samdesired: u32, reserved: u32, htransaction: Param4, pextendedparameter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteKeyTransactedA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, samdesired: u32, reserved: u32, htransaction: Param4, pextendedparameter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteKeyTransactedA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, samdesired: u32, reserved: u32, htransaction: super::super::Foundation::HANDLE, pextendedparameter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteKeyTransactedA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, samdesired: u32, reserved: u32, htransaction: ::win32_foundation::HANDLE, pextendedparameter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteKeyTransactedA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(reserved), htransaction.into_param().abi(), ::core::mem::transmute(pextendedparameter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteKeyTransactedW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, samdesired: u32, reserved: u32, htransaction: Param4, pextendedparameter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteKeyTransactedW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, samdesired: u32, reserved: u32, htransaction: Param4, pextendedparameter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteKeyTransactedW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, samdesired: u32, reserved: u32, htransaction: super::super::Foundation::HANDLE, pextendedparameter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteKeyTransactedW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, samdesired: u32, reserved: u32, htransaction: ::win32_foundation::HANDLE, pextendedparameter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteKeyTransactedW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(samdesired), ::core::mem::transmute(reserved), htransaction.into_param().abi(), ::core::mem::transmute(pextendedparameter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteKeyValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpvaluename: Param2) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteKeyValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpvaluename: Param2) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteKeyValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpvaluename: ::windows_core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteKeyValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpvaluename: ::windows_core::PCSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteKeyValueA(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpvaluename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteKeyValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpvaluename: Param2) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteKeyValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpvaluename: Param2) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteKeyValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpvaluename: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteKeyValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpvaluename: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteKeyValueW(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpvaluename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteKeyW(hkey.into_param().abi(), lpsubkey.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteTreeA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteTreeA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteTreeA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteTreeA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteTreeA(hkey.into_param().abi(), lpsubkey.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteTreeW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteTreeW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteTreeW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteTreeW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteTreeW(hkey.into_param().abi(), lpsubkey.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpvaluename: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpvaluename: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteValueA(hkey: HKEY, lpvaluename: ::windows_core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteValueA(hkey: HKEY, lpvaluename: ::windows_core::PCSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteValueA(hkey.into_param().abi(), lpvaluename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDeleteValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpvaluename: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDeleteValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpvaluename: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDeleteValueW(hkey: HKEY, lpvaluename: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDeleteValueW(hkey: HKEY, lpvaluename: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDeleteValueW(hkey.into_param().abi(), lpvaluename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDisablePredefinedCache() -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDisablePredefinedCache() -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDisablePredefinedCache() -> super::super::Foundation::WIN32_ERROR;
+            fn RegDisablePredefinedCache() -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDisablePredefinedCache())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDisablePredefinedCacheEx() -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDisablePredefinedCacheEx() -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDisablePredefinedCacheEx() -> super::super::Foundation::WIN32_ERROR;
+            fn RegDisablePredefinedCacheEx() -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDisablePredefinedCacheEx())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegDisableReflectionKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hbase: Param0) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegDisableReflectionKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hbase: Param0) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegDisableReflectionKey(hbase: HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegDisableReflectionKey(hbase: HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegDisableReflectionKey(hbase.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegEnableReflectionKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hbase: Param0) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegEnableReflectionKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hbase: Param0) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegEnableReflectionKey(hbase: HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegEnableReflectionKey(hbase: HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegEnableReflectionKey(hbase.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegEnumKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpname: &mut [u8]) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegEnumKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpname: &mut [u8]) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegEnumKeyA(hkey: HKEY, dwindex: u32, lpname: ::windows_core::PSTR, cchname: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegEnumKeyA(hkey: HKEY, dwindex: u32, lpname: ::windows_core::PSTR, cchname: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegEnumKeyA(hkey.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpname)), lpname.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegEnumKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpname: ::windows_core::PSTR, lpcchname: *mut u32, lpreserved: *mut u32, lpclass: ::windows_core::PSTR, lpcchclass: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegEnumKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpname: ::windows_core::PSTR, lpcchname: *mut u32, lpreserved: *mut u32, lpclass: ::windows_core::PSTR, lpcchclass: *mut u32, lpftlastwritetime: *mut ::win32_foundation::FILETIME) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegEnumKeyExA(hkey: HKEY, dwindex: u32, lpname: ::windows_core::PSTR, lpcchname: *mut u32, lpreserved: *mut u32, lpclass: ::windows_core::PSTR, lpcchclass: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::WIN32_ERROR;
+            fn RegEnumKeyExA(hkey: HKEY, dwindex: u32, lpname: ::windows_core::PSTR, lpcchname: *mut u32, lpreserved: *mut u32, lpclass: ::windows_core::PSTR, lpcchclass: *mut u32, lpftlastwritetime: *mut ::win32_foundation::FILETIME) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegEnumKeyExA(hkey.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(lpname), ::core::mem::transmute(lpcchname), ::core::mem::transmute(lpreserved), ::core::mem::transmute(lpclass), ::core::mem::transmute(lpcchclass), ::core::mem::transmute(lpftlastwritetime)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegEnumKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpname: ::windows_core::PWSTR, lpcchname: *mut u32, lpreserved: *mut u32, lpclass: ::windows_core::PWSTR, lpcchclass: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegEnumKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpname: ::windows_core::PWSTR, lpcchname: *mut u32, lpreserved: *mut u32, lpclass: ::windows_core::PWSTR, lpcchclass: *mut u32, lpftlastwritetime: *mut ::win32_foundation::FILETIME) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegEnumKeyExW(hkey: HKEY, dwindex: u32, lpname: ::windows_core::PWSTR, lpcchname: *mut u32, lpreserved: *mut u32, lpclass: ::windows_core::PWSTR, lpcchclass: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::WIN32_ERROR;
+            fn RegEnumKeyExW(hkey: HKEY, dwindex: u32, lpname: ::windows_core::PWSTR, lpcchname: *mut u32, lpreserved: *mut u32, lpclass: ::windows_core::PWSTR, lpcchclass: *mut u32, lpftlastwritetime: *mut ::win32_foundation::FILETIME) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegEnumKeyExW(hkey.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(lpname), ::core::mem::transmute(lpcchname), ::core::mem::transmute(lpreserved), ::core::mem::transmute(lpclass), ::core::mem::transmute(lpcchclass), ::core::mem::transmute(lpftlastwritetime)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegEnumKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpname: &mut [u16]) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegEnumKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpname: &mut [u16]) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegEnumKeyW(hkey: HKEY, dwindex: u32, lpname: ::windows_core::PWSTR, cchname: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegEnumKeyW(hkey: HKEY, dwindex: u32, lpname: ::windows_core::PWSTR, cchname: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegEnumKeyW(hkey.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(lpname)), lpname.len() as _))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegEnumValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpvaluename: ::windows_core::PSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegEnumValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpvaluename: ::windows_core::PSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegEnumValueA(hkey: HKEY, dwindex: u32, lpvaluename: ::windows_core::PSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegEnumValueA(hkey: HKEY, dwindex: u32, lpvaluename: ::windows_core::PSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegEnumValueA(hkey.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(lpvaluename), ::core::mem::transmute(lpcchvaluename), ::core::mem::transmute(lpreserved), ::core::mem::transmute(lptype), ::core::mem::transmute(lpdata), ::core::mem::transmute(lpcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegEnumValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpvaluename: ::windows_core::PWSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegEnumValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, dwindex: u32, lpvaluename: ::windows_core::PWSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegEnumValueW(hkey: HKEY, dwindex: u32, lpvaluename: ::windows_core::PWSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegEnumValueW(hkey: HKEY, dwindex: u32, lpvaluename: ::windows_core::PWSTR, lpcchvaluename: *mut u32, lpreserved: *mut u32, lptype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegEnumValueW(hkey.into_param().abi(), ::core::mem::transmute(dwindex), ::core::mem::transmute(lpvaluename), ::core::mem::transmute(lpcchvaluename), ::core::mem::transmute(lpreserved), ::core::mem::transmute(lptype), ::core::mem::transmute(lpdata), ::core::mem::transmute(lpcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegFlushKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegFlushKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegFlushKey(hkey: HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegFlushKey(hkey: HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegFlushKey(hkey.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegGetKeySecurity<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegGetKeySecurity<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, securityinformation: u32, psecuritydescriptor: ::win32_security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegGetKeySecurity(hkey: HKEY, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegGetKeySecurity(hkey: HKEY, securityinformation: u32, psecuritydescriptor: ::win32_security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegGetKeySecurity(hkey.into_param().abi(), ::core::mem::transmute(securityinformation), ::core::mem::transmute(psecuritydescriptor), ::core::mem::transmute(lpcbsecuritydescriptor)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegGetValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpvalue: Param2, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegGetValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpvalue: Param2, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegGetValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpvalue: ::windows_core::PCSTR, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegGetValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpvalue: ::windows_core::PCSTR, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegGetValueA(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpvalue.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdwtype), ::core::mem::transmute(pvdata), ::core::mem::transmute(pcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegGetValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpvalue: Param2, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegGetValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpvalue: Param2, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegGetValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpvalue: ::windows_core::PCWSTR, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegGetValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpvalue: ::windows_core::PCWSTR, dwflags: RRF_RT, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegGetValueW(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpvalue.into_param().abi(), ::core::mem::transmute(dwflags), ::core::mem::transmute(pdwtype), ::core::mem::transmute(pvdata), ::core::mem::transmute(pcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegLoadAppKeyA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpfile: Param0, phkresult: *mut HKEY, samdesired: u32, dwoptions: u32, reserved: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegLoadAppKeyA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpfile: Param0, phkresult: *mut HKEY, samdesired: u32, dwoptions: u32, reserved: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegLoadAppKeyA(lpfile: ::windows_core::PCSTR, phkresult: *mut HKEY, samdesired: u32, dwoptions: u32, reserved: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegLoadAppKeyA(lpfile: ::windows_core::PCSTR, phkresult: *mut HKEY, samdesired: u32, dwoptions: u32, reserved: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegLoadAppKeyA(lpfile.into_param().abi(), ::core::mem::transmute(phkresult), ::core::mem::transmute(samdesired), ::core::mem::transmute(dwoptions), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegLoadAppKeyW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfile: Param0, phkresult: *mut HKEY, samdesired: u32, dwoptions: u32, reserved: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegLoadAppKeyW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpfile: Param0, phkresult: *mut HKEY, samdesired: u32, dwoptions: u32, reserved: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegLoadAppKeyW(lpfile: ::windows_core::PCWSTR, phkresult: *mut HKEY, samdesired: u32, dwoptions: u32, reserved: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegLoadAppKeyW(lpfile: ::windows_core::PCWSTR, phkresult: *mut HKEY, samdesired: u32, dwoptions: u32, reserved: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegLoadAppKeyW(lpfile.into_param().abi(), ::core::mem::transmute(phkresult), ::core::mem::transmute(samdesired), ::core::mem::transmute(dwoptions), ::core::mem::transmute(reserved)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegLoadKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpfile: Param2) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegLoadKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpfile: Param2) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegLoadKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpfile: ::windows_core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegLoadKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpfile: ::windows_core::PCSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegLoadKeyA(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpfile.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegLoadKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpfile: Param2) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegLoadKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpfile: Param2) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegLoadKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpfile: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegLoadKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpfile: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegLoadKeyW(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpfile.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegLoadMUIStringA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, pszvalue: Param1, pszoutbuf: ::windows_core::PSTR, cboutbuf: u32, pcbdata: *mut u32, flags: u32, pszdirectory: Param6) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegLoadMUIStringA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, pszvalue: Param1, pszoutbuf: ::windows_core::PSTR, cboutbuf: u32, pcbdata: *mut u32, flags: u32, pszdirectory: Param6) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegLoadMUIStringA(hkey: HKEY, pszvalue: ::windows_core::PCSTR, pszoutbuf: ::windows_core::PSTR, cboutbuf: u32, pcbdata: *mut u32, flags: u32, pszdirectory: ::windows_core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegLoadMUIStringA(hkey: HKEY, pszvalue: ::windows_core::PCSTR, pszoutbuf: ::windows_core::PSTR, cboutbuf: u32, pcbdata: *mut u32, flags: u32, pszdirectory: ::windows_core::PCSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegLoadMUIStringA(hkey.into_param().abi(), pszvalue.into_param().abi(), ::core::mem::transmute(pszoutbuf), ::core::mem::transmute(cboutbuf), ::core::mem::transmute(pcbdata), ::core::mem::transmute(flags), pszdirectory.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegLoadMUIStringW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, pszvalue: Param1, pszoutbuf: ::windows_core::PWSTR, cboutbuf: u32, pcbdata: *mut u32, flags: u32, pszdirectory: Param6) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegLoadMUIStringW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, pszvalue: Param1, pszoutbuf: ::windows_core::PWSTR, cboutbuf: u32, pcbdata: *mut u32, flags: u32, pszdirectory: Param6) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegLoadMUIStringW(hkey: HKEY, pszvalue: ::windows_core::PCWSTR, pszoutbuf: ::windows_core::PWSTR, cboutbuf: u32, pcbdata: *mut u32, flags: u32, pszdirectory: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegLoadMUIStringW(hkey: HKEY, pszvalue: ::windows_core::PCWSTR, pszoutbuf: ::windows_core::PWSTR, cboutbuf: u32, pcbdata: *mut u32, flags: u32, pszdirectory: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegLoadMUIStringW(hkey.into_param().abi(), pszvalue.into_param().abi(), ::core::mem::transmute(pszoutbuf), ::core::mem::transmute(cboutbuf), ::core::mem::transmute(pcbdata), ::core::mem::transmute(flags), pszdirectory.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegNotifyChangeKeyValue<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(hkey: Param0, bwatchsubtree: Param1, dwnotifyfilter: REG_NOTIFY_FILTER, hevent: Param3, fasynchronous: Param4) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegNotifyChangeKeyValue<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(hkey: Param0, bwatchsubtree: Param1, dwnotifyfilter: REG_NOTIFY_FILTER, hevent: Param3, fasynchronous: Param4) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegNotifyChangeKeyValue(hkey: HKEY, bwatchsubtree: super::super::Foundation::BOOL, dwnotifyfilter: REG_NOTIFY_FILTER, hevent: super::super::Foundation::HANDLE, fasynchronous: super::super::Foundation::BOOL) -> super::super::Foundation::WIN32_ERROR;
+            fn RegNotifyChangeKeyValue(hkey: HKEY, bwatchsubtree: ::win32_foundation::BOOL, dwnotifyfilter: REG_NOTIFY_FILTER, hevent: ::win32_foundation::HANDLE, fasynchronous: ::win32_foundation::BOOL) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegNotifyChangeKeyValue(hkey.into_param().abi(), bwatchsubtree.into_param().abi(), ::core::mem::transmute(dwnotifyfilter), hevent.into_param().abi(), fasynchronous.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegOpenCurrentUser(samdesired: u32, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegOpenCurrentUser(samdesired: u32, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegOpenCurrentUser(samdesired: u32, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegOpenCurrentUser(samdesired: u32, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegOpenCurrentUser(::core::mem::transmute(samdesired), ::core::mem::transmute(phkresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegOpenKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegOpenKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegOpenKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegOpenKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegOpenKeyA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(phkresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegOpenKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegOpenKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegOpenKeyExA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegOpenKeyExA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegOpenKeyExA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(uloptions), ::core::mem::transmute(samdesired), ::core::mem::transmute(phkresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegOpenKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegOpenKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegOpenKeyExW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegOpenKeyExW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegOpenKeyExW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(uloptions), ::core::mem::transmute(samdesired), ::core::mem::transmute(phkresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegOpenKeyTransactedA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY, htransaction: Param5, pextendedparemeter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegOpenKeyTransactedA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY, htransaction: Param5, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegOpenKeyTransactedA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY, htransaction: super::super::Foundation::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+            fn RegOpenKeyTransactedA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY, htransaction: ::win32_foundation::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegOpenKeyTransactedA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(uloptions), ::core::mem::transmute(samdesired), ::core::mem::transmute(phkresult), htransaction.into_param().abi(), ::core::mem::transmute(pextendedparemeter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegOpenKeyTransactedW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY, htransaction: Param5, pextendedparemeter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegOpenKeyTransactedW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hkey: Param0, lpsubkey: Param1, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY, htransaction: Param5, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegOpenKeyTransactedW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY, htransaction: super::super::Foundation::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+            fn RegOpenKeyTransactedW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, uloptions: u32, samdesired: REG_SAM_FLAGS, phkresult: *mut HKEY, htransaction: ::win32_foundation::HANDLE, pextendedparemeter: *mut ::core::ffi::c_void) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegOpenKeyTransactedW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(uloptions), ::core::mem::transmute(samdesired), ::core::mem::transmute(phkresult), htransaction.into_param().abi(), ::core::mem::transmute(pextendedparemeter)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegOpenKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegOpenKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegOpenKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegOpenKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegOpenKeyW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(phkresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegOpenUserClassesRoot<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(htoken: Param0, dwoptions: u32, samdesired: u32, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegOpenUserClassesRoot<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(htoken: Param0, dwoptions: u32, samdesired: u32, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegOpenUserClassesRoot(htoken: super::super::Foundation::HANDLE, dwoptions: u32, samdesired: u32, phkresult: *mut HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegOpenUserClassesRoot(htoken: ::win32_foundation::HANDLE, dwoptions: u32, samdesired: u32, phkresult: *mut HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegOpenUserClassesRoot(htoken.into_param().abi(), ::core::mem::transmute(dwoptions), ::core::mem::transmute(samdesired), ::core::mem::transmute(phkresult)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegOverridePredefKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, hnewhkey: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegOverridePredefKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, hnewhkey: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegOverridePredefKey(hkey: HKEY, hnewhkey: HKEY) -> super::super::Foundation::WIN32_ERROR;
+            fn RegOverridePredefKey(hkey: HKEY, hnewhkey: HKEY) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegOverridePredefKey(hkey.into_param().abi(), hnewhkey.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegQueryInfoKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, lpclass: ::windows_core::PSTR, lpcchclass: *mut u32, lpreserved: *mut u32, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcbmaxclasslen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegQueryInfoKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, lpclass: ::windows_core::PSTR, lpcchclass: *mut u32, lpreserved: *mut u32, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcbmaxclasslen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut ::win32_foundation::FILETIME) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegQueryInfoKeyA(hkey: HKEY, lpclass: ::windows_core::PSTR, lpcchclass: *mut u32, lpreserved: *mut u32, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcbmaxclasslen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::WIN32_ERROR;
+            fn RegQueryInfoKeyA(hkey: HKEY, lpclass: ::windows_core::PSTR, lpcchclass: *mut u32, lpreserved: *mut u32, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcbmaxclasslen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut ::win32_foundation::FILETIME) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegQueryInfoKeyA(hkey.into_param().abi(), ::core::mem::transmute(lpclass), ::core::mem::transmute(lpcchclass), ::core::mem::transmute(lpreserved), ::core::mem::transmute(lpcsubkeys), ::core::mem::transmute(lpcbmaxsubkeylen), ::core::mem::transmute(lpcbmaxclasslen), ::core::mem::transmute(lpcvalues), ::core::mem::transmute(lpcbmaxvaluenamelen), ::core::mem::transmute(lpcbmaxvaluelen), ::core::mem::transmute(lpcbsecuritydescriptor), ::core::mem::transmute(lpftlastwritetime)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegQueryInfoKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, lpclass: ::windows_core::PWSTR, lpcchclass: *mut u32, lpreserved: *mut u32, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcbmaxclasslen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegQueryInfoKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, lpclass: ::windows_core::PWSTR, lpcchclass: *mut u32, lpreserved: *mut u32, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcbmaxclasslen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut ::win32_foundation::FILETIME) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegQueryInfoKeyW(hkey: HKEY, lpclass: ::windows_core::PWSTR, lpcchclass: *mut u32, lpreserved: *mut u32, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcbmaxclasslen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::WIN32_ERROR;
+            fn RegQueryInfoKeyW(hkey: HKEY, lpclass: ::windows_core::PWSTR, lpcchclass: *mut u32, lpreserved: *mut u32, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcbmaxclasslen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut ::win32_foundation::FILETIME) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegQueryInfoKeyW(hkey.into_param().abi(), ::core::mem::transmute(lpclass), ::core::mem::transmute(lpcchclass), ::core::mem::transmute(lpreserved), ::core::mem::transmute(lpcsubkeys), ::core::mem::transmute(lpcbmaxsubkeylen), ::core::mem::transmute(lpcbmaxclasslen), ::core::mem::transmute(lpcvalues), ::core::mem::transmute(lpcbmaxvaluenamelen), ::core::mem::transmute(lpcbmaxvaluelen), ::core::mem::transmute(lpcbsecuritydescriptor), ::core::mem::transmute(lpftlastwritetime)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegQueryMultipleValuesA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, val_list: &mut [VALENTA], lpvaluebuf: ::windows_core::PSTR, ldwtotsize: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegQueryMultipleValuesA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, val_list: &mut [VALENTA], lpvaluebuf: ::windows_core::PSTR, ldwtotsize: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegQueryMultipleValuesA(hkey: HKEY, val_list: *mut VALENTA, num_vals: u32, lpvaluebuf: ::windows_core::PSTR, ldwtotsize: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegQueryMultipleValuesA(hkey: HKEY, val_list: *mut VALENTA, num_vals: u32, lpvaluebuf: ::windows_core::PSTR, ldwtotsize: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegQueryMultipleValuesA(hkey.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(val_list)), val_list.len() as _, ::core::mem::transmute(lpvaluebuf), ::core::mem::transmute(ldwtotsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegQueryMultipleValuesW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, val_list: &mut [VALENTW], lpvaluebuf: ::windows_core::PWSTR, ldwtotsize: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegQueryMultipleValuesW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hkey: Param0, val_list: &mut [VALENTW], lpvaluebuf: ::windows_core::PWSTR, ldwtotsize: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegQueryMultipleValuesW(hkey: HKEY, val_list: *mut VALENTW, num_vals: u32, lpvaluebuf: ::windows_core::PWSTR, ldwtotsize: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegQueryMultipleValuesW(hkey: HKEY, val_list: *mut VALENTW, num_vals: u32, lpvaluebuf: ::windows_core::PWSTR, ldwtotsize: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegQueryMultipleValuesW(hkey.into_param().abi(), ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(val_list)), val_list.len() as _, ::core::mem::transmute(lpvaluebuf), ::core::mem::transmute(ldwtotsize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegQueryReflectionKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hbase: Param0, bisreflectiondisabled: *mut super::super::Foundation::BOOL) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegQueryReflectionKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>>(hbase: Param0, bisreflectiondisabled: *mut ::win32_foundation::BOOL) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegQueryReflectionKey(hbase: HKEY, bisreflectiondisabled: *mut super::super::Foundation::BOOL) -> super::super::Foundation::WIN32_ERROR;
+            fn RegQueryReflectionKey(hbase: HKEY, bisreflectiondisabled: *mut ::win32_foundation::BOOL) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegQueryReflectionKey(hbase.into_param().abi(), ::core::mem::transmute(bisreflectiondisabled)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegQueryValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpdata: ::windows_core::PSTR, lpcbdata: *mut i32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegQueryValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpdata: ::windows_core::PSTR, lpcbdata: *mut i32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegQueryValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpdata: ::windows_core::PSTR, lpcbdata: *mut i32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegQueryValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpdata: ::windows_core::PSTR, lpcbdata: *mut i32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegQueryValueA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(lpdata), ::core::mem::transmute(lpcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegQueryValueExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpvaluename: Param1, lpreserved: *mut u32, lptype: *mut REG_VALUE_TYPE, lpdata: *mut u8, lpcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegQueryValueExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpvaluename: Param1, lpreserved: *mut u32, lptype: *mut REG_VALUE_TYPE, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegQueryValueExA(hkey: HKEY, lpvaluename: ::windows_core::PCSTR, lpreserved: *mut u32, lptype: *mut REG_VALUE_TYPE, lpdata: *mut u8, lpcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegQueryValueExA(hkey: HKEY, lpvaluename: ::windows_core::PCSTR, lpreserved: *mut u32, lptype: *mut REG_VALUE_TYPE, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegQueryValueExA(hkey.into_param().abi(), lpvaluename.into_param().abi(), ::core::mem::transmute(lpreserved), ::core::mem::transmute(lptype), ::core::mem::transmute(lpdata), ::core::mem::transmute(lpcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegQueryValueExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpvaluename: Param1, lpreserved: *mut u32, lptype: *mut REG_VALUE_TYPE, lpdata: *mut u8, lpcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegQueryValueExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpvaluename: Param1, lpreserved: *mut u32, lptype: *mut REG_VALUE_TYPE, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegQueryValueExW(hkey: HKEY, lpvaluename: ::windows_core::PCWSTR, lpreserved: *mut u32, lptype: *mut REG_VALUE_TYPE, lpdata: *mut u8, lpcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegQueryValueExW(hkey: HKEY, lpvaluename: ::windows_core::PCWSTR, lpreserved: *mut u32, lptype: *mut REG_VALUE_TYPE, lpdata: *mut u8, lpcbdata: *mut u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegQueryValueExW(hkey.into_param().abi(), lpvaluename.into_param().abi(), ::core::mem::transmute(lpreserved), ::core::mem::transmute(lptype), ::core::mem::transmute(lpdata), ::core::mem::transmute(lpcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegQueryValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpdata: ::windows_core::PWSTR, lpcbdata: *mut i32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegQueryValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpdata: ::windows_core::PWSTR, lpcbdata: *mut i32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegQueryValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpdata: ::windows_core::PWSTR, lpcbdata: *mut i32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegQueryValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpdata: ::windows_core::PWSTR, lpcbdata: *mut i32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegQueryValueW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(lpdata), ::core::mem::transmute(lpcbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegRenameKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkeyname: Param1, lpnewkeyname: Param2) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegRenameKey<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkeyname: Param1, lpnewkeyname: Param2) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegRenameKey(hkey: HKEY, lpsubkeyname: ::windows_core::PCWSTR, lpnewkeyname: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegRenameKey(hkey: HKEY, lpsubkeyname: ::windows_core::PCWSTR, lpnewkeyname: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegRenameKey(hkey.into_param().abi(), lpsubkeyname.into_param().abi(), lpnewkeyname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegReplaceKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpnewfile: Param2, lpoldfile: Param3) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegReplaceKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpnewfile: Param2, lpoldfile: Param3) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegReplaceKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpnewfile: ::windows_core::PCSTR, lpoldfile: ::windows_core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegReplaceKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpnewfile: ::windows_core::PCSTR, lpoldfile: ::windows_core::PCSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegReplaceKeyA(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpnewfile.into_param().abi(), lpoldfile.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegReplaceKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpnewfile: Param2, lpoldfile: Param3) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegReplaceKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpnewfile: Param2, lpoldfile: Param3) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegReplaceKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpnewfile: ::windows_core::PCWSTR, lpoldfile: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegReplaceKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpnewfile: ::windows_core::PCWSTR, lpoldfile: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegReplaceKeyW(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpnewfile.into_param().abi(), lpoldfile.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegRestoreKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpfile: Param1, dwflags: REG_RESTORE_KEY_FLAGS) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegRestoreKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpfile: Param1, dwflags: REG_RESTORE_KEY_FLAGS) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegRestoreKeyA(hkey: HKEY, lpfile: ::windows_core::PCSTR, dwflags: REG_RESTORE_KEY_FLAGS) -> super::super::Foundation::WIN32_ERROR;
+            fn RegRestoreKeyA(hkey: HKEY, lpfile: ::windows_core::PCSTR, dwflags: REG_RESTORE_KEY_FLAGS) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegRestoreKeyA(hkey.into_param().abi(), lpfile.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegRestoreKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpfile: Param1, dwflags: REG_RESTORE_KEY_FLAGS) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegRestoreKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpfile: Param1, dwflags: REG_RESTORE_KEY_FLAGS) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegRestoreKeyW(hkey: HKEY, lpfile: ::windows_core::PCWSTR, dwflags: REG_RESTORE_KEY_FLAGS) -> super::super::Foundation::WIN32_ERROR;
+            fn RegRestoreKeyW(hkey: HKEY, lpfile: ::windows_core::PCWSTR, dwflags: REG_RESTORE_KEY_FLAGS) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegRestoreKeyW(hkey.into_param().abi(), lpfile.into_param().abi(), ::core::mem::transmute(dwflags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegSaveKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSaveKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSaveKeyA(hkey: HKEY, lpfile: ::windows_core::PCSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSaveKeyA(hkey: HKEY, lpfile: ::windows_core::PCSTR, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSaveKeyA(hkey.into_param().abi(), lpfile.into_param().abi(), ::core::mem::transmute(lpsecurityattributes)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegSaveKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSaveKeyExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSaveKeyExA(hkey: HKEY, lpfile: ::windows_core::PCSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSaveKeyExA(hkey: HKEY, lpfile: ::windows_core::PCSTR, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSaveKeyExA(hkey.into_param().abi(), lpfile.into_param().abi(), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegSaveKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSaveKeyExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSaveKeyExW(hkey: HKEY, lpfile: ::windows_core::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSaveKeyExW(hkey: HKEY, lpfile: ::windows_core::PCWSTR, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES, flags: REG_SAVE_FORMAT) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSaveKeyExW(hkey.into_param().abi(), lpfile.into_param().abi(), ::core::mem::transmute(lpsecurityattributes), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegSaveKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSaveKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpfile: Param1, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSaveKeyW(hkey: HKEY, lpfile: ::windows_core::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSaveKeyW(hkey: HKEY, lpfile: ::windows_core::PCWSTR, lpsecurityattributes: *const ::win32_security::SECURITY_ATTRIBUTES) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSaveKeyW(hkey.into_param().abi(), lpfile.into_param().abi(), ::core::mem::transmute(lpsecurityattributes)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 #[inline]
-pub unsafe fn RegSetKeySecurity<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param2: ::windows_core::IntoParam<'a, super::super::Security::PSECURITY_DESCRIPTOR>>(hkey: Param0, securityinformation: u32, psecuritydescriptor: Param2) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSetKeySecurity<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param2: ::windows_core::IntoParam<'a, ::win32_security::PSECURITY_DESCRIPTOR>>(hkey: Param0, securityinformation: u32, psecuritydescriptor: Param2) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSetKeySecurity(hkey: HKEY, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSetKeySecurity(hkey: HKEY, securityinformation: u32, psecuritydescriptor: ::win32_security::PSECURITY_DESCRIPTOR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSetKeySecurity(hkey.into_param().abi(), ::core::mem::transmute(securityinformation), psecuritydescriptor.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegSetKeyValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpvaluename: Param2, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSetKeyValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, lpvaluename: Param2, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSetKeyValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpvaluename: ::windows_core::PCSTR, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSetKeyValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, lpvaluename: ::windows_core::PCSTR, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSetKeyValueA(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpvaluename.into_param().abi(), ::core::mem::transmute(dwtype), ::core::mem::transmute(lpdata), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegSetKeyValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpvaluename: Param2, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSetKeyValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, lpvaluename: Param2, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSetKeyValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpvaluename: ::windows_core::PCWSTR, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSetKeyValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, lpvaluename: ::windows_core::PCWSTR, dwtype: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSetKeyValueW(hkey.into_param().abi(), lpsubkey.into_param().abi(), lpvaluename.into_param().abi(), ::core::mem::transmute(dwtype), ::core::mem::transmute(lpdata), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegSetValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, dwtype: REG_VALUE_TYPE, lpdata: Param3, cbdata: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSetValueA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1, dwtype: REG_VALUE_TYPE, lpdata: Param3, cbdata: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSetValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, dwtype: REG_VALUE_TYPE, lpdata: ::windows_core::PCSTR, cbdata: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSetValueA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR, dwtype: REG_VALUE_TYPE, lpdata: ::windows_core::PCSTR, cbdata: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSetValueA(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(dwtype), lpdata.into_param().abi(), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegSetValueExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpvaluename: Param1, reserved: u32, dwtype: REG_VALUE_TYPE, lpdata: *const u8, cbdata: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSetValueExA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpvaluename: Param1, reserved: u32, dwtype: REG_VALUE_TYPE, lpdata: *const u8, cbdata: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSetValueExA(hkey: HKEY, lpvaluename: ::windows_core::PCSTR, reserved: u32, dwtype: REG_VALUE_TYPE, lpdata: *const u8, cbdata: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSetValueExA(hkey: HKEY, lpvaluename: ::windows_core::PCSTR, reserved: u32, dwtype: REG_VALUE_TYPE, lpdata: *const u8, cbdata: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSetValueExA(hkey.into_param().abi(), lpvaluename.into_param().abi(), ::core::mem::transmute(reserved), ::core::mem::transmute(dwtype), ::core::mem::transmute(lpdata), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegSetValueExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpvaluename: Param1, reserved: u32, dwtype: REG_VALUE_TYPE, lpdata: *const u8, cbdata: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSetValueExW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpvaluename: Param1, reserved: u32, dwtype: REG_VALUE_TYPE, lpdata: *const u8, cbdata: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSetValueExW(hkey: HKEY, lpvaluename: ::windows_core::PCWSTR, reserved: u32, dwtype: REG_VALUE_TYPE, lpdata: *const u8, cbdata: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSetValueExW(hkey: HKEY, lpvaluename: ::windows_core::PCWSTR, reserved: u32, dwtype: REG_VALUE_TYPE, lpdata: *const u8, cbdata: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSetValueExW(hkey.into_param().abi(), lpvaluename.into_param().abi(), ::core::mem::transmute(reserved), ::core::mem::transmute(dwtype), ::core::mem::transmute(lpdata), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegSetValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, dwtype: REG_VALUE_TYPE, lpdata: Param3, cbdata: u32) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegSetValueW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1, dwtype: REG_VALUE_TYPE, lpdata: Param3, cbdata: u32) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegSetValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, dwtype: REG_VALUE_TYPE, lpdata: ::windows_core::PCWSTR, cbdata: u32) -> super::super::Foundation::WIN32_ERROR;
+            fn RegSetValueW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR, dwtype: REG_VALUE_TYPE, lpdata: ::windows_core::PCWSTR, cbdata: u32) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegSetValueW(hkey.into_param().abi(), lpsubkey.into_param().abi(), ::core::mem::transmute(dwtype), lpdata.into_param().abi(), ::core::mem::transmute(cbdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegUnLoadKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegUnLoadKeyA<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hkey: Param0, lpsubkey: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegUnLoadKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegUnLoadKeyA(hkey: HKEY, lpsubkey: ::windows_core::PCSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegUnLoadKeyA(hkey.into_param().abi(), lpsubkey.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RegUnLoadKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1) -> super::super::Foundation::WIN32_ERROR {
+pub unsafe fn RegUnLoadKeyW<'a, Param0: ::windows_core::IntoParam<'a, HKEY>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hkey: Param0, lpsubkey: Param1) -> ::win32_foundation::WIN32_ERROR {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RegUnLoadKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+            fn RegUnLoadKeyW(hkey: HKEY, lpsubkey: ::windows_core::PCWSTR) -> ::win32_foundation::WIN32_ERROR;
         }
         ::core::mem::transmute(RegUnLoadKeyW(hkey.into_param().abi(), lpsubkey.into_param().abi()))
     }

@@ -3,52 +3,35 @@ extern "system" {
     pub fn AddClusterGroupDependency(hdependentgroup: *const _HGROUP, hprovidergroup: *const _HGROUP) -> u32;
     pub fn AddClusterGroupSetDependency(hdependentgroupset: *const _HGROUPSET, hprovidergroupset: *const _HGROUPSET) -> u32;
     pub fn AddClusterGroupToGroupSetDependency(hdependentgroup: *const _HGROUP, hprovidergroupset: *const _HGROUPSET) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AddClusterNode(hcluster: *const _HCLUSTER, lpsznodename: ::windows_core_sys::PCWSTR, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> *mut _HNODE;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AddClusterNodeEx(hcluster: *const _HCLUSTER, lpsznodename: ::windows_core_sys::PCWSTR, dwflags: u32, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> *mut _HNODE;
     pub fn AddClusterResourceDependency(hresource: *const _HRESOURCE, hdependson: *const _HRESOURCE) -> u32;
     pub fn AddClusterResourceNode(hresource: *const _HRESOURCE, hnode: *const _HNODE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn AddClusterStorageNode(hcluster: *const _HCLUSTER, lpsznodename: ::windows_core_sys::PCWSTR, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void, lpszclusterstoragenodedescription: ::windows_core_sys::PCWSTR, lpszclusterstoragenodelocation: ::windows_core_sys::PCWSTR) -> u32;
     pub fn AddCrossClusterGroupSetDependency(hdependentgroupset: *const _HGROUPSET, lpremoteclustername: ::windows_core_sys::PCWSTR, lpremotegroupsetname: ::windows_core_sys::PCWSTR) -> u32;
     pub fn AddResourceToClusterSharedVolumes(hresource: *const _HRESOURCE) -> u32;
     pub fn BackupClusterDatabase(hcluster: *const _HCLUSTER, lpszpathname: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CanResourceBeDependent(hresource: *const _HRESOURCE, hresourcedependent: *const _HRESOURCE) -> super::super::Foundation::BOOL;
+    pub fn CanResourceBeDependent(hresource: *const _HRESOURCE, hresourcedependent: *const _HRESOURCE) -> ::win32_foundation_sys::BOOL;
     pub fn CancelClusterGroupOperation(hgroup: *const _HGROUP, dwcancelflags_reserved: u32) -> u32;
     pub fn ChangeClusterResourceGroup(hresource: *const _HRESOURCE, hgroup: *const _HGROUP) -> u32;
     pub fn ChangeClusterResourceGroupEx(hresource: *const _HRESOURCE, hgroup: *const _HGROUP, flags: u64) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseCluster(hcluster: *const _HCLUSTER) -> super::super::Foundation::BOOL;
+    pub fn CloseCluster(hcluster: *const _HCLUSTER) -> ::win32_foundation_sys::BOOL;
     pub fn CloseClusterCryptProvider(hcluscryptprovider: *const _HCLUSCRYPTPROVIDER) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseClusterGroup(hgroup: *const _HGROUP) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseClusterGroupSet(hgroupset: *const _HGROUPSET) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseClusterNetInterface(hnetinterface: *const _HNETINTERFACE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseClusterNetwork(hnetwork: *const _HNETWORK) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseClusterNode(hnode: *const _HNODE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseClusterNotifyPort(hchange: *const _HCHANGE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseClusterResource(hresource: *const _HRESOURCE) -> super::super::Foundation::BOOL;
+    pub fn CloseClusterGroup(hgroup: *const _HGROUP) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseClusterGroupSet(hgroupset: *const _HGROUPSET) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseClusterNetInterface(hnetinterface: *const _HNETINTERFACE) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseClusterNetwork(hnetwork: *const _HNETWORK) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseClusterNode(hnode: *const _HNODE) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseClusterNotifyPort(hchange: *const _HCHANGE) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseClusterResource(hresource: *const _HRESOURCE) -> ::win32_foundation_sys::BOOL;
     pub fn ClusAddClusterHealthFault(hcluster: *const _HCLUSTER, failure: *const CLUSTER_HEALTH_FAULT, param2: u32) -> u32;
     pub fn ClusGetClusterHealthFaults(hcluster: *const _HCLUSTER, objects: *mut CLUSTER_HEALTH_FAULT_ARRAY, flags: u32) -> u32;
     pub fn ClusRemoveClusterHealthFault(hcluster: *const _HCLUSTER, id: ::windows_core_sys::PCWSTR, flags: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClusWorkerCheckTerminate(lpworker: *mut CLUS_WORKER) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn ClusWorkerCheckTerminate(lpworker: *mut CLUS_WORKER) -> ::win32_foundation_sys::BOOL;
     pub fn ClusWorkerCreate(lpworker: *mut CLUS_WORKER, lpstartaddress: PWORKER_START_ROUTINE, lpparameter: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ClusWorkerTerminate(lpworker: *const CLUS_WORKER);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClusWorkerTerminateEx(clusworker: *mut CLUS_WORKER, timeoutinmilliseconds: u32, waitonly: super::super::Foundation::BOOL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClusWorkersTerminate(clusworkers: *mut *mut CLUS_WORKER, clusworkerscount: usize, timeoutinmilliseconds: u32, waitonly: super::super::Foundation::BOOL) -> u32;
+    pub fn ClusWorkerTerminateEx(clusworker: *mut CLUS_WORKER, timeoutinmilliseconds: u32, waitonly: ::win32_foundation_sys::BOOL) -> u32;
+    pub fn ClusWorkersTerminate(clusworkers: *mut *mut CLUS_WORKER, clusworkerscount: usize, timeoutinmilliseconds: u32, waitonly: ::win32_foundation_sys::BOOL) -> u32;
     pub fn ClusterAddGroupToAffinityRule(hcluster: *const _HCLUSTER, rulename: ::windows_core_sys::PCWSTR, hgroup: *const _HGROUP) -> u32;
     pub fn ClusterAddGroupToGroupSet(hgroupset: *const _HGROUPSET, hgroup: *const _HGROUP) -> u32;
     pub fn ClusterAddGroupToGroupSetWithDomains(hgroupset: *const _HGROUPSET, hgroup: *const _HGROUP, faultdomain: u32, updatedomain: u32) -> u32;
@@ -64,10 +47,8 @@ extern "system" {
     pub fn ClusterEnumEx(hclusterenum: *const _HCLUSENUMEX, dwindex: u32, pitem: *mut CLUSTER_ENUM_ITEM, cbitem: *mut u32) -> u32;
     pub fn ClusterGetEnumCount(henum: *const _HCLUSENUM) -> u32;
     pub fn ClusterGetEnumCountEx(hclusterenum: *const _HCLUSENUMEX) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClusterGetVolumeNameForVolumeMountPoint(lpszvolumemountpoint: ::windows_core_sys::PCWSTR, lpszvolumename: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClusterGetVolumePathName(lpszfilename: ::windows_core_sys::PCWSTR, lpszvolumepathname: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
+    pub fn ClusterGetVolumeNameForVolumeMountPoint(lpszvolumemountpoint: ::windows_core_sys::PCWSTR, lpszvolumename: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn ClusterGetVolumePathName(lpszfilename: ::windows_core_sys::PCWSTR, lpszvolumepathname: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
     pub fn ClusterGroupCloseEnum(hgroupenum: *const _HGROUPENUM) -> u32;
     pub fn ClusterGroupCloseEnumEx(hgroupenumex: *const _HGROUPENUMEX) -> u32;
     pub fn ClusterGroupControl(hgroup: *const _HGROUP, hhostnode: *const _HNODE, dwcontrolcode: u32, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesreturned: *mut u32) -> u32;
@@ -82,8 +63,7 @@ extern "system" {
     pub fn ClusterGroupSetEnum(hgroupsetenum: *const _HGROUPSETENUM, dwindex: u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32) -> u32;
     pub fn ClusterGroupSetGetEnumCount(hgroupsetenum: *mut _HGROUPSETENUM) -> u32;
     pub fn ClusterGroupSetOpenEnum(hcluster: *mut _HCLUSTER) -> *mut _HGROUPSETENUM;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClusterIsPathOnSharedVolume(lpszpathname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn ClusterIsPathOnSharedVolume(lpszpathname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     pub fn ClusterNetInterfaceCloseEnum(hnetinterfaceenum: *const _HNETINTERFACEENUM) -> u32;
     pub fn ClusterNetInterfaceControl(hnetinterface: *const _HNETINTERFACE, hhostnode: *const _HNODE, dwcontrolcode: u32, lpinbuffer: *const ::core::ffi::c_void, ninbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, noutbuffersize: u32, lpbytesreturned: *mut u32) -> u32;
     pub fn ClusterNetInterfaceEnum(hnetinterfaceenum: *const _HNETINTERFACEENUM, dwindex: u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32) -> u32;
@@ -109,46 +89,45 @@ extern "system" {
     pub fn ClusterRegBatchAddCommand(hregbatch: *const _HREGBATCH, dwcommand: CLUSTER_REG_COMMAND, wzname: ::windows_core_sys::PCWSTR, dwoptions: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> i32;
     pub fn ClusterRegBatchCloseNotification(hbatchnotification: *const _HREGBATCHNOTIFICATION) -> i32;
     pub fn ClusterRegBatchReadCommand(hbatchnotification: *const _HREGBATCHNOTIFICATION, pbatchcommand: *mut CLUSTER_BATCH_COMMAND) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClusterRegCloseBatch(hregbatch: *const _HREGBATCH, bcommit: super::super::Foundation::BOOL, failedcommandnumber: *mut i32) -> i32;
+    pub fn ClusterRegCloseBatch(hregbatch: *const _HREGBATCH, bcommit: ::win32_foundation_sys::BOOL, failedcommandnumber: *mut i32) -> i32;
     pub fn ClusterRegCloseBatchEx(hregbatch: *const _HREGBATCH, flags: u32, failedcommandnumber: *mut i32) -> i32;
     pub fn ClusterRegCloseBatchNotifyPort(hbatchnotifyport: *const _HREGBATCHPORT) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegCloseKey(hkey: super::super::System::Registry::HKEY) -> i32;
+    pub fn ClusterRegCloseKey(hkey: ::win32_system_sys::Registry::HKEY) -> i32;
     pub fn ClusterRegCloseReadBatch(hregreadbatch: *const _HREGREADBATCH, phregreadbatchreply: *mut *mut _HREGREADBATCHREPLY) -> i32;
     pub fn ClusterRegCloseReadBatchEx(hregreadbatch: *const _HREGREADBATCH, flags: u32, phregreadbatchreply: *mut *mut _HREGREADBATCHREPLY) -> i32;
     pub fn ClusterRegCloseReadBatchReply(hregreadbatchreply: *const _HREGREADBATCHREPLY) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegCreateBatch(hkey: super::super::System::Registry::HKEY, phregbatch: *mut *mut _HREGBATCH) -> i32;
+    pub fn ClusterRegCreateBatch(hkey: ::win32_system_sys::Registry::HKEY, phregbatch: *mut *mut _HREGBATCH) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegCreateBatchNotifyPort(hkey: super::super::System::Registry::HKEY, phbatchnotifyport: *mut *mut _HREGBATCHPORT) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Registry"))]
-    pub fn ClusterRegCreateKey(hkey: super::super::System::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR, dwoptions: u32, samdesired: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut super::super::System::Registry::HKEY, lpdwdisposition: *mut u32) -> i32;
+    pub fn ClusterRegCreateBatchNotifyPort(hkey: ::win32_system_sys::Registry::HKEY, phbatchnotifyport: *mut *mut _HREGBATCHPORT) -> i32;
+    #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Registry"))]
+    pub fn ClusterRegCreateKey(hkey: ::win32_system_sys::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR, dwoptions: u32, samdesired: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, phkresult: *mut ::win32_system_sys::Registry::HKEY, lpdwdisposition: *mut u32) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegCreateReadBatch(hkey: super::super::System::Registry::HKEY, phregreadbatch: *mut *mut _HREGREADBATCH) -> i32;
+    pub fn ClusterRegCreateReadBatch(hkey: ::win32_system_sys::Registry::HKEY, phregreadbatch: *mut *mut _HREGREADBATCH) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegDeleteKey(hkey: super::super::System::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR) -> i32;
+    pub fn ClusterRegDeleteKey(hkey: ::win32_system_sys::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegDeleteValue(hkey: super::super::System::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ClusterRegEnumKey(hkey: super::super::System::Registry::HKEY, dwindex: u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> i32;
+    pub fn ClusterRegDeleteValue(hkey: ::win32_system_sys::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegEnumValue(hkey: super::super::System::Registry::HKEY, dwindex: u32, lpszvaluename: ::windows_core_sys::PWSTR, lpcchvaluename: *mut u32, lpdwtype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> u32;
+    pub fn ClusterRegEnumKey(hkey: ::win32_system_sys::Registry::HKEY, dwindex: u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32, lpftlastwritetime: *mut ::win32_foundation_sys::FILETIME) -> i32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ClusterRegEnumValue(hkey: ::win32_system_sys::Registry::HKEY, dwindex: u32, lpszvaluename: ::windows_core_sys::PWSTR, lpcchvaluename: *mut u32, lpdwtype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> u32;
     pub fn ClusterRegGetBatchNotification(hbatchnotify: *const _HREGBATCHPORT, phbatchnotification: *mut *mut _HREGBATCHNOTIFICATION) -> i32;
     #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Registry"))]
-    pub fn ClusterRegGetKeySecurity(hkey: super::super::System::Registry::HKEY, requestedinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> i32;
+    pub fn ClusterRegGetKeySecurity(hkey: ::win32_system_sys::Registry::HKEY, requestedinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegOpenKey(hkey: super::super::System::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR, samdesired: u32, phkresult: *mut super::super::System::Registry::HKEY) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ClusterRegQueryInfoKey(hkey: super::super::System::Registry::HKEY, lpcsubkeys: *const u32, lpcchmaxsubkeylen: *const u32, lpcvalues: *const u32, lpcchmaxvaluenamelen: *const u32, lpcbmaxvaluelen: *const u32, lpcbsecuritydescriptor: *const u32, lpftlastwritetime: *const super::super::Foundation::FILETIME) -> i32;
+    pub fn ClusterRegOpenKey(hkey: ::win32_system_sys::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR, samdesired: u32, phkresult: *mut ::win32_system_sys::Registry::HKEY) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegQueryValue(hkey: super::super::System::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR, lpdwvaluetype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> i32;
+    pub fn ClusterRegQueryInfoKey(hkey: ::win32_system_sys::Registry::HKEY, lpcsubkeys: *const u32, lpcchmaxsubkeylen: *const u32, lpcvalues: *const u32, lpcchmaxvaluenamelen: *const u32, lpcbmaxvaluelen: *const u32, lpcbsecuritydescriptor: *const u32, lpftlastwritetime: *const ::win32_foundation_sys::FILETIME) -> i32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ClusterRegQueryValue(hkey: ::win32_system_sys::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR, lpdwvaluetype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> i32;
     pub fn ClusterRegReadBatchAddCommand(hregreadbatch: *const _HREGREADBATCH, wzsubkeyname: ::windows_core_sys::PCWSTR, wzvaluename: ::windows_core_sys::PCWSTR) -> i32;
     pub fn ClusterRegReadBatchReplyNextCommand(hregreadbatchreply: *const _HREGREADBATCHREPLY, pbatchcommand: *mut CLUSTER_READ_BATCH_COMMAND) -> i32;
     #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Registry"))]
-    pub fn ClusterRegSetKeySecurity(hkey: super::super::System::Registry::HKEY, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> i32;
+    pub fn ClusterRegSetKeySecurity(hkey: ::win32_system_sys::Registry::HKEY, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> i32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ClusterRegSetValue(hkey: super::super::System::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR, dwtype: u32, lpdata: *const u8, cbdata: u32) -> u32;
+    pub fn ClusterRegSetValue(hkey: ::win32_system_sys::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR, dwtype: u32, lpdata: *const u8, cbdata: u32) -> u32;
     pub fn ClusterRegSyncDatabase(hcluster: *const _HCLUSTER, flags: u32) -> i32;
     pub fn ClusterRemoveAffinityRule(hcluster: *const _HCLUSTER, rulename: ::windows_core_sys::PCWSTR) -> u32;
     pub fn ClusterRemoveGroupFromAffinityRule(hcluster: *const _HCLUSTER, rulename: ::windows_core_sys::PCWSTR, hgroup: *const _HGROUP) -> u32;
@@ -171,16 +150,12 @@ extern "system" {
     pub fn ClusterResourceTypeOpenEnum(hcluster: *const _HCLUSTER, lpszresourcetypename: ::windows_core_sys::PCWSTR, dwtype: u32) -> *mut _HRESTYPEENUM;
     pub fn ClusterSetAccountAccess(hcluster: *const _HCLUSTER, szaccountsid: ::windows_core_sys::PCWSTR, dwaccess: u32, dwcontroltype: u32) -> u32;
     pub fn ClusterSharedVolumeSetSnapshotState(guidsnapshotset: ::windows_core_sys::GUID, lpszvolumename: ::windows_core_sys::PCWSTR, state: CLUSTER_SHARED_VOLUME_SNAPSHOT_STATE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ClusterUpgradeFunctionalLevel(hcluster: *const _HCLUSTER, perform: super::super::Foundation::BOOL, pfnprogresscallback: PCLUSTER_UPGRADE_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn ClusterUpgradeFunctionalLevel(hcluster: *const _HCLUSTER, perform: ::win32_foundation_sys::BOOL, pfnprogresscallback: PCLUSTER_UPGRADE_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> u32;
     pub fn CreateCluster(pconfig: *const CREATE_CLUSTER_CONFIG, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> *mut _HCLUSTER;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn CreateClusterAvailabilitySet(hcluster: *const _HCLUSTER, lpavailabilitysetname: ::windows_core_sys::PCWSTR, pavailabilitysetconfig: *const CLUSTER_AVAILABILITY_SET_CONFIG) -> *mut _HGROUPSET;
     pub fn CreateClusterGroup(hcluster: *const _HCLUSTER, lpszgroupname: ::windows_core_sys::PCWSTR) -> *mut _HGROUP;
     pub fn CreateClusterGroupEx(hcluster: *const _HCLUSTER, lpszgroupname: ::windows_core_sys::PCWSTR, pgroupinfo: *const CLUSTER_CREATE_GROUP_INFO) -> *mut _HGROUP;
     pub fn CreateClusterGroupSet(hcluster: *const _HCLUSTER, groupsetname: ::windows_core_sys::PCWSTR) -> *mut _HGROUPSET;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn CreateClusterNameAccount(hcluster: *const _HCLUSTER, pconfig: *const CREATE_CLUSTER_NAME_ACCOUNT, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> u32;
     pub fn CreateClusterNotifyPort(hchange: *const _HCHANGE, hcluster: *const _HCLUSTER, dwfilter: u32, dwnotifykey: usize) -> *mut _HCHANGE;
     pub fn CreateClusterNotifyPortV2(hchange: *const _HCHANGE, hcluster: *const _HCLUSTER, filters: *const NOTIFY_FILTER_AND_TYPE, dwfiltercount: u32, dwnotifykey: usize) -> *mut _HCHANGE;
@@ -190,8 +165,7 @@ extern "system" {
     pub fn DeleteClusterGroupSet(hgroupset: *const _HGROUPSET) -> u32;
     pub fn DeleteClusterResource(hresource: *const _HRESOURCE) -> u32;
     pub fn DeleteClusterResourceType(hcluster: *const _HCLUSTER, lpszresourcetypename: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DestroyCluster(hcluster: *const _HCLUSTER, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void, fdeletevirtualcomputerobjects: super::super::Foundation::BOOL) -> u32;
+    pub fn DestroyCluster(hcluster: *const _HCLUSTER, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void, fdeletevirtualcomputerobjects: ::win32_foundation_sys::BOOL) -> u32;
     pub fn DestroyClusterGroup(hgroup: *const _HGROUP) -> u32;
     pub fn DetermineCNOResTypeFromCluster(hcluster: *const _HCLUSTER, pcnorestype: *mut CLUSTER_MGMT_POINT_RESTYPE) -> u32;
     pub fn DetermineCNOResTypeFromNodelist(cnodes: u32, ppsznodenames: *const ::windows_core_sys::PWSTR, pcnorestype: *mut CLUSTER_MGMT_POINT_RESTYPE) -> u32;
@@ -209,42 +183,39 @@ extern "system" {
     pub fn GetClusterFromNode(hnode: *const _HNODE) -> *mut _HCLUSTER;
     pub fn GetClusterFromResource(hresource: *const _HRESOURCE) -> *mut _HCLUSTER;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn GetClusterGroupKey(hgroup: *const _HGROUP, samdesired: u32) -> super::super::System::Registry::HKEY;
+    pub fn GetClusterGroupKey(hgroup: *const _HGROUP, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
     pub fn GetClusterGroupState(hgroup: *const _HGROUP, lpsznodename: ::windows_core_sys::PWSTR, lpcchnodename: *mut u32) -> CLUSTER_GROUP_STATE;
     pub fn GetClusterInformation(hcluster: *const _HCLUSTER, lpszclustername: ::windows_core_sys::PWSTR, lpcchclustername: *mut u32, lpclusterinfo: *mut CLUSTERVERSIONINFO) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn GetClusterKey(hcluster: *const _HCLUSTER, samdesired: u32) -> super::super::System::Registry::HKEY;
+    pub fn GetClusterKey(hcluster: *const _HCLUSTER, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
     pub fn GetClusterNetInterface(hcluster: *const _HCLUSTER, lpsznodename: ::windows_core_sys::PCWSTR, lpsznetworkname: ::windows_core_sys::PCWSTR, lpszinterfacename: ::windows_core_sys::PWSTR, lpcchinterfacename: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn GetClusterNetInterfaceKey(hnetinterface: *const _HNETINTERFACE, samdesired: u32) -> super::super::System::Registry::HKEY;
+    pub fn GetClusterNetInterfaceKey(hnetinterface: *const _HNETINTERFACE, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
     pub fn GetClusterNetInterfaceState(hnetinterface: *const _HNETINTERFACE) -> CLUSTER_NETINTERFACE_STATE;
     pub fn GetClusterNetworkId(hnetwork: *const _HNETWORK, lpsznetworkid: ::windows_core_sys::PWSTR, lpcchname: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn GetClusterNetworkKey(hnetwork: *const _HNETWORK, samdesired: u32) -> super::super::System::Registry::HKEY;
+    pub fn GetClusterNetworkKey(hnetwork: *const _HNETWORK, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
     pub fn GetClusterNetworkState(hnetwork: *const _HNETWORK) -> CLUSTER_NETWORK_STATE;
     pub fn GetClusterNodeId(hnode: *const _HNODE, lpsznodeid: ::windows_core_sys::PWSTR, lpcchname: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn GetClusterNodeKey(hnode: *const _HNODE, samdesired: u32) -> super::super::System::Registry::HKEY;
+    pub fn GetClusterNodeKey(hnode: *const _HNODE, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
     pub fn GetClusterNodeState(hnode: *const _HNODE) -> CLUSTER_NODE_STATE;
     pub fn GetClusterNotify(hchange: *const _HCHANGE, lpdwnotifykey: *mut usize, lpdwfiltertype: *mut u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32, dwmilliseconds: u32) -> u32;
     pub fn GetClusterNotifyV2(hchange: *const _HCHANGE, lpdwnotifykey: *mut usize, pfilterandtype: *mut NOTIFY_FILTER_AND_TYPE, buffer: *mut u8, lpbbuffersize: *mut u32, lpszobjectid: ::windows_core_sys::PWSTR, lpcchobjectid: *mut u32, lpszparentid: ::windows_core_sys::PWSTR, lpcchparentid: *mut u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32, lpsztype: ::windows_core_sys::PWSTR, lpcchtype: *mut u32, dwmilliseconds: u32) -> u32;
     pub fn GetClusterQuorumResource(hcluster: *const _HCLUSTER, lpszresourcename: ::windows_core_sys::PWSTR, lpcchresourcename: *mut u32, lpszdevicename: ::windows_core_sys::PWSTR, lpcchdevicename: *mut u32, lpdwmaxquorumlogsize: *mut u32) -> u32;
     pub fn GetClusterResourceDependencyExpression(hresource: *const _HRESOURCE, lpszdependencyexpression: ::windows_core_sys::PWSTR, lpcchdependencyexpression: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn GetClusterResourceKey(hresource: *const _HRESOURCE, samdesired: u32) -> super::super::System::Registry::HKEY;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetClusterResourceNetworkName(hresource: *const _HRESOURCE, lpbuffer: ::windows_core_sys::PWSTR, nsize: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn GetClusterResourceKey(hresource: *const _HRESOURCE, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
+    pub fn GetClusterResourceNetworkName(hresource: *const _HRESOURCE, lpbuffer: ::windows_core_sys::PWSTR, nsize: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetClusterResourceState(hresource: *const _HRESOURCE, lpsznodename: ::windows_core_sys::PWSTR, lpcchnodename: *mut u32, lpszgroupname: ::windows_core_sys::PWSTR, lpcchgroupname: *mut u32) -> CLUSTER_RESOURCE_STATE;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn GetClusterResourceTypeKey(hcluster: *const _HCLUSTER, lpsztypename: ::windows_core_sys::PCWSTR, samdesired: u32) -> super::super::System::Registry::HKEY;
+    pub fn GetClusterResourceTypeKey(hcluster: *const _HCLUSTER, lpsztypename: ::windows_core_sys::PCWSTR, samdesired: u32) -> ::win32_system_sys::Registry::HKEY;
     pub fn GetNodeCloudTypeDW(ppsznodename: ::windows_core_sys::PCWSTR, nodecloudtype: *mut u32) -> u32;
     pub fn GetNodeClusterState(lpsznodename: ::windows_core_sys::PCWSTR, pdwclusterstate: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetNotifyEventHandle(hchange: *const _HCHANGE, lphtargetevent: *mut super::super::Foundation::HANDLE) -> u32;
+    pub fn GetNotifyEventHandle(hchange: *const _HCHANGE, lphtargetevent: *mut ::win32_foundation_sys::HANDLE) -> u32;
     pub fn InitializeClusterHealthFault(clusterhealthfault: *mut CLUSTER_HEALTH_FAULT) -> u32;
     pub fn InitializeClusterHealthFaultArray(clusterhealthfaultarray: *mut CLUSTER_HEALTH_FAULT_ARRAY) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsFileOnClusterSharedVolume(lpszpathname: ::windows_core_sys::PCWSTR, pbfileisonsharedvolume: *mut super::super::Foundation::BOOL) -> u32;
+    pub fn IsFileOnClusterSharedVolume(lpszpathname: ::windows_core_sys::PCWSTR, pbfileisonsharedvolume: *mut ::win32_foundation_sys::BOOL) -> u32;
     pub fn MoveClusterGroup(hgroup: *const _HGROUP, hdestinationnode: *const _HNODE) -> u32;
     pub fn MoveClusterGroupEx(hgroup: *const _HGROUP, hdestinationnode: *const _HNODE, dwmoveflags: u32, lpinbuffer: *const u8, cbinbuffersize: u32) -> u32;
     pub fn OfflineClusterGroup(hgroup: *const _HGROUP) -> u32;
@@ -272,41 +243,33 @@ extern "system" {
     pub fn OpenClusterResource(hcluster: *const _HCLUSTER, lpszresourcename: ::windows_core_sys::PCWSTR) -> *mut _HRESOURCE;
     pub fn OpenClusterResourceEx(hcluster: *const _HCLUSTER, lpszresourcename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, lpdwgrantedaccess: *mut u32) -> *mut _HRESOURCE;
     pub fn PauseClusterNode(hnode: *const _HNODE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PauseClusterNodeEx(hnode: *const _HNODE, bdrainnode: super::super::Foundation::BOOL, dwpauseflags: u32, hnodedraintarget: *const _HNODE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryAppInstanceVersion(appinstanceid: *const ::windows_core_sys::GUID, instanceversionhigh: *mut u64, instanceversionlow: *mut u64, versionstatus: *mut super::super::Foundation::NTSTATUS) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterAppInstance(processhandle: super::super::Foundation::HANDLE, appinstanceid: *const ::windows_core_sys::GUID, childreninheritappinstance: super::super::Foundation::BOOL) -> u32;
+    pub fn PauseClusterNodeEx(hnode: *const _HNODE, bdrainnode: ::win32_foundation_sys::BOOL, dwpauseflags: u32, hnodedraintarget: *const _HNODE) -> u32;
+    pub fn QueryAppInstanceVersion(appinstanceid: *const ::windows_core_sys::GUID, instanceversionhigh: *mut u64, instanceversionlow: *mut u64, versionstatus: *mut ::win32_foundation_sys::NTSTATUS) -> u32;
+    pub fn RegisterAppInstance(processhandle: ::win32_foundation_sys::HANDLE, appinstanceid: *const ::windows_core_sys::GUID, childreninheritappinstance: ::win32_foundation_sys::BOOL) -> u32;
     pub fn RegisterAppInstanceVersion(appinstanceid: *const ::windows_core_sys::GUID, instanceversionhigh: u64, instanceversionlow: u64) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterClusterNotify(hchange: *const _HCHANGE, dwfiltertype: u32, hobject: super::super::Foundation::HANDLE, dwnotifykey: usize) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterClusterNotifyV2(hchange: *const _HCHANGE, filter: NOTIFY_FILTER_AND_TYPE, hobject: super::super::Foundation::HANDLE, dwnotifykey: usize) -> u32;
+    pub fn RegisterClusterNotify(hchange: *const _HCHANGE, dwfiltertype: u32, hobject: ::win32_foundation_sys::HANDLE, dwnotifykey: usize) -> u32;
+    pub fn RegisterClusterNotifyV2(hchange: *const _HCHANGE, filter: NOTIFY_FILTER_AND_TYPE, hobject: ::win32_foundation_sys::HANDLE, dwnotifykey: usize) -> u32;
     pub fn RegisterClusterResourceTypeNotifyV2(hchange: *const _HCHANGE, hcluster: *const _HCLUSTER, flags: i64, restypename: ::windows_core_sys::PCWSTR, dwnotifykey: usize) -> u32;
     pub fn RemoveClusterGroupDependency(hgroup: *const _HGROUP, hdependson: *const _HGROUP) -> u32;
     pub fn RemoveClusterGroupSetDependency(hgroupset: *const _HGROUPSET, hdependson: *const _HGROUPSET) -> u32;
     pub fn RemoveClusterGroupToGroupSetDependency(hgroup: *const _HGROUP, hdependson: *const _HGROUPSET) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveClusterNameAccount(hcluster: *const _HCLUSTER, bdeletecomputerobjects: super::super::Foundation::BOOL) -> u32;
+    pub fn RemoveClusterNameAccount(hcluster: *const _HCLUSTER, bdeletecomputerobjects: ::win32_foundation_sys::BOOL) -> u32;
     pub fn RemoveClusterResourceDependency(hresource: *const _HRESOURCE, hdependson: *const _HRESOURCE) -> u32;
     pub fn RemoveClusterResourceNode(hresource: *const _HRESOURCE, hnode: *const _HNODE) -> u32;
     pub fn RemoveClusterStorageNode(hcluster: *const _HCLUSTER, lpszclusterstorageenclosurename: ::windows_core_sys::PCWSTR, dwtimeout: u32, dwflags: u32) -> u32;
     pub fn RemoveCrossClusterGroupSetDependency(hdependentgroupset: *const _HGROUPSET, lpremoteclustername: ::windows_core_sys::PCWSTR, lpremotegroupsetname: ::windows_core_sys::PCWSTR) -> u32;
     pub fn RemoveResourceFromClusterSharedVolumes(hresource: *const _HRESOURCE) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilAddUnknownProperties(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, pcboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilAddUnknownProperties(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, pcboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
     pub fn ResUtilCreateDirectoryTree(pszpath: ::windows_core_sys::PCWSTR) -> u32;
     pub fn ResUtilDupGroup(group: *mut _HGROUP, copy: *mut *mut _HGROUP) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ResUtilDupParameterBlock(poutparams: *mut u8, pinparams: *const u8, ppropertytable: *const RESUTIL_PROPERTY_ITEM) -> u32;
     pub fn ResUtilDupResource(group: *mut _HRESOURCE, copy: *mut *mut _HRESOURCE) -> u32;
     pub fn ResUtilDupString(pszinstring: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
     pub fn ResUtilEnumGroups(hcluster: *mut _HCLUSTER, hself: *mut _HGROUP, prescallback: LPGROUP_CALLBACK_EX, pparameter: *mut ::core::ffi::c_void) -> u32;
     pub fn ResUtilEnumGroupsEx(hcluster: *mut _HCLUSTER, hself: *mut _HGROUP, grouptype: CLUSGROUP_TYPE, prescallback: LPGROUP_CALLBACK_EX, pparameter: *mut ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilEnumPrivateProperties(hkeyclusterkey: super::super::System::Registry::HKEY, pszoutproperties: ::windows_core_sys::PWSTR, cboutpropertiessize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn ResUtilEnumPrivateProperties(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszoutproperties: ::windows_core_sys::PWSTR, cboutpropertiessize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
     pub fn ResUtilEnumProperties(ppropertytable: *const RESUTIL_PROPERTY_ITEM, pszoutproperties: ::windows_core_sys::PWSTR, cboutpropertiessize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
     pub fn ResUtilEnumResources(hself: *mut _HRESOURCE, lpszrestypename: ::windows_core_sys::PCWSTR, prescallback: LPRESOURCE_CALLBACK, pparameter: *mut ::core::ffi::c_void) -> u32;
     pub fn ResUtilEnumResourcesEx(hcluster: *mut _HCLUSTER, hself: *mut _HRESOURCE, lpszrestypename: ::windows_core_sys::PCWSTR, prescallback: LPRESOURCE_CALLBACK_EX, pparameter: *mut ::core::ffi::c_void) -> u32;
@@ -317,20 +280,18 @@ extern "system" {
     pub fn ResUtilFindDwordProperty(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pdwpropertyvalue: *mut u32) -> u32;
     pub fn ResUtilFindExpandSzProperty(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pszpropertyvalue: *mut ::windows_core_sys::PWSTR) -> u32;
     pub fn ResUtilFindExpandedSzProperty(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pszpropertyvalue: *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilFindFileTimeProperty(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pftpropertyvalue: *mut super::super::Foundation::FILETIME) -> u32;
+    pub fn ResUtilFindFileTimeProperty(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pftpropertyvalue: *mut ::win32_foundation_sys::FILETIME) -> u32;
     pub fn ResUtilFindLongProperty(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, plpropertyvalue: *mut i32) -> u32;
     pub fn ResUtilFindMultiSzProperty(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pszpropertyvalue: *mut ::windows_core_sys::PWSTR, pcbpropertyvaluesize: *mut u32) -> u32;
     pub fn ResUtilFindSzProperty(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pszpropertyvalue: *mut ::windows_core_sys::PWSTR) -> u32;
     pub fn ResUtilFindULargeIntegerProperty(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, plpropertyvalue: *mut u64) -> u32;
     pub fn ResUtilFreeEnvironment(lpenvironment: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn ResUtilFreeParameterBlock(poutparams: *mut u8, pinparams: *const u8, ppropertytable: *const RESUTIL_PROPERTY_ITEM);
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilGetAllProperties(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilGetAllProperties(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
     pub fn ResUtilGetBinaryProperty(ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32, pvaluestruct: *const CLUSPROP_BINARY, pboldvalue: *const u8, cboldvaluesize: u32, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilGetBinaryValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32) -> u32;
+    pub fn ResUtilGetBinaryValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32) -> u32;
     pub fn ResUtilGetClusterGroupType(hgroup: *mut _HGROUP, grouptype: *mut CLUSGROUP_TYPE) -> u32;
     pub fn ResUtilGetClusterId(hcluster: *mut _HCLUSTER, guid: *mut ::windows_core_sys::GUID) -> u32;
     pub fn ResUtilGetClusterRoleState(hcluster: *const _HCLUSTER, eclusterrole: CLUSTER_ROLE) -> CLUSTER_ROLE_STATE;
@@ -339,118 +300,98 @@ extern "system" {
     pub fn ResUtilGetCoreGroup(hcluster: *mut _HCLUSTER) -> *mut _HGROUP;
     pub fn ResUtilGetDwordProperty(pdwoutvalue: *mut u32, pvaluestruct: *const CLUSPROP_DWORD, dwoldvalue: u32, dwminimum: u32, dwmaximum: u32, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilGetDwordValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pdwoutvalue: *mut u32, dwdefaultvalue: u32) -> u32;
+    pub fn ResUtilGetDwordValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pdwoutvalue: *mut u32, dwdefaultvalue: u32) -> u32;
     pub fn ResUtilGetEnvironmentWithNetName(hresource: *const _HRESOURCE) -> *mut ::core::ffi::c_void;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilGetFileTimeProperty(pftoutvalue: *mut super::super::Foundation::FILETIME, pvaluestruct: *const CLUSPROP_FILETIME, ftoldvalue: super::super::Foundation::FILETIME, ftminimum: super::super::Foundation::FILETIME, ftmaximum: super::super::Foundation::FILETIME, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32;
+    pub fn ResUtilGetFileTimeProperty(pftoutvalue: *mut ::win32_foundation_sys::FILETIME, pvaluestruct: *const CLUSPROP_FILETIME, ftoldvalue: ::win32_foundation_sys::FILETIME, ftminimum: ::win32_foundation_sys::FILETIME, ftmaximum: ::win32_foundation_sys::FILETIME, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32;
     pub fn ResUtilGetLongProperty(ploutvalue: *mut i32, pvaluestruct: *const CLUSPROP_LONG, loldvalue: i32, lminimum: i32, lmaximum: i32, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32;
     pub fn ResUtilGetMultiSzProperty(ppszoutvalue: *mut ::windows_core_sys::PWSTR, pcboutvaluesize: *mut u32, pvaluestruct: *const CLUSPROP_SZ, pszoldvalue: ::windows_core_sys::PCWSTR, cboldvaluesize: u32, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilGetPrivateProperties(hkeyclusterkey: super::super::System::Registry::HKEY, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilGetProperties(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilGetPropertiesToParameterBlock(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutparams: *mut u8, bcheckforrequiredproperties: super::super::Foundation::BOOL, psznameofpropinerror: *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilGetProperty(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytableitem: *const RESUTIL_PROPERTY_ITEM, poutpropertyitem: *mut *mut ::core::ffi::c_void, pcboutpropertyitemsize: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilGetPropertyFormats(ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertyformatlist: *mut ::core::ffi::c_void, cbpropertyformatlistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilGetPropertySize(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytableitem: *const RESUTIL_PROPERTY_ITEM, pcboutpropertylistsize: *mut u32, pnpropertycount: *mut u32) -> u32;
+    pub fn ResUtilGetPrivateProperties(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilGetQwordValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pqwoutvalue: *mut u64, qwdefaultvalue: u64) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilGetResourceDependency(hself: super::super::Foundation::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR) -> *mut _HRESOURCE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilGetResourceDependencyByClass(hcluster: *mut _HCLUSTER, hself: super::super::Foundation::HANDLE, prci: *mut CLUS_RESOURCE_CLASS_INFO, brecurse: super::super::Foundation::BOOL) -> *mut _HRESOURCE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilGetResourceDependencyByClassEx(hcluster: *mut _HCLUSTER, hself: super::super::Foundation::HANDLE, prci: *mut CLUS_RESOURCE_CLASS_INFO, brecurse: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> *mut _HRESOURCE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilGetResourceDependencyByName(hcluster: *mut _HCLUSTER, hself: super::super::Foundation::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, brecurse: super::super::Foundation::BOOL) -> *mut _HRESOURCE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilGetResourceDependencyByNameEx(hcluster: *mut _HCLUSTER, hself: super::super::Foundation::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, brecurse: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> *mut _HRESOURCE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilGetResourceDependencyEx(hself: super::super::Foundation::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> *mut _HRESOURCE;
+    pub fn ResUtilGetProperties(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilGetPropertiesToParameterBlock(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutparams: *mut u8, bcheckforrequiredproperties: ::win32_foundation_sys::BOOL, psznameofpropinerror: *mut ::windows_core_sys::PWSTR) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilGetProperty(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytableitem: *const RESUTIL_PROPERTY_ITEM, poutpropertyitem: *mut *mut ::core::ffi::c_void, pcboutpropertyitemsize: *mut u32) -> u32;
+    pub fn ResUtilGetPropertyFormats(ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertyformatlist: *mut ::core::ffi::c_void, cbpropertyformatlistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilGetPropertySize(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytableitem: *const RESUTIL_PROPERTY_ITEM, pcboutpropertylistsize: *mut u32, pnpropertycount: *mut u32) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilGetQwordValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pqwoutvalue: *mut u64, qwdefaultvalue: u64) -> u32;
+    pub fn ResUtilGetResourceDependency(hself: ::win32_foundation_sys::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR) -> *mut _HRESOURCE;
+    pub fn ResUtilGetResourceDependencyByClass(hcluster: *mut _HCLUSTER, hself: ::win32_foundation_sys::HANDLE, prci: *mut CLUS_RESOURCE_CLASS_INFO, brecurse: ::win32_foundation_sys::BOOL) -> *mut _HRESOURCE;
+    pub fn ResUtilGetResourceDependencyByClassEx(hcluster: *mut _HCLUSTER, hself: ::win32_foundation_sys::HANDLE, prci: *mut CLUS_RESOURCE_CLASS_INFO, brecurse: ::win32_foundation_sys::BOOL, dwdesiredaccess: u32) -> *mut _HRESOURCE;
+    pub fn ResUtilGetResourceDependencyByName(hcluster: *mut _HCLUSTER, hself: ::win32_foundation_sys::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, brecurse: ::win32_foundation_sys::BOOL) -> *mut _HRESOURCE;
+    pub fn ResUtilGetResourceDependencyByNameEx(hcluster: *mut _HCLUSTER, hself: ::win32_foundation_sys::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, brecurse: ::win32_foundation_sys::BOOL, dwdesiredaccess: u32) -> *mut _HRESOURCE;
+    pub fn ResUtilGetResourceDependencyEx(hself: ::win32_foundation_sys::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> *mut _HRESOURCE;
     pub fn ResUtilGetResourceDependentIPAddressProps(hresource: *const _HRESOURCE, pszaddress: ::windows_core_sys::PWSTR, pcchaddress: *mut u32, pszsubnetmask: ::windows_core_sys::PWSTR, pcchsubnetmask: *mut u32, psznetwork: ::windows_core_sys::PWSTR, pcchnetwork: *mut u32) -> u32;
     pub fn ResUtilGetResourceName(hresource: *const _HRESOURCE, pszresourcename: ::windows_core_sys::PWSTR, pcchresourcenameinout: *mut u32) -> u32;
     pub fn ResUtilGetResourceNameDependency(lpszresourcename: ::windows_core_sys::PCWSTR, lpszresourcetype: ::windows_core_sys::PCWSTR) -> *mut _HRESOURCE;
     pub fn ResUtilGetResourceNameDependencyEx(lpszresourcename: ::windows_core_sys::PCWSTR, lpszresourcetype: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> *mut _HRESOURCE;
     pub fn ResUtilGetSzProperty(ppszoutvalue: *mut ::windows_core_sys::PWSTR, pvaluestruct: *const CLUSPROP_SZ, pszoldvalue: ::windows_core_sys::PCWSTR, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilGetSzValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilGroupsEqual(hself: *mut _HGROUP, hgroup: *mut _HGROUP, pequal: *mut super::super::Foundation::BOOL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilIsPathValid(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilIsResourceClassEqual(prci: *mut CLUS_RESOURCE_CLASS_INFO, hresource: *mut _HRESOURCE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilLeftPaxosIsLessThanRight(left: *const PaxosTagCStruct, right: *const PaxosTagCStruct) -> super::super::Foundation::BOOL;
+    pub fn ResUtilGetSzValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR;
+    pub fn ResUtilGroupsEqual(hself: *mut _HGROUP, hgroup: *mut _HGROUP, pequal: *mut ::win32_foundation_sys::BOOL) -> u32;
+    pub fn ResUtilIsPathValid(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn ResUtilIsResourceClassEqual(prci: *mut CLUS_RESOURCE_CLASS_INFO, hresource: *mut _HRESOURCE) -> ::win32_foundation_sys::BOOL;
+    pub fn ResUtilLeftPaxosIsLessThanRight(left: *const PaxosTagCStruct, right: *const PaxosTagCStruct) -> ::win32_foundation_sys::BOOL;
     pub fn ResUtilNodeEnum(hcluster: *mut _HCLUSTER, pnodecallback: LPNODE_CALLBACK, pparameter: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilPaxosComparer(left: *const PaxosTagCStruct, right: *const PaxosTagCStruct) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn ResUtilPaxosComparer(left: *const PaxosTagCStruct, right: *const PaxosTagCStruct) -> ::win32_foundation_sys::BOOL;
     pub fn ResUtilPropertyListFromParameterBlock(ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, pcboutpropertylistsize: *mut u32, pinparams: *const u8, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32;
     pub fn ResUtilRemoveResourceServiceEnvironment(pszservicename: ::windows_core_sys::PCWSTR, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32;
     pub fn ResUtilResourceDepEnum(hself: *mut _HRESOURCE, enumtype: u32, prescallback: LPRESOURCE_CALLBACK_EX, pparameter: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilResourceTypesEqual(lpszresourcetypename: ::windows_core_sys::PCWSTR, hresource: *mut _HRESOURCE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilResourcesEqual(hself: *mut _HRESOURCE, hresource: *mut _HRESOURCE) -> super::super::Foundation::BOOL;
+    pub fn ResUtilResourceTypesEqual(lpszresourcetypename: ::windows_core_sys::PCWSTR, hresource: *mut _HRESOURCE) -> ::win32_foundation_sys::BOOL;
+    pub fn ResUtilResourcesEqual(hself: *mut _HRESOURCE, hresource: *mut _HRESOURCE) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilSetBinaryValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pbnewvalue: *const u8, cbnewvaluesize: u32, ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32) -> u32;
+    pub fn ResUtilSetBinaryValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pbnewvalue: *const u8, cbnewvaluesize: u32, ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilSetDwordValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, dwnewvalue: u32, pdwoutvalue: *mut u32) -> u32;
+    pub fn ResUtilSetDwordValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, dwnewvalue: u32, pdwoutvalue: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilSetExpandSzValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, ppszoutstring: *mut ::windows_core_sys::PWSTR) -> u32;
+    pub fn ResUtilSetExpandSzValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, ppszoutstring: *mut ::windows_core_sys::PWSTR) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilSetMultiSzValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, cbnewvaluesize: u32, ppszoutvalue: *mut ::windows_core_sys::PWSTR, pcboutvaluesize: *mut u32) -> u32;
+    pub fn ResUtilSetMultiSzValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, cbnewvaluesize: u32, ppszoutvalue: *mut ::windows_core_sys::PWSTR, pcboutvaluesize: *mut u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilSetPrivatePropertyList(hkeyclusterkey: super::super::System::Registry::HKEY, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilSetPropertyParameterBlock(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, pinparams: *const u8, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilSetPropertyParameterBlockEx(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, pinparams: *const u8, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, bforcewrite: super::super::Foundation::BOOL, poutparams: *mut u8) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilSetPropertyTable(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: super::super::Foundation::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilSetPropertyTableEx(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: super::super::Foundation::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, bforcewrite: super::super::Foundation::BOOL, poutparams: *mut u8) -> u32;
+    pub fn ResUtilSetPrivatePropertyList(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilSetQwordValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, qwnewvalue: u64, pqwoutvalue: *mut u64) -> u32;
+    pub fn ResUtilSetPropertyParameterBlock(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, pinparams: *const u8, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilSetPropertyParameterBlockEx(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, pinparams: *const u8, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, bforcewrite: ::win32_foundation_sys::BOOL, poutparams: *mut u8) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilSetPropertyTable(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: ::win32_foundation_sys::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilSetPropertyTableEx(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: ::win32_foundation_sys::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, bforcewrite: ::win32_foundation_sys::BOOL, poutparams: *mut u8) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilSetQwordValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, qwnewvalue: u64, pqwoutvalue: *mut u64) -> u32;
     pub fn ResUtilSetResourceServiceEnvironment(pszservicename: ::windows_core_sys::PCWSTR, hresource: *mut _HRESOURCE, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32;
     #[cfg(feature = "Win32_Security")]
-    pub fn ResUtilSetResourceServiceStartParameters(pszservicename: ::windows_core_sys::PCWSTR, schscmhandle: super::super::Security::SC_HANDLE, phservice: *mut isize, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32;
+    pub fn ResUtilSetResourceServiceStartParameters(pszservicename: ::windows_core_sys::PCWSTR, schscmhandle: ::win32_security_sys::SC_HANDLE, phservice: *mut isize, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32;
     #[cfg(feature = "Win32_Security")]
-    pub fn ResUtilSetResourceServiceStartParametersEx(pszservicename: ::windows_core_sys::PCWSTR, schscmhandle: super::super::Security::SC_HANDLE, phservice: *mut isize, dwdesiredaccess: u32, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32;
+    pub fn ResUtilSetResourceServiceStartParametersEx(pszservicename: ::windows_core_sys::PCWSTR, schscmhandle: ::win32_security_sys::SC_HANDLE, phservice: *mut isize, dwdesiredaccess: u32, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilSetSzValue(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, ppszoutstring: *mut ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilSetUnknownProperties(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32;
+    pub fn ResUtilSetSzValue(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, ppszoutstring: *mut ::windows_core_sys::PWSTR) -> u32;
     #[cfg(feature = "Win32_System_Registry")]
-    pub fn ResUtilSetValueEx(hkeyclusterkey: super::super::System::Registry::HKEY, valuename: ::windows_core_sys::PCWSTR, valuetype: u32, valuedata: *const u8, valuesize: u32, flags: u32) -> u32;
+    pub fn ResUtilSetUnknownProperties(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilSetValueEx(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, valuename: ::windows_core_sys::PCWSTR, valuetype: u32, valuedata: *const u8, valuesize: u32, flags: u32) -> u32;
     pub fn ResUtilStartResourceService(pszservicename: ::windows_core_sys::PCWSTR, phservicehandle: *mut isize) -> u32;
     pub fn ResUtilStopResourceService(pszservicename: ::windows_core_sys::PCWSTR) -> u32;
     #[cfg(feature = "Win32_Security")]
-    pub fn ResUtilStopService(hservicehandle: super::super::Security::SC_HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilTerminateServiceProcessFromResDll(dwservicepid: u32, boffline: super::super::Foundation::BOOL, pdwresourcestate: *mut u32, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32;
+    pub fn ResUtilStopService(hservicehandle: ::win32_security_sys::SC_HANDLE) -> u32;
+    pub fn ResUtilTerminateServiceProcessFromResDll(dwservicepid: u32, boffline: ::win32_foundation_sys::BOOL, pdwresourcestate: *mut u32, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32;
     pub fn ResUtilVerifyPrivatePropertyList(pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ResUtilVerifyPropertyTable(ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: super::super::Foundation::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32;
+    pub fn ResUtilVerifyPropertyTable(ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: ::win32_foundation_sys::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32;
     pub fn ResUtilVerifyResourceService(pszservicename: ::windows_core_sys::PCWSTR) -> u32;
     #[cfg(feature = "Win32_Security")]
-    pub fn ResUtilVerifyService(hservicehandle: super::super::Security::SC_HANDLE) -> u32;
+    pub fn ResUtilVerifyService(hservicehandle: ::win32_security_sys::SC_HANDLE) -> u32;
     pub fn ResUtilVerifyShutdownSafe(flags: u32, reason: u32, presult: *mut u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn ResUtilsDeleteKeyTree(key: super::super::System::Registry::HKEY, keyname: ::windows_core_sys::PCWSTR, treatnokeyaserror: super::super::Foundation::BOOL) -> u32;
+    #[cfg(feature = "Win32_System_Registry")]
+    pub fn ResUtilsDeleteKeyTree(key: ::win32_system_sys::Registry::HKEY, keyname: ::windows_core_sys::PCWSTR, treatnokeyaserror: ::win32_foundation_sys::BOOL) -> u32;
     pub fn ResetAllAppInstanceVersions() -> u32;
     pub fn RestartClusterResource(hresource: *const _HRESOURCE, dwflags: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RestoreClusterDatabase(lpszpathname: ::windows_core_sys::PCWSTR, bforce: super::super::Foundation::BOOL, lpszquorumdriveletter: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn RestoreClusterDatabase(lpszpathname: ::windows_core_sys::PCWSTR, bforce: ::win32_foundation_sys::BOOL, lpszquorumdriveletter: ::windows_core_sys::PCWSTR) -> u32;
     pub fn ResumeClusterNode(hnode: *const _HNODE) -> u32;
     pub fn ResumeClusterNodeEx(hnode: *const _HNODE, eresumefailbacktype: CLUSTER_NODE_RESUME_FAILBACK_TYPE, dwresumeflagsreserved: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetAppInstanceCsvFlags(processhandle: super::super::Foundation::HANDLE, mask: u32, flags: u32) -> u32;
+    pub fn SetAppInstanceCsvFlags(processhandle: ::win32_foundation_sys::HANDLE, mask: u32, flags: u32) -> u32;
     pub fn SetClusterGroupName(hgroup: *const _HGROUP, lpszgroupname: ::windows_core_sys::PCWSTR) -> u32;
     pub fn SetClusterGroupNodeList(hgroup: *const _HGROUP, nodecount: u32, nodelist: *const *const _HNODE) -> u32;
     pub fn SetClusterGroupSetDependencyExpression(hgroupset: *const _HGROUPSET, lpszdependencyexprssion: ::windows_core_sys::PCWSTR) -> u32;
@@ -460,7 +401,6 @@ extern "system" {
     pub fn SetClusterQuorumResource(hresource: *const _HRESOURCE, lpszdevicename: ::windows_core_sys::PCWSTR, dwmaxquologsize: u32) -> u32;
     pub fn SetClusterResourceDependencyExpression(hresource: *const _HRESOURCE, lpszdependencyexpression: ::windows_core_sys::PCWSTR) -> u32;
     pub fn SetClusterResourceName(hresource: *const _HRESOURCE, lpszresourcename: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn SetClusterServiceAccountPassword(lpszclustername: ::windows_core_sys::PCWSTR, lpsznewpassword: ::windows_core_sys::PCWSTR, dwflags: u32, lpreturnstatusbuffer: *mut CLUSTER_SET_PASSWORD_STATUS, lpcbreturnstatusbuffersize: *mut u32) -> u32;
     pub fn SetGroupDependencyExpression(hgroup: *const _HGROUP, lpszdependencyexpression: ::windows_core_sys::PCWSTR) -> u32;
 }
@@ -673,7 +613,6 @@ pub const CLCTL_MODIFY_SHIFT: u32 = 22u32;
 pub const CLCTL_USER_SHIFT: u32 = 21u32;
 pub const CLOUD_WITNESS_CONTAINER_NAME: &str = "msft-cloud-witness";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLRES_CALLBACK_FUNCTION_TABLE {
     pub LogEvent: PLOG_EVENT_ROUTINE,
     pub SetResourceStatusEx: PSET_RESOURCE_STATUS_ROUTINE_EX,
@@ -691,47 +630,45 @@ pub struct CLRES_CALLBACK_FUNCTION_TABLE {
     pub SetResourceLockedModeEx: PSET_RESOURCE_LOCKED_MODE_EX_ROUTINE,
     pub RequestDump: PREQUEST_DUMP_ROUTINE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLRES_CALLBACK_FUNCTION_TABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLRES_CALLBACK_FUNCTION_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct CLRES_FUNCTION_TABLE {
     pub TableSize: u32,
     pub Version: u32,
     pub Anonymous: CLRES_FUNCTION_TABLE_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for CLRES_FUNCTION_TABLE {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for CLRES_FUNCTION_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub union CLRES_FUNCTION_TABLE_0 {
     pub V1Functions: CLRES_V1_FUNCTIONS,
     pub V2Functions: CLRES_V2_FUNCTIONS,
     pub V3Functions: CLRES_V3_FUNCTIONS,
     pub V4Functions: CLRES_V4_FUNCTIONS,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for CLRES_FUNCTION_TABLE_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for CLRES_FUNCTION_TABLE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct CLRES_V1_FUNCTIONS {
     pub Open: POPEN_ROUTINE,
     pub Close: PCLOSE_ROUTINE,
@@ -745,16 +682,16 @@ pub struct CLRES_V1_FUNCTIONS {
     pub ResourceControl: PRESOURCE_CONTROL_ROUTINE,
     pub ResourceTypeControl: PRESOURCE_TYPE_CONTROL_ROUTINE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for CLRES_V1_FUNCTIONS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for CLRES_V1_FUNCTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct CLRES_V2_FUNCTIONS {
     pub Open: POPEN_V2_ROUTINE,
     pub Close: PCLOSE_ROUTINE,
@@ -769,16 +706,16 @@ pub struct CLRES_V2_FUNCTIONS {
     pub ResourceTypeControl: PRESOURCE_TYPE_CONTROL_ROUTINE,
     pub Cancel: PCANCEL_ROUTINE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for CLRES_V2_FUNCTIONS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for CLRES_V2_FUNCTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct CLRES_V3_FUNCTIONS {
     pub Open: POPEN_V2_ROUTINE,
     pub Close: PCLOSE_ROUTINE,
@@ -793,16 +730,16 @@ pub struct CLRES_V3_FUNCTIONS {
     pub BeginResourceTypeControl: PBEGIN_RESTYPECALL_ROUTINE,
     pub Cancel: PCANCEL_ROUTINE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for CLRES_V3_FUNCTIONS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for CLRES_V3_FUNCTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub struct CLRES_V4_FUNCTIONS {
     pub Open: POPEN_V2_ROUTINE,
     pub Close: PCLOSE_ROUTINE,
@@ -819,9 +756,9 @@ pub struct CLRES_V4_FUNCTIONS {
     pub BeginResourceControlAsUser: PBEGIN_RESCALL_AS_USER_ROUTINE,
     pub BeginResourceTypeControlAsUser: PBEGIN_RESTYPECALL_AS_USER_ROUTINE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::marker::Copy for CLRES_V4_FUNCTIONS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 impl ::core::clone::Clone for CLRES_V4_FUNCTIONS {
     fn clone(&self) -> Self {
         *self
@@ -965,15 +902,12 @@ pub const CLUSCTL_GROUP_GET_FAILURE_INFO: CLUSCTL_GROUP_CODES = 50331673i32;
 pub const CLUSCTL_GROUP_GET_LAST_MOVE_TIME: CLUSCTL_GROUP_CODES = 50332377i32;
 pub const CLUSCTL_GROUP_SET_CCF_FROM_MASTER: CLUSCTL_GROUP_CODES = 54537606i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUSCTL_GROUP_GET_LAST_MOVE_TIME_OUTPUT {
     pub GetTickCount64: u64,
-    pub GetSystemTime: super::super::Foundation::SYSTEMTIME,
+    pub GetSystemTime: ::win32_foundation_sys::SYSTEMTIME,
     pub NodeId: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUSCTL_GROUP_GET_LAST_MOVE_TIME_OUTPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUSCTL_GROUP_GET_LAST_MOVE_TIME_OUTPUT {
     fn clone(&self) -> Self {
         *self
@@ -1308,7 +1242,7 @@ impl ::core::clone::Clone for CLUSPROP_BINARY {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_SystemServices"))]
+#[cfg(feature = "Win32_System_SystemServices")]
 pub union CLUSPROP_BUFFER_HELPER {
     pub pb: *mut u8,
     pub pw: *mut u16,
@@ -1339,9 +1273,9 @@ pub union CLUSPROP_BUFFER_HELPER {
     pub pPartitionInfoValueEx2: *mut CLUSPROP_PARTITION_INFO_EX2,
     pub pFileTimeValue: *mut CLUSPROP_FILETIME,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_SystemServices"))]
+#[cfg(feature = "Win32_System_SystemServices")]
 impl ::core::marker::Copy for CLUSPROP_BUFFER_HELPER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_SystemServices"))]
+#[cfg(feature = "Win32_System_SystemServices")]
 impl ::core::clone::Clone for CLUSPROP_BUFFER_HELPER {
     fn clone(&self) -> Self {
         *self
@@ -1359,14 +1293,11 @@ impl ::core::clone::Clone for CLUSPROP_DWORD {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUSPROP_FILETIME {
     pub __AnonymousBase_clusapi_L5225_C14: CLUSPROP_VALUE,
-    pub ft: super::super::Foundation::FILETIME,
+    pub ft: ::win32_foundation_sys::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUSPROP_FILETIME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUSPROP_FILETIME {
     fn clone(&self) -> Self {
         *self
@@ -1524,7 +1455,7 @@ impl ::core::clone::Clone for CLUSPROP_SECURITY_DESCRIPTOR {
 #[repr(C)]
 #[cfg(feature = "Win32_System_SystemServices")]
 pub union CLUSPROP_SECURITY_DESCRIPTOR_0 {
-    pub sd: super::super::System::SystemServices::SECURITY_DESCRIPTOR_RELATIVE,
+    pub sd: ::win32_system_sys::SystemServices::SECURITY_DESCRIPTOR_RELATIVE,
     pub rgbSecurityDescriptor: [u8; 1],
 }
 #[cfg(feature = "Win32_System_SystemServices")]
@@ -1952,16 +1883,13 @@ impl ::core::clone::Clone for CLUSTERVERSIONINFO_NT4 {
 }
 pub const CLUSTER_ADD_EVICT_DELAY: &str = "AddEvictDelay";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUSTER_AVAILABILITY_SET_CONFIG {
     pub dwVersion: u32,
     pub dwUpdateDomains: u32,
     pub dwFaultDomains: u32,
-    pub bReserveSpareNode: super::super::Foundation::BOOL,
+    pub bReserveSpareNode: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUSTER_AVAILABILITY_SET_CONFIG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUSTER_AVAILABILITY_SET_CONFIG {
     fn clone(&self) -> Self {
         *self
@@ -2294,15 +2222,12 @@ impl ::core::clone::Clone for CLUSTER_IP_ENTRY {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUSTER_MEMBERSHIP_INFO {
-    pub HasQuorum: super::super::Foundation::BOOL,
+    pub HasQuorum: ::win32_foundation_sys::BOOL,
     pub UpnodesSize: u32,
     pub Upnodes: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUSTER_MEMBERSHIP_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUSTER_MEMBERSHIP_INFO {
     fn clone(&self) -> Self {
         *self
@@ -2655,15 +2580,12 @@ pub const ClusterSetupPhaseReport: CLUSTER_SETUP_PHASE_TYPE = 4i32;
 pub const CLUSTER_SET_ACCESS_TYPE_ALLOWED: u32 = 0u32;
 pub const CLUSTER_SET_ACCESS_TYPE_DENIED: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUSTER_SET_PASSWORD_STATUS {
     pub NodeId: u32,
-    pub SetAttempted: super::super::Foundation::BOOLEAN,
+    pub SetAttempted: ::win32_foundation_sys::BOOLEAN,
     pub ReturnStatus: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUSTER_SET_PASSWORD_STATUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUSTER_SET_PASSWORD_STATUS {
     fn clone(&self) -> Self {
         *self
@@ -2910,14 +2832,11 @@ impl ::core::clone::Clone for CLUS_CREATE_INFRASTRUCTURE_FILESERVER_OUTPUT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUS_CSV_MAINTENANCE_MODE_INFO {
-    pub InMaintenance: super::super::Foundation::BOOL,
+    pub InMaintenance: ::win32_foundation_sys::BOOL,
     pub VolumeName: [u16; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUS_CSV_MAINTENANCE_MODE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUS_CSV_MAINTENANCE_MODE_INFO {
     fn clone(&self) -> Self {
         *self
@@ -2962,14 +2881,11 @@ impl ::core::clone::Clone for CLUS_DISK_NUMBER_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUS_DNN_LEADER_STATUS {
-    pub IsOnline: super::super::Foundation::BOOL,
-    pub IsFileServerPresent: super::super::Foundation::BOOL,
+    pub IsOnline: ::win32_foundation_sys::BOOL,
+    pub IsFileServerPresent: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUS_DNN_LEADER_STATUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUS_DNN_LEADER_STATUS {
     fn clone(&self) -> Self {
         *self
@@ -3021,29 +2937,23 @@ pub const CLUS_GRP_MOVE_ALLOWED: u32 = 0u32;
 pub const CLUS_GRP_MOVE_LOCKED: u32 = 1u32;
 pub const CLUS_HYBRID_QUORUM: u32 = 1024u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUS_MAINTENANCE_MODE_INFO {
-    pub InMaintenance: super::super::Foundation::BOOL,
+    pub InMaintenance: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUS_MAINTENANCE_MODE_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUS_MAINTENANCE_MODE_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUS_MAINTENANCE_MODE_INFOEX {
-    pub InMaintenance: super::super::Foundation::BOOL,
+    pub InMaintenance: ::win32_foundation_sys::BOOL,
     pub MaintainenceModeType: MAINTENANCE_MODE_TYPE_ENUM,
     pub InternalState: CLUSTER_RESOURCE_STATE,
     pub Signature: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUS_MAINTENANCE_MODE_INFOEX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUS_MAINTENANCE_MODE_INFOEX {
     fn clone(&self) -> Self {
         *self
@@ -3114,15 +3024,12 @@ impl ::core::clone::Clone for CLUS_NETNAME_PWD_INFOEX {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUS_NETNAME_VS_TOKEN_INFO {
     pub ProcessID: u32,
     pub DesiredAccess: u32,
-    pub InheritHandle: super::super::Foundation::BOOL,
+    pub InheritHandle: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUS_NETNAME_VS_TOKEN_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUS_NETNAME_VS_TOKEN_INFO {
     fn clone(&self) -> Self {
         *self
@@ -3347,15 +3254,12 @@ impl ::core::clone::Clone for CLUS_SCSI_ADDRESS_0_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUS_SET_MAINTENANCE_MODE_INPUT {
-    pub InMaintenance: super::super::Foundation::BOOL,
+    pub InMaintenance: ::win32_foundation_sys::BOOL,
     pub ExtraParameterSize: u32,
     pub ExtraParameter: [u8; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUS_SET_MAINTENANCE_MODE_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUS_SET_MAINTENANCE_MODE_INPUT {
     fn clone(&self) -> Self {
         *self
@@ -3374,15 +3278,12 @@ impl ::core::clone::Clone for CLUS_SHARED_VOLUME_BACKUP_MODE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUS_STARTING_PARAMS {
     pub dwSize: u32,
-    pub bForm: super::super::Foundation::BOOL,
-    pub bFirst: super::super::Foundation::BOOL,
+    pub bForm: ::win32_foundation_sys::BOOL,
+    pub bFirst: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUS_STARTING_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUS_STARTING_PARAMS {
     fn clone(&self) -> Self {
         *self
@@ -3421,14 +3322,11 @@ impl ::core::clone::Clone for CLUS_STORAGE_SET_DRIVELETTER {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLUS_WORKER {
-    pub hThread: super::super::Foundation::HANDLE,
-    pub Terminate: super::super::Foundation::BOOL,
+    pub hThread: ::win32_foundation_sys::HANDLE,
+    pub Terminate: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLUS_WORKER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLUS_WORKER {
     fn clone(&self) -> Self {
         *self
@@ -3436,7 +3334,6 @@ impl ::core::clone::Clone for CLUS_WORKER {
 }
 pub const CREATEDC_PRESENT: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CREATE_CLUSTER_CONFIG {
     pub dwVersion: u32,
     pub lpszClusterName: ::windows_core_sys::PCWSTR,
@@ -3444,13 +3341,11 @@ pub struct CREATE_CLUSTER_CONFIG {
     pub ppszNodeNames: *mut ::windows_core_sys::PWSTR,
     pub cIpEntries: u32,
     pub pIpEntries: *mut CLUSTER_IP_ENTRY,
-    pub fEmptyCluster: super::super::Foundation::BOOLEAN,
+    pub fEmptyCluster: ::win32_foundation_sys::BOOLEAN,
     pub managementPointType: CLUSTER_MGMT_POINT_TYPE,
     pub managementPointResType: CLUSTER_MGMT_POINT_RESTYPE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CREATE_CLUSTER_CONFIG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CREATE_CLUSTER_CONFIG {
     fn clone(&self) -> Self {
         *self
@@ -3458,7 +3353,6 @@ impl ::core::clone::Clone for CREATE_CLUSTER_CONFIG {
 }
 pub const CREATE_CLUSTER_MAJOR_VERSION_MASK: u32 = 4294967040u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CREATE_CLUSTER_NAME_ACCOUNT {
     pub dwVersion: u32,
     pub lpszClusterName: ::windows_core_sys::PCWSTR,
@@ -3468,11 +3362,9 @@ pub struct CREATE_CLUSTER_NAME_ACCOUNT {
     pub pszDomain: ::windows_core_sys::PCWSTR,
     pub managementPointType: CLUSTER_MGMT_POINT_TYPE,
     pub managementPointResType: CLUSTER_MGMT_POINT_RESTYPE,
-    pub bUpgradeVCOs: super::super::Foundation::BOOLEAN,
+    pub bUpgradeVCOs: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CREATE_CLUSTER_NAME_ACCOUNT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CREATE_CLUSTER_NAME_ACCOUNT {
     fn clone(&self) -> Self {
         *self
@@ -3682,16 +3574,13 @@ pub const MINIMUM_NEVER_PREEMPT_PRIORITY: &str = "MinimumNeverPreemptPriority";
 pub const MINIMUM_PREEMPTOR_PRIORITY: &str = "MinimumPreemptorPriority";
 pub const MN_UPGRADE_VERSION: u32 = 3u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct MONITOR_STATE {
     pub LastUpdate: i64,
     pub State: RESOURCE_MONITOR_STATE,
-    pub ActiveResource: super::super::Foundation::HANDLE,
-    pub ResmonStop: super::super::Foundation::BOOL,
+    pub ActiveResource: ::win32_foundation_sys::HANDLE,
+    pub ResmonStop: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for MONITOR_STATE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for MONITOR_STATE {
     fn clone(&self) -> Self {
         *self
@@ -3741,55 +3630,37 @@ impl ::core::clone::Clone for NodeUtilizationInfoElement {
     }
 }
 pub type PARBITRATE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void, lostquorumresource: PQUORUM_RESOURCE_LOST) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PBEGIN_RESCALL_AS_USER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void, tokenhandle: super::super::Foundation::HANDLE, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32, context: i64, returnedasynchronously: *mut super::super::Foundation::BOOL) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PBEGIN_RESCALL_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32, context: i64, returnedasynchronously: *mut super::super::Foundation::BOOL) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PBEGIN_RESTYPECALL_AS_USER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcetypename: ::windows_core_sys::PCWSTR, tokenhandle: super::super::Foundation::HANDLE, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32, context: i64, returnedasynchronously: *mut super::super::Foundation::BOOL) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PBEGIN_RESTYPECALL_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcetypename: ::windows_core_sys::PCWSTR, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32, context: i64, returnedasynchronously: *mut super::super::Foundation::BOOL) -> u32>;
+pub type PBEGIN_RESCALL_AS_USER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void, tokenhandle: ::win32_foundation_sys::HANDLE, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32, context: i64, returnedasynchronously: *mut ::win32_foundation_sys::BOOL) -> u32>;
+pub type PBEGIN_RESCALL_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32, context: i64, returnedasynchronously: *mut ::win32_foundation_sys::BOOL) -> u32>;
+pub type PBEGIN_RESTYPECALL_AS_USER_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcetypename: ::windows_core_sys::PCWSTR, tokenhandle: ::win32_foundation_sys::HANDLE, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32, context: i64, returnedasynchronously: *mut ::win32_foundation_sys::BOOL) -> u32>;
+pub type PBEGIN_RESTYPECALL_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcetypename: ::windows_core_sys::PCWSTR, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32, context: i64, returnedasynchronously: *mut ::win32_foundation_sys::BOOL) -> u32>;
 pub type PCANCEL_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void, cancelflags_reserved: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCHANGE_RESOURCE_PROCESS_FOR_DUMPS = ::core::option::Option<unsafe extern "system" fn(resource: isize, processname: ::windows_core_sys::PCWSTR, processid: u32, isadd: super::super::Foundation::BOOL) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCHANGE_RES_TYPE_PROCESS_FOR_DUMPS = ::core::option::Option<unsafe extern "system" fn(resourcetypename: ::windows_core_sys::PCWSTR, processname: ::windows_core_sys::PCWSTR, processid: u32, isadd: super::super::Foundation::BOOL) -> u32>;
+pub type PCHANGE_RESOURCE_PROCESS_FOR_DUMPS = ::core::option::Option<unsafe extern "system" fn(resource: isize, processname: ::windows_core_sys::PCWSTR, processid: u32, isadd: ::win32_foundation_sys::BOOL) -> u32>;
+pub type PCHANGE_RES_TYPE_PROCESS_FOR_DUMPS = ::core::option::Option<unsafe extern "system" fn(resourcetypename: ::windows_core_sys::PCWSTR, processname: ::windows_core_sys::PCWSTR, processid: u32, isadd: ::win32_foundation_sys::BOOL) -> u32>;
 pub type PCLOSE_CLUSTER_CRYPT_PROVIDER = ::core::option::Option<unsafe extern "system" fn(hcluscryptprovider: *const _HCLUSCRYPTPROVIDER) -> u32>;
 pub type PCLOSE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPIClusWorkerCheckTerminate = ::core::option::Option<unsafe extern "system" fn(lpworker: *mut CLUS_WORKER) -> super::super::Foundation::BOOL>;
+pub type PCLUSAPIClusWorkerCheckTerminate = ::core::option::Option<unsafe extern "system" fn(lpworker: *mut CLUS_WORKER) -> ::win32_foundation_sys::BOOL>;
 pub type PCLUSAPI_ADD_CLUSTER_GROUP_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hdependentgroup: *const _HGROUP, hprovidergroup: *const _HGROUP) -> u32>;
 pub type PCLUSAPI_ADD_CLUSTER_GROUP_GROUPSET_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hdependentgroupset: *const _HGROUPSET, hprovidergroupset: *const _HGROUPSET) -> u32>;
 pub type PCLUSAPI_ADD_CLUSTER_GROUP_TO_GROUP_GROUPSET_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hdependentgroup: *const _HGROUP, hprovidergroupset: *const _HGROUPSET) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PCLUSAPI_ADD_CLUSTER_NODE = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpsznodename: ::windows_core_sys::PCWSTR, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> *mut _HNODE>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PCLUSAPI_ADD_CLUSTER_NODE_EX = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpsznodename: ::windows_core_sys::PCWSTR, dwflags: u32, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> *mut _HNODE>;
 pub type PCLUSAPI_ADD_CLUSTER_RESOURCE_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, hdependson: *mut _HRESOURCE) -> u32>;
 pub type PCLUSAPI_ADD_CLUSTER_RESOURCE_NODE = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, hnode: *mut _HNODE) -> u32>;
 pub type PCLUSAPI_ADD_CROSS_CLUSTER_GROUPSET_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hdependentgroupset: *const _HGROUPSET, lpremoteclustername: ::windows_core_sys::PCWSTR, lpremotegroupsetname: ::windows_core_sys::PCWSTR) -> u32>;
 pub type PCLUSAPI_ADD_RESOURCE_TO_CLUSTER_SHARED_VOLUMES = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE) -> u32>;
 pub type PCLUSAPI_BACKUP_CLUSTER_DATABASE = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpszpathname: ::windows_core_sys::PCWSTR) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CAN_RESOURCE_BE_DEPENDENT = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, hresourcedependent: *mut _HRESOURCE) -> super::super::Foundation::BOOL>;
+pub type PCLUSAPI_CAN_RESOURCE_BE_DEPENDENT = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, hresourcedependent: *mut _HRESOURCE) -> ::win32_foundation_sys::BOOL>;
 pub type PCLUSAPI_CHANGE_CLUSTER_RESOURCE_GROUP = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, hgroup: *mut _HGROUP) -> u32>;
 pub type PCLUSAPI_CHANGE_CLUSTER_RESOURCE_GROUP_EX = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, hgroup: *mut _HGROUP, flags: u64) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CLOSE_CLUSTER = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CLOSE_CLUSTER_GROUP = ::core::option::Option<unsafe extern "system" fn(hgroup: *const _HGROUP) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CLOSE_CLUSTER_GROUP_GROUPSET = ::core::option::Option<unsafe extern "system" fn(hgroupset: *const _HGROUPSET) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CLOSE_CLUSTER_NETWORK = ::core::option::Option<unsafe extern "system" fn(hnetwork: *const _HNETWORK) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CLOSE_CLUSTER_NET_INTERFACE = ::core::option::Option<unsafe extern "system" fn(hnetinterface: *const _HNETINTERFACE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CLOSE_CLUSTER_NODE = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CLOSE_CLUSTER_NOTIFY_PORT = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CLOSE_CLUSTER_RESOURCE = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE) -> super::super::Foundation::BOOL>;
+pub type PCLUSAPI_CLOSE_CLUSTER = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER) -> ::win32_foundation_sys::BOOL>;
+pub type PCLUSAPI_CLOSE_CLUSTER_GROUP = ::core::option::Option<unsafe extern "system" fn(hgroup: *const _HGROUP) -> ::win32_foundation_sys::BOOL>;
+pub type PCLUSAPI_CLOSE_CLUSTER_GROUP_GROUPSET = ::core::option::Option<unsafe extern "system" fn(hgroupset: *const _HGROUPSET) -> ::win32_foundation_sys::BOOL>;
+pub type PCLUSAPI_CLOSE_CLUSTER_NETWORK = ::core::option::Option<unsafe extern "system" fn(hnetwork: *const _HNETWORK) -> ::win32_foundation_sys::BOOL>;
+pub type PCLUSAPI_CLOSE_CLUSTER_NET_INTERFACE = ::core::option::Option<unsafe extern "system" fn(hnetinterface: *const _HNETINTERFACE) -> ::win32_foundation_sys::BOOL>;
+pub type PCLUSAPI_CLOSE_CLUSTER_NODE = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE) -> ::win32_foundation_sys::BOOL>;
+pub type PCLUSAPI_CLOSE_CLUSTER_NOTIFY_PORT = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE) -> ::win32_foundation_sys::BOOL>;
+pub type PCLUSAPI_CLOSE_CLUSTER_RESOURCE = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE) -> ::win32_foundation_sys::BOOL>;
 pub type PCLUSAPI_CLUSTER_ADD_GROUP_TO_AFFINITY_RULE = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, rulename: ::windows_core_sys::PCWSTR, hgroup: *const _HGROUP) -> u32>;
 pub type PCLUSAPI_CLUSTER_ADD_GROUP_TO_GROUP_GROUPSET = ::core::option::Option<unsafe extern "system" fn(hgroupset: *const _HGROUPSET, hgroup: *const _HGROUP) -> u32>;
 pub type PCLUSAPI_CLUSTER_AFFINITY_RULE_CONTROL = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, affinityrulename: ::windows_core_sys::PCWSTR, hhostnode: *const _HNODE, dwcontrolcode: u32, lpinbuffer: *const ::core::ffi::c_void, cbinbuffersize: u32, lpoutbuffer: *mut ::core::ffi::c_void, cboutbuffersize: u32, lpbytesreturned: *mut u32) -> u32>;
@@ -3829,31 +3700,31 @@ pub type PCLUSAPI_CLUSTER_NODE_OPEN_ENUM_EX = ::core::option::Option<unsafe exte
 pub type PCLUSAPI_CLUSTER_OPEN_ENUM = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, dwtype: u32) -> *mut _HCLUSENUM>;
 pub type PCLUSAPI_CLUSTER_OPEN_ENUM_EX = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, dwtype: u32, poptions: *const ::core::ffi::c_void) -> *mut _HCLUSENUMEX>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_CLUSTER_REG_CLOSE_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY) -> i32>;
+pub type PCLUSAPI_CLUSTER_REG_CLOSE_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY) -> i32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_CLUSTER_REG_CREATE_BATCH = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, phregbatch: *mut *mut _HREGBATCH) -> i32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Registry"))]
-pub type PCLUSAPI_CLUSTER_REG_CREATE_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR, dwoptions: u32, samdesired: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, phkresult: *mut super::super::System::Registry::HKEY, lpdwdisposition: *mut u32) -> i32>;
-#[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_CLUSTER_REG_DELETE_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR) -> i32>;
-#[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_CLUSTER_REG_DELETE_VALUE = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PCLUSAPI_CLUSTER_REG_ENUM_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, dwindex: u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> i32>;
-#[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_CLUSTER_REG_ENUM_VALUE = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, dwindex: u32, lpszvaluename: ::windows_core_sys::PWSTR, lpcchvaluename: *mut u32, lpdwtype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> u32>;
+pub type PCLUSAPI_CLUSTER_REG_CREATE_BATCH = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, phregbatch: *mut *mut _HREGBATCH) -> i32>;
 #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Registry"))]
-pub type PCLUSAPI_CLUSTER_REG_GET_KEY_SECURITY = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, requestedinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> i32>;
+pub type PCLUSAPI_CLUSTER_REG_CREATE_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR, dwoptions: u32, samdesired: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, phkresult: *mut ::win32_system_sys::Registry::HKEY, lpdwdisposition: *mut u32) -> i32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_CLUSTER_REG_OPEN_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR, samdesired: u32, phkresult: *mut super::super::System::Registry::HKEY) -> i32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PCLUSAPI_CLUSTER_REG_QUERY_INFO_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut super::super::Foundation::FILETIME) -> i32>;
+pub type PCLUSAPI_CLUSTER_REG_DELETE_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR) -> i32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_CLUSTER_REG_QUERY_VALUE = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR, lpdwvaluetype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> i32>;
+pub type PCLUSAPI_CLUSTER_REG_DELETE_VALUE = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PCLUSAPI_CLUSTER_REG_ENUM_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, dwindex: u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32, lpftlastwritetime: *mut ::win32_foundation_sys::FILETIME) -> i32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PCLUSAPI_CLUSTER_REG_ENUM_VALUE = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, dwindex: u32, lpszvaluename: ::windows_core_sys::PWSTR, lpcchvaluename: *mut u32, lpdwtype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> u32>;
 #[cfg(all(feature = "Win32_Security", feature = "Win32_System_Registry"))]
-pub type PCLUSAPI_CLUSTER_REG_SET_KEY_SECURITY = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> i32>;
+pub type PCLUSAPI_CLUSTER_REG_GET_KEY_SECURITY = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, requestedinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, lpcbsecuritydescriptor: *mut u32) -> i32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_CLUSTER_REG_SET_VALUE = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR, dwtype: u32, lpdata: *const u8, cbdata: u32) -> u32>;
+pub type PCLUSAPI_CLUSTER_REG_OPEN_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, lpszsubkey: ::windows_core_sys::PCWSTR, samdesired: u32, phkresult: *mut ::win32_system_sys::Registry::HKEY) -> i32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PCLUSAPI_CLUSTER_REG_QUERY_INFO_KEY = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, lpcsubkeys: *mut u32, lpcbmaxsubkeylen: *mut u32, lpcvalues: *mut u32, lpcbmaxvaluenamelen: *mut u32, lpcbmaxvaluelen: *mut u32, lpcbsecuritydescriptor: *mut u32, lpftlastwritetime: *mut ::win32_foundation_sys::FILETIME) -> i32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PCLUSAPI_CLUSTER_REG_QUERY_VALUE = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR, lpdwvaluetype: *mut u32, lpdata: *mut u8, lpcbdata: *mut u32) -> i32>;
+#[cfg(all(feature = "Win32_Security", feature = "Win32_System_Registry"))]
+pub type PCLUSAPI_CLUSTER_REG_SET_KEY_SECURITY = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, securityinformation: u32, psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR) -> i32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PCLUSAPI_CLUSTER_REG_SET_VALUE = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, lpszvaluename: ::windows_core_sys::PCWSTR, dwtype: u32, lpdata: *const u8, cbdata: u32) -> u32>;
 pub type PCLUSAPI_CLUSTER_REG_SYNC_DATABASE = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, flags: u32) -> i32>;
 pub type PCLUSAPI_CLUSTER_REMOVE_AFFINITY_RULE = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, rulename: ::windows_core_sys::PCWSTR) -> u32>;
 pub type PCLUSAPI_CLUSTER_REMOVE_GROUP_FROM_AFFINITY_RULE = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, rulename: ::windows_core_sys::PCWSTR, hgroup: *const _HGROUP) -> u32>;
@@ -3872,22 +3743,15 @@ pub type PCLUSAPI_CLUSTER_RESOURCE_TYPE_CONTROL = ::core::option::Option<unsafe 
 pub type PCLUSAPI_CLUSTER_RESOURCE_TYPE_ENUM = ::core::option::Option<unsafe extern "system" fn(hrestypeenum: *const _HRESTYPEENUM, dwindex: u32, lpdwtype: *mut u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32) -> u32>;
 pub type PCLUSAPI_CLUSTER_RESOURCE_TYPE_GET_ENUM_COUNT = ::core::option::Option<unsafe extern "system" fn(hrestypeenum: *const _HRESTYPEENUM) -> u32>;
 pub type PCLUSAPI_CLUSTER_RESOURCE_TYPE_OPEN_ENUM = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpszresourcetypename: ::windows_core_sys::PCWSTR, dwtype: u32) -> *mut _HRESTYPEENUM>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_CLUSTER_UPGRADE = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, perform: super::super::Foundation::BOOL, pfnprogresscallback: PCLUSTER_UPGRADE_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PCLUSAPI_CLUSTER_UPGRADE = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, perform: ::win32_foundation_sys::BOOL, pfnprogresscallback: PCLUSTER_UPGRADE_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> u32>;
 pub type PCLUSAPI_CLUS_WORKER_CREATE = ::core::option::Option<unsafe extern "system" fn(lpworker: *mut CLUS_WORKER, lpstartaddress: PWORKER_START_ROUTINE, lpparameter: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PCLUSAPI_CLUS_WORKER_TERMINATE = ::core::option::Option<unsafe extern "system" fn(lpworker: *const CLUS_WORKER)>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PCLUSAPI_CREATE_CLUSTER = ::core::option::Option<unsafe extern "system" fn(pconfig: *const CREATE_CLUSTER_CONFIG, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> *mut _HCLUSTER>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PCLUSAPI_CREATE_CLUSTER_AVAILABILITY_SET = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpavailabilitysetname: ::windows_core_sys::PCWSTR, pavailabilitysetconfig: *const CLUSTER_AVAILABILITY_SET_CONFIG) -> *mut _HGROUPSET>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PCLUSAPI_CREATE_CLUSTER_CNOLESS = ::core::option::Option<unsafe extern "system" fn(pconfig: *const CREATE_CLUSTER_CONFIG, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> *mut _HCLUSTER>;
 pub type PCLUSAPI_CREATE_CLUSTER_GROUP = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpszgroupname: ::windows_core_sys::PCWSTR) -> *mut _HGROUP>;
 pub type PCLUSAPI_CREATE_CLUSTER_GROUPEX = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpszgroupname: ::windows_core_sys::PCWSTR, pgroupinfo: *const CLUSTER_CREATE_GROUP_INFO) -> *mut _HGROUP>;
 pub type PCLUSAPI_CREATE_CLUSTER_GROUP_GROUPSET = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpszgroupsetname: ::windows_core_sys::PCWSTR) -> *mut _HGROUPSET>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PCLUSAPI_CREATE_CLUSTER_NAME_ACCOUNT = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, pconfig: *const CREATE_CLUSTER_NAME_ACCOUNT, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void) -> u32>;
 pub type PCLUSAPI_CREATE_CLUSTER_NOTIFY_PORT = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, hcluster: *const _HCLUSTER, dwfilter: u32, dwnotifykey: usize) -> *mut _HCHANGE>;
 pub type PCLUSAPI_CREATE_CLUSTER_NOTIFY_PORT_V2 = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, hcluster: *const _HCLUSTER, filters: *const NOTIFY_FILTER_AND_TYPE, dwfiltercount: u32, dwnotifykey: usize) -> *mut _HCHANGE>;
@@ -3897,8 +3761,7 @@ pub type PCLUSAPI_DELETE_CLUSTER_GROUP = ::core::option::Option<unsafe extern "s
 pub type PCLUSAPI_DELETE_CLUSTER_GROUP_GROUPSET = ::core::option::Option<unsafe extern "system" fn(hgroupset: *const _HGROUPSET) -> u32>;
 pub type PCLUSAPI_DELETE_CLUSTER_RESOURCE = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE) -> u32>;
 pub type PCLUSAPI_DELETE_CLUSTER_RESOURCE_TYPE = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, lpszresourcetypename: ::windows_core_sys::PCWSTR) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_DESTROY_CLUSTER = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void, fdeletevirtualcomputerobjects: super::super::Foundation::BOOL) -> u32>;
+pub type PCLUSAPI_DESTROY_CLUSTER = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, pfnprogresscallback: PCLUSTER_SETUP_PROGRESS_CALLBACK, pvcallbackarg: *const ::core::ffi::c_void, fdeletevirtualcomputerobjects: ::win32_foundation_sys::BOOL) -> u32>;
 pub type PCLUSAPI_DESTROY_CLUSTER_GROUP = ::core::option::Option<unsafe extern "system" fn(hgroup: *mut _HGROUP) -> u32>;
 pub type PCLUSAPI_EVICT_CLUSTER_NODE = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE) -> u32>;
 pub type PCLUSAPI_EVICT_CLUSTER_NODE_EX = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE, dwtimeout: u32, phrcleanupstatus: *mut ::windows_core_sys::HRESULT) -> u32>;
@@ -3910,39 +3773,36 @@ pub type PCLUSAPI_GET_CLUSTER_FROM_NET_INTERFACE = ::core::option::Option<unsafe
 pub type PCLUSAPI_GET_CLUSTER_FROM_NODE = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE) -> *mut _HCLUSTER>;
 pub type PCLUSAPI_GET_CLUSTER_FROM_RESOURCE = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE) -> *mut _HCLUSTER>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_GET_CLUSTER_GROUP_KEY = ::core::option::Option<unsafe extern "system" fn(hgroup: *mut _HGROUP, samdesired: u32) -> super::super::System::Registry::HKEY>;
+pub type PCLUSAPI_GET_CLUSTER_GROUP_KEY = ::core::option::Option<unsafe extern "system" fn(hgroup: *mut _HGROUP, samdesired: u32) -> ::win32_system_sys::Registry::HKEY>;
 pub type PCLUSAPI_GET_CLUSTER_GROUP_STATE = ::core::option::Option<unsafe extern "system" fn(hgroup: *const _HGROUP, lpsznodename: ::windows_core_sys::PWSTR, lpcchnodename: *mut u32) -> CLUSTER_GROUP_STATE>;
 pub type PCLUSAPI_GET_CLUSTER_INFORMATION = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpszclustername: ::windows_core_sys::PWSTR, lpcchclustername: *mut u32, lpclusterinfo: *mut CLUSTERVERSIONINFO) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_GET_CLUSTER_KEY = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, samdesired: u32) -> super::super::System::Registry::HKEY>;
+pub type PCLUSAPI_GET_CLUSTER_KEY = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, samdesired: u32) -> ::win32_system_sys::Registry::HKEY>;
 pub type PCLUSAPI_GET_CLUSTER_NETWORK_ID = ::core::option::Option<unsafe extern "system" fn(hnetwork: *const _HNETWORK, lpsznetworkid: ::windows_core_sys::PWSTR, lpcchname: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_GET_CLUSTER_NETWORK_KEY = ::core::option::Option<unsafe extern "system" fn(hnetwork: *const _HNETWORK, samdesired: u32) -> super::super::System::Registry::HKEY>;
+pub type PCLUSAPI_GET_CLUSTER_NETWORK_KEY = ::core::option::Option<unsafe extern "system" fn(hnetwork: *const _HNETWORK, samdesired: u32) -> ::win32_system_sys::Registry::HKEY>;
 pub type PCLUSAPI_GET_CLUSTER_NETWORK_STATE = ::core::option::Option<unsafe extern "system" fn(hnetwork: *const _HNETWORK) -> CLUSTER_NETWORK_STATE>;
 pub type PCLUSAPI_GET_CLUSTER_NET_INTERFACE = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpsznodename: ::windows_core_sys::PCWSTR, lpsznetworkname: ::windows_core_sys::PCWSTR, lpszinterfacename: ::windows_core_sys::PWSTR, lpcchinterfacename: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_GET_CLUSTER_NET_INTERFACE_KEY = ::core::option::Option<unsafe extern "system" fn(hnetinterface: *const _HNETINTERFACE, samdesired: u32) -> super::super::System::Registry::HKEY>;
+pub type PCLUSAPI_GET_CLUSTER_NET_INTERFACE_KEY = ::core::option::Option<unsafe extern "system" fn(hnetinterface: *const _HNETINTERFACE, samdesired: u32) -> ::win32_system_sys::Registry::HKEY>;
 pub type PCLUSAPI_GET_CLUSTER_NET_INTERFACE_STATE = ::core::option::Option<unsafe extern "system" fn(hnetinterface: *const _HNETINTERFACE) -> CLUSTER_NETINTERFACE_STATE>;
 pub type PCLUSAPI_GET_CLUSTER_NODE_ID = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE, lpsznodeid: ::windows_core_sys::PWSTR, lpcchname: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_GET_CLUSTER_NODE_KEY = ::core::option::Option<unsafe extern "system" fn(hnode: *mut _HNODE, samdesired: u32) -> super::super::System::Registry::HKEY>;
+pub type PCLUSAPI_GET_CLUSTER_NODE_KEY = ::core::option::Option<unsafe extern "system" fn(hnode: *mut _HNODE, samdesired: u32) -> ::win32_system_sys::Registry::HKEY>;
 pub type PCLUSAPI_GET_CLUSTER_NODE_STATE = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE) -> CLUSTER_NODE_STATE>;
 pub type PCLUSAPI_GET_CLUSTER_NOTIFY = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, lpdwnotifykey: *mut usize, lpdwfiltertype: *mut u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32, dwmilliseconds: u32) -> u32>;
 pub type PCLUSAPI_GET_CLUSTER_NOTIFY_V2 = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, lpdwnotifykey: *mut usize, pfilterandtype: *mut NOTIFY_FILTER_AND_TYPE, buffer: *mut u8, lpcchbuffersize: *mut u32, lpszobjectid: ::windows_core_sys::PWSTR, lpcchobjectid: *mut u32, lpszparentid: ::windows_core_sys::PWSTR, lpcchparentid: *mut u32, lpszname: ::windows_core_sys::PWSTR, lpcchname: *mut u32, lpsztype: ::windows_core_sys::PWSTR, lpcchtype: *mut u32, dwmilliseconds: u32) -> u32>;
 pub type PCLUSAPI_GET_CLUSTER_QUORUM_RESOURCE = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpszresourcename: ::windows_core_sys::PWSTR, lpcchresourcename: *mut u32, lpszdevicename: ::windows_core_sys::PWSTR, lpcchdevicename: *mut u32, lpdwmaxquorumlogsize: *mut u32) -> u32>;
 pub type PCLUSAPI_GET_CLUSTER_RESOURCE_DEPENDENCY_EXPRESSION = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE, lpszdependencyexpression: ::windows_core_sys::PWSTR, lpcchdependencyexpression: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_GET_CLUSTER_RESOURCE_KEY = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, samdesired: u32) -> super::super::System::Registry::HKEY>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_GET_CLUSTER_RESOURCE_NETWORK_NAME = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE, lpbuffer: ::windows_core_sys::PWSTR, nsize: *mut u32) -> super::super::Foundation::BOOL>;
+pub type PCLUSAPI_GET_CLUSTER_RESOURCE_KEY = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, samdesired: u32) -> ::win32_system_sys::Registry::HKEY>;
+pub type PCLUSAPI_GET_CLUSTER_RESOURCE_NETWORK_NAME = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE, lpbuffer: ::windows_core_sys::PWSTR, nsize: *mut u32) -> ::win32_foundation_sys::BOOL>;
 pub type PCLUSAPI_GET_CLUSTER_RESOURCE_STATE = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE, lpsznodename: ::windows_core_sys::PWSTR, lpcchnodename: *mut u32, lpszgroupname: ::windows_core_sys::PWSTR, lpcchgroupname: *mut u32) -> CLUSTER_RESOURCE_STATE>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSAPI_GET_CLUSTER_RESOURCE_TYPE_KEY = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpsztypename: ::windows_core_sys::PCWSTR, samdesired: u32) -> super::super::System::Registry::HKEY>;
+pub type PCLUSAPI_GET_CLUSTER_RESOURCE_TYPE_KEY = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpsztypename: ::windows_core_sys::PCWSTR, samdesired: u32) -> ::win32_system_sys::Registry::HKEY>;
 pub type PCLUSAPI_GET_NODE_CLUSTER_STATE = ::core::option::Option<unsafe extern "system" fn(lpsznodename: ::windows_core_sys::PCWSTR, pdwclusterstate: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_GET_NOTIFY_EVENT_HANDLE_V2 = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, lphtargetevent: *mut super::super::Foundation::HANDLE) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_IS_FILE_ON_CLUSTER_SHARED_VOLUME = ::core::option::Option<unsafe extern "system" fn(lpszpathname: ::windows_core_sys::PCWSTR, pbfileisonsharedvolume: *mut super::super::Foundation::BOOL) -> u32>;
+pub type PCLUSAPI_GET_NOTIFY_EVENT_HANDLE_V2 = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, lphtargetevent: *mut ::win32_foundation_sys::HANDLE) -> u32>;
+pub type PCLUSAPI_IS_FILE_ON_CLUSTER_SHARED_VOLUME = ::core::option::Option<unsafe extern "system" fn(lpszpathname: ::windows_core_sys::PCWSTR, pbfileisonsharedvolume: *mut ::win32_foundation_sys::BOOL) -> u32>;
 pub type PCLUSAPI_MOVE_CLUSTER_GROUP = ::core::option::Option<unsafe extern "system" fn(hgroup: *const _HGROUP, hdestinationnode: *const _HNODE) -> u32>;
 pub type PCLUSAPI_OFFLINE_CLUSTER_GROUP = ::core::option::Option<unsafe extern "system" fn(hgroup: *mut _HGROUP) -> u32>;
 pub type PCLUSAPI_OFFLINE_CLUSTER_RESOURCE = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE) -> u32>;
@@ -3963,12 +3823,9 @@ pub type PCLUSAPI_OPEN_CLUSTER_RESOURCE = ::core::option::Option<unsafe extern "
 pub type PCLUSAPI_OPEN_CLUSTER_RESOURCE_EX = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, lpszresourcename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, lpdwgrantedaccess: *mut u32) -> *mut _HRESOURCE>;
 pub type PCLUSAPI_OPEN_NODE_BY_ID = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, nodeid: u32) -> *mut _HNODE>;
 pub type PCLUSAPI_PAUSE_CLUSTER_NODE = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_PAUSE_CLUSTER_NODE_EX = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE, bdrainnode: super::super::Foundation::BOOL, dwpauseflags: u32, hnodedraintarget: *const _HNODE) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_REGISTER_CLUSTER_NOTIFY = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, dwfiltertype: u32, hobject: super::super::Foundation::HANDLE, dwnotifykey: usize) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_REGISTER_CLUSTER_NOTIFY_V2 = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, filter: NOTIFY_FILTER_AND_TYPE, hobject: super::super::Foundation::HANDLE, dwnotifykey: usize) -> u32>;
+pub type PCLUSAPI_PAUSE_CLUSTER_NODE_EX = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE, bdrainnode: ::win32_foundation_sys::BOOL, dwpauseflags: u32, hnodedraintarget: *const _HNODE) -> u32>;
+pub type PCLUSAPI_REGISTER_CLUSTER_NOTIFY = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, dwfiltertype: u32, hobject: ::win32_foundation_sys::HANDLE, dwnotifykey: usize) -> u32>;
+pub type PCLUSAPI_REGISTER_CLUSTER_NOTIFY_V2 = ::core::option::Option<unsafe extern "system" fn(hchange: *const _HCHANGE, filter: NOTIFY_FILTER_AND_TYPE, hobject: ::win32_foundation_sys::HANDLE, dwnotifykey: usize) -> u32>;
 pub type PCLUSAPI_REMOVE_CLUSTER_GROUP_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hgroup: *const _HGROUP, hdependson: *const _HGROUP) -> u32>;
 pub type PCLUSAPI_REMOVE_CLUSTER_GROUP_GROUPSET_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hgroupset: *const _HGROUPSET, hdependson: *const _HGROUPSET) -> u32>;
 pub type PCLUSAPI_REMOVE_CLUSTER_GROUP_TO_GROUP_GROUPSET_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hgroup: *const _HGROUP, hdependson: *const _HGROUPSET) -> u32>;
@@ -3978,8 +3835,7 @@ pub type PCLUSAPI_REMOVE_CLUSTER_RESOURCE_NODE = ::core::option::Option<unsafe e
 pub type PCLUSAPI_REMOVE_CROSS_CLUSTER_GROUPSET_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hdependentgroupset: *const _HGROUPSET, lpremoteclustername: ::windows_core_sys::PCWSTR, lpremotegroupsetname: ::windows_core_sys::PCWSTR) -> u32>;
 pub type PCLUSAPI_REMOVE_RESOURCE_FROM_CLUSTER_SHARED_VOLUMES = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE) -> u32>;
 pub type PCLUSAPI_RESTART_CLUSTER_RESOURCE = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, dwflags: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSAPI_RESTORE_CLUSTER_DATABASE = ::core::option::Option<unsafe extern "system" fn(lpszpathname: ::windows_core_sys::PCWSTR, bforce: super::super::Foundation::BOOL, lpszquorumdriveletter: ::windows_core_sys::PCWSTR) -> u32>;
+pub type PCLUSAPI_RESTORE_CLUSTER_DATABASE = ::core::option::Option<unsafe extern "system" fn(lpszpathname: ::windows_core_sys::PCWSTR, bforce: ::win32_foundation_sys::BOOL, lpszquorumdriveletter: ::windows_core_sys::PCWSTR) -> u32>;
 pub type PCLUSAPI_RESUME_CLUSTER_NODE = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE) -> u32>;
 pub type PCLUSAPI_RESUME_CLUSTER_NODE_EX = ::core::option::Option<unsafe extern "system" fn(hnode: *const _HNODE, eresumefailbacktype: CLUSTER_NODE_RESUME_FAILBACK_TYPE, dwresumeflagsreserved: u32) -> u32>;
 pub type PCLUSAPI_SET_CLUSTER_GROUP_GROUPSET_DEPENDENCY_EXPRESSION = ::core::option::Option<unsafe extern "system" fn(hgroupset: *const _HGROUPSET, lpszdependencyexpression: ::windows_core_sys::PCWSTR) -> u32>;
@@ -3990,7 +3846,6 @@ pub type PCLUSAPI_SET_CLUSTER_NETWORK_PRIORITY_ORDER = ::core::option::Option<un
 pub type PCLUSAPI_SET_CLUSTER_QUORUM_RESOURCE = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE, lpszdevicename: ::windows_core_sys::PCWSTR, dwmaxquologsize: u32) -> u32>;
 pub type PCLUSAPI_SET_CLUSTER_RESOURCE_DEPENDENCY_EXPRESSION = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE, lpszdependencyexpression: ::windows_core_sys::PCWSTR) -> u32>;
 pub type PCLUSAPI_SET_CLUSTER_RESOURCE_NAME = ::core::option::Option<unsafe extern "system" fn(hresource: *mut _HRESOURCE, lpszresourcename: ::windows_core_sys::PCWSTR) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PCLUSAPI_SET_CLUSTER_SERVICE_ACCOUNT_PASSWORD = ::core::option::Option<unsafe extern "system" fn(lpszclustername: ::windows_core_sys::PCWSTR, lpsznewpassword: ::windows_core_sys::PCWSTR, dwflags: u32, lpreturnstatusbuffer: *mut CLUSTER_SET_PASSWORD_STATUS, lpcbreturnstatusbuffersize: *mut u32) -> u32>;
 pub type PCLUSAPI_SET_GROUP_DEPENDENCY_EXPRESSION = ::core::option::Option<unsafe extern "system" fn(hgroupset: *const _HGROUP, lpszdependencyexpression: ::windows_core_sys::PCWSTR) -> u32>;
 pub type PCLUSAPI_SHARED_VOLUME_SET_SNAPSHOT_STATE = ::core::option::Option<unsafe extern "system" fn(guidsnapshotset: ::windows_core_sys::GUID, lpszvolumename: ::windows_core_sys::PCWSTR, state: CLUSTER_SHARED_VOLUME_SNAPSHOT_STATE) -> u32>;
@@ -3998,41 +3853,34 @@ pub type PCLUSAPI_SetClusterName = ::core::option::Option<unsafe extern "system"
 pub type PCLUSTER_CLEAR_BACKUP_STATE_FOR_SHARED_VOLUME = ::core::option::Option<unsafe extern "system" fn(lpszvolumepathname: ::windows_core_sys::PCWSTR) -> u32>;
 pub type PCLUSTER_DECRYPT = ::core::option::Option<unsafe extern "system" fn(hcluscryptprovider: *const _HCLUSCRYPTPROVIDER, pcryptinput: *const u8, cbcryptinput: u32, ppcryptoutput: *mut *mut u8, pcbcryptoutput: *mut u32) -> u32>;
 pub type PCLUSTER_ENCRYPT = ::core::option::Option<unsafe extern "system" fn(hcluscryptprovider: *const _HCLUSCRYPTPROVIDER, pdata: *const u8, cbdata: u32, ppdata: *mut *mut u8, pcbdata: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSTER_GET_VOLUME_NAME_FOR_VOLUME_MOUNT_POINT = ::core::option::Option<unsafe extern "system" fn(lpszvolumemountpoint: ::windows_core_sys::PCWSTR, lpszvolumename: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSTER_GET_VOLUME_PATH_NAME = ::core::option::Option<unsafe extern "system" fn(lpszfilename: ::windows_core_sys::PCWSTR, lpszvolumepathname: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSTER_IS_PATH_ON_SHARED_VOLUME = ::core::option::Option<unsafe extern "system" fn(lpszpathname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL>;
+pub type PCLUSTER_GET_VOLUME_NAME_FOR_VOLUME_MOUNT_POINT = ::core::option::Option<unsafe extern "system" fn(lpszvolumemountpoint: ::windows_core_sys::PCWSTR, lpszvolumename: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PCLUSTER_GET_VOLUME_PATH_NAME = ::core::option::Option<unsafe extern "system" fn(lpszfilename: ::windows_core_sys::PCWSTR, lpszvolumepathname: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL>;
+pub type PCLUSTER_IS_PATH_ON_SHARED_VOLUME = ::core::option::Option<unsafe extern "system" fn(lpszpathname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
 pub type PCLUSTER_PREPARE_SHARED_VOLUME_FOR_BACKUP = ::core::option::Option<unsafe extern "system" fn(lpszfilename: ::windows_core_sys::PCWSTR, lpszvolumepathname: ::windows_core_sys::PWSTR, lpcchvolumepathname: *mut u32, lpszvolumename: ::windows_core_sys::PWSTR, lpcchvolumename: *mut u32) -> u32>;
 pub type PCLUSTER_REG_BATCH_ADD_COMMAND = ::core::option::Option<unsafe extern "system" fn(hregbatch: *const _HREGBATCH, dwcommand: CLUSTER_REG_COMMAND, wzname: ::windows_core_sys::PCWSTR, dwoptions: u32, lpdata: *const ::core::ffi::c_void, cbdata: u32) -> i32>;
 pub type PCLUSTER_REG_BATCH_CLOSE_NOTIFICATION = ::core::option::Option<unsafe extern "system" fn(hbatchnotification: *const _HREGBATCHNOTIFICATION) -> i32>;
 pub type PCLUSTER_REG_BATCH_READ_COMMAND = ::core::option::Option<unsafe extern "system" fn(hbatchnotification: *const _HREGBATCHNOTIFICATION, pbatchcommand: *mut CLUSTER_BATCH_COMMAND) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSTER_REG_CLOSE_BATCH = ::core::option::Option<unsafe extern "system" fn(hregbatch: *const _HREGBATCH, bcommit: super::super::Foundation::BOOL, failedcommandnumber: *mut i32) -> i32>;
+pub type PCLUSTER_REG_CLOSE_BATCH = ::core::option::Option<unsafe extern "system" fn(hregbatch: *const _HREGBATCH, bcommit: ::win32_foundation_sys::BOOL, failedcommandnumber: *mut i32) -> i32>;
 pub type PCLUSTER_REG_CLOSE_BATCH_NOTIFY_PORT = ::core::option::Option<unsafe extern "system" fn(hbatchnotifyport: *const _HREGBATCHPORT) -> i32>;
 pub type PCLUSTER_REG_CLOSE_READ_BATCH = ::core::option::Option<unsafe extern "system" fn(hregreadbatch: *const _HREGREADBATCH, phregreadbatchreply: *mut *mut _HREGREADBATCHREPLY) -> i32>;
 pub type PCLUSTER_REG_CLOSE_READ_BATCH_EX = ::core::option::Option<unsafe extern "system" fn(hregreadbatch: *const _HREGREADBATCH, flags: u32, phregreadbatchreply: *mut *mut _HREGREADBATCHREPLY) -> i32>;
 pub type PCLUSTER_REG_CLOSE_READ_BATCH_REPLY = ::core::option::Option<unsafe extern "system" fn(hregreadbatchreply: *const _HREGREADBATCHREPLY) -> i32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSTER_REG_CREATE_BATCH_NOTIFY_PORT = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, phbatchnotifyport: *mut *mut _HREGBATCHPORT) -> i32>;
+pub type PCLUSTER_REG_CREATE_BATCH_NOTIFY_PORT = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, phbatchnotifyport: *mut *mut _HREGBATCHPORT) -> i32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PCLUSTER_REG_CREATE_READ_BATCH = ::core::option::Option<unsafe extern "system" fn(hkey: super::super::System::Registry::HKEY, phregreadbatch: *mut *mut _HREGREADBATCH) -> i32>;
+pub type PCLUSTER_REG_CREATE_READ_BATCH = ::core::option::Option<unsafe extern "system" fn(hkey: ::win32_system_sys::Registry::HKEY, phregreadbatch: *mut *mut _HREGREADBATCH) -> i32>;
 pub type PCLUSTER_REG_GET_BATCH_NOTIFICATION = ::core::option::Option<unsafe extern "system" fn(hbatchnotify: *const _HREGBATCHPORT, phbatchnotification: *mut *mut _HREGBATCHNOTIFICATION) -> i32>;
 pub type PCLUSTER_REG_READ_BATCH_ADD_COMMAND = ::core::option::Option<unsafe extern "system" fn(hregreadbatch: *const _HREGREADBATCH, wzsubkeyname: ::windows_core_sys::PCWSTR, wzvaluename: ::windows_core_sys::PCWSTR) -> i32>;
 pub type PCLUSTER_REG_READ_BATCH_REPLY_NEXT_COMMAND = ::core::option::Option<unsafe extern "system" fn(hregreadbatchreply: *const _HREGREADBATCHREPLY, pbatchcommand: *mut CLUSTER_READ_BATCH_COMMAND) -> i32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSTER_SETUP_PROGRESS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pvcallbackarg: *mut ::core::ffi::c_void, esetupphase: CLUSTER_SETUP_PHASE, ephasetype: CLUSTER_SETUP_PHASE_TYPE, ephaseseverity: CLUSTER_SETUP_PHASE_SEVERITY, dwpercentcomplete: u32, lpszobjectname: ::windows_core_sys::PCWSTR, dwstatus: u32) -> super::super::Foundation::BOOL>;
+pub type PCLUSTER_SETUP_PROGRESS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pvcallbackarg: *mut ::core::ffi::c_void, esetupphase: CLUSTER_SETUP_PHASE, ephasetype: CLUSTER_SETUP_PHASE_TYPE, ephaseseverity: CLUSTER_SETUP_PHASE_SEVERITY, dwpercentcomplete: u32, lpszobjectname: ::windows_core_sys::PCWSTR, dwstatus: u32) -> ::win32_foundation_sys::BOOL>;
 pub type PCLUSTER_SET_ACCOUNT_ACCESS = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, szaccountsid: ::windows_core_sys::PCWSTR, dwaccess: u32, dwcontroltype: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PCLUSTER_UPGRADE_PROGRESS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pvcallbackarg: *mut ::core::ffi::c_void, eupgradephase: CLUSTER_UPGRADE_PHASE) -> super::super::Foundation::BOOL>;
+pub type PCLUSTER_UPGRADE_PROGRESS_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pvcallbackarg: *mut ::core::ffi::c_void, eupgradephase: CLUSTER_UPGRADE_PHASE) -> ::win32_foundation_sys::BOOL>;
 pub type PEND_CONTROL_CALL = ::core::option::Option<unsafe extern "system" fn(context: i64, status: u32) -> u32>;
 pub type PEND_TYPE_CONTROL_CALL = ::core::option::Option<unsafe extern "system" fn(context: i64, status: u32) -> u32>;
 pub type PEXTEND_RES_CONTROL_CALL = ::core::option::Option<unsafe extern "system" fn(context: i64, newtimeoutinms: u32) -> u32>;
 pub type PEXTEND_RES_TYPE_CONTROL_CALL = ::core::option::Option<unsafe extern "system" fn(context: i64, newtimeoutinms: u32) -> u32>;
 pub type PFREE_CLUSTER_CRYPT = ::core::option::Option<unsafe extern "system" fn(pcryptinfo: *const ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PIS_ALIVE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type PIS_ALIVE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 pub type PLACEMENT_OPTIONS = i32;
 pub const PLACEMENT_OPTIONS_MIN_VALUE: PLACEMENT_OPTIONS = 0i32;
 pub const PLACEMENT_OPTIONS_DEFAULT_PLACEMENT_OPTIONS: PLACEMENT_OPTIONS = 0i32;
@@ -4048,20 +3896,17 @@ pub const PLACEMENT_OPTIONS_SAVE_AVAILABILTY_SET_VMS_WITH_LOCAL_DISK_ON_DRAIN_OV
 pub const PLACEMENT_OPTIONS_AVAILABILITY_SET_DOMAIN_AFFINITY: PLACEMENT_OPTIONS = 512i32;
 pub const PLACEMENT_OPTIONS_ALL: PLACEMENT_OPTIONS = 1023i32;
 pub type PLOG_EVENT_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, loglevel: LOG_LEVEL, formatstring: ::windows_core_sys::PCWSTR)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLOOKS_ALIVE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type PLOOKS_ALIVE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 pub type POFFLINE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void) -> u32>;
 pub type POFFLINE_V2_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *const ::core::ffi::c_void, destinationnodename: ::windows_core_sys::PCWSTR, offlineflags: u32, inbuffer: *const u8, inbuffersize: u32, reserved: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PONLINE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void, eventhandle: *mut super::super::Foundation::HANDLE) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PONLINE_V2_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *const ::core::ffi::c_void, eventhandle: *mut super::super::Foundation::HANDLE, onlineflags: u32, inbuffer: *const u8, inbuffersize: u32, reserved: u32) -> u32>;
+pub type PONLINE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void, eventhandle: *mut ::win32_foundation_sys::HANDLE) -> u32>;
+pub type PONLINE_V2_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *const ::core::ffi::c_void, eventhandle: *mut ::win32_foundation_sys::HANDLE, onlineflags: u32, inbuffer: *const u8, inbuffersize: u32, reserved: u32) -> u32>;
 pub type POPEN_CLUSTER_CRYPT_PROVIDER = ::core::option::Option<unsafe extern "system" fn(lpszresource: ::windows_core_sys::PCWSTR, lpszprovider: *const i8, dwtype: u32, dwflags: u32) -> *mut _HCLUSCRYPTPROVIDER>;
 pub type POPEN_CLUSTER_CRYPT_PROVIDEREX = ::core::option::Option<unsafe extern "system" fn(lpszresource: ::windows_core_sys::PCWSTR, lpszkeyname: ::windows_core_sys::PCWSTR, lpszprovider: *const i8, dwtype: u32, dwflags: u32) -> *mut _HCLUSCRYPTPROVIDER>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type POPEN_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcename: ::windows_core_sys::PCWSTR, resourcekey: super::super::System::Registry::HKEY, resourcehandle: isize) -> *mut ::core::ffi::c_void>;
+pub type POPEN_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcename: ::windows_core_sys::PCWSTR, resourcekey: ::win32_system_sys::Registry::HKEY, resourcehandle: isize) -> *mut ::core::ffi::c_void>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type POPEN_V2_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcename: ::windows_core_sys::PCWSTR, resourcekey: super::super::System::Registry::HKEY, resourcehandle: isize, openflags: u32) -> *mut ::core::ffi::c_void>;
+pub type POPEN_V2_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcename: ::windows_core_sys::PCWSTR, resourcekey: ::win32_system_sys::Registry::HKEY, resourcehandle: isize, openflags: u32) -> *mut ::core::ffi::c_void>;
 #[repr(C)]
 pub struct POST_UPGRADE_VERSION_INFO {
     pub newMajorVersion: u32,
@@ -4076,28 +3921,23 @@ impl ::core::clone::Clone for POST_UPGRADE_VERSION_INFO {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
-pub type PQUERY_APPINSTANCE_VERSION = ::core::option::Option<unsafe extern "system" fn(appinstanceid: *const ::windows_core_sys::GUID, instanceversionhigh: *mut u64, instanceversionlow: *mut u64, versionstatus: *mut super::super::Foundation::NTSTATUS) -> u32>;
+pub type PQUERY_APPINSTANCE_VERSION = ::core::option::Option<unsafe extern "system" fn(appinstanceid: *const ::windows_core_sys::GUID, instanceversionhigh: *mut u64, instanceversionlow: *mut u64, versionstatus: *mut ::win32_foundation_sys::NTSTATUS) -> u32>;
 pub type PQUORUM_RESOURCE_LOST = ::core::option::Option<unsafe extern "system" fn(resource: isize)>;
 pub type PRAISE_RES_TYPE_NOTIFICATION = ::core::option::Option<unsafe extern "system" fn(resourcetype: ::windows_core_sys::PCWSTR, ppayload: *const u8, payloadsize: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PREGISTER_APPINSTANCE = ::core::option::Option<unsafe extern "system" fn(processhandle: super::super::Foundation::HANDLE, appinstanceid: *const ::windows_core_sys::GUID, childreninheritappinstance: super::super::Foundation::BOOL) -> u32>;
+pub type PREGISTER_APPINSTANCE = ::core::option::Option<unsafe extern "system" fn(processhandle: ::win32_foundation_sys::HANDLE, appinstanceid: *const ::windows_core_sys::GUID, childreninheritappinstance: ::win32_foundation_sys::BOOL) -> u32>;
 pub type PREGISTER_APPINSTANCE_VERSION = ::core::option::Option<unsafe extern "system" fn(appinstanceid: *const ::windows_core_sys::GUID, instanceversionhigh: u64, instanceversionlow: u64) -> u32>;
 pub type PRELEASE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PREQUEST_DUMP_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, dumpduetocallinprogress: super::super::Foundation::BOOL, dumpdelayinms: u32) -> u32>;
+pub type PREQUEST_DUMP_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, dumpduetocallinprogress: ::win32_foundation_sys::BOOL, dumpdelayinms: u32) -> u32>;
 pub type PRESET_ALL_APPINSTANCE_VERSIONS = ::core::option::Option<unsafe extern "system" fn() -> u32>;
 pub type PRESOURCE_CONTROL_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32) -> u32>;
 pub type PRESOURCE_TYPE_CONTROL_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcetypename: ::windows_core_sys::PCWSTR, controlcode: u32, inbuffer: *mut ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, bytesreturned: *mut u32) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_ADD_UNKNOWN_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, pcboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_ADD_UNKNOWN_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, pcboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
 pub type PRESUTIL_CREATE_DIRECTORY_TREE = ::core::option::Option<unsafe extern "system" fn(pszpath: ::windows_core_sys::PCWSTR) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PRESUTIL_DUP_PARAMETER_BLOCK = ::core::option::Option<unsafe extern "system" fn(poutparams: *mut u8, pinparams: *const u8, ppropertytable: *const RESUTIL_PROPERTY_ITEM) -> u32>;
 pub type PRESUTIL_DUP_STRING = ::core::option::Option<unsafe extern "system" fn(pszinstring: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_ENUM_PRIVATE_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszoutproperties: ::windows_core_sys::PWSTR, cboutpropertiessize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PRESUTIL_ENUM_PRIVATE_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszoutproperties: ::windows_core_sys::PWSTR, cboutpropertiessize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
 pub type PRESUTIL_ENUM_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(ppropertytable: *const RESUTIL_PROPERTY_ITEM, pszoutproperties: ::windows_core_sys::PWSTR, cboutpropertiessize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
 pub type PRESUTIL_ENUM_RESOURCES = ::core::option::Option<unsafe extern "system" fn(hself: *mut _HRESOURCE, lpszrestypename: ::windows_core_sys::PCWSTR, prescallback: LPRESOURCE_CALLBACK, pparameter: *mut ::core::ffi::c_void) -> u32>;
 pub type PRESUTIL_ENUM_RESOURCES_EX = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, hself: *mut _HRESOURCE, lpszrestypename: ::windows_core_sys::PCWSTR, prescallback: LPRESOURCE_CALLBACK_EX, pparameter: *mut ::core::ffi::c_void) -> u32>;
@@ -4108,136 +3948,113 @@ pub type PRESUTIL_FIND_DEPENDENT_DISK_RESOURCE_DRIVE_LETTER = ::core::option::Op
 pub type PRESUTIL_FIND_DWORD_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pdwpropertyvalue: *mut u32) -> u32>;
 pub type PRESUTIL_FIND_EXPANDED_SZ_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pszpropertyvalue: *mut ::windows_core_sys::PWSTR) -> u32>;
 pub type PRESUTIL_FIND_EXPAND_SZ_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pszpropertyvalue: *mut ::windows_core_sys::PWSTR) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_FIND_FILETIME_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pftpropertyvalue: *mut super::super::Foundation::FILETIME) -> u32>;
+pub type PRESUTIL_FIND_FILETIME_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pftpropertyvalue: *mut ::win32_foundation_sys::FILETIME) -> u32>;
 pub type PRESUTIL_FIND_LONG_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, plpropertyvalue: *mut i32) -> u32>;
 pub type PRESUTIL_FIND_MULTI_SZ_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pszpropertyvalue: *mut ::windows_core_sys::PWSTR, pcbpropertyvaluesize: *mut u32) -> u32>;
 pub type PRESUTIL_FIND_SZ_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, pszpropertyvalue: *mut ::windows_core_sys::PWSTR) -> u32>;
 pub type PRESUTIL_FIND_ULARGEINTEGER_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppropertylist: *const ::core::ffi::c_void, cbpropertylistsize: u32, pszpropertyname: ::windows_core_sys::PCWSTR, plpropertyvalue: *mut u64) -> u32>;
 pub type PRESUTIL_FREE_ENVIRONMENT = ::core::option::Option<unsafe extern "system" fn(lpenvironment: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PRESUTIL_FREE_PARAMETER_BLOCK = ::core::option::Option<unsafe extern "system" fn(poutparams: *mut u8, pinparams: *const u8, ppropertytable: *const RESUTIL_PROPERTY_ITEM)>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_GET_ALL_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_GET_ALL_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
 pub type PRESUTIL_GET_BINARY_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32, pvaluestruct: *const CLUSPROP_BINARY, pboldvalue: *const u8, cboldvaluesize: u32, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_GET_BINARY_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32) -> u32>;
+pub type PRESUTIL_GET_BINARY_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32) -> u32>;
 pub type PRESUTIL_GET_CORE_CLUSTER_RESOURCES = ::core::option::Option<unsafe extern "system" fn(hcluster: *const _HCLUSTER, phclusternameresource: *mut *mut _HRESOURCE, phclusteripaddressresource: *mut *mut _HRESOURCE, phclusterquorumresource: *mut *mut _HRESOURCE) -> u32>;
 pub type PRESUTIL_GET_CORE_CLUSTER_RESOURCES_EX = ::core::option::Option<unsafe extern "system" fn(hclusterin: *const _HCLUSTER, phclusternameresourceout: *mut *mut _HRESOURCE, phclusteripaddressresourceout: *mut *mut _HRESOURCE, phclusterquorumresourceout: *mut *mut _HRESOURCE, dwdesiredaccess: u32) -> u32>;
 pub type PRESUTIL_GET_DWORD_PROPERTY = ::core::option::Option<unsafe extern "system" fn(pdwoutvalue: *mut u32, pvaluestruct: *const CLUSPROP_DWORD, dwoldvalue: u32, dwminimum: u32, dwmaximum: u32, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_GET_DWORD_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pdwoutvalue: *mut u32, dwdefaultvalue: u32) -> u32>;
+pub type PRESUTIL_GET_DWORD_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pdwoutvalue: *mut u32, dwdefaultvalue: u32) -> u32>;
 pub type PRESUTIL_GET_ENVIRONMENT_WITH_NET_NAME = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE) -> *mut ::core::ffi::c_void>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_GET_EXPAND_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, bexpand: super::super::Foundation::BOOL) -> ::windows_core_sys::PWSTR>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_GET_FILETIME_PROPERTY = ::core::option::Option<unsafe extern "system" fn(pftoutvalue: *mut super::super::Foundation::FILETIME, pvaluestruct: *const CLUSPROP_FILETIME, ftoldvalue: super::super::Foundation::FILETIME, ftminimum: super::super::Foundation::FILETIME, ftmaximum: super::super::Foundation::FILETIME, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_GET_EXPAND_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, bexpand: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::PWSTR>;
+pub type PRESUTIL_GET_FILETIME_PROPERTY = ::core::option::Option<unsafe extern "system" fn(pftoutvalue: *mut ::win32_foundation_sys::FILETIME, pvaluestruct: *const CLUSPROP_FILETIME, ftoldvalue: ::win32_foundation_sys::FILETIME, ftminimum: ::win32_foundation_sys::FILETIME, ftmaximum: ::win32_foundation_sys::FILETIME, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32>;
 pub type PRESUTIL_GET_LONG_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ploutvalue: *mut i32, pvaluestruct: *const CLUSPROP_LONG, loldvalue: i32, lminimum: i32, lmaximum: i32, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32>;
 pub type PRESUTIL_GET_MULTI_SZ_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppszoutvalue: *mut ::windows_core_sys::PWSTR, pcboutvaluesize: *mut u32, pvaluestruct: *const CLUSPROP_SZ, pszoldvalue: ::windows_core_sys::PCWSTR, cboldvaluesize: u32, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_GET_PRIVATE_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_GET_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_GET_PROPERTIES_TO_PARAMETER_BLOCK = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutparams: *mut u8, bcheckforrequiredproperties: super::super::Foundation::BOOL, psznameofpropinerror: *mut ::windows_core_sys::PWSTR) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_GET_PROPERTY = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytableitem: *const RESUTIL_PROPERTY_ITEM, poutpropertyitem: *mut *mut ::core::ffi::c_void, pcboutpropertyitemsize: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_GET_PROPERTY_FORMATS = ::core::option::Option<unsafe extern "system" fn(ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertyformatlist: *mut ::core::ffi::c_void, cbpropertyformatlistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_GET_PROPERTY_SIZE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytableitem: *const RESUTIL_PROPERTY_ITEM, pcboutpropertylistsize: *mut u32, pnpropertycount: *mut u32) -> u32>;
+pub type PRESUTIL_GET_PRIVATE_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_GET_QWORD_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pqwoutvalue: *mut u64, qwdefaultvalue: u64) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_GET_RESOURCE_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hself: super::super::Foundation::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR) -> *mut _HRESOURCE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_BY_CLASS = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, hself: super::super::Foundation::HANDLE, prci: *mut CLUS_RESOURCE_CLASS_INFO, brecurse: super::super::Foundation::BOOL) -> *mut _HRESOURCE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_BY_CLASS_EX = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, hself: super::super::Foundation::HANDLE, prci: *mut CLUS_RESOURCE_CLASS_INFO, brecurse: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> *mut _HRESOURCE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_BY_NAME = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, hself: super::super::Foundation::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, brecurse: super::super::Foundation::BOOL) -> *mut _HRESOURCE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_BY_NAME_EX = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, hself: super::super::Foundation::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, brecurse: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> *mut _HRESOURCE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_EX = ::core::option::Option<unsafe extern "system" fn(hself: super::super::Foundation::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> *mut _HRESOURCE>;
+pub type PRESUTIL_GET_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, cboutpropertylistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_GET_PROPERTIES_TO_PARAMETER_BLOCK = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutparams: *mut u8, bcheckforrequiredproperties: ::win32_foundation_sys::BOOL, psznameofpropinerror: *mut ::windows_core_sys::PWSTR) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_GET_PROPERTY = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytableitem: *const RESUTIL_PROPERTY_ITEM, poutpropertyitem: *mut *mut ::core::ffi::c_void, pcboutpropertyitemsize: *mut u32) -> u32>;
+pub type PRESUTIL_GET_PROPERTY_FORMATS = ::core::option::Option<unsafe extern "system" fn(ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertyformatlist: *mut ::core::ffi::c_void, cbpropertyformatlistsize: u32, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_GET_PROPERTY_SIZE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytableitem: *const RESUTIL_PROPERTY_ITEM, pcboutpropertylistsize: *mut u32, pnpropertycount: *mut u32) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_GET_QWORD_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pqwoutvalue: *mut u64, qwdefaultvalue: u64) -> u32>;
+pub type PRESUTIL_GET_RESOURCE_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(hself: ::win32_foundation_sys::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR) -> *mut _HRESOURCE>;
+pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_BY_CLASS = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, hself: ::win32_foundation_sys::HANDLE, prci: *mut CLUS_RESOURCE_CLASS_INFO, brecurse: ::win32_foundation_sys::BOOL) -> *mut _HRESOURCE>;
+pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_BY_CLASS_EX = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, hself: ::win32_foundation_sys::HANDLE, prci: *mut CLUS_RESOURCE_CLASS_INFO, brecurse: ::win32_foundation_sys::BOOL, dwdesiredaccess: u32) -> *mut _HRESOURCE>;
+pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_BY_NAME = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, hself: ::win32_foundation_sys::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, brecurse: ::win32_foundation_sys::BOOL) -> *mut _HRESOURCE>;
+pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_BY_NAME_EX = ::core::option::Option<unsafe extern "system" fn(hcluster: *mut _HCLUSTER, hself: ::win32_foundation_sys::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, brecurse: ::win32_foundation_sys::BOOL, dwdesiredaccess: u32) -> *mut _HRESOURCE>;
+pub type PRESUTIL_GET_RESOURCE_DEPENDENCY_EX = ::core::option::Option<unsafe extern "system" fn(hself: ::win32_foundation_sys::HANDLE, lpszresourcetype: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> *mut _HRESOURCE>;
 pub type PRESUTIL_GET_RESOURCE_DEPENDENTIP_ADDRESS_PROPS = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE, pszaddress: ::windows_core_sys::PWSTR, pcchaddress: *mut u32, pszsubnetmask: ::windows_core_sys::PWSTR, pcchsubnetmask: *mut u32, psznetwork: ::windows_core_sys::PWSTR, pcchnetwork: *mut u32) -> u32>;
 pub type PRESUTIL_GET_RESOURCE_NAME = ::core::option::Option<unsafe extern "system" fn(hresource: *const _HRESOURCE, pszresourcename: ::windows_core_sys::PWSTR, pcchresourcenameinout: *mut u32) -> u32>;
 pub type PRESUTIL_GET_RESOURCE_NAME_DEPENDENCY = ::core::option::Option<unsafe extern "system" fn(lpszresourcename: ::windows_core_sys::PCWSTR, lpszresourcetype: ::windows_core_sys::PCWSTR) -> *mut _HRESOURCE>;
 pub type PRESUTIL_GET_RESOURCE_NAME_DEPENDENCY_EX = ::core::option::Option<unsafe extern "system" fn(lpszresourcename: ::windows_core_sys::PCWSTR, lpszresourcetype: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32) -> *mut _HRESOURCE>;
 pub type PRESUTIL_GET_SZ_PROPERTY = ::core::option::Option<unsafe extern "system" fn(ppszoutvalue: *mut ::windows_core_sys::PWSTR, pvaluestruct: *const CLUSPROP_SZ, pszoldvalue: ::windows_core_sys::PCWSTR, pppropertylist: *mut *mut u8, pcbpropertylistsize: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_GET_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_IS_PATH_VALID = ::core::option::Option<unsafe extern "system" fn(pszpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_IS_RESOURCE_CLASS_EQUAL = ::core::option::Option<unsafe extern "system" fn(prci: *mut CLUS_RESOURCE_CLASS_INFO, hresource: *mut _HRESOURCE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PRESUTIL_GET_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::PWSTR>;
+pub type PRESUTIL_IS_PATH_VALID = ::core::option::Option<unsafe extern "system" fn(pszpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL>;
+pub type PRESUTIL_IS_RESOURCE_CLASS_EQUAL = ::core::option::Option<unsafe extern "system" fn(prci: *mut CLUS_RESOURCE_CLASS_INFO, hresource: *mut _HRESOURCE) -> ::win32_foundation_sys::BOOL>;
 pub type PRESUTIL_PROPERTY_LIST_FROM_PARAMETER_BLOCK = ::core::option::Option<unsafe extern "system" fn(ppropertytable: *const RESUTIL_PROPERTY_ITEM, poutpropertylist: *mut ::core::ffi::c_void, pcboutpropertylistsize: *mut u32, pinparams: *const u8, pcbbytesreturned: *mut u32, pcbrequired: *mut u32) -> u32>;
 pub type PRESUTIL_REMOVE_RESOURCE_SERVICE_ENVIRONMENT = ::core::option::Option<unsafe extern "system" fn(pszservicename: ::windows_core_sys::PCWSTR, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_RESOURCES_EQUAL = ::core::option::Option<unsafe extern "system" fn(hself: *mut _HRESOURCE, hresource: *mut _HRESOURCE) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_RESOURCE_TYPES_EQUAL = ::core::option::Option<unsafe extern "system" fn(lpszresourcetypename: ::windows_core_sys::PCWSTR, hresource: *mut _HRESOURCE) -> super::super::Foundation::BOOL>;
+pub type PRESUTIL_RESOURCES_EQUAL = ::core::option::Option<unsafe extern "system" fn(hself: *mut _HRESOURCE, hresource: *mut _HRESOURCE) -> ::win32_foundation_sys::BOOL>;
+pub type PRESUTIL_RESOURCE_TYPES_EQUAL = ::core::option::Option<unsafe extern "system" fn(lpszresourcetypename: ::windows_core_sys::PCWSTR, hresource: *mut _HRESOURCE) -> ::win32_foundation_sys::BOOL>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_SET_BINARY_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pbnewvalue: *const u8, cbnewvaluesize: u32, ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32) -> u32>;
+pub type PRESUTIL_SET_BINARY_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, pbnewvalue: *const u8, cbnewvaluesize: u32, ppboutvalue: *mut *mut u8, pcboutvaluesize: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_SET_DWORD_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, dwnewvalue: u32, pdwoutvalue: *mut u32) -> u32>;
+pub type PRESUTIL_SET_DWORD_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, dwnewvalue: u32, pdwoutvalue: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_SET_EXPAND_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, ppszoutstring: *mut ::windows_core_sys::PWSTR) -> u32>;
+pub type PRESUTIL_SET_EXPAND_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, ppszoutstring: *mut ::windows_core_sys::PWSTR) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_SET_MULTI_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, cbnewvaluesize: u32, ppszoutvalue: *mut ::windows_core_sys::PWSTR, pcboutvaluesize: *mut u32) -> u32>;
+pub type PRESUTIL_SET_MULTI_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, cbnewvaluesize: u32, ppszoutvalue: *mut ::windows_core_sys::PWSTR, pcboutvaluesize: *mut u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_SET_PRIVATE_PROPERTY_LIST = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_SET_PROPERTY_PARAMETER_BLOCK = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, pinparams: *const u8, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_SET_PROPERTY_PARAMETER_BLOCK_EX = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, pinparams: *const u8, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, bforcewrite: super::super::Foundation::BOOL, poutparams: *mut u8) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_SET_PROPERTY_TABLE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: super::super::Foundation::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_SET_PROPERTY_TABLE_EX = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: super::super::Foundation::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, bforcewrite: super::super::Foundation::BOOL, poutparams: *mut u8) -> u32>;
+pub type PRESUTIL_SET_PRIVATE_PROPERTY_LIST = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_SET_QWORD_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, qwnewvalue: u64, pqwoutvalue: *mut u64) -> u32>;
+pub type PRESUTIL_SET_PROPERTY_PARAMETER_BLOCK = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, pinparams: *const u8, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_SET_PROPERTY_PARAMETER_BLOCK_EX = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, pinparams: *const u8, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, bforcewrite: ::win32_foundation_sys::BOOL, poutparams: *mut u8) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_SET_PROPERTY_TABLE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: ::win32_foundation_sys::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_SET_PROPERTY_TABLE_EX = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: ::win32_foundation_sys::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, bforcewrite: ::win32_foundation_sys::BOOL, poutparams: *mut u8) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_SET_QWORD_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, qwnewvalue: u64, pqwoutvalue: *mut u64) -> u32>;
 pub type PRESUTIL_SET_RESOURCE_SERVICE_ENVIRONMENT = ::core::option::Option<unsafe extern "system" fn(pszservicename: ::windows_core_sys::PCWSTR, hresource: *mut _HRESOURCE, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32>;
 #[cfg(feature = "Win32_Security")]
-pub type PRESUTIL_SET_RESOURCE_SERVICE_START_PARAMETERS = ::core::option::Option<unsafe extern "system" fn(pszservicename: ::windows_core_sys::PCWSTR, schscmhandle: super::super::Security::SC_HANDLE, phservice: *mut isize, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32>;
+pub type PRESUTIL_SET_RESOURCE_SERVICE_START_PARAMETERS = ::core::option::Option<unsafe extern "system" fn(pszservicename: ::windows_core_sys::PCWSTR, schscmhandle: ::win32_security_sys::SC_HANDLE, phservice: *mut isize, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32>;
 #[cfg(feature = "Win32_Security")]
-pub type PRESUTIL_SET_RESOURCE_SERVICE_START_PARAMETERS_EX = ::core::option::Option<unsafe extern "system" fn(pszservicename: ::windows_core_sys::PCWSTR, schscmhandle: super::super::Security::SC_HANDLE, phservice: *mut isize, dwdesiredaccess: u32, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32>;
+pub type PRESUTIL_SET_RESOURCE_SERVICE_START_PARAMETERS_EX = ::core::option::Option<unsafe extern "system" fn(pszservicename: ::windows_core_sys::PCWSTR, schscmhandle: ::win32_security_sys::SC_HANDLE, phservice: *mut isize, dwdesiredaccess: u32, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32>;
 #[cfg(feature = "Win32_System_Registry")]
-pub type PRESUTIL_SET_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, ppszoutstring: *mut ::windows_core_sys::PWSTR) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-pub type PRESUTIL_SET_UNKNOWN_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: super::super::System::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32>;
+pub type PRESUTIL_SET_SZ_VALUE = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, pszvaluename: ::windows_core_sys::PCWSTR, psznewvalue: ::windows_core_sys::PCWSTR, ppszoutstring: *mut ::windows_core_sys::PWSTR) -> u32>;
+#[cfg(feature = "Win32_System_Registry")]
+pub type PRESUTIL_SET_UNKNOWN_PROPERTIES = ::core::option::Option<unsafe extern "system" fn(hkeyclusterkey: ::win32_system_sys::Registry::HKEY, ppropertytable: *const RESUTIL_PROPERTY_ITEM, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32>;
 pub type PRESUTIL_START_RESOURCE_SERVICE = ::core::option::Option<unsafe extern "system" fn(pszservicename: ::windows_core_sys::PCWSTR, phservicehandle: *mut isize) -> u32>;
 pub type PRESUTIL_STOP_RESOURCE_SERVICE = ::core::option::Option<unsafe extern "system" fn(pszservicename: ::windows_core_sys::PCWSTR) -> u32>;
 #[cfg(feature = "Win32_Security")]
-pub type PRESUTIL_STOP_SERVICE = ::core::option::Option<unsafe extern "system" fn(hservicehandle: super::super::Security::SC_HANDLE) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_TERMINATE_SERVICE_PROCESS_FROM_RES_DLL = ::core::option::Option<unsafe extern "system" fn(dwservicepid: u32, boffline: super::super::Foundation::BOOL, pdwresourcestate: *mut u32, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32>;
+pub type PRESUTIL_STOP_SERVICE = ::core::option::Option<unsafe extern "system" fn(hservicehandle: ::win32_security_sys::SC_HANDLE) -> u32>;
+pub type PRESUTIL_TERMINATE_SERVICE_PROCESS_FROM_RES_DLL = ::core::option::Option<unsafe extern "system" fn(dwservicepid: u32, boffline: ::win32_foundation_sys::BOOL, pdwresourcestate: *mut u32, pfnlogevent: PLOG_EVENT_ROUTINE, hresourcehandle: isize) -> u32>;
 pub type PRESUTIL_VERIFY_PRIVATE_PROPERTY_LIST = ::core::option::Option<unsafe extern "system" fn(pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PRESUTIL_VERIFY_PROPERTY_TABLE = ::core::option::Option<unsafe extern "system" fn(ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: super::super::Foundation::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32>;
+pub type PRESUTIL_VERIFY_PROPERTY_TABLE = ::core::option::Option<unsafe extern "system" fn(ppropertytable: *const RESUTIL_PROPERTY_ITEM, reserved: *mut ::core::ffi::c_void, ballowunknownproperties: ::win32_foundation_sys::BOOL, pinpropertylist: *const ::core::ffi::c_void, cbinpropertylistsize: u32, poutparams: *mut u8) -> u32>;
 pub type PRESUTIL_VERIFY_RESOURCE_SERVICE = ::core::option::Option<unsafe extern "system" fn(pszservicename: ::windows_core_sys::PCWSTR) -> u32>;
 #[cfg(feature = "Win32_Security")]
-pub type PRESUTIL_VERIFY_SERVICE = ::core::option::Option<unsafe extern "system" fn(hservicehandle: super::super::Security::SC_HANDLE) -> u32>;
+pub type PRESUTIL_VERIFY_SERVICE = ::core::option::Option<unsafe extern "system" fn(hservicehandle: ::win32_security_sys::SC_HANDLE) -> u32>;
 pub type PRES_UTIL_VERIFY_SHUTDOWN_SAFE = ::core::option::Option<unsafe extern "system" fn(flags: u32, reason: u32, presult: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSET_INTERNAL_STATE = ::core::option::Option<unsafe extern "system" fn(param0: isize, statetype: CLUSTER_RESOURCE_APPLICATION_STATE, active: super::super::Foundation::BOOL) -> u32>;
+pub type PSET_INTERNAL_STATE = ::core::option::Option<unsafe extern "system" fn(param0: isize, statetype: CLUSTER_RESOURCE_APPLICATION_STATE, active: ::win32_foundation_sys::BOOL) -> u32>;
 pub type PSET_RESOURCE_INMEMORY_NODELOCAL_PROPERTIES_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, propertylistbuffer: *const u8, propertylistbuffersize: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSET_RESOURCE_LOCKED_MODE_EX_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, lockedmodeenabled: super::super::Foundation::BOOL, lockedmodereason: u32, lockedmodeflags: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PSET_RESOURCE_LOCKED_MODE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, lockedmodeenabled: super::super::Foundation::BOOL, lockedmodereason: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
+pub type PSET_RESOURCE_LOCKED_MODE_EX_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, lockedmodeenabled: ::win32_foundation_sys::BOOL, lockedmodereason: u32, lockedmodeflags: u32) -> u32>;
+pub type PSET_RESOURCE_LOCKED_MODE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, lockedmodeenabled: ::win32_foundation_sys::BOOL, lockedmodereason: u32) -> u32>;
 pub type PSET_RESOURCE_STATUS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, resourcestatus: *mut RESOURCE_STATUS) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PSET_RESOURCE_STATUS_ROUTINE_EX = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, resourcestatus: *mut RESOURCE_STATUS_EX) -> u32>;
 pub type PSIGNAL_FAILURE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcehandle: isize, failuretype: FAILURE_TYPE, applicationspecificerrorcode: u32) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub type PSTARTUP_EX_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcetype: ::windows_core_sys::PCWSTR, minversionsupported: u32, maxversionsupported: u32, monitorcallbackfunctions: *mut CLRES_CALLBACK_FUNCTION_TABLE, resourcedllinterfacefunctions: *mut *mut CLRES_FUNCTION_TABLE) -> u32>;
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
+#[cfg(feature = "Win32_System_Registry")]
 pub type PSTARTUP_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resourcetype: ::windows_core_sys::PCWSTR, minversionsupported: u32, maxversionsupported: u32, setresourcestatus: PSET_RESOURCE_STATUS_ROUTINE, logevent: PLOG_EVENT_ROUTINE, functiontable: *mut *mut CLRES_FUNCTION_TABLE) -> u32>;
 pub type PTERMINATE_ROUTINE = ::core::option::Option<unsafe extern "system" fn(resource: *mut ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PWORKER_START_ROUTINE = ::core::option::Option<unsafe extern "system" fn(pworker: *mut CLUS_WORKER, lpthreadparameter: *mut ::core::ffi::c_void) -> u32>;
 #[repr(C)]
 pub struct PaxosTagCStruct {
@@ -4314,48 +4131,39 @@ pub const RmonResourceTypeControl: RESOURCE_MONITOR_STATE = 13i32;
 pub const RmonTerminateResource: RESOURCE_MONITOR_STATE = 14i32;
 pub const RmonDeadlocked: RESOURCE_MONITOR_STATE = 15i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESOURCE_STATUS {
     pub ResourceState: CLUSTER_RESOURCE_STATE,
     pub CheckPoint: u32,
     pub WaitHint: u32,
-    pub EventHandle: super::super::Foundation::HANDLE,
+    pub EventHandle: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESOURCE_STATUS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESOURCE_STATUS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESOURCE_STATUS_EX {
     pub ResourceState: CLUSTER_RESOURCE_STATE,
     pub CheckPoint: u32,
-    pub EventHandle: super::super::Foundation::HANDLE,
+    pub EventHandle: ::win32_foundation_sys::HANDLE,
     pub ApplicationSpecificErrorCode: u32,
     pub Flags: u32,
     pub WaitHint: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESOURCE_STATUS_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESOURCE_STATUS_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESOURCE_TERMINAL_FAILURE_INFO_BUFFER {
-    pub isTerminalFailure: super::super::Foundation::BOOL,
+    pub isTerminalFailure: ::win32_foundation_sys::BOOL,
     pub restartPeriodRemaining: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESOURCE_TERMINAL_FAILURE_INFO_BUFFER {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESOURCE_TERMINAL_FAILURE_INFO_BUFFER {
     fn clone(&self) -> Self {
         *self
@@ -4364,15 +4172,12 @@ impl ::core::clone::Clone for RESOURCE_TERMINAL_FAILURE_INFO_BUFFER {
 pub const RESTYPE_MONITOR_SHUTTING_DOWN_CLUSSVC_CRASH: u32 = 2u32;
 pub const RESTYPE_MONITOR_SHUTTING_DOWN_NODE_STOP: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESUTIL_FILETIME_DATA {
-    pub Default: super::super::Foundation::FILETIME,
-    pub Minimum: super::super::Foundation::FILETIME,
-    pub Maximum: super::super::Foundation::FILETIME,
+    pub Default: ::win32_foundation_sys::FILETIME,
+    pub Minimum: ::win32_foundation_sys::FILETIME,
+    pub Maximum: ::win32_foundation_sys::FILETIME,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESUTIL_FILETIME_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESUTIL_FILETIME_DATA {
     fn clone(&self) -> Self {
         *self
@@ -4391,7 +4196,6 @@ impl ::core::clone::Clone for RESUTIL_LARGEINT_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RESUTIL_PROPERTY_ITEM {
     pub Name: ::windows_core_sys::PWSTR,
     pub KeyName: ::windows_core_sys::PWSTR,
@@ -4402,16 +4206,13 @@ pub struct RESUTIL_PROPERTY_ITEM {
     pub Flags: u32,
     pub Offset: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESUTIL_PROPERTY_ITEM {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESUTIL_PROPERTY_ITEM {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union RESUTIL_PROPERTY_ITEM_0 {
     pub DefaultPtr: usize,
     pub Default: u32,
@@ -4420,9 +4221,7 @@ pub union RESUTIL_PROPERTY_ITEM_0 {
     pub ULargeIntData: *mut RESUTIL_ULARGEINT_DATA,
     pub FileTimeData: *mut RESUTIL_FILETIME_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RESUTIL_PROPERTY_ITEM_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RESUTIL_PROPERTY_ITEM_0 {
     fn clone(&self) -> Self {
         *self
@@ -4466,8 +4265,7 @@ impl ::core::clone::Clone for ResourceUtilizationInfoElement {
     }
 }
 pub const SET_APPINSTANCE_CSV_FLAGS_VALID_ONLY_IF_CSV_COORDINATOR: u32 = 1u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type SET_APP_INSTANCE_CSV_FLAGS = ::core::option::Option<unsafe extern "system" fn(processhandle: super::super::Foundation::HANDLE, mask: u32, flags: u32) -> u32>;
+pub type SET_APP_INSTANCE_CSV_FLAGS = ::core::option::Option<unsafe extern "system" fn(processhandle: ::win32_foundation_sys::HANDLE, mask: u32, flags: u32) -> u32>;
 pub type SR_DISK_REPLICATION_ELIGIBLE = i32;
 pub const SrDiskReplicationEligibleNone: SR_DISK_REPLICATION_ELIGIBLE = 0i32;
 pub const SrDiskReplicationEligibleYes: SR_DISK_REPLICATION_ELIGIBLE = 1i32;
@@ -4492,7 +4290,6 @@ pub const SrReplicatedDiskTypeLogNotInParthership: SR_REPLICATED_DISK_TYPE = 6i3
 pub const SrReplicatedDiskTypeOther: SR_REPLICATED_DISK_TYPE = 7i32;
 pub const SR_REPLICATED_PARTITION_DISALLOW_MULTINODE_IO: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SR_RESOURCE_TYPE_ADD_REPLICATION_GROUP {
     pub ReplicationGroupName: [u16; 260],
     pub Description: [u16; 260],
@@ -4501,15 +4298,13 @@ pub struct SR_RESOURCE_TYPE_ADD_REPLICATION_GROUP {
     pub LogType: u16,
     pub ReplicationMode: u32,
     pub MinimumPartnersInSync: u32,
-    pub EnableWriteConsistency: super::super::Foundation::BOOLEAN,
-    pub EnableEncryption: super::super::Foundation::BOOLEAN,
+    pub EnableWriteConsistency: ::win32_foundation_sys::BOOLEAN,
+    pub EnableEncryption: ::win32_foundation_sys::BOOLEAN,
     pub CertificateThumbprint: [u16; 260],
     pub VolumeNameCount: u32,
     pub VolumeNames: [u16; 260],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SR_RESOURCE_TYPE_ADD_REPLICATION_GROUP {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SR_RESOURCE_TYPE_ADD_REPLICATION_GROUP {
     fn clone(&self) -> Self {
         *self
@@ -4549,44 +4344,35 @@ impl ::core::clone::Clone for SR_RESOURCE_TYPE_ELIGIBLE_DISKS_RESULT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_LOGDISKS {
     pub DataDiskGuid: ::windows_core_sys::GUID,
-    pub IncludeOfflineDisks: super::super::Foundation::BOOLEAN,
+    pub IncludeOfflineDisks: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SR_RESOURCE_TYPE_QUERY_ELIGIBLE_LOGDISKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SR_RESOURCE_TYPE_QUERY_ELIGIBLE_LOGDISKS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_SOURCE_DATADISKS {
     pub DataDiskGuid: ::windows_core_sys::GUID,
-    pub IncludeAvailableStoargeDisks: super::super::Foundation::BOOLEAN,
+    pub IncludeAvailableStoargeDisks: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SR_RESOURCE_TYPE_QUERY_ELIGIBLE_SOURCE_DATADISKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SR_RESOURCE_TYPE_QUERY_ELIGIBLE_SOURCE_DATADISKS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SR_RESOURCE_TYPE_QUERY_ELIGIBLE_TARGET_DATADISKS {
     pub SourceDataDiskGuid: ::windows_core_sys::GUID,
     pub TargetReplicationGroupGuid: ::windows_core_sys::GUID,
-    pub SkipConnectivityCheck: super::super::Foundation::BOOLEAN,
-    pub IncludeOfflineDisks: super::super::Foundation::BOOLEAN,
+    pub SkipConnectivityCheck: ::win32_foundation_sys::BOOLEAN,
+    pub IncludeOfflineDisks: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SR_RESOURCE_TYPE_QUERY_ELIGIBLE_TARGET_DATADISKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SR_RESOURCE_TYPE_QUERY_ELIGIBLE_TARGET_DATADISKS {
     fn clone(&self) -> Self {
         *self

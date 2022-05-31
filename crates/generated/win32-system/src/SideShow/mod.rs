@@ -112,8 +112,8 @@ pub const GUID_DEVINTERFACE_SIDESHOW: ::windows_core::GUID = ::windows_core::GUI
 #[repr(transparent)]
 pub struct ISideShowBulkCapabilities(::windows_core::IUnknown);
 impl ISideShowBulkCapabilities {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub unsafe fn GetCapability(&self, in_keycapability: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, inout_pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub unsafe fn GetCapability(&self, in_keycapability: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, inout_pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.GetCapability)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(in_keycapability), ::core::mem::transmute(inout_pvalue)).ok()
     }
     pub unsafe fn GetCapabilities<'a, Param0: ::windows_core::IntoParam<'a, ISideShowKeyCollection>>(&self, in_keycollection: Param0, inout_pvalues: *mut ::core::option::Option<ISideShowPropVariantCollection>) -> ::windows_core::Result<()> {
@@ -189,8 +189,8 @@ pub struct ISideShowBulkCapabilities_Vtbl {
 #[repr(transparent)]
 pub struct ISideShowCapabilities(::windows_core::IUnknown);
 impl ISideShowCapabilities {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub unsafe fn GetCapability(&self, in_keycapability: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, inout_pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub unsafe fn GetCapability(&self, in_keycapability: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, inout_pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetCapability)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(in_keycapability), ::core::mem::transmute(inout_pvalue)).ok()
     }
 }
@@ -238,9 +238,9 @@ unsafe impl ::windows_core::Interface for ISideShowCapabilities {
 #[doc(hidden)]
 pub struct ISideShowCapabilities_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
-    pub GetCapability: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, in_keycapability: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY, inout_pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
+    #[cfg(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem"))]
+    pub GetCapability: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, in_keycapability: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY, inout_pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Win32_System_Com_StructuredStorage", feature = "Win32_UI_Shell_PropertiesSystem")))]
     GetCapability: usize,
 }
 #[repr(transparent)]
@@ -312,10 +312,9 @@ impl ISideShowContent {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).ContentId)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn DifferentiateContent(&self) -> ::windows_core::Result<super::super::Foundation::BOOL> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::BOOL>::zeroed();
-        (::windows_core::Interface::vtable(self).DifferentiateContent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::BOOL>(result__)
+    pub unsafe fn DifferentiateContent(&self) -> ::windows_core::Result<::win32_foundation::BOOL> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::BOOL>::zeroed();
+        (::windows_core::Interface::vtable(self).DifferentiateContent)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::BOOL>(result__)
     }
 }
 impl ::core::convert::From<ISideShowContent> for ::windows_core::IUnknown {
@@ -364,10 +363,7 @@ pub struct ISideShowContent_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub GetContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, in_picapabilities: ::windows_core::RawPtr, out_pdwsize: *mut u32, out_ppbdata: *mut *mut u8) -> ::windows_core::HRESULT,
     pub ContentId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, out_pcontentid: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub DifferentiateContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, out_pfdifferentiatecontent: *mut super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DifferentiateContent: usize,
+    pub DifferentiateContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, out_pfdifferentiatecontent: *mut ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISideShowContentManager(::windows_core::IUnknown);
@@ -509,14 +505,14 @@ pub struct ISideShowEvents_Vtbl {
 pub struct ISideShowKeyCollection(::windows_core::IUnknown);
 impl ISideShowKeyCollection {
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn Add(&self, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<()> {
+    pub unsafe fn Add(&self, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(key)).ok()
     }
     pub unsafe fn Clear(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Clear)(::windows_core::Interface::as_raw(self)).ok()
     }
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub unsafe fn GetAt(&self, dwindex: u32, pkey: *mut super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<()> {
+    pub unsafe fn GetAt(&self, dwindex: u32, pkey: *mut ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwindex), ::core::mem::transmute(pkey)).ok()
     }
     pub unsafe fn GetCount(&self, pcelems: *const u32) -> ::windows_core::Result<()> {
@@ -571,12 +567,12 @@ unsafe impl ::windows_core::Interface for ISideShowKeyCollection {
 pub struct ISideShowKeyCollection_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::HRESULT,
+    pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, key: *const ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     Add: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-    pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwindex: u32, pkey: *mut super::super::UI::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::HRESULT,
+    pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwindex: u32, pkey: *mut ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_UI_Shell_PropertiesSystem"))]
     GetAt: usize,
     pub GetCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcelems: *const u32) -> ::windows_core::HRESULT,
@@ -607,21 +603,19 @@ impl ISideShowNotification {
         (::windows_core::Interface::vtable(self).SetMessage)(::windows_core::Interface::as_raw(self), in_pwszmessage.into_param().abi()).ok()
     }
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-    pub unsafe fn Image(&self) -> ::windows_core::Result<super::super::UI::WindowsAndMessaging::HICON> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::UI::WindowsAndMessaging::HICON>::zeroed();
-        (::windows_core::Interface::vtable(self).Image)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::UI::WindowsAndMessaging::HICON>(result__)
+    pub unsafe fn Image(&self) -> ::windows_core::Result<::win32_ui::WindowsAndMessaging::HICON> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_ui::WindowsAndMessaging::HICON>::zeroed();
+        (::windows_core::Interface::vtable(self).Image)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_ui::WindowsAndMessaging::HICON>(result__)
     }
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-    pub unsafe fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, super::super::UI::WindowsAndMessaging::HICON>>(&self, in_hicon: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, ::win32_ui::WindowsAndMessaging::HICON>>(&self, in_hicon: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetImage)(::windows_core::Interface::as_raw(self), in_hicon.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ExpirationTime(&self) -> ::windows_core::Result<super::super::Foundation::SYSTEMTIME> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::SYSTEMTIME>::zeroed();
-        (::windows_core::Interface::vtable(self).ExpirationTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Foundation::SYSTEMTIME>(result__)
+    pub unsafe fn ExpirationTime(&self) -> ::windows_core::Result<::win32_foundation::SYSTEMTIME> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_foundation::SYSTEMTIME>::zeroed();
+        (::windows_core::Interface::vtable(self).ExpirationTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_foundation::SYSTEMTIME>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SetExpirationTime(&self, in_ptime: *const super::super::Foundation::SYSTEMTIME) -> ::windows_core::Result<()> {
+    pub unsafe fn SetExpirationTime(&self, in_ptime: *const ::win32_foundation::SYSTEMTIME) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetExpirationTime)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(in_ptime)).ok()
     }
 }
@@ -676,21 +670,15 @@ pub struct ISideShowNotification_Vtbl {
     pub Message: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, out_ppwszmessage: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub SetMessage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, in_pwszmessage: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-    pub Image: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, out_phicon: *mut super::super::UI::WindowsAndMessaging::HICON) -> ::windows_core::HRESULT,
+    pub Image: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, out_phicon: *mut ::win32_ui::WindowsAndMessaging::HICON) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
     Image: usize,
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
-    pub SetImage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, in_hicon: super::super::UI::WindowsAndMessaging::HICON) -> ::windows_core::HRESULT,
+    pub SetImage: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, in_hicon: ::win32_ui::WindowsAndMessaging::HICON) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_UI_WindowsAndMessaging"))]
     SetImage: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, out_ptime: *mut super::super::Foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ExpirationTime: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SetExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, in_ptime: *const super::super::Foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SetExpirationTime: usize,
+    pub ExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, out_ptime: *mut ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
+    pub SetExpirationTime: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, in_ptime: *const ::win32_foundation::SYSTEMTIME) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct ISideShowNotificationManager(::windows_core::IUnknown);
@@ -756,14 +744,14 @@ pub struct ISideShowNotificationManager_Vtbl {
 #[repr(transparent)]
 pub struct ISideShowPropVariantCollection(::windows_core::IUnknown);
 impl ISideShowPropVariantCollection {
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
     pub unsafe fn Add(&self, pvalue: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pvalue)).ok()
     }
     pub unsafe fn Clear(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Clear)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
     pub unsafe fn GetAt(&self, dwindex: u32, pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).GetAt)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(dwindex), ::core::mem::transmute(pvalue)).ok()
     }
@@ -818,14 +806,14 @@ unsafe impl ::windows_core::Interface for ISideShowPropVariantCollection {
 #[doc(hidden)]
 pub struct ISideShowPropVariantCollection_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
     pub Add: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pvalue: *const super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     Add: usize,
     pub Clear: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage"))]
+    #[cfg(feature = "Win32_System_Com_StructuredStorage")]
     pub GetAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwindex: u32, pvalue: *mut super::Com::StructuredStorage::PROPVARIANT) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Win32_Foundation", feature = "Win32_System_Com_StructuredStorage")))]
+    #[cfg(not(feature = "Win32_System_Com_StructuredStorage"))]
     GetAt: usize,
     pub GetCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcelems: *const u32) -> ::windows_core::HRESULT,
     pub RemoveAt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dwindex: u32) -> ::windows_core::HRESULT,
@@ -1101,32 +1089,32 @@ impl ::core::default::Default for SCF_NAVIGATION_EVENT {
 }
 pub const SIDESHOW_APPLICATION_EVENT: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x4cb572fa_1d3b_49b3_a17a_2e6bff052854);
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_CLIENT_AREA_HEIGHT: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 16u32 };
+pub const SIDESHOW_CAPABILITY_CLIENT_AREA_HEIGHT: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 16u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_CLIENT_AREA_WIDTH: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 15u32 };
+pub const SIDESHOW_CAPABILITY_CLIENT_AREA_WIDTH: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 15u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_COLOR_DEPTH: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 5u32 };
+pub const SIDESHOW_CAPABILITY_COLOR_DEPTH: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 5u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_COLOR_TYPE: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 6u32 };
+pub const SIDESHOW_CAPABILITY_COLOR_TYPE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 6u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_CURRENT_LANGUAGE: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 9u32 };
+pub const SIDESHOW_CAPABILITY_CURRENT_LANGUAGE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 9u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_DATA_CACHE: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 7u32 };
+pub const SIDESHOW_CAPABILITY_DATA_CACHE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 7u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_DEVICE_ID: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 1u32 };
+pub const SIDESHOW_CAPABILITY_DEVICE_ID: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 1u32 };
 pub const SIDESHOW_CAPABILITY_DEVICE_PROPERTIES: ::windows_core::GUID = ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99);
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_SCREEN_HEIGHT: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 4u32 };
+pub const SIDESHOW_CAPABILITY_SCREEN_HEIGHT: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 4u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_SCREEN_TYPE: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 2u32 };
+pub const SIDESHOW_CAPABILITY_SCREEN_TYPE: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 2u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_SCREEN_WIDTH: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 3u32 };
+pub const SIDESHOW_CAPABILITY_SCREEN_WIDTH: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 3u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_SUPPORTED_IMAGE_FORMATS: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 14u32 };
+pub const SIDESHOW_CAPABILITY_SUPPORTED_IMAGE_FORMATS: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 14u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_SUPPORTED_LANGUAGES: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 8u32 };
+pub const SIDESHOW_CAPABILITY_SUPPORTED_LANGUAGES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 8u32 };
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
-pub const SIDESHOW_CAPABILITY_SUPPORTED_THEMES: super::super::UI::Shell::PropertiesSystem::PROPERTYKEY = super::super::UI::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 10u32 };
+pub const SIDESHOW_CAPABILITY_SUPPORTED_THEMES: ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY = ::win32_ui::Shell::PropertiesSystem::PROPERTYKEY { fmtid: ::windows_core::GUID::from_u128(0x8abc88a8_857b_4ad7_a35a_b5942f492b99), pid: 10u32 };
 #[repr(transparent)]
 #[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
 pub struct SIDESHOW_COLOR_TYPE(pub i32);

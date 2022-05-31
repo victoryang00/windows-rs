@@ -37,41 +37,33 @@ impl ::core::default::Default for DATE_TIME {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPAPI_PARAMS {
     pub Flags: u32,
     pub OptionId: u32,
-    pub IsVendor: super::super::Foundation::BOOL,
+    pub IsVendor: ::win32_foundation::BOOL,
     pub Data: *mut u8,
     pub nBytesData: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPAPI_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPAPI_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPAPI_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPAPI_PARAMS").field("Flags", &self.Flags).field("OptionId", &self.OptionId).field("IsVendor", &self.IsVendor).field("Data", &self.Data).field("nBytesData", &self.nBytesData).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPAPI_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPAPI_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPAPI_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPAPI_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPAPI_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -110,38 +102,30 @@ impl ::core::default::Default for DHCPCAPI_CLASSID {
 }
 pub const DHCPCAPI_DEREGISTER_HANDLE_EVENT: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPCAPI_PARAMS_ARRAY {
     pub nParams: u32,
     pub Params: *mut DHCPAPI_PARAMS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPCAPI_PARAMS_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPCAPI_PARAMS_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPCAPI_PARAMS_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPCAPI_PARAMS_ARRAY").field("nParams", &self.nParams).field("Params", &self.Params).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPCAPI_PARAMS_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPCAPI_PARAMS_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPCAPI_PARAMS_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPCAPI_PARAMS_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPCAPI_PARAMS_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -220,7 +204,6 @@ impl ::core::default::Default for DHCPDS_SERVERS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPV4_FAILOVER_CLIENT_INFO {
     pub ClientIpAddress: u32,
     pub SubnetMask: u32,
@@ -233,7 +216,7 @@ pub struct DHCPV4_FAILOVER_CLIENT_INFO {
     pub AddressState: u8,
     pub Status: QuarantineStatus,
     pub ProbationEnds: DATE_TIME,
-    pub QuarantineCapable: super::super::Foundation::BOOL,
+    pub QuarantineCapable: ::win32_foundation::BOOL,
     pub SentPotExpTime: u32,
     pub AckPotExpTime: u32,
     pub RecvPotExpTime: u32,
@@ -244,15 +227,12 @@ pub struct DHCPV4_FAILOVER_CLIENT_INFO {
     pub PolicyName: ::windows_core::PWSTR,
     pub Flags: u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPV4_FAILOVER_CLIENT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPV4_FAILOVER_CLIENT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPV4_FAILOVER_CLIENT_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPV4_FAILOVER_CLIENT_INFO")
@@ -280,64 +260,51 @@ impl ::core::fmt::Debug for DHCPV4_FAILOVER_CLIENT_INFO {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPV4_FAILOVER_CLIENT_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPV4_FAILOVER_CLIENT_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPV4_FAILOVER_CLIENT_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPV4_FAILOVER_CLIENT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPV4_FAILOVER_CLIENT_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPV4_FAILOVER_CLIENT_INFO_ARRAY {
     pub NumElements: u32,
     pub Clients: *mut *mut DHCPV4_FAILOVER_CLIENT_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPV4_FAILOVER_CLIENT_INFO_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPV4_FAILOVER_CLIENT_INFO_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPV4_FAILOVER_CLIENT_INFO_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPV4_FAILOVER_CLIENT_INFO_ARRAY").field("NumElements", &self.NumElements).field("Clients", &self.Clients).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPV4_FAILOVER_CLIENT_INFO_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPV4_FAILOVER_CLIENT_INFO_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPV4_FAILOVER_CLIENT_INFO_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPV4_FAILOVER_CLIENT_INFO_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPV4_FAILOVER_CLIENT_INFO_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPV4_FAILOVER_CLIENT_INFO_EX {
     pub ClientIpAddress: u32,
     pub SubnetMask: u32,
@@ -350,7 +317,7 @@ pub struct DHCPV4_FAILOVER_CLIENT_INFO_EX {
     pub AddressState: u8,
     pub Status: QuarantineStatus,
     pub ProbationEnds: DATE_TIME,
-    pub QuarantineCapable: super::super::Foundation::BOOL,
+    pub QuarantineCapable: ::win32_foundation::BOOL,
     pub SentPotExpTime: u32,
     pub AckPotExpTime: u32,
     pub RecvPotExpTime: u32,
@@ -362,15 +329,12 @@ pub struct DHCPV4_FAILOVER_CLIENT_INFO_EX {
     pub Flags: u8,
     pub AddressStateEx: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPV4_FAILOVER_CLIENT_INFO_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPV4_FAILOVER_CLIENT_INFO_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPV4_FAILOVER_CLIENT_INFO_EX {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPV4_FAILOVER_CLIENT_INFO_EX")
@@ -399,19 +363,15 @@ impl ::core::fmt::Debug for DHCPV4_FAILOVER_CLIENT_INFO_EX {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPV4_FAILOVER_CLIENT_INFO_EX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPV4_FAILOVER_CLIENT_INFO_EX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPV4_FAILOVER_CLIENT_INFO_EX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPV4_FAILOVER_CLIENT_INFO_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPV4_FAILOVER_CLIENT_INFO_EX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -449,79 +409,63 @@ impl ::core::default::Default for DHCPV6CAPI_CLASSID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPV6CAPI_PARAMS {
     pub Flags: u32,
     pub OptionId: u32,
-    pub IsVendor: super::super::Foundation::BOOL,
+    pub IsVendor: ::win32_foundation::BOOL,
     pub Data: *mut u8,
     pub nBytesData: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPV6CAPI_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPV6CAPI_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPV6CAPI_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPV6CAPI_PARAMS").field("Flags", &self.Flags).field("OptionId", &self.OptionId).field("IsVendor", &self.IsVendor).field("Data", &self.Data).field("nBytesData", &self.nBytesData).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPV6CAPI_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPV6CAPI_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPV6CAPI_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPV6CAPI_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPV6CAPI_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPV6CAPI_PARAMS_ARRAY {
     pub nParams: u32,
     pub Params: *mut DHCPV6CAPI_PARAMS,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPV6CAPI_PARAMS_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPV6CAPI_PARAMS_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPV6CAPI_PARAMS_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPV6CAPI_PARAMS_ARRAY").field("nParams", &self.nParams).field("Params", &self.Params).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPV6CAPI_PARAMS_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPV6CAPI_PARAMS_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPV6CAPI_PARAMS_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPV6CAPI_PARAMS_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPV6CAPI_PARAMS_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -599,10 +543,9 @@ impl ::core::default::Default for DHCPV6PrefixLeaseInformation {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPV6_BIND_ELEMENT {
     pub Flags: u32,
-    pub fBoundToDHCPServer: super::super::Foundation::BOOL,
+    pub fBoundToDHCPServer: ::win32_foundation::BOOL,
     pub AdapterPrimaryAddress: DHCP_IPV6_ADDRESS,
     pub AdapterSubnetAddress: DHCP_IPV6_ADDRESS,
     pub IfDescription: ::windows_core::PWSTR,
@@ -610,71 +553,56 @@ pub struct DHCPV6_BIND_ELEMENT {
     pub IfIdSize: u32,
     pub IfId: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPV6_BIND_ELEMENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPV6_BIND_ELEMENT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPV6_BIND_ELEMENT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPV6_BIND_ELEMENT").field("Flags", &self.Flags).field("fBoundToDHCPServer", &self.fBoundToDHCPServer).field("AdapterPrimaryAddress", &self.AdapterPrimaryAddress).field("AdapterSubnetAddress", &self.AdapterSubnetAddress).field("IfDescription", &self.IfDescription).field("IpV6IfIndex", &self.IpV6IfIndex).field("IfIdSize", &self.IfIdSize).field("IfId", &self.IfId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPV6_BIND_ELEMENT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPV6_BIND_ELEMENT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPV6_BIND_ELEMENT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPV6_BIND_ELEMENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPV6_BIND_ELEMENT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPV6_BIND_ELEMENT_ARRAY {
     pub NumElements: u32,
     pub Elements: *mut DHCPV6_BIND_ELEMENT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPV6_BIND_ELEMENT_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPV6_BIND_ELEMENT_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPV6_BIND_ELEMENT_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPV6_BIND_ELEMENT_ARRAY").field("NumElements", &self.NumElements).field("Elements", &self.Elements).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPV6_BIND_ELEMENT_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPV6_BIND_ELEMENT_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPV6_BIND_ELEMENT_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPV6_BIND_ELEMENT_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPV6_BIND_ELEMENT_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -732,38 +660,30 @@ pub const DHCPV6_OPTION_USER_CLASS: u32 = 15u32;
 pub const DHCPV6_OPTION_VENDOR_CLASS: u32 = 16u32;
 pub const DHCPV6_OPTION_VENDOR_OPTS: u32 = 17u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCPV6_STATELESS_PARAMS {
-    pub Status: super::super::Foundation::BOOL,
+    pub Status: ::win32_foundation::BOOL,
     pub PurgeInterval: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCPV6_STATELESS_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCPV6_STATELESS_PARAMS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCPV6_STATELESS_PARAMS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCPV6_STATELESS_PARAMS").field("Status", &self.Status).field("PurgeInterval", &self.PurgeInterval).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCPV6_STATELESS_PARAMS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCPV6_STATELESS_PARAMS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCPV6_STATELESS_PARAMS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCPV6_STATELESS_PARAMS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCPV6_STATELESS_PARAMS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -855,41 +775,33 @@ impl ::core::default::Default for DHCPV6_STATELESS_STATS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_ADDR_PATTERN {
-    pub MatchHWType: super::super::Foundation::BOOL,
+    pub MatchHWType: ::win32_foundation::BOOL,
     pub HWType: u8,
-    pub IsWildcard: super::super::Foundation::BOOL,
+    pub IsWildcard: ::win32_foundation::BOOL,
     pub Length: u8,
     pub Pattern: [u8; 255],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_ADDR_PATTERN {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_ADDR_PATTERN {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_ADDR_PATTERN {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_ADDR_PATTERN").field("MatchHWType", &self.MatchHWType).field("HWType", &self.HWType).field("IsWildcard", &self.IsWildcard).field("Length", &self.Length).field("Pattern", &self.Pattern).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_ADDR_PATTERN {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_ADDR_PATTERN {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_ADDR_PATTERN>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_ADDR_PATTERN {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_ADDR_PATTERN {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -959,261 +871,207 @@ impl ::core::default::Default for DHCP_ALL_OPTIONS_0 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_ALL_OPTION_VALUES {
     pub Flags: u32,
     pub NumElements: u32,
     pub Options: *mut DHCP_ALL_OPTION_VALUES_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_ALL_OPTION_VALUES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_ALL_OPTION_VALUES {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_ALL_OPTION_VALUES {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_ALL_OPTION_VALUES").field("Flags", &self.Flags).field("NumElements", &self.NumElements).field("Options", &self.Options).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_ALL_OPTION_VALUES {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_ALL_OPTION_VALUES {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_ALL_OPTION_VALUES>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_ALL_OPTION_VALUES {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_ALL_OPTION_VALUES {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_ALL_OPTION_VALUES_0 {
     pub ClassName: ::windows_core::PWSTR,
     pub VendorName: ::windows_core::PWSTR,
-    pub IsVendor: super::super::Foundation::BOOL,
+    pub IsVendor: ::win32_foundation::BOOL,
     pub OptionsArray: *mut DHCP_OPTION_VALUE_ARRAY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_ALL_OPTION_VALUES_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_ALL_OPTION_VALUES_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_ALL_OPTION_VALUES_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_ALL_OPTION_VALUES_0").field("ClassName", &self.ClassName).field("VendorName", &self.VendorName).field("IsVendor", &self.IsVendor).field("OptionsArray", &self.OptionsArray).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_ALL_OPTION_VALUES_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_ALL_OPTION_VALUES_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_ALL_OPTION_VALUES_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_ALL_OPTION_VALUES_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_ALL_OPTION_VALUES_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_ALL_OPTION_VALUES_PB {
     pub Flags: u32,
     pub NumElements: u32,
     pub Options: *mut DHCP_ALL_OPTION_VALUES_PB_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_ALL_OPTION_VALUES_PB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_ALL_OPTION_VALUES_PB {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_ALL_OPTION_VALUES_PB {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_ALL_OPTION_VALUES_PB").field("Flags", &self.Flags).field("NumElements", &self.NumElements).field("Options", &self.Options).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_ALL_OPTION_VALUES_PB {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_ALL_OPTION_VALUES_PB {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_ALL_OPTION_VALUES_PB>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_ALL_OPTION_VALUES_PB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_ALL_OPTION_VALUES_PB {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_ALL_OPTION_VALUES_PB_0 {
     pub PolicyName: ::windows_core::PWSTR,
     pub VendorName: ::windows_core::PWSTR,
-    pub IsVendor: super::super::Foundation::BOOL,
+    pub IsVendor: ::win32_foundation::BOOL,
     pub OptionsArray: *mut DHCP_OPTION_VALUE_ARRAY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_ALL_OPTION_VALUES_PB_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_ALL_OPTION_VALUES_PB_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_ALL_OPTION_VALUES_PB_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_ALL_OPTION_VALUES_PB_0").field("PolicyName", &self.PolicyName).field("VendorName", &self.VendorName).field("IsVendor", &self.IsVendor).field("OptionsArray", &self.OptionsArray).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_ALL_OPTION_VALUES_PB_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_ALL_OPTION_VALUES_PB_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_ALL_OPTION_VALUES_PB_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_ALL_OPTION_VALUES_PB_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_ALL_OPTION_VALUES_PB_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_ATTRIB {
     pub DhcpAttribId: u32,
     pub DhcpAttribType: u32,
     pub Anonymous: DHCP_ATTRIB_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_ATTRIB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_ATTRIB {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_ATTRIB {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_ATTRIB {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_ATTRIB>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_ATTRIB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_ATTRIB {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union DHCP_ATTRIB_0 {
-    pub DhcpAttribBool: super::super::Foundation::BOOL,
+    pub DhcpAttribBool: ::win32_foundation::BOOL,
     pub DhcpAttribUlong: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_ATTRIB_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_ATTRIB_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_ATTRIB_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_ATTRIB_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_ATTRIB_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_ATTRIB_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_ATTRIB_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_ATTRIB_ARRAY {
     pub NumElements: u32,
     pub DhcpAttribs: *mut DHCP_ATTRIB,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_ATTRIB_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_ATTRIB_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_ATTRIB_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_ATTRIB_ARRAY").field("NumElements", &self.NumElements).field("DhcpAttribs", &self.DhcpAttribs).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_ATTRIB_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_ATTRIB_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_ATTRIB_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_ATTRIB_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_ATTRIB_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1258,81 +1116,65 @@ impl ::core::default::Default for DHCP_BINARY_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_BIND_ELEMENT {
     pub Flags: u32,
-    pub fBoundToDHCPServer: super::super::Foundation::BOOL,
+    pub fBoundToDHCPServer: ::win32_foundation::BOOL,
     pub AdapterPrimaryAddress: u32,
     pub AdapterSubnetAddress: u32,
     pub IfDescription: ::windows_core::PWSTR,
     pub IfIdSize: u32,
     pub IfId: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_BIND_ELEMENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_BIND_ELEMENT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_BIND_ELEMENT {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_BIND_ELEMENT").field("Flags", &self.Flags).field("fBoundToDHCPServer", &self.fBoundToDHCPServer).field("AdapterPrimaryAddress", &self.AdapterPrimaryAddress).field("AdapterSubnetAddress", &self.AdapterSubnetAddress).field("IfDescription", &self.IfDescription).field("IfIdSize", &self.IfIdSize).field("IfId", &self.IfId).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_BIND_ELEMENT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_BIND_ELEMENT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_BIND_ELEMENT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_BIND_ELEMENT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_BIND_ELEMENT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_BIND_ELEMENT_ARRAY {
     pub NumElements: u32,
     pub Elements: *mut DHCP_BIND_ELEMENT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_BIND_ELEMENT_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_BIND_ELEMENT_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_BIND_ELEMENT_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_BIND_ELEMENT_ARRAY").field("NumElements", &self.NumElements).field("Elements", &self.Elements).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_BIND_ELEMENT_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_BIND_ELEMENT_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_BIND_ELEMENT_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_BIND_ELEMENT_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_BIND_ELEMENT_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1374,7 +1216,6 @@ pub const DHCP_CALLOUT_ENTRY_POINT: &str = "DhcpServerCalloutEntry";
 pub const DHCP_CALLOUT_LIST_KEY: &str = "System\\CurrentControlSet\\Services\\DHCPServer\\Parameters";
 pub const DHCP_CALLOUT_LIST_VALUE: &str = "CalloutDlls";
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CALLOUT_TABLE {
     pub DhcpControlHook: LPDHCP_CONTROL,
     pub DhcpNewPktHook: LPDHCP_NEWPKT,
@@ -1387,15 +1228,12 @@ pub struct DHCP_CALLOUT_TABLE {
     pub DhcpExtensionHook: *mut ::core::ffi::c_void,
     pub DhcpReservedHook: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CALLOUT_TABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CALLOUT_TABLE {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CALLOUT_TABLE {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CALLOUT_TABLE")
@@ -1412,180 +1250,144 @@ impl ::core::fmt::Debug for DHCP_CALLOUT_TABLE {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CALLOUT_TABLE {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CALLOUT_TABLE {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CALLOUT_TABLE>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CALLOUT_TABLE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CALLOUT_TABLE {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLASS_INFO {
     pub ClassName: ::windows_core::PWSTR,
     pub ClassComment: ::windows_core::PWSTR,
     pub ClassDataLength: u32,
-    pub IsVendor: super::super::Foundation::BOOL,
+    pub IsVendor: ::win32_foundation::BOOL,
     pub Flags: u32,
     pub ClassData: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLASS_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLASS_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLASS_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLASS_INFO").field("ClassName", &self.ClassName).field("ClassComment", &self.ClassComment).field("ClassDataLength", &self.ClassDataLength).field("IsVendor", &self.IsVendor).field("Flags", &self.Flags).field("ClassData", &self.ClassData).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLASS_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLASS_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLASS_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLASS_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLASS_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLASS_INFO_ARRAY {
     pub NumElements: u32,
     pub Classes: *mut DHCP_CLASS_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLASS_INFO_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLASS_INFO_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLASS_INFO_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLASS_INFO_ARRAY").field("NumElements", &self.NumElements).field("Classes", &self.Classes).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLASS_INFO_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLASS_INFO_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLASS_INFO_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLASS_INFO_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLASS_INFO_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLASS_INFO_ARRAY_V6 {
     pub NumElements: u32,
     pub Classes: *mut DHCP_CLASS_INFO_V6,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLASS_INFO_ARRAY_V6 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLASS_INFO_ARRAY_V6 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLASS_INFO_ARRAY_V6 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLASS_INFO_ARRAY_V6").field("NumElements", &self.NumElements).field("Classes", &self.Classes).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLASS_INFO_ARRAY_V6 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLASS_INFO_ARRAY_V6 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLASS_INFO_ARRAY_V6>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLASS_INFO_ARRAY_V6 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLASS_INFO_ARRAY_V6 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLASS_INFO_V6 {
     pub ClassName: ::windows_core::PWSTR,
     pub ClassComment: ::windows_core::PWSTR,
     pub ClassDataLength: u32,
-    pub IsVendor: super::super::Foundation::BOOL,
+    pub IsVendor: ::win32_foundation::BOOL,
     pub EnterpriseNumber: u32,
     pub Flags: u32,
     pub ClassData: *mut u8,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLASS_INFO_V6 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLASS_INFO_V6 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLASS_INFO_V6 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLASS_INFO_V6").field("ClassName", &self.ClassName).field("ClassComment", &self.ClassComment).field("ClassDataLength", &self.ClassDataLength).field("IsVendor", &self.IsVendor).field("EnterpriseNumber", &self.EnterpriseNumber).field("Flags", &self.Flags).field("ClassData", &self.ClassData).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLASS_INFO_V6 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLASS_INFO_V6 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLASS_INFO_V6>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLASS_INFO_V6 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLASS_INFO_V6 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1594,7 +1396,6 @@ impl ::core::default::Default for DHCP_CLASS_INFO_V6 {
 pub const DHCP_CLIENT_BOOTP: u32 = 805306371u32;
 pub const DHCP_CLIENT_DHCP: u32 = 805306372u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLIENT_FILTER_STATUS_INFO {
     pub ClientIpAddress: u32,
     pub SubnetMask: u32,
@@ -1607,18 +1408,15 @@ pub struct DHCP_CLIENT_FILTER_STATUS_INFO {
     pub AddressState: u8,
     pub Status: QuarantineStatus,
     pub ProbationEnds: DATE_TIME,
-    pub QuarantineCapable: super::super::Foundation::BOOL,
+    pub QuarantineCapable: ::win32_foundation::BOOL,
     pub FilterStatus: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLIENT_FILTER_STATUS_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLIENT_FILTER_STATUS_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLIENT_FILTER_STATUS_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLIENT_FILTER_STATUS_INFO")
@@ -1638,57 +1436,45 @@ impl ::core::fmt::Debug for DHCP_CLIENT_FILTER_STATUS_INFO {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLIENT_FILTER_STATUS_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLIENT_FILTER_STATUS_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLIENT_FILTER_STATUS_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLIENT_FILTER_STATUS_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLIENT_FILTER_STATUS_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY {
     pub NumElements: u32,
     pub Clients: *mut *mut DHCP_CLIENT_FILTER_STATUS_INFO,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY").field("NumElements", &self.NumElements).field("Clients", &self.Clients).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1850,45 +1636,36 @@ impl ::core::default::Default for DHCP_CLIENT_INFO_ARRAY_V6 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLIENT_INFO_ARRAY_VQ {
     pub NumElements: u32,
     pub Clients: *mut *mut DHCP_CLIENT_INFO_VQ,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLIENT_INFO_ARRAY_VQ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLIENT_INFO_ARRAY_VQ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLIENT_INFO_ARRAY_VQ {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLIENT_INFO_ARRAY_VQ").field("NumElements", &self.NumElements).field("Clients", &self.Clients).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLIENT_INFO_ARRAY_VQ {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLIENT_INFO_ARRAY_VQ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLIENT_INFO_ARRAY_VQ>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLIENT_INFO_ARRAY_VQ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLIENT_INFO_ARRAY_VQ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLIENT_INFO_EX {
     pub ClientIpAddress: u32,
     pub SubnetMask: u32,
@@ -1901,20 +1678,17 @@ pub struct DHCP_CLIENT_INFO_EX {
     pub AddressState: u8,
     pub Status: QuarantineStatus,
     pub ProbationEnds: DATE_TIME,
-    pub QuarantineCapable: super::super::Foundation::BOOL,
+    pub QuarantineCapable: ::win32_foundation::BOOL,
     pub FilterStatus: u32,
     pub PolicyName: ::windows_core::PWSTR,
     pub Properties: *mut DHCP_PROPERTY_ARRAY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLIENT_INFO_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLIENT_INFO_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLIENT_INFO_EX {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLIENT_INFO_EX")
@@ -1936,64 +1710,51 @@ impl ::core::fmt::Debug for DHCP_CLIENT_INFO_EX {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLIENT_INFO_EX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLIENT_INFO_EX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLIENT_INFO_EX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLIENT_INFO_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLIENT_INFO_EX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLIENT_INFO_EX_ARRAY {
     pub NumElements: u32,
     pub Clients: *mut *mut DHCP_CLIENT_INFO_EX,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLIENT_INFO_EX_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLIENT_INFO_EX_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLIENT_INFO_EX_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLIENT_INFO_EX_ARRAY").field("NumElements", &self.NumElements).field("Clients", &self.Clients).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLIENT_INFO_EX_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLIENT_INFO_EX_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLIENT_INFO_EX_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLIENT_INFO_EX_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLIENT_INFO_EX_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLIENT_INFO_PB {
     pub ClientIpAddress: u32,
     pub SubnetMask: u32,
@@ -2006,19 +1767,16 @@ pub struct DHCP_CLIENT_INFO_PB {
     pub AddressState: u8,
     pub Status: QuarantineStatus,
     pub ProbationEnds: DATE_TIME,
-    pub QuarantineCapable: super::super::Foundation::BOOL,
+    pub QuarantineCapable: ::win32_foundation::BOOL,
     pub FilterStatus: u32,
     pub PolicyName: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLIENT_INFO_PB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLIENT_INFO_PB {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLIENT_INFO_PB {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLIENT_INFO_PB")
@@ -2039,57 +1797,45 @@ impl ::core::fmt::Debug for DHCP_CLIENT_INFO_PB {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLIENT_INFO_PB {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLIENT_INFO_PB {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLIENT_INFO_PB>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLIENT_INFO_PB {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLIENT_INFO_PB {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLIENT_INFO_PB_ARRAY {
     pub NumElements: u32,
     pub Clients: *mut *mut DHCP_CLIENT_INFO_PB,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLIENT_INFO_PB_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLIENT_INFO_PB_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLIENT_INFO_PB_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLIENT_INFO_PB_ARRAY").field("NumElements", &self.NumElements).field("Clients", &self.Clients).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLIENT_INFO_PB_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLIENT_INFO_PB_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLIENT_INFO_PB_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLIENT_INFO_PB_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLIENT_INFO_PB_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2206,7 +1952,6 @@ impl ::core::default::Default for DHCP_CLIENT_INFO_V6 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_CLIENT_INFO_VQ {
     pub ClientIpAddress: u32,
     pub SubnetMask: u32,
@@ -2219,17 +1964,14 @@ pub struct DHCP_CLIENT_INFO_VQ {
     pub AddressState: u8,
     pub Status: QuarantineStatus,
     pub ProbationEnds: DATE_TIME,
-    pub QuarantineCapable: super::super::Foundation::BOOL,
+    pub QuarantineCapable: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_CLIENT_INFO_VQ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_CLIENT_INFO_VQ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_CLIENT_INFO_VQ {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_CLIENT_INFO_VQ")
@@ -2248,19 +1990,15 @@ impl ::core::fmt::Debug for DHCP_CLIENT_INFO_VQ {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_CLIENT_INFO_VQ {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_CLIENT_INFO_VQ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_CLIENT_INFO_VQ>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_CLIENT_INFO_VQ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_CLIENT_INFO_VQ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2459,115 +2197,91 @@ impl ::core::default::Default for DHCP_FAILOVER_STATISTICS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_FILTER_ADD_INFO {
     pub AddrPatt: DHCP_ADDR_PATTERN,
     pub Comment: ::windows_core::PWSTR,
     pub ListType: DHCP_FILTER_LIST_TYPE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_FILTER_ADD_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_FILTER_ADD_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_FILTER_ADD_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_FILTER_ADD_INFO").field("AddrPatt", &self.AddrPatt).field("Comment", &self.Comment).field("ListType", &self.ListType).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_FILTER_ADD_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_FILTER_ADD_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_FILTER_ADD_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_FILTER_ADD_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_FILTER_ADD_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_FILTER_ENUM_INFO {
     pub NumElements: u32,
     pub pEnumRecords: *mut DHCP_FILTER_RECORD,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_FILTER_ENUM_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_FILTER_ENUM_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_FILTER_ENUM_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_FILTER_ENUM_INFO").field("NumElements", &self.NumElements).field("pEnumRecords", &self.pEnumRecords).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_FILTER_ENUM_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_FILTER_ENUM_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_FILTER_ENUM_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_FILTER_ENUM_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_FILTER_ENUM_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_FILTER_GLOBAL_INFO {
-    pub EnforceAllowList: super::super::Foundation::BOOL,
-    pub EnforceDenyList: super::super::Foundation::BOOL,
+    pub EnforceAllowList: ::win32_foundation::BOOL,
+    pub EnforceDenyList: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_FILTER_GLOBAL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_FILTER_GLOBAL_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_FILTER_GLOBAL_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_FILTER_GLOBAL_INFO").field("EnforceAllowList", &self.EnforceAllowList).field("EnforceDenyList", &self.EnforceDenyList).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_FILTER_GLOBAL_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_FILTER_GLOBAL_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_FILTER_GLOBAL_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_FILTER_GLOBAL_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_FILTER_GLOBAL_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2598,38 +2312,30 @@ impl ::core::fmt::Debug for DHCP_FILTER_LIST_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_FILTER_RECORD {
     pub AddrPatt: DHCP_ADDR_PATTERN,
     pub Comment: ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_FILTER_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_FILTER_RECORD {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_FILTER_RECORD {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_FILTER_RECORD").field("AddrPatt", &self.AddrPatt).field("Comment", &self.Comment).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_FILTER_RECORD {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_FILTER_RECORD {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_FILTER_RECORD>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_FILTER_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_FILTER_RECORD {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -3784,167 +3490,135 @@ impl ::core::default::Default for DHCP_PERF_STATS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_POLICY {
     pub PolicyName: ::windows_core::PWSTR,
-    pub IsGlobalPolicy: super::super::Foundation::BOOL,
+    pub IsGlobalPolicy: ::win32_foundation::BOOL,
     pub Subnet: u32,
     pub ProcessingOrder: u32,
     pub Conditions: *mut DHCP_POL_COND_ARRAY,
     pub Expressions: *mut DHCP_POL_EXPR_ARRAY,
     pub Ranges: *mut DHCP_IP_RANGE_ARRAY,
     pub Description: ::windows_core::PWSTR,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_POLICY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_POLICY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_POLICY").field("PolicyName", &self.PolicyName).field("IsGlobalPolicy", &self.IsGlobalPolicy).field("Subnet", &self.Subnet).field("ProcessingOrder", &self.ProcessingOrder).field("Conditions", &self.Conditions).field("Expressions", &self.Expressions).field("Ranges", &self.Ranges).field("Description", &self.Description).field("Enabled", &self.Enabled).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_POLICY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_POLICY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_POLICY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_POLICY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_POLICY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_POLICY_ARRAY {
     pub NumElements: u32,
     pub Elements: *mut DHCP_POLICY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_POLICY_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_POLICY_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_POLICY_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_POLICY_ARRAY").field("NumElements", &self.NumElements).field("Elements", &self.Elements).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_POLICY_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_POLICY_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_POLICY_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_POLICY_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_POLICY_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_POLICY_EX {
     pub PolicyName: ::windows_core::PWSTR,
-    pub IsGlobalPolicy: super::super::Foundation::BOOL,
+    pub IsGlobalPolicy: ::win32_foundation::BOOL,
     pub Subnet: u32,
     pub ProcessingOrder: u32,
     pub Conditions: *mut DHCP_POL_COND_ARRAY,
     pub Expressions: *mut DHCP_POL_EXPR_ARRAY,
     pub Ranges: *mut DHCP_IP_RANGE_ARRAY,
     pub Description: ::windows_core::PWSTR,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation::BOOL,
     pub Properties: *mut DHCP_PROPERTY_ARRAY,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_POLICY_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_POLICY_EX {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_POLICY_EX {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_POLICY_EX").field("PolicyName", &self.PolicyName).field("IsGlobalPolicy", &self.IsGlobalPolicy).field("Subnet", &self.Subnet).field("ProcessingOrder", &self.ProcessingOrder).field("Conditions", &self.Conditions).field("Expressions", &self.Expressions).field("Ranges", &self.Ranges).field("Description", &self.Description).field("Enabled", &self.Enabled).field("Properties", &self.Properties).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_POLICY_EX {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_POLICY_EX {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_POLICY_EX>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_POLICY_EX {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_POLICY_EX {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_POLICY_EX_ARRAY {
     pub NumElements: u32,
     pub Elements: *mut DHCP_POLICY_EX,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_POLICY_EX_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_POLICY_EX_ARRAY {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_POLICY_EX_ARRAY {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_POLICY_EX_ARRAY").field("NumElements", &self.NumElements).field("Elements", &self.Elements).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_POLICY_EX_ARRAY {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_POLICY_EX_ARRAY {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_POLICY_EX_ARRAY>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_POLICY_EX_ARRAY {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_POLICY_EX_ARRAY {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4688,7 +4362,6 @@ impl ::core::default::Default for DHCP_SERVER_CONFIG_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_SERVER_CONFIG_INFO_V4 {
     pub APIProtocolSupport: u32,
     pub DatabaseName: ::windows_core::PWSTR,
@@ -4702,17 +4375,14 @@ pub struct DHCP_SERVER_CONFIG_INFO_V4 {
     pub dwPingRetries: u32,
     pub cbBootTableString: u32,
     pub wszBootTableString: ::windows_core::PWSTR,
-    pub fAuditLog: super::super::Foundation::BOOL,
+    pub fAuditLog: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_SERVER_CONFIG_INFO_V4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_SERVER_CONFIG_INFO_V4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_SERVER_CONFIG_INFO_V4 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_SERVER_CONFIG_INFO_V4")
@@ -4732,71 +4402,58 @@ impl ::core::fmt::Debug for DHCP_SERVER_CONFIG_INFO_V4 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_SERVER_CONFIG_INFO_V4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_SERVER_CONFIG_INFO_V4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_SERVER_CONFIG_INFO_V4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_SERVER_CONFIG_INFO_V4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_SERVER_CONFIG_INFO_V4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_SERVER_CONFIG_INFO_V6 {
-    pub UnicastFlag: super::super::Foundation::BOOL,
-    pub RapidCommitFlag: super::super::Foundation::BOOL,
+    pub UnicastFlag: ::win32_foundation::BOOL,
+    pub RapidCommitFlag: ::win32_foundation::BOOL,
     pub PreferredLifetime: u32,
     pub ValidLifetime: u32,
     pub T1: u32,
     pub T2: u32,
     pub PreferredLifetimeIATA: u32,
     pub ValidLifetimeIATA: u32,
-    pub fAuditLog: super::super::Foundation::BOOL,
+    pub fAuditLog: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_SERVER_CONFIG_INFO_V6 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_SERVER_CONFIG_INFO_V6 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_SERVER_CONFIG_INFO_V6 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_SERVER_CONFIG_INFO_V6").field("UnicastFlag", &self.UnicastFlag).field("RapidCommitFlag", &self.RapidCommitFlag).field("PreferredLifetime", &self.PreferredLifetime).field("ValidLifetime", &self.ValidLifetime).field("T1", &self.T1).field("T2", &self.T2).field("PreferredLifetimeIATA", &self.PreferredLifetimeIATA).field("ValidLifetimeIATA", &self.ValidLifetimeIATA).field("fAuditLog", &self.fAuditLog).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_SERVER_CONFIG_INFO_V6 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_SERVER_CONFIG_INFO_V6 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_SERVER_CONFIG_INFO_V6>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_SERVER_CONFIG_INFO_V6 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_SERVER_CONFIG_INFO_V6 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_SERVER_CONFIG_INFO_VQ {
     pub APIProtocolSupport: u32,
     pub DatabaseName: ::windows_core::PWSTR,
@@ -4810,20 +4467,17 @@ pub struct DHCP_SERVER_CONFIG_INFO_VQ {
     pub dwPingRetries: u32,
     pub cbBootTableString: u32,
     pub wszBootTableString: ::windows_core::PWSTR,
-    pub fAuditLog: super::super::Foundation::BOOL,
-    pub QuarantineOn: super::super::Foundation::BOOL,
+    pub fAuditLog: ::win32_foundation::BOOL,
+    pub QuarantineOn: ::win32_foundation::BOOL,
     pub QuarDefFail: u32,
-    pub QuarRuntimeStatus: super::super::Foundation::BOOL,
+    pub QuarRuntimeStatus: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_SERVER_CONFIG_INFO_VQ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_SERVER_CONFIG_INFO_VQ {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_SERVER_CONFIG_INFO_VQ {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_SERVER_CONFIG_INFO_VQ")
@@ -4846,19 +4500,15 @@ impl ::core::fmt::Debug for DHCP_SERVER_CONFIG_INFO_VQ {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_SERVER_CONFIG_INFO_VQ {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_SERVER_CONFIG_INFO_VQ {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_SERVER_CONFIG_INFO_VQ>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_SERVER_CONFIG_INFO_VQ {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_SERVER_CONFIG_INFO_VQ {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4866,7 +4516,6 @@ impl ::core::default::Default for DHCP_SERVER_CONFIG_INFO_VQ {
 }
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_SERVER_OPTIONS {
     pub MessageType: *mut u8,
     pub SubnetMask: *mut u32,
@@ -4889,23 +4538,20 @@ pub struct DHCP_SERVER_OPTIONS {
     pub DNSFlags: u32,
     pub DNSNameLength: u32,
     pub DNSName: *mut u8,
-    pub DSDomainNameRequested: super::super::Foundation::BOOLEAN,
+    pub DSDomainNameRequested: ::win32_foundation::BOOLEAN,
     pub DSDomainName: ::windows_core::PSTR,
     pub DSDomainNameLen: u32,
     pub ScopeId: *mut u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_SERVER_OPTIONS {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_SERVER_OPTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_SERVER_OPTIONS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_SERVER_OPTIONS")
@@ -4938,22 +4584,18 @@ impl ::core::fmt::Debug for DHCP_SERVER_OPTIONS {
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_SERVER_OPTIONS {
     type Abi = Self;
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_SERVER_OPTIONS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_SERVER_OPTIONS>()) == 0 }
     }
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_SERVER_OPTIONS {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_SERVER_OPTIONS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -4961,7 +4603,6 @@ impl ::core::default::Default for DHCP_SERVER_OPTIONS {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DHCP_SERVER_OPTIONS {
     pub MessageType: *mut u8,
     pub SubnetMask: *mut u32,
@@ -4984,23 +4625,20 @@ pub struct DHCP_SERVER_OPTIONS {
     pub DNSFlags: u32,
     pub DNSNameLength: u32,
     pub DNSName: *mut u8,
-    pub DSDomainNameRequested: super::super::Foundation::BOOLEAN,
+    pub DSDomainNameRequested: ::win32_foundation::BOOLEAN,
     pub DSDomainName: ::windows_core::PSTR,
     pub DSDomainNameLen: u32,
     pub ScopeId: *mut u32,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DHCP_SERVER_OPTIONS {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DHCP_SERVER_OPTIONS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for DHCP_SERVER_OPTIONS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DHCP_SERVER_OPTIONS")
@@ -5033,22 +4671,18 @@ impl ::core::fmt::Debug for DHCP_SERVER_OPTIONS {
     }
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for DHCP_SERVER_OPTIONS {
     type Abi = Self;
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for DHCP_SERVER_OPTIONS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DHCP_SERVER_OPTIONS>()) == 0 }
     }
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for DHCP_SERVER_OPTIONS {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for DHCP_SERVER_OPTIONS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5710,14 +5344,13 @@ impl ::core::default::Default for DWORD_DWORD {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpAddFilterV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(serveripaddress: Param0, addfilterinfo: *const DHCP_FILTER_ADD_INFO, forceflag: Param2) -> u32 {
+pub unsafe fn DhcpAddFilterV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(serveripaddress: Param0, addfilterinfo: *const DHCP_FILTER_ADD_INFO, forceflag: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpAddFilterV4(serveripaddress: ::windows_core::PCWSTR, addfilterinfo: *const DHCP_FILTER_ADD_INFO, forceflag: super::super::Foundation::BOOL) -> u32;
+            fn DhcpAddFilterV4(serveripaddress: ::windows_core::PCWSTR, addfilterinfo: *const DHCP_FILTER_ADD_INFO, forceflag: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(DhcpAddFilterV4(serveripaddress.into_param().abi(), ::core::mem::transmute(addfilterinfo), forceflag.into_param().abi()))
     }
@@ -5854,7 +5487,6 @@ pub unsafe fn DhcpCApiInitialize(version: *mut u32) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpCreateClass<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, reservedmustbezero: u32, classinfo: *mut DHCP_CLASS_INFO) -> u32 {
     #[cfg(windows)]
@@ -5868,7 +5500,6 @@ pub unsafe fn DhcpCreateClass<'a, Param0: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpCreateClassV6<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, reservedmustbezero: u32, classinfo: *mut DHCP_CLASS_INFO_V6) -> u32 {
     #[cfg(windows)]
@@ -5908,7 +5539,6 @@ pub unsafe fn DhcpCreateClientInfoV4<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpCreateClientInfoVQ<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, clientinfo: *const DHCP_CLIENT_INFO_VQ) -> u32 {
     #[cfg(windows)]
@@ -6065,7 +5695,6 @@ pub unsafe fn DhcpDeleteClientInfoV6<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpDeleteFilterV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, deletefilterinfo: *const DHCP_ADDR_PATTERN) -> u32 {
     #[cfg(windows)]
@@ -6157,7 +5786,6 @@ pub unsafe fn DhcpDsInit() -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpEnumClasses<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, reservedmustbezero: u32, resumehandle: *mut u32, preferredmaximum: u32, classinfoarray: *mut *mut DHCP_CLASS_INFO_ARRAY, nread: *mut u32, ntotal: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6171,7 +5799,6 @@ pub unsafe fn DhcpEnumClasses<'a, Param0: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpEnumClassesV6<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, reservedmustbezero: u32, resumehandle: *mut u32, preferredmaximum: u32, classinfoarray: *mut *mut DHCP_CLASS_INFO_ARRAY_V6, nread: *mut u32, ntotal: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6185,7 +5812,6 @@ pub unsafe fn DhcpEnumClassesV6<'a, Param0: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpEnumFilterV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, resumehandle: *mut DHCP_ADDR_PATTERN, preferredmaximum: u32, listtype: DHCP_FILTER_LIST_TYPE, enumfilterinfo: *mut *mut DHCP_FILTER_ENUM_INFO, elementsread: *mut u32, elementstotal: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6303,7 +5929,6 @@ pub unsafe fn DhcpEnumSubnetClients<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpEnumSubnetClientsFilterStatusInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, subnetaddress: u32, resumehandle: *mut u32, preferredmaximum: u32, clientinfo: *mut *mut DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY, clientsread: *mut u32, clientstotal: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6356,7 +5981,6 @@ pub unsafe fn DhcpEnumSubnetClientsV6<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpEnumSubnetClientsVQ<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, subnetaddress: u32, resumehandle: *mut u32, preferredmaximum: u32, clientinfo: *mut *mut DHCP_CLIENT_INFO_ARRAY_VQ, clientsread: *mut u32, clientstotal: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6448,7 +6072,6 @@ pub unsafe fn DhcpEnumSubnetsV6<'a, Param0: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpGetAllOptionValues<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, flags: u32, scopeinfo: *mut DHCP_OPTION_SCOPE_INFO, values: *mut *mut DHCP_ALL_OPTION_VALUES) -> u32 {
     #[cfg(windows)]
@@ -6462,7 +6085,6 @@ pub unsafe fn DhcpGetAllOptionValues<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpGetAllOptionValuesV6<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, flags: u32, scopeinfo: *mut DHCP_OPTION_SCOPE_INFO6, values: *mut *mut DHCP_ALL_OPTION_VALUES) -> u32 {
     #[cfg(windows)]
@@ -6502,7 +6124,6 @@ pub unsafe fn DhcpGetAllOptionsV6<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpGetClassInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, reservedmustbezero: u32, partialclassinfo: *mut DHCP_CLASS_INFO, filledclassinfo: *mut *mut DHCP_CLASS_INFO) -> u32 {
     #[cfg(windows)]
@@ -6555,7 +6176,6 @@ pub unsafe fn DhcpGetClientInfoV6<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpGetClientInfoVQ<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, searchinfo: *const DHCP_SEARCH_INFO, clientinfo: *mut *mut DHCP_CLIENT_INFO_VQ) -> u32 {
     #[cfg(windows)]
@@ -6582,7 +6202,6 @@ pub unsafe fn DhcpGetClientOptions<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpGetFilterV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, globalfilterinfo: *mut DHCP_FILTER_GLOBAL_INFO) -> u32 {
     #[cfg(windows)]
@@ -6726,7 +6345,6 @@ pub unsafe fn DhcpGetOriginalSubnetMask<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpGetServerBindingInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, flags: u32, bindelementsinfo: *mut *mut DHCP_BIND_ELEMENT_ARRAY) -> u32 {
     #[cfg(windows)]
@@ -6740,7 +6358,6 @@ pub unsafe fn DhcpGetServerBindingInfo<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpGetServerBindingInfoV6<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, flags: u32, bindelementsinfo: *mut *mut DHCPV6_BIND_ELEMENT_ARRAY) -> u32 {
     #[cfg(windows)]
@@ -6858,7 +6475,6 @@ pub unsafe fn DhcpGetVersion<'a, Param0: ::windows_core::IntoParam<'a, ::windows
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprAddV4PolicyCondition<'a, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(policy: *mut DHCP_POLICY, parentexpr: u32, r#type: DHCP_POL_ATTR_TYPE, optionid: u32, suboptionid: u32, vendorname: Param5, operator: DHCP_POL_COMPARATOR, value: *const u8, valuelength: u32, conditionindex: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6872,7 +6488,6 @@ pub unsafe fn DhcpHlprAddV4PolicyCondition<'a, Param5: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprAddV4PolicyExpr(policy: *mut DHCP_POLICY, parentexpr: u32, operator: DHCP_POL_LOGIC_OPER, exprindex: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -6886,7 +6501,6 @@ pub unsafe fn DhcpHlprAddV4PolicyExpr(policy: *mut DHCP_POLICY, parentexpr: u32,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprAddV4PolicyRange(policy: *mut DHCP_POLICY, range: *const DHCP_IP_RANGE) -> u32 {
     #[cfg(windows)]
@@ -6900,28 +6514,26 @@ pub unsafe fn DhcpHlprAddV4PolicyRange(policy: *mut DHCP_POLICY, range: *const D
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpHlprCreateV4Policy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(policyname: Param0, fglobalpolicy: Param1, subnet: u32, processingorder: u32, rootoperator: DHCP_POL_LOGIC_OPER, description: Param5, enabled: Param6, policy: *mut *mut DHCP_POLICY) -> u32 {
+pub unsafe fn DhcpHlprCreateV4Policy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(policyname: Param0, fglobalpolicy: Param1, subnet: u32, processingorder: u32, rootoperator: DHCP_POL_LOGIC_OPER, description: Param5, enabled: Param6, policy: *mut *mut DHCP_POLICY) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpHlprCreateV4Policy(policyname: ::windows_core::PCWSTR, fglobalpolicy: super::super::Foundation::BOOL, subnet: u32, processingorder: u32, rootoperator: DHCP_POL_LOGIC_OPER, description: ::windows_core::PCWSTR, enabled: super::super::Foundation::BOOL, policy: *mut *mut DHCP_POLICY) -> u32;
+            fn DhcpHlprCreateV4Policy(policyname: ::windows_core::PCWSTR, fglobalpolicy: ::win32_foundation::BOOL, subnet: u32, processingorder: u32, rootoperator: DHCP_POL_LOGIC_OPER, description: ::windows_core::PCWSTR, enabled: ::win32_foundation::BOOL, policy: *mut *mut DHCP_POLICY) -> u32;
         }
         ::core::mem::transmute(DhcpHlprCreateV4Policy(policyname.into_param().abi(), fglobalpolicy.into_param().abi(), ::core::mem::transmute(subnet), ::core::mem::transmute(processingorder), ::core::mem::transmute(rootoperator), description.into_param().abi(), enabled.into_param().abi(), ::core::mem::transmute(policy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpHlprCreateV4PolicyEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(policyname: Param0, fglobalpolicy: Param1, subnet: u32, processingorder: u32, rootoperator: DHCP_POL_LOGIC_OPER, description: Param5, enabled: Param6, policy: *mut *mut DHCP_POLICY_EX) -> u32 {
+pub unsafe fn DhcpHlprCreateV4PolicyEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param6: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(policyname: Param0, fglobalpolicy: Param1, subnet: u32, processingorder: u32, rootoperator: DHCP_POL_LOGIC_OPER, description: Param5, enabled: Param6, policy: *mut *mut DHCP_POLICY_EX) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpHlprCreateV4PolicyEx(policyname: ::windows_core::PCWSTR, fglobalpolicy: super::super::Foundation::BOOL, subnet: u32, processingorder: u32, rootoperator: DHCP_POL_LOGIC_OPER, description: ::windows_core::PCWSTR, enabled: super::super::Foundation::BOOL, policy: *mut *mut DHCP_POLICY_EX) -> u32;
+            fn DhcpHlprCreateV4PolicyEx(policyname: ::windows_core::PCWSTR, fglobalpolicy: ::win32_foundation::BOOL, subnet: u32, processingorder: u32, rootoperator: DHCP_POL_LOGIC_OPER, description: ::windows_core::PCWSTR, enabled: ::win32_foundation::BOOL, policy: *mut *mut DHCP_POLICY_EX) -> u32;
         }
         ::core::mem::transmute(DhcpHlprCreateV4PolicyEx(policyname.into_param().abi(), fglobalpolicy.into_param().abi(), ::core::mem::transmute(subnet), ::core::mem::transmute(processingorder), ::core::mem::transmute(rootoperator), description.into_param().abi(), enabled.into_param().abi(), ::core::mem::transmute(policy)))
     }
@@ -6967,7 +6579,6 @@ pub unsafe fn DhcpHlprFreeV4DhcpPropertyArray(propertyarray: *mut DHCP_PROPERTY_
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprFreeV4Policy(policy: *mut DHCP_POLICY) {
     #[cfg(windows)]
@@ -6981,7 +6592,6 @@ pub unsafe fn DhcpHlprFreeV4Policy(policy: *mut DHCP_POLICY) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprFreeV4PolicyArray(policyarray: *mut DHCP_POLICY_ARRAY) {
     #[cfg(windows)]
@@ -6995,7 +6605,6 @@ pub unsafe fn DhcpHlprFreeV4PolicyArray(policyarray: *mut DHCP_POLICY_ARRAY) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprFreeV4PolicyEx(policyex: *mut DHCP_POLICY_EX) {
     #[cfg(windows)]
@@ -7009,7 +6618,6 @@ pub unsafe fn DhcpHlprFreeV4PolicyEx(policyex: *mut DHCP_POLICY_EX) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprFreeV4PolicyExArray(policyexarray: *mut DHCP_POLICY_EX_ARRAY) {
     #[cfg(windows)]
@@ -7023,21 +6631,19 @@ pub unsafe fn DhcpHlprFreeV4PolicyExArray(policyexarray: *mut DHCP_POLICY_EX_ARR
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpHlprIsV4PolicySingleUC(policy: *const DHCP_POLICY) -> super::super::Foundation::BOOL {
+pub unsafe fn DhcpHlprIsV4PolicySingleUC(policy: *const DHCP_POLICY) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpHlprIsV4PolicySingleUC(policy: *const DHCP_POLICY) -> super::super::Foundation::BOOL;
+            fn DhcpHlprIsV4PolicySingleUC(policy: *const DHCP_POLICY) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DhcpHlprIsV4PolicySingleUC(::core::mem::transmute(policy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprIsV4PolicyValid(ppolicy: *const DHCP_POLICY) -> u32 {
     #[cfg(windows)]
@@ -7051,21 +6657,19 @@ pub unsafe fn DhcpHlprIsV4PolicyValid(ppolicy: *const DHCP_POLICY) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpHlprIsV4PolicyWellFormed(ppolicy: *const DHCP_POLICY) -> super::super::Foundation::BOOL {
+pub unsafe fn DhcpHlprIsV4PolicyWellFormed(ppolicy: *const DHCP_POLICY) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpHlprIsV4PolicyWellFormed(ppolicy: *const DHCP_POLICY) -> super::super::Foundation::BOOL;
+            fn DhcpHlprIsV4PolicyWellFormed(ppolicy: *const DHCP_POLICY) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DhcpHlprIsV4PolicyWellFormed(::core::mem::transmute(ppolicy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprModifyV4PolicyExpr(policy: *mut DHCP_POLICY, operator: DHCP_POL_LOGIC_OPER) -> u32 {
     #[cfg(windows)]
@@ -7079,7 +6683,6 @@ pub unsafe fn DhcpHlprModifyV4PolicyExpr(policy: *mut DHCP_POLICY, operator: DHC
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpHlprResetV4PolicyExpr(policy: *mut DHCP_POLICY) -> u32 {
     #[cfg(windows)]
@@ -7093,7 +6696,6 @@ pub unsafe fn DhcpHlprResetV4PolicyExpr(policy: *mut DHCP_POLICY) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpModifyClass<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, reservedmustbezero: u32, classinfo: *mut DHCP_CLASS_INFO) -> u32 {
     #[cfg(windows)]
@@ -7107,7 +6709,6 @@ pub unsafe fn DhcpModifyClass<'a, Param0: ::windows_core::IntoParam<'a, ::window
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpModifyClassV6<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, reservedmustbezero: u32, classinfo: *mut DHCP_CLASS_INFO_V6) -> u32 {
     #[cfg(windows)]
@@ -7121,7 +6722,6 @@ pub unsafe fn DhcpModifyClassV6<'a, Param0: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpRegisterParamChange<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, DHCPCAPI_PARAMS_ARRAY>>(flags: u32, reserved: *mut ::core::ffi::c_void, adaptername: Param2, classid: *mut DHCPCAPI_CLASSID, params: Param4, handle: *mut ::core::ffi::c_void) -> u32 {
     #[cfg(windows)]
@@ -7278,7 +6878,6 @@ pub unsafe fn DhcpRemoveSubnetElementV6<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpRequestParams<'a, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, DHCPCAPI_PARAMS_ARRAY>, Param5: ::windows_core::IntoParam<'a, DHCPCAPI_PARAMS_ARRAY>, Param8: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(flags: u32, reserved: *mut ::core::ffi::c_void, adaptername: Param2, classid: *mut DHCPCAPI_CLASSID, sendparams: Param4, recdparams: Param5, buffer: *mut u8, psize: *mut u32, requestidstr: Param8) -> u32 {
     #[cfg(windows)]
@@ -7318,7 +6917,6 @@ pub unsafe fn DhcpScanDatabase<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpServerAuditlogParamsFree(configinfo: *mut DHCP_SERVER_CONFIG_INFO_VQ) {
     #[cfg(windows)]
@@ -7358,7 +6956,6 @@ pub unsafe fn DhcpServerGetConfig<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpServerGetConfigV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, configinfo: *mut *mut DHCP_SERVER_CONFIG_INFO_V4) -> u32 {
     #[cfg(windows)]
@@ -7372,7 +6969,6 @@ pub unsafe fn DhcpServerGetConfigV4<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpServerGetConfigV6<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, scopeinfo: *mut DHCP_OPTION_SCOPE_INFO6, configinfo: *mut *mut DHCP_SERVER_CONFIG_INFO_V6) -> u32 {
     #[cfg(windows)]
@@ -7386,7 +6982,6 @@ pub unsafe fn DhcpServerGetConfigV6<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpServerGetConfigVQ<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, configinfo: *mut *mut DHCP_SERVER_CONFIG_INFO_VQ) -> u32 {
     #[cfg(windows)]
@@ -7400,7 +6995,6 @@ pub unsafe fn DhcpServerGetConfigVQ<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpServerQueryAttribute<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddr: Param0, dwreserved: u32, dhcpattribid: u32, pdhcpattrib: *mut *mut DHCP_ATTRIB) -> u32 {
     #[cfg(windows)]
@@ -7414,7 +7008,6 @@ pub unsafe fn DhcpServerQueryAttribute<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpServerQueryAttributes<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddr: Param0, dwreserved: u32, dwattribcount: u32, pdhcpattribs: *mut u32, pdhcpattribarr: *mut *mut DHCP_ATTRIB_ARRAY) -> u32 {
     #[cfg(windows)]
@@ -7480,7 +7073,6 @@ pub unsafe fn DhcpServerSetConfig<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpServerSetConfigV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fieldstoset: u32, configinfo: *mut DHCP_SERVER_CONFIG_INFO_V4) -> u32 {
     #[cfg(windows)]
@@ -7494,7 +7086,6 @@ pub unsafe fn DhcpServerSetConfigV4<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpServerSetConfigV6<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, scopeinfo: *mut DHCP_OPTION_SCOPE_INFO6, fieldstoset: u32, configinfo: *mut DHCP_SERVER_CONFIG_INFO_V6) -> u32 {
     #[cfg(windows)]
@@ -7508,7 +7099,6 @@ pub unsafe fn DhcpServerSetConfigV6<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpServerSetConfigVQ<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fieldstoset: u32, configinfo: *mut DHCP_SERVER_CONFIG_INFO_VQ) -> u32 {
     #[cfg(windows)]
@@ -7587,7 +7177,6 @@ pub unsafe fn DhcpSetClientInfoV6<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpSetClientInfoVQ<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, clientinfo: *const DHCP_CLIENT_INFO_VQ) -> u32 {
     #[cfg(windows)]
@@ -7601,7 +7190,6 @@ pub unsafe fn DhcpSetClientInfoVQ<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpSetFilterV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, globalfilterinfo: *const DHCP_FILTER_GLOBAL_INFO) -> u32 {
     #[cfg(windows)]
@@ -7719,7 +7307,6 @@ pub unsafe fn DhcpSetOptionValuesV5<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpSetServerBindingInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, flags: u32, bindelementinfo: *mut DHCP_BIND_ELEMENT_ARRAY) -> u32 {
     #[cfg(windows)]
@@ -7733,7 +7320,6 @@ pub unsafe fn DhcpSetServerBindingInfo<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpSetServerBindingInfoV6<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, flags: u32, bindelementinfo: *mut DHCPV6_BIND_ELEMENT_ARRAY) -> u32 {
     #[cfg(windows)]
@@ -7799,14 +7385,13 @@ pub unsafe fn DhcpSetSubnetInfoVQ<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpSetSuperScopeV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(serveripaddress: Param0, subnetaddress: u32, superscopename: Param2, changeexisting: Param3) -> u32 {
+pub unsafe fn DhcpSetSuperScopeV4<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(serveripaddress: Param0, subnetaddress: u32, superscopename: Param2, changeexisting: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpSetSuperScopeV4(serveripaddress: ::windows_core::PCWSTR, subnetaddress: u32, superscopename: ::windows_core::PCWSTR, changeexisting: super::super::Foundation::BOOL) -> u32;
+            fn DhcpSetSuperScopeV4(serveripaddress: ::windows_core::PCWSTR, subnetaddress: u32, superscopename: ::windows_core::PCWSTR, changeexisting: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(DhcpSetSuperScopeV4(serveripaddress.into_param().abi(), ::core::mem::transmute(subnetaddress), superscopename.into_param().abi(), changeexisting.into_param().abi()))
     }
@@ -7852,7 +7437,6 @@ pub unsafe fn DhcpV4AddPolicyRange<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4CreateClientInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, clientinfo: *const DHCP_CLIENT_INFO_PB) -> u32 {
     #[cfg(windows)]
@@ -7866,7 +7450,6 @@ pub unsafe fn DhcpV4CreateClientInfo<'a, Param0: ::windows_core::IntoParam<'a, :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4CreateClientInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, clientinfo: *const DHCP_CLIENT_INFO_EX) -> u32 {
     #[cfg(windows)]
@@ -7880,7 +7463,6 @@ pub unsafe fn DhcpV4CreateClientInfoEx<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4CreatePolicy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, ppolicy: *const DHCP_POLICY) -> u32 {
     #[cfg(windows)]
@@ -7894,7 +7476,6 @@ pub unsafe fn DhcpV4CreatePolicy<'a, Param0: ::windows_core::IntoParam<'a, ::win
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4CreatePolicyEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, policyex: *const DHCP_POLICY_EX) -> u32 {
     #[cfg(windows)]
@@ -7908,49 +7489,45 @@ pub unsafe fn DhcpV4CreatePolicyEx<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV4DeletePolicy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fglobalpolicy: Param1, subnetaddress: u32, policyname: Param3) -> u32 {
+pub unsafe fn DhcpV4DeletePolicy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fglobalpolicy: Param1, subnetaddress: u32, policyname: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV4DeletePolicy(serveripaddress: ::windows_core::PCWSTR, fglobalpolicy: super::super::Foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR) -> u32;
+            fn DhcpV4DeletePolicy(serveripaddress: ::windows_core::PCWSTR, fglobalpolicy: ::win32_foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(DhcpV4DeletePolicy(serveripaddress.into_param().abi(), fglobalpolicy.into_param().abi(), ::core::mem::transmute(subnetaddress), policyname.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV4EnumPolicies<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(serveripaddress: Param0, resumehandle: *mut u32, preferredmaximum: u32, fglobalpolicy: Param3, subnetaddress: u32, enuminfo: *mut *mut DHCP_POLICY_ARRAY, elementsread: *mut u32, elementstotal: *mut u32) -> u32 {
+pub unsafe fn DhcpV4EnumPolicies<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(serveripaddress: Param0, resumehandle: *mut u32, preferredmaximum: u32, fglobalpolicy: Param3, subnetaddress: u32, enuminfo: *mut *mut DHCP_POLICY_ARRAY, elementsread: *mut u32, elementstotal: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV4EnumPolicies(serveripaddress: ::windows_core::PCWSTR, resumehandle: *mut u32, preferredmaximum: u32, fglobalpolicy: super::super::Foundation::BOOL, subnetaddress: u32, enuminfo: *mut *mut DHCP_POLICY_ARRAY, elementsread: *mut u32, elementstotal: *mut u32) -> u32;
+            fn DhcpV4EnumPolicies(serveripaddress: ::windows_core::PCWSTR, resumehandle: *mut u32, preferredmaximum: u32, fglobalpolicy: ::win32_foundation::BOOL, subnetaddress: u32, enuminfo: *mut *mut DHCP_POLICY_ARRAY, elementsread: *mut u32, elementstotal: *mut u32) -> u32;
         }
         ::core::mem::transmute(DhcpV4EnumPolicies(serveripaddress.into_param().abi(), ::core::mem::transmute(resumehandle), ::core::mem::transmute(preferredmaximum), fglobalpolicy.into_param().abi(), ::core::mem::transmute(subnetaddress), ::core::mem::transmute(enuminfo), ::core::mem::transmute(elementsread), ::core::mem::transmute(elementstotal)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV4EnumPoliciesEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(serveripaddress: Param0, resumehandle: *mut u32, preferredmaximum: u32, globalpolicy: Param3, subnetaddress: u32, enuminfo: *mut *mut DHCP_POLICY_EX_ARRAY, elementsread: *mut u32, elementstotal: *mut u32) -> u32 {
+pub unsafe fn DhcpV4EnumPoliciesEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(serveripaddress: Param0, resumehandle: *mut u32, preferredmaximum: u32, globalpolicy: Param3, subnetaddress: u32, enuminfo: *mut *mut DHCP_POLICY_EX_ARRAY, elementsread: *mut u32, elementstotal: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV4EnumPoliciesEx(serveripaddress: ::windows_core::PCWSTR, resumehandle: *mut u32, preferredmaximum: u32, globalpolicy: super::super::Foundation::BOOL, subnetaddress: u32, enuminfo: *mut *mut DHCP_POLICY_EX_ARRAY, elementsread: *mut u32, elementstotal: *mut u32) -> u32;
+            fn DhcpV4EnumPoliciesEx(serveripaddress: ::windows_core::PCWSTR, resumehandle: *mut u32, preferredmaximum: u32, globalpolicy: ::win32_foundation::BOOL, subnetaddress: u32, enuminfo: *mut *mut DHCP_POLICY_EX_ARRAY, elementsread: *mut u32, elementstotal: *mut u32) -> u32;
         }
         ::core::mem::transmute(DhcpV4EnumPoliciesEx(serveripaddress.into_param().abi(), ::core::mem::transmute(resumehandle), ::core::mem::transmute(preferredmaximum), globalpolicy.into_param().abi(), ::core::mem::transmute(subnetaddress), ::core::mem::transmute(enuminfo), ::core::mem::transmute(elementsread), ::core::mem::transmute(elementstotal)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4EnumSubnetClients<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, subnetaddress: u32, resumehandle: *mut u32, preferredmaximum: u32, clientinfo: *mut *mut DHCP_CLIENT_INFO_PB_ARRAY, clientsread: *mut u32, clientstotal: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -7964,7 +7541,6 @@ pub unsafe fn DhcpV4EnumSubnetClients<'a, Param0: ::windows_core::IntoParam<'a, 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4EnumSubnetClientsEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, subnetaddress: u32, resumehandle: *mut u32, preferredmaximum: u32, clientinfo: *mut *mut DHCP_CLIENT_INFO_EX_ARRAY, clientsread: *mut u32, clientstotal: *mut u32) -> u32 {
     #[cfg(windows)]
@@ -8069,7 +7645,6 @@ pub unsafe fn DhcpV4FailoverGetAddressStatus<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4FailoverGetClientInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, searchinfo: *const DHCP_SEARCH_INFO, clientinfo: *mut *mut DHCPV4_FAILOVER_CLIENT_INFO) -> u32 {
     #[cfg(windows)]
@@ -8161,7 +7736,6 @@ pub unsafe fn DhcpV4FailoverTriggerAddrAllocation<'a, Param0: ::windows_core::In
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4GetAllOptionValues<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, flags: u32, scopeinfo: *mut DHCP_OPTION_SCOPE_INFO, values: *mut *mut DHCP_ALL_OPTION_VALUES_PB) -> u32 {
     #[cfg(windows)]
@@ -8175,7 +7749,6 @@ pub unsafe fn DhcpV4GetAllOptionValues<'a, Param0: ::windows_core::IntoParam<'a,
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4GetClientInfo<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, searchinfo: *const DHCP_SEARCH_INFO, clientinfo: *mut *mut DHCP_CLIENT_INFO_PB) -> u32 {
     #[cfg(windows)]
@@ -8189,7 +7762,6 @@ pub unsafe fn DhcpV4GetClientInfo<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DhcpV4GetClientInfoEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, searchinfo: *const DHCP_SEARCH_INFO, clientinfo: *mut *mut DHCP_CLIENT_INFO_EX) -> u32 {
     #[cfg(windows)]
@@ -8229,42 +7801,39 @@ pub unsafe fn DhcpV4GetOptionValue<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV4GetPolicy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fglobalpolicy: Param1, subnetaddress: u32, policyname: Param3, policy: *mut *mut DHCP_POLICY) -> u32 {
+pub unsafe fn DhcpV4GetPolicy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fglobalpolicy: Param1, subnetaddress: u32, policyname: Param3, policy: *mut *mut DHCP_POLICY) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV4GetPolicy(serveripaddress: ::windows_core::PCWSTR, fglobalpolicy: super::super::Foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR, policy: *mut *mut DHCP_POLICY) -> u32;
+            fn DhcpV4GetPolicy(serveripaddress: ::windows_core::PCWSTR, fglobalpolicy: ::win32_foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR, policy: *mut *mut DHCP_POLICY) -> u32;
         }
         ::core::mem::transmute(DhcpV4GetPolicy(serveripaddress.into_param().abi(), fglobalpolicy.into_param().abi(), ::core::mem::transmute(subnetaddress), policyname.into_param().abi(), ::core::mem::transmute(policy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV4GetPolicyEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, globalpolicy: Param1, subnetaddress: u32, policyname: Param3, policy: *mut *mut DHCP_POLICY_EX) -> u32 {
+pub unsafe fn DhcpV4GetPolicyEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, globalpolicy: Param1, subnetaddress: u32, policyname: Param3, policy: *mut *mut DHCP_POLICY_EX) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV4GetPolicyEx(serveripaddress: ::windows_core::PCWSTR, globalpolicy: super::super::Foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR, policy: *mut *mut DHCP_POLICY_EX) -> u32;
+            fn DhcpV4GetPolicyEx(serveripaddress: ::windows_core::PCWSTR, globalpolicy: ::win32_foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR, policy: *mut *mut DHCP_POLICY_EX) -> u32;
         }
         ::core::mem::transmute(DhcpV4GetPolicyEx(serveripaddress.into_param().abi(), globalpolicy.into_param().abi(), ::core::mem::transmute(subnetaddress), policyname.into_param().abi(), ::core::mem::transmute(policy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV4QueryPolicyEnforcement<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(serveripaddress: Param0, fglobalpolicy: Param1, subnetaddress: u32, enabled: *mut super::super::Foundation::BOOL) -> u32 {
+pub unsafe fn DhcpV4QueryPolicyEnforcement<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(serveripaddress: Param0, fglobalpolicy: Param1, subnetaddress: u32, enabled: *mut ::win32_foundation::BOOL) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV4QueryPolicyEnforcement(serveripaddress: ::windows_core::PCWSTR, fglobalpolicy: super::super::Foundation::BOOL, subnetaddress: u32, enabled: *mut super::super::Foundation::BOOL) -> u32;
+            fn DhcpV4QueryPolicyEnforcement(serveripaddress: ::windows_core::PCWSTR, fglobalpolicy: ::win32_foundation::BOOL, subnetaddress: u32, enabled: *mut ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(DhcpV4QueryPolicyEnforcement(serveripaddress.into_param().abi(), fglobalpolicy.into_param().abi(), ::core::mem::transmute(subnetaddress), ::core::mem::transmute(enabled)))
     }
@@ -8323,42 +7892,39 @@ pub unsafe fn DhcpV4SetOptionValues<'a, Param0: ::windows_core::IntoParam<'a, ::
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV4SetPolicy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fieldsmodified: u32, fglobalpolicy: Param2, subnetaddress: u32, policyname: Param4, policy: *const DHCP_POLICY) -> u32 {
+pub unsafe fn DhcpV4SetPolicy<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fieldsmodified: u32, fglobalpolicy: Param2, subnetaddress: u32, policyname: Param4, policy: *const DHCP_POLICY) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV4SetPolicy(serveripaddress: ::windows_core::PCWSTR, fieldsmodified: u32, fglobalpolicy: super::super::Foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR, policy: *const DHCP_POLICY) -> u32;
+            fn DhcpV4SetPolicy(serveripaddress: ::windows_core::PCWSTR, fieldsmodified: u32, fglobalpolicy: ::win32_foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR, policy: *const DHCP_POLICY) -> u32;
         }
         ::core::mem::transmute(DhcpV4SetPolicy(serveripaddress.into_param().abi(), ::core::mem::transmute(fieldsmodified), fglobalpolicy.into_param().abi(), ::core::mem::transmute(subnetaddress), policyname.into_param().abi(), ::core::mem::transmute(policy)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV4SetPolicyEnforcement<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(serveripaddress: Param0, fglobalpolicy: Param1, subnetaddress: u32, enable: Param3) -> u32 {
+pub unsafe fn DhcpV4SetPolicyEnforcement<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(serveripaddress: Param0, fglobalpolicy: Param1, subnetaddress: u32, enable: Param3) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV4SetPolicyEnforcement(serveripaddress: ::windows_core::PCWSTR, fglobalpolicy: super::super::Foundation::BOOL, subnetaddress: u32, enable: super::super::Foundation::BOOL) -> u32;
+            fn DhcpV4SetPolicyEnforcement(serveripaddress: ::windows_core::PCWSTR, fglobalpolicy: ::win32_foundation::BOOL, subnetaddress: u32, enable: ::win32_foundation::BOOL) -> u32;
         }
         ::core::mem::transmute(DhcpV4SetPolicyEnforcement(serveripaddress.into_param().abi(), fglobalpolicy.into_param().abi(), ::core::mem::transmute(subnetaddress), enable.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV4SetPolicyEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fieldsmodified: u32, globalpolicy: Param2, subnetaddress: u32, policyname: Param4, policy: *const DHCP_POLICY_EX) -> u32 {
+pub unsafe fn DhcpV4SetPolicyEx<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(serveripaddress: Param0, fieldsmodified: u32, globalpolicy: Param2, subnetaddress: u32, policyname: Param4, policy: *const DHCP_POLICY_EX) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV4SetPolicyEx(serveripaddress: ::windows_core::PCWSTR, fieldsmodified: u32, globalpolicy: super::super::Foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR, policy: *const DHCP_POLICY_EX) -> u32;
+            fn DhcpV4SetPolicyEx(serveripaddress: ::windows_core::PCWSTR, fieldsmodified: u32, globalpolicy: ::win32_foundation::BOOL, subnetaddress: u32, policyname: ::windows_core::PCWSTR, policy: *const DHCP_POLICY_EX) -> u32;
         }
         ::core::mem::transmute(DhcpV4SetPolicyEx(serveripaddress.into_param().abi(), ::core::mem::transmute(fieldsmodified), globalpolicy.into_param().abi(), ::core::mem::transmute(subnetaddress), policyname.into_param().abi(), ::core::mem::transmute(policy)))
     }
@@ -8404,28 +7970,26 @@ pub unsafe fn DhcpV6GetStatelessStatistics<'a, Param0: ::windows_core::IntoParam
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV6GetStatelessStoreParams<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, DHCP_IPV6_ADDRESS>>(serveripaddress: Param0, fserverlevel: Param1, subnetaddress: Param2, params: *mut *mut DHCPV6_STATELESS_PARAMS) -> u32 {
+pub unsafe fn DhcpV6GetStatelessStoreParams<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, DHCP_IPV6_ADDRESS>>(serveripaddress: Param0, fserverlevel: Param1, subnetaddress: Param2, params: *mut *mut DHCPV6_STATELESS_PARAMS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV6GetStatelessStoreParams(serveripaddress: ::windows_core::PCWSTR, fserverlevel: super::super::Foundation::BOOL, subnetaddress: DHCP_IPV6_ADDRESS, params: *mut *mut DHCPV6_STATELESS_PARAMS) -> u32;
+            fn DhcpV6GetStatelessStoreParams(serveripaddress: ::windows_core::PCWSTR, fserverlevel: ::win32_foundation::BOOL, subnetaddress: DHCP_IPV6_ADDRESS, params: *mut *mut DHCPV6_STATELESS_PARAMS) -> u32;
         }
         ::core::mem::transmute(DhcpV6GetStatelessStoreParams(serveripaddress.into_param().abi(), fserverlevel.into_param().abi(), subnetaddress.into_param().abi(), ::core::mem::transmute(params)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DhcpV6SetStatelessStoreParams<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, DHCP_IPV6_ADDRESS>>(serveripaddress: Param0, fserverlevel: Param1, subnetaddress: Param2, fieldmodified: u32, params: *const DHCPV6_STATELESS_PARAMS) -> u32 {
+pub unsafe fn DhcpV6SetStatelessStoreParams<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, DHCP_IPV6_ADDRESS>>(serveripaddress: Param0, fserverlevel: Param1, subnetaddress: Param2, fieldmodified: u32, params: *const DHCPV6_STATELESS_PARAMS) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DhcpV6SetStatelessStoreParams(serveripaddress: ::windows_core::PCWSTR, fserverlevel: super::super::Foundation::BOOL, subnetaddress: DHCP_IPV6_ADDRESS, fieldmodified: u32, params: *const DHCPV6_STATELESS_PARAMS) -> u32;
+            fn DhcpV6SetStatelessStoreParams(serveripaddress: ::windows_core::PCWSTR, fserverlevel: ::win32_foundation::BOOL, subnetaddress: DHCP_IPV6_ADDRESS, fieldmodified: u32, params: *const DHCPV6_STATELESS_PARAMS) -> u32;
         }
         ::core::mem::transmute(DhcpV6SetStatelessStoreParams(serveripaddress.into_param().abi(), fserverlevel.into_param().abi(), subnetaddress.into_param().abi(), ::core::mem::transmute(fieldmodified), ::core::mem::transmute(params)))
     }
@@ -8484,14 +8048,13 @@ pub unsafe fn Dhcpv6RenewPrefix<'a, Param0: ::windows_core::IntoParam<'a, ::wind
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn Dhcpv6RequestParams<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, DHCPV6CAPI_PARAMS_ARRAY>>(forcenewinform: Param0, reserved: *mut ::core::ffi::c_void, adaptername: Param2, classid: *mut DHCPV6CAPI_CLASSID, recdparams: Param4, buffer: *mut u8, psize: *mut u32) -> u32 {
+pub unsafe fn Dhcpv6RequestParams<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, DHCPV6CAPI_PARAMS_ARRAY>>(forcenewinform: Param0, reserved: *mut ::core::ffi::c_void, adaptername: Param2, classid: *mut DHCPV6CAPI_CLASSID, recdparams: Param4, buffer: *mut u8, psize: *mut u32) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn Dhcpv6RequestParams(forcenewinform: super::super::Foundation::BOOL, reserved: *mut ::core::ffi::c_void, adaptername: ::windows_core::PCWSTR, classid: *mut DHCPV6CAPI_CLASSID, recdparams: DHCPV6CAPI_PARAMS_ARRAY, buffer: *mut u8, psize: *mut u32) -> u32;
+            fn Dhcpv6RequestParams(forcenewinform: ::win32_foundation::BOOL, reserved: *mut ::core::ffi::c_void, adaptername: ::windows_core::PCWSTR, classid: *mut DHCPV6CAPI_CLASSID, recdparams: DHCPV6CAPI_PARAMS_ARRAY, buffer: *mut u8, psize: *mut u32) -> u32;
         }
         ::core::mem::transmute(Dhcpv6RequestParams(forcenewinform.into_param().abi(), ::core::mem::transmute(reserved), adaptername.into_param().abi(), ::core::mem::transmute(classid), recdparams.into_param().abi(), ::core::mem::transmute(buffer), ::core::mem::transmute(psize)))
     }
@@ -8674,10 +8237,8 @@ pub const HWTYPE_ETHERNET_10MB: u32 = 1u32;
 pub type LPDHCP_CONTROL = ::core::option::Option<unsafe extern "system" fn(dwcontrolcode: u32, lpreserved: *mut ::core::ffi::c_void) -> u32>;
 pub type LPDHCP_DELETE_CLIENT = ::core::option::Option<unsafe extern "system" fn(ipaddress: u32, hwaddress: *mut u8, hwaddresslength: u32, reserved: u32, clienttype: u32) -> u32>;
 pub type LPDHCP_DROP_SEND = ::core::option::Option<unsafe extern "system" fn(packet: *mut *mut u8, packetsize: *mut u32, controlcode: u32, ipaddress: u32, reserved: *mut ::core::ffi::c_void, pktcontext: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type LPDHCP_ENTRY_POINT_FUNC = ::core::option::Option<unsafe extern "system" fn(chaindlls: ::windows_core::PCWSTR, calloutversion: u32, callouttbl: *mut DHCP_CALLOUT_TABLE) -> u32>;
 pub type LPDHCP_GIVE_ADDRESS = ::core::option::Option<unsafe extern "system" fn(packet: *mut u8, packetsize: u32, controlcode: u32, ipaddress: u32, altaddress: u32, addrtype: u32, leasetime: u32, reserved: *mut ::core::ffi::c_void, pktcontext: *mut ::core::ffi::c_void) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type LPDHCP_HANDLE_OPTIONS = ::core::option::Option<unsafe extern "system" fn(packet: *mut u8, packetsize: u32, reserved: *mut ::core::ffi::c_void, pktcontext: *mut ::core::ffi::c_void, serveroptions: *mut DHCP_SERVER_OPTIONS) -> u32>;
 pub type LPDHCP_NEWPKT = ::core::option::Option<unsafe extern "system" fn(packet: *mut *mut u8, packetsize: *mut u32, ipaddress: u32, reserved: *mut ::core::ffi::c_void, pktcontext: *mut *mut ::core::ffi::c_void, processit: *mut i32) -> u32>;
 pub type LPDHCP_PROB = ::core::option::Option<unsafe extern "system" fn(packet: *mut u8, packetsize: u32, controlcode: u32, ipaddress: u32, altaddress: u32, reserved: *mut ::core::ffi::c_void, pktcontext: *mut ::core::ffi::c_void) -> u32>;

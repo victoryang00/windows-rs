@@ -2,48 +2,42 @@
 extern "system" {
     pub fn DrtClose(hdrt: *const ::core::ffi::c_void);
     pub fn DrtContinueSearch(hsearchcontext: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub fn DrtCreateDerivedKey(plocalcert: *const super::super::Security::Cryptography::CERT_CONTEXT, pkey: *mut DRT_DATA) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub fn DrtCreateDerivedKeySecurityProvider(prootcert: *const super::super::Security::Cryptography::CERT_CONTEXT, plocalcert: *const super::super::Security::Cryptography::CERT_CONTEXT, ppsecurityprovider: *mut *mut DRT_SECURITY_PROVIDER) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub fn DrtCreateDerivedKey(plocalcert: *const ::win32_security_sys::Cryptography::CERT_CONTEXT, pkey: *mut DRT_DATA) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Security_Cryptography")]
+    pub fn DrtCreateDerivedKeySecurityProvider(prootcert: *const ::win32_security_sys::Cryptography::CERT_CONTEXT, plocalcert: *const ::win32_security_sys::Cryptography::CERT_CONTEXT, ppsecurityprovider: *mut *mut DRT_SECURITY_PROVIDER) -> ::windows_core_sys::HRESULT;
     pub fn DrtCreateDnsBootstrapResolver(port: u16, pwszaddress: ::windows_core_sys::PCWSTR, ppmodule: *mut *mut DRT_BOOTSTRAP_PROVIDER) -> ::windows_core_sys::HRESULT;
     pub fn DrtCreateIpv6UdpTransport(scope: DRT_SCOPE, dwscopeid: u32, dwlocalitythreshold: u32, pwport: *mut u16, phtransport: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DrtCreateNullSecurityProvider(ppsecurityprovider: *mut *mut DRT_SECURITY_PROVIDER) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DrtCreatePnrpBootstrapResolver(fpublish: super::super::Foundation::BOOL, pwzpeername: ::windows_core_sys::PCWSTR, pwzcloudname: ::windows_core_sys::PCWSTR, pwzpublishingidentity: ::windows_core_sys::PCWSTR, ppresolver: *mut *mut DRT_BOOTSTRAP_PROVIDER) -> ::windows_core_sys::HRESULT;
+    pub fn DrtCreatePnrpBootstrapResolver(fpublish: ::win32_foundation_sys::BOOL, pwzpeername: ::windows_core_sys::PCWSTR, pwzcloudname: ::windows_core_sys::PCWSTR, pwzpublishingidentity: ::windows_core_sys::PCWSTR, ppresolver: *mut *mut DRT_BOOTSTRAP_PROVIDER) -> ::windows_core_sys::HRESULT;
     pub fn DrtDeleteDerivedKeySecurityProvider(psecurityprovider: *const DRT_SECURITY_PROVIDER);
     pub fn DrtDeleteDnsBootstrapResolver(presolver: *const DRT_BOOTSTRAP_PROVIDER);
     pub fn DrtDeleteIpv6UdpTransport(htransport: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DrtDeleteNullSecurityProvider(psecurityprovider: *const DRT_SECURITY_PROVIDER);
     pub fn DrtDeletePnrpBootstrapResolver(presolver: *const DRT_BOOTSTRAP_PROVIDER);
     pub fn DrtEndSearch(hsearchcontext: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn DrtGetEventData(hdrt: *const ::core::ffi::c_void, uleventdatalen: u32, peventdata: *mut DRT_EVENT_DATA) -> ::windows_core_sys::HRESULT;
     pub fn DrtGetEventDataSize(hdrt: *const ::core::ffi::c_void, puleventdatalen: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn DrtGetInstanceName(hdrt: *const ::core::ffi::c_void, ulcbinstancenamesize: u32, pwzdrtinstancename: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn DrtGetInstanceNameSize(hdrt: *const ::core::ffi::c_void, pulcbinstancenamesize: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn DrtGetSearchPath(hsearchcontext: *const ::core::ffi::c_void, ulsearchpathsize: u32, psearchpath: *mut DRT_ADDRESS_LIST) -> ::windows_core_sys::HRESULT;
     pub fn DrtGetSearchPathSize(hsearchcontext: *const ::core::ffi::c_void, pulsearchpathsize: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn DrtGetSearchResult(hsearchcontext: *const ::core::ffi::c_void, ulsearchresultsize: u32, psearchresult: *mut DRT_SEARCH_RESULT) -> ::windows_core_sys::HRESULT;
     pub fn DrtGetSearchResultSize(hsearchcontext: *const ::core::ffi::c_void, pulsearchresultsize: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DrtOpen(psettings: *const DRT_SETTINGS, hevent: super::super::Foundation::HANDLE, pvcontext: *const ::core::ffi::c_void, phdrt: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn DrtOpen(psettings: *const DRT_SETTINGS, hevent: ::win32_foundation_sys::HANDLE, pvcontext: *const ::core::ffi::c_void, phdrt: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DrtRegisterKey(hdrt: *const ::core::ffi::c_void, pregistration: *const DRT_REGISTRATION, pvkeycontext: *const ::core::ffi::c_void, phkeyregistration: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DrtStartSearch(hdrt: *const ::core::ffi::c_void, pkey: *const DRT_DATA, pinfo: *const DRT_SEARCH_INFO, timeout: u32, hevent: super::super::Foundation::HANDLE, pvcontext: *const ::core::ffi::c_void, hsearchcontext: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn DrtStartSearch(hdrt: *const ::core::ffi::c_void, pkey: *const DRT_DATA, pinfo: *const DRT_SEARCH_INFO, timeout: u32, hevent: ::win32_foundation_sys::HANDLE, pvcontext: *const ::core::ffi::c_void, hsearchcontext: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn DrtUnregisterKey(hkeyregistration: *const ::core::ffi::c_void);
     pub fn DrtUpdateKey(hkeyregistration: *const ::core::ffi::c_void, pappdata: *const DRT_DATA) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerCollabAddContact(pwzcontactdata: ::windows_core_sys::PCWSTR, ppcontact: *mut *mut PEER_CONTACT) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn PeerCollabAsyncInviteContact(pccontact: *const PEER_CONTACT, pcendpoint: *const PEER_ENDPOINT, pcinvitation: *const PEER_INVITATION, hevent: super::super::Foundation::HANDLE, phinvitation: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-    pub fn PeerCollabAsyncInviteEndpoint(pcendpoint: *const PEER_ENDPOINT, pcinvitation: *const PEER_INVITATION, hevent: super::super::Foundation::HANDLE, phinvitation: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerCollabCancelInvitation(hinvitation: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerCollabCloseHandle(hinvitation: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub fn PeerCollabAsyncInviteContact(pccontact: *const PEER_CONTACT, pcendpoint: *const PEER_ENDPOINT, pcinvitation: *const PEER_INVITATION, hevent: ::win32_foundation_sys::HANDLE, phinvitation: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    #[cfg(feature = "Win32_Networking_WinSock")]
+    pub fn PeerCollabAsyncInviteEndpoint(pcendpoint: *const PEER_ENDPOINT, pcinvitation: *const PEER_INVITATION, hevent: ::win32_foundation_sys::HANDLE, phinvitation: *mut ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn PeerCollabCancelInvitation(hinvitation: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn PeerCollabCloseHandle(hinvitation: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabDeleteContact(pwzpeername: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabDeleteEndpointData(pcendpoint: *const PEER_ENDPOINT) -> ::windows_core_sys::HRESULT;
@@ -52,44 +46,38 @@ extern "system" {
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabEnumApplications(pcendpoint: *const PEER_ENDPOINT, papplicationid: *const ::windows_core_sys::GUID, phpeerenum: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabEnumContacts(phpeerenum: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerCollabEnumEndpoints(pccontact: *const PEER_CONTACT, phpeerenum: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabEnumObjects(pcendpoint: *const PEER_ENDPOINT, pobjectid: *const ::windows_core_sys::GUID, phpeerenum: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabEnumPeopleNearMe(phpeerenum: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabExportContact(pwzpeername: ::windows_core_sys::PCWSTR, ppwzcontactdata: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabGetAppLaunchInfo(pplaunchinfo: *mut *mut PEER_APP_LAUNCH_INFO) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabGetApplicationRegistrationInfo(papplicationid: *const ::windows_core_sys::GUID, registrationtype: PEER_APPLICATION_REGISTRATION_TYPE, ppapplication: *mut *mut PEER_APPLICATION_REGISTRATION_INFO) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerCollabGetContact(pwzpeername: ::windows_core_sys::PCWSTR, ppcontact: *mut *mut PEER_CONTACT) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabGetEndpointName(ppwzendpointname: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabGetEventData(hpeerevent: *const ::core::ffi::c_void, ppeventdata: *mut *mut PEER_COLLAB_EVENT_DATA) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerCollabGetInvitationResponse(hinvitation: super::super::Foundation::HANDLE, ppinvitationresponse: *mut *mut PEER_INVITATION_RESPONSE) -> ::windows_core_sys::HRESULT;
+    pub fn PeerCollabGetInvitationResponse(hinvitation: ::win32_foundation_sys::HANDLE, ppinvitationresponse: *mut *mut PEER_INVITATION_RESPONSE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabGetPresenceInfo(pcendpoint: *const PEER_ENDPOINT, pppresenceinfo: *mut *mut PEER_PRESENCE_INFO) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabGetSigninOptions(pdwsigninoptions: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabInviteContact(pccontact: *const PEER_CONTACT, pcendpoint: *const PEER_ENDPOINT, pcinvitation: *const PEER_INVITATION, ppresponse: *mut *mut PEER_INVITATION_RESPONSE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabInviteEndpoint(pcendpoint: *const PEER_ENDPOINT, pcinvitation: *const PEER_INVITATION, ppresponse: *mut *mut PEER_INVITATION_RESPONSE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerCollabParseContact(pwzcontactdata: ::windows_core_sys::PCWSTR, ppcontact: *mut *mut PEER_CONTACT) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabQueryContactData(pcendpoint: *const PEER_ENDPOINT, ppwzcontactdata: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabRefreshEndpointData(pcendpoint: *const PEER_ENDPOINT) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabRegisterApplication(pcapplication: *const PEER_APPLICATION_REGISTRATION_INFO, registrationtype: PEER_APPLICATION_REGISTRATION_TYPE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerCollabRegisterEvent(hevent: super::super::Foundation::HANDLE, ceventregistration: u32, peventregistrations: *const PEER_COLLAB_EVENT_REGISTRATION, phpeerevent: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn PeerCollabRegisterEvent(hevent: ::win32_foundation_sys::HANDLE, ceventregistration: u32, peventregistrations: *const PEER_COLLAB_EVENT_REGISTRATION, phpeerevent: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabSetEndpointName(pwzendpointname: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabSetObject(pcobject: *const PEER_OBJECT) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabSetPresenceInfo(pcpresenceinfo: *const PEER_PRESENCE_INFO) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabShutdown() -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerCollabSignin(hwndparent: super::super::Foundation::HWND, dwsigninoptions: u32) -> ::windows_core_sys::HRESULT;
+    pub fn PeerCollabSignin(hwndparent: ::win32_foundation_sys::HWND, dwsigninoptions: u32) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabSignout(dwsigninoptions: u32) -> ::windows_core_sys::HRESULT;
     pub fn PeerCollabStartup(wversionrequested: u16) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
@@ -98,51 +86,46 @@ extern "system" {
     pub fn PeerCollabUnregisterEvent(hpeerevent: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerCollabUnsubscribeEndpointData(pcendpoint: *const PEER_ENDPOINT) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerCollabUpdateContact(pcontact: *const PEER_CONTACT) -> ::windows_core_sys::HRESULT;
     pub fn PeerCreatePeerName(pwzidentity: ::windows_core_sys::PCWSTR, pwzclassifier: ::windows_core_sys::PCWSTR, ppwzpeername: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistClientAddContentInformation(hpeerdist: isize, hcontenthandle: isize, cbnumberofbytes: u32, pbuffer: *const u8, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistClientAddData(hpeerdist: isize, hcontenthandle: isize, cbnumberofbytes: u32, pbuffer: *const u8, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistClientBlockRead(hpeerdist: isize, hcontenthandle: isize, cbmaxnumberofbytes: u32, pbuffer: *mut u8, dwtimeoutinmilliseconds: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistClientCancelAsyncOperation(hpeerdist: isize, hcontenthandle: isize, poverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistClientAddContentInformation(hpeerdist: isize, hcontenthandle: isize, cbnumberofbytes: u32, pbuffer: *const u8, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistClientAddData(hpeerdist: isize, hcontenthandle: isize, cbnumberofbytes: u32, pbuffer: *const u8, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistClientBlockRead(hpeerdist: isize, hcontenthandle: isize, cbmaxnumberofbytes: u32, pbuffer: *mut u8, dwtimeoutinmilliseconds: u32, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistClientCancelAsyncOperation(hpeerdist: isize, hcontenthandle: isize, poverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
     pub fn PeerDistClientCloseContent(hpeerdist: isize, hcontenthandle: isize) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistClientCompleteContentInformation(hpeerdist: isize, hcontenthandle: isize, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistClientFlushContent(hpeerdist: isize, pcontenttag: *const PEERDIST_CONTENT_TAG, hcompletionport: super::super::Foundation::HANDLE, ulcompletionkey: usize, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistClientCompleteContentInformation(hpeerdist: isize, hcontenthandle: isize, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistClientFlushContent(hpeerdist: isize, pcontenttag: *const PEERDIST_CONTENT_TAG, hcompletionport: ::win32_foundation_sys::HANDLE, ulcompletionkey: usize, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
     pub fn PeerDistClientGetInformationByHandle(hpeerdist: isize, hcontenthandle: isize, peerdistclientinfoclass: PEERDIST_CLIENT_INFO_BY_HANDLE_CLASS, dwbuffersize: u32, lpinformation: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerDistClientOpenContent(hpeerdist: isize, pcontenttag: *const PEERDIST_CONTENT_TAG, hcompletionport: super::super::Foundation::HANDLE, ulcompletionkey: usize, phcontenthandle: *mut isize) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistClientStreamRead(hpeerdist: isize, hcontenthandle: isize, cbmaxnumberofbytes: u32, pbuffer: *mut u8, dwtimeoutinmilliseconds: u32, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistGetOverlappedResult(lpoverlapped: *const super::super::System::IO::OVERLAPPED, lpnumberofbytestransferred: *mut u32, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn PeerDistClientOpenContent(hpeerdist: isize, pcontenttag: *const PEERDIST_CONTENT_TAG, hcompletionport: ::win32_foundation_sys::HANDLE, ulcompletionkey: usize, phcontenthandle: *mut isize) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistClientStreamRead(hpeerdist: isize, hcontenthandle: isize, cbmaxnumberofbytes: u32, pbuffer: *mut u8, dwtimeoutinmilliseconds: u32, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistGetOverlappedResult(lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED, lpnumberofbytestransferred: *mut u32, bwait: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn PeerDistGetStatus(hpeerdist: isize, ppeerdiststatus: *mut PEERDIST_STATUS) -> u32;
     pub fn PeerDistGetStatusEx(hpeerdist: isize, ppeerdiststatus: *mut PEERDIST_STATUS_INFO) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistRegisterForStatusChangeNotification(hpeerdist: isize, hcompletionport: super::super::Foundation::HANDLE, ulcompletionkey: usize, lpoverlapped: *const super::super::System::IO::OVERLAPPED, ppeerdiststatus: *mut PEERDIST_STATUS) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistRegisterForStatusChangeNotificationEx(hpeerdist: isize, hcompletionport: super::super::Foundation::HANDLE, ulcompletionkey: usize, lpoverlapped: *const super::super::System::IO::OVERLAPPED, ppeerdiststatus: *mut PEERDIST_STATUS_INFO) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistServerCancelAsyncOperation(hpeerdist: isize, cbcontentidentifier: u32, pcontentidentifier: *const u8, poverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistRegisterForStatusChangeNotification(hpeerdist: isize, hcompletionport: ::win32_foundation_sys::HANDLE, ulcompletionkey: usize, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED, ppeerdiststatus: *mut PEERDIST_STATUS) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistRegisterForStatusChangeNotificationEx(hpeerdist: isize, hcompletionport: ::win32_foundation_sys::HANDLE, ulcompletionkey: usize, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED, ppeerdiststatus: *mut PEERDIST_STATUS_INFO) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistServerCancelAsyncOperation(hpeerdist: isize, cbcontentidentifier: u32, pcontentidentifier: *const u8, poverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
     pub fn PeerDistServerCloseContentInformation(hpeerdist: isize, hcontentinfo: isize) -> u32;
     pub fn PeerDistServerCloseStreamHandle(hpeerdist: isize, hstream: isize) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerDistServerOpenContentInformation(hpeerdist: isize, cbcontentidentifier: u32, pcontentidentifier: *const u8, ullcontentoffset: u64, cbcontentlength: u64, hcompletionport: super::super::Foundation::HANDLE, ulcompletionkey: usize, phcontentinfo: *mut isize) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerDistServerOpenContentInformationEx(hpeerdist: isize, cbcontentidentifier: u32, pcontentidentifier: *const u8, ullcontentoffset: u64, cbcontentlength: u64, pretrievaloptions: *const PEERDIST_RETRIEVAL_OPTIONS, hcompletionport: super::super::Foundation::HANDLE, ulcompletionkey: usize, phcontentinfo: *mut isize) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistServerPublishAddToStream(hpeerdist: isize, hstream: isize, cbnumberofbytes: u32, pbuffer: *const u8, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistServerPublishCompleteStream(hpeerdist: isize, hstream: isize, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerDistServerPublishStream(hpeerdist: isize, cbcontentidentifier: u32, pcontentidentifier: *const u8, cbcontentlength: u64, ppublishoptions: *const PEERDIST_PUBLICATION_OPTIONS, hcompletionport: super::super::Foundation::HANDLE, ulcompletionkey: usize, phstream: *mut isize) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn PeerDistServerRetrieveContentInformation(hpeerdist: isize, hcontentinfo: isize, cbmaxnumberofbytes: u32, pbuffer: *mut u8, lpoverlapped: *const super::super::System::IO::OVERLAPPED) -> u32;
+    pub fn PeerDistServerOpenContentInformation(hpeerdist: isize, cbcontentidentifier: u32, pcontentidentifier: *const u8, ullcontentoffset: u64, cbcontentlength: u64, hcompletionport: ::win32_foundation_sys::HANDLE, ulcompletionkey: usize, phcontentinfo: *mut isize) -> u32;
+    pub fn PeerDistServerOpenContentInformationEx(hpeerdist: isize, cbcontentidentifier: u32, pcontentidentifier: *const u8, ullcontentoffset: u64, cbcontentlength: u64, pretrievaloptions: *const PEERDIST_RETRIEVAL_OPTIONS, hcompletionport: ::win32_foundation_sys::HANDLE, ulcompletionkey: usize, phcontentinfo: *mut isize) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistServerPublishAddToStream(hpeerdist: isize, hstream: isize, cbnumberofbytes: u32, pbuffer: *const u8, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistServerPublishCompleteStream(hpeerdist: isize, hstream: isize, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
+    pub fn PeerDistServerPublishStream(hpeerdist: isize, cbcontentidentifier: u32, pcontentidentifier: *const u8, cbcontentlength: u64, ppublishoptions: *const PEERDIST_PUBLICATION_OPTIONS, hcompletionport: ::win32_foundation_sys::HANDLE, ulcompletionkey: usize, phstream: *mut isize) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn PeerDistServerRetrieveContentInformation(hpeerdist: isize, hcontentinfo: isize, cbmaxnumberofbytes: u32, pbuffer: *mut u8, lpoverlapped: *const ::win32_system_sys::IO::OVERLAPPED) -> u32;
     pub fn PeerDistServerUnpublish(hpeerdist: isize, cbcontentidentifier: u32, pcontentidentifier: *const u8) -> u32;
     pub fn PeerDistShutdown(hpeerdist: isize) -> u32;
     pub fn PeerDistStartup(dwversionrequested: u32, phpeerdist: *mut isize, pdwsupportedversion: *mut u32) -> u32;
@@ -153,17 +136,14 @@ extern "system" {
     pub fn PeerFreeData(pvdata: *const ::core::ffi::c_void);
     pub fn PeerGetItemCount(hpeerenum: *const ::core::ffi::c_void, pcount: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn PeerGetNextItem(hpeerenum: *const ::core::ffi::c_void, pcount: *mut u32, pppvitems: *mut *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerGraphAddRecord(hgraph: *const ::core::ffi::c_void, precord: *const PEER_RECORD, precordid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphClose(hgraph: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphCloseDirectConnection(hgraph: *const ::core::ffi::c_void, ullconnectionid: u64) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerGraphConnect(hgraph: *const ::core::ffi::c_void, pwzpeerid: ::windows_core_sys::PCWSTR, paddress: *const PEER_ADDRESS, pullconnectionid: *mut u64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerGraphCreate(pgraphproperties: *const PEER_GRAPH_PROPERTIES, pwzdatabasename: ::windows_core_sys::PCWSTR, psecurityinterface: *const PEER_SECURITY_INTERFACE, phgraph: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphDelete(pwzgraphid: ::windows_core_sys::PCWSTR, pwzpeerid: ::windows_core_sys::PCWSTR, pwzdatabasename: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGraphDeleteRecord(hgraph: *const ::core::ffi::c_void, precordid: *const ::windows_core_sys::GUID, flocal: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGraphDeleteRecord(hgraph: *const ::core::ffi::c_void, precordid: *const ::windows_core_sys::GUID, flocal: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphEndEnumeration(hpeerenum: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphEnumConnections(hgraph: *const ::core::ffi::c_void, dwflags: u32, phpeerenum: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphEnumNodes(hgraph: *const ::core::ffi::c_void, pwzpeerid: ::windows_core_sys::PCWSTR, phpeerenum: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
@@ -176,34 +156,26 @@ extern "system" {
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerGraphGetNodeInfo(hgraph: *const ::core::ffi::c_void, ullnodeid: u64, ppnodeinfo: *mut *mut PEER_NODE_INFO) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphGetProperties(hgraph: *const ::core::ffi::c_void, ppgraphproperties: *mut *mut PEER_GRAPH_PROPERTIES) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerGraphGetRecord(hgraph: *const ::core::ffi::c_void, precordid: *const ::windows_core_sys::GUID, pprecord: *mut *mut PEER_RECORD) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphGetStatus(hgraph: *const ::core::ffi::c_void, pdwstatus: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphImportDatabase(hgraph: *const ::core::ffi::c_void, pwzfilepath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphListen(hgraph: *const ::core::ffi::c_void, dwscope: u32, dwscopeid: u32, wport: u16) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerGraphOpen(pwzgraphid: ::windows_core_sys::PCWSTR, pwzpeerid: ::windows_core_sys::PCWSTR, pwzdatabasename: ::windows_core_sys::PCWSTR, psecurityinterface: *const PEER_SECURITY_INTERFACE, crecordtypesyncprecedence: u32, precordtypesyncprecedence: *const ::windows_core_sys::GUID, phgraph: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerGraphOpenDirectConnection(hgraph: *const ::core::ffi::c_void, pwzpeerid: ::windows_core_sys::PCWSTR, paddress: *const PEER_ADDRESS, pullconnectionid: *mut u64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGraphPeerTimeToUniversalTime(hgraph: *const ::core::ffi::c_void, pftpeertime: *const super::super::Foundation::FILETIME, pftuniversaltime: *mut super::super::Foundation::FILETIME) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGraphRegisterEvent(hgraph: *const ::core::ffi::c_void, hevent: super::super::Foundation::HANDLE, ceventregistrations: u32, peventregistrations: *const PEER_GRAPH_EVENT_REGISTRATION, phpeerevent: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGraphPeerTimeToUniversalTime(hgraph: *const ::core::ffi::c_void, pftpeertime: *const ::win32_foundation_sys::FILETIME, pftuniversaltime: *mut ::win32_foundation_sys::FILETIME) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGraphRegisterEvent(hgraph: *const ::core::ffi::c_void, hevent: ::win32_foundation_sys::HANDLE, ceventregistrations: u32, peventregistrations: *const PEER_GRAPH_EVENT_REGISTRATION, phpeerevent: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphSearchRecords(hgraph: *const ::core::ffi::c_void, pwzcriteria: ::windows_core_sys::PCWSTR, phpeerenum: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphSendData(hgraph: *const ::core::ffi::c_void, ullconnectionid: u64, ptype: *const ::windows_core_sys::GUID, cbdata: u32, pvdata: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphSetNodeAttributes(hgraph: *const ::core::ffi::c_void, pwzattributes: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGraphSetPresence(hgraph: *const ::core::ffi::c_void, fpresent: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGraphSetPresence(hgraph: *const ::core::ffi::c_void, fpresent: ::win32_foundation_sys::BOOL) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphSetProperties(hgraph: *const ::core::ffi::c_void, pgraphproperties: *const PEER_GRAPH_PROPERTIES) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphShutdown() -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphStartup(wversionrequested: u16, pversiondata: *mut PEER_VERSION_DATA) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGraphUniversalTimeToPeerTime(hgraph: *const ::core::ffi::c_void, pftuniversaltime: *const super::super::Foundation::FILETIME, pftpeertime: *mut super::super::Foundation::FILETIME) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGraphUniversalTimeToPeerTime(hgraph: *const ::core::ffi::c_void, pftuniversaltime: *const ::win32_foundation_sys::FILETIME, pftpeertime: *mut ::win32_foundation_sys::FILETIME) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphUnregisterEvent(hpeerevent: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerGraphUpdateRecord(hgraph: *const ::core::ffi::c_void, precord: *const PEER_RECORD) -> ::windows_core_sys::HRESULT;
     pub fn PeerGraphValidateDeferredRecords(hgraph: *const ::core::ffi::c_void, crecordids: u32, precordids: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerGroupAddRecord(hgroup: *const ::core::ffi::c_void, precord: *const PEER_RECORD, precordid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupClose(hgroup: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupCloseDirectConnection(hgroup: *const ::core::ffi::c_void, ullconnectionid: u64) -> ::windows_core_sys::HRESULT;
@@ -211,8 +183,7 @@ extern "system" {
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerGroupConnectByAddress(hgroup: *const ::core::ffi::c_void, caddresses: u32, paddresses: *const PEER_ADDRESS) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupCreate(pproperties: *const PEER_GROUP_PROPERTIES, phgroup: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGroupCreateInvitation(hgroup: *const ::core::ffi::c_void, pwzidentityinfo: ::windows_core_sys::PCWSTR, pftexpiration: *const super::super::Foundation::FILETIME, croles: u32, proles: *const ::windows_core_sys::GUID, ppwzinvitation: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGroupCreateInvitation(hgroup: *const ::core::ffi::c_void, pwzidentityinfo: ::windows_core_sys::PCWSTR, pftexpiration: *const ::win32_foundation_sys::FILETIME, croles: u32, proles: *const ::windows_core_sys::GUID, ppwzinvitation: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupCreatePasswordInvitation(hgroup: *const ::core::ffi::c_void, ppwzinvitation: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupDelete(pwzidentity: ::windows_core_sys::PCWSTR, pwzgrouppeername: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupDeleteRecord(hgroup: *const ::core::ffi::c_void, precordid: *const ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
@@ -223,35 +194,29 @@ extern "system" {
     pub fn PeerGroupExportDatabase(hgroup: *const ::core::ffi::c_void, pwzfilepath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupGetEventData(hpeerevent: *const ::core::ffi::c_void, ppeventdata: *mut *mut PEER_GROUP_EVENT_DATA) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupGetProperties(hgroup: *const ::core::ffi::c_void, ppproperties: *mut *mut PEER_GROUP_PROPERTIES) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerGroupGetRecord(hgroup: *const ::core::ffi::c_void, precordid: *const ::windows_core_sys::GUID, pprecord: *mut *mut PEER_RECORD) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupGetStatus(hgroup: *const ::core::ffi::c_void, pdwstatus: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGroupImportConfig(pwzxml: ::windows_core_sys::PCWSTR, pwzpassword: ::windows_core_sys::PCWSTR, foverwrite: super::super::Foundation::BOOL, ppwzidentity: *mut ::windows_core_sys::PWSTR, ppwzgroup: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGroupImportConfig(pwzxml: ::windows_core_sys::PCWSTR, pwzpassword: ::windows_core_sys::PCWSTR, foverwrite: ::win32_foundation_sys::BOOL, ppwzidentity: *mut ::windows_core_sys::PWSTR, ppwzgroup: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupImportDatabase(hgroup: *const ::core::ffi::c_void, pwzfilepath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
     pub fn PeerGroupIssueCredentials(hgroup: *const ::core::ffi::c_void, pwzsubjectidentity: ::windows_core_sys::PCWSTR, pcredentialinfo: *const PEER_CREDENTIAL_INFO, dwflags: u32, ppwzinvitation: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupJoin(pwzidentity: ::windows_core_sys::PCWSTR, pwzinvitation: ::windows_core_sys::PCWSTR, pwzcloud: ::windows_core_sys::PCWSTR, phgroup: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupOpen(pwzidentity: ::windows_core_sys::PCWSTR, pwzgrouppeername: ::windows_core_sys::PCWSTR, pwzcloud: ::windows_core_sys::PCWSTR, phgroup: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerGroupOpenDirectConnection(hgroup: *const ::core::ffi::c_void, pwzidentity: ::windows_core_sys::PCWSTR, paddress: *const PEER_ADDRESS, pullconnectionid: *mut u64) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+    #[cfg(feature = "Win32_Security_Cryptography")]
     pub fn PeerGroupParseInvitation(pwzinvitation: ::windows_core_sys::PCWSTR, ppinvitationinfo: *mut *mut PEER_INVITATION_INFO) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupPasswordJoin(pwzidentity: ::windows_core_sys::PCWSTR, pwzinvitation: ::windows_core_sys::PCWSTR, pwzpassword: ::windows_core_sys::PCWSTR, pwzcloud: ::windows_core_sys::PCWSTR, phgroup: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGroupPeerTimeToUniversalTime(hgroup: *const ::core::ffi::c_void, pftpeertime: *const super::super::Foundation::FILETIME, pftuniversaltime: *mut super::super::Foundation::FILETIME) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGroupRegisterEvent(hgroup: *const ::core::ffi::c_void, hevent: super::super::Foundation::HANDLE, ceventregistration: u32, peventregistrations: *const PEER_GROUP_EVENT_REGISTRATION, phpeerevent: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGroupPeerTimeToUniversalTime(hgroup: *const ::core::ffi::c_void, pftpeertime: *const ::win32_foundation_sys::FILETIME, pftuniversaltime: *mut ::win32_foundation_sys::FILETIME) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGroupRegisterEvent(hgroup: *const ::core::ffi::c_void, hevent: ::win32_foundation_sys::HANDLE, ceventregistration: u32, peventregistrations: *const PEER_GROUP_EVENT_REGISTRATION, phpeerevent: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupResumePasswordAuthentication(hgroup: *const ::core::ffi::c_void, hpeereventhandle: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupSearchRecords(hgroup: *const ::core::ffi::c_void, pwzcriteria: ::windows_core_sys::PCWSTR, phpeerenum: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupSendData(hgroup: *const ::core::ffi::c_void, ullconnectionid: u64, ptype: *const ::windows_core_sys::GUID, cbdata: u32, pvdata: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupSetProperties(hgroup: *const ::core::ffi::c_void, pproperties: *const PEER_GROUP_PROPERTIES) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupShutdown() -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupStartup(wversionrequested: u16, pversiondata: *mut PEER_VERSION_DATA) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerGroupUniversalTimeToPeerTime(hgroup: *const ::core::ffi::c_void, pftuniversaltime: *const super::super::Foundation::FILETIME, pftpeertime: *mut super::super::Foundation::FILETIME) -> ::windows_core_sys::HRESULT;
+    pub fn PeerGroupUniversalTimeToPeerTime(hgroup: *const ::core::ffi::c_void, pftuniversaltime: *const ::win32_foundation_sys::FILETIME, pftpeertime: *mut ::win32_foundation_sys::FILETIME) -> ::windows_core_sys::HRESULT;
     pub fn PeerGroupUnregisterEvent(hpeerevent: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn PeerGroupUpdateRecord(hgroup: *const ::core::ffi::c_void, precord: *const PEER_RECORD) -> ::windows_core_sys::HRESULT;
     pub fn PeerHostNameToPeerName(pwzhostname: ::windows_core_sys::PCWSTR, ppwzpeername: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerIdentityCreate(pwzclassifier: ::windows_core_sys::PCWSTR, pwzfriendlyname: ::windows_core_sys::PCWSTR, hcryptprov: usize, ppwzidentity: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
@@ -266,31 +231,30 @@ extern "system" {
     pub fn PeerNameToPeerHostName(pwzpeername: ::windows_core_sys::PCWSTR, ppwzhostname: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     pub fn PeerPnrpEndResolve(hresolve: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerPnrpGetCloudInfo(pcnumclouds: *mut u32, ppcloudinfo: *mut *mut PEER_PNRP_CLOUD_INFO) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerPnrpGetEndpoint(hresolve: *const ::core::ffi::c_void, ppendpoint: *mut *mut PEER_PNRP_ENDPOINT_INFO) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerPnrpRegister(pcwzpeername: ::windows_core_sys::PCWSTR, pregistrationinfo: *const PEER_PNRP_REGISTRATION_INFO, phregistration: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerPnrpResolve(pcwzpeername: ::windows_core_sys::PCWSTR, pcwzcloudname: ::windows_core_sys::PCWSTR, pcendpoints: *mut u32, ppendpoints: *mut *mut PEER_PNRP_ENDPOINT_INFO) -> ::windows_core_sys::HRESULT;
     pub fn PeerPnrpShutdown() -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PeerPnrpStartResolve(pcwzpeername: ::windows_core_sys::PCWSTR, pcwzcloudname: ::windows_core_sys::PCWSTR, cmaxendpoints: u32, hevent: super::super::Foundation::HANDLE, phresolve: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn PeerPnrpStartResolve(pcwzpeername: ::windows_core_sys::PCWSTR, pcwzcloudname: ::windows_core_sys::PCWSTR, cmaxendpoints: u32, hevent: ::win32_foundation_sys::HANDLE, phresolve: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn PeerPnrpStartup(wversionrequested: u16) -> ::windows_core_sys::HRESULT;
     pub fn PeerPnrpUnregister(hregistration: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+    #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn PeerPnrpUpdateRegistration(hregistration: *const ::core::ffi::c_void, pregistrationinfo: *const PEER_PNRP_REGISTRATION_INFO) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct DRT_ADDRESS {
-    pub socketAddress: super::super::Networking::WinSock::SOCKADDR_STORAGE,
+    pub socketAddress: ::win32_networking_sys::WinSock::SOCKADDR_STORAGE,
     pub flags: u32,
     pub nearness: i32,
     pub latency: u32,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for DRT_ADDRESS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for DRT_ADDRESS {
     fn clone(&self) -> Self {
         *self
@@ -306,14 +270,14 @@ pub const DRT_ADDRESS_FLAG_BAD_VALIDATE_ID: DRT_ADDRESS_FLAGS = 32i32;
 pub const DRT_ADDRESS_FLAG_SUSPECT_UNREGISTERED_ID: DRT_ADDRESS_FLAGS = 64i32;
 pub const DRT_ADDRESS_FLAG_INQUIRE: DRT_ADDRESS_FLAGS = 128i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct DRT_ADDRESS_LIST {
     pub AddressCount: u32,
     pub AddressList: [DRT_ADDRESS; 1],
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for DRT_ADDRESS_LIST {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for DRT_ADDRESS_LIST {
     fn clone(&self) -> Self {
         *self
@@ -336,8 +300,8 @@ impl ::core::clone::Clone for DRT_BOOTSTRAP_PROVIDER {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
-pub type DRT_BOOTSTRAP_RESOLVE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hr: ::windows_core_sys::HRESULT, pvcontext: *mut ::core::ffi::c_void, paddresses: *mut super::super::Networking::WinSock::SOCKET_ADDRESS_LIST, ffatalerror: super::super::Foundation::BOOL)>;
+#[cfg(feature = "Win32_Networking_WinSock")]
+pub type DRT_BOOTSTRAP_RESOLVE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hr: ::windows_core_sys::HRESULT, pvcontext: *mut ::core::ffi::c_void, paddresses: *mut ::win32_networking_sys::WinSock::SOCKET_ADDRESS_LIST, ffatalerror: ::win32_foundation_sys::BOOL)>;
 #[repr(C)]
 pub struct DRT_DATA {
     pub cb: u32,
@@ -350,88 +314,88 @@ impl ::core::clone::Clone for DRT_DATA {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct DRT_EVENT_DATA {
     pub r#type: DRT_EVENT_TYPE,
     pub hr: ::windows_core_sys::HRESULT,
     pub pvContext: *mut ::core::ffi::c_void,
     pub Anonymous: DRT_EVENT_DATA_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for DRT_EVENT_DATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for DRT_EVENT_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub union DRT_EVENT_DATA_0 {
     pub leafsetKeyChange: DRT_EVENT_DATA_0_0,
     pub registrationStateChange: DRT_EVENT_DATA_0_1,
     pub statusChange: DRT_EVENT_DATA_0_2,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for DRT_EVENT_DATA_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for DRT_EVENT_DATA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct DRT_EVENT_DATA_0_0 {
     pub change: DRT_LEAFSET_KEY_CHANGE_TYPE,
     pub localKey: DRT_DATA,
     pub remoteKey: DRT_DATA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for DRT_EVENT_DATA_0_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for DRT_EVENT_DATA_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct DRT_EVENT_DATA_0_1 {
     pub state: DRT_REGISTRATION_STATE,
     pub localKey: DRT_DATA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for DRT_EVENT_DATA_0_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for DRT_EVENT_DATA_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct DRT_EVENT_DATA_0_2 {
     pub status: DRT_STATUS,
     pub bootstrapAddresses: DRT_EVENT_DATA_0_2_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for DRT_EVENT_DATA_0_2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for DRT_EVENT_DATA_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct DRT_EVENT_DATA_0_2_0 {
     pub cntAddress: u32,
-    pub pAddresses: *mut super::super::Networking::WinSock::SOCKADDR_STORAGE,
+    pub pAddresses: *mut ::win32_networking_sys::WinSock::SOCKADDR_STORAGE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for DRT_EVENT_DATA_0_2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for DRT_EVENT_DATA_0_2_0 {
     fn clone(&self) -> Self {
         *self
@@ -513,19 +477,16 @@ pub const DRT_GLOBAL_SCOPE: DRT_SCOPE = 1i32;
 pub const DRT_SITE_LOCAL_SCOPE: DRT_SCOPE = 2i32;
 pub const DRT_LINK_LOCAL_SCOPE: DRT_SCOPE = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct DRT_SEARCH_INFO {
     pub dwSize: u32,
-    pub fIterative: super::super::Foundation::BOOL,
-    pub fAllowCurrentInstanceMatch: super::super::Foundation::BOOL,
-    pub fAnyMatchInRange: super::super::Foundation::BOOL,
+    pub fIterative: ::win32_foundation_sys::BOOL,
+    pub fAllowCurrentInstanceMatch: ::win32_foundation_sys::BOOL,
+    pub fAnyMatchInRange: ::win32_foundation_sys::BOOL,
     pub cMaxEndpoints: u32,
     pub pMaximumKey: *mut DRT_DATA,
     pub pMinimumKey: *mut DRT_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DRT_SEARCH_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for DRT_SEARCH_INFO {
     fn clone(&self) -> Self {
         *self
@@ -602,13 +563,10 @@ pub const NS_PNRPNAME: u32 = 38u32;
 pub const NS_PROVIDER_PNRPCLOUD: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 67013070, data2: 30317, data3: 18806, data4: [185, 193, 187, 155, 196, 44, 123, 77] };
 pub const NS_PROVIDER_PNRPNAME: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 67013069, data2: 30317, data3: 18806, data4: [185, 193, 187, 155, 196, 44, 123, 77] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PEERDIST_CLIENT_BASIC_INFO {
-    pub fFlashCrowd: super::super::Foundation::BOOL,
+    pub fFlashCrowd: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PEERDIST_CLIENT_BASIC_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PEERDIST_CLIENT_BASIC_INFO {
     fn clone(&self) -> Self {
         *self
@@ -681,7 +639,7 @@ impl ::core::clone::Clone for PEERDIST_STATUS_INFO {
 #[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PEER_ADDRESS {
     pub dwSize: u32,
-    pub sin6: super::super::Networking::WinSock::SOCKADDR_IN6,
+    pub sin6: ::win32_networking_sys::WinSock::SOCKADDR_IN6,
 }
 #[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_ADDRESS {}
@@ -720,15 +678,15 @@ pub type PEER_APPLICATION_REGISTRATION_TYPE = i32;
 pub const PEER_APPLICATION_CURRENT_USER: PEER_APPLICATION_REGISTRATION_TYPE = 0i32;
 pub const PEER_APPLICATION_ALL_USERS: PEER_APPLICATION_REGISTRATION_TYPE = 1i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PEER_APP_LAUNCH_INFO {
     pub pContact: *mut PEER_CONTACT,
     pub pEndpoint: *mut PEER_ENDPOINT,
     pub pInvitation: *mut PEER_INVITATION,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_APP_LAUNCH_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PEER_APP_LAUNCH_INFO {
     fn clone(&self) -> Self {
         *self
@@ -739,21 +697,21 @@ pub const PEER_CHANGE_ADDED: PEER_CHANGE_TYPE = 0i32;
 pub const PEER_CHANGE_DELETED: PEER_CHANGE_TYPE = 1i32;
 pub const PEER_CHANGE_UPDATED: PEER_CHANGE_TYPE = 2i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PEER_COLLAB_EVENT_DATA {
     pub eventType: PEER_COLLAB_EVENT_TYPE,
     pub Anonymous: PEER_COLLAB_EVENT_DATA_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_COLLAB_EVENT_DATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PEER_COLLAB_EVENT_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub union PEER_COLLAB_EVENT_DATA_0 {
     pub watchListChangedData: PEER_EVENT_WATCHLIST_CHANGED_DATA,
     pub presenceChangedData: PEER_EVENT_PRESENCE_CHANGED_DATA,
@@ -763,9 +721,9 @@ pub union PEER_COLLAB_EVENT_DATA_0 {
     pub peopleNearMeChangedData: PEER_EVENT_PEOPLE_NEAR_ME_CHANGED_DATA,
     pub requestStatusChangedData: PEER_EVENT_REQUEST_STATUS_CHANGED_DATA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_COLLAB_EVENT_DATA_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PEER_COLLAB_EVENT_DATA_0 {
     fn clone(&self) -> Self {
         *self
@@ -821,41 +779,38 @@ pub const PEER_CONNECTED: PEER_CONNECTION_STATUS = 1i32;
 pub const PEER_DISCONNECTED: PEER_CONNECTION_STATUS = 2i32;
 pub const PEER_CONNECTION_FAILED: PEER_CONNECTION_STATUS = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PEER_CONTACT {
     pub pwzPeerName: ::windows_core_sys::PWSTR,
     pub pwzNickName: ::windows_core_sys::PWSTR,
     pub pwzDisplayName: ::windows_core_sys::PWSTR,
     pub pwzEmailAddress: ::windows_core_sys::PWSTR,
-    pub fWatch: super::super::Foundation::BOOL,
+    pub fWatch: ::win32_foundation_sys::BOOL,
     pub WatcherPermissions: PEER_WATCH_PERMISSION,
     pub credentials: PEER_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PEER_CONTACT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PEER_CONTACT {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct PEER_CREDENTIAL_INFO {
     pub dwSize: u32,
     pub dwFlags: u32,
     pub pwzFriendlyName: ::windows_core_sys::PWSTR,
-    pub pPublicKey: *mut super::super::Security::Cryptography::CERT_PUBLIC_KEY_INFO,
+    pub pPublicKey: *mut ::win32_security_sys::Cryptography::CERT_PUBLIC_KEY_INFO,
     pub pwzIssuerPeerName: ::windows_core_sys::PWSTR,
     pub pwzIssuerFriendlyName: ::windows_core_sys::PWSTR,
-    pub ftValidityStart: super::super::Foundation::FILETIME,
-    pub ftValidityEnd: super::super::Foundation::FILETIME,
+    pub ftValidityStart: ::win32_foundation_sys::FILETIME,
+    pub ftValidityEnd: ::win32_foundation_sys::FILETIME,
     pub cRoles: u32,
     pub pRoles: *mut ::windows_core_sys::GUID,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for PEER_CREDENTIAL_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for PEER_CREDENTIAL_INFO {
     fn clone(&self) -> Self {
         *self
@@ -887,16 +842,16 @@ impl ::core::clone::Clone for PEER_ENDPOINT {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PEER_EVENT_APPLICATION_CHANGED_DATA {
     pub pContact: *mut PEER_CONTACT,
     pub pEndpoint: *mut PEER_ENDPOINT,
     pub changeType: PEER_CHANGE_TYPE,
     pub pApplication: *mut PEER_APPLICATION,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_EVENT_APPLICATION_CHANGED_DATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PEER_EVENT_APPLICATION_CHANGED_DATA {
     fn clone(&self) -> Self {
         *self
@@ -918,14 +873,14 @@ impl ::core::clone::Clone for PEER_EVENT_CONNECTION_CHANGE_DATA {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PEER_EVENT_ENDPOINT_CHANGED_DATA {
     pub pContact: *mut PEER_CONTACT,
     pub pEndpoint: *mut PEER_ENDPOINT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_EVENT_ENDPOINT_CHANGED_DATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PEER_EVENT_ENDPOINT_CHANGED_DATA {
     fn clone(&self) -> Self {
         *self
@@ -970,16 +925,16 @@ impl ::core::clone::Clone for PEER_EVENT_NODE_CHANGE_DATA {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PEER_EVENT_OBJECT_CHANGED_DATA {
     pub pContact: *mut PEER_CONTACT,
     pub pEndpoint: *mut PEER_ENDPOINT,
     pub changeType: PEER_CHANGE_TYPE,
     pub pObject: *mut PEER_OBJECT,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_EVENT_OBJECT_CHANGED_DATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PEER_EVENT_OBJECT_CHANGED_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1000,16 +955,16 @@ impl ::core::clone::Clone for PEER_EVENT_PEOPLE_NEAR_ME_CHANGED_DATA {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PEER_EVENT_PRESENCE_CHANGED_DATA {
     pub pContact: *mut PEER_CONTACT,
     pub pEndpoint: *mut PEER_ENDPOINT,
     pub changeType: PEER_CHANGE_TYPE,
     pub pPresenceInfo: *mut PEER_PRESENCE_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_EVENT_PRESENCE_CHANGED_DATA {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PEER_EVENT_PRESENCE_CHANGED_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1054,14 +1009,11 @@ impl ::core::clone::Clone for PEER_EVENT_SYNCHRONIZED_DATA {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PEER_EVENT_WATCHLIST_CHANGED_DATA {
     pub pContact: *mut PEER_CONTACT,
     pub changeType: PEER_CHANGE_TYPE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PEER_EVENT_WATCHLIST_CHANGED_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PEER_EVENT_WATCHLIST_CHANGED_DATA {
     fn clone(&self) -> Self {
         *self
@@ -1254,7 +1206,7 @@ impl ::core::clone::Clone for PEER_INVITATION {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct PEER_INVITATION_INFO {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -1267,18 +1219,18 @@ pub struct PEER_INVITATION_INFO {
     pub pwzGroupFriendlyName: ::windows_core_sys::PWSTR,
     pub pwzIssuerFriendlyName: ::windows_core_sys::PWSTR,
     pub pwzSubjectFriendlyName: ::windows_core_sys::PWSTR,
-    pub ftValidityStart: super::super::Foundation::FILETIME,
-    pub ftValidityEnd: super::super::Foundation::FILETIME,
+    pub ftValidityStart: ::win32_foundation_sys::FILETIME,
+    pub ftValidityEnd: ::win32_foundation_sys::FILETIME,
     pub cRoles: u32,
     pub pRoles: *mut ::windows_core_sys::GUID,
     pub cClassifiers: u32,
     pub ppwzClassifiers: *mut ::windows_core_sys::PWSTR,
-    pub pSubjectPublicKey: *mut super::super::Security::Cryptography::CERT_PUBLIC_KEY_INFO,
+    pub pSubjectPublicKey: *mut ::win32_security_sys::Cryptography::CERT_PUBLIC_KEY_INFO,
     pub authScheme: PEER_GROUP_AUTHENTICATION_SCHEME,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for PEER_INVITATION_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for PEER_INVITATION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1302,7 +1254,7 @@ pub const PEER_INVITATION_RESPONSE_ACCEPTED: PEER_INVITATION_RESPONSE_TYPE = 1i3
 pub const PEER_INVITATION_RESPONSE_EXPIRED: PEER_INVITATION_RESPONSE_TYPE = 2i32;
 pub const PEER_INVITATION_RESPONSE_ERROR: PEER_INVITATION_RESPONSE_TYPE = 3i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
 pub struct PEER_MEMBER {
     pub dwSize: u32,
     pub dwFlags: u32,
@@ -1313,9 +1265,9 @@ pub struct PEER_MEMBER {
     pub pAddresses: *mut PEER_ADDRESS,
     pub pCredentialInfo: *mut PEER_CREDENTIAL_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
 impl ::core::marker::Copy for PEER_MEMBER {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_Security_Cryptography"))]
 impl ::core::clone::Clone for PEER_MEMBER {
     fn clone(&self) -> Self {
         *self
@@ -1404,36 +1356,36 @@ impl ::core::clone::Clone for PEER_PNRP_CLOUD_INFO {
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PEER_PNRP_ENDPOINT_INFO {
     pub pwzPeerName: ::windows_core_sys::PWSTR,
     pub cAddresses: u32,
-    pub ppAddresses: *mut *mut super::super::Networking::WinSock::SOCKADDR,
+    pub ppAddresses: *mut *mut ::win32_networking_sys::WinSock::SOCKADDR,
     pub pwzComment: ::windows_core_sys::PWSTR,
     pub payload: PEER_DATA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_PNRP_ENDPOINT_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PEER_PNRP_ENDPOINT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PEER_PNRP_REGISTRATION_INFO {
     pub pwzCloudName: ::windows_core_sys::PWSTR,
     pub pwzPublishingIdentity: ::windows_core_sys::PWSTR,
     pub cAddresses: u32,
-    pub ppAddresses: *mut *mut super::super::Networking::WinSock::SOCKADDR,
+    pub ppAddresses: *mut *mut ::win32_networking_sys::WinSock::SOCKADDR,
     pub wPort: u16,
     pub pwzComment: ::windows_core_sys::PWSTR,
     pub payload: PEER_DATA,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PEER_PNRP_REGISTRATION_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PEER_PNRP_REGISTRATION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1465,7 +1417,6 @@ pub const PEER_PUBLICATION_SCOPE_NEAR_ME: PEER_PUBLICATION_SCOPE = 1i32;
 pub const PEER_PUBLICATION_SCOPE_INTERNET: PEER_PUBLICATION_SCOPE = 2i32;
 pub const PEER_PUBLICATION_SCOPE_ALL: PEER_PUBLICATION_SCOPE = 3i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PEER_RECORD {
     pub dwSize: u32,
     pub r#type: ::windows_core_sys::GUID,
@@ -1475,15 +1426,13 @@ pub struct PEER_RECORD {
     pub pwzCreatorId: ::windows_core_sys::PWSTR,
     pub pwzModifiedById: ::windows_core_sys::PWSTR,
     pub pwzAttributes: ::windows_core_sys::PWSTR,
-    pub ftCreation: super::super::Foundation::FILETIME,
-    pub ftExpiration: super::super::Foundation::FILETIME,
-    pub ftLastModified: super::super::Foundation::FILETIME,
+    pub ftCreation: ::win32_foundation_sys::FILETIME,
+    pub ftExpiration: ::win32_foundation_sys::FILETIME,
+    pub ftLastModified: ::win32_foundation_sys::FILETIME,
     pub securityData: PEER_DATA,
     pub data: PEER_DATA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PEER_RECORD {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PEER_RECORD {
     fn clone(&self) -> Self {
         *self
@@ -1498,7 +1447,6 @@ pub type PEER_RECORD_FLAGS = i32;
 pub const PEER_RECORD_FLAG_AUTOREFRESH: PEER_RECORD_FLAGS = 1i32;
 pub const PEER_RECORD_FLAG_DELETED: PEER_RECORD_FLAGS = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct PEER_SECURITY_INTERFACE {
     pub dwSize: u32,
     pub pwzSspFilename: ::windows_core_sys::PWSTR,
@@ -1511,9 +1459,7 @@ pub struct PEER_SECURITY_INTERFACE {
     pub pfnFreeSecurityData: PFNPEER_FREE_SECURITY_DATA,
     pub pfnAuthFailed: PFNPEER_ON_PASSWORD_AUTH_FAILED,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PEER_SECURITY_INTERFACE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for PEER_SECURITY_INTERFACE {
     fn clone(&self) -> Self {
         *self
@@ -1540,9 +1486,7 @@ pub const PEER_WATCH_BLOCKED: PEER_WATCH_PERMISSION = 0i32;
 pub const PEER_WATCH_ALLOWED: PEER_WATCH_PERMISSION = 1i32;
 pub type PFNPEER_FREE_SECURITY_DATA = ::core::option::Option<unsafe extern "system" fn(hgraph: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void, psecuritydata: *const PEER_DATA) -> ::windows_core_sys::HRESULT>;
 pub type PFNPEER_ON_PASSWORD_AUTH_FAILED = ::core::option::Option<unsafe extern "system" fn(hgraph: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFNPEER_SECURE_RECORD = ::core::option::Option<unsafe extern "system" fn(hgraph: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void, precord: *const PEER_RECORD, changetype: PEER_RECORD_CHANGE_TYPE, ppsecuritydata: *mut *mut PEER_DATA) -> ::windows_core_sys::HRESULT>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFNPEER_VALIDATE_RECORD = ::core::option::Option<unsafe extern "system" fn(hgraph: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void, precord: *const PEER_RECORD, changetype: PEER_RECORD_CHANGE_TYPE) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
 pub struct PNRPCLOUDINFO {
@@ -1559,7 +1503,7 @@ impl ::core::clone::Clone for PNRPCLOUDINFO {
 }
 pub const PNRPINFO_HINT: u32 = 1u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 pub struct PNRPINFO_V1 {
     pub dwSize: u32,
     pub lpwszIdentity: ::windows_core_sys::PWSTR,
@@ -1568,19 +1512,19 @@ pub struct PNRPINFO_V1 {
     pub dwLifetime: u32,
     pub enResolveCriteria: PNRP_RESOLVE_CRITERIA,
     pub dwFlags: u32,
-    pub saHint: super::super::Networking::WinSock::SOCKET_ADDRESS,
+    pub saHint: ::win32_networking_sys::WinSock::SOCKET_ADDRESS,
     pub enNameState: PNRP_REGISTERED_ID_STATE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::marker::Copy for PNRPINFO_V1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
+#[cfg(feature = "Win32_Networking_WinSock")]
 impl ::core::clone::Clone for PNRPINFO_V1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
 pub struct PNRPINFO_V2 {
     pub dwSize: u32,
     pub lpwszIdentity: ::windows_core_sys::PWSTR,
@@ -1589,28 +1533,28 @@ pub struct PNRPINFO_V2 {
     pub dwLifetime: u32,
     pub enResolveCriteria: PNRP_RESOLVE_CRITERIA,
     pub dwFlags: u32,
-    pub saHint: super::super::Networking::WinSock::SOCKET_ADDRESS,
+    pub saHint: ::win32_networking_sys::WinSock::SOCKET_ADDRESS,
     pub enNameState: PNRP_REGISTERED_ID_STATE,
     pub enExtendedPayloadType: PNRP_EXTENDED_PAYLOAD_TYPE,
     pub Anonymous: PNRPINFO_V2_0,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
 impl ::core::marker::Copy for PNRPINFO_V2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
 impl ::core::clone::Clone for PNRPINFO_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
 pub union PNRPINFO_V2_0 {
-    pub blobPayload: super::super::System::Com::BLOB,
+    pub blobPayload: ::win32_system_sys::Com::BLOB,
     pub pwszPayload: ::windows_core_sys::PWSTR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
 impl ::core::marker::Copy for PNRPINFO_V2_0 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
+#[cfg(all(feature = "Win32_Networking_WinSock", feature = "Win32_System_Com"))]
 impl ::core::clone::Clone for PNRPINFO_V2_0 {
     fn clone(&self) -> Self {
         *self

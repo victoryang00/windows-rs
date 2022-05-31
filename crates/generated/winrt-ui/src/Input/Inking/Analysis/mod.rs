@@ -23,10 +23,7 @@ unsafe impl ::windows_core::Interface for IInkAnalysisInkDrawing {
 pub struct IInkAnalysisInkDrawing_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub DrawingKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut InkAnalysisDrawingKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Center: usize,
+    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub Points: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -93,28 +90,27 @@ impl IInkAnalysisNode {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -125,11 +121,11 @@ impl IInkAnalysisNode {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -206,10 +202,7 @@ pub struct IInkAnalysisNode_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Id: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     pub Kind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut InkAnalysisNodeKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BoundingRect: usize,
+    pub BoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
     pub RotatedBoundingRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
@@ -306,10 +299,7 @@ pub struct IInkAnalyzer_Vtbl {
     RemoveDataForStrokes: usize,
     pub ReplaceDataForStroke: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, stroke: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetStrokeDataKind: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, strokeid: u32, strokekind: InkAnalysisStrokeKind) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub AnalyzeAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    AnalyzeAsync: usize,
 }
 #[repr(transparent)]
 pub struct IInkAnalyzerFactory(::windows_core::IUnknown);
@@ -465,28 +455,27 @@ impl InkAnalysisInkBullet {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -497,11 +486,11 @@ impl InkAnalysisInkBullet {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -609,20 +598,19 @@ impl InkAnalysisInkDrawing {
             (::windows_core::Interface::vtable(this).DrawingKind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisDrawingKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Center(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Center(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Points(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn Points(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Points)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).Points)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     pub fn Id(&self) -> ::windows_core::Result<u32> {
@@ -639,28 +627,27 @@ impl InkAnalysisInkDrawing {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -671,11 +658,11 @@ impl InkAnalysisInkDrawing {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -784,11 +771,11 @@ impl InkAnalysisInkWord {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TextAlternates(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn TextAlternates(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TextAlternates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).TextAlternates)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     pub fn Id(&self) -> ::windows_core::Result<u32> {
@@ -805,28 +792,27 @@ impl InkAnalysisInkWord {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -837,11 +823,11 @@ impl InkAnalysisInkWord {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -970,28 +956,27 @@ impl InkAnalysisLine {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -1002,11 +987,11 @@ impl InkAnalysisLine {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -1128,28 +1113,27 @@ impl InkAnalysisListItem {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -1160,11 +1144,11 @@ impl InkAnalysisListItem {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -1279,28 +1263,27 @@ impl InkAnalysisNode {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -1311,11 +1294,11 @@ impl InkAnalysisNode {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
 }
@@ -1470,28 +1453,27 @@ impl InkAnalysisParagraph {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -1502,11 +1484,11 @@ impl InkAnalysisParagraph {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
     pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1711,28 +1693,27 @@ impl InkAnalysisRoot {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -1743,11 +1724,11 @@ impl InkAnalysisRoot {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
     pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -1758,11 +1739,11 @@ impl InkAnalysisRoot {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindNodes(&self, nodekind: InkAnalysisNodeKind) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn FindNodes(&self, nodekind: InkAnalysisNodeKind) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindNodes)(::windows_core::Interface::as_raw(this), nodekind, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).FindNodes)(::windows_core::Interface::as_raw(this), nodekind, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
 }
@@ -1944,28 +1925,27 @@ impl InkAnalysisWritingRegion {
             (::windows_core::Interface::vtable(this).Kind)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<InkAnalysisNodeKind>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Rect> {
+    pub fn BoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).BoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>> {
+    pub fn RotatedBoundingRect(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Foundation::Point>>(result__)
+            (::windows_core::Interface::vtable(this).RotatedBoundingRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_foundation::Point>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<IInkAnalysisNode>>(result__)
         }
     }
     pub fn Parent(&self) -> ::windows_core::Result<IInkAnalysisNode> {
@@ -1976,11 +1956,11 @@ impl InkAnalysisWritingRegion {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn GetStrokeIds(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<u32>> {
+    pub fn GetStrokeIds(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<u32>> {
         let this = &::windows_core::Interface::cast::<IInkAnalysisNode>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<u32>>(result__)
+            (::windows_core::Interface::vtable(this).GetStrokeIds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<u32>>(result__)
         }
     }
     pub fn RecognizedText(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -2114,7 +2094,7 @@ impl InkAnalyzer {
         unsafe { (::windows_core::Interface::vtable(this).AddDataForStroke)(::windows_core::Interface::as_raw(this), stroke.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AddDataForStrokes<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IIterable<super::InkStroke>>>(&self, strokes: Param0) -> ::windows_core::Result<()> {
+    pub fn AddDataForStrokes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<super::InkStroke>>>(&self, strokes: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).AddDataForStrokes)(::windows_core::Interface::as_raw(this), strokes.into_param().abi()).ok() }
     }
@@ -2127,7 +2107,7 @@ impl InkAnalyzer {
         unsafe { (::windows_core::Interface::vtable(this).RemoveDataForStroke)(::windows_core::Interface::as_raw(this), strokeid).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn RemoveDataForStrokes<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IIterable<u32>>>(&self, strokeids: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveDataForStrokes<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<u32>>>(&self, strokeids: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveDataForStrokes)(::windows_core::Interface::as_raw(this), strokeids.into_param().abi()).ok() }
     }
@@ -2139,12 +2119,11 @@ impl InkAnalyzer {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetStrokeDataKind)(::windows_core::Interface::as_raw(this), strokeid, strokekind).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn AnalyzeAsync(&self) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<InkAnalysisResult>> {
+    pub fn AnalyzeAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<InkAnalysisResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AnalyzeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<InkAnalysisResult>>(result__)
+            (::windows_core::Interface::vtable(this).AnalyzeAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<InkAnalysisResult>>(result__)
         }
     }
 }

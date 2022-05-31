@@ -1,6 +1,5 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
     pub fn Netbios(pncb: *mut NCB) -> u8;
 }
 #[repr(C)]
@@ -116,7 +115,6 @@ impl ::core::clone::Clone for NAME_BUFFER {
 pub const NAME_FLAGS_MASK: u32 = 135u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NCB {
     pub ncb_command: u8,
     pub ncb_retcode: u8,
@@ -132,13 +130,11 @@ pub struct NCB {
     pub ncb_lana_num: u8,
     pub ncb_cmd_cplt: u8,
     pub ncb_reserve: [u8; 18],
-    pub ncb_event: super::super::Foundation::HANDLE,
+    pub ncb_event: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NCB {}
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NCB {
     fn clone(&self) -> Self {
         *self
@@ -146,7 +142,6 @@ impl ::core::clone::Clone for NCB {
 }
 #[repr(C)]
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NCB {
     pub ncb_command: u8,
     pub ncb_retcode: u8,
@@ -162,13 +157,11 @@ pub struct NCB {
     pub ncb_lana_num: u8,
     pub ncb_cmd_cplt: u8,
     pub ncb_reserve: [u8; 10],
-    pub ncb_event: super::super::Foundation::HANDLE,
+    pub ncb_event: ::win32_foundation_sys::HANDLE,
 }
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NCB {}
 #[cfg(target_arch = "x86")]
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NCB {
     fn clone(&self) -> Self {
         *self

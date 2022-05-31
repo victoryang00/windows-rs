@@ -1,11 +1,9 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_UI_Controls")]
-    pub fn CreateSecurityPage(psi: ISecurityInformation) -> super::super::super::UI::Controls::HPROPSHEETPAGE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EditSecurity(hwndowner: super::super::super::Foundation::HWND, psi: ISecurityInformation) -> super::super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EditSecurityAdvanced(hwndowner: super::super::super::Foundation::HWND, psi: ISecurityInformation, usipage: SI_PAGE_TYPE) -> ::windows_core_sys::HRESULT;
+    pub fn CreateSecurityPage(psi: ISecurityInformation) -> ::win32_ui_sys::Controls::HPROPSHEETPAGE;
+    pub fn EditSecurity(hwndowner: ::win32_foundation_sys::HWND, psi: ISecurityInformation) -> ::win32_foundation_sys::BOOL;
+    pub fn EditSecurityAdvanced(hwndowner: ::win32_foundation_sys::HWND, psi: ISecurityInformation, usipage: SI_PAGE_TYPE) -> ::windows_core_sys::HRESULT;
 }
 pub const CFSTR_ACLUI_SID_INFO_LIST: &str = "CFSTR_ACLUI_SID_INFO_LIST";
 pub const DOBJ_COND_NTACLS: i32 = 8i32;
@@ -14,16 +12,13 @@ pub const DOBJ_RES_ROOT: i32 = 2i32;
 pub const DOBJ_RIBBON_LAUNCH: i32 = 16i32;
 pub const DOBJ_VOL_NTACLS: i32 = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EFFPERM_RESULT_LIST {
-    pub fEvaluated: super::super::super::Foundation::BOOLEAN,
+    pub fEvaluated: ::win32_foundation_sys::BOOLEAN,
     pub cObjectTypeListLength: u32,
     pub pObjectTypeList: *mut super::super::OBJECT_TYPE_LIST,
     pub pGrantedAccessList: *mut u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EFFPERM_RESULT_LIST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EFFPERM_RESULT_LIST {
     fn clone(&self) -> Self {
         *self
@@ -41,7 +36,6 @@ pub const SI_ADVANCED: SECURITY_INFO_PAGE_FLAGS = 16u32;
 pub const SI_EDIT_AUDITS: SECURITY_INFO_PAGE_FLAGS = 2u32;
 pub const SI_EDIT_PROPERTIES: SECURITY_INFO_PAGE_FLAGS = 128u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SECURITY_OBJECT {
     pub pwszName: ::windows_core_sys::PWSTR,
     pub pData: *mut ::core::ffi::c_void,
@@ -49,11 +43,9 @@ pub struct SECURITY_OBJECT {
     pub pData2: *mut ::core::ffi::c_void,
     pub cbData2: u32,
     pub Id: u32,
-    pub fWellKnown: super::super::super::Foundation::BOOLEAN,
+    pub fWellKnown: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SECURITY_OBJECT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SECURITY_OBJECT {
     fn clone(&self) -> Self {
         *self
@@ -64,30 +56,24 @@ pub const SECURITY_OBJECT_ID_CENTRAL_POLICY: u32 = 3u32;
 pub const SECURITY_OBJECT_ID_OBJECT_SD: u32 = 1u32;
 pub const SECURITY_OBJECT_ID_SHARE: u32 = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SID_INFO {
-    pub pSid: super::super::super::Foundation::PSID,
+    pub pSid: ::win32_foundation_sys::PSID,
     pub pwzCommonName: ::windows_core_sys::PWSTR,
     pub pwzClass: ::windows_core_sys::PWSTR,
     pub pwzUPN: ::windows_core_sys::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SID_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SID_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SID_INFO_LIST {
     pub cItems: u32,
     pub aSidInfo: [SID_INFO; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SID_INFO_LIST {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SID_INFO_LIST {
     fn clone(&self) -> Self {
         *self
@@ -129,18 +115,15 @@ pub const SI_NO_ACL_PROTECT: i32 = 512i32;
 pub const SI_NO_TREE_APPLY: i32 = 1024i32;
 pub const SI_OBJECT_GUID: i32 = 65536i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SI_OBJECT_INFO {
     pub dwFlags: SI_OBJECT_INFO_FLAGS,
-    pub hInstance: super::super::super::Foundation::HINSTANCE,
+    pub hInstance: ::win32_foundation_sys::HINSTANCE,
     pub pszServerName: ::windows_core_sys::PWSTR,
     pub pszObjectName: ::windows_core_sys::PWSTR,
     pub pszPageTitle: ::windows_core_sys::PWSTR,
     pub guidObjectType: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SI_OBJECT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SI_OBJECT_INFO {
     fn clone(&self) -> Self {
         *self

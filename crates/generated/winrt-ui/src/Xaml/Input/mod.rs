@@ -274,15 +274,13 @@ impl AccessKeyManager {
             (::windows_core::Interface::vtable(this).IsDisplayModeEnabled)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn IsDisplayModeEnabledChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<::windows_core::IInspectable, ::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn IsDisplayModeEnabledChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<::windows_core::IInspectable, ::windows_core::IInspectable>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IAccessKeyManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).IsDisplayModeEnabledChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).IsDisplayModeEnabledChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveIsDisplayModeEnabledChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveIsDisplayModeEnabledChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IAccessKeyManagerStatics(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveIsDisplayModeEnabledChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn ExitDisplayMode() -> ::windows_core::Result<()> {
@@ -615,8 +613,7 @@ impl ContextRequestedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryGetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0, point: &mut super::super::super::Foundation::Point) -> ::windows_core::Result<bool> {
+    pub fn TryGetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0, point: &mut ::winrt_foundation::Point) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
@@ -810,11 +807,11 @@ impl DoubleTappedRoutedEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Devices_Input")]
-    pub fn PointerDeviceType(&self) -> ::windows_core::Result<super::super::super::Devices::Input::PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Input::PointerDeviceType>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Input::PointerDeviceType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_devices::Input::PointerDeviceType>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
     pub fn Handled(&self) -> ::windows_core::Result<bool> {
@@ -828,12 +825,11 @@ impl DoubleTappedRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn GetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPosition)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).GetPosition)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
 }
@@ -1033,29 +1029,25 @@ impl FindNextElementOptions {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetSearchRoot)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ExclusionRect(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn ExclusionRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).ExclusionRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).ExclusionRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetExclusionRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetExclusionRect<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetExclusionRect)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn HintRect(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn HintRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).HintRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).HintRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetHintRect<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetHintRect<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHintRect)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -1201,8 +1193,7 @@ impl FocusManager {
             (::windows_core::Interface::vtable(this).FindNextFocusableElement)(::windows_core::Interface::as_raw(this), focusnavigationdirection, result__.as_mut_ptr()).from_abi::<super::UIElement>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FindNextFocusableElementWithHint<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Rect>>(focusnavigationdirection: FocusNavigationDirection, hintrect: Param1) -> ::windows_core::Result<super::UIElement> {
+    pub fn FindNextFocusableElementWithHint<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(focusnavigationdirection: FocusNavigationDirection, hintrect: Param1) -> ::windows_core::Result<super::UIElement> {
         Self::IFocusManagerStatics3(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).FindNextFocusableElementWithHint)(::windows_core::Interface::as_raw(this), focusnavigationdirection, hintrect.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::UIElement>(result__)
@@ -1238,69 +1229,58 @@ impl FocusManager {
             (::windows_core::Interface::vtable(this).FindNextElementWithOptions)(::windows_core::Interface::as_raw(this), focusnavigationdirection, focusnavigationoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::DependencyObject>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryFocusAsync<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0, value: super::FocusState) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<FocusMovementResult>> {
+    pub fn TryFocusAsync<'a, Param0: ::windows_core::IntoParam<'a, super::DependencyObject>>(element: Param0, value: super::FocusState) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FocusMovementResult>> {
         Self::IFocusManagerStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryFocusAsync)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<FocusMovementResult>>(result__)
+            (::windows_core::Interface::vtable(this).TryFocusAsync)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FocusMovementResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryMoveFocusAsync(focusnavigationdirection: FocusNavigationDirection) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<FocusMovementResult>> {
+    pub fn TryMoveFocusAsync(focusnavigationdirection: FocusNavigationDirection) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FocusMovementResult>> {
         Self::IFocusManagerStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryMoveFocusAsync)(::windows_core::Interface::as_raw(this), focusnavigationdirection, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<FocusMovementResult>>(result__)
+            (::windows_core::Interface::vtable(this).TryMoveFocusAsync)(::windows_core::Interface::as_raw(this), focusnavigationdirection, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FocusMovementResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryMoveFocusWithOptionsAsync<'a, Param1: ::windows_core::IntoParam<'a, FindNextElementOptions>>(focusnavigationdirection: FocusNavigationDirection, focusnavigationoptions: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<FocusMovementResult>> {
+    pub fn TryMoveFocusWithOptionsAsync<'a, Param1: ::windows_core::IntoParam<'a, FindNextElementOptions>>(focusnavigationdirection: FocusNavigationDirection, focusnavigationoptions: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<FocusMovementResult>> {
         Self::IFocusManagerStatics5(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryMoveFocusWithOptionsAsync)(::windows_core::Interface::as_raw(this), focusnavigationdirection, focusnavigationoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<FocusMovementResult>>(result__)
+            (::windows_core::Interface::vtable(this).TryMoveFocusWithOptionsAsync)(::windows_core::Interface::as_raw(this), focusnavigationdirection, focusnavigationoptions.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<FocusMovementResult>>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventHandler<FocusManagerGotFocusEventArgs>>>(handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn GotFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<FocusManagerGotFocusEventArgs>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IFocusManagerStatics6(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).GotFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).GotFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveGotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveGotFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IFocusManagerStatics6(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveGotFocus)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LostFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventHandler<FocusManagerLostFocusEventArgs>>>(handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn LostFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<FocusManagerLostFocusEventArgs>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IFocusManagerStatics6(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).LostFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).LostFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveLostFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveLostFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IFocusManagerStatics6(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveLostFocus)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GettingFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventHandler<GettingFocusEventArgs>>>(handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn GettingFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<GettingFocusEventArgs>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IFocusManagerStatics6(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).GettingFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).GettingFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveGettingFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveGettingFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IFocusManagerStatics6(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveGettingFocus)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LosingFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventHandler<LosingFocusEventArgs>>>(handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn LosingFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<LosingFocusEventArgs>>>(handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         Self::IFocusManagerStatics6(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).LosingFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).LosingFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveLosingFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveLosingFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(token: Param0) -> ::windows_core::Result<()> {
         Self::IFocusManagerStatics6(|this| unsafe { (::windows_core::Interface::vtable(this).RemoveLosingFocus)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() })
     }
     pub fn GetFocusedElement2<'a, Param0: ::windows_core::IntoParam<'a, super::XamlRoot>>(xamlroot: Param0) -> ::windows_core::Result<::windows_core::IInspectable> {
@@ -1983,11 +1963,11 @@ impl HoldingRoutedEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Devices_Input")]
-    pub fn PointerDeviceType(&self) -> ::windows_core::Result<super::super::super::Devices::Input::PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Input::PointerDeviceType>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Input::PointerDeviceType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_devices::Input::PointerDeviceType>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
     #[cfg(feature = "UI_Input")]
@@ -2009,12 +1989,11 @@ impl HoldingRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn GetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPosition)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).GetPosition)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
 }
@@ -2173,14 +2152,8 @@ unsafe impl ::windows_core::Interface for IAccessKeyManagerStatics {
 pub struct IAccessKeyManagerStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub IsDisplayModeEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub IsDisplayModeEnabledChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    IsDisplayModeEnabledChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveIsDisplayModeEnabledChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveIsDisplayModeEnabledChanged: usize,
+    pub IsDisplayModeEnabledChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveIsDisplayModeEnabledChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub ExitDisplayMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -2234,16 +2207,14 @@ pub struct ICharacterReceivedRoutedEventArgs_Vtbl {
 #[repr(transparent)]
 pub struct ICommand(::windows_core::IUnknown);
 impl ICommand {
-    #[cfg(feature = "Foundation")]
-    pub fn CanExecuteChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn CanExecuteChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CanExecuteChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CanExecuteChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCanExecuteChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCanExecuteChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCanExecuteChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -2330,14 +2301,8 @@ unsafe impl ::windows_core::Interface for ICommand {
 #[doc(hidden)]
 pub struct ICommand_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub CanExecuteChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CanExecuteChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCanExecuteChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCanExecuteChanged: usize,
+    pub CanExecuteChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCanExecuteChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub CanExecute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parameter: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub Execute: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, parameter: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -2354,10 +2319,7 @@ pub struct IContextRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub TryGetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, point: *mut super::super::super::Foundation::Point, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryGetPosition: usize,
+    pub TryGetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, point: *mut ::winrt_foundation::Point, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2371,15 +2333,12 @@ unsafe impl ::windows_core::Interface for IDoubleTappedRoutedEventArgs {
 pub struct IDoubleTappedRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Devices_Input")]
-    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Input"))]
     PointerDeviceType: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPosition: usize,
+    pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2407,22 +2366,10 @@ pub struct IFindNextElementOptions_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub SearchRoot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetSearchRoot: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ExclusionRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ExclusionRect: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetExclusionRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetExclusionRect: usize,
-    #[cfg(feature = "Foundation")]
-    pub HintRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    HintRect: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetHintRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetHintRect: usize,
+    pub ExclusionRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    pub SetExclusionRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    pub HintRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    pub SetHintRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub XYFocusNavigationStrategyOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut XYFocusNavigationStrategyOverride) -> ::windows_core::HRESULT,
     pub SetXYFocusNavigationStrategyOverride: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: XYFocusNavigationStrategyOverride) -> ::windows_core::HRESULT,
 }
@@ -2504,10 +2451,7 @@ unsafe impl ::windows_core::Interface for IFocusManagerStatics3 {
 pub struct IFocusManagerStatics3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub FindNextFocusableElement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, focusnavigationdirection: FocusNavigationDirection, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub FindNextFocusableElementWithHint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, focusnavigationdirection: FocusNavigationDirection, hintrect: super::super::super::Foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FindNextFocusableElementWithHint: usize,
+    pub FindNextFocusableElementWithHint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, focusnavigationdirection: FocusNavigationDirection, hintrect: ::winrt_foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2537,18 +2481,9 @@ unsafe impl ::windows_core::Interface for IFocusManagerStatics5 {
 #[doc(hidden)]
 pub struct IFocusManagerStatics5_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub TryFocusAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: super::FocusState, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryFocusAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryMoveFocusAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, focusnavigationdirection: FocusNavigationDirection, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryMoveFocusAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryMoveFocusWithOptionsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, focusnavigationdirection: FocusNavigationDirection, focusnavigationoptions: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryMoveFocusWithOptionsAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2561,38 +2496,14 @@ unsafe impl ::windows_core::Interface for IFocusManagerStatics6 {
 #[doc(hidden)]
 pub struct IFocusManagerStatics6_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub GotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GotFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveGotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveGotFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub LostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LostFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveLostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveLostFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub GettingFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GettingFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveGettingFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveGettingFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub LosingFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LosingFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveLosingFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveLosingFocus: usize,
+    pub GotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveGotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub LostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveLostFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub GettingFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveGettingFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub LosingFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveLosingFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2681,7 +2592,7 @@ unsafe impl ::windows_core::Interface for IHoldingRoutedEventArgs {
 pub struct IHoldingRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Devices_Input")]
-    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Input"))]
     PointerDeviceType: usize,
     #[cfg(feature = "UI_Input")]
@@ -2690,10 +2601,7 @@ pub struct IHoldingRoutedEventArgs_Vtbl {
     HoldingState: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPosition: usize,
+    pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2798,7 +2706,7 @@ unsafe impl ::windows_core::Interface for IKeyRoutedEventArgs {
 pub struct IKeyRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "System")]
-    pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::System::VirtualKey) -> ::windows_core::HRESULT,
+    pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System"))]
     Key: usize,
     #[cfg(feature = "UI_Core")]
@@ -2820,7 +2728,7 @@ unsafe impl ::windows_core::Interface for IKeyRoutedEventArgs2 {
 pub struct IKeyRoutedEventArgs2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "System")]
-    pub OriginalKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::System::VirtualKey) -> ::windows_core::HRESULT,
+    pub OriginalKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System"))]
     OriginalKey: usize,
 }
@@ -2849,33 +2757,27 @@ unsafe impl ::windows_core::Interface for IKeyboardAccelerator {
 pub struct IKeyboardAccelerator_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "System")]
-    pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::System::VirtualKey) -> ::windows_core::HRESULT,
+    pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System"))]
     Key: usize,
     #[cfg(feature = "System")]
-    pub SetKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::System::VirtualKey) -> ::windows_core::HRESULT,
+    pub SetKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System"))]
     SetKey: usize,
     #[cfg(feature = "System")]
-    pub Modifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::System::VirtualKeyModifiers) -> ::windows_core::HRESULT,
+    pub Modifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKeyModifiers) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System"))]
     Modifiers: usize,
     #[cfg(feature = "System")]
-    pub SetModifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::System::VirtualKeyModifiers) -> ::windows_core::HRESULT,
+    pub SetModifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_system::VirtualKeyModifiers) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System"))]
     SetModifiers: usize,
     pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetIsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub ScopeOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetScopeOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Invoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Invoked: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveInvoked: usize,
+    pub Invoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveInvoked: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2995,23 +2897,20 @@ unsafe impl ::windows_core::Interface for IManipulationCompletedRoutedEventArgs 
 pub struct IManipulationCompletedRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Container: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub IsInertial: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     Cumulative: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub Velocities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationVelocities) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     Velocities: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Input")]
-    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Input"))]
     PointerDeviceType: usize,
 }
@@ -3027,27 +2926,24 @@ unsafe impl ::windows_core::Interface for IManipulationDeltaRoutedEventArgs {
 pub struct IManipulationDeltaRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Container: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub IsInertial: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub Delta: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     Delta: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     Cumulative: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub Velocities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationVelocities) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     Velocities: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Input")]
-    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Input"))]
     PointerDeviceType: usize,
     pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -3073,20 +2969,20 @@ pub struct IManipulationInertiaStartingRoutedEventArgs_Vtbl {
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Input")]
-    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Input"))]
     PointerDeviceType: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub Delta: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     Delta: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     Cumulative: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub Velocities: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationVelocities) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     Velocities: usize,
 }
 #[doc(hidden)]
@@ -3100,14 +2996,8 @@ unsafe impl ::windows_core::Interface for IManipulationPivot {
 #[doc(hidden)]
 pub struct IManipulationPivot_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Center: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetCenter: usize,
+    pub Center: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub SetCenter: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub Radius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
 }
@@ -3122,10 +3012,7 @@ unsafe impl ::windows_core::Interface for IManipulationPivotFactory {
 #[doc(hidden)]
 pub struct IManipulationPivotFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub CreateInstanceWithCenterAndRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: super::super::super::Foundation::Point, radius: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateInstanceWithCenterAndRadius: usize,
+    pub CreateInstanceWithCenterAndRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: ::winrt_foundation::Point, radius: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3139,19 +3026,16 @@ unsafe impl ::windows_core::Interface for IManipulationStartedRoutedEventArgs {
 pub struct IManipulationStartedRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Container: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Input")]
-    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Input"))]
     PointerDeviceType: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub Cumulative: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Input::ManipulationDelta) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Input")))]
+    #[cfg(not(feature = "UI_Input"))]
     Cumulative: usize,
     pub Complete: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -3217,7 +3101,7 @@ pub struct IPointer_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub PointerId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Input")]
-    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Input"))]
     PointerDeviceType: usize,
     pub IsInContact: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -3236,7 +3120,7 @@ pub struct IPointerRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Pointer: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(feature = "System")]
-    pub KeyModifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::System::VirtualKeyModifiers) -> ::windows_core::HRESULT,
+    pub KeyModifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKeyModifiers) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System"))]
     KeyModifiers: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -3275,11 +3159,11 @@ unsafe impl ::windows_core::Interface for IProcessKeyboardAcceleratorEventArgs {
 pub struct IProcessKeyboardAcceleratorEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "System")]
-    pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::System::VirtualKey) -> ::windows_core::HRESULT,
+    pub Key: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKey) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System"))]
     Key: usize,
     #[cfg(feature = "System")]
-    pub Modifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::System::VirtualKeyModifiers) -> ::windows_core::HRESULT,
+    pub Modifiers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_system::VirtualKeyModifiers) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "System"))]
     Modifiers: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
@@ -3297,15 +3181,12 @@ unsafe impl ::windows_core::Interface for IRightTappedRoutedEventArgs {
 pub struct IRightTappedRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Devices_Input")]
-    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Input"))]
     PointerDeviceType: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPosition: usize,
+    pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3372,15 +3253,12 @@ unsafe impl ::windows_core::Interface for ITappedRoutedEventArgs {
 pub struct ITappedRoutedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     #[cfg(feature = "Devices_Input")]
-    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
+    pub PointerDeviceType: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_devices::Input::PointerDeviceType) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Input"))]
     PointerDeviceType: usize,
     pub Handled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetPosition: usize,
+    pub GetPosition: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, relativeto: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -3413,22 +3291,10 @@ pub struct IXamlUICommand_Vtbl {
     pub SetDescription: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub Command: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetCommand: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ExecuteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ExecuteRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveExecuteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveExecuteRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub CanExecuteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CanExecuteRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCanExecuteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCanExecuteRequested: usize,
+    pub ExecuteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveExecuteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub CanExecuteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCanExecuteRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub NotifyCanExecuteChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -3767,11 +3633,11 @@ impl InputScope {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Names(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<InputScopeName>> {
+    pub fn Names(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<InputScopeName>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Names)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<InputScopeName>>(result__)
+            (::windows_core::Interface::vtable(this).Names)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<InputScopeName>>(result__)
         }
     }
 }
@@ -4153,11 +4019,11 @@ pub struct KeyEventHandler_Vtbl {
 pub struct KeyRoutedEventArgs(::windows_core::IUnknown);
 impl KeyRoutedEventArgs {
     #[cfg(feature = "System")]
-    pub fn Key(&self) -> ::windows_core::Result<super::super::super::System::VirtualKey> {
+    pub fn Key(&self) -> ::windows_core::Result<::winrt_system::VirtualKey> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::System::VirtualKey>::zeroed();
-            (::windows_core::Interface::vtable(this).Key)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::VirtualKey>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_system::VirtualKey>::zeroed();
+            (::windows_core::Interface::vtable(this).Key)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKey>(result__)
         }
     }
     #[cfg(feature = "UI_Core")]
@@ -4180,11 +4046,11 @@ impl KeyRoutedEventArgs {
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn OriginalKey(&self) -> ::windows_core::Result<super::super::super::System::VirtualKey> {
+    pub fn OriginalKey(&self) -> ::windows_core::Result<::winrt_system::VirtualKey> {
         let this = &::windows_core::Interface::cast::<IKeyRoutedEventArgs2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::System::VirtualKey>::zeroed();
-            (::windows_core::Interface::vtable(this).OriginalKey)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::VirtualKey>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_system::VirtualKey>::zeroed();
+            (::windows_core::Interface::vtable(this).OriginalKey)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKey>(result__)
         }
     }
     pub fn DeviceId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -4329,28 +4195,28 @@ unsafe impl ::windows_core::RuntimeType for KeyTipPlacementMode {
 pub struct KeyboardAccelerator(::windows_core::IUnknown);
 impl KeyboardAccelerator {
     #[cfg(feature = "System")]
-    pub fn Key(&self) -> ::windows_core::Result<super::super::super::System::VirtualKey> {
+    pub fn Key(&self) -> ::windows_core::Result<::winrt_system::VirtualKey> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::System::VirtualKey>::zeroed();
-            (::windows_core::Interface::vtable(this).Key)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::VirtualKey>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_system::VirtualKey>::zeroed();
+            (::windows_core::Interface::vtable(this).Key)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKey>(result__)
         }
     }
     #[cfg(feature = "System")]
-    pub fn SetKey(&self, value: super::super::super::System::VirtualKey) -> ::windows_core::Result<()> {
+    pub fn SetKey(&self, value: ::winrt_system::VirtualKey) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetKey)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "System")]
-    pub fn Modifiers(&self) -> ::windows_core::Result<super::super::super::System::VirtualKeyModifiers> {
+    pub fn Modifiers(&self) -> ::windows_core::Result<::winrt_system::VirtualKeyModifiers> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::System::VirtualKeyModifiers>::zeroed();
-            (::windows_core::Interface::vtable(this).Modifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::VirtualKeyModifiers>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_system::VirtualKeyModifiers>::zeroed();
+            (::windows_core::Interface::vtable(this).Modifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKeyModifiers>(result__)
         }
     }
     #[cfg(feature = "System")]
-    pub fn SetModifiers(&self, value: super::super::super::System::VirtualKeyModifiers) -> ::windows_core::Result<()> {
+    pub fn SetModifiers(&self, value: ::winrt_system::VirtualKeyModifiers) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetModifiers)(::windows_core::Interface::as_raw(this), value).ok() }
     }
@@ -4376,16 +4242,14 @@ impl KeyboardAccelerator {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetScopeOwner)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Invoked<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<KeyboardAccelerator, KeyboardAcceleratorInvokedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn Invoked<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<KeyboardAccelerator, KeyboardAcceleratorInvokedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).Invoked)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).Invoked)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveInvoked<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveInvoked<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveInvoked)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -4973,12 +4837,11 @@ impl ManipulationCompletedRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Container)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UIElement>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     pub fn IsInertial(&self) -> ::windows_core::Result<bool> {
@@ -4988,7 +4851,7 @@ impl ManipulationCompletedRoutedEventArgs {
             (::windows_core::Interface::vtable(this).IsInertial)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub fn Cumulative(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -4996,7 +4859,7 @@ impl ManipulationCompletedRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Cumulative)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub fn Velocities(&self) -> ::windows_core::Result<super::super::Input::ManipulationVelocities> {
         let this = self;
         unsafe {
@@ -5016,11 +4879,11 @@ impl ManipulationCompletedRoutedEventArgs {
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Devices_Input")]
-    pub fn PointerDeviceType(&self) -> ::windows_core::Result<super::super::super::Devices::Input::PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Input::PointerDeviceType>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Input::PointerDeviceType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_devices::Input::PointerDeviceType>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
 }
@@ -5216,12 +5079,11 @@ impl ManipulationDeltaRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Container)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UIElement>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     pub fn IsInertial(&self) -> ::windows_core::Result<bool> {
@@ -5231,7 +5093,7 @@ impl ManipulationDeltaRoutedEventArgs {
             (::windows_core::Interface::vtable(this).IsInertial)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub fn Delta(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -5239,7 +5101,7 @@ impl ManipulationDeltaRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Delta)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub fn Cumulative(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -5247,7 +5109,7 @@ impl ManipulationDeltaRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Cumulative)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub fn Velocities(&self) -> ::windows_core::Result<super::super::Input::ManipulationVelocities> {
         let this = self;
         unsafe {
@@ -5267,11 +5129,11 @@ impl ManipulationDeltaRoutedEventArgs {
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Devices_Input")]
-    pub fn PointerDeviceType(&self) -> ::windows_core::Result<super::super::super::Devices::Input::PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Input::PointerDeviceType>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Input::PointerDeviceType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_devices::Input::PointerDeviceType>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
     pub fn Complete(&self) -> ::windows_core::Result<()> {
@@ -5516,14 +5378,14 @@ impl ManipulationInertiaStartingRoutedEventArgs {
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Devices_Input")]
-    pub fn PointerDeviceType(&self) -> ::windows_core::Result<super::super::super::Devices::Input::PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Input::PointerDeviceType>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Input::PointerDeviceType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_devices::Input::PointerDeviceType>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub fn Delta(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -5531,7 +5393,7 @@ impl ManipulationInertiaStartingRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Delta)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub fn Cumulative(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -5539,7 +5401,7 @@ impl ManipulationInertiaStartingRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Cumulative)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Input::ManipulationDelta>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub fn Velocities(&self) -> ::windows_core::Result<super::super::Input::ManipulationVelocities> {
         let this = self;
         unsafe {
@@ -5721,16 +5583,14 @@ impl ManipulationPivot {
         static mut SHARED: ::windows_core::FactoryCache<ManipulationPivot, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Center(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Center(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetCenter<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCenter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCenter)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -5745,8 +5605,7 @@ impl ManipulationPivot {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetRadius)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateInstanceWithCenterAndRadius<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Point>>(center: Param0, radius: f64) -> ::windows_core::Result<ManipulationPivot> {
+    pub fn CreateInstanceWithCenterAndRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(center: Param0, radius: f64) -> ::windows_core::Result<ManipulationPivot> {
         Self::IManipulationPivotFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithCenterAndRadius)(::windows_core::Interface::as_raw(this), center.into_param().abi(), radius, result__.as_mut_ptr()).from_abi::<ManipulationPivot>(result__)
@@ -5922,12 +5781,11 @@ impl ManipulationStartedRoutedEventArgs {
             (::windows_core::Interface::vtable(this).Container)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::UIElement>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     pub fn Handled(&self) -> ::windows_core::Result<bool> {
@@ -5942,14 +5800,14 @@ impl ManipulationStartedRoutedEventArgs {
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Devices_Input")]
-    pub fn PointerDeviceType(&self) -> ::windows_core::Result<super::super::super::Devices::Input::PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Input::PointerDeviceType>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Input::PointerDeviceType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_devices::Input::PointerDeviceType>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Input"))]
+    #[cfg(feature = "UI_Input")]
     pub fn Cumulative(&self) -> ::windows_core::Result<super::super::Input::ManipulationDelta> {
         let this = self;
         unsafe {
@@ -6433,11 +6291,11 @@ impl Pointer {
         }
     }
     #[cfg(feature = "Devices_Input")]
-    pub fn PointerDeviceType(&self) -> ::windows_core::Result<super::super::super::Devices::Input::PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Input::PointerDeviceType>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Input::PointerDeviceType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_devices::Input::PointerDeviceType>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
     pub fn IsInContact(&self) -> ::windows_core::Result<bool> {
@@ -6621,11 +6479,11 @@ impl PointerRoutedEventArgs {
         }
     }
     #[cfg(feature = "System")]
-    pub fn KeyModifiers(&self) -> ::windows_core::Result<super::super::super::System::VirtualKeyModifiers> {
+    pub fn KeyModifiers(&self) -> ::windows_core::Result<::winrt_system::VirtualKeyModifiers> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::System::VirtualKeyModifiers>::zeroed();
-            (::windows_core::Interface::vtable(this).KeyModifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::VirtualKeyModifiers>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_system::VirtualKeyModifiers>::zeroed();
+            (::windows_core::Interface::vtable(this).KeyModifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKeyModifiers>(result__)
         }
     }
     pub fn Handled(&self) -> ::windows_core::Result<bool> {
@@ -6648,11 +6506,11 @@ impl PointerRoutedEventArgs {
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "UI_Input"))]
-    pub fn GetIntermediatePoints<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<super::super::Input::PointerPoint>> {
+    pub fn GetIntermediatePoints<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::super::Input::PointerPoint>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetIntermediatePoints)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<super::super::Input::PointerPoint>>(result__)
+            (::windows_core::Interface::vtable(this).GetIntermediatePoints)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::super::Input::PointerPoint>>(result__)
         }
     }
     pub fn IsGenerated(&self) -> ::windows_core::Result<bool> {
@@ -6759,19 +6617,19 @@ unsafe impl ::core::marker::Sync for PointerRoutedEventArgs {}
 pub struct ProcessKeyboardAcceleratorEventArgs(::windows_core::IUnknown);
 impl ProcessKeyboardAcceleratorEventArgs {
     #[cfg(feature = "System")]
-    pub fn Key(&self) -> ::windows_core::Result<super::super::super::System::VirtualKey> {
+    pub fn Key(&self) -> ::windows_core::Result<::winrt_system::VirtualKey> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::System::VirtualKey>::zeroed();
-            (::windows_core::Interface::vtable(this).Key)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::VirtualKey>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_system::VirtualKey>::zeroed();
+            (::windows_core::Interface::vtable(this).Key)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKey>(result__)
         }
     }
     #[cfg(feature = "System")]
-    pub fn Modifiers(&self) -> ::windows_core::Result<super::super::super::System::VirtualKeyModifiers> {
+    pub fn Modifiers(&self) -> ::windows_core::Result<::winrt_system::VirtualKeyModifiers> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::System::VirtualKeyModifiers>::zeroed();
-            (::windows_core::Interface::vtable(this).Modifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::System::VirtualKeyModifiers>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_system::VirtualKeyModifiers>::zeroed();
+            (::windows_core::Interface::vtable(this).Modifiers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_system::VirtualKeyModifiers>(result__)
         }
     }
     pub fn Handled(&self) -> ::windows_core::Result<bool> {
@@ -6952,11 +6810,11 @@ impl RightTappedRoutedEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Devices_Input")]
-    pub fn PointerDeviceType(&self) -> ::windows_core::Result<super::super::super::Devices::Input::PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Input::PointerDeviceType>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Input::PointerDeviceType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_devices::Input::PointerDeviceType>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
     pub fn Handled(&self) -> ::windows_core::Result<bool> {
@@ -6970,12 +6828,11 @@ impl RightTappedRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn GetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPosition)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).GetPosition)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
 }
@@ -7402,11 +7259,11 @@ impl TappedRoutedEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Devices_Input")]
-    pub fn PointerDeviceType(&self) -> ::windows_core::Result<super::super::super::Devices::Input::PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<::winrt_devices::Input::PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Devices::Input::PointerDeviceType>::zeroed();
-            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Devices::Input::PointerDeviceType>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_devices::Input::PointerDeviceType>::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Input::PointerDeviceType>(result__)
         }
     }
     pub fn Handled(&self) -> ::windows_core::Result<bool> {
@@ -7420,12 +7277,11 @@ impl TappedRoutedEventArgs {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetHandled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<super::super::super::Foundation::Point> {
+    pub fn GetPosition<'a, Param0: ::windows_core::IntoParam<'a, super::UIElement>>(&self, relativeto: Param0) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).GetPosition)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).GetPosition)(::windows_core::Interface::as_raw(this), relativeto.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
 }
@@ -7629,16 +7485,14 @@ unsafe impl ::windows_core::RuntimeType for XYFocusNavigationStrategyOverride {
 #[repr(transparent)]
 pub struct XamlUICommand(::windows_core::IUnknown);
 impl XamlUICommand {
-    #[cfg(feature = "Foundation")]
-    pub fn CanExecuteChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventHandler<::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn CanExecuteChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventHandler<::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<ICommand>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CanExecuteChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CanExecuteChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCanExecuteChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCanExecuteChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<ICommand>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCanExecuteChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -7678,11 +7532,11 @@ impl XamlUICommand {
         unsafe { (::windows_core::Interface::vtable(this).SetIconSource)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn KeyboardAccelerators(&self) -> ::windows_core::Result<super::super::super::Foundation::Collections::IVector<KeyboardAccelerator>> {
+    pub fn KeyboardAccelerators(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<KeyboardAccelerator>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).KeyboardAccelerators)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Collections::IVector<KeyboardAccelerator>>(result__)
+            (::windows_core::Interface::vtable(this).KeyboardAccelerators)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<KeyboardAccelerator>>(result__)
         }
     }
     pub fn AccessKey(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -7718,29 +7572,25 @@ impl XamlUICommand {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCommand)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ExecuteRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<XamlUICommand, ExecuteRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn ExecuteRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<XamlUICommand, ExecuteRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ExecuteRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ExecuteRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveExecuteRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveExecuteRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveExecuteRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CanExecuteRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<XamlUICommand, CanExecuteRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn CanExecuteRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<XamlUICommand, CanExecuteRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CanExecuteRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CanExecuteRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCanExecuteRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCanExecuteRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCanExecuteRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }

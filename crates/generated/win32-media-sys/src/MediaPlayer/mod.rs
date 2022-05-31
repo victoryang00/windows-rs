@@ -747,15 +747,12 @@ pub const wmpcnNewCatalogAvailable: WMPCallbackNotification = 4i32;
 pub const wmpcnNewPluginAvailable: WMPCallbackNotification = 5i32;
 pub const wmpcnDisableRadioSkipping: WMPCallbackNotification = 6i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WMPContextMenuInfo {
     pub dwID: u32,
-    pub bstrMenuText: super::super::Foundation::BSTR,
-    pub bstrHelpText: super::super::Foundation::BSTR,
+    pub bstrMenuText: ::win32_foundation_sys::BSTR,
+    pub bstrHelpText: ::win32_foundation_sys::BSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WMPContextMenuInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WMPContextMenuInfo {
     fn clone(&self) -> Self {
         *self

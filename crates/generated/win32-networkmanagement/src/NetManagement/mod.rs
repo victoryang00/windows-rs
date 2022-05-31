@@ -1205,10 +1205,10 @@ pub const DFS_WARN_METADATA_LINK_INFO_INVALID: i32 = -2147469106i32;
 pub const DFS_WARN_METADATA_LINK_TYPE_INCORRECT: i32 = -2147469107i32;
 pub const DNLEN: u32 = 15u32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 pub struct DSREG_JOIN_INFO {
     pub joinType: DSREG_JOIN_TYPE,
-    pub pJoinCertificate: *const super::super::Security::Cryptography::CERT_CONTEXT,
+    pub pJoinCertificate: *const ::win32_security::Cryptography::CERT_CONTEXT,
     pub pszDeviceId: ::windows_core::PWSTR,
     pub pszIdpDomain: ::windows_core::PWSTR,
     pub pszTenantId: ::windows_core::PWSTR,
@@ -1220,15 +1220,15 @@ pub struct DSREG_JOIN_INFO {
     pub pszUserSettingSyncUrl: ::windows_core::PWSTR,
     pub pUserInfo: *mut DSREG_USER_INFO,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::marker::Copy for DSREG_JOIN_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::clone::Clone for DSREG_JOIN_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::fmt::Debug for DSREG_JOIN_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("DSREG_JOIN_INFO")
@@ -1247,19 +1247,19 @@ impl ::core::fmt::Debug for DSREG_JOIN_INFO {
             .finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 unsafe impl ::windows_core::Abi for DSREG_JOIN_INFO {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::PartialEq for DSREG_JOIN_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<DSREG_JOIN_INFO>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::cmp::Eq for DSREG_JOIN_INFO {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 impl ::core::default::Default for DSREG_JOIN_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1909,39 +1909,31 @@ pub const EXTRA_VOLUME: i32 = -1073727521i32;
 pub const EXTRA_VOLUME_DELETED: i32 = -1073727514i32;
 pub const EXTRA_VOLUME_NOT_DELETED: i32 = -1073727513i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FLAT_STRING {
     pub MaximumLength: i16,
     pub Length: i16,
-    pub Buffer: [super::super::Foundation::CHAR; 1],
+    pub Buffer: [::win32_foundation::CHAR; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FLAT_STRING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FLAT_STRING {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for FLAT_STRING {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("FLAT_STRING").field("MaximumLength", &self.MaximumLength).field("Length", &self.Length).field("Buffer", &self.Buffer).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for FLAT_STRING {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for FLAT_STRING {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<FLAT_STRING>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for FLAT_STRING {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for FLAT_STRING {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2127,40 +2119,32 @@ impl ::core::default::Default for GROUP_INFO_2 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct GROUP_INFO_3 {
     pub grpi3_name: ::windows_core::PWSTR,
     pub grpi3_comment: ::windows_core::PWSTR,
-    pub grpi3_group_sid: super::super::Foundation::PSID,
+    pub grpi3_group_sid: ::win32_foundation::PSID,
     pub grpi3_attributes: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for GROUP_INFO_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for GROUP_INFO_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for GROUP_INFO_3 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("GROUP_INFO_3").field("grpi3_name", &self.grpi3_name).field("grpi3_comment", &self.grpi3_comment).field("grpi3_group_sid", &self.grpi3_group_sid).field("grpi3_attributes", &self.grpi3_attributes).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for GROUP_INFO_3 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for GROUP_INFO_3 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<GROUP_INFO_3>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for GROUP_INFO_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for GROUP_INFO_3 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -2661,8 +2645,7 @@ impl INetCfgBindingPath {
     pub unsafe fn IsEnabled(&self) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).IsEnabled)(::windows_core::Interface::as_raw(self)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Enable<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, fenable: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn Enable<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, fenable: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Enable)(::windows_core::Interface::as_raw(self), fenable.into_param().abi()).ok()
     }
     pub unsafe fn GetPathToken(&self) -> ::windows_core::Result<::windows_core::PWSTR> {
@@ -2729,10 +2712,7 @@ pub struct INetCfgBindingPath_Vtbl {
     pub IsSamePathAs: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppath: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsSubPathOf: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppath: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub IsEnabled: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Enable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenable: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Enable: usize,
+    pub Enable: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, fenable: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub GetPathToken: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwpathtoken: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetOwner: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppcomponent: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub GetDepth: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcinterfaces: *mut u32) -> ::windows_core::HRESULT,
@@ -2800,17 +2780,14 @@ pub struct INetCfgClass_Vtbl {
 #[repr(transparent)]
 pub struct INetCfgClassSetup(::windows_core::IUnknown);
 impl INetCfgClassSetup {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SelectAndInstall<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwndparent: Param0, pobotoken: *const OBO_TOKEN) -> ::windows_core::Result<INetCfgComponent> {
+    pub unsafe fn SelectAndInstall<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, hwndparent: Param0, pobotoken: *const OBO_TOKEN) -> ::windows_core::Result<INetCfgComponent> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).SelectAndInstall)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn Install<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwinfid: Param0, pobotoken: *const OBO_TOKEN, dwsetupflags: u32, dwupgradefrombuildno: u32, pszwanswerfile: Param4, pszwanswersections: Param5) -> ::windows_core::Result<INetCfgComponent> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).Install)(::windows_core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefrombuildno), pszwanswerfile.into_param().abi(), pszwanswersections.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn DeInstall<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, pcomponent: Param0, pobotoken: *const OBO_TOKEN, pmszwrefs: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).DeInstall)(::windows_core::Interface::as_raw(self), pcomponent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(pmszwrefs)).ok()
     }
@@ -2859,33 +2836,21 @@ unsafe impl ::windows_core::Interface for INetCfgClassSetup {
 #[doc(hidden)]
 pub struct INetCfgClassSetup_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub SelectAndInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: super::super::Foundation::HWND, pobotoken: *const OBO_TOKEN, ppnccitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    SelectAndInstall: usize,
-    #[cfg(feature = "Win32_Foundation")]
+    pub SelectAndInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: ::win32_foundation::HWND, pobotoken: *const OBO_TOKEN, ppnccitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub Install: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pszwinfid: ::windows_core::PCWSTR, pobotoken: *const OBO_TOKEN, dwsetupflags: u32, dwupgradefrombuildno: u32, pszwanswerfile: ::windows_core::PCWSTR, pszwanswersections: ::windows_core::PCWSTR, ppnccitem: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Install: usize,
-    #[cfg(feature = "Win32_Foundation")]
     pub DeInstall: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pcomponent: ::windows_core::RawPtr, pobotoken: *const OBO_TOKEN, pmszwrefs: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    DeInstall: usize,
 }
 #[repr(transparent)]
 pub struct INetCfgClassSetup2(::windows_core::IUnknown);
 impl INetCfgClassSetup2 {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn SelectAndInstall<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwndparent: Param0, pobotoken: *const OBO_TOKEN) -> ::windows_core::Result<INetCfgComponent> {
+    pub unsafe fn SelectAndInstall<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, hwndparent: Param0, pobotoken: *const OBO_TOKEN) -> ::windows_core::Result<INetCfgComponent> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.SelectAndInstall)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn Install<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param5: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwinfid: Param0, pobotoken: *const OBO_TOKEN, dwsetupflags: u32, dwupgradefrombuildno: u32, pszwanswerfile: Param4, pszwanswersections: Param5) -> ::windows_core::Result<INetCfgComponent> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
         (::windows_core::Interface::vtable(self).base__.Install)(::windows_core::Interface::as_raw(self), pszwinfid.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(dwsetupflags), ::core::mem::transmute(dwupgradefrombuildno), pszwanswerfile.into_param().abi(), pszwanswersections.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<INetCfgComponent>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn DeInstall<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>>(&self, pcomponent: Param0, pobotoken: *const OBO_TOKEN, pmszwrefs: *mut ::windows_core::PWSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).base__.DeInstall)(::windows_core::Interface::as_raw(self), pcomponent.into_param().abi(), ::core::mem::transmute(pobotoken), ::core::mem::transmute(pmszwrefs)).ok()
     }
@@ -3002,12 +2967,11 @@ impl INetCfgComponent {
         (::windows_core::Interface::vtable(self).GetDeviceStatus)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
     #[cfg(feature = "Win32_System_Registry")]
-    pub unsafe fn OpenParamKey(&self) -> ::windows_core::Result<super::super::System::Registry::HKEY> {
-        let mut result__ = ::core::mem::MaybeUninit::<super::super::System::Registry::HKEY>::zeroed();
-        (::windows_core::Interface::vtable(self).OpenParamKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::System::Registry::HKEY>(result__)
+    pub unsafe fn OpenParamKey(&self) -> ::windows_core::Result<::win32_system::Registry::HKEY> {
+        let mut result__ = ::core::mem::MaybeUninit::<::win32_system::Registry::HKEY>::zeroed();
+        (::windows_core::Interface::vtable(self).OpenParamKey)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_system::Registry::HKEY>(result__)
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn RaisePropertyUi<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, hwndparent: Param0, dwflags: u32, punkcontext: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn RaisePropertyUi<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>, Param2: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, hwndparent: Param0, dwflags: u32, punkcontext: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).RaisePropertyUi)(::windows_core::Interface::as_raw(self), hwndparent.into_param().abi(), ::core::mem::transmute(dwflags), punkcontext.into_param().abi()).ok()
     }
 }
@@ -3066,13 +3030,10 @@ pub struct INetCfgComponent_Vtbl {
     pub GetBindName: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, ppszwbindname: *mut ::windows_core::PWSTR) -> ::windows_core::HRESULT,
     pub GetDeviceStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pulstatus: *mut u32) -> ::windows_core::HRESULT,
     #[cfg(feature = "Win32_System_Registry")]
-    pub OpenParamKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phkey: *mut super::super::System::Registry::HKEY) -> ::windows_core::HRESULT,
+    pub OpenParamKey: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, phkey: *mut ::win32_system::Registry::HKEY) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Win32_System_Registry"))]
     OpenParamKey: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub RaisePropertyUi: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: super::super::Foundation::HWND, dwflags: u32, punkcontext: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    RaisePropertyUi: usize,
+    pub RaisePropertyUi: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndparent: ::win32_foundation::HWND, dwflags: u32, punkcontext: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
 pub struct INetCfgComponentBindings(::windows_core::IUnknown);
@@ -3159,8 +3120,7 @@ pub struct INetCfgComponentBindings_Vtbl {
 #[repr(transparent)]
 pub struct INetCfgComponentControl(::windows_core::IUnknown);
 impl INetCfgComponentControl {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>, Param1: ::windows_core::IntoParam<'a, INetCfg>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, picomp: Param0, pinetcfg: Param1, finstalling: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn Initialize<'a, Param0: ::windows_core::IntoParam<'a, INetCfgComponent>, Param1: ::windows_core::IntoParam<'a, INetCfg>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, picomp: Param0, pinetcfg: Param1, finstalling: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).Initialize)(::windows_core::Interface::as_raw(self), picomp.into_param().abi(), pinetcfg.into_param().abi(), finstalling.into_param().abi()).ok()
     }
     pub unsafe fn ApplyRegistryChanges(&self) -> ::windows_core::Result<()> {
@@ -3217,10 +3177,7 @@ unsafe impl ::windows_core::Interface for INetCfgComponentControl {
 #[doc(hidden)]
 pub struct INetCfgComponentControl_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, picomp: ::windows_core::RawPtr, pinetcfg: ::windows_core::RawPtr, finstalling: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    Initialize: usize,
+    pub Initialize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, picomp: ::windows_core::RawPtr, pinetcfg: ::windows_core::RawPtr, finstalling: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub ApplyRegistryChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ApplyPnpChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, picallback: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CancelChanges: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -3357,12 +3314,10 @@ impl INetCfgComponentPropertyUi {
     pub unsafe fn SetContext<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::IUnknown>>(&self, punkreserved: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).SetContext)(::windows_core::Interface::as_raw(self), punkreserved.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn MergePropPages<'a, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, pdwdefpages: *mut u32, pahpspprivate: *mut *mut u8, pcpages: *mut u32, hwndparent: Param3, pszstartpage: *const ::windows_core::PWSTR) -> ::windows_core::Result<()> {
+    pub unsafe fn MergePropPages<'a, Param3: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, pdwdefpages: *mut u32, pahpspprivate: *mut *mut u8, pcpages: *mut u32, hwndparent: Param3, pszstartpage: *const ::windows_core::PWSTR) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).MergePropPages)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(pdwdefpages), ::core::mem::transmute(pahpspprivate), ::core::mem::transmute(pcpages), hwndparent.into_param().abi(), ::core::mem::transmute(pszstartpage)).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn ValidateProperties<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HWND>>(&self, hwndsheet: Param0) -> ::windows_core::Result<()> {
+    pub unsafe fn ValidateProperties<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HWND>>(&self, hwndsheet: Param0) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).ValidateProperties)(::windows_core::Interface::as_raw(self), hwndsheet.into_param().abi()).ok()
     }
     pub unsafe fn ApplyProperties(&self) -> ::windows_core::Result<()> {
@@ -3418,14 +3373,8 @@ pub struct INetCfgComponentPropertyUi_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub QueryPropertyUi: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, punkreserved: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub SetContext: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, punkreserved: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub MergePropPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwdefpages: *mut u32, pahpspprivate: *mut *mut u8, pcpages: *mut u32, hwndparent: super::super::Foundation::HWND, pszstartpage: *const ::windows_core::PWSTR) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    MergePropPages: usize,
-    #[cfg(feature = "Win32_Foundation")]
-    pub ValidateProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndsheet: super::super::Foundation::HWND) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    ValidateProperties: usize,
+    pub MergePropPages: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pdwdefpages: *mut u32, pahpspprivate: *mut *mut u8, pcpages: *mut u32, hwndparent: ::win32_foundation::HWND, pszstartpage: *const ::windows_core::PWSTR) -> ::windows_core::HRESULT,
+    pub ValidateProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, hwndsheet: ::win32_foundation::HWND) -> ::windows_core::HRESULT,
     pub ApplyProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub CancelProperties: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
 }
@@ -3737,8 +3686,7 @@ impl INetCfgSysPrep {
     pub unsafe fn HrSetupSetFirstString<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszsection: Param0, pwszkey: Param1, pwszvalue: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).HrSetupSetFirstString)(::windows_core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), pwszvalue.into_param().abi()).ok()
     }
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn HrSetupSetFirstStringAsBool<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>>(&self, pwszsection: Param0, pwszkey: Param1, fvalue: Param2) -> ::windows_core::Result<()> {
+    pub unsafe fn HrSetupSetFirstStringAsBool<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>>(&self, pwszsection: Param0, pwszkey: Param1, fvalue: Param2) -> ::windows_core::Result<()> {
         (::windows_core::Interface::vtable(self).HrSetupSetFirstStringAsBool)(::windows_core::Interface::as_raw(self), pwszsection.into_param().abi(), pwszkey.into_param().abi(), fvalue.into_param().abi()).ok()
     }
     pub unsafe fn HrSetupSetFirstMultiSzField<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pwszsection: Param0, pwszkey: Param1, pmszvalue: Param2) -> ::windows_core::Result<()> {
@@ -3791,10 +3739,7 @@ pub struct INetCfgSysPrep_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
     pub HrSetupSetFirstDword: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows_core::PCWSTR, pwszkey: ::windows_core::PCWSTR, dwvalue: u32) -> ::windows_core::HRESULT,
     pub HrSetupSetFirstString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows_core::PCWSTR, pwszkey: ::windows_core::PCWSTR, pwszvalue: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Win32_Foundation")]
-    pub HrSetupSetFirstStringAsBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows_core::PCWSTR, pwszkey: ::windows_core::PCWSTR, fvalue: super::super::Foundation::BOOL) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    HrSetupSetFirstStringAsBool: usize,
+    pub HrSetupSetFirstStringAsBool: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows_core::PCWSTR, pwszkey: ::windows_core::PCWSTR, fvalue: ::win32_foundation::BOOL) -> ::windows_core::HRESULT,
     pub HrSetupSetFirstMultiSzField: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pwszsection: ::windows_core::PCWSTR, pwszkey: ::windows_core::PCWSTR, pmszvalue: ::windows_core::PCWSTR) -> ::windows_core::HRESULT,
 }
 #[repr(transparent)]
@@ -3854,7 +3799,6 @@ pub struct INetLanConnectionUiInfo_Vtbl {
 #[repr(transparent)]
 pub struct INetRasConnectionIpUiInfo(::windows_core::IUnknown);
 impl INetRasConnectionIpUiInfo {
-    #[cfg(feature = "Win32_Foundation")]
     pub unsafe fn GetUiInfo(&self) -> ::windows_core::Result<RASCON_IPUI> {
         let mut result__ = ::core::mem::MaybeUninit::<RASCON_IPUI>::zeroed();
         (::windows_core::Interface::vtable(self).GetUiInfo)(::windows_core::Interface::as_raw(self), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<RASCON_IPUI>(result__)
@@ -3904,10 +3848,7 @@ unsafe impl ::windows_core::Interface for INetRasConnectionIpUiInfo {
 #[doc(hidden)]
 pub struct INetRasConnectionIpUiInfo_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
     pub GetUiInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, pinfo: *mut RASCON_IPUI) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    GetUiInfo: usize,
 }
 pub const IPX_PROTOCOL_BASE: u32 = 131071u32;
 pub const IPX_PROTOCOL_RIP: u32 = 131072u32;
@@ -3918,9 +3859,9 @@ impl IProvisioningDomain {
         (::windows_core::Interface::vtable(self).Add)(::windows_core::Interface::as_raw(self), pszwpathtofolder.into_param().abi()).ok()
     }
     #[cfg(all(feature = "Win32_Data_Xml_MsXml", feature = "Win32_System_Com"))]
-    pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwdomain: Param0, pszwlanguage: Param1, pszwxpathquery: Param2) -> ::windows_core::Result<super::super::Data::Xml::MsXml::IXMLDOMNodeList> {
+    pub unsafe fn Query<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(&self, pszwdomain: Param0, pszwlanguage: Param1, pszwxpathquery: Param2) -> ::windows_core::Result<::win32_data::Xml::MsXml::IXMLDOMNodeList> {
         let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-        (::windows_core::Interface::vtable(self).Query)(::windows_core::Interface::as_raw(self), pszwdomain.into_param().abi(), pszwlanguage.into_param().abi(), pszwxpathquery.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<super::super::Data::Xml::MsXml::IXMLDOMNodeList>(result__)
+        (::windows_core::Interface::vtable(self).Query)(::windows_core::Interface::as_raw(self), pszwdomain.into_param().abi(), pszwlanguage.into_param().abi(), pszwxpathquery.into_param().abi(), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<::win32_data::Xml::MsXml::IXMLDOMNodeList>(result__)
     }
 }
 impl ::core::convert::From<IProvisioningDomain> for ::windows_core::IUnknown {
@@ -3976,8 +3917,7 @@ pub struct IProvisioningDomain_Vtbl {
 #[repr(transparent)]
 pub struct IProvisioningProfileWireless(::windows_core::IUnknown);
 impl IProvisioningProfileWireless {
-    #[cfg(feature = "Win32_Foundation")]
-    pub unsafe fn CreateProfile<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::BSTR>>(&self, bstrxmlwirelessconfigprofile: Param0, bstrxmlconnectionconfigprofile: Param1, padapterinstanceguid: *const ::windows_core::GUID) -> ::windows_core::Result<u32> {
+    pub unsafe fn CreateProfile<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::BSTR>>(&self, bstrxmlwirelessconfigprofile: Param0, bstrxmlconnectionconfigprofile: Param1, padapterinstanceguid: *const ::windows_core::GUID) -> ::windows_core::Result<u32> {
         let mut result__ = ::core::mem::MaybeUninit::<u32>::zeroed();
         (::windows_core::Interface::vtable(self).CreateProfile)(::windows_core::Interface::as_raw(self), bstrxmlwirelessconfigprofile.into_param().abi(), bstrxmlconnectionconfigprofile.into_param().abi(), ::core::mem::transmute(padapterinstanceguid), ::core::mem::transmute(result__.as_mut_ptr())).from_abi::<u32>(result__)
     }
@@ -4026,10 +3966,7 @@ unsafe impl ::windows_core::Interface for IProvisioningProfileWireless {
 #[doc(hidden)]
 pub struct IProvisioningProfileWireless_Vtbl {
     pub base__: ::windows_core::IUnknownVtbl,
-    #[cfg(feature = "Win32_Foundation")]
-    pub CreateProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrxmlwirelessconfigprofile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, bstrxmlconnectionconfigprofile: ::core::mem::ManuallyDrop<super::super::Foundation::BSTR>, padapterinstanceguid: *const ::windows_core::GUID, pulstatus: *mut u32) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Win32_Foundation"))]
-    CreateProfile: usize,
+    pub CreateProfile: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bstrxmlwirelessconfigprofile: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, bstrxmlconnectionconfigprofile: ::core::mem::ManuallyDrop<::win32_foundation::BSTR>, padapterinstanceguid: *const ::windows_core::GUID, pulstatus: *mut u32) -> ::windows_core::HRESULT,
 }
 pub const IR_PROMISCUOUS: u32 = 0u32;
 pub const IR_PROMISCUOUS_MULTICAST: u32 = 1u32;
@@ -4161,115 +4098,107 @@ impl ::core::default::Default for LOCALGROUP_INFO_1002 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LOCALGROUP_MEMBERS_INFO_0 {
-    pub lgrmi0_sid: super::super::Foundation::PSID,
+    pub lgrmi0_sid: ::win32_foundation::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for LOCALGROUP_MEMBERS_INFO_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("LOCALGROUP_MEMBERS_INFO_0").field("lgrmi0_sid", &self.lgrmi0_sid).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for LOCALGROUP_MEMBERS_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for LOCALGROUP_MEMBERS_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for LOCALGROUP_MEMBERS_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for LOCALGROUP_MEMBERS_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct LOCALGROUP_MEMBERS_INFO_1 {
-    pub lgrmi1_sid: super::super::Foundation::PSID,
-    pub lgrmi1_sidusage: super::super::Security::SID_NAME_USE,
+    pub lgrmi1_sid: ::win32_foundation::PSID,
+    pub lgrmi1_sidusage: ::win32_security::SID_NAME_USE,
     pub lgrmi1_name: ::windows_core::PWSTR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for LOCALGROUP_MEMBERS_INFO_1 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("LOCALGROUP_MEMBERS_INFO_1").field("lgrmi1_sid", &self.lgrmi1_sid).field("lgrmi1_sidusage", &self.lgrmi1_sidusage).field("lgrmi1_name", &self.lgrmi1_name).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for LOCALGROUP_MEMBERS_INFO_1 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for LOCALGROUP_MEMBERS_INFO_1 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_1>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for LOCALGROUP_MEMBERS_INFO_1 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for LOCALGROUP_MEMBERS_INFO_1 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct LOCALGROUP_MEMBERS_INFO_2 {
-    pub lgrmi2_sid: super::super::Foundation::PSID,
-    pub lgrmi2_sidusage: super::super::Security::SID_NAME_USE,
+    pub lgrmi2_sid: ::win32_foundation::PSID,
+    pub lgrmi2_sidusage: ::win32_security::SID_NAME_USE,
     pub lgrmi2_domainandname: ::windows_core::PWSTR,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::fmt::Debug for LOCALGROUP_MEMBERS_INFO_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("LOCALGROUP_MEMBERS_INFO_2").field("lgrmi2_sid", &self.lgrmi2_sid).field("lgrmi2_sidusage", &self.lgrmi2_sidusage).field("lgrmi2_domainandname", &self.lgrmi2_domainandname).finish()
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 unsafe impl ::windows_core::Abi for LOCALGROUP_MEMBERS_INFO_2 {
     type Abi = Self;
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::PartialEq for LOCALGROUP_MEMBERS_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<LOCALGROUP_MEMBERS_INFO_2>()) == 0 }
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::cmp::Eq for LOCALGROUP_MEMBERS_INFO_2 {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::default::Default for LOCALGROUP_MEMBERS_INFO_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -5650,37 +5579,29 @@ impl ::core::fmt::Debug for NETWORK_INSTALL_TIME {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NETWORK_NAME {
     pub Name: FLAT_STRING,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NETWORK_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NETWORK_NAME {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NETWORK_NAME {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NETWORK_NAME").field("Name", &self.Name).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NETWORK_NAME {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NETWORK_NAME {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NETWORK_NAME>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NETWORK_NAME {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NETWORK_NAME {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6127,38 +6048,30 @@ impl ::core::ops::Not for NET_USER_ENUM_FILTER_FLAGS {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
-    pub PasswordMatched: super::super::Foundation::BOOLEAN,
+    pub PasswordMatched: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NET_VALIDATE_AUTHENTICATION_INPUT_ARG").field("InputPersistedFields", &self.InputPersistedFields).field("PasswordMatched", &self.PasswordMatched).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_AUTHENTICATION_INPUT_ARG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NET_VALIDATE_AUTHENTICATION_INPUT_ARG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6168,79 +6081,63 @@ pub const NET_VALIDATE_BAD_PASSWORD_COUNT: u32 = 8u32;
 pub const NET_VALIDATE_BAD_PASSWORD_TIME: u32 = 2u32;
 pub const NET_VALIDATE_LOCKOUT_TIME: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_OUTPUT_ARG {
     pub ChangedPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
     pub ValidationStatus: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_OUTPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_OUTPUT_ARG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NET_VALIDATE_OUTPUT_ARG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NET_VALIDATE_OUTPUT_ARG").field("ChangedPersistedFields", &self.ChangedPersistedFields).field("ValidationStatus", &self.ValidationStatus).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NET_VALIDATE_OUTPUT_ARG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_OUTPUT_ARG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_OUTPUT_ARG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NET_VALIDATE_OUTPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NET_VALIDATE_OUTPUT_ARG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
     pub ClearPassword: ::windows_core::PWSTR,
     pub UserAccountName: ::windows_core::PWSTR,
     pub HashedPassword: NET_VALIDATE_PASSWORD_HASH,
-    pub PasswordMatch: super::super::Foundation::BOOLEAN,
+    pub PasswordMatch: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG").field("InputPersistedFields", &self.InputPersistedFields).field("ClearPassword", &self.ClearPassword).field("UserAccountName", &self.UserAccountName).field("HashedPassword", &self.HashedPassword).field("PasswordMatch", &self.PasswordMatch).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6280,42 +6177,34 @@ pub const NET_VALIDATE_PASSWORD_HISTORY: u32 = 32u32;
 pub const NET_VALIDATE_PASSWORD_HISTORY_LENGTH: u32 = 16u32;
 pub const NET_VALIDATE_PASSWORD_LAST_SET: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
     pub ClearPassword: ::windows_core::PWSTR,
     pub UserAccountName: ::windows_core::PWSTR,
     pub HashedPassword: NET_VALIDATE_PASSWORD_HASH,
-    pub PasswordMustChangeAtNextLogon: super::super::Foundation::BOOLEAN,
-    pub ClearLockout: super::super::Foundation::BOOLEAN,
+    pub PasswordMustChangeAtNextLogon: ::win32_foundation::BOOLEAN,
+    pub ClearLockout: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NET_VALIDATE_PASSWORD_RESET_INPUT_ARG").field("InputPersistedFields", &self.InputPersistedFields).field("ClearPassword", &self.ClearPassword).field("UserAccountName", &self.UserAccountName).field("HashedPassword", &self.HashedPassword).field("PasswordMustChangeAtNextLogon", &self.PasswordMustChangeAtNextLogon).field("ClearLockout", &self.ClearLockout).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PASSWORD_RESET_INPUT_ARG>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6347,43 +6236,35 @@ impl ::core::fmt::Debug for NET_VALIDATE_PASSWORD_TYPE {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PERSISTED_FIELDS {
     pub PresentFields: u32,
-    pub PasswordLastSet: super::super::Foundation::FILETIME,
-    pub BadPasswordTime: super::super::Foundation::FILETIME,
-    pub LockoutTime: super::super::Foundation::FILETIME,
+    pub PasswordLastSet: ::win32_foundation::FILETIME,
+    pub BadPasswordTime: ::win32_foundation::FILETIME,
+    pub LockoutTime: ::win32_foundation::FILETIME,
     pub BadPasswordCount: u32,
     pub PasswordHistoryLength: u32,
     pub PasswordHistory: *mut NET_VALIDATE_PASSWORD_HASH,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NET_VALIDATE_PERSISTED_FIELDS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NET_VALIDATE_PERSISTED_FIELDS {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for NET_VALIDATE_PERSISTED_FIELDS {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("NET_VALIDATE_PERSISTED_FIELDS").field("PresentFields", &self.PresentFields).field("PasswordLastSet", &self.PasswordLastSet).field("BadPasswordTime", &self.BadPasswordTime).field("LockoutTime", &self.LockoutTime).field("BadPasswordCount", &self.BadPasswordCount).field("PasswordHistoryLength", &self.PasswordHistoryLength).field("PasswordHistory", &self.PasswordHistory).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for NET_VALIDATE_PERSISTED_FIELDS {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for NET_VALIDATE_PERSISTED_FIELDS {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<NET_VALIDATE_PERSISTED_FIELDS>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for NET_VALIDATE_PERSISTED_FIELDS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for NET_VALIDATE_PERSISTED_FIELDS {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -6531,14 +6412,13 @@ pub unsafe fn NetAddAlternateComputerName<'a, Param0: ::windows_core::IntoParam<
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn NetAddServiceAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, accountname: Param1, password: Param2, flags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetAddServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, password: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
+            fn NetAddServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, password: ::windows_core::PCWSTR, flags: u32) -> ::win32_foundation::NTSTATUS;
         }
         NetAddServiceAccount(servername.into_param().abi(), accountname.into_param().abi(), password.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
@@ -6727,14 +6607,13 @@ pub unsafe fn NetEnumerateComputerNames<'a, Param0: ::windows_core::IntoParam<'a
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn NetEnumerateServiceAccounts<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetEnumerateServiceAccounts(servername: ::windows_core::PCWSTR, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> super::super::Foundation::NTSTATUS;
+            fn NetEnumerateServiceAccounts(servername: ::windows_core::PCWSTR, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> ::win32_foundation::NTSTATUS;
         }
         NetEnumerateServiceAccounts(servername.into_param().abi(), ::core::mem::transmute(flags), ::core::mem::transmute(accountscount), ::core::mem::transmute(accounts)).ok()
     }
@@ -6780,7 +6659,7 @@ pub unsafe fn NetErrorLogWrite<'a, Param2: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 #[inline]
 pub unsafe fn NetFreeAadJoinInformation(pjoininfo: *const DSREG_JOIN_INFO) {
     #[cfg(windows)]
@@ -6794,7 +6673,7 @@ pub unsafe fn NetFreeAadJoinInformation(pjoininfo: *const DSREG_JOIN_INFO) {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
+#[cfg(feature = "Win32_Security_Cryptography")]
 #[inline]
 pub unsafe fn NetGetAadJoinInformation<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(pcsztenantid: Param0) -> ::windows_core::Result<*mut DSREG_JOIN_INFO> {
     #[cfg(windows)]
@@ -6991,14 +6870,13 @@ pub unsafe fn NetGroupSetUsers<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetIsServiceAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, accountname: Param1, isservice: *mut super::super::Foundation::BOOL) -> ::windows_core::Result<()> {
+pub unsafe fn NetIsServiceAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, accountname: Param1, isservice: *mut ::win32_foundation::BOOL) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetIsServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, isservice: *mut super::super::Foundation::BOOL) -> super::super::Foundation::NTSTATUS;
+            fn NetIsServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, isservice: *mut ::win32_foundation::BOOL) -> ::win32_foundation::NTSTATUS;
         }
         NetIsServiceAccount(servername.into_param().abi(), accountname.into_param().abi(), ::core::mem::transmute(isservice)).ok()
     }
@@ -7031,14 +6909,13 @@ pub unsafe fn NetLocalGroupAdd<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetLocalGroupAddMember<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::PSID>>(servername: Param0, groupname: Param1, membersid: Param2) -> u32 {
+pub unsafe fn NetLocalGroupAddMember<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::PSID>>(servername: Param0, groupname: Param1, membersid: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupAddMember(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
+            fn NetLocalGroupAddMember(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, membersid: ::win32_foundation::PSID) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupAddMember(servername.into_param().abi(), groupname.into_param().abi(), membersid.into_param().abi()))
     }
@@ -7071,14 +6948,13 @@ pub unsafe fn NetLocalGroupDel<'a, Param0: ::windows_core::IntoParam<'a, ::windo
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NetLocalGroupDelMember<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, super::super::Foundation::PSID>>(servername: Param0, groupname: Param1, membersid: Param2) -> u32 {
+pub unsafe fn NetLocalGroupDelMember<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::win32_foundation::PSID>>(servername: Param0, groupname: Param1, membersid: Param2) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetLocalGroupDelMember(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
+            fn NetLocalGroupDelMember(servername: ::windows_core::PCWSTR, groupname: ::windows_core::PCWSTR, membersid: ::win32_foundation::PSID) -> u32;
         }
         ::core::mem::transmute(NetLocalGroupDelMember(servername.into_param().abi(), groupname.into_param().abi(), membersid.into_param().abi()))
     }
@@ -7255,14 +7131,13 @@ pub unsafe fn NetQueryDisplayInformation<'a, Param0: ::windows_core::IntoParam<'
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn NetQueryServiceAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, accountname: Param1, infolevel: u32, buffer: *mut *mut u8) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetQueryServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, infolevel: u32, buffer: *mut *mut u8) -> super::super::Foundation::NTSTATUS;
+            fn NetQueryServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, infolevel: u32, buffer: *mut *mut u8) -> ::win32_foundation::NTSTATUS;
         }
         NetQueryServiceAccount(servername.into_param().abi(), accountname.into_param().abi(), ::core::mem::transmute(infolevel), ::core::mem::transmute(buffer)).ok()
     }
@@ -7308,14 +7183,13 @@ pub unsafe fn NetRemoveAlternateComputerName<'a, Param0: ::windows_core::IntoPar
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn NetRemoveServiceAccount<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(servername: Param0, accountname: Param1, flags: u32) -> ::windows_core::Result<()> {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NetRemoveServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
+            fn NetRemoveServiceAccount(servername: ::windows_core::PCWSTR, accountname: ::windows_core::PCWSTR, flags: u32) -> ::win32_foundation::NTSTATUS;
         }
         NetRemoveServiceAccount(servername.into_param().abi(), accountname.into_param().abi(), ::core::mem::transmute(flags)).ok()
     }
@@ -8155,16 +8029,14 @@ pub unsafe fn NetWkstaUserSetInfo<'a, Param0: ::windows_core::IntoParam<'a, ::wi
     unimplemented!("Unsupported target OS");
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OBO_TOKEN {
     pub Type: OBO_TOKEN_TYPE,
     pub pncc: ::core::option::Option<INetCfgComponent>,
     pub pszwManufacturer: ::windows_core::PCWSTR,
     pub pszwProduct: ::windows_core::PCWSTR,
     pub pszwDisplayName: ::windows_core::PCWSTR,
-    pub fRegistered: super::super::Foundation::BOOL,
+    pub fRegistered: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OBO_TOKEN {
     fn clone(&self) -> Self {
         Self {
@@ -8177,25 +8049,20 @@ impl ::core::clone::Clone for OBO_TOKEN {
         }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for OBO_TOKEN {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("OBO_TOKEN").field("Type", &self.Type).field("pncc", &self.pncc).field("pszwManufacturer", &self.pszwManufacturer).field("pszwProduct", &self.pszwProduct).field("pszwDisplayName", &self.pszwDisplayName).field("fRegistered", &self.fRegistered).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for OBO_TOKEN {
     type Abi = ::core::mem::ManuallyDrop<Self>;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for OBO_TOKEN {
     fn eq(&self, other: &Self) -> bool {
         self.Type == other.Type && self.pncc == other.pncc && self.pszwManufacturer == other.pszwManufacturer && self.pszwProduct == other.pszwProduct && self.pszwDisplayName == other.pszwDisplayName && self.fRegistered == other.fRegistered
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for OBO_TOKEN {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for OBO_TOKEN {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8312,10 +8179,9 @@ pub const PROTO_VENDOR_MS2: u32 = 16383u32;
 pub const PWLEN: u32 = 256u32;
 pub const QNLEN: u32 = 80u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct RASCON_IPUI {
     pub guidConnection: ::windows_core::GUID,
-    pub fIPv6Cfg: super::super::Foundation::BOOL,
+    pub fIPv6Cfg: ::win32_foundation::BOOL,
     pub dwFlags: u32,
     pub pszwIpAddr: [u16; 16],
     pub pszwDnsAddr: [u16; 16],
@@ -8330,15 +8196,12 @@ pub struct RASCON_IPUI {
     pub dwIPv4InfMetric: u32,
     pub dwIPv6InfMetric: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RASCON_IPUI {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for RASCON_IPUI {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for RASCON_IPUI {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("RASCON_IPUI")
@@ -8360,19 +8223,15 @@ impl ::core::fmt::Debug for RASCON_IPUI {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for RASCON_IPUI {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for RASCON_IPUI {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<RASCON_IPUI>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for RASCON_IPUI {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for RASCON_IPUI {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -8884,196 +8743,182 @@ pub unsafe fn RouterGetErrorStringW(dwerrorcode: u32, lplpwszerrorstring: *mut :
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogDeregisterA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0) {
+pub unsafe fn RouterLogDeregisterA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hloghandle: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogDeregisterA(hloghandle: super::super::Foundation::HANDLE);
+            fn RouterLogDeregisterA(hloghandle: ::win32_foundation::HANDLE);
         }
         RouterLogDeregisterA(hloghandle.into_param().abi())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogDeregisterW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0) {
+pub unsafe fn RouterLogDeregisterW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hloghandle: Param0) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogDeregisterW(hloghandle: super::super::Foundation::HANDLE);
+            fn RouterLogDeregisterW(hloghandle: ::win32_foundation::HANDLE);
         }
         RouterLogDeregisterW(hloghandle.into_param().abi())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PSTR], dwerrorcode: u32) {
+pub unsafe fn RouterLogEventA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PSTR], dwerrorcode: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PSTR, dwerrorcode: u32);
+            fn RouterLogEventA(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PSTR, dwerrorcode: u32);
         }
         RouterLogEventA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventDataA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PSTR], dwdatabytes: u32, lpdatabytes: *mut u8) {
+pub unsafe fn RouterLogEventDataA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PSTR], dwdatabytes: u32, lpdatabytes: *mut u8) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventDataA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
+            fn RouterLogEventDataA(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
         }
         RouterLogEventDataA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwdatabytes), ::core::mem::transmute(lpdatabytes))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventDataW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PWSTR], dwdatabytes: u32, lpdatabytes: *mut u8) {
+pub unsafe fn RouterLogEventDataW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PWSTR], dwdatabytes: u32, lpdatabytes: *mut u8) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventDataW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PWSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
+            fn RouterLogEventDataW(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PWSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
         }
         RouterLogEventDataW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwdatabytes), ::core::mem::transmute(lpdatabytes))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4) {
+pub unsafe fn RouterLogEventExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCSTR);
+            fn RouterLogEventExA(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCSTR);
         }
         RouterLogEventExA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwmessageid), ptszformat.into_param().abi())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4) {
+pub unsafe fn RouterLogEventExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCWSTR);
+            fn RouterLogEventExW(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCWSTR);
         }
         RouterLogEventExW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwmessageid), ptszformat.into_param().abi())
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventStringA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PSTR], dwerrorcode: u32, dwerrorindex: u32) {
+pub unsafe fn RouterLogEventStringA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PSTR], dwerrorcode: u32, dwerrorindex: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventStringA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PSTR, dwerrorcode: u32, dwerrorindex: u32);
+            fn RouterLogEventStringA(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PSTR, dwerrorcode: u32, dwerrorindex: u32);
         }
         RouterLogEventStringA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwerrorindex))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventStringW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PWSTR], dwerrorcode: u32, dwerrorindex: u32) {
+pub unsafe fn RouterLogEventStringW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PWSTR], dwerrorcode: u32, dwerrorindex: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventStringW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PWSTR, dwerrorcode: u32, dwerrorindex: u32);
+            fn RouterLogEventStringW(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PWSTR, dwerrorcode: u32, dwerrorindex: u32);
         }
         RouterLogEventStringW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwerrorindex))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventValistExA<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4, arglist: *mut i8) {
+pub unsafe fn RouterLogEventValistExA<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4, arglist: *mut i8) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventValistExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCSTR, arglist: *mut i8);
+            fn RouterLogEventValistExA(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCSTR, arglist: *mut i8);
         }
         RouterLogEventValistExA(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwmessageid), ptszformat.into_param().abi(), ::core::mem::transmute(arglist))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventValistExW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4, arglist: *mut i8) {
+pub unsafe fn RouterLogEventValistExW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param4: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(hloghandle: Param0, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: Param4, arglist: *mut i8) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventValistExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCWSTR, arglist: *mut i8);
+            fn RouterLogEventValistExW(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core::PCWSTR, arglist: *mut i8);
         }
         RouterLogEventValistExW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwerrorcode), ::core::mem::transmute(dwmessageid), ptszformat.into_param().abi(), ::core::mem::transmute(arglist))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogEventW<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PWSTR], dwerrorcode: u32) {
+pub unsafe fn RouterLogEventW<'a, Param0: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(hloghandle: Param0, dweventtype: u32, dwmessageid: u32, plpszsubstringarray: &[::windows_core::PWSTR], dwerrorcode: u32) {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogEventW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PWSTR, dwerrorcode: u32);
+            fn RouterLogEventW(hloghandle: ::win32_foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core::PWSTR, dwerrorcode: u32);
         }
         RouterLogEventW(hloghandle.into_param().abi(), ::core::mem::transmute(dweventtype), ::core::mem::transmute(dwmessageid), plpszsubstringarray.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(plpszsubstringarray)), ::core::mem::transmute(dwerrorcode))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogRegisterA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszsource: Param0) -> super::super::Foundation::HANDLE {
+pub unsafe fn RouterLogRegisterA<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(lpszsource: Param0) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogRegisterA(lpszsource: ::windows_core::PCSTR) -> super::super::Foundation::HANDLE;
+            fn RouterLogRegisterA(lpszsource: ::windows_core::PCSTR) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(RouterLogRegisterA(lpszsource.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn RouterLogRegisterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszsource: Param0) -> super::super::Foundation::HANDLE {
+pub unsafe fn RouterLogRegisterW<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(lpszsource: Param0) -> ::win32_foundation::HANDLE {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn RouterLogRegisterW(lpszsource: ::windows_core::PCWSTR) -> super::super::Foundation::HANDLE;
+            fn RouterLogRegisterW(lpszsource: ::windows_core::PCWSTR) -> ::win32_foundation::HANDLE;
         }
         ::core::mem::transmute(RouterLogRegisterW(lpszsource.into_param().abi()))
     }
@@ -9347,7 +9192,6 @@ impl ::core::default::Default for SERVER_INFO_102 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_103 {
     pub sv103_platform_id: u32,
     pub sv103_name: ::windows_core::PWSTR,
@@ -9357,22 +9201,19 @@ pub struct SERVER_INFO_103 {
     pub sv103_comment: ::windows_core::PWSTR,
     pub sv103_users: u32,
     pub sv103_disc: i32,
-    pub sv103_hidden: super::super::Foundation::BOOL,
+    pub sv103_hidden: ::win32_foundation::BOOL,
     pub sv103_announce: u32,
     pub sv103_anndelta: u32,
     pub sv103_licenses: u32,
     pub sv103_userpath: ::windows_core::PWSTR,
     pub sv103_capabilities: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_103 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_103 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_103 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_103")
@@ -9393,19 +9234,15 @@ impl ::core::fmt::Debug for SERVER_INFO_103 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_103 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_103 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_103>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_103 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_103 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -9702,148 +9539,116 @@ impl ::core::default::Default for SERVER_INFO_1513 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1514 {
-    pub sv1514_enablesoftcompat: super::super::Foundation::BOOL,
+    pub sv1514_enablesoftcompat: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1514 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1514 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1514 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1514").field("sv1514_enablesoftcompat", &self.sv1514_enablesoftcompat).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1514 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1514 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1514>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1514 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1514 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1515 {
-    pub sv1515_enableforcedlogoff: super::super::Foundation::BOOL,
+    pub sv1515_enableforcedlogoff: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1515 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1515 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1515 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1515").field("sv1515_enableforcedlogoff", &self.sv1515_enableforcedlogoff).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1515 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1515 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1515>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1515 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1515 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1516 {
-    pub sv1516_timesource: super::super::Foundation::BOOL,
+    pub sv1516_timesource: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1516 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1516 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1516 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1516").field("sv1516_timesource", &self.sv1516_timesource).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1516 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1516 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1516>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1516 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1516 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1518 {
-    pub sv1518_lmannounce: super::super::Foundation::BOOL,
+    pub sv1518_lmannounce: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1518 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1518 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1518 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1518").field("sv1518_lmannounce", &self.sv1518_lmannounce).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1518 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1518 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1518>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1518 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1518 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -10198,259 +10003,203 @@ impl ::core::default::Default for SERVER_INFO_1535 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1536 {
-    pub sv1536_enableoplocks: super::super::Foundation::BOOL,
+    pub sv1536_enableoplocks: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1536 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1536 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1536 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1536").field("sv1536_enableoplocks", &self.sv1536_enableoplocks).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1536 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1536 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1536>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1536 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1536 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1537 {
-    pub sv1537_enableoplockforceclose: super::super::Foundation::BOOL,
+    pub sv1537_enableoplockforceclose: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1537 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1537 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1537 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1537").field("sv1537_enableoplockforceclose", &self.sv1537_enableoplockforceclose).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1537 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1537 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1537>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1537 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1537 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1538 {
-    pub sv1538_enablefcbopens: super::super::Foundation::BOOL,
+    pub sv1538_enablefcbopens: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1538 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1538 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1538 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1538").field("sv1538_enablefcbopens", &self.sv1538_enablefcbopens).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1538 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1538 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1538>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1538 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1538 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1539 {
-    pub sv1539_enableraw: super::super::Foundation::BOOL,
+    pub sv1539_enableraw: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1539 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1539 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1539 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1539").field("sv1539_enableraw", &self.sv1539_enableraw).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1539 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1539 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1539>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1539 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1539 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1540 {
-    pub sv1540_enablesharednetdrives: super::super::Foundation::BOOL,
+    pub sv1540_enablesharednetdrives: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1540 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1540 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1540 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1540").field("sv1540_enablesharednetdrives", &self.sv1540_enablesharednetdrives).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1540 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1540 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1540>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1540 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1540 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1541 {
-    pub sv1541_minfreeconnections: super::super::Foundation::BOOL,
+    pub sv1541_minfreeconnections: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1541 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1541 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1541 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1541").field("sv1541_minfreeconnections", &self.sv1541_minfreeconnections).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1541 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1541 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1541>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1541 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1541 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1542 {
-    pub sv1542_maxfreeconnections: super::super::Foundation::BOOL,
+    pub sv1542_maxfreeconnections: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1542 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1542 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1542 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1542").field("sv1542_maxfreeconnections", &self.sv1542_maxfreeconnections).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1542 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1542 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1542>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1542 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1542 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11037,37 +10786,29 @@ impl ::core::default::Default for SERVER_INFO_1565 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1566 {
-    pub sv1566_removeduplicatesearches: super::super::Foundation::BOOL,
+    pub sv1566_removeduplicatesearches: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1566 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1566 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1566 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1566").field("sv1566_removeduplicatesearches", &self.sv1566_removeduplicatesearches).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1566 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1566 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1566>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1566 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1566 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11596,37 +11337,29 @@ impl ::core::default::Default for SERVER_INFO_1584 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1585 {
-    pub sv1585_sendsfrompreferredprocessor: super::super::Foundation::BOOL,
+    pub sv1585_sendsfrompreferredprocessor: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1585 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1585 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1585 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1585").field("sv1585_sendsfrompreferredprocessor", &self.sv1585_sendsfrompreferredprocessor).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1585 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1585 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1585>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1585 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1585 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -11981,74 +11714,58 @@ impl ::core::default::Default for SERVER_INFO_1598 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1599 {
-    pub sv1598_enforcekerberosreauthentication: super::super::Foundation::BOOLEAN,
+    pub sv1598_enforcekerberosreauthentication: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1599 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1599 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1599 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1599").field("sv1598_enforcekerberosreauthentication", &self.sv1598_enforcekerberosreauthentication).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1599 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1599 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1599>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1599 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1599 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1600 {
-    pub sv1598_disabledos: super::super::Foundation::BOOLEAN,
+    pub sv1598_disabledos: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1600 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1600 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1600 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1600").field("sv1598_disabledos", &self.sv1598_disabledos).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1600 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1600 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1600>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1600 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1600 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12084,37 +11801,29 @@ impl ::core::default::Default for SERVER_INFO_1601 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_1602 {
-    pub sv_1598_disablestrictnamechecking: super::super::Foundation::BOOL,
+    pub sv_1598_disablestrictnamechecking: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_1602 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_1602 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_1602 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_1602").field("sv_1598_disablestrictnamechecking", &self.sv_1598_disablestrictnamechecking).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_1602 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_1602 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_1602>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_1602 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_1602 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -12309,7 +12018,6 @@ impl ::core::default::Default for SERVER_INFO_403 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_502 {
     pub sv502_sessopens: u32,
     pub sv502_sessvcs: u32,
@@ -12324,21 +12032,18 @@ pub struct SERVER_INFO_502 {
     pub sv502_sessconns: u32,
     pub sv502_maxpagedmemoryusage: u32,
     pub sv502_maxnonpagedmemoryusage: u32,
-    pub sv502_enablesoftcompat: super::super::Foundation::BOOL,
-    pub sv502_enableforcedlogoff: super::super::Foundation::BOOL,
-    pub sv502_timesource: super::super::Foundation::BOOL,
-    pub sv502_acceptdownlevelapis: super::super::Foundation::BOOL,
-    pub sv502_lmannounce: super::super::Foundation::BOOL,
+    pub sv502_enablesoftcompat: ::win32_foundation::BOOL,
+    pub sv502_enableforcedlogoff: ::win32_foundation::BOOL,
+    pub sv502_timesource: ::win32_foundation::BOOL,
+    pub sv502_acceptdownlevelapis: ::win32_foundation::BOOL,
+    pub sv502_lmannounce: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_502 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_502 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_502 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_502")
@@ -12363,26 +12068,21 @@ impl ::core::fmt::Debug for SERVER_INFO_502 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_502 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_502 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_502>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_502 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_502 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_503 {
     pub sv503_sessopens: u32,
     pub sv503_sessvcs: u32,
@@ -12397,11 +12097,11 @@ pub struct SERVER_INFO_503 {
     pub sv503_sessconns: u32,
     pub sv503_maxpagedmemoryusage: u32,
     pub sv503_maxnonpagedmemoryusage: u32,
-    pub sv503_enablesoftcompat: super::super::Foundation::BOOL,
-    pub sv503_enableforcedlogoff: super::super::Foundation::BOOL,
-    pub sv503_timesource: super::super::Foundation::BOOL,
-    pub sv503_acceptdownlevelapis: super::super::Foundation::BOOL,
-    pub sv503_lmannounce: super::super::Foundation::BOOL,
+    pub sv503_enablesoftcompat: ::win32_foundation::BOOL,
+    pub sv503_enableforcedlogoff: ::win32_foundation::BOOL,
+    pub sv503_timesource: ::win32_foundation::BOOL,
+    pub sv503_acceptdownlevelapis: ::win32_foundation::BOOL,
+    pub sv503_lmannounce: ::win32_foundation::BOOL,
     pub sv503_domain: ::windows_core::PWSTR,
     pub sv503_maxcopyreadlen: u32,
     pub sv503_maxcopywritelen: u32,
@@ -12419,23 +12119,20 @@ pub struct SERVER_INFO_503 {
     pub sv503_maxmpxct: u32,
     pub sv503_oplockbreakwait: u32,
     pub sv503_oplockbreakresponsewait: u32,
-    pub sv503_enableoplocks: super::super::Foundation::BOOL,
-    pub sv503_enableoplockforceclose: super::super::Foundation::BOOL,
-    pub sv503_enablefcbopens: super::super::Foundation::BOOL,
-    pub sv503_enableraw: super::super::Foundation::BOOL,
-    pub sv503_enablesharednetdrives: super::super::Foundation::BOOL,
+    pub sv503_enableoplocks: ::win32_foundation::BOOL,
+    pub sv503_enableoplockforceclose: ::win32_foundation::BOOL,
+    pub sv503_enablefcbopens: ::win32_foundation::BOOL,
+    pub sv503_enableraw: ::win32_foundation::BOOL,
+    pub sv503_enablesharednetdrives: ::win32_foundation::BOOL,
     pub sv503_minfreeconnections: u32,
     pub sv503_maxfreeconnections: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_503 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_503 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_503 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_503")
@@ -12484,26 +12181,21 @@ impl ::core::fmt::Debug for SERVER_INFO_503 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_503 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_503 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_503>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_503 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_503 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_598 {
     pub sv598_maxrawworkitems: u32,
     pub sv598_maxthreadsperqueue: u32,
@@ -12519,8 +12211,8 @@ pub struct SERVER_INFO_598 {
     pub sv598_mdlreadswitchover: u32,
     pub sv598_cachedopenlimit: u32,
     pub sv598_otherqueueaffinity: u32,
-    pub sv598_restrictnullsessaccess: super::super::Foundation::BOOL,
-    pub sv598_enablewfw311directipx: super::super::Foundation::BOOL,
+    pub sv598_restrictnullsessaccess: ::win32_foundation::BOOL,
+    pub sv598_enablewfw311directipx: ::win32_foundation::BOOL,
     pub sv598_queuesamplesecs: u32,
     pub sv598_balancecount: u32,
     pub sv598_preferredaffinity: u32,
@@ -12530,34 +12222,31 @@ pub struct SERVER_INFO_598 {
     pub sv598_maxfreepagedpoolchunks: u32,
     pub sv598_minpagedpoolchunksize: u32,
     pub sv598_maxpagedpoolchunksize: u32,
-    pub sv598_sendsfrompreferredprocessor: super::super::Foundation::BOOL,
+    pub sv598_sendsfrompreferredprocessor: ::win32_foundation::BOOL,
     pub sv598_cacheddirectorylimit: u32,
     pub sv598_maxcopylength: u32,
-    pub sv598_enablecompression: super::super::Foundation::BOOL,
-    pub sv598_autosharewks: super::super::Foundation::BOOL,
-    pub sv598_autoshareserver: super::super::Foundation::BOOL,
-    pub sv598_enablesecuritysignature: super::super::Foundation::BOOL,
-    pub sv598_requiresecuritysignature: super::super::Foundation::BOOL,
+    pub sv598_enablecompression: ::win32_foundation::BOOL,
+    pub sv598_autosharewks: ::win32_foundation::BOOL,
+    pub sv598_autoshareserver: ::win32_foundation::BOOL,
+    pub sv598_enablesecuritysignature: ::win32_foundation::BOOL,
+    pub sv598_requiresecuritysignature: ::win32_foundation::BOOL,
     pub sv598_minclientbuffersize: u32,
     pub sv598_serverguid: ::windows_core::GUID,
     pub sv598_ConnectionNoSessionsTimeout: u32,
     pub sv598_IdleThreadTimeOut: u32,
-    pub sv598_enableW9xsecuritysignature: super::super::Foundation::BOOL,
-    pub sv598_enforcekerberosreauthentication: super::super::Foundation::BOOL,
-    pub sv598_disabledos: super::super::Foundation::BOOL,
+    pub sv598_enableW9xsecuritysignature: ::win32_foundation::BOOL,
+    pub sv598_enforcekerberosreauthentication: ::win32_foundation::BOOL,
+    pub sv598_disabledos: ::win32_foundation::BOOL,
     pub sv598_lowdiskspaceminimum: u32,
-    pub sv598_disablestrictnamechecking: super::super::Foundation::BOOL,
-    pub sv598_enableauthenticateusersharing: super::super::Foundation::BOOL,
+    pub sv598_disablestrictnamechecking: ::win32_foundation::BOOL,
+    pub sv598_enableauthenticateusersharing: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_598 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_598 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_598 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_598")
@@ -12607,26 +12296,21 @@ impl ::core::fmt::Debug for SERVER_INFO_598 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_598 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_598 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_598>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_598 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_598 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_599 {
     pub sv599_sessopens: u32,
     pub sv599_sessvcs: u32,
@@ -12641,11 +12325,11 @@ pub struct SERVER_INFO_599 {
     pub sv599_sessconns: u32,
     pub sv599_maxpagedmemoryusage: u32,
     pub sv599_maxnonpagedmemoryusage: u32,
-    pub sv599_enablesoftcompat: super::super::Foundation::BOOL,
-    pub sv599_enableforcedlogoff: super::super::Foundation::BOOL,
-    pub sv599_timesource: super::super::Foundation::BOOL,
-    pub sv599_acceptdownlevelapis: super::super::Foundation::BOOL,
-    pub sv599_lmannounce: super::super::Foundation::BOOL,
+    pub sv599_enablesoftcompat: ::win32_foundation::BOOL,
+    pub sv599_enableforcedlogoff: ::win32_foundation::BOOL,
+    pub sv599_timesource: ::win32_foundation::BOOL,
+    pub sv599_acceptdownlevelapis: ::win32_foundation::BOOL,
+    pub sv599_lmannounce: ::win32_foundation::BOOL,
     pub sv599_domain: ::windows_core::PWSTR,
     pub sv599_maxcopyreadlen: u32,
     pub sv599_maxcopywritelen: u32,
@@ -12663,11 +12347,11 @@ pub struct SERVER_INFO_599 {
     pub sv599_maxmpxct: u32,
     pub sv599_oplockbreakwait: u32,
     pub sv599_oplockbreakresponsewait: u32,
-    pub sv599_enableoplocks: super::super::Foundation::BOOL,
-    pub sv599_enableoplockforceclose: super::super::Foundation::BOOL,
-    pub sv599_enablefcbopens: super::super::Foundation::BOOL,
-    pub sv599_enableraw: super::super::Foundation::BOOL,
-    pub sv599_enablesharednetdrives: super::super::Foundation::BOOL,
+    pub sv599_enableoplocks: ::win32_foundation::BOOL,
+    pub sv599_enableoplockforceclose: ::win32_foundation::BOOL,
+    pub sv599_enablefcbopens: ::win32_foundation::BOOL,
+    pub sv599_enableraw: ::win32_foundation::BOOL,
+    pub sv599_enablesharednetdrives: ::win32_foundation::BOOL,
     pub sv599_minfreeconnections: u32,
     pub sv599_maxfreeconnections: u32,
     pub sv599_initsesstable: u32,
@@ -12685,15 +12369,12 @@ pub struct SERVER_INFO_599 {
     pub sv599_scavqosinfoupdatetime: u32,
     pub sv599_maxworkitemidletime: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_INFO_599 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_INFO_599 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SERVER_INFO_599 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SERVER_INFO_599")
@@ -12756,19 +12437,15 @@ impl ::core::fmt::Debug for SERVER_INFO_599 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SERVER_INFO_599 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SERVER_INFO_599 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SERVER_INFO_599>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SERVER_INFO_599 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SERVER_INFO_599 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -13229,40 +12906,32 @@ pub const SESSION_CRYPT_KLEN: u32 = 21u32;
 pub const SESSION_PWLEN: u32 = 24u32;
 pub const SHPWLEN: u32 = 8u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SMB_COMPRESSION_INFO {
-    pub Switch: super::super::Foundation::BOOLEAN,
+    pub Switch: ::win32_foundation::BOOLEAN,
     pub Reserved1: u8,
     pub Reserved2: u16,
     pub Reserved3: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SMB_COMPRESSION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SMB_COMPRESSION_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for SMB_COMPRESSION_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("SMB_COMPRESSION_INFO").field("Switch", &self.Switch).field("Reserved1", &self.Reserved1).field("Reserved2", &self.Reserved2).field("Reserved3", &self.Reserved3).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for SMB_COMPRESSION_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for SMB_COMPRESSION_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<SMB_COMPRESSION_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for SMB_COMPRESSION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for SMB_COMPRESSION_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -13634,38 +13303,30 @@ pub const TRACE_USE_FILE: u32 = 1u32;
 pub const TRACE_USE_MASK: u32 = 2u32;
 pub const TRACE_USE_MSEC: u32 = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TRANSPORT_INFO {
     pub Type: TRANSPORT_TYPE,
-    pub SkipCertificateCheck: super::super::Foundation::BOOLEAN,
+    pub SkipCertificateCheck: ::win32_foundation::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TRANSPORT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TRANSPORT_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for TRANSPORT_INFO {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("TRANSPORT_INFO").field("Type", &self.Type).field("SkipCertificateCheck", &self.SkipCertificateCheck).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for TRANSPORT_INFO {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for TRANSPORT_INFO {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<TRANSPORT_INFO>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for TRANSPORT_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for TRANSPORT_INFO {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -13750,56 +13411,52 @@ pub unsafe fn TraceDeregisterW(dwtraceid: u32) -> u32 {
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TraceDumpExA<'a, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: Param5, lpszprefix: Param6) -> u32 {
+pub unsafe fn TraceDumpExA<'a, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: Param5, lpszprefix: Param6) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceDumpExA(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_core::PCSTR) -> u32;
+            fn TraceDumpExA(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: ::win32_foundation::BOOL, lpszprefix: ::windows_core::PCSTR) -> u32;
         }
         ::core::mem::transmute(TraceDumpExA(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpbbytes), ::core::mem::transmute(dwbytecount), ::core::mem::transmute(dwgroupsize), baddressprefix.into_param().abi(), lpszprefix.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TraceDumpExW<'a, Param5: ::windows_core::IntoParam<'a, super::super::Foundation::BOOL>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: Param5, lpszprefix: Param6) -> u32 {
+pub unsafe fn TraceDumpExW<'a, Param5: ::windows_core::IntoParam<'a, ::win32_foundation::BOOL>, Param6: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: Param5, lpszprefix: Param6) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceDumpExW(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_core::PCWSTR) -> u32;
+            fn TraceDumpExW(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: ::win32_foundation::BOOL, lpszprefix: ::windows_core::PCWSTR) -> u32;
         }
         ::core::mem::transmute(TraceDumpExW(::core::mem::transmute(dwtraceid), ::core::mem::transmute(dwflags), ::core::mem::transmute(lpbbytes), ::core::mem::transmute(dwbytecount), ::core::mem::transmute(dwgroupsize), baddressprefix.into_param().abi(), lpszprefix.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TraceGetConsoleA(dwtraceid: u32, lphconsole: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn TraceGetConsoleA(dwtraceid: u32, lphconsole: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceGetConsoleA(dwtraceid: u32, lphconsole: *mut super::super::Foundation::HANDLE) -> u32;
+            fn TraceGetConsoleA(dwtraceid: u32, lphconsole: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TraceGetConsoleA(::core::mem::transmute(dwtraceid), ::core::mem::transmute(lphconsole)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn TraceGetConsoleW(dwtraceid: u32, lphconsole: *mut super::super::Foundation::HANDLE) -> u32 {
+pub unsafe fn TraceGetConsoleW(dwtraceid: u32, lphconsole: *mut ::win32_foundation::HANDLE) -> u32 {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn TraceGetConsoleW(dwtraceid: u32, lphconsole: *mut super::super::Foundation::HANDLE) -> u32;
+            fn TraceGetConsoleW(dwtraceid: u32, lphconsole: *mut ::win32_foundation::HANDLE) -> u32;
         }
         ::core::mem::transmute(TraceGetConsoleW(::core::mem::transmute(dwtraceid), ::core::mem::transmute(lphconsole)))
     }
@@ -14988,82 +14645,66 @@ impl ::core::default::Default for USER_INFO_22 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_23 {
     pub usri23_name: ::windows_core::PWSTR,
     pub usri23_full_name: ::windows_core::PWSTR,
     pub usri23_comment: ::windows_core::PWSTR,
     pub usri23_flags: USER_ACCOUNT_FLAGS,
-    pub usri23_user_sid: super::super::Foundation::PSID,
+    pub usri23_user_sid: ::win32_foundation::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_INFO_23 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_INFO_23 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for USER_INFO_23 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USER_INFO_23").field("usri23_name", &self.usri23_name).field("usri23_full_name", &self.usri23_full_name).field("usri23_comment", &self.usri23_comment).field("usri23_flags", &self.usri23_flags).field("usri23_user_sid", &self.usri23_user_sid).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USER_INFO_23 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USER_INFO_23 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_23>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USER_INFO_23 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USER_INFO_23 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_24 {
-    pub usri24_internet_identity: super::super::Foundation::BOOL,
+    pub usri24_internet_identity: ::win32_foundation::BOOL,
     pub usri24_flags: u32,
     pub usri24_internet_provider_name: ::windows_core::PWSTR,
     pub usri24_internet_principal_name: ::windows_core::PWSTR,
-    pub usri24_user_sid: super::super::Foundation::PSID,
+    pub usri24_user_sid: ::win32_foundation::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_INFO_24 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_INFO_24 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for USER_INFO_24 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USER_INFO_24").field("usri24_internet_identity", &self.usri24_internet_identity).field("usri24_flags", &self.usri24_flags).field("usri24_internet_provider_name", &self.usri24_internet_provider_name).field("usri24_internet_principal_name", &self.usri24_internet_principal_name).field("usri24_user_sid", &self.usri24_user_sid).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USER_INFO_24 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USER_INFO_24 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_24>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USER_INFO_24 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USER_INFO_24 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -15157,7 +14798,6 @@ impl ::core::default::Default for USER_INFO_3 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_4 {
     pub usri4_name: ::windows_core::PWSTR,
     pub usri4_password: ::windows_core::PWSTR,
@@ -15183,21 +14823,18 @@ pub struct USER_INFO_4 {
     pub usri4_logon_server: ::windows_core::PWSTR,
     pub usri4_country_code: u32,
     pub usri4_code_page: u32,
-    pub usri4_user_sid: super::super::Foundation::PSID,
+    pub usri4_user_sid: ::win32_foundation::PSID,
     pub usri4_primary_group_id: u32,
     pub usri4_profile: ::windows_core::PWSTR,
     pub usri4_home_dir_drive: ::windows_core::PWSTR,
     pub usri4_password_expired: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_INFO_4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_INFO_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for USER_INFO_4 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USER_INFO_4")
@@ -15233,19 +14870,15 @@ impl ::core::fmt::Debug for USER_INFO_4 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USER_INFO_4 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USER_INFO_4 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_INFO_4>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USER_INFO_4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USER_INFO_4 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -15523,38 +15156,30 @@ impl ::core::default::Default for USER_MODALS_INFO_1007 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct USER_MODALS_INFO_2 {
     pub usrmod2_domain_name: ::windows_core::PWSTR,
-    pub usrmod2_domain_id: super::super::Foundation::PSID,
+    pub usrmod2_domain_id: ::win32_foundation::PSID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for USER_MODALS_INFO_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for USER_MODALS_INFO_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for USER_MODALS_INFO_2 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("USER_MODALS_INFO_2").field("usrmod2_domain_name", &self.usrmod2_domain_name).field("usrmod2_domain_id", &self.usrmod2_domain_id).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for USER_MODALS_INFO_2 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for USER_MODALS_INFO_2 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<USER_MODALS_INFO_2>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for USER_MODALS_INFO_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for USER_MODALS_INFO_2 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -16665,518 +16290,406 @@ impl ::core::default::Default for WKSTA_INFO_1047 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1048 {
-    pub wki1048_use_opportunistic_locking: super::super::Foundation::BOOL,
+    pub wki1048_use_opportunistic_locking: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1048 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1048 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1048 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1048").field("wki1048_use_opportunistic_locking", &self.wki1048_use_opportunistic_locking).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1048 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1048 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1048>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1048 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1048 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1049 {
-    pub wki1049_use_unlock_behind: super::super::Foundation::BOOL,
+    pub wki1049_use_unlock_behind: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1049 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1049 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1049 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1049").field("wki1049_use_unlock_behind", &self.wki1049_use_unlock_behind).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1049 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1049 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1049>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1049 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1049 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1050 {
-    pub wki1050_use_close_behind: super::super::Foundation::BOOL,
+    pub wki1050_use_close_behind: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1050 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1050 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1050 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1050").field("wki1050_use_close_behind", &self.wki1050_use_close_behind).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1050 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1050 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1050>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1050 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1050 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1051 {
-    pub wki1051_buf_named_pipes: super::super::Foundation::BOOL,
+    pub wki1051_buf_named_pipes: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1051 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1051 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1051 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1051").field("wki1051_buf_named_pipes", &self.wki1051_buf_named_pipes).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1051 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1051 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1051>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1051 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1051 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1052 {
-    pub wki1052_use_lock_read_unlock: super::super::Foundation::BOOL,
+    pub wki1052_use_lock_read_unlock: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1052 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1052 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1052 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1052").field("wki1052_use_lock_read_unlock", &self.wki1052_use_lock_read_unlock).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1052 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1052 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1052>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1052 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1052 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1053 {
-    pub wki1053_utilize_nt_caching: super::super::Foundation::BOOL,
+    pub wki1053_utilize_nt_caching: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1053 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1053 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1053 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1053").field("wki1053_utilize_nt_caching", &self.wki1053_utilize_nt_caching).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1053 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1053 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1053>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1053 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1053 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1054 {
-    pub wki1054_use_raw_read: super::super::Foundation::BOOL,
+    pub wki1054_use_raw_read: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1054 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1054 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1054 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1054").field("wki1054_use_raw_read", &self.wki1054_use_raw_read).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1054 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1054 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1054>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1054 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1054 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1055 {
-    pub wki1055_use_raw_write: super::super::Foundation::BOOL,
+    pub wki1055_use_raw_write: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1055 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1055 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1055 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1055").field("wki1055_use_raw_write", &self.wki1055_use_raw_write).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1055 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1055 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1055>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1055 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1055 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1056 {
-    pub wki1056_use_write_raw_data: super::super::Foundation::BOOL,
+    pub wki1056_use_write_raw_data: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1056 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1056 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1056 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1056").field("wki1056_use_write_raw_data", &self.wki1056_use_write_raw_data).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1056 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1056 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1056>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1056 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1056 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1057 {
-    pub wki1057_use_encryption: super::super::Foundation::BOOL,
+    pub wki1057_use_encryption: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1057 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1057 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1057 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1057").field("wki1057_use_encryption", &self.wki1057_use_encryption).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1057 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1057 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1057>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1057 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1057 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1058 {
-    pub wki1058_buf_files_deny_write: super::super::Foundation::BOOL,
+    pub wki1058_buf_files_deny_write: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1058 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1058 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1058 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1058").field("wki1058_buf_files_deny_write", &self.wki1058_buf_files_deny_write).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1058 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1058 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1058>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1058 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1058 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1059 {
-    pub wki1059_buf_read_only_files: super::super::Foundation::BOOL,
+    pub wki1059_buf_read_only_files: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1059 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1059 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1059 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1059").field("wki1059_buf_read_only_files", &self.wki1059_buf_read_only_files).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1059 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1059 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1059>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1059 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1059 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1060 {
-    pub wki1060_force_core_create_mode: super::super::Foundation::BOOL,
+    pub wki1060_force_core_create_mode: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1060 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1060 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1060 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1060").field("wki1060_force_core_create_mode", &self.wki1060_force_core_create_mode).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1060 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1060 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1060>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1060 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1060 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_1061 {
-    pub wki1061_use_512_byte_max_transfer: super::super::Foundation::BOOL,
+    pub wki1061_use_512_byte_max_transfer: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_1061 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_1061 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_1061 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_1061").field("wki1061_use_512_byte_max_transfer", &self.wki1061_use_512_byte_max_transfer).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_1061 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_1061 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_1061>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_1061 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_1061 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17352,7 +16865,6 @@ impl ::core::default::Default for WKSTA_INFO_402 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_INFO_502 {
     pub wki502_char_wait: u32,
     pub wki502_collection_time: u32,
@@ -17374,31 +16886,28 @@ pub struct WKSTA_INFO_502 {
     pub wki502_num_srv_announce_buffers: u32,
     pub wki502_max_illegal_datagram_events: u32,
     pub wki502_illegal_datagram_event_reset_frequency: u32,
-    pub wki502_log_election_packets: super::super::Foundation::BOOL,
-    pub wki502_use_opportunistic_locking: super::super::Foundation::BOOL,
-    pub wki502_use_unlock_behind: super::super::Foundation::BOOL,
-    pub wki502_use_close_behind: super::super::Foundation::BOOL,
-    pub wki502_buf_named_pipes: super::super::Foundation::BOOL,
-    pub wki502_use_lock_read_unlock: super::super::Foundation::BOOL,
-    pub wki502_utilize_nt_caching: super::super::Foundation::BOOL,
-    pub wki502_use_raw_read: super::super::Foundation::BOOL,
-    pub wki502_use_raw_write: super::super::Foundation::BOOL,
-    pub wki502_use_write_raw_data: super::super::Foundation::BOOL,
-    pub wki502_use_encryption: super::super::Foundation::BOOL,
-    pub wki502_buf_files_deny_write: super::super::Foundation::BOOL,
-    pub wki502_buf_read_only_files: super::super::Foundation::BOOL,
-    pub wki502_force_core_create_mode: super::super::Foundation::BOOL,
-    pub wki502_use_512_byte_max_transfer: super::super::Foundation::BOOL,
+    pub wki502_log_election_packets: ::win32_foundation::BOOL,
+    pub wki502_use_opportunistic_locking: ::win32_foundation::BOOL,
+    pub wki502_use_unlock_behind: ::win32_foundation::BOOL,
+    pub wki502_use_close_behind: ::win32_foundation::BOOL,
+    pub wki502_buf_named_pipes: ::win32_foundation::BOOL,
+    pub wki502_use_lock_read_unlock: ::win32_foundation::BOOL,
+    pub wki502_utilize_nt_caching: ::win32_foundation::BOOL,
+    pub wki502_use_raw_read: ::win32_foundation::BOOL,
+    pub wki502_use_raw_write: ::win32_foundation::BOOL,
+    pub wki502_use_write_raw_data: ::win32_foundation::BOOL,
+    pub wki502_use_encryption: ::win32_foundation::BOOL,
+    pub wki502_buf_files_deny_write: ::win32_foundation::BOOL,
+    pub wki502_buf_read_only_files: ::win32_foundation::BOOL,
+    pub wki502_force_core_create_mode: ::win32_foundation::BOOL,
+    pub wki502_use_512_byte_max_transfer: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_INFO_502 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_INFO_502 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_INFO_502 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_INFO_502")
@@ -17440,19 +16949,15 @@ impl ::core::fmt::Debug for WKSTA_INFO_502 {
             .finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_INFO_502 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_INFO_502 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_INFO_502>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_INFO_502 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_INFO_502 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -17488,41 +16993,33 @@ pub const WKSTA_SIZCHARBUF_PARMNUM: u32 = 23u32;
 pub const WKSTA_SIZERROR_PARMNUM: u32 = 19u32;
 pub const WKSTA_SIZWORKBUF_PARMNUM: u32 = 29u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WKSTA_TRANSPORT_INFO_0 {
     pub wkti0_quality_of_service: u32,
     pub wkti0_number_of_vcs: u32,
     pub wkti0_transport_name: ::windows_core::PWSTR,
     pub wkti0_transport_address: ::windows_core::PWSTR,
-    pub wkti0_wan_ish: super::super::Foundation::BOOL,
+    pub wkti0_wan_ish: ::win32_foundation::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WKSTA_TRANSPORT_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WKSTA_TRANSPORT_INFO_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::fmt::Debug for WKSTA_TRANSPORT_INFO_0 {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("WKSTA_TRANSPORT_INFO_0").field("wkti0_quality_of_service", &self.wkti0_quality_of_service).field("wkti0_number_of_vcs", &self.wkti0_number_of_vcs).field("wkti0_transport_name", &self.wkti0_transport_name).field("wkti0_transport_address", &self.wkti0_transport_address).field("wkti0_wan_ish", &self.wkti0_wan_ish).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for WKSTA_TRANSPORT_INFO_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for WKSTA_TRANSPORT_INFO_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<WKSTA_TRANSPORT_INFO_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for WKSTA_TRANSPORT_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for WKSTA_TRANSPORT_INFO_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }

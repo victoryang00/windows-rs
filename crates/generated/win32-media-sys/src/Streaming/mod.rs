@@ -57,14 +57,11 @@ impl ::core::clone::Clone for FaceCharacterizationBlobHeader {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FaceRectInfo {
-    pub Region: super::super::Foundation::RECT,
+    pub Region: ::win32_foundation_sys::RECT,
     pub confidenceLevel: i32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FaceRectInfo {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FaceRectInfo {
     fn clone(&self) -> Self {
         *self
@@ -105,22 +102,18 @@ impl ::core::clone::Clone for HistogramDataHeader {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HistogramGrid {
     pub Width: u32,
     pub Height: u32,
-    pub Region: super::super::Foundation::RECT,
+    pub Region: ::win32_foundation_sys::RECT,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HistogramGrid {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HistogramGrid {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct HistogramHeader {
     pub Size: u32,
     pub Bins: u32,
@@ -128,9 +121,7 @@ pub struct HistogramHeader {
     pub ChannelMasks: u32,
     pub Grid: HistogramGrid,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HistogramHeader {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for HistogramHeader {
     fn clone(&self) -> Self {
         *self

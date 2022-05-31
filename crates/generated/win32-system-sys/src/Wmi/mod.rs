@@ -2381,7 +2381,6 @@ pub const MI_WRITEMESSAGE_CHANNEL_VERBOSE: u32 = 1u32;
 pub const MI_WRITEMESSAGE_CHANNEL_WARNING: u32 = 0u32;
 pub const MofCompiler: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1840224087, data2: 11831, data3: 4562, data4: [174, 201, 0, 192, 79, 182, 136, 32] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SWbemAnalysisMatrix {
     pub m_uVersion: u32,
     pub m_uMatrixType: u32,
@@ -2389,27 +2388,22 @@ pub struct SWbemAnalysisMatrix {
     pub m_uPropertyType: u32,
     pub m_uEntries: u32,
     pub m_pValues: *mut *mut ::core::ffi::c_void,
-    pub m_pbTruthTable: *mut super::super::Foundation::BOOL,
+    pub m_pbTruthTable: *mut ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SWbemAnalysisMatrix {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SWbemAnalysisMatrix {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SWbemAnalysisMatrixList {
     pub m_uVersion: u32,
     pub m_uMatrixType: u32,
     pub m_uNumMatrices: u32,
     pub m_pMatrices: *mut SWbemAnalysisMatrix,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SWbemAnalysisMatrixList {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SWbemAnalysisMatrixList {
     fn clone(&self) -> Self {
         *self
@@ -2455,19 +2449,16 @@ pub const SWbemPropertySet: ::windows_core_sys::GUID = ::windows_core_sys::GUID 
 pub const SWbemQualifier: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183199, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
 pub const SWbemQualifierSet: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183198, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SWbemQueryQualifiedName {
     pub m_uVersion: u32,
     pub m_uTokenType: u32,
     pub m_uNameListSize: u32,
     pub m_ppszNameList: *mut ::windows_core_sys::PWSTR,
-    pub m_bArraysUsed: super::super::Foundation::BOOL,
-    pub m_pbArrayElUsed: *mut super::super::Foundation::BOOL,
+    pub m_bArraysUsed: ::win32_foundation_sys::BOOL,
+    pub m_pbArrayElUsed: *mut ::win32_foundation_sys::BOOL,
     pub m_puArrayIndex: *mut u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SWbemQueryQualifiedName {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SWbemQueryQualifiedName {
     fn clone(&self) -> Self {
         *self
@@ -2476,26 +2467,22 @@ impl ::core::clone::Clone for SWbemQueryQualifiedName {
 pub const SWbemRefreshableItem: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2355647676, data2: 56907, data3: 4563, data4: [179, 144, 0, 16, 90, 31, 71, 58] };
 pub const SWbemRefresher: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3530145628, data2: 55745, data3: 4563, data4: [179, 143, 0, 16, 90, 31, 71, 58] };
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union SWbemRpnConst {
     pub m_pszStrVal: ::windows_core_sys::PCWSTR,
-    pub m_bBoolVal: super::super::Foundation::BOOL,
+    pub m_bBoolVal: ::win32_foundation_sys::BOOL,
     pub m_lLongVal: i32,
     pub m_uLongVal: u32,
     pub m_dblVal: f64,
     pub m_lVal64: i64,
     pub m_uVal64: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SWbemRpnConst {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SWbemRpnConst {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SWbemRpnEncodedQuery {
     pub m_uVersion: u32,
     pub m_uTokenType: u32,
@@ -2516,16 +2503,13 @@ pub struct SWbemRpnEncodedQuery {
     pub m_ppszOrderByList: *mut ::windows_core_sys::PWSTR,
     pub m_uOrderDirectionEl: *mut u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SWbemRpnEncodedQuery {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SWbemRpnEncodedQuery {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SWbemRpnQueryToken {
     pub m_uVersion: u32,
     pub m_uTokenType: u32,
@@ -2540,9 +2524,7 @@ pub struct SWbemRpnQueryToken {
     pub m_pszRightFunc: ::windows_core_sys::PCWSTR,
     pub m_pszLeftFunc: ::windows_core_sys::PCWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SWbemRpnQueryToken {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SWbemRpnQueryToken {
     fn clone(&self) -> Self {
         *self

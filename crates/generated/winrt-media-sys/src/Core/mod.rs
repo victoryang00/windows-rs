@@ -244,14 +244,11 @@ pub type MseSourceBuffer = *mut ::core::ffi::c_void;
 pub type MseSourceBufferList = *mut ::core::ffi::c_void;
 pub type MseStreamSource = *mut ::core::ffi::c_void;
 #[repr(C)]
-#[cfg(feature = "Foundation")]
 pub struct MseTimeRange {
-    pub Start: super::super::Foundation::TimeSpan,
-    pub End: super::super::Foundation::TimeSpan,
+    pub Start: ::winrt_foundation_sys::TimeSpan,
+    pub End: ::winrt_foundation_sys::TimeSpan,
 }
-#[cfg(feature = "Foundation")]
 impl ::core::marker::Copy for MseTimeRange {}
-#[cfg(feature = "Foundation")]
 impl ::core::clone::Clone for MseTimeRange {
     fn clone(&self) -> Self {
         *self

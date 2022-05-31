@@ -84,9 +84,8 @@ unsafe impl ::core::marker::Sync for DesignerAppExitedEventArgs {}
 #[repr(transparent)]
 pub struct DesignerAppManager(::windows_core::IUnknown);
 impl DesignerAppManager {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn AppUserModelId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -96,33 +95,29 @@ impl DesignerAppManager {
             (::windows_core::Interface::vtable(this).AppUserModelId)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HSTRING>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn DesignerAppExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DesignerAppManager, DesignerAppExitedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn DesignerAppExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DesignerAppManager, DesignerAppExitedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).DesignerAppExited)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).DesignerAppExited)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveDesignerAppExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveDesignerAppExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveDesignerAppExited)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateNewViewAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Size>>(&self, initialviewstate: DesignerAppViewState, initialviewsize: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncOperation<DesignerAppView>> {
+    pub fn CreateNewViewAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(&self, initialviewstate: DesignerAppViewState, initialviewsize: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<DesignerAppView>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateNewViewAsync)(::windows_core::Interface::as_raw(this), initialviewstate, initialviewsize.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncOperation<DesignerAppView>>(result__)
+            (::windows_core::Interface::vtable(this).CreateNewViewAsync)(::windows_core::Interface::as_raw(this), initialviewstate, initialviewsize.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<DesignerAppView>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LoadObjectIntoAppAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, dllname: Param0, classid: Param1, initializationdata: Param2) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn LoadObjectIntoAppAsync<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param1: ::windows_core::IntoParam<'a, ::windows_core::GUID>, Param2: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(&self, dllname: Param0, classid: Param1, initializationdata: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadObjectIntoAppAsync)(::windows_core::Interface::as_raw(this), dllname.into_param().abi(), classid.into_param().abi(), initializationdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).LoadObjectIntoAppAsync)(::windows_core::Interface::as_raw(this), dllname.into_param().abi(), classid.into_param().abi(), initializationdata.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
     pub fn Create<'a, Param0: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>>(appusermodelid: Param0) -> ::windows_core::Result<DesignerAppManager> {
@@ -206,30 +201,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Des
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DesignerAppManager> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<DesignerAppManager> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: DesignerAppManager) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DesignerAppManager> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&DesignerAppManager> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &DesignerAppManager) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for DesignerAppManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for DesignerAppManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &DesignerAppManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &DesignerAppManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for DesignerAppManager {}
@@ -237,9 +228,8 @@ unsafe impl ::core::marker::Sync for DesignerAppManager {}
 #[repr(transparent)]
 pub struct DesignerAppView(::windows_core::IUnknown);
 impl DesignerAppView {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn ApplicationViewId(&self) -> ::windows_core::Result<i32> {
@@ -263,20 +253,18 @@ impl DesignerAppView {
             (::windows_core::Interface::vtable(this).ViewState)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<DesignerAppViewState>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ViewSize(&self) -> ::windows_core::Result<super::super::super::Foundation::Size> {
+    pub fn ViewSize(&self) -> ::windows_core::Result<::winrt_foundation::Size> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Size>::zeroed();
-            (::windows_core::Interface::vtable(this).ViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Size>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Size>::zeroed();
+            (::windows_core::Interface::vtable(this).ViewSize)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Size>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UpdateViewAsync<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Size>>(&self, viewstate: DesignerAppViewState, viewsize: Param1) -> ::windows_core::Result<super::super::super::Foundation::IAsyncAction> {
+    pub fn UpdateViewAsync<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>>(&self, viewstate: DesignerAppViewState, viewsize: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncAction> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).UpdateViewAsync)(::windows_core::Interface::as_raw(this), viewstate, viewsize.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::IAsyncAction>(result__)
+            (::windows_core::Interface::vtable(this).UpdateViewAsync)(::windows_core::Interface::as_raw(this), viewstate, viewsize.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncAction>(result__)
         }
     }
 }
@@ -350,30 +338,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Des
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DesignerAppView> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<DesignerAppView> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: DesignerAppView) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DesignerAppView> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&DesignerAppView> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &DesignerAppView) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for DesignerAppView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for DesignerAppView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &DesignerAppView {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &DesignerAppView {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for DesignerAppView {}
@@ -414,9 +398,8 @@ unsafe impl ::windows_core::RuntimeType for DesignerAppViewState {
 #[repr(transparent)]
 pub struct DesktopWindowXamlSource(::windows_core::IUnknown);
 impl DesktopWindowXamlSource {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn Content(&self) -> ::windows_core::Result<super::UIElement> {
@@ -437,29 +420,25 @@ impl DesktopWindowXamlSource {
             (::windows_core::Interface::vtable(this).HasFocus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TakeFocusRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DesktopWindowXamlSource, DesktopWindowXamlSourceTakeFocusRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn TakeFocusRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DesktopWindowXamlSource, DesktopWindowXamlSourceTakeFocusRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TakeFocusRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TakeFocusRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTakeFocusRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTakeFocusRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTakeFocusRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::TypedEventHandler<DesktopWindowXamlSource, DesktopWindowXamlSourceGotFocusEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::Foundation::EventRegistrationToken> {
+    pub fn GotFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<DesktopWindowXamlSource, DesktopWindowXamlSourceGotFocusEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).GotFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).GotFocus)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveGotFocus<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveGotFocus<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveGotFocus)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -558,30 +537,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Des
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<DesktopWindowXamlSource> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<DesktopWindowXamlSource> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: DesktopWindowXamlSource) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&DesktopWindowXamlSource> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&DesktopWindowXamlSource> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &DesktopWindowXamlSource) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for DesktopWindowXamlSource {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for DesktopWindowXamlSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &DesktopWindowXamlSource {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &DesktopWindowXamlSource {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for DesktopWindowXamlSource {}
@@ -919,22 +894,10 @@ unsafe impl ::windows_core::Interface for IDesignerAppManager {
 pub struct IDesignerAppManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub AppUserModelId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub DesignerAppExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    DesignerAppExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveDesignerAppExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveDesignerAppExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub CreateNewViewAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, initialviewstate: DesignerAppViewState, initialviewsize: super::super::super::Foundation::Size, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateNewViewAsync: usize,
-    #[cfg(feature = "Foundation")]
+    pub DesignerAppExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveDesignerAppExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub CreateNewViewAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, initialviewstate: DesignerAppViewState, initialviewsize: ::winrt_foundation::Size, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub LoadObjectIntoAppAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, dllname: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, classid: ::windows_core::GUID, initializationdata: ::core::mem::ManuallyDrop<::windows_core::HSTRING>, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LoadObjectIntoAppAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -963,14 +926,8 @@ pub struct IDesignerAppView_Vtbl {
     pub ApplicationViewId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub AppUserModelId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub ViewState: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut DesignerAppViewState) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub ViewSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Size) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ViewSize: usize,
-    #[cfg(feature = "Foundation")]
-    pub UpdateViewAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, viewstate: DesignerAppViewState, viewsize: super::super::super::Foundation::Size, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UpdateViewAsync: usize,
+    pub ViewSize: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Size) -> ::windows_core::HRESULT,
+    pub UpdateViewAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, viewstate: DesignerAppViewState, viewsize: ::winrt_foundation::Size, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -986,22 +943,10 @@ pub struct IDesktopWindowXamlSource_Vtbl {
     pub Content: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetContent: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub HasFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub TakeFocusRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TakeFocusRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTakeFocusRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTakeFocusRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub GotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GotFocus: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveGotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveGotFocus: usize,
+    pub TakeFocusRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTakeFocusRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub GotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveGotFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub NavigateFocus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, request: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -1165,10 +1110,7 @@ unsafe impl ::windows_core::Interface for IXamlSourceFocusNavigationRequest {
 pub struct IXamlSourceFocusNavigationRequest_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Reason: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut XamlSourceFocusNavigationReason) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub HintRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    HintRect: usize,
+    pub HintRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
     pub CorrelationId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::GUID) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -1183,14 +1125,8 @@ unsafe impl ::windows_core::Interface for IXamlSourceFocusNavigationRequestFacto
 pub struct IXamlSourceFocusNavigationRequestFactory_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CreateInstance: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reason: XamlSourceFocusNavigationReason, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub CreateInstanceWithHintRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reason: XamlSourceFocusNavigationReason, hintrect: super::super::super::Foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateInstanceWithHintRect: usize,
-    #[cfg(feature = "Foundation")]
-    pub CreateInstanceWithHintRectAndCorrelationId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reason: XamlSourceFocusNavigationReason, hintrect: super::super::super::Foundation::Rect, correlationid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CreateInstanceWithHintRectAndCorrelationId: usize,
+    pub CreateInstanceWithHintRect: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reason: XamlSourceFocusNavigationReason, hintrect: ::winrt_foundation::Rect, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub CreateInstanceWithHintRectAndCorrelationId: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, reason: XamlSourceFocusNavigationReason, hintrect: ::winrt_foundation::Rect, correlationid: ::windows_core::GUID, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1518,21 +1454,20 @@ unsafe impl ::windows_core::Interface for IXamlUIPresenterStatics2 {
 #[doc(hidden)]
 pub struct IXamlUIPresenterStatics2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Controls_Primitives"))]
-    pub GetFlyoutPlacementTargetInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, placementtarget: ::windows_core::RawPtr, preferredplacement: super::Controls::Primitives::FlyoutPlacementMode, targetpreferredplacement: *mut super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: *mut bool, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Xaml_Controls_Primitives")))]
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub GetFlyoutPlacementTargetInfo: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, placementtarget: ::windows_core::RawPtr, preferredplacement: super::Controls::Primitives::FlyoutPlacementMode, targetpreferredplacement: *mut super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: *mut bool, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
     GetFlyoutPlacementTargetInfo: usize,
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Controls_Primitives"))]
-    pub GetFlyoutPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, placementtargetbounds: super::super::super::Foundation::Rect, controlsize: super::super::super::Foundation::Size, mincontrolsize: super::super::super::Foundation::Size, containerrect: super::super::super::Foundation::Rect, targetpreferredplacement: super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: bool, chosenplacement: *mut super::Controls::Primitives::FlyoutPlacementMode, result__: *mut super::super::super::Foundation::Rect) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "UI_Xaml_Controls_Primitives")))]
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub GetFlyoutPlacement: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, placementtargetbounds: ::winrt_foundation::Rect, controlsize: ::winrt_foundation::Size, mincontrolsize: ::winrt_foundation::Size, containerrect: ::winrt_foundation::Rect, targetpreferredplacement: super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: bool, chosenplacement: *mut super::Controls::Primitives::FlyoutPlacementMode, result__: *mut ::winrt_foundation::Rect) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "UI_Xaml_Controls_Primitives"))]
     GetFlyoutPlacement: usize,
 }
 #[repr(transparent)]
 pub struct WindowsXamlManager(::windows_core::IUnknown);
 impl WindowsXamlManager {
-    #[cfg(feature = "Foundation")]
     pub fn Close(&self) -> ::windows_core::Result<()> {
-        let this = &::windows_core::Interface::cast::<super::super::super::Foundation::IClosable>(self)?;
+        let this = &::windows_core::Interface::cast::<::winrt_foundation::IClosable>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this)).ok() }
     }
     pub fn InitializeForCurrentThread() -> ::windows_core::Result<WindowsXamlManager> {
@@ -1616,30 +1551,26 @@ impl<'a> ::windows_core::IntoParam<'a, ::windows_core::IInspectable> for &'a Win
         ::windows_core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<WindowsXamlManager> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<WindowsXamlManager> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: WindowsXamlManager) -> ::windows_core::Result<Self> {
         ::core::convert::TryFrom::try_from(&value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl ::core::convert::TryFrom<&WindowsXamlManager> for super::super::super::Foundation::IClosable {
+impl ::core::convert::TryFrom<&WindowsXamlManager> for ::winrt_foundation::IClosable {
     type Error = ::windows_core::Error;
     fn try_from(value: &WindowsXamlManager) -> ::windows_core::Result<Self> {
         ::windows_core::Interface::cast(value)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for WindowsXamlManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for WindowsXamlManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
         ::windows_core::IntoParam::into_param(&self)
     }
 }
-#[cfg(feature = "Foundation")]
-impl<'a> ::windows_core::IntoParam<'a, super::super::super::Foundation::IClosable> for &WindowsXamlManager {
-    fn into_param(self) -> ::windows_core::Param<'a, super::super::super::Foundation::IClosable> {
-        ::core::convert::TryInto::<super::super::super::Foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
+impl<'a> ::windows_core::IntoParam<'a, ::winrt_foundation::IClosable> for &WindowsXamlManager {
+    fn into_param(self) -> ::windows_core::Param<'a, ::winrt_foundation::IClosable> {
+        ::core::convert::TryInto::<::winrt_foundation::IClosable>::try_into(self).map(::windows_core::Param::Owned).unwrap_or(::windows_core::Param::None)
     }
 }
 unsafe impl ::core::marker::Send for WindowsXamlManager {}
@@ -1693,12 +1624,11 @@ impl XamlSourceFocusNavigationRequest {
             (::windows_core::Interface::vtable(this).Reason)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<XamlSourceFocusNavigationReason>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn HintRect(&self) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    pub fn HintRect(&self) -> ::windows_core::Result<::winrt_foundation::Rect> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).HintRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).HintRect)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         }
     }
     pub fn CorrelationId(&self) -> ::windows_core::Result<::windows_core::GUID> {
@@ -1714,15 +1644,13 @@ impl XamlSourceFocusNavigationRequest {
             (::windows_core::Interface::vtable(this).CreateInstance)(::windows_core::Interface::as_raw(this), reason, result__.as_mut_ptr()).from_abi::<XamlSourceFocusNavigationRequest>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateInstanceWithHintRect<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Rect>>(reason: XamlSourceFocusNavigationReason, hintrect: Param1) -> ::windows_core::Result<XamlSourceFocusNavigationRequest> {
+    pub fn CreateInstanceWithHintRect<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(reason: XamlSourceFocusNavigationReason, hintrect: Param1) -> ::windows_core::Result<XamlSourceFocusNavigationRequest> {
         Self::IXamlSourceFocusNavigationRequestFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithHintRect)(::windows_core::Interface::as_raw(this), reason, hintrect.into_param().abi(), result__.as_mut_ptr()).from_abi::<XamlSourceFocusNavigationRequest>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CreateInstanceWithHintRectAndCorrelationId<'a, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Rect>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(reason: XamlSourceFocusNavigationReason, hintrect: Param1, correlationid: Param2) -> ::windows_core::Result<XamlSourceFocusNavigationRequest> {
+    pub fn CreateInstanceWithHintRectAndCorrelationId<'a, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>, Param2: ::windows_core::IntoParam<'a, ::windows_core::GUID>>(reason: XamlSourceFocusNavigationReason, hintrect: Param1, correlationid: Param2) -> ::windows_core::Result<XamlSourceFocusNavigationRequest> {
         Self::IXamlSourceFocusNavigationRequestFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithHintRectAndCorrelationId)(::windows_core::Interface::as_raw(this), reason, hintrect.into_param().abi(), correlationid.into_param().abi(), result__.as_mut_ptr()).from_abi::<XamlSourceFocusNavigationRequest>(result__)
@@ -1961,18 +1889,18 @@ impl XamlUIPresenter {
     pub fn NotifyWindowSizeChanged() -> ::windows_core::Result<()> {
         Self::IXamlUIPresenterStatics(|this| unsafe { (::windows_core::Interface::vtable(this).NotifyWindowSizeChanged)(::windows_core::Interface::as_raw(this)).ok() })
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Controls_Primitives"))]
-    pub fn GetFlyoutPlacementTargetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::FrameworkElement>>(placementtarget: Param0, preferredplacement: super::Controls::Primitives::FlyoutPlacementMode, targetpreferredplacement: &mut super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: &mut bool) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub fn GetFlyoutPlacementTargetInfo<'a, Param0: ::windows_core::IntoParam<'a, super::FrameworkElement>>(placementtarget: Param0, preferredplacement: super::Controls::Primitives::FlyoutPlacementMode, targetpreferredplacement: &mut super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: &mut bool) -> ::windows_core::Result<::winrt_foundation::Rect> {
         Self::IXamlUIPresenterStatics2(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFlyoutPlacementTargetInfo)(::windows_core::Interface::as_raw(this), placementtarget.into_param().abi(), preferredplacement, targetpreferredplacement, allowfallbacks, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).GetFlyoutPlacementTargetInfo)(::windows_core::Interface::as_raw(this), placementtarget.into_param().abi(), preferredplacement, targetpreferredplacement, allowfallbacks, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "UI_Xaml_Controls_Primitives"))]
-    pub fn GetFlyoutPlacement<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::Foundation::Rect>, Param1: ::windows_core::IntoParam<'a, super::super::super::Foundation::Size>, Param2: ::windows_core::IntoParam<'a, super::super::super::Foundation::Size>, Param3: ::windows_core::IntoParam<'a, super::super::super::Foundation::Rect>>(placementtargetbounds: Param0, controlsize: Param1, mincontrolsize: Param2, containerrect: Param3, targetpreferredplacement: super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: bool, chosenplacement: &mut super::Controls::Primitives::FlyoutPlacementMode) -> ::windows_core::Result<super::super::super::Foundation::Rect> {
+    #[cfg(feature = "UI_Xaml_Controls_Primitives")]
+    pub fn GetFlyoutPlacement<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::Size>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Rect>>(placementtargetbounds: Param0, controlsize: Param1, mincontrolsize: Param2, containerrect: Param3, targetpreferredplacement: super::Controls::Primitives::FlyoutPlacementMode, allowfallbacks: bool, chosenplacement: &mut super::Controls::Primitives::FlyoutPlacementMode) -> ::windows_core::Result<::winrt_foundation::Rect> {
         Self::IXamlUIPresenterStatics2(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::Foundation::Rect>::zeroed();
-            (::windows_core::Interface::vtable(this).GetFlyoutPlacement)(::windows_core::Interface::as_raw(this), placementtargetbounds.into_param().abi(), controlsize.into_param().abi(), mincontrolsize.into_param().abi(), containerrect.into_param().abi(), targetpreferredplacement, allowfallbacks, chosenplacement, result__.as_mut_ptr()).from_abi::<super::super::super::Foundation::Rect>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Rect>::zeroed();
+            (::windows_core::Interface::vtable(this).GetFlyoutPlacement)(::windows_core::Interface::as_raw(this), placementtargetbounds.into_param().abi(), controlsize.into_param().abi(), mincontrolsize.into_param().abi(), containerrect.into_param().abi(), targetpreferredplacement, allowfallbacks, chosenplacement, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Rect>(result__)
         })
     }
     pub fn IXamlUIPresenterStatics<R, F: FnOnce(&IXamlUIPresenterStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

@@ -1,16 +1,14 @@
 #[repr(transparent)]
 pub struct CustomMapTileDataSource(::windows_core::IUnknown);
 impl CustomMapTileDataSource {
-    #[cfg(feature = "Foundation")]
-    pub fn BitmapRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<CustomMapTileDataSource, MapTileBitmapRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn BitmapRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<CustomMapTileDataSource, MapTileBitmapRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).BitmapRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).BitmapRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveBitmapRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveBitmapRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveBitmapRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -159,11 +157,11 @@ impl HttpMapTileDataSource {
         unsafe { (::windows_core::Interface::vtable(this).SetUriFormatString)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn AdditionalRequestHeaders(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
+    pub fn AdditionalRequestHeaders(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).AdditionalRequestHeaders)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).AdditionalRequestHeaders)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>>(result__)
         }
     }
     pub fn AllowCaching(&self) -> ::windows_core::Result<bool> {
@@ -177,16 +175,14 @@ impl HttpMapTileDataSource {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetAllowCaching)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UriRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<HttpMapTileDataSource, MapTileUriRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn UriRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<HttpMapTileDataSource, MapTileUriRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).UriRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).UriRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveUriRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveUriRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveUriRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -344,14 +340,8 @@ unsafe impl ::windows_core::Interface for ICustomMapTileDataSource {
 #[doc(hidden)]
 pub struct ICustomMapTileDataSource_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub BitmapRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BitmapRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveBitmapRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveBitmapRequested: usize,
+    pub BitmapRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveBitmapRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -385,14 +375,8 @@ pub struct IHttpMapTileDataSource_Vtbl {
     AdditionalRequestHeaders: usize,
     pub AllowCaching: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetAllowCaching: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub UriRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UriRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveUriRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveUriRequested: usize,
+    pub UriRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveUriRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -421,14 +405,8 @@ pub struct ILocalMapTileDataSource_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub UriFormatString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetUriFormatString: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub UriRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    UriRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveUriRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveUriRequested: usize,
+    pub UriRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveUriRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -515,14 +493,8 @@ pub struct IMapBillboard_Vtbl {
     pub SetLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
     SetLocation: usize,
-    #[cfg(feature = "Foundation")]
-    pub NormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    NormalizedAnchorPoint: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetNormalizedAnchorPoint: usize,
+    pub NormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub SetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
     pub Image: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
@@ -630,10 +602,7 @@ unsafe impl ::windows_core::Interface for IMapContextRequestedEventArgs {
 #[doc(hidden)]
 pub struct IMapContextRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -686,14 +655,8 @@ pub struct IMapControl_Vtbl {
     pub SetStyle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MapStyle) -> ::windows_core::HRESULT,
     pub TrafficFlowVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub SetTrafficFlowVisible: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub TransformOrigin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TransformOrigin: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetTransformOrigin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetTransformOrigin: usize,
+    pub TransformOrigin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub SetTransformOrigin: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     pub WatermarkMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut MapWatermarkMode) -> ::windows_core::HRESULT,
     pub SetWatermarkMode: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: MapWatermarkMode) -> ::windows_core::HRESULT,
     pub ZoomLevel: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
@@ -710,113 +673,59 @@ pub struct IMapControl_Vtbl {
     pub TileSources: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     TileSources: usize,
-    #[cfg(feature = "Foundation")]
-    pub CenterChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CenterChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCenterChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCenterChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub HeadingChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    HeadingChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveHeadingChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveHeadingChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub LoadingStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    LoadingStatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveLoadingStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveLoadingStatusChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub MapDoubleTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapDoubleTapped: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapDoubleTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapDoubleTapped: usize,
-    #[cfg(feature = "Foundation")]
-    pub MapHolding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapHolding: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapHolding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapHolding: usize,
-    #[cfg(feature = "Foundation")]
-    pub MapTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapTapped: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapTapped: usize,
-    #[cfg(feature = "Foundation")]
-    pub PitchChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    PitchChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemovePitchChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemovePitchChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub TransformOriginChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TransformOriginChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTransformOriginChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTransformOriginChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub ZoomLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ZoomLevelChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveZoomLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveZoomLevelChanged: usize,
+    pub CenterChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCenterChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub HeadingChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveHeadingChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub LoadingStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveLoadingStatusChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub MapDoubleTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapDoubleTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub MapHolding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapHolding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub MapTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub PitchChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemovePitchChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub TransformOriginChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTransformOriginChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub ZoomLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveZoomLevelChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub FindMapElementsAtOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: super::super::super::super::Foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub FindMapElementsAtOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     FindMapElementsAtOffset: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub GetLocationFromOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: super::super::super::super::Foundation::Point, location: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(feature = "Devices_Geolocation")]
+    pub GetLocationFromOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, location: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Devices_Geolocation"))]
     GetLocationFromOffset: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub GetOffsetFromLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, offset: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(feature = "Devices_Geolocation")]
+    pub GetOffsetFromLocation: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, offset: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Devices_Geolocation"))]
     GetOffsetFromLocation: usize,
     #[cfg(feature = "Devices_Geolocation")]
     pub IsLocationInView: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, isinview: *mut bool) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
     IsLocationInView: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub TrySetViewBoundsAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, bounds: ::windows_core::RawPtr, margin: ::windows_core::RawPtr, animation: MapAnimationKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     TrySetViewBoundsAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub TrySetViewWithCenterAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     TrySetViewWithCenterAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub TrySetViewWithCenterAndZoomAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: ::windows_core::RawPtr, zoomlevel: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     TrySetViewWithCenterAndZoomAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub TrySetViewWithCenterZoomHeadingAndPitchAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: ::windows_core::RawPtr, zoomlevel: ::windows_core::RawPtr, heading: ::windows_core::RawPtr, desiredpitch: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     TrySetViewWithCenterZoomHeadingAndPitchAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, center: ::windows_core::RawPtr, zoomlevel: ::windows_core::RawPtr, heading: ::windows_core::RawPtr, desiredpitch: ::windows_core::RawPtr, animation: MapAnimationKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync: usize,
 }
 #[doc(hidden)]
@@ -850,104 +759,35 @@ pub struct IMapControl2_Vtbl {
     pub TargetCamera: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub CustomExperience: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub SetCustomExperience: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub MapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapElementClick: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapElementClick: usize,
-    #[cfg(feature = "Foundation")]
-    pub MapElementPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapElementPointerEntered: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapElementPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapElementPointerEntered: usize,
-    #[cfg(feature = "Foundation")]
-    pub MapElementPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapElementPointerExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapElementPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapElementPointerExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub ActualCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ActualCameraChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveActualCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveActualCameraChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub ActualCameraChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    ActualCameraChanging: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveActualCameraChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveActualCameraChanging: usize,
-    #[cfg(feature = "Foundation")]
-    pub TargetCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TargetCameraChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTargetCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTargetCameraChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub CustomExperienceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    CustomExperienceChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveCustomExperienceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveCustomExperienceChanged: usize,
+    pub MapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub MapElementPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapElementPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub MapElementPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapElementPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub ActualCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveActualCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub ActualCameraChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveActualCameraChanging: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub TargetCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTargetCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub CustomExperienceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveCustomExperienceChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     pub StartContinuousRotate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rateindegreespersecond: f64) -> ::windows_core::HRESULT,
     pub StopContinuousRotate: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub StartContinuousTilt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rateindegreespersecond: f64) -> ::windows_core::HRESULT,
     pub StopContinuousTilt: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub StartContinuousZoom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, rateofchangepersecond: f64) -> ::windows_core::HRESULT,
     pub StopContinuousZoom: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub TryRotateAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, degrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryRotateAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryRotateToAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, angleindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryRotateToAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryTiltAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, degrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryTiltAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryTiltToAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, angleindegrees: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryTiltToAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryZoomInAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryZoomInAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryZoomOutAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryZoomOutAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TryZoomToAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, zoomlevel: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryZoomToAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TrySetSceneAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scene: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TrySetSceneAsync: usize,
-    #[cfg(feature = "Foundation")]
     pub TrySetSceneWithAnimationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, scene: ::windows_core::RawPtr, animationkind: MapAnimationKind, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TrySetSceneWithAnimationAsync: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -960,14 +800,8 @@ unsafe impl ::windows_core::Interface for IMapControl3 {
 #[doc(hidden)]
 pub struct IMapControl3_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub MapRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapRightTapped: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapRightTapped: usize,
+    pub MapRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1006,31 +840,22 @@ pub struct IMapControl5_Vtbl {
     pub SetStyleSheet: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     pub ViewPadding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Thickness) -> ::windows_core::HRESULT,
     pub SetViewPadding: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::Thickness) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub MapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapContextRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapContextRequested: usize,
+    pub MapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Collections")]
-    pub FindMapElementsAtOffsetWithRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: super::super::super::super::Foundation::Point, radius: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    pub FindMapElementsAtOffsetWithRadius: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, radius: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     FindMapElementsAtOffsetWithRadius: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub GetLocationFromOffsetWithReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: super::super::super::super::Foundation::Point, desiredreferencesystem: super::super::super::super::Devices::Geolocation::AltitudeReferenceSystem, location: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(feature = "Devices_Geolocation")]
+    pub GetLocationFromOffsetWithReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, desiredreferencesystem: ::winrt_devices::Geolocation::AltitudeReferenceSystem, location: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Devices_Geolocation"))]
     GetLocationFromOffsetWithReferenceSystem: usize,
     pub StartContinuousPan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, horizontalpixelspersecond: f64, verticalpixelspersecond: f64) -> ::windows_core::HRESULT,
     pub StopContinuousPan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
     pub TryPanAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, horizontalpixels: f64, verticalpixels: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TryPanAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub TryPanToAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     TryPanToAsync: usize,
 }
 #[doc(hidden)]
@@ -1052,13 +877,13 @@ pub struct IMapControl6_Vtbl {
     pub SetLayers: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SetLayers: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub TryGetLocationFromOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: super::super::super::super::Foundation::Point, location: *mut ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(feature = "Devices_Geolocation")]
+    pub TryGetLocationFromOffset: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, location: *mut ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Devices_Geolocation"))]
     TryGetLocationFromOffset: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub TryGetLocationFromOffsetWithReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: super::super::super::super::Foundation::Point, desiredreferencesystem: super::super::super::super::Devices::Geolocation::AltitudeReferenceSystem, location: *mut ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(feature = "Devices_Geolocation")]
+    pub TryGetLocationFromOffsetWithReferenceSystem: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, offset: ::winrt_foundation::Point, desiredreferencesystem: ::winrt_devices::Geolocation::AltitudeReferenceSystem, location: *mut ::windows_core::RawPtr, result__: *mut bool) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Devices_Geolocation"))]
     TryGetLocationFromOffsetWithReferenceSystem: usize,
 }
 #[doc(hidden)]
@@ -1166,38 +991,14 @@ unsafe impl ::windows_core::Interface for IMapControlDataHelper {
 #[doc(hidden)]
 pub struct IMapControlDataHelper_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub BusinessLandmarkClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BusinessLandmarkClick: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveBusinessLandmarkClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveBusinessLandmarkClick: usize,
-    #[cfg(feature = "Foundation")]
-    pub TransitFeatureClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TransitFeatureClick: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTransitFeatureClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTransitFeatureClick: usize,
-    #[cfg(feature = "Foundation")]
-    pub BusinessLandmarkRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BusinessLandmarkRightTapped: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveBusinessLandmarkRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveBusinessLandmarkRightTapped: usize,
-    #[cfg(feature = "Foundation")]
-    pub TransitFeatureRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TransitFeatureRightTapped: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTransitFeatureRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTransitFeatureRightTapped: usize,
+    pub BusinessLandmarkClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveBusinessLandmarkClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub TransitFeatureClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTransitFeatureClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub BusinessLandmarkRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveBusinessLandmarkRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub TransitFeatureRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTransitFeatureRightTapped: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1210,38 +1011,14 @@ unsafe impl ::windows_core::Interface for IMapControlDataHelper2 {
 #[doc(hidden)]
 pub struct IMapControlDataHelper2_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub BusinessLandmarkPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BusinessLandmarkPointerEntered: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveBusinessLandmarkPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveBusinessLandmarkPointerEntered: usize,
-    #[cfg(feature = "Foundation")]
-    pub TransitFeaturePointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TransitFeaturePointerEntered: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTransitFeaturePointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTransitFeaturePointerEntered: usize,
-    #[cfg(feature = "Foundation")]
-    pub BusinessLandmarkPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    BusinessLandmarkPointerExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveBusinessLandmarkPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveBusinessLandmarkPointerExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub TransitFeaturePointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TransitFeaturePointerExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTransitFeaturePointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTransitFeaturePointerExited: usize,
+    pub BusinessLandmarkPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveBusinessLandmarkPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub TransitFeaturePointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTransitFeaturePointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub BusinessLandmarkPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveBusinessLandmarkPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub TransitFeaturePointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTransitFeaturePointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1308,14 +1085,8 @@ pub struct IMapControlStatics_Vtbl {
     #[cfg(not(feature = "Devices_Geolocation"))]
     SetLocation: usize,
     pub NormalizedAnchorPointProperty: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub GetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    GetNormalizedAnchorPoint: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetNormalizedAnchorPoint: usize,
+    pub GetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub SetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, element: ::windows_core::RawPtr, value: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1606,11 +1377,11 @@ pub struct IMapElement3D_Vtbl {
     pub Roll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut f64) -> ::windows_core::HRESULT,
     pub SetRoll: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: f64) -> ::windows_core::HRESULT,
     #[cfg(feature = "Foundation_Numerics")]
-    pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub Scale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     Scale: usize,
     #[cfg(feature = "Foundation_Numerics")]
-    pub SetScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::super::Foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
+    pub SetScale: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Numerics::Vector3) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Numerics"))]
     SetScale: usize,
 }
@@ -1656,10 +1427,7 @@ unsafe impl ::windows_core::Interface for IMapElementClickEventArgs {
 #[doc(hidden)]
 pub struct IMapElementClickEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -1693,10 +1461,7 @@ unsafe impl ::windows_core::Interface for IMapElementPointerEnteredEventArgs {
 #[doc(hidden)]
 pub struct IMapElementPointerEnteredEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -1714,10 +1479,7 @@ unsafe impl ::windows_core::Interface for IMapElementPointerExitedEventArgs {
 #[doc(hidden)]
 pub struct IMapElementPointerExitedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -1798,38 +1560,14 @@ pub struct IMapElementsLayer_Vtbl {
     pub SetMapElements: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Foundation_Collections"))]
     SetMapElements: usize,
-    #[cfg(feature = "Foundation")]
-    pub MapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapElementClick: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapElementClick: usize,
-    #[cfg(feature = "Foundation")]
-    pub MapElementPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapElementPointerEntered: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapElementPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapElementPointerEntered: usize,
-    #[cfg(feature = "Foundation")]
-    pub MapElementPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapElementPointerExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapElementPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapElementPointerExited: usize,
-    #[cfg(feature = "Foundation")]
-    pub MapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    MapContextRequested: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveMapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveMapContextRequested: usize,
+    pub MapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapElementClick: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub MapElementPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapElementPointerEntered: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub MapElementPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapElementPointerExited: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub MapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveMapContextRequested: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1842,10 +1580,7 @@ unsafe impl ::windows_core::Interface for IMapElementsLayerClickEventArgs {
 #[doc(hidden)]
 pub struct IMapElementsLayerClickEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -1866,10 +1601,7 @@ unsafe impl ::windows_core::Interface for IMapElementsLayerContextRequestedEvent
 #[doc(hidden)]
 pub struct IMapElementsLayerContextRequestedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -1890,10 +1622,7 @@ unsafe impl ::windows_core::Interface for IMapElementsLayerPointerEnteredEventAr
 #[doc(hidden)]
 pub struct IMapElementsLayerPointerEnteredEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -1911,10 +1640,7 @@ unsafe impl ::windows_core::Interface for IMapElementsLayerPointerExitedEventArg
 #[doc(hidden)]
 pub struct IMapElementsLayerPointerExitedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -1955,14 +1681,8 @@ pub struct IMapIcon_Vtbl {
     SetLocation: usize,
     pub Title: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
     pub SetTitle: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::core::mem::ManuallyDrop<::windows_core::HSTRING>) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub NormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    NormalizedAnchorPoint: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetNormalizedAnchorPoint: usize,
+    pub NormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
+    pub SetNormalizedAnchorPoint: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Storage_Streams")]
     pub Image: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Storage_Streams"))]
@@ -2025,10 +1745,7 @@ unsafe impl ::windows_core::Interface for IMapInputEventArgs {
 #[doc(hidden)]
 pub struct IMapInputEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -2151,13 +1868,13 @@ unsafe impl ::windows_core::Interface for IMapModel3DStatics {
 #[doc(hidden)]
 pub struct IMapModel3DStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub CreateFrom3MFAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     CreateFrom3MFAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
+    #[cfg(feature = "Storage_Streams")]
     pub CreateFrom3MFWithShadingOptionAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, source: ::windows_core::RawPtr, shadingoption: MapModel3DShadingOption, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage_Streams")))]
+    #[cfg(not(feature = "Storage_Streams"))]
     CreateFrom3MFWithShadingOptionAsync: usize,
 }
 #[doc(hidden)]
@@ -2270,10 +1987,7 @@ unsafe impl ::windows_core::Interface for IMapRightTappedEventArgs {
 #[doc(hidden)]
 pub struct IMapRightTappedEventArgs_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
-    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::Point) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Position: usize,
+    pub Position: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::Point) -> ::windows_core::HRESULT,
     #[cfg(feature = "Devices_Geolocation")]
     pub Location: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Devices_Geolocation"))]
@@ -2327,14 +2041,8 @@ unsafe impl ::windows_core::Interface for IMapScene {
 pub struct IMapScene_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub TargetCamera: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub TargetCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    TargetCameraChanged: usize,
-    #[cfg(feature = "Foundation")]
-    pub RemoveTargetCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: super::super::super::super::Foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    RemoveTargetCameraChanged: usize,
+    pub TargetCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, handler: ::windows_core::RawPtr, result__: *mut ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
+    pub RemoveTargetCameraChanged: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, token: ::winrt_foundation::EventRegistrationToken) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -2678,14 +2386,8 @@ pub struct IMapTileSource2_Vtbl {
     pub SetAutoPlay: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: bool) -> ::windows_core::HRESULT,
     pub FrameCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut i32) -> ::windows_core::HRESULT,
     pub SetFrameCount: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: i32) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub FrameDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    FrameDuration: usize,
-    #[cfg(feature = "Foundation")]
-    pub SetFrameDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: super::super::super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetFrameDuration: usize,
+    pub FrameDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
+    pub SetFrameDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Pause: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Play: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub Stop: unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
@@ -2763,14 +2465,8 @@ unsafe impl ::windows_core::Interface for IMapTileUriRequest {
 #[doc(hidden)]
 pub struct IMapTileUriRequest_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(feature = "Foundation")]
     pub Uri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Uri: usize,
-    #[cfg(feature = "Foundation")]
     pub SetUri: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, value: ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    SetUri: usize,
     pub GetDeferral: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -2880,13 +2576,13 @@ unsafe impl ::windows_core::Interface for IStreetsidePanoramaStatics {
 #[doc(hidden)]
 pub struct IStreetsidePanoramaStatics_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub FindNearbyWithLocationAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     FindNearbyWithLocationAsync: usize,
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
+    #[cfg(feature = "Devices_Geolocation")]
     pub FindNearbyWithLocationAndRadiusAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, location: ::windows_core::RawPtr, radiusinmeters: f64, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Devices_Geolocation", feature = "Foundation")))]
+    #[cfg(not(feature = "Devices_Geolocation"))]
     FindNearbyWithLocationAndRadiusAsync: usize,
 }
 #[repr(transparent)]
@@ -2903,16 +2599,14 @@ impl LocalMapTileDataSource {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetUriFormatString)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn UriRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<LocalMapTileDataSource, MapTileUriRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn UriRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<LocalMapTileDataSource, MapTileUriRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).UriRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).UriRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveUriRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveUriRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveUriRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -3292,41 +2986,39 @@ unsafe impl ::windows_core::RuntimeType for MapAnimationKind {
 pub struct MapBillboard(::windows_core::IUnknown);
 impl MapBillboard {
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn NormalizedAnchorPoint(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn NormalizedAnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).NormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).NormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetNormalizedAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetNormalizedAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetNormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Image(&self) -> ::windows_core::Result<super::super::super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn Image(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetImage)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -3497,15 +3189,15 @@ unsafe impl ::core::marker::Sync for MapBillboard {}
 pub struct MapCamera(::windows_core::IUnknown);
 impl MapCamera {
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -3554,28 +3246,28 @@ impl MapCamera {
         unsafe { (::windows_core::Interface::vtable(this).SetFieldOfView)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateInstanceWithLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0) -> ::windows_core::Result<MapCamera> {
+    pub fn CreateInstanceWithLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0) -> ::windows_core::Result<MapCamera> {
         Self::IMapCameraFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithLocation)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapCamera>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateInstanceWithLocationAndHeading<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64) -> ::windows_core::Result<MapCamera> {
+    pub fn CreateInstanceWithLocationAndHeading<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64) -> ::windows_core::Result<MapCamera> {
         Self::IMapCameraFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithLocationAndHeading)(::windows_core::Interface::as_raw(this), location.into_param().abi(), headingindegrees, result__.as_mut_ptr()).from_abi::<MapCamera>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateInstanceWithLocationHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapCamera> {
+    pub fn CreateInstanceWithLocationHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapCamera> {
         Self::IMapCameraFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithLocationHeadingAndPitch)(::windows_core::Interface::as_raw(this), location.into_param().abi(), headingindegrees, pitchindegrees, result__.as_mut_ptr()).from_abi::<MapCamera>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateInstanceWithLocationHeadingPitchRollAndFieldOfView<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64, pitchindegrees: f64, rollindegrees: f64, fieldofviewindegrees: f64) -> ::windows_core::Result<MapCamera> {
+    pub fn CreateInstanceWithLocationHeadingPitchRollAndFieldOfView<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64, pitchindegrees: f64, rollindegrees: f64, fieldofviewindegrees: f64) -> ::windows_core::Result<MapCamera> {
         Self::IMapCameraFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithLocationHeadingPitchRollAndFieldOfView)(::windows_core::Interface::as_raw(this), location.into_param().abi(), headingindegrees, pitchindegrees, rollindegrees, fieldofviewindegrees, result__.as_mut_ptr()).from_abi::<MapCamera>(result__)
@@ -3755,28 +3447,27 @@ impl MapContextRequestedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapContextRequestedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MapElements(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<MapElement>> {
+    pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapElement>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<MapElement>>(result__)
+            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapElement>>(result__)
         }
     }
 }
@@ -3863,24 +3554,24 @@ impl MapControl {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Center(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Center(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Center)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn SetCenter<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetCenter<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetCenter)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Children(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<super::super::DependencyObject>> {
+    pub fn Children(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::super::DependencyObject>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<super::super::DependencyObject>>(result__)
+            (::windows_core::Interface::vtable(this).Children)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::super::DependencyObject>>(result__)
         }
     }
     pub fn ColorScheme(&self) -> ::windows_core::Result<MapColorScheme> {
@@ -3999,16 +3690,14 @@ impl MapControl {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTrafficFlowVisible)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TransformOrigin(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn TransformOrigin(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).TransformOrigin)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).TransformOrigin)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetTransformOrigin<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetTransformOrigin<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTransformOrigin)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -4035,207 +3724,189 @@ impl MapControl {
         unsafe { (::windows_core::Interface::vtable(this).SetZoomLevel)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MapElements(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<MapElement>> {
+    pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapElement>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<MapElement>>(result__)
+            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapElement>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Routes(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<MapRouteView>> {
+    pub fn Routes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapRouteView>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Routes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<MapRouteView>>(result__)
+            (::windows_core::Interface::vtable(this).Routes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapRouteView>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TileSources(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<MapTileSource>> {
+    pub fn TileSources(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapTileSource>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TileSources)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<MapTileSource>>(result__)
+            (::windows_core::Interface::vtable(this).TileSources)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapTileSource>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CenterChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn CenterChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CenterChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CenterChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCenterChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCenterChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCenterChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn HeadingChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn HeadingChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).HeadingChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).HeadingChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveHeadingChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveHeadingChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveHeadingChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn LoadingStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn LoadingStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).LoadingStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).LoadingStatusChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveLoadingStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveLoadingStatusChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveLoadingStatusChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapDoubleTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapInputEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapDoubleTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapInputEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapDoubleTapped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapDoubleTapped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapDoubleTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapDoubleTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapDoubleTapped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapHolding<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapInputEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapHolding<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapInputEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapHolding)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapHolding)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapHolding<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapHolding<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapHolding)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapInputEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapInputEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapTapped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapTapped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapTapped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn PitchChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn PitchChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).PitchChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).PitchChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemovePitchChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemovePitchChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemovePitchChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TransformOriginChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn TransformOriginChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TransformOriginChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TransformOriginChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTransformOriginChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTransformOriginChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTransformOriginChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ZoomLevelChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn ZoomLevelChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, ::windows_core::IInspectable>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ZoomLevelChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ZoomLevelChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveZoomLevelChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveZoomLevelChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveZoomLevelChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindMapElementsAtOffset<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, offset: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<MapElement>> {
+    pub fn FindMapElementsAtOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapElement>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindMapElementsAtOffset)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<MapElement>>(result__)
+            (::windows_core::Interface::vtable(this).FindMapElementsAtOffset)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapElement>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn GetLocationFromOffset<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, offset: Param0, location: &mut ::core::option::Option<super::super::super::super::Devices::Geolocation::Geopoint>) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn GetLocationFromOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, location: &mut ::core::option::Option<::winrt_devices::Geolocation::Geopoint>) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetLocationFromOffset)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), location as *mut _ as _).ok() }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn GetOffsetFromLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(&self, location: Param0, offset: &mut super::super::super::super::Foundation::Point) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn GetOffsetFromLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, location: Param0, offset: &mut ::winrt_foundation::Point) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).GetOffsetFromLocation)(::windows_core::Interface::as_raw(this), location.into_param().abi(), offset).ok() }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn IsLocationInView<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(&self, location: Param0, isinview: &mut bool) -> ::windows_core::Result<()> {
+    pub fn IsLocationInView<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, location: Param0, isinview: &mut bool) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).IsLocationInView)(::windows_core::Interface::as_raw(this), location.into_param().abi(), isinview).ok() }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn TrySetViewBoundsAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::GeoboundingBox>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::IReference<super::super::Thickness>>>(&self, bounds: Param0, margin: Param1, animation: MapAnimationKind) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn TrySetViewBoundsAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<super::super::Thickness>>>(&self, bounds: Param0, margin: Param1, animation: MapAnimationKind) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetViewBoundsAsync)(::windows_core::Interface::as_raw(this), bounds.into_param().abi(), margin.into_param().abi(), animation, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetViewBoundsAsync)(::windows_core::Interface::as_raw(this), bounds.into_param().abi(), margin.into_param().abi(), animation, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn TrySetViewWithCenterAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(&self, center: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn TrySetViewWithCenterAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, center: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetViewWithCenterAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetViewWithCenterAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn TrySetViewWithCenterAndZoomAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::IReference<f64>>>(&self, center: Param0, zoomlevel: Param1) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn TrySetViewWithCenterAndZoomAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>>(&self, center: Param0, zoomlevel: Param1) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetViewWithCenterAndZoomAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), zoomlevel.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetViewWithCenterAndZoomAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), zoomlevel.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn TrySetViewWithCenterZoomHeadingAndPitchAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::IReference<f64>>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::IReference<f64>>, Param3: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::IReference<f64>>>(&self, center: Param0, zoomlevel: Param1, heading: Param2, desiredpitch: Param3) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn TrySetViewWithCenterZoomHeadingAndPitchAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>>(&self, center: Param0, zoomlevel: Param1, heading: Param2, desiredpitch: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetViewWithCenterZoomHeadingAndPitchAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), zoomlevel.into_param().abi(), heading.into_param().abi(), desiredpitch.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetViewWithCenterZoomHeadingAndPitchAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), zoomlevel.into_param().abi(), heading.into_param().abi(), desiredpitch.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::IReference<f64>>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::IReference<f64>>, Param3: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::IReference<f64>>>(&self, center: Param0, zoomlevel: Param1, heading: Param2, desiredpitch: Param3, animation: MapAnimationKind) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>, Param2: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::IReference<f64>>>(&self, center: Param0, zoomlevel: Param1, heading: Param2, desiredpitch: Param3, animation: MapAnimationKind) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), zoomlevel.into_param().abi(), heading.into_param().abi(), desiredpitch.into_param().abi(), animation, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync)(::windows_core::Interface::as_raw(this), center.into_param().abi(), zoomlevel.into_param().abi(), heading.into_param().abi(), desiredpitch.into_param().abi(), animation, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     pub fn BusinessLandmarksVisible(&self) -> ::windows_core::Result<bool> {
@@ -4354,94 +4025,80 @@ impl MapControl {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetCustomExperience)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapElementClick<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapElementClickEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapElementClick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapElementClickEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElementClick)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapElementClick)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapElementClick<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapElementClick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapElementClick)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapElementPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapElementPointerEnteredEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapElementPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapElementPointerEnteredEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElementPointerEntered)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapElementPointerEntered)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapElementPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapElementPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapElementPointerEntered)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapElementPointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapElementPointerExitedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapElementPointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapElementPointerExitedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElementPointerExited)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapElementPointerExited)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapElementPointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapElementPointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapElementPointerExited)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ActualCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapActualCameraChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn ActualCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapActualCameraChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ActualCameraChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ActualCameraChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveActualCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveActualCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveActualCameraChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn ActualCameraChanging<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapActualCameraChangingEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn ActualCameraChanging<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapActualCameraChangingEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).ActualCameraChanging)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).ActualCameraChanging)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveActualCameraChanging<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveActualCameraChanging<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveActualCameraChanging)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TargetCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapTargetCameraChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn TargetCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapTargetCameraChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TargetCameraChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TargetCameraChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTargetCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTargetCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTargetCameraChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn CustomExperienceChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapCustomExperienceChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn CustomExperienceChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapCustomExperienceChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).CustomExperienceChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).CustomExperienceChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveCustomExperienceChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveCustomExperienceChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveCustomExperienceChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -4469,88 +4126,77 @@ impl MapControl {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopContinuousZoom)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryRotateAsync(&self, degrees: f64) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryRotateAsync(&self, degrees: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryRotateAsync)(::windows_core::Interface::as_raw(this), degrees, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryRotateAsync)(::windows_core::Interface::as_raw(this), degrees, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryRotateToAsync(&self, angleindegrees: f64) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryRotateToAsync(&self, angleindegrees: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryRotateToAsync)(::windows_core::Interface::as_raw(this), angleindegrees, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryRotateToAsync)(::windows_core::Interface::as_raw(this), angleindegrees, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryTiltAsync(&self, degrees: f64) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryTiltAsync(&self, degrees: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryTiltAsync)(::windows_core::Interface::as_raw(this), degrees, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryTiltAsync)(::windows_core::Interface::as_raw(this), degrees, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryTiltToAsync(&self, angleindegrees: f64) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryTiltToAsync(&self, angleindegrees: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryTiltToAsync)(::windows_core::Interface::as_raw(this), angleindegrees, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryTiltToAsync)(::windows_core::Interface::as_raw(this), angleindegrees, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryZoomInAsync(&self) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryZoomInAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryZoomInAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryZoomInAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryZoomOutAsync(&self) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryZoomOutAsync(&self) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryZoomOutAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryZoomOutAsync)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryZoomToAsync(&self, zoomlevel: f64) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryZoomToAsync(&self, zoomlevel: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryZoomToAsync)(::windows_core::Interface::as_raw(this), zoomlevel, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryZoomToAsync)(::windows_core::Interface::as_raw(this), zoomlevel, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TrySetSceneAsync<'a, Param0: ::windows_core::IntoParam<'a, MapScene>>(&self, scene: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TrySetSceneAsync<'a, Param0: ::windows_core::IntoParam<'a, MapScene>>(&self, scene: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetSceneAsync)(::windows_core::Interface::as_raw(this), scene.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetSceneAsync)(::windows_core::Interface::as_raw(this), scene.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TrySetSceneWithAnimationAsync<'a, Param0: ::windows_core::IntoParam<'a, MapScene>>(&self, scene: Param0, animationkind: MapAnimationKind) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TrySetSceneWithAnimationAsync<'a, Param0: ::windows_core::IntoParam<'a, MapScene>>(&self, scene: Param0, animationkind: MapAnimationKind) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TrySetSceneWithAnimationAsync)(::windows_core::Interface::as_raw(this), scene.into_param().abi(), animationkind, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TrySetSceneWithAnimationAsync)(::windows_core::Interface::as_raw(this), scene.into_param().abi(), animationkind, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapRightTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapRightTappedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapRightTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapRightTappedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControl3>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapRightTapped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapRightTapped)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapRightTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapRightTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl3>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapRightTapped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -4577,11 +4223,11 @@ impl MapControl {
         unsafe { (::windows_core::Interface::vtable(this).SetTransitFeaturesEnabled)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn GetVisibleRegion(&self, region: MapVisibleRegionKind) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopath> {
+    pub fn GetVisibleRegion(&self, region: MapVisibleRegionKind) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = &::windows_core::Interface::cast::<IMapControl4>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetVisibleRegion)(::windows_core::Interface::as_raw(this), region, result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopath>(result__)
+            (::windows_core::Interface::vtable(this).GetVisibleRegion)(::windows_core::Interface::as_raw(this), region, result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopath>(result__)
         }
     }
     pub fn MapProjection(&self) -> ::windows_core::Result<MapProjection> {
@@ -4617,29 +4263,27 @@ impl MapControl {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetViewPadding)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapContextRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapContextRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapContextRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapContextRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapContextRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapContextRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapContextRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapContextRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapContextRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn FindMapElementsAtOffsetWithRadius<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, offset: Param0, radius: f64) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<MapElement>> {
+    pub fn FindMapElementsAtOffsetWithRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, radius: f64) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapElement>> {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindMapElementsAtOffsetWithRadius)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), radius, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<MapElement>>(result__)
+            (::windows_core::Interface::vtable(this).FindMapElementsAtOffsetWithRadius)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), radius, result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapElement>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn GetLocationFromOffsetWithReferenceSystem<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, offset: Param0, desiredreferencesystem: super::super::super::super::Devices::Geolocation::AltitudeReferenceSystem, location: &mut ::core::option::Option<super::super::super::super::Devices::Geolocation::Geopoint>) -> ::windows_core::Result<()> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn GetLocationFromOffsetWithReferenceSystem<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, desiredreferencesystem: ::winrt_devices::Geolocation::AltitudeReferenceSystem, location: &mut ::core::option::Option<::winrt_devices::Geolocation::Geopoint>) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).GetLocationFromOffsetWithReferenceSystem)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), desiredreferencesystem, location as *mut _ as _).ok() }
     }
@@ -4651,45 +4295,44 @@ impl MapControl {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).StopContinuousPan)(::windows_core::Interface::as_raw(this)).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TryPanAsync(&self, horizontalpixels: f64, verticalpixels: f64) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    pub fn TryPanAsync(&self, horizontalpixels: f64, verticalpixels: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryPanAsync)(::windows_core::Interface::as_raw(this), horizontalpixels, verticalpixels, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryPanAsync)(::windows_core::Interface::as_raw(this), horizontalpixels, verticalpixels, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn TryPanToAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(&self, location: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<bool>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn TryPanToAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, location: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<bool>> {
         let this = &::windows_core::Interface::cast::<IMapControl5>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TryPanToAsync)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<bool>>(result__)
+            (::windows_core::Interface::vtable(this).TryPanToAsync)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<bool>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Layers(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<MapLayer>> {
+    pub fn Layers(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapLayer>> {
         let this = &::windows_core::Interface::cast::<IMapControl6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Layers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<MapLayer>>(result__)
+            (::windows_core::Interface::vtable(this).Layers)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapLayer>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetLayers<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IVector<MapLayer>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetLayers<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<MapLayer>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControl6>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetLayers)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn TryGetLocationFromOffset<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, offset: Param0, location: &mut ::core::option::Option<super::super::super::super::Devices::Geolocation::Geopoint>) -> ::windows_core::Result<bool> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn TryGetLocationFromOffset<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, location: &mut ::core::option::Option<::winrt_devices::Geolocation::Geopoint>) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<IMapControl6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
             (::windows_core::Interface::vtable(this).TryGetLocationFromOffset)(::windows_core::Interface::as_raw(this), offset.into_param().abi(), location as *mut _ as _, result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn TryGetLocationFromOffsetWithReferenceSystem<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, offset: Param0, desiredreferencesystem: super::super::super::super::Devices::Geolocation::AltitudeReferenceSystem, location: &mut ::core::option::Option<super::super::super::super::Devices::Geolocation::Geopoint>) -> ::windows_core::Result<bool> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn TryGetLocationFromOffsetWithReferenceSystem<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, offset: Param0, desiredreferencesystem: ::winrt_devices::Geolocation::AltitudeReferenceSystem, location: &mut ::core::option::Option<::winrt_devices::Geolocation::Geopoint>) -> ::windows_core::Result<bool> {
         let this = &::windows_core::Interface::cast::<IMapControl6>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
@@ -4850,14 +4493,14 @@ impl MapControl {
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn GetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>>(element: Param0) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn GetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         Self::IMapControlStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).GetLocation)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).GetLocation)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(element: Param0, value: Param1) -> ::windows_core::Result<()> {
+    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>, Param1: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(element: Param0, value: Param1) -> ::windows_core::Result<()> {
         Self::IMapControlStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value.into_param().abi()).ok() })
     }
     pub fn NormalizedAnchorPointProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
@@ -4866,15 +4509,13 @@ impl MapControl {
             (::windows_core::Interface::vtable(this).NormalizedAnchorPointProperty)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::DependencyProperty>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn GetNormalizedAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>>(element: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn GetNormalizedAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>>(element: Param0) -> ::windows_core::Result<::winrt_foundation::Point> {
         Self::IMapControlStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).GetNormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).GetNormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), element.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         })
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetNormalizedAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>, Param1: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(element: Param0, value: Param1) -> ::windows_core::Result<()> {
+    pub fn SetNormalizedAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::DependencyObject>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(element: Param0, value: Param1) -> ::windows_core::Result<()> {
         Self::IMapControlStatics(|this| unsafe { (::windows_core::Interface::vtable(this).SetNormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), element.into_param().abi(), value.into_param().abi()).ok() })
     }
     pub fn BusinessLandmarksVisibleProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
@@ -5241,11 +4882,11 @@ impl MapControlBusinessLandmarkClickEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
-    pub fn LocalLocations(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Services::Maps::LocalSearch::LocalLocation>> {
+    pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Services::Maps::LocalSearch::LocalLocation>>(result__)
+            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>>(result__)
         }
     }
 }
@@ -5332,11 +4973,11 @@ impl MapControlBusinessLandmarkPointerEnteredEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
-    pub fn LocalLocations(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Services::Maps::LocalSearch::LocalLocation>> {
+    pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Services::Maps::LocalSearch::LocalLocation>>(result__)
+            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>>(result__)
         }
     }
 }
@@ -5423,11 +5064,11 @@ impl MapControlBusinessLandmarkPointerExitedEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
-    pub fn LocalLocations(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Services::Maps::LocalSearch::LocalLocation>> {
+    pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Services::Maps::LocalSearch::LocalLocation>>(result__)
+            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>>(result__)
         }
     }
 }
@@ -5514,11 +5155,11 @@ impl MapControlBusinessLandmarkRightTappedEventArgs {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Services_Maps_LocalSearch"))]
-    pub fn LocalLocations(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Services::Maps::LocalSearch::LocalLocation>> {
+    pub fn LocalLocations(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<super::super::super::super::Services::Maps::LocalSearch::LocalLocation>>(result__)
+            (::windows_core::Interface::vtable(this).LocalLocations)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::winrt_services::Maps::LocalSearch::LocalLocation>>(result__)
         }
     }
 }
@@ -5597,107 +5238,91 @@ unsafe impl ::core::marker::Sync for MapControlBusinessLandmarkRightTappedEventA
 #[repr(transparent)]
 pub struct MapControlDataHelper(::windows_core::IUnknown);
 impl MapControlDataHelper {
-    #[cfg(feature = "Foundation")]
-    pub fn BusinessLandmarkClick<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapControlBusinessLandmarkClickEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn BusinessLandmarkClick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapControlBusinessLandmarkClickEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).BusinessLandmarkClick)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).BusinessLandmarkClick)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveBusinessLandmarkClick<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveBusinessLandmarkClick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveBusinessLandmarkClick)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TransitFeatureClick<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapControlTransitFeatureClickEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn TransitFeatureClick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapControlTransitFeatureClickEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TransitFeatureClick)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TransitFeatureClick)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTransitFeatureClick<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTransitFeatureClick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTransitFeatureClick)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BusinessLandmarkRightTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapControlBusinessLandmarkRightTappedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn BusinessLandmarkRightTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapControlBusinessLandmarkRightTappedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).BusinessLandmarkRightTapped)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).BusinessLandmarkRightTapped)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveBusinessLandmarkRightTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveBusinessLandmarkRightTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveBusinessLandmarkRightTapped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TransitFeatureRightTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapControlTransitFeatureRightTappedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn TransitFeatureRightTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapControlTransitFeatureRightTappedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TransitFeatureRightTapped)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TransitFeatureRightTapped)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTransitFeatureRightTapped<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTransitFeatureRightTapped<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTransitFeatureRightTapped)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BusinessLandmarkPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapControlBusinessLandmarkPointerEnteredEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn BusinessLandmarkPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapControlBusinessLandmarkPointerEnteredEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControlDataHelper2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).BusinessLandmarkPointerEntered)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).BusinessLandmarkPointerEntered)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveBusinessLandmarkPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveBusinessLandmarkPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControlDataHelper2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveBusinessLandmarkPointerEntered)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TransitFeaturePointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapControlTransitFeaturePointerEnteredEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn TransitFeaturePointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapControlTransitFeaturePointerEnteredEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControlDataHelper2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TransitFeaturePointerEntered)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TransitFeaturePointerEntered)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTransitFeaturePointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTransitFeaturePointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControlDataHelper2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTransitFeaturePointerEntered)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn BusinessLandmarkPointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapControlBusinessLandmarkPointerExitedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn BusinessLandmarkPointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapControlBusinessLandmarkPointerExitedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControlDataHelper2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).BusinessLandmarkPointerExited)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).BusinessLandmarkPointerExited)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveBusinessLandmarkPointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveBusinessLandmarkPointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControlDataHelper2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveBusinessLandmarkPointerExited)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TransitFeaturePointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapControl, MapControlTransitFeaturePointerExitedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn TransitFeaturePointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapControl, MapControlTransitFeaturePointerExitedEventArgs>>>(&self, value: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = &::windows_core::Interface::cast::<IMapControlDataHelper2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TransitFeaturePointerExited)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TransitFeaturePointerExited)(::windows_core::Interface::as_raw(this), value.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTransitFeaturePointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTransitFeaturePointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapControlDataHelper2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTransitFeaturePointerExited)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -5832,19 +5457,19 @@ impl MapControlTransitFeatureClickEventArgs {
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TransitProperties(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn TransitProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TransitProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).TransitProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         }
     }
 }
@@ -5938,19 +5563,19 @@ impl MapControlTransitFeaturePointerEnteredEventArgs {
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TransitProperties(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn TransitProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TransitProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).TransitProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         }
     }
 }
@@ -6044,19 +5669,19 @@ impl MapControlTransitFeaturePointerExitedEventArgs {
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TransitProperties(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn TransitProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TransitProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).TransitProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         }
     }
 }
@@ -6150,19 +5775,19 @@ impl MapControlTransitFeatureRightTappedEventArgs {
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn TransitProperties(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
+    pub fn TransitProperties(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).TransitProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
+            (::windows_core::Interface::vtable(this).TransitProperties)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IMapView<::windows_core::HSTRING, ::windows_core::IInspectable>>(result__)
         }
     }
 }
@@ -6693,15 +6318,15 @@ impl MapElement3D {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -6750,15 +6375,15 @@ impl MapElement3D {
         unsafe { (::windows_core::Interface::vtable(this).SetRoll)(::windows_core::Interface::as_raw(this), value).ok() }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn Scale(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Numerics::Vector3> {
+    pub fn Scale(&self) -> ::windows_core::Result<::winrt_foundation::Numerics::Vector3> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Numerics::Vector3>::zeroed();
-            (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Numerics::Vector3>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Numerics::Vector3>::zeroed();
+            (::windows_core::Interface::vtable(this).Scale)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Numerics::Vector3>(result__)
         }
     }
     #[cfg(feature = "Foundation_Numerics")]
-    pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetScale<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Numerics::Vector3>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetScale)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -6919,28 +6544,27 @@ impl MapElementClickEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapElementClickEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MapElements(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<MapElement>> {
+    pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapElement>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<MapElement>>(result__)
+            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapElement>>(result__)
         }
     }
 }
@@ -7059,20 +6683,19 @@ impl MapElementPointerEnteredEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapElementPointerEnteredEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     pub fn MapElement(&self) -> ::windows_core::Result<MapElement> {
@@ -7165,20 +6788,19 @@ impl MapElementPointerExitedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapElementPointerExitedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     pub fn MapElement(&self) -> ::windows_core::Result<MapElement> {
@@ -7272,67 +6894,59 @@ impl MapElementsLayer {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MapElements(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<MapElement>> {
+    pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapElement>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<MapElement>>(result__)
+            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapElement>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SetMapElements<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IVector<MapElement>>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetMapElements<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IVector<MapElement>>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetMapElements)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapElementClick<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapElementsLayer, MapElementsLayerClickEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapElementClick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapElementsLayer, MapElementsLayerClickEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElementClick)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapElementClick)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapElementClick<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapElementClick<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapElementClick)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapElementPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapElementsLayer, MapElementsLayerPointerEnteredEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapElementPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapElementsLayer, MapElementsLayerPointerEnteredEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElementPointerEntered)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapElementPointerEntered)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapElementPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapElementPointerEntered<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapElementPointerEntered)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapElementPointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapElementsLayer, MapElementsLayerPointerExitedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapElementPointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapElementsLayer, MapElementsLayerPointerExitedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElementPointerExited)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapElementPointerExited)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapElementPointerExited<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapElementPointerExited<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapElementPointerExited)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn MapContextRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapElementsLayer, MapElementsLayerContextRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn MapContextRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapElementsLayer, MapElementsLayerContextRequestedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).MapContextRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).MapContextRequested)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveMapContextRequested<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveMapContextRequested<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveMapContextRequested)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
@@ -7469,28 +7083,27 @@ impl MapElementsLayerClickEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapElementsLayerClickEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MapElements(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<MapElement>> {
+    pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<MapElement>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<MapElement>>(result__)
+            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<MapElement>>(result__)
         }
     }
 }
@@ -7576,28 +7189,27 @@ impl MapElementsLayerContextRequestedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapElementsLayerContextRequestedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn MapElements(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVectorView<MapElement>> {
+    pub fn MapElements(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<MapElement>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVectorView<MapElement>>(result__)
+            (::windows_core::Interface::vtable(this).MapElements)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<MapElement>>(result__)
         }
     }
 }
@@ -7683,20 +7295,19 @@ impl MapElementsLayerPointerEnteredEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapElementsLayerPointerEnteredEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     pub fn MapElement(&self) -> ::windows_core::Result<MapElement> {
@@ -7789,20 +7400,19 @@ impl MapElementsLayerPointerExitedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapElementsLayerPointerExitedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     pub fn MapElement(&self) -> ::windows_core::Result<MapElement> {
@@ -7896,15 +7506,15 @@ impl MapIcon {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetLocation)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -7919,29 +7529,27 @@ impl MapIcon {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetTitle)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn NormalizedAnchorPoint(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn NormalizedAnchorPoint(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).NormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).NormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetNormalizedAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Point>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetNormalizedAnchorPoint<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Point>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetNormalizedAnchorPoint)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn Image(&self) -> ::windows_core::Result<super::super::super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn Image(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).Image)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetImage<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetImage)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -8111,20 +7719,19 @@ impl MapInputEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapInputEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
 }
@@ -8281,11 +7888,11 @@ impl MapItemsControl {
         unsafe { (::windows_core::Interface::vtable(this).SetItemsSource)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Items(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<super::super::DependencyObject>> {
+    pub fn Items(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<super::super::DependencyObject>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<super::super::DependencyObject>>(result__)
+            (::windows_core::Interface::vtable(this).Items)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<super::super::DependencyObject>>(result__)
         }
     }
     pub fn ItemTemplate(&self) -> ::windows_core::Result<super::super::DataTemplate> {
@@ -8633,18 +8240,18 @@ impl MapModel3D {
             (::windows_core::Interface::vtable(this).CreateInstance)(::windows_core::Interface::as_raw(this), ::core::mem::transmute_copy(&derived__), base__ as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapModel3D>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn CreateFrom3MFAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IRandomAccessStreamReference>>(source: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<MapModel3D>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn CreateFrom3MFAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(source: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapModel3D>> {
         Self::IMapModel3DStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateFrom3MFAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<MapModel3D>>(result__)
+            (::windows_core::Interface::vtable(this).CreateFrom3MFAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapModel3D>>(result__)
         })
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage_Streams"))]
-    pub fn CreateFrom3MFWithShadingOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IRandomAccessStreamReference>>(source: Param0, shadingoption: MapModel3DShadingOption) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<MapModel3D>> {
+    #[cfg(feature = "Storage_Streams")]
+    pub fn CreateFrom3MFWithShadingOptionAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(source: Param0, shadingoption: MapModel3DShadingOption) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<MapModel3D>> {
         Self::IMapModel3DStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).CreateFrom3MFWithShadingOptionAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), shadingoption, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<MapModel3D>>(result__)
+            (::windows_core::Interface::vtable(this).CreateFrom3MFWithShadingOptionAsync)(::windows_core::Interface::as_raw(this), source.into_param().abi(), shadingoption, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<MapModel3D>>(result__)
         })
     }
     pub fn IMapModel3DFactory<R, F: FnOnce(&IMapModel3DFactory) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {
@@ -8826,15 +8433,15 @@ impl MapPolygon {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Path(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopath> {
+    pub fn Path(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopath>(result__)
+            (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopath>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn SetPath<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopath>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPath<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopath>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPath)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -8883,11 +8490,11 @@ impl MapPolygon {
         unsafe { (::windows_core::Interface::vtable(this).SetFillColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
-    pub fn Paths(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Collections::IVector<super::super::super::super::Devices::Geolocation::Geopath>> {
+    pub fn Paths(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVector<::winrt_devices::Geolocation::Geopath>> {
         let this = &::windows_core::Interface::cast::<IMapPolygon2>(self)?;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Paths)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Collections::IVector<super::super::super::super::Devices::Geolocation::Geopath>>(result__)
+            (::windows_core::Interface::vtable(this).Paths)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVector<::winrt_devices::Geolocation::Geopath>>(result__)
         }
     }
     pub fn PathProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
@@ -9036,15 +8643,15 @@ impl MapPolyline {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Path(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopath> {
+    pub fn Path(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopath> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopath>(result__)
+            (::windows_core::Interface::vtable(this).Path)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopath>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn SetPath<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopath>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPath<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopath>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPath)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -9253,20 +8860,19 @@ impl MapRightTappedEventArgs {
         static mut SHARED: ::windows_core::FactoryCache<MapRightTappedEventArgs, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Position(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Point> {
+    pub fn Position(&self) -> ::windows_core::Result<::winrt_foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::Point>::zeroed();
-            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Point>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::Point>::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Point>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
 }
@@ -9368,22 +8974,22 @@ impl MapRouteView {
         unsafe { (::windows_core::Interface::vtable(this).SetOutlineColor)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Services_Maps")]
-    pub fn Route(&self) -> ::windows_core::Result<super::super::super::super::Services::Maps::MapRoute> {
+    pub fn Route(&self) -> ::windows_core::Result<::winrt_services::Maps::MapRoute> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Route)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Services::Maps::MapRoute>(result__)
+            (::windows_core::Interface::vtable(this).Route)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_services::Maps::MapRoute>(result__)
         }
     }
     #[cfg(feature = "Services_Maps")]
-    pub fn CreateInstanceWithMapRoute<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Services::Maps::MapRoute>>(route: Param0) -> ::windows_core::Result<MapRouteView> {
+    pub fn CreateInstanceWithMapRoute<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_services::Maps::MapRoute>>(route: Param0) -> ::windows_core::Result<MapRouteView> {
         Self::IMapRouteViewFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithMapRoute)(::windows_core::Interface::as_raw(this), route.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapRouteView>(result__)
         })
     }
     #[cfg(feature = "Services_Maps")]
-    pub fn CreateInstanceWithMapRoute_compose<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Services::Maps::MapRoute>, T: ::windows_core::Compose>(route: Param0, compose: T) -> ::windows_core::Result<MapRouteView> {
+    pub fn CreateInstanceWithMapRoute_compose<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_services::Maps::MapRoute>, T: ::windows_core::Compose>(route: Param0, compose: T) -> ::windows_core::Result<MapRouteView> {
         Self::IMapRouteViewFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -9497,28 +9103,26 @@ impl MapScene {
             (::windows_core::Interface::vtable(this).TargetCamera)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<MapCamera>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn TargetCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TypedEventHandler<MapScene, MapTargetCameraChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::EventRegistrationToken> {
+    pub fn TargetCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TypedEventHandler<MapScene, MapTargetCameraChangedEventArgs>>>(&self, handler: Param0) -> ::windows_core::Result<::winrt_foundation::EventRegistrationToken> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::EventRegistrationToken>::zeroed();
-            (::windows_core::Interface::vtable(this).TargetCameraChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::EventRegistrationToken>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::EventRegistrationToken>::zeroed();
+            (::windows_core::Interface::vtable(this).TargetCameraChanged)(::windows_core::Interface::as_raw(this), handler.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::EventRegistrationToken>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn RemoveTargetCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
+    pub fn RemoveTargetCameraChanged<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::EventRegistrationToken>>(&self, token: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).RemoveTargetCameraChanged)(::windows_core::Interface::as_raw(this), token.into_param().abi()).ok() }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateFromBoundingBox<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::GeoboundingBox>>(bounds: Param0) -> ::windows_core::Result<MapScene> {
+    pub fn CreateFromBoundingBox<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(bounds: Param0) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBoundingBox)(::windows_core::Interface::as_raw(this), bounds.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateFromBoundingBoxWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::GeoboundingBox>>(bounds: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
+    pub fn CreateFromBoundingBoxWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(bounds: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromBoundingBoxWithHeadingAndPitch)(::windows_core::Interface::as_raw(this), bounds.into_param().abi(), headingindegrees, pitchindegrees, result__.as_mut_ptr()).from_abi::<MapScene>(result__)
@@ -9531,42 +9135,42 @@ impl MapScene {
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateFromLocation<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0) -> ::windows_core::Result<MapScene> {
+    pub fn CreateFromLocation<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocation)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateFromLocationWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
+    pub fn CreateFromLocationWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocationWithHeadingAndPitch)(::windows_core::Interface::as_raw(this), location.into_param().abi(), headingindegrees, pitchindegrees, result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateFromLocationAndRadius<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0, radiusinmeters: f64) -> ::windows_core::Result<MapScene> {
+    pub fn CreateFromLocationAndRadius<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, radiusinmeters: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocationAndRadius)(::windows_core::Interface::as_raw(this), location.into_param().abi(), radiusinmeters, result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateFromLocationAndRadiusWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0, radiusinmeters: f64, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
+    pub fn CreateFromLocationAndRadiusWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, radiusinmeters: f64, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocationAndRadiusWithHeadingAndPitch)(::windows_core::Interface::as_raw(this), location.into_param().abi(), radiusinmeters, headingindegrees, pitchindegrees, result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
     #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
-    pub fn CreateFromLocations<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IIterable<super::super::super::super::Devices::Geolocation::Geopoint>>>(locations: Param0) -> ::windows_core::Result<MapScene> {
+    pub fn CreateFromLocations<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_devices::Geolocation::Geopoint>>>(locations: Param0) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocations)(::windows_core::Interface::as_raw(this), locations.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapScene>(result__)
         })
     }
     #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation_Collections"))]
-    pub fn CreateFromLocationsWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IIterable<super::super::super::super::Devices::Geolocation::Geopoint>>>(locations: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
+    pub fn CreateFromLocationsWithHeadingAndPitch<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::winrt_devices::Geolocation::Geopoint>>>(locations: Param0, headingindegrees: f64, pitchindegrees: f64) -> ::windows_core::Result<MapScene> {
         Self::IMapSceneStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateFromLocationsWithHeadingAndPitch)(::windows_core::Interface::as_raw(this), locations.into_param().abi(), headingindegrees, pitchindegrees, result__.as_mut_ptr()).from_abi::<MapScene>(result__)
@@ -9748,7 +9352,7 @@ impl MapStyleSheet {
         })
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn Combine<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Collections::IIterable<MapStyleSheet>>>(stylesheets: Param0) -> ::windows_core::Result<MapStyleSheet> {
+    pub fn Combine<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<MapStyleSheet>>>(stylesheets: Param0) -> ::windows_core::Result<MapStyleSheet> {
         Self::IMapStyleSheetStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).Combine)(::windows_core::Interface::as_raw(this), stylesheets.into_param().abi(), result__.as_mut_ptr()).from_abi::<MapStyleSheet>(result__)
@@ -10427,15 +10031,15 @@ impl MapTileBitmapRequest {
         unsafe { SHARED.call(callback) }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn PixelData(&self) -> ::windows_core::Result<super::super::super::super::Storage::Streams::IRandomAccessStreamReference> {
+    pub fn PixelData(&self) -> ::windows_core::Result<::winrt_storage::Streams::IRandomAccessStreamReference> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).PixelData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Storage::Streams::IRandomAccessStreamReference>(result__)
+            (::windows_core::Interface::vtable(this).PixelData)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::Streams::IRandomAccessStreamReference>(result__)
         }
     }
     #[cfg(feature = "Storage_Streams")]
-    pub fn SetPixelData<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetPixelData<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::Streams::IRandomAccessStreamReference>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetPixelData)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -10910,15 +10514,15 @@ impl MapTileSource {
         unsafe { (::windows_core::Interface::vtable(this).SetZoomLevelRange)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Bounds(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::GeoboundingBox> {
+    pub fn Bounds(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::GeoboundingBox> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Bounds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::GeoboundingBox>(result__)
+            (::windows_core::Interface::vtable(this).Bounds)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::GeoboundingBox>(result__)
         }
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn SetBounds<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::GeoboundingBox>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetBounds<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetBounds)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -11028,16 +10632,14 @@ impl MapTileSource {
         let this = &::windows_core::Interface::cast::<IMapTileSource2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFrameCount)(::windows_core::Interface::as_raw(this), value).ok() }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn FrameDuration(&self) -> ::windows_core::Result<super::super::super::super::Foundation::TimeSpan> {
+    pub fn FrameDuration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = &::windows_core::Interface::cast::<IMapTileSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).FrameDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).FrameDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetFrameDuration<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetFrameDuration<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = &::windows_core::Interface::cast::<IMapTileSource2>(self)?;
         unsafe { (::windows_core::Interface::vtable(this).SetFrameDuration)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -11093,14 +10695,14 @@ impl MapTileSource {
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateInstanceWithDataSourceZoomRangeAndBounds<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::GeoboundingBox>>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2) -> ::windows_core::Result<MapTileSource> {
+    pub fn CreateInstanceWithDataSourceZoomRangeAndBounds<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2) -> ::windows_core::Result<MapTileSource> {
         Self::IMapTileSourceFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithDataSourceZoomRangeAndBounds)(::windows_core::Interface::as_raw(this), datasource.into_param().abi(), zoomlevelrange.into_param().abi(), bounds.into_param().abi(), ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapTileSource>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateInstanceWithDataSourceZoomRangeAndBounds_compose<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::GeoboundingBox>, T: ::windows_core::Compose>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2, compose: T) -> ::windows_core::Result<MapTileSource> {
+    pub fn CreateInstanceWithDataSourceZoomRangeAndBounds_compose<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>, T: ::windows_core::Compose>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2, compose: T) -> ::windows_core::Result<MapTileSource> {
         Self::IMapTileSourceFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -11108,14 +10710,14 @@ impl MapTileSource {
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::GeoboundingBox>>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2, tilesizeinpixels: i32) -> ::windows_core::Result<MapTileSource> {
+    pub fn CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2, tilesizeinpixels: i32) -> ::windows_core::Result<MapTileSource> {
         Self::IMapTileSourceFactory(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
             (::windows_core::Interface::vtable(this).CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize)(::windows_core::Interface::as_raw(this), datasource.into_param().abi(), zoomlevelrange.into_param().abi(), bounds.into_param().abi(), tilesizeinpixels, ::core::ptr::null_mut(), &mut ::core::option::Option::<::windows_core::IInspectable>::None as *mut _ as _, result__.as_mut_ptr()).from_abi::<MapTileSource>(result__)
         })
     }
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize_compose<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::GeoboundingBox>, T: ::windows_core::Compose>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2, tilesizeinpixels: i32, compose: T) -> ::windows_core::Result<MapTileSource> {
+    pub fn CreateInstanceWithDataSourceZoomRangeBoundsAndTileSize_compose<'a, Param0: ::windows_core::IntoParam<'a, MapTileDataSource>, Param1: ::windows_core::IntoParam<'a, MapZoomLevelRange>, Param2: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::GeoboundingBox>, T: ::windows_core::Compose>(datasource: Param0, zoomlevelrange: Param1, bounds: Param2, tilesizeinpixels: i32, compose: T) -> ::windows_core::Result<MapTileSource> {
         Self::IMapTileSourceFactory(|this| unsafe {
             let (derived__, base__) = ::windows_core::Compose::compose(compose);
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
@@ -11327,16 +10929,14 @@ impl MapTileUriRequest {
         static mut SHARED: ::windows_core::FactoryCache<MapTileUriRequest, ::windows_core::IGenericFactory> = ::windows_core::FactoryCache::new();
         unsafe { SHARED.call(callback) }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Uri(&self) -> ::windows_core::Result<super::super::super::super::Foundation::Uri> {
+    pub fn Uri(&self) -> ::windows_core::Result<::winrt_foundation::Uri> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::Uri>(result__)
+            (::windows_core::Interface::vtable(this).Uri)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Uri>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn SetUri<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
+    pub fn SetUri<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::Uri>>(&self, value: Param0) -> ::windows_core::Result<()> {
         let this = self;
         unsafe { (::windows_core::Interface::vtable(this).SetUri)(::windows_core::Interface::as_raw(this), value.into_param().abi()).ok() }
     }
@@ -11930,25 +11530,25 @@ unsafe impl ::core::marker::Sync for StreetsideExperience {}
 pub struct StreetsidePanorama(::windows_core::IUnknown);
 impl StreetsidePanorama {
     #[cfg(feature = "Devices_Geolocation")]
-    pub fn Location(&self) -> ::windows_core::Result<super::super::super::super::Devices::Geolocation::Geopoint> {
+    pub fn Location(&self) -> ::windows_core::Result<::winrt_devices::Geolocation::Geopoint> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::super::super::Devices::Geolocation::Geopoint>(result__)
+            (::windows_core::Interface::vtable(this).Location)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_devices::Geolocation::Geopoint>(result__)
         }
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn FindNearbyWithLocationAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<StreetsidePanorama>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn FindNearbyWithLocationAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<StreetsidePanorama>> {
         Self::IStreetsidePanoramaStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindNearbyWithLocationAsync)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<StreetsidePanorama>>(result__)
+            (::windows_core::Interface::vtable(this).FindNearbyWithLocationAsync)(::windows_core::Interface::as_raw(this), location.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<StreetsidePanorama>>(result__)
         })
     }
-    #[cfg(all(feature = "Devices_Geolocation", feature = "Foundation"))]
-    pub fn FindNearbyWithLocationAndRadiusAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::super::super::Devices::Geolocation::Geopoint>>(location: Param0, radiusinmeters: f64) -> ::windows_core::Result<super::super::super::super::Foundation::IAsyncOperation<StreetsidePanorama>> {
+    #[cfg(feature = "Devices_Geolocation")]
+    pub fn FindNearbyWithLocationAndRadiusAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_devices::Geolocation::Geopoint>>(location: Param0, radiusinmeters: f64) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<StreetsidePanorama>> {
         Self::IStreetsidePanoramaStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).FindNearbyWithLocationAndRadiusAsync)(::windows_core::Interface::as_raw(this), location.into_param().abi(), radiusinmeters, result__.as_mut_ptr()).from_abi::<super::super::super::super::Foundation::IAsyncOperation<StreetsidePanorama>>(result__)
+            (::windows_core::Interface::vtable(this).FindNearbyWithLocationAndRadiusAsync)(::windows_core::Interface::as_raw(this), location.into_param().abi(), radiusinmeters, result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<StreetsidePanorama>>(result__)
         })
     }
     pub fn IStreetsidePanoramaStatics<R, F: FnOnce(&IStreetsidePanoramaStatics) -> ::windows_core::Result<R>>(callback: F) -> ::windows_core::Result<R> {

@@ -1,81 +1,75 @@
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BackupEventLogA<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(heventlog: Param0, lpbackupfilename: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn BackupEventLogA<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(heventlog: Param0, lpbackupfilename: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BackupEventLogA(heventlog: EventLogHandle, lpbackupfilename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn BackupEventLogA(heventlog: EventLogHandle, lpbackupfilename: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(BackupEventLogA(heventlog.into_param().abi(), lpbackupfilename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn BackupEventLogW<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(heventlog: Param0, lpbackupfilename: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn BackupEventLogW<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(heventlog: Param0, lpbackupfilename: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn BackupEventLogW(heventlog: EventLogHandle, lpbackupfilename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn BackupEventLogW(heventlog: EventLogHandle, lpbackupfilename: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(BackupEventLogW(heventlog.into_param().abi(), lpbackupfilename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ClearEventLogA<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(heventlog: Param0, lpbackupfilename: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn ClearEventLogA<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCSTR>>(heventlog: Param0, lpbackupfilename: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ClearEventLogA(heventlog: EventLogHandle, lpbackupfilename: ::windows_core::PCSTR) -> super::super::Foundation::BOOL;
+            fn ClearEventLogA(heventlog: EventLogHandle, lpbackupfilename: ::windows_core::PCSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ClearEventLogA(heventlog.into_param().abi(), lpbackupfilename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ClearEventLogW<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(heventlog: Param0, lpbackupfilename: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn ClearEventLogW<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(heventlog: Param0, lpbackupfilename: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ClearEventLogW(heventlog: EventLogHandle, lpbackupfilename: ::windows_core::PCWSTR) -> super::super::Foundation::BOOL;
+            fn ClearEventLogW(heventlog: EventLogHandle, lpbackupfilename: ::windows_core::PCWSTR) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ClearEventLogW(heventlog.into_param().abi(), lpbackupfilename.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn CloseEventLog<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn CloseEventLog<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn CloseEventLog(heventlog: EventLogHandle) -> super::super::Foundation::BOOL;
+            fn CloseEventLog(heventlog: EventLogHandle) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(CloseEventLog(heventlog.into_param().abi()))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn DeregisterEventSource<'a, Param0: ::windows_core::IntoParam<'a, EventSourceHandle>>(heventlog: Param0) -> super::super::Foundation::BOOL {
+pub unsafe fn DeregisterEventSource<'a, Param0: ::windows_core::IntoParam<'a, EventSourceHandle>>(heventlog: Param0) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn DeregisterEventSource(heventlog: EventSourceHandle) -> super::super::Foundation::BOOL;
+            fn DeregisterEventSource(heventlog: EventSourceHandle) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(DeregisterEventSource(heventlog.into_param().abi()))
     }
@@ -900,42 +894,34 @@ impl ::core::fmt::Debug for EVT_SYSTEM_PROPERTY_ID {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EVT_VARIANT {
     pub Anonymous: EVT_VARIANT_0,
     pub Count: u32,
     pub Type: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EVT_VARIANT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EVT_VARIANT {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for EVT_VARIANT {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVT_VARIANT {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVT_VARIANT>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for EVT_VARIANT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for EVT_VARIANT {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union EVT_VARIANT_0 {
-    pub BooleanVal: super::super::Foundation::BOOL,
+    pub BooleanVal: ::win32_foundation::BOOL,
     pub SByteVal: i8,
     pub Int16Val: i16,
     pub Int32Val: i32,
@@ -947,14 +933,14 @@ pub union EVT_VARIANT_0 {
     pub SingleVal: f32,
     pub DoubleVal: f64,
     pub FileTimeVal: u64,
-    pub SysTimeVal: *mut super::super::Foundation::SYSTEMTIME,
+    pub SysTimeVal: *mut ::win32_foundation::SYSTEMTIME,
     pub GuidVal: *mut ::windows_core::GUID,
     pub StringVal: ::windows_core::PCWSTR,
     pub AnsiStringVal: ::windows_core::PCSTR,
     pub BinaryVal: *mut u8,
-    pub SidVal: super::super::Foundation::PSID,
+    pub SidVal: ::win32_foundation::PSID,
     pub SizeTVal: usize,
-    pub BooleanArr: *mut super::super::Foundation::BOOL,
+    pub BooleanArr: *mut ::win32_foundation::BOOL,
     pub SByteArr: *mut i8,
     pub Int16Arr: *mut i16,
     pub Int32Arr: *mut i32,
@@ -965,38 +951,32 @@ pub union EVT_VARIANT_0 {
     pub UInt64Arr: *mut u64,
     pub SingleArr: *mut f32,
     pub DoubleArr: *mut f64,
-    pub FileTimeArr: *mut super::super::Foundation::FILETIME,
-    pub SysTimeArr: *mut super::super::Foundation::SYSTEMTIME,
+    pub FileTimeArr: *mut ::win32_foundation::FILETIME,
+    pub SysTimeArr: *mut ::win32_foundation::SYSTEMTIME,
     pub GuidArr: *mut ::windows_core::GUID,
     pub StringArr: *mut ::windows_core::PWSTR,
     pub AnsiStringArr: *mut ::windows_core::PSTR,
-    pub SidArr: *mut super::super::Foundation::PSID,
+    pub SidArr: *mut ::win32_foundation::PSID,
     pub SizeTArr: *mut usize,
     pub EvtHandleVal: isize,
     pub XmlVal: ::windows_core::PCWSTR,
     pub XmlValArr: *mut ::windows_core::PWSTR,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EVT_VARIANT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EVT_VARIANT_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 unsafe impl ::windows_core::Abi for EVT_VARIANT_0 {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::PartialEq for EVT_VARIANT_0 {
     fn eq(&self, other: &Self) -> bool {
         unsafe { ::windows_core::memcmp(self as *const _ as _, other as *const _ as _, core::mem::size_of::<EVT_VARIANT_0>()) == 0 }
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::cmp::Eq for EVT_VARIANT_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::default::Default for EVT_VARIANT_0 {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
@@ -1105,56 +1085,52 @@ impl ::core::fmt::Debug for EventSourceHandle {
 unsafe impl ::windows_core::Abi for EventSourceHandle {
     type Abi = Self;
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtArchiveExportedLog<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(session: isize, logfilepath: Param1, locale: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtArchiveExportedLog<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(session: isize, logfilepath: Param1, locale: u32, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtArchiveExportedLog(session: isize, logfilepath: ::windows_core::PCWSTR, locale: u32, flags: u32) -> super::super::Foundation::BOOL;
+            fn EvtArchiveExportedLog(session: isize, logfilepath: ::windows_core::PCWSTR, locale: u32, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtArchiveExportedLog(::core::mem::transmute(session), logfilepath.into_param().abi(), ::core::mem::transmute(locale), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtCancel(object: isize) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtCancel(object: isize) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtCancel(object: isize) -> super::super::Foundation::BOOL;
+            fn EvtCancel(object: isize) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtCancel(::core::mem::transmute(object)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtClearLog<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(session: isize, channelpath: Param1, targetfilepath: Param2, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtClearLog<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(session: isize, channelpath: Param1, targetfilepath: Param2, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtClearLog(session: isize, channelpath: ::windows_core::PCWSTR, targetfilepath: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn EvtClearLog(session: isize, channelpath: ::windows_core::PCWSTR, targetfilepath: ::windows_core::PCWSTR, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtClearLog(::core::mem::transmute(session), channelpath.into_param().abi(), targetfilepath.into_param().abi(), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtClose(object: isize) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtClose(object: isize) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtClose(object: isize) -> super::super::Foundation::BOOL;
+            fn EvtClose(object: isize) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtClose(::core::mem::transmute(object)))
     }
@@ -1187,70 +1163,65 @@ pub unsafe fn EvtCreateRenderContext(valuepaths: &[::windows_core::PWSTR], flags
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtExportLog<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(session: isize, path: Param1, query: Param2, targetfilepath: Param3, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtExportLog<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(session: isize, path: Param1, query: Param2, targetfilepath: Param3, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtExportLog(session: isize, path: ::windows_core::PCWSTR, query: ::windows_core::PCWSTR, targetfilepath: ::windows_core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
+            fn EvtExportLog(session: isize, path: ::windows_core::PCWSTR, query: ::windows_core::PCWSTR, targetfilepath: ::windows_core::PCWSTR, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtExportLog(::core::mem::transmute(session), path.into_param().abi(), query.into_param().abi(), targetfilepath.into_param().abi(), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtFormatMessage(publishermetadata: isize, event: isize, messageid: u32, values: &[EVT_VARIANT], flags: u32, buffer: &mut [u16], bufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtFormatMessage(publishermetadata: isize, event: isize, messageid: u32, values: &[EVT_VARIANT], flags: u32, buffer: &mut [u16], bufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtFormatMessage(publishermetadata: isize, event: isize, messageid: u32, valuecount: u32, values: *const EVT_VARIANT, flags: u32, buffersize: u32, buffer: ::windows_core::PWSTR, bufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtFormatMessage(publishermetadata: isize, event: isize, messageid: u32, valuecount: u32, values: *const EVT_VARIANT, flags: u32, buffersize: u32, buffer: ::windows_core::PWSTR, bufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtFormatMessage(::core::mem::transmute(publishermetadata), ::core::mem::transmute(event), ::core::mem::transmute(messageid), values.len() as _, ::core::mem::transmute(::windows_core::as_ptr_or_null(values)), ::core::mem::transmute(flags), buffer.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(buffer)), ::core::mem::transmute(bufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtGetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtGetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtGetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtGetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtGetChannelConfigProperty(::core::mem::transmute(channelconfig), ::core::mem::transmute(propertyid), ::core::mem::transmute(flags), ::core::mem::transmute(propertyvaluebuffersize), ::core::mem::transmute(propertyvaluebuffer), ::core::mem::transmute(propertyvaluebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtGetEventInfo(event: isize, propertyid: EVT_EVENT_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtGetEventInfo(event: isize, propertyid: EVT_EVENT_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtGetEventInfo(event: isize, propertyid: EVT_EVENT_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtGetEventInfo(event: isize, propertyid: EVT_EVENT_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtGetEventInfo(::core::mem::transmute(event), ::core::mem::transmute(propertyid), ::core::mem::transmute(propertyvaluebuffersize), ::core::mem::transmute(propertyvaluebuffer), ::core::mem::transmute(propertyvaluebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtGetEventMetadataProperty(eventmetadata: isize, propertyid: EVT_EVENT_METADATA_PROPERTY_ID, flags: u32, eventmetadatapropertybuffersize: u32, eventmetadatapropertybuffer: *mut EVT_VARIANT, eventmetadatapropertybufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtGetEventMetadataProperty(eventmetadata: isize, propertyid: EVT_EVENT_METADATA_PROPERTY_ID, flags: u32, eventmetadatapropertybuffersize: u32, eventmetadatapropertybuffer: *mut EVT_VARIANT, eventmetadatapropertybufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtGetEventMetadataProperty(eventmetadata: isize, propertyid: EVT_EVENT_METADATA_PROPERTY_ID, flags: u32, eventmetadatapropertybuffersize: u32, eventmetadatapropertybuffer: *mut EVT_VARIANT, eventmetadatapropertybufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtGetEventMetadataProperty(eventmetadata: isize, propertyid: EVT_EVENT_METADATA_PROPERTY_ID, flags: u32, eventmetadatapropertybuffersize: u32, eventmetadatapropertybuffer: *mut EVT_VARIANT, eventmetadatapropertybufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtGetEventMetadataProperty(::core::mem::transmute(eventmetadata), ::core::mem::transmute(propertyid), ::core::mem::transmute(flags), ::core::mem::transmute(eventmetadatapropertybuffersize), ::core::mem::transmute(eventmetadatapropertybuffer), ::core::mem::transmute(eventmetadatapropertybufferused)))
     }
@@ -1270,98 +1241,91 @@ pub unsafe fn EvtGetExtendedStatus(buffer: &mut [u16], bufferused: *mut u32) -> 
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtGetLogInfo(log: isize, propertyid: EVT_LOG_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtGetLogInfo(log: isize, propertyid: EVT_LOG_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtGetLogInfo(log: isize, propertyid: EVT_LOG_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtGetLogInfo(log: isize, propertyid: EVT_LOG_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtGetLogInfo(::core::mem::transmute(log), ::core::mem::transmute(propertyid), ::core::mem::transmute(propertyvaluebuffersize), ::core::mem::transmute(propertyvaluebuffer), ::core::mem::transmute(propertyvaluebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtGetObjectArrayProperty(objectarray: isize, propertyid: u32, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtGetObjectArrayProperty(objectarray: isize, propertyid: u32, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtGetObjectArrayProperty(objectarray: isize, propertyid: u32, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtGetObjectArrayProperty(objectarray: isize, propertyid: u32, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtGetObjectArrayProperty(::core::mem::transmute(objectarray), ::core::mem::transmute(propertyid), ::core::mem::transmute(arrayindex), ::core::mem::transmute(flags), ::core::mem::transmute(propertyvaluebuffersize), ::core::mem::transmute(propertyvaluebuffer), ::core::mem::transmute(propertyvaluebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtGetObjectArraySize(::core::mem::transmute(objectarray), ::core::mem::transmute(objectarraysize)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtGetPublisherMetadataProperty(publishermetadata: isize, propertyid: EVT_PUBLISHER_METADATA_PROPERTY_ID, flags: u32, publishermetadatapropertybuffersize: u32, publishermetadatapropertybuffer: *mut EVT_VARIANT, publishermetadatapropertybufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtGetPublisherMetadataProperty(publishermetadata: isize, propertyid: EVT_PUBLISHER_METADATA_PROPERTY_ID, flags: u32, publishermetadatapropertybuffersize: u32, publishermetadatapropertybuffer: *mut EVT_VARIANT, publishermetadatapropertybufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtGetPublisherMetadataProperty(publishermetadata: isize, propertyid: EVT_PUBLISHER_METADATA_PROPERTY_ID, flags: u32, publishermetadatapropertybuffersize: u32, publishermetadatapropertybuffer: *mut EVT_VARIANT, publishermetadatapropertybufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtGetPublisherMetadataProperty(publishermetadata: isize, propertyid: EVT_PUBLISHER_METADATA_PROPERTY_ID, flags: u32, publishermetadatapropertybuffersize: u32, publishermetadatapropertybuffer: *mut EVT_VARIANT, publishermetadatapropertybufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtGetPublisherMetadataProperty(::core::mem::transmute(publishermetadata), ::core::mem::transmute(propertyid), ::core::mem::transmute(flags), ::core::mem::transmute(publishermetadatapropertybuffersize), ::core::mem::transmute(publishermetadatapropertybuffer), ::core::mem::transmute(publishermetadatapropertybufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtGetQueryInfo(queryorsubscription: isize, propertyid: EVT_QUERY_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtGetQueryInfo(queryorsubscription: isize, propertyid: EVT_QUERY_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtGetQueryInfo(queryorsubscription: isize, propertyid: EVT_QUERY_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtGetQueryInfo(queryorsubscription: isize, propertyid: EVT_QUERY_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtGetQueryInfo(::core::mem::transmute(queryorsubscription), ::core::mem::transmute(propertyid), ::core::mem::transmute(propertyvaluebuffersize), ::core::mem::transmute(propertyvaluebuffer), ::core::mem::transmute(propertyvaluebufferused)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtNext(resultset: isize, events: &mut [isize], timeout: u32, flags: u32, returned: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtNext(resultset: isize, events: &mut [isize], timeout: u32, flags: u32, returned: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtNext(resultset: isize, eventssize: u32, events: *mut isize, timeout: u32, flags: u32, returned: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtNext(resultset: isize, eventssize: u32, events: *mut isize, timeout: u32, flags: u32, returned: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtNext(::core::mem::transmute(resultset), events.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(events)), ::core::mem::transmute(timeout), ::core::mem::transmute(flags), ::core::mem::transmute(returned)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtNextChannelPath(channelenum: isize, channelpathbuffer: &mut [u16], channelpathbufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtNextChannelPath(channelenum: isize, channelpathbuffer: &mut [u16], channelpathbufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtNextChannelPath(channelenum: isize, channelpathbuffersize: u32, channelpathbuffer: ::windows_core::PWSTR, channelpathbufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtNextChannelPath(channelenum: isize, channelpathbuffersize: u32, channelpathbuffer: ::windows_core::PWSTR, channelpathbufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtNextChannelPath(::core::mem::transmute(channelenum), channelpathbuffer.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(channelpathbuffer)), ::core::mem::transmute(channelpathbufferused)))
     }
@@ -1381,14 +1345,13 @@ pub unsafe fn EvtNextEventMetadata(eventmetadataenum: isize, flags: u32) -> isiz
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtNextPublisherId(publisherenum: isize, publisheridbuffer: &mut [u16], publisheridbufferused: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtNextPublisherId(publisherenum: isize, publisheridbuffer: &mut [u16], publisheridbufferused: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtNextPublisherId(publisherenum: isize, publisheridbuffersize: u32, publisheridbuffer: ::windows_core::PWSTR, publisheridbufferused: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtNextPublisherId(publisherenum: isize, publisheridbuffersize: u32, publisheridbuffer: ::windows_core::PWSTR, publisheridbufferused: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtNextPublisherId(::core::mem::transmute(publisherenum), publisheridbuffer.len() as _, ::core::mem::transmute(::windows_core::as_mut_ptr_or_null(publisheridbuffer)), ::core::mem::transmute(publisheridbufferused)))
     }
@@ -1499,140 +1462,130 @@ pub unsafe fn EvtQuery<'a, Param1: ::windows_core::IntoParam<'a, ::windows_core:
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtRender(context: isize, fragment: isize, flags: u32, buffersize: u32, buffer: *mut ::core::ffi::c_void, bufferused: *mut u32, propertycount: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtRender(context: isize, fragment: isize, flags: u32, buffersize: u32, buffer: *mut ::core::ffi::c_void, bufferused: *mut u32, propertycount: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtRender(context: isize, fragment: isize, flags: u32, buffersize: u32, buffer: *mut ::core::ffi::c_void, bufferused: *mut u32, propertycount: *mut u32) -> super::super::Foundation::BOOL;
+            fn EvtRender(context: isize, fragment: isize, flags: u32, buffersize: u32, buffer: *mut ::core::ffi::c_void, bufferused: *mut u32, propertycount: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtRender(::core::mem::transmute(context), ::core::mem::transmute(fragment), ::core::mem::transmute(flags), ::core::mem::transmute(buffersize), ::core::mem::transmute(buffer), ::core::mem::transmute(bufferused), ::core::mem::transmute(propertycount)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtSaveChannelConfig(channelconfig: isize, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtSaveChannelConfig(channelconfig: isize, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtSaveChannelConfig(channelconfig: isize, flags: u32) -> super::super::Foundation::BOOL;
+            fn EvtSaveChannelConfig(channelconfig: isize, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtSaveChannelConfig(::core::mem::transmute(channelconfig), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtSeek(resultset: isize, position: i64, bookmark: isize, timeout: u32, flags: u32) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtSeek(resultset: isize, position: i64, bookmark: isize, timeout: u32, flags: u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtSeek(resultset: isize, position: i64, bookmark: isize, timeout: u32, flags: u32) -> super::super::Foundation::BOOL;
+            fn EvtSeek(resultset: isize, position: i64, bookmark: isize, timeout: u32, flags: u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtSeek(::core::mem::transmute(resultset), ::core::mem::transmute(position), ::core::mem::transmute(bookmark), ::core::mem::transmute(timeout), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtSetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvalue: *const EVT_VARIANT) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtSetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvalue: *const EVT_VARIANT) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtSetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvalue: *const EVT_VARIANT) -> super::super::Foundation::BOOL;
+            fn EvtSetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvalue: *const EVT_VARIANT) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtSetChannelConfigProperty(::core::mem::transmute(channelconfig), ::core::mem::transmute(propertyid), ::core::mem::transmute(flags), ::core::mem::transmute(propertyvalue)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtSubscribe<'a, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(session: isize, signalevent: Param1, channelpath: Param2, query: Param3, bookmark: isize, context: *const ::core::ffi::c_void, callback: EVT_SUBSCRIBE_CALLBACK, flags: u32) -> isize {
+pub unsafe fn EvtSubscribe<'a, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>, Param2: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>, Param3: ::windows_core::IntoParam<'a, ::windows_core::PCWSTR>>(session: isize, signalevent: Param1, channelpath: Param2, query: Param3, bookmark: isize, context: *const ::core::ffi::c_void, callback: EVT_SUBSCRIBE_CALLBACK, flags: u32) -> isize {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtSubscribe(session: isize, signalevent: super::super::Foundation::HANDLE, channelpath: ::windows_core::PCWSTR, query: ::windows_core::PCWSTR, bookmark: isize, context: *const ::core::ffi::c_void, callback: ::windows_core::RawPtr, flags: u32) -> isize;
+            fn EvtSubscribe(session: isize, signalevent: ::win32_foundation::HANDLE, channelpath: ::windows_core::PCWSTR, query: ::windows_core::PCWSTR, bookmark: isize, context: *const ::core::ffi::c_void, callback: ::windows_core::RawPtr, flags: u32) -> isize;
         }
         ::core::mem::transmute(EvtSubscribe(::core::mem::transmute(session), signalevent.into_param().abi(), channelpath.into_param().abi(), query.into_param().abi(), ::core::mem::transmute(bookmark), ::core::mem::transmute(context), ::core::mem::transmute(callback), ::core::mem::transmute(flags)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn EvtUpdateBookmark(bookmark: isize, event: isize) -> super::super::Foundation::BOOL {
+pub unsafe fn EvtUpdateBookmark(bookmark: isize, event: isize) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn EvtUpdateBookmark(bookmark: isize, event: isize) -> super::super::Foundation::BOOL;
+            fn EvtUpdateBookmark(bookmark: isize, event: isize) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(EvtUpdateBookmark(::core::mem::transmute(bookmark), ::core::mem::transmute(event)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetEventLogInformation<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, dwinfolevel: u32, lpbuffer: *mut ::core::ffi::c_void, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetEventLogInformation<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, dwinfolevel: u32, lpbuffer: *mut ::core::ffi::c_void, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetEventLogInformation(heventlog: EventLogHandle, dwinfolevel: u32, lpbuffer: *mut ::core::ffi::c_void, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetEventLogInformation(heventlog: EventLogHandle, dwinfolevel: u32, lpbuffer: *mut ::core::ffi::c_void, cbbufsize: u32, pcbbytesneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetEventLogInformation(heventlog.into_param().abi(), ::core::mem::transmute(dwinfolevel), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(cbbufsize), ::core::mem::transmute(pcbbytesneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetNumberOfEventLogRecords<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, numberofrecords: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetNumberOfEventLogRecords<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, numberofrecords: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetNumberOfEventLogRecords(heventlog: EventLogHandle, numberofrecords: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetNumberOfEventLogRecords(heventlog: EventLogHandle, numberofrecords: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetNumberOfEventLogRecords(heventlog.into_param().abi(), ::core::mem::transmute(numberofrecords)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn GetOldestEventLogRecord<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, oldestrecord: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn GetOldestEventLogRecord<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, oldestrecord: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn GetOldestEventLogRecord(heventlog: EventLogHandle, oldestrecord: *mut u32) -> super::super::Foundation::BOOL;
+            fn GetOldestEventLogRecord(heventlog: EventLogHandle, oldestrecord: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(GetOldestEventLogRecord(heventlog.into_param().abi(), ::core::mem::transmute(oldestrecord)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn NotifyChangeEventLog<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::HANDLE>>(heventlog: Param0, hevent: Param1) -> super::super::Foundation::BOOL {
+pub unsafe fn NotifyChangeEventLog<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>, Param1: ::windows_core::IntoParam<'a, ::win32_foundation::HANDLE>>(heventlog: Param0, hevent: Param1) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn NotifyChangeEventLog(heventlog: EventLogHandle, hevent: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+            fn NotifyChangeEventLog(heventlog: EventLogHandle, hevent: ::win32_foundation::HANDLE) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(NotifyChangeEventLog(heventlog.into_param().abi(), hevent.into_param().abi()))
     }
@@ -1747,28 +1700,26 @@ impl ::core::fmt::Debug for REPORT_EVENT_TYPE {
         f.debug_tuple("REPORT_EVENT_TYPE").field(&self.0).finish()
     }
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadEventLogA<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadEventLogA<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadEventLogA(heventlog: EventLogHandle, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn ReadEventLogA(heventlog: EventLogHandle, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadEventLogA(heventlog.into_param().abi(), ::core::mem::transmute(dwreadflags), ::core::mem::transmute(dwrecordoffset), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofbytestoread), ::core::mem::transmute(pnbytesread), ::core::mem::transmute(pnminnumberofbytesneeded)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReadEventLogW<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> super::super::Foundation::BOOL {
+pub unsafe fn ReadEventLogW<'a, Param0: ::windows_core::IntoParam<'a, EventLogHandle>>(heventlog: Param0, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReadEventLogW(heventlog: EventLogHandle, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
+            fn ReadEventLogW(heventlog: EventLogHandle, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReadEventLogW(heventlog.into_param().abi(), ::core::mem::transmute(dwreadflags), ::core::mem::transmute(dwrecordoffset), ::core::mem::transmute(lpbuffer), ::core::mem::transmute(nnumberofbytestoread), ::core::mem::transmute(pnbytesread), ::core::mem::transmute(pnminnumberofbytesneeded)))
     }
@@ -1803,28 +1754,26 @@ pub unsafe fn RegisterEventSourceW<'a, Param0: ::windows_core::IntoParam<'a, ::w
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReportEventA<'a, Param0: ::windows_core::IntoParam<'a, EventSourceHandle>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::PSID>>(heventlog: Param0, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: Param4, dwdatasize: u32, lpstrings: &[::windows_core::PSTR], lprawdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn ReportEventA<'a, Param0: ::windows_core::IntoParam<'a, EventSourceHandle>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::PSID>>(heventlog: Param0, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: Param4, dwdatasize: u32, lpstrings: &[::windows_core::PSTR], lprawdata: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportEventA(heventlog: EventSourceHandle, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: super::super::Foundation::PSID, wnumstrings: u16, dwdatasize: u32, lpstrings: *const ::windows_core::PSTR, lprawdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn ReportEventA(heventlog: EventSourceHandle, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: ::win32_foundation::PSID, wnumstrings: u16, dwdatasize: u32, lpstrings: *const ::windows_core::PSTR, lprawdata: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReportEventA(heventlog.into_param().abi(), ::core::mem::transmute(wtype), ::core::mem::transmute(wcategory), ::core::mem::transmute(dweventid), lpusersid.into_param().abi(), lpstrings.len() as _, ::core::mem::transmute(dwdatasize), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstrings)), ::core::mem::transmute(lprawdata)))
     }
     #[cfg(not(windows))]
     unimplemented!("Unsupported target OS");
 }
-#[cfg(feature = "Win32_Foundation")]
 #[inline]
-pub unsafe fn ReportEventW<'a, Param0: ::windows_core::IntoParam<'a, EventSourceHandle>, Param4: ::windows_core::IntoParam<'a, super::super::Foundation::PSID>>(heventlog: Param0, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: Param4, dwdatasize: u32, lpstrings: &[::windows_core::PWSTR], lprawdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
+pub unsafe fn ReportEventW<'a, Param0: ::windows_core::IntoParam<'a, EventSourceHandle>, Param4: ::windows_core::IntoParam<'a, ::win32_foundation::PSID>>(heventlog: Param0, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: Param4, dwdatasize: u32, lpstrings: &[::windows_core::PWSTR], lprawdata: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL {
     #[cfg(windows)]
     {
         #[link(name = "windows")]
         extern "system" {
-            fn ReportEventW(heventlog: EventSourceHandle, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: super::super::Foundation::PSID, wnumstrings: u16, dwdatasize: u32, lpstrings: *const ::windows_core::PWSTR, lprawdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+            fn ReportEventW(heventlog: EventSourceHandle, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: ::win32_foundation::PSID, wnumstrings: u16, dwdatasize: u32, lpstrings: *const ::windows_core::PWSTR, lprawdata: *const ::core::ffi::c_void) -> ::win32_foundation::BOOL;
         }
         ::core::mem::transmute(ReportEventW(heventlog.into_param().abi(), ::core::mem::transmute(wtype), ::core::mem::transmute(wcategory), ::core::mem::transmute(dweventid), lpusersid.into_param().abi(), lpstrings.len() as _, ::core::mem::transmute(dwdatasize), ::core::mem::transmute(::windows_core::as_ptr_or_null(lpstrings)), ::core::mem::transmute(lprawdata)))
     }

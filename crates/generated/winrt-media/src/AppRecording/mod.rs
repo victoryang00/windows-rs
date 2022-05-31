@@ -8,36 +8,36 @@ impl AppRecordingManager {
             (::windows_core::Interface::vtable(this).GetStatus)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<AppRecordingStatus>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn StartRecordingToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::StorageFile>>(&self, file: Param0) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AppRecordingResult>> {
+    #[cfg(feature = "Storage")]
+    pub fn StartRecordingToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(&self, file: Param0) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppRecordingResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).StartRecordingToFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AppRecordingResult>>(result__)
+            (::windows_core::Interface::vtable(this).StartRecordingToFileAsync)(::windows_core::Interface::as_raw(this), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppRecordingResult>>(result__)
         }
     }
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub fn RecordTimeSpanToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, super::super::Foundation::TimeSpan>, Param2: ::windows_core::IntoParam<'a, super::super::Storage::StorageFile>>(&self, starttime: Param0, duration: Param1, file: Param2) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AppRecordingResult>> {
+    #[cfg(feature = "Storage")]
+    pub fn RecordTimeSpanToFileAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_foundation::DateTime>, Param1: ::windows_core::IntoParam<'a, ::winrt_foundation::TimeSpan>, Param2: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFile>>(&self, starttime: Param0, duration: Param1, file: Param2) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppRecordingResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).RecordTimeSpanToFileAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), duration.into_param().abi(), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AppRecordingResult>>(result__)
+            (::windows_core::Interface::vtable(this).RecordTimeSpanToFileAsync)(::windows_core::Interface::as_raw(this), starttime.into_param().abi(), duration.into_param().abi(), file.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppRecordingResult>>(result__)
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SupportedScreenshotMediaEncodingSubtypes(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>> {
+    pub fn SupportedScreenshotMediaEncodingSubtypes(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SupportedScreenshotMediaEncodingSubtypes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
+            (::windows_core::Interface::vtable(this).SupportedScreenshotMediaEncodingSubtypes)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<::windows_core::HSTRING>>(result__)
         }
     }
     #[cfg(all(feature = "Foundation_Collections", feature = "Storage"))]
-    pub fn SaveScreenshotToFilesAsync<'a, Param0: ::windows_core::IntoParam<'a, super::super::Storage::StorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, super::super::Foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, folder: Param0, filenameprefix: Param1, option: AppRecordingSaveScreenshotOption, requestedformats: Param3) -> ::windows_core::Result<super::super::Foundation::IAsyncOperation<AppRecordingSaveScreenshotResult>> {
+    pub fn SaveScreenshotToFilesAsync<'a, Param0: ::windows_core::IntoParam<'a, ::winrt_storage::StorageFolder>, Param1: ::windows_core::IntoParam<'a, ::windows_core::HSTRING>, Param3: ::windows_core::IntoParam<'a, ::winrt_foundation::Collections::IIterable<::windows_core::HSTRING>>>(&self, folder: Param0, filenameprefix: Param1, option: AppRecordingSaveScreenshotOption, requestedformats: Param3) -> ::windows_core::Result<::winrt_foundation::IAsyncOperation<AppRecordingSaveScreenshotResult>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SaveScreenshotToFilesAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), filenameprefix.into_param().abi(), option, requestedformats.into_param().abi(), result__.as_mut_ptr()).from_abi::<super::super::Foundation::IAsyncOperation<AppRecordingSaveScreenshotResult>>(result__)
+            (::windows_core::Interface::vtable(this).SaveScreenshotToFilesAsync)(::windows_core::Interface::as_raw(this), folder.into_param().abi(), filenameprefix.into_param().abi(), option, requestedformats.into_param().abi(), result__.as_mut_ptr()).from_abi::<::winrt_foundation::IAsyncOperation<AppRecordingSaveScreenshotResult>>(result__)
         }
     }
     pub fn GetDefault() -> ::windows_core::Result<AppRecordingManager> {
@@ -140,12 +140,11 @@ impl AppRecordingResult {
             (::windows_core::Interface::vtable(this).ExtendedError)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::windows_core::HRESULT>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn Duration(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn Duration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).Duration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn IsFileTruncated(&self) -> ::windows_core::Result<bool> {
@@ -279,11 +278,11 @@ impl AppRecordingSaveScreenshotResult {
         }
     }
     #[cfg(feature = "Foundation_Collections")]
-    pub fn SavedScreenshotInfos(&self) -> ::windows_core::Result<super::super::Foundation::Collections::IVectorView<AppRecordingSavedScreenshotInfo>> {
+    pub fn SavedScreenshotInfos(&self) -> ::windows_core::Result<::winrt_foundation::Collections::IVectorView<AppRecordingSavedScreenshotInfo>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).SavedScreenshotInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::Collections::IVectorView<AppRecordingSavedScreenshotInfo>>(result__)
+            (::windows_core::Interface::vtable(this).SavedScreenshotInfos)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::Collections::IVectorView<AppRecordingSavedScreenshotInfo>>(result__)
         }
     }
 }
@@ -363,11 +362,11 @@ unsafe impl ::core::marker::Sync for AppRecordingSaveScreenshotResult {}
 pub struct AppRecordingSavedScreenshotInfo(::windows_core::IUnknown);
 impl AppRecordingSavedScreenshotInfo {
     #[cfg(feature = "Storage")]
-    pub fn File(&self) -> ::windows_core::Result<super::super::Storage::StorageFile> {
+    pub fn File(&self) -> ::windows_core::Result<::winrt_storage::StorageFile> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::<::windows_core::RawPtr>::zeroed();
-            (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Storage::StorageFile>(result__)
+            (::windows_core::Interface::vtable(this).File)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_storage::StorageFile>(result__)
         }
     }
     pub fn MediaEncodingSubtype(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
@@ -467,12 +466,11 @@ impl AppRecordingStatus {
             (::windows_core::Interface::vtable(this).CanRecordTimeSpan)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<bool>(result__)
         }
     }
-    #[cfg(feature = "Foundation")]
-    pub fn HistoricalBufferDuration(&self) -> ::windows_core::Result<super::super::Foundation::TimeSpan> {
+    pub fn HistoricalBufferDuration(&self) -> ::windows_core::Result<::winrt_foundation::TimeSpan> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::super::Foundation::TimeSpan>::zeroed();
-            (::windows_core::Interface::vtable(this).HistoricalBufferDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<super::super::Foundation::TimeSpan>(result__)
+            let mut result__ = ::core::mem::MaybeUninit::<::winrt_foundation::TimeSpan>::zeroed();
+            (::windows_core::Interface::vtable(this).HistoricalBufferDuration)(::windows_core::Interface::as_raw(this), result__.as_mut_ptr()).from_abi::<::winrt_foundation::TimeSpan>(result__)
         }
     }
     pub fn Details(&self) -> ::windows_core::Result<AppRecordingStatusDetails> {
@@ -706,13 +704,13 @@ unsafe impl ::windows_core::Interface for IAppRecordingManager {
 pub struct IAppRecordingManager_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub GetStatus: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
+    #[cfg(feature = "Storage")]
     pub StartRecordingToFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(not(feature = "Storage"))]
     StartRecordingToFileAsync: usize,
-    #[cfg(all(feature = "Foundation", feature = "Storage"))]
-    pub RecordTimeSpanToFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: super::super::Foundation::DateTime, duration: super::super::Foundation::TimeSpan, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
-    #[cfg(not(all(feature = "Foundation", feature = "Storage")))]
+    #[cfg(feature = "Storage")]
+    pub RecordTimeSpanToFileAsync: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, starttime: ::winrt_foundation::DateTime, duration: ::winrt_foundation::TimeSpan, file: ::windows_core::RawPtr, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Storage"))]
     RecordTimeSpanToFileAsync: usize,
     #[cfg(feature = "Foundation_Collections")]
     pub SupportedScreenshotMediaEncodingSubtypes: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
@@ -749,10 +747,7 @@ pub struct IAppRecordingResult_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub Succeeded: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub ExtendedError: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::HRESULT) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    Duration: usize,
+    pub Duration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub IsFileTruncated: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
@@ -803,10 +798,7 @@ pub struct IAppRecordingStatus_Vtbl {
     pub base__: ::windows_core::IInspectableVtbl,
     pub CanRecord: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
     pub CanRecordTimeSpan: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut bool) -> ::windows_core::HRESULT,
-    #[cfg(feature = "Foundation")]
-    pub HistoricalBufferDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut super::super::Foundation::TimeSpan) -> ::windows_core::HRESULT,
-    #[cfg(not(feature = "Foundation"))]
-    HistoricalBufferDuration: usize,
+    pub HistoricalBufferDuration: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::winrt_foundation::TimeSpan) -> ::windows_core::HRESULT,
     pub Details: unsafe extern "system" fn(this: *mut ::core::ffi::c_void, result__: *mut ::windows_core::RawPtr) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]

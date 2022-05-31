@@ -1,438 +1,282 @@
 #[link(name = "windows")]
 extern "system" {
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AddLogContainer(hlog: super::super::Foundation::HANDLE, pcbcontainer: *const u64, pwszcontainerpath: ::windows_core_sys::PCWSTR, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AddLogContainerSet(hlog: super::super::Foundation::HANDLE, ccontainer: u16, pcbcontainer: *const u64, rgwszcontainerpath: *const ::windows_core_sys::PWSTR, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn AddLogContainer(hlog: ::win32_foundation_sys::HANDLE, pcbcontainer: *const u64, pwszcontainerpath: ::windows_core_sys::PCWSTR, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn AddLogContainerSet(hlog: ::win32_foundation_sys::HANDLE, ccontainer: u16, pcbcontainer: *const u64, rgwszcontainerpath: *const ::windows_core_sys::PWSTR, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Security")]
     pub fn AddUsersToEncryptedFile(lpfilename: ::windows_core_sys::PCWSTR, pencryptioncertificates: *const ENCRYPTION_CERTIFICATE_LIST) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn AdvanceLogBase(pvmarshal: *mut ::core::ffi::c_void, plsnbase: *mut CLS_LSN, fflags: u32, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AlignReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, rgcbreservation: *mut i64, pcbalignreservation: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AllocReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AreFileApisANSI() -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn AreShortNamesEnabled(handle: super::super::Foundation::HANDLE, enabled: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BackupRead(hfile: super::super::Foundation::HANDLE, lpbuffer: *mut u8, nnumberofbytestoread: u32, lpnumberofbytesread: *mut u32, babort: super::super::Foundation::BOOL, bprocesssecurity: super::super::Foundation::BOOL, lpcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BackupSeek(hfile: super::super::Foundation::HANDLE, dwlowbytestoseek: u32, dwhighbytestoseek: u32, lpdwlowbyteseeked: *mut u32, lpdwhighbyteseeked: *mut u32, lpcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BackupWrite(hfile: super::super::Foundation::HANDLE, lpbuffer: *const u8, nnumberofbytestowrite: u32, lpnumberofbyteswritten: *mut u32, babort: super::super::Foundation::BOOL, bprocesssecurity: super::super::Foundation::BOOL, lpcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn AdvanceLogBase(pvmarshal: *mut ::core::ffi::c_void, plsnbase: *mut CLS_LSN, fflags: u32, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    pub fn AlignReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, rgcbreservation: *mut i64, pcbalignreservation: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn AllocReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn AreFileApisANSI() -> ::win32_foundation_sys::BOOL;
+    pub fn AreShortNamesEnabled(handle: ::win32_foundation_sys::HANDLE, enabled: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn BackupRead(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *mut u8, nnumberofbytestoread: u32, lpnumberofbytesread: *mut u32, babort: ::win32_foundation_sys::BOOL, bprocesssecurity: ::win32_foundation_sys::BOOL, lpcontext: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn BackupSeek(hfile: ::win32_foundation_sys::HANDLE, dwlowbytestoseek: u32, dwhighbytestoseek: u32, lpdwlowbyteseeked: *mut u32, lpdwhighbyteseeked: *mut u32, lpcontext: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn BackupWrite(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *const u8, nnumberofbytestowrite: u32, lpnumberofbyteswritten: *mut u32, babort: ::win32_foundation_sys::BOOL, bprocesssecurity: ::win32_foundation_sys::BOOL, lpcontext: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn BuildIoRingCancelRequest(ioring: *const HIORING__, file: IORING_HANDLE_REF, optocancel: usize, userdata: usize) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn BuildIoRingReadFile(ioring: *const HIORING__, fileref: IORING_HANDLE_REF, dataref: IORING_BUFFER_REF, numberofbytestoread: u32, fileoffset: u64, userdata: usize, flags: IORING_SQE_FLAGS) -> ::windows_core_sys::HRESULT;
     pub fn BuildIoRingRegisterBuffers(ioring: *const HIORING__, count: u32, buffers: *const IORING_BUFFER_INFO, userdata: usize) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn BuildIoRingRegisterFileHandles(ioring: *const HIORING__, count: u32, handles: *const super::super::Foundation::HANDLE, userdata: usize) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CheckNameLegalDOS8Dot3A(lpname: ::windows_core_sys::PCSTR, lpoemname: ::windows_core_sys::PSTR, oemnamesize: u32, pbnamecontainsspaces: *mut super::super::Foundation::BOOL, pbnamelegal: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CheckNameLegalDOS8Dot3W(lpname: ::windows_core_sys::PCWSTR, lpoemname: ::windows_core_sys::PSTR, oemnamesize: u32, pbnamecontainsspaces: *mut super::super::Foundation::BOOL, pbnamelegal: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CloseAndResetLogFile(hlog: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+    pub fn BuildIoRingRegisterFileHandles(ioring: *const HIORING__, count: u32, handles: *const ::win32_foundation_sys::HANDLE, userdata: usize) -> ::windows_core_sys::HRESULT;
+    pub fn CheckNameLegalDOS8Dot3A(lpname: ::windows_core_sys::PCSTR, lpoemname: ::windows_core_sys::PSTR, oemnamesize: u32, pbnamecontainsspaces: *mut ::win32_foundation_sys::BOOL, pbnamelegal: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn CheckNameLegalDOS8Dot3W(lpname: ::windows_core_sys::PCWSTR, lpoemname: ::windows_core_sys::PSTR, oemnamesize: u32, pbnamecontainsspaces: *mut ::win32_foundation_sys::BOOL, pbnamelegal: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn CloseAndResetLogFile(hlog: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn CloseEncryptedFileRaw(pvcontext: *const ::core::ffi::c_void);
     pub fn CloseIoRing(ioring: *const HIORING__) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CommitComplete(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CommitEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CommitTransaction(transactionhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CommitTransactionAsync(transactionhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CompareFileTime(lpfiletime1: *const super::super::Foundation::FILETIME, lpfiletime2: *const super::super::Foundation::FILETIME) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn CommitComplete(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn CommitEnlistment(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn CommitTransaction(transactionhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn CommitTransactionAsync(transactionhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn CompareFileTime(lpfiletime1: *const ::win32_foundation_sys::FILETIME, lpfiletime2: *const ::win32_foundation_sys::FILETIME) -> i32;
     pub fn CopyFile2(pwszexistingfilename: ::windows_core_sys::PCWSTR, pwsznewfilename: ::windows_core_sys::PCWSTR, pextendedparameters: *const COPYFILE2_EXTENDED_PARAMETERS) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CopyFileA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, bfailifexists: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CopyFileExA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, pbcancel: *mut i32, dwcopyflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CopyFileExW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, pbcancel: *mut i32, dwcopyflags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CopyFileFromAppW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, bfailifexists: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CopyFileTransactedA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, pbcancel: *const i32, dwcopyflags: u32, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CopyFileTransactedW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, pbcancel: *const i32, dwcopyflags: u32, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CopyFileW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, bfailifexists: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn CopyFileA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, bfailifexists: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn CopyFileExA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, pbcancel: *mut i32, dwcopyflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn CopyFileExW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, pbcancel: *mut i32, dwcopyflags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn CopyFileFromAppW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, bfailifexists: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn CopyFileTransactedA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, pbcancel: *const i32, dwcopyflags: u32, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn CopyFileTransactedW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, pbcancel: *const i32, dwcopyflags: u32, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn CopyFileW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, bfailifexists: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
     pub fn CopyLZFile(hfsource: i32, hfdest: i32) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateDirectoryA(lppathname: ::windows_core_sys::PCSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateDirectoryExA(lptemplatedirectory: ::windows_core_sys::PCSTR, lpnewdirectory: ::windows_core_sys::PCSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateDirectoryExW(lptemplatedirectory: ::windows_core_sys::PCWSTR, lpnewdirectory: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateDirectoryFromAppW(lppathname: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateDirectoryTransactedA(lptemplatedirectory: ::windows_core_sys::PCSTR, lpnewdirectory: ::windows_core_sys::PCSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateDirectoryTransactedW(lptemplatedirectory: ::windows_core_sys::PCWSTR, lpnewdirectory: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateDirectoryW(lppathname: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateEnlistment(lpenlistmentattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, resourcemanagerhandle: super::super::Foundation::HANDLE, transactionhandle: super::super::Foundation::HANDLE, notificationmask: u32, createoptions: u32, enlistmentkey: *mut ::core::ffi::c_void) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateFile2(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, dwcreationdisposition: FILE_CREATION_DISPOSITION, pcreateexparams: *const CREATEFILE2_EXTENDED_PARAMETERS) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateFile2FromAppW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32, dwcreationdisposition: u32, pcreateexparams: *const CREATEFILE2_EXTENDED_PARAMETERS) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateFileA(lpfilename: ::windows_core_sys::PCSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateFileFromAppW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: u32, dwflagsandattributes: u32, htemplatefile: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateFileTransactedA(lpfilename: ::windows_core_sys::PCSTR, dwdesiredaccess: u32, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: super::super::Foundation::HANDLE, htransaction: super::super::Foundation::HANDLE, pusminiversion: *const TXFS_MINIVERSION, lpextendedparameter: *mut ::core::ffi::c_void) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateFileTransactedW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: super::super::Foundation::HANDLE, htransaction: super::super::Foundation::HANDLE, pusminiversion: *const TXFS_MINIVERSION, lpextendedparameter: *mut ::core::ffi::c_void) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateFileW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateHardLinkA(lpfilename: ::windows_core_sys::PCSTR, lpexistingfilename: ::windows_core_sys::PCSTR, lpsecurityattributes: *mut super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateHardLinkTransactedA(lpfilename: ::windows_core_sys::PCSTR, lpexistingfilename: ::windows_core_sys::PCSTR, lpsecurityattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateHardLinkTransactedW(lpfilename: ::windows_core_sys::PCWSTR, lpexistingfilename: ::windows_core_sys::PCWSTR, lpsecurityattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateHardLinkW(lpfilename: ::windows_core_sys::PCWSTR, lpexistingfilename: ::windows_core_sys::PCWSTR, lpsecurityattributes: *mut super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateDirectoryA(lppathname: ::windows_core_sys::PCSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateDirectoryExA(lptemplatedirectory: ::windows_core_sys::PCSTR, lpnewdirectory: ::windows_core_sys::PCSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateDirectoryExW(lptemplatedirectory: ::windows_core_sys::PCWSTR, lpnewdirectory: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateDirectoryFromAppW(lppathname: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateDirectoryTransactedA(lptemplatedirectory: ::windows_core_sys::PCSTR, lpnewdirectory: ::windows_core_sys::PCSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateDirectoryTransactedW(lptemplatedirectory: ::windows_core_sys::PCWSTR, lpnewdirectory: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateDirectoryW(lppathname: ::windows_core_sys::PCWSTR, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateEnlistment(lpenlistmentattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, resourcemanagerhandle: ::win32_foundation_sys::HANDLE, transactionhandle: ::win32_foundation_sys::HANDLE, notificationmask: u32, createoptions: u32, enlistmentkey: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateFile2(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, dwcreationdisposition: FILE_CREATION_DISPOSITION, pcreateexparams: *const CREATEFILE2_EXTENDED_PARAMETERS) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateFile2FromAppW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32, dwcreationdisposition: u32, pcreateexparams: *const CREATEFILE2_EXTENDED_PARAMETERS) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateFileA(lpfilename: ::windows_core_sys::PCSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateFileFromAppW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: u32, dwflagsandattributes: u32, htemplatefile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateFileTransactedA(lpfilename: ::windows_core_sys::PCSTR, dwdesiredaccess: u32, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: ::win32_foundation_sys::HANDLE, htransaction: ::win32_foundation_sys::HANDLE, pusminiversion: *const TXFS_MINIVERSION, lpextendedparameter: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateFileTransactedW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: u32, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: ::win32_foundation_sys::HANDLE, htransaction: ::win32_foundation_sys::HANDLE, pusminiversion: *const TXFS_MINIVERSION, lpextendedparameter: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateFileW(lpfilename: ::windows_core_sys::PCWSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateHardLinkA(lpfilename: ::windows_core_sys::PCSTR, lpexistingfilename: ::windows_core_sys::PCSTR, lpsecurityattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateHardLinkTransactedA(lpfilename: ::windows_core_sys::PCSTR, lpexistingfilename: ::windows_core_sys::PCSTR, lpsecurityattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateHardLinkTransactedW(lpfilename: ::windows_core_sys::PCWSTR, lpexistingfilename: ::windows_core_sys::PCWSTR, lpsecurityattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateHardLinkW(lpfilename: ::windows_core_sys::PCWSTR, lpexistingfilename: ::windows_core_sys::PCWSTR, lpsecurityattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
     pub fn CreateIoRing(ioringversion: IORING_VERSION, flags: IORING_CREATE_FLAGS, submissionqueuesize: u32, completionqueuesize: u32, h: *mut *mut HIORING__) -> ::windows_core_sys::HRESULT;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CreateLogContainerScanContext(hlog: super::super::Foundation::HANDLE, cfromcontainer: u32, ccontainers: u32, escanmode: u8, pcxscan: *mut CLS_SCAN_CONTEXT, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateLogFile(pszlogfilename: ::windows_core_sys::PCWSTR, fdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, psalogfile: *mut super::super::Security::SECURITY_ATTRIBUTES, fcreatedisposition: FILE_CREATION_DISPOSITION, fflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateLogMarshallingArea(hlog: super::super::Foundation::HANDLE, pfnallocbuffer: CLFS_BLOCK_ALLOCATION, pfnfreebuffer: CLFS_BLOCK_DEALLOCATION, pvblockalloccontext: *mut ::core::ffi::c_void, cbmarshallingbuffer: u32, cmaxwritebuffers: u32, cmaxreadbuffers: u32, ppvmarshal: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateResourceManager(lpresourcemanagerattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, resourcemanagerid: *mut ::windows_core_sys::GUID, createoptions: u32, tmhandle: super::super::Foundation::HANDLE, description: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateSymbolicLinkA(lpsymlinkfilename: ::windows_core_sys::PCSTR, lptargetfilename: ::windows_core_sys::PCSTR, dwflags: SYMBOLIC_LINK_FLAGS) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateSymbolicLinkTransactedA(lpsymlinkfilename: ::windows_core_sys::PCSTR, lptargetfilename: ::windows_core_sys::PCSTR, dwflags: SYMBOLIC_LINK_FLAGS, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateSymbolicLinkTransactedW(lpsymlinkfilename: ::windows_core_sys::PCWSTR, lptargetfilename: ::windows_core_sys::PCWSTR, dwflags: SYMBOLIC_LINK_FLAGS, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateSymbolicLinkW(lpsymlinkfilename: ::windows_core_sys::PCWSTR, lptargetfilename: ::windows_core_sys::PCWSTR, dwflags: SYMBOLIC_LINK_FLAGS) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn CreateTapePartition(hdevice: super::super::Foundation::HANDLE, dwpartitionmethod: CREATE_TAPE_PARTITION_METHOD, dwcount: u32, dwsize: u32) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateTransaction(lptransactionattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, uow: *mut ::windows_core_sys::GUID, createoptions: u32, isolationlevel: u32, isolationflags: u32, timeout: u32, description: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn CreateTransactionManager(lptransactionattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, logfilename: ::windows_core_sys::PCWSTR, createoptions: u32, commitstrength: u32) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DecryptFileA(lpfilename: ::windows_core_sys::PCSTR, dwreserved: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DecryptFileW(lpfilename: ::windows_core_sys::PCWSTR, dwreserved: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DefineDosDeviceA(dwflags: DEFINE_DOS_DEVICE_FLAGS, lpdevicename: ::windows_core_sys::PCSTR, lptargetpath: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DefineDosDeviceW(dwflags: DEFINE_DOS_DEVICE_FLAGS, lpdevicename: ::windows_core_sys::PCWSTR, lptargetpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteFileA(lpfilename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteFileFromAppW(lpfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteFileTransactedA(lpfilename: ::windows_core_sys::PCSTR, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteFileTransactedW(lpfilename: ::windows_core_sys::PCWSTR, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteFileW(lpfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteLogByHandle(hlog: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteLogFile(pszlogfilename: ::windows_core_sys::PCWSTR, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteLogMarshallingArea(pvmarshal: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteVolumeMountPointA(lpszvolumemountpoint: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteVolumeMountPointW(lpszvolumemountpoint: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn DeregisterManageableLogClient(hlog: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn DuplicateEncryptionInfoFile(srcfilename: ::windows_core_sys::PCWSTR, dstfilename: ::windows_core_sys::PCWSTR, dwcreationdistribution: u32, dwattributes: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EncryptFileA(lpfilename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EncryptFileW(lpfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EncryptionDisable(dirpath: ::windows_core_sys::PCWSTR, disable: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn EraseTape(hdevice: super::super::Foundation::HANDLE, dwerasetype: ERASE_TAPE_TYPE, bimmediate: super::super::Foundation::BOOL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FileEncryptionStatusA(lpfilename: ::windows_core_sys::PCSTR, lpstatus: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FileEncryptionStatusW(lpfilename: ::windows_core_sys::PCWSTR, lpstatus: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FileTimeToLocalFileTime(lpfiletime: *const super::super::Foundation::FILETIME, lplocalfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindClose(hfindfile: FindFileHandle) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindCloseChangeNotification(hchangehandle: FindChangeNotificationHandle) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindFirstChangeNotificationA(lppathname: ::windows_core_sys::PCSTR, bwatchsubtree: super::super::Foundation::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE) -> FindChangeNotificationHandle;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindFirstChangeNotificationW(lppathname: ::windows_core_sys::PCWSTR, bwatchsubtree: super::super::Foundation::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE) -> FindChangeNotificationHandle;
-    #[cfg(feature = "Win32_Foundation")]
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn CreateLogContainerScanContext(hlog: ::win32_foundation_sys::HANDLE, cfromcontainer: u32, ccontainers: u32, escanmode: u8, pcxscan: *mut CLS_SCAN_CONTEXT, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateLogFile(pszlogfilename: ::windows_core_sys::PCWSTR, fdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, psalogfile: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, fcreatedisposition: FILE_CREATION_DISPOSITION, fflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
+    pub fn CreateLogMarshallingArea(hlog: ::win32_foundation_sys::HANDLE, pfnallocbuffer: CLFS_BLOCK_ALLOCATION, pfnfreebuffer: CLFS_BLOCK_DEALLOCATION, pvblockalloccontext: *mut ::core::ffi::c_void, cbmarshallingbuffer: u32, cmaxwritebuffers: u32, cmaxreadbuffers: u32, ppvmarshal: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateResourceManager(lpresourcemanagerattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, resourcemanagerid: *mut ::windows_core_sys::GUID, createoptions: u32, tmhandle: ::win32_foundation_sys::HANDLE, description: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
+    pub fn CreateSymbolicLinkA(lpsymlinkfilename: ::windows_core_sys::PCSTR, lptargetfilename: ::windows_core_sys::PCSTR, dwflags: SYMBOLIC_LINK_FLAGS) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn CreateSymbolicLinkTransactedA(lpsymlinkfilename: ::windows_core_sys::PCSTR, lptargetfilename: ::windows_core_sys::PCSTR, dwflags: SYMBOLIC_LINK_FLAGS, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn CreateSymbolicLinkTransactedW(lpsymlinkfilename: ::windows_core_sys::PCWSTR, lptargetfilename: ::windows_core_sys::PCWSTR, dwflags: SYMBOLIC_LINK_FLAGS, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn CreateSymbolicLinkW(lpsymlinkfilename: ::windows_core_sys::PCWSTR, lptargetfilename: ::windows_core_sys::PCWSTR, dwflags: SYMBOLIC_LINK_FLAGS) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn CreateTapePartition(hdevice: ::win32_foundation_sys::HANDLE, dwpartitionmethod: CREATE_TAPE_PARTITION_METHOD, dwcount: u32, dwsize: u32) -> u32;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateTransaction(lptransactionattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, uow: *mut ::windows_core_sys::GUID, createoptions: u32, isolationlevel: u32, isolationflags: u32, timeout: u32, description: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn CreateTransactionManager(lptransactionattributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, logfilename: ::windows_core_sys::PCWSTR, createoptions: u32, commitstrength: u32) -> ::win32_foundation_sys::HANDLE;
+    pub fn DecryptFileA(lpfilename: ::windows_core_sys::PCSTR, dwreserved: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn DecryptFileW(lpfilename: ::windows_core_sys::PCWSTR, dwreserved: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn DefineDosDeviceA(dwflags: DEFINE_DOS_DEVICE_FLAGS, lpdevicename: ::windows_core_sys::PCSTR, lptargetpath: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn DefineDosDeviceW(dwflags: DEFINE_DOS_DEVICE_FLAGS, lpdevicename: ::windows_core_sys::PCWSTR, lptargetpath: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteFileA(lpfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteFileFromAppW(lpfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteFileTransactedA(lpfilename: ::windows_core_sys::PCSTR, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteFileTransactedW(lpfilename: ::windows_core_sys::PCWSTR, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteFileW(lpfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteLogByHandle(hlog: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteLogFile(pszlogfilename: ::windows_core_sys::PCWSTR, pvreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteLogMarshallingArea(pvmarshal: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteVolumeMountPointA(lpszvolumemountpoint: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn DeleteVolumeMountPointW(lpszvolumemountpoint: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn DeregisterManageableLogClient(hlog: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn DuplicateEncryptionInfoFile(srcfilename: ::windows_core_sys::PCWSTR, dstfilename: ::windows_core_sys::PCWSTR, dwcreationdistribution: u32, dwattributes: u32, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES) -> u32;
+    pub fn EncryptFileA(lpfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn EncryptFileW(lpfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn EncryptionDisable(dirpath: ::windows_core_sys::PCWSTR, disable: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn EraseTape(hdevice: ::win32_foundation_sys::HANDLE, dwerasetype: ERASE_TAPE_TYPE, bimmediate: ::win32_foundation_sys::BOOL) -> u32;
+    pub fn FileEncryptionStatusA(lpfilename: ::windows_core_sys::PCSTR, lpstatus: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FileEncryptionStatusW(lpfilename: ::windows_core_sys::PCWSTR, lpstatus: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FileTimeToLocalFileTime(lpfiletime: *const ::win32_foundation_sys::FILETIME, lplocalfiletime: *mut ::win32_foundation_sys::FILETIME) -> ::win32_foundation_sys::BOOL;
+    pub fn FindClose(hfindfile: FindFileHandle) -> ::win32_foundation_sys::BOOL;
+    pub fn FindCloseChangeNotification(hchangehandle: FindChangeNotificationHandle) -> ::win32_foundation_sys::BOOL;
+    pub fn FindFirstChangeNotificationA(lppathname: ::windows_core_sys::PCSTR, bwatchsubtree: ::win32_foundation_sys::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE) -> FindChangeNotificationHandle;
+    pub fn FindFirstChangeNotificationW(lppathname: ::windows_core_sys::PCWSTR, bwatchsubtree: ::win32_foundation_sys::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE) -> FindChangeNotificationHandle;
     pub fn FindFirstFileA(lpfilename: ::windows_core_sys::PCSTR, lpfindfiledata: *mut WIN32_FIND_DATAA) -> FindFileHandle;
     pub fn FindFirstFileExA(lpfilename: ::windows_core_sys::PCSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: FIND_FIRST_EX_FLAGS) -> FindFileHandle;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindFirstFileExFromAppW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: u32) -> super::super::Foundation::HANDLE;
+    pub fn FindFirstFileExFromAppW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: u32) -> ::win32_foundation_sys::HANDLE;
     pub fn FindFirstFileExW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: FIND_FIRST_EX_FLAGS) -> FindFileHandle;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindFirstFileNameTransactedW(lpfilename: ::windows_core_sys::PCWSTR, dwflags: u32, stringlength: *mut u32, linkname: ::windows_core_sys::PWSTR, htransaction: super::super::Foundation::HANDLE) -> FindFileNameHandle;
+    pub fn FindFirstFileNameTransactedW(lpfilename: ::windows_core_sys::PCWSTR, dwflags: u32, stringlength: *mut u32, linkname: ::windows_core_sys::PWSTR, htransaction: ::win32_foundation_sys::HANDLE) -> FindFileNameHandle;
     pub fn FindFirstFileNameW(lpfilename: ::windows_core_sys::PCWSTR, dwflags: u32, stringlength: *mut u32, linkname: ::windows_core_sys::PWSTR) -> FindFileNameHandle;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindFirstFileTransactedA(lpfilename: ::windows_core_sys::PCSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: u32, htransaction: super::super::Foundation::HANDLE) -> FindFileHandle;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindFirstFileTransactedW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: u32, htransaction: super::super::Foundation::HANDLE) -> FindFileHandle;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn FindFirstFileTransactedA(lpfilename: ::windows_core_sys::PCSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: u32, htransaction: ::win32_foundation_sys::HANDLE) -> FindFileHandle;
+    pub fn FindFirstFileTransactedW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: u32, htransaction: ::win32_foundation_sys::HANDLE) -> FindFileHandle;
     pub fn FindFirstFileW(lpfilename: ::windows_core_sys::PCWSTR, lpfindfiledata: *mut WIN32_FIND_DATAW) -> FindFileHandle;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindFirstStreamTransactedW(lpfilename: ::windows_core_sys::PCWSTR, infolevel: STREAM_INFO_LEVELS, lpfindstreamdata: *mut ::core::ffi::c_void, dwflags: u32, htransaction: super::super::Foundation::HANDLE) -> FindStreamHandle;
+    pub fn FindFirstStreamTransactedW(lpfilename: ::windows_core_sys::PCWSTR, infolevel: STREAM_INFO_LEVELS, lpfindstreamdata: *mut ::core::ffi::c_void, dwflags: u32, htransaction: ::win32_foundation_sys::HANDLE) -> FindStreamHandle;
     pub fn FindFirstStreamW(lpfilename: ::windows_core_sys::PCWSTR, infolevel: STREAM_INFO_LEVELS, lpfindstreamdata: *mut ::core::ffi::c_void, dwflags: u32) -> FindStreamHandle;
     pub fn FindFirstVolumeA(lpszvolumename: ::windows_core_sys::PSTR, cchbufferlength: u32) -> FindVolumeHandle;
     pub fn FindFirstVolumeMountPointA(lpszrootpathname: ::windows_core_sys::PCSTR, lpszvolumemountpoint: ::windows_core_sys::PSTR, cchbufferlength: u32) -> FindVolumeMointPointHandle;
     pub fn FindFirstVolumeMountPointW(lpszrootpathname: ::windows_core_sys::PCWSTR, lpszvolumemountpoint: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> FindVolumeMointPointHandle;
     pub fn FindFirstVolumeW(lpszvolumename: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> FindVolumeHandle;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindNextChangeNotification(hchangehandle: FindChangeNotificationHandle) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindNextFileA(hfindfile: FindFileHandle, lpfindfiledata: *mut WIN32_FIND_DATAA) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindNextFileNameW(hfindstream: FindFileNameHandle, stringlength: *mut u32, linkname: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindNextFileW(hfindfile: super::super::Foundation::HANDLE, lpfindfiledata: *mut WIN32_FIND_DATAW) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindNextStreamW(hfindstream: FindStreamHandle, lpfindstreamdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindNextVolumeA(hfindvolume: FindVolumeHandle, lpszvolumename: ::windows_core_sys::PSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindNextVolumeMountPointA(hfindvolumemountpoint: FindVolumeMointPointHandle, lpszvolumemountpoint: ::windows_core_sys::PSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindNextVolumeMountPointW(hfindvolumemountpoint: FindVolumeMointPointHandle, lpszvolumemountpoint: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindNextVolumeW(hfindvolume: FindVolumeHandle, lpszvolumename: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindVolumeClose(hfindvolume: FindVolumeHandle) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FindVolumeMountPointClose(hfindvolumemountpoint: FindVolumeMointPointHandle) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FlushFileBuffers(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn FlushLogBuffers(pvmarshal: *mut ::core::ffi::c_void, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn FlushLogToLsn(pvmarshalcontext: *mut ::core::ffi::c_void, plsnflush: *mut CLS_LSN, plsnlastflushed: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+    pub fn FindNextChangeNotification(hchangehandle: FindChangeNotificationHandle) -> ::win32_foundation_sys::BOOL;
+    pub fn FindNextFileA(hfindfile: FindFileHandle, lpfindfiledata: *mut WIN32_FIND_DATAA) -> ::win32_foundation_sys::BOOL;
+    pub fn FindNextFileNameW(hfindstream: FindFileNameHandle, stringlength: *mut u32, linkname: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn FindNextFileW(hfindfile: ::win32_foundation_sys::HANDLE, lpfindfiledata: *mut WIN32_FIND_DATAW) -> ::win32_foundation_sys::BOOL;
+    pub fn FindNextStreamW(hfindstream: FindStreamHandle, lpfindstreamdata: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn FindNextVolumeA(hfindvolume: FindVolumeHandle, lpszvolumename: ::windows_core_sys::PSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FindNextVolumeMountPointA(hfindvolumemountpoint: FindVolumeMointPointHandle, lpszvolumemountpoint: ::windows_core_sys::PSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FindNextVolumeMountPointW(hfindvolumemountpoint: FindVolumeMointPointHandle, lpszvolumemountpoint: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FindNextVolumeW(hfindvolume: FindVolumeHandle, lpszvolumename: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn FindVolumeClose(hfindvolume: FindVolumeHandle) -> ::win32_foundation_sys::BOOL;
+    pub fn FindVolumeMountPointClose(hfindvolumemountpoint: FindVolumeMointPointHandle) -> ::win32_foundation_sys::BOOL;
+    pub fn FlushFileBuffers(hfile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn FlushLogBuffers(pvmarshal: *mut ::core::ffi::c_void, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn FlushLogToLsn(pvmarshalcontext: *mut ::core::ffi::c_void, plsnflush: *mut CLS_LSN, plsnlastflushed: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn FreeEncryptedFileMetadata(pbmetadata: *const u8);
     #[cfg(feature = "Win32_Security")]
     pub fn FreeEncryptionCertificateHashList(pusers: *const ENCRYPTION_CERTIFICATE_HASH_LIST);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn FreeReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetBinaryTypeA(lpapplicationname: ::windows_core_sys::PCSTR, lpbinarytype: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetBinaryTypeW(lpapplicationname: ::windows_core_sys::PCWSTR, lpbinarytype: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn FreeReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn GetBinaryTypeA(lpapplicationname: ::windows_core_sys::PCSTR, lpbinarytype: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetBinaryTypeW(lpapplicationname: ::windows_core_sys::PCWSTR, lpbinarytype: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetCompressedFileSizeA(lpfilename: ::windows_core_sys::PCSTR, lpfilesizehigh: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCompressedFileSizeTransactedA(lpfilename: ::windows_core_sys::PCSTR, lpfilesizehigh: *mut u32, htransaction: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCompressedFileSizeTransactedW(lpfilename: ::windows_core_sys::PCWSTR, lpfilesizehigh: *mut u32, htransaction: super::super::Foundation::HANDLE) -> u32;
+    pub fn GetCompressedFileSizeTransactedA(lpfilename: ::windows_core_sys::PCSTR, lpfilesizehigh: *mut u32, htransaction: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn GetCompressedFileSizeTransactedW(lpfilename: ::windows_core_sys::PCWSTR, lpfilesizehigh: *mut u32, htransaction: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn GetCompressedFileSizeW(lpfilename: ::windows_core_sys::PCWSTR, lpfilesizehigh: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetCurrentClockTransactionManager(transactionmanagerhandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDiskFreeSpaceA(lprootpathname: ::windows_core_sys::PCSTR, lpsectorspercluster: *mut u32, lpbytespersector: *mut u32, lpnumberoffreeclusters: *mut u32, lptotalnumberofclusters: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDiskFreeSpaceExA(lpdirectoryname: ::windows_core_sys::PCSTR, lpfreebytesavailabletocaller: *mut u64, lptotalnumberofbytes: *mut u64, lptotalnumberoffreebytes: *mut u64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDiskFreeSpaceExW(lpdirectoryname: ::windows_core_sys::PCWSTR, lpfreebytesavailabletocaller: *mut u64, lptotalnumberofbytes: *mut u64, lptotalnumberoffreebytes: *mut u64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetDiskFreeSpaceW(lprootpathname: ::windows_core_sys::PCWSTR, lpsectorspercluster: *mut u32, lpbytespersector: *mut u32, lpnumberoffreeclusters: *mut u32, lptotalnumberofclusters: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn GetCurrentClockTransactionManager(transactionmanagerhandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDiskFreeSpaceA(lprootpathname: ::windows_core_sys::PCSTR, lpsectorspercluster: *mut u32, lpbytespersector: *mut u32, lpnumberoffreeclusters: *mut u32, lptotalnumberofclusters: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDiskFreeSpaceExA(lpdirectoryname: ::windows_core_sys::PCSTR, lpfreebytesavailabletocaller: *mut u64, lptotalnumberofbytes: *mut u64, lptotalnumberoffreebytes: *mut u64) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDiskFreeSpaceExW(lpdirectoryname: ::windows_core_sys::PCWSTR, lpfreebytesavailabletocaller: *mut u64, lptotalnumberofbytes: *mut u64, lptotalnumberoffreebytes: *mut u64) -> ::win32_foundation_sys::BOOL;
+    pub fn GetDiskFreeSpaceW(lprootpathname: ::windows_core_sys::PCWSTR, lpsectorspercluster: *mut u32, lpbytespersector: *mut u32, lpnumberoffreeclusters: *mut u32, lptotalnumberofclusters: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetDiskSpaceInformationA(rootpath: ::windows_core_sys::PCSTR, diskspaceinfo: *mut DISK_SPACE_INFORMATION) -> ::windows_core_sys::HRESULT;
     pub fn GetDiskSpaceInformationW(rootpath: ::windows_core_sys::PCWSTR, diskspaceinfo: *mut DISK_SPACE_INFORMATION) -> ::windows_core_sys::HRESULT;
     pub fn GetDriveTypeA(lprootpathname: ::windows_core_sys::PCSTR) -> u32;
     pub fn GetDriveTypeW(lprootpathname: ::windows_core_sys::PCWSTR) -> u32;
     pub fn GetEncryptedFileMetadata(lpfilename: ::windows_core_sys::PCWSTR, pcbmetadata: *mut u32, ppbmetadata: *mut *mut u8) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetEnlistmentId(enlistmenthandle: super::super::Foundation::HANDLE, enlistmentid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetEnlistmentRecoveryInformation(enlistmenthandle: super::super::Foundation::HANDLE, buffersize: u32, buffer: *mut ::core::ffi::c_void, bufferused: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn GetEnlistmentId(enlistmenthandle: ::win32_foundation_sys::HANDLE, enlistmentid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
+    pub fn GetEnlistmentRecoveryInformation(enlistmenthandle: ::win32_foundation_sys::HANDLE, buffersize: u32, buffer: *mut ::core::ffi::c_void, bufferused: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn GetExpandedNameA(lpszsource: ::windows_core_sys::PCSTR, lpszbuffer: ::windows_core_sys::PSTR) -> i32;
     pub fn GetExpandedNameW(lpszsource: ::windows_core_sys::PCWSTR, lpszbuffer: ::windows_core_sys::PWSTR) -> i32;
     pub fn GetFileAttributesA(lpfilename: ::windows_core_sys::PCSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileAttributesExA(lpfilename: ::windows_core_sys::PCSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileAttributesExFromAppW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileAttributesExW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileAttributesTransactedA(lpfilename: ::windows_core_sys::PCSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileAttributesTransactedW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
+    pub fn GetFileAttributesExA(lpfilename: ::windows_core_sys::PCSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileAttributesExFromAppW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileAttributesExW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileAttributesTransactedA(lpfilename: ::windows_core_sys::PCSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileAttributesTransactedW(lpfilename: ::windows_core_sys::PCWSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
     pub fn GetFileAttributesW(lpfilename: ::windows_core_sys::PCWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileBandwidthReservation(hfile: super::super::Foundation::HANDLE, lpperiodmilliseconds: *mut u32, lpbytesperperiod: *mut u32, pdiscardable: *mut i32, lptransfersize: *mut u32, lpnumoutstandingrequests: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileInformationByHandle(hfile: super::super::Foundation::HANDLE, lpfileinformation: *mut BY_HANDLE_FILE_INFORMATION) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileInformationByHandleEx(hfile: super::super::Foundation::HANDLE, fileinformationclass: FILE_INFO_BY_HANDLE_CLASS, lpfileinformation: *mut ::core::ffi::c_void, dwbuffersize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileSize(hfile: super::super::Foundation::HANDLE, lpfilesizehigh: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileSizeEx(hfile: super::super::Foundation::HANDLE, lpfilesize: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileTime(hfile: super::super::Foundation::HANDLE, lpcreationtime: *mut super::super::Foundation::FILETIME, lplastaccesstime: *mut super::super::Foundation::FILETIME, lplastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileType(hfile: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileVersionInfoA(lptstrfilename: ::windows_core_sys::PCSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileVersionInfoExA(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows_core_sys::PCSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileVersionInfoExW(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows_core_sys::PCWSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn GetFileBandwidthReservation(hfile: ::win32_foundation_sys::HANDLE, lpperiodmilliseconds: *mut u32, lpbytesperperiod: *mut u32, pdiscardable: *mut i32, lptransfersize: *mut u32, lpnumoutstandingrequests: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileInformationByHandle(hfile: ::win32_foundation_sys::HANDLE, lpfileinformation: *mut BY_HANDLE_FILE_INFORMATION) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileInformationByHandleEx(hfile: ::win32_foundation_sys::HANDLE, fileinformationclass: FILE_INFO_BY_HANDLE_CLASS, lpfileinformation: *mut ::core::ffi::c_void, dwbuffersize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileSize(hfile: ::win32_foundation_sys::HANDLE, lpfilesizehigh: *mut u32) -> u32;
+    pub fn GetFileSizeEx(hfile: ::win32_foundation_sys::HANDLE, lpfilesize: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileTime(hfile: ::win32_foundation_sys::HANDLE, lpcreationtime: *mut ::win32_foundation_sys::FILETIME, lplastaccesstime: *mut ::win32_foundation_sys::FILETIME, lplastwritetime: *mut ::win32_foundation_sys::FILETIME) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileType(hfile: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn GetFileVersionInfoA(lptstrfilename: ::windows_core_sys::PCSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileVersionInfoExA(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows_core_sys::PCSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFileVersionInfoExW(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows_core_sys::PCWSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn GetFileVersionInfoSizeA(lptstrfilename: ::windows_core_sys::PCSTR, lpdwhandle: *mut u32) -> u32;
     pub fn GetFileVersionInfoSizeExA(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows_core_sys::PCSTR, lpdwhandle: *mut u32) -> u32;
     pub fn GetFileVersionInfoSizeExW(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows_core_sys::PCWSTR, lpdwhandle: *mut u32) -> u32;
     pub fn GetFileVersionInfoSizeW(lptstrfilename: ::windows_core_sys::PCWSTR, lpdwhandle: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileVersionInfoW(lptstrfilename: ::windows_core_sys::PCWSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFinalPathNameByHandleA(hfile: super::super::Foundation::HANDLE, lpszfilepath: ::windows_core_sys::PSTR, cchfilepath: u32, dwflags: FILE_NAME) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFinalPathNameByHandleW(hfile: super::super::Foundation::HANDLE, lpszfilepath: ::windows_core_sys::PWSTR, cchfilepath: u32, dwflags: FILE_NAME) -> u32;
+    pub fn GetFileVersionInfoW(lptstrfilename: ::windows_core_sys::PCWSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn GetFinalPathNameByHandleA(hfile: ::win32_foundation_sys::HANDLE, lpszfilepath: ::windows_core_sys::PSTR, cchfilepath: u32, dwflags: FILE_NAME) -> u32;
+    pub fn GetFinalPathNameByHandleW(hfile: ::win32_foundation_sys::HANDLE, lpszfilepath: ::windows_core_sys::PWSTR, cchfilepath: u32, dwflags: FILE_NAME) -> u32;
     pub fn GetFullPathNameA(lpfilename: ::windows_core_sys::PCSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PSTR, lpfilepart: *mut ::windows_core_sys::PSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFullPathNameTransactedA(lpfilename: ::windows_core_sys::PCSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PSTR, lpfilepart: *mut ::windows_core_sys::PSTR, htransaction: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFullPathNameTransactedW(lpfilename: ::windows_core_sys::PCWSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PWSTR, lpfilepart: *mut ::windows_core_sys::PWSTR, htransaction: super::super::Foundation::HANDLE) -> u32;
+    pub fn GetFullPathNameTransactedA(lpfilename: ::windows_core_sys::PCSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PSTR, lpfilepart: *mut ::windows_core_sys::PSTR, htransaction: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn GetFullPathNameTransactedW(lpfilename: ::windows_core_sys::PCWSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PWSTR, lpfilepart: *mut ::windows_core_sys::PWSTR, htransaction: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn GetFullPathNameW(lpfilename: ::windows_core_sys::PCWSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PWSTR, lpfilepart: *mut ::windows_core_sys::PWSTR) -> u32;
     pub fn GetIoRingInfo(ioring: *const HIORING__, info: *mut IORING_INFO) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetLogContainerName(hlog: super::super::Foundation::HANDLE, cidlogicalcontainer: u32, pwstrcontainername: ::windows_core_sys::PCWSTR, clencontainername: u32, pcactuallencontainername: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetLogFileInformation(hlog: super::super::Foundation::HANDLE, pinfobuffer: *mut CLS_INFORMATION, cbbuffer: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetLogIoStatistics(hlog: super::super::Foundation::HANDLE, pvstatsbuffer: *mut ::core::ffi::c_void, cbstatsbuffer: u32, estatsclass: CLFS_IOSTATS_CLASS, pcbstatswritten: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetLogReservationInfo(pvmarshal: *const ::core::ffi::c_void, pcbrecordnumber: *mut u32, pcbuserreservation: *mut i64, pcbcommitreservation: *mut i64) -> super::super::Foundation::BOOL;
+    pub fn GetLogContainerName(hlog: ::win32_foundation_sys::HANDLE, cidlogicalcontainer: u32, pwstrcontainername: ::windows_core_sys::PCWSTR, clencontainername: u32, pcactuallencontainername: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetLogFileInformation(hlog: ::win32_foundation_sys::HANDLE, pinfobuffer: *mut CLS_INFORMATION, cbbuffer: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetLogIoStatistics(hlog: ::win32_foundation_sys::HANDLE, pvstatsbuffer: *mut ::core::ffi::c_void, cbstatsbuffer: u32, estatsclass: CLFS_IOSTATS_CLASS, pcbstatswritten: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetLogReservationInfo(pvmarshal: *const ::core::ffi::c_void, pcbrecordnumber: *mut u32, pcbuserreservation: *mut i64, pcbcommitreservation: *mut i64) -> ::win32_foundation_sys::BOOL;
     pub fn GetLogicalDriveStringsA(nbufferlength: u32, lpbuffer: ::windows_core_sys::PSTR) -> u32;
     pub fn GetLogicalDriveStringsW(nbufferlength: u32, lpbuffer: ::windows_core_sys::PWSTR) -> u32;
     pub fn GetLogicalDrives() -> u32;
     pub fn GetLongPathNameA(lpszshortpath: ::windows_core_sys::PCSTR, lpszlongpath: ::windows_core_sys::PSTR, cchbuffer: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetLongPathNameTransactedA(lpszshortpath: ::windows_core_sys::PCSTR, lpszlongpath: ::windows_core_sys::PSTR, cchbuffer: u32, htransaction: super::super::Foundation::HANDLE) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetLongPathNameTransactedW(lpszshortpath: ::windows_core_sys::PCWSTR, lpszlongpath: ::windows_core_sys::PWSTR, cchbuffer: u32, htransaction: super::super::Foundation::HANDLE) -> u32;
+    pub fn GetLongPathNameTransactedA(lpszshortpath: ::windows_core_sys::PCSTR, lpszlongpath: ::windows_core_sys::PSTR, cchbuffer: u32, htransaction: ::win32_foundation_sys::HANDLE) -> u32;
+    pub fn GetLongPathNameTransactedW(lpszshortpath: ::windows_core_sys::PCWSTR, lpszlongpath: ::windows_core_sys::PWSTR, cchbuffer: u32, htransaction: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn GetLongPathNameW(lpszshortpath: ::windows_core_sys::PCWSTR, lpszlongpath: ::windows_core_sys::PWSTR, cchbuffer: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetNextLogArchiveExtent(pvarchivecontext: *mut ::core::ffi::c_void, rgadextent: *mut CLS_ARCHIVE_DESCRIPTOR, cdescriptors: u32, pcdescriptorsreturned: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetNotificationResourceManager(resourcemanagerhandle: super::super::Foundation::HANDLE, transactionnotification: *mut TRANSACTION_NOTIFICATION, notificationlength: u32, dwmilliseconds: u32, returnlength: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn GetNotificationResourceManagerAsync(resourcemanagerhandle: super::super::Foundation::HANDLE, transactionnotification: *mut TRANSACTION_NOTIFICATION, transactionnotificationlength: u32, returnlength: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+    pub fn GetNextLogArchiveExtent(pvarchivecontext: *mut ::core::ffi::c_void, rgadextent: *mut CLS_ARCHIVE_DESCRIPTOR, cdescriptors: u32, pcdescriptorsreturned: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetNotificationResourceManager(resourcemanagerhandle: ::win32_foundation_sys::HANDLE, transactionnotification: *mut TRANSACTION_NOTIFICATION, notificationlength: u32, dwmilliseconds: u32, returnlength: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn GetNotificationResourceManagerAsync(resourcemanagerhandle: ::win32_foundation_sys::HANDLE, transactionnotification: *mut TRANSACTION_NOTIFICATION, transactionnotificationlength: u32, returnlength: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn GetShortPathNameA(lpszlongpath: ::windows_core_sys::PCSTR, lpszshortpath: ::windows_core_sys::PSTR, cchbuffer: u32) -> u32;
     pub fn GetShortPathNameW(lpszlongpath: ::windows_core_sys::PCWSTR, lpszshortpath: ::windows_core_sys::PWSTR, cchbuffer: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetTapeParameters(hdevice: super::super::Foundation::HANDLE, dwoperation: GET_TAPE_DRIVE_PARAMETERS_OPERATION, lpdwsize: *mut u32, lptapeinformation: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetTapePosition(hdevice: super::super::Foundation::HANDLE, dwpositiontype: TAPE_POSITION_TYPE, lpdwpartition: *mut u32, lpdwoffsetlow: *mut u32, lpdwoffsethigh: *mut u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetTapeStatus(hdevice: super::super::Foundation::HANDLE) -> u32;
+    pub fn GetTapeParameters(hdevice: ::win32_foundation_sys::HANDLE, dwoperation: GET_TAPE_DRIVE_PARAMETERS_OPERATION, lpdwsize: *mut u32, lptapeinformation: *mut ::core::ffi::c_void) -> u32;
+    pub fn GetTapePosition(hdevice: ::win32_foundation_sys::HANDLE, dwpositiontype: TAPE_POSITION_TYPE, lpdwpartition: *mut u32, lpdwoffsetlow: *mut u32, lpdwoffsethigh: *mut u32) -> u32;
+    pub fn GetTapeStatus(hdevice: ::win32_foundation_sys::HANDLE) -> u32;
     pub fn GetTempFileNameA(lppathname: ::windows_core_sys::PCSTR, lpprefixstring: ::windows_core_sys::PCSTR, uunique: u32, lptempfilename: ::windows_core_sys::PSTR) -> u32;
     pub fn GetTempFileNameW(lppathname: ::windows_core_sys::PCWSTR, lpprefixstring: ::windows_core_sys::PCWSTR, uunique: u32, lptempfilename: ::windows_core_sys::PWSTR) -> u32;
     pub fn GetTempPath2A(bufferlength: u32, buffer: ::windows_core_sys::PSTR) -> u32;
     pub fn GetTempPath2W(bufferlength: u32, buffer: ::windows_core_sys::PWSTR) -> u32;
     pub fn GetTempPathA(nbufferlength: u32, lpbuffer: ::windows_core_sys::PSTR) -> u32;
     pub fn GetTempPathW(nbufferlength: u32, lpbuffer: ::windows_core_sys::PWSTR) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetTransactionId(transactionhandle: super::super::Foundation::HANDLE, transactionid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetTransactionInformation(transactionhandle: super::super::Foundation::HANDLE, outcome: *mut u32, isolationlevel: *mut u32, isolationflags: *mut u32, timeout: *mut u32, bufferlength: u32, description: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetTransactionManagerId(transactionmanagerhandle: super::super::Foundation::HANDLE, transactionmanagerid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVolumeInformationA(lprootpathname: ::windows_core_sys::PCSTR, lpvolumenamebuffer: ::windows_core_sys::PSTR, nvolumenamesize: u32, lpvolumeserialnumber: *mut u32, lpmaximumcomponentlength: *mut u32, lpfilesystemflags: *mut u32, lpfilesystemnamebuffer: ::windows_core_sys::PSTR, nfilesystemnamesize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVolumeInformationByHandleW(hfile: super::super::Foundation::HANDLE, lpvolumenamebuffer: ::windows_core_sys::PWSTR, nvolumenamesize: u32, lpvolumeserialnumber: *mut u32, lpmaximumcomponentlength: *mut u32, lpfilesystemflags: *mut u32, lpfilesystemnamebuffer: ::windows_core_sys::PWSTR, nfilesystemnamesize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVolumeInformationW(lprootpathname: ::windows_core_sys::PCWSTR, lpvolumenamebuffer: ::windows_core_sys::PWSTR, nvolumenamesize: u32, lpvolumeserialnumber: *mut u32, lpmaximumcomponentlength: *mut u32, lpfilesystemflags: *mut u32, lpfilesystemnamebuffer: ::windows_core_sys::PWSTR, nfilesystemnamesize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVolumeNameForVolumeMountPointA(lpszvolumemountpoint: ::windows_core_sys::PCSTR, lpszvolumename: ::windows_core_sys::PSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVolumeNameForVolumeMountPointW(lpszvolumemountpoint: ::windows_core_sys::PCWSTR, lpszvolumename: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVolumePathNameA(lpszfilename: ::windows_core_sys::PCSTR, lpszvolumepathname: ::windows_core_sys::PSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVolumePathNameW(lpszfilename: ::windows_core_sys::PCWSTR, lpszvolumepathname: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVolumePathNamesForVolumeNameA(lpszvolumename: ::windows_core_sys::PCSTR, lpszvolumepathnames: ::windows_core_sys::PSTR, cchbufferlength: u32, lpcchreturnlength: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVolumePathNamesForVolumeNameW(lpszvolumename: ::windows_core_sys::PCWSTR, lpszvolumepathnames: ::windows_core_sys::PWSTR, cchbufferlength: u32, lpcchreturnlength: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn HandleLogFull(hlog: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn InstallLogPolicy(hlog: super::super::Foundation::HANDLE, ppolicy: *mut CLFS_MGMT_POLICY) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn IsIoRingOpSupported(ioring: *const HIORING__, op: IORING_OP_CODE) -> super::super::Foundation::BOOL;
+    pub fn GetTransactionId(transactionhandle: ::win32_foundation_sys::HANDLE, transactionid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
+    pub fn GetTransactionInformation(transactionhandle: ::win32_foundation_sys::HANDLE, outcome: *mut u32, isolationlevel: *mut u32, isolationflags: *mut u32, timeout: *mut u32, bufferlength: u32, description: ::windows_core_sys::PWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn GetTransactionManagerId(transactionmanagerhandle: ::win32_foundation_sys::HANDLE, transactionmanagerid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
+    pub fn GetVolumeInformationA(lprootpathname: ::windows_core_sys::PCSTR, lpvolumenamebuffer: ::windows_core_sys::PSTR, nvolumenamesize: u32, lpvolumeserialnumber: *mut u32, lpmaximumcomponentlength: *mut u32, lpfilesystemflags: *mut u32, lpfilesystemnamebuffer: ::windows_core_sys::PSTR, nfilesystemnamesize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetVolumeInformationByHandleW(hfile: ::win32_foundation_sys::HANDLE, lpvolumenamebuffer: ::windows_core_sys::PWSTR, nvolumenamesize: u32, lpvolumeserialnumber: *mut u32, lpmaximumcomponentlength: *mut u32, lpfilesystemflags: *mut u32, lpfilesystemnamebuffer: ::windows_core_sys::PWSTR, nfilesystemnamesize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetVolumeInformationW(lprootpathname: ::windows_core_sys::PCWSTR, lpvolumenamebuffer: ::windows_core_sys::PWSTR, nvolumenamesize: u32, lpvolumeserialnumber: *mut u32, lpmaximumcomponentlength: *mut u32, lpfilesystemflags: *mut u32, lpfilesystemnamebuffer: ::windows_core_sys::PWSTR, nfilesystemnamesize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetVolumeNameForVolumeMountPointA(lpszvolumemountpoint: ::windows_core_sys::PCSTR, lpszvolumename: ::windows_core_sys::PSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetVolumeNameForVolumeMountPointW(lpszvolumemountpoint: ::windows_core_sys::PCWSTR, lpszvolumename: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetVolumePathNameA(lpszfilename: ::windows_core_sys::PCSTR, lpszvolumepathname: ::windows_core_sys::PSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetVolumePathNameW(lpszfilename: ::windows_core_sys::PCWSTR, lpszvolumepathname: ::windows_core_sys::PWSTR, cchbufferlength: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetVolumePathNamesForVolumeNameA(lpszvolumename: ::windows_core_sys::PCSTR, lpszvolumepathnames: ::windows_core_sys::PSTR, cchbufferlength: u32, lpcchreturnlength: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn GetVolumePathNamesForVolumeNameW(lpszvolumename: ::windows_core_sys::PCWSTR, lpszvolumepathnames: ::windows_core_sys::PWSTR, cchbufferlength: u32, lpcchreturnlength: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn HandleLogFull(hlog: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn InstallLogPolicy(hlog: ::win32_foundation_sys::HANDLE, ppolicy: *mut CLFS_MGMT_POLICY) -> ::win32_foundation_sys::BOOL;
+    pub fn IsIoRingOpSupported(ioring: *const HIORING__, op: IORING_OP_CODE) -> ::win32_foundation_sys::BOOL;
     pub fn LZClose(hfile: i32);
     pub fn LZCopy(hfsource: i32, hfdest: i32) -> i32;
     pub fn LZDone();
     pub fn LZInit(hfsource: i32) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn LZOpenFileA(lpfilename: ::windows_core_sys::PCSTR, lpreopenbuf: *mut OFSTRUCT, wstyle: LZOPENFILE_STYLE) -> i32;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn LZOpenFileW(lpfilename: ::windows_core_sys::PCWSTR, lpreopenbuf: *mut OFSTRUCT, wstyle: LZOPENFILE_STYLE) -> i32;
     pub fn LZRead(hfile: i32, lpbuffer: ::windows_core_sys::PSTR, cbread: i32) -> i32;
     pub fn LZSeek(hfile: i32, loffset: i32, iorigin: i32) -> i32;
     pub fn LZStart() -> i32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LocalFileTimeToFileTime(lplocalfiletime: *const super::super::Foundation::FILETIME, lpfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LockFile(hfile: super::super::Foundation::HANDLE, dwfileoffsetlow: u32, dwfileoffsethigh: u32, nnumberofbytestolocklow: u32, nnumberofbytestolockhigh: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn LockFileEx(hfile: super::super::Foundation::HANDLE, dwflags: LOCK_FILE_FLAGS, dwreserved: u32, nnumberofbytestolocklow: u32, nnumberofbytestolockhigh: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LogTailAdvanceFailure(hlog: super::super::Foundation::HANDLE, dwreason: u32) -> super::super::Foundation::BOOL;
+    pub fn LocalFileTimeToFileTime(lplocalfiletime: *const ::win32_foundation_sys::FILETIME, lpfiletime: *mut ::win32_foundation_sys::FILETIME) -> ::win32_foundation_sys::BOOL;
+    pub fn LockFile(hfile: ::win32_foundation_sys::HANDLE, dwfileoffsetlow: u32, dwfileoffsethigh: u32, nnumberofbytestolocklow: u32, nnumberofbytestolockhigh: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn LockFileEx(hfile: ::win32_foundation_sys::HANDLE, dwflags: LOCK_FILE_FLAGS, dwreserved: u32, nnumberofbytestolocklow: u32, nnumberofbytestolockhigh: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    pub fn LogTailAdvanceFailure(hlog: ::win32_foundation_sys::HANDLE, dwreason: u32) -> ::win32_foundation_sys::BOOL;
     pub fn LsnBlockOffset(plsn: *const CLS_LSN) -> u32;
     pub fn LsnContainer(plsn: *const CLS_LSN) -> u32;
     pub fn LsnCreate(cidcontainer: u32, offblock: u32, crecord: u32) -> CLS_LSN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsnEqual(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsnGreater(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
+    pub fn LsnEqual(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn LsnGreater(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> ::win32_foundation_sys::BOOLEAN;
     pub fn LsnIncrement(plsn: *const CLS_LSN) -> CLS_LSN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsnInvalid(plsn: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsnLess(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn LsnNull(plsn: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
+    pub fn LsnInvalid(plsn: *const CLS_LSN) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn LsnLess(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn LsnNull(plsn: *const CLS_LSN) -> ::win32_foundation_sys::BOOLEAN;
     pub fn LsnRecordSequence(plsn: *const CLS_LSN) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MoveFileA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MoveFileExA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, dwflags: MOVE_FILE_FLAGS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MoveFileExW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, dwflags: MOVE_FILE_FLAGS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MoveFileFromAppW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MoveFileTransactedA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MoveFileTransactedW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MoveFileW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MoveFileWithProgressA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn MoveFileWithProgressW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS) -> super::super::Foundation::BOOL;
+    pub fn MoveFileA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn MoveFileExA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, dwflags: MOVE_FILE_FLAGS) -> ::win32_foundation_sys::BOOL;
+    pub fn MoveFileExW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, dwflags: MOVE_FILE_FLAGS) -> ::win32_foundation_sys::BOOL;
+    pub fn MoveFileFromAppW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn MoveFileTransactedA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn MoveFileTransactedW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn MoveFileW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn MoveFileWithProgressA(lpexistingfilename: ::windows_core_sys::PCSTR, lpnewfilename: ::windows_core_sys::PCSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS) -> ::win32_foundation_sys::BOOL;
+    pub fn MoveFileWithProgressW(lpexistingfilename: ::windows_core_sys::PCWSTR, lpnewfilename: ::windows_core_sys::PCWSTR, lpprogressroutine: LPPROGRESS_ROUTINE, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS) -> ::win32_foundation_sys::BOOL;
     pub fn NetConnectionEnum(servername: ::windows_core_sys::PCWSTR, qualifier: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
     pub fn NetFileClose(servername: ::windows_core_sys::PCWSTR, fileid: u32) -> u32;
     pub fn NetFileEnum(servername: ::windows_core_sys::PCWSTR, basepath: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut usize) -> u32;
@@ -453,281 +297,187 @@ extern "system" {
     pub fn NetShareGetInfo(servername: ::windows_core_sys::PCWSTR, netname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
     pub fn NetShareSetInfo(servername: ::windows_core_sys::PCWSTR, netname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
     pub fn NetStatisticsGet(servername: *const i8, service: *const i8, level: u32, options: u32, buffer: *mut *mut u8) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn NtCreateFile(filehandle: *mut super::super::Foundation::HANDLE, desiredaccess: u32, objectattributes: *mut super::super::System::WindowsProgramming::OBJECT_ATTRIBUTES, iostatusblock: *mut super::super::System::WindowsProgramming::IO_STATUS_BLOCK, allocationsize: *mut i64, fileattributes: u32, shareaccess: FILE_SHARE_MODE, createdisposition: NT_CREATE_FILE_DISPOSITION, createoptions: u32, eabuffer: *mut ::core::ffi::c_void, ealength: u32) -> super::super::Foundation::NTSTATUS;
+    #[cfg(feature = "Win32_System_WindowsProgramming")]
+    pub fn NtCreateFile(filehandle: *mut ::win32_foundation_sys::HANDLE, desiredaccess: u32, objectattributes: *mut ::win32_system_sys::WindowsProgramming::OBJECT_ATTRIBUTES, iostatusblock: *mut ::win32_system_sys::WindowsProgramming::IO_STATUS_BLOCK, allocationsize: *mut i64, fileattributes: u32, shareaccess: FILE_SHARE_MODE, createdisposition: NT_CREATE_FILE_DISPOSITION, createoptions: u32, eabuffer: *mut ::core::ffi::c_void, ealength: u32) -> ::win32_foundation_sys::NTSTATUS;
     pub fn OpenEncryptedFileRawA(lpfilename: ::windows_core_sys::PCSTR, ulflags: u32, pvcontext: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn OpenEncryptedFileRawW(lpfilename: ::windows_core_sys::PCWSTR, ulflags: u32, pvcontext: *mut *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenEnlistment(dwdesiredaccess: u32, resourcemanagerhandle: super::super::Foundation::HANDLE, enlistmentid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn OpenEnlistment(dwdesiredaccess: u32, resourcemanagerhandle: ::win32_foundation_sys::HANDLE, enlistmentid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::HANDLE;
     pub fn OpenFile(lpfilename: ::windows_core_sys::PCSTR, lpreopenbuff: *mut OFSTRUCT, ustyle: LZOPENFILE_STYLE) -> i32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn OpenFileById(hvolumehint: super::super::Foundation::HANDLE, lpfileid: *const FILE_ID_DESCRIPTOR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenResourceManager(dwdesiredaccess: u32, tmhandle: super::super::Foundation::HANDLE, resourcemanagerid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenTransaction(dwdesiredaccess: u32, transactionid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenTransactionManager(logfilename: ::windows_core_sys::PCWSTR, desiredaccess: u32, openoptions: u32) -> super::super::Foundation::HANDLE;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenTransactionManagerById(transactionmanagerid: *const ::windows_core_sys::GUID, desiredaccess: u32, openoptions: u32) -> super::super::Foundation::HANDLE;
+    #[cfg(feature = "Win32_Security")]
+    pub fn OpenFileById(hvolumehint: ::win32_foundation_sys::HANDLE, lpfileid: *const FILE_ID_DESCRIPTOR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const ::win32_security_sys::SECURITY_ATTRIBUTES, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
+    pub fn OpenResourceManager(dwdesiredaccess: u32, tmhandle: ::win32_foundation_sys::HANDLE, resourcemanagerid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::HANDLE;
+    pub fn OpenTransaction(dwdesiredaccess: u32, transactionid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::HANDLE;
+    pub fn OpenTransactionManager(logfilename: ::windows_core_sys::PCWSTR, desiredaccess: u32, openoptions: u32) -> ::win32_foundation_sys::HANDLE;
+    pub fn OpenTransactionManagerById(transactionmanagerid: *const ::windows_core_sys::GUID, desiredaccess: u32, openoptions: u32) -> ::win32_foundation_sys::HANDLE;
     pub fn PopIoRingCompletion(ioring: *const HIORING__, cqe: *mut IORING_CQE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PrePrepareComplete(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PrePrepareEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PrepareComplete(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PrepareEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PrepareLogArchive(hlog: super::super::Foundation::HANDLE, pszbaselogfilename: ::windows_core_sys::PWSTR, clen: u32, plsnlow: *const CLS_LSN, plsnhigh: *const CLS_LSN, pcactuallength: *mut u32, poffbaselogfiledata: *mut u64, pcbbaselogfilelength: *mut u64, plsnbase: *mut CLS_LSN, plsnlast: *mut CLS_LSN, plsncurrentarchivetail: *mut CLS_LSN, ppvarchivecontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn PrepareTape(hdevice: super::super::Foundation::HANDLE, dwoperation: PREPARE_TAPE_OPERATION, bimmediate: super::super::Foundation::BOOL) -> u32;
+    pub fn PrePrepareComplete(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn PrePrepareEnlistment(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn PrepareComplete(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn PrepareEnlistment(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn PrepareLogArchive(hlog: ::win32_foundation_sys::HANDLE, pszbaselogfilename: ::windows_core_sys::PWSTR, clen: u32, plsnlow: *const CLS_LSN, plsnhigh: *const CLS_LSN, pcactuallength: *mut u32, poffbaselogfiledata: *mut u64, pcbbaselogfilelength: *mut u64, plsnbase: *mut CLS_LSN, plsnlast: *mut CLS_LSN, plsncurrentarchivetail: *mut CLS_LSN, ppvarchivecontext: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn PrepareTape(hdevice: ::win32_foundation_sys::HANDLE, dwoperation: PREPARE_TAPE_OPERATION, bimmediate: ::win32_foundation_sys::BOOL) -> u32;
     pub fn QueryDosDeviceA(lpdevicename: ::windows_core_sys::PCSTR, lptargetpath: ::windows_core_sys::PSTR, ucchmax: u32) -> u32;
     pub fn QueryDosDeviceW(lpdevicename: ::windows_core_sys::PCWSTR, lptargetpath: ::windows_core_sys::PWSTR, ucchmax: u32) -> u32;
     pub fn QueryIoRingCapabilities(capabilities: *mut IORING_CAPABILITIES) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryLogPolicy(hlog: super::super::Foundation::HANDLE, epolicytype: CLFS_MGMT_POLICY_TYPE, ppolicybuffer: *mut CLFS_MGMT_POLICY, pcbpolicybuffer: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn QueryLogPolicy(hlog: ::win32_foundation_sys::HANDLE, epolicytype: CLFS_MGMT_POLICY_TYPE, ppolicybuffer: *mut CLFS_MGMT_POLICY, pcbpolicybuffer: *mut u32) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Security")]
     pub fn QueryRecoveryAgentsOnEncryptedFile(lpfilename: ::windows_core_sys::PCWSTR, precoveryagents: *mut *mut ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
     #[cfg(feature = "Win32_Security")]
     pub fn QueryUsersOnEncryptedFile(lpfilename: ::windows_core_sys::PCWSTR, pusers: *mut *mut ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReOpenFile(horiginalfile: super::super::Foundation::HANDLE, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::HANDLE;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadDirectoryChangesExW(hdirectory: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbufferlength: u32, bwatchsubtree: super::super::Foundation::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE, lpbytesreturned: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED, lpcompletionroutine: super::super::System::IO::LPOVERLAPPED_COMPLETION_ROUTINE, readdirectorynotifyinformationclass: READ_DIRECTORY_NOTIFY_INFORMATION_CLASS) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadDirectoryChangesW(hdirectory: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbufferlength: u32, bwatchsubtree: super::super::Foundation::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE, lpbytesreturned: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED, lpcompletionroutine: super::super::System::IO::LPOVERLAPPED_COMPLETION_ROUTINE) -> super::super::Foundation::BOOL;
+    pub fn ReOpenFile(horiginalfile: ::win32_foundation_sys::HANDLE, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> ::win32_foundation_sys::HANDLE;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadDirectoryChangesExW(hdirectory: ::win32_foundation_sys::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbufferlength: u32, bwatchsubtree: ::win32_foundation_sys::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE, lpbytesreturned: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED, lpcompletionroutine: ::win32_system_sys::IO::LPOVERLAPPED_COMPLETION_ROUTINE, readdirectorynotifyinformationclass: READ_DIRECTORY_NOTIFY_INFORMATION_CLASS) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadDirectoryChangesW(hdirectory: ::win32_foundation_sys::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbufferlength: u32, bwatchsubtree: ::win32_foundation_sys::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE, lpbytesreturned: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED, lpcompletionroutine: ::win32_system_sys::IO::LPOVERLAPPED_COMPLETION_ROUTINE) -> ::win32_foundation_sys::BOOL;
     pub fn ReadEncryptedFileRaw(pfexportcallback: PFE_EXPORT_FUNC, pvcallbackcontext: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadFile(hfile: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, lpnumberofbytesread: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadFileEx(hfile: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED, lpcompletionroutine: super::super::System::IO::LPOVERLAPPED_COMPLETION_ROUTINE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadFileScatter(hfile: super::super::Foundation::HANDLE, asegmentarray: *const FILE_SEGMENT_ELEMENT, nnumberofbytestoread: u32, lpreserved: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReadLogArchiveMetadata(pvarchivecontext: *mut ::core::ffi::c_void, cboffset: u32, cbbytestoread: u32, pbreadbuffer: *mut u8, pcbbytesread: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadLogNotification(hlog: super::super::Foundation::HANDLE, pnotification: *mut CLFS_MGMT_NOTIFICATION, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadLogRecord(pvmarshal: *mut ::core::ffi::c_void, plsnfirst: *mut CLS_LSN, econtextmode: CLFS_CONTEXT_MODE, ppvreadbuffer: *mut *mut ::core::ffi::c_void, pcbreadbuffer: *mut u32, perecordtype: *mut u8, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, ppvreadcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsn: *mut CLS_LSN, ppvcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadNextLogRecord(pvreadcontext: *mut ::core::ffi::c_void, ppvbuffer: *mut *mut ::core::ffi::c_void, pcbbuffer: *mut u32, perecordtype: *mut u8, plsnuser: *mut CLS_LSN, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, plsnrecord: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReadOnlyEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReadPreviousLogRestartArea(pvreadcontext: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsnrestart: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RecoverEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, enlistmentkey: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RecoverResourceManager(resourcemanagerhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RecoverTransactionManager(transactionmanagerhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterForLogWriteNotification(hlog: super::super::Foundation::HANDLE, cbthreshold: u32, fenable: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterManageableLogClient(hlog: super::super::Foundation::HANDLE, pcallbacks: *mut LOG_MANAGEMENT_CALLBACKS) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveDirectoryA(lppathname: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveDirectoryFromAppW(lppathname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveDirectoryTransactedA(lppathname: ::windows_core_sys::PCSTR, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveDirectoryTransactedW(lppathname: ::windows_core_sys::PCWSTR, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveDirectoryW(lppathname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveLogContainer(hlog: super::super::Foundation::HANDLE, pwszcontainerpath: ::windows_core_sys::PCWSTR, fforce: super::super::Foundation::BOOL, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveLogContainerSet(hlog: super::super::Foundation::HANDLE, ccontainer: u16, rgwszcontainerpath: *const ::windows_core_sys::PWSTR, fforce: super::super::Foundation::BOOL, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RemoveLogPolicy(hlog: super::super::Foundation::HANDLE, epolicytype: CLFS_MGMT_POLICY_TYPE) -> super::super::Foundation::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadFile(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, lpnumberofbytesread: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadFileEx(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED, lpcompletionroutine: ::win32_system_sys::IO::LPOVERLAPPED_COMPLETION_ROUTINE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadFileScatter(hfile: ::win32_foundation_sys::HANDLE, asegmentarray: *const FILE_SEGMENT_ELEMENT, nnumberofbytestoread: u32, lpreserved: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    pub fn ReadLogArchiveMetadata(pvarchivecontext: *mut ::core::ffi::c_void, cboffset: u32, cbbytestoread: u32, pbreadbuffer: *mut u8, pcbbytesread: *mut u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadLogNotification(hlog: ::win32_foundation_sys::HANDLE, pnotification: *mut CLFS_MGMT_NOTIFICATION, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadLogRecord(pvmarshal: *mut ::core::ffi::c_void, plsnfirst: *mut CLS_LSN, econtextmode: CLFS_CONTEXT_MODE, ppvreadbuffer: *mut *mut ::core::ffi::c_void, pcbreadbuffer: *mut u32, perecordtype: *mut u8, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, ppvreadcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsn: *mut CLS_LSN, ppvcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadNextLogRecord(pvreadcontext: *mut ::core::ffi::c_void, ppvbuffer: *mut *mut ::core::ffi::c_void, pcbbuffer: *mut u32, perecordtype: *mut u8, plsnuser: *mut CLS_LSN, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, plsnrecord: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    pub fn ReadOnlyEnlistment(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReadPreviousLogRestartArea(pvreadcontext: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsnrestart: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    pub fn RecoverEnlistment(enlistmenthandle: ::win32_foundation_sys::HANDLE, enlistmentkey: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn RecoverResourceManager(resourcemanagerhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn RecoverTransactionManager(transactionmanagerhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn RegisterForLogWriteNotification(hlog: ::win32_foundation_sys::HANDLE, cbthreshold: u32, fenable: ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::BOOL;
+    pub fn RegisterManageableLogClient(hlog: ::win32_foundation_sys::HANDLE, pcallbacks: *mut LOG_MANAGEMENT_CALLBACKS) -> ::win32_foundation_sys::BOOL;
+    pub fn RemoveDirectoryA(lppathname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn RemoveDirectoryFromAppW(lppathname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn RemoveDirectoryTransactedA(lppathname: ::windows_core_sys::PCSTR, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn RemoveDirectoryTransactedW(lppathname: ::windows_core_sys::PCWSTR, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn RemoveDirectoryW(lppathname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn RemoveLogContainer(hlog: ::win32_foundation_sys::HANDLE, pwszcontainerpath: ::windows_core_sys::PCWSTR, fforce: ::win32_foundation_sys::BOOL, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn RemoveLogContainerSet(hlog: ::win32_foundation_sys::HANDLE, ccontainer: u16, rgwszcontainerpath: *const ::windows_core_sys::PWSTR, fforce: ::win32_foundation_sys::BOOL, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn RemoveLogPolicy(hlog: ::win32_foundation_sys::HANDLE, epolicytype: CLFS_MGMT_POLICY_TYPE) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Security")]
     pub fn RemoveUsersFromEncryptedFile(lpfilename: ::windows_core_sys::PCWSTR, phashes: *const ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RenameTransactionManager(logfilename: ::windows_core_sys::PCWSTR, existingtransactionmanagerguid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReplaceFileA(lpreplacedfilename: ::windows_core_sys::PCSTR, lpreplacementfilename: ::windows_core_sys::PCSTR, lpbackupfilename: ::windows_core_sys::PCSTR, dwreplaceflags: REPLACE_FILE_FLAGS, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReplaceFileFromAppW(lpreplacedfilename: ::windows_core_sys::PCWSTR, lpreplacementfilename: ::windows_core_sys::PCWSTR, lpbackupfilename: ::windows_core_sys::PCWSTR, dwreplaceflags: u32, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ReplaceFileW(lpreplacedfilename: ::windows_core_sys::PCWSTR, lpreplacementfilename: ::windows_core_sys::PCWSTR, lpbackupfilename: ::windows_core_sys::PCWSTR, dwreplaceflags: REPLACE_FILE_FLAGS, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReserveAndAppendLog(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn ReserveAndAppendLogAligned(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, cbentryalignment: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RollbackComplete(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RollbackEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RollbackTransaction(transactionhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RollbackTransactionAsync(transactionhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn RollforwardTransactionManager(transactionmanagerhandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn ScanLogContainers(pcxscan: *mut CLS_SCAN_CONTEXT, escanmode: u8, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn RenameTransactionManager(logfilename: ::windows_core_sys::PCWSTR, existingtransactionmanagerguid: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
+    pub fn ReplaceFileA(lpreplacedfilename: ::windows_core_sys::PCSTR, lpreplacementfilename: ::windows_core_sys::PCSTR, lpbackupfilename: ::windows_core_sys::PCSTR, dwreplaceflags: REPLACE_FILE_FLAGS, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn ReplaceFileFromAppW(lpreplacedfilename: ::windows_core_sys::PCWSTR, lpreplacementfilename: ::windows_core_sys::PCWSTR, lpbackupfilename: ::windows_core_sys::PCWSTR, dwreplaceflags: u32, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn ReplaceFileW(lpreplacedfilename: ::windows_core_sys::PCWSTR, lpreplacementfilename: ::windows_core_sys::PCWSTR, lpbackupfilename: ::windows_core_sys::PCWSTR, dwreplaceflags: REPLACE_FILE_FLAGS, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReserveAndAppendLog(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn ReserveAndAppendLogAligned(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, cbentryalignment: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    pub fn RollbackComplete(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn RollbackEnlistment(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn RollbackTransaction(transactionhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn RollbackTransactionAsync(transactionhandle: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn RollforwardTransactionManager(transactionmanagerhandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn ScanLogContainers(pcxscan: *mut CLS_SCAN_CONTEXT, escanmode: u8, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn SearchPathA(lppath: ::windows_core_sys::PCSTR, lpfilename: ::windows_core_sys::PCSTR, lpextension: ::windows_core_sys::PCSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PSTR, lpfilepart: *mut ::windows_core_sys::PSTR) -> u32;
     pub fn SearchPathW(lppath: ::windows_core_sys::PCWSTR, lpfilename: ::windows_core_sys::PCWSTR, lpextension: ::windows_core_sys::PCWSTR, nbufferlength: u32, lpbuffer: ::windows_core_sys::PWSTR, lpfilepart: *mut ::windows_core_sys::PWSTR) -> u32;
     #[cfg(feature = "Win32_Security")]
     pub fn SetEncryptedFileMetadata(lpfilename: ::windows_core_sys::PCWSTR, pboldmetadata: *const u8, pbnewmetadata: *const u8, pownerhash: *const ENCRYPTION_CERTIFICATE_HASH, dwoperation: u32, pcertificatesadded: *const ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetEndOfFile(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn SetEndOfLog(hlog: super::super::Foundation::HANDLE, plsnend: *mut CLS_LSN, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetEnlistmentRecoveryInformation(enlistmenthandle: super::super::Foundation::HANDLE, buffersize: u32, buffer: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn SetEndOfFile(hfile: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn SetEndOfLog(hlog: ::win32_foundation_sys::HANDLE, plsnend: *mut CLS_LSN, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    pub fn SetEnlistmentRecoveryInformation(enlistmenthandle: ::win32_foundation_sys::HANDLE, buffersize: u32, buffer: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn SetFileApisToANSI();
     pub fn SetFileApisToOEM();
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileAttributesA(lpfilename: ::windows_core_sys::PCSTR, dwfileattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileAttributesFromAppW(lpfilename: ::windows_core_sys::PCWSTR, dwfileattributes: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileAttributesTransactedA(lpfilename: ::windows_core_sys::PCSTR, dwfileattributes: u32, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileAttributesTransactedW(lpfilename: ::windows_core_sys::PCWSTR, dwfileattributes: u32, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileAttributesW(lpfilename: ::windows_core_sys::PCWSTR, dwfileattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileBandwidthReservation(hfile: super::super::Foundation::HANDLE, nperiodmilliseconds: u32, nbytesperperiod: u32, bdiscardable: super::super::Foundation::BOOL, lptransfersize: *mut u32, lpnumoutstandingrequests: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileCompletionNotificationModes(filehandle: super::super::Foundation::HANDLE, flags: u8) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileInformationByHandle(hfile: super::super::Foundation::HANDLE, fileinformationclass: FILE_INFO_BY_HANDLE_CLASS, lpfileinformation: *const ::core::ffi::c_void, dwbuffersize: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileIoOverlappedRange(filehandle: super::super::Foundation::HANDLE, overlappedrangestart: *const u8, length: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFilePointer(hfile: super::super::Foundation::HANDLE, ldistancetomove: i32, lpdistancetomovehigh: *mut i32, dwmovemethod: SET_FILE_POINTER_MOVE_METHOD) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFilePointerEx(hfile: super::super::Foundation::HANDLE, lidistancetomove: i64, lpnewfilepointer: *mut i64, dwmovemethod: SET_FILE_POINTER_MOVE_METHOD) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileShortNameA(hfile: super::super::Foundation::HANDLE, lpshortname: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileShortNameW(hfile: super::super::Foundation::HANDLE, lpshortname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileTime(hfile: super::super::Foundation::HANDLE, lpcreationtime: *const super::super::Foundation::FILETIME, lplastaccesstime: *const super::super::Foundation::FILETIME, lplastwritetime: *const super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileValidData(hfile: super::super::Foundation::HANDLE, validdatalength: i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetIoRingCompletionEvent(ioring: *const HIORING__, hevent: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetLogArchiveMode(hlog: super::super::Foundation::HANDLE, emode: CLFS_LOG_ARCHIVE_MODE) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetLogArchiveTail(hlog: super::super::Foundation::HANDLE, plsnarchivetail: *mut CLS_LSN, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetLogFileSizeWithPolicy(hlog: super::super::Foundation::HANDLE, pdesiredsize: *mut u64, presultingsize: *mut u64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetResourceManagerCompletionPort(resourcemanagerhandle: super::super::Foundation::HANDLE, iocompletionporthandle: super::super::Foundation::HANDLE, completionkey: usize) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetSearchPathMode(flags: u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetTapeParameters(hdevice: super::super::Foundation::HANDLE, dwoperation: TAPE_INFORMATION_TYPE, lptapeinformation: *const ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetTapePosition(hdevice: super::super::Foundation::HANDLE, dwpositionmethod: TAPE_POSITION_METHOD, dwpartition: u32, dwoffsetlow: u32, dwoffsethigh: u32, bimmediate: super::super::Foundation::BOOL) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetTransactionInformation(transactionhandle: super::super::Foundation::HANDLE, isolationlevel: u32, isolationflags: u32, timeout: u32, description: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn SetFileAttributesA(lpfilename: ::windows_core_sys::PCSTR, dwfileattributes: FILE_FLAGS_AND_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileAttributesFromAppW(lpfilename: ::windows_core_sys::PCWSTR, dwfileattributes: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileAttributesTransactedA(lpfilename: ::windows_core_sys::PCSTR, dwfileattributes: u32, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileAttributesTransactedW(lpfilename: ::windows_core_sys::PCWSTR, dwfileattributes: u32, htransaction: ::win32_foundation_sys::HANDLE) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileAttributesW(lpfilename: ::windows_core_sys::PCWSTR, dwfileattributes: FILE_FLAGS_AND_ATTRIBUTES) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileBandwidthReservation(hfile: ::win32_foundation_sys::HANDLE, nperiodmilliseconds: u32, nbytesperperiod: u32, bdiscardable: ::win32_foundation_sys::BOOL, lptransfersize: *mut u32, lpnumoutstandingrequests: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileCompletionNotificationModes(filehandle: ::win32_foundation_sys::HANDLE, flags: u8) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileInformationByHandle(hfile: ::win32_foundation_sys::HANDLE, fileinformationclass: FILE_INFO_BY_HANDLE_CLASS, lpfileinformation: *const ::core::ffi::c_void, dwbuffersize: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileIoOverlappedRange(filehandle: ::win32_foundation_sys::HANDLE, overlappedrangestart: *const u8, length: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFilePointer(hfile: ::win32_foundation_sys::HANDLE, ldistancetomove: i32, lpdistancetomovehigh: *mut i32, dwmovemethod: SET_FILE_POINTER_MOVE_METHOD) -> u32;
+    pub fn SetFilePointerEx(hfile: ::win32_foundation_sys::HANDLE, lidistancetomove: i64, lpnewfilepointer: *mut i64, dwmovemethod: SET_FILE_POINTER_MOVE_METHOD) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileShortNameA(hfile: ::win32_foundation_sys::HANDLE, lpshortname: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileShortNameW(hfile: ::win32_foundation_sys::HANDLE, lpshortname: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileTime(hfile: ::win32_foundation_sys::HANDLE, lpcreationtime: *const ::win32_foundation_sys::FILETIME, lplastaccesstime: *const ::win32_foundation_sys::FILETIME, lplastwritetime: *const ::win32_foundation_sys::FILETIME) -> ::win32_foundation_sys::BOOL;
+    pub fn SetFileValidData(hfile: ::win32_foundation_sys::HANDLE, validdatalength: i64) -> ::win32_foundation_sys::BOOL;
+    pub fn SetIoRingCompletionEvent(ioring: *const HIORING__, hevent: ::win32_foundation_sys::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn SetLogArchiveMode(hlog: ::win32_foundation_sys::HANDLE, emode: CLFS_LOG_ARCHIVE_MODE) -> ::win32_foundation_sys::BOOL;
+    pub fn SetLogArchiveTail(hlog: ::win32_foundation_sys::HANDLE, plsnarchivetail: *mut CLS_LSN, preserved: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn SetLogFileSizeWithPolicy(hlog: ::win32_foundation_sys::HANDLE, pdesiredsize: *mut u64, presultingsize: *mut u64) -> ::win32_foundation_sys::BOOL;
+    pub fn SetResourceManagerCompletionPort(resourcemanagerhandle: ::win32_foundation_sys::HANDLE, iocompletionporthandle: ::win32_foundation_sys::HANDLE, completionkey: usize) -> ::win32_foundation_sys::BOOL;
+    pub fn SetSearchPathMode(flags: u32) -> ::win32_foundation_sys::BOOL;
+    pub fn SetTapeParameters(hdevice: ::win32_foundation_sys::HANDLE, dwoperation: TAPE_INFORMATION_TYPE, lptapeinformation: *const ::core::ffi::c_void) -> u32;
+    pub fn SetTapePosition(hdevice: ::win32_foundation_sys::HANDLE, dwpositionmethod: TAPE_POSITION_METHOD, dwpartition: u32, dwoffsetlow: u32, dwoffsethigh: u32, bimmediate: ::win32_foundation_sys::BOOL) -> u32;
+    pub fn SetTransactionInformation(transactionhandle: ::win32_foundation_sys::HANDLE, isolationlevel: u32, isolationflags: u32, timeout: u32, description: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
     #[cfg(feature = "Win32_Security")]
     pub fn SetUserFileEncryptionKey(pencryptioncertificate: *const ENCRYPTION_CERTIFICATE) -> u32;
     #[cfg(feature = "Win32_Security")]
     pub fn SetUserFileEncryptionKeyEx(pencryptioncertificate: *const ENCRYPTION_CERTIFICATE, dwcapabilities: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetVolumeLabelA(lprootpathname: ::windows_core_sys::PCSTR, lpvolumename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetVolumeLabelW(lprootpathname: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetVolumeMountPointA(lpszvolumemountpoint: ::windows_core_sys::PCSTR, lpszvolumename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SetVolumeMountPointW(lpszvolumemountpoint: ::windows_core_sys::PCWSTR, lpszvolumename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn SinglePhaseReject(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
+    pub fn SetVolumeLabelA(lprootpathname: ::windows_core_sys::PCSTR, lpvolumename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetVolumeLabelW(lprootpathname: ::windows_core_sys::PCWSTR, lpvolumename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetVolumeMountPointA(lpszvolumemountpoint: ::windows_core_sys::PCSTR, lpszvolumename: ::windows_core_sys::PCSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SetVolumeMountPointW(lpszvolumemountpoint: ::windows_core_sys::PCWSTR, lpszvolumename: ::windows_core_sys::PCWSTR) -> ::win32_foundation_sys::BOOL;
+    pub fn SinglePhaseReject(enlistmenthandle: ::win32_foundation_sys::HANDLE, tmvirtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
     pub fn SubmitIoRing(ioring: *const HIORING__, waitoperations: u32, milliseconds: u32, submittedentries: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TerminateLogArchive(pvarchivecontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TerminateReadLog(pvcursorcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn TruncateLog(pvmarshal: *const ::core::ffi::c_void, plsnend: *const CLS_LSN, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
+    pub fn TerminateLogArchive(pvarchivecontext: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn TerminateReadLog(pvcursorcontext: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn TruncateLog(pvmarshal: *const ::core::ffi::c_void, plsnend: *const CLS_LSN, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
     pub fn TxfGetThreadMiniVersionForCreate(miniversion: *mut u16);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TxfLogCreateFileReadContext(logpath: ::windows_core_sys::PCWSTR, beginninglsn: CLS_LSN, endinglsn: CLS_LSN, txffileid: *const TXF_ID, txflogcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TxfLogCreateRangeReadContext(logpath: ::windows_core_sys::PCWSTR, beginninglsn: CLS_LSN, endinglsn: CLS_LSN, beginningvirtualclock: *const i64, endingvirtualclock: *const i64, recordtypemask: u32, txflogcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TxfLogDestroyReadContext(txflogcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TxfLogReadRecords(txflogcontext: *const ::core::ffi::c_void, bufferlength: u32, buffer: *mut ::core::ffi::c_void, bytesused: *mut u32, recordcount: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TxfLogRecordGetFileName(recordbuffer: *const ::core::ffi::c_void, recordbufferlengthinbytes: u32, namebuffer: ::windows_core_sys::PWSTR, namebufferlengthinbytes: *mut u32, txfid: *mut TXF_ID) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TxfLogRecordGetGenericType(recordbuffer: *const ::core::ffi::c_void, recordbufferlengthinbytes: u32, generictype: *mut u32, virtualclock: *mut i64) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn TxfReadMetadataInfo(filehandle: super::super::Foundation::HANDLE, txffileid: *mut TXF_ID, lastlsn: *mut CLS_LSN, transactionstate: *mut u32, lockingtransaction: *mut ::windows_core_sys::GUID) -> super::super::Foundation::BOOL;
+    pub fn TxfLogCreateFileReadContext(logpath: ::windows_core_sys::PCWSTR, beginninglsn: CLS_LSN, endinglsn: CLS_LSN, txffileid: *const TXF_ID, txflogcontext: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn TxfLogCreateRangeReadContext(logpath: ::windows_core_sys::PCWSTR, beginninglsn: CLS_LSN, endinglsn: CLS_LSN, beginningvirtualclock: *const i64, endingvirtualclock: *const i64, recordtypemask: u32, txflogcontext: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn TxfLogDestroyReadContext(txflogcontext: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn TxfLogReadRecords(txflogcontext: *const ::core::ffi::c_void, bufferlength: u32, buffer: *mut ::core::ffi::c_void, bytesused: *mut u32, recordcount: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn TxfLogRecordGetFileName(recordbuffer: *const ::core::ffi::c_void, recordbufferlengthinbytes: u32, namebuffer: ::windows_core_sys::PWSTR, namebufferlengthinbytes: *mut u32, txfid: *mut TXF_ID) -> ::win32_foundation_sys::BOOL;
+    pub fn TxfLogRecordGetGenericType(recordbuffer: *const ::core::ffi::c_void, recordbufferlengthinbytes: u32, generictype: *mut u32, virtualclock: *mut i64) -> ::win32_foundation_sys::BOOL;
+    pub fn TxfReadMetadataInfo(filehandle: ::win32_foundation_sys::HANDLE, txffileid: *mut TXF_ID, lastlsn: *mut CLS_LSN, transactionstate: *mut u32, lockingtransaction: *mut ::windows_core_sys::GUID) -> ::win32_foundation_sys::BOOL;
     pub fn TxfSetThreadMiniVersionForCreate(miniversion: u16);
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn UnlockFile(hfile: super::super::Foundation::HANDLE, dwfileoffsetlow: u32, dwfileoffsethigh: u32, nnumberofbytestounlocklow: u32, nnumberofbytestounlockhigh: u32) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn UnlockFileEx(hfile: super::super::Foundation::HANDLE, dwreserved: u32, nnumberofbytestounlocklow: u32, nnumberofbytestounlockhigh: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn ValidateLog(pszlogfilename: ::windows_core_sys::PCWSTR, psalogfile: *mut super::super::Security::SECURITY_ATTRIBUTES, pinfobuffer: *mut CLS_INFORMATION, pcbbuffer: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn UnlockFile(hfile: ::win32_foundation_sys::HANDLE, dwfileoffsetlow: u32, dwfileoffsethigh: u32, nnumberofbytestounlocklow: u32, nnumberofbytestounlockhigh: u32) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn UnlockFileEx(hfile: ::win32_foundation_sys::HANDLE, dwreserved: u32, nnumberofbytestounlocklow: u32, nnumberofbytestounlockhigh: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_Security")]
+    pub fn ValidateLog(pszlogfilename: ::windows_core_sys::PCWSTR, psalogfile: *mut ::win32_security_sys::SECURITY_ATTRIBUTES, pinfobuffer: *mut CLS_INFORMATION, pcbbuffer: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn VerFindFileA(uflags: VER_FIND_FILE_FLAGS, szfilename: ::windows_core_sys::PCSTR, szwindir: ::windows_core_sys::PCSTR, szappdir: ::windows_core_sys::PCSTR, szcurdir: ::windows_core_sys::PSTR, pucurdirlen: *mut u32, szdestdir: ::windows_core_sys::PSTR, pudestdirlen: *mut u32) -> VER_FIND_FILE_STATUS;
     pub fn VerFindFileW(uflags: VER_FIND_FILE_FLAGS, szfilename: ::windows_core_sys::PCWSTR, szwindir: ::windows_core_sys::PCWSTR, szappdir: ::windows_core_sys::PCWSTR, szcurdir: ::windows_core_sys::PWSTR, pucurdirlen: *mut u32, szdestdir: ::windows_core_sys::PWSTR, pudestdirlen: *mut u32) -> VER_FIND_FILE_STATUS;
     pub fn VerInstallFileA(uflags: VER_INSTALL_FILE_FLAGS, szsrcfilename: ::windows_core_sys::PCSTR, szdestfilename: ::windows_core_sys::PCSTR, szsrcdir: ::windows_core_sys::PCSTR, szdestdir: ::windows_core_sys::PCSTR, szcurdir: ::windows_core_sys::PCSTR, sztmpfile: ::windows_core_sys::PSTR, putmpfilelen: *mut u32) -> VER_INSTALL_FILE_STATUS;
     pub fn VerInstallFileW(uflags: VER_INSTALL_FILE_FLAGS, szsrcfilename: ::windows_core_sys::PCWSTR, szdestfilename: ::windows_core_sys::PCWSTR, szsrcdir: ::windows_core_sys::PCWSTR, szdestdir: ::windows_core_sys::PCWSTR, szcurdir: ::windows_core_sys::PCWSTR, sztmpfile: ::windows_core_sys::PWSTR, putmpfilelen: *mut u32) -> VER_INSTALL_FILE_STATUS;
     pub fn VerLanguageNameA(wlang: u32, szlang: ::windows_core_sys::PSTR, cchlang: u32) -> u32;
     pub fn VerLanguageNameW(wlang: u32, szlang: ::windows_core_sys::PWSTR, cchlang: u32) -> u32;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn VerQueryValueA(pblock: *const ::core::ffi::c_void, lpsubblock: ::windows_core_sys::PCSTR, lplpbuffer: *mut *mut ::core::ffi::c_void, pulen: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn VerQueryValueW(pblock: *const ::core::ffi::c_void, lpsubblock: ::windows_core_sys::PCWSTR, lplpbuffer: *mut *mut ::core::ffi::c_void, pulen: *mut u32) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
+    pub fn VerQueryValueA(pblock: *const ::core::ffi::c_void, lpsubblock: ::windows_core_sys::PCSTR, lplpbuffer: *mut *mut ::core::ffi::c_void, pulen: *mut u32) -> ::win32_foundation_sys::BOOL;
+    pub fn VerQueryValueW(pblock: *const ::core::ffi::c_void, lpsubblock: ::windows_core_sys::PCWSTR, lplpbuffer: *mut *mut ::core::ffi::c_void, pulen: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn WofEnumEntries(volumename: ::windows_core_sys::PCWSTR, provider: u32, enumproc: WofEnumEntryProc, userdata: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn WofFileEnumFiles(volumename: ::windows_core_sys::PCWSTR, algorithm: u32, enumproc: WofEnumFilesProc, userdata: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WofGetDriverVersion(fileorvolumehandle: super::super::Foundation::HANDLE, provider: u32, wofversion: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WofIsExternalFile(filepath: ::windows_core_sys::PCWSTR, isexternalfile: *mut super::super::Foundation::BOOL, provider: *mut u32, externalfileinfo: *mut ::core::ffi::c_void, bufferlength: *mut u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WofSetFileDataLocation(filehandle: super::super::Foundation::HANDLE, provider: u32, externalfileinfo: *const ::core::ffi::c_void, length: u32) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WofShouldCompressBinaries(volume: ::windows_core_sys::PCWSTR, algorithm: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WofGetDriverVersion(fileorvolumehandle: ::win32_foundation_sys::HANDLE, provider: u32, wofversion: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WofIsExternalFile(filepath: ::windows_core_sys::PCWSTR, isexternalfile: *mut ::win32_foundation_sys::BOOL, provider: *mut u32, externalfileinfo: *mut ::core::ffi::c_void, bufferlength: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WofSetFileDataLocation(filehandle: ::win32_foundation_sys::HANDLE, provider: u32, externalfileinfo: *const ::core::ffi::c_void, length: u32) -> ::windows_core_sys::HRESULT;
+    pub fn WofShouldCompressBinaries(volume: ::windows_core_sys::PCWSTR, algorithm: *mut u32) -> ::win32_foundation_sys::BOOL;
     pub fn WofWimAddEntry(volumename: ::windows_core_sys::PCWSTR, wimpath: ::windows_core_sys::PCWSTR, wimtype: u32, wimindex: u32, datasourceid: *mut i64) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
     pub fn WofWimEnumFiles(volumename: ::windows_core_sys::PCWSTR, datasourceid: i64, enumproc: WofEnumFilesProc, userdata: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     pub fn WofWimRemoveEntry(volumename: ::windows_core_sys::PCWSTR, datasourceid: i64) -> ::windows_core_sys::HRESULT;
     pub fn WofWimSuspendEntry(volumename: ::windows_core_sys::PCWSTR, datasourceid: i64) -> ::windows_core_sys::HRESULT;
     pub fn WofWimUpdateEntry(volumename: ::windows_core_sys::PCWSTR, datasourceid: i64, newwimpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Wow64DisableWow64FsRedirection(oldvalue: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Wow64EnableWow64FsRedirection(wow64fsenableredirection: super::super::Foundation::BOOLEAN) -> super::super::Foundation::BOOLEAN;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn Wow64RevertWow64FsRedirection(olvalue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn Wow64DisableWow64FsRedirection(oldvalue: *mut *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
+    pub fn Wow64EnableWow64FsRedirection(wow64fsenableredirection: ::win32_foundation_sys::BOOLEAN) -> ::win32_foundation_sys::BOOLEAN;
+    pub fn Wow64RevertWow64FsRedirection(olvalue: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL;
     pub fn WriteEncryptedFileRaw(pfimportcallback: PFE_IMPORT_FUNC, pvcallbackcontext: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> u32;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn WriteFile(hfile: super::super::Foundation::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofbytestowrite: u32, lpnumberofbyteswritten: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn WriteFileEx(hfile: super::super::Foundation::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofbytestowrite: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED, lpcompletionroutine: super::super::System::IO::LPOVERLAPPED_COMPLETION_ROUTINE) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn WriteFileGather(hfile: super::super::Foundation::HANDLE, asegmentarray: *const FILE_SEGMENT_ELEMENT, nnumberofbytestowrite: u32, lpreserved: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn WriteLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, pvrestartbuffer: *mut ::core::ffi::c_void, cbrestartbuffer: u32, plsnbase: *mut CLS_LSN, fflags: CLFS_FLAG, pcbwritten: *mut u32, plsnnext: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
-    #[cfg(feature = "Win32_Foundation")]
-    pub fn WriteTapemark(hdevice: super::super::Foundation::HANDLE, dwtapemarktype: TAPEMARK_TYPE, dwtapemarkcount: u32, bimmediate: super::super::Foundation::BOOL) -> u32;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn WriteFile(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofbytestowrite: u32, lpnumberofbyteswritten: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn WriteFileEx(hfile: ::win32_foundation_sys::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofbytestowrite: u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED, lpcompletionroutine: ::win32_system_sys::IO::LPOVERLAPPED_COMPLETION_ROUTINE) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn WriteFileGather(hfile: ::win32_foundation_sys::HANDLE, asegmentarray: *const FILE_SEGMENT_ELEMENT, nnumberofbytestowrite: u32, lpreserved: *mut u32, lpoverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    #[cfg(feature = "Win32_System_IO")]
+    pub fn WriteLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, pvrestartbuffer: *mut ::core::ffi::c_void, cbrestartbuffer: u32, plsnbase: *mut CLS_LSN, fflags: CLFS_FLAG, pcbwritten: *mut u32, plsnnext: *mut CLS_LSN, poverlapped: *mut ::win32_system_sys::IO::OVERLAPPED) -> ::win32_foundation_sys::BOOL;
+    pub fn WriteTapemark(hdevice: ::win32_foundation_sys::HANDLE, dwtapemarktype: TAPEMARK_TYPE, dwtapemarkcount: u32, bimmediate: ::win32_foundation_sys::BOOL) -> u32;
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct BY_HANDLE_FILE_INFORMATION {
     pub dwFileAttributes: u32,
-    pub ftCreationTime: super::super::Foundation::FILETIME,
-    pub ftLastAccessTime: super::super::Foundation::FILETIME,
-    pub ftLastWriteTime: super::super::Foundation::FILETIME,
+    pub ftCreationTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastAccessTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastWriteTime: ::win32_foundation_sys::FILETIME,
     pub dwVolumeSerialNumber: u32,
     pub nFileSizeHigh: u32,
     pub nFileSizeLow: u32,
@@ -735,21 +485,18 @@ pub struct BY_HANDLE_FILE_INFORMATION {
     pub nFileIndexHigh: u32,
     pub nFileIndexLow: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BY_HANDLE_FILE_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for BY_HANDLE_FILE_INFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-pub type CACHE_ACCESS_CHECK = ::core::option::Option<unsafe extern "system" fn(psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, hclienttoken: super::super::Foundation::HANDLE, dwdesiredaccess: u32, genericmapping: *mut super::super::Security::GENERIC_MAPPING, privilegeset: *mut super::super::Security::PRIVILEGE_SET, privilegesetlength: *mut u32, grantedaccess: *mut u32, accessstatus: *mut i32) -> super::super::Foundation::BOOL>;
+#[cfg(feature = "Win32_Security")]
+pub type CACHE_ACCESS_CHECK = ::core::option::Option<unsafe extern "system" fn(psecuritydescriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR, hclienttoken: ::win32_foundation_sys::HANDLE, dwdesiredaccess: u32, genericmapping: *mut ::win32_security_sys::GENERIC_MAPPING, privilegeset: *mut ::win32_security_sys::PRIVILEGE_SET, privilegesetlength: *mut u32, grantedaccess: *mut u32, accessstatus: *mut i32) -> ::win32_foundation_sys::BOOL>;
 pub type CACHE_DESTROY_CALLBACK = ::core::option::Option<unsafe extern "system" fn(cb: u32, lpb: *mut u8)>;
 pub type CACHE_KEY_COMPARE = ::core::option::Option<unsafe extern "system" fn(cbkey1: u32, lpbkey1: *mut u8, cbkey2: u32, lpbkey2: *mut u8) -> i32>;
 pub type CACHE_KEY_HASH = ::core::option::Option<unsafe extern "system" fn(lpbkey: *mut u8, cbkey: u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
-pub type CACHE_READ_CALLBACK = ::core::option::Option<unsafe extern "system" fn(cb: u32, lpb: *mut u8, lpvcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type CACHE_READ_CALLBACK = ::core::option::Option<unsafe extern "system" fn(cb: u32, lpb: *mut u8, lpvcontext: *mut ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 pub type CLAIMMEDIALABEL = ::core::option::Option<unsafe extern "system" fn(pbuffer: *const u8, nbuffersize: u32, plabelinfo: *mut MediaLabelInfo) -> u32>;
 pub type CLAIMMEDIALABELEX = ::core::option::Option<unsafe extern "system" fn(pbuffer: *const u8, nbuffersize: u32, plabelinfo: *mut MediaLabelInfo, labelguid: *mut ::windows_core_sys::GUID) -> u32>;
 pub const CLFS_BASELOG_EXTENSION: &str = ".blf";
@@ -1116,19 +863,16 @@ impl ::core::clone::Clone for CLS_LSN {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct CLS_SCAN_CONTEXT {
     pub cidNode: CLFS_NODE_ID,
-    pub hLog: super::super::Foundation::HANDLE,
+    pub hLog: ::win32_foundation_sys::HANDLE,
     pub cIndex: u32,
     pub cContainers: u32,
     pub cContainersReturned: u32,
     pub eScanMode: u8,
     pub pinfoContainer: *mut CLS_CONTAINER_INFORMATION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CLS_SCAN_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for CLS_SCAN_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -1181,28 +925,24 @@ pub const COPYFILE2_PHASE_SERVER_COPY: COPYFILE2_COPY_PHASE = 5i32;
 pub const COPYFILE2_PHASE_NAMEGRAFT_COPY: COPYFILE2_COPY_PHASE = 6i32;
 pub const COPYFILE2_PHASE_MAX: COPYFILE2_COPY_PHASE = 7i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COPYFILE2_EXTENDED_PARAMETERS {
     pub dwSize: u32,
     pub dwCopyFlags: u32,
-    pub pfCancel: *mut super::super::Foundation::BOOL,
+    pub pfCancel: *mut ::win32_foundation_sys::BOOL,
     pub pProgressRoutine: PCOPYFILE2_PROGRESS_ROUTINE,
     pub pvCallbackContext: *mut ::core::ffi::c_void,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_EXTENDED_PARAMETERS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_EXTENDED_PARAMETERS {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COPYFILE2_EXTENDED_PARAMETERS_V2 {
     pub dwSize: u32,
     pub dwCopyFlags: u32,
-    pub pfCancel: *mut super::super::Foundation::BOOL,
+    pub pfCancel: *mut ::win32_foundation_sys::BOOL,
     pub pProgressRoutine: PCOPYFILE2_PROGRESS_ROUTINE,
     pub pvCallbackContext: *mut ::core::ffi::c_void,
     pub dwCopyFlagsV2: u32,
@@ -1210,31 +950,25 @@ pub struct COPYFILE2_EXTENDED_PARAMETERS_V2 {
     pub ioDesiredRate: u32,
     pub reserved: [*mut ::core::ffi::c_void; 8],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_EXTENDED_PARAMETERS_V2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_EXTENDED_PARAMETERS_V2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COPYFILE2_MESSAGE {
     pub Type: COPYFILE2_MESSAGE_TYPE,
     pub dwPadding: u32,
     pub Info: COPYFILE2_MESSAGE_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_MESSAGE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_MESSAGE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union COPYFILE2_MESSAGE_0 {
     pub ChunkStarted: COPYFILE2_MESSAGE_0_1,
     pub ChunkFinished: COPYFILE2_MESSAGE_0_0,
@@ -1243,21 +977,18 @@ pub union COPYFILE2_MESSAGE_0 {
     pub PollContinue: COPYFILE2_MESSAGE_0_3,
     pub Error: COPYFILE2_MESSAGE_0_2,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_MESSAGE_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_MESSAGE_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COPYFILE2_MESSAGE_0_0 {
     pub dwStreamNumber: u32,
     pub dwFlags: u32,
-    pub hSourceFile: super::super::Foundation::HANDLE,
-    pub hDestinationFile: super::super::Foundation::HANDLE,
+    pub hSourceFile: ::win32_foundation_sys::HANDLE,
+    pub hDestinationFile: ::win32_foundation_sys::HANDLE,
     pub uliChunkNumber: u64,
     pub uliChunkSize: u64,
     pub uliStreamSize: u64,
@@ -1265,36 +996,30 @@ pub struct COPYFILE2_MESSAGE_0_0 {
     pub uliTotalFileSize: u64,
     pub uliTotalBytesTransferred: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_MESSAGE_0_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_MESSAGE_0_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COPYFILE2_MESSAGE_0_1 {
     pub dwStreamNumber: u32,
     pub dwReserved: u32,
-    pub hSourceFile: super::super::Foundation::HANDLE,
-    pub hDestinationFile: super::super::Foundation::HANDLE,
+    pub hSourceFile: ::win32_foundation_sys::HANDLE,
+    pub hDestinationFile: ::win32_foundation_sys::HANDLE,
     pub uliChunkNumber: u64,
     pub uliChunkSize: u64,
     pub uliStreamSize: u64,
     pub uliTotalFileSize: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_MESSAGE_0_1 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_MESSAGE_0_1 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COPYFILE2_MESSAGE_0_2 {
     pub CopyPhase: COPYFILE2_COPY_PHASE,
     pub dwStreamNumber: u32,
@@ -1306,60 +1031,49 @@ pub struct COPYFILE2_MESSAGE_0_2 {
     pub uliTotalFileSize: u64,
     pub uliTotalBytesTransferred: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_MESSAGE_0_2 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_MESSAGE_0_2 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COPYFILE2_MESSAGE_0_3 {
     pub dwReserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_MESSAGE_0_3 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_MESSAGE_0_3 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COPYFILE2_MESSAGE_0_4 {
     pub dwStreamNumber: u32,
     pub dwReserved: u32,
-    pub hSourceFile: super::super::Foundation::HANDLE,
-    pub hDestinationFile: super::super::Foundation::HANDLE,
+    pub hSourceFile: ::win32_foundation_sys::HANDLE,
+    pub hDestinationFile: ::win32_foundation_sys::HANDLE,
     pub uliStreamSize: u64,
     pub uliStreamBytesTransferred: u64,
     pub uliTotalFileSize: u64,
     pub uliTotalBytesTransferred: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_MESSAGE_0_4 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_MESSAGE_0_4 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct COPYFILE2_MESSAGE_0_5 {
     pub dwStreamNumber: u32,
     pub dwReserved: u32,
-    pub hSourceFile: super::super::Foundation::HANDLE,
-    pub hDestinationFile: super::super::Foundation::HANDLE,
+    pub hSourceFile: ::win32_foundation_sys::HANDLE,
+    pub hDestinationFile: ::win32_foundation_sys::HANDLE,
     pub uliStreamSize: u64,
     pub uliTotalFileSize: u64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for COPYFILE2_MESSAGE_0_5 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for COPYFILE2_MESSAGE_0_5 {
     fn clone(&self) -> Self {
         *self
@@ -1381,18 +1095,18 @@ pub const COPYFILE2_CALLBACK_POLL_CONTINUE: COPYFILE2_MESSAGE_TYPE = 5i32;
 pub const COPYFILE2_CALLBACK_ERROR: COPYFILE2_MESSAGE_TYPE = 6i32;
 pub const COPYFILE2_CALLBACK_MAX: COPYFILE2_MESSAGE_TYPE = 7i32;
 #[repr(C)]
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 pub struct CREATEFILE2_EXTENDED_PARAMETERS {
     pub dwSize: u32,
     pub dwFileAttributes: u32,
     pub dwFileFlags: u32,
     pub dwSecurityQosFlags: u32,
-    pub lpSecurityAttributes: *mut super::super::Security::SECURITY_ATTRIBUTES,
-    pub hTemplateFile: super::super::Foundation::HANDLE,
+    pub lpSecurityAttributes: *mut ::win32_security_sys::SECURITY_ATTRIBUTES,
+    pub hTemplateFile: ::win32_foundation_sys::HANDLE,
 }
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for CREATEFILE2_EXTENDED_PARAMETERS {}
-#[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
+#[cfg(feature = "Win32_Security")]
 impl ::core::clone::Clone for CREATEFILE2_EXTENDED_PARAMETERS {
     fn clone(&self) -> Self {
         *self
@@ -1528,14 +1242,11 @@ impl ::core::clone::Clone for EFS_DECRYPTION_STATUS_INFO {
 }
 pub const EFS_EFS_SUBVER_EFS_CERT: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct EFS_ENCRYPTION_STATUS_INFO {
-    pub bHasCurrentKey: super::super::Foundation::BOOL,
+    pub bHasCurrentKey: ::win32_foundation_sys::BOOL,
     pub dwEncryptionError: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for EFS_ENCRYPTION_STATUS_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for EFS_ENCRYPTION_STATUS_INFO {
     fn clone(&self) -> Self {
         *self
@@ -1626,7 +1337,7 @@ impl ::core::clone::Clone for ENCRYPTED_FILE_METADATA_SIGNATURE {
 #[cfg(feature = "Win32_Security")]
 pub struct ENCRYPTION_CERTIFICATE {
     pub cbTotalLength: u32,
-    pub pUserSid: *mut super::super::Security::SID,
+    pub pUserSid: *mut ::win32_security_sys::SID,
     pub pCertBlob: *mut EFS_CERTIFICATE_BLOB,
 }
 #[cfg(feature = "Win32_Security")]
@@ -1641,7 +1352,7 @@ impl ::core::clone::Clone for ENCRYPTION_CERTIFICATE {
 #[cfg(feature = "Win32_Security")]
 pub struct ENCRYPTION_CERTIFICATE_HASH {
     pub cbTotalLength: u32,
-    pub pUserSid: *mut super::super::Security::SID,
+    pub pUserSid: *mut ::win32_security_sys::SID,
     pub pHash: *mut EFS_HASH_BLOB,
     pub lpDisplayInformation: ::windows_core_sys::PWSTR,
 }
@@ -1685,7 +1396,7 @@ impl ::core::clone::Clone for ENCRYPTION_CERTIFICATE_LIST {
 #[cfg(feature = "Win32_Security")]
 pub struct ENCRYPTION_PROTECTOR {
     pub cbTotalLength: u32,
-    pub pUserSid: *mut super::super::Security::SID,
+    pub pUserSid: *mut ::win32_security_sys::SID,
     pub lpProtectorDescriptor: ::windows_core_sys::PWSTR,
 }
 #[cfg(feature = "Win32_Security")]
@@ -1716,27 +1427,22 @@ pub const ENLISTMENT_SUPERIOR: u32 = 1u32;
 pub type ERASE_TAPE_TYPE = i32;
 pub const TAPE_ERASE_LONG: ERASE_TAPE_TYPE = 1i32;
 pub const TAPE_ERASE_SHORT: ERASE_TAPE_TYPE = 0i32;
-#[cfg(feature = "Win32_Foundation")]
-pub type FCACHE_CREATE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(lpstrname: ::windows_core_sys::PCSTR, lpvdata: *mut ::core::ffi::c_void, cbfilesize: *mut u32, cbfilesizehigh: *mut u32) -> super::super::Foundation::HANDLE>;
-#[cfg(feature = "Win32_Foundation")]
-pub type FCACHE_RICHCREATE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(lpstrname: ::windows_core_sys::PCSTR, lpvdata: *mut ::core::ffi::c_void, cbfilesize: *mut u32, cbfilesizehigh: *mut u32, pfdidwescanit: *mut super::super::Foundation::BOOL, pfisstuffed: *mut super::super::Foundation::BOOL, pfstoredwithdots: *mut super::super::Foundation::BOOL, pfstoredwithterminatingdot: *mut super::super::Foundation::BOOL) -> super::super::Foundation::HANDLE>;
+pub type FCACHE_CREATE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(lpstrname: ::windows_core_sys::PCSTR, lpvdata: *mut ::core::ffi::c_void, cbfilesize: *mut u32, cbfilesizehigh: *mut u32) -> ::win32_foundation_sys::HANDLE>;
+pub type FCACHE_RICHCREATE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(lpstrname: ::windows_core_sys::PCSTR, lpvdata: *mut ::core::ffi::c_void, cbfilesize: *mut u32, cbfilesizehigh: *mut u32, pfdidwescanit: *mut ::win32_foundation_sys::BOOL, pfisstuffed: *mut ::win32_foundation_sys::BOOL, pfstoredwithdots: *mut ::win32_foundation_sys::BOOL, pfstoredwithterminatingdot: *mut ::win32_foundation_sys::BOOL) -> ::win32_foundation_sys::HANDLE>;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FH_OVERLAPPED {
     pub Internal: usize,
     pub InternalHigh: usize,
     pub Offset: u32,
     pub OffsetHigh: u32,
-    pub hEvent: super::super::Foundation::HANDLE,
+    pub hEvent: ::win32_foundation_sys::HANDLE,
     pub pfnCompletion: PFN_IO_COMPLETION,
     pub Reserved1: usize,
     pub Reserved2: usize,
     pub Reserved3: usize,
     pub Reserved4: usize,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FH_OVERLAPPED {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FH_OVERLAPPED {
     fn clone(&self) -> Self {
         *self
@@ -1847,13 +1553,10 @@ pub const FILE_DEVICE_DISK: FILE_DEVICE_TYPE = 7u32;
 pub const FILE_DEVICE_TAPE: FILE_DEVICE_TYPE = 31u32;
 pub const FILE_DEVICE_DVD: FILE_DEVICE_TYPE = 51u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILE_DISPOSITION_INFO {
-    pub DeleteFileA: super::super::Foundation::BOOLEAN,
+    pub DeleteFileA: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILE_DISPOSITION_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILE_DISPOSITION_INFO {
     fn clone(&self) -> Self {
         *self
@@ -2245,30 +1948,24 @@ impl ::core::clone::Clone for FILE_REMOTE_PROTOCOL_INFO_1_0_1 {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILE_RENAME_INFO {
     pub Anonymous: FILE_RENAME_INFO_0,
-    pub RootDirectory: super::super::Foundation::HANDLE,
+    pub RootDirectory: ::win32_foundation_sys::HANDLE,
     pub FileNameLength: u32,
     pub FileName: [u16; 1],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILE_RENAME_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILE_RENAME_INFO {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union FILE_RENAME_INFO_0 {
-    pub ReplaceIfExists: super::super::Foundation::BOOLEAN,
+    pub ReplaceIfExists: ::win32_foundation_sys::BOOLEAN,
     pub Flags: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILE_RENAME_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILE_RENAME_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -2291,17 +1988,14 @@ pub const FILE_SHARE_DELETE: FILE_SHARE_MODE = 4u32;
 pub const FILE_SHARE_READ: FILE_SHARE_MODE = 1u32;
 pub const FILE_SHARE_WRITE: FILE_SHARE_MODE = 2u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FILE_STANDARD_INFO {
     pub AllocationSize: i64,
     pub EndOfFile: i64,
     pub NumberOfLinks: u32,
-    pub DeletePending: super::super::Foundation::BOOLEAN,
-    pub Directory: super::super::Foundation::BOOLEAN,
+    pub DeletePending: ::win32_foundation_sys::BOOLEAN,
+    pub Directory: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FILE_STANDARD_INFO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FILE_STANDARD_INFO {
     fn clone(&self) -> Self {
         *self
@@ -2351,17 +2045,14 @@ pub const FIND_FIRST_EX_CASE_SENSITIVE: FIND_FIRST_EX_FLAGS = 1u32;
 pub const FIND_FIRST_EX_LARGE_FETCH: FIND_FIRST_EX_FLAGS = 2u32;
 pub const FIND_FIRST_EX_ON_DISK_ENTRIES_ONLY: FIND_FIRST_EX_FLAGS = 4u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct FIO_CONTEXT {
     pub m_dwTempHack: u32,
     pub m_dwSignature: u32,
-    pub m_hFile: super::super::Foundation::HANDLE,
+    pub m_hFile: ::win32_foundation_sys::HANDLE,
     pub m_dwLinesOffset: u32,
     pub m_dwHeaderLength: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for FIO_CONTEXT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for FIO_CONTEXT {
     fn clone(&self) -> Self {
         *self
@@ -2507,28 +2198,22 @@ pub const IORING_FEATURE_FLAGS_NONE: IORING_FEATURE_FLAGS = 0i32;
 pub const IORING_FEATURE_UM_EMULATION: IORING_FEATURE_FLAGS = 1i32;
 pub const IORING_FEATURE_SET_COMPLETION_EVENT: IORING_FEATURE_FLAGS = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct IORING_HANDLE_REF {
     pub Kind: IORING_REF_KIND,
     pub Handle: IORING_HANDLE_REF_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IORING_HANDLE_REF {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IORING_HANDLE_REF {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union IORING_HANDLE_REF_0 {
-    pub Handle: super::super::Foundation::HANDLE,
+    pub Handle: ::win32_foundation_sys::HANDLE,
     pub Index: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for IORING_HANDLE_REF_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for IORING_HANDLE_REF_0 {
     fn clone(&self) -> Self {
         *self
@@ -2620,16 +2305,13 @@ pub type LOCK_FILE_FLAGS = u32;
 pub const LOCKFILE_EXCLUSIVE_LOCK: LOCK_FILE_FLAGS = 2u32;
 pub const LOCKFILE_FAIL_IMMEDIATELY: LOCK_FILE_FLAGS = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct LOG_MANAGEMENT_CALLBACKS {
     pub CallbackContext: *mut ::core::ffi::c_void,
     pub AdvanceTailCallback: PLOG_TAIL_ADVANCE_CALLBACK,
     pub LogFullHandlerCallback: PLOG_FULL_HANDLER_CALLBACK,
     pub LogUnpinnedCallback: PLOG_UNPINNED_CALLBACK,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for LOG_MANAGEMENT_CALLBACKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for LOG_MANAGEMENT_CALLBACKS {
     fn clone(&self) -> Self {
         *self
@@ -2637,8 +2319,7 @@ impl ::core::clone::Clone for LOG_MANAGEMENT_CALLBACKS {
 }
 pub const LOG_POLICY_OVERWRITE: u32 = 1u32;
 pub const LOG_POLICY_PERSIST: u32 = 2u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type LPPROGRESS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(totalfilesize: i64, totalbytestransferred: i64, streamsize: i64, streambytestransferred: i64, dwstreamnumber: u32, dwcallbackreason: LPPROGRESS_ROUTINE_CALLBACK_REASON, hsourcefile: super::super::Foundation::HANDLE, hdestinationfile: super::super::Foundation::HANDLE, lpdata: *const ::core::ffi::c_void) -> u32>;
+pub type LPPROGRESS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(totalfilesize: i64, totalbytestransferred: i64, streamsize: i64, streambytestransferred: i64, dwstreamnumber: u32, dwcallbackreason: LPPROGRESS_ROUTINE_CALLBACK_REASON, hsourcefile: ::win32_foundation_sys::HANDLE, hdestinationfile: ::win32_foundation_sys::HANDLE, lpdata: *const ::core::ffi::c_void) -> u32>;
 pub type LPPROGRESS_ROUTINE_CALLBACK_REASON = u32;
 pub const CALLBACK_CHUNK_FINISHED: LPPROGRESS_ROUTINE_CALLBACK_REASON = 0u32;
 pub const CALLBACK_STREAM_SWITCH: LPPROGRESS_ROUTINE_CALLBACK_REASON = 1u32;
@@ -2718,19 +2399,16 @@ impl ::core::clone::Clone for NTMS_ALLOCATION_INFORMATION {
 }
 pub const NTMS_APPLICATIONNAME_LENGTH: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_ASYNC_IO {
     pub OperationId: ::windows_core_sys::GUID,
     pub EventId: ::windows_core_sys::GUID,
     pub dwOperationType: u32,
     pub dwResult: u32,
     pub dwAsyncState: u32,
-    pub hEvent: super::super::Foundation::HANDLE,
-    pub bOnStateChange: super::super::Foundation::BOOL,
+    pub hEvent: ::win32_foundation_sys::HANDLE,
+    pub bOnStateChange: ::win32_foundation_sys::BOOL,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_ASYNC_IO {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_ASYNC_IO {
     fn clone(&self) -> Self {
         *self
@@ -2738,22 +2416,19 @@ impl ::core::clone::Clone for NTMS_ASYNC_IO {
 }
 pub const NTMS_BARCODE_LENGTH: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_CHANGERINFORMATIONA {
     pub Number: u32,
     pub ChangerType: ::windows_core_sys::GUID,
-    pub szSerialNumber: [super::super::Foundation::CHAR; 32],
-    pub szRevision: [super::super::Foundation::CHAR; 32],
-    pub szDeviceName: [super::super::Foundation::CHAR; 64],
+    pub szSerialNumber: [::win32_foundation_sys::CHAR; 32],
+    pub szRevision: [::win32_foundation_sys::CHAR; 32],
+    pub szDeviceName: [::win32_foundation_sys::CHAR; 64],
     pub ScsiPort: u16,
     pub ScsiBus: u16,
     pub ScsiTarget: u16,
     pub ScsiLun: u16,
     pub Library: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_CHANGERINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_CHANGERINFORMATIONA {
     fn clone(&self) -> Self {
         *self
@@ -2779,15 +2454,12 @@ impl ::core::clone::Clone for NTMS_CHANGERINFORMATIONW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_CHANGERTYPEINFORMATIONA {
-    pub szVendor: [super::super::Foundation::CHAR; 128],
-    pub szProduct: [super::super::Foundation::CHAR; 128],
+    pub szVendor: [::win32_foundation_sys::CHAR; 128],
+    pub szProduct: [::win32_foundation_sys::CHAR; 128],
     pub DeviceType: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_CHANGERTYPEINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_CHANGERTYPEINFORMATIONA {
     fn clone(&self) -> Self {
         *self
@@ -2823,35 +2495,31 @@ pub const NTMS_COMPUTERNAME_LENGTH: u32 = 64u32;
 pub const NTMS_DESCRIPTION_LENGTH: u32 = 127u32;
 pub const NTMS_DEVICENAME_LENGTH: u32 = 64u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_DRIVEINFORMATIONA {
     pub Number: u32,
     pub State: NtmsDriveState,
     pub DriveType: ::windows_core_sys::GUID,
-    pub szDeviceName: [super::super::Foundation::CHAR; 64],
-    pub szSerialNumber: [super::super::Foundation::CHAR; 32],
-    pub szRevision: [super::super::Foundation::CHAR; 32],
+    pub szDeviceName: [::win32_foundation_sys::CHAR; 64],
+    pub szSerialNumber: [::win32_foundation_sys::CHAR; 32],
+    pub szRevision: [::win32_foundation_sys::CHAR; 32],
     pub ScsiPort: u16,
     pub ScsiBus: u16,
     pub ScsiTarget: u16,
     pub ScsiLun: u16,
     pub dwMountCount: u32,
-    pub LastCleanedTs: super::super::Foundation::SYSTEMTIME,
+    pub LastCleanedTs: ::win32_foundation_sys::SYSTEMTIME,
     pub SavedPartitionId: ::windows_core_sys::GUID,
     pub Library: ::windows_core_sys::GUID,
     pub Reserved: ::windows_core_sys::GUID,
     pub dwDeferDismountDelay: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_DRIVEINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_DRIVEINFORMATIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_DRIVEINFORMATIONW {
     pub Number: u32,
     pub State: NtmsDriveState,
@@ -2864,31 +2532,26 @@ pub struct NTMS_DRIVEINFORMATIONW {
     pub ScsiTarget: u16,
     pub ScsiLun: u16,
     pub dwMountCount: u32,
-    pub LastCleanedTs: super::super::Foundation::SYSTEMTIME,
+    pub LastCleanedTs: ::win32_foundation_sys::SYSTEMTIME,
     pub SavedPartitionId: ::windows_core_sys::GUID,
     pub Library: ::windows_core_sys::GUID,
     pub Reserved: ::windows_core_sys::GUID,
     pub dwDeferDismountDelay: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_DRIVEINFORMATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_DRIVEINFORMATIONW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_DRIVETYPEINFORMATIONA {
-    pub szVendor: [super::super::Foundation::CHAR; 128],
-    pub szProduct: [super::super::Foundation::CHAR; 128],
+    pub szVendor: [::win32_foundation_sys::CHAR; 128],
+    pub szProduct: [::win32_foundation_sys::CHAR; 128],
     pub NumberOfHeads: u32,
     pub DeviceType: FILE_DEVICE_TYPE,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_DRIVETYPEINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_DRIVETYPEINFORMATIONA {
     fn clone(&self) -> Self {
         *self
@@ -2920,13 +2583,12 @@ impl ::core::clone::Clone for NTMS_FILESYSTEM_INFO {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_I1_LIBRARYINFORMATION {
     pub LibraryType: u32,
     pub CleanerSlot: ::windows_core_sys::GUID,
     pub CleanerSlotDefault: ::windows_core_sys::GUID,
-    pub LibrarySupportsDriveCleaning: super::super::Foundation::BOOL,
-    pub BarCodeReaderInstalled: super::super::Foundation::BOOL,
+    pub LibrarySupportsDriveCleaning: ::win32_foundation_sys::BOOL,
+    pub BarCodeReaderInstalled: ::win32_foundation_sys::BOOL,
     pub InventoryMethod: u32,
     pub dwCleanerUsesRemaining: u32,
     pub FirstDriveNumber: u32,
@@ -2944,16 +2606,13 @@ pub struct NTMS_I1_LIBRARYINFORMATION {
     pub dwNumberOfLibRequests: u32,
     pub Reserved: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_LIBRARYINFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_LIBRARYINFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_I1_LIBREQUESTINFORMATIONA {
     pub OperationCode: u32,
     pub OperationOption: u32,
@@ -2963,22 +2622,19 @@ pub struct NTMS_I1_LIBREQUESTINFORMATIONA {
     pub PhysMediaId: ::windows_core_sys::GUID,
     pub Library: ::windows_core_sys::GUID,
     pub SlotId: ::windows_core_sys::GUID,
-    pub TimeQueued: super::super::Foundation::SYSTEMTIME,
-    pub TimeCompleted: super::super::Foundation::SYSTEMTIME,
-    pub szApplication: [super::super::Foundation::CHAR; 64],
-    pub szUser: [super::super::Foundation::CHAR; 64],
-    pub szComputer: [super::super::Foundation::CHAR; 64],
+    pub TimeQueued: ::win32_foundation_sys::SYSTEMTIME,
+    pub TimeCompleted: ::win32_foundation_sys::SYSTEMTIME,
+    pub szApplication: [::win32_foundation_sys::CHAR; 64],
+    pub szUser: [::win32_foundation_sys::CHAR; 64],
+    pub szComputer: [::win32_foundation_sys::CHAR; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_LIBREQUESTINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_LIBREQUESTINFORMATIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_I1_LIBREQUESTINFORMATIONW {
     pub OperationCode: u32,
     pub OperationOption: u32,
@@ -2988,15 +2644,13 @@ pub struct NTMS_I1_LIBREQUESTINFORMATIONW {
     pub PhysMediaId: ::windows_core_sys::GUID,
     pub Library: ::windows_core_sys::GUID,
     pub SlotId: ::windows_core_sys::GUID,
-    pub TimeQueued: super::super::Foundation::SYSTEMTIME,
-    pub TimeCompleted: super::super::Foundation::SYSTEMTIME,
+    pub TimeQueued: ::win32_foundation_sys::SYSTEMTIME,
+    pub TimeCompleted: ::win32_foundation_sys::SYSTEMTIME,
     pub szApplication: [u16; 64],
     pub szUser: [u16; 64],
     pub szComputer: [u16; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_LIBREQUESTINFORMATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_LIBREQUESTINFORMATIONW {
     fn clone(&self) -> Self {
         *self
@@ -3004,29 +2658,25 @@ impl ::core::clone::Clone for NTMS_I1_LIBREQUESTINFORMATIONW {
 }
 pub const NTMS_I1_MESSAGE_LENGTH: u32 = 127u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_I1_OBJECTINFORMATIONA {
     pub dwSize: u32,
     pub dwType: u32,
-    pub Created: super::super::Foundation::SYSTEMTIME,
-    pub Modified: super::super::Foundation::SYSTEMTIME,
+    pub Created: ::win32_foundation_sys::SYSTEMTIME,
+    pub Modified: ::win32_foundation_sys::SYSTEMTIME,
     pub ObjectGuid: ::windows_core_sys::GUID,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation_sys::BOOL,
     pub dwOperationalState: u32,
-    pub szName: [super::super::Foundation::CHAR; 64],
-    pub szDescription: [super::super::Foundation::CHAR; 127],
+    pub szName: [::win32_foundation_sys::CHAR; 64],
+    pub szDescription: [::win32_foundation_sys::CHAR; 127],
     pub Info: NTMS_I1_OBJECTINFORMATIONA_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_OBJECTINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_OBJECTINFORMATIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union NTMS_I1_OBJECTINFORMATIONA_0 {
     pub Drive: NTMS_DRIVEINFORMATIONA,
     pub DriveType: NTMS_DRIVETYPEINFORMATIONA,
@@ -3044,38 +2694,32 @@ pub union NTMS_I1_OBJECTINFORMATIONA_0 {
     pub LibRequest: NTMS_I1_LIBREQUESTINFORMATIONA,
     pub OpRequest: NTMS_I1_OPREQUESTINFORMATIONA,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_OBJECTINFORMATIONA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_OBJECTINFORMATIONA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_I1_OBJECTINFORMATIONW {
     pub dwSize: u32,
     pub dwType: u32,
-    pub Created: super::super::Foundation::SYSTEMTIME,
-    pub Modified: super::super::Foundation::SYSTEMTIME,
+    pub Created: ::win32_foundation_sys::SYSTEMTIME,
+    pub Modified: ::win32_foundation_sys::SYSTEMTIME,
     pub ObjectGuid: ::windows_core_sys::GUID,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation_sys::BOOL,
     pub dwOperationalState: u32,
     pub szName: [u16; 64],
     pub szDescription: [u16; 127],
     pub Info: NTMS_I1_OBJECTINFORMATIONW_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_OBJECTINFORMATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_OBJECTINFORMATIONW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union NTMS_I1_OBJECTINFORMATIONW_0 {
     pub Drive: NTMS_DRIVEINFORMATIONW,
     pub DriveType: NTMS_DRIVETYPEINFORMATIONW,
@@ -3093,42 +2737,36 @@ pub union NTMS_I1_OBJECTINFORMATIONW_0 {
     pub LibRequest: NTMS_I1_LIBREQUESTINFORMATIONW,
     pub OpRequest: NTMS_I1_OPREQUESTINFORMATIONW,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_OBJECTINFORMATIONW_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_OBJECTINFORMATIONW_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_I1_OPREQUESTINFORMATIONA {
     pub Request: u32,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation_sys::SYSTEMTIME,
     pub State: u32,
-    pub szMessage: [super::super::Foundation::CHAR; 127],
+    pub szMessage: [::win32_foundation_sys::CHAR; 127],
     pub Arg1Type: u32,
     pub Arg1: ::windows_core_sys::GUID,
     pub Arg2Type: u32,
     pub Arg2: ::windows_core_sys::GUID,
-    pub szApplication: [super::super::Foundation::CHAR; 64],
-    pub szUser: [super::super::Foundation::CHAR; 64],
-    pub szComputer: [super::super::Foundation::CHAR; 64],
+    pub szApplication: [::win32_foundation_sys::CHAR; 64],
+    pub szUser: [::win32_foundation_sys::CHAR; 64],
+    pub szComputer: [::win32_foundation_sys::CHAR; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_OPREQUESTINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_OPREQUESTINFORMATIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_I1_OPREQUESTINFORMATIONW {
     pub Request: u32,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation_sys::SYSTEMTIME,
     pub State: u32,
     pub szMessage: [u16; 127],
     pub Arg1Type: u32,
@@ -3139,16 +2777,13 @@ pub struct NTMS_I1_OPREQUESTINFORMATIONW {
     pub szUser: [u16; 64],
     pub szComputer: [u16; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_OPREQUESTINFORMATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_OPREQUESTINFORMATIONW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_I1_PARTITIONINFORMATIONA {
     pub PhysicalMedia: ::windows_core_sys::GUID,
     pub LogicalMedia: ::windows_core_sys::GUID,
@@ -3156,14 +2791,12 @@ pub struct NTMS_I1_PARTITIONINFORMATIONA {
     pub Side: u16,
     pub dwOmidLabelIdLength: u32,
     pub OmidLabelId: [u8; 255],
-    pub szOmidLabelType: [super::super::Foundation::CHAR; 64],
-    pub szOmidLabelInfo: [super::super::Foundation::CHAR; 256],
+    pub szOmidLabelType: [::win32_foundation_sys::CHAR; 64],
+    pub szOmidLabelInfo: [::win32_foundation_sys::CHAR; 256],
     pub dwMountCount: u32,
     pub dwAllocateCount: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_PARTITIONINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_PARTITIONINFORMATIONA {
     fn clone(&self) -> Self {
         *self
@@ -3189,7 +2822,6 @@ impl ::core::clone::Clone for NTMS_I1_PARTITIONINFORMATIONW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_I1_PMIDINFORMATIONA {
     pub CurrentLibrary: ::windows_core_sys::GUID,
     pub MediaPool: ::windows_core_sys::GUID,
@@ -3197,15 +2829,13 @@ pub struct NTMS_I1_PMIDINFORMATIONA {
     pub LocationType: u32,
     pub MediaType: ::windows_core_sys::GUID,
     pub HomeSlot: ::windows_core_sys::GUID,
-    pub szBarCode: [super::super::Foundation::CHAR; 64],
+    pub szBarCode: [::win32_foundation_sys::CHAR; 64],
     pub BarCodeState: u32,
-    pub szSequenceNumber: [super::super::Foundation::CHAR; 32],
+    pub szSequenceNumber: [::win32_foundation_sys::CHAR; 32],
     pub MediaState: u32,
     pub dwNumberOfPartitions: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_I1_PMIDINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_I1_PMIDINFORMATIONA {
     fn clone(&self) -> Self {
         *self
@@ -3259,13 +2889,12 @@ impl ::core::clone::Clone for NTMS_IEPORTINFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_LIBRARYINFORMATION {
     pub LibraryType: NtmsLibraryType,
     pub CleanerSlot: ::windows_core_sys::GUID,
     pub CleanerSlotDefault: ::windows_core_sys::GUID,
-    pub LibrarySupportsDriveCleaning: super::super::Foundation::BOOL,
-    pub BarCodeReaderInstalled: super::super::Foundation::BOOL,
+    pub LibrarySupportsDriveCleaning: ::win32_foundation_sys::BOOL,
+    pub BarCodeReaderInstalled: ::win32_foundation_sys::BOOL,
     pub InventoryMethod: NtmsInventoryMethod,
     pub dwCleanerUsesRemaining: u32,
     pub FirstDriveNumber: u32,
@@ -3282,19 +2911,16 @@ pub struct NTMS_LIBRARYINFORMATION {
     pub dwNumberOfMediaTypes: u32,
     pub dwNumberOfLibRequests: u32,
     pub Reserved: ::windows_core_sys::GUID,
-    pub AutoRecovery: super::super::Foundation::BOOL,
+    pub AutoRecovery: ::win32_foundation_sys::BOOL,
     pub dwFlags: NtmsLibraryFlags,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_LIBRARYINFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_LIBRARYINFORMATION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_LIBREQUESTINFORMATIONA {
     pub OperationCode: NtmsLmOperation,
     pub OperationOption: u32,
@@ -3304,25 +2930,22 @@ pub struct NTMS_LIBREQUESTINFORMATIONA {
     pub PhysMediaId: ::windows_core_sys::GUID,
     pub Library: ::windows_core_sys::GUID,
     pub SlotId: ::windows_core_sys::GUID,
-    pub TimeQueued: super::super::Foundation::SYSTEMTIME,
-    pub TimeCompleted: super::super::Foundation::SYSTEMTIME,
-    pub szApplication: [super::super::Foundation::CHAR; 64],
-    pub szUser: [super::super::Foundation::CHAR; 64],
-    pub szComputer: [super::super::Foundation::CHAR; 64],
+    pub TimeQueued: ::win32_foundation_sys::SYSTEMTIME,
+    pub TimeCompleted: ::win32_foundation_sys::SYSTEMTIME,
+    pub szApplication: [::win32_foundation_sys::CHAR; 64],
+    pub szUser: [::win32_foundation_sys::CHAR; 64],
+    pub szComputer: [::win32_foundation_sys::CHAR; 64],
     pub dwErrorCode: u32,
     pub WorkItemId: ::windows_core_sys::GUID,
     pub dwPriority: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_LIBREQUESTINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_LIBREQUESTINFORMATIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_LIBREQUESTINFORMATIONW {
     pub OperationCode: NtmsLmOperation,
     pub OperationOption: u32,
@@ -3332,8 +2955,8 @@ pub struct NTMS_LIBREQUESTINFORMATIONW {
     pub PhysMediaId: ::windows_core_sys::GUID,
     pub Library: ::windows_core_sys::GUID,
     pub SlotId: ::windows_core_sys::GUID,
-    pub TimeQueued: super::super::Foundation::SYSTEMTIME,
-    pub TimeCompleted: super::super::Foundation::SYSTEMTIME,
+    pub TimeQueued: ::win32_foundation_sys::SYSTEMTIME,
+    pub TimeCompleted: ::win32_foundation_sys::SYSTEMTIME,
     pub szApplication: [u16; 64],
     pub szUser: [u16; 64],
     pub szComputer: [u16; 64],
@@ -3341,9 +2964,7 @@ pub struct NTMS_LIBREQUESTINFORMATIONW {
     pub WorkItemId: ::windows_core_sys::GUID,
     pub dwPriority: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_LIBREQUESTINFORMATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_LIBREQUESTINFORMATIONW {
     fn clone(&self) -> Self {
         *self
@@ -3417,29 +3038,25 @@ impl ::core::clone::Clone for NTMS_NOTIFICATIONINFORMATION {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_OBJECTINFORMATIONA {
     pub dwSize: u32,
     pub dwType: NtmsObjectsTypes,
-    pub Created: super::super::Foundation::SYSTEMTIME,
-    pub Modified: super::super::Foundation::SYSTEMTIME,
+    pub Created: ::win32_foundation_sys::SYSTEMTIME,
+    pub Modified: ::win32_foundation_sys::SYSTEMTIME,
     pub ObjectGuid: ::windows_core_sys::GUID,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation_sys::BOOL,
     pub dwOperationalState: NtmsOperationalState,
-    pub szName: [super::super::Foundation::CHAR; 64],
-    pub szDescription: [super::super::Foundation::CHAR; 127],
+    pub szName: [::win32_foundation_sys::CHAR; 64],
+    pub szDescription: [::win32_foundation_sys::CHAR; 127],
     pub Info: NTMS_OBJECTINFORMATIONA_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_OBJECTINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_OBJECTINFORMATIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union NTMS_OBJECTINFORMATIONA_0 {
     pub Drive: NTMS_DRIVEINFORMATIONA,
     pub DriveType: NTMS_DRIVETYPEINFORMATIONA,
@@ -3458,38 +3075,32 @@ pub union NTMS_OBJECTINFORMATIONA_0 {
     pub OpRequest: NTMS_OPREQUESTINFORMATIONA,
     pub Computer: NTMS_COMPUTERINFORMATION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_OBJECTINFORMATIONA_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_OBJECTINFORMATIONA_0 {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_OBJECTINFORMATIONW {
     pub dwSize: u32,
     pub dwType: NtmsObjectsTypes,
-    pub Created: super::super::Foundation::SYSTEMTIME,
-    pub Modified: super::super::Foundation::SYSTEMTIME,
+    pub Created: ::win32_foundation_sys::SYSTEMTIME,
+    pub Modified: ::win32_foundation_sys::SYSTEMTIME,
     pub ObjectGuid: ::windows_core_sys::GUID,
-    pub Enabled: super::super::Foundation::BOOL,
+    pub Enabled: ::win32_foundation_sys::BOOL,
     pub dwOperationalState: NtmsOperationalState,
     pub szName: [u16; 64],
     pub szDescription: [u16; 127],
     pub Info: NTMS_OBJECTINFORMATIONW_0,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_OBJECTINFORMATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_OBJECTINFORMATIONW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub union NTMS_OBJECTINFORMATIONW_0 {
     pub Drive: NTMS_DRIVEINFORMATIONW,
     pub DriveType: NTMS_DRIVETYPEINFORMATIONW,
@@ -3508,9 +3119,7 @@ pub union NTMS_OBJECTINFORMATIONW_0 {
     pub OpRequest: NTMS_OPREQUESTINFORMATIONW,
     pub Computer: NTMS_COMPUTERINFORMATION,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_OBJECTINFORMATIONW_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_OBJECTINFORMATIONW_0 {
     fn clone(&self) -> Self {
         *self
@@ -3524,33 +3133,29 @@ pub type NTMS_OMID_TYPE = u32;
 pub const NTMS_OMID_TYPE_FILESYSTEM_INFO: NTMS_OMID_TYPE = 2u32;
 pub const NTMS_OMID_TYPE_RAW_LABEL: NTMS_OMID_TYPE = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_OPREQUESTINFORMATIONA {
     pub Request: NtmsOpreqCommand,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation_sys::SYSTEMTIME,
     pub State: NtmsOpreqState,
-    pub szMessage: [super::super::Foundation::CHAR; 256],
+    pub szMessage: [::win32_foundation_sys::CHAR; 256],
     pub Arg1Type: NtmsObjectsTypes,
     pub Arg1: ::windows_core_sys::GUID,
     pub Arg2Type: NtmsObjectsTypes,
     pub Arg2: ::windows_core_sys::GUID,
-    pub szApplication: [super::super::Foundation::CHAR; 64],
-    pub szUser: [super::super::Foundation::CHAR; 64],
-    pub szComputer: [super::super::Foundation::CHAR; 64],
+    pub szApplication: [::win32_foundation_sys::CHAR; 64],
+    pub szUser: [::win32_foundation_sys::CHAR; 64],
+    pub szComputer: [::win32_foundation_sys::CHAR; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_OPREQUESTINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_OPREQUESTINFORMATIONA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_OPREQUESTINFORMATIONW {
     pub Request: NtmsOpreqCommand,
-    pub Submitted: super::super::Foundation::SYSTEMTIME,
+    pub Submitted: ::win32_foundation_sys::SYSTEMTIME,
     pub State: NtmsOpreqState,
     pub szMessage: [u16; 256],
     pub Arg1Type: NtmsObjectsTypes,
@@ -3561,16 +3166,13 @@ pub struct NTMS_OPREQUESTINFORMATIONW {
     pub szUser: [u16; 64],
     pub szComputer: [u16; 64],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_OPREQUESTINFORMATIONW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_OPREQUESTINFORMATIONW {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_PARTITIONINFORMATIONA {
     pub PhysicalMedia: ::windows_core_sys::GUID,
     pub LogicalMedia: ::windows_core_sys::GUID,
@@ -3578,15 +3180,13 @@ pub struct NTMS_PARTITIONINFORMATIONA {
     pub Side: u16,
     pub dwOmidLabelIdLength: u32,
     pub OmidLabelId: [u8; 255],
-    pub szOmidLabelType: [super::super::Foundation::CHAR; 64],
-    pub szOmidLabelInfo: [super::super::Foundation::CHAR; 256],
+    pub szOmidLabelType: [::win32_foundation_sys::CHAR; 64],
+    pub szOmidLabelInfo: [::win32_foundation_sys::CHAR; 256],
     pub dwMountCount: u32,
     pub dwAllocateCount: u32,
     pub Capacity: i64,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_PARTITIONINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_PARTITIONINFORMATIONA {
     fn clone(&self) -> Self {
         *self
@@ -3613,7 +3213,6 @@ impl ::core::clone::Clone for NTMS_PARTITIONINFORMATIONW {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct NTMS_PMIDINFORMATIONA {
     pub CurrentLibrary: ::windows_core_sys::GUID,
     pub MediaPool: ::windows_core_sys::GUID,
@@ -3621,18 +3220,16 @@ pub struct NTMS_PMIDINFORMATIONA {
     pub LocationType: u32,
     pub MediaType: ::windows_core_sys::GUID,
     pub HomeSlot: ::windows_core_sys::GUID,
-    pub szBarCode: [super::super::Foundation::CHAR; 64],
+    pub szBarCode: [::win32_foundation_sys::CHAR; 64],
     pub BarCodeState: NtmsBarCodeState,
-    pub szSequenceNumber: [super::super::Foundation::CHAR; 32],
+    pub szSequenceNumber: [::win32_foundation_sys::CHAR; 32],
     pub MediaState: NtmsMediaState,
     pub dwNumberOfPartitions: u32,
     pub dwMediaTypeCode: u32,
     pub dwDensityCode: u32,
     pub MountedPartition: ::windows_core_sys::GUID,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for NTMS_PMIDINFORMATIONA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for NTMS_PMIDINFORMATIONA {
     fn clone(&self) -> Self {
         *self
@@ -3934,18 +3531,15 @@ pub const NTMS_UITYPE_REQ: NtmsUITypes = 2i32;
 pub const NTMS_UITYPE_ERR: NtmsUITypes = 3i32;
 pub const NTMS_UITYPE_MAX: NtmsUITypes = 4i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct OFSTRUCT {
     pub cBytes: u8,
     pub fFixedDisk: u8,
     pub nErrCode: u16,
     pub Reserved1: u16,
     pub Reserved2: u16,
-    pub szPathName: [super::super::Foundation::CHAR; 128],
+    pub szPathName: [::win32_foundation_sys::CHAR; 128],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OFSTRUCT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for OFSTRUCT {
     fn clone(&self) -> Self {
         *self
@@ -3976,18 +3570,13 @@ pub const PARTITION_SPACES_GUID: ::windows_core_sys::GUID = ::windows_core_sys::
 pub const PARTITION_SYSTEM_GUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3240784680, data2: 63519, data3: 4562, data4: [186, 75, 0, 160, 201, 62, 201, 59] };
 pub const PARTITION_WINDOWS_SYSTEM_GUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1464029011, data2: 58339, data3: 17969, data4: [165, 197, 38, 210, 36, 56, 115, 170] };
 pub type PCLFS_COMPLETION_ROUTINE = ::core::option::Option<unsafe extern "system" fn(pvoverlapped: *mut ::core::ffi::c_void, ulreserved: u32)>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PCOPYFILE2_PROGRESS_ROUTINE = ::core::option::Option<unsafe extern "system" fn(pmessage: *const COPYFILE2_MESSAGE, pvcallbackcontext: *const ::core::ffi::c_void) -> COPYFILE2_MESSAGE_ACTION>;
 pub type PFE_EXPORT_FUNC = ::core::option::Option<unsafe extern "system" fn(pbdata: *const u8, pvcallbackcontext: *const ::core::ffi::c_void, ullength: u32) -> u32>;
 pub type PFE_IMPORT_FUNC = ::core::option::Option<unsafe extern "system" fn(pbdata: *mut u8, pvcallbackcontext: *const ::core::ffi::c_void, ullength: *mut u32) -> u32>;
-#[cfg(feature = "Win32_Foundation")]
 pub type PFN_IO_COMPLETION = ::core::option::Option<unsafe extern "system" fn(pcontext: *mut FIO_CONTEXT, lpo: *mut FH_OVERLAPPED, cb: u32, dwcompletionstatus: u32)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLOG_FULL_HANDLER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hlogfile: super::super::Foundation::HANDLE, dwerror: u32, flogispinned: super::super::Foundation::BOOL, pvclientcontext: *mut ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLOG_TAIL_ADVANCE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hlogfile: super::super::Foundation::HANDLE, lsntarget: CLS_LSN, pvclientcontext: *mut ::core::ffi::c_void)>;
-#[cfg(feature = "Win32_Foundation")]
-pub type PLOG_UNPINNED_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hlogfile: super::super::Foundation::HANDLE, pvclientcontext: *mut ::core::ffi::c_void)>;
+pub type PLOG_FULL_HANDLER_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hlogfile: ::win32_foundation_sys::HANDLE, dwerror: u32, flogispinned: ::win32_foundation_sys::BOOL, pvclientcontext: *mut ::core::ffi::c_void)>;
+pub type PLOG_TAIL_ADVANCE_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hlogfile: ::win32_foundation_sys::HANDLE, lsntarget: CLS_LSN, pvclientcontext: *mut ::core::ffi::c_void)>;
+pub type PLOG_UNPINNED_CALLBACK = ::core::option::Option<unsafe extern "system" fn(hlogfile: ::win32_foundation_sys::HANDLE, pvclientcontext: *mut ::core::ffi::c_void)>;
 pub type PREPARE_TAPE_OPERATION = i32;
 pub const TAPE_FORMAT: PREPARE_TAPE_OPERATION = 5i32;
 pub const TAPE_LOAD: PREPARE_TAPE_OPERATION = 0i32;
@@ -4036,16 +3625,13 @@ pub const RESOURCE_MANAGER_MAXIMUM_OPTION: u32 = 3u32;
 pub const RESOURCE_MANAGER_OBJECT_PATH: &str = "\\ResourceManager\\";
 pub const RESOURCE_MANAGER_VOLATILE: u32 = 1u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_ALIAS_INFO_0 {
     pub srvai0_alias: ::windows_core_sys::PWSTR,
     pub srvai0_target: ::windows_core_sys::PWSTR,
-    pub srvai0_default: super::super::Foundation::BOOLEAN,
+    pub srvai0_default: ::win32_foundation_sys::BOOLEAN,
     pub srvai0_reserved: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SERVER_ALIAS_INFO_0 {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for SERVER_ALIAS_INFO_0 {
     fn clone(&self) -> Self {
         *self
@@ -4212,7 +3798,7 @@ impl ::core::clone::Clone for SHARE_INFO_1006 {
 #[cfg(feature = "Win32_Security")]
 pub struct SHARE_INFO_1501 {
     pub shi1501_reserved: u32,
-    pub shi1501_security_descriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub shi1501_security_descriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
 #[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for SHARE_INFO_1501 {}
@@ -4274,7 +3860,7 @@ pub struct SHARE_INFO_502 {
     pub shi502_path: ::windows_core_sys::PWSTR,
     pub shi502_passwd: ::windows_core_sys::PWSTR,
     pub shi502_reserved: u32,
-    pub shi502_security_descriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub shi502_security_descriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
 #[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for SHARE_INFO_502 {}
@@ -4297,7 +3883,7 @@ pub struct SHARE_INFO_503 {
     pub shi503_passwd: ::windows_core_sys::PWSTR,
     pub shi503_servername: ::windows_core_sys::PWSTR,
     pub shi503_reserved: u32,
-    pub shi503_security_descriptor: super::super::Security::PSECURITY_DESCRIPTOR,
+    pub shi503_security_descriptor: ::win32_security_sys::PSECURITY_DESCRIPTOR,
 }
 #[cfg(feature = "Win32_Security")]
 impl ::core::marker::Copy for SHARE_INFO_503 {}
@@ -4467,14 +4053,11 @@ pub const TAPE_LONG_FILEMARKS: TAPEMARK_TYPE = 3i32;
 pub const TAPE_SETMARKS: TAPEMARK_TYPE = 0i32;
 pub const TAPE_SHORT_FILEMARKS: TAPEMARK_TYPE = 2i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TAPE_ERASE {
     pub Type: ERASE_TAPE_TYPE,
-    pub Immediate: super::super::Foundation::BOOLEAN,
+    pub Immediate: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TAPE_ERASE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TAPE_ERASE {
     fn clone(&self) -> Self {
         *self
@@ -4509,45 +4092,36 @@ pub type TAPE_POSITION_TYPE = i32;
 pub const TAPE_ABSOLUTE_POSITION: TAPE_POSITION_TYPE = 0i32;
 pub const TAPE_LOGICAL_POSITION: TAPE_POSITION_TYPE = 1i32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TAPE_PREPARE {
     pub Operation: PREPARE_TAPE_OPERATION,
-    pub Immediate: super::super::Foundation::BOOLEAN,
+    pub Immediate: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TAPE_PREPARE {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TAPE_PREPARE {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TAPE_SET_POSITION {
     pub Method: TAPE_POSITION_METHOD,
     pub Partition: u32,
     pub Offset: i64,
-    pub Immediate: super::super::Foundation::BOOLEAN,
+    pub Immediate: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TAPE_SET_POSITION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TAPE_SET_POSITION {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct TAPE_WRITE_MARKS {
     pub Type: TAPEMARK_TYPE,
     pub Count: u32,
-    pub Immediate: super::super::Foundation::BOOLEAN,
+    pub Immediate: ::win32_foundation_sys::BOOLEAN,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for TAPE_WRITE_MARKS {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for TAPE_WRITE_MARKS {
     fn clone(&self) -> Self {
         *self
@@ -4797,22 +4371,19 @@ pub const VIF_BUFFTOOSMALL: VER_INSTALL_FILE_STATUS = 262144u32;
 pub const VIF_CANNOTLOADLZ32: VER_INSTALL_FILE_STATUS = 524288u32;
 pub const VIF_CANNOTLOADCABINET: VER_INSTALL_FILE_STATUS = 1048576u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VOLUME_ALLOCATE_BC_STREAM_INPUT {
     pub Version: u32,
     pub RequestsPerPeriod: u32,
     pub Period: u32,
-    pub RetryFailures: super::super::Foundation::BOOLEAN,
-    pub Discardable: super::super::Foundation::BOOLEAN,
-    pub Reserved1: [super::super::Foundation::BOOLEAN; 2],
+    pub RetryFailures: ::win32_foundation_sys::BOOLEAN,
+    pub Discardable: ::win32_foundation_sys::BOOLEAN,
+    pub Reserved1: [::win32_foundation_sys::BOOLEAN; 2],
     pub LowestByteOffset: u64,
     pub HighestByteOffset: u64,
     pub AccessType: u32,
     pub AccessMode: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VOLUME_ALLOCATE_BC_STREAM_INPUT {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VOLUME_ALLOCATE_BC_STREAM_INPUT {
     fn clone(&self) -> Self {
         *self
@@ -4960,17 +4531,14 @@ impl ::core::clone::Clone for VOLUME_READ_PLEX_INPUT {
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct VOLUME_SET_GPT_ATTRIBUTES_INFORMATION {
     pub GptAttributes: u64,
-    pub RevertOnClose: super::super::Foundation::BOOLEAN,
-    pub ApplyToAllConnectedVolumes: super::super::Foundation::BOOLEAN,
+    pub RevertOnClose: ::win32_foundation_sys::BOOLEAN,
+    pub ApplyToAllConnectedVolumes: ::win32_foundation_sys::BOOLEAN,
     pub Reserved1: u16,
     pub Reserved2: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for VOLUME_SET_GPT_ATTRIBUTES_INFORMATION {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for VOLUME_SET_GPT_ATTRIBUTES_INFORMATION {
     fn clone(&self) -> Self {
         *self
@@ -5098,52 +4666,45 @@ pub const WIM_EXTERNAL_FILE_INFO_FLAG_NOT_ACTIVE: u32 = 1u32;
 pub const WIM_EXTERNAL_FILE_INFO_FLAG_SUSPENDED: u32 = 2u32;
 pub const WIM_PROVIDER_HASH_SIZE: u32 = 20u32;
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIN32_FILE_ATTRIBUTE_DATA {
     pub dwFileAttributes: u32,
-    pub ftCreationTime: super::super::Foundation::FILETIME,
-    pub ftLastAccessTime: super::super::Foundation::FILETIME,
-    pub ftLastWriteTime: super::super::Foundation::FILETIME,
+    pub ftCreationTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastAccessTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastWriteTime: ::win32_foundation_sys::FILETIME,
     pub nFileSizeHigh: u32,
     pub nFileSizeLow: u32,
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIN32_FILE_ATTRIBUTE_DATA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIN32_FILE_ATTRIBUTE_DATA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIN32_FIND_DATAA {
     pub dwFileAttributes: u32,
-    pub ftCreationTime: super::super::Foundation::FILETIME,
-    pub ftLastAccessTime: super::super::Foundation::FILETIME,
-    pub ftLastWriteTime: super::super::Foundation::FILETIME,
+    pub ftCreationTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastAccessTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastWriteTime: ::win32_foundation_sys::FILETIME,
     pub nFileSizeHigh: u32,
     pub nFileSizeLow: u32,
     pub dwReserved0: u32,
     pub dwReserved1: u32,
-    pub cFileName: [super::super::Foundation::CHAR; 260],
-    pub cAlternateFileName: [super::super::Foundation::CHAR; 14],
+    pub cFileName: [::win32_foundation_sys::CHAR; 260],
+    pub cAlternateFileName: [::win32_foundation_sys::CHAR; 14],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIN32_FIND_DATAA {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIN32_FIND_DATAA {
     fn clone(&self) -> Self {
         *self
     }
 }
 #[repr(C)]
-#[cfg(feature = "Win32_Foundation")]
 pub struct WIN32_FIND_DATAW {
     pub dwFileAttributes: u32,
-    pub ftCreationTime: super::super::Foundation::FILETIME,
-    pub ftLastAccessTime: super::super::Foundation::FILETIME,
-    pub ftLastWriteTime: super::super::Foundation::FILETIME,
+    pub ftCreationTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastAccessTime: ::win32_foundation_sys::FILETIME,
+    pub ftLastWriteTime: ::win32_foundation_sys::FILETIME,
     pub nFileSizeHigh: u32,
     pub nFileSizeLow: u32,
     pub dwReserved0: u32,
@@ -5151,9 +4712,7 @@ pub struct WIN32_FIND_DATAW {
     pub cFileName: [u16; 260],
     pub cAlternateFileName: [u16; 14],
 }
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WIN32_FIND_DATAW {}
-#[cfg(feature = "Win32_Foundation")]
 impl ::core::clone::Clone for WIN32_FIND_DATAW {
     fn clone(&self) -> Self {
         *self
@@ -5219,8 +4778,6 @@ impl ::core::clone::Clone for WOF_FILE_COMPRESSION_INFO_V1 {
 }
 pub const WOF_PROVIDER_FILE: u32 = 2u32;
 pub const WOF_PROVIDER_WIM: u32 = 1u32;
-#[cfg(feature = "Win32_Foundation")]
-pub type WofEnumEntryProc = ::core::option::Option<unsafe extern "system" fn(entryinfo: *const ::core::ffi::c_void, userdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
-#[cfg(feature = "Win32_Foundation")]
-pub type WofEnumFilesProc = ::core::option::Option<unsafe extern "system" fn(filepath: ::windows_core_sys::PCWSTR, externalfileinfo: *const ::core::ffi::c_void, userdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
+pub type WofEnumEntryProc = ::core::option::Option<unsafe extern "system" fn(entryinfo: *const ::core::ffi::c_void, userdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
+pub type WofEnumFilesProc = ::core::option::Option<unsafe extern "system" fn(filepath: ::windows_core_sys::PCWSTR, externalfileinfo: *const ::core::ffi::c_void, userdata: *const ::core::ffi::c_void) -> ::win32_foundation_sys::BOOL>;
 pub const _FT_TYPES_DEFINITION_: u32 = 1u32;
